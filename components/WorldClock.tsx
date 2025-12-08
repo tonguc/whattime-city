@@ -1,7 +1,9 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { City, getTier1Cities } from '@/lib/cities'
+import { useRouter } from 'next/navigation'
+import Link from 'next/link'
+import { City, getTier1Cities, uses12HourFormat, getCityBySlug, cities } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import { translations, detectLanguage, Language } from '@/lib/translations'
@@ -17,19 +19,43 @@ interface WorldClockProps {
   initialCity?: City
 }
 
+// Find nearest city by coordinates
+function findNearestCity(lat: number, lng: number): City {
+  let nearest = cities[0]
+  let minDist = Infinity
+  
+  for (const city of cities) {
+    const dist = Math.sqrt(
+      Math.pow(city.lat - lat, 2) + Math.pow(city.lng - lng, 2)
+    )
+    if (dist < minDist) {
+      minDist = dist
+      nearest = city
+    }
+  }
+  return nearest
+}
+
 export default function WorldClock({ initialCity }: WorldClockProps) {
+  const router = useRouter()
   const defaultCity = initialCity || getTier1Cities()[0]
   const [selectedCity, setSelectedCity] = useState<City>(defaultCity)
   const [time, setTime] = useState(new Date())
   const [themeMode, setThemeMode] = useState<'auto' | 'light' | 'dark'>('auto')
   const [clockMode, setClockMode] = useState<'digital' | 'analog'>('digital')
   const [lang, setLang] = useState<Language>('en')
+  const [use12Hour, setUse12Hour] = useState(uses12HourFormat(defaultCity.countryCode))
   
   useEffect(() => {
     setLang(detectLanguage())
     const timer = setInterval(() => setTime(new Date()), 1000)
     return () => clearInterval(timer)
   }, [])
+  
+  // Update 12h format when city changes
+  useEffect(() => {
+    setUse12Hour(uses12HourFormat(selectedCity.countryCode))
+  }, [selectedCity])
   
   const t = translations[lang]
   
@@ -52,8 +78,25 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
     timeZoneName: 'short' 
   }).split(' ').pop()
   
-  // Always show Tier 1 global cities
   const featuredCities = getTier1Cities()
+  
+  // Handle logo click - get user location
+  const handleLogoClick = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const nearest = findNearestCity(position.coords.latitude, position.coords.longitude)
+          router.push(`/${nearest.slug}`)
+        },
+        (error) => {
+          console.log('Geolocation error:', error)
+          router.push('/')
+        }
+      )
+    } else {
+      router.push('/')
+    }
+  }
   
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-all duration-1000`}>
@@ -64,21 +107,23 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
       
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-8">
         <header className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
-          <div>
+          <button onClick={handleLogoClick} className="text-left hover:opacity-80 transition-opacity">
             <h1 className={`text-2xl font-bold ${theme.text}`}>
               whattime<span className={theme.accentClass}>.city</span>
             </h1>
             <p className={`text-sm ${theme.textMuted}`}>{t.worldClock}</p>
-          </div>
+          </button>
           
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
             <Search theme={theme} currentTheme={currentTheme} />
+            
+            {/* Clock Mode Toggle */}
             <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
               {(['digital', 'analog'] as const).map((mode) => (
                 <button
                   key={mode}
                   onClick={() => setClockMode(mode)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all capitalize ${
+                  className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all capitalize ${
                     clockMode === mode
                       ? `${theme.accentBg} text-white shadow-lg`
                       : isLight ? 'text-slate-600' : 'text-slate-400'
@@ -88,6 +133,31 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                 </button>
               ))}
             </div>
+            
+            {/* 12/24 Hour Toggle */}
+            <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
+              <button
+                onClick={() => setUse12Hour(false)}
+                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
+                  !use12Hour
+                    ? `${theme.accentBg} text-white shadow-lg`
+                    : isLight ? 'text-slate-600' : 'text-slate-400'
+                }`}
+              >
+                24h
+              </button>
+              <button
+                onClick={() => setUse12Hour(true)}
+                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
+                  use12Hour
+                    ? `${theme.accentBg} text-white shadow-lg`
+                    : isLight ? 'text-slate-600' : 'text-slate-400'
+                }`}
+              >
+                12h
+              </button>
+            </div>
+            
             <ThemeToggle mode={themeMode} setMode={setThemeMode} currentTheme={currentTheme} t={t} themeData={theme} />
           </div>
         </header>
@@ -97,7 +167,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             {clockMode === 'analog' ? (
               <AnalogClock time={localTime} theme={currentTheme} themeData={theme} />
             ) : (
-              <DigitalClock time={localTime} theme={currentTheme} themeData={theme} />
+              <DigitalClock time={localTime} theme={currentTheme} themeData={theme} use12Hour={use12Hour} />
             )}
             
             <div className="mt-8 text-center">
@@ -142,6 +212,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                 onClick={() => setSelectedCity(city)}
                 currentTheme={currentTheme}
                 themeData={theme}
+                use12Hour={use12Hour}
               />
             ))}
           </div>

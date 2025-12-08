@@ -12,9 +12,10 @@ interface CityCardProps {
   onClick: () => void
   currentTheme: string
   themeData: Theme
+  use12Hour: boolean
 }
 
-export default function CityCard({ city, isSelected, onClick, currentTheme, themeData }: CityCardProps) {
+export default function CityCard({ city, isSelected, onClick, currentTheme, themeData, use12Hour }: CityCardProps) {
   const [time, setTime] = useState(new Date())
   
   useEffect(() => {
@@ -23,7 +24,17 @@ export default function CityCard({ city, isSelected, onClick, currentTheme, them
   }, [])
   
   const localTime = new Date(time.toLocaleString('en-US', { timeZone: city.timezone }))
-  const timeStr = localTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })
+  
+  let timeStr: string
+  if (use12Hour) {
+    const hours = localTime.getHours()
+    const minutes = localTime.getMinutes()
+    const period = hours >= 12 ? 'PM' : 'AM'
+    const displayHours = hours % 12 || 12
+    timeStr = `${displayHours}:${minutes.toString().padStart(2, '0')} ${period}`
+  } else {
+    timeStr = localTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })
+  }
   
   const cityTimeOfDay = getTimeOfDay(localTime, city.lat, city.lng)
   const cityTheme = themes[cityTimeOfDay]
@@ -52,7 +63,7 @@ export default function CityCard({ city, isSelected, onClick, currentTheme, them
           </div>
         </div>
         <div className="text-right flex-shrink-0">
-          <div className={`text-2xl font-light ${isLight ? 'text-slate-800' : 'text-white'}`} style={{ fontVariantNumeric: 'tabular-nums' }}>
+          <div className={`text-xl font-light ${isLight ? 'text-slate-800' : 'text-white'}`} style={{ fontVariantNumeric: 'tabular-nums' }}>
             {timeStr}
           </div>
           <div className={`flex justify-end ${cityTheme.accentClass}`} title={cityTheme.label}>
