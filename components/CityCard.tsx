@@ -63,10 +63,10 @@ export default function CityCard({ city, isSelected, onClick, currentTheme, them
           </div>
         </div>
         <div className="text-right flex-shrink-0">
-          <div className={`text-xl font-light ${isLight ? 'text-slate-800' : 'text-white'}`} style={{ fontVariantNumeric: 'tabular-nums' }}>
+          <div className={`text-xl font-medium ${isLight ? 'text-slate-800' : 'text-white'}`} style={{ fontVariantNumeric: 'tabular-nums' }}>
             {timeStr}
           </div>
-          <div className={`flex justify-end ${cityTheme.accentClass}`} title={cityTheme.label}>
+          <div className={`flex justify-end cursor-help ${cityTheme.accentClass}`} title={cityTheme.label}>
             <Icon className="w-5 h-5" />
           </div>
         </div>

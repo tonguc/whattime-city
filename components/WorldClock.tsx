@@ -125,7 +125,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
       
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-8">
         <header className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
-          <button onClick={handleLogoClick} className="text-left hover:opacity-80 transition-opacity">
+          <button onClick={handleLogoClick} className="text-left hover:opacity-80 transition-opacity" title="Click to detect your location">
             <h1 className={`text-2xl font-bold ${theme.text}`}>
               whattime<span className={theme.accentClass}>.city</span>
             </h1>
@@ -140,7 +140,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                 <button
                   key={mode}
                   onClick={() => setClockMode(mode)}
-                  className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all capitalize ${
+                  title={mode === 'digital' ? 'Digital: Show time as numbers' : 'Analog: Show time as clock face'}
+                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all capitalize ${
                     clockMode === mode
                       ? `${theme.accentBg} text-white shadow-lg`
                       : isLight ? 'text-slate-600' : 'text-slate-400'
@@ -154,7 +155,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
               <button
                 onClick={() => setUse12Hour(false)}
-                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
+                title="24-hour format (00:00 - 23:59)"
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
                   !use12Hour
                     ? `${theme.accentBg} text-white shadow-lg`
                     : isLight ? 'text-slate-600' : 'text-slate-400'
@@ -164,7 +166,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               </button>
               <button
                 onClick={() => setUse12Hour(true)}
-                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
+                title="12-hour format with AM/PM"
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
                   use12Hour
                     ? `${theme.accentBg} text-white shadow-lg`
                     : isLight ? 'text-slate-600' : 'text-slate-400'
@@ -187,7 +190,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             )}
             
             <div className="mt-8 text-center">
-              <h2 className={`text-4xl md:text-5xl font-light ${theme.text}`}>
+              <h2 className={`text-4xl md:text-5xl font-medium ${theme.text}`}>
                 {selectedCity.city}
               </h2>
               <p className={`text-lg mt-1 ${theme.textMuted}`}>{selectedCity.country}</p>
@@ -244,19 +247,19 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         
         <footer className="mt-8 text-center">
           <div className={`flex flex-wrap justify-center gap-4 mb-4 text-sm ${theme.textMuted}`}>
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1.5 cursor-help" title="Night: After sunset until dawn">
               <TimeIcons.night className="w-4 h-4" />
               <span>{t.night}</span>
             </div>
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1.5 cursor-help" title="Dawn: 30 minutes before and after sunrise">
               <TimeIcons.dawn className="w-4 h-4" />
               <span>{t.dawn}</span>
             </div>
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1.5 cursor-help" title="Day: After dawn until dusk">
               <TimeIcons.day className="w-4 h-4" />
               <span>{t.day}</span>
             </div>
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1.5 cursor-help" title="Dusk: 30 minutes before and after sunset">
               <TimeIcons.dusk className="w-4 h-4" />
               <span>{t.dusk}</span>
             </div>
