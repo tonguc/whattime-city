@@ -63,6 +63,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   const [weather, setWeather] = useState<WeatherData | null>(null)
   const [weatherAnimation, setWeatherAnimation] = useState<WeatherAnimation>('clear')
   const [selectedContinent, setSelectedContinent] = useState<Continent>('all')
+  const [continentFilter, setContinentFilter] = useState('')
   
   // Alarm states
   const [showAlarmModal, setShowAlarmModal] = useState(false)
@@ -285,7 +286,10 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               {(['all', 'americas', 'europe', 'asia', 'africa', 'oceania'] as Continent[]).map((continent) => (
                 <button
                   key={continent}
-                  onClick={() => setSelectedContinent(continent)}
+                  onClick={() => {
+                    setSelectedContinent(continent)
+                    setContinentFilter('')
+                  }}
                   className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
                     selectedContinent === continent
                       ? `${theme.accentBg} text-white shadow`
@@ -298,8 +302,45 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             </div>
           </div>
           
+          {/* Continent Filter - only show when a specific continent is selected */}
+          {selectedContinent !== 'all' && (
+            <div className="flex items-center gap-3 mb-4">
+              <div className={`flex items-center gap-2 flex-1 max-w-xs px-3 py-2 rounded-xl ${isLight ? 'bg-white/60' : 'bg-slate-800/60'}`}>
+                <svg className={`w-4 h-4 ${theme.textMuted}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input
+                  type="text"
+                  value={continentFilter}
+                  onChange={(e) => setContinentFilter(e.target.value)}
+                  placeholder={`Filter ${t[selectedContinent]}...`}
+                  className={`bg-transparent outline-none text-sm w-full ${theme.text} placeholder:${theme.textMuted}`}
+                />
+                {continentFilter && (
+                  <button onClick={() => setContinentFilter('')} className={`${theme.textMuted} hover:${theme.text}`}>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                )}
+              </div>
+              <span className={`text-sm ${theme.textMuted}`}>
+                {getCitiesByContinent(selectedContinent).filter(city => 
+                  city.city.toLowerCase().includes(continentFilter.toLowerCase()) ||
+                  city.country.toLowerCase().includes(continentFilter.toLowerCase())
+                ).length} cities
+              </span>
+            </div>
+          )}
+          
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {getCitiesByContinent(selectedContinent).map((city) => (
+            {getCitiesByContinent(selectedContinent)
+              .filter(city => 
+                selectedContinent === 'all' || !continentFilter ||
+                city.city.toLowerCase().includes(continentFilter.toLowerCase()) ||
+                city.country.toLowerCase().includes(continentFilter.toLowerCase())
+              )
+              .map((city) => (
               <CityCard
                 key={city.slug}
                 city={city}
