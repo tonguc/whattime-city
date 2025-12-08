@@ -76,6 +76,25 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
     return () => clearInterval(timer)
   }, [])
   
+  // Detect user location and set nearest city (only on initial load without initialCity)
+  useEffect(() => {
+    if (initialCity) return // Skip if city is provided via URL
+    
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const nearest = findNearestCity(position.coords.latitude, position.coords.longitude)
+          setSelectedCity(nearest)
+        },
+        (error) => {
+          // User denied or error - keep default city
+          console.log('Geolocation not available:', error.message)
+        },
+        { timeout: 5000, maximumAge: 300000 } // 5s timeout, cache for 5min
+      )
+    }
+  }, [initialCity])
+  
   // Check alarms every second
   useEffect(() => {
     const checkAlarms = () => {
