@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { WeatherAnimation } from '@/lib/weather'
 
 interface WeatherBackgroundProps {
@@ -9,7 +10,7 @@ interface WeatherBackgroundProps {
 
 export default function WeatherBackground({ animation, isDay }: WeatherBackgroundProps) {
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
       {animation === 'rain' && <RainAnimation />}
       {animation === 'drizzle' && <DrizzleAnimation />}
       {animation === 'snow' && <SnowAnimation />}
@@ -22,175 +23,232 @@ export default function WeatherBackground({ animation, isDay }: WeatherBackgroun
 }
 
 function RainAnimation() {
+  const [drops, setDrops] = useState<Array<{ id: number; left: number; delay: number; duration: number }>>([])
+  
+  useEffect(() => {
+    const newDrops = Array.from({ length: 50 }, (_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      delay: Math.random() * 2,
+      duration: 0.5 + Math.random() * 0.5
+    }))
+    setDrops(newDrops)
+  }, [])
+  
   return (
-    <div className="absolute inset-0">
-      {[...Array(50)].map((_, i) => (
-        <div
-          key={i}
-          className="absolute w-0.5 bg-gradient-to-b from-transparent via-blue-400/40 to-blue-400/60 rounded-full"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `-${Math.random() * 20}%`,
-            height: `${15 + Math.random() * 20}px`,
-            animation: `rain ${0.5 + Math.random() * 0.5}s linear infinite`,
-            animationDelay: `${Math.random() * 2}s`,
-          }}
-        />
-      ))}
-      <style jsx>{`
-        @keyframes rain {
+    <>
+      <style>{`
+        @keyframes rainFall {
           0% { transform: translateY(-100%); opacity: 0; }
           10% { opacity: 1; }
           90% { opacity: 1; }
           100% { transform: translateY(100vh); opacity: 0; }
         }
       `}</style>
-    </div>
+      {drops.map((drop) => (
+        <div
+          key={drop.id}
+          className="absolute w-0.5 bg-gradient-to-b from-transparent via-blue-400/40 to-blue-400/60 rounded-full"
+          style={{
+            left: `${drop.left}%`,
+            top: '-20px',
+            height: '20px',
+            animation: `rainFall ${drop.duration}s linear infinite`,
+            animationDelay: `${drop.delay}s`,
+          }}
+        />
+      ))}
+    </>
   )
 }
 
 function DrizzleAnimation() {
+  const [drops, setDrops] = useState<Array<{ id: number; left: number; delay: number; duration: number }>>([])
+  
+  useEffect(() => {
+    const newDrops = Array.from({ length: 25 }, (_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      delay: Math.random() * 3,
+      duration: 1 + Math.random() * 1
+    }))
+    setDrops(newDrops)
+  }, [])
+  
   return (
-    <div className="absolute inset-0">
-      {[...Array(25)].map((_, i) => (
-        <div
-          key={i}
-          className="absolute w-0.5 bg-gradient-to-b from-transparent to-blue-300/40 rounded-full"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `-${Math.random() * 10}%`,
-            height: `${8 + Math.random() * 12}px`,
-            animation: `drizzle ${1 + Math.random() * 1}s linear infinite`,
-            animationDelay: `${Math.random() * 3}s`,
-          }}
-        />
-      ))}
-      <style jsx>{`
-        @keyframes drizzle {
+    <>
+      <style>{`
+        @keyframes drizzleFall {
           0% { transform: translateY(-100%); opacity: 0; }
           10% { opacity: 0.7; }
           90% { opacity: 0.7; }
           100% { transform: translateY(100vh); opacity: 0; }
         }
       `}</style>
-    </div>
+      {drops.map((drop) => (
+        <div
+          key={drop.id}
+          className="absolute w-0.5 bg-gradient-to-b from-transparent to-blue-300/40 rounded-full"
+          style={{
+            left: `${drop.left}%`,
+            top: '-15px',
+            height: '12px',
+            animation: `drizzleFall ${drop.duration}s linear infinite`,
+            animationDelay: `${drop.delay}s`,
+          }}
+        />
+      ))}
+    </>
   )
 }
 
 function SnowAnimation() {
+  const [flakes, setFlakes] = useState<Array<{ id: number; left: number; delay: number; duration: number; size: number }>>([])
+  
+  useEffect(() => {
+    const newFlakes = Array.from({ length: 40 }, (_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      delay: Math.random() * 5,
+      duration: 3 + Math.random() * 4,
+      size: 3 + Math.random() * 5
+    }))
+    setFlakes(newFlakes)
+  }, [])
+  
   return (
-    <div className="absolute inset-0">
-      {[...Array(40)].map((_, i) => (
-        <div
-          key={i}
-          className="absolute rounded-full bg-white/70"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `-5%`,
-            width: `${3 + Math.random() * 5}px`,
-            height: `${3 + Math.random() * 5}px`,
-            animation: `snow ${3 + Math.random() * 4}s linear infinite`,
-            animationDelay: `${Math.random() * 5}s`,
-          }}
-        />
-      ))}
-      <style jsx>{`
-        @keyframes snow {
+    <>
+      <style>{`
+        @keyframes snowFall {
           0% { transform: translateY(-100%) translateX(0); opacity: 0; }
           10% { opacity: 1; }
           90% { opacity: 1; }
-          100% { transform: translateY(100vh) translateX(${Math.random() > 0.5 ? '' : '-'}50px); opacity: 0; }
+          100% { transform: translateY(100vh) translateX(30px); opacity: 0; }
         }
       `}</style>
-    </div>
+      {flakes.map((flake) => (
+        <div
+          key={flake.id}
+          className="absolute rounded-full bg-white/70"
+          style={{
+            left: `${flake.left}%`,
+            top: '-10px',
+            width: `${flake.size}px`,
+            height: `${flake.size}px`,
+            animation: `snowFall ${flake.duration}s linear infinite`,
+            animationDelay: `${flake.delay}s`,
+          }}
+        />
+      ))}
+    </>
   )
 }
 
 function ThunderAnimation() {
+  const [flash, setFlash] = useState(false)
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFlash(true)
+      setTimeout(() => setFlash(false), 100)
+      setTimeout(() => {
+        setFlash(true)
+        setTimeout(() => setFlash(false), 50)
+      }, 150)
+    }, 4000 + Math.random() * 3000)
+    
+    return () => clearInterval(interval)
+  }, [])
+  
   return (
-    <div className="absolute inset-0">
+    <>
       <RainAnimation />
       <div 
-        className="absolute inset-0 bg-white/0"
-        style={{
-          animation: 'lightning 4s infinite',
-        }}
+        className={`absolute inset-0 transition-colors duration-100 ${flash ? 'bg-white/30' : 'bg-transparent'}`}
       />
-      <style jsx>{`
-        @keyframes lightning {
-          0%, 89%, 91%, 93%, 95%, 100% { background-color: transparent; }
-          90%, 92%, 94% { background-color: rgba(255, 255, 255, 0.3); }
-        }
-      `}</style>
-    </div>
+    </>
   )
 }
 
 function CloudsAnimation() {
+  const [clouds, setClouds] = useState<Array<{ id: number; top: number; duration: number; delay: number; width: number; height: number }>>([])
+  
+  useEffect(() => {
+    const newClouds = Array.from({ length: 5 }, (_, i) => ({
+      id: i,
+      top: 10 + Math.random() * 30,
+      duration: 20 + Math.random() * 10,
+      delay: i * 4,
+      width: 150 + Math.random() * 100,
+      height: 60 + Math.random() * 40
+    }))
+    setClouds(newClouds)
+  }, [])
+  
   return (
-    <div className="absolute inset-0">
-      {[...Array(5)].map((_, i) => (
+    <>
+      <style>{`
+        @keyframes cloudMove {
+          0% { transform: translateX(-200px); }
+          100% { transform: translateX(calc(100vw + 200px)); }
+        }
+      `}</style>
+      {clouds.map((cloud) => (
         <div
-          key={i}
+          key={cloud.id}
           className="absolute bg-white/20 rounded-full blur-2xl"
           style={{
-            left: `${-20 + i * 25}%`,
-            top: `${10 + Math.random() * 20}%`,
-            width: `${150 + Math.random() * 100}px`,
-            height: `${60 + Math.random() * 40}px`,
-            animation: `clouds ${20 + Math.random() * 10}s linear infinite`,
-            animationDelay: `${i * 3}s`,
+            top: `${cloud.top}%`,
+            left: '-200px',
+            width: `${cloud.width}px`,
+            height: `${cloud.height}px`,
+            animation: `cloudMove ${cloud.duration}s linear infinite`,
+            animationDelay: `${cloud.delay}s`,
           }}
         />
       ))}
-      <style jsx>{`
-        @keyframes clouds {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(100vw); }
-        }
-      `}</style>
-    </div>
+    </>
   )
 }
 
 function FogAnimation() {
   return (
-    <div className="absolute inset-0">
-      {[...Array(3)].map((_, i) => (
+    <>
+      <style>{`
+        @keyframes fogMove {
+          0%, 100% { opacity: 0.2; transform: translateX(-5%); }
+          50% { opacity: 0.4; transform: translateX(5%); }
+        }
+      `}</style>
+      {[0, 1, 2].map((i) => (
         <div
           key={i}
           className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
           style={{
-            animation: `fog ${8 + i * 2}s ease-in-out infinite`,
+            animation: `fogMove ${8 + i * 2}s ease-in-out infinite`,
             animationDelay: `${i * 2}s`,
           }}
         />
       ))}
-      <style jsx>{`
-        @keyframes fog {
-          0%, 100% { opacity: 0.3; transform: translateX(-10%); }
-          50% { opacity: 0.5; transform: translateX(10%); }
-        }
-      `}</style>
-    </div>
+    </>
   )
 }
 
 function SunAnimation() {
   return (
-    <div className="absolute top-10 right-10">
-      <div 
-        className="w-20 h-20 rounded-full bg-yellow-300/30 blur-xl"
-        style={{
-          animation: 'sunPulse 3s ease-in-out infinite',
-        }}
-      />
-      <style jsx>{`
+    <>
+      <style>{`
         @keyframes sunPulse {
           0%, 100% { transform: scale(1); opacity: 0.3; }
           50% { transform: scale(1.2); opacity: 0.5; }
         }
       `}</style>
-    </div>
+      <div 
+        className="absolute top-10 right-10 w-24 h-24 rounded-full bg-yellow-300/30 blur-2xl"
+        style={{
+          animation: 'sunPulse 3s ease-in-out infinite',
+        }}
+      />
+    </>
   )
 }
