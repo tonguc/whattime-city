@@ -1,8 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { City, cities } from '@/lib/cities'
-import { getTimeOfDay, getSunTimes, formatSunTime } from '@/lib/sun-calculator'
+import { City, getTier1Cities } from '@/lib/cities'
+import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import { translations, detectLanguage, Language } from '@/lib/translations'
 import DigitalClock from '@/components/DigitalClock'
@@ -11,13 +11,15 @@ import SunInfoCard from '@/components/SunInfoCard'
 import ThemeToggle from '@/components/ThemeToggle'
 import CityCard from '@/components/CityCard'
 import TimeIcons from '@/components/TimeIcons'
+import Search from '@/components/Search'
 
 interface WorldClockProps {
   initialCity?: City
 }
 
 export default function WorldClock({ initialCity }: WorldClockProps) {
-  const [selectedCity, setSelectedCity] = useState<City>(initialCity || cities[0])
+  const defaultCity = initialCity || getTier1Cities()[0]
+  const [selectedCity, setSelectedCity] = useState<City>(defaultCity)
   const [time, setTime] = useState(new Date())
   const [themeMode, setThemeMode] = useState<'auto' | 'light' | 'dark'>('auto')
   const [clockMode, setClockMode] = useState<'digital' | 'analog'>('digital')
@@ -50,7 +52,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
     timeZoneName: 'short' 
   }).split(' ').pop()
   
-  const featuredCities = cities.slice(0, 12)
+  // Always show Tier 1 global cities
+  const featuredCities = getTier1Cities()
   
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-all duration-1000`}>
@@ -68,7 +71,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             <p className={`text-sm ${theme.textMuted}`}>{t.worldClock}</p>
           </div>
           
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Search theme={theme} currentTheme={currentTheme} />
             <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
               {(['digital', 'analog'] as const).map((mode) => (
                 <button
