@@ -292,7 +292,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                       : isLight ? 'text-slate-600 hover:bg-white' : 'text-slate-400 hover:bg-slate-700'
                   }`}
                 >
-                  {continentLabels[continent]}
+                  {continent === 'all' ? t.topCities : t[continent]}
                 </button>
               ))}
             </div>

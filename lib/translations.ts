@@ -24,6 +24,12 @@ export interface Translations {
   currentTime: string
   timeIn: string
   metaDescription: string
+  topCities: string
+  americas: string
+  europe: string
+  asia: string
+  africa: string
+  oceania: string
 }
 
 export const translations: Record<Language, Translations> = {
@@ -50,7 +56,13 @@ export const translations: Record<Language, Translations> = {
     themeDarkTooltip: 'Always dark theme',
     currentTime: 'Current Time',
     timeIn: 'Time in',
-    metaDescription: 'Current local time, sunrise and sunset times'
+    metaDescription: 'Current local time, sunrise and sunset times',
+    topCities: 'Top Cities',
+    americas: 'Americas',
+    europe: 'Europe',
+    asia: 'Asia',
+    africa: 'Africa',
+    oceania: 'Oceania'
   },
   tr: {
     worldClock: 'Dünya Saati',
@@ -75,7 +87,13 @@ export const translations: Record<Language, Translations> = {
     themeDarkTooltip: 'Her zaman koyu tema',
     currentTime: 'Şu Anki Saat',
     timeIn: 'Saat',
-    metaDescription: 'Şu anki yerel saat, gün doğumu ve batımı saatleri'
+    metaDescription: 'Şu anki yerel saat, gün doğumu ve batımı saatleri',
+    topCities: 'Popüler Şehirler',
+    americas: 'Amerika',
+    europe: 'Avrupa',
+    asia: 'Asya',
+    africa: 'Afrika',
+    oceania: 'Okyanusya'
   },
   de: {
     worldClock: 'Weltzeituhr',
@@ -100,7 +118,13 @@ export const translations: Record<Language, Translations> = {
     themeDarkTooltip: 'Immer dunkles Design',
     currentTime: 'Aktuelle Zeit',
     timeIn: 'Zeit in',
-    metaDescription: 'Aktuelle Ortszeit, Sonnenaufgang und Sonnenuntergang'
+    metaDescription: 'Aktuelle Ortszeit, Sonnenaufgang und Sonnenuntergang',
+    topCities: 'Top Städte',
+    americas: 'Amerika',
+    europe: 'Europa',
+    asia: 'Asien',
+    africa: 'Afrika',
+    oceania: 'Ozeanien'
   },
   fr: {
     worldClock: 'Horloge Mondiale',
@@ -125,7 +149,13 @@ export const translations: Record<Language, Translations> = {
     themeDarkTooltip: 'Toujours thème sombre',
     currentTime: 'Heure actuelle',
     timeIn: 'Heure à',
-    metaDescription: 'Heure locale actuelle, lever et coucher du soleil'
+    metaDescription: 'Heure locale actuelle, lever et coucher du soleil',
+    topCities: 'Grandes Villes',
+    americas: 'Amériques',
+    europe: 'Europe',
+    asia: 'Asie',
+    africa: 'Afrique',
+    oceania: 'Océanie'
   },
   es: {
     worldClock: 'Reloj Mundial',
@@ -150,7 +180,13 @@ export const translations: Record<Language, Translations> = {
     themeDarkTooltip: 'Siempre tema oscuro',
     currentTime: 'Hora actual',
     timeIn: 'Hora en',
-    metaDescription: 'Hora local actual, amanecer y atardecer'
+    metaDescription: 'Hora local actual, amanecer y atardecer',
+    topCities: 'Ciudades Principales',
+    americas: 'América',
+    europe: 'Europa',
+    asia: 'Asia',
+    africa: 'África',
+    oceania: 'Oceanía'
   },
   pt: {
     worldClock: 'Relógio Mundial',
@@ -175,7 +211,13 @@ export const translations: Record<Language, Translations> = {
     themeDarkTooltip: 'Sempre tema escuro',
     currentTime: 'Hora atual',
     timeIn: 'Hora em',
-    metaDescription: 'Hora local atual, nascer e pôr do sol'
+    metaDescription: 'Hora local atual, nascer e pôr do sol',
+    topCities: 'Principais Cidades',
+    americas: 'Américas',
+    europe: 'Europa',
+    asia: 'Ásia',
+    africa: 'África',
+    oceania: 'Oceania'
   },
   ru: {
     worldClock: 'Мировые часы',
@@ -200,7 +242,13 @@ export const translations: Record<Language, Translations> = {
     themeDarkTooltip: 'Всегда тёмная тема',
     currentTime: 'Текущее время',
     timeIn: 'Время в',
-    metaDescription: 'Текущее местное время, восход и закат'
+    metaDescription: 'Текущее местное время, восход и закат',
+    topCities: 'Крупные города',
+    americas: 'Америка',
+    europe: 'Европа',
+    asia: 'Азия',
+    africa: 'Африка',
+    oceania: 'Океания'
   },
   ar: {
     worldClock: 'الساعة العالمية',
@@ -225,7 +273,13 @@ export const translations: Record<Language, Translations> = {
     themeDarkTooltip: 'دائماً السمة الداكنة',
     currentTime: 'الوقت الحالي',
     timeIn: 'الوقت في',
-    metaDescription: 'الوقت المحلي الحالي وأوقات شروق وغروب الشمس'
+    metaDescription: 'الوقت المحلي الحالي وأوقات شروق وغروب الشمس',
+    topCities: 'أهم المدن',
+    americas: 'الأمريكتان',
+    europe: 'أوروبا',
+    asia: 'آسيا',
+    africa: 'أفريقيا',
+    oceania: 'أوقيانوسيا'
   },
   ja: {
     worldClock: '世界時計',
@@ -250,7 +304,13 @@ export const translations: Record<Language, Translations> = {
     themeDarkTooltip: '常にダークテーマ',
     currentTime: '現在時刻',
     timeIn: '時刻',
-    metaDescription: '現在の現地時間、日の出と日没'
+    metaDescription: '現在の現地時間、日の出と日没',
+    topCities: '主要都市',
+    americas: 'アメリカ',
+    europe: 'ヨーロッパ',
+    asia: 'アジア',
+    africa: 'アフリカ',
+    oceania: 'オセアニア'
   },
   zh: {
     worldClock: '世界时钟',
@@ -275,7 +335,13 @@ export const translations: Record<Language, Translations> = {
     themeDarkTooltip: '始终深色主题',
     currentTime: '当前时间',
     timeIn: '时间',
-    metaDescription: '当前当地时间、日出和日落'
+    metaDescription: '当前当地时间、日出和日落',
+    topCities: '热门城市',
+    americas: '美洲',
+    europe: '欧洲',
+    asia: '亚洲',
+    africa: '非洲',
+    oceania: '大洋洲'
   },
   ko: {
     worldClock: '세계 시계',
@@ -300,7 +366,13 @@ export const translations: Record<Language, Translations> = {
     themeDarkTooltip: '항상 다크 테마',
     currentTime: '현재 시간',
     timeIn: '시간',
-    metaDescription: '현재 현지 시간, 일출 및 일몰'
+    metaDescription: '현재 현지 시간, 일출 및 일몰',
+    topCities: '주요 도시',
+    americas: '아메리카',
+    europe: '유럽',
+    asia: '아시아',
+    africa: '아프리카',
+    oceania: '오세아니아'
   },
   it: {
     worldClock: 'Orologio Mondiale',
@@ -325,7 +397,13 @@ export const translations: Record<Language, Translations> = {
     themeDarkTooltip: 'Sempre tema scuro',
     currentTime: 'Ora attuale',
     timeIn: 'Ora a',
-    metaDescription: 'Ora locale attuale, alba e tramonto'
+    metaDescription: 'Ora locale attuale, alba e tramonto',
+    topCities: 'Città Principali',
+    americas: 'Americhe',
+    europe: 'Europa',
+    asia: 'Asia',
+    africa: 'Africa',
+    oceania: 'Oceania'
   },
   nl: {
     worldClock: 'Wereldklok',
@@ -350,7 +428,13 @@ export const translations: Record<Language, Translations> = {
     themeDarkTooltip: 'Altijd donker thema',
     currentTime: 'Huidige tijd',
     timeIn: 'Tijd in',
-    metaDescription: 'Huidige lokale tijd, zonsopgang en zonsondergang'
+    metaDescription: 'Huidige lokale tijd, zonsopgang en zonsondergang',
+    topCities: 'Grote Steden',
+    americas: 'Amerika',
+    europe: 'Europa',
+    asia: 'Azië',
+    africa: 'Afrika',
+    oceania: 'Oceanië'
   }
 }
 
