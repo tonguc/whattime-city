@@ -16,6 +16,20 @@ import TimeIcons from '@/components/TimeIcons'
 import Search from '@/components/Search'
 import WeatherBackground from '@/components/WeatherBackground'
 import WeatherBadge from '@/components/WeatherBadge'
+import AlarmModal, { ActiveAlarmPopup } from '@/components/AlarmModal'
+
+// Alarm type definition
+interface Alarm {
+  id: number
+  city: City
+  hour: string
+  minute: string
+  period: string | null
+  displayTime: string
+  label: string
+  localTriggerTime: number
+  active: boolean
+}
 
 interface WorldClockProps {
   initialCity?: City
@@ -49,11 +63,49 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   const [weather, setWeather] = useState<WeatherData | null>(null)
   const [weatherAnimation, setWeatherAnimation] = useState<WeatherAnimation>('clear')
   
+  // Alarm states
+  const [showAlarmModal, setShowAlarmModal] = useState(false)
+  const [alarms, setAlarms] = useState<Alarm[]>([])
+  const [activeAlarm, setActiveAlarm] = useState<Alarm | null>(null)
+  
   useEffect(() => {
     setLang(detectLanguage())
     const timer = setInterval(() => setTime(new Date()), 1000)
     return () => clearInterval(timer)
   }, [])
+  
+  // Check alarms every second
+  useEffect(() => {
+    const checkAlarms = () => {
+      const now = Date.now()
+      alarms.forEach(alarm => {
+        if (alarm.active && alarm.localTriggerTime <= now && alarm.localTriggerTime > now - 60000) {
+          setActiveAlarm(alarm)
+          
+          // Browser notification
+          if ('Notification' in window && Notification.permission === 'granted') {
+            new Notification(`⏰ ${alarm.label}`, {
+              body: `It's ${alarm.displayTime} in ${alarm.city.city}!`
+            })
+          }
+          
+          // Play sound
+          try {
+            const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2teleogAAAGqzN3YpHVRQmm01NvOq3dPOVah0+Dpv4lfPWee0OfTq3JGP3Cn0+bcoXJDPXGl0OXZn29APXCjz+TYn25APHCjz+TYn25APHCjzuTYn25APHCjzuTYn25APHCjzuTYn25APHCjzuTYn25APHCjzuTYn25APHCjzuTYn25A')
+            audio.play()
+          } catch (e) {}
+          
+          // Mark as triggered
+          setAlarms(prev => prev.map(a => 
+            a.id === alarm.id ? { ...a, active: false } : a
+          ))
+        }
+      })
+    }
+    
+    const interval = setInterval(checkAlarms, 1000)
+    return () => clearInterval(interval)
+  }, [alarms])
   
   // Update 12h format when city changes
   useEffect(() => {
@@ -178,6 +230,24 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             </div>
             
             <ThemeToggle mode={themeMode} setMode={setThemeMode} currentTheme={currentTheme} t={t} themeData={theme} />
+            
+            {/* Alert Button */}
+            <button 
+              onClick={() => setShowAlarmModal(true)} 
+              title="Set time alert for any city"
+              className={`relative flex items-center gap-2 px-4 py-1.5 rounded-full transition-all ${isLight ? 'bg-white/60 hover:bg-white/80 text-slate-600' : 'bg-slate-800/60 hover:bg-slate-700/60 text-slate-300'} backdrop-blur-xl`}
+            >
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+              </svg>
+              <span className="text-sm font-medium">Alert</span>
+              {alarms.filter(a => a.active).length > 0 && (
+                <span className={`absolute -top-1 -right-1 w-5 h-5 flex items-center justify-center text-xs font-bold rounded-full ${theme.accentBg} text-white`}>
+                  {alarms.filter(a => a.active).length}
+                </span>
+              )}
+            </button>
           </div>
         </header>
         
@@ -264,6 +334,24 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </p>
         </footer>
       </div>
+      
+      {/* Alarm Modal */}
+      <AlarmModal
+        isOpen={showAlarmModal}
+        onClose={() => setShowAlarmModal(false)}
+        isLight={isLight}
+        theme={theme}
+        alarms={alarms}
+        setAlarms={setAlarms}
+      />
+      
+      {/* Active Alarm Popup */}
+      <ActiveAlarmPopup
+        alarm={activeAlarm}
+        onDismiss={() => setActiveAlarm(null)}
+        isLight={isLight}
+        theme={theme}
+      />
     </div>
   )
 }
