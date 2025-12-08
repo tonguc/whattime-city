@@ -24,7 +24,9 @@ export default function DigitalClock({ time, theme, themeData, use12Hour }: Digi
     displayHours = hours24
   }
   
-  const h = displayHours.toString().padStart(2, '0')
+  const h = use12Hour 
+    ? displayHours.toString() // No padding for 12h
+    : displayHours.toString().padStart(2, '0') // Pad for 24h
   const m = minutes.toString().padStart(2, '0')
   const s = seconds.toString().padStart(2, '0')
   
@@ -34,28 +36,36 @@ export default function DigitalClock({ time, theme, themeData, use12Hour }: Digi
   const secColor = isLight ? 'text-slate-500' : 'text-slate-400'
   const accentColor = themeData.accentClass
   
-  const Segment = ({ value, className }: { value: string, className: string }) => (
-    <span 
-      className={`inline-block text-center ${className}`}
-      style={{ width: '1.3em' }}
-    >
-      {value}
-    </span>
-  )
-  
   return (
     <div className="flex flex-col items-center">
-      <div className="flex items-center font-semibold" style={{ fontSize: 'clamp(60px, 12vw, 96px)' }}>
-        <Segment value={h} className={mainColor} />
-        <span className={`${accentColor} animate-pulse`}>:</span>
-        <Segment value={m} className={mainColor} />
-        <span className={`${accentColor} animate-pulse`}>:</span>
-        <Segment value={s} className={secColor} />
-        {use12Hour && (
-          <span className={`ml-2 text-2xl font-medium ${secColor}`} style={{ fontSize: 'clamp(18px, 3vw, 28px)' }}>
-            {period}
+      {/* Fixed width container to prevent layout shift */}
+      <div 
+        className="flex items-center justify-center font-semibold"
+        style={{ 
+          fontSize: 'clamp(48px, 10vw, 96px)',
+        }}
+      >
+        {/* Time digits with fixed width */}
+        <div className="flex items-center" style={{ fontVariantNumeric: 'tabular-nums' }}>
+          <span className={`inline-block text-right ${mainColor}`} style={{ width: '1.15em' }}>{h}</span>
+          <span className={`${accentColor} animate-pulse`}>:</span>
+          <span className={`inline-block text-center ${mainColor}`} style={{ width: '1.15em' }}>{m}</span>
+          <span className={`${accentColor} animate-pulse`}>:</span>
+          <span className={`inline-block text-center ${secColor}`} style={{ width: '1.15em' }}>{s}</span>
+          
+          {/* AM/PM with fixed width - always takes space */}
+          <span 
+            className={`font-medium ${use12Hour ? secColor : 'text-transparent'}`}
+            style={{ 
+              fontSize: '0.3em',
+              width: '2.2em',
+              marginLeft: '0.2em',
+              textAlign: 'left'
+            }}
+          >
+            {use12Hour ? period : 'AM'}
           </span>
-        )}
+        </div>
       </div>
     </div>
   )
