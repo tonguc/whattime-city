@@ -31,16 +31,13 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   
   const t = translations[lang]
   
-  // Şehrin yerel saati
   const localTime = new Date(time.toLocaleString('en-US', { timeZone: selectedCity.timezone }))
   
-  // Otomatik tema hesaplama
   const autoTheme = getTimeOfDay(localTime, selectedCity.lat, selectedCity.lng)
   const currentTheme = themeMode === 'auto' ? autoTheme : themeMode
   const theme = themes[currentTheme]
   const isLight = isLightTheme(currentTheme)
   
-  // Tarih ve saat formatı
   const dateStr = localTime.toLocaleDateString(lang, { 
     weekday: 'long', 
     year: 'numeric', 
@@ -53,19 +50,16 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
     timeZoneName: 'short' 
   }).split(' ').pop()
   
-  // Featured şehirler (12 tane)
   const featuredCities = cities.slice(0, 12)
   
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-all duration-1000`}>
-      {/* Ambient */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className={`absolute -top-1/4 -left-1/4 w-[800px] h-[800px] ${theme.glow} rounded-full blur-3xl opacity-60`}/>
         <div className={`absolute -bottom-1/4 -right-1/4 w-[600px] h-[600px] ${theme.glow} rounded-full blur-3xl opacity-40`}/>
       </div>
       
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-8">
-        {/* Header */}
         <header className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
           <div>
             <h1 className={`text-2xl font-bold ${theme.text}`}>
@@ -75,7 +69,6 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
           
           <div className="flex items-center gap-3">
-            {/* Clock Mode */}
             <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
               {(['digital', 'analog'] as const).map((mode) => (
                 <button
@@ -95,7 +88,6 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         </header>
         
-        {/* Main Clock */}
         <div className={`rounded-3xl p-8 md:p-10 mb-6 backdrop-blur-xl border ${theme.card}`}>
           <div className="flex flex-col items-center">
             {clockMode === 'analog' ? (
@@ -118,20 +110,21 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                   {offset}
                 </span>
                 <span className={`px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1.5 ${theme.accentBgLight} ${theme.accentClass}`}>
-                  {TimeIcons[autoTheme]({ className: 'w-4 h-4' })}
+                  {(() => {
+                    const Icon = TimeIcons[autoTheme]
+                    return Icon ? <Icon className="w-4 h-4" /> : null
+                  })()}
                   {t[autoTheme]}
                 </span>
               </div>
             </div>
             
-            {/* Sun Info */}
             <div className="mt-6 w-full max-w-xs">
               <SunInfoCard city={selectedCity} localTime={localTime} theme={currentTheme} t={t} />
             </div>
           </div>
         </div>
         
-        {/* World Cities */}
         <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card}`}>
           <h3 className={`text-lg font-semibold mb-4 ${theme.text}`}>
             {t.worldCities}
@@ -150,24 +143,22 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         </div>
         
-        {/* Footer */}
         <footer className="mt-8 text-center">
-          {/* İkon Açıklamaları */}
           <div className={`flex flex-wrap justify-center gap-4 mb-4 text-sm ${theme.textMuted}`}>
             <div className="flex items-center gap-1.5">
-              {TimeIcons.night({ className: 'w-4 h-4' })}
+              <TimeIcons.night className="w-4 h-4" />
               <span>{t.night}</span>
             </div>
             <div className="flex items-center gap-1.5">
-              {TimeIcons.dawn({ className: 'w-4 h-4' })}
+              <TimeIcons.dawn className="w-4 h-4" />
               <span>{t.dawn}</span>
             </div>
             <div className="flex items-center gap-1.5">
-              {TimeIcons.day({ className: 'w-4 h-4' })}
+              <TimeIcons.day className="w-4 h-4" />
               <span>{t.day}</span>
             </div>
             <div className="flex items-center gap-1.5">
-              {TimeIcons.dusk({ className: 'w-4 h-4' })}
+              <TimeIcons.dusk className="w-4 h-4" />
               <span>{t.dusk}</span>
             </div>
           </div>
