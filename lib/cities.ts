@@ -13,7 +13,7 @@ export interface City {
 export type Continent = 'all' | 'americas' | 'europe' | 'asia' | 'africa' | 'oceania'
 
 export const continentLabels: Record<Continent, string> = {
-  all: 'All',
+  all: 'Top Cities',
   americas: 'Americas',
   europe: 'Europe',
   asia: 'Asia',
