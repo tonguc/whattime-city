@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import Link from 'next/link'
-import { City, getTier1Cities, uses12HourFormat, getCityBySlug, cities } from '@/lib/cities'
+import { City, getTier1Cities, uses12HourFormat, cities } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import { translations, detectLanguage, Language } from '@/lib/translations'
+import { getWeather, WeatherData, getWeatherAnimation, WeatherAnimation } from '@/lib/weather'
 import DigitalClock from '@/components/DigitalClock'
 import AnalogClock from '@/components/AnalogClock'
 import SunInfoCard from '@/components/SunInfoCard'
@@ -14,12 +14,13 @@ import ThemeToggle from '@/components/ThemeToggle'
 import CityCard from '@/components/CityCard'
 import TimeIcons from '@/components/TimeIcons'
 import Search from '@/components/Search'
+import WeatherBackground from '@/components/WeatherBackground'
+import WeatherBadge from '@/components/WeatherBadge'
 
 interface WorldClockProps {
   initialCity?: City
 }
 
-// Find nearest city by coordinates
 function findNearestCity(lat: number, lng: number): City {
   let nearest = cities[0]
   let minDist = Infinity
@@ -45,6 +46,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   const [clockMode, setClockMode] = useState<'digital' | 'analog'>('digital')
   const [lang, setLang] = useState<Language>('en')
   const [use12Hour, setUse12Hour] = useState(uses12HourFormat(defaultCity.countryCode))
+  const [weather, setWeather] = useState<WeatherData | null>(null)
+  const [weatherAnimation, setWeatherAnimation] = useState<WeatherAnimation>('clear')
   
   useEffect(() => {
     setLang(detectLanguage())
@@ -55,6 +58,18 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   // Update 12h format when city changes
   useEffect(() => {
     setUse12Hour(uses12HourFormat(selectedCity.countryCode))
+  }, [selectedCity])
+  
+  // Fetch weather when city changes
+  useEffect(() => {
+    async function fetchWeather() {
+      const data = await getWeather(selectedCity.city)
+      if (data) {
+        setWeather(data.current)
+        setWeatherAnimation(getWeatherAnimation(data.current.condition.code, data.current.is_day))
+      }
+    }
+    fetchWeather()
   }, [selectedCity])
   
   const t = translations[lang]
@@ -80,7 +95,6 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   
   const featuredCities = getTier1Cities()
   
-  // Handle logo click - get user location
   const handleLogoClick = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -99,7 +113,11 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   }
   
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-all duration-1000`}>
+    <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-all duration-1000 relative`}>
+      {/* Weather Animation Background */}
+      <WeatherBackground animation={weatherAnimation} isDay={weather?.is_day === 1} />
+      
+      {/* Ambient Glow */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className={`absolute -top-1/4 -left-1/4 w-[800px] h-[800px] ${theme.glow} rounded-full blur-3xl opacity-60`}/>
         <div className={`absolute -bottom-1/4 -right-1/4 w-[600px] h-[600px] ${theme.glow} rounded-full blur-3xl opacity-40`}/>
@@ -117,7 +135,6 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
             <Search theme={theme} currentTheme={currentTheme} />
             
-            {/* Clock Mode Toggle */}
             <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
               {(['digital', 'analog'] as const).map((mode) => (
                 <button
@@ -134,7 +151,6 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               ))}
             </div>
             
-            {/* 12/24 Hour Toggle */}
             <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
               <button
                 onClick={() => setUse12Hour(false)}
@@ -162,8 +178,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         </header>
         
-        <div className={`rounded-3xl p-8 md:p-10 mb-6 backdrop-blur-xl border ${theme.card}`}>
-          <div className="flex flex-col items-center">
+        <div className={`rounded-3xl p-8 md:p-10 mb-6 backdrop-blur-xl border ${theme.card} relative overflow-hidden`}>
+          <div className="flex flex-col items-center relative z-10">
             {clockMode === 'analog' ? (
               <AnalogClock time={localTime} theme={currentTheme} themeData={theme} />
             ) : (
@@ -190,6 +206,9 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                   })()}
                   {t[autoTheme]}
                 </span>
+                {weather && (
+                  <WeatherBadge weather={weather} isLight={isLight} />
+                )}
               </div>
             </div>
             
