@@ -174,13 +174,13 @@ function CloudsAnimation() {
   const [clouds, setClouds] = useState<Array<{ id: number; top: number; duration: number; delay: number; width: number; height: number }>>([])
   
   useEffect(() => {
-    const newClouds = Array.from({ length: 5 }, (_, i) => ({
+    const newClouds = Array.from({ length: 6 }, (_, i) => ({
       id: i,
-      top: 10 + Math.random() * 30,
-      duration: 20 + Math.random() * 10,
-      delay: i * 4,
-      width: 150 + Math.random() * 100,
-      height: 60 + Math.random() * 40
+      top: 5 + Math.random() * 25,
+      duration: 25 + Math.random() * 15,
+      delay: i * 5,
+      width: 200 + Math.random() * 150,
+      height: 80 + Math.random() * 60
     }))
     setClouds(newClouds)
   }, [])
@@ -189,17 +189,17 @@ function CloudsAnimation() {
     <>
       <style>{`
         @keyframes cloudMove {
-          0% { transform: translateX(-200px); }
-          100% { transform: translateX(calc(100vw + 200px)); }
+          0% { transform: translateX(-300px); }
+          100% { transform: translateX(calc(100vw + 300px)); }
         }
       `}</style>
       {clouds.map((cloud) => (
         <div
           key={cloud.id}
-          className="absolute bg-white/20 rounded-full blur-2xl"
+          className="absolute bg-white/40 rounded-full blur-3xl"
           style={{
             top: `${cloud.top}%`,
-            left: '-200px',
+            left: '-300px',
             width: `${cloud.width}px`,
             height: `${cloud.height}px`,
             animation: `cloudMove ${cloud.duration}s linear infinite`,

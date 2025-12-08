@@ -207,7 +207,12 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                   {t[autoTheme]}
                 </span>
                 {weather && (
-                  <WeatherBadge weather={weather} isLight={isLight} />
+                  <>
+                    <WeatherBadge weather={weather} isLight={isLight} />
+                    <span className={`px-2 py-1 rounded-full text-xs ${isLight ? 'bg-slate-200/80 text-slate-600' : 'bg-slate-700/80 text-slate-400'}`}>
+                      {weatherAnimation}
+                    </span>
+                  </>
                 )}
               </div>
             </div>
