@@ -9,6 +9,13 @@ export interface City {
   tier?: number // 1 = Global hub, 2 = Major city, 3 = Notable city
 }
 
+// Countries that use 12-hour (AM/PM) format
+export const amPmCountries = ['US', 'CA', 'AU', 'PH', 'MY', 'IN', 'PK', 'BD', 'EG', 'SA', 'CO', 'MX']
+
+export function uses12HourFormat(countryCode: string): boolean {
+  return amPmCountries.includes(countryCode)
+}
+
 // Tier 1: Global financial/cultural hubs - shown on homepage
 export const tier1Slugs = [
   'new-york', 'london', 'tokyo', 'paris', 'dubai', 'singapore', 
