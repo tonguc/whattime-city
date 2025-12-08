@@ -25,35 +25,43 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
     }
   }
   
-  const title = `${city.city} Time - What Time Is It Now? | whattime.city`
-  const description = `Current local time in ${city.city}, ${city.country}. Live clock with sunrise and sunset times. Timezone: ${city.timezone}`
+  const title = `Current Time in ${city.city}, ${city.country} - Local Time Now | whattime.city`
+  const description = `What time is it in ${city.city} right now? Check current local time, sunrise at, sunset times, and weather in ${city.city}, ${city.country}. Timezone: ${city.timezone}.`
   
   return {
     title,
     description,
     keywords: [
-      `${city.city} time`,
+      `time in ${city.city}`,
+      `${city.city} time now`,
       `what time is it in ${city.city}`,
       `${city.city} current time`,
+      `${city.city} local time`,
       `${city.city} timezone`,
       `${city.city} sunrise sunset`,
-      `${city.country} time`
+      `${city.country} time`,
+      `${city.timezone}`
     ],
     openGraph: {
-      title: `${city.city} - Current Time`,
-      description: `What time is it in ${city.city}? Live clock, sunrise and sunset times.`,
+      title: `Current Time in ${city.city} - What Time Is It Now?`,
+      description: `Live local time in ${city.city}, ${city.country}. Check sunrise, sunset and weather.`,
       type: 'website',
       locale: 'en_US',
       siteName: 'whattime.city',
+      url: `https://whattime.city/${slug}`,
       images: [`/og/${slug}.png`]
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${city.city} Time | whattime.city`,
-      description: `Current time in ${city.city}, ${city.country}`
+      title: `Time in ${city.city} Now | whattime.city`,
+      description: `Current local time in ${city.city}, ${city.country}. Live clock with sunrise & sunset.`
     },
     alternates: {
       canonical: `https://whattime.city/${slug}`
+    },
+    robots: {
+      index: true,
+      follow: true
     }
   }
 }
