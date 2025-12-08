@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { City, getTier1Cities, uses12HourFormat, cities } from '@/lib/cities'
+import { City, getTier1Cities, uses12HourFormat, cities, getCitiesByContinent, Continent, continentLabels } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import { translations, detectLanguage, Language } from '@/lib/translations'
@@ -62,6 +62,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   const [use12Hour, setUse12Hour] = useState(uses12HourFormat(defaultCity.countryCode))
   const [weather, setWeather] = useState<WeatherData | null>(null)
   const [weatherAnimation, setWeatherAnimation] = useState<WeatherAnimation>('clear')
+  const [selectedContinent, setSelectedContinent] = useState<Continent>('all')
   
   // Alarm states
   const [showAlarmModal, setShowAlarmModal] = useState(false)
@@ -274,11 +275,31 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         </div>
         
         <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card}`}>
-          <h3 className={`text-lg font-semibold mb-4 ${theme.text}`}>
-            {t.worldCities}
-          </h3>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-4">
+            <h3 className={`text-lg font-semibold ${theme.text}`}>
+              {t.worldCities}
+            </h3>
+            
+            {/* Continent Tabs */}
+            <div className={`flex flex-wrap items-center gap-1.5 p-1.5 rounded-full ${isLight ? 'bg-slate-100' : 'bg-slate-800/60'}`}>
+              {(['all', 'americas', 'europe', 'asia', 'africa', 'oceania'] as Continent[]).map((continent) => (
+                <button
+                  key={continent}
+                  onClick={() => setSelectedContinent(continent)}
+                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
+                    selectedContinent === continent
+                      ? `${theme.accentBg} text-white shadow`
+                      : isLight ? 'text-slate-600 hover:bg-white' : 'text-slate-400 hover:bg-slate-700'
+                  }`}
+                >
+                  {continentLabels[continent]}
+                </button>
+              ))}
+            </div>
+          </div>
+          
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {featuredCities.map((city) => (
+            {getCitiesByContinent(selectedContinent).map((city) => (
               <CityCard
                 key={city.slug}
                 city={city}
