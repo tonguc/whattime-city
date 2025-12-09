@@ -71,6 +71,9 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   const [alarms, setAlarms] = useState<Alarm[]>([])
   const [activeAlarm, setActiveAlarm] = useState<Alarm | null>(null)
   
+  // Detected user location
+  const [detectedCity, setDetectedCity] = useState<City | null>(null)
+  
   useEffect(() => {
     setLang(detectLanguage())
     const timer = setInterval(() => setTime(new Date()), 1000)
@@ -86,6 +89,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         (position) => {
           const nearest = findNearestCity(position.coords.latitude, position.coords.longitude)
           setSelectedCity(nearest)
+          setDetectedCity(nearest)
         },
         (error) => {
           // User denied or error - keep default city
@@ -293,6 +297,17 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               </h2>
               <p className={`text-lg mt-1 ${theme.textMuted}`}>{selectedCity.country}</p>
               <p className={`mt-2 ${theme.textMuted}`}>{dateStr}</p>
+              
+              {detectedCity && (
+                <p className={`mt-2 text-xs ${theme.textMuted} opacity-70`}>
+                  📍 {detectedCity.city} — {new Date().toLocaleTimeString(lang === 'tr' ? 'tr-TR' : 'en-US', { 
+                    timeZone: detectedCity.timezone,
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hour12: use12Hour
+                  })}
+                </p>
+              )}
               
               <div className="flex flex-wrap items-center justify-center gap-2 mt-4">
                 <span className={`px-3 py-1 rounded-full text-sm font-medium ${
