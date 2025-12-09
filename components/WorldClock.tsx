@@ -18,6 +18,7 @@ import WeatherBackground from '@/components/WeatherBackground'
 import WeatherBadge from '@/components/WeatherBadge'
 import CityInfo from '@/components/CityInfo'
 import AlarmModal, { ActiveAlarmPopup } from '@/components/AlarmModal'
+import TimeConverter from '@/components/TimeConverter'
 
 // Alarm type definition
 interface Alarm {
@@ -531,6 +532,14 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             </div>
           </div>
         )}
+        
+        {/* Two-City Time Converter */}
+        <TimeConverter
+          currentTheme={currentTheme}
+          themeData={theme}
+          use12Hour={use12Hour}
+          isLight={isLight}
+        />
         
         <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card}`}>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
