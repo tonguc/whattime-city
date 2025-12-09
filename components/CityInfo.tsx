@@ -465,6 +465,18 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
           )}
         </>
       )}
+          
+          {/* Bottom Hide Button */}
+          <button
+            onClick={() => setIsExpanded(false)}
+            className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
+              isLight 
+                ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' 
+                : 'bg-slate-700 hover:bg-slate-600 text-slate-200'
+            }`}
+          >
+            Hide full article
+          </button>
         </div>
       )}
     </div>
