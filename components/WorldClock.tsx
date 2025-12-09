@@ -296,18 +296,23 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                 {selectedCity.city}
               </h2>
               <p className={`text-lg mt-1 ${theme.textMuted}`}>{selectedCity.country}</p>
+              <p className={`text-xs mt-2 ${theme.textMuted} opacity-70`}>
+                Local time in {selectedCity.city}
+                {detectedCity && detectedCity.slug !== selectedCity.slug && (
+                  <span> • {(() => {
+                    const selectedOffset = new Date().toLocaleString('en-US', { timeZone: selectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
+                    const detectedOffset = new Date().toLocaleString('en-US', { timeZone: detectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
+                    const parseOffset = (str: string) => {
+                      const match = str?.match(/GMT([+-]?\d+)?/)
+                      return match ? (parseInt(match[1]) || 0) : 0
+                    }
+                    const diff = parseOffset(selectedOffset || '') - parseOffset(detectedOffset || '')
+                    if (diff === 0) return 'Same time as your location'
+                    return `${diff > 0 ? '+' : ''}${diff}h from your location`
+                  })()}</span>
+                )}
+              </p>
               <p className={`mt-2 ${theme.textMuted}`}>{dateStr}</p>
-              
-              {detectedCity && (
-                <p className={`mt-2 text-xs ${theme.textMuted} opacity-70`}>
-                  📍 {detectedCity.city} — {new Date().toLocaleTimeString(lang === 'tr' ? 'tr-TR' : 'en-US', { 
-                    timeZone: detectedCity.timezone,
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    hour12: use12Hour
-                  })}
-                </p>
-              )}
               
               <div className="flex flex-wrap items-center justify-center gap-2 mt-4">
                 <span className={`px-3 py-1 rounded-full text-sm font-medium ${
