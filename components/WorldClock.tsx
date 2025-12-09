@@ -283,7 +283,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         </header>
         
-        <div className={`rounded-3xl p-8 md:p-10 mb-6 backdrop-blur-xl border ${theme.card} relative overflow-hidden`}>
+        <div className={`rounded-3xl p-8 md:p-10 mb-8 backdrop-blur-xl border ${theme.card} relative overflow-hidden`}>
           <div className="flex flex-col items-center relative z-10">
             {clockMode === 'analog' ? (
               <AnalogClock time={localTime} theme={currentTheme} themeData={theme} />
@@ -341,7 +341,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         
         {/* City Info Section */}
         {selectedCity.info && (
-          <div className={`rounded-3xl backdrop-blur-xl border ${theme.card} mb-6`}>
+          <div className={`rounded-3xl backdrop-blur-xl border ${theme.card} mb-8`}>
             <CityInfo city={selectedCity} theme={theme} isLight={isLight} />
           </div>
         )}
@@ -430,7 +430,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         
         {/* SEO Content Section */}
         {selectedCity.info?.seoContent && (
-          <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-6`}>
+          <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-8`}>
             <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
               Time in {selectedCity.city}, {selectedCity.country}
             </h2>
@@ -456,7 +456,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         )}
         
-        <footer className="mt-8 text-center">
+        <footer className="mt-10 text-center">
           <div className={`flex flex-wrap justify-center gap-4 mb-4 text-sm ${theme.textMuted}`}>
             <div className="flex items-center gap-1.5 cursor-help" title="Night: After sunset until dawn">
               <TimeIcons.night className="w-4 h-4" />

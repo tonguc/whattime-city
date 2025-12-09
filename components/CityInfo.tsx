@@ -221,7 +221,7 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
   return (
     <div className={`rounded-2xl p-6 ${theme.card} backdrop-blur-md space-y-6`}>
       <div className="flex items-center justify-between">
-        <h3 className={`text-xl font-bold ${theme.text}`}>
+        <h3 className={`text-xl font-semibold ${theme.text}`}>
           About {city.city}
         </h3>
         
