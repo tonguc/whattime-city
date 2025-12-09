@@ -92,7 +92,7 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
   return (
     <div className={`rounded-3xl p-6 backdrop-blur-xl border ${themeData.card} mb-8`}>
       <h3 className={`text-xl font-semibold ${themeData.text} mb-4`}>
-        🔄 Two-City Time Converter
+        Two-City Time Converter
       </h3>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

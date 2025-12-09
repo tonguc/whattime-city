@@ -510,7 +510,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         {favoriteCities.length > 0 && (
           <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mb-8`}>
             <h3 className={`text-xl font-semibold ${theme.text} mb-4`}>
-              ★ {t.favoriteCities || 'Your Favorite Cities'}
+              {t.favoriteCities || 'Your Favorite Cities'}
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {favoriteCities.map(city => (
