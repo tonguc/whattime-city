@@ -19,6 +19,7 @@ import WeatherBadge from '@/components/WeatherBadge'
 import CityInfo from '@/components/CityInfo'
 import AlarmModal, { ActiveAlarmPopup } from '@/components/AlarmModal'
 import TimeConverter from '@/components/TimeConverter'
+import MeetingPlanner from '@/components/MeetingPlanner'
 
 // Alarm type definition
 interface Alarm {
@@ -535,6 +536,14 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         
         {/* Two-City Time Converter */}
         <TimeConverter
+          currentTheme={currentTheme}
+          themeData={theme}
+          use12Hour={use12Hour}
+          isLight={isLight}
+        />
+        
+        {/* Meeting Planner */}
+        <MeetingPlanner
           currentTheme={currentTheme}
           themeData={theme}
           use12Hour={use12Hour}
