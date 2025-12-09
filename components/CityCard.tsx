@@ -54,19 +54,19 @@ export default function CityCard({ city, isSelected, onClick, currentTheme, them
       }`}
     >
       <div className="flex items-center justify-between gap-3">
-        <div className="min-w-0">
-          <div className={`text-xs truncate ${isLight ? 'text-slate-500' : 'text-slate-500'}`}>
+        <div className="min-w-0 flex flex-col justify-center">
+          <div className={`text-sm truncate ${isLight ? 'text-slate-500' : 'text-slate-500'}`}>
             {city.country}
           </div>
-          <div className={`text-lg font-semibold truncate ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <div className={`text-xl font-bold truncate ${isLight ? 'text-slate-800' : 'text-white'}`}>
             {city.city}
           </div>
         </div>
-        <div className="text-right flex-shrink-0">
-          <div className={`text-xl font-medium ${isLight ? 'text-slate-800' : 'text-white'}`} style={{ fontVariantNumeric: 'tabular-nums' }}>
+        <div className="flex items-center gap-1.5">
+          <div className={`text-2xl font-normal ${isLight ? 'text-slate-800' : 'text-white'}`} style={{ fontVariantNumeric: 'tabular-nums' }}>
             {timeStr}
           </div>
-          <div className={`flex justify-end cursor-help ${cityTheme.accentClass}`} title={cityTheme.label}>
+          <div className={`cursor-help ${cityTheme.accentClass}`} title={cityTheme.label}>
             <Icon className="w-5 h-5" />
           </div>
         </div>

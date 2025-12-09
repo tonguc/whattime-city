@@ -42,7 +42,7 @@ export default function DigitalClock({ time, theme, themeData, use12Hour }: Digi
       <div 
         className="flex items-center justify-center font-semibold"
         style={{ 
-          fontSize: 'clamp(48px, 10vw, 96px)',
+          fontSize: 'clamp(52px, 11vw, 104px)',
         }}
       >
         {/* Time digits with fixed width */}

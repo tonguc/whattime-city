@@ -7,6 +7,7 @@ export interface Theme {
   textMuted: string
   accent: string
   accentClass: string
+  accentText: string
   accentBg: string
   accentBgLight: string
   accentBorder: string
@@ -23,6 +24,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     textMuted: 'text-slate-400',
     accent: 'cyan',
     accentClass: 'text-cyan-400',
+    accentText: 'text-cyan-400',
     accentBg: 'bg-cyan-500',
     accentBgLight: 'bg-cyan-500/20',
     accentBorder: 'border-cyan-500/50',
@@ -37,6 +39,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     textMuted: 'text-orange-300',
     accent: 'amber',
     accentClass: 'text-amber-400',
+    accentText: 'text-amber-400',
     accentBg: 'bg-amber-500',
     accentBgLight: 'bg-amber-500/20',
     accentBorder: 'border-amber-500/50',
@@ -51,6 +54,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     textMuted: 'text-slate-600',
     accent: 'amber',
     accentClass: 'text-amber-500',
+    accentText: 'text-amber-500',
     accentBg: 'bg-amber-500',
     accentBgLight: 'bg-amber-500/20',
     accentBorder: 'border-amber-500/50',
@@ -65,6 +69,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     textMuted: 'text-purple-300',
     accent: 'purple',
     accentClass: 'text-purple-400',
+    accentText: 'text-purple-400',
     accentBg: 'bg-purple-500',
     accentBgLight: 'bg-purple-500/20',
     accentBorder: 'border-purple-500/50',
@@ -79,6 +84,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     textMuted: 'text-slate-400',
     accent: 'cyan',
     accentClass: 'text-cyan-400',
+    accentText: 'text-cyan-400',
     accentBg: 'bg-cyan-500',
     accentBgLight: 'bg-cyan-500/20',
     accentBorder: 'border-cyan-500/50',
@@ -93,6 +99,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     textMuted: 'text-slate-500',
     accent: 'amber',
     accentClass: 'text-amber-500',
+    accentText: 'text-amber-500',
     accentBg: 'bg-amber-500',
     accentBgLight: 'bg-amber-500/20',
     accentBorder: 'border-amber-500/50',

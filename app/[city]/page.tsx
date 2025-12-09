@@ -25,26 +25,45 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
     }
   }
   
+  const info = city.info
   const title = `Current Time in ${city.city}, ${city.country} - Local Time Now | whattime.city`
-  const description = `What time is it in ${city.city} right now? Check current local time, sunrise at, sunset times, and weather in ${city.city}, ${city.country}. Timezone: ${city.timezone}.`
+  const description = info 
+    ? `What time is it in ${city.city}? Check current local time, sunrise & sunset. Population: ${info.population}. Currency: ${info.currency} (${info.currencySymbol}). Phone: ${info.phoneCode}. Top attractions: ${info.attractions.slice(0, 3).join(', ')}.`
+    : `What time is it in ${city.city} right now? Check current local time, sunrise at, sunset times, and weather in ${city.city}, ${city.country}. Timezone: ${city.timezone}.`
+  
+  const keywords = [
+    `time in ${city.city}`,
+    `${city.city} time now`,
+    `what time is it in ${city.city}`,
+    `${city.city} current time`,
+    `${city.city} local time`,
+    `${city.city} timezone`,
+    `${city.city} sunrise sunset`,
+    `${city.country} time`,
+    `${city.timezone}`
+  ]
+  
+  // Add rich keywords if info exists
+  if (info) {
+    keywords.push(
+      `${city.city} population`,
+      `${city.city} currency`,
+      `${city.city} phone code`,
+      `things to do in ${city.city}`,
+      `${city.city} attractions`,
+      `${city.city} weather`
+    )
+  }
   
   return {
     title,
     description,
-    keywords: [
-      `time in ${city.city}`,
-      `${city.city} time now`,
-      `what time is it in ${city.city}`,
-      `${city.city} current time`,
-      `${city.city} local time`,
-      `${city.city} timezone`,
-      `${city.city} sunrise sunset`,
-      `${city.country} time`,
-      `${city.timezone}`
-    ],
+    keywords,
     openGraph: {
       title: `Current Time in ${city.city} - What Time Is It Now?`,
-      description: `Live local time in ${city.city}, ${city.country}. Check sunrise, sunset and weather.`,
+      description: info 
+        ? `Live local time in ${city.city}. Population: ${info.population}. Currency: ${info.currencySymbol}. Top spots: ${info.attractions.slice(0, 2).join(', ')}.`
+        : `Live local time in ${city.city}, ${city.country}. Check sunrise, sunset and weather.`,
       type: 'website',
       locale: 'en_US',
       siteName: 'whattime.city',
@@ -54,7 +73,9 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
     twitter: {
       card: 'summary_large_image',
       title: `Time in ${city.city} Now | whattime.city`,
-      description: `Current local time in ${city.city}, ${city.country}. Live clock with sunrise & sunset.`
+      description: info
+        ? `Current time in ${city.city}. ${info.population} people. ${info.currency} (${info.currencySymbol}).`
+        : `Current local time in ${city.city}, ${city.country}. Live clock with sunrise & sunset.`
     },
     alternates: {
       canonical: `https://whattime.city/${slug}`

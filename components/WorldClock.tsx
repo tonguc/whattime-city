@@ -16,6 +16,7 @@ import TimeIcons from '@/components/TimeIcons'
 import Search from '@/components/Search'
 import WeatherBackground from '@/components/WeatherBackground'
 import WeatherBadge from '@/components/WeatherBadge'
+import CityInfo from '@/components/CityInfo'
 import AlarmModal, { ActiveAlarmPopup } from '@/components/AlarmModal'
 
 // Alarm type definition
@@ -168,20 +169,40 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   
   const featuredCities = getTier1Cities()
   
+  // Find city by user's timezone
+  const findCityByTimezone = (): City => {
+    const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+    // Try to find exact timezone match
+    const exactMatch = cities.find(c => c.timezone === userTimezone)
+    if (exactMatch) return exactMatch
+    // Fallback to first Tier 1 city
+    return getTier1Cities()[0]
+  }
+  
   const handleLogoClick = () => {
+    // First try geolocation
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const nearest = findNearestCity(position.coords.latitude, position.coords.longitude)
-          router.push(`/${nearest.slug}`)
+          setSelectedCity(nearest)
+          // Update URL without reload
+          window.history.pushState({}, '', `/${nearest.slug}`)
         },
         (error) => {
-          console.log('Geolocation error:', error)
-          router.push('/')
-        }
+          // Fallback to timezone detection
+          console.log('Geolocation not available:', error.message)
+          const cityByTz = findCityByTimezone()
+          setSelectedCity(cityByTz)
+          window.history.pushState({}, '', `/${cityByTz.slug}`)
+        },
+        { timeout: 3000 }
       )
     } else {
-      router.push('/')
+      // No geolocation, use timezone
+      const cityByTz = findCityByTimezone()
+      setSelectedCity(cityByTz)
+      window.history.pushState({}, '', `/${cityByTz.slug}`)
     }
   }
   
@@ -198,11 +219,12 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
       
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-8">
         <header className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
-          <button onClick={handleLogoClick} className="text-left hover:opacity-80 transition-opacity" title="Click to detect your location">
-            <h1 className={`text-2xl font-bold ${theme.text}`}>
-              whattime<span className={theme.accentClass}>.city</span>
-            </h1>
-            <p className={`text-sm ${theme.textMuted}`}>{t.worldClock}</p>
+          <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity" title="Click to detect your location">
+            <img 
+              src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
+              alt="whattime.city" 
+              className="h-12 sm:h-14"
+            />
           </button>
           
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
@@ -294,9 +316,16 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         </div>
         
+        {/* City Info Section */}
+        {selectedCity.info && (
+          <div className={`rounded-3xl backdrop-blur-xl border ${theme.card}`}>
+            <CityInfo city={selectedCity} theme={theme} isLight={isLight} />
+          </div>
+        )}
+        
         <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card}`}>
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-4">
-            <h3 className={`text-lg font-semibold ${theme.text}`}>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+            <h3 className={`text-xl font-semibold ${theme.text} self-center`}>
               {t.worldCities}
             </h3>
             
@@ -309,7 +338,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                     setSelectedContinent(continent)
                     setContinentFilter('')
                   }}
-                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
+                  className={`px-4 py-1.5 rounded-full text-base font-medium transition-all ${
                     selectedContinent === continent
                       ? `${theme.accentBg} text-white shadow`
                       : isLight ? 'text-slate-600 hover:bg-white' : 'text-slate-400 hover:bg-slate-700'
@@ -364,7 +393,10 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                 key={city.slug}
                 city={city}
                 isSelected={selectedCity.slug === city.slug}
-                onClick={() => setSelectedCity(city)}
+                onClick={() => {
+                  setSelectedCity(city)
+                  router.push(`/${city.slug}`, { scroll: false })
+                }}
                 currentTheme={currentTheme}
                 themeData={theme}
                 use12Hour={use12Hour}
@@ -396,6 +428,34 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             {t.footer} • whattime.city
           </p>
         </footer>
+        
+        {/* SEO Content Section */}
+        {selectedCity.info?.seoContent && (
+          <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-6`}>
+            <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
+              Time in {selectedCity.city}, {selectedCity.country}
+            </h2>
+            
+            <div className={`space-y-4 text-sm leading-relaxed ${theme.textMuted}`}>
+              <p>{selectedCity.info.seoContent.intro}</p>
+              
+              <div>
+                <h3 className={`font-semibold mb-2 ${theme.text}`}>Timezone Facts</h3>
+                <p>{selectedCity.info.seoContent.timezoneFacts}</p>
+              </div>
+              
+              <div>
+                <h3 className={`font-semibold mb-2 ${theme.text}`}>Best Time to Visit</h3>
+                <p>{selectedCity.info.seoContent.bestTimeToVisit}</p>
+              </div>
+              
+              <div>
+                <h3 className={`font-semibold mb-2 ${theme.text}`}>Business Hours</h3>
+                <p>{selectedCity.info.seoContent.businessHours}</p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
       
       {/* Floating Alert Button */}
