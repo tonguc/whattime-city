@@ -283,31 +283,24 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         </header>
         
-        {/* User Location Context - Above Hero */}
-        {detectedCity && (
-          <p className={`text-xs text-center mb-3 ${theme.textMuted} opacity-60`}>
-            📍 Your location: {detectedCity.city}
-          </p>
-        )}
-        
         <div className={`rounded-3xl p-8 md:p-12 mb-8 backdrop-blur-xl border ${theme.card} relative overflow-hidden`}>
-          <div className="flex flex-col items-center justify-center relative z-10">
-            {clockMode === 'analog' ? (
-              <AnalogClock time={localTime} theme={currentTheme} themeData={theme} />
-            ) : (
-              <DigitalClock time={localTime} theme={currentTheme} themeData={theme} use12Hour={use12Hour} />
-            )}
+          <div className="flex flex-col items-center justify-center relative z-10 w-full">
+            <div className="w-full flex justify-center">
+              {clockMode === 'analog' ? (
+                <AnalogClock time={localTime} theme={currentTheme} themeData={theme} />
+              ) : (
+                <DigitalClock time={localTime} theme={currentTheme} themeData={theme} use12Hour={use12Hour} />
+              )}
+            </div>
             
             <div className="mt-8 text-center">
               <h2 className={`text-4xl md:text-5xl font-medium ${theme.text}`}>
                 {selectedCity.city}
               </h2>
               <p className={`text-lg mt-1 ${theme.textMuted}`}>{selectedCity.country}</p>
-              <p className={`text-xs mt-2 ${theme.textMuted} opacity-70`}>
-                Local time in {selectedCity.city}
-              </p>
+              
               {detectedCity && detectedCity.slug !== selectedCity.slug && (
-                <p className={`text-xs mt-1 ${theme.textMuted} opacity-50`}>
+                <p className={`text-xs mt-2 ${theme.textMuted} opacity-50`}>
                   Time difference from your location: {(() => {
                     const selectedOffset = new Date().toLocaleString('en-US', { timeZone: selectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
                     const detectedOffset = new Date().toLocaleString('en-US', { timeZone: detectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
@@ -321,6 +314,14 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                   })()}
                 </p>
               )}
+              
+              {detectedCity && (
+                <p className={`text-xs mt-2 ${theme.textMuted} opacity-70 flex items-center justify-center gap-1`}>
+                  <span>📍</span>
+                  <span>Your location: {detectedCity.city}</span>
+                </p>
+              )}
+              
               <p className={`mt-2 ${theme.textMuted}`}>{dateStr}</p>
               
               <div className="flex flex-wrap items-center justify-center gap-2 mt-4">
