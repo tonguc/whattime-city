@@ -283,8 +283,15 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         </header>
         
+        {/* User Location Context - Above Hero */}
+        {detectedCity && (
+          <p className={`text-xs text-center mb-3 ${theme.textMuted} opacity-60`}>
+            📍 Your location: {detectedCity.city}
+          </p>
+        )}
+        
         <div className={`rounded-3xl p-8 md:p-12 mb-8 backdrop-blur-xl border ${theme.card} relative overflow-hidden`}>
-          <div className="flex flex-col items-center relative z-10">
+          <div className="flex flex-col items-center justify-center relative z-10">
             {clockMode === 'analog' ? (
               <AnalogClock time={localTime} theme={currentTheme} themeData={theme} />
             ) : (
@@ -301,7 +308,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               </p>
               {detectedCity && detectedCity.slug !== selectedCity.slug && (
                 <p className={`text-xs mt-1 ${theme.textMuted} opacity-50`}>
-                  Your location: {detectedCity.city} • Time difference: {(() => {
+                  Time difference from your location: {(() => {
                     const selectedOffset = new Date().toLocaleString('en-US', { timeZone: selectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
                     const detectedOffset = new Date().toLocaleString('en-US', { timeZone: detectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
                     const parseOffset = (str: string) => {
