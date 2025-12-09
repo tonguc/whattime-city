@@ -227,7 +227,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             />
           </button>
           
-          <div className="flex flex-col sm:flex-row items-center gap-3">
+          <div className="flex flex-col items-center gap-3">
             <Search theme={theme} currentTheme={currentTheme} />
             
             <div className="flex items-center gap-2">
@@ -237,7 +237,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                     key={mode}
                     onClick={() => setClockMode(mode)}
                     title={mode === 'digital' ? 'Digital: Show time as numbers' : 'Analog: Show time as clock face'}
-                    className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all capitalize ${
+                    className={`px-3 sm:px-4 py-1.5 rounded-full text-sm font-medium transition-all capitalize ${
                       clockMode === mode
                         ? `${theme.accentBg} text-white shadow-lg`
                         : isLight ? 'text-slate-600' : 'text-slate-400'
@@ -252,7 +252,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                 <button
                   onClick={() => setUse12Hour(false)}
                   title="24-hour format (00:00 - 23:59)"
-                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
+                  className={`px-3 sm:px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
                     !use12Hour
                       ? `${theme.accentBg} text-white shadow-lg`
                       : isLight ? 'text-slate-600' : 'text-slate-400'
@@ -263,7 +263,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                 <button
                   onClick={() => setUse12Hour(true)}
                   title="12-hour format with AM/PM"
-                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
+                  className={`px-3 sm:px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
                     use12Hour
                       ? `${theme.accentBg} text-white shadow-lg`
                       : isLight ? 'text-slate-600' : 'text-slate-400'
