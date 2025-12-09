@@ -237,13 +237,14 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                     key={mode}
                     onClick={() => setClockMode(mode)}
                     title={mode === 'digital' ? 'Digital: Show time as numbers' : 'Analog: Show time as clock face'}
-                    className={`px-3 sm:px-4 py-1.5 rounded-full text-sm font-medium transition-all capitalize ${
+                    className={`px-3 sm:px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
                       clockMode === mode
                         ? `${theme.accentBg} text-white shadow-lg`
                         : isLight ? 'text-slate-600' : 'text-slate-400'
                     }`}
                   >
-                    {t[mode]}
+                    <span className="sm:hidden">{mode === 'digital' ? 'Dij' : 'Ana'}</span>
+                    <span className="hidden sm:inline capitalize">{t[mode]}</span>
                   </button>
                 ))}
               </div>
