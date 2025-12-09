@@ -299,6 +299,21 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               <p className={`text-xs mt-2 ${theme.textMuted} opacity-70`}>
                 Local time in {selectedCity.city}
               </p>
+              {detectedCity && detectedCity.slug !== selectedCity.slug && (
+                <p className={`text-xs mt-1 ${theme.textMuted} opacity-50`}>
+                  Your location: {detectedCity.city} • Time difference: {(() => {
+                    const selectedOffset = new Date().toLocaleString('en-US', { timeZone: selectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
+                    const detectedOffset = new Date().toLocaleString('en-US', { timeZone: detectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
+                    const parseOffset = (str: string) => {
+                      const match = str?.match(/GMT([+-]?\d+)?/)
+                      return match ? (parseInt(match[1]) || 0) : 0
+                    }
+                    const diff = parseOffset(selectedOffset || '') - parseOffset(detectedOffset || '')
+                    if (diff === 0) return 'same time'
+                    return `${diff > 0 ? '+' : ''}${diff}h`
+                  })()}
+                </p>
+              )}
               <p className={`mt-2 ${theme.textMuted}`}>{dateStr}</p>
               
               <div className="flex flex-wrap items-center justify-center gap-2 mt-4">
@@ -318,22 +333,6 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                   <WeatherBadge weather={weather} isLight={isLight} />
                 )}
               </div>
-              
-              {detectedCity && detectedCity.slug !== selectedCity.slug && (
-                <p className={`mt-3 text-xs ${theme.textMuted} opacity-60`}>
-                  {(() => {
-                    const selectedOffset = new Date().toLocaleString('en-US', { timeZone: selectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
-                    const detectedOffset = new Date().toLocaleString('en-US', { timeZone: detectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
-                    const parseOffset = (str: string) => {
-                      const match = str?.match(/GMT([+-]?\d+)?/)
-                      return match ? (parseInt(match[1]) || 0) : 0
-                    }
-                    const diff = parseOffset(selectedOffset || '') - parseOffset(detectedOffset || '')
-                    if (diff === 0) return `Same time as ${detectedCity.city}`
-                    return `${diff > 0 ? '+' : ''}${diff}h from ${detectedCity.city}`
-                  })()}
-                </p>
-              )}
             </div>
             
             <div className="mt-6 w-full max-w-xs">
