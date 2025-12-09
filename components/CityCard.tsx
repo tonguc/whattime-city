@@ -53,17 +53,17 @@ export default function CityCard({ city, isSelected, onClick, currentTheme, them
             : 'bg-slate-800/40 border-slate-700/50 hover:bg-slate-700/50'
       }`}
     >
-      <div className="flex items-center justify-between gap-3">
-        <div className="min-w-0 flex flex-col justify-center">
-          <div className={`text-sm truncate ${isLight ? 'text-slate-500' : 'text-slate-500'}`}>
+      <div className="flex items-center justify-between gap-4">
+        <div className="min-w-0 flex-1">
+          <div className={`text-xs uppercase tracking-wide mb-0.5 truncate ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
             {city.country}
           </div>
-          <div className={`text-xl font-bold truncate ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <div className={`text-lg font-semibold truncate ${isLight ? 'text-slate-800' : 'text-white'}`}>
             {city.city}
           </div>
         </div>
-        <div className="flex items-center gap-1.5">
-          <div className={`text-2xl font-normal ${isLight ? 'text-slate-800' : 'text-white'}`} style={{ fontVariantNumeric: 'tabular-nums' }}>
+        <div className="flex items-center gap-2 flex-shrink-0">
+          <div className={`text-xl font-medium ${isLight ? 'text-slate-700' : 'text-slate-200'}`} style={{ fontVariantNumeric: 'tabular-nums' }}>
             {timeStr}
           </div>
           <div className={`cursor-help ${cityTheme.accentClass}`} title={cityTheme.label}>

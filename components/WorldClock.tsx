@@ -283,7 +283,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         </header>
         
-        <div className={`rounded-3xl p-8 md:p-10 mb-8 backdrop-blur-xl border ${theme.card} relative overflow-hidden`}>
+        <div className={`rounded-3xl p-8 md:p-12 mb-8 backdrop-blur-xl border ${theme.card} relative overflow-hidden`}>
           <div className="flex flex-col items-center relative z-10">
             {clockMode === 'analog' ? (
               <AnalogClock time={localTime} theme={currentTheme} themeData={theme} />
@@ -291,30 +291,15 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               <DigitalClock time={localTime} theme={currentTheme} themeData={theme} use12Hour={use12Hour} />
             )}
             
-            <div className="mt-8 text-center">
+            <div className="mt-10 text-center">
               <h2 className={`text-4xl md:text-5xl font-medium ${theme.text}`}>
                 {selectedCity.city}
               </h2>
-              <p className={`text-lg mt-1 ${theme.textMuted}`}>{selectedCity.country}</p>
-              <p className={`text-xs mt-2 ${theme.textMuted} opacity-70`}>
-                Local time in {selectedCity.city}
-                {detectedCity && detectedCity.slug !== selectedCity.slug && (
-                  <span> • {(() => {
-                    const selectedOffset = new Date().toLocaleString('en-US', { timeZone: selectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
-                    const detectedOffset = new Date().toLocaleString('en-US', { timeZone: detectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
-                    const parseOffset = (str: string) => {
-                      const match = str?.match(/GMT([+-]?\d+)?/)
-                      return match ? (parseInt(match[1]) || 0) : 0
-                    }
-                    const diff = parseOffset(selectedOffset || '') - parseOffset(detectedOffset || '')
-                    if (diff === 0) return 'Same time as your location'
-                    return `${diff > 0 ? '+' : ''}${diff}h from your location`
-                  })()}</span>
-                )}
-              </p>
-              <p className={`mt-2 ${theme.textMuted}`}>{dateStr}</p>
+              <p className={`text-lg mt-2 ${theme.textMuted}`}>{selectedCity.country}</p>
               
-              <div className="flex flex-wrap items-center justify-center gap-2 mt-4">
+              <p className={`mt-4 ${theme.textMuted}`}>{dateStr}</p>
+              
+              <div className="flex flex-wrap items-center justify-center gap-2 mt-5">
                 <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                   isLight ? 'bg-slate-200/80 text-slate-700' : 'bg-slate-700/80 text-slate-300'
                 }`}>
@@ -331,9 +316,25 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                   <WeatherBadge weather={weather} isLight={isLight} />
                 )}
               </div>
+              
+              {detectedCity && detectedCity.slug !== selectedCity.slug && (
+                <p className={`mt-4 text-xs ${theme.textMuted} opacity-60`}>
+                  {(() => {
+                    const selectedOffset = new Date().toLocaleString('en-US', { timeZone: selectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
+                    const detectedOffset = new Date().toLocaleString('en-US', { timeZone: detectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
+                    const parseOffset = (str: string) => {
+                      const match = str?.match(/GMT([+-]?\d+)?/)
+                      return match ? (parseInt(match[1]) || 0) : 0
+                    }
+                    const diff = parseOffset(selectedOffset || '') - parseOffset(detectedOffset || '')
+                    if (diff === 0) return `Same time as ${detectedCity.city}`
+                    return `${diff > 0 ? '+' : ''}${diff}h from ${detectedCity.city}`
+                  })()}
+                </p>
+              )}
             </div>
             
-            <div className="mt-6 w-full max-w-xs">
+            <div className="mt-8 w-full max-w-xs">
               <SunInfoCard city={selectedCity} localTime={localTime} theme={currentTheme} t={t} />
             </div>
           </div>
@@ -404,7 +405,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             </div>
           )}
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {getCitiesByContinent(selectedContinent)
               .filter(city => 
                 selectedContinent === 'all' || !continentFilter ||
