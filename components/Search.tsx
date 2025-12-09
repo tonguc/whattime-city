@@ -69,7 +69,7 @@ export default function Search({ theme, currentTheme }: SearchProps) {
           onKeyDown={handleKeyDown}
           onFocus={() => query && setIsOpen(true)}
           placeholder="Search city..."
-          className={`bg-transparent outline-none text-sm w-44 sm:w-64 ${
+          className={`bg-transparent outline-none text-sm w-36 sm:w-48 ${
             isLight ? 'text-slate-800 placeholder-slate-400' : 'text-white placeholder-slate-500'
           }`}
         />
