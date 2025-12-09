@@ -95,7 +95,7 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
         🔄 Two-City Time Converter
       </h3>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* From City */}
         <div ref={fromRef} className="relative">
           <label className={`text-xs font-medium mb-1.5 block ${themeData.textMuted}`}>
@@ -265,18 +265,18 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
       
       {/* Result */}
       {fromCity && toCity ? (
-        <div className={`mt-4 pt-4 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
-          <div className="text-center">
+        <div className={`mt-6 pt-4 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
+          <div className="text-center space-y-1">
             <p className={`text-lg font-medium ${themeData.text}`}>
               {getCityTime(fromCity)} in {fromCity.city} = {getCityTime(toCity)} in {toCity.city}
             </p>
-            <p className={`text-sm mt-1 ${themeData.textMuted}`}>
-              {toCity.city} is {timeDiff === 0 ? 'the same time as' : timeDiff! > 0 ? `+${timeDiff} hours ahead of` : `${timeDiff} hours behind`} {fromCity.city}
+            <p className={`text-sm ${themeData.textMuted} opacity-70`}>
+              {toCity.city} is {timeDiff === 0 ? 'at the same time' : timeDiff! > 0 ? `+${timeDiff} hours ahead` : `${Math.abs(timeDiff!)} hours behind`} relative to {fromCity.city}
             </p>
           </div>
         </div>
       ) : (
-        <p className={`mt-4 text-center text-sm ${themeData.textMuted} opacity-70`}>
+        <p className={`mt-6 text-center text-sm ${themeData.textMuted} opacity-70`}>
           Select two cities to compare their local time.
         </p>
       )}
