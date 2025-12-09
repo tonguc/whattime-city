@@ -218,8 +218,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
       </div>
       
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-8">
-        <header className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
-          <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity" title="Click to detect your location">
+        <header className="flex flex-col lg:flex-row items-center justify-between gap-4 mb-6">
+          <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0" title="Click to detect your location">
             <img 
               src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
               alt="whattime.city" 
@@ -227,52 +227,54 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             />
           </button>
           
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+          <div className="flex flex-col sm:flex-row items-center gap-3">
             <Search theme={theme} currentTheme={currentTheme} />
             
-            <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
-              {(['digital', 'analog'] as const).map((mode) => (
+            <div className="flex items-center gap-2">
+              <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
+                {(['digital', 'analog'] as const).map((mode) => (
+                  <button
+                    key={mode}
+                    onClick={() => setClockMode(mode)}
+                    title={mode === 'digital' ? 'Digital: Show time as numbers' : 'Analog: Show time as clock face'}
+                    className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all capitalize ${
+                      clockMode === mode
+                        ? `${theme.accentBg} text-white shadow-lg`
+                        : isLight ? 'text-slate-600' : 'text-slate-400'
+                    }`}
+                  >
+                    {t[mode]}
+                  </button>
+                ))}
+              </div>
+              
+              <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
                 <button
-                  key={mode}
-                  onClick={() => setClockMode(mode)}
-                  title={mode === 'digital' ? 'Digital: Show time as numbers' : 'Analog: Show time as clock face'}
-                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all capitalize ${
-                    clockMode === mode
+                  onClick={() => setUse12Hour(false)}
+                  title="24-hour format (00:00 - 23:59)"
+                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
+                    !use12Hour
                       ? `${theme.accentBg} text-white shadow-lg`
                       : isLight ? 'text-slate-600' : 'text-slate-400'
                   }`}
                 >
-                  {t[mode]}
+                  24h
                 </button>
-              ))}
+                <button
+                  onClick={() => setUse12Hour(true)}
+                  title="12-hour format with AM/PM"
+                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
+                    use12Hour
+                      ? `${theme.accentBg} text-white shadow-lg`
+                      : isLight ? 'text-slate-600' : 'text-slate-400'
+                  }`}
+                >
+                  12h
+                </button>
+              </div>
+              
+              <ThemeToggle mode={themeMode} setMode={setThemeMode} currentTheme={currentTheme} t={t} themeData={theme} />
             </div>
-            
-            <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
-              <button
-                onClick={() => setUse12Hour(false)}
-                title="24-hour format (00:00 - 23:59)"
-                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
-                  !use12Hour
-                    ? `${theme.accentBg} text-white shadow-lg`
-                    : isLight ? 'text-slate-600' : 'text-slate-400'
-                }`}
-              >
-                24h
-              </button>
-              <button
-                onClick={() => setUse12Hour(true)}
-                title="12-hour format with AM/PM"
-                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
-                  use12Hour
-                    ? `${theme.accentBg} text-white shadow-lg`
-                    : isLight ? 'text-slate-600' : 'text-slate-400'
-                }`}
-              >
-                12h
-              </button>
-            </div>
-            
-            <ThemeToggle mode={themeMode} setMode={setThemeMode} currentTheme={currentTheme} t={t} themeData={theme} />
           </div>
         </header>
         
