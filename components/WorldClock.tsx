@@ -318,7 +318,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         
         {/* City Info Section */}
         {selectedCity.info && (
-          <div className={`rounded-3xl backdrop-blur-xl border ${theme.card}`}>
+          <div className={`rounded-3xl backdrop-blur-xl border ${theme.card} mb-6`}>
             <CityInfo city={selectedCity} theme={theme} isLight={isLight} />
           </div>
         )}
@@ -405,30 +405,6 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         </div>
         
-        <footer className="mt-8 text-center">
-          <div className={`flex flex-wrap justify-center gap-4 mb-4 text-sm ${theme.textMuted}`}>
-            <div className="flex items-center gap-1.5 cursor-help" title="Night: After sunset until dawn">
-              <TimeIcons.night className="w-4 h-4" />
-              <span>{t.night}</span>
-            </div>
-            <div className="flex items-center gap-1.5 cursor-help" title="Dawn: 30 minutes before and after sunrise">
-              <TimeIcons.dawn className="w-4 h-4" />
-              <span>{t.dawn}</span>
-            </div>
-            <div className="flex items-center gap-1.5 cursor-help" title="Day: After dawn until dusk">
-              <TimeIcons.day className="w-4 h-4" />
-              <span>{t.day}</span>
-            </div>
-            <div className="flex items-center gap-1.5 cursor-help" title="Dusk: 30 minutes before and after sunset">
-              <TimeIcons.dusk className="w-4 h-4" />
-              <span>{t.dusk}</span>
-            </div>
-          </div>
-          <p className={`text-sm ${theme.textMuted}`}>
-            {t.footer} • whattime.city
-          </p>
-        </footer>
-        
         {/* SEO Content Section */}
         {selectedCity.info?.seoContent && (
           <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-6`}>
@@ -456,6 +432,30 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             </div>
           </div>
         )}
+        
+        <footer className="mt-8 text-center">
+          <div className={`flex flex-wrap justify-center gap-4 mb-4 text-sm ${theme.textMuted}`}>
+            <div className="flex items-center gap-1.5 cursor-help" title="Night: After sunset until dawn">
+              <TimeIcons.night className="w-4 h-4" />
+              <span>{t.night}</span>
+            </div>
+            <div className="flex items-center gap-1.5 cursor-help" title="Dawn: 30 minutes before and after sunrise">
+              <TimeIcons.dawn className="w-4 h-4" />
+              <span>{t.dawn}</span>
+            </div>
+            <div className="flex items-center gap-1.5 cursor-help" title="Day: After dawn until dusk">
+              <TimeIcons.day className="w-4 h-4" />
+              <span>{t.day}</span>
+            </div>
+            <div className="flex items-center gap-1.5 cursor-help" title="Dusk: 30 minutes before and after sunset">
+              <TimeIcons.dusk className="w-4 h-4" />
+              <span>{t.dusk}</span>
+            </div>
+          </div>
+          <p className={`text-sm ${theme.textMuted}`}>
+            {t.footer} • whattime.city
+          </p>
+        </footer>
       </div>
       
       {/* Floating Alert Button */}
