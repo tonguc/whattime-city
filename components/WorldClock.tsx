@@ -80,23 +80,38 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
     return () => clearInterval(timer)
   }, [])
   
-  // Detect user location and set nearest city (only on initial load without initialCity)
+  // Detect user location (always run to set detectedCity)
   useEffect(() => {
-    if (initialCity) return // Skip if city is provided via URL
-    
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const nearest = findNearestCity(position.coords.latitude, position.coords.longitude)
-          setSelectedCity(nearest)
           setDetectedCity(nearest)
+          // Only set selectedCity if no initialCity provided
+          if (!initialCity) {
+            setSelectedCity(nearest)
+          }
         },
         (error) => {
-          // User denied or error - keep default city
+          // User denied or error - try timezone fallback for detectedCity
           console.log('Geolocation not available:', error.message)
+          const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+          const cityByTz = cities.find(c => c.timezone === tz) || cities[0]
+          setDetectedCity(cityByTz)
+          if (!initialCity) {
+            setSelectedCity(cityByTz)
+          }
         },
         { timeout: 5000, maximumAge: 300000 } // 5s timeout, cache for 5min
       )
+    } else {
+      // No geolocation - use timezone
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+      const cityByTz = cities.find(c => c.timezone === tz) || cities[0]
+      setDetectedCity(cityByTz)
+      if (!initialCity) {
+        setSelectedCity(cityByTz)
+      }
     }
   }, [initialCity])
   
@@ -190,6 +205,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         (position) => {
           const nearest = findNearestCity(position.coords.latitude, position.coords.longitude)
           setSelectedCity(nearest)
+          setDetectedCity(nearest)
           // Update URL without reload
           window.history.pushState({}, '', `/${nearest.slug}`)
         },
@@ -198,6 +214,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           console.log('Geolocation not available:', error.message)
           const cityByTz = findCityByTimezone()
           setSelectedCity(cityByTz)
+          setDetectedCity(cityByTz)
           window.history.pushState({}, '', `/${cityByTz.slug}`)
         },
         { timeout: 3000 }
@@ -206,6 +223,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
       // No geolocation, use timezone
       const cityByTz = findCityByTimezone()
       setSelectedCity(cityByTz)
+      setDetectedCity(cityByTz)
       window.history.pushState({}, '', `/${cityByTz.slug}`)
     }
   }
