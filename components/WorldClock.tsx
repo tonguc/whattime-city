@@ -36,6 +36,93 @@ interface WorldClockProps {
   initialCity?: City
 }
 
+// FavoriteCard component - matches existing CityCard style
+function FavoriteCard({ 
+  city, 
+  isSelected, 
+  onClick, 
+  onRemove,
+  currentTheme, 
+  themeData, 
+  use12Hour,
+  isLight
+}: {
+  city: City
+  isSelected: boolean
+  onClick: () => void
+  onRemove: () => void
+  currentTheme: string
+  themeData: typeof themes[keyof typeof themes]
+  use12Hour: boolean
+  isLight: boolean
+}) {
+  const [time, setTime] = useState(new Date())
+  
+  useEffect(() => {
+    const timer = setInterval(() => setTime(new Date()), 1000)
+    return () => clearInterval(timer)
+  }, [])
+  
+  const localTime = new Date(time.toLocaleString('en-US', { timeZone: city.timezone }))
+  
+  let timeStr: string
+  if (use12Hour) {
+    const hours = localTime.getHours()
+    const minutes = localTime.getMinutes()
+    const period = hours >= 12 ? 'PM' : 'AM'
+    const displayHours = hours % 12 || 12
+    timeStr = `${displayHours}:${minutes.toString().padStart(2, '0')} ${period}`
+  } else {
+    timeStr = localTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })
+  }
+  
+  const cityTimeOfDay = getTimeOfDay(localTime, city.lat, city.lng)
+  const cityTheme = themes[cityTimeOfDay]
+  const Icon = TimeIcons[cityTimeOfDay]
+  
+  return (
+    <div
+      className={`group p-4 rounded-2xl transition-all duration-300 backdrop-blur-xl border relative ${
+        isSelected
+          ? `${themeData.accentBgLight} ${themeData.accentBorder} shadow-lg`
+          : isLight
+            ? 'bg-white/40 border-white/50 hover:bg-white/60'
+            : 'bg-slate-800/40 border-slate-700/50 hover:bg-slate-700/50'
+      }`}
+    >
+      <button
+        onClick={onRemove}
+        className={`absolute top-2 right-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity ${
+          isLight ? 'text-slate-400 hover:text-slate-600' : 'text-slate-500 hover:text-slate-300'
+        }`}
+        title="Remove from favorites"
+      >
+        ✕
+      </button>
+      <button onClick={onClick} className="w-full text-left">
+        <div className="flex items-center justify-between gap-4">
+          <div className="min-w-0 flex-1">
+            <div className={`text-xs uppercase tracking-wide mb-0.5 truncate ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
+              {city.country}
+            </div>
+            <div className={`text-lg font-semibold truncate ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              {city.city}
+            </div>
+          </div>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <div className={`text-xl font-medium ${isLight ? 'text-slate-700' : 'text-slate-200'}`} style={{ fontVariantNumeric: 'tabular-nums' }}>
+              {timeStr}
+            </div>
+            <div className={`${cityTheme.accentClass}`} title={cityTheme.label}>
+              <Icon className="w-5 h-5" />
+            </div>
+          </div>
+        </div>
+      </button>
+    </div>
+  )
+}
+
 function findNearestCity(lat: number, lng: number): City {
   let nearest = cities[0]
   let minDist = Infinity
@@ -73,6 +160,37 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   
   // Detected user location
   const [detectedCity, setDetectedCity] = useState<City | null>(null)
+  
+  // Favorites
+  const [favorites, setFavorites] = useState<string[]>([])
+  
+  // Load favorites from localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem('whattime-favorites')
+    if (saved) {
+      try {
+        setFavorites(JSON.parse(saved))
+      } catch (e) {
+        console.error('Failed to parse favorites:', e)
+      }
+    }
+  }, [])
+  
+  // Save favorites to localStorage
+  useEffect(() => {
+    localStorage.setItem('whattime-favorites', JSON.stringify(favorites))
+  }, [favorites])
+  
+  const toggleFavorite = (slug: string) => {
+    setFavorites(prev => 
+      prev.includes(slug) 
+        ? prev.filter(s => s !== slug)
+        : [...prev, slug]
+    )
+  }
+  
+  const isFavorite = (slug: string) => favorites.includes(slug)
+  const favoriteCities = cities.filter(c => favorites.includes(c.slug))
   
   useEffect(() => {
     setLang(detectLanguage())
@@ -312,9 +430,22 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             </div>
             
             <div className="mt-8 text-center">
-              <h2 className={`text-4xl md:text-5xl font-medium ${theme.text}`}>
-                {selectedCity.city}
-              </h2>
+              <div className="flex items-center justify-center gap-2">
+                <h2 className={`text-4xl md:text-5xl font-medium ${theme.text}`}>
+                  {selectedCity.city}
+                </h2>
+                <button
+                  onClick={() => toggleFavorite(selectedCity.slug)}
+                  className={`text-2xl md:text-3xl transition-all hover:scale-110 ${
+                    isFavorite(selectedCity.slug) 
+                      ? 'text-amber-400' 
+                      : isLight ? 'text-slate-300 hover:text-amber-400' : 'text-slate-600 hover:text-amber-400'
+                  }`}
+                  title={isFavorite(selectedCity.slug) ? 'Remove from favorites' : 'Add to favorites'}
+                >
+                  {isFavorite(selectedCity.slug) ? '★' : '☆'}
+                </button>
+              </div>
               <p className={`text-lg mt-1 ${theme.textMuted}`}>{selectedCity.country}</p>
               
               {detectedCity && detectedCity.slug !== selectedCity.slug && (
@@ -371,6 +502,33 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         {selectedCity.info && (
           <div className={`rounded-3xl backdrop-blur-xl border ${theme.card} mb-8`}>
             <CityInfo city={selectedCity} theme={theme} isLight={isLight} />
+          </div>
+        )}
+        
+        {/* Favorite Cities Section - Only show if user has favorites */}
+        {favoriteCities.length > 0 && (
+          <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mb-8`}>
+            <h3 className={`text-xl font-semibold ${theme.text} mb-4`}>
+              ★ {t.favoriteCities || 'Your Favorite Cities'}
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {favoriteCities.map(city => (
+                <FavoriteCard
+                  key={city.slug}
+                  city={city}
+                  isSelected={city.slug === selectedCity.slug}
+                  onClick={() => {
+                    setSelectedCity(city)
+                    router.push(`/${city.slug}`)
+                  }}
+                  onRemove={() => toggleFavorite(city.slug)}
+                  currentTheme={currentTheme}
+                  themeData={theme}
+                  use12Hour={use12Hour}
+                  isLight={isLight}
+                />
+              ))}
+            </div>
           </div>
         )}
         

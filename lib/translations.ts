@@ -30,6 +30,7 @@ export interface Translations {
   asia: string
   africa: string
   oceania: string
+  favoriteCities: string
 }
 
 export const translations: Record<Language, Translations> = {
@@ -62,7 +63,8 @@ export const translations: Record<Language, Translations> = {
     europe: 'Europe',
     asia: 'Asia',
     africa: 'Africa',
-    oceania: 'Oceania'
+    oceania: 'Oceania',
+    favoriteCities: 'Your Favorite Cities'
   },
   tr: {
     worldClock: 'Dünya Saati',
@@ -93,7 +95,8 @@ export const translations: Record<Language, Translations> = {
     europe: 'Avrupa',
     asia: 'Asya',
     africa: 'Afrika',
-    oceania: 'Okyanusya'
+    oceania: 'Okyanusya',
+    favoriteCities: 'Favori Şehirlerim'
   },
   de: {
     worldClock: 'Weltzeituhr',
@@ -124,7 +127,8 @@ export const translations: Record<Language, Translations> = {
     europe: 'Europa',
     asia: 'Asien',
     africa: 'Afrika',
-    oceania: 'Ozeanien'
+    oceania: 'Ozeanien',
+    favoriteCities: 'Lieblingsstädte'
   },
   fr: {
     worldClock: 'Horloge Mondiale',
@@ -155,7 +159,8 @@ export const translations: Record<Language, Translations> = {
     europe: 'Europe',
     asia: 'Asie',
     africa: 'Afrique',
-    oceania: 'Océanie'
+    oceania: 'Océanie',
+    favoriteCities: 'Villes favorites'
   },
   es: {
     worldClock: 'Reloj Mundial',
@@ -186,7 +191,8 @@ export const translations: Record<Language, Translations> = {
     europe: 'Europa',
     asia: 'Asia',
     africa: 'África',
-    oceania: 'Oceanía'
+    oceania: 'Oceanía',
+    favoriteCities: 'Ciudades favoritas'
   },
   pt: {
     worldClock: 'Relógio Mundial',
@@ -217,7 +223,8 @@ export const translations: Record<Language, Translations> = {
     europe: 'Europa',
     asia: 'Ásia',
     africa: 'África',
-    oceania: 'Oceania'
+    oceania: 'Oceania',
+    favoriteCities: 'Cidades favoritas'
   },
   ru: {
     worldClock: 'Мировые часы',
@@ -248,7 +255,8 @@ export const translations: Record<Language, Translations> = {
     europe: 'Европа',
     asia: 'Азия',
     africa: 'Африка',
-    oceania: 'Океания'
+    oceania: 'Океания',
+    favoriteCities: 'Избранные города'
   },
   ar: {
     worldClock: 'الساعة العالمية',
@@ -279,7 +287,8 @@ export const translations: Record<Language, Translations> = {
     europe: 'أوروبا',
     asia: 'آسيا',
     africa: 'أفريقيا',
-    oceania: 'أوقيانوسيا'
+    oceania: 'أوقيانوسيا',
+    favoriteCities: 'المدن المفضلة'
   },
   ja: {
     worldClock: '世界時計',
@@ -310,7 +319,8 @@ export const translations: Record<Language, Translations> = {
     europe: 'ヨーロッパ',
     asia: 'アジア',
     africa: 'アフリカ',
-    oceania: 'オセアニア'
+    oceania: 'オセアニア',
+    favoriteCities: 'お気に入りの都市'
   },
   zh: {
     worldClock: '世界时钟',
@@ -341,7 +351,8 @@ export const translations: Record<Language, Translations> = {
     europe: '欧洲',
     asia: '亚洲',
     africa: '非洲',
-    oceania: '大洋洲'
+    oceania: '大洋洲',
+    favoriteCities: '收藏城市'
   },
   ko: {
     worldClock: '세계 시계',
@@ -372,7 +383,8 @@ export const translations: Record<Language, Translations> = {
     europe: '유럽',
     asia: '아시아',
     africa: '아프리카',
-    oceania: '오세아니아'
+    oceania: '오세아니아',
+    favoriteCities: '즐겨찾기 도시'
   },
   it: {
     worldClock: 'Orologio Mondiale',
@@ -403,7 +415,8 @@ export const translations: Record<Language, Translations> = {
     europe: 'Europa',
     asia: 'Asia',
     africa: 'Africa',
-    oceania: 'Oceania'
+    oceania: 'Oceania',
+    favoriteCities: 'Città preferite'
   },
   nl: {
     worldClock: 'Wereldklok',
@@ -434,7 +447,8 @@ export const translations: Record<Language, Translations> = {
     europe: 'Europa',
     asia: 'Azië',
     africa: 'Afrika',
-    oceania: 'Oceanië'
+    oceania: 'Oceanië',
+    favoriteCities: 'Favoriete steden'
   }
 }
 
