@@ -227,7 +227,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             />
           </button>
           
-          <div className="flex flex-col items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-center gap-3">
             <Search theme={theme} currentTheme={currentTheme} />
             
             <div className="flex items-center gap-2">
