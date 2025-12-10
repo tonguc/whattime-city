@@ -359,21 +359,21 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         <div className={`absolute -bottom-1/4 -right-1/4 w-[600px] h-[600px] ${theme.glow} rounded-full blur-3xl opacity-40`}/>
       </div>
       
-      <div className="relative z-10 max-w-5xl mx-auto px-4 py-8">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 py-4 sm:py-8">
         {/* Sticky Header */}
-        <header className="sticky top-0 z-50 flex flex-col lg:flex-row items-center justify-between gap-4 mb-6 py-3 -mx-4 px-4 backdrop-blur-xl">
+        <header className="sticky top-0 z-50 flex flex-col lg:flex-row items-center justify-between gap-2 sm:gap-4 mb-4 sm:mb-6 py-2 sm:py-3 -mx-4 px-4 backdrop-blur-xl">
           <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0" title="Click to detect your location">
             <img 
               src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
               alt="whattime.city" 
-              className="h-12 sm:h-14"
+              className="h-10 sm:h-14"
             />
           </button>
           
-          <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 w-full sm:w-auto">
             <Search theme={theme} currentTheme={currentTheme} />
             
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-between w-full sm:w-auto gap-2">
               {/* Digital/Analog Toggle with Icons */}
               <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
                 {(['digital', 'analog'] as const).map((mode) => (
@@ -390,9 +390,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                     {/* Mobile: Icons */}
                     <span className="sm:hidden">
                       {mode === 'digital' ? (
-                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <rect x="3" y="6" width="18" height="12" rx="2"/>
-                          <path d="M9 10v4m2-4v4m4-4v4"/>
+                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                          <text x="3" y="17" fontSize="14" fontFamily="monospace" fontWeight="bold">12</text>
                         </svg>
                       ) : (
                         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -438,7 +437,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         </header>
         
-        <div className={`rounded-3xl p-8 md:p-12 mb-8 backdrop-blur-xl border ${theme.card} relative overflow-hidden`}>
+        <div className={`rounded-3xl p-6 pt-4 md:p-12 md:pt-8 mb-8 backdrop-blur-xl border ${theme.card} relative overflow-hidden`}>
           <div className="flex flex-col items-center justify-center relative z-10 w-full">
             <div className="w-full flex justify-center">
               {clockMode === 'analog' ? (
@@ -448,7 +447,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               )}
             </div>
             
-            <div className="mt-8 text-center">
+            <div className="mt-6 md:mt-8 text-center">
               <div className="flex items-center justify-center gap-2">
                 <h2 className={`text-4xl md:text-5xl font-medium ${theme.text}`}>
                   {selectedCity.city}
