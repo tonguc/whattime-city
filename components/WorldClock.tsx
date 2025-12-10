@@ -359,9 +359,9 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         <div className={`absolute -bottom-1/4 -right-1/4 w-[600px] h-[600px] ${theme.glow} rounded-full blur-3xl opacity-40`}/>
       </div>
       
-      <div className="relative z-10 max-w-5xl mx-auto px-4 py-4 sm:py-8">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 py-4 sm:py-6">
         {/* Sticky Header */}
-        <header className="sticky top-0 z-50 flex flex-col lg:flex-row items-center justify-between gap-2 sm:gap-4 mb-4 sm:mb-6 py-2 sm:py-3 -mx-4 px-4 backdrop-blur-xl">
+        <header className="sticky top-0 z-50 flex flex-col lg:flex-row items-center justify-between gap-3 sm:gap-4 mb-6 sm:mb-8 py-2 sm:py-3 -mx-4 px-4 backdrop-blur-xl">
           <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0" title="Click to detect your location">
             <img 
               src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
@@ -370,7 +370,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             />
           </button>
           
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-3 w-full sm:w-auto">
             <Search theme={theme} currentTheme={currentTheme} />
             
             <div className="flex items-center justify-center w-full sm:w-auto gap-1 sm:gap-2">
@@ -437,7 +437,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         </header>
         
-        <div className={`rounded-3xl p-6 pt-4 md:p-12 md:pt-8 mb-8 backdrop-blur-xl border ${theme.card} relative overflow-hidden`}>
+        <div className={`rounded-3xl p-6 pt-4 md:p-8 md:pt-6 mb-8 backdrop-blur-xl border ${theme.card} relative overflow-hidden`}>
           <div className="flex flex-col items-center justify-center relative z-10 w-full">
             <div className="w-full flex justify-center">
               {clockMode === 'analog' ? (
