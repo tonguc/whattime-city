@@ -124,7 +124,7 @@ export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isL
   const overlap = findOverlap()
 
   return (
-    <div ref={containerRef} className={`rounded-3xl p-6 backdrop-blur-xl border ${themeData.card} mb-8`}>
+    <div ref={containerRef} className={`rounded-3xl p-6 backdrop-blur-xl border ${themeData.card} mb-4`}>
       <h3 className={`text-xl font-semibold ${themeData.text} mb-4`}>
         Meeting Planner
       </h3>

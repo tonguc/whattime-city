@@ -359,9 +359,9 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         <div className={`absolute -bottom-1/4 -right-1/4 w-[600px] h-[600px] ${theme.glow} rounded-full blur-3xl opacity-40`}/>
       </div>
       
-      <div className="relative z-10 max-w-5xl mx-auto px-4 py-4 sm:py-6">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 py-4 sm:py-4">
         {/* Sticky Header */}
-        <header className="sticky top-0 z-50 flex flex-col lg:flex-row items-center justify-between gap-3 sm:gap-4 mb-6 sm:mb-8 py-2 sm:py-3 -mx-4 px-4 backdrop-blur-xl">
+        <header className="sticky top-0 z-50 flex flex-col lg:flex-row items-center justify-between gap-2 sm:gap-4 mb-2 sm:mb-4 py-2 sm:py-3 -mx-4 px-4 backdrop-blur-xl">
           <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0" title="Click to detect your location">
             <img 
               src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
@@ -370,7 +370,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             />
           </button>
           
-          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-3 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 w-full sm:w-auto">
             <Search theme={theme} currentTheme={currentTheme} />
             
             <div className="flex items-center justify-center w-full sm:w-auto gap-1 sm:gap-2">
@@ -437,7 +437,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         </header>
         
-        <div className={`rounded-3xl p-6 pt-4 md:p-8 md:pt-6 mb-8 backdrop-blur-xl border ${theme.card} relative overflow-hidden`}>
+        <div className={`rounded-3xl p-5 md:p-6 mb-4 backdrop-blur-xl border ${theme.card} relative overflow-hidden`}>
           <div className="flex flex-col items-center justify-center relative z-10 w-full">
             <div className="w-full flex justify-center">
               {clockMode === 'analog' ? (
@@ -447,14 +447,14 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               )}
             </div>
             
-            <div className="mt-6 md:mt-8 text-center">
+            <div className="mt-4 md:mt-6 text-center">
               <div className="flex items-center justify-center gap-2">
-                <h2 className={`text-4xl md:text-5xl font-medium ${theme.text}`}>
+                <h2 className={`text-3xl md:text-5xl font-medium ${theme.text}`}>
                   {selectedCity.city}
                 </h2>
                 <button
                   onClick={() => toggleFavorite(selectedCity.slug)}
-                  className={`text-2xl md:text-3xl transition-all hover:scale-110 ${
+                  className={`text-xl md:text-3xl transition-all hover:scale-110 ${
                     isFavorite(selectedCity.slug) 
                       ? 'text-amber-400' 
                       : isLight ? 'text-slate-300 hover:text-amber-400' : 'text-slate-600 hover:text-amber-400'
@@ -464,10 +464,10 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                   {isFavorite(selectedCity.slug) ? '★' : '☆'}
                 </button>
               </div>
-              <p className={`text-lg mt-1 ${theme.textMuted}`}>{selectedCity.country}</p>
+              <p className={`text-base md:text-lg mt-1 ${theme.textMuted}`}>{selectedCity.country}</p>
               
               {detectedCity && detectedCity.slug !== selectedCity.slug && (
-                <p className={`text-xs mt-2 ${theme.textMuted} opacity-50`}>
+                <p className={`text-xs mt-1 ${theme.textMuted} opacity-50`}>
                   Time difference from your location: {(() => {
                     const selectedOffset = new Date().toLocaleString('en-US', { timeZone: selectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
                     const detectedOffset = new Date().toLocaleString('en-US', { timeZone: detectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
@@ -483,15 +483,15 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               )}
               
               {detectedCity && (
-                <p className={`text-xs mt-2 ${theme.textMuted} opacity-70 flex items-center justify-center gap-1`}>
+                <p className={`text-xs mt-1 ${theme.textMuted} opacity-70 flex items-center justify-center gap-1`}>
                   <span>📍</span>
                   <span>Your location: {detectedCity.city}</span>
                 </p>
               )}
               
-              <p className={`mt-2 ${theme.textMuted}`}>{dateStr}</p>
+              <p className={`mt-1 text-sm md:text-base ${theme.textMuted}`}>{dateStr}</p>
               
-              <div className="flex flex-wrap items-center justify-center gap-2 mt-4">
+              <div className="flex flex-wrap items-center justify-center gap-2 mt-3">
                 <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                   isLight ? 'bg-slate-200/80 text-slate-700' : 'bg-slate-700/80 text-slate-300'
                 }`}>
@@ -510,7 +510,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               </div>
             </div>
             
-            <div className="mt-6 w-full max-w-xs">
+            <div className="mt-4 w-full max-w-xs">
               <SunInfoCard city={selectedCity} localTime={localTime} theme={currentTheme} t={t} />
             </div>
           </div>
@@ -518,14 +518,14 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         
         {/* City Info Section */}
         {selectedCity.info && (
-          <div className={`rounded-3xl backdrop-blur-xl border ${theme.card} mb-8`}>
+          <div className={`rounded-3xl backdrop-blur-xl border ${theme.card} mb-4`}>
             <CityInfo city={selectedCity} theme={theme} isLight={isLight} />
           </div>
         )}
         
         {/* Favorite Cities Section - Only show if user has favorites */}
         {favoriteCities.length > 0 && (
-          <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mb-8`}>
+          <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mb-4`}>
             <h3 className={`text-xl font-semibold ${theme.text} mb-4`}>
               {t.favoriteCities || 'Your Favorite Cities'}
             </h3>

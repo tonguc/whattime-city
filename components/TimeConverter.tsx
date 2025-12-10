@@ -90,7 +90,7 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
   const timeDiff = getTimeDifference()
   
   return (
-    <div className={`rounded-3xl p-6 backdrop-blur-xl border ${themeData.card} mb-8`}>
+    <div className={`rounded-3xl p-6 backdrop-blur-xl border ${themeData.card} mb-4`}>
       <h3 className={`text-xl font-semibold ${themeData.text} mb-4`}>
         Two-City Time Converter
       </h3>
