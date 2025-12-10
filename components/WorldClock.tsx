@@ -361,7 +361,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
       
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-8">
         {/* Sticky Header */}
-        <header className="sticky top-0 z-50 flex flex-col lg:flex-row items-center justify-between gap-4 mb-6 py-3 -mx-4 px-4 backdrop-blur-xl bg-opacity-80" style={{ backgroundColor: isLight ? 'rgba(248, 250, 252, 0.8)' : 'rgba(15, 23, 42, 0.8)' }}>
+        <header className="sticky top-0 z-50 flex flex-col lg:flex-row items-center justify-between gap-4 mb-6 py-3 -mx-4 px-4 backdrop-blur-xl">
           <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0" title="Click to detect your location">
             <img 
               src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
