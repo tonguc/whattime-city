@@ -361,16 +361,16 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
       
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-4 sm:py-4">
         {/* Sticky Header */}
-        <header className="sticky top-0 z-50 flex flex-col lg:flex-row items-center justify-between gap-2 sm:gap-4 mb-2 sm:mb-4 py-2 sm:py-3 -mx-4 px-4 backdrop-blur-xl">
+        <header className="sticky top-0 z-50 flex flex-col lg:flex-row items-center justify-between gap-2 sm:gap-4 mb-4 sm:mb-4 py-2 sm:py-2 -mx-4 px-4 backdrop-blur-xl">
           <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0" title="Click to detect your location">
             <img 
               src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
               alt="whattime.city" 
-              className="h-10 sm:h-14"
+              className="h-11 sm:h-14"
             />
           </button>
           
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-3 w-full sm:w-auto">
             <Search theme={theme} currentTheme={currentTheme} />
             
             <div className="flex items-center justify-center w-full sm:w-auto gap-1 sm:gap-2">
@@ -437,7 +437,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         </header>
         
-        <div className={`rounded-3xl p-5 md:p-6 mb-4 backdrop-blur-xl border ${theme.card} relative overflow-hidden`}>
+        <div className={`rounded-3xl p-4 md:p-5 mb-4 backdrop-blur-xl border ${theme.card} relative overflow-hidden`}>
           <div className="flex flex-col items-center justify-center relative z-10 w-full">
             <div className="w-full flex justify-center">
               {clockMode === 'analog' ? (
