@@ -360,7 +360,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
       </div>
       
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-8">
-        <header className="flex flex-col lg:flex-row items-center justify-between gap-4 mb-6">
+        {/* Sticky Header */}
+        <header className="sticky top-0 z-50 flex flex-col lg:flex-row items-center justify-between gap-4 mb-6 py-3 -mx-4 px-4 backdrop-blur-xl bg-opacity-80" style={{ backgroundColor: isLight ? 'rgba(248, 250, 252, 0.8)' : 'rgba(15, 23, 42, 0.8)' }}>
           <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0" title="Click to detect your location">
             <img 
               src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
@@ -369,33 +370,49 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             />
           </button>
           
-          <div className="flex flex-col sm:flex-row items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
             <Search theme={theme} currentTheme={currentTheme} />
             
             <div className="flex items-center gap-2">
+              {/* Digital/Analog Toggle with Icons */}
               <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
                 {(['digital', 'analog'] as const).map((mode) => (
                   <button
                     key={mode}
                     onClick={() => setClockMode(mode)}
                     title={mode === 'digital' ? 'Digital: Show time as numbers' : 'Analog: Show time as clock face'}
-                    className={`px-3 sm:px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
+                    className={`px-3 sm:px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center justify-center ${
                       clockMode === mode
                         ? `${theme.accentBg} text-white shadow-lg`
                         : isLight ? 'text-slate-600' : 'text-slate-400'
                     }`}
                   >
-                    <span className="sm:hidden">{mode === 'digital' ? 'Dij' : 'Ana'}</span>
+                    {/* Mobile: Icons */}
+                    <span className="sm:hidden">
+                      {mode === 'digital' ? (
+                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="3" y="6" width="18" height="12" rx="2"/>
+                          <path d="M9 10v4m2-4v4m4-4v4"/>
+                        </svg>
+                      ) : (
+                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="12" cy="12" r="9"/>
+                          <path d="M12 6v6l4 2"/>
+                        </svg>
+                      )}
+                    </span>
+                    {/* Desktop: Text */}
                     <span className="hidden sm:inline capitalize">{t[mode]}</span>
                   </button>
                 ))}
               </div>
               
+              {/* 24h/12h Toggle */}
               <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
                 <button
                   onClick={() => setUse12Hour(false)}
                   title="24-hour format (00:00 - 23:59)"
-                  className={`px-3 sm:px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
+                  className={`px-3 sm:px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     !use12Hour
                       ? `${theme.accentBg} text-white shadow-lg`
                       : isLight ? 'text-slate-600' : 'text-slate-400'
@@ -406,7 +423,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                 <button
                   onClick={() => setUse12Hour(true)}
                   title="12-hour format with AM/PM"
-                  className={`px-3 sm:px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
+                  className={`px-3 sm:px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     use12Hour
                       ? `${theme.accentBg} text-white shadow-lg`
                       : isLight ? 'text-slate-600' : 'text-slate-400'

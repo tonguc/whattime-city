@@ -76,7 +76,7 @@ export default function Search({ theme, currentTheme }: SearchProps) {
   }
   
   return (
-    <div className="relative">
+    <div className="relative w-full sm:w-auto">
       <div className={`flex items-center gap-2 px-4 py-2.5 rounded-full ${
         isLight ? 'bg-white/80 shadow-sm' : 'bg-slate-800/80'
       } backdrop-blur-xl border ${isLight ? 'border-slate-200/50' : 'border-slate-700/50'}`}>
@@ -91,7 +91,7 @@ export default function Search({ theme, currentTheme }: SearchProps) {
           onKeyDown={handleKeyDown}
           onFocus={() => query && setIsOpen(true)}
           placeholder="Search (e.g. Tokyo, Berlin)"
-          className={`bg-transparent outline-none text-sm w-40 sm:w-52 ${
+          className={`bg-transparent outline-none text-sm w-full sm:w-52 ${
             isLight ? 'text-slate-800 placeholder-slate-400' : 'text-white placeholder-slate-500'
           }`}
         />
