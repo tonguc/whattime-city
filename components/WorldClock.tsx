@@ -373,7 +373,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 w-full sm:w-auto">
             <Search theme={theme} currentTheme={currentTheme} />
             
-            <div className="flex items-center justify-between w-full sm:w-auto gap-2">
+            <div className="flex items-center justify-center w-full sm:w-auto gap-1 sm:gap-2">
               {/* Digital/Analog Toggle with Icons */}
               <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
                 {(['digital', 'analog'] as const).map((mode) => (
@@ -381,7 +381,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                     key={mode}
                     onClick={() => setClockMode(mode)}
                     title={mode === 'digital' ? 'Digital: Show time as numbers' : 'Analog: Show time as clock face'}
-                    className={`px-3 sm:px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center justify-center ${
+                    className={`px-4 sm:px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center justify-center ${
                       clockMode === mode
                         ? `${theme.accentBg} text-white shadow-lg`
                         : isLight ? 'text-slate-600' : 'text-slate-400'
@@ -411,7 +411,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                 <button
                   onClick={() => setUse12Hour(false)}
                   title="24-hour format (00:00 - 23:59)"
-                  className={`px-3 sm:px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                  className={`px-4 sm:px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     !use12Hour
                       ? `${theme.accentBg} text-white shadow-lg`
                       : isLight ? 'text-slate-600' : 'text-slate-400'
@@ -422,7 +422,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                 <button
                   onClick={() => setUse12Hour(true)}
                   title="12-hour format with AM/PM"
-                  className={`px-3 sm:px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                  className={`px-4 sm:px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     use12Hour
                       ? `${theme.accentBg} text-white shadow-lg`
                       : isLight ? 'text-slate-600' : 'text-slate-400'
