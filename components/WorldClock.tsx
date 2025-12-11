@@ -363,28 +363,13 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-4 sm:py-4">
         {/* Sticky Header */}
         <header className="sticky top-0 z-50 flex flex-col lg:flex-row items-center justify-between gap-2 sm:gap-4 mb-3 sm:mb-4 py-2 sm:py-2 -mx-4 px-4 backdrop-blur-xl">
-          <div className="flex items-center gap-4">
-            <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0" title="Click to detect your location">
-              <img 
-                src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
-                alt="whattime.city" 
-                className="h-11 sm:h-14"
-              />
-            </button>
-            <a 
-              href="/tools" 
-              className={`hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
-                isLight 
-                  ? 'text-slate-600 hover:bg-white/60' 
-                  : 'text-slate-300 hover:bg-slate-800/60'
-              }`}
-            >
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-              </svg>
-              {t.tools || 'Tools'}
-            </a>
-          </div>
+          <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0" title="Click to detect your location">
+            <img 
+              src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
+              alt="whattime.city" 
+              className="h-11 sm:h-14"
+            />
+          </button>
           
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-3 w-full sm:w-auto">
             <Search theme={theme} currentTheme={currentTheme} />
@@ -449,6 +434,21 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               </div>
               
               <ThemeToggle mode={themeMode} setMode={setThemeMode} currentTheme={currentTheme} t={t} themeData={theme} />
+              
+              {/* Tools Link */}
+              <a 
+                href="/tools" 
+                className={`hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium transition-all ${
+                  isLight 
+                    ? 'bg-white/60 text-slate-600 hover:bg-white/80' 
+                    : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/60'
+                } backdrop-blur-xl`}
+                title={t.tools || 'Tools'}
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+              </a>
             </div>
           </div>
         </header>
