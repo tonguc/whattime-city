@@ -18,6 +18,9 @@ import WeatherBackground from '@/components/WeatherBackground'
 import WeatherBadge from '@/components/WeatherBadge'
 import CityInfo from '@/components/CityInfo'
 import AlarmModal, { ActiveAlarmPopup } from '@/components/AlarmModal'
+import TimeConverter from '@/components/TimeConverter'
+import MeetingPlanner from '@/components/MeetingPlanner'
+import AboutSection from '@/components/AboutSection'
 
 // Alarm type definition
 interface Alarm {
@@ -34,6 +37,93 @@ interface Alarm {
 
 interface WorldClockProps {
   initialCity?: City
+}
+
+// FavoriteCard component - matches existing CityCard style
+function FavoriteCard({ 
+  city, 
+  isSelected, 
+  onClick, 
+  onRemove,
+  currentTheme, 
+  themeData, 
+  use12Hour,
+  isLight
+}: {
+  city: City
+  isSelected: boolean
+  onClick: () => void
+  onRemove: () => void
+  currentTheme: string
+  themeData: typeof themes[keyof typeof themes]
+  use12Hour: boolean
+  isLight: boolean
+}) {
+  const [time, setTime] = useState(new Date())
+  
+  useEffect(() => {
+    const timer = setInterval(() => setTime(new Date()), 1000)
+    return () => clearInterval(timer)
+  }, [])
+  
+  const localTime = new Date(time.toLocaleString('en-US', { timeZone: city.timezone }))
+  
+  let timeStr: string
+  if (use12Hour) {
+    const hours = localTime.getHours()
+    const minutes = localTime.getMinutes()
+    const period = hours >= 12 ? 'PM' : 'AM'
+    const displayHours = hours % 12 || 12
+    timeStr = `${displayHours}:${minutes.toString().padStart(2, '0')} ${period}`
+  } else {
+    timeStr = localTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })
+  }
+  
+  const cityTimeOfDay = getTimeOfDay(localTime, city.lat, city.lng)
+  const cityTheme = themes[cityTimeOfDay]
+  const Icon = TimeIcons[cityTimeOfDay]
+  
+  return (
+    <div
+      className={`group p-4 rounded-2xl transition-all duration-300 backdrop-blur-xl border relative ${
+        isSelected
+          ? `${themeData.accentBgLight} ${themeData.accentBorder} shadow-lg`
+          : isLight
+            ? 'bg-white/40 border-white/50 hover:bg-white/60'
+            : 'bg-slate-800/40 border-slate-700/50 hover:bg-slate-700/50'
+      }`}
+    >
+      <button
+        onClick={onRemove}
+        className={`absolute top-2 right-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity ${
+          isLight ? 'text-slate-400 hover:text-slate-600' : 'text-slate-500 hover:text-slate-300'
+        }`}
+        title="Remove from favorites"
+      >
+        ✕
+      </button>
+      <button onClick={onClick} className="w-full text-left">
+        <div className="flex items-center justify-between gap-4">
+          <div className="min-w-0 flex-1">
+            <div className={`text-xs uppercase tracking-wide mb-0.5 truncate ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
+              {city.country}
+            </div>
+            <div className={`text-lg font-semibold truncate ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              {city.city}
+            </div>
+          </div>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <div className={`text-xl font-medium ${isLight ? 'text-slate-700' : 'text-slate-200'}`} style={{ fontVariantNumeric: 'tabular-nums' }}>
+              {timeStr}
+            </div>
+            <div className={`${cityTheme.accentClass}`} title={cityTheme.label}>
+              <Icon className="w-5 h-5" />
+            </div>
+          </div>
+        </div>
+      </button>
+    </div>
+  )
 }
 
 function findNearestCity(lat: number, lng: number): City {
@@ -71,28 +161,78 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   const [alarms, setAlarms] = useState<Alarm[]>([])
   const [activeAlarm, setActiveAlarm] = useState<Alarm | null>(null)
   
+  // Detected user location
+  const [detectedCity, setDetectedCity] = useState<City | null>(null)
+  
+  // Favorites
+  const [favorites, setFavorites] = useState<string[]>([])
+  
+  // Load favorites from localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem('whattime-favorites')
+    if (saved) {
+      try {
+        setFavorites(JSON.parse(saved))
+      } catch (e) {
+        console.error('Failed to parse favorites:', e)
+      }
+    }
+  }, [])
+  
+  // Save favorites to localStorage
+  useEffect(() => {
+    localStorage.setItem('whattime-favorites', JSON.stringify(favorites))
+  }, [favorites])
+  
+  const toggleFavorite = (slug: string) => {
+    setFavorites(prev => 
+      prev.includes(slug) 
+        ? prev.filter(s => s !== slug)
+        : [...prev, slug]
+    )
+  }
+  
+  const isFavorite = (slug: string) => favorites.includes(slug)
+  const favoriteCities = cities.filter(c => favorites.includes(c.slug))
+  
   useEffect(() => {
     setLang(detectLanguage())
     const timer = setInterval(() => setTime(new Date()), 1000)
     return () => clearInterval(timer)
   }, [])
   
-  // Detect user location and set nearest city (only on initial load without initialCity)
+  // Detect user location (always run to set detectedCity)
   useEffect(() => {
-    if (initialCity) return // Skip if city is provided via URL
-    
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const nearest = findNearestCity(position.coords.latitude, position.coords.longitude)
-          setSelectedCity(nearest)
+          setDetectedCity(nearest)
+          // Only set selectedCity if no initialCity provided
+          if (!initialCity) {
+            setSelectedCity(nearest)
+          }
         },
         (error) => {
-          // User denied or error - keep default city
+          // User denied or error - try timezone fallback for detectedCity
           console.log('Geolocation not available:', error.message)
+          const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+          const cityByTz = cities.find(c => c.timezone === tz) || cities[0]
+          setDetectedCity(cityByTz)
+          if (!initialCity) {
+            setSelectedCity(cityByTz)
+          }
         },
         { timeout: 5000, maximumAge: 300000 } // 5s timeout, cache for 5min
       )
+    } else {
+      // No geolocation - use timezone
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+      const cityByTz = cities.find(c => c.timezone === tz) || cities[0]
+      setDetectedCity(cityByTz)
+      if (!initialCity) {
+        setSelectedCity(cityByTz)
+      }
     }
   }, [initialCity])
   
@@ -186,6 +326,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         (position) => {
           const nearest = findNearestCity(position.coords.latitude, position.coords.longitude)
           setSelectedCity(nearest)
+          setDetectedCity(nearest)
           // Update URL without reload
           window.history.pushState({}, '', `/${nearest.slug}`)
         },
@@ -194,6 +335,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           console.log('Geolocation not available:', error.message)
           const cityByTz = findCityByTimezone()
           setSelectedCity(cityByTz)
+          setDetectedCity(cityByTz)
           window.history.pushState({}, '', `/${cityByTz.slug}`)
         },
         { timeout: 3000 }
@@ -202,6 +344,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
       // No geolocation, use timezone
       const cityByTz = findCityByTimezone()
       setSelectedCity(cityByTz)
+      setDetectedCity(cityByTz)
       window.history.pushState({}, '', `/${cityByTz.slug}`)
     }
   }
@@ -217,42 +360,59 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         <div className={`absolute -bottom-1/4 -right-1/4 w-[600px] h-[600px] ${theme.glow} rounded-full blur-3xl opacity-40`}/>
       </div>
       
-      <div className="relative z-10 max-w-5xl mx-auto px-4 py-8">
-        <header className="flex flex-col lg:flex-row items-center justify-between gap-4 mb-6">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 py-4 sm:py-4">
+        {/* Sticky Header */}
+        <header className="sticky top-0 z-50 flex flex-col lg:flex-row items-center justify-between gap-2 sm:gap-4 mb-3 sm:mb-4 py-2 sm:py-2 -mx-4 px-4 backdrop-blur-xl">
           <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0" title="Click to detect your location">
             <img 
               src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
               alt="whattime.city" 
-              className="h-12 sm:h-14"
+              className="h-11 sm:h-14"
             />
           </button>
           
-          <div className="flex flex-col sm:flex-row items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-3 w-full sm:w-auto">
             <Search theme={theme} currentTheme={currentTheme} />
             
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center w-full sm:w-auto gap-1 sm:gap-2">
+              {/* Digital/Analog Toggle with Icons */}
               <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
                 {(['digital', 'analog'] as const).map((mode) => (
                   <button
                     key={mode}
                     onClick={() => setClockMode(mode)}
                     title={mode === 'digital' ? 'Digital: Show time as numbers' : 'Analog: Show time as clock face'}
-                    className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all capitalize ${
+                    className={`px-4 sm:px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center justify-center ${
                       clockMode === mode
                         ? `${theme.accentBg} text-white shadow-lg`
                         : isLight ? 'text-slate-600' : 'text-slate-400'
                     }`}
                   >
-                    {t[mode]}
+                    {/* Mobile: Icons */}
+                    <span className="sm:hidden">
+                      {mode === 'digital' ? (
+                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                          <text x="3" y="17" fontSize="14" fontFamily="monospace" fontWeight="bold">12</text>
+                        </svg>
+                      ) : (
+                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="12" cy="12" r="9"/>
+                          <path d="M12 6v6l4 2"/>
+                        </svg>
+                      )}
+                    </span>
+                    {/* Desktop: Text */}
+                    <span className="hidden sm:inline capitalize">{t[mode]}</span>
                   </button>
                 ))}
               </div>
               
+              {/* 24h/12h Toggle */}
               <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
                 <button
                   onClick={() => setUse12Hour(false)}
                   title="24-hour format (00:00 - 23:59)"
-                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
+                  className={`px-4 sm:px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     !use12Hour
                       ? `${theme.accentBg} text-white shadow-lg`
                       : isLight ? 'text-slate-600' : 'text-slate-400'
@@ -263,7 +423,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                 <button
                   onClick={() => setUse12Hour(true)}
                   title="12-hour format with AM/PM"
-                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
+                  className={`px-4 sm:px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     use12Hour
                       ? `${theme.accentBg} text-white shadow-lg`
                       : isLight ? 'text-slate-600' : 'text-slate-400'
@@ -278,22 +438,61 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         </header>
         
-        <div className={`rounded-3xl p-8 md:p-10 mb-6 backdrop-blur-xl border ${theme.card} relative overflow-hidden`}>
-          <div className="flex flex-col items-center relative z-10">
-            {clockMode === 'analog' ? (
-              <AnalogClock time={localTime} theme={currentTheme} themeData={theme} />
-            ) : (
-              <DigitalClock time={localTime} theme={currentTheme} themeData={theme} use12Hour={use12Hour} />
-            )}
+        <div className={`rounded-3xl p-4 md:p-5 mb-4 backdrop-blur-xl border ${theme.card} relative overflow-hidden`}>
+          <div className="flex flex-col items-center justify-center relative z-10 w-full">
+            <div className="w-full flex justify-center">
+              {clockMode === 'analog' ? (
+                <AnalogClock time={localTime} theme={currentTheme} themeData={theme} />
+              ) : (
+                <DigitalClock time={localTime} theme={currentTheme} themeData={theme} use12Hour={use12Hour} />
+              )}
+            </div>
             
-            <div className="mt-8 text-center">
-              <h2 className={`text-4xl md:text-5xl font-medium ${theme.text}`}>
-                {selectedCity.city}
-              </h2>
-              <p className={`text-lg mt-1 ${theme.textMuted}`}>{selectedCity.country}</p>
-              <p className={`mt-2 ${theme.textMuted}`}>{dateStr}</p>
+            <div className="mt-4 md:mt-6 text-center">
+              <div className="flex items-center justify-center gap-2">
+                <h2 className={`text-3xl md:text-5xl font-medium ${theme.text}`}>
+                  {selectedCity.city}
+                </h2>
+                <button
+                  onClick={() => toggleFavorite(selectedCity.slug)}
+                  className={`text-xl md:text-3xl transition-all hover:scale-110 ${
+                    isFavorite(selectedCity.slug) 
+                      ? 'text-amber-400' 
+                      : isLight ? 'text-slate-300 hover:text-amber-400' : 'text-slate-600 hover:text-amber-400'
+                  }`}
+                  title={isFavorite(selectedCity.slug) ? 'Remove from favorites' : 'Add to favorites'}
+                >
+                  {isFavorite(selectedCity.slug) ? '★' : '☆'}
+                </button>
+              </div>
+              <p className={`text-base md:text-lg mt-1 ${theme.textMuted}`}>{selectedCity.country}</p>
               
-              <div className="flex flex-wrap items-center justify-center gap-2 mt-4">
+              {detectedCity && detectedCity.slug !== selectedCity.slug && (
+                <p className={`text-xs mt-1 ${theme.textMuted} opacity-50`}>
+                  Time difference from your location: {(() => {
+                    const selectedOffset = new Date().toLocaleString('en-US', { timeZone: selectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
+                    const detectedOffset = new Date().toLocaleString('en-US', { timeZone: detectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
+                    const parseOffset = (str: string) => {
+                      const match = str?.match(/GMT([+-]?\d+)?/)
+                      return match ? (parseInt(match[1]) || 0) : 0
+                    }
+                    const diff = parseOffset(selectedOffset || '') - parseOffset(detectedOffset || '')
+                    if (diff === 0) return 'same time'
+                    return `${diff > 0 ? '+' : ''}${diff}h`
+                  })()}
+                </p>
+              )}
+              
+              {detectedCity && (
+                <p className={`text-xs mt-1 ${theme.textMuted} opacity-70 flex items-center justify-center gap-1`}>
+                  <span>📍</span>
+                  <span>Your location: {detectedCity.city}</span>
+                </p>
+              )}
+              
+              <p className={`mt-1 text-sm md:text-base ${theme.textMuted}`}>{dateStr}</p>
+              
+              <div className="flex flex-wrap items-center justify-center gap-2 mt-3">
                 <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                   isLight ? 'bg-slate-200/80 text-slate-700' : 'bg-slate-700/80 text-slate-300'
                 }`}>
@@ -312,7 +511,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               </div>
             </div>
             
-            <div className="mt-6 w-full max-w-xs">
+            <div className="mt-4 w-full max-w-xs">
               <SunInfoCard city={selectedCity} localTime={localTime} theme={currentTheme} t={t} />
             </div>
           </div>
@@ -320,10 +519,60 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         
         {/* City Info Section */}
         {selectedCity.info && (
-          <div className={`rounded-3xl backdrop-blur-xl border ${theme.card} mb-6`}>
+          <div className={`rounded-3xl backdrop-blur-xl border ${theme.card} mb-4`}>
             <CityInfo city={selectedCity} theme={theme} isLight={isLight} />
           </div>
         )}
+        
+        {/* Favorite Cities Section - Only show if user has favorites */}
+        {favoriteCities.length > 0 && (
+          <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mb-4`}>
+            <h3 className={`text-xl font-semibold ${theme.text} mb-4`}>
+              {t.favoriteCities || 'Your Favorite Cities'}
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {favoriteCities.map(city => (
+                <FavoriteCard
+                  key={city.slug}
+                  city={city}
+                  isSelected={city.slug === selectedCity.slug}
+                  onClick={() => {
+                    setSelectedCity(city)
+                    router.push(`/${city.slug}`)
+                  }}
+                  onRemove={() => toggleFavorite(city.slug)}
+                  currentTheme={currentTheme}
+                  themeData={theme}
+                  use12Hour={use12Hour}
+                  isLight={isLight}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+        
+        {/* Two-City Time Converter */}
+        <TimeConverter
+          currentTheme={currentTheme}
+          themeData={theme}
+          use12Hour={use12Hour}
+          isLight={isLight}
+        />
+        
+        {/* About Section */}
+        <AboutSection
+          theme={theme}
+          isLight={isLight}
+          t={t}
+        />
+        
+        {/* Meeting Planner */}
+        <MeetingPlanner
+          currentTheme={currentTheme}
+          themeData={theme}
+          use12Hour={use12Hour}
+          isLight={isLight}
+        />
         
         <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card}`}>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
@@ -383,7 +632,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             </div>
           )}
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {getCitiesByContinent(selectedContinent)
               .filter(city => 
                 selectedContinent === 'all' || !continentFilter ||
@@ -409,7 +658,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         
         {/* SEO Content Section */}
         {selectedCity.info?.seoContent && (
-          <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-6`}>
+          <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-8`}>
             <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
               Time in {selectedCity.city}, {selectedCity.country}
             </h2>
@@ -435,7 +684,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         )}
         
-        <footer className="mt-8 text-center">
+        <footer className="mt-10 text-center">
           <div className={`flex flex-wrap justify-center gap-4 mb-4 text-sm ${theme.textMuted}`}>
             <div className="flex items-center gap-1.5 cursor-help" title="Night: After sunset until dawn">
               <TimeIcons.night className="w-4 h-4" />

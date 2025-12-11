@@ -30,6 +30,12 @@ export interface Translations {
   asia: string
   africa: string
   oceania: string
+  favoriteCities: string
+  aboutTitle: string
+  aboutSummary: string
+  aboutFull: string[]
+  aboutReadFull: string
+  aboutHideFull: string
 }
 
 export const translations: Record<Language, Translations> = {
@@ -62,7 +68,19 @@ export const translations: Record<Language, Translations> = {
     europe: 'Europe',
     asia: 'Asia',
     africa: 'Africa',
-    oceania: 'Oceania'
+    oceania: 'Oceania',
+    favoriteCities: 'Your Favorite Cities',
+    aboutTitle: 'About whattime.city',
+    aboutSummary: 'whattime.city is your free, instant world clock for checking current local time in any city worldwide. Whether you\'re scheduling international calls, planning travel, or coordinating with global teams, our accurate time zone converter helps you stay synchronized across the globe.',
+    aboutFull: [
+      'Our world clock displays real-time updates for hundreds of cities across all continents. Each city shows not just the current time, but also sunrise and sunset times calculated from actual solar positions—giving you a true sense of whether it\'s day or night at your destination.',
+      'The Meeting Planner feature helps you find overlapping work hours across multiple time zones. Simply select up to three cities, and we\'ll visualize their working hours (9 AM–5 PM local time) on a timeline, highlighting the best windows for scheduling calls or meetings.',
+      'Use the Two-City Time Converter for quick comparisons between any two locations. See the exact time difference and current local times side by side, perfect for coordinating with colleagues, friends, or family abroad.',
+      'Save your frequently checked cities to Favorites for instant access. The adaptive theme automatically adjusts to match each city\'s current daylight—showing warm tones during the day and cool tones at night—creating an intuitive visual experience.',
+      'whattime.city is completely free, requires no registration, and works on any device. Bookmark us for quick access whenever you need to check time zones around the world.'
+    ],
+    aboutReadFull: 'Read full article',
+    aboutHideFull: 'Hide full article'
   },
   tr: {
     worldClock: 'Dünya Saati',
@@ -93,7 +111,19 @@ export const translations: Record<Language, Translations> = {
     europe: 'Avrupa',
     asia: 'Asya',
     africa: 'Afrika',
-    oceania: 'Okyanusya'
+    oceania: 'Okyanusya',
+    favoriteCities: 'Favori Şehirlerim',
+    aboutTitle: 'whattime.city Hakkında',
+    aboutSummary: 'whattime.city, dünyanın herhangi bir şehrindeki anlık yerel saati kontrol etmeniz için ücretsiz dünya saati uygulamanızdır. Uluslararası aramalar planlarken, seyahat organize ederken veya küresel ekiplerle koordinasyon sağlarken, doğru saat dilimi dönüştürücümüz dünya genelinde senkronize kalmanıza yardımcı olur.',
+    aboutFull: [
+      'Dünya saatimiz tüm kıtalardaki yüzlerce şehir için gerçek zamanlı güncellemeler gösterir. Her şehir sadece mevcut saati değil, aynı zamanda gerçek güneş konumlarından hesaplanan gün doğumu ve gün batımı saatlerini de gösterir—varış noktanızda gündüz mü yoksa gece mi olduğunu size gerçek anlamda hissettirir.',
+      'Toplantı Planlayıcı özelliği, birden fazla saat dilimi arasında örtüşen çalışma saatlerini bulmanıza yardımcı olur. Sadece üç şehre kadar seçin, biz de çalışma saatlerini (yerel saat 09:00–17:00) bir zaman çizelgesinde görselleştirerek aramalar veya toplantılar planlamak için en iyi pencereleri vurgulayacağız.',
+      'İki şehir arasında hızlı karşılaştırmalar için İki Şehir Saat Dönüştürücüsünü kullanın. Meslektaşlarınız, arkadaşlarınız veya yurt dışındaki ailenizle koordinasyon için tam saat farkını ve mevcut yerel saatleri yan yana görün.',
+      'Sık kontrol ettiğiniz şehirleri anında erişim için Favorilere kaydedin. Uyarlanabilir tema, her şehrin mevcut gün ışığına göre otomatik olarak ayarlanır—gün boyunca sıcak tonlar ve gece soğuk tonlar göstererek sezgisel bir görsel deneyim oluşturur.',
+      'whattime.city tamamen ücretsizdir, kayıt gerektirmez ve herhangi bir cihazda çalışır. Dünyanın her yerindeki saat dilimlerini kontrol etmeniz gerektiğinde hızlı erişim için bizi yer imlerine ekleyin.'
+    ],
+    aboutReadFull: 'Tam makaleyi oku',
+    aboutHideFull: 'Makaleyi gizle'
   },
   de: {
     worldClock: 'Weltzeituhr',
@@ -124,7 +154,19 @@ export const translations: Record<Language, Translations> = {
     europe: 'Europa',
     asia: 'Asien',
     africa: 'Afrika',
-    oceania: 'Ozeanien'
+    oceania: 'Ozeanien',
+    favoriteCities: 'Lieblingsstädte',
+    aboutTitle: 'Über whattime.city',
+    aboutSummary: 'whattime.city ist Ihre kostenlose Weltzeituhr zur sofortigen Überprüfung der aktuellen Ortszeit in jeder Stadt weltweit. Ob Sie internationale Anrufe planen, Reisen organisieren oder mit globalen Teams koordinieren—unser präziser Zeitzonenkonverter hilft Ihnen, weltweit synchronisiert zu bleiben.',
+    aboutFull: [
+      'Unsere Weltzeituhr zeigt Echtzeit-Updates für Hunderte von Städten auf allen Kontinenten an.',
+      'Die Meeting-Planer-Funktion hilft Ihnen, überlappende Arbeitszeiten über mehrere Zeitzonen zu finden.',
+      'Verwenden Sie den Zwei-Städte-Zeitkonverter für schnelle Vergleiche zwischen beliebigen Standorten.',
+      'Speichern Sie Ihre häufig überprüften Städte in den Favoriten für sofortigen Zugriff.',
+      'whattime.city ist völlig kostenlos, erfordert keine Registrierung und funktioniert auf jedem Gerät.'
+    ],
+    aboutReadFull: 'Vollständigen Artikel lesen',
+    aboutHideFull: 'Artikel ausblenden'
   },
   fr: {
     worldClock: 'Horloge Mondiale',
@@ -155,7 +197,19 @@ export const translations: Record<Language, Translations> = {
     europe: 'Europe',
     asia: 'Asie',
     africa: 'Afrique',
-    oceania: 'Océanie'
+    oceania: 'Océanie',
+    favoriteCities: 'Villes favorites',
+    aboutTitle: 'À propos de whattime.city',
+    aboutSummary: 'whattime.city est votre horloge mondiale gratuite pour vérifier instantanément l\'heure locale actuelle dans n\'importe quelle ville du monde. Que vous planifiez des appels internationaux, organisiez des voyages ou coordonniez avec des équipes mondiales, notre convertisseur de fuseau horaire précis vous aide à rester synchronisé à travers le monde.',
+    aboutFull: [
+      'Notre horloge mondiale affiche des mises à jour en temps réel pour des centaines de villes sur tous les continents.',
+      'La fonction Planificateur de réunion vous aide à trouver des heures de travail communes sur plusieurs fuseaux horaires.',
+      'Utilisez le Convertisseur de temps deux villes pour des comparaisons rapides entre deux emplacements.',
+      'Enregistrez vos villes fréquemment consultées dans les Favoris pour un accès instantané.',
+      'whattime.city est entièrement gratuit, ne nécessite aucune inscription et fonctionne sur tout appareil.'
+    ],
+    aboutReadFull: 'Lire l\'article complet',
+    aboutHideFull: 'Masquer l\'article'
   },
   es: {
     worldClock: 'Reloj Mundial',
@@ -186,7 +240,19 @@ export const translations: Record<Language, Translations> = {
     europe: 'Europa',
     asia: 'Asia',
     africa: 'África',
-    oceania: 'Oceanía'
+    oceania: 'Oceanía',
+    favoriteCities: 'Ciudades favoritas',
+    aboutTitle: 'Acerca de whattime.city',
+    aboutSummary: 'whattime.city es tu reloj mundial gratuito para verificar instantáneamente la hora local actual en cualquier ciudad del mundo. Ya sea que planifiques llamadas internacionales, organices viajes o coordines con equipos globales, nuestro convertidor de zonas horarias preciso te ayuda a mantenerte sincronizado en todo el mundo.',
+    aboutFull: [
+      'Nuestro reloj mundial muestra actualizaciones en tiempo real para cientos de ciudades en todos los continentes.',
+      'La función del Planificador de Reuniones te ayuda a encontrar horas de trabajo superpuestas en múltiples zonas horarias.',
+      'Usa el Convertidor de Tiempo de Dos Ciudades para comparaciones rápidas entre dos ubicaciones.',
+      'Guarda tus ciudades consultadas frecuentemente en Favoritos para acceso instantáneo.',
+      'whattime.city es completamente gratuito, no requiere registro y funciona en cualquier dispositivo.'
+    ],
+    aboutReadFull: 'Leer artículo completo',
+    aboutHideFull: 'Ocultar artículo'
   },
   pt: {
     worldClock: 'Relógio Mundial',
@@ -217,7 +283,19 @@ export const translations: Record<Language, Translations> = {
     europe: 'Europa',
     asia: 'Ásia',
     africa: 'África',
-    oceania: 'Oceania'
+    oceania: 'Oceania',
+    favoriteCities: 'Cidades favoritas',
+    aboutTitle: 'Sobre whattime.city',
+    aboutSummary: 'whattime.city é o seu relógio mundial gratuito para verificar instantaneamente a hora local atual em qualquer cidade do mundo. Seja planejando chamadas internacionais, organizando viagens ou coordenando com equipes globais, nosso conversor de fuso horário preciso ajuda você a permanecer sincronizado em todo o mundo.',
+    aboutFull: [
+      'Nosso relógio mundial exibe atualizações em tempo real para centenas de cidades em todos os continentes.',
+      'O recurso Planejador de Reuniões ajuda você a encontrar horas de trabalho sobrepostas em vários fusos horários.',
+      'Use o Conversor de Tempo de Duas Cidades para comparações rápidas entre dois locais.',
+      'Salve suas cidades frequentemente verificadas nos Favoritos para acesso instantâneo.',
+      'whattime.city é completamente gratuito, não requer registro e funciona em qualquer dispositivo.'
+    ],
+    aboutReadFull: 'Ler artigo completo',
+    aboutHideFull: 'Ocultar artigo'
   },
   ru: {
     worldClock: 'Мировые часы',
@@ -248,7 +326,19 @@ export const translations: Record<Language, Translations> = {
     europe: 'Европа',
     asia: 'Азия',
     africa: 'Африка',
-    oceania: 'Океания'
+    oceania: 'Океания',
+    favoriteCities: 'Избранные города',
+    aboutTitle: 'О whattime.city',
+    aboutSummary: 'whattime.city — это ваши бесплатные мировые часы для мгновенной проверки текущего местного времени в любом городе мира. Планируете ли вы международные звонки, организуете поездки или координируете работу с глобальными командами — наш точный конвертер часовых поясов поможет вам оставаться синхронизированным по всему миру.',
+    aboutFull: [
+      'Наши мировые часы показывают обновления в реальном времени для сотен городов на всех континентах.',
+      'Функция Планировщика встреч помогает найти пересекающиеся рабочие часы в нескольких часовых поясах.',
+      'Используйте Конвертер времени для двух городов для быстрого сравнения между любыми локациями.',
+      'Сохраняйте часто проверяемые города в Избранное для мгновенного доступа.',
+      'whattime.city полностью бесплатен, не требует регистрации и работает на любом устройстве.'
+    ],
+    aboutReadFull: 'Читать полную статью',
+    aboutHideFull: 'Скрыть статью'
   },
   ar: {
     worldClock: 'الساعة العالمية',
@@ -279,7 +369,19 @@ export const translations: Record<Language, Translations> = {
     europe: 'أوروبا',
     asia: 'آسيا',
     africa: 'أفريقيا',
-    oceania: 'أوقيانوسيا'
+    oceania: 'أوقيانوسيا',
+    favoriteCities: 'المدن المفضلة',
+    aboutTitle: 'حول whattime.city',
+    aboutSummary: 'whattime.city هي ساعتك العالمية المجانية للتحقق الفوري من الوقت المحلي الحالي في أي مدينة حول العالم. سواء كنت تخطط لمكالمات دولية أو تنظم رحلات أو تنسق مع فرق عالمية، يساعدك محول المناطق الزمنية الدقيق لدينا على البقاء متزامناً حول العالم.',
+    aboutFull: [
+      'تعرض ساعتنا العالمية تحديثات في الوقت الفعلي لمئات المدن عبر جميع القارات.',
+      'تساعدك ميزة مخطط الاجتماعات في العثور على ساعات العمل المتداخلة عبر مناطق زمنية متعددة.',
+      'استخدم محول الوقت لمدينتين للمقارنات السريعة بين أي موقعين.',
+      'احفظ مدنك التي تتحقق منها بشكل متكرر في المفضلة للوصول الفوري.',
+      'whattime.city مجاني تماماً، لا يتطلب تسجيل، ويعمل على أي جهاز.'
+    ],
+    aboutReadFull: 'قراءة المقال كاملاً',
+    aboutHideFull: 'إخفاء المقال'
   },
   ja: {
     worldClock: '世界時計',
@@ -310,7 +412,19 @@ export const translations: Record<Language, Translations> = {
     europe: 'ヨーロッパ',
     asia: 'アジア',
     africa: 'アフリカ',
-    oceania: 'オセアニア'
+    oceania: 'オセアニア',
+    favoriteCities: 'お気に入りの都市',
+    aboutTitle: 'whattime.cityについて',
+    aboutSummary: 'whattime.cityは、世界中のどの都市でも現在の現地時間を即座に確認できる無料の世界時計です。国際通話の計画、旅行の手配、グローバルチームとの調整など、正確なタイムゾーン変換ツールで世界中で同期を保つのに役立ちます。',
+    aboutFull: [
+      '私たちの世界時計は、すべての大陸の数百の都市のリアルタイム更新を表示します。',
+      'ミーティングプランナー機能は、複数のタイムゾーンで重複する勤務時間を見つけるのに役立ちます。',
+      '2都市タイムコンバーターを使用して、任意の2つの場所間で素早く比較できます。',
+      '頻繁にチェックする都市をお気に入りに保存して、すぐにアクセスできます。',
+      'whattime.cityは完全無料で、登録不要、どのデバイスでも動作します。'
+    ],
+    aboutReadFull: '全文を読む',
+    aboutHideFull: '記事を隠す'
   },
   zh: {
     worldClock: '世界时钟',
@@ -341,7 +455,19 @@ export const translations: Record<Language, Translations> = {
     europe: '欧洲',
     asia: '亚洲',
     africa: '非洲',
-    oceania: '大洋洲'
+    oceania: '大洋洲',
+    favoriteCities: '收藏城市',
+    aboutTitle: '关于 whattime.city',
+    aboutSummary: 'whattime.city 是您的免费即时世界时钟，可查看全球任何城市的当前本地时间。无论您是在安排国际电话、计划旅行还是与全球团队协调，我们准确的时区转换器都能帮助您在全球保持同步。',
+    aboutFull: [
+      '我们的世界时钟显示所有大陆数百个城市的实时更新。',
+      '会议规划器功能帮助您找到多个时区的重叠工作时间。',
+      '使用双城市时间转换器在任意两个地点之间进行快速比较。',
+      '将您经常查看的城市保存到收藏夹以便即时访问。',
+      'whattime.city 完全免费，无需注册，可在任何设备上使用。'
+    ],
+    aboutReadFull: '阅读全文',
+    aboutHideFull: '隐藏文章'
   },
   ko: {
     worldClock: '세계 시계',
@@ -372,7 +498,19 @@ export const translations: Record<Language, Translations> = {
     europe: '유럽',
     asia: '아시아',
     africa: '아프리카',
-    oceania: '오세아니아'
+    oceania: '오세아니아',
+    favoriteCities: '즐겨찾기 도시',
+    aboutTitle: 'whattime.city 소개',
+    aboutSummary: 'whattime.city는 전 세계 어느 도시의 현재 현지 시간을 즉시 확인할 수 있는 무료 세계 시계입니다. 국제 전화 예약, 여행 계획 또는 글로벌 팀과의 조율 등 정확한 시간대 변환기로 전 세계와 동기화를 유지하는 데 도움이 됩니다.',
+    aboutFull: [
+      '저희 세계 시계는 모든 대륙의 수백 개 도시에 대한 실시간 업데이트를 표시합니다.',
+      '미팅 플래너 기능은 여러 시간대에서 겹치는 근무 시간을 찾는 데 도움이 됩니다.',
+      '두 도시 시간 변환기를 사용하여 두 위치 간의 빠른 비교가 가능합니다.',
+      '자주 확인하는 도시를 즐겨찾기에 저장하여 즉시 액세스할 수 있습니다.',
+      'whattime.city는 완전 무료이며, 등록이 필요 없고, 모든 기기에서 작동합니다.'
+    ],
+    aboutReadFull: '전체 기사 읽기',
+    aboutHideFull: '기사 숨기기'
   },
   it: {
     worldClock: 'Orologio Mondiale',
@@ -403,7 +541,19 @@ export const translations: Record<Language, Translations> = {
     europe: 'Europa',
     asia: 'Asia',
     africa: 'Africa',
-    oceania: 'Oceania'
+    oceania: 'Oceania',
+    favoriteCities: 'Città preferite',
+    aboutTitle: 'Informazioni su whattime.city',
+    aboutSummary: 'whattime.city è il tuo orologio mondiale gratuito per controllare istantaneamente l\'ora locale attuale in qualsiasi città del mondo. Che tu stia pianificando chiamate internazionali, organizzando viaggi o coordinandoti con team globali, il nostro convertitore di fuso orario accurato ti aiuta a rimanere sincronizzato in tutto il mondo.',
+    aboutFull: [
+      'Il nostro orologio mondiale mostra aggiornamenti in tempo reale per centinaia di città in tutti i continenti.',
+      'La funzione Pianificatore di Riunioni ti aiuta a trovare orari di lavoro sovrapposti su più fusi orari.',
+      'Usa il Convertitore di Tempo Due Città per confronti rapidi tra due località.',
+      'Salva le città che controlli frequentemente nei Preferiti per un accesso istantaneo.',
+      'whattime.city è completamente gratuito, non richiede registrazione e funziona su qualsiasi dispositivo.'
+    ],
+    aboutReadFull: 'Leggi l\'articolo completo',
+    aboutHideFull: 'Nascondi articolo'
   },
   nl: {
     worldClock: 'Wereldklok',
@@ -434,7 +584,19 @@ export const translations: Record<Language, Translations> = {
     europe: 'Europa',
     asia: 'Azië',
     africa: 'Afrika',
-    oceania: 'Oceanië'
+    oceania: 'Oceanië',
+    favoriteCities: 'Favoriete steden',
+    aboutTitle: 'Over whattime.city',
+    aboutSummary: 'whattime.city is uw gratis, directe wereldklok om de huidige lokale tijd in elke stad ter wereld te controleren. Of u nu internationale gesprekken plant, reizen organiseert of coördineert met wereldwijde teams, onze nauwkeurige tijdzoneconverter helpt u wereldwijd gesynchroniseerd te blijven.',
+    aboutFull: [
+      'Onze wereldklok toont real-time updates voor honderden steden op alle continenten.',
+      'De functie Vergaderplanner helpt u overlappende werktijden over meerdere tijdzones te vinden.',
+      'Gebruik de Twee-Steden Tijdconverter voor snelle vergelijkingen tussen twee locaties.',
+      'Sla uw vaak gecontroleerde steden op bij Favorieten voor directe toegang.',
+      'whattime.city is volledig gratis, vereist geen registratie en werkt op elk apparaat.'
+    ],
+    aboutReadFull: 'Lees het volledige artikel',
+    aboutHideFull: 'Artikel verbergen'
   }
 }
 
@@ -444,6 +606,6 @@ export function detectLanguage(): Language {
   return translations[browserLang] ? browserLang : 'en'
 }
 
-export function t(key: keyof Translations, lang: Language = 'en'): string {
+export function t(key: keyof Translations, lang: Language = 'en'): string | string[] {
   return translations[lang]?.[key] || translations.en[key]
 }
