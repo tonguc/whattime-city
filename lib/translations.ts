@@ -36,6 +36,25 @@ export interface Translations {
   aboutFull: string[]
   aboutReadFull: string
   aboutHideFull: string
+  // Tools page translations
+  tools: string
+  timeTools: string
+  toolsDescription: string
+  openTool: string
+  timeConverter: string
+  timeConverterDesc: string
+  meetingPlanner: string
+  meetingPlannerDesc: string
+  flightTimeCalculator: string
+  flightTimeCalculatorDesc: string
+  jetLagAdvisor: string
+  jetLagAdvisorDesc: string
+  eventTimeConverter: string
+  eventTimeConverterDesc: string
+  worldAlarmClock: string
+  worldAlarmClockDesc: string
+  allRightsReserved: string
+  comingSoon: string
 }
 
 export const translations: Record<Language, Translations> = {
@@ -80,7 +99,25 @@ export const translations: Record<Language, Translations> = {
       'whattime.city is completely free, requires no registration, and works on any device. Bookmark us for quick access whenever you need to check time zones around the world.'
     ],
     aboutReadFull: 'Read full article',
-    aboutHideFull: 'Hide full article'
+    aboutHideFull: 'Hide full article',
+    tools: 'Tools',
+    timeTools: 'Time Zone Tools',
+    toolsDescription: 'Essential tools for managing time across the globe',
+    openTool: 'Open Tool',
+    timeConverter: 'Time Converter',
+    timeConverterDesc: 'Convert time between any two cities instantly. Perfect for scheduling international calls and meetings.',
+    meetingPlanner: 'Meeting Planner',
+    meetingPlannerDesc: 'Find the best meeting time across multiple time zones. Visualize working hours overlap for global teams.',
+    flightTimeCalculator: 'Flight Time Calculator',
+    flightTimeCalculatorDesc: 'Calculate arrival times across time zones. Know exactly when you\'ll land in local time.',
+    jetLagAdvisor: 'Jet Lag Advisor',
+    jetLagAdvisorDesc: 'Get personalized jet lag recovery tips based on your travel route and sleep schedule.',
+    eventTimeConverter: 'Event Time Converter',
+    eventTimeConverterDesc: 'Share event times that automatically convert to each viewer\'s local time zone.',
+    worldAlarmClock: 'World Alarm Clock',
+    worldAlarmClockDesc: 'Set alarms for any city\'s local time. Never miss an international deadline or call.',
+    allRightsReserved: 'All rights reserved',
+    comingSoon: 'Coming Soon'
   },
   tr: {
     worldClock: 'Dünya Saati',
@@ -123,7 +160,25 @@ export const translations: Record<Language, Translations> = {
       'whattime.city tamamen ücretsizdir, kayıt gerektirmez ve herhangi bir cihazda çalışır. Dünyanın her yerindeki saat dilimlerini kontrol etmeniz gerektiğinde hızlı erişim için bizi yer imlerine ekleyin.'
     ],
     aboutReadFull: 'Tam makaleyi oku',
-    aboutHideFull: 'Makaleyi gizle'
+    aboutHideFull: 'Makaleyi gizle',
+    tools: 'Araçlar',
+    timeTools: 'Saat Dilimi Araçları',
+    toolsDescription: 'Dünya genelinde zamanı yönetmek için temel araçlar',
+    openTool: 'Aracı Aç',
+    timeConverter: 'Saat Dönüştürücü',
+    timeConverterDesc: 'İki şehir arasında anında saat dönüştürün. Uluslararası aramalar ve toplantılar için ideal.',
+    meetingPlanner: 'Toplantı Planlayıcı',
+    meetingPlannerDesc: 'Birden fazla saat diliminde en iyi toplantı saatini bulun. Global ekipler için çalışma saatlerini görselleştirin.',
+    flightTimeCalculator: 'Uçuş Süresi Hesaplayıcı',
+    flightTimeCalculatorDesc: 'Saat dilimleri arasında varış saatlerini hesaplayın. Yerel saatte ne zaman ineceğinizi bilin.',
+    jetLagAdvisor: 'Jet Lag Danışmanı',
+    jetLagAdvisorDesc: 'Seyahat rotanıza ve uyku programınıza göre kişiselleştirilmiş jet lag ipuçları alın.',
+    eventTimeConverter: 'Etkinlik Saati Dönüştürücü',
+    eventTimeConverterDesc: 'Her izleyicinin yerel saat dilimine otomatik dönüştürülen etkinlik saatlerini paylaşın.',
+    worldAlarmClock: 'Dünya Alarm Saati',
+    worldAlarmClockDesc: 'Herhangi bir şehrin yerel saati için alarm kurun. Uluslararası bir son tarihi veya aramayı asla kaçırmayın.',
+    allRightsReserved: 'Tüm hakları saklıdır',
+    comingSoon: 'Yakında'
   },
   de: {
     worldClock: 'Weltzeituhr',
@@ -166,7 +221,25 @@ export const translations: Record<Language, Translations> = {
       'whattime.city ist völlig kostenlos, erfordert keine Registrierung und funktioniert auf jedem Gerät.'
     ],
     aboutReadFull: 'Vollständigen Artikel lesen',
-    aboutHideFull: 'Artikel ausblenden'
+    aboutHideFull: 'Artikel ausblenden',
+    tools: 'Werkzeuge',
+    timeTools: 'Zeitzonen-Werkzeuge',
+    toolsDescription: 'Wesentliche Werkzeuge zur Verwaltung der Zeit weltweit',
+    openTool: 'Werkzeug öffnen',
+    timeConverter: 'Zeitumrechner',
+    timeConverterDesc: 'Konvertieren Sie sofort die Zeit zwischen zwei Städten.',
+    meetingPlanner: 'Besprechungsplaner',
+    meetingPlannerDesc: 'Finden Sie die beste Besprechungszeit über mehrere Zeitzonen hinweg.',
+    flightTimeCalculator: 'Flugzeitrechner',
+    flightTimeCalculatorDesc: 'Berechnen Sie Ankunftszeiten über Zeitzonen hinweg.',
+    jetLagAdvisor: 'Jet-Lag-Berater',
+    jetLagAdvisorDesc: 'Erhalten Sie personalisierte Tipps zur Jet-Lag-Erholung.',
+    eventTimeConverter: 'Veranstaltungszeit-Konverter',
+    eventTimeConverterDesc: 'Teilen Sie Veranstaltungszeiten, die automatisch konvertiert werden.',
+    worldAlarmClock: 'Welt-Wecker',
+    worldAlarmClockDesc: 'Stellen Sie Alarme für die Ortszeit jeder Stadt ein.',
+    allRightsReserved: 'Alle Rechte vorbehalten',
+    comingSoon: 'Demnächst'
   },
   fr: {
     worldClock: 'Horloge Mondiale',
@@ -209,7 +282,25 @@ export const translations: Record<Language, Translations> = {
       'whattime.city est entièrement gratuit, ne nécessite aucune inscription et fonctionne sur tout appareil.'
     ],
     aboutReadFull: 'Lire l\'article complet',
-    aboutHideFull: 'Masquer l\'article'
+    aboutHideFull: 'Masquer l\'article',
+    tools: 'Outils',
+    timeTools: 'Outils de Fuseau Horaire',
+    toolsDescription: 'Outils essentiels pour gérer le temps à travers le monde',
+    openTool: 'Ouvrir l\'outil',
+    timeConverter: 'Convertisseur de Temps',
+    timeConverterDesc: 'Convertissez instantanément l\'heure entre deux villes.',
+    meetingPlanner: 'Planificateur de Réunion',
+    meetingPlannerDesc: 'Trouvez le meilleur moment pour une réunion sur plusieurs fuseaux.',
+    flightTimeCalculator: 'Calculateur de Temps de Vol',
+    flightTimeCalculatorDesc: 'Calculez les heures d\'arrivée à travers les fuseaux horaires.',
+    jetLagAdvisor: 'Conseiller Jet Lag',
+    jetLagAdvisorDesc: 'Obtenez des conseils personnalisés pour récupérer du jet lag.',
+    eventTimeConverter: 'Convertisseur d\'Heure d\'Événement',
+    eventTimeConverterDesc: 'Partagez des heures d\'événements qui se convertissent automatiquement.',
+    worldAlarmClock: 'Réveil Mondial',
+    worldAlarmClockDesc: 'Réglez des alarmes pour l\'heure locale de n\'importe quelle ville.',
+    allRightsReserved: 'Tous droits réservés',
+    comingSoon: 'Bientôt disponible'
   },
   es: {
     worldClock: 'Reloj Mundial',
@@ -252,7 +343,25 @@ export const translations: Record<Language, Translations> = {
       'whattime.city es completamente gratuito, no requiere registro y funciona en cualquier dispositivo.'
     ],
     aboutReadFull: 'Leer artículo completo',
-    aboutHideFull: 'Ocultar artículo'
+    aboutHideFull: 'Ocultar artículo',
+    tools: 'Herramientas',
+    timeTools: 'Herramientas de Zona Horaria',
+    toolsDescription: 'Herramientas esenciales para gestionar el tiempo en todo el mundo',
+    openTool: 'Abrir Herramienta',
+    timeConverter: 'Convertidor de Hora',
+    timeConverterDesc: 'Convierte la hora entre dos ciudades al instante.',
+    meetingPlanner: 'Planificador de Reuniones',
+    meetingPlannerDesc: 'Encuentra el mejor horario para reuniones en múltiples zonas.',
+    flightTimeCalculator: 'Calculadora de Tiempo de Vuelo',
+    flightTimeCalculatorDesc: 'Calcula las horas de llegada en diferentes zonas horarias.',
+    jetLagAdvisor: 'Asesor de Jet Lag',
+    jetLagAdvisorDesc: 'Obtén consejos personalizados para recuperarte del jet lag.',
+    eventTimeConverter: 'Convertidor de Hora de Evento',
+    eventTimeConverterDesc: 'Comparte horas de eventos que se convierten automáticamente.',
+    worldAlarmClock: 'Alarma Mundial',
+    worldAlarmClockDesc: 'Configura alarmas para la hora local de cualquier ciudad.',
+    allRightsReserved: 'Todos los derechos reservados',
+    comingSoon: 'Próximamente'
   },
   pt: {
     worldClock: 'Relógio Mundial',
@@ -295,7 +404,25 @@ export const translations: Record<Language, Translations> = {
       'whattime.city é completamente gratuito, não requer registro e funciona em qualquer dispositivo.'
     ],
     aboutReadFull: 'Ler artigo completo',
-    aboutHideFull: 'Ocultar artigo'
+    aboutHideFull: 'Ocultar artigo',
+    tools: 'Ferramentas',
+    timeTools: 'Ferramentas de Fuso Horário',
+    toolsDescription: 'Ferramentas essenciais para gerenciar o tempo em todo o mundo',
+    openTool: 'Abrir Ferramenta',
+    timeConverter: 'Conversor de Hora',
+    timeConverterDesc: 'Converta a hora entre duas cidades instantaneamente.',
+    meetingPlanner: 'Planejador de Reuniões',
+    meetingPlannerDesc: 'Encontre o melhor horário para reuniões em múltiplos fusos.',
+    flightTimeCalculator: 'Calculadora de Tempo de Voo',
+    flightTimeCalculatorDesc: 'Calcule os horários de chegada em diferentes fusos.',
+    jetLagAdvisor: 'Consultor de Jet Lag',
+    jetLagAdvisorDesc: 'Obtenha dicas personalizadas para se recuperar do jet lag.',
+    eventTimeConverter: 'Conversor de Hora de Evento',
+    eventTimeConverterDesc: 'Compartilhe horários de eventos que convertem automaticamente.',
+    worldAlarmClock: 'Alarme Mundial',
+    worldAlarmClockDesc: 'Configure alarmes para o horário local de qualquer cidade.',
+    allRightsReserved: 'Todos os direitos reservados',
+    comingSoon: 'Em breve'
   },
   ru: {
     worldClock: 'Мировые часы',
@@ -338,7 +465,25 @@ export const translations: Record<Language, Translations> = {
       'whattime.city полностью бесплатен, не требует регистрации и работает на любом устройстве.'
     ],
     aboutReadFull: 'Читать полную статью',
-    aboutHideFull: 'Скрыть статью'
+    aboutHideFull: 'Скрыть статью',
+    tools: 'Инструменты',
+    timeTools: 'Инструменты Часовых Поясов',
+    toolsDescription: 'Необходимые инструменты для управления временем по всему миру',
+    openTool: 'Открыть',
+    timeConverter: 'Конвертер Времени',
+    timeConverterDesc: 'Мгновенно конвертируйте время между двумя городами.',
+    meetingPlanner: 'Планировщик Встреч',
+    meetingPlannerDesc: 'Найдите лучшее время для встреч в разных часовых поясах.',
+    flightTimeCalculator: 'Калькулятор Времени Полёта',
+    flightTimeCalculatorDesc: 'Рассчитайте время прибытия в разных часовых поясах.',
+    jetLagAdvisor: 'Советник по Джетлагу',
+    jetLagAdvisorDesc: 'Получите персональные советы по восстановлению от джетлага.',
+    eventTimeConverter: 'Конвертер Времени Событий',
+    eventTimeConverterDesc: 'Делитесь временем событий с автоматической конвертацией.',
+    worldAlarmClock: 'Мировой Будильник',
+    worldAlarmClockDesc: 'Установите будильник на местное время любого города.',
+    allRightsReserved: 'Все права защищены',
+    comingSoon: 'Скоро'
   },
   ar: {
     worldClock: 'الساعة العالمية',
@@ -381,7 +526,25 @@ export const translations: Record<Language, Translations> = {
       'whattime.city مجاني تماماً، لا يتطلب تسجيل، ويعمل على أي جهاز.'
     ],
     aboutReadFull: 'قراءة المقال كاملاً',
-    aboutHideFull: 'إخفاء المقال'
+    aboutHideFull: 'إخفاء المقال',
+    tools: 'الأدوات',
+    timeTools: 'أدوات المنطقة الزمنية',
+    toolsDescription: 'أدوات أساسية لإدارة الوقت حول العالم',
+    openTool: 'فتح الأداة',
+    timeConverter: 'محول الوقت',
+    timeConverterDesc: 'حول الوقت بين أي مدينتين فوراً.',
+    meetingPlanner: 'مخطط الاجتماعات',
+    meetingPlannerDesc: 'اعثر على أفضل وقت للاجتماعات عبر مناطق زمنية متعددة.',
+    flightTimeCalculator: 'حاسبة وقت الرحلة',
+    flightTimeCalculatorDesc: 'احسب أوقات الوصول عبر المناطق الزمنية.',
+    jetLagAdvisor: 'مستشار فرق التوقيت',
+    jetLagAdvisorDesc: 'احصل على نصائح مخصصة للتعافي من إرهاق السفر.',
+    eventTimeConverter: 'محول وقت الحدث',
+    eventTimeConverterDesc: 'شارك أوقات الأحداث التي تتحول تلقائياً.',
+    worldAlarmClock: 'منبه عالمي',
+    worldAlarmClockDesc: 'اضبط المنبهات بالتوقيت المحلي لأي مدينة.',
+    allRightsReserved: 'جميع الحقوق محفوظة',
+    comingSoon: 'قريباً'
   },
   ja: {
     worldClock: '世界時計',
@@ -424,7 +587,25 @@ export const translations: Record<Language, Translations> = {
       'whattime.cityは完全無料で、登録不要、どのデバイスでも動作します。'
     ],
     aboutReadFull: '全文を読む',
-    aboutHideFull: '記事を隠す'
+    aboutHideFull: '記事を隠す',
+    tools: 'ツール',
+    timeTools: 'タイムゾーンツール',
+    toolsDescription: '世界中の時間を管理するための必須ツール',
+    openTool: 'ツールを開く',
+    timeConverter: '時間変換',
+    timeConverterDesc: '2つの都市間で即座に時間を変換。',
+    meetingPlanner: '会議プランナー',
+    meetingPlannerDesc: '複数のタイムゾーンで最適な会議時間を見つける。',
+    flightTimeCalculator: 'フライト時間計算',
+    flightTimeCalculatorDesc: 'タイムゾーンをまたいで到着時間を計算。',
+    jetLagAdvisor: '時差ぼけアドバイザー',
+    jetLagAdvisorDesc: '時差ぼけ回復のためのパーソナライズされたヒント。',
+    eventTimeConverter: 'イベント時間変換',
+    eventTimeConverterDesc: '自動変換されるイベント時間を共有。',
+    worldAlarmClock: 'ワールドアラーム',
+    worldAlarmClockDesc: '任意の都市の現地時間でアラームを設定。',
+    allRightsReserved: '全著作権所有',
+    comingSoon: '近日公開'
   },
   zh: {
     worldClock: '世界时钟',
@@ -467,7 +648,25 @@ export const translations: Record<Language, Translations> = {
       'whattime.city 完全免费，无需注册，可在任何设备上使用。'
     ],
     aboutReadFull: '阅读全文',
-    aboutHideFull: '隐藏文章'
+    aboutHideFull: '隐藏文章',
+    tools: '工具',
+    timeTools: '时区工具',
+    toolsDescription: '管理全球时间的必备工具',
+    openTool: '打开工具',
+    timeConverter: '时间转换器',
+    timeConverterDesc: '即时转换两个城市之间的时间。',
+    meetingPlanner: '会议规划器',
+    meetingPlannerDesc: '找到跨多个时区的最佳会议时间。',
+    flightTimeCalculator: '航班时间计算器',
+    flightTimeCalculatorDesc: '计算跨时区的到达时间。',
+    jetLagAdvisor: '时差顾问',
+    jetLagAdvisorDesc: '获取个性化的时差恢复建议。',
+    eventTimeConverter: '活动时间转换器',
+    eventTimeConverterDesc: '分享自动转换的活动时间。',
+    worldAlarmClock: '世界闹钟',
+    worldAlarmClockDesc: '为任何城市的当地时间设置闹钟。',
+    allRightsReserved: '版权所有',
+    comingSoon: '即将推出'
   },
   ko: {
     worldClock: '세계 시계',
@@ -510,7 +709,25 @@ export const translations: Record<Language, Translations> = {
       'whattime.city는 완전 무료이며, 등록이 필요 없고, 모든 기기에서 작동합니다.'
     ],
     aboutReadFull: '전체 기사 읽기',
-    aboutHideFull: '기사 숨기기'
+    aboutHideFull: '기사 숨기기',
+    tools: '도구',
+    timeTools: '시간대 도구',
+    toolsDescription: '전 세계 시간 관리를 위한 필수 도구',
+    openTool: '도구 열기',
+    timeConverter: '시간 변환기',
+    timeConverterDesc: '두 도시 간의 시간을 즉시 변환하세요.',
+    meetingPlanner: '회의 플래너',
+    meetingPlannerDesc: '여러 시간대에서 최적의 회의 시간을 찾으세요.',
+    flightTimeCalculator: '비행 시간 계산기',
+    flightTimeCalculatorDesc: '시간대를 넘어 도착 시간을 계산하세요.',
+    jetLagAdvisor: '시차 적응 어드바이저',
+    jetLagAdvisorDesc: '시차 적응을 위한 맞춤형 팁을 받으세요.',
+    eventTimeConverter: '이벤트 시간 변환기',
+    eventTimeConverterDesc: '자동 변환되는 이벤트 시간을 공유하세요.',
+    worldAlarmClock: '세계 알람 시계',
+    worldAlarmClockDesc: '어떤 도시의 현지 시간으로도 알람을 설정하세요.',
+    allRightsReserved: '모든 권리 보유',
+    comingSoon: '곧 출시'
   },
   it: {
     worldClock: 'Orologio Mondiale',
@@ -553,7 +770,25 @@ export const translations: Record<Language, Translations> = {
       'whattime.city è completamente gratuito, non richiede registrazione e funziona su qualsiasi dispositivo.'
     ],
     aboutReadFull: 'Leggi l\'articolo completo',
-    aboutHideFull: 'Nascondi articolo'
+    aboutHideFull: 'Nascondi articolo',
+    tools: 'Strumenti',
+    timeTools: 'Strumenti Fuso Orario',
+    toolsDescription: 'Strumenti essenziali per gestire il tempo in tutto il mondo',
+    openTool: 'Apri Strumento',
+    timeConverter: 'Convertitore di Ora',
+    timeConverterDesc: 'Converti istantaneamente l\'ora tra due città.',
+    meetingPlanner: 'Pianificatore Riunioni',
+    meetingPlannerDesc: 'Trova il momento migliore per riunioni su più fusi orari.',
+    flightTimeCalculator: 'Calcolatore Tempo di Volo',
+    flightTimeCalculatorDesc: 'Calcola gli orari di arrivo attraverso i fusi orari.',
+    jetLagAdvisor: 'Consulente Jet Lag',
+    jetLagAdvisorDesc: 'Ottieni consigli personalizzati per recuperare dal jet lag.',
+    eventTimeConverter: 'Convertitore Ora Evento',
+    eventTimeConverterDesc: 'Condividi orari di eventi che si convertono automaticamente.',
+    worldAlarmClock: 'Sveglia Mondiale',
+    worldAlarmClockDesc: 'Imposta sveglie per l\'ora locale di qualsiasi città.',
+    allRightsReserved: 'Tutti i diritti riservati',
+    comingSoon: 'Prossimamente'
   },
   nl: {
     worldClock: 'Wereldklok',
@@ -596,7 +831,25 @@ export const translations: Record<Language, Translations> = {
       'whattime.city is volledig gratis, vereist geen registratie en werkt op elk apparaat.'
     ],
     aboutReadFull: 'Lees het volledige artikel',
-    aboutHideFull: 'Artikel verbergen'
+    aboutHideFull: 'Artikel verbergen',
+    tools: 'Gereedschap',
+    timeTools: 'Tijdzone Gereedschap',
+    toolsDescription: 'Essentiële tools voor tijdbeheer over de hele wereld',
+    openTool: 'Open Tool',
+    timeConverter: 'Tijdconverter',
+    timeConverterDesc: 'Converteer direct de tijd tussen twee steden.',
+    meetingPlanner: 'Vergaderplanner',
+    meetingPlannerDesc: 'Vind de beste vergadertijd over meerdere tijdzones.',
+    flightTimeCalculator: 'Vluchttijd Calculator',
+    flightTimeCalculatorDesc: 'Bereken aankomsttijden over tijdzones.',
+    jetLagAdvisor: 'Jetlag Adviseur',
+    jetLagAdvisorDesc: 'Krijg gepersonaliseerde tips om te herstellen van jetlag.',
+    eventTimeConverter: 'Evenement Tijd Converter',
+    eventTimeConverterDesc: 'Deel evenementtijden die automatisch converteren.',
+    worldAlarmClock: 'Wereldwekker',
+    worldAlarmClockDesc: 'Stel alarmen in voor de lokale tijd van elke stad.',
+    allRightsReserved: 'Alle rechten voorbehouden',
+    comingSoon: 'Binnenkort'
   }
 }
 
