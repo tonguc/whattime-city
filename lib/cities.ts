@@ -1961,116 +1961,1939 @@ export const cities: City[] = [
 
   // ============ TIER 3: Notable Cities ============
   // United States
-  { slug: 'san-diego', city: 'San Diego', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', lat: 32.72, lng: -117.16, tier: 3, continent: 'americas' },
-  { slug: 'austin', city: 'Austin', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 30.27, lng: -97.74, tier: 3, continent: 'americas' },
-  { slug: 'philadelphia', city: 'Philadelphia', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 39.95, lng: -75.17, tier: 3, continent: 'americas' },
-  { slug: 'detroit', city: 'Detroit', timezone: 'America/Detroit', country: 'United States', countryCode: 'US', lat: 42.33, lng: -83.05, tier: 3, continent: 'americas' },
-  { slug: 'minneapolis', city: 'Minneapolis', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 44.98, lng: -93.27, tier: 3, continent: 'americas' },
-  { slug: 'portland', city: 'Portland', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', lat: 45.52, lng: -122.68, tier: 3, continent: 'americas' },
-  { slug: 'nashville', city: 'Nashville', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 36.16, lng: -86.78, tier: 3, continent: 'americas' },
-  { slug: 'new-orleans', city: 'New Orleans', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 29.95, lng: -90.07, tier: 3, continent: 'americas' },
-  { slug: 'orlando', city: 'Orlando', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 28.54, lng: -81.38, tier: 3, continent: 'americas' },
-  { slug: 'honolulu', city: 'Honolulu', timezone: 'Pacific/Honolulu', country: 'United States', countryCode: 'US', lat: 21.31, lng: -157.86, tier: 3, continent: 'oceania' },
-  { slug: 'anchorage', city: 'Anchorage', timezone: 'America/Anchorage', country: 'United States', countryCode: 'US', lat: 61.22, lng: -149.90, tier: 3, continent: 'americas' },
+  { slug: 'san-diego', city: 'San Diego', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', lat: 32.72, lng: -117.16, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '1.4M', metroPopulation: '3.3M', phoneCode: '+1 619', language: 'English, Spanish',
+      climate: 'Mediterranean with warm dry summers (20-26°C) and mild winters (10-18°C). Near-perfect weather year-round.',
+      attractions: ['San Diego Zoo', 'Balboa Park', 'USS Midway', 'Gaslamp Quarter', 'La Jolla Cove', 'Coronado Beach', 'SeaWorld', 'Old Town', 'Cabrillo Monument', 'Petco Park'],
+      demographics: 'California\'s second-largest city. Strong military presence with multiple naval bases. Large Hispanic community.',
+      seoContent: {
+        intro: 'San Diego, America\'s Finest City, operates on Pacific Standard Time (PST/UTC-8) in winter and PDT (UTC-7) in summer. Known for its near-perfect climate, beautiful beaches, and the world-famous San Diego Zoo.',
+        timezoneFacts: 'Same timezone as Los Angeles. 3 hours behind New York, 8 hours behind London. Border city with Tijuana, Mexico.',
+        bestTimeToVisit: 'Year-round destination with mild weather. September-November offers warmest ocean temperatures. Summer is busy but pleasant.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Tourist areas open later. Beach towns have relaxed schedules.',
+        timeDifference: 'San Diego is UTC-8 (PST) / UTC-7 (PDT). When noon in San Diego: NYC 3 PM, London 8 PM, Tokyo 5 AM (+1).',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November, following US schedule.',
+        localTips: 'Fish tacos are a must. Beaches are free. Tijuana is walkable across the border. Craft beer scene is excellent.',
+        transportation: 'Trolley connects downtown to border. Limited public transit - car recommended. San Diego Airport (SAN) is 3 miles from downtown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Comic-Con (July) transforms the city.'
+      }
+    }
+  },
+  { slug: 'austin', city: 'Austin', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 30.27, lng: -97.74, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '1M', metroPopulation: '2.3M', phoneCode: '+1 512', language: 'English',
+      climate: 'Humid subtropical with hot summers (27-36°C) and mild winters (5-17°C). Can be humid.',
+      attractions: ['6th Street', 'South Congress', 'Barton Springs', 'Texas State Capitol', 'Lady Bird Lake', 'Zilker Park', 'Rainey Street', 'Congress Avenue Bridge Bats', 'Blanton Museum', 'Mount Bonnell'],
+      demographics: 'Texas capital and major tech hub. "Keep Austin Weird" culture. Young, educated population. Live music capital.',
+      seoContent: {
+        intro: 'Austin, the Live Music Capital of the World, operates on Central Standard Time (CST/UTC-6). Texas\'s capital combines tech innovation with creative culture, known for SXSW, live music, and vibrant food scene.',
+        timezoneFacts: 'Same timezone as Dallas and Houston. 1 hour behind New York. Texas is considering permanent DST.',
+        bestTimeToVisit: 'March for SXSW, October for ACL Festival. Spring and fall are pleasant. Summer is very hot.',
+        businessHours: 'Tech-flexible schedules. 6th Street comes alive after dark. Food trucks operate late.',
+        timeDifference: 'Austin is UTC-6 (CST) / UTC-5 (CDT). When noon in Austin: NYC 1 PM, London 6 PM, LA 10 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'BBQ requires patience (lines are worth it). Bats emerge at sunset from Congress Bridge. No state income tax.',
+        transportation: 'Car-dependent city. Limited bus service. Austin-Bergstrom Airport (AUS) is 8 miles from downtown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. SXSW (March), ACL Festival (October).'
+      }
+    }
+  },
+  { slug: 'philadelphia', city: 'Philadelphia', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 39.95, lng: -75.17, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '1.6M', metroPopulation: '6.2M', phoneCode: '+1 215', language: 'English',
+      climate: 'Humid subtropical with hot summers (24-31°C) and cold winters (-2 to 6°C). Four distinct seasons.',
+      attractions: ['Independence Hall', 'Liberty Bell', 'Philadelphia Museum of Art', 'Reading Terminal Market', 'Eastern State Penitentiary', 'LOVE Park', 'Rittenhouse Square', 'South Street', 'Penn\'s Landing', 'Rocky Steps'],
+      demographics: 'Birthplace of American democracy. Sixth-largest US city. Strong healthcare and education sectors.',
+      seoContent: {
+        intro: 'Philadelphia, the City of Brotherly Love, operates on Eastern Standard Time (EST/UTC-5). America\'s first capital and birthplace of the Constitution, Philly blends revolutionary history with modern urban culture.',
+        timezoneFacts: 'Same timezone as New York and Washington D.C. 5 hours behind London. Between NYC and DC on the Northeast Corridor.',
+        bestTimeToVisit: 'Spring (April-May) and fall (September-October) for pleasant weather. Summer can be hot and humid.',
+        businessHours: 'Standard 9 AM to 5 PM. Reading Terminal Market opens 8 AM. Museums typically 10 AM to 5 PM.',
+        timeDifference: 'Philadelphia is UTC-5 (EST) / UTC-4 (EDT). When noon in Philly: London 5 PM, LA 9 AM, Tokyo 2 AM (+1).',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Cheesesteak debate: Pat\'s vs Geno\'s. SEPTA transit is affordable. "Jawn" means anything. Eagles fans are passionate.',
+        transportation: 'SEPTA subway, bus, and regional rail. Amtrak hub at 30th Street. PHL Airport is 7 miles from downtown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Mummers Parade (Jan 1) is a unique tradition.'
+      }
+    }
+  },
+  { slug: 'detroit', city: 'Detroit', timezone: 'America/Detroit', country: 'United States', countryCode: 'US', lat: 42.33, lng: -83.05, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '640K', metroPopulation: '4.4M', phoneCode: '+1 313', language: 'English',
+      climate: 'Humid continental with warm summers (20-28°C) and cold snowy winters (-6 to 1°C). Lake effect weather.',
+      attractions: ['Motown Museum', 'Detroit Institute of Arts', 'Ford Piquette Plant', 'Belle Isle', 'Eastern Market', 'Fox Theatre', 'Comerica Park', 'GM Renaissance Center', 'The Henry Ford', 'Heidelberg Project'],
+      demographics: 'Motor City and birthplace of Motown. Undergoing urban renaissance. Strong automotive heritage.',
+      seoContent: {
+        intro: 'Detroit, the Motor City, operates on Eastern Standard Time (EST/UTC-5). Birthplace of the American auto industry and Motown sound, Detroit is experiencing a remarkable urban revival.',
+        timezoneFacts: 'Same timezone as New York. Border city with Windsor, Canada. Auto industry schedules influence regional business.',
+        bestTimeToVisit: 'Summer (June-August) for festivals and pleasant weather. Fall colors are beautiful. Winter is cold.',
+        businessHours: 'Standard 9 AM to 5 PM. Eastern Market is Saturday mornings. Auto plants have shift schedules.',
+        timeDifference: 'Detroit is UTC-5 (EST) / UTC-4 (EDT). When noon in Detroit: London 5 PM, LA 9 AM, Toronto 12 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Coney dogs are local specialty. Belle Isle is a great urban park. Cross to Windsor for different perspective.',
+        transportation: 'QLine streetcar downtown. Limited public transit. Detroit Metro Airport (DTW) is 20 miles from downtown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. North American Auto Show (January).'
+      }
+    }
+  },
+  { slug: 'minneapolis', city: 'Minneapolis', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 44.98, lng: -93.27, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '430K', metroPopulation: '3.7M', phoneCode: '+1 612', language: 'English',
+      climate: 'Humid continental with warm summers (20-28°C) and very cold winters (-13 to -4°C). Heavy snowfall.',
+      attractions: ['Mall of America', 'Chain of Lakes', 'Minneapolis Sculpture Garden', 'Stone Arch Bridge', 'First Avenue', 'Guthrie Theater', 'Walker Art Center', 'Minnehaha Falls', 'Mill City Museum', 'Target Field'],
+      demographics: 'Twin Cities with St. Paul. Strong Scandinavian heritage. Corporate headquarters hub. Very bike-friendly.',
+      seoContent: {
+        intro: 'Minneapolis, the City of Lakes, operates on Central Standard Time (CST/UTC-6). Part of the Twin Cities with St. Paul, Minneapolis offers urban sophistication with Midwest friendliness and abundant natural beauty.',
+        timezoneFacts: 'Same timezone as Chicago. 1 hour behind New York. Twin Cities form the 16th largest metro in the US.',
+        bestTimeToVisit: 'Summer (June-August) for outdoor activities and festivals. Fall has beautiful foliage. Winter is brutally cold.',
+        businessHours: 'Standard 9 AM to 5 PM. Skyway system connects downtown buildings (heated in winter).',
+        timeDifference: 'Minneapolis is UTC-6 (CST) / UTC-5 (CDT). When noon in Minneapolis: NYC 1 PM, London 6 PM, Denver 11 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Skyway system is essential in winter. Prince\'s Paisley Park is nearby. Juicy Lucy burgers are a must.',
+        transportation: 'Light rail to airport and Mall of America. Nice Ride bike share. MSP Airport is 10 miles from downtown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Aquatennial (July), State Fair (late August).'
+      }
+    }
+  },
+  { slug: 'portland', city: 'Portland', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', lat: 45.52, lng: -122.68, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '650K', metroPopulation: '2.5M', phoneCode: '+1 503', language: 'English',
+      climate: 'Oceanic with mild wet winters (4-8°C) and warm dry summers (16-26°C). Famous for rain (but mostly drizzle).',
+      attractions: ['Powell\'s Books', 'Portland Japanese Garden', 'Pittock Mansion', 'Washington Park', 'Pearl District', 'Hawthorne District', 'Voodoo Doughnut', 'Forest Park', 'Portland Saturday Market', 'International Rose Test Garden'],
+      demographics: 'Known for "Keep Portland Weird" culture. Strong craft beer and coffee scene. Progressive politics.',
+      seoContent: {
+        intro: 'Portland, the City of Roses, operates on Pacific Standard Time (PST/UTC-8). Oregon\'s largest city is famous for its quirky culture, exceptional food scene, craft beer, and proximity to outdoor adventures.',
+        timezoneFacts: 'Same timezone as Seattle and San Francisco. 3 hours behind New York. No sales tax in Oregon.',
+        bestTimeToVisit: 'Summer (July-September) for dry weather. Spring has roses blooming. Fall is pleasant. Winter is gray and rainy.',
+        businessHours: 'Relaxed schedules. Food carts operate various hours. Powell\'s Books is open until 11 PM.',
+        timeDifference: 'Portland is UTC-8 (PST) / UTC-7 (PDT). When noon in Portland: NYC 3 PM, London 8 PM, Seattle 12 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Food cart pods are everywhere. No sales tax! Bring layers for weather changes. Biking is popular.',
+        transportation: 'TriMet MAX light rail and buses. Very bike-friendly. PDX Airport is 20 minutes from downtown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Rose Festival (June).'
+      }
+    }
+  },
+  { slug: 'nashville', city: 'Nashville', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 36.16, lng: -86.78, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '690K', metroPopulation: '2M', phoneCode: '+1 615', language: 'English',
+      climate: 'Humid subtropical with hot summers (24-32°C) and mild winters (1-10°C). Occasional ice storms.',
+      attractions: ['Grand Ole Opry', 'Country Music Hall of Fame', 'Broadway Honky Tonks', 'Ryman Auditorium', 'The Parthenon', 'Belle Meade Plantation', 'Johnny Cash Museum', 'Printer\'s Alley', 'Music Row', 'Bluebird Cafe'],
+      demographics: 'Music City USA. Country music capital. Rapidly growing with healthcare and tech industries.',
+      seoContent: {
+        intro: 'Nashville, Music City, operates on Central Standard Time (CST/UTC-6). The capital of Tennessee and country music, Nashville has evolved into a diverse cultural hub attracting musicians, entrepreneurs, and tourists.',
+        timezoneFacts: 'Same timezone as Chicago and Memphis. 1 hour behind New York. Live music plays around the clock.',
+        bestTimeToVisit: 'Spring and fall for pleasant weather. CMA Fest in June. Summer is hot and humid.',
+        businessHours: 'Broadway honky tonks open at 10 AM, music until 3 AM. No cover charges on Lower Broadway.',
+        timeDifference: 'Nashville is UTC-6 (CST) / UTC-5 (CDT). When noon in Nashville: NYC 1 PM, London 6 PM, LA 10 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Hot chicken is the signature dish. Bluebird Cafe requires reservations. Tip your musicians. Bachelorette parties everywhere.',
+        transportation: 'Car-dependent. Limited public transit. BNA Airport is 8 miles from downtown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. CMA Fest (June).'
+      }
+    }
+  },
+  { slug: 'new-orleans', city: 'New Orleans', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 29.95, lng: -90.07, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '390K', metroPopulation: '1.3M', phoneCode: '+1 504', language: 'English, French Creole',
+      climate: 'Humid subtropical with hot humid summers (27-33°C) and mild winters (8-17°C). Hurricane season Jun-Nov.',
+      attractions: ['French Quarter', 'Bourbon Street', 'Jackson Square', 'Garden District', 'St. Louis Cemetery', 'Preservation Hall', 'Cafe Du Monde', 'Frenchmen Street', 'Audubon Zoo', 'WWII Museum'],
+      demographics: 'Unique French, African, and Caribbean cultural blend. Birthplace of jazz. Strong food culture.',
+      seoContent: {
+        intro: 'New Orleans, the Big Easy, operates on Central Standard Time (CST/UTC-6). This unique American city blends French, African, and Caribbean cultures into an intoxicating mix of jazz, cuisine, and celebration.',
+        timezoneFacts: 'Same timezone as Houston and Chicago. 1 hour behind Miami. Mardi Gras date varies each year.',
+        bestTimeToVisit: 'February for Mardi Gras, April-May for Jazz Fest. Fall is pleasant. Summer is very hot and humid.',
+        businessHours: 'Bourbon Street never closes. Restaurants serve late. Some bars open 24 hours.',
+        timeDifference: 'New Orleans is UTC-6 (CST) / UTC-5 (CDT). When noon in NOLA: NYC 1 PM, London 6 PM, LA 10 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Go-cups allow open containers. Frenchmen Street for locals\' music scene. Beignets at Cafe Du Monde. Don\'t say "N\'awlins."',
+        transportation: 'Historic streetcars are iconic. Walking in French Quarter. Louis Armstrong Airport (MSY) is 15 miles from downtown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays plus Mardi Gras (Fat Tuesday). Jazz Fest (late April).'
+      }
+    }
+  },
+  { slug: 'orlando', city: 'Orlando', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 28.54, lng: -81.38, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '310K', metroPopulation: '2.7M', phoneCode: '+1 407', language: 'English, Spanish',
+      climate: 'Humid subtropical with hot humid summers (25-33°C) and mild winters (10-22°C). Afternoon thunderstorms common.',
+      attractions: ['Walt Disney World', 'Universal Studios', 'SeaWorld', 'ICON Park', 'Kennedy Space Center', 'International Drive', 'Lake Eola', 'Disney Springs', 'Universal CityWalk', 'Gatorland'],
+      demographics: 'Theme park capital of the world. Major tourist destination. Growing tech sector.',
+      seoContent: {
+        intro: 'Orlando, the Theme Park Capital, operates on Eastern Standard Time (EST/UTC-5). Home to Walt Disney World and Universal Studios, Orlando welcomes over 75 million visitors annually.',
+        timezoneFacts: 'Same timezone as Miami and New York. Major tourism hub - theme parks consider global visitors.',
+        bestTimeToVisit: 'Spring and fall avoid crowds and heat. Summer is busiest and hottest. Winter holidays are crowded.',
+        businessHours: 'Theme parks 9 AM to 10 PM+ (varies). Disney operates 365 days. I-Drive open late.',
+        timeDifference: 'Orlando is UTC-5 (EST) / UTC-4 (EDT). When noon in Orlando: London 5 PM, LA 9 AM, São Paulo 2 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November. Florida considered permanent DST.',
+        localTips: 'Buy park tickets in advance. Lightning delays afternoon rides. Genie+ for skipping lines. Stay hydrated.',
+        transportation: 'Car essential for theme parks. I-Ride Trolley on International Drive. MCO Airport is 25 minutes from parks.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Epcot festivals throughout the year.'
+      }
+    }
+  },
+  { slug: 'honolulu', city: 'Honolulu', timezone: 'Pacific/Honolulu', country: 'United States', countryCode: 'US', lat: 21.31, lng: -157.86, tier: 3, continent: 'oceania',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '350K', metroPopulation: '1M', phoneCode: '+1 808', language: 'English, Hawaiian',
+      climate: 'Tropical with consistent temperatures (23-30°C) year-round. Trade winds keep it comfortable.',
+      attractions: ['Waikiki Beach', 'Diamond Head', 'Pearl Harbor', 'Hanauma Bay', 'Iolani Palace', 'North Shore', 'Ala Moana', 'Chinatown', 'Polynesian Cultural Center', 'Manoa Falls'],
+      demographics: 'Hawaii\'s capital. Diverse Pacific Islander, Asian, and mainland American population. Major military presence.',
+      seoContent: {
+        intro: 'Honolulu, the Crossroads of the Pacific, operates on Hawaii-Aleutian Standard Time (HST/UTC-10). The capital of Hawaii offers tropical paradise with rich Polynesian culture and American convenience.',
+        timezoneFacts: 'Hawaii doesn\'t observe DST - always UTC-10. 5-6 hours behind US mainland depending on season. Unique position bridging East and West.',
+        bestTimeToVisit: 'Year-round destination. Winter (Dec-Mar) has best whale watching. Summer is drier. September-November least crowded.',
+        businessHours: 'Relaxed "island time" mentality. Shops typically 10 AM to 9 PM. Many activities start early to avoid heat.',
+        timeDifference: 'Honolulu is always UTC-10. When noon in Honolulu: LA 2 PM (winter) / 3 PM (summer), NYC 5 PM / 6 PM, Tokyo 7 AM (+1).',
+        daylightSaving: 'Hawaii does NOT observe DST. Time difference with mainland US changes seasonally.',
+        localTips: 'Learn basic Hawaiian: Aloha (hello/goodbye), Mahalo (thank you). Respect local culture. Reef-safe sunscreen required.',
+        transportation: 'TheBus covers Oahu. Car needed for North Shore. Daniel K. Inouye Airport (HNL) is 10 miles from Waikiki.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays plus Prince Kuhio Day (Mar 26), King Kamehameha Day (Jun 11), Statehood Day (Aug).'
+      }
+    }
+  },
+  { slug: 'anchorage', city: 'Anchorage', timezone: 'America/Anchorage', country: 'United States', countryCode: 'US', lat: 61.22, lng: -149.90, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '290K', metroPopulation: '400K', phoneCode: '+1 907', language: 'English',
+      climate: 'Subarctic with cool summers (13-19°C) and cold winters (-11 to -5°C). Extreme daylight variation.',
+      attractions: ['Denali National Park', 'Glacier cruises', 'Alaska Wildlife Conservation Center', 'Flattop Mountain', 'Anchorage Museum', 'Tony Knowles Coastal Trail', 'Portage Glacier', 'Alyeska Resort', 'Lake Hood', 'Alaska Railroad'],
+      demographics: 'Alaska\'s largest city. Gateway to wilderness adventures. Strong Native Alaskan heritage.',
+      seoContent: {
+        intro: 'Anchorage, Alaska\'s largest city, operates on Alaska Standard Time (AKST/UTC-9). The gateway to America\'s last frontier offers stunning wilderness, abundant wildlife, and extreme seasonal daylight.',
+        timezoneFacts: '1 hour behind Pacific Time, 4 hours behind New York. Summer has nearly 20 hours of daylight; winter has barely 5.',
+        bestTimeToVisit: 'June-August for midnight sun and wildlife. March for Iditarod. Winter for northern lights. Shoulder seasons less crowded.',
+        businessHours: 'Standard hours but summer activities extend late due to daylight. Some businesses close in winter.',
+        timeDifference: 'Anchorage is UTC-9 (AKST) / UTC-8 (AKDT). When noon in Anchorage: LA 1 PM, NYC 4 PM, London 9 PM.',
+        daylightSaving: 'AKDT runs second Sunday of March to first Sunday of November. Daylight hours vary dramatically by season.',
+        localTips: 'Wildlife is wild - keep distance from moose and bears. Dress in layers. Book excursions early in summer.',
+        transportation: 'Car essential for exploring. Alaska Railroad for scenic routes. Ted Stevens Airport (ANC) is 6 miles from downtown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays plus Seward\'s Day (last Mon March), Alaska Day (Oct 18). Iditarod start (early March).'
+      }
+    }
+  },
 
   // Canada
-  { slug: 'calgary', city: 'Calgary', timezone: 'America/Edmonton', country: 'Canada', countryCode: 'CA', lat: 51.05, lng: -114.07, tier: 3, continent: 'americas' },
-  { slug: 'ottawa', city: 'Ottawa', timezone: 'America/Toronto', country: 'Canada', countryCode: 'CA', lat: 45.42, lng: -75.70, tier: 3, continent: 'americas' },
-  { slug: 'edmonton', city: 'Edmonton', timezone: 'America/Edmonton', country: 'Canada', countryCode: 'CA', lat: 53.55, lng: -113.49, tier: 3, continent: 'americas' },
+  { slug: 'calgary', city: 'Calgary', timezone: 'America/Edmonton', country: 'Canada', countryCode: 'CA', lat: 51.05, lng: -114.07, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Canadian Dollar', currencySymbol: 'C$', population: '1.3M', metroPopulation: '1.5M', phoneCode: '+1 403', language: 'English',
+      climate: 'Semi-arid with warm summers (16-24°C) and cold winters (-11 to -1°C). Chinook winds bring sudden warmth.',
+      attractions: ['Calgary Stampede', 'Calgary Tower', 'Banff nearby', 'Heritage Park', 'Prince\'s Island Park', 'Studio Bell', 'Glenbow Museum', 'TELUS Spark', 'Fish Creek Park', 'Canada Olympic Park'],
+      demographics: 'Alberta\'s largest city. Oil and gas industry hub. Gateway to Rocky Mountains.',
+      seoContent: {
+        intro: 'Calgary, home of the Greatest Outdoor Show on Earth, operates on Mountain Standard Time (MST/UTC-7). This Alberta city combines cowboy culture with modern energy industry wealth and serves as the gateway to the Canadian Rockies.',
+        timezoneFacts: 'Same timezone as Denver. 2 hours behind Toronto. Calgary Stampede attracts over 1 million visitors annually.',
+        bestTimeToVisit: 'July for Stampede, summer for outdoor activities. Winter for skiing in nearby Banff. Chinook winds can warm winter days dramatically.',
+        businessHours: 'Standard 9 AM to 5 PM. Energy industry influences business culture. Stampede week is festive.',
+        timeDifference: 'Calgary is UTC-7 (MST) / UTC-6 (MDT). When noon in Calgary: Toronto 2 PM, London 7 PM, Vancouver 11 AM.',
+        daylightSaving: 'MDT runs second Sunday of March to first Sunday of November. Alberta has debated ending DST.',
+        localTips: 'White hat culture during Stampede. Banff is 90 minutes away. Plus 15 walkways connect downtown. No provincial sales tax.',
+        transportation: 'CTrain light rail. Car needed for mountains. Calgary Airport (YYC) is 20 minutes from downtown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'Canadian holidays. Calgary Stampede (July). Heritage Day (August).'
+      }
+    }
+  },
+  { slug: 'ottawa', city: 'Ottawa', timezone: 'America/Toronto', country: 'Canada', countryCode: 'CA', lat: 45.42, lng: -75.70, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Canadian Dollar', currencySymbol: 'C$', population: '1M', metroPopulation: '1.5M', phoneCode: '+1 613', language: 'English, French',
+      climate: 'Humid continental with warm summers (20-26°C) and cold snowy winters (-11 to -3°C). World\'s second coldest capital.',
+      attractions: ['Parliament Hill', 'Rideau Canal', 'National Gallery', 'ByWard Market', 'Canadian War Museum', 'Museum of History', 'Rideau Hall', 'Tulip Festival', 'National Arts Centre', 'Diefenbunker'],
+      demographics: 'Canada\'s capital. Bilingual (English-French). Strong public sector. Tech hub (Silicon Valley North).',
+      seoContent: {
+        intro: 'Ottawa, Canada\'s capital, operates on Eastern Standard Time (EST/UTC-5). This bilingual city on the Ottawa River is home to Parliament Hill and world-class museums, offering a blend of government grandeur and outdoor recreation.',
+        timezoneFacts: 'Same timezone as Toronto and Montreal. Border with Gatineau, Quebec. Rideau Canal becomes world\'s largest skating rink in winter.',
+        bestTimeToVisit: 'May for Tulip Festival, summer for festivals, winter for skating. Fall has beautiful foliage.',
+        businessHours: 'Government hours 8:30 AM to 4:30 PM. ByWard Market open daily. Museums typically 10 AM to 5 PM.',
+        timeDifference: 'Ottawa is UTC-5 (EST) / UTC-4 (EDT). When noon in Ottawa: London 5 PM, Vancouver 9 AM, Paris 6 PM.',
+        daylightSaving: 'EDT runs second Sunday of March to first Sunday of November.',
+        localTips: 'BeaverTails pastry is iconic. Skating on Rideau Canal is free. Parliament tours available. Gatineau has different alcohol laws.',
+        transportation: 'O-Train Confederation Line. Buses to Gatineau. Ottawa Airport (YOW) is 15 minutes from downtown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'Canadian holidays. Canada Day (July 1) is huge on Parliament Hill. Winterlude (February).'
+      }
+    }
+  },
+  { slug: 'edmonton', city: 'Edmonton', timezone: 'America/Edmonton', country: 'Canada', countryCode: 'CA', lat: 53.55, lng: -113.49, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Canadian Dollar', currencySymbol: 'C$', population: '1M', metroPopulation: '1.4M', phoneCode: '+1 780', language: 'English',
+      climate: 'Humid continental with warm summers (17-23°C) and very cold winters (-14 to -5°C). Extreme temperature swings.',
+      attractions: ['West Edmonton Mall', 'Muttart Conservatory', 'Fort Edmonton Park', 'Art Gallery of Alberta', 'River Valley', 'Royal Alberta Museum', 'Elk Island', 'K-Days', 'Ice District', 'Old Strathcona'],
+      demographics: 'Alberta\'s capital. Gateway to northern Alberta oil sands. Festival city with many summer events.',
+      seoContent: {
+        intro: 'Edmonton, Alberta\'s capital, operates on Mountain Standard Time (MST/UTC-7). Known as the Festival City and home to North America\'s largest mall, Edmonton serves as the gateway to Canada\'s north.',
+        timezoneFacts: 'Same timezone as Calgary. Canada\'s northernmost major city. Summer has extremely long daylight hours.',
+        bestTimeToVisit: 'Summer for festivals and 17+ hours of daylight. Fall for northern lights nearby. Winter is very cold.',
+        businessHours: 'Standard 9 AM to 5 PM. West Edmonton Mall open until 9 PM. Festival season is busy.',
+        timeDifference: 'Edmonton is UTC-7 (MST) / UTC-6 (MDT). When noon in Edmonton: Toronto 2 PM, London 7 PM, LA 11 AM.',
+        daylightSaving: 'MDT runs second Sunday of March to first Sunday of November.',
+        localTips: 'River Valley is North America\'s largest urban park system. Dress warmly in winter. No provincial sales tax.',
+        transportation: 'LRT system. Car essential for suburbs. Edmonton Airport (YEG) is 30 minutes from downtown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'Canadian holidays. K-Days (July), Fringe Festival (August), Heritage Festival.'
+      }
+    }
+  },
 
   // Latin America
-  { slug: 'santiago', city: 'Santiago', timezone: 'America/Santiago', country: 'Chile', countryCode: 'CL', lat: -33.45, lng: -70.67, tier: 3, continent: 'americas' },
-  { slug: 'bogota', city: 'Bogotá', timezone: 'America/Bogota', country: 'Colombia', countryCode: 'CO', lat: 4.71, lng: -74.07, tier: 3, continent: 'americas' },
-  { slug: 'lima', city: 'Lima', timezone: 'America/Lima', country: 'Peru', countryCode: 'PE', lat: -12.05, lng: -77.04, tier: 3, continent: 'americas' },
-  { slug: 'caracas', city: 'Caracas', timezone: 'America/Caracas', country: 'Venezuela', countryCode: 'VE', lat: 10.48, lng: -66.90, tier: 3, continent: 'americas' },
-  { slug: 'medellin', city: 'Medellín', timezone: 'America/Bogota', country: 'Colombia', countryCode: 'CO', lat: 6.25, lng: -75.56, tier: 3, continent: 'americas' },
-  { slug: 'montevideo', city: 'Montevideo', timezone: 'America/Montevideo', country: 'Uruguay', countryCode: 'UY', lat: -34.90, lng: -56.19, tier: 3, continent: 'americas' },
-  { slug: 'havana', city: 'Havana', timezone: 'America/Havana', country: 'Cuba', countryCode: 'CU', lat: 23.11, lng: -82.37, tier: 3, continent: 'americas' },
-  { slug: 'panama-city', city: 'Panama City', timezone: 'America/Panama', country: 'Panama', countryCode: 'PA', lat: 8.98, lng: -79.52, tier: 3, continent: 'americas' },
-  { slug: 'san-jose-cr', city: 'San José', timezone: 'America/Costa_Rica', country: 'Costa Rica', countryCode: 'CR', lat: 9.93, lng: -84.09, tier: 3, continent: 'americas' },
-  { slug: 'guadalajara', city: 'Guadalajara', timezone: 'America/Mexico_City', country: 'Mexico', countryCode: 'MX', lat: 20.67, lng: -103.35, tier: 3, continent: 'americas' },
-  { slug: 'monterrey', city: 'Monterrey', timezone: 'America/Monterrey', country: 'Mexico', countryCode: 'MX', lat: 25.69, lng: -100.32, tier: 3, continent: 'americas' },
-  { slug: 'cancun', city: 'Cancún', timezone: 'America/Cancun', country: 'Mexico', countryCode: 'MX', lat: 21.16, lng: -86.85, tier: 3, continent: 'americas' },
+  { slug: 'santiago', city: 'Santiago', timezone: 'America/Santiago', country: 'Chile', countryCode: 'CL', lat: -33.45, lng: -70.67, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Chilean Peso', currencySymbol: '$', population: '5.6M', metroPopulation: '7.1M', phoneCode: '+56 2', language: 'Spanish',
+      climate: 'Mediterranean with warm dry summers (20-30°C) and cool wet winters (5-14°C). Andes visible on clear days.',
+      attractions: ['Plaza de Armas', 'Cerro San Cristóbal', 'La Moneda', 'Mercado Central', 'Bellavista', 'Lastarria', 'Valle Nevado', 'Cajon del Maipo', 'Museo de la Memoria', 'Costanera Center'],
+      demographics: 'Chile\'s capital and economic center. Modern South American city. Strong wine industry nearby.',
+      seoContent: {
+        intro: 'Santiago, Chile\'s capital, operates on Chile Standard Time (CLT/UTC-4 in winter, UTC-3 in summer). Nestled between the Andes and the Pacific, this modern metropolis offers urban sophistication with world-class wine country nearby.',
+        timezoneFacts: 'Chile\'s DST is opposite to Northern Hemisphere - summer is December-March. 1 hour ahead of New York in Southern summer.',
+        bestTimeToVisit: 'September-November (spring) and March-May (fall) for pleasant weather. Summer for beaches. Winter for skiing.',
+        businessHours: 'Offices 9 AM to 6 PM. Long lunches traditional. Shops open until 9 PM.',
+        timeDifference: 'Santiago is UTC-4 (winter) / UTC-3 (summer). When noon in Santiago: NYC 11 AM/12 PM, London 4 PM/5 PM.',
+        daylightSaving: 'Chile uses summer time roughly September to April (Southern Hemisphere summer).',
+        localTips: 'Wine tours in Maipo Valley. Smog can be bad in winter. Earthquakes occur. "Once" is afternoon tea tradition.',
+        transportation: 'Metro is excellent. Buses throughout. SCL Airport is 20km from center - tolled highways.',
+        emergencyNumbers: 'Emergency: 131 (ambulance), 132 (fire), 133 (police).',
+        publicHolidays: 'New Year, Easter, Labor Day, Navy Day (May 21), Independence Day (Sep 18-19), Christmas.'
+      }
+    }
+  },
+  { slug: 'bogota', city: 'Bogotá', timezone: 'America/Bogota', country: 'Colombia', countryCode: 'CO', lat: 4.71, lng: -74.07, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Colombian Peso', currencySymbol: '$', population: '7.4M', metroPopulation: '10.7M', phoneCode: '+57 1', language: 'Spanish',
+      climate: 'Subtropical highland with mild consistent temperatures (12-19°C). Can be rainy. Cool due to altitude (2,640m).',
+      attractions: ['La Candelaria', 'Gold Museum', 'Monserrate', 'Botero Museum', 'Plaza Bolívar', 'Zona Rosa', 'Usaquén', 'Salt Cathedral of Zipaquirá', 'National Museum', 'Ciclovía'],
+      demographics: 'Colombia\'s capital and largest city. High altitude. Growing as regional business hub. Transforming reputation.',
+      seoContent: {
+        intro: 'Bogotá, Colombia\'s high-altitude capital, operates on Colombia Time (COT/UTC-5). This Andean metropolis at 2,640 meters combines colonial history, world-class museums, and emerging culinary scene.',
+        timezoneFacts: 'Same as New York (EST) but Colombia doesn\'t observe DST. Always 5 hours behind London.',
+        bestTimeToVisit: 'December-March and July-August (dry seasons). Year-round mild temperatures. Bring layers for rain.',
+        businessHours: 'Offices 8 AM to 5 PM. Shopping centers until 9 PM. Ciclovía on Sundays closes streets to cars.',
+        timeDifference: 'Bogotá is always UTC-5. When noon in Bogotá: NYC 12 PM (EST) / 1 PM (EDT), London 5 PM, LA 9 AM.',
+        daylightSaving: 'Colombia does NOT observe DST. Time is constant year-round.',
+        localTips: 'Altitude can cause soroche (altitude sickness). Take it easy first day. Agua de panela helps. TransMilenio can be crowded.',
+        transportation: 'TransMilenio BRT system. Taxis are affordable. El Dorado Airport (BOG) is 15km from center.',
+        emergencyNumbers: 'Emergency: 123. Tourist Police: 156.',
+        publicHolidays: 'New Year, Epiphany, Easter, Labor Day, Independence Day (Jul 20, Aug 7), Christmas. Many Monday holidays.'
+      }
+    }
+  },
+  { slug: 'lima', city: 'Lima', timezone: 'America/Lima', country: 'Peru', countryCode: 'PE', lat: -12.05, lng: -77.04, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Peruvian Sol', currencySymbol: 'S/', population: '9.7M', metroPopulation: '11M', phoneCode: '+51 1', language: 'Spanish',
+      climate: 'Subtropical desert with mild temperatures (15-27°C). Coastal fog (garúa) common May-November. Rarely rains.',
+      attractions: ['Plaza Mayor', 'Miraflores', 'Larco Museum', 'Barranco', 'Huaca Pucllana', 'San Francisco Catacombs', 'Magic Water Circuit', 'Pachacamac', 'Costa Verde', 'Central Market'],
+      demographics: 'Peru\'s capital. Gastronomic capital of South America. Blend of colonial and pre-Columbian history.',
+      seoContent: {
+        intro: 'Lima, Peru\'s capital, operates on Peru Time (PET/UTC-5). This coastal metropolis is South America\'s gastronomic capital, blending Incan heritage, colonial architecture, and innovative cuisine.',
+        timezoneFacts: 'Same as New York (EST) but Peru doesn\'t observe DST. Gateway to Machu Picchu and Amazon.',
+        bestTimeToVisit: 'December-April for sunny "summer" weather. May-November is overcast but mild. Food festivals year-round.',
+        businessHours: 'Offices 9 AM to 6 PM. Restaurants serve late. Lunch is main meal (1-3 PM).',
+        timeDifference: 'Lima is always UTC-5. When noon in Lima: NYC 12 PM (EST), London 5 PM, LA 9 AM.',
+        daylightSaving: 'Peru does NOT observe DST. Time is constant year-round.',
+        localTips: 'Ceviche for lunch only (fresh fish). Pisco sour is national drink. Miraflores is safest for tourists. Book Machu Picchu early.',
+        transportation: 'Metropolitano BRT. Taxis use apps (Uber, Beat). Jorge Chávez Airport (LIM) is 12km from Miraflores.',
+        emergencyNumbers: 'Emergency: 105. Tourist Police: 574-8000.',
+        publicHolidays: 'New Year, Easter, Labor Day, Independence Day (Jul 28-29), St. Rose of Lima (Aug 30), Christmas.'
+      }
+    }
+  },
+  { slug: 'caracas', city: 'Caracas', timezone: 'America/Caracas', country: 'Venezuela', countryCode: 'VE', lat: 10.48, lng: -66.90, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Venezuelan Bolívar', currencySymbol: 'Bs.', population: '2.9M', metroPopulation: '5.2M', phoneCode: '+58 212', language: 'Spanish',
+      climate: 'Tropical with consistent temperatures (18-27°C). Mountain location keeps it cooler than coast. Rainy May-October.',
+      attractions: ['Teleférico to Ávila', 'Plaza Bolívar', 'Parque del Este', 'Birthplace of Bolívar', 'Museo de Arte Contemporáneo', 'Los Roques nearby', 'Panteón Nacional', 'El Hatillo', 'Museo de Bellas Artes', 'Ávila National Park'],
+      demographics: 'Venezuela\'s capital. Economic crisis has impacted daily life. Strong cultural heritage.',
+      seoContent: {
+        intro: 'Caracas, Venezuela\'s capital, operates on Venezuela Time (VET/UTC-4). Nestled in a valley beneath Mount Ávila, this vibrant city faces challenges but retains cultural richness and natural beauty.',
+        timezoneFacts: 'UTC-4 offset was changed in 2007 to UTC-4:30, then back to UTC-4 in 2016. 1 hour ahead of New York.',
+        bestTimeToVisit: 'December-April is dry season. Year-round pleasant mountain climate. Check travel advisories.',
+        businessHours: 'Offices 8 AM to 5 PM. Economic situation affects business hours and availability.',
+        timeDifference: 'Caracas is always UTC-4. When noon in Caracas: NYC 11 AM (EST) / 12 PM (EDT), London 4 PM.',
+        daylightSaving: 'Venezuela does NOT observe DST.',
+        localTips: 'Check current travel advisories. USD cash is useful. Ávila cable car offers amazing views. Arepas are staple food.',
+        transportation: 'Metro system exists but limited. Taxis and rideshare. Simón Bolívar Airport (CCS) is 25km from center.',
+        emergencyNumbers: 'Emergency: 171.',
+        publicHolidays: 'New Year, Carnival, Easter, Independence Day (Apr 19, Jul 5), Simón Bolívar Day (Jul 24), Christmas.'
+      }
+    }
+  },
+  { slug: 'medellin', city: 'Medellín', timezone: 'America/Bogota', country: 'Colombia', countryCode: 'CO', lat: 6.25, lng: -75.56, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Colombian Peso', currencySymbol: '$', population: '2.5M', metroPopulation: '3.9M', phoneCode: '+57 4', language: 'Spanish',
+      climate: 'Subtropical highland with spring-like temperatures year-round (17-28°C). "City of Eternal Spring."',
+      attractions: ['Comuna 13', 'Parque Arví', 'Plaza Botero', 'Museo de Antioquia', 'Metrocable', 'El Poblado', 'Jardín Botánico', 'Parque Lleras', 'Santa Elena', 'Pueblito Paisa'],
+      demographics: 'Colombia\'s second city. Remarkable transformation from violent past. Innovation hub.',
+      seoContent: {
+        intro: 'Medellín, the City of Eternal Spring, operates on Colombia Time (COT/UTC-5). Once notorious, this transformed city is now celebrated for innovation, urban renewal, and perfect year-round climate.',
+        timezoneFacts: 'Same timezone as Bogotá. No DST. Spring-like weather allows year-round outdoor activities.',
+        bestTimeToVisit: 'Year-round destination due to consistent weather. August for Flower Festival. December for lights festival.',
+        businessHours: 'Offices 8 AM to 5 PM. El Poblado nightlife runs late. Malls until 9 PM.',
+        timeDifference: 'Medellín is always UTC-5. When noon in Medellín: NYC 12 PM (EST), London 5 PM, Miami 12 PM.',
+        daylightSaving: 'Colombia does NOT observe DST.',
+        localTips: 'Metrocable to Comuna 13 is a must. Bandeja paisa is local dish. "Paisa" people are known for hospitality.',
+        transportation: 'Metro and Metrocable are excellent. Uber works. José María Córdova Airport (MDE) is 35km in mountains.',
+        emergencyNumbers: 'Emergency: 123.',
+        publicHolidays: 'Colombian holidays. Feria de las Flores (August), Alumbrados (December lights).'
+      }
+    }
+  },
+  { slug: 'montevideo', city: 'Montevideo', timezone: 'America/Montevideo', country: 'Uruguay', countryCode: 'UY', lat: -34.90, lng: -56.19, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Uruguayan Peso', currencySymbol: '$U', population: '1.4M', metroPopulation: '2M', phoneCode: '+598 2', language: 'Spanish',
+      climate: 'Humid subtropical with warm summers (22-28°C) and mild winters (7-14°C). Can be windy.',
+      attractions: ['Ciudad Vieja', 'Mercado del Puerto', 'Rambla', 'Plaza Independencia', 'Palacio Salvo', 'Teatro Solís', 'Punta Carretas', 'Pocitos Beach', 'Museo Torres García', 'Carnival'],
+      demographics: 'Uruguay\'s capital. Half of country lives here. Relaxed, cultured atmosphere. Progressive policies.',
+      seoContent: {
+        intro: 'Montevideo, Uruguay\'s laid-back capital, operates on Uruguay Time (UYT/UTC-3). This cosmopolitan city on the Río de la Plata offers colonial charm, beach culture, and one of South America\'s highest quality of life.',
+        timezoneFacts: 'Same timezone as Buenos Aires and São Paulo. Uruguay abolished DST in 2015.',
+        bestTimeToVisit: 'December-March for summer beach weather. Carnival (February) is vibrant. Winter is mild.',
+        businessHours: 'Offices 9 AM to 6 PM. Siesta culture less common than past. Mercado del Puerto busy for lunch.',
+        timeDifference: 'Montevideo is always UTC-3. When noon in Montevideo: NYC 10 AM (EST), London 3 PM, Buenos Aires 12 PM.',
+        daylightSaving: 'Uruguay does NOT observe DST since 2015.',
+        localTips: 'Mate is social ritual. Chivito sandwich is local specialty. Punta del Este is nearby resort. Very safe city.',
+        transportation: 'Buses throughout. Car not necessary downtown. Carrasco Airport (MVD) is 20km from center.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'New Year, Carnival, Easter, Landing of the 33 (Apr 19), Labor Day, Independence Day (Aug 25), Christmas.'
+      }
+    }
+  },
+  { slug: 'havana', city: 'Havana', timezone: 'America/Havana', country: 'Cuba', countryCode: 'CU', lat: 23.11, lng: -82.37, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Cuban Peso', currencySymbol: '$', population: '2.1M', metroPopulation: '3.7M', phoneCode: '+53 7', language: 'Spanish',
+      climate: 'Tropical with hot humid summers (27-32°C) and warm dry winters (21-26°C). Hurricane season Jun-Nov.',
+      attractions: ['Old Havana', 'Malecón', 'El Capitolio', 'Plaza de la Revolución', 'Museo de la Revolución', 'Fábrica de Arte', 'Tropicana', 'Fusterlandia', 'El Floridita', 'Classic Cars'],
+      demographics: 'Cuba\'s capital. UNESCO World Heritage colonial center. Frozen in time aesthetic.',
+      seoContent: {
+        intro: 'Havana, Cuba\'s captivating capital, operates on Cuba Standard Time (CST/UTC-5). This living museum of colonial architecture, classic cars, and revolutionary history offers a unique window into a preserved past.',
+        timezoneFacts: 'Same as New York (EST) with similar DST schedule. Internet access is limited.',
+        bestTimeToVisit: 'November-April for dry season. December-February most pleasant. Avoid hurricane season (Jun-Nov).',
+        businessHours: 'State businesses 8 AM to 5 PM. Private restaurants (paladares) have varying hours. Things move slowly.',
+        timeDifference: 'Havana is UTC-5 (CST) / UTC-4 (CDT). When noon in Havana: NYC 12 PM, London 5 PM, Miami 12 PM.',
+        daylightSaving: 'Cuba observes DST, roughly March to November.',
+        localTips: 'Bring cash (euros or USD to exchange). WiFi limited to certain spots. Negotiate taxi prices. Two currencies existed until 2021.',
+        transportation: 'Classic car taxis, cocotaxis, buses. Limited public transit. José Martí Airport (HAV) is 18km from center.',
+        emergencyNumbers: 'Emergency: 106.',
+        publicHolidays: 'New Year, Liberation Day (Jan 1), Labor Day, Revolution Day (Jul 26), Independence Day (Oct 10), Christmas.'
+      }
+    }
+  },
+  { slug: 'panama-city', city: 'Panama City', timezone: 'America/Panama', country: 'Panama', countryCode: 'PA', lat: 8.98, lng: -79.52, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Panamanian Balboa / US Dollar', currencySymbol: 'B/./$', population: '880K', metroPopulation: '2M', phoneCode: '+507', language: 'Spanish',
+      climate: 'Tropical with hot humid weather year-round (26-32°C). Rainy season May-November.',
+      attractions: ['Panama Canal', 'Casco Viejo', 'BioMuseo', 'Causeway', 'Miraflores Locks', 'Cerro Ancón', 'Panama Viejo', 'Metropolitan Natural Park', 'Multiplaza', 'Trump Ocean Club'],
+      demographics: 'Panama\'s capital. Major banking and shipping hub. Modern skyline. Uses US Dollar.',
+      seoContent: {
+        intro: 'Panama City, Panama\'s capital, operates on Eastern Standard Time (EST/UTC-5). This booming financial center is home to the world-famous Panama Canal and offers a bridge between North and South America.',
+        timezoneFacts: 'Same as New York (EST) but Panama doesn\'t observe DST. So same as Miami in winter, 1 hour behind in summer.',
+        bestTimeToVisit: 'December-April (dry season). January-March best weather. Rainy season has afternoon showers.',
+        businessHours: 'Offices 8 AM to 5 PM. Banking hub means financial services are comprehensive. Malls until 9 PM.',
+        timeDifference: 'Panama is always UTC-5. When noon in Panama: NYC 12 PM (EST) / 1 PM (EDT), London 5 PM, LA 9 AM.',
+        daylightSaving: 'Panama does NOT observe DST.',
+        localTips: 'Canal expansion completed 2016. US Dollar used everywhere. Casco Viejo is gentrified but watch belongings.',
+        transportation: 'Metro Line 1 and 2. Buses (diablos rojos). Tocumen Airport (PTY) is 25km from center.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'New Year, Martyrs\' Day (Jan 9), Carnival, Easter, Labor Day, Independence Days (Nov 3, 4, 28), Christmas.'
+      }
+    }
+  },
+  { slug: 'san-jose-cr', city: 'San José', timezone: 'America/Costa_Rica', country: 'Costa Rica', countryCode: 'CR', lat: 9.93, lng: -84.09, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Costa Rican Colón', currencySymbol: '₡', population: '340K', metroPopulation: '2.2M', phoneCode: '+506', language: 'Spanish',
+      climate: 'Tropical highland with spring-like temperatures (17-26°C). Rainy season May-November.',
+      attractions: ['National Museum', 'Central Market', 'National Theater', 'Jade Museum', 'Pre-Columbian Gold Museum', 'La Sabana Park', 'Barrio Amón', 'Poás Volcano nearby', 'Café Britt Tour', 'Artisan Markets'],
+      demographics: 'Costa Rica\'s capital. Gateway to ecotourism. High quality of life. "Pura Vida" lifestyle.',
+      seoContent: {
+        intro: 'San José, Costa Rica\'s capital, operates on Central Standard Time (CST/UTC-6). This highland city serves as the gateway to Costa Rica\'s famous ecotourism destinations, embodying the "Pura Vida" lifestyle.',
+        timezoneFacts: 'Same as Chicago but Costa Rica doesn\'t observe DST. 1-2 hours behind US East Coast depending on season.',
+        bestTimeToVisit: 'December-April (dry season). Green season (May-Nov) has lower prices and fewer crowds.',
+        businessHours: 'Offices 8 AM to 5 PM. Central Market opens early. Most tourists pass through quickly to beaches.',
+        timeDifference: 'San José is always UTC-6. When noon in San José: NYC 1 PM (EST) / 2 PM (EDT), London 6 PM, LA 10 AM.',
+        daylightSaving: 'Costa Rica does NOT observe DST.',
+        localTips: '"Pura Vida" is greeting and lifestyle. Gallo pinto for breakfast. Colones and USD both accepted. Very safe country.',
+        transportation: 'Buses throughout Central America. Taxis red (official) or Uber. Juan Santamaría Airport (SJO) is 20km from center.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'New Year, Easter, Juan Santamaría Day (Apr 11), Labor Day, Annexation of Guanacaste (Jul 25), Independence Day (Sep 15), Christmas.'
+      }
+    }
+  },
+  { slug: 'guadalajara', city: 'Guadalajara', timezone: 'America/Mexico_City', country: 'Mexico', countryCode: 'MX', lat: 20.67, lng: -103.35, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '1.5M', metroPopulation: '5.3M', phoneCode: '+52 33', language: 'Spanish',
+      climate: 'Subtropical highland with warm weather (15-30°C). Rainy season June-October. Pleasant year-round.',
+      attractions: ['Hospicio Cabañas', 'Tequila Town', 'Tlaquepaque', 'Guadalajara Cathedral', 'Teatro Degollado', 'Chapultepec', 'Lake Chapala', 'Mercado San Juan de Dios', 'Tonalá', 'Mariachi Plaza'],
+      demographics: 'Mexico\'s second-largest city. Birthplace of mariachi, tequila, and Mexican rodeo. Tech hub.',
+      seoContent: {
+        intro: 'Guadalajara, Mexico\'s second city, operates on Central Standard Time (CST/UTC-6). The birthplace of mariachi music and tequila, this vibrant metropolis offers traditional Mexican culture alongside modern innovation.',
+        timezoneFacts: 'Same timezone as Mexico City. 1 hour behind New York. Silicon Valley of Mexico.',
+        bestTimeToVisit: 'October-May for dry season. October for Day of the Dead. May for mariachi festival.',
+        businessHours: 'Offices 9 AM to 6 PM. Siesta tradition fading. Markets open early.',
+        timeDifference: 'Guadalajara is UTC-6 (CST) / UTC-5 (CDT). When noon in GDL: NYC 1 PM, London 6 PM, LA 10 AM.',
+        daylightSaving: 'Mexico abolished DST in 2022 for most regions, but border areas may differ.',
+        localTips: 'Tequila town is 1 hour away. Torta ahogada is local specialty. Tlaquepaque for handicrafts. Very traditional culture.',
+        transportation: 'Light rail and buses. Uber works well. Miguel Hidalgo Airport (GDL) is 20km from center.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'Mexican holidays. Fiestas de Octubre, Day of the Dead, Guadalupe Day (Dec 12).'
+      }
+    }
+  },
+  { slug: 'monterrey', city: 'Monterrey', timezone: 'America/Monterrey', country: 'Mexico', countryCode: 'MX', lat: 25.69, lng: -100.32, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '1.1M', metroPopulation: '5.3M', phoneCode: '+52 81', language: 'Spanish',
+      climate: 'Semi-arid with hot summers (28-36°C) and mild winters (8-20°C). Dramatic mountain backdrop.',
+      attractions: ['Cerro de la Silla', 'Macroplaza', 'Fundidora Park', 'MARCO Museum', 'Barrio Antiguo', 'Cola de Caballo', 'García Caves', 'Santa Lucía Riverwalk', 'Chipinque', 'Museo del Noreste'],
+      demographics: 'Mexico\'s industrial capital. Wealthiest city per capita. Business-oriented culture.',
+      seoContent: {
+        intro: 'Monterrey, Mexico\'s industrial powerhouse, operates on Central Standard Time (CST/UTC-6). Surrounded by dramatic mountains, this business-oriented city offers a different face of Mexico with strong work ethic and modern infrastructure.',
+        timezoneFacts: 'Same timezone as Mexico City. Close to US border (2 hours to Laredo). Business ties with Texas.',
+        bestTimeToVisit: 'October-April for cooler weather. Summer is very hot. Mountains offer year-round activities.',
+        businessHours: 'Offices 9 AM to 6 PM. Most business-focused Mexican city. American-influenced work culture.',
+        timeDifference: 'Monterrey is UTC-6 (CST) / UTC-5 (CDT). When noon in MTY: NYC 1 PM, London 6 PM, LA 10 AM.',
+        daylightSaving: 'Mexico abolished DST in 2022 for most regions except border areas.',
+        localTips: 'Cabrito (roasted goat) is specialty. Mountains are dramatic. UANL Tigers football is huge. Very safe compared to reputation.',
+        transportation: 'Metrorrey (2 lines). Uber common. Mariano Escobedo Airport (MTY) is 24km from center.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'Mexican holidays. Aniversario de Monterrey (Sep 20).'
+      }
+    }
+  },
+  { slug: 'cancun', city: 'Cancún', timezone: 'America/Cancun', country: 'Mexico', countryCode: 'MX', lat: 21.16, lng: -86.85, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '890K', metroPopulation: '900K', phoneCode: '+52 998', language: 'Spanish, English',
+      climate: 'Tropical with hot humid weather (25-33°C). Hurricane season June-November. Dry season Dec-Apr.',
+      attractions: ['Hotel Zone beaches', 'Chichén Itzá', 'Isla Mujeres', 'Xcaret', 'Tulum', 'Cozumel', 'Underwater Museum', 'Cenotes', 'Playa del Carmen', 'Downtown Cancún'],
+      demographics: 'Mexico\'s top resort destination. Purpose-built tourism city. Gateway to Mayan ruins.',
+      seoContent: {
+        intro: 'Cancún, Mexico\'s premier beach resort, operates on Eastern Standard Time (EST/UTC-5). This Caribbean paradise offers pristine beaches, ancient Mayan ruins, and world-class resorts along the Riviera Maya.',
+        timezoneFacts: 'Quintana Roo uses EST year-round (no DST), unlike rest of Mexico. Same as New York in winter.',
+        bestTimeToVisit: 'December-April for best weather. Shoulder seasons (May, November) balance price and weather. Hurricane season June-November.',
+        businessHours: 'Resorts 24/7. Mayan ruins typically 8 AM to 5 PM. Downtown has regular Mexican hours.',
+        timeDifference: 'Cancún is always UTC-5. When noon in Cancún: NYC 12 PM (EST) / 1 PM (EDT), London 5 PM, LA 9 AM.',
+        daylightSaving: 'Quintana Roo does NOT observe DST. Stays on EST year-round.',
+        localTips: 'Downtown is cheaper than Hotel Zone. Cenotes are unique. Uber works in tourist areas. Spring break is crazy (March).',
+        transportation: 'Bus R-1 from downtown to Hotel Zone. Ferries to islands. Cancún Airport (CUN) is 20km from Hotel Zone.',
+        emergencyNumbers: 'Emergency: 911. Tourist Police: 998-885-2277.',
+        publicHolidays: 'Mexican holidays. Spring Break (March) is unofficial but impactful holiday.'
+      }
+    }
+  },
 
   // Europe
-  { slug: 'manchester', city: 'Manchester', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.48, lng: -2.24, tier: 3, continent: 'europe' },
-  { slug: 'birmingham', city: 'Birmingham', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.49, lng: -1.90, tier: 3, continent: 'europe' },
-  { slug: 'edinburgh', city: 'Edinburgh', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 55.95, lng: -3.19, tier: 3, continent: 'europe' },
-  { slug: 'glasgow', city: 'Glasgow', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 55.86, lng: -4.25, tier: 3, continent: 'europe' },
-  { slug: 'lyon', city: 'Lyon', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 45.76, lng: 4.84, tier: 3, continent: 'europe' },
-  { slug: 'marseille', city: 'Marseille', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.30, lng: 5.37, tier: 3, continent: 'europe' },
-  { slug: 'nice', city: 'Nice', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.71, lng: 7.26, tier: 3, continent: 'europe' },
-  { slug: 'hamburg', city: 'Hamburg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 53.55, lng: 9.99, tier: 3, continent: 'europe' },
-  { slug: 'cologne', city: 'Cologne', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 50.94, lng: 6.96, tier: 3, continent: 'europe' },
-  { slug: 'dusseldorf', city: 'Düsseldorf', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 51.23, lng: 6.78, tier: 3, continent: 'europe' },
-  { slug: 'florence', city: 'Florence', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 43.77, lng: 11.25, tier: 3, continent: 'europe' },
-  { slug: 'venice', city: 'Venice', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.44, lng: 12.32, tier: 3, continent: 'europe' },
-  { slug: 'naples', city: 'Naples', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 40.85, lng: 14.27, tier: 3, continent: 'europe' },
-  { slug: 'valencia', city: 'Valencia', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 39.47, lng: -0.38, tier: 3, continent: 'europe' },
-  { slug: 'seville', city: 'Seville', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 37.39, lng: -5.99, tier: 3, continent: 'europe' },
-  { slug: 'porto', city: 'Porto', timezone: 'Europe/Lisbon', country: 'Portugal', countryCode: 'PT', lat: 41.15, lng: -8.61, tier: 3, continent: 'europe' },
-  { slug: 'rotterdam', city: 'Rotterdam', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 51.92, lng: 4.48, tier: 3, continent: 'europe' },
-  { slug: 'antwerp', city: 'Antwerp', timezone: 'Europe/Brussels', country: 'Belgium', countryCode: 'BE', lat: 51.22, lng: 4.40, tier: 3, continent: 'europe' },
-  { slug: 'krakow', city: 'Krakow', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 50.06, lng: 19.94, tier: 3, continent: 'europe' },
-  { slug: 'bucharest', city: 'Bucharest', timezone: 'Europe/Bucharest', country: 'Romania', countryCode: 'RO', lat: 44.43, lng: 26.10, tier: 3, continent: 'europe' },
-  { slug: 'sofia', city: 'Sofia', timezone: 'Europe/Sofia', country: 'Bulgaria', countryCode: 'BG', lat: 42.70, lng: 23.32, tier: 3, continent: 'europe' },
-  { slug: 'belgrade', city: 'Belgrade', timezone: 'Europe/Belgrade', country: 'Serbia', countryCode: 'RS', lat: 44.82, lng: 20.46, tier: 3, continent: 'europe' },
-  { slug: 'zagreb', city: 'Zagreb', timezone: 'Europe/Zagreb', country: 'Croatia', countryCode: 'HR', lat: 45.81, lng: 15.98, tier: 3, continent: 'europe' },
-  { slug: 'bratislava', city: 'Bratislava', timezone: 'Europe/Bratislava', country: 'Slovakia', countryCode: 'SK', lat: 48.15, lng: 17.11, tier: 3, continent: 'europe' },
-  { slug: 'ljubljana', city: 'Ljubljana', timezone: 'Europe/Ljubljana', country: 'Slovenia', countryCode: 'SI', lat: 46.06, lng: 14.51, tier: 3, continent: 'europe' },
-  { slug: 'tallinn', city: 'Tallinn', timezone: 'Europe/Tallinn', country: 'Estonia', countryCode: 'EE', lat: 59.44, lng: 24.75, tier: 3, continent: 'europe' },
-  { slug: 'riga', city: 'Riga', timezone: 'Europe/Riga', country: 'Latvia', countryCode: 'LV', lat: 56.95, lng: 24.11, tier: 3, continent: 'europe' },
-  { slug: 'vilnius', city: 'Vilnius', timezone: 'Europe/Vilnius', country: 'Lithuania', countryCode: 'LT', lat: 54.69, lng: 25.28, tier: 3, continent: 'europe' },
-  { slug: 'reykjavik', city: 'Reykjavik', timezone: 'Atlantic/Reykjavik', country: 'Iceland', countryCode: 'IS', lat: 64.15, lng: -21.94, tier: 3, continent: 'europe' },
-  { slug: 'kyiv', city: 'Kyiv', timezone: 'Europe/Kiev', country: 'Ukraine', countryCode: 'UA', lat: 50.45, lng: 30.52, tier: 3, continent: 'europe' },
-  { slug: 'saint-petersburg', city: 'Saint Petersburg', timezone: 'Europe/Moscow', country: 'Russia', countryCode: 'RU', lat: 59.93, lng: 30.34, tier: 3, continent: 'europe' },
+  { slug: 'manchester', city: 'Manchester', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.48, lng: -2.24, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '550K', metroPopulation: '2.8M', phoneCode: '+44 161', language: 'English',
+      climate: 'Oceanic with mild temperatures (4-20°C). Frequent rain. Famous for grey skies.',
+      attractions: ['Old Trafford', 'Etihad Stadium', 'Museum of Science and Industry', 'Northern Quarter', 'Manchester Cathedral', 'John Rylands Library', 'Beetham Tower', 'MediaCityUK', 'Manchester Art Gallery', 'Castlefield'],
+      demographics: 'England\'s second city. Birthplace of Industrial Revolution. Football mad - United and City.',
+      seoContent: {
+        intro: 'Manchester operates on Greenwich Mean Time (GMT/UTC+0) in winter and British Summer Time (BST/UTC+1) in summer. The birthplace of the Industrial Revolution, modern Manchester is renowned for football, music, and cultural innovation.',
+        timezoneFacts: 'Same timezone as London. 5 hours ahead of New York. Home to two of the world\'s most famous football clubs.',
+        bestTimeToVisit: 'May-September for warmer weather. December for Christmas markets. Football season August-May.',
+        businessHours: 'Shops 9 AM to 6 PM. Northern Quarter has independent hours. Match days transform the city.',
+        timeDifference: 'Manchester is UTC+0 (GMT) / UTC+1 (BST). When noon: NYC 7 AM, Dubai 4 PM, Sydney 10 PM.',
+        daylightSaving: 'BST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Don\'t mention United to City fans (or vice versa). Curry Mile in Rusholme. Music heritage from Oasis to The Smiths.',
+        transportation: 'Metrolink tram system. Good rail connections. Manchester Airport (MAN) is 10 miles from center.',
+        emergencyNumbers: 'Emergency: 999 or 112.',
+        publicHolidays: 'UK Bank Holidays. Pride (August) is one of UK\'s largest.'
+      }
+    }
+  },
+  { slug: 'birmingham', city: 'Birmingham', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.49, lng: -1.90, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '1.1M', metroPopulation: '4.3M', phoneCode: '+44 121', language: 'English',
+      climate: 'Oceanic with mild temperatures (3-21°C). Less rainy than Manchester.',
+      attractions: ['Cadbury World', 'Birmingham Museum', 'Bullring', 'Jewellery Quarter', 'Library of Birmingham', 'Symphony Hall', 'Balti Triangle', 'Brindleyplace', 'Thinktank', 'Back to Backs'],
+      demographics: 'England\'s second-largest city. Very diverse. Balti curry origin. Peaky Blinders heritage.',
+      seoContent: {
+        intro: 'Birmingham operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This diverse industrial city has reinvented itself with world-class culture, cuisine, and connectivity.',
+        timezoneFacts: 'Same timezone as London. Central England location makes it UK\'s transport hub.',
+        bestTimeToVisit: 'May-September for events. Frankfurt Christmas Market (Nov-Dec) is Europe\'s largest outside Germany.',
+        businessHours: 'Shops 9 AM to 6 PM. Bullring until 8 PM. Balti Triangle restaurants open late.',
+        timeDifference: 'Birmingham is UTC+0 (GMT) / UTC+1 (BST). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'BST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Balti was invented here. More canals than Venice. "Brummie" accent is distinct.',
+        transportation: 'Metro tram. Good rail - 1h20 to London. Birmingham Airport (BHX) is 10 miles from center.',
+        emergencyNumbers: 'Emergency: 999 or 112.',
+        publicHolidays: 'UK Bank Holidays. Frankfurt Christmas Market (November-December).'
+      }
+    }
+  },
+  { slug: 'edinburgh', city: 'Edinburgh', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 55.95, lng: -3.19, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '540K', metroPopulation: '1.4M', phoneCode: '+44 131', language: 'English, Scots',
+      climate: 'Oceanic with cool summers (12-19°C) and cold winters (1-7°C). Can be windy.',
+      attractions: ['Edinburgh Castle', 'Royal Mile', 'Arthur\'s Seat', 'Holyrood Palace', 'Scottish Parliament', 'Calton Hill', 'Old Town', 'New Town', 'National Museum', 'Princes Street Gardens'],
+      demographics: 'Scotland\'s capital. UNESCO World Heritage old and new towns. Major festival city.',
+      seoContent: {
+        intro: 'Edinburgh operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This UNESCO World Heritage city offers dramatic castle views, rich history, and the world\'s largest arts festival.',
+        timezoneFacts: 'Same timezone as London. August Festival transforms the city entirely.',
+        bestTimeToVisit: 'August for festivals (book far ahead). May-June for pleasant weather. Hogmanay is legendary.',
+        businessHours: 'Shops 9 AM to 6 PM. Royal Mile touristy but essential. Pubs until 1 AM.',
+        timeDifference: 'Edinburgh is UTC+0 (GMT) / UTC+1 (BST). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'BST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Book Festival accommodation months ahead. Haggis is actually good. "Auld Reekie" is old nickname.',
+        transportation: 'Trams to airport. Excellent walking city. Edinburgh Airport (EDI) is 8 miles from center.',
+        emergencyNumbers: 'Emergency: 999 or 112.',
+        publicHolidays: 'UK Bank Holidays plus Scottish holidays. Edinburgh Festival (August), Hogmanay (Dec 31).'
+      }
+    }
+  },
+  { slug: 'glasgow', city: 'Glasgow', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 55.86, lng: -4.25, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '635K', metroPopulation: '1.8M', phoneCode: '+44 141', language: 'English, Scots',
+      climate: 'Oceanic with cool summers (12-19°C) and cold winters (1-7°C). Rainier than Edinburgh.',
+      attractions: ['Kelvingrove Museum', 'Glasgow Cathedral', 'Riverside Museum', 'Necropolis', 'George Square', 'West End', 'The Barras', 'Buchanan Street', 'Mackintosh Buildings', 'Science Centre'],
+      demographics: 'Scotland\'s largest city. Industrial heritage. Friendly locals. Football rivalry (Celtic/Rangers).',
+      seoContent: {
+        intro: 'Glasgow operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This former industrial powerhouse has transformed into a cultural capital with world-class museums and legendary nightlife.',
+        timezoneFacts: 'Same timezone as London. 40 minutes from Edinburgh by train.',
+        bestTimeToVisit: 'May-September for best weather. Celtic Connections (January) for music. West End Festival (June).',
+        businessHours: 'Shops 9 AM to 6 PM. Legendary nightlife runs late. Sunday shopping limited.',
+        timeDifference: 'Glasgow is UTC+0 (GMT) / UTC+1 (BST). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'BST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Locals are famously friendly. Don\'t confuse Celtic and Rangers fans. "Pure dead brilliant" means great.',
+        transportation: 'Subway (clockwork orange). Buses and trains. Glasgow Airport (GLA) is 8 miles from center.',
+        emergencyNumbers: 'Emergency: 999 or 112.',
+        publicHolidays: 'UK Bank Holidays plus Scottish holidays. Celtic Connections (January).'
+      }
+    }
+  },
+  { slug: 'lyon', city: 'Lyon', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 45.76, lng: 4.84, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '520K', metroPopulation: '2.3M', phoneCode: '+33 4', language: 'French',
+      climate: 'Semi-continental with warm summers (20-28°C) and cold winters (1-8°C).',
+      attractions: ['Vieux Lyon', 'Basilica of Notre-Dame de Fourvière', 'Traboules', 'Place Bellecour', 'Parc de la Tête d\'Or', 'Musée des Confluences', 'Les Halles de Lyon', 'Presqu\'île', 'Roman Theaters', 'Institut Lumière'],
+      demographics: 'France\'s gastronomic capital. UNESCO World Heritage. Silk industry heritage.',
+      seoContent: {
+        intro: 'Lyon, France\'s gastronomic capital, operates on Central European Time (CET/UTC+1). This UNESCO World Heritage city at the confluence of the Rhône and Saône rivers is renowned for cuisine and Renaissance architecture.',
+        timezoneFacts: 'Same timezone as Paris. 2 hours from Paris by TGV. Gateway to French Alps.',
+        bestTimeToVisit: 'May-September for best weather. December for Festival of Lights. Fall for Beaujolais.',
+        businessHours: 'Shops 10 AM to 7 PM. Bouchons for lunch and dinner. Markets Saturday mornings.',
+        timeDifference: 'Lyon is UTC+1 (CET) / UTC+2 (CEST). When noon: NYC 6 AM, London 11 AM, Tokyo 8 PM.',
+        daylightSaving: 'CEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Bouchons are essential. Traboules are hidden passageways. Festival of Lights (Dec 8) is magical.',
+        transportation: 'Metro, trams, and buses. TGV hub. Lyon-Saint Exupéry Airport (LYS) is 25km from center.',
+        emergencyNumbers: 'Emergency: 112 or 15 (medical).',
+        publicHolidays: 'French holidays. Fête des Lumières (December 8).'
+      }
+    }
+  },
+  { slug: 'marseille', city: 'Marseille', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.30, lng: 5.37, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '870K', metroPopulation: '1.8M', phoneCode: '+33 4', language: 'French',
+      climate: 'Mediterranean with hot dry summers (22-30°C) and mild winters (6-12°C). 300 days of sunshine.',
+      attractions: ['Vieux-Port', 'Notre-Dame de la Garde', 'Calanques', 'MuCEM', 'Château d\'If', 'Le Panier', 'Cours Julien', 'Palais Longchamp', 'Corniche Kennedy', 'Frioul Islands'],
+      demographics: 'France\'s oldest and second-largest city. Mediterranean melting pot. Historic port.',
+      seoContent: {
+        intro: 'Marseille, France\'s oldest city, operates on Central European Time (CET/UTC+1). This Mediterranean port city offers stunning coastal scenery, multicultural energy, and 2,600 years of history.',
+        timezoneFacts: 'Same timezone as Paris. France\'s main Mediterranean port.',
+        bestTimeToVisit: 'April-October for beach weather. Summer can be hot and crowded. Calanques best in spring/fall.',
+        businessHours: 'Shops 10 AM to 7 PM. Fish market at Vieux-Port is morning only. Mediterranean pace.',
+        timeDifference: 'Marseille is UTC+1 (CET) / UTC+2 (CEST). When noon: NYC 6 AM, London 11 AM.',
+        daylightSaving: 'CEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Bouillabaisse is the signature dish. Pastis before dinner. Calanques require advance reservation in summer.',
+        transportation: 'Metro and trams. Ferry to Corsica and North Africa. Marseille Provence Airport (MRS) is 27km.',
+        emergencyNumbers: 'Emergency: 112 or 15 (medical).',
+        publicHolidays: 'French holidays.'
+      }
+    }
+  },
+  { slug: 'nice', city: 'Nice', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.71, lng: 7.26, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '340K', metroPopulation: '1M', phoneCode: '+33 4', language: 'French',
+      climate: 'Mediterranean with hot summers (22-28°C) and mild winters (8-14°C). 300+ days of sunshine.',
+      attractions: ['Promenade des Anglais', 'Vieux Nice', 'Castle Hill', 'Place Masséna', 'Cours Saleya Market', 'Matisse Museum', 'Chagall Museum', 'Russian Orthodox Cathedral', 'Port Lympia', 'Mont Boron'],
+      demographics: 'French Riviera capital. Aristocratic resort heritage. Italian influence. Art deco architecture.',
+      seoContent: {
+        intro: 'Nice, jewel of the French Riviera, operates on Central European Time (CET/UTC+1). This glamorous Mediterranean resort combines Belle Époque elegance, azure seas, and outstanding art museums.',
+        timezoneFacts: 'Same timezone as Paris. Gateway to Monaco and Italian Riviera.',
+        bestTimeToVisit: 'May-October for beach weather. February for Carnival. Year-round mild climate.',
+        businessHours: 'Shops 10 AM to 7 PM. Beach clubs and restaurants open late in summer.',
+        timeDifference: 'Nice is UTC+1 (CET) / UTC+2 (CEST). When noon: NYC 6 AM, London 11 AM.',
+        daylightSaving: 'CEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Socca (chickpea pancake) is local specialty. Salade Niçoise from here. Monaco is 20 minutes away.',
+        transportation: 'Tram line 1 connects city. Buses along coast. Nice Côte d\'Azur Airport (NCE) is 6km from center.',
+        emergencyNumbers: 'Emergency: 112 or 15 (medical).',
+        publicHolidays: 'French holidays. Nice Carnival (February).'
+      }
+    }
+  },
+  { slug: 'hamburg', city: 'Hamburg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 53.55, lng: 9.99, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '1.9M', metroPopulation: '5.4M', phoneCode: '+49 40', language: 'German',
+      climate: 'Oceanic with cool summers (17-22°C) and cold winters (0-5°C). Rainy. Maritime influence.',
+      attractions: ['Speicherstadt', 'Elbphilharmonie', 'Miniatur Wunderland', 'Reeperbahn', 'St. Pauli', 'Hafencity', 'Planten un Blomen', 'St. Michael\'s Church', 'Fish Market', 'Blankenese'],
+      demographics: 'Germany\'s second city. Major port. Media and music hub. Beatles connection.',
+      seoContent: {
+        intro: 'Hamburg, Germany\'s gateway to the world, operates on Central European Time (CET/UTC+1). This maritime city combines world-class culture, historic warehouses, and legendary nightlife.',
+        timezoneFacts: 'Same timezone as Berlin. Germany\'s largest port. Strong ties to Scandinavia.',
+        bestTimeToVisit: 'May-September for best weather. December for Christmas markets. Fish market Sunday mornings.',
+        businessHours: 'Shops 10 AM to 8 PM. Reeperbahn never sleeps. Sunday shopping limited.',
+        timeDifference: 'Hamburg is UTC+1 (CET) / UTC+2 (CEST). When noon: NYC 6 AM, London 11 AM.',
+        daylightSaving: 'CEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Fish sandwich at the harbor is essential. Beatles played Star Club. Elbphilharmonie plaza is free.',
+        transportation: 'U-Bahn and S-Bahn excellent. Harbor ferries scenic. Hamburg Airport (HAM) is 10km from center.',
+        emergencyNumbers: 'Emergency: 112. Police: 110.',
+        publicHolidays: 'German holidays. Hafengeburtstag (Port anniversary, May).'
+      }
+    }
+  },
+  { slug: 'cologne', city: 'Cologne', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 50.94, lng: 6.96, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '1.1M', metroPopulation: '2.1M', phoneCode: '+49 221', language: 'German',
+      climate: 'Oceanic with warm summers (18-24°C) and mild winters (1-6°C). Can be rainy.',
+      attractions: ['Cologne Cathedral', 'Old Town', 'Hohenzollern Bridge', 'Romano-Germanic Museum', 'Chocolate Museum', 'Ludwig Museum', 'Belgian Quarter', 'Rheinauhafen', '4711 House', 'Flora Botanical Garden'],
+      demographics: 'Rhineland\'s largest city. 2000 year history. Carnival capital. Kölsch beer and culture.',
+      seoContent: {
+        intro: 'Cologne (Köln), city of the famous cathedral, operates on Central European Time (CET/UTC+1). This 2,000-year-old Roman city offers Gothic splendor and Germany\'s most exuberant Carnival.',
+        timezoneFacts: 'Same timezone as Berlin. Central location for European business.',
+        bestTimeToVisit: 'April-October for pleasant weather. February for Carnival. December for Christmas markets.',
+        businessHours: 'Shops 10 AM to 8 PM. Kölsch beer halls open all day. Carnival means closures.',
+        timeDifference: 'Cologne is UTC+1 (CET) / UTC+2 (CEST). When noon: NYC 6 AM, London 11 AM.',
+        daylightSaving: 'CEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Kölsch must be drunk in Cologne. Cathedral is free. Love locks on Hohenzollern Bridge.',
+        transportation: 'U-Bahn and S-Bahn. High-speed rail hub. Cologne Bonn Airport (CGN) is 15km.',
+        emergencyNumbers: 'Emergency: 112. Police: 110.',
+        publicHolidays: 'German holidays. Carnival (before Lent) is huge.'
+      }
+    }
+  },
+  { slug: 'dusseldorf', city: 'Düsseldorf', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 51.23, lng: 6.78, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '620K', metroPopulation: '1.5M', phoneCode: '+49 211', language: 'German',
+      climate: 'Oceanic with warm summers (18-24°C) and mild winters (1-5°C). Similar to Cologne.',
+      attractions: ['Altstadt', 'Königsallee', 'MedienHafen', 'Rheinturm', 'Kunstsammlung', 'Old Town Bars', 'Japanese Quarter', 'Schloss Benrath', 'Hofgarten', 'Neanderthal Museum'],
+      demographics: 'Fashion and business capital. Strong Japanese community. Art and architecture hub.',
+      seoContent: {
+        intro: 'Düsseldorf, Germany\'s fashion capital, operates on Central European Time (CET/UTC+1). This elegant Rhine city combines high-end shopping, cutting-edge architecture, and the "longest bar in the world."',
+        timezoneFacts: 'Same timezone as Berlin. Japan\'s largest European community. Major trade fair city.',
+        bestTimeToVisit: 'May-September for best weather. December for Christmas markets. Carnival in February.',
+        businessHours: 'Shops 10 AM to 8 PM. Altstadt bars open late. Königsallee for luxury shopping.',
+        timeDifference: 'Düsseldorf is UTC+1 (CET) / UTC+2 (CEST). When noon: NYC 6 AM, London 11 AM.',
+        daylightSaving: 'CEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Altbier is the local beer. 260+ bars in the Altstadt. Japanese food is excellent.',
+        transportation: 'U-Bahn and trams. High-speed rail. Düsseldorf Airport (DUS) is 8km - Germany\'s 3rd largest.',
+        emergencyNumbers: 'Emergency: 112. Police: 110.',
+        publicHolidays: 'German holidays. Carnival, Japan Day (May).'
+      }
+    }
+  },
+  { slug: 'florence', city: 'Florence', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 43.77, lng: 11.25, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '380K', metroPopulation: '1M', phoneCode: '+39 055', language: 'Italian',
+      climate: 'Humid subtropical with hot summers (25-32°C) and mild winters (3-11°C).',
+      attractions: ['Uffizi Gallery', 'Duomo', 'Ponte Vecchio', 'Accademia Gallery', 'Palazzo Pitti', 'Piazzale Michelangelo', 'Santa Croce', 'Boboli Gardens', 'San Lorenzo Market', 'Oltrarno'],
+      demographics: 'Birthplace of the Renaissance. Art capital of the world. Tuscan heritage.',
+      seoContent: {
+        intro: 'Florence, birthplace of the Renaissance, operates on Central European Time (CET/UTC+1). This open-air museum holds more masterpieces per square mile than anywhere on Earth.',
+        timezoneFacts: 'Same timezone as Rome. Heart of Tuscany. 1.5 hours to Rome by train.',
+        bestTimeToVisit: 'April-May and September-October for fewer crowds. Summer is hot and packed.',
+        businessHours: 'Museums close Mondays. Restaurants 12-3 PM, 7-11 PM. Afternoon riposo observed.',
+        timeDifference: 'Florence is UTC+1 (CET) / UTC+2 (CEST). When noon: NYC 6 AM, London 11 AM.',
+        daylightSaving: 'CEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Book Uffizi weeks ahead. Bistecca alla fiorentina is enormous. Gelato, not ice cream.',
+        transportation: 'Walking city. Buses and trams limited. Florence Airport (FLR) small; Pisa Airport 80km.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Italian holidays. Calcio Storico (June).'
+      }
+    }
+  },
+  { slug: 'venice', city: 'Venice', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.44, lng: 12.32, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '260K', metroPopulation: '850K', phoneCode: '+39 041', language: 'Italian',
+      climate: 'Humid subtropical with warm summers (23-28°C) and cold damp winters (0-7°C). Acqua alta flooding.',
+      attractions: ['St. Mark\'s Square', 'Doge\'s Palace', 'Rialto Bridge', 'Grand Canal', 'Murano Glass', 'Burano', 'Gallerie dell\'Accademia', 'La Fenice', 'Peggy Guggenheim', 'Lido Beach'],
+      demographics: 'Unique floating city. 118 islands. UNESCO World Heritage. Overtourism concerns.',
+      seoContent: {
+        intro: 'Venice, the floating city, operates on Central European Time (CET/UTC+1). Built on 118 islands with 400 bridges and no cars, Venice is unlike anywhere else on Earth.',
+        timezoneFacts: 'Same timezone as Rome. 4 hours from Munich by train.',
+        bestTimeToVisit: 'April-May and September-October ideal. Summer is crowded. Carnival in February.',
+        businessHours: 'Tourist areas open long hours. Get lost in quieter sestieri.',
+        timeDifference: 'Venice is UTC+1 (CET) / UTC+2 (CEST). When noon: NYC 6 AM, London 11 AM.',
+        daylightSaving: 'CEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Get lost on purpose. Cicchetti (bar snacks) are essential. Vaporetto is water bus.',
+        transportation: 'Vaporetto water buses. Water taxis expensive. Venice Marco Polo Airport (VCE) is 13km.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Italian holidays. Carnival (February), Biennale, Regata Storica (September).'
+      }
+    }
+  },
+  { slug: 'naples', city: 'Naples', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 40.85, lng: 14.27, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '960K', metroPopulation: '3.1M', phoneCode: '+39 081', language: 'Italian, Neapolitan',
+      climate: 'Mediterranean with hot summers (25-31°C) and mild winters (5-13°C). Sunny.',
+      attractions: ['Pompeii', 'Amalfi Coast', 'Naples Underground', 'Castel dell\'Ovo', 'Spaccanapoli', 'Archaeological Museum', 'Mount Vesuvius', 'Capri', 'Royal Palace', 'Catacombs'],
+      demographics: 'Southern Italy\'s largest city. Birthplace of pizza. Chaotic but charming.',
+      seoContent: {
+        intro: 'Naples, birthplace of pizza, operates on Central European Time (CET/UTC+1). This intense, chaotic city is the gateway to Pompeii, Vesuvius, and the Amalfi Coast.',
+        timezoneFacts: 'Same timezone as Rome. Gateway to Southern Italy.',
+        bestTimeToVisit: 'April-June and September-October. Summer is hot. Avoid August.',
+        businessHours: 'Variable hours. Pizzerias open lunch and dinner. Markets morning only.',
+        timeDifference: 'Naples is UTC+1 (CET) / UTC+2 (CEST). When noon: NYC 6 AM, London 11 AM.',
+        daylightSaving: 'CEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Pizza here is the original. Watch for pickpockets. Embrace the chaos. Coffee is serious.',
+        transportation: 'Metro Line 1 is art museum. Circumvesuviana to Pompeii. Naples Airport (NAP) is 7km.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Italian holidays. San Gennaro (September 19).'
+      }
+    }
+  },
+  { slug: 'valencia', city: 'Valencia', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 39.47, lng: -0.38, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '800K', metroPopulation: '1.8M', phoneCode: '+34 96', language: 'Spanish, Valencian',
+      climate: 'Mediterranean with hot summers (25-31°C) and mild winters (8-17°C). 300 days of sunshine.',
+      attractions: ['City of Arts and Sciences', 'La Lonja', 'Central Market', 'Old Town', 'Beaches', 'Bioparc', 'Cathedral', 'Turia Gardens', 'Albufera', 'Barrio del Carmen'],
+      demographics: 'Spain\'s third city. Paella\'s birthplace. Innovation meets tradition.',
+      seoContent: {
+        intro: 'Valencia, birthplace of paella, operates on Central European Time (CET/UTC+1). Spain\'s third city combines futuristic architecture, historic old town, and Mediterranean beaches.',
+        timezoneFacts: 'Same timezone as Madrid despite being further east.',
+        bestTimeToVisit: 'Year-round destination. March for Fallas festival. Summer for beaches.',
+        businessHours: 'Shops 10 AM to 2 PM, 5-9 PM. Long lunches. Restaurants 1-4 PM, 9 PM-midnight.',
+        timeDifference: 'Valencia is UTC+1 (CET) / UTC+2 (CEST). When noon: NYC 6 AM, London 11 AM.',
+        daylightSaving: 'CEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Paella for lunch only (tradition). Fallas burns giant sculptures. City of Arts is stunning.',
+        transportation: 'Metro and tram. Bike-friendly. Valencia Airport (VLC) is 8km from center.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Spanish holidays. Fallas (March 15-19) is UNESCO heritage.'
+      }
+    }
+  },
+  { slug: 'seville', city: 'Seville', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 37.39, lng: -5.99, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '690K', metroPopulation: '1.5M', phoneCode: '+34 95', language: 'Spanish',
+      climate: 'Mediterranean with very hot summers (28-36°C) and mild winters (6-16°C). Spain\'s hottest city.',
+      attractions: ['Alcázar', 'Cathedral & Giralda', 'Plaza de España', 'Barrio Santa Cruz', 'Triana', 'Metropol Parasol', 'Maria Luisa Park', 'Flamenco Shows', 'Torre del Oro', 'Archivo de Indias'],
+      demographics: 'Andalusian capital. Flamenco and bullfighting heartland. Moorish heritage.',
+      seoContent: {
+        intro: 'Seville, the heart of Andalusia, operates on Central European Time (CET/UTC+1). This passionate city of flamenco, tapas, and Moorish palaces is the cultural soul of Southern Spain.',
+        timezoneFacts: 'Same timezone as Madrid. Hottest major city in Spain.',
+        bestTimeToVisit: 'March-May and October-November. Summer is brutally hot (40°C+). April for Feria.',
+        businessHours: 'Long siesta tradition. Shops close 2-5 PM. Dinner after 9 PM. Tapas all evening.',
+        timeDifference: 'Seville is UTC+1 (CET) / UTC+2 (CEST). When noon: NYC 6 AM, London 11 AM.',
+        daylightSaving: 'CEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Tapas are often free with drinks. Flamenco in Triana. Avoid summer heat. Feria is spectacular.',
+        transportation: 'Tram and metro. Walking is best. Seville Airport (SVQ) is 10km from center.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Spanish holidays. Semana Santa (Easter), Feria de Abril.'
+      }
+    }
+  },
+  { slug: 'porto', city: 'Porto', timezone: 'Europe/Lisbon', country: 'Portugal', countryCode: 'PT', lat: 41.15, lng: -8.61, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '240K', metroPopulation: '1.7M', phoneCode: '+351 22', language: 'Portuguese',
+      climate: 'Mediterranean with warm summers (20-26°C) and mild wet winters (6-14°C). More rain than Lisbon.',
+      attractions: ['Ribeira', 'Livraria Lello', 'Dom Luís I Bridge', 'Clérigos Tower', 'Port Wine Cellars', 'São Bento Station', 'Serralves', 'Foz do Douro', 'Majestic Café', 'Crystal Palace Gardens'],
+      demographics: 'Portugal\'s second city. Port wine origin. UNESCO World Heritage. Gritty and authentic.',
+      seoContent: {
+        intro: 'Porto, Portugal\'s northern capital, operates on Western European Time (WET/UTC+0). This UNESCO World Heritage city on the Douro River is famous for port wine and azulejo tiles.',
+        timezoneFacts: 'Same timezone as London and Lisbon. Port wine cellars across the river in Gaia.',
+        bestTimeToVisit: 'May-September for best weather. June for São João festival. Winter can be rainy.',
+        businessHours: 'Shops 10 AM to 7 PM. Port wine cellars open all day. Restaurants 12-3 PM, 7-11 PM.',
+        timeDifference: 'Porto is UTC+0 (WET) / UTC+1 (WEST). When noon: NYC 7 AM, Madrid 1 PM.',
+        daylightSaving: 'WEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Francesinha sandwich is iconic. Book Livraria Lello in advance. Port wine tastings across the river.',
+        transportation: 'Metro system excellent. Trams historic. Porto Airport (OPO) is 11km from center.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Portuguese holidays. São João (June 23-24).'
+      }
+    }
+  },
+  { slug: 'rotterdam', city: 'Rotterdam', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 51.92, lng: 4.48, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '650K', metroPopulation: '1.4M', phoneCode: '+31 10', language: 'Dutch, English',
+      climate: 'Oceanic with mild summers (17-22°C) and cold winters (2-6°C). Windy and rainy.',
+      attractions: ['Cube Houses', 'Markthal', 'Erasmus Bridge', 'Euromast', 'Depot Boijmans', 'Delfshaven', 'Kunsthal', 'SS Rotterdam', 'Witte de Withstraat', 'Fenix Food Factory'],
+      demographics: 'Europe\'s largest port. Rebuilt after WWII. Architecture showcase.',
+      seoContent: {
+        intro: 'Rotterdam, Europe\'s largest port, operates on CET/UTC+1. Rebuilt from WWII ruins, this city is now a showcase of bold modern architecture.',
+        timezoneFacts: 'Same as Amsterdam. Major shipping hub.',
+        bestTimeToVisit: 'April-September. King\'s Day (April 27).',
+        businessHours: 'Shops 10 AM to 6 PM. Markthal open daily.',
+        timeDifference: 'Rotterdam is UTC+1 (CET) / UTC+2 (CEST). When noon: NYC 6 AM, London 11 AM.',
+        daylightSaving: 'CEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Architecture tours essential. Markthal for food.',
+        transportation: 'Metro, trams, buses. Rotterdam The Hague Airport (RTM) small.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Dutch holidays. King\'s Day (April 27).'
+      }
+    }
+  },
+  { slug: 'antwerp', city: 'Antwerp', timezone: 'Europe/Brussels', country: 'Belgium', countryCode: 'BE', lat: 51.22, lng: 4.40, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '530K', metroPopulation: '1.2M', phoneCode: '+32 3', language: 'Dutch, French',
+      climate: 'Oceanic with mild summers (17-22°C) and cold winters (1-6°C). Rainy.',
+      attractions: ['Cathedral of Our Lady', 'Grote Markt', 'MAS Museum', 'Diamond District', 'Rubens House', 'Central Station', 'Het Steen', 'Meir Shopping', 'Red Star Line Museum', 'Zurenborg'],
+      demographics: 'Diamond capital. Fashion hub. Rubens\' birthplace.',
+      seoContent: {
+        intro: 'Antwerp, the diamond capital, operates on CET/UTC+1. Belgium\'s second city combines Renaissance splendor, cutting-edge fashion, and 80% of the world\'s rough diamond trade.',
+        timezoneFacts: 'Same as Brussels. 40 minutes by train.',
+        bestTimeToVisit: 'April-September. Christmas market is magical.',
+        businessHours: 'Shops 10 AM to 6 PM. Diamond district closes for Shabbat.',
+        timeDifference: 'Antwerp is UTC+1 (CET) / UTC+2 (CEST). When noon: NYC 6 AM, London 11 AM.',
+        daylightSaving: 'CEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Central Station is a cathedral. Beer variety immense.',
+        transportation: 'Trams and buses. Brussels Airport (BRU) 45km.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Belgian holidays.'
+      }
+    }
+  },
+  { slug: 'krakow', city: 'Krakow', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 50.06, lng: 19.94, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Polish Złoty', currencySymbol: 'zł', population: '780K', metroPopulation: '1.4M', phoneCode: '+48 12', language: 'Polish',
+      climate: 'Humid continental with warm summers (18-25°C) and cold winters (-4 to 2°C).',
+      attractions: ['Main Square', 'Wawel Castle', 'Kazimierz', 'St. Mary\'s Basilica', 'Cloth Hall', 'Auschwitz-Birkenau', 'Wieliczka Salt Mine', 'Schindler\'s Factory', 'Planty Park', 'Nowa Huta'],
+      demographics: 'Poland\'s cultural capital. WWII history. Jewish heritage.',
+      seoContent: {
+        intro: 'Krakow, Poland\'s royal capital, operates on CET/UTC+1. This beautifully preserved medieval city is Poland\'s cultural heart and gateway to WWII history.',
+        timezoneFacts: 'Same as Berlin. Survived WWII intact.',
+        bestTimeToVisit: 'May-September. December for Christmas markets.',
+        businessHours: 'Shops 10 AM to 6 PM. Kazimierz bars until late.',
+        timeDifference: 'Krakow is UTC+1 (CET) / UTC+2 (CEST). When noon: NYC 6 AM, London 11 AM.',
+        daylightSaving: 'CEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Auschwitz requires full day. Obwarzanek (bagel) is local.',
+        transportation: 'Trams and buses. John Paul II Airport (KRK) 11km.',
+        emergencyNumbers: 'Emergency: 112. Police: 997.',
+        publicHolidays: 'Polish holidays.'
+      }
+    }
+  },
+  { slug: 'bucharest', city: 'Bucharest', timezone: 'Europe/Bucharest', country: 'Romania', countryCode: 'RO', lat: 44.43, lng: 26.10, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Romanian Leu', currencySymbol: 'lei', population: '1.8M', metroPopulation: '2.5M', phoneCode: '+40 21', language: 'Romanian',
+      climate: 'Humid continental with hot summers (22-30°C) and cold winters (-3 to 4°C).',
+      attractions: ['Palace of Parliament', 'Old Town', 'Romanian Athenaeum', 'Village Museum', 'Herăstrău Park', 'Revolution Square', 'Carturesti Carusel', 'Stavropoleos Church', 'Arcul de Triumf', 'Therme Bucharest'],
+      demographics: 'Romania\'s capital. Communist architecture alongside Belle Époque.',
+      seoContent: {
+        intro: 'Bucharest, Romania\'s capital, operates on EET/UTC+2. This fascinating city juxtaposes Ceausescu\'s Palace of Parliament with charming Belle Époque quarters.',
+        timezoneFacts: '1 hour ahead of Berlin. Palace of Parliament is world\'s heaviest building.',
+        bestTimeToVisit: 'April-June and September-October. Summer hot.',
+        businessHours: 'Shops 10 AM to 8 PM. Old Town bars until late.',
+        timeDifference: 'Bucharest is UTC+2 (EET) / UTC+3 (EEST). When noon: NYC 5 AM, London 10 AM.',
+        daylightSaving: 'EEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Palace tours book ahead. Old Town can be touristy. Great value dining.',
+        transportation: 'Metro good. Henri Coandă Airport (OTP) 18km.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Romanian holidays. December 1 (National Day).'
+      }
+    }
+  },
+  { slug: 'sofia', city: 'Sofia', timezone: 'Europe/Sofia', country: 'Bulgaria', countryCode: 'BG', lat: 42.70, lng: 23.32, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Bulgarian Lev', currencySymbol: 'лв', population: '1.3M', metroPopulation: '1.5M', phoneCode: '+359 2', language: 'Bulgarian',
+      climate: 'Humid continental with warm summers (20-28°C) and cold winters (-2 to 5°C).',
+      attractions: ['Alexander Nevsky Cathedral', 'Vitosha Mountain', 'Boyana Church', 'National Palace of Culture', 'Rila Monastery', 'Serdica Ruins', 'St. George Rotunda', 'Ivan Vazov Theatre', 'Central Market Hall', 'South Park'],
+      demographics: 'Bulgaria\'s capital. Ancient Thracian heritage. Growing tech hub.',
+      seoContent: {
+        intro: 'Sofia, Bulgaria\'s capital, operates on EET/UTC+2. One of Europe\'s oldest cities, Sofia offers Roman ruins, Orthodox churches, and ski slopes on its doorstep.',
+        timezoneFacts: 'Same as Bucharest and Athens. Vitosha Mountain offers city skiing.',
+        bestTimeToVisit: 'April-October for city. December-March for skiing.',
+        businessHours: 'Shops 10 AM to 8 PM. Vitosha Boulevard for shopping.',
+        timeDifference: 'Sofia is UTC+2 (EET) / UTC+3 (EEST). When noon: NYC 5 AM, London 10 AM.',
+        daylightSaving: 'EEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Extremely affordable. Rila Monastery is day trip. Nod means no, shake means yes.',
+        transportation: 'Metro expanding. Sofia Airport (SOF) 10km.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Bulgarian holidays. March 3 (Liberation Day).'
+      }
+    }
+  },
+  { slug: 'belgrade', city: 'Belgrade', timezone: 'Europe/Belgrade', country: 'Serbia', countryCode: 'RS', lat: 44.82, lng: 20.46, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Serbian Dinar', currencySymbol: 'дин', population: '1.4M', metroPopulation: '1.7M', phoneCode: '+381 11', language: 'Serbian',
+      climate: 'Humid continental with hot summers (22-30°C) and cold winters (-1 to 5°C).',
+      attractions: ['Kalemegdan Fortress', 'Skadarlija', 'St. Sava Temple', 'Knez Mihailova', 'Ada Ciganlija', 'Zemun', 'National Museum', 'River Clubs', 'Nikola Tesla Museum', 'Royal Palace'],
+      demographics: 'Serbia\'s capital. Confluence of Danube and Sava. Legendary nightlife.',
+      seoContent: {
+        intro: 'Belgrade, Serbia\'s capital at the confluence of two rivers, operates on CET/UTC+1. This resilient city offers rich history, legendary nightlife, and authentic Balkan hospitality.',
+        timezoneFacts: 'Same as Vienna. River splavovi (floating clubs) are famous.',
+        bestTimeToVisit: 'May-September for outdoor life. Summer for river beaches.',
+        businessHours: 'Shops 9 AM to 8 PM. Nightlife starts after midnight.',
+        timeDifference: 'Belgrade is UTC+1 (CET) / UTC+2 (CEST). When noon: NYC 6 AM, London 11 AM.',
+        daylightSaving: 'CEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Nightlife is world-class. Ćevapi essential. Rakija is the drink.',
+        transportation: 'Buses and trams. No metro. Nikola Tesla Airport (BEG) 18km.',
+        emergencyNumbers: 'Emergency: 112 or 192 (police).',
+        publicHolidays: 'Serbian holidays. Orthodox Christmas (January 7).'
+      }
+    }
+  },
+  { slug: 'zagreb', city: 'Zagreb', timezone: 'Europe/Zagreb', country: 'Croatia', countryCode: 'HR', lat: 45.81, lng: 15.98, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '800K', metroPopulation: '1.1M', phoneCode: '+385 1', language: 'Croatian',
+      climate: 'Humid continental with warm summers (20-27°C) and cold winters (-1 to 5°C).',
+      attractions: ['Upper Town', 'St. Mark\'s Church', 'Dolac Market', 'Museum of Broken Relationships', 'Maksimir Park', 'Ban Jelačić Square', 'Zagreb Cathedral', 'Mirogoj Cemetery', 'Tkalčićeva Street', 'Art Pavilion'],
+      demographics: 'Croatia\'s capital. Central European charm. Less touristy than coast.',
+      seoContent: {
+        intro: 'Zagreb, Croatia\'s capital, operates on CET/UTC+1. This charming Central European city offers Austro-Hungarian architecture, vibrant café culture, and a gateway to the Adriatic.',
+        timezoneFacts: 'Same as Vienna. Croatia adopted Euro in 2023.',
+        bestTimeToVisit: 'April-October. December Advent markets among Europe\'s best.',
+        businessHours: 'Shops 9 AM to 8 PM. Tkalčićeva for evening bars.',
+        timeDifference: 'Zagreb is UTC+1 (CET) / UTC+2 (CEST). When noon: NYC 6 AM, London 11 AM.',
+        daylightSaving: 'CEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Špica is Saturday morning coffee ritual. Day trips to Plitvice.',
+        transportation: 'Trams throughout. No metro. Zagreb Airport (ZAG) 17km.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Croatian holidays. Statehood Day (May 30).'
+      }
+    }
+  },
+  { slug: 'bratislava', city: 'Bratislava', timezone: 'Europe/Bratislava', country: 'Slovakia', countryCode: 'SK', lat: 48.15, lng: 17.11, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '440K', metroPopulation: '660K', phoneCode: '+421 2', language: 'Slovak',
+      climate: 'Humid continental with warm summers (20-27°C) and cold winters (-2 to 4°C).',
+      attractions: ['Bratislava Castle', 'Old Town', 'St. Martin\'s Cathedral', 'UFO Bridge', 'Cumil Statue', 'Devin Castle', 'Blue Church', 'Michael\'s Gate', 'Presidential Palace', 'Slavín Memorial'],
+      demographics: 'Slovakia\'s capital. Only capital bordering two countries. Compact.',
+      seoContent: {
+        intro: 'Bratislava, Slovakia\'s capital, operates on CET/UTC+1. This compact city on the Danube offers Hapsburg heritage and easy day trips from Vienna.',
+        timezoneFacts: 'Same as Vienna (just 60km away). Only capital bordering two countries.',
+        bestTimeToVisit: 'April-October. December for Christmas markets.',
+        businessHours: 'Shops 9 AM to 6 PM. Old Town cafes all day.',
+        timeDifference: 'Bratislava is UTC+1 (CET) / UTC+2 (CEST). When noon: NYC 6 AM, London 11 AM.',
+        daylightSaving: 'CEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Twin City Liner boat to Vienna. Bryndzové halušky is national dish.',
+        transportation: 'Trams and buses. Vienna Airport often used.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Slovak holidays.'
+      }
+    }
+  },
+  { slug: 'ljubljana', city: 'Ljubljana', timezone: 'Europe/Ljubljana', country: 'Slovenia', countryCode: 'SI', lat: 46.06, lng: 14.51, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '290K', metroPopulation: '540K', phoneCode: '+386 1', language: 'Slovenian',
+      climate: 'Oceanic/continental with warm summers (20-27°C) and cold winters (-2 to 4°C).',
+      attractions: ['Ljubljana Castle', 'Triple Bridge', 'Dragon Bridge', 'Prešeren Square', 'Tivoli Park', 'Metelkova', 'Central Market', 'National Gallery', 'Ljubljanica River', 'Skyscraper'],
+      demographics: 'Slovenia\'s capital. Green European Capital 2016. Gateway to Alps.',
+      seoContent: {
+        intro: 'Ljubljana, Slovenia\'s charming capital, operates on CET/UTC+1. This green, pedestrian-friendly city offers a fairytale old town and easy access to Lake Bled.',
+        timezoneFacts: 'Same as Vienna. Lake Bled is 55km away.',
+        bestTimeToVisit: 'May-September for outdoor events. December for festive markets.',
+        businessHours: 'Shops 9 AM to 7 PM. Riverside cafes all day.',
+        timeDifference: 'Ljubljana is UTC+1 (CET) / UTC+2 (CEST). When noon: NYC 6 AM, London 11 AM.',
+        daylightSaving: 'CEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Jože Plečnik designed much of city. Open Kitchen market Fridays.',
+        transportation: 'Buses only. Ljubljana Airport (LJU) 27km.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Slovenian holidays. Statehood Day (June 25).'
+      }
+    }
+  },
+  { slug: 'tallinn', city: 'Tallinn', timezone: 'Europe/Tallinn', country: 'Estonia', countryCode: 'EE', lat: 59.44, lng: 24.75, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '450K', metroPopulation: '600K', phoneCode: '+372', language: 'Estonian',
+      climate: 'Humid continental with mild summers (17-22°C) and cold winters (-5 to -1°C).',
+      attractions: ['Old Town', 'Toompea Castle', 'Alexander Nevsky Cathedral', 'Telliskivi Creative City', 'Kadriorg Palace', 'Lennusadam', 'St. Olav\'s Church', 'Town Hall Square', 'KGB Museum', 'Pirita Beach'],
+      demographics: 'Estonia\'s capital. Most digitized country. Birthplace of Skype.',
+      seoContent: {
+        intro: 'Tallinn, Estonia\'s digital capital, operates on EET/UTC+2. This UNESCO medieval city is also the world\'s most digitally advanced.',
+        timezoneFacts: '1 hour ahead of Stockholm. Birthplace of Skype.',
+        bestTimeToVisit: 'June-August for white nights. December for Christmas markets.',
+        businessHours: 'Shops 10 AM to 7 PM. Telliskivi for trendy spots.',
+        timeDifference: 'Tallinn is UTC+2 (EET) / UTC+3 (EEST). When noon: NYC 5 AM, London 10 AM.',
+        daylightSaving: 'EEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Free WiFi everywhere. Ferry to Helsinki 2 hours. Black bread essential.',
+        transportation: 'Free transit for residents. Tallinn Airport (TLL) 4km.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Estonian holidays. Independence Day (February 24).'
+      }
+    }
+  },
+  { slug: 'riga', city: 'Riga', timezone: 'Europe/Riga', country: 'Latvia', countryCode: 'LV', lat: 56.95, lng: 24.11, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '630K', metroPopulation: '1M', phoneCode: '+371', language: 'Latvian',
+      climate: 'Humid continental with mild summers (17-23°C) and cold winters (-5 to 0°C).',
+      attractions: ['Old Riga', 'House of the Blackheads', 'Art Nouveau District', 'Central Market', 'Freedom Monument', 'St. Peter\'s Church', 'Riga Cathedral', 'Latvian National Opera', 'Jurmala Beach', 'Mezaparks'],
+      demographics: 'Latvia\'s capital. World\'s finest Art Nouveau. Baltic hub.',
+      seoContent: {
+        intro: 'Riga, Latvia\'s capital, operates on EET/UTC+2. The largest Baltic capital boasts the world\'s finest Art Nouveau architecture and a UNESCO Old Town.',
+        timezoneFacts: 'Same as Tallinn. Largest city in Baltics.',
+        bestTimeToVisit: 'May-September. June for midsummer. December for Christmas markets.',
+        businessHours: 'Shops 10 AM to 7 PM. Central Market all day.',
+        timeDifference: 'Riga is UTC+2 (EET) / UTC+3 (EEST). When noon: NYC 5 AM, London 10 AM.',
+        daylightSaving: 'EEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Art Nouveau walking tour essential. Black Balsam is national drink.',
+        transportation: 'Trams, trolleybuses, buses. Riga Airport (RIX) 10km.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Latvian holidays. Independence Day (November 18).'
+      }
+    }
+  },
+  { slug: 'vilnius', city: 'Vilnius', timezone: 'Europe/Vilnius', country: 'Lithuania', countryCode: 'LT', lat: 54.69, lng: 25.28, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '580K', metroPopulation: '850K', phoneCode: '+370 5', language: 'Lithuanian',
+      climate: 'Humid continental with mild summers (17-23°C) and cold winters (-6 to -1°C).',
+      attractions: ['Old Town', 'Gediminas Tower', 'Užupis', 'Cathedral Square', 'Gate of Dawn', 'KGB Museum', 'Trakai Castle', 'St. Anne\'s Church', 'Hill of Three Crosses', 'Bernardine Garden'],
+      demographics: 'Lithuania\'s capital. Largest baroque old town. Artistic Užupis republic.',
+      seoContent: {
+        intro: 'Vilnius, Lithuania\'s capital, operates on EET/UTC+2. This baroque gem has Europe\'s largest surviving medieval old town and the quirky republic of Užupis.',
+        timezoneFacts: 'Same as Riga and Tallinn. Trakai Castle 28km away.',
+        bestTimeToVisit: 'May-September. December for Christmas markets.',
+        businessHours: 'Shops 10 AM to 7 PM. Užupis for artistic cafes.',
+        timeDifference: 'Vilnius is UTC+2 (EET) / UTC+3 (EEST). When noon: NYC 5 AM, London 10 AM.',
+        daylightSaving: 'EEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Užupis has its own "constitution." Cepelinai (dumplings) are huge.',
+        transportation: 'Buses and trolleybuses. Vilnius Airport (VNO) 7km.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Lithuanian holidays. Statehood Day (July 6).'
+      }
+    }
+  },
+  { slug: 'reykjavik', city: 'Reykjavik', timezone: 'Atlantic/Reykjavik', country: 'Iceland', countryCode: 'IS', lat: 64.15, lng: -21.94, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Icelandic Króna', currencySymbol: 'kr', population: '140K', metroPopulation: '230K', phoneCode: '+354', language: 'Icelandic, English',
+      climate: 'Subpolar oceanic with cool summers (10-15°C) and mild winters (0-3°C). Gulf Stream influence.',
+      attractions: ['Hallgrímskirkja', 'Golden Circle', 'Blue Lagoon', 'Harpa', 'Northern Lights', 'Whale Watching', 'Perlan', 'Sun Voyager', 'Laugavegur', 'Reykjavik Harbor'],
+      demographics: 'World\'s northernmost capital. Two-thirds of Iceland\'s population.',
+      seoContent: {
+        intro: 'Reykjavik, the world\'s northernmost capital, operates on GMT/UTC+0 year-round. This colorful city is the gateway to Iceland\'s dramatic landscapes and Northern Lights.',
+        timezoneFacts: 'Iceland uses GMT year-round - no DST. Same as London in winter.',
+        bestTimeToVisit: 'June-August for midnight sun. September-March for Northern Lights.',
+        businessHours: 'Shops 10 AM to 6 PM. Nightlife starts late (after midnight).',
+        timeDifference: 'Reykjavik is always UTC+0. When noon: NYC 7 AM (EST), London 12 PM.',
+        daylightSaving: 'Iceland does NOT observe DST.',
+        localTips: 'Expensive - bring snacks from duty-free. No tipping. Blue Lagoon books weeks ahead.',
+        transportation: 'Bus system (Strætó). Car essential for exploring. Keflavík Airport (KEF) 50km.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Icelandic holidays. Independence Day (June 17).'
+      }
+    }
+  },
+  { slug: 'kyiv', city: 'Kyiv', timezone: 'Europe/Kiev', country: 'Ukraine', countryCode: 'UA', lat: 50.45, lng: 30.52, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Ukrainian Hryvnia', currencySymbol: '₴', population: '2.9M', metroPopulation: '3.4M', phoneCode: '+380 44', language: 'Ukrainian',
+      climate: 'Humid continental with warm summers (20-27°C) and cold winters (-6 to -1°C).',
+      attractions: ['Saint Sophia Cathedral', 'Kyiv Pechersk Lavra', 'Maidan Nezalezhnosti', 'St. Andrew\'s Descent', 'Golden Gate', 'Motherland Monument', 'Khreshchatyk', 'Podil', 'Pyrohiv Museum', 'Chernobyl (day trip)'],
+      demographics: 'Ukraine\'s capital. 1,500+ year history. Cultural and political center.',
+      seoContent: {
+        intro: 'Kyiv, Ukraine\'s capital, operates on EET/UTC+2. This ancient city on the Dnipro River is the cradle of Eastern Slavic civilization.',
+        timezoneFacts: '1 hour ahead of Central Europe. Historic Kyivan Rus\' capital.',
+        bestTimeToVisit: 'Check current conditions. May-September traditionally best.',
+        businessHours: 'Shops 10 AM to 8 PM. Khreshchatyk pedestrian on weekends.',
+        timeDifference: 'Kyiv is UTC+2 (EET) / UTC+3 (EEST). When noon: NYC 5 AM, London 10 AM.',
+        daylightSaving: 'EEST runs last Sunday of March to last Sunday of October.',
+        localTips: 'Borscht and varenyky are essential. Metro is deep. Cyrillic alphabet used.',
+        transportation: 'Metro (3 lines). Boryspil Airport (KBP) 29km.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Ukrainian holidays. Independence Day (August 24).'
+      }
+    }
+  },
+  { slug: 'saint-petersburg', city: 'Saint Petersburg', timezone: 'Europe/Moscow', country: 'Russia', countryCode: 'RU', lat: 59.93, lng: 30.34, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Russian Ruble', currencySymbol: '₽', population: '5.4M', metroPopulation: '5.5M', phoneCode: '+7 812', language: 'Russian',
+      climate: 'Humid continental with cool summers (18-23°C) and cold winters (-8 to -3°C). White Nights in summer.',
+      attractions: ['Hermitage Museum', 'Church of the Savior on Spilled Blood', 'Peterhof', 'Catherine Palace', 'Nevsky Prospekt', 'St. Isaac\'s Cathedral', 'Peter and Paul Fortress', 'Mariinsky Theatre', 'Russian Museum', 'Canals'],
+      demographics: 'Russia\'s imperial former capital. Cultural capital. UNESCO protected center.',
+      seoContent: {
+        intro: 'Saint Petersburg, Russia\'s imperial former capital, operates on Moscow Time (MSK/UTC+3). This "Venice of the North" houses the Hermitage and celebrates White Nights each June.',
+        timezoneFacts: 'Same as Moscow. White Nights (late May-mid July) have nearly 24h daylight.',
+        bestTimeToVisit: 'June for White Nights. May and September less crowded.',
+        businessHours: 'Hermitage closed Mondays. White Nights mean late nights.',
+        timeDifference: 'St. Petersburg is always UTC+3. When noon: NYC 4 AM, London 9 AM.',
+        daylightSaving: 'Russia does NOT observe DST since 2014.',
+        localTips: 'Book Hermitage in advance. Drawbridges open 1-5 AM. Learn Cyrillic basics.',
+        transportation: 'Metro (5 lines). Pulkovo Airport (LED) 23km.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Russian holidays. City Day (May 27), Scarlet Sails (June).'
+      }
+    }
+  },
 
   // Turkey
-  { slug: 'ankara', city: 'Ankara', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 39.93, lng: 32.86, tier: 3, continent: 'europe' },
-  { slug: 'izmir', city: 'İzmir', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 38.42, lng: 27.13, tier: 3, continent: 'europe' },
-  { slug: 'antalya', city: 'Antalya', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 36.90, lng: 30.70, tier: 3, continent: 'europe' },
-  { slug: 'bursa', city: 'Bursa', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 40.19, lng: 29.06, tier: 3, continent: 'europe' },
+  { slug: 'ankara', city: 'Ankara', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 39.93, lng: 32.86, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Turkish Lira', currencySymbol: '₺', population: '5.7M', metroPopulation: '5.8M', phoneCode: '+90 312', language: 'Turkish',
+      climate: 'Continental with hot dry summers (25-32°C) and cold snowy winters (-3 to 4°C). Central Anatolia.',
+      attractions: ['Anıtkabir', 'Museum of Anatolian Civilizations', 'Ankara Castle', 'Kocatepe Mosque', 'Atakule Tower', 'Ulus', 'Hamamönü', 'CerModern', 'Gençlik Park', 'Beypazarı'],
+      demographics: 'Turkey\'s capital since 1923. Government and university city. Less touristy than Istanbul.',
+      seoContent: {
+        intro: 'Ankara, Türkiye\'nin başkenti, Turkey Time (TRT/UTC+3) kullanır. Atatürk\'ün modern cumhuriyetin merkezi olarak seçtiği bu şehir, Anıtkabir ve dünya standartlarında müzelere ev sahipliği yapar.',
+        timezoneFacts: 'Türkiye 2016\'dan beri kalıcı olarak UTC+3 kullanıyor. Yaz saati uygulaması yok. Londra\'dan 3 saat ileri.',
+        bestTimeToVisit: 'Nisan-Haziran ve Eylül-Ekim en güzel dönemler. Yaz sıcak ve kuru. Kış karlı olabilir.',
+        businessHours: 'Resmi daireler 8:30-17:30. AVM\'ler 10:00-22:00. Cuma öğle namazı için bazı yerler kapalı.',
+        timeDifference: 'Ankara UTC+3. Saat 12\'de Ankara\'dayken: NYC 04:00, Londra 09:00, Dubai 11:00.',
+        daylightSaving: 'Türkiye yaz saati uygulamıyor. Yıl boyunca UTC+3.',
+        localTips: 'Anıtkabir çok etkileyici. Anadolu Medeniyetleri Müzesi dünya klasmanında. İstanbul\'dan daha az İngilizce konuşuluyor.',
+        transportation: 'Metro ve otobüsler. İstanbul\'a hızlı tren. Esenboğa Havalimanı (ESB) merkezden 28km.',
+        emergencyNumbers: 'Acil: 112.',
+        publicHolidays: 'Türk resmi tatilleri. Cumhuriyet Bayramı (29 Ekim), Zafer Bayramı (30 Ağustos).'
+      }
+    }
+  },
+  { slug: 'izmir', city: 'İzmir', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 38.42, lng: 27.13, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Turkish Lira', currencySymbol: '₺', population: '4.4M', metroPopulation: '4.5M', phoneCode: '+90 232', language: 'Turkish',
+      climate: 'Mediterranean with hot dry summers (28-34°C) and mild wet winters (7-12°C).',
+      attractions: ['Konak Square', 'Clock Tower', 'Kemeraltı Bazaar', 'Kadifekale', 'Kordon', 'Ephesus nearby', 'Alsancak', 'Agora', 'Alaçatı nearby', 'Çeşme Peninsula'],
+      demographics: 'Turkey\'s third city. Aegean metropolis. Liberal and cosmopolitan. Gateway to Ephesus.',
+      seoContent: {
+        intro: 'İzmir, Türkiye\'nin Ege incisi, Turkey Time (TRT/UTC+3) kullanır. Bu liberal, kozmopolit şehir sahil kenarı gezintileri, canlı çarşıları ve antik Efes\'e kolay erişim sunar.',
+        timezoneFacts: 'İstanbul ve Ankara ile aynı saat dilimi (UTC+3). Efes 80km güneyde.',
+        bestTimeToVisit: 'Nisan-Haziran ve Eylül-Ekim en güzel hava. Yaz plajlar için ideal. Eylül\'de Fuar.',
+        businessHours: 'Dükkanlar 09:00-20:00. Kemeraltı gün boyu açık. Kordon akşamları hareketli.',
+        timeDifference: 'İzmir UTC+3. Saat 12\'de İzmir\'deyken: NYC 04:00, Londra 09:00.',
+        daylightSaving: 'Türkiye yaz saati uygulamıyor. Yıl boyunca UTC+3.',
+        localTips: 'Kahvaltıda boyoz şart. Kordon\'da balık restoranları. Efes, Çeşme, Alaçatı günübirlik gezi için ideal.',
+        transportation: 'Metro (2 hat), otobüsler, feribotlar. Adnan Menderes Havalimanı (ADB) merkezden 18km.',
+        emergencyNumbers: 'Acil: 112.',
+        publicHolidays: 'Türk resmi tatilleri. İzmir Fuarı (Eylül), 9 Eylül Kurtuluş Günü.'
+      }
+    }
+  },
+  { slug: 'antalya', city: 'Antalya', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 36.90, lng: 30.70, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Turkish Lira', currencySymbol: '₺', population: '2.6M', metroPopulation: '2.6M', phoneCode: '+90 242', language: 'Turkish',
+      climate: 'Mediterranean with hot dry summers (28-35°C) and mild wet winters (10-15°C). 300 days of sunshine.',
+      attractions: ['Kaleiçi Old Town', 'Düden Waterfalls', 'Aspendos', 'Perge', 'Konyaaltı Beach', 'Lara Beach', 'Antalya Museum', 'Yivli Minaret', 'Hadrian\'s Gate', 'Termessos'],
+      demographics: 'Turkey\'s tourism capital. Turkish Riviera. Resort city with ancient ruins.',
+      seoContent: {
+        intro: 'Antalya, Türk Rivierası\'nın kapısı, Turkey Time (TRT/UTC+3) kullanır. Bu güzel sahil şehri turkuaz plajları, antik kalıntıları ve şirin tarihi Kaleiçi\'yi bir arada sunar.',
+        timezoneFacts: 'İstanbul ile aynı saat dilimi (UTC+3). Turizm yıl boyunca uluslararası ziyaretçi çeker.',
+        bestTimeToVisit: 'Nisan-Kasım plaj için ideal. Yaz sıcak ama plaj havası. İlkbahar ve sonbahar antik kentler için.',
+        businessHours: 'Oteller 7/24. Kaleiçi dükkanları 10:00-22:00. Her şey turizm odaklı.',
+        timeDifference: 'Antalya UTC+3. Saat 12\'de Antalya\'dayken: NYC 04:00, Londra 09:00, Moskova 12:00.',
+        daylightSaving: 'Türkiye yaz saati uygulamıyor. Yıl boyunca UTC+3.',
+        localTips: 'All-inclusive oteller yaygın. Kaleiçi şirin tarihi merkez. Antik kalıntılar her yerde. Su parkları popüler.',
+        transportation: 'Sahil boyu tramvay. Otellere otobüsler. Antalya Havalimanı (AYT) merkezden 13km.',
+        emergencyNumbers: 'Acil: 112.',
+        publicHolidays: 'Türk resmi tatilleri.'
+      }
+    }
+  },
+  { slug: 'bursa', city: 'Bursa', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 40.19, lng: 29.06, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Turkish Lira', currencySymbol: '₺', population: '3.1M', metroPopulation: '3.2M', phoneCode: '+90 224', language: 'Turkish',
+      climate: 'Continental with warm summers (23-30°C) and cold winters (2-9°C). Snow on Uludağ.',
+      attractions: ['Uludağ', 'Grand Mosque', 'Green Mosque', 'Green Tomb', 'Covered Bazaar', 'Cumalıkızık', 'Bursa Castle', 'Koza Han', 'Muradiye Complex', 'Thermal Baths'],
+      demographics: 'First Ottoman capital. Industrial city. Ski resort gateway. Silk and automotive.',
+      seoContent: {
+        intro: 'Bursa, ilk Osmanlı başkenti, Turkey Time (TRT/UTC+3) kullanır. Uludağ\'ın eteğindeki bu tarihi şehir Osmanlı camileri, kaplıcalar ve Türkiye\'nin en popüler kayak merkezini sunar.',
+        timezoneFacts: 'İstanbul ile aynı saat dilimi. İstanbul\'dan feribot ile 2-2.5 saat.',
+        bestTimeToVisit: 'İlkbahar ve sonbahar şehir gezisi için. Aralık-Mart kayak sezonu. Yaz sıcak.',
+        businessHours: 'Dükkanlar 09:00-19:00. Kapalı Çarşı gün boyu. Cuma namazı 13:00-14:00 kapalı.',
+        timeDifference: 'Bursa UTC+3. Saat 12\'de Bursa\'dayken: NYC 04:00, Londra 09:00.',
+        daylightSaving: 'Türkiye yaz saati uygulamıyor. Yıl boyunca UTC+3.',
+        localTips: 'İskender kebap burada icat edildi - mutlaka deneyin. Kaplıcalar yüzyıllık. İpekçilik mirası. İstanbul\'dan günübirlik.',
+        transportation: 'Metro ve otobüsler. İstanbul\'dan feribot. Yenişehir Havalimanı (YEI) 50km; İstanbul havalimanlarından transfer.',
+        emergencyNumbers: 'Acil: 112.',
+        publicHolidays: 'Türk resmi tatilleri.'
+      }
+    }
+  },
 
   // Asia
-  { slug: 'osaka', city: 'Osaka', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.69, lng: 135.50, tier: 3, continent: 'asia' },
-  { slug: 'kyoto', city: 'Kyoto', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.01, lng: 135.77, tier: 3, continent: 'asia' },
-  { slug: 'shenzhen', city: 'Shenzhen', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 22.54, lng: 114.06, tier: 3, continent: 'asia' },
-  { slug: 'guangzhou', city: 'Guangzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 23.13, lng: 113.26, tier: 3, continent: 'asia' },
-  { slug: 'chengdu', city: 'Chengdu', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.57, lng: 104.07, tier: 3, continent: 'asia' },
-  { slug: 'hangzhou', city: 'Hangzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.27, lng: 120.15, tier: 3, continent: 'asia' },
-  { slug: 'busan', city: 'Busan', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.18, lng: 129.08, tier: 3, continent: 'asia' },
-  { slug: 'hanoi', city: 'Hanoi', timezone: 'Asia/Ho_Chi_Minh', country: 'Vietnam', countryCode: 'VN', lat: 21.03, lng: 105.85, tier: 3, continent: 'asia' },
-  { slug: 'ho-chi-minh', city: 'Ho Chi Minh City', timezone: 'Asia/Ho_Chi_Minh', country: 'Vietnam', countryCode: 'VN', lat: 10.82, lng: 106.63, tier: 3, continent: 'asia' },
-  { slug: 'chennai', city: 'Chennai', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 13.08, lng: 80.27, tier: 3, continent: 'asia' },
-  { slug: 'kolkata', city: 'Kolkata', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.57, lng: 88.36, tier: 3, continent: 'asia' },
-  { slug: 'hyderabad', city: 'Hyderabad', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 17.39, lng: 78.49, tier: 3, continent: 'asia' },
-  { slug: 'phuket', city: 'Phuket', timezone: 'Asia/Bangkok', country: 'Thailand', countryCode: 'TH', lat: 7.88, lng: 98.40, tier: 3, continent: 'asia' },
-  { slug: 'bali', city: 'Bali', timezone: 'Asia/Makassar', country: 'Indonesia', countryCode: 'ID', lat: -8.41, lng: 115.19, tier: 3, continent: 'asia' },
-  { slug: 'jerusalem', city: 'Jerusalem', timezone: 'Asia/Jerusalem', country: 'Israel', countryCode: 'IL', lat: 31.77, lng: 35.23, tier: 3, continent: 'asia' },
-  { slug: 'abu-dhabi', city: 'Abu Dhabi', timezone: 'Asia/Dubai', country: 'United Arab Emirates', countryCode: 'AE', lat: 24.45, lng: 54.37, tier: 3, continent: 'asia' },
-  { slug: 'doha', city: 'Doha', timezone: 'Asia/Qatar', country: 'Qatar', countryCode: 'QA', lat: 25.29, lng: 51.53, tier: 3, continent: 'asia' },
-  { slug: 'riyadh', city: 'Riyadh', timezone: 'Asia/Riyadh', country: 'Saudi Arabia', countryCode: 'SA', lat: 24.77, lng: 46.74, tier: 3, continent: 'asia' },
-  { slug: 'jeddah', city: 'Jeddah', timezone: 'Asia/Riyadh', country: 'Saudi Arabia', countryCode: 'SA', lat: 21.49, lng: 39.19, tier: 3, continent: 'asia' },
-  { slug: 'karachi', city: 'Karachi', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 24.86, lng: 67.01, tier: 3, continent: 'asia' },
-  { slug: 'dhaka', city: 'Dhaka', timezone: 'Asia/Dhaka', country: 'Bangladesh', countryCode: 'BD', lat: 23.81, lng: 90.41, tier: 3, continent: 'asia' },
-  { slug: 'kathmandu', city: 'Kathmandu', timezone: 'Asia/Kathmandu', country: 'Nepal', countryCode: 'NP', lat: 27.72, lng: 85.32, tier: 3, continent: 'asia' },
-  { slug: 'colombo', city: 'Colombo', timezone: 'Asia/Colombo', country: 'Sri Lanka', countryCode: 'LK', lat: 6.93, lng: 79.85, tier: 3, continent: 'asia' },
-  { slug: 'yangon', city: 'Yangon', timezone: 'Asia/Yangon', country: 'Myanmar', countryCode: 'MM', lat: 16.87, lng: 96.20, tier: 3, continent: 'asia' },
-  { slug: 'phnom-penh', city: 'Phnom Penh', timezone: 'Asia/Phnom_Penh', country: 'Cambodia', countryCode: 'KH', lat: 11.56, lng: 104.92, tier: 3, continent: 'asia' },
-
+  { slug: 'osaka', city: 'Osaka', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.69, lng: 135.50, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '2.8M', metroPopulation: '19.3M', phoneCode: '+81 6', language: 'Japanese',
+      climate: 'Humid subtropical with hot humid summers (27-33°C) and mild winters (3-10°C).',
+      attractions: ['Osaka Castle', 'Dotonbori', 'Universal Studios Japan', 'Shinsekai', 'Kuromon Market', 'Umeda Sky Building', 'Sumiyoshi Taisha', 'Shitennoji Temple', 'Namba', 'Tennoji'],
+      demographics: 'Japan\'s kitchen. Merchant city heritage. Direct and humorous culture.',
+      seoContent: {
+        intro: 'Osaka, Japan\'s culinary capital, operates on Japan Standard Time (JST/UTC+9). Known as "the nation\'s kitchen," Osaka is famous for food culture, nightlife, and friendly people.',
+        timezoneFacts: 'Same as Tokyo. No DST in Japan. 30 minutes from Kyoto by train.',
+        bestTimeToVisit: 'March-May for cherry blossoms, October-November for autumn.',
+        businessHours: 'Shops 10 AM to 8 PM. Dotonbori never sleeps. Restaurants until late.',
+        timeDifference: 'Osaka is always UTC+9. When noon: NYC 10 PM (-1), London 3 AM.',
+        daylightSaving: 'Japan does NOT observe DST.',
+        localTips: 'Takoyaki and okonomiyaki essential. Osakans are outgoing. USJ popular.',
+        transportation: 'Metro and JR trains excellent. Kansai Airport (KIX) 50km; Itami Airport (ITM) closer.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Japanese holidays. Tenjin Matsuri (July 24-25).'
+      }
+    }
+  },
+  { slug: 'kyoto', city: 'Kyoto', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.01, lng: 135.77, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '1.5M', metroPopulation: '2.8M', phoneCode: '+81 75', language: 'Japanese',
+      climate: 'Humid subtropical with hot humid summers (27-33°C) and cold winters (2-9°C).',
+      attractions: ['Fushimi Inari', 'Kinkaku-ji', 'Arashiyama', 'Gion', 'Kiyomizu-dera', 'Nijo Castle', 'Philosopher\'s Path', 'Ryoan-ji', 'Nishiki Market', 'Geisha Districts'],
+      demographics: 'Japan\'s cultural heart. Former imperial capital. 17 UNESCO sites.',
+      seoContent: {
+        intro: 'Kyoto, Japan\'s cultural treasure, operates on Japan Standard Time (JST/UTC+9). The imperial capital for over a thousand years, Kyoto preserves Japan\'s most important temples and traditional arts.',
+        timezoneFacts: 'Same as Tokyo. No DST. Preserved from WWII bombing.',
+        bestTimeToVisit: 'March-May for cherry blossoms, November for autumn leaves. Both crowded.',
+        businessHours: 'Temples typically 9 AM to 5 PM. Go early to avoid crowds.',
+        timeDifference: 'Kyoto is always UTC+9. When noon: NYC 10 PM (-1), London 3 AM.',
+        daylightSaving: 'Japan does NOT observe DST.',
+        localTips: 'Book Fushimi Inari at dawn. Geisha sightings in Gion at dusk. Matcha everything.',
+        transportation: 'Buses (complex), limited subway, bikes popular. Kansai Airport (KIX).',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Japanese holidays. Gion Matsuri (July).'
+      }
+    }
+  },
+  { slug: 'shenzhen', city: 'Shenzhen', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 22.54, lng: 114.06, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '17.5M', metroPopulation: '18M', phoneCode: '+86 755', language: 'Mandarin, Cantonese',
+      climate: 'Humid subtropical with hot humid summers (27-33°C) and mild winters (12-20°C).',
+      attractions: ['Window of the World', 'Shenzhen Bay', 'OCT Loft', 'Dafen Oil Painting Village', 'Splendid China', 'Dongmen', 'Shekou', 'Huaqiangbei', 'Lianhuashan Park', 'Safari Park'],
+      demographics: 'China\'s Silicon Valley. From fishing village to megacity in 40 years.',
+      seoContent: {
+        intro: 'Shenzhen, China\'s Silicon Valley, operates on China Standard Time (CST/UTC+8). This city went from fishing village to tech megacity in just 40 years, home to Huawei and Tencent.',
+        timezoneFacts: 'Same as Beijing and Hong Kong despite being just across the border.',
+        bestTimeToVisit: 'October-December for pleasant weather. Avoid summer heat.',
+        businessHours: 'Tech culture means flexible hours. Malls 10 AM to 10 PM.',
+        timeDifference: 'Shenzhen is always UTC+8. When noon: NYC 11 PM (-1), London 4 AM.',
+        daylightSaving: 'China does NOT observe DST.',
+        localTips: 'Cashless society - get WeChat Pay. Hong Kong 30 minutes by train.',
+        transportation: 'Metro extensive. High-speed rail to Hong Kong. Bao\'an Airport (SZX) 32km.',
+        emergencyNumbers: 'Emergency: 110 (police), 120 (ambulance).',
+        publicHolidays: 'Chinese holidays.'
+      }
+    }
+  },
+  { slug: 'guangzhou', city: 'Guangzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 23.13, lng: 113.26, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '18.7M', metroPopulation: '22M', phoneCode: '+86 20', language: 'Mandarin, Cantonese',
+      climate: 'Humid subtropical with hot humid summers (27-33°C) and mild winters (12-18°C).',
+      attractions: ['Canton Tower', 'Chen Clan Academy', 'Shamian Island', 'Temple of Six Banyan Trees', 'Yuexiu Park', 'Pearl River', 'Sacred Heart Cathedral', 'Chimelong', 'Beijing Road', 'Dim Sum'],
+      demographics: 'Cantonese heartland. Trading hub for millennia. Food capital.',
+      seoContent: {
+        intro: 'Guangzhou (Canton), southern China\'s capital, operates on China Standard Time (CST/UTC+8). This ancient trading city is the heart of Cantonese culture and the original dim sum destination.',
+        timezoneFacts: 'Same as Beijing despite being far south. Canton Fair brings global traders.',
+        bestTimeToVisit: 'October-March for pleasant weather. Summer very hot and humid.',
+        businessHours: 'Shops 10 AM to 10 PM. Dim sum starts early (7 AM).',
+        timeDifference: 'Guangzhou is always UTC+8. When noon: NYC 11 PM (-1), London 4 AM.',
+        daylightSaving: 'China does NOT observe DST.',
+        localTips: 'Dim sum culture is morning tradition. Cantonese cuisine is refined.',
+        transportation: 'Metro extensive. Baiyun Airport (CAN) 28km. High-speed rail hub.',
+        emergencyNumbers: 'Emergency: 110 (police), 120 (ambulance).',
+        publicHolidays: 'Chinese holidays. Canton Fair (April, October).'
+      }
+    }
+  },
+  { slug: 'chengdu', city: 'Chengdu', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.57, lng: 104.07, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '21M', metroPopulation: '22M', phoneCode: '+86 28', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with hot summers (26-31°C) and mild winters (4-10°C). Cloudy.',
+      attractions: ['Giant Panda Base', 'Jinli Street', 'Wide and Narrow Alleys', 'Leshan Buddha', 'Wuhou Shrine', 'Du Fu Thatched Cottage', 'People\'s Park', 'Sichuan Opera', 'Tianfu Square', 'Hot Pot'],
+      demographics: 'Sichuan\'s capital. Giant panda homeland. Spicy food capital.',
+      seoContent: {
+        intro: 'Chengdu, home of the giant panda, operates on China Standard Time (CST/UTC+8). Sichuan\'s capital offers adorable pandas, fiery cuisine, and a famously relaxed lifestyle.',
+        timezoneFacts: 'Same as Beijing despite being far west. Sun rises and sets "late" compared to coast.',
+        bestTimeToVisit: 'March-June and September-November. Summer hot. Winter cloudy.',
+        businessHours: 'Relaxed pace. Teahouses all day. Hot pot late into night.',
+        timeDifference: 'Chengdu is always UTC+8. When noon: NYC 11 PM (-1), London 4 AM.',
+        daylightSaving: 'China does NOT observe DST.',
+        localTips: 'Hot pot is essential. Pandas best seen early morning. Mahjong in teahouses.',
+        transportation: 'Metro expanding. Shuangliu Airport (CTU) 16km.',
+        emergencyNumbers: 'Emergency: 110 (police), 120 (ambulance).',
+        publicHolidays: 'Chinese holidays.'
+      }
+    }
+  },
+  { slug: 'hangzhou', city: 'Hangzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.27, lng: 120.15, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '12.2M', metroPopulation: '13M', phoneCode: '+86 571', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (28-34°C) and cold winters (2-8°C).',
+      attractions: ['West Lake', 'Lingyin Temple', 'Six Harmonies Pagoda', 'Longjing Tea Village', 'Xixi Wetland', 'China National Tea Museum', 'Hefang Street', 'Qiantang River', 'Wuzhen nearby', 'Alibaba Campus'],
+      demographics: 'Marco Polo\'s "finest city." Tech hub (Alibaba). Silk and tea heritage.',
+      seoContent: {
+        intro: 'Hangzhou, "Paradise on Earth," operates on China Standard Time (CST/UTC+8). Marco Polo\'s favorite city is now home to Alibaba, UNESCO-listed West Lake, and China\'s finest green tea.',
+        timezoneFacts: 'Same as Beijing. 1 hour from Shanghai by high-speed rail.',
+        bestTimeToVisit: 'March-May for spring, September-November for autumn.',
+        businessHours: 'Tech culture influences hours. West Lake best at dawn.',
+        timeDifference: 'Hangzhou is always UTC+8. When noon: NYC 11 PM (-1), London 4 AM.',
+        daylightSaving: 'China does NOT observe DST.',
+        localTips: 'West Lake boat ride essential. Longjing tea from source. Bike around the lake.',
+        transportation: 'Metro, buses. Xiaoshan Airport (HGH) 27km. High-speed rail to Shanghai.',
+        emergencyNumbers: 'Emergency: 110 (police), 120 (ambulance).',
+        publicHolidays: 'Chinese holidays.'
+      }
+    }
+  },
+  { slug: 'busan', city: 'Busan', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.18, lng: 129.08, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '3.4M', metroPopulation: '3.6M', phoneCode: '+82 51', language: 'Korean',
+      climate: 'Humid subtropical with hot humid summers (25-30°C) and mild winters (1-8°C).',
+      attractions: ['Haeundae Beach', 'Gamcheon Culture Village', 'Jagalchi Fish Market', 'Haedong Yonggungsa', 'Gwangalli Beach', 'BIFF Square', 'Taejongdae', 'Beomeosa Temple', 'Busan Tower', 'Shinsegae Centum City'],
+      demographics: 'Korea\'s second city. Major port. Beach culture. Film festival host.',
+      seoContent: {
+        intro: 'Busan, South Korea\'s beach city, operates on Korea Standard Time (KST/UTC+9). This vibrant port city offers sandy beaches, fresh seafood, and Korea\'s most important film festival.',
+        timezoneFacts: 'Same as Tokyo and Seoul. No DST. KTX to Seoul 2.5 hours.',
+        bestTimeToVisit: 'May-June and September-October. Summer beach season crowded. October for BIFF.',
+        businessHours: 'Shops 10 AM to 10 PM. Fish markets from dawn.',
+        timeDifference: 'Busan is always UTC+9. When noon: NYC 10 PM (-1), London 3 AM.',
+        daylightSaving: 'South Korea does NOT observe DST.',
+        localTips: 'Jagalchi Market for freshest seafood. Gamcheon colorful village. Soju culture.',
+        transportation: 'Metro (4 lines). Gimhae Airport (PUS) 20km.',
+        emergencyNumbers: 'Emergency: 112 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Korean holidays. BIFF (October).'
+      }
+    }
+  },
+  { slug: 'hanoi', city: 'Hanoi', timezone: 'Asia/Ho_Chi_Minh', country: 'Vietnam', countryCode: 'VN', lat: 21.03, lng: 105.85, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Vietnamese Dong', currencySymbol: '₫', population: '8.4M', metroPopulation: '10M', phoneCode: '+84 24', language: 'Vietnamese',
+      climate: 'Humid subtropical with hot summers (27-33°C) and cool winters (13-20°C).',
+      attractions: ['Old Quarter', 'Hoan Kiem Lake', 'Temple of Literature', 'Ho Chi Minh Mausoleum', 'Water Puppet Theatre', 'West Lake', 'Train Street', 'Imperial Citadel', 'St. Joseph\'s Cathedral', 'Halong Bay nearby'],
+      demographics: 'Vietnam\'s capital. 1000+ year history. French colonial heritage.',
+      seoContent: {
+        intro: 'Hanoi, Vietnam\'s ancient capital, operates on Indochina Time (ICT/UTC+7). This 1,000-year-old city combines French colonial architecture, ancient temples, and legendary street food.',
+        timezoneFacts: 'Same as Ho Chi Minh City. Vietnam uses single timezone.',
+        bestTimeToVisit: 'October-December and March-April for pleasant weather. Summer hot and humid.',
+        businessHours: 'Shops 8 AM to 9 PM. Street food all hours. Cafes open early.',
+        timeDifference: 'Hanoi is always UTC+7. When noon: NYC midnight, London 5 AM.',
+        daylightSaving: 'Vietnam does NOT observe DST.',
+        localTips: 'Pho for breakfast. Old Quarter chaos is charm. Halong Bay day or overnight trip.',
+        transportation: 'Grab is essential. Metro opening. Noi Bai Airport (HAN) 25km.',
+        emergencyNumbers: 'Emergency: 113 (police), 115 (ambulance).',
+        publicHolidays: 'Vietnamese holidays. Tet (Lunar New Year) biggest.'
+      }
+    }
+  },
+  { slug: 'ho-chi-minh', city: 'Ho Chi Minh City', timezone: 'Asia/Ho_Chi_Minh', country: 'Vietnam', countryCode: 'VN', lat: 10.82, lng: 106.63, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Vietnamese Dong', currencySymbol: '₫', population: '9.3M', metroPopulation: '14M', phoneCode: '+84 28', language: 'Vietnamese',
+      climate: 'Tropical with hot weather year-round (27-35°C). Rainy season May-November.',
+      attractions: ['War Remnants Museum', 'Cu Chi Tunnels', 'Notre-Dame Cathedral', 'Ben Thanh Market', 'Reunification Palace', 'Central Post Office', 'District 1', 'Bui Vien Street', 'Jade Emperor Pagoda', 'Mekong Delta'],
+      demographics: 'Vietnam\'s largest city. Economic hub. Still called Saigon by locals.',
+      seoContent: {
+        intro: 'Ho Chi Minh City (Saigon), Vietnam\'s economic powerhouse, operates on Indochina Time (ICT/UTC+7). This dynamic metropolis combines French colonial elegance, war history, and modern energy.',
+        timezoneFacts: 'Same as Hanoi. Vietnam uses single timezone. Still called Saigon.',
+        bestTimeToVisit: 'December-April for dry season. May-November rainy but manageable.',
+        businessHours: 'Shops 8 AM to 10 PM. Bui Vien backpacker area never sleeps.',
+        timeDifference: 'HCMC is always UTC+7. When noon: NYC midnight, London 5 AM.',
+        daylightSaving: 'Vietnam does NOT observe DST.',
+        localTips: 'Banh mi sandwiches everywhere. Grab for transport. Cu Chi Tunnels half-day trip.',
+        transportation: 'Grab essential. Metro opening. Tan Son Nhat Airport (SGN) 8km.',
+        emergencyNumbers: 'Emergency: 113 (police), 115 (ambulance).',
+        publicHolidays: 'Vietnamese holidays. Tet (Lunar New Year), Liberation Day (April 30).'
+      }
+    }
+  },
+  { slug: 'chennai', city: 'Chennai', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 13.08, lng: 80.27, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '11M', metroPopulation: '15M', phoneCode: '+91 44', language: 'Tamil, English',
+      climate: 'Tropical wet and dry with hot weather most of year (25-40°C). Monsoon October-December.',
+      attractions: ['Marina Beach', 'Kapaleeshwarar Temple', 'Fort St. George', 'San Thome Cathedral', 'Government Museum', 'Mylapore', 'Mahabalipuram', 'Dakshinachitra', 'Valluvar Kottam', 'Guindy National Park'],
+      demographics: 'Tamil Nadu capital. Auto industry hub. Classical music and dance.',
+      seoContent: {
+        intro: 'Chennai, gateway to South India, operates on India Standard Time (IST/UTC+5:30). This cultural capital offers ancient temples, colonial heritage, and India\'s longest urban beach.',
+        timezoneFacts: 'India uses single timezone (IST). Chennai is in southeast but uses same time as Mumbai.',
+        bestTimeToVisit: 'November-February for pleasant weather. April-June very hot. Monsoon Oct-Dec.',
+        businessHours: 'Shops 10 AM to 9 PM. Temples early morning best.',
+        timeDifference: 'Chennai is always UTC+5:30. When noon: NYC 1:30 AM, London 6:30 AM.',
+        daylightSaving: 'India does NOT observe DST.',
+        localTips: 'Filter coffee is essential. Mahabalipuram day trip. Classical dance performances.',
+        transportation: 'Metro expanding. Suburban trains. Chennai Airport (MAA) 16km.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Indian holidays. Pongal (January), Tamil New Year (April).'
+      }
+    }
+  },
+  { slug: 'kolkata', city: 'Kolkata', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.57, lng: 88.36, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '15M', metroPopulation: '15M', phoneCode: '+91 33', language: 'Bengali, English',
+      climate: 'Tropical wet and dry with hot humid summers (30-38°C) and mild winters (12-25°C).',
+      attractions: ['Victoria Memorial', 'Howrah Bridge', 'Mother Teresa\'s House', 'Kalighat Temple', 'Indian Museum', 'College Street', 'Park Street', 'Dakshineswar Temple', 'Botanical Gardens', 'New Market'],
+      demographics: 'West Bengal capital. British colonial capital. Intellectual and cultural hub.',
+      seoContent: {
+        intro: 'Kolkata (Calcutta), the City of Joy, operates on India Standard Time (IST/UTC+5:30). This former British capital is India\'s intellectual and cultural heart, home to Nobel laureates and artistic traditions.',
+        timezoneFacts: 'India uses single timezone. Kolkata is easternmost major city - sunrise early.',
+        bestTimeToVisit: 'October-March for pleasant weather. Durga Puja (October) spectacular.',
+        businessHours: 'Shops 10 AM to 8 PM. Durga Puja means city-wide celebration.',
+        timeDifference: 'Kolkata is always UTC+5:30. When noon: NYC 1:30 AM, London 6:30 AM.',
+        daylightSaving: 'India does NOT observe DST.',
+        localTips: 'Bengali sweets are famous. Yellow Ambassador taxis iconic. Book Fair in January.',
+        transportation: 'Metro (India\'s first), trams. Netaji Subhas Chandra Bose Airport (CCU) 17km.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Indian holidays. Durga Puja (October) is biggest.'
+      }
+    }
+  },
+  { slug: 'hyderabad', city: 'Hyderabad', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 17.39, lng: 78.49, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '10M', metroPopulation: '10M', phoneCode: '+91 40', language: 'Telugu, Hindi, Urdu, English',
+      climate: 'Tropical wet and dry with hot summers (30-42°C) and mild winters (15-28°C).',
+      attractions: ['Charminar', 'Golconda Fort', 'Hussain Sagar', 'Ramoji Film City', 'Salar Jung Museum', 'HITEC City', 'Birla Mandir', 'Chowmahalla Palace', 'Laad Bazaar', 'Nehru Zoo'],
+      demographics: 'Telangana capital. IT hub (HITEC City). Biryani capital. Pearl trade.',
+      seoContent: {
+        intro: 'Hyderabad, the City of Pearls, operates on India Standard Time (IST/UTC+5:30). This historic city combines Mughal heritage with India\'s tech boom - from Charminar to HITEC City.',
+        timezoneFacts: 'India uses single timezone. Major IT outsourcing destination.',
+        bestTimeToVisit: 'October-March for pleasant weather. Summers extremely hot.',
+        businessHours: 'IT companies 24/7 operations. Old City markets all day.',
+        timeDifference: 'Hyderabad is always UTC+5:30. When noon: NYC 1:30 AM, London 6:30 AM.',
+        daylightSaving: 'India does NOT observe DST.',
+        localTips: 'Hyderabadi biryani is essential. Pearls at Laad Bazaar. Irani chai cafes.',
+        transportation: 'Metro modern. Rajiv Gandhi Airport (HYD) 24km.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Indian holidays. Bonalu (July/August).'
+      }
+    }
+  },
+  { slug: 'phuket', city: 'Phuket', timezone: 'Asia/Bangkok', country: 'Thailand', countryCode: 'TH', lat: 7.88, lng: 98.40, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Thai Baht', currencySymbol: '฿', population: '420K', metroPopulation: '420K', phoneCode: '+66 76', language: 'Thai, English',
+      climate: 'Tropical monsoon with hot weather year-round (27-33°C). Monsoon May-October.',
+      attractions: ['Patong Beach', 'Old Phuket Town', 'Big Buddha', 'Phi Phi Islands', 'Phang Nga Bay', 'Kata Beach', 'Karon Beach', 'Wat Chalong', 'Bangla Road', 'Similan Islands'],
+      demographics: 'Thailand\'s largest island. Beach resort paradise. Tourism-dependent.',
+      seoContent: {
+        intro: 'Phuket, Thailand\'s beach paradise, operates on Indochina Time (ICT/UTC+7). Thailand\'s largest island offers stunning beaches, island hopping, and legendary nightlife.',
+        timezoneFacts: 'Same as Bangkok. Island destination with international airport.',
+        bestTimeToVisit: 'November-April for dry season. May-October monsoon but cheaper.',
+        businessHours: 'Resort hours vary. Bangla Road comes alive after dark.',
+        timeDifference: 'Phuket is always UTC+7. When noon: NYC midnight, London 5 AM.',
+        daylightSaving: 'Thailand does NOT observe DST.',
+        localTips: 'Phi Phi and Phang Nga Bay day trips. Patong is party central. Old Town for culture.',
+        transportation: 'Songthaews and taxis. Phuket Airport (HKT) north of island.',
+        emergencyNumbers: 'Emergency: 191. Tourist Police: 1155.',
+        publicHolidays: 'Thai holidays. Vegetarian Festival (October).'
+      }
+    }
+  },
+  { slug: 'bali', city: 'Bali', timezone: 'Asia/Makassar', country: 'Indonesia', countryCode: 'ID', lat: -8.41, lng: 115.19, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indonesian Rupiah', currencySymbol: 'Rp', population: '4.4M', metroPopulation: '4.4M', phoneCode: '+62 361', language: 'Indonesian, Balinese',
+      climate: 'Tropical with hot weather year-round (27-30°C). Rainy season November-March.',
+      attractions: ['Ubud', 'Tanah Lot', 'Uluwatu', 'Tegallalang Rice Terraces', 'Seminyak', 'Kuta Beach', 'Nusa Dua', 'Tirta Empul', 'Mount Batur', 'Besakih Temple'],
+      demographics: 'Island province. Hindu majority in Muslim nation. Tourism and arts.',
+      seoContent: {
+        intro: 'Bali, Island of the Gods, operates on Central Indonesia Time (WITA/UTC+8). This Hindu island paradise offers temples, rice terraces, beaches, and a spiritual atmosphere.',
+        timezoneFacts: '1 hour ahead of Jakarta. Indonesia spans 3 time zones.',
+        bestTimeToVisit: 'April-October for dry season. December-March rainy. Always tourists.',
+        businessHours: 'Tourist areas open late. Nyepi (Day of Silence) means total shutdown.',
+        timeDifference: 'Bali is always UTC+8. When noon: NYC 11 PM (-1), London 4 AM.',
+        daylightSaving: 'Indonesia does NOT observe DST.',
+        localTips: 'Respect temple dress codes. Ubud for culture, Seminyak for beaches. Scooter rentals common.',
+        transportation: 'Grab available. Ngurah Rai Airport (DPS) in south.',
+        emergencyNumbers: 'Emergency: 112.',
+        publicHolidays: 'Indonesian holidays. Nyepi (March), Galungan, Hindu ceremonies.'
+      }
+    }
+  },
+  { slug: 'jerusalem', city: 'Jerusalem', timezone: 'Asia/Jerusalem', country: 'Israel', countryCode: 'IL', lat: 31.77, lng: 35.23, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Israeli Shekel', currencySymbol: '₪', population: '950K', metroPopulation: '1.3M', phoneCode: '+972 2', language: 'Hebrew, Arabic',
+      climate: 'Mediterranean with hot dry summers (24-30°C) and cool wet winters (6-12°C).',
+      attractions: ['Western Wall', 'Church of Holy Sepulchre', 'Dome of the Rock', 'Mount of Olives', 'Yad Vashem', 'Israel Museum', 'Via Dolorosa', 'Jewish Quarter', 'Mahane Yehuda Market', 'Dead Sea nearby'],
+      demographics: 'Holy city for three religions. Capital (disputed). Ancient and modern.',
+      seoContent: {
+        intro: 'Jerusalem, holy to three faiths, operates on Israel Standard Time (IST/UTC+2). This ancient city sacred to Jews, Christians, and Muslims is one of the world\'s most significant religious sites.',
+        timezoneFacts: 'Israel uses its own DST schedule, different from Europe.',
+        bestTimeToVisit: 'March-May and September-November for pleasant weather. Avoid major holidays if crowds concern.',
+        businessHours: 'Shabbat (Friday sunset to Saturday sunset) means closures. Muslim Friday prayers.',
+        timeDifference: 'Jerusalem is UTC+2 (IST) / UTC+3 (IDT). When noon: NYC 5 AM, London 10 AM.',
+        daylightSaving: 'Israel DST typically March to October.',
+        localTips: 'Dress modestly at holy sites. Shabbat transforms the city. Dead Sea day trip.',
+        transportation: 'Light rail. Buses (not on Shabbat). Ben Gurion Airport (TLV) 50km.',
+        emergencyNumbers: 'Emergency: 100 (police), 101 (ambulance).',
+        publicHolidays: 'Jewish holidays, Muslim holidays, Christian holidays - complex calendar.'
+      }
+    }
+  },
+  { slug: 'abu-dhabi', city: 'Abu Dhabi', timezone: 'Asia/Dubai', country: 'United Arab Emirates', countryCode: 'AE', lat: 24.45, lng: 54.37, tier: 3, continent: 'asia',
+    info: {
+      currency: 'UAE Dirham', currencySymbol: 'AED', population: '1.5M', metroPopulation: '2.9M', phoneCode: '+971 2', language: 'Arabic, English',
+      climate: 'Hot desert with very hot summers (35-45°C) and warm winters (15-25°C).',
+      attractions: ['Sheikh Zayed Grand Mosque', 'Louvre Abu Dhabi', 'Corniche', 'Ferrari World', 'Yas Island', 'Emirates Palace', 'Qasr Al Watan', 'Saadiyat Island', 'Heritage Village', 'Liwa Oasis'],
+      demographics: 'UAE capital. Oil wealth. More conservative than Dubai. F1 circuit.',
+      seoContent: {
+        intro: 'Abu Dhabi, UAE\'s capital, operates on Gulf Standard Time (GST/UTC+4). The oil-rich emirate offers the stunning Sheikh Zayed Mosque, world-class museums, and a more traditional atmosphere than Dubai.',
+        timezoneFacts: 'Same as Dubai. 4 hours ahead of London. No DST.',
+        bestTimeToVisit: 'November-March for pleasant weather. Summer extremely hot.',
+        businessHours: 'Friday is Islamic holy day. Malls open late.',
+        timeDifference: 'Abu Dhabi is always UTC+4. When noon: NYC 3 AM, London 8 AM.',
+        daylightSaving: 'UAE does NOT observe DST.',
+        localTips: 'Sheikh Zayed Mosque free but dress code strict. Ferrari World for thrills. More conservative than Dubai.',
+        transportation: 'Buses and taxis. Abu Dhabi Airport (AUH) 30km.',
+        emergencyNumbers: 'Emergency: 999.',
+        publicHolidays: 'Islamic holidays, UAE National Day (December 2).'
+      }
+    }
+  },
+  { slug: 'doha', city: 'Doha', timezone: 'Asia/Qatar', country: 'Qatar', countryCode: 'QA', lat: 25.29, lng: 51.53, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Qatari Riyal', currencySymbol: 'QAR', population: '2.4M', metroPopulation: '2.4M', phoneCode: '+974', language: 'Arabic, English',
+      climate: 'Hot desert with very hot summers (35-45°C) and mild winters (15-25°C).',
+      attractions: ['Museum of Islamic Art', 'Souq Waqif', 'The Pearl', 'Katara Cultural Village', 'Aspire Zone', 'Corniche', 'National Museum', 'Education City', 'Al Zubarah Fort', 'Desert Safari'],
+      demographics: 'Qatar capital. World Cup 2022 host. Wealthy and rapidly developing.',
+      seoContent: {
+        intro: 'Doha, Qatar\'s futuristic capital, operates on Arabia Standard Time (AST/UTC+3). This wealthy Gulf city hosted the 2022 World Cup and combines Arab tradition with ambitious modernity.',
+        timezoneFacts: 'UTC+3, 1 hour behind Dubai. No DST.',
+        bestTimeToVisit: 'November-March for pleasant weather. Summer unbearably hot.',
+        businessHours: 'Friday is holy day. Malls open late. Ramadan affects hours.',
+        timeDifference: 'Doha is always UTC+3. When noon: NYC 4 AM, London 9 AM, Dubai 1 PM.',
+        daylightSaving: 'Qatar does NOT observe DST.',
+        localTips: 'Museum of Islamic Art is free. Souq Waqif for atmosphere. Modest dress recommended.',
+        transportation: 'Metro modern and expanding. Hamad Airport (DOH) 15km.',
+        emergencyNumbers: 'Emergency: 999.',
+        publicHolidays: 'Islamic holidays, Qatar National Day (December 18).'
+      }
+    }
+  },
+  { slug: 'riyadh', city: 'Riyadh', timezone: 'Asia/Riyadh', country: 'Saudi Arabia', countryCode: 'SA', lat: 24.77, lng: 46.74, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Saudi Riyal', currencySymbol: 'SAR', population: '7.7M', metroPopulation: '8M', phoneCode: '+966 11', language: 'Arabic',
+      climate: 'Hot desert with very hot summers (35-45°C) and cool winters (10-20°C).',
+      attractions: ['Kingdom Centre', 'Masmak Fortress', 'National Museum', 'Diriyah', 'Edge of the World', 'Boulevard Riyadh', 'Al Faisaliah Tower', 'Riyadh Zoo', 'King Abdulaziz Historical Center', 'Red Sand Dunes'],
+      demographics: 'Saudi capital. Conservative Islamic city. Opening to tourism.',
+      seoContent: {
+        intro: 'Riyadh, Saudi Arabia\'s capital, operates on Arabia Standard Time (AST/UTC+3). The kingdom\'s largest city is transforming under Vision 2030, opening to tourism while maintaining Islamic traditions.',
+        timezoneFacts: 'UTC+3. Same as Qatar and Kuwait. No DST.',
+        bestTimeToVisit: 'November-February for cooler weather. Summer extremely hot.',
+        businessHours: 'Prayer times affect business. Friday is holy day. Malls popular evenings.',
+        timeDifference: 'Riyadh is always UTC+3. When noon: NYC 4 AM, London 9 AM.',
+        daylightSaving: 'Saudi Arabia does NOT observe DST.',
+        localTips: 'Tourist visas now available. Modest dress required. Edge of the World dramatic desert.',
+        transportation: 'Metro opening. Taxis and Uber. King Khalid Airport (RUH) 35km.',
+        emergencyNumbers: 'Emergency: 999.',
+        publicHolidays: 'Islamic holidays, Saudi National Day (September 23).'
+      }
+    }
+  },
+  { slug: 'jeddah', city: 'Jeddah', timezone: 'Asia/Riyadh', country: 'Saudi Arabia', countryCode: 'SA', lat: 21.49, lng: 39.19, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Saudi Riyal', currencySymbol: 'SAR', population: '4.7M', metroPopulation: '5M', phoneCode: '+966 12', language: 'Arabic',
+      climate: 'Hot desert with very hot humid summers (30-40°C) and warm winters (20-28°C). Red Sea coast.',
+      attractions: ['Al-Balad Old Town', 'Jeddah Corniche', 'King Fahd Fountain', 'Red Sea Mall', 'Floating Mosque', 'Jeddah Waterfront', 'Al-Rahma Mosque', 'Nasseef House', 'Fakieh Aquarium', 'Gateway to Mecca'],
+      demographics: 'Gateway to Mecca. Red Sea port. More cosmopolitan than Riyadh.',
+      seoContent: {
+        intro: 'Jeddah, gateway to the holy cities, operates on Arabia Standard Time (AST/UTC+3). Saudi Arabia\'s second city on the Red Sea is more cosmopolitan and the traditional entry point for Hajj pilgrims.',
+        timezoneFacts: 'Same as Riyadh. Gateway to Mecca (non-Muslims cannot enter Mecca).',
+        bestTimeToVisit: 'October-April for pleasant weather. Summer very hot and humid.',
+        businessHours: 'Prayer times affect business. More relaxed than Riyadh.',
+        timeDifference: 'Jeddah is always UTC+3. When noon: NYC 4 AM, London 9 AM.',
+        daylightSaving: 'Saudi Arabia does NOT observe DST.',
+        localTips: 'Al-Balad UNESCO old town. Non-Muslims cannot visit Mecca. Red Sea diving possible.',
+        transportation: 'Taxis and Uber. King Abdulaziz Airport (JED) 19km.',
+        emergencyNumbers: 'Emergency: 999.',
+        publicHolidays: 'Islamic holidays. Hajj season (varies with lunar calendar).'
+      }
+    }
+  },
+  { slug: 'karachi', city: 'Karachi', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 24.86, lng: 67.01, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Pakistani Rupee', currencySymbol: '₨', population: '16M', metroPopulation: '16M', phoneCode: '+92 21', language: 'Urdu, English, Sindhi',
+      climate: 'Hot desert with hot summers (30-35°C) and mild winters (13-25°C). Monsoon July-August.',
+      attractions: ['Clifton Beach', 'Mazar-e-Quaid', 'Port Grand', 'Mohatta Palace', 'Frere Hall', 'PAF Museum', 'National Museum', 'Empress Market', 'Sea View', 'Karachi Zoo'],
+      demographics: 'Pakistan\'s largest city. Economic hub. Port city. Diverse population.',
+      seoContent: {
+        intro: 'Karachi, Pakistan\'s economic powerhouse, operates on Pakistan Standard Time (PKT/UTC+5). This megacity on the Arabian Sea is the country\'s financial center and largest city.',
+        timezoneFacts: 'UTC+5. 30 minutes behind India despite being further west.',
+        bestTimeToVisit: 'November-February for pleasant weather. Monsoon July-August.',
+        businessHours: 'Shops 10 AM to 10 PM. Friday prayers 1-2 PM.',
+        timeDifference: 'Karachi is always UTC+5. When noon: NYC 2 AM, London 7 AM.',
+        daylightSaving: 'Pakistan does NOT observe DST.',
+        localTips: 'Biryani is essential. Clifton Beach in evening. Check travel advisories.',
+        transportation: 'Buses and rickshaws. Jinnah Airport (KHI) 15km.',
+        emergencyNumbers: 'Emergency: 115.',
+        publicHolidays: 'Pakistani and Islamic holidays. Independence Day (August 14).'
+      }
+    }
+  },
+  { slug: 'dhaka', city: 'Dhaka', timezone: 'Asia/Dhaka', country: 'Bangladesh', countryCode: 'BD', lat: 23.81, lng: 90.41, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Bangladeshi Taka', currencySymbol: '৳', population: '22M', metroPopulation: '22M', phoneCode: '+880 2', language: 'Bengali, English',
+      climate: 'Tropical monsoon with hot humid summers (30-35°C) and mild winters (12-25°C). Monsoon June-October.',
+      attractions: ['Lalbagh Fort', 'Ahsan Manzil', 'National Parliament', 'Star Mosque', 'Dhakeshwari Temple', 'Old Dhaka', 'Liberation War Museum', 'Sadarghat', 'Sonargaon', 'National Museum'],
+      demographics: 'Bangladesh capital. One of world\'s most densely populated cities. Garment industry.',
+      seoContent: {
+        intro: 'Dhaka, Bangladesh\'s vibrant capital, operates on Bangladesh Standard Time (BST/UTC+6). One of the world\'s most densely populated cities, Dhaka is chaotic, energetic, and full of life.',
+        timezoneFacts: 'UTC+6. Between India and Myanmar time zones.',
+        bestTimeToVisit: 'November-February for dry and cool weather. Monsoon June-October.',
+        businessHours: 'Shops 10 AM to 9 PM. Friday is holy day.',
+        timeDifference: 'Dhaka is always UTC+6. When noon: NYC 1 AM, London 6 AM.',
+        daylightSaving: 'Bangladesh does NOT observe DST.',
+        localTips: 'Traffic is legendary. Rickshaws everywhere. Old Dhaka is fascinating chaos.',
+        transportation: 'Rickshaws, buses, CNG autos. Hazrat Shahjalal Airport (DAC) 20km.',
+        emergencyNumbers: 'Emergency: 999.',
+        publicHolidays: 'Bangladeshi and Islamic holidays. Independence Day (March 26).'
+      }
+    }
+  },
+  { slug: 'kathmandu', city: 'Kathmandu', timezone: 'Asia/Kathmandu', country: 'Nepal', countryCode: 'NP', lat: 27.72, lng: 85.32, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Nepalese Rupee', currencySymbol: 'Rs', population: '1.4M', metroPopulation: '3M', phoneCode: '+977 1', language: 'Nepali, English',
+      climate: 'Subtropical highland with warm summers (20-30°C) and cold winters (2-12°C). Monsoon June-September.',
+      attractions: ['Durbar Square', 'Swayambhunath', 'Boudhanath', 'Pashupatinath', 'Thamel', 'Patan', 'Bhaktapur', 'Garden of Dreams', 'Narayanhiti Palace', 'Everest flights'],
+      demographics: 'Nepal\'s capital. Gateway to Himalayas. Buddhist and Hindu heritage.',
+      seoContent: {
+        intro: 'Kathmandu, Nepal\'s ancient capital, operates on Nepal Time (NPT/UTC+5:45). This Himalayan city is the gateway to Everest, filled with temples, stupas, and medieval squares.',
+        timezoneFacts: 'UTC+5:45 - one of few places with 45-minute offset.',
+        bestTimeToVisit: 'October-November for clear skies and festivals. March-May for spring. Avoid monsoon.',
+        businessHours: 'Shops 10 AM to 8 PM. Thamel tourist area open late.',
+        timeDifference: 'Kathmandu is always UTC+5:45. When noon: NYC 1:15 AM, London 6:15 AM.',
+        daylightSaving: 'Nepal does NOT observe DST.',
+        localTips: 'Altitude 1,400m - acclimatize before trekking. Dal bhat is staple. Negotiate taxi fares.',
+        transportation: 'Taxis, tempos, buses. Tribhuvan Airport (KTM) 6km.',
+        emergencyNumbers: 'Emergency: 100 (police), 102 (ambulance).',
+        publicHolidays: 'Many Hindu and Buddhist festivals. Dashain (October) biggest.'
+      }
+    }
+  },
+  { slug: 'colombo', city: 'Colombo', timezone: 'Asia/Colombo', country: 'Sri Lanka', countryCode: 'LK', lat: 6.93, lng: 79.85, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Sri Lankan Rupee', currencySymbol: 'Rs', population: '750K', metroPopulation: '5.6M', phoneCode: '+94 11', language: 'Sinhala, Tamil, English',
+      climate: 'Tropical monsoon with warm weather year-round (27-32°C). Two monsoon seasons.',
+      attractions: ['Galle Face Green', 'Gangaramaya Temple', 'National Museum', 'Pettah Market', 'Independence Square', 'Red Mosque', 'Beira Lake', 'Dutch Hospital', 'Mount Lavinia', 'Colombo Fort'],
+      demographics: 'Sri Lanka\'s commercial capital. Colonial heritage. Multi-ethnic.',
+      seoContent: {
+        intro: 'Colombo, Sri Lanka\'s bustling capital, operates on Sri Lanka Standard Time (SLST/UTC+5:30). This tropical city mixes colonial heritage, Buddhist temples, and modern development.',
+        timezoneFacts: 'Same as India (UTC+5:30). Official capital is Sri Jayawardenepura Kotte.',
+        bestTimeToVisit: 'December-March for west coast dry season. Year-round destination.',
+        businessHours: 'Shops 10 AM to 8 PM. Poya (full moon) days are holidays.',
+        timeDifference: 'Colombo is always UTC+5:30. When noon: NYC 1:30 AM, London 6:30 AM.',
+        daylightSaving: 'Sri Lanka does NOT observe DST.',
+        localTips: 'Kottu roti street food. Galle 2 hours south. Poya days mean alcohol restrictions.',
+        transportation: 'Tuk-tuks, buses, trains. Bandaranaike Airport (CMB) 32km.',
+        emergencyNumbers: 'Emergency: 119.',
+        publicHolidays: 'Buddhist Poya days (monthly), Sinhalese/Tamil New Year (April).'
+      }
+    }
+  },
+  { slug: 'yangon', city: 'Yangon', timezone: 'Asia/Yangon', country: 'Myanmar', countryCode: 'MM', lat: 16.87, lng: 96.20, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Myanmar Kyat', currencySymbol: 'K', population: '5.4M', metroPopulation: '5.4M', phoneCode: '+95 1', language: 'Burmese',
+      climate: 'Tropical monsoon with hot humid summers (30-38°C) and mild winters (18-32°C). Monsoon May-October.',
+      attractions: ['Shwedagon Pagoda', 'Sule Pagoda', 'Bogyoke Market', 'Colonial District', 'Inya Lake', 'Kandawgyi Lake', 'People\'s Park', 'Strand Hotel', 'Chaukhtatgyi Buddha', 'Secretariat'],
+      demographics: 'Myanmar\'s largest city. Former capital. Colonial architecture.',
+      seoContent: {
+        intro: 'Yangon (Rangoon), Myanmar\'s largest city, operates on Myanmar Time (MMT/UTC+6:30). This former capital mesmerizes with the golden Shwedagon Pagoda and crumbling colonial grandeur.',
+        timezoneFacts: 'UTC+6:30 - unusual 30-minute offset. Capital moved to Naypyidaw in 2006.',
+        bestTimeToVisit: 'November-February for dry and cool weather. Check current situation.',
+        businessHours: 'Shops 9 AM to 9 PM. Pagodas dawn to dusk.',
+        timeDifference: 'Yangon is always UTC+6:30. When noon: NYC 12:30 AM, London 5:30 AM.',
+        daylightSaving: 'Myanmar does NOT observe DST.',
+        localTips: 'Shwedagon at sunset is magical. Modest dress at pagodas. Check travel advisories.',
+        transportation: 'Taxis and buses. Yangon Airport (RGN) 15km.',
+        emergencyNumbers: 'Emergency: 199.',
+        publicHolidays: 'Buddhist holidays. Thingyan Water Festival (April).'
+      }
+    }
+  },
+  { slug: 'phnom-penh', city: 'Phnom Penh', timezone: 'Asia/Phnom_Penh', country: 'Cambodia', countryCode: 'KH', lat: 11.56, lng: 104.92, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Cambodian Riel / US Dollar', currencySymbol: '៛/$', population: '2.3M', metroPopulation: '2.3M', phoneCode: '+855 23', language: 'Khmer, English',
+      climate: 'Tropical monsoon with hot weather year-round (27-35°C). Monsoon May-October.',
+      attractions: ['Royal Palace', 'Silver Pagoda', 'Tuol Sleng', 'Killing Fields', 'National Museum', 'Central Market', 'Wat Phnom', 'Riverside', 'Russian Market', 'Sisowath Quay'],
+      demographics: 'Cambodia\'s capital. Khmer Rouge history. French colonial heritage.',
+      seoContent: {
+        intro: 'Phnom Penh, Cambodia\'s capital, operates on Indochina Time (ICT/UTC+7). This riverside city combines French colonial elegance, Khmer heritage, and sobering recent history.',
+        timezoneFacts: 'Same as Bangkok and Vietnam. US dollar widely used.',
+        bestTimeToVisit: 'November-March for dry and cool weather. April (Khmer New Year) festive.',
+        businessHours: 'Shops 8 AM to 9 PM. Riverside area lively evenings.',
+        timeDifference: 'Phnom Penh is always UTC+7. When noon: NYC midnight, London 5 AM.',
+        daylightSaving: 'Cambodia does NOT observe DST.',
+        localTips: 'Tuol Sleng and Killing Fields are important but heavy. Fish amok is national dish.',
+        transportation: 'Tuk-tuks and motos. Phnom Penh Airport (PNH) 10km.',
+        emergencyNumbers: 'Emergency: 117 (police), 119 (ambulance).',
+        publicHolidays: 'Cambodian holidays. Khmer New Year (April), Water Festival (November).'
+      }
+    }
+  },
   // Oceania
-  { slug: 'brisbane', city: 'Brisbane', timezone: 'Australia/Brisbane', country: 'Australia', countryCode: 'AU', lat: -27.47, lng: 153.03, tier: 3, continent: 'oceania' },
-  { slug: 'perth', city: 'Perth', timezone: 'Australia/Perth', country: 'Australia', countryCode: 'AU', lat: -31.95, lng: 115.86, tier: 3, continent: 'oceania' },
-  { slug: 'wellington', city: 'Wellington', timezone: 'Pacific/Auckland', country: 'New Zealand', countryCode: 'NZ', lat: -41.29, lng: 174.78, tier: 3, continent: 'oceania' },
-  { slug: 'fiji', city: 'Suva', timezone: 'Pacific/Fiji', country: 'Fiji', countryCode: 'FJ', lat: -18.14, lng: 178.44, tier: 3, continent: 'oceania' },
+  { slug: 'brisbane', city: 'Brisbane', timezone: 'Australia/Brisbane', country: 'Australia', countryCode: 'AU', lat: -27.47, lng: 153.03, tier: 3, continent: 'oceania',
+    info: {
+      currency: 'Australian Dollar', currencySymbol: 'A$', population: '2.5M', metroPopulation: '2.6M', phoneCode: '+61 7', language: 'English',
+      climate: 'Humid subtropical with hot humid summers (21-30°C) and mild dry winters (10-21°C).',
+      attractions: ['South Bank', 'Story Bridge', 'Lone Pine Koala Sanctuary', 'GOMA', 'Moreton Island', 'Mt Coot-tha', 'Queen Street Mall', 'City Botanic Gardens', 'Fortitude Valley', 'Brisbane River'],
+      demographics: 'Queensland capital. Fastest growing Australian city. 2032 Olympics host.',
+      seoContent: {
+        intro: 'Brisbane, Queensland\'s sunny capital, operates on Australian Eastern Standard Time (AEST/UTC+10). This laid-back city on the Brisbane River will host the 2032 Olympics.',
+        timezoneFacts: 'Queensland doesn\'t observe DST. Same as Sydney in winter, 1 hour behind in summer.',
+        bestTimeToVisit: 'Year-round destination. Winter (June-August) is ideal. Summer hot and humid.',
+        businessHours: 'Shops 9 AM to 5 PM. Late night Thursday. South Bank lively evenings.',
+        timeDifference: 'Brisbane is always UTC+10. When noon: NYC 9 PM (-1), London 2 AM.',
+        daylightSaving: 'Queensland does NOT observe DST.',
+        localTips: 'South Bank has free beach. Koalas at Lone Pine. Gold Coast 1 hour south.',
+        transportation: 'Trains, buses, ferries. Brisbane Airport (BNE) 15km.',
+        emergencyNumbers: 'Emergency: 000.',
+        publicHolidays: 'Australian holidays. Ekka (August).'
+      }
+    }
+  },
+  { slug: 'perth', city: 'Perth', timezone: 'Australia/Perth', country: 'Australia', countryCode: 'AU', lat: -31.95, lng: 115.86, tier: 3, continent: 'oceania',
+    info: {
+      currency: 'Australian Dollar', currencySymbol: 'A$', population: '2.1M', metroPopulation: '2.2M', phoneCode: '+61 8', language: 'English',
+      climate: 'Mediterranean with hot dry summers (25-32°C) and mild wet winters (8-18°C).',
+      attractions: ['Kings Park', 'Fremantle', 'Rottnest Island', 'Elizabeth Quay', 'Perth Mint', 'Swan Valley', 'Cottesloe Beach', 'Perth Zoo', 'Bell Tower', 'Pinnacles Desert'],
+      demographics: 'Western Australia capital. Most isolated major city. Mining wealth.',
+      seoContent: {
+        intro: 'Perth, Australia\'s most isolated capital, operates on Australian Western Standard Time (AWST/UTC+8). This sunny city on the Swan River offers beaches, wine regions, and unique wildlife.',
+        timezoneFacts: '2-3 hours behind Sydney depending on DST. Closer to Singapore than Sydney.',
+        bestTimeToVisit: 'September-May for best weather. Spring wildflowers spectacular.',
+        businessHours: 'Shops 9 AM to 5 PM. Fremantle weekends lively.',
+        timeDifference: 'Perth is always UTC+8. When noon: NYC 11 PM (-1), London 4 AM, Sydney 3 PM.',
+        daylightSaving: 'Western Australia does NOT observe DST.',
+        localTips: 'Rottnest Island for quokkas. Fremantle for coffee culture. Sunset at Cottesloe.',
+        transportation: 'Trains and buses. Perth Airport (PER) 12km.',
+        emergencyNumbers: 'Emergency: 000.',
+        publicHolidays: 'Australian holidays. WA Day (June).'
+      }
+    }
+  },
+  { slug: 'wellington', city: 'Wellington', timezone: 'Pacific/Auckland', country: 'New Zealand', countryCode: 'NZ', lat: -41.29, lng: 174.78, tier: 3, continent: 'oceania',
+    info: {
+      currency: 'New Zealand Dollar', currencySymbol: 'NZ$', population: '215K', metroPopulation: '420K', phoneCode: '+64 4', language: 'English, Māori',
+      climate: 'Oceanic with mild temperatures (8-20°C). Very windy. Rain possible any time.',
+      attractions: ['Te Papa Museum', 'Wellington Cable Car', 'Cuba Street', 'Mount Victoria', 'Zealandia', 'Weta Workshop', 'Parliament', 'Oriental Bay', 'Botanic Gardens', 'Lambton Quay'],
+      demographics: 'New Zealand capital. Compact and creative. Film industry (Lord of the Rings).',
+      seoContent: {
+        intro: 'Wellington, New Zealand\'s windy capital, operates on New Zealand Standard Time (NZST/UTC+12/+13). This compact, creative city is home to Te Papa and the Weta Workshop.',
+        timezoneFacts: 'Among first places to see each new day. 12-13 hours ahead of London.',
+        bestTimeToVisit: 'December-March for summer. Always pack layers. Wind is constant.',
+        businessHours: 'Shops 9 AM to 5 PM. Cuba Street cafes open late.',
+        timeDifference: 'Wellington is UTC+12 (NZST) / UTC+13 (NZDT). When noon: NYC 6 PM (-1), London 11 PM (-1).',
+        daylightSaving: 'NZDT runs last Sunday September to first Sunday April.',
+        localTips: 'Te Papa is free and excellent. Weta Workshop for film fans. Craft beer scene strong.',
+        transportation: 'Buses and cable car. Wellington Airport (WLG) 8km.',
+        emergencyNumbers: 'Emergency: 111.',
+        publicHolidays: 'NZ holidays. Wellington Anniversary (January 22).'
+      }
+    }
+  },
+  { slug: 'fiji', city: 'Suva', timezone: 'Pacific/Fiji', country: 'Fiji', countryCode: 'FJ', lat: -18.14, lng: 178.44, tier: 3, continent: 'oceania',
+    info: {
+      currency: 'Fijian Dollar', currencySymbol: 'FJ$', population: '95K', metroPopulation: '180K', phoneCode: '+679', language: 'Fijian, Hindi, English',
+      climate: 'Tropical oceanic with hot humid weather year-round (23-30°C). Wet season November-April.',
+      attractions: ['Fiji Museum', 'Colo-i-Suva Forest Park', 'Suva Municipal Market', 'Thurston Gardens', 'University of the South Pacific', 'Albert Park', 'Sacred Heart Cathedral', 'Government Buildings', 'Suva Point', 'Outer Islands'],
+      demographics: 'Fiji\'s capital. Mix of Fijian and Indo-Fijian cultures. Government center.',
+      seoContent: {
+        intro: 'Suva, Fiji\'s capital, operates on Fiji Time (FJT/UTC+12). While most visitors head to resort islands, Suva offers authentic Fijian culture and colonial heritage.',
+        timezoneFacts: 'Among first countries to see new day. Resort islands use same timezone.',
+        bestTimeToVisit: 'May-October for dry season. November-April wet and humid.',
+        businessHours: 'Shops 8 AM to 5 PM. Relaxed island pace.',
+        timeDifference: 'Fiji is UTC+12 / +13. When noon: NYC 7 PM (-1), London midnight.',
+        daylightSaving: 'Fiji observes DST November-January.',
+        localTips: 'Bula means hello. Kava ceremony important. Most tourists go to resort islands.',
+        transportation: 'Buses and taxis. Nausori Airport (SUV) 23km. Nadi for international.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'Fiji holidays. Fiji Day (October 10).'
+      }
+    }
+  },
 
   // Africa
-  { slug: 'marrakech', city: 'Marrakech', timezone: 'Africa/Casablanca', country: 'Morocco', countryCode: 'MA', lat: 31.63, lng: -8.01, tier: 3, continent: 'africa' },
-  { slug: 'tunis', city: 'Tunis', timezone: 'Africa/Tunis', country: 'Tunisia', countryCode: 'TN', lat: 36.81, lng: 10.17, tier: 3, continent: 'africa' },
-  { slug: 'algiers', city: 'Algiers', timezone: 'Africa/Algiers', country: 'Algeria', countryCode: 'DZ', lat: 36.74, lng: 3.09, tier: 3, continent: 'africa' },
-  { slug: 'addis-ababa', city: 'Addis Ababa', timezone: 'Africa/Addis_Ababa', country: 'Ethiopia', countryCode: 'ET', lat: 9.02, lng: 38.75, tier: 3, continent: 'africa' },
-  { slug: 'accra', city: 'Accra', timezone: 'Africa/Accra', country: 'Ghana', countryCode: 'GH', lat: 5.56, lng: -0.19, tier: 3, continent: 'africa' },
-  { slug: 'dar-es-salaam', city: 'Dar es Salaam', timezone: 'Africa/Dar_es_Salaam', country: 'Tanzania', countryCode: 'TZ', lat: -6.79, lng: 39.21, tier: 3, continent: 'africa' },
+  { slug: 'marrakech', city: 'Marrakech', timezone: 'Africa/Casablanca', country: 'Morocco', countryCode: 'MA', lat: 31.63, lng: -8.01, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Moroccan Dirham', currencySymbol: 'MAD', population: '1M', metroPopulation: '1.3M', phoneCode: '+212 5', language: 'Arabic, Berber, French',
+      climate: 'Semi-arid with hot summers (28-38°C) and mild winters (8-18°C). Very dry.',
+      attractions: ['Jemaa el-Fnaa', 'Bahia Palace', 'Ben Youssef Madrasa', 'Majorelle Garden', 'Medina', 'Koutoubia Mosque', 'Saadian Tombs', 'Souks', 'El Badi Palace', 'Atlas Mountains nearby'],
+      demographics: 'Morocco\'s Red City. Tourism hub. Ancient medina. Berber heritage.',
+      seoContent: {
+        intro: 'Marrakech, Morocco\'s Red City, operates on Western European Time (WET/UTC+0 or +1). This ancient imperial city captivates with its medina, souks, and Jemaa el-Fnaa square.',
+        timezoneFacts: 'Morocco uses WET/WEST but suspends DST during Ramadan.',
+        bestTimeToVisit: 'March-May and September-November. Summer extremely hot.',
+        businessHours: 'Souks 9 AM to 9 PM. Friday prayers close some shops.',
+        timeDifference: 'Marrakech is UTC+0 or +1. When noon: NYC 7 AM, London 12 PM.',
+        daylightSaving: 'Complex DST - suspended during Ramadan.',
+        localTips: 'Bargaining expected in souks. Jemaa el-Fnaa transforms at night. Riads are traditional stays.',
+        transportation: 'Taxis and horse carriages. Marrakech Menara Airport (RAK) 6km.',
+        emergencyNumbers: 'Emergency: 190 (police), 150 (fire).',
+        publicHolidays: 'Moroccan and Islamic holidays.'
+      }
+    }
+  },
+  { slug: 'tunis', city: 'Tunis', timezone: 'Africa/Tunis', country: 'Tunisia', countryCode: 'TN', lat: 36.81, lng: 10.17, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Tunisian Dinar', currencySymbol: 'TND', population: '700K', metroPopulation: '2.7M', phoneCode: '+216 71', language: 'Arabic, French',
+      climate: 'Mediterranean with hot dry summers (26-33°C) and mild wet winters (8-16°C).',
+      attractions: ['Medina of Tunis', 'Bardo Museum', 'Carthage', 'Sidi Bou Said', 'Zitouna Mosque', 'Avenue Bourguiba', 'La Marsa', 'Belvédère Park', 'Dar Ben Abdallah', 'Souk'],
+      demographics: 'Tunisia\'s capital. Arab Spring birthplace. French colonial heritage.',
+      seoContent: {
+        intro: 'Tunis, Tunisia\'s capital, operates on Central European Time (CET/UTC+1). This North African city offers a UNESCO medina, ancient Carthage, and the charming Sidi Bou Said.',
+        timezoneFacts: 'Same as Paris. Tunisia doesn\'t observe DST.',
+        bestTimeToVisit: 'April-June and September-October. Summer hot. Winter mild.',
+        businessHours: 'Shops 9 AM to 7 PM. Medina souks all day. Friday prayers affect hours.',
+        timeDifference: 'Tunis is always UTC+1. When noon: NYC 6 AM, London 11 AM.',
+        daylightSaving: 'Tunisia does NOT observe DST.',
+        localTips: 'Carthage is a must-see. Sidi Bou Said for blue and white charm. French widely spoken.',
+        transportation: 'TGM train to suburbs. Tunis-Carthage Airport (TUN) 8km.',
+        emergencyNumbers: 'Emergency: 197 (police), 198 (fire).',
+        publicHolidays: 'Tunisian and Islamic holidays. Revolution Day (January 14).'
+      }
+    }
+  },
+  { slug: 'algiers', city: 'Algiers', timezone: 'Africa/Algiers', country: 'Algeria', countryCode: 'DZ', lat: 36.74, lng: 3.09, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Algerian Dinar', currencySymbol: 'DZD', population: '3.4M', metroPopulation: '5M', phoneCode: '+213 21', language: 'Arabic, Berber, French',
+      climate: 'Mediterranean with hot dry summers (25-32°C) and mild wet winters (9-17°C).',
+      attractions: ['Casbah', 'Notre-Dame d\'Afrique', 'Martyrs\' Memorial', 'Jardin d\'Essai', 'Great Mosque', 'National Museum', 'Place des Martyrs', 'Mediterranean coast', 'El Hamma', 'Botanical Garden'],
+      demographics: 'Algeria\'s capital. "White City" on Mediterranean. French colonial heritage.',
+      seoContent: {
+        intro: 'Algiers, Algeria\'s capital, operates on Central European Time (CET/UTC+1). The "White City" terraces down to the Mediterranean, with its UNESCO-listed Casbah.',
+        timezoneFacts: 'Same as Paris. Algeria doesn\'t observe DST.',
+        bestTimeToVisit: 'April-June and September-November. Summer hot. Winter mild and rainy.',
+        businessHours: 'Shops 9 AM to 6 PM. Friday is holy day.',
+        timeDifference: 'Algiers is always UTC+1. When noon: NYC 6 AM, London 11 AM.',
+        daylightSaving: 'Algeria does NOT observe DST.',
+        localTips: 'Casbah UNESCO site. Visa required for most. French helpful. Conservative dress.',
+        transportation: 'Metro (2 lines). Houari Boumediene Airport (ALG) 20km.',
+        emergencyNumbers: 'Emergency: 17 (police), 14 (fire).',
+        publicHolidays: 'Algerian and Islamic holidays. Independence Day (July 5).'
+      }
+    }
+  },
+  { slug: 'addis-ababa', city: 'Addis Ababa', timezone: 'Africa/Addis_Ababa', country: 'Ethiopia', countryCode: 'ET', lat: 9.02, lng: 38.75, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Ethiopian Birr', currencySymbol: 'ETB', population: '5.2M', metroPopulation: '5.5M', phoneCode: '+251 11', language: 'Amharic, English',
+      climate: 'Subtropical highland with mild temperatures year-round (10-25°C). Rainy June-September.',
+      attractions: ['National Museum (Lucy)', 'Holy Trinity Cathedral', 'Merkato', 'Entoto Hill', 'Red Terror Museum', 'Ethnological Museum', 'African Union HQ', 'Meskel Square', 'St. George Cathedral', 'Shiro Meda'],
+      demographics: 'Ethiopia\'s capital. AU headquarters. Highest capital in Africa. Ancient coffee culture.',
+      seoContent: {
+        intro: 'Addis Ababa, Ethiopia\'s capital, operates on East Africa Time (EAT/UTC+3). Africa\'s diplomatic capital hosts the African Union and preserves "Lucy," our oldest human ancestor.',
+        timezoneFacts: 'Ethiopia uses unique calendar (7-8 years behind Gregorian). New Year in September.',
+        bestTimeToVisit: 'October-May for dry season. June-September rainy but green.',
+        businessHours: 'Shops 8 AM to 8 PM. Ethiopian time counts differently (sunrise is 0).',
+        timeDifference: 'Addis is always UTC+3. When noon: NYC 4 AM, London 9 AM.',
+        daylightSaving: 'Ethiopia does NOT observe DST.',
+        localTips: 'Ethiopian coffee ceremony. Injera bread with everything. Altitude 2,400m - acclimatize.',
+        transportation: 'Light rail, buses. Bole Airport (ADD) 6km - major African hub.',
+        emergencyNumbers: 'Emergency: 991.',
+        publicHolidays: 'Ethiopian holidays. Ethiopian New Year (September 11).'
+      }
+    }
+  },
+  { slug: 'accra', city: 'Accra', timezone: 'Africa/Accra', country: 'Ghana', countryCode: 'GH', lat: 5.56, lng: -0.19, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Ghanaian Cedi', currencySymbol: 'GH₵', population: '2.5M', metroPopulation: '4.9M', phoneCode: '+233 30', language: 'English, Akan',
+      climate: 'Tropical savanna with hot weather year-round (24-32°C). Two rainy seasons.',
+      attractions: ['Jamestown', 'Kwame Nkrumah Memorial', 'Independence Square', 'Makola Market', 'National Museum', 'Labadi Beach', 'W.E.B. Du Bois Center', 'Osu Castle', 'Arts Centre', 'Oxford Street'],
+      demographics: 'Ghana\'s capital. Gateway to West Africa. Pan-African heritage.',
+      seoContent: {
+        intro: 'Accra, Ghana\'s capital, operates on Greenwich Mean Time (GMT/UTC+0). This vibrant West African capital combines colonial history, beaches, and Pan-African heritage.',
+        timezoneFacts: 'Same as London in winter. Ghana doesn\'t observe DST.',
+        bestTimeToVisit: 'November-March for dry season. August for Homowo festival.',
+        businessHours: 'Shops 8 AM to 6 PM. Markets open early.',
+        timeDifference: 'Accra is always UTC+0. When noon: NYC 7 AM, London 12 PM.',
+        daylightSaving: 'Ghana does NOT observe DST.',
+        localTips: '"Year of Return" resonates. Jollof rice debates are serious. Labadi Beach on weekends.',
+        transportation: 'Trotros (minibuses). Kotoka Airport (ACC) 10km.',
+        emergencyNumbers: 'Emergency: 191 (police), 192 (fire).',
+        publicHolidays: 'Ghanaian holidays. Independence Day (March 6), Founders\' Day.'
+      }
+    }
+  },
+  { slug: 'dar-es-salaam', city: 'Dar es Salaam', timezone: 'Africa/Dar_es_Salaam', country: 'Tanzania', countryCode: 'TZ', lat: -6.79, lng: 39.21, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Tanzanian Shilling', currencySymbol: 'TZS', population: '7.4M', metroPopulation: '7.4M', phoneCode: '+255 22', language: 'Swahili, English',
+      climate: 'Tropical with hot humid weather year-round (24-32°C). Heavy rains March-May.',
+      attractions: ['National Museum', 'Fish Market', 'Village Museum', 'Coco Beach', 'Kariakoo Market', 'Askari Monument', 'St. Joseph Cathedral', 'Bongoyo Island', 'Mwenge Carvers Market', 'Zanzibar ferry'],
+      demographics: 'Tanzania\'s largest city. Former capital. Swahili coast. Gateway to safari and Zanzibar.',
+      seoContent: {
+        intro: 'Dar es Salaam, Tanzania\'s largest city, operates on East Africa Time (EAT/UTC+3). This Swahili coast city is the gateway to Serengeti safaris and exotic Zanzibar.',
+        timezoneFacts: 'Same as Nairobi. Tanzania uses single timezone.',
+        bestTimeToVisit: 'June-October for dry season. Avoid March-May heavy rains.',
+        businessHours: 'Shops 8 AM to 6 PM. Ferry to Zanzibar runs daily.',
+        timeDifference: 'Dar is always UTC+3. When noon: NYC 4 AM, London 9 AM.',
+        daylightSaving: 'Tanzania does NOT observe DST.',
+        localTips: 'Gateway to Zanzibar (ferry or flight). Swahili greetings appreciated. Safari capital.',
+        transportation: 'Daladalas (minibuses). Julius Nyerere Airport (DAR) 13km.',
+        emergencyNumbers: 'Emergency: 112 or 114.',
+        publicHolidays: 'Tanzanian holidays. Union Day (April 26), Independence Day (December 9).'
+      }
+    }
+  },
 ]
 
 // Get cities by tier
