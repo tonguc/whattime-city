@@ -651,7 +651,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         
         {/* SEO Content Section */}
         {selectedCity.info?.seoContent && (
-          <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-8`}>
+          <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
             <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
               Time in {selectedCity.city}, {selectedCity.country}
             </h2>
@@ -678,11 +678,13 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         )}
         
         {/* About Section */}
-        <AboutSection
-          theme={theme}
-          isLight={isLight}
-          t={t}
-        />
+        <div className="mt-4">
+          <AboutSection
+            theme={theme}
+            isLight={isLight}
+            t={t}
+          />
+        </div>
         
         <footer className="mt-10 text-center">
           <div className={`flex flex-wrap justify-center gap-4 mb-4 text-sm ${theme.textMuted}`}>

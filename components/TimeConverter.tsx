@@ -130,7 +130,7 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
           
           {/* From Dropdown */}
           {showFromDropdown && !fromCity && fromSearch && filteredFromCities.length > 0 && (
-            <div className={`absolute z-20 w-full mt-1 rounded-xl border shadow-lg overflow-hidden ${
+            <div className={`absolute z-[9999] w-full mt-1 rounded-xl border shadow-lg overflow-hidden ${
               isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'
             }`}>
               {filteredFromCities.map(city => {
@@ -213,7 +213,7 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
           
           {/* To Dropdown */}
           {showToDropdown && !toCity && toSearch && filteredToCities.length > 0 && (
-            <div className={`absolute z-20 w-full mt-1 rounded-xl border shadow-lg overflow-hidden ${
+            <div className={`absolute z-[9999] w-full mt-1 rounded-xl border shadow-lg overflow-hidden ${
               isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'
             }`}>
               {filteredToCities.map(city => {
