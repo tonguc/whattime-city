@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import { translations, detectLanguage, Language } from '@/lib/translations'
+import ToolsSubNav from '@/components/ToolsSubNav'
 
 // Tool definitions
 const tools = [
@@ -157,6 +158,9 @@ export default function ToolsPage() {
             </span>
           </nav>
         </header>
+
+        {/* Tools Sub Navigation */}
+        <ToolsSubNav isLight={isLight} theme={theme} lang={lang} />
 
         {/* Page Title */}
         <div className="text-center mb-10">
