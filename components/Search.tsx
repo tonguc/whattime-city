@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { City, searchCities } from '@/lib/cities'
 import { Theme } from '@/lib/themes'
-import { getTimeOfDay } from '@/lib/sun-calculator'
 
 interface SearchProps {
   theme: Theme
@@ -16,16 +15,10 @@ export default function Search({ theme, currentTheme }: SearchProps) {
   const [results, setResults] = useState<City[]>([])
   const [isOpen, setIsOpen] = useState(false)
   const [selectedIndex, setSelectedIndex] = useState(0)
-  const [now, setNow] = useState(new Date())
   const inputRef = useRef<HTMLInputElement>(null)
   const router = useRouter()
   
   const isLight = ['day', 'light'].includes(currentTheme)
-  
-  useEffect(() => {
-    const timer = setInterval(() => setNow(new Date()), 1000)
-    return () => clearInterval(timer)
-  }, [])
   
   useEffect(() => {
     if (query.length >= 1) {
@@ -60,27 +53,12 @@ export default function Search({ theme, currentTheme }: SearchProps) {
     }
   }
   
-  const getCityTime = (city: City) => {
-    return now.toLocaleTimeString('en-US', {
-      timeZone: city.timezone,
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: false
-    })
-  }
-  
-  const getCityDayNight = (city: City) => {
-    const localTime = new Date(now.toLocaleString('en-US', { timeZone: city.timezone }))
-    const timeOfDay = getTimeOfDay(localTime, city.lat, city.lng)
-    return timeOfDay === 'day' || timeOfDay === 'dawn' || timeOfDay === 'dusk' ? '☀️' : '🌙'
-  }
-  
   return (
-    <div className="relative w-full sm:w-auto">
-      <div className={`flex items-center gap-2 px-4 py-2.5 rounded-full ${
-        isLight ? 'bg-white/80 shadow-sm' : 'bg-slate-800/80'
-      } backdrop-blur-xl border ${isLight ? 'border-slate-200/50' : 'border-slate-700/50'}`}>
-        <svg className={`w-4 h-4 ${isLight ? 'text-slate-500' : 'text-slate-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div className="relative">
+      <div className={`flex items-center gap-2 px-4 py-2 rounded-full ${
+        isLight ? 'bg-white/60' : 'bg-slate-800/60'
+      } backdrop-blur-xl`}>
+        <svg className={`w-4 h-4 ${isLight ? 'text-slate-400' : 'text-slate-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
         <input
@@ -90,8 +68,8 @@ export default function Search({ theme, currentTheme }: SearchProps) {
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={handleKeyDown}
           onFocus={() => query && setIsOpen(true)}
-          placeholder="Search (e.g. Tokyo, Berlin)"
-          className={`bg-transparent outline-none text-sm w-full sm:w-52 ${
+          placeholder="Search city..."
+          className={`bg-transparent outline-none text-sm w-36 sm:w-48 ${
             isLight ? 'text-slate-800 placeholder-slate-400' : 'text-white placeholder-slate-500'
           }`}
         />
@@ -111,20 +89,17 @@ export default function Search({ theme, currentTheme }: SearchProps) {
                   : ''
               } ${isLight ? 'hover:bg-slate-50' : 'hover:bg-slate-700/50'}`}
             >
-              <div className="flex items-center gap-3">
-                <span className="text-base">{getCityDayNight(city)}</span>
-                <div>
-                  <div className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>
-                    {city.city}
-                  </div>
-                  <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-                    {city.country}
-                  </div>
+              <div>
+                <div className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                  {city.city}
+                </div>
+                <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                  {city.country}
                 </div>
               </div>
-              <div className={`text-sm font-medium ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-                {getCityTime(city)}
-              </div>
+              <svg className={`w-4 h-4 ${isLight ? 'text-slate-400' : 'text-slate-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </button>
           ))}
         </div>

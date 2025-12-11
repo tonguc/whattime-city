@@ -46,27 +46,25 @@ export default function DigitalClock({ time, theme, themeData, use12Hour }: Digi
         }}
       >
         {/* Time digits with fixed width */}
-        <div className="flex items-center justify-center" style={{ fontVariantNumeric: 'tabular-nums' }}>
+        <div className="flex items-center" style={{ fontVariantNumeric: 'tabular-nums' }}>
           <span className={`inline-block text-right ${mainColor}`} style={{ width: '1.15em' }}>{h}</span>
           <span className={`${accentColor} animate-pulse`}>:</span>
           <span className={`inline-block text-center ${mainColor}`} style={{ width: '1.15em' }}>{m}</span>
           <span className={`${accentColor} animate-pulse`}>:</span>
           <span className={`inline-block text-center ${secColor}`} style={{ width: '1.15em' }}>{s}</span>
           
-          {/* AM/PM - only show in 12h mode */}
-          {use12Hour && (
-            <span 
-              className={`font-medium ${secColor}`}
-              style={{ 
-                fontSize: '0.3em',
-                width: '2.2em',
-                marginLeft: '0.2em',
-                textAlign: 'left'
-              }}
-            >
-              {period}
-            </span>
-          )}
+          {/* AM/PM with fixed width - always takes space */}
+          <span 
+            className={`font-medium ${use12Hour ? secColor : 'text-transparent'}`}
+            style={{ 
+              fontSize: '0.3em',
+              width: '2.2em',
+              marginLeft: '0.2em',
+              textAlign: 'left'
+            }}
+          >
+            {use12Hour ? period : 'AM'}
+          </span>
         </div>
       </div>
     </div>

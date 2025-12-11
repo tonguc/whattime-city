@@ -34,18 +34,18 @@ function getTimeDifference(timezone: string): { hours: number; minutes: number; 
   
   let text = ''
   if (diffMinutes === 0) {
-    text = 'Same timezone'
+    text = 'Aynı saat dilimi'
   } else if (diffMinutes > 0) {
     if (minutes === 0) {
-      text = `${hours} hours ahead`
+      text = `${hours} saat ileri`
     } else {
-      text = `${hours}h ${minutes}m ahead`
+      text = `${hours} saat ${minutes} dk ileri`
     }
   } else {
     if (minutes === 0) {
-      text = `${hours} hours behind`
+      text = `${hours} saat geri`
     } else {
-      text = `${hours}h ${minutes}m behind`
+      text = `${hours} saat ${minutes} dk geri`
     }
   }
   
@@ -216,25 +216,12 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
   const accentIconClass = `w-5 h-5 ${theme.accentText}`
   
   // Determine direction for icon
-  const direction = timeDiff ? (timeDiff.text.includes('ahead') ? 'ahead' : timeDiff.text.includes('behind') ? 'behind' : 'same') : 'same'
-  
-  // State for collapsible
-  const [isExpanded, setIsExpanded] = useState(false)
-  
-  // Generate summary from intro (first 2-3 sentences)
-  const getSummary = () => {
-    if (seo?.intro) {
-      const sentences = seo.intro.split('. ')
-      return sentences.slice(0, 2).join('. ') + (sentences.length > 2 ? '.' : '')
-    }
-    return `${city.city} is located in ${city.country}. Population: ${info.population}. Currency: ${info.currency} (${info.currencySymbol}).`
-  }
+  const direction = timeDiff ? (timeDiff.text.includes('ileri') ? 'ahead' : timeDiff.text.includes('geri') ? 'behind' : 'same') : 'same'
   
   return (
-    <div className={`rounded-2xl p-6 ${theme.card} backdrop-blur-md space-y-4`}>
-      {/* Header */}
+    <div className={`rounded-2xl p-6 ${theme.card} backdrop-blur-md space-y-6`}>
       <div className="flex items-center justify-between">
-        <h3 className={`text-xl font-semibold ${theme.text}`}>
+        <h3 className={`text-xl font-bold ${theme.text}`}>
           About {city.city}
         </h3>
         
@@ -262,26 +249,7 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
         )}
       </div>
       
-      {/* Summary - Always visible */}
-      <p className={`text-base leading-relaxed ${theme.textMuted}`}>
-        {getSummary()}
-      </p>
-      
-      {/* Read Full Article Button */}
-      <button
-        onClick={() => setIsExpanded(!isExpanded)}
-        className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
-          isLight 
-            ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' 
-            : 'bg-slate-700 hover:bg-slate-600 text-slate-200'
-        }`}
-      >
-        {isExpanded ? 'Hide full article' : 'Read full article'}
-      </button>
-      
-      {/* Collapsible Full Content */}
-      {isExpanded && (
-        <div className="space-y-6 pt-4 border-t border-slate-200/20">
+      {/* Quick Facts Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
         <div className={`p-3 rounded-xl ${isLight ? 'bg-white/50' : 'bg-slate-800/50'}`}>
           <div className={`flex items-center gap-2 ${theme.textMuted} mb-1`}>
@@ -464,20 +432,6 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
             </div>
           )}
         </>
-      )}
-          
-          {/* Bottom Hide Button */}
-          <button
-            onClick={() => setIsExpanded(false)}
-            className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
-              isLight 
-                ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' 
-                : 'bg-slate-700 hover:bg-slate-600 text-slate-200'
-            }`}
-          >
-            Hide full article
-          </button>
-        </div>
       )}
     </div>
   )
