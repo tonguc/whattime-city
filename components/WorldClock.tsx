@@ -559,13 +559,6 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           isLight={isLight}
         />
         
-        {/* About Section */}
-        <AboutSection
-          theme={theme}
-          isLight={isLight}
-          t={t}
-        />
-        
         {/* Meeting Planner */}
         <MeetingPlanner
           currentTheme={currentTheme}
@@ -683,6 +676,13 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             </div>
           </div>
         )}
+        
+        {/* About Section */}
+        <AboutSection
+          theme={theme}
+          isLight={isLight}
+          t={t}
+        />
         
         <footer className="mt-10 text-center">
           <div className={`flex flex-wrap justify-center gap-4 mb-4 text-sm ${theme.textMuted}`}>
