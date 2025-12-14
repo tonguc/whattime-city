@@ -435,10 +435,10 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               
               <ThemeToggle mode={themeMode} setMode={setThemeMode} currentTheme={currentTheme} t={t} themeData={theme} />
               
-              {/* Tools Link */}
+              {/* Tools Link - visible on both mobile and desktop */}
               <a 
                 href="/tools" 
-                className={`hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium transition-all ${
+                className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium transition-all ${
                   isLight 
                     ? 'bg-white/60 text-slate-600 hover:bg-white/80' 
                     : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/60'

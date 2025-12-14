@@ -39,9 +39,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
-      <body className="antialiased">
-        {/* Google Analytics */}
+        {/* Google Analytics - GA4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-060GV967M0"
           strategy="afterInteractive"
@@ -51,9 +49,13 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-060GV967M0');
+            gtag('config', 'G-060GV967M0', {
+              page_path: window.location.pathname,
+            });
           `}
         </Script>
+      </head>
+      <body className="antialiased">
         {children}
       </body>
     </html>
