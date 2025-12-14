@@ -41,7 +41,7 @@ export default function RootLayout({
         {/* GA4 gtag.js - loaded in head for earliest possible execution */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-060GV967M0"
+          src="https://www.googletagmanager.com/gtag/js?id=G-L0LS6L1L65"
         />
         <script
           dangerouslySetInnerHTML={{
@@ -49,7 +49,7 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-060GV967M0');
+              gtag('config', 'G-L0LS6L1L65');
             `,
           }}
         />
