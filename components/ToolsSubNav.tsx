@@ -106,18 +106,33 @@ export default function ToolsSubNav({ isLight, theme, lang }: ToolsSubNavProps) 
   
   return (
     <nav className="mb-8 relative">
-      {/* Scroll container */}
+      {/* Left fade indicator */}
       <div 
-        className={`flex items-center gap-2 sm:gap-3 py-3 px-3 overflow-x-auto rounded-2xl backdrop-blur-xl border ${
+        className={`absolute left-0 top-0 bottom-0 w-6 pointer-events-none rounded-l-2xl z-10 ${
+          isLight 
+            ? 'bg-gradient-to-r from-white/80 to-transparent' 
+            : 'bg-gradient-to-r from-slate-900/80 to-transparent'
+        }`}
+      />
+      
+      {/* Scroll container - hidden scrollbar with smooth scroll */}
+      <div 
+        className={`flex items-center gap-2 sm:gap-3 py-3 px-4 overflow-x-auto rounded-2xl backdrop-blur-xl border ${
           isLight 
             ? 'bg-white/40 border-white/50' 
             : 'bg-slate-800/40 border-slate-700/50'
         }`}
         style={{ 
-          scrollbarWidth: 'thin',
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
           WebkitOverflowScrolling: 'touch'
         }}
       >
+        <style jsx>{`
+          div::-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
         {toolNavItems.map((tool) => {
           const isActive = pathname === tool.url
           const translatedName = t[tool.nameKey as keyof typeof t] as string || tool.name
@@ -144,12 +159,13 @@ export default function ToolsSubNav({ isLight, theme, lang }: ToolsSubNavProps) 
           )
         })}
       </div>
-      {/* Right fade indicator for scroll hint on mobile */}
+      
+      {/* Right fade indicator */}
       <div 
-        className={`absolute right-0 top-0 bottom-0 w-8 pointer-events-none rounded-r-2xl sm:hidden ${
+        className={`absolute right-0 top-0 bottom-0 w-6 pointer-events-none rounded-r-2xl z-10 ${
           isLight 
-            ? 'bg-gradient-to-l from-white/60 to-transparent' 
-            : 'bg-gradient-to-l from-slate-900/60 to-transparent'
+            ? 'bg-gradient-to-l from-white/80 to-transparent' 
+            : 'bg-gradient-to-l from-slate-900/80 to-transparent'
         }`}
       />
     </nav>
