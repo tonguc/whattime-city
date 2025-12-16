@@ -49,7 +49,7 @@ export default function MeetingPlannerPage() {
 
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
-      <div className="max-w-4xl mx-auto px-4 py-6 sm:py-8">
+      <div className="max-w-6xl mx-auto px-4 py-6 sm:py-8">
         {/* Header */}
         <header className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
           <Link href="/" className="hover:opacity-80 transition-opacity">
