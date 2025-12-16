@@ -13,13 +13,26 @@ export default function TimeConverterPage() {
   const [toCity, setToCity] = useState(cities.find(c => c.city === 'London') || cities[1])
   const [selectedHour, setSelectedHour] = useState(12)
   const [selectedMinute, setSelectedMinute] = useState(0)
+  const [userLat, setUserLat] = useState(40.71) // Default NYC
+  const [userLng, setUserLng] = useState(-74.01)
   
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000)
+    // Try to get user location for theme
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          setUserLat(pos.coords.latitude)
+          setUserLng(pos.coords.longitude)
+        },
+        () => {} // Silent fail, use defaults
+      )
+    }
     return () => clearInterval(timer)
   }, [])
   
-  const timeOfDay = getTimeOfDay(currentTime, 41.01, 28.98)
+  // Use fromCity coordinates for theme when user location unavailable
+  const timeOfDay = getTimeOfDay(currentTime, userLat || fromCity.lat, userLng || fromCity.lng)
   const theme = themes[timeOfDay]
   const isLight = isLightTheme(timeOfDay)
 
@@ -110,8 +123,8 @@ export default function TimeConverterPage() {
                     : 'bg-slate-700 border-slate-600 text-white'
                 }`}
               >
-                {cities.slice(0, 50).map(city => (
-                  <option key={city.city} value={city.city}>{city.city}, {city.country}</option>
+                {cities.map(city => (
+                  <option key={city.slug} value={city.city}>{city.city}, {city.country}</option>
                 ))}
               </select>
               <div className="mt-2 flex gap-2">
@@ -177,8 +190,8 @@ export default function TimeConverterPage() {
                     : 'bg-slate-700 border-slate-600 text-white'
                 }`}
               >
-                {cities.slice(0, 50).map(city => (
-                  <option key={city.city} value={city.city}>{city.city}, {city.country}</option>
+                {cities.map(city => (
+                  <option key={city.slug} value={city.city}>{city.city}, {city.country}</option>
                 ))}
               </select>
               <div className={`mt-2 text-center text-2xl font-bold ${theme.accentText}`}>

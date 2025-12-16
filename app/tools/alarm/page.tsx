@@ -12,13 +12,24 @@ export default function WorldAlarmPage() {
   const [selectedCity, setSelectedCity] = useState(cities.find(c => c.city === 'London') || cities[0])
   const [alarmHour, setAlarmHour] = useState(9)
   const [alarmMinute, setAlarmMinute] = useState(0)
+  const [userLat, setUserLat] = useState(51.51)
+  const [userLng, setUserLng] = useState(-0.13)
   
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000)
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          setUserLat(pos.coords.latitude)
+          setUserLng(pos.coords.longitude)
+        },
+        () => {}
+      )
+    }
     return () => clearInterval(timer)
   }, [])
   
-  const timeOfDay = getTimeOfDay(currentTime, 41.01, 28.98)
+  const timeOfDay = getTimeOfDay(currentTime, userLat, userLng)
   const theme = themes[timeOfDay]
   const isLight = isLightTheme(timeOfDay)
 
@@ -106,7 +117,7 @@ export default function WorldAlarmPage() {
                 isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-700 border-slate-600 text-white'
               }`}
             >
-              {cities.slice(0, 50).map(city => (
+              {cities.map(city => (
                 <option key={city.city} value={city.city}>{city.city}, {city.country}</option>
               ))}
             </select>

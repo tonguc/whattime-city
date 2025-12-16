@@ -13,13 +13,24 @@ export default function EventTimePage() {
   const [eventHour, setEventHour] = useState(14)
   const [eventMinute, setEventMinute] = useState(0)
   const [eventName, setEventName] = useState('My Event')
+  const [userLat, setUserLat] = useState(40.71)
+  const [userLng, setUserLng] = useState(-74.01)
   
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000)
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          setUserLat(pos.coords.latitude)
+          setUserLng(pos.coords.longitude)
+        },
+        () => {}
+      )
+    }
     return () => clearInterval(timer)
   }, [])
   
-  const timeOfDay = getTimeOfDay(currentTime, 41.01, 28.98)
+  const timeOfDay = getTimeOfDay(currentTime, userLat, userLng)
   const theme = themes[timeOfDay]
   const isLight = isLightTheme(timeOfDay)
 
@@ -107,7 +118,7 @@ export default function EventTimePage() {
                   isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-700 border-slate-600 text-white'
                 }`}
               >
-                {cities.slice(0, 50).map(city => (
+                {cities.map(city => (
                   <option key={city.city} value={city.city}>{city.city}, {city.country}</option>
                 ))}
               </select>
