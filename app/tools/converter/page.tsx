@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import { cities } from '@/lib/cities'
+import { getCityContext } from '@/lib/city-context'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 
 export default function TimeConverterPage() {
@@ -13,26 +14,40 @@ export default function TimeConverterPage() {
   const [toCity, setToCity] = useState(cities.find(c => c.city === 'London') || cities[1])
   const [selectedHour, setSelectedHour] = useState(12)
   const [selectedMinute, setSelectedMinute] = useState(0)
-  const [userLat, setUserLat] = useState(40.71) // Default NYC
-  const [userLng, setUserLng] = useState(-74.01)
+  // Theme coordinates - from city context or defaults
+  const [themeLat, setThemeLat] = useState(40.71)
+  const [themeLng, setThemeLng] = useState(-74.01)
   
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000)
-    // Try to get user location for theme
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (pos) => {
-          setUserLat(pos.coords.latitude)
-          setUserLng(pos.coords.longitude)
-        },
-        () => {} // Silent fail, use defaults
-      )
+    
+    // Priority 1: Check for saved city context (from city page navigation)
+    const savedContext = getCityContext()
+    if (savedContext) {
+      setThemeLat(savedContext.lat)
+      setThemeLng(savedContext.lng)
+      // Also set fromCity to the context city
+      const contextCity = cities.find(c => c.slug === savedContext.slug)
+      if (contextCity) {
+        setFromCity(contextCity)
+      }
+    } else {
+      // Priority 2: Try geolocation only if no saved context
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            setThemeLat(pos.coords.latitude)
+            setThemeLng(pos.coords.longitude)
+          },
+          () => {} // Silent fail, use defaults
+        )
+      }
     }
+    
     return () => clearInterval(timer)
   }, [])
   
-  // Use fromCity coordinates for theme when user location unavailable
-  const timeOfDay = getTimeOfDay(currentTime, userLat || fromCity.lat, userLng || fromCity.lng)
+  const timeOfDay = getTimeOfDay(currentTime, themeLat, themeLng)
   const theme = themes[timeOfDay]
   const isLight = isLightTheme(timeOfDay)
 

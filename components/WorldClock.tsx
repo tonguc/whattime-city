@@ -7,6 +7,7 @@ import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import { translations, detectLanguage, Language } from '@/lib/translations'
 import { getWeather, WeatherData, getWeatherAnimation, WeatherAnimation } from '@/lib/weather'
+import { saveCityContext } from '@/lib/city-context'
 import DigitalClock from '@/components/DigitalClock'
 import AnalogClock from '@/components/AnalogClock'
 import SunInfoCard from '@/components/SunInfoCard'
@@ -194,6 +195,17 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   
   const isFavorite = (slug: string) => favorites.includes(slug)
   const favoriteCities = cities.filter(c => favorites.includes(c.slug))
+  
+  // Save city context whenever selectedCity changes (for tools navigation)
+  useEffect(() => {
+    saveCityContext({
+      slug: selectedCity.slug,
+      city: selectedCity.city,
+      lat: selectedCity.lat,
+      lng: selectedCity.lng,
+      timezone: selectedCity.timezone
+    })
+  }, [selectedCity])
   
   useEffect(() => {
     setLang(detectLanguage())

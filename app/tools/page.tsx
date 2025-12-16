@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import { translations, detectLanguage, Language } from '@/lib/translations'
+import { getCityContext } from '@/lib/city-context'
 
 // Tool definitions - Normalized names (2 words, English only)
 const tools = [
@@ -105,15 +106,36 @@ const tools = [
 export default function ToolsPage() {
   const [lang, setLang] = useState<Language>('en')
   const [currentTime, setCurrentTime] = useState(new Date())
+  const [themeLat, setThemeLat] = useState(40.71)
+  const [themeLng, setThemeLng] = useState(-74.01)
   
   useEffect(() => {
     setLang(detectLanguage())
     const timer = setInterval(() => setCurrentTime(new Date()), 1000)
+    
+    // Priority 1: Check for saved city context
+    const savedContext = getCityContext()
+    if (savedContext) {
+      setThemeLat(savedContext.lat)
+      setThemeLng(savedContext.lng)
+    } else {
+      // Priority 2: Geolocation fallback
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            setThemeLat(pos.coords.latitude)
+            setThemeLng(pos.coords.longitude)
+          },
+          () => {}
+        )
+      }
+    }
+    
     return () => clearInterval(timer)
   }, [])
   
   const t = translations[lang]
-  const timeOfDay = getTimeOfDay(currentTime, 41.01, 28.98) // Default to Istanbul
+  const timeOfDay = getTimeOfDay(currentTime, themeLat, themeLng)
   const theme = themes[timeOfDay]
   const isLight = isLightTheme(timeOfDay)
   

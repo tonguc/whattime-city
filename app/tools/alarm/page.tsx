@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import { cities } from '@/lib/cities'
+import { getCityContext } from '@/lib/city-context'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 
 export default function WorldAlarmPage() {
@@ -12,24 +13,36 @@ export default function WorldAlarmPage() {
   const [selectedCity, setSelectedCity] = useState(cities.find(c => c.city === 'London') || cities[0])
   const [alarmHour, setAlarmHour] = useState(9)
   const [alarmMinute, setAlarmMinute] = useState(0)
-  const [userLat, setUserLat] = useState(51.51)
-  const [userLng, setUserLng] = useState(-0.13)
+  const [themeLat, setThemeLat] = useState(51.51)
+  const [themeLng, setThemeLng] = useState(-0.13)
   
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000)
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (pos) => {
-          setUserLat(pos.coords.latitude)
-          setUserLng(pos.coords.longitude)
-        },
-        () => {}
-      )
+    
+    const savedContext = getCityContext()
+    if (savedContext) {
+      setThemeLat(savedContext.lat)
+      setThemeLng(savedContext.lng)
+      const contextCity = cities.find(c => c.slug === savedContext.slug)
+      if (contextCity) {
+        setSelectedCity(contextCity)
+      }
+    } else {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            setThemeLat(pos.coords.latitude)
+            setThemeLng(pos.coords.longitude)
+          },
+          () => {}
+        )
+      }
     }
+    
     return () => clearInterval(timer)
   }, [])
   
-  const timeOfDay = getTimeOfDay(currentTime, userLat, userLng)
+  const timeOfDay = getTimeOfDay(currentTime, themeLat, themeLng)
   const theme = themes[timeOfDay]
   const isLight = isLightTheme(timeOfDay)
 
