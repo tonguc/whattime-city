@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { cities } from '@/lib/cities'
 import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
+import Header from '@/components/Header'
 
 export default function MeetingPlannerPage() {
   const { theme, isLight } = useToolsTheme()
@@ -31,26 +32,8 @@ export default function MeetingPlannerPage() {
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
       <div className="max-w-6xl mx-auto px-4 py-6 sm:py-8">
-        {/* Header */}
-        <header className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
-          <Link href="/" className="hover:opacity-80 transition-opacity">
-            <img 
-              src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
-              alt="whattime.city" 
-              className="h-11 sm:h-14"
-            />
-          </Link>
-          <nav className="flex items-center gap-4">
-            <Link href="/" className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-              isLight ? 'text-slate-600 hover:bg-white/60' : 'text-slate-300 hover:bg-slate-800/60'
-            }`}>
-              World Clock
-            </Link>
-            <Link href="/tools" className={`px-4 py-2 rounded-full text-sm font-medium ${theme.accentBg} text-white`}>
-              Tools
-            </Link>
-          </nav>
-        </header>
+        {/* Shared Header */}
+        <Header isLight={isLight} theme={theme} currentPage="tool-detail" />
 
         {/* Mini Navigation */}
         <ToolsMiniNav isLight={isLight} theme={theme} />

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { translations, detectLanguage, Language } from '@/lib/translations'
 import { useToolsTheme } from '@/lib/useToolsTheme'
+import Header from '@/components/Header'
 
 // Tool definitions - Normalized names (2 words, English only)
 const tools = [
@@ -114,31 +115,8 @@ export default function ToolsPage() {
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
       <div className="max-w-6xl mx-auto px-4 py-6 sm:py-8">
-        {/* Header */}
-        <header className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
-          <Link href="/" className="hover:opacity-80 transition-opacity">
-            <img 
-              src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
-              alt="whattime.city" 
-              className="h-11 sm:h-14"
-            />
-          </Link>
-          <nav className="flex items-center gap-4">
-            <Link 
-              href="/"
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                isLight ? 'text-slate-600 hover:bg-white/60' : 'text-slate-300 hover:bg-slate-800/60'
-              }`}
-            >
-              World Clock
-            </Link>
-            <span 
-              className={`px-4 py-2 rounded-full text-sm font-medium ${theme.accentBg} text-white`}
-            >
-              Tools
-            </span>
-          </nav>
-        </header>
+        {/* Shared Header */}
+        <Header isLight={isLight} theme={theme} currentPage="tools" />
 
         {/* Page Title */}
         <div className="text-center mb-10">

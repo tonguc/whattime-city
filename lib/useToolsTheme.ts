@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect } from 'react'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme, Theme } from '@/lib/themes'
 import { getCityContext } from '@/lib/city-context'
@@ -18,6 +18,21 @@ interface ToolsThemeResult {
   hasContext: boolean
 }
 
+// Read context synchronously - called ONCE during state initialization
+function readContextData(): { lat: number; lng: number; city: City | null; hasContext: boolean } {
+  if (typeof window === 'undefined') {
+    return { lat: DEFAULT_LAT, lng: DEFAULT_LNG, city: null, hasContext: false }
+  }
+  
+  const ctx = getCityContext()
+  if (ctx) {
+    const city = cities.find(c => c.slug === ctx.slug) || null
+    return { lat: ctx.lat, lng: ctx.lng, city, hasContext: true }
+  }
+  
+  return { lat: DEFAULT_LAT, lng: DEFAULT_LNG, city: null, hasContext: false }
+}
+
 /**
  * Single hook for all tools pages to get theme based on city context.
  * 
@@ -29,21 +44,8 @@ interface ToolsThemeResult {
  * If a city context exists, it is ALWAYS used.
  */
 export function useToolsTheme(): ToolsThemeResult {
-  // Read context ONCE synchronously during initial render
-  const contextData = useMemo(() => {
-    if (typeof window === 'undefined') {
-      return { lat: DEFAULT_LAT, lng: DEFAULT_LNG, city: null as City | null, hasContext: false }
-    }
-    
-    const ctx = getCityContext()
-    if (ctx) {
-      const city = cities.find(c => c.slug === ctx.slug) || null
-      return { lat: ctx.lat, lng: ctx.lng, city, hasContext: true }
-    }
-    
-    return { lat: DEFAULT_LAT, lng: DEFAULT_LNG, city: null, hasContext: false }
-  }, []) // Empty deps - only compute once
-  
+  // Use lazy initialization - function only runs ONCE on client
+  const [contextData] = useState(readContextData)
   const [currentTime, setCurrentTime] = useState(new Date())
   
   useEffect(() => {
