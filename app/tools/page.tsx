@@ -5,16 +5,13 @@ import Link from 'next/link'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import { translations, detectLanguage, Language } from '@/lib/translations'
-import ToolsSubNav from '@/components/ToolsSubNav'
 
-// Tool definitions
+// Tool definitions - Normalized names (2 words, English only)
 const tools = [
   {
     id: 'converter',
     name: 'Time Converter',
-    nameKey: 'timeConverter',
     description: 'Convert time between any two cities instantly. Perfect for scheduling international calls and meetings.',
-    descriptionKey: 'timeConverterDesc',
     url: '/tools/converter',
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -28,9 +25,7 @@ const tools = [
   {
     id: 'meeting-planner',
     name: 'Meeting Planner',
-    nameKey: 'meetingPlanner',
     description: 'Find the best meeting time across multiple time zones. Visualize working hours overlap for global teams.',
-    descriptionKey: 'meetingPlannerDesc',
     url: '/tools/meeting-planner',
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -48,10 +43,8 @@ const tools = [
   },
   {
     id: 'flight-times',
-    name: 'Flight Time Calculator',
-    nameKey: 'flightTimeCalculator',
+    name: 'Flight Time',
     description: 'Calculate arrival times across time zones. Know exactly when you\'ll land in local time.',
-    descriptionKey: 'flightTimeCalculatorDesc',
     url: '/tools/flight-times',
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -61,10 +54,8 @@ const tools = [
   },
   {
     id: 'jet-lag',
-    name: 'Jet Lag Advisor',
-    nameKey: 'jetLagAdvisor',
+    name: 'Jet Lag',
     description: 'Get personalized jet lag recovery tips based on your travel route and sleep schedule.',
-    descriptionKey: 'jetLagAdvisorDesc',
     url: '/tools/jet-lag',
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -79,10 +70,8 @@ const tools = [
   },
   {
     id: 'event-time',
-    name: 'Event Time Converter',
-    nameKey: 'eventTimeConverter',
+    name: 'Event Time',
     description: 'Share event times that automatically convert to each viewer\'s local time zone.',
-    descriptionKey: 'eventTimeConverterDesc',
     url: '/tools/event-time',
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -97,10 +86,8 @@ const tools = [
   },
   {
     id: 'alarm',
-    name: 'World Alarm Clock',
-    nameKey: 'worldAlarmClock',
+    name: 'World Alarm',
     description: 'Set alarms for any city\'s local time. Never miss an international deadline or call.',
-    descriptionKey: 'worldAlarmClockDesc',
     url: '/tools/alarm',
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -149,30 +136,27 @@ export default function ToolsPage() {
                 isLight ? 'text-slate-600 hover:bg-white/60' : 'text-slate-300 hover:bg-slate-800/60'
               }`}
             >
-              {t.worldClock || 'World Clock'}
+              World Clock
             </Link>
             <span 
               className={`px-4 py-2 rounded-full text-sm font-medium ${theme.accentBg} text-white`}
             >
-              {t.tools || 'Tools'}
+              Tools
             </span>
           </nav>
         </header>
 
-        {/* Tools Sub Navigation */}
-        <ToolsSubNav isLight={isLight} theme={theme} lang={lang} />
-
         {/* Page Title */}
         <div className="text-center mb-10">
           <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-            {t.timeTools || 'Time Zone Tools'}
+            Time Zone Tools
           </h1>
           <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-            {t.toolsDescription || 'Essential tools for managing time across the globe'}
+            Essential tools for managing time across the globe
           </p>
         </div>
 
-        {/* Tools Grid */}
+        {/* Tools Grid - Primary Navigation */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {tools.map((tool) => (
             <Link
@@ -191,17 +175,17 @@ export default function ToolsPage() {
               
               {/* Tool Name */}
               <h2 className={`text-xl font-semibold mb-2 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-                {t[tool.nameKey as keyof typeof t] || tool.name}
+                {tool.name}
               </h2>
               
               {/* Description */}
               <p className={`text-sm mb-4 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
-                {t[tool.descriptionKey as keyof typeof t] || tool.description}
+                {tool.description}
               </p>
               
               {/* CTA */}
               <div className={`flex items-center gap-2 text-sm font-medium ${theme.accentText} group-hover:gap-3 transition-all`}>
-                <span>{t.openTool || 'Open Tool'}</span>
+                <span>Open Tool</span>
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14"/>
                   <path d="M12 5l7 7-7 7"/>
@@ -215,7 +199,7 @@ export default function ToolsPage() {
         <footer className={`mt-16 pt-8 border-t ${isLight ? 'border-slate-200/50' : 'border-slate-700/50'}`}>
           <div className="text-center">
             <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-              © {new Date().getFullYear()} whattime.city — {t.allRightsReserved || 'All rights reserved'}
+              © {new Date().getFullYear()} whattime.city — All rights reserved
             </p>
           </div>
         </footer>
