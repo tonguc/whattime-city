@@ -1,42 +1,20 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
-import { getTimeOfDay } from '@/lib/sun-calculator'
-import { themes, isLightTheme } from '@/lib/themes'
 import { cities } from '@/lib/cities'
-import { getCityContext } from '@/lib/city-context'
+import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 
-function getInitialCoords(): { lat: number; lng: number; citySlug: string | null } {
-  if (typeof window !== 'undefined') {
-    const ctx = getCityContext()
-    if (ctx) return { lat: ctx.lat, lng: ctx.lng, citySlug: ctx.slug }
-  }
-  return { lat: 40.71, lng: -74.01, citySlug: null }
-}
-
 export default function MeetingPlannerPage() {
-  const initialCoords = getInitialCoords()
-  const contextCity = initialCoords.citySlug ? cities.find(c => c.slug === initialCoords.citySlug) : null
+  const { theme, isLight } = useToolsTheme()
   
   const [currentTime, setCurrentTime] = useState(new Date())
-  const [selectedCities, setSelectedCities] = useState([
-    contextCity || cities.find(c => c.city === 'New York') || cities[0],
+  const [selectedCities, setSelectedCities] = useState(() => [
+    getContextCity('New York'),
     cities.find(c => c.city === 'London') || cities[1],
     cities.find(c => c.city === 'Tokyo') || cities[2]
   ])
-  const [themeLat] = useState(initialCoords.lat)
-  const [themeLng] = useState(initialCoords.lng)
-  
-  useEffect(() => {
-    const timer = setInterval(() => setCurrentTime(new Date()), 1000)
-    return () => clearInterval(timer)
-  }, [])
-  
-  const timeOfDay = getTimeOfDay(currentTime, themeLat, themeLng)
-  const theme = themes[timeOfDay]
-  const isLight = isLightTheme(timeOfDay)
 
   // Get current hour in each city
   const getCityHour = (timezone: string) => {

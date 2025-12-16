@@ -1,42 +1,20 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
-import { getTimeOfDay } from '@/lib/sun-calculator'
-import { themes, isLightTheme } from '@/lib/themes'
 import { cities } from '@/lib/cities'
-import { getCityContext } from '@/lib/city-context'
+import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 
-function getInitialCoords(): { lat: number; lng: number; citySlug: string | null } {
-  if (typeof window !== 'undefined') {
-    const ctx = getCityContext()
-    if (ctx) return { lat: ctx.lat, lng: ctx.lng, citySlug: ctx.slug }
-  }
-  return { lat: 40.71, lng: -74.01, citySlug: null }
-}
-
 export default function FlightTimePage() {
-  const initialCoords = getInitialCoords()
-  const contextCity = initialCoords.citySlug ? cities.find(c => c.slug === initialCoords.citySlug) : null
+  const { theme, isLight } = useToolsTheme()
   
   const [currentTime, setCurrentTime] = useState(new Date())
-  const [departureCity, setDepartureCity] = useState(contextCity || cities.find(c => c.city === 'New York') || cities[0])
-  const [arrivalCity, setArrivalCity] = useState(cities.find(c => c.city === 'London') || cities[1])
+  const [departureCity, setDepartureCity] = useState(() => getContextCity('New York'))
+  const [arrivalCity, setArrivalCity] = useState(() => cities.find(c => c.city === 'London') || cities[1])
   const [departureHour, setDepartureHour] = useState(10)
   const [departureMinute, setDepartureMinute] = useState(0)
   const [flightDuration, setFlightDuration] = useState({ hours: 7, minutes: 0 })
-  const [themeLat] = useState(initialCoords.lat)
-  const [themeLng] = useState(initialCoords.lng)
-  
-  useEffect(() => {
-    const timer = setInterval(() => setCurrentTime(new Date()), 1000)
-    return () => clearInterval(timer)
-  }, [])
-  
-  const timeOfDay = getTimeOfDay(currentTime, themeLat, themeLng)
-  const theme = themes[timeOfDay]
-  const isLight = isLightTheme(timeOfDay)
 
   // Calculate arrival time
   const getArrivalTime = () => {

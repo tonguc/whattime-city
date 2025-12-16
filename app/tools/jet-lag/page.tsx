@@ -1,39 +1,17 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
-import { getTimeOfDay } from '@/lib/sun-calculator'
-import { themes, isLightTheme } from '@/lib/themes'
 import { cities } from '@/lib/cities'
-import { getCityContext } from '@/lib/city-context'
+import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 
-function getInitialCoords(): { lat: number; lng: number; citySlug: string | null } {
-  if (typeof window !== 'undefined') {
-    const ctx = getCityContext()
-    if (ctx) return { lat: ctx.lat, lng: ctx.lng, citySlug: ctx.slug }
-  }
-  return { lat: 40.71, lng: -74.01, citySlug: null }
-}
-
 export default function JetLagPage() {
-  const initialCoords = getInitialCoords()
-  const contextCity = initialCoords.citySlug ? cities.find(c => c.slug === initialCoords.citySlug) : null
+  const { theme, isLight } = useToolsTheme()
   
   const [currentTime, setCurrentTime] = useState(new Date())
-  const [fromCity, setFromCity] = useState(contextCity || cities.find(c => c.city === 'New York') || cities[0])
-  const [toCity, setToCity] = useState(cities.find(c => c.city === 'Tokyo') || cities[2])
-  const [themeLat] = useState(initialCoords.lat)
-  const [themeLng] = useState(initialCoords.lng)
-  
-  useEffect(() => {
-    const timer = setInterval(() => setCurrentTime(new Date()), 1000)
-    return () => clearInterval(timer)
-  }, [])
-  
-  const timeOfDay = getTimeOfDay(currentTime, themeLat, themeLng)
-  const theme = themes[timeOfDay]
-  const isLight = isLightTheme(timeOfDay)
+  const [fromCity, setFromCity] = useState(() => getContextCity('New York'))
+  const [toCity, setToCity] = useState(() => cities.find(c => c.city === 'Tokyo') || cities[2])
 
   // Calculate time difference
   const getTimeDiff = () => {

@@ -2,49 +2,19 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { getTimeOfDay } from '@/lib/sun-calculator'
-import { themes, isLightTheme } from '@/lib/themes'
 import { cities } from '@/lib/cities'
-import { getCityContext } from '@/lib/city-context'
+import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 
-// Get initial coordinates from context (runs once at module load on client)
-function getInitialCoords(): { lat: number; lng: number; citySlug: string | null } {
-  if (typeof window !== 'undefined') {
-    const ctx = getCityContext()
-    if (ctx) {
-      return { lat: ctx.lat, lng: ctx.lng, citySlug: ctx.slug }
-    }
-  }
-  return { lat: 40.71, lng: -74.01, citySlug: null } // Default NYC
-}
-
 export default function TimeConverterPage() {
-  // Read context ONCE synchronously for initial state
-  const initialCoords = getInitialCoords()
-  const initialFromCity = initialCoords.citySlug 
-    ? cities.find(c => c.slug === initialCoords.citySlug) || cities.find(c => c.city === 'New York') || cities[0]
-    : cities.find(c => c.city === 'New York') || cities[0]
+  // Single source of truth for theme - NEVER uses geolocation
+  const { theme, isLight } = useToolsTheme()
   
-  const [currentTime, setCurrentTime] = useState(new Date())
-  const [fromCity, setFromCity] = useState(initialFromCity)
-  const [toCity, setToCity] = useState(cities.find(c => c.city === 'London') || cities[1])
+  // Get initial city from context or default
+  const [fromCity, setFromCity] = useState(() => getContextCity('New York'))
+  const [toCity, setToCity] = useState(() => cities.find(c => c.city === 'London') || cities[1])
   const [selectedHour, setSelectedHour] = useState(12)
   const [selectedMinute, setSelectedMinute] = useState(0)
-  // Theme coordinates - from context (NEVER overridden by geolocation if context exists)
-  const [themeLat] = useState(initialCoords.lat)
-  const [themeLng] = useState(initialCoords.lng)
-  const [contextExists] = useState(initialCoords.citySlug !== null)
-  
-  useEffect(() => {
-    const timer = setInterval(() => setCurrentTime(new Date()), 1000)
-    return () => clearInterval(timer)
-  }, [])
-  
-  // Theme is ALWAYS based on initial context coordinates - NEVER changes
-  const timeOfDay = getTimeOfDay(currentTime, themeLat, themeLng)
-  const theme = themes[timeOfDay]
-  const isLight = isLightTheme(timeOfDay)
 
   // Calculate converted time
   const getConvertedTime = () => {

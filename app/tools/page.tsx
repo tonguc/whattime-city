@@ -2,18 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { getTimeOfDay } from '@/lib/sun-calculator'
-import { themes, isLightTheme } from '@/lib/themes'
 import { translations, detectLanguage, Language } from '@/lib/translations'
-import { getCityContext } from '@/lib/city-context'
-
-function getInitialCoords(): { lat: number; lng: number } {
-  if (typeof window !== 'undefined') {
-    const ctx = getCityContext()
-    if (ctx) return { lat: ctx.lat, lng: ctx.lng }
-  }
-  return { lat: 40.71, lng: -74.01 }
-}
+import { useToolsTheme } from '@/lib/useToolsTheme'
 
 // Tool definitions - Normalized names (2 words, English only)
 const tools = [
@@ -112,23 +102,14 @@ const tools = [
 ]
 
 export default function ToolsPage() {
-  const initialCoords = getInitialCoords()
-  
+  const { theme, isLight } = useToolsTheme()
   const [lang, setLang] = useState<Language>('en')
-  const [currentTime, setCurrentTime] = useState(new Date())
-  const [themeLat] = useState(initialCoords.lat)
-  const [themeLng] = useState(initialCoords.lng)
   
   useEffect(() => {
     setLang(detectLanguage())
-    const timer = setInterval(() => setCurrentTime(new Date()), 1000)
-    return () => clearInterval(timer)
   }, [])
   
   const t = translations[lang]
-  const timeOfDay = getTimeOfDay(currentTime, themeLat, themeLng)
-  const theme = themes[timeOfDay]
-  const isLight = isLightTheme(timeOfDay)
   
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
