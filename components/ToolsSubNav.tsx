@@ -105,20 +105,22 @@ export default function ToolsSubNav({ isLight, theme, lang }: ToolsSubNavProps) 
   const t = translations[lang]
   
   return (
-    <nav className="mb-8">
+    <nav className="mb-8 relative">
+      {/* Scroll container */}
       <div 
-        className={`flex items-center gap-2 sm:gap-3 py-3 px-2 overflow-x-auto scrollbar-hide rounded-2xl backdrop-blur-xl border ${
+        className={`flex items-center gap-2 sm:gap-3 py-3 px-3 overflow-x-auto rounded-2xl backdrop-blur-xl border ${
           isLight 
             ? 'bg-white/40 border-white/50' 
             : 'bg-slate-800/40 border-slate-700/50'
         }`}
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        style={{ 
+          scrollbarWidth: 'thin',
+          WebkitOverflowScrolling: 'touch'
+        }}
       >
         {toolNavItems.map((tool) => {
           const isActive = pathname === tool.url
           const translatedName = t[tool.nameKey as keyof typeof t] as string || tool.name
-          // Shorten name for mobile
-          const shortName = translatedName.split(' ')[0]
           
           return (
             <Link
@@ -136,13 +138,20 @@ export default function ToolsSubNav({ isLight, theme, lang }: ToolsSubNavProps) 
                 {tool.icon}
               </span>
               <span className="text-sm font-medium whitespace-nowrap">
-                <span className="hidden sm:inline">{translatedName}</span>
-                <span className="sm:hidden">{shortName}</span>
+                {translatedName}
               </span>
             </Link>
           )
         })}
       </div>
+      {/* Right fade indicator for scroll hint on mobile */}
+      <div 
+        className={`absolute right-0 top-0 bottom-0 w-8 pointer-events-none rounded-r-2xl sm:hidden ${
+          isLight 
+            ? 'bg-gradient-to-l from-white/60 to-transparent' 
+            : 'bg-gradient-to-l from-slate-900/60 to-transparent'
+        }`}
+      />
     </nav>
   )
 }
