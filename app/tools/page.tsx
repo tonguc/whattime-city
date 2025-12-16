@@ -7,6 +7,14 @@ import { themes, isLightTheme } from '@/lib/themes'
 import { translations, detectLanguage, Language } from '@/lib/translations'
 import { getCityContext } from '@/lib/city-context'
 
+function getInitialCoords(): { lat: number; lng: number } {
+  if (typeof window !== 'undefined') {
+    const ctx = getCityContext()
+    if (ctx) return { lat: ctx.lat, lng: ctx.lng }
+  }
+  return { lat: 40.71, lng: -74.01 }
+}
+
 // Tool definitions - Normalized names (2 words, English only)
 const tools = [
   {
@@ -104,33 +112,16 @@ const tools = [
 ]
 
 export default function ToolsPage() {
+  const initialCoords = getInitialCoords()
+  
   const [lang, setLang] = useState<Language>('en')
   const [currentTime, setCurrentTime] = useState(new Date())
-  const [themeLat, setThemeLat] = useState(40.71)
-  const [themeLng, setThemeLng] = useState(-74.01)
+  const [themeLat] = useState(initialCoords.lat)
+  const [themeLng] = useState(initialCoords.lng)
   
   useEffect(() => {
     setLang(detectLanguage())
     const timer = setInterval(() => setCurrentTime(new Date()), 1000)
-    
-    // Priority 1: Check for saved city context
-    const savedContext = getCityContext()
-    if (savedContext) {
-      setThemeLat(savedContext.lat)
-      setThemeLng(savedContext.lng)
-    } else {
-      // Priority 2: Geolocation fallback
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          (pos) => {
-            setThemeLat(pos.coords.latitude)
-            setThemeLng(pos.coords.longitude)
-          },
-          () => {}
-        )
-      }
-    }
-    
     return () => clearInterval(timer)
   }, [])
   

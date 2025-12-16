@@ -8,37 +8,27 @@ import { cities } from '@/lib/cities'
 import { getCityContext } from '@/lib/city-context'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 
+function getInitialCoords(): { lat: number; lng: number; citySlug: string | null } {
+  if (typeof window !== 'undefined') {
+    const ctx = getCityContext()
+    if (ctx) return { lat: ctx.lat, lng: ctx.lng, citySlug: ctx.slug }
+  }
+  return { lat: 51.51, lng: -0.13, citySlug: null }
+}
+
 export default function WorldAlarmPage() {
+  const initialCoords = getInitialCoords()
+  const contextCity = initialCoords.citySlug ? cities.find(c => c.slug === initialCoords.citySlug) : null
+  
   const [currentTime, setCurrentTime] = useState(new Date())
-  const [selectedCity, setSelectedCity] = useState(cities.find(c => c.city === 'London') || cities[0])
+  const [selectedCity, setSelectedCity] = useState(contextCity || cities.find(c => c.city === 'London') || cities[0])
   const [alarmHour, setAlarmHour] = useState(9)
   const [alarmMinute, setAlarmMinute] = useState(0)
-  const [themeLat, setThemeLat] = useState(51.51)
-  const [themeLng, setThemeLng] = useState(-0.13)
+  const [themeLat] = useState(initialCoords.lat)
+  const [themeLng] = useState(initialCoords.lng)
   
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000)
-    
-    const savedContext = getCityContext()
-    if (savedContext) {
-      setThemeLat(savedContext.lat)
-      setThemeLng(savedContext.lng)
-      const contextCity = cities.find(c => c.slug === savedContext.slug)
-      if (contextCity) {
-        setSelectedCity(contextCity)
-      }
-    } else {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          (pos) => {
-            setThemeLat(pos.coords.latitude)
-            setThemeLng(pos.coords.longitude)
-          },
-          () => {}
-        )
-      }
-    }
-    
     return () => clearInterval(timer)
   }, [])
   

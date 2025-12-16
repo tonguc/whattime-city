@@ -8,39 +8,29 @@ import { cities } from '@/lib/cities'
 import { getCityContext } from '@/lib/city-context'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 
+function getInitialCoords(): { lat: number; lng: number; citySlug: string | null } {
+  if (typeof window !== 'undefined') {
+    const ctx = getCityContext()
+    if (ctx) return { lat: ctx.lat, lng: ctx.lng, citySlug: ctx.slug }
+  }
+  return { lat: 40.71, lng: -74.01, citySlug: null }
+}
+
 export default function FlightTimePage() {
+  const initialCoords = getInitialCoords()
+  const contextCity = initialCoords.citySlug ? cities.find(c => c.slug === initialCoords.citySlug) : null
+  
   const [currentTime, setCurrentTime] = useState(new Date())
-  const [departureCity, setDepartureCity] = useState(cities.find(c => c.city === 'New York') || cities[0])
+  const [departureCity, setDepartureCity] = useState(contextCity || cities.find(c => c.city === 'New York') || cities[0])
   const [arrivalCity, setArrivalCity] = useState(cities.find(c => c.city === 'London') || cities[1])
   const [departureHour, setDepartureHour] = useState(10)
   const [departureMinute, setDepartureMinute] = useState(0)
   const [flightDuration, setFlightDuration] = useState({ hours: 7, minutes: 0 })
-  const [themeLat, setThemeLat] = useState(40.71)
-  const [themeLng, setThemeLng] = useState(-74.01)
+  const [themeLat] = useState(initialCoords.lat)
+  const [themeLng] = useState(initialCoords.lng)
   
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000)
-    
-    const savedContext = getCityContext()
-    if (savedContext) {
-      setThemeLat(savedContext.lat)
-      setThemeLng(savedContext.lng)
-      const contextCity = cities.find(c => c.slug === savedContext.slug)
-      if (contextCity) {
-        setDepartureCity(contextCity)
-      }
-    } else {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          (pos) => {
-            setThemeLat(pos.coords.latitude)
-            setThemeLng(pos.coords.longitude)
-          },
-          () => {}
-        )
-      }
-    }
-    
     return () => clearInterval(timer)
   }, [])
   
