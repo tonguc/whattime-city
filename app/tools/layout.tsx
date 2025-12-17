@@ -19,8 +19,13 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
   // Read city context on client
   useEffect(() => {
     const ctx = getCityContext()
+    console.log('=== TOOLS LAYOUT DEBUG ===')
+    console.log('getCityContext() returned:', ctx)
     if (ctx) {
+      console.log('Setting coords to:', ctx.lat, ctx.lng)
       setCoords({ lat: ctx.lat, lng: ctx.lng })
+    } else {
+      console.log('No context found, using defaults:', DEFAULT_LAT, DEFAULT_LNG)
     }
     setIsClient(true)
   }, [])
