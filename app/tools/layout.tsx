@@ -38,9 +38,9 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
 
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-4 sm:py-4">
-        {/* Header - EXACT same structure as WorldClock */}
-        <header className="sticky top-0 z-50 flex flex-col lg:flex-row items-center justify-between gap-2 sm:gap-4 mb-3 sm:mb-4 py-2 sm:py-2 -mx-4 px-4 backdrop-blur-xl">
+      {/* Sticky Header - FULL WIDTH */}
+      <header className={`sticky top-0 z-50 w-full backdrop-blur-xl ${isLight ? 'bg-white/70' : 'bg-slate-900/70'}`}>
+        <div className="max-w-6xl mx-auto px-4 py-2 sm:py-3 flex flex-col lg:flex-row items-center justify-between gap-2 sm:gap-4">
           {/* Logo - same as WorldClock */}
           <Link href="/" className="hover:opacity-80 transition-opacity flex-shrink-0">
             <img 
@@ -71,9 +71,11 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
               </Link>
             </div>
           </div>
-        </header>
+        </div>
+      </header>
 
-        {/* Page content */}
+      {/* Main Content */}
+      <div className="max-w-6xl mx-auto px-4 py-4 sm:py-4">
         {children}
       </div>
     </div>

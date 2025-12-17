@@ -372,9 +372,9 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         <div className={`absolute -bottom-1/4 -right-1/4 w-[600px] h-[600px] ${theme.glow} rounded-full blur-3xl opacity-40`}/>
       </div>
       
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-4 sm:py-4">
-        {/* Sticky Header */}
-        <header className="sticky top-0 z-50 flex flex-col lg:flex-row items-center justify-between gap-2 sm:gap-4 mb-3 sm:mb-4 py-2 sm:py-2 -mx-4 px-4 backdrop-blur-xl">
+      {/* Sticky Header - FULL WIDTH */}
+      <header className={`sticky top-0 z-50 w-full backdrop-blur-xl ${isLight ? 'bg-white/70' : 'bg-slate-900/70'}`}>
+        <div className="max-w-6xl mx-auto px-4 py-2 sm:py-3 flex flex-col lg:flex-row items-center justify-between gap-2 sm:gap-4">
           <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0" title="Click to detect your location">
             <img 
               src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
@@ -463,8 +463,11 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               </a>
             </div>
           </div>
-        </header>
-        
+        </div>
+      </header>
+      
+      {/* Main Content */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 py-4 sm:py-4">
         <div className={`rounded-3xl p-4 md:p-5 mb-4 backdrop-blur-xl border ${theme.card} relative overflow-hidden`}>
           <div className="flex flex-col items-center justify-center relative z-10 w-full">
             <div className="w-full flex justify-center">
