@@ -2,6 +2,7 @@
 
 import { ReactNode, useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { getCityContext } from '@/lib/city-context'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
@@ -12,18 +13,17 @@ const DEFAULT_LAT = 40.71
 const DEFAULT_LNG = -74.01
 
 export default function ToolsLayout({ children }: { children: ReactNode }) {
+  const pathname = usePathname()
   const [currentTime, setCurrentTime] = useState(new Date())
   const [coords, setCoords] = useState({ lat: DEFAULT_LAT, lng: DEFAULT_LNG })
-  const [isLoaded, setIsLoaded] = useState(false)
 
-  // Read city context on EVERY mount - this runs when navigating to /tools
+  // Read city context on mount AND when pathname changes (navigation)
   useEffect(() => {
     const ctx = getCityContext()
     if (ctx) {
       setCoords({ lat: ctx.lat, lng: ctx.lng })
     }
-    setIsLoaded(true)
-  }, [])
+  }, [pathname]) // Re-run when navigating back to tools
 
   // Time ticker
   useEffect(() => {

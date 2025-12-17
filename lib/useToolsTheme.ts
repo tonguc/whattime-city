@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
+import { usePathname } from 'next/navigation'
 import { getCityContext } from '@/lib/city-context'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme, Theme } from '@/lib/themes'
@@ -19,14 +20,15 @@ interface ToolsThemeResult {
 
 /**
  * Hook for tools pages - reads city context DIRECTLY from sessionStorage
- * This ensures the theme reflects the last selected city, not user location
+ * Re-reads on pathname change to catch navigation updates
  */
 export function useToolsTheme(): ToolsThemeResult {
+  const pathname = usePathname()
   const [currentTime, setCurrentTime] = useState(new Date())
   const [coords, setCoords] = useState({ lat: DEFAULT_LAT, lng: DEFAULT_LNG })
   const [selectedCity, setSelectedCity] = useState<City | null>(null)
 
-  // Read context on mount - runs when component mounts
+  // Read context - runs on mount AND pathname change
   useEffect(() => {
     const ctx = getCityContext()
     if (ctx) {
@@ -34,7 +36,7 @@ export function useToolsTheme(): ToolsThemeResult {
       const city = cities.find(c => c.slug === ctx.slug) || null
       setSelectedCity(city)
     }
-  }, [])
+  }, [pathname])
 
   // Time ticker
   useEffect(() => {
