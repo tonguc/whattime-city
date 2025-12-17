@@ -3,23 +3,21 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { cities } from '@/lib/cities'
-import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
+import { useCityContext } from '@/lib/CityContext'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
-import Header from '@/components/Header'
-import Search from '@/components/Search'
 
 export default function WorldAlarmPage() {
-  const { theme, isLight, timeOfDay } = useToolsTheme()
+  const { theme, isLight, selectedCity } = useCityContext()
   
   const [currentTime, setCurrentTime] = useState(new Date())
-  const [selectedCity, setSelectedCity] = useState(() => getContextCity('London'))
+  const [alarmCity, setAlarmCity] = useState(() => selectedCity || cities.find(c => c.city === 'London') || cities[0])
   const [alarmHour, setAlarmHour] = useState(9)
   const [alarmMinute, setAlarmMinute] = useState(0)
 
-  // Get current time in selected city
+  // Get current time in alarm city
   const getCityTime = () => {
     return new Date().toLocaleTimeString('en-US', { 
-      timeZone: selectedCity.timezone, 
+      timeZone: alarmCity.timezone, 
       hour: '2-digit', 
       minute: '2-digit',
       second: '2-digit',
@@ -30,7 +28,7 @@ export default function WorldAlarmPage() {
   // Calculate local alarm time
   const getLocalAlarmTime = () => {
     const now = new Date()
-    const cityNow = new Date(now.toLocaleString('en-US', { timeZone: selectedCity.timezone }))
+    const cityNow = new Date(now.toLocaleString('en-US', { timeZone: alarmCity.timezone }))
     const localNow = now
     
     const diffMs = localNow.getTime() - cityNow.getTime()
@@ -48,24 +46,15 @@ export default function WorldAlarmPage() {
   }
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
-      <div className="max-w-6xl mx-auto px-4 py-6 sm:py-8">
-        {/* Shared Header with Search */}
-        <Header 
-          isLight={isLight} 
-          theme={theme} 
-          currentPage="tool-detail"
-          searchComponent={<Search theme={theme} currentTheme={timeOfDay} />}
-        />
+    <>
+      {/* Mini Navigation */}
+      <ToolsMiniNav isLight={isLight} theme={theme} />
 
-        {/* Mini Navigation */}
-        <ToolsMiniNav isLight={isLight} theme={theme} />
-
-        {/* Tool Hero */}
-        <div className="text-center mb-8">
-          <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-            World Alarm Clock
-          </h1>
+      {/* Tool Hero */}
+      <div className="text-center mb-8">
+        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          World Alarm Clock
+        </h1>
           <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
             Set alarms based on any city's local time
           </p>
@@ -81,8 +70,8 @@ export default function WorldAlarmPage() {
               Select City
             </label>
             <select
-              value={selectedCity.city}
-              onChange={(e) => setSelectedCity(cities.find(c => c.city === e.target.value) || cities[0])}
+              value={alarmCity.city}
+              onChange={(e) => setAlarmCity(cities.find(c => c.city === e.target.value) || cities[0])}
               className={`w-full px-4 py-3 rounded-xl border ${
                 isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-700 border-slate-600 text-white'
               }`}
@@ -92,14 +81,14 @@ export default function WorldAlarmPage() {
               ))}
             </select>
             <div className={`mt-2 text-center text-lg ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
-              Current time in {selectedCity.city}: <span className="font-semibold">{getCityTime()}</span>
+              Current time in {alarmCity.city}: <span className="font-semibold">{getCityTime()}</span>
             </div>
           </div>
 
           {/* Alarm Time */}
           <div className="mb-6">
             <label className={`block text-sm font-medium mb-2 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
-              Alarm Time (in {selectedCity.city})
+              Alarm Time (in {alarmCity.city})
             </label>
             <div className="flex gap-2 max-w-xs mx-auto">
               <select
@@ -137,7 +126,7 @@ export default function WorldAlarmPage() {
               {getLocalAlarmTime()}
             </div>
             <div className={`text-sm mt-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-              to wake up at {alarmHour.toString().padStart(2, '0')}:{alarmMinute.toString().padStart(2, '0')} in {selectedCity.city}
+              to wake up at {alarmHour.toString().padStart(2, '0')}:{alarmMinute.toString().padStart(2, '0')} in {alarmCity.city}
             </div>
           </div>
         </div>
@@ -263,7 +252,6 @@ export default function WorldAlarmPage() {
             </p>
           </div>
         </footer>
-      </div>
-    </div>
+    </>
   )
 }

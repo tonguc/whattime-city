@@ -2,21 +2,16 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import { cities } from '@/lib/cities'
-import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
-import { saveCityContext } from '@/lib/city-context'
+import { useCityContext } from '@/lib/CityContext'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
-import Header from '@/components/Header'
-import Search from '@/components/Search'
 
 export default function TimeConverterPage() {
-  // Single source of truth for theme - NEVER uses geolocation
-  const { theme, isLight, timeOfDay } = useToolsTheme()
-  const router = useRouter()
+  // Theme from global CityContext (via layout)
+  const { theme, isLight, selectedCity } = useCityContext()
   
   // Get initial city from context or default
-  const [fromCity, setFromCity] = useState(() => getContextCity('New York'))
+  const [fromCity, setFromCity] = useState(() => selectedCity || cities.find(c => c.city === 'New York') || cities[0])
   const [toCity, setToCity] = useState(() => cities.find(c => c.city === 'London') || cities[1])
   const [selectedHour, setSelectedHour] = useState(12)
   const [selectedMinute, setSelectedMinute] = useState(0)
@@ -46,28 +41,20 @@ export default function TimeConverterPage() {
     setToCity(temp)
   }
 
+  // NO container/header here - from layout
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
-      <div className="max-w-6xl mx-auto px-4 py-6 sm:py-8">
-        {/* Shared Header with Search */}
-        <Header 
-          isLight={isLight} 
-          theme={theme} 
-          currentPage="tool-detail"
-          searchComponent={<Search theme={theme} currentTheme={timeOfDay} />}
-        />
+    <>
+      {/* Mini Navigation */}
+      <ToolsMiniNav isLight={isLight} theme={theme} />
 
-        {/* Mini Navigation */}
-        <ToolsMiniNav isLight={isLight} theme={theme} />
-
-        {/* Tool Hero */}
-        <div className="text-center mb-8">
-          <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-            Time Converter
-          </h1>
-          <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-            Convert time between any two cities instantly
-          </p>
+      {/* Tool Hero */}
+      <div className="text-center mb-8">
+        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          Time Converter
+        </h1>
+        <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          Convert time between any two cities instantly
+        </p>
         </div>
 
         {/* Tool Interface */}
@@ -288,7 +275,6 @@ export default function TimeConverterPage() {
             </p>
           </div>
         </footer>
-      </div>
-    </div>
+    </>
   )
 }

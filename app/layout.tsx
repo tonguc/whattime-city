@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { CityProvider } from '@/lib/CityContext'
 
 export const metadata: Metadata = {
   title: 'World Clock - Current Local Time in Any City | whattime.city',
@@ -55,7 +56,9 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        {children}
+        <CityProvider>
+          {children}
+        </CityProvider>
       </body>
     </html>
   )

@@ -2,21 +2,16 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import { cities } from '@/lib/cities'
-import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
-import { saveCityContext } from '@/lib/city-context'
+import { useCityContext } from '@/lib/CityContext'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
-import Header from '@/components/Header'
-import Search from '@/components/Search'
 
 export default function MeetingPlannerPage() {
-  const { theme, isLight, timeOfDay } = useToolsTheme()
-  const router = useRouter()
+  const { theme, isLight, selectedCity } = useCityContext()
   
   const [currentTime, setCurrentTime] = useState(new Date())
   const [selectedCities, setSelectedCities] = useState(() => [
-    getContextCity('New York'),
+    selectedCity || cities.find(c => c.city === 'New York') || cities[0],
     cities.find(c => c.city === 'London') || cities[1],
     cities.find(c => c.city === 'Tokyo') || cities[2]
   ])
@@ -34,20 +29,11 @@ export default function MeetingPlannerPage() {
   const isWorkingHour = (hour: number) => hour >= 9 && hour <= 17
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
-      <div className="max-w-6xl mx-auto px-4 py-6 sm:py-8">
-        {/* Shared Header with Search */}
-        <Header 
-          isLight={isLight} 
-          theme={theme} 
-          currentPage="tool-detail"
-          searchComponent={<Search theme={theme} currentTheme={timeOfDay} />}
-        />
+    <>
+      {/* Mini Navigation */}
+      <ToolsMiniNav isLight={isLight} theme={theme} />
 
-        {/* Mini Navigation */}
-        <ToolsMiniNav isLight={isLight} theme={theme} />
-
-        {/* Tool Hero */}
+      {/* Tool Hero */}
         <div className="text-center mb-8">
           <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
             Meeting Planner
@@ -255,7 +241,6 @@ export default function MeetingPlannerPage() {
             </p>
           </div>
         </footer>
-      </div>
-    </div>
+    </>
   )
 }

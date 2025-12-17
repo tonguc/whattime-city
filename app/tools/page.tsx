@@ -2,13 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import { translations, detectLanguage, Language } from '@/lib/translations'
-import { useToolsTheme } from '@/lib/useToolsTheme'
-import { cities } from '@/lib/cities'
-import { saveCityContext } from '@/lib/city-context'
-import Header from '@/components/Header'
-import Search from '@/components/Search'
+import { useCityContext } from '@/lib/CityContext'
 
 // Tool definitions - Normalized names (2 words, English only)
 const tools = [
@@ -107,9 +102,9 @@ const tools = [
 ]
 
 export default function ToolsPage() {
-  const { theme, isLight, timeOfDay } = useToolsTheme()
+  // Theme comes from global CityContext via layout
+  const { theme, isLight } = useCityContext()
   const [lang, setLang] = useState<Language>('en')
-  const router = useRouter()
   
   useEffect(() => {
     setLang(detectLanguage())
@@ -117,47 +112,28 @@ export default function ToolsPage() {
   
   const t = translations[lang]
   
-  // Handle city selection from search
-  const handleCitySelect = (city: typeof cities[0]) => {
-    saveCityContext({
-      slug: city.slug,
-      city: city.city,
-      lat: city.lat,
-      lng: city.lng,
-      timezone: city.timezone
-    })
-    router.push(`/${city.slug}`)
-  }
-  
+  // NO header here - it's in layout.tsx
+  // NO container here - it's in layout.tsx
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
-      <div className="max-w-6xl mx-auto px-4 py-6 sm:py-8">
-        {/* Shared Header with Search */}
-        <Header 
-          isLight={isLight} 
-          theme={theme} 
-          currentPage="tools"
-          searchComponent={<Search theme={theme} currentTheme={timeOfDay} />}
-        />
+    <>
+      {/* Page Title */}
+      <div className="text-center mb-10">
+        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          Time Zone Tools
+        </h1>
+        <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          Essential tools for managing time across the globe
+        </p>
+      </div>
 
-        {/* Page Title */}
-        <div className="text-center mb-10">
-          <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-            Time Zone Tools
-          </h1>
-          <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-            Essential tools for managing time across the globe
-          </p>
-        </div>
-
-        {/* Tools Grid - Primary Navigation */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {tools.map((tool) => (
-            <Link
-              key={tool.id}
-              href={tool.url}
-              className={`group p-6 rounded-2xl backdrop-blur-xl border transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${
-                isLight 
+      {/* Tools Grid - Primary Navigation */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {tools.map((tool) => (
+          <Link
+            key={tool.id}
+            href={tool.url}
+            className={`group p-6 rounded-2xl backdrop-blur-xl border transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${
+              isLight 
                   ? 'bg-white/60 border-white/50 hover:bg-white/80' 
                   : 'bg-slate-800/60 border-slate-700/50 hover:bg-slate-800/80'
               }`}
@@ -197,7 +173,6 @@ export default function ToolsPage() {
             </p>
           </div>
         </footer>
-      </div>
-    </div>
+    </>
   )
 }
