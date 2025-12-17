@@ -4,9 +4,7 @@ import { createContext, useContext, useState, useEffect, ReactNode } from 'react
 import { City, cities } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme, Theme } from '@/lib/themes'
-
-// Storage key for persistence
-const STORAGE_KEY = 'whattime_selected_city'
+import { getCityContext } from '@/lib/city-context'
 
 interface CityContextType {
   selectedCity: City | null
@@ -25,26 +23,19 @@ const DEFAULT_LNG = -74.01
 
 export function CityProvider({ children }: { children: ReactNode }) {
   const [selectedCity, setSelectedCityState] = useState<City | null>(null)
-  const [userCoords, setUserCoords] = useState({ lat: DEFAULT_LAT, lng: DEFAULT_LNG })
+  const [coords, setCoords] = useState({ lat: DEFAULT_LAT, lng: DEFAULT_LNG })
   const [currentTime, setCurrentTime] = useState(new Date())
-  const [isHydrated, setIsHydrated] = useState(false)
 
-  // Load persisted city on mount (client only)
+  // Load persisted city on mount - use SAME key as WorldClock (whattime_city_context)
   useEffect(() => {
-    // Try to load from sessionStorage
-    const stored = sessionStorage.getItem(STORAGE_KEY)
-    if (stored) {
-      try {
-        const data = JSON.parse(stored)
-        const city = cities.find(c => c.slug === data.slug)
-        if (city) {
-          setSelectedCityState(city)
-        }
-      } catch (e) {
-        console.error('Failed to parse stored city:', e)
+    const ctx = getCityContext()
+    if (ctx) {
+      const city = cities.find(c => c.slug === ctx.slug)
+      if (city) {
+        setSelectedCityState(city)
+        setCoords({ lat: ctx.lat, lng: ctx.lng })
       }
     }
-    setIsHydrated(true)
   }, [])
 
   // Time ticker
@@ -53,29 +44,19 @@ export function CityProvider({ children }: { children: ReactNode }) {
     return () => clearInterval(timer)
   }, [])
 
-  // Set and persist city
+  // Set city (updates coords for theme calculation)
   const setSelectedCity = (city: City) => {
     setSelectedCityState(city)
-    sessionStorage.setItem(STORAGE_KEY, JSON.stringify({
-      slug: city.slug,
-      lat: city.lat,
-      lng: city.lng
-    }))
+    setCoords({ lat: city.lat, lng: city.lng })
   }
 
   // Clear city
   const clearSelectedCity = () => {
     setSelectedCityState(null)
-    sessionStorage.removeItem(STORAGE_KEY)
+    setCoords({ lat: DEFAULT_LAT, lng: DEFAULT_LNG })
   }
 
-  // Calculate theme based on:
-  // 1. Selected city (if exists)
-  // 2. User coordinates (fallback)
-  const coords = selectedCity 
-    ? { lat: selectedCity.lat, lng: selectedCity.lng }
-    : userCoords
-
+  // Calculate theme based on coords (from selected city or default)
   const timeOfDay = getTimeOfDay(currentTime, coords.lat, coords.lng)
   const theme = themes[timeOfDay]
   const isLight = isLightTheme(timeOfDay)

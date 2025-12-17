@@ -10,41 +10,38 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
 
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
-      <div className="max-w-6xl mx-auto px-4 py-6 sm:py-8">
-        {/* SINGLE SHARED HEADER - Same on ALL tools pages */}
-        <header className="sticky top-0 z-50 flex items-center justify-between gap-4 mb-6 py-3 -mx-4 px-4 backdrop-blur-xl">
-          {/* Logo - EXACT same size as WorldClock: h-11 sm:h-14 */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="hover:opacity-80 transition-opacity">
-              <img 
-                src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
-                alt="whattime.city" 
-                className="h-11 sm:h-14"
-              />
-            </Link>
-          </div>
-
-          {/* Search - centered */}
-          <div className="flex-1 flex justify-center max-w-md">
+      <div className="max-w-6xl mx-auto px-4 py-4 sm:py-4">
+        {/* Header - EXACT same structure as WorldClock */}
+        <header className="sticky top-0 z-50 flex flex-col lg:flex-row items-center justify-between gap-2 sm:gap-4 mb-3 sm:mb-4 py-2 sm:py-2 -mx-4 px-4 backdrop-blur-xl">
+          {/* Logo - same as WorldClock */}
+          <Link href="/" className="hover:opacity-80 transition-opacity flex-shrink-0">
+            <img 
+              src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
+              alt="whattime.city" 
+              className="h-11 sm:h-14"
+            />
+          </Link>
+          
+          {/* Search + Nav - same layout as WorldClock */}
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-3 w-full sm:w-auto">
             <Search theme={theme} currentTheme={timeOfDay} />
-          </div>
-
-          {/* Navigation */}
-          <div className="flex-shrink-0 flex items-center gap-2">
-            <Link 
-              href="/"
-              className={`whitespace-nowrap px-3 py-2 rounded-full text-sm font-medium transition-all ${
-                isLight ? 'text-slate-600 hover:bg-white/60' : 'text-slate-300 hover:bg-slate-800/60'
-              }`}
-            >
-              World Clock
-            </Link>
-            <Link 
-              href="/tools"
-              className={`px-3 py-2 rounded-full text-sm font-medium ${theme.accentBg} text-white`}
-            >
-              Tools
-            </Link>
+            
+            <div className="flex items-center justify-center w-full sm:w-auto gap-1 sm:gap-2">
+              <Link 
+                href="/"
+                className={`px-4 sm:px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                  isLight ? 'text-slate-600 hover:bg-white/60' : 'text-slate-300 hover:bg-slate-800/60'
+                }`}
+              >
+                World Clock
+              </Link>
+              <Link 
+                href="/tools"
+                className={`px-4 sm:px-4 py-2 rounded-full text-sm font-medium ${theme.accentBg} text-white`}
+              >
+                Tools
+              </Link>
+            </div>
           </div>
         </header>
 
