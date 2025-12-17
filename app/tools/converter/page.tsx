@@ -3,12 +3,12 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { cities } from '@/lib/cities'
-import { useCityContext } from '@/lib/CityContext'
+import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 
 export default function TimeConverterPage() {
   // Theme from global CityContext (via layout)
-  const { theme, isLight, selectedCity } = useCityContext()
+  const { theme, isLight, selectedCity } = useToolsTheme()
   
   // Get initial city from context or default
   const [fromCity, setFromCity] = useState(() => selectedCity || cities.find(c => c.city === 'New York') || cities[0])

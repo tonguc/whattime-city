@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { translations, detectLanguage, Language } from '@/lib/translations'
-import { useCityContext } from '@/lib/CityContext'
+import { useToolsTheme } from '@/lib/useToolsTheme'
 
 // Tool definitions - Normalized names (2 words, English only)
 const tools = [
@@ -102,8 +102,8 @@ const tools = [
 ]
 
 export default function ToolsPage() {
-  // Theme comes from global CityContext via layout
-  const { theme, isLight } = useCityContext()
+  // Theme from useToolsTheme - reads directly from sessionStorage
+  const { theme, isLight } = useToolsTheme()
   const [lang, setLang] = useState<Language>('en')
   
   useEffect(() => {

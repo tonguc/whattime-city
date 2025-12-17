@@ -3,11 +3,11 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { cities } from '@/lib/cities'
-import { useCityContext } from '@/lib/CityContext'
+import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 
 export default function WorldAlarmPage() {
-  const { theme, isLight, selectedCity } = useCityContext()
+  const { theme, isLight, selectedCity } = useToolsTheme()
   
   const [currentTime, setCurrentTime] = useState(new Date())
   const [alarmCity, setAlarmCity] = useState(() => selectedCity || cities.find(c => c.city === 'London') || cities[0])
