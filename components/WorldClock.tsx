@@ -67,6 +67,7 @@ function FavoriteCard({
     return () => clearInterval(timer)
   }, [])
   
+  // localTime for DISPLAY only (formatted string parsed as Date)
   const localTime = new Date(time.toLocaleString('en-US', { timeZone: city.timezone }))
   
   let timeStr: string
@@ -80,7 +81,8 @@ function FavoriteCard({
     timeStr = localTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })
   }
   
-  const cityTimeOfDay = getTimeOfDay(localTime, city.lat, city.lng)
+  // Use real UTC time for theme calculation (time has correct UTC, localTime doesn't)
+  const cityTimeOfDay = getTimeOfDay(time, city.lat, city.lng)
   const cityTheme = themes[cityTimeOfDay]
   const Icon = TimeIcons[cityTimeOfDay]
   
@@ -300,9 +302,11 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   
   const t = translations[lang]
   
+  // localTime for DISPLAY only (date formatting, time display)
   const localTime = new Date(time.toLocaleString('en-US', { timeZone: selectedCity.timezone }))
   
-  const autoTheme = getTimeOfDay(localTime, selectedCity.lat, selectedCity.lng)
+  // Use real UTC time for theme calculation (time has correct UTC values)
+  const autoTheme = getTimeOfDay(time, selectedCity.lat, selectedCity.lng)
   const currentTheme = themeMode === 'auto' ? autoTheme : themeMode
   const theme = themes[currentTheme]
   const isLight = isLightTheme(currentTheme)
