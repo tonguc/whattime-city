@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { City, searchCities } from '@/lib/cities'
 import { Theme } from '@/lib/themes'
 import { getTimeOfDay } from '@/lib/sun-calculator'
+import { saveCityContext } from '@/lib/city-context'
 
 interface SearchProps {
   theme: Theme
@@ -40,6 +41,14 @@ export default function Search({ theme, currentTheme }: SearchProps) {
   }, [query])
   
   const handleSelect = (city: City) => {
+    // Save city context BEFORE navigation - ensures Tools page gets correct theme
+    saveCityContext({
+      slug: city.slug,
+      city: city.city,
+      lat: city.lat,
+      lng: city.lng,
+      timezone: city.timezone
+    })
     router.push(`/${city.slug}`)
     setQuery('')
     setIsOpen(false)
