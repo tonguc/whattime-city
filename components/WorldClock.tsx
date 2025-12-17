@@ -198,8 +198,6 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   
   // Save city context whenever selectedCity changes (for tools navigation)
   useEffect(() => {
-    console.log('=== WORLDCLOCK saveCityContext ===')
-    console.log('Saving:', selectedCity.slug, selectedCity.lat, selectedCity.lng)
     saveCityContext({
       slug: selectedCity.slug,
       city: selectedCity.city,

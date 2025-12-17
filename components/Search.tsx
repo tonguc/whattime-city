@@ -41,8 +41,6 @@ export default function Search({ theme, currentTheme }: SearchProps) {
   }, [query])
   
   const handleSelect = (city: City) => {
-    console.log('=== SEARCH handleSelect ===')
-    console.log('Saving city context:', city.slug, city.lat, city.lng)
     // Save city context BEFORE navigation - ensures Tools page gets correct theme
     saveCityContext({
       slug: city.slug,

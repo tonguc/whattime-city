@@ -27,8 +27,23 @@ export function getSunTimes(date: Date, lat: number) {
 
 export type TimeOfDay = 'night' | 'dawn' | 'day' | 'dusk'
 
+// Calculate local hour at given longitude (approximate solar time)
+function getLocalHourAtLongitude(utcTime: Date, lng: number): number {
+  // UTC hour
+  const utcHour = utcTime.getUTCHours() + utcTime.getUTCMinutes() / 60
+  // Each 15 degrees = 1 hour offset from UTC
+  const offsetHours = lng / 15
+  // Local solar time
+  let localHour = utcHour + offsetHours
+  // Normalize to 0-24
+  while (localHour < 0) localHour += 24
+  while (localHour >= 24) localHour -= 24
+  return localHour
+}
+
 export function getTimeOfDay(localTime: Date, lat: number, lng: number): TimeOfDay {
-  const hour = localTime.getHours() + localTime.getMinutes() / 60
+  // Calculate the local hour at this longitude (solar time approximation)
+  const hour = getLocalHourAtLongitude(localTime, lng)
   const { sunrise, sunset } = getSunTimes(localTime, lat)
   
   // Sabah geçişi: sunrise-1 ile sunrise+1 arası
