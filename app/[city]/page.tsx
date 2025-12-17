@@ -70,8 +70,7 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
       type: 'website',
       locale: 'en_US',
       siteName: 'whattime.city',
-      url: `https://whattime.city/${slug}`,
-      images: [`/og/${slug}.png`]
+      url: `https://whattime.city/${slug}`
     },
     twitter: {
       card: 'summary_large_image',
