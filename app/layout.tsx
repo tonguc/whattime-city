@@ -3,6 +3,7 @@ import './globals.css'
 import { CityProvider } from '@/lib/CityContext'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://whattime.city'),
   title: 'World Clock - Current Local Time in Any City | whattime.city',
   description: 'Check the current local time anywhere in the world. Live world clock with sunrise, sunset times and real-time weather. Compare time zones across 200+ major cities.',
   keywords: ['world clock', 'current time', 'local time', 'time zone converter', 'sunrise sunset', 'city time', 'international time', 'time difference'],
