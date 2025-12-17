@@ -33,7 +33,7 @@ const mapCities = [
 
 export default function WorldMap() {
   const [time, setTime] = useState(new Date())
-  const [hoveredCity, setHoveredCity] = useState<string | null>(null)
+  const [selectedCity, setSelectedCity] = useState<string | null>(null)
   const [contextCoords, setContextCoords] = useState<{ lat: number; lng: number }>({ lat: 40.71, lng: -74.01 })
   
   useEffect(() => {
@@ -46,6 +46,14 @@ export default function WorldMap() {
     const timer = setInterval(() => setTime(new Date()), 1000)
     return () => clearInterval(timer)
   }, [])
+  
+  // Close popup when clicking outside
+  const handleMapClick = (e: React.MouseEvent) => {
+    // Only close if clicking on the map background, not on a city
+    if ((e.target as HTMLElement).tagName === 'rect' || (e.target as HTMLElement).tagName === 'path') {
+      setSelectedCity(null)
+    }
+  }
   
   // Calculate day/night terminator position (simplified)
   // The terminator line moves based on UTC hour
@@ -80,14 +88,14 @@ export default function WorldMap() {
 
   return (
     <div className={`min-h-screen transition-colors duration-700 bg-gradient-to-br ${mainTheme.bg}`}>
-      {/* Header */}
+      {/* Header - Same as homepage */}
       <header className={`sticky top-0 z-50 w-full backdrop-blur-xl ${isLight ? 'bg-white/70' : 'bg-slate-900/70'}`}>
-        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="hover:opacity-80 transition-opacity">
+        <div className="max-w-6xl mx-auto px-4 py-2 sm:py-3 flex items-center justify-between">
+          <Link href="/" className="hover:opacity-80 transition-opacity flex-shrink-0">
             <img 
               src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
               alt="whattime.city" 
-              className="h-10 sm:h-12"
+              className="h-11 sm:h-14"
             />
           </Link>
           
@@ -117,7 +125,7 @@ export default function WorldMap() {
       </header>
 
       {/* Map Container */}
-      <div className="relative max-w-7xl mx-auto px-4 py-8">
+      <div className="relative max-w-6xl mx-auto px-4 py-8">
         <h1 className={`text-2xl sm:text-3xl font-bold mb-6 text-center ${isLight ? 'text-slate-800' : 'text-white'}`}>
           🗺️ World Time Map
         </h1>
@@ -128,8 +136,9 @@ export default function WorldMap() {
           {/* SVG Map */}
           <svg 
             viewBox="0 0 100 60" 
-            className="w-full h-auto"
+            className="w-full h-auto cursor-pointer"
             style={{ minHeight: '400px' }}
+            onClick={handleMapClick}
           >
             {/* Ocean background */}
             <rect x="0" y="0" width="100" height="60" fill={isLight ? '#e0f2fe' : '#0c4a6e'} />
@@ -191,20 +200,18 @@ export default function WorldMap() {
               if (!data) return null
               
               const { city, timeStr, timeOfDay, theme } = data
-              const isHovered = hoveredCity === slug
+              const isSelected = selectedCity === slug
               const isNight = timeOfDay === 'night'
               
               return (
-                <g key={slug}>
+                <g key={slug} className="cursor-pointer" onClick={(e) => { e.stopPropagation(); setSelectedCity(slug); }}>
                   {/* City dot */}
                   <circle
                     cx={x}
                     cy={y}
-                    r={isHovered ? 1.5 : 1}
+                    r={isSelected ? 1.5 : 1}
                     fill={isNight ? '#22d3ee' : '#fbbf24'}
-                    className="cursor-pointer transition-all duration-200"
-                    onMouseEnter={() => setHoveredCity(slug)}
-                    onMouseLeave={() => setHoveredCity(null)}
+                    className="transition-all duration-200"
                   />
                   
                   {/* Pulse effect */}
@@ -221,24 +228,19 @@ export default function WorldMap() {
                   />
                   
                   {/* Time label */}
-                  <a href={`/${slug}`}>
-                    <g 
-                      className="cursor-pointer"
-                      onMouseEnter={() => setHoveredCity(slug)}
-                      onMouseLeave={() => setHoveredCity(null)}
-                    >
-                      <rect
-                        x={x - 5}
-                        y={y - 6}
-                        width="10"
-                        height="4"
-                        rx="0.5"
-                        fill={isHovered ? (isNight ? '#0e7490' : '#d97706') : (isNight ? '#164e63' : '#92400e')}
-                        opacity={isHovered ? 1 : 0.9}
-                      />
-                      <text
-                        x={x}
-                        y={y - 3.2}
+                  <g>
+                    <rect
+                      x={x - 5}
+                      y={y - 6}
+                      width="10"
+                      height="4"
+                      rx="0.5"
+                      fill={isSelected ? (isNight ? '#0e7490' : '#d97706') : (isNight ? '#164e63' : '#92400e')}
+                      opacity={isSelected ? 1 : 0.9}
+                    />
+                    <text
+                      x={x}
+                      y={y - 3.2}
                         textAnchor="middle"
                         fontSize="2"
                         fill="white"
@@ -248,15 +250,14 @@ export default function WorldMap() {
                         {timeStr}
                       </text>
                     </g>
-                  </a>
                 </g>
               )
             })}
           </svg>
           
-          {/* Hovered City Info */}
-          {hoveredCity && (() => {
-            const data = getCityData(hoveredCity)
+          {/* Selected City Info */}
+          {selectedCity && (() => {
+            const data = getCityData(selectedCity)
             if (!data) return null
             const { city, timeStr, timeOfDay } = data
             const timeIcons: Record<string, string> = { dawn: '🌅', day: '☀️', dusk: '🌆', night: '🌙' }
@@ -284,7 +285,7 @@ export default function WorldMap() {
                   </div>
                 </div>
                 <Link 
-                  href={`/${hoveredCity}`}
+                  href={`/${selectedCity}`}
                   className={`mt-3 block w-full text-center py-2 rounded-full text-sm font-medium transition-all ${
                     isLight 
                       ? 'bg-slate-800 text-white hover:bg-slate-700' 
