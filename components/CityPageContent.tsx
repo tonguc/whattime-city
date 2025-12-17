@@ -355,25 +355,7 @@ export default function CityPageContent({ city }: CityPageContentProps) {
             </div>
           )}
           
-          {/* Affiliate placeholder - will be activated later */}
-          <div className="mt-6 pt-4 border-t border-slate-200/20">
-            <div className="flex flex-wrap gap-3">
-              <button className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                isLight 
-                  ? 'bg-blue-500 text-white hover:bg-blue-600' 
-                  : 'bg-blue-600 text-white hover:bg-blue-700'
-              }`}>
-                🏨 Find Hotels
-              </button>
-              <button className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                isLight 
-                  ? 'bg-slate-200 text-slate-700 hover:bg-slate-300' 
-                  : 'bg-slate-700 text-slate-200 hover:bg-slate-600'
-              }`}>
-                🎫 Book Activities
-              </button>
-            </div>
-          </div>
+
         </div>
       </section>
       
