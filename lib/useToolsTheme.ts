@@ -18,21 +18,6 @@ interface ToolsThemeResult {
   hasContext: boolean
 }
 
-// Read context synchronously - called ONCE during state initialization
-function readContextData(): { lat: number; lng: number; city: City | null; hasContext: boolean } {
-  if (typeof window === 'undefined') {
-    return { lat: DEFAULT_LAT, lng: DEFAULT_LNG, city: null, hasContext: false }
-  }
-  
-  const ctx = getCityContext()
-  if (ctx) {
-    const city = cities.find(c => c.slug === ctx.slug) || null
-    return { lat: ctx.lat, lng: ctx.lng, city, hasContext: true }
-  }
-  
-  return { lat: DEFAULT_LAT, lng: DEFAULT_LNG, city: null, hasContext: false }
-}
-
 /**
  * Single hook for all tools pages to get theme based on city context.
  * 
@@ -44,16 +29,37 @@ function readContextData(): { lat: number; lng: number; city: City | null; hasCo
  * If a city context exists, it is ALWAYS used.
  */
 export function useToolsTheme(): ToolsThemeResult {
-  // Use lazy initialization - function only runs ONCE on client
-  const [contextData] = useState(readContextData)
+  const [contextData, setContextData] = useState({
+    lat: DEFAULT_LAT,
+    lng: DEFAULT_LNG,
+    city: null as City | null,
+    hasContext: false
+  })
   const [currentTime, setCurrentTime] = useState(new Date())
+  const [isInitialized, setIsInitialized] = useState(false)
   
+  // Read context ONCE on client mount - this ensures sessionStorage is available
+  useEffect(() => {
+    const ctx = getCityContext()
+    if (ctx) {
+      const city = cities.find(c => c.slug === ctx.slug) || null
+      setContextData({
+        lat: ctx.lat,
+        lng: ctx.lng,
+        city,
+        hasContext: true
+      })
+    }
+    setIsInitialized(true)
+  }, [])
+  
+  // Time ticker
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000)
     return () => clearInterval(timer)
   }, [])
   
-  // Calculate theme based on FIXED coordinates from context
+  // Calculate theme based on context coordinates (or defaults)
   const timeOfDay = getTimeOfDay(currentTime, contextData.lat, contextData.lng)
   const theme = themes[timeOfDay]
   const isLight = isLightTheme(timeOfDay)

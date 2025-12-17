@@ -29,13 +29,13 @@ export default function Header({
 }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 h-[60px] flex items-center justify-between gap-3 mb-6 -mx-4 px-4 backdrop-blur-xl">
-      {/* LEFT: Logo - fixed size, never changes */}
+      {/* LEFT: Logo - MUST match WorldClock exactly: h-11 sm:h-14 */}
       <div className="flex-shrink-0">
         <Link href="/" className="hover:opacity-80 transition-opacity inline-flex items-center">
           <img 
             src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
             alt="whattime.city" 
-            className="h-10 sm:h-12"
+            className="h-11 sm:h-14"
           />
         </Link>
       </div>
