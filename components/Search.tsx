@@ -19,6 +19,7 @@ export default function Search({ theme, currentTheme }: SearchProps) {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [now, setNow] = useState(new Date())
   const inputRef = useRef<HTMLInputElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
   
   const isLight = ['day', 'light'].includes(currentTheme)
@@ -26,6 +27,18 @@ export default function Search({ theme, currentTheme }: SearchProps) {
   useEffect(() => {
     const timer = setInterval(() => setNow(new Date()), 1000)
     return () => clearInterval(timer)
+  }, [])
+  
+  // Click outside handler to close dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+    
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
   
   useEffect(() => {
@@ -78,14 +91,14 @@ export default function Search({ theme, currentTheme }: SearchProps) {
     })
   }
   
+  // Use real UTC time (now) for correct day/night calculation
   const getCityDayNight = (city: City) => {
-    const localTime = new Date(now.toLocaleString('en-US', { timeZone: city.timezone }))
-    const timeOfDay = getTimeOfDay(localTime, city.lat, city.lng)
+    const timeOfDay = getTimeOfDay(now, city.lat, city.lng)
     return timeOfDay === 'day' || timeOfDay === 'dawn' || timeOfDay === 'dusk' ? '☀️' : '🌙'
   }
   
   return (
-    <div className="relative w-full sm:w-auto flex-shrink-0">
+    <div ref={containerRef} className="relative w-full sm:w-auto flex-shrink-0">
       <div 
         className={`flex items-center gap-2 px-4 py-2.5 rounded-full overflow-hidden box-border ${
           isLight ? 'bg-white/80 shadow-sm' : 'bg-slate-800/80'
