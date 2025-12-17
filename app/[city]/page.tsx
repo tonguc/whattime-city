@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cities, getCityBySlug, getAllSlugs } from '@/lib/cities'
 import WorldClock from '@/components/WorldClock'
+import CityPageContent from '@/components/CityPageContent'
 
 interface CityPageProps {
   params: Promise<{ city: string }>
@@ -97,5 +98,10 @@ export default async function CityPage({ params }: CityPageProps) {
     notFound()
   }
   
-  return <WorldClock initialCity={city} />
+  return (
+    <>
+      <WorldClock initialCity={city} />
+      <CityPageContent city={city} />
+    </>
+  )
 }
