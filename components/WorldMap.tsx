@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { cities, City } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
+import { getCityContext } from '@/lib/city-context'
 
 // Major cities to show on map (capitals and key cities)
 const mapCities = [
@@ -33,8 +34,15 @@ const mapCities = [
 export default function WorldMap() {
   const [time, setTime] = useState(new Date())
   const [hoveredCity, setHoveredCity] = useState<string | null>(null)
+  const [contextCoords, setContextCoords] = useState<{ lat: number; lng: number }>({ lat: 40.71, lng: -74.01 })
   
   useEffect(() => {
+    // Get saved city context for theme
+    const context = getCityContext()
+    if (context) {
+      setContextCoords({ lat: context.lat, lng: context.lng })
+    }
+    
     const timer = setInterval(() => setTime(new Date()), 1000)
     return () => clearInterval(timer)
   }, [])
@@ -65,8 +73,8 @@ export default function WorldMap() {
     return { city, timeStr, timeOfDay, theme }
   }
 
-  // Determine background theme based on user's location or default
-  const mainTimeOfDay = getTimeOfDay(time, 40.71, -74.01) // Default to NY
+  // Determine background theme based on saved city context
+  const mainTimeOfDay = getTimeOfDay(time, contextCoords.lat, contextCoords.lng)
   const mainTheme = themes[mainTimeOfDay]
   const isLight = isLightTheme(mainTimeOfDay)
 
@@ -270,7 +278,7 @@ export default function WorldMap() {
                     <div className={`text-2xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
                       {timeStr}
                     </div>
-                    <div className="text-sm">
+                    <div className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
                       {timeIcons[timeOfDay]} {timeOfDay.charAt(0).toUpperCase() + timeOfDay.slice(1)}
                     </div>
                   </div>
