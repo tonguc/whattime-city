@@ -6,9 +6,10 @@ import { cities } from '@/lib/cities'
 import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Header from '@/components/Header'
+import Search from '@/components/Search'
 
 export default function FlightTimePage() {
-  const { theme, isLight } = useToolsTheme()
+  const { theme, isLight, timeOfDay } = useToolsTheme()
   
   const [currentTime, setCurrentTime] = useState(new Date())
   const [departureCity, setDepartureCity] = useState(() => getContextCity('New York'))
@@ -43,8 +44,13 @@ export default function FlightTimePage() {
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
       <div className="max-w-6xl mx-auto px-4 py-6 sm:py-8">
-        {/* Shared Header */}
-        <Header isLight={isLight} theme={theme} currentPage="tool-detail" />
+        {/* Shared Header with Search */}
+        <Header 
+          isLight={isLight} 
+          theme={theme} 
+          currentPage="tool-detail"
+          searchComponent={<Search theme={theme} currentTheme={timeOfDay} />}
+        />
 
         {/* Mini Navigation */}
         <ToolsMiniNav isLight={isLight} theme={theme} />

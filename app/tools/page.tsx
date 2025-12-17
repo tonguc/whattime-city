@@ -2,9 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { translations, detectLanguage, Language } from '@/lib/translations'
 import { useToolsTheme } from '@/lib/useToolsTheme'
+import { cities } from '@/lib/cities'
+import { saveCityContext } from '@/lib/city-context'
 import Header from '@/components/Header'
+import Search from '@/components/Search'
 
 // Tool definitions - Normalized names (2 words, English only)
 const tools = [
@@ -103,8 +107,9 @@ const tools = [
 ]
 
 export default function ToolsPage() {
-  const { theme, isLight } = useToolsTheme()
+  const { theme, isLight, timeOfDay } = useToolsTheme()
   const [lang, setLang] = useState<Language>('en')
+  const router = useRouter()
   
   useEffect(() => {
     setLang(detectLanguage())
@@ -112,11 +117,28 @@ export default function ToolsPage() {
   
   const t = translations[lang]
   
+  // Handle city selection from search
+  const handleCitySelect = (city: typeof cities[0]) => {
+    saveCityContext({
+      slug: city.slug,
+      city: city.city,
+      lat: city.lat,
+      lng: city.lng,
+      timezone: city.timezone
+    })
+    router.push(`/${city.slug}`)
+  }
+  
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
       <div className="max-w-6xl mx-auto px-4 py-6 sm:py-8">
-        {/* Shared Header */}
-        <Header isLight={isLight} theme={theme} currentPage="tools" />
+        {/* Shared Header with Search */}
+        <Header 
+          isLight={isLight} 
+          theme={theme} 
+          currentPage="tools"
+          searchComponent={<Search theme={theme} currentTheme={timeOfDay} />}
+        />
 
         {/* Page Title */}
         <div className="text-center mb-10">

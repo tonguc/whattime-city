@@ -6,9 +6,10 @@ import { cities } from '@/lib/cities'
 import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Header from '@/components/Header'
+import Search from '@/components/Search'
 
 export default function WorldAlarmPage() {
-  const { theme, isLight } = useToolsTheme()
+  const { theme, isLight, timeOfDay } = useToolsTheme()
   
   const [currentTime, setCurrentTime] = useState(new Date())
   const [selectedCity, setSelectedCity] = useState(() => getContextCity('London'))
@@ -49,8 +50,13 @@ export default function WorldAlarmPage() {
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
       <div className="max-w-6xl mx-auto px-4 py-6 sm:py-8">
-        {/* Shared Header */}
-        <Header isLight={isLight} theme={theme} currentPage="tool-detail" />
+        {/* Shared Header with Search */}
+        <Header 
+          isLight={isLight} 
+          theme={theme} 
+          currentPage="tool-detail"
+          searchComponent={<Search theme={theme} currentTheme={timeOfDay} />}
+        />
 
         {/* Mini Navigation */}
         <ToolsMiniNav isLight={isLight} theme={theme} />
@@ -58,7 +64,7 @@ export default function WorldAlarmPage() {
         {/* Tool Hero */}
         <div className="text-center mb-8">
           <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-            World Alarm
+            World Alarm Clock
           </h1>
           <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
             Set alarms based on any city's local time
