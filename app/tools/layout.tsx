@@ -2,7 +2,6 @@
 
 import { ReactNode, useState, useEffect } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { getCityContext } from '@/lib/city-context'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
@@ -13,17 +12,18 @@ const DEFAULT_LAT = 40.71
 const DEFAULT_LNG = -74.01
 
 export default function ToolsLayout({ children }: { children: ReactNode }) {
-  const pathname = usePathname()
   const [currentTime, setCurrentTime] = useState(new Date())
   const [coords, setCoords] = useState({ lat: DEFAULT_LAT, lng: DEFAULT_LNG })
+  const [isClient, setIsClient] = useState(false)
 
-  // Read city context on mount AND when pathname changes (navigation)
+  // Read city context on client
   useEffect(() => {
     const ctx = getCityContext()
     if (ctx) {
       setCoords({ lat: ctx.lat, lng: ctx.lng })
     }
-  }, [pathname]) // Re-run when navigating back to tools
+    setIsClient(true)
+  }, [])
 
   // Time ticker
   useEffect(() => {
@@ -35,6 +35,15 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
   const timeOfDay = getTimeOfDay(currentTime, coords.lat, coords.lng)
   const theme = themes[timeOfDay]
   const isLight = isLightTheme(timeOfDay)
+  
+  // Don't render until we've read the context
+  if (!isClient) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-100 to-slate-200">
+        <div className="max-w-6xl mx-auto px-4 py-4" />
+      </div>
+    )
+  }
 
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
