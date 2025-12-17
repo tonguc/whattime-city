@@ -854,9 +854,9 @@ export const translations: Record<Language, Translations> = {
 }
 
 export function detectLanguage(): Language {
-  if (typeof navigator === 'undefined') return 'en'
-  const browserLang = navigator.language.split('-')[0] as Language
-  return translations[browserLang] ? browserLang : 'en'
+  // For now, default to English for global audience
+  // Future: implement URL-based i18n (/tr/london, /de/berlin, etc.)
+  return 'en'
 }
 
 export function t(key: keyof Translations, lang: Language = 'en'): string | string[] {
