@@ -480,9 +480,9 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             
             <div className="mt-4 md:mt-6 text-center">
               <div className="flex items-center justify-center gap-2">
-                <h2 className={`text-3xl md:text-5xl font-medium ${theme.text}`}>
+                <h1 className={`text-3xl md:text-5xl font-medium ${theme.text}`}>
                   {selectedCity.city}
-                </h2>
+                </h1>
                 <button
                   onClick={() => toggleFavorite(selectedCity.slug)}
                   className={`text-xl md:text-3xl transition-all hover:scale-110 ${

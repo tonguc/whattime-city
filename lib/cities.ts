@@ -35,6 +35,16 @@ export interface Country {
   continent: 'americas' | 'europe' | 'asia' | 'africa' | 'oceania'
   description: string
   timezones: string[]
+  // Extended SEO content
+  seo?: {
+    businessHours: string        // Typical business hours
+    bestTimeToCall: string       // Best time to call from US/EU
+    dstInfo: string              // Daylight saving time details
+    travelTips: string           // Time-related travel tips
+    funFacts: string[]           // Interesting time/culture facts
+    nearbyCountries: string[]    // For internal linking
+    majorEvents: string          // Major holidays/events affecting business
+  }
 }
 
 export interface City {

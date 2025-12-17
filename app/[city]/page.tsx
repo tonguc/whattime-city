@@ -26,7 +26,9 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
   }
   
   const info = city.info
-  const title = `Current Time in ${city.city}, ${city.country} - Local Time Now | whattime.city`
+  // Keep title under 60 characters for SEO
+  // Format: "Time in {City} Now - Local Time | whattime.city" 
+  const title = `Time in ${city.city} Now - Local Time | whattime.city`
   const description = info 
     ? `What time is it in ${city.city}? Check current local time, sunrise & sunset. Population: ${info.population}. Currency: ${info.currency} (${info.currencySymbol}). Phone: ${info.phoneCode}. Top attractions: ${info.attractions.slice(0, 3).join(', ')}.`
     : `What time is it in ${city.city} right now? Check current local time, sunrise at, sunset times, and weather in ${city.city}, ${city.country}. Timezone: ${city.timezone}.`
