@@ -7,34 +7,95 @@ import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import { getCityContext } from '@/lib/city-context'
 
-// Major cities to show on map (capitals and key cities)
+// 50+ Major cities with coordinates (x: 0-100, y: 0-60)
 const mapCities = [
-  { slug: 'new-york', x: 23, y: 38 },
-  { slug: 'los-angeles', x: 12, y: 40 },
-  { slug: 'mexico-city', x: 17, y: 50 },
-  { slug: 'sao-paulo', x: 32, y: 68 },
-  { slug: 'buenos-aires', x: 29, y: 75 },
-  { slug: 'london', x: 47, y: 32 },
-  { slug: 'paris', x: 49, y: 34 },
-  { slug: 'berlin', x: 52, y: 31 },
-  { slug: 'moscow', x: 58, y: 28 },
-  { slug: 'istanbul', x: 55, y: 38 },
-  { slug: 'dubai', x: 62, y: 46 },
-  { slug: 'mumbai', x: 68, y: 50 },
-  { slug: 'singapore', x: 76, y: 57 },
+  // North America
+  { slug: 'new-york', x: 24, y: 36 },
+  { slug: 'los-angeles', x: 10, y: 39 },
+  { slug: 'chicago', x: 20, y: 35 },
+  { slug: 'miami', x: 22, y: 44 },
+  { slug: 'toronto', x: 22, y: 33 },
+  { slug: 'vancouver', x: 9, y: 30 },
+  { slug: 'mexico-city', x: 16, y: 48 },
+  { slug: 'houston', x: 17, y: 42 },
+  
+  // South America
+  { slug: 'sao-paulo', x: 31, y: 64 },
+  { slug: 'buenos-aires', x: 28, y: 72 },
+  { slug: 'rio-de-janeiro', x: 33, y: 62 },
+  { slug: 'bogota', x: 21, y: 53 },
+  { slug: 'lima', x: 20, y: 60 },
+  { slug: 'santiago', x: 24, y: 70 },
+  
+  // Europe
+  { slug: 'london', x: 47, y: 30 },
+  { slug: 'paris', x: 49, y: 32 },
+  { slug: 'berlin', x: 52, y: 29 },
+  { slug: 'madrid', x: 46, y: 36 },
+  { slug: 'rome', x: 52, y: 35 },
+  { slug: 'amsterdam', x: 49, y: 29 },
+  { slug: 'vienna', x: 53, y: 32 },
+  { slug: 'stockholm', x: 54, y: 24 },
+  { slug: 'warsaw', x: 55, y: 29 },
+  { slug: 'athens', x: 56, y: 38 },
+  { slug: 'lisbon', x: 44, y: 37 },
+  { slug: 'zurich', x: 50, y: 32 },
+  
+  // Russia & Eastern Europe
+  { slug: 'moscow', x: 58, y: 26 },
+  { slug: 'istanbul', x: 55, y: 36 },
+  
+  // Middle East
+  { slug: 'dubai', x: 63, y: 44 },
+  { slug: 'tel-aviv', x: 57, y: 40 },
+  { slug: 'riyadh', x: 61, y: 44 },
+  { slug: 'doha', x: 62, y: 44 },
+  
+  // Africa
+  { slug: 'cairo', x: 56, y: 42 },
+  { slug: 'johannesburg', x: 55, y: 68 },
+  { slug: 'lagos', x: 48, y: 52 },
+  { slug: 'nairobi', x: 58, y: 56 },
+  { slug: 'casablanca', x: 45, y: 40 },
+  { slug: 'cape-town', x: 53, y: 72 },
+  
+  // South Asia
+  { slug: 'mumbai', x: 68, y: 48 },
+  { slug: 'delhi', x: 69, y: 42 },
+  { slug: 'bangalore', x: 69, y: 52 },
+  { slug: 'kolkata', x: 72, y: 46 },
+  
+  // Southeast Asia
+  { slug: 'singapore', x: 76, y: 56 },
+  { slug: 'bangkok', x: 74, y: 50 },
+  { slug: 'kuala-lumpur', x: 75, y: 54 },
+  { slug: 'jakarta', x: 77, y: 58 },
+  { slug: 'manila', x: 80, y: 50 },
+  { slug: 'ho-chi-minh-city', x: 76, y: 52 },
+  
+  // East Asia
+  { slug: 'tokyo', x: 86, y: 38 },
   { slug: 'hong-kong', x: 79, y: 46 },
-  { slug: 'tokyo', x: 86, y: 40 },
-  { slug: 'sydney', x: 88, y: 74 },
-  { slug: 'cairo', x: 55, y: 44 },
-  { slug: 'johannesburg', x: 54, y: 70 },
-  { slug: 'lagos', x: 48, y: 54 },
-  { slug: 'nairobi', x: 58, y: 58 },
+  { slug: 'shanghai', x: 81, y: 40 },
+  { slug: 'beijing', x: 80, y: 36 },
+  { slug: 'seoul', x: 83, y: 38 },
+  { slug: 'taipei', x: 81, y: 44 },
+  
+  // Oceania
+  { slug: 'sydney', x: 89, y: 70 },
+  { slug: 'melbourne', x: 88, y: 74 },
+  { slug: 'auckland', x: 96, y: 74 },
+  { slug: 'perth', x: 80, y: 70 },
+  { slug: 'brisbane', x: 90, y: 66 },
 ]
 
 export default function WorldMap() {
   const [time, setTime] = useState(new Date())
   const [selectedCity, setSelectedCity] = useState<string | null>(null)
   const [contextCoords, setContextCoords] = useState<{ lat: number; lng: number }>({ lat: 40.71, lng: -74.01 })
+  const [zoom, setZoom] = useState(1)
+  const [panX, setPanX] = useState(0)
+  const [panY, setPanY] = useState(0)
   
   useEffect(() => {
     // Get saved city context for theme
@@ -53,6 +114,20 @@ export default function WorldMap() {
     if ((e.target as HTMLElement).tagName === 'rect' || (e.target as HTMLElement).tagName === 'path') {
       setSelectedCity(null)
     }
+  }
+  
+  const handleZoomIn = () => setZoom(z => Math.min(z + 0.5, 3))
+  const handleZoomOut = () => {
+    setZoom(z => Math.max(z - 0.5, 1))
+    if (zoom <= 1.5) {
+      setPanX(0)
+      setPanY(0)
+    }
+  }
+  const handleReset = () => {
+    setZoom(1)
+    setPanX(0)
+    setPanY(0)
   }
   
   // Calculate day/night terminator position (simplified)
@@ -133,66 +208,149 @@ export default function WorldMap() {
         <div className={`relative rounded-3xl overflow-hidden backdrop-blur-xl border ${
           isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
         }`}>
+          {/* Zoom Controls */}
+          <div className={`absolute top-4 right-4 z-20 flex flex-col gap-2`}>
+            <button
+              onClick={handleZoomIn}
+              className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl font-bold transition-all ${
+                isLight 
+                  ? 'bg-white/80 text-slate-700 hover:bg-white shadow-lg' 
+                  : 'bg-slate-700/80 text-white hover:bg-slate-600 shadow-lg'
+              }`}
+            >
+              +
+            </button>
+            <button
+              onClick={handleZoomOut}
+              className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl font-bold transition-all ${
+                isLight 
+                  ? 'bg-white/80 text-slate-700 hover:bg-white shadow-lg' 
+                  : 'bg-slate-700/80 text-white hover:bg-slate-600 shadow-lg'
+              }`}
+            >
+              −
+            </button>
+            {zoom > 1 && (
+              <button
+                onClick={handleReset}
+                className={`w-10 h-10 rounded-xl flex items-center justify-center text-sm font-medium transition-all ${
+                  isLight 
+                    ? 'bg-white/80 text-slate-700 hover:bg-white shadow-lg' 
+                    : 'bg-slate-700/80 text-white hover:bg-slate-600 shadow-lg'
+                }`}
+              >
+                ↺
+              </button>
+            )}
+          </div>
+          
+          {/* Zoom level indicator */}
+          {zoom > 1 && (
+            <div className={`absolute top-4 left-4 z-20 px-3 py-1 rounded-full text-sm font-medium ${
+              isLight ? 'bg-white/80 text-slate-700' : 'bg-slate-700/80 text-white'
+            }`}>
+              {zoom.toFixed(1)}x
+            </div>
+          )}
+
           {/* SVG Map */}
-          <svg 
-            viewBox="0 0 100 60" 
-            className="w-full h-auto cursor-pointer"
-            style={{ minHeight: '400px' }}
-            onClick={handleMapClick}
-          >
-            {/* Ocean background */}
-            <rect x="0" y="0" width="100" height="60" fill={isLight ? '#e0f2fe' : '#0c4a6e'} />
+          <div className="overflow-hidden" style={{ minHeight: '450px' }}>
+            <svg 
+              viewBox="0 0 100 60" 
+              className="w-full h-auto cursor-pointer transition-transform duration-300"
+              style={{ 
+                minHeight: '450px',
+                transform: `scale(${zoom}) translate(${panX}px, ${panY}px)`,
+                transformOrigin: 'center center'
+              }}
+              onClick={handleMapClick}
+            >
+              {/* Premium Ocean gradient background */}
+              <defs>
+                <linearGradient id="oceanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor={isLight ? '#bae6fd' : '#0c4a6e'} />
+                  <stop offset="50%" stopColor={isLight ? '#e0f2fe' : '#082f49'} />
+                  <stop offset="100%" stopColor={isLight ? '#bae6fd' : '#0c4a6e'} />
+                </linearGradient>
+                <linearGradient id="landGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor={isLight ? '#64748b' : '#334155'} />
+                  <stop offset="100%" stopColor={isLight ? '#94a3b8' : '#475569'} />
+                </linearGradient>
+                <filter id="landShadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0.5" dy="0.5" stdDeviation="0.5" floodOpacity="0.3"/>
+                </filter>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="0.5" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              
+              {/* Ocean background */}
+              <rect x="0" y="0" width="100" height="60" fill="url(#oceanGradient)" />
+              
+              {/* Grid lines for premium look */}
+              <g stroke={isLight ? '#94a3b8' : '#334155'} strokeWidth="0.1" opacity="0.3">
+                {[10, 20, 30, 40, 50, 60, 70, 80, 90].map(x => (
+                  <line key={`v${x}`} x1={x} y1="0" x2={x} y2="60" />
+                ))}
+                {[10, 20, 30, 40, 50].map(y => (
+                  <line key={`h${y}`} x1="0" y1={y} x2="100" y2={y} />
+                ))}
+              </g>
+              
+              {/* Continents - more detailed paths */}
+              <g fill="url(#landGradient)" filter="url(#landShadow)">
+                {/* North America */}
+                <path d="M5,15 Q8,12 15,14 L22,16 Q26,18 28,22 L30,28 Q28,32 25,35 L23,38 Q20,42 18,44 L15,43 Q12,40 10,36 L8,30 Q5,22 5,15 M17,44 L19,48 Q18,50 16,49 L15,46 Q16,45 17,44" />
+                
+                {/* South America */}
+                <path d="M20,52 Q24,50 28,52 L32,56 Q34,62 32,68 L30,72 Q28,76 26,75 L24,70 Q22,64 21,58 L20,52" />
+                
+                {/* Europe */}
+                <path d="M44,20 Q48,18 52,19 L56,22 Q58,26 56,30 L54,32 Q50,34 47,32 L45,28 Q43,24 44,20" />
+                
+                {/* Africa */}
+                <path d="M44,36 Q48,34 54,36 L58,42 Q60,50 58,58 L56,64 Q52,70 48,68 L46,62 Q44,52 44,36" />
+                
+                {/* Asia */}
+                <path d="M56,14 Q64,12 75,14 L85,18 Q90,24 88,32 L86,38 Q82,44 76,48 L70,50 Q64,50 60,46 L58,40 Q56,30 56,14" />
+                
+                {/* Australia */}
+                <path d="M78,60 Q84,58 90,60 L94,66 Q94,72 90,76 L84,76 Q80,74 78,68 L78,60" />
+                
+                {/* Greenland */}
+                <path d="M28,8 Q32,6 36,8 L38,12 Q36,16 32,14 L28,10 Q27,9 28,8" />
+                
+                {/* UK/Ireland */}
+                <path d="M44,24 Q46,23 47,25 L46,27 Q44,27 44,24" />
+                
+                {/* Japan */}
+                <path d="M86,34 Q88,32 89,34 L88,38 Q87,40 86,38 L86,34" />
+                
+                {/* New Zealand */}
+                <path d="M94,72 Q96,70 97,72 L96,76 Q94,76 94,72" />
+              </g>
             
-            {/* Night overlay - simplified day/night visualization */}
-            <defs>
-              <linearGradient id="nightGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="rgba(15, 23, 42, 0.7)" />
-                <stop offset="10%" stopColor="rgba(15, 23, 42, 0.3)" />
-                <stop offset="20%" stopColor="rgba(15, 23, 42, 0)" />
-                <stop offset="80%" stopColor="rgba(15, 23, 42, 0)" />
-                <stop offset="90%" stopColor="rgba(15, 23, 42, 0.3)" />
-                <stop offset="100%" stopColor="rgba(15, 23, 42, 0.7)" />
-              </linearGradient>
-            </defs>
-            
-            {/* Continents - simplified paths */}
-            <g fill={isLight ? '#94a3b8' : '#475569'} opacity="0.6">
-              {/* North America */}
-              <path d="M5,20 Q10,15 20,18 L25,22 Q28,28 25,35 L22,40 Q18,45 15,42 L10,38 Q5,30 5,20" />
-              
-              {/* South America */}
-              <path d="M22,50 Q28,48 32,52 L34,60 Q32,72 28,78 L24,75 Q20,65 22,50" />
-              
-              {/* Europe */}
-              <path d="M44,22 Q50,20 55,22 L58,28 Q56,32 52,34 L46,32 Q43,28 44,22" />
-              
-              {/* Africa */}
-              <path d="M44,38 Q50,36 56,40 L58,50 Q56,60 52,65 L48,68 Q42,60 44,38" />
-              
-              {/* Asia */}
-              <path d="M55,18 Q65,15 80,20 L88,28 Q90,35 85,42 L75,48 Q65,50 60,45 L56,35 Q54,25 55,18" />
-              
-              {/* Australia */}
-              <path d="M80,60 Q88,58 92,62 L94,70 Q90,76 84,74 L80,68 Q78,64 80,60" />
-            </g>
-            
-            {/* Day/Night terminator line */}
-            <line 
-              x1={dayStart} y1="0" 
-              x2={dayStart} y2="60" 
-              stroke={isLight ? '#f59e0b' : '#fbbf24'} 
-              strokeWidth="0.3" 
-              strokeDasharray="1,1"
-              opacity="0.6"
-            />
-            <line 
-              x1={dayEnd > 100 ? dayEnd - 100 : dayEnd} y1="0" 
-              x2={dayEnd > 100 ? dayEnd - 100 : dayEnd} y2="60" 
-              stroke={isLight ? '#f59e0b' : '#fbbf24'} 
-              strokeWidth="0.3" 
-              strokeDasharray="1,1"
-              opacity="0.6"
-            />
+              {/* Day/Night terminator line */}
+              <line 
+                x1={dayStart} y1="0" 
+                x2={dayStart} y2="60" 
+                stroke={isLight ? '#f59e0b' : '#fbbf24'} 
+                strokeWidth="0.4" 
+                strokeDasharray="1,1"
+                opacity="0.7"
+              />
+              <line 
+                x1={dayEnd > 100 ? dayEnd - 100 : dayEnd} y1="0" 
+                x2={dayEnd > 100 ? dayEnd - 100 : dayEnd} y2="60" 
+                stroke={isLight ? '#f59e0b' : '#fbbf24'} 
+                strokeWidth="0.4" 
+                strokeDasharray="1,1"
+                opacity="0.7"
+              />
             
             {/* City markers */}
             {mapCities.map(({ slug, x, y }) => {
@@ -202,29 +360,30 @@ export default function WorldMap() {
               const { city, timeStr, timeOfDay, theme } = data
               const isSelected = selectedCity === slug
               const isNight = timeOfDay === 'night'
+              const dotColor = isNight ? '#22d3ee' : '#fbbf24'
+              const bgColor = isNight ? '#164e63' : '#92400e'
+              const bgColorHover = isNight ? '#0e7490' : '#b45309'
               
               return (
-                <g key={slug} className="cursor-pointer" onClick={(e) => { e.stopPropagation(); setSelectedCity(slug); }}>
+                <g key={slug} className="cursor-pointer" onClick={(e) => { e.stopPropagation(); setSelectedCity(slug); }} filter={isSelected ? 'url(#glow)' : undefined}>
+                  {/* Glow ring */}
+                  <circle
+                    cx={x}
+                    cy={y}
+                    r={isSelected ? 2.5 : 1.8}
+                    fill="none"
+                    stroke={dotColor}
+                    strokeWidth="0.2"
+                    opacity={isSelected ? 0.8 : 0.4}
+                  />
+                  
                   {/* City dot */}
                   <circle
                     cx={x}
                     cy={y}
-                    r={isSelected ? 1.5 : 1}
-                    fill={isNight ? '#22d3ee' : '#fbbf24'}
+                    r={isSelected ? 1.2 : 0.8}
+                    fill={dotColor}
                     className="transition-all duration-200"
-                  />
-                  
-                  {/* Pulse effect */}
-                  <circle
-                    cx={x}
-                    cy={y}
-                    r={2}
-                    fill="none"
-                    stroke={isNight ? '#22d3ee' : '#fbbf24'}
-                    strokeWidth="0.3"
-                    opacity="0.5"
-                    className="animate-ping"
-                    style={{ transformOrigin: `${x}px ${y}px` }}
                   />
                   
                   {/* Time label */}
@@ -234,26 +393,27 @@ export default function WorldMap() {
                       y={y - 6}
                       width="10"
                       height="4"
-                      rx="0.5"
-                      fill={isSelected ? (isNight ? '#0e7490' : '#d97706') : (isNight ? '#164e63' : '#92400e')}
+                      rx="0.8"
+                      fill={isSelected ? bgColorHover : bgColor}
                       opacity={isSelected ? 1 : 0.9}
                     />
                     <text
                       x={x}
                       y={y - 3.2}
-                        textAnchor="middle"
-                        fontSize="2"
-                        fill="white"
-                        fontWeight="bold"
-                        fontFamily="system-ui, sans-serif"
-                      >
-                        {timeStr}
-                      </text>
-                    </g>
+                      textAnchor="middle"
+                      fontSize="2"
+                      fill="white"
+                      fontWeight="bold"
+                      fontFamily="system-ui, sans-serif"
+                    >
+                      {timeStr}
+                    </text>
+                  </g>
                 </g>
               )
             })}
-          </svg>
+            </svg>
+          </div>
           
           {/* Selected City Info */}
           {selectedCity && (() => {

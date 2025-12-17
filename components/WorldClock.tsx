@@ -461,7 +461,11 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                 } backdrop-blur-xl`}
                 title="World Map"
               >
-                <span className="text-base">🗺️</span>
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M2 12h20"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
               </a>
               
               {/* Tools Link - visible on both mobile and desktop */}
