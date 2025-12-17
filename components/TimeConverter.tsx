@@ -92,8 +92,8 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
   }
   
   const getCityTimeOfDay = (city: City) => {
-    const localTime = new Date(time.toLocaleString('en-US', { timeZone: city.timezone }))
-    return getTimeOfDay(localTime, city.lat, city.lng)
+    // Use real UTC time (time) for theme calculation
+    return getTimeOfDay(time, city.lat, city.lng)
   }
   
   const getTimeDifference = () => {
