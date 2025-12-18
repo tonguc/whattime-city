@@ -447,6 +447,189 @@ export const countries: Country[] = [
     languages: ['Amharic'], continent: 'africa',
     description: 'Ethiopia uses East Africa Time (UTC+3). Addis Ababa is the capital and seat of the African Union. Ethiopia uses a unique calendar that is 7-8 years behind the Gregorian calendar.',
     timezones: ['EAT (UTC+3)']
+  },
+  // Additional countries (for cities with country pages)
+  {
+    code: 'DZ', name: 'Algeria', slug: 'algeria', capital: 'Algiers',
+    population: '45M', currency: 'Algerian Dinar', currencySymbol: 'DZD', phoneCode: '+213',
+    languages: ['Arabic', 'Berber', 'French'], continent: 'africa',
+    description: 'Algeria uses Central European Time (UTC+1) year-round without daylight saving time. Algiers is the capital and largest city, known as the "White City" for its Mediterranean architecture.',
+    timezones: ['CET (UTC+1)']
+  },
+  {
+    code: 'BG', name: 'Bulgaria', slug: 'bulgaria', capital: 'Sofia',
+    population: '7M', currency: 'Bulgarian Lev', currencySymbol: 'лв', phoneCode: '+359',
+    languages: ['Bulgarian'], continent: 'europe',
+    description: 'Bulgaria uses Eastern European Time and observes Daylight Saving Time. Sofia is the capital and largest city, serving as the cultural and economic center of the country.',
+    timezones: ['EET (UTC+2)', 'EEST (UTC+3)']
+  },
+  {
+    code: 'KH', name: 'Cambodia', slug: 'cambodia', capital: 'Phnom Penh',
+    population: '17M', currency: 'Cambodian Riel', currencySymbol: '៛', phoneCode: '+855',
+    languages: ['Khmer'], continent: 'asia',
+    description: 'Cambodia uses Indochina Time (UTC+7) year-round. Phnom Penh is the capital, and the country is famous for Angkor Wat, the largest religious monument in the world.',
+    timezones: ['ICT (UTC+7)']
+  },
+  {
+    code: 'CL', name: 'Chile', slug: 'chile', capital: 'Santiago',
+    population: '19M', currency: 'Chilean Peso', currencySymbol: '$', phoneCode: '+56',
+    languages: ['Spanish'], continent: 'americas',
+    description: 'Chile uses Chile Standard Time and observes Daylight Saving Time opposite to the Northern Hemisphere. Santiago is the capital and home to over a third of the population.',
+    timezones: ['CLT (UTC-4)', 'CLST (UTC-3)']
+  },
+  {
+    code: 'CO', name: 'Colombia', slug: 'colombia', capital: 'Bogotá',
+    population: '52M', currency: 'Colombian Peso', currencySymbol: '$', phoneCode: '+57',
+    languages: ['Spanish'], continent: 'americas',
+    description: 'Colombia uses Colombia Time (UTC-5) year-round without daylight saving time. Bogotá is the high-altitude capital and largest city, serving as a major South American business hub.',
+    timezones: ['COT (UTC-5)']
+  },
+  {
+    code: 'CR', name: 'Costa Rica', slug: 'costa-rica', capital: 'San José',
+    population: '5M', currency: 'Costa Rican Colón', currencySymbol: '₡', phoneCode: '+506',
+    languages: ['Spanish'], continent: 'americas',
+    description: 'Costa Rica uses Central Standard Time (UTC-6) year-round. San José is the capital. The country is known for its biodiversity and eco-tourism.',
+    timezones: ['CST (UTC-6)']
+  },
+  {
+    code: 'HR', name: 'Croatia', slug: 'croatia', capital: 'Zagreb',
+    population: '4M', currency: 'Euro', currencySymbol: '€', phoneCode: '+385',
+    languages: ['Croatian'], continent: 'europe',
+    description: 'Croatia uses Central European Time and observes Daylight Saving Time. Zagreb is the capital, and the country features a stunning Adriatic coastline.',
+    timezones: ['CET (UTC+1)', 'CEST (UTC+2)']
+  },
+  {
+    code: 'CU', name: 'Cuba', slug: 'cuba', capital: 'Havana',
+    population: '11M', currency: 'Cuban Peso', currencySymbol: '$', phoneCode: '+53',
+    languages: ['Spanish'], continent: 'americas',
+    description: 'Cuba uses Cuba Standard Time and observes Daylight Saving Time. Havana is the capital and largest city, known for its vintage cars and colonial architecture.',
+    timezones: ['CST (UTC-5)', 'CDT (UTC-4)']
+  },
+  {
+    code: 'EE', name: 'Estonia', slug: 'estonia', capital: 'Tallinn',
+    population: '1.3M', currency: 'Euro', currencySymbol: '€', phoneCode: '+372',
+    languages: ['Estonian'], continent: 'europe',
+    description: 'Estonia uses Eastern European Time and observes Daylight Saving Time. Tallinn is the capital, known as one of Europe\'s most digitally advanced nations.',
+    timezones: ['EET (UTC+2)', 'EEST (UTC+3)']
+  },
+  {
+    code: 'FJ', name: 'Fiji', slug: 'fiji', capital: 'Suva',
+    population: '900K', currency: 'Fijian Dollar', currencySymbol: '$', phoneCode: '+679',
+    languages: ['English', 'Fijian', 'Hindi'], continent: 'oceania',
+    description: 'Fiji uses Fiji Time (UTC+12) and observes Daylight Saving Time. Suva is the capital. Fiji is among the first places to see each new day.',
+    timezones: ['FJT (UTC+12)', 'FJST (UTC+13)']
+  },
+  {
+    code: 'IS', name: 'Iceland', slug: 'iceland', capital: 'Reykjavik',
+    population: '370K', currency: 'Icelandic Króna', currencySymbol: 'kr', phoneCode: '+354',
+    languages: ['Icelandic'], continent: 'europe',
+    description: 'Iceland uses Greenwich Mean Time (UTC+0) year-round without daylight saving time. Reykjavik is the capital and northernmost capital of a sovereign state.',
+    timezones: ['GMT (UTC+0)']
+  },
+  {
+    code: 'LV', name: 'Latvia', slug: 'latvia', capital: 'Riga',
+    population: '1.9M', currency: 'Euro', currencySymbol: '€', phoneCode: '+371',
+    languages: ['Latvian'], continent: 'europe',
+    description: 'Latvia uses Eastern European Time and observes Daylight Saving Time. Riga is the capital and largest city in the Baltic states.',
+    timezones: ['EET (UTC+2)', 'EEST (UTC+3)']
+  },
+  {
+    code: 'LT', name: 'Lithuania', slug: 'lithuania', capital: 'Vilnius',
+    population: '2.8M', currency: 'Euro', currencySymbol: '€', phoneCode: '+370',
+    languages: ['Lithuanian'], continent: 'europe',
+    description: 'Lithuania uses Eastern European Time and observes Daylight Saving Time. Vilnius is the capital, known for its baroque Old Town, a UNESCO World Heritage Site.',
+    timezones: ['EET (UTC+2)', 'EEST (UTC+3)']
+  },
+  {
+    code: 'MM', name: 'Myanmar', slug: 'myanmar', capital: 'Naypyidaw',
+    population: '55M', currency: 'Myanmar Kyat', currencySymbol: 'K', phoneCode: '+95',
+    languages: ['Burmese'], continent: 'asia',
+    description: 'Myanmar uses Myanmar Standard Time (UTC+6:30), one of few countries with a 30-minute offset. Naypyidaw is the capital, though Yangon is the largest city.',
+    timezones: ['MMT (UTC+6:30)']
+  },
+  {
+    code: 'NP', name: 'Nepal', slug: 'nepal', capital: 'Kathmandu',
+    population: '30M', currency: 'Nepalese Rupee', currencySymbol: '₨', phoneCode: '+977',
+    languages: ['Nepali'], continent: 'asia',
+    description: 'Nepal uses Nepal Time (UTC+5:45), one of only two countries with a 45-minute offset. Kathmandu is the capital, gateway to Mount Everest.',
+    timezones: ['NPT (UTC+5:45)']
+  },
+  {
+    code: 'PA', name: 'Panama', slug: 'panama', capital: 'Panama City',
+    population: '4.4M', currency: 'Panamanian Balboa', currencySymbol: 'B/.', phoneCode: '+507',
+    languages: ['Spanish'], continent: 'americas',
+    description: 'Panama uses Eastern Standard Time (UTC-5) year-round. Panama City is the capital, home to the Panama Canal connecting the Atlantic and Pacific oceans.',
+    timezones: ['EST (UTC-5)']
+  },
+  {
+    code: 'PE', name: 'Peru', slug: 'peru', capital: 'Lima',
+    population: '34M', currency: 'Peruvian Sol', currencySymbol: 'S/', phoneCode: '+51',
+    languages: ['Spanish', 'Quechua'], continent: 'americas',
+    description: 'Peru uses Peru Time (UTC-5) year-round without daylight saving time. Lima is the capital and gastronomic capital of South America, gateway to Machu Picchu.',
+    timezones: ['PET (UTC-5)']
+  },
+  {
+    code: 'RO', name: 'Romania', slug: 'romania', capital: 'Bucharest',
+    population: '19M', currency: 'Romanian Leu', currencySymbol: 'lei', phoneCode: '+40',
+    languages: ['Romanian'], continent: 'europe',
+    description: 'Romania uses Eastern European Time and observes Daylight Saving Time. Bucharest is the capital, and the country is known for Transylvania and Dracula legend.',
+    timezones: ['EET (UTC+2)', 'EEST (UTC+3)']
+  },
+  {
+    code: 'RS', name: 'Serbia', slug: 'serbia', capital: 'Belgrade',
+    population: '7M', currency: 'Serbian Dinar', currencySymbol: 'din', phoneCode: '+381',
+    languages: ['Serbian'], continent: 'europe',
+    description: 'Serbia uses Central European Time and observes Daylight Saving Time. Belgrade is the capital, one of the oldest cities in Europe.',
+    timezones: ['CET (UTC+1)', 'CEST (UTC+2)']
+  },
+  {
+    code: 'SK', name: 'Slovakia', slug: 'slovakia', capital: 'Bratislava',
+    population: '5.4M', currency: 'Euro', currencySymbol: '€', phoneCode: '+421',
+    languages: ['Slovak'], continent: 'europe',
+    description: 'Slovakia uses Central European Time and observes Daylight Saving Time. Bratislava is the capital, uniquely bordering two other capitals (Vienna and Budapest).',
+    timezones: ['CET (UTC+1)', 'CEST (UTC+2)']
+  },
+  {
+    code: 'SI', name: 'Slovenia', slug: 'slovenia', capital: 'Ljubljana',
+    population: '2.1M', currency: 'Euro', currencySymbol: '€', phoneCode: '+386',
+    languages: ['Slovenian'], continent: 'europe',
+    description: 'Slovenia uses Central European Time and observes Daylight Saving Time. Ljubljana is the capital, known for its green credentials and beautiful Lake Bled.',
+    timezones: ['CET (UTC+1)', 'CEST (UTC+2)']
+  },
+  {
+    code: 'LK', name: 'Sri Lanka', slug: 'sri-lanka', capital: 'Sri Jayawardenepura Kotte',
+    population: '22M', currency: 'Sri Lankan Rupee', currencySymbol: '₨', phoneCode: '+94',
+    languages: ['Sinhala', 'Tamil'], continent: 'asia',
+    description: 'Sri Lanka uses India Standard Time (UTC+5:30). Sri Jayawardenepura Kotte is the official capital, while Colombo is the commercial capital.',
+    timezones: ['IST (UTC+5:30)']
+  },
+  {
+    code: 'TN', name: 'Tunisia', slug: 'tunisia', capital: 'Tunis',
+    population: '12M', currency: 'Tunisian Dinar', currencySymbol: 'DT', phoneCode: '+216',
+    languages: ['Arabic', 'French'], continent: 'africa',
+    description: 'Tunisia uses Central European Time (UTC+1) year-round. Tunis is the capital, and the country features ancient Carthage ruins and Mediterranean beaches.',
+    timezones: ['CET (UTC+1)']
+  },
+  {
+    code: 'UA', name: 'Ukraine', slug: 'ukraine', capital: 'Kyiv',
+    population: '41M', currency: 'Ukrainian Hryvnia', currencySymbol: '₴', phoneCode: '+380',
+    languages: ['Ukrainian'], continent: 'europe',
+    description: 'Ukraine uses Eastern European Time and observes Daylight Saving Time. Kyiv is the capital and largest city, one of the oldest cities in Eastern Europe.',
+    timezones: ['EET (UTC+2)', 'EEST (UTC+3)']
+  },
+  {
+    code: 'UY', name: 'Uruguay', slug: 'uruguay', capital: 'Montevideo',
+    population: '3.5M', currency: 'Uruguayan Peso', currencySymbol: '$', phoneCode: '+598',
+    languages: ['Spanish'], continent: 'americas',
+    description: 'Uruguay uses Uruguay Time (UTC-3) year-round. Montevideo is the capital, home to nearly half of the country\'s population.',
+    timezones: ['UYT (UTC-3)']
+  },
+  {
+    code: 'VE', name: 'Venezuela', slug: 'venezuela', capital: 'Caracas',
+    population: '28M', currency: 'Venezuelan Bolívar', currencySymbol: 'Bs.', phoneCode: '+58',
+    languages: ['Spanish'], continent: 'americas',
+    description: 'Venezuela uses Venezuela Time (UTC-4) year-round. Caracas is the capital, nestled in a valley surrounded by the Ávila mountain.',
+    timezones: ['VET (UTC-4)']
   }
 ]
 
