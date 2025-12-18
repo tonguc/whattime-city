@@ -66,12 +66,12 @@ export default function CityPageContent({ city }: CityPageContentProps) {
   }, [city])
   
   // Theme calculation using real UTC time
-  const timeOfDay = getTimeOfDay(time, city.lat, city.lng)
+  const timeOfDay = getTimeOfDay(time, city.lat, city.lng, city.timezone)
   const theme = themes[timeOfDay]
   const isLight = isLightTheme(timeOfDay)
   
   // Sun times
-  const { sunrise, sunset } = getSunTimes(time, city.lat)
+  const { sunrise, sunset } = getSunTimes(time, city.lat, city.lng)
   
   // Local time display
   const localTime = new Date(time.toLocaleString('en-US', { timeZone: city.timezone }))
@@ -272,7 +272,7 @@ export default function CityPageContent({ city }: CityPageContentProps) {
               minute: '2-digit',
               hour12: false 
             })
-            const otherTimeOfDay = getTimeOfDay(time, otherCity.lat, otherCity.lng)
+            const otherTimeOfDay = getTimeOfDay(time, otherCity.lat, otherCity.lng, otherCity.timezone)
             const otherTheme = themes[otherTimeOfDay]
             
             return (

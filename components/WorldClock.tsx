@@ -82,7 +82,7 @@ function FavoriteCard({
   }
   
   // Use real UTC time for theme calculation (time has correct UTC, localTime doesn't)
-  const cityTimeOfDay = getTimeOfDay(time, city.lat, city.lng)
+  const cityTimeOfDay = getTimeOfDay(time, city.lat, city.lng, city.timezone)
   const cityTheme = themes[cityTimeOfDay]
   const Icon = TimeIcons[cityTimeOfDay]
   
@@ -306,7 +306,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   const localTime = new Date(time.toLocaleString('en-US', { timeZone: selectedCity.timezone }))
   
   // Use real UTC time for theme calculation (time has correct UTC values)
-  const autoTheme = getTimeOfDay(time, selectedCity.lat, selectedCity.lng)
+  const autoTheme = getTimeOfDay(time, selectedCity.lat, selectedCity.lng, selectedCity.timezone)
   const currentTheme = themeMode === 'auto' ? autoTheme : themeMode
   const theme = themes[currentTheme]
   const isLight = isLightTheme(currentTheme)

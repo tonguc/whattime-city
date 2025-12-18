@@ -92,7 +92,7 @@ const mapCities = [
 export default function WorldMap() {
   const [time, setTime] = useState(new Date())
   const [selectedCity, setSelectedCity] = useState<string | null>(null)
-  const [contextCoords, setContextCoords] = useState<{ lat: number; lng: number }>({ lat: 40.71, lng: -74.01 })
+  const [contextData, setContextData] = useState<{ lat: number; lng: number; timezone: string }>({ lat: 40.71, lng: -74.01, timezone: 'America/New_York' })
   const [zoom, setZoom] = useState(1)
   const [panX, setPanX] = useState(0)
   const [panY, setPanY] = useState(0)
@@ -101,7 +101,7 @@ export default function WorldMap() {
     // Get saved city context for theme
     const context = getCityContext()
     if (context) {
-      setContextCoords({ lat: context.lat, lng: context.lng })
+      setContextData({ lat: context.lat, lng: context.lng, timezone: context.timezone })
     }
     
     const timer = setInterval(() => setTime(new Date()), 1000)
@@ -150,14 +150,14 @@ export default function WorldMap() {
       minute: '2-digit',
       hour12: false 
     })
-    const timeOfDay = getTimeOfDay(time, city.lat, city.lng)
+    const timeOfDay = getTimeOfDay(time, city.lat, city.lng, city.timezone)
     const theme = themes[timeOfDay]
     
     return { city, timeStr, timeOfDay, theme }
   }
 
   // Determine background theme based on saved city context
-  const mainTimeOfDay = getTimeOfDay(time, contextCoords.lat, contextCoords.lng)
+  const mainTimeOfDay = getTimeOfDay(time, contextData.lat, contextData.lng, contextData.timezone)
   const mainTheme = themes[mainTimeOfDay]
   const isLight = isLightTheme(mainTimeOfDay)
 

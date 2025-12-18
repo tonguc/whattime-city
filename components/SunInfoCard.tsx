@@ -12,7 +12,7 @@ interface SunInfoCardProps {
 }
 
 export default function SunInfoCard({ city, localTime, theme, t }: SunInfoCardProps) {
-  const { sunrise, sunset } = getSunTimes(localTime, city.lat)
+  const { sunrise, sunset } = getSunTimes(localTime, city.lat, city.lng)
   
   const isLight = ['day', 'light'].includes(theme)
   

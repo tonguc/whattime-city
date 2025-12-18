@@ -37,7 +37,7 @@ export default function CityCard({ city, isSelected, onClick, currentTheme, them
   }
   
   // Use real UTC time (time) for theme calculation, NOT localTime
-  const cityTimeOfDay = getTimeOfDay(time, city.lat, city.lng)
+  const cityTimeOfDay = getTimeOfDay(time, city.lat, city.lng, city.timezone)
   const cityTheme = themes[cityTimeOfDay]
   
   const isLight = ['day', 'light'].includes(currentTheme)

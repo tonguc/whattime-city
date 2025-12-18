@@ -1,5 +1,5 @@
 // Basitleştirilmiş güneş hesaplayıcı
-export function getSunTimes(date: Date, lat: number) {
+export function getSunTimes(date: Date, lat: number, lng: number) {
   const dayOfYear = Math.floor(
     (date.getTime() - new Date(date.getFullYear(), 0, 0).getTime()) / 86400000
   )
@@ -17,7 +17,9 @@ export function getSunTimes(date: Date, lat: number) {
   const hourAngle = Math.acos(cosHourAngle) * (180 / Math.PI)
   const daylightHours = (2 * hourAngle) / 15
   
-  // Güneş doğuşu ve batışı (saat olarak)
+  // Solar noon is around 12:00 solar time, but actual local noon differs by longitude
+  // Each 15° of longitude = 1 hour difference from standard time
+  // We calculate the offset from the timezone's central meridian
   const solarNoon = 12
   const sunrise = solarNoon - daylightHours / 2
   const sunset = solarNoon + daylightHours / 2
@@ -27,24 +29,37 @@ export function getSunTimes(date: Date, lat: number) {
 
 export type TimeOfDay = 'night' | 'dawn' | 'day' | 'dusk'
 
-// Calculate local hour at given longitude (approximate solar time)
-function getLocalHourAtLongitude(utcTime: Date, lng: number): number {
-  // UTC hour
-  const utcHour = utcTime.getUTCHours() + utcTime.getUTCMinutes() / 60
-  // Each 15 degrees = 1 hour offset from UTC
-  const offsetHours = lng / 15
-  // Local solar time
-  let localHour = utcHour + offsetHours
-  // Normalize to 0-24
-  while (localHour < 0) localHour += 24
-  while (localHour >= 24) localHour -= 24
-  return localHour
-}
-
-export function getTimeOfDay(localTime: Date, lat: number, lng: number): TimeOfDay {
-  // Calculate the local hour at this longitude (solar time approximation)
-  const hour = getLocalHourAtLongitude(localTime, lng)
-  const { sunrise, sunset } = getSunTimes(localTime, lat)
+export function getTimeOfDay(utcTime: Date, lat: number, lng: number, timezone?: string): TimeOfDay {
+  // Get local hour using timezone if provided, otherwise estimate from longitude
+  let localHour: number
+  
+  if (timezone) {
+    try {
+      // Get actual local time in the timezone
+      const localTimeStr = utcTime.toLocaleTimeString('en-US', { 
+        timeZone: timezone, 
+        hour: 'numeric', 
+        minute: 'numeric',
+        hour12: false 
+      })
+      const [hours, minutes] = localTimeStr.split(':').map(Number)
+      localHour = hours + minutes / 60
+    } catch {
+      // Fallback to longitude-based calculation
+      const utcHour = utcTime.getUTCHours() + utcTime.getUTCMinutes() / 60
+      localHour = utcHour + lng / 15
+      while (localHour < 0) localHour += 24
+      while (localHour >= 24) localHour -= 24
+    }
+  } else {
+    // Estimate from longitude (solar time)
+    const utcHour = utcTime.getUTCHours() + utcTime.getUTCMinutes() / 60
+    localHour = utcHour + lng / 15
+    while (localHour < 0) localHour += 24
+    while (localHour >= 24) localHour -= 24
+  }
+  
+  const { sunrise, sunset } = getSunTimes(utcTime, lat, lng)
   
   // Sabah geçişi: sunrise-1 ile sunrise+1 arası
   const dawnStart = sunrise - 1
@@ -54,11 +69,11 @@ export function getTimeOfDay(localTime: Date, lat: number, lng: number): TimeOfD
   const duskStart = sunset - 1
   const duskEnd = sunset + 1
   
-  if (hour >= dawnStart && hour < dawnEnd) {
+  if (localHour >= dawnStart && localHour < dawnEnd) {
     return 'dawn'
-  } else if (hour >= dawnEnd && hour < duskStart) {
+  } else if (localHour >= dawnEnd && localHour < duskStart) {
     return 'day'
-  } else if (hour >= duskStart && hour < duskEnd) {
+  } else if (localHour >= duskStart && localHour < duskEnd) {
     return 'dusk'
   } else {
     return 'night'

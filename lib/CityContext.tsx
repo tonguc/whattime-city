@@ -20,10 +20,11 @@ const CityContext = createContext<CityContextType | null>(null)
 // Default fallback coordinates (NYC)
 const DEFAULT_LAT = 40.71
 const DEFAULT_LNG = -74.01
+const DEFAULT_TZ = 'America/New_York'
 
 export function CityProvider({ children }: { children: ReactNode }) {
   const [selectedCity, setSelectedCityState] = useState<City | null>(null)
-  const [coords, setCoords] = useState({ lat: DEFAULT_LAT, lng: DEFAULT_LNG })
+  const [coords, setCoords] = useState({ lat: DEFAULT_LAT, lng: DEFAULT_LNG, timezone: DEFAULT_TZ })
   const [currentTime, setCurrentTime] = useState(new Date())
 
   // Load persisted city on mount - use SAME key as WorldClock (whattime_city_context)
@@ -33,7 +34,7 @@ export function CityProvider({ children }: { children: ReactNode }) {
       const city = cities.find(c => c.slug === ctx.slug)
       if (city) {
         setSelectedCityState(city)
-        setCoords({ lat: ctx.lat, lng: ctx.lng })
+        setCoords({ lat: ctx.lat, lng: ctx.lng, timezone: ctx.timezone })
       }
     }
   }, [])
@@ -47,17 +48,17 @@ export function CityProvider({ children }: { children: ReactNode }) {
   // Set city (updates coords for theme calculation)
   const setSelectedCity = (city: City) => {
     setSelectedCityState(city)
-    setCoords({ lat: city.lat, lng: city.lng })
+    setCoords({ lat: city.lat, lng: city.lng, timezone: city.timezone })
   }
 
   // Clear city
   const clearSelectedCity = () => {
     setSelectedCityState(null)
-    setCoords({ lat: DEFAULT_LAT, lng: DEFAULT_LNG })
+    setCoords({ lat: DEFAULT_LAT, lng: DEFAULT_LNG, timezone: DEFAULT_TZ })
   }
 
-  // Calculate theme based on coords (from selected city or default)
-  const timeOfDay = getTimeOfDay(currentTime, coords.lat, coords.lng)
+  // Calculate theme based on coords with timezone
+  const timeOfDay = getTimeOfDay(currentTime, coords.lat, coords.lng, coords.timezone)
   const theme = themes[timeOfDay]
   const isLight = isLightTheme(timeOfDay)
 

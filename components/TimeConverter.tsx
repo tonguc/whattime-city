@@ -93,7 +93,7 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
   
   const getCityTimeOfDay = (city: City) => {
     // Use real UTC time (time) for theme calculation
-    return getTimeOfDay(time, city.lat, city.lng)
+    return getTimeOfDay(time, city.lat, city.lng, city.timezone)
   }
   
   const getTimeDifference = () => {

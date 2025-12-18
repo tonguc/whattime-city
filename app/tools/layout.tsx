@@ -10,17 +10,18 @@ import Search from '@/components/Search'
 // Default coordinates (NYC) - fallback only
 const DEFAULT_LAT = 40.71
 const DEFAULT_LNG = -74.01
+const DEFAULT_TZ = 'America/New_York'
 
 export default function ToolsLayout({ children }: { children: ReactNode }) {
   const [currentTime, setCurrentTime] = useState(new Date())
-  const [coords, setCoords] = useState({ lat: DEFAULT_LAT, lng: DEFAULT_LNG })
+  const [coords, setCoords] = useState({ lat: DEFAULT_LAT, lng: DEFAULT_LNG, timezone: DEFAULT_TZ })
   const [isClient, setIsClient] = useState(false)
 
   // Read city context on client
   useEffect(() => {
     const ctx = getCityContext()
     if (ctx) {
-      setCoords({ lat: ctx.lat, lng: ctx.lng })
+      setCoords({ lat: ctx.lat, lng: ctx.lng, timezone: ctx.timezone })
     }
     setIsClient(true)
   }, [])
@@ -31,8 +32,8 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
     return () => clearInterval(timer)
   }, [])
 
-  // Calculate theme from coordinates
-  const timeOfDay = getTimeOfDay(currentTime, coords.lat, coords.lng)
+  // Calculate theme from coordinates with timezone
+  const timeOfDay = getTimeOfDay(currentTime, coords.lat, coords.lng, coords.timezone)
   const theme = themes[timeOfDay]
   const isLight = isLightTheme(timeOfDay)
   

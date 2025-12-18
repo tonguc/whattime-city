@@ -93,7 +93,7 @@ export default function Search({ theme, currentTheme }: SearchProps) {
   
   // Use real UTC time (now) for correct day/night calculation
   const getCityDayNight = (city: City) => {
-    const timeOfDay = getTimeOfDay(now, city.lat, city.lng)
+    const timeOfDay = getTimeOfDay(now, city.lat, city.lng, city.timezone)
     return timeOfDay === 'day' || timeOfDay === 'dawn' || timeOfDay === 'dusk' ? '☀️' : '🌙'
   }
   
