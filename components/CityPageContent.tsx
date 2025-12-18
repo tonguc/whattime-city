@@ -407,8 +407,21 @@ export default function CityPageContent({ city }: CityPageContentProps) {
         />
       </section>
       
-      {/* Footer spacer */}
-      <div className="h-16" />
+      {/* Footer */}
+      <footer className={`mt-12 pt-8 border-t text-center ${isLight ? 'border-slate-200' : 'border-slate-800'}`}>
+        <nav className={`flex flex-wrap justify-center gap-x-6 gap-y-2 mb-6 text-sm`}>
+          <a href="/" className={`hover:underline ${isLight ? 'text-slate-600 hover:text-slate-800' : 'text-slate-400 hover:text-white'}`}>World Clock</a>
+          <a href="/map" className={`hover:underline ${isLight ? 'text-slate-600 hover:text-slate-800' : 'text-slate-400 hover:text-white'}`}>World Map</a>
+          <a href="/country" className={`hover:underline ${isLight ? 'text-slate-600 hover:text-slate-800' : 'text-slate-400 hover:text-white'}`}>Countries</a>
+          <a href="/tools" className={`hover:underline ${isLight ? 'text-slate-600 hover:text-slate-800' : 'text-slate-400 hover:text-white'}`}>Tools</a>
+          <a href="/widget" className={`hover:underline ${isLight ? 'text-slate-600 hover:text-slate-800' : 'text-slate-400 hover:text-white'}`}>Free Widget</a>
+        </nav>
+        <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-500'}`}>
+          © {new Date().getFullYear()} whattime.city
+        </p>
+      </footer>
+      
+      <div className="h-8" />
     </div>
   )
 }

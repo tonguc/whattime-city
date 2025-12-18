@@ -738,7 +738,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         </div>
         
         <footer className="mt-10 text-center">
-          <div className={`flex flex-wrap justify-center gap-4 mb-4 text-sm ${theme.textMuted}`}>
+          {/* Icon Legend */}
+          <div className={`flex flex-wrap justify-center gap-4 mb-6 text-sm ${theme.textMuted}`}>
             <div className="flex items-center gap-1.5 cursor-help" title="Night: After sunset until dawn">
               <TimeIcons.night className="w-4 h-4" />
               <span>{t.night}</span>
@@ -756,8 +757,17 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               <span>{t.dusk}</span>
             </div>
           </div>
+          
+          {/* Navigation Links */}
+          <nav className={`flex flex-wrap justify-center gap-x-6 gap-y-2 mb-6 pt-6 border-t text-sm ${isLight ? 'border-slate-200' : 'border-slate-800'}`}>
+            <a href="/map" className={`hover:underline ${theme.textMuted} hover:${theme.text}`}>World Map</a>
+            <a href="/country" className={`hover:underline ${theme.textMuted} hover:${theme.text}`}>Countries</a>
+            <a href="/tools" className={`hover:underline ${theme.textMuted} hover:${theme.text}`}>Tools</a>
+            <a href="/widget" className={`hover:underline ${theme.textMuted} hover:${theme.text}`}>Free Widget</a>
+          </nav>
+          
           <p className={`text-sm ${theme.textMuted}`}>
-            {t.footer} • whattime.city
+            © {new Date().getFullYear()} whattime.city
           </p>
         </footer>
       </div>
