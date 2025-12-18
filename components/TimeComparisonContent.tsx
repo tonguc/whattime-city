@@ -1,0 +1,409 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { City } from '@/lib/cities'
+import { getTimeOfDay } from '@/lib/sun-calculator'
+import { themes, isLightTheme } from '@/lib/themes'
+
+interface TimeComparisonContentProps {
+  fromCity: City
+  toCity: City
+}
+
+// Get timezone offset in hours
+function getTimezoneOffset(timezone: string): number {
+  const now = new Date()
+  const utcDate = new Date(now.toLocaleString('en-US', { timeZone: 'UTC' }))
+  const tzDate = new Date(now.toLocaleString('en-US', { timeZone: timezone }))
+  return (tzDate.getTime() - utcDate.getTime()) / (1000 * 60 * 60)
+}
+
+// Format time difference nicely
+function formatTimeDifference(hours: number): string {
+  const absHours = Math.abs(hours)
+  const h = Math.floor(absHours)
+  const m = Math.round((absHours - h) * 60)
+  
+  if (m === 0) {
+    return `${h} hour${h !== 1 ? 's' : ''}`
+  }
+  return `${h} hour${h !== 1 ? 's' : ''} ${m} min`
+}
+
+// Time icons
+const TimeIcon = ({ timeOfDay }: { timeOfDay: string }) => {
+  const icons: Record<string, string> = {
+    dawn: '🌅',
+    day: '☀️',
+    dusk: '🌆',
+    night: '🌙'
+  }
+  return <span className="text-2xl">{icons[timeOfDay] || '🕐'}</span>
+}
+
+export default function TimeComparisonContent({ fromCity, toCity }: TimeComparisonContentProps) {
+  const [time, setTime] = useState(new Date())
+  
+  useEffect(() => {
+    const timer = setInterval(() => setTime(new Date()), 1000)
+    return () => clearInterval(timer)
+  }, [])
+  
+  // Calculate times
+  const fromTime = time.toLocaleTimeString('en-US', { 
+    timeZone: fromCity.timezone, 
+    hour: '2-digit', 
+    minute: '2-digit',
+    hour12: true 
+  })
+  const toTime = time.toLocaleTimeString('en-US', { 
+    timeZone: toCity.timezone, 
+    hour: '2-digit', 
+    minute: '2-digit',
+    hour12: true 
+  })
+  
+  const fromDate = time.toLocaleDateString('en-US', { 
+    timeZone: fromCity.timezone, 
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric'
+  })
+  const toDate = time.toLocaleDateString('en-US', { 
+    timeZone: toCity.timezone, 
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric'
+  })
+  
+  // Time of day
+  const fromTimeOfDay = getTimeOfDay(time, fromCity.lat, fromCity.lng, fromCity.timezone)
+  const toTimeOfDay = getTimeOfDay(time, toCity.lat, toCity.lng, toCity.timezone)
+  
+  // Calculate time difference
+  const fromOffset = getTimezoneOffset(fromCity.timezone)
+  const toOffset = getTimezoneOffset(toCity.timezone)
+  const diffHours = toOffset - fromOffset
+  
+  // Theme based on "from" city
+  const mainTheme = themes[fromTimeOfDay]
+  const isLight = isLightTheme(fromTimeOfDay)
+  
+  // Business hours overlap calculation (9 AM - 5 PM)
+  const getOverlapHours = () => {
+    const overlaps: { fromHour: number; toHour: number; label: string }[] = []
+    
+    for (let fromHour = 9; fromHour <= 17; fromHour++) {
+      const toHour = (fromHour + diffHours + 24) % 24
+      if (toHour >= 9 && toHour < 17) {
+        overlaps.push({ 
+          fromHour, 
+          toHour, 
+          label: `${fromHour}:00 ${fromCity.city} = ${toHour}:00 ${toCity.city}` 
+        })
+      }
+    }
+    return overlaps
+  }
+  
+  const overlapHours = getOverlapHours()
+  
+  // Best calling times
+  const getBestCallTimes = () => {
+    const suggestions = []
+    
+    // Morning call (8-10 AM from city)
+    const morningToHour = (9 + diffHours + 24) % 24
+    if (morningToHour >= 8 && morningToHour <= 22) {
+      suggestions.push({
+        from: '8-10 AM',
+        to: `${((8 + diffHours + 24) % 24).toString().padStart(2, '0')}:00 - ${((10 + diffHours + 24) % 24).toString().padStart(2, '0')}:00`,
+        quality: morningToHour >= 9 && morningToHour <= 18 ? 'excellent' : 'good'
+      })
+    }
+    
+    // Evening call (6-8 PM from city)
+    const eveningToHour = (19 + diffHours + 24) % 24
+    if (eveningToHour >= 6 && eveningToHour <= 23) {
+      suggestions.push({
+        from: '6-8 PM',
+        to: `${((18 + diffHours + 24) % 24).toString().padStart(2, '0')}:00 - ${((20 + diffHours + 24) % 24).toString().padStart(2, '0')}:00`,
+        quality: eveningToHour >= 9 && eveningToHour <= 18 ? 'excellent' : 'good'
+      })
+    }
+    
+    return suggestions
+  }
+  
+  const callTimes = getBestCallTimes()
+  
+  return (
+    <div className={`min-h-screen transition-colors duration-700 bg-gradient-to-br ${mainTheme.bg}`}>
+      {/* Header */}
+      <header className={`sticky top-0 z-50 w-full backdrop-blur-xl ${isLight ? 'bg-white/70' : 'bg-slate-900/70'}`}>
+        <div className="max-w-6xl mx-auto px-4 py-2 sm:py-3 flex items-center justify-between">
+          <Link href="/" className="hover:opacity-80 transition-opacity flex-shrink-0">
+            <img 
+              src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
+              alt="whattime.city" 
+              className="h-11 sm:h-14"
+            />
+          </Link>
+          
+          <div className="flex items-center gap-2">
+            <Link 
+              href="/"
+              className={`px-3 py-2 rounded-full text-sm font-medium transition-all ${
+                isLight 
+                  ? 'bg-white/60 text-slate-600 hover:bg-white/80' 
+                  : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/60'
+              } backdrop-blur-xl`}
+            >
+              🌍 Cities
+            </Link>
+            <Link 
+              href="/tools"
+              className={`px-3 py-2 rounded-full text-sm font-medium transition-all ${
+                isLight 
+                  ? 'bg-white/60 text-slate-600 hover:bg-white/80' 
+                  : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/60'
+              } backdrop-blur-xl`}
+            >
+              🛠️ Tools
+            </Link>
+          </div>
+        </div>
+      </header>
+
+      <main className="max-w-6xl mx-auto px-4 py-8">
+        {/* Title */}
+        <h1 className={`text-2xl sm:text-3xl font-bold text-center mb-8 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          {fromCity.city} → {toCity.city} Time
+        </h1>
+        
+        {/* Live Clocks */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          {/* From City Clock */}
+          <div className={`p-6 rounded-3xl backdrop-blur-xl border ${
+            isLight ? 'bg-white/50 border-white/60' : 'bg-slate-800/50 border-slate-700/60'
+          }`}>
+            <div className="flex items-center gap-3 mb-4">
+              <TimeIcon timeOfDay={fromTimeOfDay} />
+              <div>
+                <h2 className={`text-xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                  {fromCity.city}
+                </h2>
+                <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                  {fromCity.country}
+                </p>
+              </div>
+            </div>
+            <div className={`text-5xl font-bold mb-2 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              {fromTime}
+            </div>
+            <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+              {fromDate}
+            </p>
+            <div className={`mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium ${
+              isLight ? 'bg-slate-200 text-slate-600' : 'bg-slate-700 text-slate-300'
+            }`}>
+              {fromTimeOfDay.charAt(0).toUpperCase() + fromTimeOfDay.slice(1)}
+            </div>
+          </div>
+          
+          {/* To City Clock */}
+          <div className={`p-6 rounded-3xl backdrop-blur-xl border ${
+            isLight ? 'bg-white/50 border-white/60' : 'bg-slate-800/50 border-slate-700/60'
+          }`}>
+            <div className="flex items-center gap-3 mb-4">
+              <TimeIcon timeOfDay={toTimeOfDay} />
+              <div>
+                <h2 className={`text-xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                  {toCity.city}
+                </h2>
+                <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                  {toCity.country}
+                </p>
+              </div>
+            </div>
+            <div className={`text-5xl font-bold mb-2 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              {toTime}
+            </div>
+            <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+              {toDate}
+            </p>
+            <div className={`mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium ${
+              isLight ? 'bg-slate-200 text-slate-600' : 'bg-slate-700 text-slate-300'
+            }`}>
+              {toTimeOfDay.charAt(0).toUpperCase() + toTimeOfDay.slice(1)}
+            </div>
+          </div>
+        </div>
+        
+        {/* Time Difference Banner */}
+        <div className={`p-6 rounded-3xl mb-8 text-center ${
+          isLight ? 'bg-blue-50 border border-blue-200' : 'bg-blue-900/30 border border-blue-800/50'
+        }`}>
+          <p className={`text-sm mb-1 ${isLight ? 'text-blue-600' : 'text-blue-300'}`}>Time Difference</p>
+          <p className={`text-3xl font-bold ${isLight ? 'text-blue-800' : 'text-blue-100'}`}>
+            {diffHours === 0 
+              ? 'Same time zone' 
+              : `${toCity.city} is ${formatTimeDifference(Math.abs(diffHours))} ${diffHours > 0 ? 'ahead' : 'behind'}`
+            }
+          </p>
+        </div>
+        
+        {/* Info Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          {/* Best Time to Call */}
+          <div className={`p-6 rounded-3xl backdrop-blur-xl border ${
+            isLight ? 'bg-white/50 border-white/60' : 'bg-slate-800/50 border-slate-700/60'
+          }`}>
+            <h3 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              📞 Best Time to Call
+            </h3>
+            {callTimes.length > 0 ? (
+              <div className="space-y-3">
+                {callTimes.map((ct, idx) => (
+                  <div key={idx} className={`p-3 rounded-xl ${
+                    ct.quality === 'excellent' 
+                      ? (isLight ? 'bg-green-50 border border-green-200' : 'bg-green-900/30 border border-green-800/50')
+                      : (isLight ? 'bg-yellow-50 border border-yellow-200' : 'bg-yellow-900/30 border border-yellow-800/50')
+                  }`}>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className={`font-medium ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
+                          Your {ct.from}
+                        </p>
+                        <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                          → {ct.to} in {toCity.city}
+                        </p>
+                      </div>
+                      {ct.quality === 'excellent' && (
+                        <span className="text-green-500 text-sm font-medium">✓ Best</span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className={`${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                Large time difference - consider async communication
+              </p>
+            )}
+          </div>
+          
+          {/* Business Hours Overlap */}
+          <div className={`p-6 rounded-3xl backdrop-blur-xl border ${
+            isLight ? 'bg-white/50 border-white/60' : 'bg-slate-800/50 border-slate-700/60'
+          }`}>
+            <h3 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              📅 Business Hours Overlap
+            </h3>
+            {overlapHours.length > 0 ? (
+              <div className="space-y-2">
+                <p className={`text-sm mb-3 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                  {overlapHours.length} hour{overlapHours.length > 1 ? 's' : ''} of overlap (9 AM - 5 PM)
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {overlapHours.map((oh, idx) => (
+                    <span key={idx} className={`px-3 py-1 rounded-full text-sm ${
+                      isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'
+                    }`}>
+                      {oh.fromHour}:00
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <p className={`${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                No overlap during standard business hours (9 AM - 5 PM)
+              </p>
+            )}
+          </div>
+        </div>
+        
+        {/* Quick Conversion Table */}
+        <div className={`p-6 rounded-3xl backdrop-blur-xl border mb-8 ${
+          isLight ? 'bg-white/50 border-white/60' : 'bg-slate-800/50 border-slate-700/60'
+        }`}>
+          <h3 className={`text-lg font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+            ⏰ Quick Conversion
+          </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[6, 9, 12, 15, 18, 21, 0, 3].map(hour => {
+              const toHour = (hour + diffHours + 24) % 24
+              const nextDay = hour + diffHours >= 24 || hour + diffHours < 0
+              return (
+                <div key={hour} className={`p-3 rounded-xl text-center ${
+                  isLight ? 'bg-slate-50' : 'bg-slate-800/50'
+                }`}>
+                  <p className={`font-medium ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
+                    {hour.toString().padStart(2, '0')}:00
+                  </p>
+                  <p className={`text-xs ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
+                    {fromCity.city}
+                  </p>
+                  <p className={`mt-1 text-lg font-bold ${isLight ? 'text-blue-600' : 'text-blue-400'}`}>
+                    {toHour.toString().padStart(2, '0')}:00
+                  </p>
+                  <p className={`text-xs ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
+                    {toCity.city} {nextDay && diffHours > 0 ? '(+1)' : nextDay && diffHours < 0 ? '(-1)' : ''}
+                  </p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+        
+        {/* City Links */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <Link 
+            href={`/${fromCity.slug}`}
+            className={`p-4 rounded-2xl text-center transition-all hover:scale-[1.02] ${
+              isLight 
+                ? 'bg-white/60 hover:bg-white/80 text-slate-700' 
+                : 'bg-slate-800/60 hover:bg-slate-700/60 text-slate-200'
+            }`}
+          >
+            View {fromCity.city} Details →
+          </Link>
+          <Link 
+            href={`/${toCity.slug}`}
+            className={`p-4 rounded-2xl text-center transition-all hover:scale-[1.02] ${
+              isLight 
+                ? 'bg-white/60 hover:bg-white/80 text-slate-700' 
+                : 'bg-slate-800/60 hover:bg-slate-700/60 text-slate-200'
+            }`}
+          >
+            View {toCity.city} Details →
+          </Link>
+        </div>
+        
+        {/* Reverse Link */}
+        <div className="text-center">
+          <Link 
+            href={`/time/${toCity.slug}/${fromCity.slug}`}
+            className={`inline-flex items-center gap-2 px-6 py-3 rounded-full transition-all ${
+              isLight 
+                ? 'bg-slate-800 text-white hover:bg-slate-700' 
+                : 'bg-white text-slate-800 hover:bg-slate-100'
+            }`}
+          >
+            🔄 View {toCity.city} to {fromCity.city}
+          </Link>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className={`border-t mt-16 ${isLight ? 'border-slate-200' : 'border-slate-800'}`}>
+        <div className="max-w-6xl mx-auto px-4 py-8 text-center">
+          <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+            © {new Date().getFullYear()} whattime.city - World Clock & Time Zones
+          </p>
+        </div>
+      </footer>
+    </div>
+  )
+}
