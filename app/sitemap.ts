@@ -24,6 +24,12 @@ export default async function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/widget`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/tools`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
