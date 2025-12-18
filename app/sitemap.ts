@@ -3,15 +3,42 @@ import { cities, countries } from '@/lib/cities'
 export default async function sitemap() {
   const baseUrl = 'https://whattime.city'
   
-  // Ana sayfa
-  const routes = [
+  // Ana sayfalar
+  const staticRoutes = [
     {
       url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
       priority: 1,
     },
+    {
+      url: `${baseUrl}/map`,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/country`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/tools`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
   ]
+  
+  // Tool sayfaları
+  const toolSlugs = ['converter', 'meeting-planner', 'flight-times', 'jet-lag', 'event-time', 'alarm']
+  const toolRoutes = toolSlugs.map((slug) => ({
+    url: `${baseUrl}/tools/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }))
   
   // Tüm şehir sayfaları
   const cityRoutes = cities.map((city) => ({
@@ -29,5 +56,5 @@ export default async function sitemap() {
     priority: 0.8,
   }))
   
-  return [...routes, ...cityRoutes, ...countryRoutes]
+  return [...staticRoutes, ...toolRoutes, ...cityRoutes, ...countryRoutes]
 }
