@@ -34,6 +34,12 @@ const popularCitySlugs = [
   'singapore', 'berlin', 'toronto', 'hong-kong'
 ]
 
+// 12 major cities for relative time comparison
+const majorCitySlugs = [
+  'london', 'new-york', 'tokyo', 'paris', 'dubai', 'sydney',
+  'singapore', 'los-angeles', 'berlin', 'hong-kong', 'mumbai', 'sao-paulo'
+]
+
 export default function HomePage() {
   const router = useRouter()
   const [time, setTime] = useState(new Date())
@@ -215,6 +221,22 @@ export default function HomePage() {
   // Favorites
   const favoriteCities = favorites.map(slug => cities.find(c => c.slug === slug)).filter((c): c is City => c !== undefined)
   const popularCities = popularCitySlugs.map(slug => cities.find(c => c.slug === slug)).filter((c): c is City => c !== undefined)
+  
+  // Major cities for relative time (exclude user's city)
+  const majorCities = majorCitySlugs
+    .map(slug => cities.find(c => c.slug === slug))
+    .filter((c): c is City => c !== undefined && c.slug !== detectedCity?.slug)
+    .slice(0, 12)
+  
+  // Get relative offset in hours between detected city and target city
+  const getRelativeOffset = (targetCity: City): number => {
+    if (!detectedCity) return 0
+    const now = new Date()
+    const userTime = new Date(now.toLocaleString('en-US', { timeZone: detectedCity.timezone }))
+    const targetTime = new Date(now.toLocaleString('en-US', { timeZone: targetCity.timezone }))
+    const diffMs = targetTime.getTime() - userTime.getTime()
+    return Math.round(diffMs / (1000 * 60 * 60))
+  }
 
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg}`}>
@@ -543,24 +565,44 @@ export default function HomePage() {
         </section>
 
         {/* ═══════════════════════════════════════════════════════════════════════
-            WORLD MAP
+            MAJOR CITIES RELATIVE TO YOUR TIME
             ═══════════════════════════════════════════════════════════════════════ */}
-        <section className={`rounded-2xl p-5 mb-6 backdrop-blur-xl border ${theme.card}`}>
-          {/* Mini Map Visualization */}
-          <div className={`rounded-xl overflow-hidden mb-4 h-32 ${isLight ? 'bg-gradient-to-r from-slate-200 via-blue-100 to-slate-800' : 'bg-gradient-to-r from-slate-700 via-blue-900 to-slate-900'}`}>
-            <div className="w-full h-full flex items-center justify-center relative">
-              <div className="absolute inset-0 flex">
-                <div className={`flex-1 ${isLight ? 'bg-amber-100/50' : 'bg-amber-900/30'}`}></div>
-                <div className={`flex-1 ${isLight ? 'bg-slate-300/50' : 'bg-slate-800/50'}`}></div>
-              </div>
-              <span className={`text-4xl relative z-10`}>🌍</span>
-            </div>
-          </div>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <p className={`text-sm ${theme.textMuted}`}>See where it's day or night right now</p>
-            <Link href="/map" className={`px-5 py-2.5 rounded-xl font-medium transition-all ${isLight ? 'bg-slate-800 hover:bg-slate-900 text-white' : 'bg-white hover:bg-slate-100 text-slate-900'}`}>
-              Explore Map →
-            </Link>
+        <section className={`rounded-2xl p-5 mb-4 backdrop-blur-xl border ${theme.card}`}>
+          <h3 className={`text-lg font-semibold mb-4 ${theme.text}`}>🌍 World Cities</h3>
+          <p className={`text-sm mb-4 ${theme.textMuted}`}>
+            {detectedCity ? `Times relative to ${detectedCity.city}` : 'Current times around the world'}
+          </p>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {majorCities.map(city => {
+              const cityTime = getLocalTime(city)
+              const offset = getRelativeOffset(city)
+              const status = offset === 0 ? 'Same' : offset > 0 ? 'Ahead' : 'Behind'
+              const offsetStr = offset === 0 ? '—' : `${offset > 0 ? '+' : ''}${offset}h`
+              
+              return (
+                <div key={city.slug} className={`flex items-center justify-between p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+                  <div className="flex-1 min-w-0">
+                    <div className={`font-medium ${theme.text} truncate`}>{city.city}</div>
+                    <div className={`text-xs ${theme.textMuted}`}>{city.country}</div>
+                  </div>
+                  <div className="text-center px-3">
+                    <div className={`text-lg font-bold ${theme.text}`}>{cityTime}</div>
+                    <div className={`text-xs ${offset > 0 ? 'text-green-500' : offset < 0 ? 'text-orange-500' : theme.textMuted}`}>
+                      {offsetStr} {status !== 'Same' && <span className="opacity-70">{status}</span>}
+                    </div>
+                  </div>
+                  <Link 
+                    href={detectedCity ? `/time/${detectedCity.slug}/${city.slug}` : `/${city.slug}`}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                      isLight ? 'bg-blue-100 hover:bg-blue-200 text-blue-700' : 'bg-blue-900/50 hover:bg-blue-800/50 text-blue-300'
+                    }`}
+                  >
+                    Compare
+                  </Link>
+                </div>
+              )
+            })}
           </div>
         </section>
 
@@ -593,7 +635,6 @@ export default function HomePage() {
             <Link href="/country" className={`text-sm ${theme.textMuted} hover:underline`}>Countries</Link>
             <Link href="/tools" className={`text-sm ${theme.textMuted} hover:underline`}>Tools</Link>
             <Link href="/widget" className={`text-sm ${theme.textMuted} hover:underline`}>Free Widget</Link>
-            <Link href="/api" className={`text-sm ${theme.textMuted} hover:underline`}>API</Link>
           </nav>
           <p className={`text-center text-sm ${theme.textMuted}`}>© {new Date().getFullYear()} whattime.city</p>
         </div>
