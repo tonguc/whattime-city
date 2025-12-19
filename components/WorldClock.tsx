@@ -743,33 +743,13 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           />
         </div>
         
-        <footer className="mt-10 text-center">
-          {/* Icon Legend */}
-          <div className={`flex flex-wrap justify-center gap-4 mb-6 text-sm ${theme.textMuted}`}>
-            <div className="flex items-center gap-1.5 cursor-help" title="Night: After sunset until dawn">
-              <TimeIcons.night className="w-4 h-4" />
-              <span>{t.night}</span>
-            </div>
-            <div className="flex items-center gap-1.5 cursor-help" title="Dawn: 30 minutes before and after sunrise">
-              <TimeIcons.dawn className="w-4 h-4" />
-              <span>{t.dawn}</span>
-            </div>
-            <div className="flex items-center gap-1.5 cursor-help" title="Day: After dawn until dusk">
-              <TimeIcons.day className="w-4 h-4" />
-              <span>{t.day}</span>
-            </div>
-            <div className="flex items-center gap-1.5 cursor-help" title="Dusk: 30 minutes before and after sunset">
-              <TimeIcons.dusk className="w-4 h-4" />
-              <span>{t.dusk}</span>
-            </div>
-          </div>
-          
+        <footer className={`mt-10 pt-8 border-t text-center ${isLight ? 'border-slate-200' : 'border-slate-800'}`}>
           {/* Navigation Links */}
-          <nav className={`flex flex-wrap justify-center gap-x-6 gap-y-2 mb-6 pt-6 border-t text-sm ${isLight ? 'border-slate-200' : 'border-slate-800'}`}>
-            <a href="/map" className={`hover:underline ${theme.textMuted} hover:${theme.text}`}>World Map</a>
-            <a href="/country" className={`hover:underline ${theme.textMuted} hover:${theme.text}`}>Countries</a>
-            <a href="/tools" className={`hover:underline ${theme.textMuted} hover:${theme.text}`}>Tools</a>
-            <a href="/widget" className={`hover:underline ${theme.textMuted} hover:${theme.text}`}>Free Widget</a>
+          <nav className={`flex flex-wrap justify-center gap-x-6 gap-y-2 mb-6 text-sm`}>
+            <a href="/map" className={`hover:underline ${theme.textMuted}`}>World Map</a>
+            <a href="/country" className={`hover:underline ${theme.textMuted}`}>Countries</a>
+            <a href="/tools" className={`hover:underline ${theme.textMuted}`}>Tools</a>
+            <a href="/widget" className={`hover:underline ${theme.textMuted}`}>Free Widget</a>
           </nav>
           
           <p className={`text-sm ${theme.textMuted}`}>
