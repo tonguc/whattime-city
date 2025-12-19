@@ -242,7 +242,7 @@ export default function HomePage() {
         {/* HERO - Compare Tool */}
         <section className={`rounded-3xl p-6 md:p-8 mb-4 backdrop-blur-xl border ${theme.card} text-center`}>
           <h1 className={`text-2xl md:text-3xl font-bold mb-2 ${theme.text}`}>
-            🌍 World Clock & Time Zone Tools
+            🌍 World Clock — Compare Time Instantly
           </h1>
           
           <div className={`max-w-2xl mx-auto mt-6 p-4 rounded-2xl ${isLight ? 'bg-slate-100' : 'bg-slate-800/50'}`}>
@@ -298,13 +298,13 @@ export default function HomePage() {
                 Compare Time
               </button>
             </div>
-            <p className={`text-sm mt-3 ${theme.textMuted}`}>Find the best meeting time instantly</p>
+            <p className={`text-sm mt-3 ${theme.textMuted}`}>Compare cities or find meeting overlap</p>
           </div>
         </section>
 
         {/* QUICK TOOLS */}
         <section className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
-          <Link href="/tools/meeting-planner" className={`p-5 rounded-2xl backdrop-blur-xl border transition-all hover:scale-[1.02] group ${theme.card}`}>
+          <Link href="/tools/meeting-planner" className={`p-5 rounded-2xl backdrop-blur-xl transition-all hover:scale-[1.02] group ${isLight ? 'bg-white/60 border border-white/70' : 'bg-slate-800/60 border border-slate-600/60'}`}>
             <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-blue-100' : 'bg-blue-900/30'}`}>
               <svg className={`w-5 h-5 ${isLight ? 'text-blue-600' : 'text-blue-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -313,13 +313,13 @@ export default function HomePage() {
             <h3 className={`font-semibold mb-1 ${theme.text}`}>Meeting Planner</h3>
             <p className={`text-sm mb-3 ${theme.textMuted}`}>Find overlap hours</p>
             <span className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-semibold transition-all ${isLight ? 'bg-blue-500 text-white group-hover:bg-blue-600' : 'bg-blue-600 text-white group-hover:bg-blue-500'}`}>
-              Plan
+              Find Overlap
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </span>
           </Link>
-          <Link href="/tools/converter" className={`p-5 rounded-2xl backdrop-blur-xl border transition-all hover:scale-[1.02] group ${theme.card}`}>
+          <Link href="/tools/converter" className={`p-5 rounded-2xl backdrop-blur-xl transition-all hover:scale-[1.02] group ${isLight ? 'bg-white/60 border border-white/70' : 'bg-slate-800/60 border border-slate-600/60'}`}>
             <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-green-100' : 'bg-green-900/30'}`}>
               <svg className={`w-5 h-5 ${isLight ? 'text-green-600' : 'text-green-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -334,7 +334,7 @@ export default function HomePage() {
               </svg>
             </span>
           </Link>
-          <Link href="/tools/flight-times" className={`p-5 rounded-2xl backdrop-blur-xl border transition-all hover:scale-[1.02] group ${theme.card}`}>
+          <Link href="/tools/flight-times" className={`p-5 rounded-2xl backdrop-blur-xl transition-all hover:scale-[1.02] group ${isLight ? 'bg-white/60 border border-white/70' : 'bg-slate-800/60 border border-slate-600/60'}`}>
             <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-purple-100' : 'bg-purple-900/30'}`}>
               <svg className={`w-5 h-5 ${isLight ? 'text-purple-600' : 'text-purple-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
@@ -398,7 +398,7 @@ export default function HomePage() {
 
         {/* WORLD CITIES */}
         <section className={`rounded-2xl p-5 mb-4 backdrop-blur-xl border ${theme.card}`}>
-          <h3 className={`text-lg font-semibold mb-1 flex items-center gap-2 ${theme.text}`}>
+          <div className="flex items-center gap-2 mb-4">
             <svg className={`w-5 h-5 ${isLight ? 'text-emerald-500' : 'text-emerald-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <circle cx="12" cy="12" r="10"/>
               <ellipse cx="12" cy="12" rx="4" ry="10"/>
@@ -406,39 +406,40 @@ export default function HomePage() {
               <path d="M12 2c2.5 3.5 2.5 14.5 0 20"/>
               <path d="M12 2c-2.5 3.5-2.5 14.5 0 20"/>
             </svg>
-            World Cities
-          </h3>
-          <p className={`text-sm mb-4 ${theme.textMuted}`}>
-            {detectedCity ? `Times relative to ${detectedCity.city}` : 'Current times around the world'}
-          </p>
+            <h3 className={`text-lg font-semibold ${theme.text}`}>World Cities</h3>
+            {detectedCity && (
+              <span className={`text-sm ${theme.textMuted}`}>· relative to {detectedCity.city}</span>
+            )}
+          </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {majorCities.map(city => {
               const cityTime = getLocalTime(city)
               const offset = getRelativeOffset(city)
-              const status = offset === 0 ? 'Same' : offset > 0 ? 'Ahead' : 'Behind'
-              const offsetStr = offset === 0 ? '—' : `${offset > 0 ? '+' : ''}${offset}h`
+              const offsetStr = offset === 0 ? 'Same time' : `${offset > 0 ? '+' : ''}${offset}h`
               const tod = getCityTimeOfDay(city)
               const Icon = TimeIcons[tod]
               
               return (
-                <div key={city.slug} className={`flex items-center justify-between p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-                  <div className="flex items-center gap-2 flex-1 min-w-0">
-                    <Icon className={`w-4 h-4 flex-shrink-0 ${theme.textMuted}`} />
-                    <div className="min-w-0">
-                      <div className={`font-medium ${theme.text} truncate`}>{city.city}</div>
-                      <div className={`text-xs ${theme.textMuted}`}>{city.country}</div>
-                    </div>
+                <div key={city.slug} className={`flex items-center gap-4 p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+                  <Icon className={`w-5 h-5 flex-shrink-0 ${
+                    tod === 'day' ? 'text-amber-500' : 
+                    tod === 'night' ? 'text-indigo-400' : 
+                    tod === 'dawn' ? 'text-orange-400' : 'text-purple-400'
+                  }`} />
+                  <div className="flex-1 min-w-0">
+                    <div className={`font-medium ${theme.text}`}>{city.city}</div>
+                    <div className={`text-xs ${theme.textMuted}`}>{city.country}</div>
                   </div>
-                  <div className="text-center px-3">
-                    <div className={`text-lg font-bold ${theme.text}`}>{cityTime}</div>
+                  <div className="text-right">
+                    <div className={`text-xl font-bold ${theme.text}`}>{cityTime}</div>
                     <div className={`text-xs ${offset > 0 ? 'text-green-500' : offset < 0 ? 'text-orange-500' : theme.textMuted}`}>
-                      {offsetStr} {status !== 'Same' && <span className="opacity-70">{status}</span>}
+                      {offsetStr}
                     </div>
                   </div>
                   <Link 
                     href={detectedCity ? `/time/${detectedCity.slug}/${city.slug}` : `/${city.slug}`}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                    className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all flex-shrink-0 ${
                       isLight ? 'bg-blue-100 hover:bg-blue-200 text-blue-700' : 'bg-blue-900/50 hover:bg-blue-800/50 text-blue-300'
                     }`}
                   >
