@@ -37,6 +37,7 @@ export default function HomePage() {
   const {
     time,
     activeCity,
+    setActiveCity,
     detectedCity,
     theme,
     isLight,
@@ -63,6 +64,14 @@ export default function HomePage() {
   const [compareWithQuery, setCompareWithQuery] = useState('')
   const [compareWithResults, setCompareWithResults] = useState<City[]>([])
   const compareWithRef = useRef<HTMLDivElement>(null)
+
+  // CRITICAL: Reset activeCity to detectedCity when HomePage mounts
+  // This ensures theme updates when navigating back home via logo
+  useEffect(() => {
+    if (detectedCity) {
+      setActiveCity(detectedCity)
+    }
+  }, [detectedCity, setActiveCity])
 
   // Set fromCity when detectedCity becomes available
   useEffect(() => {
@@ -279,7 +288,7 @@ export default function HomePage() {
 
         {/* QUICK TOOLS */}
         <section className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
-          <Link href="/tools/meeting-planner" className={`p-5 rounded-2xl backdrop-blur-xl border transition-all hover:scale-[1.02] ${theme.card}`}>
+          <Link href="/tools/meeting-planner" className={`p-5 rounded-2xl backdrop-blur-xl border transition-all hover:scale-[1.02] group ${theme.card}`}>
             <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-blue-100' : 'bg-blue-900/30'}`}>
               <svg className={`w-5 h-5 ${isLight ? 'text-blue-600' : 'text-blue-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -287,9 +296,14 @@ export default function HomePage() {
             </div>
             <h3 className={`font-semibold mb-1 ${theme.text}`}>Meeting Planner</h3>
             <p className={`text-sm mb-3 ${theme.textMuted}`}>Find overlap hours</p>
-            <span className={`text-sm font-medium ${theme.accentText}`}>Plan →</span>
+            <span className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-semibold transition-all ${isLight ? 'bg-blue-500 text-white group-hover:bg-blue-600' : 'bg-blue-600 text-white group-hover:bg-blue-500'}`}>
+              Plan
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
           </Link>
-          <Link href="/tools/converter" className={`p-5 rounded-2xl backdrop-blur-xl border transition-all hover:scale-[1.02] ${theme.card}`}>
+          <Link href="/tools/converter" className={`p-5 rounded-2xl backdrop-blur-xl border transition-all hover:scale-[1.02] group ${theme.card}`}>
             <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-green-100' : 'bg-green-900/30'}`}>
               <svg className={`w-5 h-5 ${isLight ? 'text-green-600' : 'text-green-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -297,9 +311,14 @@ export default function HomePage() {
             </div>
             <h3 className={`font-semibold mb-1 ${theme.text}`}>Convert Time</h3>
             <p className={`text-sm mb-3 ${theme.textMuted}`}>Convert one time to another city</p>
-            <span className={`text-sm font-medium ${theme.accentText}`}>Convert →</span>
+            <span className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-semibold transition-all ${isLight ? 'bg-green-500 text-white group-hover:bg-green-600' : 'bg-green-600 text-white group-hover:bg-green-500'}`}>
+              Convert
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
           </Link>
-          <Link href="/tools/flight-times" className={`p-5 rounded-2xl backdrop-blur-xl border transition-all hover:scale-[1.02] ${theme.card}`}>
+          <Link href="/tools/flight-times" className={`p-5 rounded-2xl backdrop-blur-xl border transition-all hover:scale-[1.02] group ${theme.card}`}>
             <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-purple-100' : 'bg-purple-900/30'}`}>
               <svg className={`w-5 h-5 ${isLight ? 'text-purple-600' : 'text-purple-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
@@ -307,7 +326,12 @@ export default function HomePage() {
             </div>
             <h3 className={`font-semibold mb-1 ${theme.text}`}>Travel Time</h3>
             <p className={`text-sm mb-3 ${theme.textMuted}`}>Calculate arrival time across zones</p>
-            <span className={`text-sm font-medium ${theme.accentText}`}>Calc →</span>
+            <span className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-semibold transition-all ${isLight ? 'bg-purple-500 text-white group-hover:bg-purple-600' : 'bg-purple-600 text-white group-hover:bg-purple-500'}`}>
+              Calculate
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
           </Link>
         </section>
 
@@ -411,13 +435,19 @@ export default function HomePage() {
             </svg>
             Popular Cities
           </h3>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-2">
-            {popularCities.map(city => (
-              <Link key={city.slug} href={`/${city.slug}`}
-                className={`px-3 py-2 rounded-lg text-sm text-center transition-all ${isLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-slate-300'}`}>
-                {city.city}
-              </Link>
-            ))}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-2">
+            {popularCities.map(city => {
+              const tod = getCityTimeOfDay(city)
+              const Icon = TimeIcons[tod]
+              return (
+                <Link key={city.slug} href={`/${city.slug}`}
+                  className={`px-3 py-2 rounded-lg text-sm transition-all flex items-center justify-center gap-1.5 ${isLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-slate-300'}`}
+                  title={`${city.city} - ${tod}`}>
+                  <Icon className="w-3.5 h-3.5 flex-shrink-0" />
+                  <span className="truncate">{city.city}</span>
+                </Link>
+              )
+            })}
             <Link href="/country" className={`px-3 py-2 rounded-lg text-sm text-center font-medium ${theme.accentText} ${isLight ? 'bg-orange-50' : 'bg-orange-900/20'}`}>
               All →
             </Link>
@@ -428,12 +458,50 @@ export default function HomePage() {
       {/* FOOTER */}
       <footer className={`py-8 border-t ${isLight ? 'border-slate-200 bg-white/50' : 'border-slate-800 bg-slate-900/50'}`}>
         <div className="max-w-6xl mx-auto px-4">
-          <nav className="flex flex-wrap justify-center gap-6 mb-4">
-            <Link href="/map" className={`text-sm ${theme.textMuted} hover:underline`}>World Map</Link>
-            <Link href="/country" className={`text-sm ${theme.textMuted} hover:underline`}>Countries</Link>
-            <Link href="/tools" className={`text-sm ${theme.textMuted} hover:underline`}>Tools</Link>
-            <Link href="/widget" className={`text-sm ${theme.textMuted} hover:underline`}>Free Widget</Link>
+          <nav className="flex flex-wrap justify-center gap-6 mb-6">
+            <Link href="/map" className={`flex items-center gap-2 text-sm ${theme.textMuted} hover:${theme.text} transition-colors group`} title="Interactive world time map">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" strokeWidth={2}/>
+                <path strokeWidth={2} d="M2 12h20"/>
+                <path strokeWidth={2} d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <span className="group-hover:underline">World Map</span>
+            </Link>
+            <Link href="/country" className={`flex items-center gap-2 text-sm ${theme.textMuted} hover:${theme.text} transition-colors group`} title="Browse cities by country">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+              </svg>
+              <span className="group-hover:underline">Countries</span>
+            </Link>
+            <Link href="/tools" className={`flex items-center gap-2 text-sm ${theme.textMuted} hover:${theme.text} transition-colors group`} title="Time zone tools">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span className="group-hover:underline">Tools</span>
+            </Link>
+            <Link href="/widget" className={`flex items-center gap-2 text-sm ${theme.textMuted} hover:${theme.text} transition-colors group`} title="Embed a clock on your site">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+              <span className="group-hover:underline">Free Widget</span>
+            </Link>
           </nav>
+          
+          {/* Time of day legend */}
+          <div className="flex flex-wrap justify-center gap-4 mb-4">
+            {(['dawn', 'day', 'dusk', 'night'] as const).map(tod => {
+              const Icon = TimeIcons[tod]
+              const labels = { dawn: 'Dawn', day: 'Day', dusk: 'Dusk', night: 'Night' }
+              return (
+                <div key={tod} className={`flex items-center gap-1.5 text-xs ${theme.textMuted}`} title={labels[tod]}>
+                  <Icon className="w-4 h-4" />
+                  <span>{labels[tod]}</span>
+                </div>
+              )
+            })}
+          </div>
+          
           <p className={`text-center text-sm ${theme.textMuted}`}>© {new Date().getFullYear()} whattime.city</p>
         </div>
       </footer>
