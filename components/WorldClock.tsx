@@ -9,6 +9,7 @@ import { translations, detectLanguage, Language } from '@/lib/translations'
 import { getWeather, WeatherData, getWeatherAnimation, WeatherAnimation } from '@/lib/weather'
 import { saveCityContext } from '@/lib/city-context'
 import { useCityContext } from '@/lib/CityContext'
+import Header from '@/components/Header'
 import DigitalClock from '@/components/DigitalClock'
 import AnalogClock from '@/components/AnalogClock'
 import SunInfoCard from '@/components/SunInfoCard'
@@ -148,14 +149,21 @@ function findNearestCity(lat: number, lng: number): City {
 
 export default function WorldClock({ initialCity }: WorldClockProps) {
   const router = useRouter()
-  const { setActiveCity } = useCityContext()
+  const { 
+    setActiveCity, 
+    clockMode, 
+    setClockMode, 
+    use12Hour, 
+    setUse12Hour, 
+    themeMode, 
+    setThemeMode,
+    favorites,
+    toggleFavorite 
+  } = useCityContext()
   const defaultCity = initialCity || getTier1Cities()[0]
   const [selectedCity, setSelectedCity] = useState<City>(defaultCity)
   const [time, setTime] = useState(new Date())
-  const [themeMode, setThemeMode] = useState<'auto' | 'light' | 'dark'>('auto')
-  const [clockMode, setClockMode] = useState<'digital' | 'analog'>('digital')
   const [lang, setLang] = useState<Language>('en')
-  const [use12Hour, setUse12Hour] = useState(uses12HourFormat(defaultCity.countryCode))
   const [weather, setWeather] = useState<WeatherData | null>(null)
   const [weatherAnimation, setWeatherAnimation] = useState<WeatherAnimation>('clear')
   const [selectedContinent, setSelectedContinent] = useState<Continent>('all')
@@ -169,38 +177,10 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   // Detected user location
   const [detectedCity, setDetectedCity] = useState<City | null>(null)
   
-  // Favorites
-  const [favorites, setFavorites] = useState<string[]>([])
-  
   // Sync activeCity with global context when component mounts or city changes
   useEffect(() => {
     setActiveCity(selectedCity)
   }, [selectedCity, setActiveCity])
-  
-  // Load favorites from localStorage
-  useEffect(() => {
-    const saved = localStorage.getItem('whattime-favorites')
-    if (saved) {
-      try {
-        setFavorites(JSON.parse(saved))
-      } catch (e) {
-        console.error('Failed to parse favorites:', e)
-      }
-    }
-  }, [])
-  
-  // Save favorites to localStorage
-  useEffect(() => {
-    localStorage.setItem('whattime-favorites', JSON.stringify(favorites))
-  }, [favorites])
-  
-  const toggleFavorite = (slug: string) => {
-    setFavorites(prev => 
-      prev.includes(slug) 
-        ? prev.filter(s => s !== slug)
-        : [...prev, slug]
-    )
-  }
   
   const isFavorite = (slug: string) => favorites.includes(slug)
   const favoriteCities = cities.filter(c => favorites.includes(c.slug))
@@ -342,11 +322,6 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
     return getTier1Cities()[0]
   }
   
-  const handleLogoClick = () => {
-    // Navigate to homepage
-    router.push('/')
-  }
-  
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-all duration-1000 relative`}>
       {/* Weather Animation Background */}
@@ -358,116 +333,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         <div className={`absolute -bottom-1/4 -right-1/4 w-[600px] h-[600px] ${theme.glow} rounded-full blur-3xl opacity-40`}/>
       </div>
       
-      {/* Sticky Header - FULL WIDTH */}
-      <header className={`sticky top-0 z-50 w-full backdrop-blur-xl ${isLight ? 'bg-white/70' : 'bg-slate-900/70'}`}>
-        <div className="max-w-6xl mx-auto px-4 py-2 sm:py-3 flex flex-col lg:flex-row items-center justify-between gap-2 sm:gap-4">
-          <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0" title="Click to detect your location">
-            <img 
-              src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
-              alt="whattime.city" 
-              className="h-11 sm:h-14"
-            />
-          </button>
-          
-          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-3 w-full sm:w-auto">
-            <Search theme={theme} currentTheme={currentTheme} />
-            
-            <div className="flex items-center justify-center w-full sm:w-auto gap-1 sm:gap-2">
-              {/* Digital/Analog Toggle with Icons */}
-              <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
-                {(['digital', 'analog'] as const).map((mode) => (
-                  <button
-                    key={mode}
-                    onClick={() => setClockMode(mode)}
-                    title={mode === 'digital' ? 'Digital: Show time as numbers' : 'Analog: Show time as clock face'}
-                    className={`px-4 sm:px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center justify-center ${
-                      clockMode === mode
-                        ? `${theme.accentBg} text-white shadow-lg`
-                        : isLight ? 'text-slate-600' : 'text-slate-400'
-                    }`}
-                  >
-                    {/* Mobile: Icons */}
-                    <span className="sm:hidden">
-                      {mode === 'digital' ? (
-                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                          <text x="3" y="17" fontSize="14" fontFamily="monospace" fontWeight="bold">12</text>
-                        </svg>
-                      ) : (
-                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <circle cx="12" cy="12" r="9"/>
-                          <path d="M12 6v6l4 2"/>
-                        </svg>
-                      )}
-                    </span>
-                    {/* Desktop: Text */}
-                    <span className="hidden sm:inline capitalize">{t[mode]}</span>
-                  </button>
-                ))}
-              </div>
-              
-              {/* 24h/12h Toggle */}
-              <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
-                <button
-                  onClick={() => setUse12Hour(false)}
-                  title="24-hour format (00:00 - 23:59)"
-                  className={`px-4 sm:px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                    !use12Hour
-                      ? `${theme.accentBg} text-white shadow-lg`
-                      : isLight ? 'text-slate-600' : 'text-slate-400'
-                  }`}
-                >
-                  24h
-                </button>
-                <button
-                  onClick={() => setUse12Hour(true)}
-                  title="12-hour format with AM/PM"
-                  className={`px-4 sm:px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                    use12Hour
-                      ? `${theme.accentBg} text-white shadow-lg`
-                      : isLight ? 'text-slate-600' : 'text-slate-400'
-                  }`}
-                >
-                  12h
-                </button>
-              </div>
-              
-              <ThemeToggle mode={themeMode} setMode={setThemeMode} currentTheme={currentTheme} t={t} themeData={theme} />
-              
-              {/* Map Link */}
-              <a 
-                href="/map" 
-                className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium transition-all ${
-                  isLight 
-                    ? 'bg-white/60 text-slate-600 hover:bg-white/80' 
-                    : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/60'
-                } backdrop-blur-xl`}
-                title="World Map"
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M2 12h20"/>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                </svg>
-              </a>
-              
-              {/* Tools Link - visible on both mobile and desktop */}
-              <a 
-                href="/tools" 
-                className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium transition-all ${
-                  isLight 
-                    ? 'bg-white/60 text-slate-600 hover:bg-white/80' 
-                    : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/60'
-                } backdrop-blur-xl`}
-                title={t.tools || 'Tools'}
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </header>
+      {/* Shared Header */}
+      <Header />
       
       {/* Main Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-4 sm:py-4">

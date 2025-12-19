@@ -343,14 +343,14 @@ export default function HomePage() {
             </svg>
             Popular Comparisons
           </h3>
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
             {popularComparisons.map(c => (
               <Link key={`${c.from}-${c.to}`} href={`/time/${c.from}/${c.to}`}
-                className={`px-3 py-1.5 rounded-lg text-sm transition-all ${isLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-slate-300'}`}>
+                className={`px-3 py-2 rounded-lg text-sm text-center transition-all ${isLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-slate-300'}`}>
                 {c.label}
               </Link>
             ))}
-            <Link href="/tools/converter" className={`px-3 py-1.5 rounded-lg text-sm font-medium ${theme.accentText}`}>
+            <Link href="/tools/converter" className={`px-3 py-2 rounded-lg text-sm text-center font-medium ${theme.accentText} ${isLight ? 'bg-blue-50' : 'bg-blue-900/20'}`}>
               All →
             </Link>
           </div>
@@ -411,14 +411,14 @@ export default function HomePage() {
             </svg>
             Popular Cities
           </h3>
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-2">
             {popularCities.map(city => (
               <Link key={city.slug} href={`/${city.slug}`}
-                className={`px-3 py-1.5 rounded-lg text-sm transition-all ${isLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-slate-300'}`}>
+                className={`px-3 py-2 rounded-lg text-sm text-center transition-all ${isLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-slate-300'}`}>
                 {city.city}
               </Link>
             ))}
-            <Link href="/country" className={`px-3 py-1.5 rounded-lg text-sm font-medium ${theme.accentText}`}>
+            <Link href="/country" className={`px-3 py-2 rounded-lg text-sm text-center font-medium ${theme.accentText} ${isLight ? 'bg-orange-50' : 'bg-orange-900/20'}`}>
               All →
             </Link>
           </div>
