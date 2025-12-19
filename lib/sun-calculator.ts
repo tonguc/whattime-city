@@ -61,13 +61,13 @@ export function getTimeOfDay(utcTime: Date, lat: number, lng: number, timezone?:
   
   const { sunrise, sunset } = getSunTimes(utcTime, lat, lng)
   
-  // Sabah geçişi: sunrise-1 ile sunrise+1 arası
-  const dawnStart = sunrise - 1
-  const dawnEnd = sunrise + 1
+  // Sabah geçişi: sunrise-0.5 ile sunrise+0.5 arası (30 dakika)
+  const dawnStart = sunrise - 0.5
+  const dawnEnd = sunrise + 0.5
   
-  // Akşam geçişi: sunset-1 ile sunset+1 arası
-  const duskStart = sunset - 1
-  const duskEnd = sunset + 1
+  // Akşam geçişi: sunset-0.5 ile sunset+0.5 arası (30 dakika)
+  const duskStart = sunset - 0.5
+  const duskEnd = sunset + 0.5
   
   if (localHour >= dawnStart && localHour < dawnEnd) {
     return 'dawn'
