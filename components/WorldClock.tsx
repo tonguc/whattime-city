@@ -439,23 +439,51 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           isLight={isLight}
         />
         
-        {/* === 3. QUICK FACTS === */}
-        <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
-          <h3 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${theme.text}`}>
-            <svg className={`w-5 h-5 ${isLight ? 'text-blue-500' : 'text-blue-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <path d="M3 9h18M9 21V9"/>
-            </svg>
-            Quick Facts
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            <div className={`p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-              <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Timezone</div>
-              <div className={`font-bold ${theme.text}`}>{offset}</div>
-              <div className={`text-xs ${theme.textMuted}`}>{selectedCity.timezone.split('/').pop()?.replace('_', ' ')}</div>
+        {/* === 3. QUICK INFO CARDS === */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
+          {/* Currency */}
+          <div className={`rounded-2xl p-4 backdrop-blur-xl border ${theme.card} flex items-center gap-3`}>
+            <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${isLight ? 'bg-emerald-100' : 'bg-emerald-900/30'}`}>
+              <svg className={`w-6 h-6 ${isLight ? 'text-emerald-600' : 'text-emerald-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M9.5 8.5h5M9.5 15.5h5M12 8.5v7"/>
+              </svg>
             </div>
-            <div className={`p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-              <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Sunrise</div>
+            <div>
+              <div className={`text-xs uppercase tracking-wide ${theme.textMuted}`}>Currency</div>
+              <div className={`font-bold ${theme.text}`}>{selectedCity.info?.currencySymbol || '$'} {selectedCity.info?.currency || 'USD'}</div>
+            </div>
+          </div>
+          
+          {/* Phone Code */}
+          <div className={`rounded-2xl p-4 backdrop-blur-xl border ${theme.card} flex items-center gap-3`}>
+            <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${isLight ? 'bg-blue-100' : 'bg-blue-900/30'}`}>
+              <svg className={`w-6 h-6 ${isLight ? 'text-blue-600' : 'text-blue-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+            </div>
+            <div>
+              <div className={`text-xs uppercase tracking-wide ${theme.textMuted}`}>Phone Code</div>
+              <div className={`font-bold ${theme.text}`}>{selectedCity.info?.phoneCode || '+1'}</div>
+            </div>
+          </div>
+          
+          {/* Sunrise */}
+          <div className={`rounded-2xl p-4 backdrop-blur-xl border ${theme.card} flex items-center gap-3`}>
+            <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${isLight ? 'bg-amber-100' : 'bg-amber-900/30'}`}>
+              <svg className={`w-6 h-6 ${isLight ? 'text-amber-600' : 'text-amber-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M17 18a5 5 0 00-10 0"/>
+                <line x1="12" y1="2" x2="12" y2="9"/>
+                <line x1="4.22" y1="10.22" x2="5.64" y2="11.64"/>
+                <line x1="1" y1="18" x2="3" y2="18"/>
+                <line x1="21" y1="18" x2="23" y2="18"/>
+                <line x1="18.36" y1="11.64" x2="19.78" y2="10.22"/>
+                <line x1="23" y1="22" x2="1" y2="22"/>
+                <polyline points="8,6 12,2 16,6"/>
+              </svg>
+            </div>
+            <div>
+              <div className={`text-xs uppercase tracking-wide ${theme.textMuted}`}>Sunrise</div>
               <div className={`font-bold ${theme.text}`}>{(() => {
                 const sunTimes = getSunTimes(localTime, selectedCity.lat, selectedCity.lng)
                 const h = Math.floor(sunTimes.sunrise)
@@ -463,8 +491,24 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                 return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`
               })()}</div>
             </div>
-            <div className={`p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-              <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Sunset</div>
+          </div>
+          
+          {/* Sunset */}
+          <div className={`rounded-2xl p-4 backdrop-blur-xl border ${theme.card} flex items-center gap-3`}>
+            <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${isLight ? 'bg-orange-100' : 'bg-orange-900/30'}`}>
+              <svg className={`w-6 h-6 ${isLight ? 'text-orange-600' : 'text-orange-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M17 18a5 5 0 00-10 0"/>
+                <line x1="12" y1="9" x2="12" y2="2"/>
+                <line x1="4.22" y1="10.22" x2="5.64" y2="11.64"/>
+                <line x1="1" y1="18" x2="3" y2="18"/>
+                <line x1="21" y1="18" x2="23" y2="18"/>
+                <line x1="18.36" y1="11.64" x2="19.78" y2="10.22"/>
+                <line x1="23" y1="22" x2="1" y2="22"/>
+                <polyline points="16,5 12,9 8,5"/>
+              </svg>
+            </div>
+            <div>
+              <div className={`text-xs uppercase tracking-wide ${theme.textMuted}`}>Sunset</div>
               <div className={`font-bold ${theme.text}`}>{(() => {
                 const sunTimes = getSunTimes(localTime, selectedCity.lat, selectedCity.lng)
                 const h = Math.floor(sunTimes.sunset)
@@ -472,75 +516,82 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                 return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`
               })()}</div>
             </div>
-            {selectedCity.info && (
-              <div className={`p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Population</div>
-                <div className={`font-bold ${theme.text}`}>{selectedCity.info.population}</div>
-              </div>
-            )}
           </div>
-          {selectedCity.info && (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-3">
-              <div className={`p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Currency</div>
-                <div className={`font-bold ${theme.text}`}>{selectedCity.info.currencySymbol} {selectedCity.info.currency}</div>
-              </div>
-              <div className={`p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Phone</div>
-                <div className={`font-bold ${theme.text}`}>{selectedCity.info.phoneCode}</div>
-              </div>
-              <div className={`p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Language</div>
-                <div className={`font-bold ${theme.text}`}>{selectedCity.info.language}</div>
-              </div>
-              <div className={`p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Country</div>
-                <div className={`font-bold ${theme.text}`}>{selectedCity.country}</div>
-              </div>
-            </div>
-          )}
         </div>
         
-        {/* === 4. TIME IN CITY - SEO Content === */}
+        {/* === 4. TIME INTELLIGENCE (SEO 1) === */}
         {selectedCity.info?.seoContent && (
           <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
-            <h2 className={`text-xl font-bold mb-4 ${theme.text}`}>
-              Time in {selectedCity.city}, {selectedCity.country}
-            </h2>
+            <div className="flex items-center gap-3 mb-6">
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${isLight ? 'bg-indigo-100' : 'bg-indigo-900/30'}`}>
+                <svg className={`w-5 h-5 ${isLight ? 'text-indigo-600' : 'text-indigo-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                  <path d="M2 12h2M20 12h2M12 2v2M12 20v2"/>
+                </svg>
+              </div>
+              <h2 className={`text-xl font-bold ${theme.text}`}>
+                Time in {selectedCity.city}
+              </h2>
+            </div>
             
-            <div className="space-y-4">
+            <div className="space-y-5">
+              {/* Intro */}
               <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.intro}</p>
               
-              <div>
-                <h3 className={`font-semibold mb-2 ${theme.text}`}>Timezone Facts</h3>
-                <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.timezoneFacts}</p>
-              </div>
-              
-              {selectedCity.info.seoContent.timeDifference && (
-                <div className={`p-4 rounded-xl ${isLight ? 'bg-amber-50' : 'bg-amber-900/20'}`}>
-                  <h3 className={`font-semibold mb-2 ${theme.text}`}>Time Difference</h3>
-                  <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.timeDifference}</p>
-                </div>
-              )}
-              
+              {/* DST Info */}
               {selectedCity.info.seoContent.daylightSaving && (
-                <div>
-                  <h3 className={`font-semibold mb-2 ${theme.text}`}>Daylight Saving Time</h3>
+                <div className={`p-4 rounded-xl ${isLight ? 'bg-amber-50 border border-amber-100' : 'bg-amber-900/20 border border-amber-800/30'}`}>
+                  <div className="flex items-center gap-2 mb-2">
+                    <svg className={`w-5 h-5 ${isLight ? 'text-amber-600' : 'text-amber-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <circle cx="12" cy="12" r="5"/>
+                      <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                    <h3 className={`font-semibold ${theme.text}`}>Daylight Saving Time</h3>
+                  </div>
                   <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.daylightSaving}</p>
                 </div>
               )}
               
-              <div>
-                <h3 className={`font-semibold mb-2 ${theme.text}`}>Business Hours</h3>
+              {/* Time Difference */}
+              {selectedCity.info.seoContent.timeDifference && (
+                <div>
+                  <h3 className={`font-semibold mb-2 flex items-center gap-2 ${theme.text}`}>
+                    <svg className={`w-4 h-4 ${theme.textMuted}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <circle cx="6" cy="12" r="4"/>
+                      <circle cx="18" cy="12" r="4"/>
+                      <path d="M10 12h4"/>
+                    </svg>
+                    Time Difference
+                  </h3>
+                  <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.timeDifference}</p>
+                </div>
+              )}
+              
+              {/* Business Hours */}
+              <div className={`p-4 rounded-xl ${isLight ? 'bg-green-50 border border-green-100' : 'bg-green-900/20 border border-green-800/30'}`}>
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className={`w-5 h-5 ${isLight ? 'text-green-600' : 'text-green-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <rect x="2" y="3" width="20" height="14" rx="2"/>
+                    <path d="M8 21h8M12 17v4"/>
+                  </svg>
+                  <h3 className={`font-semibold ${theme.text}`}>Business Hours</h3>
+                </div>
                 <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.businessHours}</p>
+              </div>
+              
+              {/* Timezone Facts */}
+              <div>
+                <h3 className={`font-semibold mb-2 ${theme.text}`}>Timezone Facts</h3>
+                <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.timezoneFacts}</p>
               </div>
             </div>
           </div>
         )}
         
-        {/* Favorite Cities Section - Only show if user has favorites */}
+        {/* Favorite Cities Section */}
         {favoriteCities.length > 0 && (
-          <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mb-4`}>
+          <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
             <h3 className={`text-xl font-semibold ${theme.text} mb-4`}>
               {t.favoriteCities || 'Your Favorite Cities'}
             </h3>
@@ -565,8 +616,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         )}
         
-        {/* === 5. WORLD_CITIES === */}
-        <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card}`}>
+        {/* === 5. WORLD CITIES GRID === */}
+        <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
             <h3 className={`text-xl font-semibold ${theme.text} self-center`}>
               {t.worldCities}
@@ -593,7 +644,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             </div>
           </div>
           
-          {/* Continent Filter - only show when a specific continent is selected */}
+          {/* Continent Filter */}
           {selectedContinent !== 'all' && (
             <div className="flex items-center gap-3 mb-4">
               <div className={`flex items-center gap-2 flex-1 max-w-xs px-3 py-2 rounded-xl ${isLight ? 'bg-white/60' : 'bg-slate-800/60'}`}>
@@ -648,27 +699,174 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         </div>
         
-        {/* === 6. TRAVEL TEASER (Small) === */}
-        {selectedCity.info?.seoContent?.bestTimeToVisit && (
-          <div className={`rounded-2xl p-4 mt-4 flex items-center justify-between gap-4 ${isLight ? 'bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100' : 'bg-gradient-to-r from-blue-900/20 to-indigo-900/20 border border-blue-800/30'}`}>
-            <div className="flex items-center gap-3">
-              <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${isLight ? 'bg-blue-100' : 'bg-blue-900/40'}`}>
-                <svg className={`w-5 h-5 ${isLight ? 'text-blue-600' : 'text-blue-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
-                </svg>
+        {/* === 6. TRAVEL BRIDGE (Banner) === */}
+        {selectedCity.info && (
+          <div className={`rounded-3xl p-6 mt-4 ${isLight ? 'bg-gradient-to-r from-blue-500 to-indigo-600' : 'bg-gradient-to-r from-blue-600 to-indigo-700'}`}>
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center">
+                  <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white">Visiting {selectedCity.city}?</h3>
+                  <p className="text-white/80 text-sm">{selectedCity.info.seoContent?.bestTimeToVisit?.split('.')[0] || 'Plan your perfect trip'}.</p>
+                </div>
               </div>
-              <div>
-                <div className={`font-medium ${theme.text}`}>Planning a trip to {selectedCity.city}?</div>
-                <div className={`text-sm ${theme.textMuted}`}>{selectedCity.info.seoContent.bestTimeToVisit.split('.')[0]}.</div>
+              <div className="flex items-center gap-3">
+                <a href="/tools/flight-times" className="px-5 py-2.5 rounded-xl bg-white/20 hover:bg-white/30 text-white font-medium transition-all flex items-center gap-2">
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+                  </svg>
+                  Flight Time
+                </a>
+                <a href="/tools/jet-lag" className="px-5 py-2.5 rounded-xl bg-white text-blue-600 font-medium hover:bg-blue-50 transition-all flex items-center gap-2">
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 6v6"/>
+                    <path d="M16 16s-1.5-2-4-2-4 2-4 2"/>
+                  </svg>
+                  Jet Lag Tips
+                </a>
               </div>
             </div>
-            <div className="flex items-center gap-2">
-              <a href="/tools/flight-times" className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${isLight ? 'bg-white hover:bg-blue-50 text-blue-600' : 'bg-slate-800 hover:bg-slate-700 text-blue-400'}`}>
-                Flight Time
-              </a>
-              <a href="/tools/jet-lag" className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${isLight ? 'bg-white hover:bg-blue-50 text-blue-600' : 'bg-slate-800 hover:bg-slate-700 text-blue-400'}`}>
-                Jet Lag Tips
-              </a>
+          </div>
+        )}
+        
+        {/* === 7. ULTIMATE CITY GUIDE (SEO 2) === */}
+        {selectedCity.info && (
+          <div className={`rounded-3xl backdrop-blur-xl border ${theme.card} mt-4 overflow-hidden`}>
+            <div className="flex flex-col lg:flex-row">
+              {/* Sticky Table of Contents - Left Side */}
+              <div className={`lg:w-64 lg:flex-shrink-0 p-6 ${isLight ? 'bg-slate-50 border-r border-slate-200' : 'bg-slate-800/50 border-r border-slate-700'}`}>
+                <div className="lg:sticky lg:top-24">
+                  <h3 className={`font-bold mb-4 ${theme.text}`}>📑 Contents</h3>
+                  <nav className="space-y-2">
+                    <a href="#guide-overview" className={`block text-sm py-1.5 px-3 rounded-lg transition-all ${isLight ? 'hover:bg-white text-slate-600 hover:text-slate-900' : 'hover:bg-slate-700 text-slate-400 hover:text-white'}`}>
+                      Overview
+                    </a>
+                    <a href="#guide-attractions" className={`block text-sm py-1.5 px-3 rounded-lg transition-all ${isLight ? 'hover:bg-white text-slate-600 hover:text-slate-900' : 'hover:bg-slate-700 text-slate-400 hover:text-white'}`}>
+                      Top Attractions
+                    </a>
+                    <a href="#guide-transport" className={`block text-sm py-1.5 px-3 rounded-lg transition-all ${isLight ? 'hover:bg-white text-slate-600 hover:text-slate-900' : 'hover:bg-slate-700 text-slate-400 hover:text-white'}`}>
+                      Getting Around
+                    </a>
+                    <a href="#guide-tips" className={`block text-sm py-1.5 px-3 rounded-lg transition-all ${isLight ? 'hover:bg-white text-slate-600 hover:text-slate-900' : 'hover:bg-slate-700 text-slate-400 hover:text-white'}`}>
+                      Local Tips
+                    </a>
+                    <a href="#guide-emergency" className={`block text-sm py-1.5 px-3 rounded-lg transition-all ${isLight ? 'hover:bg-white text-slate-600 hover:text-slate-900' : 'hover:bg-slate-700 text-slate-400 hover:text-white'}`}>
+                      Emergency Info
+                    </a>
+                    <a href="#guide-holidays" className={`block text-sm py-1.5 px-3 rounded-lg transition-all ${isLight ? 'hover:bg-white text-slate-600 hover:text-slate-900' : 'hover:bg-slate-700 text-slate-400 hover:text-white'}`}>
+                      Public Holidays
+                    </a>
+                  </nav>
+                  
+                  {/* Quick Stats */}
+                  <div className={`mt-6 pt-6 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
+                    <h4 className={`text-xs uppercase tracking-wide mb-3 ${theme.textMuted}`}>Quick Stats</h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span className={theme.textMuted}>Population</span>
+                        <span className={`font-medium ${theme.text}`}>{selectedCity.info.population}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className={theme.textMuted}>Language</span>
+                        <span className={`font-medium ${theme.text}`}>{selectedCity.info.language}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className={theme.textMuted}>Timezone</span>
+                        <span className={`font-medium ${theme.text}`}>{offset}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Main Content - Right Side */}
+              <div className="flex-1 p-6 lg:p-8">
+                <h2 className={`text-2xl font-bold mb-6 ${theme.text}`}>
+                  Ultimate Guide to {selectedCity.city}
+                </h2>
+                
+                {/* Overview Section */}
+                <section id="guide-overview" className="mb-8">
+                  <h3 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
+                    <span className="text-xl">🌍</span> Overview
+                  </h3>
+                  <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.demographics}</p>
+                  {selectedCity.info.climate && (
+                    <div className={`mt-4 p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <span>🌡️</span>
+                        <span className={`font-medium ${theme.text}`}>Climate</span>
+                      </div>
+                      <p className={`text-sm ${theme.textMuted}`}>{selectedCity.info.climate}</p>
+                    </div>
+                  )}
+                </section>
+                
+                {/* Attractions Section */}
+                {selectedCity.info.attractions && (
+                  <section id="guide-attractions" className="mb-8">
+                    <h3 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
+                      <span className="text-xl">🏛️</span> Top Attractions
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {selectedCity.info.attractions.map((attraction, i) => (
+                        <div key={i} className={`p-4 rounded-xl ${isLight ? 'bg-slate-50 hover:bg-slate-100' : 'bg-slate-800/50 hover:bg-slate-700/50'} transition-all`}>
+                          <div className={`font-medium ${theme.text}`}>{attraction}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+                )}
+                
+                {/* Transportation Section */}
+                {selectedCity.info.seoContent?.transportation && (
+                  <section id="guide-transport" className="mb-8">
+                    <h3 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
+                      <span className="text-xl">🚇</span> Getting Around
+                    </h3>
+                    <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.transportation}</p>
+                  </section>
+                )}
+                
+                {/* Local Tips Section */}
+                {selectedCity.info.seoContent?.localTips && (
+                  <section id="guide-tips" className="mb-8">
+                    <h3 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
+                      <span className="text-xl">💡</span> Local Tips
+                    </h3>
+                    <div className={`p-4 rounded-xl ${isLight ? 'bg-blue-50 border border-blue-100' : 'bg-blue-900/20 border border-blue-800/30'}`}>
+                      <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.localTips}</p>
+                    </div>
+                  </section>
+                )}
+                
+                {/* Emergency Section */}
+                {selectedCity.info.seoContent?.emergencyNumbers && (
+                  <section id="guide-emergency" className="mb-8">
+                    <h3 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
+                      <span className="text-xl">🚨</span> Emergency Info
+                    </h3>
+                    <div className={`p-4 rounded-xl ${isLight ? 'bg-red-50 border border-red-100' : 'bg-red-900/20 border border-red-800/30'}`}>
+                      <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.emergencyNumbers}</p>
+                    </div>
+                  </section>
+                )}
+                
+                {/* Public Holidays Section */}
+                {selectedCity.info.seoContent?.publicHolidays && (
+                  <section id="guide-holidays" className="mb-4">
+                    <h3 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
+                      <span className="text-xl">📅</span> Public Holidays
+                    </h3>
+                    <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.publicHolidays}</p>
+                  </section>
+                )}
+              </div>
             </div>
           </div>
         )}
