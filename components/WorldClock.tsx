@@ -761,30 +761,84 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           )}
         </div>
         
-        {/* === 7. LONG_CONTENT_AND_FAQ === */}
-        {/* SEO Content Section */}
+        {/* === 7. TIME IN CITY - Timezone Focused SEO === */}
         {selectedCity.info?.seoContent && (
           <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
-            <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
+            <h2 className={`text-2xl font-bold mb-6 ${theme.text}`}>
               Time in {selectedCity.city}, {selectedCity.country}
             </h2>
             
-            <div className={`space-y-4 text-sm leading-relaxed ${theme.textMuted}`}>
-              <p>{selectedCity.info.seoContent.intro}</p>
-              
-              <div>
-                <h3 className={`font-semibold mb-2 ${theme.text}`}>Timezone Facts</h3>
-                <p>{selectedCity.info.seoContent.timezoneFacts}</p>
+            <div className="space-y-6">
+              {/* Timezone Overview */}
+              <div className={`p-5 rounded-2xl ${isLight ? 'bg-blue-50' : 'bg-blue-900/20'}`}>
+                <h3 className={`font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
+                  <svg className="w-5 h-5 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 6v6l4 2"/>
+                  </svg>
+                  Timezone Overview
+                </h3>
+                <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.intro}</p>
               </div>
               
+              {/* Timezone Facts */}
               <div>
-                <h3 className={`font-semibold mb-2 ${theme.text}`}>Best Time to Visit</h3>
-                <p>{selectedCity.info.seoContent.bestTimeToVisit}</p>
+                <h3 className={`font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M2 12h20"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                  </svg>
+                  Timezone Facts
+                </h3>
+                <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.timezoneFacts}</p>
               </div>
               
-              <div>
-                <h3 className={`font-semibold mb-2 ${theme.text}`}>Business Hours</h3>
-                <p>{selectedCity.info.seoContent.businessHours}</p>
+              {/* Time Difference */}
+              {selectedCity.info.seoContent.timeDifference && (
+                <div className={`p-5 rounded-2xl ${isLight ? 'bg-amber-50' : 'bg-amber-900/20'}`}>
+                  <h3 className={`font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
+                    <svg className="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <circle cx="6" cy="12" r="4"/>
+                      <circle cx="18" cy="12" r="4"/>
+                      <path d="M10 12h4"/>
+                    </svg>
+                    Time Difference from Major Cities
+                  </h3>
+                  <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.timeDifference}</p>
+                  <a href="/tools/converter" className={`inline-flex items-center gap-2 mt-3 text-sm font-medium ${theme.accentText}`}>
+                    Convert specific times →
+                  </a>
+                </div>
+              )}
+              
+              {/* Daylight Saving */}
+              {selectedCity.info.seoContent.daylightSaving && (
+                <div>
+                  <h3 className={`font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <circle cx="12" cy="12" r="5"/>
+                      <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                    Daylight Saving Time
+                  </h3>
+                  <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.daylightSaving}</p>
+                </div>
+              )}
+              
+              {/* Business Hours - When to Contact */}
+              <div className={`p-5 rounded-2xl ${isLight ? 'bg-green-50' : 'bg-green-900/20'}`}>
+                <h3 className={`font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
+                  <svg className="w-5 h-5 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <rect x="2" y="3" width="20" height="14" rx="2"/>
+                    <path d="M8 21h8M12 17v4"/>
+                  </svg>
+                  Best Time to Contact {selectedCity.city}
+                </h3>
+                <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.businessHours}</p>
+                <a href="/tools/meeting-planner" className={`inline-flex items-center gap-2 mt-3 text-sm font-medium ${theme.accentText}`}>
+                  Plan a meeting across timezones →
+                </a>
               </div>
             </div>
           </div>

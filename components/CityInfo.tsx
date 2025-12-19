@@ -221,10 +221,10 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
   // State for collapsible
   const [isExpanded, setIsExpanded] = useState(false)
   
-  // Generate summary from intro (first 2-3 sentences)
+  // Generate travel-focused summary
   const getSummary = () => {
-    if (seo?.intro) {
-      const sentences = seo.intro.split('. ')
+    if (seo?.bestTimeToVisit) {
+      const sentences = seo.bestTimeToVisit.split('. ')
       return sentences.slice(0, 2).join('. ') + (sentences.length > 2 ? '.' : '')
     }
     return `${city.city} is located in ${city.country}. Population: ${info.population}. Currency: ${info.currency} (${info.currencySymbol}).`
@@ -235,7 +235,7 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
       {/* Header */}
       <div className="flex items-center justify-between">
         <h3 className={`text-xl font-semibold ${theme.text}`}>
-          About {city.city}
+          Travel Guide: {city.city}
         </h3>
         
         {/* Compact Time Difference Badge */}
@@ -276,7 +276,7 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
             : 'bg-slate-700 hover:bg-slate-600 text-slate-200'
         }`}
       >
-        {isExpanded ? 'Hide full article' : 'Read full article'}
+        {isExpanded ? 'Hide travel guide' : 'Read full travel guide'}
       </button>
       
       {/* Collapsible Full Content */}
@@ -359,65 +359,16 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
         </p>
       </div>
       
-      {/* SEO Content Sections */}
+      {/* SEO Content Sections - Travel Focused */}
       {seo && (
         <>
-          {/* Introduction */}
-          <div>
+          {/* Best Time to Visit - Primary Travel Content */}
+          <div className={`p-4 rounded-xl ${isLight ? 'bg-emerald-50' : 'bg-emerald-900/20'}`}>
             <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${theme.text}`}>
-              <Icons.Globe className={accentIconClass} />
-              Overview
-            </h4>
-            <p className={`text-base leading-relaxed ${theme.textMuted}`}>{seo.intro}</p>
-          </div>
-          
-          {/* Timezone Facts */}
-          <div>
-            <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${theme.text}`}>
-              <Icons.Clock className={accentIconClass} />
-              Timezone Facts
-            </h4>
-            <p className={`text-base leading-relaxed ${theme.textMuted}`}>{seo.timezoneFacts}</p>
-          </div>
-          
-          {/* Time Difference */}
-          {seo.timeDifference && (
-            <div className={`p-4 rounded-xl ${isLight ? 'bg-amber-50' : 'bg-amber-900/20'}`}>
-              <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${theme.text}`}>
-                <Icons.TimeDiff className="w-5 h-5 text-amber-500" />
-                Time Difference
-              </h4>
-              <p className={`text-base leading-relaxed ${theme.textMuted}`}>{seo.timeDifference}</p>
-            </div>
-          )}
-          
-          {/* Daylight Saving */}
-          {seo.daylightSaving && (
-            <div>
-              <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${theme.text}`}>
-                <Icons.DaylightSaving className={accentIconClass} />
-                Daylight Saving Time
-              </h4>
-              <p className={`text-base leading-relaxed ${theme.textMuted}`}>{seo.daylightSaving}</p>
-            </div>
-          )}
-          
-          {/* Best Time to Visit */}
-          <div>
-            <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${theme.text}`}>
-              <Icons.Calendar className={accentIconClass} />
-              Best Time to Visit
+              <Icons.Calendar className="w-5 h-5 text-emerald-500" />
+              Best Time to Visit {city.city}
             </h4>
             <p className={`text-base leading-relaxed ${theme.textMuted}`}>{seo.bestTimeToVisit}</p>
-          </div>
-          
-          {/* Business Hours */}
-          <div>
-            <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${theme.text}`}>
-              <Icons.Business className={accentIconClass} />
-              Business Hours
-            </h4>
-            <p className={`text-base leading-relaxed ${theme.textMuted}`}>{seo.businessHours}</p>
           </div>
           
           {/* Local Tips */}
@@ -425,7 +376,7 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
             <div className={`p-4 rounded-xl ${isLight ? 'bg-blue-50' : 'bg-blue-900/20'}`}>
               <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${theme.text}`}>
                 <Icons.Lightbulb className="w-5 h-5 text-blue-500" />
-                Local Tips
+                Local Tips & Advice
               </h4>
               <p className={`text-base leading-relaxed ${theme.textMuted}`}>{seo.localTips}</p>
             </div>
@@ -436,7 +387,7 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
             <div>
               <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${theme.text}`}>
                 <Icons.Transport className={accentIconClass} />
-                Transportation
+                Getting Around {city.city}
               </h4>
               <p className={`text-base leading-relaxed ${theme.textMuted}`}>{seo.transportation}</p>
             </div>
@@ -447,7 +398,7 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
             <div className={`p-4 rounded-xl ${isLight ? 'bg-red-50' : 'bg-red-900/20'}`}>
               <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${theme.text}`}>
                 <Icons.Emergency className="w-5 h-5 text-red-500" />
-                Emergency Numbers
+                Emergency Contacts
               </h4>
               <p className={`text-base leading-relaxed ${theme.textMuted}`}>{seo.emergencyNumbers}</p>
             </div>
@@ -458,7 +409,7 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
             <div>
               <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${theme.text}`}>
                 <Icons.Holiday className={accentIconClass} />
-                Public Holidays
+                Public Holidays in {city.country}
               </h4>
               <p className={`text-base leading-relaxed ${theme.textMuted}`}>{seo.publicHolidays}</p>
             </div>
@@ -475,7 +426,7 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
                 : 'bg-slate-700 hover:bg-slate-600 text-slate-200'
             }`}
           >
-            Hide full article
+            Hide travel guide
           </button>
         </div>
       )}
