@@ -32,6 +32,8 @@ export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isL
     { city: null, search: '', showDropdown: false },
   ])
   const [time, setTime] = useState(new Date())
+  const [shareLink, setShareLink] = useState<string | null>(null)
+  const [copied, setCopied] = useState(false)
   const [dropdownPositions, setDropdownPositions] = useState<DropdownPosition[]>([
     { top: 0, left: 0, width: 0 },
     { top: 0, left: 0, width: 0 },
@@ -156,6 +158,36 @@ export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isL
       return `${h}${period}`
     }
     return `${hour.toString().padStart(2, '0')}:00`
+  }
+
+  // Generate shareable link
+  const generateShareLink = () => {
+    const citySlugs = slots
+      .filter(s => s.city)
+      .map(s => s.city!.slug)
+      .join(',')
+    
+    if (citySlugs) {
+      const link = `${window.location.origin}/meet?c=${citySlugs}`
+      setShareLink(link)
+      return link
+    }
+    return null
+  }
+
+  // Copy share link
+  const copyShareLink = async () => {
+    const link = generateShareLink()
+    if (link) {
+      try {
+        await navigator.clipboard.writeText(link)
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000)
+      } catch {
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000)
+      }
+    }
   }
 
   const selectedCities = slots.filter(s => s.city).map(s => s.city!)
@@ -343,6 +375,22 @@ export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isL
           <p className={`text-center text-sm ${themeData.textMuted} opacity-70`}>
             Select at least 2 cities to find the best meeting time.
           </p>
+        )}
+
+        {/* Share Button - only show when cities are selected */}
+        {selectedCities.length >= 2 && (
+          <div className="mt-4 flex justify-center">
+            <button
+              onClick={copyShareLink}
+              className={`px-5 py-2.5 rounded-full font-medium transition-all ${
+                copied
+                  ? 'bg-green-500 text-white'
+                  : `${themeData.accentBg} text-white hover:opacity-90`
+              }`}
+            >
+              {copied ? '✓ Link Copied!' : '🔗 Share This Meeting'}
+            </button>
+          </div>
         )}
       </div>
 
