@@ -8,6 +8,7 @@ import { getTimeOfDay, getSunTimes, formatSunTime } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import { getWeather, WeatherResponse } from '@/lib/weather'
 import { TimeIcons } from '@/components/TimeIcons'
+import CityCard from '@/components/CityCard'
 
 // Find nearest city by coordinates
 function findNearestCity(lat: number, lng: number): City {
@@ -36,6 +37,12 @@ const popularComparisons = [
 const popularCities = [
   'london', 'tokyo', 'new-york', 'paris', 'dubai', 'sydney',
   'singapore', 'berlin', 'toronto', 'hong-kong', 'los-angeles', 'mumbai'
+]
+
+// Top cities for grid display (first 12 major cities)
+const topCitySlugs = [
+  'new-york', 'london', 'tokyo', 'paris', 'dubai', 'singapore',
+  'hong-kong', 'shanghai', 'sydney', 'los-angeles', 'toronto', 'berlin'
 ]
 
 export default function HomePage() {
@@ -126,6 +133,11 @@ export default function HomePage() {
   const isLight = isLightTheme(timeOfDay)
   const TimeIcon = TimeIcons[timeOfDay]
 
+  // Top cities for grid
+  const topCities = topCitySlugs
+    .map(slug => cities.find(c => c.slug === slug))
+    .filter((c): c is City => c !== undefined)
+
   // Get local time for detected city
   const getLocalTime = (city: City) => {
     return time.toLocaleTimeString('en-US', {
@@ -163,27 +175,30 @@ export default function HomePage() {
       {/* Header */}
       <header className={`sticky top-0 z-50 backdrop-blur-xl border-b ${isLight ? 'bg-white/80 border-slate-200' : 'bg-slate-900/80 border-slate-800'}`}>
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-            <span className="text-2xl">🌍</span>
-            <span className={`font-bold text-lg ${theme.text}`}>whattime.city</span>
+          <Link href="/" className="flex-shrink-0">
+            <img 
+              src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
+              alt="whattime.city" 
+              className="h-11 sm:h-14"
+            />
           </Link>
           
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/map" className={`text-sm font-medium ${theme.textMuted} hover:${theme.text}`}>Map</Link>
-            <Link href="/tools" className={`text-sm font-medium ${theme.textMuted} hover:${theme.text}`}>Tools</Link>
-            <Link href="/widget" className={`text-sm font-medium ${theme.textMuted} hover:${theme.text}`}>Widget</Link>
+            <Link href="/map" className={`text-sm font-medium ${theme.textMuted} hover:opacity-80`}>Map</Link>
+            <Link href="/tools" className={`text-sm font-medium ${theme.textMuted} hover:opacity-80`}>Tools</Link>
+            <Link href="/country" className={`text-sm font-medium ${theme.textMuted} hover:opacity-80`}>Countries</Link>
+            <Link href="/widget" className={`text-sm font-medium ${theme.textMuted} hover:opacity-80`}>Widget</Link>
           </nav>
           
-          <Link 
-            href="/tools" 
-            className={`p-2 rounded-full ${isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-800'}`}
-            title="Settings"
-          >
-            <svg className={`w-5 h-5 ${theme.textMuted}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-          </Link>
+          <div className="flex items-center gap-2">
+            {/* Mobile nav */}
+            <Link href="/map" className={`md:hidden p-2 rounded-full ${isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-800'}`}>
+              <span className="text-lg">🗺️</span>
+            </Link>
+            <Link href="/tools" className={`md:hidden p-2 rounded-full ${isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-800'}`}>
+              <span className="text-lg">🛠️</span>
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -478,33 +493,26 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Popular Cities */}
+        {/* World Cities Grid */}
         <section className={`mb-10 p-6 rounded-2xl backdrop-blur-xl border ${theme.card}`}>
-          <h2 className={`text-lg font-semibold mb-4 ${theme.text}`}>Popular Cities</h2>
-          <div className="flex flex-wrap gap-2">
-            {popularCities.map(slug => {
-              const city = cities.find(c => c.slug === slug)
-              if (!city) return null
-              return (
-                <Link
-                  key={slug}
-                  href={`/${slug}`}
-                  className={`px-3 py-1.5 rounded-lg text-sm transition-all ${
-                    isLight 
-                      ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' 
-                      : 'bg-slate-800 hover:bg-slate-700 text-slate-300'
-                  }`}
-                >
-                  {city.city}
-                </Link>
-              )
-            })}
-            <Link
-              href="/country"
-              className={`px-3 py-1.5 rounded-lg text-sm ${theme.accentText}`}
-            >
+          <div className="flex items-center justify-between mb-4">
+            <h2 className={`text-xl font-semibold ${theme.text}`}>🌍 World Cities</h2>
+            <Link href="/country" className={`text-sm ${theme.accentText}`}>
               All Countries →
             </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {topCities.map(city => (
+              <CityCard
+                key={city.slug}
+                city={city}
+                isSelected={false}
+                onClick={() => router.push(`/${city.slug}`)}
+                currentTheme={timeOfDay}
+                themeData={theme}
+                use12Hour={false}
+              />
+            ))}
           </div>
         </section>
       </main>
