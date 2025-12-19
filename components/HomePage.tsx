@@ -449,6 +449,18 @@ export default function HomePage() {
               )
             })}
           </div>
+          
+          {/* All Cities Button */}
+          <div className="mt-4 text-center">
+            <Link href="/country" className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all ${
+              isLight ? 'bg-emerald-100 hover:bg-emerald-200 text-emerald-700' : 'bg-emerald-900/30 hover:bg-emerald-900/50 text-emerald-400'
+            }`}>
+              All Cities
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+          </div>
         </section>
 
         {/* POPULAR CITIES */}
@@ -459,8 +471,8 @@ export default function HomePage() {
             </svg>
             Popular Cities
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-2">
-            {popularCities.map(city => {
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-2">
+            {popularCities.slice(0, 16).map(city => {
               const tod = getCityTimeOfDay(city)
               const Icon = TimeIcons[tod]
               return (
@@ -472,8 +484,17 @@ export default function HomePage() {
                 </Link>
               )
             })}
-            <Link href="/country" className={`px-3 py-2 rounded-lg text-sm text-center font-medium ${theme.accentText} ${isLight ? 'bg-orange-50' : 'bg-orange-900/20'}`}>
-              All →
+          </div>
+          
+          {/* All Cities Button */}
+          <div className="mt-4 text-center">
+            <Link href="/country" className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all ${
+              isLight ? 'bg-orange-100 hover:bg-orange-200 text-orange-700' : 'bg-orange-900/30 hover:bg-orange-900/50 text-orange-400'
+            }`}>
+              All Cities
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
             </Link>
           </div>
         </section>
