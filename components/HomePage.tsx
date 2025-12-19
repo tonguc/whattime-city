@@ -24,12 +24,15 @@ const popularComparisons = [
 const popularCitySlugs = [
   'london', 'tokyo', 'new-york', 'paris', 'dubai', 'sydney',
   'singapore', 'berlin', 'toronto', 'hong-kong', 'los-angeles', 
-  'mumbai', 'shanghai', 'moscow', 'amsterdam', 'bangkok'
+  'mumbai', 'shanghai', 'moscow', 'amsterdam', 'bangkok',
+  'seoul', 'istanbul', 'cairo', 'jakarta'
 ]
 
+// 18 major cities for world cities grid
 const majorCitySlugs = [
   'london', 'new-york', 'tokyo', 'paris', 'dubai', 'sydney',
-  'singapore', 'los-angeles', 'berlin', 'hong-kong', 'mumbai', 'sao-paulo'
+  'singapore', 'los-angeles', 'berlin', 'hong-kong', 'mumbai', 'sao-paulo',
+  'toronto', 'moscow', 'shanghai', 'seoul', 'bangkok', 'istanbul'
 ]
 
 export default function HomePage() {
@@ -144,7 +147,7 @@ export default function HomePage() {
   const majorCities = majorCitySlugs
     .map(slug => cities.find(c => c.slug === slug))
     .filter((c): c is City => c !== undefined && c.slug !== detectedCity?.slug)
-    .slice(0, 12)
+    .slice(0, 18)
   
   // Get relative offset in hours
   const getRelativeOffset = (targetCity: City): number => {
@@ -160,7 +163,7 @@ export default function HomePage() {
       <Header />
 
       <main className="max-w-6xl mx-auto px-4 py-4">
-        {/* YOUR LOCATION - Big Clock */}
+        {/* YOUR LOCATION - Big Clock with Weather */}
         {detectedCity && (
           <section className={`rounded-3xl p-5 md:p-6 mb-4 backdrop-blur-xl border ${theme.card}`}>
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
@@ -178,13 +181,26 @@ export default function HomePage() {
                 <div className={`text-5xl md:text-6xl font-bold tracking-tight ${theme.text}`}>
                   {getLocalTime(detectedCity)}
                 </div>
-                <div className={`flex items-center justify-center gap-2 mt-1 text-sm ${theme.textMuted}`}>
-                  {(() => {
-                    const tod = getCityTimeOfDay(detectedCity)
-                    const Icon = TimeIcons[tod]
-                    return <><Icon className="w-4 h-4" /><span className="capitalize">{tod}</span></>
-                  })()}
-                  {weather && <span>• {Math.round(weather.current.temp_c)}°C</span>}
+                <div className={`flex items-center justify-center gap-3 mt-2`}>
+                  {/* Time of day */}
+                  <div className={`flex items-center gap-1.5 text-sm ${theme.textMuted}`}>
+                    {(() => {
+                      const tod = getCityTimeOfDay(detectedCity)
+                      const Icon = TimeIcons[tod]
+                      return <><Icon className="w-4 h-4" /><span className="capitalize">{tod}</span></>
+                    })()}
+                  </div>
+                  {/* Weather */}
+                  {weather && (
+                    <div className={`flex items-center gap-1.5 px-2 py-1 rounded-full text-sm ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
+                      <img 
+                        src={weather.current.condition.icon} 
+                        alt={weather.current.condition.text}
+                        className="w-6 h-6"
+                      />
+                      <span className={theme.text}>{Math.round(weather.current.temp_c)}°C</span>
+                    </div>
+                  )}
                 </div>
               </div>
               
@@ -383,10 +399,12 @@ export default function HomePage() {
         {/* WORLD CITIES */}
         <section className={`rounded-2xl p-5 mb-4 backdrop-blur-xl border ${theme.card}`}>
           <h3 className={`text-lg font-semibold mb-1 flex items-center gap-2 ${theme.text}`}>
-            <svg className={`w-5 h-5 ${isLight ? 'text-emerald-500' : 'text-emerald-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10" strokeWidth={2}/>
-              <path strokeWidth={2} d="M2 12h20"/>
-              <path strokeWidth={2} d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            <svg className={`w-5 h-5 ${isLight ? 'text-emerald-500' : 'text-emerald-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <ellipse cx="12" cy="12" rx="4" ry="10"/>
+              <path d="M2 12h20"/>
+              <path d="M12 2c2.5 3.5 2.5 14.5 0 20"/>
+              <path d="M12 2c-2.5 3.5-2.5 14.5 0 20"/>
             </svg>
             World Cities
           </h3>
@@ -400,12 +418,17 @@ export default function HomePage() {
               const offset = getRelativeOffset(city)
               const status = offset === 0 ? 'Same' : offset > 0 ? 'Ahead' : 'Behind'
               const offsetStr = offset === 0 ? '—' : `${offset > 0 ? '+' : ''}${offset}h`
+              const tod = getCityTimeOfDay(city)
+              const Icon = TimeIcons[tod]
               
               return (
                 <div key={city.slug} className={`flex items-center justify-between p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-                  <div className="flex-1 min-w-0">
-                    <div className={`font-medium ${theme.text} truncate`}>{city.city}</div>
-                    <div className={`text-xs ${theme.textMuted}`}>{city.country}</div>
+                  <div className="flex items-center gap-2 flex-1 min-w-0">
+                    <Icon className={`w-4 h-4 flex-shrink-0 ${theme.textMuted}`} />
+                    <div className="min-w-0">
+                      <div className={`font-medium ${theme.text} truncate`}>{city.city}</div>
+                      <div className={`text-xs ${theme.textMuted}`}>{city.country}</div>
+                    </div>
                   </div>
                   <div className="text-center px-3">
                     <div className={`text-lg font-bold ${theme.text}`}>{cityTime}</div>
