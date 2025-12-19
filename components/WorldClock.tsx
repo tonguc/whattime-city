@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { City, getTier1Cities, uses12HourFormat, cities, getCitiesByContinent, Continent, continentLabels } from '@/lib/cities'
-import { getTimeOfDay } from '@/lib/sun-calculator'
+import { getTimeOfDay, getSunTimes } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import { translations, detectLanguage, Language } from '@/lib/translations'
 import { getWeather, WeatherData, getWeatherAnimation, WeatherAnimation } from '@/lib/weather'
@@ -558,101 +558,207 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         </div>
         
-        {/* === 6. QUICK_TOOLS / FACTS / COMPARISONS === */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-          {/* Quick Facts */}
-          <div className={`rounded-2xl p-5 backdrop-blur-xl border ${theme.card}`}>
-            <h3 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${theme.text}`}>
-              <svg className={`w-5 h-5 ${isLight ? 'text-blue-500' : 'text-blue-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 6v6l4 2"/>
-              </svg>
-              Quick Facts
-            </h3>
-            <div className="space-y-3">
-              <div className={`flex items-center justify-between py-2 border-b ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
-                <span className={theme.textMuted}>Timezone</span>
-                <span className={`font-medium ${theme.text}`}>{selectedCity.timezone.split('/').pop()?.replace('_', ' ')}</span>
-              </div>
-              <div className={`flex items-center justify-between py-2 border-b ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
-                <span className={theme.textMuted}>UTC Offset</span>
-                <span className={`font-medium ${theme.text}`}>{offset}</span>
-              </div>
-              {selectedCity.info && (
-                <>
-                  <div className={`flex items-center justify-between py-2 border-b ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
-                    <span className={theme.textMuted}>Population</span>
-                    <span className={`font-medium ${theme.text}`}>{selectedCity.info.population}</span>
-                  </div>
-                  <div className={`flex items-center justify-between py-2`}>
-                    <span className={theme.textMuted}>Currency</span>
-                    <span className={`font-medium ${theme.text}`}>{selectedCity.info.currency}</span>
-                  </div>
-                </>
-              )}
-            </div>
-          </div>
-          
-          {/* Planning a Trip */}
-          <div className={`rounded-2xl p-5 backdrop-blur-xl border ${theme.card}`}>
-            <h3 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${theme.text}`}>
-              <svg className={`w-5 h-5 ${isLight ? 'text-green-500' : 'text-green-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                <path d="M2 17l10 5 10-5"/>
-                <path d="M2 12l10 5 10-5"/>
-              </svg>
-              Planning a Trip
-            </h3>
-            <div className="space-y-3">
-              <a href="/tools/flight-times" className={`flex items-center gap-3 p-3 rounded-xl transition-all ${isLight ? 'bg-slate-50 hover:bg-slate-100' : 'bg-slate-800/50 hover:bg-slate-700/50'}`}>
-                <svg className={`w-5 h-5 ${theme.textMuted}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+        {/* === 6. QUICK TOOLS === */}
+        <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
+          <h3 className={`text-xl font-semibold mb-4 ${theme.text}`}>
+            ⚡ Quick Tools for {selectedCity.city}
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <a href="/tools/converter" className={`p-4 rounded-2xl backdrop-blur-xl border transition-all hover:scale-[1.02] ${isLight ? 'bg-white/60 border-white/50 hover:bg-white/80' : 'bg-slate-800/60 border-slate-700/50 hover:bg-slate-700/60'}`}>
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-blue-100' : 'bg-blue-900/30'}`}>
+                <svg className={`w-5 h-5 ${isLight ? 'text-blue-600' : 'text-blue-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                  <path d="M16 3l2 2-2 2"/>
+                  <path d="M8 21l-2-2 2-2"/>
                 </svg>
-                <span className={theme.text}>Flight Time Calculator</span>
-              </a>
-              <a href="/tools/jet-lag" className={`flex items-center gap-3 p-3 rounded-xl transition-all ${isLight ? 'bg-slate-50 hover:bg-slate-100' : 'bg-slate-800/50 hover:bg-slate-700/50'}`}>
-                <svg className={`w-5 h-5 ${theme.textMuted}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              </div>
+              <div className={`font-medium text-sm ${theme.text}`}>Time Converter</div>
+              <div className={`text-xs mt-1 ${theme.textMuted}`}>Convert time between cities</div>
+            </a>
+            <a href="/tools/meeting-planner" className={`p-4 rounded-2xl backdrop-blur-xl border transition-all hover:scale-[1.02] ${isLight ? 'bg-white/60 border-white/50 hover:bg-white/80' : 'bg-slate-800/60 border-slate-700/50 hover:bg-slate-700/60'}`}>
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-cyan-100' : 'bg-cyan-900/30'}`}>
+                <svg className={`w-5 h-5 ${isLight ? 'text-cyan-600' : 'text-cyan-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <rect x="3" y="4" width="18" height="18" rx="2"/>
+                  <path d="M16 2v4M8 2v4M3 10h18"/>
+                  <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
+                </svg>
+              </div>
+              <div className={`font-medium text-sm ${theme.text}`}>Meeting Planner</div>
+              <div className={`text-xs mt-1 ${theme.textMuted}`}>Find best meeting times</div>
+            </a>
+            <a href="/tools/flight-times" className={`p-4 rounded-2xl backdrop-blur-xl border transition-all hover:scale-[1.02] ${isLight ? 'bg-white/60 border-white/50 hover:bg-white/80' : 'bg-slate-800/60 border-slate-700/50 hover:bg-slate-700/60'}`}>
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-purple-100' : 'bg-purple-900/30'}`}>
+                <svg className={`w-5 h-5 ${isLight ? 'text-purple-600' : 'text-purple-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+                </svg>
+              </div>
+              <div className={`font-medium text-sm ${theme.text}`}>Flight Time</div>
+              <div className={`text-xs mt-1 ${theme.textMuted}`}>Calculate flight duration</div>
+            </a>
+            <a href="/tools/jet-lag" className={`p-4 rounded-2xl backdrop-blur-xl border transition-all hover:scale-[1.02] ${isLight ? 'bg-white/60 border-white/50 hover:bg-white/80' : 'bg-slate-800/60 border-slate-700/50 hover:bg-slate-700/60'}`}>
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-amber-100' : 'bg-amber-900/30'}`}>
+                <svg className={`w-5 h-5 ${isLight ? 'text-amber-600' : 'text-amber-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <circle cx="12" cy="12" r="10"/>
                   <path d="M12 6v6"/>
                   <path d="M16 16s-1.5-2-4-2-4 2-4 2"/>
                 </svg>
-                <span className={theme.text}>Jet Lag Advisor</span>
-              </a>
-              <a href={`/tools/meeting-planner?city=${selectedCity.slug}`} className={`flex items-center gap-3 p-3 rounded-xl transition-all ${isLight ? 'bg-slate-50 hover:bg-slate-100' : 'bg-slate-800/50 hover:bg-slate-700/50'}`}>
-                <svg className={`w-5 h-5 ${theme.textMuted}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <rect x="3" y="4" width="18" height="18" rx="2"/>
-                  <path d="M16 2v4M8 2v4M3 10h18"/>
-                </svg>
-                <span className={theme.text}>Schedule Meeting</span>
-              </a>
-            </div>
+              </div>
+              <div className={`font-medium text-sm ${theme.text}`}>Jet Lag Advisor</div>
+              <div className={`text-xs mt-1 ${theme.textMuted}`}>Plan your recovery</div>
+            </a>
           </div>
+        </div>
+        
+        {/* === QUICK FACTS === */}
+        <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
+          <h3 className={`text-xl font-semibold mb-4 flex items-center gap-2 ${theme.text}`}>
+            <svg className={`w-5 h-5 ${isLight ? 'text-blue-500' : 'text-blue-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M3 9h18M9 21V9"/>
+            </svg>
+            Quick Facts
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+              <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Timezone</div>
+              <div className={`font-bold text-lg ${theme.text}`}>{offset}</div>
+              <div className={`text-xs ${theme.textMuted}`}>{selectedCity.timezone.split('/').pop()?.replace('_', ' ')}</div>
+            </div>
+            <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+              <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Sunrise</div>
+              <div className={`font-bold text-lg ${theme.text}`}>{(() => {
+                const sunTimes = getSunTimes(localTime, selectedCity.lat, selectedCity.lng)
+                const h = Math.floor(sunTimes.sunrise)
+                const m = Math.round((sunTimes.sunrise - h) * 60)
+                return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`
+              })()}</div>
+            </div>
+            <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+              <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Sunset</div>
+              <div className={`font-bold text-lg ${theme.text}`}>{(() => {
+                const sunTimes = getSunTimes(localTime, selectedCity.lat, selectedCity.lng)
+                const h = Math.floor(sunTimes.sunset)
+                const m = Math.round((sunTimes.sunset - h) * 60)
+                return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`
+              })()}</div>
+            </div>
+            {selectedCity.info && (
+              <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Population</div>
+                <div className={`font-bold text-lg ${theme.text}`}>{selectedCity.info.population}</div>
+              </div>
+            )}
+          </div>
+          {selectedCity.info && (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+              <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Currency</div>
+                <div className={`font-bold text-lg ${theme.text}`}>{selectedCity.info.currencySymbol} {selectedCity.info.currency}</div>
+              </div>
+              <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Phone Code</div>
+                <div className={`font-bold text-lg ${theme.text}`}>{selectedCity.info.phoneCode}</div>
+              </div>
+              <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Language</div>
+                <div className={`font-bold text-lg ${theme.text}`}>{selectedCity.info.language}</div>
+              </div>
+              <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Country</div>
+                <div className={`font-bold text-lg ${theme.text}`}>{selectedCity.country}</div>
+              </div>
+            </div>
+          )}
+        </div>
+        
+        {/* === TIME COMPARISON === */}
+        <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
+          <h3 className={`text-xl font-semibold mb-4 flex items-center gap-2 ${theme.text}`}>
+            <svg className={`w-5 h-5 ${isLight ? 'text-emerald-500' : 'text-emerald-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <ellipse cx="12" cy="12" rx="4" ry="10"/>
+              <path d="M2 12h20"/>
+            </svg>
+            Time Comparison
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {['london', 'tokyo', 'dubai', 'sydney'].filter(s => s !== selectedCity.slug).slice(0, 4).map(slug => {
+              const city = cities.find(c => c.slug === slug)
+              if (!city) return null
+              const cityLocalTime = new Date(localTime.toLocaleString('en-US', { timeZone: city.timezone }))
+              const cityTimeStr = cityLocalTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })
+              const cityTod = getTimeOfDay(localTime, city.lat, city.lng, city.timezone)
+              const cityTheme = themes[cityTod]
+              const diff = (() => {
+                const selectedOffset = new Date().toLocaleString('en-US', { timeZone: selectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
+                const cityOffset = new Date().toLocaleString('en-US', { timeZone: city.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
+                const parseOffset = (str: string) => {
+                  const match = str?.match(/GMT([+-]?\d+)?/)
+                  return match ? (parseInt(match[1]) || 0) : 0
+                }
+                return parseOffset(cityOffset || '') - parseOffset(selectedOffset || '')
+              })()
+              return (
+                <a key={slug} href={`/${city.slug}`}
+                  className={`p-4 rounded-2xl backdrop-blur-xl border transition-all hover:scale-[1.02] ${isLight ? 'bg-white/60 border-white/50 hover:bg-white/80' : 'bg-slate-800/60 border-slate-700/50 hover:bg-slate-700/60'}`}>
+                  <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>{city.country}</div>
+                  <div className={`font-semibold ${theme.text}`}>{city.city}</div>
+                  <div className="flex items-center justify-between mt-2">
+                    <span className={`text-xl font-bold ${cityTheme.accentClass}`}>{cityTimeStr}</span>
+                    <span className={`text-xs px-2 py-1 rounded-full ${isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>
+                      {diff === 0 ? '—' : diff > 0 ? `+${diff}h` : `${diff}h`}
+                    </span>
+                  </div>
+                </a>
+              )
+            })}
+          </div>
+        </div>
+        
+        {/* === PLANNING A TRIP === */}
+        <div className={`rounded-3xl p-6 mt-4 ${isLight ? 'bg-gradient-to-r from-blue-50/80 to-indigo-50/80 border border-blue-100' : 'bg-gradient-to-r from-blue-900/30 to-indigo-900/30 border border-blue-800/50'}`}>
+          <h3 className={`text-xl font-semibold mb-2 flex items-center gap-2 ${theme.text}`}>
+            <svg className={`w-5 h-5 ${isLight ? 'text-blue-600' : 'text-blue-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+            </svg>
+            Planning a Trip to {selectedCity.city}?
+          </h3>
+          <p className={`mb-4 ${theme.textMuted}`}>
+            {selectedCity.info?.seoContent?.bestTimeToVisit || `${selectedCity.city} is a wonderful destination. Check local time, weather, and plan your perfect visit.`}
+          </p>
           
-          {/* Time Comparisons */}
-          <div className={`rounded-2xl p-5 backdrop-blur-xl border ${theme.card}`}>
-            <h3 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${theme.text}`}>
-              <svg className={`w-5 h-5 ${isLight ? 'text-purple-500' : 'text-purple-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <circle cx="8" cy="12" r="6"/>
-                <circle cx="16" cy="12" r="6"/>
-              </svg>
-              Compare Times
-            </h3>
-            <div className="space-y-2">
-              {['london', 'new-york', 'tokyo', 'sydney'].filter(s => s !== selectedCity.slug).slice(0, 3).map(slug => {
-                const city = cities.find(c => c.slug === slug)
-                if (!city) return null
-                return (
-                  <a key={slug} href={`/time/${selectedCity.slug}/${slug}`}
-                    className={`flex items-center justify-between p-3 rounded-xl transition-all ${isLight ? 'bg-slate-50 hover:bg-slate-100' : 'bg-slate-800/50 hover:bg-slate-700/50'}`}>
-                    <span className={theme.text}>{selectedCity.city} vs {city.city}</span>
-                    <svg className={`w-4 h-4 ${theme.textMuted}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M9 18l6-6-6-6"/>
-                    </svg>
-                  </a>
-                )
-              })}
+          {selectedCity.info?.seoContent?.businessHours && (
+            <div className="mb-4">
+              <h4 className={`font-medium mb-1 flex items-center gap-2 ${theme.text}`}>
+                <svg className={`w-4 h-4 ${theme.textMuted}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+                Business Hours
+              </h4>
+              <p className={`text-sm ${theme.textMuted}`}>{selectedCity.info.seoContent.businessHours}</p>
             </div>
-          </div>
+          )}
+          
+          {selectedCity.info?.attractions && (
+            <div>
+              <h4 className={`font-medium mb-2 flex items-center gap-2 ${theme.text}`}>
+                <svg className={`w-4 h-4 ${theme.textMuted}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                Top Attractions
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {selectedCity.info.attractions.slice(0, 6).map((attraction, i) => (
+                  <span key={i} className={`text-sm px-3 py-1.5 rounded-full ${isLight ? 'bg-white/80 text-slate-700' : 'bg-slate-800/80 text-slate-300'}`}>
+                    {attraction}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
         
         {/* === 7. LONG_CONTENT_AND_FAQ === */}
@@ -693,18 +799,54 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           />
         </div>
         
-        <footer className={`mt-10 pt-8 border-t text-center ${isLight ? 'border-slate-200' : 'border-slate-800'}`}>
-          {/* Navigation Links */}
-          <nav className={`flex flex-wrap justify-center gap-x-6 gap-y-2 mb-6 text-sm`}>
-            <a href="/map" className={`hover:underline ${theme.textMuted}`}>World Map</a>
-            <a href="/country" className={`hover:underline ${theme.textMuted}`}>Countries</a>
-            <a href="/tools" className={`hover:underline ${theme.textMuted}`}>Tools</a>
-            <a href="/widget" className={`hover:underline ${theme.textMuted}`}>Free Widget</a>
-          </nav>
-          
-          <p className={`text-sm ${theme.textMuted}`}>
-            © {new Date().getFullYear()} whattime.city
-          </p>
+        <footer className={`mt-10 py-8 border-t ${isLight ? 'border-slate-200 bg-white/50' : 'border-slate-800 bg-slate-900/50'}`}>
+          <div className="max-w-6xl mx-auto px-4">
+            <nav className="flex flex-wrap justify-center gap-6 mb-6">
+              <a href="/map" className={`flex items-center gap-2 text-sm ${theme.textMuted} hover:opacity-80 transition-colors group`}>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" strokeWidth={2}/>
+                  <path strokeWidth={2} d="M2 12h20"/>
+                  <path strokeWidth={2} d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                <span className="group-hover:underline">World Map</span>
+              </a>
+              <a href="/country" className={`flex items-center gap-2 text-sm ${theme.textMuted} hover:opacity-80 transition-colors group`}>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                </svg>
+                <span className="group-hover:underline">Countries</span>
+              </a>
+              <a href="/tools" className={`flex items-center gap-2 text-sm ${theme.textMuted} hover:opacity-80 transition-colors group`}>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span className="group-hover:underline">Tools</span>
+              </a>
+              <a href="/widget" className={`flex items-center gap-2 text-sm ${theme.textMuted} hover:opacity-80 transition-colors group`}>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+                <span className="group-hover:underline">Free Widget</span>
+              </a>
+            </nav>
+            
+            {/* Time of day legend */}
+            <div className="flex flex-wrap justify-center gap-4 mb-4">
+              {(['dawn', 'day', 'dusk', 'night'] as const).map(tod => {
+                const Icon = TimeIcons[tod]
+                const labels = { dawn: 'Dawn', day: 'Day', dusk: 'Dusk', night: 'Night' }
+                return (
+                  <div key={tod} className={`flex items-center gap-1.5 text-xs ${theme.textMuted}`}>
+                    <Icon className="w-4 h-4" />
+                    <span>{labels[tod]}</span>
+                  </div>
+                )
+              })}
+            </div>
+            
+            <p className={`text-center text-sm ${theme.textMuted}`}>© {new Date().getFullYear()} whattime.city</p>
+          </div>
         </footer>
       </div>
       
