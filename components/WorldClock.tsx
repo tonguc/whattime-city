@@ -225,6 +225,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           // Only set selectedCity if no initialCity provided
           if (!initialCity) {
             setSelectedCity(nearest)
+            // Redirect to city page for full experience
+            router.push(`/${nearest.slug}`)
           }
         },
         (error) => {
@@ -235,6 +237,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           setDetectedCity(cityByTz)
           if (!initialCity) {
             setSelectedCity(cityByTz)
+            // Redirect to city page for full experience
+            router.push(`/${cityByTz.slug}`)
           }
         },
         { timeout: 5000, maximumAge: 300000 } // 5s timeout, cache for 5min
@@ -246,6 +250,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
       setDetectedCity(cityByTz)
       if (!initialCity) {
         setSelectedCity(cityByTz)
+        // Redirect to city page for full experience
+        router.push(`/${cityByTz.slug}`)
       }
     }
   }, [initialCity])
