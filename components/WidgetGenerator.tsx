@@ -4,14 +4,15 @@ import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import { cities, City, getTier1Cities } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
-import { themes, isLightTheme } from '@/lib/themes'
-import { getCityContext } from '@/lib/city-context'
+import { themes } from '@/lib/themes'
+import { useCityContext } from '@/lib/CityContext'
+import Header from '@/components/Header'
 
 export default function WidgetGenerator() {
+  const { theme: pageTheme, isLight, time } = useCityContext()
   const [selectedCity, setSelectedCity] = useState<City | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
   const [showDropdown, setShowDropdown] = useState(false)
-  const [time, setTime] = useState(new Date())
   const [copied, setCopied] = useState(false)
   
   // Widget options
@@ -21,22 +22,12 @@ export default function WidgetGenerator() {
   const [showTimezone, setShowTimezone] = useState(true)
   const [transparent, setTransparent] = useState(false)
   
-  // Initialize with context city or default
+  // Initialize with first city
   useEffect(() => {
-    const ctx = getCityContext()
-    if (ctx) {
-      const city = cities.find(c => c.slug === ctx.slug)
-      if (city) setSelectedCity(city)
-    } else {
+    if (!selectedCity) {
       setSelectedCity(cities.find(c => c.slug === 'new-york') || cities[0])
     }
-  }, [])
-  
-  // Time ticker
-  useEffect(() => {
-    const timer = setInterval(() => setTime(new Date()), 1000)
-    return () => clearInterval(timer)
-  }, [])
+  }, [selectedCity])
   
   // Filter cities based on search
   const filteredCities = useMemo(() => {
@@ -49,13 +40,6 @@ export default function WidgetGenerator() {
       c.country.toLowerCase().includes(query)
     ).slice(0, 10)
   }, [searchQuery])
-  
-  // Page theme based on selected city
-  const timeOfDay = selectedCity 
-    ? getTimeOfDay(time, selectedCity.lat, selectedCity.lng, selectedCity.timezone)
-    : 'day'
-  const pageTheme = themes[timeOfDay]
-  const isLight = isLightTheme(timeOfDay)
   
   // Generate embed code
   const generateEmbedCode = () => {
@@ -110,41 +94,8 @@ export default function WidgetGenerator() {
   
   return (
     <div className={`min-h-screen transition-colors duration-700 bg-gradient-to-br ${pageTheme.bg}`}>
-      {/* Header */}
-      <header className={`sticky top-0 z-50 w-full backdrop-blur-xl ${isLight ? 'bg-white/70' : 'bg-slate-900/70'}`}>
-        <div className="max-w-6xl mx-auto px-4 py-2 sm:py-3 flex items-center justify-between">
-          <Link href="/" className="hover:opacity-80 transition-opacity flex-shrink-0">
-            <img 
-              src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
-              alt="whattime.city" 
-              className="h-11 sm:h-14"
-            />
-          </Link>
-          
-          <div className="flex items-center gap-2">
-            <Link 
-              href="/"
-              className={`px-3 py-2 rounded-full text-sm font-medium transition-all ${
-                isLight 
-                  ? 'bg-white/60 text-slate-600 hover:bg-white/80' 
-                  : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/60'
-              } backdrop-blur-xl`}
-            >
-              🌍 Cities
-            </Link>
-            <Link 
-              href="/tools"
-              className={`px-3 py-2 rounded-full text-sm font-medium transition-all ${
-                isLight 
-                  ? 'bg-white/60 text-slate-600 hover:bg-white/80' 
-                  : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/60'
-              } backdrop-blur-xl`}
-            >
-              🛠️ Tools
-            </Link>
-          </div>
-        </div>
-      </header>
+      {/* Shared Header */}
+      <Header />
 
       <main className="max-w-6xl mx-auto px-4 py-8">
         {/* Title */}

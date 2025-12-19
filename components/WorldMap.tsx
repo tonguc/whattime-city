@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { cities, City } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
-import { themes, isLightTheme } from '@/lib/themes'
-import { getCityContext } from '@/lib/city-context'
+import { themes } from '@/lib/themes'
+import { useCityContext } from '@/lib/CityContext'
+import Header from '@/components/Header'
 
 // 50+ Major cities with coordinates (x: 0-100, y: 0-60)
 const mapCities = [
@@ -90,23 +91,11 @@ const mapCities = [
 ]
 
 export default function WorldMap() {
-  const [time, setTime] = useState(new Date())
+  const { theme: mainTheme, isLight, time } = useCityContext()
   const [selectedCity, setSelectedCity] = useState<string | null>(null)
-  const [contextData, setContextData] = useState<{ lat: number; lng: number; timezone: string }>({ lat: 40.71, lng: -74.01, timezone: 'America/New_York' })
   const [zoom, setZoom] = useState(1)
   const [panX, setPanX] = useState(0)
   const [panY, setPanY] = useState(0)
-  
-  useEffect(() => {
-    // Get saved city context for theme
-    const context = getCityContext()
-    if (context) {
-      setContextData({ lat: context.lat, lng: context.lng, timezone: context.timezone })
-    }
-    
-    const timer = setInterval(() => setTime(new Date()), 1000)
-    return () => clearInterval(timer)
-  }, [])
   
   // Close popup when clicking outside
   const handleMapClick = (e: React.MouseEvent) => {
@@ -156,48 +145,10 @@ export default function WorldMap() {
     return { city, timeStr, timeOfDay, theme }
   }
 
-  // Determine background theme based on saved city context
-  const mainTimeOfDay = getTimeOfDay(time, contextData.lat, contextData.lng, contextData.timezone)
-  const mainTheme = themes[mainTimeOfDay]
-  const isLight = isLightTheme(mainTimeOfDay)
-
   return (
     <div className={`min-h-screen transition-colors duration-700 bg-gradient-to-br ${mainTheme.bg}`}>
-      {/* Header - Same as homepage */}
-      <header className={`sticky top-0 z-50 w-full backdrop-blur-xl ${isLight ? 'bg-white/70' : 'bg-slate-900/70'}`}>
-        <div className="max-w-6xl mx-auto px-4 py-2 sm:py-3 flex items-center justify-between">
-          <Link href="/" className="hover:opacity-80 transition-opacity flex-shrink-0">
-            <img 
-              src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
-              alt="whattime.city" 
-              className="h-11 sm:h-14"
-            />
-          </Link>
-          
-          <div className="flex items-center gap-2">
-            <Link 
-              href="/"
-              className={`px-3 py-2 rounded-full text-sm font-medium transition-all ${
-                isLight 
-                  ? 'bg-white/60 text-slate-600 hover:bg-white/80' 
-                  : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/60'
-              } backdrop-blur-xl`}
-            >
-              🌍 Cities
-            </Link>
-            <Link 
-              href="/tools"
-              className={`px-3 py-2 rounded-full text-sm font-medium transition-all ${
-                isLight 
-                  ? 'bg-white/60 text-slate-600 hover:bg-white/80' 
-                  : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/60'
-              } backdrop-blur-xl`}
-            >
-              🛠️ Tools
-            </Link>
-          </div>
-        </div>
-      </header>
+      {/* Shared Header */}
+      <Header />
 
       {/* Map Container */}
       <div className="relative max-w-6xl mx-auto px-4 py-8">
