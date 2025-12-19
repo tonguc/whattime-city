@@ -28,11 +28,12 @@ const popularCitySlugs = [
   'seoul', 'istanbul', 'cairo', 'jakarta'
 ]
 
-// 18 major cities for world cities grid
+// 20+ major cities for world cities grid (ensures 18 after filtering user's city)
 const majorCitySlugs = [
   'london', 'new-york', 'tokyo', 'paris', 'dubai', 'sydney',
   'singapore', 'los-angeles', 'berlin', 'hong-kong', 'mumbai', 'sao-paulo',
-  'toronto', 'moscow', 'shanghai', 'seoul', 'bangkok', 'istanbul'
+  'toronto', 'moscow', 'shanghai', 'seoul', 'bangkok', 'istanbul',
+  'cairo', 'amsterdam', 'jakarta', 'mexico-city'
 ]
 
 export default function HomePage() {
@@ -144,6 +145,8 @@ export default function HomePage() {
   // Derived data
   const favoriteCities = favorites.map(slug => cities.find(c => c.slug === slug)).filter((c): c is City => c !== undefined)
   const popularCities = popularCitySlugs.map(slug => cities.find(c => c.slug === slug)).filter((c): c is City => c !== undefined)
+  
+  // Always show 18 cities (exclude user's detected city)
   const majorCities = majorCitySlugs
     .map(slug => cities.find(c => c.slug === slug))
     .filter((c): c is City => c !== undefined && c.slug !== detectedCity?.slug)
