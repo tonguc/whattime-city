@@ -33,11 +33,11 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     label: 'Night'
   },
   dawn: {
-    // Soft rose → peach → warm amber (fresh morning feel)
-    bg: 'from-rose-100 via-orange-100 to-amber-50',
+    // Warm sunrise - dark text on light background
+    bg: 'from-rose-200 via-orange-100 to-amber-100',
     card: 'bg-white/60 border-rose-200/50',
     text: 'text-slate-800',
-    textMuted: 'text-rose-600',
+    textMuted: 'text-slate-600',
     accent: 'rose',
     accentClass: 'text-rose-500',
     accentText: 'text-rose-500',
@@ -64,14 +64,14 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     label: 'Day'
   },
   dusk: {
-    // Golden hour → purple → deep indigo (warm sunset feel)
-    bg: 'from-amber-600 via-orange-700 to-purple-900',
-    card: 'bg-slate-900/50 border-orange-500/30',
+    // Golden hour sunset - white text on dark background
+    bg: 'from-orange-400 via-rose-500 to-purple-700',
+    card: 'bg-slate-900/50 border-orange-400/30',
     text: 'text-white',
-    textMuted: 'text-orange-200',
+    textMuted: 'text-orange-100',
     accent: 'orange',
-    accentClass: 'text-orange-400',
-    accentText: 'text-orange-400',
+    accentClass: 'text-orange-300',
+    accentText: 'text-orange-300',
     accentBg: 'bg-orange-500',
     accentBgLight: 'bg-orange-500/20',
     accentBorder: 'border-orange-500/50',
@@ -99,12 +99,12 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     card: 'bg-white/80 border-gray-200',
     text: 'text-slate-800',
     textMuted: 'text-slate-500',
-    accent: 'amber',
-    accentClass: 'text-amber-500',
-    accentText: 'text-amber-500',
-    accentBg: 'bg-amber-500',
-    accentBgLight: 'bg-amber-500/20',
-    accentBorder: 'border-amber-500/50',
+    accent: 'sky',
+    accentClass: 'text-sky-500',
+    accentText: 'text-sky-500',
+    accentBg: 'bg-sky-500',
+    accentBgLight: 'bg-sky-500/20',
+    accentBorder: 'border-sky-500/50',
     glow: 'bg-blue-500/5',
     icon: 'day',
     label: 'Light'
