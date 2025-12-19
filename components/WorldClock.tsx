@@ -19,11 +19,9 @@ import TimeIcons from '@/components/TimeIcons'
 import Search from '@/components/Search'
 import WeatherBackground from '@/components/WeatherBackground'
 import WeatherBadge from '@/components/WeatherBadge'
-import CityInfo from '@/components/CityInfo'
 import AlarmModal, { ActiveAlarmPopup } from '@/components/AlarmModal'
 import TimeConverter from '@/components/TimeConverter'
 import MeetingPlanner from '@/components/MeetingPlanner'
-import AboutSection from '@/components/AboutSection'
 
 // Alarm type definition
 interface Alarm {
@@ -441,10 +439,102 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           isLight={isLight}
         />
         
-        {/* === 4. ABOUT_CITY === */}
-        {selectedCity.info && (
-          <div className={`rounded-3xl backdrop-blur-xl border ${theme.card} mb-4`}>
-            <CityInfo city={selectedCity} theme={theme} isLight={isLight} />
+        {/* === 3. QUICK FACTS === */}
+        <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
+          <h3 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${theme.text}`}>
+            <svg className={`w-5 h-5 ${isLight ? 'text-blue-500' : 'text-blue-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M3 9h18M9 21V9"/>
+            </svg>
+            Quick Facts
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div className={`p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+              <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Timezone</div>
+              <div className={`font-bold ${theme.text}`}>{offset}</div>
+              <div className={`text-xs ${theme.textMuted}`}>{selectedCity.timezone.split('/').pop()?.replace('_', ' ')}</div>
+            </div>
+            <div className={`p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+              <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Sunrise</div>
+              <div className={`font-bold ${theme.text}`}>{(() => {
+                const sunTimes = getSunTimes(localTime, selectedCity.lat, selectedCity.lng)
+                const h = Math.floor(sunTimes.sunrise)
+                const m = Math.round((sunTimes.sunrise - h) * 60)
+                return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`
+              })()}</div>
+            </div>
+            <div className={`p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+              <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Sunset</div>
+              <div className={`font-bold ${theme.text}`}>{(() => {
+                const sunTimes = getSunTimes(localTime, selectedCity.lat, selectedCity.lng)
+                const h = Math.floor(sunTimes.sunset)
+                const m = Math.round((sunTimes.sunset - h) * 60)
+                return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`
+              })()}</div>
+            </div>
+            {selectedCity.info && (
+              <div className={`p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Population</div>
+                <div className={`font-bold ${theme.text}`}>{selectedCity.info.population}</div>
+              </div>
+            )}
+          </div>
+          {selectedCity.info && (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-3">
+              <div className={`p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Currency</div>
+                <div className={`font-bold ${theme.text}`}>{selectedCity.info.currencySymbol} {selectedCity.info.currency}</div>
+              </div>
+              <div className={`p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Phone</div>
+                <div className={`font-bold ${theme.text}`}>{selectedCity.info.phoneCode}</div>
+              </div>
+              <div className={`p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Language</div>
+                <div className={`font-bold ${theme.text}`}>{selectedCity.info.language}</div>
+              </div>
+              <div className={`p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Country</div>
+                <div className={`font-bold ${theme.text}`}>{selectedCity.country}</div>
+              </div>
+            </div>
+          )}
+        </div>
+        
+        {/* === 4. TIME IN CITY - SEO Content === */}
+        {selectedCity.info?.seoContent && (
+          <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
+            <h2 className={`text-xl font-bold mb-4 ${theme.text}`}>
+              Time in {selectedCity.city}, {selectedCity.country}
+            </h2>
+            
+            <div className="space-y-4">
+              <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.intro}</p>
+              
+              <div>
+                <h3 className={`font-semibold mb-2 ${theme.text}`}>Timezone Facts</h3>
+                <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.timezoneFacts}</p>
+              </div>
+              
+              {selectedCity.info.seoContent.timeDifference && (
+                <div className={`p-4 rounded-xl ${isLight ? 'bg-amber-50' : 'bg-amber-900/20'}`}>
+                  <h3 className={`font-semibold mb-2 ${theme.text}`}>Time Difference</h3>
+                  <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.timeDifference}</p>
+                </div>
+              )}
+              
+              {selectedCity.info.seoContent.daylightSaving && (
+                <div>
+                  <h3 className={`font-semibold mb-2 ${theme.text}`}>Daylight Saving Time</h3>
+                  <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.daylightSaving}</p>
+                </div>
+              )}
+              
+              <div>
+                <h3 className={`font-semibold mb-2 ${theme.text}`}>Business Hours</h3>
+                <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.businessHours}</p>
+              </div>
+            </div>
           </div>
         )}
         
@@ -558,300 +648,30 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         </div>
         
-        {/* === 6. QUICK TOOLS === */}
-        <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
-          <h3 className={`text-xl font-semibold mb-4 ${theme.text}`}>
-            ⚡ Quick Tools for {selectedCity.city}
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            <a href="/tools/converter" className={`p-4 rounded-2xl backdrop-blur-xl border transition-all hover:scale-[1.02] ${isLight ? 'bg-white/60 border-white/50 hover:bg-white/80' : 'bg-slate-800/60 border-slate-700/50 hover:bg-slate-700/60'}`}>
-              <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-blue-100' : 'bg-blue-900/30'}`}>
+        {/* === 6. TRAVEL TEASER (Small) === */}
+        {selectedCity.info?.seoContent?.bestTimeToVisit && (
+          <div className={`rounded-2xl p-4 mt-4 flex items-center justify-between gap-4 ${isLight ? 'bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100' : 'bg-gradient-to-r from-blue-900/20 to-indigo-900/20 border border-blue-800/30'}`}>
+            <div className="flex items-center gap-3">
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${isLight ? 'bg-blue-100' : 'bg-blue-900/40'}`}>
                 <svg className={`w-5 h-5 ${isLight ? 'text-blue-600' : 'text-blue-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 6v6l4 2"/>
-                  <path d="M16 3l2 2-2 2"/>
-                  <path d="M8 21l-2-2 2-2"/>
-                </svg>
-              </div>
-              <div className={`font-medium text-sm ${theme.text}`}>Time Converter</div>
-              <div className={`text-xs mt-1 ${theme.textMuted}`}>Convert time between cities</div>
-            </a>
-            <a href="/tools/meeting-planner" className={`p-4 rounded-2xl backdrop-blur-xl border transition-all hover:scale-[1.02] ${isLight ? 'bg-white/60 border-white/50 hover:bg-white/80' : 'bg-slate-800/60 border-slate-700/50 hover:bg-slate-700/60'}`}>
-              <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-cyan-100' : 'bg-cyan-900/30'}`}>
-                <svg className={`w-5 h-5 ${isLight ? 'text-cyan-600' : 'text-cyan-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <rect x="3" y="4" width="18" height="18" rx="2"/>
-                  <path d="M16 2v4M8 2v4M3 10h18"/>
-                  <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
-                </svg>
-              </div>
-              <div className={`font-medium text-sm ${theme.text}`}>Meeting Planner</div>
-              <div className={`text-xs mt-1 ${theme.textMuted}`}>Find best meeting times</div>
-            </a>
-            <a href="/tools/flight-times" className={`p-4 rounded-2xl backdrop-blur-xl border transition-all hover:scale-[1.02] ${isLight ? 'bg-white/60 border-white/50 hover:bg-white/80' : 'bg-slate-800/60 border-slate-700/50 hover:bg-slate-700/60'}`}>
-              <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-purple-100' : 'bg-purple-900/30'}`}>
-                <svg className={`w-5 h-5 ${isLight ? 'text-purple-600' : 'text-purple-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
                 </svg>
               </div>
-              <div className={`font-medium text-sm ${theme.text}`}>Flight Time</div>
-              <div className={`text-xs mt-1 ${theme.textMuted}`}>Calculate flight duration</div>
-            </a>
-            <a href="/tools/jet-lag" className={`p-4 rounded-2xl backdrop-blur-xl border transition-all hover:scale-[1.02] ${isLight ? 'bg-white/60 border-white/50 hover:bg-white/80' : 'bg-slate-800/60 border-slate-700/50 hover:bg-slate-700/60'}`}>
-              <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-amber-100' : 'bg-amber-900/30'}`}>
-                <svg className={`w-5 h-5 ${isLight ? 'text-amber-600' : 'text-amber-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 6v6"/>
-                  <path d="M16 16s-1.5-2-4-2-4 2-4 2"/>
-                </svg>
-              </div>
-              <div className={`font-medium text-sm ${theme.text}`}>Jet Lag Advisor</div>
-              <div className={`text-xs mt-1 ${theme.textMuted}`}>Plan your recovery</div>
-            </a>
-          </div>
-        </div>
-        
-        {/* === QUICK FACTS === */}
-        <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
-          <h3 className={`text-xl font-semibold mb-4 flex items-center gap-2 ${theme.text}`}>
-            <svg className={`w-5 h-5 ${isLight ? 'text-blue-500' : 'text-blue-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <path d="M3 9h18M9 21V9"/>
-            </svg>
-            Quick Facts
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-              <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Timezone</div>
-              <div className={`font-bold text-lg ${theme.text}`}>{offset}</div>
-              <div className={`text-xs ${theme.textMuted}`}>{selectedCity.timezone.split('/').pop()?.replace('_', ' ')}</div>
-            </div>
-            <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-              <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Sunrise</div>
-              <div className={`font-bold text-lg ${theme.text}`}>{(() => {
-                const sunTimes = getSunTimes(localTime, selectedCity.lat, selectedCity.lng)
-                const h = Math.floor(sunTimes.sunrise)
-                const m = Math.round((sunTimes.sunrise - h) * 60)
-                return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`
-              })()}</div>
-            </div>
-            <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-              <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Sunset</div>
-              <div className={`font-bold text-lg ${theme.text}`}>{(() => {
-                const sunTimes = getSunTimes(localTime, selectedCity.lat, selectedCity.lng)
-                const h = Math.floor(sunTimes.sunset)
-                const m = Math.round((sunTimes.sunset - h) * 60)
-                return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`
-              })()}</div>
-            </div>
-            {selectedCity.info && (
-              <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Population</div>
-                <div className={`font-bold text-lg ${theme.text}`}>{selectedCity.info.population}</div>
-              </div>
-            )}
-          </div>
-          {selectedCity.info && (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-              <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Currency</div>
-                <div className={`font-bold text-lg ${theme.text}`}>{selectedCity.info.currencySymbol} {selectedCity.info.currency}</div>
-              </div>
-              <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Phone Code</div>
-                <div className={`font-bold text-lg ${theme.text}`}>{selectedCity.info.phoneCode}</div>
-              </div>
-              <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Language</div>
-                <div className={`font-bold text-lg ${theme.text}`}>{selectedCity.info.language}</div>
-              </div>
-              <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>Country</div>
-                <div className={`font-bold text-lg ${theme.text}`}>{selectedCity.country}</div>
-              </div>
-            </div>
-          )}
-        </div>
-        
-        {/* === TIME COMPARISON === */}
-        <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
-          <h3 className={`text-xl font-semibold mb-4 flex items-center gap-2 ${theme.text}`}>
-            <svg className={`w-5 h-5 ${isLight ? 'text-emerald-500' : 'text-emerald-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <circle cx="12" cy="12" r="10"/>
-              <ellipse cx="12" cy="12" rx="4" ry="10"/>
-              <path d="M2 12h20"/>
-            </svg>
-            Time Comparison
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {['london', 'tokyo', 'dubai', 'sydney'].filter(s => s !== selectedCity.slug).slice(0, 4).map(slug => {
-              const city = cities.find(c => c.slug === slug)
-              if (!city) return null
-              const cityLocalTime = new Date(localTime.toLocaleString('en-US', { timeZone: city.timezone }))
-              const cityTimeStr = cityLocalTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })
-              const cityTod = getTimeOfDay(localTime, city.lat, city.lng, city.timezone)
-              const cityTheme = themes[cityTod]
-              const diff = (() => {
-                const selectedOffset = new Date().toLocaleString('en-US', { timeZone: selectedCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
-                const cityOffset = new Date().toLocaleString('en-US', { timeZone: city.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
-                const parseOffset = (str: string) => {
-                  const match = str?.match(/GMT([+-]?\d+)?/)
-                  return match ? (parseInt(match[1]) || 0) : 0
-                }
-                return parseOffset(cityOffset || '') - parseOffset(selectedOffset || '')
-              })()
-              return (
-                <a key={slug} href={`/${city.slug}`}
-                  className={`p-4 rounded-2xl backdrop-blur-xl border transition-all hover:scale-[1.02] ${isLight ? 'bg-white/60 border-white/50 hover:bg-white/80' : 'bg-slate-800/60 border-slate-700/50 hover:bg-slate-700/60'}`}>
-                  <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>{city.country}</div>
-                  <div className={`font-semibold ${theme.text}`}>{city.city}</div>
-                  <div className="flex items-center justify-between mt-2">
-                    <span className={`text-xl font-bold ${cityTheme.accentClass}`}>{cityTimeStr}</span>
-                    <span className={`text-xs px-2 py-1 rounded-full ${isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>
-                      {diff === 0 ? '—' : diff > 0 ? `+${diff}h` : `${diff}h`}
-                    </span>
-                  </div>
-                </a>
-              )
-            })}
-          </div>
-        </div>
-        
-        {/* === PLANNING A TRIP === */}
-        <div className={`rounded-3xl p-6 mt-4 ${isLight ? 'bg-gradient-to-r from-blue-50/80 to-indigo-50/80 border border-blue-100' : 'bg-gradient-to-r from-blue-900/30 to-indigo-900/30 border border-blue-800/50'}`}>
-          <h3 className={`text-xl font-semibold mb-2 flex items-center gap-2 ${theme.text}`}>
-            <svg className={`w-5 h-5 ${isLight ? 'text-blue-600' : 'text-blue-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
-            </svg>
-            Planning a Trip to {selectedCity.city}?
-          </h3>
-          <p className={`mb-4 ${theme.textMuted}`}>
-            {selectedCity.info?.seoContent?.bestTimeToVisit || `${selectedCity.city} is a wonderful destination. Check local time, weather, and plan your perfect visit.`}
-          </p>
-          
-          {selectedCity.info?.seoContent?.businessHours && (
-            <div className="mb-4">
-              <h4 className={`font-medium mb-1 flex items-center gap-2 ${theme.text}`}>
-                <svg className={`w-4 h-4 ${theme.textMuted}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 6v6l4 2"/>
-                </svg>
-                Business Hours
-              </h4>
-              <p className={`text-sm ${theme.textMuted}`}>{selectedCity.info.seoContent.businessHours}</p>
-            </div>
-          )}
-          
-          {selectedCity.info?.attractions && (
-            <div>
-              <h4 className={`font-medium mb-2 flex items-center gap-2 ${theme.text}`}>
-                <svg className={`w-4 h-4 ${theme.textMuted}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-                Top Attractions
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {selectedCity.info.attractions.slice(0, 6).map((attraction, i) => (
-                  <span key={i} className={`text-sm px-3 py-1.5 rounded-full ${isLight ? 'bg-white/80 text-slate-700' : 'bg-slate-800/80 text-slate-300'}`}>
-                    {attraction}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-        
-        {/* === 7. TIME IN CITY - Timezone Focused SEO === */}
-        {selectedCity.info?.seoContent && (
-          <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
-            <h2 className={`text-2xl font-bold mb-6 ${theme.text}`}>
-              Time in {selectedCity.city}, {selectedCity.country}
-            </h2>
-            
-            <div className="space-y-6">
-              {/* Timezone Overview */}
-              <div className={`p-5 rounded-2xl ${isLight ? 'bg-blue-50' : 'bg-blue-900/20'}`}>
-                <h3 className={`font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
-                  <svg className="w-5 h-5 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M12 6v6l4 2"/>
-                  </svg>
-                  Timezone Overview
-                </h3>
-                <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.intro}</p>
-              </div>
-              
-              {/* Timezone Facts */}
               <div>
-                <h3 className={`font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
-                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M2 12h20"/>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                  </svg>
-                  Timezone Facts
-                </h3>
-                <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.timezoneFacts}</p>
+                <div className={`font-medium ${theme.text}`}>Planning a trip to {selectedCity.city}?</div>
+                <div className={`text-sm ${theme.textMuted}`}>{selectedCity.info.seoContent.bestTimeToVisit.split('.')[0]}.</div>
               </div>
-              
-              {/* Time Difference */}
-              {selectedCity.info.seoContent.timeDifference && (
-                <div className={`p-5 rounded-2xl ${isLight ? 'bg-amber-50' : 'bg-amber-900/20'}`}>
-                  <h3 className={`font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
-                    <svg className="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <circle cx="6" cy="12" r="4"/>
-                      <circle cx="18" cy="12" r="4"/>
-                      <path d="M10 12h4"/>
-                    </svg>
-                    Time Difference from Major Cities
-                  </h3>
-                  <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.timeDifference}</p>
-                  <a href="/tools/converter" className={`inline-flex items-center gap-2 mt-3 text-sm font-medium ${theme.accentText}`}>
-                    Convert specific times →
-                  </a>
-                </div>
-              )}
-              
-              {/* Daylight Saving */}
-              {selectedCity.info.seoContent.daylightSaving && (
-                <div>
-                  <h3 className={`font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
-                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <circle cx="12" cy="12" r="5"/>
-                      <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                    </svg>
-                    Daylight Saving Time
-                  </h3>
-                  <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.daylightSaving}</p>
-                </div>
-              )}
-              
-              {/* Business Hours - When to Contact */}
-              <div className={`p-5 rounded-2xl ${isLight ? 'bg-green-50' : 'bg-green-900/20'}`}>
-                <h3 className={`font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
-                  <svg className="w-5 h-5 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <rect x="2" y="3" width="20" height="14" rx="2"/>
-                    <path d="M8 21h8M12 17v4"/>
-                  </svg>
-                  Best Time to Contact {selectedCity.city}
-                </h3>
-                <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.businessHours}</p>
-                <a href="/tools/meeting-planner" className={`inline-flex items-center gap-2 mt-3 text-sm font-medium ${theme.accentText}`}>
-                  Plan a meeting across timezones →
-                </a>
-              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <a href="/tools/flight-times" className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${isLight ? 'bg-white hover:bg-blue-50 text-blue-600' : 'bg-slate-800 hover:bg-slate-700 text-blue-400'}`}>
+                Flight Time
+              </a>
+              <a href="/tools/jet-lag" className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${isLight ? 'bg-white hover:bg-blue-50 text-blue-600' : 'bg-slate-800 hover:bg-slate-700 text-blue-400'}`}>
+                Jet Lag Tips
+              </a>
             </div>
           </div>
         )}
-        
-        {/* About Section */}
-        <div className="mt-4">
-          <AboutSection
-            theme={theme}
-            isLight={isLight}
-            t={t}
-          />
-        </div>
         
         <footer className={`mt-10 py-8 border-t ${isLight ? 'border-slate-200 bg-white/50' : 'border-slate-800 bg-slate-900/50'}`}>
           <div className="max-w-6xl mx-auto px-4">
