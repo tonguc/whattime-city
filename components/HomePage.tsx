@@ -47,8 +47,6 @@ export default function HomePage() {
   const [clockMode, setClockMode] = useState<'digital' | 'analog'>('digital')
   const [use12Hour, setUse12Hour] = useState(false)
   const [themeMode, setThemeMode] = useState<'auto' | 'light' | 'dark'>('auto')
-  const [showPreferences, setShowPreferences] = useState(false)
-  const prefsRef = useRef<HTMLDivElement>(null)
   
   // Global search
   const [globalQuery, setGlobalQuery] = useState('')
@@ -172,7 +170,6 @@ export default function HomePage() {
   // Close dropdowns on outside click
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
-      if (prefsRef.current && !prefsRef.current.contains(e.target as Node)) setShowPreferences(false)
       if (globalSearchRef.current && !globalSearchRef.current.contains(e.target as Node)) setShowGlobalDropdown(false)
       if (compareWithRef.current && !compareWithRef.current.contains(e.target as Node)) setShowCompareWith(false)
     }
@@ -222,20 +219,26 @@ export default function HomePage() {
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg}`}>
       {/* ═══════════════════════════════════════════════════════════════════════
-          HEADER - Single Row: Logo | Search | Nav + Settings
+          HEADER - Same style as WorldClock (city pages)
           ═══════════════════════════════════════════════════════════════════════ */}
-      <header className={`sticky top-0 z-50 w-full backdrop-blur-xl ${isLight ? 'bg-white/80' : 'bg-slate-900/80'} border-b ${isLight ? 'border-slate-200' : 'border-slate-800'}`}>
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-4">
-          {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
-            <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" className="h-10 sm:h-12" />
+      <header className={`sticky top-0 z-50 w-full backdrop-blur-xl ${isLight ? 'bg-white/70' : 'bg-slate-900/70'}`}>
+        <div className="max-w-6xl mx-auto px-4 py-2 sm:py-3 flex flex-col lg:flex-row items-center justify-between gap-2 sm:gap-4">
+          <Link href="/" className="hover:opacity-80 transition-opacity flex-shrink-0">
+            <img 
+              src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
+              alt="whattime.city" 
+              className="h-11 sm:h-14"
+            />
           </Link>
           
-          {/* Global Search */}
-          <div className="flex-1 max-w-md" ref={globalSearchRef}>
-            <div className="relative">
-              <div className={`flex items-center gap-2 px-3 py-2 rounded-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'}`}>
-                <svg className={`w-4 h-4 ${theme.textMuted}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-3 w-full sm:w-auto">
+            {/* Search */}
+            <div className="relative w-full sm:w-auto" ref={globalSearchRef}>
+              <div className={`flex items-center gap-2 px-4 py-2.5 rounded-full overflow-hidden box-border ${
+                isLight ? 'bg-white/80 shadow-sm' : 'bg-slate-800/80'
+              } backdrop-blur-xl border ${isLight ? 'border-slate-200/50' : 'border-slate-700/50'}`}
+              style={{ minHeight: '42px', height: '42px' }}>
+                <svg className={`w-4 h-4 flex-shrink-0 ${isLight ? 'text-slate-500' : 'text-slate-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
                 <input
@@ -244,109 +247,177 @@ export default function HomePage() {
                   onChange={(e) => setGlobalQuery(e.target.value)}
                   onFocus={() => globalQuery && setShowGlobalDropdown(true)}
                   placeholder="Search city..."
-                  className={`flex-1 bg-transparent outline-none text-sm ${theme.text} placeholder:${theme.textMuted}`}
+                  className={`bg-transparent outline-none w-full sm:w-52 box-border ${
+                    isLight ? 'text-slate-800 placeholder-slate-400' : 'text-white placeholder-slate-500'
+                  }`}
                   style={{ fontSize: '16px' }}
                 />
               </div>
               
               {showGlobalDropdown && globalResults.length > 0 && (
-                <div className={`absolute top-full left-0 right-0 mt-2 rounded-xl overflow-hidden shadow-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'} z-50`}>
-                  {globalResults.length === 2 && globalQuery.includes(' ') && (
-                    <button
-                      onClick={() => router.push(`/time/${globalResults[0].slug}/${globalResults[1].slug}`)}
-                      className={`w-full px-4 py-3 text-left flex items-center gap-2 ${isLight ? 'bg-blue-50 hover:bg-blue-100' : 'bg-blue-900/30 hover:bg-blue-900/50'}`}
-                    >
-                      <span className={theme.accentText}>Compare:</span>
-                      <span className={theme.text}>{globalResults[0].city} ↔ {globalResults[1].city}</span>
-                    </button>
-                  )}
+                <div className={`absolute top-full left-0 right-0 mt-2 rounded-2xl overflow-hidden shadow-2xl z-50 ${isLight ? 'bg-white' : 'bg-slate-800'}`}>
                   {globalResults.map((city, i) => (
                     <button key={city.slug} onClick={() => handleGlobalSearch(city, i)}
                       className={`w-full px-4 py-3 text-left flex items-center justify-between ${isLight ? 'hover:bg-slate-50' : 'hover:bg-slate-700'}`}>
                       <div>
-                        <span className={theme.text}>{city.city}</span>
-                        <span className={`text-sm ml-2 ${theme.textMuted}`}>{city.country}</span>
+                        <span className={isLight ? 'text-slate-800' : 'text-white'}>{city.city}</span>
+                        <span className={`text-sm ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{city.country}</span>
                       </div>
-                      <span className={`text-sm ${theme.textMuted}`}>{getLocalTime(city)}</span>
+                      <span className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{getLocalTime(city)}</span>
                     </button>
                   ))}
                 </div>
               )}
             </div>
-          </div>
-          
-          {/* Nav */}
-          <nav className="hidden sm:flex items-center gap-4">
-            <Link href="/map" className={`text-sm font-medium ${theme.textMuted} hover:opacity-70`}>Map</Link>
-            <Link href="/tools" className={`text-sm font-medium ${theme.textMuted} hover:opacity-70`}>Tools</Link>
-            <Link href="/widget" className={`text-sm font-medium ${theme.textMuted} hover:opacity-70`}>Widget</Link>
-          </nav>
-          
-          {/* Preferences */}
-          <div className="relative" ref={prefsRef}>
-            <button onClick={() => setShowPreferences(!showPreferences)}
-              className={`p-2 rounded-full transition-all ${isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-800'}`} title="Preferences">
-              <svg className={`w-5 h-5 ${theme.textMuted}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-            </button>
             
-            {showPreferences && (
-              <div className={`absolute right-0 top-full mt-2 w-64 rounded-xl shadow-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'} p-4 z-50`}>
-                <h4 className={`text-sm font-semibold mb-3 ${theme.text}`}>Preferences</h4>
-                
-                <div className="mb-3">
-                  <label className={`text-xs ${theme.textMuted} mb-1 block`}>Clock Display</label>
-                  <div className="flex gap-2">
-                    {(['digital', 'analog'] as const).map(mode => (
-                      <button key={mode} onClick={() => setClockMode(mode)}
-                        className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${clockMode === mode ? `${theme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>
-                        {mode === 'digital' ? '🔢' : '🕐'} {mode.charAt(0).toUpperCase() + mode.slice(1)}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-                
-                <div className="mb-3">
-                  <label className={`text-xs ${theme.textMuted} mb-1 block`}>Time Format</label>
-                  <div className="flex gap-2">
-                    <button onClick={() => setUse12Hour(false)} className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${!use12Hour ? `${theme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>24h</button>
-                    <button onClick={() => setUse12Hour(true)} className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${use12Hour ? `${theme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>12h</button>
-                  </div>
-                </div>
-                
-                <div>
-                  <label className={`text-xs ${theme.textMuted} mb-1 block`}>Theme</label>
-                  <div className="flex gap-2">
-                    {(['light', 'auto', 'dark'] as const).map(mode => (
-                      <button key={mode} onClick={() => setThemeMode(mode)}
-                        className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${themeMode === mode ? `${theme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>
-                        {mode === 'light' ? '☀️' : mode === 'dark' ? '🌙' : '🔄'}
-                      </button>
-                    ))}
-                  </div>
-                </div>
+            <div className="flex items-center justify-center w-full sm:w-auto gap-1 sm:gap-2">
+              {/* Digital/Analog Toggle */}
+              <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
+                {(['digital', 'analog'] as const).map((mode) => (
+                  <button
+                    key={mode}
+                    onClick={() => setClockMode(mode)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center justify-center ${
+                      clockMode === mode
+                        ? `${theme.accentBg} text-white shadow-lg`
+                        : isLight ? 'text-slate-600' : 'text-slate-400'
+                    }`}
+                  >
+                    <span className="sm:hidden">{mode === 'digital' ? '🔢' : '🕐'}</span>
+                    <span className="hidden sm:inline capitalize">{mode === 'digital' ? 'Digital' : 'Analog'}</span>
+                  </button>
+                ))}
               </div>
-            )}
+              
+              {/* 24h/12h Toggle */}
+              <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
+                <button
+                  onClick={() => setUse12Hour(false)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                    !use12Hour ? `${theme.accentBg} text-white shadow-lg` : isLight ? 'text-slate-600' : 'text-slate-400'
+                  }`}
+                >24h</button>
+                <button
+                  onClick={() => setUse12Hour(true)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                    use12Hour ? `${theme.accentBg} text-white shadow-lg` : isLight ? 'text-slate-600' : 'text-slate-400'
+                  }`}
+                >12h</button>
+              </div>
+              
+              {/* Theme Toggle */}
+              <div className={`flex rounded-full p-1 ${isLight ? 'bg-white/60' : 'bg-slate-800/60'} backdrop-blur-xl`}>
+                {(['light', 'auto', 'dark'] as const).map((mode) => (
+                  <button
+                    key={mode}
+                    onClick={() => setThemeMode(mode)}
+                    title={mode === 'light' ? 'Light mode' : mode === 'dark' ? 'Dark mode' : 'Auto (follows sun)'}
+                    className={`px-3 py-2 rounded-full text-sm font-medium transition-all ${
+                      themeMode === mode
+                        ? `${theme.accentBg} text-white shadow-lg`
+                        : isLight ? 'text-slate-600' : 'text-slate-400'
+                    }`}
+                  >
+                    {mode === 'light' ? '☀️' : mode === 'dark' ? '🌙' : '🔄'}
+                  </button>
+                ))}
+              </div>
+              
+              {/* Map Link */}
+              <a href="/map" className={`inline-flex items-center px-3 py-2 rounded-full text-sm font-medium transition-all ${
+                isLight ? 'bg-white/60 text-slate-600 hover:bg-white/80' : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/60'
+              } backdrop-blur-xl`} title="World Map">
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </a>
+              
+              {/* Tools Link */}
+              <a href="/tools" className={`inline-flex items-center px-3 py-2 rounded-full text-sm font-medium transition-all ${
+                isLight ? 'bg-white/60 text-slate-600 hover:bg-white/80' : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/60'
+              } backdrop-blur-xl`} title="Tools">
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+              </a>
+            </div>
           </div>
-        </div>
-        
-        {/* Mobile Nav */}
-        <div className={`sm:hidden border-t ${isLight ? 'border-slate-100' : 'border-slate-800'}`}>
-          <nav className="flex items-center justify-center gap-6 py-2">
-            <Link href="/map" className={`text-sm font-medium ${theme.textMuted}`}>Map</Link>
-            <Link href="/tools" className={`text-sm font-medium ${theme.textMuted}`}>Tools</Link>
-            <Link href="/widget" className={`text-sm font-medium ${theme.textMuted}`}>Widget</Link>
-          </nav>
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-4 py-6">
+      <main className="max-w-6xl mx-auto px-4 py-4">
+        {/* ═══════════════════════════════════════════════════════════════════════
+            YOUR LOCATION - With Big Clock Display (First thing user sees)
+            ═══════════════════════════════════════════════════════════════════════ */}
+        {detectedCity && (
+          <section className={`rounded-3xl p-5 md:p-6 mb-4 backdrop-blur-xl border ${theme.card}`}>
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              {/* City Info */}
+              <div className="flex items-center gap-4">
+                <span className="text-3xl">📍</span>
+                <div>
+                  <h2 className={`text-xl font-semibold ${theme.text}`}>{detectedCity.city}</h2>
+                  <p className={`text-sm ${theme.textMuted}`}>
+                    {detectedCity.country} • {getLocalDate(detectedCity)}
+                  </p>
+                </div>
+              </div>
+              
+              {/* Big Clock Display */}
+              <div className="text-center">
+                <div className={`text-5xl md:text-6xl font-bold tracking-tight ${theme.text}`}>
+                  {getLocalTime(detectedCity)}
+                </div>
+                <div className={`flex items-center justify-center gap-2 mt-1 text-sm ${theme.textMuted}`}>
+                  {(() => {
+                    const tod = getCityTimeOfDay(detectedCity)
+                    const Icon = TimeIcons[tod]
+                    return <><Icon className="w-4 h-4" /><span className="capitalize">{tod}</span></>
+                  })()}
+                  {weather && <span>• {Math.round(weather.current.temp_c)}°C</span>}
+                </div>
+              </div>
+              
+              {/* Actions */}
+              <div className="flex gap-2">
+                <Link href={`/${detectedCity.slug}`}
+                  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${isLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-white'}`}>
+                  View City
+                </Link>
+                <div className="relative" ref={compareWithRef}>
+                  <button onClick={() => setShowCompareWith(!showCompareWith)}
+                    className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${isLight ? 'bg-blue-100 hover:bg-blue-200 text-blue-700' : 'bg-blue-900/50 hover:bg-blue-800/50 text-blue-300'}`}>
+                    Compare with…
+                  </button>
+                  {showCompareWith && (
+                    <div className={`absolute right-0 top-full mt-2 w-64 rounded-xl shadow-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'} p-3 z-50`}>
+                      <input type="text" value={compareWithQuery} onChange={(e) => setCompareWithQuery(e.target.value)}
+                        placeholder="Search city..." autoFocus
+                        className={`w-full px-3 py-2 rounded-lg border text-sm ${isLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-900 border-slate-700'} outline-none`}
+                        style={{ fontSize: '16px' }}
+                      />
+                      {compareWithResults.length > 0 && (
+                        <div className="mt-2 max-h-48 overflow-y-auto">
+                          {compareWithResults.map(c => (
+                            <button key={c.slug} onClick={() => handleCompareWith(c)}
+                              className={`w-full px-3 py-2 text-left text-sm rounded-lg ${isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}>
+                              {c.city}, {c.country}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* ═══════════════════════════════════════════════════════════════════════
             HERO - Compare Tool (Compact)
             ═══════════════════════════════════════════════════════════════════════ */}
-        <section className={`rounded-3xl p-6 md:p-8 mb-6 backdrop-blur-xl border ${theme.card} text-center`}>
+        <section className={`rounded-3xl p-6 md:p-8 mb-4 backdrop-blur-xl border ${theme.card} text-center`}>
           <h1 className={`text-2xl md:text-3xl font-bold mb-2 ${theme.text}`}>
             🌍 World Clock & Time Zone Tools
           </h1>
@@ -431,74 +502,6 @@ export default function HomePage() {
             <span className={`text-sm font-medium ${theme.accentText}`}>Calc →</span>
           </Link>
         </section>
-
-        {/* ═══════════════════════════════════════════════════════════════════════
-            YOUR LOCATION - With Clock Display
-            ═══════════════════════════════════════════════════════════════════════ */}
-        {detectedCity && (
-          <section className={`rounded-2xl p-5 mb-6 backdrop-blur-xl border ${theme.card}`}>
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              {/* City Info */}
-              <div className="flex items-center gap-4">
-                <span className="text-3xl">📍</span>
-                <div>
-                  <h3 className={`text-xl font-semibold ${theme.text}`}>{detectedCity.city}</h3>
-                  <p className={`text-sm ${theme.textMuted}`}>
-                    {detectedCity.country} • {getLocalDate(detectedCity)}
-                  </p>
-                </div>
-              </div>
-              
-              {/* Big Clock Display */}
-              <div className="text-center">
-                <div className={`text-4xl md:text-5xl font-bold tracking-tight ${theme.text}`}>
-                  {getLocalTime(detectedCity)}
-                </div>
-                <div className={`flex items-center justify-center gap-2 mt-1 text-sm ${theme.textMuted}`}>
-                  {(() => {
-                    const tod = getCityTimeOfDay(detectedCity)
-                    const Icon = TimeIcons[tod]
-                    return <><Icon className="w-4 h-4" /><span className="capitalize">{tod}</span></>
-                  })()}
-                  {weather && <span>• {Math.round(weather.current.temp_c)}°C</span>}
-                </div>
-              </div>
-              
-              {/* Actions */}
-              <div className="flex gap-2">
-                <Link href={`/${detectedCity.slug}`}
-                  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${isLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-white'}`}>
-                  View City
-                </Link>
-                <div className="relative" ref={compareWithRef}>
-                  <button onClick={() => setShowCompareWith(!showCompareWith)}
-                    className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${isLight ? 'bg-blue-100 hover:bg-blue-200 text-blue-700' : 'bg-blue-900/50 hover:bg-blue-800/50 text-blue-300'}`}>
-                    Compare with…
-                  </button>
-                  {showCompareWith && (
-                    <div className={`absolute right-0 top-full mt-2 w-64 rounded-xl shadow-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'} p-3 z-50`}>
-                      <input type="text" value={compareWithQuery} onChange={(e) => setCompareWithQuery(e.target.value)}
-                        placeholder="Search city..." autoFocus
-                        className={`w-full px-3 py-2 rounded-lg border text-sm ${isLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-900 border-slate-700'} outline-none`}
-                        style={{ fontSize: '16px' }}
-                      />
-                      {compareWithResults.length > 0 && (
-                        <div className="mt-2 max-h-48 overflow-y-auto">
-                          {compareWithResults.map(c => (
-                            <button key={c.slug} onClick={() => handleCompareWith(c)}
-                              className={`w-full px-3 py-2 text-left text-sm rounded-lg ${isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}>
-                              {c.city}, {c.country}
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
 
         {/* ═══════════════════════════════════════════════════════════════════════
             YOUR FAVORITES
