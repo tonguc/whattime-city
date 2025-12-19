@@ -8,6 +8,7 @@ import { themes, isLightTheme } from '@/lib/themes'
 import { translations, detectLanguage, Language } from '@/lib/translations'
 import { getWeather, WeatherData, getWeatherAnimation, WeatherAnimation } from '@/lib/weather'
 import { saveCityContext } from '@/lib/city-context'
+import { useCityContext } from '@/lib/CityContext'
 import DigitalClock from '@/components/DigitalClock'
 import AnalogClock from '@/components/AnalogClock'
 import SunInfoCard from '@/components/SunInfoCard'
@@ -147,6 +148,7 @@ function findNearestCity(lat: number, lng: number): City {
 
 export default function WorldClock({ initialCity }: WorldClockProps) {
   const router = useRouter()
+  const { setActiveCity } = useCityContext()
   const defaultCity = initialCity || getTier1Cities()[0]
   const [selectedCity, setSelectedCity] = useState<City>(defaultCity)
   const [time, setTime] = useState(new Date())
@@ -169,6 +171,11 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   
   // Favorites
   const [favorites, setFavorites] = useState<string[]>([])
+  
+  // Sync activeCity with global context when component mounts or city changes
+  useEffect(() => {
+    setActiveCity(selectedCity)
+  }, [selectedCity, setActiveCity])
   
   // Load favorites from localStorage
   useEffect(() => {
@@ -336,33 +343,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   }
   
   const handleLogoClick = () => {
-    // First try geolocation
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const nearest = findNearestCity(position.coords.latitude, position.coords.longitude)
-          setSelectedCity(nearest)
-          setDetectedCity(nearest)
-          // Update URL without reload
-          window.history.pushState({}, '', `/${nearest.slug}`)
-        },
-        (error) => {
-          // Fallback to timezone detection
-          console.log('Geolocation not available:', error.message)
-          const cityByTz = findCityByTimezone()
-          setSelectedCity(cityByTz)
-          setDetectedCity(cityByTz)
-          window.history.pushState({}, '', `/${cityByTz.slug}`)
-        },
-        { timeout: 3000 }
-      )
-    } else {
-      // No geolocation, use timezone
-      const cityByTz = findCityByTimezone()
-      setSelectedCity(cityByTz)
-      setDetectedCity(cityByTz)
-      window.history.pushState({}, '', `/${cityByTz.slug}`)
-    }
+    // Navigate to homepage
+    router.push('/')
   }
   
   return (
