@@ -18,7 +18,7 @@ export interface Theme {
 
 export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
   night: {
-    bg: 'from-slate-950 via-indigo-950 to-slate-900',
+    bg: 'from-slate-950 via-indigo-950 to-slate-950',
     card: 'bg-slate-900/60 border-slate-700/50',
     text: 'text-white',
     textMuted: 'text-slate-400',
@@ -33,49 +33,47 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     label: 'Night'
   },
   dawn: {
-    // Warm sunrise - dark text on light background
-    bg: 'from-rose-200 via-orange-100 to-amber-100',
-    card: 'bg-white/60 border-rose-200/50',
-    text: 'text-slate-800',
-    textMuted: 'text-slate-600',
-    accent: 'rose',
-    accentClass: 'text-rose-500',
-    accentText: 'text-rose-500',
-    accentBg: 'bg-rose-500',
-    accentBgLight: 'bg-rose-500/20',
-    accentBorder: 'border-rose-500/50',
-    glow: 'bg-rose-500/10',
+    bg: 'from-slate-900 via-orange-900 to-amber-800',
+    card: 'bg-slate-800/60 border-orange-700/50',
+    text: 'text-white',
+    textMuted: 'text-orange-300',
+    accent: 'amber',
+    accentClass: 'text-amber-400',
+    accentText: 'text-amber-400',
+    accentBg: 'bg-amber-500',
+    accentBgLight: 'bg-amber-500/20',
+    accentBorder: 'border-amber-500/50',
+    glow: 'bg-orange-500/10',
     icon: 'dawn',
     label: 'Dawn'
   },
   day: {
-    bg: 'from-sky-100 via-blue-100 to-cyan-50',
+    bg: 'from-sky-100 via-blue-100 to-cyan-100',
     card: 'bg-white/60 border-sky-200/50',
     text: 'text-slate-800',
     textMuted: 'text-slate-600',
-    accent: 'sky',
-    accentClass: 'text-sky-500',
-    accentText: 'text-sky-500',
-    accentBg: 'bg-sky-500',
-    accentBgLight: 'bg-sky-500/20',
-    accentBorder: 'border-sky-500/50',
+    accent: 'amber',
+    accentClass: 'text-amber-500',
+    accentText: 'text-amber-500',
+    accentBg: 'bg-amber-500',
+    accentBgLight: 'bg-amber-500/20',
+    accentBorder: 'border-amber-500/50',
     glow: 'bg-sky-500/10',
     icon: 'day',
     label: 'Day'
   },
   dusk: {
-    // Golden hour sunset - white text on dark background
-    bg: 'from-orange-400 via-rose-500 to-purple-700',
-    card: 'bg-slate-900/50 border-orange-400/30',
+    bg: 'from-purple-900 via-rose-900 to-orange-900',
+    card: 'bg-slate-800/60 border-purple-700/50',
     text: 'text-white',
-    textMuted: 'text-orange-100',
-    accent: 'orange',
-    accentClass: 'text-orange-300',
-    accentText: 'text-orange-300',
-    accentBg: 'bg-orange-500',
-    accentBgLight: 'bg-orange-500/20',
-    accentBorder: 'border-orange-500/50',
-    glow: 'bg-orange-500/10',
+    textMuted: 'text-purple-300',
+    accent: 'purple',
+    accentClass: 'text-purple-400',
+    accentText: 'text-purple-400',
+    accentBg: 'bg-purple-500',
+    accentBgLight: 'bg-purple-500/20',
+    accentBorder: 'border-purple-500/50',
+    glow: 'bg-purple-500/10',
     icon: 'dusk',
     label: 'Dusk'
   },
@@ -99,12 +97,12 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     card: 'bg-white/80 border-gray-200',
     text: 'text-slate-800',
     textMuted: 'text-slate-500',
-    accent: 'sky',
-    accentClass: 'text-sky-500',
-    accentText: 'text-sky-500',
-    accentBg: 'bg-sky-500',
-    accentBgLight: 'bg-sky-500/20',
-    accentBorder: 'border-sky-500/50',
+    accent: 'amber',
+    accentClass: 'text-amber-500',
+    accentText: 'text-amber-500',
+    accentBg: 'bg-amber-500',
+    accentBgLight: 'bg-amber-500/20',
+    accentBorder: 'border-amber-500/50',
     glow: 'bg-blue-500/5',
     icon: 'day',
     label: 'Light'
@@ -112,5 +110,5 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
 }
 
 export function isLightTheme(theme: string): boolean {
-  return ['day', 'dawn', 'light'].includes(theme)
+  return ['day', 'light'].includes(theme)
 }
