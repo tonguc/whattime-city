@@ -218,7 +218,12 @@ export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isL
   return (
     <>
       <div ref={containerRef} className={`rounded-3xl p-6 backdrop-blur-xl border ${themeData.card} mb-4`}>
-        <h3 className={`text-xl font-semibold ${themeData.text} mb-4`}>
+        <h3 className={`text-xl font-semibold ${themeData.text} mb-4 flex items-center gap-2`}>
+          <svg className={`w-5 h-5 ${isLight ? 'text-cyan-500' : 'text-cyan-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <rect x="3" y="4" width="18" height="18" rx="2"/>
+            <path d="M16 2v4M8 2v4M3 10h18"/>
+            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
+          </svg>
           Meeting Planner
         </h3>
 

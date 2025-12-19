@@ -193,7 +193,13 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
   return (
     <>
       <div className={`rounded-3xl p-6 backdrop-blur-xl border ${themeData.card} mb-4`}>
-        <h3 className={`text-xl font-semibold ${themeData.text} mb-4`}>
+        <h3 className={`text-xl font-semibold ${themeData.text} mb-4 flex items-center gap-2`}>
+          <svg className={`w-5 h-5 ${isLight ? 'text-blue-500' : 'text-blue-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+            <path d="M16 3l2 2-2 2"/>
+            <path d="M8 21l-2-2 2-2"/>
+          </svg>
           Two-City Time Converter
         </h3>
         

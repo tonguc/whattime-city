@@ -414,10 +414,34 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             <div className="mt-4 w-full max-w-xs">
               <SunInfoCard city={selectedCity} localTime={localTime} theme={currentTheme} t={t} />
             </div>
+            
+            {/* Compare Link - Text style */}
+            <a 
+              href={`/time/${selectedCity.slug}/london`}
+              className={`mt-4 text-sm ${theme.accentText} hover:underline flex items-center gap-1`}
+            >
+              Compare {selectedCity.city} with another city →
+            </a>
           </div>
         </div>
         
-        {/* City Info Section */}
+        {/* === 2. TWO_CITY_TIME_CONVERTER === */}
+        <TimeConverter
+          currentTheme={currentTheme}
+          themeData={theme}
+          use12Hour={use12Hour}
+          isLight={isLight}
+        />
+        
+        {/* === 3. MEETING_PLANNER === */}
+        <MeetingPlanner
+          currentTheme={currentTheme}
+          themeData={theme}
+          use12Hour={use12Hour}
+          isLight={isLight}
+        />
+        
+        {/* === 4. ABOUT_CITY === */}
         {selectedCity.info && (
           <div className={`rounded-3xl backdrop-blur-xl border ${theme.card} mb-4`}>
             <CityInfo city={selectedCity} theme={theme} isLight={isLight} />
@@ -451,22 +475,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         )}
         
-        {/* Two-City Time Converter */}
-        <TimeConverter
-          currentTheme={currentTheme}
-          themeData={theme}
-          use12Hour={use12Hour}
-          isLight={isLight}
-        />
-        
-        {/* Meeting Planner */}
-        <MeetingPlanner
-          currentTheme={currentTheme}
-          themeData={theme}
-          use12Hour={use12Hour}
-          isLight={isLight}
-        />
-        
+        {/* === 5. WORLD_CITIES === */}
         <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card}`}>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
             <h3 className={`text-xl font-semibold ${theme.text} self-center`}>
@@ -549,6 +558,104 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         </div>
         
+        {/* === 6. QUICK_TOOLS / FACTS / COMPARISONS === */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+          {/* Quick Facts */}
+          <div className={`rounded-2xl p-5 backdrop-blur-xl border ${theme.card}`}>
+            <h3 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${theme.text}`}>
+              <svg className={`w-5 h-5 ${isLight ? 'text-blue-500' : 'text-blue-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+              Quick Facts
+            </h3>
+            <div className="space-y-3">
+              <div className={`flex items-center justify-between py-2 border-b ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
+                <span className={theme.textMuted}>Timezone</span>
+                <span className={`font-medium ${theme.text}`}>{selectedCity.timezone.split('/').pop()?.replace('_', ' ')}</span>
+              </div>
+              <div className={`flex items-center justify-between py-2 border-b ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
+                <span className={theme.textMuted}>UTC Offset</span>
+                <span className={`font-medium ${theme.text}`}>{offset}</span>
+              </div>
+              {selectedCity.info && (
+                <>
+                  <div className={`flex items-center justify-between py-2 border-b ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
+                    <span className={theme.textMuted}>Population</span>
+                    <span className={`font-medium ${theme.text}`}>{selectedCity.info.population}</span>
+                  </div>
+                  <div className={`flex items-center justify-between py-2`}>
+                    <span className={theme.textMuted}>Currency</span>
+                    <span className={`font-medium ${theme.text}`}>{selectedCity.info.currency}</span>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+          
+          {/* Planning a Trip */}
+          <div className={`rounded-2xl p-5 backdrop-blur-xl border ${theme.card}`}>
+            <h3 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${theme.text}`}>
+              <svg className={`w-5 h-5 ${isLight ? 'text-green-500' : 'text-green-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+              Planning a Trip
+            </h3>
+            <div className="space-y-3">
+              <a href="/tools/flight-times" className={`flex items-center gap-3 p-3 rounded-xl transition-all ${isLight ? 'bg-slate-50 hover:bg-slate-100' : 'bg-slate-800/50 hover:bg-slate-700/50'}`}>
+                <svg className={`w-5 h-5 ${theme.textMuted}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                </svg>
+                <span className={theme.text}>Flight Time Calculator</span>
+              </a>
+              <a href="/tools/jet-lag" className={`flex items-center gap-3 p-3 rounded-xl transition-all ${isLight ? 'bg-slate-50 hover:bg-slate-100' : 'bg-slate-800/50 hover:bg-slate-700/50'}`}>
+                <svg className={`w-5 h-5 ${theme.textMuted}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6"/>
+                  <path d="M16 16s-1.5-2-4-2-4 2-4 2"/>
+                </svg>
+                <span className={theme.text}>Jet Lag Advisor</span>
+              </a>
+              <a href={`/tools/meeting-planner?city=${selectedCity.slug}`} className={`flex items-center gap-3 p-3 rounded-xl transition-all ${isLight ? 'bg-slate-50 hover:bg-slate-100' : 'bg-slate-800/50 hover:bg-slate-700/50'}`}>
+                <svg className={`w-5 h-5 ${theme.textMuted}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <rect x="3" y="4" width="18" height="18" rx="2"/>
+                  <path d="M16 2v4M8 2v4M3 10h18"/>
+                </svg>
+                <span className={theme.text}>Schedule Meeting</span>
+              </a>
+            </div>
+          </div>
+          
+          {/* Time Comparisons */}
+          <div className={`rounded-2xl p-5 backdrop-blur-xl border ${theme.card}`}>
+            <h3 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${theme.text}`}>
+              <svg className={`w-5 h-5 ${isLight ? 'text-purple-500' : 'text-purple-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <circle cx="8" cy="12" r="6"/>
+                <circle cx="16" cy="12" r="6"/>
+              </svg>
+              Compare Times
+            </h3>
+            <div className="space-y-2">
+              {['london', 'new-york', 'tokyo', 'sydney'].filter(s => s !== selectedCity.slug).slice(0, 3).map(slug => {
+                const city = cities.find(c => c.slug === slug)
+                if (!city) return null
+                return (
+                  <a key={slug} href={`/time/${selectedCity.slug}/${slug}`}
+                    className={`flex items-center justify-between p-3 rounded-xl transition-all ${isLight ? 'bg-slate-50 hover:bg-slate-100' : 'bg-slate-800/50 hover:bg-slate-700/50'}`}>
+                    <span className={theme.text}>{selectedCity.city} vs {city.city}</span>
+                    <svg className={`w-4 h-4 ${theme.textMuted}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                  </a>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+        
+        {/* === 7. LONG_CONTENT_AND_FAQ === */}
         {/* SEO Content Section */}
         {selectedCity.info?.seoContent && (
           <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
