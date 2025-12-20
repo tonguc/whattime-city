@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { cities } from '@/lib/cities'
 import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
+import Footer from '@/components/Footer'
 
 export default function EventTimePage() {
   const { theme, isLight, selectedCity } = useToolsTheme()
@@ -257,13 +258,7 @@ export default function EventTimePage() {
         </section>
 
         {/* Footer */}
-        <footer className={`pt-6 border-t ${isLight ? 'border-slate-200/50' : 'border-slate-700/50'}`}>
-          <div className="text-center">
-            <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-              © {new Date().getFullYear()} whattime.city — All rights reserved
-            </p>
-          </div>
-        </footer>
+        <Footer isLight={isLight} />
     </>
   )
 }

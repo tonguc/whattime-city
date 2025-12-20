@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { cities, City } from '@/lib/cities'
 import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
+import Footer from '@/components/Footer'
 import TimeSlider from '@/components/TimeSlider'
 
 export default function MeetingPlannerPage() {
@@ -244,13 +245,7 @@ export default function MeetingPlannerPage() {
         </section>
 
         {/* Footer */}
-        <footer className={`pt-6 border-t ${isLight ? 'border-slate-200/50' : 'border-slate-700/50'}`}>
-          <div className="text-center">
-            <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-              © {new Date().getFullYear()} whattime.city — All rights reserved
-            </p>
-          </div>
-        </footer>
+        <Footer isLight={isLight} />
     </>
   )
 }
