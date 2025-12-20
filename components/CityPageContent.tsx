@@ -139,6 +139,9 @@ export default function CityPageContent({ city }: CityPageContentProps) {
 
   return (
     <div className={`relative z-10 bg-gradient-to-br ${theme.bg}`}>
+      {/* SEO H1 - Screen reader ve SEO için */}
+      <h1 className="sr-only">Current Time in {city.city}, {city.country}</h1>
+      
       {/* Quick Actions - Tool Entry Points */}
       <section className="px-4 py-8 max-w-6xl mx-auto">
         <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-700' : 'text-white'}`}>
