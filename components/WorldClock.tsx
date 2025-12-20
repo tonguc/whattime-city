@@ -894,8 +894,10 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             </div>
           </div>
         )}
-        
-        <footer className={`mt-10 py-8 border-t ${isLight ? 'border-slate-200 bg-white/50' : 'border-slate-800 bg-slate-900/50'}`}>
+      </div>
+      
+      {/* Footer - Full Width */}
+      <footer className={`relative z-10 mt-10 py-8 border-t ${isLight ? 'border-slate-200 bg-white/50' : 'border-slate-800 bg-slate-900/50'}`}>
           <div className="max-w-6xl mx-auto px-4">
             <nav className="flex flex-wrap justify-center gap-6 mb-6">
               <a href="/map" className={`flex items-center gap-2 text-sm ${theme.textMuted} hover:opacity-80 transition-colors group`}>
@@ -944,7 +946,6 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             <p className={`text-center text-sm ${theme.textMuted}`}>© {new Date().getFullYear()} whattime.city</p>
           </div>
         </footer>
-      </div>
       
       {/* Floating Alert Button */}
       <button 

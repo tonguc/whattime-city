@@ -8,6 +8,7 @@ import { City, cities, searchCities } from '@/lib/cities'
 import { getWeather, WeatherResponse } from '@/lib/weather'
 import { TimeIcons } from '@/components/TimeIcons'
 import Header from '@/components/Header'
+import TimeSlider from '@/components/TimeSlider'
 
 // Data
 const popularComparisons = [
@@ -303,6 +304,14 @@ export default function HomePage() {
             </div>
             <p className={`text-sm mt-3 ${theme.textMuted}`}>Compare cities or find meeting overlap</p>
           </div>
+        </section>
+
+        {/* TIME SLIDER - Draggable Multi-City Comparison */}
+        <section className="mb-4">
+          <TimeSlider 
+            isLight={isLight} 
+            initialCities={detectedCity ? [detectedCity] : []}
+          />
         </section>
 
         {/* QUICK TOOLS */}
