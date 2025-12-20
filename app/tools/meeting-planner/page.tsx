@@ -2,15 +2,16 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { cities } from '@/lib/cities'
+import { cities, City } from '@/lib/cities'
 import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
+import TimeSlider from '@/components/TimeSlider'
 
 export default function MeetingPlannerPage() {
   const { theme, isLight, selectedCity } = useToolsTheme()
   
   const [currentTime, setCurrentTime] = useState(new Date())
-  const [selectedCities, setSelectedCities] = useState(() => [
+  const [selectedCities, setSelectedCities] = useState<City[]>(() => [
     selectedCity || cities.find(c => c.city === 'New York') || cities[0],
     cities.find(c => c.city === 'London') || cities[1],
     cities.find(c => c.city === 'Tokyo') || cities[2]
@@ -120,6 +121,15 @@ export default function MeetingPlannerPage() {
           </div>
         </div>
 
+        {/* Interactive Time Slider */}
+        <div className="mb-8">
+          <TimeSlider 
+            isLight={isLight} 
+            initialCities={selectedCities}
+            onCitiesChange={(newCities) => setSelectedCities(newCities)}
+          />
+        </div>
+
         {/* SEO SECTION 1: Common Use Cases */}
         <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
           isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
@@ -219,7 +229,7 @@ export default function MeetingPlannerPage() {
                 Can I add more than 3 participants?
               </h3>
               <p className="text-sm">
-                Currently the tool supports up to 3 cities. For larger groups, we recommend grouping by region.
+                Yes! Use the Time Slider below to compare up to 6 cities at once with drag-to-explore functionality.
               </p>
             </div>
             <div>
