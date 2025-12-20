@@ -171,6 +171,13 @@ export default function ToolsPage() {
             <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
               © {new Date().getFullYear()} whattime.city — All rights reserved
             </p>
+            <div className={`flex justify-center gap-4 mt-3 text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+              <a href="/about" className="hover:opacity-80 transition-opacity">About</a>
+              <span>•</span>
+              <a href="/privacy" className="hover:opacity-80 transition-opacity">Privacy</a>
+              <span>•</span>
+              <a href="/contact" className="hover:opacity-80 transition-opacity">Contact</a>
+            </div>
           </div>
         </footer>
     </>

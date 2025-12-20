@@ -944,6 +944,15 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             </div>
             
             <p className={`text-center text-sm ${theme.textMuted}`}>© {new Date().getFullYear()} whattime.city</p>
+            
+            {/* Legal Links */}
+            <div className="flex justify-center gap-4 mt-3">
+              <a href="/about" className={`text-xs ${theme.textMuted} hover:opacity-80 transition-opacity`}>About</a>
+              <span className={theme.textMuted}>•</span>
+              <a href="/privacy" className={`text-xs ${theme.textMuted} hover:opacity-80 transition-opacity`}>Privacy</a>
+              <span className={theme.textMuted}>•</span>
+              <a href="/contact" className={`text-xs ${theme.textMuted} hover:opacity-80 transition-opacity`}>Contact</a>
+            </div>
           </div>
         </footer>
       

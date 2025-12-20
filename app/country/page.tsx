@@ -142,11 +142,16 @@ export default function CountriesPage() {
                       >
                         <div className="flex items-center gap-2">
                           <span className="text-xl">{flagEmoji}</span>
-                          <div className="min-w-0">
-                            <div className="text-white font-medium truncate group-hover:text-cyan-400 transition-colors">
-                              {country.name}
+                          <div className="min-w-0 flex-1">
+                            <div className="flex items-center gap-2">
+                              <span className="text-white font-medium truncate group-hover:text-cyan-400 transition-colors">
+                                {country.name}
+                              </span>
+                              <span className="text-xs px-1.5 py-0.5 rounded bg-slate-700 text-slate-300 font-mono">
+                                {country.code.toUpperCase()}
+                              </span>
                             </div>
-                            <div className="text-xs text-slate-500 truncate">
+                            <div className="text-xs text-slate-400 truncate">
                               {country.timezones[0]}
                             </div>
                           </div>
@@ -178,6 +183,13 @@ export default function CountriesPage() {
       <footer className="border-t border-slate-800 mt-16">
         <div className="max-w-6xl mx-auto px-4 py-8 text-center text-slate-500 text-sm">
           <p>© {new Date().getFullYear()} whattime.city - World Clock & Time Zones</p>
+          <div className="flex justify-center gap-4 mt-3">
+            <Link href="/about" className="hover:text-slate-300 transition-colors">About</Link>
+            <span>•</span>
+            <Link href="/privacy" className="hover:text-slate-300 transition-colors">Privacy</Link>
+            <span>•</span>
+            <Link href="/contact" className="hover:text-slate-300 transition-colors">Contact</Link>
+          </div>
         </div>
       </footer>
     </div>

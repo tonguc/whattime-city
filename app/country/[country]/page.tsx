@@ -346,6 +346,13 @@ export default async function CountryPage({ params }: CountryPageProps) {
         {/* Footer */}
         <footer className="mt-8 text-center text-slate-500 text-sm">
           <p>© {new Date().getFullYear()} whattime.city - World Clock & Time Zones</p>
+          <div className="flex justify-center gap-4 mt-3 text-xs">
+            <a href="/about" className="hover:text-slate-300 transition-colors">About</a>
+            <span>•</span>
+            <a href="/privacy" className="hover:text-slate-300 transition-colors">Privacy</a>
+            <span>•</span>
+            <a href="/contact" className="hover:text-slate-300 transition-colors">Contact</a>
+          </div>
         </footer>
       </div>
     </div>
