@@ -14,7 +14,7 @@ export default function WeatherBackground({ animation, isDay }: WeatherBackgroun
   const showDayBase = isDay
   
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none z-[2]">
+    <div className="fixed inset-x-0 top-0 h-screen overflow-hidden pointer-events-none z-[2]">
       {/* Base animations - her zaman gece/gündüz efekti */}
       {showDayBase && (animation === 'clear' || animation === 'clouds' || animation === 'fog') && <SunAnimation />}
       {showNightBase && (animation === 'clear' || animation === 'clouds' || animation === 'fog') && <NightAnimation />}
