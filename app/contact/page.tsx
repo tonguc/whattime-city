@@ -35,10 +35,10 @@ export default function ContactPage() {
               For general inquiries, suggestions, or support:
             </p>
             <a 
-              href="mailto:hello@whattime.city" 
+              href="mailto:whattimecity@gmail.com" 
               className="text-xl text-cyan-400 hover:text-cyan-300 font-medium"
             >
-              hello@whattime.city
+              whattimecity@gmail.com
             </a>
           </div>
           
