@@ -11,15 +11,17 @@ interface WeatherBackgroundProps {
 export default function WeatherBackground({ animation, isDay }: WeatherBackgroundProps) {
   return (
     <div className="fixed inset-x-0 top-0 h-screen overflow-hidden pointer-events-none z-[2]">
-      {/* Rain/Snow/Thunder */}
+      {/* Clear weather only - day/night effects */}
+      {animation === 'clear' && isDay && <SunAnimation />}
+      {animation === 'clear' && !isDay && <NightAnimation />}
+      
+      {/* Weather-specific animations */}
       {animation === 'rain' && <RainAnimation />}
       {animation === 'drizzle' && <DrizzleAnimation />}
       {animation === 'snow' && <SnowAnimation />}
       {animation === 'thunder' && <ThunderAnimation />}
       
-      {/* Clear weather - day/night */}
-      {animation === 'clear' && isDay && <SunAnimation />}
-      {animation === 'clear' && !isDay && <NightAnimation />}
+      {/* Fog/Clouds = no animation, just gradient + badge */}
     </div>
   )
 }
