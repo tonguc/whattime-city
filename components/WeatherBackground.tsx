@@ -18,6 +18,7 @@ export default function WeatherBackground({ animation, isDay }: WeatherBackgroun
       {animation === 'clouds' && <CloudsAnimation />}
       {animation === 'fog' && <FogAnimation />}
       {animation === 'clear' && isDay && <SunAnimation />}
+      {animation === 'clear' && !isDay && <NightAnimation />}
     </div>
   )
 }
@@ -260,6 +261,93 @@ function SunAnimation() {
           style={{ animation: 'sunRays 20s linear infinite' }}
         />
       </div>
+    </>
+  )
+}
+
+function NightAnimation() {
+  const [stars, setStars] = useState<Array<{ id: number; left: number; top: number; size: number; delay: number; duration: number }>>([])
+  const [shootingStars, setShootingStars] = useState<Array<{ id: number; top: number; delay: number }>>([])
+  
+  useEffect(() => {
+    // Twinkling stars
+    const newStars = Array.from({ length: 50 }, (_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      top: Math.random() * 60,
+      size: 1 + Math.random() * 2,
+      delay: Math.random() * 3,
+      duration: 2 + Math.random() * 2
+    }))
+    setStars(newStars)
+    
+    // Shooting stars
+    const newShootingStars = Array.from({ length: 3 }, (_, i) => ({
+      id: i,
+      top: 5 + Math.random() * 30,
+      delay: i * 8 + Math.random() * 4
+    }))
+    setShootingStars(newShootingStars)
+  }, [])
+  
+  return (
+    <>
+      <style>{`
+        @keyframes twinkle {
+          0%, 100% { opacity: 0.3; transform: scale(1); }
+          50% { opacity: 1; transform: scale(1.2); }
+        }
+        @keyframes shootingStar {
+          0% { transform: translateX(0) translateY(0); opacity: 1; }
+          70% { opacity: 1; }
+          100% { transform: translateX(300px) translateY(150px); opacity: 0; }
+        }
+        @keyframes moonGlow {
+          0%, 100% { opacity: 0.15; transform: scale(1); }
+          50% { opacity: 0.25; transform: scale(1.05); }
+        }
+      `}</style>
+      
+      {/* Moon glow */}
+      <div className="absolute top-8 right-8">
+        <div 
+          className="w-24 h-24 rounded-full bg-slate-200/20 blur-2xl"
+          style={{ animation: 'moonGlow 6s ease-in-out infinite' }}
+        />
+        <div className="absolute top-2 right-2 w-16 h-16 rounded-full bg-gradient-to-br from-slate-200/30 to-transparent" />
+      </div>
+      
+      {/* Twinkling stars */}
+      {stars.map((star) => (
+        <div
+          key={star.id}
+          className="absolute rounded-full bg-white"
+          style={{
+            left: `${star.left}%`,
+            top: `${star.top}%`,
+            width: `${star.size}px`,
+            height: `${star.size}px`,
+            animation: `twinkle ${star.duration}s ease-in-out infinite`,
+            animationDelay: `${star.delay}s`,
+            boxShadow: '0 0 3px rgba(255,255,255,0.8)',
+          }}
+        />
+      ))}
+      
+      {/* Shooting stars */}
+      {shootingStars.map((star) => (
+        <div
+          key={`shooting-${star.id}`}
+          className="absolute w-1 h-1 bg-white rounded-full"
+          style={{
+            left: '10%',
+            top: `${star.top}%`,
+            animation: `shootingStar 1.5s linear infinite`,
+            animationDelay: `${star.delay}s`,
+            boxShadow: '0 0 6px 2px rgba(255,255,255,0.6), -20px 0 15px rgba(255,255,255,0.4), -40px 0 10px rgba(255,255,255,0.2)',
+          }}
+        />
+      ))}
     </>
   )
 }
