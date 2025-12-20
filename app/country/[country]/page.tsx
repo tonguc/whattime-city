@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getCountryBySlug, getAllCountrySlugs, getCitiesByCountryCode } from '@/lib/cities'
+import SimpleHeader from '@/components/SimpleHeader'
 
 interface CountryPageProps {
   params: Promise<{ country: string }>
@@ -88,17 +89,12 @@ export default async function CountryPage({ params }: CountryPageProps) {
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950">
+      <SimpleHeader isLight={false} />
+      
       <div className="max-w-6xl mx-auto px-4 py-8">
         
-        {/* Header */}
+        {/* Page Title */}
         <header className="mb-8">
-          <Link href="/" className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 mb-6 transition-colors">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            Back to World Clock
-          </Link>
-          
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
             Current Time in {country.name}
           </h1>

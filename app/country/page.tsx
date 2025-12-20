@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { countries } from '@/lib/cities'
+import SimpleHeader from '@/components/SimpleHeader'
 
 export const metadata: Metadata = {
   title: 'Time Zones by Country - All Countries List | whattime.city',
@@ -61,43 +62,7 @@ export default function CountriesPage() {
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-slate-900/70">
-        <div className="max-w-6xl mx-auto px-4 py-2 sm:py-3 flex items-center justify-between">
-          <Link href="/" className="hover:opacity-80 transition-opacity flex-shrink-0">
-            <img 
-              src="/logo-dark.svg" 
-              alt="whattime.city" 
-              className="h-11 sm:h-14"
-            />
-          </Link>
-          
-          <div className="flex items-center gap-2">
-            <Link 
-              href="/"
-              className="px-3 py-2 rounded-full text-sm font-medium transition-all bg-slate-800/60 text-slate-300 hover:bg-slate-700/60 backdrop-blur-xl"
-            >
-              🌍 Cities
-            </Link>
-            <Link 
-              href="/map"
-              className="px-3 py-2 rounded-full text-sm font-medium transition-all bg-slate-800/60 text-slate-300 hover:bg-slate-700/60 backdrop-blur-xl"
-            >
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M2 12h20"/>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-              </svg>
-            </Link>
-            <Link 
-              href="/tools"
-              className="px-3 py-2 rounded-full text-sm font-medium transition-all bg-slate-800/60 text-slate-300 hover:bg-slate-700/60 backdrop-blur-xl"
-            >
-              🛠️ Tools
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SimpleHeader isLight={false} />
 
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-8">
@@ -127,29 +92,19 @@ export default function CountriesPage() {
                 
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
                   {continentCountries.map(country => {
-                    // Generate flag emoji from country code
-                    const flagEmoji = country.code
-                      .toUpperCase()
-                      .split('')
-                      .map(char => String.fromCodePoint(char.charCodeAt(0) + 127397))
-                      .join('')
-                    
                     return (
                       <Link
                         key={country.slug}
                         href={`/country/${country.slug}`}
                         className="group p-3 rounded-xl bg-slate-800/40 border border-slate-700/50 hover:bg-slate-700/50 hover:border-slate-600/50 transition-all"
                       >
-                        <div className="flex items-center gap-2">
-                          <span className="text-xl">{flagEmoji}</span>
+                        <div className="flex items-center gap-3">
+                          <span className="text-xs px-2 py-1 rounded bg-slate-700 text-slate-300 font-mono font-medium">
+                            {country.code.toUpperCase()}
+                          </span>
                           <div className="min-w-0 flex-1">
-                            <div className="flex items-center gap-2">
-                              <span className="text-white font-medium truncate group-hover:text-cyan-400 transition-colors">
-                                {country.name}
-                              </span>
-                              <span className="text-xs px-1.5 py-0.5 rounded bg-slate-700 text-slate-300 font-mono">
-                                {country.code.toUpperCase()}
-                              </span>
+                            <div className="text-white font-medium truncate group-hover:text-cyan-400 transition-colors">
+                              {country.name}
                             </div>
                             <div className="text-xs text-slate-400 truncate">
                               {country.timezones[0]}

@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import SimpleHeader from '@/components/SimpleHeader'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy - whattime.city',
@@ -12,13 +13,9 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950">
+      <SimpleHeader isLight={false} />
+      
       <div className="max-w-3xl mx-auto px-4 py-16">
-        <Link href="/" className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 mb-8">
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          Back to World Clock
-        </Link>
         
         <h1 className="text-4xl font-bold text-white mb-4">Privacy Policy</h1>
         <p className="text-slate-400 mb-8">Last updated: December 2024</p>
@@ -104,10 +101,17 @@ export default function PrivacyPage() {
           </p>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-slate-800">
+        <div className="mt-12 pt-8 border-t border-slate-800 text-center">
           <p className="text-slate-500 text-sm">
             © {new Date().getFullYear()} whattime.city. All rights reserved.
           </p>
+          <div className="flex justify-center gap-4 mt-3 text-xs text-slate-500">
+            <Link href="/about" className="hover:text-slate-300">About</Link>
+            <span>•</span>
+            <Link href="/privacy" className="hover:text-slate-300">Privacy</Link>
+            <span>•</span>
+            <Link href="/contact" className="hover:text-slate-300">Contact</Link>
+          </div>
         </div>
       </div>
     </div>
