@@ -27,11 +27,11 @@ function RainAnimation() {
   const [drops, setDrops] = useState<Array<{ id: number; left: number; delay: number; duration: number }>>([])
   
   useEffect(() => {
-    const newDrops = Array.from({ length: 80 }, (_, i) => ({
+    const newDrops = Array.from({ length: 100 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       delay: Math.random() * 2,
-      duration: 0.4 + Math.random() * 0.4
+      duration: 0.5 + Math.random() * 0.5
     }))
     setDrops(newDrops)
   }, [])
@@ -42,18 +42,18 @@ function RainAnimation() {
         @keyframes rainFall {
           0% { transform: translateY(-20px); opacity: 0; }
           10% { opacity: 1; }
-          90% { opacity: 0.8; }
+          90% { opacity: 0.9; }
           100% { transform: translateY(100vh); opacity: 0; }
         }
       `}</style>
       {drops.map((drop) => (
         <div
           key={drop.id}
-          className="absolute w-0.5 bg-gradient-to-b from-blue-300/60 via-blue-400/80 to-blue-500/60 rounded-full"
+          className="absolute w-0.5 bg-gradient-to-b from-blue-300/80 via-blue-400 to-blue-500/80 rounded-full"
           style={{
             left: `${drop.left}%`,
             top: '-20px',
-            height: '25px',
+            height: '30px',
             animation: `rainFall ${drop.duration}s linear infinite`,
             animationDelay: `${drop.delay}s`,
           }}
@@ -179,11 +179,11 @@ function CloudsAnimation() {
     const newClouds = Array.from({ length: 8 }, (_, i) => ({
       id: i,
       top: 5 + Math.random() * 30,
-      duration: 20 + Math.random() * 20,
-      delay: i * 4,
-      width: 250 + Math.random() * 200,
-      height: 100 + Math.random() * 80,
-      opacity: 0.3 + Math.random() * 0.3
+      duration: 25 + Math.random() * 25,
+      delay: i * 5,
+      width: 300 + Math.random() * 250,
+      height: 120 + Math.random() * 100,
+      opacity: 0.4 + Math.random() * 0.3
     }))
     setClouds(newClouds)
   }, [])
@@ -199,7 +199,7 @@ function CloudsAnimation() {
       {clouds.map((cloud) => (
         <div
           key={cloud.id}
-          className="absolute bg-white rounded-full blur-2xl"
+          className="absolute bg-white/80 rounded-full blur-3xl"
           style={{
             top: `${cloud.top}%`,
             left: '-400px',
@@ -220,14 +220,14 @@ function FogAnimation() {
     <>
       <style>{`
         @keyframes fogMove {
-          0%, 100% { opacity: 0.2; transform: translateX(-5%); }
-          50% { opacity: 0.4; transform: translateX(5%); }
+          0%, 100% { opacity: 0.4; transform: translateX(-5%); }
+          50% { opacity: 0.7; transform: translateX(5%); }
         }
       `}</style>
       {[0, 1, 2].map((i) => (
         <div
           key={i}
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent"
           style={{
             animation: `fogMove ${8 + i * 2}s ease-in-out infinite`,
             animationDelay: `${i * 2}s`,
@@ -243,21 +243,21 @@ function SunAnimation() {
     <>
       <style>{`
         @keyframes sunPulse {
-          0%, 100% { transform: scale(1); opacity: 0.4; }
-          50% { transform: scale(1.15); opacity: 0.6; }
+          0%, 100% { transform: scale(1); opacity: 0.5; }
+          50% { transform: scale(1.2); opacity: 0.8; }
         }
         @keyframes sunRays {
-          0%, 100% { transform: rotate(0deg); }
+          0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
         }
       `}</style>
       <div className="absolute top-8 right-8">
         <div 
-          className="w-32 h-32 rounded-full bg-yellow-300/50 blur-xl"
+          className="w-40 h-40 rounded-full bg-yellow-300/60 blur-2xl"
           style={{ animation: 'sunPulse 4s ease-in-out infinite' }}
         />
         <div 
-          className="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-r from-yellow-200/30 via-transparent to-yellow-200/30"
+          className="absolute inset-0 w-40 h-40 rounded-full bg-gradient-to-r from-yellow-200/40 via-transparent to-yellow-200/40"
           style={{ animation: 'sunRays 20s linear infinite' }}
         />
       </div>
@@ -270,12 +270,12 @@ function NightAnimation() {
   const [shootingStars, setShootingStars] = useState<Array<{ id: number; top: number; delay: number }>>([])
   
   useEffect(() => {
-    // Twinkling stars
-    const newStars = Array.from({ length: 50 }, (_, i) => ({
+    // Twinkling stars - more stars, bigger sizes
+    const newStars = Array.from({ length: 80 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
-      top: Math.random() * 60,
-      size: 1 + Math.random() * 2,
+      top: Math.random() * 70,
+      size: 2 + Math.random() * 3,
       delay: Math.random() * 3,
       duration: 2 + Math.random() * 2
     }))
@@ -285,7 +285,7 @@ function NightAnimation() {
     const newShootingStars = Array.from({ length: 3 }, (_, i) => ({
       id: i,
       top: 5 + Math.random() * 30,
-      delay: i * 8 + Math.random() * 4
+      delay: i * 6 + Math.random() * 3
     }))
     setShootingStars(newShootingStars)
   }, [])
@@ -294,8 +294,8 @@ function NightAnimation() {
     <>
       <style>{`
         @keyframes twinkle {
-          0%, 100% { opacity: 0.3; transform: scale(1); }
-          50% { opacity: 1; transform: scale(1.2); }
+          0%, 100% { opacity: 0.4; transform: scale(1); }
+          50% { opacity: 1; transform: scale(1.3); }
         }
         @keyframes shootingStar {
           0% { transform: translateX(0) translateY(0); opacity: 1; }
@@ -303,18 +303,18 @@ function NightAnimation() {
           100% { transform: translateX(300px) translateY(150px); opacity: 0; }
         }
         @keyframes moonGlow {
-          0%, 100% { opacity: 0.15; transform: scale(1); }
-          50% { opacity: 0.25; transform: scale(1.05); }
+          0%, 100% { opacity: 0.3; transform: scale(1); }
+          50% { opacity: 0.5; transform: scale(1.1); }
         }
       `}</style>
       
       {/* Moon glow */}
       <div className="absolute top-8 right-8">
         <div 
-          className="w-24 h-24 rounded-full bg-slate-200/20 blur-2xl"
+          className="w-32 h-32 rounded-full bg-slate-200/30 blur-2xl"
           style={{ animation: 'moonGlow 6s ease-in-out infinite' }}
         />
-        <div className="absolute top-2 right-2 w-16 h-16 rounded-full bg-gradient-to-br from-slate-200/30 to-transparent" />
+        <div className="absolute top-2 right-2 w-20 h-20 rounded-full bg-gradient-to-br from-slate-100/40 to-transparent" />
       </div>
       
       {/* Twinkling stars */}
@@ -329,7 +329,7 @@ function NightAnimation() {
             height: `${star.size}px`,
             animation: `twinkle ${star.duration}s ease-in-out infinite`,
             animationDelay: `${star.delay}s`,
-            boxShadow: '0 0 3px rgba(255,255,255,0.8)',
+            boxShadow: '0 0 6px rgba(255,255,255,0.9)',
           }}
         />
       ))}
@@ -338,13 +338,13 @@ function NightAnimation() {
       {shootingStars.map((star) => (
         <div
           key={`shooting-${star.id}`}
-          className="absolute w-1 h-1 bg-white rounded-full"
+          className="absolute w-1.5 h-1.5 bg-white rounded-full"
           style={{
             left: '10%',
             top: `${star.top}%`,
             animation: `shootingStar 1.5s linear infinite`,
             animationDelay: `${star.delay}s`,
-            boxShadow: '0 0 6px 2px rgba(255,255,255,0.6), -20px 0 15px rgba(255,255,255,0.4), -40px 0 10px rgba(255,255,255,0.2)',
+            boxShadow: '0 0 8px 3px rgba(255,255,255,0.8), -20px 0 20px rgba(255,255,255,0.5), -40px 0 15px rgba(255,255,255,0.3)',
           }}
         />
       ))}
