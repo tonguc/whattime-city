@@ -327,9 +327,9 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
       <WeatherBackground animation={weatherAnimation} isDay={weather?.is_day === 1} />
       
       {/* Ambient Glow */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className={`absolute -top-1/4 -left-1/4 w-[800px] h-[800px] ${theme.glow} rounded-full blur-3xl opacity-60`}/>
-        <div className={`absolute -bottom-1/4 -right-1/4 w-[600px] h-[600px] ${theme.glow} rounded-full blur-3xl opacity-40`}/>
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-[1]">
+        <div className={`absolute -top-1/4 -left-1/4 w-[800px] h-[800px] ${theme.glow} rounded-full blur-3xl opacity-70`}/>
+        <div className={`absolute -bottom-1/4 -right-1/4 w-[600px] h-[600px] ${theme.glow} rounded-full blur-3xl opacity-50`}/>
       </div>
       
       {/* Shared Header */}

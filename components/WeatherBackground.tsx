@@ -10,7 +10,7 @@ interface WeatherBackgroundProps {
 
 export default function WeatherBackground({ animation, isDay }: WeatherBackgroundProps) {
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none z-[5]">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-[2]">
       {animation === 'rain' && <RainAnimation />}
       {animation === 'drizzle' && <DrizzleAnimation />}
       {animation === 'snow' && <SnowAnimation />}

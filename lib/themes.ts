@@ -28,7 +28,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     accentBg: 'bg-cyan-500',
     accentBgLight: 'bg-cyan-500/20',
     accentBorder: 'border-cyan-500/50',
-    glow: 'bg-indigo-500/10',
+    glow: 'bg-indigo-500/30',
     icon: 'night',
     label: 'Night'
   },
@@ -43,7 +43,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     accentBg: 'bg-amber-500',
     accentBgLight: 'bg-amber-500/20',
     accentBorder: 'border-amber-500/50',
-    glow: 'bg-orange-500/10',
+    glow: 'bg-orange-500/30',
     icon: 'dawn',
     label: 'Dawn'
   },
@@ -58,7 +58,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     accentBg: 'bg-amber-500',
     accentBgLight: 'bg-amber-500/20',
     accentBorder: 'border-amber-500/50',
-    glow: 'bg-sky-500/10',
+    glow: 'bg-sky-500/25',
     icon: 'day',
     label: 'Day'
   },
@@ -73,7 +73,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     accentBg: 'bg-purple-500',
     accentBgLight: 'bg-purple-500/20',
     accentBorder: 'border-purple-500/50',
-    glow: 'bg-purple-500/10',
+    glow: 'bg-purple-500/30',
     icon: 'dusk',
     label: 'Dusk'
   },
@@ -88,7 +88,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     accentBg: 'bg-cyan-500',
     accentBgLight: 'bg-cyan-500/20',
     accentBorder: 'border-cyan-500/50',
-    glow: 'bg-slate-500/10',
+    glow: 'bg-slate-500/25',
     icon: 'night',
     label: 'Dark'
   },
@@ -103,7 +103,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     accentBg: 'bg-amber-500',
     accentBgLight: 'bg-amber-500/20',
     accentBorder: 'border-amber-500/50',
-    glow: 'bg-blue-500/5',
+    glow: 'bg-blue-500/15',
     icon: 'day',
     label: 'Light'
   }
