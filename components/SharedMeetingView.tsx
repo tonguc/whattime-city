@@ -283,9 +283,17 @@ export default function SharedMeetingView() {
           <Link href="/tools" className={`hover:underline ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>Tools</Link>
           <Link href="/widget" className={`hover:underline ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>Free Widget</Link>
         </nav>
-        <p className={`text-center text-sm pb-8 ${isLight ? 'text-slate-500' : 'text-slate-500'}`}>
+        <p className={`text-center text-sm ${isLight ? 'text-slate-500' : 'text-slate-500'}`}>
           © {new Date().getFullYear()} whattime.city
         </p>
+        <div className={`flex justify-center gap-4 mt-3 text-xs ${isLight ? 'text-slate-500' : 'text-slate-500'}`}>
+          <Link href="/about" className="hover:underline">About</Link>
+          <span>•</span>
+          <Link href="/privacy" className="hover:underline">Privacy</Link>
+          <span>•</span>
+          <Link href="/contact" className="hover:underline">Contact</Link>
+        </div>
+        <div className="pb-8" />
       </footer>
     </div>
   )

@@ -402,6 +402,13 @@ export default function TimeComparisonContent({ fromCity, toCity }: TimeComparis
           <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
             © {new Date().getFullYear()} whattime.city - World Clock & Time Zones
           </p>
+          <div className={`flex justify-center gap-4 mt-3 text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+            <a href="/about" className="hover:underline">About</a>
+            <span>•</span>
+            <a href="/privacy" className="hover:underline">Privacy</a>
+            <span>•</span>
+            <a href="/contact" className="hover:underline">Contact</a>
+          </div>
         </div>
       </footer>
     </div>
