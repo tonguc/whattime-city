@@ -9,16 +9,23 @@ interface WeatherBackgroundProps {
 }
 
 export default function WeatherBackground({ animation, isDay }: WeatherBackgroundProps) {
+  // Gece mi gündüz mü? (fog/clouds için de kullanılacak)
+  const showNightBase = !isDay
+  const showDayBase = isDay
+  
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-[2]">
+      {/* Base animations - her zaman gece/gündüz efekti */}
+      {showDayBase && (animation === 'clear' || animation === 'clouds' || animation === 'fog') && <SunAnimation />}
+      {showNightBase && (animation === 'clear' || animation === 'clouds' || animation === 'fog') && <NightAnimation />}
+      
+      {/* Weather-specific animations */}
       {animation === 'rain' && <RainAnimation />}
       {animation === 'drizzle' && <DrizzleAnimation />}
       {animation === 'snow' && <SnowAnimation />}
       {animation === 'thunder' && <ThunderAnimation />}
       {animation === 'clouds' && <CloudsAnimation />}
       {animation === 'fog' && <FogAnimation />}
-      {animation === 'clear' && isDay && <SunAnimation />}
-      {animation === 'clear' && !isDay && <NightAnimation />}
     </div>
   )
 }
