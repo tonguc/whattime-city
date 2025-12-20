@@ -198,7 +198,7 @@ export default function HomePage() {
                   {weather && (
                     <div className={`flex items-center gap-1.5 px-2 py-1 rounded-full text-sm ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
                       <img 
-                        src={weather.current.condition.icon} 
+                        src={weather.current.condition.icon.startsWith('//') ? `https:${weather.current.condition.icon}` : weather.current.condition.icon} 
                         alt={weather.current.condition.text}
                         className="w-6 h-6"
                       />
