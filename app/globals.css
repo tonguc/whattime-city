@@ -8,6 +8,15 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* Hide scrollbar for horizontal tabs */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Animation for collapsible content */
 @keyframes fadeIn {
   from {

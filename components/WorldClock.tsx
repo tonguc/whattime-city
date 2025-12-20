@@ -165,6 +165,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
   const [weather, setWeather] = useState<WeatherData | null>(null)
   const [weatherAnimation, setWeatherAnimation] = useState<WeatherAnimation>('clear')
   const [selectedContinent, setSelectedContinent] = useState<Continent>('all')
+  const [guideTab, setGuideTab] = useState<'overview' | 'attractions' | 'transport' | 'tips' | 'emergency' | 'holidays'>('overview')
   const [continentFilter, setContinentFilter] = useState('')
   
   // Alarm states
@@ -734,70 +735,114 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           </div>
         )}
         
-        {/* === 7. ULTIMATE CITY GUIDE (SEO 2) === */}
+        {/* === 7. ULTIMATE CITY GUIDE (Tabbed) === */}
         {selectedCity.info && (
           <div className={`rounded-3xl backdrop-blur-xl border ${theme.card} mt-4 overflow-hidden`}>
-            <div className="flex flex-col lg:flex-row">
-              {/* Sticky Table of Contents - Left Side */}
-              <div className={`lg:w-64 lg:flex-shrink-0 p-6 ${isLight ? 'bg-slate-50 border-r border-slate-200' : 'bg-slate-800/50 border-r border-slate-700'}`}>
-                <div className="lg:sticky lg:top-24">
-                  <h3 className={`font-bold mb-4 ${theme.text}`}>📑 Contents</h3>
-                  <nav className="space-y-2">
-                    <a href="#guide-overview" className={`block text-sm py-1.5 px-3 rounded-lg transition-all ${isLight ? 'hover:bg-white text-slate-600 hover:text-slate-900' : 'hover:bg-slate-700 text-slate-400 hover:text-white'}`}>
-                      Overview
-                    </a>
-                    <a href="#guide-attractions" className={`block text-sm py-1.5 px-3 rounded-lg transition-all ${isLight ? 'hover:bg-white text-slate-600 hover:text-slate-900' : 'hover:bg-slate-700 text-slate-400 hover:text-white'}`}>
-                      Top Attractions
-                    </a>
-                    <a href="#guide-transport" className={`block text-sm py-1.5 px-3 rounded-lg transition-all ${isLight ? 'hover:bg-white text-slate-600 hover:text-slate-900' : 'hover:bg-slate-700 text-slate-400 hover:text-white'}`}>
-                      Getting Around
-                    </a>
-                    <a href="#guide-tips" className={`block text-sm py-1.5 px-3 rounded-lg transition-all ${isLight ? 'hover:bg-white text-slate-600 hover:text-slate-900' : 'hover:bg-slate-700 text-slate-400 hover:text-white'}`}>
-                      Local Tips
-                    </a>
-                    <a href="#guide-emergency" className={`block text-sm py-1.5 px-3 rounded-lg transition-all ${isLight ? 'hover:bg-white text-slate-600 hover:text-slate-900' : 'hover:bg-slate-700 text-slate-400 hover:text-white'}`}>
-                      Emergency Info
-                    </a>
-                    <a href="#guide-holidays" className={`block text-sm py-1.5 px-3 rounded-lg transition-all ${isLight ? 'hover:bg-white text-slate-600 hover:text-slate-900' : 'hover:bg-slate-700 text-slate-400 hover:text-white'}`}>
-                      Public Holidays
-                    </a>
-                  </nav>
-                  
-                  {/* Quick Stats */}
-                  <div className={`mt-6 pt-6 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
-                    <h4 className={`text-xs uppercase tracking-wide mb-3 ${theme.textMuted}`}>Quick Stats</h4>
-                    <div className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span className={theme.textMuted}>Population</span>
-                        <span className={`font-medium ${theme.text}`}>{selectedCity.info.population}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className={theme.textMuted}>Language</span>
-                        <span className={`font-medium ${theme.text}`}>{selectedCity.info.language}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className={theme.textMuted}>Timezone</span>
-                        <span className={`font-medium ${theme.text}`}>{offset}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            {/* Header */}
+            <div className="p-6 pb-0">
+              <h2 className={`text-2xl font-bold mb-2 ${theme.text}`}>
+                Ultimate Guide to {selectedCity.city}
+              </h2>
+              <div className="flex items-center gap-4 text-sm mb-4">
+                <span className={theme.textMuted}>
+                  <span className="font-medium">{selectedCity.info.population}</span> population
+                </span>
+                <span className={theme.textMuted}>•</span>
+                <span className={theme.textMuted}>{selectedCity.info.language}</span>
+                <span className={theme.textMuted}>•</span>
+                <span className={theme.textMuted}>{offset}</span>
               </div>
-              
-              {/* Main Content - Right Side */}
-              <div className="flex-1 p-6 lg:p-8">
-                <h2 className={`text-2xl font-bold mb-6 ${theme.text}`}>
-                  Ultimate Guide to {selectedCity.city}
-                </h2>
+            </div>
+            
+            {/* Horizontal Tabs */}
+            <div className={`px-6 border-b ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
+              <div className="flex overflow-x-auto gap-1 -mb-px scrollbar-hide">
+                <button
+                  onClick={() => setGuideTab('overview')}
+                  className={`flex items-center gap-2 px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-all ${
+                    guideTab === 'overview'
+                      ? `${theme.accentText} border-current`
+                      : `${theme.textMuted} border-transparent hover:border-slate-300`
+                  }`}
+                >
+                  <span>🌍</span> Overview
+                </button>
                 
-                {/* Overview Section */}
-                <section id="guide-overview" className="mb-8">
-                  <h3 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
-                    <span className="text-xl">🌍</span> Overview
-                  </h3>
+                {selectedCity.info.attractions && (
+                  <button
+                    onClick={() => setGuideTab('attractions')}
+                    className={`flex items-center gap-2 px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-all ${
+                      guideTab === 'attractions'
+                        ? `${theme.accentText} border-current`
+                        : `${theme.textMuted} border-transparent hover:border-slate-300`
+                    }`}
+                  >
+                    <span>🏛️</span> Attractions
+                  </button>
+                )}
+                
+                {selectedCity.info.seoContent?.transportation && (
+                  <button
+                    onClick={() => setGuideTab('transport')}
+                    className={`flex items-center gap-2 px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-all ${
+                      guideTab === 'transport'
+                        ? `${theme.accentText} border-current`
+                        : `${theme.textMuted} border-transparent hover:border-slate-300`
+                    }`}
+                  >
+                    <span>🚇</span> Transport
+                  </button>
+                )}
+                
+                {selectedCity.info.seoContent?.localTips && (
+                  <button
+                    onClick={() => setGuideTab('tips')}
+                    className={`flex items-center gap-2 px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-all ${
+                      guideTab === 'tips'
+                        ? `${theme.accentText} border-current`
+                        : `${theme.textMuted} border-transparent hover:border-slate-300`
+                    }`}
+                  >
+                    <span>💡</span> Tips
+                  </button>
+                )}
+                
+                {selectedCity.info.seoContent?.emergencyNumbers && (
+                  <button
+                    onClick={() => setGuideTab('emergency')}
+                    className={`flex items-center gap-2 px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-all ${
+                      guideTab === 'emergency'
+                        ? `${theme.accentText} border-current`
+                        : `${theme.textMuted} border-transparent hover:border-slate-300`
+                    }`}
+                  >
+                    <span>🚨</span> Emergency
+                  </button>
+                )}
+                
+                {selectedCity.info.seoContent?.publicHolidays && (
+                  <button
+                    onClick={() => setGuideTab('holidays')}
+                    className={`flex items-center gap-2 px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-all ${
+                      guideTab === 'holidays'
+                        ? `${theme.accentText} border-current`
+                        : `${theme.textMuted} border-transparent hover:border-slate-300`
+                    }`}
+                  >
+                    <span>📅</span> Holidays
+                  </button>
+                )}
+              </div>
+            </div>
+            
+            {/* Tab Content */}
+            <div className="p-6">
+              {/* Overview Tab */}
+              {guideTab === 'overview' && (
+                <div className="space-y-4">
                   <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.demographics}</p>
                   {selectedCity.info.climate && (
-                    <div className={`mt-4 p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+                    <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
                       <div className="flex items-center gap-2 mb-2">
                         <span>🌡️</span>
                         <span className={`font-medium ${theme.text}`}>Climate</span>
@@ -805,68 +850,47 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                       <p className={`text-sm ${theme.textMuted}`}>{selectedCity.info.climate}</p>
                     </div>
                   )}
-                </section>
-                
-                {/* Attractions Section */}
-                {selectedCity.info.attractions && (
-                  <section id="guide-attractions" className="mb-8">
-                    <h3 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
-                      <span className="text-xl">🏛️</span> Top Attractions
-                    </h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {selectedCity.info.attractions.map((attraction, i) => (
-                        <div key={i} className={`p-4 rounded-xl ${isLight ? 'bg-slate-50 hover:bg-slate-100' : 'bg-slate-800/50 hover:bg-slate-700/50'} transition-all`}>
-                          <div className={`font-medium ${theme.text}`}>{attraction}</div>
-                        </div>
-                      ))}
+                </div>
+              )}
+              
+              {/* Attractions Tab */}
+              {guideTab === 'attractions' && selectedCity.info.attractions && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {selectedCity.info.attractions.map((attraction, i) => (
+                    <div key={i} className={`p-4 rounded-xl ${isLight ? 'bg-slate-50 hover:bg-slate-100' : 'bg-slate-800/50 hover:bg-slate-700/50'} transition-all`}>
+                      <div className={`font-medium ${theme.text}`}>{attraction}</div>
                     </div>
-                  </section>
-                )}
-                
-                {/* Transportation Section */}
-                {selectedCity.info.seoContent?.transportation && (
-                  <section id="guide-transport" className="mb-8">
-                    <h3 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
-                      <span className="text-xl">🚇</span> Getting Around
-                    </h3>
-                    <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.transportation}</p>
-                  </section>
-                )}
-                
-                {/* Local Tips Section */}
-                {selectedCity.info.seoContent?.localTips && (
-                  <section id="guide-tips" className="mb-8">
-                    <h3 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
-                      <span className="text-xl">💡</span> Local Tips
-                    </h3>
-                    <div className={`p-4 rounded-xl ${isLight ? 'bg-blue-50 border border-blue-100' : 'bg-blue-900/20 border border-blue-800/30'}`}>
-                      <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.localTips}</p>
-                    </div>
-                  </section>
-                )}
-                
-                {/* Emergency Section */}
-                {selectedCity.info.seoContent?.emergencyNumbers && (
-                  <section id="guide-emergency" className="mb-8">
-                    <h3 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
-                      <span className="text-xl">🚨</span> Emergency Info
-                    </h3>
-                    <div className={`p-4 rounded-xl ${isLight ? 'bg-red-50 border border-red-100' : 'bg-red-900/20 border border-red-800/30'}`}>
-                      <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.emergencyNumbers}</p>
-                    </div>
-                  </section>
-                )}
-                
-                {/* Public Holidays Section */}
-                {selectedCity.info.seoContent?.publicHolidays && (
-                  <section id="guide-holidays" className="mb-4">
-                    <h3 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
-                      <span className="text-xl">📅</span> Public Holidays
-                    </h3>
-                    <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.publicHolidays}</p>
-                  </section>
-                )}
-              </div>
+                  ))}
+                </div>
+              )}
+              
+              {/* Transport Tab */}
+              {guideTab === 'transport' && selectedCity.info.seoContent?.transportation && (
+                <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+                  <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.transportation}</p>
+                </div>
+              )}
+              
+              {/* Tips Tab */}
+              {guideTab === 'tips' && selectedCity.info.seoContent?.localTips && (
+                <div className={`p-4 rounded-xl ${isLight ? 'bg-blue-50 border border-blue-100' : 'bg-blue-900/20 border border-blue-800/30'}`}>
+                  <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.localTips}</p>
+                </div>
+              )}
+              
+              {/* Emergency Tab */}
+              {guideTab === 'emergency' && selectedCity.info.seoContent?.emergencyNumbers && (
+                <div className={`p-4 rounded-xl ${isLight ? 'bg-red-50 border border-red-100' : 'bg-red-900/20 border border-red-800/30'}`}>
+                  <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.emergencyNumbers}</p>
+                </div>
+              )}
+              
+              {/* Holidays Tab */}
+              {guideTab === 'holidays' && selectedCity.info.seoContent?.publicHolidays && (
+                <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+                  <p className={`leading-relaxed ${theme.textMuted}`}>{selectedCity.info.seoContent.publicHolidays}</p>
+                </div>
+              )}
             </div>
           </div>
         )}
