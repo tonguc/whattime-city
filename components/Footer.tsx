@@ -59,6 +59,15 @@ export default function Footer({ isLight }: FooterProps) {
         </div>
         
         <p className={`text-center text-sm ${textMuted}`}>© {new Date().getFullYear()} whattime.city</p>
+        
+        {/* Legal Links */}
+        <div className="flex justify-center gap-4 mt-4">
+          <Link href="/about" className={`text-xs ${textMuted} hover:underline`}>About</Link>
+          <span className={textMuted}>•</span>
+          <Link href="/privacy" className={`text-xs ${textMuted} hover:underline`}>Privacy</Link>
+          <span className={textMuted}>•</span>
+          <Link href="/contact" className={`text-xs ${textMuted} hover:underline`}>Contact</Link>
+        </div>
       </div>
     </footer>
   )
