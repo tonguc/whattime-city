@@ -9,23 +9,17 @@ interface WeatherBackgroundProps {
 }
 
 export default function WeatherBackground({ animation, isDay }: WeatherBackgroundProps) {
-  // Gece mi gündüz mü? (fog/clouds için de kullanılacak)
-  const showNightBase = !isDay
-  const showDayBase = isDay
-  
   return (
     <div className="fixed inset-x-0 top-0 h-screen overflow-hidden pointer-events-none z-[2]">
-      {/* Base animations - her zaman gece/gündüz efekti */}
-      {showDayBase && (animation === 'clear' || animation === 'clouds' || animation === 'fog') && <SunAnimation />}
-      {showNightBase && (animation === 'clear' || animation === 'clouds' || animation === 'fog') && <NightAnimation />}
-      
-      {/* Weather-specific animations */}
+      {/* Rain/Snow/Thunder */}
       {animation === 'rain' && <RainAnimation />}
       {animation === 'drizzle' && <DrizzleAnimation />}
       {animation === 'snow' && <SnowAnimation />}
       {animation === 'thunder' && <ThunderAnimation />}
-      {animation === 'clouds' && <CloudsAnimation />}
-      {animation === 'fog' && <FogAnimation />}
+      
+      {/* Clear weather - day/night */}
+      {animation === 'clear' && isDay && <SunAnimation />}
+      {animation === 'clear' && !isDay && <NightAnimation />}
     </div>
   )
 }
@@ -175,76 +169,6 @@ function ThunderAnimation() {
       <div 
         className={`absolute inset-0 transition-colors duration-100 ${flash ? 'bg-white/15' : 'bg-transparent'}`}
       />
-    </>
-  )
-}
-
-function CloudsAnimation() {
-  const [clouds, setClouds] = useState<Array<{ id: number; top: number; duration: number; delay: number; width: number; height: number }>>([])
-  
-  useEffect(() => {
-    const newClouds = Array.from({ length: 5 }, (_, i) => ({
-      id: i,
-      top: 5 + Math.random() * 20,
-      duration: 40 + Math.random() * 30,
-      delay: i * 8,
-      width: 250 + Math.random() * 150,
-      height: 100 + Math.random() * 60
-    }))
-    setClouds(newClouds)
-  }, [])
-  
-  return (
-    <>
-      <style>{`
-        @keyframes cloudDrift {
-          0% { transform: translateX(-350px); }
-          100% { transform: translateX(calc(100vw + 350px)); }
-        }
-      `}</style>
-      {clouds.map((cloud) => (
-        <div
-          key={cloud.id}
-          className="absolute rounded-full blur-3xl mix-blend-overlay"
-          style={{
-            top: `${cloud.top}%`,
-            left: '-350px',
-            width: `${cloud.width}px`,
-            height: `${cloud.height}px`,
-            background: 'radial-gradient(ellipse, rgba(255,255,255,0.4) 0%, transparent 70%)',
-            animation: `cloudDrift ${cloud.duration}s linear infinite`,
-            animationDelay: `${cloud.delay}s`,
-          }}
-        />
-      ))}
-    </>
-  )
-}
-
-function FogAnimation() {
-  return (
-    <>
-      <style>{`
-        @keyframes fogWave {
-          0%, 100% { transform: translateX(-3%) scaleY(1); opacity: 0.5; }
-          50% { transform: translateX(3%) scaleY(1.1); opacity: 0.7; }
-        }
-      `}</style>
-      <div className="absolute inset-0 mix-blend-overlay">
-        {[0, 1, 2].map((i) => (
-          <div
-            key={i}
-            className="absolute left-0 right-0 bg-gradient-to-t from-white/30 via-white/20 to-transparent"
-            style={{
-              bottom: `${i * 15}%`,
-              height: '40%',
-              animation: `fogWave ${12 + i * 3}s ease-in-out infinite`,
-              animationDelay: `${i * 2}s`,
-              filter: 'blur(30px)',
-            }}
-          />
-        ))}
-      </div>
     </>
   )
 }
