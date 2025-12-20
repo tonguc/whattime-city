@@ -157,7 +157,7 @@ function ThunderAnimation() {
         setFlash(true)
         setTimeout(() => setFlash(false), 50)
       }, 150)
-    }, 4000 + Math.random() * 3000)
+    }, 5000 + Math.random() * 4000)
     
     return () => clearInterval(interval)
   }, [])
@@ -166,7 +166,7 @@ function ThunderAnimation() {
     <>
       <RainAnimation />
       <div 
-        className={`absolute inset-0 transition-colors duration-100 ${flash ? 'bg-white/30' : 'bg-transparent'}`}
+        className={`absolute inset-0 transition-colors duration-100 ${flash ? 'bg-white/15' : 'bg-transparent'}`}
       />
     </>
   )
@@ -176,14 +176,14 @@ function CloudsAnimation() {
   const [clouds, setClouds] = useState<Array<{ id: number; top: number; duration: number; delay: number; width: number; height: number; opacity: number }>>([])
   
   useEffect(() => {
-    const newClouds = Array.from({ length: 8 }, (_, i) => ({
+    const newClouds = Array.from({ length: 6 }, (_, i) => ({
       id: i,
-      top: 5 + Math.random() * 30,
-      duration: 25 + Math.random() * 25,
-      delay: i * 5,
-      width: 300 + Math.random() * 250,
-      height: 120 + Math.random() * 100,
-      opacity: 0.4 + Math.random() * 0.3
+      top: 5 + Math.random() * 25,
+      duration: 30 + Math.random() * 30,
+      delay: i * 6,
+      width: 200 + Math.random() * 150,
+      height: 80 + Math.random() * 60,
+      opacity: 0.15 + Math.random() * 0.15
     }))
     setClouds(newClouds)
   }, [])
@@ -192,17 +192,17 @@ function CloudsAnimation() {
     <>
       <style>{`
         @keyframes cloudMove {
-          0% { transform: translateX(-400px); }
-          100% { transform: translateX(calc(100vw + 400px)); }
+          0% { transform: translateX(-300px); }
+          100% { transform: translateX(calc(100vw + 300px)); }
         }
       `}</style>
       {clouds.map((cloud) => (
         <div
           key={cloud.id}
-          className="absolute bg-white/80 rounded-full blur-3xl"
+          className="absolute bg-white/50 rounded-full blur-3xl"
           style={{
             top: `${cloud.top}%`,
-            left: '-400px',
+            left: '-300px',
             width: `${cloud.width}px`,
             height: `${cloud.height}px`,
             opacity: cloud.opacity,
@@ -220,16 +220,16 @@ function FogAnimation() {
     <>
       <style>{`
         @keyframes fogMove {
-          0%, 100% { opacity: 0.4; transform: translateX(-5%); }
-          50% { opacity: 0.7; transform: translateX(5%); }
+          0%, 100% { opacity: 0.15; transform: translateX(-10%); }
+          50% { opacity: 0.25; transform: translateX(10%); }
         }
       `}</style>
       {[0, 1, 2].map((i) => (
         <div
           key={i}
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent"
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent"
           style={{
-            animation: `fogMove ${8 + i * 2}s ease-in-out infinite`,
+            animation: `fogMove ${10 + i * 3}s ease-in-out infinite`,
             animationDelay: `${i * 2}s`,
           }}
         />
