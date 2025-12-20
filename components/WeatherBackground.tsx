@@ -216,21 +216,34 @@ function CloudsAnimation() {
 }
 
 function FogAnimation() {
+  const [layers, setLayers] = useState<Array<{ id: number; top: number; delay: number; duration: number }>>([])
+  
+  useEffect(() => {
+    const newLayers = Array.from({ length: 4 }, (_, i) => ({
+      id: i,
+      top: 10 + i * 20,
+      delay: i * 1.5,
+      duration: 8 + i * 2
+    }))
+    setLayers(newLayers)
+  }, [])
+  
   return (
     <>
       <style>{`
-        @keyframes fogMove {
-          0%, 100% { opacity: 0.15; transform: translateX(-10%); }
-          50% { opacity: 0.25; transform: translateX(10%); }
+        @keyframes fogDrift {
+          0%, 100% { transform: translateX(-5%) scaleX(1.1); opacity: 0.2; }
+          50% { transform: translateX(5%) scaleX(1); opacity: 0.35; }
         }
       `}</style>
-      {[0, 1, 2].map((i) => (
+      {layers.map((layer) => (
         <div
-          key={i}
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent"
+          key={layer.id}
+          className="absolute left-0 right-0 h-32 bg-gradient-to-b from-white/20 via-white/25 to-transparent rounded-full blur-2xl"
           style={{
-            animation: `fogMove ${10 + i * 3}s ease-in-out infinite`,
-            animationDelay: `${i * 2}s`,
+            top: `${layer.top}%`,
+            animation: `fogDrift ${layer.duration}s ease-in-out infinite`,
+            animationDelay: `${layer.delay}s`,
           }}
         />
       ))}
