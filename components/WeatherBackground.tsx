@@ -10,7 +10,7 @@ interface WeatherBackgroundProps {
 
 export default function WeatherBackground({ animation, isDay }: WeatherBackgroundProps) {
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-[5]">
       {animation === 'rain' && <RainAnimation />}
       {animation === 'drizzle' && <DrizzleAnimation />}
       {animation === 'snow' && <SnowAnimation />}
@@ -67,7 +67,7 @@ function DrizzleAnimation() {
   const [drops, setDrops] = useState<Array<{ id: number; left: number; delay: number; duration: number }>>([])
   
   useEffect(() => {
-    const newDrops = Array.from({ length: 25 }, (_, i) => ({
+    const newDrops = Array.from({ length: 40 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       delay: Math.random() * 3,
@@ -81,19 +81,19 @@ function DrizzleAnimation() {
       <style>{`
         @keyframes drizzleFall {
           0% { transform: translateY(-100%); opacity: 0; }
-          10% { opacity: 0.7; }
-          90% { opacity: 0.7; }
+          10% { opacity: 0.8; }
+          90% { opacity: 0.8; }
           100% { transform: translateY(100vh); opacity: 0; }
         }
       `}</style>
       {drops.map((drop) => (
         <div
           key={drop.id}
-          className="absolute w-0.5 bg-gradient-to-b from-transparent to-blue-300/40 rounded-full"
+          className="absolute w-0.5 bg-gradient-to-b from-blue-200/30 to-blue-400/70 rounded-full"
           style={{
             left: `${drop.left}%`,
             top: '-15px',
-            height: '12px',
+            height: '18px',
             animation: `drizzleFall ${drop.duration}s linear infinite`,
             animationDelay: `${drop.delay}s`,
           }}
