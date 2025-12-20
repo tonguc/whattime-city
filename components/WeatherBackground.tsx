@@ -173,17 +173,16 @@ function ThunderAnimation() {
 }
 
 function CloudsAnimation() {
-  const [clouds, setClouds] = useState<Array<{ id: number; top: number; duration: number; delay: number; width: number; height: number; opacity: number }>>([])
+  const [clouds, setClouds] = useState<Array<{ id: number; top: number; duration: number; delay: number; width: number; height: number }>>([])
   
   useEffect(() => {
-    const newClouds = Array.from({ length: 6 }, (_, i) => ({
+    const newClouds = Array.from({ length: 5 }, (_, i) => ({
       id: i,
-      top: 5 + Math.random() * 25,
-      duration: 30 + Math.random() * 30,
-      delay: i * 6,
-      width: 200 + Math.random() * 150,
-      height: 80 + Math.random() * 60,
-      opacity: 0.15 + Math.random() * 0.15
+      top: 5 + Math.random() * 20,
+      duration: 40 + Math.random() * 30,
+      delay: i * 8,
+      width: 250 + Math.random() * 150,
+      height: 100 + Math.random() * 60
     }))
     setClouds(newClouds)
   }, [])
@@ -191,22 +190,22 @@ function CloudsAnimation() {
   return (
     <>
       <style>{`
-        @keyframes cloudMove {
-          0% { transform: translateX(-300px); }
-          100% { transform: translateX(calc(100vw + 300px)); }
+        @keyframes cloudDrift {
+          0% { transform: translateX(-350px); }
+          100% { transform: translateX(calc(100vw + 350px)); }
         }
       `}</style>
       {clouds.map((cloud) => (
         <div
           key={cloud.id}
-          className="absolute bg-white/50 rounded-full blur-3xl"
+          className="absolute rounded-full blur-3xl mix-blend-overlay"
           style={{
             top: `${cloud.top}%`,
-            left: '-300px',
+            left: '-350px',
             width: `${cloud.width}px`,
             height: `${cloud.height}px`,
-            opacity: cloud.opacity,
-            animation: `cloudMove ${cloud.duration}s linear infinite`,
+            background: 'radial-gradient(ellipse, rgba(255,255,255,0.4) 0%, transparent 70%)',
+            animation: `cloudDrift ${cloud.duration}s linear infinite`,
             animationDelay: `${cloud.delay}s`,
           }}
         />
@@ -216,37 +215,29 @@ function CloudsAnimation() {
 }
 
 function FogAnimation() {
-  const [layers, setLayers] = useState<Array<{ id: number; top: number; delay: number; duration: number }>>([])
-  
-  useEffect(() => {
-    const newLayers = Array.from({ length: 4 }, (_, i) => ({
-      id: i,
-      top: 10 + i * 20,
-      delay: i * 1.5,
-      duration: 8 + i * 2
-    }))
-    setLayers(newLayers)
-  }, [])
-  
   return (
     <>
       <style>{`
-        @keyframes fogDrift {
-          0%, 100% { transform: translateX(-5%) scaleX(1.1); opacity: 0.2; }
-          50% { transform: translateX(5%) scaleX(1); opacity: 0.35; }
+        @keyframes fogWave {
+          0%, 100% { transform: translateX(-3%) scaleY(1); opacity: 0.5; }
+          50% { transform: translateX(3%) scaleY(1.1); opacity: 0.7; }
         }
       `}</style>
-      {layers.map((layer) => (
-        <div
-          key={layer.id}
-          className="absolute left-0 right-0 h-32 bg-gradient-to-b from-white/20 via-white/25 to-transparent rounded-full blur-2xl"
-          style={{
-            top: `${layer.top}%`,
-            animation: `fogDrift ${layer.duration}s ease-in-out infinite`,
-            animationDelay: `${layer.delay}s`,
-          }}
-        />
-      ))}
+      <div className="absolute inset-0 mix-blend-overlay">
+        {[0, 1, 2].map((i) => (
+          <div
+            key={i}
+            className="absolute left-0 right-0 bg-gradient-to-t from-white/30 via-white/20 to-transparent"
+            style={{
+              bottom: `${i * 15}%`,
+              height: '40%',
+              animation: `fogWave ${12 + i * 3}s ease-in-out infinite`,
+              animationDelay: `${i * 2}s`,
+              filter: 'blur(30px)',
+            }}
+          />
+        ))}
+      </div>
     </>
   )
 }
