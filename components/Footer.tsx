@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { TimeIcons } from '@/components/TimeIcons'
 
 interface FooterProps {
   isLight: boolean
@@ -13,7 +14,7 @@ export default function Footer({ isLight }: FooterProps) {
     <footer className={`py-6 border-t ${isLight ? 'border-slate-200 bg-white/50' : 'border-slate-800 bg-slate-900/50'}`}>
       <div className="max-w-6xl mx-auto px-4">
         {/* Links Row */}
-        <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-3">
+        <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4">
           <Link href="/map" className={`text-sm ${textMuted} hover:underline`}>World Map</Link>
           <Link href="/country" className={`text-sm ${textMuted} hover:underline`}>Countries</Link>
           <Link href="/tools" className={`text-sm ${textMuted} hover:underline`}>Tools</Link>
@@ -23,6 +24,20 @@ export default function Footer({ isLight }: FooterProps) {
           <Link href="/privacy" className={`text-sm ${textMuted} hover:underline`}>Privacy</Link>
           <Link href="/contact" className={`text-sm ${textMuted} hover:underline`}>Contact</Link>
         </nav>
+        
+        {/* Time of day legend */}
+        <div className="flex flex-wrap justify-center gap-4 mb-3">
+          {(['dawn', 'day', 'dusk', 'night'] as const).map(tod => {
+            const Icon = TimeIcons[tod]
+            const labels = { dawn: 'Dawn', day: 'Day', dusk: 'Dusk', night: 'Night' }
+            return (
+              <div key={tod} className={`flex items-center gap-1.5 text-xs ${textMuted}`} title={labels[tod]}>
+                <Icon className="w-4 h-4" />
+                <span>{labels[tod]}</span>
+              </div>
+            )
+          })}
+        </div>
         
         {/* Copyright Row */}
         <p className={`text-center text-sm ${textMuted}`}>© {new Date().getFullYear()} whattime.city</p>
