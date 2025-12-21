@@ -55,10 +55,10 @@ export default function SimpleHeader({ isLight = false }: SimpleHeaderProps) {
   
   return (
     <header className={`sticky top-0 z-50 w-full backdrop-blur-xl ${isLight ? 'bg-white/80 border-slate-200/50' : 'bg-slate-900/80 border-slate-700/50'} border-b`}>
-      <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between gap-4">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-3">
         {/* Logo */}
-        <Link href="/" className="hover:opacity-80 transition-opacity flex-shrink-0 py-1">
-          <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" className="h-10 sm:h-12" />
+        <Link href="/" className="hover:opacity-80 transition-opacity flex-shrink-0">
+          <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" className="h-8 sm:h-10" />
         </Link>
         
         {/* Search */}

@@ -68,10 +68,10 @@ export default function Header() {
   
   return (
     <header className={`sticky top-0 z-50 w-full backdrop-blur-xl ${isLight ? 'bg-white/80' : 'bg-slate-900/80'} border-b ${isLight ? 'border-slate-200/50' : 'border-slate-700/50'}`}>
-      <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between gap-4">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-3">
         {/* Logo - Always goes to HOME */}
-        <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0 py-1">
-          <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" className="h-10 sm:h-12" />
+        <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0">
+          <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" className="h-8 sm:h-10" />
         </button>
         
         {/* Search */}

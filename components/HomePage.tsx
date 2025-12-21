@@ -392,11 +392,11 @@ export default function HomePage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
             {popularComparisons.map(c => (
               <Link key={`${c.from}-${c.to}`} href={`/time/${c.from}/${c.to}`}
-                className={`px-3 py-2 rounded-lg text-sm text-center transition-all ${isLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-slate-300'}`}>
+                className={`px-3 py-2 rounded-lg text-sm text-left transition-all ${isLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-slate-300'}`}>
                 {c.label}
               </Link>
             ))}
-            <Link href="/tools/converter" className={`px-3 py-2 rounded-lg text-sm text-center font-medium ${theme.accentText} ${isLight ? 'bg-blue-50' : 'bg-blue-900/20'}`}>
+            <Link href="/tools/converter" className={`px-3 py-2 rounded-lg text-sm text-left font-medium ${theme.accentText} ${isLight ? 'bg-blue-50' : 'bg-blue-900/20'}`}>
               All →
             </Link>
           </div>
@@ -405,12 +405,10 @@ export default function HomePage() {
         {/* WORLD CITIES */}
         <section className={`rounded-2xl p-5 mb-4 backdrop-blur-xl border ${theme.card}`}>
           <div className="flex items-center gap-2 mb-4">
-            <svg className={`w-5 h-5 ${isLight ? 'text-emerald-500' : 'text-emerald-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <svg className={`w-5 h-5 ${isLight ? 'text-emerald-500' : 'text-emerald-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10"/>
-              <ellipse cx="12" cy="12" rx="4" ry="10"/>
               <path d="M2 12h20"/>
-              <path d="M12 2c2.5 3.5 2.5 14.5 0 20"/>
-              <path d="M12 2c-2.5 3.5-2.5 14.5 0 20"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
             </svg>
             <h3 className={`text-lg font-semibold ${theme.text}`}>World Cities</h3>
             {detectedCity && (
