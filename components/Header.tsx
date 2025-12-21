@@ -71,7 +71,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
         {/* Logo - Always goes to HOME */}
         <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0">
-          <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" className="h-10 sm:h-12" />
+          <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" className="h-11 sm:h-14" />
         </button>
         
         {/* Search */}

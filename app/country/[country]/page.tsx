@@ -340,15 +340,18 @@ export default async function CountryPage({ params }: CountryPageProps) {
         </section>
         
         {/* Footer */}
-        <footer className="mt-8 text-center text-slate-500 text-sm">
-          <p>© {new Date().getFullYear()} whattime.city - World Clock & Time Zones</p>
-          <div className="flex justify-center gap-4 mt-3 text-xs">
-            <a href="/about" className="hover:text-slate-300 transition-colors">About</a>
-            <span>•</span>
-            <a href="/privacy" className="hover:text-slate-300 transition-colors">Privacy</a>
-            <span>•</span>
-            <a href="/contact" className="hover:text-slate-300 transition-colors">Contact</a>
-          </div>
+        <footer className="mt-8 pt-6 border-t border-slate-800">
+          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-3 text-sm text-slate-400">
+            <a href="/map" className="hover:underline">World Map</a>
+            <a href="/country" className="hover:underline">Countries</a>
+            <a href="/tools" className="hover:underline">Tools</a>
+            <a href="/widget" className="hover:underline">Widget</a>
+            <span>|</span>
+            <a href="/about" className="hover:underline">About</a>
+            <a href="/privacy" className="hover:underline">Privacy</a>
+            <a href="/contact" className="hover:underline">Contact</a>
+          </nav>
+          <p className="text-sm text-slate-400 text-center">© {new Date().getFullYear()} whattime.city</p>
         </footer>
       </div>
     </div>

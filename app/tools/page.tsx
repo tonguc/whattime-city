@@ -166,19 +166,20 @@ export default function ToolsPage() {
         </div>
 
         {/* Footer */}
-        <footer className={`mt-16 pt-8 border-t ${isLight ? 'border-slate-200/50' : 'border-slate-700/50'}`}>
-          <div className="text-center">
-            <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-              © {new Date().getFullYear()} whattime.city — All rights reserved
-            </p>
-            <div className={`flex justify-center gap-4 mt-3 text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-              <a href="/about" className="hover:opacity-80 transition-opacity">About</a>
-              <span>•</span>
-              <a href="/privacy" className="hover:opacity-80 transition-opacity">Privacy</a>
-              <span>•</span>
-              <a href="/contact" className="hover:opacity-80 transition-opacity">Contact</a>
-            </div>
-          </div>
+        <footer className={`mt-16 pt-6 border-t ${isLight ? 'border-slate-200/50' : 'border-slate-700/50'}`}>
+          <nav className={`flex flex-wrap justify-center gap-x-6 gap-y-2 mb-3 text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+            <a href="/map" className="hover:underline">World Map</a>
+            <a href="/country" className="hover:underline">Countries</a>
+            <a href="/tools" className="hover:underline">Tools</a>
+            <a href="/widget" className="hover:underline">Widget</a>
+            <span>|</span>
+            <a href="/about" className="hover:underline">About</a>
+            <a href="/privacy" className="hover:underline">Privacy</a>
+            <a href="/contact" className="hover:underline">Contact</a>
+          </nav>
+          <p className={`text-sm text-center ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+            © {new Date().getFullYear()} whattime.city
+          </p>
         </footer>
     </>
   )

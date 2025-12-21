@@ -136,15 +136,18 @@ export default function CountriesPage() {
 
       {/* Footer */}
       <footer className="border-t border-slate-800 mt-16">
-        <div className="max-w-6xl mx-auto px-4 py-8 text-center text-slate-500 text-sm">
-          <p>© {new Date().getFullYear()} whattime.city - World Clock & Time Zones</p>
-          <div className="flex justify-center gap-4 mt-3">
-            <Link href="/about" className="hover:text-slate-300 transition-colors">About</Link>
-            <span>•</span>
-            <Link href="/privacy" className="hover:text-slate-300 transition-colors">Privacy</Link>
-            <span>•</span>
-            <Link href="/contact" className="hover:text-slate-300 transition-colors">Contact</Link>
-          </div>
+        <div className="max-w-6xl mx-auto px-4 py-6 text-center">
+          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-3 text-sm text-slate-400">
+            <Link href="/map" className="hover:underline">World Map</Link>
+            <Link href="/country" className="hover:underline">Countries</Link>
+            <Link href="/tools" className="hover:underline">Tools</Link>
+            <Link href="/widget" className="hover:underline">Widget</Link>
+            <span>|</span>
+            <Link href="/about" className="hover:underline">About</Link>
+            <Link href="/privacy" className="hover:underline">Privacy</Link>
+            <Link href="/contact" className="hover:underline">Contact</Link>
+          </nav>
+          <p className="text-sm text-slate-400">© {new Date().getFullYear()} whattime.city</p>
         </div>
       </footer>
     </div>
