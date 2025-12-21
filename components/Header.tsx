@@ -71,8 +71,8 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2 sm:gap-3">
         {/* Logo - Always goes to HOME */}
         <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0">
-          {/* Mobile: Only icon */}
-          <img src="/logo-icon.svg" alt="whattime.city" className="h-9 sm:hidden" />
+          {/* Mobile: Compact logo with text */}
+          <img src={isLight ? "/logo-mobile.svg" : "/logo-mobile-dark.svg"} alt="whattime.city" className="h-9 sm:hidden" />
           {/* Desktop: Full logo */}
           <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" className="h-10 hidden sm:block" />
         </button>
