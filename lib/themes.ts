@@ -48,8 +48,8 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     label: 'Dawn'
   },
   day: {
-    bg: 'from-sky-200 via-blue-100 to-cyan-100',
-    card: 'bg-white/80 border-sky-300/60',
+    bg: 'from-sky-300 via-cyan-200 to-blue-200',
+    card: 'bg-white/70 border-sky-400/50',
     text: 'text-slate-800',
     textMuted: 'text-slate-600',
     accent: 'amber',
@@ -58,7 +58,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     accentBg: 'bg-amber-500',
     accentBgLight: 'bg-amber-500/20',
     accentBorder: 'border-amber-500/50',
-    glow: 'bg-sky-400/30',
+    glow: 'bg-yellow-400/30',
     icon: 'day',
     label: 'Day'
   },
@@ -93,17 +93,17 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     label: 'Dark'
   },
   light: {
-    bg: 'from-sky-200 via-blue-50 to-sky-100',
-    card: 'bg-white/90 border-sky-300/60',
+    bg: 'from-slate-100 via-gray-50 to-slate-100',
+    card: 'bg-white/90 border-slate-200',
     text: 'text-slate-800',
-    textMuted: 'text-slate-600',
-    accent: 'amber',
-    accentClass: 'text-amber-500',
-    accentText: 'text-amber-600',
-    accentBg: 'bg-amber-500',
-    accentBgLight: 'bg-amber-500/20',
-    accentBorder: 'border-amber-500/50',
-    glow: 'bg-blue-400/20',
+    textMuted: 'text-slate-500',
+    accent: 'blue',
+    accentClass: 'text-blue-500',
+    accentText: 'text-blue-600',
+    accentBg: 'bg-blue-500',
+    accentBgLight: 'bg-blue-500/20',
+    accentBorder: 'border-blue-500/50',
+    glow: 'bg-slate-300/30',
     icon: 'day',
     label: 'Light'
   }

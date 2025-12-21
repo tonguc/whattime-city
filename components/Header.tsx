@@ -168,7 +168,7 @@ export default function Header() {
                   <label className={`text-sm font-medium ${theme.text} mb-2 block`}>Theme</label>
                   <div className="flex gap-2">
                     {(['light', 'auto', 'dark'] as const).map(mode => {
-                      const labels = { light: 'Light Mode', auto: 'Auto (System)', dark: 'Dark Mode' }
+                      const labels = { light: 'Light Mode', auto: 'Auto (Day/Night)', dark: 'Dark Mode' }
                       const icons = { light: '☀️', auto: '🔄', dark: '🌙' }
                       return (
                         <button key={mode} onClick={() => setThemeMode(mode)}
