@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { countries } from '@/lib/cities'
-import SimpleHeader from '@/components/SimpleHeader'
+import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { useCityContext } from '@/lib/CityContext'
 
 // Group countries by continent
 function getCountriesByContinent() {
@@ -39,19 +39,7 @@ const continentInfo: Record<string, { name: string; emoji: string }> = {
 }
 
 export default function CountriesContent() {
-  const [isLight, setIsLight] = useState(false)
-  
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('themeMode')
-    if (savedTheme === 'light') {
-      setIsLight(true)
-    } else if (savedTheme === 'dark') {
-      setIsLight(false)
-    } else {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-      setIsLight(!prefersDark)
-    }
-  }, [])
+  const { theme, isLight } = useCityContext()
   
   const countriesByContinent = getCountriesByContinent()
   const totalCountries = countries.length
@@ -62,11 +50,8 @@ export default function CountriesContent() {
   const badgeBg = isLight ? 'bg-slate-200 text-slate-600' : 'bg-slate-700 text-slate-300'
   
   return (
-    <div className={`min-h-screen ${isLight 
-      ? 'bg-gradient-to-br from-slate-100 via-white to-slate-100' 
-      : 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900'
-    }`}>
-      <SimpleHeader isLight={isLight} />
+    <div className={`min-h-screen bg-gradient-to-br ${theme.bg}`}>
+      <Header />
 
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-8">

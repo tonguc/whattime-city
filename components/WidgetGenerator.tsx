@@ -7,6 +7,7 @@ import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes } from '@/lib/themes'
 import { useCityContext } from '@/lib/CityContext'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export default function WidgetGenerator() {
   const { theme: pageTheme, isLight, time } = useCityContext()
@@ -333,21 +334,7 @@ export default function WidgetGenerator() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className={`border-t mt-16 ${isLight ? 'border-slate-200' : 'border-slate-800'}`}>
-        <div className="max-w-6xl mx-auto px-4 py-8 text-center">
-          <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-            © {new Date().getFullYear()} whattime.city - Free Clock Widget for Your Website
-          </p>
-          <div className={`flex justify-center gap-4 mt-3 text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-            <a href="/about" className="hover:underline">About</a>
-            <span>•</span>
-            <a href="/privacy" className="hover:underline">Privacy</a>
-            <span>•</span>
-            <a href="/contact" className="hover:underline">Contact</a>
-          </div>
-        </div>
-      </footer>
+      <Footer isLight={isLight} />
     </div>
   )
 }
