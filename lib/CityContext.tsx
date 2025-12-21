@@ -30,7 +30,7 @@ interface CityContextType {
   // Theme
   themeMode: 'auto' | 'light' | 'dark'
   setThemeMode: (mode: 'auto' | 'light' | 'dark') => void
-  currentTheme: TimeOfDay
+  currentTheme: TimeOfDay | 'light' | 'dark'
   theme: Theme
   isLight: boolean
   
@@ -141,9 +141,9 @@ export function CityProvider({ children }: { children: ReactNode }) {
   
   // Calculate current theme based on active city
   const autoTheme = getTimeOfDay(time, activeCity.lat, activeCity.lng, activeCity.timezone)
-  const currentTheme: TimeOfDay = themeMode === 'auto' 
+  const currentTheme = themeMode === 'auto' 
     ? autoTheme 
-    : themeMode === 'light' ? 'day' : 'night'
+    : themeMode  // 'light' veya 'dark' direkt kullan
   const theme = themes[currentTheme]
   const isLight = isLightTheme(currentTheme)
   
