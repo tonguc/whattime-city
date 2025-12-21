@@ -48,8 +48,8 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     label: 'Dawn'
   },
   day: {
-    bg: 'from-blue-400 via-sky-400 to-cyan-400',
-    card: 'bg-white/90 border-blue-400/50',
+    bg: 'from-blue-500 via-sky-400 to-cyan-400',
+    card: 'bg-white/95 border-blue-500/40',
     text: 'text-slate-900',
     textMuted: 'text-slate-700',
     accent: 'amber',
@@ -93,17 +93,17 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
     label: 'Dark'
   },
   light: {
-    bg: 'from-slate-100 via-gray-50 to-slate-100',
-    card: 'bg-white/90 border-slate-200',
+    bg: 'from-gray-100 via-white to-gray-100',
+    card: 'bg-white border-gray-200',
     text: 'text-slate-800',
     textMuted: 'text-slate-500',
-    accent: 'blue',
-    accentClass: 'text-blue-500',
-    accentText: 'text-blue-600',
-    accentBg: 'bg-blue-500',
-    accentBgLight: 'bg-blue-500/20',
-    accentBorder: 'border-blue-500/50',
-    glow: 'bg-slate-300/30',
+    accent: 'slate',
+    accentClass: 'text-slate-600',
+    accentText: 'text-slate-700',
+    accentBg: 'bg-slate-600',
+    accentBgLight: 'bg-slate-500/20',
+    accentBorder: 'border-slate-300',
+    glow: 'bg-slate-200/50',
     icon: 'day',
     label: 'Light'
   }
