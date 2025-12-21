@@ -68,10 +68,13 @@ export default function Header() {
   
   return (
     <header className={`sticky top-0 z-50 w-full backdrop-blur-xl ${isLight ? 'bg-white/80' : 'bg-slate-900/80'} border-b ${isLight ? 'border-slate-200/50' : 'border-slate-700/50'}`}>
-      <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-3">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2 sm:gap-3">
         {/* Logo - Always goes to HOME */}
         <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0">
-          <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" className="h-8 sm:h-10" />
+          {/* Mobile: Only icon */}
+          <img src="/logo-icon.svg" alt="whattime.city" className="h-9 sm:hidden" />
+          {/* Desktop: Full logo */}
+          <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" className="h-10 hidden sm:block" />
         </button>
         
         {/* Search */}
@@ -164,12 +167,17 @@ export default function Header() {
                 <div>
                   <label className={`text-sm font-medium ${theme.text} mb-2 block`}>Theme</label>
                   <div className="flex gap-2">
-                    {(['light', 'auto', 'dark'] as const).map(mode => (
-                      <button key={mode} onClick={() => setThemeMode(mode)}
-                        className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${themeMode === mode ? `${theme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>
-                        {mode === 'light' ? '☀️' : mode === 'dark' ? '🌙' : '🔄'}
-                      </button>
-                    ))}
+                    {(['light', 'auto', 'dark'] as const).map(mode => {
+                      const labels = { light: 'Light Mode', auto: 'Auto (System)', dark: 'Dark Mode' }
+                      const icons = { light: '☀️', auto: '🔄', dark: '🌙' }
+                      return (
+                        <button key={mode} onClick={() => setThemeMode(mode)}
+                          title={labels[mode]}
+                          className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${themeMode === mode ? `${theme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600 hover:bg-slate-200' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'}`}>
+                          {icons[mode]}
+                        </button>
+                      )
+                    })}
                   </div>
                 </div>
               </div>
