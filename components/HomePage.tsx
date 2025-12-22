@@ -71,15 +71,7 @@ export default function HomePage() {
   const [compareWithResults, setCompareWithResults] = useState<City[]>([])
   const compareWithRef = useRef<HTMLDivElement>(null)
 
-  // CRITICAL: Reset activeCity to detectedCity when HomePage mounts
-  // This ensures theme updates when navigating back home via logo
-  useEffect(() => {
-    if (detectedCity) {
-      setActiveCity(detectedCity)
-    }
-  }, [detectedCity, setActiveCity])
-
-  // Set fromCity when detectedCity becomes available
+  // Set fromCity when detectedCity becomes available (for comparison feature)
   useEffect(() => {
     if (detectedCity && !fromCity) {
       setFromCity(detectedCity)

@@ -57,6 +57,7 @@ export function CityProvider({ children }: { children: ReactNode }) {
   const [time, setTime] = useState(new Date())
   const [activeCity, setActiveCityState] = useState<City>(() => cities.find(c => c.slug === 'london') || cities[0])
   const [detectedCity, setDetectedCity] = useState<City | null>(null)
+  const [activeCityLoaded, setActiveCityLoaded] = useState(false)
   
   // Preferences (persisted)
   const [themeMode, setThemeModeState] = useState<'auto' | 'light' | 'dark'>('auto')
@@ -70,7 +71,7 @@ export function CityProvider({ children }: { children: ReactNode }) {
     return () => clearInterval(timer)
   }, [])
   
-  // Load preferences from localStorage
+  // Load preferences from localStorage (including activeCity)
   useEffect(() => {
     try {
       const tm = localStorage.getItem('whattime-theme-mode')
@@ -84,30 +85,52 @@ export function CityProvider({ children }: { children: ReactNode }) {
       
       const f = localStorage.getItem('whattime-favorites')
       if (f) setFavorites(JSON.parse(f))
-    } catch {}
+      
+      // Load active city from localStorage
+      const savedCitySlug = localStorage.getItem('whattime-active-city')
+      if (savedCitySlug) {
+        const savedCity = cities.find(c => c.slug === savedCitySlug)
+        if (savedCity) {
+          setActiveCityState(savedCity)
+        }
+      }
+      setActiveCityLoaded(true)
+    } catch {
+      setActiveCityLoaded(true)
+    }
   }, [])
   
-  // Detect user location
+  // Detect user location - only set activeCity if no saved city exists
   useEffect(() => {
+    if (!activeCityLoaded) return // Wait for localStorage to load first
+    
     if (typeof window !== 'undefined' && 'geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
         (pos) => {
           const nearest = findNearestCity(pos.coords.latitude, pos.coords.longitude)
           setDetectedCity(nearest)
-          // Only set active city if still default
-          setActiveCityState(prev => prev.slug === 'london' ? nearest : prev)
+          // Only set active city if no saved preference exists
+          const hasSavedCity = localStorage.getItem('whattime-active-city')
+          if (!hasSavedCity) {
+            setActiveCityState(nearest)
+            try { localStorage.setItem('whattime-active-city', nearest.slug) } catch {}
+          }
         },
         () => {
           // Fallback to timezone
           const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
           const tzCity = cities.find(c => c.timezone === tz) || cities[0]
           setDetectedCity(tzCity)
-          setActiveCityState(prev => prev.slug === 'london' ? tzCity : prev)
+          const hasSavedCity = localStorage.getItem('whattime-active-city')
+          if (!hasSavedCity) {
+            setActiveCityState(tzCity)
+            try { localStorage.setItem('whattime-active-city', tzCity.slug) } catch {}
+          }
         },
         { timeout: 5000, maximumAge: 300000 }
       )
     }
-  }, [])
+  }, [activeCityLoaded])
   
   // Setters that persist to localStorage
   const setThemeMode = (mode: 'auto' | 'light' | 'dark') => {
@@ -127,6 +150,8 @@ export function CityProvider({ children }: { children: ReactNode }) {
   
   const setActiveCity = (city: City) => {
     setActiveCityState(city)
+    // Persist to localStorage so it survives navigation
+    try { localStorage.setItem('whattime-active-city', city.slug) } catch {}
   }
   
   const toggleFavorite = (slug: string) => {
