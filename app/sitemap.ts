@@ -3,60 +3,60 @@ import { cities, countries, getTier1Cities } from '@/lib/cities'
 export default async function sitemap() {
   const baseUrl = 'https://whattime.city'
   
-  // Ana sayfalar
+  // Ana sayfalar (trailing slash ile)
   const staticRoutes = [
     {
-      url: baseUrl,
+      url: `${baseUrl}/`,
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
       priority: 1,
     },
     {
-      url: `${baseUrl}/map`,
+      url: `${baseUrl}/map/`,
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/country`,
+      url: `${baseUrl}/country/`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/widget`,
+      url: `${baseUrl}/widget/`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/tools`,
+      url: `${baseUrl}/tools/`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
   ]
   
-  // Tool sayfaları
+  // Tool sayfaları (trailing slash ile)
   const toolSlugs = ['converter', 'meeting-planner', 'flight-times', 'jet-lag', 'event-time', 'alarm']
   const toolRoutes = toolSlugs.map((slug) => ({
-    url: `${baseUrl}/tools/${slug}`,
+    url: `${baseUrl}/tools/${slug}/`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
   }))
   
-  // Tüm şehir sayfaları
+  // Tüm şehir sayfaları (trailing slash ile)
   const cityRoutes = cities.map((city) => ({
-    url: `${baseUrl}/${city.slug}`,
+    url: `${baseUrl}/${city.slug}/`,
     lastModified: new Date(),
     changeFrequency: 'daily' as const,
     priority: city.tier === 1 ? 0.9 : city.tier === 2 ? 0.8 : 0.7,
   }))
   
-  // Tüm ülke sayfaları
+  // Tüm ülke sayfaları (trailing slash ile)
   const countryRoutes = countries.map((country) => ({
-    url: `${baseUrl}/country/${country.slug}`,
+    url: `${baseUrl}/country/${country.slug}/`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
@@ -90,7 +90,7 @@ export default async function sitemap() {
         const priority = (fromCity?.tier === 1 && toCity?.tier === 1) ? 0.8 : 0.6
         
         timeCompareRoutes.push({
-          url: `${baseUrl}/time/${from}/${to}`,
+          url: `${baseUrl}/time/${from}/${to}/`,
           lastModified: new Date(),
           changeFrequency: 'daily' as const,
           priority,
