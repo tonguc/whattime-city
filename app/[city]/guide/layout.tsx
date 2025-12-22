@@ -61,7 +61,7 @@ export default function GuideLayout({
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg}`}>
       <Header />
       
-      {/* Sticky Time Bar - appears on scroll, below header */}
+      {/* Sticky Time Bar - appears on scroll */}
       <div className={`fixed top-14 md:top-16 left-0 right-0 z-30 transition-all duration-300 ${
         isScrolled ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
       }`}>
@@ -69,13 +69,9 @@ export default function GuideLayout({
           isLight ? 'border-slate-200' : 'border-slate-700'
         } shadow-sm`}>
           <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between text-sm">
-            <div className="flex items-center gap-2 md:gap-4 overflow-x-auto">
+            <div className="flex items-center gap-2 md:gap-4">
               <span className={`font-medium whitespace-nowrap ${isLight ? 'text-slate-800' : 'text-white'}`}>
                 🗽 NYC: {nycTimeStr}
-              </span>
-              <span className={`hidden sm:inline ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>|</span>
-              <span className={`hidden sm:inline whitespace-nowrap ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
-                📍 You: {localTimeStr}
               </span>
               <span className={`px-2 py-0.5 rounded text-xs whitespace-nowrap ${
                 hourDiff === 0 
@@ -85,6 +81,11 @@ export default function GuideLayout({
                     : 'bg-amber-100 text-amber-700'
               }`}>
                 {diffText}
+              </span>
+              {/* Desktop only: local time */}
+              <span className={`hidden md:inline ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>|</span>
+              <span className={`hidden md:inline whitespace-nowrap ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+                📍 You: {localTimeStr}
               </span>
             </div>
             <Link 
