@@ -38,13 +38,15 @@ export default function GuideLayout({
   const localTimeStr = localTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })
   
   // Calculate hour difference between user's local time and city time
-  const cityOffset = citySlug === 'london' ? 0 : -5 // GMT for London, EST for NYC (simplified)
+  const cityOffsets: Record<string, number> = { 'london': 0, 'tokyo': 9, 'new-york': -5 }
+  const cityOffset = cityOffsets[citySlug] ?? -5
   const localOffset = -localTime.getTimezoneOffset() / 60
   const hourDiff = localOffset - cityOffset
   const diffText = hourDiff === 0 ? 'Same time' : hourDiff > 0 ? `+${hourDiff}h ahead` : `${hourDiff}h behind`
   
-  // City-specific icon for Best Time to Visit
-  const visitIcon = citySlug === 'london' ? '🇬🇧' : '🗽'
+  // City-specific icons
+  const visitIcons: Record<string, string> = { 'london': '🇬🇧', 'tokyo': '🌸', 'new-york': '🗽' }
+  const visitIcon = visitIcons[citySlug] ?? '🗽'
   
   const guideLinks = [
     { slug: '', label: 'Overview', icon: '📖' },
@@ -72,7 +74,7 @@ export default function GuideLayout({
           <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between text-sm">
             <div className="flex items-center gap-2 md:gap-4">
               <span className={`font-medium whitespace-nowrap ${isLight ? 'text-slate-800' : 'text-white'}`}>
-                {citySlug === 'london' ? '🇬🇧 London' : '🗽 NYC'}: {cityTimeStr}
+                {citySlug === 'london' ? '🇬🇧 London' : citySlug === 'tokyo' ? '🇯🇵 Tokyo' : '🗽 NYC'}: {cityTimeStr}
               </span>
               <span className="px-2 py-0.5 rounded text-xs whitespace-nowrap bg-blue-100 text-blue-700">
                 {diffText}
@@ -117,7 +119,7 @@ export default function GuideLayout({
               >
                 <span className="flex items-center gap-2">
                   <span>📑</span>
-                  <span>{citySlug === 'london' ? 'London' : 'NYC'} Guide Menu</span>
+                  <span>{citySlug === 'london' ? 'London' : citySlug === 'tokyo' ? 'Tokyo' : 'NYC'} Guide Menu</span>
                 </span>
                 <span className={`transition-transform duration-200 ${isMobileMenuOpen ? 'rotate-180' : ''}`}>
                   ▼

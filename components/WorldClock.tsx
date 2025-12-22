@@ -579,6 +579,35 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               </div>
             </a>
           )}
+          
+          {/* Tokyo Guide Card - only for Tokyo */}
+          {selectedCity.slug === 'tokyo' && (
+            <a 
+              href="/tokyo/guide/"
+              className={`group rounded-2xl p-4 flex items-center gap-3 col-span-2 md:col-span-4 transition-all hover:scale-[1.01] ${
+                isLight 
+                  ? 'bg-gradient-to-r from-rose-100 to-pink-100 border-2 border-rose-300 hover:border-rose-400 hover:shadow-lg' 
+                  : 'bg-gradient-to-r from-rose-900/50 to-pink-900/50 border-2 border-rose-600 hover:border-rose-500 hover:shadow-lg'
+              }`}
+            >
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${isLight ? 'bg-white/80' : 'bg-slate-800/80'}`}>
+                <span className="text-2xl">🇯🇵</span>
+              </div>
+              <div className="flex-1">
+                <div className={`font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>Tokyo Time Guide</div>
+                <div className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+                  TSE hours, Golden Week, cherry blossoms & more
+                </div>
+              </div>
+              <div className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                isLight 
+                  ? 'bg-rose-500 text-white group-hover:bg-rose-600' 
+                  : 'bg-rose-500 text-white group-hover:bg-rose-400'
+              }`}>
+                Explore →
+              </div>
+            </a>
+          )}
         </div>
         
         {/* === 4. TIME INTELLIGENCE (SEO 1) === */}

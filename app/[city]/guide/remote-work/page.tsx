@@ -4,11 +4,12 @@ import { notFound } from 'next/navigation'
 import { getGuideConfig } from '@/lib/guide-content'
 import RemoteWorkContent from './RemoteWorkContent'
 import LondonRemoteWorkContent from './LondonRemoteWorkContent'
+import TokyoRemoteWorkContent from './TokyoRemoteWorkContent'
 
 type Props = { params: Promise<{ city: string }> }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }, { city: 'london' }]
+  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -29,5 +30,6 @@ export default async function RemoteWorkPage({ params }: Props) {
   const config = getGuideConfig(citySlug)
   if (!city || !config) notFound()
   if (citySlug === 'london') return <LondonRemoteWorkContent city={city} />
+  if (citySlug === 'tokyo') return <TokyoRemoteWorkContent city={city} />
   return <RemoteWorkContent city={city} />
 }

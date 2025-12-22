@@ -4,13 +4,14 @@ import { notFound } from 'next/navigation'
 import { getGuideConfig } from '@/lib/guide-content'
 import BusinessHoursContent from './BusinessHoursContent'
 import LondonBusinessHoursContent from './LondonBusinessHoursContent'
+import TokyoBusinessHoursContent from './TokyoBusinessHoursContent'
 
 type Props = {
   params: Promise<{ city: string }>
 }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }, { city: 'london' }]
+  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

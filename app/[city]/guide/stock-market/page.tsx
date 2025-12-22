@@ -4,10 +4,11 @@ import { notFound } from 'next/navigation'
 import { getGuideConfig } from '@/lib/guide-content'
 import StockMarketContent from './StockMarketContent'
 import LondonStockMarketContent from './LondonStockMarketContent'
+import TokyoStockMarketContent from './TokyoStockMarketContent'
 
 type Props = { params: Promise<{ city: string }> }
 
-export async function generateStaticParams() { return [{ city: 'new-york' }, { city: 'london' }] }
+export async function generateStaticParams() { return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }] }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: citySlug } = await params

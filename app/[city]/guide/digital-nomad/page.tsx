@@ -4,11 +4,12 @@ import { notFound } from 'next/navigation'
 import { getGuideConfig } from '@/lib/guide-content'
 import DigitalNomadContent from './DigitalNomadContent'
 import LondonDigitalNomadContent from './LondonDigitalNomadContent'
+import TokyoDigitalNomadContent from './TokyoDigitalNomadContent'
 
 type Props = { params: Promise<{ city: string }> }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }, { city: 'london' }]
+  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -29,5 +30,6 @@ export default async function DigitalNomadPage({ params }: Props) {
   const config = getGuideConfig(citySlug)
   if (!city || !config) notFound()
   if (citySlug === 'london') return <LondonDigitalNomadContent city={city} />
+  if (citySlug === 'tokyo') return <TokyoDigitalNomadContent city={city} />
   return <DigitalNomadContent city={city} />
 }

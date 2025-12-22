@@ -239,11 +239,105 @@ export const londonGuide: GuideConfig = {
 }
 
 // ===================
+// TOKYO
+// ===================
+export const tokyoGuide: GuideConfig = {
+  citySlug: 'tokyo',
+  cityName: 'Tokyo',
+  timezone: 'Asia/Tokyo',
+  timezoneAbbr: 'JST',
+  timezoneName: 'Japan Standard Time',
+  utcOffset: 9,
+  icon: '🇯🇵',
+  tagline: 'Your complete guide to time in Japan\'s bustling capital',
+  
+  seo: {
+    title: 'Tokyo Time Zone Guide | JST, Business Hours & More',
+    description: 'Complete Tokyo time zone guide. Business hours, stock market times, best time to call Tokyo, remote work overlap, Japanese holidays, and local tips.',
+    keywords: ['tokyo time zone', 'japan time now', 'jst time', 'tokyo business hours', 'tokyo stock exchange hours', 'best time to call tokyo', 'japan time difference'],
+    ogTitle: 'Tokyo Time Zone Guide | Complete Japan Time Resource',
+    ogDescription: 'Everything about Tokyo time: business hours, stock market, holidays, remote work tips. The definitive guide.',
+  },
+  
+  pages: {
+    overview: {
+      title: 'Tokyo Time Zone Guide | JST, Business Hours & More',
+      description: 'Complete Tokyo time zone guide. Business hours, TSE trading times, best time to call Tokyo, remote work overlap, Japanese holidays, and local tips.',
+      keywords: ['tokyo time zone', 'japan time', 'jst'],
+    },
+    businessHours: {
+      title: 'Tokyo Business Hours | Shops, Banks, Restaurants & Konbini',
+      description: 'What time do businesses open in Tokyo? Complete guide to Japanese store hours, bank schedules, restaurant times, and 24-hour konbini convenience stores.',
+      keywords: ['tokyo business hours', 'japan shop hours', 'what time do banks open tokyo', 'konbini hours', 'japanese restaurant hours'],
+    },
+    bestTimeToVisit: {
+      title: 'Best Time to Visit Tokyo | Cherry Blossoms, Weather & Crowds',
+      description: 'When to visit Tokyo? Month-by-month guide with weather, cherry blossom dates, tourist crowds, and prices. Plus Golden Week warnings and locals-only tips.',
+      keywords: ['best time to visit tokyo', 'tokyo cherry blossom season', 'japan weather by month', 'golden week japan', 'tokyo crowd calendar'],
+    },
+    remoteWork: {
+      title: 'Working with Tokyo Teams Remotely | Time Zone Overlap Guide',
+      description: 'Remote work guide for Tokyo collaboration. Find overlap hours with NYC, London, Sydney. Best meeting times, async tips, and Japanese work culture.',
+      keywords: ['remote work tokyo time zone', 'working with japan team', 'jst time zone overlap', 'best meeting time tokyo'],
+    },
+    twentyFourHours: {
+      title: 'Tokyo 24 Hour Guide | What\'s Open & When in Japan\'s Capital',
+      description: 'Tokyo hour-by-hour: morning rush, lunch crowds, after-work izakaya, last train times, and what\'s open at 3 AM. The city that actually does sleep.',
+      keywords: ['24 hours in tokyo', 'tokyo rush hour times', 'last train tokyo', 'late night food tokyo', 'izakaya hours'],
+    },
+    callTimes: {
+      title: 'Best Time to Call Tokyo | From USA, UK, Australia & More',
+      description: 'When to call Tokyo? Best calling times from New York, London, Sydney. Business hours overlap and optimal windows for personal calls to Japan.',
+      keywords: ['best time to call tokyo', 'best time to call japan from usa', 'call tokyo from london time'],
+    },
+    stockMarket: {
+      title: 'Tokyo Stock Exchange Hours | TSE & Nikkei Trading Times',
+      description: 'TSE opens 9:00 AM JST with lunch break. Complete Tokyo Stock Exchange schedule with morning/afternoon sessions, Nikkei 225, and market holidays.',
+      keywords: ['tokyo stock exchange hours', 'tse trading times', 'nikkei 225 hours', 'japan market hours', 'tse lunch break'],
+    },
+    holidays: {
+      title: 'Japanese Holidays | Golden Week, Obon & What\'s Closed',
+      description: 'Japan public holidays calendar. What\'s closed during Golden Week, Obon, New Year? Bank hours, store schedules, travel warnings.',
+      keywords: ['japan public holidays', 'golden week dates', 'obon holiday japan', 'japanese new year closures'],
+    },
+    digitalNomad: {
+      title: 'Digital Nomad Tokyo Guide | Coworking, WiFi Cafes & Costs',
+      description: 'Work remotely from Tokyo. Best coworking spaces (¥20,000-50,000/mo), laptop-friendly cafes, pocket WiFi, cost of living breakdown, and visa options.',
+      keywords: ['digital nomad tokyo', 'best coworking spaces tokyo', 'cafes with wifi tokyo', 'japan digital nomad visa'],
+    },
+    timeDifference: {
+      title: 'Tokyo Time Difference Calculator | JST vs World Cities',
+      description: 'Tokyo time difference to New York (+14h), London (+9h), Sydney (+2h) and 50+ cities. JST vs EST/GMT explained. Live converter included.',
+      keywords: ['tokyo time difference', 'japan vs new york time', 'jst vs est hours', 'tokyo london time difference'],
+    },
+    travelPlanning: {
+      title: 'Tokyo Travel Guide | Flight Times, Jet Lag & Airport Tips',
+      description: 'Flying to Tokyo? Flight times from NYC (14h), London (12h), Sydney (10h). Jet lag recovery tips, Narita vs Haneda, JR Pass, and getting to the city.',
+      keywords: ['flight time to tokyo', 'jet lag tokyo tips', 'narita vs haneda', 'jr pass worth it'],
+    },
+  },
+  
+  clusters: [
+    { slug: 'business-hours', icon: '💼', title: 'Business Hours', desc: 'Shops, banks, restaurants, and konbini in Tokyo' },
+    { slug: 'best-time-to-visit', icon: '🌸', title: 'Best Time to Visit', desc: 'Cherry blossoms, weather, crowds, and events' },
+    { slug: 'remote-work', icon: '💻', title: 'Remote Work Guide', desc: 'Working with Tokyo teams across time zones' },
+    { slug: '24-hours', icon: '🌆', title: '24 Hours in Tokyo', desc: 'The city\'s daily rhythm from dawn to last train' },
+    { slug: 'call-times', icon: '📞', title: 'Best Time to Call', desc: 'Optimal calling times from major cities worldwide' },
+    { slug: 'stock-market', icon: '📈', title: 'Stock Market Hours', desc: 'TSE & Nikkei trading times for global investors' },
+    { slug: 'holidays', icon: '📅', title: 'Japanese Holidays', desc: 'Golden Week, Obon, and what to expect' },
+    { slug: 'digital-nomad', icon: '🎒', title: 'Digital Nomad Guide', desc: 'Coworking, cafes, WiFi, and cost of living' },
+    { slug: 'time-difference', icon: '🌐', title: 'Time Difference', desc: 'Tokyo time compared to NYC, London, Sydney' },
+    { slug: 'travel-planning', icon: '✈️', title: 'Travel Planning', desc: 'Flight times, jet lag tips, and arrival advice' },
+  ],
+}
+
+// ===================
 // GUIDE REGISTRY
 // ===================
 export const guideConfigs: Record<string, GuideConfig> = {
   'new-york': newYorkGuide,
   'london': londonGuide,
+  'tokyo': tokyoGuide,
 }
 
 export function getGuideConfig(citySlug: string): GuideConfig | null {

@@ -5,6 +5,7 @@ import { GuideConfig } from '@/lib/guide-content'
 import { useCityContext } from '@/lib/CityContext'
 import NYCGuideContent from './content/nyc-overview'
 import LondonGuideContent from './content/london-overview'
+import TokyoOverviewContent from './content/tokyo-overview'
 
 interface Props {
   city: City
@@ -25,6 +26,10 @@ export default function GuideContent({ city, config }: Props) {
   // Render city-specific content
   if (city.slug === 'london') {
     return <LondonGuideContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+  }
+  
+  if (city.slug === 'tokyo') {
+    return <TokyoOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
   }
   
   // Default to NYC
