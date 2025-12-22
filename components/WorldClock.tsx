@@ -526,16 +526,28 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           {selectedCity.slug === 'new-york' && (
             <a 
               href="/new-york/guide/"
-              className={`rounded-2xl p-4 backdrop-blur-xl border ${theme.card} flex items-center gap-3 col-span-2 md:col-span-4 hover:scale-[1.01] transition-transform`}
+              className={`group rounded-2xl p-4 flex items-center gap-3 col-span-2 md:col-span-4 transition-all hover:scale-[1.01] ${
+                isLight 
+                  ? 'bg-gradient-to-r from-amber-100 to-orange-100 border-2 border-amber-300 hover:border-amber-400 hover:shadow-lg' 
+                  : 'bg-gradient-to-r from-amber-900/50 to-orange-900/50 border-2 border-amber-600 hover:border-amber-500 hover:shadow-lg'
+              }`}
             >
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${isLight ? 'bg-amber-100' : 'bg-amber-900/30'}`}>
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${isLight ? 'bg-white/80' : 'bg-slate-800/80'}`}>
                 <span className="text-2xl">📖</span>
               </div>
               <div className="flex-1">
-                <div className={`text-xs uppercase tracking-wide ${theme.textMuted}`}>NYC Guide</div>
-                <div className={`font-bold ${theme.text}`}>Business hours, holidays, best times & more</div>
+                <div className={`font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>NYC Time Guide</div>
+                <div className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+                  Business hours, holidays, best times to visit & more
+                </div>
               </div>
-              <span className={`${isLight ? 'text-amber-600' : 'text-amber-400'}`}>→</span>
+              <div className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                isLight 
+                  ? 'bg-amber-500 text-white group-hover:bg-amber-600' 
+                  : 'bg-amber-500 text-white group-hover:bg-amber-400'
+              }`}>
+                Explore →
+              </div>
             </a>
           )}
         </div>
