@@ -61,11 +61,13 @@ export default function GuideLayout({
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg}`}>
       <Header />
       
-      {/* Sticky Time Bar - always visible */}
-      <div className={`sticky top-0 z-40`}>
-        <div className={`${isLight ? 'bg-amber-50' : 'bg-amber-900/50'} border-b ${
+      {/* Sticky Time Bar - hidden initially, shows on scroll */}
+      <div className={`fixed top-14 left-0 right-0 z-40 transition-all duration-300 ${
+        isScrolled ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
+      }`}>
+        <div className={`${isLight ? 'bg-amber-50/95' : 'bg-amber-900/80'} backdrop-blur-md border-b ${
           isLight ? 'border-amber-200' : 'border-amber-700'
-        }`}>
+        } shadow-sm`}>
           <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between text-sm">
             <div className="flex items-center gap-2 md:gap-4">
               <span className={`font-medium whitespace-nowrap ${isLight ? 'text-slate-800' : 'text-white'}`}>
@@ -95,9 +97,9 @@ export default function GuideLayout({
         </div>
       </div>
       
-      <main className="max-w-6xl mx-auto px-4 py-8">
+      <main className="max-w-6xl mx-auto px-4 py-4 md:py-8">
         {/* Breadcrumb */}
-        <nav className={`text-sm mb-6 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+        <nav className={`text-sm mb-3 md:mb-6 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
           <Link href="/" className="hover:underline">Home</Link>
           <span className="mx-2">›</span>
           <Link href={`/${citySlug}/`} className="hover:underline">{city.city}</Link>
@@ -105,11 +107,11 @@ export default function GuideLayout({
           <span className={isLight ? 'text-slate-700' : 'text-white'}>Guide</span>
         </nav>
         
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-8">
           {/* Sidebar Navigation - Collapsible on mobile */}
           <aside className="lg:w-64 flex-shrink-0">
             {/* Mobile: Collapsible menu */}
-            <div className="lg:hidden mb-4">
+            <div className="lg:hidden mb-2">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium ${
