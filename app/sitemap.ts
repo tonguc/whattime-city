@@ -46,6 +46,27 @@ export default async function sitemap() {
     priority: 0.7,
   }))
   
+  // NYC Guide sayfaları (pillar + cluster)
+  const guideSlugs = [
+    '', // pillar page
+    'business-hours',
+    'best-time-to-visit',
+    'remote-work',
+    '24-hours',
+    'call-times',
+    'stock-market',
+    'holidays',
+    'digital-nomad',
+    'time-difference',
+    'travel-planning',
+  ]
+  const guideRoutes = guideSlugs.map((slug) => ({
+    url: slug ? `${baseUrl}/new-york/guide/${slug}/` : `${baseUrl}/new-york/guide/`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: slug ? 0.7 : 0.8, // pillar page gets higher priority
+  }))
+  
   // Tüm şehir sayfaları (trailing slash ile)
   const cityRoutes = cities.map((city) => ({
     url: `${baseUrl}/${city.slug}/`,
@@ -99,5 +120,5 @@ export default async function sitemap() {
     }
   }
   
-  return [...staticRoutes, ...toolRoutes, ...cityRoutes, ...countryRoutes, ...timeCompareRoutes]
+  return [...staticRoutes, ...toolRoutes, ...guideRoutes, ...cityRoutes, ...countryRoutes, ...timeCompareRoutes]
 }
