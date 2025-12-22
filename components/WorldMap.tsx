@@ -97,6 +97,10 @@ export default function WorldMap() {
   const [panX, setPanX] = useState(0)
   const [panY, setPanY] = useState(0)
   
+  // Tab states
+  const [activeTimeTab, setActiveTimeTab] = useState<'all' | 'dawn' | 'day' | 'dusk' | 'night'>('all')
+  const [activeContinentTab, setActiveContinentTab] = useState<'all' | 'americas' | 'europe' | 'asia' | 'africa' | 'oceania'>('all')
+  
   // Close popup when clicking outside
   const handleMapClick = (e: React.MouseEvent) => {
     // Only close if clicking on the map background, not on a city
@@ -468,41 +472,169 @@ export default function WorldMap() {
           </div>
         </div>
         
-        {/* City Grid */}
+        {/* City Grid with Tabs */}
         <div className="mt-8">
           <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-700' : 'text-white'}`}>
-            All Cities on Map
+            World Cities
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-2">
-            {mapCities.map(({ slug }) => {
-              const data = getCityData(slug)
-              if (!data) return null
-              const { city, timeStr, timeOfDay } = data
-              const isNight = timeOfDay === 'night'
-              
-              return (
-                <Link
-                  key={slug}
-                  href={`/${slug}`}
-                  className={`p-3 rounded-xl backdrop-blur-xl border transition-all hover:scale-[1.02] ${
-                    isLight 
-                      ? 'bg-white/60 border-white/50 hover:bg-white/80' 
-                      : 'bg-slate-800/60 border-slate-700/50 hover:bg-slate-700/60'
-                  }`}
-                >
-                  <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-                    {city.country}
-                  </div>
-                  <div className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>
-                    {city.city}
-                  </div>
-                  <div className={`text-lg font-bold ${isNight ? 'text-cyan-400' : 'text-amber-500'}`}>
-                    {timeStr}
-                  </div>
-                </Link>
-              )
-            })}
+          
+          {/* Time of Day Tabs */}
+          <div className="mb-4">
+            <div className={`text-sm font-medium mb-2 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+              Filter by Time of Day
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { id: 'all', label: '🌍 All', count: cities.length },
+                { id: 'dawn', label: '🌅 Dawn', emoji: '🌅' },
+                { id: 'day', label: '☀️ Day', emoji: '☀️' },
+                { id: 'dusk', label: '🌆 Dusk', emoji: '🌆' },
+                { id: 'night', label: '🌙 Night', emoji: '🌙' },
+              ].map(tab => {
+                const isActive = activeTimeTab === tab.id
+                const count = tab.id === 'all' 
+                  ? cities.length 
+                  : cities.filter(c => getTimeOfDay(time, c.lat, c.lng, c.timezone) === tab.id).length
+                
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTimeTab(tab.id as typeof activeTimeTab)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                      isActive
+                        ? isLight 
+                          ? 'bg-slate-800 text-white' 
+                          : 'bg-white text-slate-800'
+                        : isLight
+                          ? 'bg-white/60 text-slate-600 hover:bg-white/80'
+                          : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/60'
+                    }`}
+                  >
+                    {tab.label} <span className="opacity-70">({count})</span>
+                  </button>
+                )
+              })}
+            </div>
           </div>
+          
+          {/* Continent Tabs */}
+          <div className="mb-6">
+            <div className={`text-sm font-medium mb-2 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+              Filter by Region
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { id: 'all', label: 'All Regions' },
+                { id: 'americas', label: '🌎 Americas' },
+                { id: 'europe', label: '🌍 Europe' },
+                { id: 'asia', label: '🌏 Asia' },
+                { id: 'africa', label: '🌍 Africa' },
+                { id: 'oceania', label: '🌏 Oceania' },
+              ].map(tab => {
+                const isActive = activeContinentTab === tab.id
+                const filteredByTime = activeTimeTab === 'all' 
+                  ? cities 
+                  : cities.filter(c => getTimeOfDay(time, c.lat, c.lng, c.timezone) === activeTimeTab)
+                const count = tab.id === 'all'
+                  ? filteredByTime.length
+                  : filteredByTime.filter(c => c.continent === tab.id).length
+                
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveContinentTab(tab.id as typeof activeContinentTab)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                      isActive
+                        ? isLight 
+                          ? 'bg-slate-800 text-white' 
+                          : 'bg-white text-slate-800'
+                        : isLight
+                          ? 'bg-white/60 text-slate-600 hover:bg-white/80'
+                          : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/60'
+                    }`}
+                  >
+                    {tab.label} <span className="opacity-70">({count})</span>
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+          
+          {/* Filtered City Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2">
+            {cities
+              .filter(city => {
+                // Time of day filter
+                if (activeTimeTab !== 'all') {
+                  const cityTimeOfDay = getTimeOfDay(time, city.lat, city.lng, city.timezone)
+                  if (cityTimeOfDay !== activeTimeTab) return false
+                }
+                // Continent filter
+                if (activeContinentTab !== 'all' && city.continent !== activeContinentTab) {
+                  return false
+                }
+                return true
+              })
+              .sort((a, b) => a.city.localeCompare(b.city))
+              .map(city => {
+                const cityTime = new Date(time.toLocaleString('en-US', { timeZone: city.timezone }))
+                const timeStr = cityTime.toLocaleTimeString('en-US', { 
+                  hour: '2-digit', 
+                  minute: '2-digit',
+                  hour12: false 
+                })
+                const timeOfDay = getTimeOfDay(time, city.lat, city.lng, city.timezone)
+                const isNight = timeOfDay === 'night'
+                const isDusk = timeOfDay === 'dusk'
+                const isDawn = timeOfDay === 'dawn'
+                
+                const timeColor = isNight 
+                  ? 'text-cyan-400' 
+                  : isDusk 
+                    ? 'text-orange-400' 
+                    : isDawn 
+                      ? 'text-pink-400' 
+                      : 'text-amber-500'
+                
+                return (
+                  <Link
+                    key={city.slug}
+                    href={`/${city.slug}`}
+                    className={`p-3 rounded-xl backdrop-blur-xl border transition-all hover:scale-[1.02] ${
+                      isLight 
+                        ? 'bg-white/60 border-white/50 hover:bg-white/80' 
+                        : 'bg-slate-800/60 border-slate-700/50 hover:bg-slate-700/60'
+                    }`}
+                  >
+                    <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                      {city.country}
+                    </div>
+                    <div className={`font-medium truncate ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                      {city.city}
+                    </div>
+                    <div className={`text-lg font-bold ${timeColor}`}>
+                      {timeStr}
+                    </div>
+                  </Link>
+                )
+              })}
+          </div>
+          
+          {/* Empty state */}
+          {cities.filter(city => {
+            if (activeTimeTab !== 'all') {
+              const cityTimeOfDay = getTimeOfDay(time, city.lat, city.lng, city.timezone)
+              if (cityTimeOfDay !== activeTimeTab) return false
+            }
+            if (activeContinentTab !== 'all' && city.continent !== activeContinentTab) {
+              return false
+            }
+            return true
+          }).length === 0 && (
+            <div className={`text-center py-12 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+              No cities match the selected filters
+            </div>
+          )}
         </div>
         
         {/* Additional SEO Content */}
