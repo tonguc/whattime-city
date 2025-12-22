@@ -62,10 +62,10 @@ export default function GuideLayout({
       <Header />
       
       {/* Time Bar - always visible, becomes sticky on scroll */}
-      <div className="sticky top-[56px] md:top-[64px] z-40">
+      <div className="sticky top-[55px] md:top-[63px] z-40 -mt-[1px]">
         <div className={`${isLight ? 'bg-amber-50' : 'bg-amber-900'} border-b ${
           isLight ? 'border-amber-200' : 'border-amber-700'
-        } shadow-sm`}>
+        }`}>
           <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between text-sm">
             <div className="flex items-center gap-2 md:gap-4">
               <span className={`font-medium whitespace-nowrap ${isLight ? 'text-slate-800' : 'text-white'}`}>

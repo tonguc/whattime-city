@@ -424,31 +424,6 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             >
               Compare {selectedCity.city} with another city →
             </a>
-            
-            {/* NYC Guide Banner - only for New York */}
-            {selectedCity.slug === 'new-york' && (
-              <a 
-                href="/new-york/guide/"
-                className={`mt-4 w-full max-w-xs block rounded-2xl p-4 border transition-all hover:scale-[1.02] ${
-                  isLight 
-                    ? 'bg-gradient-to-r from-amber-50 to-orange-50 border-amber-200 hover:border-amber-300' 
-                    : 'bg-gradient-to-r from-amber-900/30 to-orange-900/30 border-amber-700 hover:border-amber-600'
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">📖</span>
-                  <div>
-                    <div className={`font-semibold ${isLight ? 'text-slate-800' : 'text-white'}`}>
-                      NYC Time Guide
-                    </div>
-                    <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-                      Business hours, best times, holidays & more
-                    </div>
-                  </div>
-                  <span className={`ml-auto ${isLight ? 'text-amber-600' : 'text-amber-400'}`}>→</span>
-                </div>
-              </a>
-            )}
           </div>
         </div>
         
@@ -546,6 +521,23 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               })()}</div>
             </div>
           </div>
+          
+          {/* NYC Guide Card - only for New York */}
+          {selectedCity.slug === 'new-york' && (
+            <a 
+              href="/new-york/guide/"
+              className={`rounded-2xl p-4 backdrop-blur-xl border ${theme.card} flex items-center gap-3 col-span-2 md:col-span-4 hover:scale-[1.01] transition-transform`}
+            >
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${isLight ? 'bg-amber-100' : 'bg-amber-900/30'}`}>
+                <span className="text-2xl">📖</span>
+              </div>
+              <div className="flex-1">
+                <div className={`text-xs uppercase tracking-wide ${theme.textMuted}`}>NYC Guide</div>
+                <div className={`font-bold ${theme.text}`}>Business hours, holidays, best times & more</div>
+              </div>
+              <span className={`${isLight ? 'text-amber-600' : 'text-amber-400'}`}>→</span>
+            </a>
+          )}
         </div>
         
         {/* === 4. TIME INTELLIGENCE (SEO 1) === */}
