@@ -18,6 +18,7 @@ export default function GuideLayout({
   const city = cities.find(c => c.slug === citySlug)
   const { theme, isLight, time } = useCityContext()
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   
   // Scroll detection for sticky bar
   useEffect(() => {
@@ -60,23 +61,23 @@ export default function GuideLayout({
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg}`}>
       <Header />
       
-      {/* Sticky Time Bar - appears on scroll */}
-      <div className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+      {/* Sticky Time Bar - appears on scroll, below header */}
+      <div className={`fixed top-14 md:top-16 left-0 right-0 z-30 transition-all duration-300 ${
+        isScrolled ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
       }`}>
         <div className={`${isLight ? 'bg-white/95' : 'bg-slate-900/95'} backdrop-blur-md border-b ${
           isLight ? 'border-slate-200' : 'border-slate-700'
         } shadow-sm`}>
           <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between text-sm">
-            <div className="flex items-center gap-4">
-              <span className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>
+            <div className="flex items-center gap-2 md:gap-4 overflow-x-auto">
+              <span className={`font-medium whitespace-nowrap ${isLight ? 'text-slate-800' : 'text-white'}`}>
                 🗽 NYC: {nycTimeStr}
               </span>
-              <span className={isLight ? 'text-slate-400' : 'text-slate-500'}>|</span>
-              <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>
+              <span className={`hidden sm:inline ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>|</span>
+              <span className={`hidden sm:inline whitespace-nowrap ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
                 📍 You: {localTimeStr}
               </span>
-              <span className={`px-2 py-0.5 rounded text-xs ${
+              <span className={`px-2 py-0.5 rounded text-xs whitespace-nowrap ${
                 hourDiff === 0 
                   ? 'bg-green-100 text-green-700' 
                   : hourDiff > 0 
@@ -88,9 +89,9 @@ export default function GuideLayout({
             </div>
             <Link 
               href={`/${citySlug}/`}
-              className={`text-xs ${isLight ? 'text-amber-600 hover:text-amber-700' : 'text-amber-400 hover:text-amber-300'}`}
+              className={`text-xs whitespace-nowrap ml-2 ${isLight ? 'text-amber-600 hover:text-amber-700' : 'text-amber-400 hover:text-amber-300'}`}
             >
-              ← Back to {city.city}
+              ← {city.city}
             </Link>
           </div>
         </div>
@@ -107,9 +108,60 @@ export default function GuideLayout({
         </nav>
         
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Sidebar Navigation */}
+          {/* Sidebar Navigation - Collapsible on mobile */}
           <aside className="lg:w-64 flex-shrink-0">
-            <div className={`sticky top-24 rounded-2xl p-4 ${
+            {/* Mobile: Collapsible menu */}
+            <div className="lg:hidden mb-4">
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium ${
+                  isLight 
+                    ? 'bg-white/80 text-slate-700 border border-slate-200' 
+                    : 'bg-slate-800/80 text-slate-200 border border-slate-700'
+                }`}
+              >
+                <span className="flex items-center gap-2">
+                  <span>📑</span>
+                  <span>NYC Guide Menu</span>
+                </span>
+                <span className={`transition-transform duration-200 ${isMobileMenuOpen ? 'rotate-180' : ''}`}>
+                  ▼
+                </span>
+              </button>
+              
+              {/* Collapsible content */}
+              <div className={`overflow-hidden transition-all duration-300 ${
+                isMobileMenuOpen ? 'max-h-[500px] opacity-100 mt-2' : 'max-h-0 opacity-0'
+              }`}>
+                <div className={`rounded-xl p-3 ${
+                  isLight ? 'bg-white/80 border border-slate-200' : 'bg-slate-800/80 border border-slate-700'
+                }`}>
+                  <nav className="grid grid-cols-2 gap-2">
+                    {guideLinks.map(link => {
+                      const href = `/${citySlug}/guide/${link.slug}`
+                      return (
+                        <Link
+                          key={link.slug}
+                          href={href}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm ${
+                            isLight 
+                              ? 'hover:bg-slate-100 text-slate-600' 
+                              : 'hover:bg-slate-700 text-slate-300'
+                          }`}
+                        >
+                          <span>{link.icon}</span>
+                          <span className="truncate">{link.label}</span>
+                        </Link>
+                      )
+                    })}
+                  </nav>
+                </div>
+              </div>
+            </div>
+            
+            {/* Desktop: Vertical sticky sidebar */}
+            <div className={`hidden lg:block sticky top-24 rounded-2xl p-4 ${
               isLight ? 'bg-white/60' : 'bg-slate-800/60'
             } backdrop-blur-xl border ${
               isLight ? 'border-white/50' : 'border-slate-700/50'

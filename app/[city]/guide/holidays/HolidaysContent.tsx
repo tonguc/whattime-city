@@ -58,6 +58,14 @@ export default function HolidaysContent({ city }: Props) {
       <section className="mb-10">
         <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>📅 2025 Holiday Calendar</h2>
         
+        {/* Legend - moved above calendar */}
+        <div className={`mb-4 p-3 rounded-xl flex flex-wrap items-center gap-4 text-sm ${cardBg}`}>
+          <span className={`font-medium ${mutedColor}`}>Status:</span>
+          <span className="flex items-center gap-1">✅ <span className="text-green-600">Open</span></span>
+          <span className="flex items-center gap-1">⚠️ <span className="text-amber-600">Limited hours</span></span>
+          <span className="flex items-center gap-1">❌ <span className="text-red-600">Closed</span></span>
+        </div>
+        
         <div className="space-y-3">
           {holidays2025.map(h => (
             <div key={h.date} className={`p-4 rounded-xl border ${isLight ? 'border-slate-200 bg-white' : 'border-slate-600 bg-slate-800/50'}`}>
@@ -74,10 +82,6 @@ export default function HolidaysContent({ city }: Props) {
             </div>
           ))}
         </div>
-        
-        <p className={`mt-4 text-sm ${mutedColor}`}>
-          Legend: ✅ Open | ⚠️ Reduced hours | ❌ Closed
-        </p>
       </section>
       
       <section className="mb-10">
