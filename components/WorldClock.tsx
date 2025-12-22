@@ -350,8 +350,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             
             <div className="mt-4 md:mt-6 text-center">
               <div className="flex items-center justify-center gap-3">
-                <h1 className={`text-3xl md:text-4xl font-medium ${theme.text}`}>
-                  Current Time in {selectedCity.city}, {selectedCity.country}
+                <h1 className={`text-3xl md:text-4xl font-bold ${theme.text}`}>
+                  {selectedCity.city}
                 </h1>
                 <button
                   onClick={() => toggleFavorite(selectedCity.slug)}
@@ -365,6 +365,9 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                   {isFavorite(selectedCity.slug) ? '★' : '☆'}
                 </button>
               </div>
+              <p className={`text-sm md:text-base mt-1 ${theme.textMuted}`}>
+                {selectedCity.country} • Local Time
+              </p>
               
               {detectedCity && detectedCity.slug !== selectedCity.slug && (
                 <p className={`text-xs mt-1 ${theme.textMuted} opacity-50`}>
