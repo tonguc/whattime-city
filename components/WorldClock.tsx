@@ -550,6 +550,35 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               </div>
             </a>
           )}
+          
+          {/* London Guide Card - only for London */}
+          {selectedCity.slug === 'london' && (
+            <a 
+              href="/london/guide/"
+              className={`group rounded-2xl p-4 flex items-center gap-3 col-span-2 md:col-span-4 transition-all hover:scale-[1.01] ${
+                isLight 
+                  ? 'bg-gradient-to-r from-blue-100 to-indigo-100 border-2 border-blue-300 hover:border-blue-400 hover:shadow-lg' 
+                  : 'bg-gradient-to-r from-blue-900/50 to-indigo-900/50 border-2 border-blue-600 hover:border-blue-500 hover:shadow-lg'
+              }`}
+            >
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${isLight ? 'bg-white/80' : 'bg-slate-800/80'}`}>
+                <span className="text-2xl">🇬🇧</span>
+              </div>
+              <div className="flex-1">
+                <div className={`font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>London Time Guide</div>
+                <div className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+                  LSE hours, UK holidays, best times to visit & more
+                </div>
+              </div>
+              <div className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                isLight 
+                  ? 'bg-blue-500 text-white group-hover:bg-blue-600' 
+                  : 'bg-blue-500 text-white group-hover:bg-blue-400'
+              }`}>
+                Explore →
+              </div>
+            </a>
+          )}
         </div>
         
         {/* === 4. TIME INTELLIGENCE (SEO 1) === */}
