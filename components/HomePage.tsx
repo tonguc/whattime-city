@@ -506,6 +506,30 @@ export default function HomePage() {
             </Link>
           </div>
         </section>
+        
+        {/* SEO Content Section */}
+        <section className={`rounded-2xl p-5 mb-4 backdrop-blur-xl border ${theme.card}`}>
+          <h2 className={`text-lg font-semibold mb-3 ${theme.text}`}>
+            World Clock - Check Current Time Anywhere
+          </h2>
+          <div className={`space-y-3 text-sm ${theme.textMuted}`}>
+            <p>
+              Welcome to whattime.city, your free online world clock for checking the current local time in any 
+              city around the globe. Our real-time clock automatically detects your location and displays your 
+              local time along with sunrise, sunset times, and live weather conditions.
+            </p>
+            <p>
+              Whether you're scheduling international business meetings, planning calls with friends and family 
+              abroad, or coordinating travel across time zones, our tools make it easy to convert time between 
+              cities, find optimal meeting times, and calculate arrival times for flights.
+            </p>
+            <p>
+              Explore our interactive world map to visualize day and night across the globe, browse time zones 
+              by country, or use our specialized tools including the Time Converter, Meeting Planner, Flight Time 
+              Calculator, and Jet Lag Advisor. All features are completely free and work on any device.
+            </p>
+          </div>
+        </section>
       </main>
 
       {/* FOOTER */}

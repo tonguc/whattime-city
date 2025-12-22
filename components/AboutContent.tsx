@@ -56,6 +56,65 @@ export default function AboutContent() {
               whattime.city is completely free to use. We may display non-intrusive ads to support the service, but we'll never charge for access to our core features.
             </p>
           </section>
+          
+          <section>
+            <h2 className={`text-2xl font-semibold ${textMain} mb-4`}>Our Tools</h2>
+            <p className={`${textMuted} mb-4`}>
+              Beyond simple time checking, we offer a suite of specialized tools designed for international coordination:
+            </p>
+            <ul className={`${textMuted} space-y-3`}>
+              <li><strong>Time Converter:</strong> Instantly convert any time between two cities. Perfect for scheduling calls and deadlines across time zones.</li>
+              <li><strong>Meeting Planner:</strong> Find the best meeting time for participants in multiple cities by visualizing overlapping business hours.</li>
+              <li><strong>Flight Time Calculator:</strong> Calculate your arrival time in local time when traveling across time zones.</li>
+              <li><strong>Jet Lag Advisor:</strong> Get personalized recommendations for adjusting to a new time zone based on your travel route.</li>
+              <li><strong>Event Time Converter:</strong> Share event times that automatically display in each viewer's local time zone.</li>
+              <li><strong>World Alarm:</strong> Set alarms based on any city's local time, perfect for international deadlines.</li>
+            </ul>
+          </section>
+          
+          <section>
+            <h2 className={`text-2xl font-semibold ${textMain} mb-4`}>Technology</h2>
+            <p className={textMuted}>
+              whattime.city is built with modern web technologies to ensure fast loading times and a smooth user experience on any device. Our sunrise and sunset calculations use astronomical algorithms for precise timing based on geographic coordinates. Weather data is updated regularly from reliable meteorological sources.
+            </p>
+          </section>
+          
+          <section>
+            <h2 className={`text-2xl font-semibold ${textMain} mb-4`}>Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              <div>
+                <h3 className={`font-medium ${textMain} mb-1`}>How accurate is the time displayed?</h3>
+                <p className={`${textMuted} text-sm`}>
+                  Our time is synchronized with your device's clock and uses the IANA Time Zone Database for accurate timezone calculations, including automatic daylight saving time adjustments.
+                </p>
+              </div>
+              <div>
+                <h3 className={`font-medium ${textMain} mb-1`}>How do you detect my location?</h3>
+                <p className={`${textMuted} text-sm`}>
+                  We use your IP address to approximate your location and display relevant local time. We don't store or share your location data.
+                </p>
+              </div>
+              <div>
+                <h3 className={`font-medium ${textMain} mb-1`}>Can I embed a clock on my website?</h3>
+                <p className={`${textMuted} text-sm`}>
+                  Yes! Visit our <Link href="/widget" className="text-cyan-500 hover:underline">Widget page</Link> to generate a free, customizable clock widget for your website.
+                </p>
+              </div>
+              <div>
+                <h3 className={`font-medium ${textMain} mb-1`}>How many cities do you support?</h3>
+                <p className={`${textMuted} text-sm`}>
+                  We currently support over 200 major cities across all continents, with detailed information including time zones, weather, sunrise/sunset times, and more.
+                </p>
+              </div>
+            </div>
+          </section>
+          
+          <section>
+            <h2 className={`text-2xl font-semibold ${textMain} mb-4`}>Contact Us</h2>
+            <p className={textMuted}>
+              Have questions, suggestions, or feedback? We'd love to hear from you! Visit our <Link href="/contact" className="text-cyan-500 hover:underline">Contact page</Link> to get in touch.
+            </p>
+          </section>
         </div>
       </main>
       

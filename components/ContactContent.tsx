@@ -79,6 +79,58 @@ export default function ContactContent() {
             We typically respond within 24-48 hours. For urgent matters, please indicate so in your email subject line.
           </p>
         </div>
+        
+        {/* FAQ Section */}
+        <div className="mt-12">
+          <h2 className={`text-2xl font-semibold ${textMain} mb-6`}>Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <div className={`p-5 rounded-xl border ${cardBgLight}`}>
+              <h3 className={`font-medium ${textMain} mb-2`}>How do I report an incorrect time or timezone?</h3>
+              <p className={`${textMuted} text-sm`}>
+                If you notice any time or timezone discrepancies, please email us with the city name, the incorrect time shown, 
+                and what you believe the correct time should be. Include your timezone and any relevant details about daylight 
+                saving time if applicable.
+              </p>
+            </div>
+            
+            <div className={`p-5 rounded-xl border ${cardBgLight}`}>
+              <h3 className={`font-medium ${textMain} mb-2`}>Can I request a new city to be added?</h3>
+              <p className={`${textMuted} text-sm`}>
+                Absolutely! We're always looking to expand our coverage. Send us the city name, country, and timezone, 
+                and we'll work on adding it to our database. Priority is given to larger cities and frequently requested locations.
+              </p>
+            </div>
+            
+            <div className={`p-5 rounded-xl border ${cardBgLight}`}>
+              <h3 className={`font-medium ${textMain} mb-2`}>Is whattime.city available as a mobile app?</h3>
+              <p className={`${textMuted} text-sm`}>
+                Currently, whattime.city is a web application optimized for both desktop and mobile browsers. You can add it 
+                to your home screen on most mobile devices for quick access. We're considering native apps for the future.
+              </p>
+            </div>
+            
+            <div className={`p-5 rounded-xl border ${cardBgLight}`}>
+              <h3 className={`font-medium ${textMain} mb-2`}>Do you offer an API for developers?</h3>
+              <p className={`${textMuted} text-sm`}>
+                We don't currently offer a public API, but we're open to discussing integration possibilities for 
+                legitimate use cases. Contact us with details about your project and requirements.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        {/* Additional Info */}
+        <div className={`mt-12 p-6 rounded-xl ${cardBgLight}`}>
+          <h3 className={`text-lg font-medium ${textMain} mb-4`}>Other Ways to Connect</h3>
+          <p className={`${textMuted} mb-4`}>
+            While email is our primary support channel, you can also:
+          </p>
+          <ul className={`${textMuted} space-y-2 text-sm`}>
+            <li>• Bookmark our site and check back for updates and new features</li>
+            <li>• Use the feedback button on any page to report issues</li>
+            <li>• Share whattime.city with friends and colleagues who work across time zones</li>
+          </ul>
+        </div>
       </main>
       
       <Footer isLight={isLight} />

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { cities } from '@/lib/cities'
 import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
@@ -11,10 +11,17 @@ export default function EventTimePage() {
   const { theme, isLight, selectedCity } = useToolsTheme()
   
   const [currentTime, setCurrentTime] = useState(new Date())
-  const [eventCity, setEventCity] = useState(() => selectedCity || cities.find(c => c.city === 'New York') || cities[0])
+  const [eventCity, setEventCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
   const [eventHour, setEventHour] = useState(14)
   const [eventMinute, setEventMinute] = useState(0)
   const [eventName, setEventName] = useState('My Event')
+  
+  // Sync eventCity with context when it becomes available
+  useEffect(() => {
+    if (selectedCity) {
+      setEventCity(selectedCity)
+    }
+  }, [selectedCity])
 
   // Popular cities to show conversions
   const popularCities = cities.slice(0, 8)

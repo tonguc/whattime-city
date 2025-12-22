@@ -6,6 +6,7 @@ import { City, cities } from '@/lib/cities'
 import { getTimeOfDay, getSunTimes, formatSunTime } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import { saveCityContext } from '@/lib/city-context'
+import { useCityContext } from '@/lib/CityContext'
 import Footer from '@/components/Footer'
 
 interface CityPageContentProps {
@@ -51,6 +52,7 @@ const tools = [
 
 export default function CityPageContent({ city }: CityPageContentProps) {
   const [time, setTime] = useState(new Date())
+  const { setActiveCity } = useCityContext()
   
   useEffect(() => {
     // Save city context on mount
@@ -62,9 +64,12 @@ export default function CityPageContent({ city }: CityPageContentProps) {
       timezone: city.timezone
     })
     
+    // Update global activeCity so tools pages can use it
+    setActiveCity(city)
+    
     const timer = setInterval(() => setTime(new Date()), 1000)
     return () => clearInterval(timer)
-  }, [city])
+  }, [city, setActiveCity])
   
   // Theme calculation using real UTC time
   const timeOfDay = getTimeOfDay(time, city.lat, city.lng, city.timezone)

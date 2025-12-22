@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { cities } from '@/lib/cities'
 import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
@@ -11,11 +11,18 @@ export default function FlightTimePage() {
   const { theme, isLight, selectedCity } = useToolsTheme()
   
   const [currentTime, setCurrentTime] = useState(new Date())
-  const [departureCity, setDepartureCity] = useState(() => selectedCity || cities.find(c => c.city === 'New York') || cities[0])
+  const [departureCity, setDepartureCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
   const [arrivalCity, setArrivalCity] = useState(() => cities.find(c => c.city === 'London') || cities[1])
   const [departureHour, setDepartureHour] = useState(10)
   const [departureMinute, setDepartureMinute] = useState(0)
   const [flightDuration, setFlightDuration] = useState({ hours: 7, minutes: 0 })
+  
+  // Sync departureCity with context when it becomes available
+  useEffect(() => {
+    if (selectedCity) {
+      setDepartureCity(selectedCity)
+    }
+  }, [selectedCity])
 
   // Calculate arrival time
   const getArrivalTime = () => {

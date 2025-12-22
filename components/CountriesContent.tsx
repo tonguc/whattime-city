@@ -69,6 +69,18 @@ export default function CountriesContent() {
             Browse {totalCountries} countries across all continents
           </p>
         </div>
+        
+        {/* SEO Intro Section */}
+        <div className={`rounded-2xl p-6 mb-10 ${isLight ? 'bg-white/60' : 'bg-slate-800/40'}`}>
+          <p className={`${isLight ? 'text-slate-600' : 'text-slate-300'} leading-relaxed`}>
+            Explore current local time, time zones, and detailed information for countries around the world. 
+            Our comprehensive directory covers {totalCountries} countries across five continents, providing 
+            accurate time zone data, capital cities, currencies, and phone codes. Whether you're planning 
+            international business calls, scheduling meetings across borders, or simply curious about the 
+            time in another part of the world, select any country below to view detailed time zone information 
+            and all major cities within that country.
+          </p>
+        </div>
 
         {/* Continent Sections */}
         <div className="space-y-10">
@@ -125,6 +137,49 @@ export default function CountriesContent() {
           >
             🔍 Search Cities
           </Link>
+        </div>
+        
+        {/* SEO Content Section */}
+        <div className={`mt-12 rounded-2xl p-6 ${isLight ? 'bg-white/60' : 'bg-slate-800/40'}`}>
+          <h2 className={`text-xl font-semibold mb-4 ${textMain}`}>
+            Understanding World Time Zones
+          </h2>
+          <div className={`space-y-4 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+            <p>
+              The world is divided into 24 standard time zones, each typically spanning 15 degrees of longitude. 
+              However, many countries have adopted time zones that don't follow these exact boundaries for 
+              practical, political, or economic reasons. Some large countries like Russia, the United States, 
+              and Australia span multiple time zones, while others like China and India use a single time zone 
+              despite their vast geographic size.
+            </p>
+            <p>
+              Coordinated Universal Time (UTC) serves as the primary time standard by which the world regulates 
+              clocks and time. Time zones are expressed as positive or negative offsets from UTC. For example, 
+              New York operates on UTC-5 during standard time and UTC-4 during daylight saving time, while 
+              Tokyo is always UTC+9.
+            </p>
+            
+            <h3 className={`text-lg font-medium mt-4 ${isLight ? 'text-slate-700' : 'text-white'}`}>
+              Daylight Saving Time
+            </h3>
+            <p>
+              Many countries observe Daylight Saving Time (DST), temporarily advancing clocks during warmer 
+              months to extend evening daylight. However, DST practices vary significantly: most of Europe 
+              and North America observe DST, while most of Asia, Africa, and South America do not. Some 
+              countries have recently abolished DST, and the rules can change, so it's important to verify 
+              current practices for accurate time conversion.
+            </p>
+            
+            <h3 className={`text-lg font-medium mt-4 ${isLight ? 'text-slate-700' : 'text-white'}`}>
+              International Business and Time Zones
+            </h3>
+            <p>
+              Understanding time zones is crucial for international business, travel, and communication. 
+              When scheduling meetings across multiple countries, consider the local business hours in each 
+              location. Our country pages provide information about typical business hours, best times to 
+              call, and other helpful details for cross-border coordination.
+            </p>
+          </div>
         </div>
       </main>
 

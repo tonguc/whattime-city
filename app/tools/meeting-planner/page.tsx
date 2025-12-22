@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { cities, City } from '@/lib/cities'
 import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
@@ -13,10 +13,22 @@ export default function MeetingPlannerPage() {
   
   const [currentTime, setCurrentTime] = useState(new Date())
   const [selectedCities, setSelectedCities] = useState<City[]>(() => [
-    selectedCity || cities.find(c => c.city === 'New York') || cities[0],
+    cities.find(c => c.city === 'New York') || cities[0],
     cities.find(c => c.city === 'London') || cities[1],
     cities.find(c => c.city === 'Tokyo') || cities[2]
   ])
+  
+  // Sync first city with context when it becomes available
+  useEffect(() => {
+    if (selectedCity) {
+      setSelectedCities(prev => {
+        // Replace first city with context city, keep others
+        const newCities = [...prev]
+        newCities[0] = selectedCity
+        return newCities
+      })
+    }
+  }, [selectedCity])
 
   // Get current hour in each city
   const getCityHour = (timezone: string) => {

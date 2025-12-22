@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { cities } from '@/lib/cities'
 import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
@@ -12,10 +12,17 @@ export default function TimeConverterPage() {
   const { theme, isLight, selectedCity } = useToolsTheme()
   
   // Get initial city from context or default
-  const [fromCity, setFromCity] = useState(() => selectedCity || cities.find(c => c.city === 'New York') || cities[0])
+  const [fromCity, setFromCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
   const [toCity, setToCity] = useState(() => cities.find(c => c.city === 'London') || cities[1])
   const [selectedHour, setSelectedHour] = useState(12)
   const [selectedMinute, setSelectedMinute] = useState(0)
+  
+  // Sync fromCity with context when it becomes available
+  useEffect(() => {
+    if (selectedCity) {
+      setFromCity(selectedCity)
+    }
+  }, [selectedCity])
 
   // Calculate converted time
   const getConvertedTime = () => {

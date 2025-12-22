@@ -426,6 +426,48 @@ export default function WorldMap() {
           </div>
         </div>
         
+        {/* SEO Content Section */}
+        <div className={`mt-8 rounded-2xl p-6 ${isLight ? 'bg-white/60' : 'bg-slate-800/40'}`}>
+          <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+            Interactive World Time Zone Map
+          </h2>
+          <div className={`space-y-4 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+            <p>
+              Our interactive world time map displays current local time across 50+ major cities worldwide. 
+              The map features a real-time day/night terminator line showing which parts of the world are 
+              experiencing daylight or darkness at any given moment.
+            </p>
+            <p>
+              Each city marker shows the current local time with color coding: yellow dots indicate daytime 
+              hours while cyan dots represent nighttime. Click on any city to see detailed information 
+              including the exact time, time of day status, and a link to the full city page with weather, 
+              sunrise/sunset times, and more.
+            </p>
+            <h3 className={`text-lg font-medium mt-4 ${isLight ? 'text-slate-700' : 'text-white'}`}>
+              Understanding Time Zones
+            </h3>
+            <p>
+              The world is divided into 24 primary time zones, each roughly 15 degrees of longitude wide. 
+              As Earth rotates, different regions experience different times of day. The International Date 
+              Line in the Pacific Ocean marks where one calendar day becomes the next.
+            </p>
+            <p>
+              Major business hubs like New York, London, Tokyo, and Sydney often need to coordinate across 
+              multiple time zones. Our map helps visualize these differences at a glance, making it easier 
+              to schedule international meetings, calls, and events.
+            </p>
+            <h3 className={`text-lg font-medium mt-4 ${isLight ? 'text-slate-700' : 'text-white'}`}>
+              Day and Night Visualization
+            </h3>
+            <p>
+              The dashed yellow lines on the map represent the approximate boundaries between day and night. 
+              These terminator lines move continuously as Earth rotates, completing a full cycle every 24 hours. 
+              The position changes throughout the year due to Earth's axial tilt, affecting how much daylight 
+              each region receives.
+            </p>
+          </div>
+        </div>
+        
         {/* City Grid */}
         <div className="mt-8">
           <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-700' : 'text-white'}`}>
@@ -460,6 +502,28 @@ export default function WorldMap() {
                 </Link>
               )
             })}
+          </div>
+        </div>
+        
+        {/* Additional SEO Content */}
+        <div className={`mt-8 rounded-2xl p-6 ${isLight ? 'bg-white/60' : 'bg-slate-800/40'}`}>
+          <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+            How to Use the World Clock Map
+          </h2>
+          <div className={`space-y-4 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+            <p>
+              <strong>Zoom Controls:</strong> Use the + and − buttons in the top right corner to zoom in 
+              for a closer look at specific regions. The reset button (↺) returns to the default view.
+            </p>
+            <p>
+              <strong>City Selection:</strong> Click on any city dot to see a popup with the city name, 
+              country, current time, and time of day. From there, you can navigate to the detailed city 
+              page for comprehensive information.
+            </p>
+            <p>
+              <strong>Time Comparison:</strong> Use this map alongside our Time Converter tool to calculate 
+              exact time differences between cities and find optimal meeting times across different time zones.
+            </p>
           </div>
         </div>
       </div>

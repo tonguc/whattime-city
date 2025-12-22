@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { cities } from '@/lib/cities'
 import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
@@ -11,8 +11,15 @@ export default function JetLagPage() {
   const { theme, isLight, selectedCity } = useToolsTheme()
   
   const [currentTime, setCurrentTime] = useState(new Date())
-  const [fromCity, setFromCity] = useState(() => selectedCity || cities.find(c => c.city === 'New York') || cities[0])
+  const [fromCity, setFromCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
   const [toCity, setToCity] = useState(() => cities.find(c => c.city === 'Tokyo') || cities[2])
+  
+  // Sync fromCity with context when it becomes available
+  useEffect(() => {
+    if (selectedCity) {
+      setFromCity(selectedCity)
+    }
+  }, [selectedCity])
 
   // Calculate time difference
   const getTimeDiff = () => {

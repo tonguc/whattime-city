@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { cities } from '@/lib/cities'
 import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
@@ -11,9 +11,16 @@ export default function WorldAlarmPage() {
   const { theme, isLight, selectedCity } = useToolsTheme()
   
   const [currentTime, setCurrentTime] = useState(new Date())
-  const [alarmCity, setAlarmCity] = useState(() => selectedCity || cities.find(c => c.city === 'London') || cities[0])
+  const [alarmCity, setAlarmCity] = useState(() => cities.find(c => c.city === 'London') || cities[0])
   const [alarmHour, setAlarmHour] = useState(9)
   const [alarmMinute, setAlarmMinute] = useState(0)
+  
+  // Sync alarmCity with context when it becomes available
+  useEffect(() => {
+    if (selectedCity) {
+      setAlarmCity(selectedCity)
+    }
+  }, [selectedCity])
 
   // Get current time in alarm city
   const getCityTime = () => {

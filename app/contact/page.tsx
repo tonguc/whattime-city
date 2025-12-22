@@ -2,8 +2,9 @@ import { Metadata } from 'next'
 import ContactContent from '@/components/ContactContent'
 
 export const metadata: Metadata = {
-  title: 'Contact Us - whattime.city',
-  description: 'Get in touch with the whattime.city team. We\'d love to hear from you!',
+  title: 'Contact whattime.city - Support, Feedback & Suggestions',
+  description: 'Get in touch with whattime.city team for support, bug reports, feature requests, or partnership inquiries. We typically respond within 24-48 hours.',
+  keywords: ['contact whattime.city', 'world clock support', 'time zone help', 'feedback'],
   alternates: {
     canonical: 'https://whattime.city/contact'
   }
