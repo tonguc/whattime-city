@@ -379,6 +379,51 @@ export default function BestTimeToVisitContent({ city }: Props) {
         </div>
       </section>
       
+      {/* Manhattanhenge - NEW */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
+          🌅 Manhattanhenge: NYC's Most Instagrammable Moments
+        </h2>
+        
+        <p className="mb-4">
+          Twice a year, the setting sun aligns perfectly with Manhattan's east-west streets, 
+          creating a breathtaking "urban Stonehenge" effect. If you're in NYC during these dates, 
+          don't miss it.
+        </p>
+        
+        <div className={`p-5 rounded-xl border-2 ${
+          isLight ? 'border-orange-200 bg-orange-50' : 'border-orange-800 bg-orange-900/20'
+        }`}>
+          <h3 className={`font-semibold mb-3 ${headingColor}`}>2025 Manhattanhenge Dates</h3>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 className="font-medium">🌞 Late May</h4>
+              <ul className="text-sm mt-2 space-y-1">
+                <li>• <strong>May 29:</strong> Half sun on grid (8:12 PM)</li>
+                <li>• <strong>May 30:</strong> Full sun on grid (8:13 PM)</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-medium">🌞 Mid July</h4>
+              <ul className="text-sm mt-2 space-y-1">
+                <li>• <strong>July 12:</strong> Full sun on grid (8:20 PM)</li>
+                <li>• <strong>July 13:</strong> Half sun on grid (8:21 PM)</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="mt-4 pt-4 border-t border-orange-200 dark:border-orange-800">
+            <h4 className={`font-medium mb-2 ${headingColor}`}>📍 Best Viewing Spots</h4>
+            <ul className="text-sm space-y-1">
+              <li>• <strong>42nd Street:</strong> Tudor City overpass (classic shot)</li>
+              <li>• <strong>34th Street:</strong> By the Empire State Building</li>
+              <li>• <strong>14th Street:</strong> Less crowded alternative</li>
+              <li>• Arrive 30+ minutes early for a good spot</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      
       {/* FAQ */}
       <section className="mb-10">
         <h2 className={`text-2xl font-semibold mb-6 ${headingColor}`}>

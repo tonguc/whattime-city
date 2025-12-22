@@ -207,6 +207,57 @@ export default function TravelPlanningContent({ city }: Props) {
         </div>
       </section>
       
+      {/* Getting Around NYC - NEW */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>🚶 Getting Around: NYC Distance & Time Rules</h2>
+        
+        <p className="mb-4">
+          NYC's grid system makes navigation easy once you learn these simple rules:
+        </p>
+        
+        <div className={`p-5 rounded-xl border-2 ${
+          isLight ? 'border-blue-200 bg-blue-50' : 'border-blue-800 bg-blue-900/20'
+        }`}>
+          <h3 className={`font-semibold mb-3 ${headingColor}`}>🧮 The 20-Block Rule</h3>
+          <div className="text-center py-4">
+            <p className="text-2xl font-bold mb-2">20 blocks = 1 mile = ~20 minutes walking</p>
+            <p className={`text-sm ${mutedColor}`}>North-South blocks (numbered streets)</p>
+          </div>
+          <ul className="text-sm space-y-2 mt-4">
+            <li>📏 <strong>1 block north/south</strong> = ~1 minute walk</li>
+            <li>↔️ <strong>East-West blocks</strong> are 3-4x longer (~3-4 minutes each)</li>
+            <li>🏃 <strong>Quick math:</strong> Street 42 to Street 22 = 20 blocks = 20 minutes</li>
+          </ul>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-4 mt-4">
+          <div className={`p-4 rounded-xl ${cardBg}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>🚇 Subway vs Walking</h3>
+            <ul className="text-sm space-y-1">
+              <li>• Under 20 blocks? Walk (faster than waiting for train)</li>
+              <li>• 20-40 blocks? Subway is worth it</li>
+              <li>• East-West? Always subway or bus</li>
+            </ul>
+          </div>
+          
+          <div className={`p-4 rounded-xl ${cardBg}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>🚕 When to Taxi/Uber</h3>
+            <ul className="text-sm space-y-1">
+              <li>• Rush hour = subway faster</li>
+              <li>• Late night = rideshare safer</li>
+              <li>• Crosstown (east↔west) = can be worth it</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className={`mt-4 p-4 rounded-xl border-l-4 border-amber-500 ${cardBg}`}>
+          <p className="text-sm">
+            💡 <strong>Rush hour warning:</strong> Taking a taxi from JFK during rush hour (4-7 PM) 
+            can take 2+ hours. The AirTrain + subway combo is slower on paper but has a guaranteed arrival time.
+          </p>
+        </div>
+      </section>
+      
       {/* FAQ */}
       <section className="mb-10">
         <h2 className={`text-2xl font-semibold mb-6 ${headingColor}`}>FAQ</h2>

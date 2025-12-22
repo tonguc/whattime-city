@@ -221,6 +221,46 @@ export default function RemoteWorkContent({ city }: Props) {
         </div>
       </section>
       
+      {/* NYC Communication Culture - NEW */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>🗽 NYC Communication Culture</h2>
+        
+        <p className="mb-4">
+          Working with New Yorkers? Here's what you should know about their communication style:
+        </p>
+        
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className={`p-4 rounded-xl ${cardBg}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>📝 Email & Slack Style</h3>
+            <ul className="text-sm space-y-2">
+              <li><strong>Direct and brief.</strong> Skip the pleasantries. Get to the point.</li>
+              <li><strong>"Per my last email"</strong> = passive-aggressive warning sign.</li>
+              <li><strong>One-line replies are normal.</strong> "Got it." "Done." "Sounds good."</li>
+              <li><strong>Response expected same day</strong> (during business hours).</li>
+            </ul>
+          </div>
+          
+          <div className={`p-4 rounded-xl ${cardBg}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>📅 Meeting Culture</h3>
+            <ul className="text-sm space-y-2">
+              <li><strong>Punctuality is non-negotiable.</strong> On time = 2 minutes early.</li>
+              <li><strong>30 minutes default.</strong> 1-hour meetings need justification.</li>
+              <li><strong>Small talk is minimal.</strong> Maybe 30 seconds, then business.</li>
+              <li><strong>Decisions expected.</strong> "Let's circle back" is frustrating.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className={`mt-4 p-4 rounded-xl border-l-4 border-amber-500 ${cardBg}`}>
+          <h3 className={`font-medium mb-2 ${headingColor}`}>💡 Cultural Tip</h3>
+          <p className="text-sm">
+            New York directness isn't rudeness — it's efficiency. If a New Yorker seems blunt, 
+            don't take it personally. They're just respecting your time (and theirs). Match 
+            their energy: be clear, be concise, and don't bury the ask at the end of a long email.
+          </p>
+        </div>
+      </section>
+      
       {/* Async Communication */}
       <section className="mb-10">
         <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>

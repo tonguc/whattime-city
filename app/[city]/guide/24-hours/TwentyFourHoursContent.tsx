@@ -182,6 +182,17 @@ export default function TwentyFourHoursContent({ city }: Props) {
             Check MTA alerts for weekend service changes.
           </p>
         </div>
+        
+        {/* Late Night Subway Details - NEW */}
+        <div className={`mt-4 p-4 rounded-xl border-l-4 border-yellow-500 ${cardBg}`}>
+          <h3 className={`font-medium mb-2 ${headingColor}`}>🚇 Late Night Subway Warning</h3>
+          <ul className="text-sm space-y-2">
+            <li>⚠️ <strong>Express → Local:</strong> After midnight, many express trains switch to local service. Your "quick" 20-minute ride could become 45 minutes.</li>
+            <li>⏱️ <strong>Wait times:</strong> Expect 10-20 minute waits between trains (vs. 3-5 minutes during the day).</li>
+            <li>🔀 <strong>Route changes:</strong> Some lines don't run at all late night. The 7 train, for example, runs limited service.</li>
+            <li>💡 <strong>Pro tip:</strong> Use the MTA app or Google Maps real-time — schedules mean nothing at 2 AM.</li>
+          </ul>
+        </div>
       </section>
       
       {/* Late Night NYC */}
@@ -237,6 +248,17 @@ export default function TwentyFourHoursContent({ city }: Props) {
               <li>• Department stores</li>
             </ul>
           </div>
+        </div>
+        
+        {/* Emergency & Essential Services - NEW */}
+        <div className={`mt-4 p-4 rounded-xl border-l-4 border-red-500 ${cardBg}`}>
+          <h3 className={`font-medium mb-3 ${headingColor}`}>🚨 Late Night Emergencies</h3>
+          <ul className="text-sm space-y-2">
+            <li>💊 <strong>24hr Pharmacies:</strong> Duane Reade and CVS have 24-hour locations throughout Manhattan. Search "24 hour pharmacy near me" — locations vary.</li>
+            <li>🦷 <strong>Emergency Dental:</strong> NYC has 24hr dental clinics. Search "emergency dentist NYC" — expect $200+ for after-hours visits.</li>
+            <li>🏥 <strong>Urgent Care:</strong> CityMD and many ERs open 24/7. For non-life-threatening issues, urgent care is faster and cheaper than ER.</li>
+            <li>📞 <strong>Emergency:</strong> 911 for police, fire, ambulance. 311 for non-emergency city services.</li>
+          </ul>
         </div>
       </section>
       

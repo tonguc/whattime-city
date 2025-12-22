@@ -39,6 +39,55 @@ export default function StockMarketContent({ city }: Props) {
   
   const marketStatus = getMarketStatus()
   
+  // Calculate time until next event
+  const getCountdown = () => {
+    const totalMinutes = currentHour * 60 + currentMinute
+    
+    if (isWeekend) {
+      // Calculate hours until Monday 9:30 AM
+      const daysUntilMonday = dayOfWeek === 0 ? 1 : 2
+      return { label: 'Opens Monday', time: `${daysUntilMonday}d` }
+    }
+    
+    if (isOpen) {
+      // Time until 4:00 PM close
+      const closeMinutes = 16 * 60
+      const remaining = closeMinutes - totalMinutes
+      const hours = Math.floor(remaining / 60)
+      const mins = remaining % 60
+      return { label: 'Until close', time: `${hours}h ${mins}m` }
+    }
+    
+    if (isPreMarket) {
+      // Time until 9:30 AM open
+      const openMinutes = 9 * 60 + 30
+      const remaining = openMinutes - totalMinutes
+      const hours = Math.floor(remaining / 60)
+      const mins = remaining % 60
+      return { label: 'Until open', time: `${hours}h ${mins}m` }
+    }
+    
+    if (isAfterHours) {
+      // Time until 8:00 PM close
+      const closeMinutes = 20 * 60
+      const remaining = closeMinutes - totalMinutes
+      const hours = Math.floor(remaining / 60)
+      const mins = remaining % 60
+      return { label: 'After-hours ends', time: `${hours}h ${mins}m` }
+    }
+    
+    // Market closed (before 4 AM or after 8 PM)
+    if (currentHour < 4) {
+      const preMarketMinutes = 4 * 60
+      const remaining = preMarketMinutes - totalMinutes
+      return { label: 'Pre-market in', time: `${Math.floor(remaining / 60)}h ${remaining % 60}m` }
+    }
+    
+    return { label: 'Opens tomorrow', time: '9:30 AM' }
+  }
+  
+  const countdown = getCountdown()
+  
   const globalTimes = [
     { city: 'New York', flag: '🇺🇸', open: '9:30 AM', close: '4:00 PM', preMarket: '4:00 AM', afterHours: '8:00 PM' },
     { city: 'London', flag: '🇬🇧', open: '2:30 PM', close: '9:00 PM', preMarket: '9:00 AM', afterHours: '1:00 AM' },
@@ -64,9 +113,16 @@ export default function StockMarketContent({ city }: Props) {
           Stock market hours for global investors
         </p>
         
-        <div className={`mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full ${cardBg}`}>
-          <span className={`w-2 h-2 rounded-full ${marketStatus.color}`}></span>
-          <span className="text-sm">NYSE ({timeStr}): <strong>{marketStatus.status}</strong></span>
+        <div className={`mt-4 flex flex-wrap items-center gap-3`}>
+          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${cardBg}`}>
+            <span className={`w-2 h-2 rounded-full ${marketStatus.color}`}></span>
+            <span className="text-sm">NYSE ({timeStr}): <strong>{marketStatus.status}</strong></span>
+          </div>
+          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${
+            isLight ? 'bg-amber-50 text-amber-700' : 'bg-amber-900/30 text-amber-400'
+          }`}>
+            <span className="text-sm">⏱️ {countdown.label}: <strong>{countdown.time}</strong></span>
+          </div>
         </div>
       </header>
       
@@ -159,6 +215,39 @@ export default function StockMarketContent({ city }: Props) {
         <p className={`mt-3 text-sm ${mutedColor}`}>
           Early close (1 PM ET) on Jul 3, Nov 28, and Dec 24.
         </p>
+      </section>
+      
+      {/* Wall Street Tourist Tips - NEW */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>🗽 Wall Street Tourist Tips</h2>
+        
+        <div className="space-y-4">
+          <div className={`p-4 rounded-xl ${cardBg}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>Can you visit the NYSE Trading Floor?</h3>
+            <p className="text-sm">
+              <strong>No.</strong> The NYSE trading floor has been closed to public tours since 9/11. 
+              However, you can still experience the Wall Street atmosphere from outside.
+            </p>
+          </div>
+          
+          <div className={`p-4 rounded-xl ${cardBg}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>Best time to visit Wall Street area</h3>
+            <ul className="text-sm space-y-2 mt-2">
+              <li>🔔 <strong>9:00 - 9:45 AM:</strong> Watch traders and finance workers rush in before the opening bell. The energy is palpable.</li>
+              <li>🐂 <strong>7:00 - 8:00 AM:</strong> Best time for photos with the Charging Bull — minimal crowds.</li>
+              <li>🌆 <strong>4:00 - 5:00 PM:</strong> Closing bell atmosphere, workers leaving, good for street photography.</li>
+              <li>🌙 <strong>Weekends:</strong> Ghost town — great for architecture photos but zero Wall Street "vibe".</li>
+            </ul>
+          </div>
+          
+          <div className={`p-4 rounded-xl border-l-4 border-amber-500 ${cardBg}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>💡 Insider Tip</h3>
+            <p className="text-sm">
+              The Fearless Girl statue (now at NYSE) and Charging Bull (on Broadway) are about a 5-minute walk apart. 
+              Visit the Bull first thing in the morning, then walk to NYSE for the opening bell energy.
+            </p>
+          </div>
+        </div>
       </section>
       
       <section className="mb-10">

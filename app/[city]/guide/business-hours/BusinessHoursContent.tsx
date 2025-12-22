@@ -413,6 +413,109 @@ export default function BusinessHoursContent({ city }: Props) {
         </p>
       </section>
       
+      {/* Museum Quiet Hours - NEW */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
+          🎨 Museum Quiet Hours (Avoid the Crowds)
+        </h2>
+        
+        <p className="mb-4">
+          NYC museums can be overwhelming during peak times. Here's when locals go to avoid the crowds:
+        </p>
+        
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className={`p-4 rounded-xl ${cardBg}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>The Met</h3>
+            <ul className="text-sm space-y-1">
+              <li>🟢 <strong>Best:</strong> Tuesday & Wednesday, 10-11 AM</li>
+              <li>🟢 <strong>Good:</strong> Friday evenings (open until 9 PM)</li>
+              <li>🔴 <strong>Avoid:</strong> Saturday 11 AM - 4 PM, Sunday afternoons</li>
+            </ul>
+          </div>
+          
+          <div className={`p-4 rounded-xl ${cardBg}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>MoMA</h3>
+            <ul className="text-sm space-y-1">
+              <li>🟢 <strong>Best:</strong> Weekday mornings (10:30-11:30 AM)</li>
+              <li>🟢 <strong>Good:</strong> Friday evenings (free after 5:30 PM — but busy)</li>
+              <li>🔴 <strong>Avoid:</strong> Weekends, school vacation weeks</li>
+            </ul>
+          </div>
+          
+          <div className={`p-4 rounded-xl ${cardBg}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>Natural History Museum</h3>
+            <ul className="text-sm space-y-1">
+              <li>🟢 <strong>Best:</strong> Weekday afternoons (2-4 PM)</li>
+              <li>🟡 <strong>Note:</strong> Morning school groups leave by 2 PM</li>
+              <li>🔴 <strong>Avoid:</strong> Weekend mornings, rainy days (everyone goes inside)</li>
+            </ul>
+          </div>
+          
+          <div className={`p-4 rounded-xl ${cardBg}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>Guggenheim</h3>
+            <ul className="text-sm space-y-1">
+              <li>🟢 <strong>Best:</strong> Weekday late afternoons (3-5 PM)</li>
+              <li>🟢 <strong>Good:</strong> Saturday "Pay What You Wish" 4-6 PM (crowded but free)</li>
+              <li>🔴 <strong>Avoid:</strong> Sunday afternoons</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className={`mt-4 p-4 rounded-xl border-l-4 border-amber-500 ${cardBg}`}>
+          <p className="text-sm">
+            💡 <strong>Pro tip:</strong> Many museums have "late night" hours on Fridays or Saturdays. 
+            The last 2 hours before closing are often the quietest — most tourists have left for dinner.
+          </p>
+        </div>
+      </section>
+      
+      {/* Blue Laws - Alcohol Sales - NEW */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
+          🍷 Alcohol Sales Hours (Blue Laws)
+        </h2>
+        
+        <p className="mb-4">
+          New York has specific laws about when and where you can buy alcohol. Don't get caught off guard:
+        </p>
+        
+        <div className={`overflow-x-auto rounded-xl border ${tableBorder}`}>
+          <table className="w-full text-sm">
+            <thead className={cardBg}>
+              <tr>
+                <th className={`p-3 text-left font-medium ${headingColor}`}>Where</th>
+                <th className={`p-3 text-left font-medium ${headingColor}`}>Beer/Wine</th>
+                <th className={`p-3 text-left font-medium ${headingColor}`}>Liquor</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
+              <tr>
+                <td className="p-3 font-medium">Grocery/Bodega</td>
+                <td className="p-3">Daily: 8 AM - 12 AM<br/>Sunday: 12 PM - 12 AM</td>
+                <td className="p-3 text-red-500">❌ Not sold</td>
+              </tr>
+              <tr className={cardBg}>
+                <td className="p-3 font-medium">Liquor Store</td>
+                <td className="p-3 text-red-500">❌ Not sold</td>
+                <td className="p-3">Mon-Sat: Store hours<br/>Sunday: 12 PM onwards</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-medium">Bars/Restaurants</td>
+                <td className="p-3" colSpan={2}>8 AM - 4 AM daily (last call ~3:30 AM)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div className={`mt-4 p-3 rounded-lg ${cardBg}`}>
+          <p className="text-sm">
+            <strong>Key point:</strong> Liquor stores can't sell beer/wine, and grocery stores can't sell liquor. 
+            This is why you'll see separate "beer" and "liquor" stores next to each other. Sunday alcohol sales 
+            start at noon (not morning).
+          </p>
+        </div>
+      </section>
+      
       {/* FAQ */}
       <section className="mb-10">
         <h2 className={`text-2xl font-semibold mb-6 ${headingColor}`}>

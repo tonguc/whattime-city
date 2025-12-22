@@ -108,6 +108,62 @@ export default function HolidaysContent({ city }: Props) {
         </div>
       </section>
       
+      {/* Transit on Holidays - NEW */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>🚇 Transit on Holidays</h2>
+        
+        <div className={`p-4 rounded-xl ${cardBg}`}>
+          <p className="mb-4">
+            The subway runs 365 days a year, but holiday service is different:
+          </p>
+          
+          <ul className="text-sm space-y-2">
+            <li>📅 <strong>Holiday schedule = Sunday schedule:</strong> Trains run less frequently (every 10-15 minutes instead of 3-5).</li>
+            <li>🚌 <strong>Buses:</strong> Also on Sunday schedule — check MTA for specific routes.</li>
+            <li>🚫 <strong>Express service:</strong> Many express trains run local on holidays.</li>
+            <li>⏰ <strong>Wait times:</strong> Expect 2-3x longer waits than weekdays.</li>
+          </ul>
+          
+          <div className={`mt-4 p-3 rounded-lg ${isLight ? 'bg-yellow-50' : 'bg-yellow-900/20'}`}>
+            <p className="text-sm">
+              ⚠️ <strong>Macy's Thanksgiving Parade:</strong> Multiple subway stations near the parade route 
+              are CLOSED or skip stops. Herald Square, 34th St, and nearby stations are chaos until afternoon.
+            </p>
+          </div>
+        </div>
+      </section>
+      
+      {/* Best Shopping Holidays - NEW */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>🛍️ Best Shopping Holidays</h2>
+        
+        <p className="mb-4">
+          If you're timing your trip for shopping deals, these are the days to target:
+        </p>
+        
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className={`p-4 rounded-xl border-2 ${isLight ? 'border-green-200 bg-green-50' : 'border-green-800 bg-green-900/20'}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>🏆 Best Deals</h3>
+            <ul className="text-sm space-y-2">
+              <li><strong>Black Friday</strong> (Nov 28) — The big one. Chaos but deals.</li>
+              <li><strong>Presidents' Day</strong> (Feb) — Winter clearance sales.</li>
+              <li><strong>Labor Day</strong> (Sep) — End of summer sales.</li>
+              <li><strong>Memorial Day</strong> (May) — Spring sales kick off.</li>
+            </ul>
+          </div>
+          
+          <div className={`p-4 rounded-xl border-2 ${isLight ? 'border-amber-200 bg-amber-50' : 'border-amber-800 bg-amber-900/20'}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>💡 Pro Tips</h3>
+            <ul className="text-sm space-y-2">
+              <li>Black Friday starts Thursday evening now</li>
+              <li>SoHo is impossible on Black Friday — try Williamsburg</li>
+              <li>January = best post-holiday clearance</li>
+              <li>Many stores price-match online competitors</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      
       <section className="mb-10">
         <h2 className={`text-2xl font-semibold mb-6 ${headingColor}`}>FAQ</h2>
         

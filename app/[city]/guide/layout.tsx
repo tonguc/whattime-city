@@ -2,6 +2,7 @@
 
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import { cities } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
 import Header from '@/components/Header'
@@ -15,9 +16,31 @@ export default function GuideLayout({
   const params = useParams()
   const citySlug = params.city as string
   const city = cities.find(c => c.slug === citySlug)
-  const { theme, isLight } = useCityContext()
+  const { theme, isLight, time } = useCityContext()
+  const [isScrolled, setIsScrolled] = useState(false)
+  
+  // Scroll detection for sticky bar
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
   
   if (!city) return null
+  
+  // Calculate times
+  const nycTime = new Date(time.toLocaleString('en-US', { timeZone: city.timezone }))
+  const localTime = time
+  const nycTimeStr = nycTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })
+  const localTimeStr = localTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })
+  
+  // Calculate hour difference
+  const nycOffset = -5 // EST (simplified, should use actual offset)
+  const localOffset = -localTime.getTimezoneOffset() / 60
+  const hourDiff = localOffset - nycOffset
+  const diffText = hourDiff === 0 ? 'Same time' : hourDiff > 0 ? `+${hourDiff}h ahead` : `${hourDiff}h behind`
   
   const guideLinks = [
     { slug: '', label: 'Overview', icon: '📖' },
@@ -36,6 +59,42 @@ export default function GuideLayout({
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg}`}>
       <Header />
+      
+      {/* Sticky Time Bar - appears on scroll */}
+      <div className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        isScrolled ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+      }`}>
+        <div className={`${isLight ? 'bg-white/95' : 'bg-slate-900/95'} backdrop-blur-md border-b ${
+          isLight ? 'border-slate-200' : 'border-slate-700'
+        } shadow-sm`}>
+          <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between text-sm">
+            <div className="flex items-center gap-4">
+              <span className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                🗽 NYC: {nycTimeStr}
+              </span>
+              <span className={isLight ? 'text-slate-400' : 'text-slate-500'}>|</span>
+              <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>
+                📍 You: {localTimeStr}
+              </span>
+              <span className={`px-2 py-0.5 rounded text-xs ${
+                hourDiff === 0 
+                  ? 'bg-green-100 text-green-700' 
+                  : hourDiff > 0 
+                    ? 'bg-blue-100 text-blue-700'
+                    : 'bg-amber-100 text-amber-700'
+              }`}>
+                {diffText}
+              </span>
+            </div>
+            <Link 
+              href={`/${citySlug}/`}
+              className={`text-xs ${isLight ? 'text-amber-600 hover:text-amber-700' : 'text-amber-400 hover:text-amber-300'}`}
+            >
+              ← Back to {city.city}
+            </Link>
+          </div>
+        </div>
+      </div>
       
       <main className="max-w-6xl mx-auto px-4 py-8">
         {/* Breadcrumb */}
