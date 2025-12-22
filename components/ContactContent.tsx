@@ -1,23 +1,11 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import SimpleHeader from '@/components/SimpleHeader'
+import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { useCityContext } from '@/lib/CityContext'
 
 export default function ContactContent() {
-  const [isLight, setIsLight] = useState(false)
-  
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('themeMode')
-    if (savedTheme === 'light') {
-      setIsLight(true)
-    } else if (savedTheme === 'dark') {
-      setIsLight(false)
-    } else {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-      setIsLight(!prefersDark)
-    }
-  }, [])
+  const { theme, isLight } = useCityContext()
   
   const textMain = isLight ? 'text-slate-800' : 'text-white'
   const textMuted = isLight ? 'text-slate-600' : 'text-slate-300'
@@ -27,11 +15,8 @@ export default function ContactContent() {
   const highlightBg = isLight ? 'bg-indigo-50/50 border-indigo-200/50' : 'bg-indigo-900/30 border-indigo-700/50'
   
   return (
-    <div className={`min-h-screen ${isLight 
-      ? 'bg-gradient-to-br from-slate-100 via-white to-slate-100' 
-      : 'bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950'
-    }`}>
-      <SimpleHeader isLight={isLight} />
+    <div className={`min-h-screen bg-gradient-to-br ${theme.bg}`}>
+      <Header />
       
       <main className="max-w-3xl mx-auto px-4 py-12">
         <h1 className={`text-4xl font-bold ${textMain} mb-8`}>Contact Us</h1>

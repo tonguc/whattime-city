@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getCountryBySlug, getAllCountrySlugs, getCitiesByCountryCode } from '@/lib/cities'
-import SimpleHeader from '@/components/SimpleHeader'
+import CountryPageWrapper from '@/components/CountryPageWrapper'
 
 interface CountryPageProps {
   params: Promise<{ country: string }>
@@ -88,16 +88,12 @@ export default async function CountryPage({ params }: CountryPageProps) {
   const funFacts = seo?.funFacts || generateFunFacts(country)
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950">
-      <SimpleHeader isLight={false} />
-      
-      <div className="max-w-6xl mx-auto px-4 py-8">
-        
-        {/* Page Title */}
-        <header className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
-            Current Time in {country.name}
-          </h1>
+    <CountryPageWrapper>
+      {/* Page Title */}
+      <header className="mb-8">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
+          Current Time in {country.name}
+        </h1>
           <p className="text-xl text-slate-300 leading-relaxed">
             Check local time in {country.capital} and all {country.name} cities. {country.timezones.length > 1 
               ? `${country.name} spans ${country.timezones.length} time zones.` 
@@ -338,23 +334,7 @@ export default async function CountryPage({ params }: CountryPageProps) {
             </div>
           </div>
         </section>
-        
-        {/* Footer */}
-        <footer className="mt-8 pt-6 border-t border-slate-800">
-          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-3 text-sm text-slate-400">
-            <a href="/map" className="hover:underline">World Map</a>
-            <a href="/country" className="hover:underline">Countries</a>
-            <a href="/tools" className="hover:underline">Tools</a>
-            <a href="/widget" className="hover:underline">Widget</a>
-            <span>|</span>
-            <a href="/about" className="hover:underline">About</a>
-            <a href="/privacy" className="hover:underline">Privacy</a>
-            <a href="/contact" className="hover:underline">Contact</a>
-          </nav>
-          <p className="text-sm text-slate-400 text-center">© {new Date().getFullYear()} whattime.city</p>
-        </footer>
-      </div>
-    </div>
+    </CountryPageWrapper>
   )
 }
 

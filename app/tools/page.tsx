@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { translations, detectLanguage, Language } from '@/lib/translations'
 import { useToolsTheme } from '@/lib/useToolsTheme'
+import Footer from '@/components/Footer'
 
 // Tool definitions - Normalized names (2 words, English only)
 const tools = [
@@ -166,21 +167,9 @@ export default function ToolsPage() {
         </div>
 
         {/* Footer */}
-        <footer className={`mt-16 pt-6 border-t ${isLight ? 'border-slate-200/50' : 'border-slate-700/50'}`}>
-          <nav className={`flex flex-wrap justify-center gap-x-6 gap-y-2 mb-3 text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-            <a href="/map" className="hover:underline">World Map</a>
-            <a href="/country" className="hover:underline">Countries</a>
-            <a href="/tools" className="hover:underline">Tools</a>
-            <a href="/widget" className="hover:underline">Widget</a>
-            <span>|</span>
-            <a href="/about" className="hover:underline">About</a>
-            <a href="/privacy" className="hover:underline">Privacy</a>
-            <a href="/contact" className="hover:underline">Contact</a>
-          </nav>
-          <p className={`text-sm text-center ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-            © {new Date().getFullYear()} whattime.city
-          </p>
-        </footer>
+        <div className="mt-16">
+          <Footer isLight={isLight} />
+        </div>
     </>
   )
 }

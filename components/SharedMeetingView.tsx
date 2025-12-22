@@ -7,6 +7,7 @@ import { City, cities } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import TimeIcons from './TimeIcons'
+import Footer from '@/components/Footer'
 
 export default function SharedMeetingView() {
   const searchParams = useSearchParams()
@@ -276,25 +277,7 @@ export default function SharedMeetingView() {
       </main>
 
       {/* Footer */}
-      <footer className={`mt-12 pt-8 border-t ${isLight ? 'border-slate-200' : 'border-slate-800'}`}>
-        <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-6 text-sm">
-          <Link href="/" className={`hover:underline ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>World Clock</Link>
-          <Link href="/map" className={`hover:underline ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>World Map</Link>
-          <Link href="/tools" className={`hover:underline ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>Tools</Link>
-          <Link href="/widget" className={`hover:underline ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>Free Widget</Link>
-        </nav>
-        <p className={`text-center text-sm ${isLight ? 'text-slate-500' : 'text-slate-500'}`}>
-          © {new Date().getFullYear()} whattime.city
-        </p>
-        <div className={`flex justify-center gap-4 mt-3 text-xs ${isLight ? 'text-slate-500' : 'text-slate-500'}`}>
-          <Link href="/about" className="hover:underline">About</Link>
-          <span>•</span>
-          <Link href="/privacy" className="hover:underline">Privacy</Link>
-          <span>•</span>
-          <Link href="/contact" className="hover:underline">Contact</Link>
-        </div>
-        <div className="pb-8" />
-      </footer>
+      <Footer isLight={isLight} />
     </div>
   )
 }

@@ -5,22 +5,20 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { useCityContext } from '@/lib/CityContext'
 
-interface ThemedPageProps {
+interface CountryPageWrapperProps {
   children: ReactNode
 }
 
-export default function ThemedPage({ children }: ThemedPageProps) {
+export default function CountryPageWrapper({ children }: CountryPageWrapperProps) {
   const { theme, isLight } = useCityContext()
   
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg}`}>
       <Header />
       
-      <main className="max-w-3xl mx-auto px-4 py-12">
-        <div className={isLight ? 'text-slate-800' : 'text-white'}>
-          {children}
-        </div>
-      </main>
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        {children}
+      </div>
       
       <Footer isLight={isLight} />
     </div>

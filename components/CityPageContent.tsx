@@ -6,6 +6,7 @@ import { City, cities } from '@/lib/cities'
 import { getTimeOfDay, getSunTimes, formatSunTime } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import { saveCityContext } from '@/lib/city-context'
+import Footer from '@/components/Footer'
 
 interface CityPageContentProps {
   city: City
@@ -411,25 +412,7 @@ export default function CityPageContent({ city }: CityPageContentProps) {
       </section>
       
       {/* Footer */}
-      <footer className={`mt-12 pt-8 border-t text-center ${isLight ? 'border-slate-200' : 'border-slate-800'}`}>
-        <nav className={`flex flex-wrap justify-center gap-x-6 gap-y-2 mb-6 text-sm`}>
-          <a href="/" className={`hover:underline ${isLight ? 'text-slate-600 hover:text-slate-800' : 'text-slate-400 hover:text-white'}`}>World Clock</a>
-          <a href="/map" className={`hover:underline ${isLight ? 'text-slate-600 hover:text-slate-800' : 'text-slate-400 hover:text-white'}`}>World Map</a>
-          <a href="/country" className={`hover:underline ${isLight ? 'text-slate-600 hover:text-slate-800' : 'text-slate-400 hover:text-white'}`}>Countries</a>
-          <a href="/tools" className={`hover:underline ${isLight ? 'text-slate-600 hover:text-slate-800' : 'text-slate-400 hover:text-white'}`}>Tools</a>
-          <a href="/widget" className={`hover:underline ${isLight ? 'text-slate-600 hover:text-slate-800' : 'text-slate-400 hover:text-white'}`}>Free Widget</a>
-        </nav>
-        <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-500'}`}>
-          © {new Date().getFullYear()} whattime.city
-        </p>
-        <div className={`flex justify-center gap-4 mt-3 text-xs ${isLight ? 'text-slate-500' : 'text-slate-500'}`}>
-          <a href="/about" className="hover:underline">About</a>
-          <span>•</span>
-          <a href="/privacy" className="hover:underline">Privacy</a>
-          <span>•</span>
-          <a href="/contact" className="hover:underline">Contact</a>
-        </div>
-      </footer>
+      <Footer isLight={isLight} />
       
       <div className="h-8" />
     </div>
