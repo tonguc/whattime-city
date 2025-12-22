@@ -23,7 +23,7 @@ export default function GuideLayout({
   // Scroll detection for sticky bar
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50) // Reduced from 100
+      setIsScrolled(window.scrollY > 150) // Show after scrolling 150px
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
@@ -61,35 +61,35 @@ export default function GuideLayout({
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg}`}>
       <Header />
       
-      <main className="max-w-6xl mx-auto px-4 py-4 md:py-8">
-        {/* Time Bar - always visible, sticky when scrolling */}
-        <div className="sticky top-[56px] md:top-[64px] z-30 -mx-4 px-4 mb-3">
-          <div className={`${isLight ? 'bg-amber-50' : 'bg-amber-900/90'} rounded-xl border ${
-            isLight ? 'border-amber-200' : 'border-amber-700'
-          } shadow-sm`}>
-            <div className="px-4 py-2 flex items-center justify-between text-sm">
-              <div className="flex items-center gap-2 md:gap-4">
-                <span className={`font-medium whitespace-nowrap ${isLight ? 'text-slate-800' : 'text-white'}`}>
-                  🗽 NYC: {nycTimeStr}
-                </span>
-                <span className="px-2 py-0.5 rounded text-xs whitespace-nowrap bg-blue-100 text-blue-700">
-                  {diffText}
-                </span>
-                <span className={`hidden md:inline ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>|</span>
-                <span className={`hidden md:inline whitespace-nowrap ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-                  📍 You: {localTimeStr}
-                </span>
-              </div>
-              <Link 
-                href={`/${citySlug}/`}
-                className={`text-xs whitespace-nowrap ml-2 ${isLight ? 'text-amber-600 hover:text-amber-700' : 'text-amber-400 hover:text-amber-300'}`}
-              >
-                ← {city.city}
-              </Link>
+      {/* Time Bar - always visible, becomes sticky on scroll */}
+      <div className="sticky top-[56px] md:top-[64px] z-40">
+        <div className={`${isLight ? 'bg-amber-50' : 'bg-amber-900'} border-b ${
+          isLight ? 'border-amber-200' : 'border-amber-700'
+        } shadow-sm`}>
+          <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between text-sm">
+            <div className="flex items-center gap-2 md:gap-4">
+              <span className={`font-medium whitespace-nowrap ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                🗽 NYC: {nycTimeStr}
+              </span>
+              <span className="px-2 py-0.5 rounded text-xs whitespace-nowrap bg-blue-100 text-blue-700">
+                {diffText}
+              </span>
+              <span className={`hidden md:inline ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>|</span>
+              <span className={`hidden md:inline whitespace-nowrap ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+                📍 You: {localTimeStr}
+              </span>
             </div>
+            <Link 
+              href={`/${citySlug}/`}
+              className={`text-xs whitespace-nowrap ml-2 ${isLight ? 'text-amber-600 hover:text-amber-700' : 'text-amber-400 hover:text-amber-300'}`}
+            >
+              ← {city.city}
+            </Link>
           </div>
         </div>
-        
+      </div>
+      
+      <main className="max-w-6xl mx-auto px-4 py-4 md:py-8">
         {/* Breadcrumb */}
         <nav className={`text-sm mb-3 md:mb-6 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
           <Link href="/" className="hover:underline">Home</Link>
