@@ -1,39 +1,31 @@
 import { Metadata } from 'next'
 import { cities } from '@/lib/cities'
 import { notFound } from 'next/navigation'
+import { getGuideConfig } from '@/lib/guide-content'
 import BestTimeToVisitContent from './BestTimeToVisitContent'
+import LondonBestTimeToVisitContent from './LondonBestTimeToVisitContent'
 
 type Props = {
   params: Promise<{ city: string }>
 }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }]
+  return [{ city: 'new-york' }, { city: 'london' }]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: citySlug } = await params
-  const city = cities.find(c => c.slug === citySlug)
+  const config = getGuideConfig(citySlug)
   
-  if (!city) return { title: 'Best Time to Visit' }
+  if (!config) return { title: 'Best Time to Visit' }
   
   return {
-    title: `Best Time to Visit NYC | Weather, Crowds & Prices by Month`,
-    description: `When to visit New York? Month-by-month guide with weather, tourist crowds, hotel prices, and major events. Plus: Manhattanhenge dates and secret locals-only timing tips.`,
-    keywords: [
-      'best time to visit new york',
-      'best month to visit nyc',
-      'new york weather by month',
-      'cheapest time to visit new york',
-      'nyc crowd calendar',
-      'manhattanhenge dates',
-      'new york in fall',
-      'nyc christmas time',
-      'avoid crowds new york',
-    ],
+    title: config.pages.bestTimeToVisit.title,
+    description: config.pages.bestTimeToVisit.description,
+    keywords: config.pages.bestTimeToVisit.keywords,
     openGraph: {
-      title: `Best Time to Visit NYC | Complete Month-by-Month Guide`,
-      description: `Weather, crowds, prices, and events - find the perfect time for your New York trip.`,
+      title: config.pages.bestTimeToVisit.title,
+      description: config.pages.bestTimeToVisit.description,
       type: 'article',
     },
     alternates: {
@@ -45,8 +37,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function BestTimeToVisitPage({ params }: Props) {
   const { city: citySlug } = await params
   const city = cities.find(c => c.slug === citySlug)
+  const config = getGuideConfig(citySlug)
   
-  if (!city || citySlug !== 'new-york') notFound()
+  if (!city || !config) notFound()
+  
+  if (citySlug === 'london') {
+    return <LondonBestTimeToVisitContent city={city} />
+  }
   
   return <BestTimeToVisitContent city={city} />
 }

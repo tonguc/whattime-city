@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { cities } from '@/lib/cities'
 import { notFound } from 'next/navigation'
+import { getGuideConfig, getSupportedGuideCities } from '@/lib/guide-content'
 import GuideContent from './GuideContent'
 
 type Props = {
@@ -9,32 +10,22 @@ type Props = {
 }
 
 export async function generateStaticParams() {
-  // Şimdilik sadece New York için
-  return [{ city: 'new-york' }]
+  return getSupportedGuideCities().map(city => ({ city }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: citySlug } = await params
-  const city = cities.find(c => c.slug === citySlug)
+  const config = getGuideConfig(citySlug)
   
-  if (!city) return { title: 'City Guide' }
+  if (!config) return { title: 'City Guide' }
   
   return {
-    title: `New York Time Zone Guide | EST/EDT, Business Hours & More`,
-    description: `Complete NYC time zone guide. Business hours, Wall Street trading times, best time to call NYC, remote work overlap, holidays, and local tips. Updated regularly.`,
-    keywords: [
-      'new york time zone',
-      'nyc time now',
-      'est edt time',
-      'new york business hours',
-      'wall street hours',
-      'best time to call new york',
-      'nyc time difference',
-      'eastern time zone guide',
-    ],
+    title: config.pages.overview.title,
+    description: config.pages.overview.description,
+    keywords: config.seo.keywords,
     openGraph: {
-      title: `New York Time Zone Guide | Complete NYC Time Resource`,
-      description: `Everything about NYC time: business hours, stock market, holidays, remote work tips. The definitive guide.`,
+      title: config.seo.ogTitle,
+      description: config.seo.ogDescription,
       type: 'article',
     },
     alternates: {
@@ -46,11 +37,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function GuidePage({ params }: Props) {
   const { city: citySlug } = await params
   const city = cities.find(c => c.slug === citySlug)
+  const config = getGuideConfig(citySlug)
   
-  if (!city) notFound()
+  if (!city || !config) notFound()
   
-  // Şimdilik sadece New York için
-  if (citySlug !== 'new-york') notFound()
-  
-  return <GuideContent city={city} />
+  return <GuideContent city={city} config={config} />
 }

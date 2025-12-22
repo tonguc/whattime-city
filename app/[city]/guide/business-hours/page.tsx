@@ -1,38 +1,31 @@
 import { Metadata } from 'next'
 import { cities } from '@/lib/cities'
 import { notFound } from 'next/navigation'
+import { getGuideConfig } from '@/lib/guide-content'
 import BusinessHoursContent from './BusinessHoursContent'
+import LondonBusinessHoursContent from './LondonBusinessHoursContent'
 
 type Props = {
   params: Promise<{ city: string }>
 }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }]
+  return [{ city: 'new-york' }, { city: 'london' }]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: citySlug } = await params
-  const city = cities.find(c => c.slug === citySlug)
+  const config = getGuideConfig(citySlug)
   
-  if (!city) return { title: 'Business Hours' }
+  if (!config) return { title: 'Business Hours' }
   
   return {
-    title: `NYC Business Hours | Banks, Stores, Restaurants & More`,
-    description: `What time do businesses open in NYC? Complete guide to New York store hours, bank schedules, restaurant times, museum hours, and government offices. Updated daily.`,
-    keywords: [
-      'nyc business hours',
-      'new york store hours',
-      'what time do banks open nyc',
-      'nyc restaurant hours',
-      'new york post office hours',
-      'when do stores close in manhattan',
-      'nyc sunday hours',
-      'museum hours new york',
-    ],
+    title: config.pages.businessHours.title,
+    description: config.pages.businessHours.description,
+    keywords: config.pages.businessHours.keywords,
     openGraph: {
-      title: `NYC Business Hours | Complete Opening Times Guide`,
-      description: `When everything opens and closes in New York City - stores, banks, restaurants, museums, and more.`,
+      title: config.pages.businessHours.title,
+      description: config.pages.businessHours.description,
       type: 'article',
     },
     alternates: {
@@ -44,8 +37,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function BusinessHoursPage({ params }: Props) {
   const { city: citySlug } = await params
   const city = cities.find(c => c.slug === citySlug)
+  const config = getGuideConfig(citySlug)
   
-  if (!city || citySlug !== 'new-york') notFound()
+  if (!city || !config) notFound()
+  
+  if (citySlug === 'london') {
+    return <LondonBusinessHoursContent city={city} />
+  }
   
   return <BusinessHoursContent city={city} />
 }
