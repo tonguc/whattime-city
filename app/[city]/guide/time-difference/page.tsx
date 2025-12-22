@@ -5,11 +5,29 @@ import TimeDifferenceContent from './TimeDifferenceContent'
 
 type Props = { params: Promise<{ city: string }> }
 export async function generateStaticParams() { return [{ city: 'new-york' }] }
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { city: citySlug } = await params
   return {
-    title: `New York Time Difference: NYC vs London, Tokyo, Dubai & More | whattime.city`,
-    description: `How many hours ahead or behind is New York? Time difference from NYC to major world cities with DST explanations.`,
-    keywords: ['new york time difference', 'nyc time vs london', 'time difference new york london', 'how many hours behind is new york', 'est vs gmt'],
+    title: `NYC Time Difference Calculator | EST/EDT vs World Cities`,
+    description: `New York time difference to London (+5h), Tokyo (+14h), Dubai (+9h), Sydney (+16h) and 50+ cities. EST vs GMT explained. Live converter included.`,
+    keywords: [
+      'new york time difference',
+      'nyc vs london time',
+      'est vs gmt hours',
+      'new york tokyo time difference',
+      'how far ahead is new york from california',
+      'eastern time vs uk time',
+      'nyc dubai time difference',
+      'est edt difference',
+    ],
+    openGraph: {
+      title: `NYC Time Difference | EST vs World Time Zones`,
+      description: `How many hours ahead or behind is New York? Complete time difference guide with DST info.`,
+      type: 'article',
+    },
+    alternates: {
+      canonical: `https://whattime.city/new-york/guide/time-difference/`,
+    },
   }
 }
 export default async function TimeDifferencePage({ params }: Props) {

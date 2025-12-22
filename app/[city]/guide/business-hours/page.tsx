@@ -18,20 +18,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!city) return { title: 'Business Hours' }
   
   return {
-    title: `New York Business Hours: Banks, Offices, Stores & Government | whattime.city`,
-    description: `Complete guide to business hours in New York City. When banks open, store hours, post office times, and government office schedules. Updated for 2025.`,
+    title: `NYC Business Hours 2025 | Banks, Stores, Restaurants & More`,
+    description: `What time do businesses open in NYC? Complete guide to New York store hours, bank schedules, restaurant times, museum hours, and government offices. Updated daily.`,
     keywords: [
-      'new york business hours',
-      'nyc bank hours',
-      'what time do stores close in new york',
+      'nyc business hours',
+      'new york store hours',
+      'what time do banks open nyc',
+      'nyc restaurant hours',
       'new york post office hours',
-      'nyc government office hours',
-      'are banks open saturday new york',
+      'when do stores close in manhattan',
+      'nyc sunday hours',
+      'museum hours new york',
     ],
     openGraph: {
-      title: `New York Business Hours Guide 2025`,
-      description: `When everything opens and closes in NYC - banks, stores, offices, and more.`,
+      title: `NYC Business Hours 2025 | Complete Opening Times Guide`,
+      description: `When everything opens and closes in New York City - stores, banks, restaurants, museums, and more.`,
       type: 'article',
+    },
+    alternates: {
+      canonical: `https://whattime.city/${citySlug}/guide/business-hours/`,
     },
   }
 }

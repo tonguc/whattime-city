@@ -190,6 +190,73 @@ export default function TimeDifferenceContent({ city }: Props) {
         </div>
       </section>
       
+      {/* Mini Time Converter Widget */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>🔄 Quick Converter</h2>
+        
+        <div className={`p-5 rounded-2xl border-2 ${
+          isLight ? 'border-amber-200 bg-amber-50' : 'border-amber-700 bg-amber-900/20'
+        }`}>
+          <p className="mb-4 text-sm">
+            When it's <strong className="text-lg">{timeStr}</strong> in NYC:
+          </p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-4">
+            {timeDifferences.slice(0, 10).map(loc => {
+              // Parse the diff to get hours
+              const diffMatch = loc.diff.match(/([+-]?\d+\.?\d*)/);
+              const offsetHours = diffMatch ? parseFloat(diffMatch[1]) : 0;
+              const sign = loc.diff.includes('-') ? -1 : 1;
+              const totalOffset = sign * offsetHours;
+              
+              const nycHours = nycTime.getHours();
+              const nycMinutes = nycTime.getMinutes();
+              
+              // Handle half-hour offsets
+              const offsetWhole = Math.floor(Math.abs(totalOffset));
+              const offsetFraction = Math.abs(totalOffset) - offsetWhole;
+              const addMinutes = offsetFraction * 60;
+              
+              let localHour = nycHours + (sign * offsetWhole);
+              let localMin = nycMinutes + (sign * addMinutes);
+              
+              if (localMin >= 60) { localHour++; localMin -= 60; }
+              if (localMin < 0) { localHour--; localMin += 60; }
+              
+              let dayOffset = '';
+              if (localHour >= 24) { localHour -= 24; dayOffset = ' +1'; }
+              if (localHour < 0) { localHour += 24; dayOffset = ' -1'; }
+              
+              const period = localHour >= 12 ? 'PM' : 'AM';
+              const displayHour = localHour % 12 || 12;
+              
+              return (
+                <div key={loc.city} className={`p-3 rounded-lg text-center ${isLight ? 'bg-white' : 'bg-slate-800'}`}>
+                  <div className="text-lg mb-1">{loc.flag}</div>
+                  <div className={`text-xs ${mutedColor}`}>{loc.city}</div>
+                  <div className={`font-bold ${headingColor}`}>
+                    {displayHour}:{Math.round(localMin).toString().padStart(2, '0')} {period}
+                    {dayOffset && <span className="text-xs text-amber-500">{dayOffset}</span>}
+                  </div>
+                  <div className={`text-xs ${mutedColor}`}>{loc.diff}</div>
+                </div>
+              );
+            })}
+          </div>
+          
+          <Link 
+            href="/tools/converter/"
+            className={`block w-full text-center py-3 rounded-xl font-medium transition-all ${
+              isLight 
+                ? 'bg-amber-500 hover:bg-amber-600 text-white' 
+                : 'bg-amber-600 hover:bg-amber-500 text-white'
+            }`}
+          >
+            Open Full Time Converter →
+          </Link>
+        </div>
+      </section>
+      
       <section className={`p-6 rounded-2xl ${cardBg}`}>
         <h2 className={`text-lg font-semibold mb-4 ${headingColor}`}>Related Guides</h2>
         <div className="grid sm:grid-cols-2 gap-3">

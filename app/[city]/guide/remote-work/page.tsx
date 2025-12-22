@@ -18,20 +18,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!city) return { title: 'Remote Work Guide' }
   
   return {
-    title: `Working with New York Teams: Remote Work Time Zone Guide | whattime.city`,
-    description: `How to coordinate with NYC colleagues across time zones. Best meeting times, overlap hours, and async communication tips for remote teams.`,
+    title: `Working with NYC Teams Remotely | Time Zone Overlap & Meeting Times`,
+    description: `Remote work guide for NYC collaboration. Find overlap hours with London, Tokyo, Sydney. Best meeting times, async tips, and NYC work culture. Visual overlap charts included.`,
     keywords: [
-      'working with new york team',
-      'remote work time zones',
-      'best time to schedule meetings with new york',
-      'time zone overlap new york london',
-      'async work east coast',
-      'new york time zone for remote workers',
+      'remote work new york time zone',
+      'working with nyc team from europe',
+      'time zone overlap calculator',
+      'best meeting time new york london',
+      'async communication nyc',
+      'eastern time remote work',
+      'schedule meetings across time zones',
+      'nyc work culture remote',
     ],
     openGraph: {
-      title: `Remote Work Guide: Coordinating with NYC Teams`,
-      description: `Time zone strategies for working with New York-based colleagues and clients.`,
+      title: `Remote Work Guide: NYC Time Zone Collaboration`,
+      description: `Time zone strategies, overlap hours, and async tips for working with New York teams.`,
       type: 'article',
+    },
+    alternates: {
+      canonical: `https://whattime.city/${citySlug}/guide/remote-work/`,
     },
   }
 }

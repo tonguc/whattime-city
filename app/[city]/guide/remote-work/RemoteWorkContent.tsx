@@ -261,6 +261,165 @@ export default function RemoteWorkContent({ city }: Props) {
         </div>
       </section>
       
+      {/* Visual Time Overlap Chart */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>📊 Visual Overlap Chart</h2>
+        
+        <p className="mb-4">
+          See at a glance when NYC work hours (9 AM - 6 PM ET) overlap with your city:
+        </p>
+        
+        <div className="space-y-4">
+          {/* Chart Legend */}
+          <div className="flex flex-wrap gap-4 text-xs mb-2">
+            <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-green-500"></span> Great overlap (4+ hrs)</span>
+            <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-yellow-500"></span> Moderate (2-4 hrs)</span>
+            <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-red-500"></span> Difficult (&lt;2 hrs)</span>
+          </div>
+          
+          {/* NYC Base Row */}
+          <div className={`p-3 rounded-lg ${cardBg}`}>
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-sm font-medium w-24">🗽 NYC</span>
+              <span className={`text-xs ${mutedColor}`}>Base timezone (ET)</span>
+            </div>
+            <div className="flex h-8 rounded-lg overflow-hidden text-xs">
+              {/* 24 hour blocks */}
+              {[...Array(24)].map((_, i) => {
+                const isWorkHour = i >= 9 && i < 18
+                return (
+                  <div 
+                    key={i} 
+                    className={`flex-1 flex items-center justify-center border-r border-white/20 ${
+                      isWorkHour ? 'bg-blue-500 text-white font-medium' : isLight ? 'bg-slate-200' : 'bg-slate-600'
+                    }`}
+                    title={`${i}:00`}
+                  >
+                    {i % 6 === 0 && <span>{i}</span>}
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+          
+          {/* London */}
+          <div className={`p-3 rounded-lg ${cardBg}`}>
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-sm font-medium w-24">🇬🇧 London</span>
+              <span className="px-2 py-0.5 rounded text-xs bg-green-100 text-green-700">Great</span>
+            </div>
+            <div className="flex h-8 rounded-lg overflow-hidden text-xs">
+              {[...Array(24)].map((_, i) => {
+                const nycHour = (i - 5 + 24) % 24 // London is +5
+                const isNYCWork = nycHour >= 9 && nycHour < 18
+                const isLocalWork = i >= 9 && i < 18
+                const isOverlap = isNYCWork && isLocalWork
+                return (
+                  <div 
+                    key={i} 
+                    className={`flex-1 flex items-center justify-center border-r border-white/20 ${
+                      isOverlap ? 'bg-green-500 text-white' : isNYCWork ? 'bg-blue-300' : isLocalWork ? 'bg-slate-300' : isLight ? 'bg-slate-200' : 'bg-slate-600'
+                    }`}
+                  >
+                    {i % 6 === 0 && <span>{i}</span>}
+                  </div>
+                )
+              })}
+            </div>
+            <div className={`text-xs mt-1 ${mutedColor}`}>Overlap: 2 PM - 6 PM London (5 hours)</div>
+          </div>
+          
+          {/* Istanbul */}
+          <div className={`p-3 rounded-lg ${cardBg}`}>
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-sm font-medium w-24">🇹🇷 Istanbul</span>
+              <span className="px-2 py-0.5 rounded text-xs bg-yellow-100 text-yellow-700">Moderate</span>
+            </div>
+            <div className="flex h-8 rounded-lg overflow-hidden text-xs">
+              {[...Array(24)].map((_, i) => {
+                const nycHour = (i - 8 + 24) % 24 // Istanbul is +8
+                const isNYCWork = nycHour >= 9 && nycHour < 18
+                const isLocalWork = i >= 9 && i < 18
+                const isOverlap = isNYCWork && isLocalWork
+                return (
+                  <div 
+                    key={i} 
+                    className={`flex-1 flex items-center justify-center border-r border-white/20 ${
+                      isOverlap ? 'bg-green-500 text-white' : isNYCWork ? 'bg-blue-300' : isLocalWork ? 'bg-slate-300' : isLight ? 'bg-slate-200' : 'bg-slate-600'
+                    }`}
+                  >
+                    {i % 6 === 0 && <span>{i}</span>}
+                  </div>
+                )
+              })}
+            </div>
+            <div className={`text-xs mt-1 ${mutedColor}`}>Overlap: 4 PM - 6 PM Istanbul (2 hours)</div>
+          </div>
+          
+          {/* Tokyo */}
+          <div className={`p-3 rounded-lg ${cardBg}`}>
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-sm font-medium w-24">🇯🇵 Tokyo</span>
+              <span className="px-2 py-0.5 rounded text-xs bg-red-100 text-red-700">Difficult</span>
+            </div>
+            <div className="flex h-8 rounded-lg overflow-hidden text-xs">
+              {[...Array(24)].map((_, i) => {
+                const nycHour = (i - 14 + 24) % 24 // Tokyo is +14
+                const isNYCWork = nycHour >= 9 && nycHour < 18
+                const isLocalWork = i >= 9 && i < 18
+                const isOverlap = isNYCWork && isLocalWork
+                return (
+                  <div 
+                    key={i} 
+                    className={`flex-1 flex items-center justify-center border-r border-white/20 ${
+                      isOverlap ? 'bg-green-500 text-white' : isNYCWork ? 'bg-blue-300' : isLocalWork ? 'bg-slate-300' : isLight ? 'bg-slate-200' : 'bg-slate-600'
+                    }`}
+                  >
+                    {i % 6 === 0 && <span>{i}</span>}
+                  </div>
+                )
+              })}
+            </div>
+            <div className={`text-xs mt-1 ${mutedColor}`}>Overlap: 10 PM - 12 AM Tokyo (early NYC morning)</div>
+          </div>
+          
+          {/* LA */}
+          <div className={`p-3 rounded-lg ${cardBg}`}>
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-sm font-medium w-24">🇺🇸 LA</span>
+              <span className="px-2 py-0.5 rounded text-xs bg-green-100 text-green-700">Great</span>
+            </div>
+            <div className="flex h-8 rounded-lg overflow-hidden text-xs">
+              {[...Array(24)].map((_, i) => {
+                const nycHour = (i + 3) % 24 // LA is -3
+                const isNYCWork = nycHour >= 9 && nycHour < 18
+                const isLocalWork = i >= 9 && i < 18
+                const isOverlap = isNYCWork && isLocalWork
+                return (
+                  <div 
+                    key={i} 
+                    className={`flex-1 flex items-center justify-center border-r border-white/20 ${
+                      isOverlap ? 'bg-green-500 text-white' : isNYCWork ? 'bg-blue-300' : isLocalWork ? 'bg-slate-300' : isLight ? 'bg-slate-200' : 'bg-slate-600'
+                    }`}
+                  >
+                    {i % 6 === 0 && <span>{i}</span>}
+                  </div>
+                )
+              })}
+            </div>
+            <div className={`text-xs mt-1 ${mutedColor}`}>Overlap: 9 AM - 3 PM LA (6 hours)</div>
+          </div>
+        </div>
+        
+        <div className={`mt-4 p-4 rounded-xl ${cardBg}`}>
+          <p className="text-sm">
+            <strong>How to read:</strong> Blue = NYC work hours in that timezone. 
+            Green = overlap with your local 9-5. The more green, the easier collaboration.
+            Use our <Link href="/tools/meeting-planner/" className={linkColor}>Meeting Planner</Link> to find exact times.
+          </p>
+        </div>
+      </section>
+      
       {/* Async Communication */}
       <section className="mb-10">
         <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>

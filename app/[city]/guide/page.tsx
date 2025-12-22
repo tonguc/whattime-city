@@ -20,19 +20,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!city) return { title: 'City Guide' }
   
   return {
-    title: `${city.city} Time Zone Guide: Everything You Need to Know | whattime.city`,
-    description: `Complete guide to ${city.city} time zone. Business hours, best time to visit, remote work tips, stock market hours, and more. Your ultimate resource for ${city.city} time.`,
+    title: `New York Time Zone Guide 2025 | EST/EDT, Business Hours & More`,
+    description: `Complete NYC time zone guide. Business hours, Wall Street trading times, best time to call NYC, remote work overlap, holidays, and local tips. Updated for 2025.`,
     keywords: [
-      `${city.city.toLowerCase()} time zone`,
-      `what time is it in ${city.city.toLowerCase()}`,
-      `${city.city.toLowerCase()} business hours`,
-      `best time to visit ${city.city.toLowerCase()}`,
-      `${city.city.toLowerCase()} est edt`,
+      'new york time zone',
+      'nyc time now',
+      'est edt time',
+      'new york business hours',
+      'wall street hours',
+      'best time to call new york',
+      'nyc time difference',
+      'eastern time zone guide',
     ],
     openGraph: {
-      title: `${city.city} Time Zone: The Complete Guide`,
-      description: `Everything you need to know about ${city.city} time - from business hours to jet lag tips.`,
+      title: `New York Time Zone Guide 2025 | Complete NYC Time Resource`,
+      description: `Everything about NYC time: business hours, stock market, holidays, remote work tips. The definitive guide.`,
       type: 'article',
+    },
+    alternates: {
+      canonical: `https://whattime.city/${citySlug}/guide/`,
     },
   }
 }

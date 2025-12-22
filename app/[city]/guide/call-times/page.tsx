@@ -12,16 +12,28 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { city: citySlug } = await params
   return {
-    title: `Best Time to Call New York from London, Tokyo, Dubai & More | whattime.city`,
-    description: `When should you call NYC? Optimal calling times from major cities worldwide. Business hours overlap and personal call windows.`,
+    title: `Best Time to Call New York 2025 | From UK, India, Australia & More`,
+    description: `When to call NYC? Best calling times from London, Mumbai, Tokyo, Sydney, Dubai. Business hours overlap and optimal windows for personal calls. Avoid awkward timing.`,
     keywords: [
       'best time to call new york',
       'best time to call usa from uk',
-      'call new york from london',
-      'call nyc from india',
-      'when to call america',
+      'call new york from london time',
+      'call nyc from india what time',
+      'calling usa from australia best time',
+      'new york phone hours',
+      'when to call american business',
+      'nyc time for international calls',
     ],
+    openGraph: {
+      title: `Best Time to Call New York | International Calling Guide`,
+      description: `Optimal calling times to NYC from anywhere in the world. Business and personal call windows.`,
+      type: 'article',
+    },
+    alternates: {
+      canonical: `https://whattime.city/${citySlug}/guide/call-times/`,
+    },
   }
 }
 

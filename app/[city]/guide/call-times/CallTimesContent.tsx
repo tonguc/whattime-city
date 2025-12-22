@@ -166,6 +166,75 @@ export default function CallTimesContent({ city }: Props) {
         </div>
       </section>
       
+      {/* NYC Call Culture */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>🗽 NYC Call Culture</h2>
+        
+        <div className={`p-4 rounded-xl ${cardBg}`}>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              <h3 className={`font-medium mb-2 ${headingColor}`}>📞 Punctuality Matters</h3>
+              <ul className="text-sm space-y-2">
+                <li>• <strong>Be on time.</strong> New Yorkers consider "on time" as 1-2 minutes early.</li>
+                <li>• Late without notice = unprofessional (even 5 minutes).</li>
+                <li>• If delayed, text/email immediately with new ETA.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className={`font-medium mb-2 ${headingColor}`}>💬 Call Etiquette</h3>
+              <ul className="text-sm space-y-2">
+                <li>• Get to the point quickly — skip long pleasantries.</li>
+                <li>• State the purpose in the first 30 seconds.</li>
+                <li>• Confirm next steps before hanging up.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Quick Time Finder Widget */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>⏱️ Quick Time Finder</h2>
+        
+        <div className={`p-5 rounded-2xl border-2 ${
+          isLight ? 'border-amber-200 bg-amber-50' : 'border-amber-700 bg-amber-900/20'
+        }`}>
+          <p className="mb-4 text-sm">
+            Right now in NYC: <strong className="text-lg">{timeStr}</strong>
+          </p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+            {[
+              { city: 'London', offset: 5 },
+              { city: 'Paris', offset: 6 },
+              { city: 'Dubai', offset: 9 },
+              { city: 'Tokyo', offset: 14 },
+            ].map(loc => {
+              const localHour = (currentHour + loc.offset) % 24
+              const period = localHour >= 12 ? 'PM' : 'AM'
+              const displayHour = localHour % 12 || 12
+              return (
+                <div key={loc.city} className={`p-3 rounded-lg text-center ${isLight ? 'bg-white' : 'bg-slate-800'}`}>
+                  <div className={`text-xs ${mutedColor}`}>{loc.city}</div>
+                  <div className={`font-bold ${headingColor}`}>{displayHour}:{nycTime.getMinutes().toString().padStart(2, '0')} {period}</div>
+                </div>
+              )
+            })}
+          </div>
+          
+          <Link 
+            href="/tools/meeting-planner/"
+            className={`block w-full text-center py-3 rounded-xl font-medium transition-all ${
+              isLight 
+                ? 'bg-amber-500 hover:bg-amber-600 text-white' 
+                : 'bg-amber-600 hover:bg-amber-500 text-white'
+            }`}
+          >
+            Open Full Meeting Planner →
+          </Link>
+        </div>
+      </section>
+      
       <section className={`p-6 rounded-2xl ${cardBg}`}>
         <h2 className={`text-lg font-semibold mb-4 ${headingColor}`}>Related Guides</h2>
         <div className="grid sm:grid-cols-2 gap-3">

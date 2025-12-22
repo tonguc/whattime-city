@@ -18,21 +18,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!city) return { title: 'Best Time to Visit' }
   
   return {
-    title: `Best Time to Visit New York: Month-by-Month Guide 2025 | whattime.city`,
-    description: `When should you visit NYC? Complete guide to New York weather by month, crowds, prices, and events. Find the perfect time for your trip.`,
+    title: `Best Time to Visit NYC 2025 | Weather, Crowds & Prices by Month`,
+    description: `When to visit New York? Month-by-month guide with weather, tourist crowds, hotel prices, and major events. Plus: Manhattanhenge dates and secret locals-only timing tips.`,
     keywords: [
       'best time to visit new york',
       'best month to visit nyc',
       'new york weather by month',
       'cheapest time to visit new york',
-      'worst time to visit nyc',
-      'new york in december',
-      'new york in spring',
+      'nyc crowd calendar',
+      'manhattanhenge 2025 dates',
+      'new york in fall',
+      'nyc christmas time',
+      'avoid crowds new york',
     ],
     openGraph: {
-      title: `Best Time to Visit New York City - 2025 Guide`,
-      description: `Month-by-month breakdown of NYC weather, crowds, prices, and events.`,
+      title: `Best Time to Visit NYC 2025 | Complete Month-by-Month Guide`,
+      description: `Weather, crowds, prices, and events - find the perfect time for your New York trip.`,
       type: 'article',
+    },
+    alternates: {
+      canonical: `https://whattime.city/${citySlug}/guide/best-time-to-visit/`,
     },
   }
 }

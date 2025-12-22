@@ -62,8 +62,8 @@ export default function GuideLayout({
       <Header />
       
       {/* Time Bar - always visible, becomes sticky on scroll */}
-      <div className="sticky top-[55px] md:top-[63px] z-40 -mt-[1px]">
-        <div className={`${isLight ? 'bg-amber-50' : 'bg-amber-900'} border-b ${
+      <div className="sticky top-[53px] md:top-[61px] z-40">
+        <div className={`${isLight ? 'bg-amber-50' : 'bg-amber-900'} border-y ${
           isLight ? 'border-amber-200' : 'border-amber-700'
         }`}>
           <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between text-sm">
