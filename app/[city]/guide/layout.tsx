@@ -23,7 +23,7 @@ export default function GuideLayout({
   // Scroll detection for sticky bar
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100)
+      setIsScrolled(window.scrollY > 50) // Reduced from 100
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
@@ -61,13 +61,11 @@ export default function GuideLayout({
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg}`}>
       <Header />
       
-      {/* Sticky Time Bar - appears on scroll */}
-      <div className={`fixed top-14 md:top-16 left-0 right-0 z-30 transition-all duration-300 ${
-        isScrolled ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
-      }`}>
-        <div className={`${isLight ? 'bg-white/95' : 'bg-slate-900/95'} backdrop-blur-md border-b ${
-          isLight ? 'border-slate-200' : 'border-slate-700'
-        } shadow-sm`}>
+      {/* Sticky Time Bar - always visible */}
+      <div className={`sticky top-0 z-40`}>
+        <div className={`${isLight ? 'bg-amber-50' : 'bg-amber-900/50'} border-b ${
+          isLight ? 'border-amber-200' : 'border-amber-700'
+        }`}>
           <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between text-sm">
             <div className="flex items-center gap-2 md:gap-4">
               <span className={`font-medium whitespace-nowrap ${isLight ? 'text-slate-800' : 'text-white'}`}>
@@ -82,7 +80,6 @@ export default function GuideLayout({
               }`}>
                 {diffText}
               </span>
-              {/* Desktop only: local time */}
               <span className={`hidden md:inline ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>|</span>
               <span className={`hidden md:inline whitespace-nowrap ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
                 📍 You: {localTimeStr}
