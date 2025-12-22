@@ -8,7 +8,7 @@ export async function generateStaticParams() { return [{ city: 'new-york' }] }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: citySlug } = await params
   return {
-    title: `NYC Travel Guide 2025 | Flight Times, Jet Lag & Airport Tips`,
+    title: `NYC Travel Guide | Flight Times, Jet Lag & Airport Tips`,
     description: `Flying to New York? Flight times from London (7h), Tokyo (14h), Sydney (22h). Jet lag recovery tips, best arrival times, JFK/EWR/LGA to Manhattan transport, and the 20-block walking rule.`,
     keywords: [
       'flight time to new york',

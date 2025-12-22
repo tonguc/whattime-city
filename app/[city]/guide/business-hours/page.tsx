@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!city) return { title: 'Business Hours' }
   
   return {
-    title: `NYC Business Hours 2025 | Banks, Stores, Restaurants & More`,
+    title: `NYC Business Hours | Banks, Stores, Restaurants & More`,
     description: `What time do businesses open in NYC? Complete guide to New York store hours, bank schedules, restaurant times, museum hours, and government offices. Updated daily.`,
     keywords: [
       'nyc business hours',
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       'museum hours new york',
     ],
     openGraph: {
-      title: `NYC Business Hours 2025 | Complete Opening Times Guide`,
+      title: `NYC Business Hours | Complete Opening Times Guide`,
       description: `When everything opens and closes in New York City - stores, banks, restaurants, museums, and more.`,
       type: 'article',
     },

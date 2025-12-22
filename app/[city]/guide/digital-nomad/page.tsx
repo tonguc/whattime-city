@@ -8,7 +8,7 @@ export async function generateStaticParams() { return [{ city: 'new-york' }] }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: citySlug } = await params
   return {
-    title: `Digital Nomad NYC Guide 2025 | Coworking, WiFi Cafes & Costs`,
+    title: `Digital Nomad NYC Guide | Coworking, WiFi Cafes & Costs`,
     description: `Work remotely from New York. Best coworking spaces ($200-600/mo), laptop-friendly cafes, free WiFi spots, cost of living breakdown, and visa options for digital nomads.`,
     keywords: [
       'digital nomad new york',
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       'wework nyc day pass',
     ],
     openGraph: {
-      title: `NYC Digital Nomad Guide 2025 | Remote Work in New York`,
+      title: `NYC Digital Nomad Guide | Remote Work in New York`,
       description: `Everything digital nomads need to know about working remotely from NYC.`,
       type: 'article',
     },

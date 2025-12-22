@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!city) return { title: 'Best Time to Visit' }
   
   return {
-    title: `Best Time to Visit NYC 2025 | Weather, Crowds & Prices by Month`,
+    title: `Best Time to Visit NYC | Weather, Crowds & Prices by Month`,
     description: `When to visit New York? Month-by-month guide with weather, tourist crowds, hotel prices, and major events. Plus: Manhattanhenge dates and secret locals-only timing tips.`,
     keywords: [
       'best time to visit new york',
@@ -26,13 +26,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       'new york weather by month',
       'cheapest time to visit new york',
       'nyc crowd calendar',
-      'manhattanhenge 2025 dates',
+      'manhattanhenge dates',
       'new york in fall',
       'nyc christmas time',
       'avoid crowds new york',
     ],
     openGraph: {
-      title: `Best Time to Visit NYC 2025 | Complete Month-by-Month Guide`,
+      title: `Best Time to Visit NYC | Complete Month-by-Month Guide`,
       description: `Weather, crowds, prices, and events - find the perfect time for your New York trip.`,
       type: 'article',
     },

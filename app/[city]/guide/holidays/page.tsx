@@ -8,20 +8,20 @@ export async function generateStaticParams() { return [{ city: 'new-york' }] }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: citySlug } = await params
   return {
-    title: `NYC Holidays 2025 | Bank Closures, Store Hours & What's Open`,
-    description: `New York public holidays 2025 calendar. What's closed on Thanksgiving, Christmas, July 4th? Bank hours, store schedules, transit changes. Plan your NYC visit.`,
+    title: `NYC Holidays | Bank Closures, Store Hours & What's Open`,
+    description: `New York public holidays calendar. What's closed on Thanksgiving, Christmas, July 4th? Bank hours, store schedules, transit changes. Plan your NYC visit.`,
     keywords: [
-      'new york public holidays 2025',
+      'new york public holidays',
       'nyc bank holidays',
       'what is closed thanksgiving nyc',
       'christmas day new york open',
       'new year day nyc stores',
       'federal holidays new york',
-      'labor day nyc 2025',
+      'labor day nyc',
       'is nyc open memorial day',
     ],
     openGraph: {
-      title: `NYC Public Holidays 2025 | Complete Calendar`,
+      title: `NYC Public Holidays | Complete Calendar`,
       description: `What's open and closed on NYC holidays - banks, stores, transit, and attractions.`,
       type: 'article',
     },

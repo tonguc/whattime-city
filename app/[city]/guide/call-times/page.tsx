@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: citySlug } = await params
   return {
-    title: `Best Time to Call New York 2025 | From UK, India, Australia & More`,
+    title: `Best Time to Call New York | From UK, India, Australia & More`,
     description: `When to call NYC? Best calling times from London, Mumbai, Tokyo, Sydney, Dubai. Business hours overlap and optimal windows for personal calls. Avoid awkward timing.`,
     keywords: [
       'best time to call new york',

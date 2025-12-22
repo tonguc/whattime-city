@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!city) return { title: 'City Guide' }
   
   return {
-    title: `New York Time Zone Guide 2025 | EST/EDT, Business Hours & More`,
-    description: `Complete NYC time zone guide. Business hours, Wall Street trading times, best time to call NYC, remote work overlap, holidays, and local tips. Updated for 2025.`,
+    title: `New York Time Zone Guide | EST/EDT, Business Hours & More`,
+    description: `Complete NYC time zone guide. Business hours, Wall Street trading times, best time to call NYC, remote work overlap, holidays, and local tips. Updated regularly.`,
     keywords: [
       'new york time zone',
       'nyc time now',
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       'eastern time zone guide',
     ],
     openGraph: {
-      title: `New York Time Zone Guide 2025 | Complete NYC Time Resource`,
+      title: `New York Time Zone Guide | Complete NYC Time Resource`,
       description: `Everything about NYC time: business hours, stock market, holidays, remote work tips. The definitive guide.`,
       type: 'article',
     },
