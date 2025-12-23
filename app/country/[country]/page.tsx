@@ -272,6 +272,35 @@ export default async function CountryPage({ params }: CountryPageProps) {
           </div>
         </section>
         
+        {/* Cities in this Country */}
+        {cities.length > 0 && (
+          <section className="rounded-3xl p-6 bg-slate-900/60 border border-slate-700/50 backdrop-blur-xl mb-8">
+            <h2 className="text-xl font-semibold text-white mb-4">
+              🏙️ Cities in {country.name}
+            </h2>
+            <p className="text-slate-400 text-sm mb-4">
+              Explore local time in {cities.length} {cities.length === 1 ? 'city' : 'cities'} across {country.name}
+            </p>
+            
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+              {cities.map((city) => (
+                <Link
+                  key={city.slug}
+                  href={`/${city.slug}`}
+                  className="p-3 rounded-xl bg-slate-800/50 hover:bg-slate-700/50 transition-all group"
+                >
+                  <div className="font-medium text-white group-hover:text-cyan-400 transition-colors">
+                    {city.city}
+                  </div>
+                  <div className="text-xs text-slate-400 mt-1">
+                    {city.timezone.split('/').pop()?.replace(/_/g, ' ')}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+        
         {/* Related Countries */}
         <section className="rounded-3xl p-6 bg-slate-900/60 border border-slate-700/50 backdrop-blur-xl mb-8">
           <h2 className="text-xl font-semibold text-white mb-4">
