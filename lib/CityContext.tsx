@@ -172,17 +172,17 @@ export function CityProvider({ children }: { children: ReactNode }) {
     })
   }
   
-  // Calculate current theme based on USER'S LOCAL TIME (not activeCity)
-  // This ensures consistent theme across all pages based on user's daylight
-  const userHour = time.getHours() // User's local hour
-  const isUserDaytime = userHour >= 6 && userHour < 18
-  const autoTheme = isUserDaytime ? 'day' : 'night'
+  // Calculate current theme based on active city's time
+  // This gives immersive experience - Tokyo at night = dark theme
+  const autoTheme = getTimeOfDay(time, activeCity.lat, activeCity.lng, activeCity.timezone)
   
   const currentTheme = themeMode === 'auto' 
     ? autoTheme 
     : themeMode  // 'light' veya 'dark' direkt kullan
+  
+  // Start with light theme, then smooth transition to actual theme after mount
+  // This prevents flash - instead we get a gentle fade
   const theme = mounted ? themes[currentTheme] : themes.day
-  // Use light theme until mounted to prevent hydration flash
   const isLight = mounted ? isLightTheme(currentTheme) : true
   
   // Helper functions
