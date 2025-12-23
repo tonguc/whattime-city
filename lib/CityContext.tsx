@@ -224,7 +224,28 @@ export function CityProvider({ children }: { children: ReactNode }) {
 export function useCityContext() {
   const context = useContext(CityContext)
   if (!context) {
-    throw new Error('useCityContext must be used within CityProvider')
+    // Return safe default values for SSR/static generation
+    const defaultCity = cities.find(c => c.slug === 'london') || cities[0]
+    return {
+      time: new Date(),
+      activeCity: defaultCity,
+      setActiveCity: () => {},
+      detectedCity: null,
+      themeMode: 'auto' as const,
+      setThemeMode: () => {},
+      currentTheme: 'day' as const,
+      theme: themes.day,
+      isLight: true,
+      clockMode: 'digital' as const,
+      setClockMode: () => {},
+      use12Hour: false,
+      setUse12Hour: () => {},
+      favorites: [],
+      toggleFavorite: () => {},
+      getLocalTime: () => '',
+      getLocalDate: () => '',
+      getCityTimeOfDay: () => 'day' as TimeOfDay,
+    }
   }
   return context
 }
