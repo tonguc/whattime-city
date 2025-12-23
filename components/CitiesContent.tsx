@@ -4,8 +4,6 @@ import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { cities, City } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
-import { getTimeOfDay } from '@/lib/sun-calculator'
-import { themes, isLightTheme } from '@/lib/themes'
 import { TimeIcons } from '@/components/TimeIcons'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -13,16 +11,9 @@ import Footer from '@/components/Footer'
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 
 export default function CitiesContent() {
-  const { time, detectedCity, getLocalTime, getCityTimeOfDay } = useCityContext()
+  const { time, theme, isLight, getLocalTime, getCityTimeOfDay } = useCityContext()
   const [searchQuery, setSearchQuery] = useState('')
   const [activeFilter, setActiveFilter] = useState<string | null>(null)
-
-  // Theme based on detected city
-  const timeOfDay = detectedCity
-    ? getTimeOfDay(time, detectedCity.lat, detectedCity.lng, detectedCity.timezone)
-    : 'day'
-  const theme = themes[timeOfDay]
-  const isLight = isLightTheme(timeOfDay)
 
   // Sort cities alphabetically
   const sortedCities = useMemo(() => {
