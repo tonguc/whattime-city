@@ -27,17 +27,14 @@ export default function WeatherBackground({ animation, isDay }: WeatherBackgroun
 }
 
 function RainAnimation() {
-  const [drops, setDrops] = useState<Array<{ id: number; left: number; delay: number; duration: number }>>([])
-  
-  useEffect(() => {
-    const newDrops = Array.from({ length: 100 }, (_, i) => ({
+  const [drops] = useState(() =>
+    Array.from({ length: 100 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       delay: Math.random() * 2,
       duration: 0.5 + Math.random() * 0.5
     }))
-    setDrops(newDrops)
-  }, [])
+  )
   
   return (
     <>
@@ -67,17 +64,14 @@ function RainAnimation() {
 }
 
 function DrizzleAnimation() {
-  const [drops, setDrops] = useState<Array<{ id: number; left: number; delay: number; duration: number }>>([])
-  
-  useEffect(() => {
-    const newDrops = Array.from({ length: 40 }, (_, i) => ({
+  const [drops] = useState(() =>
+    Array.from({ length: 40 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       delay: Math.random() * 3,
       duration: 1 + Math.random() * 1
     }))
-    setDrops(newDrops)
-  }, [])
+  )
   
   return (
     <>
@@ -107,18 +101,15 @@ function DrizzleAnimation() {
 }
 
 function SnowAnimation() {
-  const [flakes, setFlakes] = useState<Array<{ id: number; left: number; delay: number; duration: number; size: number }>>([])
-  
-  useEffect(() => {
-    const newFlakes = Array.from({ length: 60 }, (_, i) => ({
+  const [flakes] = useState(() =>
+    Array.from({ length: 60 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       delay: Math.random() * 5,
       duration: 4 + Math.random() * 4,
       size: 4 + Math.random() * 6
     }))
-    setFlakes(newFlakes)
-  }, [])
+  )
   
   return (
     <>
@@ -203,12 +194,9 @@ function SunAnimation() {
 }
 
 function NightAnimation() {
-  const [stars, setStars] = useState<Array<{ id: number; left: number; top: number; size: number; delay: number; duration: number }>>([])
-  const [shootingStars, setShootingStars] = useState<Array<{ id: number; top: number; delay: number }>>([])
-  
-  useEffect(() => {
-    // Twinkling stars - more stars, bigger sizes
-    const newStars = Array.from({ length: 80 }, (_, i) => ({
+  // Initialize stars immediately to prevent flash
+  const [stars] = useState(() => 
+    Array.from({ length: 80 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       top: Math.random() * 70,
@@ -216,16 +204,15 @@ function NightAnimation() {
       delay: Math.random() * 3,
       duration: 2 + Math.random() * 2
     }))
-    setStars(newStars)
-    
-    // Shooting stars
-    const newShootingStars = Array.from({ length: 3 }, (_, i) => ({
+  )
+  
+  const [shootingStars] = useState(() =>
+    Array.from({ length: 3 }, (_, i) => ({
       id: i,
       top: 5 + Math.random() * 30,
       delay: i * 6 + Math.random() * 3
     }))
-    setShootingStars(newShootingStars)
-  }, [])
+  )
   
   return (
     <>
