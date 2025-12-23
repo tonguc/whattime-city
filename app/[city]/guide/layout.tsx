@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { cities } from '@/lib/cities'
-import { useCityContext } from '@/lib/CityContext'
+import { themes } from '@/lib/themes'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -16,23 +16,55 @@ export default function GuideLayout({
   const params = useParams()
   const citySlug = params.city as string
   const city = cities.find(c => c.slug === citySlug)
-  const { theme, isLight, time } = useCityContext()
+  
+  // State for client-side values
+  const [mounted, setMounted] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [mounted, setMounted] = useState(false)
+  const [currentTime, setCurrentTime] = useState(new Date())
+  const [isLight, setIsLight] = useState(true)
+  const [theme, setTheme] = useState(themes.day)
   
-  // Prevent flash on mount - fade in after hydration
+  // Initialize on client side only
   useEffect(() => {
-    // Small delay to ensure theme is properly set
-    const timer = setTimeout(() => setMounted(true), 10)
-    return () => clearTimeout(timer)
-  }, [])
-  
-  // Scroll detection for sticky bar
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 150) // Show after scrolling 150px
+    setMounted(true)
+    
+    // Update time every second
+    const timer = setInterval(() => setCurrentTime(new Date()), 1000)
+    
+    // Get user theme preference from localStorage
+    let themeMode: 'auto' | 'light' | 'dark' = 'auto'
+    try {
+      const saved = localStorage.getItem('whattime-theme-mode')
+      if (saved === 'light' || saved === 'dark' || saved === 'auto') {
+        themeMode = saved
+      }
+    } catch {}
+    
+    // Calculate theme based on mode
+    if (city) {
+      if (themeMode === 'light') {
+        setIsLight(true)
+        setTheme(themes.day)
+      } else if (themeMode === 'dark') {
+        setIsLight(false)
+        setTheme(themes.night)
+      } else {
+        // Auto mode - based on city time
+        const cityTime = new Date(new Date().toLocaleString('en-US', { timeZone: city.timezone }))
+        const hour = cityTime.getHours()
+        const isDayTime = hour >= 6 && hour < 18
+        setIsLight(isDayTime)
+        setTheme(isDayTime ? themes.day : themes.night)
+      }
     }
+    
+    return () => clearInterval(timer)
+  }, [city])
+  
+  // Scroll detection
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 150)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -40,8 +72,8 @@ export default function GuideLayout({
   if (!city) return null
   
   // Calculate times for the current city
-  const cityTime = new Date(time.toLocaleString('en-US', { timeZone: city.timezone }))
-  const localTime = time
+  const cityTime = new Date(currentTime.toLocaleString('en-US', { timeZone: city.timezone }))
+  const localTime = currentTime
   const cityTimeStr = cityTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })
   const localTimeStr = localTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })
   
@@ -75,7 +107,7 @@ export default function GuideLayout({
       <Header />
       
       {/* Time Bar - sticky, flush with header (no gap) */}
-      <div className="sticky top-[52px] sm:top-[55px] z-40">
+      <div className="sticky top-[53px] sm:top-[57px] z-40 -mt-px">
         <div className={`${isLight ? 'bg-amber-50' : 'bg-amber-900'} border-y ${
           isLight ? 'border-amber-200' : 'border-amber-700'
         }`}>
