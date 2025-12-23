@@ -19,6 +19,14 @@ export default function GuideLayout({
   const { theme, isLight, time } = useCityContext()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+  
+  // Prevent flash on mount - fade in after hydration
+  useEffect(() => {
+    // Small delay to ensure theme is properly set
+    const timer = setTimeout(() => setMounted(true), 10)
+    return () => clearTimeout(timer)
+  }, [])
   
   // Scroll detection for sticky bar
   useEffect(() => {
@@ -63,11 +71,11 @@ export default function GuideLayout({
   ]
   
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${theme.bg}`}>
+    <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-opacity duration-150 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
       <Header />
       
-      {/* Time Bar - always visible, becomes sticky on scroll */}
-      <div className="sticky top-[53px] md:top-[61px] z-40">
+      {/* Time Bar - sticky, positioned right below header */}
+      <div className="sticky top-[52px] sm:top-[56px] z-40 -mt-[1px]">
         <div className={`${isLight ? 'bg-amber-50' : 'bg-amber-900'} border-y ${
           isLight ? 'border-amber-200' : 'border-amber-700'
         }`}>
