@@ -172,8 +172,12 @@ export function CityProvider({ children }: { children: ReactNode }) {
     })
   }
   
-  // Calculate current theme based on active city
-  const autoTheme = getTimeOfDay(time, activeCity.lat, activeCity.lng, activeCity.timezone)
+  // Calculate current theme based on USER'S LOCAL TIME (not activeCity)
+  // This ensures consistent theme across all pages based on user's daylight
+  const userHour = time.getHours() // User's local hour
+  const isUserDaytime = userHour >= 6 && userHour < 18
+  const autoTheme = isUserDaytime ? 'day' : 'night'
+  
   const currentTheme = themeMode === 'auto' 
     ? autoTheme 
     : themeMode  // 'light' veya 'dark' direkt kullan
