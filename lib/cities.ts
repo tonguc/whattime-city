@@ -630,6 +630,788 @@ export const countries: Country[] = [
     languages: ['Spanish'], continent: 'americas',
     description: 'Venezuela uses Venezuela Time (UTC-4) year-round. Caracas is the capital, nestled in a valley surrounded by the Ávila mountain.',
     timezones: ['VET (UTC-4)']
+  },
+  // ========== ADDITIONAL AFRICAN COUNTRIES ==========
+  {
+    code: 'LY', name: 'Libya', slug: 'libya', capital: 'Tripoli',
+    population: '7M', currency: 'Libyan Dinar', currencySymbol: 'LD', phoneCode: '+218',
+    languages: ['Arabic'], continent: 'africa',
+    description: 'Libya uses Eastern European Time (UTC+2) year-round. Tripoli is the capital and largest city on the Mediterranean coast.',
+    timezones: ['EET (UTC+2)']
+  },
+  {
+    code: 'SD', name: 'Sudan', slug: 'sudan', capital: 'Khartoum',
+    population: '44M', currency: 'Sudanese Pound', currencySymbol: 'SDG', phoneCode: '+249',
+    languages: ['Arabic', 'English'], continent: 'africa',
+    description: 'Sudan uses Central Africa Time (UTC+2). Khartoum, where the Blue and White Nile rivers meet, is the capital.',
+    timezones: ['CAT (UTC+2)']
+  },
+  {
+    code: 'SS', name: 'South Sudan', slug: 'south-sudan', capital: 'Juba',
+    population: '11M', currency: 'South Sudanese Pound', currencySymbol: 'SSP', phoneCode: '+211',
+    languages: ['English', 'Arabic'], continent: 'africa',
+    description: 'South Sudan uses Central Africa Time (UTC+2). Juba is the capital of the world\'s youngest country, independent since 2011.',
+    timezones: ['CAT (UTC+2)']
+  },
+  {
+    code: 'UG', name: 'Uganda', slug: 'uganda', capital: 'Kampala',
+    population: '46M', currency: 'Ugandan Shilling', currencySymbol: 'USh', phoneCode: '+256',
+    languages: ['English', 'Swahili'], continent: 'africa',
+    description: 'Uganda uses East Africa Time (UTC+3). Kampala is the capital, located on the northern shores of Lake Victoria.',
+    timezones: ['EAT (UTC+3)']
+  },
+  {
+    code: 'RW', name: 'Rwanda', slug: 'rwanda', capital: 'Kigali',
+    population: '13M', currency: 'Rwandan Franc', currencySymbol: 'FRw', phoneCode: '+250',
+    languages: ['Kinyarwanda', 'English', 'French'], continent: 'africa',
+    description: 'Rwanda uses Central Africa Time (UTC+2). Kigali is the clean and modern capital, known as the "Land of a Thousand Hills."',
+    timezones: ['CAT (UTC+2)']
+  },
+  {
+    code: 'BI', name: 'Burundi', slug: 'burundi', capital: 'Gitega',
+    population: '12M', currency: 'Burundian Franc', currencySymbol: 'FBu', phoneCode: '+257',
+    languages: ['Kirundi', 'French'], continent: 'africa',
+    description: 'Burundi uses Central Africa Time (UTC+2). Gitega is the political capital, while Bujumbura remains the economic center.',
+    timezones: ['CAT (UTC+2)']
+  },
+  {
+    code: 'CD', name: 'DR Congo', slug: 'dr-congo', capital: 'Kinshasa',
+    population: '92M', currency: 'Congolese Franc', currencySymbol: 'FC', phoneCode: '+243',
+    languages: ['French'], continent: 'africa',
+    description: 'DR Congo spans two time zones: West Africa Time (UTC+1) in the west and Central Africa Time (UTC+2) in the east. Kinshasa is the capital.',
+    timezones: ['WAT (UTC+1)', 'CAT (UTC+2)']
+  },
+  {
+    code: 'CG', name: 'Congo', slug: 'congo', capital: 'Brazzaville',
+    population: '5.5M', currency: 'Central African CFA Franc', currencySymbol: 'FCFA', phoneCode: '+242',
+    languages: ['French'], continent: 'africa',
+    description: 'Republic of Congo uses West Africa Time (UTC+1). Brazzaville, across the river from Kinshasa, is the capital.',
+    timezones: ['WAT (UTC+1)']
+  },
+  {
+    code: 'ZW', name: 'Zimbabwe', slug: 'zimbabwe', capital: 'Harare',
+    population: '15M', currency: 'US Dollar', currencySymbol: '$', phoneCode: '+263',
+    languages: ['English', 'Shona', 'Ndebele'], continent: 'africa',
+    description: 'Zimbabwe uses Central Africa Time (UTC+2). Harare is the capital, and Victoria Falls is a major tourist attraction.',
+    timezones: ['CAT (UTC+2)']
+  },
+  {
+    code: 'ZM', name: 'Zambia', slug: 'zambia', capital: 'Lusaka',
+    population: '19M', currency: 'Zambian Kwacha', currencySymbol: 'ZK', phoneCode: '+260',
+    languages: ['English'], continent: 'africa',
+    description: 'Zambia uses Central Africa Time (UTC+2). Lusaka is the capital, and the country shares Victoria Falls with Zimbabwe.',
+    timezones: ['CAT (UTC+2)']
+  },
+  {
+    code: 'BW', name: 'Botswana', slug: 'botswana', capital: 'Gaborone',
+    population: '2.4M', currency: 'Botswana Pula', currencySymbol: 'P', phoneCode: '+267',
+    languages: ['English', 'Setswana'], continent: 'africa',
+    description: 'Botswana uses Central Africa Time (UTC+2). Gaborone is the capital, and the Okavango Delta is a UNESCO World Heritage Site.',
+    timezones: ['CAT (UTC+2)']
+  },
+  {
+    code: 'NA', name: 'Namibia', slug: 'namibia', capital: 'Windhoek',
+    population: '2.5M', currency: 'Namibian Dollar', currencySymbol: 'N$', phoneCode: '+264',
+    languages: ['English'], continent: 'africa',
+    description: 'Namibia uses Central Africa Time (UTC+2). Windhoek is the capital, known for its German colonial architecture.',
+    timezones: ['CAT (UTC+2)']
+  },
+  {
+    code: 'MZ', name: 'Mozambique', slug: 'mozambique', capital: 'Maputo',
+    population: '32M', currency: 'Mozambican Metical', currencySymbol: 'MT', phoneCode: '+258',
+    languages: ['Portuguese'], continent: 'africa',
+    description: 'Mozambique uses Central Africa Time (UTC+2). Maputo is the capital on the Indian Ocean coast.',
+    timezones: ['CAT (UTC+2)']
+  },
+  {
+    code: 'AO', name: 'Angola', slug: 'angola', capital: 'Luanda',
+    population: '33M', currency: 'Angolan Kwanza', currencySymbol: 'Kz', phoneCode: '+244',
+    languages: ['Portuguese'], continent: 'africa',
+    description: 'Angola uses West Africa Time (UTC+1). Luanda is the capital and largest city on the Atlantic coast.',
+    timezones: ['WAT (UTC+1)']
+  },
+  {
+    code: 'CM', name: 'Cameroon', slug: 'cameroon', capital: 'Yaoundé',
+    population: '27M', currency: 'Central African CFA Franc', currencySymbol: 'FCFA', phoneCode: '+237',
+    languages: ['French', 'English'], continent: 'africa',
+    description: 'Cameroon uses West Africa Time (UTC+1). Yaoundé is the capital, while Douala is the economic hub.',
+    timezones: ['WAT (UTC+1)']
+  },
+  {
+    code: 'CI', name: 'Ivory Coast', slug: 'ivory-coast', capital: 'Yamoussoukro',
+    population: '27M', currency: 'West African CFA Franc', currencySymbol: 'CFA', phoneCode: '+225',
+    languages: ['French'], continent: 'africa',
+    description: 'Ivory Coast uses Greenwich Mean Time (UTC+0). Yamoussoukro is the political capital, Abidjan is the economic capital.',
+    timezones: ['GMT (UTC+0)']
+  },
+  {
+    code: 'SN', name: 'Senegal', slug: 'senegal', capital: 'Dakar',
+    population: '17M', currency: 'West African CFA Franc', currencySymbol: 'CFA', phoneCode: '+221',
+    languages: ['French'], continent: 'africa',
+    description: 'Senegal uses Greenwich Mean Time (UTC+0). Dakar is the westernmost city in Africa and a major cultural hub.',
+    timezones: ['GMT (UTC+0)']
+  },
+  {
+    code: 'ML', name: 'Mali', slug: 'mali', capital: 'Bamako',
+    population: '21M', currency: 'West African CFA Franc', currencySymbol: 'CFA', phoneCode: '+223',
+    languages: ['French'], continent: 'africa',
+    description: 'Mali uses Greenwich Mean Time (UTC+0). Bamako is the capital on the Niger River, and Timbuktu is a historic trading city.',
+    timezones: ['GMT (UTC+0)']
+  },
+  {
+    code: 'BF', name: 'Burkina Faso', slug: 'burkina-faso', capital: 'Ouagadougou',
+    population: '21M', currency: 'West African CFA Franc', currencySymbol: 'CFA', phoneCode: '+226',
+    languages: ['French'], continent: 'africa',
+    description: 'Burkina Faso uses Greenwich Mean Time (UTC+0). Ouagadougou is the capital and hosts the FESPACO film festival.',
+    timezones: ['GMT (UTC+0)']
+  },
+  {
+    code: 'NE', name: 'Niger', slug: 'niger', capital: 'Niamey',
+    population: '25M', currency: 'West African CFA Franc', currencySymbol: 'CFA', phoneCode: '+227',
+    languages: ['French'], continent: 'africa',
+    description: 'Niger uses West Africa Time (UTC+1). Niamey is the capital on the Niger River.',
+    timezones: ['WAT (UTC+1)']
+  },
+  {
+    code: 'TD', name: 'Chad', slug: 'chad', capital: 'N\'Djamena',
+    population: '17M', currency: 'Central African CFA Franc', currencySymbol: 'FCFA', phoneCode: '+235',
+    languages: ['French', 'Arabic'], continent: 'africa',
+    description: 'Chad uses West Africa Time (UTC+1). N\'Djamena is the capital at the confluence of the Chari and Logone rivers.',
+    timezones: ['WAT (UTC+1)']
+  },
+  {
+    code: 'MG', name: 'Madagascar', slug: 'madagascar', capital: 'Antananarivo',
+    population: '28M', currency: 'Malagasy Ariary', currencySymbol: 'Ar', phoneCode: '+261',
+    languages: ['Malagasy', 'French'], continent: 'africa',
+    description: 'Madagascar uses East Africa Time (UTC+3). Antananarivo is the highland capital of the world\'s fourth-largest island.',
+    timezones: ['EAT (UTC+3)']
+  },
+  {
+    code: 'MU', name: 'Mauritius', slug: 'mauritius', capital: 'Port Louis',
+    population: '1.3M', currency: 'Mauritian Rupee', currencySymbol: '₨', phoneCode: '+230',
+    languages: ['English', 'French', 'Creole'], continent: 'africa',
+    description: 'Mauritius uses Mauritius Time (UTC+4). Port Louis is the capital of this island nation in the Indian Ocean.',
+    timezones: ['MUT (UTC+4)']
+  },
+  {
+    code: 'MW', name: 'Malawi', slug: 'malawi', capital: 'Lilongwe',
+    population: '20M', currency: 'Malawian Kwacha', currencySymbol: 'MK', phoneCode: '+265',
+    languages: ['English', 'Chichewa'], continent: 'africa',
+    description: 'Malawi uses Central Africa Time (UTC+2). Lilongwe is the capital, and Lake Malawi covers a third of the country.',
+    timezones: ['CAT (UTC+2)']
+  },
+  {
+    code: 'SO', name: 'Somalia', slug: 'somalia', capital: 'Mogadishu',
+    population: '16M', currency: 'Somali Shilling', currencySymbol: 'Sh.So.', phoneCode: '+252',
+    languages: ['Somali', 'Arabic'], continent: 'africa',
+    description: 'Somalia uses East Africa Time (UTC+3). Mogadishu is the capital on the Indian Ocean coast.',
+    timezones: ['EAT (UTC+3)']
+  },
+  {
+    code: 'ER', name: 'Eritrea', slug: 'eritrea', capital: 'Asmara',
+    population: '3.6M', currency: 'Eritrean Nakfa', currencySymbol: 'Nfk', phoneCode: '+291',
+    languages: ['Tigrinya', 'Arabic', 'English'], continent: 'africa',
+    description: 'Eritrea uses East Africa Time (UTC+3). Asmara is the capital, known for its Italian colonial architecture.',
+    timezones: ['EAT (UTC+3)']
+  },
+  {
+    code: 'DJ', name: 'Djibouti', slug: 'djibouti', capital: 'Djibouti City',
+    population: '1M', currency: 'Djiboutian Franc', currencySymbol: 'Fdj', phoneCode: '+253',
+    languages: ['French', 'Arabic'], continent: 'africa',
+    description: 'Djibouti uses East Africa Time (UTC+3). Djibouti City is the capital, strategically located at the entrance to the Red Sea.',
+    timezones: ['EAT (UTC+3)']
+  },
+  {
+    code: 'GA', name: 'Gabon', slug: 'gabon', capital: 'Libreville',
+    population: '2.3M', currency: 'Central African CFA Franc', currencySymbol: 'FCFA', phoneCode: '+241',
+    languages: ['French'], continent: 'africa',
+    description: 'Gabon uses West Africa Time (UTC+1). Libreville is the capital, and the country is known for its rainforests.',
+    timezones: ['WAT (UTC+1)']
+  },
+  {
+    code: 'GQ', name: 'Equatorial Guinea', slug: 'equatorial-guinea', capital: 'Malabo',
+    population: '1.5M', currency: 'Central African CFA Franc', currencySymbol: 'FCFA', phoneCode: '+240',
+    languages: ['Spanish', 'French', 'Portuguese'], continent: 'africa',
+    description: 'Equatorial Guinea uses West Africa Time (UTC+1). Malabo on Bioko Island is the capital.',
+    timezones: ['WAT (UTC+1)']
+  },
+  {
+    code: 'CF', name: 'Central African Republic', slug: 'central-african-republic', capital: 'Bangui',
+    population: '5M', currency: 'Central African CFA Franc', currencySymbol: 'FCFA', phoneCode: '+236',
+    languages: ['French', 'Sango'], continent: 'africa',
+    description: 'Central African Republic uses West Africa Time (UTC+1). Bangui is the capital on the Ubangi River.',
+    timezones: ['WAT (UTC+1)']
+  },
+  {
+    code: 'GW', name: 'Guinea-Bissau', slug: 'guinea-bissau', capital: 'Bissau',
+    population: '2M', currency: 'West African CFA Franc', currencySymbol: 'CFA', phoneCode: '+245',
+    languages: ['Portuguese'], continent: 'africa',
+    description: 'Guinea-Bissau uses Greenwich Mean Time (UTC+0). Bissau is the capital of this small West African nation.',
+    timezones: ['GMT (UTC+0)']
+  },
+  {
+    code: 'GN', name: 'Guinea', slug: 'guinea', capital: 'Conakry',
+    population: '13M', currency: 'Guinean Franc', currencySymbol: 'FG', phoneCode: '+224',
+    languages: ['French'], continent: 'africa',
+    description: 'Guinea uses Greenwich Mean Time (UTC+0). Conakry is the capital and largest city on the Atlantic coast.',
+    timezones: ['GMT (UTC+0)']
+  },
+  {
+    code: 'SL', name: 'Sierra Leone', slug: 'sierra-leone', capital: 'Freetown',
+    population: '8M', currency: 'Sierra Leonean Leone', currencySymbol: 'Le', phoneCode: '+232',
+    languages: ['English'], continent: 'africa',
+    description: 'Sierra Leone uses Greenwich Mean Time (UTC+0). Freetown is the capital, founded as a settlement for freed slaves.',
+    timezones: ['GMT (UTC+0)']
+  },
+  {
+    code: 'LR', name: 'Liberia', slug: 'liberia', capital: 'Monrovia',
+    population: '5M', currency: 'Liberian Dollar', currencySymbol: 'L$', phoneCode: '+231',
+    languages: ['English'], continent: 'africa',
+    description: 'Liberia uses Greenwich Mean Time (UTC+0). Monrovia is the capital, named after US President James Monroe.',
+    timezones: ['GMT (UTC+0)']
+  },
+  {
+    code: 'TG', name: 'Togo', slug: 'togo', capital: 'Lomé',
+    population: '8M', currency: 'West African CFA Franc', currencySymbol: 'CFA', phoneCode: '+228',
+    languages: ['French'], continent: 'africa',
+    description: 'Togo uses Greenwich Mean Time (UTC+0). Lomé is the capital and main port on the Gulf of Guinea.',
+    timezones: ['GMT (UTC+0)']
+  },
+  {
+    code: 'BJ', name: 'Benin', slug: 'benin', capital: 'Porto-Novo',
+    population: '12M', currency: 'West African CFA Franc', currencySymbol: 'CFA', phoneCode: '+229',
+    languages: ['French'], continent: 'africa',
+    description: 'Benin uses West Africa Time (UTC+1). Porto-Novo is the capital, while Cotonou is the economic center.',
+    timezones: ['WAT (UTC+1)']
+  },
+  {
+    code: 'MR', name: 'Mauritania', slug: 'mauritania', capital: 'Nouakchott',
+    population: '4.6M', currency: 'Mauritanian Ouguiya', currencySymbol: 'UM', phoneCode: '+222',
+    languages: ['Arabic'], continent: 'africa',
+    description: 'Mauritania uses Greenwich Mean Time (UTC+0). Nouakchott is the capital, one of the largest cities in the Sahara.',
+    timezones: ['GMT (UTC+0)']
+  },
+  {
+    code: 'GM', name: 'Gambia', slug: 'gambia', capital: 'Banjul',
+    population: '2.5M', currency: 'Gambian Dalasi', currencySymbol: 'D', phoneCode: '+220',
+    languages: ['English'], continent: 'africa',
+    description: 'Gambia uses Greenwich Mean Time (UTC+0). Banjul is the capital of Africa\'s smallest mainland country.',
+    timezones: ['GMT (UTC+0)']
+  },
+  {
+    code: 'CV', name: 'Cape Verde', slug: 'cape-verde', capital: 'Praia',
+    population: '560K', currency: 'Cape Verdean Escudo', currencySymbol: 'CVE', phoneCode: '+238',
+    languages: ['Portuguese'], continent: 'africa',
+    description: 'Cape Verde uses Cape Verde Time (UTC-1). Praia is the capital of this Atlantic island nation.',
+    timezones: ['CVT (UTC-1)']
+  },
+  {
+    code: 'ST', name: 'São Tomé and Príncipe', slug: 'sao-tome-and-principe', capital: 'São Tomé',
+    population: '220K', currency: 'São Tomé Dobra', currencySymbol: 'Db', phoneCode: '+239',
+    languages: ['Portuguese'], continent: 'africa',
+    description: 'São Tomé and Príncipe uses Greenwich Mean Time (UTC+0). São Tomé is the capital of this island nation.',
+    timezones: ['GMT (UTC+0)']
+  },
+  {
+    code: 'SC', name: 'Seychelles', slug: 'seychelles', capital: 'Victoria',
+    population: '100K', currency: 'Seychellois Rupee', currencySymbol: 'SCR', phoneCode: '+248',
+    languages: ['English', 'French', 'Seychellois Creole'], continent: 'africa',
+    description: 'Seychelles uses Seychelles Time (UTC+4). Victoria is the capital of this Indian Ocean archipelago.',
+    timezones: ['SCT (UTC+4)']
+  },
+  {
+    code: 'KM', name: 'Comoros', slug: 'comoros', capital: 'Moroni',
+    population: '890K', currency: 'Comorian Franc', currencySymbol: 'CF', phoneCode: '+269',
+    languages: ['Comorian', 'Arabic', 'French'], continent: 'africa',
+    description: 'Comoros uses East Africa Time (UTC+3). Moroni is the capital of this volcanic archipelago.',
+    timezones: ['EAT (UTC+3)']
+  },
+  {
+    code: 'LS', name: 'Lesotho', slug: 'lesotho', capital: 'Maseru',
+    population: '2.1M', currency: 'Lesotho Loti', currencySymbol: 'L', phoneCode: '+266',
+    languages: ['Sesotho', 'English'], continent: 'africa',
+    description: 'Lesotho uses South Africa Standard Time (UTC+2). Maseru is the capital of this mountainous kingdom.',
+    timezones: ['SAST (UTC+2)']
+  },
+  {
+    code: 'SZ', name: 'Eswatini', slug: 'eswatini', capital: 'Mbabane',
+    population: '1.2M', currency: 'Swazi Lilangeni', currencySymbol: 'E', phoneCode: '+268',
+    languages: ['Swazi', 'English'], continent: 'africa',
+    description: 'Eswatini uses South Africa Standard Time (UTC+2). Mbabane is the administrative capital.',
+    timezones: ['SAST (UTC+2)']
+  },
+  // ========== ADDITIONAL EUROPEAN COUNTRIES ==========
+  {
+    code: 'LU', name: 'Luxembourg', slug: 'luxembourg', capital: 'Luxembourg City',
+    population: '640K', currency: 'Euro', currencySymbol: '€', phoneCode: '+352',
+    languages: ['Luxembourgish', 'French', 'German'], continent: 'europe',
+    description: 'Luxembourg uses Central European Time (UTC+1/+2). Luxembourg City is both capital and a major EU financial center.',
+    timezones: ['CET (UTC+1)', 'CEST (UTC+2)']
+  },
+  {
+    code: 'MC', name: 'Monaco', slug: 'monaco', capital: 'Monaco',
+    population: '40K', currency: 'Euro', currencySymbol: '€', phoneCode: '+377',
+    languages: ['French'], continent: 'europe',
+    description: 'Monaco uses Central European Time (UTC+1/+2). The city-state is famous for its casino and Formula 1 Grand Prix.',
+    timezones: ['CET (UTC+1)', 'CEST (UTC+2)']
+  },
+  {
+    code: 'AD', name: 'Andorra', slug: 'andorra', capital: 'Andorra la Vella',
+    population: '80K', currency: 'Euro', currencySymbol: '€', phoneCode: '+376',
+    languages: ['Catalan'], continent: 'europe',
+    description: 'Andorra uses Central European Time (UTC+1/+2). Andorra la Vella is the highest capital city in Europe.',
+    timezones: ['CET (UTC+1)', 'CEST (UTC+2)']
+  },
+  {
+    code: 'LI', name: 'Liechtenstein', slug: 'liechtenstein', capital: 'Vaduz',
+    population: '39K', currency: 'Swiss Franc', currencySymbol: 'CHF', phoneCode: '+423',
+    languages: ['German'], continent: 'europe',
+    description: 'Liechtenstein uses Central European Time (UTC+1/+2). Vaduz is the capital of this tiny Alpine principality.',
+    timezones: ['CET (UTC+1)', 'CEST (UTC+2)']
+  },
+  {
+    code: 'SM', name: 'San Marino', slug: 'san-marino', capital: 'San Marino',
+    population: '34K', currency: 'Euro', currencySymbol: '€', phoneCode: '+378',
+    languages: ['Italian'], continent: 'europe',
+    description: 'San Marino uses Central European Time (UTC+1/+2). It is one of the world\'s oldest republics.',
+    timezones: ['CET (UTC+1)', 'CEST (UTC+2)']
+  },
+  {
+    code: 'VA', name: 'Vatican City', slug: 'vatican-city', capital: 'Vatican City',
+    population: '800', currency: 'Euro', currencySymbol: '€', phoneCode: '+39',
+    languages: ['Italian', 'Latin'], continent: 'europe',
+    description: 'Vatican City uses Central European Time (UTC+1/+2). It is the smallest country in the world and center of the Catholic Church.',
+    timezones: ['CET (UTC+1)', 'CEST (UTC+2)']
+  },
+  {
+    code: 'MT', name: 'Malta', slug: 'malta', capital: 'Valletta',
+    population: '520K', currency: 'Euro', currencySymbol: '€', phoneCode: '+356',
+    languages: ['Maltese', 'English'], continent: 'europe',
+    description: 'Malta uses Central European Time (UTC+1/+2). Valletta is the capital of this Mediterranean island nation.',
+    timezones: ['CET (UTC+1)', 'CEST (UTC+2)']
+  },
+  {
+    code: 'CY', name: 'Cyprus', slug: 'cyprus', capital: 'Nicosia',
+    population: '1.2M', currency: 'Euro', currencySymbol: '€', phoneCode: '+357',
+    languages: ['Greek', 'Turkish'], continent: 'europe',
+    description: 'Cyprus uses Eastern European Time (UTC+2/+3). Nicosia is the world\'s last divided capital city.',
+    timezones: ['EET (UTC+2)', 'EEST (UTC+3)']
+  },
+  {
+    code: 'ME', name: 'Montenegro', slug: 'montenegro', capital: 'Podgorica',
+    population: '620K', currency: 'Euro', currencySymbol: '€', phoneCode: '+382',
+    languages: ['Montenegrin'], continent: 'europe',
+    description: 'Montenegro uses Central European Time (UTC+1/+2). Podgorica is the capital of this Adriatic nation.',
+    timezones: ['CET (UTC+1)', 'CEST (UTC+2)']
+  },
+  {
+    code: 'BA', name: 'Bosnia and Herzegovina', slug: 'bosnia-and-herzegovina', capital: 'Sarajevo',
+    population: '3.3M', currency: 'Bosnia and Herzegovina Convertible Mark', currencySymbol: 'KM', phoneCode: '+387',
+    languages: ['Bosnian', 'Croatian', 'Serbian'], continent: 'europe',
+    description: 'Bosnia and Herzegovina uses Central European Time (UTC+1/+2). Sarajevo is the capital with a rich history.',
+    timezones: ['CET (UTC+1)', 'CEST (UTC+2)']
+  },
+  {
+    code: 'MK', name: 'North Macedonia', slug: 'north-macedonia', capital: 'Skopje',
+    population: '2.1M', currency: 'Macedonian Denar', currencySymbol: 'ден', phoneCode: '+389',
+    languages: ['Macedonian', 'Albanian'], continent: 'europe',
+    description: 'North Macedonia uses Central European Time (UTC+1/+2). Skopje is the capital on the Vardar River.',
+    timezones: ['CET (UTC+1)', 'CEST (UTC+2)']
+  },
+  {
+    code: 'AL', name: 'Albania', slug: 'albania', capital: 'Tirana',
+    population: '2.9M', currency: 'Albanian Lek', currencySymbol: 'L', phoneCode: '+355',
+    languages: ['Albanian'], continent: 'europe',
+    description: 'Albania uses Central European Time (UTC+1/+2). Tirana is the capital and largest city.',
+    timezones: ['CET (UTC+1)', 'CEST (UTC+2)']
+  },
+  {
+    code: 'MD', name: 'Moldova', slug: 'moldova', capital: 'Chișinău',
+    population: '2.6M', currency: 'Moldovan Leu', currencySymbol: 'L', phoneCode: '+373',
+    languages: ['Romanian'], continent: 'europe',
+    description: 'Moldova uses Eastern European Time (UTC+2/+3). Chișinău is the capital and largest city.',
+    timezones: ['EET (UTC+2)', 'EEST (UTC+3)']
+  },
+  {
+    code: 'BY', name: 'Belarus', slug: 'belarus', capital: 'Minsk',
+    population: '9.4M', currency: 'Belarusian Ruble', currencySymbol: 'Br', phoneCode: '+375',
+    languages: ['Belarusian', 'Russian'], continent: 'europe',
+    description: 'Belarus uses Moscow Time (UTC+3) year-round. Minsk is the capital and largest city.',
+    timezones: ['MSK (UTC+3)']
+  },
+  {
+    code: 'XK', name: 'Kosovo', slug: 'kosovo', capital: 'Pristina',
+    population: '1.8M', currency: 'Euro', currencySymbol: '€', phoneCode: '+383',
+    languages: ['Albanian', 'Serbian'], continent: 'europe',
+    description: 'Kosovo uses Central European Time (UTC+1/+2). Pristina is the capital of this partially recognized country.',
+    timezones: ['CET (UTC+1)', 'CEST (UTC+2)']
+  },
+  // ========== ADDITIONAL ASIAN COUNTRIES ==========
+  {
+    code: 'AZ', name: 'Azerbaijan', slug: 'azerbaijan', capital: 'Baku',
+    population: '10M', currency: 'Azerbaijani Manat', currencySymbol: '₼', phoneCode: '+994',
+    languages: ['Azerbaijani'], continent: 'asia',
+    description: 'Azerbaijan uses Azerbaijan Time (UTC+4). Baku is the capital on the Caspian Sea coast.',
+    timezones: ['AZT (UTC+4)']
+  },
+  {
+    code: 'AM', name: 'Armenia', slug: 'armenia', capital: 'Yerevan',
+    population: '3M', currency: 'Armenian Dram', currencySymbol: '֏', phoneCode: '+374',
+    languages: ['Armenian'], continent: 'asia',
+    description: 'Armenia uses Armenia Time (UTC+4). Yerevan is one of the world\'s oldest continuously inhabited cities.',
+    timezones: ['AMT (UTC+4)']
+  },
+  {
+    code: 'GE', name: 'Georgia', slug: 'georgia', capital: 'Tbilisi',
+    population: '3.7M', currency: 'Georgian Lari', currencySymbol: '₾', phoneCode: '+995',
+    languages: ['Georgian'], continent: 'asia',
+    description: 'Georgia uses Georgia Standard Time (UTC+4). Tbilisi is the capital, known for its diverse architecture.',
+    timezones: ['GET (UTC+4)']
+  },
+  {
+    code: 'UZ', name: 'Uzbekistan', slug: 'uzbekistan', capital: 'Tashkent',
+    population: '34M', currency: 'Uzbekistani Som', currencySymbol: 'soʻm', phoneCode: '+998',
+    languages: ['Uzbek'], continent: 'asia',
+    description: 'Uzbekistan uses Uzbekistan Time (UTC+5). Tashkent is the capital, and Samarkand is on the ancient Silk Road.',
+    timezones: ['UZT (UTC+5)']
+  },
+  {
+    code: 'KZ', name: 'Kazakhstan', slug: 'kazakhstan', capital: 'Astana',
+    population: '19M', currency: 'Kazakhstani Tenge', currencySymbol: '₸', phoneCode: '+7',
+    languages: ['Kazakh', 'Russian'], continent: 'asia',
+    description: 'Kazakhstan spans two time zones: UTC+5 and UTC+6. Astana is the capital of the world\'s largest landlocked country.',
+    timezones: ['AQTT (UTC+5)', 'ALMT (UTC+6)']
+  },
+  {
+    code: 'TM', name: 'Turkmenistan', slug: 'turkmenistan', capital: 'Ashgabat',
+    population: '6M', currency: 'Turkmenistan Manat', currencySymbol: 'm', phoneCode: '+993',
+    languages: ['Turkmen'], continent: 'asia',
+    description: 'Turkmenistan uses Turkmenistan Time (UTC+5). Ashgabat is the marble-clad capital city.',
+    timezones: ['TMT (UTC+5)']
+  },
+  {
+    code: 'TJ', name: 'Tajikistan', slug: 'tajikistan', capital: 'Dushanbe',
+    population: '10M', currency: 'Tajikistani Somoni', currencySymbol: 'SM', phoneCode: '+992',
+    languages: ['Tajik'], continent: 'asia',
+    description: 'Tajikistan uses Tajikistan Time (UTC+5). Dushanbe is the capital surrounded by mountains.',
+    timezones: ['TJT (UTC+5)']
+  },
+  {
+    code: 'KG', name: 'Kyrgyzstan', slug: 'kyrgyzstan', capital: 'Bishkek',
+    population: '6.5M', currency: 'Kyrgyzstani Som', currencySymbol: 'с', phoneCode: '+996',
+    languages: ['Kyrgyz', 'Russian'], continent: 'asia',
+    description: 'Kyrgyzstan uses Kyrgyzstan Time (UTC+6). Bishkek is the capital at the foot of the Tian Shan mountains.',
+    timezones: ['KGT (UTC+6)']
+  },
+  {
+    code: 'MN', name: 'Mongolia', slug: 'mongolia', capital: 'Ulaanbaatar',
+    population: '3.3M', currency: 'Mongolian Tögrög', currencySymbol: '₮', phoneCode: '+976',
+    languages: ['Mongolian'], continent: 'asia',
+    description: 'Mongolia uses two time zones. Ulaanbaatar uses UTC+8. The country is known for its vast steppes.',
+    timezones: ['ULAT (UTC+8)', 'HOVT (UTC+7)']
+  },
+  {
+    code: 'LA', name: 'Laos', slug: 'laos', capital: 'Vientiane',
+    population: '7.4M', currency: 'Lao Kip', currencySymbol: '₭', phoneCode: '+856',
+    languages: ['Lao'], continent: 'asia',
+    description: 'Laos uses Indochina Time (UTC+7). Vientiane is the capital on the Mekong River.',
+    timezones: ['ICT (UTC+7)']
+  },
+  {
+    code: 'BN', name: 'Brunei', slug: 'brunei', capital: 'Bandar Seri Begawan',
+    population: '440K', currency: 'Brunei Dollar', currencySymbol: 'B$', phoneCode: '+673',
+    languages: ['Malay'], continent: 'asia',
+    description: 'Brunei uses Brunei Time (UTC+8). Bandar Seri Begawan is the capital of this oil-rich sultanate.',
+    timezones: ['BNT (UTC+8)']
+  },
+  {
+    code: 'TL', name: 'Timor-Leste', slug: 'timor-leste', capital: 'Dili',
+    population: '1.3M', currency: 'US Dollar', currencySymbol: '$', phoneCode: '+670',
+    languages: ['Portuguese', 'Tetum'], continent: 'asia',
+    description: 'Timor-Leste uses Timor-Leste Time (UTC+9). Dili is the capital of this young nation.',
+    timezones: ['TLT (UTC+9)']
+  },
+  {
+    code: 'MV', name: 'Maldives', slug: 'maldives', capital: 'Malé',
+    population: '540K', currency: 'Maldivian Rufiyaa', currencySymbol: 'Rf', phoneCode: '+960',
+    languages: ['Dhivehi'], continent: 'asia',
+    description: 'Maldives uses Maldives Time (UTC+5). Malé is the capital of this Indian Ocean island nation.',
+    timezones: ['MVT (UTC+5)']
+  },
+  {
+    code: 'BT', name: 'Bhutan', slug: 'bhutan', capital: 'Thimphu',
+    population: '780K', currency: 'Bhutanese Ngultrum', currencySymbol: 'Nu.', phoneCode: '+975',
+    languages: ['Dzongkha'], continent: 'asia',
+    description: 'Bhutan uses Bhutan Time (UTC+6). Thimphu is the capital of this Himalayan kingdom.',
+    timezones: ['BTT (UTC+6)']
+  },
+  {
+    code: 'AF', name: 'Afghanistan', slug: 'afghanistan', capital: 'Kabul',
+    population: '40M', currency: 'Afghan Afghani', currencySymbol: '؋', phoneCode: '+93',
+    languages: ['Pashto', 'Dari'], continent: 'asia',
+    description: 'Afghanistan uses Afghanistan Time (UTC+4:30). Kabul is the capital and largest city.',
+    timezones: ['AFT (UTC+4:30)']
+  },
+  {
+    code: 'IQ', name: 'Iraq', slug: 'iraq', capital: 'Baghdad',
+    population: '41M', currency: 'Iraqi Dinar', currencySymbol: 'ع.د', phoneCode: '+964',
+    languages: ['Arabic', 'Kurdish'], continent: 'asia',
+    description: 'Iraq uses Arabia Standard Time (UTC+3). Baghdad is the capital on the Tigris River.',
+    timezones: ['AST (UTC+3)']
+  },
+  {
+    code: 'SY', name: 'Syria', slug: 'syria', capital: 'Damascus',
+    population: '18M', currency: 'Syrian Pound', currencySymbol: '£S', phoneCode: '+963',
+    languages: ['Arabic'], continent: 'asia',
+    description: 'Syria uses Eastern European Time (UTC+3). Damascus is one of the oldest continuously inhabited cities.',
+    timezones: ['EET (UTC+3)']
+  },
+  {
+    code: 'JO', name: 'Jordan', slug: 'jordan', capital: 'Amman',
+    population: '10M', currency: 'Jordanian Dinar', currencySymbol: 'JD', phoneCode: '+962',
+    languages: ['Arabic'], continent: 'asia',
+    description: 'Jordan uses Eastern European Time (UTC+3). Amman is the capital, and Petra is a famous ancient city.',
+    timezones: ['EET (UTC+3)']
+  },
+  {
+    code: 'LB', name: 'Lebanon', slug: 'lebanon', capital: 'Beirut',
+    population: '6.8M', currency: 'Lebanese Pound', currencySymbol: 'ل.ل', phoneCode: '+961',
+    languages: ['Arabic', 'French'], continent: 'asia',
+    description: 'Lebanon uses Eastern European Time (UTC+2/+3). Beirut is the capital on the Mediterranean coast.',
+    timezones: ['EET (UTC+2)', 'EEST (UTC+3)']
+  },
+  {
+    code: 'YE', name: 'Yemen', slug: 'yemen', capital: 'Sanaa',
+    population: '30M', currency: 'Yemeni Rial', currencySymbol: '﷼', phoneCode: '+967',
+    languages: ['Arabic'], continent: 'asia',
+    description: 'Yemen uses Arabia Standard Time (UTC+3). Sanaa is the capital with ancient architecture.',
+    timezones: ['AST (UTC+3)']
+  },
+  {
+    code: 'OM', name: 'Oman', slug: 'oman', capital: 'Muscat',
+    population: '5M', currency: 'Omani Rial', currencySymbol: 'ر.ع.', phoneCode: '+968',
+    languages: ['Arabic'], continent: 'asia',
+    description: 'Oman uses Gulf Standard Time (UTC+4). Muscat is the capital on the Gulf of Oman.',
+    timezones: ['GST (UTC+4)']
+  },
+  {
+    code: 'BH', name: 'Bahrain', slug: 'bahrain', capital: 'Manama',
+    population: '1.5M', currency: 'Bahraini Dinar', currencySymbol: 'BD', phoneCode: '+973',
+    languages: ['Arabic'], continent: 'asia',
+    description: 'Bahrain uses Arabia Standard Time (UTC+3). Manama is the capital of this island kingdom.',
+    timezones: ['AST (UTC+3)']
+  },
+  {
+    code: 'KW', name: 'Kuwait', slug: 'kuwait', capital: 'Kuwait City',
+    population: '4.3M', currency: 'Kuwaiti Dinar', currencySymbol: 'KD', phoneCode: '+965',
+    languages: ['Arabic'], continent: 'asia',
+    description: 'Kuwait uses Arabia Standard Time (UTC+3). Kuwait City is the capital and economic center.',
+    timezones: ['AST (UTC+3)']
+  },
+  {
+    code: 'PS', name: 'Palestine', slug: 'palestine', capital: 'Ramallah',
+    population: '5M', currency: 'Israeli Shekel', currencySymbol: '₪', phoneCode: '+970',
+    languages: ['Arabic'], continent: 'asia',
+    description: 'Palestine uses Eastern European Time (UTC+2/+3). Ramallah serves as the administrative capital.',
+    timezones: ['EET (UTC+2)', 'EEST (UTC+3)']
+  },
+  // ========== ADDITIONAL AMERICAS COUNTRIES ==========
+  {
+    code: 'JM', name: 'Jamaica', slug: 'jamaica', capital: 'Kingston',
+    population: '3M', currency: 'Jamaican Dollar', currencySymbol: 'J$', phoneCode: '+1-876',
+    languages: ['English'], continent: 'americas',
+    description: 'Jamaica uses Eastern Standard Time (UTC-5) year-round. Kingston is the capital and largest city.',
+    timezones: ['EST (UTC-5)']
+  },
+  {
+    code: 'TT', name: 'Trinidad and Tobago', slug: 'trinidad-and-tobago', capital: 'Port of Spain',
+    population: '1.4M', currency: 'Trinidad and Tobago Dollar', currencySymbol: 'TT$', phoneCode: '+1-868',
+    languages: ['English'], continent: 'americas',
+    description: 'Trinidad and Tobago uses Atlantic Standard Time (UTC-4). Port of Spain is the capital.',
+    timezones: ['AST (UTC-4)']
+  },
+  {
+    code: 'BS', name: 'Bahamas', slug: 'bahamas', capital: 'Nassau',
+    population: '400K', currency: 'Bahamian Dollar', currencySymbol: 'B$', phoneCode: '+1-242',
+    languages: ['English'], continent: 'americas',
+    description: 'The Bahamas uses Eastern Time (UTC-5/-4). Nassau is the capital on New Providence Island.',
+    timezones: ['EST (UTC-5)', 'EDT (UTC-4)']
+  },
+  {
+    code: 'BB', name: 'Barbados', slug: 'barbados', capital: 'Bridgetown',
+    population: '290K', currency: 'Barbadian Dollar', currencySymbol: 'Bds$', phoneCode: '+1-246',
+    languages: ['English'], continent: 'americas',
+    description: 'Barbados uses Atlantic Standard Time (UTC-4). Bridgetown is the capital of this island nation.',
+    timezones: ['AST (UTC-4)']
+  },
+  {
+    code: 'HT', name: 'Haiti', slug: 'haiti', capital: 'Port-au-Prince',
+    population: '11M', currency: 'Haitian Gourde', currencySymbol: 'G', phoneCode: '+509',
+    languages: ['French', 'Haitian Creole'], continent: 'americas',
+    description: 'Haiti uses Eastern Time (UTC-5/-4). Port-au-Prince is the capital on the island of Hispaniola.',
+    timezones: ['EST (UTC-5)', 'EDT (UTC-4)']
+  },
+  {
+    code: 'DO', name: 'Dominican Republic', slug: 'dominican-republic', capital: 'Santo Domingo',
+    population: '11M', currency: 'Dominican Peso', currencySymbol: 'RD$', phoneCode: '+1-809',
+    languages: ['Spanish'], continent: 'americas',
+    description: 'Dominican Republic uses Atlantic Standard Time (UTC-4). Santo Domingo is the oldest European city in the Americas.',
+    timezones: ['AST (UTC-4)']
+  },
+  {
+    code: 'GT', name: 'Guatemala', slug: 'guatemala', capital: 'Guatemala City',
+    population: '17M', currency: 'Guatemalan Quetzal', currencySymbol: 'Q', phoneCode: '+502',
+    languages: ['Spanish'], continent: 'americas',
+    description: 'Guatemala uses Central Standard Time (UTC-6). Guatemala City is the capital and largest city.',
+    timezones: ['CST (UTC-6)']
+  },
+  {
+    code: 'HN', name: 'Honduras', slug: 'honduras', capital: 'Tegucigalpa',
+    population: '10M', currency: 'Honduran Lempira', currencySymbol: 'L', phoneCode: '+504',
+    languages: ['Spanish'], continent: 'americas',
+    description: 'Honduras uses Central Standard Time (UTC-6). Tegucigalpa is the capital in the central highlands.',
+    timezones: ['CST (UTC-6)']
+  },
+  {
+    code: 'SV', name: 'El Salvador', slug: 'el-salvador', capital: 'San Salvador',
+    population: '6.5M', currency: 'US Dollar', currencySymbol: '$', phoneCode: '+503',
+    languages: ['Spanish'], continent: 'americas',
+    description: 'El Salvador uses Central Standard Time (UTC-6). San Salvador is the capital of Central America\'s smallest country.',
+    timezones: ['CST (UTC-6)']
+  },
+  {
+    code: 'NI', name: 'Nicaragua', slug: 'nicaragua', capital: 'Managua',
+    population: '6.6M', currency: 'Nicaraguan Córdoba', currencySymbol: 'C$', phoneCode: '+505',
+    languages: ['Spanish'], continent: 'americas',
+    description: 'Nicaragua uses Central Standard Time (UTC-6). Managua is the capital on Lake Managua.',
+    timezones: ['CST (UTC-6)']
+  },
+  {
+    code: 'BZ', name: 'Belize', slug: 'belize', capital: 'Belmopan',
+    population: '400K', currency: 'Belize Dollar', currencySymbol: 'BZ$', phoneCode: '+501',
+    languages: ['English'], continent: 'americas',
+    description: 'Belize uses Central Standard Time (UTC-6). Belmopan is the capital, though Belize City is larger.',
+    timezones: ['CST (UTC-6)']
+  },
+  {
+    code: 'BO', name: 'Bolivia', slug: 'bolivia', capital: 'Sucre',
+    population: '12M', currency: 'Bolivian Boliviano', currencySymbol: 'Bs.', phoneCode: '+591',
+    languages: ['Spanish'], continent: 'americas',
+    description: 'Bolivia uses Bolivia Time (UTC-4). Sucre is the constitutional capital, La Paz is the seat of government.',
+    timezones: ['BOT (UTC-4)']
+  },
+  {
+    code: 'PY', name: 'Paraguay', slug: 'paraguay', capital: 'Asunción',
+    population: '7.2M', currency: 'Paraguayan Guaraní', currencySymbol: '₲', phoneCode: '+595',
+    languages: ['Spanish', 'Guaraní'], continent: 'americas',
+    description: 'Paraguay uses Paraguay Time (UTC-4/-3). Asunción is the capital on the Paraguay River.',
+    timezones: ['PYT (UTC-4)', 'PYST (UTC-3)']
+  },
+  {
+    code: 'EC', name: 'Ecuador', slug: 'ecuador', capital: 'Quito',
+    population: '18M', currency: 'US Dollar', currencySymbol: '$', phoneCode: '+593',
+    languages: ['Spanish'], continent: 'americas',
+    description: 'Ecuador uses Ecuador Time (UTC-5). Quito is the capital, and the Galápagos Islands use UTC-6.',
+    timezones: ['ECT (UTC-5)', 'GALT (UTC-6)']
+  },
+  {
+    code: 'GY', name: 'Guyana', slug: 'guyana', capital: 'Georgetown',
+    population: '790K', currency: 'Guyanese Dollar', currencySymbol: 'G$', phoneCode: '+592',
+    languages: ['English'], continent: 'americas',
+    description: 'Guyana uses Guyana Time (UTC-4). Georgetown is the capital on the Atlantic coast.',
+    timezones: ['GYT (UTC-4)']
+  },
+  {
+    code: 'SR', name: 'Suriname', slug: 'suriname', capital: 'Paramaribo',
+    population: '590K', currency: 'Surinamese Dollar', currencySymbol: 'SRD', phoneCode: '+597',
+    languages: ['Dutch'], continent: 'americas',
+    description: 'Suriname uses Suriname Time (UTC-3). Paramaribo is the capital with Dutch colonial architecture.',
+    timezones: ['SRT (UTC-3)']
+  },
+  {
+    code: 'PR', name: 'Puerto Rico', slug: 'puerto-rico', capital: 'San Juan',
+    population: '3.2M', currency: 'US Dollar', currencySymbol: '$', phoneCode: '+1-787',
+    languages: ['Spanish', 'English'], continent: 'americas',
+    description: 'Puerto Rico uses Atlantic Standard Time (UTC-4). San Juan is the capital of this US territory.',
+    timezones: ['AST (UTC-4)']
+  },
+  // ========== ADDITIONAL OCEANIA COUNTRIES ==========
+  {
+    code: 'PG', name: 'Papua New Guinea', slug: 'papua-new-guinea', capital: 'Port Moresby',
+    population: '9M', currency: 'Papua New Guinean Kina', currencySymbol: 'K', phoneCode: '+675',
+    languages: ['English', 'Tok Pisin', 'Hiri Motu'], continent: 'oceania',
+    description: 'Papua New Guinea uses Papua New Guinea Time (UTC+10). Port Moresby is the capital.',
+    timezones: ['PGT (UTC+10)']
+  },
+  {
+    code: 'SB', name: 'Solomon Islands', slug: 'solomon-islands', capital: 'Honiara',
+    population: '700K', currency: 'Solomon Islands Dollar', currencySymbol: 'SI$', phoneCode: '+677',
+    languages: ['English'], continent: 'oceania',
+    description: 'Solomon Islands uses Solomon Islands Time (UTC+11). Honiara is the capital on Guadalcanal.',
+    timezones: ['SBT (UTC+11)']
+  },
+  {
+    code: 'VU', name: 'Vanuatu', slug: 'vanuatu', capital: 'Port Vila',
+    population: '310K', currency: 'Vanuatu Vatu', currencySymbol: 'VT', phoneCode: '+678',
+    languages: ['Bislama', 'English', 'French'], continent: 'oceania',
+    description: 'Vanuatu uses Vanuatu Time (UTC+11). Port Vila is the capital of this Pacific island nation.',
+    timezones: ['VUT (UTC+11)']
+  },
+  {
+    code: 'WS', name: 'Samoa', slug: 'samoa', capital: 'Apia',
+    population: '200K', currency: 'Samoan Tālā', currencySymbol: 'WS$', phoneCode: '+685',
+    languages: ['Samoan', 'English'], continent: 'oceania',
+    description: 'Samoa uses Samoa Time (UTC+13). Apia is the capital of this Polynesian island nation.',
+    timezones: ['WST (UTC+13)']
+  },
+  {
+    code: 'TO', name: 'Tonga', slug: 'tonga', capital: 'Nukuʻalofa',
+    population: '100K', currency: 'Tongan Paʻanga', currencySymbol: 'T$', phoneCode: '+676',
+    languages: ['Tongan', 'English'], continent: 'oceania',
+    description: 'Tonga uses Tonga Time (UTC+13). Nukuʻalofa is the capital of this Polynesian kingdom.',
+    timezones: ['TOT (UTC+13)']
+  },
+  {
+    code: 'KI', name: 'Kiribati', slug: 'kiribati', capital: 'Tarawa',
+    population: '120K', currency: 'Australian Dollar', currencySymbol: 'A$', phoneCode: '+686',
+    languages: ['English', 'Gilbertese'], continent: 'oceania',
+    description: 'Kiribati spans three time zones from UTC+12 to UTC+14. Tarawa is the capital atoll.',
+    timezones: ['GILT (UTC+12)', 'PHOT (UTC+13)', 'LINT (UTC+14)']
+  },
+  {
+    code: 'FM', name: 'Micronesia', slug: 'micronesia', capital: 'Palikir',
+    population: '115K', currency: 'US Dollar', currencySymbol: '$', phoneCode: '+691',
+    languages: ['English'], continent: 'oceania',
+    description: 'Micronesia uses two time zones (UTC+10 and UTC+11). Palikir is the capital on Pohnpei.',
+    timezones: ['CHUT (UTC+10)', 'PONT (UTC+11)']
+  },
+  {
+    code: 'PW', name: 'Palau', slug: 'palau', capital: 'Ngerulmud',
+    population: '18K', currency: 'US Dollar', currencySymbol: '$', phoneCode: '+680',
+    languages: ['Palauan', 'English'], continent: 'oceania',
+    description: 'Palau uses Palau Time (UTC+9). Ngerulmud is the capital, though Koror is the largest city.',
+    timezones: ['PWT (UTC+9)']
+  },
+  {
+    code: 'MH', name: 'Marshall Islands', slug: 'marshall-islands', capital: 'Majuro',
+    population: '60K', currency: 'US Dollar', currencySymbol: '$', phoneCode: '+692',
+    languages: ['Marshallese', 'English'], continent: 'oceania',
+    description: 'Marshall Islands uses Marshall Islands Time (UTC+12). Majuro is the capital atoll.',
+    timezones: ['MHT (UTC+12)']
+  },
+  {
+    code: 'NR', name: 'Nauru', slug: 'nauru', capital: 'Yaren',
+    population: '10K', currency: 'Australian Dollar', currencySymbol: 'A$', phoneCode: '+674',
+    languages: ['Nauruan', 'English'], continent: 'oceania',
+    description: 'Nauru uses Nauru Time (UTC+12). Yaren is the de facto capital of the world\'s smallest island nation.',
+    timezones: ['NRT (UTC+12)']
+  },
+  {
+    code: 'TV', name: 'Tuvalu', slug: 'tuvalu', capital: 'Funafuti',
+    population: '12K', currency: 'Australian Dollar', currencySymbol: 'A$', phoneCode: '+688',
+    languages: ['Tuvaluan', 'English'], continent: 'oceania',
+    description: 'Tuvalu uses Tuvalu Time (UTC+12). Funafuti is the capital of this small Pacific nation.',
+    timezones: ['TVT (UTC+12)']
   }
 ]
 
@@ -4087,6 +4869,128 @@ export const cities: City[] = [
       }
     }
   },
+
+  // ========== CAPITAL CITIES FOR NEW COUNTRIES ==========
+  // Africa Capitals
+  { slug: 'tripoli', city: 'Tripoli', timezone: 'Africa/Tripoli', country: 'Libya', countryCode: 'LY', lat: 32.89, lng: 13.19, tier: 3, continent: 'africa' },
+  { slug: 'khartoum', city: 'Khartoum', timezone: 'Africa/Khartoum', country: 'Sudan', countryCode: 'SD', lat: 15.59, lng: 32.53, tier: 3, continent: 'africa' },
+  { slug: 'juba', city: 'Juba', timezone: 'Africa/Juba', country: 'South Sudan', countryCode: 'SS', lat: 4.85, lng: 31.58, tier: 3, continent: 'africa' },
+  { slug: 'kampala', city: 'Kampala', timezone: 'Africa/Kampala', country: 'Uganda', countryCode: 'UG', lat: 0.31, lng: 32.58, tier: 3, continent: 'africa' },
+  { slug: 'kigali', city: 'Kigali', timezone: 'Africa/Kigali', country: 'Rwanda', countryCode: 'RW', lat: -1.94, lng: 30.06, tier: 3, continent: 'africa' },
+  { slug: 'gitega', city: 'Gitega', timezone: 'Africa/Bujumbura', country: 'Burundi', countryCode: 'BI', lat: -3.43, lng: 29.93, tier: 3, continent: 'africa' },
+  { slug: 'kinshasa', city: 'Kinshasa', timezone: 'Africa/Kinshasa', country: 'DR Congo', countryCode: 'CD', lat: -4.44, lng: 15.27, tier: 2, continent: 'africa' },
+  { slug: 'brazzaville', city: 'Brazzaville', timezone: 'Africa/Brazzaville', country: 'Congo', countryCode: 'CG', lat: -4.27, lng: 15.28, tier: 3, continent: 'africa' },
+  { slug: 'harare', city: 'Harare', timezone: 'Africa/Harare', country: 'Zimbabwe', countryCode: 'ZW', lat: -17.83, lng: 31.05, tier: 3, continent: 'africa' },
+  { slug: 'lusaka', city: 'Lusaka', timezone: 'Africa/Lusaka', country: 'Zambia', countryCode: 'ZM', lat: -15.39, lng: 28.32, tier: 3, continent: 'africa' },
+  { slug: 'gaborone', city: 'Gaborone', timezone: 'Africa/Gaborone', country: 'Botswana', countryCode: 'BW', lat: -24.65, lng: 25.91, tier: 3, continent: 'africa' },
+  { slug: 'windhoek', city: 'Windhoek', timezone: 'Africa/Windhoek', country: 'Namibia', countryCode: 'NA', lat: -22.56, lng: 17.08, tier: 3, continent: 'africa' },
+  { slug: 'maputo', city: 'Maputo', timezone: 'Africa/Maputo', country: 'Mozambique', countryCode: 'MZ', lat: -25.97, lng: 32.58, tier: 3, continent: 'africa' },
+  { slug: 'luanda', city: 'Luanda', timezone: 'Africa/Luanda', country: 'Angola', countryCode: 'AO', lat: -8.84, lng: 13.23, tier: 2, continent: 'africa' },
+  { slug: 'yaounde', city: 'Yaoundé', timezone: 'Africa/Douala', country: 'Cameroon', countryCode: 'CM', lat: 3.87, lng: 11.52, tier: 3, continent: 'africa' },
+  { slug: 'yamoussoukro', city: 'Yamoussoukro', timezone: 'Africa/Abidjan', country: 'Ivory Coast', countryCode: 'CI', lat: 6.82, lng: -5.28, tier: 3, continent: 'africa' },
+  { slug: 'dakar', city: 'Dakar', timezone: 'Africa/Dakar', country: 'Senegal', countryCode: 'SN', lat: 14.69, lng: -17.44, tier: 2, continent: 'africa' },
+  { slug: 'bamako', city: 'Bamako', timezone: 'Africa/Bamako', country: 'Mali', countryCode: 'ML', lat: 12.64, lng: -8.00, tier: 3, continent: 'africa' },
+  { slug: 'ouagadougou', city: 'Ouagadougou', timezone: 'Africa/Ouagadougou', country: 'Burkina Faso', countryCode: 'BF', lat: 12.37, lng: -1.52, tier: 3, continent: 'africa' },
+  { slug: 'niamey', city: 'Niamey', timezone: 'Africa/Niamey', country: 'Niger', countryCode: 'NE', lat: 13.51, lng: 2.11, tier: 3, continent: 'africa' },
+  { slug: 'ndjamena', city: 'N\'Djamena', timezone: 'Africa/Ndjamena', country: 'Chad', countryCode: 'TD', lat: 12.13, lng: 15.05, tier: 3, continent: 'africa' },
+  { slug: 'antananarivo', city: 'Antananarivo', timezone: 'Indian/Antananarivo', country: 'Madagascar', countryCode: 'MG', lat: -18.91, lng: 47.54, tier: 3, continent: 'africa' },
+  { slug: 'port-louis', city: 'Port Louis', timezone: 'Indian/Mauritius', country: 'Mauritius', countryCode: 'MU', lat: -20.16, lng: 57.50, tier: 3, continent: 'africa' },
+  { slug: 'lilongwe', city: 'Lilongwe', timezone: 'Africa/Blantyre', country: 'Malawi', countryCode: 'MW', lat: -13.98, lng: 33.79, tier: 3, continent: 'africa' },
+  { slug: 'mogadishu', city: 'Mogadishu', timezone: 'Africa/Mogadishu', country: 'Somalia', countryCode: 'SO', lat: 2.04, lng: 45.34, tier: 3, continent: 'africa' },
+  { slug: 'asmara', city: 'Asmara', timezone: 'Africa/Asmara', country: 'Eritrea', countryCode: 'ER', lat: 15.34, lng: 38.93, tier: 3, continent: 'africa' },
+  { slug: 'djibouti-city', city: 'Djibouti City', timezone: 'Africa/Djibouti', country: 'Djibouti', countryCode: 'DJ', lat: 11.59, lng: 43.15, tier: 3, continent: 'africa' },
+  { slug: 'libreville', city: 'Libreville', timezone: 'Africa/Libreville', country: 'Gabon', countryCode: 'GA', lat: 0.39, lng: 9.45, tier: 3, continent: 'africa' },
+  { slug: 'malabo', city: 'Malabo', timezone: 'Africa/Malabo', country: 'Equatorial Guinea', countryCode: 'GQ', lat: 3.75, lng: 8.78, tier: 3, continent: 'africa' },
+  { slug: 'bangui', city: 'Bangui', timezone: 'Africa/Bangui', country: 'Central African Republic', countryCode: 'CF', lat: 4.39, lng: 18.56, tier: 3, continent: 'africa' },
+  { slug: 'bissau', city: 'Bissau', timezone: 'Africa/Bissau', country: 'Guinea-Bissau', countryCode: 'GW', lat: 11.86, lng: -15.60, tier: 3, continent: 'africa' },
+  { slug: 'conakry', city: 'Conakry', timezone: 'Africa/Conakry', country: 'Guinea', countryCode: 'GN', lat: 9.64, lng: -13.58, tier: 3, continent: 'africa' },
+  { slug: 'freetown', city: 'Freetown', timezone: 'Africa/Freetown', country: 'Sierra Leone', countryCode: 'SL', lat: 8.48, lng: -13.23, tier: 3, continent: 'africa' },
+  { slug: 'monrovia', city: 'Monrovia', timezone: 'Africa/Monrovia', country: 'Liberia', countryCode: 'LR', lat: 6.31, lng: -10.80, tier: 3, continent: 'africa' },
+  { slug: 'lome', city: 'Lomé', timezone: 'Africa/Lome', country: 'Togo', countryCode: 'TG', lat: 6.14, lng: 1.21, tier: 3, continent: 'africa' },
+  { slug: 'porto-novo', city: 'Porto-Novo', timezone: 'Africa/Porto-Novo', country: 'Benin', countryCode: 'BJ', lat: 6.50, lng: 2.60, tier: 3, continent: 'africa' },
+  { slug: 'nouakchott', city: 'Nouakchott', timezone: 'Africa/Nouakchott', country: 'Mauritania', countryCode: 'MR', lat: 18.09, lng: -15.98, tier: 3, continent: 'africa' },
+  { slug: 'banjul', city: 'Banjul', timezone: 'Africa/Banjul', country: 'Gambia', countryCode: 'GM', lat: 13.45, lng: -16.58, tier: 3, continent: 'africa' },
+  { slug: 'praia', city: 'Praia', timezone: 'Atlantic/Cape_Verde', country: 'Cape Verde', countryCode: 'CV', lat: 14.93, lng: -23.51, tier: 3, continent: 'africa' },
+  { slug: 'sao-tome', city: 'São Tomé', timezone: 'Africa/Sao_Tome', country: 'São Tomé and Príncipe', countryCode: 'ST', lat: 0.34, lng: 6.73, tier: 3, continent: 'africa' },
+  { slug: 'victoria-seychelles', city: 'Victoria', timezone: 'Indian/Mahe', country: 'Seychelles', countryCode: 'SC', lat: -4.62, lng: 55.45, tier: 3, continent: 'africa' },
+  { slug: 'moroni', city: 'Moroni', timezone: 'Indian/Comoro', country: 'Comoros', countryCode: 'KM', lat: -11.70, lng: 43.26, tier: 3, continent: 'africa' },
+  { slug: 'maseru', city: 'Maseru', timezone: 'Africa/Maseru', country: 'Lesotho', countryCode: 'LS', lat: -29.31, lng: 27.48, tier: 3, continent: 'africa' },
+  { slug: 'mbabane', city: 'Mbabane', timezone: 'Africa/Mbabane', country: 'Eswatini', countryCode: 'SZ', lat: -26.32, lng: 31.13, tier: 3, continent: 'africa' },
+
+  // Europe Capitals
+  { slug: 'luxembourg-city', city: 'Luxembourg City', timezone: 'Europe/Luxembourg', country: 'Luxembourg', countryCode: 'LU', lat: 49.61, lng: 6.13, tier: 3, continent: 'europe' },
+  { slug: 'monaco', city: 'Monaco', timezone: 'Europe/Monaco', country: 'Monaco', countryCode: 'MC', lat: 43.73, lng: 7.42, tier: 3, continent: 'europe' },
+  { slug: 'andorra-la-vella', city: 'Andorra la Vella', timezone: 'Europe/Andorra', country: 'Andorra', countryCode: 'AD', lat: 42.51, lng: 1.52, tier: 3, continent: 'europe' },
+  { slug: 'vaduz', city: 'Vaduz', timezone: 'Europe/Vaduz', country: 'Liechtenstein', countryCode: 'LI', lat: 47.14, lng: 9.52, tier: 3, continent: 'europe' },
+  { slug: 'san-marino', city: 'San Marino', timezone: 'Europe/San_Marino', country: 'San Marino', countryCode: 'SM', lat: 43.94, lng: 12.46, tier: 3, continent: 'europe' },
+  { slug: 'vatican-city', city: 'Vatican City', timezone: 'Europe/Vatican', country: 'Vatican City', countryCode: 'VA', lat: 41.90, lng: 12.45, tier: 3, continent: 'europe' },
+  { slug: 'valletta', city: 'Valletta', timezone: 'Europe/Malta', country: 'Malta', countryCode: 'MT', lat: 35.90, lng: 14.51, tier: 3, continent: 'europe' },
+  { slug: 'nicosia', city: 'Nicosia', timezone: 'Asia/Nicosia', country: 'Cyprus', countryCode: 'CY', lat: 35.17, lng: 33.37, tier: 3, continent: 'europe' },
+  { slug: 'podgorica', city: 'Podgorica', timezone: 'Europe/Podgorica', country: 'Montenegro', countryCode: 'ME', lat: 42.44, lng: 19.26, tier: 3, continent: 'europe' },
+  { slug: 'sarajevo', city: 'Sarajevo', timezone: 'Europe/Sarajevo', country: 'Bosnia and Herzegovina', countryCode: 'BA', lat: 43.86, lng: 18.41, tier: 3, continent: 'europe' },
+  { slug: 'skopje', city: 'Skopje', timezone: 'Europe/Skopje', country: 'North Macedonia', countryCode: 'MK', lat: 42.00, lng: 21.43, tier: 3, continent: 'europe' },
+  { slug: 'tirana', city: 'Tirana', timezone: 'Europe/Tirane', country: 'Albania', countryCode: 'AL', lat: 41.33, lng: 19.82, tier: 3, continent: 'europe' },
+  { slug: 'chisinau', city: 'Chișinău', timezone: 'Europe/Chisinau', country: 'Moldova', countryCode: 'MD', lat: 47.01, lng: 28.86, tier: 3, continent: 'europe' },
+  { slug: 'minsk', city: 'Minsk', timezone: 'Europe/Minsk', country: 'Belarus', countryCode: 'BY', lat: 53.90, lng: 27.57, tier: 2, continent: 'europe' },
+  { slug: 'pristina', city: 'Pristina', timezone: 'Europe/Belgrade', country: 'Kosovo', countryCode: 'XK', lat: 42.66, lng: 21.17, tier: 3, continent: 'europe' },
+
+  // Asia Capitals
+  { slug: 'baku', city: 'Baku', timezone: 'Asia/Baku', country: 'Azerbaijan', countryCode: 'AZ', lat: 40.41, lng: 49.87, tier: 2, continent: 'asia' },
+  { slug: 'yerevan', city: 'Yerevan', timezone: 'Asia/Yerevan', country: 'Armenia', countryCode: 'AM', lat: 40.18, lng: 44.51, tier: 3, continent: 'asia' },
+  { slug: 'tbilisi', city: 'Tbilisi', timezone: 'Asia/Tbilisi', country: 'Georgia', countryCode: 'GE', lat: 41.72, lng: 44.79, tier: 3, continent: 'asia' },
+  { slug: 'tashkent', city: 'Tashkent', timezone: 'Asia/Tashkent', country: 'Uzbekistan', countryCode: 'UZ', lat: 41.30, lng: 69.28, tier: 2, continent: 'asia' },
+  { slug: 'astana', city: 'Astana', timezone: 'Asia/Almaty', country: 'Kazakhstan', countryCode: 'KZ', lat: 51.17, lng: 71.43, tier: 2, continent: 'asia' },
+  { slug: 'ashgabat', city: 'Ashgabat', timezone: 'Asia/Ashgabat', country: 'Turkmenistan', countryCode: 'TM', lat: 37.95, lng: 58.38, tier: 3, continent: 'asia' },
+  { slug: 'dushanbe', city: 'Dushanbe', timezone: 'Asia/Dushanbe', country: 'Tajikistan', countryCode: 'TJ', lat: 38.54, lng: 68.77, tier: 3, continent: 'asia' },
+  { slug: 'bishkek', city: 'Bishkek', timezone: 'Asia/Bishkek', country: 'Kyrgyzstan', countryCode: 'KG', lat: 42.87, lng: 74.59, tier: 3, continent: 'asia' },
+  { slug: 'ulaanbaatar', city: 'Ulaanbaatar', timezone: 'Asia/Ulaanbaatar', country: 'Mongolia', countryCode: 'MN', lat: 47.91, lng: 106.91, tier: 3, continent: 'asia' },
+  { slug: 'vientiane', city: 'Vientiane', timezone: 'Asia/Vientiane', country: 'Laos', countryCode: 'LA', lat: 17.97, lng: 102.60, tier: 3, continent: 'asia' },
+  { slug: 'bandar-seri-begawan', city: 'Bandar Seri Begawan', timezone: 'Asia/Brunei', country: 'Brunei', countryCode: 'BN', lat: 4.89, lng: 114.94, tier: 3, continent: 'asia' },
+  { slug: 'dili', city: 'Dili', timezone: 'Asia/Dili', country: 'Timor-Leste', countryCode: 'TL', lat: -8.56, lng: 125.57, tier: 3, continent: 'asia' },
+  { slug: 'male', city: 'Malé', timezone: 'Indian/Maldives', country: 'Maldives', countryCode: 'MV', lat: 4.18, lng: 73.51, tier: 3, continent: 'asia' },
+  { slug: 'thimphu', city: 'Thimphu', timezone: 'Asia/Thimphu', country: 'Bhutan', countryCode: 'BT', lat: 27.47, lng: 89.64, tier: 3, continent: 'asia' },
+  { slug: 'kabul', city: 'Kabul', timezone: 'Asia/Kabul', country: 'Afghanistan', countryCode: 'AF', lat: 34.53, lng: 69.17, tier: 2, continent: 'asia' },
+  { slug: 'baghdad', city: 'Baghdad', timezone: 'Asia/Baghdad', country: 'Iraq', countryCode: 'IQ', lat: 33.31, lng: 44.37, tier: 2, continent: 'asia' },
+  { slug: 'damascus', city: 'Damascus', timezone: 'Asia/Damascus', country: 'Syria', countryCode: 'SY', lat: 33.51, lng: 36.29, tier: 2, continent: 'asia' },
+  { slug: 'amman', city: 'Amman', timezone: 'Asia/Amman', country: 'Jordan', countryCode: 'JO', lat: 31.95, lng: 35.93, tier: 2, continent: 'asia' },
+  { slug: 'beirut', city: 'Beirut', timezone: 'Asia/Beirut', country: 'Lebanon', countryCode: 'LB', lat: 33.89, lng: 35.50, tier: 2, continent: 'asia' },
+  { slug: 'sanaa', city: 'Sanaa', timezone: 'Asia/Aden', country: 'Yemen', countryCode: 'YE', lat: 15.37, lng: 44.19, tier: 3, continent: 'asia' },
+  { slug: 'muscat', city: 'Muscat', timezone: 'Asia/Muscat', country: 'Oman', countryCode: 'OM', lat: 23.59, lng: 58.41, tier: 3, continent: 'asia' },
+  { slug: 'manama', city: 'Manama', timezone: 'Asia/Bahrain', country: 'Bahrain', countryCode: 'BH', lat: 26.23, lng: 50.59, tier: 3, continent: 'asia' },
+  { slug: 'kuwait-city', city: 'Kuwait City', timezone: 'Asia/Kuwait', country: 'Kuwait', countryCode: 'KW', lat: 29.38, lng: 47.99, tier: 2, continent: 'asia' },
+  { slug: 'ramallah', city: 'Ramallah', timezone: 'Asia/Gaza', country: 'Palestine', countryCode: 'PS', lat: 31.90, lng: 35.20, tier: 3, continent: 'asia' },
+
+  // Americas Capitals
+  { slug: 'kingston', city: 'Kingston', timezone: 'America/Jamaica', country: 'Jamaica', countryCode: 'JM', lat: 18.00, lng: -76.79, tier: 3, continent: 'americas' },
+  { slug: 'port-of-spain', city: 'Port of Spain', timezone: 'America/Port_of_Spain', country: 'Trinidad and Tobago', countryCode: 'TT', lat: 10.66, lng: -61.51, tier: 3, continent: 'americas' },
+  { slug: 'nassau', city: 'Nassau', timezone: 'America/Nassau', country: 'Bahamas', countryCode: 'BS', lat: 25.08, lng: -77.34, tier: 3, continent: 'americas' },
+  { slug: 'bridgetown', city: 'Bridgetown', timezone: 'America/Barbados', country: 'Barbados', countryCode: 'BB', lat: 13.10, lng: -59.61, tier: 3, continent: 'americas' },
+  { slug: 'port-au-prince', city: 'Port-au-Prince', timezone: 'America/Port-au-Prince', country: 'Haiti', countryCode: 'HT', lat: 18.54, lng: -72.34, tier: 3, continent: 'americas' },
+  { slug: 'santo-domingo', city: 'Santo Domingo', timezone: 'America/Santo_Domingo', country: 'Dominican Republic', countryCode: 'DO', lat: 18.49, lng: -69.90, tier: 2, continent: 'americas' },
+  { slug: 'guatemala-city', city: 'Guatemala City', timezone: 'America/Guatemala', country: 'Guatemala', countryCode: 'GT', lat: 14.63, lng: -90.51, tier: 2, continent: 'americas' },
+  { slug: 'tegucigalpa', city: 'Tegucigalpa', timezone: 'America/Tegucigalpa', country: 'Honduras', countryCode: 'HN', lat: 14.07, lng: -87.19, tier: 3, continent: 'americas' },
+  { slug: 'san-salvador', city: 'San Salvador', timezone: 'America/El_Salvador', country: 'El Salvador', countryCode: 'SV', lat: 13.69, lng: -89.19, tier: 3, continent: 'americas' },
+  { slug: 'managua', city: 'Managua', timezone: 'America/Managua', country: 'Nicaragua', countryCode: 'NI', lat: 12.13, lng: -86.25, tier: 3, continent: 'americas' },
+  { slug: 'belmopan', city: 'Belmopan', timezone: 'America/Belize', country: 'Belize', countryCode: 'BZ', lat: 17.25, lng: -88.77, tier: 3, continent: 'americas' },
+  { slug: 'sucre', city: 'Sucre', timezone: 'America/La_Paz', country: 'Bolivia', countryCode: 'BO', lat: -19.04, lng: -65.26, tier: 3, continent: 'americas' },
+  { slug: 'asuncion', city: 'Asunción', timezone: 'America/Asuncion', country: 'Paraguay', countryCode: 'PY', lat: -25.28, lng: -57.57, tier: 3, continent: 'americas' },
+  { slug: 'quito', city: 'Quito', timezone: 'America/Guayaquil', country: 'Ecuador', countryCode: 'EC', lat: -0.18, lng: -78.47, tier: 2, continent: 'americas' },
+  { slug: 'georgetown', city: 'Georgetown', timezone: 'America/Guyana', country: 'Guyana', countryCode: 'GY', lat: 6.80, lng: -58.16, tier: 3, continent: 'americas' },
+  { slug: 'paramaribo', city: 'Paramaribo', timezone: 'America/Paramaribo', country: 'Suriname', countryCode: 'SR', lat: 5.85, lng: -55.20, tier: 3, continent: 'americas' },
+  { slug: 'san-juan', city: 'San Juan', timezone: 'America/Puerto_Rico', country: 'Puerto Rico', countryCode: 'PR', lat: 18.47, lng: -66.11, tier: 3, continent: 'americas' },
+
+  // Oceania Capitals
+  { slug: 'port-moresby', city: 'Port Moresby', timezone: 'Pacific/Port_Moresby', country: 'Papua New Guinea', countryCode: 'PG', lat: -9.44, lng: 147.18, tier: 3, continent: 'oceania' },
+  { slug: 'honiara', city: 'Honiara', timezone: 'Pacific/Guadalcanal', country: 'Solomon Islands', countryCode: 'SB', lat: -9.43, lng: 159.95, tier: 3, continent: 'oceania' },
+  { slug: 'port-vila', city: 'Port Vila', timezone: 'Pacific/Efate', country: 'Vanuatu', countryCode: 'VU', lat: -17.74, lng: 168.32, tier: 3, continent: 'oceania' },
+  { slug: 'apia', city: 'Apia', timezone: 'Pacific/Apia', country: 'Samoa', countryCode: 'WS', lat: -13.83, lng: -171.76, tier: 3, continent: 'oceania' },
+  { slug: 'nukualofa', city: 'Nukuʻalofa', timezone: 'Pacific/Tongatapu', country: 'Tonga', countryCode: 'TO', lat: -21.21, lng: -175.20, tier: 3, continent: 'oceania' },
+  { slug: 'tarawa', city: 'Tarawa', timezone: 'Pacific/Tarawa', country: 'Kiribati', countryCode: 'KI', lat: 1.33, lng: 172.98, tier: 3, continent: 'oceania' },
+  { slug: 'palikir', city: 'Palikir', timezone: 'Pacific/Pohnpei', country: 'Micronesia', countryCode: 'FM', lat: 6.91, lng: 158.16, tier: 3, continent: 'oceania' },
+  { slug: 'ngerulmud', city: 'Ngerulmud', timezone: 'Pacific/Palau', country: 'Palau', countryCode: 'PW', lat: 7.50, lng: 134.62, tier: 3, continent: 'oceania' },
+  { slug: 'majuro', city: 'Majuro', timezone: 'Pacific/Majuro', country: 'Marshall Islands', countryCode: 'MH', lat: 7.09, lng: 171.38, tier: 3, continent: 'oceania' },
+  { slug: 'yaren', city: 'Yaren', timezone: 'Pacific/Nauru', country: 'Nauru', countryCode: 'NR', lat: -0.55, lng: 166.92, tier: 3, continent: 'oceania' },
+  { slug: 'funafuti', city: 'Funafuti', timezone: 'Pacific/Funafuti', country: 'Tuvalu', countryCode: 'TV', lat: -8.52, lng: 179.19, tier: 3, continent: 'oceania' },
 ]
 
 // Get cities by tier
