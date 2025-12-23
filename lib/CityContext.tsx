@@ -59,9 +59,6 @@ export function CityProvider({ children }: { children: ReactNode }) {
   const [detectedCity, setDetectedCity] = useState<City | null>(null)
   const [activeCityLoaded, setActiveCityLoaded] = useState(false)
   
-  // Mounted state - prevents hydration flash
-  const [mounted, setMounted] = useState(false)
-  
   // Preferences (persisted)
   const [themeMode, setThemeModeState] = useState<'auto' | 'light' | 'dark'>('auto')
   const [clockMode, setClockModeState] = useState<'digital' | 'analog'>('digital')
@@ -72,11 +69,6 @@ export function CityProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000)
     return () => clearInterval(timer)
-  }, [])
-  
-  // Set mounted after hydration
-  useEffect(() => {
-    setMounted(true)
   }, [])
   
   // Load preferences from localStorage (including activeCity)
@@ -172,18 +164,19 @@ export function CityProvider({ children }: { children: ReactNode }) {
     })
   }
   
-  // Calculate current theme based on active city's time
-  // This gives immersive experience - Tokyo at night = dark theme
-  const autoTheme = getTimeOfDay(time, activeCity.lat, activeCity.lng, activeCity.timezone)
+  // Calculate current theme based on USER'S LOCAL TIME
+  // This ensures consistent header across all pages
+  // User in Istanbul at 11:47 AM = ALWAYS light header
+  const userHour = time.getHours()
+  const isUserDaytime = userHour >= 6 && userHour < 18
+  const autoTheme = isUserDaytime ? 'day' : 'night'
   
   const currentTheme = themeMode === 'auto' 
     ? autoTheme 
     : themeMode  // 'light' veya 'dark' direkt kullan
   
-  // Start with light theme, then smooth transition to actual theme after mount
-  // This prevents flash - instead we get a gentle fade
-  const theme = mounted ? themes[currentTheme] : themes.day
-  const isLight = mounted ? isLightTheme(currentTheme) : true
+  const theme = themes[currentTheme]
+  const isLight = isLightTheme(currentTheme)
   
   // Helper functions
   const getLocalTime = (city: City) => {

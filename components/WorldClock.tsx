@@ -322,9 +322,10 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
     return getTier1Cities()[0]
   }
   
-  // Calculate isDay from city time when weather is not available
+  // Calculate isDay from CITY TIME (not weather API)
+  // This ensures consistent behavior - Sydney at 7:47 PM = night = stars
   const cityHour = new Date(time.toLocaleString('en-US', { timeZone: selectedCity.timezone })).getHours()
-  const isDay = weather ? weather.is_day === 1 : (cityHour >= 6 && cityHour < 18)
+  const isDay = cityHour >= 6 && cityHour < 18
   
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-all duration-1000 relative`}>
