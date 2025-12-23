@@ -5,11 +5,12 @@ import { getGuideConfig } from '@/lib/guide-content'
 import DigitalNomadContent from './DigitalNomadContent'
 import LondonDigitalNomadContent from './LondonDigitalNomadContent'
 import TokyoDigitalNomadContent from './TokyoDigitalNomadContent'
+import DubaiDigitalNomadContent from './DubaiDigitalNomadContent'
 
 type Props = { params: Promise<{ city: string }> }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }]
+  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -31,5 +32,6 @@ export default async function DigitalNomadPage({ params }: Props) {
   if (!city || !config) notFound()
   if (citySlug === 'london') return <LondonDigitalNomadContent city={city} />
   if (citySlug === 'tokyo') return <TokyoDigitalNomadContent city={city} />
+  if (citySlug === 'dubai') return <DubaiDigitalNomadContent city={city} />
   return <DigitalNomadContent city={city} />
 }

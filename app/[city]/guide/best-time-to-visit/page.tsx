@@ -5,13 +5,14 @@ import { getGuideConfig } from '@/lib/guide-content'
 import BestTimeToVisitContent from './BestTimeToVisitContent'
 import LondonBestTimeToVisitContent from './LondonBestTimeToVisitContent'
 import TokyoBestTimeToVisitContent from './TokyoBestTimeToVisitContent'
+import DubaiBestTimeToVisitContent from './DubaiBestTimeToVisitContent'
 
 type Props = {
   params: Promise<{ city: string }>
 }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }]
+  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

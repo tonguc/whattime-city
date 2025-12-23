@@ -5,11 +5,12 @@ import { getGuideConfig } from '@/lib/guide-content'
 import HolidaysContent from './HolidaysContent'
 import LondonHolidaysContent from './LondonHolidaysContent'
 import TokyoHolidaysContent from './TokyoHolidaysContent'
+import DubaiHolidaysContent from './DubaiHolidaysContent'
 
 type Props = { params: Promise<{ city: string }> }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }]
+  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -31,5 +32,6 @@ export default async function HolidaysPage({ params }: Props) {
   if (!city || !config) notFound()
   if (citySlug === 'london') return <LondonHolidaysContent city={city} />
   if (citySlug === 'tokyo') return <TokyoHolidaysContent city={city} />
+  if (citySlug === 'dubai') return <DubaiHolidaysContent city={city} />
   return <HolidaysContent city={city} />
 }

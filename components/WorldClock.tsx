@@ -608,6 +608,35 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               </div>
             </a>
           )}
+          
+          {/* Dubai Guide Card - only for Dubai */}
+          {selectedCity.slug === 'dubai' && (
+            <a 
+              href="/dubai/guide/"
+              className={`group rounded-2xl p-4 flex items-center gap-3 col-span-2 md:col-span-4 transition-all hover:scale-[1.01] ${
+                isLight 
+                  ? 'bg-gradient-to-r from-emerald-100 to-teal-100 border-2 border-emerald-300 hover:border-emerald-400 hover:shadow-lg' 
+                  : 'bg-gradient-to-r from-emerald-900/50 to-teal-900/50 border-2 border-emerald-600 hover:border-emerald-500 hover:shadow-lg'
+              }`}
+            >
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${isLight ? 'bg-white/80' : 'bg-slate-800/80'}`}>
+                <span className="text-2xl">🇦🇪</span>
+              </div>
+              <div className="flex-1">
+                <div className={`font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>Dubai Time Guide</div>
+                <div className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+                  DFM hours, Ramadan, Friday weekend & more
+                </div>
+              </div>
+              <div className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                isLight 
+                  ? 'bg-emerald-500 text-white group-hover:bg-emerald-600' 
+                  : 'bg-emerald-500 text-white group-hover:bg-emerald-400'
+              }`}>
+                Explore →
+              </div>
+            </a>
+          )}
         </div>
         
         {/* === 4. TIME INTELLIGENCE (SEO 1) === */}

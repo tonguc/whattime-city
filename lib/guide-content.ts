@@ -332,12 +332,106 @@ export const tokyoGuide: GuideConfig = {
 }
 
 // ===================
+// DUBAI
+// ===================
+export const dubaiGuide: GuideConfig = {
+  citySlug: 'dubai',
+  cityName: 'Dubai',
+  timezone: 'Asia/Dubai',
+  timezoneAbbr: 'GST',
+  timezoneName: 'Gulf Standard Time',
+  utcOffset: 4,
+  icon: '🇦🇪',
+  tagline: 'Your complete guide to time in the UAE\'s global hub',
+  
+  seo: {
+    title: 'Dubai Time Zone Guide | GST, Business Hours & More',
+    description: 'Complete Dubai time zone guide. Business hours, DFM stock market times, Friday-Saturday weekend, Islamic holidays, and local tips.',
+    keywords: ['dubai time zone', 'uae time now', 'gst time', 'dubai business hours', 'dfm trading hours', 'dubai friday weekend'],
+    ogTitle: 'Dubai Time Zone Guide | Complete UAE Time Resource',
+    ogDescription: 'Everything about Dubai time: business hours, stock market, holidays, remote work tips. The definitive guide.',
+  },
+  
+  pages: {
+    overview: {
+      title: 'Dubai Time Zone Guide | GST, Business Hours & More',
+      description: 'Complete Dubai time zone guide. Business hours, DFM trading times, Friday-Saturday weekend, Islamic holidays, and local tips.',
+      keywords: ['dubai time zone', 'uae time', 'gst', 'gulf standard time'],
+    },
+    businessHours: {
+      title: 'Dubai Business Hours | Shops, Banks, Malls & Souks',
+      description: 'What time do businesses open in Dubai? Complete guide to UAE store hours, bank schedules, mall times, and the Friday-Saturday weekend.',
+      keywords: ['dubai business hours', 'uae shop hours', 'dubai mall hours', 'dubai bank hours', 'friday weekend dubai'],
+    },
+    bestTimeToVisit: {
+      title: 'Best Time to Visit Dubai | Weather, Events & Prices',
+      description: 'When to visit Dubai? Month-by-month guide with weather (avoid summer heat!), tourist crowds, Ramadan dates, and prices.',
+      keywords: ['best time to visit dubai', 'dubai weather by month', 'dubai summer heat', 'ramadan dubai', 'dubai tourist season'],
+    },
+    remoteWork: {
+      title: 'Working with Dubai Teams Remotely | Time Zone Overlap Guide',
+      description: 'Remote work guide for Dubai collaboration. Find overlap hours with NYC, London, Singapore. Best meeting times and UAE work culture.',
+      keywords: ['remote work dubai time zone', 'working with uae team', 'gst time zone overlap', 'best meeting time dubai'],
+    },
+    twentyFourHours: {
+      title: 'Dubai 24 Hour Guide | What\'s Open & When in the City',
+      description: 'Dubai hour-by-hour: morning prayers, mall hours, evening souk life, and the 24-hour city that never sleeps.',
+      keywords: ['24 hours in dubai', 'dubai nightlife hours', 'dubai mall opening times', 'late night dubai'],
+    },
+    callTimes: {
+      title: 'Best Time to Call Dubai | From USA, UK, India & More',
+      description: 'When to call Dubai? Best calling times from New York, London, Mumbai. Business hours overlap and optimal windows.',
+      keywords: ['best time to call dubai', 'call dubai from usa', 'call dubai from uk time'],
+    },
+    stockMarket: {
+      title: 'Dubai Stock Exchange Hours | DFM & ADX Trading Times',
+      description: 'DFM opens 10:00 AM GST. Complete Dubai Financial Market schedule, ADX Abu Dhabi hours, and market holidays.',
+      keywords: ['dubai stock exchange hours', 'dfm trading times', 'adx hours', 'uae market hours'],
+    },
+    holidays: {
+      title: 'UAE Holidays | Ramadan, Eid & What\'s Closed',
+      description: 'UAE public holidays calendar. What changes during Ramadan? Eid celebrations, National Day, and business impacts.',
+      keywords: ['uae public holidays', 'ramadan dubai', 'eid holiday uae', 'dubai national day'],
+    },
+    digitalNomad: {
+      title: 'Digital Nomad Dubai Guide | Coworking, WiFi & Remote Work Visa',
+      description: 'Work remotely from Dubai. Best coworking spaces, laptop-friendly cafes, cost of living, and the famous UAE remote work visa.',
+      keywords: ['digital nomad dubai', 'dubai remote work visa', 'coworking dubai', 'dubai cost of living'],
+    },
+    timeDifference: {
+      title: 'Dubai Time Difference Calculator | GST vs World Cities',
+      description: 'Dubai time difference to New York (+9h), London (+4h), Mumbai (+1.5h) and 50+ cities. GST explained. Live converter included.',
+      keywords: ['dubai time difference', 'uae vs new york time', 'gst vs est hours', 'dubai london time difference'],
+    },
+    travelPlanning: {
+      title: 'Dubai Travel Guide | Flight Times, Visa & Airport Tips',
+      description: 'Flying to Dubai? Flight times from NYC (14h), London (7h), Mumbai (3h). DXB airport guide, visa on arrival, and getting around.',
+      keywords: ['flight time to dubai', 'dubai airport guide', 'dxb terminal', 'dubai visa on arrival'],
+    },
+  },
+  
+  clusters: [
+    { slug: 'business-hours', icon: '💼', title: 'Business Hours', desc: 'Shops, banks, malls, and the Friday-Saturday weekend' },
+    { slug: 'best-time-to-visit', icon: '☀️', title: 'Best Time to Visit', desc: 'Weather, Ramadan, events, and avoiding summer heat' },
+    { slug: 'remote-work', icon: '💻', title: 'Remote Work Guide', desc: 'Working with Dubai teams across time zones' },
+    { slug: '24-hours', icon: '🌆', title: '24 Hours in Dubai', desc: 'The city\'s daily rhythm from dawn prayers to late nights' },
+    { slug: 'call-times', icon: '📞', title: 'Best Time to Call', desc: 'Optimal calling times from major cities worldwide' },
+    { slug: 'stock-market', icon: '📈', title: 'Stock Market Hours', desc: 'DFM & ADX trading times for global investors' },
+    { slug: 'holidays', icon: '📅', title: 'UAE Holidays', desc: 'Ramadan, Eid, National Day, and what to expect' },
+    { slug: 'digital-nomad', icon: '🎒', title: 'Digital Nomad Guide', desc: 'Coworking, remote work visa, and cost of living' },
+    { slug: 'time-difference', icon: '🌐', title: 'Time Difference', desc: 'Dubai time compared to NYC, London, Mumbai' },
+    { slug: 'travel-planning', icon: '✈️', title: 'Travel Planning', desc: 'Flight times, visa tips, and airport advice' },
+  ],
+}
+
+// ===================
 // GUIDE REGISTRY
 // ===================
 export const guideConfigs: Record<string, GuideConfig> = {
   'new-york': newYorkGuide,
   'london': londonGuide,
   'tokyo': tokyoGuide,
+  'dubai': dubaiGuide,
 }
 
 export function getGuideConfig(citySlug: string): GuideConfig | null {

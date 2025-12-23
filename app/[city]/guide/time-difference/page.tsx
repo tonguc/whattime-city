@@ -5,11 +5,12 @@ import { getGuideConfig } from '@/lib/guide-content'
 import TimeDifferenceContent from './TimeDifferenceContent'
 import LondonTimeDifferenceContent from './LondonTimeDifferenceContent'
 import TokyoTimeDifferenceContent from './TokyoTimeDifferenceContent'
+import DubaiTimeDifferenceContent from './DubaiTimeDifferenceContent'
 
 type Props = { params: Promise<{ city: string }> }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }]
+  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -31,5 +32,6 @@ export default async function TimeDifferencePage({ params }: Props) {
   if (!city || !config) notFound()
   if (citySlug === 'london') return <LondonTimeDifferenceContent city={city} />
   if (citySlug === 'tokyo') return <TokyoTimeDifferenceContent city={city} />
+  if (citySlug === 'dubai') return <DubaiTimeDifferenceContent city={city} />
   return <TimeDifferenceContent city={city} />
 }
