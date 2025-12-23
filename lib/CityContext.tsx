@@ -59,6 +59,9 @@ export function CityProvider({ children }: { children: ReactNode }) {
   const [detectedCity, setDetectedCity] = useState<City | null>(null)
   const [activeCityLoaded, setActiveCityLoaded] = useState(false)
   
+  // Mounted state - prevents hydration flash
+  const [mounted, setMounted] = useState(false)
+  
   // Preferences (persisted)
   const [themeMode, setThemeModeState] = useState<'auto' | 'light' | 'dark'>('auto')
   const [clockMode, setClockModeState] = useState<'digital' | 'analog'>('digital')
@@ -69,6 +72,11 @@ export function CityProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000)
     return () => clearInterval(timer)
+  }, [])
+  
+  // Set mounted after hydration
+  useEffect(() => {
+    setMounted(true)
   }, [])
   
   // Load preferences from localStorage (including activeCity)
@@ -169,8 +177,9 @@ export function CityProvider({ children }: { children: ReactNode }) {
   const currentTheme = themeMode === 'auto' 
     ? autoTheme 
     : themeMode  // 'light' veya 'dark' direkt kullan
-  const theme = themes[currentTheme]
-  const isLight = isLightTheme(currentTheme)
+  const theme = mounted ? themes[currentTheme] : themes.day
+  // Use light theme until mounted to prevent hydration flash
+  const isLight = mounted ? isLightTheme(currentTheme) : true
   
   // Helper functions
   const getLocalTime = (city: City) => {
