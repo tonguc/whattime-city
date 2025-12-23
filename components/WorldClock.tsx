@@ -642,6 +642,35 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
               </div>
             </a>
           )}
+          
+          {/* Singapore Guide Card - only for Singapore */}
+          {selectedCity.slug === 'singapore' && (
+            <a 
+              href="/singapore/guide/"
+              className={`group rounded-2xl p-4 flex items-center gap-3 col-span-2 md:col-span-4 transition-all hover:scale-[1.01] ${
+                isLight 
+                  ? 'bg-gradient-to-r from-red-100 to-rose-100 border-2 border-red-300 hover:border-red-400 hover:shadow-lg' 
+                  : 'bg-gradient-to-r from-red-900/50 to-rose-900/50 border-2 border-red-600 hover:border-red-500 hover:shadow-lg'
+              }`}
+            >
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${isLight ? 'bg-white/80' : 'bg-slate-800/80'}`}>
+                <span className="text-2xl">🇸🇬</span>
+              </div>
+              <div className="flex-1">
+                <div className={`font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>Singapore Time Guide</div>
+                <div className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+                  SGX hours, hawker times, CNY & more
+                </div>
+              </div>
+              <div className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                isLight 
+                  ? 'bg-red-500 text-white group-hover:bg-red-600' 
+                  : 'bg-red-500 text-white group-hover:bg-red-400'
+              }`}>
+                Explore →
+              </div>
+            </a>
+          )}
         </div>
         
         {/* === 4. TIME INTELLIGENCE (SEO 1) === */}

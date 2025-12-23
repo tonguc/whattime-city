@@ -425,6 +425,99 @@ export const dubaiGuide: GuideConfig = {
 }
 
 // ===================
+// SINGAPORE
+// ===================
+export const singaporeGuide: GuideConfig = {
+  citySlug: 'singapore',
+  cityName: 'Singapore',
+  timezone: 'Asia/Singapore',
+  timezoneAbbr: 'SGT',
+  timezoneName: 'Singapore Standard Time',
+  utcOffset: 8,
+  icon: '🇸🇬',
+  tagline: 'Your complete guide to time in Asia\'s premier financial hub',
+  
+  seo: {
+    title: 'Singapore Time Zone Guide | SGT, Business Hours & More',
+    description: 'Complete Singapore time zone guide. Business hours, SGX stock market times, hawker center hours, public holidays, and local tips for the Lion City.',
+    keywords: ['singapore time zone', 'singapore time now', 'sgt time', 'singapore business hours', 'sgx trading hours', 'singapore public holidays'],
+    ogTitle: 'Singapore Time Zone Guide | Complete SGT Time Resource',
+    ogDescription: 'Everything about Singapore time: business hours, stock market, holidays, remote work tips. The definitive guide.',
+  },
+  
+  pages: {
+    overview: {
+      title: 'Singapore Time Zone Guide | SGT, Business Hours & More',
+      description: 'Complete Singapore time zone guide. Business hours, SGX trading times, hawker hours, public holidays, and local tips.',
+      keywords: ['singapore time zone', 'singapore time', 'sgt', 'singapore standard time'],
+    },
+    businessHours: {
+      title: 'Singapore Business Hours | Shops, Banks, Malls & Hawkers',
+      description: 'What time do businesses open in Singapore? Complete guide to store hours, bank schedules, mall times, and 24-hour hawker centers.',
+      keywords: ['singapore business hours', 'singapore shop hours', 'singapore bank hours', 'orchard road opening times', 'hawker center hours'],
+    },
+    bestTimeToVisit: {
+      title: 'Best Time to Visit Singapore | Weather, Events & Prices',
+      description: 'When to visit Singapore? Month-by-month guide with weather (it\'s always hot!), festival dates, F1 Grand Prix, and tourist tips.',
+      keywords: ['best time to visit singapore', 'singapore weather by month', 'singapore f1 grand prix', 'singapore tourist season'],
+    },
+    remoteWork: {
+      title: 'Working with Singapore Teams Remotely | Time Zone Overlap Guide',
+      description: 'Remote work guide for Singapore collaboration. Find overlap hours with NYC, London, Sydney. Best meeting times and Singapore work culture.',
+      keywords: ['remote work singapore time zone', 'working with singapore team', 'sgt time zone overlap', 'best meeting time singapore'],
+    },
+    twentyFourHours: {
+      title: 'Singapore 24 Hour Guide | What\'s Open & When in the Lion City',
+      description: 'Singapore hour-by-hour: morning kopi, lunch crowds, after-work drinks at Clarke Quay, and 24-hour hawker centers.',
+      keywords: ['24 hours in singapore', 'singapore nightlife hours', 'late night food singapore', 'clarke quay hours'],
+    },
+    callTimes: {
+      title: 'Best Time to Call Singapore | From USA, UK, Australia & More',
+      description: 'When to call Singapore? Best calling times from New York, London, Sydney. Business hours overlap and optimal windows.',
+      keywords: ['best time to call singapore', 'call singapore from usa', 'call singapore from uk time'],
+    },
+    stockMarket: {
+      title: 'Singapore Stock Exchange Hours | SGX Trading Times',
+      description: 'SGX opens 9:00 AM SGT. Complete Singapore Exchange schedule with pre-market, trading sessions, and market holidays.',
+      keywords: ['singapore stock exchange hours', 'sgx trading times', 'singapore market hours', 'sgx pre market'],
+    },
+    holidays: {
+      title: 'Singapore Public Holidays | CNY, Deepavali & What\'s Closed',
+      description: 'Singapore public holidays calendar. Chinese New Year, Hari Raya, Deepavali, National Day - what\'s closed and what to expect.',
+      keywords: ['singapore public holidays', 'chinese new year singapore', 'singapore national day', 'hari raya singapore'],
+    },
+    digitalNomad: {
+      title: 'Digital Nomad Singapore Guide | Coworking, WiFi & Cost of Living',
+      description: 'Work remotely from Singapore. Best coworking spaces, laptop-friendly cafes, fast WiFi everywhere, cost of living breakdown, and visa options.',
+      keywords: ['digital nomad singapore', 'coworking singapore', 'singapore cost of living', 'singapore work visa'],
+    },
+    timeDifference: {
+      title: 'Singapore Time Difference Calculator | SGT vs World Cities',
+      description: 'Singapore time difference to New York (+13h), London (+8h), Sydney (-3h) and 50+ cities. SGT explained. Live converter included.',
+      keywords: ['singapore time difference', 'singapore vs new york time', 'sgt vs est hours', 'singapore london time difference'],
+    },
+    travelPlanning: {
+      title: 'Singapore Travel Guide | Flight Times, Changi & Getting Around',
+      description: 'Flying to Singapore? Flight times from NYC (19h), London (13h), Sydney (8h). Changi Airport tips, MRT guide, and getting around.',
+      keywords: ['flight time to singapore', 'changi airport guide', 'singapore mrt', 'singapore tourist pass'],
+    },
+  },
+  
+  clusters: [
+    { slug: 'business-hours', icon: '💼', title: 'Business Hours', desc: 'Shops, banks, malls, and hawker centers' },
+    { slug: 'best-time-to-visit', icon: '☀️', title: 'Best Time to Visit', desc: 'Weather, festivals, F1, and avoiding crowds' },
+    { slug: 'remote-work', icon: '💻', title: 'Remote Work Guide', desc: 'Working with Singapore teams across time zones' },
+    { slug: '24-hours', icon: '🌆', title: '24 Hours in Singapore', desc: 'The city\'s daily rhythm from kopi to supper' },
+    { slug: 'call-times', icon: '📞', title: 'Best Time to Call', desc: 'Optimal calling times from major cities worldwide' },
+    { slug: 'stock-market', icon: '📈', title: 'Stock Market Hours', desc: 'SGX trading times for global investors' },
+    { slug: 'holidays', icon: '📅', title: 'Public Holidays', desc: 'CNY, Deepavali, Hari Raya, and what to expect' },
+    { slug: 'digital-nomad', icon: '🎒', title: 'Digital Nomad Guide', desc: 'Coworking, WiFi, and cost of living' },
+    { slug: 'time-difference', icon: '🌐', title: 'Time Difference', desc: 'Singapore time compared to NYC, London, Sydney' },
+    { slug: 'travel-planning', icon: '✈️', title: 'Travel Planning', desc: 'Flight times, Changi tips, and getting around' },
+  ],
+}
+
+// ===================
 // GUIDE REGISTRY
 // ===================
 export const guideConfigs: Record<string, GuideConfig> = {
@@ -432,6 +525,7 @@ export const guideConfigs: Record<string, GuideConfig> = {
   'london': londonGuide,
   'tokyo': tokyoGuide,
   'dubai': dubaiGuide,
+  'singapore': singaporeGuide,
 }
 
 export function getGuideConfig(citySlug: string): GuideConfig | null {

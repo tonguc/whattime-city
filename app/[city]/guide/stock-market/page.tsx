@@ -6,10 +6,11 @@ import StockMarketContent from './StockMarketContent'
 import LondonStockMarketContent from './LondonStockMarketContent'
 import TokyoStockMarketContent from './TokyoStockMarketContent'
 import DubaiStockMarketContent from './DubaiStockMarketContent'
+import SingaporeStockMarketContent from './SingaporeStockMarketContent'
 
 type Props = { params: Promise<{ city: string }> }
 
-export async function generateStaticParams() { return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }] }
+export async function generateStaticParams() { return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }] }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: citySlug } = await params
@@ -39,9 +40,16 @@ export default async function StockMarketPage({ params }: Props) {
   
   if (!city || !config) notFound()
   
-  if (citySlug === 'london') {
-    return <LondonStockMarketContent city={city} />
+  switch (citySlug) {
+    case 'london':
+      return <LondonStockMarketContent city={city} />
+    case 'tokyo':
+      return <TokyoStockMarketContent city={city} />
+    case 'dubai':
+      return <DubaiStockMarketContent city={city} />
+    case 'singapore':
+      return <SingaporeStockMarketContent city={city} />
+    default:
+      return <StockMarketContent city={city} />
   }
-  
-  return <StockMarketContent city={city} />
 }
