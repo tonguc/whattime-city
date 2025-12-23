@@ -71,11 +71,11 @@ export default function GuideLayout({
   ]
   
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-opacity duration-150 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
+    <div className={`min-h-screen bg-gradient-to-br ${mounted ? theme.bg : 'from-slate-50 to-blue-50'}`}>
       <Header />
       
-      {/* Time Bar - sticky, positioned right below header */}
-      <div className="sticky top-[52px] sm:top-[56px] z-40 -mt-[1px]">
+      {/* Time Bar - sticky, flush with header (no gap) */}
+      <div className="sticky top-[52px] sm:top-[55px] z-40">
         <div className={`${isLight ? 'bg-amber-50' : 'bg-amber-900'} border-y ${
           isLight ? 'border-amber-200' : 'border-amber-700'
         }`}>
