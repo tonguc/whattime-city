@@ -67,6 +67,9 @@ export default function HomePage() {
   const [compareWithQuery, setCompareWithQuery] = useState('')
   const [compareWithResults, setCompareWithResults] = useState<City[]>([])
   const compareWithRef = useRef<HTMLDivElement>(null)
+  
+  // World Cities tab state
+  const [worldCitiesTab, setWorldCitiesTab] = useState<'top' | 'americas' | 'europe' | 'asia' | 'africa' | 'oceania'>('top')
 
   // Set fromCity when detectedCity becomes available (for comparison feature)
   useEffect(() => {
@@ -144,19 +147,42 @@ export default function HomePage() {
   // Derived data
   const favoriteCities = favorites.map(slug => cities.find(c => c.slug === slug)).filter((c): c is City => c !== undefined)
   
-  // 20+ major cities for world cities grid (ensures 18 after filtering user's city)
-  const majorCitySlugs = [
+  // Top cities list
+  const topCitySlugs = [
     'london', 'new-york', 'tokyo', 'paris', 'dubai', 'sydney',
     'singapore', 'los-angeles', 'berlin', 'hong-kong', 'mumbai', 'sao-paulo',
     'toronto', 'moscow', 'shanghai', 'seoul', 'bangkok', 'istanbul',
     'cairo', 'amsterdam'
   ]
   
-  // Always show 18 cities (exclude user's detected city)
-  const worldCities = majorCitySlugs
-    .map(slug => cities.find(c => c.slug === slug))
-    .filter((c): c is City => c !== undefined && c.slug !== detectedCity?.slug)
-    .slice(0, 18)
+  // Get cities by continent
+  const getCitiesByContinent = (continent: string) => {
+    return cities
+      .filter(c => c.continent === continent && c.slug !== detectedCity?.slug)
+      .sort((a, b) => (a.tier || 3) - (b.tier || 3))
+      .slice(0, 18)
+  }
+  
+  // Get world cities based on tab
+  const worldCities = (() => {
+    switch (worldCitiesTab) {
+      case 'americas':
+        return getCitiesByContinent('americas')
+      case 'europe':
+        return getCitiesByContinent('europe')
+      case 'asia':
+        return getCitiesByContinent('asia')
+      case 'africa':
+        return getCitiesByContinent('africa')
+      case 'oceania':
+        return getCitiesByContinent('oceania')
+      default:
+        return topCitySlugs
+          .map(slug => cities.find(c => c.slug === slug))
+          .filter((c): c is City => c !== undefined && c.slug !== detectedCity?.slug)
+          .slice(0, 18)
+    }
+  })()
   
   // Get relative offset in hours
   const getRelativeOffset = (targetCity: City): number => {
@@ -414,16 +440,45 @@ export default function HomePage() {
 
         {/* WORLD CITIES */}
         <section className={`rounded-2xl p-5 mb-4 backdrop-blur-xl border ${homeTheme.card}`}>
-          <div className="flex items-center gap-2 mb-4">
-            <svg className={`w-5 h-5 ${homeIsLight ? 'text-emerald-500' : 'text-emerald-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M2 12h20"/>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-            </svg>
-            <h3 className={`text-lg font-semibold ${homeTheme.text}`}>World Cities</h3>
-            {detectedCity && (
-              <span className={`text-sm ${homeTheme.textMuted}`}>· relative to {detectedCity.city}</span>
-            )}
+          {/* Header with tabs */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
+            <div className="flex items-center gap-2">
+              <svg className={`w-5 h-5 ${homeIsLight ? 'text-emerald-500' : 'text-emerald-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <h3 className={`text-lg font-semibold ${homeTheme.text}`}>World Cities</h3>
+              {detectedCity && (
+                <span className={`text-sm ${homeTheme.textMuted} hidden sm:inline`}>· relative to {detectedCity.city}</span>
+              )}
+            </div>
+            
+            {/* Tabs */}
+            <div className="flex flex-wrap gap-1">
+              {[
+                { id: 'top', label: 'Top Cities' },
+                { id: 'americas', label: 'Americas' },
+                { id: 'europe', label: 'Europe' },
+                { id: 'asia', label: 'Asia' },
+                { id: 'africa', label: 'Africa' },
+                { id: 'oceania', label: 'Oceania' },
+              ].map(tab => (
+                <button
+                  key={tab.id}
+                  onClick={() => setWorldCitiesTab(tab.id as typeof worldCitiesTab)}
+                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+                    worldCitiesTab === tab.id
+                      ? 'bg-emerald-500 text-white'
+                      : homeIsLight
+                        ? 'text-slate-600 hover:bg-slate-100'
+                        : 'text-slate-400 hover:bg-slate-700'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
