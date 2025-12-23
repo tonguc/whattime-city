@@ -6,9 +6,9 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { useCityContext } from '@/lib/CityContext'
 
-// Get flag image URL from CDN
-function getFlagUrl(countryCode: string, size: number = 24): string {
-  return `https://flagcdn.com/w${size}/${countryCode.toLowerCase()}.png`
+// Get flag image URL from CDN (supported sizes: 20, 40, 80, 160, 320)
+function getFlagUrl(countryCode: string): string {
+  return `https://flagcdn.com/w40/${countryCode.toLowerCase()}.png`
 }
 
 // Group countries by continent
@@ -122,7 +122,7 @@ export default function CountriesContent() {
                             </div>
                           </div>
                           <img 
-                            src={getFlagUrl(country.code, 32)} 
+                            src={getFlagUrl(country.code)} 
                             alt={`${country.name} flag`}
                             className="w-6 h-4 object-cover rounded-sm flex-shrink-0"
                           />

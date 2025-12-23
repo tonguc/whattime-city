@@ -4,9 +4,10 @@ import Link from 'next/link'
 import { getCountryBySlug, getAllCountrySlugs, getCitiesByCountryCode } from '@/lib/cities'
 import CountryPageWrapper from '@/components/CountryPageWrapper'
 
-// Get flag image URL from CDN
-function getFlagUrl(countryCode: string, size: number = 24): string {
-  return `https://flagcdn.com/w${size}/${countryCode.toLowerCase()}.png`
+// Get flag image URL from CDN (supported sizes: 20, 40, 80, 160, 320)
+function getFlagUrl(countryCode: string, size: 'sm' | 'md' | 'lg' = 'md'): string {
+  const sizeMap = { sm: 20, md: 40, lg: 80 }
+  return `https://flagcdn.com/w${sizeMap[size]}/${countryCode.toLowerCase()}.png`
 }
 
 interface CountryPageProps {
@@ -98,7 +99,7 @@ export default async function CountryPage({ params }: CountryPageProps) {
       <header className="mb-8">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 flex items-center gap-3">
           <img 
-            src={getFlagUrl(country.code, 80)} 
+            src={getFlagUrl(country.code, 'lg')} 
             alt={`${country.name} flag`}
             className="w-12 h-8 object-cover rounded"
           />
@@ -288,7 +289,7 @@ export default async function CountryPage({ params }: CountryPageProps) {
             <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
               🏙️ Cities in {country.name}
               <img 
-                src={getFlagUrl(country.code, 32)} 
+                src={getFlagUrl(country.code, 'md')} 
                 alt={`${country.name} flag`}
                 className="w-6 h-4 object-cover rounded-sm"
               />
@@ -334,7 +335,7 @@ export default async function CountryPage({ params }: CountryPageProps) {
                   className="px-3 py-2 rounded-full text-sm bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 hover:text-cyan-400 transition-all flex items-center gap-2"
                 >
                   <img 
-                    src={getFlagUrl(c.code, 24)} 
+                    src={getFlagUrl(c.code, 'sm')} 
                     alt={`${c.name} flag`}
                     className="w-5 h-3.5 object-cover rounded-sm"
                   />
