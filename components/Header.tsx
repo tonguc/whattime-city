@@ -78,7 +78,7 @@ export default function Header() {
         </button>
         
         {/* Search - Closer to logo, narrower */}
-        <div className="w-44 hidden sm:block" ref={searchRef}>
+        <div className="flex-1 max-w-xs hidden sm:block" ref={searchRef}>
           <div className="relative">
             <div className={`flex items-center gap-2 px-3 py-2 rounded-full ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
               <svg className={`w-4 h-4 ${theme.textMuted}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
