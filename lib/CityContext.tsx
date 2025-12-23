@@ -172,15 +172,13 @@ export function CityProvider({ children }: { children: ReactNode }) {
     })
   }
   
-  // Calculate current theme based on USER'S LOCAL TIME
-  // This ensures consistent header across all pages
-  // User in Istanbul at 11:47 AM = ALWAYS light header
-  const userHour = time.getHours()
-  const isUserDaytime = userHour >= 6 && userHour < 18
-  const autoTheme = isUserDaytime ? 'day' : 'night'
+  // Calculate current theme based on ACTIVE CITY's time
+  // This ensures header matches the city being viewed
+  // Sydney at 8 PM = dark header, Istanbul at 11 AM = light header
+  const activeCityTimeOfDay = getTimeOfDay(time, activeCity.lat, activeCity.lng, activeCity.timezone)
   
   const currentTheme = themeMode === 'auto' 
-    ? autoTheme 
+    ? activeCityTimeOfDay 
     : themeMode  // 'light' veya 'dark' direkt kullan
   
   // SSR: Always light theme to prevent hydration mismatch
