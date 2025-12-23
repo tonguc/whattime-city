@@ -4991,6 +4991,194 @@ export const cities: City[] = [
   { slug: 'majuro', city: 'Majuro', timezone: 'Pacific/Majuro', country: 'Marshall Islands', countryCode: 'MH', lat: 7.09, lng: 171.38, tier: 3, continent: 'oceania' },
   { slug: 'yaren', city: 'Yaren', timezone: 'Pacific/Nauru', country: 'Nauru', countryCode: 'NR', lat: -0.55, lng: 166.92, tier: 3, continent: 'oceania' },
   { slug: 'funafuti', city: 'Funafuti', timezone: 'Pacific/Funafuti', country: 'Tuvalu', countryCode: 'TV', lat: -8.52, lng: 179.19, tier: 3, continent: 'oceania' },
+
+  // === PHASE 1: Additional Cities for G20 + Europe ===
+  
+  // UK - Additional Cities
+  { slug: 'liverpool', city: 'Liverpool', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.41, lng: -2.98, tier: 2, continent: 'europe' },
+  { slug: 'leeds', city: 'Leeds', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.80, lng: -1.55, tier: 2, continent: 'europe' },
+  { slug: 'bristol', city: 'Bristol', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.45, lng: -2.59, tier: 2, continent: 'europe' },
+  { slug: 'newcastle', city: 'Newcastle', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 54.98, lng: -1.61, tier: 2, continent: 'europe' },
+  { slug: 'cardiff', city: 'Cardiff', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.48, lng: -3.18, tier: 2, continent: 'europe' },
+  
+  // Germany - Additional Cities
+  { slug: 'hamburg', city: 'Hamburg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 53.55, lng: 9.99, tier: 2, continent: 'europe' },
+  { slug: 'cologne', city: 'Cologne', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 50.94, lng: 6.96, tier: 2, continent: 'europe' },
+  { slug: 'stuttgart', city: 'Stuttgart', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 48.78, lng: 9.18, tier: 2, continent: 'europe' },
+  { slug: 'dusseldorf', city: 'Düsseldorf', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 51.23, lng: 6.78, tier: 2, continent: 'europe' },
+  
+  // France - Additional Cities
+  { slug: 'marseille', city: 'Marseille', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.30, lng: 5.37, tier: 2, continent: 'europe' },
+  { slug: 'toulouse', city: 'Toulouse', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.60, lng: 1.44, tier: 2, continent: 'europe' },
+  { slug: 'bordeaux', city: 'Bordeaux', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 44.84, lng: -0.58, tier: 2, continent: 'europe' },
+  { slug: 'strasbourg', city: 'Strasbourg', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.57, lng: 7.75, tier: 2, continent: 'europe' },
+  
+  // Italy - Additional Cities
+  { slug: 'naples', city: 'Naples', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 40.85, lng: 14.27, tier: 2, continent: 'europe' },
+  { slug: 'turin', city: 'Turin', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.07, lng: 7.69, tier: 2, continent: 'europe' },
+  { slug: 'bologna', city: 'Bologna', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.49, lng: 11.34, tier: 2, continent: 'europe' },
+  
+  // Spain - Additional Cities
+  { slug: 'valencia', city: 'Valencia', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 39.47, lng: -0.38, tier: 2, continent: 'europe' },
+  { slug: 'seville', city: 'Seville', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 37.39, lng: -5.98, tier: 2, continent: 'europe' },
+  { slug: 'bilbao', city: 'Bilbao', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 43.26, lng: -2.93, tier: 2, continent: 'europe' },
+  { slug: 'malaga', city: 'Málaga', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 36.72, lng: -4.42, tier: 2, continent: 'europe' },
+  
+  // Netherlands - Additional Cities
+  { slug: 'rotterdam', city: 'Rotterdam', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 51.92, lng: 4.48, tier: 2, continent: 'europe' },
+  { slug: 'the-hague', city: 'The Hague', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 52.08, lng: 4.31, tier: 2, continent: 'europe' },
+  { slug: 'utrecht', city: 'Utrecht', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 52.09, lng: 5.12, tier: 2, continent: 'europe' },
+  
+  // Belgium - Additional Cities
+  { slug: 'antwerp', city: 'Antwerp', timezone: 'Europe/Brussels', country: 'Belgium', countryCode: 'BE', lat: 51.22, lng: 4.40, tier: 2, continent: 'europe' },
+  { slug: 'ghent', city: 'Ghent', timezone: 'Europe/Brussels', country: 'Belgium', countryCode: 'BE', lat: 51.05, lng: 3.72, tier: 2, continent: 'europe' },
+  
+  // Switzerland - Additional Cities
+  { slug: 'basel', city: 'Basel', timezone: 'Europe/Zurich', country: 'Switzerland', countryCode: 'CH', lat: 47.56, lng: 7.59, tier: 2, continent: 'europe' },
+  { slug: 'lausanne', city: 'Lausanne', timezone: 'Europe/Zurich', country: 'Switzerland', countryCode: 'CH', lat: 46.52, lng: 6.63, tier: 2, continent: 'europe' },
+  { slug: 'lucerne', city: 'Lucerne', timezone: 'Europe/Zurich', country: 'Switzerland', countryCode: 'CH', lat: 47.05, lng: 8.31, tier: 3, continent: 'europe' },
+  
+  // Austria - Additional Cities
+  { slug: 'salzburg', city: 'Salzburg', timezone: 'Europe/Vienna', country: 'Austria', countryCode: 'AT', lat: 47.80, lng: 13.04, tier: 2, continent: 'europe' },
+  { slug: 'innsbruck', city: 'Innsbruck', timezone: 'Europe/Vienna', country: 'Austria', countryCode: 'AT', lat: 47.26, lng: 11.39, tier: 3, continent: 'europe' },
+  { slug: 'graz', city: 'Graz', timezone: 'Europe/Vienna', country: 'Austria', countryCode: 'AT', lat: 47.07, lng: 15.44, tier: 2, continent: 'europe' },
+  
+  // Poland - Additional Cities
+  { slug: 'krakow', city: 'Kraków', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 50.06, lng: 19.94, tier: 2, continent: 'europe' },
+  { slug: 'gdansk', city: 'Gdańsk', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 54.35, lng: 18.65, tier: 2, continent: 'europe' },
+  { slug: 'wroclaw', city: 'Wrocław', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 51.11, lng: 17.04, tier: 2, continent: 'europe' },
+  
+  // Portugal - Additional Cities
+  { slug: 'porto', city: 'Porto', timezone: 'Europe/Lisbon', country: 'Portugal', countryCode: 'PT', lat: 41.16, lng: -8.63, tier: 2, continent: 'europe' },
+  { slug: 'faro', city: 'Faro', timezone: 'Europe/Lisbon', country: 'Portugal', countryCode: 'PT', lat: 37.02, lng: -7.93, tier: 3, continent: 'europe' },
+  
+  // Greece - Additional Cities
+  { slug: 'thessaloniki', city: 'Thessaloniki', timezone: 'Europe/Athens', country: 'Greece', countryCode: 'GR', lat: 40.64, lng: 22.94, tier: 2, continent: 'europe' },
+  { slug: 'heraklion', city: 'Heraklion', timezone: 'Europe/Athens', country: 'Greece', countryCode: 'GR', lat: 35.34, lng: 25.13, tier: 3, continent: 'europe' },
+  { slug: 'patras', city: 'Patras', timezone: 'Europe/Athens', country: 'Greece', countryCode: 'GR', lat: 38.25, lng: 21.73, tier: 3, continent: 'europe' },
+  
+  // Sweden - Additional Cities
+  { slug: 'gothenburg', city: 'Gothenburg', timezone: 'Europe/Stockholm', country: 'Sweden', countryCode: 'SE', lat: 57.71, lng: 11.97, tier: 2, continent: 'europe' },
+  { slug: 'malmo', city: 'Malmö', timezone: 'Europe/Stockholm', country: 'Sweden', countryCode: 'SE', lat: 55.61, lng: 13.00, tier: 2, continent: 'europe' },
+  { slug: 'uppsala', city: 'Uppsala', timezone: 'Europe/Stockholm', country: 'Sweden', countryCode: 'SE', lat: 59.86, lng: 17.64, tier: 3, continent: 'europe' },
+  
+  // Norway - Additional Cities
+  { slug: 'bergen', city: 'Bergen', timezone: 'Europe/Oslo', country: 'Norway', countryCode: 'NO', lat: 60.39, lng: 5.32, tier: 2, continent: 'europe' },
+  { slug: 'trondheim', city: 'Trondheim', timezone: 'Europe/Oslo', country: 'Norway', countryCode: 'NO', lat: 63.43, lng: 10.40, tier: 2, continent: 'europe' },
+  { slug: 'stavanger', city: 'Stavanger', timezone: 'Europe/Oslo', country: 'Norway', countryCode: 'NO', lat: 58.97, lng: 5.73, tier: 3, continent: 'europe' },
+  
+  // Denmark - Additional Cities
+  { slug: 'aarhus', city: 'Aarhus', timezone: 'Europe/Copenhagen', country: 'Denmark', countryCode: 'DK', lat: 56.16, lng: 10.20, tier: 2, continent: 'europe' },
+  { slug: 'odense', city: 'Odense', timezone: 'Europe/Copenhagen', country: 'Denmark', countryCode: 'DK', lat: 55.40, lng: 10.39, tier: 3, continent: 'europe' },
+  { slug: 'aalborg', city: 'Aalborg', timezone: 'Europe/Copenhagen', country: 'Denmark', countryCode: 'DK', lat: 57.05, lng: 9.92, tier: 3, continent: 'europe' },
+  
+  // Finland - Additional Cities
+  { slug: 'tampere', city: 'Tampere', timezone: 'Europe/Helsinki', country: 'Finland', countryCode: 'FI', lat: 61.50, lng: 23.79, tier: 2, continent: 'europe' },
+  { slug: 'turku', city: 'Turku', timezone: 'Europe/Helsinki', country: 'Finland', countryCode: 'FI', lat: 60.45, lng: 22.27, tier: 2, continent: 'europe' },
+  { slug: 'oulu', city: 'Oulu', timezone: 'Europe/Helsinki', country: 'Finland', countryCode: 'FI', lat: 65.01, lng: 25.47, tier: 3, continent: 'europe' },
+  
+  // Ireland - Additional Cities
+  { slug: 'cork', city: 'Cork', timezone: 'Europe/Dublin', country: 'Ireland', countryCode: 'IE', lat: 51.90, lng: -8.47, tier: 2, continent: 'europe' },
+  { slug: 'galway', city: 'Galway', timezone: 'Europe/Dublin', country: 'Ireland', countryCode: 'IE', lat: 53.27, lng: -9.06, tier: 2, continent: 'europe' },
+  { slug: 'limerick', city: 'Limerick', timezone: 'Europe/Dublin', country: 'Ireland', countryCode: 'IE', lat: 52.67, lng: -8.63, tier: 3, continent: 'europe' },
+  
+  // Czechia - Additional Cities
+  { slug: 'brno', city: 'Brno', timezone: 'Europe/Prague', country: 'Czechia', countryCode: 'CZ', lat: 49.20, lng: 16.61, tier: 2, continent: 'europe' },
+  { slug: 'ostrava', city: 'Ostrava', timezone: 'Europe/Prague', country: 'Czechia', countryCode: 'CZ', lat: 49.84, lng: 18.29, tier: 2, continent: 'europe' },
+  { slug: 'pilsen', city: 'Pilsen', timezone: 'Europe/Prague', country: 'Czechia', countryCode: 'CZ', lat: 49.75, lng: 13.38, tier: 3, continent: 'europe' },
+  
+  // Hungary - Additional Cities
+  { slug: 'debrecen', city: 'Debrecen', timezone: 'Europe/Budapest', country: 'Hungary', countryCode: 'HU', lat: 47.53, lng: 21.63, tier: 2, continent: 'europe' },
+  { slug: 'szeged', city: 'Szeged', timezone: 'Europe/Budapest', country: 'Hungary', countryCode: 'HU', lat: 46.25, lng: 20.15, tier: 3, continent: 'europe' },
+  { slug: 'pecs', city: 'Pécs', timezone: 'Europe/Budapest', country: 'Hungary', countryCode: 'HU', lat: 46.07, lng: 18.23, tier: 3, continent: 'europe' },
+  
+  // Romania - Additional Cities
+  { slug: 'cluj-napoca', city: 'Cluj-Napoca', timezone: 'Europe/Bucharest', country: 'Romania', countryCode: 'RO', lat: 46.77, lng: 23.60, tier: 2, continent: 'europe' },
+  { slug: 'timisoara', city: 'Timișoara', timezone: 'Europe/Bucharest', country: 'Romania', countryCode: 'RO', lat: 45.76, lng: 21.23, tier: 2, continent: 'europe' },
+  { slug: 'constanta', city: 'Constanța', timezone: 'Europe/Bucharest', country: 'Romania', countryCode: 'RO', lat: 44.18, lng: 28.63, tier: 2, continent: 'europe' },
+  
+  // Turkey - Additional Cities
+  { slug: 'antalya', city: 'Antalya', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 36.90, lng: 30.70, tier: 2, continent: 'europe' },
+  { slug: 'bursa', city: 'Bursa', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 40.19, lng: 29.06, tier: 2, continent: 'europe' },
+  { slug: 'adana', city: 'Adana', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 37.00, lng: 35.32, tier: 2, continent: 'europe' },
+  { slug: 'gaziantep', city: 'Gaziantep', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 37.07, lng: 37.38, tier: 2, continent: 'europe' },
+  { slug: 'konya', city: 'Konya', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 37.87, lng: 32.48, tier: 2, continent: 'europe' },
+  
+  // Russia - Additional Cities
+  { slug: 'saint-petersburg', city: 'Saint Petersburg', timezone: 'Europe/Moscow', country: 'Russia', countryCode: 'RU', lat: 59.93, lng: 30.34, tier: 1, continent: 'europe' },
+  { slug: 'novosibirsk', city: 'Novosibirsk', timezone: 'Asia/Novosibirsk', country: 'Russia', countryCode: 'RU', lat: 55.04, lng: 82.93, tier: 2, continent: 'asia' },
+  { slug: 'yekaterinburg', city: 'Yekaterinburg', timezone: 'Asia/Yekaterinburg', country: 'Russia', countryCode: 'RU', lat: 56.84, lng: 60.60, tier: 2, continent: 'asia' },
+  { slug: 'kazan', city: 'Kazan', timezone: 'Europe/Moscow', country: 'Russia', countryCode: 'RU', lat: 55.80, lng: 49.11, tier: 2, continent: 'europe' },
+  { slug: 'sochi', city: 'Sochi', timezone: 'Europe/Moscow', country: 'Russia', countryCode: 'RU', lat: 43.60, lng: 39.73, tier: 2, continent: 'europe' },
+  { slug: 'vladivostok', city: 'Vladivostok', timezone: 'Asia/Vladivostok', country: 'Russia', countryCode: 'RU', lat: 43.12, lng: 131.89, tier: 2, continent: 'asia' },
+  
+  // Japan - Additional Cities
+  { slug: 'yokohama', city: 'Yokohama', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.44, lng: 139.64, tier: 2, continent: 'asia' },
+  { slug: 'nagoya', city: 'Nagoya', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.18, lng: 136.91, tier: 2, continent: 'asia' },
+  { slug: 'sapporo', city: 'Sapporo', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 43.06, lng: 141.35, tier: 2, continent: 'asia' },
+  { slug: 'fukuoka', city: 'Fukuoka', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 33.59, lng: 130.40, tier: 2, continent: 'asia' },
+  { slug: 'kobe', city: 'Kobe', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.69, lng: 135.20, tier: 2, continent: 'asia' },
+  
+  // South Korea - Additional Cities
+  { slug: 'busan', city: 'Busan', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.18, lng: 129.08, tier: 2, continent: 'asia' },
+  { slug: 'incheon', city: 'Incheon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.46, lng: 126.71, tier: 2, continent: 'asia' },
+  { slug: 'daegu', city: 'Daegu', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.87, lng: 128.60, tier: 2, continent: 'asia' },
+  
+  // China - Additional Cities
+  { slug: 'guangzhou', city: 'Guangzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 23.13, lng: 113.26, tier: 1, continent: 'asia' },
+  { slug: 'shenzhen', city: 'Shenzhen', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 22.54, lng: 114.06, tier: 1, continent: 'asia' },
+  { slug: 'chengdu', city: 'Chengdu', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.57, lng: 104.07, tier: 2, continent: 'asia' },
+  { slug: 'xian', city: "Xi'an", timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 34.34, lng: 108.94, tier: 2, continent: 'asia' },
+  
+  // India - Additional Cities
+  { slug: 'chennai', city: 'Chennai', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 13.08, lng: 80.27, tier: 2, continent: 'asia' },
+  { slug: 'hyderabad', city: 'Hyderabad', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 17.39, lng: 78.49, tier: 2, continent: 'asia' },
+  { slug: 'pune', city: 'Pune', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 18.52, lng: 73.86, tier: 2, continent: 'asia' },
+  { slug: 'ahmedabad', city: 'Ahmedabad', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.02, lng: 72.57, tier: 2, continent: 'asia' },
+  
+  // Indonesia - Additional Cities
+  { slug: 'surabaya', city: 'Surabaya', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -7.25, lng: 112.75, tier: 2, continent: 'asia' },
+  { slug: 'bandung', city: 'Bandung', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -6.91, lng: 107.61, tier: 2, continent: 'asia' },
+  { slug: 'medan', city: 'Medan', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: 3.59, lng: 98.67, tier: 2, continent: 'asia' },
+  { slug: 'denpasar', city: 'Denpasar', timezone: 'Asia/Makassar', country: 'Indonesia', countryCode: 'ID', lat: -8.65, lng: 115.22, tier: 2, continent: 'asia' },
+  
+  // Saudi Arabia - Additional Cities
+  { slug: 'jeddah', city: 'Jeddah', timezone: 'Asia/Riyadh', country: 'Saudi Arabia', countryCode: 'SA', lat: 21.49, lng: 39.19, tier: 2, continent: 'asia' },
+  { slug: 'dammam', city: 'Dammam', timezone: 'Asia/Riyadh', country: 'Saudi Arabia', countryCode: 'SA', lat: 26.43, lng: 50.10, tier: 2, continent: 'asia' },
+  { slug: 'medina', city: 'Medina', timezone: 'Asia/Riyadh', country: 'Saudi Arabia', countryCode: 'SA', lat: 24.47, lng: 39.61, tier: 2, continent: 'asia' },
+  
+  // Australia - Additional Cities
+  { slug: 'brisbane', city: 'Brisbane', timezone: 'Australia/Brisbane', country: 'Australia', countryCode: 'AU', lat: -27.47, lng: 153.03, tier: 2, continent: 'oceania' },
+  { slug: 'perth', city: 'Perth', timezone: 'Australia/Perth', country: 'Australia', countryCode: 'AU', lat: -31.95, lng: 115.86, tier: 2, continent: 'oceania' },
+  { slug: 'adelaide', city: 'Adelaide', timezone: 'Australia/Adelaide', country: 'Australia', countryCode: 'AU', lat: -34.93, lng: 138.60, tier: 2, continent: 'oceania' },
+  { slug: 'gold-coast', city: 'Gold Coast', timezone: 'Australia/Brisbane', country: 'Australia', countryCode: 'AU', lat: -28.02, lng: 153.43, tier: 2, continent: 'oceania' },
+  
+  // Brazil - Additional Cities
+  { slug: 'rio-de-janeiro', city: 'Rio de Janeiro', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -22.91, lng: -43.17, tier: 1, continent: 'americas' },
+  { slug: 'salvador', city: 'Salvador', timezone: 'America/Bahia', country: 'Brazil', countryCode: 'BR', lat: -12.97, lng: -38.50, tier: 2, continent: 'americas' },
+  { slug: 'brasilia', city: 'Brasília', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -15.79, lng: -47.88, tier: 2, continent: 'americas' },
+  { slug: 'fortaleza', city: 'Fortaleza', timezone: 'America/Fortaleza', country: 'Brazil', countryCode: 'BR', lat: -3.72, lng: -38.54, tier: 2, continent: 'americas' },
+  { slug: 'belo-horizonte', city: 'Belo Horizonte', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -19.92, lng: -43.94, tier: 2, continent: 'americas' },
+  { slug: 'recife', city: 'Recife', timezone: 'America/Recife', country: 'Brazil', countryCode: 'BR', lat: -8.05, lng: -34.88, tier: 2, continent: 'americas' },
+  
+  // Mexico - Additional Cities
+  { slug: 'guadalajara', city: 'Guadalajara', timezone: 'America/Mexico_City', country: 'Mexico', countryCode: 'MX', lat: 20.67, lng: -103.35, tier: 2, continent: 'americas' },
+  { slug: 'monterrey', city: 'Monterrey', timezone: 'America/Monterrey', country: 'Mexico', countryCode: 'MX', lat: 25.67, lng: -100.31, tier: 2, continent: 'americas' },
+  
+  // Argentina - Additional Cities
+  { slug: 'cordoba-argentina', city: 'Córdoba', timezone: 'America/Argentina/Cordoba', country: 'Argentina', countryCode: 'AR', lat: -31.42, lng: -64.18, tier: 2, continent: 'americas' },
+  { slug: 'rosario', city: 'Rosario', timezone: 'America/Argentina/Buenos_Aires', country: 'Argentina', countryCode: 'AR', lat: -32.95, lng: -60.65, tier: 2, continent: 'americas' },
+  { slug: 'mendoza', city: 'Mendoza', timezone: 'America/Argentina/Mendoza', country: 'Argentina', countryCode: 'AR', lat: -32.89, lng: -68.83, tier: 2, continent: 'americas' },
+  { slug: 'mar-del-plata', city: 'Mar del Plata', timezone: 'America/Argentina/Buenos_Aires', country: 'Argentina', countryCode: 'AR', lat: -38.00, lng: -57.55, tier: 3, continent: 'americas' },
+  
+  // South Africa - Additional Cities
+  { slug: 'cape-town', city: 'Cape Town', timezone: 'Africa/Johannesburg', country: 'South Africa', countryCode: 'ZA', lat: -33.93, lng: 18.42, tier: 2, continent: 'africa' },
+  { slug: 'durban', city: 'Durban', timezone: 'Africa/Johannesburg', country: 'South Africa', countryCode: 'ZA', lat: -29.86, lng: 31.02, tier: 2, continent: 'africa' },
+  { slug: 'port-elizabeth', city: 'Port Elizabeth', timezone: 'Africa/Johannesburg', country: 'South Africa', countryCode: 'ZA', lat: -33.96, lng: 25.60, tier: 2, continent: 'africa' },
+  
+  // Canada - Additional Cities
+  { slug: 'calgary', city: 'Calgary', timezone: 'America/Edmonton', country: 'Canada', countryCode: 'CA', lat: 51.05, lng: -114.07, tier: 2, continent: 'americas' },
+  { slug: 'ottawa', city: 'Ottawa', timezone: 'America/Toronto', country: 'Canada', countryCode: 'CA', lat: 45.42, lng: -75.70, tier: 2, continent: 'americas' },
 ]
 
 // Get cities by tier
