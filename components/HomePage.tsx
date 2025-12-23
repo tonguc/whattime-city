@@ -521,7 +521,7 @@ export default function HomePage() {
           
           {/* All Cities Button */}
           <div className="mt-4 text-center">
-            <Link href="/country" className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all ${
+            <Link href="/cities" className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all ${
               homeIsLight ? 'bg-emerald-100 hover:bg-emerald-200 text-emerald-700' : 'bg-emerald-900/30 hover:bg-emerald-900/50 text-emerald-400'
             }`}>
               All Cities
