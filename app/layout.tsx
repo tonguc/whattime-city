@@ -1,72 +1,242 @@
-import type { Metadata } from 'next'
-import './globals.css'
-import { CityProvider } from '@/lib/CityContext'
+'use client'
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://whattime.city'),
-  title: 'World Clock - Current Local Time in Any City | whattime.city',
-  description: 'Check the current local time anywhere in the world. Live world clock with sunrise, sunset times and real-time weather. Compare time zones across 200+ major cities.',
-  keywords: ['world clock', 'current time', 'local time', 'time zone converter', 'sunrise sunset', 'city time', 'international time', 'time difference'],
-  authors: [{ name: 'whattime.city' }],
-  openGraph: {
-    title: 'World Clock - Current Local Time in Any City',
-    description: 'Check the current local time anywhere in the world. Live world clock with sunrise, sunset times and real-time weather.',
-    type: 'website',
-    locale: 'en_US',
-    siteName: 'whattime.city',
-    url: 'https://whattime.city'
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'World Clock - Current Local Time in Any City',
-    description: 'Check the current local time anywhere in the world. Live world clock with sunrise, sunset and weather.'
-  },
-  alternates: {
-    canonical: 'https://whattime.city'
-  },
-  robots: {
-    index: true,
-    follow: true
-  }
-}
+import { useParams } from 'next/navigation'
+import Link from 'next/link'
+import { useState, useEffect } from 'react'
+import { cities } from '@/lib/cities'
+import { useCityContext } from '@/lib/CityContext'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
-export default function RootLayout({
+export default function GuideLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const params = useParams()
+  const citySlug = params.city as string
+  const city = cities.find(c => c.slug === citySlug)
+  const { theme, isLight, time } = useCityContext()
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+  
+  // Prevent flash on mount - fade in after hydration
+  useEffect(() => {
+    // Small delay to ensure theme is properly set
+    const timer = setTimeout(() => setMounted(true), 10)
+    return () => clearTimeout(timer)
+  }, [])
+  
+  // Scroll detection for sticky bar
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 150) // Show after scrolling 150px
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+  
+  if (!city) return null
+  
+  // Calculate times for the current city
+  const cityTime = new Date(time.toLocaleString('en-US', { timeZone: city.timezone }))
+  const localTime = time
+  const cityTimeStr = cityTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })
+  const localTimeStr = localTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })
+  
+  // Calculate hour difference between user's local time and city time
+  const cityOffsets: Record<string, number> = { 'london': 0, 'tokyo': 9, 'new-york': -5, 'dubai': 4 }
+  const cityOffset = cityOffsets[citySlug] ?? -5
+  const localOffset = -localTime.getTimezoneOffset() / 60
+  const hourDiff = localOffset - cityOffset
+  const diffText = hourDiff === 0 ? 'Same time' : hourDiff > 0 ? `+${hourDiff}h ahead` : `${hourDiff}h behind`
+  
+  // City-specific icons
+  const visitIcons: Record<string, string> = { 'london': '🇬🇧', 'tokyo': '🌸', 'new-york': '🗽', 'dubai': '☀️' }
+  const visitIcon = visitIcons[citySlug] ?? '🗽'
+  
+  const guideLinks = [
+    { slug: '', label: 'Overview', icon: '📖' },
+    { slug: 'business-hours', label: 'Business Hours', icon: '💼' },
+    { slug: 'best-time-to-visit', label: 'Best Time to Visit', icon: visitIcon },
+    { slug: 'remote-work', label: 'Remote Work', icon: '💻' },
+    { slug: '24-hours', label: '24 Hours', icon: '🌆' },
+    { slug: 'call-times', label: 'Call Times', icon: '📞' },
+    { slug: 'stock-market', label: 'Stock Market', icon: '📈' },
+    { slug: 'holidays', label: 'Holidays', icon: '📅' },
+    { slug: 'digital-nomad', label: 'Digital Nomad', icon: '🎒' },
+    { slug: 'time-difference', label: 'Time Difference', icon: '🌐' },
+    { slug: 'travel-planning', label: 'Travel', icon: '✈️' },
+  ]
+  
   return (
-    <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* GA4 gtag.js - loaded in head for earliest possible execution */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-L0LS6L1L65"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-L0LS6L1L65');
-            `,
-          }}
-        />
-        {/* Google AdSense */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9352058741490976"
-          crossOrigin="anonymous"
-        />
-      </head>
-      <body className="antialiased">
-        <CityProvider>
-          {children}
-        </CityProvider>
-      </body>
-    </html>
+    <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-opacity duration-150 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
+      <Header />
+      
+      {/* Time Bar - sticky, positioned right below header */}
+      <div className="sticky top-[52px] sm:top-[56px] z-40 -mt-[1px]">
+        <div className={`${isLight ? 'bg-amber-50' : 'bg-amber-900'} border-y ${
+          isLight ? 'border-amber-200' : 'border-amber-700'
+        }`}>
+          <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between text-sm">
+            <div className="flex items-center gap-2 md:gap-4">
+              <span className={`font-medium whitespace-nowrap ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                {citySlug === 'london' ? '🇬🇧 London' : citySlug === 'tokyo' ? '🇯🇵 Tokyo' : citySlug === 'dubai' ? '🇦🇪 Dubai' : '🗽 NYC'}: {cityTimeStr}
+              </span>
+              <span className="px-2 py-0.5 rounded text-xs whitespace-nowrap bg-blue-100 text-blue-700">
+                {diffText}
+              </span>
+              <span className={`hidden md:inline ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>|</span>
+              <span className={`hidden md:inline whitespace-nowrap ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+                📍 You: {localTimeStr}
+              </span>
+            </div>
+            <Link 
+              href={`/${citySlug}/`}
+              className={`text-xs whitespace-nowrap ml-2 ${isLight ? 'text-amber-600 hover:text-amber-700' : 'text-amber-400 hover:text-amber-300'}`}
+            >
+              ← {city.city}
+            </Link>
+          </div>
+        </div>
+      </div>
+      
+      <main className="max-w-6xl mx-auto px-4 py-4 md:py-8">
+        {/* Breadcrumb */}
+        <nav className={`text-sm mb-3 md:mb-6 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+          <Link href="/" className="hover:underline">Home</Link>
+          <span className="mx-2">›</span>
+          <Link href={`/${citySlug}/`} className="hover:underline">{city.city}</Link>
+          <span className="mx-2">›</span>
+          <span className={isLight ? 'text-slate-700' : 'text-white'}>Guide</span>
+        </nav>
+        
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-8">
+          {/* Sidebar Navigation - Collapsible on mobile */}
+          <aside className="lg:w-64 flex-shrink-0">
+            {/* Mobile: Collapsible menu */}
+            <div className="lg:hidden mb-2">
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium ${
+                  isLight 
+                    ? 'bg-white/80 text-slate-700 border border-slate-200' 
+                    : 'bg-slate-800/80 text-slate-200 border border-slate-700'
+                }`}
+              >
+                <span className="flex items-center gap-2">
+                  <span>📑</span>
+                  <span>{citySlug === 'london' ? 'London' : citySlug === 'tokyo' ? 'Tokyo' : citySlug === 'dubai' ? 'Dubai' : 'NYC'} Guide Menu</span>
+                </span>
+                <span className={`transition-transform duration-200 ${isMobileMenuOpen ? 'rotate-180' : ''}`}>
+                  ▼
+                </span>
+              </button>
+              
+              {/* Collapsible content */}
+              <div className={`overflow-hidden transition-all duration-300 ${
+                isMobileMenuOpen ? 'max-h-[500px] opacity-100 mt-2' : 'max-h-0 opacity-0'
+              }`}>
+                <div className={`rounded-xl p-3 ${
+                  isLight ? 'bg-white/80 border border-slate-200' : 'bg-slate-800/80 border border-slate-700'
+                }`}>
+                  <nav className="grid grid-cols-2 gap-2">
+                    {guideLinks.map(link => {
+                      const href = `/${citySlug}/guide/${link.slug}`
+                      return (
+                        <Link
+                          key={link.slug}
+                          href={href}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm ${
+                            isLight 
+                              ? 'hover:bg-slate-100 text-slate-600' 
+                              : 'hover:bg-slate-700 text-slate-300'
+                          }`}
+                        >
+                          <span>{link.icon}</span>
+                          <span className="truncate">{link.label}</span>
+                        </Link>
+                      )
+                    })}
+                  </nav>
+                </div>
+              </div>
+            </div>
+            
+            {/* Desktop: Vertical sticky sidebar */}
+            <div className={`hidden lg:block sticky top-24 rounded-2xl p-4 ${
+              isLight ? 'bg-white/60' : 'bg-slate-800/60'
+            } backdrop-blur-xl border ${
+              isLight ? 'border-white/50' : 'border-slate-700/50'
+            }`}>
+              <h3 className={`font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                {city.city} Guide
+              </h3>
+              <nav className="space-y-1">
+                {guideLinks.map(link => {
+                  const href = `/${citySlug}/guide/${link.slug}`
+                  return (
+                    <Link
+                      key={link.slug}
+                      href={href}
+                      className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all ${
+                        isLight 
+                          ? 'hover:bg-slate-100 text-slate-600' 
+                          : 'hover:bg-slate-700 text-slate-300'
+                      }`}
+                    >
+                      <span>{link.icon}</span>
+                      <span>{link.label}</span>
+                    </Link>
+                  )
+                })}
+              </nav>
+              
+              {/* Quick Tools */}
+              <div className={`mt-6 pt-4 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
+                <h4 className={`text-xs uppercase tracking-wide mb-3 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                  Quick Tools
+                </h4>
+                <div className="space-y-2">
+                  <Link
+                    href="/tools/converter/"
+                    className={`block px-3 py-2 rounded-lg text-sm ${
+                      isLight 
+                        ? 'bg-amber-50 text-amber-700 hover:bg-amber-100' 
+                        : 'bg-amber-900/30 text-amber-400 hover:bg-amber-900/50'
+                    }`}
+                  >
+                    🔄 Time Converter
+                  </Link>
+                  <Link
+                    href="/tools/meeting-planner/"
+                    className={`block px-3 py-2 rounded-lg text-sm ${
+                      isLight 
+                        ? 'bg-blue-50 text-blue-700 hover:bg-blue-100' 
+                        : 'bg-blue-900/30 text-blue-400 hover:bg-blue-900/50'
+                    }`}
+                  >
+                    📅 Meeting Planner
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </aside>
+          
+          {/* Main Content */}
+          <article className={`flex-1 min-w-0 rounded-2xl p-6 md:p-8 ${
+            isLight ? 'bg-white/80' : 'bg-slate-800/60'
+          } backdrop-blur-xl border ${
+            isLight ? 'border-white/50' : 'border-slate-700/50'
+          }`}>
+            {children}
+          </article>
+        </div>
+      </main>
+      
+      <Footer isLight={isLight} />
+    </div>
   )
 }
