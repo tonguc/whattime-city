@@ -282,7 +282,7 @@ export default async function CountryPage({ params }: CountryPageProps) {
             {getAllCountrySlugs()
               .map(s => getCountryBySlug(s)!)
               .filter(c => c.continent === country.continent && c.code !== country.code)
-              .slice(0, 12)
+              .sort((a, b) => a.name.localeCompare(b.name))
               .map((c) => (
                 <Link
                   key={c.slug}
