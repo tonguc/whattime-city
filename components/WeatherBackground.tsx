@@ -9,6 +9,16 @@ interface WeatherBackgroundProps {
 }
 
 export default function WeatherBackground({ animation, isDay }: WeatherBackgroundProps) {
+  // Prevent hydration mismatch - only render on client
+  const [mounted, setMounted] = useState(false)
+  
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+  
+  // Don't render until client-side mounted
+  if (!mounted) return null
+  
   return (
     <div className="fixed inset-x-0 top-0 h-screen overflow-hidden pointer-events-none z-[2]">
       {/* Clear weather only - day/night effects */}

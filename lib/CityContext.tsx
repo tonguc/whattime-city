@@ -59,11 +59,19 @@ export function CityProvider({ children }: { children: ReactNode }) {
   const [detectedCity, setDetectedCity] = useState<City | null>(null)
   const [activeCityLoaded, setActiveCityLoaded] = useState(false)
   
+  // Mounted state - prevents SSR/client mismatch
+  const [mounted, setMounted] = useState(false)
+  
   // Preferences (persisted)
   const [themeMode, setThemeModeState] = useState<'auto' | 'light' | 'dark'>('auto')
   const [clockMode, setClockModeState] = useState<'digital' | 'analog'>('digital')
   const [use12Hour, setUse12HourState] = useState(false)
   const [favorites, setFavorites] = useState<string[]>([])
+  
+  // Set mounted on client
+  useEffect(() => {
+    setMounted(true)
+  }, [])
   
   // Timer - update time every second
   useEffect(() => {
@@ -175,8 +183,10 @@ export function CityProvider({ children }: { children: ReactNode }) {
     ? autoTheme 
     : themeMode  // 'light' veya 'dark' direkt kullan
   
-  const theme = themes[currentTheme]
-  const isLight = isLightTheme(currentTheme)
+  // SSR: Always light theme to prevent hydration mismatch
+  // Client: Use calculated theme
+  const theme = mounted ? themes[currentTheme] : themes.day
+  const isLight = mounted ? isLightTheme(currentTheme) : true
   
   // Helper functions
   const getLocalTime = (city: City) => {
