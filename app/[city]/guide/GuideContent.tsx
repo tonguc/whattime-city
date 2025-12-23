@@ -8,6 +8,7 @@ import LondonGuideContent from './content/london-overview'
 import TokyoOverviewContent from './content/tokyo-overview'
 import DubaiOverviewContent from './content/dubai-overview'
 import SingaporeOverviewContent from './content/singapore-overview'
+import ParisOverviewContent from './content/paris-overview'
 
 interface Props {
   city: City
@@ -40,6 +41,10 @@ export default function GuideContent({ city, config }: Props) {
   
   if (city.slug === 'singapore') {
     return <SingaporeOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+  }
+  
+  if (city.slug === 'paris') {
+    return <ParisOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
   }
   
   // Default to NYC

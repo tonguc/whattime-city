@@ -518,6 +518,99 @@ export const singaporeGuide: GuideConfig = {
 }
 
 // ===================
+// PARIS GUIDE CONFIG
+// ===================
+export const parisGuide: GuideConfig = {
+  citySlug: 'paris',
+  cityName: 'Paris',
+  timezone: 'Europe/Paris',
+  timezoneAbbr: 'CET/CEST',
+  timezoneName: 'Central European Time',
+  utcOffset: 1,
+  icon: '🇫🇷',
+  tagline: 'Your complete guide to time in the City of Light',
+  
+  seo: {
+    title: 'Paris Time Zone Guide | CET/CEST, Business Hours & More',
+    description: 'Complete Paris time zone guide. Business hours, Euronext trading times, best time to call Paris, remote work overlap, French holidays, and local tips.',
+    keywords: ['paris time zone', 'france time now', 'cet cest time', 'paris business hours', 'euronext paris hours', 'best time to call paris', 'french time difference'],
+    ogTitle: 'Paris Time Zone Guide | Complete France Time Resource',
+    ogDescription: 'Everything about Paris time: business hours, stock market, French holidays, remote work tips. The definitive guide.',
+  },
+  
+  pages: {
+    overview: {
+      title: 'Paris Time Zone Guide | CET/CEST, Business Hours & More',
+      description: 'Complete Paris time zone guide. Business hours, Euronext trading times, best time to call Paris, remote work overlap, French holidays, and local tips.',
+      keywords: ['paris time zone', 'france time', 'cet cest'],
+    },
+    businessHours: {
+      title: 'Paris Business Hours | Shops, Banks, Restaurants & Museums',
+      description: 'What time do businesses open in Paris? Complete guide to French store hours, bank schedules, restaurant times, museum hours, and Sunday closures.',
+      keywords: ['paris business hours', 'france shop hours', 'what time do shops open paris', 'paris restaurant hours', 'sunday shopping paris'],
+    },
+    bestTimeToVisit: {
+      title: 'Best Time to Visit Paris | Weather, Crowds & Prices by Month',
+      description: 'When to visit Paris? Month-by-month guide with weather, tourist crowds, hotel prices, and major events. Fashion Week, Bastille Day, and locals-only tips.',
+      keywords: ['best time to visit paris', 'best month to visit france', 'paris weather by month', 'paris crowd calendar', 'cheapest time to visit paris'],
+    },
+    remoteWork: {
+      title: 'Working with Paris Teams Remotely | Time Zone Overlap & Meeting Times',
+      description: 'Remote work guide for Paris collaboration. Find overlap hours with NYC, Tokyo, Sydney. Best meeting times, async tips, and French work culture.',
+      keywords: ['remote work paris time zone', 'working with french team', 'time zone overlap calculator', 'best meeting time paris'],
+    },
+    twentyFourHours: {
+      title: "Paris 24 Hour Guide | What's Open & When in the City of Light",
+      description: "Paris hour-by-hour: when Parisians wake up, rush hours, lunch crowds, café terraces, nightlife peaks, and what's open late.",
+      keywords: ['24 hours in paris', 'paris rush hour times', 'when do restaurants close paris', 'late night food paris'],
+    },
+    callTimes: {
+      title: 'Best Time to Call Paris | From USA, UK, Australia & More',
+      description: 'When to call Paris? Best calling times from New York, London, Tokyo, Sydney, Dubai. Business hours overlap and optimal windows for personal calls.',
+      keywords: ['best time to call paris', 'best time to call france from usa', 'call paris from new york time'],
+    },
+    stockMarket: {
+      title: 'Euronext Paris Hours | CAC 40 Trading Times for Global Investors',
+      description: 'Euronext Paris opens 9:00 AM CET. Complete Paris stock exchange trading schedule with auction periods, regular hours, and market holidays.',
+      keywords: ['euronext paris hours', 'cac 40 trading times', 'paris stock exchange hours', 'france market hours', 'euronext opening time'],
+    },
+    holidays: {
+      title: "French Public Holidays | Paris Closures, Store Hours & What's Open",
+      description: "French public holidays calendar. What's closed on Bastille Day, Christmas, Easter? Bank hours, store schedules, transport changes in Paris.",
+      keywords: ['french public holidays', 'paris holidays', 'what is closed bastille day', 'france bank holidays'],
+    },
+    digitalNomad: {
+      title: 'Digital Nomad Paris Guide | Coworking, WiFi Cafes & Costs',
+      description: 'Work remotely from Paris. Best coworking spaces (€200-400/mo), laptop-friendly cafés, free WiFi spots, cost of living breakdown.',
+      keywords: ['digital nomad paris', 'best coworking spaces paris', 'cafes with wifi paris', 'remote work paris'],
+    },
+    timeDifference: {
+      title: 'Paris Time Difference Calculator | CET/CEST vs World Cities',
+      description: 'Paris time difference to New York (-6h), Tokyo (+8h), Dubai (+3h), Sydney (+10h) and 50+ cities. CET vs EST explained.',
+      keywords: ['paris time difference', 'france vs new york time', 'cet vs est hours', 'paris tokyo time difference'],
+    },
+    travelPlanning: {
+      title: 'Paris Travel Time Guide | Flights, Jet Lag Tips & Getting Around',
+      description: 'Plan your Paris trip: flight times from major cities, jet lag recovery tips, CDG vs Orly airports, and getting into central Paris.',
+      keywords: ['paris flight times', 'cdg to paris', 'paris jet lag tips', 'how long flight to paris'],
+    },
+  },
+  
+  clusters: [
+    { slug: 'business-hours', icon: '💼', title: 'Business Hours', desc: 'Shop, bank, and restaurant hours in Paris' },
+    { slug: 'best-time-to-visit', icon: '☀️', title: 'Best Time to Visit', desc: 'Weather, crowds, and events by season' },
+    { slug: 'remote-work', icon: '💻', title: 'Remote Work', desc: 'Working with Paris teams across time zones' },
+    { slug: '24-hours', icon: '🌆', title: '24 Hours in Paris', desc: 'How Parisians live around the clock' },
+    { slug: 'call-times', icon: '📞', title: 'Best Time to Call', desc: 'Optimal calling windows from any country' },
+    { slug: 'stock-market', icon: '📈', title: 'Euronext Paris', desc: 'CAC 40 trading hours and market info' },
+    { slug: 'holidays', icon: '📅', title: 'French Holidays', desc: 'Public holidays and what closes' },
+    { slug: 'digital-nomad', icon: '🎒', title: 'Digital Nomad', desc: 'Coworking, cafés, and costs' },
+    { slug: 'time-difference', icon: '🌐', title: 'Time Difference', desc: 'Paris time compared to major cities' },
+    { slug: 'travel-planning', icon: '✈️', title: 'Travel Planning', desc: 'Flights, airports, and jet lag tips' },
+  ],
+}
+
+// ===================
 // GUIDE REGISTRY
 // ===================
 export const guideConfigs: Record<string, GuideConfig> = {
@@ -526,6 +619,7 @@ export const guideConfigs: Record<string, GuideConfig> = {
   'tokyo': tokyoGuide,
   'dubai': dubaiGuide,
   'singapore': singaporeGuide,
+  'paris': parisGuide,
 }
 
 export function getGuideConfig(citySlug: string): GuideConfig | null {

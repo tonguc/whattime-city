@@ -7,11 +7,12 @@ import LondonHolidaysContent from './LondonHolidaysContent'
 import TokyoHolidaysContent from './TokyoHolidaysContent'
 import DubaiHolidaysContent from './DubaiHolidaysContent'
 import SingaporeHolidaysContent from './SingaporeHolidaysContent'
+import ParisHolidaysContent from './ParisHolidaysContent'
 
 type Props = { params: Promise<{ city: string }> }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }]
+  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -35,5 +36,6 @@ export default async function HolidaysPage({ params }: Props) {
   if (citySlug === 'tokyo') return <TokyoHolidaysContent city={city} />
   if (citySlug === 'dubai') return <DubaiHolidaysContent city={city} />
   if (citySlug === 'singapore') return <SingaporeHolidaysContent city={city} />
+  if (citySlug === 'paris') return <ParisHolidaysContent city={city} />
   return <HolidaysContent city={city} />
 }
