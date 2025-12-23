@@ -87,6 +87,14 @@ export default function HomePage() {
     }
   }, [detectedCity, fromCity])
 
+  // Update activeCity to detectedCity on homepage
+  // This ensures header theme matches user's location when on homepage
+  useEffect(() => {
+    if (detectedCity) {
+      setActiveCity(detectedCity)
+    }
+  }, [detectedCity, setActiveCity])
+
   // Fetch weather for detected city
   useEffect(() => {
     if (detectedCity) {
