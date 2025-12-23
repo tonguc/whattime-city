@@ -32,7 +32,7 @@ export default function WeatherBackground({ animation, isDay }: WeatherBackgroun
       {animation === 'drizzle' && <DrizzleAnimation />}
       {animation === 'snow' && <SnowAnimation />}
       {animation === 'thunder' && <ThunderAnimation />}
-      {animation === 'cloudy' && <CloudyAnimation isDay={isDay} />}
+      {animation === 'clouds' && <CloudyAnimation isDay={isDay} />}
       {animation === 'fog' && <FogAnimation />}
     </div>
   )
