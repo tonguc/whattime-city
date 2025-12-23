@@ -6,6 +6,15 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { useCityContext } from '@/lib/CityContext'
 
+// Convert country code to flag emoji (TR → 🇹🇷)
+function getFlag(countryCode: string): string {
+  return countryCode
+    .toUpperCase()
+    .split('')
+    .map(char => String.fromCodePoint(127397 + char.charCodeAt(0)))
+    .join('')
+}
+
 // Group countries by continent
 function getCountriesByContinent() {
   const continents: Record<string, typeof countries> = {
@@ -116,6 +125,7 @@ export default function CountriesContent() {
                               {country.timezones[0]}
                             </div>
                           </div>
+                          <span className="text-xl flex-shrink-0">{getFlag(country.code)}</span>
                         </div>
                       </Link>
                     )
