@@ -6,8 +6,6 @@ import Link from 'next/link'
 import { useCityContext } from '@/lib/CityContext'
 import { City, cities, searchCities } from '@/lib/cities'
 import { getWeather, WeatherResponse } from '@/lib/weather'
-import { getTimeOfDay } from '@/lib/sun-calculator'
-import { themes, isLightTheme } from '@/lib/themes'
 import { TimeIcons } from '@/components/TimeIcons'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -40,17 +38,17 @@ export default function HomePage() {
     getLocalTime,
     getLocalDate,
     getCityTimeOfDay,
+    themeMode,
+    theme,
+    isLight,
   } = useCityContext()
   
   const [weather, setWeather] = useState<WeatherResponse | null>(null)
   
-  // HomePage uses detectedCity for theme (user's location)
-  // This is different from Tools which use activeCity (last visited city)
-  const homeTimeOfDay = detectedCity 
-    ? getTimeOfDay(time, detectedCity.lat, detectedCity.lng, detectedCity.timezone)
-    : 'day'
-  const homeTheme = themes[homeTimeOfDay]
-  const homeIsLight = isLightTheme(homeTimeOfDay)
+  // HomePage uses CityContext theme (respects user's theme preference)
+  // themeMode: 'auto' = follows time of day, 'light'/'dark' = manual override
+  const homeTheme = theme
+  const homeIsLight = isLight
   
   // Compare tool state
   const [fromCity, setFromCity] = useState<City | null>(null)
