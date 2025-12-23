@@ -4,13 +4,9 @@ import Link from 'next/link'
 import { getCountryBySlug, getAllCountrySlugs, getCitiesByCountryCode } from '@/lib/cities'
 import CountryPageWrapper from '@/components/CountryPageWrapper'
 
-// Convert country code to flag emoji (TR → 🇹🇷)
-function getFlag(countryCode: string): string {
-  return countryCode
-    .toUpperCase()
-    .split('')
-    .map(char => String.fromCodePoint(127397 + char.charCodeAt(0)))
-    .join('')
+// Get flag image URL from CDN
+function getFlagUrl(countryCode: string, size: number = 24): string {
+  return `https://flagcdn.com/w${size}/${countryCode.toLowerCase()}.png`
 }
 
 interface CountryPageProps {
@@ -100,8 +96,13 @@ export default async function CountryPage({ params }: CountryPageProps) {
     <CountryPageWrapper>
       {/* Page Title */}
       <header className="mb-8">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
-          {getFlag(country.code)} Current Time in {country.name}
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 flex items-center gap-3">
+          <img 
+            src={getFlagUrl(country.code, 80)} 
+            alt={`${country.name} flag`}
+            className="w-12 h-8 object-cover rounded"
+          />
+          Current Time in {country.name}
         </h1>
           <p className="text-xl text-slate-300 leading-relaxed">
             Check local time in {country.capital} and all {country.name} cities. {country.timezones.length > 1 
@@ -284,8 +285,13 @@ export default async function CountryPage({ params }: CountryPageProps) {
         {/* Cities in this Country */}
         {cities.length > 0 && (
           <section className="rounded-3xl p-6 bg-slate-900/60 border border-slate-700/50 backdrop-blur-xl mb-8">
-            <h2 className="text-xl font-semibold text-white mb-4">
-              🏙️ Cities in {country.name} {getFlag(country.code)}
+            <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+              🏙️ Cities in {country.name}
+              <img 
+                src={getFlagUrl(country.code, 32)} 
+                alt={`${country.name} flag`}
+                className="w-6 h-4 object-cover rounded-sm"
+              />
             </h2>
             <p className="text-slate-400 text-sm mb-4">
               Explore local time in {cities.length} {cities.length === 1 ? 'city' : 'cities'} across {country.name}
@@ -325,9 +331,13 @@ export default async function CountryPage({ params }: CountryPageProps) {
                 <Link
                   key={c.slug}
                   href={`/country/${c.slug}`}
-                  className="px-4 py-2 rounded-full text-sm bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 hover:text-cyan-400 transition-all flex items-center gap-2"
+                  className="px-3 py-2 rounded-full text-sm bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 hover:text-cyan-400 transition-all flex items-center gap-2"
                 >
-                  <span>{getFlag(c.code)}</span>
+                  <img 
+                    src={getFlagUrl(c.code, 24)} 
+                    alt={`${c.name} flag`}
+                    className="w-5 h-3.5 object-cover rounded-sm"
+                  />
                   <span>{c.name}</span>
                 </Link>
               ))}

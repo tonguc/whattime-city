@@ -7,6 +7,7 @@ import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes } from '@/lib/themes'
 import { useCityContext } from '@/lib/CityContext'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 // 50+ Major cities with coordinates (x: 0-100, y: 0-60)
 const mapCities = [
@@ -659,6 +660,8 @@ export default function WorldMap() {
           </div>
         </div>
       </div>
+      
+      <Footer isLight={isLight} />
     </div>
   )
 }

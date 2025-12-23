@@ -6,13 +6,9 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { useCityContext } from '@/lib/CityContext'
 
-// Convert country code to flag emoji (TR → 🇹🇷)
-function getFlag(countryCode: string): string {
-  return countryCode
-    .toUpperCase()
-    .split('')
-    .map(char => String.fromCodePoint(127397 + char.charCodeAt(0)))
-    .join('')
+// Get flag image URL from CDN
+function getFlagUrl(countryCode: string, size: number = 24): string {
+  return `https://flagcdn.com/w${size}/${countryCode.toLowerCase()}.png`
 }
 
 // Group countries by continent
@@ -125,7 +121,11 @@ export default function CountriesContent() {
                               {country.timezones[0]}
                             </div>
                           </div>
-                          <span className="text-xl flex-shrink-0">{getFlag(country.code)}</span>
+                          <img 
+                            src={getFlagUrl(country.code, 32)} 
+                            alt={`${country.name} flag`}
+                            className="w-6 h-4 object-cover rounded-sm flex-shrink-0"
+                          />
                         </div>
                       </Link>
                     )
