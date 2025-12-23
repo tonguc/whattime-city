@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { WeatherAnimation } from '@/lib/weather'
 
 interface WeatherBackgroundProps {
@@ -9,29 +9,31 @@ interface WeatherBackgroundProps {
 }
 
 export default function WeatherBackground({ animation, isDay }: WeatherBackgroundProps) {
-  // Prevent hydration mismatch - only render on client
-  const [mounted, setMounted] = useState(false)
+  // Use ref to track if we've mounted, avoiding state-based re-renders
+  const hasMounted = useRef(false)
+  const [isClient, setIsClient] = useState(false)
   
   useEffect(() => {
-    setMounted(true)
+    hasMounted.current = true
+    setIsClient(true)
   }, [])
   
-  // Don't render until client-side mounted
-  if (!mounted) return null
+  // Don't render until client-side mounted (prevent hydration mismatch)
+  if (!isClient) return null
   
   return (
     <div className="fixed inset-x-0 top-0 h-screen overflow-hidden pointer-events-none z-[2]">
-      {/* Clear weather only - day/night effects */}
-      {animation === 'clear' && isDay && <SunAnimation />}
-      {animation === 'clear' && !isDay && <NightAnimation />}
+      {/* AMBIENT LAYER: Day/Night effects - ALWAYS visible based on time of day */}
+      {/* These create the base atmosphere regardless of weather */}
+      {isDay ? <SunAnimation /> : <NightAnimation />}
       
-      {/* Weather-specific animations */}
+      {/* WEATHER LAYER: Weather-specific animations overlay on top */}
       {animation === 'rain' && <RainAnimation />}
       {animation === 'drizzle' && <DrizzleAnimation />}
       {animation === 'snow' && <SnowAnimation />}
       {animation === 'thunder' && <ThunderAnimation />}
-      
-      {/* Fog/Clouds = no animation, just gradient + badge */}
+      {animation === 'cloudy' && <CloudyAnimation isDay={isDay} />}
+      {animation === 'fog' && <FogAnimation />}
     </div>
   )
 }
@@ -282,6 +284,69 @@ function NightAnimation() {
           }}
         />
       ))}
+    </>
+  )
+}
+
+function CloudyAnimation({ isDay }: { isDay: boolean }) {
+  const [clouds] = useState(() =>
+    Array.from({ length: 6 }, (_, i) => ({
+      id: i,
+      left: -20 + Math.random() * 10,
+      top: 5 + Math.random() * 25,
+      scale: 0.8 + Math.random() * 0.6,
+      duration: 40 + Math.random() * 30,
+      delay: i * 8
+    }))
+  )
+  
+  return (
+    <>
+      <style>{`
+        @keyframes cloudDrift {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(100vw + 200px)); }
+        }
+      `}</style>
+      {clouds.map((cloud) => (
+        <div
+          key={cloud.id}
+          className={`absolute rounded-full ${isDay ? 'bg-white/30' : 'bg-slate-400/20'} blur-xl`}
+          style={{
+            left: `${cloud.left}%`,
+            top: `${cloud.top}%`,
+            width: `${150 * cloud.scale}px`,
+            height: `${80 * cloud.scale}px`,
+            animation: `cloudDrift ${cloud.duration}s linear infinite`,
+            animationDelay: `${cloud.delay}s`,
+          }}
+        />
+      ))}
+    </>
+  )
+}
+
+function FogAnimation() {
+  return (
+    <>
+      <style>{`
+        @keyframes fogDrift {
+          0%, 100% { opacity: 0.2; transform: translateX(-5%); }
+          50% { opacity: 0.4; transform: translateX(5%); }
+        }
+        @keyframes fogDrift2 {
+          0%, 100% { opacity: 0.3; transform: translateX(3%); }
+          50% { opacity: 0.15; transform: translateX(-3%); }
+        }
+      `}</style>
+      <div 
+        className="absolute inset-0 bg-gradient-to-b from-slate-200/40 via-slate-300/30 to-transparent"
+        style={{ animation: 'fogDrift 15s ease-in-out infinite' }}
+      />
+      <div 
+        className="absolute inset-0 bg-gradient-to-t from-slate-100/30 via-slate-200/20 to-transparent"
+        style={{ animation: 'fogDrift2 20s ease-in-out infinite' }}
+      />
     </>
   )
 }
