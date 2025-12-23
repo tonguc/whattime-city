@@ -23,21 +23,10 @@ const popularComparisons = [
   { from: 'london', to: 'sydney', label: 'London ↔ Sydney' },
   { from: 'new-york', to: 'tokyo', label: 'NYC ↔ Tokyo' },
   { from: 'mumbai', to: 'london', label: 'Mumbai ↔ London' },
-]
-
-const popularCitySlugs = [
-  'london', 'tokyo', 'new-york', 'paris', 'dubai', 'sydney',
-  'singapore', 'berlin', 'toronto', 'hong-kong', 'los-angeles', 
-  'mumbai', 'shanghai', 'moscow', 'amsterdam', 'bangkok',
-  'seoul', 'istanbul', 'cairo', 'jakarta'
-]
-
-// 20+ major cities for world cities grid (ensures 18 after filtering user's city)
-const majorCitySlugs = [
-  'london', 'new-york', 'tokyo', 'paris', 'dubai', 'sydney',
-  'singapore', 'los-angeles', 'berlin', 'hong-kong', 'mumbai', 'sao-paulo',
-  'toronto', 'moscow', 'shanghai', 'seoul', 'bangkok', 'istanbul',
-  'cairo', 'amsterdam', 'jakarta', 'mexico-city'
+  { from: 'hong-kong', to: 'new-york', label: 'Hong Kong ↔ NYC' },
+  { from: 'singapore', to: 'london', label: 'Singapore ↔ London' },
+  { from: 'dubai', to: 'new-york', label: 'Dubai ↔ NYC' },
+  { from: 'tokyo', to: 'paris', label: 'Tokyo ↔ Paris' },
 ]
 
 export default function HomePage() {
@@ -78,6 +67,9 @@ export default function HomePage() {
   const [compareWithQuery, setCompareWithQuery] = useState('')
   const [compareWithResults, setCompareWithResults] = useState<City[]>([])
   const compareWithRef = useRef<HTMLDivElement>(null)
+  
+  // World Cities tab state
+  const [worldCitiesTab, setWorldCitiesTab] = useState<'top' | 'americas' | 'europe' | 'asia' | 'africa' | 'oceania'>('top')
 
   // Set fromCity when detectedCity becomes available (for comparison feature)
   useEffect(() => {
@@ -154,13 +146,43 @@ export default function HomePage() {
 
   // Derived data
   const favoriteCities = favorites.map(slug => cities.find(c => c.slug === slug)).filter((c): c is City => c !== undefined)
-  const popularCities = popularCitySlugs.map(slug => cities.find(c => c.slug === slug)).filter((c): c is City => c !== undefined)
   
-  // Always show 18 cities (exclude user's detected city)
-  const majorCities = majorCitySlugs
-    .map(slug => cities.find(c => c.slug === slug))
-    .filter((c): c is City => c !== undefined && c.slug !== detectedCity?.slug)
-    .slice(0, 18)
+  // Top cities for "Top Cities" tab
+  const topCitySlugs = [
+    'new-york', 'london', 'tokyo', 'paris', 'dubai', 'singapore',
+    'hong-kong', 'shanghai', 'sydney', 'los-angeles', 'toronto', 'berlin'
+  ]
+  
+  // Get cities by continent - filter out user's detected city
+  const getCitiesByContinent = (continent: string) => {
+    return cities
+      .filter(c => c.continent === continent && c.slug !== detectedCity?.slug)
+      .sort((a, b) => (a.tier || 3) - (b.tier || 3))
+      .slice(0, 12)
+  }
+  
+  // Get cities based on current tab
+  const getWorldCities = () => {
+    switch (worldCitiesTab) {
+      case 'americas':
+        return getCitiesByContinent('americas')
+      case 'europe':
+        return getCitiesByContinent('europe')
+      case 'asia':
+        return getCitiesByContinent('asia')
+      case 'africa':
+        return getCitiesByContinent('africa')
+      case 'oceania':
+        return getCitiesByContinent('oceania')
+      default: // 'top'
+        return topCitySlugs
+          .map(slug => cities.find(c => c.slug === slug))
+          .filter((c): c is City => c !== undefined && c.slug !== detectedCity?.slug)
+          .slice(0, 12)
+    }
+  }
+  
+  const worldCities = getWorldCities()
   
   // Get relative offset in hours
   const getRelativeOffset = (targetCity: City): number => {
@@ -395,108 +417,127 @@ export default function HomePage() {
 
         {/* POPULAR COMPARISONS */}
         <section className={`rounded-2xl p-5 mb-4 backdrop-blur-xl border ${homeTheme.card}`}>
-          <h3 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${homeTheme.text}`}>
-            <svg className={`w-5 h-5 ${homeIsLight ? 'text-blue-500' : 'text-blue-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-            </svg>
-            Popular Comparisons
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className={`text-lg font-semibold flex items-center gap-2 ${homeTheme.text}`}>
+              <svg className={`w-5 h-5 ${homeIsLight ? 'text-blue-500' : 'text-blue-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+              </svg>
+              Popular Comparisons
+            </h3>
+            <Link href="/tools/converter" className={`text-sm font-medium ${homeTheme.accentText} hover:underline`}>
+              See All →
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
             {popularComparisons.map(c => (
               <Link key={`${c.from}-${c.to}`} href={`/time/${c.from}/${c.to}`}
                 className={`px-3 py-2 rounded-lg text-sm text-left transition-all ${homeIsLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-slate-300'}`}>
                 {c.label}
               </Link>
             ))}
-            <Link href="/tools/converter" className={`px-3 py-2 rounded-lg text-sm text-left font-medium ${homeTheme.accentText} ${homeIsLight ? 'bg-blue-50' : 'bg-blue-900/20'}`}>
-              All →
-            </Link>
           </div>
         </section>
 
-        {/* WORLD CITIES */}
+        {/* WORLD CITIES - Tab-based design */}
         <section className={`rounded-2xl p-5 mb-4 backdrop-blur-xl border ${homeTheme.card}`}>
-          <div className="flex items-center gap-2 mb-4">
-            <svg className={`w-5 h-5 ${homeIsLight ? 'text-emerald-500' : 'text-emerald-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M2 12h20"/>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-            </svg>
+          {/* Header with tabs */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
             <h3 className={`text-lg font-semibold ${homeTheme.text}`}>World Cities</h3>
-            {detectedCity && (
-              <span className={`text-sm ${homeTheme.textMuted}`}>· relative to {detectedCity.city}</span>
-            )}
+            
+            {/* Tabs */}
+            <div className="flex flex-wrap gap-1">
+              {[
+                { id: 'top', label: 'Top Cities' },
+                { id: 'americas', label: 'Americas' },
+                { id: 'europe', label: 'Europe' },
+                { id: 'asia', label: 'Asia' },
+                { id: 'africa', label: 'Africa' },
+                { id: 'oceania', label: 'Oceania' },
+              ].map(tab => (
+                <button
+                  key={tab.id}
+                  onClick={() => setWorldCitiesTab(tab.id as typeof worldCitiesTab)}
+                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+                    worldCitiesTab === tab.id
+                      ? homeIsLight
+                        ? 'bg-purple-500 text-white'
+                        : 'bg-purple-500 text-white'
+                      : homeIsLight
+                        ? 'text-slate-600 hover:bg-slate-100'
+                        : 'text-slate-400 hover:bg-slate-700'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {majorCities.map(city => {
+          {/* City Grid - 3 columns on desktop */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {/* My Location Card - First position, special styling */}
+            {detectedCity && (
+              <Link 
+                href={`/${detectedCity.slug}`}
+                className={`flex items-center justify-between p-4 rounded-xl transition-all hover:scale-[1.02] ${
+                  homeIsLight 
+                    ? 'bg-gradient-to-r from-amber-100 to-orange-100 border-2 border-amber-300 hover:border-amber-400' 
+                    : 'bg-gradient-to-r from-amber-900/40 to-orange-900/40 border-2 border-amber-600 hover:border-amber-500'
+                }`}
+              >
+                <div>
+                  <div className={`text-xs font-medium uppercase tracking-wide ${homeIsLight ? 'text-amber-700' : 'text-amber-400'}`}>
+                    📍 Your Location
+                  </div>
+                  <div className={`text-lg font-bold ${homeTheme.text}`}>{detectedCity.city}</div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className={`text-2xl font-bold tabular-nums ${homeTheme.text}`}>
+                    {getLocalTime(detectedCity)}
+                  </span>
+                  {(() => {
+                    const tod = getCityTimeOfDay(detectedCity)
+                    const Icon = TimeIcons[tod]
+                    return <Icon className={`w-5 h-5 ${
+                      tod === 'day' ? 'text-amber-500' : 
+                      tod === 'night' ? 'text-indigo-400' : 
+                      tod === 'dawn' ? 'text-orange-400' : 'text-purple-400'
+                    }`} />
+                  })()}
+                </div>
+              </Link>
+            )}
+            
+            {/* World Cities */}
+            {worldCities.map(city => {
               const cityTime = getLocalTime(city)
-              const offset = getRelativeOffset(city)
-              const offsetStr = offset === 0 ? 'Same time' : `${offset > 0 ? '+' : ''}${offset}h`
               const tod = getCityTimeOfDay(city)
               const Icon = TimeIcons[tod]
               
               return (
-                <div key={city.slug} className={`flex items-center gap-4 p-4 rounded-xl ${homeIsLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-                  <Icon className={`w-5 h-5 flex-shrink-0 ${
-                    tod === 'day' ? 'text-amber-500' : 
-                    tod === 'night' ? 'text-indigo-400' : 
-                    tod === 'dawn' ? 'text-orange-400' : 'text-purple-400'
-                  }`} />
-                  <div className="flex-1 min-w-0">
-                    <div className={`font-medium ${homeTheme.text}`}>{city.city}</div>
-                    <div className={`text-xs ${homeTheme.textMuted}`}>{city.country}</div>
-                  </div>
-                  <div className="text-right">
-                    <div className={`text-xl font-bold ${homeTheme.text}`}>{cityTime}</div>
-                    <div className={`text-xs ${offset > 0 ? 'text-green-500' : offset < 0 ? 'text-orange-500' : homeTheme.textMuted}`}>
-                      {offsetStr}
+                <Link 
+                  key={city.slug} 
+                  href={`/${city.slug}`}
+                  className={`flex items-center justify-between p-4 rounded-xl transition-all hover:scale-[1.02] ${
+                    homeIsLight ? 'bg-slate-100 hover:bg-slate-200' : 'bg-slate-800/50 hover:bg-slate-700/50'
+                  }`}
+                >
+                  <div>
+                    <div className={`text-xs uppercase tracking-wide ${homeTheme.textMuted}`}>
+                      {city.country}
                     </div>
+                    <div className={`text-lg font-bold ${homeTheme.text}`}>{city.city}</div>
                   </div>
-                  <Link 
-                    href={detectedCity ? `/time/${detectedCity.slug}/${city.slug}` : `/${city.slug}`}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all flex-shrink-0 ${
-                      homeIsLight ? 'bg-blue-100 hover:bg-blue-200 text-blue-700' : 'bg-blue-900/50 hover:bg-blue-800/50 text-blue-300'
-                    }`}
-                  >
-                    Compare
-                  </Link>
-                </div>
-              )
-            })}
-          </div>
-          
-          {/* All Cities Button */}
-          <div className="mt-4 text-center">
-            <Link href="/country" className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all ${
-              homeIsLight ? 'bg-emerald-100 hover:bg-emerald-200 text-emerald-700' : 'bg-emerald-900/30 hover:bg-emerald-900/50 text-emerald-400'
-            }`}>
-              All Cities
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Link>
-          </div>
-        </section>
-
-        {/* POPULAR CITIES */}
-        <section className={`rounded-2xl p-5 mb-4 backdrop-blur-xl border ${homeTheme.card}`}>
-          <h3 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${homeTheme.text}`}>
-            <svg className={`w-5 h-5 ${homeIsLight ? 'text-orange-500' : 'text-orange-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-            </svg>
-            Popular Cities
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-2">
-            {popularCities.slice(0, 16).map(city => {
-              const tod = getCityTimeOfDay(city)
-              const Icon = TimeIcons[tod]
-              return (
-                <Link key={city.slug} href={`/${city.slug}`}
-                  className={`px-3 py-2 rounded-lg text-sm transition-all flex items-center gap-1.5 ${homeIsLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-slate-300'}`}
-                  title={`${city.city} - ${tod}`}>
-                  <Icon className="w-3.5 h-3.5 flex-shrink-0" />
-                  <span className="truncate">{city.city}</span>
+                  <div className="flex items-center gap-2">
+                    <span className={`text-2xl font-bold tabular-nums ${homeTheme.text}`}>
+                      {cityTime}
+                    </span>
+                    <Icon className={`w-5 h-5 ${
+                      tod === 'day' ? 'text-amber-500' : 
+                      tod === 'night' ? 'text-indigo-400' : 
+                      tod === 'dawn' ? 'text-orange-400' : 'text-purple-400'
+                    }`} />
+                  </div>
                 </Link>
               )
             })}
@@ -505,7 +546,7 @@ export default function HomePage() {
           {/* All Cities Button */}
           <div className="mt-4 text-center">
             <Link href="/country" className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all ${
-              homeIsLight ? 'bg-orange-100 hover:bg-orange-200 text-orange-700' : 'bg-orange-900/30 hover:bg-orange-900/50 text-orange-400'
+              homeIsLight ? 'bg-emerald-100 hover:bg-emerald-200 text-emerald-700' : 'bg-emerald-900/30 hover:bg-emerald-900/50 text-emerald-400'
             }`}>
               All Cities
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
