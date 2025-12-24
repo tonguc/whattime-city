@@ -167,10 +167,10 @@ export default function MapSVG({
                   ? '#f472b6' 
                   : '#fbbf24'
 
-            // Küçük dot boyutları
+            // Küçük dot boyutları - temiz görünüm için
             const tier = city.tier ?? 3
-            const baseDotSize = tier === 1 ? 5 : tier === 2 ? 4 : 3
-            const dotSize = isHighlighted ? 10 : baseDotSize
+            const baseDotSize = tier === 1 ? 4 : tier === 2 ? 3 : 2
+            const dotSize = isHighlighted ? 8 : baseDotSize
 
             return (
               <Marker

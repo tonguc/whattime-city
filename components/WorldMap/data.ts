@@ -2,11 +2,10 @@
 export const WORLD_MAP_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json'
 
 // Zoom seviyesine göre hangi tier'ların gösterileceği
-// ÇOK TEMİZ görünüm için yüksek eşikler
+// İlk yüklemede yeterli şehir, yakınlaştıkça daha fazla
 export const getVisibleTiers = (zoom: number): number[] => {
-  if (zoom >= 6) return [1, 2, 3]  // Çok yakın: tümü
-  if (zoom >= 4) return [1, 2]     // Yakın: tier 1+2
-  return [1]                        // Normal: sadece tier 1 (~15 şehir)
+  if (zoom >= 3) return [1, 2, 3]  // Yakın: tümü (397)
+  return [1, 2]                     // Normal: Tier 1+2 (~96 şehir)
 }
 
 // Şehir görünürlüğünü kontrol et
