@@ -1,22 +1,16 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { cities } from '@/lib/cities'
+import { cities, getAllSlugs } from '@/lib/cities'
 import EmbedClockWidget from '@/components/EmbedClockWidget'
 
 interface EmbedPageProps {
   params: Promise<{ city: string }>
-  searchParams: Promise<{ 
-    theme?: string
-    size?: string
-    showDate?: string
-    showTimezone?: string
-    transparent?: string
-  }>
 }
 
+// ✅ Tüm şehirler için statik sayfa oluştur
 export async function generateStaticParams() {
-  return cities.map((city) => ({
-    city: city.slug,
+  return getAllSlugs().map((slug) => ({
+    city: slug,
   }))
 }
 
@@ -31,11 +25,11 @@ export async function generateMetadata({ params }: EmbedPageProps): Promise<Meta
   return {
     title: `${city.city} Clock Widget - whattime.city`,
     description: `Embeddable clock widget for ${city.city}, ${city.country}`,
-    robots: 'noindex, nofollow', // Don't index embed pages
+    robots: 'noindex, nofollow',
   }
 }
 
-export default async function EmbedPage({ params, searchParams }: EmbedPageProps) {
+export default async function EmbedPage({ params }: EmbedPageProps) {
   const { city: citySlug } = await params
   const city = cities.find(c => c.slug === citySlug)
   
@@ -43,16 +37,16 @@ export default async function EmbedPage({ params, searchParams }: EmbedPageProps
     notFound()
   }
   
-  const options = await searchParams
-  
+  // ✅ Statik export için varsayılan değerler kullan
+  // URL parametreleri client-side'da EmbedClockWidget içinde işlenecek
   return (
     <EmbedClockWidget 
       city={city} 
-      theme={options.theme || 'auto'}
-      size={options.size || 'medium'}
-      showDate={options.showDate !== 'false'}
-      showTimezone={options.showTimezone !== 'false'}
-      transparent={options.transparent === 'true'}
+      theme="auto"
+      size="medium"
+      showDate={true}
+      showTimezone={true}
+      transparent={false}
     />
   )
 }

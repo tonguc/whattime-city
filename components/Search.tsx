@@ -1,15 +1,59 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
-import { City, searchCities } from '@/lib/cities'
 import { Theme } from '@/lib/themes'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { saveCityContext } from '@/lib/city-context'
 
+/**
+ * 🔍 Search Component (Statik Export Uyumlu)
+ * 
+ * Full cities data yerine hafif search-index.json kullanır.
+ * Client-side fetch ile veri çeker - bundle size'ı etkilemez.
+ */
+
+// Hafif search index tipi (minified keys)
+interface SearchCity {
+  s: string   // slug
+  c: string   // city
+  z: string   // timezone
+  n: string   // country (nation)
+  cc: string  // countryCode
+  lt: number  // lat
+  ln: number  // lng
+  t: number   // tier
+}
+
+// Component içinde kullanılacak tip
+interface City {
+  slug: string
+  city: string
+  timezone: string
+  country: string
+  countryCode: string
+  lat: number
+  lng: number
+  tier: number
+}
+
 interface SearchProps {
   theme: Theme
   currentTheme: string
+}
+
+// SearchCity -> City dönüşümü
+function mapToCity(sc: SearchCity): City {
+  return {
+    slug: sc.s,
+    city: sc.c,
+    timezone: sc.z,
+    country: sc.n,
+    countryCode: sc.cc,
+    lat: sc.lt,
+    lng: sc.ln,
+    tier: sc.t
+  }
 }
 
 export default function Search({ theme, currentTheme }: SearchProps) {
@@ -18,18 +62,38 @@ export default function Search({ theme, currentTheme }: SearchProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [now, setNow] = useState(new Date())
+  const [searchIndex, setSearchIndex] = useState<City[]>([])
+  const [isLoading, setIsLoading] = useState(false)
+  
   const inputRef = useRef<HTMLInputElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
   
   const isLight = ['day', 'light'].includes(currentTheme)
   
+  // ⏰ Saat güncelleme
   useEffect(() => {
     const timer = setInterval(() => setNow(new Date()), 1000)
     return () => clearInterval(timer)
   }, [])
   
-  // Click outside handler to close dropdown
+  // 🔍 Search Index'i Lazy Load Et (ilk focus'ta)
+  const loadSearchIndex = useCallback(async () => {
+    if (searchIndex.length > 0 || isLoading) return
+    
+    setIsLoading(true)
+    try {
+      const res = await fetch('/search-index.json')
+      const data: SearchCity[] = await res.json()
+      setSearchIndex(data.map(mapToCity))
+    } catch (error) {
+      console.error('Search index yüklenemedi:', error)
+    } finally {
+      setIsLoading(false)
+    }
+  }, [searchIndex.length, isLoading])
+  
+  // 🖱️ Dışarı tıklayınca kapat
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
@@ -41,9 +105,18 @@ export default function Search({ theme, currentTheme }: SearchProps) {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
   
+  // 🔎 Arama işlemi
   useEffect(() => {
-    if (query.length >= 1) {
-      const found = searchCities(query).slice(0, 8)
+    if (query.length >= 1 && searchIndex.length > 0) {
+      const q = query.toLowerCase()
+      const found = searchIndex
+        .filter(c => 
+          c.city.toLowerCase().includes(q) || 
+          c.country.toLowerCase().includes(q) ||
+          c.slug.includes(q)
+        )
+        .slice(0, 8)
+      
       setResults(found)
       setIsOpen(found.length > 0)
       setSelectedIndex(0)
@@ -51,10 +124,10 @@ export default function Search({ theme, currentTheme }: SearchProps) {
       setResults([])
       setIsOpen(false)
     }
-  }, [query])
+  }, [query, searchIndex])
   
+  // 🏙️ Şehir seçimi
   const handleSelect = (city: City) => {
-    // Save city context BEFORE navigation - ensures Tools page gets correct theme
     saveCityContext({
       slug: city.slug,
       city: city.city,
@@ -67,6 +140,7 @@ export default function Search({ theme, currentTheme }: SearchProps) {
     setIsOpen(false)
   }
   
+  // ⌨️ Klavye navigasyonu
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'ArrowDown') {
       e.preventDefault()
@@ -82,6 +156,7 @@ export default function Search({ theme, currentTheme }: SearchProps) {
     }
   }
   
+  // 🕐 Şehir saati
   const getCityTime = (city: City) => {
     return now.toLocaleTimeString('en-US', {
       timeZone: city.timezone,
@@ -91,7 +166,7 @@ export default function Search({ theme, currentTheme }: SearchProps) {
     })
   }
   
-  // Use real UTC time (now) for correct day/night calculation
+  // 🌅 Gündüz/Gece ikonu
   const getCityDayNight = (city: City) => {
     const timeOfDay = getTimeOfDay(now, city.lat, city.lng, city.timezone)
     return timeOfDay === 'day' || timeOfDay === 'dawn' || timeOfDay === 'dusk' ? '☀️' : '🌙'
@@ -114,8 +189,11 @@ export default function Search({ theme, currentTheme }: SearchProps) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={handleKeyDown}
-          onFocus={() => query && setIsOpen(true)}
-          placeholder="Search (e.g. Tokyo, Berlin)"
+          onFocus={() => {
+            loadSearchIndex() // İlk focus'ta yükle
+            if (query) setIsOpen(true)
+          }}
+          placeholder={isLoading ? 'Loading...' : 'Search (e.g. Tokyo, Berlin)'}
           className={`bg-transparent outline-none w-full sm:w-52 box-border ${
             isLight ? 'text-slate-800 placeholder-slate-400' : 'text-white placeholder-slate-500'
           }`}

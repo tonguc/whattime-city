@@ -1,0 +1,21 @@
+# Cloudflare Pages Headers
+# https://developers.cloudflare.com/pages/platform/headers/
+
+# Tüm sayfalar için cache ve güvenlik ayarları
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Statik dosyalar için uzun süreli cache
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Search index için kısa cache (güncellenebilir)
+/search-index.json
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+# Embed sayfaları iframe'de gösterilebilir
+/embed/*
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *

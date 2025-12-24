@@ -39,13 +39,36 @@ const sizeStyles = {
 
 export default function EmbedClockWidget({ 
   city, 
-  theme = 'auto',
-  size = 'medium',
-  showDate = true,
-  showTimezone = true,
-  transparent = false
+  theme: defaultTheme = 'auto',
+  size: defaultSize = 'medium',
+  showDate: defaultShowDate = true,
+  showTimezone: defaultShowTimezone = true,
+  transparent: defaultTransparent = false
 }: EmbedClockWidgetProps) {
   const [time, setTime] = useState(new Date())
+  
+  // ✅ Client-side URL parametrelerini oku (statik export uyumlu)
+  const [options, setOptions] = useState({
+    theme: defaultTheme,
+    size: defaultSize,
+    showDate: defaultShowDate,
+    showTimezone: defaultShowTimezone,
+    transparent: defaultTransparent
+  })
+  
+  // ✅ URL parametrelerini client-side'da oku
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search)
+      setOptions({
+        theme: params.get('theme') || defaultTheme,
+        size: params.get('size') || defaultSize,
+        showDate: params.get('showDate') !== 'false',
+        showTimezone: params.get('showTimezone') !== 'false',
+        transparent: params.get('transparent') === 'true'
+      })
+    }
+  }, [defaultTheme, defaultSize, defaultShowDate, defaultShowTimezone, defaultTransparent])
   
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000)
@@ -75,6 +98,7 @@ export default function EmbedClockWidget({
   }).split(' ').pop()
   
   // Determine theme
+  const { theme, size, showDate, showTimezone, transparent } = options
   const timeOfDay = getTimeOfDay(time, city.lat, city.lng, city.timezone)
   const isLight = theme === 'light' || (theme === 'auto' && (timeOfDay === 'day' || timeOfDay === 'dawn'))
   const isDark = theme === 'dark' || (theme === 'auto' && (timeOfDay === 'night' || timeOfDay === 'dusk'))

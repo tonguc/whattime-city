@@ -1,0 +1,12 @@
+# Cloudflare Pages Redirects
+# https://developers.cloudflare.com/pages/platform/redirects/
+
+# Trailing slash olmayan URL'leri yönlendir
+# Next.js trailingSlash: true ayarı ile uyumlu
+
+# Eski URL yapıları (varsa)
+# /old-path  /new-path  301
+
+# SPA fallback - tüm 404'ler için
+# NOT: Statik export'ta bu genellikle gerekli değil
+# çünkü tüm sayfalar pre-render edilmiş
