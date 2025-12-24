@@ -1660,7 +1660,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'honolulu', city: 'Honolulu', timezone: 'Pacific/Honolulu', country: 'United States', countryCode: 'US', lat: 21.31, lng: -157.86, tier: 3, continent: 'oceania',
+  { slug: 'honolulu', city: 'Honolulu', timezone: 'Pacific/Honolulu', country: 'United States', countryCode: 'US', lat: 21.31, lng: -157.86, tier: 2, continent: 'oceania',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '350K', metroPopulation: '1M', phoneCode: '+1 808', language: 'English, Hawaiian',
       climate: 'Tropical with consistent temperatures (23-30°C) year-round. Trade winds keep it comfortable.',
@@ -1764,7 +1764,7 @@ export const cities: City[] = [
   },
 
   // Latin America
-  { slug: 'santiago', city: 'Santiago', timezone: 'America/Santiago', country: 'Chile', countryCode: 'CL', lat: -33.45, lng: -70.67, tier: 3, continent: 'americas',
+  { slug: 'santiago', city: 'Santiago', timezone: 'America/Santiago', country: 'Chile', countryCode: 'CL', lat: -33.45, lng: -70.67, tier: 2, continent: 'americas',
     info: {
       currency: 'Chilean Peso', currencySymbol: '$', population: '5.6M', metroPopulation: '7.1M', phoneCode: '+56 2', language: 'Spanish',
       climate: 'Mediterranean with warm dry summers (20-30°C) and cool wet winters (5-14°C). Andes visible on clear days.',
@@ -1784,7 +1784,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'bogota', city: 'Bogotá', timezone: 'America/Bogota', country: 'Colombia', countryCode: 'CO', lat: 4.71, lng: -74.07, tier: 3, continent: 'americas',
+  { slug: 'bogota', city: 'Bogotá', timezone: 'America/Bogota', country: 'Colombia', countryCode: 'CO', lat: 4.71, lng: -74.07, tier: 2, continent: 'americas',
     info: {
       currency: 'Colombian Peso', currencySymbol: '$', population: '7.4M', metroPopulation: '10.7M', phoneCode: '+57 1', language: 'Spanish',
       climate: 'Subtropical highland with mild consistent temperatures (12-19°C). Can be rainy. Cool due to altitude (2,640m).',
@@ -1804,7 +1804,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'lima', city: 'Lima', timezone: 'America/Lima', country: 'Peru', countryCode: 'PE', lat: -12.05, lng: -77.04, tier: 3, continent: 'americas',
+  { slug: 'lima', city: 'Lima', timezone: 'America/Lima', country: 'Peru', countryCode: 'PE', lat: -12.05, lng: -77.04, tier: 2, continent: 'americas',
     info: {
       currency: 'Peruvian Sol', currencySymbol: 'S/', population: '9.7M', metroPopulation: '11M', phoneCode: '+51 1', language: 'Spanish',
       climate: 'Subtropical desert with mild temperatures (15-27°C). Coastal fog (garúa) common May-November. Rarely rains.',
@@ -1824,7 +1824,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'caracas', city: 'Caracas', timezone: 'America/Caracas', country: 'Venezuela', countryCode: 'VE', lat: 10.48, lng: -66.90, tier: 3, continent: 'americas',
+  { slug: 'caracas', city: 'Caracas', timezone: 'America/Caracas', country: 'Venezuela', countryCode: 'VE', lat: 10.48, lng: -66.90, tier: 2, continent: 'americas',
     info: {
       currency: 'Venezuelan Bolívar', currencySymbol: 'Bs.', population: '2.9M', metroPopulation: '5.2M', phoneCode: '+58 212', language: 'Spanish',
       climate: 'Tropical with consistent temperatures (18-27°C). Mountain location keeps it cooler than coast. Rainy May-October.',
@@ -3211,7 +3211,7 @@ export const cities: City[] = [
     }
   },
   // Oceania
-  { slug: 'brisbane', city: 'Brisbane', timezone: 'Australia/Brisbane', country: 'Australia', countryCode: 'AU', lat: -27.47, lng: 153.03, tier: 3, continent: 'oceania',
+  { slug: 'brisbane', city: 'Brisbane', timezone: 'Australia/Brisbane', country: 'Australia', countryCode: 'AU', lat: -27.47, lng: 153.03, tier: 2, continent: 'oceania',
     info: {
       currency: 'Australian Dollar', currencySymbol: 'A$', population: '2.5M', metroPopulation: '2.6M', phoneCode: '+61 7', language: 'English',
       climate: 'Humid subtropical with hot humid summers (21-30°C) and mild dry winters (10-21°C).',
@@ -3231,7 +3231,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'perth', city: 'Perth', timezone: 'Australia/Perth', country: 'Australia', countryCode: 'AU', lat: -31.95, lng: 115.86, tier: 3, continent: 'oceania',
+  { slug: 'perth', city: 'Perth', timezone: 'Australia/Perth', country: 'Australia', countryCode: 'AU', lat: -31.95, lng: 115.86, tier: 2, continent: 'oceania',
     info: {
       currency: 'Australian Dollar', currencySymbol: 'A$', population: '2.1M', metroPopulation: '2.2M', phoneCode: '+61 8', language: 'English',
       climate: 'Mediterranean with hot dry summers (25-32°C) and mild wet winters (8-18°C).',
@@ -3251,7 +3251,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'wellington', city: 'Wellington', timezone: 'Pacific/Auckland', country: 'New Zealand', countryCode: 'NZ', lat: -41.29, lng: 174.78, tier: 3, continent: 'oceania',
+  { slug: 'wellington', city: 'Wellington', timezone: 'Pacific/Auckland', country: 'New Zealand', countryCode: 'NZ', lat: -41.29, lng: 174.78, tier: 2, continent: 'oceania',
     info: {
       currency: 'New Zealand Dollar', currencySymbol: 'NZ$', population: '215K', metroPopulation: '420K', phoneCode: '+64 4', language: 'English, Māori',
       climate: 'Oceanic with mild temperatures (8-20°C). Very windy. Rain possible any time.',
@@ -3271,7 +3271,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'fiji', city: 'Suva', timezone: 'Pacific/Fiji', country: 'Fiji', countryCode: 'FJ', lat: -18.14, lng: 178.44, tier: 3, continent: 'oceania',
+  { slug: 'fiji', city: 'Suva', timezone: 'Pacific/Fiji', country: 'Fiji', countryCode: 'FJ', lat: -18.14, lng: 178.44, tier: 2, continent: 'oceania',
     info: {
       currency: 'Fijian Dollar', currencySymbol: 'FJ$', population: '95K', metroPopulation: '180K', phoneCode: '+679', language: 'Fijian, Hindi, English',
       climate: 'Tropical oceanic with hot humid weather year-round (23-30°C). Wet season November-April.',
@@ -3313,7 +3313,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'tunis', city: 'Tunis', timezone: 'Africa/Tunis', country: 'Tunisia', countryCode: 'TN', lat: 36.81, lng: 10.17, tier: 3, continent: 'africa',
+  { slug: 'tunis', city: 'Tunis', timezone: 'Africa/Tunis', country: 'Tunisia', countryCode: 'TN', lat: 36.81, lng: 10.17, tier: 2, continent: 'africa',
     info: {
       currency: 'Tunisian Dinar', currencySymbol: 'TND', population: '700K', metroPopulation: '2.7M', phoneCode: '+216 71', language: 'Arabic, French',
       climate: 'Mediterranean with hot dry summers (26-33°C) and mild wet winters (8-16°C).',
@@ -3333,7 +3333,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'algiers', city: 'Algiers', timezone: 'Africa/Algiers', country: 'Algeria', countryCode: 'DZ', lat: 36.74, lng: 3.09, tier: 3, continent: 'africa',
+  { slug: 'algiers', city: 'Algiers', timezone: 'Africa/Algiers', country: 'Algeria', countryCode: 'DZ', lat: 36.74, lng: 3.09, tier: 2, continent: 'africa',
     info: {
       currency: 'Algerian Dinar', currencySymbol: 'DZD', population: '3.4M', metroPopulation: '5M', phoneCode: '+213 21', language: 'Arabic, Berber, French',
       climate: 'Mediterranean with hot dry summers (25-32°C) and mild wet winters (9-17°C).',
@@ -3353,7 +3353,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'addis-ababa', city: 'Addis Ababa', timezone: 'Africa/Addis_Ababa', country: 'Ethiopia', countryCode: 'ET', lat: 9.02, lng: 38.75, tier: 3, continent: 'africa',
+  { slug: 'addis-ababa', city: 'Addis Ababa', timezone: 'Africa/Addis_Ababa', country: 'Ethiopia', countryCode: 'ET', lat: 9.02, lng: 38.75, tier: 2, continent: 'africa',
     info: {
       currency: 'Ethiopian Birr', currencySymbol: 'ETB', population: '5.2M', metroPopulation: '5.5M', phoneCode: '+251 11', language: 'Amharic, English',
       climate: 'Subtropical highland with mild temperatures year-round (10-25°C). Rainy June-September.',
@@ -3373,7 +3373,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'accra', city: 'Accra', timezone: 'Africa/Accra', country: 'Ghana', countryCode: 'GH', lat: 5.56, lng: -0.19, tier: 3, continent: 'africa',
+  { slug: 'accra', city: 'Accra', timezone: 'Africa/Accra', country: 'Ghana', countryCode: 'GH', lat: 5.56, lng: -0.19, tier: 2, continent: 'africa',
     info: {
       currency: 'Ghanaian Cedi', currencySymbol: 'GH₵', population: '2.5M', metroPopulation: '4.9M', phoneCode: '+233 30', language: 'English, Akan',
       climate: 'Tropical savanna with hot weather year-round (24-32°C). Two rainy seasons.',
@@ -3393,7 +3393,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'dar-es-salaam', city: 'Dar es Salaam', timezone: 'Africa/Dar_es_Salaam', country: 'Tanzania', countryCode: 'TZ', lat: -6.79, lng: 39.21, tier: 3, continent: 'africa',
+  { slug: 'dar-es-salaam', city: 'Dar es Salaam', timezone: 'Africa/Dar_es_Salaam', country: 'Tanzania', countryCode: 'TZ', lat: -6.79, lng: 39.21, tier: 2, continent: 'africa',
     info: {
       currency: 'Tanzanian Shilling', currencySymbol: 'TZS', population: '7.4M', metroPopulation: '7.4M', phoneCode: '+255 22', language: 'Swahili, English',
       climate: 'Tropical with hot humid weather year-round (24-32°C). Heavy rains March-May.',
@@ -3416,34 +3416,34 @@ export const cities: City[] = [
 
   // ========== CAPITAL CITIES FOR NEW COUNTRIES ==========
   // Africa Capitals
-  { slug: 'tripoli', city: 'Tripoli', timezone: 'Africa/Tripoli', country: 'Libya', countryCode: 'LY', lat: 32.89, lng: 13.19, tier: 3, continent: 'africa' },
-  { slug: 'khartoum', city: 'Khartoum', timezone: 'Africa/Khartoum', country: 'Sudan', countryCode: 'SD', lat: 15.59, lng: 32.53, tier: 3, continent: 'africa' },
+  { slug: 'tripoli', city: 'Tripoli', timezone: 'Africa/Tripoli', country: 'Libya', countryCode: 'LY', lat: 32.89, lng: 13.19, tier: 2, continent: 'africa' },
+  { slug: 'khartoum', city: 'Khartoum', timezone: 'Africa/Khartoum', country: 'Sudan', countryCode: 'SD', lat: 15.59, lng: 32.53, tier: 2, continent: 'africa' },
   { slug: 'juba', city: 'Juba', timezone: 'Africa/Juba', country: 'South Sudan', countryCode: 'SS', lat: 4.85, lng: 31.58, tier: 3, continent: 'africa' },
-  { slug: 'kampala', city: 'Kampala', timezone: 'Africa/Kampala', country: 'Uganda', countryCode: 'UG', lat: 0.31, lng: 32.58, tier: 3, continent: 'africa' },
-  { slug: 'kigali', city: 'Kigali', timezone: 'Africa/Kigali', country: 'Rwanda', countryCode: 'RW', lat: -1.94, lng: 30.06, tier: 3, continent: 'africa' },
+  { slug: 'kampala', city: 'Kampala', timezone: 'Africa/Kampala', country: 'Uganda', countryCode: 'UG', lat: 0.31, lng: 32.58, tier: 2, continent: 'africa' },
+  { slug: 'kigali', city: 'Kigali', timezone: 'Africa/Kigali', country: 'Rwanda', countryCode: 'RW', lat: -1.94, lng: 30.06, tier: 2, continent: 'africa' },
   { slug: 'gitega', city: 'Gitega', timezone: 'Africa/Bujumbura', country: 'Burundi', countryCode: 'BI', lat: -3.43, lng: 29.93, tier: 3, continent: 'africa' },
   { slug: 'kinshasa', city: 'Kinshasa', timezone: 'Africa/Kinshasa', country: 'DR Congo', countryCode: 'CD', lat: -4.44, lng: 15.27, tier: 2, continent: 'africa' },
-  { slug: 'brazzaville', city: 'Brazzaville', timezone: 'Africa/Brazzaville', country: 'Congo', countryCode: 'CG', lat: -4.27, lng: 15.28, tier: 3, continent: 'africa' },
-  { slug: 'harare', city: 'Harare', timezone: 'Africa/Harare', country: 'Zimbabwe', countryCode: 'ZW', lat: -17.83, lng: 31.05, tier: 3, continent: 'africa' },
-  { slug: 'lusaka', city: 'Lusaka', timezone: 'Africa/Lusaka', country: 'Zambia', countryCode: 'ZM', lat: -15.39, lng: 28.32, tier: 3, continent: 'africa' },
-  { slug: 'gaborone', city: 'Gaborone', timezone: 'Africa/Gaborone', country: 'Botswana', countryCode: 'BW', lat: -24.65, lng: 25.91, tier: 3, continent: 'africa' },
-  { slug: 'windhoek', city: 'Windhoek', timezone: 'Africa/Windhoek', country: 'Namibia', countryCode: 'NA', lat: -22.56, lng: 17.08, tier: 3, continent: 'africa' },
-  { slug: 'maputo', city: 'Maputo', timezone: 'Africa/Maputo', country: 'Mozambique', countryCode: 'MZ', lat: -25.97, lng: 32.58, tier: 3, continent: 'africa' },
+  { slug: 'brazzaville', city: 'Brazzaville', timezone: 'Africa/Brazzaville', country: 'Congo', countryCode: 'CG', lat: -4.27, lng: 15.28, tier: 2, continent: 'africa' },
+  { slug: 'harare', city: 'Harare', timezone: 'Africa/Harare', country: 'Zimbabwe', countryCode: 'ZW', lat: -17.83, lng: 31.05, tier: 2, continent: 'africa' },
+  { slug: 'lusaka', city: 'Lusaka', timezone: 'Africa/Lusaka', country: 'Zambia', countryCode: 'ZM', lat: -15.39, lng: 28.32, tier: 2, continent: 'africa' },
+  { slug: 'gaborone', city: 'Gaborone', timezone: 'Africa/Gaborone', country: 'Botswana', countryCode: 'BW', lat: -24.65, lng: 25.91, tier: 2, continent: 'africa' },
+  { slug: 'windhoek', city: 'Windhoek', timezone: 'Africa/Windhoek', country: 'Namibia', countryCode: 'NA', lat: -22.56, lng: 17.08, tier: 2, continent: 'africa' },
+  { slug: 'maputo', city: 'Maputo', timezone: 'Africa/Maputo', country: 'Mozambique', countryCode: 'MZ', lat: -25.97, lng: 32.58, tier: 2, continent: 'africa' },
   { slug: 'luanda', city: 'Luanda', timezone: 'Africa/Luanda', country: 'Angola', countryCode: 'AO', lat: -8.84, lng: 13.23, tier: 2, continent: 'africa' },
-  { slug: 'yaounde', city: 'Yaoundé', timezone: 'Africa/Douala', country: 'Cameroon', countryCode: 'CM', lat: 3.87, lng: 11.52, tier: 3, continent: 'africa' },
+  { slug: 'yaounde', city: 'Yaoundé', timezone: 'Africa/Douala', country: 'Cameroon', countryCode: 'CM', lat: 3.87, lng: 11.52, tier: 2, continent: 'africa' },
   { slug: 'yamoussoukro', city: 'Yamoussoukro', timezone: 'Africa/Abidjan', country: 'Ivory Coast', countryCode: 'CI', lat: 6.82, lng: -5.28, tier: 3, continent: 'africa' },
   { slug: 'dakar', city: 'Dakar', timezone: 'Africa/Dakar', country: 'Senegal', countryCode: 'SN', lat: 14.69, lng: -17.44, tier: 2, continent: 'africa' },
-  { slug: 'bamako', city: 'Bamako', timezone: 'Africa/Bamako', country: 'Mali', countryCode: 'ML', lat: 12.64, lng: -8.00, tier: 3, continent: 'africa' },
-  { slug: 'ouagadougou', city: 'Ouagadougou', timezone: 'Africa/Ouagadougou', country: 'Burkina Faso', countryCode: 'BF', lat: 12.37, lng: -1.52, tier: 3, continent: 'africa' },
-  { slug: 'niamey', city: 'Niamey', timezone: 'Africa/Niamey', country: 'Niger', countryCode: 'NE', lat: 13.51, lng: 2.11, tier: 3, continent: 'africa' },
-  { slug: 'ndjamena', city: 'N\'Djamena', timezone: 'Africa/Ndjamena', country: 'Chad', countryCode: 'TD', lat: 12.13, lng: 15.05, tier: 3, continent: 'africa' },
-  { slug: 'antananarivo', city: 'Antananarivo', timezone: 'Indian/Antananarivo', country: 'Madagascar', countryCode: 'MG', lat: -18.91, lng: 47.54, tier: 3, continent: 'africa' },
+  { slug: 'bamako', city: 'Bamako', timezone: 'Africa/Bamako', country: 'Mali', countryCode: 'ML', lat: 12.64, lng: -8.00, tier: 2, continent: 'africa' },
+  { slug: 'ouagadougou', city: 'Ouagadougou', timezone: 'Africa/Ouagadougou', country: 'Burkina Faso', countryCode: 'BF', lat: 12.37, lng: -1.52, tier: 2, continent: 'africa' },
+  { slug: 'niamey', city: 'Niamey', timezone: 'Africa/Niamey', country: 'Niger', countryCode: 'NE', lat: 13.51, lng: 2.11, tier: 2, continent: 'africa' },
+  { slug: 'ndjamena', city: "N'Djamena", timezone: 'Africa/Ndjamena', country: 'Chad', countryCode: 'TD', lat: 12.13, lng: 15.05, tier: 2, continent: 'africa' },
+  { slug: 'antananarivo', city: 'Antananarivo', timezone: 'Indian/Antananarivo', country: 'Madagascar', countryCode: 'MG', lat: -18.91, lng: 47.54, tier: 2, continent: 'africa' },
   { slug: 'port-louis', city: 'Port Louis', timezone: 'Indian/Mauritius', country: 'Mauritius', countryCode: 'MU', lat: -20.16, lng: 57.50, tier: 3, continent: 'africa' },
   { slug: 'lilongwe', city: 'Lilongwe', timezone: 'Africa/Blantyre', country: 'Malawi', countryCode: 'MW', lat: -13.98, lng: 33.79, tier: 3, continent: 'africa' },
-  { slug: 'mogadishu', city: 'Mogadishu', timezone: 'Africa/Mogadishu', country: 'Somalia', countryCode: 'SO', lat: 2.04, lng: 45.34, tier: 3, continent: 'africa' },
+  { slug: 'mogadishu', city: 'Mogadishu', timezone: 'Africa/Mogadishu', country: 'Somalia', countryCode: 'SO', lat: 2.04, lng: 45.34, tier: 2, continent: 'africa' },
   { slug: 'asmara', city: 'Asmara', timezone: 'Africa/Asmara', country: 'Eritrea', countryCode: 'ER', lat: 15.34, lng: 38.93, tier: 3, continent: 'africa' },
   { slug: 'djibouti-city', city: 'Djibouti City', timezone: 'Africa/Djibouti', country: 'Djibouti', countryCode: 'DJ', lat: 11.59, lng: 43.15, tier: 3, continent: 'africa' },
-  { slug: 'libreville', city: 'Libreville', timezone: 'Africa/Libreville', country: 'Gabon', countryCode: 'GA', lat: 0.39, lng: 9.45, tier: 3, continent: 'africa' },
+  { slug: 'libreville', city: 'Libreville', timezone: 'Africa/Libreville', country: 'Gabon', countryCode: 'GA', lat: 0.39, lng: 9.45, tier: 2, continent: 'africa' },
   { slug: 'malabo', city: 'Malabo', timezone: 'Africa/Malabo', country: 'Equatorial Guinea', countryCode: 'GQ', lat: 3.75, lng: 8.78, tier: 3, continent: 'africa' },
   { slug: 'bangui', city: 'Bangui', timezone: 'Africa/Bangui', country: 'Central African Republic', countryCode: 'CF', lat: 4.39, lng: 18.56, tier: 3, continent: 'africa' },
   { slug: 'bissau', city: 'Bissau', timezone: 'Africa/Bissau', country: 'Guinea-Bissau', countryCode: 'GW', lat: 11.86, lng: -15.60, tier: 3, continent: 'africa' },
@@ -3524,10 +3524,10 @@ export const cities: City[] = [
   { slug: 'san-juan', city: 'San Juan', timezone: 'America/Puerto_Rico', country: 'Puerto Rico', countryCode: 'PR', lat: 18.47, lng: -66.11, tier: 3, continent: 'americas' },
 
   // Oceania Capitals
-  { slug: 'port-moresby', city: 'Port Moresby', timezone: 'Pacific/Port_Moresby', country: 'Papua New Guinea', countryCode: 'PG', lat: -9.44, lng: 147.18, tier: 3, continent: 'oceania' },
+  { slug: 'port-moresby', city: 'Port Moresby', timezone: 'Pacific/Port_Moresby', country: 'Papua New Guinea', countryCode: 'PG', lat: -9.44, lng: 147.18, tier: 2, continent: 'oceania' },
   { slug: 'honiara', city: 'Honiara', timezone: 'Pacific/Guadalcanal', country: 'Solomon Islands', countryCode: 'SB', lat: -9.43, lng: 159.95, tier: 3, continent: 'oceania' },
   { slug: 'port-vila', city: 'Port Vila', timezone: 'Pacific/Efate', country: 'Vanuatu', countryCode: 'VU', lat: -17.74, lng: 168.32, tier: 3, continent: 'oceania' },
-  { slug: 'apia', city: 'Apia', timezone: 'Pacific/Apia', country: 'Samoa', countryCode: 'WS', lat: -13.83, lng: -171.76, tier: 3, continent: 'oceania' },
+  { slug: 'apia', city: 'Apia', timezone: 'Pacific/Apia', country: 'Samoa', countryCode: 'WS', lat: -13.83, lng: -171.76, tier: 2, continent: 'oceania' },
   { slug: 'nukualofa', city: 'Nukuʻalofa', timezone: 'Pacific/Tongatapu', country: 'Tonga', countryCode: 'TO', lat: -21.21, lng: -175.20, tier: 3, continent: 'oceania' },
   { slug: 'tarawa', city: 'Tarawa', timezone: 'Pacific/Tarawa', country: 'Kiribati', countryCode: 'KI', lat: 1.33, lng: 172.98, tier: 3, continent: 'oceania' },
   { slug: 'palikir', city: 'Palikir', timezone: 'Pacific/Pohnpei', country: 'Micronesia', countryCode: 'FM', lat: 6.91, lng: 158.16, tier: 3, continent: 'oceania' },
