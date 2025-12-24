@@ -145,14 +145,15 @@ export default function MapSVG({
             }
           </Geographies>
 
-          {/* City Markers */}
+          {/* City Markers - SADECE NOKTALAR, ETİKET YOK */}
           {visibleCities.map((city) => {
             const data = getCityData(city.slug)
             if (!data) return null
 
-            const { timeStr, timeOfDay } = data
+            const { timeOfDay } = data
             const isSelected = selectedCity === city.slug
             const isFocused = focusedCity?.slug === city.slug
+            const isHighlighted = isSelected || isFocused
             const isNight = timeOfDay === 'night'
             const isDusk = timeOfDay === 'dusk'
             const isDawn = timeOfDay === 'dawn'
@@ -166,10 +167,10 @@ export default function MapSVG({
                   ? '#f472b6' 
                   : '#fbbf24'
 
-            // Dot size based on tier and selection
+            // Küçük dot boyutları
             const tier = city.tier ?? 3
             const baseDotSize = tier === 1 ? 5 : tier === 2 ? 4 : 3
-            const dotSize = isSelected || isFocused ? 8 : baseDotSize
+            const dotSize = isHighlighted ? 10 : baseDotSize
 
             return (
               <Marker
@@ -178,66 +179,24 @@ export default function MapSVG({
                 onClick={() => onCitySelect(isSelected ? null : city.slug)}
               >
                 {/* Glow effect for selected/focused */}
-                {(isSelected || isFocused) && (
+                {isHighlighted && (
                   <circle
-                    r={12}
+                    r={16}
                     fill={dotColor}
                     opacity={0.3}
                     className="animate-pulse"
                   />
                 )}
                 
-                {/* City dot */}
+                {/* City dot - TEMİZ, SADE */}
                 <circle
                   r={dotSize}
                   fill={dotColor}
                   stroke="#fff"
-                  strokeWidth={tier === 1 ? 1.5 : 1}
+                  strokeWidth={isHighlighted ? 2 : 1}
                   className="cursor-pointer transition-all duration-200 hover:opacity-80"
+                  style={{ filter: isHighlighted ? 'drop-shadow(0 0 4px rgba(0,0,0,0.3))' : 'none' }}
                 />
-
-                {/* Time label - show on select or when zoomed in enough */}
-                {(isSelected || isFocused || (position.zoom >= 3 && tier <= 2)) && (
-                  <g>
-                    <rect
-                      x={-20}
-                      y={-28}
-                      width={40}
-                      height={16}
-                      rx={4}
-                      fill={isNight ? '#164e63' : '#92400e'}
-                      opacity={0.95}
-                    />
-                    <text
-                      textAnchor="middle"
-                      y={-16}
-                      style={{
-                        fontFamily: 'system-ui, sans-serif',
-                        fontSize: '10px',
-                        fontWeight: 700,
-                        fill: '#fff',
-                      }}
-                    >
-                      {timeStr}
-                    </text>
-                  </g>
-                )}
-
-                {/* City name on select/focus */}
-                {(isSelected || isFocused) && (
-                  <text
-                    textAnchor="middle"
-                    y={20}
-                    style={{
-                      fontFamily: 'system-ui, sans-serif',
-                      fontSize: '11px',
-                      fontWeight: 600,
-                      fill: isLight ? '#1e293b' : '#f1f5f9',
-                    }}
-                  >
-                    {city.city}
-                  </text>
-                )}
               </Marker>
             )
           })}
