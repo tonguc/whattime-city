@@ -3,12 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getCountryBySlug, getAllCountrySlugs, getCitiesByCountryCode } from '@/lib/cities'
 import CountryPageWrapper from '@/components/CountryPageWrapper'
-
-// Get flag image URL from CDN (supported sizes: 20, 40, 80, 160, 320)
-function getFlagUrl(countryCode: string, size: 'sm' | 'md' | 'lg' = 'md'): string {
-  const sizeMap = { sm: 20, md: 40, lg: 80 }
-  return `https://flagcdn.com/w${sizeMap[size]}/${countryCode.toLowerCase()}.png`
-}
+import { getFlagUrl } from '@/shared/utils'
 
 interface CountryPageProps {
   params: Promise<{ country: string }>

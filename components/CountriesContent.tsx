@@ -5,11 +5,7 @@ import { countries } from '@/lib/cities'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { useCityContext } from '@/lib/CityContext'
-
-// Get flag image URL from CDN (supported sizes: 20, 40, 80, 160, 320)
-function getFlagUrl(countryCode: string): string {
-  return `https://flagcdn.com/w40/${countryCode.toLowerCase()}.png`
-}
+import { getFlagUrl } from '@/shared/utils'
 
 // Group countries by continent
 function getCountriesByContinent() {
