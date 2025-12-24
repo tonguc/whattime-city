@@ -11,6 +11,7 @@ interface ToolsMiniNavProps {
     accentText: string
     accentBorder: string
   }
+  onAlarmClick?: () => void
 }
 
 // Normalized tool names (2 words, English only)
@@ -76,6 +77,7 @@ const toolNavItems = [
     id: 'alarm',
     name: 'World Alarm',
     url: '/tools/alarm',
+    isAlarm: true,
     icon: (
       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="13" r="8"/>
@@ -87,7 +89,7 @@ const toolNavItems = [
   }
 ]
 
-export default function ToolsMiniNav({ isLight, theme }: ToolsMiniNavProps) {
+export default function ToolsMiniNav({ isLight, theme, onAlarmClick }: ToolsMiniNavProps) {
   const pathname = usePathname()
   
   return (
@@ -97,17 +99,35 @@ export default function ToolsMiniNav({ isLight, theme }: ToolsMiniNavProps) {
         {toolNavItems.map((tool) => {
           const isActive = pathname === tool.url
           
+          const className = `inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+            isActive
+              ? `${theme.accentBg} text-white shadow-md`
+              : isLight
+                ? 'bg-white/50 text-slate-600 hover:bg-white/70 border border-white/60'
+                : 'bg-slate-700/50 text-slate-300 hover:bg-slate-700/70 border border-slate-600/50'
+          }`
+          
+          // Alarm item - use button if callback provided
+          if (tool.isAlarm && onAlarmClick) {
+            return (
+              <button
+                key={tool.id}
+                onClick={onAlarmClick}
+                className={className}
+              >
+                <span className={isActive ? 'text-white' : theme.accentText}>
+                  {tool.icon}
+                </span>
+                <span>{tool.name}</span>
+              </button>
+            )
+          }
+          
           return (
             <Link
               key={tool.id}
               href={tool.url}
-              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
-                isActive
-                  ? `${theme.accentBg} text-white shadow-md`
-                  : isLight
-                    ? 'bg-white/50 text-slate-600 hover:bg-white/70 border border-white/60'
-                    : 'bg-slate-700/50 text-slate-300 hover:bg-slate-700/70 border border-slate-600/50'
-              }`}
+              className={className}
             >
               <span className={isActive ? 'text-white' : theme.accentText}>
                 {tool.icon}
