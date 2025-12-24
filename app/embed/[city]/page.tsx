@@ -1,56 +1,56 @@
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 export const dynamicParams = true
+export const runtime = 'edge'
 
-import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cities } from '@/lib/cities'
 import EmbedClockWidget from '@/components/EmbedClockWidget'
 
 interface EmbedPageProps {
-  params: Promise<{ city: string }>
-  searchParams: Promise<{ 
+  params: {
+    city: string
+  }
+  searchParams: {
     theme?: string
     size?: string
     showDate?: string
     showTimezone?: string
     transparent?: string
-  }>
-}
-
-export async function generateMetadata({ params }: EmbedPageProps): Promise<Metadata> {
-  const { city: citySlug } = await params
-  const city = cities.find(c => c.slug === citySlug)
-  
-  if (!city) {
-    return { title: 'Widget Not Found' }
-  }
-  
-  return {
-    title: `${city.city} Clock Widget - whattime.city`,
-    description: `Embeddable clock widget for ${city.city}, ${city.country}`,
-    robots: 'noindex, nofollow', // Don't index embed pages
   }
 }
 
-export default async function EmbedPage({ params, searchParams }: EmbedPageProps) {
-  const { city: citySlug } = await params
+export default async function EmbedPage({
+  params,
+  searchParams,
+}: EmbedPageProps) {
+  const citySlug = params.city
   const city = cities.find(c => c.slug === citySlug)
-  
+
   if (!city) {
     notFound()
   }
-  
-  const options = await searchParams
-  
+
   return (
-    <EmbedClockWidget 
-      city={city} 
-      theme={options.theme || 'auto'}
-      size={options.size || 'medium'}
-      showDate={options.showDate !== 'false'}
-      showTimezone={options.showTimezone !== 'false'}
-      transparent={options.transparent === 'true'}
-    />
+    <>
+      {/* SEO DEĞİL → EMBED WIDGET */}
+      <head>
+        <title>{city.city} Clock Widget – whattime.city</title>
+        <meta
+          name="description"
+          content={`Embeddable clock widget for ${city.city}, ${city.country}`}
+        />
+        <meta name="robots" content="noindex,nofollow" />
+      </head>
+
+      <EmbedClockWidget
+        city={city}
+        theme={searchParams.theme || 'auto'}
+        size={searchParams.size || 'medium'}
+        showDate={searchParams.showDate !== 'false'}
+        showTimezone={searchParams.showTimezone !== 'false'}
+        transparent={searchParams.transparent === 'true'}
+      />
+    </>
   )
 }
