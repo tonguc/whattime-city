@@ -33,7 +33,6 @@ export default async function EmbedPage({
 
   return (
     <>
-      {/* SEO DEĞİL → EMBED WIDGET */}
       <head>
         <title>{city.city} Clock Widget – whattime.city</title>
         <meta
@@ -42,7 +41,6 @@ export default async function EmbedPage({
         />
         <meta name="robots" content="noindex,nofollow" />
       </head>
-
       <EmbedClockWidget
         city={city}
         theme={searchParams.theme || 'auto'}
