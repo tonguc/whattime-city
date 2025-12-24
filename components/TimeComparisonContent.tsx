@@ -6,6 +6,7 @@ import { City } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import Footer from '@/components/Footer'
+import Header from '@/components/Header'
 
 interface TimeComparisonContentProps {
   fromCity: City
@@ -141,41 +142,8 @@ export default function TimeComparisonContent({ fromCity, toCity }: TimeComparis
   
   return (
     <div className={`min-h-screen transition-colors duration-700 bg-gradient-to-br ${mainTheme.bg}`}>
-      {/* Header */}
-      <header className={`sticky top-0 z-50 w-full backdrop-blur-xl ${isLight ? 'bg-white/70' : 'bg-slate-900/70'}`}>
-        <div className="max-w-6xl mx-auto px-4 py-2 sm:py-3 flex items-center justify-between">
-          <Link href="/" className="hover:opacity-80 transition-opacity flex-shrink-0">
-            <img 
-              src={isLight ? "/logo.svg" : "/logo-dark.svg"} 
-              alt="whattime.city" 
-              className="h-11 sm:h-14"
-            />
-          </Link>
-          
-          <div className="flex items-center gap-2">
-            <Link 
-              href="/"
-              className={`px-3 py-2 rounded-full text-sm font-medium transition-all ${
-                isLight 
-                  ? 'bg-white/60 text-slate-600 hover:bg-white/80' 
-                  : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/60'
-              } backdrop-blur-xl`}
-            >
-              🌍 Cities
-            </Link>
-            <Link 
-              href="/tools"
-              className={`px-3 py-2 rounded-full text-sm font-medium transition-all ${
-                isLight 
-                  ? 'bg-white/60 text-slate-600 hover:bg-white/80' 
-                  : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/60'
-              } backdrop-blur-xl`}
-            >
-              🛠️ Tools
-            </Link>
-          </div>
-        </div>
-      </header>
+      {/* Shared Header */}
+      <Header />
 
       <main className="max-w-6xl mx-auto px-4 py-8">
         {/* Title */}
