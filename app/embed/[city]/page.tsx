@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cities } from '@/lib/cities'
@@ -12,12 +13,6 @@ interface EmbedPageProps {
     showTimezone?: string
     transparent?: string
   }>
-}
-
-export async function generateStaticParams() {
-  return cities.map((city) => ({
-    city: city.slug,
-  }))
 }
 
 export async function generateMetadata({ params }: EmbedPageProps): Promise<Metadata> {
