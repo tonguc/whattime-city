@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { cities, City } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
@@ -14,43 +14,14 @@ export default function WorldMap() {
   const { theme: mainTheme, isLight, time } = useCityContext()
   const [selectedCity, setSelectedCity] = useState<string | null>(null)
   const [zoom, setZoom] = useState(1)
-  const [panX, setPanX] = useState(0)
-  const [panY, setPanY] = useState(0)
   
   // Tab states
   const [activeTimeTab, setActiveTimeTab] = useState<'all' | 'dawn' | 'day' | 'dusk' | 'night'>('all')
   const [activeContinentTab, setActiveContinentTab] = useState<'all' | 'americas' | 'europe' | 'asia' | 'africa' | 'oceania'>('all')
   
-  // Close popup when clicking outside
-  const handleMapClick = (e: React.MouseEvent) => {
-    // Only close if clicking on the map background, not on a city
-    if ((e.target as HTMLElement).tagName === 'rect' || (e.target as HTMLElement).tagName === 'path') {
-      setSelectedCity(null)
-    }
-  }
-  
-  const handleZoomIn = () => setZoom(z => Math.min(z + 0.5, 3))
-  const handleZoomOut = () => {
-    setZoom(z => Math.max(z - 0.5, 1))
-    if (zoom <= 1.5) {
-      setPanX(0)
-      setPanY(0)
-    }
-  }
-  const handleReset = () => {
-    setZoom(1)
-    setPanX(0)
-    setPanY(0)
-  }
-  
-  // Calculate day/night terminator position (simplified)
-  // The terminator line moves based on UTC hour
-  const utcHour = time.getUTCHours() + time.getUTCMinutes() / 60
-  // At UTC 12:00, sun is over longitude 0. At UTC 0:00, sun is over longitude 180
-  const sunLongitude = ((12 - utcHour) * 15 + 360) % 360
-  // Convert to x position (0-100%)
-  const dayStart = ((sunLongitude - 90 + 360) % 360) / 360 * 100
-  const dayEnd = ((sunLongitude + 90 + 360) % 360) / 360 * 100
+  const handleZoomIn = () => setZoom(z => Math.min(z + 0.5, 8))
+  const handleZoomOut = () => setZoom(z => Math.max(z - 0.5, 1))
+  const handleReset = () => setZoom(1)
   
   // Get city data with current time
   const getCityData = (slug: string) => {
@@ -118,28 +89,16 @@ export default function WorldMap() {
               </button>
             )}
           </div>
-          
-          {/* Zoom level indicator */}
-          {zoom > 1 && (
-            <div className={`absolute top-4 left-4 z-20 px-3 py-1 rounded-full text-sm font-medium ${
-              isLight ? 'bg-white/80 text-slate-700' : 'bg-slate-700/80 text-white'
-            }`}>
-              {zoom.toFixed(1)}x
-            </div>
-          )}
 
           {/* SVG Map */}
           <MapSVG
             isLight={isLight}
             zoom={zoom}
-            panX={panX}
-            panY={panY}
-            dayStart={dayStart}
-            dayEnd={dayEnd}
+            setZoom={setZoom}
             selectedCity={selectedCity}
-            onMapClick={handleMapClick}
             onCitySelect={setSelectedCity}
             getCityData={getCityData}
+            cities={cities}
           />
           
           {/* Selected City Info */}
