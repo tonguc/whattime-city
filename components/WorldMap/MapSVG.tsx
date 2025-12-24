@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import {
   ComposableMap,
   Geographies,
@@ -9,7 +9,7 @@ import {
   ZoomableGroup,
 } from 'react-simple-maps'
 import { City } from '@/lib/cities'
-import { mapCitySlugs, WORLD_MAP_URL } from './data'
+import { WORLD_MAP_URL, isCityVisible } from './data'
 
 // Type for city data returned by getCityData
 interface CityData {
@@ -34,6 +34,7 @@ interface MapSVGProps {
   onCitySelect: (slug: string | null) => void
   getCityData: (slug: string) => CityData | null
   cities: City[]
+  focusedCity?: City | null // Arama sonucu odaklanılacak şehir
 }
 
 export default function MapSVG({
@@ -44,6 +45,7 @@ export default function MapSVG({
   onCitySelect,
   getCityData,
   cities,
+  focusedCity,
 }: MapSVGProps) {
   const [position, setPosition] = useState<{ coordinates: [number, number]; zoom: number }>({
     coordinates: [0, 20],
@@ -55,16 +57,44 @@ export default function MapSVG({
     setPosition(prev => ({ ...prev, zoom }))
   }, [zoom])
 
+  // Focus on searched city
+  useEffect(() => {
+    if (focusedCity) {
+      setPosition({
+        coordinates: [focusedCity.lng, focusedCity.lat],
+        zoom: 4,
+      })
+      setZoom(4)
+      onCitySelect(focusedCity.slug)
+    }
+  }, [focusedCity, setZoom, onCitySelect])
+
   // Handle zoom from ZoomableGroup
-  const handleMoveEnd = (position: { coordinates: [number, number]; zoom: number }) => {
-    setPosition(position)
-    setZoom(position.zoom)
+  const handleMoveEnd = (pos: { coordinates: [number, number]; zoom: number }) => {
+    setPosition(pos)
+    setZoom(pos.zoom)
   }
 
-  // Get cities to display on map
-  const mapCities = mapCitySlugs
-    .map(slug => cities.find(c => c.slug === slug))
-    .filter((c): c is City => c !== undefined)
+  // Filter cities based on zoom level (tier-based)
+  const visibleCities = useMemo(() => {
+    return cities.filter(city => {
+      // Always show selected city
+      if (city.slug === selectedCity) return true
+      // Always show focused city
+      if (focusedCity && city.slug === focusedCity.slug) return true
+      // Filter by tier (default to tier 3 if undefined)
+      const tier = city.tier ?? 3
+      return isCityVisible(tier, position.zoom)
+    })
+  }, [cities, position.zoom, selectedCity, focusedCity])
+
+  // Count cities by tier for display
+  const cityCount = useMemo(() => {
+    const tier1 = cities.filter(c => (c.tier ?? 3) === 1).length
+    const tier2 = cities.filter(c => (c.tier ?? 3) === 2).length
+    const tier3 = cities.filter(c => (c.tier ?? 3) === 3).length
+    return { tier1, tier2, tier3, total: cities.length, visible: visibleCities.length }
+  }, [cities, visibleCities])
 
   // Colors based on theme
   const oceanColor = isLight ? '#bfdbfe' : '#0c4a6e'
@@ -116,12 +146,13 @@ export default function MapSVG({
           </Geographies>
 
           {/* City Markers */}
-          {mapCities.map((city) => {
+          {visibleCities.map((city) => {
             const data = getCityData(city.slug)
             if (!data) return null
 
             const { timeStr, timeOfDay } = data
             const isSelected = selectedCity === city.slug
+            const isFocused = focusedCity?.slug === city.slug
             const isNight = timeOfDay === 'night'
             const isDusk = timeOfDay === 'dusk'
             const isDawn = timeOfDay === 'dawn'
@@ -135,7 +166,10 @@ export default function MapSVG({
                   ? '#f472b6' 
                   : '#fbbf24'
 
-            const dotSize = isSelected ? 8 : 5
+            // Dot size based on tier and selection
+            const tier = city.tier ?? 3
+            const baseDotSize = tier === 1 ? 5 : tier === 2 ? 4 : 3
+            const dotSize = isSelected || isFocused ? 8 : baseDotSize
 
             return (
               <Marker
@@ -143,8 +177,8 @@ export default function MapSVG({
                 coordinates={[city.lng, city.lat]}
                 onClick={() => onCitySelect(isSelected ? null : city.slug)}
               >
-                {/* Glow effect for selected */}
-                {isSelected && (
+                {/* Glow effect for selected/focused */}
+                {(isSelected || isFocused) && (
                   <circle
                     r={12}
                     fill={dotColor}
@@ -158,12 +192,12 @@ export default function MapSVG({
                   r={dotSize}
                   fill={dotColor}
                   stroke="#fff"
-                  strokeWidth={1.5}
+                  strokeWidth={tier === 1 ? 1.5 : 1}
                   className="cursor-pointer transition-all duration-200 hover:opacity-80"
                 />
 
-                {/* Time label - show on hover/select or when zoomed in */}
-                {(isSelected || position.zoom >= 2) && (
+                {/* Time label - show on select or when zoomed in enough */}
+                {(isSelected || isFocused || (position.zoom >= 3 && tier <= 2)) && (
                   <g>
                     <rect
                       x={-20}
@@ -189,8 +223,8 @@ export default function MapSVG({
                   </g>
                 )}
 
-                {/* City name on hover/select */}
-                {isSelected && (
+                {/* City name on select/focus */}
+                {(isSelected || isFocused) && (
                   <text
                     textAnchor="middle"
                     y={20}
@@ -210,16 +244,17 @@ export default function MapSVG({
         </ZoomableGroup>
       </ComposableMap>
 
-      {/* Zoom level indicator */}
-      {position.zoom > 1 && (
-        <div
-          className={`absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-medium ${
-            isLight ? 'bg-white/90 text-slate-700' : 'bg-slate-800/90 text-white'
-          }`}
-        >
-          {position.zoom.toFixed(1)}x
+      {/* Zoom level & city count indicator */}
+      <div
+        className={`absolute top-4 left-4 px-3 py-1.5 rounded-lg text-xs font-medium ${
+          isLight ? 'bg-white/90 text-slate-700' : 'bg-slate-800/90 text-white'
+        }`}
+      >
+        <div>{position.zoom.toFixed(1)}x zoom</div>
+        <div className="text-[10px] opacity-70">
+          {cityCount.visible} / {cityCount.total} cities
         </div>
-      )}
+      </div>
 
       {/* Instructions */}
       <div

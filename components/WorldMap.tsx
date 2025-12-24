@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { cities, City } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
@@ -15,13 +15,54 @@ export default function WorldMap() {
   const [selectedCity, setSelectedCity] = useState<string | null>(null)
   const [zoom, setZoom] = useState(1)
   
+  // Search states
+  const [searchQuery, setSearchQuery] = useState('')
+  const [showSearchResults, setShowSearchResults] = useState(false)
+  const [focusedCity, setFocusedCity] = useState<City | null>(null)
+  const searchRef = useRef<HTMLDivElement>(null)
+  
   // Tab states
   const [activeTimeTab, setActiveTimeTab] = useState<'all' | 'dawn' | 'day' | 'dusk' | 'night'>('all')
   const [activeContinentTab, setActiveContinentTab] = useState<'all' | 'americas' | 'europe' | 'asia' | 'africa' | 'oceania'>('all')
   
   const handleZoomIn = () => setZoom(z => Math.min(z + 0.5, 8))
   const handleZoomOut = () => setZoom(z => Math.max(z - 0.5, 1))
-  const handleReset = () => setZoom(1)
+  const handleReset = () => {
+    setZoom(1)
+    setFocusedCity(null)
+  }
+  
+  // Search results
+  const searchResults = useMemo(() => {
+    if (!searchQuery.trim()) return []
+    const query = searchQuery.toLowerCase()
+    return cities
+      .filter(city => 
+        city.city.toLowerCase().includes(query) ||
+        city.country.toLowerCase().includes(query) ||
+        city.slug.includes(query)
+      )
+      .slice(0, 10) // Max 10 results
+  }, [searchQuery])
+  
+  // Handle search selection
+  const handleSearchSelect = (city: City) => {
+    setFocusedCity(city)
+    setSelectedCity(city.slug)
+    setSearchQuery('')
+    setShowSearchResults(false)
+  }
+  
+  // Close search results when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setShowSearchResults(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
   
   // Get city data with current time
   const getCityData = (slug: string) => {
@@ -50,6 +91,82 @@ export default function WorldMap() {
         <h1 className={`text-2xl sm:text-3xl font-bold mb-6 text-center ${isLight ? 'text-slate-800' : 'text-white'}`}>
           🗺️ World Time Map
         </h1>
+        
+        {/* Search Bar */}
+        <div ref={searchRef} className="relative max-w-md mx-auto mb-6">
+          <div className={`relative rounded-2xl overflow-hidden backdrop-blur-xl border ${
+            isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
+          }`}>
+            <div className="flex items-center px-4">
+              <span className="text-xl">🔍</span>
+              <input
+                type="text"
+                placeholder="Search city or country..."
+                value={searchQuery}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value)
+                  setShowSearchResults(true)
+                }}
+                onFocus={() => setShowSearchResults(true)}
+                className={`w-full px-3 py-3 bg-transparent outline-none ${
+                  isLight ? 'text-slate-800 placeholder-slate-400' : 'text-white placeholder-slate-400'
+                }`}
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => {
+                    setSearchQuery('')
+                    setShowSearchResults(false)
+                  }}
+                  className={`p-1 rounded-full ${isLight ? 'hover:bg-slate-200' : 'hover:bg-slate-700'}`}
+                >
+                  ✕
+                </button>
+              )}
+            </div>
+          </div>
+          
+          {/* Search Results Dropdown */}
+          {showSearchResults && searchResults.length > 0 && (
+            <div className={`absolute top-full left-0 right-0 mt-2 rounded-2xl overflow-hidden backdrop-blur-xl border z-50 ${
+              isLight ? 'bg-white/95 border-white/50' : 'bg-slate-800/95 border-slate-700/50'
+            }`}>
+              {searchResults.map((city) => {
+                const data = getCityData(city.slug)
+                return (
+                  <button
+                    key={city.slug}
+                    onClick={() => handleSearchSelect(city)}
+                    className={`w-full px-4 py-3 flex items-center justify-between transition-colors ${
+                      isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'
+                    }`}
+                  >
+                    <div className="text-left">
+                      <div className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                        {city.city}
+                      </div>
+                      <div className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                        {city.country}
+                      </div>
+                    </div>
+                    <div className={`text-lg font-bold ${isLight ? 'text-slate-700' : 'text-white'}`}>
+                      {data?.timeStr || '--:--'}
+                    </div>
+                  </button>
+                )
+              })}
+            </div>
+          )}
+          
+          {/* No results */}
+          {showSearchResults && searchQuery && searchResults.length === 0 && (
+            <div className={`absolute top-full left-0 right-0 mt-2 p-4 rounded-2xl text-center backdrop-blur-xl border ${
+              isLight ? 'bg-white/95 border-white/50 text-slate-500' : 'bg-slate-800/95 border-slate-700/50 text-slate-400'
+            }`}>
+              No cities found for "{searchQuery}"
+            </div>
+          )}
+        </div>
         
         <div className={`relative rounded-3xl overflow-hidden backdrop-blur-xl border ${
           isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
@@ -99,6 +216,7 @@ export default function WorldMap() {
             onCitySelect={setSelectedCity}
             getCityData={getCityData}
             cities={cities}
+            focusedCity={focusedCity}
           />
           
           {/* Selected City Info */}
