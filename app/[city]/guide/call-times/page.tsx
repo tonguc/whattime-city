@@ -8,11 +8,12 @@ import TokyoCallTimesContent from './TokyoCallTimesContent'
 import DubaiCallTimesContent from './DubaiCallTimesContent'
 import SingaporeCallTimesContent from './SingaporeCallTimesContent'
 import ParisCallTimesContent from './ParisCallTimesContent'
+import SydneyCallTimesContent from './SydneyCallTimesContent'
 
 type Props = { params: Promise<{ city: string }> }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }]
+  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' }]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

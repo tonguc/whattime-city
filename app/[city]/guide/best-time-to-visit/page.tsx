@@ -8,13 +8,15 @@ import TokyoBestTimeToVisitContent from './TokyoBestTimeToVisitContent'
 import DubaiBestTimeToVisitContent from './DubaiBestTimeToVisitContent'
 import SingaporeBestTimeToVisitContent from './SingaporeBestTimeToVisitContent'
 import ParisBestTimeToVisitContent from './ParisBestTimeToVisitContent'
+import SydneyBestTimeToVisitContent from './SydneyBestTimeToVisitContent'
+import Sydneytime-to-visitContent from './Sydneytime-to-visitContent'
 
 type Props = {
   params: Promise<{ city: string }>
 }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }]
+  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' }]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -55,6 +57,8 @@ export default async function BestTimeToVisitPage({ params }: Props) {
     case 'singapore':
       return <SingaporeBestTimeToVisitContent city={city} />
     case 'paris':
+    case 'sydney':
+      return <SydneyBestTimeToVisitContent city={city} />
       return <ParisBestTimeToVisitContent city={city} />
     default:
       return <BestTimeToVisitContent city={city} />

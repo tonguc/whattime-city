@@ -8,11 +8,12 @@ import TokyoTimeDifferenceContent from './TokyoTimeDifferenceContent'
 import DubaiTimeDifferenceContent from './DubaiTimeDifferenceContent'
 import SingaporeTimeDifferenceContent from './SingaporeTimeDifferenceContent'
 import ParisTimeDifferenceContent from './ParisTimeDifferenceContent'
+import SydneyTimeDifferenceContent from './SydneyTimeDifferenceContent'
 
 type Props = { params: Promise<{ city: string }> }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }]
+  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' }]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
