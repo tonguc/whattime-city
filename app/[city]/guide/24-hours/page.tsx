@@ -9,6 +9,7 @@ import DubaiTwentyFourHoursContent from './DubaiTwentyFourHoursContent'
 import SingaporeTwentyFourHoursContent from './SingaporeTwentyFourHoursContent'
 import ParisTwentyFourHoursContent from './ParisTwentyFourHoursContent'
 import Sydney24HoursContent from './Sydney24HoursContent'
+import LosAngelesTwentyFourHoursContent from './LosAngelesTwentyFourHoursContent'
 
 type Props = {
   params: Promise<{ city: string }>
