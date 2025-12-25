@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { cities } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
+import { getCityDisplayConfig } from '@/lib/cityDisplayConfig'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -32,6 +33,9 @@ export default function GuideLayout({
   
   if (!city) return null
   
+  // Get city display config (icon, offset, theme, etc.)
+  const cityConfig = getCityDisplayConfig(citySlug)
+  
   // Calculate times for the current city
   const cityTime = new Date(time.toLocaleString('en-US', { timeZone: city.timezone }))
   const localTime = time
@@ -39,36 +43,15 @@ export default function GuideLayout({
   const localTimeStr = localTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })
   
   // Calculate hour difference between user's local time and city time
-  const cityOffsets: Record<string, number> = { 
-    'london': 0, 
-    'tokyo': 9, 
-    'new-york': -5, 
-    'dubai': 4,
-    'singapore': 8,
-    'paris': 1,
-    'sydney': 10
-  }
-  const cityOffset = cityOffsets[citySlug] ?? -5
+  const cityOffset = cityConfig.utcOffset
   const localOffset = -localTime.getTimezoneOffset() / 60
   const hourDiff = localOffset - cityOffset
   const diffText = hourDiff === 0 ? 'Same time' : hourDiff > 0 ? `+${hourDiff}h ahead` : `${hourDiff}h behind`
   
-  // City-specific icons
-  const visitIcons: Record<string, string> = { 
-    'london': '🇬🇧', 
-    'tokyo': '🌸', 
-    'new-york': '🗽', 
-    'dubai': '☀️',
-    'singapore': '🇸🇬',
-    'paris': '🇫🇷',
-    'sydney': '🏖️'
-  }
-  const visitIcon = visitIcons[citySlug] ?? '🗽'
-  
   const guideLinks = [
     { slug: '', label: 'Overview', icon: '📖' },
     { slug: 'business-hours', label: 'Business Hours', icon: '💼' },
-    { slug: 'best-time-to-visit', label: 'Best Time to Visit', icon: visitIcon },
+    { slug: 'best-time-to-visit', label: 'Best Time to Visit', icon: cityConfig.visitIcon },
     { slug: 'remote-work', label: 'Remote Work', icon: '💻' },
     { slug: '24-hours', label: '24 Hours', icon: '🌆' },
     { slug: 'call-times', label: 'Call Times', icon: '📞' },
@@ -91,13 +74,7 @@ export default function GuideLayout({
           <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between text-sm">
             <div className="flex items-center gap-2 md:gap-4">
               <span className={`font-medium whitespace-nowrap ${isLight ? 'text-slate-800' : 'text-white'}`}>
-                {citySlug === 'london' ? '🇬🇧 London' : 
-                 citySlug === 'tokyo' ? '🇯🇵 Tokyo' : 
-                 citySlug === 'dubai' ? '🇦🇪 Dubai' :
-                 citySlug === 'singapore' ? '🇸🇬 Singapore' :
-                 citySlug === 'paris' ? '🇫🇷 Paris' :
-                 citySlug === 'sydney' ? '🦘 Sydney' :
-                 '🗽 NYC'}: {cityTimeStr}
+                {cityConfig.icon} {cityConfig.displayName}: {cityTimeStr}
               </span>
               <span className="px-2 py-0.5 rounded text-xs whitespace-nowrap bg-blue-100 text-blue-700">
                 {diffText}
@@ -142,15 +119,7 @@ export default function GuideLayout({
               >
                 <span className="flex items-center gap-2">
                   <span>📑</span>
-                  <span>
-                    {citySlug === 'london' ? 'London' : 
-                     citySlug === 'tokyo' ? 'Tokyo' : 
-                     citySlug === 'dubai' ? 'Dubai' :
-                     citySlug === 'singapore' ? 'Singapore' :
-                     citySlug === 'paris' ? 'Paris' :
-                     citySlug === 'sydney' ? 'Sydney' :
-                     'NYC'} Guide Menu
-                  </span>
+                  <span>{cityConfig.displayName} Guide Menu</span>
                 </span>
                 <span className={`transition-transform duration-200 ${isMobileMenuOpen ? 'rotate-180' : ''}`}>
                   ▼
