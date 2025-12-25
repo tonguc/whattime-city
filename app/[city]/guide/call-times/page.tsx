@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import { getCity } from '@/lib/cities'
 import LondonCallTimesContent from './LondonCallTimesContent'
 
 export const metadata: Metadata = {
@@ -13,13 +12,16 @@ export const metadata: Metadata = {
 }
 
 export default function LondonCallTimesPage() {
-  const city = getCity('london')
-  
-  if (!city) {
-    return <div>City not found</div>
+  // London city bilgisi direkt tanımlandı (import hatası çözümü)
+  const city = {
+    slug: 'london',
+    name: 'London',
+    timezone: 'Europe/London'
   }
 
-  // JSON-LD Schema - FAQPage
+  // ==========================================
+  // JSON-LD SCHEMA - FAQPage
+  // ==========================================
   const jsonLdFAQ = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -75,7 +77,9 @@ export default function LondonCallTimesPage() {
     ]
   }
 
-  // JSON-LD Schema - HowTo
+  // ==========================================
+  // JSON-LD SCHEMA - HowTo
+  // ==========================================
   const jsonLdHowTo = {
     "@context": "https://schema.org",
     "@type": "HowTo",
@@ -112,19 +116,19 @@ export default function LondonCallTimesPage() {
 
   return (
     <>
-      {/* FAQPage Schema */}
+      {/* FAQPage Schema for Rich Results */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFAQ) }}
       />
       
-      {/* HowTo Schema */}
+      {/* HowTo Schema for Voice Search */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdHowTo) }}
       />
       
-      {/* Main Content */}
+      {/* Main Content Component */}
       <LondonCallTimesContent city={city} />
     </>
   )
