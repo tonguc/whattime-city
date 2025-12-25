@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from 'react'
 import Link from 'next/link'
 import { City } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
@@ -10,7 +11,12 @@ interface Props {
 }
 
 export default function DubaiCallTimesContent({ city }: Props) {
-  const { isLight } = useCityContext()
+  const { isLight, setActiveCity } = useCityContext()
+  
+  // Update active city when component mounts to sync background with Dubai's time
+  useEffect(() => {
+    setActiveCity(city)
+  }, [city, setActiveCity])
   
   const textColor = isLight ? 'text-slate-700' : 'text-slate-200'
   const headingColor = isLight ? 'text-slate-800' : 'text-white'
@@ -256,7 +262,7 @@ export default function DubaiCallTimesContent({ city }: Props) {
                 <td className="p-3">9 AM - 12 PM</td>
                 <td className="p-3 text-green-600">Excellent (3h)</td>
               </tr>
-              <tr className="bg-amber-100 dark:bg-amber-900/30 font-semibold">
+              <tr className="bg-amber-100 dark:bg-slate-600 font-semibold">
                 <td className="p-3 font-medium">Dubai</td>
                 <td className="p-3 font-medium">+9</td>
                 <td className="p-3 font-medium">6-8 AM or 6-11 PM</td>
