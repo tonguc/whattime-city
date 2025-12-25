@@ -62,6 +62,15 @@ const CITY_GUIDES: CityGuideConfig[] = [
     colorLight: 'bg-gradient-to-r from-blue-100 to-indigo-100 border-2 border-blue-300 hover:border-blue-400',
     colorDark: 'bg-gradient-to-r from-blue-900/50 to-indigo-900/50 border-2 border-blue-600 hover:border-blue-500',
     buttonColor: 'bg-blue-500 group-hover:bg-blue-600 dark:group-hover:bg-blue-400'
+  },
+  {
+    slug: 'sydney',
+    emoji: '🦘',
+    title: 'Sydney Time Guide',
+    description: 'ASX hours, beach culture, Aussie holidays & more',
+    colorLight: 'bg-gradient-to-r from-sky-100 to-cyan-100 border-2 border-sky-300 hover:border-sky-400',
+    colorDark: 'bg-gradient-to-r from-sky-900/50 to-cyan-900/50 border-2 border-sky-600 hover:border-sky-500',
+    buttonColor: 'bg-sky-500 group-hover:bg-sky-600 dark:group-hover:bg-sky-400'
   }
 ]
 
