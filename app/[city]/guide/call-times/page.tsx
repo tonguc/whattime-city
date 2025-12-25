@@ -124,17 +124,17 @@ export default async function CallTimesPage({ params }: Props) {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdHowTo) }}
           />
         )}
-        <LondonCallTimesContent city={city} />
+        <LondonCallTimesContent city={city as any} />
       </>
     )
   }
   
   // DİĞER ŞEHİRLER - SCHEMA YOK
-  if (citySlug === 'tokyo') return <TokyoCallTimesContent city={city} />
-  if (citySlug === 'dubai') return <DubaiCallTimesContent city={city} />
-  if (citySlug === 'singapore') return <SingaporeCallTimesContent city={city} />
-  if (citySlug === 'paris') return <ParisCallTimesContent city={city} />
-  if (citySlug === 'sydney') return <SydneyCallTimesContent city={city} />
+  if (citySlug === 'tokyo') return <TokyoCallTimesContent city={city as any} />
+  if (citySlug === 'dubai') return <DubaiCallTimesContent city={city as any} />
+  if (citySlug === 'singapore') return <SingaporeCallTimesContent city={city as any} />
+  if (citySlug === 'paris') return <ParisCallTimesContent city={city as any} />
+  if (citySlug === 'sydney') return <SydneyCallTimesContent city={city as any} />
   
-  return <CallTimesContent city={city} />
+  return <CallTimesContent city={city as any} />
 }
