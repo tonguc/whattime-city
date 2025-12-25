@@ -9,7 +9,6 @@ import DubaiBestTimeToVisitContent from './DubaiBestTimeToVisitContent'
 import SingaporeBestTimeToVisitContent from './SingaporeBestTimeToVisitContent'
 import ParisBestTimeToVisitContent from './ParisBestTimeToVisitContent'
 import SydneyBestTimeToVisitContent from './SydneyBestTimeToVisitContent'
-import Sydneytime-to-visitContent from './Sydneytime-to-visitContent'
 
 type Props = {
   params: Promise<{ city: string }>
