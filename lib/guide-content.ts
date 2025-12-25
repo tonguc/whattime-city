@@ -611,6 +611,99 @@ export const parisGuide: GuideConfig = {
 }
 
 // ===================
+// SYDNEY
+// ===================
+export const sydneyGuide: GuideConfig = {
+  citySlug: 'sydney',
+  cityName: 'Sydney',
+  timezone: 'Australia/Sydney',
+  timezoneAbbr: 'AEST/AEDT',
+  timezoneName: 'Australian Eastern Time',
+  utcOffset: 10,
+  icon: '🦘',
+  tagline: 'Your complete guide to time in Australia\'s harbour city',
+  
+  seo: {
+    title: 'Sydney Time Zone Guide | AEST/AEDT, Business Hours & More',
+    description: 'Complete Sydney time zone guide. Business hours, ASX trading times, best time to call Sydney, remote work overlap, Australian holidays, and local tips.',
+    keywords: ['sydney time zone', 'australia time now', 'aest aedt time', 'sydney business hours', 'asx hours', 'best time to call sydney', 'sydney time difference'],
+    ogTitle: 'Sydney Time Zone Guide | Complete Australia Time Resource',
+    ogDescription: 'Everything about Sydney time: business hours, stock market, holidays, remote work tips. The definitive guide.',
+  },
+  
+  pages: {
+    overview: {
+      title: 'Sydney Time Zone Guide | AEST/AEDT, Business Hours & More',
+      description: 'Complete Sydney time zone guide. Business hours, ASX trading times, best time to call Sydney, remote work overlap, Australian holidays, and local tips.',
+      keywords: ['sydney time zone', 'australia time', 'aest aedt'],
+    },
+    businessHours: {
+      title: 'Sydney Business Hours | Banks, Stores, Restaurants & More',
+      description: 'What time do businesses open in Sydney? Complete guide to Australian store hours, bank schedules, restaurant times, and public holiday surcharges.',
+      keywords: ['sydney business hours', 'australia shop hours', 'what time do banks open sydney', 'sydney restaurant hours'],
+    },
+    bestTimeToVisit: {
+      title: 'Best Time to Visit Sydney | Weather, Crowds & Prices by Month',
+      description: 'When to visit Sydney? Month-by-month guide with weather, tourist crowds, hotel prices, and major events. Summer is Dec-Feb!',
+      keywords: ['best time to visit sydney', 'best month to visit australia', 'sydney weather by month', 'sydney crowd calendar'],
+    },
+    remoteWork: {
+      title: 'Working with Sydney Teams Remotely | Time Zone Overlap & Meeting Times',
+      description: 'Remote work guide for Sydney collaboration. Find overlap hours with NYC, London, Tokyo. Best meeting times, async tips, and Australian work culture.',
+      keywords: ['remote work sydney time zone', 'working with sydney team', 'time zone overlap calculator', 'best meeting time sydney'],
+    },
+    twentyFourHours: {
+      title: "Sydney 24 Hour Guide | What's Open & When in the Harbour City",
+      description: "Sydney hour-by-hour: when Sydneysiders wake up, rush hours, beach crowds, happy hour, nightlife peaks, and what's open late.",
+      keywords: ['24 hours in sydney', 'sydney rush hour times', 'when do bars close sydney', 'late night food sydney'],
+    },
+    callTimes: {
+      title: 'Best Time to Call Sydney | From USA, UK, Asia & More',
+      description: 'When to call Sydney? Best calling times from New York, London, Tokyo, Singapore. Business hours overlap and optimal windows for personal calls.',
+      keywords: ['best time to call sydney', 'best time to call australia from usa', 'call sydney from new york time'],
+    },
+    stockMarket: {
+      title: 'ASX Trading Hours | Sydney Stock Exchange Times for Global Investors',
+      description: 'ASX opens 10:00 AM AEST. Complete Sydney stock exchange trading schedule with auction periods, regular hours, and market holidays.',
+      keywords: ['asx hours', 'sydney stock exchange hours', 'australia market hours', 'asx opening time'],
+    },
+    holidays: {
+      title: "Australian Public Holidays | Sydney Closures, Store Hours & What's Open",
+      description: "Australian public holidays calendar. What's closed on Australia Day, Anzac Day, Christmas? Bank hours, store schedules, public holiday surcharges.",
+      keywords: ['australian public holidays', 'sydney holidays', 'what is closed australia day', 'nsw bank holidays'],
+    },
+    digitalNomad: {
+      title: 'Digital Nomad Sydney Guide | Coworking, Beach Cafes & Costs',
+      description: 'Work remotely from Sydney. Best coworking spaces (A$400-600/mo), beach-side cafés, WiFi spots, cost of living breakdown, visa options.',
+      keywords: ['digital nomad sydney', 'best coworking spaces sydney', 'cafes with wifi sydney', 'remote work sydney'],
+    },
+    timeDifference: {
+      title: 'Sydney Time Difference Calculator | AEST/AEDT vs World Cities',
+      description: 'Sydney time difference to New York (+16h), London (+11h), Tokyo (+1h), Singapore (+3h) and 50+ cities. AEST vs EST explained.',
+      keywords: ['sydney time difference', 'australia vs new york time', 'aest vs est hours', 'sydney tokyo time difference'],
+    },
+    travelPlanning: {
+      title: 'Sydney Travel Time Guide | Flights, Jet Lag Tips & Getting Around',
+      description: 'Plan your Sydney trip: flight times from major cities, jet lag recovery tips, Sydney Airport to CBD, and getting around the harbour city.',
+      keywords: ['sydney flight times', 'syd to city', 'sydney jet lag tips', 'how long flight to sydney'],
+    },
+  },
+  
+  clusters: [
+    { slug: 'business-hours', icon: '💼', title: 'Business Hours', desc: 'Bank, shop, and restaurant hours in Sydney' },
+    { slug: 'best-time-to-visit', icon: '🏖️', title: 'Best Time to Visit', desc: 'Weather, crowds, and events by season' },
+    { slug: 'remote-work', icon: '💻', title: 'Remote Work', desc: 'Working with Sydney teams across time zones' },
+    { slug: '24-hours', icon: '🌆', title: '24 Hours in Sydney', desc: 'How Sydneysiders live around the clock' },
+    { slug: 'call-times', icon: '📞', title: 'Best Time to Call', desc: 'Optimal calling windows from any country' },
+    { slug: 'stock-market', icon: '📈', title: 'ASX Hours', desc: 'Australian stock exchange trading times' },
+    { slug: 'holidays', icon: '📅', title: 'Public Holidays', desc: 'Australian holidays and what closes' },
+    { slug: 'digital-nomad', icon: '🎒', title: 'Digital Nomad', desc: 'Coworking, beach cafés, and costs' },
+    { slug: 'time-difference', icon: '🌐', title: 'Time Difference', desc: 'Sydney time compared to major cities' },
+    { slug: 'travel-planning', icon: '✈️', title: 'Travel Planning', desc: 'Flights, airports, and jet lag tips' },
+  ],
+}
+
+// ===================
 // GUIDE REGISTRY
 // ===================
 export const guideConfigs: Record<string, GuideConfig> = {
@@ -620,6 +713,7 @@ export const guideConfigs: Record<string, GuideConfig> = {
   'dubai': dubaiGuide,
   'singapore': singaporeGuide,
   'paris': parisGuide,
+  'sydney': sydneyGuide,
 }
 
 export function getGuideConfig(citySlug: string): GuideConfig | null {
