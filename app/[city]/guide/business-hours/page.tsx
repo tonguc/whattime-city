@@ -9,13 +9,23 @@ import DubaiBusinessHoursContent from './DubaiBusinessHoursContent'
 import SingaporeBusinessHoursContent from './SingaporeBusinessHoursContent'
 import ParisBusinessHoursContent from './ParisBusinessHoursContent'
 import SydneyBusinessHoursContent from './SydneyBusinessHoursContent'
+import LosAngelesBusinessHoursContent from './LosAngelesBusinessHoursContent'
 
 type Props = {
   params: Promise<{ city: string }>
 }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' }]
+  return [
+    { city: 'new-york' }, 
+    { city: 'london' }, 
+    { city: 'tokyo' }, 
+    { city: 'dubai' }, 
+    { city: 'singapore' }, 
+    { city: 'paris' }, 
+    { city: 'sydney' },
+    { city: 'los-angeles' }
+  ]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -59,6 +69,8 @@ export default async function BusinessHoursPage({ params }: Props) {
       return <ParisBusinessHoursContent city={city} />
     case 'sydney':
       return <SydneyBusinessHoursContent city={city} />
+    case 'los-angeles':
+      return <LosAngelesBusinessHoursContent city={city} />
     default:
       return <BusinessHoursContent city={city} />
   }

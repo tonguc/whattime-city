@@ -9,11 +9,21 @@ import DubaiRemoteWorkContent from './DubaiRemoteWorkContent'
 import SingaporeRemoteWorkContent from './SingaporeRemoteWorkContent'
 import ParisRemoteWorkContent from './ParisRemoteWorkContent'
 import SydneyRemoteWorkContent from './SydneyRemoteWorkContent'
+import LosAngelesRemoteWorkContent from './LosAngelesRemoteWorkContent'
 
 type Props = { params: Promise<{ city: string }> }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' }]
+  return [
+    { city: 'new-york' }, 
+    { city: 'london' }, 
+    { city: 'tokyo' }, 
+    { city: 'dubai' }, 
+    { city: 'singapore' }, 
+    { city: 'paris' }, 
+    { city: 'sydney' },
+    { city: 'los-angeles' }
+  ]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -39,5 +49,6 @@ export default async function RemoteWorkPage({ params }: Props) {
   if (citySlug === 'singapore') return <SingaporeRemoteWorkContent city={city} />
   if (citySlug === 'paris') return <ParisRemoteWorkContent city={city} />
   if (citySlug === 'sydney') return <SydneyRemoteWorkContent city={city} />
+  if (citySlug === 'los-angeles') return <LosAngelesRemoteWorkContent city={city} />
   return <RemoteWorkContent city={city} />
 }

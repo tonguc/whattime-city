@@ -9,11 +9,14 @@ import DubaiDigitalNomadContent from './DubaiDigitalNomadContent'
 import SingaporeDigitalNomadContent from './SingaporeDigitalNomadContent'
 import ParisDigitalNomadContent from './ParisDigitalNomadContent'
 import SydneyDigitalNomadContent from './SydneyDigitalNomadContent'
+import LosAngelesDigitalNomadContent from './LosAngelesDigitalNomadContent'
 
 type Props = { params: Promise<{ city: string }> }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' }]
+  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' },
+    { city: 'los-angeles' }
+  ]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -39,5 +42,6 @@ export default async function DigitalNomadPage({ params }: Props) {
   if (citySlug === 'singapore') return <SingaporeDigitalNomadContent city={city} />
   if (citySlug === 'paris') return <ParisDigitalNomadContent city={city} />
   if (citySlug === 'sydney') return <SydneyDigitalNomadContent city={city} />
+  if (citySlug === 'los-angeles') return <LosAngelesDigitalNomadContent city={city} />
   return <DigitalNomadContent city={city} />
 }

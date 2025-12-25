@@ -15,7 +15,9 @@ type Props = {
 }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' }]
+  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' },
+    { city: 'los-angeles' }
+  ]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -59,6 +61,8 @@ export default async function TwentyFourHoursPage({ params }: Props) {
       return <ParisTwentyFourHoursContent city={city} />
     case 'sydney':
       return <Sydney24HoursContent city={city} />
+    case 'los-angeles':
+      return <LosAngelesTwentyFourHoursContent city={city} />
     default:
       return <TwentyFourHoursContent city={city} />
   }
