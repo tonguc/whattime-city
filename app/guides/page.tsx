@@ -25,10 +25,10 @@ export default function GuidesPage() {
   }).filter(item => item.city) // Filter out any missing cities
   
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${theme.bg}`}>
+    <div className={`min-h-screen flex flex-col bg-gradient-to-br ${theme.bg}`}>
       <Header />
       
-      <main className="max-w-7xl mx-auto px-4 py-8">
+      <main className="flex-1 max-w-7xl mx-auto px-4 py-8 w-full">
         {/* Page Title */}
         <div className="mb-6">
           <h1 className={`text-3xl font-bold ${theme.text} mb-2`}>
@@ -40,7 +40,7 @@ export default function GuidesPage() {
         </div>
 
         {/* City Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-1 min-[400px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
           {guideCities.map(({ slug, city, config }) => (
             <Link
               key={slug}
