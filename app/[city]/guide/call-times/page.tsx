@@ -12,16 +12,12 @@ export const metadata: Metadata = {
 }
 
 export default function LondonCallTimesPage() {
-  // London city bilgisi direkt tanımlandı (import hatası çözümü)
   const city = {
     slug: 'london',
     name: 'London',
     timezone: 'Europe/London'
   }
 
-  // ==========================================
-  // JSON-LD SCHEMA - FAQPage
-  // ==========================================
   const jsonLdFAQ = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -52,10 +48,10 @@ export default function LondonCallTimesPage() {
       },
       {
         "@type": "Question",
-        "name": "What's the best time to call London from the US?",
+        "name": "What is the best time to call London from the US?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Your morning (7-10 AM EST) catches London in the afternoon (12-3 PM) — ideal overlap. US West Coast should aim for 6-9 AM PST to catch London at 2-5 PM."
+          "text": "Your morning (7-10 AM EST) catches London in the afternoon (12-3 PM) - ideal overlap. US West Coast should aim for 6-9 AM PST to catch London at 2-5 PM."
         }
       },
       {
@@ -71,15 +67,12 @@ export default function LondonCallTimesPage() {
         "name": "What time do UK offices close?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Most offices close at 5:30 PM, though many professionals work until 6 PM or later. Friday afternoons tend to wind down earlier — aim for morning calls on Fridays."
+          "text": "Most offices close at 5:30 PM, though many professionals work until 6 PM or later. Friday afternoons tend to wind down earlier - aim for morning calls on Fridays."
         }
       }
     ]
   }
 
-  // ==========================================
-  // JSON-LD SCHEMA - HowTo
-  // ==========================================
   const jsonLdHowTo = {
     "@context": "https://schema.org",
     "@type": "HowTo",
@@ -116,19 +109,14 @@ export default function LondonCallTimesPage() {
 
   return (
     <>
-      {/* FAQPage Schema for Rich Results */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFAQ) }}
       />
-      
-      {/* HowTo Schema for Voice Search */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdHowTo) }}
       />
-      
-      {/* Main Content Component */}
       <LondonCallTimesContent city={city} />
     </>
   )
