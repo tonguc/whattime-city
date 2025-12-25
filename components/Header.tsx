@@ -123,6 +123,9 @@ export default function Header() {
           <Link href="/map" className={`px-2.5 py-2 rounded-lg text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
             Map
           </Link>
+          <Link href="/guides" className={`px-2.5 py-2 rounded-lg text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
+            Guides
+          </Link>
           <Link href="/tools" className={`px-2.5 py-2 rounded-lg text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
             Tools
           </Link>

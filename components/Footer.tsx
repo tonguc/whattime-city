@@ -17,6 +17,7 @@ export default function Footer({ isLight }: FooterProps) {
         <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4">
           <Link href="/map" className={`text-sm ${textMuted} hover:underline`}>World Map</Link>
           <Link href="/country" className={`text-sm ${textMuted} hover:underline`}>Countries</Link>
+          <Link href="/guides" className={`text-sm ${textMuted} hover:underline`}>City Guides</Link>
           <Link href="/tools" className={`text-sm ${textMuted} hover:underline`}>Tools</Link>
           <Link href="/widget" className={`text-sm ${textMuted} hover:underline`}>Widget</Link>
           <span className={textMuted}>|</span>
