@@ -17,7 +17,7 @@ export default function Footer({ isLight: isLightProp }: FooterProps = {}) {
   const textMuted = isLight ? 'text-slate-500' : 'text-slate-400'
   
   return (
-    <footer className={`py-6 backdrop-blur-xl ${theme.card} shadow-sm`}>
+    <footer className={`py-6 border-t backdrop-blur-xl ${theme.card} shadow-sm`}>
       <div className="max-w-6xl mx-auto px-4">
         {/* Links Row */}
         <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4">

@@ -25,22 +25,22 @@ export default function GuidesPage() {
   }).filter(item => item.city) // Filter out any missing cities
   
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className={`min-h-screen bg-gradient-to-br ${theme.bg}`}>
       <Header />
-      <main className={`flex-1 bg-gradient-to-br ${theme.bg}`}>
-        {/* Simple Title - No Hero */}
-        <div className="max-w-7xl mx-auto px-4 pt-8 pb-6">
-        <h1 className="text-3xl font-bold text-slate-800 dark:text-white mb-2">
-          City Time Zone Guides
-        </h1>
-        <p className="text-slate-600 dark:text-slate-400">
-          Complete guides for major world cities
-        </p>
-      </div>
+      
+      <main className="max-w-7xl mx-auto px-4 py-8">
+        {/* Page Title */}
+        <div className="mb-6">
+          <h1 className="text-3xl font-bold text-slate-800 dark:text-white mb-2">
+            City Time Zone Guides
+          </h1>
+          <p className="text-slate-600 dark:text-slate-400">
+            Complete guides for major world cities
+          </p>
+        </div>
 
-      {/* City Grid */}
-      <div className="max-w-7xl mx-auto px-4 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* City Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {guideCities.map(({ slug, city, config }) => (
             <Link
               key={slug}
@@ -107,9 +107,9 @@ export default function GuidesPage() {
             More city guides coming soon 🚀
           </p>
         </div>
-      </div>
-    </main>
-    <Footer />
+      </main>
+      
+      <Footer isLight={isLight} />
     </div>
   )
 }
