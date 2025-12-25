@@ -30,35 +30,35 @@ const CITY_DISPLAY_CONFIG: Record<string, CityDisplayConfig> = {
     displayName: 'NYC'
   },
   'london': {
-    icon: '🇬🇧',
+    icon: '🎡',
     utcOffset: 0,
     visitIcon: '🇬🇧',
     themeColor: 'blue',
     displayName: 'London'
   },
   'tokyo': {
-    icon: '🇯🇵',
+    icon: '🍣',
     utcOffset: 9,
     visitIcon: '🌸',
     themeColor: 'rose',
     displayName: 'Tokyo'
   },
   'dubai': {
-    icon: '🇦🇪',
+    icon: '🏙️',
     utcOffset: 4,
     visitIcon: '☀️',
     themeColor: 'emerald',
     displayName: 'Dubai'
   },
   'singapore': {
-    icon: '🇸🇬',
+    icon: '🦁',
     utcOffset: 8,
     visitIcon: '🇸🇬',
     themeColor: 'red',
     displayName: 'Singapore'
   },
   'paris': {
-    icon: '🇫🇷',
+    icon: '🗼',
     utcOffset: 1,
     visitIcon: '🇫🇷',
     themeColor: 'indigo',

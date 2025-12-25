@@ -1,31 +1,15 @@
-import { Metadata } from 'next'
+'use client'
+
 import Link from 'next/link'
 import { getCityBySlug } from '@/lib/cities'
 import { getCityDisplayConfig, getGuideCities } from '@/lib/cityDisplayConfig'
-
-export const metadata: Metadata = {
-  title: 'City Time Zone Guides | Business Hours, Best Times & More',
-  description: 'Complete time zone guides for major world cities. Business hours, stock markets, best time to visit, remote work tips, holidays, and local insights for NYC, London, Tokyo, Dubai, Singapore, Paris, Sydney and more.',
-  keywords: [
-    'city time zone guides',
-    'business hours by city',
-    'best time to visit',
-    'remote work time zones',
-    'stock market hours',
-    'city holidays',
-    'time zone planning'
-  ],
-  openGraph: {
-    title: 'City Time Zone Guides | Complete Resource',
-    description: 'Everything you need to know about time in major world cities. Business hours, stock markets, travel tips, and more.',
-    type: 'website',
-  },
-  alternates: {
-    canonical: 'https://whattime.city/guides'
-  }
-}
+import { useCityContext } from '@/lib/CityContext'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export default function GuidesPage() {
+  const { isLight } = useCityContext()
+  
   // Get all cities that have guides
   const guideCitySlugs = getGuideCities()
   
@@ -41,9 +25,11 @@ export default function GuidesPage() {
   }).filter(item => item.city) // Filter out any missing cities
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
-      {/* Simple Title - No Hero */}
-      <div className="max-w-7xl mx-auto px-4 pt-8 pb-6">
+    <>
+      <Header />
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
+        {/* Simple Title - No Hero */}
+        <div className="max-w-7xl mx-auto px-4 pt-8 pb-6">
         <h1 className="text-3xl font-bold text-slate-800 dark:text-white mb-2">
           City Time Zone Guides
         </h1>
@@ -123,5 +109,7 @@ export default function GuidesPage() {
         </div>
       </div>
     </div>
+    <Footer isLight={isLight} />
+    </>
   )
 }
