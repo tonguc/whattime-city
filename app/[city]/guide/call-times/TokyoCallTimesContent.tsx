@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { City } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
+import QuickTimeFinder from './QuickTimeFinder'
 
 interface Props {
   city: City
@@ -35,6 +36,18 @@ export default function TokyoCallTimesContent({ city }: Props) {
           Managing the 14-hour time difference with respect for Japanese work culture
         </p>
       </header>
+
+      {/* Quick Time Finder */}
+      <QuickTimeFinder
+        currentCity="Tokyo"
+        currentTime="6:16 AM"
+        cities={[
+          { name: 'New York', slug: 'new-york', time: '4:16 PM' },
+          { name: 'London', slug: 'london', time: '9:16 PM' },
+          { name: 'Singapore', slug: 'singapore', time: '5:16 AM' },
+          { name: 'Sydney', slug: 'sydney', time: '8:16 AM' }
+        ]}
+      />
 
       {/* Featured Snippet Section */}
       <section className={`mb-8 p-6 rounded-2xl border-l-4 border-green-500 ${greenBg}`}>
@@ -314,7 +327,7 @@ export default function TokyoCallTimesContent({ city }: Props) {
                 <td className="p-3">7-11 PM</td>
                 <td className="p-3 text-red-600">Difficult</td>
               </tr>
-              <tr className="bg-amber-50 dark:bg-amber-900/20">
+              <tr className="bg-amber-100 dark:bg-amber-900/30 font-semibold">
                 <td className="p-3 font-medium">Tokyo</td>
                 <td className="p-3 font-medium">+14 (winter) / +13 (summer)</td>
                 <td className="p-3 font-medium">7-11 PM</td>

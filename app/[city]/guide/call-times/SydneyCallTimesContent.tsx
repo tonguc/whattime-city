@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { City } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
+import QuickTimeFinder from './QuickTimeFinder'
 
 interface Props {
   city: City
@@ -35,6 +36,18 @@ export default function SydneyCallTimesContent({ city }: Props) {
           Navigating the 15-16 hour time difference and opposite seasons
         </p>
       </header>
+
+      {/* Quick Time Finder */}
+      <QuickTimeFinder
+        currentCity="Sydney"
+        currentTime="8:16 AM"
+        cities={[
+          { name: 'New York', slug: 'new-york', time: '4:16 PM' },
+          { name: 'Tokyo', slug: 'tokyo', time: '6:16 AM' },
+          { name: 'Singapore', slug: 'singapore', time: '5:16 AM' },
+          { name: 'London', slug: 'london', time: '9:16 PM' }
+        ]}
+      />
 
       {/* Featured Snippet Section */}
       <section className={`mb-8 p-6 rounded-2xl border-l-4 border-green-500 ${greenBg}`}>
@@ -356,7 +369,7 @@ export default function SydneyCallTimesContent({ city }: Props) {
                 <td className="p-3">7-11 PM</td>
                 <td className="p-3 text-red-600">Difficult</td>
               </tr>
-              <tr className="bg-red-50 dark:bg-red-900/20">
+              <tr className="bg-amber-100 dark:bg-amber-900/30 font-semibold">
                 <td className="p-3 font-medium">Sydney</td>
                 <td className="p-3 font-medium">+15-16</td>
                 <td className="p-3 font-medium">6-11 PM (or async!)</td>

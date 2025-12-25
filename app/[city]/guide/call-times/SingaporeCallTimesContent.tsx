@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { City } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
+import QuickTimeFinder from './QuickTimeFinder'
 
 interface Props {
   city: City
@@ -35,6 +36,18 @@ export default function SingaporeCallTimesContent({ city }: Props) {
           Managing the 13-hour time difference with Asia-Pacific's business hub
         </p>
       </header>
+
+      {/* Quick Time Finder */}
+      <QuickTimeFinder
+        currentCity="Singapore"
+        currentTime="5:16 AM"
+        cities={[
+          { name: 'New York', slug: 'new-york', time: '4:16 PM' },
+          { name: 'Tokyo', slug: 'tokyo', time: '6:16 AM' },
+          { name: 'Sydney', slug: 'sydney', time: '8:16 AM' },
+          { name: 'Dubai', slug: 'dubai', time: '1:16 AM' }
+        ]}
+      />
 
       {/* Featured Snippet Section */}
       <section className={`mb-8 p-6 rounded-2xl border-l-4 border-green-500 ${greenBg}`}>
@@ -296,7 +309,7 @@ export default function SingaporeCallTimesContent({ city }: Props) {
                 <td className="p-3">6-8 AM or 6-11 PM</td>
                 <td className="p-3 text-amber-600">Challenging</td>
               </tr>
-              <tr className="bg-amber-50 dark:bg-amber-900/20">
+              <tr className="bg-amber-100 dark:bg-amber-900/30 font-semibold">
                 <td className="p-3 font-medium">Singapore</td>
                 <td className="p-3 font-medium">+13</td>
                 <td className="p-3 font-medium">7-11 PM</td>

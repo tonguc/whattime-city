@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { City } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
+import QuickTimeFinder from './QuickTimeFinder'
 
 interface Props {
   city: City
@@ -35,6 +36,18 @@ export default function CallTimesContent({ city }: Props) {
           Complete guide to scheduling calls across all major time zones from NYC
         </p>
       </header>
+
+      {/* Quick Time Finder */}
+      <QuickTimeFinder
+        currentCity="New York"
+        currentTime="4:16 PM"
+        cities={[
+          { name: 'London', slug: 'london', time: '9:16 PM' },
+          { name: 'Paris', slug: 'paris', time: '10:16 PM' },
+          { name: 'Dubai', slug: 'dubai', time: '1:16 AM' },
+          { name: 'Tokyo', slug: 'tokyo', time: '6:16 AM' }
+        ]}
+      />
 
       {/* Featured Snippet Section */}
       <section className={`mb-8 p-6 rounded-2xl border-l-4 border-green-500 ${greenBg}`}>
