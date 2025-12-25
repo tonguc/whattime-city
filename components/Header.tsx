@@ -67,7 +67,7 @@ export default function Header() {
   }
   
   return (
-    <header className={`sticky top-0 z-50 w-full backdrop-blur-xl ${isLight ? 'bg-white/80' : 'bg-slate-900/80'} border-b ${isLight ? 'border-slate-200/50' : 'border-slate-700/50'} transition-colors duration-300`}>
+    <header className={`sticky top-0 z-50 w-full backdrop-blur-2xl ${isLight ? 'bg-white/30' : 'bg-slate-900/30'} border-b ${isLight ? 'border-slate-200/50' : 'border-slate-700/50'} transition-colors duration-300 shadow-sm`}>
       <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2 sm:gap-3">
         {/* Logo - Always goes to HOME */}
         <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0">
