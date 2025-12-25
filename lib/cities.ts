@@ -54,11 +54,27 @@ type ContinentFilter = import('@/data/constants').ContinentFilter
 
 /**
  * Kıtaya göre şehirleri döner
- * 'all' seçilirse Tier 1 şehirleri döner
+ * 'all' seçilirse Tier 1 + seçili Tier 2 şehirlerini döner (24 şehir)
  */
 export function getCitiesByContinent(continent: ContinentFilter): import('@/core/types').City[] {
   if (continent === 'all') {
-    return cities.filter(c => c.tier === 1)
+    // Tier 1 şehirler (16 global hub)
+    const tier1 = cities.filter(c => c.tier === 1)
+    
+    // Seçili Tier 2 şehirler - kıtalara dengeli dağıtılmış (8 şehir)
+    const tier2Slugs = [
+      'mexico-city',    // Americas
+      'sao-paulo',      // Americas
+      'madrid',         // Europe
+      'istanbul',       // Europe
+      'bangkok',        // Asia
+      'seoul',          // Asia
+      'mumbai',         // Asia
+      'cairo'           // Africa
+    ]
+    const tier2 = cities.filter(c => tier2Slugs.includes(c.slug))
+    
+    return [...tier1, ...tier2]  // 16 + 8 = 24 şehir
   }
   return cities.filter(c => c.continent === continent)
 }
