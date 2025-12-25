@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useCityContext } from '@/lib/CityContext'
 
 interface City {
   slug: string
@@ -13,6 +14,29 @@ interface Props {
 }
 
 export default function LondonCallTimesContent({ city }: Props) {
+  const { isLight } = useCityContext()
+  
+  // Theme colors - dark mode uyumlu!
+  const textColor = isLight ? 'text-slate-700' : 'text-slate-200'
+  const headingColor = isLight ? 'text-slate-900' : 'text-white'
+  const mutedColor = isLight ? 'text-slate-500' : 'text-slate-400'
+  const cardBg = isLight ? 'bg-slate-50' : 'bg-slate-800/50'
+  const cardBorder = isLight ? 'border-slate-200' : 'border-slate-700'
+  const linkColor = isLight ? 'text-amber-600 hover:text-amber-700' : 'text-amber-400 hover:text-amber-300'
+  const tableBg = isLight ? 'bg-white' : 'bg-slate-800'
+  const tableHeaderBg = isLight ? 'bg-slate-100' : 'bg-slate-700'
+  const tableBorder = isLight ? 'border-slate-200' : 'border-slate-600'
+  const hoverBg = isLight ? 'hover:bg-slate-50' : 'hover:bg-slate-700/30'
+  
+  // Warning box colors
+  const warningBg = isLight ? 'bg-blue-50' : 'bg-blue-900/20'
+  const warningBorder = isLight ? 'border-blue-100' : 'border-blue-800'
+  
+  // Green highlight colors
+  const greenBg = isLight ? 'bg-green-50' : 'bg-green-900/20'
+  const greenBorder = isLight ? 'border-green-100' : 'border-green-800'
+  const greenText = isLight ? 'text-green-700' : 'text-green-400'
+
   const callTimes = [
     { from: 'New York', flag: '🇺🇸', diff: '-5h', bestBusiness: '2 PM - 5 PM', bestPersonal: '6 PM - 10 PM' },
     { from: 'Los Angeles', flag: '🇺🇸', diff: '-8h', bestBusiness: '5 PM - 6 PM', bestPersonal: '8 PM - 11 PM' },
@@ -25,28 +49,28 @@ export default function LondonCallTimesContent({ city }: Props) {
   ]
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-6">
+    <div className={`max-w-4xl mx-auto px-4 py-6 ${textColor}`}>
       <header className="mb-8">
-        <div className="text-sm mb-2 text-slate-500">
-          <Link href={`/${city.slug}/guide/`} className="text-amber-600 hover:text-amber-700">
+        <div className={`text-sm mb-2 ${mutedColor}`}>
+          <Link href={`/${city.slug}/guide/`} className={linkColor}>
             ← Back to London Guide
           </Link>
         </div>
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
+        <h1 className={`text-3xl md:text-4xl font-bold mb-4 ${headingColor}`}>
           Best Time to Call London
         </h1>
-        <p className="text-lg text-slate-600">
+        <p className={`text-lg ${mutedColor}`}>
           Optimal calling times from major cities worldwide
         </p>
       </header>
 
       {/* Featured Snippet Section */}
-      <section id="snippet-target" className="mb-10 p-6 rounded-xl border bg-slate-50 border-slate-200">
-        <h2 className="text-2xl font-bold mb-4 text-slate-900">
+      <section id="snippet-target" className={`mb-10 p-6 rounded-xl border ${cardBg} ${cardBorder}`}>
+        <h2 className={`text-2xl font-bold mb-4 ${headingColor}`}>
           Best Time to Call London from New York
         </h2>
         
-        <p className="mb-4 leading-relaxed text-base text-slate-700">
+        <p className="mb-4 leading-relaxed text-base">
           The best time to call London from New York for business is between{' '}
           <strong>9:00 AM and 12:00 PM EST</strong>. This window aligns with{' '}
           <strong>2:00 PM to 5:00 PM in London</strong>, ensuring both parties are 
@@ -55,7 +79,7 @@ export default function LondonCallTimesContent({ city }: Props) {
         </p>
 
         {/* DST Warning */}
-        <div className="mb-6 p-4 rounded-lg border text-sm bg-blue-50 border-blue-100 text-slate-700">
+        <div className={`mb-6 p-4 rounded-lg border text-sm ${warningBg} ${warningBorder}`}>
           <p>
             <strong>⚠️ Note:</strong> London is typically 5 hours ahead of New York. 
             However, during Daylight Saving Time (DST) transition weeks in March and October, 
@@ -64,50 +88,50 @@ export default function LondonCallTimesContent({ city }: Props) {
         </div>
 
         {/* NYC-Specific Table */}
-        <div className="overflow-x-auto rounded-lg border border-slate-200">
-          <table className="w-full text-left border-collapse bg-white">
-            <thead className="bg-slate-100">
+        <div className={`overflow-x-auto rounded-lg border ${cardBorder}`}>
+          <table className={`w-full text-left border-collapse ${tableBg}`}>
+            <thead className={tableHeaderBg}>
               <tr>
-                <th className="p-4 border-b font-semibold text-sm md:text-base whitespace-nowrap text-slate-900 border-slate-200">
+                <th className={`p-4 border-b font-semibold text-sm md:text-base whitespace-nowrap ${headingColor} ${tableBorder}`}>
                   New York (EST)
                 </th>
-                <th className="p-4 border-b font-semibold text-sm md:text-base whitespace-nowrap text-slate-900 border-slate-200">
+                <th className={`p-4 border-b font-semibold text-sm md:text-base whitespace-nowrap ${headingColor} ${tableBorder}`}>
                   London (GMT/BST)
                 </th>
-                <th className="p-4 border-b font-semibold text-sm md:text-base whitespace-nowrap text-slate-900 border-slate-200">
+                <th className={`p-4 border-b font-semibold text-sm md:text-base whitespace-nowrap ${headingColor} ${tableBorder}`}>
                   Suitability
                 </th>
               </tr>
             </thead>
-            <tbody className="text-sm md:text-base text-slate-700">
+            <tbody className="text-sm md:text-base">
               <tr>
-                <td className="p-4 border-b border-slate-100">8:00 AM</td>
-                <td className="p-4 border-b border-slate-100">1:00 PM</td>
-                <td className="p-4 border-b border-slate-100 font-medium text-yellow-600">⚠️ Early for NYC</td>
+                <td className={`p-4 border-b ${tableBorder}`}>8:00 AM</td>
+                <td className={`p-4 border-b ${tableBorder}`}>1:00 PM</td>
+                <td className={`p-4 border-b ${tableBorder} font-medium text-yellow-600`}>⚠️ Early for NYC</td>
               </tr>
               
-              <tr className="bg-green-50">
-                <td className="p-4 border-b border-green-100 font-bold text-slate-900">9:00 AM</td>
-                <td className="p-4 border-b border-green-100 font-bold text-slate-900">2:00 PM</td>
-                <td className="p-4 border-b border-green-100 font-bold text-green-700">✅ Perfect (Overlap)</td>
+              <tr className={greenBg}>
+                <td className={`p-4 border-b ${greenBorder} font-bold ${headingColor}`}>9:00 AM</td>
+                <td className={`p-4 border-b ${greenBorder} font-bold ${headingColor}`}>2:00 PM</td>
+                <td className={`p-4 border-b ${greenBorder} font-bold ${greenText}`}>✅ Perfect (Overlap)</td>
               </tr>
               
-              <tr className="bg-green-50">
-                <td className="p-4 border-b border-green-100 font-bold text-slate-900">11:00 AM</td>
-                <td className="p-4 border-b border-green-100 font-bold text-slate-900">4:00 PM</td>
-                <td className="p-4 border-b border-green-100 font-bold text-green-700">✅ Perfect (Overlap)</td>
-              </tr>
-              
-              <tr>
-                <td className="p-4 border-b border-slate-100">2:00 PM</td>
-                <td className="p-4 border-b border-slate-100">7:00 PM</td>
-                <td className="p-4 border-b border-slate-100 font-medium text-yellow-600">⚠️ Late for London</td>
+              <tr className={greenBg}>
+                <td className={`p-4 border-b ${greenBorder} font-bold ${headingColor}`}>11:00 AM</td>
+                <td className={`p-4 border-b ${greenBorder} font-bold ${headingColor}`}>4:00 PM</td>
+                <td className={`p-4 border-b ${greenBorder} font-bold ${greenText}`}>✅ Perfect (Overlap)</td>
               </tr>
               
               <tr>
-                <td className="p-4 border-b border-slate-100">5:00 PM</td>
-                <td className="p-4 border-b border-slate-100">10:00 PM</td>
-                <td className="p-4 border-b border-slate-100 font-medium text-red-600">❌ Avoid (Too Late)</td>
+                <td className={`p-4 border-b ${tableBorder}`}>2:00 PM</td>
+                <td className={`p-4 border-b ${tableBorder}`}>7:00 PM</td>
+                <td className={`p-4 border-b ${tableBorder} font-medium text-yellow-600`}>⚠️ Late for London</td>
+              </tr>
+              
+              <tr>
+                <td className={`p-4 border-b ${tableBorder}`}>5:00 PM</td>
+                <td className={`p-4 border-b ${tableBorder}`}>10:00 PM</td>
+                <td className={`p-4 border-b ${tableBorder} font-medium text-red-600`}>❌ Avoid (Too Late)</td>
               </tr>
             </tbody>
           </table>
@@ -116,20 +140,20 @@ export default function LondonCallTimesContent({ city }: Props) {
 
       {/* Reverse Direction */}
       <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4 text-slate-900">
+        <h2 className={`text-2xl font-bold mb-4 ${headingColor}`}>
           Best Time to Call New York from London
         </h2>
         
-        <p className="leading-relaxed text-base mb-4 text-slate-700">
+        <p className="leading-relaxed text-base mb-4">
           If you are starting the call from London, your ideal window is restricted to your afternoon.
           New York generally starts work when it is already 2:00 PM in London.
         </p>
         
-        <div className="p-5 rounded-lg border bg-slate-50 border-slate-200">
-          <h3 className="font-semibold mb-3 text-slate-900">
+        <div className={`p-5 rounded-lg border ${cardBg} ${cardBorder}`}>
+          <h3 className={`font-semibold mb-3 ${headingColor}`}>
             Quick Reference (London Perspective)
           </h3>
-          <ul className="space-y-2 text-slate-700">
+          <ul className="space-y-2">
             <li className="flex items-center gap-2">
               <span>🌅</span> 
               <span><strong>2 PM - 5 PM:</strong> Best for business (Catches NYC 9 AM - 12 PM)</span>
@@ -148,30 +172,30 @@ export default function LondonCallTimesContent({ city }: Props) {
 
       {/* Multiple Cities Table */}
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4 text-slate-900">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
           📞 Best Calling Times by City
         </h2>
         
-        <div className="overflow-x-auto rounded-xl border border-slate-200">
+        <div className={`overflow-x-auto rounded-xl border ${cardBorder}`}>
           <table className="w-full text-sm">
-            <thead className="bg-slate-100">
+            <thead className={tableHeaderBg}>
               <tr>
-                <th className="px-4 py-3 text-left text-slate-900">Calling From</th>
-                <th className="px-4 py-3 text-left text-slate-900">Time Diff</th>
-                <th className="px-4 py-3 text-left text-slate-900">Best for Business</th>
-                <th className="px-4 py-3 text-left text-slate-900">Best for Personal</th>
+                <th className={`px-4 py-3 text-left ${headingColor}`}>Calling From</th>
+                <th className={`px-4 py-3 text-left ${headingColor}`}>Time Diff</th>
+                <th className={`px-4 py-3 text-left ${headingColor}`}>Best for Business</th>
+                <th className={`px-4 py-3 text-left ${headingColor}`}>Best for Personal</th>
               </tr>
             </thead>
-            <tbody className="divide-y border-slate-200">
+            <tbody className={`divide-y ${tableBorder}`}>
               {callTimes.map(t => (
-                <tr key={t.from} className="hover:bg-slate-50">
+                <tr key={t.from} className={hoverBg}>
                   <td className="px-4 py-3">{t.flag} {t.from}</td>
                   <td className="px-4 py-3 font-medium">{t.diff}</td>
                   <td className="px-4 py-3">
-                    {t.bestBusiness} <span className="text-slate-500">(your time)</span>
+                    {t.bestBusiness} <span className={mutedColor}>(your time)</span>
                   </td>
                   <td className="px-4 py-3">
-                    {t.bestPersonal} <span className="text-slate-500">(your time)</span>
+                    {t.bestPersonal} <span className={mutedColor}>(your time)</span>
                   </td>
                 </tr>
               ))}
@@ -182,14 +206,14 @@ export default function LondonCallTimesContent({ city }: Props) {
 
       {/* UK Call Culture */}
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4 text-slate-900">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
           🇬🇧 UK Calling Culture
         </h2>
         
-        <div className="p-4 rounded-xl bg-slate-50">
+        <div className={`p-4 rounded-xl ${cardBg} ${cardBorder}`}>
           <div className="grid md:grid-cols-2 gap-4">
             <div>
-              <h3 className="font-medium mb-2 text-slate-900">📞 Business Calls</h3>
+              <h3 className={`font-medium mb-2 ${headingColor}`}>📞 Business Calls</h3>
               <ul className="text-sm space-y-2">
                 <li><strong>Punctuality expected</strong> — call at the agreed time</li>
                 <li>Start with brief pleasantries before business</li>
@@ -198,7 +222,7 @@ export default function LondonCallTimesContent({ city }: Props) {
               </ul>
             </div>
             <div>
-              <h3 className="font-medium mb-2 text-slate-900">💬 Tone &amp; Style</h3>
+              <h3 className={`font-medium mb-2 ${headingColor}`}>💬 Tone &amp; Style</h3>
               <ul className="text-sm space-y-2">
                 <li>British understatement is common</li>
                 <li>Polite hedging: Would you mind if... rather than direct requests</li>
@@ -212,13 +236,13 @@ export default function LondonCallTimesContent({ city }: Props) {
 
       {/* FAQ */}
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4 text-slate-900">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
           ❓ Frequently Asked Questions
         </h2>
         
         <div className="space-y-3">
-          <div className="p-4 rounded-lg bg-slate-50">
-            <h3 className="font-medium mb-2 text-slate-900">
+          <div className={`p-4 rounded-lg ${cardBg} ${cardBorder}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>
               What is the best time to call London from the US?
             </h3>
             <p className="text-sm">
@@ -227,8 +251,8 @@ export default function LondonCallTimesContent({ city }: Props) {
             </p>
           </div>
           
-          <div className="p-4 rounded-lg bg-slate-50">
-            <h3 className="font-medium mb-2 text-slate-900">
+          <div className={`p-4 rounded-lg ${cardBg} ${cardBorder}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>
               Is it rude to call on weekends?
             </h3>
             <p className="text-sm">
@@ -237,8 +261,8 @@ export default function LondonCallTimesContent({ city }: Props) {
             </p>
           </div>
           
-          <div className="p-4 rounded-lg bg-slate-50">
-            <h3 className="font-medium mb-2 text-slate-900">
+          <div className={`p-4 rounded-lg ${cardBg} ${cardBorder}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>
               What time do UK offices close?
             </h3>
             <p className="text-sm">
@@ -250,35 +274,35 @@ export default function LondonCallTimesContent({ city }: Props) {
       </section>
 
       {/* Related Guides */}
-      <section className="p-6 rounded-2xl bg-slate-50">
-        <h2 className="text-lg font-semibold mb-4 text-slate-900">
+      <section className={`p-6 rounded-2xl ${cardBg} ${cardBorder}`}>
+        <h2 className={`text-lg font-semibold mb-4 ${headingColor}`}>
           Related Guides
         </h2>
         <div className="grid sm:grid-cols-2 gap-3">
           <Link 
             href={`/${city.slug}/guide/time-difference/`} 
-            className="flex items-center gap-2 p-3 rounded-lg transition-colors bg-white hover:bg-slate-100 border border-slate-200"
+            className={`flex items-center gap-2 p-3 rounded-lg transition-colors ${tableBg} ${hoverBg} border ${cardBorder}`}
           >
             <span>🌐</span>
             <span>London Time Difference</span>
           </Link>
           <Link 
             href={`/${city.slug}/guide/remote-work/`} 
-            className="flex items-center gap-2 p-3 rounded-lg transition-colors bg-white hover:bg-slate-100 border border-slate-200"
+            className={`flex items-center gap-2 p-3 rounded-lg transition-colors ${tableBg} ${hoverBg} border ${cardBorder}`}
           >
             <span>💻</span>
             <span>Remote Work Guide</span>
           </Link>
           <Link 
             href={`/${city.slug}/guide/business-hours/`} 
-            className="flex items-center gap-2 p-3 rounded-lg transition-colors bg-white hover:bg-slate-100 border border-slate-200"
+            className={`flex items-center gap-2 p-3 rounded-lg transition-colors ${tableBg} ${hoverBg} border ${cardBorder}`}
           >
             <span>💼</span>
             <span>London Business Hours</span>
           </Link>
           <Link 
             href={`/${city.slug}/guide/`} 
-            className="flex items-center gap-2 p-3 rounded-lg transition-colors bg-white hover:bg-slate-100 border border-slate-200"
+            className={`flex items-center gap-2 p-3 rounded-lg transition-colors ${tableBg} ${hoverBg} border ${cardBorder}`}
           >
             <span>📖</span>
             <span>Complete London Guide</span>
@@ -286,7 +310,7 @@ export default function LondonCallTimesContent({ city }: Props) {
         </div>
       </section>
 
-      <p className="mt-8 text-sm text-slate-500">
+      <p className={`mt-8 text-sm ${mutedColor}`}>
         Last updated: December 2024.
       </p>
     </div>
