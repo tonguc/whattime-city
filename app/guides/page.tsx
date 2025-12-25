@@ -8,7 +8,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export default function GuidesPage() {
-  const { isLight } = useCityContext()
+  const { theme, isLight } = useCityContext()
   
   // Get all cities that have guides
   const guideCitySlugs = getGuideCities()
@@ -25,9 +25,9 @@ export default function GuidesPage() {
   }).filter(item => item.city) // Filter out any missing cities
   
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
+      <main className={`flex-1 bg-gradient-to-br ${theme.bg}`}>
         {/* Simple Title - No Hero */}
         <div className="max-w-7xl mx-auto px-4 pt-8 pb-6">
         <h1 className="text-3xl font-bold text-slate-800 dark:text-white mb-2">
@@ -108,8 +108,8 @@ export default function GuidesPage() {
           </p>
         </div>
       </div>
-    </div>
+    </main>
     <Footer isLight={isLight} />
-    </>
+    </div>
   )
 }
