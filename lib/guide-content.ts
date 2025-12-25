@@ -704,6 +704,99 @@ export const sydneyGuide: GuideConfig = {
 }
 
 // ===================
+// LOS ANGELES
+// ===================
+export const losAngelesGuide: GuideConfig = {
+  citySlug: 'los-angeles',
+  cityName: 'Los Angeles',
+  timezone: 'America/Los_Angeles',
+  timezoneAbbr: 'PST/PDT',
+  timezoneName: 'Pacific Time',
+  utcOffset: -8,
+  icon: '🌴',
+  tagline: 'Your complete guide to time in the City of Angels',
+  
+  seo: {
+    title: 'Los Angeles Time Zone Guide | PST/PDT, Business Hours & More',
+    description: 'Complete LA time zone guide. Business hours, Hollywood schedules, best time to call LA, remote work overlap, California holidays, and local tips.',
+    keywords: ['los angeles time zone', 'la time now', 'pst pdt time', 'la business hours', 'best time to call la', 'la time difference', 'pacific time zone guide'],
+    ogTitle: 'Los Angeles Time Zone Guide | Complete LA Time Resource',
+    ogDescription: 'Everything about LA time: business hours, entertainment industry schedules, holidays, remote work tips. The definitive guide.',
+  },
+  
+  pages: {
+    overview: {
+      title: 'Los Angeles Time Zone Guide | PST/PDT, Business Hours & More',
+      description: 'Complete LA time zone guide. Business hours, entertainment schedules, best time to call LA, remote work overlap, California holidays, and local tips.',
+      keywords: ['los angeles time zone', 'la time', 'pst pdt'],
+    },
+    businessHours: {
+      title: 'LA Business Hours | Banks, Stores, Restaurants & More',
+      description: 'What time do businesses open in LA? Complete guide to Los Angeles store hours, bank schedules, restaurant times, and Hollywood offices.',
+      keywords: ['la business hours', 'los angeles store hours', 'what time do banks open la', 'la restaurant hours'],
+    },
+    bestTimeToVisit: {
+      title: 'Best Time to Visit Los Angeles | Weather, Crowds & Prices by Month',
+      description: 'When to visit LA? Month-by-month guide with weather, tourist crowds, hotel prices, and major events. Year-round sunshine!',
+      keywords: ['best time to visit los angeles', 'best month to visit la', 'la weather by month', 'la crowd calendar'],
+    },
+    remoteWork: {
+      title: 'Working with LA Teams Remotely | Time Zone Overlap & Meeting Times',
+      description: 'Remote work guide for LA collaboration. Find overlap hours with NYC, London, Tokyo. Best meeting times, async tips, and West Coast work culture.',
+      keywords: ['remote work la time zone', 'working with la team', 'time zone overlap calculator', 'best meeting time los angeles'],
+    },
+    twentyFourHours: {
+      title: "LA 24 Hour Guide | What's Open & When in Los Angeles",
+      description: "LA hour-by-hour: when Angelenos wake up, rush hours, beach crowds, happy hour, nightlife peaks, and what's open 24/7.",
+      keywords: ['24 hours in los angeles', 'la rush hour times', 'when do bars close la', 'late night food la'],
+    },
+    callTimes: {
+      title: 'Best Time to Call Los Angeles | From USA, UK, Asia & More',
+      description: 'When to call LA? Best calling times from New York, London, Tokyo, Sydney. Business hours overlap and optimal windows for personal calls.',
+      keywords: ['best time to call la', 'best time to call california from usa', 'call la from new york time'],
+    },
+    stockMarket: {
+      title: 'NASDAQ Trading Hours | LA Market Times for West Coast Investors',
+      description: 'NASDAQ opens 6:30 AM PST (9:30 AM EST). Complete stock market schedule from Pacific Time perspective with trading hours and market holidays.',
+      keywords: ['nasdaq hours pst', 'stock market hours la', 'west coast trading hours', 'market opening time pacific'],
+    },
+    holidays: {
+      title: "California Public Holidays | LA Closures, Store Hours & What's Open",
+      description: "California public holidays calendar. What's closed on Memorial Day, July 4th, Thanksgiving? Bank hours, store schedules, and holiday traffic.",
+      keywords: ['california public holidays', 'la holidays', 'what is closed memorial day', 'california bank holidays'],
+    },
+    digitalNomad: {
+      title: 'Digital Nomad LA Guide | Coworking, Beach Cafes & Costs',
+      description: 'Work remotely from LA. Best coworking spaces ($300-500/mo), Venice Beach cafés, WiFi spots, cost of living breakdown, visa options.',
+      keywords: ['digital nomad la', 'best coworking spaces los angeles', 'cafes with wifi la', 'remote work los angeles'],
+    },
+    timeDifference: {
+      title: 'Los Angeles Time Difference Calculator | PST/PDT vs World Cities',
+      description: 'LA time difference to New York (+3h), London (+8h), Tokyo (+17h), Sydney (+19h) and 50+ cities. PST vs EST explained.',
+      keywords: ['la time difference', 'california vs new york time', 'pst vs est hours', 'la tokyo time difference'],
+    },
+    travelPlanning: {
+      title: 'Los Angeles Travel Time Guide | Flights, Jet Lag Tips & Getting Around',
+      description: 'Plan your LA trip: flight times from major cities, jet lag recovery tips, LAX to city, and navigating the sprawling metropolis.',
+      keywords: ['la flight times', 'lax to downtown', 'la jet lag tips', 'how long flight to los angeles'],
+    },
+  },
+  
+  clusters: [
+    { slug: 'business-hours', icon: '💼', title: 'Business Hours', desc: 'Bank, shop, and restaurant hours in LA' },
+    { slug: 'best-time-to-visit', icon: '🌴', title: 'Best Time to Visit', desc: 'Weather, crowds, and events by season' },
+    { slug: 'remote-work', icon: '💻', title: 'Remote Work', desc: 'Working with LA teams across time zones' },
+    { slug: '24-hours', icon: '🌆', title: '24 Hours in LA', desc: 'How Angelenos live around the clock' },
+    { slug: 'call-times', icon: '📞', title: 'Best Time to Call', desc: 'Optimal calling windows from any country' },
+    { slug: 'stock-market', icon: '📈', title: 'Market Hours', desc: 'West Coast perspective on trading times' },
+    { slug: 'holidays', icon: '📅', title: 'Public Holidays', desc: 'California holidays and what closes' },
+    { slug: 'digital-nomad', icon: '🎒', title: 'Digital Nomad', desc: 'Coworking, beach cafés, and costs' },
+    { slug: 'time-difference', icon: '🌐', title: 'Time Difference', desc: 'LA time compared to major cities' },
+    { slug: 'travel-planning', icon: '✈️', title: 'Travel Planning', desc: 'Flights, airports, and jet lag tips' },
+  ],
+}
+
+// ===================
 // GUIDE REGISTRY
 // ===================
 export const guideConfigs: Record<string, GuideConfig> = {
@@ -714,6 +807,7 @@ export const guideConfigs: Record<string, GuideConfig> = {
   'singapore': singaporeGuide,
   'paris': parisGuide,
   'sydney': sydneyGuide,
+  'los-angeles': losAngelesGuide,
 }
 
 export function getGuideConfig(citySlug: string): GuideConfig | null {

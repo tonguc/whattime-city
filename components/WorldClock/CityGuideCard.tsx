@@ -71,6 +71,15 @@ const CITY_GUIDES: CityGuideConfig[] = [
     colorLight: 'bg-gradient-to-r from-sky-100 to-cyan-100 border-2 border-sky-300 hover:border-sky-400',
     colorDark: 'bg-gradient-to-r from-sky-900/50 to-cyan-900/50 border-2 border-sky-600 hover:border-sky-500',
     buttonColor: 'bg-sky-500 group-hover:bg-sky-600 dark:group-hover:bg-sky-400'
+  },
+  {
+    slug: 'los-angeles',
+    emoji: '🎬',
+    title: 'LA Time Guide',
+    description: 'Hollywood hours, beach life, California culture & more',
+    colorLight: 'bg-gradient-to-r from-purple-100 to-pink-100 border-2 border-purple-300 hover:border-purple-400',
+    colorDark: 'bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-2 border-purple-600 hover:border-purple-500',
+    buttonColor: 'bg-purple-500 group-hover:bg-purple-600 dark:group-hover:bg-purple-400'
   }
 ]
 
