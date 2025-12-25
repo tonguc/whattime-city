@@ -71,6 +71,13 @@ const CITY_DISPLAY_CONFIG: Record<string, CityDisplayConfig> = {
     themeColor: 'sky',
     displayName: 'Sydney'
   },
+  'los-angeles': {
+    icon: '🌴',
+    utcOffset: -8,
+    visitIcon: '🎬',
+    themeColor: 'purple',
+    displayName: 'LA'
+  },
 }
 
 /**
