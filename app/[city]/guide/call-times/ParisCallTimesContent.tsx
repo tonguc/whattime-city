@@ -1,165 +1,402 @@
 'use client'
 
+import Link from 'next/link'
 import { City } from '@/lib/cities'
+import { useCityContext } from '@/lib/CityContext'
 
 interface Props {
   city: City
 }
 
 export default function ParisCallTimesContent({ city }: Props) {
+  const { isLight } = useCityContext()
+  
+  const textColor = isLight ? 'text-slate-700' : 'text-slate-200'
+  const headingColor = isLight ? 'text-slate-800' : 'text-white'
+  const mutedColor = isLight ? 'text-slate-500' : 'text-slate-400'
+  const cardBg = isLight ? 'bg-slate-50' : 'bg-slate-700/50'
+  const linkColor = isLight ? 'text-amber-600 hover:text-amber-700' : 'text-amber-400 hover:text-amber-300'
+  const tableBorder = isLight ? 'border-slate-200' : 'border-slate-600'
+  const greenBg = isLight ? 'bg-green-50' : 'bg-green-900/20'
+  const blueBg = isLight ? 'bg-blue-50' : 'bg-blue-900/20'
+  const blueText = isLight ? 'text-blue-700' : 'text-blue-300'
+  
   return (
-    <article className="prose prose-slate dark:prose-invert max-w-none">
-      <h1>Best Time to Call Paris: Optimal Windows from Any Country</h1>
-      
-      <p className="lead">
-        Planning a call to Paris? Whether for business or personal reasons, finding the right 
-        time window is crucial. Paris is on Central European Time (CET/CEST).
-      </p>
-
-      <div className="not-prose my-8 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-2xl">
-        <h2 className="text-xl font-bold mb-4">📞 Quick Reference: Paris Business Hours</h2>
-        <div className="text-sm">
-          <p><strong>Best calling window:</strong> 10:00 AM - 12:00 PM and 2:00 PM - 5:00 PM CET</p>
-          <p><strong>Avoid:</strong> 12:00 PM - 2:00 PM (lunch) and after 6:00 PM</p>
-          <p><strong>Country code:</strong> +33</p>
+    <div className={textColor}>
+      {/* Header */}
+      <header className="mb-8">
+        <div className={`text-sm mb-2 ${mutedColor}`}>
+          <Link href={`/${city.slug}/guide/`} className={linkColor}>← Back to Paris Guide</Link>
         </div>
-      </div>
+        <h1 className={`text-3xl md:text-4xl font-bold mb-4 ${headingColor}`}>
+          Best Time to Call Paris from New York
+        </h1>
+        <p className={`text-lg ${mutedColor}`}>
+          Navigate the 6-hour time difference and French business culture for successful calls
+        </p>
+      </header>
 
-      <h2>Best Time to Call Paris from Major Cities</h2>
+      {/* Featured Snippet Section */}
+      <section className={`mb-8 p-6 rounded-2xl border-l-4 border-green-500 ${greenBg}`}>
+        <h2 className={`text-lg font-semibold mb-2 ${headingColor}`}>
+          ⚡ Quick Answer
+        </h2>
+        <p className="mb-3">
+          <strong>Paris is 6 hours ahead of New York</strong> (5 hours during DST transition weeks). 
+          The best time for business calls is between <strong className="text-green-600 dark:text-green-400">9:00 AM - 12:00 PM EST</strong>, 
+          which reaches Paris during their afternoon (3:00 PM - 6:00 PM CET/CEST).
+        </p>
+        <p className="text-sm">
+          <strong>Critical:</strong> Avoid calling 6:30 AM - 8:00 AM EST (12:30 PM - 2:00 PM Paris) — this is the sacred French lunch break!
+        </p>
+      </section>
 
-      <h3>🇺🇸 From New York (EST/EDT)</h3>
-      <ul>
-        <li><strong>Paris is:</strong> 6 hours ahead</li>
-        <li><strong>Best time to call:</strong> 4:00 AM - 6:00 AM (10 AM - 12 PM Paris)</li>
-        <li><strong>Or:</strong> 8:00 AM - 11:00 AM (2 PM - 5 PM Paris)</li>
-        <li><strong>Avoid:</strong> 6:00 AM - 8:00 AM NY (Paris lunch)</li>
-      </ul>
+      {/* Best Times Table */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
+          📞 Best Calling Windows
+        </h2>
+        
+        <div className={`overflow-x-auto rounded-xl border ${tableBorder}`}>
+          <table className="w-full text-sm">
+            <thead className={cardBg}>
+              <tr>
+                <th className="text-left p-3 font-medium">Your Time (NYC)</th>
+                <th className="text-left p-3 font-medium">Paris Time</th>
+                <th className="text-left p-3 font-medium">Recommendation</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 dark:divide-slate-600">
+              <tr>
+                <td className="p-3">3:00 AM - 5:59 AM</td>
+                <td className="p-3">9:00 AM - 11:59 AM</td>
+                <td className="p-3 text-amber-600">✅ Good (but very early for you)</td>
+              </tr>
+              <tr className="bg-red-50 dark:bg-red-900/20">
+                <td className="p-3">6:00 AM - 8:00 AM</td>
+                <td className="p-3">12:00 PM - 2:00 PM</td>
+                <td className="p-3 text-red-600"><strong>❌ AVOID - French lunch hour</strong></td>
+              </tr>
+              <tr className={greenBg}>
+                <td className="p-3 font-medium">9:00 AM - 12:00 PM</td>
+                <td className="p-3 font-medium">3:00 PM - 6:00 PM</td>
+                <td className="p-3"><strong className="text-green-600 dark:text-green-400">✅ BEST - Afternoon Paris</strong></td>
+              </tr>
+              <tr>
+                <td className="p-3">12:01 PM - 5:00 PM</td>
+                <td className="p-3">6:01 PM - 11:00 PM</td>
+                <td className="p-3 text-amber-600">⚠️ Personal calls OK, business ending</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-      <div className="not-prose my-4 p-4 bg-slate-100 dark:bg-slate-800 rounded-xl text-sm">
-        <strong>When Paris is 9:00 AM →</strong> New York is 3:00 AM<br/>
-        <strong>When Paris is 6:00 PM →</strong> New York is 12:00 PM noon
-      </div>
+      {/* DST Warning */}
+      <section className={`mb-8 p-5 rounded-xl border-l-4 border-blue-500 ${blueBg}`}>
+        <h3 className={`font-semibold mb-2 ${blueText}`}>🕐 DST Transition Alert</h3>
+        <p className="mb-2">
+          <strong>Europe and North America change clocks on different dates.</strong> For 2-3 weeks in March and October, 
+          the time difference shifts from 6 hours to 5 hours.
+        </p>
+        <p className="text-sm">
+          Paris switches to summer time (CEST) in late March. NYC switches to EDT in early-mid March. 
+          Between these dates, Paris is only 5 hours ahead instead of 6. Same pattern in reverse during October/November.
+        </p>
+      </section>
 
-      <h3>🇺🇸 From Los Angeles (PST/PDT)</h3>
-      <ul>
-        <li><strong>Paris is:</strong> 9 hours ahead</li>
-        <li><strong>Best time to call:</strong> 1:00 AM - 3:00 AM (10 AM - 12 PM Paris)</li>
-        <li><strong>Or:</strong> 5:00 AM - 8:00 AM (2 PM - 5 PM Paris)</li>
-        <li><strong>Challenge:</strong> Very early mornings or evening calls for Paris</li>
-      </ul>
+      {/* Introduction */}
+      <section className="mb-10 space-y-4">
+        <p>
+          Calling Paris from New York offers a comfortable 3-hour overlap window during business hours — one of the 
+          easiest European connections for US-based professionals. However, success requires understanding French business 
+          culture, particularly the importance of the lunch break.
+        </p>
+        <p>
+          Unlike London or other major European capitals, Paris maintains a strong tradition of the two-hour lunch break 
+          (typically 12:30 PM to 2:00 PM). Many professionals are genuinely unavailable during this time, either at 
+          restaurants or in internal meetings. Calling during lunch can be perceived as culturally insensitive.
+        </p>
+        <p>
+          This guide covers optimal calling times, French business etiquette, and strategies for building productive 
+          relationships with Parisian contacts across the Atlantic.
+        </p>
+      </section>
 
-      <h3>🇬🇧 From London (GMT/BST)</h3>
-      <ul>
-        <li><strong>Paris is:</strong> 1 hour ahead</li>
-        <li><strong>Best time to call:</strong> 9:00 AM - 5:00 PM London time</li>
-        <li><strong>Easy:</strong> Nearly full overlap during business hours</li>
-        <li><strong>Remember:</strong> 12:00 PM London = 1:00 PM Paris (lunch!)</li>
-      </ul>
+      {/* Detailed Analysis */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
+          🌍 Understanding the Time Gap
+        </h2>
+        
+        <div className="space-y-4">
+          <div className={`p-5 rounded-xl ${cardBg}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>Morning NYC (9 AM - 12 PM EST)</h3>
+            <p className="mb-2">
+              <strong>Paris time:</strong> 3 PM - 6 PM (afternoon)
+            </p>
+            <p className="mb-2">
+              <strong>Pros:</strong> Perfect timing! Parisians are back from lunch, energized, and available. 
+              This is the sweet spot for business calls.
+            </p>
+            <p className="text-sm">
+              <strong>Best for:</strong> Client calls, negotiations, important discussions. You're fresh, they're focused.
+            </p>
+          </div>
 
-      <h3>🇦🇪 From Dubai (GST)</h3>
-      <ul>
-        <li><strong>Paris is:</strong> 3 hours behind</li>
-        <li><strong>Best time to call:</strong> 1:00 PM - 5:00 PM Dubai (10 AM - 2 PM Paris)</li>
-        <li><strong>Or:</strong> 5:00 PM - 8:00 PM Dubai (2 PM - 5 PM Paris)</li>
-        <li><strong>Good overlap:</strong> Afternoon Dubai = workday Paris</li>
-      </ul>
+          <div className={`p-5 rounded-xl ${cardBg}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>Early Morning NYC (3-6 AM EST)</h3>
+            <p className="mb-2">
+              <strong>Paris time:</strong> 9 AM - 12 PM (morning)
+            </p>
+            <p className="mb-2">
+              <strong>Pros:</strong> Catches Parisians at the start of their day. Good for urgent matters.
+            </p>
+            <p className="text-sm text-red-600 dark:text-red-400">
+              <strong>Cons:</strong> Extremely early for you. Reserve for high-priority contacts only.
+            </p>
+          </div>
 
-      <h3>🇮🇳 From Mumbai (IST)</h3>
-      <ul>
-        <li><strong>Paris is:</strong> 4.5 hours behind</li>
-        <li><strong>Best time to call:</strong> 2:30 PM - 6:30 PM Mumbai (10 AM - 2 PM Paris)</li>
-        <li><strong>Or:</strong> 6:30 PM - 9:30 PM Mumbai (2 PM - 5 PM Paris)</li>
-        <li><strong>Reasonable:</strong> Afternoon/evening Mumbai works well</li>
-      </ul>
+          <div className={`p-5 rounded-xl border-2 border-red-300 dark:border-red-700 ${cardBg}`}>
+            <h3 className={`font-medium mb-2 text-red-600 dark:text-red-400`}>
+              ❌ The Lunch Hour Trap (6-8 AM NYC)
+            </h3>
+            <p className="mb-2">
+              <strong>Paris time:</strong> 12 PM - 2 PM (SACRED LUNCH)
+            </p>
+            <p className="text-sm">
+              <strong>Why avoid:</strong> French business culture treats lunch as inviolable. Many professionals 
+              turn off phones, have extended restaurant meals, or internal team lunches. Your call will likely go 
+              unanswered and may be viewed as culturally tone-deaf.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      <h3>🇸🇬 From Singapore (SGT)</h3>
-      <ul>
-        <li><strong>Paris is:</strong> 7 hours behind</li>
-        <li><strong>Best time to call:</strong> 5:00 PM - 7:00 PM Singapore (10 AM - 12 PM Paris)</li>
-        <li><strong>Or:</strong> 9:00 PM - 12:00 AM Singapore (2 PM - 5 PM Paris)</li>
-        <li><strong>Challenge:</strong> Evening calls for Singapore</li>
-      </ul>
+      {/* Reverse Direction */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
+          📞 Calling NYC from Paris
+        </h2>
+        
+        <p className="mb-4">
+          If you're in Paris calling New York contacts:
+        </p>
+        
+        <div className={`overflow-x-auto rounded-xl border ${tableBorder}`}>
+          <table className="w-full text-sm">
+            <thead className={cardBg}>
+              <tr>
+                <th className="text-left p-3 font-medium">Your Time (Paris)</th>
+                <th className="text-left p-3 font-medium">NYC Time</th>
+                <th className="text-left p-3 font-medium">Recommendation</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 dark:divide-slate-600">
+              <tr>
+                <td className="p-3">9:00 AM - 12:00 PM</td>
+                <td className="p-3">3:00 AM - 6:00 AM</td>
+                <td className="p-3 text-red-600">❌ Far too early in NYC</td>
+              </tr>
+              <tr className={greenBg}>
+                <td className="p-3 font-medium">3:00 PM - 6:00 PM</td>
+                <td className="p-3 font-medium">9:00 AM - 12:00 PM</td>
+                <td className="p-3"><strong className="text-green-600 dark:text-green-400">✅ BEST - Morning NYC</strong></td>
+              </tr>
+              <tr>
+                <td className="p-3">7:00 PM onwards</td>
+                <td className="p-3">1:00 PM onwards</td>
+                <td className="p-3 text-amber-600">✅ Good, but you're after hours</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-      <h3>🇯🇵 From Tokyo (JST)</h3>
-      <ul>
-        <li><strong>Paris is:</strong> 8 hours behind</li>
-        <li><strong>Best time to call:</strong> 6:00 PM - 8:00 PM Tokyo (10 AM - 12 PM Paris)</li>
-        <li><strong>Or:</strong> 10:00 PM Tokyo (2 PM Paris)</li>
-        <li><strong>Challenge:</strong> Limited overlap, evening Tokyo best</li>
-      </ul>
+        <div className={`mt-4 p-4 rounded-lg ${cardBg}`}>
+          <p className="text-sm">
+            <strong>💡 Pro tip:</strong> Many Parisian professionals schedule standing calls with NYC at 4-5 PM their time 
+            (10-11 AM NYC). This works well before their evening plans begin.
+          </p>
+        </div>
+      </section>
 
-      <h3>🇦🇺 From Sydney (AEST/AEDT)</h3>
-      <ul>
-        <li><strong>Paris is:</strong> 9-10 hours behind</li>
-        <li><strong>Best time to call:</strong> 7:00 PM - 9:00 PM Sydney (10 AM - 12 PM Paris)</li>
-        <li><strong>Challenge:</strong> Minimal overlap, evening Sydney = morning Paris</li>
-      </ul>
+      {/* Comparison with Other Cities */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
+          🌐 Paris vs Other Major Cities (NYC Perspective)
+        </h2>
+        
+        <div className={`overflow-x-auto rounded-xl border ${tableBorder}`}>
+          <table className="w-full text-sm">
+            <thead className={cardBg}>
+              <tr>
+                <th className="text-left p-3 font-medium">City</th>
+                <th className="text-left p-3 font-medium">Hours Ahead</th>
+                <th className="text-left p-3 font-medium">Best NYC Call Time</th>
+                <th className="text-left p-3 font-medium">Overlap Quality</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 dark:divide-slate-600">
+              <tr>
+                <td className="p-3">London</td>
+                <td className="p-3">+5</td>
+                <td className="p-3">9 AM - 12 PM</td>
+                <td className="p-3 text-green-600">Excellent (3h)</td>
+              </tr>
+              <tr className="bg-amber-50 dark:bg-amber-900/20">
+                <td className="p-3 font-medium">Paris</td>
+                <td className="p-3 font-medium">+6</td>
+                <td className="p-3 font-medium">9 AM - 12 PM (avoid 6-8 AM!)</td>
+                <td className="p-3 text-green-600 font-medium">Excellent (3h)</td>
+              </tr>
+              <tr>
+                <td className="p-3">Dubai</td>
+                <td className="p-3">+9</td>
+                <td className="p-3">6-8 AM or 6-11 PM</td>
+                <td className="p-3 text-amber-600">Challenging</td>
+              </tr>
+              <tr>
+                <td className="p-3">Singapore</td>
+                <td className="p-3">+13</td>
+                <td className="p-3">7-11 PM</td>
+                <td className="p-3 text-red-600">Difficult</td>
+              </tr>
+              <tr>
+                <td className="p-3">Tokyo</td>
+                <td className="p-3">+14</td>
+                <td className="p-3">7-11 PM</td>
+                <td className="p-3 text-red-600">Difficult</td>
+              </tr>
+              <tr>
+                <td className="p-3">Sydney</td>
+                <td className="p-3">+15-16</td>
+                <td className="p-3">6-11 PM</td>
+                <td className="p-3 text-red-600">Very Difficult</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-      <h2>Times to Avoid</h2>
+      {/* French Business Culture */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
+          🇫🇷 French Business Culture Tips
+        </h2>
+        
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className={`p-4 rounded-lg border ${tableBorder}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>Communication Style</h3>
+            <ul className="text-sm space-y-1">
+              <li>✓ Formal initially — use "Monsieur/Madame"</li>
+              <li>✓ Build relationship before business</li>
+              <li>✓ Appreciate effort to speak French (even badly!)</li>
+              <li>✓ Direct but polite communication</li>
+            </ul>
+          </div>
 
-      <div className="not-prose my-6 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-800">
-        <h3 className="font-bold mb-2">⚠️ Don't Call During:</h3>
-        <ul className="text-sm space-y-1">
-          <li>• <strong>12:00 PM - 2:00 PM Paris:</strong> Sacred lunch hour</li>
-          <li>• <strong>Before 9:00 AM Paris:</strong> Too early for business</li>
-          <li>• <strong>After 6:00 PM Paris:</strong> "Right to disconnect" culture</li>
-          <li>• <strong>Weekends:</strong> Unless personal/urgent</li>
-          <li>• <strong>August:</strong> Many people on vacation</li>
-        </ul>
-      </div>
+          <div className={`p-4 rounded-lg border ${tableBorder}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>Lunch Culture</h3>
+            <ul className="text-sm space-y-1">
+              <li>✓ <strong>12:30-2:00 PM:</strong> Sacred time off</li>
+              <li>✓ Not just food — social & mental break</li>
+              <li>✓ Many leave office entirely</li>
+              <li>✓ Respect this boundary rigorously</li>
+            </ul>
+          </div>
 
-      <h2>French Phone Etiquette</h2>
+          <div className={`p-4 rounded-lg border ${tableBorder}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>Business Hours</h3>
+            <ul className="text-sm space-y-1">
+              <li>✓ <strong>9:00 AM - 6:00 PM</strong> (minus lunch)</li>
+              <li>✓ August = vacation month (plan ahead!)</li>
+              <li>✓ Fridays can be half-days in summer</li>
+              <li>✓ Work-life balance highly valued</li>
+            </ul>
+          </div>
 
-      <ul>
-        <li><strong>Always start with "Bonjour"</strong> — Never jump straight to business</li>
-        <li><strong>Use formal language</strong> — "Vous" not "tu" with business contacts</li>
-        <li><strong>Keep it structured</strong> — French business culture appreciates clarity</li>
-        <li><strong>Schedule in advance</strong> — Cold calls less effective than scheduled calls</li>
-        <li><strong>Follow up in writing</strong> — Send email summary after important calls</li>
-      </ul>
+          <div className={`p-4 rounded-lg border ${tableBorder}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>Best Practices</h3>
+            <ul className="text-sm space-y-1">
+              <li>✓ Email before calling (preferred)</li>
+              <li>✓ Be punctual — meetings start on time</li>
+              <li>✓ Avoid hard-sell tactics</li>
+              <li>✓ Quality over speed in relationships</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-      <h2>Calling France: Technical Details</h2>
+      {/* FAQ Section */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
+          ❓ Frequently Asked Questions
+        </h2>
+        
+        <div className="space-y-4">
+          <div className={`p-5 rounded-xl border ${tableBorder}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>What is the best time to call Paris from New York?</h3>
+            <p className="text-sm">
+              Between 9:00 AM and 12:00 PM EST, reaching Paris during their 3:00 PM - 6:00 PM window. 
+              This is post-lunch when professionals are most available and focused. Absolutely avoid 6-8 AM EST 
+              (12-2 PM Paris lunch hour).
+            </p>
+          </div>
 
-      <div className="not-prose my-6 p-4 bg-slate-100 dark:bg-slate-800 rounded-xl">
-        <ul className="text-sm space-y-2">
-          <li><strong>Country code:</strong> +33</li>
-          <li><strong>Paris area:</strong> +33 1 (drop the 0 from 01)</li>
-          <li><strong>Mobile numbers:</strong> +33 6 or +33 7</li>
-          <li><strong>Example:</strong> 01 23 45 67 89 → +33 1 23 45 67 89</li>
-          <li><strong>Popular apps:</strong> WhatsApp, FaceTime, Zoom widely used</li>
-        </ul>
-      </div>
+          <div className={`p-5 rounded-xl border ${tableBorder}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>Why is lunch hour so important in Paris?</h3>
+            <p className="text-sm">
+              French business culture views the lunch break (12:30-2:00 PM) as essential for well-being and social connection. 
+              It's not just eating — it's a mental reset. Many professionals genuinely disconnect during this time. 
+              Calling during lunch can harm your professional relationship.
+            </p>
+          </div>
 
-      <h2>Video Call Considerations</h2>
+          <div className={`p-5 rounded-xl border ${tableBorder}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>How does DST affect Paris-NYC calls?</h3>
+            <p className="text-sm">
+              For 2-3 weeks in March and again in October/November, Europe and North America are "out of sync" 
+              on DST changes. During these periods, Paris is only 5 hours ahead instead of the usual 6. 
+              Always verify the current time difference before scheduling important calls.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      <ul>
-        <li><strong>Background matters:</strong> French professionals appreciate neat settings</li>
-        <li><strong>Dress code:</strong> Smart casual minimum, formal for first meetings</li>
-        <li><strong>Punctuality:</strong> Be on time for scheduled calls</li>
-        <li><strong>Small talk:</strong> Brief pleasantries before diving into business</li>
-      </ul>
-
-      <div className="not-prose my-8 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-2xl">
-        <h3 className="font-bold mb-3">⏰ Quick Conversion Table</h3>
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="border-b">
-              <th className="text-left py-2">Paris Time</th>
-              <th className="text-left py-2">NYC</th>
-              <th className="text-left py-2">London</th>
-              <th className="text-left py-2">Dubai</th>
-              <th className="text-left py-2">Singapore</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td className="py-1">9:00 AM</td><td>3:00 AM</td><td>8:00 AM</td><td>12:00 PM</td><td>4:00 PM</td></tr>
-            <tr><td className="py-1">12:00 PM</td><td>6:00 AM</td><td>11:00 AM</td><td>3:00 PM</td><td>7:00 PM</td></tr>
-            <tr><td className="py-1">3:00 PM</td><td>9:00 AM</td><td>2:00 PM</td><td>6:00 PM</td><td>10:00 PM</td></tr>
-            <tr><td className="py-1">6:00 PM</td><td>12:00 PM</td><td>5:00 PM</td><td>9:00 PM</td><td>1:00 AM*</td></tr>
-          </tbody>
-        </table>
-        <p className="text-xs mt-2 text-slate-500">*Next day. Times shown for winter (CET). Summer adds 1 hour to Paris.</p>
-      </div>
-    </article>
+      {/* Related Resources */}
+      <section className={`p-6 rounded-2xl border-2 border-dashed ${
+        isLight ? 'border-amber-300 bg-amber-50' : 'border-amber-500/50 bg-amber-900/20'
+      }`}>
+        <h2 className={`text-xl font-semibold mb-4 ${headingColor}`}>
+          📚 Related Guides
+        </h2>
+        <div className="grid sm:grid-cols-2 gap-3">
+          <Link
+            href={`/${city.slug}/guide/business-hours/`}
+            className={`flex items-center gap-2 p-3 rounded-lg ${
+              isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
+            }`}
+          >
+            <span>🏢</span>
+            <div>
+              <span className={`font-medium ${headingColor}`}>Paris Business Hours</span>
+              <p className={`text-xs ${mutedColor}`}>Complete schedule guide</p>
+            </div>
+          </Link>
+          <Link
+            href="/tools/meeting-planner/"
+            className={`flex items-center gap-2 p-3 rounded-lg ${
+              isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
+            }`}
+          >
+            <span>📅</span>
+            <div>
+              <span className={`font-medium ${headingColor}`}>Meeting Planner</span>
+              <p className={`text-xs ${mutedColor}`}>Find the perfect time</p>
+            </div>
+          </Link>
+        </div>
+      </section>
+    </div>
   )
 }

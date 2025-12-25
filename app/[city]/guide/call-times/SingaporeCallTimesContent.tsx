@@ -4,14 +4,12 @@ import Link from 'next/link'
 import { City } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
 
-interface Props { city: City }
+interface Props {
+  city: City
+}
 
 export default function SingaporeCallTimesContent({ city }: Props) {
-  const { isLight, time } = useCityContext()
-  
-  const sgTime = new Date(time.toLocaleString('en-US', { timeZone: city.timezone }))
-  const currentHour = sgTime.getHours()
-  const timeStr = sgTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })
+  const { isLight } = useCityContext()
   
   const textColor = isLight ? 'text-slate-700' : 'text-slate-200'
   const headingColor = isLight ? 'text-slate-800' : 'text-white'
@@ -19,239 +17,426 @@ export default function SingaporeCallTimesContent({ city }: Props) {
   const cardBg = isLight ? 'bg-slate-50' : 'bg-slate-700/50'
   const linkColor = isLight ? 'text-amber-600 hover:text-amber-700' : 'text-amber-400 hover:text-amber-300'
   const tableBorder = isLight ? 'border-slate-200' : 'border-slate-600'
-  
-  const isBusinessHours = currentHour >= 9 && currentHour < 18
+  const greenBg = isLight ? 'bg-green-50' : 'bg-green-900/20'
+  const blueBg = isLight ? 'bg-blue-50' : 'bg-blue-900/20'
+  const blueText = isLight ? 'text-blue-700' : 'text-blue-300'
   
   return (
     <div className={textColor}>
+      {/* Header */}
       <header className="mb-8">
         <div className={`text-sm mb-2 ${mutedColor}`}>
           <Link href={`/${city.slug}/guide/`} className={linkColor}>← Back to Singapore Guide</Link>
         </div>
         <h1 className={`text-3xl md:text-4xl font-bold mb-4 ${headingColor}`}>
-          Best Time to Call Singapore
+          Best Time to Call Singapore from New York
         </h1>
         <p className={`text-lg ${mutedColor}`}>
-          Optimal calling windows from USA, UK, Australia, and worldwide
+          Managing the 13-hour time difference with Asia-Pacific's business hub
         </p>
-        
-        <div className={`mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full ${cardBg}`}>
-          <span className={`w-2 h-2 rounded-full ${isBusinessHours ? 'bg-green-500' : 'bg-amber-500'}`}></span>
-          <span className="text-sm">Singapore ({timeStr}): {isBusinessHours ? 'Business hours' : 'Outside office hours'}</span>
-        </div>
       </header>
-      
-      <section className={`mb-8 p-6 rounded-2xl border-l-4 border-green-500 ${cardBg}`}>
-        <h2 className={`text-lg font-semibold mb-2 ${headingColor}`}>⚡ Quick Answer</h2>
-        <p>
-          <strong>From USA (EST):</strong> Call at 7-9 PM your time (8-10 AM Singapore). 
-          <strong>From UK:</strong> Call at 9 AM-12 PM your time (5-8 PM Singapore). 
-          <strong>From Australia:</strong> Perfect overlap - call during your business hours!
+
+      {/* Featured Snippet Section */}
+      <section className={`mb-8 p-6 rounded-2xl border-l-4 border-green-500 ${greenBg}`}>
+        <h2 className={`text-lg font-semibold mb-2 ${headingColor}`}>
+          ⚡ Quick Answer
+        </h2>
+        <p className="mb-3">
+          <strong>Singapore is 13 hours ahead of New York</strong> (12 hours when NYC observes daylight saving time). 
+          The best time for business calls is <strong className="text-green-600 dark:text-green-400">7:00 PM - 11:00 PM EST</strong>, 
+          which reaches Singapore during their morning hours (8:00 AM - 12:00 PM SGT next day).
+        </p>
+        <p className="text-sm">
+          <strong>Alternative:</strong> Early morning NYC (6:00-8:00 AM EST) catches Singapore's evening (7:00-9:00 PM SGT), 
+          but this is after standard business hours.
         </p>
       </section>
-      
+
+      {/* Best Times Table */}
       <section className="mb-10">
-        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>📞 Best Calling Times by Region</h2>
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
+          📞 Best Calling Windows
+        </h2>
         
         <div className={`overflow-x-auto rounded-xl border ${tableBorder}`}>
           <table className="w-full text-sm">
-            <thead className={isLight ? 'bg-slate-100' : 'bg-slate-700'}>
+            <thead className={cardBg}>
               <tr>
-                <th className={`px-4 py-3 text-left ${headingColor}`}>From</th>
-                <th className={`px-4 py-3 text-left ${headingColor}`}>Your Time</th>
-                <th className={`px-4 py-3 text-left ${headingColor}`}>Singapore Time</th>
-                <th className={`px-4 py-3 text-left ${headingColor}`}>Notes</th>
+                <th className="text-left p-3 font-medium">Your Time (NYC)</th>
+                <th className="text-left p-3 font-medium">Singapore Time</th>
+                <th className="text-left p-3 font-medium">Recommendation</th>
               </tr>
             </thead>
-            <tbody className={`divide-y ${tableBorder}`}>
-              <tr className={isLight ? 'bg-green-50' : 'bg-green-900/20'}>
-                <td className="px-4 py-3 font-medium">🇺🇸 New York</td>
-                <td className="px-4 py-3">7:00 PM - 9:00 PM</td>
-                <td className="px-4 py-3">8:00 AM - 10:00 AM</td>
-                <td className="px-4 py-3">✅ Morning - Fresh start</td>
+            <tbody className="divide-y divide-slate-200 dark:divide-slate-600">
+              <tr>
+                <td className="p-3">6:00 AM - 8:00 AM</td>
+                <td className="p-3">7:00 PM - 9:00 PM</td>
+                <td className="p-3 text-amber-600">⚠️ After hours (personal/urgent only)</td>
               </tr>
               <tr>
-                <td className="px-4 py-3 font-medium">🇺🇸 Los Angeles</td>
-                <td className="px-4 py-3">4:00 PM - 6:00 PM</td>
-                <td className="px-4 py-3">8:00 AM - 10:00 AM</td>
-                <td className="px-4 py-3">Your afternoon, their morning</td>
+                <td className="p-3">9:00 AM - 6:00 PM</td>
+                <td className="p-3">10:00 PM - 7:00 AM</td>
+                <td className="p-3 text-red-600">❌ Night/very early morning</td>
               </tr>
-              <tr className={isLight ? 'bg-green-50' : 'bg-green-900/20'}>
-                <td className="px-4 py-3 font-medium">🇬🇧 London</td>
-                <td className="px-4 py-3">9:00 AM - 12:00 PM</td>
-                <td className="px-4 py-3">5:00 PM - 8:00 PM</td>
-                <td className="px-4 py-3">✅ Their evening works well</td>
-              </tr>
-              <tr className={isLight ? 'bg-green-50' : 'bg-green-900/20'}>
-                <td className="px-4 py-3 font-medium">🇦🇺 Sydney</td>
-                <td className="px-4 py-3">10:00 AM - 6:00 PM</td>
-                <td className="px-4 py-3">7:00 AM - 3:00 PM</td>
-                <td className="px-4 py-3">✅ Nearly same timezone!</td>
-              </tr>
-              <tr className={isLight ? 'bg-green-50' : 'bg-green-900/20'}>
-                <td className="px-4 py-3 font-medium">🇮🇳 Mumbai</td>
-                <td className="px-4 py-3">9:00 AM - 6:00 PM</td>
-                <td className="px-4 py-3">11:30 AM - 8:30 PM</td>
-                <td className="px-4 py-3">✅ Great overlap all day</td>
+              <tr className={greenBg}>
+                <td className="p-3 font-medium">7:00 PM - 11:00 PM</td>
+                <td className="p-3 font-medium">8:00 AM - 12:00 PM (next day)</td>
+                <td className="p-3"><strong className="text-green-600 dark:text-green-400">✅ BEST - Morning Singapore</strong></td>
               </tr>
               <tr>
-                <td className="px-4 py-3 font-medium">🇯🇵 Tokyo</td>
-                <td className="px-4 py-3">9:00 AM - 6:00 PM</td>
-                <td className="px-4 py-3">8:00 AM - 5:00 PM</td>
-                <td className="px-4 py-3">Just 1 hour difference</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3 font-medium">🇩🇪 Berlin</td>
-                <td className="px-4 py-3">9:00 AM - 11:00 AM</td>
-                <td className="px-4 py-3">4:00 PM - 6:00 PM</td>
-                <td className="px-4 py-3">Catch them before EOD</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3 font-medium">🇦🇪 Dubai</td>
-                <td className="px-4 py-3">9:00 AM - 6:00 PM</td>
-                <td className="px-4 py-3">1:00 PM - 10:00 PM</td>
-                <td className="px-4 py-3">4-hour difference, flexible</td>
+                <td className="p-3">11:01 PM - 2:00 AM</td>
+                <td className="p-3">12:01 PM - 3:00 PM</td>
+                <td className="p-3 text-amber-600">✅ Good (but very late for you!)</td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-      
+
+      {/* DST Warning */}
+      <section className={`mb-8 p-5 rounded-xl border-l-4 border-blue-500 ${blueBg}`}>
+        <h3 className={`font-semibold mb-2 ${blueText}`}>🕐 Time Difference Alert</h3>
+        <p className="mb-2">
+          <strong>Singapore does NOT observe daylight saving time.</strong> Singapore Time (SGT, UTC+8) remains constant year-round.
+        </p>
+        <p className="text-sm">
+          When NYC switches to EDT in March, the difference becomes 12 hours instead of 13. When NYC returns to EST in November, 
+          the gap returns to 13 hours. The good news: this actually improves your calling window slightly during US summer!
+        </p>
+      </section>
+
+      {/* Introduction */}
+      <section className="mb-10 space-y-4">
+        <p>
+          Coordinating calls between New York and Singapore requires significant schedule flexibility due to the 13-hour 
+          time difference. There is essentially no overlap between standard 9-to-5 business hours in both cities — when 
+          NYC wakes up, Singapore is winding down, and when Singapore starts their workday, NYC is sleeping.
+        </p>
+        <p>
+          Singapore is the financial and tech hub of Southeast Asia, with a highly efficient, English-speaking business 
+          environment. Many professionals in Singapore are accustomed to late evening or early morning calls with US contacts, 
+          especially in tech, finance, and international business sectors. The key is finding a mutually acceptable time and 
+          sticking to it consistently.
+        </p>
+        <p>
+          This guide covers practical strategies for reaching Singapore contacts, understanding their work culture, and 
+          making the most of limited overlap opportunities between the two financial capitals.
+        </p>
+      </section>
+
+      {/* Detailed Analysis */}
       <section className="mb-10">
-        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>🌍 Visual Time Comparison</h2>
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
+          🌍 Understanding the Time Gap
+        </h2>
         
-        <div className={`p-4 rounded-xl ${cardBg}`}>
-          <h3 className={`font-semibold mb-3 ${headingColor}`}>When it's 9:00 AM in Singapore...</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-            <div className={`p-3 rounded-lg ${isLight ? 'bg-white' : 'bg-slate-800'}`}>
-              <p className="font-medium">🇺🇸 New York</p>
-              <p className="text-lg">8:00 PM (prev)</p>
-              <p className={mutedColor}>Evening</p>
-            </div>
-            <div className={`p-3 rounded-lg ${isLight ? 'bg-white' : 'bg-slate-800'}`}>
-              <p className="font-medium">🇬🇧 London</p>
-              <p className="text-lg">1:00 AM</p>
-              <p className={mutedColor}>Night</p>
-            </div>
-            <div className={`p-3 rounded-lg ${isLight ? 'bg-white' : 'bg-slate-800'}`}>
-              <p className="font-medium">🇦🇺 Sydney</p>
-              <p className="text-lg">12:00 PM</p>
-              <p className={mutedColor}>Noon</p>
-            </div>
-            <div className={`p-3 rounded-lg ${isLight ? 'bg-white' : 'bg-slate-800'}`}>
-              <p className="font-medium">🇮🇳 Mumbai</p>
-              <p className="text-lg">6:30 AM</p>
-              <p className={mutedColor}>Early morning</p>
-            </div>
+        <div className="space-y-4">
+          <div className={`p-5 rounded-xl ${cardBg}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>Evening NYC (7-11 PM EST)</h3>
+            <p className="mb-2">
+              <strong>Singapore time:</strong> 8 AM - 12 PM (morning, next day)
+            </p>
+            <p className="mb-2">
+              <strong>Pros:</strong> Catches Singapore professionals at the start of their day when they're fresh and responsive. 
+              This is the most practical window for regular business calls.
+            </p>
+            <p className="text-sm">
+              <strong>Cons:</strong> Late for you. Best for scheduled standing calls rather than ad-hoc conversations.
+            </p>
+          </div>
+
+          <div className={`p-5 rounded-xl ${cardBg}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>Very Late NYC (11 PM - 2 AM EST)</h3>
+            <p className="mb-2">
+              <strong>Singapore time:</strong> 12 PM - 3 PM (midday)
+            </p>
+            <p className="mb-2">
+              <strong>Pros:</strong> Mid-day Singapore, post-lunch when energy returns.
+            </p>
+            <p className="text-sm text-red-600 dark:text-red-400">
+              <strong>Cons:</strong> Extremely late for you. Only viable for critical issues or pre-arranged calls.
+            </p>
+          </div>
+
+          <div className={`p-5 rounded-xl ${cardBg}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>Early Morning NYC (6-8 AM EST)</h3>
+            <p className="mb-2">
+              <strong>Singapore time:</strong> 7-9 PM (evening)
+            </p>
+            <p className="mb-2">
+              <strong>Pros:</strong> Catches Singapore professionals before they sign off, though many have already left.
+            </p>
+            <p className="text-sm">
+              <strong>Cons:</strong> After standard business hours. Better for personal calls or urgent matters with contacts 
+              who work late.
+            </p>
           </div>
         </div>
+      </section>
+
+      {/* Async Communication */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
+          💬 When Async Makes Sense
+        </h2>
         
-        <div className={`mt-4 p-4 rounded-xl ${cardBg}`}>
-          <h3 className={`font-semibold mb-3 ${headingColor}`}>When it's 6:00 PM in Singapore...</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-            <div className={`p-3 rounded-lg ${isLight ? 'bg-white' : 'bg-slate-800'}`}>
-              <p className="font-medium">🇺🇸 New York</p>
-              <p className="text-lg">5:00 AM</p>
-              <p className={mutedColor}>Early morning</p>
+        <div className={`p-6 rounded-xl border-2 ${tableBorder} ${cardBg}`}>
+          <p className="mb-4">
+            Given the challenging time difference, consider asynchronous communication for routine updates:
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              <h3 className={`font-medium mb-2 ${headingColor}`}>🎥 Video Messages</h3>
+              <p className="text-sm mb-2">Tools like Loom or Slack video messages let you share updates without live calls.</p>
+              <p className="text-xs text-green-600 dark:text-green-400">✓ Best for: Project updates, presentations, demos</p>
             </div>
-            <div className={`p-3 rounded-lg ${isLight ? 'bg-white' : 'bg-slate-800'}`}>
-              <p className="font-medium">🇬🇧 London</p>
-              <p className="text-lg">10:00 AM</p>
-              <p className={mutedColor}>Morning ✅</p>
+            
+            <div>
+              <h3 className={`font-medium mb-2 ${headingColor}`}>📧 Detailed Emails</h3>
+              <p className="text-sm mb-2">Well-structured emails can replace many calls when thoughtfully written.</p>
+              <p className="text-xs text-green-600 dark:text-green-400">✓ Best for: Status reports, decisions, action items</p>
             </div>
-            <div className={`p-3 rounded-lg ${isLight ? 'bg-white' : 'bg-slate-800'}`}>
-              <p className="font-medium">🇦🇺 Sydney</p>
-              <p className="text-lg">9:00 PM</p>
-              <p className={mutedColor}>Evening</p>
+            
+            <div>
+              <h3 className={`font-medium mb-2 ${headingColor}`}>📝 Shared Documents</h3>
+              <p className="text-sm mb-2">Google Docs/Notion with comments enable async collaboration.</p>
+              <p className="text-xs text-green-600 dark:text-green-400">✓ Best for: Editing, planning, brainstorming</p>
             </div>
-            <div className={`p-3 rounded-lg ${isLight ? 'bg-white' : 'bg-slate-800'}`}>
-              <p className="font-medium">🇮🇳 Mumbai</p>
-              <p className="text-lg">3:30 PM</p>
-              <p className={mutedColor}>Afternoon ✅</p>
+            
+            <div>
+              <h3 className={`font-medium mb-2 ${headingColor}`}>🔄 Rotating Schedule</h3>
+              <p className="text-sm mb-2">Alternate who takes the inconvenient time slot (fairness matters!).</p>
+              <p className="text-xs text-green-600 dark:text-green-400">✓ Best for: Regular team syncs, weekly check-ins</p>
             </div>
           </div>
         </div>
       </section>
-      
+
+      {/* Reverse Direction */}
       <section className="mb-10">
-        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>📱 Calling Tips</h2>
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
+          📞 Calling NYC from Singapore
+        </h2>
+        
+        <p className="mb-4">
+          If you're in Singapore calling New York contacts:
+        </p>
+        
+        <div className={`overflow-x-auto rounded-xl border ${tableBorder}`}>
+          <table className="w-full text-sm">
+            <thead className={cardBg}>
+              <tr>
+                <th className="text-left p-3 font-medium">Your Time (Singapore)</th>
+                <th className="text-left p-3 font-medium">NYC Time</th>
+                <th className="text-left p-3 font-medium">Recommendation</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 dark:divide-slate-600">
+              <tr>
+                <td className="p-3">9:00 AM - 2:00 PM</td>
+                <td className="p-3">8:00 PM - 1:00 AM</td>
+                <td className="p-3 text-red-600">❌ Too late in NYC</td>
+              </tr>
+              <tr className={greenBg}>
+                <td className="p-3 font-medium">10:00 PM - 2:00 AM</td>
+                <td className="p-3 font-medium">9:00 AM - 1:00 PM</td>
+                <td className="p-3"><strong className="text-green-600 dark:text-green-400">✅ BEST - Morning NYC</strong></td>
+              </tr>
+              <tr>
+                <td className="p-3">7:00 PM - 9:00 PM</td>
+                <td className="p-3">6:00 AM - 8:00 AM</td>
+                <td className="p-3 text-amber-600">⚠️ Early, but workable</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div className={`mt-4 p-4 rounded-lg ${cardBg}`}>
+          <p className="text-sm">
+            <strong>💡 Pro tip:</strong> Many Singapore tech companies have employees work late hours (10 PM - 2 AM SGT) 
+            specifically to overlap with US business hours. If you're in such a role, coordinate with your NYC contacts 
+            for 10-11 PM SGT calls (9-10 AM NYC).
+          </p>
+        </div>
+      </section>
+
+      {/* Comparison with Other Cities */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
+          🌐 Singapore vs Other Major Cities (NYC Perspective)
+        </h2>
+        
+        <div className={`overflow-x-auto rounded-xl border ${tableBorder}`}>
+          <table className="w-full text-sm">
+            <thead className={cardBg}>
+              <tr>
+                <th className="text-left p-3 font-medium">City</th>
+                <th className="text-left p-3 font-medium">Hours Ahead</th>
+                <th className="text-left p-3 font-medium">Best NYC Call Time</th>
+                <th className="text-left p-3 font-medium">Overlap Quality</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 dark:divide-slate-600">
+              <tr>
+                <td className="p-3">London</td>
+                <td className="p-3">+5</td>
+                <td className="p-3">9 AM - 12 PM</td>
+                <td className="p-3 text-green-600">Excellent (3h)</td>
+              </tr>
+              <tr>
+                <td className="p-3">Paris</td>
+                <td className="p-3">+6</td>
+                <td className="p-3">9 AM - 12 PM</td>
+                <td className="p-3 text-green-600">Excellent (3h)</td>
+              </tr>
+              <tr>
+                <td className="p-3">Dubai</td>
+                <td className="p-3">+9</td>
+                <td className="p-3">6-8 AM or 6-11 PM</td>
+                <td className="p-3 text-amber-600">Challenging</td>
+              </tr>
+              <tr className="bg-amber-50 dark:bg-amber-900/20">
+                <td className="p-3 font-medium">Singapore</td>
+                <td className="p-3 font-medium">+13</td>
+                <td className="p-3 font-medium">7-11 PM</td>
+                <td className="p-3 text-red-600 font-medium">Difficult</td>
+              </tr>
+              <tr>
+                <td className="p-3">Tokyo</td>
+                <td className="p-3">+14</td>
+                <td className="p-3">7-11 PM</td>
+                <td className="p-3 text-red-600">Difficult</td>
+              </tr>
+              <tr>
+                <td className="p-3">Sydney</td>
+                <td className="p-3">+15-16</td>
+                <td className="p-3">6-11 PM</td>
+                <td className="p-3 text-red-600">Very Difficult</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* Singapore Work Culture */}
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
+          🇸🇬 Singapore Business Culture Tips
+        </h2>
         
         <div className="grid md:grid-cols-2 gap-4">
-          <div className={`p-4 rounded-xl ${cardBg}`}>
-            <h3 className={`font-semibold mb-3 ${headingColor}`}>📞 Country Code</h3>
-            <p className="text-2xl font-bold mb-2">+65</p>
-            <p className="text-sm">Singapore phone numbers are 8 digits. Mobile numbers start with 8 or 9.</p>
-          </div>
-          
-          <div className={`p-4 rounded-xl ${cardBg}`}>
-            <h3 className={`font-semibold mb-3 ${headingColor}`}>📲 Popular Apps</h3>
+          <div className={`p-4 rounded-lg border ${tableBorder}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>Work Ethic</h3>
             <ul className="text-sm space-y-1">
-              <li>• <strong>WhatsApp</strong> - Most common for personal</li>
-              <li>• <strong>Telegram</strong> - Growing popularity</li>
-              <li>• <strong>Zoom/Teams</strong> - Business standard</li>
-              <li>• <strong>WeChat</strong> - Chinese contacts</li>
+              <li>✓ Highly efficient, results-oriented</li>
+              <li>✓ Punctuality is critical</li>
+              <li>✓ Long hours common (especially tech/finance)</li>
+              <li>✓ English is primary business language</li>
+            </ul>
+          </div>
+
+          <div className={`p-4 rounded-lg border ${tableBorder}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>Business Hours</h3>
+            <ul className="text-sm space-y-1">
+              <li>✓ <strong>9:00 AM - 6:00 PM SGT</strong> (standard)</li>
+              <li>✓ Tech companies: flexible, often 8:30 AM - 5:30 PM</li>
+              <li>✓ Many work late for US overlap</li>
+              <li>✓ Lunch: 12-1 PM (not as sacred as Europe)</li>
+            </ul>
+          </div>
+
+          <div className={`p-4 rounded-lg border ${tableBorder}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>Communication Style</h3>
+            <ul className="text-sm space-y-1">
+              <li>✓ Direct but polite</li>
+              <li>✓ Hierarchy respected (but not rigid)</li>
+              <li>✓ Face-saving important (avoid public criticism)</li>
+              <li>✓ Written communication valued</li>
+            </ul>
+          </div>
+
+          <div className={`p-4 rounded-lg border ${tableBorder}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>Best Practices</h3>
+            <ul className="text-sm space-y-1">
+              <li>✓ Schedule calls well in advance</li>
+              <li>✓ Be on time (no "fashionably late")</li>
+              <li>✓ Send agenda beforehand</li>
+              <li>✓ Follow up with written summary</li>
             </ul>
           </div>
         </div>
       </section>
-      
+
+      {/* FAQ Section */}
       <section className="mb-10">
-        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>⚠️ Times to Avoid</h2>
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
+          ❓ Frequently Asked Questions
+        </h2>
         
-        <div className={`p-4 rounded-xl border-2 border-amber-300 ${isLight ? 'bg-amber-50' : 'bg-amber-900/20'}`}>
-          <ul className="space-y-2 text-sm">
-            <li>• <strong>12:00 PM - 1:30 PM SGT</strong> - Lunch hour, people may not answer</li>
-            <li>• <strong>Before 8:00 AM SGT</strong> - Too early for business</li>
-            <li>• <strong>After 9:00 PM SGT</strong> - Too late for business calls</li>
-            <li>• <strong>Chinese New Year</strong> - 2-day public holiday, many on leave</li>
-            <li>• <strong>Weekends</strong> - For business calls, stick to weekdays</li>
-          </ul>
-        </div>
-      </section>
-      
-      <section className="mb-10">
-        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>❓ Frequently Asked Questions</h2>
-        
-        <div className="space-y-3">
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>What's the best time to call Singapore from the US?</h3>
+        <div className="space-y-4">
+          <div className={`p-5 rounded-xl border ${tableBorder}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>What is the best time to call Singapore from New York?</h3>
             <p className="text-sm">
-              Evening US time (7-10 PM EST) reaches Singapore in the morning (8-11 AM). 
-              This catches them fresh at the start of their workday.
+              Between 7:00 PM and 11:00 PM EST, which reaches Singapore during their morning (8 AM - 12 PM SGT, next day). 
+              This is when Singapore professionals are fresh and available. Early morning NYC (6-8 AM EST) is an alternative 
+              but reaches Singapore after standard business hours.
             </p>
           </div>
-          
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>Does Singapore have good phone connectivity?</h3>
+
+          <div className={`p-5 rounded-xl border ${tableBorder}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>How many hours is Singapore ahead of New York?</h3>
             <p className="text-sm">
-              Excellent! Singapore has world-class telecommunications. 4G/5G coverage 
-              is universal, and call quality is typically crystal clear.
+              Singapore is 13 hours ahead when NYC is on EST (winter), and 12 hours ahead when NYC is on EDT (summer). 
+              Singapore does not observe daylight saving time, remaining on SGT (UTC+8) year-round.
             </p>
           </div>
-          
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>Do Singaporeans use WhatsApp for business?</h3>
+
+          <div className={`p-5 rounded-xl border ${tableBorder}`}>
+            <h3 className={`font-medium mb-2 ${headingColor}`}>Should I use async communication instead of calls?</h3>
             <p className="text-sm">
-              Yes, WhatsApp is very common even for business communication in Singapore. 
-              It's acceptable to WhatsApp clients and colleagues for quick questions.
+              For routine updates, yes! Video messages (Loom), detailed emails, and shared documents work well for 
+              NYC-Singapore collaboration. Reserve live calls for important discussions, negotiations, or relationship building. 
+              Consider rotating who takes the inconvenient time slot for regular team calls.
             </p>
           </div>
         </div>
       </section>
-      
-      <section className={`p-6 rounded-2xl ${cardBg}`}>
-        <h2 className={`text-lg font-semibold mb-4 ${headingColor}`}>Related Guides</h2>
+
+      {/* Related Resources */}
+      <section className={`p-6 rounded-2xl border-2 border-dashed ${
+        isLight ? 'border-amber-300 bg-amber-50' : 'border-amber-500/50 bg-amber-900/20'
+      }`}>
+        <h2 className={`text-xl font-semibold mb-4 ${headingColor}`}>
+          📚 Related Guides
+        </h2>
         <div className="grid sm:grid-cols-2 gap-3">
-          <Link href={`/${city.slug}/guide/time-difference/`} className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'}`}>
-            <span>🌐</span><span>Time Difference Calculator</span>
+          <Link
+            href={`/${city.slug}/guide/business-hours/`}
+            className={`flex items-center gap-2 p-3 rounded-lg ${
+              isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
+            }`}
+          >
+            <span>🏢</span>
+            <div>
+              <span className={`font-medium ${headingColor}`}>Singapore Business Hours</span>
+              <p className={`text-xs ${mutedColor}`}>Complete schedule guide</p>
+            </div>
           </Link>
-          <Link href={`/${city.slug}/guide/remote-work/`} className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'}`}>
-            <span>💻</span><span>Remote Work Guide</span>
+          <Link
+            href="/tools/meeting-planner/"
+            className={`flex items-center gap-2 p-3 rounded-lg ${
+              isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
+            }`}
+          >
+            <span>📅</span>
+            <div>
+              <span className={`font-medium ${headingColor}`}>Meeting Planner</span>
+              <p className={`text-xs ${mutedColor}`}>Find the perfect time</p>
+            </div>
           </Link>
         </div>
       </section>
-      
-      <p className={`mt-8 text-sm ${mutedColor}`}>Last updated: December 2024.</p>
     </div>
   )
 }
