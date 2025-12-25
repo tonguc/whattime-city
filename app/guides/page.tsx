@@ -115,14 +115,6 @@ export default function GuidesPage() {
           ))}
         </div>
 
-        {/* Coming Soon Section (Optional) */}
-        <div className="mt-12 text-center">
-          <p className="text-slate-500 dark:text-slate-400 text-sm">
-            More city guides coming soon! 🚀
-          </p>
-        </div>
-      </div>
-
         {/* Coming Soon */}
         <div className="mt-8 text-center">
           <p className="text-slate-500 dark:text-slate-400 text-sm">
