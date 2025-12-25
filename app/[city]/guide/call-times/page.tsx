@@ -11,6 +11,13 @@ export const metadata: Metadata = {
   }
 }
 
+// CRITICAL: generateStaticParams for static export
+export async function generateStaticParams() {
+  return [
+    { city: 'london' }
+  ]
+}
+
 export default function LondonCallTimesPage() {
   const city = {
     slug: 'london',
