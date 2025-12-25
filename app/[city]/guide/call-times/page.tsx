@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { cities } from '@/lib/cities'
 import LondonCallTimesContent from './LondonCallTimesContent'
 import DubaiCallTimesContent from './DubaiCallTimesContent'
 import ParisCallTimesContent from './ParisCallTimesContent'
@@ -35,18 +36,8 @@ interface PageProps {
 export default function CallTimesPage({ params }: PageProps) {
   const citySlug = params.city
   
-  // City data mapping
-  const cityData: Record<string, { slug: string; name: string; timezone: string }> = {
-    'london': { slug: 'london', name: 'London', timezone: 'Europe/London' },
-    'dubai': { slug: 'dubai', name: 'Dubai', timezone: 'Asia/Dubai' },
-    'paris': { slug: 'paris', name: 'Paris', timezone: 'Europe/Paris' },
-    'singapore': { slug: 'singapore', name: 'Singapore', timezone: 'Asia/Singapore' },
-    'sydney': { slug: 'sydney', name: 'Sydney', timezone: 'Australia/Sydney' },
-    'tokyo': { slug: 'tokyo', name: 'Tokyo', timezone: 'Asia/Tokyo' },
-    'new-york': { slug: 'new-york', name: 'New York', timezone: 'America/New_York' },
-  }
-
-  const city = cityData[citySlug]
+  // Find city from cities array
+  const city = cities.find(c => c.slug === citySlug)
   
   if (!city) {
     notFound()
