@@ -38,5 +38,6 @@ export default async function CallTimesPage({ params }: Props) {
   if (citySlug === 'dubai') return <DubaiCallTimesContent city={city} />
   if (citySlug === 'singapore') return <SingaporeCallTimesContent city={city} />
   if (citySlug === 'paris') return <ParisCallTimesContent city={city} />
+  if (citySlug === 'sydney') return <SydneyCallTimesContent city={city} />
   return <CallTimesContent city={city} />
 }

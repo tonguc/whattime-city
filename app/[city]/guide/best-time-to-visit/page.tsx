@@ -56,9 +56,9 @@ export default async function BestTimeToVisitPage({ params }: Props) {
     case 'singapore':
       return <SingaporeBestTimeToVisitContent city={city} />
     case 'paris':
+      return <ParisBestTimeToVisitContent city={city} />
     case 'sydney':
       return <SydneyBestTimeToVisitContent city={city} />
-      return <ParisBestTimeToVisitContent city={city} />
     default:
       return <BestTimeToVisitContent city={city} />
   }

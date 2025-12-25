@@ -56,9 +56,9 @@ export default async function TwentyFourHoursPage({ params }: Props) {
     case 'singapore':
       return <SingaporeTwentyFourHoursContent city={city} />
     case 'paris':
+      return <ParisTwentyFourHoursContent city={city} />
     case 'sydney':
       return <Sydney24HoursContent city={city} />
-      return <ParisTwentyFourHoursContent city={city} />
     default:
       return <TwentyFourHoursContent city={city} />
   }

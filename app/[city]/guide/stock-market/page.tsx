@@ -52,9 +52,9 @@ export default async function StockMarketPage({ params }: Props) {
     case 'singapore':
       return <SingaporeStockMarketContent city={city} />
     case 'paris':
+      return <ParisStockMarketContent city={city} />
     case 'sydney':
       return <SydneyStockMarketContent city={city} />
-      return <ParisStockMarketContent city={city} />
     default:
       return <StockMarketContent city={city} />
   }

@@ -38,5 +38,6 @@ export default async function TimeDifferencePage({ params }: Props) {
   if (citySlug === 'dubai') return <DubaiTimeDifferenceContent city={city} />
   if (citySlug === 'singapore') return <SingaporeTimeDifferenceContent city={city} />
   if (citySlug === 'paris') return <ParisTimeDifferenceContent city={city} />
+  if (citySlug === 'sydney') return <SydneyTimeDifferenceContent city={city} />
   return <TimeDifferenceContent city={city} />
 }

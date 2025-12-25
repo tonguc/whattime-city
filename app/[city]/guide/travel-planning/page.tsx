@@ -38,5 +38,6 @@ export default async function TravelPlanningPage({ params }: Props) {
   if (citySlug === 'dubai') return <DubaiTravelPlanningContent city={city} />
   if (citySlug === 'singapore') return <SingaporeTravelPlanningContent city={city} />
   if (citySlug === 'paris') return <ParisTravelPlanningContent city={city} />
+  if (citySlug === 'sydney') return <SydneyTravelPlanningContent city={city} />
   return <TravelPlanningContent city={city} />
 }

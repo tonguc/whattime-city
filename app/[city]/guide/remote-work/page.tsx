@@ -38,5 +38,6 @@ export default async function RemoteWorkPage({ params }: Props) {
   if (citySlug === 'dubai') return <DubaiRemoteWorkContent city={city} />
   if (citySlug === 'singapore') return <SingaporeRemoteWorkContent city={city} />
   if (citySlug === 'paris') return <ParisRemoteWorkContent city={city} />
+  if (citySlug === 'sydney') return <SydneyRemoteWorkContent city={city} />
   return <RemoteWorkContent city={city} />
 }

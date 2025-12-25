@@ -38,5 +38,6 @@ export default async function HolidaysPage({ params }: Props) {
   if (citySlug === 'dubai') return <DubaiHolidaysContent city={city} />
   if (citySlug === 'singapore') return <SingaporeHolidaysContent city={city} />
   if (citySlug === 'paris') return <ParisHolidaysContent city={city} />
+  if (citySlug === 'sydney') return <SydneyHolidaysContent city={city} />
   return <HolidaysContent city={city} />
 }

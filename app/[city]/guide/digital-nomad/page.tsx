@@ -38,5 +38,6 @@ export default async function DigitalNomadPage({ params }: Props) {
   if (citySlug === 'dubai') return <DubaiDigitalNomadContent city={city} />
   if (citySlug === 'singapore') return <SingaporeDigitalNomadContent city={city} />
   if (citySlug === 'paris') return <ParisDigitalNomadContent city={city} />
+  if (citySlug === 'sydney') return <SydneyDigitalNomadContent city={city} />
   return <DigitalNomadContent city={city} />
 }
