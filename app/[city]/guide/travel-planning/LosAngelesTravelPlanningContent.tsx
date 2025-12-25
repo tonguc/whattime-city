@@ -14,7 +14,7 @@ export default function LosAngelesTravelPlanningContent({ city }: Props) {
   const textColor = isLight ? 'text-slate-700' : 'text-slate-200'
   const headingColor = isLight ? 'text-slate-800' : 'text-white'
   const mutedColor = isLight ? 'text-slate-500' : 'text-slate-400'
-  const cardBg = isLight ? 'bg-slate-50' : 'text-slate-700/50'
+  const cardBg = isLight ? 'bg-slate-50' : 'bg-slate-700/50'
   const linkColor = isLight ? 'text-amber-600 hover:text-amber-700' : 'text-amber-400 hover:text-amber-300'
   const tableBorder = isLight ? 'border-slate-200' : 'border-slate-600'
   const greenBg = isLight ? 'bg-green-50' : 'bg-green-900/20'
