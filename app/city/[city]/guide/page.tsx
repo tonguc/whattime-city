@@ -1,20 +1,27 @@
-// app/city/[city]/guide/page.tsx (veya pages/city/[city]/guide.tsx)
-'use client'; // Next.js 13+ App Router için
+// app/city/[city]/guide/page.tsx
+// NOT: Server Component - 'use client' YOK
 
-import { useParams } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import QuickTimeFinder from '@/components/QuickTimeFinder';
 import { cityGuides } from '@/data/cityGuides';
 
-export default function CityGuidePage() {
-  const params = useParams();
-  const citySlug = params.city as string;
+// Server Component - params prop'tan geliyor
+interface PageProps {
+  params: {
+    city: string;
+  };
+}
+
+export default function CityGuidePage({ params }: PageProps) {
+  const citySlug = params.city;
   
   // City data'sını al
   const cityData = cityGuides[citySlug];
   
+  // Şehir bulunamazsa 404
   if (!cityData) {
-    return <div>City not found</div>;
+    notFound();
   }
 
   return (
@@ -92,6 +99,22 @@ export default function CityGuidePage() {
       </div>
     </div>
   );
+}
+
+// Metadata generation (SEO için)
+export async function generateMetadata({ params }: PageProps) {
+  const cityData = cityGuides[params.city];
+  
+  if (!cityData) {
+    return {
+      title: 'City Not Found',
+    };
+  }
+  
+  return {
+    title: `${cityData.city} Guide | WhatTime.City`,
+    description: `Complete guide to ${cityData.city}: business hours, time zone tips, travel info, and more.`,
+  };
 }
 
 // Static Generation için (Next.js)
