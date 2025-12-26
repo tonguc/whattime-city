@@ -9,16 +9,13 @@ import DubaiTwentyFourHoursContent from './DubaiTwentyFourHoursContent'
 import SingaporeTwentyFourHoursContent from './SingaporeTwentyFourHoursContent'
 import ParisTwentyFourHoursContent from './ParisTwentyFourHoursContent'
 import Sydney24HoursContent from './Sydney24HoursContent'
-import LosAngelesTwentyFourHoursContent from './LosAngelesTwentyFourHoursContent'
 
 type Props = {
   params: Promise<{ city: string }>
 }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' },
-    { city: 'los-angeles' }
-  ]
+  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' }]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -62,8 +59,6 @@ export default async function TwentyFourHoursPage({ params }: Props) {
       return <ParisTwentyFourHoursContent city={city} />
     case 'sydney':
       return <Sydney24HoursContent city={city} />
-    case 'los-angeles':
-      return <LosAngelesTwentyFourHoursContent city={city} />
     default:
       return <TwentyFourHoursContent city={city} />
   }
