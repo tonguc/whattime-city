@@ -11,39 +11,23 @@ import ParisStockMarketContent from './ParisStockMarketContent'
 import SydneyStockMarketContent from './SydneyStockMarketContent'
 import LosAngelesStockMarketContent from './LosAngelesStockMarketContent'
 
-type Props = {
-  params: Promise<{ city: string }>
-}
+type Props = { params: Promise<{ city: string }> }
 
-export async function generateStaticParams() {
-  return [
-    { city: 'new-york' },
-    { city: 'london' },
-    { city: 'tokyo' },
-    { city: 'dubai' },
-    { city: 'singapore' },
-    { city: 'paris' },
-    { city: 'sydney' },
-    { city: 'los-angeles' }
-  ]
-}
+export async function generateStaticParams() { return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' }, { city: 'los-angeles' }] }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: citySlug } = await params
   const config = getGuideConfig(citySlug)
   
-  if (!config) return { title: 'StockMarket' }
-  
-  const pageKey = 'stock-market'.replace(/-([a-z])/g, (g: string) => g[1].toUpperCase()).replace(/-/g, '')
-  const pageConfig = (config.pages as any)[pageKey]
+  if (!config) return { title: 'Stock Market Hours' }
   
   return {
-    title: pageConfig?.title || 'StockMarket',
-    description: pageConfig?.description || '',
-    keywords: pageConfig?.keywords || [],
+    title: config.pages.stockMarket.title,
+    description: config.pages.stockMarket.description,
+    keywords: config.pages.stockMarket.keywords,
     openGraph: {
-      title: pageConfig?.title || 'StockMarket',
-      description: pageConfig?.description || '',
+      title: config.pages.stockMarket.title,
+      description: config.pages.stockMarket.description,
       type: 'article',
     },
     alternates: {

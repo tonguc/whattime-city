@@ -16,34 +16,22 @@ type Props = {
 }
 
 export async function generateStaticParams() {
-  return [
-    { city: 'new-york' },
-    { city: 'london' },
-    { city: 'tokyo' },
-    { city: 'dubai' },
-    { city: 'singapore' },
-    { city: 'paris' },
-    { city: 'sydney' },
-    { city: 'los-angeles' }
-  ]
+  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' }, { city: 'los-angeles' }]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: citySlug } = await params
   const config = getGuideConfig(citySlug)
   
-  if (!config) return { title: 'BestTimeToVisit' }
-  
-  const pageKey = 'best-time-to-visit'.replace(/-([a-z])/g, (g: string) => g[1].toUpperCase()).replace(/-/g, '')
-  const pageConfig = (config.pages as any)[pageKey]
+  if (!config) return { title: 'Best Time to Visit' }
   
   return {
-    title: pageConfig?.title || 'BestTimeToVisit',
-    description: pageConfig?.description || '',
-    keywords: pageConfig?.keywords || [],
+    title: config.pages.bestTimeToVisit.title,
+    description: config.pages.bestTimeToVisit.description,
+    keywords: config.pages.bestTimeToVisit.keywords,
     openGraph: {
-      title: pageConfig?.title || 'BestTimeToVisit',
-      description: pageConfig?.description || '',
+      title: config.pages.bestTimeToVisit.title,
+      description: config.pages.bestTimeToVisit.description,
       type: 'article',
     },
     alternates: {

@@ -16,23 +16,14 @@ type Props = {
 }
 
 export async function generateStaticParams() {
-  return [
-    { city: 'new-york' },
-    { city: 'london' },
-    { city: 'tokyo' },
-    { city: 'dubai' },
-    { city: 'singapore' },
-    { city: 'paris' },
-    { city: 'sydney' },
-    { city: 'los-angeles' }
-  ]
+  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' }, { city: 'los-angeles' }]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: citySlug } = await params
   const config = getGuideConfig(citySlug)
   
-  if (!config) return { title: '24 Hours' }
+  if (!config) return { title: '24 Hours Guide' }
   
   return {
     title: config.pages.twentyFourHours.title,
