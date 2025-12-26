@@ -34,8 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   
   if (!config) return { title: 'TimeDifference' }
   
-  // Dynamically access the correct page config
-  const pageKey = 'time-difference'.replace(/-([a-z])/g, (g) => g[1].toUpperCase()).replace(/-/g, '')
+  const pageKey = 'time-difference'.replace(/-([a-z])/g, (g: string) => g[1].toUpperCase()).replace(/-/g, '')
   const pageConfig = (config.pages as any)[pageKey]
   
   return {

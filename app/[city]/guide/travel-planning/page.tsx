@@ -34,8 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   
   if (!config) return { title: 'TravelPlanning' }
   
-  // Dynamically access the correct page config
-  const pageKey = 'travel-planning'.replace(/-([a-z])/g, (g) => g[1].toUpperCase()).replace(/-/g, '')
+  const pageKey = 'travel-planning'.replace(/-([a-z])/g, (g: string) => g[1].toUpperCase()).replace(/-/g, '')
   const pageConfig = (config.pages as any)[pageKey]
   
   return {

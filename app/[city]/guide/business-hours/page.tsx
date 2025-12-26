@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'article',
     },
     alternates: {
-      canonical: `https://whattime.city/${citySlug}/guide/business-hours/`,
+      canonical: \`https://whattime.city/\${citySlug}/guide/business-hours/\`,
     },
   }
 }
