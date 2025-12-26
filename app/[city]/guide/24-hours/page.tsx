@@ -8,7 +8,7 @@ import TokyoTwentyFourHoursContent from './TokyoTwentyFourHoursContent'
 import DubaiTwentyFourHoursContent from './DubaiTwentyFourHoursContent'
 import SingaporeTwentyFourHoursContent from './SingaporeTwentyFourHoursContent'
 import ParisTwentyFourHoursContent from './ParisTwentyFourHoursContent'
-import SydneyTwentyFourHoursContent from './SydneyTwentyFourHoursContent'
+import Sydney24HoursContent from './Sydney24HoursContent'
 import LosAngelesTwentyFourHoursContent from './LosAngelesTwentyFourHoursContent'
 
 type Props = {
@@ -32,19 +32,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: citySlug } = await params
   const config = getGuideConfig(citySlug)
   
-  if (!config) return { title: 'TwentyFourHours' }
-  
-  // Dynamically access the correct page config
-  const pageKey = '24-hours'.replace(/-([a-z])/g, (g) => g[1].toUpperCase()).replace(/-/g, '')
-  const pageConfig = (config.pages as any)[pageKey]
+  if (!config) return { title: '24 Hours' }
   
   return {
-    title: pageConfig?.title || 'TwentyFourHours',
-    description: pageConfig?.description || '',
-    keywords: pageConfig?.keywords || [],
+    title: config.pages.twentyFourHours.title,
+    description: config.pages.twentyFourHours.description,
+    keywords: config.pages.twentyFourHours.keywords,
     openGraph: {
-      title: pageConfig?.title || 'TwentyFourHours',
-      description: pageConfig?.description || '',
+      title: config.pages.twentyFourHours.title,
+      description: config.pages.twentyFourHours.description,
       type: 'article',
     },
     alternates: {
@@ -72,7 +68,7 @@ export default async function TwentyFourHoursPage({ params }: Props) {
     case 'paris':
       return <ParisTwentyFourHoursContent city={city} />
     case 'sydney':
-      return <SydneyTwentyFourHoursContent city={city} />
+      return <Sydney24HoursContent city={city} />
     case 'los-angeles':
       return <LosAngelesTwentyFourHoursContent city={city} />
     default:
