@@ -8,29 +8,43 @@ import TokyoTwentyFourHoursContent from './TokyoTwentyFourHoursContent'
 import DubaiTwentyFourHoursContent from './DubaiTwentyFourHoursContent'
 import SingaporeTwentyFourHoursContent from './SingaporeTwentyFourHoursContent'
 import ParisTwentyFourHoursContent from './ParisTwentyFourHoursContent'
-import Sydney24HoursContent from './Sydney24HoursContent'
+import SydneyTwentyFourHoursContent from './SydneyTwentyFourHoursContent'
+import LosAngelesTwentyFourHoursContent from './LosAngelesTwentyFourHoursContent'
 
 type Props = {
   params: Promise<{ city: string }>
 }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' }]
+  return [
+    { city: 'new-york' },
+    { city: 'london' },
+    { city: 'tokyo' },
+    { city: 'dubai' },
+    { city: 'singapore' },
+    { city: 'paris' },
+    { city: 'sydney' },
+    { city: 'los-angeles' }
+  ]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: citySlug } = await params
   const config = getGuideConfig(citySlug)
   
-  if (!config) return { title: '24 Hours Guide' }
+  if (!config) return { title: 'TwentyFourHours' }
+  
+  // Dynamically access the correct page config
+  const pageKey = '24-hours'.replace(/-([a-z])/g, (g) => g[1].toUpperCase()).replace(/-/g, '')
+  const pageConfig = (config.pages as any)[pageKey]
   
   return {
-    title: config.pages.twentyFourHours.title,
-    description: config.pages.twentyFourHours.description,
-    keywords: config.pages.twentyFourHours.keywords,
+    title: pageConfig?.title || 'TwentyFourHours',
+    description: pageConfig?.description || '',
+    keywords: pageConfig?.keywords || [],
     openGraph: {
-      title: config.pages.twentyFourHours.title,
-      description: config.pages.twentyFourHours.description,
+      title: pageConfig?.title || 'TwentyFourHours',
+      description: pageConfig?.description || '',
       type: 'article',
     },
     alternates: {
@@ -58,7 +72,9 @@ export default async function TwentyFourHoursPage({ params }: Props) {
     case 'paris':
       return <ParisTwentyFourHoursContent city={city} />
     case 'sydney':
-      return <Sydney24HoursContent city={city} />
+      return <SydneyTwentyFourHoursContent city={city} />
+    case 'los-angeles':
+      return <LosAngelesTwentyFourHoursContent city={city} />
     default:
       return <TwentyFourHoursContent city={city} />
   }

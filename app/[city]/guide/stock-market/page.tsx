@@ -9,24 +9,42 @@ import DubaiStockMarketContent from './DubaiStockMarketContent'
 import SingaporeStockMarketContent from './SingaporeStockMarketContent'
 import ParisStockMarketContent from './ParisStockMarketContent'
 import SydneyStockMarketContent from './SydneyStockMarketContent'
+import LosAngelesStockMarketContent from './LosAngelesStockMarketContent'
 
-type Props = { params: Promise<{ city: string }> }
+type Props = {
+  params: Promise<{ city: string }>
+}
 
-export async function generateStaticParams() { return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' }] }
+export async function generateStaticParams() {
+  return [
+    { city: 'new-york' },
+    { city: 'london' },
+    { city: 'tokyo' },
+    { city: 'dubai' },
+    { city: 'singapore' },
+    { city: 'paris' },
+    { city: 'sydney' },
+    { city: 'los-angeles' }
+  ]
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: citySlug } = await params
   const config = getGuideConfig(citySlug)
   
-  if (!config) return { title: 'Stock Market Hours' }
+  if (!config) return { title: 'StockMarket' }
+  
+  // Dynamically access the correct page config
+  const pageKey = 'stock-market'.replace(/-([a-z])/g, (g) => g[1].toUpperCase()).replace(/-/g, '')
+  const pageConfig = (config.pages as any)[pageKey]
   
   return {
-    title: config.pages.stockMarket.title,
-    description: config.pages.stockMarket.description,
-    keywords: config.pages.stockMarket.keywords,
+    title: pageConfig?.title || 'StockMarket',
+    description: pageConfig?.description || '',
+    keywords: pageConfig?.keywords || [],
     openGraph: {
-      title: config.pages.stockMarket.title,
-      description: config.pages.stockMarket.description,
+      title: pageConfig?.title || 'StockMarket',
+      description: pageConfig?.description || '',
       type: 'article',
     },
     alternates: {
@@ -55,6 +73,8 @@ export default async function StockMarketPage({ params }: Props) {
       return <ParisStockMarketContent city={city} />
     case 'sydney':
       return <SydneyStockMarketContent city={city} />
+    case 'los-angeles':
+      return <LosAngelesStockMarketContent city={city} />
     default:
       return <StockMarketContent city={city} />
   }

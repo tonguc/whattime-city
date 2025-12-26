@@ -9,28 +9,42 @@ import DubaiBestTimeToVisitContent from './DubaiBestTimeToVisitContent'
 import SingaporeBestTimeToVisitContent from './SingaporeBestTimeToVisitContent'
 import ParisBestTimeToVisitContent from './ParisBestTimeToVisitContent'
 import SydneyBestTimeToVisitContent from './SydneyBestTimeToVisitContent'
+import LosAngelesBestTimeToVisitContent from './LosAngelesBestTimeToVisitContent'
 
 type Props = {
   params: Promise<{ city: string }>
 }
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' }]
+  return [
+    { city: 'new-york' },
+    { city: 'london' },
+    { city: 'tokyo' },
+    { city: 'dubai' },
+    { city: 'singapore' },
+    { city: 'paris' },
+    { city: 'sydney' },
+    { city: 'los-angeles' }
+  ]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: citySlug } = await params
   const config = getGuideConfig(citySlug)
   
-  if (!config) return { title: 'Best Time to Visit' }
+  if (!config) return { title: 'BestTimeToVisit' }
+  
+  // Dynamically access the correct page config
+  const pageKey = 'best-time-to-visit'.replace(/-([a-z])/g, (g) => g[1].toUpperCase()).replace(/-/g, '')
+  const pageConfig = (config.pages as any)[pageKey]
   
   return {
-    title: config.pages.bestTimeToVisit.title,
-    description: config.pages.bestTimeToVisit.description,
-    keywords: config.pages.bestTimeToVisit.keywords,
+    title: pageConfig?.title || 'BestTimeToVisit',
+    description: pageConfig?.description || '',
+    keywords: pageConfig?.keywords || [],
     openGraph: {
-      title: config.pages.bestTimeToVisit.title,
-      description: config.pages.bestTimeToVisit.description,
+      title: pageConfig?.title || 'BestTimeToVisit',
+      description: pageConfig?.description || '',
       type: 'article',
     },
     alternates: {
@@ -59,6 +73,8 @@ export default async function BestTimeToVisitPage({ params }: Props) {
       return <ParisBestTimeToVisitContent city={city} />
     case 'sydney':
       return <SydneyBestTimeToVisitContent city={city} />
+    case 'los-angeles':
+      return <LosAngelesBestTimeToVisitContent city={city} />
     default:
       return <BestTimeToVisitContent city={city} />
   }

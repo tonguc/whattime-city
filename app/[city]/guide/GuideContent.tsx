@@ -52,9 +52,10 @@ export default function GuideContent({ city, config }: Props) {
   if (city.slug === 'sydney') {
     return <SydneyGuideContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
   }
-if (city.slug === 'los-angeles') {
-  return <LosAngelesOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
-}
+  
+  if (city.slug === 'los-angeles') {
+    return <LosAngelesOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+  }
   
   // Default to NYC
   return <NYCGuideContent city={city} config={config} isLight={isLight} timeStr={timeStr} />

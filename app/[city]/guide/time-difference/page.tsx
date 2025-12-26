@@ -9,22 +9,47 @@ import DubaiTimeDifferenceContent from './DubaiTimeDifferenceContent'
 import SingaporeTimeDifferenceContent from './SingaporeTimeDifferenceContent'
 import ParisTimeDifferenceContent from './ParisTimeDifferenceContent'
 import SydneyTimeDifferenceContent from './SydneyTimeDifferenceContent'
+import LosAngelesTimeDifferenceContent from './LosAngelesTimeDifferenceContent'
 
-type Props = { params: Promise<{ city: string }> }
+type Props = {
+  params: Promise<{ city: string }>
+}
 
 export async function generateStaticParams() {
-  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' }]
+  return [
+    { city: 'new-york' },
+    { city: 'london' },
+    { city: 'tokyo' },
+    { city: 'dubai' },
+    { city: 'singapore' },
+    { city: 'paris' },
+    { city: 'sydney' },
+    { city: 'los-angeles' }
+  ]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: citySlug } = await params
   const config = getGuideConfig(citySlug)
-  if (!config) return { title: 'Time Difference' }
+  
+  if (!config) return { title: 'TimeDifference' }
+  
+  // Dynamically access the correct page config
+  const pageKey = 'time-difference'.replace(/-([a-z])/g, (g) => g[1].toUpperCase()).replace(/-/g, '')
+  const pageConfig = (config.pages as any)[pageKey]
+  
   return {
-    title: config.pages.timeDifference.title,
-    description: config.pages.timeDifference.description,
-    keywords: config.pages.timeDifference.keywords,
-    alternates: { canonical: `https://whattime.city/${citySlug}/guide/time-difference/` },
+    title: pageConfig?.title || 'TimeDifference',
+    description: pageConfig?.description || '',
+    keywords: pageConfig?.keywords || [],
+    openGraph: {
+      title: pageConfig?.title || 'TimeDifference',
+      description: pageConfig?.description || '',
+      type: 'article',
+    },
+    alternates: {
+      canonical: `https://whattime.city/${citySlug}/guide/time-difference/`,
+    },
   }
 }
 
@@ -32,12 +57,25 @@ export default async function TimeDifferencePage({ params }: Props) {
   const { city: citySlug } = await params
   const city = cities.find(c => c.slug === citySlug)
   const config = getGuideConfig(citySlug)
+  
   if (!city || !config) notFound()
-  if (citySlug === 'london') return <LondonTimeDifferenceContent city={city} />
-  if (citySlug === 'tokyo') return <TokyoTimeDifferenceContent city={city} />
-  if (citySlug === 'dubai') return <DubaiTimeDifferenceContent city={city} />
-  if (citySlug === 'singapore') return <SingaporeTimeDifferenceContent city={city} />
-  if (citySlug === 'paris') return <ParisTimeDifferenceContent city={city} />
-  if (citySlug === 'sydney') return <SydneyTimeDifferenceContent city={city} />
-  return <TimeDifferenceContent city={city} />
+  
+  switch (citySlug) {
+    case 'london':
+      return <LondonTimeDifferenceContent city={city} />
+    case 'tokyo':
+      return <TokyoTimeDifferenceContent city={city} />
+    case 'dubai':
+      return <DubaiTimeDifferenceContent city={city} />
+    case 'singapore':
+      return <SingaporeTimeDifferenceContent city={city} />
+    case 'paris':
+      return <ParisTimeDifferenceContent city={city} />
+    case 'sydney':
+      return <SydneyTimeDifferenceContent city={city} />
+    case 'los-angeles':
+      return <LosAngelesTimeDifferenceContent city={city} />
+    default:
+      return <TimeDifferenceContent city={city} />
+  }
 }
