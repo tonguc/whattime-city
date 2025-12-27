@@ -10,6 +10,7 @@ interface CompareWidgetProps {
   initialToCity?: City | null
   isLight?: boolean
   className?: string
+  onCitiesChange?: (fromCity: City | null, toCity: City | null) => void
 }
 
 interface DropdownPortalProps {
@@ -34,9 +35,13 @@ function DropdownPortal({ isOpen, results, onSelect, inputRef, isLight }: Dropdo
     const updatePosition = () => {
       if (!inputRef.current) return
       const rect = inputRef.current.getBoundingClientRect()
+      
+      // Always position below the input
+      const topPosition = rect.bottom + window.scrollY + 4
+      
       setPosition({
-        top: rect.bottom + 4,
-        left: rect.left,
+        top: topPosition,
+        left: rect.left + window.scrollX,
         width: rect.width
       })
     }
@@ -57,7 +62,7 @@ function DropdownPortal({ isOpen, results, onSelect, inputRef, isLight }: Dropdo
     <div 
       className={`rounded-xl overflow-y-auto shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
       style={{
-        position: 'fixed',
+        position: 'absolute',
         top: `${position.top}px`,
         left: `${position.left}px`,
         width: `${position.width}px`,
@@ -89,7 +94,8 @@ export default function CompareWidget({
   initialFromCity = null, 
   initialToCity = null,
   isLight = false,
-  className = ""
+  className = "",
+  onCitiesChange
 }: CompareWidgetProps) {
   const router = useRouter()
   
@@ -107,24 +113,60 @@ export default function CompareWidget({
   const fromContainerRef = useRef<HTMLDivElement>(null)
   const toContainerRef = useRef<HTMLDivElement>(null)
 
- useEffect(() => {
-  if (initialFromCity) {
-    setFromCity(initialFromCity)
-    setFromQuery(initialFromCity.city)
+  // Initialize with user's location
+  useEffect(() => {
+    if (initialFromCity) {
+      setFromCity(initialFromCity)
+      setFromQuery(initialFromCity.city)
+    } else {
+      // Detect user's location and set default city
+      detectUserLocation()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  useEffect(() => {
+    if (initialToCity) {
+      setToCity(initialToCity)
+      setToQuery(initialToCity.city)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  // Detect user's location
+  const detectUserLocation = async () => {
+    try {
+      // Try to get timezone-based location first (most reliable)
+      const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+      
+      // Map common timezones to cities
+      const timezoneToCity: { [key: string]: string } = {
+        'America/New_York': 'New York',
+        'America/Los_Angeles': 'Los Angeles',
+        'America/Chicago': 'Chicago',
+        'Europe/London': 'London',
+        'Europe/Paris': 'Paris',
+        'Europe/Berlin': 'Berlin',
+        'Europe/Istanbul': 'Istanbul',
+        'Asia/Tokyo': 'Tokyo',
+        'Asia/Shanghai': 'Shanghai',
+        'Asia/Dubai': 'Dubai',
+        'Australia/Sydney': 'Sydney',
+      }
+      
+      const cityName = timezoneToCity[timezone]
+      if (cityName) {
+        const results = searchCities(cityName)
+        if (results.length > 0) {
+          setFromCity(results[0])
+          setFromQuery(results[0].city)
+          onCitiesChange?.(results[0], toCity)
+        }
+      }
+    } catch (error) {
+      console.log('Could not detect location:', error)
+    }
   }
-  // sadece ilk açılışta çalışsın
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [])
-
-
- useEffect(() => {
-  if (initialToCity) {
-    setToCity(initialToCity)
-    setToQuery(initialToCity.city)
-  }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [])
-
 
   useEffect(() => {
     if (fromQuery.length >= 1 && !fromCity) {
@@ -164,7 +206,10 @@ export default function CompareWidget({
 
   const handleCompare = () => {
     if (fromCity && toCity) {
-      router.push(`/time/${fromCity.slug}/${toCity.slug}`)
+      // Ensure slugs are valid before navigation
+      const fromSlug = fromCity.slug || fromCity.city.toLowerCase().replace(/\s+/g, '-')
+      const toSlug = toCity.slug || toCity.city.toLowerCase().replace(/\s+/g, '-')
+      router.push(`/time/${fromSlug}/${toSlug}`)
     }
   }
 
@@ -176,6 +221,23 @@ export default function CompareWidget({
     setFromQuery(toQuery)
     setToCity(tempCity)
     setToQuery(tempQuery)
+    
+    // Notify parent component about the swap
+    onCitiesChange?.(toCity, tempCity)
+  }
+
+  const handleFromCitySelect = (city: City) => {
+    setFromCity(city)
+    setFromQuery(city.city)
+    setShowFromDropdown(false)
+    onCitiesChange?.(city, toCity)
+  }
+
+  const handleToCitySelect = (city: City) => {
+    setToCity(city)
+    setToQuery(city.city)
+    setShowToDropdown(false)
+    onCitiesChange?.(fromCity, city)
   }
 
   return (
@@ -210,6 +272,7 @@ export default function CompareWidget({
                 setFromQuery('')
                 setFromCity(null)
                 setShowFromDropdown(false)
+                onCitiesChange?.(null, toCity)
               }}
               className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 z-10 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
             >
@@ -222,11 +285,7 @@ export default function CompareWidget({
           <DropdownPortal
             isOpen={showFromDropdown}
             results={fromResults}
-            onSelect={(city) => {
-              setFromCity(city)
-              setFromQuery(city.city)
-              setShowFromDropdown(false)
-            }}
+            onSelect={handleFromCitySelect}
             inputRef={fromInputRef}
             isLight={isLight}
           />
@@ -272,6 +331,7 @@ export default function CompareWidget({
                 setToQuery('')
                 setToCity(null)
                 setShowToDropdown(false)
+                onCitiesChange?.(fromCity, null)
               }}
               className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 z-10 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
             >
@@ -284,11 +344,7 @@ export default function CompareWidget({
           <DropdownPortal
             isOpen={showToDropdown}
             results={toResults}
-            onSelect={(city) => {
-              setToCity(city)
-              setToQuery(city.city)
-              setShowToDropdown(false)
-            }}
+            onSelect={handleToCitySelect}
             inputRef={toInputRef}
             isLight={isLight}
           />
