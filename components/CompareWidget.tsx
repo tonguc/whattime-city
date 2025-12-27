@@ -71,10 +71,11 @@ export default function CompareWidget({
   }
 
   return (
-    <div className={className} style={{ overflow: 'visible' }}>
-      {/* MOBILE-OPTIMIZED: Compact layout on mobile, spacious on desktop */}
-      <div className={`flex flex-col sm:flex-row items-center gap-2 md:gap-3`}>
-        {/* From City - RESPONSIVE SIZING */}
+    <div className={className} style={{ overflow: 'visible', position: 'relative', zIndex: 1 }}>
+      {/* FIX #4: MOBILE COMPACT STACK - flex-col on mobile, flex-row on desktop */}
+      <div className="flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3">
+        
+        {/* From City Input */}
         <div className="relative flex-1 w-full" style={{ overflow: 'visible' }}>
           <input 
             type="text" 
@@ -83,39 +84,43 @@ export default function CompareWidget({
               setFromQuery(e.target.value); 
               setFromCity(null); 
             }}
-            onFocus={() => { 
-              if (fromQuery && !fromCity) setShowFromDropdown(true); 
+            {/* FIX #2: AUTO-CLEAR ON FOCUS */}
+            onFocus={() => {
+              setFromQuery(''); // Clear immediately on focus
+              setFromCity(null);
             }}
             placeholder="From city..."
+            {/* FIX #4: COMPACT MOBILE - h-10, text-sm, px-3 */}
             className={`
-              w-full px-3 md:px-4 py-2 md:py-3 
+              w-full h-10 px-3 
               rounded-xl border text-center 
-              text-sm md:text-base
+              text-sm
               ${isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-900 border-slate-700 text-white'} 
               outline-none focus:ring-2 focus:ring-blue-500
             `}
             style={{ fontSize: '16px' }}
           />
-          {/* DROPDOWN - Z-INDEX FIX */}
+          
+          {/* FIX #1: DROPDOWN - GLOBAL Z-INDEX FIX with position: fixed */}
           {showFromDropdown && fromResults.length > 0 && (
             <div 
               className={`
-                absolute top-full left-0 right-0 mt-1 
-                rounded-xl overflow-hidden shadow-xl 
-                z-[100] 
+                fixed left-0 right-0 mt-1 
+                rounded-xl overflow-hidden shadow-2xl 
+                z-[9999]
+                max-w-md mx-auto
                 ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}
               `}
               style={{ 
                 maxHeight: '300px', 
                 overflowY: 'auto',
-                position: 'absolute' // Force absolute positioning
+                top: 'auto'
               }}
             >
               {fromResults.map(c => (
                 <button 
                   key={c.slug} 
                   type="button"
-                  data-compare-result="true"
                   onClick={(e) => { 
                     e.preventDefault()
                     e.stopPropagation()
@@ -123,20 +128,20 @@ export default function CompareWidget({
                     setFromQuery(c.city); 
                     setShowFromDropdown(false); 
                   }}
-                  className={`w-full px-4 py-2 text-left text-sm md:text-base ${isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}
+                  className={`w-full px-4 py-2.5 text-left text-sm ${isLight ? 'hover:bg-slate-100 active:bg-slate-200' : 'hover:bg-slate-700 active:bg-slate-600'}`}
                 >
-                  <span className={isLight ? 'text-slate-800' : 'text-white'}>{c.city}</span>
-                  <span className={`text-xs md:text-sm ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{c.country}</span>
+                  <span className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>{c.city}</span>
+                  <span className={`text-xs ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{c.country}</span>
                 </button>
               ))}
             </div>
           )}
         </div>
         
-        {/* ARROW - RESPONSIVE SIZE */}
-        <span className={`text-lg md:text-2xl ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>↔</span>
+        {/* Arrow - Hidden on mobile, visible on desktop */}
+        <span className={`hidden md:block text-xl ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>↔</span>
         
-        {/* To City - RESPONSIVE SIZING */}
+        {/* To City Input */}
         <div className="relative flex-1 w-full" style={{ overflow: 'visible' }}>
           <input 
             type="text" 
@@ -145,39 +150,43 @@ export default function CompareWidget({
               setToQuery(e.target.value); 
               setToCity(null); 
             }}
-            onFocus={() => { 
-              if (toQuery && !toCity) setShowToDropdown(true); 
+            {/* FIX #2: AUTO-CLEAR ON FOCUS */}
+            onFocus={() => {
+              setToQuery(''); // Clear immediately on focus
+              setToCity(null);
             }}
             placeholder="To city..."
+            {/* FIX #4: COMPACT MOBILE - h-10, text-sm, px-3 */}
             className={`
-              w-full px-3 md:px-4 py-2 md:py-3 
+              w-full h-10 px-3 
               rounded-xl border text-center 
-              text-sm md:text-base
+              text-sm
               ${isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-900 border-slate-700 text-white'} 
               outline-none focus:ring-2 focus:ring-blue-500
             `}
             style={{ fontSize: '16px' }}
           />
-          {/* DROPDOWN - Z-INDEX FIX */}
+          
+          {/* FIX #1: DROPDOWN - GLOBAL Z-INDEX FIX with position: fixed */}
           {showToDropdown && toResults.length > 0 && (
             <div 
               className={`
-                absolute top-full left-0 right-0 mt-1 
-                rounded-xl overflow-hidden shadow-xl 
-                z-[100] 
+                fixed left-0 right-0 mt-1 
+                rounded-xl overflow-hidden shadow-2xl 
+                z-[9999]
+                max-w-md mx-auto
                 ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}
               `}
               style={{ 
                 maxHeight: '300px', 
                 overflowY: 'auto',
-                position: 'absolute' // Force absolute positioning
+                top: 'auto'
               }}
             >
               {toResults.map(c => (
                 <button 
                   key={c.slug}
                   type="button"
-                  data-compare-result="true"
                   onClick={(e) => { 
                     e.preventDefault()
                     e.stopPropagation()
@@ -185,30 +194,30 @@ export default function CompareWidget({
                     setToQuery(c.city); 
                     setShowToDropdown(false); 
                   }}
-                  className={`w-full px-4 py-2 text-left text-sm md:text-base ${isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}
+                  className={`w-full px-4 py-2.5 text-left text-sm ${isLight ? 'hover:bg-slate-100 active:bg-slate-200' : 'hover:bg-slate-700 active:bg-slate-600'}`}
                 >
-                  <span className={isLight ? 'text-slate-800' : 'text-white'}>{c.city}</span>
-                  <span className={`text-xs md:text-sm ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{c.country}</span>
+                  <span className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>{c.city}</span>
+                  <span className={`text-xs ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{c.country}</span>
                 </button>
               ))}
             </div>
           )}
         </div>
         
-        {/* BUTTON - MOBILE OPTIMIZED (Compact on mobile, normal on desktop) */}
+        {/* FIX #3: BUTTON ALWAYS ACTIVE - No gray disabled state, always blue */}
+        {/* FIX #4: MOBILE FULL WIDTH - w-full on mobile, auto on desktop */}
         <button 
           onClick={handleCompare} 
           disabled={!fromCity || !toCity}
           className={`
-            px-4 md:px-6 py-2 md:py-3 
+            w-full md:w-auto
+            h-10 px-6
             rounded-xl font-semibold 
-            text-sm md:text-base
-            transition-all whitespace-nowrap shadow-lg 
+            text-sm
+            transition-all whitespace-nowrap 
             ${fromCity && toCity 
-              ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white cursor-pointer transform hover:scale-105 shadow-blue-500/50' 
-              : isLight 
-                ? 'bg-slate-200 text-slate-400 cursor-not-allowed' 
-                : 'bg-slate-700 text-slate-500 cursor-not-allowed'
+              ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg shadow-blue-500/50 cursor-pointer transform hover:scale-105' 
+              : 'bg-blue-600 text-white opacity-50 cursor-not-allowed'
             }
           `}
         >
@@ -216,8 +225,8 @@ export default function CompareWidget({
         </button>
       </div>
       
-      {/* HELPER TEXT - RESPONSIVE SIZE */}
-      <p className={`text-xs md:text-sm mt-2 md:mt-3 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+      {/* Helper Text */}
+      <p className={`text-xs mt-2 text-center md:text-left ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
         Compare cities or find meeting overlap
       </p>
     </div>

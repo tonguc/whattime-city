@@ -72,21 +72,28 @@ export default function CitySearch({
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          onFocus={() => query && setShowDropdown(true)}
+          {/* FIX #2: AUTO-CLEAR ON FOCUS */}
+          onFocus={() => setQuery('')}
           placeholder={placeholder}
           className={`flex-1 bg-transparent outline-none text-sm ${isLight ? 'text-slate-800' : 'text-white'}`}
           style={{ fontSize: '16px' }}
         />
       </div>
 
-      {/* Dropdown Results - Z-INDEX FIX */}
+      {/* FIX #1: Dropdown - GLOBAL Z-INDEX with position: fixed */}
       {showDropdown && results.length > 0 && (
         <div 
-          className={`absolute top-full left-0 right-0 mt-2 rounded-xl overflow-hidden shadow-xl z-[100] ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
+          className={`
+            fixed left-0 right-0 mt-2 
+            rounded-xl overflow-hidden shadow-2xl 
+            z-[9999]
+            max-w-md mx-auto
+            ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}
+          `}
           style={{ 
             maxHeight: '300px', 
             overflowY: 'auto',
-            position: 'absolute' // Force absolute positioning
+            top: 'auto'
           }}
         >
           {results.map((city) => (
@@ -102,7 +109,7 @@ export default function CitySearch({
               className={`w-full px-4 py-3 text-left flex items-center justify-between ${isLight ? 'hover:bg-slate-50 active:bg-slate-100' : 'hover:bg-slate-700 active:bg-slate-600'}`}
             >
               <div>
-                <span className={isLight ? 'text-slate-800' : 'text-white'}>{city.city}</span>
+                <span className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>{city.city}</span>
                 <span className={`text-sm ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{city.country}</span>
               </div>
             </button>
