@@ -22,6 +22,17 @@ function getTimezoneOffset(timezone: string): number {
   return (tzDate.getTime() - utcDate.getTime()) / (1000 * 60 * 60)
 }
 
+// Format timezone with UTC offset
+function formatTimezone(timezone: string, offset: number): string {
+  const hours = Math.floor(Math.abs(offset))
+  const minutes = Math.round((Math.abs(offset) - hours) * 60)
+  const sign = offset >= 0 ? '+' : '-'
+  const utc = minutes > 0 
+    ? `UTC${sign}${hours}:${minutes.toString().padStart(2, '0')}`
+    : `UTC${sign}${hours}`
+  return `${timezone.split('/').pop()?.replace('_', ' ')} (${utc})`
+}
+
 // Format time difference nicely
 function formatTimeDifference(hours: number): string {
   const absHours = Math.abs(hours)
@@ -97,9 +108,13 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
   const toOffset = getTimezoneOffset(toCity.timezone)
   const diffHours = toOffset - fromOffset
   
-  // Theme based on "from" city - ✅ Swap olduğunda güncellenecek!
+  // ✅ Theme based on "from" city - Swap olduğunda güncellenecek!
   const mainTheme = themes[fromTimeOfDay]
   const isLight = isLightTheme(fromTimeOfDay)
+  
+  // Format timezones
+  const fromTimezoneStr = formatTimezone(fromCity.timezone, fromOffset)
+  const toTimezoneStr = formatTimezone(toCity.timezone, toOffset)
   
   // Business hours overlap calculation (9 AM - 5 PM)
   const getOverlapHours = () => {
@@ -162,9 +177,14 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
 
       <main className="max-w-6xl mx-auto px-4 py-8" style={{ overflow: 'visible' }}>
         {/* Title */}
-        <h1 className={`text-2xl sm:text-3xl font-bold text-center mb-6 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+        <h1 className={`text-2xl sm:text-3xl font-bold text-center mb-2 ${isLight ? 'text-slate-800' : 'text-white'}`}>
           {fromCity.city} → {toCity.city} Time
         </h1>
+        
+        {/* ✅ Timezone Display */}
+        <p className={`text-sm text-center mb-6 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+          {fromTimezoneStr} → {toTimezoneStr}
+        </p>
         
         {/* Compare Widget - TOP PLACEMENT */}
         <div className="max-w-2xl mx-auto mb-8" style={{ overflow: 'visible' }}>
@@ -202,7 +222,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
             <div className={`mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium ${
               isLight ? 'bg-slate-200 text-slate-600' : 'bg-slate-700 text-slate-300'
             }`}>
-              {fromCity.timezone.replace('_', ' ')}
+              {fromTimezoneStr}
             </div>
           </div>
           
@@ -230,7 +250,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
             <div className={`mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium ${
               isLight ? 'bg-slate-200 text-slate-600' : 'bg-slate-700 text-slate-300'
             }`}>
-              {toCity.timezone.replace('_', ' ')}
+              {toTimezoneStr}
             </div>
           </div>
         </div>
