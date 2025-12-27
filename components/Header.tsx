@@ -61,9 +61,12 @@ export default function Header() {
   }, [])
   
   const handleSearchSelect = (city: City) => {
+    console.log('🔍 Search select clicked:', city.slug, city.city)
     router.push(`/${city.slug}`)
+    console.log('✅ Router.push called:', `/${city.slug}`)
     setSearchQuery('')
     setShowSearchDropdown(false)
+    console.log('🔒 Dropdown closed')
   }
   
   const handleLogoClick = () => {
@@ -102,7 +105,15 @@ export default function Header() {
             {showSearchDropdown && searchResults.length > 0 && (
               <div className={`absolute top-full left-0 w-72 mt-2 rounded-xl overflow-hidden shadow-xl z-50 ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}>
                 {searchResults.map((city) => (
-                  <button key={city.slug} onClick={() => handleSearchSelect(city)}
+                  <button 
+                    key={city.slug}
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      e.stopPropagation()
+                      console.log('💻 Desktop button clicked:', city.slug)
+                      handleSearchSelect(city)
+                    }}
                     className={`w-full px-4 py-3 text-left flex items-center justify-between ${isLight ? 'hover:bg-slate-50' : 'hover:bg-slate-700'}`}>
                     <div>
                       <span className={theme.text}>{city.city}</span>
@@ -231,8 +242,14 @@ export default function Header() {
             <div className={`absolute top-full left-0 right-0 mt-2 rounded-xl overflow-hidden shadow-xl z-50 ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}>
               {searchResults.map((city) => (
                 <button 
-                  key={city.slug} 
-                  onClick={() => handleSearchSelect(city)}
+                  key={city.slug}
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    console.log('📱 Mobile button clicked:', city.slug)
+                    handleSearchSelect(city)
+                  }}
                   className={`w-full px-4 py-3 text-left flex items-center justify-between ${isLight ? 'hover:bg-slate-50 active:bg-slate-100' : 'hover:bg-slate-700 active:bg-slate-600'}`}
                 >
                   <div>
