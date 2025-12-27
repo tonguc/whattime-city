@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useCityContext } from '@/lib/CityContext'
 import { City, searchCities } from '@/lib/cities'
+import CitySearch from '@/components/CitySearch'
 
 export default function Header() {
   const router = useRouter()
@@ -26,7 +27,6 @@ export default function Header() {
   const [searchResults, setSearchResults] = useState<City[]>([])
   const [showSearchDropdown, setShowSearchDropdown] = useState(false)
   const searchRef = useRef<HTMLDivElement>(null)
-  const mobileSearchRef = useRef<HTMLDivElement>(null)
   
   // Settings state
   const [showSettings, setShowSettings] = useState(false)
@@ -54,9 +54,6 @@ export default function Header() {
       }
       
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
-        setShowSearchDropdown(false)
-      }
-      if (mobileSearchRef.current && !mobileSearchRef.current.contains(e.target as Node)) {
         setShowSearchDropdown(false)
       }
       if (settingsRef.current && !settingsRef.current.contains(e.target as Node)) {
@@ -227,50 +224,13 @@ export default function Header() {
         </nav>
       </div>
       
-      {/* Mobile Search */}
-      <div className="sm:hidden px-4 pb-3" ref={mobileSearchRef}>
-        <div className="relative">
-          <div className={`flex items-center gap-2 px-4 py-2.5 rounded-full ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
-            <svg className={`w-4 h-4 ${theme.textMuted}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              onFocus={() => searchQuery && setShowSearchDropdown(true)}
-              placeholder="Search city..."
-              className={`flex-1 bg-transparent outline-none text-sm ${theme.text}`}
-              style={{ fontSize: '16px' }}
-            />
-          </div>
-          
-          {/* Mobile Dropdown */}
-          {showSearchDropdown && searchResults.length > 0 && (
-            <div className={`absolute top-full left-0 right-0 mt-2 rounded-xl overflow-hidden shadow-xl z-50 ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}>
-              {searchResults.map((city) => (
-                <button 
-                  key={city.slug}
-                  type="button"
-                  data-search-result-button="true"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    e.stopPropagation()
-                    console.log('📱 Mobile button clicked:', city.slug)
-                    handleSearchSelect(city)
-                  }}
-                  className={`w-full px-4 py-3 text-left flex items-center justify-between ${isLight ? 'hover:bg-slate-50 active:bg-slate-100' : 'hover:bg-slate-700 active:bg-slate-600'}`}
-                >
-                  <div>
-                    <span className={theme.text}>{city.city}</span>
-                    <span className={`text-sm ml-2 ${theme.textMuted}`}>{city.country}</span>
-                  </div>
-                  <span className={`text-sm ${theme.textMuted}`}>{getLocalTime(city)}</span>
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
+      {/* Mobile Search - Using CitySearch Component */}
+      <div className="sm:hidden px-4 pb-3">
+        <CitySearch 
+          placeholder="Search city..."
+          isLight={isLight}
+          className="w-full"
+        />
       </div>
     </header>
   )

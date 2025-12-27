@@ -9,6 +9,7 @@ import { getWeather, WeatherResponse } from '@/lib/weather'
 import { TimeIcons } from '@/components/TimeIcons'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import CompareWidget from '@/components/CompareWidget'
 
 
 // Data
@@ -284,59 +285,11 @@ export default function HomePage() {
           </h1>
           
           <div className={`max-w-2xl mx-auto mt-6 p-4 rounded-2xl ${homeIsLight ? 'bg-slate-100' : 'bg-slate-800/50'}`}>
-            <div className="flex flex-col sm:flex-row items-center gap-3">
-              {/* From City */}
-              <div className="relative flex-1 w-full">
-                <input type="text" value={fromQuery}
-                  onChange={(e) => { setFromQuery(e.target.value); setFromCity(null) }}
-                  onFocus={() => { if (fromQuery && !fromCity) setShowFromDropdown(true) }}
-                  placeholder="From city..."
-                  className={`w-full px-4 py-3 rounded-xl border text-center ${homeIsLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-900 border-slate-700 text-white'} outline-none focus:ring-2 focus:ring-blue-500`}
-                  style={{ fontSize: '16px' }}
-                />
-                {showFromDropdown && fromResults.length > 0 && (
-                  <div className={`absolute top-full left-0 right-0 mt-1 rounded-xl overflow-hidden shadow-xl z-50 ${homeIsLight ? 'bg-white' : 'bg-slate-800'}`}>
-                    {fromResults.map(c => (
-                      <button key={c.slug} onClick={() => { setFromCity(c); setFromQuery(c.city); setShowFromDropdown(false) }}
-                        className={`w-full px-4 py-2 text-left ${homeIsLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}>
-                        <span className={homeTheme.text}>{c.city}</span>
-                        <span className={`text-sm ml-2 ${homeTheme.textMuted}`}>{c.country}</span>
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-              
-              <span className={`text-2xl ${homeTheme.textMuted}`}>↔</span>
-              
-              {/* To City */}
-              <div className="relative flex-1 w-full">
-                <input type="text" value={toQuery}
-                  onChange={(e) => { setToQuery(e.target.value); setToCity(null) }}
-                  onFocus={() => { if (toQuery && !toCity) setShowToDropdown(true) }}
-                  placeholder="To city..."
-                  className={`w-full px-4 py-3 rounded-xl border text-center ${homeIsLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-900 border-slate-700 text-white'} outline-none focus:ring-2 focus:ring-blue-500`}
-                  style={{ fontSize: '16px' }}
-                />
-                {showToDropdown && toResults.length > 0 && (
-                  <div className={`absolute top-full left-0 right-0 mt-1 rounded-xl overflow-hidden shadow-xl z-50 ${homeIsLight ? 'bg-white' : 'bg-slate-800'}`}>
-                    {toResults.map(c => (
-                      <button key={c.slug} onClick={() => { setToCity(c); setToQuery(c.city); setShowToDropdown(false) }}
-                        className={`w-full px-4 py-2 text-left ${homeIsLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}>
-                        <span className={homeTheme.text}>{c.city}</span>
-                        <span className={`text-sm ml-2 ${homeTheme.textMuted}`}>{c.country}</span>
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-              
-              <button onClick={handleCompare} disabled={!fromCity || !toCity}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all whitespace-nowrap ${fromCity && toCity ? 'bg-blue-600 hover:bg-blue-700 text-white cursor-pointer' : homeIsLight ? 'bg-slate-300 text-slate-500 cursor-not-allowed' : 'bg-slate-700 text-slate-500 cursor-not-allowed'}`}>
-                Compare Time
-              </button>
-            </div>
-            <p className={`text-sm mt-3 ${homeTheme.textMuted}`}>Compare cities or find meeting overlap</p>
+            <CompareWidget 
+              initialFromCity={fromCity}
+              initialToCity={toCity}
+              isLight={homeIsLight}
+            />
           </div>
         </section>
 

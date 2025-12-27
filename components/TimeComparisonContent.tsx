@@ -7,6 +7,7 @@ import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import CompareWidget from '@/components/CompareWidget'
 
 interface TimeComparisonContentProps {
   fromCity: City
@@ -411,6 +412,23 @@ export default function TimeComparisonContent({ fromCity, toCity }: TimeComparis
               planning travel itineraries, watching live events, or simply staying in touch with friends and family 
               across {fromCity.city} and {toCity.city}. Bookmark this page for quick reference.
             </p>
+          </div>
+        </section>
+
+        {/* Compare Another City Widget */}
+        <section className={`max-w-4xl mx-auto px-4 py-8 mb-8`}>
+          <div className={`rounded-3xl p-6 md:p-8 backdrop-blur-xl border ${isLight ? 'bg-white/80 border-slate-200' : 'bg-slate-800/80 border-slate-700'}`}>
+            <h2 className={`text-2xl font-bold mb-4 text-center ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              Compare Another City
+            </h2>
+            <p className={`text-center mb-6 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+              Quickly compare {fromCity.city} or {toCity.city} with another city
+            </p>
+            <CompareWidget 
+              initialFromCity={fromCity}
+              initialToCity={toCity}
+              isLight={isLight}
+            />
           </div>
         </section>
       </main>
