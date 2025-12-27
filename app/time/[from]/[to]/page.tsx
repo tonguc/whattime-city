@@ -7,32 +7,37 @@ interface TimeComparePageProps {
   params: Promise<{ from: string; to: string }>
 }
 
+// ✅ ENABLE DYNAMIC PARAMS - Allow any city combination!
+export const dynamicParams = true
+
 // Get city by slug
 function getCityBySlug(slug: string): City | undefined {
   return cities.find(c => c.slug === slug)
 }
 
-// Generate static params for top city combinations
+// Generate static params for POPULAR city combinations only
+// Other combinations will be rendered on-demand
 export async function generateStaticParams() {
   const tier1 = getTier1Cities()
   const tier1Slugs = tier1.map(c => c.slug)
   
-  // Popular tier 2 cities to include
+  // Popular tier 2 cities to include in static build
   const popularTier2 = [
     'istanbul', 'moscow', 'berlin', 'madrid', 'barcelona', 'rome', 'amsterdam',
-    'bangkok', 'seoul', 'mumbai', 'delhi', 'shanghai', 'beijing',
+    'paris', 'lisbon', 'vienna', 'prague', 'budapest', 'warsaw', 'athens',
+    'bangkok', 'seoul', 'mumbai', 'delhi', 'shanghai', 'beijing', 'hong-kong',
     'sao-paulo', 'mexico-city', 'toronto', 'chicago', 'los-angeles',
-    'san-francisco', 'miami', 'seattle', 'boston', 'dallas',
-    'cairo', 'johannesburg', 'lagos', 'nairobi',
-    'melbourne', 'auckland', 'jakarta', 'manila', 'kuala-lumpur',
-    'riyadh', 'tel-aviv', 'doha', 'abu-dhabi'
+    'san-francisco', 'miami', 'seattle', 'boston', 'dallas', 'houston',
+    'cairo', 'johannesburg', 'lagos', 'nairobi', 'cape-town',
+    'melbourne', 'sydney', 'auckland', 'jakarta', 'manila', 'kuala-lumpur',
+    'singapore', 'riyadh', 'tel-aviv', 'doha', 'abu-dhabi', 'dubai'
   ]
   
   const allSlugs = Array.from(new Set([...tier1Slugs, ...popularTier2]))
   
   const params: { from: string; to: string }[] = []
   
-  // Generate all combinations
+  // Generate combinations for popular cities only
   for (const from of allSlugs) {
     for (const to of allSlugs) {
       if (from !== to) {
@@ -43,6 +48,9 @@ export async function generateStaticParams() {
       }
     }
   }
+  
+  console.log(`📊 Generating ${params.length} static pages for popular city combinations`)
+  console.log(`🌍 Other city combinations will be rendered on-demand (dynamicParams = true)`)
   
   return params
 }
