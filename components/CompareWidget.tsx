@@ -107,19 +107,24 @@ export default function CompareWidget({
   const fromContainerRef = useRef<HTMLDivElement>(null)
   const toContainerRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    if (initialFromCity && !fromCity) {
-      setFromCity(initialFromCity)
-      setFromQuery(initialFromCity.city)
-    }
-  }, [initialFromCity, fromCity])
+ useEffect(() => {
+  if (initialFromCity) {
+    setFromCity(initialFromCity)
+    setFromQuery(initialFromCity.city)
+  }
+  // sadece ilk açılışta çalışsın
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [])
 
-  useEffect(() => {
-    if (initialToCity && !toCity) {
-      setToCity(initialToCity)
-      setToQuery(initialToCity.city)
-    }
-  }, [initialToCity, toCity])
+
+ useEffect(() => {
+  if (initialToCity) {
+    setToCity(initialToCity)
+    setToQuery(initialToCity.city)
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [])
+
 
   useEffect(() => {
     if (fromQuery.length >= 1 && !fromCity) {
