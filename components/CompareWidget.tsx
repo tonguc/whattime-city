@@ -172,22 +172,6 @@ export default function CompareWidget({
     setToQuery(tempQuery)
   }
 
-  const clearFrom = (e: React.MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
-    setFromQuery('')
-    setFromCity(null)
-    setShowFromDropdown(false)
-  }
-
-  const clearTo = (e: React.MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
-    setToQuery('')
-    setToCity(null)
-    setShowToDropdown(false)
-  }
-
   return (
     <div className={className}>
       <div className="flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3">
@@ -214,7 +198,12 @@ export default function CompareWidget({
           {fromQuery && (
             <button
               type="button"
-              onMouseDown={clearFrom}
+              onMouseDown={(e) => e.preventDefault()}
+              onClick={() => {
+                setFromQuery('')
+                setFromCity(null)
+                setShowFromDropdown(false)
+              }}
               className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 z-10 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -270,7 +259,12 @@ export default function CompareWidget({
           {toQuery && (
             <button
               type="button"
-              onMouseDown={clearTo}
+              onMouseDown={(e) => e.preventDefault()}
+              onClick={() => {
+                setToQuery('')
+                setToCity(null)
+                setShowToDropdown(false)
+              }}
               className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 z-10 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
