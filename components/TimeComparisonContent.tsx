@@ -173,7 +173,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
   return (
     <div className={`min-h-screen transition-colors duration-700 bg-gradient-to-br ${mainTheme.bg}`} style={{ overflow: 'visible' }}>
       {/* Shared Header */}
-      <Header />
+      <Header isLight={isLight} />
 
       <main className="max-w-6xl mx-auto px-4 py-8" style={{ overflow: 'visible' }}>
         {/* Title */}
