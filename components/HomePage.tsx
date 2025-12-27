@@ -218,7 +218,7 @@ export default function HomePage() {
         )}
 
         {/* HERO - Compare Tool */}
-        <section className={`rounded-3xl p-6 md:p-8 mb-4 backdrop-blur-xl border ${homeTheme.card} text-center`}>
+        <section className={`rounded-3xl p-6 md:p-8 mb-4 backdrop-blur-xl border ${homeTheme.card} text-center`} style={{ overflow: 'visible' }}>
           <h1 className={`text-2xl md:text-3xl font-bold mb-2 ${homeTheme.text} flex items-center justify-center gap-3`}>
             <svg className="w-8 h-8 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10"/>
@@ -228,7 +228,7 @@ export default function HomePage() {
             World Clock — Compare Time Instantly
           </h1>
           
-          <div className={`max-w-2xl mx-auto mt-6 p-4 rounded-2xl ${homeIsLight ? 'bg-slate-100' : 'bg-slate-800/50'}`}>
+          <div className={`max-w-2xl mx-auto mt-6 p-4 rounded-2xl ${homeIsLight ? 'bg-slate-100' : 'bg-slate-800/50'}`} style={{ overflow: 'visible' }}>
             <CompareWidget 
               initialFromCity={fromCity}
               initialToCity={toCity}

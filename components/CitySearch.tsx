@@ -63,7 +63,7 @@ export default function CitySearch({
   }
 
   return (
-    <div ref={searchRef} className={`relative ${className}`}>
+    <div ref={searchRef} className={`relative ${className}`} style={{ overflow: 'visible' }}>
       <div className={`flex items-center gap-2 px-4 py-2.5 rounded-full ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
         <svg className={`w-4 h-4 ${isLight ? 'text-slate-500' : 'text-slate-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -79,11 +79,15 @@ export default function CitySearch({
         />
       </div>
 
-      {/* Dropdown Results */}
+      {/* Dropdown Results - Z-INDEX FIX */}
       {showDropdown && results.length > 0 && (
         <div 
           className={`absolute top-full left-0 right-0 mt-2 rounded-xl overflow-hidden shadow-xl z-[100] ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
-          style={{ maxHeight: '300px', overflowY: 'auto' }}
+          style={{ 
+            maxHeight: '300px', 
+            overflowY: 'auto',
+            position: 'absolute' // Force absolute positioning
+          }}
         >
           {results.map((city) => (
             <button
