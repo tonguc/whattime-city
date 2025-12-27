@@ -23,7 +23,6 @@ export default function CitySearch({
   const [showDropdown, setShowDropdown] = useState(false)
   const searchRef = useRef<HTMLDivElement>(null)
 
-  // Search effect
   useEffect(() => {
     if (query.length >= 1) {
       setResults(searchCities(query).slice(0, 6))
@@ -34,16 +33,12 @@ export default function CitySearch({
     }
   }, [query])
 
-  // Close dropdown on outside click
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement
-      
-      // Don't close if clicking a result button
       if (target.closest('[data-city-search-result]')) {
         return
       }
-      
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
         setShowDropdown(false)
       }
@@ -72,7 +67,6 @@ export default function CitySearch({
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          {/* FIX #2: AUTO-CLEAR ON FOCUS */}
           onFocus={() => setQuery('')}
           placeholder={placeholder}
           className={`flex-1 bg-transparent outline-none text-sm ${isLight ? 'text-slate-800' : 'text-white'}`}
@@ -80,21 +74,10 @@ export default function CitySearch({
         />
       </div>
 
-      {/* FIX #1: Dropdown - GLOBAL Z-INDEX with position: fixed */}
       {showDropdown && results.length > 0 && (
         <div 
-          className={`
-            fixed left-0 right-0 mt-2 
-            rounded-xl overflow-hidden shadow-2xl 
-            z-[9999]
-            max-w-md mx-auto
-            ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}
-          `}
-          style={{ 
-            maxHeight: '300px', 
-            overflowY: 'auto',
-            top: 'auto'
-          }}
+          className={`fixed left-0 right-0 mt-2 rounded-xl overflow-hidden shadow-2xl z-[9999] max-w-md mx-auto ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
+          style={{ maxHeight: '300px', overflowY: 'auto', top: 'auto' }}
         >
           {results.map((city) => (
             <button
