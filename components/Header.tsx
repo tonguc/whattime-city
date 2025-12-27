@@ -7,12 +7,17 @@ import { useCityContext } from '@/lib/CityContext'
 import { City, searchCities } from '@/lib/cities'
 import CitySearch from '@/components/CitySearch'
 
-export default function Header() {
+// ✅ Interface with optional isLight prop
+interface HeaderProps {
+  isLight?: boolean  // Optional: Override context isLight
+}
+
+export default function Header({ isLight: propIsLight }: HeaderProps = {}) {
   const router = useRouter()
   const {
     currentTheme,
     theme,
-    isLight,
+    isLight: contextIsLight,  // Rename to avoid conflict
     themeMode,
     setThemeMode,
     clockMode,
@@ -21,6 +26,9 @@ export default function Header() {
     setUse12Hour,
     getLocalTime,
   } = useCityContext()
+  
+  // ✅ Use prop if provided, otherwise use context
+  const isLight = propIsLight !== undefined ? propIsLight : contextIsLight
   
   // Search state
   const [searchQuery, setSearchQuery] = useState('')
