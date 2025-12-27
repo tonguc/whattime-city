@@ -122,7 +122,7 @@ export default function CompareWidget({
             {fromQuery && (
               <button
                 type="button"
-                onClick={clearFrom}
+                onMouseDown={clearFrom}
                 tabIndex={-1}
                 className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
               >
@@ -135,9 +135,8 @@ export default function CompareWidget({
           
           {showFromDropdown && fromResults.length > 0 && (
             <div 
-              className={`absolute left-0 right-0 mt-1 rounded-xl overflow-y-auto shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
+              className={`fixed left-4 right-4 md:absolute md:left-0 md:right-0 mt-1 rounded-xl overflow-y-auto shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
               style={{ 
-                position: 'absolute',
                 zIndex: 999999,
                 maxHeight: '300px'
               }}
@@ -198,7 +197,7 @@ export default function CompareWidget({
             {toQuery && (
               <button
                 type="button"
-                onClick={clearTo}
+                onMouseDown={clearTo}
                 tabIndex={-1}
                 className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
               >
@@ -211,9 +210,8 @@ export default function CompareWidget({
           
           {showToDropdown && toResults.length > 0 && (
             <div 
-              className={`absolute left-0 right-0 mt-1 rounded-xl overflow-y-auto shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
+              className={`fixed left-4 right-4 md:absolute md:left-0 md:right-0 mt-1 rounded-xl overflow-y-auto shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
               style={{ 
-                position: 'absolute',
                 zIndex: 999999,
                 maxHeight: '300px'
               }}
