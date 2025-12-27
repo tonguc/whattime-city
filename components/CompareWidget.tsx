@@ -34,8 +34,6 @@ function DropdownPortal({ isOpen, results, onSelect, inputRef, isLight }: Dropdo
     const updatePosition = () => {
       if (!inputRef.current) return
       const rect = inputRef.current.getBoundingClientRect()
-      // Fixed position kullandığımız için window.scrollY eklemeye gerek yok,
-      // rect.bottom zaten viewport'a göre değer verir.
       setPosition({
         top: rect.bottom + 4,
         left: rect.left,
@@ -44,7 +42,6 @@ function DropdownPortal({ isOpen, results, onSelect, inputRef, isLight }: Dropdo
     }
     
     updatePosition()
-    // Scroll edildiğinde dropdown'ın inputu takip etmesi için
     window.addEventListener('scroll', updatePosition, true)
     window.addEventListener('resize', updatePosition)
     
@@ -60,22 +57,19 @@ function DropdownPortal({ isOpen, results, onSelect, inputRef, isLight }: Dropdo
     <div 
       className={`rounded-xl overflow-y-auto shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
       style={{
-        position: 'fixed', // Portal ile fixed kullanıyoruz, asla kesilmez
+        position: 'fixed',
         top: `${position.top}px`,
         left: `${position.left}px`,
         width: `${position.width}px`,
         maxHeight: '300px',
         zIndex: 99999
       }}
-      // Dropdown'a tıklayınca inputun focus kaybetmesini önle
-      onMouseDown={(e) => e.preventDefault()}
     >
       {results.map(city => (
         <button 
           key={city.slug}
           type="button"
           onMouseDown={(e) => {
-            // Tıklamayı garanti altına al
             e.preventDefault()
             e.stopPropagation()
             onSelect(city)
@@ -182,7 +176,6 @@ export default function CompareWidget({
     <div className={className}>
       <div className="flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3">
         
-        {/* FROM INPUT */}
         <div className="relative flex-1 w-full">
           <input 
             ref={fromInputRef}
@@ -205,15 +198,12 @@ export default function CompareWidget({
           {fromQuery && (
             <button
               type="button"
-              // DÜZELTME: onClick yerine onMouseDown kullanıyoruz.
-              // Bu sayede input focus kaybetmeden işlem anında gerçekleşir.
               onMouseDown={(e) => {
-                e.preventDefault() // Input focusunu koru
-                e.stopPropagation() // Event'in yayılmasını engelle
+                e.preventDefault()
+                e.stopPropagation()
                 setFromQuery('')
                 setFromCity(null)
                 setShowFromDropdown(false)
-                fromInputRef.current?.focus() // Inputa tekrar odaklan (yeni yazma için)
               }}
               className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 z-10 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
             >
@@ -236,7 +226,6 @@ export default function CompareWidget({
           />
         </div>
         
-        {/* SWAP BUTTON */}
         <button
           type="button"
           onClick={handleSwap}
@@ -249,7 +238,6 @@ export default function CompareWidget({
           </svg>
         </button>
         
-        {/* TO INPUT */}
         <div className="relative flex-1 w-full">
           <input 
             ref={toInputRef}
@@ -272,14 +260,12 @@ export default function CompareWidget({
           {toQuery && (
             <button
               type="button"
-              // DÜZELTME: onClick yerine onMouseDown kullanıyoruz.
               onMouseDown={(e) => {
                 e.preventDefault()
                 e.stopPropagation()
                 setToQuery('')
                 setToCity(null)
                 setShowToDropdown(false)
-                toInputRef.current?.focus()
               }}
               className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 z-10 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
             >
@@ -302,7 +288,6 @@ export default function CompareWidget({
           />
         </div>
         
-        {/* COMPARE BUTTON */}
         <button 
           onClick={handleCompare}
           disabled={!fromCity || !toCity}
