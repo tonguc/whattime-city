@@ -162,10 +162,10 @@ export default function HomePage() {
   }
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${homeTheme.bg}`}>
+    <div className={`min-h-screen bg-gradient-to-br ${homeTheme.bg}`} style={{ overflow: 'visible' }}>
       <Header />
 
-      <main className="max-w-6xl mx-auto px-4 py-4">
+      <main className="max-w-6xl mx-auto px-4 py-4" style={{ overflow: 'visible' }}>
         {/* YOUR LOCATION - Big Clock with Weather */}
         {detectedCity && (
           <section className={`rounded-3xl p-5 md:p-6 mb-4 backdrop-blur-xl border ${homeTheme.card}`}>

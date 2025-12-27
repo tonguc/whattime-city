@@ -142,18 +142,18 @@ export default function TimeComparisonContent({ fromCity, toCity }: TimeComparis
   const callTimes = getBestCallTimes()
   
   return (
-    <div className={`min-h-screen transition-colors duration-700 bg-gradient-to-br ${mainTheme.bg}`}>
+    <div className={`min-h-screen transition-colors duration-700 bg-gradient-to-br ${mainTheme.bg}`} style={{ overflow: 'visible' }}>
       {/* Shared Header */}
       <Header />
 
-      <main className="max-w-6xl mx-auto px-4 py-8">
+      <main className="max-w-6xl mx-auto px-4 py-8" style={{ overflow: 'visible' }}>
         {/* Title */}
         <h1 className={`text-2xl sm:text-3xl font-bold text-center mb-6 ${isLight ? 'text-slate-800' : 'text-white'}`}>
           {fromCity.city} → {toCity.city} Time
         </h1>
         
         {/* Compare Widget - TOP PLACEMENT */}
-        <div className="max-w-2xl mx-auto mb-8">
+        <div className="max-w-2xl mx-auto mb-8" style={{ overflow: 'visible' }}>
           <CompareWidget 
             initialFromCity={fromCity}
             initialToCity={toCity}

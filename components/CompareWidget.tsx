@@ -30,6 +30,8 @@ export default function CompareWidget({
   
   const fromInputRef = useRef<HTMLInputElement>(null)
   const toInputRef = useRef<HTMLInputElement>(null)
+  const fromDropdownRef = useRef<HTMLDivElement>(null)
+  const toDropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (initialFromCity && !fromCity) {
@@ -65,31 +67,48 @@ export default function CompareWidget({
     }
   }, [toQuery, toCity])
 
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (fromDropdownRef.current && !fromDropdownRef.current.contains(e.target as Node) && !fromInputRef.current?.contains(e.target as Node)) {
+        setShowFromDropdown(false)
+      }
+      if (toDropdownRef.current && !toDropdownRef.current.contains(e.target as Node) && !toInputRef.current?.contains(e.target as Node)) {
+        setShowToDropdown(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
   const handleCompare = () => {
     if (fromCity && toCity) {
       router.push(`/time/${fromCity.slug}/${toCity.slug}`)
     }
   }
 
-  const clearFromInput = () => {
+  const clearFromInput = (e: React.MouseEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
     setFromQuery('')
     setFromCity(null)
     setShowFromDropdown(false)
-    fromInputRef.current?.focus()
+    setTimeout(() => fromInputRef.current?.focus(), 0)
   }
 
-  const clearToInput = () => {
+  const clearToInput = (e: React.MouseEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
     setToQuery('')
     setToCity(null)
     setShowToDropdown(false)
-    toInputRef.current?.focus()
+    setTimeout(() => toInputRef.current?.focus(), 0)
   }
 
   return (
-    <div className={`!overflow-visible ${className}`} style={{ position: 'relative', zIndex: 1 }}>
+    <div className={className} style={{ position: 'relative', zIndex: 10, overflow: 'visible' }}>
       <div className="flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3">
         
-        <div className="relative flex-1 w-full" style={{ position: 'relative' }}>
+        <div className="relative flex-1 w-full" style={{ position: 'relative', overflow: 'visible' }}>
           <div className="relative w-full">
             <input 
               ref={fromInputRef}
@@ -112,8 +131,8 @@ export default function CompareWidget({
             {fromQuery && (
               <button
                 type="button"
-                onClick={clearFromInput}
-                className={`absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full transition-all hover:scale-110 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
+                onMouseDown={clearFromInput}
+                className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 z-10 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
                 aria-label="Clear input"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -125,14 +144,15 @@ export default function CompareWidget({
           
           {showFromDropdown && fromResults.length > 0 && (
             <div 
-              className={`absolute left-0 right-0 mt-1 rounded-xl overflow-hidden shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
-              style={{ position: 'absolute', zIndex: 9999, maxHeight: '300px', overflowY: 'auto' }}
+              ref={fromDropdownRef}
+              className={`fixed left-4 right-4 md:left-auto md:right-auto md:absolute md:left-0 md:right-0 mt-1 rounded-xl overflow-hidden shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
+              style={{ zIndex: 99999, maxHeight: '300px', overflowY: 'auto', maxWidth: '500px', margin: '0 auto' }}
             >
               {fromResults.map(c => (
                 <button 
                   key={c.slug} 
                   type="button"
-                  onClick={(e) => { 
+                  onMouseDown={(e) => { 
                     e.preventDefault()
                     e.stopPropagation()
                     setFromCity(c)
@@ -151,7 +171,7 @@ export default function CompareWidget({
         
         <span className={`hidden md:block text-xl flex-shrink-0 ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>↔</span>
         
-        <div className="relative flex-1 w-full" style={{ position: 'relative' }}>
+        <div className="relative flex-1 w-full" style={{ position: 'relative', overflow: 'visible' }}>
           <div className="relative w-full">
             <input 
               ref={toInputRef}
@@ -174,8 +194,8 @@ export default function CompareWidget({
             {toQuery && (
               <button
                 type="button"
-                onClick={clearToInput}
-                className={`absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full transition-all hover:scale-110 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
+                onMouseDown={clearToInput}
+                className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 z-10 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
                 aria-label="Clear input"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -187,14 +207,15 @@ export default function CompareWidget({
           
           {showToDropdown && toResults.length > 0 && (
             <div 
-              className={`absolute left-0 right-0 mt-1 rounded-xl overflow-hidden shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
-              style={{ position: 'absolute', zIndex: 9999, maxHeight: '300px', overflowY: 'auto' }}
+              ref={toDropdownRef}
+              className={`fixed left-4 right-4 md:left-auto md:right-auto md:absolute md:left-0 md:right-0 mt-1 rounded-xl overflow-hidden shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
+              style={{ zIndex: 99999, maxHeight: '300px', overflowY: 'auto', maxWidth: '500px', margin: '0 auto' }}
             >
               {toResults.map(c => (
                 <button 
                   key={c.slug}
                   type="button"
-                  onClick={(e) => { 
+                  onMouseDown={(e) => { 
                     e.preventDefault()
                     e.stopPropagation()
                     setToCity(c)
