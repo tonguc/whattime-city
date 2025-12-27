@@ -104,6 +104,8 @@ export default function CompareWidget({
   
   const fromInputRef = useRef<HTMLInputElement>(null)
   const toInputRef = useRef<HTMLInputElement>(null)
+  const fromContainerRef = useRef<HTMLDivElement>(null)
+  const toContainerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (initialFromCity && !fromCity) {
@@ -143,13 +145,12 @@ export default function CompareWidget({
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement
       
-      if (fromInputRef.current && !fromInputRef.current.contains(target)) {
-        setShowFromDropdown(false)
+      if (fromContainerRef.current?.contains(target) || toContainerRef.current?.contains(target)) {
+        return
       }
       
-      if (toInputRef.current && !toInputRef.current.contains(target)) {
-        setShowToDropdown(false)
-      }
+      setShowFromDropdown(false)
+      setShowToDropdown(false)
     }
     
     document.addEventListener('mousedown', handleClickOutside)
@@ -172,27 +173,11 @@ export default function CompareWidget({
     setToQuery(tempQuery)
   }
 
-  const clearFrom = (e: React.MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
-    setFromQuery('')
-    setFromCity(null)
-    setShowFromDropdown(false)
-  }
-
-  const clearTo = (e: React.MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
-    setToQuery('')
-    setToCity(null)
-    setShowToDropdown(false)
-  }
-
   return (
     <div className={className}>
       <div className="flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3">
         
-        <div className="relative flex-1 w-full">
+        <div ref={fromContainerRef} className="relative flex-1 w-full">
           <input 
             ref={fromInputRef}
             type="text" 
@@ -214,7 +199,13 @@ export default function CompareWidget({
           {fromQuery && (
             <button
               type="button"
-              onMouseDown={clearFrom}
+              onMouseDown={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                setFromQuery('')
+                setFromCity(null)
+                setShowFromDropdown(false)
+              }}
               className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 z-10 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -248,7 +239,7 @@ export default function CompareWidget({
           </svg>
         </button>
         
-        <div className="relative flex-1 w-full">
+        <div ref={toContainerRef} className="relative flex-1 w-full">
           <input 
             ref={toInputRef}
             type="text" 
@@ -270,7 +261,13 @@ export default function CompareWidget({
           {toQuery && (
             <button
               type="button"
-              onMouseDown={clearTo}
+              onMouseDown={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                setToQuery('')
+                setToCity(null)
+                setShowToDropdown(false)
+              }}
               className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 z-10 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
