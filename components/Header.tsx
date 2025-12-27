@@ -46,6 +46,13 @@ export default function Header() {
   // Close dropdowns on outside click
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      
+      // CRITICAL FIX: Don't close if clicking a search result button
+      if (target.closest('[data-search-result-button]')) {
+        return
+      }
+      
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
         setShowSearchDropdown(false)
       }
@@ -108,6 +115,7 @@ export default function Header() {
                   <button 
                     key={city.slug}
                     type="button"
+                    data-search-result-button="true"
                     onClick={(e) => {
                       e.preventDefault()
                       e.stopPropagation()
@@ -244,6 +252,7 @@ export default function Header() {
                 <button 
                   key={city.slug}
                   type="button"
+                  data-search-result-button="true"
                   onClick={(e) => {
                     e.preventDefault()
                     e.stopPropagation()
