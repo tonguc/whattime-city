@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { createPortal } from 'react-dom'
 import { useRouter } from 'next/navigation'
 import { City, searchCities } from '@/lib/cities'
 
@@ -10,70 +9,6 @@ interface CompareWidgetProps {
   initialToCity?: City | null
   isLight?: boolean
   className?: string
-}
-
-interface DropdownPortalProps {
-  isOpen: boolean
-  results: City[]
-  onSelect: (city: City) => void
-  inputRef: React.RefObject<HTMLInputElement>
-  isLight: boolean
-}
-
-function DropdownPortal({ isOpen, results, onSelect, inputRef, isLight }: DropdownPortalProps) {
-  const [position, setPosition] = useState({ top: 0, left: 0, width: 0 })
-  
-  useEffect(() => {
-    if (!isOpen || !inputRef.current) return
-    
-    const updatePosition = () => {
-      if (!inputRef.current) return
-      const rect = inputRef.current.getBoundingClientRect()
-      setPosition({
-        top: rect.bottom + window.scrollY + 4,
-        left: rect.left + window.scrollX,
-        width: rect.width
-      })
-    }
-    
-    updatePosition()
-    window.addEventListener('scroll', updatePosition, true)
-    window.addEventListener('resize', updatePosition)
-    
-    return () => {
-      window.removeEventListener('scroll', updatePosition, true)
-      window.removeEventListener('resize', updatePosition)
-    }
-  }, [isOpen, inputRef])
-  
-  if (!isOpen || results.length === 0) return null
-  
-  return createPortal(
-    <div 
-      className={`rounded-xl overflow-y-auto shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
-      style={{
-        position: 'absolute',
-        top: `${position.top}px`,
-        left: `${position.left}px`,
-        width: `${position.width}px`,
-        maxHeight: '300px',
-        zIndex: 999999
-      }}
-    >
-      {results.map(city => (
-        <button 
-          key={city.slug}
-          type="button"
-          onClick={() => onSelect(city)}
-          className={`w-full px-4 py-2.5 text-left text-sm transition-colors ${isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}
-        >
-          <span className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>{city.city}</span>
-          <span className={`text-xs ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{city.country}</span>
-        </button>
-      ))}
-    </div>,
-    document.body
-  )
 }
 
 export default function CompareWidget({ 
@@ -95,6 +30,8 @@ export default function CompareWidget({
   
   const fromInputRef = useRef<HTMLInputElement>(null)
   const toInputRef = useRef<HTMLInputElement>(null)
+  const fromDropdownRef = useRef<HTMLDivElement>(null)
+  const toDropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (initialFromCity && !fromCity) {
@@ -132,17 +69,27 @@ export default function CompareWidget({
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      const target = e.target as HTMLElement
+      const target = e.target as Node
       
-      if (fromInputRef.current && !fromInputRef.current.contains(target)) {
+      if (
+        fromDropdownRef.current && 
+        !fromDropdownRef.current.contains(target) &&
+        fromInputRef.current &&
+        !fromInputRef.current.contains(target)
+      ) {
         setShowFromDropdown(false)
       }
       
-      if (toInputRef.current && !toInputRef.current.contains(target)) {
+      if (
+        toDropdownRef.current && 
+        !toDropdownRef.current.contains(target) &&
+        toInputRef.current &&
+        !toInputRef.current.contains(target)
+      ) {
         setShowToDropdown(false)
       }
     }
-    
+
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
@@ -165,10 +112,10 @@ export default function CompareWidget({
   }
 
   return (
-    <div className={className}>
+    <div className={className} style={{ position: 'relative', isolation: 'isolate' }}>
       <div className="flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3">
         
-        <div className="relative flex-1 w-full">
+        <div className="relative flex-1 w-full" style={{ zIndex: 1 }}>
           <input 
             ref={fromInputRef}
             type="text" 
@@ -195,7 +142,7 @@ export default function CompareWidget({
                 setFromCity(null)
                 setShowFromDropdown(false)
               }}
-              className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
+              className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 z-10 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -203,17 +150,33 @@ export default function CompareWidget({
             </button>
           )}
           
-          <DropdownPortal
-            isOpen={showFromDropdown}
-            results={fromResults}
-            onSelect={(city) => {
-              setFromCity(city)
-              setFromQuery(city.city)
-              setShowFromDropdown(false)
-            }}
-            inputRef={fromInputRef}
-            isLight={isLight}
-          />
+          {showFromDropdown && fromResults.length > 0 && (
+            <div 
+              ref={fromDropdownRef}
+              className={`absolute left-0 right-0 mt-1 rounded-xl overflow-y-auto shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
+              style={{ 
+                zIndex: 999999,
+                maxHeight: '300px',
+                position: 'absolute'
+              }}
+            >
+              {fromResults.map(c => (
+                <button 
+                  key={c.slug} 
+                  type="button"
+                  onClick={() => {
+                    setFromCity(c)
+                    setFromQuery(c.city)
+                    setShowFromDropdown(false)
+                  }}
+                  className={`w-full px-4 py-2.5 text-left text-sm transition-colors ${isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}
+                >
+                  <span className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>{c.city}</span>
+                  <span className={`text-xs ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{c.country}</span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
         
         <button
@@ -228,7 +191,7 @@ export default function CompareWidget({
           </svg>
         </button>
         
-        <div className="relative flex-1 w-full">
+        <div className="relative flex-1 w-full" style={{ zIndex: 1 }}>
           <input 
             ref={toInputRef}
             type="text" 
@@ -255,7 +218,7 @@ export default function CompareWidget({
                 setToCity(null)
                 setShowToDropdown(false)
               }}
-              className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
+              className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 z-10 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -263,17 +226,33 @@ export default function CompareWidget({
             </button>
           )}
           
-          <DropdownPortal
-            isOpen={showToDropdown}
-            results={toResults}
-            onSelect={(city) => {
-              setToCity(city)
-              setToQuery(city.city)
-              setShowToDropdown(false)
-            }}
-            inputRef={toInputRef}
-            isLight={isLight}
-          />
+          {showToDropdown && toResults.length > 0 && (
+            <div 
+              ref={toDropdownRef}
+              className={`absolute left-0 right-0 mt-1 rounded-xl overflow-y-auto shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
+              style={{ 
+                zIndex: 999999,
+                maxHeight: '300px',
+                position: 'absolute'
+              }}
+            >
+              {toResults.map(c => (
+                <button 
+                  key={c.slug}
+                  type="button"
+                  onClick={() => {
+                    setToCity(c)
+                    setToQuery(c.city)
+                    setShowToDropdown(false)
+                  }}
+                  className={`w-full px-4 py-2.5 text-left text-sm transition-colors ${isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}
+                >
+                  <span className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>{c.city}</span>
+                  <span className={`text-xs ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{c.country}</span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
         
         <button 
