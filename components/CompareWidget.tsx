@@ -30,8 +30,6 @@ export default function CompareWidget({
   
   const fromInputRef = useRef<HTMLInputElement>(null)
   const toInputRef = useRef<HTMLInputElement>(null)
-  const fromDropdownRef = useRef<HTMLDivElement>(null)
-  const toDropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (initialFromCity && !fromCity) {
@@ -67,48 +65,40 @@ export default function CompareWidget({
     }
   }, [toQuery, toCity])
 
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (fromDropdownRef.current && !fromDropdownRef.current.contains(e.target as Node) && !fromInputRef.current?.contains(e.target as Node)) {
-        setShowFromDropdown(false)
-      }
-      if (toDropdownRef.current && !toDropdownRef.current.contains(e.target as Node) && !toInputRef.current?.contains(e.target as Node)) {
-        setShowToDropdown(false)
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
-
   const handleCompare = () => {
     if (fromCity && toCity) {
       router.push(`/time/${fromCity.slug}/${toCity.slug}`)
     }
   }
 
-  const clearFromInput = (e: React.MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
+  const handleSwap = () => {
+    const tempCity = fromCity
+    const tempQuery = fromQuery
+    setFromCity(toCity)
+    setFromQuery(toQuery)
+    setToCity(tempCity)
+    setToQuery(tempQuery)
+  }
+
+  const clearFrom = () => {
     setFromQuery('')
     setFromCity(null)
     setShowFromDropdown(false)
-    setTimeout(() => fromInputRef.current?.focus(), 0)
+    setTimeout(() => fromInputRef.current?.focus(), 10)
   }
 
-  const clearToInput = (e: React.MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
+  const clearTo = () => {
     setToQuery('')
     setToCity(null)
     setShowToDropdown(false)
-    setTimeout(() => toInputRef.current?.focus(), 0)
+    setTimeout(() => toInputRef.current?.focus(), 10)
   }
 
   return (
-    <div className={className} style={{ position: 'relative', zIndex: 10, overflow: 'visible' }}>
+    <div className={className}>
       <div className="flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3">
         
-        <div className="relative flex-1 w-full" style={{ position: 'relative', overflow: 'visible' }}>
+        <div className="relative flex-1 w-full">
           <div className="relative w-full">
             <input 
               ref={fromInputRef}
@@ -123,6 +113,7 @@ export default function CompareWidget({
                   setShowFromDropdown(true)
                 }
               }}
+              onBlur={() => setTimeout(() => setShowFromDropdown(false), 200)}
               placeholder="From city..."
               className={`w-full h-10 md:h-14 px-3 pr-10 rounded-xl border text-center text-sm md:text-base ${isLight ? 'bg-white border-slate-200 text-slate-800 placeholder:text-slate-400' : 'bg-slate-900 border-slate-700 text-white placeholder:text-slate-500'} outline-none focus:ring-2 focus:ring-blue-500 transition-all`}
               style={{ fontSize: '16px' }}
@@ -131,9 +122,9 @@ export default function CompareWidget({
             {fromQuery && (
               <button
                 type="button"
-                onMouseDown={clearFromInput}
-                className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 z-10 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
-                aria-label="Clear input"
+                onClick={clearFrom}
+                tabIndex={-1}
+                className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -144,22 +135,24 @@ export default function CompareWidget({
           
           {showFromDropdown && fromResults.length > 0 && (
             <div 
-              ref={fromDropdownRef}
-              className={`fixed left-4 right-4 md:left-auto md:right-auto md:absolute md:left-0 md:right-0 mt-1 rounded-xl overflow-hidden shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
-              style={{ zIndex: 99999, maxHeight: '300px', overflowY: 'auto', maxWidth: '500px', margin: '0 auto' }}
+              className={`absolute left-0 right-0 mt-1 rounded-xl overflow-y-auto shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
+              style={{ 
+                position: 'absolute',
+                zIndex: 999999,
+                maxHeight: '300px'
+              }}
             >
               {fromResults.map(c => (
                 <button 
                   key={c.slug} 
                   type="button"
-                  onMouseDown={(e) => { 
+                  onMouseDown={(e) => {
                     e.preventDefault()
-                    e.stopPropagation()
                     setFromCity(c)
                     setFromQuery(c.city)
                     setShowFromDropdown(false)
                   }}
-                  className={`w-full px-4 py-2.5 text-left text-sm transition-colors ${isLight ? 'hover:bg-slate-100 active:bg-slate-200' : 'hover:bg-slate-700 active:bg-slate-600'}`}
+                  className={`w-full px-4 py-2.5 text-left text-sm transition-colors ${isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}
                 >
                   <span className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>{c.city}</span>
                   <span className={`text-xs ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{c.country}</span>
@@ -169,9 +162,19 @@ export default function CompareWidget({
           )}
         </div>
         
-        <span className={`hidden md:block text-xl flex-shrink-0 ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>↔</span>
+        <button
+          type="button"
+          onClick={handleSwap}
+          disabled={!fromCity || !toCity}
+          className={`flex-shrink-0 p-2 md:p-3 rounded-xl transition-all ${fromCity && toCity ? (isLight ? 'hover:bg-slate-200 text-slate-600' : 'hover:bg-slate-700 text-slate-400') : 'opacity-30 cursor-not-allowed text-slate-400'}`}
+          title="Swap cities"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+          </svg>
+        </button>
         
-        <div className="relative flex-1 w-full" style={{ position: 'relative', overflow: 'visible' }}>
+        <div className="relative flex-1 w-full">
           <div className="relative w-full">
             <input 
               ref={toInputRef}
@@ -186,6 +189,7 @@ export default function CompareWidget({
                   setShowToDropdown(true)
                 }
               }}
+              onBlur={() => setTimeout(() => setShowToDropdown(false), 200)}
               placeholder="To city..."
               className={`w-full h-10 md:h-14 px-3 pr-10 rounded-xl border text-center text-sm md:text-base ${isLight ? 'bg-white border-slate-200 text-slate-800 placeholder:text-slate-400' : 'bg-slate-900 border-slate-700 text-white placeholder:text-slate-500'} outline-none focus:ring-2 focus:ring-blue-500 transition-all`}
               style={{ fontSize: '16px' }}
@@ -194,9 +198,9 @@ export default function CompareWidget({
             {toQuery && (
               <button
                 type="button"
-                onMouseDown={clearToInput}
-                className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 z-10 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
-                aria-label="Clear input"
+                onClick={clearTo}
+                tabIndex={-1}
+                className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full transition-all hover:scale-110 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -207,22 +211,24 @@ export default function CompareWidget({
           
           {showToDropdown && toResults.length > 0 && (
             <div 
-              ref={toDropdownRef}
-              className={`fixed left-4 right-4 md:left-auto md:right-auto md:absolute md:left-0 md:right-0 mt-1 rounded-xl overflow-hidden shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
-              style={{ zIndex: 99999, maxHeight: '300px', overflowY: 'auto', maxWidth: '500px', margin: '0 auto' }}
+              className={`absolute left-0 right-0 mt-1 rounded-xl overflow-y-auto shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
+              style={{ 
+                position: 'absolute',
+                zIndex: 999999,
+                maxHeight: '300px'
+              }}
             >
               {toResults.map(c => (
                 <button 
                   key={c.slug}
                   type="button"
-                  onMouseDown={(e) => { 
+                  onMouseDown={(e) => {
                     e.preventDefault()
-                    e.stopPropagation()
                     setToCity(c)
                     setToQuery(c.city)
                     setShowToDropdown(false)
                   }}
-                  className={`w-full px-4 py-2.5 text-left text-sm transition-colors ${isLight ? 'hover:bg-slate-100 active:bg-slate-200' : 'hover:bg-slate-700 active:bg-slate-600'}`}
+                  className={`w-full px-4 py-2.5 text-left text-sm transition-colors ${isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}
                 >
                   <span className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>{c.city}</span>
                   <span className={`text-xs ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{c.country}</span>
