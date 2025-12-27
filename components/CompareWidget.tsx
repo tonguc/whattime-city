@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { City, searchCities } from '@/lib/cities'
 
@@ -27,6 +27,9 @@ export default function CompareWidget({
   const [toResults, setToResults] = useState<City[]>([])
   const [showFromDropdown, setShowFromDropdown] = useState(false)
   const [showToDropdown, setShowToDropdown] = useState(false)
+  
+  const fromInputRef = useRef<HTMLInputElement>(null)
+  const toInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     if (initialFromCity && !fromCity) {
@@ -68,31 +71,62 @@ export default function CompareWidget({
     }
   }
 
+  const clearFromInput = () => {
+    setFromQuery('')
+    setFromCity(null)
+    setShowFromDropdown(false)
+    fromInputRef.current?.focus()
+  }
+
+  const clearToInput = () => {
+    setToQuery('')
+    setToCity(null)
+    setShowToDropdown(false)
+    toInputRef.current?.focus()
+  }
+
   return (
-    <div className={className} style={{ overflow: 'visible', position: 'relative', zIndex: 1 }}>
+    <div className={`!overflow-visible ${className}`} style={{ position: 'relative', zIndex: 1 }}>
       <div className="flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3">
         
-        <div className="relative flex-1 w-full" style={{ overflow: 'visible' }}>
-          <input 
-            type="text" 
-            value={fromQuery}
-            onChange={(e) => { 
-              setFromQuery(e.target.value); 
-              setFromCity(null); 
-            }}
-            onFocus={() => {
-              setFromQuery('');
-              setFromCity(null);
-            }}
-            placeholder="From city..."
-            className={`w-full h-10 px-3 rounded-xl border text-center text-sm ${isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-900 border-slate-700 text-white'} outline-none focus:ring-2 focus:ring-blue-500`}
-            style={{ fontSize: '16px' }}
-          />
+        <div className="relative flex-1 w-full" style={{ position: 'relative' }}>
+          <div className="relative w-full">
+            <input 
+              ref={fromInputRef}
+              type="text" 
+              value={fromQuery}
+              onChange={(e) => { 
+                setFromQuery(e.target.value)
+                setFromCity(null)
+              }}
+              onFocus={() => {
+                if (fromQuery && !fromCity) {
+                  setShowFromDropdown(true)
+                }
+              }}
+              placeholder="From city..."
+              className={`w-full h-10 md:h-14 px-3 pr-10 rounded-xl border text-center text-sm md:text-base ${isLight ? 'bg-white border-slate-200 text-slate-800 placeholder:text-slate-400' : 'bg-slate-900 border-slate-700 text-white placeholder:text-slate-500'} outline-none focus:ring-2 focus:ring-blue-500 transition-all`}
+              style={{ fontSize: '16px' }}
+            />
+            
+            {fromQuery && (
+              <button
+                type="button"
+                onClick={clearFromInput}
+                className={`absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full transition-all hover:scale-110 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
+                aria-label="Clear input"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            )}
+          </div>
           
           {showFromDropdown && fromResults.length > 0 && (
             <div 
-              className={`fixed left-0 right-0 mt-1 rounded-xl overflow-hidden shadow-2xl z-[9999] max-w-md mx-auto ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
-              style={{ maxHeight: '300px', overflowY: 'auto', top: 'auto' }}
+              className={`absolute left-0 right-0 mt-1 rounded-xl overflow-hidden shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
+              style={{ position: 'absolute', zIndex: 9999, maxHeight: '300px', overflowY: 'auto' }}
             >
               {fromResults.map(c => (
                 <button 
@@ -101,11 +135,11 @@ export default function CompareWidget({
                   onClick={(e) => { 
                     e.preventDefault()
                     e.stopPropagation()
-                    setFromCity(c); 
-                    setFromQuery(c.city); 
-                    setShowFromDropdown(false); 
+                    setFromCity(c)
+                    setFromQuery(c.city)
+                    setShowFromDropdown(false)
                   }}
-                  className={`w-full px-4 py-2.5 text-left text-sm ${isLight ? 'hover:bg-slate-100 active:bg-slate-200' : 'hover:bg-slate-700 active:bg-slate-600'}`}
+                  className={`w-full px-4 py-2.5 text-left text-sm transition-colors ${isLight ? 'hover:bg-slate-100 active:bg-slate-200' : 'hover:bg-slate-700 active:bg-slate-600'}`}
                 >
                   <span className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>{c.city}</span>
                   <span className={`text-xs ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{c.country}</span>
@@ -115,29 +149,46 @@ export default function CompareWidget({
           )}
         </div>
         
-        <span className={`hidden md:block text-xl ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>↔</span>
+        <span className={`hidden md:block text-xl flex-shrink-0 ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>↔</span>
         
-        <div className="relative flex-1 w-full" style={{ overflow: 'visible' }}>
-          <input 
-            type="text" 
-            value={toQuery}
-            onChange={(e) => { 
-              setToQuery(e.target.value); 
-              setToCity(null); 
-            }}
-            onFocus={() => {
-              setToQuery('');
-              setToCity(null);
-            }}
-            placeholder="To city..."
-            className={`w-full h-10 px-3 rounded-xl border text-center text-sm ${isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-900 border-slate-700 text-white'} outline-none focus:ring-2 focus:ring-blue-500`}
-            style={{ fontSize: '16px' }}
-          />
+        <div className="relative flex-1 w-full" style={{ position: 'relative' }}>
+          <div className="relative w-full">
+            <input 
+              ref={toInputRef}
+              type="text" 
+              value={toQuery}
+              onChange={(e) => { 
+                setToQuery(e.target.value)
+                setToCity(null)
+              }}
+              onFocus={() => {
+                if (toQuery && !toCity) {
+                  setShowToDropdown(true)
+                }
+              }}
+              placeholder="To city..."
+              className={`w-full h-10 md:h-14 px-3 pr-10 rounded-xl border text-center text-sm md:text-base ${isLight ? 'bg-white border-slate-200 text-slate-800 placeholder:text-slate-400' : 'bg-slate-900 border-slate-700 text-white placeholder:text-slate-500'} outline-none focus:ring-2 focus:ring-blue-500 transition-all`}
+              style={{ fontSize: '16px' }}
+            />
+            
+            {toQuery && (
+              <button
+                type="button"
+                onClick={clearToInput}
+                className={`absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full transition-all hover:scale-110 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
+                aria-label="Clear input"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            )}
+          </div>
           
           {showToDropdown && toResults.length > 0 && (
             <div 
-              className={`fixed left-0 right-0 mt-1 rounded-xl overflow-hidden shadow-2xl z-[9999] max-w-md mx-auto ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
-              style={{ maxHeight: '300px', overflowY: 'auto', top: 'auto' }}
+              className={`absolute left-0 right-0 mt-1 rounded-xl overflow-hidden shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
+              style={{ position: 'absolute', zIndex: 9999, maxHeight: '300px', overflowY: 'auto' }}
             >
               {toResults.map(c => (
                 <button 
@@ -146,11 +197,11 @@ export default function CompareWidget({
                   onClick={(e) => { 
                     e.preventDefault()
                     e.stopPropagation()
-                    setToCity(c); 
-                    setToQuery(c.city); 
-                    setShowToDropdown(false); 
+                    setToCity(c)
+                    setToQuery(c.city)
+                    setShowToDropdown(false)
                   }}
-                  className={`w-full px-4 py-2.5 text-left text-sm ${isLight ? 'hover:bg-slate-100 active:bg-slate-200' : 'hover:bg-slate-700 active:bg-slate-600'}`}
+                  className={`w-full px-4 py-2.5 text-left text-sm transition-colors ${isLight ? 'hover:bg-slate-100 active:bg-slate-200' : 'hover:bg-slate-700 active:bg-slate-600'}`}
                 >
                   <span className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>{c.city}</span>
                   <span className={`text-xs ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{c.country}</span>
@@ -161,9 +212,9 @@ export default function CompareWidget({
         </div>
         
         <button 
-          onClick={handleCompare} 
+          onClick={handleCompare}
           disabled={!fromCity || !toCity}
-          className={`w-full md:w-auto h-10 px-6 rounded-xl font-semibold text-sm transition-all whitespace-nowrap ${fromCity && toCity ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg shadow-blue-500/50 cursor-pointer transform hover:scale-105' : 'bg-blue-600 text-white opacity-50 cursor-not-allowed'}`}
+          className="w-full md:w-auto h-10 md:h-14 px-6 md:px-8 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 whitespace-nowrap text-sm md:text-base"
         >
           Compare Time
         </button>
