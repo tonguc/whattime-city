@@ -19,7 +19,7 @@ export async function generateStaticParams() {
   
   // Popular tier 2 cities to include
   const popularTier2 = [
-    'istanbul', 'moscow', 'berlin', 'madrid', 'rome', 'amsterdam',
+    'istanbul', 'moscow', 'berlin', 'madrid', 'barcelona', 'rome', 'amsterdam',
     'bangkok', 'seoul', 'mumbai', 'delhi', 'shanghai', 'beijing',
     'sao-paulo', 'mexico-city', 'toronto', 'chicago', 'los-angeles',
     'san-francisco', 'miami', 'seattle', 'boston', 'dallas',
