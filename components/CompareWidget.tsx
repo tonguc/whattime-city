@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import { useRouter } from 'next/navigation'
 import { City, searchCities } from '@/lib/cities'
 
@@ -9,6 +10,70 @@ interface CompareWidgetProps {
   initialToCity?: City | null
   isLight?: boolean
   className?: string
+}
+
+interface DropdownPortalProps {
+  isOpen: boolean
+  results: City[]
+  onSelect: (city: City) => void
+  inputRef: React.RefObject<HTMLInputElement>
+  isLight: boolean
+}
+
+function DropdownPortal({ isOpen, results, onSelect, inputRef, isLight }: DropdownPortalProps) {
+  const [position, setPosition] = useState({ top: 0, left: 0, width: 0 })
+  
+  useEffect(() => {
+    if (!isOpen || !inputRef.current) return
+    
+    const updatePosition = () => {
+      if (!inputRef.current) return
+      const rect = inputRef.current.getBoundingClientRect()
+      setPosition({
+        top: rect.bottom + window.scrollY + 4,
+        left: rect.left + window.scrollX,
+        width: rect.width
+      })
+    }
+    
+    updatePosition()
+    window.addEventListener('scroll', updatePosition, true)
+    window.addEventListener('resize', updatePosition)
+    
+    return () => {
+      window.removeEventListener('scroll', updatePosition, true)
+      window.removeEventListener('resize', updatePosition)
+    }
+  }, [isOpen, inputRef])
+  
+  if (!isOpen || results.length === 0) return null
+  
+  return createPortal(
+    <div 
+      className={`rounded-xl overflow-y-auto shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
+      style={{
+        position: 'absolute',
+        top: `${position.top}px`,
+        left: `${position.left}px`,
+        width: `${position.width}px`,
+        maxHeight: '300px',
+        zIndex: 999999
+      }}
+    >
+      {results.map(city => (
+        <button 
+          key={city.slug}
+          type="button"
+          onClick={() => onSelect(city)}
+          className={`w-full px-4 py-2.5 text-left text-sm transition-colors ${isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}
+        >
+          <span className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>{city.city}</span>
+          <span className={`text-xs ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{city.country}</span>
+        </button>
+      ))}
+    </div>,
+    document.body
+  )
 }
 
 export default function CompareWidget({ 
@@ -27,6 +92,9 @@ export default function CompareWidget({
   const [toResults, setToResults] = useState<City[]>([])
   const [showFromDropdown, setShowFromDropdown] = useState(false)
   const [showToDropdown, setShowToDropdown] = useState(false)
+  
+  const fromInputRef = useRef<HTMLInputElement>(null)
+  const toInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     if (initialFromCity && !fromCity) {
@@ -62,6 +130,23 @@ export default function CompareWidget({
     }
   }, [toQuery, toCity])
 
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      
+      if (fromInputRef.current && !fromInputRef.current.contains(target)) {
+        setShowFromDropdown(false)
+      }
+      
+      if (toInputRef.current && !toInputRef.current.contains(target)) {
+        setShowToDropdown(false)
+      }
+    }
+    
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
   const handleCompare = () => {
     if (fromCity && toCity) {
       router.push(`/time/${fromCity.slug}/${toCity.slug}`)
@@ -85,6 +170,7 @@ export default function CompareWidget({
         
         <div className="relative flex-1 w-full">
           <input 
+            ref={fromInputRef}
             type="text" 
             value={fromQuery}
             onChange={(e) => { 
@@ -95,9 +181,6 @@ export default function CompareWidget({
               if (fromQuery && !fromCity) {
                 setShowFromDropdown(true)
               }
-            }}
-            onBlur={() => {
-              setTimeout(() => setShowFromDropdown(false), 300)
             }}
             placeholder="From city..."
             className={`w-full h-10 md:h-14 px-3 ${fromQuery ? 'pr-10' : 'pr-3'} rounded-xl border text-center text-sm md:text-base ${isLight ? 'bg-white border-slate-200 text-slate-800 placeholder:text-slate-400' : 'bg-slate-900 border-slate-700 text-white placeholder:text-slate-500'} outline-none focus:ring-2 focus:ring-blue-500 transition-all`}
@@ -120,31 +203,17 @@ export default function CompareWidget({
             </button>
           )}
           
-          {showFromDropdown && fromResults.length > 0 && (
-            <div 
-              className={`absolute left-0 right-0 mt-1 rounded-xl overflow-y-auto shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
-              style={{ 
-                zIndex: 999999,
-                maxHeight: '300px'
-              }}
-            >
-              {fromResults.map(c => (
-                <button 
-                  key={c.slug} 
-                  type="button"
-                  onClick={() => {
-                    setFromCity(c)
-                    setFromQuery(c.city)
-                    setShowFromDropdown(false)
-                  }}
-                  className={`w-full px-4 py-2.5 text-left text-sm transition-colors ${isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}
-                >
-                  <span className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>{c.city}</span>
-                  <span className={`text-xs ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{c.country}</span>
-                </button>
-              ))}
-            </div>
-          )}
+          <DropdownPortal
+            isOpen={showFromDropdown}
+            results={fromResults}
+            onSelect={(city) => {
+              setFromCity(city)
+              setFromQuery(city.city)
+              setShowFromDropdown(false)
+            }}
+            inputRef={fromInputRef}
+            isLight={isLight}
+          />
         </div>
         
         <button
@@ -161,6 +230,7 @@ export default function CompareWidget({
         
         <div className="relative flex-1 w-full">
           <input 
+            ref={toInputRef}
             type="text" 
             value={toQuery}
             onChange={(e) => { 
@@ -171,9 +241,6 @@ export default function CompareWidget({
               if (toQuery && !toCity) {
                 setShowToDropdown(true)
               }
-            }}
-            onBlur={() => {
-              setTimeout(() => setShowToDropdown(false), 300)
             }}
             placeholder="To city..."
             className={`w-full h-10 md:h-14 px-3 ${toQuery ? 'pr-10' : 'pr-3'} rounded-xl border text-center text-sm md:text-base ${isLight ? 'bg-white border-slate-200 text-slate-800 placeholder:text-slate-400' : 'bg-slate-900 border-slate-700 text-white placeholder:text-slate-500'} outline-none focus:ring-2 focus:ring-blue-500 transition-all`}
@@ -196,31 +263,17 @@ export default function CompareWidget({
             </button>
           )}
           
-          {showToDropdown && toResults.length > 0 && (
-            <div 
-              className={`absolute left-0 right-0 mt-1 rounded-xl overflow-y-auto shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
-              style={{ 
-                zIndex: 999999,
-                maxHeight: '300px'
-              }}
-            >
-              {toResults.map(c => (
-                <button 
-                  key={c.slug}
-                  type="button"
-                  onClick={() => {
-                    setToCity(c)
-                    setToQuery(c.city)
-                    setShowToDropdown(false)
-                  }}
-                  className={`w-full px-4 py-2.5 text-left text-sm transition-colors ${isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}
-                >
-                  <span className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>{c.city}</span>
-                  <span className={`text-xs ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{c.country}</span>
-                </button>
-              ))}
-            </div>
-          )}
+          <DropdownPortal
+            isOpen={showToDropdown}
+            results={toResults}
+            onSelect={(city) => {
+              setToCity(city)
+              setToQuery(city.city)
+              setShowToDropdown(false)
+            }}
+            inputRef={toInputRef}
+            isLight={isLight}
+          />
         </div>
         
         <button 
