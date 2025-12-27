@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import { useRouter } from 'next/navigation'
 import { City, searchCities } from '@/lib/cities'
 
@@ -21,6 +22,7 @@ export default function CitySearch({
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<City[]>([])
   const [showDropdown, setShowDropdown] = useState(false)
+  const [position, setPosition] = useState({ top: 0, left: 0, width: 0 })
   const searchRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -33,6 +35,29 @@ export default function CitySearch({
       setShowDropdown(false)
     }
   }, [query])
+
+  useEffect(() => {
+    if (!showDropdown || !inputRef.current) return
+    
+    const updatePosition = () => {
+      if (!inputRef.current) return
+      const rect = inputRef.current.getBoundingClientRect()
+      setPosition({
+        top: rect.bottom + window.scrollY + 8,
+        left: rect.left + window.scrollX,
+        width: rect.width
+      })
+    }
+    
+    updatePosition()
+    window.addEventListener('scroll', updatePosition, true)
+    window.addEventListener('resize', updatePosition)
+    
+    return () => {
+      window.removeEventListener('scroll', updatePosition, true)
+      window.removeEventListener('resize', updatePosition)
+    }
+  }, [showDropdown])
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
@@ -58,14 +83,16 @@ export default function CitySearch({
     setShowDropdown(false)
   }
 
-  const clearInput = () => {
+  const clearInput = (e: React.MouseEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
     setQuery('')
     setShowDropdown(false)
-    inputRef.current?.focus()
+    setTimeout(() => inputRef.current?.focus(), 10)
   }
 
   return (
-    <div ref={searchRef} className={`relative ${className}`} style={{ position: 'relative' }}>
+    <div ref={searchRef} className={`relative ${className}`}>
       <div className={`flex items-center gap-2 px-4 py-2.5 rounded-full ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
         <svg className={`w-4 h-4 flex-shrink-0 ${isLight ? 'text-slate-500' : 'text-slate-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -89,7 +116,6 @@ export default function CitySearch({
             type="button"
             onClick={clearInput}
             className={`flex-shrink-0 p-1 rounded-full transition-all hover:scale-110 ${isLight ? 'hover:bg-slate-200 text-slate-400 hover:text-slate-600' : 'hover:bg-slate-700 text-slate-500 hover:text-slate-300'}`}
-            aria-label="Clear search"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -98,17 +124,25 @@ export default function CitySearch({
         )}
       </div>
 
-      {showDropdown && results.length > 0 && (
+      {showDropdown && results.length > 0 && createPortal(
         <div 
-          className={`absolute left-0 right-0 mt-2 rounded-xl overflow-hidden shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
-          style={{ position: 'absolute', zIndex: 9999, maxHeight: '300px', overflowY: 'auto' }}
+          className={`rounded-xl overflow-hidden shadow-2xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}
+          style={{
+            position: 'absolute',
+            top: `${position.top}px`,
+            left: `${position.left}px`,
+            width: `${position.width}px`,
+            maxHeight: '300px',
+            overflowY: 'auto',
+            zIndex: 999999
+          }}
         >
           {results.map((city) => (
             <button
               key={city.slug}
               type="button"
               data-city-search-result="true"
-              onClick={(e) => {
+              onMouseDown={(e) => {
                 e.preventDefault()
                 e.stopPropagation()
                 handleSelect(city)
@@ -121,7 +155,8 @@ export default function CitySearch({
               </div>
             </button>
           ))}
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   )
