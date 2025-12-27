@@ -61,12 +61,6 @@ export default function HomePage() {
   const [showFromDropdown, setShowFromDropdown] = useState(false)
   const [showToDropdown, setShowToDropdown] = useState(false)
   
-  // Compare with dropdown
-  const [showCompareWith, setShowCompareWith] = useState(false)
-  const [compareWithQuery, setCompareWithQuery] = useState('')
-  const [compareWithResults, setCompareWithResults] = useState<City[]>([])
-  const compareWithRef = useRef<HTMLDivElement>(null)
-  
   // World Cities tab state
   const [worldCitiesTab, setWorldCitiesTab] = useState<'top' | 'americas' | 'europe' | 'asia' | 'africa' | 'oceania'>('top')
 
@@ -113,34 +107,9 @@ export default function HomePage() {
       setShowToDropdown(false)
     }
   }, [toQuery, toCity])
-  
-  useEffect(() => {
-    if (compareWithQuery.length >= 1) {
-      setCompareWithResults(searchCities(compareWithQuery).slice(0, 6))
-    } else {
-      setCompareWithResults([])
-    }
-  }, [compareWithQuery])
-
-  // Close dropdown on outside click
-  useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      if (compareWithRef.current && !compareWithRef.current.contains(e.target as Node)) {
-        setShowCompareWith(false)
-      }
-    }
-    document.addEventListener('mousedown', handleClick)
-    return () => document.removeEventListener('mousedown', handleClick)
-  }, [])
 
   const handleCompare = () => {
     if (fromCity && toCity) router.push(`/time/${fromCity.slug}/${toCity.slug}`)
-  }
-  
-  const handleCompareWith = (city: City) => {
-    if (detectedCity) router.push(`/time/${detectedCity.slug}/${city.slug}`)
-    setShowCompareWith(false)
-    setCompareWithQuery('')
   }
 
   // Derived data
@@ -243,31 +212,6 @@ export default function HomePage() {
                   className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${homeIsLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-white'}`}>
                   View City
                 </Link>
-                <div className="relative" ref={compareWithRef}>
-                  <button onClick={() => setShowCompareWith(!showCompareWith)}
-                    className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${homeIsLight ? 'bg-blue-100 hover:bg-blue-200 text-blue-700' : 'bg-blue-900/50 hover:bg-blue-800/50 text-blue-300'}`}>
-                    Compare with…
-                  </button>
-                  {showCompareWith && (
-                    <div className={`absolute right-0 top-full mt-2 w-64 rounded-xl shadow-xl border ${homeIsLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'} p-3 z-50`}>
-                      <input type="text" value={compareWithQuery} onChange={(e) => setCompareWithQuery(e.target.value)}
-                        placeholder="Search city..." autoFocus
-                        className={`w-full px-3 py-2 rounded-lg border text-sm ${homeIsLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-900 border-slate-700'} outline-none`}
-                        style={{ fontSize: '16px' }}
-                      />
-                      {compareWithResults.length > 0 && (
-                        <div className="mt-2 max-h-48 overflow-y-auto">
-                          {compareWithResults.map(c => (
-                            <button key={c.slug} onClick={() => handleCompareWith(c)}
-                              className={`w-full px-3 py-2 text-left text-sm rounded-lg ${homeIsLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}>
-                              {c.city}, {c.country}
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
               </div>
             </div>
           </section>

@@ -148,9 +148,18 @@ export default function TimeComparisonContent({ fromCity, toCity }: TimeComparis
 
       <main className="max-w-6xl mx-auto px-4 py-8">
         {/* Title */}
-        <h1 className={`text-2xl sm:text-3xl font-bold text-center mb-8 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+        <h1 className={`text-2xl sm:text-3xl font-bold text-center mb-6 ${isLight ? 'text-slate-800' : 'text-white'}`}>
           {fromCity.city} → {toCity.city} Time
         </h1>
+        
+        {/* Compare Widget - TOP PLACEMENT */}
+        <div className="max-w-2xl mx-auto mb-8">
+          <CompareWidget 
+            initialFromCity={fromCity}
+            initialToCity={toCity}
+            isLight={isLight}
+          />
+        </div>
         
         {/* Live Clocks */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -412,23 +421,6 @@ export default function TimeComparisonContent({ fromCity, toCity }: TimeComparis
               planning travel itineraries, watching live events, or simply staying in touch with friends and family 
               across {fromCity.city} and {toCity.city}. Bookmark this page for quick reference.
             </p>
-          </div>
-        </section>
-
-        {/* Compare Another City Widget */}
-        <section className={`max-w-4xl mx-auto px-4 py-8 mb-8`}>
-          <div className={`rounded-3xl p-6 md:p-8 backdrop-blur-xl border ${isLight ? 'bg-white/80 border-slate-200' : 'bg-slate-800/80 border-slate-700'}`}>
-            <h2 className={`text-2xl font-bold mb-4 text-center ${isLight ? 'text-slate-800' : 'text-white'}`}>
-              Compare Another City
-            </h2>
-            <p className={`text-center mb-6 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
-              Quickly compare {fromCity.city} or {toCity.city} with another city
-            </p>
-            <CompareWidget 
-              initialFromCity={fromCity}
-              initialToCity={toCity}
-              isLight={isLight}
-            />
           </div>
         </section>
       </main>
