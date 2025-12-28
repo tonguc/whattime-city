@@ -14,6 +14,7 @@ import LosAngelesRemoteWorkContent from './LosAngelesRemoteWorkContent'
 type Props = { params: Promise<{ city: string }> }
 
 export async function generateStaticParams() {
+<<<<<<< HEAD
   return [
     { city: 'new-york' }, 
     { city: 'london' }, 
@@ -24,6 +25,9 @@ export async function generateStaticParams() {
     { city: 'sydney' },
     { city: 'los-angeles' }
   ]
+=======
+  return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' }, { city: 'los-angeles' }]
+>>>>>>> main
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

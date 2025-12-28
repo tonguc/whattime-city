@@ -7,6 +7,7 @@ import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import CompareWidget from '@/components/CompareWidget'
 
 interface TimeComparisonContentProps {
   fromCity: City
@@ -19,6 +20,17 @@ function getTimezoneOffset(timezone: string): number {
   const utcDate = new Date(now.toLocaleString('en-US', { timeZone: 'UTC' }))
   const tzDate = new Date(now.toLocaleString('en-US', { timeZone: timezone }))
   return (tzDate.getTime() - utcDate.getTime()) / (1000 * 60 * 60)
+}
+
+// Format timezone with UTC offset
+function formatTimezone(timezone: string, offset: number): string {
+  const hours = Math.floor(Math.abs(offset))
+  const minutes = Math.round((Math.abs(offset) - hours) * 60)
+  const sign = offset >= 0 ? '+' : '-'
+  const utc = minutes > 0 
+    ? `UTC${sign}${hours}:${minutes.toString().padStart(2, '0')}`
+    : `UTC${sign}${hours}`
+  return `${timezone.split('/').pop()?.replace('_', ' ')} (${utc})`
 }
 
 // Format time difference nicely
@@ -44,13 +56,21 @@ const TimeIcon = ({ timeOfDay }: { timeOfDay: string }) => {
   return <span className="text-2xl">{icons[timeOfDay] || '🕐'}</span>
 }
 
-export default function TimeComparisonContent({ fromCity, toCity }: TimeComparisonContentProps) {
+export default function TimeComparisonContent({ fromCity: initialFromCity, toCity: initialToCity }: TimeComparisonContentProps) {
   const [time, setTime] = useState(new Date())
+  
+  // ✅ STATE - Swap olduğunda güncellenecek!
+  const [currentFromCity, setCurrentFromCity] = useState<City>(initialFromCity)
+  const [currentToCity, setCurrentToCity] = useState<City>(initialToCity)
   
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000)
     return () => clearInterval(timer)
   }, [])
+  
+  // ✅ currentFromCity ve currentToCity kullan (props değil!)
+  const fromCity = currentFromCity
+  const toCity = currentToCity
   
   // Calculate times
   const fromTime = time.toLocaleTimeString('en-US', { 
@@ -88,9 +108,13 @@ export default function TimeComparisonContent({ fromCity, toCity }: TimeComparis
   const toOffset = getTimezoneOffset(toCity.timezone)
   const diffHours = toOffset - fromOffset
   
-  // Theme based on "from" city
+  // ✅ Theme based on "from" city - Swap olduğunda güncellenecek!
   const mainTheme = themes[fromTimeOfDay]
   const isLight = isLightTheme(fromTimeOfDay)
+  
+  // Format timezones
+  const fromTimezoneStr = formatTimezone(fromCity.timezone, fromOffset)
+  const toTimezoneStr = formatTimezone(toCity.timezone, toOffset)
   
   // Business hours overlap calculation (9 AM - 5 PM)
   const getOverlapHours = () => {
@@ -140,16 +164,37 @@ export default function TimeComparisonContent({ fromCity, toCity }: TimeComparis
   
   const callTimes = getBestCallTimes()
   
+  // ✅ Swap handler - State'i güncelle!
+  const handleCitiesChange = (newFromCity: City | null, newToCity: City | null) => {
+    if (newFromCity) setCurrentFromCity(newFromCity)
+    if (newToCity) setCurrentToCity(newToCity)
+  }
+  
   return (
-    <div className={`min-h-screen transition-colors duration-700 bg-gradient-to-br ${mainTheme.bg}`}>
+    <div className={`min-h-screen transition-colors duration-700 bg-gradient-to-br ${mainTheme.bg}`} style={{ overflow: 'visible' }}>
       {/* Shared Header */}
-      <Header />
+      <Header isLight={isLight} />
 
-      <main className="max-w-6xl mx-auto px-4 py-8">
+      <main className="max-w-6xl mx-auto px-4 py-8" style={{ overflow: 'visible' }}>
         {/* Title */}
-        <h1 className={`text-2xl sm:text-3xl font-bold text-center mb-8 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+        <h1 className={`text-2xl sm:text-3xl font-bold text-center mb-2 ${isLight ? 'text-slate-800' : 'text-white'}`}>
           {fromCity.city} → {toCity.city} Time
         </h1>
+        
+        {/* ✅ Timezone Display */}
+        <p className={`text-sm text-center mb-6 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+          {fromTimezoneStr} → {toTimezoneStr}
+        </p>
+        
+        {/* Compare Widget - TOP PLACEMENT */}
+        <div className="max-w-2xl mx-auto mb-8" style={{ overflow: 'visible' }}>
+          <CompareWidget 
+            initialFromCity={fromCity}
+            initialToCity={toCity}
+            isLight={isLight}
+            onCitiesChange={handleCitiesChange}
+          />
+        </div>
         
         {/* Live Clocks */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -177,7 +222,7 @@ export default function TimeComparisonContent({ fromCity, toCity }: TimeComparis
             <div className={`mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium ${
               isLight ? 'bg-slate-200 text-slate-600' : 'bg-slate-700 text-slate-300'
             }`}>
-              {fromTimeOfDay.charAt(0).toUpperCase() + fromTimeOfDay.slice(1)}
+              {fromTimezoneStr}
             </div>
           </div>
           
@@ -205,25 +250,25 @@ export default function TimeComparisonContent({ fromCity, toCity }: TimeComparis
             <div className={`mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium ${
               isLight ? 'bg-slate-200 text-slate-600' : 'bg-slate-700 text-slate-300'
             }`}>
-              {toTimeOfDay.charAt(0).toUpperCase() + toTimeOfDay.slice(1)}
+              {toTimezoneStr}
             </div>
           </div>
         </div>
         
-        {/* Time Difference Banner */}
-        <div className={`p-6 rounded-3xl mb-8 text-center ${
-          isLight ? 'bg-blue-50 border border-blue-200' : 'bg-blue-900/30 border border-blue-800/50'
+        {/* Time Difference */}
+        <div className={`text-center mb-8 p-4 rounded-2xl backdrop-blur-xl ${
+          isLight ? 'bg-white/50' : 'bg-slate-800/50'
         }`}>
-          <p className={`text-sm mb-1 ${isLight ? 'text-blue-600' : 'text-blue-300'}`}>Time Difference</p>
-          <p className={`text-3xl font-bold ${isLight ? 'text-blue-800' : 'text-blue-100'}`}>
-            {diffHours === 0 
-              ? 'Same time zone' 
-              : `${toCity.city} is ${formatTimeDifference(Math.abs(diffHours))} ${diffHours > 0 ? 'ahead' : 'behind'}`
-            }
+          <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+            <span className={`font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              {formatTimeDifference(Math.abs(diffHours))}
+            </span>
+            {' '}
+            {diffHours > 0 ? `ahead` : diffHours < 0 ? `behind` : `same time`}
           </p>
         </div>
         
-        {/* Info Grid */}
+        {/* Best Time Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {/* Best Time to Call */}
           <div className={`p-6 rounded-3xl backdrop-blur-xl border ${

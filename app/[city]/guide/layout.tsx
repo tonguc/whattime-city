@@ -17,10 +17,18 @@ export default function GuideLayout({
   const params = useParams()
   const citySlug = params.city as string
   const city = cities.find(c => c.slug === citySlug)
-  const { theme, isLight, time } = useCityContext()
+  const { theme, isLight, time, setActiveCity } = useCityContext()
   
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  
+  // Sync activeCity when navigating between different city guides
+  // This ensures background theme matches the city being viewed
+  useEffect(() => {
+    if (city) {
+      setActiveCity(city)
+    }
+  }, [city, setActiveCity])
   
   // Scroll detection for sticky bar
   useEffect(() => {

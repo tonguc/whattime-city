@@ -13,9 +13,13 @@ import LosAngelesStockMarketContent from './LosAngelesStockMarketContent'
 
 type Props = { params: Promise<{ city: string }> }
 
+<<<<<<< HEAD
 export async function generateStaticParams() { return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' },
     { city: 'los-angeles' }
   ] }
+=======
+export async function generateStaticParams() { return [{ city: 'new-york' }, { city: 'london' }, { city: 'tokyo' }, { city: 'dubai' }, { city: 'singapore' }, { city: 'paris' }, { city: 'sydney' }, { city: 'los-angeles' }] }
+>>>>>>> main
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: citySlug } = await params

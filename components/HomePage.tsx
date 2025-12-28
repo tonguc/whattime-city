@@ -9,6 +9,8 @@ import { getWeather, WeatherResponse } from '@/lib/weather'
 import { TimeIcons } from '@/components/TimeIcons'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import CompareWidget from '@/components/CompareWidget'
+import AnalogClock from '@/components/AnalogClock'
 
 
 // Data
@@ -41,6 +43,7 @@ export default function HomePage() {
     themeMode,
     theme,
     isLight,
+    clockMode,
   } = useCityContext()
   
   const [weather, setWeather] = useState<WeatherResponse | null>(null)
@@ -59,12 +62,6 @@ export default function HomePage() {
   const [toResults, setToResults] = useState<City[]>([])
   const [showFromDropdown, setShowFromDropdown] = useState(false)
   const [showToDropdown, setShowToDropdown] = useState(false)
-  
-  // Compare with dropdown
-  const [showCompareWith, setShowCompareWith] = useState(false)
-  const [compareWithQuery, setCompareWithQuery] = useState('')
-  const [compareWithResults, setCompareWithResults] = useState<City[]>([])
-  const compareWithRef = useRef<HTMLDivElement>(null)
   
   // World Cities tab state
   const [worldCitiesTab, setWorldCitiesTab] = useState<'top' | 'americas' | 'europe' | 'asia' | 'africa' | 'oceania'>('top')
@@ -112,34 +109,9 @@ export default function HomePage() {
       setShowToDropdown(false)
     }
   }, [toQuery, toCity])
-  
-  useEffect(() => {
-    if (compareWithQuery.length >= 1) {
-      setCompareWithResults(searchCities(compareWithQuery).slice(0, 6))
-    } else {
-      setCompareWithResults([])
-    }
-  }, [compareWithQuery])
-
-  // Close dropdown on outside click
-  useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      if (compareWithRef.current && !compareWithRef.current.contains(e.target as Node)) {
-        setShowCompareWith(false)
-      }
-    }
-    document.addEventListener('mousedown', handleClick)
-    return () => document.removeEventListener('mousedown', handleClick)
-  }, [])
 
   const handleCompare = () => {
     if (fromCity && toCity) router.push(`/time/${fromCity.slug}/${toCity.slug}`)
-  }
-  
-  const handleCompareWith = (city: City) => {
-    if (detectedCity) router.push(`/time/${detectedCity.slug}/${city.slug}`)
-    setShowCompareWith(false)
-    setCompareWithQuery('')
   }
 
   // Derived data
@@ -192,10 +164,10 @@ export default function HomePage() {
   }
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${homeTheme.bg}`}>
+    <div className={`min-h-screen bg-gradient-to-br ${homeTheme.bg}`} style={{ overflow: 'visible' }}>
       <Header />
 
-      <main className="max-w-6xl mx-auto px-4 py-4">
+      <main className="max-w-6xl mx-auto px-4 py-4" style={{ overflow: 'visible' }}>
         {/* YOUR LOCATION - Big Clock with Weather */}
         {detectedCity && (
           <section className={`rounded-3xl p-5 md:p-6 mb-4 backdrop-blur-xl border ${homeTheme.card}`}>
@@ -210,10 +182,21 @@ export default function HomePage() {
                 </div>
               </div>
               
-              <div className="text-center">
-                <div className={`text-5xl md:text-6xl font-bold tracking-tight ${homeTheme.text}`}>
-                  {getLocalTime(detectedCity)}
-                </div>
+              <div className="text-center w-full md:w-auto">
+                {/* Digital or Analog Clock based on user preference */}
+                {clockMode === 'analog' ? (
+                  <div className="flex justify-center mb-2">
+                    <AnalogClock 
+                      time={time} 
+                      theme={getCityTimeOfDay(detectedCity)}
+                      themeData={homeTheme}
+                    />
+                  </div>
+                ) : (
+                  <div className={`text-5xl md:text-6xl font-bold tracking-tight ${homeTheme.text}`}>
+                    {getLocalTime(detectedCity)}
+                  </div>
+                )}
                 <div className={`flex items-center justify-center gap-3 mt-2`}>
                   {/* Time of day */}
                   <div className={`flex items-center gap-1.5 text-sm ${homeTheme.textMuted}`}>
@@ -242,38 +225,13 @@ export default function HomePage() {
                   className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${homeIsLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-white'}`}>
                   View City
                 </Link>
-                <div className="relative" ref={compareWithRef}>
-                  <button onClick={() => setShowCompareWith(!showCompareWith)}
-                    className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${homeIsLight ? 'bg-blue-100 hover:bg-blue-200 text-blue-700' : 'bg-blue-900/50 hover:bg-blue-800/50 text-blue-300'}`}>
-                    Compare with…
-                  </button>
-                  {showCompareWith && (
-                    <div className={`absolute right-0 top-full mt-2 w-64 rounded-xl shadow-xl border ${homeIsLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'} p-3 z-50`}>
-                      <input type="text" value={compareWithQuery} onChange={(e) => setCompareWithQuery(e.target.value)}
-                        placeholder="Search city..." autoFocus
-                        className={`w-full px-3 py-2 rounded-lg border text-sm ${homeIsLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-900 border-slate-700'} outline-none`}
-                        style={{ fontSize: '16px' }}
-                      />
-                      {compareWithResults.length > 0 && (
-                        <div className="mt-2 max-h-48 overflow-y-auto">
-                          {compareWithResults.map(c => (
-                            <button key={c.slug} onClick={() => handleCompareWith(c)}
-                              className={`w-full px-3 py-2 text-left text-sm rounded-lg ${homeIsLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}>
-                              {c.city}, {c.country}
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
               </div>
             </div>
           </section>
         )}
 
         {/* HERO - Compare Tool */}
-        <section className={`rounded-3xl p-6 md:p-8 mb-4 backdrop-blur-xl border ${homeTheme.card} text-center`}>
+        <section className={`rounded-3xl p-6 md:p-8 mb-4 backdrop-blur-xl border ${homeTheme.card} text-center`} style={{ overflow: 'visible' }}>
           <h1 className={`text-2xl md:text-3xl font-bold mb-2 ${homeTheme.text} flex items-center justify-center gap-3`}>
             <svg className="w-8 h-8 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10"/>
@@ -283,60 +241,12 @@ export default function HomePage() {
             World Clock — Compare Time Instantly
           </h1>
           
-          <div className={`max-w-2xl mx-auto mt-6 p-4 rounded-2xl ${homeIsLight ? 'bg-slate-100' : 'bg-slate-800/50'}`}>
-            <div className="flex flex-col sm:flex-row items-center gap-3">
-              {/* From City */}
-              <div className="relative flex-1 w-full">
-                <input type="text" value={fromQuery}
-                  onChange={(e) => { setFromQuery(e.target.value); setFromCity(null) }}
-                  onFocus={() => { if (fromQuery && !fromCity) setShowFromDropdown(true) }}
-                  placeholder="From city..."
-                  className={`w-full px-4 py-3 rounded-xl border text-center ${homeIsLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-900 border-slate-700 text-white'} outline-none focus:ring-2 focus:ring-blue-500`}
-                  style={{ fontSize: '16px' }}
-                />
-                {showFromDropdown && fromResults.length > 0 && (
-                  <div className={`absolute top-full left-0 right-0 mt-1 rounded-xl overflow-hidden shadow-xl z-50 ${homeIsLight ? 'bg-white' : 'bg-slate-800'}`}>
-                    {fromResults.map(c => (
-                      <button key={c.slug} onClick={() => { setFromCity(c); setFromQuery(c.city); setShowFromDropdown(false) }}
-                        className={`w-full px-4 py-2 text-left ${homeIsLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}>
-                        <span className={homeTheme.text}>{c.city}</span>
-                        <span className={`text-sm ml-2 ${homeTheme.textMuted}`}>{c.country}</span>
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-              
-              <span className={`text-2xl ${homeTheme.textMuted}`}>↔</span>
-              
-              {/* To City */}
-              <div className="relative flex-1 w-full">
-                <input type="text" value={toQuery}
-                  onChange={(e) => { setToQuery(e.target.value); setToCity(null) }}
-                  onFocus={() => { if (toQuery && !toCity) setShowToDropdown(true) }}
-                  placeholder="To city..."
-                  className={`w-full px-4 py-3 rounded-xl border text-center ${homeIsLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-900 border-slate-700 text-white'} outline-none focus:ring-2 focus:ring-blue-500`}
-                  style={{ fontSize: '16px' }}
-                />
-                {showToDropdown && toResults.length > 0 && (
-                  <div className={`absolute top-full left-0 right-0 mt-1 rounded-xl overflow-hidden shadow-xl z-50 ${homeIsLight ? 'bg-white' : 'bg-slate-800'}`}>
-                    {toResults.map(c => (
-                      <button key={c.slug} onClick={() => { setToCity(c); setToQuery(c.city); setShowToDropdown(false) }}
-                        className={`w-full px-4 py-2 text-left ${homeIsLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}>
-                        <span className={homeTheme.text}>{c.city}</span>
-                        <span className={`text-sm ml-2 ${homeTheme.textMuted}`}>{c.country}</span>
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-              
-              <button onClick={handleCompare} disabled={!fromCity || !toCity}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all whitespace-nowrap ${fromCity && toCity ? 'bg-blue-600 hover:bg-blue-700 text-white cursor-pointer' : homeIsLight ? 'bg-slate-300 text-slate-500 cursor-not-allowed' : 'bg-slate-700 text-slate-500 cursor-not-allowed'}`}>
-                Compare Time
-              </button>
-            </div>
-            <p className={`text-sm mt-3 ${homeTheme.textMuted}`}>Compare cities or find meeting overlap</p>
+          <div className={`max-w-2xl mx-auto mt-6 p-4 rounded-2xl ${homeIsLight ? 'bg-slate-100' : 'bg-slate-800/50'}`} style={{ overflow: 'visible' }}>
+            <CompareWidget 
+              initialFromCity={fromCity}
+              initialToCity={toCity}
+              isLight={homeIsLight}
+            />
           </div>
         </section>
 
@@ -479,7 +389,7 @@ export default function HomePage() {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             {worldCities.map(city => {
               const cityTime = getLocalTime(city)
               const offset = getRelativeOffset(city)

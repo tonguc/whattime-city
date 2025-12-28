@@ -5,21 +5,25 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useCityContext } from '@/lib/CityContext'
 import { City, searchCities } from '@/lib/cities'
+import CitySearch from '@/components/CitySearch'
 
-export default function Header() {
+interface HeaderProps {
+  isLight?: boolean
+}
+
+function Header({ isLight: propsIsLight }: HeaderProps) {
   const router = useRouter()
-  const {
-    currentTheme,
-    theme,
-    isLight,
-    themeMode,
-    setThemeMode,
-    clockMode,
-    setClockMode,
-    use12Hour,
-    setUse12Hour,
-    getLocalTime,
-  } = useCityContext()
+  const context = useCityContext()
+  
+  // ✅ Use prop if provided, otherwise use context
+  const isLight = propsIsLight !== undefined ? propsIsLight : context.isLight
+  
+  // ✅ Create local theme
+  const activeTheme = {
+    text: isLight ? 'text-slate-800' : 'text-white',
+    textMuted: isLight ? 'text-slate-500' : 'text-slate-400',
+    accentBg: 'bg-blue-600',
+  }
   
   // Search state
   const [searchQuery, setSearchQuery] = useState('')
@@ -45,6 +49,12 @@ export default function Header() {
   // Close dropdowns on outside click
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      
+      if (target.closest('[data-search-result-button]')) {
+        return
+      }
+      
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
         setShowSearchDropdown(false)
       }
@@ -67,21 +77,21 @@ export default function Header() {
   }
   
   return (
-    <header className={`sticky top-0 z-50 w-full backdrop-blur-2xl border-b ${theme.card} transition-colors duration-300 shadow-sm`}>
+    <header className={`sticky top-0 z-50 w-full backdrop-blur-2xl border-b transition-colors duration-300 shadow-sm ${
+      isLight 
+        ? 'bg-white/80 border-slate-200' 
+        : 'bg-slate-900/80 border-slate-700'
+    }`}>
       <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2 sm:gap-3">
-        {/* Logo - Always goes to HOME */}
         <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0">
-          {/* Mobile: Compact logo with text */}
           <img src={isLight ? "/logo-mobile.svg" : "/logo-mobile-dark.svg"} alt="whattime.city" className="h-9 sm:hidden" />
-          {/* Desktop: Full logo */}
           <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" className="h-10 hidden sm:block" />
         </button>
         
-        {/* Search - Closer to logo, narrower */}
         <div className="flex-1 max-w-xs hidden sm:block" ref={searchRef}>
           <div className="relative">
             <div className={`flex items-center gap-2 px-3 py-2 rounded-full ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
-              <svg className={`w-4 h-4 ${theme.textMuted}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className={`w-4 h-4 ${activeTheme.textMuted}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
               <input
@@ -90,7 +100,7 @@ export default function Header() {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onFocus={() => searchQuery && setShowSearchDropdown(true)}
                 placeholder="Search..."
-                className={`flex-1 bg-transparent outline-none text-sm ${theme.text} w-full`}
+                className={`flex-1 bg-transparent outline-none text-sm ${activeTheme.text} w-full`}
                 style={{ fontSize: '16px' }}
               />
             </div>
@@ -98,13 +108,21 @@ export default function Header() {
             {showSearchDropdown && searchResults.length > 0 && (
               <div className={`absolute top-full left-0 w-72 mt-2 rounded-xl overflow-hidden shadow-xl z-50 ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}>
                 {searchResults.map((city) => (
-                  <button key={city.slug} onClick={() => handleSearchSelect(city)}
+                  <button 
+                    key={city.slug}
+                    type="button"
+                    data-search-result-button="true"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      e.stopPropagation()
+                      handleSearchSelect(city)
+                    }}
                     className={`w-full px-4 py-3 text-left flex items-center justify-between ${isLight ? 'hover:bg-slate-50' : 'hover:bg-slate-700'}`}>
                     <div>
-                      <span className={theme.text}>{city.city}</span>
-                      <span className={`text-sm ml-2 ${theme.textMuted}`}>{city.country}</span>
+                      <span className={activeTheme.text}>{city.city}</span>
+                      <span className={`text-sm ml-2 ${activeTheme.textMuted}`}>{city.country}</span>
                     </div>
-                    <span className={`text-sm ${theme.textMuted}`}>{getLocalTime(city)}</span>
+                    <span className={`text-sm ${activeTheme.textMuted}`}>{context.getLocalTime(city)}</span>
                   </button>
                 ))}
               </div>
@@ -112,7 +130,6 @@ export default function Header() {
           </div>
         </div>
         
-        {/* Nav Links */}
         <nav className="flex items-center gap-1 sm:gap-1">
           <Link href="/cities" className={`hidden sm:block px-2.5 py-2 rounded-lg text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
             Cities
@@ -130,7 +147,6 @@ export default function Header() {
             Tools
           </Link>
           
-          {/* Alarm Button */}
           <Link 
             href="/tools/alarm" 
             className={`hidden sm:flex p-2 rounded-lg transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}
@@ -142,7 +158,6 @@ export default function Header() {
             </svg>
           </Link>
           
-          {/* Settings Dropdown */}
           <div className="relative" ref={settingsRef}>
             <button 
               onClick={() => setShowSettings(!showSettings)}
@@ -157,41 +172,38 @@ export default function Header() {
             
             {showSettings && (
               <div className={`absolute right-0 top-full mt-2 w-56 rounded-xl shadow-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'} p-4 z-50`}>
-                <h4 className={`text-xs font-semibold uppercase tracking-wide mb-3 ${theme.textMuted}`}>Preferences</h4>
+                <h4 className={`text-xs font-semibold uppercase tracking-wide mb-3 ${activeTheme.textMuted}`}>Preferences</h4>
                 
-                {/* Clock Display */}
                 <div className="mb-4">
-                  <label className={`text-sm font-medium ${theme.text} mb-2 block`}>Clock Display</label>
+                  <label className={`text-sm font-medium ${activeTheme.text} mb-2 block`}>Clock Display</label>
                   <div className="flex gap-2">
                     {(['digital', 'analog'] as const).map(mode => (
-                      <button key={mode} onClick={() => setClockMode(mode)}
-                        className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${clockMode === mode ? `${theme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>
+                      <button key={mode} onClick={() => context.setClockMode(mode)}
+                        className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${context.clockMode === mode ? `${activeTheme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>
                         {mode === 'digital' ? 'Digital' : 'Analog'}
                       </button>
                     ))}
                   </div>
                 </div>
                 
-                {/* Time Format */}
                 <div className="mb-4">
-                  <label className={`text-sm font-medium ${theme.text} mb-2 block`}>Time Format</label>
+                  <label className={`text-sm font-medium ${activeTheme.text} mb-2 block`}>Time Format</label>
                   <div className="flex gap-2">
-                    <button onClick={() => setUse12Hour(false)} className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${!use12Hour ? `${theme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>24h</button>
-                    <button onClick={() => setUse12Hour(true)} className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${use12Hour ? `${theme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>12h</button>
+                    <button onClick={() => context.setUse12Hour(false)} className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${!context.use12Hour ? `${activeTheme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>24h</button>
+                    <button onClick={() => context.setUse12Hour(true)} className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${context.use12Hour ? `${activeTheme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>12h</button>
                   </div>
                 </div>
                 
-                {/* Theme */}
                 <div>
-                  <label className={`text-sm font-medium ${theme.text} mb-2 block`}>Theme</label>
+                  <label className={`text-sm font-medium ${activeTheme.text} mb-2 block`}>Theme</label>
                   <div className="flex gap-2">
                     {(['light', 'auto', 'dark'] as const).map(mode => {
                       const labels = { light: 'Light Mode', auto: 'Auto (Day/Night)', dark: 'Dark Mode' }
                       const icons = { light: '☀️', auto: '🔄', dark: '🌙' }
                       return (
-                        <button key={mode} onClick={() => setThemeMode(mode)}
+                        <button key={mode} onClick={() => context.setThemeMode(mode)}
                           title={labels[mode]}
-                          className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${themeMode === mode ? `${theme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600 hover:bg-slate-200' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'}`}>
+                          className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${context.themeMode === mode ? `${activeTheme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600 hover:bg-slate-200' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'}`}>
                           {icons[mode]}
                         </button>
                       )
@@ -204,22 +216,15 @@ export default function Header() {
         </nav>
       </div>
       
-      {/* Mobile Search */}
       <div className="sm:hidden px-4 pb-3">
-        <div className={`flex items-center gap-2 px-4 py-2.5 rounded-full ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
-          <svg className={`w-4 h-4 ${theme.textMuted}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search city..."
-            className={`flex-1 bg-transparent outline-none text-sm ${theme.text}`}
-            style={{ fontSize: '16px' }}
-          />
-        </div>
+        <CitySearch 
+          placeholder="Search city..."
+          isLight={isLight}
+          className="w-full"
+        />
       </div>
     </header>
   )
 }
+
+export default Header
