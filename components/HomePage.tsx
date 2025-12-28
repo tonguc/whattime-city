@@ -10,6 +10,7 @@ import { TimeIcons } from '@/components/TimeIcons'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import CompareWidget from '@/components/CompareWidget'
+import AnalogClock from '@/components/AnalogClock'
 
 
 // Data
@@ -42,6 +43,7 @@ export default function HomePage() {
     themeMode,
     theme,
     isLight,
+    clockMode,
   } = useCityContext()
   
   const [weather, setWeather] = useState<WeatherResponse | null>(null)
@@ -180,10 +182,22 @@ export default function HomePage() {
                 </div>
               </div>
               
-              <div className="text-center">
-                <div className={`text-5xl md:text-6xl font-bold tracking-tight ${homeTheme.text}`}>
-                  {getLocalTime(detectedCity)}
-                </div>
+              <div className="text-center w-full md:w-auto">
+                {/* Digital or Analog Clock based on user preference */}
+                {clockMode === 'analog' ? (
+                  <div className="flex justify-center mb-2">
+                    <AnalogClock 
+                      time={time} 
+                      timezone={detectedCity.timezone} 
+                      size={120}
+                      isLight={homeIsLight}
+                    />
+                  </div>
+                ) : (
+                  <div className={`text-5xl md:text-6xl font-bold tracking-tight ${homeTheme.text}`}>
+                    {getLocalTime(detectedCity)}
+                  </div>
+                )}
                 <div className={`flex items-center justify-center gap-3 mt-2`}>
                   {/* Time of day */}
                   <div className={`flex items-center gap-1.5 text-sm ${homeTheme.textMuted}`}>
