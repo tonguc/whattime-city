@@ -1,3 +1,23 @@
+// Dosyanın en tepesine bu import'u eklemiş miydik? Ekli değilse ekleyin:
+import { getTopCities } from '@/lib/cityData'; 
+
+// Fonksiyonu komple bununla değiştir:
+export async function generateStaticParams() {
+  const topCities = getTopCities(20); // İlk 20 şehri al
+  const paths = [];
+
+  for (let i = 0; i < topCities.length; i++) {
+    for (let j = i + 1; j < topCities.length; j++) {
+      // Şehirleri alfabetik sıraya diz ve slug oluştur
+      const pairSlug = [topCities[i].slug, topCities[j].slug].sort().join('-vs-');
+      
+      // [cities] klasörüne uygun formatta push et
+      paths.push({ cities: pairSlug });
+    }
+  }
+  
+  return paths;
+}
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cities } from '@/lib/cities'
