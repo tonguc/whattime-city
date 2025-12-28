@@ -1,18 +1,57 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // ✅ EN ÖNEMLİSİ: Projeyi statik HTML'e çevirir (Cloudflare/Hosting için şart)
-  output: 'export',
-
-  // ✅ URL'lerin sonuna / ekler (SEO ve hosting uyumluluğu için iyidir)
+  // ✅ REMOVED: output: 'export' - Enables dynamic rendering on Vercel
+  
+  // Trailing slashes for consistency with existing URLs
   trailingSlash: true,
-
-  // ✅ Vercel dışında resimlerin görünmesi için bu şarttır
+  
+  // Image optimization
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
+  
+  // Headers for security and caching
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on'
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN'
+          },
+        ],
+      },
+      {
+        // Cache static assets aggressively
+        source: '/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ]
+  },
+  
+  // Redirects for SEO
+  async redirects() {
+    return [
+      // Add any redirects here if needed
+    ]
+  },
+  
+  // Experimental features for better performance
+  experimental: {
+    optimizeCss: true,
+  },
+}
 
-  // ✅ Build sırasında gereksiz yönlendirme hatalarını engeller
-  skipTrailingSlashRedirect: true,
-};
-
-module.exports = nextConfig;
+module.exports = nextConfig
