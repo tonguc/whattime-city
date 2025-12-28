@@ -1,6 +1,9 @@
 import { ImageResponse } from 'next/og'
 
-export const runtime = 'edge'
+// ✅ DÜZELTİLDİ: Vercel'in limitini aşmamak için Node.js kullanıyoruz.
+// (Eski 'edge' satırı silindi)
+export const runtime = 'nodejs'
+
 export const alt = 'Time Zones by Country'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'

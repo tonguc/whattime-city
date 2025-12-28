@@ -1,12 +1,17 @@
 import { ImageResponse } from 'next/og'
 import { getCountryBySlug } from '@/lib/cities'
 
-export const runtime = 'edge'
+// ✅ DÜZELTİLDİ: Vercel'in limitini aşmamanı sağlar (1MB -> 50MB)
+// (Eski 'edge' satırı silindi)
+export const runtime = 'nodejs'
+
 export const alt = 'Country Time Zones'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
 export default async function OGImage({ params }: { params: { country: string } }) {
+  // Next.js 15+ için params bir Promise olabilir, garantiye almak için await eklenebilir
+  // ama şimdilik mevcut yapıyı koruyoruz.
   const country = getCountryBySlug(params.country)
   
   if (!country) {
