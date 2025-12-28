@@ -187,9 +187,9 @@ export default function HomePage() {
                 {clockMode === 'analog' ? (
                   <div className="flex justify-center mb-2">
                     <AnalogClock 
-                      time={time}
-                      size={120}
-                      isLight={homeIsLight}
+                      time={time} 
+                      theme={getCityTimeOfDay(detectedCity)}
+                      themeData={homeTheme}
                     />
                   </div>
                 ) : (
