@@ -34,6 +34,7 @@ export default function MeetingPlannerPage() {
 
   // 🆕 URL Sync: Redirect to dynamic route when first two cities change
   useEffect(() => {
+    // Safety check: both cities must exist
     if (selectedCities[0] && selectedCities[1]) {
       const city1 = selectedCities[0].slug
       const city2 = selectedCities[1].slug
@@ -41,10 +42,14 @@ export default function MeetingPlannerPage() {
       const sorted = [city1, city2].sort()
       const newUrl = `/meeting/${sorted.join('-')}/`
       
-      // Redirect to new dynamic route
-      router.push(newUrl, { scroll: false })
+      // Only redirect once, with a small delay to prevent loop
+      const timer = setTimeout(() => {
+        router.push(newUrl)
+      }, 500)
+      
+      return () => clearTimeout(timer)
     }
-  }, [selectedCities[0], selectedCities[1], router])
+  }, [selectedCities[0]?.slug, selectedCities[1]?.slug, router])
 
   // Get current hour in each city
   const getCityHour = (timezone: string) => {

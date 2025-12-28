@@ -5,8 +5,8 @@
  * Interactive tool with URL sync and smart compromise
  */
 
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import { useState, useEffect, useRef } from 'react'
+import { useRouter, usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { City, cities } from '@/lib/cities'
 import { useToolsTheme } from '@/lib/useToolsTheme'
@@ -28,6 +28,7 @@ interface Props {
 
 export default function MeetingPlannerClient({ initialCity1, initialCity2 }: Props) {
   const router = useRouter()
+  const pathname = usePathname()
   const { theme, isLight } = useToolsTheme()
   
   const [selectedCities, setSelectedCities] = useState<City[]>([
@@ -37,12 +38,30 @@ export default function MeetingPlannerClient({ initialCity1, initialCity2 }: Pro
   ])
   
   const [currentTime, setCurrentTime] = useState(new Date())
+  
+  // Prevent infinite loop with ref
+  const isInitialMount = useRef(true)
 
-  // Sync URL when first two cities change
+  // Sync URL when first two cities change (FIXED: with safety checks)
   useEffect(() => {
+    // Skip on initial mount
+    if (isInitialMount.current) {
+      isInitialMount.current = false
+      return
+    }
+
+    // Safety check: both cities must exist
+    if (!selectedCities[0] || !selectedCities[1]) {
+      return
+    }
+
     const newUrl = `/meeting/${normalizeCityPair(selectedCities[0].slug, selectedCities[1].slug)}/`
-    router.push(newUrl, { scroll: false })
-  }, [selectedCities[0], selectedCities[1], router])
+    
+    // Only update if URL actually changed
+    if (pathname !== newUrl) {
+      router.push(newUrl, { scroll: false })
+    }
+  }, [selectedCities[0]?.slug, selectedCities[1]?.slug, router, pathname])
 
   // Check if hour is within working hours (9-17)
   const isWorkingHour = (hour: number) => hour >= 9 && hour <= 17
@@ -55,9 +74,14 @@ export default function MeetingPlannerClient({ initialCity1, initialCity2 }: Pro
     return localTime.getHours()
   }
 
-  // Check for business hours overlap
-  const hasOverlap = hasBusinessHoursOverlap(selectedCities[0], selectedCities[1])
-  const bestSlots = !hasOverlap ? findBestCompromise(selectedCities[0], selectedCities[1]) : []
+  // Check for business hours overlap (SAFE: with null checks)
+  const hasOverlap = selectedCities[0] && selectedCities[1] 
+    ? hasBusinessHoursOverlap(selectedCities[0], selectedCities[1])
+    : false
+  
+  const bestSlots = !hasOverlap && selectedCities[0] && selectedCities[1]
+    ? findBestCompromise(selectedCities[0], selectedCities[1]) 
+    : []
 
   return (
     <>
@@ -68,7 +92,7 @@ export default function MeetingPlannerClient({ initialCity1, initialCity2 }: Pro
         {/* Hero */}
         <div className="text-center mb-8">
           <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-            Meeting Planner: {selectedCities[0].city} ↔ {selectedCities[1].city}
+            Meeting Planner{selectedCities[0] && selectedCities[1] ? `: ${selectedCities[0].city} ↔ ${selectedCities[1].city}` : ''}
           </h1>
           <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
             Find the best time for meetings across time zones
@@ -151,34 +175,40 @@ export default function MeetingPlannerClient({ initialCity1, initialCity2 }: Pro
           </div>
 
           {/* Smart Compromise or Success Message */}
-          {!hasOverlap ? (
-            <div className="mt-6">
-              <SmartCompromise 
-                city1={selectedCities[0]} 
-                city2={selectedCities[1]}
-                slots={bestSlots}
-                isLight={isLight}
-              />
-            </div>
-          ) : (
-            <div className="mt-4 p-4 bg-green-500/10 border border-green-500/30 rounded-xl">
-              <div className="flex items-center gap-2">
-                <span className="text-green-500">✅</span>
-                <span className={isLight ? 'text-green-700' : 'text-green-400'}>
-                  Perfect! Business hours overlap found.
-                </span>
-              </div>
-            </div>
+          {selectedCities[0] && selectedCities[1] && (
+            <>
+              {!hasOverlap ? (
+                <div className="mt-6">
+                  <SmartCompromise 
+                    city1={selectedCities[0]} 
+                    city2={selectedCities[1]}
+                    slots={bestSlots}
+                    isLight={isLight}
+                  />
+                </div>
+              ) : (
+                <div className="mt-4 p-4 bg-green-500/10 border border-green-500/30 rounded-xl">
+                  <div className="flex items-center gap-2">
+                    <span className="text-green-500">✅</span>
+                    <span className={isLight ? 'text-green-700' : 'text-green-400'}>
+                      Perfect! Business hours overlap found.
+                    </span>
+                  </div>
+                </div>
+              )}
+            </>
           )}
 
           {/* Share Buttons */}
-          <div className="mt-6">
-            <ShareButtons 
-              city1={selectedCities[0]} 
-              city2={selectedCities[1]}
-              isLight={isLight}
-            />
-          </div>
+          {selectedCities[0] && selectedCities[1] && (
+            <div className="mt-6">
+              <ShareButtons 
+                city1={selectedCities[0]} 
+                city2={selectedCities[1]}
+                isLight={isLight}
+              />
+            </div>
+          )}
         </div>
 
         {/* Interactive Time Slider */}
@@ -210,12 +240,21 @@ export default function MeetingPlannerClient({ initialCity1, initialCity2 }: Pro
               <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Event Time</div>
               <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Share event times</div>
             </Link>
-            <Link href={`/time/${selectedCities[0].slug}/${selectedCities[1].slug}/`} className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
-              isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
-            }`}>
-              <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Time Comparison</div>
-              <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Side-by-side times</div>
-            </Link>
+            {selectedCities[0] && selectedCities[1] ? (
+              <Link href={`/time/${selectedCities[0].slug}/${selectedCities[1].slug}/`} className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
+                isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
+              }`}>
+                <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Time Comparison</div>
+                <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Side-by-side times</div>
+              </Link>
+            ) : (
+              <div className={`p-4 rounded-xl opacity-50 ${
+                isLight ? 'bg-white/60' : 'bg-slate-700/60'
+              }`}>
+                <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Time Comparison</div>
+                <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Select 2 cities first</div>
+              </div>
+            )}
           </div>
         </section>
       </div>
