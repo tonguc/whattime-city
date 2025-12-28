@@ -1,98 +1,106 @@
-/**
- * Meeting Planner Dynamic Page
- * /meeting/[cities]/ - City pair specific meeting planner
- */
-
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { cities } from '@/lib/cities'
+import { parseCityPair, normalizeCityPair, generateTopCityPairs } from '@/lib/meetingPlanner'
+import ToolsMiniNav from '@/components/ToolsMiniNav'
+import Footer from '@/components/Footer'
 import MeetingPlannerClient from '@/components/meeting/MeetingPlannerClient'
 import DynamicContent from '@/components/meeting/DynamicContent'
-import { 
-  parseCityPair, 
-  getCanonicalUrl, 
-  generateTopCityPairs,
-  calculateTimeDifference
-} from '@/lib/meetingPlanner'
+import { getTimeOfDay } from '@/lib/theme'
 
-type Props = {
+interface Props {
   params: { cities: string }
 }
 
-// ===== STATIC PARAMS GENERATION (TOP 1000 PAIRS) =====
+// Generate static params for top city pairs
 export async function generateStaticParams() {
-  const topPairs = generateTopCityPairs(1225) // 50 cities = 1,225 pairs
-  
-  console.log(`📊 Generating ${topPairs.length} static meeting pages`)
-  
+  const topPairs = generateTopCityPairs()
   return topPairs.map(pair => ({
-    cities: pair
+    cities: normalizeCityPair(pair.city1.slug, pair.city2.slug)
   }))
 }
 
-// ===== METADATA GENERATION =====
+// ISR: Revalidate every 30 days
+export const revalidate = 60 * 60 * 24 * 30
+export const dynamicParams = true
+
+// Generate metadata
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const cityPair = parseCityPair(params.cities)
-  
-  if (!cityPair) {
+  const parsed = parseCityPair(params.cities)
+  if (!parsed) {
     return {
-      title: 'Meeting Planner - WhatTime.City',
-      description: 'Find the best meeting time across multiple time zones'
+      title: 'Meeting Planner | whattime.city',
+      description: 'Find the best meeting time across time zones'
     }
   }
 
-  const { city1, city2 } = cityPair
-  const timeDiff = calculateTimeDifference(city1, city2)
-  const canonicalUrl = getCanonicalUrl(city1, city2)
-  
-  const title = `Best Meeting Time: ${city1.city} & ${city2.city} | Time Zone Scheduler`
-  const description = `Find the perfect meeting time between ${city1.city} (${city1.timezone}) and ${city2.city} (${city2.timezone}). ${city1.city} is ${timeDiff.hours}h ${timeDiff.minutes}m ${timeDiff.direction} of ${city2.city}. Compare business hours and schedule calls across time zones.`
+  const { city1, city2 } = parsed
   
   return {
-    title,
-    description,
-    alternates: {
-      canonical: `https://whattime.city${canonicalUrl}`
-    },
+    title: `Best Meeting Time: ${city1.city} & ${city2.city} | whattime.city`,
+    description: `Find perfect meeting time between ${city1.city} (${city1.timezone}) and ${city2.city} (${city2.timezone}). Compare business hours and schedule calls across time zones.`,
     openGraph: {
-      title,
-      description,
-      url: `https://whattime.city${canonicalUrl}`,
-      type: 'website'
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description
+      title: `Meeting Time: ${city1.city} ↔ ${city2.city}`,
+      description: `Find the best meeting time across time zones`,
     }
   }
 }
 
-// ===== ISR CONFIGURATION =====
-export const revalidate = 60 * 60 * 24 * 30 // 30 days
-export const dynamicParams = true // Allow on-demand generation for non-pre-rendered pairs
-
-// ===== MAIN COMPONENT =====
-export default async function MeetingPage({ params }: Props) {
-  const cityPair = parseCityPair(params.cities)
-
-  if (!cityPair) {
+export default function MeetingPlannerPage({ params }: Props) {
+  // Parse city pair
+  const parsed = parseCityPair(params.cities)
+  
+  if (!parsed) {
     notFound()
   }
 
-  const { city1, city2 } = cityPair
+  const { city1, city2 } = parsed
+
+  // Get theme based on first city's time
+  const now = new Date()
+  const timeOfDay = getTimeOfDay(
+    now,
+    city1.latitude || 0,
+    city1.longitude || 0
+  )
+  
+  const isLight = timeOfDay === 'day' || timeOfDay === 'dawn'
+  
+  // Theme colors
+  const theme = {
+    primary: isLight ? 'bg-blue-500' : 'bg-blue-600',
+    secondary: isLight ? 'bg-slate-100' : 'bg-slate-800',
+    text: isLight ? 'text-slate-900' : 'text-white',
+    background: isLight ? 'bg-gradient-to-b from-blue-50 to-white' : 'bg-gradient-to-b from-slate-900 to-slate-800'
+  }
 
   return (
     <>
-      {/* Client Component - Interactive Tool */}
-      <MeetingPlannerClient 
-        initialCity1={city1}
-        initialCity2={city2}
-      />
+      {/* HEADER */}
+      <div className={`min-h-screen ${theme.background} transition-colors duration-1000`}>
+        <ToolsMiniNav isLight={isLight} theme={theme} />
 
-      {/* Server Component - SEO Content */}
-      <section className="container mx-auto px-4 py-12 max-w-5xl">
-        <DynamicContent city1={city1} city2={city2} />
-      </section>
+        {/* MAIN CONTENT */}
+        <main className="container mx-auto px-4 py-8 max-w-6xl">
+          {/* Interactive Tool */}
+          <MeetingPlannerClient 
+            initialCity1={city1}
+            initialCity2={city2}
+            isLight={isLight}
+            theme={theme}
+          />
+
+          {/* SEO Content */}
+          <DynamicContent 
+            city1={city1}
+            city2={city2}
+            isLight={isLight}
+          />
+        </main>
+
+        {/* FOOTER */}
+        <Footer isLight={isLight} />
+      </div>
     </>
   )
 }
