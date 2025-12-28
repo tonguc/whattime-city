@@ -6,7 +6,7 @@ import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 import MeetingPlannerClient from '@/components/meeting/MeetingPlannerClient'
 import DynamicContent from '@/components/meeting/DynamicContent'
-import { getTimeOfDay } from '@/lib/theme'
+import { getTimeOfDay } from '@/lib/sun-calculator'
 
 interface Props {
   params: { cities: string }
