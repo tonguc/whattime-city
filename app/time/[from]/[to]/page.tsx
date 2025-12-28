@@ -8,53 +8,44 @@ interface TimeComparePageProps {
 }
 
 // ✅ CRITICAL: Enable dynamic params for cities not in generateStaticParams
-// This allows ANY city combination to work, not just pre-generated ones
 export const dynamicParams = true
 
 // ✅ ISR: Revalidate pages every 24 hours
-// Pre-rendered pages stay fresh, dynamic pages get cached after first request
-export const revalidate = 86400 // 24 hours
+export const revalidate = 86400
 
 // Get city by slug
 function getCityBySlug(slug: string): City | undefined {
   return cities.find(c => c.slug === slug)
 }
 
-// Generate static params for POPULAR city combinations ONLY
-// Thanks to dynamicParams = true, other combinations render on-demand (still SSR!)
+// ✅ Generate static params for TIER 1 CITIES ONLY
+// Keep build fast (~50K pages, ~3 min build)
+// Other combinations render on-demand (thanks to dynamicParams = true)
 export async function generateStaticParams() {
+  // ✅ ONLY TIER 1 CITIES (most popular, ~225 cities)
   const tier1 = getTier1Cities()
   const tier1Slugs = tier1.map(c => c.slug)
   
-  // Get Tier 2 cities for static pre-rendering
-  const tier2Cities = cities.filter(c => {
-    const tier = typeof c.tier === 'number' ? c.tier : parseInt(c.tier || '999')
-    return tier === 2
-  })
-  const tier2Slugs = tier2Cities.map(c => c.slug)
-  
-  // Combine Tier 1 + Tier 2 for static generation
-  const popularSlugs = Array.from(new Set([...tier1Slugs, ...tier2Slugs]))
-  
   const params: { from: string; to: string }[] = []
   
-  console.log(`\n🌍 === STATIC GENERATION STRATEGY ===`)
+  console.log(`\n🌍 === STATIC GENERATION STRATEGY (TIER 1 ONLY) ===`)
   console.log(`📊 Total cities in database: ${cities.length}`)
-  console.log(`⭐ Tier 1 cities: ${tier1Slugs.length}`)
-  console.log(`⭐ Tier 2 cities: ${tier2Slugs.length}`)
-  console.log(`📦 Static pre-render: ${popularSlugs.length} cities`)
+  console.log(`⭐ Tier 1 cities (most popular): ${tier1Slugs.length}`)
+  console.log(`📦 Static pre-render: ${tier1Slugs.length} cities`)
   
-  // Generate all combinations for popular cities
-  for (const from of popularSlugs) {
-    for (const to of popularSlugs) {
+  // Generate all combinations for Tier 1 cities only
+  for (const from of tier1Slugs) {
+    for (const to of tier1Slugs) {
       if (from !== to) {
         params.push({ from, to })
       }
     }
   }
   
+  const totalCombinations = tier1Slugs.length * (tier1Slugs.length - 1)
+  
   console.log(`\n✅ Static pages to generate: ${params.length.toLocaleString()}`)
-  console.log(`🚀 Dynamic params enabled: Other ${(cities.length - popularSlugs.length)} cities will render on-demand`)
+  console.log(`🚀 Dynamic params enabled: Other ${(cities.length - tier1Slugs.length)} cities will render on-demand`)
   console.log(`📈 Total possible combinations: ${(cities.length * (cities.length - 1)).toLocaleString()}`)
   console.log(`⏱️  Estimated build time: ~3-5 minutes`)
   console.log(`💾 ISR enabled: Pages revalidate every 24 hours\n`)
@@ -100,7 +91,7 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
       url: `https://whattime.city/time/${from}/${to}/`,
       images: [
         {
-          url: `https://whattime.city/og-image.png`, // You can create dynamic OG images later
+          url: `https://whattime.city/og-image.png`,
           width: 1200,
           height: 630,
           alt: `${fromCity.city} to ${toCity.city} Time Difference`

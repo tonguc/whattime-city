@@ -9,15 +9,15 @@ import CitySearch from '@/components/CitySearch'
 
 // ✅ Interface with optional isLight prop
 interface HeaderProps {
-  isLight?: boolean  // Optional: Override context isLight
+  isLight?: boolean
 }
 
-export default function Header({ isLight: propIsLight }: HeaderProps = {}) {
+export default function Header(props: HeaderProps = {}) {
   const router = useRouter()
   const {
     currentTheme,
     theme,
-    isLight: contextIsLight,  // Rename to avoid conflict
+    isLight: contextIsLight,
     themeMode,
     setThemeMode,
     clockMode,
@@ -28,7 +28,7 @@ export default function Header({ isLight: propIsLight }: HeaderProps = {}) {
   } = useCityContext()
   
   // ✅ Use prop if provided, otherwise use context
-  const isLight = propIsLight !== undefined ? propIsLight : contextIsLight
+  const isLight = props.isLight !== undefined ? props.isLight : contextIsLight
   
   // ✅ Create theme based on isLight (override context theme if prop provided)
   const activeTheme = {
