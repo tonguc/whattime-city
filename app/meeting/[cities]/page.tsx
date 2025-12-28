@@ -67,12 +67,12 @@ export default function MeetingPlannerPage({ params }: Props) {
   const isLight = timeOfDay === 'day' || timeOfDay === 'dawn'
   
   // Theme colors
-  const theme = {
-    primary: isLight ? 'bg-blue-500' : 'bg-blue-600',
-    secondary: isLight ? 'bg-slate-100' : 'bg-slate-800',
-    text: isLight ? 'text-slate-900' : 'text-white',
-    background: isLight ? 'bg-gradient-to-b from-blue-50 to-white' : 'bg-gradient-to-b from-slate-900 to-slate-800'
-  }
+ const theme = {
+  accentBg: isLight ? 'bg-blue-500' : 'bg-blue-600',
+  accentBgLight: isLight ? 'bg-blue-100' : 'bg-blue-900',
+  accentText: isLight ? 'text-blue-600' : 'text-blue-400',
+  accentBorder: isLight ? 'border-blue-200' : 'border-blue-800'
+}
 
   return (
     <>
