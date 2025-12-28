@@ -1,39 +1,40 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { cities, City, getTier1Cities } from '@/lib/cities'
+import { cities, City } from '@/lib/cities'
 import TimeComparisonContent from '@/components/TimeComparisonContent'
 
 interface TimeComparePageProps {
   params: Promise<{ from: string; to: string }>
 }
 
-// ✅ CRITICAL: Enable dynamic params for cities not in generateStaticParams
+// ✅ KRİTİK AYAR: Listede olmayan şehirler için dinamik üretime izin ver
+// Bu sayede 395 şehrin hepsi çalışır (404 hatası olmaz)
 export const dynamicParams = true
 
-// ✅ ISR: Revalidate pages every 24 hours
+// ✅ ISR: Sayfaları 24 saatte bir (86400 saniye) yenile
 export const revalidate = 86400
 
-// Get city by slug
+// Helper: Slug'dan şehir bulma
 function getCityBySlug(slug: string): City | undefined {
   return cities.find(c => c.slug === slug)
 }
 
-// ✅ Generate static params for TIER 1 CITIES ONLY
-// Keep build fast (~50K pages, ~3 min build)
-// Other combinations render on-demand (thanks to dynamicParams = true)
+// ✅ SADECE POPÜLER ŞEHİRLER İÇİN STATİK SAYFA ÜRET
+// Build süresini kısa tutar (~2 dakika), sunucuyu yormaz.
 export async function generateStaticParams() {
-  // ✅ ONLY TIER 1 CITIES (most popular, ~225 cities)
-  const tier1 = getTier1Cities()
-  const tier1Slugs = tier1.map(c => c.slug)
+  // Strateji: Sadece veritabanındaki ilk 100 şehri "Popüler" kabul et
+  // (Eğer cities.ts nüfusa göre sıralıysa en büyük 100 şehri alır)
+  const POPULAR_CITY_COUNT = 100
+  const tier1Cities = cities.slice(0, POPULAR_CITY_COUNT)
+  const tier1Slugs = tier1Cities.map(c => c.slug)
   
   const params: { from: string; to: string }[] = []
   
-  console.log(`\n🌍 === STATIC GENERATION STRATEGY (TIER 1 ONLY) ===`)
-  console.log(`📊 Total cities in database: ${cities.length}`)
-  console.log(`⭐ Tier 1 cities (most popular): ${tier1Slugs.length}`)
-  console.log(`📦 Static pre-render: ${tier1Slugs.length} cities`)
+  console.log(`\n🌍 === VERCEL STATIC GENERATION STRATEGY ===`)
+  console.log(`📊 Total cities: ${cities.length}`)
+  console.log(`⭐ Pre-rendering top: ${tier1Slugs.length} cities`)
   
-  // Generate all combinations for Tier 1 cities only
+  // Sadece Popüler x Popüler kombinasyonlarını üret
   for (const from of tier1Slugs) {
     for (const to of tier1Slugs) {
       if (from !== to) {
@@ -42,18 +43,13 @@ export async function generateStaticParams() {
     }
   }
   
-  const totalCombinations = tier1Slugs.length * (tier1Slugs.length - 1)
-  
-  console.log(`\n✅ Static pages to generate: ${params.length.toLocaleString()}`)
-  console.log(`🚀 Dynamic params enabled: Other ${(cities.length - tier1Slugs.length)} cities will render on-demand`)
-  console.log(`📈 Total possible combinations: ${(cities.length * (cities.length - 1)).toLocaleString()}`)
-  console.log(`⏱️  Estimated build time: ~3-5 minutes`)
-  console.log(`💾 ISR enabled: Pages revalidate every 24 hours\n`)
+  console.log(`✅ Static pages generated: ${params.length.toLocaleString()}`)
+  console.log(`🚀 Hybrid Mode: Remaining ${(cities.length * cities.length - params.length).toLocaleString()} combinations will render on-demand.`)
   
   return params
 }
 
-// Dynamic metadata for perfect SEO
+// Dinamik SEO Metadata
 export async function generateMetadata({ params }: TimeComparePageProps): Promise<Metadata> {
   const { from, to } = await params
   const fromCity = getCityBySlug(from)
@@ -62,12 +58,12 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
   if (!fromCity || !toCity) {
     return { 
       title: 'City Not Found - whattime.city',
-      description: 'The requested city time comparison could not be found.'
+      description: 'The requested city comparison could not be found.'
     }
   }
   
   const title = `${fromCity.city} to ${toCity.city} Time Difference | whattime.city`
-  const description = `Current time in ${fromCity.city} vs ${toCity.city}. See live clocks, time difference, best time to call, business hours overlap, and schedule meetings across time zones.`
+  const description = `Current time in ${fromCity.city} vs ${toCity.city}. See live clocks, time difference, best time to call, and business hours overlap.`
   
   return {
     title,
@@ -77,11 +73,8 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
       `time in ${fromCity.city} vs ${toCity.city}`,
       `${fromCity.city} to ${toCity.city} time`,
       `best time to call ${toCity.city} from ${fromCity.city}`,
-      `${fromCity.city} ${toCity.city} time zone`,
       'time zone converter',
-      'world clock',
-      `${fromCity.city} time`,
-      `${toCity.city} time`
+      'world clock'
     ],
     openGraph: {
       title: `${fromCity.city} ↔ ${toCity.city} Time Converter`,
@@ -94,15 +87,9 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
           url: `https://whattime.city/og-image.png`,
           width: 1200,
           height: 630,
-          alt: `${fromCity.city} to ${toCity.city} Time Difference`
+          alt: `${fromCity.city} to ${toCity.city} Time Comparison`
         }
       ]
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${fromCity.city} ↔ ${toCity.city} Time`,
-      description,
-      images: ['https://whattime.city/og-image.png']
     },
     alternates: {
       canonical: `https://whattime.city/time/${from}/${to}/`
@@ -110,22 +97,17 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
     robots: {
       index: true,
       follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    },
+    }
   }
 }
 
+// Ana Sayfa Bileşeni
 export default async function TimeComparePage({ params }: TimeComparePageProps) {
   const { from, to } = await params
   const fromCity = getCityBySlug(from)
   const toCity = getCityBySlug(to)
   
+  // Eğer şehir veritabanında hiç yoksa 404 ver
   if (!fromCity || !toCity) {
     notFound()
   }

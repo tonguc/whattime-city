@@ -1,56 +1,39 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // ✅ REMOVED: output: 'export' - Enables dynamic rendering on Vercel
+  // ✅ "output: 'export'" YOK. (Doğru, sildik)
   
-  // Trailing slashes for consistency with existing URLs
+  // URL sonuna slash ekler (SEO için iyidir)
   trailingSlash: true,
   
-  // Image optimization
+  // Resim optimizasyonu (Vercel bunu sever)
   images: {
     formats: ['image/avif', 'image/webp'],
+    // Device sizes varsayılan bırakılabilir ama senin ayarların da kalsın, sorun yok.
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    unoptimized: false, // Vercel'de false olmalı (default budur)
   },
+
+  // ⚠️ Experimental "optimizeCss" KALDIRILDI. 
+  // Build hatalarının (TypeError: r is not a constructor) ana sebebi genelde budur.
   
-  // Headers for security and caching
+  // Headers (Güvenlik ve Cache) - Olduğu gibi kalabilir, sorunsuz.
   async headers() {
     return [
       {
         source: '/:path*',
         headers: [
-          {
-            key: 'X-DNS-Prefetch-Control',
-            value: 'on'
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN'
-          },
+          { key: 'X-DNS-Prefetch-Control', value: 'on' },
+          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
         ],
       },
       {
-        // Cache static assets aggressively
         source: '/static/:path*',
         headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
         ],
       },
     ]
-  },
-  
-  // Redirects for SEO
-  async redirects() {
-    return [
-      // Add any redirects here if needed
-    ]
-  },
-  
-  // Experimental features for better performance
-  experimental: {
-    optimizeCss: true,
   },
 }
 
