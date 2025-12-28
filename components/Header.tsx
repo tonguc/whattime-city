@@ -7,35 +7,22 @@ import { useCityContext } from '@/lib/CityContext'
 import { City, searchCities } from '@/lib/cities'
 import CitySearch from '@/components/CitySearch'
 
-// ✅ Interface with optional isLight prop
 interface HeaderProps {
   isLight?: boolean
 }
 
-export default function Header(props: HeaderProps = {}) {
+function Header({ isLight: propsIsLight }: HeaderProps) {
   const router = useRouter()
-  const {
-    currentTheme,
-    theme,
-    isLight: contextIsLight,
-    themeMode,
-    setThemeMode,
-    clockMode,
-    setClockMode,
-    use12Hour,
-    setUse12Hour,
-    getLocalTime,
-  } = useCityContext()
+  const context = useCityContext()
   
   // ✅ Use prop if provided, otherwise use context
-  const isLight = props.isLight !== undefined ? props.isLight : contextIsLight
+  const isLight = propsIsLight !== undefined ? propsIsLight : context.isLight
   
-  // ✅ Create theme based on isLight (override context theme if prop provided)
+  // ✅ Create local theme
   const activeTheme = {
     text: isLight ? 'text-slate-800' : 'text-white',
     textMuted: isLight ? 'text-slate-500' : 'text-slate-400',
     accentBg: 'bg-blue-600',
-    card: isLight ? 'bg-white/80 border-slate-200' : 'bg-slate-900/80 border-slate-700'
   }
   
   // Search state
@@ -64,7 +51,6 @@ export default function Header(props: HeaderProps = {}) {
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement
       
-      // CRITICAL FIX: Don't close if clicking a search result button
       if (target.closest('[data-search-result-button]')) {
         return
       }
@@ -81,12 +67,9 @@ export default function Header(props: HeaderProps = {}) {
   }, [])
   
   const handleSearchSelect = (city: City) => {
-    console.log('🔍 Search select clicked:', city.slug, city.city)
     router.push(`/${city.slug}`)
-    console.log('✅ Router.push called:', `/${city.slug}`)
     setSearchQuery('')
     setShowSearchDropdown(false)
-    console.log('🔒 Dropdown closed')
   }
   
   const handleLogoClick = () => {
@@ -100,15 +83,11 @@ export default function Header(props: HeaderProps = {}) {
         : 'bg-slate-900/80 border-slate-700'
     }`}>
       <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2 sm:gap-3">
-        {/* Logo - Always goes to HOME */}
         <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0">
-          {/* Mobile: Compact logo with text */}
           <img src={isLight ? "/logo-mobile.svg" : "/logo-mobile-dark.svg"} alt="whattime.city" className="h-9 sm:hidden" />
-          {/* Desktop: Full logo */}
           <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" className="h-10 hidden sm:block" />
         </button>
         
-        {/* Search - Closer to logo, narrower */}
         <div className="flex-1 max-w-xs hidden sm:block" ref={searchRef}>
           <div className="relative">
             <div className={`flex items-center gap-2 px-3 py-2 rounded-full ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
@@ -136,7 +115,6 @@ export default function Header(props: HeaderProps = {}) {
                     onClick={(e) => {
                       e.preventDefault()
                       e.stopPropagation()
-                      console.log('💻 Desktop button clicked:', city.slug)
                       handleSearchSelect(city)
                     }}
                     className={`w-full px-4 py-3 text-left flex items-center justify-between ${isLight ? 'hover:bg-slate-50' : 'hover:bg-slate-700'}`}>
@@ -144,7 +122,7 @@ export default function Header(props: HeaderProps = {}) {
                       <span className={activeTheme.text}>{city.city}</span>
                       <span className={`text-sm ml-2 ${activeTheme.textMuted}`}>{city.country}</span>
                     </div>
-                    <span className={`text-sm ${activeTheme.textMuted}`}>{getLocalTime(city)}</span>
+                    <span className={`text-sm ${activeTheme.textMuted}`}>{context.getLocalTime(city)}</span>
                   </button>
                 ))}
               </div>
@@ -152,7 +130,6 @@ export default function Header(props: HeaderProps = {}) {
           </div>
         </div>
         
-        {/* Nav Links */}
         <nav className="flex items-center gap-1 sm:gap-1">
           <Link href="/cities" className={`hidden sm:block px-2.5 py-2 rounded-lg text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
             Cities
@@ -170,7 +147,6 @@ export default function Header(props: HeaderProps = {}) {
             Tools
           </Link>
           
-          {/* Alarm Button */}
           <Link 
             href="/tools/alarm" 
             className={`hidden sm:flex p-2 rounded-lg transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}
@@ -182,7 +158,6 @@ export default function Header(props: HeaderProps = {}) {
             </svg>
           </Link>
           
-          {/* Settings Dropdown */}
           <div className="relative" ref={settingsRef}>
             <button 
               onClick={() => setShowSettings(!showSettings)}
@@ -199,29 +174,26 @@ export default function Header(props: HeaderProps = {}) {
               <div className={`absolute right-0 top-full mt-2 w-56 rounded-xl shadow-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'} p-4 z-50`}>
                 <h4 className={`text-xs font-semibold uppercase tracking-wide mb-3 ${activeTheme.textMuted}`}>Preferences</h4>
                 
-                {/* Clock Display */}
                 <div className="mb-4">
                   <label className={`text-sm font-medium ${activeTheme.text} mb-2 block`}>Clock Display</label>
                   <div className="flex gap-2">
                     {(['digital', 'analog'] as const).map(mode => (
-                      <button key={mode} onClick={() => setClockMode(mode)}
-                        className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${clockMode === mode ? `${activeTheme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>
+                      <button key={mode} onClick={() => context.setClockMode(mode)}
+                        className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${context.clockMode === mode ? `${activeTheme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>
                         {mode === 'digital' ? 'Digital' : 'Analog'}
                       </button>
                     ))}
                   </div>
                 </div>
                 
-                {/* Time Format */}
                 <div className="mb-4">
                   <label className={`text-sm font-medium ${activeTheme.text} mb-2 block`}>Time Format</label>
                   <div className="flex gap-2">
-                    <button onClick={() => setUse12Hour(false)} className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${!use12Hour ? `${activeTheme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>24h</button>
-                    <button onClick={() => setUse12Hour(true)} className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${use12Hour ? `${activeTheme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>12h</button>
+                    <button onClick={() => context.setUse12Hour(false)} className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${!context.use12Hour ? `${activeTheme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>24h</button>
+                    <button onClick={() => context.setUse12Hour(true)} className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${context.use12Hour ? `${activeTheme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>12h</button>
                   </div>
                 </div>
                 
-                {/* Theme */}
                 <div>
                   <label className={`text-sm font-medium ${activeTheme.text} mb-2 block`}>Theme</label>
                   <div className="flex gap-2">
@@ -229,9 +201,9 @@ export default function Header(props: HeaderProps = {}) {
                       const labels = { light: 'Light Mode', auto: 'Auto (Day/Night)', dark: 'Dark Mode' }
                       const icons = { light: '☀️', auto: '🔄', dark: '🌙' }
                       return (
-                        <button key={mode} onClick={() => setThemeMode(mode)}
+                        <button key={mode} onClick={() => context.setThemeMode(mode)}
                           title={labels[mode]}
-                          className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${themeMode === mode ? `${activeTheme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600 hover:bg-slate-200' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'}`}>
+                          className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${context.themeMode === mode ? `${activeTheme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600 hover:bg-slate-200' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'}`}>
                           {icons[mode]}
                         </button>
                       )
@@ -244,7 +216,6 @@ export default function Header(props: HeaderProps = {}) {
         </nav>
       </div>
       
-      {/* Mobile Search - Using CitySearch Component */}
       <div className="sm:hidden px-4 pb-3">
         <CitySearch 
           placeholder="Search city..."
@@ -255,3 +226,5 @@ export default function Header(props: HeaderProps = {}) {
     </header>
   )
 }
+
+export default Header
