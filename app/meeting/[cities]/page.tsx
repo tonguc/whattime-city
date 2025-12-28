@@ -60,8 +60,8 @@ export default function MeetingPlannerPage({ params }: Props) {
   const now = new Date()
   const timeOfDay = getTimeOfDay(
     now,
-    city1.latitude || 0,
-    city1.longitude || 0
+    city1.lat || 0,
+    city1.lng || 0
   )
   
   const isLight = timeOfDay === 'day' || timeOfDay === 'dawn'
