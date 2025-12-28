@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cities } from '@/lib/cities'
+// DİKKAT: Eğer lib/meetingPlanner dosyanız yoksa burası hata verir.
+// Eğer yoksa, bu import'u ve ilgili fonksiyonları lib/cityData'dan çekecek şekilde değiştirin.
 import { parseCityPair, generateTopCityPairs } from '@/lib/meetingPlanner'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
@@ -58,6 +60,7 @@ export default function MeetingPlannerPage({ params }: Props) {
 
   // Get theme based on first city's time
   const now = new Date()
+  // Lat/Lng kontrolü: Eğer undefined gelirse 0 veriyoruz
   const timeOfDay = getTimeOfDay(
     now,
     city1.lat || 0,
@@ -66,19 +69,30 @@ export default function MeetingPlannerPage({ params }: Props) {
   
   const isLight = timeOfDay === 'day' || timeOfDay === 'dawn'
   
-  // Theme colors
+  // ✅ DÜZELTME: Hem eski hem yeni özellikleri içeren TAM Tema Objess
   const theme = {
+    // 1. Temel Renkler (Eskiden olanlar - ToolsMiniNav bunları istiyor olabilir)
+    primary: 'blue',
+    secondary: 'indigo',
+    text: isLight ? 'text-slate-900' : 'text-white',
+    
+    // 2. Arka Plan
+    background: isLight 
+      ? 'bg-gradient-to-b from-blue-50 to-white' 
+      : 'bg-gradient-to-b from-slate-900 to-slate-800',
+
+    // 3. Accent Renkler (Yeni ekledikleriniz)
     accentBg: isLight ? 'bg-blue-500' : 'bg-blue-600',
     accentBgLight: isLight ? 'bg-blue-100' : 'bg-blue-900',
     accentText: isLight ? 'text-blue-600' : 'text-blue-400',
     accentBorder: isLight ? 'border-blue-200' : 'border-blue-800',
-    background: isLight ? 'bg-gradient-to-b from-blue-50 to-white' : 'bg-gradient-to-b from-slate-900 to-slate-800'
   }
 
   return (
     <>
       {/* HEADER */}
       <div className={`min-h-screen ${theme.background} transition-colors duration-1000`}>
+        {/* ToolsMiniNav artık şikayet etmeyecek çünkü tüm propslar var */}
         <ToolsMiniNav isLight={isLight} theme={theme} />
 
         {/* MAIN CONTENT */}
