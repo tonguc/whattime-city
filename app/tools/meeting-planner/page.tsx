@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { cities, City } from '@/lib/cities'
 import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
@@ -9,6 +10,7 @@ import Footer from '@/components/Footer'
 import TimeSlider from '@/components/TimeSlider'
 
 export default function MeetingPlannerPage() {
+  const router = useRouter()
   const { theme, isLight, selectedCity } = useToolsTheme()
   
   const [currentTime, setCurrentTime] = useState(new Date())
@@ -29,6 +31,25 @@ export default function MeetingPlannerPage() {
       })
     }
   }, [selectedCity])
+
+  // 🆕 URL Sync: Redirect to dynamic route when first two cities change
+  useEffect(() => {
+    // Safety check: both cities must exist
+    if (selectedCities[0] && selectedCities[1]) {
+      const city1 = selectedCities[0].slug
+      const city2 = selectedCities[1].slug
+      // Alphabetical order for canonical URL
+      const sorted = [city1, city2].sort()
+      const newUrl = `/meeting/${sorted.join('-')}/`
+      
+      // Only redirect once, with a small delay to prevent loop
+      const timer = setTimeout(() => {
+        router.push(newUrl)
+      }, 500)
+      
+      return () => clearTimeout(timer)
+    }
+  }, [selectedCities[0]?.slug, selectedCities[1]?.slug, router])
 
   // Get current hour in each city
   const getCityHour = (timezone: string) => {
