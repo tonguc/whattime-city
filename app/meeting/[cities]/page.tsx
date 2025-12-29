@@ -6,8 +6,6 @@ import ToolsMiniNav from '@/components/ToolsMiniNav'
 import MeetingPlannerClient from '@/components/meeting/MeetingPlannerClient'
 import DynamicContent from '@/components/meeting/DynamicContent'
 import FAQSchema from '@/components/meeting/FAQSchema'
-import { getTimeOfDay } from '@/lib/sun-calculator'
-import { themes, isLightTheme } from '@/lib/themes'
 
 interface Props {
   params: { cities: string }
@@ -81,40 +79,28 @@ export default function MeetingPlannerPage({ params }: Props) {
     notFound()
   }
 
-  // Use first city for theme calculation
-  const firstCity = cityList[0]
-
-  // Time-based auto theme (restored)
-  const now = new Date()
-  const timeOfDay = getTimeOfDay(
-    now,
-    firstCity.lat || 0,
-    firstCity.lng || 0
-  )
+  // FORCE LIGHT MODE for consistent professional look
+  const isLight = true
   
-  // Use central theme system with auto mode
-  const currentTheme = themes[timeOfDay]
-  const isLight = isLightTheme(timeOfDay)
-  
-  // Theme colors for components
+  // Light mode theme colors for components
   const themeColors = {
-    bg: currentTheme.bg,
-    card: currentTheme.card,
-    text: currentTheme.text,
-    textMuted: currentTheme.textMuted,
-    accent: currentTheme.accent,
-    accentBg: currentTheme.accentBg,
-    accentBgLight: currentTheme.accentBgLight,
-    accentText: currentTheme.accentText,
-    accentBorder: currentTheme.accentBorder,
+    bg: 'from-slate-50 via-gray-50 to-slate-100',
+    card: 'bg-white border-slate-200',
+    text: 'text-slate-800',
+    textMuted: 'text-slate-600',
+    accent: 'blue',
+    accentBg: 'bg-blue-600',
+    accentBgLight: 'bg-blue-100',
+    accentText: 'text-blue-600',
+    accentBorder: 'border-blue-200',
   }
   
   // Theme for ToolsMiniNav
   const theme = {
-    accentBg: currentTheme.accentBg,
-    accentBgLight: currentTheme.accentBgLight,
-    accentText: currentTheme.accentText,
-    accentBorder: currentTheme.accentBorder
+    accentBg: 'bg-blue-600',
+    accentBgLight: 'bg-blue-100',
+    accentText: 'text-blue-600',
+    accentBorder: 'border-blue-200'
   }
 
   // Calculate overlap count for SSR (SEO)

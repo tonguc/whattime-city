@@ -15,8 +15,12 @@ export default function ToolPageWrapper({ children }: ToolPageWrapperProps) {
   const [showAlarmModal, setShowAlarmModal] = useState(false)
   const { alarms, setAlarms, activeAlarm, dismissAlarm } = useAlarm()
 
+  // FORCE LIGHT MODE for tool pages - consistent professional look
+  const forcedIsLight = true
+  const forcedBg = 'from-slate-50 via-gray-50 to-slate-100'
+
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
+    <div className={`min-h-screen bg-gradient-to-br ${forcedBg} transition-colors duration-500`}>
       {/* Shared Header */}
       <Header />
 
@@ -29,7 +33,7 @@ export default function ToolPageWrapper({ children }: ToolPageWrapperProps) {
       <button 
         onClick={() => setShowAlarmModal(true)} 
         title="Set time alert for any city"
-        className={`fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110 ${theme.accentBg} text-white`}
+        className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110 bg-blue-600 text-white"
       >
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
@@ -42,11 +46,11 @@ export default function ToolPageWrapper({ children }: ToolPageWrapperProps) {
         )}
       </button>
       
-      {/* Alarm Modal */}
+      {/* Alarm Modal - Keep theme for modal styling */}
       <AlarmModal
         isOpen={showAlarmModal}
         onClose={() => setShowAlarmModal(false)}
-        isLight={isLight}
+        isLight={forcedIsLight}
         theme={theme}
         alarms={alarms}
         setAlarms={setAlarms}
@@ -56,7 +60,7 @@ export default function ToolPageWrapper({ children }: ToolPageWrapperProps) {
       <ActiveAlarmPopup
         alarm={activeAlarm}
         onDismiss={dismissAlarm}
-        isLight={isLight}
+        isLight={forcedIsLight}
         theme={theme}
       />
     </div>

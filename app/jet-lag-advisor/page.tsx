@@ -1,25 +1,23 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { cities } from '@/lib/cities'
-import { useCityContext } from '@/lib/CityContext'
 import ToolPageWrapper from '@/components/ToolPageWrapper'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 
-export default function JetLagAdvisorPage() {
-  const { theme, isLight, activeCity } = useCityContext()
-  
+// Consistent card styling for light mode
+const cardClass = 'bg-white border border-slate-200 rounded-2xl shadow-sm'
+const inputClass = 'bg-white border border-gray-300 text-slate-900 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
+const labelClass = 'text-slate-600'
+const headingClass = 'text-slate-800'
+const textClass = 'text-slate-600'
+const accentClass = 'text-blue-600'
+
+export default function JetLagPage() {
   const [fromCity, setFromCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
   const [toCity, setToCity] = useState(() => cities.find(c => c.city === 'Tokyo') || cities[2])
-  
-  // Sync fromCity with context when it becomes available
-  useEffect(() => {
-    if (activeCity) {
-      setFromCity(activeCity)
-    }
-  }, [activeCity])
 
   // Calculate time difference
   const getTimeDiff = () => {
@@ -51,34 +49,30 @@ export default function JetLagAdvisorPage() {
   return (
     <ToolPageWrapper>
       {/* Mini Navigation */}
-      <ToolsMiniNav isLight={isLight} theme={theme} />
+      <ToolsMiniNav />
 
       {/* Tool Hero */}
       <div className="text-center mb-8">
-        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${headingClass}`}>
           Jet Lag Advisor
         </h1>
-        <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+        <p className={`text-lg ${textClass}`}>
           Get personalized jet lag recovery tips
         </p>
       </div>
 
-      {/* Tool Interface */}
-      <div className={`rounded-2xl p-6 mb-8 backdrop-blur-xl border ${
-        isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
-      }`}>
+      {/* Tool Interface - Main Card */}
+      <div className={`${cardClass} p-6 mb-8`}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {/* From */}
           <div>
-            <label className={`block text-sm font-medium mb-2 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+            <label className={`block text-sm font-medium mb-2 ${labelClass}`}>
               Traveling From
             </label>
             <select
               value={fromCity.city}
               onChange={(e) => setFromCity(cities.find(c => c.city === e.target.value) || cities[0])}
-              className={`w-full px-4 py-3 rounded-xl border ${
-                isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-700 border-slate-600 text-white'
-              }`}
+              className={`w-full px-4 py-3 ${inputClass}`}
             >
               {cities.map(city => (
                 <option key={city.city} value={city.city}>{city.city}, {city.country}</option>
@@ -88,15 +82,13 @@ export default function JetLagAdvisorPage() {
 
           {/* To */}
           <div>
-            <label className={`block text-sm font-medium mb-2 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+            <label className={`block text-sm font-medium mb-2 ${labelClass}`}>
               Traveling To
             </label>
             <select
               value={toCity.city}
               onChange={(e) => setToCity(cities.find(c => c.city === e.target.value) || cities[1])}
-              className={`w-full px-4 py-3 rounded-xl border ${
-                isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-700 border-slate-600 text-white'
-              }`}
+              className={`w-full px-4 py-3 ${inputClass}`}
             >
               {cities.map(city => (
                 <option key={city.city} value={city.city}>{city.city}, {city.country}</option>
@@ -106,23 +98,23 @@ export default function JetLagAdvisorPage() {
         </div>
 
         {/* Results */}
-        <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-100' : 'bg-slate-700/50'}`}>
+        <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
             <div>
-              <div className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Time Difference</div>
-              <div className={`text-2xl font-bold ${theme.accentText}`}>
+              <div className="text-sm text-slate-500">Time Difference</div>
+              <div className={`text-2xl font-bold ${accentClass}`}>
                 {timeDiff > 0 ? '+' : ''}{timeDiff} hours
               </div>
             </div>
             <div>
-              <div className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Direction</div>
-              <div className={`text-2xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <div className="text-sm text-slate-500">Direction</div>
+              <div className={`text-2xl font-bold ${headingClass}`}>
                 {timeDiff === 0 ? 'Same zone' : `Traveling ${direction}`}
               </div>
             </div>
             <div>
-              <div className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Est. Recovery</div>
-              <div className={`text-2xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <div className="text-sm text-slate-500">Est. Recovery</div>
+              <div className={`text-2xl font-bold ${headingClass}`}>
                 {timeDiff === 0 ? 'None' : `${recoveryDays} days`}
               </div>
             </div>
@@ -132,13 +124,13 @@ export default function JetLagAdvisorPage() {
         {/* Tips */}
         {timeDiff !== 0 && (
           <div className="mt-6">
-            <h3 className={`font-medium mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+            <h3 className={`font-medium mb-3 ${headingClass}`}>
               Recovery Tips for {direction}ward travel:
             </h3>
-            <ul className={`space-y-2 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+            <ul className={`space-y-2 ${textClass}`}>
               {tips.map((tip, i) => (
                 <li key={i} className="flex gap-2 text-sm">
-                  <span className={theme.accentText}>✓</span>
+                  <span className={accentClass}>✓</span>
                   {tip}
                 </li>
               ))}
@@ -148,33 +140,31 @@ export default function JetLagAdvisorPage() {
       </div>
 
       {/* SEO SECTION 1: Common Use Cases */}
-      <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
-        isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
-      }`}>
-        <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+      <section className={`${cardClass} p-6 mb-6`}>
+        <h2 className={`text-xl font-semibold mb-4 ${headingClass}`}>
           Common Use Cases
         </h2>
-        <ul className={`space-y-3 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+        <ul className={`space-y-3 ${textClass}`}>
           <li className="flex gap-3">
-            <span className={`${theme.accentText} mt-1`}>•</span>
+            <span className={`${accentClass} mt-1`}>•</span>
             <div>
               <strong>Business trip preparation</strong> — Arrive alert and ready for important meetings.
             </div>
           </li>
           <li className="flex gap-3">
-            <span className={`${theme.accentText} mt-1`}>•</span>
+            <span className={`${accentClass} mt-1`}>•</span>
             <div>
               <strong>Vacation planning</strong> — Minimize lost vacation days to jet lag recovery.
             </div>
           </li>
           <li className="flex gap-3">
-            <span className={`${theme.accentText} mt-1`}>•</span>
+            <span className={`${accentClass} mt-1`}>•</span>
             <div>
               <strong>Athletic competition travel</strong> — Optimize performance by adjusting ahead of events.
             </div>
           </li>
           <li className="flex gap-3">
-            <span className={`${theme.accentText} mt-1`}>•</span>
+            <span className={`${accentClass} mt-1`}>•</span>
             <div>
               <strong>Relocating internationally</strong> — Plan your first week in a new time zone.
             </div>
@@ -183,13 +173,11 @@ export default function JetLagAdvisorPage() {
       </section>
 
       {/* SEO SECTION 2: Who Is This Tool For? */}
-      <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
-        isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
-      }`}>
-        <h2 className={`text-xl font-semibold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+      <section className={`${cardClass} p-6 mb-6`}>
+        <h2 className={`text-xl font-semibold mb-3 ${headingClass}`}>
           Who Is This Tool For?
         </h2>
-        <p className={`${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+        <p className={textClass}>
           Long-haul travelers, business executives, athletes, and anyone crossing 3+ time zones will benefit 
           from these personalized recommendations. The tips are based on circadian rhythm science and vary 
           depending on whether you're traveling east or west.
@@ -197,44 +185,34 @@ export default function JetLagAdvisorPage() {
       </section>
 
       {/* SEO SECTION 3: Related Tools */}
-      <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
-        isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
-      }`}>
-        <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+      <section className={`${cardClass} p-6 mb-6`}>
+        <h2 className={`text-xl font-semibold mb-4 ${headingClass}`}>
           Related Tools
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <Link href="/flight-time" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
-            isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
-          }`}>
-            <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Flight Time</div>
-            <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Calculate arrivals</div>
+          <Link href="/flight-time" className="p-4 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-all hover:scale-[1.02]">
+            <div className={`text-sm font-medium ${headingClass}`}>Flight Time</div>
+            <div className="text-xs text-slate-500">Calculate arrivals</div>
           </Link>
-          <Link href="/time-converter" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
-            isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
-          }`}>
-            <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Time Converter</div>
-            <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Quick conversions</div>
+          <Link href="/time-converter" className="p-4 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-all hover:scale-[1.02]">
+            <div className={`text-sm font-medium ${headingClass}`}>Time Converter</div>
+            <div className="text-xs text-slate-500">Quick conversions</div>
           </Link>
-          <Link href="/world-alarm" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
-            isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
-          }`}>
-            <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>World Alarm</div>
-            <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Adjust sleep schedule</div>
+          <Link href="/world-alarm" className="p-4 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-all hover:scale-[1.02]">
+            <div className={`text-sm font-medium ${headingClass}`}>World Alarm</div>
+            <div className="text-xs text-slate-500">Adjust sleep schedule</div>
           </Link>
         </div>
       </section>
 
       {/* SEO SECTION 4: FAQ */}
-      <section className={`rounded-2xl p-6 mb-8 backdrop-blur-xl border ${
-        isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
-      }`}>
-        <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+      <section className={`${cardClass} p-6 mb-8`}>
+        <h2 className={`text-xl font-semibold mb-4 ${headingClass}`}>
           Frequently Asked Questions
         </h2>
-        <div className={`space-y-4 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+        <div className={`space-y-4 ${textClass}`}>
           <div>
-            <h3 className={`font-medium mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+            <h3 className={`font-medium mb-1 ${headingClass}`}>
               Is eastward or westward travel worse for jet lag?
             </h3>
             <p className="text-sm">
@@ -242,7 +220,7 @@ export default function JetLagAdvisorPage() {
             </p>
           </div>
           <div>
-            <h3 className={`font-medium mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+            <h3 className={`font-medium mb-1 ${headingClass}`}>
               How is recovery time calculated?
             </h3>
             <p className="text-sm">
@@ -250,7 +228,7 @@ export default function JetLagAdvisorPage() {
             </p>
           </div>
           <div>
-            <h3 className={`font-medium mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+            <h3 className={`font-medium mb-1 ${headingClass}`}>
               Do these tips work for everyone?
             </h3>
             <p className="text-sm">
@@ -261,7 +239,7 @@ export default function JetLagAdvisorPage() {
       </section>
 
       {/* Footer */}
-      <Footer isLight={isLight} />
+      <Footer isLight={true} />
     </ToolPageWrapper>
   )
 }

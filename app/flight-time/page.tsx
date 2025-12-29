@@ -1,28 +1,26 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { cities } from '@/lib/cities'
-import { useCityContext } from '@/lib/CityContext'
 import ToolPageWrapper from '@/components/ToolPageWrapper'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 
+// Consistent card styling for light mode
+const cardClass = 'bg-white border border-slate-200 rounded-2xl shadow-sm'
+const inputClass = 'bg-white border border-gray-300 text-slate-900 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
+const labelClass = 'text-slate-600'
+const headingClass = 'text-slate-800'
+const textClass = 'text-slate-600'
+const accentClass = 'text-blue-600'
+
 export default function FlightTimePage() {
-  const { theme, isLight, activeCity } = useCityContext()
-  
   const [departureCity, setDepartureCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
   const [arrivalCity, setArrivalCity] = useState(() => cities.find(c => c.city === 'London') || cities[1])
   const [departureHour, setDepartureHour] = useState(10)
   const [departureMinute, setDepartureMinute] = useState(0)
   const [flightDuration, setFlightDuration] = useState({ hours: 7, minutes: 0 })
-  
-  // Sync departureCity with context when it becomes available
-  useEffect(() => {
-    if (activeCity) {
-      setDepartureCity(activeCity)
-    }
-  }, [activeCity])
 
   // Calculate arrival time
   const getArrivalTime = () => {
@@ -50,32 +48,28 @@ export default function FlightTimePage() {
   return (
     <ToolPageWrapper>
       {/* Mini Navigation */}
-      <ToolsMiniNav isLight={isLight} theme={theme} />
+      <ToolsMiniNav />
 
       {/* Tool Hero */}
       <div className="text-center mb-8">
-        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${headingClass}`}>
           Flight Time Calculator
         </h1>
-        <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+        <p className={`text-lg ${textClass}`}>
           Calculate your arrival time in local time
         </p>
       </div>
 
-      {/* Tool Interface */}
-      <div className={`rounded-2xl p-6 mb-8 backdrop-blur-xl border ${
-        isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
-      }`}>
+      {/* Tool Interface - Main Card */}
+      <div className={`${cardClass} p-6 mb-8`}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Departure */}
           <div>
-            <h3 className={`font-medium mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>Departure</h3>
+            <h3 className={`font-medium mb-3 ${headingClass}`}>Departure</h3>
             <select
               value={departureCity.city}
               onChange={(e) => setDepartureCity(cities.find(c => c.city === e.target.value) || cities[0])}
-              className={`w-full px-4 py-3 rounded-xl border mb-3 ${
-                isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-700 border-slate-600 text-white'
-              }`}
+              className={`w-full px-4 py-3 ${inputClass} mb-3`}
             >
               {cities.map(city => (
                 <option key={city.city} value={city.city}>{city.city}, {city.country}</option>
@@ -85,9 +79,7 @@ export default function FlightTimePage() {
               <select
                 value={departureHour}
                 onChange={(e) => setDepartureHour(parseInt(e.target.value))}
-                className={`flex-1 px-3 py-2 rounded-lg border ${
-                  isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-700 border-slate-600 text-white'
-                }`}
+                className={`flex-1 px-3 py-2 ${inputClass}`}
               >
                 {Array.from({ length: 24 }, (_, i) => (
                   <option key={i} value={i}>{i.toString().padStart(2, '0')}:00</option>
@@ -96,9 +88,7 @@ export default function FlightTimePage() {
               <select
                 value={departureMinute}
                 onChange={(e) => setDepartureMinute(parseInt(e.target.value))}
-                className={`flex-1 px-3 py-2 rounded-lg border ${
-                  isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-700 border-slate-600 text-white'
-                }`}
+                className={`flex-1 px-3 py-2 ${inputClass}`}
               >
                 {[0, 15, 30, 45].map(m => (
                   <option key={m} value={m}>:{m.toString().padStart(2, '0')}</option>
@@ -109,27 +99,25 @@ export default function FlightTimePage() {
 
           {/* Arrival */}
           <div>
-            <h3 className={`font-medium mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>Arrival</h3>
+            <h3 className={`font-medium mb-3 ${headingClass}`}>Arrival</h3>
             <select
               value={arrivalCity.city}
               onChange={(e) => setArrivalCity(cities.find(c => c.city === e.target.value) || cities[1])}
-              className={`w-full px-4 py-3 rounded-xl border mb-3 ${
-                isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-700 border-slate-600 text-white'
-              }`}
+              className={`w-full px-4 py-3 ${inputClass} mb-3`}
             >
               {cities.map(city => (
                 <option key={city.city} value={city.city}>{city.city}, {city.country}</option>
               ))}
             </select>
-            <div className={`text-center py-2 text-2xl font-bold ${theme.accentText}`}>
+            <div className={`text-center py-2 text-2xl font-bold ${accentClass}`}>
               {arrival.time} {arrival.nextDay && <span className="text-sm">(+1 day)</span>}
             </div>
           </div>
         </div>
 
         {/* Flight Duration */}
-        <div className="mt-6 pt-6 border-t border-slate-200/50">
-          <label className={`block text-sm font-medium mb-2 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+        <div className="mt-6 pt-6 border-t border-slate-200">
+          <label className={`block text-sm font-medium mb-2 ${labelClass}`}>
             Flight Duration
           </label>
           <div className="flex gap-4 items-center">
@@ -140,11 +128,9 @@ export default function FlightTimePage() {
                 max="24"
                 value={flightDuration.hours}
                 onChange={(e) => setFlightDuration({ ...flightDuration, hours: parseInt(e.target.value) || 0 })}
-                className={`w-20 px-3 py-2 rounded-lg border text-center ${
-                  isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-700 border-slate-600 text-white'
-                }`}
+                className={`w-20 px-3 py-2 text-center ${inputClass}`}
               />
-              <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>hours</span>
+              <span className={labelClass}>hours</span>
             </div>
             <div className="flex items-center gap-2">
               <input
@@ -153,44 +139,40 @@ export default function FlightTimePage() {
                 max="59"
                 value={flightDuration.minutes}
                 onChange={(e) => setFlightDuration({ ...flightDuration, minutes: parseInt(e.target.value) || 0 })}
-                className={`w-20 px-3 py-2 rounded-lg border text-center ${
-                  isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-700 border-slate-600 text-white'
-                }`}
+                className={`w-20 px-3 py-2 text-center ${inputClass}`}
               />
-              <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>minutes</span>
+              <span className={labelClass}>minutes</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* SEO SECTION 1: Common Use Cases */}
-      <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
-        isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
-      }`}>
-        <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+      <section className={`${cardClass} p-6 mb-6`}>
+        <h2 className={`text-xl font-semibold mb-4 ${headingClass}`}>
           Common Use Cases
         </h2>
-        <ul className={`space-y-3 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+        <ul className={`space-y-3 ${textClass}`}>
           <li className="flex gap-3">
-            <span className={`${theme.accentText} mt-1`}>•</span>
+            <span className={`${accentClass} mt-1`}>•</span>
             <div>
               <strong>Airport pickup coordination</strong> — Let someone know exactly when you'll land in their time.
             </div>
           </li>
           <li className="flex gap-3">
-            <span className={`${theme.accentText} mt-1`}>•</span>
+            <span className={`${accentClass} mt-1`}>•</span>
             <div>
               <strong>Hotel check-in planning</strong> — Verify if you'll arrive in time for check-in.
             </div>
           </li>
           <li className="flex gap-3">
-            <span className={`${theme.accentText} mt-1`}>•</span>
+            <span className={`${accentClass} mt-1`}>•</span>
             <div>
               <strong>Connecting flight timing</strong> — Ensure you have enough layover time.
             </div>
           </li>
           <li className="flex gap-3">
-            <span className={`${theme.accentText} mt-1`}>•</span>
+            <span className={`${accentClass} mt-1`}>•</span>
             <div>
               <strong>Meeting scheduling on arrival day</strong> — Know if you can make that afternoon meeting.
             </div>
@@ -199,13 +181,11 @@ export default function FlightTimePage() {
       </section>
 
       {/* SEO SECTION 2: Who Is This Tool For? */}
-      <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
-        isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
-      }`}>
-        <h2 className={`text-xl font-semibold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+      <section className={`${cardClass} p-6 mb-6`}>
+        <h2 className={`text-xl font-semibold mb-3 ${headingClass}`}>
           Who Is This Tool For?
         </h2>
-        <p className={`${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+        <p className={textClass}>
           Frequent flyers, travel planners, and anyone booking international flights will find this tool useful. 
           It eliminates confusion about what time you'll actually arrive at your destination in local time, 
           especially when crossing multiple time zones.
@@ -213,44 +193,34 @@ export default function FlightTimePage() {
       </section>
 
       {/* SEO SECTION 3: Related Tools */}
-      <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
-        isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
-      }`}>
-        <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+      <section className={`${cardClass} p-6 mb-6`}>
+        <h2 className={`text-xl font-semibold mb-4 ${headingClass}`}>
           Related Tools
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <Link href="/jet-lag-advisor" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
-            isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
-          }`}>
-            <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Jet Lag Advisor</div>
-            <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Recovery tips</div>
+          <Link href="/jet-lag-advisor" className="p-4 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-all hover:scale-[1.02]">
+            <div className={`text-sm font-medium ${headingClass}`}>Jet Lag Advisor</div>
+            <div className="text-xs text-slate-500">Recovery tips</div>
           </Link>
-          <Link href="/time-converter" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
-            isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
-          }`}>
-            <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Time Converter</div>
-            <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Quick conversions</div>
+          <Link href="/time-converter" className="p-4 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-all hover:scale-[1.02]">
+            <div className={`text-sm font-medium ${headingClass}`}>Time Converter</div>
+            <div className="text-xs text-slate-500">Quick conversions</div>
           </Link>
-          <Link href="/world-alarm" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
-            isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
-          }`}>
-            <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>World Alarm</div>
-            <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Set travel alarms</div>
+          <Link href="/world-alarm" className="p-4 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-all hover:scale-[1.02]">
+            <div className={`text-sm font-medium ${headingClass}`}>World Alarm</div>
+            <div className="text-xs text-slate-500">Set travel alarms</div>
           </Link>
         </div>
       </section>
 
       {/* SEO SECTION 4: FAQ */}
-      <section className={`rounded-2xl p-6 mb-8 backdrop-blur-xl border ${
-        isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
-      }`}>
-        <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+      <section className={`${cardClass} p-6 mb-8`}>
+        <h2 className={`text-xl font-semibold mb-4 ${headingClass}`}>
           Frequently Asked Questions
         </h2>
-        <div className={`space-y-4 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+        <div className={`space-y-4 ${textClass}`}>
           <div>
-            <h3 className={`font-medium mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+            <h3 className={`font-medium mb-1 ${headingClass}`}>
               Does this calculate actual flight distance?
             </h3>
             <p className="text-sm">
@@ -258,7 +228,7 @@ export default function FlightTimePage() {
             </p>
           </div>
           <div>
-            <h3 className={`font-medium mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+            <h3 className={`font-medium mb-1 ${headingClass}`}>
               What does "+1 day" mean?
             </h3>
             <p className="text-sm">
@@ -266,7 +236,7 @@ export default function FlightTimePage() {
             </p>
           </div>
           <div>
-            <h3 className={`font-medium mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+            <h3 className={`font-medium mb-1 ${headingClass}`}>
               Does it account for DST?
             </h3>
             <p className="text-sm">
@@ -277,7 +247,7 @@ export default function FlightTimePage() {
       </section>
 
       {/* Footer */}
-      <Footer isLight={isLight} />
+      <Footer isLight={true} />
     </ToolPageWrapper>
   )
 }
