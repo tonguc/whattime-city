@@ -100,20 +100,32 @@ function DropdownPortal({ isOpen, results, onSelect, inputRef, isLight, particip
 }
 
 interface Props {
-  initialCity1: City
-  initialCity2: City
+  initialCities?: City[]
+  isLight?: boolean
+  theme?: {
+    accentBg: string
+    accentBgLight: string
+    accentText: string
+    accentBorder: string
+  }
 }
 
-export default function MeetingPlannerClient({ initialCity1, initialCity2 }: Props) {
+export default function MeetingPlannerClient({ 
+  initialCities = [], 
+  isLight: isLightProp,
+  theme: themeProp 
+}: Props) {
   const router = useRouter()
   const pathname = usePathname()
-  const { theme, isLight } = useToolsTheme()
+  const { theme: contextTheme, isLight: contextIsLight } = useToolsTheme()
   
-  const [selectedCities, setSelectedCities] = useState<City[]>([
-    initialCity1,
-    initialCity2,
-    cities.find(c => c.city === 'Tokyo') || cities[2]
-  ])
+  // Use provided props or fall back to context
+  const theme = themeProp || contextTheme
+  const isLight = isLightProp !== undefined ? isLightProp : contextIsLight
+  
+  const [selectedCities, setSelectedCities] = useState<City[]>(
+    initialCities.length > 0 ? initialCities : []
+  )
   
   const [currentTime, setCurrentTime] = useState(new Date())
   
@@ -132,7 +144,7 @@ export default function MeetingPlannerClient({ initialCity1, initialCity2 }: Pro
   // Prevent infinite loop with ref
   const isInitialMount = useRef(true)
 
-  // Sync URL when first two cities change (FIXED: with safety checks)
+  // Sync URL when cities change (supports 0, 1, 2+ cities)
   useEffect(() => {
     // Skip on initial mount
     if (isInitialMount.current) {
@@ -140,18 +152,32 @@ export default function MeetingPlannerClient({ initialCity1, initialCity2 }: Pro
       return
     }
 
-    // Safety check: both cities must exist
-    if (!selectedCities[0] || !selectedCities[1]) {
+    // 0 cities: go to /meeting
+    if (selectedCities.length === 0) {
+      if (pathname !== '/meeting') {
+        router.push('/meeting')
+      }
       return
     }
 
-    const newUrl = `/meeting/${normalizeCityPair(selectedCities[0].slug, selectedCities[1].slug)}/`
+    // 1 city: /meeting/berlin
+    if (selectedCities.length === 1) {
+      const newUrl = `/meeting/${selectedCities[0].slug}`
+      if (pathname !== newUrl) {
+        router.push(newUrl, { scroll: false })
+      }
+      return
+    }
+
+    // 2+ cities: /meeting/berlin-vs-istanbul (alphabetical)
+    const slugs = selectedCities.map(c => c.slug)
+    const normalized = slugs.sort().join('-vs-')
+    const newUrl = `/meeting/${normalized}/`
     
-    // Only update if URL actually changed
     if (pathname !== newUrl) {
       router.push(newUrl, { scroll: false })
     }
-  }, [selectedCities[0]?.slug, selectedCities[1]?.slug, router, pathname])
+  }, [selectedCities, router, pathname])
 
   // Check if hour is within working hours (9-17)
   const isWorkingHour = (hour: number) => hour >= 9 && hour <= 17
