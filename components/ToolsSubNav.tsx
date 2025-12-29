@@ -5,14 +5,22 @@ import { usePathname } from 'next/navigation'
 import { translations, Language } from '@/lib/translations'
 
 interface ToolsSubNavProps {
-  isLight: boolean
-  theme: {
+  isLight?: boolean
+  theme?: {
     accentBg: string
     accentBgLight: string
     accentText: string
     accentBorder: string
   }
-  lang: Language
+  lang?: Language
+}
+
+// Default theme for light mode
+const defaultTheme = {
+  accentBg: 'bg-blue-600',
+  accentBgLight: 'bg-blue-100',
+  accentText: 'text-blue-600',
+  accentBorder: 'border-blue-200'
 }
 
 // Tool navigation items with smaller icons - ROOT LEVEL URLs for SEO
@@ -100,7 +108,7 @@ const toolNavItems = [
   }
 ]
 
-export default function ToolsSubNav({ isLight, theme, lang }: ToolsSubNavProps) {
+export default function ToolsSubNav({ isLight = true, theme = defaultTheme, lang = 'en' }: ToolsSubNavProps) {
   const pathname = usePathname()
   const t = translations[lang]
   

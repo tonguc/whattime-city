@@ -4,14 +4,22 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 interface ToolsMiniNavProps {
-  isLight: boolean
-  theme: {
+  isLight?: boolean
+  theme?: {
     accentBg: string
     accentBgLight: string
     accentText: string
     accentBorder: string
   }
   onAlarmClick?: () => void
+}
+
+// Default theme for light mode
+const defaultTheme = {
+  accentBg: 'bg-blue-600',
+  accentBgLight: 'bg-blue-100',
+  accentText: 'text-blue-600',
+  accentBorder: 'border-blue-200'
 }
 
 // Normalized tool names (2 words, English only) - ROOT LEVEL URLs for SEO
@@ -89,7 +97,7 @@ const toolNavItems = [
   }
 ]
 
-export default function ToolsMiniNav({ isLight, theme, onAlarmClick }: ToolsMiniNavProps) {
+export default function ToolsMiniNav({ isLight = true, theme = defaultTheme, onAlarmClick }: ToolsMiniNavProps) {
   const pathname = usePathname()
   
   return (
