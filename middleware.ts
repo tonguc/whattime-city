@@ -1,6 +1,6 @@
 /**
  * Middleware - URL Normalization
- * Ensures city pairs are always in alphabetical order
+ * Ensures city slugs are always in alphabetical order with -vs- separator
  */
 
 import { NextResponse } from 'next/server'
@@ -14,39 +14,41 @@ export function middleware(request: NextRequest) {
     // Extract cities part
     const cities = pathname.replace('/meeting/', '').replace(/\/$/, '')
     
-    // Skip if no cities or it's the base meeting page
+    // Skip if no cities
     if (!cities || cities === '') {
       return NextResponse.next()
     }
 
-    // Handle different formats
     let cityParts: string[]
+    let needsRedirect = false
     
+    // Check format
     if (cities.includes('-vs-')) {
-      // Format: "london-vs-new-york"
+      // Already has -vs- separator
       cityParts = cities.split('-vs-')
     } else {
-      // Format: "london-new-york" - need to find split point
-      // For now, check if it's already normalized by splitting and checking
-      // This is a simple implementation - the full logic is in parseCityPair
-      cityParts = cities.split('-')
+      // Old format (istanbul-london) - needs redirect to -vs- format
+      // Split by dashes and try to detect cities
+      const parts = cities.split('-')
       
-      // If we can't determine, let Next.js handle it
-      if (cityParts.length < 2) {
+      // Simple heuristic: if 2 parts, assume 2 single-word cities
+      if (parts.length === 2) {
+        cityParts = parts
+        needsRedirect = true
+      } else {
+        // Complex case - let Next.js parseCities handle it
         return NextResponse.next()
       }
     }
 
-    // Normalize to alphabetical order
-    if (cityParts.length === 2) {
-      const sorted = [...cityParts].sort()
-      const normalized = sorted.join('-')
-      
-      // Redirect if not normalized (with trailing slash)
-      if (cities !== normalized) {
-        const newUrl = new URL(`/meeting/${normalized}/`, request.url)
-        return NextResponse.redirect(newUrl, 301) // Permanent redirect
-      }
+    // Normalize to alphabetical order with -vs-
+    const sorted = [...cityParts].sort()
+    const normalized = sorted.join('-vs-')
+    
+    // Redirect if not normalized or missing -vs-
+    if (cities !== normalized) {
+      const newUrl = new URL(`/meeting/${normalized}/`, request.url)
+      return NextResponse.redirect(newUrl, 301) // Permanent redirect
     }
   }
 

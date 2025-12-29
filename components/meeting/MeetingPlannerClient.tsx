@@ -29,9 +29,9 @@ export default function MeetingPlannerClient({ initialCities, isLight, theme }: 
   // Track if we've done initial mount
   const hasMounted = useRef(false)
   
-  // Reset to defaults
+  // Reset to meeting planner home
   const handleReset = () => {
-    setSelectedCities(initialCities)
+    router.push('/tools/meeting-planner')
   }
   
   // Sync URL when cities change (alfabetik sıralama ile)
@@ -86,13 +86,13 @@ export default function MeetingPlannerClient({ initialCities, isLight, theme }: 
         <div className="flex justify-end mb-4">
           <button
             onClick={handleReset}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:scale-105 ${
               isLight 
-                ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' 
-                : 'bg-slate-700 hover:bg-slate-600 text-white'
+                ? 'bg-blue-500 hover:bg-blue-600 text-white' 
+                : 'bg-blue-600 hover:bg-blue-500 text-white'
             }`}
           >
-            🔄 Reset to Defaults
+            ↺ Reset Now
           </button>
         </div>
 

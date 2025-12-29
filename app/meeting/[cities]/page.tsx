@@ -82,8 +82,8 @@ export default function MeetingPlannerPage({ params }: Props) {
       {/* TOOLS MINI NAV */}
       <ToolsMiniNav isLight={isLight} theme={theme} />
 
-      {/* MAIN CONTENT - Header'dan sonra daha fazla boşluk */}
-      <main className="container mx-auto px-4 pt-12 pb-16 max-w-6xl">
+      {/* MAIN CONTENT - /tools/meeting-planner ile aynı spacing */}
+      <main className="max-w-6xl mx-auto px-4 py-4">
         {/* Interactive Tool */}
         <MeetingPlannerClient 
           initialCities={cityList}
@@ -91,9 +91,11 @@ export default function MeetingPlannerPage({ params }: Props) {
           theme={theme}
         />
 
-        {/* SEO Content - Client'tan sonra daha fazla boşluk */}
+        {/* SEO Content - Box içinde */}
         {cityList.length >= 2 && (
-          <div className="mt-16">
+          <div className={`rounded-2xl p-6 mt-8 backdrop-blur-xl border ${
+            isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
+          }`}>
             <DynamicContent 
               city1={cityList[0]}
               city2={cityList[1]}
