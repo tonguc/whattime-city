@@ -12,20 +12,9 @@ export const metadata: Metadata = {
 }
 
 export default function MeetingPlannerEmptyPage() {
-  // Use Istanbul for default theme (or any city)
-  const defaultCity = cities.find(c => c.slug === 'istanbul') || cities[0]
-  
-  // Get theme based on default city's time
-  const now = new Date()
-  const timeOfDay = getTimeOfDay(
-    now,
-    defaultCity.lat || 0,
-    defaultCity.lng || 0
-  )
-  
-  // Use central theme system
-  const currentTheme = themes[timeOfDay]
-  const isLight = isLightTheme(timeOfDay)
+  // FORCE LIGHT MODE as default (matching rest of site)
+  const currentTheme = themes['light']
+  const isLight = true
   
   // Theme for components
   const theme = {

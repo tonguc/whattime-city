@@ -84,17 +84,10 @@ export default function MeetingPlannerPage({ params }: Props) {
   // Use first city for theme calculation
   const firstCity = cityList[0]
 
-  // Get theme based on first city's time
-  const now = new Date()
-  const timeOfDay = getTimeOfDay(
-    now,
-    firstCity.lat || 0,
-    firstCity.lng || 0
-  )
-  
-  // Use central theme system
-  const currentTheme = themes[timeOfDay]
-  const isLight = isLightTheme(timeOfDay)
+  // FORCE LIGHT MODE as default (matching rest of site)
+  // Override time-based theme to always use 'light' mode
+  const currentTheme = themes['light']
+  const isLight = true
   
   // Theme colors for components
   const themeColors = {
@@ -146,8 +139,7 @@ export default function MeetingPlannerPage({ params }: Props) {
         {cityList.length >= 2 && (
           <div className={`rounded-2xl p-6 mt-8 backdrop-blur-xl border relative z-10 ${themeColors.card}`}>
             <DynamicContent 
-              city1={cityList[0]}
-              city2={cityList[1]}
+              cities={cityList}
               isLight={isLight}
               overlapCount={overlapCount}
             />

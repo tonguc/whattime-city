@@ -97,17 +97,17 @@ export default function ToolsMiniNav({ isLight, theme, onAlarmClick }: ToolsMini
       {/* Wrapping flex container - no horizontal scroll */}
       <div className="flex flex-wrap justify-center gap-2">
         {toolNavItems.map((tool) => {
-          // Special handling for Meeting Planner - active if on /meeting/* or /tools/meeting-planner
-          const isActive = tool.id === 'meeting-planner' 
-            ? pathname.startsWith('/meeting/') || pathname === tool.url
-            : pathname === tool.url
+          // Enhanced path matching - check if current path starts with tool path
+          // This handles /tools/meeting-planner AND /meeting/istanbul-vs-london
+          const isActive = pathname === tool.url || 
+                          (tool.id === 'meeting-planner' && pathname?.startsWith('/meeting'))
           
           const className = `inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
             isActive
-              ? `${theme.accentBg} text-white shadow-md`
+              ? 'bg-blue-600 text-white shadow-md hover:bg-blue-700' // SOLID BLUE when active
               : isLight
-                ? 'bg-white/50 text-slate-600 hover:bg-white/70 border border-white/60'
-                : 'bg-slate-700/50 text-slate-300 hover:bg-slate-700/70 border border-slate-600/50'
+                ? 'bg-transparent text-slate-600 hover:bg-slate-100 border border-slate-200'
+                : 'bg-transparent text-slate-300 hover:bg-slate-700/50 border border-slate-600'
           }`
           
           // Alarm item - use button if callback provided
