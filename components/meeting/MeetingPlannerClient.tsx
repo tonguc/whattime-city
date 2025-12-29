@@ -1,15 +1,14 @@
 'use client'
 
 /**
- * Meeting Planner Client Component - HOTFIX VERSION
- * Simplified: Only TimeSlider, no participant widget
+ * Meeting Planner Client Component - HOTFIX V2
+ * Simplified: Only Hero + TimeSlider (no container, no footer)
  */
 
 import { useState, useEffect, useRef } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import { City } from '@/lib/cities'
 import { useToolsTheme } from '@/lib/useToolsTheme'
-import Footer from '@/components/Footer'
 import TimeSlider from '@/components/TimeSlider'
 
 interface Props {
@@ -80,37 +79,32 @@ export default function MeetingPlannerClient({
 
   return (
     <>
-      <div className="container mx-auto px-4 py-8 max-w-5xl">
-        {/* Hero */}
-        <div className="text-center mb-8">
-          <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-            {selectedCities.length === 0
-              ? 'Meeting Planner: Find Best Time Across Time Zones'
-              : selectedCities.length === 1
-                ? `Best Time to Call ${selectedCities[0].city}`
-                : `Meeting Planner: Find Overlap Hours for ${selectedCities.map(c => c.city).join(', ').replace(/, ([^,]*)$/, ' & $1')}`
-            }
-          </h1>
-          <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-            {selectedCities.length === 1
-              ? `Current time and business hours in ${selectedCities[0].city}`
-              : 'Compare business hours and schedule calls across time zones'
-            }
-          </p>
-        </div>
-
-        {/* Interactive Time Slider */}
-        <div className="mb-8">
-          <TimeSlider 
-            isLight={isLight} 
-            initialCities={selectedCities}
-            onCitiesChange={(newCities) => setSelectedCities(newCities)}
-          />
-        </div>
+      {/* Hero */}
+      <div className="text-center mb-8">
+        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          {selectedCities.length === 0
+            ? 'Meeting Planner: Find Best Time Across Time Zones'
+            : selectedCities.length === 1
+              ? `Best Time to Call ${selectedCities[0].city}`
+              : `Meeting Planner: Find Overlap Hours for ${selectedCities.map(c => c.city).join(', ').replace(/, ([^,]*)$/, ' & $1')}`
+          }
+        </h1>
+        <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          {selectedCities.length === 1
+            ? `Current time and business hours in ${selectedCities[0].city}`
+            : 'Compare business hours and schedule calls across time zones'
+          }
+        </p>
       </div>
 
-      {/* Footer */}
-      <Footer isLight={isLight} />
+      {/* Interactive Time Slider */}
+      <div className="mb-8">
+        <TimeSlider 
+          isLight={isLight} 
+          initialCities={selectedCities}
+          onCitiesChange={(newCities) => setSelectedCities(newCities)}
+        />
+      </div>
     </>
   )
 }
