@@ -6,6 +6,7 @@ import ToolsMiniNav from '@/components/ToolsMiniNav'
 import MeetingPlannerClient from '@/components/meeting/MeetingPlannerClient'
 import DynamicContent from '@/components/meeting/DynamicContent'
 import FAQSchema from '@/components/meeting/FAQSchema'
+import RelatedTools from '@/components/meeting/RelatedTools'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 
 interface Props {
@@ -105,7 +106,7 @@ export default function MeetingPlannerPage({ params }: Props) {
 
         {/* SEO Content - Box içinde */}
         {cityList.length >= 2 && (
-          <div className={`rounded-2xl p-6 mt-8 backdrop-blur-xl border ${
+          <div className={`rounded-2xl p-6 mt-8 backdrop-blur-xl border relative z-10 ${
             isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
           }`}>
             <DynamicContent 
@@ -116,6 +117,13 @@ export default function MeetingPlannerPage({ params }: Props) {
             />
           </div>
         )}
+
+        {/* Related Tools - Box içinde */}
+        <div className={`rounded-2xl p-6 mt-8 backdrop-blur-xl border relative z-10 ${
+          isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
+        }`}>
+          <RelatedTools isLight={isLight} />
+        </div>
       </main>
     </>
   )

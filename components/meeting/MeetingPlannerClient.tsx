@@ -30,11 +30,6 @@ export default function MeetingPlannerClient({ initialCities, isLight, theme }: 
   // Track if we've done initial mount
   const hasMounted = useRef(false)
   
-  // Reset to default cities
-  const handleReset = () => {
-    router.push('/meeting/istanbul-vs-london')
-  }
-  
   // Sync URL when cities change (alfabetik sıralama ile)
   useEffect(() => {
     // Skip initial mount
@@ -43,9 +38,9 @@ export default function MeetingPlannerClient({ initialCities, isLight, theme }: 
       return
     }
 
-    // If all cities removed, go to default cities
+    // If all cities removed, go to /meeting (no cities)
     if (selectedCities.length < 2) {
-      router.push('/meeting/istanbul-vs-london')
+      router.push('/meeting')
       return
     }
 
@@ -98,20 +93,6 @@ export default function MeetingPlannerClient({ initialCities, isLight, theme }: 
             setSelectedCities(cities)
           }}
         />
-
-        {/* Reset Button - After TimeSlider */}
-        <div className="flex justify-end mt-4">
-          <button
-            onClick={handleReset}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:scale-105 ${
-              isLight 
-                ? 'bg-blue-500 hover:bg-blue-600 text-white' 
-                : 'bg-blue-600 hover:bg-blue-500 text-white'
-            }`}
-          >
-            ↺ Reset to Now
-          </button>
-        </div>
 
         {/* Smart Compromise or Success */}
         {selectedCities[0] && selectedCities[1] && (
