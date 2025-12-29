@@ -26,7 +26,7 @@ export default function WorldAlarmPage() {
 
       {/* Main Card */}
       <div className={`rounded-2xl p-8 mb-8 backdrop-blur-xl border text-center ${
-        isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
+        isLight ? 'bg-white/60 border-white/70' : 'bg-slate-800/60 border-slate-700/50'
       }`}>
         <div className={`w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center ${theme.accentBg}`}>
           <svg className="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -54,7 +54,7 @@ export default function WorldAlarmPage() {
 
       {/* SEO Content */}
       <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
-        isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
+        isLight ? 'bg-white/40 border-white/70' : 'bg-slate-800/40 border-slate-700/50'
       }`}>
         <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
           Common Use Cases
@@ -77,7 +77,7 @@ export default function WorldAlarmPage() {
 
       {/* Related Tools */}
       <section className={`rounded-2xl p-6 mb-8 backdrop-blur-xl border ${
-        isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
+        isLight ? 'bg-white/40 border-white/70' : 'bg-slate-800/40 border-slate-700/50'
       }`}>
         <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
           Related Tools
