@@ -93,7 +93,7 @@ export default function ToolsMiniNav({ isLight, theme, onAlarmClick }: ToolsMini
   const pathname = usePathname()
   
   return (
-    <nav className="mb-6">
+    <nav className="mt-8 mb-6">
       {/* Wrapping flex container - no horizontal scroll */}
       <div className="flex flex-wrap justify-center gap-2">
         {toolNavItems.map((tool) => {

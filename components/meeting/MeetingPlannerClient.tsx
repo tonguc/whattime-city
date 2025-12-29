@@ -42,8 +42,9 @@ export default function MeetingPlannerClient({ initialCities, isLight, theme }: 
       return
     }
 
-    // Safety: minimum 2 cities required
+    // If all cities removed, go to meeting planner home
     if (selectedCities.length < 2) {
+      router.push('/tools/meeting-planner')
       return
     }
 
@@ -82,8 +83,17 @@ export default function MeetingPlannerClient({ initialCities, isLight, theme }: 
       <div className={`rounded-2xl p-6 backdrop-blur-xl border ${
         isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
       }`}>
-        {/* Reset Button */}
-        <div className="flex justify-end mb-4">
+        <TimeSlider 
+          isLight={isLight}
+          initialCities={selectedCities}
+          onCitiesChange={(cities) => {
+            // Allow removing cities (URL sync will redirect if < 2)
+            setSelectedCities(cities)
+          }}
+        />
+
+        {/* Reset Button - After TimeSlider */}
+        <div className="flex justify-end mt-4">
           <button
             onClick={handleReset}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:scale-105 ${
@@ -92,24 +102,9 @@ export default function MeetingPlannerClient({ initialCities, isLight, theme }: 
                 : 'bg-blue-600 hover:bg-blue-500 text-white'
             }`}
           >
-            ↺ Reset Now
+            ↺ Reset to Now
           </button>
         </div>
-
-        <TimeSlider 
-          isLight={isLight}
-          initialCities={selectedCities}
-          onCitiesChange={(cities) => {
-            // Support multiple cities (2+)
-            if (cities.length < 2) {
-              // Minimum 2 cities required
-              setSelectedCities(initialCities)
-            } else {
-              // Accept all cities
-              setSelectedCities(cities)
-            }
-          }}
-        />
 
         {/* Smart Compromise or Success */}
         {selectedCities[0] && selectedCities[1] && (
