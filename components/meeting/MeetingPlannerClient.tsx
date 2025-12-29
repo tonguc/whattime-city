@@ -82,7 +82,10 @@ export default function MeetingPlannerClient({ initialCity1, initialCity2, isLig
         <TimeSlider 
           isLight={isLight}
           initialCities={selectedCities}
-          onCitiesChange={setSelectedCities}
+          onCitiesChange={(cities) => {
+            // Meeting planner URL supports only 2 cities
+            setSelectedCities(cities.slice(0, 2))
+          }}
         />
 
         {/* Smart Compromise or Success */}
