@@ -374,8 +374,9 @@ export default function TimeSlider({ isLight, initialCities = [], onCitiesChange
               )}
             </div>
             <button
+              type="button"
               onClick={resetToNow}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all hover:scale-105 ${
                 isLight
                   ? 'bg-slate-100 hover:bg-slate-200 text-slate-700'
                   : 'bg-slate-700 hover:bg-slate-600 text-slate-300'
