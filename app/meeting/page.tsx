@@ -12,20 +12,22 @@ export const metadata: Metadata = {
 }
 
 export default function MeetingPlannerEmptyPage() {
-  // Use Istanbul for default theme calculation
-  const defaultCity = cities.find(c => c.slug === 'istanbul') || cities[0]
+  // Force light mode like homepage
+  const isLight = true
+  const currentTheme = themes['light']
   
-  // Time-based auto theme (restored)
-  const now = new Date()
-  const timeOfDay = getTimeOfDay(
-    now,
-    defaultCity.lat || 0,
-    defaultCity.lng || 0
-  )
-  
-  // Use central theme system with auto mode
-  const currentTheme = themes[timeOfDay]
-  const isLight = isLightTheme(timeOfDay)
+  // Light mode theme colors (matching homepage)
+  const themeColors = {
+    bg: 'from-gray-50 via-white to-gray-100',
+    card: 'bg-white/70 border-white/80',  // Homepage style
+    text: 'text-slate-800',
+    textMuted: 'text-slate-600',
+    accent: 'amber',
+    accentBg: 'bg-amber-500',
+    accentBgLight: 'bg-amber-500/20',
+    accentText: 'text-amber-500',
+    accentBorder: 'border-amber-500/50',
+  }
   
   // Theme for components
   const theme = {
@@ -33,18 +35,6 @@ export default function MeetingPlannerEmptyPage() {
     accentBgLight: currentTheme.accentBgLight,
     accentText: currentTheme.accentText,
     accentBorder: currentTheme.accentBorder
-  }
-  
-  const themeColors = {
-    bg: currentTheme.bg,
-    card: currentTheme.card,
-    text: currentTheme.text,
-    textMuted: currentTheme.textMuted,
-    accent: currentTheme.accent,
-    accentBg: currentTheme.accentBg,
-    accentBgLight: currentTheme.accentBgLight,
-    accentText: currentTheme.accentText,
-    accentBorder: currentTheme.accentBorder,
   }
 
   return (

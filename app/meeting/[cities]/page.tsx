@@ -84,29 +84,21 @@ export default function MeetingPlannerPage({ params }: Props) {
   // Use first city for theme calculation
   const firstCity = cityList[0]
 
-  // Time-based auto theme (restored)
-  const now = new Date()
-  const timeOfDay = getTimeOfDay(
-    now,
-    firstCity.lat || 0,
-    firstCity.lng || 0
-  )
+  // Force light mode like homepage
+  const isLight = true
+  const currentTheme = themes['light']
   
-  // Use central theme system with auto mode
-  const currentTheme = themes[timeOfDay]
-  const isLight = isLightTheme(timeOfDay)
-  
-  // Theme colors for components
+  // Light mode theme colors (matching homepage)
   const themeColors = {
-    bg: currentTheme.bg,
-    card: currentTheme.card,
-    text: currentTheme.text,
-    textMuted: currentTheme.textMuted,
-    accent: currentTheme.accent,
-    accentBg: currentTheme.accentBg,
-    accentBgLight: currentTheme.accentBgLight,
-    accentText: currentTheme.accentText,
-    accentBorder: currentTheme.accentBorder,
+    bg: 'from-gray-50 via-white to-gray-100',
+    card: 'bg-white/70 border-white/80',  // Homepage style
+    text: 'text-slate-800',
+    textMuted: 'text-slate-600',
+    accent: 'amber',
+    accentBg: 'bg-amber-500',
+    accentBgLight: 'bg-amber-500/20',
+    accentText: 'text-amber-500',
+    accentBorder: 'border-amber-500/50',
   }
   
   // Theme for ToolsMiniNav

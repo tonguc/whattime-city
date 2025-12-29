@@ -94,17 +94,17 @@ export default function ToolsMiniNav({ isLight, theme, onAlarmClick }: ToolsMini
   
   return (
     <nav className="mt-8 mb-6">
-      {/* Wrapping flex container - no horizontal scroll */}
-      <div className="flex flex-wrap justify-center gap-2">
+      {/* Stable flex container - prevent layout shift */}
+      <div className="flex flex-wrap justify-center gap-2 items-center">
         {toolNavItems.map((tool) => {
           // Enhanced path matching - check if current path starts with tool path
           // This handles /tools/meeting-planner AND /meeting/istanbul-vs-london
           const isActive = pathname === tool.url || 
                           (tool.id === 'meeting-planner' && pathname?.startsWith('/meeting'))
           
-          const className = `inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm transition-all duration-200 border-2 ${
+          const className = `inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm transition-all duration-200 border-2 whitespace-nowrap ${
             isActive
-              ? 'bg-blue-600 text-white border-blue-600 shadow-lg font-bold scale-105' // Daha belirgin: bold, scale, shadow
+              ? 'bg-blue-600 text-white border-blue-600 shadow-lg font-bold' // Removed scale-105
               : isLight
                 ? 'bg-transparent text-slate-600 hover:bg-slate-100 border-slate-300 font-medium'
                 : 'bg-transparent text-slate-300 hover:bg-slate-700/50 border-slate-600 font-medium'
