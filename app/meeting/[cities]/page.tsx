@@ -35,14 +35,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
   }
 
-  // City names for meta
+  // Single city (1 şehir)
+  if (cityList.length === 1) {
+    const city = cityList[0]
+    return {
+      title: `Best Time to Call ${city.city}: Current Time & Business Hours | whattime.city`,
+      description: `Check current time in ${city.city} (${city.timezone}). Find best time to call ${city.city} considering business hours (9 AM - 5 PM local time).`,
+      keywords: `${city.city} time, current time ${city.city}, best time to call ${city.city}, ${city.city} business hours, ${city.timezone}`,
+      alternates: {
+        canonical: `/meeting/${city.slug}`
+      },
+      openGraph: {
+        title: `Best Time to Call ${city.city}`,
+        description: `Current time and business hours in ${city.city}`,
+        type: 'website'
+      }
+    }
+  }
+
+  // Multiple cities (2+ şehir)
   const cityNames = cityList.map(c => c.city)
   const cityNamesText = cityNames.join(', ').replace(/, ([^,]*)$/, ' & $1')
+  const citySlugs = cityList.map(c => c.slug).sort().join('-vs-')
   
   return {
     title: `Best Time to Call ${cityNamesText}: Business Hours Overlap | whattime.city`,
     description: `Find the best meeting time between ${cityNamesText}. Compare business hours, calculate time differences, and schedule calls across time zones with working hours overlap.`,
     keywords: `time zone converter, ${cityNamesText} time difference, best time to call, business hours overlap, meeting planner, schedule across time zones`,
+    alternates: {
+      canonical: `/meeting/${citySlugs}`
+    },
     openGraph: {
       title: `Meeting Planner: ${cityNamesText} Time Zone Comparison`,
       description: `Find business hours overlap and best time to schedule calls between ${cityNamesText}`,
@@ -104,7 +126,7 @@ export default function MeetingPlannerPage({ params }: Props) {
           theme={theme}
         />
 
-        {/* SEO Content - Box içinde */}
+        {/* SEO Content - Box içinde - Only for 2+ cities */}
         {cityList.length >= 2 && (
           <div className={`rounded-2xl p-6 mt-8 backdrop-blur-xl border relative z-10 ${
             isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
@@ -115,15 +137,48 @@ export default function MeetingPlannerPage({ params }: Props) {
               isLight={isLight}
               overlapCount={overlapCount}
             />
+            
+            {/* Related Tools - Inside DynamicContent box (at the bottom) */}
+            <div className={`mt-12 pt-8 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
+              <RelatedTools isLight={isLight} />
+            </div>
           </div>
         )}
 
-        {/* Related Tools - Box içinde */}
-        <div className={`rounded-2xl p-6 mt-8 backdrop-blur-xl border relative z-10 ${
-          isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
-        }`}>
-          <RelatedTools isLight={isLight} />
-        </div>
+        {/* Single City Info - Box içinde - Only for 1 city */}
+        {cityList.length === 1 && (
+          <div className={`rounded-2xl p-6 mt-8 backdrop-blur-xl border relative z-10 ${
+            isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
+          }`}>
+            <div className={`prose max-w-none ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
+              <h2 className={`text-2xl font-bold mb-4 ${isLight ? 'text-slate-900' : 'text-white'}`}>
+                Current Time in {cityList[0].city}
+              </h2>
+              <p className="text-lg mb-4">
+                <strong className={isLight ? 'text-slate-900' : 'text-white'}>
+                  Timezone: </strong>{cityList[0].timezone}
+              </p>
+              <p className="mb-4">
+                <strong className={isLight ? 'text-slate-900' : 'text-white'}>
+                  Business Hours: </strong>9:00 AM - 5:00 PM local time
+              </p>
+              <div className={`p-4 rounded-lg mt-6 ${
+                isLight 
+                  ? 'bg-blue-50 border border-blue-200' 
+                  : 'bg-blue-900/20 border border-blue-800/50'
+              }`}>
+                <p className={`text-sm ${isLight ? 'text-blue-700' : 'text-blue-300'}`}>
+                  <strong>💡 Tip:</strong> Add a second city to compare time zones and find the best meeting time!
+                </p>
+              </div>
+            </div>
+
+            {/* Related Tools - Inside Single City box (at the bottom) */}
+            <div className={`mt-12 pt-8 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
+              <RelatedTools isLight={isLight} />
+            </div>
+          </div>
+        )}
       </main>
     </>
   )

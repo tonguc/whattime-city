@@ -139,8 +139,8 @@ export function parseCities(citiesParam: string): City[] | null {
     cityList.push(city)
   }
   
-  // En az 2 şehir olmalı
-  return cityList.length >= 2 ? cityList : null
+  // En az 1 şehir olmalı (single city support için değiştirildi)
+  return cityList.length >= 1 ? cityList : null
 }
 
 /**

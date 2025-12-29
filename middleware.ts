@@ -23,15 +23,25 @@ export function middleware(request: NextRequest) {
     
     // Check format
     if (cities.includes('-vs-')) {
-      // Already has -vs- separator
+      // Already has -vs- separator (2+ cities)
       cityParts = cities.split('-vs-')
-    } else {
-      // Old format or simple format - just split by dashes
+    } else if (cities.includes('-')) {
+      // Could be old format (istanbul-london) or single city with dash (new-york)
       // Let parseCities handle complex cases
       cityParts = cities.split('-')
+    } else {
+      // Single city slug (no dashes)
+      // Don't normalize, just pass through
+      return NextResponse.next()
     }
 
-    // Normalize to alphabetical order with -vs-
+    // Only normalize if we have 2+ city parts
+    if (cityParts.length === 1) {
+      // Single city, no normalization needed
+      return NextResponse.next()
+    }
+
+    // Normalize to alphabetical order with -vs- (for 2+ cities)
     const sorted = [...cityParts].sort()
     const normalized = sorted.join('-vs-')
     

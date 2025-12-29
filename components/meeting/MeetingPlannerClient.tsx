@@ -39,18 +39,43 @@ export default function MeetingPlannerClient({ initialCities, isLight, theme }: 
     }
 
     // If all cities removed, go to /meeting (no cities)
-    if (selectedCities.length < 2) {
-      router.push('/meeting')
+    if (selectedCities.length === 0) {
+      if (pathname !== '/meeting') {
+        router.push('/meeting')
+        // Update document title (client-side)
+        if (typeof document !== 'undefined') {
+          document.title = 'Meeting Planner: Find Best Time Across Time Zones | whattime.city'
+        }
+      }
       return
     }
 
-    // Alfabetik sıralama ile URL oluştur
+    // Single city: /meeting/berlin
+    if (selectedCities.length === 1) {
+      const slug = selectedCities[0].slug
+      const newUrl = `/meeting/${slug}`
+      if (pathname !== newUrl) {
+        router.push(newUrl, { scroll: false })
+        // Update document title (client-side)
+        if (typeof document !== 'undefined') {
+          document.title = `Best Time to Call ${selectedCities[0].city} | whattime.city`
+        }
+      }
+      return
+    }
+
+    // Multiple cities: /meeting/berlin-vs-istanbul (alfabetik)
     const slugs = selectedCities.map(c => c.slug)
     const newUrl = `/meeting/${normalizeCities(slugs)}/`
     
     // Only update if URL actually different
     if (pathname !== newUrl) {
       router.push(newUrl, { scroll: false })
+      // Update document title (client-side)
+      if (typeof document !== 'undefined') {
+        const cityNames = selectedCities.map(c => c.city).join(', ').replace(/, ([^,]*)$/, ' & $1')
+        document.title = `Best Time to Call ${cityNames} | whattime.city`
+      }
     }
   }, [selectedCities, pathname, router])
 
@@ -71,13 +96,18 @@ export default function MeetingPlannerClient({ initialCities, isLight, theme }: 
       {/* Hero */}
       <div className="text-center mb-8">
         <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-          {selectedCities.length >= 2 
-            ? `Meeting Planner: Find Overlap Hours for ${selectedCities.map(c => c.city).join(', ').replace(/, ([^,]*)$/, ' & $1')}`
-            : 'Meeting Planner: Find Best Time Across Time Zones'
+          {selectedCities.length === 0
+            ? 'Meeting Planner: Find Best Time Across Time Zones'
+            : selectedCities.length === 1
+              ? `Best Time to Call ${selectedCities[0].city}`
+              : `Meeting Planner: Find Overlap Hours for ${selectedCities.map(c => c.city).join(', ').replace(/, ([^,]*)$/, ' & $1')}`
           }
         </h1>
         <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-          Compare business hours and schedule calls across time zones
+          {selectedCities.length === 1
+            ? `Current time and business hours in ${selectedCities[0].city}`
+            : 'Compare business hours and schedule calls across time zones'
+          }
         </p>
       </div>
 

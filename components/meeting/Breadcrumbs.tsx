@@ -33,7 +33,7 @@ export default function Breadcrumbs({ cities, isLight }: BreadcrumbsProps) {
             Meeting Planner
           </Link>
         </li>
-        {cities.length >= 2 && (
+        {cities.length >= 1 && (
           <>
             <li>
               <span className="mx-1">/</span>
