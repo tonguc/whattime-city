@@ -180,6 +180,7 @@ export default function MeetingPlannerPage({ params }: Props) {
           initialCities={cityList}
           isLight={isLight}
           theme={theme}
+          themeColors={themeColors}
         />
 
         {/* SEO Content - Box içinde - Only for 2+ cities */}

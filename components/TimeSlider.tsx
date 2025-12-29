@@ -1,12 +1,19 @@
 'use client'
 
 import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
+import { useRouter, usePathname } from 'next/navigation'
 import { City, cities, searchCities } from '@/lib/cities'
 
 interface TimeSliderProps {
   isLight: boolean
   initialCities?: City[]
   onCitiesChange?: (cities: City[]) => void
+  themeColors?: {
+    bg: string
+    card: string
+    text: string
+    textMuted: string
+  }
 }
 
 // Get time in a specific timezone
@@ -31,7 +38,9 @@ const isBusinessHour = (hour: number): boolean => hour >= 9 && hour < 17
 // Check if hour is night (22-6)
 const isNightHour = (hour: number): boolean => hour >= 22 || hour < 6
 
-export default function TimeSlider({ isLight, initialCities = [], onCitiesChange }: TimeSliderProps) {
+export default function TimeSlider({ isLight, initialCities = [], onCitiesChange, themeColors }: TimeSliderProps) {
+  const router = useRouter()
+  const pathname = usePathname()
   const [selectedCities, setSelectedCities] = useState<City[]>(initialCities)
   const [baseTime, setBaseTime] = useState<Date>(new Date())
   const [offsetHours, setOffsetHours] = useState(0)
@@ -145,6 +154,16 @@ export default function TimeSlider({ isLight, initialCities = [], onCitiesChange
   const resetToNow = () => {
     setOffsetHours(0)
     setBaseTime(new Date())
+    
+    // Navigate to default meeting URL with current cities
+    if (selectedCities.length >= 2) {
+      const slugs = [selectedCities[0].slug, selectedCities[1].slug].sort()
+      router.push(`/meeting/${slugs.join('-vs-')}/`)
+    } else if (selectedCities.length === 1) {
+      router.push(`/meeting/${selectedCities[0].slug}`)
+    } else {
+      router.push('/meeting')
+    }
   }
 
   // Calculate overlap hours (memoized for performance)
@@ -164,14 +183,14 @@ export default function TimeSlider({ isLight, initialCities = [], onCitiesChange
   }, [selectedCities, offsetHours, baseTime]) // Re-calculate only when these change
 
   return (
-    <div className={`rounded-2xl p-4 md:p-6 ${isLight ? 'bg-white/80' : 'bg-slate-800/80'} backdrop-blur-xl border ${isLight ? 'border-white/50' : 'border-slate-700/50'}`}>
+    <div className={`rounded-2xl p-4 md:p-6 backdrop-blur-xl border ${themeColors ? themeColors.card : isLight ? 'bg-white/80 border-white/50' : 'bg-slate-800/80 border-slate-700/50'}`}>
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
         <div>
-          <h3 className={`text-lg font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h3 className={`text-lg font-bold ${themeColors ? themeColors.text : isLight ? 'text-slate-800' : 'text-white'}`}>
             ⏰ Time Slider
           </h3>
-          <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+          <p className={`text-sm ${themeColors ? themeColors.textMuted : isLight ? 'text-slate-500' : 'text-slate-400'}`}>
             Drag to compare times • Find meeting overlap
           </p>
         </div>
@@ -193,14 +212,20 @@ export default function TimeSlider({ isLight, initialCities = [], onCitiesChange
           </button>
           
           {showSearch && (
-            <div className={`fixed right-4 top-20 w-72 rounded-xl shadow-2xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'} p-3 z-[9999]`}>
+            <div className={`fixed right-4 top-20 w-72 rounded-xl shadow-2xl border p-3 z-[9999] ${themeColors ? themeColors.card : isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'}`}>
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search city..."
                 autoFocus
-                className={`w-full px-3 py-2 rounded-lg border text-sm ${isLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-900 border-slate-700'} outline-none focus:ring-2 focus:ring-blue-500`}
+                className={`w-full px-3 py-2 rounded-lg border text-sm outline-none focus:ring-2 focus:ring-blue-500 ${
+                  themeColors 
+                    ? `${themeColors.card} ${themeColors.text}`
+                    : isLight 
+                      ? 'bg-slate-50 border-slate-200 text-slate-800' 
+                      : 'bg-slate-900 border-slate-700 text-white'
+                }`}
                 style={{ fontSize: '16px' }}
               />
               {searchResults.length > 0 && (
@@ -209,16 +234,20 @@ export default function TimeSlider({ isLight, initialCities = [], onCitiesChange
                     <button
                       key={city.slug}
                       onClick={() => addCity(city)}
-                      className={`w-full px-3 py-2 text-left text-sm rounded-lg ${isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}
+                      className={`w-full px-3 py-2 text-left text-sm rounded-lg ${
+                        themeColors 
+                          ? 'hover:bg-black/10'
+                          : isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'
+                      }`}
                     >
-                      <span className={isLight ? 'text-slate-800' : 'text-white'}>{city.city}</span>
-                      <span className={`ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{city.country}</span>
+                      <span className={themeColors ? themeColors.text : isLight ? 'text-slate-800' : 'text-white'}>{city.city}</span>
+                      <span className={`ml-2 ${themeColors ? themeColors.textMuted : isLight ? 'text-slate-500' : 'text-slate-400'}`}>{city.country}</span>
                     </button>
                   ))}
                 </div>
               )}
               {searchQuery && searchResults.length === 0 && (
-                <p className={`text-sm mt-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>No cities found</p>
+                <p className={`text-sm mt-2 ${themeColors ? themeColors.textMuted : isLight ? 'text-slate-500' : 'text-slate-400'}`}>No cities found</p>
               )}
             </div>
           )}
@@ -277,7 +306,7 @@ export default function TimeSlider({ isLight, initialCities = [], onCitiesChange
               <div key={city.slug} className="relative">
                 {/* City Label */}
                 <div className="flex items-center justify-between mb-1">
-                  <span className={`text-sm font-medium ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
+                  <span className={`text-sm font-medium ${themeColors ? themeColors.text : isLight ? 'text-slate-700' : 'text-slate-300'}`}>
                     {city.city}
                   </span>
                   <span className={`text-lg font-bold ${color.text} ${!isLight && 'brightness-150'}`}>
@@ -356,7 +385,11 @@ export default function TimeSlider({ isLight, initialCities = [], onCitiesChange
                 </span>
               </div>
               {overlapHours.length > 0 && (
-                <p className={`text-xs mt-1 ${isLight ? 'text-green-600' : 'text-green-400'}`}>
+                <p className={`text-xs mt-1 ${
+                  themeColors 
+                    ? (themeColors.text.includes('white') ? 'text-green-400' : 'text-green-600')
+                    : isLight ? 'text-green-600' : 'text-green-400'
+                }`}>
                   Best meeting times: {overlapHours.slice(0, 4).map(h => formatHour((getAdjustedTime(selectedCities[0]).getHours() + h) % 24, true)).join(', ')}
                   {overlapHours.length > 4 && ` +${overlapHours.length - 4} more`}
                 </p>
@@ -366,7 +399,7 @@ export default function TimeSlider({ isLight, initialCities = [], onCitiesChange
 
           {/* Controls */}
           <div className="flex items-center justify-between pt-2">
-            <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+            <div className={`text-xs ${themeColors ? themeColors.textMuted : isLight ? 'text-slate-500' : 'text-slate-400'}`}>
               {offsetHours !== 0 && (
                 <span>
                   {offsetHours > 0 ? '+' : ''}{Math.round(offsetHours * 10) / 10}h from now
@@ -377,7 +410,9 @@ export default function TimeSlider({ isLight, initialCities = [], onCitiesChange
               type="button"
               onClick={resetToNow}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all hover:scale-105 ${
-                isLight
+                themeColors
+                  ? `${themeColors.card} ${themeColors.text} hover:brightness-95`
+                  : isLight
                   ? 'bg-slate-100 hover:bg-slate-200 text-slate-700'
                   : 'bg-slate-700 hover:bg-slate-600 text-slate-300'
               }`}
@@ -388,7 +423,7 @@ export default function TimeSlider({ isLight, initialCities = [], onCitiesChange
         </div>
       ) : (
         /* Empty State */
-        <div className={`text-center py-8 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+        <div className={`text-center py-8 ${themeColors ? themeColors.textMuted : isLight ? 'text-slate-500' : 'text-slate-400'}`}>
           <svg className="w-12 h-12 mx-auto mb-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>

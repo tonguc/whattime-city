@@ -20,12 +20,24 @@ interface Props {
     accentText: string
     accentBorder: string
   }
+  themeColors?: {
+    bg: string
+    card: string
+    text: string
+    textMuted: string
+    accent: string
+    accentBg: string
+    accentBgLight: string
+    accentText: string
+    accentBorder: string
+  }
 }
 
 export default function MeetingPlannerClient({ 
   initialCities = [], 
   isLight: isLightProp,
-  theme: themeProp 
+  theme: themeProp,
+  themeColors
 }: Props) {
   const router = useRouter()
   const pathname = usePathname()
@@ -81,7 +93,7 @@ export default function MeetingPlannerClient({
     <>
       {/* Hero */}
       <div className="text-center mb-8">
-        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${themeColors ? themeColors.text : isLight ? 'text-slate-800' : 'text-white'}`}>
           {selectedCities.length === 0
             ? 'Meeting Planner: Find Best Time Across Time Zones'
             : selectedCities.length === 1
@@ -89,7 +101,7 @@ export default function MeetingPlannerClient({
               : `Meeting Planner: Find Overlap Hours for ${selectedCities.map(c => c.city).join(', ').replace(/, ([^,]*)$/, ' & $1')}`
           }
         </h1>
-        <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+        <p className={`text-lg ${themeColors ? themeColors.textMuted : isLight ? 'text-slate-600' : 'text-slate-300'}`}>
           {selectedCities.length === 1
             ? `Current time and business hours in ${selectedCities[0].city}`
             : 'Compare business hours and schedule calls across time zones'
@@ -103,6 +115,7 @@ export default function MeetingPlannerClient({
           isLight={isLight} 
           initialCities={selectedCities}
           onCitiesChange={(newCities) => setSelectedCities(newCities)}
+          themeColors={themeColors}
         />
       </div>
     </>
