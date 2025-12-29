@@ -2,15 +2,9 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useCityContext } from '@/lib/CityContext'
 
 interface ToolsMiniNavProps {
-  isLight: boolean
-  theme: {
-    accentBg: string
-    accentBgLight: string
-    accentText: string
-    accentBorder: string
-  }
   onAlarmClick?: () => void
 }
 
@@ -89,8 +83,9 @@ const toolNavItems = [
   }
 ]
 
-export default function ToolsMiniNav({ isLight, theme, onAlarmClick }: ToolsMiniNavProps) {
+export default function ToolsMiniNav({ onAlarmClick }: ToolsMiniNavProps) {
   const pathname = usePathname()
+  const { theme, isLight } = useCityContext()
   
   return (
     <nav className="mt-8 mb-6">
