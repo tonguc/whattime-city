@@ -6,7 +6,6 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export default function MeetingLayout({ children }: { children: ReactNode }) {
-  // Use CityContext for auto mode (like homepage)
   const { theme, isLight } = useCityContext()
 
   return (

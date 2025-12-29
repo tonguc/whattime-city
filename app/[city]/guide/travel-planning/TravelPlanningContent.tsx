@@ -288,7 +288,7 @@ export default function TravelPlanningContent({ city }: Props) {
       <section className={`p-6 rounded-2xl ${cardBg}`}>
         <h2 className={`text-lg font-semibold mb-4 ${headingColor}`}>Related Guides</h2>
         <div className="grid sm:grid-cols-2 gap-3">
-          <Link href="/tools/jet-lag/" className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'}`}>
+          <Link href="/jet-lag-advisor/" className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'}`}>
             <span>😴</span><span>Jet Lag Calculator</span>
           </Link>
           <Link href={`/${city.slug}/guide/best-time-to-visit/`} className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'}`}>

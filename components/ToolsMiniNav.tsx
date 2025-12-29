@@ -2,18 +2,24 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useCityContext } from '@/lib/CityContext'
 
 interface ToolsMiniNavProps {
+  isLight: boolean
+  theme: {
+    accentBg: string
+    accentBgLight: string
+    accentText: string
+    accentBorder: string
+  }
   onAlarmClick?: () => void
 }
 
-// Normalized tool names (2 words, English only)
+// Normalized tool names (2 words, English only) - ROOT LEVEL URLs for SEO
 const toolNavItems = [
   {
     id: 'converter',
     name: 'Time Converter',
-    url: '/converter',
+    url: '/time-converter',
     icon: (
       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"/>
@@ -24,7 +30,7 @@ const toolNavItems = [
   {
     id: 'meeting-planner',
     name: 'Meeting Planner',
-    url: '/meeting-planner',
+    url: '/meeting',
     icon: (
       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
@@ -35,9 +41,9 @@ const toolNavItems = [
     )
   },
   {
-    id: 'flight-times',
+    id: 'flight-time',
     name: 'Flight Time',
-    url: '/flight-times',
+    url: '/flight-time',
     icon: (
       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
@@ -45,9 +51,9 @@ const toolNavItems = [
     )
   },
   {
-    id: 'jet-lag',
+    id: 'jet-lag-advisor',
     name: 'Jet Lag Advisor',
-    url: '/jet-lag',
+    url: '/jet-lag-advisor',
     icon: (
       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
@@ -68,9 +74,9 @@ const toolNavItems = [
     )
   },
   {
-    id: 'alarm',
+    id: 'world-alarm',
     name: 'World Alarm',
-    url: '/alarm',
+    url: '/world-alarm',
     isAlarm: true,
     icon: (
       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -83,23 +89,23 @@ const toolNavItems = [
   }
 ]
 
-export default function ToolsMiniNav({ onAlarmClick }: ToolsMiniNavProps) {
+export default function ToolsMiniNav({ isLight, theme, onAlarmClick }: ToolsMiniNavProps) {
   const pathname = usePathname()
-  const { theme, isLight } = useCityContext()
   
   return (
     <nav className="mt-8 mb-6">
-      {/* Stable flex container - prevent layout shift */}
-      <div className="flex flex-wrap justify-center gap-2 items-center">
+      {/* Wrapping flex container - no horizontal scroll */}
+      <div className="flex flex-wrap justify-center gap-2">
         {toolNavItems.map((tool) => {
-          // Enhanced path matching - check if current path starts with tool path
-          // This handles /tools/meeting-planner AND /meeting/istanbul-vs-london
+          // Enhanced path matching - check if current path matches tool path
+          // Handle both exact match and sub-paths (like /meeting/istanbul-london)
           const isActive = pathname === tool.url || 
+                          pathname === `${tool.url}/` ||
                           (tool.id === 'meeting-planner' && pathname?.startsWith('/meeting'))
           
-          const className = `inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm transition-all duration-200 border-2 whitespace-nowrap ${
+          const className = `inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm transition-all duration-200 border-2 ${
             isActive
-              ? 'bg-blue-600 text-white border-blue-600 shadow-lg font-bold' // Removed scale-105
+              ? 'bg-blue-600 text-white border-blue-600 shadow-lg font-bold scale-105' // Daha belirgin: bold, scale, shadow
               : isLight
                 ? 'bg-transparent text-slate-600 hover:bg-slate-100 border-slate-300 font-medium'
                 : 'bg-transparent text-slate-300 hover:bg-slate-700/50 border-slate-600 font-medium'

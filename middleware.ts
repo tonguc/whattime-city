@@ -1,7 +1,6 @@
 /**
- * Middleware - URL Normalization & SEO Redirects
- * 1. Ensures city slugs are always in alphabetical order with -vs- separator
- * 2. Redirects old /tools/ URLs to new direct URLs (SEO)
+ * Middleware - URL Normalization
+ * Ensures city slugs are always in alphabetical order with -vs- separator
  */
 
 import { NextResponse } from 'next/server'
@@ -10,14 +9,6 @@ import type { NextRequest } from 'next/server'
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
-  // 1. SEO REDIRECTS: /tools/* → /* (301 permanent)
-  if (pathname.startsWith('/tools/')) {
-    const toolPath = pathname.replace('/tools', '')
-    const newUrl = new URL(toolPath, request.url)
-    return NextResponse.redirect(newUrl, 301) // Permanent redirect for SEO
-  }
-
-  // 2. MEETING URL NORMALIZATION
   // Only handle /meeting/[cities] routes
   if (pathname.startsWith('/meeting/') && !pathname.endsWith('/meeting/')) {
     // Extract cities part
@@ -65,8 +56,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    '/meeting/:path*',
-    '/tools/:path*'  // SEO redirects
-  ],
+  matcher: '/meeting/:path*',
 }

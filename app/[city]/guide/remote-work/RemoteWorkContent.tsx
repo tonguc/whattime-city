@@ -139,7 +139,7 @@ export default function RemoteWorkContent({ city }: Props) {
         
         <p className={`mt-3 text-sm ${mutedColor}`}>
           Need exact calculations? Use our{' '}
-          <Link href="/tools/meeting-planner/" className={linkColor}>Meeting Planner</Link>.
+          <Link href="/meeting/" className={linkColor}>Meeting Planner</Link>.
         </p>
       </section>
       
@@ -415,7 +415,7 @@ export default function RemoteWorkContent({ city }: Props) {
           <p className="text-sm">
             <strong>How to read:</strong> Blue = NYC work hours in that timezone. 
             Green = overlap with your local 9-5. The more green, the easier collaboration.
-            Use our <Link href="/tools/meeting-planner/" className={linkColor}>Meeting Planner</Link> to find exact times.
+            Use our <Link href="/meeting/" className={linkColor}>Meeting Planner</Link> to find exact times.
           </p>
         </div>
       </section>
@@ -508,7 +508,7 @@ export default function RemoteWorkContent({ city }: Props) {
         
         <div className="grid md:grid-cols-2 gap-4">
           <Link
-            href="/tools/meeting-planner/"
+            href="/meeting/"
             className={`p-4 rounded-xl border transition-all hover:scale-[1.02] ${
               isLight ? 'border-amber-200 bg-amber-50 hover:border-amber-400' : 'border-amber-800 bg-amber-900/20 hover:border-amber-600'
             }`}
@@ -520,7 +520,7 @@ export default function RemoteWorkContent({ city }: Props) {
           </Link>
           
           <Link
-            href="/tools/converter/"
+            href="/time-converter/"
             className={`p-4 rounded-xl border transition-all hover:scale-[1.02] ${
               isLight ? 'border-blue-200 bg-blue-50 hover:border-blue-400' : 'border-blue-800 bg-blue-900/20 hover:border-blue-600'
             }`}

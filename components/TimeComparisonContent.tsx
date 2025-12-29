@@ -444,7 +444,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
             <p>
               When traveling between {fromCity.city} and {toCity.city}, remember that your arrival time will be 
               in local time. A flight departing {fromCity.city} in the {diffHours > 0 ? 'morning might arrive in the evening' : 'evening might arrive earlier than expected'} due 
-              to the timezone change. Use our <Link href="/tools/flight-times" className="text-cyan-500 hover:underline">Flight Time Calculator</Link> for 
+              to the timezone change. Use our <Link href="/flight-time/" className="text-cyan-500 hover:underline">Flight Time Calculator</Link> for 
               accurate arrival time predictions.
             </p>
             

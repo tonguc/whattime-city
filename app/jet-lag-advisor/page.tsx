@@ -8,36 +8,45 @@ import ToolPageWrapper from '@/components/ToolPageWrapper'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 
-export default function EventTimePage() {
+export default function JetLagAdvisorPage() {
   const { theme, isLight, selectedCity } = useCityContext()
   
-  const [eventCity, setEventCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
-  const [eventHour, setEventHour] = useState(14)
-  const [eventMinute, setEventMinute] = useState(0)
-  const [eventName, setEventName] = useState('My Event')
+  const [fromCity, setFromCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
+  const [toCity, setToCity] = useState(() => cities.find(c => c.city === 'Tokyo') || cities[2])
   
-  // Sync eventCity with context when it becomes available
+  // Sync fromCity with context when it becomes available
   useEffect(() => {
     if (selectedCity) {
-      setEventCity(selectedCity)
+      setFromCity(selectedCity)
     }
   }, [selectedCity])
 
-  // Popular cities to show conversions
-  const popularCities = cities.slice(0, 8)
-
-  // Get event time in another city
-  const getEventTimeIn = (targetTimezone: string) => {
-    const eventDate = new Date()
-    eventDate.setHours(eventHour, eventMinute, 0, 0)
-    
-    const eventOffset = new Date(eventDate.toLocaleString('en-US', { timeZone: eventCity.timezone }))
-    const targetOffset = new Date(eventDate.toLocaleString('en-US', { timeZone: targetTimezone }))
-    const diff = targetOffset.getTime() - eventOffset.getTime()
-    
-    const targetTime = new Date(eventDate.getTime() + diff)
-    return targetTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })
+  // Calculate time difference
+  const getTimeDiff = () => {
+    const now = new Date()
+    const fromTime = new Date(now.toLocaleString('en-US', { timeZone: fromCity.timezone }))
+    const toTime = new Date(now.toLocaleString('en-US', { timeZone: toCity.timezone }))
+    const diffHours = Math.round((toTime.getTime() - fromTime.getTime()) / (1000 * 60 * 60))
+    return diffHours
   }
+
+  const timeDiff = getTimeDiff()
+  const direction = timeDiff > 0 ? 'east' : 'west'
+  const recoveryDays = Math.ceil(Math.abs(timeDiff) / 1.5) // Rule of thumb: 1 day per 1.5 hours
+
+  const tips = timeDiff > 0 ? [
+    'Start shifting your sleep schedule 2-3 days before departure by going to bed earlier.',
+    'Seek morning sunlight at your destination to help reset your circadian rhythm.',
+    'Avoid heavy meals and alcohol during the flight.',
+    'Stay hydrated throughout your journey.',
+    'Consider a short nap (20-30 min) upon arrival if needed, but avoid sleeping too long.'
+  ] : [
+    'Start shifting your sleep schedule 2-3 days before departure by going to bed later.',
+    'Seek afternoon/evening sunlight at your destination.',
+    'Avoid caffeine in the second half of your travel day.',
+    'Stay active during the day to promote natural tiredness at night.',
+    'Expose yourself to bright light in the evening at your destination.'
+  ]
 
   return (
     <ToolPageWrapper>
@@ -47,10 +56,10 @@ export default function EventTimePage() {
       {/* Tool Hero */}
       <div className="text-center mb-8">
         <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-          Event Time Converter
+          Jet Lag Advisor
         </h1>
         <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-          Share event times across time zones
+          Get personalized jet lag recovery tips
         </p>
       </div>
 
@@ -58,29 +67,33 @@ export default function EventTimePage() {
       <div className={`rounded-2xl p-6 mb-8 backdrop-blur-xl border ${
         isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
       }`}>
-        {/* Event Setup */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          {/* From */}
           <div>
             <label className={`block text-sm font-medium mb-2 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
-              Event Name
+              Traveling From
             </label>
-            <input
-              type="text"
-              value={eventName}
-              onChange={(e) => setEventName(e.target.value)}
-              placeholder="e.g., Team Standup"
+            <select
+              value={fromCity.city}
+              onChange={(e) => setFromCity(cities.find(c => c.city === e.target.value) || cities[0])}
               className={`w-full px-4 py-3 rounded-xl border ${
                 isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-700 border-slate-600 text-white'
               }`}
-            />
+            >
+              {cities.map(city => (
+                <option key={city.city} value={city.city}>{city.city}, {city.country}</option>
+              ))}
+            </select>
           </div>
+
+          {/* To */}
           <div>
             <label className={`block text-sm font-medium mb-2 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
-              Event Location
+              Traveling To
             </label>
             <select
-              value={eventCity.city}
-              onChange={(e) => setEventCity(cities.find(c => c.city === e.target.value) || cities[0])}
+              value={toCity.city}
+              onChange={(e) => setToCity(cities.find(c => c.city === e.target.value) || cities[1])}
               className={`w-full px-4 py-3 rounded-xl border ${
                 isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-700 border-slate-600 text-white'
               }`}
@@ -92,63 +105,46 @@ export default function EventTimePage() {
           </div>
         </div>
 
-        {/* Time Selection */}
-        <div className="mb-6">
-          <label className={`block text-sm font-medium mb-2 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
-            Event Time (local to {eventCity.city})
-          </label>
-          <div className="flex gap-2 max-w-xs">
-            <select
-              value={eventHour}
-              onChange={(e) => setEventHour(parseInt(e.target.value))}
-              className={`flex-1 px-3 py-2 rounded-lg border ${
-                isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-700 border-slate-600 text-white'
-              }`}
-            >
-              {Array.from({ length: 24 }, (_, i) => (
-                <option key={i} value={i}>{i.toString().padStart(2, '0')}</option>
-              ))}
-            </select>
-            <span className={`flex items-center ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>:</span>
-            <select
-              value={eventMinute}
-              onChange={(e) => setEventMinute(parseInt(e.target.value))}
-              className={`flex-1 px-3 py-2 rounded-lg border ${
-                isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-700 border-slate-600 text-white'
-              }`}
-            >
-              {[0, 15, 30, 45].map(m => (
-                <option key={m} value={m}>{m.toString().padStart(2, '0')}</option>
-              ))}
-            </select>
+        {/* Results */}
+        <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-100' : 'bg-slate-700/50'}`}>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+            <div>
+              <div className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Time Difference</div>
+              <div className={`text-2xl font-bold ${theme.accentText}`}>
+                {timeDiff > 0 ? '+' : ''}{timeDiff} hours
+              </div>
+            </div>
+            <div>
+              <div className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Direction</div>
+              <div className={`text-2xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                {timeDiff === 0 ? 'Same zone' : `Traveling ${direction}`}
+              </div>
+            </div>
+            <div>
+              <div className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Est. Recovery</div>
+              <div className={`text-2xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                {timeDiff === 0 ? 'None' : `${recoveryDays} days`}
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Time Conversions */}
-        <div>
-          <h3 className={`font-medium mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-            "{eventName}" in other time zones:
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {popularCities.map(city => (
-              <div 
-                key={city.city}
-                className={`p-3 rounded-xl text-center ${
-                  isLight ? 'bg-slate-100' : 'bg-slate-700/50'
-                }`}
-              >
-                <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-                  {city.city}
-                </div>
-                <div className={`text-lg font-semibold ${
-                  city.city === eventCity.city ? theme.accentText : isLight ? 'text-slate-800' : 'text-white'
-                }`}>
-                  {getEventTimeIn(city.timezone)}
-                </div>
-              </div>
-            ))}
+        {/* Tips */}
+        {timeDiff !== 0 && (
+          <div className="mt-6">
+            <h3 className={`font-medium mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              Recovery Tips for {direction}ward travel:
+            </h3>
+            <ul className={`space-y-2 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+              {tips.map((tip, i) => (
+                <li key={i} className="flex gap-2 text-sm">
+                  <span className={theme.accentText}>✓</span>
+                  {tip}
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
+        )}
       </div>
 
       {/* SEO SECTION 1: Common Use Cases */}
@@ -162,25 +158,25 @@ export default function EventTimePage() {
           <li className="flex gap-3">
             <span className={`${theme.accentText} mt-1`}>•</span>
             <div>
-              <strong>Live streaming announcements</strong> — Let global audiences know when to tune in.
+              <strong>Business trip preparation</strong> — Arrive alert and ready for important meetings.
             </div>
           </li>
           <li className="flex gap-3">
             <span className={`${theme.accentText} mt-1`}>•</span>
             <div>
-              <strong>Webinar invitations</strong> — Show attendees the event time in their local zone.
+              <strong>Vacation planning</strong> — Minimize lost vacation days to jet lag recovery.
             </div>
           </li>
           <li className="flex gap-3">
             <span className={`${theme.accentText} mt-1`}>•</span>
             <div>
-              <strong>Product launches</strong> — Coordinate global release timing.
+              <strong>Athletic competition travel</strong> — Optimize performance by adjusting ahead of events.
             </div>
           </li>
           <li className="flex gap-3">
             <span className={`${theme.accentText} mt-1`}>•</span>
             <div>
-              <strong>Sports events</strong> — Share kickoff times for international fans.
+              <strong>Relocating internationally</strong> — Plan your first week in a new time zone.
             </div>
           </li>
         </ul>
@@ -194,9 +190,9 @@ export default function EventTimePage() {
           Who Is This Tool For?
         </h2>
         <p className={`${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-          Content creators, event organizers, marketing teams, and community managers will find this tool 
-          invaluable. It helps you communicate event times clearly to a global audience without confusion 
-          about time zone conversions.
+          Long-haul travelers, business executives, athletes, and anyone crossing 3+ time zones will benefit 
+          from these personalized recommendations. The tips are based on circadian rhythm science and vary 
+          depending on whether you're traveling east or west.
         </p>
       </section>
 
@@ -208,11 +204,11 @@ export default function EventTimePage() {
           Related Tools
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <Link href="/meeting" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
+          <Link href="/flight-time" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
             isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
           }`}>
-            <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Meeting Planner</div>
-            <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Find overlap hours</div>
+            <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Flight Time</div>
+            <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Calculate arrivals</div>
           </Link>
           <Link href="/time-converter" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
             isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
@@ -224,7 +220,7 @@ export default function EventTimePage() {
             isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
           }`}>
             <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>World Alarm</div>
-            <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Set event reminders</div>
+            <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Adjust sleep schedule</div>
           </Link>
         </div>
       </section>
@@ -239,26 +235,26 @@ export default function EventTimePage() {
         <div className={`space-y-4 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
           <div>
             <h3 className={`font-medium mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-              Can I share these times with others?
+              Is eastward or westward travel worse for jet lag?
             </h3>
             <p className="text-sm">
-              Yes, you can screenshot or copy the converted times to share on social media or in emails.
+              Generally, traveling east is harder because you lose hours. Your body finds it easier to extend the day than shorten it.
             </p>
           </div>
           <div>
             <h3 className={`font-medium mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-              Does it account for DST?
+              How is recovery time calculated?
             </h3>
             <p className="text-sm">
-              Yes, all conversions automatically account for Daylight Saving Time in each location.
+              A common rule is 1 day of recovery for every 1.5 time zones crossed, though individual experiences vary.
             </p>
           </div>
           <div>
             <h3 className={`font-medium mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-              Can I add more cities?
+              Do these tips work for everyone?
             </h3>
             <p className="text-sm">
-              The display shows 8 major cities. Use the Time Converter for specific city lookups.
+              These are general guidelines. Age, health, and personal circadian rhythms affect how you experience jet lag.
             </p>
           </div>
         </div>

@@ -3,13 +3,13 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { cities } from '@/lib/cities'
-import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
+import { useCityContext } from '@/lib/CityContext'
+import ToolPageWrapper from '@/components/ToolPageWrapper'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 
 export default function TimeConverterPage() {
-  // Theme from global CityContext (via layout)
-  const { theme, isLight, selectedCity } = useToolsTheme()
+  const { theme, isLight, selectedCity } = useCityContext()
   
   // Get initial city from context or default
   const [fromCity, setFromCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
@@ -31,7 +31,6 @@ export default function TimeConverterPage() {
     
     const fromOffset = new Date(now.toLocaleString('en-US', { timeZone: fromCity.timezone })).getTime()
     const toOffset = new Date(now.toLocaleString('en-US', { timeZone: toCity.timezone })).getTime()
-    const localOffset = now.getTime()
     
     const diff = (toOffset - fromOffset)
     const convertedTime = new Date(now.getTime() + diff)
@@ -49,20 +48,19 @@ export default function TimeConverterPage() {
     setToCity(temp)
   }
 
-  // NO container/header here - from layout
   return (
-    <>
-      {/* Mini Navigation */}
-      <ToolsMiniNav isLight={isLight} theme={theme} />
+    <ToolPageWrapper>
+        {/* Mini Navigation */}
+        <ToolsMiniNav isLight={isLight} theme={theme} />
 
-      {/* Tool Hero */}
-      <div className="text-center mb-8">
-        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-          Time Converter
-        </h1>
-        <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-          Convert time between any two cities instantly
-        </p>
+        {/* Tool Hero */}
+        <div className="text-center mb-8">
+          <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+            Time Converter
+          </h1>
+          <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+            Convert time between any two cities instantly
+          </p>
         </div>
 
         {/* Tool Interface */}
@@ -219,13 +217,13 @@ export default function TimeConverterPage() {
             Related Tools
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <Link href="/meeting/" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
+            <Link href="/meeting" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
               isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
             }`}>
               <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Meeting Planner</div>
               <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Find overlap hours</div>
             </Link>
-            <Link href="/event-time/" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
+            <Link href="/event-time" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
               isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
             }`}>
               <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Event Time</div>
@@ -275,8 +273,8 @@ export default function TimeConverterPage() {
           </div>
         </section>
 
-        {/* Footer */}
-        <Footer isLight={isLight} />
-    </>
+      {/* Footer */}
+      <Footer isLight={isLight} />
+    </ToolPageWrapper>
   )
 }

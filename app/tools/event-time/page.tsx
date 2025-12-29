@@ -42,7 +42,7 @@ export default function EventTimePage() {
   return (
     <>
       {/* Mini Navigation */}
-      <ToolsMiniNav />
+      <ToolsMiniNav isLight={isLight} theme={theme} />
 
         {/* Tool Hero */}
         <div className="text-center mb-8">
@@ -208,19 +208,19 @@ export default function EventTimePage() {
             Related Tools
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <Link href="/tools/meeting-planner" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
+            <Link href="/meeting/" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
               isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
             }`}>
               <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Meeting Planner</div>
               <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Find overlap hours</div>
             </Link>
-            <Link href="/tools/converter" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
+            <Link href="/time-converter/" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
               isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
             }`}>
               <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Time Converter</div>
               <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Quick conversions</div>
             </Link>
-            <Link href="/tools/alarm" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
+            <Link href="/world-alarm/" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
               isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
             }`}>
               <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>World Alarm</div>

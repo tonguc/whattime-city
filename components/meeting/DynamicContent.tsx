@@ -58,10 +58,10 @@ export default function DynamicContent({ cities, isLight, overlapCount }: Props)
     ? `Large time difference makes real-time collaboration challenging. Consider async work methods.`
     : `After ${formatHour(18)} ${firstCity.city} is generally too late for ${secondCity.city}`
 
-  // Homepage-style light colors
+  // Renkleri isLight durumuna göre ayarla
   const textColor = isLight ? 'text-slate-700' : 'text-slate-300'
   const headingColor = isLight ? 'text-slate-900' : 'text-white'
-  const cardBg = isLight ? 'bg-white/60' : 'bg-slate-800'  // Homepage style
+  const cardBg = isLight ? 'bg-slate-100' : 'bg-slate-800'
   const tableBorder = isLight ? 'border-slate-200' : 'border-slate-700'
   const tableHeaderBorder = isLight ? 'border-slate-300' : 'border-slate-600'
 

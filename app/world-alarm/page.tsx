@@ -1,16 +1,16 @@
 'use client'
 
-import { useEffect } from 'react'
 import Link from 'next/link'
-import { useToolsTheme } from '@/lib/useToolsTheme'
+import { useCityContext } from '@/lib/CityContext'
+import ToolPageWrapper from '@/components/ToolPageWrapper'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 
 export default function WorldAlarmPage() {
-  const { theme, isLight } = useToolsTheme()
+  const { theme, isLight } = useCityContext()
 
   return (
-    <>
+    <ToolPageWrapper>
       {/* Mini Navigation */}
       <ToolsMiniNav isLight={isLight} theme={theme} />
 
@@ -83,13 +83,13 @@ export default function WorldAlarmPage() {
           Related Tools
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <Link href="/time-converter/" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
+          <Link href="/time-converter" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
             isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
           }`}>
             <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Time Converter</div>
             <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Quick conversions</div>
           </Link>
-          <Link href="/meeting/" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
+          <Link href="/meeting" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
             isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
           }`}>
             <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Meeting Planner</div>
@@ -105,6 +105,6 @@ export default function WorldAlarmPage() {
       </section>
 
       <Footer isLight={isLight} />
-    </>
+    </ToolPageWrapper>
   )
 }

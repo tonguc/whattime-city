@@ -4,8 +4,10 @@ import { cities } from '@/lib/cities'
 import { parseCities, generateTopCityPairs, getBusinessHoursOverlapCount } from '@/lib/meetingPlanner'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import MeetingPlannerClient from '@/components/meeting/MeetingPlannerClient'
-import { MeetingContentWrapper, SingleCityWrapper } from '@/components/meeting/MeetingContentWrapper'
+import DynamicContent from '@/components/meeting/DynamicContent'
 import FAQSchema from '@/components/meeting/FAQSchema'
+import { getTimeOfDay } from '@/lib/sun-calculator'
+import { themes, isLightTheme } from '@/lib/themes'
 
 interface Props {
   params: { cities: string }
@@ -79,6 +81,42 @@ export default function MeetingPlannerPage({ params }: Props) {
     notFound()
   }
 
+  // Use first city for theme calculation
+  const firstCity = cityList[0]
+
+  // Time-based auto theme (restored)
+  const now = new Date()
+  const timeOfDay = getTimeOfDay(
+    now,
+    firstCity.lat || 0,
+    firstCity.lng || 0
+  )
+  
+  // Use central theme system with auto mode
+  const currentTheme = themes[timeOfDay]
+  const isLight = isLightTheme(timeOfDay)
+  
+  // Theme colors for components
+  const themeColors = {
+    bg: currentTheme.bg,
+    card: currentTheme.card,
+    text: currentTheme.text,
+    textMuted: currentTheme.textMuted,
+    accent: currentTheme.accent,
+    accentBg: currentTheme.accentBg,
+    accentBgLight: currentTheme.accentBgLight,
+    accentText: currentTheme.accentText,
+    accentBorder: currentTheme.accentBorder,
+  }
+  
+  // Theme for ToolsMiniNav
+  const theme = {
+    accentBg: currentTheme.accentBg,
+    accentBgLight: currentTheme.accentBgLight,
+    accentText: currentTheme.accentText,
+    accentBorder: currentTheme.accentBorder
+  }
+
   // Calculate overlap count for SSR (SEO)
   const overlapCount = cityList.length >= 2 
     ? getBusinessHoursOverlapCount(cityList[0], cityList[1])
@@ -91,27 +129,56 @@ export default function MeetingPlannerPage({ params }: Props) {
         <FAQSchema city1={cityList[0]} city2={cityList[1]} />
       )}
 
-      {/* TOOLS MINI NAV - Uses CityContext for theme */}
-      <ToolsMiniNav />
+      {/* TOOLS MINI NAV */}
+      <ToolsMiniNav isLight={isLight} theme={theme} />
 
-      {/* MAIN CONTENT */}
+      {/* MAIN CONTENT - /tools/meeting-planner ile aynı spacing */}
       <main className="max-w-6xl mx-auto px-4 py-4">
-        {/* Interactive Tool - Uses CityContext for theme */}
+        {/* Interactive Tool */}
         <MeetingPlannerClient 
           initialCities={cityList}
+          isLight={isLight}
+          theme={theme}
+          themeColors={themeColors}
         />
 
-        {/* SEO Content - Client wrapper uses CityContext */}
+        {/* SEO Content - Box içinde - Only for 2+ cities */}
         {cityList.length >= 2 && (
-          <MeetingContentWrapper 
-            cityList={cityList}
-            overlapCount={overlapCount}
-          />
+          <div className={`rounded-2xl p-6 mt-8 backdrop-blur-xl border relative z-10 ${themeColors.card}`}>
+            <DynamicContent 
+              cities={cityList}
+              isLight={isLight}
+              overlapCount={overlapCount}
+            />
+          </div>
         )}
 
-        {/* Single City Info - Client wrapper uses CityContext */}
+        {/* Single City Info - Box içinde - Only for 1 city */}
         {cityList.length === 1 && (
-          <SingleCityWrapper city={cityList[0]} />
+          <div className={`rounded-2xl p-6 mt-8 backdrop-blur-xl border relative z-10 ${themeColors.card}`}>
+            <div className={`prose max-w-none ${themeColors.textMuted}`}>
+              <h2 className={`text-2xl font-bold mb-4 ${themeColors.text}`}>
+                Current Time in {cityList[0].city}
+              </h2>
+              <p className="text-lg mb-4">
+                <strong className={themeColors.text}>
+                  Timezone: </strong>{cityList[0].timezone}
+              </p>
+              <p className="mb-4">
+                <strong className={themeColors.text}>
+                  Business Hours: </strong>9:00 AM - 5:00 PM local time
+              </p>
+              <div className={`p-4 rounded-lg mt-6 ${
+                isLight 
+                  ? 'bg-blue-50 border border-blue-200' 
+                  : 'bg-blue-900/20 border border-blue-800/50'
+              }`}>
+                <p className={`text-sm ${isLight ? 'text-blue-700' : 'text-blue-300'}`}>
+                  <strong>💡 Tip:</strong> Add a second city to compare time zones and find the best meeting time!
+                </p>
+              </div>
+            </div>
+          </div>
         )}
       </main>
     </>

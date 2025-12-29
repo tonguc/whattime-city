@@ -27,7 +27,7 @@ export default function Breadcrumbs({ cities, isLight }: BreadcrumbsProps) {
         </li>
         <li>
           <Link 
-            href="/tools/meeting-planner" 
+            href="/meeting/" 
             className={`hover:underline ${isLight ? 'hover:text-slate-800' : 'hover:text-slate-200'}`}
           >
             Meeting Planner

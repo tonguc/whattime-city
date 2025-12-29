@@ -10,25 +10,25 @@ const relatedTools = [
   {
     name: 'Time Converter',
     description: 'Convert times instantly',
-    url: '/tools/converter',
+    url: '/time-converter',
     icon: '🕐'
   },
   {
     name: 'Event Time',
     description: 'Share event times',
-    url: '/tools/event-time',
+    url: '/event-time',
     icon: '📅'
   },
   {
     name: 'Flight Time',
     description: 'Calculate flight times',
-    url: '/tools/flight-times',
+    url: '/flight-time',
     icon: '✈️'
   },
   {
     name: 'Jet Lag Advisor',
     description: 'Beat jet lag',
-    url: '/tools/jet-lag',
+    url: '/jet-lag-advisor',
     icon: '🌍'
   }
 ]

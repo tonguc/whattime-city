@@ -116,7 +116,7 @@ export default function SydneyStockMarketContent({ city }: Props) {
             <span>💼</span>
             <span className={`font-medium ${headingColor}`}>Business Hours</span>
           </Link>
-          <Link href="/tools/converter/" className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white' : 'bg-slate-800'}`}>
+          <Link href="/time-converter/" className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white' : 'bg-slate-800'}`}>
             <span>🔄</span>
             <span className={`font-medium ${headingColor}`}>Time Converter</span>
           </Link>
