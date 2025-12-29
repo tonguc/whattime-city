@@ -7,6 +7,7 @@ import { City } from '@/lib/cities'
 import TimeSlider from '@/components/TimeSlider'
 import SmartCompromise from './SmartCompromise'
 import ShareButtons from './ShareButtons'
+import Breadcrumbs from './Breadcrumbs'
 import { 
   findBestCompromise, 
   hasBusinessHoursOverlap,
@@ -69,19 +70,25 @@ export default function MeetingPlannerClient({ initialCities, isLight, theme }: 
 
   return (
     <div className="space-y-8">
+      {/* Breadcrumbs */}
+      <Breadcrumbs cities={selectedCities} isLight={isLight} />
+      
       {/* Hero */}
       <div className="text-center mb-8">
         <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-          Meeting Planner{selectedCities[0] && selectedCities[1] ? `: ${selectedCities[0].city} ↔ ${selectedCities[1].city}` : ''}
+          Meeting Planner{selectedCities.length >= 2 
+            ? `: ${selectedCities.map(c => c.city).join(' vs ')}`
+            : ''
+          }
         </h1>
         <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
           Find the best time for meetings across time zones
         </p>
       </div>
 
-      {/* Interactive Time Slider */}
-      <div className={`rounded-2xl p-6 backdrop-blur-xl border ${
-        isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
+      {/* Interactive Time Slider - Sticky */}
+      <div className={`sticky top-0 z-40 rounded-2xl p-6 backdrop-blur-xl border shadow-lg ${
+        isLight ? 'bg-white/90 border-white/50' : 'bg-slate-800/90 border-slate-700/50'
       }`}>
         <TimeSlider 
           isLight={isLight}

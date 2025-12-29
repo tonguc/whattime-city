@@ -331,12 +331,26 @@ export default function TimeSlider({ isLight, initialCities = [], onCitiesChange
 
           {/* Overlap Indicator */}
           {selectedCities.length >= 2 && (
-            <div className={`mt-4 p-3 rounded-xl ${isLight ? 'bg-green-50 border border-green-200' : 'bg-green-900/20 border border-green-800/50'}`}>
+            <div className={`mt-4 p-3 rounded-xl ${
+              overlapHours.length > 0
+                ? isLight ? 'bg-green-50 border border-green-200' : 'bg-green-900/20 border border-green-800/50'
+                : isLight ? 'bg-orange-50 border border-orange-200' : 'bg-orange-900/20 border border-orange-800/50'
+            }`}>
               <div className="flex items-center gap-2">
-                <svg className={`w-5 h-5 ${isLight ? 'text-green-600' : 'text-green-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span className={`text-sm font-medium ${isLight ? 'text-green-700' : 'text-green-300'}`}>
+                {overlapHours.length > 0 ? (
+                  <svg className={`w-5 h-5 ${isLight ? 'text-green-600' : 'text-green-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ) : (
+                  <svg className={`w-5 h-5 ${isLight ? 'text-orange-600' : 'text-orange-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                )}
+                <span className={`text-sm font-medium ${
+                  overlapHours.length > 0
+                    ? isLight ? 'text-green-700' : 'text-green-300'
+                    : isLight ? 'text-orange-700' : 'text-orange-300'
+                }`}>
                   {overlapHours.length > 0 
                     ? `${overlapHours.length} hours of business overlap found`
                     : 'No business hours overlap'
