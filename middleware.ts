@@ -20,32 +20,22 @@ export function middleware(request: NextRequest) {
     }
 
     let cityParts: string[]
-    let needsRedirect = false
     
     // Check format
     if (cities.includes('-vs-')) {
       // Already has -vs- separator
       cityParts = cities.split('-vs-')
     } else {
-      // Old format (istanbul-london) - needs redirect to -vs- format
-      // Split by dashes and try to detect cities
-      const parts = cities.split('-')
-      
-      // Simple heuristic: if 2 parts, assume 2 single-word cities
-      if (parts.length === 2) {
-        cityParts = parts
-        needsRedirect = true
-      } else {
-        // Complex case - let Next.js parseCities handle it
-        return NextResponse.next()
-      }
+      // Old format or simple format - just split by dashes
+      // Let parseCities handle complex cases
+      cityParts = cities.split('-')
     }
 
     // Normalize to alphabetical order with -vs-
     const sorted = [...cityParts].sort()
     const normalized = sorted.join('-vs-')
     
-    // Redirect if not normalized or missing -vs-
+    // Redirect if not normalized
     if (cities !== normalized) {
       const newUrl = new URL(`/meeting/${normalized}/`, request.url)
       return NextResponse.redirect(newUrl, 301) // Permanent redirect

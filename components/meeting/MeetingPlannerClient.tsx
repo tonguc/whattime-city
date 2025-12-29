@@ -29,9 +29,9 @@ export default function MeetingPlannerClient({ initialCities, isLight, theme }: 
   // Track if we've done initial mount
   const hasMounted = useRef(false)
   
-  // Reset to meeting planner home
+  // Reset to default cities
   const handleReset = () => {
-    router.push('/tools/meeting-planner')
+    router.push('/meeting/istanbul-vs-london')
   }
   
   // Sync URL when cities change (alfabetik sıralama ile)
@@ -42,9 +42,9 @@ export default function MeetingPlannerClient({ initialCities, isLight, theme }: 
       return
     }
 
-    // If all cities removed, go to meeting planner home
+    // If all cities removed, go to default cities
     if (selectedCities.length < 2) {
-      router.push('/tools/meeting-planner')
+      router.push('/meeting/istanbul-vs-london')
       return
     }
 

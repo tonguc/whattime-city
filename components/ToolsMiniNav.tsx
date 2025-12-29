@@ -97,7 +97,10 @@ export default function ToolsMiniNav({ isLight, theme, onAlarmClick }: ToolsMini
       {/* Wrapping flex container - no horizontal scroll */}
       <div className="flex flex-wrap justify-center gap-2">
         {toolNavItems.map((tool) => {
-          const isActive = pathname === tool.url
+          // Special handling for Meeting Planner - active if on /meeting/* or /tools/meeting-planner
+          const isActive = tool.id === 'meeting-planner' 
+            ? pathname.startsWith('/meeting/') || pathname === tool.url
+            : pathname === tool.url
           
           const className = `inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
             isActive
