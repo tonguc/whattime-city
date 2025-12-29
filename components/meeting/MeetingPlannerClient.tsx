@@ -10,30 +10,31 @@ import ShareButtons from './ShareButtons'
 import { 
   findBestCompromise, 
   hasBusinessHoursOverlap,
-  normalizeCityPair 
+  normalizeCities
 } from '@/lib/meetingPlanner'
 
 interface Props {
-  initialCity1: City
-  initialCity2: City
+  initialCities: City[]  // Changed: support multiple cities
   isLight: boolean
   theme: any
 }
 
-export default function MeetingPlannerClient({ initialCity1, initialCity2, isLight, theme }: Props) {
+export default function MeetingPlannerClient({ initialCities, isLight, theme }: Props) {
   const router = useRouter()
   const pathname = usePathname()
   
-  // Only 2 cities by default (no Tokyo!)
-  const [selectedCities, setSelectedCities] = useState<City[]>([
-    initialCity1,
-    initialCity2
-  ])
+  // Multiple cities support (2+)
+  const [selectedCities, setSelectedCities] = useState<City[]>(initialCities)
   
   // Track if we've done initial mount
   const hasMounted = useRef(false)
   
-  // Sync URL ONLY when cities actually change (not on initial mount)
+  // Reset to defaults
+  const handleReset = () => {
+    setSelectedCities(initialCities)
+  }
+  
+  // Sync URL when cities change (alfabetik sıralama ile)
   useEffect(() => {
     // Skip initial mount
     if (!hasMounted.current) {
@@ -41,18 +42,20 @@ export default function MeetingPlannerClient({ initialCity1, initialCity2, isLig
       return
     }
 
-    // Safety: both cities must exist
-    if (!selectedCities[0] || !selectedCities[1]) {
+    // Safety: minimum 2 cities required
+    if (selectedCities.length < 2) {
       return
     }
 
-    const newUrl = `/meeting/${normalizeCityPair(selectedCities[0].slug, selectedCities[1].slug)}/`
+    // Alfabetik sıralama ile URL oluştur
+    const slugs = selectedCities.map(c => c.slug)
+    const newUrl = `/meeting/${normalizeCities(slugs)}/`
     
     // Only update if URL actually different
     if (pathname !== newUrl) {
       router.push(newUrl, { scroll: false })
     }
-  }, [selectedCities[0]?.slug, selectedCities[1]?.slug, pathname, router])
+  }, [selectedCities, pathname, router])
 
   // Safe calculations with null checks
   const hasOverlap = selectedCities[0] && selectedCities[1] 
@@ -79,22 +82,31 @@ export default function MeetingPlannerClient({ initialCity1, initialCity2, isLig
       <div className={`rounded-2xl p-6 backdrop-blur-xl border ${
         isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
       }`}>
+        {/* Reset Button */}
+        <div className="flex justify-end mb-4">
+          <button
+            onClick={handleReset}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+              isLight 
+                ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' 
+                : 'bg-slate-700 hover:bg-slate-600 text-white'
+            }`}
+          >
+            🔄 Reset to Defaults
+          </button>
+        </div>
+
         <TimeSlider 
           isLight={isLight}
           initialCities={selectedCities}
           onCitiesChange={(cities) => {
-            // Meeting planner requires exactly 2 cities
-            if (cities.length === 0) {
-              // Both removed, restore defaults
-              setSelectedCities([initialCity1, initialCity2])
-            } else if (cities.length === 1) {
-              // One removed, keep the remaining one and add the other default
-              const remaining = cities[0]
-              const other = remaining.slug === initialCity1.slug ? initialCity2 : initialCity1
-              setSelectedCities([remaining, other])
+            // Support multiple cities (2+)
+            if (cities.length < 2) {
+              // Minimum 2 cities required
+              setSelectedCities(initialCities)
             } else {
-              // 2+ cities, take first 2
-              setSelectedCities(cities.slice(0, 2))
+              // Accept all cities
+              setSelectedCities(cities)
             }
           }}
         />

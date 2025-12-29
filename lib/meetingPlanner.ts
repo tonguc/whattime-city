@@ -99,6 +99,51 @@ export function normalizeCityPair(slug1: string, slug2: string): string {
 }
 
 /**
+ * Çoklu şehir sluglarını alfabetik sıralar ve `-vs-` ile birleştirir
+ * @example normalizeCities(['london', 'istanbul', 'berlin']) → 'berlin-vs-istanbul-vs-london'
+ */
+export function normalizeCities(slugs: string[]): string {
+  // Alfabetik sırala
+  const sorted = [...slugs].sort()
+  // `-vs-` ile birleştir
+  return sorted.join('-vs-')
+}
+
+/**
+ * URL'den çoklu şehir parse eder (supports both `-` and `-vs-` separators)
+ * @example parseCities('berlin-vs-istanbul-vs-london') → [City, City, City]
+ * @example parseCities('istanbul-london') → [City, City]
+ */
+export function parseCities(citiesParam: string): City[] | null {
+  // `-vs-` separator varsa önce ona göre split et
+  const parts = citiesParam.includes('-vs-') 
+    ? citiesParam.split('-vs-')
+    : [citiesParam]
+  
+  const cityList: City[] = []
+  
+  for (const part of parts) {
+    // Eğer `-vs-` yoksa, eski format olabilir ("istanbul-london")
+    if (parts.length === 1 && part.includes('-')) {
+      // Try to parse as old format (2 cities combined)
+      const pair = parseCityPair(part)
+      if (pair) {
+        cityList.push(pair.city1, pair.city2)
+        break
+      }
+    }
+    
+    // Normal case: her part bir şehir slug'ı
+    const city = getCityBySlug(part)
+    if (!city) return null // Invalid city
+    cityList.push(city)
+  }
+  
+  // En az 2 şehir olmalı
+  return cityList.length >= 2 ? cityList : null
+}
+
+/**
  * City pair için canonical URL oluşturur
  */
 export function getCanonicalUrl(city1: City, city2: City): string {
@@ -249,7 +294,8 @@ export function generateTopCityPairs(limit: number = 1000): string[] {
   
   for (let i = 0; i < topCities.length && pairs.length < limit; i++) {
     for (let j = i + 1; j < topCities.length && pairs.length < limit; j++) {
-      const normalized = normalizeCityPair(topCities[i].slug, topCities[j].slug)
+      // Use normalizeCities for -vs- format (even for 2 cities)
+      const normalized = normalizeCities([topCities[i].slug, topCities[j].slug])
       pairs.push(normalized)
     }
   }

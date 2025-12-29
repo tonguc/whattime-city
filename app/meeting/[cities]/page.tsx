@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cities } from '@/lib/cities'
-import { parseCityPair, generateTopCityPairs } from '@/lib/meetingPlanner'
+import { parseCities, generateTopCityPairs } from '@/lib/meetingPlanner'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import MeetingPlannerClient from '@/components/meeting/MeetingPlannerClient'
 import DynamicContent from '@/components/meeting/DynamicContent'
@@ -25,42 +25,46 @@ export const dynamicParams = true
 
 // Generate metadata
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const parsed = parseCityPair(params.cities)
-  if (!parsed) {
+  const cityList = parseCities(params.cities)
+  if (!cityList) {
     return {
       title: 'Meeting Planner | whattime.city',
       description: 'Find the best meeting time across time zones'
     }
   }
 
-  const { city1, city2 } = parsed
+  // First 2 cities for title
+  const city1 = cityList[0]
+  const city2 = cityList[1]
+  const cityNames = cityList.map(c => c.city).join(', ')
   
   return {
-    title: `Best Meeting Time: ${city1.city} & ${city2.city} | whattime.city`,
-    description: `Find perfect meeting time between ${city1.city} (${city1.timezone}) and ${city2.city} (${city2.timezone}). Compare business hours and schedule calls across time zones.`,
+    title: `Best Meeting Time: ${cityNames} | whattime.city`,
+    description: `Find perfect meeting time between ${cityNames}. Compare business hours and schedule calls across time zones.`,
     openGraph: {
-      title: `Meeting Time: ${city1.city} ↔ ${city2.city}`,
+      title: `Meeting Time: ${cityNames}`,
       description: `Find the best meeting time across time zones`,
     }
   }
 }
 
 export default function MeetingPlannerPage({ params }: Props) {
-  // Parse city pair
-  const parsed = parseCityPair(params.cities)
+  // Parse multiple cities
+  const cityList = parseCities(params.cities)
   
-  if (!parsed) {
+  if (!cityList) {
     notFound()
   }
 
-  const { city1, city2 } = parsed
+  // Use first city for theme calculation
+  const firstCity = cityList[0]
 
   // Get theme based on first city's time
   const now = new Date()
   const timeOfDay = getTimeOfDay(
     now,
-    city1.lat || 0,
-    city1.lng || 0
+    firstCity.lat || 0,
+    firstCity.lng || 0
   )
   
   const isLight = timeOfDay === 'day' || timeOfDay === 'dawn'
@@ -82,20 +86,21 @@ export default function MeetingPlannerPage({ params }: Props) {
       <main className="container mx-auto px-4 pt-12 pb-16 max-w-6xl">
         {/* Interactive Tool */}
         <MeetingPlannerClient 
-          initialCity1={city1}
-          initialCity2={city2}
+          initialCities={cityList}
           isLight={isLight}
           theme={theme}
         />
 
         {/* SEO Content - Client'tan sonra daha fazla boşluk */}
-        <div className="mt-16">
-          <DynamicContent 
-            city1={city1}
-            city2={city2}
-            isLight={isLight}
-          />
-        </div>
+        {cityList.length >= 2 && (
+          <div className="mt-16">
+            <DynamicContent 
+              city1={cityList[0]}
+              city2={cityList[1]}
+              isLight={isLight}
+            />
+          </div>
+        )}
       </main>
     </>
   )
