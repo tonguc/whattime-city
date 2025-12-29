@@ -52,7 +52,7 @@ export default function MeetingPlannerClient({ initialCity1, initialCity2, isLig
     if (pathname !== newUrl) {
       router.push(newUrl, { scroll: false })
     }
-  }, [selectedCities[0]?.slug, selectedCities[1]?.slug])
+  }, [selectedCities[0]?.slug, selectedCities[1]?.slug, pathname, router])
 
   // Safe calculations with null checks
   const hasOverlap = selectedCities[0] && selectedCities[1] 
