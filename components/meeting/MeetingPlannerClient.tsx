@@ -76,13 +76,13 @@ export default function MeetingPlannerClient({ initialCities, isLight, theme }: 
       {/* Hero */}
       <div className="text-center mb-8">
         <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-          Meeting Planner{selectedCities.length >= 2 
-            ? `: ${selectedCities.map(c => c.city).join(' vs ')}`
-            : ''
+          {selectedCities.length >= 2 
+            ? `Meeting Planner: Find Overlap Hours for ${selectedCities.map(c => c.city).join(', ').replace(/, ([^,]*)$/, ' & $1')}`
+            : 'Meeting Planner: Find Best Time Across Time Zones'
           }
         </h1>
         <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-          Find the best time for meetings across time zones
+          Compare business hours and schedule calls across time zones
         </p>
       </div>
 

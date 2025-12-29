@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect, useCallback } from 'react'
+import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
 import { City, cities, searchCities } from '@/lib/cities'
 
 interface TimeSliderProps {
@@ -147,8 +147,8 @@ export default function TimeSlider({ isLight, initialCities = [], onCitiesChange
     setBaseTime(new Date())
   }
 
-  // Calculate overlap hours
-  const getOverlapHours = (): number[] => {
+  // Calculate overlap hours (memoized for performance)
+  const overlapHours = useMemo(() => {
     if (selectedCities.length < 2) return []
     
     const overlap: number[] = []
@@ -161,9 +161,7 @@ export default function TimeSlider({ isLight, initialCities = [], onCitiesChange
       if (allInBusiness) overlap.push(h)
     }
     return overlap
-  }
-
-  const overlapHours = getOverlapHours()
+  }, [selectedCities, offsetHours, baseTime]) // Re-calculate only when these change
 
   return (
     <div className={`rounded-2xl p-4 md:p-6 ${isLight ? 'bg-white/80' : 'bg-slate-800/80'} backdrop-blur-xl border ${isLight ? 'border-white/50' : 'border-slate-700/50'}`}>
@@ -195,7 +193,7 @@ export default function TimeSlider({ isLight, initialCities = [], onCitiesChange
           </button>
           
           {showSearch && (
-            <div className={`absolute right-0 top-full mt-2 w-72 rounded-xl shadow-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'} p-3 z-50`}>
+            <div className={`fixed right-4 top-20 w-72 rounded-xl shadow-2xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'} p-3 z-[9999]`}>
               <input
                 type="text"
                 value={searchQuery}

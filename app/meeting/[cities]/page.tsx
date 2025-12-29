@@ -1,10 +1,11 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cities } from '@/lib/cities'
-import { parseCities, generateTopCityPairs } from '@/lib/meetingPlanner'
+import { parseCities, generateTopCityPairs, getBusinessHoursOverlapCount } from '@/lib/meetingPlanner'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import MeetingPlannerClient from '@/components/meeting/MeetingPlannerClient'
 import DynamicContent from '@/components/meeting/DynamicContent'
+import FAQSchema from '@/components/meeting/FAQSchema'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 
 interface Props {
@@ -28,22 +29,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cityList = parseCities(params.cities)
   if (!cityList) {
     return {
-      title: 'Meeting Planner | whattime.city',
-      description: 'Find the best meeting time across time zones'
+      title: 'Meeting Planner: Find Best Time to Call Across Time Zones | whattime.city',
+      description: 'Schedule meetings across time zones. Find business hours overlap and best time to call with our time zone converter.'
     }
   }
 
-  // First 2 cities for title
-  const city1 = cityList[0]
-  const city2 = cityList[1]
-  const cityNames = cityList.map(c => c.city).join(', ')
+  // City names for meta
+  const cityNames = cityList.map(c => c.city)
+  const cityNamesText = cityNames.join(', ').replace(/, ([^,]*)$/, ' & $1')
   
   return {
-    title: `Best Meeting Time: ${cityNames} | whattime.city`,
-    description: `Find perfect meeting time between ${cityNames}. Compare business hours and schedule calls across time zones.`,
+    title: `Best Time to Call ${cityNamesText}: Business Hours Overlap | whattime.city`,
+    description: `Find the best meeting time between ${cityNamesText}. Compare business hours, calculate time differences, and schedule calls across time zones with working hours overlap.`,
+    keywords: `time zone converter, ${cityNamesText} time difference, best time to call, business hours overlap, meeting planner, schedule across time zones`,
     openGraph: {
-      title: `Meeting Time: ${cityNames}`,
-      description: `Find the best meeting time across time zones`,
+      title: `Meeting Planner: ${cityNamesText} Time Zone Comparison`,
+      description: `Find business hours overlap and best time to schedule calls between ${cityNamesText}`,
+      type: 'website'
     }
   }
 }
@@ -77,8 +79,18 @@ export default function MeetingPlannerPage({ params }: Props) {
     accentBorder: isLight ? 'border-blue-200' : 'border-blue-800'
   }
 
+  // Calculate overlap count for SSR (SEO)
+  const overlapCount = cityList.length >= 2 
+    ? getBusinessHoursOverlapCount(cityList[0], cityList[1])
+    : 0
+
   return (
     <>
+      {/* FAQ Schema for SEO */}
+      {cityList.length >= 2 && (
+        <FAQSchema city1={cityList[0]} city2={cityList[1]} />
+      )}
+
       {/* TOOLS MINI NAV */}
       <ToolsMiniNav isLight={isLight} theme={theme} />
 
@@ -100,6 +112,7 @@ export default function MeetingPlannerPage({ params }: Props) {
               city1={cityList[0]}
               city2={cityList[1]}
               isLight={isLight}
+              overlapCount={overlapCount}
             />
           </div>
         )}

@@ -282,6 +282,27 @@ export function hasBusinessHoursOverlap(city1: City, city2: City): boolean {
 }
 
 /**
+ * Returns count of business hours overlap (for SSR/SEO)
+ */
+export function getBusinessHoursOverlapCount(city1: City, city2: City): number {
+  let count = 0
+  
+  for (let utcHour = 0; utcHour < 24; utcHour++) {
+    const city1LocalHour = getLocalHour(city1, utcHour)
+    const city2LocalHour = getLocalHour(city2, utcHour)
+    
+    const isCity1Working = city1LocalHour >= 9 && city1LocalHour <= 17
+    const isCity2Working = city2LocalHour >= 9 && city2LocalHour <= 17
+    
+    if (isCity1Working && isCity2Working) {
+      count++
+    }
+  }
+  
+  return count
+}
+
+/**
  * Top city pairs generate eder (static generation için)
  */
 export function generateTopCityPairs(limit: number = 1000): string[] {

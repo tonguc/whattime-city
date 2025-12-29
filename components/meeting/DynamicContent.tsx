@@ -9,10 +9,11 @@ import { calculateTimeDifference, formatHour, getLocalHour } from '@/lib/meeting
 interface Props {
   city1: City
   city2: City
-  isLight?: boolean // <-- YENİ EKLENEN
+  isLight?: boolean
+  overlapCount?: number // SSR için overlap count
 }
 
-export default function DynamicContent({ city1, city2, isLight }: Props) {
+export default function DynamicContent({ city1, city2, isLight, overlapCount }: Props) {
   const timeDiff = calculateTimeDifference(city1, city2)
   const diffText = `${timeDiff.hours}${timeDiff.minutes > 0 ? `.5` : ''} hours`
 
@@ -53,6 +54,24 @@ export default function DynamicContent({ city1, city2, isLight }: Props) {
 
   return (
     <div className={`prose max-w-none ${textColor}`}>
+      {/* SSR Result for SEO - Hidden but crawlable */}
+      {overlapCount !== undefined && (
+        <div 
+          className="sr-only" 
+          itemProp="result"
+          itemScope 
+          itemType="https://schema.org/Thing"
+        >
+          <meta itemProp="name" content="Business Hours Overlap" />
+          <span itemProp="value">
+            {overlapCount > 0 
+              ? `${overlapCount} hours of business overlap found between ${city1.city} and ${city2.city}`
+              : `No business hours overlap between ${city1.city} and ${city2.city}`
+            }
+          </span>
+        </div>
+      )}
+
       {/* Time Difference Section */}
       <section className="mb-8">
         <h2 className={`text-2xl font-bold mb-4 ${headingColor}`}>
@@ -76,12 +95,16 @@ export default function DynamicContent({ city1, city2, isLight }: Props) {
       <section className="mb-8">
         <h3 className={`text-xl font-semibold mb-3 ${headingColor}`}>Quick Reference Table</h3>
         <div className="overflow-x-auto">
-          <table className="min-w-full border-collapse">
+          <table 
+            className="min-w-full border-collapse" 
+            role="table"
+            aria-label={`Time comparison table for ${city1.city} and ${city2.city}`}
+          >
             <thead>
               <tr className={`border-b-2 ${tableHeaderBorder}`}>
-                <th className={`text-left py-2 px-4 ${headingColor}`}>{city1.city} Time</th>
-                <th className={`text-left py-2 px-4 ${headingColor}`}>{city2.city} Time</th>
-                <th className={`text-left py-2 px-4 ${headingColor}`}>Best For</th>
+                <th scope="col" className={`text-left py-2 px-4 ${headingColor}`}>{city1.city} Time</th>
+                <th scope="col" className={`text-left py-2 px-4 ${headingColor}`}>{city2.city} Time</th>
+                <th scope="col" className={`text-left py-2 px-4 ${headingColor}`}>Best For</th>
               </tr>
             </thead>
             <tbody>
