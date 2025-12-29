@@ -3,6 +3,7 @@ import { cities } from '@/lib/cities'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import MeetingPlannerClient from '@/components/meeting/MeetingPlannerClient'
 import { getTimeOfDay } from '@/lib/sun-calculator'
+import { themes, isLightTheme } from '@/lib/themes'
 
 export const metadata: Metadata = {
   title: 'Meeting Planner: Find Best Time Across Time Zones | whattime.city',
@@ -22,14 +23,28 @@ export default function MeetingPlannerEmptyPage() {
     defaultCity.lng || 0
   )
   
-  const isLight = timeOfDay === 'day' || timeOfDay === 'dawn'
+  // Use central theme system
+  const currentTheme = themes[timeOfDay]
+  const isLight = isLightTheme(timeOfDay)
   
-  // Theme colors for ToolsMiniNav
+  // Theme for components
   const theme = {
-    accentBg: isLight ? 'bg-blue-500' : 'bg-blue-600',
-    accentBgLight: isLight ? 'bg-blue-100' : 'bg-blue-900',
-    accentText: isLight ? 'text-blue-600' : 'text-blue-400',
-    accentBorder: isLight ? 'border-blue-200' : 'border-blue-800'
+    accentBg: currentTheme.accentBg,
+    accentBgLight: currentTheme.accentBgLight,
+    accentText: currentTheme.accentText,
+    accentBorder: currentTheme.accentBorder
+  }
+  
+  const themeColors = {
+    bg: currentTheme.bg,
+    card: currentTheme.card,
+    text: currentTheme.text,
+    textMuted: currentTheme.textMuted,
+    accent: currentTheme.accent,
+    accentBg: currentTheme.accentBg,
+    accentBgLight: currentTheme.accentBgLight,
+    accentText: currentTheme.accentText,
+    accentBorder: currentTheme.accentBorder,
   }
 
   return (
@@ -44,6 +59,7 @@ export default function MeetingPlannerEmptyPage() {
           initialCities={[]}
           isLight={isLight}
           theme={theme}
+          themeColors={themeColors}
         />
       </main>
     </>

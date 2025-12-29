@@ -7,6 +7,7 @@ import MeetingPlannerClient from '@/components/meeting/MeetingPlannerClient'
 import DynamicContent from '@/components/meeting/DynamicContent'
 import FAQSchema from '@/components/meeting/FAQSchema'
 import { getTimeOfDay } from '@/lib/sun-calculator'
+import { themes, isLightTheme } from '@/lib/themes'
 
 interface Props {
   params: { cities: string }
@@ -91,71 +92,29 @@ export default function MeetingPlannerPage({ params }: Props) {
     firstCity.lng || 0
   )
   
-  const isLight = timeOfDay === 'day' || timeOfDay === 'dawn'
+  // Use central theme system
+  const currentTheme = themes[timeOfDay]
+  const isLight = isLightTheme(timeOfDay)
   
-  // Full theme object (from themes.ts pattern)
-  const getThemeColors = (tod: typeof timeOfDay) => {
-    switch (tod) {
-      case 'day':
-        return {
-          bg: 'from-sky-100 via-blue-100 to-cyan-100',
-          card: 'bg-white/60 border-sky-200/50',
-          text: 'text-slate-800',
-          textMuted: 'text-slate-600',
-          accent: 'amber',
-          accentBg: 'bg-amber-500',
-          accentBgLight: 'bg-amber-500/20',
-          accentText: 'text-amber-500',
-          accentBorder: 'border-amber-500/50',
-        }
-      case 'dawn':
-        return {
-          bg: 'from-slate-900 via-orange-900 to-amber-800',
-          card: 'bg-slate-800/60 border-orange-700/50',
-          text: 'text-white',
-          textMuted: 'text-orange-300',
-          accent: 'amber',
-          accentBg: 'bg-amber-500',
-          accentBgLight: 'bg-amber-500/20',
-          accentText: 'text-amber-400',
-          accentBorder: 'border-amber-500/50',
-        }
-      case 'dusk':
-        return {
-          bg: 'from-purple-900 via-rose-900 to-orange-900',
-          card: 'bg-slate-800/60 border-purple-700/50',
-          text: 'text-white',
-          textMuted: 'text-purple-300',
-          accent: 'purple',
-          accentBg: 'bg-purple-500',
-          accentBgLight: 'bg-purple-500/20',
-          accentText: 'text-purple-400',
-          accentBorder: 'border-purple-500/50',
-        }
-      case 'night':
-      default:
-        return {
-          bg: 'from-slate-950 via-indigo-950 to-slate-950',
-          card: 'bg-slate-900/60 border-slate-700/50',
-          text: 'text-white',
-          textMuted: 'text-slate-400',
-          accent: 'cyan',
-          accentBg: 'bg-cyan-500',
-          accentBgLight: 'bg-cyan-500/20',
-          accentText: 'text-cyan-400',
-          accentBorder: 'border-cyan-500/50',
-        }
-    }
+  // Theme colors for components
+  const themeColors = {
+    bg: currentTheme.bg,
+    card: currentTheme.card,
+    text: currentTheme.text,
+    textMuted: currentTheme.textMuted,
+    accent: currentTheme.accent,
+    accentBg: currentTheme.accentBg,
+    accentBgLight: currentTheme.accentBgLight,
+    accentText: currentTheme.accentText,
+    accentBorder: currentTheme.accentBorder,
   }
-
-  const themeColors = getThemeColors(timeOfDay)
   
-  // Theme colors for ToolsMiniNav (keep existing logic)
+  // Theme for ToolsMiniNav
   const theme = {
-    accentBg: isLight ? 'bg-blue-500' : 'bg-blue-600',
-    accentBgLight: isLight ? 'bg-blue-100' : 'bg-blue-900',
-    accentText: isLight ? 'text-blue-600' : 'text-blue-400',
-    accentBorder: isLight ? 'border-blue-200' : 'border-blue-800'
+    accentBg: currentTheme.accentBg,
+    accentBgLight: currentTheme.accentBgLight,
+    accentText: currentTheme.accentText,
+    accentBorder: currentTheme.accentBorder
   }
 
   // Calculate overlap count for SSR (SEO)
