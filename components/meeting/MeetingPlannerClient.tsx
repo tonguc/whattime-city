@@ -83,8 +83,19 @@ export default function MeetingPlannerClient({ initialCity1, initialCity2, isLig
           isLight={isLight}
           initialCities={selectedCities}
           onCitiesChange={(cities) => {
-            // Meeting planner URL supports only 2 cities
-            setSelectedCities(cities.slice(0, 2))
+            // Meeting planner requires exactly 2 cities
+            if (cities.length === 0) {
+              // Both removed, restore defaults
+              setSelectedCities([initialCity1, initialCity2])
+            } else if (cities.length === 1) {
+              // One removed, keep the remaining one and add the other default
+              const remaining = cities[0]
+              const other = remaining.slug === initialCity1.slug ? initialCity2 : initialCity1
+              setSelectedCities([remaining, other])
+            } else {
+              // 2+ cities, take first 2
+              setSelectedCities(cities.slice(0, 2))
+            }
           }}
         />
 

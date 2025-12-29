@@ -2,9 +2,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cities } from '@/lib/cities'
 import { parseCityPair, generateTopCityPairs } from '@/lib/meetingPlanner'
-import Header from '@/components/Header'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
-import Footer from '@/components/Footer'
 import MeetingPlannerClient from '@/components/meeting/MeetingPlannerClient'
 import DynamicContent from '@/components/meeting/DynamicContent'
 import { getTimeOfDay } from '@/lib/sun-calculator'
@@ -67,22 +65,6 @@ export default function MeetingPlannerPage({ params }: Props) {
   
   const isLight = timeOfDay === 'day' || timeOfDay === 'dawn'
   
-  // Background gradient (ana sayfa ile uyumlu)
-  const bgGradient = (() => {
-    switch (timeOfDay) {
-      case 'dawn':
-        return 'from-orange-100 via-yellow-50 to-blue-50'
-      case 'day':
-        return 'from-blue-100 via-cyan-50 to-indigo-50'
-      case 'dusk':
-        return 'from-purple-200 via-pink-100 to-orange-100'
-      case 'night':
-        return 'from-slate-900 via-blue-950 to-indigo-950'
-      default:
-        return 'from-blue-100 via-cyan-50 to-indigo-50'
-    }
-  })()
-  
   // Theme colors for ToolsMiniNav
   const theme = {
     accentBg: isLight ? 'bg-blue-500' : 'bg-blue-600',
@@ -92,33 +74,29 @@ export default function MeetingPlannerPage({ params }: Props) {
   }
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${bgGradient} transition-colors duration-1000`}>
-      {/* MAIN HEADER */}
-      <Header isLight={isLight} />
-      
+    <>
       {/* TOOLS MINI NAV */}
       <ToolsMiniNav isLight={isLight} theme={theme} />
 
-        {/* MAIN CONTENT */}
-        <main className="container mx-auto px-4 py-8 max-w-6xl">
-          {/* Interactive Tool */}
-          <MeetingPlannerClient 
-            initialCity1={city1}
-            initialCity2={city2}
-            isLight={isLight}
-            theme={theme}
-          />
+      {/* MAIN CONTENT - Header'dan sonra daha fazla boşluk */}
+      <main className="container mx-auto px-4 pt-12 pb-16 max-w-6xl">
+        {/* Interactive Tool */}
+        <MeetingPlannerClient 
+          initialCity1={city1}
+          initialCity2={city2}
+          isLight={isLight}
+          theme={theme}
+        />
 
-          {/* SEO Content */}
+        {/* SEO Content - Client'tan sonra daha fazla boşluk */}
+        <div className="mt-16">
           <DynamicContent 
             city1={city1}
             city2={city2}
             isLight={isLight}
           />
-        </main>
-
-        {/* FOOTER */}
-        <Footer isLight={isLight} />
-      </div>
+        </div>
+      </main>
+    </>
   )
 }
