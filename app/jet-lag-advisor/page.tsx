@@ -9,17 +9,17 @@ import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 
 export default function JetLagAdvisorPage() {
-  const { theme, isLight, selectedCity } = useCityContext()
+  const { theme, isLight, activeCity } = useCityContext()
   
   const [fromCity, setFromCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
   const [toCity, setToCity] = useState(() => cities.find(c => c.city === 'Tokyo') || cities[2])
   
   // Sync fromCity with context when it becomes available
   useEffect(() => {
-    if (selectedCity) {
-      setFromCity(selectedCity)
+    if (activeCity) {
+      setFromCity(activeCity)
     }
-  }, [selectedCity])
+  }, [activeCity])
 
   // Calculate time difference
   const getTimeDiff = () => {

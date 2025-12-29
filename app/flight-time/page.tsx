@@ -9,7 +9,7 @@ import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 
 export default function FlightTimePage() {
-  const { theme, isLight, selectedCity } = useCityContext()
+  const { theme, isLight, activeCity } = useCityContext()
   
   const [departureCity, setDepartureCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
   const [arrivalCity, setArrivalCity] = useState(() => cities.find(c => c.city === 'London') || cities[1])
@@ -19,10 +19,10 @@ export default function FlightTimePage() {
   
   // Sync departureCity with context when it becomes available
   useEffect(() => {
-    if (selectedCity) {
-      setDepartureCity(selectedCity)
+    if (activeCity) {
+      setDepartureCity(activeCity)
     }
-  }, [selectedCity])
+  }, [activeCity])
 
   // Calculate arrival time
   const getArrivalTime = () => {

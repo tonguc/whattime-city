@@ -9,7 +9,7 @@ import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 
 export default function TimeConverterPage() {
-  const { theme, isLight, selectedCity } = useCityContext()
+  const { theme, isLight, activeCity } = useCityContext()
   
   // Get initial city from context or default
   const [fromCity, setFromCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
@@ -19,10 +19,10 @@ export default function TimeConverterPage() {
   
   // Sync fromCity with context when it becomes available
   useEffect(() => {
-    if (selectedCity) {
-      setFromCity(selectedCity)
+    if (activeCity) {
+      setFromCity(activeCity)
     }
-  }, [selectedCity])
+  }, [activeCity])
 
   // Calculate converted time
   const getConvertedTime = () => {

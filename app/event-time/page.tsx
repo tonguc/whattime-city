@@ -9,7 +9,7 @@ import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 
 export default function EventTimePage() {
-  const { theme, isLight, selectedCity } = useCityContext()
+  const { theme, isLight, activeCity } = useCityContext()
   
   const [eventCity, setEventCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
   const [eventHour, setEventHour] = useState(14)
@@ -18,10 +18,10 @@ export default function EventTimePage() {
   
   // Sync eventCity with context when it becomes available
   useEffect(() => {
-    if (selectedCity) {
-      setEventCity(selectedCity)
+    if (activeCity) {
+      setEventCity(activeCity)
     }
-  }, [selectedCity])
+  }, [activeCity])
 
   // Popular cities to show conversions
   const popularCities = cities.slice(0, 8)
