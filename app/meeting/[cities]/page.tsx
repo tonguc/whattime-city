@@ -6,7 +6,6 @@ import ToolsMiniNav from '@/components/ToolsMiniNav'
 import MeetingPlannerClient from '@/components/meeting/MeetingPlannerClient'
 import DynamicContent from '@/components/meeting/DynamicContent'
 import FAQSchema from '@/components/meeting/FAQSchema'
-import RelatedTools from '@/components/meeting/RelatedTools'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 
 interface Props {
@@ -94,7 +93,64 @@ export default function MeetingPlannerPage({ params }: Props) {
   
   const isLight = timeOfDay === 'day' || timeOfDay === 'dawn'
   
-  // Theme colors for ToolsMiniNav
+  // Full theme object (from themes.ts pattern)
+  const getThemeColors = (tod: typeof timeOfDay) => {
+    switch (tod) {
+      case 'day':
+        return {
+          bg: 'from-sky-100 via-blue-100 to-cyan-100',
+          card: 'bg-white/60 border-sky-200/50',
+          text: 'text-slate-800',
+          textMuted: 'text-slate-600',
+          accent: 'amber',
+          accentBg: 'bg-amber-500',
+          accentBgLight: 'bg-amber-500/20',
+          accentText: 'text-amber-500',
+          accentBorder: 'border-amber-500/50',
+        }
+      case 'dawn':
+        return {
+          bg: 'from-slate-900 via-orange-900 to-amber-800',
+          card: 'bg-slate-800/60 border-orange-700/50',
+          text: 'text-white',
+          textMuted: 'text-orange-300',
+          accent: 'amber',
+          accentBg: 'bg-amber-500',
+          accentBgLight: 'bg-amber-500/20',
+          accentText: 'text-amber-400',
+          accentBorder: 'border-amber-500/50',
+        }
+      case 'dusk':
+        return {
+          bg: 'from-purple-900 via-rose-900 to-orange-900',
+          card: 'bg-slate-800/60 border-purple-700/50',
+          text: 'text-white',
+          textMuted: 'text-purple-300',
+          accent: 'purple',
+          accentBg: 'bg-purple-500',
+          accentBgLight: 'bg-purple-500/20',
+          accentText: 'text-purple-400',
+          accentBorder: 'border-purple-500/50',
+        }
+      case 'night':
+      default:
+        return {
+          bg: 'from-slate-950 via-indigo-950 to-slate-950',
+          card: 'bg-slate-900/60 border-slate-700/50',
+          text: 'text-white',
+          textMuted: 'text-slate-400',
+          accent: 'cyan',
+          accentBg: 'bg-cyan-500',
+          accentBgLight: 'bg-cyan-500/20',
+          accentText: 'text-cyan-400',
+          accentBorder: 'border-cyan-500/50',
+        }
+    }
+  }
+
+  const themeColors = getThemeColors(timeOfDay)
+  
+  // Theme colors for ToolsMiniNav (keep existing logic)
   const theme = {
     accentBg: isLight ? 'bg-blue-500' : 'bg-blue-600',
     accentBgLight: isLight ? 'bg-blue-100' : 'bg-blue-900',
@@ -128,38 +184,29 @@ export default function MeetingPlannerPage({ params }: Props) {
 
         {/* SEO Content - Box içinde - Only for 2+ cities */}
         {cityList.length >= 2 && (
-          <div className={`rounded-2xl p-6 mt-8 backdrop-blur-xl border relative z-10 ${
-            isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
-          }`}>
+          <div className={`rounded-2xl p-6 mt-8 backdrop-blur-xl border relative z-10 ${themeColors.card}`}>
             <DynamicContent 
               city1={cityList[0]}
               city2={cityList[1]}
               isLight={isLight}
               overlapCount={overlapCount}
             />
-            
-            {/* Related Tools - Inside DynamicContent box (at the bottom) */}
-            <div className={`mt-12 pt-8 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
-              <RelatedTools isLight={isLight} />
-            </div>
           </div>
         )}
 
         {/* Single City Info - Box içinde - Only for 1 city */}
         {cityList.length === 1 && (
-          <div className={`rounded-2xl p-6 mt-8 backdrop-blur-xl border relative z-10 ${
-            isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
-          }`}>
-            <div className={`prose max-w-none ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
-              <h2 className={`text-2xl font-bold mb-4 ${isLight ? 'text-slate-900' : 'text-white'}`}>
+          <div className={`rounded-2xl p-6 mt-8 backdrop-blur-xl border relative z-10 ${themeColors.card}`}>
+            <div className={`prose max-w-none ${themeColors.textMuted}`}>
+              <h2 className={`text-2xl font-bold mb-4 ${themeColors.text}`}>
                 Current Time in {cityList[0].city}
               </h2>
               <p className="text-lg mb-4">
-                <strong className={isLight ? 'text-slate-900' : 'text-white'}>
+                <strong className={themeColors.text}>
                   Timezone: </strong>{cityList[0].timezone}
               </p>
               <p className="mb-4">
-                <strong className={isLight ? 'text-slate-900' : 'text-white'}>
+                <strong className={themeColors.text}>
                   Business Hours: </strong>9:00 AM - 5:00 PM local time
               </p>
               <div className={`p-4 rounded-lg mt-6 ${
@@ -171,11 +218,6 @@ export default function MeetingPlannerPage({ params }: Props) {
                   <strong>💡 Tip:</strong> Add a second city to compare time zones and find the best meeting time!
                 </p>
               </div>
-            </div>
-
-            {/* Related Tools - Inside Single City box (at the bottom) */}
-            <div className={`mt-12 pt-8 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
-              <RelatedTools isLight={isLight} />
             </div>
           </div>
         )}

@@ -2,7 +2,6 @@ import { Metadata } from 'next'
 import { cities } from '@/lib/cities'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import MeetingPlannerClient from '@/components/meeting/MeetingPlannerClient'
-import RelatedTools from '@/components/meeting/RelatedTools'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 
 export const metadata: Metadata = {
@@ -46,13 +45,6 @@ export default function MeetingPlannerEmptyPage() {
           isLight={isLight}
           theme={theme}
         />
-
-        {/* Related Tools - Box içinde */}
-        <div className={`rounded-2xl p-6 mt-8 backdrop-blur-xl border relative z-10 ${
-          isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
-        }`}>
-          <RelatedTools isLight={isLight} />
-        </div>
       </main>
     </>
   )
