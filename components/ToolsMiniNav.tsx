@@ -102,12 +102,12 @@ export default function ToolsMiniNav({ isLight, theme, onAlarmClick }: ToolsMini
           const isActive = pathname === tool.url || 
                           (tool.id === 'meeting-planner' && pathname?.startsWith('/meeting'))
           
-          const className = `inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+          const className = `inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm transition-all duration-200 border-2 ${
             isActive
-              ? 'bg-blue-600 text-white shadow-md hover:bg-blue-700' // SOLID BLUE when active
+              ? 'bg-blue-600 text-white border-blue-600 shadow-lg font-bold scale-105' // Daha belirgin: bold, scale, shadow
               : isLight
-                ? 'bg-transparent text-slate-600 hover:bg-slate-100 border border-slate-200'
-                : 'bg-transparent text-slate-300 hover:bg-slate-700/50 border border-slate-600'
+                ? 'bg-transparent text-slate-600 hover:bg-slate-100 border-slate-300 font-medium'
+                : 'bg-transparent text-slate-300 hover:bg-slate-700/50 border-slate-600 font-medium'
           }`
           
           // Alarm item - use button if callback provided
@@ -118,7 +118,7 @@ export default function ToolsMiniNav({ isLight, theme, onAlarmClick }: ToolsMini
                 onClick={onAlarmClick}
                 className={className}
               >
-                <span className={isActive ? 'text-white' : theme.accentText}>
+                <span className={isActive ? 'text-white' : isLight ? 'text-amber-600' : 'text-amber-400'}>
                   {tool.icon}
                 </span>
                 <span>{tool.name}</span>
@@ -132,7 +132,7 @@ export default function ToolsMiniNav({ isLight, theme, onAlarmClick }: ToolsMini
               href={tool.url}
               className={className}
             >
-              <span className={isActive ? 'text-white' : theme.accentText}>
+              <span className={isActive ? 'text-white' : isLight ? 'text-amber-600' : 'text-amber-400'}>
                 {tool.icon}
               </span>
               <span>{tool.name}</span>

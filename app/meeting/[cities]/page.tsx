@@ -84,10 +84,17 @@ export default function MeetingPlannerPage({ params }: Props) {
   // Use first city for theme calculation
   const firstCity = cityList[0]
 
-  // FORCE LIGHT MODE as default (matching rest of site)
-  // Override time-based theme to always use 'light' mode
-  const currentTheme = themes['light']
-  const isLight = true
+  // Time-based auto theme (restored)
+  const now = new Date()
+  const timeOfDay = getTimeOfDay(
+    now,
+    firstCity.lat || 0,
+    firstCity.lng || 0
+  )
+  
+  // Use central theme system with auto mode
+  const currentTheme = themes[timeOfDay]
+  const isLight = isLightTheme(timeOfDay)
   
   // Theme colors for components
   const themeColors = {
