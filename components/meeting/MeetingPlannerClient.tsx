@@ -59,6 +59,16 @@ export default function MeetingPlannerClient({
       return
     }
 
+    // DEBUG: Log what we're working with
+    console.log('=== MeetingPlannerClient URL Update ===')
+    console.log('selectedCities:', selectedCities)
+    console.log('selectedCities.length:', selectedCities.length)
+    if (selectedCities.length > 0) {
+      console.log('First city object:', selectedCities[0])
+      console.log('First city slug:', selectedCities[0]?.slug)
+      console.log('First city name:', selectedCities[0]?.city)
+    }
+
     // 0 cities: go to /meeting
     if (selectedCities.length === 0) {
       if (pathname !== '/meeting') {
@@ -69,7 +79,10 @@ export default function MeetingPlannerClient({
 
     // 1 city: /meeting/berlin
     if (selectedCities.length === 1) {
-      const newUrl = `/meeting/${selectedCities[0].slug}`
+      const slug = selectedCities[0].slug
+      console.log('Single city - using slug:', slug)
+      const newUrl = `/meeting/${slug}`
+      console.log('New URL:', newUrl)
       if (pathname !== newUrl) {
         router.push(newUrl, { scroll: false })
       }
@@ -77,8 +90,13 @@ export default function MeetingPlannerClient({
     }
 
     // 2+ cities: /meeting/berlin-vs-istanbul (alphabetical)
-    const slugs = selectedCities.map(c => c.slug)
-    const normalized = slugs.sort().join('-vs-')
+    const slugs = selectedCities.map(c => {
+      console.log('Mapping city:', c, '-> slug:', c.slug)
+      return c.slug
+    })
+    console.log('All slugs:', slugs)
+    const normalized = [...slugs].sort().join('-vs-')
+    console.log('Normalized URL part:', normalized)
     const newUrl = `/meeting/${normalized}/`
     
     if (pathname !== newUrl) {
