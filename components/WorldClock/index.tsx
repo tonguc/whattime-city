@@ -23,7 +23,6 @@ import WeatherBadge from '@/components/WeatherBadge'
 import AlarmModal, { ActiveAlarmPopup } from '@/components/AlarmModal'
 import { useAlarm, useWeather } from '@/shared/hooks'
 import TimeConverter from '@/components/TimeConverter'
-import MeetingPlanner from '@/components/MeetingPlanner'
 import FavoriteCard from './FavoriteCard'
 import CityGuideCard from './CityGuideCard'
 import TimeIntelligence from './TimeIntelligence'
@@ -300,14 +299,7 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           themeData={theme}
           use12Hour={use12Hour}
           isLight={isLight}
-        />
-        
-        {/* === 3. MEETING_PLANNER === */}
-        <MeetingPlanner
-          currentTheme={currentTheme}
-          themeData={theme}
-          use12Hour={use12Hour}
-          isLight={isLight}
+          currentCitySlug={selectedCity.slug}
         />
         
         {/* === 3. QUICK INFO CARDS === */}

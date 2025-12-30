@@ -11,9 +11,10 @@ interface TimeConverterProps {
   themeData: Theme
   use12Hour: boolean
   isLight: boolean
+  currentCitySlug?: string // For pre-filling Meeting Planner link
 }
 
-export default function TimeConverter({ currentTheme, themeData, use12Hour, isLight }: TimeConverterProps) {
+export default function TimeConverter({ currentTheme, themeData, use12Hour, isLight, currentCitySlug }: TimeConverterProps) {
   const [fromCity, setFromCity] = useState<City | null>(null)
   const [toCity, setToCity] = useState<City | null>(null)
   const [fromSearch, setFromSearch] = useState('')
@@ -320,6 +321,25 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
             Select two cities to compare their local time.
           </p>
         )}
+        
+        {/* Meeting Planner CTA */}
+        <div className={`mt-4 pt-4 border-t ${isLight ? 'border-slate-200/50' : 'border-slate-700/50'}`}>
+          <a 
+            href={currentCitySlug ? `/meeting/${currentCitySlug}` : '/meeting'}
+            className={`flex items-center justify-center gap-2 text-sm ${themeData.textMuted} hover:${themeData.accentText} transition-colors`}
+          >
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            <span>Need to compare 3+ cities? Use the Meeting Planner</span>
+            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M7 17L17 7M17 7H7M17 7V17"/>
+            </svg>
+          </a>
+        </div>
       </div>
       
       {/* Portal-style From Dropdown - rendered at fixed position */}
