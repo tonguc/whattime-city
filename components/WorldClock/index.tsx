@@ -205,16 +205,18 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
       {/* Main Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-4 sm:py-4">
         <div className={`rounded-3xl p-4 md:p-5 mb-4 backdrop-blur-xl border ${theme.card} relative overflow-hidden`}>
-          <div className="flex flex-col items-center justify-center relative z-10 w-full">
-            <div className="w-full flex justify-center">
-              {clockMode === 'analog' ? (
-                <AnalogClock time={localTime} theme={currentTheme} themeData={theme} />
-              ) : (
-                <DigitalClock time={localTime} theme={currentTheme} themeData={theme} use12Hour={use12Hour} />
-              )}
+          <div className="flex flex-col items-center justify-center relative z-10 w-full gap-4 md:gap-6">
+            <div className="flex justify-center items-center w-full">
+              <div className="inline-flex">
+                {clockMode === 'analog' ? (
+                  <AnalogClock time={localTime} theme={currentTheme} themeData={theme} />
+                ) : (
+                  <DigitalClock time={localTime} theme={currentTheme} themeData={theme} use12Hour={use12Hour} />
+                )}
+              </div>
             </div>
             
-            <div className="mt-4 md:mt-6 text-center">
+            <div className="text-center">
               <div className="flex items-center justify-center gap-3">
                 <h1 className={`text-3xl md:text-4xl font-bold ${theme.text}`}>
                   {selectedCity.city}
