@@ -4,16 +4,20 @@
  * Supports 2+ cities dynamically
  */
 
+'use client'
+
 import { City } from '@/lib/cities'
 import { calculateTimeDifference, formatHour, getLocalHour } from '@/lib/meetingPlanner'
+import { useCityContext } from '@/lib/CityContext'
 
 interface Props {
   cities: City[] // Changed from city1/city2 to cities array
-  isLight?: boolean
   overlapCount?: number // SSR için overlap count
 }
 
-export default function DynamicContent({ cities, isLight, overlapCount }: Props) {
+export default function DynamicContent({ cities, overlapCount }: Props) {
+  const { isLight } = useCityContext()
+  
   if (cities.length < 2) return null
   
   const firstCity = cities[0]

@@ -41,7 +41,7 @@ export default function EventTimePage() {
 
   return (
     <ToolPageWrapper>
-      <ToolsMiniNav isLight={isLight} theme={theme} />
+      <ToolsMiniNav />
 
       <div className="text-center mb-8">
         <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${theme.text}`}>

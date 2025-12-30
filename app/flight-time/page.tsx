@@ -49,7 +49,7 @@ export default function FlightTimePage() {
 
   return (
     <ToolPageWrapper>
-      <ToolsMiniNav isLight={isLight} theme={theme} />
+      <ToolsMiniNav />
 
       {/* Tool Hero */}
       <div className="text-center mb-8">

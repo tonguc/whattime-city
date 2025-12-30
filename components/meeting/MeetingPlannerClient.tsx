@@ -1,18 +1,20 @@
 'use client'
 
 /**
- * Meeting Planner Client Component - HOTFIX V2
- * Simplified: Only Hero + TimeSlider (no container, no footer)
+ * Meeting Planner Client Component - HOTFIX V3
+ * Uses global user theme from CityContext (user's location)
+ * NOT the selected cities' time zones
  */
 
 import { useState, useEffect, useRef } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import { City } from '@/lib/cities'
-import { useToolsTheme } from '@/lib/useToolsTheme'
+import { useCityContext } from '@/lib/CityContext'
 import TimeSlider from '@/components/TimeSlider'
 
 interface Props {
   initialCities?: City[]
+  // These props are now ignored - we use CityContext for consistent theme
   isLight?: boolean
   theme?: {
     accentBg: string
@@ -34,18 +36,13 @@ interface Props {
 }
 
 export default function MeetingPlannerClient({ 
-  initialCities = [], 
-  isLight: isLightProp,
-  theme: themeProp,
-  themeColors
+  initialCities = []
 }: Props) {
   const router = useRouter()
   const pathname = usePathname()
-  const { theme: contextTheme, isLight: contextIsLight } = useToolsTheme()
   
-  // Use provided props or fall back to context
-  const theme = themeProp || contextTheme
-  const isLight = isLightProp !== undefined ? isLightProp : contextIsLight
+  // ALWAYS use global CityContext theme (based on USER's location, not selected cities)
+  const { theme, isLight } = useCityContext()
   
   const [selectedCities, setSelectedCities] = useState<City[]>(
     initialCities.length > 0 ? initialCities : []
@@ -93,7 +90,7 @@ export default function MeetingPlannerClient({
     <>
       {/* Hero */}
       <div className="text-center mb-8">
-        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${themeColors ? themeColors.text : isLight ? 'text-slate-800' : 'text-white'}`}>
+        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${theme.text}`}>
           {selectedCities.length === 0
             ? 'Meeting Planner: Find Best Time Across Time Zones'
             : selectedCities.length === 1
@@ -101,7 +98,7 @@ export default function MeetingPlannerClient({
               : `Meeting Planner: Find Overlap Hours for ${selectedCities.map(c => c.city).join(', ').replace(/, ([^,]*)$/, ' & $1')}`
           }
         </h1>
-        <p className={`text-lg ${themeColors ? themeColors.textMuted : isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+        <p className={`text-lg ${theme.textMuted}`}>
           {selectedCities.length === 1
             ? `Current time and business hours in ${selectedCities[0].city}`
             : 'Compare business hours and schedule calls across time zones'
@@ -109,13 +106,12 @@ export default function MeetingPlannerClient({
         </p>
       </div>
 
-      {/* Interactive Time Slider */}
+      {/* Interactive Time Slider - uses isLight only, no themeColors to prevent city-based changes */}
       <div className="mb-8">
         <TimeSlider 
           isLight={isLight} 
           initialCities={selectedCities}
           onCitiesChange={(newCities) => setSelectedCities(newCities)}
-          themeColors={themeColors}
         />
       </div>
     </>

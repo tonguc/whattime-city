@@ -2,24 +2,10 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useCityContext } from '@/lib/CityContext'
 
 interface ToolsMiniNavProps {
-  isLight?: boolean
-  theme?: {
-    accentBg: string
-    accentBgLight: string
-    accentText: string
-    accentBorder: string
-  }
   onAlarmClick?: () => void
-}
-
-// Default theme for light mode
-const defaultTheme = {
-  accentBg: 'bg-blue-600',
-  accentBgLight: 'bg-blue-100',
-  accentText: 'text-blue-600',
-  accentBorder: 'border-blue-200'
 }
 
 // Normalized tool names (2 words, English only) - ROOT LEVEL URLs for SEO
@@ -97,8 +83,9 @@ const toolNavItems = [
   }
 ]
 
-export default function ToolsMiniNav({ isLight = true, theme = defaultTheme, onAlarmClick }: ToolsMiniNavProps) {
+export default function ToolsMiniNav({ onAlarmClick }: ToolsMiniNavProps) {
   const pathname = usePathname()
+  const { theme, isLight } = useCityContext()
   
   return (
     <nav className="mt-8 mb-6">
@@ -111,13 +98,13 @@ export default function ToolsMiniNav({ isLight = true, theme = defaultTheme, onA
                           pathname === `${tool.url}/` ||
                           (tool.id === 'meeting-planner' && pathname?.startsWith('/meeting'))
           
-          // Fixed width classes to prevent layout shift
-          const className = `inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
+          // CRITICAL: All items must have identical box model (same border width) to prevent layout shift
+          const className = `inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 border ${
             isActive
-              ? 'bg-blue-600 text-white shadow-md'
+              ? 'bg-blue-600 text-white border-blue-600 shadow-md'
               : isLight
-                ? 'bg-white/60 text-slate-600 hover:bg-white/80 border border-slate-200'
-                : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 border border-slate-600'
+                ? 'bg-white/60 text-slate-600 hover:bg-white/80 border-slate-200'
+                : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 border-slate-600'
           }`
           
           // Alarm item - use button if callback provided
