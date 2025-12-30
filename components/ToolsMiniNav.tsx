@@ -88,7 +88,7 @@ export default function ToolsMiniNav({ onAlarmClick }: ToolsMiniNavProps) {
   const { theme, isLight } = useCityContext()
   
   return (
-    <nav className="mt-8 mb-6">
+    <nav className="mt-2 mb-6">
       {/* Wrapping flex container - no horizontal scroll */}
       <div className="flex flex-wrap justify-center gap-2">
         {toolNavItems.map((tool) => {
