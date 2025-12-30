@@ -1,18 +1,18 @@
 'use client'
 
 import { ReactNode } from 'react'
+import { useCityContext } from '@/lib/CityContext'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export default function MeetingLayout({ children }: { children: ReactNode }) {
-  // FORCE LIGHT MODE for tool pages - consistent professional look
-  const forcedBg = 'from-slate-50 via-gray-50 to-slate-100'
+  const { theme, isLight } = useCityContext()
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${forcedBg} transition-colors duration-500`}>
+    <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
       <Header />
       {children}
-      <Footer isLight={true} />
+      <Footer isLight={isLight} />
     </div>
   )
 }

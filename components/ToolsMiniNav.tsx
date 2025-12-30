@@ -111,12 +111,13 @@ export default function ToolsMiniNav({ isLight = true, theme = defaultTheme, onA
                           pathname === `${tool.url}/` ||
                           (tool.id === 'meeting-planner' && pathname?.startsWith('/meeting'))
           
-          const className = `inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm transition-all duration-200 border-2 ${
+          // Fixed width classes to prevent layout shift
+          const className = `inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
             isActive
-              ? 'bg-blue-600 text-white border-blue-600 shadow-lg font-bold scale-105' // Daha belirgin: bold, scale, shadow
+              ? 'bg-blue-600 text-white shadow-md'
               : isLight
-                ? 'bg-transparent text-slate-600 hover:bg-slate-100 border-slate-300 font-medium'
-                : 'bg-transparent text-slate-300 hover:bg-slate-700/50 border-slate-600 font-medium'
+                ? 'bg-white/60 text-slate-600 hover:bg-white/80 border border-slate-200'
+                : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 border border-slate-600'
           }`
           
           // Alarm item - use button if callback provided

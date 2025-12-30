@@ -6,6 +6,8 @@ import ToolsMiniNav from '@/components/ToolsMiniNav'
 import MeetingPlannerClient from '@/components/meeting/MeetingPlannerClient'
 import DynamicContent from '@/components/meeting/DynamicContent'
 import FAQSchema from '@/components/meeting/FAQSchema'
+import { getTimeOfDay } from '@/lib/sun-calculator'
+import { themes, isLightTheme } from '@/lib/themes'
 
 interface Props {
   params: { cities: string }
@@ -79,28 +81,40 @@ export default function MeetingPlannerPage({ params }: Props) {
     notFound()
   }
 
-  // FORCE LIGHT MODE for consistent professional look
-  const isLight = true
+  // Use first city for theme calculation
+  const firstCity = cityList[0]
+
+  // Time-based auto theme
+  const now = new Date()
+  const timeOfDay = getTimeOfDay(
+    now,
+    firstCity.lat || 0,
+    firstCity.lng || 0
+  )
   
-  // Light mode theme colors for components
+  // Use central theme system with auto mode
+  const currentTheme = themes[timeOfDay]
+  const isLight = isLightTheme(timeOfDay)
+  
+  // Theme colors for components
   const themeColors = {
-    bg: 'from-slate-50 via-gray-50 to-slate-100',
-    card: 'bg-white border-slate-200',
-    text: 'text-slate-800',
-    textMuted: 'text-slate-600',
-    accent: 'blue',
-    accentBg: 'bg-blue-600',
-    accentBgLight: 'bg-blue-100',
-    accentText: 'text-blue-600',
-    accentBorder: 'border-blue-200',
+    bg: currentTheme.bg,
+    card: currentTheme.card,
+    text: currentTheme.text,
+    textMuted: currentTheme.textMuted,
+    accent: currentTheme.accent,
+    accentBg: currentTheme.accentBg,
+    accentBgLight: currentTheme.accentBgLight,
+    accentText: currentTheme.accentText,
+    accentBorder: currentTheme.accentBorder,
   }
   
   // Theme for ToolsMiniNav
   const theme = {
-    accentBg: 'bg-blue-600',
-    accentBgLight: 'bg-blue-100',
-    accentText: 'text-blue-600',
-    accentBorder: 'border-blue-200'
+    accentBg: currentTheme.accentBg,
+    accentBgLight: currentTheme.accentBgLight,
+    accentText: currentTheme.accentText,
+    accentBorder: currentTheme.accentBorder
   }
 
   // Calculate overlap count for SSR (SEO)
