@@ -94,14 +94,8 @@ export default function TimeSlider({ initialCities = [], onCitiesChange }: TimeS
 
   // Add city
   const addCity = (city: City) => {
-    console.log('=== TimeSlider addCity ===')
-    console.log('Adding city object:', city)
-    console.log('City slug:', city.slug)
-    console.log('City name:', city.city)
-    
     if (selectedCities.length < 6) {
       const newCities = [...selectedCities, city]
-      console.log('New cities array:', newCities)
       setSelectedCities(newCities)
       onCitiesChange?.(newCities)
       setSearchQuery('')
