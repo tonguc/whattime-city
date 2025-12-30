@@ -172,7 +172,7 @@ export default function HomePage() {
         {detectedCity && (
           <section className={`rounded-3xl p-5 md:p-6 mb-4 backdrop-blur-xl border ${homeTheme.card}`}>
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 md:flex-1">
                 <span className="text-3xl">📍</span>
                 <div>
                   <h2 className={`text-xl font-semibold ${homeTheme.text}`}>{detectedCity.city}</h2>
@@ -182,10 +182,10 @@ export default function HomePage() {
                 </div>
               </div>
               
-              <div className="text-center w-full md:w-auto">
+              <div className="flex-shrink-0 flex justify-center items-center md:flex-[2]">
                 {/* Digital or Analog Clock based on user preference */}
                 {clockMode === 'analog' ? (
-                  <div className="flex justify-center mb-2">
+                  <div className="inline-flex">
                     <AnalogClock 
                       time={time} 
                       theme={getCityTimeOfDay(detectedCity)}
@@ -220,7 +220,7 @@ export default function HomePage() {
                 </div>
               </div>
               
-              <div className="flex gap-2">
+              <div className="flex gap-2 md:flex-1 md:justify-end">
                 <Link href={`/${detectedCity.slug}`}
                   className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${homeIsLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-white'}`}>
                   View City
