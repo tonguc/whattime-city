@@ -95,43 +95,40 @@ export default function MeetingPlannerPage({ params }: Props) {
       {/* TOOLS MINI NAV - uses CityContext internally */}
       <ToolsMiniNav />
 
-      {/* MAIN CONTENT */}
-      <main className="max-w-6xl mx-auto px-4 py-4">
-        {/* Interactive Tool - uses CityContext for consistent theme */}
-        <MeetingPlannerClient initialCities={cityList} />
+      {/* Interactive Tool - uses CityContext for consistent theme */}
+      <MeetingPlannerClient initialCities={cityList} />
 
-        {/* SEO Content - Wrapper uses CityContext for theme */}
-        {(cityList.length >= 2 || cityList.length === 1) && (
-          <MeetingDynamicWrapper>
-            {cityList.length >= 2 && (
-              <DynamicContent 
-                cities={cityList}
-                overlapCount={overlapCount}
-              />
-            )}
+      {/* SEO Content - Wrapper uses CityContext for theme */}
+      {(cityList.length >= 2 || cityList.length === 1) && (
+        <MeetingDynamicWrapper>
+          {cityList.length >= 2 && (
+            <DynamicContent 
+              cities={cityList}
+              overlapCount={overlapCount}
+            />
+          )}
 
-            {/* Single City Info */}
-            {cityList.length === 1 && (
-              <div className="prose max-w-none">
-                <h2 className="text-2xl font-bold mb-4">
-                  Current Time in {cityList[0].city}
-                </h2>
-                <p className="text-lg mb-4">
-                  <strong>Timezone:</strong> {cityList[0].timezone}
+          {/* Single City Info */}
+          {cityList.length === 1 && (
+            <div className="prose max-w-none">
+              <h2 className="text-2xl font-bold mb-4">
+                Current Time in {cityList[0].city}
+              </h2>
+              <p className="text-lg mb-4">
+                <strong>Timezone:</strong> {cityList[0].timezone}
+              </p>
+              <p className="mb-4">
+                <strong>Business Hours:</strong> 9:00 AM - 5:00 PM local time
+              </p>
+              <div className="p-4 rounded-lg mt-6 bg-blue-50 border border-blue-200">
+                <p className="text-sm text-blue-700">
+                  <strong>💡 Tip:</strong> Add a second city to compare time zones and find the best meeting time!
                 </p>
-                <p className="mb-4">
-                  <strong>Business Hours:</strong> 9:00 AM - 5:00 PM local time
-                </p>
-                <div className="p-4 rounded-lg mt-6 bg-blue-50 border border-blue-200">
-                  <p className="text-sm text-blue-700">
-                    <strong>💡 Tip:</strong> Add a second city to compare time zones and find the best meeting time!
-                  </p>
-                </div>
               </div>
-            )}
-          </MeetingDynamicWrapper>
-        )}
-      </main>
+            </div>
+          )}
+        </MeetingDynamicWrapper>
+      )}
     </>
   )
 }

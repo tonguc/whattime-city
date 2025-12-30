@@ -11,7 +11,10 @@ export default function MeetingLayout({ children }: { children: ReactNode }) {
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
       <Header />
-      {children}
+      {/* Same wrapper as ToolPageWrapper for consistent nav positioning */}
+      <div className="max-w-6xl mx-auto px-4 py-4">
+        {children}
+      </div>
       <Footer isLight={isLight} />
     </div>
   )

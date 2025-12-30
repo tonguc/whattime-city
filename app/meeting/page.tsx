@@ -18,10 +18,7 @@ export default function MeetingPlannerEmptyPage() {
       <ToolsMiniNav />
 
       {/* MAIN CONTENT */}
-      <main className="max-w-6xl mx-auto px-4 py-4">
-        {/* Interactive Tool - Empty State */}
-        <MeetingPlannerClient initialCities={[]} />
-      </main>
+      <MeetingPlannerClient initialCities={[]} />
     </>
   )
 }
