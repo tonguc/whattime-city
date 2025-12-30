@@ -42,7 +42,7 @@ export default function EventTimePage() {
   return (
     <>
       {/* Mini Navigation */}
-      <ToolsMiniNav isLight={isLight} theme={theme} />
+      <ToolsMiniNav />
 
         {/* Tool Hero */}
         <div className="text-center mb-8">
