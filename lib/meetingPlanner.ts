@@ -113,6 +113,7 @@ export function normalizeCities(slugs: string[]): string {
  * URL'den çoklu şehir parse eder (supports both `-` and `-vs-` separators)
  * @example parseCities('berlin-vs-istanbul-vs-london') → [City, City, City]
  * @example parseCities('istanbul-london') → [City, City]
+ * @example parseCities('los-angeles') → [City] (single city with hyphen in name)
  */
 export function parseCities(citiesParam: string): City[] | null {
   // `-vs-` separator varsa önce ona göre split et
@@ -123,9 +124,15 @@ export function parseCities(citiesParam: string): City[] | null {
   const cityList: City[] = []
   
   for (const part of parts) {
-    // Eğer `-vs-` yoksa, eski format olabilir ("istanbul-london")
+    // ÖNCE tek şehir olarak ara (los-angeles, new-york, hong-kong gibi tire içeren slug'lar için)
+    const singleCity = getCityBySlug(part)
+    if (singleCity) {
+      cityList.push(singleCity)
+      continue
+    }
+    
+    // Tek şehir bulunamadıysa VE tire içeriyorsa, eski format dene (istanbul-london → 2 şehir)
     if (parts.length === 1 && part.includes('-')) {
-      // Try to parse as old format (2 cities combined)
       const pair = parseCityPair(part)
       if (pair) {
         cityList.push(pair.city1, pair.city2)
@@ -133,13 +140,11 @@ export function parseCities(citiesParam: string): City[] | null {
       }
     }
     
-    // Normal case: her part bir şehir slug'ı
-    const city = getCityBySlug(part)
-    if (!city) return null // Invalid city
-    cityList.push(city)
+    // Hiçbiri çalışmadı - geçersiz şehir
+    return null
   }
   
-  // En az 1 şehir olmalı (single city support için değiştirildi)
+  // En az 1 şehir olmalı
   return cityList.length >= 1 ? cityList : null
 }
 
