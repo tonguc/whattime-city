@@ -50,8 +50,9 @@ export default function JetLagPage() {
 
   return (
     <>
-      {/* Mini Navigation */}
-      <ToolsMiniNav />
+      <div className="max-w-6xl mx-auto px-4">
+        {/* Mini Navigation */}
+        <ToolsMiniNav />
 
         {/* Tool Hero */}
         <div className="text-center mb-8">
@@ -259,9 +260,12 @@ export default function JetLagPage() {
             </div>
           </div>
         </section>
+      </div>
 
-        {/* Footer */}
+      {/* Footer - Full Width */}
+      <div className="relative z-10 mt-10">
         <Footer isLight={isLight} />
+      </div>
     </>
   )
 }

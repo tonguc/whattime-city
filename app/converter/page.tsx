@@ -52,17 +52,18 @@ export default function TimeConverterPage() {
   // NO container/header here - from layout
   return (
     <>
-      {/* Mini Navigation */}
-      <ToolsMiniNav />
+      <div className="max-w-6xl mx-auto px-4">
+        {/* Mini Navigation */}
+        <ToolsMiniNav />
 
-      {/* Tool Hero */}
-      <div className="text-center mb-8">
-        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-          Time Converter
-        </h1>
-        <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-          Convert time between any two cities instantly
-        </p>
+        {/* Tool Hero */}
+        <div className="text-center mb-8">
+          <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+            Time Converter
+          </h1>
+          <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+            Convert time between any two cities instantly
+          </p>
         </div>
 
         {/* Tool Interface */}
@@ -274,9 +275,12 @@ export default function TimeConverterPage() {
             </div>
           </div>
         </section>
+      </div>
 
-        {/* Footer */}
+      {/* Footer - Full Width */}
+      <div className="relative z-10 mt-10">
         <Footer isLight={isLight} />
+      </div>
     </>
   )
 }
