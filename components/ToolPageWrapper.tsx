@@ -8,9 +8,10 @@ import { useAlarm } from '@/shared/hooks'
 
 interface ToolPageWrapperProps {
   children: ReactNode
+  footer?: ReactNode
 }
 
-export default function ToolPageWrapper({ children }: ToolPageWrapperProps) {
+export default function ToolPageWrapper({ children, footer }: ToolPageWrapperProps) {
   const { theme, isLight } = useCityContext()
   const [showAlarmModal, setShowAlarmModal] = useState(false)
   const { alarms, setAlarms, activeAlarm, dismissAlarm } = useAlarm()
@@ -24,6 +25,13 @@ export default function ToolPageWrapper({ children }: ToolPageWrapperProps) {
       <div className="max-w-6xl mx-auto px-4 py-4">
         {children}
       </div>
+      
+      {/* Footer - Full Width */}
+      {footer && (
+        <div className="relative z-10 mt-10">
+          {footer}
+        </div>
+      )}
       
       {/* Floating Alarm Button */}
       <button 

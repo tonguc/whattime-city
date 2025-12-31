@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { cities } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
+import ToolPageWrapper from '@/components/ToolPageWrapper'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 
@@ -39,9 +40,8 @@ export default function EventTimePage() {
     : 'bg-slate-700 border-slate-600 text-white'
 
   return (
-    <>
-      <div className="max-w-6xl mx-auto px-4">
-        <ToolsMiniNav />
+    <ToolPageWrapper footer={<Footer isLight={isLight} />}>
+      <ToolsMiniNav />
 
       <div className="text-center mb-8">
         <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${theme.text}`}>
@@ -174,12 +174,6 @@ export default function EventTimePage() {
           </div>
         </div>
       </section>
-      </div>
-
-      {/* Footer - Full Width */}
-      <div className="relative z-10 mt-10">
-        <Footer isLight={isLight} />
-      </div>
-    </>
+    </ToolPageWrapper>
   )
 }
