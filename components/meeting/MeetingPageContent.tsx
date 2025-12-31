@@ -13,6 +13,7 @@ import { City, cities, searchCities } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import ToolsMiniNav from '@/components/ToolsMiniNav'
 import TimeSlider from '@/components/TimeSlider'
 import OverlapHeatmap from '@/components/OverlapHeatmap'
 
@@ -135,6 +136,9 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
       
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-6">
+        
+        {/* Tools Mini Navigation */}
+        <ToolsMiniNav />
         
         {/* Hero Section */}
         <section className={`rounded-3xl p-6 md:p-8 mb-6 backdrop-blur-xl border ${theme.card}`}>
