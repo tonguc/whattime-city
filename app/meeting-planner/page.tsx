@@ -3,11 +3,12 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { cities, City } from '@/lib/cities'
+import { cities, City, searchCities } from '@/lib/cities'
 import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 import TimeSlider from '@/components/TimeSlider'
+import OverlapHeatmap from '@/components/OverlapHeatmap'
 
 export default function MeetingPlannerPage() {
   const router = useRouter()
@@ -20,6 +21,11 @@ export default function MeetingPlannerPage() {
     cities.find(c => c.city === 'Tokyo') || cities[2]
   ])
   
+  // Search state for adding cities
+  const [searchQuery, setSearchQuery] = useState('')
+  const [searchResults, setSearchResults] = useState<City[]>([])
+  const [showSearch, setShowSearch] = useState(false)
+  
   // Sync first city with context when it becomes available
   useEffect(() => {
     if (selectedCity) {
@@ -31,6 +37,32 @@ export default function MeetingPlannerPage() {
       })
     }
   }, [selectedCity])
+  
+  // Search effect
+  useEffect(() => {
+    if (searchQuery.length >= 1) {
+      const results = searchCities(searchQuery)
+        .filter(c => !selectedCities.find(sc => sc.slug === c.slug))
+        .slice(0, 6)
+      setSearchResults(results)
+    } else {
+      setSearchResults([])
+    }
+  }, [searchQuery, selectedCities])
+
+  // Add city
+  const addCity = (city: City) => {
+    if (selectedCities.length < 6) {
+      setSelectedCities([...selectedCities, city])
+      setSearchQuery('')
+      setShowSearch(false)
+    }
+  }
+  
+  // Remove city
+  const removeCity = (slug: string) => {
+    setSelectedCities(selectedCities.filter(c => c.slug !== slug))
+  }
 
   // Get current hour in each city
   const getCityHour = (timezone: string) => {
@@ -43,6 +75,12 @@ export default function MeetingPlannerPage() {
 
   // Check if hour is within working hours (9-17)
   const isWorkingHour = (hour: number) => hour >= 9 && hour <= 17
+
+  // City tag colors
+  const cityColors = [
+    'bg-blue-500', 'bg-emerald-500', 'bg-purple-500', 
+    'bg-orange-500', 'bg-pink-500', 'bg-cyan-500'
+  ]
 
   return (
     <>
@@ -60,81 +98,106 @@ export default function MeetingPlannerPage() {
           </p>
         </div>
 
-        {/* Tool Interface */}
-        <div className={`rounded-2xl p-6 mb-8 backdrop-blur-xl border ${
+        {/* City Selection Interface */}
+        <div className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
           isLight ? 'bg-white/60 border-white/70' : 'bg-slate-800/60 border-slate-700/50'
         }`}>
-          {/* City Selectors */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-            {selectedCities.map((city, index) => (
-              <div key={index}>
-                <label className={`block text-sm font-medium mb-2 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
-                  Participant {index + 1}
-                </label>
-                <select
-                  value={city.city}
-                  onChange={(e) => {
-                    const newCities = [...selectedCities]
-                    newCities[index] = cities.find(c => c.city === e.target.value) || cities[0]
-                    setSelectedCities(newCities)
-                  }}
-                  className={`w-full px-4 py-3 rounded-xl border ${
-                    isLight 
-                      ? 'bg-white border-slate-200 text-slate-800' 
-                      : 'bg-slate-700 border-slate-600 text-white'
-                  }`}
-                >
-                  {cities.map(c => (
-                    <option key={c.city} value={c.city}>{c.city}</option>
-                  ))}
-                </select>
-              </div>
-            ))}
-          </div>
-
-          {/* Timeline */}
-          <div className="overflow-x-auto">
-            <div className="min-w-[600px]">
-              <div className={`text-xs mb-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-                Hours (24h format) — Green = Working hours overlap
-              </div>
-              {selectedCities.map((city, cityIndex) => (
-                <div key={cityIndex} className="flex items-center gap-2 mb-2">
-                  <div className={`w-24 text-sm truncate ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
-                    {city.city}
-                  </div>
-                  <div className="flex-1 flex gap-0.5">
-                    {Array.from({ length: 24 }, (_, hour) => {
-                      const cityDate = new Date(currentTime.toLocaleString('en-US', { timeZone: city.timezone }))
-                      const adjustedHour = (hour + cityDate.getHours() - new Date().getHours() + 24) % 24
-                      const isWorking = isWorkingHour(adjustedHour)
-                      const allWorking = selectedCities.every(c => {
-                        const cDate = new Date(currentTime.toLocaleString('en-US', { timeZone: c.timezone }))
-                        const cHour = (hour + cDate.getHours() - new Date().getHours() + 24) % 24
-                        return isWorkingHour(cHour)
-                      })
-                      
-                      return (
-                        <div
-                          key={hour}
-                          className={`flex-1 h-8 rounded-sm flex items-center justify-center text-xs ${
-                            allWorking 
-                              ? 'bg-green-500 text-white' 
-                              : isWorking 
-                                ? isLight ? 'bg-blue-100 text-blue-700' : 'bg-blue-900/50 text-blue-300'
-                                : isLight ? 'bg-slate-100 text-slate-400' : 'bg-slate-700/50 text-slate-500'
-                          }`}
-                          title={`${adjustedHour}:00`}
-                        >
-                          {hour % 6 === 0 ? hour : ''}
-                        </div>
-                      )
-                    })}
-                  </div>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+            <h2 className={`text-lg font-semibold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              👥 Participants ({selectedCities.length}/6)
+            </h2>
+            
+            {/* Add City Search */}
+            {selectedCities.length < 6 && (
+              <div className="relative">
+                <div className={`flex items-center gap-2 px-4 py-2 rounded-xl border ${
+                  isLight ? 'bg-white border-slate-200' : 'bg-slate-700 border-slate-600'
+                }`}>
+                  <svg className={`w-4 h-4 ${isLight ? 'text-slate-400' : 'text-slate-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                  </svg>
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => {
+                      setSearchQuery(e.target.value)
+                      setShowSearch(true)
+                    }}
+                    onFocus={() => setShowSearch(true)}
+                    placeholder="Add city..."
+                    className={`bg-transparent outline-none text-sm w-32 sm:w-48 ${
+                      isLight ? 'text-slate-800 placeholder-slate-400' : 'text-white placeholder-slate-500'
+                    }`}
+                  />
                 </div>
-              ))}
-            </div>
+                
+                {/* Search Dropdown */}
+                {showSearch && searchResults.length > 0 && (
+                  <div className={`absolute top-full left-0 right-0 mt-2 rounded-xl shadow-xl border overflow-hidden z-50 ${
+                    isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-600'
+                  }`}>
+                    {searchResults.map(city => (
+                      <button
+                        key={city.slug}
+                        onClick={() => addCity(city)}
+                        className={`w-full px-4 py-3 text-left flex items-center justify-between ${
+                          isLight ? 'hover:bg-slate-50' : 'hover:bg-slate-700'
+                        }`}
+                      >
+                        <div>
+                          <span className={isLight ? 'text-slate-800' : 'text-white'}>{city.city}</span>
+                          <span className={`text-sm ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                            {city.country}
+                          </span>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
+          
+          {/* Selected Cities Tags */}
+          <div className="flex flex-wrap gap-2">
+            {selectedCities.map((city, idx) => {
+              const cityTime = new Date().toLocaleTimeString('en-US', {
+                timeZone: city.timezone,
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: true
+              })
+              
+              return (
+                <div
+                  key={city.slug}
+                  className={`flex items-center gap-2 px-3 py-2 rounded-full text-white text-sm ${cityColors[idx % cityColors.length]}`}
+                >
+                  <span className="font-medium">{city.city}</span>
+                  <span className="opacity-80 text-xs">{cityTime}</span>
+                  {selectedCities.length > 1 && (
+                    <button
+                      onClick={() => removeCity(city.slug)}
+                      className="ml-1 hover:bg-white/20 rounded-full p-0.5"
+                      aria-label={`Remove ${city.city}`}
+                    >
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* NEW: Overlap Heatmap */}
+        <div className="mb-6">
+          <OverlapHeatmap 
+            cities={selectedCities}
+            isLight={isLight}
+          />
         </div>
 
         {/* Interactive Time Slider */}

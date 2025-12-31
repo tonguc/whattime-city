@@ -1,33 +1,83 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type { Metadata, Viewport } from 'next'
 import { CityProvider } from '@/lib/CityContext'
+import './globals.css'
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f0f9ff' },
+    { media: '(prefers-color-scheme: dark)', color: '#0f172a' },
+  ],
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://whattime.city'),
-  title: 'World Clock - Current Local Time in Any City | whattime.city',
-  description: 'Check the current local time anywhere in the world. Live world clock with sunrise, sunset times and real-time weather. Compare time zones across 200+ major cities.',
-  keywords: ['world clock', 'current time', 'local time', 'time zone converter', 'sunrise sunset', 'city time', 'international time', 'time difference'],
+  title: {
+    default: 'whattime.city - World Clock & Time Zone Converter',
+    template: '%s | whattime.city',
+  },
+  description: 'Free online world clock showing current local time in any city. Compare time zones, plan meetings, calculate flight times, and get jet lag advice. 400+ cities worldwide.',
+  keywords: [
+    'world clock',
+    'time zone converter',
+    'current time',
+    'local time',
+    'time difference',
+    'meeting planner',
+    'international time',
+    'city time',
+    'sunrise sunset',
+    'jet lag calculator',
+  ],
   authors: [{ name: 'whattime.city' }],
+  creator: 'whattime.city',
+  publisher: 'whattime.city',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
-    title: 'World Clock - Current Local Time in Any City',
-    description: 'Check the current local time anywhere in the world. Live world clock with sunrise, sunset times and real-time weather.',
     type: 'website',
     locale: 'en_US',
+    url: 'https://whattime.city',
     siteName: 'whattime.city',
-    url: 'https://whattime.city'
+    title: 'whattime.city - World Clock & Time Zone Converter',
+    description: 'Check current local time anywhere in the world. Compare time zones, plan international meetings, and calculate jet lag recovery.',
+    images: [
+      {
+        url: '/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'whattime.city - World Clock',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'World Clock - Current Local Time in Any City',
-    description: 'Check the current local time anywhere in the world. Live world clock with sunrise, sunset and weather.'
+    title: 'whattime.city - World Clock',
+    description: 'Current local time in any city worldwide. Time zone converter & meeting planner.',
+    images: ['/og-image.svg'],
   },
+  icons: {
+    icon: '/icon.svg',
+    apple: '/icon.svg',
+  },
+  manifest: '/manifest.json',
   alternates: {
-    canonical: 'https://whattime.city'
+    canonical: 'https://whattime.city',
   },
-  robots: {
-    index: true,
-    follow: true
-  }
+  verification: {
+    google: 'your-google-verification-code',
+  },
 }
 
 export default function RootLayout({
@@ -36,33 +86,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* GA4 gtag.js - loaded in head for earliest possible execution */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-L0LS6L1L65"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-L0LS6L1L65');
-            `,
-          }}
-        />
-        {/* Google AdSense */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9352058741490976"
-          crossOrigin="anonymous"
-        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="antialiased">
+      <body className="antialiased" suppressHydrationWarning>
         <CityProvider>
           {children}
         </CityProvider>
