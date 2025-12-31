@@ -37,6 +37,9 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
   const [showSearch, setShowSearch] = useState(false)
   const searchRef = useRef<HTMLDivElement>(null)
   
+  // View mode state - tab'lı görselleştirme
+  const [viewMode, setViewMode] = useState<'heatmap' | 'timeline'>('heatmap')
+  
   // Prevent URL sync on initial mount
   const isInitialMount = useRef(true)
   
@@ -110,10 +113,10 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
     setSelectedCities(selectedCities.filter(c => c.slug !== slug))
   }
   
-  // City tag colors - muted/pastel versions (less saturated, less attention-grabbing)
+  // City tag colors - VIVID (same as TimeSlider)
   const cityColors = [
-    'bg-blue-400/70', 'bg-emerald-400/70', 'bg-purple-400/70', 
-    'bg-orange-400/70', 'bg-pink-400/70', 'bg-cyan-400/70'
+    'bg-blue-500', 'bg-emerald-500', 'bg-purple-500', 
+    'bg-orange-500', 'bg-pink-500', 'bg-cyan-500'
   ]
   
   // Dynamic title based on cities
@@ -127,7 +130,7 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
   
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg}`}>
-      {/* Header */}
+      {/* Header - ONLY ONE */}
       <Header />
       
       {/* Main Content */}
@@ -153,57 +156,62 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
               Participants ({selectedCities.length}/6)
             </h2>
             
-            {/* Add City Search */}
+            {/* Add City Button - TimeSlider style */}
             {selectedCities.length < 6 && (
               <div className="relative" ref={searchRef}>
-                <div className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border transition-all ${
-                  isLight 
-                    ? 'bg-white border-slate-200 focus-within:border-blue-400' 
-                    : 'bg-slate-700 border-slate-600 focus-within:border-blue-500'
-                }`}>
-                  <svg className={`w-4 h-4 ${theme.textMuted}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                  </svg>
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => {
-                      setSearchQuery(e.target.value)
-                      setShowSearch(true)
-                    }}
-                    onFocus={() => setShowSearch(true)}
-                    placeholder="Add city..."
-                    className={`bg-transparent outline-none text-sm w-36 sm:w-48 ${theme.text}`}
-                    style={{ fontSize: '16px' }} // Prevent iOS zoom
-                  />
-                </div>
+                <button
+                  onClick={() => setShowSearch(!showSearch)}
+                  className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                    isLight
+                      ? 'bg-blue-100 hover:bg-blue-200 text-blue-700'
+                      : 'bg-blue-900/50 hover:bg-blue-800/50 text-blue-300'
+                  }`}
+                >
+                  + Add City
+                </button>
                 
                 {/* Search Dropdown */}
-                {showSearch && searchResults.length > 0 && (
-                  <div className={`absolute top-full left-0 right-0 mt-2 rounded-xl shadow-xl border overflow-hidden z-50 ${
-                    isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-600'
-                  }`}>
-                    {searchResults.map(city => (
-                      <button
-                        key={city.slug}
-                        onClick={() => addCity(city)}
-                        className={`w-full px-4 py-3 text-left flex items-center justify-between transition-colors ${
-                          isLight ? 'hover:bg-slate-50' : 'hover:bg-slate-700'
-                        }`}
-                      >
-                        <div>
-                          <span className={theme.text}>{city.city}</span>
-                          <span className={`text-sm ml-2 ${theme.textMuted}`}>{city.country}</span>
-                        </div>
-                      </button>
-                    ))}
+                {showSearch && (
+                  <div className={`absolute top-full right-0 mt-2 w-72 rounded-xl shadow-2xl border p-3 z-50 ${theme.card}`}>
+                    <input
+                      type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="Search city..."
+                      autoFocus
+                      className={`w-full px-3 py-2 rounded-lg border text-sm outline-none focus:ring-2 focus:ring-blue-500 ${
+                        isLight 
+                          ? 'bg-slate-50 border-slate-200 text-slate-800' 
+                          : 'bg-slate-900 border-slate-700 text-white'
+                      }`}
+                      style={{ fontSize: '16px' }}
+                    />
+                    {searchResults.length > 0 && (
+                      <div className="mt-2 max-h-48 overflow-y-auto">
+                        {searchResults.map(city => (
+                          <button
+                            key={city.slug}
+                            onClick={() => addCity(city)}
+                            className={`w-full px-3 py-2 text-left text-sm rounded-lg transition-colors ${
+                              isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'
+                            }`}
+                          >
+                            <span className={theme.text}>{city.city}</span>
+                            <span className={`ml-2 ${theme.textMuted}`}>{city.country}</span>
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                    {searchQuery && searchResults.length === 0 && (
+                      <p className={`text-sm mt-2 ${theme.textMuted}`}>No cities found</p>
+                    )}
                   </div>
                 )}
               </div>
             )}
           </div>
           
-          {/* Selected Cities Tags */}
+          {/* Selected Cities Tags - VIVID COLORS */}
           <div className="flex flex-wrap gap-2">
             {selectedCities.map((city, idx) => {
               const cityTime = new Date().toLocaleTimeString('en-US', {
@@ -220,7 +228,7 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
                 >
                   <span>{city.city}</span>
                   <span className="opacity-80 text-xs">{cityTime}</span>
-                  {selectedCities.length > 1 && (
+                  {selectedCities.length > 0 && (
                     <button
                       onClick={() => removeCity(city.slug)}
                       className="ml-1 hover:bg-white/20 rounded-full p-0.5 transition-colors"
@@ -243,29 +251,53 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
           </div>
         </section>
         
-        {/* Overlap Heatmap Section - PRIMARY DECISION AREA */}
-        <section className={`rounded-3xl p-6 mb-8 backdrop-blur-xl border-2 ${theme.card}`}>
-          <OverlapHeatmap 
-            cities={selectedCities}
-            isLight={isLight}
-          />
-        </section>
-        
-        {/* Visual Separator */}
-        <div className={`flex items-center gap-4 mb-6 ${theme.textMuted}`}>
-          <div className={`flex-1 h-px ${isLight ? 'bg-slate-200' : 'bg-slate-700'}`}></div>
-          <span className="text-xs uppercase tracking-wider">or explore alternatives</span>
-          <div className={`flex-1 h-px ${isLight ? 'bg-slate-200' : 'bg-slate-700'}`}></div>
+        {/* View Mode Tabs */}
+        <div className="flex justify-center mb-4">
+          <div className={`inline-flex rounded-xl p-1 ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
+            <button
+              onClick={() => setViewMode('heatmap')}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                viewMode === 'heatmap'
+                  ? isLight 
+                    ? 'bg-white shadow text-blue-600'
+                    : 'bg-slate-700 shadow text-blue-400'
+                  : theme.textMuted
+              }`}
+            >
+              📊 Heatmap View
+            </button>
+            <button
+              onClick={() => setViewMode('timeline')}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                viewMode === 'timeline'
+                  ? isLight 
+                    ? 'bg-white shadow text-blue-600'
+                    : 'bg-slate-700 shadow text-blue-400'
+                  : theme.textMuted
+              }`}
+            >
+              ⏱️ Timeline View
+            </button>
+          </div>
         </div>
         
-        {/* Time Slider - SECONDARY: for exploration */}
-        <div className="mb-6">
-          <TimeSlider 
-            isLight={isLight} 
-            initialCities={selectedCities}
-            onCitiesChange={(newCities) => setSelectedCities(newCities)}
-          />
-        </div>
+        {/* Visualization Section - Tab content */}
+        {viewMode === 'heatmap' ? (
+          <section className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border ${theme.card}`}>
+            <OverlapHeatmap 
+              cities={selectedCities}
+              isLight={isLight}
+            />
+          </section>
+        ) : (
+          <div className="mb-6">
+            <TimeSlider 
+              isLight={isLight} 
+              initialCities={selectedCities}
+              onCitiesChange={(newCities) => setSelectedCities(newCities)}
+            />
+          </div>
+        )}
         
         {/* Use Cases Section */}
         <section className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border ${theme.card}`}>
@@ -324,7 +356,7 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
                 Can I add more than 3 participants?
               </h3>
               <p className={`text-sm ${theme.textMuted}`}>
-                Yes! You can add up to 6 cities. Simply use the "Add city" search to add more participants.
+                Yes! You can add up to 6 cities. Simply use the "Add city" button to add more participants.
               </p>
             </div>
             <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
