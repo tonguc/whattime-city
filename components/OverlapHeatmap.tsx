@@ -281,42 +281,32 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
   // Eğer şehir yoksa veya tek şehir varsa
   if (cities.length === 0) {
     return (
-      <div className={`rounded-2xl p-6 backdrop-blur-xl border ${
-        isLight ? 'bg-white/60 border-white/70' : 'bg-slate-800/60 border-slate-700/50'
-      }`}>
-        <div className={`text-center py-8 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-          <svg className="w-12 h-12 mx-auto mb-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <p className="font-medium">Add cities to find overlap</p>
-          <p className="text-sm mt-1">Select at least 2 cities to see the best meeting times</p>
-        </div>
+      <div className={`text-center py-8 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+        <svg className="w-12 h-12 mx-auto mb-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <p className="font-medium">Add cities to find overlap</p>
+        <p className="text-sm mt-1">Select at least 2 cities to see the best meeting times</p>
       </div>
     )
   }
   
   if (cities.length === 1) {
     return (
-      <div className={`rounded-2xl p-6 backdrop-blur-xl border ${
-        isLight ? 'bg-white/60 border-white/70' : 'bg-slate-800/60 border-slate-700/50'
-      }`}>
-        <div className={`text-center py-6 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <span className="text-2xl">🌍</span>
-            <span className={`font-medium ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
-              {cities[0].city} added
-            </span>
-          </div>
-          <p className="text-sm">Add at least one more city to find overlap</p>
+      <div className={`text-center py-6 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+        <div className="flex items-center justify-center gap-2 mb-3">
+          <span className="text-2xl">🌍</span>
+          <span className={`font-medium ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
+            {cities[0].city} added
+          </span>
         </div>
+        <p className="text-sm">Add at least one more city to find overlap</p>
       </div>
     )
   }
   
   return (
-    <div className={`rounded-2xl p-4 md:p-6 backdrop-blur-xl border ${
-      isLight ? 'bg-white/60 border-white/70' : 'bg-slate-800/60 border-slate-700/50'
-    }`}>
+    <div>
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
         <div>

@@ -2,11 +2,8 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cities } from '@/lib/cities'
 import { parseCities, generateTopCityPairs, getBusinessHoursOverlapCount } from '@/lib/meetingPlanner'
-import ToolsMiniNav from '@/components/ToolsMiniNav'
-import MeetingPlannerClient from '@/components/meeting/MeetingPlannerClient'
-import DynamicContent from '@/components/meeting/DynamicContent'
+import MeetingPageContent from '@/components/meeting/MeetingPageContent'
 import FAQSchema from '@/components/meeting/FAQSchema'
-import MeetingDynamicWrapper from '@/components/meeting/MeetingDynamicWrapper'
 
 interface Props {
   params: { cities: string }
@@ -72,18 +69,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default function MeetingPlannerPage({ params }: Props) {
+export default function MeetingCitiesPage({ params }: Props) {
   // Parse multiple cities
   const cityList = parseCities(params.cities)
   
   if (!cityList) {
     notFound()
   }
-
-  // Calculate overlap count for SSR (SEO)
-  const overlapCount = cityList.length >= 2 
-    ? getBusinessHoursOverlapCount(cityList[0], cityList[1])
-    : 0
 
   return (
     <>
@@ -92,43 +84,8 @@ export default function MeetingPlannerPage({ params }: Props) {
         <FAQSchema city1={cityList[0]} city2={cityList[1]} />
       )}
 
-      {/* TOOLS MINI NAV - uses CityContext internally */}
-      <ToolsMiniNav />
-
-      {/* Interactive Tool - uses CityContext for consistent theme */}
-      <MeetingPlannerClient initialCities={cityList} />
-
-      {/* SEO Content - Wrapper uses CityContext for theme */}
-      {(cityList.length >= 2 || cityList.length === 1) && (
-        <MeetingDynamicWrapper>
-          {cityList.length >= 2 && (
-            <DynamicContent 
-              cities={cityList}
-              overlapCount={overlapCount}
-            />
-          )}
-
-          {/* Single City Info */}
-          {cityList.length === 1 && (
-            <div className="prose max-w-none">
-              <h2 className="text-2xl font-bold mb-4">
-                Current Time in {cityList[0].city}
-              </h2>
-              <p className="text-lg mb-4">
-                <strong>Timezone:</strong> {cityList[0].timezone}
-              </p>
-              <p className="mb-4">
-                <strong>Business Hours:</strong> 9:00 AM - 5:00 PM local time
-              </p>
-              <div className="p-4 rounded-lg mt-6 bg-blue-50 border border-blue-200">
-                <p className="text-sm text-blue-700">
-                  <strong>💡 Tip:</strong> Add a second city to compare time zones and find the best meeting time!
-                </p>
-              </div>
-            </div>
-          )}
-        </MeetingDynamicWrapper>
-      )}
+      {/* Full Page Content with Header, Theme, Containers, Footer */}
+      <MeetingPageContent initialCities={cityList} />
     </>
   )
 }
