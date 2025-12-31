@@ -46,10 +46,11 @@ export default function MeetingPlannerPage() {
 
   return (
     <>
-      {/* Mini Navigation */}
-      <ToolsMiniNav />
+      <div className="max-w-6xl mx-auto px-4">
+        {/* Mini Navigation */}
+        <ToolsMiniNav />
 
-      {/* Tool Hero */}
+        {/* Tool Hero */}
         <div className="text-center mb-8">
           <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
             Meeting Planner
@@ -257,9 +258,12 @@ export default function MeetingPlannerPage() {
             </div>
           </div>
         </section>
+      </div>
 
-        {/* Footer */}
+      {/* Footer - Full Width */}
+      <div className="relative z-10 mt-10">
         <Footer isLight={isLight} />
+      </div>
     </>
   )
 }

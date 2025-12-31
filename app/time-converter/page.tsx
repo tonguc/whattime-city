@@ -45,7 +45,7 @@ export default function TimeConverterPage() {
     : 'bg-slate-700 border-slate-600 text-white'
 
   return (
-    <ToolPageWrapper>
+    <ToolPageWrapper footer={<Footer isLight={isLight} />}>
       <ToolsMiniNav />
 
       <div className="text-center mb-8">
@@ -179,8 +179,6 @@ export default function TimeConverterPage() {
           </div>
         </div>
       </section>
-
-      <Footer isLight={isLight} />
     </ToolPageWrapper>
   )
 }

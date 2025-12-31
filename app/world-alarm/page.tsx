@@ -16,7 +16,7 @@ export default function WorldAlarmPage() {
     : 'bg-slate-800/60 border border-slate-600/60 rounded-xl'
 
   return (
-    <ToolPageWrapper>
+    <ToolPageWrapper footer={<Footer isLight={isLight} />}>
       <ToolsMiniNav />
 
       <div className="text-center mb-8">
@@ -79,8 +79,6 @@ export default function WorldAlarmPage() {
           </Link>
         </div>
       </section>
-
-      <Footer isLight={isLight} />
     </ToolPageWrapper>
   )
 }
