@@ -400,15 +400,16 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
       {/* Tooltip */}
       {selectedHour !== null && tooltipPosition && (
         <div 
-          className={`fixed z-50 px-4 py-3 rounded-xl shadow-xl border max-w-xs ${
+          className={`fixed px-4 py-3 rounded-xl shadow-2xl border max-w-xs pointer-events-none ${
             isLight 
               ? 'bg-white border-slate-200 text-slate-800' 
               : 'bg-slate-800 border-slate-600 text-white'
           }`}
           style={{
-            left: Math.min(tooltipPosition.x, window.innerWidth - 200),
-            top: tooltipPosition.y - 120,
-            transform: 'translateX(-50%)'
+            left: Math.max(16, Math.min(tooltipPosition.x, (typeof window !== 'undefined' ? window.innerWidth : 1000) - 220)),
+            top: Math.max(80, tooltipPosition.y - 10),
+            transform: 'translate(-50%, -100%)',
+            zIndex: 99999
           }}
         >
           {(() => {
