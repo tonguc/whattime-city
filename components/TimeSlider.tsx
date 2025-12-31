@@ -194,10 +194,10 @@ export default function TimeSlider({ initialCities = [], onCitiesChange }: TimeS
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
         <div>
           <h3 className={`text-lg font-bold ${theme.text}`}>
-            ⏰ Time Slider
+            🔍 Explore other time options
           </h3>
           <p className={`text-sm ${theme.textMuted}`}>
-            Drag to compare times • Find meeting overlap
+            Drag to see how this time affects each city
           </p>
         </div>
         

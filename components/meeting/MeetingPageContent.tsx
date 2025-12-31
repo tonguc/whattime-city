@@ -25,16 +25,11 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
   const pathname = usePathname()
   
   // Use global CityContext theme (based on USER's location)
-  const { theme, isLight } = useCityContext()
+  const { theme, isLight, detectedCity } = useCityContext()
   
-  // Selected cities state
-  const [selectedCities, setSelectedCities] = useState<City[]>(
-    initialCities.length > 0 ? initialCities : [
-      cities.find(c => c.slug === 'new-york') || cities[0],
-      cities.find(c => c.slug === 'london') || cities[1],
-      cities.find(c => c.slug === 'tokyo') || cities[2]
-    ]
-  )
+  // Selected cities state - start empty, will be populated by detectedCity or initialCities
+  const [selectedCities, setSelectedCities] = useState<City[]>(initialCities)
+  const [hasInitialized, setHasInitialized] = useState(initialCities.length > 0)
   
   // Search state
   const [searchQuery, setSearchQuery] = useState('')
@@ -44,6 +39,14 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
   
   // Prevent URL sync on initial mount
   const isInitialMount = useRef(true)
+  
+  // Initialize with detected city when available (only if no initialCities)
+  useEffect(() => {
+    if (!hasInitialized && detectedCity) {
+      setSelectedCities([detectedCity])
+      setHasInitialized(true)
+    }
+  }, [detectedCity, hasInitialized])
   
   // Search effect
   useEffect(() => {
@@ -107,10 +110,10 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
     setSelectedCities(selectedCities.filter(c => c.slug !== slug))
   }
   
-  // City tag colors
+  // City tag colors - muted/pastel versions (less saturated, less attention-grabbing)
   const cityColors = [
-    'bg-blue-500', 'bg-emerald-500', 'bg-purple-500', 
-    'bg-orange-500', 'bg-pink-500', 'bg-cyan-500'
+    'bg-blue-400/70', 'bg-emerald-400/70', 'bg-purple-400/70', 
+    'bg-orange-400/70', 'bg-pink-400/70', 'bg-cyan-400/70'
   ]
   
   // Dynamic title based on cities
@@ -240,15 +243,22 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
           </div>
         </section>
         
-        {/* Overlap Heatmap Section */}
-        <section className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border ${theme.card}`}>
+        {/* Overlap Heatmap Section - PRIMARY DECISION AREA */}
+        <section className={`rounded-3xl p-6 mb-8 backdrop-blur-xl border-2 ${theme.card}`}>
           <OverlapHeatmap 
             cities={selectedCities}
             isLight={isLight}
           />
         </section>
         
-        {/* Time Slider - has its own container */}
+        {/* Visual Separator */}
+        <div className={`flex items-center gap-4 mb-6 ${theme.textMuted}`}>
+          <div className={`flex-1 h-px ${isLight ? 'bg-slate-200' : 'bg-slate-700'}`}></div>
+          <span className="text-xs uppercase tracking-wider">or explore alternatives</span>
+          <div className={`flex-1 h-px ${isLight ? 'bg-slate-200' : 'bg-slate-700'}`}></div>
+        </div>
+        
+        {/* Time Slider - SECONDARY: for exploration */}
         <div className="mb-6">
           <TimeSlider 
             isLight={isLight} 
