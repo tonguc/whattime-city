@@ -8,6 +8,7 @@ import { useCityContext } from '@/lib/CityContext'
 interface TimeSliderProps {
   initialCities?: City[]
   onCitiesChange?: (cities: City[]) => void
+  hideControls?: boolean // Hide header, Add City button, and city tags (used when embedded)
   // Legacy props - ignored, we use CityContext
   isLight?: boolean
   themeColors?: {
@@ -40,7 +41,7 @@ const isBusinessHour = (hour: number): boolean => hour >= 9 && hour < 17
 // Check if hour is night (22-6)
 const isNightHour = (hour: number): boolean => hour >= 22 || hour < 6
 
-export default function TimeSlider({ initialCities = [], onCitiesChange }: TimeSliderProps) {
+export default function TimeSlider({ initialCities = [], onCitiesChange, hideControls = false }: TimeSliderProps) {
   const router = useRouter()
   const pathname = usePathname()
   
@@ -188,76 +189,83 @@ export default function TimeSlider({ initialCities = [], onCitiesChange }: TimeS
     return overlap
   }, [selectedCities, offsetHours, baseTime]) // Re-calculate only when these change
 
-  return (
-    <div className={`rounded-2xl p-4 md:p-6 backdrop-blur-xl border ${theme.card}`}>
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
-        <div>
-          <h3 className={`text-lg font-bold ${theme.text}`}>
-            🔍 Explore other time options
-          </h3>
-          <p className={`text-sm ${theme.textMuted}`}>
-            Drag to see how this time affects each city
-          </p>
-        </div>
-        
-        {/* Add City */}
-        <div className="relative" ref={searchRef}>
-          <button
-            onClick={() => setShowSearch(!showSearch)}
-            disabled={selectedCities.length >= 6}
-            className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
-              selectedCities.length >= 6
-                ? 'opacity-50 cursor-not-allowed'
-                : isLight
-                  ? 'bg-blue-100 hover:bg-blue-200 text-blue-700'
-                  : 'bg-blue-900/50 hover:bg-blue-800/50 text-blue-300'
-            }`}
-          >
-            + Add City ({selectedCities.length}/6)
-          </button>
-          
-          {showSearch && (
-            <div className={`fixed right-4 top-20 w-72 rounded-xl shadow-2xl border p-3 z-[9999] ${theme.card}`}>
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search city..."
-                autoFocus
-                className={`w-full px-3 py-2 rounded-lg border text-sm outline-none focus:ring-2 focus:ring-blue-500 ${
-                  isLight 
-                    ? 'bg-slate-50 border-slate-200 text-slate-800' 
-                    : 'bg-slate-900 border-slate-700 text-white'
-                }`}
-                style={{ fontSize: '16px' }}
-              />
-              {searchResults.length > 0 && (
-                <div className="mt-2 max-h-48 overflow-y-auto">
-                  {searchResults.map(city => (
-                    <button
-                      key={city.slug}
-                      onClick={() => addCity(city)}
-                      className={`w-full px-3 py-2 text-left text-sm rounded-lg ${
-                        isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'
-                      }`}
-                    >
-                      <span className={theme.text}>{city.city}</span>
-                      <span className={`ml-2 ${theme.textMuted}`}>{city.country}</span>
-                    </button>
-                  ))}
-                </div>
-              )}
-              {searchQuery && searchResults.length === 0 && (
-                <p className={`text-sm mt-2 ${theme.textMuted}`}>No cities found</p>
-              )}
-            </div>
-          )}
-        </div>
-      </div>
+  // Container class - no styling when hideControls is true (parent provides container)
+  const containerClass = hideControls 
+    ? '' 
+    : `rounded-2xl p-4 md:p-6 backdrop-blur-xl border ${theme.card}`
 
-      {/* Selected Cities Tags */}
-      {selectedCities.length > 0 && (
+  return (
+    <div className={containerClass}>
+      {/* Header - only show when not embedded */}
+      {!hideControls && (
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
+          <div>
+            <h3 className={`text-lg font-bold ${theme.text}`}>
+              🔍 Explore other time options
+            </h3>
+            <p className={`text-sm ${theme.textMuted}`}>
+              Drag to see how this time affects each city
+            </p>
+          </div>
+          
+          {/* Add City */}
+          <div className="relative" ref={searchRef}>
+            <button
+              onClick={() => setShowSearch(!showSearch)}
+              disabled={selectedCities.length >= 6}
+              className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
+                selectedCities.length >= 6
+                  ? 'opacity-50 cursor-not-allowed'
+                  : isLight
+                    ? 'bg-blue-100 hover:bg-blue-200 text-blue-700'
+                    : 'bg-blue-900/50 hover:bg-blue-800/50 text-blue-300'
+              }`}
+            >
+              + Add City ({selectedCities.length}/6)
+            </button>
+            
+            {showSearch && (
+              <div className={`fixed right-4 top-20 w-72 rounded-xl shadow-2xl border p-3 z-[9999] ${theme.card}`}>
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search city..."
+                  autoFocus
+                  className={`w-full px-3 py-2 rounded-lg border text-sm outline-none focus:ring-2 focus:ring-blue-500 ${
+                    isLight 
+                      ? 'bg-slate-50 border-slate-200 text-slate-800' 
+                      : 'bg-slate-900 border-slate-700 text-white'
+                  }`}
+                  style={{ fontSize: '16px' }}
+                />
+                {searchResults.length > 0 && (
+                  <div className="mt-2 max-h-48 overflow-y-auto">
+                    {searchResults.map(city => (
+                      <button
+                        key={city.slug}
+                        onClick={() => addCity(city)}
+                        className={`w-full px-3 py-2 text-left text-sm rounded-lg ${
+                          isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'
+                        }`}
+                      >
+                        <span className={theme.text}>{city.city}</span>
+                        <span className={`ml-2 ${theme.textMuted}`}>{city.country}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+                {searchQuery && searchResults.length === 0 && (
+                  <p className={`text-sm mt-2 ${theme.textMuted}`}>No cities found</p>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Selected Cities Tags - only show when not embedded */}
+      {!hideControls && selectedCities.length > 0 && (
         <div className="flex flex-wrap gap-2 mb-4">
           {selectedCities.map((city, idx) => {
             const time = getAdjustedTime(city)

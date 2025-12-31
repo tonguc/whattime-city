@@ -290,13 +290,20 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
             />
           </section>
         ) : (
-          <div className="mb-6">
+          <section className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border ${theme.card}`}>
+            <h3 className={`text-lg font-bold mb-2 ${theme.text}`}>
+              🔍 Explore other time options
+            </h3>
+            <p className={`text-sm mb-4 ${theme.textMuted}`}>
+              Drag to see how this time affects each city
+            </p>
             <TimeSlider 
               isLight={isLight} 
               initialCities={selectedCities}
               onCitiesChange={(newCities) => setSelectedCities(newCities)}
+              hideControls={true}
             />
-          </div>
+          </section>
         )}
         
         {/* Use Cases Section */}
