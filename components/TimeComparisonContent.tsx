@@ -195,9 +195,6 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
   const [selectedMeetingHour, setSelectedMeetingHour] = useState<number | null>(null)
   const [meetingCopyFeedback, setMeetingCopyFeedback] = useState(false)
   
-  // Dynamic title state for SEO
-  const [dynamicTitle, setDynamicTitle] = useState<string | null>(null)
-  
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000)
     return () => clearInterval(timer)
@@ -259,19 +256,6 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
   const fromOffset = getTimezoneOffset(fromCity.timezone)
   const toOffset = getTimezoneOffset(toCity.timezone)
   const diffHours = toOffset - fromOffset
-  
-  // Update visible title when slider changes (no URL change)
-  useEffect(() => {
-    if (typeof window === 'undefined') return
-    
-    const toHour = (sliderHour + diffHours + 24) % 24
-    const fromTimeStr = `${sliderHour.toString().padStart(2, '0')}:00`
-    const toTimeStr = `${toHour.toString().padStart(2, '0')}:00`
-    
-    // Update visible dynamic title only
-    const newTitle = `${fromTimeStr} ${fromCity.city} is ${toTimeStr} in ${toCity.city}`
-    setDynamicTitle(newTitle)
-  }, [sliderHour, diffHours, fromCity.city, toCity.city])
   
   // Theme based on "from" city
   const mainTheme = themes[fromTimeOfDay]
@@ -564,7 +548,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
       <main className="max-w-6xl mx-auto px-4 py-8" style={{ overflow: 'visible' }}>
         {/* Title */}
         <h1 className={`text-2xl sm:text-3xl font-bold text-center mb-2 ${isLight ? 'text-slate-800' : 'text-white'} transition-all duration-300`}>
-          {dynamicTitle || `${fromCity.city} → ${toCity.city} Time`}
+          Time Difference between {fromCity.city} and {toCity.city}
         </h1>
         
         <p className={`text-sm text-center mb-6 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
@@ -662,9 +646,12 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
         
         {/* Interactive Time Slider */}
         <div className={`p-6 rounded-3xl backdrop-blur-xl border mb-8 ${isLight ? 'bg-white/50 border-white/60' : 'bg-slate-800/50 border-slate-700/60'}`}>
-          <h3 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h3 className={`text-lg font-semibold mb-2 flex items-center gap-2 ${isLight ? 'text-slate-800' : 'text-white'}`}>
             🕐 Interactive Time Explorer
           </h3>
+          <h2 className={`text-xl sm:text-2xl font-bold mb-4 ${isLight ? 'text-blue-600' : 'text-blue-400'} transition-all duration-300`}>
+            When it's {sliderHour.toString().padStart(2, '0')}:00 in {fromCity.city}, it's {sliderToHour.toString().padStart(2, '0')}:00 in {toCity.city}
+          </h2>
           <p className={`text-sm mb-4 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
             Drag the slider to see corresponding times in both cities
           </p>
@@ -1102,37 +1089,75 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
                 </div>
               )
             })()}
-            {/* NEW: Best Call Window */}
+            {/* NEW: Best Call Window - LIVE INDICATOR */}
             {(() => {
-              // Find best mutual time (both between 9-17)
-              let bestFromHour = -1
+              // Find all overlapping hours (both cities in 9-17 range)
+              const overlapHours: number[] = []
               for (let h = 9; h < 17; h++) {
                 const correspondingToHour = (h + diffHours + 24) % 24
                 if (correspondingToHour >= 9 && correspondingToHour < 17) {
-                  if (bestFromHour === -1) bestFromHour = h
+                  overlapHours.push(h)
                 }
               }
               
-              if (bestFromHour === -1) {
-                // No overlap, find earliest reasonable time
-                bestFromHour = diffHours > 0 ? 9 : 17 - Math.abs(diffHours)
-                if (bestFromHour < 7) bestFromHour = 7
-                if (bestFromHour > 21) bestFromHour = 21
+              // Get current hour in fromCity
+              const now = new Date()
+              const fromCityTime = new Date(now.toLocaleString('en-US', { timeZone: fromCity.timezone }))
+              const currentFromHour = fromCityTime.getHours()
+              const currentFromMinute = fromCityTime.getMinutes()
+              
+              // Check if current time is within overlap range
+              const isGoodTime = overlapHours.includes(currentFromHour)
+              
+              // Format overlap range string
+              const overlapRangeStr = overlapHours.length > 0 
+                ? `${overlapHours[0].toString().padStart(2, '0')}:00 - ${(overlapHours[overlapHours.length - 1] + 1).toString().padStart(2, '0')}:00`
+                : 'No overlap'
+              
+              // Calculate next available slot
+              let nextSlotStr = ''
+              if (!isGoodTime && overlapHours.length > 0) {
+                const firstOverlapHour = overlapHours[0]
+                if (currentFromHour < firstOverlapHour) {
+                  // Today, later
+                  nextSlotStr = `Today ${firstOverlapHour.toString().padStart(2, '0')}:00`
+                } else {
+                  // Tomorrow
+                  nextSlotStr = `Tomorrow ${firstOverlapHour.toString().padStart(2, '0')}:00`
+                }
+              } else if (overlapHours.length === 0) {
+                nextSlotStr = 'No overlap available'
               }
               
-              const bestToHour = (bestFromHour + diffHours + 24) % 24
-              
-              return (
-                <div className={`p-4 rounded-xl text-center ${isLight ? 'bg-blue-50 border border-blue-200' : 'bg-blue-900/30 border border-blue-800'}`}>
-                  <p className={`text-xs ${isLight ? 'text-blue-600' : 'text-blue-400'}`}>Best Call Time</p>
-                  <p className={`text-lg font-bold ${isLight ? 'text-blue-700' : 'text-blue-300'}`}>
-                    {bestFromHour.toString().padStart(2, '0')}:00
-                  </p>
-                  <p className={`text-xs mt-0.5 ${isLight ? 'text-blue-500' : 'text-blue-400'}`}>
-                    = {bestToHour.toString().padStart(2, '0')}:00 in {toCity.city.split(' ')[0]}
-                  </p>
-                </div>
-              )
+              if (isGoodTime) {
+                return (
+                  <div className={`p-4 rounded-xl text-center ${isLight ? 'bg-green-50 border border-green-200' : 'bg-green-900/30 border border-green-800'}`}>
+                    <p className={`text-xs ${isLight ? 'text-green-600' : 'text-green-400'}`}>
+                      🟢 Good to Call Now
+                    </p>
+                    <p className={`text-lg font-bold ${isLight ? 'text-green-700' : 'text-green-300'}`}>
+                      {currentFromHour.toString().padStart(2, '0')}:{currentFromMinute.toString().padStart(2, '0')}
+                    </p>
+                    <p className={`text-xs mt-0.5 ${isLight ? 'text-green-500' : 'text-green-400'}`}>
+                      {overlapRangeStr}
+                    </p>
+                  </div>
+                )
+              } else {
+                return (
+                  <div className={`p-4 rounded-xl text-center ${isLight ? 'bg-red-50 border border-red-200' : 'bg-red-900/30 border border-red-800'}`}>
+                    <p className={`text-xs ${isLight ? 'text-red-600' : 'text-red-400'}`}>
+                      🔴 Office Closed
+                    </p>
+                    <p className={`text-sm font-bold ${isLight ? 'text-red-700' : 'text-red-300'}`}>
+                      {nextSlotStr}
+                    </p>
+                    <p className={`text-xs mt-0.5 ${isLight ? 'text-red-500' : 'text-red-400'}`}>
+                      {overlapRangeStr}
+                    </p>
+                  </div>
+                )
+              }
             })()}
           </div>
         </div>
