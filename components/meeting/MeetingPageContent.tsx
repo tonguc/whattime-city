@@ -6,7 +6,7 @@
  * Uses CityContext for theme (user's location based)
  */
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { City, cities, searchCities } from '@/lib/cities'
@@ -16,6 +16,33 @@ import Footer from '@/components/Footer'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import TimeSlider from '@/components/TimeSlider'
 import OverlapHeatmap from '@/components/OverlapHeatmap'
+
+// Business hours check helper
+const BUSINESS_START = 9
+const BUSINESS_END = 17
+
+function getHourInTimezone(timezone: string): number {
+  const now = new Date()
+  const timeStr = now.toLocaleString('en-US', { 
+    timeZone: timezone, 
+    hour: 'numeric', 
+    hour12: false 
+  })
+  return parseInt(timeStr) % 24
+}
+
+function getCityBusinessHoursInRef(city: City, refTimezone: string): { start: number, end: number } {
+  const refHour = getHourInTimezone(refTimezone)
+  const cityHour = getHourInTimezone(city.timezone)
+  const diff = cityHour - refHour
+  
+  // City's 9:00 in reference timezone
+  const start = (BUSINESS_START - diff + 24) % 24
+  // City's 17:00 in reference timezone
+  const end = (BUSINESS_END - diff + 24) % 24
+  
+  return { start, end }
+}
 
 interface MeetingPageContentProps {
   initialCities?: City[]
@@ -206,6 +233,36 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
     }
   }, [])
   
+  // Check if there's any business hours overlap (for Timeline banner)
+  const hasBusinessOverlap = useMemo(() => {
+    if (selectedCities.length < 2) return true // Don't show banner for 0-1 cities
+    
+    const refTimezone = selectedCities[0]?.timezone || 'UTC'
+    
+    // For each hour (0-23), check if ALL cities are in business hours
+    for (let hour = 0; hour < 24; hour++) {
+      let allInBusiness = true
+      
+      for (const city of selectedCities) {
+        const refHour = getHourInTimezone(refTimezone)
+        const cityHour = getHourInTimezone(city.timezone)
+        const diff = cityHour - refHour
+        
+        // What's the local hour in this city when it's 'hour' in reference?
+        const localHour = (hour + diff + 24) % 24
+        
+        if (localHour < BUSINESS_START || localHour >= BUSINESS_END) {
+          allInBusiness = false
+          break
+        }
+      }
+      
+      if (allInBusiness) return true
+    }
+    
+    return false
+  }, [selectedCities])
+  
   // City tag colors - VIVID (same as TimeSlider)
   const cityColors = [
     'bg-blue-500', 'bg-emerald-500', 'bg-purple-500', 
@@ -244,8 +301,11 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
           </div>
         </section>
         
-        {/* Participants Section */}
-        <section className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border overflow-visible ${theme.card}`}>
+        {/* Participants Section - high z-index for dropdown to work */}
+        <section 
+          className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border relative ${theme.card}`}
+          style={{ zIndex: 30, overflow: 'visible' }}
+        >
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
             <h2 className={`text-xl font-semibold flex items-center gap-2 ${theme.text}`}>
               <span>👥</span>
@@ -259,7 +319,7 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
             </h2>
             
             {/* Action Buttons */}
-            <div className="flex items-center gap-2 relative z-50">
+            <div className="flex items-center gap-2">
               {/* Clear all - ghost button, only show when 2+ cities */}
               {selectedCities.length >= 2 && (
                 <button
@@ -290,7 +350,10 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
                 
                 {/* Search Dropdown */}
                 {showSearch && (
-                  <div className={`absolute top-full right-0 mt-2 w-72 rounded-xl shadow-2xl border p-3 z-[100] ${theme.card}`}>
+                  <div 
+                    className={`absolute top-full right-0 mt-2 w-72 rounded-xl shadow-2xl border p-3 ${theme.card}`}
+                    style={{ zIndex: 9999 }}
+                  >
                     <input
                       type="text"
                       value={searchQuery}
@@ -430,6 +493,18 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
           </section>
         ) : (
           <section className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border ${theme.card}`}>
+            {/* Conditional banner - only show when NO business hours overlap */}
+            {!hasBusinessOverlap && selectedCities.length >= 2 && (
+              <div className={`mb-4 p-3 rounded-xl flex items-start gap-2 ${
+                isLight ? 'bg-amber-50 border border-amber-200' : 'bg-amber-900/20 border border-amber-800/50'
+              }`}>
+                <span className="text-amber-500 mt-0.5">💡</span>
+                <span className={`text-sm ${isLight ? 'text-amber-700' : 'text-amber-300'}`}>
+                  <span className="font-medium">Tip:</span> No common working hours found. Switch to <button onClick={() => setViewMode('heatmap')} className="font-semibold underline hover:no-underline">Heatmap View</button> to find the best compromise time when everyone is awake.
+                </span>
+              </div>
+            )}
+            
             <h3 className={`text-lg font-bold mb-2 ${theme.text}`}>
               🔍 Explore other time options
             </h3>
