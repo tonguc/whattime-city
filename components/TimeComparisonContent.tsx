@@ -147,7 +147,7 @@ const FAQItem = ({ question, answer, isLight }: { question: string, answer: stri
   const [isOpen, setIsOpen] = useState(false)
   
   return (
-    <div className={`border-b ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
+    <div className={`border-b ${isLight ? 'border-gray-200' : 'border-slate-700'}`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`w-full py-4 flex items-center justify-between text-left ${isLight ? 'text-slate-700' : 'text-slate-200'}`}
@@ -163,7 +163,7 @@ const FAQItem = ({ question, answer, isLight }: { question: string, answer: stri
         </svg>
       </button>
       {isOpen && (
-        <div className={`pb-4 text-sm ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+        <div className={`pb-4 text-sm ${mainTheme.textMuted}`}>
           {answer}
         </div>
       )}
@@ -550,11 +550,11 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
 
       <main className="max-w-6xl mx-auto px-4 py-8" style={{ overflow: 'visible' }}>
         {/* Title */}
-        <h1 className={`text-2xl sm:text-3xl font-bold text-center mb-2 ${isLight ? 'text-slate-800' : 'text-white'} transition-all duration-300`}>
+        <h1 className={`text-2xl sm:text-3xl font-bold text-center mb-2 ${mainTheme.text} transition-all duration-300`}>
           Time Difference between {fromCity.city} and {toCity.city}
         </h1>
         
-        <p className={`text-sm text-center mb-6 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+        <p className={`text-sm text-center mb-6 ${mainTheme.textMuted}`}>
           {fromTimezoneStr} → {toTimezoneStr}
         </p>
         
@@ -571,25 +571,25 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
         {/* Current Time Cards with Weather & Phone Codes */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {/* From City */}
-          <div className={`p-6 rounded-3xl backdrop-blur-xl border ${isLight ? 'bg-white/50 border-white/60' : 'bg-slate-800/50 border-slate-700/60'}`}>
+          <div className={`p-6 rounded-3xl backdrop-blur-xl border ${mainTheme.card}`}>
             <div className="flex items-start justify-between mb-3">
               <div className="flex items-center gap-3">
                 <TimeOfDayIcon timeOfDay={fromTimeOfDay} size="lg" />
                 <div>
-                  <h2 className={`text-lg font-semibold ${isLight ? 'text-slate-800' : 'text-white'}`}>{fromCity.city}</h2>
-                  <p className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{fromCity.country}</p>
+                  <h2 className={`text-lg font-semibold ${mainTheme.text}`}>{fromCity.city}</h2>
+                  <p className={`text-xs ${mainTheme.textMuted}`}>{fromCity.country}</p>
                 </div>
               </div>
               {fromWeather && (
-                <div className={`flex items-center gap-1 px-2 py-1 rounded-lg text-sm ${isLight ? 'bg-slate-100' : 'bg-slate-700'}`}>
+                <div className={`flex items-center gap-1 px-2 py-1 rounded-lg text-sm ${isLight ? 'bg-gray-100' : 'bg-slate-700'}`}>
                   <img src={`https:${fromWeather.current.condition.icon}`} alt="" className="w-6 h-6" />
                   <span className={isLight ? 'text-slate-700' : 'text-slate-200'}>{Math.round(fromWeather.current.temp_c)}°</span>
                 </div>
               )}
             </div>
-            <div className={`text-4xl font-bold mb-2 ${isLight ? 'text-slate-800' : 'text-white'}`}>{fromTime}</div>
-            <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{fromDate}</p>
-            <div className={`mt-3 pt-3 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'} flex flex-wrap gap-3 text-xs`}>
+            <div className={`text-4xl font-bold mb-2 ${mainTheme.text}`}>{fromTime}</div>
+            <p className={`text-sm ${mainTheme.textMuted}`}>{fromDate}</p>
+            <div className={`mt-3 pt-3 border-t ${isLight ? 'border-gray-200' : 'border-slate-700'} flex flex-wrap gap-3 text-xs`}>
               {fromPhoneCode && (
                 <span className={`px-2 py-1 rounded ${isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>
                   📞 {fromPhoneCode}
@@ -604,25 +604,25 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
           </div>
           
           {/* To City */}
-          <div className={`p-6 rounded-3xl backdrop-blur-xl border ${isLight ? 'bg-white/50 border-white/60' : 'bg-slate-800/50 border-slate-700/60'}`}>
+          <div className={`p-6 rounded-3xl backdrop-blur-xl border ${mainTheme.card}`}>
             <div className="flex items-start justify-between mb-3">
               <div className="flex items-center gap-3">
                 <TimeOfDayIcon timeOfDay={toTimeOfDay} size="lg" />
                 <div>
-                  <h2 className={`text-lg font-semibold ${isLight ? 'text-slate-800' : 'text-white'}`}>{toCity.city}</h2>
-                  <p className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{toCity.country}</p>
+                  <h2 className={`text-lg font-semibold ${mainTheme.text}`}>{toCity.city}</h2>
+                  <p className={`text-xs ${mainTheme.textMuted}`}>{toCity.country}</p>
                 </div>
               </div>
               {toWeather && (
-                <div className={`flex items-center gap-1 px-2 py-1 rounded-lg text-sm ${isLight ? 'bg-slate-100' : 'bg-slate-700'}`}>
+                <div className={`flex items-center gap-1 px-2 py-1 rounded-lg text-sm ${isLight ? 'bg-gray-100' : 'bg-slate-700'}`}>
                   <img src={`https:${toWeather.current.condition.icon}`} alt="" className="w-6 h-6" />
                   <span className={isLight ? 'text-slate-700' : 'text-slate-200'}>{Math.round(toWeather.current.temp_c)}°</span>
                 </div>
               )}
             </div>
-            <div className={`text-4xl font-bold mb-2 ${isLight ? 'text-slate-800' : 'text-white'}`}>{toTime}</div>
-            <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{toDate}</p>
-            <div className={`mt-3 pt-3 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'} flex flex-wrap gap-3 text-xs`}>
+            <div className={`text-4xl font-bold mb-2 ${mainTheme.text}`}>{toTime}</div>
+            <p className={`text-sm ${mainTheme.textMuted}`}>{toDate}</p>
+            <div className={`mt-3 pt-3 border-t ${isLight ? 'border-gray-200' : 'border-slate-700'} flex flex-wrap gap-3 text-xs`}>
               {toPhoneCode && (
                 <span className={`px-2 py-1 rounded ${isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>
                   📞 {toPhoneCode}
@@ -638,10 +638,10 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
         </div>
         
         {/* Time Difference Badge */}
-        <div className={`text-center mb-8 py-3 px-6 rounded-full inline-flex mx-auto items-center gap-2 ${isLight ? 'bg-white/50' : 'bg-slate-800/50'}`} style={{ display: 'flex', width: 'fit-content', margin: '0 auto 2rem auto' }}>
+        <div className={`text-center mb-8 py-3 px-6 rounded-full inline-flex mx-auto items-center gap-2 border ${mainTheme.card}`} style={{ display: 'flex', width: 'fit-content', margin: '0 auto 2rem auto' }}>
           <span className="text-2xl">⏱️</span>
           <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-            <span className={`font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+            <span className={`font-bold ${mainTheme.text}`}>
               {formatTimeDifference(Math.abs(diffHours))}
             </span>
             {' '}{diffHours > 0 ? `ahead` : diffHours < 0 ? `behind` : `same time`}
@@ -649,21 +649,21 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
         </div>
         
         {/* Interactive Time Slider */}
-        <div className={`p-6 rounded-3xl backdrop-blur-xl border mb-8 ${isLight ? 'bg-white/50 border-white/60' : 'bg-slate-800/50 border-slate-700/60'}`}>
-          <h3 className={`text-lg font-semibold mb-2 flex items-center gap-2 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+        <div className={`p-6 rounded-3xl backdrop-blur-xl border mb-8 ${mainTheme.card}`}>
+          <h3 className={`text-lg font-semibold mb-2 flex items-center gap-2 ${mainTheme.text}`}>
             🕐 Interactive Time Explorer
           </h3>
           <h2 className={`text-xl sm:text-2xl font-bold mb-4 ${isLight ? 'text-blue-600' : 'text-blue-400'} transition-all duration-300`}>
             When it's {sliderHour.toString().padStart(2, '0')}:00 in {fromCity.city}, it's {sliderToHour.toString().padStart(2, '0')}:00 in {toCity.city}
           </h2>
-          <p className={`text-sm mb-4 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+          <p className={`text-sm mb-4 ${mainTheme.textMuted}`}>
             Drag the slider to see corresponding times in both cities
           </p>
           
           {/* Slider Track */}
           <div 
             ref={sliderRef}
-            className={`relative h-16 rounded-xl cursor-pointer select-none ${isLight ? 'bg-slate-100' : 'bg-slate-700'}`}
+            className={`relative h-16 rounded-xl cursor-pointer select-none ${isLight ? 'bg-gray-100' : 'bg-slate-700'}`}
             onMouseDown={handleMouseDown}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
@@ -709,7 +709,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
                 <TimeOfDayIcon timeOfDay={getHourTimeOfDay(sliderHour)} size="sm" />
                 <span className={`text-sm font-medium ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>{fromCity.city}</span>
               </div>
-              <div className={`text-3xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <div className={`text-3xl font-bold ${mainTheme.text}`}>
                 {sliderHour.toString().padStart(2, '0')}:00
               </div>
             </div>
@@ -718,7 +718,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
                 <TimeOfDayIcon timeOfDay={getHourTimeOfDay(sliderToHour)} size="sm" />
                 <span className={`text-sm font-medium ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>{toCity.city}</span>
               </div>
-              <div className={`text-3xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <div className={`text-3xl font-bold ${mainTheme.text}`}>
                 {sliderToHour.toString().padStart(2, '0')}:00
                 {diffHours > 0 && sliderHour + diffHours >= 24 && <span className="text-sm ml-1 text-blue-500">(+1)</span>}
                 {diffHours < 0 && sliderHour + diffHours < 0 && <span className="text-sm ml-1 text-orange-500">(-1)</span>}
@@ -784,13 +784,13 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
         </div>
         
         {/* Best Meeting Times - Unified Card */}
-        <div className={`p-6 rounded-3xl backdrop-blur-xl border mb-8 ${isLight ? 'bg-white/50 border-white/60' : 'bg-slate-800/50 border-slate-700/60'}`}>
+        <div className={`p-6 rounded-3xl backdrop-blur-xl border mb-8 ${mainTheme.card}`}>
           {/* Header - Mobile: Title + Cities on same row */}
           <div className="flex flex-wrap items-center gap-2 mb-4">
-            <h3 className={`text-lg font-semibold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+            <h3 className={`text-lg font-semibold ${mainTheme.text}`}>
               🤝 Best Meeting Times
             </h3>
-            <span className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+            <span className={`text-sm ${mainTheme.textMuted}`}>
               {fromCity.city} & {toCity.city}
             </span>
           </div>
@@ -952,18 +952,18 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
                     </p>
                     
                     <div className="grid grid-cols-2 gap-4 mb-4">
-                      <div className={`p-3 rounded-lg text-center ${isLight ? 'bg-white/80' : 'bg-slate-800/80'}`}>
-                        <p className={`text-xs mb-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>🇹🇷 {fromCity.city}</p>
-                        <p className={`text-xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                      <div className={`p-3 rounded-lg text-center border ${mainTheme.card}`}>
+                        <p className={`text-xs mb-1 ${mainTheme.textMuted}`}>🇹🇷 {fromCity.city}</p>
+                        <p className={`text-xl font-bold ${mainTheme.text}`}>
                           {selectedMeetingHour.toString().padStart(2, '0')}:00
                         </p>
                         <p className={`text-xs ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
                           {selectedMeetingHour < 12 ? 'AM' : 'PM'}
                         </p>
                       </div>
-                      <div className={`p-3 rounded-lg text-center ${isLight ? 'bg-white/80' : 'bg-slate-800/80'}`}>
-                        <p className={`text-xs mb-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>🏴󠁧󠁢󠁥󠁮󠁧󠁿 {toCity.city}</p>
-                        <p className={`text-xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                      <div className={`p-3 rounded-lg text-center border ${mainTheme.card}`}>
+                        <p className={`text-xs mb-1 ${mainTheme.textMuted}`}>🏴󠁧󠁢󠁥󠁮󠁧󠁿 {toCity.city}</p>
+                        <p className={`text-xl font-bold ${mainTheme.text}`}>
                           {((selectedMeetingHour + diffHours + 24) % 24).toString().padStart(2, '0')}:00
                         </p>
                         <p className={`text-xs ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
@@ -1042,26 +1042,26 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
         </div>
         
         {/* Flight & Travel Info with Affiliate */}
-        <div className={`p-6 rounded-3xl backdrop-blur-xl border mb-8 ${isLight ? 'bg-white/50 border-white/60' : 'bg-slate-800/50 border-slate-700/60'}`}>
-          <h3 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+        <div className={`p-6 rounded-3xl backdrop-blur-xl border mb-8 ${mainTheme.card}`}>
+          <h3 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${mainTheme.text}`}>
             ✈️ Travel Information
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             <div className={`p-4 rounded-xl text-center ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-              <p className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Distance</p>
-              <p className={`text-xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <p className={`text-xs ${mainTheme.textMuted}`}>Distance</p>
+              <p className={`text-xl font-bold ${mainTheme.text}`}>
                 {flightInfo.distance.toLocaleString()} km
               </p>
             </div>
             <div className={`p-4 rounded-xl text-center ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-              <p className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Est. Flight Time</p>
-              <p className={`text-xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <p className={`text-xs ${mainTheme.textMuted}`}>Est. Flight Time</p>
+              <p className={`text-xl font-bold ${mainTheme.text}`}>
                 ~{flightInfo.hours}h
               </p>
             </div>
             <div className={`p-4 rounded-xl text-center ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-              <p className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Time Difference</p>
-              <p className={`text-xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <p className={`text-xs ${mainTheme.textMuted}`}>Time Difference</p>
+              <p className={`text-xl font-bold ${mainTheme.text}`}>
                 {diffHours > 0 ? '+' : ''}{diffHours}h
               </p>
             </div>
@@ -1083,7 +1083,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
               
               return (
                 <div className={`p-4 rounded-xl text-center ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-                  <p className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Work Hours Overlap</p>
+                  <p className={`text-xs ${mainTheme.textMuted}`}>Work Hours Overlap</p>
                   <p className={`text-xl font-bold ${overlapHours >= 4 ? (isLight ? 'text-green-600' : 'text-green-400') : overlapHours > 0 ? (isLight ? 'text-amber-600' : 'text-amber-400') : (isLight ? 'text-red-600' : 'text-red-400')}`}>
                     {overlapHours}h
                   </p>
@@ -1167,8 +1167,8 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
         </div>
         
         {/* Quick Conversion Table */}
-        <div className={`p-6 rounded-3xl backdrop-blur-xl border mb-8 ${isLight ? 'bg-white/50 border-white/60' : 'bg-slate-800/50 border-slate-700/60'}`}>
-          <h3 className={`text-lg font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+        <div className={`p-6 rounded-3xl backdrop-blur-xl border mb-8 ${mainTheme.card}`}>
+          <h3 className={`text-lg font-semibold mb-4 ${mainTheme.text}`}>
             ⏰ Quick Conversion
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -1201,13 +1201,13 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <Link 
             href={`/${fromCity.slug}`}
-            className={`p-4 rounded-2xl text-center transition-all hover:scale-[1.02] ${isLight ? 'bg-white/60 hover:bg-white/80 text-slate-700' : 'bg-slate-800/60 hover:bg-slate-700/60 text-slate-200'}`}
+            className={`p-4 rounded-2xl text-center transition-all hover:scale-[1.02] border ${mainTheme.card} ${mainTheme.text}`}
           >
             View {fromCity.city} Details →
           </Link>
           <Link 
             href={`/${toCity.slug}`}
-            className={`p-4 rounded-2xl text-center transition-all hover:scale-[1.02] ${isLight ? 'bg-white/60 hover:bg-white/80 text-slate-700' : 'bg-slate-800/60 hover:bg-slate-700/60 text-slate-200'}`}
+            className={`p-4 rounded-2xl text-center transition-all hover:scale-[1.02] border ${mainTheme.card} ${mainTheme.text}`}
           >
             View {toCity.city} Details →
           </Link>
@@ -1224,8 +1224,8 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
         </div>
         
         {/* FAQ Section */}
-        <section className={`rounded-3xl p-6 mb-8 ${isLight ? 'bg-white/50' : 'bg-slate-800/40'}`}>
-          <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+        <section className={`rounded-3xl p-6 mb-8 ${mainTheme.card}`}>
+          <h2 className={`text-xl font-semibold mb-4 ${mainTheme.text}`}>
             ❓ Frequently Asked Questions
           </h2>
           <div>
@@ -1236,8 +1236,8 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
         </section>
         
         {/* SEO Content Section */}
-        <section className={`rounded-2xl p-6 ${isLight ? 'bg-white/60' : 'bg-slate-800/40'}`}>
-          <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+        <section className={`rounded-2xl p-6 ${mainTheme.card}`}>
+          <h2 className={`text-xl font-semibold mb-4 ${mainTheme.text}`}>
             Time Difference Between {fromCity.city} and {toCity.city}
           </h2>
           <div className={`space-y-4 text-sm ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>

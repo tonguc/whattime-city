@@ -49,7 +49,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
   },
   day: {
     bg: 'from-sky-100 via-blue-100 to-cyan-100',
-    card: 'bg-white/60 border-sky-200/50',
+    card: 'bg-white/70 border-slate-200',
     text: 'text-slate-800',
     textMuted: 'text-slate-600',
     accent: 'amber',
@@ -94,7 +94,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
   },
   light: {
     bg: 'from-gray-50 via-white to-gray-100',
-    card: 'bg-white/80 border-gray-200',
+    card: 'bg-white/80 border-slate-200',
     text: 'text-slate-800',
     textMuted: 'text-slate-500',
     accent: 'amber',
