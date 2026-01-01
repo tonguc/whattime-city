@@ -1077,7 +1077,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
           <h3 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${isLight ? 'text-slate-800' : 'text-white'}`}>
             ✈️ Travel Information
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             <div className={`p-4 rounded-xl text-center ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
               <p className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Distance</p>
               <p className={`text-xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
@@ -1096,6 +1096,66 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
                 {diffHours > 0 ? '+' : ''}{diffHours}h
               </p>
             </div>
+            {/* NEW: Business Hours Overlap */}
+            {(() => {
+              // Calculate overlap of 9-17 business hours
+              const fromStart = 9, fromEnd = 17
+              const toStart = (9 - diffHours + 24) % 24
+              const toEnd = (17 - diffHours + 24) % 24
+              
+              // Simple overlap calculation for same-day scenario
+              let overlapHours = 0
+              for (let h = 9; h < 17; h++) {
+                const correspondingToHour = (h + diffHours + 24) % 24
+                if (correspondingToHour >= 9 && correspondingToHour < 17) {
+                  overlapHours++
+                }
+              }
+              
+              return (
+                <div className={`p-4 rounded-xl text-center ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+                  <p className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Work Hours Overlap</p>
+                  <p className={`text-xl font-bold ${overlapHours >= 4 ? (isLight ? 'text-green-600' : 'text-green-400') : overlapHours > 0 ? (isLight ? 'text-amber-600' : 'text-amber-400') : (isLight ? 'text-red-600' : 'text-red-400')}`}>
+                    {overlapHours}h
+                  </p>
+                  <p className={`text-xs mt-0.5 ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
+                    {overlapHours >= 6 ? 'Excellent' : overlapHours >= 4 ? 'Good' : overlapHours > 0 ? 'Limited' : 'None'}
+                  </p>
+                </div>
+              )
+            })()}
+            {/* NEW: Best Call Window */}
+            {(() => {
+              // Find best mutual time (both between 9-17)
+              let bestFromHour = -1
+              for (let h = 9; h < 17; h++) {
+                const correspondingToHour = (h + diffHours + 24) % 24
+                if (correspondingToHour >= 9 && correspondingToHour < 17) {
+                  if (bestFromHour === -1) bestFromHour = h
+                }
+              }
+              
+              if (bestFromHour === -1) {
+                // No overlap, find earliest reasonable time
+                bestFromHour = diffHours > 0 ? 9 : 17 - Math.abs(diffHours)
+                if (bestFromHour < 7) bestFromHour = 7
+                if (bestFromHour > 21) bestFromHour = 21
+              }
+              
+              const bestToHour = (bestFromHour + diffHours + 24) % 24
+              
+              return (
+                <div className={`p-4 rounded-xl text-center ${isLight ? 'bg-blue-50 border border-blue-200' : 'bg-blue-900/30 border border-blue-800'}`}>
+                  <p className={`text-xs ${isLight ? 'text-blue-600' : 'text-blue-400'}`}>Best Call Time</p>
+                  <p className={`text-lg font-bold ${isLight ? 'text-blue-700' : 'text-blue-300'}`}>
+                    {bestFromHour.toString().padStart(2, '0')}:00
+                  </p>
+                  <p className={`text-xs mt-0.5 ${isLight ? 'text-blue-500' : 'text-blue-400'}`}>
+                    = {bestToHour.toString().padStart(2, '0')}:00 in {toCity.city.split(' ')[0]}
+                  </p>
+                </div>
+              )
+            })()}
           </div>
         </div>
         

@@ -229,6 +229,7 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
             {mounted && showSettings && createPortal(
               <div 
                 data-settings-dropdown="true"
+                onMouseDown={(e) => e.stopPropagation()}
                 className={`w-56 rounded-xl shadow-2xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'} p-4`}
                 style={{ 
                   position: 'absolute',
