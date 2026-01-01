@@ -44,7 +44,21 @@ export default function TimeSlider({ initialCities = [], onCitiesChange, hideCon
   // ALWAYS use global CityContext theme (based on USER's location)
   const { theme, isLight } = useCityContext()
   
-  const [selectedCities, setSelectedCities] = useState<City[]>(initialCities)
+  // When hideControls=true (embedded mode), use initialCities directly as controlled component
+  // When hideControls=false (standalone mode), manage own state
+  const [internalCities, setInternalCities] = useState<City[]>(initialCities)
+  
+  // The actual cities to render - controlled vs uncontrolled based on mode
+  const selectedCities = hideControls ? initialCities : internalCities
+  
+  // Update function - only updates internal state when not controlled
+  const updateCities = (newCities: City[]) => {
+    if (!hideControls) {
+      setInternalCities(newCities)
+    }
+    onCitiesChange?.(newCities)
+  }
+  
   const [baseTime, setBaseTime] = useState<Date>(new Date())
   const [offsetHours, setOffsetHours] = useState(0)
   const [isDragging, setIsDragging] = useState(false)
@@ -56,10 +70,12 @@ export default function TimeSlider({ initialCities = [], onCitiesChange, hideCon
   const dragStartOffset = useRef(0)
   const searchRef = useRef<HTMLDivElement>(null)
 
-  // Sync with parent's initialCities when they change
+  // Sync internal state with initialCities only in uncontrolled mode
   useEffect(() => {
-    setSelectedCities(initialCities)
-  }, [initialCities])
+    if (!hideControls) {
+      setInternalCities(initialCities)
+    }
+  }, [initialCities, hideControls])
 
   // Update base time every minute
   useEffect(() => {
@@ -98,8 +114,7 @@ export default function TimeSlider({ initialCities = [], onCitiesChange, hideCon
   const addCity = (city: City) => {
     if (selectedCities.length < 6) {
       const newCities = [...selectedCities, city]
-      setSelectedCities(newCities)
-      onCitiesChange?.(newCities)
+      updateCities(newCities)
       setSearchQuery('')
       setShowSearch(false)
     }
@@ -108,8 +123,7 @@ export default function TimeSlider({ initialCities = [], onCitiesChange, hideCon
   // Remove city
   const removeCity = (slug: string) => {
     const newCities = selectedCities.filter(c => c.slug !== slug)
-    setSelectedCities(newCities)
-    onCitiesChange?.(newCities)
+    updateCities(newCities)
   }
 
   // Get adjusted time for a city

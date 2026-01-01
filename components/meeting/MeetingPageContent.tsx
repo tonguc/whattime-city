@@ -233,35 +233,90 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
     }
   }, [])
   
-  // Check if there's any business hours overlap (for Timeline banner)
-  const hasBusinessOverlap = useMemo(() => {
-    if (selectedCities.length < 2) return true // Don't show banner for 0-1 cities
+  // Calculate best time info for Timeline banner
+  const bestTimeInfo = useMemo(() => {
+    if (selectedCities.length < 2) return null
     
     const refTimezone = selectedCities[0]?.timezone || 'UTC'
+    const refCityName = selectedCities[0]?.city || 'Reference'
     
-    // For each hour (0-23), check if ALL cities are in business hours
+    // Find business hours overlap
+    const businessHours: number[] = []
+    const awakeHours: number[] = []
+    
     for (let hour = 0; hour < 24; hour++) {
       let allInBusiness = true
+      let allAwake = true
       
       for (const city of selectedCities) {
         const refHour = getHourInTimezone(refTimezone)
         const cityHour = getHourInTimezone(city.timezone)
         const diff = cityHour - refHour
-        
-        // What's the local hour in this city when it's 'hour' in reference?
         const localHour = (hour + diff + 24) % 24
         
         if (localHour < BUSINESS_START || localHour >= BUSINESS_END) {
           allInBusiness = false
-          break
+        }
+        if (localHour < 7 || localHour >= 23) {
+          allAwake = false
         }
       }
       
-      if (allInBusiness) return true
+      if (allInBusiness) businessHours.push(hour)
+      if (allAwake) awakeHours.push(hour)
     }
     
-    return false
+    // Find continuous blocks
+    const findBlock = (hours: number[]) => {
+      if (hours.length === 0) return null
+      const sorted = [...hours].sort((a, b) => a - b)
+      let maxBlock = { start: sorted[0], end: sorted[0] }
+      let currentBlock = { start: sorted[0], end: sorted[0] }
+      
+      for (let i = 1; i < sorted.length; i++) {
+        if (sorted[i] === currentBlock.end + 1) {
+          currentBlock.end = sorted[i]
+        } else {
+          if (currentBlock.end - currentBlock.start > maxBlock.end - maxBlock.start) {
+            maxBlock = { ...currentBlock }
+          }
+          currentBlock = { start: sorted[i], end: sorted[i] }
+        }
+      }
+      if (currentBlock.end - currentBlock.start > maxBlock.end - maxBlock.start) {
+        maxBlock = currentBlock
+      }
+      return maxBlock
+    }
+    
+    const businessBlock = findBlock(businessHours)
+    const awakeBlock = findBlock(awakeHours)
+    
+    if (businessBlock) {
+      return {
+        type: 'business' as const,
+        start: businessBlock.start,
+        end: businessBlock.end + 1,
+        refCity: refCityName,
+        hasBusinessOverlap: true
+      }
+    }
+    
+    if (awakeBlock) {
+      return {
+        type: 'awake' as const,
+        start: awakeBlock.start,
+        end: awakeBlock.end + 1,
+        refCity: refCityName,
+        hasBusinessOverlap: false
+      }
+    }
+    
+    return { type: 'none' as const, hasBusinessOverlap: false }
   }, [selectedCities])
+  
+  // For conditional banner
+  const hasBusinessOverlap = bestTimeInfo?.hasBusinessOverlap ?? true
   
   // City tag colors - VIVID (same as TimeSlider)
   const cityColors = [
@@ -301,10 +356,10 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
           </div>
         </section>
         
-        {/* Participants Section - high z-index for dropdown to work */}
+        {/* Participants Section - highest z-index for dropdown */}
         <section 
           className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border relative ${theme.card}`}
-          style={{ zIndex: 30, overflow: 'visible' }}
+          style={{ zIndex: 100, overflow: 'visible' }}
         >
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
             <h2 className={`text-xl font-semibold flex items-center gap-2 ${theme.text}`}>
@@ -493,14 +548,37 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
           </section>
         ) : (
           <section className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border ${theme.card}`}>
-            {/* Conditional banner - only show when NO business hours overlap */}
+            {/* Best time info banner */}
+            {bestTimeInfo && bestTimeInfo.type !== 'none' && selectedCities.length >= 2 && (
+              <div className={`mb-4 p-3 rounded-xl flex items-center gap-2 ${
+                bestTimeInfo.type === 'business'
+                  ? isLight ? 'bg-green-50 border border-green-200' : 'bg-green-900/20 border border-green-800/50'
+                  : isLight ? 'bg-blue-50 border border-blue-200' : 'bg-blue-900/20 border border-blue-800/50'
+              }`}>
+                <span className={bestTimeInfo.type === 'business' ? 'text-green-500' : 'text-blue-500'}>
+                  {bestTimeInfo.type === 'business' ? '✓' : '💡'}
+                </span>
+                <span className={`text-sm ${
+                  bestTimeInfo.type === 'business'
+                    ? isLight ? 'text-green-700' : 'text-green-300'
+                    : isLight ? 'text-blue-700' : 'text-blue-300'
+                }`}>
+                  <span className="font-medium">
+                    {bestTimeInfo.type === 'business' ? 'Best working-hour overlap:' : 'Best overlap window:'}
+                  </span>
+                  {' '}{String(bestTimeInfo.start).padStart(2, '0')}:00–{String(bestTimeInfo.end).padStart(2, '0')}:00 ({bestTimeInfo.refCity})
+                </span>
+              </div>
+            )}
+            
+            {/* No business overlap tip */}
             {!hasBusinessOverlap && selectedCities.length >= 2 && (
               <div className={`mb-4 p-3 rounded-xl flex items-start gap-2 ${
                 isLight ? 'bg-amber-50 border border-amber-200' : 'bg-amber-900/20 border border-amber-800/50'
               }`}>
-                <span className="text-amber-500 mt-0.5">💡</span>
+                <span className="text-amber-500 mt-0.5">⚠️</span>
                 <span className={`text-sm ${isLight ? 'text-amber-700' : 'text-amber-300'}`}>
-                  <span className="font-medium">Tip:</span> No common working hours found. Switch to <button onClick={() => setViewMode('heatmap')} className="font-semibold underline hover:no-underline">Heatmap View</button> to find the best compromise time when everyone is awake.
+                  No common working hours found. Switch to <button onClick={() => setViewMode('heatmap')} className="font-semibold underline hover:no-underline">Heatmap View</button> for detailed analysis.
                 </span>
               </div>
             )}
