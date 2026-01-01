@@ -29,6 +29,7 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
   const [searchQuery, setSearchQuery] = useState('')
   const [searchResults, setSearchResults] = useState<City[]>([])
   const [showSearchDropdown, setShowSearchDropdown] = useState(false)
+  const [searchHighlightIndex, setSearchHighlightIndex] = useState(-1)
   const searchRef = useRef<HTMLDivElement>(null)
   
   // Settings state
@@ -40,11 +41,36 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
     if (searchQuery.length >= 1) {
       setSearchResults(searchCities(searchQuery).slice(0, 6))
       setShowSearchDropdown(true)
+      setSearchHighlightIndex(-1)
     } else {
       setSearchResults([])
       setShowSearchDropdown(false)
+      setSearchHighlightIndex(-1)
     }
   }, [searchQuery])
+  
+  // Keyboard handler for search
+  const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!showSearchDropdown || searchResults.length === 0) return
+    
+    if (e.key === 'ArrowDown') {
+      e.preventDefault()
+      setSearchHighlightIndex(prev => Math.min(prev + 1, searchResults.length - 1))
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault()
+      setSearchHighlightIndex(prev => Math.max(prev - 1, 0))
+    } else if (e.key === 'Enter') {
+      e.preventDefault()
+      if (searchHighlightIndex >= 0 && searchResults[searchHighlightIndex]) {
+        handleSearchSelect(searchResults[searchHighlightIndex])
+      } else if (searchResults.length > 0) {
+        handleSearchSelect(searchResults[0])
+      }
+    } else if (e.key === 'Escape') {
+      setShowSearchDropdown(false)
+      setSearchHighlightIndex(-1)
+    }
+  }
   
   // Close dropdowns on outside click
   useEffect(() => {
@@ -98,6 +124,7 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={handleSearchKeyDown}
                 onFocus={() => searchQuery && setShowSearchDropdown(true)}
                 placeholder="Search..."
                 className={`flex-1 bg-transparent outline-none text-sm ${activeTheme.text} w-full`}
@@ -106,8 +133,8 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
             </div>
             
             {showSearchDropdown && searchResults.length > 0 && (
-              <div className={`absolute top-full left-0 w-72 mt-2 rounded-xl overflow-hidden shadow-xl z-50 ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`}>
-                {searchResults.map((city) => (
+              <div className={`absolute top-full left-0 w-72 mt-2 rounded-xl overflow-hidden shadow-xl ${isLight ? 'bg-white border border-slate-200' : 'bg-slate-800 border border-slate-700'}`} style={{ zIndex: 99999 }}>
+                {searchResults.map((city, index) => (
                   <button 
                     key={city.slug}
                     type="button"
@@ -117,7 +144,11 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
                       e.stopPropagation()
                       handleSearchSelect(city)
                     }}
-                    className={`w-full px-4 py-3 text-left flex items-center justify-between ${isLight ? 'hover:bg-slate-50' : 'hover:bg-slate-700'}`}>
+                    className={`w-full px-4 py-3 text-left flex items-center justify-between ${
+                      index === searchHighlightIndex 
+                        ? (isLight ? 'bg-blue-100' : 'bg-blue-900/50')
+                        : (isLight ? 'hover:bg-slate-50' : 'hover:bg-slate-700')
+                    }`}>
                     <div>
                       <span className={activeTheme.text}>{city.city}</span>
                       <span className={`text-sm ml-2 ${activeTheme.textMuted}`}>{city.country}</span>
@@ -171,7 +202,7 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
             </button>
             
             {showSettings && (
-              <div className={`absolute right-0 top-full mt-2 w-56 rounded-xl shadow-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'} p-4 z-50`}>
+              <div className={`absolute right-0 top-full mt-2 w-56 rounded-xl shadow-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'} p-4`} style={{ zIndex: 99999 }}>
                 <h4 className={`text-xs font-semibold uppercase tracking-wide mb-3 ${activeTheme.textMuted}`}>Preferences</h4>
                 
                 <div className="mb-4">

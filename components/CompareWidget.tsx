@@ -19,9 +19,10 @@ interface DropdownPortalProps {
   onSelect: (city: City) => void
   inputRef: React.RefObject<HTMLInputElement>
   isLight: boolean
+  highlightIndex?: number
 }
 
-function DropdownPortal({ isOpen, results, onSelect, inputRef, isLight }: DropdownPortalProps) {
+function DropdownPortal({ isOpen, results, onSelect, inputRef, isLight, highlightIndex = -1 }: DropdownPortalProps) {
   const [position, setPosition] = useState({ top: 0, left: 0, width: 0 })
   const [mounted, setMounted] = useState(false)
   
@@ -70,7 +71,7 @@ function DropdownPortal({ isOpen, results, onSelect, inputRef, isLight }: Dropdo
         zIndex: 99999
       }}
     >
-      {results.map(city => (
+      {results.map((city, index) => (
         <button 
           key={city.slug}
           type="button"
@@ -79,7 +80,11 @@ function DropdownPortal({ isOpen, results, onSelect, inputRef, isLight }: Dropdo
             e.stopPropagation()
             onSelect(city)
           }}
-          className={`w-full px-4 py-2.5 text-left text-sm transition-colors ${isLight ? 'hover:bg-slate-100 active:bg-slate-200' : 'hover:bg-slate-700 active:bg-slate-600'}`}
+          className={`w-full px-4 py-2.5 text-left text-sm transition-colors ${
+            index === highlightIndex 
+              ? (isLight ? 'bg-blue-100' : 'bg-blue-900/50')
+              : (isLight ? 'hover:bg-slate-100 active:bg-slate-200' : 'hover:bg-slate-700 active:bg-slate-600')
+          }`}
         >
           <span className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>{city.city}</span>
           <span className={`text-xs ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{city.country}</span>
@@ -107,6 +112,8 @@ export default function CompareWidget({
   const [toResults, setToResults] = useState<City[]>([])
   const [showFromDropdown, setShowFromDropdown] = useState(false)
   const [showToDropdown, setShowToDropdown] = useState(false)
+  const [fromHighlightIndex, setFromHighlightIndex] = useState(-1)
+  const [toHighlightIndex, setToHighlightIndex] = useState(-1)
   
   const fromInputRef = useRef<HTMLInputElement>(null)
   const toInputRef = useRef<HTMLInputElement>(null)
@@ -204,6 +211,61 @@ export default function CompareWidget({
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
+  // Keyboard navigation handlers
+  const handleFromKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!showFromDropdown || fromResults.length === 0) {
+      if (e.key === 'Enter' && fromCity && toCity) {
+        handleCompare()
+      }
+      return
+    }
+    
+    if (e.key === 'ArrowDown') {
+      e.preventDefault()
+      setFromHighlightIndex(prev => Math.min(prev + 1, fromResults.length - 1))
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault()
+      setFromHighlightIndex(prev => Math.max(prev - 1, 0))
+    } else if (e.key === 'Enter') {
+      e.preventDefault()
+      if (fromHighlightIndex >= 0 && fromResults[fromHighlightIndex]) {
+        handleFromCitySelect(fromResults[fromHighlightIndex])
+      } else if (fromResults.length > 0) {
+        handleFromCitySelect(fromResults[0])
+      }
+    } else if (e.key === 'Escape') {
+      setShowFromDropdown(false)
+      setFromHighlightIndex(-1)
+    }
+  }
+
+  const handleToKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!showToDropdown || toResults.length === 0) {
+      if (e.key === 'Enter' && fromCity && toCity) {
+        handleCompare()
+      }
+      return
+    }
+    
+    if (e.key === 'ArrowDown') {
+      e.preventDefault()
+      setToHighlightIndex(prev => Math.min(prev + 1, toResults.length - 1))
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault()
+      setToHighlightIndex(prev => Math.max(prev - 1, 0))
+    } else if (e.key === 'Enter') {
+      e.preventDefault()
+      if (toHighlightIndex >= 0 && toResults[toHighlightIndex]) {
+        handleToCitySelect(toResults[toHighlightIndex])
+      } else if (toResults.length > 0) {
+        handleToCitySelect(toResults[0])
+      }
+    } else if (e.key === 'Escape') {
+      setShowToDropdown(false)
+      setToHighlightIndex(-1)
+    }
+  }
+
   const handleCompare = () => {
     if (fromCity && toCity) {
       // Ensure slugs are valid before navigation
@@ -252,7 +314,9 @@ export default function CompareWidget({
             onChange={(e) => { 
               setFromQuery(e.target.value)
               setFromCity(null)
+              setFromHighlightIndex(-1)
             }}
+            onKeyDown={handleFromKeyDown}
             onFocus={() => {
               if (fromQuery && !fromCity) {
                 setShowFromDropdown(true)
@@ -288,6 +352,7 @@ export default function CompareWidget({
             onSelect={handleFromCitySelect}
             inputRef={fromInputRef}
             isLight={isLight}
+            highlightIndex={fromHighlightIndex}
           />
         </div>
         
@@ -311,7 +376,9 @@ export default function CompareWidget({
             onChange={(e) => { 
               setToQuery(e.target.value)
               setToCity(null)
+              setToHighlightIndex(-1)
             }}
+            onKeyDown={handleToKeyDown}
             onFocus={() => {
               if (toQuery && !toCity) {
                 setShowToDropdown(true)
@@ -347,6 +414,7 @@ export default function CompareWidget({
             onSelect={handleToCitySelect}
             inputRef={toInputRef}
             isLight={isLight}
+            highlightIndex={toHighlightIndex}
           />
         </div>
         
@@ -358,10 +426,6 @@ export default function CompareWidget({
           Compare Time
         </button>
       </div>
-      
-      <p className={`text-xs mt-2 text-center md:text-left ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-        Compare cities or find meeting overlap
-      </p>
     </div>
   )
 }

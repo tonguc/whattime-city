@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { City } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
@@ -171,12 +172,22 @@ const FAQItem = ({ question, answer, isLight }: { question: string, answer: stri
 }
 
 export default function TimeComparisonContent({ fromCity: initialFromCity, toCity: initialToCity }: TimeComparisonContentProps) {
+  const router = useRouter()
+  const searchParams = useSearchParams()
+  
   const [time, setTime] = useState(new Date())
   const [currentFromCity, setCurrentFromCity] = useState<City>(initialFromCity)
   const [currentToCity, setCurrentToCity] = useState<City>(initialToCity)
   
-  // Interactive slider state
+  // Interactive slider state - initialize from URL param if present
   const [sliderHour, setSliderHour] = useState(() => {
+    const timeParam = searchParams.get('time')
+    if (timeParam) {
+      const hour = parseInt(timeParam.split(':')[0], 10)
+      if (!isNaN(hour) && hour >= 0 && hour <= 23) {
+        return hour
+      }
+    }
     const now = new Date()
     return now.getHours()
   })
@@ -256,6 +267,21 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
   const fromOffset = getTimezoneOffset(fromCity.timezone)
   const toOffset = getTimezoneOffset(toCity.timezone)
   const diffHours = toOffset - fromOffset
+  
+  // Update URL and title when slider changes (debounced)
+  useEffect(() => {
+    const toHour = (sliderHour + diffHours + 24) % 24
+    const fromTimeStr = `${sliderHour.toString().padStart(2, '0')}:00`
+    const toTimeStr = `${toHour.toString().padStart(2, '0')}:00`
+    
+    // Update URL with time parameter (without page reload)
+    const newUrl = new URL(window.location.href)
+    newUrl.searchParams.set('time', fromTimeStr)
+    window.history.replaceState({}, '', newUrl.toString())
+    
+    // Update document title for SEO
+    document.title = `${fromTimeStr} ${fromCity.city} is ${toTimeStr} in ${toCity.city} | whattime.city`
+  }, [sliderHour, diffHours, fromCity.city, toCity.city])
   
   // Theme based on "from" city
   const mainTheme = themes[fromTimeOfDay]
