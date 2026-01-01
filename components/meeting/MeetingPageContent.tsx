@@ -157,7 +157,13 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
             <h2 className={`text-xl font-semibold flex items-center gap-2 ${theme.text}`}>
               <span>👥</span>
-              Participants ({selectedCities.length}/6)
+              <span>Participants</span>
+              <span 
+                className={`text-base font-normal ${theme.textMuted}`}
+                title="You can compare up to 6 cities"
+              >
+                ({selectedCities.length}/6)
+              </span>
             </h2>
             
             {/* Add City Button - TimeSlider style */}
@@ -256,7 +262,7 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
         </section>
         
         {/* View Mode Tabs */}
-        <div className="flex justify-center mb-4">
+        <div className="flex flex-col items-center mb-4">
           <div className={`inline-flex rounded-xl p-1 ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
             <button
               onClick={() => setViewMode('heatmap')}
@@ -283,6 +289,12 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
               ⏱️ Timeline View
             </button>
           </div>
+          {/* Tab descriptions */}
+          <p className={`text-xs mt-2 ${theme.textMuted}`}>
+            {viewMode === 'heatmap' 
+              ? 'Best overall meeting times at a glance' 
+              : 'Hour-by-hour comparison for each city'}
+          </p>
         </div>
         
         {/* Visualization Section - Tab content */}

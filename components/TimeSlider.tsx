@@ -371,7 +371,7 @@ export default function TimeSlider({ initialCities = [], onCitiesChange, hideCon
             <div className={`mt-4 p-3 rounded-xl ${
               overlapHours.length > 0
                 ? isLight ? 'bg-green-50 border border-green-200' : 'bg-green-900/20 border border-green-800/50'
-                : isLight ? 'bg-orange-50 border border-orange-200' : 'bg-orange-900/20 border border-orange-800/50'
+                : isLight ? 'bg-amber-50 border border-amber-200' : 'bg-amber-900/20 border border-amber-800/50'
             }`}>
               <div className="flex items-center gap-2">
                 {overlapHours.length > 0 ? (
@@ -379,25 +379,29 @@ export default function TimeSlider({ initialCities = [], onCitiesChange, hideCon
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 ) : (
-                  <svg className={`w-5 h-5 ${isLight ? 'text-orange-600' : 'text-orange-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  <svg className={`w-5 h-5 ${isLight ? 'text-amber-600' : 'text-amber-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 )}
                 <span className={`text-sm font-medium ${
                   overlapHours.length > 0
                     ? isLight ? 'text-green-700' : 'text-green-300'
-                    : isLight ? 'text-orange-700' : 'text-orange-300'
+                    : isLight ? 'text-amber-700' : 'text-amber-300'
                 }`}>
                   {overlapHours.length > 0 
                     ? `${overlapHours.length} hours of business overlap found`
-                    : 'No business hours overlap'
+                    : 'No perfect business hours overlap'
                   }
                 </span>
               </div>
-              {overlapHours.length > 0 && (
+              {overlapHours.length > 0 ? (
                 <p className={`text-xs mt-1 ${isLight ? 'text-green-600' : 'text-green-400'}`}>
                   Best meeting times: {overlapHours.slice(0, 4).map(h => formatHour((getAdjustedTime(selectedCities[0]).getHours() + h) % 24, true)).join(', ')}
                   {overlapHours.length > 4 && ` +${overlapHours.length - 4} more`}
+                </p>
+              ) : (
+                <p className={`text-xs mt-1 ${isLight ? 'text-amber-600' : 'text-amber-400'}`}>
+                  Use the Heatmap view to find the best compromise time when all participants are awake
                 </p>
               )}
             </div>

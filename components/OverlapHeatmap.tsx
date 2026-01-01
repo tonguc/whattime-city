@@ -263,10 +263,13 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
   // Segment'e tıklama/hover
   const handleSegmentInteraction = (hour: number, event: React.MouseEvent | React.TouchEvent) => {
     const rect = (event.currentTarget as HTMLElement).getBoundingClientRect()
+    const scrollY = window.scrollY || document.documentElement.scrollTop
+    const scrollX = window.scrollX || document.documentElement.scrollLeft
+    
     setSelectedHour(hour)
     setTooltipPosition({
-      x: rect.left + rect.width / 2,
-      y: rect.top
+      x: rect.left + scrollX + rect.width / 2,
+      y: rect.top + scrollY
     })
   }
   
@@ -331,7 +334,7 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
       </div>
       
       {/* Timeline Grid */}
-      <div className="relative">
+      <div className="relative" style={{ position: 'relative' }}>
         {/* Saat etiketleri (üst) */}
         <div className="flex mb-1">
           {[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22].map(hour => (
@@ -400,15 +403,16 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
       {/* Tooltip */}
       {selectedHour !== null && tooltipPosition && (
         <div 
-          className={`fixed px-4 py-3 rounded-xl shadow-2xl border max-w-xs pointer-events-none ${
+          className={`absolute px-4 py-3 rounded-xl shadow-2xl border max-w-xs pointer-events-none ${
             isLight 
               ? 'bg-white border-slate-200 text-slate-800' 
               : 'bg-slate-800 border-slate-600 text-white'
           }`}
           style={{
-            left: Math.max(16, Math.min(tooltipPosition.x, (typeof window !== 'undefined' ? window.innerWidth : 1000) - 220)),
-            top: Math.max(80, tooltipPosition.y - 10),
-            transform: 'translate(-50%, -100%)',
+            left: `${Math.max(0, Math.min((selectedHour / 24) * 100, 100))}%`,
+            bottom: '100%',
+            marginBottom: '80px',
+            transform: selectedHour < 4 ? 'translateX(0)' : selectedHour > 20 ? 'translateX(-100%)' : 'translateX(-50%)',
             zIndex: 99999
           }}
         >
