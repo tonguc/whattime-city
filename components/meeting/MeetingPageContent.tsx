@@ -258,6 +258,13 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
                 Add cities above to start planning your meeting
               </p>
             )}
+            
+            {/* Helper text - encourage adding more cities */}
+            {selectedCities.length > 0 && selectedCities.length < 3 && (
+              <p className={`text-xs mt-2 ${theme.textMuted}`}>
+                💡 Add more cities to see better overlap options
+              </p>
+            )}
           </div>
         </section>
         

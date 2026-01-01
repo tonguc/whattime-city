@@ -334,7 +334,7 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
       </div>
       
       {/* Timeline Grid */}
-      <div className="relative" style={{ position: 'relative' }}>
+      <div className="relative">
         {/* Saat etiketleri (üst) */}
         <div className="flex mb-1">
           {[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22].map(hour => (
@@ -348,48 +348,139 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
           ))}
         </div>
         
-        {/* Heatmap çubuğu */}
-        <div 
-          className="flex h-12 md:h-14 rounded-lg overflow-hidden"
-          role="group"
-          aria-label="24-hour overlap heatmap"
-        >
-          {hourlyData.map((data) => {
-            const isBest = bestOverlap !== null && 
-              data.hour >= bestOverlap.startHour && 
-              data.hour <= bestOverlap.endHour &&
-              data.overlapScore === bestOverlap.score
-            
-            return (
-              <button
-                key={data.hour}
-                className={`flex-1 relative transition-all duration-150 ${getHourColor(data, isBest)} ${
-                  selectedHour === data.hour ? 'scale-y-110 z-10' : ''
-                } hover:scale-y-105 focus:outline-none focus:ring-2 focus:ring-blue-400`}
-                onMouseEnter={(e) => handleSegmentInteraction(data.hour, e)}
-                onMouseLeave={handleSegmentLeave}
-                onClick={(e) => handleSegmentInteraction(data.hour, e)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    handleSegmentInteraction(data.hour, e as unknown as React.MouseEvent)
-                  }
-                }}
-                aria-label={`${formatHour(data.hour)}: ${Math.round(data.overlapScore * 100)}% overlap`}
-                tabIndex={0}
-              >
-                {/* Best time marker */}
-                {isBest && data.hour === bestOverlap?.startHour && (
-                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                    <span className={`text-xs font-medium px-1.5 py-0.5 rounded ${
-                      isLight ? 'bg-blue-600 text-white' : 'bg-blue-500 text-white'
+        {/* Heatmap çubuğu wrapper - tooltip için relative container */}
+        <div className="relative">
+          {/* Tooltip - heatmap bar üstünde */}
+          {selectedHour !== null && (
+            <div 
+              className={`absolute bottom-full mb-2 px-4 py-3 rounded-xl shadow-2xl border max-w-[280px] pointer-events-none ${
+                isLight 
+                  ? 'bg-white border-slate-200 text-slate-800' 
+                  : 'bg-slate-800 border-slate-600 text-white'
+              }`}
+              style={{
+                left: `${(selectedHour / 24) * 100}%`,
+                transform: selectedHour < 3 ? 'translateX(0)' : selectedHour > 21 ? 'translateX(-100%)' : 'translateX(-50%)',
+                zIndex: 50
+              }}
+            >
+              {(() => {
+                const data = hourlyData[selectedHour]
+                const tooltip = getTooltipContent(data)
+                
+                return (
+                  <>
+                    {/* Ana başlık */}
+                    <div className="font-semibold mb-2">
+                      {formatHour(selectedHour)} ({refCityName})
+                    </div>
+                    
+                    {/* Durum mesajı */}
+                    {tooltip.allAwake ? (
+                      <div className={`flex items-center gap-2 mb-2 ${
+                        isLight ? 'text-green-600' : 'text-green-400'
+                      }`}>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span className="font-medium">All participants awake</span>
+                      </div>
+                    ) : tooltip.noneAwake ? (
+                      <div className={`flex items-center gap-2 mb-2 ${
+                        isLight ? 'text-slate-600' : 'text-slate-400'
+                      }`}>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                        <span className="font-medium">Outside typical hours</span>
+                      </div>
+                    ) : (
+                      <div className={`flex items-center gap-2 mb-2 ${
+                        isLight ? 'text-amber-600' : 'text-amber-400'
+                      }`}>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        <span className="font-medium">Partial overlap ({Math.round(data.overlapScore * 100)}%)</span>
+                      </div>
+                    )}
+                    
+                    {/* Şehir bazlı durum */}
+                    <div className="space-y-1.5 text-sm">
+                      {tooltip.cityStatuses.map(({ city, localHour, isAwake }) => (
+                        <div key={city.slug} className="flex items-center justify-between gap-3">
+                          <span className={isLight ? 'text-slate-600' : 'text-slate-300'}>
+                            {city.city}
+                          </span>
+                          <div className="flex items-center gap-1.5">
+                            <span className={`font-mono text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                              {formatHour(localHour)}
+                            </span>
+                            {isAwake ? (
+                              <span className="text-green-500">✓</span>
+                            ) : (
+                              <span className="text-slate-400">🌙</span>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    {/* Varsayım notu */}
+                    <div className={`mt-2 pt-2 border-t text-xs ${
+                      isLight ? 'border-slate-200 text-slate-400' : 'border-slate-600 text-slate-500'
                     }`}>
-                      Best Time
-                    </span>
-                  </div>
-                )}
-              </button>
-            )
-          })}
+                      Based on 07:00-23:00 local time
+                    </div>
+                  </>
+                )
+              })()}
+            </div>
+          )}
+          
+          {/* Heatmap çubuğu */}
+          <div 
+            className="flex h-12 md:h-14 rounded-lg overflow-hidden"
+            role="group"
+            aria-label="24-hour overlap heatmap"
+          >
+            {hourlyData.map((data) => {
+              const isBest = bestOverlap !== null && 
+                data.hour >= bestOverlap.startHour && 
+                data.hour <= bestOverlap.endHour &&
+                data.overlapScore === bestOverlap.score
+              
+              return (
+                <button
+                  key={data.hour}
+                  className={`flex-1 relative transition-all duration-150 ${getHourColor(data, isBest)} ${
+                    selectedHour === data.hour ? 'scale-y-110 z-10' : ''
+                  } hover:scale-y-105 focus:outline-none focus:ring-2 focus:ring-blue-400`}
+                  onMouseEnter={(e) => handleSegmentInteraction(data.hour, e)}
+                  onMouseLeave={handleSegmentLeave}
+                  onClick={(e) => handleSegmentInteraction(data.hour, e)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      handleSegmentInteraction(data.hour, e as unknown as React.MouseEvent)
+                    }
+                  }}
+                  aria-label={`${formatHour(data.hour)}: ${Math.round(data.overlapScore * 100)}% overlap`}
+                  tabIndex={0}
+                >
+                  {/* Best time marker */}
+                  {isBest && data.hour === bestOverlap?.startHour && (
+                    <div className="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                      <span className={`text-xs font-medium px-1.5 py-0.5 rounded ${
+                        isLight ? 'bg-blue-600 text-white' : 'bg-blue-500 text-white'
+                      }`}>
+                        Best Time
+                      </span>
+                    </div>
+                  )}
+                </button>
+              )
+            })}
+          </div>
         </div>
         
         {/* Alt etiketler */}
@@ -399,110 +490,6 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
           <span className={`text-xs ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>24:00</span>
         </div>
       </div>
-      
-      {/* Tooltip */}
-      {selectedHour !== null && tooltipPosition && (
-        <div 
-          className={`absolute px-4 py-3 rounded-xl shadow-2xl border max-w-xs pointer-events-none ${
-            isLight 
-              ? 'bg-white border-slate-200 text-slate-800' 
-              : 'bg-slate-800 border-slate-600 text-white'
-          }`}
-          style={{
-            left: `${Math.max(0, Math.min((selectedHour / 24) * 100, 100))}%`,
-            bottom: '100%',
-            marginBottom: '80px',
-            transform: selectedHour < 4 ? 'translateX(0)' : selectedHour > 20 ? 'translateX(-100%)' : 'translateX(-50%)',
-            zIndex: 99999
-          }}
-        >
-          {(() => {
-            const data = hourlyData[selectedHour]
-            const tooltip = getTooltipContent(data)
-            
-            return (
-              <>
-                {/* Ana başlık */}
-                <div className="font-semibold mb-2">
-                  {formatHour(selectedHour)} ({refCityName})
-                </div>
-                
-                {/* Durum mesajı */}
-                {tooltip.allAwake ? (
-                  <div className={`flex items-center gap-2 mb-2 ${
-                    isLight ? 'text-green-600' : 'text-green-400'
-                  }`}>
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span className="font-medium">All participants awake</span>
-                  </div>
-                ) : tooltip.noneAwake ? (
-                  <div className={`flex items-center gap-2 mb-2 ${
-                    isLight ? 'text-slate-600' : 'text-slate-400'
-                  }`}>
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                    <span className="font-medium">Outside typical hours</span>
-                  </div>
-                ) : (
-                  <div className={`flex items-center gap-2 mb-2 ${
-                    isLight ? 'text-amber-600' : 'text-amber-400'
-                  }`}>
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                    </svg>
-                    <span className="font-medium">Partial overlap ({Math.round(data.overlapScore * 100)}%)</span>
-                  </div>
-                )}
-                
-                {/* Şehir bazlı durum */}
-                <div className="space-y-1.5 text-sm">
-                  {tooltip.cityStatuses.map(({ city, localHour, isAwake, status }) => (
-                    <div key={city.slug} className="flex items-center justify-between gap-3">
-                      <span className={isLight ? 'text-slate-600' : 'text-slate-300'}>
-                        {city.city}
-                      </span>
-                      <div className="flex items-center gap-1.5">
-                        <span className={`font-mono text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-                          {formatHour(localHour)}
-                        </span>
-                        {isAwake ? (
-                          <span className="text-green-500">✓</span>
-                        ) : (
-                          <span className="text-slate-400">🌙</span>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                
-                {/* Fairness hint - en çok fedakarlık yapan */}
-                {!tooltip.allAwake && !tooltip.noneAwake && tooltip.worstCity && (
-                  <div className={`mt-2 pt-2 border-t text-xs ${
-                    isLight ? 'border-slate-200 text-slate-500' : 'border-slate-600 text-slate-400'
-                  }`}>
-                    ⚠️ {tooltip.worstCity.city.city}: {
-                      tooltip.worstCity.status === 'sleep' ? 'Sleep hours' :
-                      tooltip.worstCity.status === 'early' ? 'Early morning' :
-                      tooltip.worstCity.status === 'late' ? 'Late night' :
-                      'Outside business hours'
-                    }
-                  </div>
-                )}
-                
-                {/* Varsayım notu */}
-                <div className={`mt-2 pt-2 border-t text-xs ${
-                  isLight ? 'border-slate-200 text-slate-400' : 'border-slate-600 text-slate-500'
-                }`}>
-                  Based on 07:00-23:00 local time
-                </div>
-              </>
-            )
-          })()}
-        </div>
-      )}
       
       {/* Legend */}
       <div className={`flex flex-wrap items-center justify-center gap-4 mt-4 pt-4 border-t ${
@@ -527,7 +514,7 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
         <div className={`mt-6 p-5 rounded-xl ${
           bestOverlap.score === 1
             ? isLight ? 'bg-green-50 border-2 border-green-300' : 'bg-green-900/30 border-2 border-green-700/50'
-            : isLight ? 'bg-slate-50 border-2 border-slate-300' : 'bg-slate-800/50 border-2 border-slate-600/50'
+            : isLight ? 'bg-amber-50 border-2 border-amber-300' : 'bg-amber-900/30 border-2 border-amber-700/50'
         }`}>
           <div className="flex items-start gap-3">
             {bestOverlap.score === 1 ? (
@@ -535,27 +522,72 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             ) : (
-              <svg className={`w-6 h-6 mt-0.5 ${isLight ? 'text-slate-500' : 'text-slate-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <svg className={`w-6 h-6 mt-0.5 ${isLight ? 'text-amber-600' : 'text-amber-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             )}
-            <div>
+            <div className="flex-1">
               <div className={`text-lg font-bold ${
                 bestOverlap.score === 1
                   ? isLight ? 'text-green-700' : 'text-green-300'
-                  : isLight ? 'text-slate-700' : 'text-slate-200'
-              }`}>
-                Recommended meeting time: {formatHour(bestOverlap.startHour)}–{formatHour(bestOverlap.endHour + 1)} ({refCityName} time)
-              </div>
-              <div className={`text-sm mt-1 ${
-                bestOverlap.score === 1
-                  ? isLight ? 'text-green-600' : 'text-green-400'
-                  : isLight ? 'text-slate-600' : 'text-slate-400'
+                  : isLight ? 'text-amber-700' : 'text-amber-300'
               }`}>
                 {bestOverlap.score === 1 
-                  ? `✓ ${bestOverlap.duration} hour${bestOverlap.duration > 1 ? 's' : ''} where all participants are awake (7 AM – 11 PM local)`
-                  : `No overlap within standard hours (9–17). This time includes early or late hours for some cities.`
+                  ? `✓ Best time for your meeting: ${formatHour(bestOverlap.startHour)}–${formatHour(bestOverlap.endHour + 1)} (${refCityName})`
+                  : `Best compromise: ${formatHour(bestOverlap.startHour)}–${formatHour(bestOverlap.endHour + 1)} (${refCityName})`
                 }
+              </div>
+              
+              {/* Breakdown - her şehrin durumu */}
+              <div className={`mt-3 space-y-1 text-sm ${
+                bestOverlap.score === 1
+                  ? isLight ? 'text-green-600' : 'text-green-400'
+                  : isLight ? 'text-amber-700' : 'text-amber-400'
+              }`}>
+                {(() => {
+                  // Best overlap başlangıç saatindeki her şehrin durumunu al
+                  const bestHourData = hourlyData[bestOverlap.startHour]
+                  const awakeCount = bestHourData.cityStatuses.filter(s => s.isAwake).length
+                  const businessCount = bestHourData.cityStatuses.filter(s => s.isBusiness).length
+                  const lateEveningCities = bestHourData.cityStatuses.filter(s => s.localHour >= 20 && s.localHour < 23)
+                  const earlyMorningCities = bestHourData.cityStatuses.filter(s => s.localHour >= 7 && s.localHour < 9)
+                  
+                  return (
+                    <>
+                      <div className="flex items-center gap-2">
+                        <span className="text-green-500">✓</span>
+                        <span>{awakeCount}/{cities.length} cities awake</span>
+                      </div>
+                      {businessCount > 0 && (
+                        <div className="flex items-center gap-2">
+                          <span className="text-green-500">✓</span>
+                          <span>{businessCount} {businessCount === 1 ? 'city' : 'cities'} within business hours (9-17)</span>
+                        </div>
+                      )}
+                      {lateEveningCities.length > 0 && (
+                        <div className="flex items-center gap-2">
+                          <span className="text-amber-500">⚠</span>
+                          <span>{lateEveningCities.map(s => s.city.city).join(', ')}: late evening</span>
+                        </div>
+                      )}
+                      {earlyMorningCities.length > 0 && (
+                        <div className="flex items-center gap-2">
+                          <span className="text-amber-500">⚠</span>
+                          <span>{earlyMorningCities.map(s => s.city.city).join(', ')}: early morning</span>
+                        </div>
+                      )}
+                    </>
+                  )
+                })()}
+              </div>
+              
+              {/* Duration info */}
+              <div className={`mt-2 text-xs ${
+                bestOverlap.score === 1
+                  ? isLight ? 'text-green-500' : 'text-green-500'
+                  : isLight ? 'text-amber-600' : 'text-amber-500'
+              }`}>
+                {bestOverlap.duration} hour{bestOverlap.duration > 1 ? 's' : ''} available in this window
               </div>
             </div>
           </div>
