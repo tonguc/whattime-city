@@ -17,16 +17,16 @@ export default function ToolPageWrapper({ children, footer }: ToolPageWrapperPro
   const { alarms, setAlarms, activeAlarm, dismissAlarm } = useAlarm()
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
+    <div className={`min-h-screen flex flex-col bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
       {/* Shared Header */}
       <Header />
 
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-4">
+      {/* Main Content - grows to push footer down */}
+      <div className="flex-1 max-w-6xl mx-auto px-4 py-4 w-full">
         {children}
       </div>
       
-      {/* Footer - Full Width, Zero Bottom Margin */}
+      {/* Footer - sticks to bottom */}
       {footer}
       
       {/* Floating Alarm Button */}

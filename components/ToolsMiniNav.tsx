@@ -9,18 +9,8 @@ interface ToolsMiniNavProps {
 }
 
 // Normalized tool names (2 words, English only) - ROOT LEVEL URLs for SEO
+// Meeting Planner is FIRST
 const toolNavItems = [
-  {
-    id: 'converter',
-    name: 'Time Converter',
-    url: '/time-converter',
-    icon: (
-      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"/>
-        <polyline points="12 6 12 12 16 14"/>
-      </svg>
-    )
-  },
   {
     id: 'meeting-planner',
     name: 'Meeting Planner',
@@ -31,6 +21,17 @@ const toolNavItems = [
         <line x1="16" y1="2" x2="16" y2="6"/>
         <line x1="8" y1="2" x2="8" y2="6"/>
         <line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+    )
+  },
+  {
+    id: 'converter',
+    name: 'Time Converter',
+    url: '/time-converter',
+    icon: (
+      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
       </svg>
     )
   },
@@ -89,8 +90,8 @@ export default function ToolsMiniNav({ onAlarmClick }: ToolsMiniNavProps) {
   
   return (
     <nav className="mt-2 mb-6">
-      {/* Wrapping flex container - no horizontal scroll */}
-      <div className="flex flex-wrap justify-center gap-2">
+      {/* Mobile: left-aligned, Desktop: centered */}
+      <div className="flex flex-wrap justify-start sm:justify-center gap-2">
         {toolNavItems.map((tool) => {
           // Enhanced path matching - check if current path matches tool path
           // Handle both exact match and sub-paths (like /meeting/istanbul-london)

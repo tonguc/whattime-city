@@ -395,10 +395,10 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
                     + Add City
                   </button>
                 
-                {/* Search Dropdown */}
+                {/* Search Dropdown - left on mobile, right on desktop */}
                 {showSearch && (
                   <div 
-                    className={`absolute top-full right-0 mt-2 w-72 rounded-xl shadow-2xl border p-3 ${theme.card}`}
+                    className={`absolute top-full left-0 sm:left-auto sm:right-0 mt-2 w-72 rounded-xl shadow-2xl border p-3 ${theme.card}`}
                     style={{ zIndex: 9999 }}
                   >
                     <input
