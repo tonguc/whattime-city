@@ -190,6 +190,11 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
   // Copy feedback
   const [copyFeedback, setCopyFeedback] = useState(false)
   
+  // Meeting planner state
+  const [useExtendedHours, setUseExtendedHours] = useState(false)
+  const [selectedMeetingHour, setSelectedMeetingHour] = useState<number | null>(null)
+  const [meetingCopyFeedback, setMeetingCopyFeedback] = useState(false)
+  
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000)
     return () => clearInterval(timer)
@@ -771,91 +776,238 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
           </div>
         </div>
         
-        {/* Best Time Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          {/* Best Time to Call */}
-          <div className={`p-6 rounded-3xl backdrop-blur-xl border ${isLight ? 'bg-white/50 border-white/60' : 'bg-slate-800/50 border-slate-700/60'}`}>
-            <h3 className={`text-lg font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-              {callTimeStatus.title}
+        {/* Best Meeting Times - Unified Card */}
+        <div className={`p-6 rounded-3xl backdrop-blur-xl border mb-8 ${isLight ? 'bg-white/50 border-white/60' : 'bg-slate-800/50 border-slate-700/60'}`}>
+          {/* Header with Toggle */}
+          <div className="flex items-center justify-between mb-4">
+            <h3 className={`text-lg font-semibold flex items-center gap-2 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              🤝 Best Meeting Times
+              <span className={`text-sm font-normal ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                ({fromCity.city} & {toCity.city})
+              </span>
             </h3>
             
-            {callTimeStatus.type === 'none' ? (
-              <p className={isLight ? 'text-slate-500' : 'text-slate-400'}>
-                Large time difference - consider async communication
-              </p>
-            ) : callTimeStatus.type === 'tomorrow' ? (
-              <div className="space-y-3">
-                <div className={`p-3 rounded-xl ${isLight ? 'bg-amber-50 border border-amber-200' : 'bg-amber-900/20 border border-amber-800/50'}`}>
-                  <p className={`text-sm ${isLight ? 'text-amber-700' : 'text-amber-300'}`}>
-                    ⚠️ No optimal call times remaining today
-                  </p>
+            {/* Hours Toggle */}
+            <button
+              onClick={() => setUseExtendedHours(!useExtendedHours)}
+              className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+                useExtendedHours 
+                  ? (isLight ? 'bg-amber-100 text-amber-700' : 'bg-amber-900/50 text-amber-300')
+                  : (isLight ? 'bg-green-100 text-green-700' : 'bg-green-900/50 text-green-300')
+              }`}
+            >
+              <span className={`w-2 h-2 rounded-full ${useExtendedHours ? 'bg-amber-500' : 'bg-green-500'}`} />
+              {useExtendedHours ? 'Extended (8-22)' : 'Business (9-17)'}
+            </button>
+          </div>
+          
+          {/* Meeting Slots */}
+          {(() => {
+            const businessStart = useExtendedHours ? 8 : 9
+            const businessEnd = useExtendedHours ? 22 : 17
+            
+            // Calculate all meeting slots
+            const slots: { fromHour: number; toHour: number; quality: 'excellent' | 'good' | 'avoid' }[] = []
+            
+            for (let fromHour = 0; fromHour < 24; fromHour++) {
+              const toHour = (fromHour + diffHours + 24) % 24
+              
+              const fromInBusiness = fromHour >= businessStart && fromHour < businessEnd
+              const toInBusiness = toHour >= businessStart && toHour < businessEnd
+              
+              // Only show reasonable hours (6-23)
+              if (fromHour >= 6 && fromHour <= 23) {
+                if (fromInBusiness && toInBusiness) {
+                  slots.push({ fromHour, toHour, quality: 'excellent' })
+                } else if ((fromInBusiness || toInBusiness) && (fromHour >= 7 && fromHour <= 21) && (toHour >= 7 && toHour <= 21)) {
+                  slots.push({ fromHour, toHour, quality: 'good' })
+                }
+              }
+            }
+            
+            const excellentSlots = slots.filter(s => s.quality === 'excellent')
+            const goodSlots = slots.filter(s => s.quality === 'good')
+            
+            return (
+              <div className="space-y-4">
+                {/* Legend */}
+                <div className="flex flex-wrap gap-4 text-xs">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-3 h-3 rounded-full bg-green-500" />
+                    <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>Excellent - Both in office</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-3 h-3 rounded-full bg-amber-500" />
+                    <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>Good - Flexible hours</span>
+                  </div>
                 </div>
-                {callTimeStatus.bestTime && (
-                  <div className={`p-3 rounded-xl ${isLight ? 'bg-green-50 border border-green-200' : 'bg-green-900/30 border border-green-800/50'}`}>
-                    <p className={`font-medium ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
-                      Tomorrow, {callTimeStatus.bestTime.fromLabel}
+                
+                {/* Excellent Slots */}
+                {excellentSlots.length > 0 && (
+                  <div>
+                    <p className={`text-xs font-medium mb-2 ${isLight ? 'text-green-700' : 'text-green-400'}`}>
+                      ✓ Perfect Match ({excellentSlots.length} hours)
                     </p>
-                    <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-                      → {callTimeStatus.bestTime.toLabel} in {toCity.city}
+                    <div className="flex flex-wrap gap-2">
+                      {excellentSlots.map((slot, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setSelectedMeetingHour(selectedMeetingHour === slot.fromHour ? null : slot.fromHour)}
+                          className={`px-3 py-2 rounded-xl text-sm font-medium transition-all ${
+                            selectedMeetingHour === slot.fromHour
+                              ? 'bg-green-500 text-white ring-2 ring-green-300 ring-offset-2'
+                              : isLight 
+                                ? 'bg-green-100 text-green-700 hover:bg-green-200' 
+                                : 'bg-green-900/50 text-green-300 hover:bg-green-800/50'
+                          }`}
+                        >
+                          {slot.fromHour.toString().padStart(2, '0')}:00
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                
+                {/* Good Slots */}
+                {goodSlots.length > 0 && (
+                  <div>
+                    <p className={`text-xs font-medium mb-2 ${isLight ? 'text-amber-700' : 'text-amber-400'}`}>
+                      ◐ Extended Hours ({goodSlots.length} hours)
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {goodSlots.map((slot, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setSelectedMeetingHour(selectedMeetingHour === slot.fromHour ? null : slot.fromHour)}
+                          className={`px-3 py-2 rounded-xl text-sm font-medium transition-all ${
+                            selectedMeetingHour === slot.fromHour
+                              ? 'bg-amber-500 text-white ring-2 ring-amber-300 ring-offset-2'
+                              : isLight 
+                                ? 'bg-amber-100 text-amber-700 hover:bg-amber-200' 
+                                : 'bg-amber-900/50 text-amber-300 hover:bg-amber-800/50'
+                          }`}
+                        >
+                          {slot.fromHour.toString().padStart(2, '0')}:00
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                
+                {/* No slots available */}
+                {excellentSlots.length === 0 && goodSlots.length === 0 && (
+                  <div className={`p-4 rounded-xl text-center ${isLight ? 'bg-slate-100' : 'bg-slate-800/50'}`}>
+                    <p className={isLight ? 'text-slate-600' : 'text-slate-400'}>
+                      Large time difference - consider async communication or try Extended Hours mode
                     </p>
                   </div>
                 )}
-              </div>
-            ) : (
-              <div className="space-y-3">
-                {callTimeStatus.availableTimes.map((ct, idx) => (
-                  <div key={idx} className={`p-3 rounded-xl ${
-                    ct.status === 'current'
-                      ? (isLight ? 'bg-green-100 border-2 border-green-400' : 'bg-green-900/50 border-2 border-green-500/70')
-                      : ct.quality === 'excellent' 
-                        ? (isLight ? 'bg-green-50 border border-green-200' : 'bg-green-900/30 border border-green-800/50')
-                        : (isLight ? 'bg-yellow-50 border border-yellow-200' : 'bg-yellow-900/30 border border-yellow-800/50')
+                
+                {/* Selected Time Detail */}
+                {selectedMeetingHour !== null && (
+                  <div className={`mt-4 p-4 rounded-xl border-2 ${
+                    excellentSlots.some(s => s.fromHour === selectedMeetingHour)
+                      ? (isLight ? 'bg-green-50 border-green-300' : 'bg-green-900/30 border-green-700')
+                      : (isLight ? 'bg-amber-50 border-amber-300' : 'bg-amber-900/30 border-amber-700')
                   }`}>
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className={`font-medium ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
-                          {ct.status === 'current' && '🟢 '}{ct.fromLabel}
+                    <p className={`text-sm font-medium mb-3 ${
+                      excellentSlots.some(s => s.fromHour === selectedMeetingHour)
+                        ? (isLight ? 'text-green-700' : 'text-green-300')
+                        : (isLight ? 'text-amber-700' : 'text-amber-300')
+                    }`}>
+                      {excellentSlots.some(s => s.fromHour === selectedMeetingHour)
+                        ? '✅ Excellent! Both locations are within standard business hours.'
+                        : '⚡ Good choice! One party may be slightly outside standard hours.'}
+                    </p>
+                    
+                    <div className="grid grid-cols-2 gap-4 mb-4">
+                      <div className={`p-3 rounded-lg text-center ${isLight ? 'bg-white/80' : 'bg-slate-800/80'}`}>
+                        <p className={`text-xs mb-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>🇹🇷 {fromCity.city}</p>
+                        <p className={`text-xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                          {selectedMeetingHour.toString().padStart(2, '0')}:00
                         </p>
-                        <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-                          → {ct.toLabel} in {toCity.city}
+                        <p className={`text-xs ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
+                          {selectedMeetingHour < 12 ? 'AM' : 'PM'}
                         </p>
                       </div>
-                      {ct.status === 'current' ? (
-                        <span className={`text-sm font-medium ${isLight ? 'text-green-600' : 'text-green-400'}`}>Call now!</span>
-                      ) : ct.quality === 'excellent' ? (
-                        <span className="text-green-500 text-sm font-medium">✓ Best</span>
-                      ) : null}
+                      <div className={`p-3 rounded-lg text-center ${isLight ? 'bg-white/80' : 'bg-slate-800/80'}`}>
+                        <p className={`text-xs mb-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>🏴󠁧󠁢󠁥󠁮󠁧󠁿 {toCity.city}</p>
+                        <p className={`text-xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                          {((selectedMeetingHour + diffHours + 24) % 24).toString().padStart(2, '0')}:00
+                        </p>
+                        <p className={`text-xs ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
+                          {((selectedMeetingHour + diffHours + 24) % 24) < 12 ? 'AM' : 'PM'}
+                          {diffHours > 0 && selectedMeetingHour + diffHours >= 24 && ' (+1 day)'}
+                          {diffHours < 0 && selectedMeetingHour + diffHours < 0 && ' (-1 day)'}
+                        </p>
+                      </div>
+                    </div>
+                    
+                    {/* Action Buttons */}
+                    <div className="flex flex-wrap gap-2">
+                      <button
+                        onClick={() => {
+                          const text = `📅 Meeting Time:\n${fromCity.city}: ${selectedMeetingHour.toString().padStart(2, '0')}:00\n${toCity.city}: ${((selectedMeetingHour + diffHours + 24) % 24).toString().padStart(2, '0')}:00`
+                          navigator.clipboard.writeText(text)
+                          setMeetingCopyFeedback(true)
+                          setTimeout(() => setMeetingCopyFeedback(false), 2000)
+                        }}
+                        className={`flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all ${
+                          isLight ? 'bg-slate-200 text-slate-700 hover:bg-slate-300' : 'bg-slate-700 text-slate-200 hover:bg-slate-600'
+                        }`}
+                      >
+                        {meetingCopyFeedback ? (
+                          <>
+                            <svg className="w-4 h-4 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                              <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                            Copied!
+                          </>
+                        ) : (
+                          <>
+                            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                              <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                            </svg>
+                            Copy for Invite
+                          </>
+                        )}
+                      </button>
+                      
+                      <a
+                        href={(() => {
+                          const now = new Date()
+                          const startDate = new Date(now)
+                          startDate.setHours(selectedMeetingHour, 0, 0, 0)
+                          if (selectedMeetingHour < now.getHours()) {
+                            startDate.setDate(startDate.getDate() + 1)
+                          }
+                          const endDate = new Date(startDate)
+                          endDate.setHours(selectedMeetingHour + 1)
+                          
+                          const formatGCalDate = (d: Date) => d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z'
+                          const title = encodeURIComponent(`Meeting: ${fromCity.city} ↔ ${toCity.city}`)
+                          const details = encodeURIComponent(`${fromCity.city}: ${selectedMeetingHour.toString().padStart(2, '0')}:00\n${toCity.city}: ${((selectedMeetingHour + diffHours + 24) % 24).toString().padStart(2, '0')}:00`)
+                          
+                          return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${formatGCalDate(startDate)}/${formatGCalDate(endDate)}&details=${details}`
+                        })()}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all ${
+                          isLight ? 'bg-blue-500 text-white hover:bg-blue-600' : 'bg-blue-600 text-white hover:bg-blue-700'
+                        }`}
+                      >
+                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/>
+                        </svg>
+                        Add to Calendar
+                      </a>
                     </div>
                   </div>
-                ))}
+                )}
               </div>
-            )}
-          </div>
-          
-          {/* Business Hours Overlap */}
-          <div className={`p-6 rounded-3xl backdrop-blur-xl border ${isLight ? 'bg-white/50 border-white/60' : 'bg-slate-800/50 border-slate-700/60'}`}>
-            <h3 className={`text-lg font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-              📅 Business Hours Overlap
-            </h3>
-            {overlapHours.length > 0 ? (
-              <div className="space-y-2">
-                <p className={`text-sm mb-3 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-                  {overlapHours.length} hour{overlapHours.length > 1 ? 's' : ''} of overlap (9 AM - 5 PM)
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {overlapHours.map((oh, idx) => (
-                    <span key={idx} className={`px-3 py-1 rounded-full text-sm ${isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>
-                      {oh.fromHour}:00
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <p className={isLight ? 'text-slate-500' : 'text-slate-400'}>
-                No overlap during standard business hours (9 AM - 5 PM)
-              </p>
-            )}
-          </div>
+            )
+          })()}
         </div>
         
         {/* Flight & Travel Info with Affiliate */}
