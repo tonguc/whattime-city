@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import { City } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
-import { themes, isLightTheme } from '@/lib/themes'
+import { themes } from '@/lib/themes'
 import { useCityContext } from '@/lib/CityContext'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
@@ -259,17 +259,10 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
   const toOffset = getTimezoneOffset(toCity.timezone)
   const diffHours = toOffset - fromOffset
   
-  // Theme based on user preference or "from" city's astronomical calculation
-  const autoTheme = themes[fromTimeOfDay]
-  const autoIsLight = isLightTheme(fromTimeOfDay)
-  
-  // Apply user's theme preference
-  const mainTheme = context.themeMode === 'light' ? themes.day 
-    : context.themeMode === 'dark' ? themes.night 
-    : autoTheme
-  const isLight = context.themeMode === 'light' ? true 
-    : context.themeMode === 'dark' ? false 
-    : autoIsLight
+  // USE CONTEXT THEME DIRECTLY - same as HomePage!
+  // CityContext already handles themeMode (auto/light/dark) calculation
+  const mainTheme = context.theme
+  const isLight = context.isLight
   
   // Format timezones
   const fromTimezoneStr = formatTimezone(fromCity.timezone, fromOffset)
