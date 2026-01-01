@@ -55,10 +55,8 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
   // Use global CityContext theme (based on USER's location)
   const { theme, isLight, detectedCity } = useCityContext()
   
-  // Selected cities state - start empty, will be populated by detectedCity or initialCities
+  // Selected cities state - starts with initialCities (from URL) or empty
   const [selectedCities, setSelectedCities] = useState<City[]>(initialCities)
-  const [hasInitialized, setHasInitialized] = useState(initialCities.length > 0)
-  const [hasUserCleared, setHasUserCleared] = useState(false) // Prevent auto-add after clear
   
   // Search state
   const [searchQuery, setSearchQuery] = useState('')
@@ -78,13 +76,7 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
   // Prevent URL sync on initial mount
   const isInitialMount = useRef(true)
   
-  // Initialize with detected city when available (only if no initialCities and user hasn't cleared)
-  useEffect(() => {
-    if (!hasInitialized && !hasUserCleared && detectedCity) {
-      setSelectedCities([detectedCity])
-      setHasInitialized(true)
-    }
-  }, [detectedCity, hasInitialized, hasUserCleared])
+  // NO automatic detectedCity adding - user must explicitly click "Use my location"
   
   // Search effect
   useEffect(() => {
@@ -179,14 +171,9 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
     }
   }
   
-  // Remove city
+  // Remove city - simple, no auto-add logic needed
   const removeCity = (slug: string) => {
-    const newCities = selectedCities.filter(c => c.slug !== slug)
-    setSelectedCities(newCities)
-    // If removing last city, prevent auto-add
-    if (newCities.length === 0) {
-      setHasUserCleared(true)
-    }
+    setSelectedCities(prev => prev.filter(c => c.slug !== slug))
   }
   
   // Clear all cities
@@ -194,7 +181,6 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
     // Store for undo
     setClearedCities([...selectedCities])
     setSelectedCities([])
-    setHasUserCleared(true) // Prevent auto-add of detected city
     
     // Show snackbar
     setShowSnackbar(true)
@@ -217,10 +203,16 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
       setSelectedCities(clearedCities)
       setClearedCities([])
       setShowSnackbar(false)
-      setHasUserCleared(false) // Allow auto-add again if user undoes
       if (snackbarTimeoutRef.current) {
         clearTimeout(snackbarTimeoutRef.current)
       }
+    }
+  }
+  
+  // Use my location - explicit user action
+  const useMyLocation = () => {
+    if (detectedCity && !selectedCities.find(c => c.slug === detectedCity.slug)) {
+      setSelectedCities(prev => [...prev, detectedCity])
     }
   }
   
@@ -484,9 +476,29 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
             })}
             
             {selectedCities.length === 0 && (
-              <p className={`text-sm ${theme.textMuted}`}>
-                Add cities to compare meeting times
-              </p>
+              <div className="flex flex-col items-center gap-3 py-4">
+                <p className={`text-sm ${theme.textMuted}`}>
+                  Add cities to find the best meeting time across time zones.
+                </p>
+                <div className="flex items-center gap-2">
+                  {detectedCity && (
+                    <button
+                      onClick={useMyLocation}
+                      className={`px-4 py-2 rounded-xl text-sm font-medium transition-all flex items-center gap-2 ${
+                        isLight
+                          ? 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                          : 'bg-slate-800 hover:bg-slate-700 text-slate-300'
+                      }`}
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      Use my location
+                    </button>
+                  )}
+                </div>
+              </div>
             )}
             
             {/* Helper text - encourage adding more cities */}
