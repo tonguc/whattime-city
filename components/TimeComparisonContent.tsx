@@ -175,27 +175,13 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
   const [currentFromCity, setCurrentFromCity] = useState<City>(initialFromCity)
   const [currentToCity, setCurrentToCity] = useState<City>(initialToCity)
   
-  // Interactive slider state - initialize from URL param on client side
+  // Interactive slider state - starts at current hour
   const [sliderHour, setSliderHour] = useState(() => {
     const now = new Date()
     return now.getHours()
   })
   const [isDragging, setIsDragging] = useState(false)
   const sliderRef = useRef<HTMLDivElement>(null)
-  
-  // Read URL param on client mount
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search)
-      const timeParam = params.get('time')
-      if (timeParam) {
-        const hour = parseInt(timeParam.split(':')[0], 10)
-        if (!isNaN(hour) && hour >= 0 && hour <= 23) {
-          setSliderHour(hour)
-        }
-      }
-    }
-  }, [])
   
   // Weather state
   const [fromWeather, setFromWeather] = useState<any>(null)
@@ -274,7 +260,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
   const toOffset = getTimezoneOffset(toCity.timezone)
   const diffHours = toOffset - fromOffset
   
-  // Update URL and title when slider changes (client-side only)
+  // Update visible title when slider changes (no URL change)
   useEffect(() => {
     if (typeof window === 'undefined') return
     
@@ -282,16 +268,8 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
     const fromTimeStr = `${sliderHour.toString().padStart(2, '0')}:00`
     const toTimeStr = `${toHour.toString().padStart(2, '0')}:00`
     
-    // Update URL with time parameter (without page reload)
-    const newUrl = new URL(window.location.href)
-    newUrl.searchParams.set('time', fromTimeStr)
-    window.history.replaceState({}, '', newUrl.toString())
-    
-    // Update document title for SEO
+    // Update visible dynamic title only
     const newTitle = `${fromTimeStr} ${fromCity.city} is ${toTimeStr} in ${toCity.city}`
-    document.title = `${newTitle} | whattime.city`
-    
-    // Update visible dynamic title
     setDynamicTitle(newTitle)
   }, [sliderHour, diffHours, fromCity.city, toCity.city])
   
