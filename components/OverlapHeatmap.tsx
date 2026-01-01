@@ -11,7 +11,8 @@ interface OverlapHeatmapProps {
 
 interface HourData {
   hour: number
-  overlapScore: number // 0-1 arası
+  awakeScore: number // 0-1: uyanık şehir oranı
+  businessScore: number // 0-1: business hours'ta olan şehir oranı
   cityStatuses: {
     city: City
     localHour: number
@@ -21,15 +22,14 @@ interface HourData {
   }[]
 }
 
-interface BestOverlap {
+interface BestTimeResult {
+  type: 'business' | 'awake' // business = best time, awake = compromise
   startHour: number
   endHour: number
-  score: number
   duration: number
 }
 
 // Varsayılan uyanık saatler (07:00-23:00)
-// Gelecek iterasyonlarda kullanıcı tarafından özelleştirilebilir
 const AWAKE_START = 7
 const AWAKE_END = 23
 
@@ -106,40 +106,65 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
         return { city, localHour, isAwake, isBusiness, status }
       })
       
-      // Overlap skoru: uyanık şehir sayısı / toplam şehir sayısı
+      // Awake score: uyanık şehir sayısı / toplam
       const awakeCount = cityStatuses.filter(s => s.isAwake).length
-      const overlapScore = cities.length > 0 ? awakeCount / cities.length : 0
+      const awakeScore = cities.length > 0 ? awakeCount / cities.length : 0
       
-      return { hour, overlapScore, cityStatuses }
+      // Business score: business hours'ta olan şehir sayısı / toplam
+      const businessCount = cityStatuses.filter(s => s.isBusiness).length
+      const businessScore = cities.length > 0 ? businessCount / cities.length : 0
+      
+      return { hour, awakeScore, businessScore, cityStatuses }
     })
   }, [cities, refTimezone])
   
-  // En iyi overlap bloğunu bul
-  const bestOverlap: BestOverlap | null = useMemo(() => {
+  // En iyi zaman penceresini bul
+  // Öncelik: 1) Business hours intersection 2) Awake hours intersection
+  const bestTime: BestTimeResult | null = useMemo(() => {
     if (cities.length < 2) return null
     
-    // Tam overlap olan saatleri bul (score = 1)
-    const fullOverlapHours = hourlyData
-      .filter(h => h.overlapScore === 1)
+    // 1. Önce business hours intersection'ı kontrol et
+    const fullBusinessHours = hourlyData
+      .filter(h => h.businessScore === 1) // Tüm şehirler business hours'ta
       .map(h => h.hour)
     
-    if (fullOverlapHours.length === 0) {
-      // Tam overlap yoksa, en yüksek skoru bul
-      const maxScore = Math.max(...hourlyData.map(h => h.overlapScore))
-      if (maxScore === 0) return null
-      
-      const bestHours = hourlyData
-        .filter(h => h.overlapScore === maxScore)
-        .map(h => h.hour)
-      
-      // Sürekli blokları bul
-      const blocks = findContinuousBlocks(bestHours)
-      return selectBestBlock(blocks, maxScore)
+    if (fullBusinessHours.length > 0) {
+      // Business intersection VAR → "Best time for your meeting"
+      const blocks = findContinuousBlocks(fullBusinessHours)
+      const best = selectBestBlock(blocks)
+      if (best) {
+        return { type: 'business', ...best }
+      }
     }
     
-    // Sürekli blokları bul
-    const blocks = findContinuousBlocks(fullOverlapHours)
-    return selectBestBlock(blocks, 1)
+    // 2. Business intersection YOK → Awake hours intersection'a bak
+    const fullAwakeHours = hourlyData
+      .filter(h => h.awakeScore === 1) // Tüm şehirler uyanık
+      .map(h => h.hour)
+    
+    if (fullAwakeHours.length > 0) {
+      const blocks = findContinuousBlocks(fullAwakeHours)
+      const best = selectBestBlock(blocks)
+      if (best) {
+        return { type: 'awake', ...best }
+      }
+    }
+    
+    // 3. Hiçbir tam overlap yoksa, en iyi awake overlap'i bul
+    const maxAwakeScore = Math.max(...hourlyData.map(h => h.awakeScore))
+    if (maxAwakeScore > 0) {
+      const bestAwakeHours = hourlyData
+        .filter(h => h.awakeScore === maxAwakeScore)
+        .map(h => h.hour)
+      
+      const blocks = findContinuousBlocks(bestAwakeHours)
+      const best = selectBestBlock(blocks)
+      if (best) {
+        return { type: 'awake', ...best }
+      }
+    }
+    
+    return null
   }, [hourlyData, cities.length])
   
   // Sürekli blokları bul
@@ -167,7 +192,7 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
   }
   
   // En iyi bloğu seç (en uzun, eşitlik durumunda 09-17'ye en yakın)
-  function selectBestBlock(blocks: { start: number, end: number, duration: number }[], score: number): BestOverlap | null {
+  function selectBestBlock(blocks: { start: number, end: number, duration: number }[]): { startHour: number, endHour: number, duration: number } | null {
     if (blocks.length === 0) return null
     
     // En uzun bloğu bul
@@ -189,50 +214,55 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
     return {
       startHour: best.start,
       endHour: best.end,
-      score,
       duration: best.duration
     }
   }
   
-  // Saat için renk al (single-hue blue scale)
-  const getHourColor = useCallback((data: HourData, isBest: boolean): string => {
-    const { overlapScore } = data
+  // Saat için renk al (3 seviyeli)
+  // 1. Full business overlap → en koyu (dark blue)
+  // 2. Awake but outside business → orta (medium blue)
+  // 3. No overlap / night → açık (light/gray)
+  const getHourColor = useCallback((data: HourData, isBestTime: boolean): string => {
+    const { awakeScore, businessScore } = data
     
-    if (isBest) {
-      // Best overlap - en koyu mavi + vurgu
+    if (isBestTime) {
+      // Best time - ring vurgusu
       return isLight 
         ? 'bg-blue-600 ring-2 ring-blue-400 ring-offset-1' 
         : 'bg-blue-500 ring-2 ring-blue-300 ring-offset-1 ring-offset-slate-800'
     }
     
-    if (overlapScore === 0) {
-      // Hiç overlap yok
-      return isLight ? 'bg-slate-100' : 'bg-slate-700/50'
+    // Seviye 1: Full business overlap (tüm şehirler 09-17)
+    if (businessScore === 1) {
+      return isLight ? 'bg-blue-600' : 'bg-blue-500'
     }
     
-    if (overlapScore === 1) {
-      // Tam overlap
-      return isLight ? 'bg-blue-500' : 'bg-blue-500'
+    // Seviye 2: Partial business overlap
+    if (businessScore > 0 && awakeScore === 1) {
+      return isLight ? 'bg-blue-500' : 'bg-blue-400'
     }
     
-    // Kısmi overlap - skora göre blue scale
-    if (overlapScore >= 0.75) {
-      return isLight ? 'bg-blue-400' : 'bg-blue-400'
-    }
-    if (overlapScore >= 0.5) {
-      return isLight ? 'bg-blue-300' : 'bg-blue-600/70'
-    }
-    if (overlapScore >= 0.25) {
-      return isLight ? 'bg-blue-200' : 'bg-blue-700/50'
+    // Seviye 3: Full awake overlap (tüm şehirler uyanık ama business dışı)
+    if (awakeScore === 1) {
+      return isLight ? 'bg-blue-400' : 'bg-blue-500/70'
     }
     
-    return isLight ? 'bg-blue-100' : 'bg-blue-800/30'
+    // Seviye 4: Partial awake overlap
+    if (awakeScore > 0) {
+      if (awakeScore >= 0.75) return isLight ? 'bg-blue-300' : 'bg-blue-600/60'
+      if (awakeScore >= 0.5) return isLight ? 'bg-blue-200' : 'bg-blue-700/50'
+      return isLight ? 'bg-blue-100' : 'bg-blue-800/40'
+    }
+    
+    // Seviye 5: No overlap (gece saatleri)
+    return isLight ? 'bg-slate-100' : 'bg-slate-700/50'
   }, [isLight])
   
   // Tooltip içeriği
   const getTooltipContent = useCallback((data: HourData) => {
-    const allAwake = data.overlapScore === 1
-    const noneAwake = data.overlapScore === 0
+    const allAwake = data.awakeScore === 1
+    const allBusiness = data.businessScore === 1
+    const noneAwake = data.awakeScore === 0
     
     // En çok fedakarlık yapan şehri bul
     const worstCity = data.cityStatuses.reduce((worst, current) => {
@@ -252,7 +282,7 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
       return worst
     }, data.cityStatuses[0])
     
-    return { allAwake, noneAwake, worstCity, cityStatuses: data.cityStatuses }
+    return { allAwake, allBusiness, noneAwake, worstCity, cityStatuses: data.cityStatuses }
   }, [])
   
   // Saat etiketini formatla
@@ -321,14 +351,16 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
           </p>
         </div>
         
-        {bestOverlap && (
+        {bestTime && (
           <div className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium ${
-            isLight ? 'bg-blue-100 text-blue-700' : 'bg-blue-900/50 text-blue-300'
+            bestTime.type === 'business'
+              ? isLight ? 'bg-green-100 text-green-700' : 'bg-green-900/50 text-green-300'
+              : isLight ? 'bg-blue-100 text-blue-700' : 'bg-blue-900/50 text-blue-300'
           }`}>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
-            Best: {formatHour(bestOverlap.startHour)} - {formatHour(bestOverlap.endHour + 1)}
+            {bestTime.type === 'business' ? 'Best:' : 'Overlap:'} {formatHour(bestTime.startHour)} - {formatHour(bestTime.endHour + 1)}
           </div>
         )}
       </div>
@@ -376,9 +408,18 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
                     </div>
                     
                     {/* Durum mesajı */}
-                    {tooltip.allAwake ? (
+                    {tooltip.allBusiness ? (
                       <div className={`flex items-center gap-2 mb-2 ${
                         isLight ? 'text-green-600' : 'text-green-400'
+                      }`}>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span className="font-medium">All in business hours</span>
+                      </div>
+                    ) : tooltip.allAwake ? (
+                      <div className={`flex items-center gap-2 mb-2 ${
+                        isLight ? 'text-blue-600' : 'text-blue-400'
                       }`}>
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -401,7 +442,7 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                         </svg>
-                        <span className="font-medium">Partial overlap ({Math.round(data.overlapScore * 100)}%)</span>
+                        <span className="font-medium">Partial overlap ({Math.round(data.awakeScore * 100)}%)</span>
                       </div>
                     )}
                     
@@ -445,15 +486,15 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
             aria-label="24-hour overlap heatmap"
           >
             {hourlyData.map((data) => {
-              const isBest = bestOverlap !== null && 
-                data.hour >= bestOverlap.startHour && 
-                data.hour <= bestOverlap.endHour &&
-                data.overlapScore === bestOverlap.score
+              // Bu saat best time penceresinde mi?
+              const isBestTime = bestTime !== null && 
+                data.hour >= bestTime.startHour && 
+                data.hour <= bestTime.endHour
               
               return (
                 <button
                   key={data.hour}
-                  className={`flex-1 relative transition-all duration-150 ${getHourColor(data, isBest)} ${
+                  className={`flex-1 relative transition-all duration-150 ${getHourColor(data, isBestTime)} ${
                     selectedHour === data.hour ? 'scale-y-110 z-10' : ''
                   } hover:scale-y-105 focus:outline-none focus:ring-2 focus:ring-blue-400`}
                   onMouseEnter={(e) => handleSegmentInteraction(data.hour, e)}
@@ -464,16 +505,18 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
                       handleSegmentInteraction(data.hour, e as unknown as React.MouseEvent)
                     }
                   }}
-                  aria-label={`${formatHour(data.hour)}: ${Math.round(data.overlapScore * 100)}% overlap`}
+                  aria-label={`${formatHour(data.hour)}: ${Math.round(data.awakeScore * 100)}% overlap`}
                   tabIndex={0}
                 >
-                  {/* Best time marker */}
-                  {isBest && data.hour === bestOverlap?.startHour && (
+                  {/* Best time / Overlap marker */}
+                  {isBestTime && data.hour === bestTime?.startHour && (
                     <div className="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
                       <span className={`text-xs font-medium px-1.5 py-0.5 rounded ${
-                        isLight ? 'bg-blue-600 text-white' : 'bg-blue-500 text-white'
+                        bestTime.type === 'business'
+                          ? isLight ? 'bg-green-600 text-white' : 'bg-green-500 text-white'
+                          : isLight ? 'bg-blue-600 text-white' : 'bg-blue-500 text-white'
                       }`}>
-                        Best Time
+                        {bestTime.type === 'business' ? 'Best Time' : 'Overlap'}
                       </span>
                     </div>
                   )}
@@ -496,28 +539,28 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
         isLight ? 'border-slate-200' : 'border-slate-700'
       }`}>
         <div className="flex items-center gap-1.5 text-xs">
-          <div className={`w-4 h-4 rounded ${isLight ? 'bg-blue-500' : 'bg-blue-500'}`}></div>
-          <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>Full overlap</span>
+          <div className={`w-4 h-4 rounded ${isLight ? 'bg-blue-600' : 'bg-blue-500'}`}></div>
+          <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>Business hours (9-17)</span>
         </div>
         <div className="flex items-center gap-1.5 text-xs">
-          <div className={`w-4 h-4 rounded ${isLight ? 'bg-blue-300' : 'bg-blue-600/70'}`}></div>
-          <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>Partial overlap</span>
+          <div className={`w-4 h-4 rounded ${isLight ? 'bg-blue-400' : 'bg-blue-500/70'}`}></div>
+          <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>Awake (7-23)</span>
         </div>
         <div className="flex items-center gap-1.5 text-xs">
           <div className={`w-4 h-4 rounded ${isLight ? 'bg-slate-100 border border-slate-300' : 'bg-slate-700/50 border border-slate-600'}`}></div>
-          <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>No overlap</span>
+          <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>Night / No overlap</span>
         </div>
       </div>
       
-      {/* Best overlap summary - PRIMARY DECISION AREA */}
-      {bestOverlap && (
+      {/* Best time / Overlap summary - PRIMARY DECISION AREA */}
+      {bestTime && (
         <div className={`mt-6 p-5 rounded-xl ${
-          bestOverlap.score === 1
+          bestTime.type === 'business'
             ? isLight ? 'bg-green-50 border-2 border-green-300' : 'bg-green-900/30 border-2 border-green-700/50'
             : isLight ? 'bg-amber-50 border-2 border-amber-300' : 'bg-amber-900/30 border-2 border-amber-700/50'
         }`}>
           <div className="flex items-start gap-3">
-            {bestOverlap.score === 1 ? (
+            {bestTime.type === 'business' ? (
               <svg className={`w-6 h-6 mt-0.5 ${isLight ? 'text-green-600' : 'text-green-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -527,54 +570,67 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
               </svg>
             )}
             <div className="flex-1">
+              {/* Title - different based on type */}
               <div className={`text-lg font-bold ${
-                bestOverlap.score === 1
+                bestTime.type === 'business'
                   ? isLight ? 'text-green-700' : 'text-green-300'
                   : isLight ? 'text-amber-700' : 'text-amber-300'
               }`}>
-                {bestOverlap.score === 1 
-                  ? `✓ Best time for your meeting: ${formatHour(bestOverlap.startHour)}–${formatHour(bestOverlap.endHour + 1)} (${refCityName})`
-                  : `Best compromise: ${formatHour(bestOverlap.startHour)}–${formatHour(bestOverlap.endHour + 1)} (${refCityName})`
+                {bestTime.type === 'business' 
+                  ? `✓ Best time for your meeting: ${formatHour(bestTime.startHour)}–${formatHour(bestTime.endHour + 1)} (${refCityName})`
+                  : `Best overlap window: ${formatHour(bestTime.startHour)}–${formatHour(bestTime.endHour + 1)} (${refCityName})`
                 }
               </div>
               
+              {/* Subtitle / Warning for awake-only */}
+              {bestTime.type === 'awake' && (
+                <div className={`mt-1 text-sm ${isLight ? 'text-amber-600' : 'text-amber-400'}`}>
+                  ⚠️ No common business hours overlap
+                </div>
+              )}
+              
               {/* Breakdown - her şehrin durumu */}
               <div className={`mt-3 space-y-1 text-sm ${
-                bestOverlap.score === 1
+                bestTime.type === 'business'
                   ? isLight ? 'text-green-600' : 'text-green-400'
                   : isLight ? 'text-amber-700' : 'text-amber-400'
               }`}>
                 {(() => {
-                  // Best overlap başlangıç saatindeki her şehrin durumunu al
-                  const bestHourData = hourlyData[bestOverlap.startHour]
+                  const bestHourData = hourlyData[bestTime.startHour]
+                  if (!bestHourData) return null
+                  
                   const awakeCount = bestHourData.cityStatuses.filter(s => s.isAwake).length
                   const businessCount = bestHourData.cityStatuses.filter(s => s.isBusiness).length
-                  const lateEveningCities = bestHourData.cityStatuses.filter(s => s.localHour >= 20 && s.localHour < 23)
-                  const earlyMorningCities = bestHourData.cityStatuses.filter(s => s.localHour >= 7 && s.localHour < 9)
+                  const outsideBusinessCities = bestHourData.cityStatuses.filter(s => s.isAwake && !s.isBusiness)
                   
                   return (
                     <>
-                      <div className="flex items-center gap-2">
-                        <span className="text-green-500">✓</span>
-                        <span>{awakeCount}/{cities.length} cities awake</span>
-                      </div>
-                      {businessCount > 0 && (
+                      {bestTime.type === 'business' ? (
+                        // Business overlap - all in working hours
                         <div className="flex items-center gap-2">
                           <span className="text-green-500">✓</span>
-                          <span>{businessCount} {businessCount === 1 ? 'city' : 'cities'} within business hours (9-17)</span>
+                          <span>All participants within working hours (9-17)</span>
                         </div>
-                      )}
-                      {lateEveningCities.length > 0 && (
-                        <div className="flex items-center gap-2">
-                          <span className="text-amber-500">⚠</span>
-                          <span>{lateEveningCities.map(s => s.city.city).join(', ')}: late evening</span>
-                        </div>
-                      )}
-                      {earlyMorningCities.length > 0 && (
-                        <div className="flex items-center gap-2">
-                          <span className="text-amber-500">⚠</span>
-                          <span>{earlyMorningCities.map(s => s.city.city).join(', ')}: early morning</span>
-                        </div>
+                      ) : (
+                        // Awake overlap - show who is awake and who is outside business
+                        <>
+                          <div className="flex items-center gap-2">
+                            <span className="text-green-500">✓</span>
+                            <span>{awakeCount}/{cities.length} cities awake</span>
+                          </div>
+                          {businessCount > 0 && (
+                            <div className="flex items-center gap-2">
+                              <span className="text-green-500">✓</span>
+                              <span>{businessCount} {businessCount === 1 ? 'city' : 'cities'} within business hours</span>
+                            </div>
+                          )}
+                          {outsideBusinessCities.length > 0 && (
+                            <div className="flex items-center gap-2">
+                              <span className="text-amber-500">⚠</span>
+                              <span>{outsideBusinessCities.map(s => s.city.city).join(', ')}: outside business hours</span>
+                            </div>
+                          )}
+                        </>
                       )}
                     </>
                   )
@@ -583,22 +639,22 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
               
               {/* Duration info */}
               <div className={`mt-2 text-xs ${
-                bestOverlap.score === 1
+                bestTime.type === 'business'
                   ? isLight ? 'text-green-500' : 'text-green-500'
                   : isLight ? 'text-amber-600' : 'text-amber-500'
               }`}>
-                {bestOverlap.duration} hour{bestOverlap.duration > 1 ? 's' : ''} available in this window
+                {bestTime.duration} hour{bestTime.duration > 1 ? 's' : ''} available in this window
               </div>
               
               {/* Micro-closure - decision moment */}
               <div className={`mt-3 pt-3 border-t text-sm font-medium ${
-                bestOverlap.score === 1
+                bestTime.type === 'business'
                   ? isLight ? 'border-green-200 text-green-700' : 'border-green-700 text-green-300'
                   : isLight ? 'border-amber-200 text-amber-700' : 'border-amber-700 text-amber-300'
               }`}>
-                {bestOverlap.score === 1 
-                  ? '→ This is the most balanced time for your meeting.'
-                  : '→ This is the best compromise given the time zone difference.'
+                {bestTime.type === 'business' 
+                  ? '→ All participants are within their working hours.'
+                  : '→ All participants are awake, but some are outside working hours.'
                 }
               </div>
             </div>

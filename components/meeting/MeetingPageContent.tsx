@@ -36,6 +36,7 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
   const [searchQuery, setSearchQuery] = useState('')
   const [searchResults, setSearchResults] = useState<City[]>([])
   const [showSearch, setShowSearch] = useState(false)
+  const [highlightedIndex, setHighlightedIndex] = useState(0) // For keyboard navigation
   const searchRef = useRef<HTMLDivElement>(null)
   
   // View mode state - tab'lı görselleştirme
@@ -64,8 +65,10 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
         .filter(c => !selectedCities.find(sc => sc.slug === c.slug))
         .slice(0, 6)
       setSearchResults(results)
+      setHighlightedIndex(0) // Reset highlight on new search
     } else {
       setSearchResults([])
+      setHighlightedIndex(0)
     }
   }, [searchQuery, selectedCities])
   
@@ -88,13 +91,18 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
     }
     
     if (selectedCities.length === 0) {
-      if (pathname !== '/meeting') router.push('/meeting')
+      // Navigate to base meeting URL when no cities
+      const currentPath = pathname?.replace(/\/$/, '') || ''
+      if (currentPath !== '/meeting' && currentPath !== '/meeting-planner') {
+        router.push('/meeting', { scroll: false })
+      }
       return
     }
     
     if (selectedCities.length === 1) {
       const newUrl = `/meeting/${selectedCities[0].slug}`
-      if (pathname !== newUrl) router.push(newUrl, { scroll: false })
+      const currentPath = pathname?.replace(/\/$/, '') || ''
+      if (currentPath !== newUrl) router.push(newUrl, { scroll: false })
       return
     }
     
@@ -111,6 +119,35 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
       setSelectedCities([...selectedCities, city])
       setSearchQuery('')
       setShowSearch(false)
+      setHighlightedIndex(0)
+    }
+  }
+  
+  // Keyboard navigation for search
+  const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (searchResults.length === 0) return
+    
+    switch (e.key) {
+      case 'ArrowDown':
+        e.preventDefault()
+        setHighlightedIndex(prev => 
+          prev < searchResults.length - 1 ? prev + 1 : prev
+        )
+        break
+      case 'ArrowUp':
+        e.preventDefault()
+        setHighlightedIndex(prev => prev > 0 ? prev - 1 : 0)
+        break
+      case 'Enter':
+        e.preventDefault()
+        if (searchResults[highlightedIndex]) {
+          addCity(searchResults[highlightedIndex])
+        }
+        break
+      case 'Escape':
+        setShowSearch(false)
+        setSearchQuery('')
+        break
     }
   }
   
@@ -245,11 +282,12 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
                 
                 {/* Search Dropdown */}
                 {showSearch && (
-                  <div className={`absolute top-full right-0 mt-2 w-72 rounded-xl shadow-2xl border p-3 z-50 ${theme.card}`}>
+                  <div className={`absolute top-full right-0 mt-2 w-72 rounded-xl shadow-2xl border p-3 z-[100] ${theme.card}`}>
                     <input
                       type="text"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
+                      onKeyDown={handleSearchKeyDown}
                       placeholder="Search city..."
                       autoFocus
                       className={`w-full px-3 py-2 rounded-lg border text-sm outline-none focus:ring-2 focus:ring-blue-500 ${
@@ -261,12 +299,14 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
                     />
                     {searchResults.length > 0 && (
                       <div className="mt-2 max-h-48 overflow-y-auto">
-                        {searchResults.map(city => (
+                        {searchResults.map((city, idx) => (
                           <button
                             key={city.slug}
                             onClick={() => addCity(city)}
                             className={`w-full px-3 py-2 text-left text-sm rounded-lg transition-colors ${
-                              isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'
+                              idx === highlightedIndex
+                                ? isLight ? 'bg-blue-100' : 'bg-blue-900/50'
+                                : isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'
                             }`}
                           >
                             <span className={theme.text}>{city.city}</span>
@@ -382,14 +422,14 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
           </section>
         ) : (
           <section className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border ${theme.card}`}>
-            {/* Recommended window from Heatmap - only show when 2+ cities */}
+            {/* Hint to check Heatmap - only show when 2+ cities */}
             {selectedCities.length >= 2 && (
               <div className={`mb-4 p-3 rounded-xl flex items-center gap-2 ${
                 isLight ? 'bg-blue-50 border border-blue-200' : 'bg-blue-900/20 border border-blue-800/50'
               }`}>
                 <span className="text-blue-500">💡</span>
                 <span className={`text-sm ${isLight ? 'text-blue-700' : 'text-blue-300'}`}>
-                  <span className="font-medium">Recommended from Heatmap:</span> 18:00–23:00 ({selectedCities[0]?.city || 'Reference'} time) — switch to Heatmap view for details
+                  Switch to <span className="font-medium">Heatmap View</span> to see the recommended meeting time
                 </span>
               </div>
             )}
