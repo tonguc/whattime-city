@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useCityContext } from '@/lib/CityContext'
@@ -34,7 +35,14 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
   
   // Settings state
   const [showSettings, setShowSettings] = useState(false)
+  const [settingsPosition, setSettingsPosition] = useState({ top: 0, right: 0 })
   const settingsRef = useRef<HTMLDivElement>(null)
+  const settingsButtonRef = useRef<HTMLButtonElement>(null)
+  const [mounted, setMounted] = useState(false)
+  
+  useEffect(() => {
+    setMounted(true)
+  }, [])
   
   // Search effect
   useEffect(() => {
@@ -81,16 +89,32 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
         return
       }
       
+      // Check if click is inside settings portal
+      if (target.closest('[data-settings-dropdown]')) {
+        return
+      }
+      
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
         setShowSearchDropdown(false)
       }
-      if (settingsRef.current && !settingsRef.current.contains(e.target as Node)) {
+      if (settingsButtonRef.current && !settingsButtonRef.current.contains(e.target as Node)) {
         setShowSettings(false)
       }
     }
     document.addEventListener('mousedown', handleClick)
     return () => document.removeEventListener('mousedown', handleClick)
   }, [])
+  
+  // Update settings position when opened
+  useEffect(() => {
+    if (showSettings && settingsButtonRef.current) {
+      const rect = settingsButtonRef.current.getBoundingClientRect()
+      setSettingsPosition({
+        top: rect.bottom + window.scrollY + 8,
+        right: window.innerWidth - rect.right
+      })
+    }
+  }, [showSettings])
   
   const handleSearchSelect = (city: City) => {
     router.push(`/${city.slug}`)
@@ -191,6 +215,7 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
           
           <div className="relative" ref={settingsRef}>
             <button 
+              ref={settingsButtonRef}
               onClick={() => setShowSettings(!showSettings)}
               className={`p-2 rounded-lg transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}
               title="Settings"
@@ -201,8 +226,17 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
               </svg>
             </button>
             
-            {showSettings && (
-              <div className={`absolute right-0 top-full mt-2 w-56 rounded-xl shadow-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'} p-4`} style={{ zIndex: 99999 }}>
+            {mounted && showSettings && createPortal(
+              <div 
+                data-settings-dropdown="true"
+                className={`w-56 rounded-xl shadow-2xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'} p-4`}
+                style={{ 
+                  position: 'absolute',
+                  top: `${settingsPosition.top}px`,
+                  right: `${settingsPosition.right}px`,
+                  zIndex: 999999
+                }}
+              >
                 <h4 className={`text-xs font-semibold uppercase tracking-wide mb-3 ${activeTheme.textMuted}`}>Preferences</h4>
                 
                 <div className="mb-4">
@@ -241,7 +275,8 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
                     })}
                   </div>
                 </div>
-              </div>
+              </div>,
+              document.body
             )}
           </div>
         </nav>

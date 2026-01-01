@@ -209,6 +209,9 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
   const [selectedMeetingHour, setSelectedMeetingHour] = useState<number | null>(null)
   const [meetingCopyFeedback, setMeetingCopyFeedback] = useState(false)
   
+  // Dynamic title state for SEO
+  const [dynamicTitle, setDynamicTitle] = useState<string | null>(null)
+  
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000)
     return () => clearInterval(timer)
@@ -285,7 +288,11 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
     window.history.replaceState({}, '', newUrl.toString())
     
     // Update document title for SEO
-    document.title = `${fromTimeStr} ${fromCity.city} is ${toTimeStr} in ${toCity.city} | whattime.city`
+    const newTitle = `${fromTimeStr} ${fromCity.city} is ${toTimeStr} in ${toCity.city}`
+    document.title = `${newTitle} | whattime.city`
+    
+    // Update visible dynamic title
+    setDynamicTitle(newTitle)
   }, [sliderHour, diffHours, fromCity.city, toCity.city])
   
   // Theme based on "from" city
@@ -578,8 +585,8 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
 
       <main className="max-w-6xl mx-auto px-4 py-8" style={{ overflow: 'visible' }}>
         {/* Title */}
-        <h1 className={`text-2xl sm:text-3xl font-bold text-center mb-2 ${isLight ? 'text-slate-800' : 'text-white'}`}>
-          {fromCity.city} → {toCity.city} Time
+        <h1 className={`text-2xl sm:text-3xl font-bold text-center mb-2 ${isLight ? 'text-slate-800' : 'text-white'} transition-all duration-300`}>
+          {dynamicTitle || `${fromCity.city} → ${toCity.city} Time`}
         </h1>
         
         <p className={`text-sm text-center mb-6 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
@@ -587,7 +594,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
         </p>
         
         {/* Compare Widget */}
-        <div style={{ position: 'relative', zIndex: 50, overflow: 'visible' }}>
+        <div className="mb-8" style={{ position: 'relative', zIndex: 50, overflow: 'visible' }}>
           <CompareWidget 
             initialFromCity={fromCity}
             initialToCity={toCity}
@@ -876,6 +883,15 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
             
             return (
               <div className="space-y-4">
+                {/* City Time Reference */}
+                <div className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm ${isLight ? 'bg-blue-50 text-blue-700 border border-blue-200' : 'bg-blue-900/30 text-blue-300 border border-blue-800'}`}>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" strokeWidth={2} />
+                    <path strokeLinecap="round" strokeWidth={2} d="M12 6v6l4 2" />
+                  </svg>
+                  <span>Times shown in <strong>{fromCity.city}</strong> time</span>
+                </div>
+                
                 {/* Legend */}
                 <div className="flex flex-wrap gap-4 text-xs">
                   <div className="flex items-center gap-1.5">
