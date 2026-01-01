@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
-import { useRouter, useSearchParams } from 'next/navigation'
 import { City } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
@@ -172,27 +171,31 @@ const FAQItem = ({ question, answer, isLight }: { question: string, answer: stri
 }
 
 export default function TimeComparisonContent({ fromCity: initialFromCity, toCity: initialToCity }: TimeComparisonContentProps) {
-  const router = useRouter()
-  const searchParams = useSearchParams()
-  
   const [time, setTime] = useState(new Date())
   const [currentFromCity, setCurrentFromCity] = useState<City>(initialFromCity)
   const [currentToCity, setCurrentToCity] = useState<City>(initialToCity)
   
-  // Interactive slider state - initialize from URL param if present
+  // Interactive slider state - initialize from URL param on client side
   const [sliderHour, setSliderHour] = useState(() => {
-    const timeParam = searchParams.get('time')
-    if (timeParam) {
-      const hour = parseInt(timeParam.split(':')[0], 10)
-      if (!isNaN(hour) && hour >= 0 && hour <= 23) {
-        return hour
-      }
-    }
     const now = new Date()
     return now.getHours()
   })
   const [isDragging, setIsDragging] = useState(false)
   const sliderRef = useRef<HTMLDivElement>(null)
+  
+  // Read URL param on client mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search)
+      const timeParam = params.get('time')
+      if (timeParam) {
+        const hour = parseInt(timeParam.split(':')[0], 10)
+        if (!isNaN(hour) && hour >= 0 && hour <= 23) {
+          setSliderHour(hour)
+        }
+      }
+    }
+  }, [])
   
   // Weather state
   const [fromWeather, setFromWeather] = useState<any>(null)
@@ -268,8 +271,10 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
   const toOffset = getTimezoneOffset(toCity.timezone)
   const diffHours = toOffset - fromOffset
   
-  // Update URL and title when slider changes (debounced)
+  // Update URL and title when slider changes (client-side only)
   useEffect(() => {
+    if (typeof window === 'undefined') return
+    
     const toHour = (sliderHour + diffHours + 24) % 24
     const fromTimeStr = `${sliderHour.toString().padStart(2, '0')}:00`
     const toTimeStr = `${toHour.toString().padStart(2, '0')}:00`
