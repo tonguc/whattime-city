@@ -9,20 +9,6 @@ import Footer from '@/components/Footer'
 // Tool definitions - Normalized names (2 words, English only) - ROOT LEVEL URLs for SEO
 const tools = [
   {
-    id: 'converter',
-    name: 'Time Converter',
-    description: 'Convert time between any two cities instantly. Perfect for scheduling international calls and meetings.',
-    url: '/time-converter',
-    icon: (
-      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"/>
-        <polyline points="12 6 12 12 16 14"/>
-        <path d="M17 21l2-2-2-2"/>
-        <path d="M7 3L5 5l2 2"/>
-      </svg>
-    )
-  },
-  {
     id: 'meeting-planner',
     name: 'Meeting Planner',
     description: 'Find the best meeting time across multiple time zones. Visualize working hours overlap for global teams.',
@@ -38,6 +24,20 @@ const tools = [
         <path d="M16 14h.01"/>
         <path d="M8 18h.01"/>
         <path d="M12 18h.01"/>
+      </svg>
+    )
+  },
+  {
+    id: 'converter',
+    name: 'Time Converter',
+    description: 'Convert time between any two cities instantly. Perfect for scheduling international calls and meetings.',
+    url: '/time-converter',
+    icon: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+        <path d="M17 21l2-2-2-2"/>
+        <path d="M7 3L5 5l2 2"/>
       </svg>
     )
   },
@@ -166,10 +166,8 @@ export default function ToolsPage() {
           ))}
         </div>
 
-        {/* Footer */}
-        <div className="mt-16">
-          <Footer isLight={isLight} />
-        </div>
+        {/* Footer - Full Width */}
+        <Footer isLight={isLight} />
     </>
   )
 }

@@ -26,12 +26,8 @@ export default function ToolPageWrapper({ children, footer }: ToolPageWrapperPro
         {children}
       </div>
       
-      {/* Footer - Full Width */}
-      {footer && (
-        <div className="relative z-10 mt-10">
-          {footer}
-        </div>
-      )}
+      {/* Footer - Full Width, Zero Bottom Margin */}
+      {footer}
       
       {/* Floating Alarm Button */}
       <button 

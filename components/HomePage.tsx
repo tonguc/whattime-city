@@ -185,7 +185,7 @@ export default function HomePage() {
               <div className="flex-shrink-0 flex justify-center items-center md:flex-[2]">
                 {/* Digital or Analog Clock based on user preference */}
                 {clockMode === 'analog' ? (
-                  <div className="inline-flex">
+                  <div className="inline-flex mr-5">
                     <AnalogClock 
                       time={time} 
                       theme={getCityTimeOfDay(detectedCity)}
@@ -193,7 +193,7 @@ export default function HomePage() {
                     />
                   </div>
                 ) : (
-                  <div className={`text-5xl md:text-6xl font-bold tracking-tight ${homeTheme.text}`}>
+                  <div className={`text-5xl md:text-6xl font-bold tracking-tight mr-5 ${homeTheme.text}`}>
                     {getLocalTime(detectedCity)}
                   </div>
                 )}
