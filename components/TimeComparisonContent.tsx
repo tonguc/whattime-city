@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { City } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
+import { useCityContext } from '@/lib/CityContext'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import CompareWidget from '@/components/CompareWidget'
@@ -171,6 +172,7 @@ const FAQItem = ({ question, answer, isLight }: { question: string, answer: stri
 }
 
 export default function TimeComparisonContent({ fromCity: initialFromCity, toCity: initialToCity }: TimeComparisonContentProps) {
+  const context = useCityContext()
   const [time, setTime] = useState(new Date())
   const [currentFromCity, setCurrentFromCity] = useState<City>(initialFromCity)
   const [currentToCity, setCurrentToCity] = useState<City>(initialToCity)
@@ -226,13 +228,13 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
     timeZone: fromCity.timezone, 
     hour: '2-digit', 
     minute: '2-digit',
-    hour12: true 
+    hour12: context.use12Hour 
   })
   const toTime = time.toLocaleTimeString('en-US', { 
     timeZone: toCity.timezone, 
     hour: '2-digit', 
     minute: '2-digit',
-    hour12: true 
+    hour12: context.use12Hour 
   })
   
   const fromDate = time.toLocaleDateString('en-US', { 
@@ -257,9 +259,17 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
   const toOffset = getTimezoneOffset(toCity.timezone)
   const diffHours = toOffset - fromOffset
   
-  // Theme based on "from" city
-  const mainTheme = themes[fromTimeOfDay]
-  const isLight = isLightTheme(fromTimeOfDay)
+  // Theme based on user preference or "from" city's astronomical calculation
+  const autoTheme = themes[fromTimeOfDay]
+  const autoIsLight = isLightTheme(fromTimeOfDay)
+  
+  // Apply user's theme preference
+  const mainTheme = context.themeMode === 'light' ? themes.day 
+    : context.themeMode === 'dark' ? themes.night 
+    : autoTheme
+  const isLight = context.themeMode === 'light' ? true 
+    : context.themeMode === 'dark' ? false 
+    : autoIsLight
   
   // Format timezones
   const fromTimezoneStr = formatTimezone(fromCity.timezone, fromOffset)
