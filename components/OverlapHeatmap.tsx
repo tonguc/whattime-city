@@ -352,15 +352,40 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
         </div>
         
         {bestTime && (
-          <div className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium ${
-            bestTime.type === 'business'
-              ? isLight ? 'bg-green-100 text-green-700' : 'bg-green-900/50 text-green-300'
-              : isLight ? 'bg-blue-100 text-blue-700' : 'bg-blue-900/50 text-blue-300'
-          }`}>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-            {bestTime.type === 'business' ? 'Best:' : 'Overlap:'} {formatHour(bestTime.startHour)} - {formatHour(bestTime.endHour + 1)}
+          <div className="relative group">
+            <div className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium cursor-help ${
+              bestTime.type === 'business'
+                ? isLight ? 'bg-green-100 text-green-700' : 'bg-green-900/50 text-green-300'
+                : isLight ? 'bg-blue-100 text-blue-700' : 'bg-blue-900/50 text-blue-300'
+            }`}>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              <span>
+                {bestTime.type === 'business' ? 'Best:' : 'Overlap:'} {formatHour(bestTime.startHour)} - {formatHour(bestTime.endHour + 1)}
+              </span>
+              <span className={`text-xs ${
+                bestTime.type === 'business'
+                  ? isLight ? 'text-green-500' : 'text-green-400'
+                  : isLight ? 'text-blue-500' : 'text-blue-400'
+              }`}>
+                ({bestTime.duration}h)
+              </span>
+            </div>
+            {/* Hover tooltip with all hours */}
+            <div className={`absolute top-full right-0 mt-2 px-3 py-2 rounded-lg shadow-lg border text-xs opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap z-50 ${
+              isLight 
+                ? 'bg-white border-slate-200 text-slate-700' 
+                : 'bg-slate-800 border-slate-600 text-slate-200'
+            }`}>
+              <div className="font-medium mb-1">All {bestTime.duration} hours:</div>
+              <div className={bestTime.type === 'business' ? 'text-green-600' : 'text-blue-600'}>
+                {Array.from({ length: bestTime.duration }, (_, i) => {
+                  const hour = (bestTime.startHour + i) % 24
+                  return `${hour.toString().padStart(2, '0')}:00`
+                }).join(', ')}
+              </div>
+            </div>
           </div>
         )}
       </div>
@@ -418,14 +443,20 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
                         <span className="font-medium">All in business hours</span>
                       </div>
                     ) : tooltip.allAwake ? (
-                      <div className={`flex items-center gap-2 mb-2 ${
-                        isLight ? 'text-blue-600' : 'text-blue-400'
-                      }`}>
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span className="font-medium">All participants awake</span>
-                      </div>
+                      <>
+                        <div className={`flex items-center gap-2 mb-1 ${
+                          isLight ? 'text-blue-600' : 'text-blue-400'
+                        }`}>
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span className="font-medium">All participants awake</span>
+                        </div>
+                        {/* Business hours note */}
+                        <div className={`text-xs mb-2 pl-6 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                          Outside business hours for some
+                        </div>
+                      </>
                     ) : tooltip.noneAwake ? (
                       <div className={`flex items-center gap-2 mb-2 ${
                         isLight ? 'text-slate-600' : 'text-slate-400'

@@ -31,6 +31,7 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
   // Selected cities state - start empty, will be populated by detectedCity or initialCities
   const [selectedCities, setSelectedCities] = useState<City[]>(initialCities)
   const [hasInitialized, setHasInitialized] = useState(initialCities.length > 0)
+  const [hasUserCleared, setHasUserCleared] = useState(false) // Prevent auto-add after clear
   
   // Search state
   const [searchQuery, setSearchQuery] = useState('')
@@ -50,13 +51,13 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
   // Prevent URL sync on initial mount
   const isInitialMount = useRef(true)
   
-  // Initialize with detected city when available (only if no initialCities)
+  // Initialize with detected city when available (only if no initialCities and user hasn't cleared)
   useEffect(() => {
-    if (!hasInitialized && detectedCity) {
+    if (!hasInitialized && !hasUserCleared && detectedCity) {
       setSelectedCities([detectedCity])
       setHasInitialized(true)
     }
-  }, [detectedCity, hasInitialized])
+  }, [detectedCity, hasInitialized, hasUserCleared])
   
   // Search effect
   useEffect(() => {
@@ -153,7 +154,12 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
   
   // Remove city
   const removeCity = (slug: string) => {
-    setSelectedCities(selectedCities.filter(c => c.slug !== slug))
+    const newCities = selectedCities.filter(c => c.slug !== slug)
+    setSelectedCities(newCities)
+    // If removing last city, prevent auto-add
+    if (newCities.length === 0) {
+      setHasUserCleared(true)
+    }
   }
   
   // Clear all cities
@@ -161,6 +167,7 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
     // Store for undo
     setClearedCities([...selectedCities])
     setSelectedCities([])
+    setHasUserCleared(true) // Prevent auto-add of detected city
     
     // Show snackbar
     setShowSnackbar(true)
@@ -183,6 +190,7 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
       setSelectedCities(clearedCities)
       setClearedCities([])
       setShowSnackbar(false)
+      setHasUserCleared(false) // Allow auto-add again if user undoes
       if (snackbarTimeoutRef.current) {
         clearTimeout(snackbarTimeoutRef.current)
       }
@@ -231,13 +239,13 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
               {getTitle()}
             </h1>
             <p className={`text-lg ${theme.textMuted}`}>
-              Find the best meeting time across multiple time zones
+              Find the best working-hour overlap across time zones
             </p>
           </div>
         </section>
         
         {/* Participants Section */}
-        <section className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border ${theme.card}`}>
+        <section className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border overflow-visible ${theme.card}`}>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
             <h2 className={`text-xl font-semibold flex items-center gap-2 ${theme.text}`}>
               <span>👥</span>
@@ -251,7 +259,7 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
             </h2>
             
             {/* Action Buttons */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 relative z-50">
               {/* Clear all - ghost button, only show when 2+ cities */}
               {selectedCities.length >= 2 && (
                 <button
@@ -422,18 +430,6 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
           </section>
         ) : (
           <section className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border ${theme.card}`}>
-            {/* Hint to check Heatmap - only show when 2+ cities */}
-            {selectedCities.length >= 2 && (
-              <div className={`mb-4 p-3 rounded-xl flex items-center gap-2 ${
-                isLight ? 'bg-blue-50 border border-blue-200' : 'bg-blue-900/20 border border-blue-800/50'
-              }`}>
-                <span className="text-blue-500">💡</span>
-                <span className={`text-sm ${isLight ? 'text-blue-700' : 'text-blue-300'}`}>
-                  Switch to <span className="font-medium">Heatmap View</span> to see the recommended meeting time
-                </span>
-              </div>
-            )}
-            
             <h3 className={`text-lg font-bold mb-2 ${theme.text}`}>
               🔍 Explore other time options
             </h3>
