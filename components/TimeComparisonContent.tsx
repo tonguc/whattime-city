@@ -571,6 +571,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
             initialFromCity={fromCity}
             initialToCity={toCity}
             onCitiesChange={handleCitiesChange}
+            isLight={isLight}
           />
         </div>
         

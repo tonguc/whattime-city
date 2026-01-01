@@ -4,11 +4,12 @@ import { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { useRouter } from 'next/navigation'
 import { City, searchCities } from '@/lib/cities'
+import { useCityContext } from '@/lib/CityContext'
 
 interface CompareWidgetProps {
   initialFromCity?: City | null
   initialToCity?: City | null
-  isLight?: boolean
+  isLight?: boolean  // Optional override - if not provided, uses context
   className?: string
   onCitiesChange?: (fromCity: City | null, toCity: City | null) => void
 }
@@ -98,11 +99,15 @@ function DropdownPortal({ isOpen, results, onSelect, inputRef, isLight, highligh
 export default function CompareWidget({ 
   initialFromCity = null, 
   initialToCity = null,
-  isLight = false,
+  isLight: isLightProp,  // Optional prop override
   className = "",
   onCitiesChange
 }: CompareWidgetProps) {
   const router = useRouter()
+  const context = useCityContext()
+  
+  // Use prop if provided, otherwise use context's isLight
+  const isLight = isLightProp !== undefined ? isLightProp : context.isLight
   
   const [fromCity, setFromCity] = useState<City | null>(initialFromCity)
   const [toCity, setToCity] = useState<City | null>(initialToCity)
