@@ -328,7 +328,7 @@ export default function CompareWidget({
               }
             }}
             placeholder="From city..."
-            className={`w-full h-10 md:h-14 px-3 ${fromQuery ? 'pr-10' : 'pr-3'} rounded-xl border text-center text-sm md:text-base ${isLight ? 'bg-white border-slate-200 text-slate-800 placeholder:text-slate-400' : 'bg-slate-900 border-slate-700 text-white placeholder:text-slate-500'} outline-none focus:ring-2 focus:ring-blue-500 transition-all`}
+            className={`w-full h-10 md:h-14 px-3 ${fromQuery ? 'pr-10' : 'pr-3'} rounded-xl border text-center text-sm md:text-base ${isLight ? 'bg-slate-50 border-slate-300 text-slate-800 placeholder:text-slate-400' : 'bg-slate-900 border-slate-700 text-white placeholder:text-slate-500'} outline-none focus:ring-2 focus:ring-blue-500 transition-all`}
             style={{ fontSize: '16px' }}
           />
           
@@ -390,7 +390,7 @@ export default function CompareWidget({
               }
             }}
             placeholder="To city..."
-            className={`w-full h-10 md:h-14 px-3 ${toQuery ? 'pr-10' : 'pr-3'} rounded-xl border text-center text-sm md:text-base ${isLight ? 'bg-white border-slate-200 text-slate-800 placeholder:text-slate-400' : 'bg-slate-900 border-slate-700 text-white placeholder:text-slate-500'} outline-none focus:ring-2 focus:ring-blue-500 transition-all`}
+            className={`w-full h-10 md:h-14 px-3 ${toQuery ? 'pr-10' : 'pr-3'} rounded-xl border text-center text-sm md:text-base ${isLight ? 'bg-slate-50 border-slate-300 text-slate-800 placeholder:text-slate-400' : 'bg-slate-900 border-slate-700 text-white placeholder:text-slate-500'} outline-none focus:ring-2 focus:ring-blue-500 transition-all`}
             style={{ fontSize: '16px' }}
           />
           
