@@ -201,7 +201,7 @@ export default function GuideLayout({
                 </h4>
                 <div className="space-y-2">
                   <Link
-                    href="/tools/converter/"
+                    href="/time-converter/"
                     className={`block px-3 py-2 rounded-lg text-sm ${
                       isLight 
                         ? 'bg-amber-50 text-amber-700 hover:bg-amber-100' 
@@ -211,7 +211,7 @@ export default function GuideLayout({
                     🔄 Time Converter
                   </Link>
                   <Link
-                    href="/tools/meeting-planner/"
+                    href="/meeting/"
                     className={`block px-3 py-2 rounded-lg text-sm ${
                       isLight 
                         ? 'bg-blue-50 text-blue-700 hover:bg-blue-100' 

@@ -138,7 +138,7 @@ export default function SharedMeetingView() {
         <div className={`text-center p-8 rounded-3xl backdrop-blur-xl border ${theme.card}`}>
           <p className={`text-xl mb-4 ${theme.text}`}>No cities selected</p>
           <Link 
-            href="/tools/meeting-planner"
+            href="/meeting/"
             className={`inline-block px-6 py-3 rounded-full font-medium ${theme.accentBg} text-white`}
           >
             Create a Meeting
@@ -268,7 +268,7 @@ export default function SharedMeetingView() {
         {/* Edit Link */}
         <div className="text-center mt-8">
           <Link 
-            href={`/tools/meeting-planner`}
+            href={`/meeting`}
             className={`text-sm ${theme.textMuted} hover:underline`}
           >
             ✏️ Create your own meeting plan

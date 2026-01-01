@@ -102,7 +102,7 @@ export default function CallTimesContent({ city }: Props) {
         
         <p className={`mt-3 text-sm ${mutedColor}`}>
           All times are YOUR local time. Need exact conversion? Use our{' '}
-          <Link href="/tools/converter/" className={linkColor}>Time Converter</Link>.
+          <Link href="/time-converter/" className={linkColor}>Time Converter</Link>.
         </p>
       </section>
       
@@ -223,7 +223,7 @@ export default function CallTimesContent({ city }: Props) {
           </div>
           
           <Link 
-            href="/tools/meeting-planner/"
+            href="/meeting/"
             className={`block w-full text-center py-3 rounded-xl font-medium transition-all ${
               isLight 
                 ? 'bg-amber-500 hover:bg-amber-600 text-white' 

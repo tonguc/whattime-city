@@ -413,7 +413,7 @@ export default function CallTimesContent({ city }: Props) {
         </h2>
         <div className="grid sm:grid-cols-2 gap-3">
           <Link
-            href="/tools/meeting-planner/"
+            href="/meeting/"
             className={`flex items-center gap-2 p-3 rounded-lg ${
               isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
             }`}
@@ -425,7 +425,7 @@ export default function CallTimesContent({ city }: Props) {
             </div>
           </Link>
           <Link
-            href="/tools/converter/"
+            href="/time-converter/"
             className={`flex items-center gap-2 p-3 rounded-lg ${
               isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
             }`}

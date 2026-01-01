@@ -47,7 +47,7 @@ export default function QuickTimeFinder({ currentCity, currentTime, cities }: Pr
       </div>
       
       <Link
-        href="/tools/meeting-planner/"
+        href="/meeting/"
         className={`block w-full py-4 px-6 rounded-xl ${buttonBg} text-white font-semibold text-center transition-colors`}
       >
         Open Full Meeting Planner →

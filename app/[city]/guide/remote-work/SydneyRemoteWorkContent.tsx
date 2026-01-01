@@ -85,7 +85,7 @@ export default function SydneyRemoteWorkContent({ city }: Props) {
             <ul className="text-sm space-y-1">
               <li>• Rotate meeting times (share pain!)</li>
               <li>• Record all meetings</li>
-              <li>• Use our <Link href="/tools/meeting-planner/" className={linkColor}>Meeting Planner</Link></li>
+              <li>• Use our <Link href="/meeting/" className={linkColor}>Meeting Planner</Link></li>
               <li>• Bi-weekly is better than weekly</li>
             </ul>
           </div>
@@ -121,7 +121,7 @@ export default function SydneyRemoteWorkContent({ city }: Props) {
             <span>📞</span>
             <span className={`font-medium ${headingColor}`}>Best Time to Call</span>
           </Link>
-          <Link href="/tools/meeting-planner/" className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white' : 'bg-slate-800'}`}>
+          <Link href="/meeting/" className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white' : 'bg-slate-800'}`}>
             <span>📅</span>
             <span className={`font-medium ${headingColor}`}>Meeting Planner</span>
           </Link>

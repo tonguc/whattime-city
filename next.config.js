@@ -17,6 +17,72 @@ const nextConfig = {
   // ⚠️ Experimental "optimizeCss" KALDIRILDI. 
   // Build hatalarının (TypeError: r is not a constructor) ana sebebi genelde budur.
   
+  // 301 Redirects for SEO - Old /tools/* URLs to new root-level URLs
+  async redirects() {
+    return [
+      {
+        source: '/tools/converter/',
+        destination: '/time-converter/',
+        permanent: true, // 301 redirect
+      },
+      {
+        source: '/tools/converter',
+        destination: '/time-converter/',
+        permanent: true,
+      },
+      {
+        source: '/tools/flight-times/',
+        destination: '/flight-time/',
+        permanent: true,
+      },
+      {
+        source: '/tools/flight-times',
+        destination: '/flight-time/',
+        permanent: true,
+      },
+      {
+        source: '/tools/jet-lag/',
+        destination: '/jet-lag-advisor/',
+        permanent: true,
+      },
+      {
+        source: '/tools/jet-lag',
+        destination: '/jet-lag-advisor/',
+        permanent: true,
+      },
+      {
+        source: '/tools/event-time/',
+        destination: '/event-time/',
+        permanent: true,
+      },
+      {
+        source: '/tools/event-time',
+        destination: '/event-time/',
+        permanent: true,
+      },
+      {
+        source: '/tools/alarm/',
+        destination: '/world-alarm/',
+        permanent: true,
+      },
+      {
+        source: '/tools/alarm',
+        destination: '/world-alarm/',
+        permanent: true,
+      },
+      {
+        source: '/tools/meeting-planner/',
+        destination: '/meeting/',
+        permanent: true,
+      },
+      {
+        source: '/tools/meeting-planner',
+        destination: '/meeting/',
+        permanent: true,
+      },
+    ]
+  },
+
   // Headers (Güvenlik ve Cache) - Olduğu gibi kalabilir, sorunsuz.
   async headers() {
     return [

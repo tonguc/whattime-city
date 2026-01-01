@@ -151,7 +151,7 @@ export default function SydneyTravelPlanningContent({ city }: Props) {
             <span>🏖️</span>
             <span className={`font-medium ${headingColor}`}>Best Time to Visit</span>
           </Link>
-          <Link href="/tools/jet-lag/" className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white' : 'bg-slate-800'}`}>
+          <Link href="/jet-lag-advisor/" className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white' : 'bg-slate-800'}`}>
             <span>😴</span>
             <span className={`font-medium ${headingColor}`}>Jet Lag Calculator</span>
           </Link>

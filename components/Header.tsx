@@ -148,7 +148,7 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
           </Link>
           
           <Link 
-            href="/tools/alarm" 
+            href="/world-alarm" 
             className={`hidden sm:flex p-2 rounded-lg transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}
             title="Set Alarm"
           >

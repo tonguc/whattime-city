@@ -158,7 +158,7 @@ export default function SydneyGuideContent({ city, config, isLight, timeStr }: P
         </div>
         <p className={`mt-4 text-sm ${mutedColor}`}>
           Need exact conversions? Try our{' '}
-          <Link href="/tools/converter/" className={linkColor}>Time Converter</Link>
+          <Link href="/time-converter/" className={linkColor}>Time Converter</Link>
         </p>
       </section>
       
@@ -305,7 +305,7 @@ export default function SydneyGuideContent({ city, config, isLight, timeStr }: P
         </p>
         <div className="grid sm:grid-cols-2 gap-3">
           <Link
-            href="/tools/converter/"
+            href="/time-converter/"
             className={`flex items-center gap-2 p-3 rounded-lg ${
               isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
             }`}
@@ -317,7 +317,7 @@ export default function SydneyGuideContent({ city, config, isLight, timeStr }: P
             </div>
           </Link>
           <Link
-            href="/tools/meeting-planner/"
+            href="/meeting/"
             className={`flex items-center gap-2 p-3 rounded-lg ${
               isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
             }`}
@@ -329,7 +329,7 @@ export default function SydneyGuideContent({ city, config, isLight, timeStr }: P
             </div>
           </Link>
           <Link
-            href="/tools/flight-times/"
+            href="/flight-time/"
             className={`flex items-center gap-2 p-3 rounded-lg ${
               isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
             }`}
@@ -341,7 +341,7 @@ export default function SydneyGuideContent({ city, config, isLight, timeStr }: P
             </div>
           </Link>
           <Link
-            href="/tools/jet-lag/"
+            href="/jet-lag-advisor/"
             className={`flex items-center gap-2 p-3 rounded-lg ${
               isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
             }`}

@@ -287,7 +287,7 @@ export default function TokyoStockMarketContent({ city }: Props) {
           <Link href={`/${city.slug}/guide/time-difference/`} className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'}`}>
             <span>🌐</span><span>Time Difference Calculator</span>
           </Link>
-          <Link href="/tools/converter/" className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'}`}>
+          <Link href="/time-converter/" className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'}`}>
             <span>🔄</span><span>Time Zone Converter</span>
           </Link>
         </div>

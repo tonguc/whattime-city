@@ -409,7 +409,7 @@ export default function BusinessHoursContent({ city }: Props) {
         </div>
         <p className={`mt-2 text-sm ${mutedColor}`}>
           *Next day. For precise calculations, use our{' '}
-          <Link href="/tools/converter/" className={linkColor}>Time Converter</Link>.
+          <Link href="/time-converter/" className={linkColor}>Time Converter</Link>.
         </p>
       </section>
       

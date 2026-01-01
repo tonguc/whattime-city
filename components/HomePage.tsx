@@ -172,7 +172,7 @@ export default function HomePage() {
         {detectedCity && (
           <section className={`rounded-3xl p-5 md:p-6 mb-4 backdrop-blur-xl border ${homeTheme.card}`}>
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 md:flex-1">
                 <span className="text-3xl">📍</span>
                 <div>
                   <h2 className={`text-xl font-semibold ${homeTheme.text}`}>{detectedCity.city}</h2>
@@ -182,10 +182,10 @@ export default function HomePage() {
                 </div>
               </div>
               
-              <div className="text-center w-full md:w-auto">
+              <div className="flex-shrink-0 flex justify-center items-center md:flex-[2]">
                 {/* Digital or Analog Clock based on user preference */}
                 {clockMode === 'analog' ? (
-                  <div className="flex justify-center mb-2">
+                  <div className="inline-flex mr-5">
                     <AnalogClock 
                       time={time} 
                       theme={getCityTimeOfDay(detectedCity)}
@@ -193,7 +193,7 @@ export default function HomePage() {
                     />
                   </div>
                 ) : (
-                  <div className={`text-5xl md:text-6xl font-bold tracking-tight ${homeTheme.text}`}>
+                  <div className={`text-5xl md:text-6xl font-bold tracking-tight mr-5 ${homeTheme.text}`}>
                     {getLocalTime(detectedCity)}
                   </div>
                 )}
@@ -220,7 +220,7 @@ export default function HomePage() {
                 </div>
               </div>
               
-              <div className="flex gap-2">
+              <div className="flex gap-2 md:flex-1 md:justify-end">
                 <Link href={`/${detectedCity.slug}`}
                   className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${homeIsLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-white'}`}>
                   View City
@@ -252,7 +252,7 @@ export default function HomePage() {
 
         {/* QUICK TOOLS */}
         <section className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
-          <Link href="/tools/meeting-planner" className={`p-5 rounded-2xl backdrop-blur-xl transition-all hover:scale-[1.02] group ${homeIsLight ? 'bg-white/60 border border-white/70' : 'bg-slate-800/60 border border-slate-600/60'}`}>
+          <Link href="/meeting/" className={`p-5 rounded-2xl backdrop-blur-xl transition-all hover:scale-[1.02] group border ${homeTheme.card}`}>
             <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${homeIsLight ? 'bg-blue-100' : 'bg-blue-900/30'}`}>
               <svg className={`w-5 h-5 ${homeIsLight ? 'text-blue-600' : 'text-blue-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -267,7 +267,7 @@ export default function HomePage() {
               </svg>
             </span>
           </Link>
-          <Link href="/tools/converter" className={`p-5 rounded-2xl backdrop-blur-xl transition-all hover:scale-[1.02] group ${homeIsLight ? 'bg-white/60 border border-white/70' : 'bg-slate-800/60 border border-slate-600/60'}`}>
+          <Link href="/time-converter/" className={`p-5 rounded-2xl backdrop-blur-xl transition-all hover:scale-[1.02] group border ${homeTheme.card}`}>
             <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${homeIsLight ? 'bg-green-100' : 'bg-green-900/30'}`}>
               <svg className={`w-5 h-5 ${homeIsLight ? 'text-green-600' : 'text-green-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -282,7 +282,7 @@ export default function HomePage() {
               </svg>
             </span>
           </Link>
-          <Link href="/tools/flight-times" className={`p-5 rounded-2xl backdrop-blur-xl transition-all hover:scale-[1.02] group ${homeIsLight ? 'bg-white/60 border border-white/70' : 'bg-slate-800/60 border border-slate-600/60'}`}>
+          <Link href="/flight-time/" className={`p-5 rounded-2xl backdrop-blur-xl transition-all hover:scale-[1.02] group border ${homeTheme.card}`}>
             <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${homeIsLight ? 'bg-purple-100' : 'bg-purple-900/30'}`}>
               <svg className={`w-5 h-5 ${homeIsLight ? 'text-purple-600' : 'text-purple-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
@@ -332,7 +332,7 @@ export default function HomePage() {
               </svg>
               Popular Comparisons
             </h3>
-            <Link href="/tools/converter" className={`text-sm font-medium ${homeTheme.accentText} hover:underline`}>
+            <Link href="/time-converter/" className={`text-sm font-medium ${homeTheme.accentText} hover:underline`}>
               See All →
             </Link>
           </div>

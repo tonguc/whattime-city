@@ -6,27 +6,13 @@ import { translations, detectLanguage, Language } from '@/lib/translations'
 import { useToolsTheme } from '@/lib/useToolsTheme'
 import Footer from '@/components/Footer'
 
-// Tool definitions - Normalized names (2 words, English only)
+// Tool definitions - Normalized names (2 words, English only) - ROOT LEVEL URLs for SEO
 const tools = [
-  {
-    id: 'converter',
-    name: 'Time Converter',
-    description: 'Convert time between any two cities instantly. Perfect for scheduling international calls and meetings.',
-    url: '/tools/converter',
-    icon: (
-      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"/>
-        <polyline points="12 6 12 12 16 14"/>
-        <path d="M17 21l2-2-2-2"/>
-        <path d="M7 3L5 5l2 2"/>
-      </svg>
-    )
-  },
   {
     id: 'meeting-planner',
     name: 'Meeting Planner',
     description: 'Find the best meeting time across multiple time zones. Visualize working hours overlap for global teams.',
-    url: '/tools/meeting-planner',
+    url: '/meeting',
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
@@ -42,10 +28,24 @@ const tools = [
     )
   },
   {
-    id: 'flight-times',
+    id: 'converter',
+    name: 'Time Converter',
+    description: 'Convert time between any two cities instantly. Perfect for scheduling international calls and meetings.',
+    url: '/time-converter',
+    icon: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+        <path d="M17 21l2-2-2-2"/>
+        <path d="M7 3L5 5l2 2"/>
+      </svg>
+    )
+  },
+  {
+    id: 'flight-time',
     name: 'Flight Time',
     description: 'Calculate arrival times across time zones. Know exactly when you\'ll land in local time.',
-    url: '/tools/flight-times',
+    url: '/flight-time',
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
@@ -53,10 +53,10 @@ const tools = [
     )
   },
   {
-    id: 'jet-lag',
-    name: 'Jet Lag',
+    id: 'jet-lag-advisor',
+    name: 'Jet Lag Advisor',
     description: 'Get personalized jet lag recovery tips based on your travel route and sleep schedule.',
-    url: '/tools/jet-lag',
+    url: '/jet-lag-advisor',
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
@@ -72,7 +72,7 @@ const tools = [
     id: 'event-time',
     name: 'Event Time',
     description: 'Share event times that automatically convert to each viewer\'s local time zone.',
-    url: '/tools/event-time',
+    url: '/event-time',
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"/>
@@ -85,10 +85,10 @@ const tools = [
     )
   },
   {
-    id: 'alarm',
+    id: 'world-alarm',
     name: 'World Alarm',
     description: 'Set alarms for any city\'s local time. Never miss an international deadline or call.',
-    url: '/tools/alarm',
+    url: '/world-alarm',
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="13" r="8"/>
@@ -166,10 +166,8 @@ export default function ToolsPage() {
           ))}
         </div>
 
-        {/* Footer */}
-        <div className="mt-16">
-          <Footer isLight={isLight} />
-        </div>
+        {/* Footer - Full Width */}
+        <Footer isLight={isLight} />
     </>
   )
 }

@@ -37,13 +37,19 @@ export default async function sitemap() {
     },
   ]
   
-  // Tool sayfaları (trailing slash ile)
-  const toolSlugs = ['converter', 'meeting-planner', 'flight-times', 'jet-lag', 'event-time', 'alarm']
-  const toolRoutes = toolSlugs.map((slug) => ({
-    url: `${baseUrl}/tools/${slug}/`,
+  // Tool sayfaları (trailing slash ile) - ROOT LEVEL URLs for SEO
+  const toolRoutes = [
+    { slug: 'time-converter', priority: 0.8 },
+    { slug: 'meeting', priority: 0.8 },
+    { slug: 'flight-time', priority: 0.7 },
+    { slug: 'jet-lag-advisor', priority: 0.7 },
+    { slug: 'event-time', priority: 0.7 },
+    { slug: 'world-alarm', priority: 0.7 },
+  ].map((tool) => ({
+    url: `${baseUrl}/${tool.slug}/`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: tool.priority,
   }))
   
   // NYC Guide sayfaları (pillar + cluster)

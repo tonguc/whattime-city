@@ -2,35 +2,19 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useCityContext } from '@/lib/CityContext'
 
 interface ToolsMiniNavProps {
-  isLight: boolean
-  theme: {
-    accentBg: string
-    accentBgLight: string
-    accentText: string
-    accentBorder: string
-  }
   onAlarmClick?: () => void
 }
 
-// Normalized tool names (2 words, English only)
+// Normalized tool names (2 words, English only) - ROOT LEVEL URLs for SEO
+// Meeting Planner is FIRST
 const toolNavItems = [
-  {
-    id: 'converter',
-    name: 'Time Converter',
-    url: '/tools/converter',
-    icon: (
-      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"/>
-        <polyline points="12 6 12 12 16 14"/>
-      </svg>
-    )
-  },
   {
     id: 'meeting-planner',
     name: 'Meeting Planner',
-    url: '/tools/meeting-planner',
+    url: '/meeting',
     icon: (
       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
@@ -41,9 +25,20 @@ const toolNavItems = [
     )
   },
   {
-    id: 'flight-times',
+    id: 'converter',
+    name: 'Time Converter',
+    url: '/time-converter',
+    icon: (
+      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+      </svg>
+    )
+  },
+  {
+    id: 'flight-time',
     name: 'Flight Time',
-    url: '/tools/flight-times',
+    url: '/flight-time',
     icon: (
       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
@@ -51,9 +46,9 @@ const toolNavItems = [
     )
   },
   {
-    id: 'jet-lag',
+    id: 'jet-lag-advisor',
     name: 'Jet Lag Advisor',
-    url: '/tools/jet-lag',
+    url: '/jet-lag-advisor',
     icon: (
       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
@@ -65,7 +60,7 @@ const toolNavItems = [
   {
     id: 'event-time',
     name: 'Event Time',
-    url: '/tools/event-time',
+    url: '/event-time',
     icon: (
       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"/>
@@ -74,9 +69,9 @@ const toolNavItems = [
     )
   },
   {
-    id: 'alarm',
+    id: 'world-alarm',
     name: 'World Alarm',
-    url: '/tools/alarm',
+    url: '/world-alarm',
     isAlarm: true,
     icon: (
       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -89,22 +84,28 @@ const toolNavItems = [
   }
 ]
 
-export default function ToolsMiniNav({ isLight, theme, onAlarmClick }: ToolsMiniNavProps) {
+export default function ToolsMiniNav({ onAlarmClick }: ToolsMiniNavProps) {
   const pathname = usePathname()
+  const { theme, isLight } = useCityContext()
   
   return (
-    <nav className="mb-6">
-      {/* Wrapping flex container - no horizontal scroll */}
-      <div className="flex flex-wrap justify-center gap-2">
+    <nav className="mt-2 mb-6">
+      {/* Mobile: left-aligned, Desktop: centered */}
+      <div className="flex flex-wrap justify-start sm:justify-center gap-2">
         {toolNavItems.map((tool) => {
-          const isActive = pathname === tool.url
+          // Enhanced path matching - check if current path matches tool path
+          // Handle both exact match and sub-paths (like /meeting/istanbul-london)
+          const isActive = pathname === tool.url || 
+                          pathname === `${tool.url}/` ||
+                          (tool.id === 'meeting-planner' && pathname?.startsWith('/meeting'))
           
-          const className = `inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+          // CRITICAL: All items must have identical box model (same border width) to prevent layout shift
+          const className = `inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 border ${
             isActive
-              ? `${theme.accentBg} text-white shadow-md`
+              ? 'bg-blue-600 text-white border-blue-600 shadow-md'
               : isLight
-                ? 'bg-white/50 text-slate-600 hover:bg-white/70 border border-white/60'
-                : 'bg-slate-700/50 text-slate-300 hover:bg-slate-700/70 border border-slate-600/50'
+                ? 'bg-white/60 text-slate-600 hover:bg-white/80 border-slate-200'
+                : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 border-slate-600'
           }`
           
           // Alarm item - use button if callback provided
@@ -115,7 +116,7 @@ export default function ToolsMiniNav({ isLight, theme, onAlarmClick }: ToolsMini
                 onClick={onAlarmClick}
                 className={className}
               >
-                <span className={isActive ? 'text-white' : theme.accentText}>
+                <span className={isActive ? 'text-white' : isLight ? 'text-amber-600' : 'text-amber-400'}>
                   {tool.icon}
                 </span>
                 <span>{tool.name}</span>
@@ -129,7 +130,7 @@ export default function ToolsMiniNav({ isLight, theme, onAlarmClick }: ToolsMini
               href={tool.url}
               className={className}
             >
-              <span className={isActive ? 'text-white' : theme.accentText}>
+              <span className={isActive ? 'text-white' : isLight ? 'text-amber-600' : 'text-amber-400'}>
                 {tool.icon}
               </span>
               <span>{tool.name}</span>

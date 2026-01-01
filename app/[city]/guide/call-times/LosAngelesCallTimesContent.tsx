@@ -222,7 +222,7 @@ export default function LosAngelesCallTimesContent({ city }: Props) {
         </p>
         <p className="text-sm">
           <strong>Pro tip:</strong> Use our{' '}
-          <Link href="/tools/converter/" className={linkColor}>Time Zone Converter</Link> for exact 
+          <Link href="/time-converter/" className={linkColor}>Time Zone Converter</Link> for exact 
           calculations during DST transition periods.
         </p>
       </section>
@@ -329,7 +329,7 @@ export default function LosAngelesCallTimesContent({ city }: Props) {
             </div>
           </Link>
           <Link
-            href="/tools/meeting-planner/"
+            href="/meeting/"
             className={`flex items-center gap-2 p-3 rounded-lg ${
               isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
             }`}

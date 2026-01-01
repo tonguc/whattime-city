@@ -437,7 +437,7 @@ export default function SydneyCallTimesContent({ city }: Props) {
             </div>
           </Link>
           <Link
-            href="/tools/meeting-planner/"
+            href="/meeting/"
             className={`flex items-center gap-2 p-3 rounded-lg ${
               isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
             }`}

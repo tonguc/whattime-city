@@ -1,98 +1,91 @@
-/**
- * Meeting Planner Dynamic Page
- * /meeting/[cities]/ - City pair specific meeting planner
- */
-
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import MeetingPlannerClient from '@/components/meeting/MeetingPlannerClient'
-import DynamicContent from '@/components/meeting/DynamicContent'
-import { 
-  parseCityPair, 
-  getCanonicalUrl, 
-  generateTopCityPairs,
-  calculateTimeDifference
-} from '@/lib/meetingPlanner'
+import { cities } from '@/lib/cities'
+import { parseCities, generateTopCityPairs, getBusinessHoursOverlapCount } from '@/lib/meetingPlanner'
+import MeetingPageContent from '@/components/meeting/MeetingPageContent'
+import FAQSchema from '@/components/meeting/FAQSchema'
 
-type Props = {
+interface Props {
   params: { cities: string }
 }
 
-// ===== STATIC PARAMS GENERATION (TOP 1000 PAIRS) =====
+// Generate static params for top city pairs
 export async function generateStaticParams() {
-  const topPairs = generateTopCityPairs(1225) // 50 cities = 1,225 pairs
-  
-  console.log(`📊 Generating ${topPairs.length} static meeting pages`)
-  
-  return topPairs.map(pair => ({
-    cities: pair
+  const topPairs = generateTopCityPairs() // Returns string[] like "istanbul-london"
+  return topPairs.map(pairSlug => ({
+    cities: pairSlug // Already normalized!
   }))
 }
 
-// ===== METADATA GENERATION =====
+// ISR: Revalidate every 30 days
+export const revalidate = 60 * 60 * 24 * 30
+export const dynamicParams = true
+
+// Generate metadata
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const cityPair = parseCityPair(params.cities)
-  
-  if (!cityPair) {
+  const cityList = parseCities(params.cities)
+  if (!cityList) {
     return {
-      title: 'Meeting Planner - WhatTime.City',
-      description: 'Find the best meeting time across multiple time zones'
+      title: 'Meeting Planner: Find Best Time to Call Across Time Zones | whattime.city',
+      description: 'Schedule meetings across time zones. Find business hours overlap and best time to call with our time zone converter.'
     }
   }
 
-  const { city1, city2 } = cityPair
-  const timeDiff = calculateTimeDifference(city1, city2)
-  const canonicalUrl = getCanonicalUrl(city1, city2)
-  
-  const title = `Best Meeting Time: ${city1.city} & ${city2.city} | Time Zone Scheduler`
-  const description = `Find the perfect meeting time between ${city1.city} (${city1.timezone}) and ${city2.city} (${city2.timezone}). ${city1.city} is ${timeDiff.hours}h ${timeDiff.minutes}m ${timeDiff.direction} of ${city2.city}. Compare business hours and schedule calls across time zones.`
+  // Single city (1 şehir)
+  if (cityList.length === 1) {
+    const city = cityList[0]
+    return {
+      title: `Best Time to Call ${city.city}: Current Time & Business Hours | whattime.city`,
+      description: `Check current time in ${city.city} (${city.timezone}). Find best time to call ${city.city} considering business hours (9 AM - 5 PM local time).`,
+      keywords: `${city.city} time, current time ${city.city}, best time to call ${city.city}, ${city.city} business hours, ${city.timezone}`,
+      alternates: {
+        canonical: `/meeting/${city.slug}`
+      },
+      openGraph: {
+        title: `Best Time to Call ${city.city}`,
+        description: `Current time and business hours in ${city.city}`,
+        type: 'website'
+      }
+    }
+  }
+
+  // Multiple cities (2+ şehir)
+  const cityNames = cityList.map(c => c.city)
+  const cityNamesText = cityNames.join(', ').replace(/, ([^,]*)$/, ' & $1')
+  const citySlugs = cityList.map(c => c.slug).sort().join('-vs-')
   
   return {
-    title,
-    description,
+    title: `Best Time to Call ${cityNamesText}: Business Hours Overlap | whattime.city`,
+    description: `Find the best meeting time between ${cityNamesText}. Compare business hours, calculate time differences, and schedule calls across time zones with working hours overlap.`,
+    keywords: `time zone converter, ${cityNamesText} time difference, best time to call, business hours overlap, meeting planner, schedule across time zones`,
     alternates: {
-      canonical: `https://whattime.city${canonicalUrl}`
+      canonical: `/meeting/${citySlugs}`
     },
     openGraph: {
-      title,
-      description,
-      url: `https://whattime.city${canonicalUrl}`,
+      title: `Meeting Planner: ${cityNamesText} Time Zone Comparison`,
+      description: `Find business hours overlap and best time to schedule calls between ${cityNamesText}`,
       type: 'website'
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description
     }
   }
 }
 
-// ===== ISR CONFIGURATION =====
-export const revalidate = 60 * 60 * 24 * 30 // 30 days
-export const dynamicParams = true // Allow on-demand generation for non-pre-rendered pairs
-
-// ===== MAIN COMPONENT =====
-export default async function MeetingPage({ params }: Props) {
-  const cityPair = parseCityPair(params.cities)
-
-  if (!cityPair) {
+export default function MeetingCitiesPage({ params }: Props) {
+  // Parse multiple cities
+  const cityList = parseCities(params.cities)
+  
+  if (!cityList) {
     notFound()
   }
 
-  const { city1, city2 } = cityPair
-
   return (
     <>
-      {/* Client Component - Interactive Tool */}
-      <MeetingPlannerClient 
-        initialCity1={city1}
-        initialCity2={city2}
-      />
+      {/* FAQ Schema for SEO */}
+      {cityList.length >= 2 && (
+        <FAQSchema city1={cityList[0]} city2={cityList[1]} />
+      )}
 
-      {/* Server Component - SEO Content */}
-      <section className="container mx-auto px-4 py-12 max-w-5xl">
-        <DynamicContent city1={city1} city2={city2} />
-      </section>
+      {/* Full Page Content with Header, Theme, Containers, Footer */}
+      <MeetingPageContent initialCities={cityList} />
     </>
   )
 }

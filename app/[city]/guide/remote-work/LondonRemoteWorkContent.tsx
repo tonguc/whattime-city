@@ -197,7 +197,7 @@ export default function LondonRemoteWorkContent({ city }: Props) {
           <Link href={`/${city.slug}/guide/business-hours/`} className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'}`}>
             <span>💼</span><span>London Business Hours</span>
           </Link>
-          <Link href="/tools/meeting-planner/" className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'}`}>
+          <Link href="/meeting/" className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'}`}>
             <span>📅</span><span>Meeting Planner Tool</span>
           </Link>
         </div>

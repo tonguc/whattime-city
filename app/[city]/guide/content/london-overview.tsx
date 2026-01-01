@@ -85,7 +85,7 @@ export default function LondonOverviewContent({ city, config, isLight, timeStr }
         </div>
         <p className={`mt-4 text-sm ${mutedColor}`}>
           Need exact conversions? Try our{' '}
-          <Link href="/tools/converter/" className={linkColor}>Time Converter</Link>
+          <Link href="/time-converter/" className={linkColor}>Time Converter</Link>
         </p>
       </section>
       

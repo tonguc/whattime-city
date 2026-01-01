@@ -99,6 +99,56 @@ export function normalizeCityPair(slug1: string, slug2: string): string {
 }
 
 /**
+ * Çoklu şehir sluglarını alfabetik sıralar ve `-vs-` ile birleştirir
+ * @example normalizeCities(['london', 'istanbul', 'berlin']) → 'berlin-vs-istanbul-vs-london'
+ */
+export function normalizeCities(slugs: string[]): string {
+  // Alfabetik sırala
+  const sorted = [...slugs].sort()
+  // `-vs-` ile birleştir
+  return sorted.join('-vs-')
+}
+
+/**
+ * URL'den çoklu şehir parse eder (supports both `-` and `-vs-` separators)
+ * @example parseCities('berlin-vs-istanbul-vs-london') → [City, City, City]
+ * @example parseCities('istanbul-london') → [City, City]
+ * @example parseCities('los-angeles') → [City] (single city with hyphen in name)
+ */
+export function parseCities(citiesParam: string): City[] | null {
+  // `-vs-` separator varsa önce ona göre split et
+  const parts = citiesParam.includes('-vs-') 
+    ? citiesParam.split('-vs-')
+    : [citiesParam]
+  
+  const cityList: City[] = []
+  
+  for (const part of parts) {
+    // ÖNCE tek şehir olarak ara (los-angeles, new-york, hong-kong gibi tire içeren slug'lar için)
+    const singleCity = getCityBySlug(part)
+    if (singleCity) {
+      cityList.push(singleCity)
+      continue
+    }
+    
+    // Tek şehir bulunamadıysa VE tire içeriyorsa, eski format dene (istanbul-london → 2 şehir)
+    if (parts.length === 1 && part.includes('-')) {
+      const pair = parseCityPair(part)
+      if (pair) {
+        cityList.push(pair.city1, pair.city2)
+        break
+      }
+    }
+    
+    // Hiçbiri çalışmadı - geçersiz şehir
+    return null
+  }
+  
+  // En az 1 şehir olmalı
+  return cityList.length >= 1 ? cityList : null
+}
+
+/**
  * City pair için canonical URL oluşturur
  */
 export function getCanonicalUrl(city1: City, city2: City): string {
@@ -237,6 +287,27 @@ export function hasBusinessHoursOverlap(city1: City, city2: City): boolean {
 }
 
 /**
+ * Returns count of business hours overlap (for SSR/SEO)
+ */
+export function getBusinessHoursOverlapCount(city1: City, city2: City): number {
+  let count = 0
+  
+  for (let utcHour = 0; utcHour < 24; utcHour++) {
+    const city1LocalHour = getLocalHour(city1, utcHour)
+    const city2LocalHour = getLocalHour(city2, utcHour)
+    
+    const isCity1Working = city1LocalHour >= 9 && city1LocalHour <= 17
+    const isCity2Working = city2LocalHour >= 9 && city2LocalHour <= 17
+    
+    if (isCity1Working && isCity2Working) {
+      count++
+    }
+  }
+  
+  return count
+}
+
+/**
  * Top city pairs generate eder (static generation için)
  */
 export function generateTopCityPairs(limit: number = 1000): string[] {
@@ -249,7 +320,8 @@ export function generateTopCityPairs(limit: number = 1000): string[] {
   
   for (let i = 0; i < topCities.length && pairs.length < limit; i++) {
     for (let j = i + 1; j < topCities.length && pairs.length < limit; j++) {
-      const normalized = normalizeCityPair(topCities[i].slug, topCities[j].slug)
+      // Use normalizeCities for -vs- format (even for 2 cities)
+      const normalized = normalizeCities([topCities[i].slug, topCities[j].slug])
       pairs.push(normalized)
     }
   }

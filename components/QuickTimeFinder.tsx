@@ -96,7 +96,7 @@ export default function QuickTimeFinder({
       </div>
 
       {/* CTA Button */}
-      <Link href="/tools/meeting-planner">
+      <Link href="/meeting/">
         <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 px-6 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 group">
           <span>Open Full Meeting Planner</span>
           <span className="group-hover:translate-x-1 transition-transform">→</span>
