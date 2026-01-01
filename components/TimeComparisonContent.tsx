@@ -163,7 +163,7 @@ const FAQItem = ({ question, answer, isLight }: { question: string, answer: stri
         </svg>
       </button>
       {isOpen && (
-        <div className={`pb-4 text-sm ${mainTheme.textMuted}`}>
+        <div className={`pb-4 text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
           {answer}
         </div>
       )}
