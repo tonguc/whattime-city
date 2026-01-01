@@ -571,11 +571,11 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
       }`}>
         <div className="flex items-center gap-1.5 text-xs">
           <div className={`w-4 h-4 rounded ${isLight ? 'bg-blue-600' : 'bg-blue-500'}`}></div>
-          <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>Business hours (9-17)</span>
+          <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>Business hours (9–17)</span>
         </div>
         <div className="flex items-center gap-1.5 text-xs">
           <div className={`w-4 h-4 rounded ${isLight ? 'bg-blue-400' : 'bg-blue-500/70'}`}></div>
-          <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>Awake (7-23)</span>
+          <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>Awake (outside business)</span>
         </div>
         <div className="flex items-center gap-1.5 text-xs">
           <div className={`w-4 h-4 rounded ${isLight ? 'bg-slate-100 border border-slate-300' : 'bg-slate-700/50 border border-slate-600'}`}></div>

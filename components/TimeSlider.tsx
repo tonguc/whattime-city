@@ -56,6 +56,11 @@ export default function TimeSlider({ initialCities = [], onCitiesChange, hideCon
   const dragStartOffset = useRef(0)
   const searchRef = useRef<HTMLDivElement>(null)
 
+  // Sync with parent's initialCities when they change
+  useEffect(() => {
+    setSelectedCities(initialCities)
+  }, [initialCities])
+
   // Update base time every minute
   useEffect(() => {
     const timer = setInterval(() => {
@@ -283,11 +288,11 @@ export default function TimeSlider({ initialCities = [], onCitiesChange, hideCon
           <div className={`flex flex-wrap items-center gap-4 pb-2 mb-1 border-b ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
             <div className="flex items-center gap-1.5 text-xs">
               <div className={`w-3 h-3 rounded ${isLight ? 'bg-green-100 border border-green-300' : 'bg-green-900/30 border border-green-700'}`}></div>
-              <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>Business hours (9-17)</span>
+              <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>Business hours (9–17)</span>
             </div>
             <div className="flex items-center gap-1.5 text-xs">
               <div className={`w-3 h-3 rounded ${isLight ? 'bg-slate-200' : 'bg-slate-800'}`}></div>
-              <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>Night (22-6)</span>
+              <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>Night (22–6)</span>
             </div>
           </div>
           
