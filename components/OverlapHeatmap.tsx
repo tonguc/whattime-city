@@ -317,7 +317,7 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
             📊 Overlap Heatmap
           </h3>
           <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-            Reference: {refCityName} time • Darker = better overlap
+            All times shown in <span className={`font-semibold ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>{refCityName} time</span> • Darker = better overlap
           </p>
         </div>
         
@@ -588,6 +588,18 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
                   : isLight ? 'text-amber-600' : 'text-amber-500'
               }`}>
                 {bestOverlap.duration} hour{bestOverlap.duration > 1 ? 's' : ''} available in this window
+              </div>
+              
+              {/* Micro-closure - decision moment */}
+              <div className={`mt-3 pt-3 border-t text-sm font-medium ${
+                bestOverlap.score === 1
+                  ? isLight ? 'border-green-200 text-green-700' : 'border-green-700 text-green-300'
+                  : isLight ? 'border-amber-200 text-amber-700' : 'border-amber-700 text-amber-300'
+              }`}>
+                {bestOverlap.score === 1 
+                  ? '→ This is the most balanced time for your meeting.'
+                  : '→ This is the best compromise given the time zone difference.'
+                }
               </div>
             </div>
           </div>

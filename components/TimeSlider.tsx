@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
-import { useRouter, usePathname } from 'next/navigation'
 import { City, cities, searchCities } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
 
@@ -42,9 +41,6 @@ const isBusinessHour = (hour: number): boolean => hour >= 9 && hour < 17
 const isNightHour = (hour: number): boolean => hour >= 22 || hour < 6
 
 export default function TimeSlider({ initialCities = [], onCitiesChange, hideControls = false }: TimeSliderProps) {
-  const router = useRouter()
-  const pathname = usePathname()
-  
   // ALWAYS use global CityContext theme (based on USER's location)
   const { theme, isLight } = useCityContext()
   
@@ -156,22 +152,6 @@ export default function TimeSlider({ initialCities = [], onCitiesChange, hideCon
       window.removeEventListener('touchend', handleMouseUp)
     }
   }, [isDragging, handleMouseMove, handleMouseUp])
-
-  // Reset to now
-  const resetToNow = () => {
-    setOffsetHours(0)
-    setBaseTime(new Date())
-    
-    // Navigate to default meeting URL with current cities
-    if (selectedCities.length >= 2) {
-      const slugs = [selectedCities[0].slug, selectedCities[1].slug].sort()
-      router.push(`/meeting/${slugs.join('-vs-')}/`)
-    } else if (selectedCities.length === 1) {
-      router.push(`/meeting/${selectedCities[0].slug}`)
-    } else {
-      router.push('/meeting')
-    }
-  }
 
   // Calculate overlap hours (memoized for performance)
   const overlapHours = useMemo(() => {
@@ -299,6 +279,18 @@ export default function TimeSlider({ initialCities = [], onCitiesChange, hideCon
       {/* Time Slider */}
       {selectedCities.length > 0 ? (
         <div className="space-y-3">
+          {/* Legend - moved to top for better reading order */}
+          <div className={`flex flex-wrap items-center gap-4 pb-2 mb-1 border-b ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
+            <div className="flex items-center gap-1.5 text-xs">
+              <div className={`w-3 h-3 rounded ${isLight ? 'bg-green-100 border border-green-300' : 'bg-green-900/30 border border-green-700'}`}></div>
+              <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>Business hours (9-17)</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-xs">
+              <div className={`w-3 h-3 rounded ${isLight ? 'bg-slate-200' : 'bg-slate-800'}`}></div>
+              <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>Night (22-6)</span>
+            </div>
+          </div>
+          
           {selectedCities.map((city, idx) => {
             const time = getAdjustedTime(city)
             const currentHour = time.getHours()
@@ -407,30 +399,14 @@ export default function TimeSlider({ initialCities = [], onCitiesChange, hideCon
             </div>
           )}
 
-          {/* Controls */}
-          <div className="flex items-center justify-between pt-2">
-            <div className={`text-xs ${theme.textMuted}`}>
-              {offsetHours !== 0 && (
-                <span>
-                  {offsetHours > 0 ? '+' : ''}{Math.round(offsetHours * 10) / 10}h from now
-                </span>
-              )}
+          {/* Controls - offset indicator only */}
+          {offsetHours !== 0 && (
+            <div className="flex items-center justify-end pt-2">
+              <span className={`text-xs ${theme.textMuted}`}>
+                {offsetHours > 0 ? '+' : ''}{Math.round(offsetHours * 10) / 10}h from now
+              </span>
             </div>
-            <button
-              type="button"
-              onClick={resetToNow}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all hover:scale-105 ${
-                isLight
-                  ? 'bg-blue-100 hover:bg-blue-200 text-blue-700'
-                  : 'bg-blue-900/50 hover:bg-blue-800/50 text-blue-300'
-              }`}
-            >
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              Reset to Now
-            </button>
-          </div>
+          )}
         </div>
       ) : (
         /* Empty State */
@@ -442,18 +418,6 @@ export default function TimeSlider({ initialCities = [], onCitiesChange, hideCon
           <p className="text-sm mt-1">Drag the timeline to find the best meeting time</p>
         </div>
       )}
-
-      {/* Legend */}
-      <div className={`flex flex-wrap items-center justify-center gap-4 mt-4 pt-4 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
-        <div className="flex items-center gap-1.5 text-xs">
-          <div className={`w-3 h-3 rounded ${isLight ? 'bg-green-100 border border-green-300' : 'bg-green-900/30 border border-green-700'}`}></div>
-          <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>Business hours (9-17)</span>
-        </div>
-        <div className="flex items-center gap-1.5 text-xs">
-          <div className={`w-3 h-3 rounded ${isLight ? 'bg-slate-200' : 'bg-slate-800'}`}></div>
-          <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>Night (22-6)</span>
-        </div>
-      </div>
     </div>
   )
 }

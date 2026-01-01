@@ -41,6 +41,11 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
   // View mode state - tab'lı görselleştirme
   const [viewMode, setViewMode] = useState<'heatmap' | 'timeline'>('heatmap')
   
+  // Snackbar state for undo
+  const [showSnackbar, setShowSnackbar] = useState(false)
+  const [clearedCities, setClearedCities] = useState<City[]>([])
+  const snackbarTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  
   // Prevent URL sync on initial mount
   const isInitialMount = useRef(true)
   
@@ -114,6 +119,48 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
     setSelectedCities(selectedCities.filter(c => c.slug !== slug))
   }
   
+  // Clear all cities
+  const clearAllCities = () => {
+    // Store for undo
+    setClearedCities([...selectedCities])
+    setSelectedCities([])
+    
+    // Show snackbar
+    setShowSnackbar(true)
+    
+    // Clear previous timeout if any
+    if (snackbarTimeoutRef.current) {
+      clearTimeout(snackbarTimeoutRef.current)
+    }
+    
+    // Auto-hide after 6 seconds
+    snackbarTimeoutRef.current = setTimeout(() => {
+      setShowSnackbar(false)
+      setClearedCities([])
+    }, 6000)
+  }
+  
+  // Undo clear
+  const undoClear = () => {
+    if (clearedCities.length > 0) {
+      setSelectedCities(clearedCities)
+      setClearedCities([])
+      setShowSnackbar(false)
+      if (snackbarTimeoutRef.current) {
+        clearTimeout(snackbarTimeoutRef.current)
+      }
+    }
+  }
+  
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (snackbarTimeoutRef.current) {
+        clearTimeout(snackbarTimeoutRef.current)
+      }
+    }
+  }, [])
+  
   // City tag colors - VIVID (same as TimeSlider)
   const cityColors = [
     'bg-blue-500', 'bg-emerald-500', 'bg-purple-500', 
@@ -166,19 +213,35 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
               </span>
             </h2>
             
-            {/* Add City Button - TimeSlider style */}
-            {selectedCities.length < 6 && (
-              <div className="relative" ref={searchRef}>
+            {/* Action Buttons */}
+            <div className="flex items-center gap-2">
+              {/* Clear all - ghost button, only show when 2+ cities */}
+              {selectedCities.length >= 2 && (
                 <button
-                  onClick={() => setShowSearch(!showSearch)}
-                  className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                  onClick={clearAllCities}
+                  className={`px-3 py-2 rounded-xl text-sm font-medium transition-all ${
                     isLight
-                      ? 'bg-blue-100 hover:bg-blue-200 text-blue-700'
-                      : 'bg-blue-900/50 hover:bg-blue-800/50 text-blue-300'
+                      ? 'text-slate-500 hover:text-slate-700 hover:bg-slate-100'
+                      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
                   }`}
                 >
-                  + Add City
+                  Clear all
                 </button>
+              )}
+              
+              {/* Add City Button */}
+              {selectedCities.length < 6 && (
+                <div className="relative" ref={searchRef}>
+                  <button
+                    onClick={() => setShowSearch(!showSearch)}
+                    className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                      isLight
+                        ? 'bg-blue-100 hover:bg-blue-200 text-blue-700'
+                        : 'bg-blue-900/50 hover:bg-blue-800/50 text-blue-300'
+                    }`}
+                  >
+                    + Add City
+                  </button>
                 
                 {/* Search Dropdown */}
                 {showSearch && (
@@ -219,6 +282,7 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
                 )}
               </div>
             )}
+            </div>
           </div>
           
           {/* Selected Cities Tags - VIVID COLORS */}
@@ -255,7 +319,7 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
             
             {selectedCities.length === 0 && (
               <p className={`text-sm ${theme.textMuted}`}>
-                Add cities above to start planning your meeting
+                Add cities to compare meeting times
               </p>
             )}
             
@@ -270,27 +334,31 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
         
         {/* View Mode Tabs */}
         <div className="flex flex-col items-center mb-4">
-          <div className={`inline-flex rounded-xl p-1 ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
+          <div className={`inline-flex rounded-full p-1 ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
             <button
               onClick={() => setViewMode('heatmap')}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
                 viewMode === 'heatmap'
                   ? isLight 
-                    ? 'bg-white shadow text-blue-600'
-                    : 'bg-slate-700 shadow text-blue-400'
-                  : theme.textMuted
+                    ? 'bg-white shadow-sm text-slate-800'
+                    : 'bg-slate-700 shadow-sm text-white'
+                  : isLight
+                    ? 'text-slate-500 hover:text-slate-700'
+                    : 'text-slate-400 hover:text-slate-200'
               }`}
             >
               📊 Heatmap View
             </button>
             <button
               onClick={() => setViewMode('timeline')}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
                 viewMode === 'timeline'
                   ? isLight 
-                    ? 'bg-white shadow text-blue-600'
-                    : 'bg-slate-700 shadow text-blue-400'
-                  : theme.textMuted
+                    ? 'bg-white shadow-sm text-slate-800'
+                    : 'bg-slate-700 shadow-sm text-white'
+                  : isLight
+                    ? 'text-slate-500 hover:text-slate-700'
+                    : 'text-slate-400 hover:text-slate-200'
               }`}
             >
               ⏱️ Timeline View
@@ -314,6 +382,18 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
           </section>
         ) : (
           <section className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border ${theme.card}`}>
+            {/* Recommended window from Heatmap - only show when 2+ cities */}
+            {selectedCities.length >= 2 && (
+              <div className={`mb-4 p-3 rounded-xl flex items-center gap-2 ${
+                isLight ? 'bg-blue-50 border border-blue-200' : 'bg-blue-900/20 border border-blue-800/50'
+              }`}>
+                <span className="text-blue-500">💡</span>
+                <span className={`text-sm ${isLight ? 'text-blue-700' : 'text-blue-300'}`}>
+                  <span className="font-medium">Recommended from Heatmap:</span> 18:00–23:00 ({selectedCities[0]?.city || 'Reference'} time) — switch to Heatmap view for details
+                </span>
+              </div>
+            )}
+            
             <h3 className={`text-lg font-bold mb-2 ${theme.text}`}>
               🔍 Explore other time options
             </h3>
@@ -431,6 +511,45 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
       
       {/* Footer */}
       <Footer isLight={isLight} />
+      
+      {/* Snackbar - Cities cleared with Undo */}
+      {showSnackbar && (
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 animate-in slide-in-from-bottom-4 fade-in duration-300">
+          <div className={`flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg ${
+            isLight 
+              ? 'bg-slate-800 text-white' 
+              : 'bg-white text-slate-800'
+          }`}>
+            <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="text-sm font-medium">Cities cleared</span>
+            <button
+              onClick={undoClear}
+              className={`ml-2 px-3 py-1 rounded-lg text-sm font-medium transition-colors ${
+                isLight 
+                  ? 'bg-white/20 hover:bg-white/30 text-white' 
+                  : 'bg-slate-800/20 hover:bg-slate-800/30 text-slate-800'
+              }`}
+            >
+              Undo
+            </button>
+            <button
+              onClick={() => setShowSnackbar(false)}
+              className={`p-1 rounded-lg transition-colors ${
+                isLight 
+                  ? 'hover:bg-white/20' 
+                  : 'hover:bg-slate-800/20'
+              }`}
+              aria-label="Dismiss"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
