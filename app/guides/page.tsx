@@ -30,7 +30,7 @@ export default function GuidesPage() {
       
       <main className="flex-1 max-w-7xl mx-auto px-4 py-8 w-full">
         {/* Page Title */}
-        <div className="mb-6">
+        <div className="text-center mb-6">
           <h1 className={`text-3xl font-bold ${theme.text} mb-2`}>
             City Time Zone Guides
           </h1>

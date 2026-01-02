@@ -19,7 +19,7 @@ export default function WorldAlarmPage() {
     <ToolPageWrapper footer={<Footer />}>
       <ToolsMiniNav />
 
-      <div className="text-center mb-8">
+      <div className="text-center mb-6">
         <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${theme.text}`}>
           World Alarm Clock
         </h1>
@@ -53,7 +53,7 @@ export default function WorldAlarmPage() {
         </div>
       </div>
 
-      <section className={`${cardClass} mb-6`}>
+      <section className={`${cardClass} mb-4`}>
         <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>Common Use Cases</h2>
         <ul className={`space-y-3 ${theme.textMuted}`}>
           <li className="flex gap-3"><span className={`${theme.accentText} mt-1`}>•</span><div><strong>International meetings</strong> — Never miss a 9 AM call with overseas colleagues.</div></li>
@@ -62,7 +62,7 @@ export default function WorldAlarmPage() {
         </ul>
       </section>
 
-      <section className={`${cardClass} mb-8`}>
+      <section className={`${cardClass} mb-4`}>
         <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>Related Tools</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <Link href="/time-converter" className={`p-4 ${boxClass} transition-all hover:scale-[1.02]`}>

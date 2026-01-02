@@ -43,7 +43,7 @@ export default function EventTimePage() {
     <ToolPageWrapper footer={<Footer />}>
       <ToolsMiniNav />
 
-      <div className="text-center mb-8">
+      <div className="text-center mb-6">
         <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${theme.text}`}>
           Event Time Converter
         </h1>
@@ -52,7 +52,7 @@ export default function EventTimePage() {
         </p>
       </div>
 
-      <div className={`${cardClass} mb-8`}>
+      <div className={`${cardClass} mb-4`}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div>
             <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>Event Name</label>
@@ -120,7 +120,7 @@ export default function EventTimePage() {
         </div>
       </div>
 
-      <section className={`${cardClass} mb-6`}>
+      <section className={`${cardClass} mb-4`}>
         <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>Common Use Cases</h2>
         <ul className={`space-y-3 ${theme.textMuted}`}>
           <li className="flex gap-3"><span className={`${theme.accentText} mt-1`}>•</span><div><strong>Live streaming announcements</strong> — Let global audiences know when to tune in.</div></li>
@@ -130,7 +130,7 @@ export default function EventTimePage() {
         </ul>
       </section>
 
-      <section className={`${cardClass} mb-6`}>
+      <section className={`${cardClass} mb-4`}>
         <h2 className={`text-xl font-semibold mb-3 ${theme.text}`}>Who Is This Tool For?</h2>
         <p className={theme.textMuted}>
           Content creators, event organizers, marketing teams, and community managers will find this tool 
@@ -139,7 +139,7 @@ export default function EventTimePage() {
         </p>
       </section>
 
-      <section className={`${cardClass} mb-6`}>
+      <section className={`${cardClass} mb-4`}>
         <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>Related Tools</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <Link href="/meeting" className={`p-4 ${boxClass} transition-all hover:scale-[1.02]`}>
@@ -157,7 +157,7 @@ export default function EventTimePage() {
         </div>
       </section>
 
-      <section className={`${cardClass} mb-8`}>
+      <section className={`${cardClass} mb-4`}>
         <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>Frequently Asked Questions</h2>
         <div className={`space-y-4 ${theme.textMuted}`}>
           <div>

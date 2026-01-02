@@ -57,7 +57,7 @@ export default function CountriesContent() {
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-8">
         {/* Page Title */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-6">
           <h1 className={`text-3xl sm:text-4xl font-bold ${textMain} mb-3 flex items-center justify-center gap-3`}>
             <svg className="w-9 h-9 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10"/>
@@ -72,7 +72,7 @@ export default function CountriesContent() {
         </div>
         
         {/* SEO Intro Section */}
-        <div className={`rounded-2xl p-6 mb-10 ${isLight ? 'bg-white/60' : 'bg-slate-800/40'}`}>
+        <div className={`rounded-2xl p-6 mb-4 ${isLight ? 'bg-white/60' : 'bg-slate-800/40'}`}>
           <p className={`${theme.textMuted} leading-relaxed`}>
             Explore current local time, time zones, and detailed information for countries around the world. 
             Our comprehensive directory covers {totalCountries} countries across five continents, providing 

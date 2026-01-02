@@ -52,7 +52,7 @@ export default function FlightTimePage() {
       <ToolsMiniNav />
 
       {/* Tool Hero */}
-      <div className="text-center mb-8">
+      <div className="text-center mb-6">
         <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${theme.text}`}>
           Flight Time Calculator
         </h1>
@@ -62,7 +62,7 @@ export default function FlightTimePage() {
       </div>
 
       {/* Tool Interface - Main Card */}
-      <div className={`${cardClass} mb-8`}>
+      <div className={`${cardClass} mb-4`}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Departure */}
           <div>
@@ -149,7 +149,7 @@ export default function FlightTimePage() {
       </div>
 
       {/* SEO SECTION 1: Common Use Cases */}
-      <section className={`${cardClass} mb-6`}>
+      <section className={`${cardClass} mb-4`}>
         <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
           Common Use Cases
         </h2>
@@ -174,7 +174,7 @@ export default function FlightTimePage() {
       </section>
 
       {/* SEO SECTION 2: Who Is This Tool For? */}
-      <section className={`${cardClass} mb-6`}>
+      <section className={`${cardClass} mb-4`}>
         <h2 className={`text-xl font-semibold mb-3 ${theme.text}`}>
           Who Is This Tool For?
         </h2>
@@ -186,7 +186,7 @@ export default function FlightTimePage() {
       </section>
 
       {/* SEO SECTION 3: Related Tools */}
-      <section className={`${cardClass} mb-6`}>
+      <section className={`${cardClass} mb-4`}>
         <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
           Related Tools
         </h2>
@@ -207,7 +207,7 @@ export default function FlightTimePage() {
       </section>
 
       {/* SEO SECTION 4: FAQ */}
-      <section className={`${cardClass} mb-8`}>
+      <section className={`${cardClass} mb-4`}>
         <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
           Frequently Asked Questions
         </h2>

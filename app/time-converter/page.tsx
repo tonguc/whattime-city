@@ -48,7 +48,7 @@ export default function TimeConverterPage() {
     <ToolPageWrapper footer={<Footer />}>
       <ToolsMiniNav />
 
-      <div className="text-center mb-8">
+      <div className="text-center mb-6">
         <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${theme.text}`}>
           Time Converter
         </h1>
@@ -57,7 +57,7 @@ export default function TimeConverterPage() {
         </p>
       </div>
 
-      <div className={`${cardClass} mb-8`}>
+      <div className={`${cardClass} mb-4`}>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
           {/* From City */}
           <div>
@@ -125,7 +125,7 @@ export default function TimeConverterPage() {
         </div>
       </div>
 
-      <section className={`${cardClass} mb-6`}>
+      <section className={`${cardClass} mb-4`}>
         <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>Common Use Cases</h2>
         <ul className={`space-y-3 ${theme.textMuted}`}>
           <li className="flex gap-3"><span className={`${theme.accentText} mt-1`}>•</span><div><strong>Scheduling international calls</strong> — Find the right time to call colleagues, clients, or family abroad.</div></li>
@@ -135,7 +135,7 @@ export default function TimeConverterPage() {
         </ul>
       </section>
 
-      <section className={`${cardClass} mb-6`}>
+      <section className={`${cardClass} mb-4`}>
         <h2 className={`text-xl font-semibold mb-3 ${theme.text}`}>Who Is This Tool For?</h2>
         <p className={theme.textMuted}>
           This tool is ideal for remote workers, international business professionals, frequent travelers, 
@@ -144,7 +144,7 @@ export default function TimeConverterPage() {
         </p>
       </section>
 
-      <section className={`${cardClass} mb-6`}>
+      <section className={`${cardClass} mb-4`}>
         <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>Related Tools</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <Link href="/meeting" className={`p-4 ${boxClass} transition-all hover:scale-[1.02]`}>
@@ -162,7 +162,7 @@ export default function TimeConverterPage() {
         </div>
       </section>
 
-      <section className={`${cardClass} mb-8`}>
+      <section className={`${cardClass} mb-4`}>
         <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>Frequently Asked Questions</h2>
         <div className={`space-y-4 ${theme.textMuted}`}>
           <div>

@@ -86,7 +86,7 @@ export default function CitiesContent() {
 
       <main className="max-w-6xl mx-auto px-4 py-6">
         {/* Page Header */}
-        <div className="mb-6">
+        <div className="text-center mb-6">
           <h1 className={`text-3xl font-bold mb-2 ${theme.text}`}>
             🌍 All Cities
           </h1>
@@ -96,7 +96,7 @@ export default function CitiesContent() {
         </div>
 
         {/* Search & Filter Bar */}
-        <div className={`rounded-2xl p-4 mb-6 backdrop-blur-xl border ${theme.card}`}>
+        <div className={`rounded-2xl p-4 mb-4 backdrop-blur-xl border ${theme.card}`}>
           {/* Search Input */}
           <div className="relative mb-4">
             <svg

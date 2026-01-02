@@ -364,21 +364,19 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
         {/* Tools Mini Navigation */}
         <ToolsMiniNav />
         
-        {/* Hero Section */}
-        <section className={`rounded-3xl p-6 md:p-8 mb-6 backdrop-blur-xl border ${theme.card}`}>
-          <div className="text-center">
-            <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${theme.text}`}>
-              {getTitle()}
-            </h1>
-            <p className={`text-lg ${theme.textMuted}`}>
-              Find the best working-hour overlap across time zones
-            </p>
-          </div>
-        </section>
+        {/* Page Title - outside box like time-converter */}
+        <div className="text-center mb-6">
+          <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${theme.text}`}>
+            {getTitle()}
+          </h1>
+          <p className={`text-lg ${theme.textMuted}`}>
+            Find the best working-hour overlap across time zones
+          </p>
+        </div>
         
         {/* Participants Section - highest z-index for dropdown */}
         <section 
-          className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border relative ${theme.card}`}
+          className={`rounded-3xl p-6 mb-4 backdrop-blur-xl border relative ${theme.card}`}
           style={{ zIndex: 100, overflow: 'visible' }}
         >
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
@@ -580,13 +578,13 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
         
         {/* Visualization Section - Tab content */}
         {viewMode === 'heatmap' ? (
-          <section className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border ${theme.card}`}>
+          <section className={`rounded-3xl p-6 mb-4 backdrop-blur-xl border ${theme.card}`}>
             <OverlapHeatmap 
               cities={selectedCities}
             />
           </section>
         ) : (
-          <section className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border ${theme.card}`}>
+          <section className={`rounded-3xl p-6 mb-4 backdrop-blur-xl border ${theme.card}`}>
             {/* Best time info banner */}
             {bestTimeInfo && bestTimeInfo.type !== 'none' && selectedCities.length >= 2 && (
               <div className={`mb-4 p-3 rounded-xl flex items-center gap-2 ${
@@ -638,7 +636,7 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
         )}
         
         {/* Use Cases Section */}
-        <section className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border ${theme.card}`}>
+        <section className={`rounded-3xl p-6 mb-4 backdrop-blur-xl border ${theme.card}`}>
           <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
             Common Use Cases
           </h2>
@@ -675,7 +673,7 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
         </section>
         
         {/* FAQ Section */}
-        <section className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border ${theme.card}`}>
+        <section className={`rounded-3xl p-6 mb-4 backdrop-blur-xl border ${theme.card}`}>
           <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
             Frequently Asked Questions
           </h2>
@@ -709,7 +707,7 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
         </section>
         
         {/* Related Tools Section */}
-        <section className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border ${theme.card}`}>
+        <section className={`rounded-3xl p-6 mb-4 backdrop-blur-xl border ${theme.card}`}>
           <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
             Related Tools
           </h2>
