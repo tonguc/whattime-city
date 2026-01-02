@@ -1224,7 +1224,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
         </div>
         
         {/* FAQ Section */}
-        <section className={`rounded-3xl p-6 mb-8 ${mainTheme.card}`}>
+        <section className={`rounded-3xl p-6 mb-8 border ${mainTheme.card}`}>
           <h2 className={`text-xl font-semibold mb-4 ${mainTheme.text}`}>
             ❓ Frequently Asked Questions
           </h2>
@@ -1236,7 +1236,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
         </section>
         
         {/* SEO Content Section */}
-        <section className={`rounded-2xl p-6 ${mainTheme.card}`}>
+        <section className={`rounded-2xl p-6 border ${mainTheme.card}`}>
           <h2 className={`text-xl font-semibold mb-4 ${mainTheme.text}`}>
             Time Difference Between {fromCity.city} and {toCity.city}
           </h2>
