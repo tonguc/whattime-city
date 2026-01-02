@@ -52,7 +52,7 @@ export default function JetLagPage() {
     <ToolPageWrapper footer={<Footer />}>
       <ToolsMiniNav />
 
-      <div className="text-center mb-8">
+      <div className="text-center mb-6">
         <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${theme.text}`}>
           Jet Lag Advisor
         </h1>
@@ -61,7 +61,7 @@ export default function JetLagPage() {
         </p>
       </div>
 
-      <div className={`${cardClass} mb-8`}>
+      <div className={`${cardClass} mb-4`}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div>
             <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>Traveling From</label>
@@ -120,7 +120,7 @@ export default function JetLagPage() {
         )}
       </div>
 
-      <section className={`${cardClass} mb-6`}>
+      <section className={`${cardClass} mb-4`}>
         <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>Common Use Cases</h2>
         <ul className={`space-y-3 ${theme.textMuted}`}>
           <li className="flex gap-3"><span className={`${theme.accentText} mt-1`}>•</span><div><strong>Business trip preparation</strong> — Arrive alert and ready for important meetings.</div></li>
@@ -130,7 +130,7 @@ export default function JetLagPage() {
         </ul>
       </section>
 
-      <section className={`${cardClass} mb-6`}>
+      <section className={`${cardClass} mb-4`}>
         <h2 className={`text-xl font-semibold mb-3 ${theme.text}`}>Who Is This Tool For?</h2>
         <p className={theme.textMuted}>
           Long-haul travelers, business executives, athletes, and anyone crossing 3+ time zones will benefit 
@@ -139,7 +139,7 @@ export default function JetLagPage() {
         </p>
       </section>
 
-      <section className={`${cardClass} mb-6`}>
+      <section className={`${cardClass} mb-4`}>
         <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>Related Tools</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <Link href="/flight-time" className={`p-4 ${boxClass} transition-all hover:scale-[1.02]`}>
@@ -157,7 +157,7 @@ export default function JetLagPage() {
         </div>
       </section>
 
-      <section className={`${cardClass} mb-8`}>
+      <section className={`${cardClass} mb-4`}>
         <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>Frequently Asked Questions</h2>
         <div className={`space-y-4 ${theme.textMuted}`}>
           <div>

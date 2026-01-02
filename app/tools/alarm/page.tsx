@@ -15,7 +15,7 @@ export default function WorldAlarmPage() {
       <ToolsMiniNav />
 
       {/* Tool Hero */}
-      <div className="text-center mb-8">
+      <div className="text-center mb-6">
         <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
           World Alarm Clock
         </h1>
@@ -25,7 +25,7 @@ export default function WorldAlarmPage() {
       </div>
 
       {/* Main Card */}
-      <div className={`rounded-2xl p-8 mb-8 backdrop-blur-xl border text-center ${
+      <div className={`rounded-2xl p-8 mb-4 backdrop-blur-xl border text-center ${
         isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
       }`}>
         <div className={`w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center ${theme.accentBg}`}>
@@ -53,7 +53,7 @@ export default function WorldAlarmPage() {
       </div>
 
       {/* SEO Content */}
-      <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
+      <section className={`rounded-2xl p-6 mb-4 backdrop-blur-xl border ${
         isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
       }`}>
         <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
@@ -76,7 +76,7 @@ export default function WorldAlarmPage() {
       </section>
 
       {/* Related Tools */}
-      <section className={`rounded-2xl p-6 mb-8 backdrop-blur-xl border ${
+      <section className={`rounded-2xl p-6 mb-4 backdrop-blur-xl border ${
         isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
       }`}>
         <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>

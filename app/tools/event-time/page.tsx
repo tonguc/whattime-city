@@ -47,7 +47,7 @@ export default function EventTimePage() {
       <ToolsMiniNav />
 
         {/* Tool Hero */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
           <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
             Event Time Converter
           </h1>
@@ -57,7 +57,7 @@ export default function EventTimePage() {
         </div>
 
         {/* Tool Interface */}
-        <div className={`rounded-2xl p-6 mb-8 backdrop-blur-xl border ${
+        <div className={`rounded-2xl p-6 mb-4 backdrop-blur-xl border ${
           isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
         }`}>
           {/* Event Setup */}
@@ -154,7 +154,7 @@ export default function EventTimePage() {
         </div>
 
         {/* SEO SECTION 1: Common Use Cases */}
-        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
+        <section className={`rounded-2xl p-6 mb-4 backdrop-blur-xl border ${
           isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
         }`}>
           <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
@@ -189,7 +189,7 @@ export default function EventTimePage() {
         </section>
 
         {/* SEO SECTION 2: Who Is This Tool For? */}
-        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
+        <section className={`rounded-2xl p-6 mb-4 backdrop-blur-xl border ${
           isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
         }`}>
           <h2 className={`text-xl font-semibold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
@@ -203,7 +203,7 @@ export default function EventTimePage() {
         </section>
 
         {/* SEO SECTION 3: Related Tools */}
-        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
+        <section className={`rounded-2xl p-6 mb-4 backdrop-blur-xl border ${
           isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
         }`}>
           <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
@@ -232,7 +232,7 @@ export default function EventTimePage() {
         </section>
 
         {/* SEO SECTION 4: FAQ */}
-        <section className={`rounded-2xl p-6 mb-8 backdrop-blur-xl border ${
+        <section className={`rounded-2xl p-6 mb-4 backdrop-blur-xl border ${
           isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
         }`}>
           <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>

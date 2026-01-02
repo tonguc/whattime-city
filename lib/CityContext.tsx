@@ -68,9 +68,14 @@ export function CityProvider({ children }: { children: ReactNode }) {
   const [use12Hour, setUse12HourState] = useState(false)
   const [favorites, setFavorites] = useState<string[]>([])
   
-  // Set mounted on client
+  // Set mounted on client and immediately detect city via timezone
   useEffect(() => {
     setMounted(true)
+    // Immediately set detectedCity based on timezone to prevent layout shift
+    // This runs before geolocation to avoid waiting 3-4 seconds
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+    const tzCity = cities.find(c => c.timezone === tz) || cities.find(c => c.slug === 'london') || cities[0]
+    setDetectedCity(tzCity)
   }, [])
   
   // Timer - update time every second

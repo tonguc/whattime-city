@@ -258,16 +258,17 @@ export default function HomePage() {
               </svg>
             </span>
           </Link>
-          <Link href="/time-converter/" className={`p-5 rounded-2xl backdrop-blur-xl transition-all hover:scale-[1.02] group border ${card}`}>
+          <Link href="/cities/" className={`p-5 rounded-2xl backdrop-blur-xl transition-all hover:scale-[1.02] group border ${card}`}>
             <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-green-100' : 'bg-green-900/30'}`}>
               <svg className={`w-5 h-5 ${isLight ? 'text-green-600' : 'text-green-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                <circle cx="12" cy="12" r="10" strokeWidth={2} />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
               </svg>
             </div>
-            <h3 className={`font-semibold mb-1 ${text}`}>Convert Time</h3>
-            <p className={`text-sm mb-3 ${textMuted}`}>Convert one time to another city</p>
+            <h3 className={`font-semibold mb-1 ${text}`}>World Cities</h3>
+            <p className={`text-sm mb-3 ${textMuted}`}>Browse 400+ cities worldwide</p>
             <span className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-semibold transition-all ${isLight ? 'bg-green-500 text-white group-hover:bg-green-600' : 'bg-green-600 text-white group-hover:bg-green-500'}`}>
-              Convert
+              Explore
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>

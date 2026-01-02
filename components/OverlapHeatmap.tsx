@@ -411,7 +411,7 @@ export default function OverlapHeatmap({ cities, referenceTimezone }: OverlapHea
           {/* Tooltip - heatmap bar üstünde */}
           {selectedHour !== null && (
             <div 
-              className={`absolute bottom-full mb-2 px-4 py-3 rounded-xl shadow-2xl border max-w-[280px] pointer-events-none ${
+              className={`absolute bottom-full mb-2 px-4 py-3 rounded-xl shadow-2xl border max-w-[280px] max-h-[60vh] overflow-y-auto pointer-events-none ${
                 isLight 
                   ? 'bg-white border-slate-200 text-slate-800' 
                   : 'bg-slate-800 border-slate-600 text-white'
@@ -419,7 +419,7 @@ export default function OverlapHeatmap({ cities, referenceTimezone }: OverlapHea
               style={{
                 left: `${(selectedHour / 24) * 100}%`,
                 transform: selectedHour < 3 ? 'translateX(0)' : selectedHour > 21 ? 'translateX(-100%)' : 'translateX(-50%)',
-                zIndex: 50
+                zIndex: 9999
               }}
             >
               {(() => {

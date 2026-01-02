@@ -83,7 +83,7 @@ const nextConfig = {
     ]
   },
 
-  // Headers (Güvenlik ve Cache) - Olduğu gibi kalabilir, sorunsuz.
+  // Headers (Güvenlik ve Cache)
   async headers() {
     return [
       {
@@ -97,6 +97,19 @@ const nextConfig = {
         source: '/static/:path*',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      // ✅ Tool sayfaları için CDN cache (1 gün cache, 7 gün stale)
+      {
+        source: '/time/:from/:to/',
+        headers: [
+          { key: 'Cache-Control', value: 'public, s-maxage=86400, stale-while-revalidate=604800' },
+        ],
+      },
+      {
+        source: '/meeting/:cities/',
+        headers: [
+          { key: 'Cache-Control', value: 'public, s-maxage=86400, stale-while-revalidate=604800' },
         ],
       },
     ]

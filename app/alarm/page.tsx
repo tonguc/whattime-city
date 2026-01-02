@@ -16,7 +16,7 @@ export default function WorldAlarmPage() {
         <ToolsMiniNav />
 
         {/* Tool Hero */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
         <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${theme.text}`}>
           World Alarm Clock
         </h1>

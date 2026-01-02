@@ -9,6 +9,19 @@ import Footer from '@/components/Footer'
 // Tool definitions - Normalized names (2 words, English only) - ROOT LEVEL URLs for SEO
 const tools = [
   {
+    id: 'compare-time',
+    name: 'Compare Time',
+    description: 'Compare current time between any two cities. See live clocks, time difference, and best times to call.',
+    url: '/time',
+    icon: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M2 12h20"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+    )
+  },
+  {
     id: 'meeting-planner',
     name: 'Meeting Planner',
     description: 'Find the best meeting time across multiple time zones. Visualize working hours overlap for global teams.',
@@ -24,20 +37,6 @@ const tools = [
         <path d="M16 14h.01"/>
         <path d="M8 18h.01"/>
         <path d="M12 18h.01"/>
-      </svg>
-    )
-  },
-  {
-    id: 'converter',
-    name: 'Time Converter',
-    description: 'Convert time between any two cities instantly. Perfect for scheduling international calls and meetings.',
-    url: '/time-converter',
-    icon: (
-      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"/>
-        <polyline points="12 6 12 12 16 14"/>
-        <path d="M17 21l2-2-2-2"/>
-        <path d="M7 3L5 5l2 2"/>
       </svg>
     )
   },

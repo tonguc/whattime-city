@@ -56,7 +56,7 @@ export default function JetLagPage() {
       <ToolsMiniNav />
 
         {/* Tool Hero */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
           <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
             Jet Lag Advisor
           </h1>
@@ -66,7 +66,7 @@ export default function JetLagPage() {
         </div>
 
         {/* Tool Interface */}
-        <div className={`rounded-2xl p-6 mb-8 backdrop-blur-xl border ${
+        <div className={`rounded-2xl p-6 mb-4 backdrop-blur-xl border ${
           isLight ? 'bg-white/60 border-white/50' : 'bg-slate-800/60 border-slate-700/50'
         }`}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -150,7 +150,7 @@ export default function JetLagPage() {
         </div>
 
         {/* SEO SECTION 1: Common Use Cases */}
-        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
+        <section className={`rounded-2xl p-6 mb-4 backdrop-blur-xl border ${
           isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
         }`}>
           <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
@@ -185,7 +185,7 @@ export default function JetLagPage() {
         </section>
 
         {/* SEO SECTION 2: Who Is This Tool For? */}
-        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
+        <section className={`rounded-2xl p-6 mb-4 backdrop-blur-xl border ${
           isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
         }`}>
           <h2 className={`text-xl font-semibold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
@@ -199,7 +199,7 @@ export default function JetLagPage() {
         </section>
 
         {/* SEO SECTION 3: Related Tools */}
-        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
+        <section className={`rounded-2xl p-6 mb-4 backdrop-blur-xl border ${
           isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
         }`}>
           <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
@@ -228,7 +228,7 @@ export default function JetLagPage() {
         </section>
 
         {/* SEO SECTION 4: FAQ */}
-        <section className={`rounded-2xl p-6 mb-8 backdrop-blur-xl border ${
+        <section className={`rounded-2xl p-6 mb-4 backdrop-blur-xl border ${
           isLight ? 'bg-white/40 border-white/50' : 'bg-slate-800/40 border-slate-700/50'
         }`}>
           <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>

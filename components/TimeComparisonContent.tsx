@@ -568,7 +568,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
         </div>
         
         {/* Current Time Cards with Weather & Phone Codes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
           {/* From City */}
           <div className={`p-6 rounded-3xl backdrop-blur-xl border ${mainTheme.card}`}>
             <div className="flex items-start justify-between mb-3">
@@ -579,12 +579,24 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
                   <p className={`text-xs ${mainTheme.textMuted}`}>{fromCity.country}</p>
                 </div>
               </div>
-              {fromWeather && (
-                <div className={`flex items-center gap-1 px-2 py-1 rounded-lg text-sm ${isLight ? 'bg-gray-100' : 'bg-slate-700'}`}>
-                  <img src={`https:${fromWeather.current.condition.icon}`} alt="" className="w-6 h-6" />
-                  <span className={isLight ? 'text-slate-700' : 'text-slate-200'}>{Math.round(fromWeather.current.temp_c)}°</span>
+              <div className="flex items-center gap-2">
+                {fromWeather && (
+                  <div className={`flex items-center gap-1 px-2 py-1 rounded-lg text-sm ${isLight ? 'bg-gray-100' : 'bg-slate-700'}`}>
+                    <img src={`https:${fromWeather.current.condition.icon}`} alt="" className="w-6 h-6" />
+                    <span className={isLight ? 'text-slate-700' : 'text-slate-200'}>{Math.round(fromWeather.current.temp_c)}°</span>
+                  </div>
+                )}
+                {/* Time Difference Badge - inline */}
+                <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm border ${mainTheme.card}`}>
+                  <span>⏱️</span>
+                  <span className={mainTheme.textMuted}>
+                    <span className={`font-bold ${mainTheme.text}`}>
+                      {formatTimeDifference(Math.abs(diffHours))}
+                    </span>
+                    {' '}{diffHours > 0 ? `ahead` : diffHours < 0 ? `behind` : `same`}
+                  </span>
                 </div>
-              )}
+              </div>
             </div>
             <div className={`text-4xl font-bold mb-2 ${mainTheme.text}`}>{fromTime}</div>
             <p className={`text-sm ${mainTheme.textMuted}`}>{fromDate}</p>
@@ -636,19 +648,8 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
           </div>
         </div>
         
-        {/* Time Difference Badge */}
-        <div className={`text-center mb-8 py-3 px-6 rounded-full inline-flex mx-auto items-center gap-2 border ${mainTheme.card}`} style={{ display: 'flex', width: 'fit-content', margin: '0 auto 2rem auto' }}>
-          <span className="text-2xl">⏱️</span>
-          <p className={`text-lg ${mainTheme.textMuted}`}>
-            <span className={`font-bold ${mainTheme.text}`}>
-              {formatTimeDifference(Math.abs(diffHours))}
-            </span>
-            {' '}{diffHours > 0 ? `ahead` : diffHours < 0 ? `behind` : `same time`}
-          </p>
-        </div>
-        
         {/* Interactive Time Slider */}
-        <div className={`p-6 rounded-3xl backdrop-blur-xl border mb-8 ${mainTheme.card}`}>
+        <div className={`p-6 rounded-3xl backdrop-blur-xl border mb-4 ${mainTheme.card}`}>
           <h3 className={`text-lg font-semibold mb-2 flex items-center gap-2 ${mainTheme.text}`}>
             🕐 Interactive Time Explorer
           </h3>

@@ -59,7 +59,7 @@ export default function TimeConverterPage() {
         <ToolsMiniNav />
 
         {/* Tool Hero */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
           <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${theme.text}`}>
             Time Converter
           </h1>
@@ -69,7 +69,7 @@ export default function TimeConverterPage() {
         </div>
 
         {/* Tool Interface */}
-        <div className={`rounded-2xl p-6 mb-8 backdrop-blur-xl ${
+        <div className={`rounded-2xl p-6 mb-4 backdrop-blur-xl ${
           theme.card
         }`}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
@@ -166,7 +166,7 @@ export default function TimeConverterPage() {
         </div>
 
         {/* SEO SECTION 1: Common Use Cases */}
-        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl ${
+        <section className={`rounded-2xl p-6 mb-4 backdrop-blur-xl ${
           theme.card
         }`}>
           <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
@@ -201,7 +201,7 @@ export default function TimeConverterPage() {
         </section>
 
         {/* SEO SECTION 2: Who Is This Tool For? */}
-        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl ${
+        <section className={`rounded-2xl p-6 mb-4 backdrop-blur-xl ${
           theme.card
         }`}>
           <h2 className={`text-xl font-semibold mb-3 ${theme.text}`}>
@@ -215,7 +215,7 @@ export default function TimeConverterPage() {
         </section>
 
         {/* SEO SECTION 3: Related Tools */}
-        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl ${
+        <section className={`rounded-2xl p-6 mb-4 backdrop-blur-xl ${
           theme.card
         }`}>
           <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
@@ -244,7 +244,7 @@ export default function TimeConverterPage() {
         </section>
 
         {/* SEO SECTION 4: FAQ */}
-        <section className={`rounded-2xl p-6 mb-8 backdrop-blur-xl ${
+        <section className={`rounded-2xl p-6 mb-4 backdrop-blur-xl ${
           theme.card
         }`}>
           <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
