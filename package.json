@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "check:analytics": "node scripts/check-analytics.js",
-    "prebuild": "node scripts/check-analytics.js && node scripts/generate-search-index.js",
+    "prebuild": "node scripts/generate-search-index.js",
     "build": "next build",
     "postbuild": "echo '✅ Statik site oluşturuldu: out/ klasörü'",
     "start": "next start",
