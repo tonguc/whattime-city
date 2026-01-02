@@ -1,11 +1,15 @@
+'use client'
+
 import { City } from '@/lib/cities'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 
 interface TravelBridgeProps {
   city: City
-  isLight: boolean
 }
 
-export default function TravelBridge({ city, isLight }: TravelBridgeProps) {
+export default function TravelBridge({ city }: TravelBridgeProps) {
+  const { isLight } = useThemeClasses()
+  
   if (!city.info) return null
   
   return (

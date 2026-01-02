@@ -1,19 +1,21 @@
+'use client'
+
 import { City } from '@/lib/cities'
-import { themes } from '@/lib/themes'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 
 interface TimeIntelligenceProps {
   city: City
-  theme: typeof themes[keyof typeof themes]
-  isLight: boolean
 }
 
-export default function TimeIntelligence({ city, theme, isLight }: TimeIntelligenceProps) {
+export default function TimeIntelligence({ city }: TimeIntelligenceProps) {
+  const { card, text, textMuted, isLight } = useThemeClasses()
+  
   if (!city.info?.seoContent) return null
 
   const seoContent = city.info.seoContent
 
   return (
-    <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
+    <div className={`rounded-3xl p-6 backdrop-blur-xl border ${card} mt-4`}>
       <div className="flex items-center gap-3 mb-6">
         <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${isLight ? 'bg-indigo-100' : 'bg-indigo-900/30'}`}>
           <svg className={`w-5 h-5 ${isLight ? 'text-indigo-600' : 'text-indigo-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -22,14 +24,14 @@ export default function TimeIntelligence({ city, theme, isLight }: TimeIntellige
             <path d="M2 12h2M20 12h2M12 2v2M12 20v2"/>
           </svg>
         </div>
-        <h2 className={`text-xl font-bold ${theme.text}`}>
+        <h2 className={`text-xl font-bold ${text}`}>
           Time in {city.city}
         </h2>
       </div>
       
       <div className="space-y-5">
         {/* Intro */}
-        <p className={`leading-relaxed ${theme.textMuted}`}>{seoContent.intro}</p>
+        <p className={`leading-relaxed ${textMuted}`}>{seoContent.intro}</p>
         
         {/* DST Info */}
         {seoContent.daylightSaving && (
@@ -39,24 +41,24 @@ export default function TimeIntelligence({ city, theme, isLight }: TimeIntellige
                 <circle cx="12" cy="12" r="5"/>
                 <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
               </svg>
-              <h3 className={`font-semibold ${theme.text}`}>Daylight Saving Time</h3>
+              <h3 className={`font-semibold ${text}`}>Daylight Saving Time</h3>
             </div>
-            <p className={`leading-relaxed ${theme.textMuted}`}>{seoContent.daylightSaving}</p>
+            <p className={`leading-relaxed ${textMuted}`}>{seoContent.daylightSaving}</p>
           </div>
         )}
         
         {/* Time Difference */}
         {seoContent.timeDifference && (
           <div>
-            <h3 className={`font-semibold mb-2 flex items-center gap-2 ${theme.text}`}>
-              <svg className={`w-4 h-4 ${theme.textMuted}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <h3 className={`font-semibold mb-2 flex items-center gap-2 ${text}`}>
+              <svg className={`w-4 h-4 ${textMuted}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <circle cx="6" cy="12" r="4"/>
                 <circle cx="18" cy="12" r="4"/>
                 <path d="M10 12h4"/>
               </svg>
               Time Difference
             </h3>
-            <p className={`leading-relaxed ${theme.textMuted}`}>{seoContent.timeDifference}</p>
+            <p className={`leading-relaxed ${textMuted}`}>{seoContent.timeDifference}</p>
           </div>
         )}
         
@@ -67,15 +69,15 @@ export default function TimeIntelligence({ city, theme, isLight }: TimeIntellige
               <rect x="2" y="3" width="20" height="14" rx="2"/>
               <path d="M8 21h8M12 17v4"/>
             </svg>
-            <h3 className={`font-semibold ${theme.text}`}>Business Hours</h3>
+            <h3 className={`font-semibold ${text}`}>Business Hours</h3>
           </div>
-          <p className={`leading-relaxed ${theme.textMuted}`}>{seoContent.businessHours}</p>
+          <p className={`leading-relaxed ${textMuted}`}>{seoContent.businessHours}</p>
         </div>
         
         {/* Timezone Facts */}
         <div>
-          <h3 className={`font-semibold mb-2 ${theme.text}`}>Timezone Facts</h3>
-          <p className={`leading-relaxed ${theme.textMuted}`}>{seoContent.timezoneFacts}</p>
+          <h3 className={`font-semibold mb-2 ${text}`}>Timezone Facts</h3>
+          <p className={`leading-relaxed ${textMuted}`}>{seoContent.timezoneFacts}</p>
         </div>
       </div>
     </div>

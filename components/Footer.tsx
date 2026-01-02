@@ -2,22 +2,18 @@
 
 import Link from 'next/link'
 import { TimeIcons } from '@/components/TimeIcons'
-import { useCityContext } from '@/lib/CityContext'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 
 interface FooterProps {
-  isLight?: boolean  // Optional for backward compatibility
+  // Legacy prop - kept for backward compatibility, no longer used
+  isLight?: boolean
 }
 
-export default function Footer({ isLight: isLightProp }: FooterProps = {}) {
-  const context = useCityContext()
-  
-  // Use prop if provided, otherwise use context
-  const { theme, isLight: contextIsLight } = context
-  const isLight = isLightProp !== undefined ? isLightProp : contextIsLight
-  const textMuted = isLight ? 'text-slate-500' : 'text-slate-400'
+export default function Footer(_props: FooterProps) {
+  const { card, textMuted } = useThemeClasses()
   
   return (
-    <footer className={`py-6 border-t backdrop-blur-xl ${theme.card} shadow-sm`}>
+    <footer className={`py-6 border-t backdrop-blur-xl ${card} shadow-sm`}>
       <div className="max-w-6xl mx-auto px-4">
         {/* Links Row */}
         <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4">

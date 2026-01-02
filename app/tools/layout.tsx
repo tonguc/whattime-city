@@ -7,7 +7,7 @@ import AlarmModal, { ActiveAlarmPopup } from '@/components/AlarmModal'
 import { useAlarm } from '@/shared/hooks'
 
 export default function ToolsLayout({ children }: { children: ReactNode }) {
-  const { theme, isLight } = useCityContext()
+  const { theme } = useCityContext()
   const [showAlarmModal, setShowAlarmModal] = useState(false)
   const { alarms, setAlarms, activeAlarm, dismissAlarm } = useAlarm()
 
@@ -38,22 +38,18 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
         )}
       </button>
       
-      {/* Alarm Modal */}
+      {/* Alarm Modal - no longer needs isLight/theme props */}
       <AlarmModal
         isOpen={showAlarmModal}
         onClose={() => setShowAlarmModal(false)}
-        isLight={isLight}
-        theme={theme}
         alarms={alarms}
         setAlarms={setAlarms}
       />
       
-      {/* Active Alarm Popup */}
+      {/* Active Alarm Popup - no longer needs isLight/theme props */}
       <ActiveAlarmPopup
         alarm={activeAlarm}
         onDismiss={dismissAlarm}
-        isLight={isLight}
-        theme={theme}
       />
     </div>
   )

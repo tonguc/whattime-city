@@ -4,26 +4,20 @@ import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useCityContext } from '@/lib/CityContext'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 import { City, searchCities } from '@/lib/cities'
 import CitySearch from '@/components/CitySearch'
 
 interface HeaderProps {
+  // Legacy props - kept for backward compatibility, no longer used
   isLight?: boolean
+  theme?: unknown
 }
 
-function Header({ isLight: propsIsLight }: HeaderProps) {
+function Header(_props: HeaderProps) {
   const router = useRouter()
   const context = useCityContext()
-  
-  // ✅ Use prop if provided, otherwise use context
-  const isLight = propsIsLight !== undefined ? propsIsLight : context.isLight
-  
-  // ✅ Create local theme
-  const activeTheme = {
-    text: isLight ? 'text-slate-800' : 'text-white',
-    textMuted: isLight ? 'text-slate-500' : 'text-slate-400',
-    accentBg: 'bg-blue-600',
-  }
+  const { text, textMuted, accentBg, isLight } = useThemeClasses()
   
   // Search state
   const [searchQuery, setSearchQuery] = useState('')
@@ -117,7 +111,7 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
         <div className="flex-1 max-w-xs hidden sm:block" ref={searchRef}>
           <div className="relative">
             <div className={`flex items-center gap-2 px-3 py-2 rounded-full ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
-              <svg className={`w-4 h-4 ${activeTheme.textMuted}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className={`w-4 h-4 ${textMuted}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
               <input
@@ -127,7 +121,7 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
                 onKeyDown={handleSearchKeyDown}
                 onFocus={() => searchQuery && setShowSearchDropdown(true)}
                 placeholder="Search..."
-                className={`flex-1 bg-transparent outline-none text-sm ${activeTheme.text} w-full`}
+                className={`flex-1 bg-transparent outline-none text-sm ${text} w-full`}
                 style={{ fontSize: '16px' }}
               />
             </div>
@@ -150,10 +144,10 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
                         : (isLight ? 'hover:bg-slate-50' : 'hover:bg-slate-700')
                     }`}>
                     <div>
-                      <span className={activeTheme.text}>{city.city}</span>
-                      <span className={`text-sm ml-2 ${activeTheme.textMuted}`}>{city.country}</span>
+                      <span className={text}>{city.city}</span>
+                      <span className={`text-sm ml-2 ${textMuted}`}>{city.country}</span>
                     </div>
-                    <span className={`text-sm ${activeTheme.textMuted}`}>{context.getLocalTime(city)}</span>
+                    <span className={`text-sm ${textMuted}`}>{context.getLocalTime(city)}</span>
                   </button>
                 ))}
               </div>
@@ -207,10 +201,10 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
                 style={{ zIndex: 999999 }}
                 onClick={(e) => e.stopPropagation()}
               >
-                <h4 className={`text-xs font-semibold uppercase tracking-wide mb-3 ${activeTheme.textMuted}`}>Preferences</h4>
+                <h4 className={`text-xs font-semibold uppercase tracking-wide mb-3 ${textMuted}`}>Preferences</h4>
                 
                 <div className="mb-4">
-                  <label className={`text-sm font-medium ${activeTheme.text} mb-2 block`}>Clock Display</label>
+                  <label className={`text-sm font-medium ${text} mb-2 block`}>Clock Display</label>
                   <div className="flex gap-2">
                     {(['digital', 'analog'] as const).map(mode => (
                       <button 
@@ -220,7 +214,7 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
                           e.stopPropagation()
                           context.setClockMode(mode)
                         }}
-                        className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${context.clockMode === mode ? `${activeTheme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>
+                        className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${context.clockMode === mode ? `${accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>
                         {mode === 'digital' ? 'Digital' : 'Analog'}
                       </button>
                     ))}
@@ -228,7 +222,7 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
                 </div>
                 
                 <div className="mb-4">
-                  <label className={`text-sm font-medium ${activeTheme.text} mb-2 block`}>Time Format</label>
+                  <label className={`text-sm font-medium ${text} mb-2 block`}>Time Format</label>
                   <div className="flex gap-2">
                     <button 
                       type="button"
@@ -236,7 +230,7 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
                         e.stopPropagation()
                         context.setUse12Hour(false)
                       }} 
-                      className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${!context.use12Hour ? `${activeTheme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>
+                      className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${!context.use12Hour ? `${accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>
                       24h
                     </button>
                     <button 
@@ -245,14 +239,14 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
                         e.stopPropagation()
                         context.setUse12Hour(true)
                       }} 
-                      className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${context.use12Hour ? `${activeTheme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>
+                      className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${context.use12Hour ? `${accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'}`}>
                       12h
                     </button>
                   </div>
                 </div>
                 
                 <div>
-                  <label className={`text-sm font-medium ${activeTheme.text} mb-2 block`}>Theme</label>
+                  <label className={`text-sm font-medium ${text} mb-2 block`}>Theme</label>
                   <div className="flex gap-2">
                     {(['light', 'auto', 'dark'] as const).map(mode => {
                       const labels = { light: 'Light Mode', auto: 'Auto (Day/Night)', dark: 'Dark Mode' }
@@ -266,7 +260,7 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
                             context.setThemeMode(mode)
                           }}
                           title={labels[mode]}
-                          className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${context.themeMode === mode ? `${activeTheme.accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600 hover:bg-slate-200' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'}`}>
+                          className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${context.themeMode === mode ? `${accentBg} text-white` : isLight ? 'bg-slate-100 text-slate-600 hover:bg-slate-200' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'}`}>
                           {icons[mode]}
                         </button>
                       )
@@ -282,7 +276,6 @@ function Header({ isLight: propsIsLight }: HeaderProps) {
       <div className="sm:hidden px-4 pb-3">
         <CitySearch 
           placeholder="Search city..."
-          isLight={isLight}
           className="w-full"
         />
       </div>

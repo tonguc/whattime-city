@@ -1,42 +1,41 @@
 'use client'
 
 import Link from 'next/link'
-
-interface RelatedToolsProps {
-  isLight: boolean
-}
+import { useThemeClasses } from '@/lib/useThemeClasses'
 
 const relatedTools = [
   {
     name: 'Time Converter',
     description: 'Convert times instantly',
-    url: '/time-converter',
+    url: '/converter',
     icon: '🕐'
   },
   {
     name: 'Event Time',
     description: 'Share event times',
-    url: '/event-time',
+    url: '/tools/event-time',
     icon: '📅'
   },
   {
     name: 'Flight Time',
     description: 'Calculate flight times',
-    url: '/flight-time',
+    url: '/flight-times',
     icon: '✈️'
   },
   {
     name: 'Jet Lag Advisor',
     description: 'Beat jet lag',
-    url: '/jet-lag-advisor',
+    url: '/jet-lag',
     icon: '🌍'
   }
 ]
 
-export default function RelatedTools({ isLight }: RelatedToolsProps) {
+export default function RelatedTools() {
+  const { text, textMuted, isLight } = useThemeClasses()
+  
   return (
     <section>
-      <h3 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-900' : 'text-white'}`}>
+      <h3 className={`text-xl font-semibold mb-4 ${text}`}>
         Related Tools
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -51,10 +50,10 @@ export default function RelatedTools({ isLight }: RelatedToolsProps) {
             }`}
           >
             <div className="text-3xl mb-2">{tool.icon}</div>
-            <h4 className={`font-semibold mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+            <h4 className={`font-semibold mb-1 ${text}`}>
               {tool.name}
             </h4>
-            <p className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+            <p className={`text-sm ${textMuted}`}>
               {tool.description}
             </p>
           </Link>

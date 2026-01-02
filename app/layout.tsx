@@ -90,6 +90,27 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Prevent FOUC by setting initial theme before React hydration */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var mode = localStorage.getItem('whattime-theme-mode');
+                  if (mode === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                  } else if (mode === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                  } else {
+                    document.documentElement.setAttribute('data-theme', 'auto');
+                  }
+                } catch (e) {
+                  document.documentElement.setAttribute('data-theme', 'auto');
+                }
+              })();
+            `,
+          }}
+        />
       </head>
       <body className="antialiased" suppressHydrationWarning>
         <CityProvider>

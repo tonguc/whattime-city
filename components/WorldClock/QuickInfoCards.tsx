@@ -1,11 +1,10 @@
+'use client'
+
 import { City } from '@/lib/cities'
-import { themes } from '@/lib/themes'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 
 interface QuickInfoCardsProps {
   city: City
-  localTime: Date
-  theme: typeof themes[keyof typeof themes]
-  isLight: boolean
 }
 
 // Plug type lookup by country code
@@ -30,14 +29,16 @@ const drivingLeft: string[] = [
   'ZA', 'KE', 'NG', 'PK', 'BD', 'CY', 'MT'
 ]
 
-export default function QuickInfoCards({ city, localTime, theme, isLight }: QuickInfoCardsProps) {
+export default function QuickInfoCards({ city }: QuickInfoCardsProps) {
+  const { card, text, textMuted, isLight } = useThemeClasses()
+  
   const plugType = plugTypes[city.countryCode] || 'C, F'
   const drivingSide = drivingLeft.includes(city.countryCode) ? 'Left' : 'Right'
 
   return (
     <>
       {/* Currency */}
-      <div className={`rounded-2xl p-4 backdrop-blur-xl border ${theme.card} flex items-center gap-3`}>
+      <div className={`rounded-2xl p-4 backdrop-blur-xl border ${card} flex items-center gap-3`}>
         <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${isLight ? 'bg-emerald-100' : 'bg-emerald-900/30'}`}>
           <svg className={`w-6 h-6 ${isLight ? 'text-emerald-600' : 'text-emerald-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
             <circle cx="12" cy="12" r="10"/>
@@ -45,26 +46,26 @@ export default function QuickInfoCards({ city, localTime, theme, isLight }: Quic
           </svg>
         </div>
         <div>
-          <div className={`text-xs uppercase tracking-wide ${theme.textMuted}`}>Currency</div>
-          <div className={`font-bold ${theme.text}`}>{city.info?.currencySymbol || '$'} {city.info?.currency || 'USD'}</div>
+          <div className={`text-xs uppercase tracking-wide ${textMuted}`}>Currency</div>
+          <div className={`font-bold ${text}`}>{city.info?.currencySymbol || '$'} {city.info?.currency || 'USD'}</div>
         </div>
       </div>
       
       {/* Phone Code */}
-      <div className={`rounded-2xl p-4 backdrop-blur-xl border ${theme.card} flex items-center gap-3`}>
+      <div className={`rounded-2xl p-4 backdrop-blur-xl border ${card} flex items-center gap-3`}>
         <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${isLight ? 'bg-blue-100' : 'bg-blue-900/30'}`}>
           <svg className={`w-6 h-6 ${isLight ? 'text-blue-600' : 'text-blue-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
             <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
           </svg>
         </div>
         <div>
-          <div className={`text-xs uppercase tracking-wide ${theme.textMuted}`}>Phone Code</div>
-          <div className={`font-bold ${theme.text}`}>{city.info?.phoneCode || '+1'}</div>
+          <div className={`text-xs uppercase tracking-wide ${textMuted}`}>Phone Code</div>
+          <div className={`font-bold ${text}`}>{city.info?.phoneCode || '+1'}</div>
         </div>
       </div>
       
       {/* Plug Type */}
-      <div className={`rounded-2xl p-4 backdrop-blur-xl border ${theme.card} flex items-center gap-3`}>
+      <div className={`rounded-2xl p-4 backdrop-blur-xl border ${card} flex items-center gap-3`}>
         <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${isLight ? 'bg-amber-100' : 'bg-amber-900/30'}`}>
           <svg className={`w-6 h-6 ${isLight ? 'text-amber-600' : 'text-amber-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
             <path d="M12 2v6"/>
@@ -77,13 +78,13 @@ export default function QuickInfoCards({ city, localTime, theme, isLight }: Quic
           </svg>
         </div>
         <div>
-          <div className={`text-xs uppercase tracking-wide ${theme.textMuted}`}>Plug Type</div>
-          <div className={`font-bold ${theme.text}`}>Type {plugType}</div>
+          <div className={`text-xs uppercase tracking-wide ${textMuted}`}>Plug Type</div>
+          <div className={`font-bold ${text}`}>Type {plugType}</div>
         </div>
       </div>
       
       {/* Driving Side */}
-      <div className={`rounded-2xl p-4 backdrop-blur-xl border ${theme.card} flex items-center gap-3`}>
+      <div className={`rounded-2xl p-4 backdrop-blur-xl border ${card} flex items-center gap-3`}>
         <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${isLight ? 'bg-purple-100' : 'bg-purple-900/30'}`}>
           <svg className={`w-6 h-6 ${isLight ? 'text-purple-600' : 'text-purple-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
             <circle cx="12" cy="12" r="10"/>
@@ -92,8 +93,8 @@ export default function QuickInfoCards({ city, localTime, theme, isLight }: Quic
           </svg>
         </div>
         <div>
-          <div className={`text-xs uppercase tracking-wide ${theme.textMuted}`}>Driving</div>
-          <div className={`font-bold ${theme.text}`}>{drivingSide} Side</div>
+          <div className={`text-xs uppercase tracking-wide ${textMuted}`}>Driving</div>
+          <div className={`font-bold ${text}`}>{drivingSide} Side</div>
         </div>
       </div>
     </>

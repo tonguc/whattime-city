@@ -3,12 +3,14 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { cities } from '@/lib/cities'
-import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
+import { useThemeClasses } from '@/lib/useThemeClasses'
+import { useCityContext } from '@/lib/CityContext'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 
 export default function FlightTimePage() {
-  const { theme, isLight, selectedCity } = useToolsTheme()
+  const { theme, isLight, text, textMuted, card, accentBg, accentText } = useThemeClasses()
+  const { activeCity } = useCityContext()
   
   const [currentTime, setCurrentTime] = useState(new Date())
   const [departureCity, setDepartureCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
@@ -19,10 +21,10 @@ export default function FlightTimePage() {
   
   // Sync departureCity with context when it becomes available
   useEffect(() => {
-    if (selectedCity) {
-      setDepartureCity(selectedCity)
+    if (activeCity) {
+      setDepartureCity(activeCity)
     }
-  }, [selectedCity])
+  }, [activeCity])
 
   // Calculate arrival time
   const getArrivalTime = () => {
@@ -277,7 +279,7 @@ export default function FlightTimePage() {
         </section>
 
         {/* Footer */}
-        <Footer isLight={isLight} />
+        <Footer />
     </>
   )
 }

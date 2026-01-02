@@ -3,12 +3,14 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { cities } from '@/lib/cities'
-import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
+import { useThemeClasses } from '@/lib/useThemeClasses'
+import { useCityContext } from '@/lib/CityContext'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 
 export default function JetLagPage() {
-  const { theme, isLight, selectedCity } = useToolsTheme()
+  const { theme, isLight, text, textMuted, card, accentBg, accentText } = useThemeClasses()
+  const { activeCity } = useCityContext()
   
   const [currentTime, setCurrentTime] = useState(new Date())
   const [fromCity, setFromCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
@@ -16,10 +18,10 @@ export default function JetLagPage() {
   
   // Sync fromCity with context when it becomes available
   useEffect(() => {
-    if (selectedCity) {
-      setFromCity(selectedCity)
+    if (activeCity) {
+      setFromCity(activeCity)
     }
-  }, [selectedCity])
+  }, [activeCity])
 
   // Calculate time difference
   const getTimeDiff = () => {
@@ -56,22 +58,22 @@ export default function JetLagPage() {
 
         {/* Tool Hero */}
         <div className="text-center mb-8">
-          <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${theme.text}`}>
             Jet Lag Advisor
           </h1>
-          <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          <p className={`text-lg ${theme.textMuted}`}>
             Get personalized jet lag recovery tips
           </p>
         </div>
 
         {/* Tool Interface */}
-        <div className={`rounded-2xl p-6 mb-8 backdrop-blur-xl border ${
-          isLight ? 'bg-white/60 border-white/70' : 'bg-slate-800/60 border-slate-700/50'
+        <div className={`rounded-2xl p-6 mb-8 backdrop-blur-xl ${
+          theme.card
         }`}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             {/* From */}
             <div>
-              <label className={`block text-sm font-medium mb-2 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+              <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>
                 Traveling From
               </label>
               <select
@@ -89,7 +91,7 @@ export default function JetLagPage() {
 
             {/* To */}
             <div>
-              <label className={`block text-sm font-medium mb-2 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+              <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>
                 Traveling To
               </label>
               <select
@@ -110,20 +112,20 @@ export default function JetLagPage() {
           <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-100' : 'bg-slate-700/50'}`}>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
               <div>
-                <div className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Time Difference</div>
+                <div className={`text-sm ${theme.textMuted}`}>Time Difference</div>
                 <div className={`text-2xl font-bold ${theme.accentText}`}>
                   {timeDiff > 0 ? '+' : ''}{timeDiff} hours
                 </div>
               </div>
               <div>
-                <div className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Direction</div>
-                <div className={`text-2xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                <div className={`text-sm ${theme.textMuted}`}>Direction</div>
+                <div className={`text-2xl font-bold ${theme.text}`}>
                   {timeDiff === 0 ? 'Same zone' : `Traveling ${direction}`}
                 </div>
               </div>
               <div>
-                <div className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Est. Recovery</div>
-                <div className={`text-2xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                <div className={`text-sm ${theme.textMuted}`}>Est. Recovery</div>
+                <div className={`text-2xl font-bold ${theme.text}`}>
                   {timeDiff === 0 ? 'None' : `${recoveryDays} days`}
                 </div>
               </div>
@@ -133,10 +135,10 @@ export default function JetLagPage() {
           {/* Tips */}
           {timeDiff !== 0 && (
             <div className="mt-6">
-              <h3 className={`font-medium mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <h3 className={`font-medium mb-3 ${theme.text}`}>
                 Recovery Tips for {direction}ward travel:
               </h3>
-              <ul className={`space-y-2 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+              <ul className={`space-y-2 ${theme.textMuted}`}>
                 {tips.map((tip, i) => (
                   <li key={i} className="flex gap-2 text-sm">
                     <span className={theme.accentText}>✓</span>
@@ -149,13 +151,13 @@ export default function JetLagPage() {
         </div>
 
         {/* SEO SECTION 1: Common Use Cases */}
-        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
-          isLight ? 'bg-white/40 border-white/70' : 'bg-slate-800/40 border-slate-700/50'
+        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl ${
+          theme.card
         }`}>
-          <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
             Common Use Cases
           </h2>
-          <ul className={`space-y-3 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          <ul className={`space-y-3 ${theme.textMuted}`}>
             <li className="flex gap-3">
               <span className={`${theme.accentText} mt-1`}>•</span>
               <div>
@@ -184,13 +186,13 @@ export default function JetLagPage() {
         </section>
 
         {/* SEO SECTION 2: Who Is This Tool For? */}
-        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
-          isLight ? 'bg-white/40 border-white/70' : 'bg-slate-800/40 border-slate-700/50'
+        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl ${
+          theme.card
         }`}>
-          <h2 className={`text-xl font-semibold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h2 className={`text-xl font-semibold mb-3 ${theme.text}`}>
             Who Is This Tool For?
           </h2>
-          <p className={`${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          <p className={`${theme.textMuted}`}>
             Long-haul travelers, business executives, athletes, and anyone crossing 3+ time zones will benefit 
             from these personalized recommendations. The tips are based on circadian rhythm science and vary 
             depending on whether you're traveling east or west.
@@ -198,44 +200,44 @@ export default function JetLagPage() {
         </section>
 
         {/* SEO SECTION 3: Related Tools */}
-        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
-          isLight ? 'bg-white/40 border-white/70' : 'bg-slate-800/40 border-slate-700/50'
+        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl ${
+          theme.card
         }`}>
-          <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
             Related Tools
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <Link href="/flight-times" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
               isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
             }`}>
-              <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Flight Time</div>
-              <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Calculate arrivals</div>
+              <div className={`text-sm font-medium ${theme.text}`}>Flight Time</div>
+              <div className={`text-xs ${theme.textMuted}`}>Calculate arrivals</div>
             </Link>
             <Link href="/converter" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
               isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
             }`}>
-              <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Time Converter</div>
-              <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Quick conversions</div>
+              <div className={`text-sm font-medium ${theme.text}`}>Time Converter</div>
+              <div className={`text-xs ${theme.textMuted}`}>Quick conversions</div>
             </Link>
             <Link href="/alarm" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
               isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
             }`}>
-              <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>World Alarm</div>
-              <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Adjust sleep schedule</div>
+              <div className={`text-sm font-medium ${theme.text}`}>World Alarm</div>
+              <div className={`text-xs ${theme.textMuted}`}>Adjust sleep schedule</div>
             </Link>
           </div>
         </section>
 
         {/* SEO SECTION 4: FAQ */}
-        <section className={`rounded-2xl p-6 mb-8 backdrop-blur-xl border ${
-          isLight ? 'bg-white/40 border-white/70' : 'bg-slate-800/40 border-slate-700/50'
+        <section className={`rounded-2xl p-6 mb-8 backdrop-blur-xl ${
+          theme.card
         }`}>
-          <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
             Frequently Asked Questions
           </h2>
-          <div className={`space-y-4 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          <div className={`space-y-4 ${theme.textMuted}`}>
             <div>
-              <h3 className={`font-medium mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <h3 className={`font-medium mb-1 ${theme.text}`}>
                 Is eastward or westward travel worse for jet lag?
               </h3>
               <p className="text-sm">
@@ -243,7 +245,7 @@ export default function JetLagPage() {
               </p>
             </div>
             <div>
-              <h3 className={`font-medium mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <h3 className={`font-medium mb-1 ${theme.text}`}>
                 How is recovery time calculated?
               </h3>
               <p className="text-sm">
@@ -251,7 +253,7 @@ export default function JetLagPage() {
               </p>
             </div>
             <div>
-              <h3 className={`font-medium mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <h3 className={`font-medium mb-1 ${theme.text}`}>
                 Do these tips work for everyone?
               </h3>
               <p className="text-sm">
@@ -264,7 +266,7 @@ export default function JetLagPage() {
 
       {/* Footer - Full Width */}
       <div className="relative z-10 mt-10">
-        <Footer isLight={isLight} />
+        <Footer />
       </div>
     </>
   )

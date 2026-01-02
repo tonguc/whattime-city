@@ -45,7 +45,7 @@ export default function CountriesContent() {
   const countriesByContinent = getCountriesByContinent()
   const totalCountries = countries.length
   
-  const textMain = isLight ? 'text-slate-800' : 'text-white'
+  const textMain = theme.text
   const textMuted = isLight ? 'text-slate-500' : 'text-slate-400'
   const cardBg = isLight ? 'bg-white/60 border-slate-200/50 hover:bg-white/80' : 'bg-slate-800/40 border-slate-700/50 hover:bg-slate-700/50'
   const badgeBg = isLight ? 'bg-slate-200 text-slate-600' : 'bg-slate-700 text-slate-300'
@@ -73,7 +73,7 @@ export default function CountriesContent() {
         
         {/* SEO Intro Section */}
         <div className={`rounded-2xl p-6 mb-10 ${isLight ? 'bg-white/60' : 'bg-slate-800/40'}`}>
-          <p className={`${isLight ? 'text-slate-600' : 'text-slate-300'} leading-relaxed`}>
+          <p className={`${theme.textMuted} leading-relaxed`}>
             Explore current local time, time zones, and detailed information for countries around the world. 
             Our comprehensive directory covers {totalCountries} countries across five continents, providing 
             accurate time zone data, capital cities, currencies, and phone codes. Whether you're planning 
@@ -150,7 +150,7 @@ export default function CountriesContent() {
           <h2 className={`text-xl font-semibold mb-4 ${textMain}`}>
             Understanding World Time Zones
           </h2>
-          <div className={`space-y-4 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          <div className={`space-y-4 ${theme.textMuted}`}>
             <p>
               The world is divided into 24 standard time zones, each typically spanning 15 degrees of longitude. 
               However, many countries have adopted time zones that don't follow these exact boundaries for 
@@ -189,7 +189,7 @@ export default function CountriesContent() {
         </div>
       </main>
 
-      <Footer isLight={isLight} />
+      <Footer />
     </div>
   )
 }

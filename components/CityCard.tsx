@@ -3,19 +3,21 @@
 import { useState, useEffect } from 'react'
 import { City } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
-import { themes, Theme } from '@/lib/themes'
+import { themes } from '@/lib/themes'
+import { useThemeClasses } from '@/lib/useThemeClasses'
+import { useCityContext } from '@/lib/CityContext'
 import TimeIcons from './TimeIcons'
 
 interface CityCardProps {
   city: City
   isSelected: boolean
   onClick: () => void
-  currentTheme: string
-  themeData: Theme
-  use12Hour: boolean
 }
 
-export default function CityCard({ city, isSelected, onClick, currentTheme, themeData, use12Hour }: CityCardProps) {
+export default function CityCard({ city, isSelected, onClick }: CityCardProps) {
+  const { text, textMuted, isLight, theme } = useThemeClasses()
+  const { use12Hour } = useCityContext()
+  
   const [time, setTime] = useState(new Date())
   
   useEffect(() => {
@@ -36,11 +38,9 @@ export default function CityCard({ city, isSelected, onClick, currentTheme, them
     timeStr = localTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })
   }
   
-  // Use real UTC time (time) for theme calculation, NOT localTime
+  // Calculate this city's time of day for icon
   const cityTimeOfDay = getTimeOfDay(time, city.lat, city.lng, city.timezone)
   const cityTheme = themes[cityTimeOfDay]
-  
-  const isLight = ['day', 'light'].includes(currentTheme)
   const Icon = TimeIcons[cityTimeOfDay]
   
   return (
@@ -48,7 +48,7 @@ export default function CityCard({ city, isSelected, onClick, currentTheme, them
       onClick={onClick}
       className={`group p-4 rounded-2xl transition-all duration-300 text-left backdrop-blur-xl border ${
         isSelected
-          ? `${themeData.accentBgLight} ${themeData.accentBorder} scale-[1.02] shadow-lg`
+          ? `${theme.accentBgLight} ${theme.accentBorder} scale-[1.02] shadow-lg`
           : isLight
             ? 'bg-white/40 border-white/50 hover:bg-white/60'
             : 'bg-slate-800/40 border-slate-700/50 hover:bg-slate-700/50'
@@ -56,10 +56,10 @@ export default function CityCard({ city, isSelected, onClick, currentTheme, them
     >
       <div className="flex items-center justify-between gap-4">
         <div className="min-w-0 flex-1">
-          <div className={`text-xs uppercase tracking-wide mb-0.5 truncate ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
+          <div className={`text-xs uppercase tracking-wide mb-0.5 truncate ${textMuted}`}>
             {city.country}
           </div>
-          <div className={`text-lg font-semibold truncate ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <div className={`text-lg font-semibold truncate ${text}`}>
             {city.city}
           </div>
         </div>

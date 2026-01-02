@@ -6,6 +6,7 @@ import { City } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes } from '@/lib/themes'
 import { useCityContext } from '@/lib/CityContext'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import CompareWidget from '@/components/CompareWidget'
@@ -143,14 +144,15 @@ const TimeOfDayIcon = ({ timeOfDay, size = 'md' }: { timeOfDay: string, size?: '
 }
 
 // FAQ Accordion Item
-const FAQItem = ({ question, answer, isLight }: { question: string, answer: string, isLight: boolean }) => {
+const FAQItem = ({ question, answer }: { question: string, answer: string }) => {
+  const { text, textMuted, isLight } = useThemeClasses()
   const [isOpen, setIsOpen] = useState(false)
   
   return (
     <div className={`border-b ${isLight ? 'border-gray-200' : 'border-slate-700'}`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-full py-4 flex items-center justify-between text-left ${isLight ? 'text-slate-700' : 'text-slate-200'}`}
+        className={`w-full py-4 flex items-center justify-between text-left ${text}`}
       >
         <span className="font-medium pr-4">{question}</span>
         <svg 
@@ -163,7 +165,7 @@ const FAQItem = ({ question, answer, isLight }: { question: string, answer: stri
         </svg>
       </button>
       {isOpen && (
-        <div className={`pb-4 text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+        <div className={`pb-4 text-sm ${textMuted}`}>
           {answer}
         </div>
       )}
@@ -259,10 +261,8 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
   const toOffset = getTimezoneOffset(toCity.timezone)
   const diffHours = toOffset - fromOffset
   
-  // USE CONTEXT THEME DIRECTLY - same as HomePage!
-  // CityContext already handles themeMode (auto/light/dark) calculation
-  const mainTheme = context.theme
-  const isLight = context.isLight
+  // Use centralized theme hook
+  const { theme: mainTheme, text, textMuted, card, isLight, accentBg, accentText, bgGradient } = useThemeClasses()
   
   // Format timezones
   const fromTimezoneStr = formatTimezone(fromCity.timezone, fromOffset)
@@ -546,7 +546,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
   
   return (
     <div className={`min-h-screen transition-colors duration-700 bg-gradient-to-br ${mainTheme.bg}`} style={{ overflow: 'visible' }}>
-      <Header isLight={isLight} />
+      <Header />
 
       <main className="max-w-6xl mx-auto px-4 py-8" style={{ overflow: 'visible' }}>
         {/* Title */}
@@ -564,7 +564,6 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
             initialFromCity={fromCity}
             initialToCity={toCity}
             onCitiesChange={handleCitiesChange}
-            isLight={isLight}
           />
         </div>
         
@@ -640,7 +639,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
         {/* Time Difference Badge */}
         <div className={`text-center mb-8 py-3 px-6 rounded-full inline-flex mx-auto items-center gap-2 border ${mainTheme.card}`} style={{ display: 'flex', width: 'fit-content', margin: '0 auto 2rem auto' }}>
           <span className="text-2xl">⏱️</span>
-          <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          <p className={`text-lg ${mainTheme.textMuted}`}>
             <span className={`font-bold ${mainTheme.text}`}>
               {formatTimeDifference(Math.abs(diffHours))}
             </span>
@@ -707,7 +706,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
             <div className={`p-4 rounded-xl text-center ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
               <div className="flex items-center justify-center gap-2 mb-2">
                 <TimeOfDayIcon timeOfDay={getHourTimeOfDay(sliderHour)} size="sm" />
-                <span className={`text-sm font-medium ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>{fromCity.city}</span>
+                <span className={`text-sm font-medium ${mainTheme.textMuted}`}>{fromCity.city}</span>
               </div>
               <div className={`text-3xl font-bold ${mainTheme.text}`}>
                 {sliderHour.toString().padStart(2, '0')}:00
@@ -716,7 +715,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
             <div className={`p-4 rounded-xl text-center ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
               <div className="flex items-center justify-center gap-2 mb-2">
                 <TimeOfDayIcon timeOfDay={getHourTimeOfDay(sliderToHour)} size="sm" />
-                <span className={`text-sm font-medium ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>{toCity.city}</span>
+                <span className={`text-sm font-medium ${mainTheme.textMuted}`}>{toCity.city}</span>
               </div>
               <div className={`text-3xl font-bold ${mainTheme.text}`}>
                 {sliderToHour.toString().padStart(2, '0')}:00
@@ -1180,7 +1179,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
                 <div key={hour} className={`p-3 rounded-xl text-center ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
                   <div className="flex items-center justify-center gap-1 mb-1">
                     <TimeOfDayIcon timeOfDay={hourTod} size="sm" />
-                    <p className={`font-medium ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
+                    <p className={`font-medium ${mainTheme.text}`}>
                       {hour.toString().padStart(2, '0')}:00
                     </p>
                   </div>
@@ -1230,7 +1229,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
           </h2>
           <div>
             {faqData.map((faq, idx) => (
-              <FAQItem key={idx} question={faq.question} answer={faq.answer} isLight={isLight} />
+              <FAQItem key={idx} question={faq.question} answer={faq.answer} />
             ))}
           </div>
         </section>
@@ -1240,7 +1239,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
           <h2 className={`text-xl font-semibold mb-4 ${mainTheme.text}`}>
             Time Difference Between {fromCity.city} and {toCity.city}
           </h2>
-          <div className={`space-y-4 text-sm ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          <div className={`space-y-4 text-sm ${mainTheme.textMuted}`}>
             <p>
               {fromCity.city}, {fromCity.country} and {toCity.city}, {toCity.country} are separated by a time 
               difference of {formatTimeDifference(Math.abs(diffHours))}. When it's noon in {fromCity.city}, 
@@ -1276,7 +1275,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
         </section>
       </main>
 
-      <Footer isLight={isLight} />
+      <Footer />
     </div>
   )
 }

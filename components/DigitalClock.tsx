@@ -1,15 +1,16 @@
 'use client'
 
-import { Theme } from '@/lib/themes'
+import { useThemeClasses } from '@/lib/useThemeClasses'
+import { useCityContext } from '@/lib/CityContext'
 
 interface DigitalClockProps {
   time: Date
-  theme: string
-  themeData: Theme
-  use12Hour: boolean
 }
 
-export default function DigitalClock({ time, theme, themeData, use12Hour }: DigitalClockProps) {
+export default function DigitalClock({ time }: DigitalClockProps) {
+  const { text, textMuted, accent, isLight } = useThemeClasses()
+  const { use12Hour } = useCityContext()
+  
   const hours24 = time.getHours()
   const minutes = time.getMinutes()
   const seconds = time.getSeconds()
@@ -30,12 +31,6 @@ export default function DigitalClock({ time, theme, themeData, use12Hour }: Digi
   const m = minutes.toString().padStart(2, '0')
   const s = seconds.toString().padStart(2, '0')
   
-  const isLight = ['day', 'light'].includes(theme)
-  
-  const mainColor = isLight ? 'text-slate-800' : 'text-white'
-  const secColor = isLight ? 'text-slate-500' : 'text-slate-400'
-  const accentColor = themeData.accentClass
-  
   return (
     <div className="flex flex-col items-center">
       {/* Fixed width container to prevent layout shift */}
@@ -47,16 +42,16 @@ export default function DigitalClock({ time, theme, themeData, use12Hour }: Digi
       >
         {/* Time digits with fixed width */}
         <div className="flex items-center justify-center" style={{ fontVariantNumeric: 'tabular-nums' }}>
-          <span className={`inline-block text-right ${mainColor}`} style={{ width: '1.15em' }}>{h}</span>
-          <span className={`${accentColor} animate-pulse`}>:</span>
-          <span className={`inline-block text-center ${mainColor}`} style={{ width: '1.15em' }}>{m}</span>
-          <span className={`${accentColor} animate-pulse`}>:</span>
-          <span className={`inline-block text-center ${secColor}`} style={{ width: '1.15em' }}>{s}</span>
+          <span className={`inline-block text-right ${text}`} style={{ width: '1.15em' }}>{h}</span>
+          <span className={`${accent} animate-pulse`}>:</span>
+          <span className={`inline-block text-center ${text}`} style={{ width: '1.15em' }}>{m}</span>
+          <span className={`${accent} animate-pulse`}>:</span>
+          <span className={`inline-block text-center ${textMuted}`} style={{ width: '1.15em' }}>{s}</span>
           
           {/* AM/PM - only show in 12h mode */}
           {use12Hour && (
             <span 
-              className={`font-medium ${secColor}`}
+              className={`font-medium ${textMuted}`}
               style={{ 
                 fontSize: '0.3em',
                 width: '2.2em',

@@ -32,7 +32,7 @@ export default function MeetingContentWrapper({ cities, overlapCount, children }
 
       {/* Single City Info */}
       {cities.length === 1 && (
-        <div className={`prose max-w-none ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+        <div className={`prose max-w-none ${theme.textMuted}`}>
           <h2 className={`text-2xl font-bold mb-4 ${isLight ? 'text-slate-900' : 'text-white'}`}>
             Current Time in {cities[0].city}
           </h2>

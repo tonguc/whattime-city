@@ -49,7 +49,7 @@ export default function JetLagPage() {
     : 'bg-slate-700 border-slate-600 text-white'
 
   return (
-    <ToolPageWrapper footer={<Footer isLight={isLight} />}>
+    <ToolPageWrapper footer={<Footer />}>
       <ToolsMiniNav />
 
       <div className="text-center mb-8">

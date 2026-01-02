@@ -3,15 +3,10 @@
 import { useState, useEffect, useRef } from 'react'
 import { City, cities } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
-import { themes, Theme } from '@/lib/themes'
+import { themes } from '@/lib/themes'
+import { useThemeClasses } from '@/lib/useThemeClasses'
+import { useCityContext } from '@/lib/CityContext'
 import TimeIcons from './TimeIcons'
-
-interface MeetingPlannerProps {
-  currentTheme: string
-  themeData: Theme
-  use12Hour: boolean
-  isLight: boolean
-}
 
 interface CitySlot {
   city: City | null
@@ -25,7 +20,10 @@ interface DropdownPosition {
   width: number
 }
 
-export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isLight }: MeetingPlannerProps) {
+export default function MeetingPlanner() {
+  const { card, text, textMuted, input, isLight, accentBg, accentText } = useThemeClasses()
+  const { use12Hour } = useCityContext()
+  
   const [slots, setSlots] = useState<CitySlot[]>([
     { city: null, search: '', showDropdown: false },
     { city: null, search: '', showDropdown: false },
@@ -196,7 +194,7 @@ export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isL
   // Render dropdown content for a slot
   const renderDropdownContent = (slotIndex: number, search: string) => (
     <div className={`rounded-xl border shadow-lg overflow-hidden ${
-      isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'
+      card
     }`}>
       {getFilteredCities(search).map(city => (
         <button
@@ -207,8 +205,8 @@ export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isL
           }`}
         >
           <div>
-            <span className={`font-medium ${themeData.text}`}>{city.city}</span>
-            <span className={`text-sm ml-2 ${themeData.textMuted}`}>{city.country}</span>
+            <span className={`font-medium ${text}`}>{city.city}</span>
+            <span className={`text-sm ml-2 ${textMuted}`}>{city.country}</span>
           </div>
         </button>
       ))}
@@ -217,8 +215,8 @@ export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isL
 
   return (
     <>
-      <div ref={containerRef} className={`rounded-3xl p-6 backdrop-blur-xl border ${themeData.card} mb-4`}>
-        <h3 className={`text-xl font-semibold ${themeData.text} mb-4 flex items-center gap-2`}>
+      <div ref={containerRef} className={`rounded-3xl p-6 backdrop-blur-xl border ${card} mb-4`}>
+        <h3 className={`text-xl font-semibold ${text} mb-4 flex items-center gap-2`}>
           <svg className={`w-5 h-5 ${isLight ? 'text-cyan-500' : 'text-cyan-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
             <rect x="3" y="4" width="18" height="18" rx="2"/>
             <path d="M16 2v4M8 2v4M3 10h18"/>
@@ -231,7 +229,7 @@ export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isL
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           {slots.map((slot, index) => (
             <div key={index} className="relative">
-              <label className={`text-xs font-medium mb-1.5 block ${themeData.textMuted}`}>
+              <label className={`text-xs font-medium mb-1.5 block ${textMuted}`}>
                 City {index + 1}{index === 2 ? ' (optional)' : ''}
               </label>
               <div className="relative" ref={el => { inputRefs.current[index] = el }}>
@@ -252,7 +250,7 @@ export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isL
                 {slot.city && (
                   <button
                     onClick={() => updateSlot(index, { city: null, search: '' })}
-                    className={`absolute right-3 top-1/2 -translate-y-1/2 ${themeData.textMuted} hover:opacity-70`}
+                    className={`absolute right-3 top-1/2 -translate-y-1/2 ${textMuted} hover:opacity-70`}
                   >
                     ✕
                   </button>
@@ -261,7 +259,7 @@ export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isL
 
               {/* Selected city current time */}
               {slot.city && (
-                <p className={`mt-1.5 text-xs ${themeData.textMuted}`}>
+                <p className={`mt-1.5 text-xs ${textMuted}`}>
                   Current: {formatHour(getCityTime(slot.city).getHours())}
                 </p>
               )}
@@ -272,12 +270,12 @@ export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isL
         {/* Timeline Visualization */}
         {selectedCities.length >= 2 && (
           <div className={`rounded-2xl p-4 mb-4 ${isLight ? 'bg-slate-100/80' : 'bg-slate-800/60'}`}>
-            <p className={`text-xs font-medium mb-3 ${themeData.textMuted}`}>Working Hours Timeline (09:00–17:00 local)</p>
+            <p className={`text-xs font-medium mb-3 ${textMuted}`}>Working Hours Timeline (09:00–17:00 local)</p>
             
             {/* Hour markers */}
             <div className="flex justify-between mb-1 px-20">
               {[0, 6, 12, 18, 24].map(h => (
-                <span key={h} className={`text-xs ${themeData.textMuted} opacity-50`}>{h}</span>
+                <span key={h} className={`text-xs ${textMuted} opacity-50`}>{h}</span>
               ))}
             </div>
 
@@ -295,7 +293,7 @@ export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isL
 
                 return (
                   <div key={city.slug} className="flex items-center gap-3">
-                    <span className={`text-sm font-medium w-16 truncate ${themeData.text}`}>
+                    <span className={`text-sm font-medium w-16 truncate ${text}`}>
                       {city.city}
                     </span>
                     <div className={`flex-1 h-6 rounded-full relative ${isLight ? 'bg-slate-200' : 'bg-slate-700'}`}>
@@ -316,7 +314,7 @@ export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isL
                         }}
                       />
                     </div>
-                    <span className={`text-xs w-12 ${themeData.textMuted}`}>
+                    <span className={`text-xs w-12 ${textMuted}`}>
                       UTC{offset >= 0 ? '+' : ''}{offset}
                     </span>
                   </div>
@@ -327,7 +325,7 @@ export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isL
             {/* Overlap indicator */}
             {overlap && (
               <div className="mt-3 flex items-center gap-3">
-                <span className={`text-sm font-medium w-16 ${themeData.text}`}>Overlap</span>
+                <span className={`text-sm font-medium w-16 ${text}`}>Overlap</span>
                 <div className={`flex-1 h-6 rounded-full relative ${isLight ? 'bg-slate-200' : 'bg-slate-700'}`}>
                   {[6, 12, 18].map(h => (
                     <div
@@ -344,7 +342,7 @@ export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isL
                     }}
                   />
                 </div>
-                <span className={`text-xs w-12 ${themeData.textMuted}`}>UTC</span>
+                <span className={`text-xs w-12 ${textMuted}`}>UTC</span>
               </div>
             )}
           </div>
@@ -355,10 +353,10 @@ export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isL
           <div className={`rounded-2xl p-4 text-center ${isLight ? 'bg-slate-100/80' : 'bg-slate-800/60'}`}>
             {overlap ? (
               <>
-                <p className={`text-lg font-medium ${themeData.text}`}>
+                <p className={`text-lg font-medium ${text}`}>
                   Best meeting time: {formatHour(overlap.start)} – {formatHour(overlap.end)} UTC
                 </p>
-                <p className={`text-sm mt-1 ${themeData.textMuted}`}>
+                <p className={`text-sm mt-1 ${textMuted}`}>
                   {selectedCities.map((c, i) => (
                     <span key={c.slug}>
                       {c.city}: {formatHour(utcToLocal(overlap.start, c))}–{formatHour(utcToLocal(overlap.end, c))}
@@ -366,18 +364,18 @@ export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isL
                     </span>
                   ))}
                 </p>
-                <p className={`text-xs mt-2 ${themeData.textMuted} opacity-70`}>
+                <p className={`text-xs mt-2 ${textMuted} opacity-70`}>
                   Fits all selected cities' working hours.
                 </p>
               </>
             ) : (
-              <p className={`text-sm ${themeData.textMuted}`}>
+              <p className={`text-sm ${textMuted}`}>
                 No shared working-hours window found.
               </p>
             )}
           </div>
         ) : (
-          <p className={`text-center text-sm ${themeData.textMuted} opacity-70`}>
+          <p className={`text-center text-sm ${textMuted} opacity-70`}>
             Select at least 2 cities to find the best meeting time.
           </p>
         )}
@@ -390,7 +388,7 @@ export default function MeetingPlanner({ currentTheme, themeData, use12Hour, isL
               className={`px-5 py-2.5 rounded-full font-medium transition-all ${
                 copied
                   ? 'bg-green-500 text-white'
-                  : `${themeData.accentBg} text-white hover:opacity-90`
+                  : `${accentBg} text-white hover:opacity-90`
               }`}
             >
               {copied ? '✓ Link Copied!' : '🔗 Share This Meeting'}

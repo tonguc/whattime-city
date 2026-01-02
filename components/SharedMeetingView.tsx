@@ -277,7 +277,7 @@ export default function SharedMeetingView() {
       </main>
 
       {/* Footer */}
-      <Footer isLight={isLight} />
+      <Footer />
     </div>
   )
 }

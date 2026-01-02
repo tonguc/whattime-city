@@ -76,8 +76,8 @@ export default function CityPageContent({ city }: CityPageContentProps) {
   const theme = themes[timeOfDay]
   const isLight = isLightTheme(timeOfDay)
   
-  // Sun times
-  const { sunrise, sunset } = getSunTimes(time, city.lat, city.lng)
+  // Sun times - pass timezone for accurate local display
+  const { sunrise, sunset } = getSunTimes(time, city.lat, city.lng, city.timezone)
   
   // Local time display
   const localTime = new Date(time.toLocaleString('en-US', { timeZone: city.timezone }))
@@ -165,10 +165,10 @@ export default function CityPageContent({ city }: CityPageContentProps) {
               }`}
             >
               <div className="text-2xl mb-2">{tool.icon}</div>
-              <div className={`font-medium text-sm ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <div className={`font-medium text-sm ${theme.text}`}>
                 {tool.title}
               </div>
-              <div className={`text-xs mt-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+              <div className={`text-xs mt-1 ${theme.textMuted}`}>
                 {tool.desc}
               </div>
             </Link>
@@ -188,38 +188,38 @@ export default function CityPageContent({ city }: CityPageContentProps) {
         }`}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div>
-              <div className={`text-xs uppercase tracking-wide mb-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+              <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>
                 Timezone
               </div>
-              <div className={`font-semibold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <div className={`font-semibold ${theme.text}`}>
                 {offset}
               </div>
-              <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+              <div className={`text-xs ${theme.textMuted}`}>
                 {city.timezone}
               </div>
             </div>
             <div>
-              <div className={`text-xs uppercase tracking-wide mb-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+              <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>
                 Sunrise
               </div>
-              <div className={`font-semibold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <div className={`font-semibold ${theme.text}`}>
                 {formatSunTime(sunrise)}
               </div>
             </div>
             <div>
-              <div className={`text-xs uppercase tracking-wide mb-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+              <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>
                 Sunset
               </div>
-              <div className={`font-semibold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <div className={`font-semibold ${theme.text}`}>
                 {formatSunTime(sunset)}
               </div>
             </div>
             {city.info && (
               <div>
-                <div className={`text-xs uppercase tracking-wide mb-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>
                   Population
                 </div>
-                <div className={`font-semibold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                <div className={`font-semibold ${theme.text}`}>
                   {city.info.population}
                 </div>
               </div>
@@ -229,36 +229,36 @@ export default function CityPageContent({ city }: CityPageContentProps) {
           {city.info && (
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6 pt-6 border-t border-slate-200/20">
               <div>
-                <div className={`text-xs uppercase tracking-wide mb-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>
                   Currency
                 </div>
-                <div className={`font-semibold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                <div className={`font-semibold ${theme.text}`}>
                   {city.info.currencySymbol} {city.info.currency}
                 </div>
               </div>
               <div>
-                <div className={`text-xs uppercase tracking-wide mb-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>
                   Phone Code
                 </div>
-                <div className={`font-semibold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                <div className={`font-semibold ${theme.text}`}>
                   {city.info.phoneCode}
                 </div>
               </div>
               <div>
-                <div className={`text-xs uppercase tracking-wide mb-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>
                   Language
                 </div>
-                <div className={`font-semibold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                <div className={`font-semibold ${theme.text}`}>
                   {city.info.language}
                 </div>
               </div>
               <div>
-                <div className={`text-xs uppercase tracking-wide mb-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>
                   Country
                 </div>
                 <Link 
                   href={`/country/${city.country.toLowerCase().replace(/\s+/g, '-')}`}
-                  className={`font-semibold hover:underline ${isLight ? 'text-slate-800' : 'text-white'}`}
+                  className={`font-semibold hover:underline ${theme.text}`}
                 >
                   {city.country}
                 </Link>
@@ -294,10 +294,10 @@ export default function CityPageContent({ city }: CityPageContentProps) {
                     : 'bg-slate-800/60 border-slate-700/50 hover:bg-slate-700/60'
                 }`}
               >
-                <div className={`text-xs uppercase tracking-wide mb-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>
                   {otherCity.country}
                 </div>
-                <div className={`font-semibold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                <div className={`font-semibold ${theme.text}`}>
                   {otherCity.city}
                 </div>
                 <div className="flex items-center justify-between mt-2">
@@ -323,10 +323,10 @@ export default function CityPageContent({ city }: CityPageContentProps) {
             ? 'bg-gradient-to-r from-blue-50/80 to-indigo-50/80 border-blue-100' 
             : 'bg-gradient-to-r from-blue-900/30 to-indigo-900/30 border-blue-800/50'
         }`}>
-          <h2 className={`text-xl font-semibold mb-2 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h2 className={`text-xl font-semibold mb-2 ${theme.text}`}>
             ✈️ Planning a Trip to {city.city}?
           </h2>
-          <p className={`mb-4 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          <p className={`mb-4 ${theme.textMuted}`}>
             {city.info?.seoContent?.bestTimeToVisit || 
               `${city.city} is a wonderful destination. Check local time, weather, and plan your perfect visit.`}
           </p>
@@ -336,7 +336,7 @@ export default function CityPageContent({ city }: CityPageContentProps) {
               <h3 className={`font-medium mb-1 ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
                 🕐 Business Hours
               </h3>
-              <p className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+              <p className={`text-sm ${theme.textMuted}`}>
                 {city.info.seoContent.businessHours}
               </p>
             </div>
@@ -377,19 +377,13 @@ export default function CityPageContent({ city }: CityPageContentProps) {
           {faqs.map((faq, i) => (
             <details 
               key={i}
-              className={`group rounded-2xl backdrop-blur-xl border overflow-hidden ${
-                isLight 
-                  ? 'bg-white/60 border-white/50' 
-                  : 'bg-slate-800/60 border-slate-700/50'
-              }`}
+              className={`group rounded-2xl backdrop-blur-xl overflow-hidden ${theme.card}`}
             >
-              <summary className={`p-4 cursor-pointer font-medium flex items-center justify-between ${
-                isLight ? 'text-slate-800' : 'text-white'
-              }`}>
+              <summary className={`p-4 cursor-pointer font-medium flex items-center justify-between ${theme.text}`}>
                 {faq.q}
                 <span className="text-lg transition-transform group-open:rotate-45">+</span>
               </summary>
-              <div className={`px-4 pb-4 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+              <div className={`px-4 pb-4 ${theme.textMuted}`}>
                 {faq.a}
               </div>
             </details>
@@ -417,7 +411,7 @@ export default function CityPageContent({ city }: CityPageContentProps) {
       </section>
       
       {/* Footer */}
-      <Footer isLight={isLight} />
+      <Footer />
       
       <div className="h-8" />
     </div>

@@ -6,12 +6,14 @@ import { cities, City } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes } from '@/lib/themes'
 import { useCityContext } from '@/lib/CityContext'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import MapSVG from './WorldMap/MapSVG'
 
 export default function WorldMap() {
-  const { theme: mainTheme, isLight, time } = useCityContext()
+  const { time } = useCityContext()
+  const { text, textMuted, isLight, bg } = useThemeClasses()
   const [selectedCity, setSelectedCity] = useState<string | null>(null)
   const [zoom, setZoom] = useState(1)
   
@@ -82,13 +84,13 @@ export default function WorldMap() {
   }
 
   return (
-    <div className={`min-h-screen transition-colors duration-700 bg-gradient-to-br ${mainTheme.bg}`}>
+    <div className={`min-h-screen transition-colors duration-700 bg-gradient-to-br ${bg}`}>
       {/* Shared Header */}
       <Header />
 
       {/* Map Container */}
       <div className="relative max-w-6xl mx-auto px-4 py-8">
-        <h1 className={`text-2xl sm:text-3xl font-bold mb-6 text-center ${isLight ? 'text-slate-800' : 'text-white'}`}>
+        <h1 className={`text-2xl sm:text-3xl font-bold mb-6 text-center ${text}`}>
           🗺️ World Time Map
         </h1>
         
@@ -142,10 +144,10 @@ export default function WorldMap() {
                     }`}
                   >
                     <div className="text-left">
-                      <div className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                      <div className={`font-medium ${text}`}>
                         {city.city}
                       </div>
-                      <div className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                      <div className={`text-sm ${textMuted}`}>
                         {city.country}
                       </div>
                     </div>
@@ -209,7 +211,6 @@ export default function WorldMap() {
 
           {/* SVG Map */}
           <MapSVG
-            isLight={isLight}
             zoom={zoom}
             setZoom={setZoom}
             selectedCity={selectedCity}
@@ -232,18 +233,18 @@ export default function WorldMap() {
               }`}>
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className={`text-xs uppercase tracking-wide ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                    <div className={`text-xs uppercase tracking-wide ${textMuted}`}>
                       {city.country}
                     </div>
-                    <div className={`text-lg font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                    <div className={`text-lg font-bold ${text}`}>
                       {city.city}
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className={`text-2xl font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                    <div className={`text-2xl font-bold ${text}`}>
                       {timeStr}
                     </div>
-                    <div className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+                    <div className={`text-sm ${textMuted}`}>
                       {timeIcons[timeOfDay]} {timeOfDay.charAt(0).toUpperCase() + timeOfDay.slice(1)}
                     </div>
                   </div>
@@ -264,7 +265,7 @@ export default function WorldMap() {
         </div>
         
         {/* Legend */}
-        <div className={`mt-6 flex flex-wrap justify-center gap-6 text-sm ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+        <div className={`mt-6 flex flex-wrap justify-center gap-6 text-sm ${textMuted}`}>
           <div className="flex items-center gap-2">
             <span className="w-3 h-3 rounded-full bg-yellow-400"></span>
             <span>Daytime</span>
@@ -281,10 +282,10 @@ export default function WorldMap() {
         
         {/* SEO Content Section */}
         <div className={`mt-8 rounded-2xl p-6 ${isLight ? 'bg-white/60' : 'bg-slate-800/40'}`}>
-          <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h2 className={`text-xl font-semibold mb-4 ${text}`}>
             Interactive World Time Zone Map
           </h2>
-          <div className={`space-y-4 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          <div className={`space-y-4 ${textMuted}`}>
             <p>
               Our interactive world time map displays current local time across 50+ major cities worldwide. 
               The map features a real-time day/night terminator line showing which parts of the world are 
@@ -329,7 +330,7 @@ export default function WorldMap() {
           
           {/* Time of Day Tabs */}
           <div className="mb-4">
-            <div className={`text-sm font-medium mb-2 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+            <div className={`text-sm font-medium mb-2 ${textMuted}`}>
               Filter by Time of Day
             </div>
             <div className="flex flex-wrap gap-2">
@@ -368,7 +369,7 @@ export default function WorldMap() {
           
           {/* Continent Tabs */}
           <div className="mb-6">
-            <div className={`text-sm font-medium mb-2 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+            <div className={`text-sm font-medium mb-2 ${textMuted}`}>
               Filter by Region
             </div>
             <div className="flex flex-wrap gap-2">
@@ -455,10 +456,10 @@ export default function WorldMap() {
                         : 'bg-slate-800/60 border-slate-700/50 hover:bg-slate-700/60'
                     }`}
                   >
-                    <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                    <div className={`text-xs ${textMuted}`}>
                       {city.country}
                     </div>
-                    <div className={`font-medium truncate ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                    <div className={`font-medium truncate ${text}`}>
                       {city.city}
                     </div>
                     <div className={`text-lg font-bold ${timeColor}`}>
@@ -480,7 +481,7 @@ export default function WorldMap() {
             }
             return true
           }).length === 0 && (
-            <div className={`text-center py-12 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+            <div className={`text-center py-12 ${textMuted}`}>
               No cities match the selected filters
             </div>
           )}
@@ -488,10 +489,10 @@ export default function WorldMap() {
         
         {/* Additional SEO Content */}
         <div className={`mt-8 rounded-2xl p-6 ${isLight ? 'bg-white/60' : 'bg-slate-800/40'}`}>
-          <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h2 className={`text-xl font-semibold mb-4 ${text}`}>
             How to Use the World Clock Map
           </h2>
-          <div className={`space-y-4 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          <div className={`space-y-4 ${textMuted}`}>
             <p>
               <strong>Zoom Controls:</strong> Use the + and − buttons in the top right corner to zoom in 
               for a closer look at specific regions. The reset button (↺) returns to the default view.
@@ -509,7 +510,7 @@ export default function WorldMap() {
         </div>
       </div>
       
-      <Footer isLight={isLight} />
+      <Footer />
     </div>
   )
 }

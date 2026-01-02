@@ -66,7 +66,7 @@ export default function GuideLayout({
     { slug: 'stock-market', label: 'Stock Market', icon: '📈' },
     { slug: 'holidays', label: 'Holidays', icon: '📅' },
     { slug: 'digital-nomad', label: 'Digital Nomad', icon: '🎒' },
-    { slug: 'time-difference', label: 'Time Difference', icon: '🌐' },
+    { slug: 'time-difference', label: 'Time Difference', icon: '🌍' },
     { slug: 'travel-planning', label: 'Travel', icon: '✈️' },
   ]
   
@@ -236,7 +236,7 @@ export default function GuideLayout({
         </div>
       </main>
       
-      <Footer isLight={isLight} />
+      <Footer />
     </div>
   )
 }

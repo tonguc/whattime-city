@@ -3,18 +3,19 @@
 import { useState, useEffect, useRef } from 'react'
 import { City, cities } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
-import { themes, Theme } from '@/lib/themes'
+import { themes } from '@/lib/themes'
+import { useThemeClasses } from '@/lib/useThemeClasses'
+import { useCityContext } from '@/lib/CityContext'
 import TimeIcons from './TimeIcons'
 
 interface TimeConverterProps {
-  currentTheme: string
-  themeData: Theme
-  use12Hour: boolean
-  isLight: boolean
   currentCitySlug?: string // For pre-filling Meeting Planner link
 }
 
-export default function TimeConverter({ currentTheme, themeData, use12Hour, isLight, currentCitySlug }: TimeConverterProps) {
+export default function TimeConverter({ currentCitySlug }: TimeConverterProps) {
+  const { text, textMuted, card, input, isLight, theme, accentBg, accentText } = useThemeClasses()
+  const { use12Hour } = useCityContext()
+  
   const [fromCity, setFromCity] = useState<City | null>(null)
   const [toCity, setToCity] = useState<City | null>(null)
   const [fromSearch, setFromSearch] = useState('')
@@ -145,11 +146,11 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
             }`}
           >
             <div>
-              <span className={`font-medium ${themeData.text}`}>{city.city}</span>
-              <span className={`text-sm ml-2 ${themeData.textMuted}`}>{city.country}</span>
+              <span className={`font-medium ${text}`}>{city.city}</span>
+              <span className={`text-sm ml-2 ${textMuted}`}>{city.country}</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className={`text-sm ${themeData.textMuted}`}>{getCityTime(city)}</span>
+              <span className={`text-sm ${textMuted}`}>{getCityTime(city)}</span>
               <Icon className={`w-4 h-4 ${themes[tod].accentClass}`} />
             </div>
           </button>
@@ -178,11 +179,11 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
             }`}
           >
             <div>
-              <span className={`font-medium ${themeData.text}`}>{city.city}</span>
-              <span className={`text-sm ml-2 ${themeData.textMuted}`}>{city.country}</span>
+              <span className={`font-medium ${text}`}>{city.city}</span>
+              <span className={`text-sm ml-2 ${textMuted}`}>{city.country}</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className={`text-sm ${themeData.textMuted}`}>{getCityTime(city)}</span>
+              <span className={`text-sm ${textMuted}`}>{getCityTime(city)}</span>
               <Icon className={`w-4 h-4 ${themes[tod].accentClass}`} />
             </div>
           </button>
@@ -193,8 +194,8 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
   
   return (
     <>
-      <div className={`rounded-3xl p-6 backdrop-blur-xl border ${themeData.card} mb-4`}>
-        <h3 className={`text-xl font-semibold ${themeData.text} mb-4 flex items-center gap-2`}>
+      <div className={`rounded-3xl p-6 backdrop-blur-xl border ${card} mb-4`}>
+        <h3 className={`text-xl font-semibold ${text} mb-4 flex items-center gap-2`}>
           <svg className={`w-5 h-5 ${isLight ? 'text-blue-500' : 'text-blue-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
             <circle cx="12" cy="12" r="10"/>
             <path d="M12 6v6l4 2"/>
@@ -207,7 +208,7 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* From City */}
           <div ref={fromRef} className="relative">
-            <label className={`text-xs font-medium mb-1.5 block ${themeData.textMuted}`}>
+            <label className={`text-xs font-medium mb-1.5 block ${textMuted}`}>
               From city
             </label>
             <div className="relative" ref={fromInputRef}>
@@ -230,7 +231,7 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
               {fromCity && (
                 <button
                   onClick={() => { setFromCity(null); setFromSearch('') }}
-                  className={`absolute right-3 top-1/2 -translate-y-1/2 ${themeData.textMuted} hover:${themeData.text}`}
+                  className={`absolute right-3 top-1/2 -translate-y-1/2 ${textMuted} hover:${text}`}
                 >
                   ✕
                 </button>
@@ -239,7 +240,7 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
             
             {/* Selected From City Time */}
             {fromCity && (
-              <div className={`mt-2 flex items-center gap-2 ${themeData.textMuted}`}>
+              <div className={`mt-2 flex items-center gap-2 ${textMuted}`}>
                 {(() => {
                   const tod = getCityTimeOfDay(fromCity)
                   const Icon = TimeIcons[tod]
@@ -256,7 +257,7 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
           
           {/* To City */}
           <div ref={toRef} className="relative">
-            <label className={`text-xs font-medium mb-1.5 block ${themeData.textMuted}`}>
+            <label className={`text-xs font-medium mb-1.5 block ${textMuted}`}>
               To city
             </label>
             <div className="relative" ref={toInputRef}>
@@ -279,7 +280,7 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
               {toCity && (
                 <button
                   onClick={() => { setToCity(null); setToSearch('') }}
-                  className={`absolute right-3 top-1/2 -translate-y-1/2 ${themeData.textMuted} hover:${themeData.text}`}
+                  className={`absolute right-3 top-1/2 -translate-y-1/2 ${textMuted} hover:${text}`}
                 >
                   ✕
                 </button>
@@ -288,7 +289,7 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
             
             {/* Selected To City Time */}
             {toCity && (
-              <div className={`mt-2 flex items-center gap-2 ${themeData.textMuted}`}>
+              <div className={`mt-2 flex items-center gap-2 ${textMuted}`}>
                 {(() => {
                   const tod = getCityTimeOfDay(toCity)
                   const Icon = TimeIcons[tod]
@@ -308,16 +309,16 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
         {fromCity && toCity ? (
           <div className={`mt-6 pt-4 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
             <div className="text-center space-y-1">
-              <p className={`text-lg font-medium ${themeData.text}`}>
+              <p className={`text-lg font-medium ${text}`}>
                 {getCityTime(fromCity)} in {fromCity.city} = {getCityTime(toCity)} in {toCity.city}
               </p>
-              <p className={`text-sm ${themeData.textMuted} opacity-70`}>
+              <p className={`text-sm ${textMuted} opacity-70`}>
                 {toCity.city} is {timeDiff === 0 ? 'at the same time' : timeDiff! > 0 ? `+${timeDiff} hours ahead` : `${Math.abs(timeDiff!)} hours behind`} relative to {fromCity.city}
               </p>
             </div>
           </div>
         ) : (
-          <p className={`mt-6 text-center text-sm ${themeData.textMuted} opacity-70`}>
+          <p className={`mt-6 text-center text-sm ${textMuted} opacity-70`}>
             Select two cities to compare their local time.
           </p>
         )}
@@ -326,7 +327,7 @@ export default function TimeConverter({ currentTheme, themeData, use12Hour, isLi
         <div className={`mt-4 pt-4 border-t ${isLight ? 'border-slate-200/50' : 'border-slate-700/50'}`}>
           <a 
             href={currentCitySlug ? `/meeting/${currentCitySlug}` : '/meeting'}
-            className={`flex items-center justify-center gap-2 text-sm font-medium ${themeData.textMuted} hover:${themeData.accentText} transition-colors`}
+            className={`flex items-center justify-center gap-2 text-sm font-medium ${textMuted} hover:${accentText} transition-colors`}
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>

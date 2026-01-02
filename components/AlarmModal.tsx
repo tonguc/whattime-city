@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 import { City, cities, uses12HourFormat } from '@/lib/cities'
 
 interface Alarm {
@@ -18,10 +19,11 @@ interface Alarm {
 interface AlarmModalProps {
   isOpen: boolean
   onClose: () => void
-  isLight: boolean
-  theme: any
   alarms: Alarm[]
   setAlarms: (alarms: Alarm[]) => void
+  // Legacy props - kept for backward compatibility, no longer used
+  isLight?: boolean
+  theme?: unknown
 }
 
 const BellIcon = ({ className }: { className?: string }) => (
@@ -43,7 +45,8 @@ const TrashIcon = ({ className }: { className?: string }) => (
   </svg>
 )
 
-export default function AlarmModal({ isOpen, onClose, isLight, theme, alarms, setAlarms }: AlarmModalProps) {
+export default function AlarmModal({ isOpen, onClose, alarms, setAlarms }: AlarmModalProps) {
+  const { text, textMuted, accentBg, isLight } = useThemeClasses()
   const [alarmCity, setAlarmCity] = useState<City>(cities[0])
   const [alarmHour, setAlarmHour] = useState('09')
   const [alarmMinute, setAlarmMinute] = useState('00')
@@ -137,26 +140,26 @@ export default function AlarmModal({ isOpen, onClose, isLight, theme, alarms, se
         onClick={e => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-6">
-          <h2 className={`text-xl font-bold ${theme.text}`}>🔔 Set Time Alert</h2>
+          <h2 className={`text-xl font-bold ${text}`}>🔔 Set Time Alert</h2>
           <button 
             onClick={onClose} 
             className={`p-2 rounded-full ${isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700'}`}
           >
-            <XIcon className={`w-5 h-5 ${theme.textMuted}`} />
+            <XIcon className={`w-5 h-5 ${textMuted}`} />
           </button>
         </div>
 
         <div className="space-y-4">
           {/* City Selection */}
           <div>
-            <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>City</label>
+            <label className={`block text-sm font-medium mb-2 ${textMuted}`}>City</label>
             <select 
               value={alarmCity.city}
               onChange={(e) => {
                 const city = cities.find(c => c.city === e.target.value)
                 if (city) setAlarmCity(city)
               }}
-              className={`w-full px-4 py-3 rounded-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-700 border-slate-600'} ${theme.text} outline-none focus:ring-2 focus:ring-blue-500`}
+              className={`w-full px-4 py-3 rounded-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-700 border-slate-600'} ${text} outline-none focus:ring-2 focus:ring-blue-500`}
             >
               {cities.map(city => (
                 <option key={city.slug} value={city.city}>{city.city}, {city.country}</option>
@@ -166,7 +169,7 @@ export default function AlarmModal({ isOpen, onClose, isLight, theme, alarms, se
 
           {/* Time Selection */}
           <div>
-            <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>
+            <label className={`block text-sm font-medium mb-2 ${textMuted}`}>
               When (in {alarmCity.city} local time)
               <span className={`ml-2 text-xs ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
                 {alarmCityUses12Hour ? '12-hour format' : '24-hour format'}
@@ -176,7 +179,7 @@ export default function AlarmModal({ isOpen, onClose, isLight, theme, alarms, se
               <select 
                 value={alarmHour}
                 onChange={(e) => setAlarmHour(e.target.value)}
-                className={`flex-1 px-4 py-3 rounded-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-700 border-slate-600'} ${theme.text} outline-none focus:ring-2 focus:ring-blue-500`}
+                className={`flex-1 px-4 py-3 rounded-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-700 border-slate-600'} ${text} outline-none focus:ring-2 focus:ring-blue-500`}
               >
                 {alarmCityUses12Hour 
                   ? Array.from({length: 12}, (_, i) => {
@@ -188,11 +191,11 @@ export default function AlarmModal({ isOpen, onClose, isLight, theme, alarms, se
                     ))
                 }
               </select>
-              <span className={`flex items-center text-2xl ${theme.text}`}>:</span>
+              <span className={`flex items-center text-2xl ${text}`}>:</span>
               <select 
                 value={alarmMinute}
                 onChange={(e) => setAlarmMinute(e.target.value)}
-                className={`flex-1 px-4 py-3 rounded-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-700 border-slate-600'} ${theme.text} outline-none focus:ring-2 focus:ring-blue-500`}
+                className={`flex-1 px-4 py-3 rounded-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-700 border-slate-600'} ${text} outline-none focus:ring-2 focus:ring-blue-500`}
               >
                 {Array.from({length: 60}, (_, i) => (
                   <option key={i} value={i.toString().padStart(2, '0')}>{i.toString().padStart(2, '0')}</option>
@@ -202,7 +205,7 @@ export default function AlarmModal({ isOpen, onClose, isLight, theme, alarms, se
                 <select 
                   value={alarmPeriod}
                   onChange={(e) => setAlarmPeriod(e.target.value)}
-                  className={`px-4 py-3 rounded-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-700 border-slate-600'} ${theme.text} outline-none focus:ring-2 focus:ring-blue-500 font-medium`}
+                  className={`px-4 py-3 rounded-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-700 border-slate-600'} ${text} outline-none focus:ring-2 focus:ring-blue-500 font-medium`}
                 >
                   <option value="AM">AM</option>
                   <option value="PM">PM</option>
@@ -213,13 +216,13 @@ export default function AlarmModal({ isOpen, onClose, isLight, theme, alarms, se
 
           {/* Label */}
           <div>
-            <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>Label (optional)</label>
+            <label className={`block text-sm font-medium mb-2 ${textMuted}`}>Label (optional)</label>
             <input 
               type="text"
               value={alarmLabel}
               onChange={(e) => setAlarmLabel(e.target.value)}
               placeholder="Meeting, Call, Reminder..."
-              className={`w-full px-4 py-3 rounded-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-700 border-slate-600'} ${theme.text} placeholder-slate-400 outline-none focus:ring-2 focus:ring-blue-500`}
+              className={`w-full px-4 py-3 rounded-xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-700 border-slate-600'} ${text} placeholder-slate-400 outline-none focus:ring-2 focus:ring-blue-500`}
             />
           </div>
 
@@ -233,7 +236,7 @@ export default function AlarmModal({ isOpen, onClose, isLight, theme, alarms, se
           {/* Set Button */}
           <button 
             onClick={addAlarm}
-            className={`w-full py-3 rounded-xl font-semibold text-white ${theme.accentBg} hover:opacity-90 transition-opacity`}
+            className={`w-full py-3 rounded-xl font-semibold text-white ${accentBg} hover:opacity-90 transition-opacity`}
           >
             Set Alert
           </button>
@@ -242,7 +245,7 @@ export default function AlarmModal({ isOpen, onClose, isLight, theme, alarms, se
         {/* Active Alarms List */}
         {alarms.length > 0 && (
           <div className={`mt-6 pt-6 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
-            <h3 className={`text-sm font-semibold mb-3 ${theme.textMuted}`}>
+            <h3 className={`text-sm font-semibold mb-3 ${textMuted}`}>
               Active Alerts ({alarms.filter(a => a.active).length})
             </h3>
             <div className="space-y-2 max-h-40 overflow-y-auto">
@@ -252,8 +255,8 @@ export default function AlarmModal({ isOpen, onClose, isLight, theme, alarms, se
                   className={`flex items-center justify-between p-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-700/50'} ${!alarm.active ? 'opacity-50' : ''}`}
                 >
                   <div>
-                    <p className={`font-medium ${theme.text}`}>{alarm.label}</p>
-                    <p className={`text-xs ${theme.textMuted}`}>{alarm.displayTime} in {alarm.city.city}</p>
+                    <p className={`font-medium ${text}`}>{alarm.label}</p>
+                    <p className={`text-xs ${textMuted}`}>{alarm.displayTime} in {alarm.city.city}</p>
                   </div>
                   <button 
                     onClick={() => deleteAlarm(alarm.id)} 
@@ -274,28 +277,31 @@ export default function AlarmModal({ isOpen, onClose, isLight, theme, alarms, se
 // Active Alarm Popup Component
 export function ActiveAlarmPopup({ 
   alarm, 
-  onDismiss, 
-  isLight, 
-  theme 
+  onDismiss,
+  // Legacy props - kept for backward compatibility, no longer used
+  isLight: _isLight,
+  theme: _theme,
 }: { 
   alarm: Alarm | null
   onDismiss: () => void
-  isLight: boolean
-  theme: any 
+  isLight?: boolean
+  theme?: unknown
 }) {
+  const { text, textMuted, accentBg, isLight } = useThemeClasses()
+  
   if (!alarm) return null
 
   return (
     <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
       <div className={`w-full max-w-sm rounded-3xl p-8 text-center ${isLight ? 'bg-white' : 'bg-slate-800'} shadow-2xl animate-pulse`}>
         <div className="text-6xl mb-4">🔔</div>
-        <h2 className={`text-2xl font-bold mb-2 ${theme.text}`}>{alarm.label}</h2>
-        <p className={`text-lg ${theme.textMuted}`}>
+        <h2 className={`text-2xl font-bold mb-2 ${text}`}>{alarm.label}</h2>
+        <p className={`text-lg ${textMuted}`}>
           It's {alarm.displayTime} in {alarm.city.city}!
         </p>
         <button 
           onClick={onDismiss}
-          className={`mt-6 w-full py-3 rounded-xl font-semibold text-white ${theme.accentBg} hover:opacity-90 transition-opacity`}
+          className={`mt-6 w-full py-3 rounded-xl font-semibold text-white ${accentBg} hover:opacity-90 transition-opacity`}
         >
           Dismiss
         </button>

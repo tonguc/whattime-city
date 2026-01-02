@@ -186,6 +186,15 @@ export function CityProvider({ children }: { children: ReactNode }) {
   const theme = mounted ? themes[currentTheme] : themes.day
   const isLight = mounted ? isLightTheme(currentTheme) : true
   
+  // Sync data-theme attribute for CSS-first styling
+  useEffect(() => {
+    if (mounted && typeof document !== 'undefined') {
+      document.documentElement.setAttribute('data-theme', currentTheme)
+      // Also set data-light for simpler CSS selectors
+      document.documentElement.setAttribute('data-light', String(isLight))
+    }
+  }, [mounted, currentTheme, isLight])
+  
   // Helper functions
   const getLocalTime = (city: City) => {
     return time.toLocaleTimeString('en-US', { 
