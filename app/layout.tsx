@@ -91,7 +91,8 @@ export default function RootLayout({
       <head>
         {/* Google Analytics - DO NOT REMOVE */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-060GV967M0"
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-ED5Y13JE4H"
           strategy="afterInteractive"
         />
         <Script id="ga4" strategy="afterInteractive">
@@ -99,9 +100,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-060GV967M0', {
-              debug_mode: true
-            });
+            gtag('config', 'G-ED5Y13JE4H');
           `}
         </Script>
         
