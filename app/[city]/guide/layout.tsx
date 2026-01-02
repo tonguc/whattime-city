@@ -236,7 +236,7 @@ export default function GuideLayout({
         </div>
       </main>
       
-      <Footer isLight={isLight} />
+      <Footer />
     </div>
   )
 }
