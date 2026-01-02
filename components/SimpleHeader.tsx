@@ -6,7 +6,13 @@ import Link from 'next/link'
 import { City, searchCities } from '@/lib/cities'
 import { useThemeClasses } from '@/lib/useThemeClasses'
 
-export default function SimpleHeader() {
+interface SimpleHeaderProps {
+  // Legacy props - kept for backward compatibility, no longer used
+  isLight?: boolean
+  theme?: unknown
+}
+
+export default function SimpleHeader(_props: SimpleHeaderProps) {
   const { text, textMuted, isLight } = useThemeClasses()
   const router = useRouter()
   

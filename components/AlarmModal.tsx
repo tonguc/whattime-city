@@ -21,6 +21,9 @@ interface AlarmModalProps {
   onClose: () => void
   alarms: Alarm[]
   setAlarms: (alarms: Alarm[]) => void
+  // Legacy props - kept for backward compatibility, no longer used
+  isLight?: boolean
+  theme?: unknown
 }
 
 const BellIcon = ({ className }: { className?: string }) => (
@@ -274,10 +277,15 @@ export default function AlarmModal({ isOpen, onClose, alarms, setAlarms }: Alarm
 // Active Alarm Popup Component
 export function ActiveAlarmPopup({ 
   alarm, 
-  onDismiss
+  onDismiss,
+  // Legacy props - kept for backward compatibility, no longer used
+  isLight: _isLight,
+  theme: _theme,
 }: { 
   alarm: Alarm | null
   onDismiss: () => void
+  isLight?: boolean
+  theme?: unknown
 }) {
   const { text, textMuted, accentBg, isLight } = useThemeClasses()
   

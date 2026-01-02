@@ -8,7 +8,13 @@ import { useThemeClasses } from '@/lib/useThemeClasses'
 import { City, searchCities } from '@/lib/cities'
 import CitySearch from '@/components/CitySearch'
 
-function Header() {
+interface HeaderProps {
+  // Legacy props - kept for backward compatibility, no longer used
+  isLight?: boolean
+  theme?: unknown
+}
+
+function Header(_props: HeaderProps) {
   const router = useRouter()
   const context = useCityContext()
   const { text, textMuted, accentBg, isLight } = useThemeClasses()

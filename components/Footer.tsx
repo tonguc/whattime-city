@@ -4,7 +4,12 @@ import Link from 'next/link'
 import { TimeIcons } from '@/components/TimeIcons'
 import { useThemeClasses } from '@/lib/useThemeClasses'
 
-export default function Footer() {
+interface FooterProps {
+  // Legacy prop - kept for backward compatibility, no longer used
+  isLight?: boolean
+}
+
+export default function Footer(_props: FooterProps) {
   const { card, textMuted } = useThemeClasses()
   
   return (
