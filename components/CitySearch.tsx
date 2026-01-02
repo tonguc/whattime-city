@@ -22,6 +22,7 @@ export default function CitySearch({
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<City[]>([])
   const [showDropdown, setShowDropdown] = useState(false)
+  const [highlightIndex, setHighlightIndex] = useState(-1)
   const [position, setPosition] = useState({ top: 0, left: 0, width: 0 })
   const searchRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -30,9 +31,11 @@ export default function CitySearch({
     if (query.length >= 1) {
       setResults(searchCities(query).slice(0, 6))
       setShowDropdown(true)
+      setHighlightIndex(-1)
     } else {
       setResults([])
       setShowDropdown(false)
+      setHighlightIndex(-1)
     }
   }, [query])
 
@@ -81,6 +84,29 @@ export default function CitySearch({
     }
     setQuery('')
     setShowDropdown(false)
+    setHighlightIndex(-1)
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!showDropdown || results.length === 0) return
+    
+    if (e.key === 'ArrowDown') {
+      e.preventDefault()
+      setHighlightIndex(prev => Math.min(prev + 1, results.length - 1))
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault()
+      setHighlightIndex(prev => Math.max(prev - 1, 0))
+    } else if (e.key === 'Enter') {
+      e.preventDefault()
+      if (highlightIndex >= 0 && results[highlightIndex]) {
+        handleSelect(results[highlightIndex])
+      } else if (results.length > 0) {
+        handleSelect(results[0])
+      }
+    } else if (e.key === 'Escape') {
+      setShowDropdown(false)
+      setHighlightIndex(-1)
+    }
   }
 
   const clearInput = (e: React.MouseEvent) => {
@@ -102,6 +128,7 @@ export default function CitySearch({
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={handleKeyDown}
           onFocus={() => {
             if (query) {
               setShowDropdown(true)
@@ -137,7 +164,7 @@ export default function CitySearch({
             zIndex: 999999
           }}
         >
-          {results.map((city) => (
+          {results.map((city, index) => (
             <button
               key={city.slug}
               type="button"
@@ -147,7 +174,11 @@ export default function CitySearch({
                 e.stopPropagation()
                 handleSelect(city)
               }}
-              className={`w-full px-4 py-3 text-left flex items-center justify-between transition-colors ${isLight ? 'hover:bg-slate-50 active:bg-slate-100' : 'hover:bg-slate-700 active:bg-slate-600'}`}
+              className={`w-full px-4 py-3 text-left flex items-center justify-between transition-colors ${
+                index === highlightIndex
+                  ? (isLight ? 'bg-blue-100' : 'bg-blue-900/50')
+                  : (isLight ? 'hover:bg-slate-50 active:bg-slate-100' : 'hover:bg-slate-700 active:bg-slate-600')
+              }`}
             >
               <div>
                 <span className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>{city.city}</span>

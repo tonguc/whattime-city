@@ -55,8 +55,36 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
   // Use global CityContext theme (based on USER's location)
   const { theme, isLight, detectedCity } = useCityContext()
   
-  // Selected cities state - starts with initialCities (from URL) or empty
-  const [selectedCities, setSelectedCities] = useState<City[]>(initialCities)
+  // Selected cities state - starts with initialCities (from URL) or from localStorage
+  const [selectedCities, setSelectedCities] = useState<City[]>(() => {
+    // If initialCities provided from URL, use them
+    if (initialCities.length > 0) return initialCities
+    
+    // Otherwise try to load from localStorage
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('whattime-meeting-cities')
+        if (saved) {
+          const slugs = JSON.parse(saved) as string[]
+          const loadedCities = slugs
+            .map(slug => cities.find(c => c.slug === slug))
+            .filter((c): c is City => c !== undefined)
+          if (loadedCities.length > 0) return loadedCities
+        }
+      } catch {}
+    }
+    return []
+  })
+  
+  // Save selected cities to localStorage whenever they change
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const slugs = selectedCities.map(c => c.slug)
+        localStorage.setItem('whattime-meeting-cities', JSON.stringify(slugs))
+      } catch {}
+    }
+  }, [selectedCities])
   
   // Search state
   const [searchQuery, setSearchQuery] = useState('')
@@ -331,7 +359,7 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
       <Header />
       
       {/* Main Content */}
-      <main className="max-w-6xl mx-auto px-4 py-6">
+      <main className="max-w-6xl mx-auto px-4 py-4 w-full">
         
         {/* Tools Mini Navigation */}
         <ToolsMiniNav />

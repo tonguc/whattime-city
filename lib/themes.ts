@@ -19,7 +19,7 @@ export interface Theme {
 export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
   night: {
     bg: 'from-slate-950 via-indigo-950 to-slate-950',
-    card: 'bg-slate-900/60 border-slate-700/50',
+    card: 'bg-slate-900/60 border border-slate-700/50',
     text: 'text-white',
     textMuted: 'text-slate-400',
     accent: 'cyan',
@@ -34,7 +34,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
   },
   dawn: {
     bg: 'from-slate-900 via-orange-900 to-amber-800',
-    card: 'bg-slate-800/60 border-orange-700/50',
+    card: 'bg-slate-800/60 border border-orange-700/50',
     text: 'text-white',
     textMuted: 'text-orange-300',
     accent: 'amber',
@@ -49,7 +49,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
   },
   day: {
     bg: 'from-sky-100 via-blue-100 to-cyan-100',
-    card: 'bg-white/60 border-sky-200/50',
+    card: 'bg-white border border-slate-200',
     text: 'text-slate-800',
     textMuted: 'text-slate-600',
     accent: 'amber',
@@ -64,7 +64,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
   },
   dusk: {
     bg: 'from-purple-900 via-rose-900 to-orange-900',
-    card: 'bg-slate-800/60 border-purple-700/50',
+    card: 'bg-slate-800/60 border border-purple-700/50',
     text: 'text-white',
     textMuted: 'text-purple-300',
     accent: 'purple',
@@ -79,7 +79,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
   },
   dark: {
     bg: 'from-slate-950 via-slate-900 to-slate-950',
-    card: 'bg-slate-800/60 border-slate-700/50',
+    card: 'bg-slate-800/60 border border-slate-700/50',
     text: 'text-white',
     textMuted: 'text-slate-400',
     accent: 'cyan',
@@ -94,7 +94,7 @@ export const themes: Record<TimeOfDay | 'dark' | 'light', Theme> = {
   },
   light: {
     bg: 'from-gray-50 via-white to-gray-100',
-    card: 'bg-white/80 border-gray-200',
+    card: 'bg-white border border-slate-200',
     text: 'text-slate-800',
     textMuted: 'text-slate-500',
     accent: 'amber',
