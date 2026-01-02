@@ -89,6 +89,22 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Google Analytics - DO NOT REMOVE */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-060GV967M0"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-060GV967M0', {
+              debug_mode: true
+            });
+          `}
+        </Script>
+        
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Prevent FOUC by setting initial theme before React hydration */}
@@ -120,20 +136,6 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased" suppressHydrationWarning>
-        {/* Google Analytics - DO NOT REMOVE */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-060GV967M0"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-060GV967M0');
-          `}
-        </Script>
-        
         <CityProvider>
           {children}
         </CityProvider>
