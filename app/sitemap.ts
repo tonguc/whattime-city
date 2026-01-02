@@ -38,6 +38,8 @@ export default async function sitemap() {
   ]
   
   // Tool sayfaları (trailing slash ile) - ROOT LEVEL URLs for SEO
+  // ✅ /time-converter ve /meeting ana tool sayfaları indexed
+  // ❌ /time/[from]/[to] ve /meeting/[cities] noindex (sitemap'te YOK)
   const toolRoutes = [
     { slug: 'time-converter', priority: 0.8 },
     { slug: 'meeting', priority: 0.8 },
@@ -73,7 +75,7 @@ export default async function sitemap() {
     priority: slug ? 0.7 : 0.8, // pillar page gets higher priority
   }))
   
-  // Tüm şehir sayfaları (trailing slash ile)
+  // Tüm şehir sayfaları (trailing slash ile) - ✅ HUB PAGES (SEO VALUE HERE)
   const cityRoutes = cities.map((city) => ({
     url: `${baseUrl}/${city.slug}/`,
     lastModified: new Date(),
@@ -89,42 +91,10 @@ export default async function sitemap() {
     priority: 0.8,
   }))
   
-  // Time comparison sayfaları (popüler kombinasyonlar)
-  const tier1 = getTier1Cities()
-  const tier1Slugs = tier1.map(c => c.slug)
-  
-  const popularTier2 = [
-    'istanbul', 'moscow', 'berlin', 'madrid', 'rome', 'amsterdam',
-    'bangkok', 'seoul', 'mumbai', 'delhi', 'shanghai', 'beijing',
-    'sao-paulo', 'mexico-city', 'toronto', 'chicago', 'los-angeles',
-    'san-francisco', 'miami', 'seattle', 'boston', 'dallas',
-    'cairo', 'johannesburg', 'lagos', 'nairobi',
-    'melbourne', 'auckland', 'jakarta', 'manila', 'kuala-lumpur',
-    'riyadh', 'tel-aviv', 'doha', 'abu-dhabi'
-  ]
-  
-  const allSlugs = Array.from(new Set([...tier1Slugs, ...popularTier2]))
-  const validSlugs = allSlugs.filter(slug => cities.find(c => c.slug === slug))
-  
-  const timeCompareRoutes: { url: string; lastModified: Date; changeFrequency: 'daily'; priority: number }[] = []
-  
-  for (const from of validSlugs) {
-    for (const to of validSlugs) {
-      if (from !== to) {
-        // Tier 1 kombinasyonları daha yüksek öncelik
-        const fromCity = cities.find(c => c.slug === from)
-        const toCity = cities.find(c => c.slug === to)
-        const priority = (fromCity?.tier === 1 && toCity?.tier === 1) ? 0.8 : 0.6
-        
-        timeCompareRoutes.push({
-          url: `${baseUrl}/time/${from}/${to}/`,
-          lastModified: new Date(),
-          changeFrequency: 'daily' as const,
-          priority,
-        })
-      }
-    }
-  }
-  
-  return [...staticRoutes, ...toolRoutes, ...guideRoutes, ...cityRoutes, ...countryRoutes, ...timeCompareRoutes]
+  // ❌ /time/[from]/[to] sayfaları ÇIKARILDI
+  // ❌ /meeting/[cities] sayfaları ÇIKARILDI
+  // Sebep: noindex tool output - crawl budget israfı önlendi
+  // SEO değeri hub sayfalarda: /istanbul/, /london/, /time-converter/, /meeting/
+
+  return [...staticRoutes, ...toolRoutes, ...guideRoutes, ...cityRoutes, ...countryRoutes]
 }
