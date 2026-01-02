@@ -38,9 +38,10 @@ export default async function sitemap() {
   ]
   
   // Tool sayfaları (trailing slash ile) - ROOT LEVEL URLs for SEO
-  // ✅ /time-converter ve /meeting ana tool sayfaları indexed
+  // ✅ /time ve /meeting ana tool sayfaları indexed
   // ❌ /time/[from]/[to] ve /meeting/[cities] noindex (sitemap'te YOK)
   const toolRoutes = [
+    { slug: 'time', priority: 0.9 },
     { slug: 'time-converter', priority: 0.8 },
     { slug: 'meeting', priority: 0.8 },
     { slug: 'flight-time', priority: 0.7 },

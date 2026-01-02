@@ -537,7 +537,7 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
         </section>
         
         {/* View Mode Tabs */}
-        <div className="flex flex-col items-center mb-4">
+        <div className="flex flex-col items-center mb-4 relative" style={{ zIndex: 10 }}>
           <div className={`inline-flex rounded-full p-1 ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
             <button
               onClick={() => setViewMode('heatmap')}
@@ -578,13 +578,13 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
         
         {/* Visualization Section - Tab content */}
         {viewMode === 'heatmap' ? (
-          <section className={`rounded-3xl p-6 mb-4 backdrop-blur-xl border ${theme.card}`}>
+          <section className={`rounded-3xl p-6 mb-4 backdrop-blur-xl border relative ${theme.card}`} style={{ zIndex: 1 }}>
             <OverlapHeatmap 
               cities={selectedCities}
             />
           </section>
         ) : (
-          <section className={`rounded-3xl p-6 mb-4 backdrop-blur-xl border ${theme.card}`}>
+          <section className={`rounded-3xl p-6 mb-4 backdrop-blur-xl border relative ${theme.card}`} style={{ zIndex: 1 }}>
             {/* Best time info banner */}
             {bestTimeInfo && bestTimeInfo.type !== 'none' && selectedCities.length >= 2 && (
               <div className={`mb-4 p-3 rounded-xl flex items-center gap-2 ${

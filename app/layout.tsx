@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { CityProvider } from '@/lib/CityContext'
+import { GoogleAnalytics, RouteTracker } from '@/components/analytics'
 import './globals.css'
 
 export const viewport: Viewport = {
@@ -88,6 +89,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* ⚠️ CRITICAL: Google Analytics - imported from components/analytics */}
+        <GoogleAnalytics />
+        
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Prevent FOUC by setting initial theme before React hydration */}
@@ -95,6 +99,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
+                // Disable auto scroll restoration
+                if ('scrollRestoration' in history) {
+                  history.scrollRestoration = 'manual';
+                }
+                window.scrollTo(0, 0);
+                
                 try {
                   var mode = localStorage.getItem('whattime-theme-mode');
                   if (mode === 'dark') {
@@ -113,6 +123,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased" suppressHydrationWarning>
+        <RouteTracker />
         <CityProvider>
           {children}
         </CityProvider>

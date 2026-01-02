@@ -419,7 +419,7 @@ export default function OverlapHeatmap({ cities, referenceTimezone }: OverlapHea
               style={{
                 left: `${(selectedHour / 24) * 100}%`,
                 transform: selectedHour < 3 ? 'translateX(0)' : selectedHour > 21 ? 'translateX(-100%)' : 'translateX(-50%)',
-                zIndex: 50
+                zIndex: 9999
               }}
             >
               {(() => {

@@ -3,7 +3,8 @@
   "version": "2.3.0",
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/generate-search-index.js",
+    "check:analytics": "node scripts/check-analytics.js",
+    "prebuild": "node scripts/check-analytics.js && node scripts/generate-search-index.js",
     "build": "next build",
     "postbuild": "echo '✅ Statik site oluşturuldu: out/ klasörü'",
     "start": "next start",
