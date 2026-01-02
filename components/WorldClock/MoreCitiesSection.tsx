@@ -2,16 +2,17 @@
 
 import { useState, useEffect } from 'react'
 import { City, getCitiesByCountryCode, getCountryBySlug } from '@/lib/cities'
-import { themes } from '@/lib/themes'
+import { useThemeClasses } from '@/lib/useThemeClasses'
+import { useCityContext } from '@/lib/CityContext'
 
 interface MoreCitiesSectionProps {
   selectedCity: City
-  theme: typeof themes[keyof typeof themes]
-  isLight: boolean
-  use12Hour: boolean
 }
 
-export default function MoreCitiesSection({ selectedCity, theme, isLight, use12Hour }: MoreCitiesSectionProps) {
+export default function MoreCitiesSection({ selectedCity }: MoreCitiesSectionProps) {
+  const { card, text, textMuted, accentText, isLight } = useThemeClasses()
+  const { use12Hour } = useCityContext()
+  
   const [time, setTime] = useState(new Date())
   
   useEffect(() => {
@@ -36,16 +37,16 @@ export default function MoreCitiesSection({ selectedCity, theme, isLight, use12H
   }
   
   return (
-    <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
+    <div className={`rounded-3xl p-6 backdrop-blur-xl border ${card} mt-4`}>
       <div className="flex items-center justify-between mb-4">
-        <h2 className={`text-lg font-bold flex items-center gap-2 ${theme.text}`}>
+        <h2 className={`text-lg font-bold flex items-center gap-2 ${text}`}>
           <span>🏙️</span>
           More Cities in {selectedCity.country}
         </h2>
         {countryData && (
           <a 
             href={`/country/${countryData.slug}`}
-            className={`text-sm font-medium ${theme.accentText} hover:underline`}
+            className={`text-sm font-medium ${accentText} hover:underline`}
           >
             View Country →
           </a>
@@ -63,8 +64,8 @@ export default function MoreCitiesSection({ selectedCity, theme, isLight, use12H
                 : 'bg-slate-800/50 hover:bg-slate-700/50'
             }`}
           >
-            <div className={`font-medium text-sm ${theme.text}`}>{city.city}</div>
-            <div className={`text-xs mt-0.5 ${theme.textMuted}`}>
+            <div className={`font-medium text-sm ${text}`}>{city.city}</div>
+            <div className={`text-xs mt-0.5 ${textMuted}`}>
               {formatCityTime(city)}
             </div>
           </a>

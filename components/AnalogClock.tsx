@@ -1,11 +1,9 @@
 'use client'
 
-import { Theme } from '@/lib/themes'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 
 interface AnalogClockProps {
   time: Date
-  theme: string
-  themeData: Theme
 }
 
 const accentColors: Record<string, string> = {
@@ -15,7 +13,9 @@ const accentColors: Record<string, string> = {
   purple: '#a855f7'
 }
 
-export default function AnalogClock({ time, theme, themeData }: AnalogClockProps) {
+export default function AnalogClock({ time }: AnalogClockProps) {
+  const { isLight, theme } = useThemeClasses()
+  
   const seconds = time.getSeconds()
   const minutes = time.getMinutes()
   const hours = time.getHours() % 12
@@ -24,10 +24,9 @@ export default function AnalogClock({ time, theme, themeData }: AnalogClockProps
   const minuteDeg = ((minutes + seconds / 60) / 60) * 360
   const hourDeg = ((hours + minutes / 60) / 12) * 360
   
-  const isLight = ['day', 'light'].includes(theme)
   const clockFace = isLight ? '#ffffff' : '#1e293b'
   const handColor = isLight ? '#1e293b' : '#f8fafc'
-  const accent = accentColors[themeData.accent] || '#f59e0b'
+  const accent = accentColors[theme.accent] || '#f59e0b'
 
   return (
     <div className="relative w-64 h-64 md:w-72 md:h-72">

@@ -3,12 +3,14 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { cities } from '@/lib/cities'
-import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
+import { useThemeClasses } from '@/lib/useThemeClasses'
+import { useCityContext } from '@/lib/CityContext'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 
 export default function FlightTimePage() {
-  const { theme, isLight, selectedCity } = useToolsTheme()
+  const { theme, isLight, text, textMuted, card, accentBg, accentText } = useThemeClasses()
+  const { activeCity } = useCityContext()
   
   const [currentTime, setCurrentTime] = useState(new Date())
   const [departureCity, setDepartureCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
@@ -19,10 +21,10 @@ export default function FlightTimePage() {
   
   // Sync departureCity with context when it becomes available
   useEffect(() => {
-    if (selectedCity) {
-      setDepartureCity(selectedCity)
+    if (activeCity) {
+      setDepartureCity(activeCity)
     }
-  }, [selectedCity])
+  }, [activeCity])
 
   // Calculate arrival time
   const getArrivalTime = () => {
@@ -55,22 +57,22 @@ export default function FlightTimePage() {
 
         {/* Tool Hero */}
       <div className="text-center mb-8">
-        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${theme.text}`}>
           Flight Time
         </h1>
-          <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          <p className={`text-lg ${theme.textMuted}`}>
             Calculate your arrival time in local time
           </p>
         </div>
 
         {/* Tool Interface */}
-        <div className={`rounded-2xl p-6 mb-8 backdrop-blur-xl border ${
-          isLight ? 'bg-white/60 border-white/70' : 'bg-slate-800/60 border-slate-700/50'
+        <div className={`rounded-2xl p-6 mb-8 backdrop-blur-xl ${
+          theme.card
         }`}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Departure */}
             <div>
-              <h3 className={`font-medium mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>Departure</h3>
+              <h3 className={`font-medium mb-3 ${theme.text}`}>Departure</h3>
               <select
                 value={departureCity.city}
                 onChange={(e) => setDepartureCity(cities.find(c => c.city === e.target.value) || cities[0])}
@@ -110,7 +112,7 @@ export default function FlightTimePage() {
 
             {/* Arrival */}
             <div>
-              <h3 className={`font-medium mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>Arrival</h3>
+              <h3 className={`font-medium mb-3 ${theme.text}`}>Arrival</h3>
               <select
                 value={arrivalCity.city}
                 onChange={(e) => setArrivalCity(cities.find(c => c.city === e.target.value) || cities[1])}
@@ -130,7 +132,7 @@ export default function FlightTimePage() {
 
           {/* Flight Duration */}
           <div className="mt-6 pt-6 border-t border-slate-200/50">
-            <label className={`block text-sm font-medium mb-2 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+            <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>
               Flight Duration
             </label>
             <div className="flex gap-4 items-center">
@@ -145,7 +147,7 @@ export default function FlightTimePage() {
                     isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-700 border-slate-600 text-white'
                   }`}
                 />
-                <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>hours</span>
+                <span className={theme.textMuted}>hours</span>
               </div>
               <div className="flex items-center gap-2">
                 <input
@@ -158,20 +160,20 @@ export default function FlightTimePage() {
                     isLight ? 'bg-white border-slate-200 text-slate-800' : 'bg-slate-700 border-slate-600 text-white'
                   }`}
                 />
-                <span className={isLight ? 'text-slate-600' : 'text-slate-400'}>minutes</span>
+                <span className={theme.textMuted}>minutes</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* SEO SECTION 1: Common Use Cases */}
-        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
-          isLight ? 'bg-white/40 border-white/70' : 'bg-slate-800/40 border-slate-700/50'
+        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl ${
+          theme.card
         }`}>
-          <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
             Common Use Cases
           </h2>
-          <ul className={`space-y-3 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          <ul className={`space-y-3 ${theme.textMuted}`}>
             <li className="flex gap-3">
               <span className={`${theme.accentText} mt-1`}>•</span>
               <div>
@@ -200,13 +202,13 @@ export default function FlightTimePage() {
         </section>
 
         {/* SEO SECTION 2: Who Is This Tool For? */}
-        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
-          isLight ? 'bg-white/40 border-white/70' : 'bg-slate-800/40 border-slate-700/50'
+        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl ${
+          theme.card
         }`}>
-          <h2 className={`text-xl font-semibold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h2 className={`text-xl font-semibold mb-3 ${theme.text}`}>
             Who Is This Tool For?
           </h2>
-          <p className={`${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          <p className={`${theme.textMuted}`}>
             Frequent flyers, travel planners, and anyone booking international flights will find this tool useful. 
             It eliminates confusion about what time you'll actually arrive at your destination in local time, 
             especially when crossing multiple time zones.
@@ -214,44 +216,44 @@ export default function FlightTimePage() {
         </section>
 
         {/* SEO SECTION 3: Related Tools */}
-        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
-          isLight ? 'bg-white/40 border-white/70' : 'bg-slate-800/40 border-slate-700/50'
+        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl ${
+          theme.card
         }`}>
-          <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
             Related Tools
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <Link href="/jet-lag" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
               isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
             }`}>
-              <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Jet Lag</div>
-              <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Recovery tips</div>
+              <div className={`text-sm font-medium ${theme.text}`}>Jet Lag</div>
+              <div className={`text-xs ${theme.textMuted}`}>Recovery tips</div>
             </Link>
             <Link href="/converter" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
               isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
             }`}>
-              <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Time Converter</div>
-              <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Quick conversions</div>
+              <div className={`text-sm font-medium ${theme.text}`}>Time Converter</div>
+              <div className={`text-xs ${theme.textMuted}`}>Quick conversions</div>
             </Link>
             <Link href="/alarm" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
               isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
             }`}>
-              <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>World Alarm</div>
-              <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Set travel alarms</div>
+              <div className={`text-sm font-medium ${theme.text}`}>World Alarm</div>
+              <div className={`text-xs ${theme.textMuted}`}>Set travel alarms</div>
             </Link>
           </div>
         </section>
 
         {/* SEO SECTION 4: FAQ */}
-        <section className={`rounded-2xl p-6 mb-8 backdrop-blur-xl border ${
-          isLight ? 'bg-white/40 border-white/70' : 'bg-slate-800/40 border-slate-700/50'
+        <section className={`rounded-2xl p-6 mb-8 backdrop-blur-xl ${
+          theme.card
         }`}>
-          <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
             Frequently Asked Questions
           </h2>
-          <div className={`space-y-4 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          <div className={`space-y-4 ${theme.textMuted}`}>
             <div>
-              <h3 className={`font-medium mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <h3 className={`font-medium mb-1 ${theme.text}`}>
                 Does this calculate actual flight distance?
               </h3>
               <p className="text-sm">
@@ -259,7 +261,7 @@ export default function FlightTimePage() {
               </p>
             </div>
             <div>
-              <h3 className={`font-medium mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <h3 className={`font-medium mb-1 ${theme.text}`}>
                 What does "+1 day" mean?
               </h3>
               <p className="text-sm">
@@ -267,7 +269,7 @@ export default function FlightTimePage() {
               </p>
             </div>
             <div>
-              <h3 className={`font-medium mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <h3 className={`font-medium mb-1 ${theme.text}`}>
                 Does it account for DST?
               </h3>
               <p className="text-sm">
@@ -280,7 +282,7 @@ export default function FlightTimePage() {
 
       {/* Footer - Full Width */}
       <div className="relative z-10 mt-10">
-        <Footer isLight={isLight} />
+        <Footer />
       </div>
     </>
   )

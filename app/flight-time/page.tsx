@@ -48,7 +48,7 @@ export default function FlightTimePage() {
     : 'bg-slate-700 border-slate-600 text-white'
 
   return (
-    <ToolPageWrapper footer={<Footer isLight={isLight} />}>
+    <ToolPageWrapper footer={<Footer />}>
       <ToolsMiniNav />
 
       {/* Tool Hero */}

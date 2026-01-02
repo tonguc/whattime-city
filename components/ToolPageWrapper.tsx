@@ -50,8 +50,6 @@ export default function ToolPageWrapper({ children, footer }: ToolPageWrapperPro
       <AlarmModal
         isOpen={showAlarmModal}
         onClose={() => setShowAlarmModal(false)}
-        isLight={isLight}
-        theme={theme}
         alarms={alarms}
         setAlarms={setAlarms}
       />
@@ -60,8 +58,6 @@ export default function ToolPageWrapper({ children, footer }: ToolPageWrapperPro
       <ActiveAlarmPopup
         alarm={activeAlarm}
         onDismiss={dismissAlarm}
-        isLight={isLight}
-        theme={theme}
       />
     </div>
   )

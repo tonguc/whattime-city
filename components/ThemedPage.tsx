@@ -17,12 +17,12 @@ export default function ThemedPage({ children }: ThemedPageProps) {
       <Header />
       
       <main className="max-w-3xl mx-auto px-4 py-12">
-        <div className={isLight ? 'text-slate-800' : 'text-white'}>
+        <div className={theme.text}>
           {children}
         </div>
       </main>
       
-      <Footer isLight={isLight} />
+      <Footer />
     </div>
   )
 }

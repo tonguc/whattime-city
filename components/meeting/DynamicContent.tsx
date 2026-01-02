@@ -8,7 +8,7 @@
 
 import { City } from '@/lib/cities'
 import { calculateTimeDifference, formatHour, getLocalHour } from '@/lib/meetingPlanner'
-import { useCityContext } from '@/lib/CityContext'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 
 interface Props {
   cities: City[] // Changed from city1/city2 to cities array
@@ -16,7 +16,7 @@ interface Props {
 }
 
 export default function DynamicContent({ cities, overlapCount }: Props) {
-  const { isLight } = useCityContext()
+  const { text, textMuted, isLight } = useThemeClasses()
   
   if (cities.length < 2) return null
   
@@ -216,7 +216,7 @@ export default function DynamicContent({ cities, overlapCount }: Props) {
             </div>
           ))}
         </div>
-        <p className={`mt-4 text-sm ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+        <p className={`mt-4 text-sm ${textMuted}`}>
           {bestWindows.length > 0 
             ? `There is an overlap during business hours, making real-time collaboration feasible across all ${cities.length} cities. The ${bestWindows.length} hour(s) of overlap typically occur ${bestWindows[0]}.`
             : `There is limited or no overlap during standard business hours (9-5) across all ${cities.length} cities. Teams will need to be flexible with meeting times.`}
@@ -229,7 +229,7 @@ export default function DynamicContent({ cities, overlapCount }: Props) {
         <div className="space-y-3">
           <div>
             <h4 className={`font-medium ${headingColor}`}>Daily standups</h4>
-            <p className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+            <p className={`text-sm ${textMuted}`}>
               {bestWindows.length > 0 
                 ? `Best scheduled at ${bestWindows[0]} when all teams are in office.`
                 : `Consider async updates via Slack/email instead of live meetings.`}
@@ -237,14 +237,14 @@ export default function DynamicContent({ cities, overlapCount }: Props) {
           </div>
           <div>
             <h4 className={`font-medium ${headingColor}`}>Client calls</h4>
-            <p className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+            <p className={`text-sm ${textMuted}`}>
               Schedule during overlapping work hours across {cities.length} time zones 
               for most convenient timing for all parties.
             </p>
           </div>
           <div>
             <h4 className={`font-medium ${headingColor}`}>Emergency coordination</h4>
-            <p className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+            <p className={`text-sm ${textMuted}`}>
               Establish on-call schedules that account for all {cities.length} time zones. 
               Teams can rotate coverage to provide 24/7 support.
             </p>
@@ -258,20 +258,20 @@ export default function DynamicContent({ cities, overlapCount }: Props) {
         <div className="space-y-4">
           <div>
             <h4 className={`font-medium ${headingColor}`}>Does the time difference account for Daylight Saving Time?</h4>
-            <p className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+            <p className={`text-sm ${textMuted}`}>
               Yes, the calculations automatically account for DST based on current dates. The time difference 
               between cities may vary by 1 hour when DST starts or ends in different regions.
             </p>
           </div>
           <div>
             <h4 className={`font-medium ${headingColor}`}>What if I need to add more participants?</h4>
-            <p className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+            <p className={`text-sm ${textMuted}`}>
               Use the "+ Add City" button in the time slider above to compare up to 6 cities simultaneously.
             </p>
           </div>
           <div>
             <h4 className={`font-medium ${headingColor}`}>Can I share this meeting plan with my team?</h4>
-            <p className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+            <p className={`text-sm ${textMuted}`}>
               Yes! The URL preserves your city selections so everyone sees the same time comparison when you share the link.
             </p>
           </div>

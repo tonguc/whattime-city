@@ -1,8 +1,8 @@
 'use client'
 
 import { useState, useRef, useEffect, useCallback } from 'react'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 import { useRouter } from 'next/navigation'
-import { Theme } from '@/lib/themes'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { saveCityContext } from '@/lib/city-context'
 
@@ -38,8 +38,7 @@ interface City {
 }
 
 interface SearchProps {
-  theme: Theme
-  currentTheme: string
+  // No props needed - uses useThemeClasses
 }
 
 // SearchCity -> City dönüşümü
@@ -56,7 +55,7 @@ function mapToCity(sc: SearchCity): City {
   }
 }
 
-export default function Search({ theme, currentTheme }: SearchProps) {
+export default function Search() {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<City[]>([])
   const [isOpen, setIsOpen] = useState(false)
@@ -69,7 +68,7 @@ export default function Search({ theme, currentTheme }: SearchProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
   
-  const isLight = ['day', 'light'].includes(currentTheme)
+  const { text, textMuted, isLight } = useThemeClasses()
   
   // ⏰ Saat güncelleme
   useEffect(() => {
@@ -180,7 +179,7 @@ export default function Search({ theme, currentTheme }: SearchProps) {
         } backdrop-blur-xl border ${isLight ? 'border-slate-200/50' : 'border-slate-700/50'}`}
         style={{ minHeight: '42px', height: '42px' }}
       >
-        <svg className={`w-4 h-4 flex-shrink-0 ${isLight ? 'text-slate-500' : 'text-slate-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className={`w-4 h-4 flex-shrink-0 ${textMuted}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
         <input
@@ -218,15 +217,15 @@ export default function Search({ theme, currentTheme }: SearchProps) {
               <div className="flex items-center gap-3">
                 <span className="text-base">{getCityDayNight(city)}</span>
                 <div>
-                  <div className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                  <div className={`font-medium ${text}`}>
                     {city.city}
                   </div>
-                  <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                  <div className={`text-xs ${textMuted}`}>
                     {city.country}
                   </div>
                 </div>
               </div>
-              <div className={`text-sm font-medium ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+              <div className={`text-sm font-medium ${textMuted}`}>
                 {getCityTime(city)}
               </div>
             </button>

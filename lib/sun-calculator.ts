@@ -1,41 +1,88 @@
-// Basitleştirilmiş güneş hesaplayıcı
-export function getSunTimes(date: Date, lat: number, lng: number) {
-  const dayOfYear = Math.floor(
-    (date.getTime() - new Date(date.getFullYear(), 0, 0).getTime()) / 86400000
-  )
+/**
+ * Sun Calculator - Astronomical calculations using suncalc library
+ * 
+ * This module provides accurate sunrise/sunset times and time-of-day
+ * calculations based on actual sun position for any location on Earth.
+ */
+
+import SunCalc from 'suncalc'
+
+export interface SunTimes {
+  sunrise: number      // Decimal hours (e.g., 6.5 = 06:30)
+  sunset: number       // Decimal hours (e.g., 18.75 = 18:45)
+  daylightHours: number
+  dawn: number         // Civil twilight start
+  dusk: number         // Civil twilight end
+  solarNoon: number
+}
+
+/**
+ * Get precise sun times for a location using suncalc
+ * Returns times in decimal hours (local time)
+ */
+export function getSunTimes(date: Date, lat: number, lng: number, timezone?: string): SunTimes {
+  // Get sun times from suncalc (returns Date objects in UTC)
+  const times = SunCalc.getTimes(date, lat, lng)
   
-  // Güneş deklinasyonu (basitleştirilmiş)
-  const declination = -23.45 * Math.cos((360 / 365) * (dayOfYear + 10) * (Math.PI / 180))
+  // Convert UTC Date to local decimal hours
+  const toLocalDecimalHours = (utcDate: Date): number => {
+    if (!utcDate || isNaN(utcDate.getTime())) {
+      // Fallback for polar regions where sun doesn't set/rise
+      return 12 // Return noon as fallback
+    }
+    
+    if (timezone) {
+      try {
+        const localTimeStr = utcDate.toLocaleTimeString('en-US', {
+          timeZone: timezone,
+          hour: 'numeric',
+          minute: 'numeric',
+          hour12: false
+        })
+        const [hours, minutes] = localTimeStr.split(':').map(Number)
+        return hours + minutes / 60
+      } catch {
+        // Fallback to UTC-based calculation
+        return utcDate.getUTCHours() + utcDate.getUTCMinutes() / 60 + lng / 15
+      }
+    }
+    
+    // Estimate local time from longitude
+    const utcHours = utcDate.getUTCHours() + utcDate.getUTCMinutes() / 60
+    let localHours = utcHours + lng / 15
+    while (localHours < 0) localHours += 24
+    while (localHours >= 24) localHours -= 24
+    return localHours
+  }
   
-  // Gün uzunluğu hesabı
-  const latRad = lat * (Math.PI / 180)
-  const decRad = declination * (Math.PI / 180)
+  const sunrise = toLocalDecimalHours(times.sunrise)
+  const sunset = toLocalDecimalHours(times.sunset)
+  const dawn = toLocalDecimalHours(times.dawn)        // Civil twilight start
+  const dusk = toLocalDecimalHours(times.dusk)        // Civil twilight end
+  const solarNoon = toLocalDecimalHours(times.solarNoon)
   
-  let cosHourAngle = -Math.tan(latRad) * Math.tan(decRad)
-  cosHourAngle = Math.max(-1, Math.min(1, cosHourAngle))
+  // Handle edge cases (polar regions)
+  const daylightHours = sunset > sunrise ? sunset - sunrise : 24 - sunrise + sunset
   
-  const hourAngle = Math.acos(cosHourAngle) * (180 / Math.PI)
-  const daylightHours = (2 * hourAngle) / 15
-  
-  // Solar noon is around 12:00 solar time, but actual local noon differs by longitude
-  // Each 15° of longitude = 1 hour difference from standard time
-  // We calculate the offset from the timezone's central meridian
-  const solarNoon = 12
-  const sunrise = solarNoon - daylightHours / 2
-  const sunset = solarNoon + daylightHours / 2
-  
-  return { sunrise, sunset, daylightHours }
+  return { sunrise, sunset, daylightHours, dawn, dusk, solarNoon }
 }
 
 export type TimeOfDay = 'night' | 'dawn' | 'day' | 'dusk'
 
+/**
+ * Determine time of day based on sun position
+ * Uses civil twilight definitions from suncalc:
+ * - Dawn: Civil twilight start (sun 6° below horizon) to sunrise
+ * - Day: Sunrise to sunset
+ * - Dusk: Sunset to civil twilight end (sun 6° below horizon)
+ * - Night: Civil twilight end to civil twilight start
+ */
 export function getTimeOfDay(utcTime: Date, lat: number, lng: number, timezone?: string): TimeOfDay {
-  // Get local hour using timezone if provided, otherwise estimate from longitude
+  // Get local hour using timezone if provided
   let localHour: number
   
   if (timezone) {
     try {
-      // Get actual local time in the timezone
       const localTimeStr = utcTime.toLocaleTimeString('en-US', { 
         timeZone: timezone, 
         hour: 'numeric', 
@@ -59,25 +106,33 @@ export function getTimeOfDay(utcTime: Date, lat: number, lng: number, timezone?:
     while (localHour >= 24) localHour -= 24
   }
   
-  const { sunrise, sunset } = getSunTimes(utcTime, lat, lng)
+  // Get precise sun times using suncalc
+  const sunTimes = getSunTimes(utcTime, lat, lng, timezone)
   
-  // Civil Twilight - Bilimsel tanım
-  // Dawn: Güneş doğmadan önceki 30 dakika (sunrise-0.5 → sunrise)
-  // Day: Güneş görünür (sunrise → sunset)
-  // Dusk: Güneş battıktan sonraki 30 dakika (sunset → sunset+0.5)
-  // Night: Karanlık (sunset+0.5 → sunrise-0.5)
+  // Use civil twilight for dawn/dusk (more visually accurate than exact sunrise/sunset)
+  // suncalc's dawn = civil twilight start (sun 6° below horizon)
+  // suncalc's dusk = civil twilight end (sun 6° below horizon)
   
-  const dawnStart = sunrise - 0.5  // 30 dk önce
-  const dawnEnd = sunrise          // Güneş doğuş anı
+  const { dawn, sunrise, sunset, dusk } = sunTimes
   
-  const duskStart = sunset         // Güneş batış anı
-  const duskEnd = sunset + 0.5     // 30 dk sonra
+  // Handle polar regions where sun doesn't set/rise
+  if (isNaN(sunrise) || isNaN(sunset)) {
+    // Check sun altitude to determine if it's polar day or night
+    const sunPos = SunCalc.getPosition(utcTime, lat, lng)
+    return sunPos.altitude > 0 ? 'day' : 'night'
+  }
   
-  if (localHour >= dawnStart && localHour < dawnEnd) {
+  // Determine time of day based on sun position
+  // Dawn: from civil twilight start to sunrise
+  // Day: from sunrise to sunset  
+  // Dusk: from sunset to civil twilight end
+  // Night: rest of the time
+  
+  if (localHour >= dawn && localHour < sunrise) {
     return 'dawn'
-  } else if (localHour >= dawnEnd && localHour < duskStart) {
+  } else if (localHour >= sunrise && localHour < sunset) {
     return 'day'
-  } else if (localHour >= duskStart && localHour < duskEnd) {
+  } else if (localHour >= sunset && localHour < dusk) {
     return 'dusk'
   } else {
     return 'night'

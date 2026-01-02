@@ -8,7 +8,7 @@ import { useCityContext } from '@/lib/CityContext'
 export default function PrivacyContent() {
   const { theme, isLight } = useCityContext()
   
-  const textMain = isLight ? 'text-slate-800' : 'text-white'
+  const textMain = theme.text
   const textMuted = isLight ? 'text-slate-600' : 'text-slate-300'
   const textSubtle = isLight ? 'text-slate-500' : 'text-slate-400'
   
@@ -116,7 +116,7 @@ export default function PrivacyContent() {
         </div>
       </main>
       
-      <Footer isLight={isLight} />
+      <Footer />
     </div>
   )
 }

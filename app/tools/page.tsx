@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { translations, detectLanguage, Language } from '@/lib/translations'
-import { useToolsTheme } from '@/lib/useToolsTheme'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 import Footer from '@/components/Footer'
 
 // Tool definitions - Normalized names (2 words, English only) - ROOT LEVEL URLs for SEO
@@ -103,8 +103,8 @@ const tools = [
 ]
 
 export default function ToolsPage() {
-  // Theme from useToolsTheme - reads directly from sessionStorage
-  const { theme, isLight } = useToolsTheme()
+  // Theme from useThemeClasses - reads directly from sessionStorage
+  const { theme, isLight, text, textMuted, card, accentBg, accentText } = useThemeClasses()
   const [lang, setLang] = useState<Language>('en')
   
   useEffect(() => {
@@ -119,10 +119,10 @@ export default function ToolsPage() {
     <>
       {/* Page Title */}
       <div className="text-center mb-10">
-        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${theme.text}`}>
           Time Zone Tools
         </h1>
-        <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+        <p className={`text-lg ${theme.textMuted}`}>
           Essential tools for managing time across the globe
         </p>
       </div>
@@ -145,12 +145,12 @@ export default function ToolsPage() {
               </div>
               
               {/* Tool Name */}
-              <h2 className={`text-xl font-semibold mb-2 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <h2 className={`text-xl font-semibold mb-2 ${theme.text}`}>
                 {tool.name}
               </h2>
               
               {/* Description */}
-              <p className={`text-sm mb-4 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+              <p className={`text-sm mb-4 ${theme.textMuted}`}>
                 {tool.description}
               </p>
               
@@ -167,7 +167,7 @@ export default function ToolsPage() {
         </div>
 
         {/* Footer - Full Width */}
-        <Footer isLight={isLight} />
+        <Footer />
     </>
   )
 }

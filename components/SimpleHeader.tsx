@@ -4,12 +4,10 @@ import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { City, searchCities } from '@/lib/cities'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 
-interface SimpleHeaderProps {
-  isLight?: boolean
-}
-
-export default function SimpleHeader({ isLight = false }: SimpleHeaderProps) {
+export default function SimpleHeader() {
+  const { text, textMuted, isLight } = useThemeClasses()
   const router = useRouter()
   
   // Search state
@@ -47,7 +45,6 @@ export default function SimpleHeader({ isLight = false }: SimpleHeaderProps) {
   }
   
   const textColor = isLight ? 'text-slate-600' : 'text-slate-300'
-  const textMuted = isLight ? 'text-slate-500' : 'text-slate-400'
   const bgHover = isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-800'
   const inputBg = isLight ? 'bg-slate-100' : 'bg-slate-800'
   const dropdownBg = isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'
@@ -77,7 +74,7 @@ export default function SimpleHeader({ isLight = false }: SimpleHeaderProps) {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onFocus={() => searchQuery && setShowSearchDropdown(true)}
                 placeholder="Search city..."
-                className={`flex-1 bg-transparent outline-none text-sm ${isLight ? 'text-slate-800' : 'text-white'}`}
+                className={`flex-1 bg-transparent outline-none text-sm ${text}`}
                 style={{ fontSize: '16px' }}
               />
             </div>
@@ -123,7 +120,7 @@ export default function SimpleHeader({ isLight = false }: SimpleHeaderProps) {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search city..."
-            className={`flex-1 bg-transparent outline-none text-sm ${isLight ? 'text-slate-800' : 'text-white'}`}
+            className={`flex-1 bg-transparent outline-none text-sm ${text}`}
             style={{ fontSize: '16px' }}
           />
         </div>

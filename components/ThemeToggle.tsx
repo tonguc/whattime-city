@@ -1,19 +1,17 @@
 'use client'
 
-import { Theme } from '@/lib/themes'
 import { Translations } from '@/lib/translations'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 import TimeIcons from './TimeIcons'
 
 interface ThemeToggleProps {
   mode: 'auto' | 'light' | 'dark'
   setMode: (mode: 'auto' | 'light' | 'dark') => void
-  currentTheme: string
   t: Translations
-  themeData: Theme
 }
 
-export default function ThemeToggle({ mode, setMode, currentTheme, t, themeData }: ThemeToggleProps) {
-  const isLight = ['day', 'light'].includes(currentTheme)
+export default function ThemeToggle({ mode, setMode, t }: ThemeToggleProps) {
+  const { isLight, accentBg } = useThemeClasses()
   
   const options: { id: 'auto' | 'light' | 'dark', iconKey: 'dawn' | 'day' | 'night', labelKey: keyof Translations, tooltipKey: keyof Translations }[] = [
     { id: 'auto', iconKey: 'dawn', labelKey: 'themeAuto', tooltipKey: 'themeAutoTooltip' },
@@ -32,7 +30,7 @@ export default function ThemeToggle({ mode, setMode, currentTheme, t, themeData 
             title={t[opt.tooltipKey] as string}
             className={`flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-full text-sm transition-all ${
               mode === opt.id
-                ? `${themeData.accentBg} text-white shadow-lg`
+                ? `${accentBg} text-white shadow-lg`
                 : isLight ? 'text-slate-600 hover:text-slate-800' : 'text-slate-400 hover:text-white'
             }`}
           >

@@ -6,11 +6,13 @@ import { cities, City, getTier1Cities } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes } from '@/lib/themes'
 import { useCityContext } from '@/lib/CityContext'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export default function WidgetGenerator() {
-  const { theme: pageTheme, isLight, time } = useCityContext()
+  const { theme: pageTheme, time } = useCityContext()
+  const { text, textMuted, card, accentBg, accentText, isLight } = useThemeClasses()
   const [selectedCity, setSelectedCity] = useState<City | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
   const [showDropdown, setShowDropdown] = useState(false)
@@ -101,10 +103,10 @@ export default function WidgetGenerator() {
       <main className="max-w-6xl mx-auto px-4 py-8">
         {/* Title */}
         <div className="text-center mb-8">
-          <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${text}`}>
             Free Clock Widget
           </h1>
-          <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          <p className={`text-lg ${textMuted}`}>
             Add a beautiful live clock to your website or blog
           </p>
         </div>
@@ -114,7 +116,7 @@ export default function WidgetGenerator() {
           <div className={`p-6 rounded-3xl backdrop-blur-xl border ${
             isLight ? 'bg-white/50 border-white/60' : 'bg-slate-800/50 border-slate-700/60'
           }`}>
-            <h2 className={`text-xl font-semibold mb-6 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+            <h2 className={`text-xl font-semibold mb-6 ${text}`}>
               Customize Your Widget
             </h2>
             
@@ -159,7 +161,7 @@ export default function WidgetGenerator() {
                         } ${selectedCity?.slug === city.slug ? (isLight ? 'bg-blue-50' : 'bg-blue-900/30') : ''}`}
                       >
                         <span className="font-medium">{city.city}</span>
-                        <span className={`ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                        <span className={`ml-2 ${textMuted}`}>
                           {city.country}
                         </span>
                       </button>
@@ -257,7 +259,7 @@ export default function WidgetGenerator() {
             <div className={`p-6 rounded-3xl backdrop-blur-xl border ${
               isLight ? 'bg-white/50 border-white/60' : 'bg-slate-800/50 border-slate-700/60'
             }`}>
-              <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <h2 className={`text-xl font-semibold mb-4 ${text}`}>
                 Preview
               </h2>
               
@@ -282,7 +284,7 @@ export default function WidgetGenerator() {
             <div className={`p-6 rounded-3xl backdrop-blur-xl border ${
               isLight ? 'bg-white/50 border-white/60' : 'bg-slate-800/50 border-slate-700/60'
             }`}>
-              <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <h2 className={`text-xl font-semibold mb-4 ${text}`}>
                 Embed Code
               </h2>
               
@@ -305,7 +307,7 @@ export default function WidgetGenerator() {
                 {copied ? '✓ Copied!' : '📋 Copy Embed Code'}
               </button>
               
-              <p className={`mt-4 text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+              <p className={`mt-4 text-sm ${textMuted}`}>
                 Paste this code into your website's HTML where you want the clock to appear.
               </p>
             </div>
@@ -323,10 +325,10 @@ export default function WidgetGenerator() {
               isLight ? 'bg-white/30 border-white/40' : 'bg-slate-800/30 border-slate-700/40'
             }`}>
               <div className="text-3xl mb-2">{benefit.icon}</div>
-              <h3 className={`font-semibold mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <h3 className={`font-semibold mb-1 ${text}`}>
                 {benefit.title}
               </h3>
-              <p className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+              <p className={`text-sm ${textMuted}`}>
                 {benefit.desc}
               </p>
             </div>
@@ -334,7 +336,7 @@ export default function WidgetGenerator() {
         </div>
       </main>
 
-      <Footer isLight={isLight} />
+      <Footer />
     </div>
   )
 }

@@ -209,9 +209,9 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
             <div className="flex justify-center items-center w-full">
               <div className="inline-flex">
                 {clockMode === 'analog' ? (
-                  <AnalogClock time={localTime} theme={currentTheme} themeData={theme} />
+                  <AnalogClock time={localTime} />
                 ) : (
-                  <DigitalClock time={localTime} theme={currentTheme} themeData={theme} use12Hour={use12Hour} />
+                  <DigitalClock time={localTime}  />
                 )}
               </div>
             </div>
@@ -276,13 +276,13 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                   {t[autoTheme]}
                 </span>
                 {weather && (
-                  <WeatherBadge weather={weather} isLight={isLight} />
+                  <WeatherBadge weather={weather}  />
                 )}
               </div>
             </div>
             
             <div className="mt-4 w-full max-w-xs">
-              <SunInfoCard city={selectedCity} localTime={localTime} theme={currentTheme} t={t} />
+              <SunInfoCard city={selectedCity} t={t} />
             </div>
             
             {/* Compare Link - Text style */}
@@ -297,10 +297,10 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         
         {/* === 2. TWO_CITY_TIME_CONVERTER === */}
         <TimeConverter
-          currentTheme={currentTheme}
-          themeData={theme}
-          use12Hour={use12Hour}
-          isLight={isLight}
+          
+          
+          
+          
           currentCitySlug={selectedCity.slug}
         />
         
@@ -308,25 +308,25 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
           <QuickInfoCards 
             city={selectedCity} 
-            localTime={localTime} 
-            theme={theme} 
-            isLight={isLight} 
+             
+             
+             
           />
           
           {/* City Guide Card - shows for supported cities */}
-          <CityGuideCard citySlug={selectedCity.slug} isLight={isLight} />
+          <CityGuideCard citySlug={selectedCity.slug}  />
         </div>
         
         {/* === MORE CITIES IN COUNTRY === */}
         <MoreCitiesSection 
           selectedCity={selectedCity}
-          theme={theme}
-          isLight={isLight}
-          use12Hour={use12Hour}
+          
+          
+          
         />
         
         {/* === 4. TIME INTELLIGENCE (SEO 1) === */}
-        <TimeIntelligence city={selectedCity} theme={theme} isLight={isLight} />
+        <TimeIntelligence city={selectedCity}   />
         
         {/* Favorite Cities Section */}
         {favoriteCities.length > 0 && (
@@ -345,10 +345,10 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
                     router.push(`/${city.slug}`)
                   }}
                   onRemove={() => toggleFavorite(city.slug)}
-                  currentTheme={currentTheme}
-                  themeData={theme}
-                  use12Hour={use12Hour}
-                  isLight={isLight}
+                  
+                  
+                  
+                  
                 />
               ))}
             </div>
@@ -366,15 +366,15 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           onContinentChange={setSelectedContinent}
           continentFilter={continentFilter}
           onFilterChange={setContinentFilter}
-          theme={theme}
-          currentTheme={currentTheme}
-          isLight={isLight}
-          use12Hour={use12Hour}
+          
+          
+          
+          
           t={t}
         />
         
         {/* === 6. TRAVEL BRIDGE (Banner) === */}
-        <TravelBridge city={selectedCity} isLight={isLight} />
+        <TravelBridge city={selectedCity}  />
         
         {/* === 7. ULTIMATE CITY GUIDE (Tabbed) === */}
         <UltimateGuide
@@ -382,14 +382,14 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
           offset={offset}
           guideTab={guideTab}
           onTabChange={setGuideTab}
-          theme={theme}
-          isLight={isLight}
+          
+          
         />
       </div>
       
       {/* Footer */}
       <div className="relative z-10 mt-10">
-        <Footer isLight={isLight} />
+        <Footer />
       </div>
       
       {/* Floating Alert Button */}
@@ -413,8 +413,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
       <AlarmModal
         isOpen={showAlarmModal}
         onClose={() => setShowAlarmModal(false)}
-        isLight={isLight}
-        theme={theme}
+        
+        
         alarms={alarms}
         setAlarms={setAlarms}
       />
@@ -423,8 +423,8 @@ export default function WorldClock({ initialCity }: WorldClockProps) {
       <ActiveAlarmPopup
         alarm={activeAlarm}
         onDismiss={dismissAlarm}
-        isLight={isLight}
-        theme={theme}
+        
+        
       />
     </div>
   )

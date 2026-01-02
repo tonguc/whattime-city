@@ -4,20 +4,20 @@ import { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { useRouter } from 'next/navigation'
 import { City, searchCities } from '@/lib/cities'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 
 interface CitySearchProps {
   placeholder?: string
   onSelect?: (city: City) => void
   className?: string
-  isLight?: boolean
 }
 
 export default function CitySearch({ 
   placeholder = "Search city...", 
   onSelect,
-  className = "",
-  isLight = false
+  className = ""
 }: CitySearchProps) {
+  const { text, textMuted, isLight } = useThemeClasses()
   const router = useRouter()
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<City[]>([])
@@ -120,7 +120,7 @@ export default function CitySearch({
   return (
     <div ref={searchRef} className={`relative ${className}`}>
       <div className={`flex items-center gap-2 px-4 py-2.5 rounded-full ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
-        <svg className={`w-4 h-4 flex-shrink-0 ${isLight ? 'text-slate-500' : 'text-slate-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className={`w-4 h-4 flex-shrink-0 ${textMuted}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
         <input
@@ -181,8 +181,8 @@ export default function CitySearch({
               }`}
             >
               <div>
-                <span className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>{city.city}</span>
-                <span className={`text-sm ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{city.country}</span>
+                <span className={`font-medium ${text}`}>{city.city}</span>
+                <span className={`text-sm ml-2 ${textMuted}`}>{city.country}</span>
               </div>
             </button>
           ))}

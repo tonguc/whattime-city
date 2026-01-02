@@ -583,7 +583,6 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
           <section className={`rounded-3xl p-6 mb-6 backdrop-blur-xl border ${theme.card}`}>
             <OverlapHeatmap 
               cities={selectedCities}
-              isLight={isLight}
             />
           </section>
         ) : (
@@ -739,7 +738,7 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
       </main>
       
       {/* Footer */}
-      <Footer isLight={isLight} />
+      <Footer />
       
       {/* Snackbar - Cities cleared with Undo */}
       {showSnackbar && (

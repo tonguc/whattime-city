@@ -3,18 +3,19 @@
 import { City } from '@/lib/cities'
 import { getSunTimes, formatSunTime } from '@/lib/sun-calculator'
 import { Translations } from '@/lib/translations'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 
 interface SunInfoCardProps {
   city: City
-  localTime: Date
-  theme: string
   t: Translations
 }
 
-export default function SunInfoCard({ city, localTime, theme, t }: SunInfoCardProps) {
-  const { sunrise, sunset } = getSunTimes(localTime, city.lat, city.lng)
+export default function SunInfoCard({ city, t }: SunInfoCardProps) {
+  const { text, isLight } = useThemeClasses()
   
-  const isLight = ['day', 'light'].includes(theme)
+  const now = new Date()
+  // Pass timezone for accurate local time calculation
+  const { sunrise, sunset } = getSunTimes(now, city.lat, city.lng, city.timezone)
   
   return (
     <div className={`flex justify-around p-4 rounded-2xl ${
@@ -33,7 +34,7 @@ export default function SunInfoCard({ city, localTime, theme, t }: SunInfoCardPr
           </svg>
           <span className="text-sm font-medium">{t.sunriseLabel}</span>
         </div>
-        <div className={`text-2xl font-light mt-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+        <div className={`text-2xl font-light mt-1 ${text}`}>
           {formatSunTime(sunrise)}
         </div>
       </div>
@@ -53,7 +54,7 @@ export default function SunInfoCard({ city, localTime, theme, t }: SunInfoCardPr
           </svg>
           <span className="text-sm font-medium">{t.sunsetLabel}</span>
         </div>
-        <div className={`text-2xl font-light mt-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+        <div className={`text-2xl font-light mt-1 ${text}`}>
           {formatSunTime(sunset)}
         </div>
       </div>

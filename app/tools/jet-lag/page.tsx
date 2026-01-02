@@ -3,12 +3,14 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { cities } from '@/lib/cities'
-import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
+import { useThemeClasses } from '@/lib/useThemeClasses'
+import { useCityContext } from '@/lib/CityContext'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 
 export default function JetLagPage() {
-  const { theme, isLight, selectedCity } = useToolsTheme()
+  const { theme, isLight, text, textMuted, card, accentBg, accentText } = useThemeClasses()
+  const { activeCity } = useCityContext()
   
   const [currentTime, setCurrentTime] = useState(new Date())
   const [fromCity, setFromCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
@@ -16,10 +18,10 @@ export default function JetLagPage() {
   
   // Sync fromCity with context when it becomes available
   useEffect(() => {
-    if (selectedCity) {
-      setFromCity(selectedCity)
+    if (activeCity) {
+      setFromCity(activeCity)
     }
-  }, [selectedCity])
+  }, [activeCity])
 
   // Calculate time difference
   const getTimeDiff = () => {
@@ -261,7 +263,7 @@ export default function JetLagPage() {
         </section>
 
         {/* Footer */}
-        <Footer isLight={isLight} />
+        <Footer />
     </>
   )
 }

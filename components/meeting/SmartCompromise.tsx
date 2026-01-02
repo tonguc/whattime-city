@@ -1,21 +1,18 @@
 'use client'
 
-/**
- * Smart Compromise Component
- * Shows best meeting time suggestions when no perfect overlap exists
- */
-
 import { City } from '@/lib/cities'
 import { CompromiseSlot, formatHour, getStatusIcon, getStatusLabel } from '@/lib/meetingPlanner'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 
 interface Props {
   city1: City
   city2: City
   slots: CompromiseSlot[]
-  isLight: boolean
 }
 
-export default function SmartCompromise({ city1, city2, slots, isLight }: Props) {
+export default function SmartCompromise({ city1, city2, slots }: Props) {
+  const { text, textMuted, isLight } = useThemeClasses()
+  
   if (slots.length === 0) return null
 
   return (
@@ -37,10 +34,9 @@ export default function SmartCompromise({ city1, city2, slots, isLight }: Props)
                 : 'bg-slate-700/60 border-slate-600 hover:border-slate-500'
             }`}
           >
-            {/* Header */}
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
-                <span className={`text-lg font-semibold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+                <span className={`text-lg font-semibold ${text}`}>
                   Option {index + 1}
                 </span>
                 <span className={`text-sm px-2 py-0.5 rounded ${
@@ -55,49 +51,44 @@ export default function SmartCompromise({ city1, city2, slots, isLight }: Props)
               </div>
             </div>
 
-            {/* City Times */}
             <div className="space-y-2">
-              {/* City 1 */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className={`text-sm font-medium ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
                     {city1.city}:
                   </span>
-                  <span className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+                  <span className={`text-sm ${textMuted}`}>
                     {formatHour(slot.city1LocalHour)}
                   </span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <span>{getStatusIcon(slot.city1Status)}</span>
-                  <span className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                  <span className={`text-xs ${textMuted}`}>
                     {getStatusLabel(slot.city1Status)}
                   </span>
                 </div>
               </div>
 
-              {/* City 2 */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className={`text-sm font-medium ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
                     {city2.city}:
                   </span>
-                  <span className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+                  <span className={`text-sm ${textMuted}`}>
                     {formatHour(slot.city2LocalHour)}
                   </span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <span>{getStatusIcon(slot.city2Status)}</span>
-                  <span className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                  <span className={`text-xs ${textMuted}`}>
                     {getStatusLabel(slot.city2Status)}
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Action Button */}
             <button
               onClick={() => {
-                // In future: Add to calendar functionality
                 alert(`Selected: ${formatHour(slot.city1LocalHour)} ${city1.city} / ${formatHour(slot.city2LocalHour)} ${city2.city}`)
               }}
               className={`w-full mt-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
@@ -112,11 +103,10 @@ export default function SmartCompromise({ city1, city2, slots, isLight }: Props)
         ))}
       </div>
 
-      {/* Pro Tip */}
       <div className={`mt-4 p-3 rounded-lg text-xs ${
         isLight ? 'bg-blue-50 text-blue-700' : 'bg-blue-900/30 text-blue-300'
       }`}>
-        <strong>💡 Pro tip:</strong> For challenging time zones, consider recording meetings for async review, or rotating meeting times to share the inconvenience fairly.
+        <strong>💡 Pro tip:</strong> For challenging time zones, consider recording meetings for async review.
       </div>
     </div>
   )

@@ -1,11 +1,11 @@
 'use client'
 
 import { useState, useMemo, useCallback } from 'react'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 import { City } from '@/lib/cities'
 
 interface OverlapHeatmapProps {
   cities: City[]
-  isLight: boolean
   referenceTimezone?: string
 }
 
@@ -85,7 +85,8 @@ function getCityHourAt(city: City, referenceHour: number, referenceTimezone: str
   return (referenceHour + diff + 24) % 24
 }
 
-export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: OverlapHeatmapProps) {
+export default function OverlapHeatmap({ cities, referenceTimezone }: OverlapHeatmapProps) {
+  const { isLight, textMuted, text } = useThemeClasses()
   const [selectedHour, setSelectedHour] = useState<number | null>(null)
   const [tooltipPosition, setTooltipPosition] = useState<{ x: number, y: number } | null>(null)
   
@@ -314,7 +315,7 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
   // Eğer şehir yoksa veya tek şehir varsa
   if (cities.length === 0) {
     return (
-      <div className={`text-center py-8 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+      <div className={`text-center py-8 ${textMuted}`}>
         <svg className="w-12 h-12 mx-auto mb-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
@@ -326,7 +327,7 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
   
   if (cities.length === 1) {
     return (
-      <div className={`text-center py-6 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+      <div className={`text-center py-6 ${textMuted}`}>
         <div className="flex items-center justify-center gap-2 mb-3">
           <span className="text-2xl">🌍</span>
           <span className={`font-medium ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
@@ -343,10 +344,10 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
         <div>
-          <h3 className={`text-lg font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h3 className={`text-lg font-bold ${text}`}>
             📊 Overlap Heatmap
           </h3>
-          <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+          <p className={`text-sm ${textMuted}`}>
             All times shown in <span className={`font-semibold ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>{refCityName} time</span> • Darker = better overlap
           </p>
         </div>
@@ -397,7 +398,7 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
           {[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22].map(hour => (
             <div 
               key={hour} 
-              className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}
+              className={`text-xs ${textMuted}`}
               style={{ width: `${100/12}%` }}
             >
               {hour.toString().padStart(2, '0')}
@@ -453,7 +454,7 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
                           <span className="font-medium">All participants awake</span>
                         </div>
                         {/* Business hours note */}
-                        <div className={`text-xs mb-2 pl-6 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                        <div className={`text-xs mb-2 pl-6 ${textMuted}`}>
                           Outside business hours for some
                         </div>
                       </>
@@ -485,7 +486,7 @@ export default function OverlapHeatmap({ cities, isLight, referenceTimezone }: O
                             {city.city}
                           </span>
                           <div className="flex items-center gap-1.5">
-                            <span className={`font-mono text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                            <span className={`font-mono text-xs ${textMuted}`}>
                               {formatHour(localHour)}
                             </span>
                             {isAwake ? (

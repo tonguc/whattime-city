@@ -7,7 +7,7 @@ import { useCityContext } from '@/lib/CityContext'
 export default function ContactContent() {
   const { theme, isLight } = useCityContext()
   
-  const textMain = isLight ? 'text-slate-800' : 'text-white'
+  const textMain = theme.text
   const textMuted = isLight ? 'text-slate-600' : 'text-slate-300'
   const textSubtle = isLight ? 'text-slate-500' : 'text-slate-400'
   const cardBg = isLight ? 'bg-slate-100/80 border-slate-200' : 'bg-slate-800/50 border-slate-700'
@@ -133,7 +133,7 @@ export default function ContactContent() {
         </div>
       </main>
       
-      <Footer isLight={isLight} />
+      <Footer />
     </div>
   )
 }

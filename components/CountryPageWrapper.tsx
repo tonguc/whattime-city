@@ -20,7 +20,7 @@ export default function CountryPageWrapper({ children }: CountryPageWrapperProps
         {children}
       </div>
       
-      <Footer isLight={isLight} />
+      <Footer />
     </div>
   )
 }

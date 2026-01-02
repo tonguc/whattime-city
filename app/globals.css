@@ -4,6 +4,116 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* ============================================
+   CSS CUSTOM PROPERTIES (Variables)
+   These enable CSS-only theme switching via data-theme attribute
+   ============================================ */
+
+:root {
+  /* Default: Day theme */
+  --theme-bg-from: theme('colors.sky.100');
+  --theme-bg-via: theme('colors.blue.100');
+  --theme-bg-to: theme('colors.cyan.100');
+  --theme-card-bg: theme('colors.white');
+  --theme-card-border: theme('colors.slate.200');
+  --theme-text: theme('colors.slate.800');
+  --theme-text-muted: theme('colors.slate.500');
+  --theme-accent: theme('colors.amber.500');
+}
+
+/* Light themes */
+[data-theme="day"],
+[data-theme="light"] {
+  --theme-bg-from: theme('colors.sky.100');
+  --theme-bg-via: theme('colors.blue.100');
+  --theme-bg-to: theme('colors.cyan.100');
+  --theme-card-bg: theme('colors.white');
+  --theme-card-border: theme('colors.slate.200');
+  --theme-text: theme('colors.slate.800');
+  --theme-text-muted: theme('colors.slate.500');
+  --theme-accent: theme('colors.amber.500');
+}
+
+/* Night theme */
+[data-theme="night"],
+[data-theme="dark"] {
+  --theme-bg-from: theme('colors.slate.950');
+  --theme-bg-via: theme('colors.indigo.950');
+  --theme-bg-to: theme('colors.slate.950');
+  --theme-card-bg: rgb(30 41 59 / 0.6); /* slate-800/60 */
+  --theme-card-border: rgb(51 65 85 / 0.5); /* slate-700/50 */
+  --theme-text: theme('colors.white');
+  --theme-text-muted: theme('colors.slate.400');
+  --theme-accent: theme('colors.cyan.400');
+}
+
+/* Dawn theme */
+[data-theme="dawn"] {
+  --theme-bg-from: theme('colors.slate.900');
+  --theme-bg-via: theme('colors.orange.900');
+  --theme-bg-to: theme('colors.amber.800');
+  --theme-card-bg: rgb(30 41 59 / 0.6); /* slate-800/60 */
+  --theme-card-border: rgb(194 65 12 / 0.5); /* orange-700/50 */
+  --theme-text: theme('colors.white');
+  --theme-text-muted: theme('colors.orange.300');
+  --theme-accent: theme('colors.amber.400');
+}
+
+/* Dusk theme */
+[data-theme="dusk"] {
+  --theme-bg-from: theme('colors.purple.900');
+  --theme-bg-via: theme('colors.rose.900');
+  --theme-bg-to: theme('colors.orange.900');
+  --theme-card-bg: rgb(30 41 59 / 0.6); /* slate-800/60 */
+  --theme-card-border: rgb(126 34 206 / 0.5); /* purple-700/50 */
+  --theme-text: theme('colors.white');
+  --theme-text-muted: theme('colors.purple.300');
+  --theme-accent: theme('colors.purple.400');
+}
+
+/* ============================================
+   THEME UTILITY CLASSES
+   Use these when you need CSS-only theming
+   ============================================ */
+
+@layer components {
+  /* Theme-aware card - uses CSS variables */
+  .theme-card {
+    background-color: var(--theme-card-bg);
+    border: 1px solid var(--theme-card-border);
+    @apply backdrop-blur-xl;
+  }
+  
+  /* Theme-aware text */
+  .theme-text {
+    color: var(--theme-text);
+  }
+  
+  .theme-text-muted {
+    color: var(--theme-text-muted);
+  }
+  
+  /* Theme-aware input */
+  .theme-input {
+    @apply rounded-lg px-4 py-2 transition-colors;
+    background-color: var(--theme-card-bg);
+    border: 1px solid var(--theme-card-border);
+    color: var(--theme-text);
+  }
+  
+  .theme-input::placeholder {
+    color: var(--theme-text-muted);
+  }
+  
+  .theme-input:focus {
+    @apply ring-2 ring-blue-500 outline-none;
+  }
+}
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
 /* Prevent layout shift from scrollbar appearing/disappearing */
 html {
   scrollbar-gutter: stable;
@@ -36,4 +146,9 @@ html {
 
 .animate-fadeIn {
   animation: fadeIn 0.3s ease-out;
+}
+
+/* Smooth theme transitions */
+[data-theme] {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }

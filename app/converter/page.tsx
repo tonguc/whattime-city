@@ -3,13 +3,15 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { cities } from '@/lib/cities'
-import { useToolsTheme, getContextCity } from '@/lib/useToolsTheme'
+import { useThemeClasses } from '@/lib/useThemeClasses'
+import { useCityContext } from '@/lib/CityContext'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 
 export default function TimeConverterPage() {
-  // Theme from global CityContext (via layout)
-  const { theme, isLight, selectedCity } = useToolsTheme()
+  // Theme from useThemeClasses
+  const { theme, isLight, text, textMuted, card, accentBg, accentText } = useThemeClasses()
+  const { activeCity } = useCityContext()
   
   // Get initial city from context or default
   const [fromCity, setFromCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
@@ -19,10 +21,10 @@ export default function TimeConverterPage() {
   
   // Sync fromCity with context when it becomes available
   useEffect(() => {
-    if (selectedCity) {
-      setFromCity(selectedCity)
+    if (activeCity) {
+      setFromCity(activeCity)
     }
-  }, [selectedCity])
+  }, [activeCity])
 
   // Calculate converted time
   const getConvertedTime = () => {
@@ -58,28 +60,28 @@ export default function TimeConverterPage() {
 
         {/* Tool Hero */}
         <div className="text-center mb-8">
-          <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${theme.text}`}>
             Time Converter
           </h1>
-          <p className={`text-lg ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          <p className={`text-lg ${theme.textMuted}`}>
             Convert time between any two cities instantly
           </p>
         </div>
 
         {/* Tool Interface */}
-        <div className={`rounded-2xl p-6 mb-8 backdrop-blur-xl border ${
-          isLight ? 'bg-white/60 border-white/70' : 'bg-slate-800/60 border-slate-700/50'
+        <div className={`rounded-2xl p-6 mb-8 backdrop-blur-xl ${
+          theme.card
         }`}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
             {/* From City */}
             <div>
-              <label className={`block text-sm font-medium mb-2 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+              <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>
                 From
               </label>
               <select
                 value={fromCity.city}
                 onChange={(e) => setFromCity(cities.find(c => c.city === e.target.value) || cities[0])}
-                className={`w-full px-4 py-3 rounded-xl border ${
+                className={`w-full px-4 py-3 rounded-xl ${
                   isLight 
                     ? 'bg-white border-slate-200 text-slate-800' 
                     : 'bg-slate-700 border-slate-600 text-white'
@@ -103,7 +105,7 @@ export default function TimeConverterPage() {
                     <option key={i} value={i}>{i.toString().padStart(2, '0')}</option>
                   ))}
                 </select>
-                <span className={`flex items-center ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>:</span>
+                <span className={`flex items-center ${theme.textMuted}`}>:</span>
                 <select
                   value={selectedMinute}
                   onChange={(e) => setSelectedMinute(parseInt(e.target.value))}
@@ -140,13 +142,13 @@ export default function TimeConverterPage() {
 
             {/* To City */}
             <div>
-              <label className={`block text-sm font-medium mb-2 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+              <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>
                 To
               </label>
               <select
                 value={toCity.city}
                 onChange={(e) => setToCity(cities.find(c => c.city === e.target.value) || cities[1])}
-                className={`w-full px-4 py-3 rounded-xl border ${
+                className={`w-full px-4 py-3 rounded-xl ${
                   isLight 
                     ? 'bg-white border-slate-200 text-slate-800' 
                     : 'bg-slate-700 border-slate-600 text-white'
@@ -164,13 +166,13 @@ export default function TimeConverterPage() {
         </div>
 
         {/* SEO SECTION 1: Common Use Cases */}
-        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
-          isLight ? 'bg-white/40 border-white/70' : 'bg-slate-800/40 border-slate-700/50'
+        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl ${
+          theme.card
         }`}>
-          <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
             Common Use Cases
           </h2>
-          <ul className={`space-y-3 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          <ul className={`space-y-3 ${theme.textMuted}`}>
             <li className="flex gap-3">
               <span className={`${theme.accentText} mt-1`}>•</span>
               <div>
@@ -199,13 +201,13 @@ export default function TimeConverterPage() {
         </section>
 
         {/* SEO SECTION 2: Who Is This Tool For? */}
-        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
-          isLight ? 'bg-white/40 border-white/70' : 'bg-slate-800/40 border-slate-700/50'
+        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl ${
+          theme.card
         }`}>
-          <h2 className={`text-xl font-semibold mb-3 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h2 className={`text-xl font-semibold mb-3 ${theme.text}`}>
             Who Is This Tool For?
           </h2>
-          <p className={`${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          <p className={`${theme.textMuted}`}>
             This tool is ideal for remote workers, international business professionals, frequent travelers, 
             and anyone who needs to coordinate across time zones. Whether you're scheduling a call with overseas 
             clients or planning when to contact family abroad, the Time Converter gives you instant answers.
@@ -213,44 +215,44 @@ export default function TimeConverterPage() {
         </section>
 
         {/* SEO SECTION 3: Related Tools */}
-        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl border ${
-          isLight ? 'bg-white/40 border-white/70' : 'bg-slate-800/40 border-slate-700/50'
+        <section className={`rounded-2xl p-6 mb-6 backdrop-blur-xl ${
+          theme.card
         }`}>
-          <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
             Related Tools
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <Link href="/meeting-planner" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
               isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
             }`}>
-              <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Meeting Planner</div>
-              <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Find overlap hours</div>
+              <div className={`text-sm font-medium ${theme.text}`}>Meeting Planner</div>
+              <div className={`text-xs ${theme.textMuted}`}>Find overlap hours</div>
             </Link>
             <Link href="/event-time" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
               isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
             }`}>
-              <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>Event Time</div>
-              <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Share event times</div>
+              <div className={`text-sm font-medium ${theme.text}`}>Event Time</div>
+              <div className={`text-xs ${theme.textMuted}`}>Share event times</div>
             </Link>
             <Link href="/" className={`p-4 rounded-xl transition-all hover:scale-[1.02] ${
               isLight ? 'bg-white/60 hover:bg-white/80' : 'bg-slate-700/60 hover:bg-slate-700/80'
             }`}>
-              <div className={`text-sm font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>World Clock</div>
-              <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>See all time zones</div>
+              <div className={`text-sm font-medium ${theme.text}`}>World Clock</div>
+              <div className={`text-xs ${theme.textMuted}`}>See all time zones</div>
             </Link>
           </div>
         </section>
 
         {/* SEO SECTION 4: FAQ */}
-        <section className={`rounded-2xl p-6 mb-8 backdrop-blur-xl border ${
-          isLight ? 'bg-white/40 border-white/70' : 'bg-slate-800/40 border-slate-700/50'
+        <section className={`rounded-2xl p-6 mb-8 backdrop-blur-xl ${
+          theme.card
         }`}>
-          <h2 className={`text-xl font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+          <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
             Frequently Asked Questions
           </h2>
-          <div className={`space-y-4 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+          <div className={`space-y-4 ${theme.textMuted}`}>
             <div>
-              <h3 className={`font-medium mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <h3 className={`font-medium mb-1 ${theme.text}`}>
                 Does this tool account for Daylight Saving Time?
               </h3>
               <p className="text-sm">
@@ -258,7 +260,7 @@ export default function TimeConverterPage() {
               </p>
             </div>
             <div>
-              <h3 className={`font-medium mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <h3 className={`font-medium mb-1 ${theme.text}`}>
                 How accurate is the time conversion?
               </h3>
               <p className="text-sm">
@@ -266,7 +268,7 @@ export default function TimeConverterPage() {
               </p>
             </div>
             <div>
-              <h3 className={`font-medium mb-1 ${isLight ? 'text-slate-800' : 'text-white'}`}>
+              <h3 className={`font-medium mb-1 ${theme.text}`}>
                 Can I convert time for cities not listed?
               </h3>
               <p className="text-sm">
@@ -279,7 +281,7 @@ export default function TimeConverterPage() {
 
       {/* Footer - Full Width */}
       <div className="relative z-10 mt-10">
-        <Footer isLight={isLight} />
+        <Footer />
       </div>
     </>
   )

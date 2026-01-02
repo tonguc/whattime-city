@@ -109,7 +109,7 @@ export default function GuidesPage() {
         </div>
       </main>
       
-      <Footer isLight={isLight} />
+      <Footer />
     </div>
   )
 }

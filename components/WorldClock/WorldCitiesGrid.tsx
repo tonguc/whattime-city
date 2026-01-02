@@ -2,8 +2,8 @@
 
 import { City, getCitiesByContinent } from '@/lib/cities'
 import type { ContinentFilter } from '@/lib/cities'
-import { themes } from '@/lib/themes'
 import { Translations } from '@/lib/translations'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 import CityCard from '@/components/CityCard'
 
 interface WorldCitiesGridProps {
@@ -13,10 +13,6 @@ interface WorldCitiesGridProps {
   onContinentChange: (continent: ContinentFilter) => void
   continentFilter: string
   onFilterChange: (filter: string) => void
-  theme: typeof themes[keyof typeof themes]
-  currentTheme: string
-  isLight: boolean
-  use12Hour: boolean
   t: Translations
 }
 
@@ -29,12 +25,10 @@ export default function WorldCitiesGrid({
   onContinentChange,
   continentFilter,
   onFilterChange,
-  theme,
-  currentTheme,
-  isLight,
-  use12Hour,
   t
 }: WorldCitiesGridProps) {
+  const { card, text, textMuted, accentBg, isLight } = useThemeClasses()
+  
   const filteredCities = getCitiesByContinent(selectedContinent).filter(city => 
     selectedContinent === 'all' || !continentFilter ||
     city.city.toLowerCase().includes(continentFilter.toLowerCase()) ||
@@ -42,9 +36,9 @@ export default function WorldCitiesGrid({
   )
 
   return (
-    <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
+    <div className={`rounded-3xl p-6 backdrop-blur-xl border ${card} mt-4`}>
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-        <h3 className={`text-xl font-semibold ${theme.text} self-center`}>
+        <h3 className={`text-xl font-semibold ${text} self-center`}>
           {t.worldCities}
         </h3>
         
@@ -59,7 +53,7 @@ export default function WorldCitiesGrid({
               }}
               className={`px-4 py-1.5 rounded-full text-base font-medium transition-all ${
                 selectedContinent === continent
-                  ? `${theme.accentBg} text-white shadow`
+                  ? `${accentBg} text-white shadow`
                   : isLight ? 'text-slate-600 hover:bg-white' : 'text-slate-400 hover:bg-slate-700'
               }`}
             >
@@ -73,7 +67,7 @@ export default function WorldCitiesGrid({
       {selectedContinent !== 'all' && (
         <div className="flex items-center gap-3 mb-4">
           <div className={`flex items-center gap-2 flex-1 max-w-xs px-3 py-2 rounded-xl ${isLight ? 'bg-white/60' : 'bg-slate-800/60'}`}>
-            <svg className={`w-4 h-4 ${theme.textMuted}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className={`w-4 h-4 ${textMuted}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
             <input
@@ -81,17 +75,17 @@ export default function WorldCitiesGrid({
               value={continentFilter}
               onChange={(e) => onFilterChange(e.target.value)}
               placeholder={`Filter ${t[selectedContinent]}...`}
-              className={`bg-transparent outline-none text-sm w-full ${theme.text} placeholder:${theme.textMuted}`}
+              className={`bg-transparent outline-none text-sm w-full ${text} placeholder:${textMuted}`}
             />
             {continentFilter && (
-              <button onClick={() => onFilterChange('')} className={`${theme.textMuted} hover:${theme.text}`}>
+              <button onClick={() => onFilterChange('')} className={`${textMuted} hover:${text}`}>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             )}
           </div>
-          <span className={`text-sm ${theme.textMuted}`}>
+          <span className={`text-sm ${textMuted}`}>
             {filteredCities.length} cities
           </span>
         </div>
@@ -104,9 +98,6 @@ export default function WorldCitiesGrid({
             city={city}
             isSelected={selectedCity.slug === city.slug}
             onClick={() => onCitySelect(city)}
-            currentTheme={currentTheme}
-            themeData={theme}
-            use12Hour={use12Hour}
           />
         ))}
       </div>

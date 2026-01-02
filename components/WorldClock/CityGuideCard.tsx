@@ -1,3 +1,7 @@
+'use client'
+
+import { useThemeClasses } from '@/lib/useThemeClasses'
+
 interface CityGuideConfig {
   slug: string
   emoji: string
@@ -85,10 +89,11 @@ const CITY_GUIDES: CityGuideConfig[] = [
 
 interface CityGuideCardProps {
   citySlug: string
-  isLight: boolean
 }
 
-export default function CityGuideCard({ citySlug, isLight }: CityGuideCardProps) {
+export default function CityGuideCard({ citySlug }: CityGuideCardProps) {
+  const { text, textMuted, isLight } = useThemeClasses()
+  
   const guide = CITY_GUIDES.find(g => g.slug === citySlug)
   
   if (!guide) return null
@@ -104,8 +109,8 @@ export default function CityGuideCard({ citySlug, isLight }: CityGuideCardProps)
         <span className="text-2xl">{guide.emoji}</span>
       </div>
       <div className="flex-1">
-        <div className={`font-bold ${isLight ? 'text-slate-800' : 'text-white'}`}>{guide.title}</div>
-        <div className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+        <div className={`font-bold ${text}`}>{guide.title}</div>
+        <div className={`text-sm ${textMuted}`}>
           {guide.description}
         </div>
       </div>

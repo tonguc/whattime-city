@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 import {
   ComposableMap,
   Geographies,
@@ -27,7 +28,6 @@ interface CityData {
 }
 
 interface MapSVGProps {
-  isLight: boolean
   zoom: number
   setZoom: (zoom: number) => void
   selectedCity: string | null
@@ -38,7 +38,7 @@ interface MapSVGProps {
 }
 
 export default function MapSVG({
-  isLight,
+
   zoom,
   setZoom,
   selectedCity,
@@ -47,6 +47,7 @@ export default function MapSVG({
   cities,
   focusedCity,
 }: MapSVGProps) {
+  const { isLight } = useThemeClasses()
   const [position, setPosition] = useState<{ coordinates: [number, number]; zoom: number }>({
     coordinates: [0, 20],
     zoom: 1,

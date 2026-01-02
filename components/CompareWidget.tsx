@@ -4,12 +4,11 @@ import { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { useRouter } from 'next/navigation'
 import { City, searchCities } from '@/lib/cities'
-import { useCityContext } from '@/lib/CityContext'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 
 interface CompareWidgetProps {
   initialFromCity?: City | null
   initialToCity?: City | null
-  isLight?: boolean  // Optional override - if not provided, uses context
   className?: string
   onCitiesChange?: (fromCity: City | null, toCity: City | null) => void
 }
@@ -19,11 +18,11 @@ interface DropdownPortalProps {
   results: City[]
   onSelect: (city: City) => void
   inputRef: React.RefObject<HTMLInputElement>
-  isLight: boolean
   highlightIndex?: number
 }
 
-function DropdownPortal({ isOpen, results, onSelect, inputRef, isLight, highlightIndex = -1 }: DropdownPortalProps) {
+function DropdownPortal({ isOpen, results, onSelect, inputRef, highlightIndex = -1 }: DropdownPortalProps) {
+  const { text, textMuted, isLight } = useThemeClasses()
   const [position, setPosition] = useState({ top: 0, left: 0, width: 0 })
   const [mounted, setMounted] = useState(false)
   
@@ -87,8 +86,8 @@ function DropdownPortal({ isOpen, results, onSelect, inputRef, isLight, highligh
               : (isLight ? 'hover:bg-slate-100 active:bg-slate-200' : 'hover:bg-slate-700 active:bg-slate-600')
           }`}
         >
-          <span className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>{city.city}</span>
-          <span className={`text-xs ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{city.country}</span>
+          <span className={`font-medium ${text}`}>{city.city}</span>
+          <span className={`text-xs ml-2 ${textMuted}`}>{city.country}</span>
         </button>
       ))}
     </div>,
@@ -99,15 +98,11 @@ function DropdownPortal({ isOpen, results, onSelect, inputRef, isLight, highligh
 export default function CompareWidget({ 
   initialFromCity = null, 
   initialToCity = null,
-  isLight: isLightProp,  // Optional prop override
   className = "",
   onCitiesChange
 }: CompareWidgetProps) {
   const router = useRouter()
-  const context = useCityContext()
-  
-  // Use prop if provided, otherwise use context's isLight
-  const isLight = isLightProp !== undefined ? isLightProp : context.isLight
+  const { isLight } = useThemeClasses()
   
   const [fromCity, setFromCity] = useState<City | null>(initialFromCity)
   const [toCity, setToCity] = useState<City | null>(initialToCity)
@@ -356,7 +351,7 @@ export default function CompareWidget({
             results={fromResults}
             onSelect={handleFromCitySelect}
             inputRef={fromInputRef}
-            isLight={isLight}
+            
             highlightIndex={fromHighlightIndex}
           />
         </div>
@@ -418,7 +413,7 @@ export default function CompareWidget({
             results={toResults}
             onSelect={handleToCitySelect}
             inputRef={toInputRef}
-            isLight={isLight}
+            
             highlightIndex={toHighlightIndex}
           />
         </div>

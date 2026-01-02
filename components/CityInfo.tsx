@@ -1,17 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 import { City } from '@/lib/cities'
 
 interface CityInfoProps {
   city: City
-  theme: {
-    text: string
-    textMuted: string
-    card: string
-    accentText: string
-  }
-  isLight: boolean
 }
 
 // Calculate time difference between local and city timezone
@@ -193,7 +187,8 @@ const Icons = {
   )
 }
 
-export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
+export default function CityInfo({ city }: CityInfoProps) {
+  const { text, textMuted, card, accentText, isLight } = useThemeClasses()
   const info = city.info
   const [timeDiff, setTimeDiff] = useState<{ hours: number; minutes: number; text: string } | null>(null)
   
@@ -212,8 +207,8 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
   if (!info) return null
   
   const seo = info.seoContent
-  const iconClass = `w-5 h-5 ${isLight ? 'text-slate-500' : 'text-slate-400'}`
-  const accentIconClass = `w-5 h-5 ${theme.accentText}`
+  const iconClass = `w-5 h-5 ${textMuted}`
+  const accentIconClass = `w-5 h-5 ${accentText}`
   
   // Determine direction for icon
   const direction = timeDiff ? (timeDiff.text.includes('ahead') ? 'ahead' : timeDiff.text.includes('behind') ? 'behind' : 'same') : 'same'
@@ -231,10 +226,10 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
   }
   
   return (
-    <div className={`rounded-2xl p-6 ${theme.card} backdrop-blur-md space-y-4`}>
+    <div className={`rounded-2xl p-6 ${card} backdrop-blur-md space-y-4`}>
       {/* Header */}
       <div className="flex items-center justify-between">
-        <h3 className={`text-xl font-semibold ${theme.text}`}>
+        <h3 className={`text-xl font-semibold ${text}`}>
           Travel Guide: {city.city}
         </h3>
         
@@ -263,7 +258,7 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
       </div>
       
       {/* Summary - Always visible */}
-      <p className={`text-base leading-relaxed ${theme.textMuted}`}>
+      <p className={`text-base leading-relaxed ${textMuted}`}>
         {getSummary()}
       </p>
       
@@ -284,53 +279,53 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
         <div className="space-y-6 pt-4 border-t border-slate-200/20">
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
         <div className={`p-3 rounded-xl ${isLight ? 'bg-white/50' : 'bg-slate-800/50'}`}>
-          <div className={`flex items-center gap-2 ${theme.textMuted} mb-1`}>
+          <div className={`flex items-center gap-2 ${textMuted} mb-1`}>
             <Icons.Currency className={iconClass} />
             <span className="text-sm">Currency</span>
           </div>
-          <div className={`text-base font-medium ${theme.text}`}>{info.currency}</div>
-          <div className={`text-xl font-bold ${theme.accentText}`}>{info.currencySymbol}</div>
+          <div className={`text-base font-medium ${text}`}>{info.currency}</div>
+          <div className={`text-xl font-bold ${accentText}`}>{info.currencySymbol}</div>
         </div>
         
         <div className={`p-3 rounded-xl ${isLight ? 'bg-white/50' : 'bg-slate-800/50'}`}>
-          <div className={`flex items-center gap-2 ${theme.textMuted} mb-1`}>
+          <div className={`flex items-center gap-2 ${textMuted} mb-1`}>
             <Icons.Population className={iconClass} />
             <span className="text-sm">Population</span>
           </div>
-          <div className={`text-base font-medium ${theme.text}`}>{info.population}</div>
+          <div className={`text-base font-medium ${text}`}>{info.population}</div>
           {info.metroPopulation && (
-            <div className={`text-sm ${theme.textMuted}`}>Metro: {info.metroPopulation}</div>
+            <div className={`text-sm ${textMuted}`}>Metro: {info.metroPopulation}</div>
           )}
         </div>
         
         <div className={`p-3 rounded-xl ${isLight ? 'bg-white/50' : 'bg-slate-800/50'}`}>
-          <div className={`flex items-center gap-2 ${theme.textMuted} mb-1`}>
+          <div className={`flex items-center gap-2 ${textMuted} mb-1`}>
             <Icons.Phone className={iconClass} />
             <span className="text-sm">Phone Code</span>
           </div>
-          <div className={`text-base font-medium ${theme.text}`}>{info.phoneCode}</div>
+          <div className={`text-base font-medium ${text}`}>{info.phoneCode}</div>
         </div>
         
         <div className={`p-3 rounded-xl ${isLight ? 'bg-white/50' : 'bg-slate-800/50'}`}>
-          <div className={`flex items-center gap-2 ${theme.textMuted} mb-1`}>
+          <div className={`flex items-center gap-2 ${textMuted} mb-1`}>
             <Icons.Language className={iconClass} />
             <span className="text-sm">Language</span>
           </div>
-          <div className={`text-base font-medium ${theme.text}`}>{info.language}</div>
+          <div className={`text-base font-medium ${text}`}>{info.language}</div>
         </div>
         
         <div className={`p-3 rounded-xl col-span-2 ${isLight ? 'bg-white/50' : 'bg-slate-800/50'}`}>
-          <div className={`flex items-center gap-2 ${theme.textMuted} mb-1`}>
+          <div className={`flex items-center gap-2 ${textMuted} mb-1`}>
             <Icons.Climate className={iconClass} />
             <span className="text-sm">Climate</span>
           </div>
-          <div className={`text-base ${theme.text}`}>{info.climate}</div>
+          <div className={`text-base ${text}`}>{info.climate}</div>
         </div>
       </div>
       
       {/* Top Attractions */}
       <div>
-        <h4 className={`flex items-center gap-2 text-base font-bold mb-3 ${theme.text}`}>
+        <h4 className={`flex items-center gap-2 text-base font-bold mb-3 ${text}`}>
           <Icons.Attractions className={accentIconClass} />
           Top Attractions
         </h4>
@@ -350,11 +345,11 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
       
       {/* Demographics */}
       <div>
-        <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${theme.text}`}>
+        <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${text}`}>
           <Icons.Demographics className={accentIconClass} />
           Demographics
         </h4>
-        <p className={`text-base leading-relaxed ${theme.textMuted}`}>
+        <p className={`text-base leading-relaxed ${textMuted}`}>
           {info.demographics}
         </p>
       </div>
@@ -364,54 +359,54 @@ export default function CityInfo({ city, theme, isLight }: CityInfoProps) {
         <>
           {/* Best Time to Visit - Primary Travel Content */}
           <div className={`p-4 rounded-xl ${isLight ? 'bg-emerald-50' : 'bg-emerald-900/20'}`}>
-            <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${theme.text}`}>
+            <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${text}`}>
               <Icons.Calendar className="w-5 h-5 text-emerald-500" />
               Best Time to Visit {city.city}
             </h4>
-            <p className={`text-base leading-relaxed ${theme.textMuted}`}>{seo.bestTimeToVisit}</p>
+            <p className={`text-base leading-relaxed ${textMuted}`}>{seo.bestTimeToVisit}</p>
           </div>
           
           {/* Local Tips */}
           {seo.localTips && (
             <div className={`p-4 rounded-xl ${isLight ? 'bg-blue-50' : 'bg-blue-900/20'}`}>
-              <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${theme.text}`}>
+              <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${text}`}>
                 <Icons.Lightbulb className="w-5 h-5 text-blue-500" />
                 Local Tips & Advice
               </h4>
-              <p className={`text-base leading-relaxed ${theme.textMuted}`}>{seo.localTips}</p>
+              <p className={`text-base leading-relaxed ${textMuted}`}>{seo.localTips}</p>
             </div>
           )}
           
           {/* Transportation */}
           {seo.transportation && (
             <div>
-              <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${theme.text}`}>
+              <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${text}`}>
                 <Icons.Transport className={accentIconClass} />
                 Getting Around {city.city}
               </h4>
-              <p className={`text-base leading-relaxed ${theme.textMuted}`}>{seo.transportation}</p>
+              <p className={`text-base leading-relaxed ${textMuted}`}>{seo.transportation}</p>
             </div>
           )}
           
           {/* Emergency Numbers */}
           {seo.emergencyNumbers && (
             <div className={`p-4 rounded-xl ${isLight ? 'bg-red-50' : 'bg-red-900/20'}`}>
-              <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${theme.text}`}>
+              <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${text}`}>
                 <Icons.Emergency className="w-5 h-5 text-red-500" />
                 Emergency Contacts
               </h4>
-              <p className={`text-base leading-relaxed ${theme.textMuted}`}>{seo.emergencyNumbers}</p>
+              <p className={`text-base leading-relaxed ${textMuted}`}>{seo.emergencyNumbers}</p>
             </div>
           )}
           
           {/* Public Holidays */}
           {seo.publicHolidays && (
             <div>
-              <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${theme.text}`}>
+              <h4 className={`flex items-center gap-2 text-base font-bold mb-2 ${text}`}>
                 <Icons.Holiday className={accentIconClass} />
                 Public Holidays in {city.country}
               </h4>
-              <p className={`text-base leading-relaxed ${theme.textMuted}`}>{seo.publicHolidays}</p>
+              <p className={`text-base leading-relaxed ${textMuted}`}>{seo.publicHolidays}</p>
             </div>
           )}
         </>

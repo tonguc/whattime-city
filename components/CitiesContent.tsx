@@ -329,7 +329,7 @@ export default function CitiesContent() {
         </section>
       </main>
 
-      <Footer isLight={isLight} />
+      <Footer />
     </div>
   )
 }

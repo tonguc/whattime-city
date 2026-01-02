@@ -2,12 +2,12 @@
 
 import { useEffect } from 'react'
 import Link from 'next/link'
-import { useToolsTheme } from '@/lib/useToolsTheme'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 
 export default function WorldAlarmPage() {
-  const { theme, isLight } = useToolsTheme()
+  const { theme, isLight, text, textMuted, card, accentBg, accentText } = useThemeClasses()
 
   return (
     <>
@@ -104,7 +104,7 @@ export default function WorldAlarmPage() {
         </div>
       </section>
 
-      <Footer isLight={isLight} />
+      <Footer />
     </>
   )
 }

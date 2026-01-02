@@ -2,17 +2,18 @@
 
 import Link from 'next/link'
 import { City } from '@/lib/cities'
+import { useThemeClasses } from '@/lib/useThemeClasses'
 
 interface BreadcrumbsProps {
   cities: City[]
-  isLight: boolean
 }
 
-export default function Breadcrumbs({ cities, isLight }: BreadcrumbsProps) {
+export default function Breadcrumbs({ cities }: BreadcrumbsProps) {
+  const { text, textMuted, isLight } = useThemeClasses()
   const cityNames = cities.map(c => c.city).join(' vs ')
   
   return (
-    <nav aria-label="Breadcrumb" className={`mb-4 text-sm ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+    <nav aria-label="Breadcrumb" className={`mb-4 text-sm ${textMuted}`}>
       <ol className="flex items-center gap-2 flex-wrap">
         <li>
           <Link 
@@ -38,7 +39,7 @@ export default function Breadcrumbs({ cities, isLight }: BreadcrumbsProps) {
             <li>
               <span className="mx-1">/</span>
             </li>
-            <li className={`font-medium ${isLight ? 'text-slate-800' : 'text-white'}`}>
+            <li className={`font-medium ${text}`}>
               {cityNames}
             </li>
           </>
