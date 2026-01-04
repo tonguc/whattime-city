@@ -192,14 +192,14 @@ export default function GuideLayout({
                 </h4>
                 <div className="space-y-2">
                   <Link
-                    href="/time-converter/"
+                    href="/time/"
                     className={`block px-3 py-2 rounded-lg text-sm ${
                       isLight 
                         ? 'bg-amber-50 text-amber-700 hover:bg-amber-100' 
                         : 'bg-amber-900/30 text-amber-400 hover:bg-amber-900/50'
                     }`}
                   >
-                    🔄 Time Converter
+                    🔄 Compare Time
                   </Link>
                   <Link
                     href="/meeting/"

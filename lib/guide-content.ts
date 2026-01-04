@@ -913,14 +913,26 @@ function createGenericGuideConfig(citySlug: string, city: { city: string; timezo
 // Import cities for generic config creation
 import { cities } from '@/lib/cities'
 
+// Only 8 premium cities have guide pages with quality content
+const PREMIUM_GUIDE_CITIES = [
+  'new-york',
+  'london',
+  'tokyo',
+  'dubai',
+  'singapore',
+  'paris',
+  'sydney',
+  'istanbul'
+]
+
 export function getGuideConfig(citySlug: string): GuideConfig | null {
-  // First check if we have a custom config
+  // Only return config for premium cities with custom content
   if (guideConfigs[citySlug]) {
     return guideConfigs[citySlug]
   }
   
-  // For Tier 1 cities without custom config, create generic one
-  if (TIER1_GUIDE_CITIES.includes(citySlug)) {
+  // For premium cities without custom guideConfig, create generic
+  if (PREMIUM_GUIDE_CITIES.includes(citySlug)) {
     const city = cities.find(c => c.slug === citySlug)
     if (city) {
       return createGenericGuideConfig(citySlug, city)
@@ -931,5 +943,5 @@ export function getGuideConfig(citySlug: string): GuideConfig | null {
 }
 
 export function getSupportedGuideCities(): string[] {
-  return TIER1_GUIDE_CITIES
+  return PREMIUM_GUIDE_CITIES
 }

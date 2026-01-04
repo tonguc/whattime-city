@@ -196,7 +196,7 @@ export default function CompareTimePage() {
         {/* Title */}
         <div className="text-center mb-10">
           <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${text}`}>
-            Compare Time Between Cities
+            Time Zone Converter
           </h1>
           <p className={`text-lg ${textMuted}`}>
             See the current time difference between any two cities

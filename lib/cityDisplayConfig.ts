@@ -114,13 +114,25 @@ const TIER1_CITIES = [
   'cairo', 'johannesburg'
 ]
 
+// Only 8 cities with premium guide content
+const PREMIUM_GUIDE_CITIES = [
+  'new-york',
+  'london', 
+  'tokyo',
+  'dubai',
+  'singapore',
+  'paris',
+  'sydney',
+  'istanbul'
+]
+
 /**
  * Şehrin guide sayfası var mı kontrol eder
  * @param citySlug - Şehir slug
  * @returns boolean
  */
 export function hasGuide(citySlug: string): boolean {
-  return TIER1_CITIES.includes(citySlug.toLowerCase())
+  return PREMIUM_GUIDE_CITIES.includes(citySlug.toLowerCase())
 }
 
 /**
@@ -128,7 +140,7 @@ export function hasGuide(citySlug: string): boolean {
  * @returns string[]
  */
 export function getGuideCities(): string[] {
-  return TIER1_CITIES
+  return PREMIUM_GUIDE_CITIES
 }
 
 /**
