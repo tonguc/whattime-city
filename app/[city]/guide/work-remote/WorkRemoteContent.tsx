@@ -54,12 +54,12 @@ export default function WorkRemoteContent({ city }: Props) {
         
         <div className="flex-1 min-w-0 space-y-12">
           
-          <section id="overview" className={`p-4 sm:p-6 rounded-2xl border-l-4 border-amber-500 ${cardBg} scroll-mt-40`}>
+          <section id="overview" className={`p-4 sm:p-6 rounded-2xl border-l-4 border-amber-500 ${cardBg} scroll-mt-48`}>
             <h2 className={`text-xl font-semibold mb-3 ${headingColor}`}>⚡ Quick Overview</h2>
             <p>{city.city} offers great opportunities for remote workers with reliable internet, coworking spaces, and a vibrant international community.</p>
           </section>
           
-          <section id="visas" className="scroll-mt-40">
+          <section id="visas" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>🛂 Visa Options</h2>
             <div className={`-mx-4 sm:mx-0 overflow-x-auto`}>
               <div className="min-w-[450px] px-4 sm:px-0">
@@ -94,7 +94,7 @@ export default function WorkRemoteContent({ city }: Props) {
             <p className={`text-xs mt-2 ${mutedColor}`}>← Swipe to see more</p>
           </section>
           
-          <section id="coworking" className="scroll-mt-40">
+          <section id="coworking" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>🏢 Coworking Spaces</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               <div className={`p-4 rounded-xl ${cardBg}`}>
@@ -108,7 +108,7 @@ export default function WorkRemoteContent({ city }: Props) {
             </div>
           </section>
           
-          <section id="cost" className="scroll-mt-40">
+          <section id="cost" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>💰 Cost of Living</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               <div className={`p-3 rounded-xl ${cardBg} text-center`}>
@@ -130,14 +130,14 @@ export default function WorkRemoteContent({ city }: Props) {
             </div>
           </section>
           
-          <section id="internet" className="scroll-mt-40">
+          <section id="internet" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>📶 Internet & Connectivity</h2>
             <div className={`p-4 rounded-xl ${cardBg}`}>
               <p>Most areas have reliable high-speed internet. Average speeds: 50-100 Mbps. Mobile data is affordable and fast.</p>
             </div>
           </section>
           
-          <section id="tips" className="scroll-mt-40">
+          <section id="tips" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>💡 Pro Tips</h2>
             <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
               <div className={`p-4 rounded-xl ${cardBg}`}>
@@ -151,7 +151,7 @@ export default function WorkRemoteContent({ city }: Props) {
             </div>
           </section>
           
-          <section id="related" className="scroll-mt-40">
+          <section id="related" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>📖 Related Guides</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               <Link href={`/${city.slug}/guide/time-business/`} className={`p-4 rounded-xl ${cardBg} hover:scale-[1.02] transition-transform block`}>

@@ -65,15 +65,15 @@ export default function TravelGuideContent({ city }: Props) {
         
         <div className="flex-1 min-w-0 space-y-12">
           
-          <section id="overview" className={`p-4 sm:p-6 rounded-2xl border-l-4 border-amber-500 ${cardBg} scroll-mt-40`}>
+          <section id="overview" className={`p-4 sm:p-6 rounded-2xl border-l-4 border-amber-500 ${cardBg} scroll-mt-48`}>
             <h2 className={`text-xl font-semibold mb-3 ${headingColor}`}>⚡ Quick Overview</h2>
             <p>The best time to visit {city.city} depends on your preferences for weather, crowds, and events. Generally, spring and fall offer the best balance of pleasant weather and moderate tourist numbers.</p>
           </section>
           
-          <section id="best-time" className="scroll-mt-40">
+          <section id="best-time" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>📅 Best Time to Visit</h2>
             
-            <div id="weather" className="mb-8 scroll-mt-40">
+            <div id="weather" className="mb-8 scroll-mt-48">
               <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>🌡️ Weather by Month</h3>
               <div className={`-mx-4 sm:mx-0 overflow-x-auto`}>
                 <div className="min-w-[500px] px-4 sm:px-0">
@@ -118,7 +118,7 @@ export default function TravelGuideContent({ city }: Props) {
               <p className={`text-xs mt-2 ${mutedColor}`}>← Swipe to see more</p>
             </div>
             
-            <div id="peak-seasons" className="scroll-mt-40">
+            <div id="peak-seasons" className="scroll-mt-48">
               <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>📊 Peak vs Off-Peak</h3>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className={`p-4 rounded-xl ${cardBg} border-l-4 border-green-500`}>
@@ -133,7 +133,7 @@ export default function TravelGuideContent({ city }: Props) {
             </div>
           </section>
           
-          <section id="events" className="scroll-mt-40">
+          <section id="events" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>🎉 Events & Holidays</h2>
             <p className="mb-4 opacity-80">Major events can affect availability and prices. Plan accordingly!</p>
             <div className={`p-4 rounded-xl ${cardBg}`}>
@@ -141,7 +141,7 @@ export default function TravelGuideContent({ city }: Props) {
             </div>
           </section>
           
-          <section id="tips" className="scroll-mt-40">
+          <section id="tips" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>💡 Travel Tips</h2>
             <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
               <div className={`p-4 rounded-xl ${cardBg}`}>
@@ -155,7 +155,7 @@ export default function TravelGuideContent({ city }: Props) {
             </div>
           </section>
           
-          <section id="related" className="scroll-mt-40">
+          <section id="related" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>📖 Related Guides</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               <Link href={`/${city.slug}/guide/24-hours-itinerary/`} className={`p-4 rounded-xl ${cardBg} hover:scale-[1.02] transition-transform block`}>

@@ -57,7 +57,7 @@ export default function TimeZonesContent({ city }: Props) {
         
         <div className="flex-1 min-w-0 space-y-12">
           
-          <section id="current-time" className={`p-4 sm:p-6 rounded-2xl border-l-4 border-amber-500 ${cardBg} scroll-mt-40`}>
+          <section id="current-time" className={`p-4 sm:p-6 rounded-2xl border-l-4 border-amber-500 ${cardBg} scroll-mt-48`}>
             <h2 className={`text-xl font-semibold mb-3 ${headingColor}`}>🕐 Current Time in {city.city}</h2>
             <div className="text-center py-4">
               <p className={`text-4xl sm:text-5xl font-bold ${headingColor}`}>{timeStr}</p>
@@ -65,7 +65,7 @@ export default function TimeZonesContent({ city }: Props) {
             </div>
           </section>
           
-          <section id="timezone-info" className="scroll-mt-40">
+          <section id="timezone-info" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>🌍 Time Zone Information</h2>
             <div className={`p-4 rounded-xl ${cardBg}`}>
               <div className="grid sm:grid-cols-2 gap-4">
@@ -81,7 +81,7 @@ export default function TimeZonesContent({ city }: Props) {
             </div>
           </section>
           
-          <section id="world-times" className="scroll-mt-40">
+          <section id="world-times" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>🗺️ When it's noon in {city.city}</h2>
             <div className={`-mx-4 sm:mx-0 overflow-x-auto`}>
               <div className="min-w-[400px] px-4 sm:px-0">
@@ -121,14 +121,14 @@ export default function TimeZonesContent({ city }: Props) {
             <p className={`text-xs mt-2 ${mutedColor}`}>← Swipe to see more</p>
           </section>
           
-          <section id="dst" className="scroll-mt-40">
+          <section id="dst" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>☀️ Daylight Saving Time</h2>
             <div className={`p-4 rounded-xl ${cardBg}`}>
               <p>Daylight saving time affects the time difference with other cities. Always verify current time differences when scheduling international meetings.</p>
             </div>
           </section>
           
-          <section id="tips" className="scroll-mt-40">
+          <section id="tips" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>💡 Time Zone Tips</h2>
             <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
               <div className={`p-4 rounded-xl ${cardBg}`}>
@@ -142,7 +142,7 @@ export default function TimeZonesContent({ city }: Props) {
             </div>
           </section>
           
-          <section id="tools" className="scroll-mt-40">
+          <section id="tools" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>🛠️ Useful Tools</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               <Link href="/time-converter/" className={`p-4 rounded-xl ${cardBg} hover:scale-[1.02] transition-transform block`}>

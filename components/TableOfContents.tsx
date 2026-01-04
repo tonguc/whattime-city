@@ -28,7 +28,7 @@ export default function TableOfContents({ items, title = 'On This Page', isLight
         })
       },
       {
-        rootMargin: '-100px 0px -80% 0px',
+        rootMargin: '-150px 0px -70% 0px',
         threshold: 0
       }
     )
@@ -44,7 +44,7 @@ export default function TableOfContents({ items, title = 'On This Page', isLight
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
     if (element) {
-      const offset = 160 // Account for sticky header + mobile TOC
+      const offset = 120
       const elementPosition = element.getBoundingClientRect().top
       const offsetPosition = elementPosition + window.pageYOffset - offset
       
@@ -55,7 +55,7 @@ export default function TableOfContents({ items, title = 'On This Page', isLight
     }
   }
   
-  const cardBg = isLight ? 'bg-white/90' : 'bg-slate-800/90'
+  const cardBg = isLight ? 'bg-white' : 'bg-slate-800'
   const borderColor = isLight ? 'border-slate-200' : 'border-slate-700'
   const textColor = isLight ? 'text-slate-600' : 'text-slate-300'
   const headingColor = isLight ? 'text-slate-800' : 'text-white'
@@ -63,7 +63,7 @@ export default function TableOfContents({ items, title = 'On This Page', isLight
   const hoverColor = isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700/50'
   
   return (
-    <nav className={`sticky top-24 ${cardBg} backdrop-blur-xl rounded-xl border ${borderColor} p-4 max-h-[calc(100vh-120px)] overflow-y-auto`}>
+    <nav className={`sticky top-24 ${cardBg} rounded-xl border ${borderColor} p-4 max-h-[calc(100vh-120px)] overflow-y-auto shadow-lg`}>
       <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${headingColor}`}>
         {title}
       </h3>
@@ -93,7 +93,7 @@ export default function TableOfContents({ items, title = 'On This Page', isLight
 }
 
 // ==========================================
-// MOBILE TABLE OF CONTENTS - STANDALONE
+// MOBILE TABLE OF CONTENTS - SOLID & STABLE
 // ==========================================
 export function MobileTableOfContents({ items, title = 'Jump to Section', isLight }: Props) {
   const [isOpen, setIsOpen] = useState(false)
@@ -109,7 +109,7 @@ export function MobileTableOfContents({ items, title = 'Jump to Section', isLigh
         })
       },
       {
-        rootMargin: '-100px 0px -80% 0px',
+        rootMargin: '-150px 0px -70% 0px',
         threshold: 0
       }
     )
@@ -123,70 +123,80 @@ export function MobileTableOfContents({ items, title = 'Jump to Section', isLigh
   }, [items])
   
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id)
-    if (element) {
-      const offset = 160
-      const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - offset
-      
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      })
-      setIsOpen(false)
-    }
+    setIsOpen(false)
+    
+    // Small delay to allow dropdown to close first
+    setTimeout(() => {
+      const element = document.getElementById(id)
+      if (element) {
+        // Calculate total header height: main header (~57px) + time bar (~40px) + TOC bar (~48px) + buffer
+        const offset = 180
+        const elementPosition = element.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.pageYOffset - offset
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        })
+      }
+    }, 100)
   }
   
-  const cardBg = isLight ? 'bg-white' : 'bg-slate-800'
+  // ✅ SOLID backgrounds - no transparency!
+  const containerBg = isLight ? 'bg-white' : 'bg-slate-900'
   const borderColor = isLight ? 'border-slate-200' : 'border-slate-700'
   const textColor = isLight ? 'text-slate-600' : 'text-slate-300'
   const headingColor = isLight ? 'text-slate-800' : 'text-white'
-  const activeColor = isLight ? 'text-amber-700 bg-amber-100' : 'text-amber-300 bg-amber-900/50'
-  const buttonBg = isLight ? 'bg-amber-50 hover:bg-amber-100' : 'bg-amber-900/30 hover:bg-amber-900/50'
+  const activeColor = isLight ? 'text-amber-700 bg-amber-100 font-medium' : 'text-amber-300 bg-amber-900/50 font-medium'
+  const hoverBg = isLight ? 'hover:bg-slate-50' : 'hover:bg-slate-800'
   
   // Find active item for display
   const activeItem = items.find(item => item.id === activeId) || items[0]
   
   return (
-    <div className={`lg:hidden mb-6 rounded-xl border ${borderColor} overflow-hidden ${cardBg}`}>
-      {/* Toggle Button */}
+    <div className={`lg:hidden sticky top-[145px] z-30 ${containerBg} border-y ${borderColor} shadow-md -mx-6 md:-mx-8 px-4 md:px-6`}>
+      {/* Toggle Button - Full Width Toolbar Style */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-full px-4 py-3 flex items-center justify-between ${buttonBg} transition-colors`}
+        className={`w-full py-3 flex items-center justify-between ${hoverBg} transition-colors`}
       >
-        <span className="flex items-center gap-2">
-          <span className="text-lg">📑</span>
-          <span className={`font-medium ${headingColor}`}>{title}</span>
-        </span>
+        <div className="flex items-center gap-2">
+          <span className="text-base">☰</span>
+          <span className={`font-medium text-sm ${headingColor}`}>{title}</span>
+        </div>
         <div className="flex items-center gap-2">
           {activeItem && (
-            <span className={`text-sm ${textColor} hidden sm:inline`}>
+            <span className={`text-xs px-2 py-1 rounded ${isLight ? 'bg-amber-100 text-amber-700' : 'bg-amber-900/50 text-amber-300'}`}>
               {activeItem.icon} {activeItem.title}
             </span>
           )}
-          <span className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''} ${headingColor}`}>
+          <span className={`transition-transform duration-200 text-xs ${isOpen ? 'rotate-180' : ''} ${textColor}`}>
             ▼
           </span>
         </div>
       </button>
       
-      {/* Dropdown Menu */}
+      {/* Dropdown Menu - Also Solid */}
       {isOpen && (
-        <div className={`border-t ${borderColor} max-h-72 overflow-y-auto`}>
-          <ul className="p-2 space-y-1">
+        <div className={`${containerBg} border-t ${borderColor} max-h-64 overflow-y-auto pb-2`}>
+          <ul className="py-1">
             {items.map((item) => (
               <li key={item.id}>
                 <button
                   onClick={() => scrollToSection(item.id)}
-                  className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-all flex items-center gap-2 ${
+                  className={`w-full text-left px-4 py-2.5 text-sm transition-colors flex items-center gap-2 ${
                     item.level === 'h3' ? 'pl-8' : ''
                   } ${
-                    activeId === item.id ? activeColor : `${textColor} hover:bg-slate-100 dark:hover:bg-slate-700`
+                    activeId === item.id 
+                      ? activeColor 
+                      : `${textColor} ${hoverBg}`
                   }`}
                 >
                   {item.icon && <span>{item.icon}</span>}
-                  <span>{item.title}</span>
-                  {activeId === item.id && <span className="ml-auto">←</span>}
+                  <span className="flex-1">{item.title}</span>
+                  {activeId === item.id && (
+                    <span className="text-amber-500">●</span>
+                  )}
                 </button>
               </li>
             ))}

@@ -75,7 +75,7 @@ export default function TwentyFourHoursContent({ city }: Props) {
         
         <div className="flex-1 min-w-0 space-y-12">
           
-          <section id="overview" className={`p-4 sm:p-6 rounded-2xl border-l-4 border-amber-500 ${cardBg} scroll-mt-40`}>
+          <section id="overview" className={`p-4 sm:p-6 rounded-2xl border-l-4 border-amber-500 ${cardBg} scroll-mt-48`}>
             <h2 className={`text-xl font-semibold mb-4 ${headingColor}`}>⚡ Day at a Glance</h2>
             <div className="grid grid-cols-4 gap-2 sm:gap-4 text-center">
               <div><span className="text-xl sm:text-2xl">🌅</span><p className="text-xs sm:text-sm font-medium mt-1">Morning</p></div>
@@ -85,7 +85,7 @@ export default function TwentyFourHoursContent({ city }: Props) {
             </div>
           </section>
           
-          <section id="current" className={`p-4 rounded-xl ${cardBg} scroll-mt-40`}>
+          <section id="current" className={`p-4 rounded-xl ${cardBg} scroll-mt-48`}>
             <div className="flex items-center gap-3">
               <span className="text-2xl">🕐</span>
               <div>
@@ -95,10 +95,10 @@ export default function TwentyFourHoursContent({ city }: Props) {
             </div>
           </section>
           
-          <section id="itinerary" className="scroll-mt-40">
+          <section id="itinerary" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>📅 Hour-by-Hour Itinerary</h2>
             
-            <div id="morning" className="mb-8 scroll-mt-40">
+            <div id="morning" className="mb-8 scroll-mt-48">
               <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>🌅 Morning (7 AM - 12 PM)</h3>
               <div className="space-y-3">
                 {itinerary.filter(i => i.hours.some(h => h >= 7 && h < 12)).map((item, idx) => {
@@ -122,7 +122,7 @@ export default function TwentyFourHoursContent({ city }: Props) {
               </div>
             </div>
             
-            <div id="afternoon" className="mb-8 scroll-mt-40">
+            <div id="afternoon" className="mb-8 scroll-mt-48">
               <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>☀️ Afternoon (12 PM - 6 PM)</h3>
               <div className="space-y-3">
                 {itinerary.filter(i => i.hours.some(h => h >= 12 && h < 18)).map((item, idx) => {
@@ -146,7 +146,7 @@ export default function TwentyFourHoursContent({ city }: Props) {
               </div>
             </div>
             
-            <div id="evening" className="scroll-mt-40">
+            <div id="evening" className="scroll-mt-48">
               <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>🌙 Evening (6 PM - 11 PM)</h3>
               <div className="space-y-3">
                 {itinerary.filter(i => i.hours.some(h => h >= 18 || h < 7)).map((item, idx) => {
@@ -171,7 +171,7 @@ export default function TwentyFourHoursContent({ city }: Props) {
             </div>
           </section>
           
-          <section id="tips" className="scroll-mt-40">
+          <section id="tips" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>💡 Pro Tips</h2>
             <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
               <div className={`p-4 rounded-xl ${cardBg}`}>
@@ -193,7 +193,7 @@ export default function TwentyFourHoursContent({ city }: Props) {
             </div>
           </section>
           
-          <section id="related" className="scroll-mt-40">
+          <section id="related" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>📖 More {city.city} Guides</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               <Link href={`/${city.slug}/guide/travel-guide/`} className={`p-4 rounded-xl ${cardBg} hover:scale-[1.02] transition-transform block`}>

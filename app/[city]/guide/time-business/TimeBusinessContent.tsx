@@ -98,7 +98,7 @@ export default function TimeBusinessContent({ city }: Props) {
         <div className="flex-1 min-w-0 space-y-12">
           
           {/* Overview Section */}
-          <section id="overview" className={`p-4 sm:p-6 rounded-2xl border-l-4 border-amber-500 ${cardBg} scroll-mt-40`}>
+          <section id="overview" className={`p-4 sm:p-6 rounded-2xl border-l-4 border-amber-500 ${cardBg} scroll-mt-48`}>
             <h2 className={`text-xl font-semibold mb-3 ${headingColor}`}>
               ⚡ Quick Overview
             </h2>
@@ -123,7 +123,7 @@ export default function TimeBusinessContent({ city }: Props) {
           </section>
           
           {/* Business Hours Section */}
-          <section id="business-hours" className="scroll-mt-40">
+          <section id="business-hours" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>
               💼 Business Hours in {city.city}
             </h2>
@@ -133,7 +133,7 @@ export default function TimeBusinessContent({ city }: Props) {
             </p>
             
             {/* Bank Hours */}
-            <div id="bank-hours" className="mb-8 scroll-mt-40">
+            <div id="bank-hours" className="mb-8 scroll-mt-48">
               <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>
                 🏦 Bank Hours
               </h3>
@@ -171,7 +171,7 @@ export default function TimeBusinessContent({ city }: Props) {
             </div>
             
             {/* Office Hours */}
-            <div id="office-hours" className="mb-8 scroll-mt-40">
+            <div id="office-hours" className="mb-8 scroll-mt-48">
               <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>
                 🏢 Office Hours
               </h3>
@@ -182,7 +182,7 @@ export default function TimeBusinessContent({ city }: Props) {
             </div>
             
             {/* Retail Hours */}
-            <div id="retail-hours" className="scroll-mt-40">
+            <div id="retail-hours" className="scroll-mt-48">
               <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>
                 🛒 Retail & Shopping Hours
               </h3>
@@ -220,7 +220,7 @@ export default function TimeBusinessContent({ city }: Props) {
           </section>
           
           {/* Call Times Section */}
-          <section id="call-times" className="scroll-mt-40">
+          <section id="call-times" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>
               📞 Best Times to Call {city.city}
             </h2>
@@ -229,7 +229,7 @@ export default function TimeBusinessContent({ city }: Props) {
             </p>
             
             {/* Time Overlap */}
-            <div id="time-overlap" className="mb-8 scroll-mt-40">
+            <div id="time-overlap" className="mb-8 scroll-mt-48">
               <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>
                 🌍 Global Time Overlap
               </h3>
@@ -277,7 +277,7 @@ export default function TimeBusinessContent({ city }: Props) {
             </div>
             
             {/* Call Tips */}
-            <div id="call-tips" className="scroll-mt-40">
+            <div id="call-tips" className="scroll-mt-48">
               <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>
                 💡 Pro Tips for International Calls
               </h3>
@@ -303,7 +303,7 @@ export default function TimeBusinessContent({ city }: Props) {
           </section>
           
           {/* Stock Market Hours Section */}
-          <section id="market-hours" className="scroll-mt-40">
+          <section id="market-hours" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>
               📈 Stock Market Hours
             </h2>
@@ -312,7 +312,7 @@ export default function TimeBusinessContent({ city }: Props) {
             </p>
             
             {/* Stock Exchanges */}
-            <div id="stock-exchanges" className="mb-8 scroll-mt-40">
+            <div id="stock-exchanges" className="mb-8 scroll-mt-48">
               <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>
                 📊 Major Stock Exchange Hours
               </h3>
@@ -360,7 +360,7 @@ export default function TimeBusinessContent({ city }: Props) {
             </div>
             
             {/* Forex Hours */}
-            <div id="forex-hours" className="scroll-mt-40">
+            <div id="forex-hours" className="scroll-mt-48">
               <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>
                 💱 Forex Market Sessions
               </h3>
@@ -390,7 +390,7 @@ export default function TimeBusinessContent({ city }: Props) {
           </section>
           
           {/* Tools Section */}
-          <section id="tools" className="scroll-mt-40">
+          <section id="tools" className="scroll-mt-48">
             <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>
               🛠️ Useful Tools
             </h2>
