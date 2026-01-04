@@ -85,7 +85,7 @@ export default function GenericGuideContent({ city, config, isLight, timeStr }: 
                 {cluster.title}
               </h3>
               <p className={`text-sm ${mutedColor}`}>
-                {cluster.desc || cluster.description || `Learn more about ${cluster.title.toLowerCase()}`}
+                {cluster.desc || `Learn more about ${cluster.title.toLowerCase()}`}
               </p>
             </Link>
           ))}
