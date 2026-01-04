@@ -3,6 +3,7 @@
  * 
  * 1. Ensures city slugs are always in alphabetical order with -vs- separator
  * 2. Adds Cache-Control headers for /time and /meeting routes (CDN caching)
+ * 3. Redirects old guide URLs to new structure
  */
 
 import { NextResponse } from 'next/server'
@@ -16,6 +17,7 @@ export function middleware(request: NextRequest) {
   // =============================================
   if (pathname.includes('/guide/')) {
     // Map old guide slugs to new consolidated pages
+    // Using exact slug matching to avoid infinite redirects
     const redirectMap: { [key: string]: string } = {
       'business-hours': 'time-business',
       'call-times': 'time-business',
@@ -29,9 +31,18 @@ export function middleware(request: NextRequest) {
       '24-hours': '24-hours-itinerary',
     }
     
-    for (const [oldSlug, newSlug] of Object.entries(redirectMap)) {
-      if (pathname.includes(`/guide/${oldSlug}`)) {
-        const newPathname = pathname.replace(`/guide/${oldSlug}`, `/guide/${newSlug}`)
+    // Extract the guide slug from pathname
+    // Pattern: /{city}/guide/{slug}/ or /{city}/guide/{slug}
+    const guideMatch = pathname.match(/\/guide\/([^\/]+)\/?$/)
+    
+    if (guideMatch) {
+      const currentSlug = guideMatch[1]
+      
+      // Only redirect if we have an EXACT match in our redirect map
+      // This prevents '24-hours-itinerary' from matching '24-hours'
+      if (redirectMap[currentSlug]) {
+        const newSlug = redirectMap[currentSlug]
+        const newPathname = pathname.replace(`/guide/${currentSlug}`, `/guide/${newSlug}`)
         return NextResponse.redirect(new URL(newPathname, request.url), 301)
       }
     }
