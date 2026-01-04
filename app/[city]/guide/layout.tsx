@@ -58,16 +58,11 @@ export default function GuideLayout({
   
   const guideLinks = [
     { slug: '', label: 'Overview', icon: '📖' },
-    { slug: 'business-hours', label: 'Business Hours', icon: '💼' },
-    { slug: 'best-time-to-visit', label: 'Best Time to Visit', icon: cityConfig.visitIcon },
-    { slug: 'remote-work', label: 'Remote Work', icon: '💻' },
-    { slug: '24-hours', label: '24 Hours', icon: '🌆' },
-    { slug: 'call-times', label: 'Call Times', icon: '📞' },
-    { slug: 'stock-market', label: 'Stock Market', icon: '📈' },
-    { slug: 'holidays', label: 'Holidays', icon: '📅' },
-    { slug: 'digital-nomad', label: 'Digital Nomad', icon: '🎒' },
-    { slug: 'time-difference', label: 'Time Difference', icon: '🌍' },
-    { slug: 'travel-planning', label: 'Travel', icon: '✈️' },
+    { slug: 'time-business', label: 'Time & Business', icon: '💼' },
+    { slug: 'travel-guide', label: 'Travel Guide', icon: '✈️' },
+    { slug: 'work-remote', label: 'Work Remote', icon: '💻' },
+    { slug: 'time-zones', label: 'Time Zones', icon: '🌍' },
+    { slug: '24-hours-itinerary', label: '24 Hours in City', icon: '🌆' },
   ]
   
   return (

@@ -12,6 +12,32 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   // =============================================
+  // 0. Guide URL Redirects (Old → New Structure)
+  // =============================================
+  if (pathname.includes('/guide/')) {
+    // Map old guide slugs to new consolidated pages
+    const redirectMap: { [key: string]: string } = {
+      'business-hours': 'time-business',
+      'call-times': 'time-business',
+      'stock-market': 'time-business',
+      'best-time-to-visit': 'travel-guide',
+      'travel-planning': 'travel-guide',
+      'holidays': 'travel-guide',
+      'remote-work': 'work-remote',
+      'digital-nomad': 'work-remote',
+      'time-difference': 'time-zones',
+      '24-hours': '24-hours-itinerary',
+    }
+    
+    for (const [oldSlug, newSlug] of Object.entries(redirectMap)) {
+      if (pathname.includes(`/guide/${oldSlug}`)) {
+        const newPathname = pathname.replace(`/guide/${oldSlug}`, `/guide/${newSlug}`)
+        return NextResponse.redirect(new URL(newPathname, request.url), 301)
+      }
+    }
+  }
+
+  // =============================================
   // 1. /meeting URL Normalization
   // =============================================
   if (pathname.startsWith('/meeting/') && pathname !== '/meeting/') {
@@ -73,5 +99,5 @@ function addCacheHeaders(response: NextResponse, pathname: string): NextResponse
 }
 
 export const config = {
-  matcher: ['/meeting/:path*', '/time/:path*'],
+  matcher: ['/meeting/:path*', '/time/:path*', '/:city/guide/:path*'],
 }

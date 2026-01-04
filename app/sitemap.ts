@@ -55,26 +55,25 @@ export default async function sitemap() {
     priority: tool.priority,
   }))
   
-  // NYC Guide sayfaları (pillar + cluster)
+  // Guide sayfaları (pillar + cluster) - YENİ 5 SAYFA YAPISI
+  // Tüm Tier 1 şehirler için guide sayfaları üretiliyor
   const guideSlugs = [
     '', // pillar page
-    'business-hours',
-    'best-time-to-visit',
-    'remote-work',
-    '24-hours',
-    'call-times',
-    'stock-market',
-    'holidays',
-    'digital-nomad',
-    'time-difference',
-    'travel-planning',
+    'time-business',
+    'travel-guide',
+    'work-remote',
+    'time-zones',
+    '24-hours-itinerary',
   ]
-  const guideRoutes = guideSlugs.map((slug) => ({
-    url: slug ? `${baseUrl}/new-york/guide/${slug}/` : `${baseUrl}/new-york/guide/`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: slug ? 0.7 : 0.8, // pillar page gets higher priority
-  }))
+  const tier1Cities = cities.filter(c => c.tier === 1)
+  const guideRoutes = tier1Cities.flatMap((city) => 
+    guideSlugs.map((slug) => ({
+      url: slug ? `${baseUrl}/${city.slug}/guide/${slug}/` : `${baseUrl}/${city.slug}/guide/`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: slug ? 0.7 : 0.8,
+    }))
+  )
   
   // Tüm şehir sayfaları (trailing slash ile) - ✅ HUB PAGES (SEO VALUE HERE)
   const cityRoutes = cities.map((city) => ({
