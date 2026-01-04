@@ -17,8 +17,10 @@ export type { ContinentFilter } from '@/data'
 const cityMap = new Map<string, import('@/core/types').City>()
 rawCities.forEach(city => {
   const existing = cityMap.get(city.slug)
+  const cityTier = city.tier ?? 3 // Default to tier 3 if undefined
+  const existingTier = existing?.tier ?? 3
   // Keep the one with lower tier (tier 1 > tier 2 > tier 3)
-  if (!existing || city.tier < existing.tier) {
+  if (!existing || cityTier < existingTier) {
     cityMap.set(city.slug, city)
   }
 })
