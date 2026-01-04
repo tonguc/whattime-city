@@ -10,8 +10,19 @@
 export type { City, CityInfo, Country, Continent } from '@/core/types'
 
 // Import data from data layer
-import { cities, countries, amPmCountries, continentLabels } from '@/data'
+import { cities as rawCities, countries, amPmCountries, continentLabels } from '@/data'
 export type { ContinentFilter } from '@/data'
+
+// Dedupe cities - keep first occurrence, but prefer tier 1 if duplicate exists
+const cityMap = new Map<string, import('@/core/types').City>()
+rawCities.forEach(city => {
+  const existing = cityMap.get(city.slug)
+  // Keep the one with lower tier (tier 1 > tier 2 > tier 3)
+  if (!existing || city.tier < existing.tier) {
+    cityMap.set(city.slug, city)
+  }
+})
+const cities = Array.from(cityMap.values())
 
 // Re-export data for backward compatibility
 export { cities, countries, continentLabels }

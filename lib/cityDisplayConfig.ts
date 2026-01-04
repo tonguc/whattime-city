@@ -63,7 +63,7 @@ const CITY_DISPLAY_CONFIG: Record<string, CityDisplayConfig> = {
   'guangzhou': { icon: '🇨🇳', utcOffset: 8, visitIcon: '🏢', themeColor: 'emerald', displayName: 'Guangzhou' },
   'seoul': { icon: '🇰🇷', utcOffset: 9, visitIcon: '🎎', themeColor: 'blue', displayName: 'Seoul' },
   'mumbai': { icon: '🇮🇳', utcOffset: 5.5, visitIcon: '🎬', themeColor: 'orange', displayName: 'Mumbai' },
-  'new-delhi': { icon: '🇮🇳', utcOffset: 5.5, visitIcon: '🕌', themeColor: 'orange', displayName: 'Delhi' },
+  'delhi': { icon: '🇮🇳', utcOffset: 5.5, visitIcon: '🕌', themeColor: 'orange', displayName: 'Delhi' },
   'bangkok': { icon: '🇹🇭', utcOffset: 7, visitIcon: '🛕', themeColor: 'yellow', displayName: 'Bangkok' },
   'jakarta': { icon: '🇮🇩', utcOffset: 7, visitIcon: '🏝️', themeColor: 'red', displayName: 'Jakarta' },
   'kuala-lumpur': { icon: '🇲🇾', utcOffset: 8, visitIcon: '🏙️', themeColor: 'blue', displayName: 'KL' },
@@ -109,7 +109,7 @@ const TIER1_CITIES = [
   'sydney', 'los-angeles', 'toronto', 'berlin', 'chicago', 'miami', 'san-francisco',
   'vancouver', 'mexico-city', 'sao-paulo', 'buenos-aires', 'madrid', 'barcelona',
   'amsterdam', 'rome', 'vienna', 'zurich', 'frankfurt', 'lisbon', 'dublin', 'moscow',
-  'saint-petersburg', 'istanbul', 'mumbai', 'new-delhi', 'bangkok', 'seoul', 'beijing',
+  'saint-petersburg', 'istanbul', 'mumbai', 'delhi', 'bangkok', 'seoul', 'beijing',
   'shenzhen', 'guangzhou', 'jakarta', 'kuala-lumpur', 'melbourne', 'rio-de-janeiro',
   'cairo', 'johannesburg'
 ]
