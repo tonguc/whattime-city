@@ -22,7 +22,6 @@ export default function GuideLayout({
   const { theme, isLight, time, setActiveCity } = useCityContext()
   
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   
   // Sync activeCity when navigating between different city guides
   useEffect(() => {
@@ -62,9 +61,16 @@ export default function GuideLayout({
     { slug: '24-hours-itinerary', label: '24 Hours in City', icon: '🌆', shortLabel: '24h' },
   ]
   
-  // Determine active page from pathname
-  const currentPath = pathname.replace(`/${citySlug}/guide`, '').replace(/^\//, '').replace(/\/$/, '')
-  const activePage = guideLinks.find(link => link.slug === currentPath) || guideLinks[0]
+  // More robust path matching - extract last segment
+  const pathSegments = pathname.split('/').filter(Boolean)
+  const lastSegment = pathSegments[pathSegments.length - 1] || ''
+  
+  // Check if we're on guide overview or a subpage
+  const isGuideOverview = lastSegment === 'guide' || pathname.endsWith('/guide') || pathname.endsWith('/guide/')
+  const currentSlug = isGuideOverview ? '' : lastSegment
+  
+  // Find active page
+  const activePage = guideLinks.find(link => link.slug === currentSlug) || guideLinks[0]
   
   // Build breadcrumb items
   const breadcrumbItems = [
@@ -106,24 +112,22 @@ export default function GuideLayout({
         </div>
         
         {/* Mobile: Horizontal Scroll Navigation */}
-        <div className={`lg:hidden ${isLight ? 'bg-white/90' : 'bg-slate-900/90'} backdrop-blur-sm border-b ${
+        <div className={`lg:hidden ${isLight ? 'bg-white/95' : 'bg-slate-900/95'} backdrop-blur-sm border-b ${
           isLight ? 'border-slate-200' : 'border-slate-700'
         }`}>
           <div className="overflow-x-auto scrollbar-hide">
             <nav className="flex px-4 py-2 gap-1 min-w-max">
               {guideLinks.map(link => {
                 const href = link.slug ? `/${citySlug}/guide/${link.slug}/` : `/${citySlug}/guide/`
-                const isActive = link.slug === currentPath
+                const isActive = link.slug === currentSlug
                 
                 return (
                   <Link
-                    key={link.slug}
+                    key={link.slug || 'overview'}
                     href={href}
                     className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm whitespace-nowrap transition-all ${
                       isActive
-                        ? isLight
-                          ? 'bg-amber-100 text-amber-800 font-semibold'
-                          : 'bg-amber-900/50 text-amber-300 font-semibold'
+                        ? 'bg-amber-500 text-white font-semibold shadow-md'
                         : isLight 
                           ? 'text-slate-600 hover:bg-slate-100' 
                           : 'text-slate-400 hover:bg-slate-800'
@@ -149,34 +153,33 @@ export default function GuideLayout({
           {/* Sidebar Navigation - Desktop only */}
           <aside className="hidden lg:block lg:w-64 flex-shrink-0">
             <div className={`sticky top-36 rounded-2xl p-4 ${
-              isLight ? 'bg-white/60' : 'bg-slate-800/60'
+              isLight ? 'bg-white/80' : 'bg-slate-800/80'
             } backdrop-blur-xl border ${
-              isLight ? 'border-white/50' : 'border-slate-700/50'
-            }`}>
+              isLight ? 'border-slate-200' : 'border-slate-700'
+            } shadow-lg`}>
               <h3 className={`font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
                 {city.city} Guide
               </h3>
               <nav className="space-y-1">
                 {guideLinks.map(link => {
                   const href = link.slug ? `/${citySlug}/guide/${link.slug}/` : `/${citySlug}/guide/`
-                  const isActive = link.slug === currentPath
+                  const isActive = link.slug === currentSlug
                   
                   return (
                     <Link
-                      key={link.slug}
+                      key={link.slug || 'overview'}
                       href={href}
-                      className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all ${
+                      className={`flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm transition-all ${
                         isActive
-                          ? isLight
-                            ? 'bg-amber-100 text-amber-800 font-semibold border-l-4 border-amber-500'
-                            : 'bg-amber-900/50 text-amber-300 font-semibold border-l-4 border-amber-400'
+                          ? 'bg-amber-500 text-white font-semibold shadow-md'
                           : isLight 
                             ? 'hover:bg-slate-100 text-slate-600' 
                             : 'hover:bg-slate-700 text-slate-300'
                       }`}
                     >
-                      <span>{link.icon}</span>
+                      <span className="text-base">{link.icon}</span>
                       <span>{link.label}</span>
+                      {isActive && <span className="ml-auto">→</span>}
                     </Link>
                   )
                 })}
@@ -215,10 +218,10 @@ export default function GuideLayout({
           
           {/* Main Content */}
           <article className={`flex-1 min-w-0 rounded-2xl p-6 md:p-8 ${
-            isLight ? 'bg-white/80' : 'bg-slate-800/60'
+            isLight ? 'bg-white/90' : 'bg-slate-800/80'
           } backdrop-blur-xl border ${
-            isLight ? 'border-white/50' : 'border-slate-700/50'
-          }`}>
+            isLight ? 'border-slate-200' : 'border-slate-700'
+          } shadow-lg`}>
             {children}
           </article>
         </div>
