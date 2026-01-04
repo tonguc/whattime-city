@@ -147,7 +147,7 @@ export default function TimeZonesContent({ city }: Props) {
             <div className="grid sm:grid-cols-2 gap-4">
               <Link href="/time/" className={`p-4 rounded-xl ${cardBg} hover:scale-[1.02] transition-transform block`}>
                 <span className="text-2xl mb-2 block">🔄</span>
-                <h3 className={`font-medium ${headingColor}`}>Compare Time</h3>
+                <h3 className={`font-medium ${headingColor}`}>Time Converter</h3>
                 <p className="text-sm opacity-70">Convert between cities</p>
               </Link>
               <Link href="/meeting/" className={`p-4 rounded-xl ${cardBg} hover:scale-[1.02] transition-transform block`}>

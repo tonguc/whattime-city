@@ -115,8 +115,8 @@ export default function GenericGuideContent({ city, config, isLight, timeStr }: 
             className={`p-4 rounded-xl ${cardBg} hover:scale-[1.02] transition-transform block`}
           >
             <span className="text-2xl mb-2 block">🔄</span>
-            <h3 className={`font-medium ${headingColor}`}>Compare Time</h3>
-            <p className={`text-sm ${mutedColor}`}>Compare time between {city.city} and other cities</p>
+            <h3 className={`font-medium ${headingColor}`}>Time Converter</h3>
+            <p className={`text-sm ${mutedColor}`}>Convert time between {city.city} and other cities</p>
           </Link>
           <Link
             href="/meeting/"

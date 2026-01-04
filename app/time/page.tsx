@@ -7,6 +7,7 @@ import { useThemeClasses } from '@/lib/useThemeClasses'
 import { City, searchCities } from '@/lib/cities'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import ToolsMiniNav from '@/components/ToolsMiniNav'
 
 // Note: Metadata is in layout.tsx since this is a client component
 
@@ -192,7 +193,12 @@ export default function CompareTimePage() {
     <div className={`min-h-screen transition-colors duration-700 bg-gradient-to-br ${theme.bg}`}>
       <Header />
       
-      <main className="max-w-4xl mx-auto px-4 py-12">
+      {/* Tools Navigation */}
+      <div className="max-w-4xl mx-auto px-4 pt-6">
+        <ToolsMiniNav />
+      </div>
+      
+      <main className="max-w-4xl mx-auto px-4 py-8">
         {/* Title */}
         <div className="text-center mb-10">
           <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${text}`}>

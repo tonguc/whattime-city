@@ -199,7 +199,7 @@ export default function GuideLayout({
                         : 'bg-amber-900/30 text-amber-400 hover:bg-amber-900/50'
                     }`}
                   >
-                    🔄 Compare Time
+                    🔄 Time Converter
                   </Link>
                   <Link
                     href="/meeting/"
