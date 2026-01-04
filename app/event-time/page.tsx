@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { cities, City } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
@@ -10,10 +11,19 @@ import Footer from '@/components/Footer'
 
 export default function EventTimePage() {
   const { theme, isLight } = useCityContext()
+  const searchParams = useSearchParams()
   
-  // Initialize from localStorage for cross-tool persistence
+  // Check URL params first, then localStorage, then defaults
   const [eventCity, setEventCity] = useState<City>(() => {
+    // 1. Check URL params
     if (typeof window !== 'undefined') {
+      const urlCity = searchParams.get('city')
+      if (urlCity) {
+        const city = cities.find(c => c.slug === urlCity)
+        if (city) return city
+      }
+      
+      // 2. Check localStorage
       try {
         const saved = localStorage.getItem('whattime-meeting-cities')
         if (saved) {
@@ -28,12 +38,24 @@ export default function EventTimePage() {
     return cities.find(c => c.city === 'New York') || cities[0]
   })
   
-  const [eventHour, setEventHour] = useState(14)
-  const [eventMinute, setEventMinute] = useState(0)
-  const [eventName, setEventName] = useState('My Event')
+  const [eventHour, setEventHour] = useState(() => {
+    const urlHour = searchParams.get('hour')
+    return urlHour ? parseInt(urlHour) : 14
+  })
+  
+  const [eventMinute, setEventMinute] = useState(() => {
+    const urlMinute = searchParams.get('minute')
+    return urlMinute ? parseInt(urlMinute) : 0
+  })
+  
+  const [eventName, setEventName] = useState(() => {
+    const urlName = searchParams.get('name')
+    return urlName || 'My Event'
+  })
+  
+  const [copyFeedback, setCopyFeedback] = useState(false)
   
   // Sync city to localStorage for cross-tool persistence
-  // Preserve second city if it exists
   useEffect(() => {
     if (typeof window !== 'undefined') {
       try {
@@ -48,6 +70,38 @@ export default function EventTimePage() {
       } catch {}
     }
   }, [eventCity.slug])
+  
+  // Generate shareable URL
+  const getShareUrl = () => {
+    if (typeof window === 'undefined') return ''
+    const params = new URLSearchParams({
+      city: eventCity.slug,
+      hour: eventHour.toString(),
+      minute: eventMinute.toString(),
+      name: eventName
+    })
+    return `${window.location.origin}/event-time?${params.toString()}`
+  }
+  
+  // Copy share URL to clipboard
+  const handleShare = async () => {
+    const url = getShareUrl()
+    try {
+      await navigator.clipboard.writeText(url)
+      setCopyFeedback(true)
+      setTimeout(() => setCopyFeedback(false), 2000)
+    } catch {
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea')
+      textArea.value = url
+      document.body.appendChild(textArea)
+      textArea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textArea)
+      setCopyFeedback(true)
+      setTimeout(() => setCopyFeedback(false), 2000)
+    }
+  }
 
   const popularCities = cities.slice(0, 8)
 
@@ -139,7 +193,38 @@ export default function EventTimePage() {
         </div>
 
         <div>
-          <h3 className={`font-medium mb-3 ${theme.text}`}>"{eventName}" in other time zones:</h3>
+          <div className="flex items-center justify-between mb-3">
+            <h3 className={`font-medium ${theme.text}`}>"{eventName}" in other time zones:</h3>
+            
+            {/* Share Event Button */}
+            <button
+              onClick={handleShare}
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all ${
+                copyFeedback
+                  ? 'bg-green-500 text-white'
+                  : isLight
+                    ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                    : 'bg-blue-500 hover:bg-blue-600 text-white'
+              }`}
+            >
+              {copyFeedback ? (
+                <>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Link Copied!</span>
+                </>
+              ) : (
+                <>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                  </svg>
+                  <span>Share Event</span>
+                </>
+              )}
+            </button>
+          </div>
+          
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {popularCities.map(city => (
               <div key={city.city} className={`p-3 rounded-xl text-center ${isLight ? 'bg-slate-100' : 'bg-slate-700/50'}`}>
@@ -149,6 +234,14 @@ export default function EventTimePage() {
                 </div>
               </div>
             ))}
+          </div>
+          
+          {/* Share URL Preview */}
+          <div className={`mt-4 p-3 rounded-xl ${isLight ? 'bg-slate-100' : 'bg-slate-700/30'}`}>
+            <p className={`text-xs ${theme.textMuted} mb-1`}>📎 Shareable link:</p>
+            <p className={`text-xs font-mono break-all ${theme.text}`}>
+              {typeof window !== 'undefined' ? getShareUrl() : ''}
+            </p>
           </div>
         </div>
       </div>
