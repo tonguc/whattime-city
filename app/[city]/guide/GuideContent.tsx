@@ -4,7 +4,7 @@ import { City } from '@/lib/cities'
 import { GuideConfig } from '@/lib/guide-content'
 import { useCityContext } from '@/lib/CityContext'
 
-// Premium city-specific content (7 custom + 1 generic for Istanbul)
+// Premium city-specific content (8 custom cities)
 import NYCGuideContent from './content/nyc-overview'
 import LondonGuideContent from './content/london-overview'
 import TokyoOverviewContent from './content/tokyo-overview'
@@ -12,6 +12,7 @@ import DubaiOverviewContent from './content/dubai-overview'
 import SingaporeOverviewContent from './content/singapore-overview'
 import ParisOverviewContent from './content/paris-overview'
 import SydneyGuideContent from './content/sydney-overview'
+import IstanbulOverviewContent from './content/istanbul-overview'
 import GenericGuideContent from './content/generic-overview'
 
 interface Props {
@@ -54,8 +55,7 @@ export default function GuideContent({ city, config }: Props) {
       return <SydneyGuideContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
     
     case 'istanbul':
-      // Istanbul uses generic until custom content is created
-      return <GenericGuideContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+      return <IstanbulOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
     
     // Should not reach here - 404 handled by page.tsx
     default:

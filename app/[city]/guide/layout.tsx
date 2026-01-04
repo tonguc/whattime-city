@@ -75,7 +75,7 @@ export default function GuideLayout({
   // Build breadcrumb items
   const breadcrumbItems = [
     { label: 'Home', href: '/' },
-    { label: 'Cities', href: '/cities/' },
+    { label: 'City Guides', href: '/guides/' },
     { label: city.city, href: `/${citySlug}/` },
     { label: activePage.label }
   ]
