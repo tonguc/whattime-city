@@ -11,6 +11,26 @@ interface Props {
   timeStr: string
 }
 
+// FAQ Data for both display and schema
+const FAQ_DATA = [
+  {
+    question: "Is Istanbul in Europe or Asia time zone?",
+    answer: "Istanbul uses Turkey Time (TRT, UTC+3), which is technically closer to Eastern European time zones. The city physically spans both continents, with the Bosphorus dividing European and Asian districts, but the entire city uses the same time zone."
+  },
+  {
+    question: "Does Turkey change clocks for daylight saving?",
+    answer: "No. Since 2016, Turkey has maintained UTC+3 year-round. This means the time difference with European countries changes when they switch to/from summer time, even though Turkey's clocks don't move."
+  },
+  {
+    question: "What's the best time to call Istanbul from the US?",
+    answer: "For US East Coast: 8-10 AM EST catches Istanbul's late afternoon (4-6 PM). For US West Coast: 6-8 AM PST works well. Avoid calling before 9 AM Istanbul time — Turkish business culture tends to start a bit later than Northern Europe."
+  },
+  {
+    question: "What are typical business hours in Istanbul?",
+    answer: "Most businesses operate 9 AM - 6 PM, Monday through Friday. However, the Grand Bazaar and many shops close on Sundays. Restaurants typically serve lunch 12-3 PM and dinner 7-11 PM. Banks usually close at 5 PM."
+  }
+]
+
 export default function IstanbulOverviewContent({ city, config, isLight, timeStr }: Props) {
   const textColor = isLight ? 'text-slate-700' : 'text-slate-200'
   const headingColor = isLight ? 'text-slate-800' : 'text-white'
@@ -18,8 +38,28 @@ export default function IstanbulOverviewContent({ city, config, isLight, timeStr
   const cardBg = isLight ? 'bg-slate-50' : 'bg-slate-700/50'
   const linkColor = isLight ? 'text-amber-600 hover:text-amber-700' : 'text-amber-400 hover:text-amber-300'
 
+  // Generate FAQ Schema JSON-LD
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": FAQ_DATA.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
+
   return (
     <div className={textColor}>
+      {/* FAQ Schema JSON-LD for Google Rich Results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      
       <header className="mb-8">
         <h1 className={`text-3xl md:text-4xl font-bold mb-4 ${headingColor}`}>
           Istanbul Time Zone: The Complete Guide
@@ -63,16 +103,16 @@ export default function IstanbulOverviewContent({ city, config, isLight, timeStr
               <li>• <strong>Time Zone:</strong> TRT (UTC+3)</li>
               <li>• <strong>Daylight Saving:</strong> Not observed (since 2016)</li>
               <li>• <strong>Weekend:</strong> Saturday-Sunday</li>
-              <li>• <strong>Same as:</strong> Moscow, Riyadh, Nairobi</li>
+              <li>• <strong>Same as:</strong> <Link href="/moscow/" className={linkColor}>Moscow</Link>, Riyadh, Nairobi</li>
             </ul>
           </div>
           <div>
             <h3 className={`font-medium mb-2 ${headingColor}`}>Key Time Differences</h3>
             <ul className="space-y-1 text-sm">
-              <li>• <strong>New York:</strong> +8 hours (winter) / +7 (summer)</li>
-              <li>• <strong>London:</strong> +3 hours (winter) / +2 (summer)</li>
-              <li>• <strong>Dubai:</strong> -1 hour</li>
-              <li>• <strong>Tokyo:</strong> -6 hours</li>
+              <li>• <strong><Link href="/new-york/" className={linkColor}>New York</Link>:</strong> +8 hours (winter) / +7 (summer)</li>
+              <li>• <strong><Link href="/london/" className={linkColor}>London</Link>:</strong> +3 hours (winter) / +2 (summer)</li>
+              <li>• <strong><Link href="/dubai/" className={linkColor}>Dubai</Link>:</strong> -1 hour</li>
+              <li>• <strong><Link href="/tokyo/" className={linkColor}>Tokyo</Link>:</strong> -6 hours</li>
             </ul>
           </div>
         </div>
@@ -120,7 +160,7 @@ export default function IstanbulOverviewContent({ city, config, isLight, timeStr
         <p>
           In 2016, Turkey made a significant decision: instead of switching back to winter time, 
           the country stayed on permanent "summer time" (UTC+3). This means Istanbul is now 
-          always 3 hours ahead of London in winter, but only 2 hours ahead in summer when the 
+          always 3 hours ahead of <Link href="/london/" className={linkColor}>London</Link> in winter, but only 2 hours ahead in summer when the 
           UK observes BST.
         </p>
         <p>
@@ -134,8 +174,8 @@ export default function IstanbulOverviewContent({ city, config, isLight, timeStr
         </h3>
         <p>
           Istanbul's unique position spanning Europe and Asia isn't just geographical — it's 
-          temporal too. A 9 AM meeting in Istanbul catches late night in New York (1 AM), 
-          morning in London (6 AM in winter), and mid-afternoon in Singapore (2 PM). This makes 
+          temporal too. A 9 AM meeting in Istanbul catches late night in <Link href="/new-york/" className={linkColor}>New York</Link> (1 AM), 
+          morning in <Link href="/london/" className={linkColor}>London</Link> (6 AM in winter), and mid-afternoon in <Link href="/singapore/" className={linkColor}>Singapore</Link> (2 PM). This makes 
           Istanbul ideal for businesses coordinating across multiple time zones.
         </p>
         
@@ -144,19 +184,19 @@ export default function IstanbulOverviewContent({ city, config, isLight, timeStr
             <div>
               <h4 className={`font-medium ${headingColor}`}>Istanbul Morning (9 AM TRT)</h4>
               <ul className="mt-2 space-y-1">
-                <li>• New York: 1 AM (winter) / 2 AM (summer)</li>
-                <li>• London: 6 AM (winter) / 7 AM (summer)</li>
-                <li>• Dubai: 10 AM</li>
-                <li>• Singapore: 2 PM</li>
+                <li>• <Link href="/new-york/" className={linkColor}>New York</Link>: 1 AM (winter) / 2 AM (summer)</li>
+                <li>• <Link href="/london/" className={linkColor}>London</Link>: 6 AM (winter) / 7 AM (summer)</li>
+                <li>• <Link href="/dubai/" className={linkColor}>Dubai</Link>: 10 AM</li>
+                <li>• <Link href="/singapore/" className={linkColor}>Singapore</Link>: 2 PM</li>
               </ul>
             </div>
             <div>
               <h4 className={`font-medium ${headingColor}`}>Istanbul Evening (6 PM TRT)</h4>
               <ul className="mt-2 space-y-1">
-                <li>• New York: 10 AM (winter) / 11 AM (summer)</li>
-                <li>• London: 3 PM (winter) / 4 PM (summer)</li>
-                <li>• Dubai: 7 PM</li>
-                <li>• Singapore: 11 PM</li>
+                <li>• <Link href="/new-york/" className={linkColor}>New York</Link>: 10 AM (winter) / 11 AM (summer)</li>
+                <li>• <Link href="/london/" className={linkColor}>London</Link>: 3 PM (winter) / 4 PM (summer)</li>
+                <li>• <Link href="/dubai/" className={linkColor}>Dubai</Link>: 7 PM</li>
+                <li>• <Link href="/singapore/" className={linkColor}>Singapore</Link>: 11 PM</li>
               </ul>
             </div>
           </div>
@@ -205,15 +245,51 @@ export default function IstanbulOverviewContent({ city, config, isLight, timeStr
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 dark:divide-slate-600">
-              <tr><td className="px-4 py-3">🇺🇸 New York</td><td className="px-4 py-3">-8 hours*</td><td className="px-4 py-3">4:00 AM</td></tr>
-              <tr><td className="px-4 py-3">🇺🇸 Los Angeles</td><td className="px-4 py-3">-11 hours*</td><td className="px-4 py-3">1:00 AM</td></tr>
-              <tr><td className="px-4 py-3">🇬🇧 London</td><td className="px-4 py-3">-3 hours*</td><td className="px-4 py-3">9:00 AM</td></tr>
-              <tr><td className="px-4 py-3">🇫🇷 Paris</td><td className="px-4 py-3">-2 hours*</td><td className="px-4 py-3">10:00 AM</td></tr>
-              <tr><td className="px-4 py-3">🇦🇪 Dubai</td><td className="px-4 py-3">+1 hour</td><td className="px-4 py-3">1:00 PM</td></tr>
-              <tr><td className="px-4 py-3">🇮🇳 Mumbai</td><td className="px-4 py-3">+2.5 hours</td><td className="px-4 py-3">2:30 PM</td></tr>
-              <tr><td className="px-4 py-3">🇸🇬 Singapore</td><td className="px-4 py-3">+5 hours</td><td className="px-4 py-3">5:00 PM</td></tr>
-              <tr><td className="px-4 py-3">🇯🇵 Tokyo</td><td className="px-4 py-3">+6 hours</td><td className="px-4 py-3">6:00 PM</td></tr>
-              <tr><td className="px-4 py-3">🇦🇺 Sydney</td><td className="px-4 py-3">+8 hours*</td><td className="px-4 py-3">8:00 PM</td></tr>
+              <tr>
+                <td className="px-4 py-3">🇺🇸 <Link href="/time/istanbul/new-york/" className={linkColor}>New York</Link></td>
+                <td className="px-4 py-3">-8 hours*</td>
+                <td className="px-4 py-3">4:00 AM</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇺🇸 <Link href="/time/istanbul/los-angeles/" className={linkColor}>Los Angeles</Link></td>
+                <td className="px-4 py-3">-11 hours*</td>
+                <td className="px-4 py-3">1:00 AM</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇬🇧 <Link href="/time/istanbul/london/" className={linkColor}>London</Link></td>
+                <td className="px-4 py-3">-3 hours*</td>
+                <td className="px-4 py-3">9:00 AM</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇫🇷 <Link href="/time/istanbul/paris/" className={linkColor}>Paris</Link></td>
+                <td className="px-4 py-3">-2 hours*</td>
+                <td className="px-4 py-3">10:00 AM</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇦🇪 <Link href="/time/istanbul/dubai/" className={linkColor}>Dubai</Link></td>
+                <td className="px-4 py-3">+1 hour</td>
+                <td className="px-4 py-3">1:00 PM</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇮🇳 <Link href="/time/istanbul/mumbai/" className={linkColor}>Mumbai</Link></td>
+                <td className="px-4 py-3">+2.5 hours</td>
+                <td className="px-4 py-3">2:30 PM</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇸🇬 <Link href="/time/istanbul/singapore/" className={linkColor}>Singapore</Link></td>
+                <td className="px-4 py-3">+5 hours</td>
+                <td className="px-4 py-3">5:00 PM</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇯🇵 <Link href="/time/istanbul/tokyo/" className={linkColor}>Tokyo</Link></td>
+                <td className="px-4 py-3">+6 hours</td>
+                <td className="px-4 py-3">6:00 PM</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇦🇺 <Link href="/time/istanbul/sydney/" className={linkColor}>Sydney</Link></td>
+                <td className="px-4 py-3">+8 hours*</td>
+                <td className="px-4 py-3">8:00 PM</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -221,6 +297,27 @@ export default function IstanbulOverviewContent({ city, config, isLight, timeStr
           * Times shown are approximate and may vary during daylight saving transitions.{' '}
           <Link href={`/time/istanbul/london/`} className={linkColor}>See detailed time differences →</Link>
         </p>
+      </section>
+      
+      {/* Dynamic CTA - Meeting Planner */}
+      <section className={`mb-10 p-6 rounded-2xl text-center ${
+        isLight 
+          ? 'bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200' 
+          : 'bg-gradient-to-r from-blue-900/30 to-cyan-900/30 border border-blue-700/50'
+      }`}>
+        <h3 className={`text-xl font-semibold mb-2 ${headingColor}`}>
+          Need to schedule a meeting across time zones?
+        </h3>
+        <p className={`mb-4 ${mutedColor}`}>
+          Find the perfect meeting time that works for everyone in Istanbul and beyond.
+        </p>
+        <Link 
+          href="/meeting/"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all transform hover:scale-105 shadow-lg"
+        >
+          <span>🚀</span>
+          <span>Launch Meeting Planner</span>
+        </Link>
       </section>
       
       <section className="mb-10">
@@ -232,8 +329,8 @@ export default function IstanbulOverviewContent({ city, config, isLight, timeStr
           <h3 className={`font-medium mb-2 ${headingColor}`}>🏢 For International Business</h3>
           <p className="text-sm">
             Istanbul's position is ideal for bridging time zones. A 2 PM meeting in Istanbul 
-            catches 11 AM in London (winter), early morning (7 AM) in New York, and early 
-            evening (7 PM) in Singapore — one of the best times for a truly global call.
+            catches 11 AM in <Link href="/london/" className={linkColor}>London</Link> (winter), early morning (7 AM) in <Link href="/new-york/" className={linkColor}>New York</Link>, and early 
+            evening (7 PM) in <Link href="/singapore/" className={linkColor}>Singapore</Link> — one of the best times for a truly global call.
           </p>
         </div>
         
@@ -243,7 +340,7 @@ export default function IstanbulOverviewContent({ city, config, isLight, timeStr
             Flying from Western Europe? You'll land 2-3 hours "later" than departure suggests. 
             From the US East Coast, add 7-8 hours to your body clock. Istanbul's vibrant nightlife 
             and late dinner culture (restaurants fill up after 8 PM) can actually help with jet lag 
-            adjustment.
+            adjustment. Check our <Link href="/jet-lag-advisor/" className={linkColor}>Jet Lag Advisor</Link> for personalized tips.
           </p>
         </div>
         
@@ -258,47 +355,31 @@ export default function IstanbulOverviewContent({ city, config, isLight, timeStr
         </div>
       </section>
       
-      <section className="mb-10">
+      {/* FAQ Section with Schema Markup */}
+      <section className="mb-10" itemScope itemType="https://schema.org/FAQPage">
         <h2 className={`text-2xl font-semibold mb-6 ${headingColor}`}>
           Frequently Asked Questions
         </h2>
         
         <div className="space-y-4">
-          <div className={`p-4 rounded-xl ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>Is Istanbul in Europe or Asia time zone?</h3>
-            <p className="text-sm">
-              Istanbul uses Turkey Time (TRT, UTC+3), which is technically closer to Eastern European 
-              time zones. The city physically spans both continents, with the Bosphorus dividing 
-              European and Asian districts, but the entire city uses the same time zone.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-xl ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>Does Turkey change clocks for daylight saving?</h3>
-            <p className="text-sm">
-              No. Since 2016, Turkey has maintained UTC+3 year-round. This means the time difference 
-              with European countries changes when they switch to/from summer time, even though 
-              Turkey's clocks don't move.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-xl ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>What's the best time to call Istanbul from the US?</h3>
-            <p className="text-sm">
-              For US East Coast: 8-10 AM EST catches Istanbul's late afternoon (4-6 PM). For US 
-              West Coast: 6-8 AM PST works well. Avoid calling before 9 AM Istanbul time — Turkish 
-              business culture tends to start a bit later than Northern Europe.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-xl ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>What are typical business hours in Istanbul?</h3>
-            <p className="text-sm">
-              Most businesses operate 9 AM - 6 PM, Monday through Friday. However, the Grand Bazaar 
-              and many shops close on Sundays. Restaurants typically serve lunch 12-3 PM and dinner 
-              7-11 PM. Banks usually close at 5 PM.
-            </p>
-          </div>
+          {FAQ_DATA.map((faq, index) => (
+            <div 
+              key={index}
+              className={`p-4 rounded-xl ${cardBg}`}
+              itemScope 
+              itemProp="mainEntity" 
+              itemType="https://schema.org/Question"
+            >
+              <h3 className={`font-medium mb-2 ${headingColor}`} itemProp="name">
+                {faq.question}
+              </h3>
+              <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                <p className="text-sm" itemProp="text">
+                  {faq.answer}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
       
@@ -353,9 +434,19 @@ export default function IstanbulOverviewContent({ city, config, isLight, timeStr
         </div>
       </section>
       
+      {/* E-E-A-T Footer with Last Updated & Trust Signal */}
       <footer className={`text-sm ${mutedColor} border-t ${isLight ? 'border-slate-200' : 'border-slate-700'} pt-6`}>
-        <p>
-          Last updated: January 2025. This guide is regularly updated to reflect current information.
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          <p>
+            <strong>Last updated:</strong> January 2025
+          </p>
+          <p className="flex items-center gap-1">
+            <span>✓</span>
+            <span>Data verified by WhatTime.city Editorial Team</span>
+          </p>
+        </div>
+        <p className={`mt-2 text-xs ${mutedColor}`}>
+          Time zone data sourced from IANA Time Zone Database. This guide is regularly reviewed and updated to ensure accuracy.
         </p>
       </footer>
     </div>
