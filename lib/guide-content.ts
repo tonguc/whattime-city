@@ -901,11 +901,11 @@ function createGenericGuideConfig(citySlug: string, city: { city: string; timezo
       },
     },
     clusters: [
-      { slug: 'time-business', icon: '💼', title: 'Time & Business', description: `Business hours and market times in ${cityName}` },
-      { slug: 'travel-guide', icon: '✈️', title: 'Travel Guide', description: `Best time to visit and travel tips for ${cityName}` },
-      { slug: 'work-remote', icon: '💻', title: 'Work Remote', description: `Remote work and digital nomad guide for ${cityName}` },
-      { slug: 'time-zones', icon: '🌍', title: 'Time Zones', description: `Time zone info and differences for ${cityName}` },
-      { slug: '24-hours-itinerary', icon: '🌆', title: '24 Hours', description: `One day itinerary for ${cityName}` },
+      { slug: 'time-business', icon: '💼', title: 'Time & Business', desc: `Business hours and market times in ${cityName}` },
+      { slug: 'travel-guide', icon: '✈️', title: 'Travel Guide', desc: `Best time to visit and travel tips for ${cityName}` },
+      { slug: 'work-remote', icon: '💻', title: 'Work Remote', desc: `Remote work and digital nomad guide for ${cityName}` },
+      { slug: 'time-zones', icon: '🌍', title: 'Time Zones', desc: `Time zone info and differences for ${cityName}` },
+      { slug: '24-hours-itinerary', icon: '🌆', title: '24 Hours', desc: `One day itinerary for ${cityName}` },
     ],
   }
 }
