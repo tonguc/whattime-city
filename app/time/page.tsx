@@ -193,14 +193,12 @@ export default function CompareTimePage() {
     <div className={`min-h-screen transition-colors duration-700 bg-gradient-to-br ${theme.bg}`}>
       <Header />
       
-      {/* Tools Navigation */}
-      <div className="max-w-4xl mx-auto px-4 pt-6">
+      <main className="max-w-6xl mx-auto px-4 py-4 w-full">
+        {/* Tools Mini Navigation - 5 items */}
         <ToolsMiniNav />
-      </div>
-      
-      <main className="max-w-4xl mx-auto px-4 py-8">
+        
         {/* Title */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-6">
           <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${text}`}>
             Time Zone Converter
           </h1>
