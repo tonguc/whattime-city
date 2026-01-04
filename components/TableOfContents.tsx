@@ -28,12 +28,11 @@ export default function TableOfContents({ items, title = 'On This Page', isLight
         })
       },
       {
-        rootMargin: '-80px 0px -80% 0px',
+        rootMargin: '-100px 0px -80% 0px',
         threshold: 0
       }
     )
     
-    // Observe all sections
     items.forEach((item) => {
       const element = document.getElementById(item.id)
       if (element) observer.observe(element)
@@ -45,7 +44,7 @@ export default function TableOfContents({ items, title = 'On This Page', isLight
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
     if (element) {
-      const offset = 100 // Account for sticky header
+      const offset = 160 // Account for sticky header + mobile TOC
       const elementPosition = element.getBoundingClientRect().top
       const offsetPosition = elementPosition + window.pageYOffset - offset
       
@@ -56,106 +55,138 @@ export default function TableOfContents({ items, title = 'On This Page', isLight
     }
   }
   
-  const cardBg = isLight ? 'bg-white/80' : 'bg-slate-800/80'
+  const cardBg = isLight ? 'bg-white/90' : 'bg-slate-800/90'
   const borderColor = isLight ? 'border-slate-200' : 'border-slate-700'
   const textColor = isLight ? 'text-slate-600' : 'text-slate-300'
   const headingColor = isLight ? 'text-slate-800' : 'text-white'
-  const activeColor = isLight ? 'text-amber-600 bg-amber-50' : 'text-amber-400 bg-amber-900/30'
-  const hoverColor = isLight ? 'hover:bg-slate-50' : 'hover:bg-slate-700/50'
+  const activeColor = isLight ? 'text-amber-700 bg-amber-100 font-medium' : 'text-amber-300 bg-amber-900/50 font-medium'
+  const hoverColor = isLight ? 'hover:bg-slate-100' : 'hover:bg-slate-700/50'
   
   return (
-    <>
-      {/* Desktop: Sticky Sidebar */}
-      <nav className={`hidden lg:block sticky top-24 ${cardBg} backdrop-blur-xl rounded-xl border ${borderColor} p-4 max-h-[calc(100vh-120px)] overflow-y-auto`}>
-        <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${headingColor}`}>
-          {title}
-        </h3>
-        <ul className="space-y-1">
-          {items.map((item) => (
-            <li key={item.id}>
-              <button
-                onClick={() => scrollToSection(item.id)}
-                className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-all ${
-                  item.level === 'h3' ? 'pl-6' : ''
-                } ${
-                  activeId === item.id
-                    ? activeColor
-                    : `${textColor} ${hoverColor}`
-                }`}
-              >
-                <span className="flex items-center gap-2">
-                  {item.icon && <span>{item.icon}</span>}
-                  <span>{item.title}</span>
-                </span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      
-      {/* Mobile: Collapsible ToC */}
-      <MobileToC 
-        items={items} 
-        activeId={activeId}
-        scrollToSection={scrollToSection}
-        isLight={isLight}
-        title={title}
-      />
-    </>
+    <nav className={`sticky top-24 ${cardBg} backdrop-blur-xl rounded-xl border ${borderColor} p-4 max-h-[calc(100vh-120px)] overflow-y-auto`}>
+      <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${headingColor}`}>
+        {title}
+      </h3>
+      <ul className="space-y-1">
+        {items.map((item) => (
+          <li key={item.id}>
+            <button
+              onClick={() => scrollToSection(item.id)}
+              className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-all ${
+                item.level === 'h3' ? 'pl-6' : ''
+              } ${
+                activeId === item.id
+                  ? activeColor
+                  : `${textColor} ${hoverColor}`
+              }`}
+            >
+              <span className="flex items-center gap-2">
+                {item.icon && <span>{item.icon}</span>}
+                <span>{item.title}</span>
+              </span>
+            </button>
+          </li>
+        ))}
+      </ul>
+    </nav>
   )
 }
 
-// Mobile Table of Contents
-function MobileToC({ items, activeId, scrollToSection, isLight, title }: {
-  items: TocItem[]
-  activeId: string
-  scrollToSection: (id: string) => void
-  isLight: boolean
-  title: string
-}) {
+// ==========================================
+// MOBILE TABLE OF CONTENTS - STANDALONE
+// ==========================================
+export function MobileTableOfContents({ items, title = 'Jump to Section', isLight }: Props) {
   const [isOpen, setIsOpen] = useState(false)
+  const [activeId, setActiveId] = useState<string>('')
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id)
+          }
+        })
+      },
+      {
+        rootMargin: '-100px 0px -80% 0px',
+        threshold: 0
+      }
+    )
+    
+    items.forEach((item) => {
+      const element = document.getElementById(item.id)
+      if (element) observer.observe(element)
+    })
+    
+    return () => observer.disconnect()
+  }, [items])
+  
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id)
+    if (element) {
+      const offset = 160
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - offset
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+      setIsOpen(false)
+    }
+  }
   
   const cardBg = isLight ? 'bg-white' : 'bg-slate-800'
   const borderColor = isLight ? 'border-slate-200' : 'border-slate-700'
   const textColor = isLight ? 'text-slate-600' : 'text-slate-300'
   const headingColor = isLight ? 'text-slate-800' : 'text-white'
-  const activeColor = isLight ? 'text-amber-600 bg-amber-50' : 'text-amber-400 bg-amber-900/30'
+  const activeColor = isLight ? 'text-amber-700 bg-amber-100' : 'text-amber-300 bg-amber-900/50'
+  const buttonBg = isLight ? 'bg-amber-50 hover:bg-amber-100' : 'bg-amber-900/30 hover:bg-amber-900/50'
   
-  const handleClick = (id: string) => {
-    scrollToSection(id)
-    setIsOpen(false)
-  }
+  // Find active item for display
+  const activeItem = items.find(item => item.id === activeId) || items[0]
   
   return (
-    <div className={`lg:hidden sticky top-[53px] sm:top-[57px] z-30 ${cardBg} border-b ${borderColor}`}>
+    <div className={`lg:hidden mb-6 rounded-xl border ${borderColor} overflow-hidden ${cardBg}`}>
+      {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-full px-4 py-3 flex items-center justify-between ${headingColor}`}
+        className={`w-full px-4 py-3 flex items-center justify-between ${buttonBg} transition-colors`}
       >
-        <span className="flex items-center gap-2 text-sm font-medium">
-          <span>📑</span>
-          <span>{title}</span>
+        <span className="flex items-center gap-2">
+          <span className="text-lg">📑</span>
+          <span className={`font-medium ${headingColor}`}>{title}</span>
         </span>
-        <span className={`transition-transform ${isOpen ? 'rotate-180' : ''}`}>▼</span>
+        <div className="flex items-center gap-2">
+          {activeItem && (
+            <span className={`text-sm ${textColor} hidden sm:inline`}>
+              {activeItem.icon} {activeItem.title}
+            </span>
+          )}
+          <span className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''} ${headingColor}`}>
+            ▼
+          </span>
+        </div>
       </button>
       
+      {/* Dropdown Menu */}
       {isOpen && (
-        <div className={`px-4 pb-4 max-h-64 overflow-y-auto border-t ${borderColor}`}>
-          <ul className="space-y-1 pt-2">
+        <div className={`border-t ${borderColor} max-h-72 overflow-y-auto`}>
+          <ul className="p-2 space-y-1">
             {items.map((item) => (
               <li key={item.id}>
                 <button
-                  onClick={() => handleClick(item.id)}
-                  className={`w-full text-left px-3 py-2 rounded-lg text-sm ${
-                    item.level === 'h3' ? 'pl-6' : ''
+                  onClick={() => scrollToSection(item.id)}
+                  className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-all flex items-center gap-2 ${
+                    item.level === 'h3' ? 'pl-8' : ''
                   } ${
-                    activeId === item.id ? activeColor : textColor
+                    activeId === item.id ? activeColor : `${textColor} hover:bg-slate-100 dark:hover:bg-slate-700`
                   }`}
                 >
-                  <span className="flex items-center gap-2">
-                    {item.icon && <span>{item.icon}</span>}
-                    <span>{item.title}</span>
-                  </span>
+                  {item.icon && <span>{item.icon}</span>}
+                  <span>{item.title}</span>
+                  {activeId === item.id && <span className="ml-auto">←</span>}
                 </button>
               </li>
             ))}

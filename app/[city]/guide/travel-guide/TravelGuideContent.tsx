@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { City } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
-import TableOfContents, { TocItem } from '@/components/TableOfContents'
+import TableOfContents, { TocItem, MobileTableOfContents } from '@/components/TableOfContents'
 
 interface Props {
   city: City
@@ -21,364 +21,152 @@ export default function TravelGuideContent({ city }: Props) {
   const cardBg = isLight ? 'bg-slate-50' : 'bg-slate-700/50'
   const linkColor = isLight ? 'text-amber-600 hover:text-amber-700' : 'text-amber-400 hover:text-amber-300'
   const tableBorder = isLight ? 'border-slate-200' : 'border-slate-600'
+  const tableHeaderBg = isLight ? 'bg-slate-100' : 'bg-slate-700'
   
-  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
-                      'July', 'August', 'September', 'October', 'November', 'December']
+  const seasons = ['Winter', 'Winter', 'Spring', 'Spring', 'Spring', 'Summer', 'Summer', 'Summer', 'Fall', 'Fall', 'Fall', 'Winter']
+  const currentSeason = seasons[currentMonth]
   
-  // Table of Contents items
   const tocItems: TocItem[] = [
     { id: 'overview', title: 'Overview', icon: '⚡' },
-    { id: 'best-time', title: 'Best Time to Visit', icon: '🌤️' },
-    { id: 'seasons', title: 'Season Guide', icon: '📊', level: 'h3' },
-    { id: 'monthly-weather', title: 'Monthly Weather', icon: '🌡️', level: 'h3' },
-    { id: 'holidays', title: 'Public Holidays', icon: '📅' },
-    { id: 'holiday-calendar', title: '2025 Calendar', icon: '🗓️', level: 'h3' },
-    { id: 'holiday-tips', title: 'Holiday Tips', icon: '⚠️', level: 'h3' },
-    { id: 'planning', title: 'Travel Planning', icon: '✈️' },
-    { id: 'before-you-go', title: 'Before You Go', icon: '📋', level: 'h3' },
-    { id: 'timing-tips', title: 'Timing Tips', icon: '🕐', level: 'h3' },
-    { id: 'packing', title: 'Packing Guide', icon: '🧳', level: 'h3' },
-    { id: 'tools', title: 'Travel Tools', icon: '🛠️' },
+    { id: 'best-time', title: 'Best Time to Visit', icon: '📅' },
+    { id: 'weather', title: 'Weather by Month', icon: '🌡️', level: 'h3' },
+    { id: 'peak-seasons', title: 'Peak Seasons', icon: '📊', level: 'h3' },
+    { id: 'events', title: 'Events & Holidays', icon: '🎉' },
+    { id: 'tips', title: 'Travel Tips', icon: '💡' },
+    { id: 'related', title: 'Related Guides', icon: '📖' },
   ]
   
   return (
     <div className={textColor}>
-      {/* Header */}
-      <header className="mb-8">
+      <header className="mb-6">
         <div className={`text-sm mb-2 ${mutedColor}`}>
           <Link href={`/${city.slug}/guide/`} className={linkColor}>← Back to {city.city} Guide</Link>
         </div>
         <h1 className={`text-3xl md:text-4xl font-bold mb-4 ${headingColor}`}>
-          {city.city} Complete Travel Guide
+          Best Time to Visit {city.city}
         </h1>
         <p className={`text-lg ${mutedColor}`}>
-          Best time to visit, public holidays, and essential travel planning tips
+          Weather, events, and seasonal tips for planning your trip to {city.city}
         </p>
         
-        {/* Current Season Indicator */}
         <div className={`mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full ${cardBg}`}>
-          <span className="text-xl">📅</span>
-          <span className="text-sm">
-            Currently <strong>{monthNames[currentMonth]}</strong> in {city.city}
-          </span>
+          <span>📅</span>
+          <span className="text-sm">Current Season: <strong>{currentSeason}</strong></span>
         </div>
       </header>
       
-      {/* Layout: ToC + Content */}
+      {/* Mobile TOC */}
+      <MobileTableOfContents items={tocItems} isLight={isLight} />
+      
       <div className="flex gap-8">
-        {/* Sticky ToC - Desktop */}
         <aside className="hidden lg:block w-64 flex-shrink-0">
           <TableOfContents items={tocItems} isLight={isLight} />
         </aside>
         
-        {/* Main Content */}
         <div className="flex-1 min-w-0 space-y-12">
           
-          {/* Overview Section */}
-          <section id="overview" className={`p-6 rounded-2xl border-l-4 border-green-500 ${cardBg} scroll-mt-24`}>
-            <h2 className={`text-xl font-semibold mb-3 ${headingColor}`}>
-              ⚡ Quick Overview
-            </h2>
-            <p>
-              The best time to visit {city.city} is typically during <strong>spring (March-May)</strong> and 
-              <strong> autumn (September-November)</strong> when the weather is pleasant and tourist crowds are manageable.
-              Plan around public holidays to avoid closures or enjoy festive atmospheres.
-            </p>
+          <section id="overview" className={`p-4 sm:p-6 rounded-2xl border-l-4 border-amber-500 ${cardBg} scroll-mt-40`}>
+            <h2 className={`text-xl font-semibold mb-3 ${headingColor}`}>⚡ Quick Overview</h2>
+            <p>The best time to visit {city.city} depends on your preferences for weather, crowds, and events. Generally, spring and fall offer the best balance of pleasant weather and moderate tourist numbers.</p>
           </section>
           
-          {/* Best Time to Visit Section */}
-          <section id="best-time" className="scroll-mt-24">
-            <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>
-              🌤️ Best Time to Visit {city.city}
-            </h2>
-            <p className="mb-6 opacity-80">
-              Choosing the right time to visit can make or break your trip. Consider weather, crowds, 
-              prices, and special events when planning your {city.city} adventure.
-            </p>
+          <section id="best-time" className="scroll-mt-40">
+            <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>📅 Best Time to Visit</h2>
             
-            {/* Seasons */}
-            <div id="seasons" className="mb-8 scroll-mt-24">
-              <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>
-                📊 Season-by-Season Guide
-              </h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className={`p-4 rounded-xl ${cardBg}`}>
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className={`font-semibold ${headingColor}`}>🌸 Spring</h4>
-                    <span className="text-sm">⭐⭐⭐⭐⭐</span>
-                  </div>
-                  <p className="text-sm opacity-70 mb-1">March - May</p>
-                  <p className="text-sm">Mild weather, beautiful blooms, fewer crowds. Ideal for sightseeing.</p>
-                </div>
-                <div className={`p-4 rounded-xl ${cardBg}`}>
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className={`font-semibold ${headingColor}`}>☀️ Summer</h4>
-                    <span className="text-sm">⭐⭐⭐</span>
-                  </div>
-                  <p className="text-sm opacity-70 mb-1">June - August</p>
-                  <p className="text-sm">Peak season, can be hot and crowded. Higher prices, longer days.</p>
-                </div>
-                <div className={`p-4 rounded-xl ${cardBg}`}>
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className={`font-semibold ${headingColor}`}>🍂 Autumn</h4>
-                    <span className="text-sm">⭐⭐⭐⭐⭐</span>
-                  </div>
-                  <p className="text-sm opacity-70 mb-1">September - November</p>
-                  <p className="text-sm">Beautiful colors, pleasant weather, shoulder season savings.</p>
-                </div>
-                <div className={`p-4 rounded-xl ${cardBg}`}>
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className={`font-semibold ${headingColor}`}>❄️ Winter</h4>
-                    <span className="text-sm">⭐⭐⭐</span>
-                  </div>
-                  <p className="text-sm opacity-70 mb-1">December - February</p>
-                  <p className="text-sm">Cold but festive atmosphere. Lower prices, holiday markets.</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Monthly Weather */}
-            <div id="monthly-weather" className="scroll-mt-24">
-              <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>
-                🌡️ Monthly Weather Overview
-              </h3>
-              <div className={`overflow-x-auto rounded-xl border ${tableBorder}`}>
-                <table className="w-full text-sm">
-                  <thead className={cardBg}>
-                    <tr>
-                      <th className="text-left p-3 font-medium">Month</th>
-                      <th className="text-left p-3 font-medium">Weather</th>
-                      <th className="text-left p-3 font-medium">Crowds</th>
-                      <th className="text-left p-3 font-medium">Prices</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].map((month, idx) => (
-                      <tr key={month} className={`border-t ${tableBorder} ${idx === currentMonth ? (isLight ? 'bg-amber-50' : 'bg-amber-900/20') : ''}`}>
-                        <td className="p-3 font-medium">{month} {idx === currentMonth && '← Now'}</td>
-                        <td className="p-3">{idx >= 5 && idx <= 7 ? '☀️ Hot' : idx >= 11 || idx <= 1 ? '❄️ Cold' : '🌤️ Mild'}</td>
-                        <td className="p-3">{idx >= 5 && idx <= 7 ? '📈 High' : idx >= 11 || idx <= 1 ? '📉 Low' : '📊 Medium'}</td>
-                        <td className="p-3">{idx >= 5 && idx <= 7 ? '💰💰💰' : idx >= 11 || idx <= 1 ? '💰' : '💰💰'}</td>
+            <div id="weather" className="mb-8 scroll-mt-40">
+              <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>🌡️ Weather by Month</h3>
+              <div className={`-mx-4 sm:mx-0 overflow-x-auto`}>
+                <div className="min-w-[500px] px-4 sm:px-0">
+                  <table className={`w-full text-sm rounded-xl border ${tableBorder} overflow-hidden`}>
+                    <thead className={tableHeaderBg}>
+                      <tr>
+                        <th className="text-left p-3 font-medium">Season</th>
+                        <th className="text-left p-3 font-medium">Months</th>
+                        <th className="text-left p-3 font-medium">Weather</th>
+                        <th className="text-left p-3 font-medium">Crowds</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      <tr className={`border-t ${tableBorder}`}>
+                        <td className="p-3">🌸 Spring</td>
+                        <td className="p-3">Mar-May</td>
+                        <td className="p-3">Mild, pleasant</td>
+                        <td className="p-3 font-medium text-green-600">Moderate</td>
+                      </tr>
+                      <tr className={`border-t ${tableBorder}`}>
+                        <td className="p-3">☀️ Summer</td>
+                        <td className="p-3">Jun-Aug</td>
+                        <td className="p-3">Warm, sunny</td>
+                        <td className="p-3 font-medium text-red-600">High</td>
+                      </tr>
+                      <tr className={`border-t ${tableBorder}`}>
+                        <td className="p-3">🍂 Fall</td>
+                        <td className="p-3">Sep-Nov</td>
+                        <td className="p-3">Cool, crisp</td>
+                        <td className="p-3 font-medium text-green-600">Moderate</td>
+                      </tr>
+                      <tr className={`border-t ${tableBorder}`}>
+                        <td className="p-3">❄️ Winter</td>
+                        <td className="p-3">Dec-Feb</td>
+                        <td className="p-3">Cold</td>
+                        <td className="p-3 font-medium text-amber-600">Low-Mod</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-            </div>
-          </section>
-          
-          {/* Holidays Section */}
-          <section id="holidays" className="scroll-mt-24">
-            <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>
-              📅 Public Holidays in {city.country}
-            </h2>
-            <p className="mb-6 opacity-80">
-              Public holidays affect business hours, public transport, and tourist site availability. 
-              Plan around major holidays to avoid closures or take advantage of festive atmospheres.
-            </p>
-            
-            {/* Holiday Calendar */}
-            <div id="holiday-calendar" className="mb-8 scroll-mt-24">
-              <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>
-                🗓️ 2025 Public Holidays
-              </h3>
-              <div className={`overflow-x-auto rounded-xl border ${tableBorder}`}>
-                <table className="w-full text-sm">
-                  <thead className={cardBg}>
-                    <tr>
-                      <th className="text-left p-3 font-medium">Date</th>
-                      <th className="text-left p-3 font-medium">Holiday</th>
-                      <th className="text-left p-3 font-medium">Type</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className={`border-t ${tableBorder}`}>
-                      <td className="p-3 font-medium">Jan 1</td>
-                      <td className="p-3">New Year's Day</td>
-                      <td className="p-3"><span className="px-2 py-1 rounded text-xs bg-green-100 text-green-700">Public</span></td>
-                    </tr>
-                    <tr className={`border-t ${tableBorder}`}>
-                      <td className="p-3 font-medium">Varies</td>
-                      <td className="p-3">Easter</td>
-                      <td className="p-3"><span className="px-2 py-1 rounded text-xs bg-green-100 text-green-700">Public</span></td>
-                    </tr>
-                    <tr className={`border-t ${tableBorder}`}>
-                      <td className="p-3 font-medium">May 1</td>
-                      <td className="p-3">Labor Day</td>
-                      <td className="p-3"><span className="px-2 py-1 rounded text-xs bg-green-100 text-green-700">Public</span></td>
-                    </tr>
-                    <tr className={`border-t ${tableBorder}`}>
-                      <td className="p-3 font-medium">Dec 25</td>
-                      <td className="p-3">Christmas Day</td>
-                      <td className="p-3"><span className="px-2 py-1 rounded text-xs bg-green-100 text-green-700">Public</span></td>
-                    </tr>
-                    <tr className={`border-t ${tableBorder}`}>
-                      <td className="p-3 font-medium">Dec 26</td>
-                      <td className="p-3">Boxing Day</td>
-                      <td className="p-3"><span className="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">Observed</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <p className={`mt-3 text-sm ${mutedColor}`}>
-                Note: Some holidays vary by region within {city.country}. Always verify locally.
-              </p>
+              <p className={`text-xs mt-2 ${mutedColor}`}>← Swipe to see more</p>
             </div>
             
-            {/* Holiday Tips */}
-            <div id="holiday-tips" className="scroll-mt-24">
-              <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>
-                ⚠️ What to Expect on Holidays
-              </h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className={`p-4 rounded-xl ${cardBg}`}>
-                  <h4 className={`font-medium mb-2 ${headingColor}`}>🏪 Shops & Stores</h4>
-                  <p className="text-sm opacity-80">Most closed on major holidays. Some tourist areas remain open.</p>
+            <div id="peak-seasons" className="scroll-mt-40">
+              <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>📊 Peak vs Off-Peak</h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className={`p-4 rounded-xl ${cardBg} border-l-4 border-green-500`}>
+                  <h4 className={`font-medium ${headingColor}`}>✅ Best Value</h4>
+                  <p className="text-sm opacity-80 mt-1">Spring & Fall - fewer crowds, lower prices</p>
                 </div>
-                <div className={`p-4 rounded-xl ${cardBg}`}>
-                  <h4 className={`font-medium mb-2 ${headingColor}`}>🍽️ Restaurants</h4>
-                  <p className="text-sm opacity-80">Many close or have limited hours. Book ahead for open venues.</p>
-                </div>
-                <div className={`p-4 rounded-xl ${cardBg}`}>
-                  <h4 className={`font-medium mb-2 ${headingColor}`}>🚇 Public Transport</h4>
-                  <p className="text-sm opacity-80">Reduced schedules typical. Check holiday timetables.</p>
-                </div>
-                <div className={`p-4 rounded-xl ${cardBg}`}>
-                  <h4 className={`font-medium mb-2 ${headingColor}`}>🏛️ Tourist Sites</h4>
-                  <p className="text-sm opacity-80">May have special hours. Some offer holiday events.</p>
+                <div className={`p-4 rounded-xl ${cardBg} border-l-4 border-red-500`}>
+                  <h4 className={`font-medium ${headingColor}`}>⚠️ Peak Season</h4>
+                  <p className="text-sm opacity-80 mt-1">Summer & Holidays - book early!</p>
                 </div>
               </div>
             </div>
           </section>
           
-          {/* Planning Section */}
-          <section id="planning" className="scroll-mt-24">
-            <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>
-              ✈️ Travel Planning Tips
-            </h2>
-            <p className="mb-6 opacity-80">
-              Visiting {city.city}? Here's everything you need to know about timing your trip, 
-              handling jet lag, and making the most of your visit.
-            </p>
-            
-            {/* Before You Go */}
-            <div id="before-you-go" className="mb-8 scroll-mt-24">
-              <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>
-                📋 Before You Go
-              </h3>
-              <div className="space-y-3">
-                <div className={`p-4 rounded-xl ${cardBg} flex gap-4`}>
-                  <span className="text-2xl">📱</span>
-                  <div>
-                    <h4 className={`font-medium ${headingColor}`}>Set Your Clock</h4>
-                    <p className="text-sm opacity-80">Adjust your watch to {city.city} time a day before departure</p>
-                  </div>
-                </div>
-                <div className={`p-4 rounded-xl ${cardBg} flex gap-4`}>
-                  <span className="text-2xl">😴</span>
-                  <div>
-                    <h4 className={`font-medium ${headingColor}`}>Plan for Jet Lag</h4>
-                    <p className="text-sm opacity-80">Start adjusting sleep schedule 3-4 days before travel</p>
-                  </div>
-                </div>
-                <div className={`p-4 rounded-xl ${cardBg} flex gap-4`}>
-                  <span className="text-2xl">📅</span>
-                  <div>
-                    <h4 className={`font-medium ${headingColor}`}>Check Holiday Calendar</h4>
-                    <p className="text-sm opacity-80">Avoid arriving on major holidays when services may be limited</p>
-                  </div>
-                </div>
-              </div>
+          <section id="events" className="scroll-mt-40">
+            <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>🎉 Events & Holidays</h2>
+            <p className="mb-4 opacity-80">Major events can affect availability and prices. Plan accordingly!</p>
+            <div className={`p-4 rounded-xl ${cardBg}`}>
+              <p className="text-sm">Check local event calendars for specific dates and plan your trip around major festivals or avoid them if you prefer fewer crowds.</p>
             </div>
-            
-            {/* Timing Tips */}
-            <div id="timing-tips" className="mb-8 scroll-mt-24">
-              <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>
-                🕐 Timing Tips
-              </h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className={`p-4 rounded-xl ${cardBg}`}>
-                  <h4 className={`font-medium mb-2 ${headingColor}`}>🌅 Best Arrival Time</h4>
-                  <p className="text-sm opacity-80">Morning arrivals help you stay awake and adjust faster</p>
-                </div>
-                <div className={`p-4 rounded-xl ${cardBg}`}>
-                  <h4 className={`font-medium mb-2 ${headingColor}`}>🏨 Hotel Check-in</h4>
-                  <p className="text-sm opacity-80">Standard check-in 3 PM, check-out 11 AM</p>
-                </div>
-                <div className={`p-4 rounded-xl ${cardBg}`}>
-                  <h4 className={`font-medium mb-2 ${headingColor}`}>🍳 Meal Times</h4>
-                  <p className="text-sm opacity-80">Eat at local times to help your body adjust</p>
-                </div>
-                <div className={`p-4 rounded-xl ${cardBg}`}>
-                  <h4 className={`font-medium mb-2 ${headingColor}`}>☀️ Sunlight Exposure</h4>
-                  <p className="text-sm opacity-80">Get natural light during day to reset circadian rhythm</p>
-                </div>
+          </section>
+          
+          <section id="tips" className="scroll-mt-40">
+            <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>💡 Travel Tips</h2>
+            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className={`p-4 rounded-xl ${cardBg}`}>
+                <h4 className={`font-medium ${headingColor}`}>🎫 Book Early</h4>
+                <p className="text-sm opacity-80 mt-1">Popular attractions sell out - book 2+ weeks ahead</p>
               </div>
-            </div>
-            
-            {/* Packing */}
-            <div id="packing" className="scroll-mt-24">
-              <h3 className={`text-xl font-semibold mb-4 ${headingColor}`}>
-                🧳 Packing Guide by Season
-              </h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className={`p-4 rounded-xl ${cardBg}`}>
-                  <h4 className={`font-medium mb-2 ${headingColor}`}>🌸 Spring/Fall</h4>
-                  <ul className="text-sm space-y-1 opacity-80">
-                    <li>• Light layers</li>
-                    <li>• Rain jacket</li>
-                    <li>• Comfortable walking shoes</li>
-                  </ul>
-                </div>
-                <div className={`p-4 rounded-xl ${cardBg}`}>
-                  <h4 className={`font-medium mb-2 ${headingColor}`}>☀️ Summer</h4>
-                  <ul className="text-sm space-y-1 opacity-80">
-                    <li>• Light, breathable clothing</li>
-                    <li>• Sunscreen & sunglasses</li>
-                    <li>• Water bottle</li>
-                  </ul>
-                </div>
-                <div className={`p-4 rounded-xl ${cardBg}`}>
-                  <h4 className={`font-medium mb-2 ${headingColor}`}>❄️ Winter</h4>
-                  <ul className="text-sm space-y-1 opacity-80">
-                    <li>• Warm coat</li>
-                    <li>• Layers for heated indoors</li>
-                    <li>• Hat, gloves, scarf</li>
-                  </ul>
-                </div>
-                <div className={`p-4 rounded-xl ${cardBg}`}>
-                  <h4 className={`font-medium mb-2 ${headingColor}`}>📱 Always Bring</h4>
-                  <ul className="text-sm space-y-1 opacity-80">
-                    <li>• Universal adapter</li>
-                    <li>• Phone charger</li>
-                    <li>• Travel documents</li>
-                  </ul>
-                </div>
+              <div className={`p-4 rounded-xl ${cardBg}`}>
+                <h4 className={`font-medium ${headingColor}`}>💳 Local Currency</h4>
+                <p className="text-sm opacity-80 mt-1">Get some local cash before arrival</p>
               </div>
             </div>
           </section>
           
-          {/* Tools Section */}
-          <section id="tools" className="scroll-mt-24">
-            <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>
-              🛠️ Travel Tools
-            </h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              <Link 
-                href="/jet-lag-advisor/"
-                className={`p-4 rounded-xl ${cardBg} hover:scale-[1.02] transition-transform block`}
-              >
-                <span className="text-2xl mb-2 block">😴</span>
-                <h3 className={`font-medium ${headingColor}`}>Jet Lag Calculator</h3>
-                <p className="text-sm opacity-70">Plan your sleep schedule for {city.city}</p>
+          <section id="related" className="scroll-mt-40">
+            <h2 className={`text-2xl font-bold mb-6 ${headingColor}`}>📖 Related Guides</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <Link href={`/${city.slug}/guide/24-hours-itinerary/`} className={`p-4 rounded-xl ${cardBg} hover:scale-[1.02] transition-transform block`}>
+                <span className="text-2xl mb-2 block">🌆</span>
+                <h3 className={`font-medium ${headingColor}`}>24 Hours in {city.city}</h3>
+                <p className="text-sm opacity-70">Perfect day itinerary</p>
               </Link>
-              <Link 
-                href="/flight-time/"
-                className={`p-4 rounded-xl ${cardBg} hover:scale-[1.02] transition-transform block`}
-              >
-                <span className="text-2xl mb-2 block">✈️</span>
-                <h3 className={`font-medium ${headingColor}`}>Flight Time Calculator</h3>
-                <p className="text-sm opacity-70">Estimate flight duration to {city.city}</p>
+              <Link href={`/${city.slug}/guide/time-business/`} className={`p-4 rounded-xl ${cardBg} hover:scale-[1.02] transition-transform block`}>
+                <span className="text-2xl mb-2 block">💼</span>
+                <h3 className={`font-medium ${headingColor}`}>Business Hours</h3>
+                <p className="text-sm opacity-70">When things are open</p>
               </Link>
             </div>
           </section>
