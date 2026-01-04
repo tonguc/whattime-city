@@ -1,8 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { cities } from '@/lib/cities'
+import { cities, City } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
 import ToolPageWrapper from '@/components/ToolPageWrapper'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
@@ -11,10 +11,43 @@ import Footer from '@/components/Footer'
 export default function EventTimePage() {
   const { theme, isLight } = useCityContext()
   
-  const [eventCity, setEventCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
+  // Initialize from localStorage for cross-tool persistence
+  const [eventCity, setEventCity] = useState<City>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('whattime-meeting-cities')
+        if (saved) {
+          const slugs = JSON.parse(saved) as string[]
+          if (slugs[0]) {
+            const city = cities.find(c => c.slug === slugs[0])
+            if (city) return city
+          }
+        }
+      } catch {}
+    }
+    return cities.find(c => c.city === 'New York') || cities[0]
+  })
+  
   const [eventHour, setEventHour] = useState(14)
   const [eventMinute, setEventMinute] = useState(0)
   const [eventName, setEventName] = useState('My Event')
+  
+  // Sync city to localStorage for cross-tool persistence
+  // Preserve second city if it exists
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('whattime-meeting-cities')
+        let secondCity = ''
+        if (saved) {
+          const slugs = JSON.parse(saved) as string[]
+          if (slugs[1]) secondCity = slugs[1]
+        }
+        const newSlugs = secondCity ? [eventCity.slug, secondCity] : [eventCity.slug]
+        localStorage.setItem('whattime-meeting-cities', JSON.stringify(newSlugs))
+      } catch {}
+    }
+  }, [eventCity.slug])
 
   const popularCities = cities.slice(0, 8)
 
@@ -67,12 +100,12 @@ export default function EventTimePage() {
           <div>
             <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>Event Location</label>
             <select
-              value={eventCity.city}
-              onChange={(e) => setEventCity(cities.find(c => c.city === e.target.value) || cities[0])}
+              value={eventCity.slug}
+              onChange={(e) => setEventCity(cities.find(c => c.slug === e.target.value) || cities[0])}
               className={`w-full px-4 py-3 rounded-xl border ${inputClass}`}
             >
               {cities.map(city => (
-                <option key={city.city} value={city.city}>{city.city}, {city.country}</option>
+                <option key={city.slug} value={city.slug}>{city.city}, {city.country}</option>
               ))}
             </select>
           </div>
