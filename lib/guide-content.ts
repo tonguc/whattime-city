@@ -810,10 +810,126 @@ export const guideConfigs: Record<string, GuideConfig> = {
   'los-angeles': losAngelesGuide,
 }
 
+// All Tier 1 cities that should have guide pages
+const TIER1_GUIDE_CITIES = [
+  'new-york', 'london', 'tokyo', 'paris', 'dubai', 'singapore', 'hong-kong', 'shanghai',
+  'sydney', 'los-angeles', 'toronto', 'berlin', 'chicago', 'miami', 'san-francisco',
+  'vancouver', 'mexico-city', 'sao-paulo', 'buenos-aires', 'madrid', 'barcelona',
+  'amsterdam', 'rome', 'vienna', 'zurich', 'frankfurt', 'lisbon', 'dublin', 'moscow',
+  'saint-petersburg', 'istanbul', 'mumbai', 'delhi', 'bangkok', 'seoul', 'beijing',
+  'shenzhen', 'guangzhou', 'jakarta', 'kuala-lumpur', 'melbourne', 'rio-de-janeiro',
+  'cairo', 'johannesburg'
+]
+
+// Helper to create generic guide config for cities without custom content
+function createGenericGuideConfig(citySlug: string, city: { city: string; timezone: string; country: string }): GuideConfig {
+  const cityName = city.city
+  const timezone = city.timezone
+  const timezoneAbbr = timezone.split('/').pop()?.replace('_', ' ') || 'Local'
+  
+  return {
+    citySlug,
+    cityName,
+    timezone,
+    timezoneAbbr,
+    timezoneName: timezone,
+    utcOffset: 0, // Will be calculated dynamically
+    icon: '🌍',
+    tagline: `Your complete guide to ${cityName} time zones and local insights`,
+    seo: {
+      title: `${cityName} Time Zone Guide`,
+      description: `Complete guide to ${cityName} time zone, business hours, best time to visit, and local tips for travelers and remote workers.`,
+      keywords: [`${cityName} time`, `${cityName} timezone`, `${cityName} business hours`, `${cityName} travel guide`],
+      ogTitle: `${cityName} Time Zone Guide | WhatTime.city`,
+      ogDescription: `Everything you need to know about ${cityName} time zones, business hours, and travel planning.`,
+    },
+    pages: {
+      overview: {
+        title: `${cityName} Guide - Time Zone & Travel Tips`,
+        description: `Complete guide to ${cityName}: time zone info, business hours, travel tips, and more.`,
+        keywords: [`${cityName} guide`, `${cityName} time zone`, `${cityName} travel`],
+      },
+      businessHours: {
+        title: `${cityName} Business Hours Guide`,
+        description: `Typical business hours in ${cityName}, including banks, offices, and retail stores.`,
+        keywords: [`${cityName} business hours`, `${cityName} office hours`, `${cityName} bank hours`],
+      },
+      bestTimeToVisit: {
+        title: `Best Time to Visit ${cityName}`,
+        description: `Find the best time to visit ${cityName} based on weather, crowds, and events.`,
+        keywords: [`best time to visit ${cityName}`, `${cityName} weather`, `${cityName} seasons`],
+      },
+      remoteWork: {
+        title: `Remote Work in ${cityName}`,
+        description: `Guide to remote work in ${cityName}: coworking spaces, internet, and digital nomad tips.`,
+        keywords: [`remote work ${cityName}`, `coworking ${cityName}`, `digital nomad ${cityName}`],
+      },
+      twentyFourHours: {
+        title: `24 Hours in ${cityName}`,
+        description: `How to spend 24 hours in ${cityName}: morning, afternoon, and evening itinerary.`,
+        keywords: [`24 hours ${cityName}`, `one day ${cityName}`, `${cityName} itinerary`],
+      },
+      callTimes: {
+        title: `Best Times to Call ${cityName}`,
+        description: `Find the best times to schedule calls with ${cityName} from anywhere in the world.`,
+        keywords: [`call ${cityName}`, `${cityName} meeting times`, `${cityName} work hours`],
+      },
+      stockMarket: {
+        title: `${cityName} Stock Market Hours`,
+        description: `Stock market trading hours in ${cityName} and global market overlap times.`,
+        keywords: [`${cityName} stock market`, `${cityName} trading hours`, `${cityName} exchange`],
+      },
+      holidays: {
+        title: `${cityName} Public Holidays`,
+        description: `Complete list of public holidays in ${cityName} and ${city.country}.`,
+        keywords: [`${cityName} holidays`, `${city.country} public holidays`, `${cityName} bank holidays`],
+      },
+      digitalNomad: {
+        title: `Digital Nomad Guide to ${cityName}`,
+        description: `Everything digital nomads need to know about living and working in ${cityName}.`,
+        keywords: [`digital nomad ${cityName}`, `${cityName} nomad guide`, `work from ${cityName}`],
+      },
+      timeDifference: {
+        title: `${cityName} Time Difference Calculator`,
+        description: `Calculate time difference between ${cityName} and major world cities.`,
+        keywords: [`${cityName} time difference`, `${cityName} time zone converter`, `${cityName} vs`],
+      },
+      travelPlanning: {
+        title: `${cityName} Travel Planning Guide`,
+        description: `Essential travel planning tips for ${cityName}: visas, transport, and accommodation.`,
+        keywords: [`${cityName} travel planning`, `visit ${cityName}`, `${cityName} trip`],
+      },
+    },
+    clusters: [
+      { slug: 'time-business', icon: '💼', title: 'Time & Business', description: `Business hours and market times in ${cityName}` },
+      { slug: 'travel-guide', icon: '✈️', title: 'Travel Guide', description: `Best time to visit and travel tips for ${cityName}` },
+      { slug: 'work-remote', icon: '💻', title: 'Work Remote', description: `Remote work and digital nomad guide for ${cityName}` },
+      { slug: 'time-zones', icon: '🌍', title: 'Time Zones', description: `Time zone info and differences for ${cityName}` },
+      { slug: '24-hours-itinerary', icon: '🌆', title: '24 Hours', description: `One day itinerary for ${cityName}` },
+    ],
+  }
+}
+
+// Import cities for generic config creation
+import { cities } from '@/lib/cities'
+
 export function getGuideConfig(citySlug: string): GuideConfig | null {
-  return guideConfigs[citySlug] || null
+  // First check if we have a custom config
+  if (guideConfigs[citySlug]) {
+    return guideConfigs[citySlug]
+  }
+  
+  // For Tier 1 cities without custom config, create generic one
+  if (TIER1_GUIDE_CITIES.includes(citySlug)) {
+    const city = cities.find(c => c.slug === citySlug)
+    if (city) {
+      return createGenericGuideConfig(citySlug, city)
+    }
+  }
+  
+  return null
 }
 
 export function getSupportedGuideCities(): string[] {
-  return Object.keys(guideConfigs)
+  return TIER1_GUIDE_CITIES
 }
