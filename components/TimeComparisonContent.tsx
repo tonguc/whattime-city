@@ -208,6 +208,17 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
   const fromCity = currentFromCity
   const toCity = currentToCity
   
+  // Sync selected cities to localStorage for cross-tool persistence
+  // Meeting Planner and other tools will read from this
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const slugs = [fromCity.slug, toCity.slug]
+        localStorage.setItem('whattime-meeting-cities', JSON.stringify(slugs))
+      } catch {}
+    }
+  }, [fromCity.slug, toCity.slug])
+  
   // Fetch weather for both cities
   useEffect(() => {
     const fetchWeather = async (city: City, setWeather: (w: any) => void) => {

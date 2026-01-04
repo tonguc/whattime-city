@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useCityContext } from '@/lib/CityContext'
 import { useThemeClasses } from '@/lib/useThemeClasses'
-import { City, searchCities } from '@/lib/cities'
+import { City, searchCities, cities } from '@/lib/cities'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
@@ -76,8 +76,37 @@ export default function CompareTimePage() {
   const [showToDropdown, setShowToDropdown] = useState(false)
   const [toHighlightIndex, setToHighlightIndex] = useState(-1)
   
-  // Initialize fromCity from user's detected location
+  // Initialize fromCity from localStorage (cross-tool persistence) or user's detected location
   useEffect(() => {
+    // First, try to load from localStorage (shared with Meeting Planner)
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('whattime-meeting-cities')
+        if (saved) {
+          const slugs = JSON.parse(saved) as string[]
+          if (slugs.length >= 2) {
+            const from = cities.find(c => c.slug === slugs[0])
+            const to = cities.find(c => c.slug === slugs[1])
+            if (from && to) {
+              setFromCity(from)
+              setFromQuery(from.city)
+              setToCity(to)
+              setToQuery(to.city)
+              return // Don't set detected city if we loaded from localStorage
+            }
+          } else if (slugs.length === 1) {
+            const from = cities.find(c => c.slug === slugs[0])
+            if (from) {
+              setFromCity(from)
+              setFromQuery(from.city)
+              return
+            }
+          }
+        }
+      } catch {}
+    }
+    
+    // Fall back to detected/active city
     if (context.detectedCity) {
       setFromCity(context.detectedCity)
       setFromQuery(context.detectedCity.city)
