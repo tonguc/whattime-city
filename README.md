@@ -16,7 +16,7 @@ Modern, performanslı ve SEO-optimize edilmiş kişisel website.
 ## 📁 Proje Yapısı
 
 ```
-tonguckaracay/
+whattime-city/
 ├── app/                      # Next.js app directory
 │   ├── layout.tsx           # Root layout + SEO metadata
 │   ├── page.tsx             # Homepage
@@ -171,9 +171,9 @@ export interface BlogPost {
 
 ## 📞 İletişim
 
-- **Email:** info@tonguckaracay.com
+- **Email:** info@whattime-city.com
 - **Tel:** +90 (532) 123 45 67
-- **Website:** https://tonguckaracay.com
+- **Website:** https://whattime-city.com
 
 ## 📄 License
 

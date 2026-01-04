@@ -91,7 +91,7 @@ export default function GuidesPage() {
               {/* CTA */}
               <div className={`flex items-center justify-between pt-3 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
                 <span className={`text-xs ${theme.textMuted}`}>
-                  10 pages
+                  6 pages
                 </span>
                 <span className={`text-sm font-medium group-hover:translate-x-1 transition-transform ${isLight ? 'text-blue-600' : 'text-blue-400'}`}>
                   Explore →
