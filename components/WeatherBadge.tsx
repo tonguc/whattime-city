@@ -18,6 +18,8 @@ export default function WeatherBadge({ weather }: WeatherBadgeProps) {
         <img 
           src={weather.condition.icon} 
           alt={weather.condition.text} 
+          width={20}
+          height={20}
           className="w-5 h-5"
         />
       )}

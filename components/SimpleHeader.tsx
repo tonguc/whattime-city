@@ -62,9 +62,9 @@ export default function SimpleHeader(_props: SimpleHeaderProps) {
         {/* Logo */}
         <Link href="/" className="hover:opacity-80 transition-opacity flex-shrink-0">
           {/* Mobile: Compact logo with text */}
-          <img src={isLight ? "/logo-mobile.svg" : "/logo-mobile-dark.svg"} alt="whattime.city" className="h-9 sm:hidden" />
+          <img src={isLight ? "/logo-mobile.svg" : "/logo-mobile-dark.svg"} alt="whattime.city" width={36} height={36} className="h-9 sm:hidden" />
           {/* Desktop: Full logo */}
-          <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" className="h-10 hidden sm:block" />
+          <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" width={160} height={40} className="h-10 hidden sm:block" />
         </Link>
         
         {/* Search */}

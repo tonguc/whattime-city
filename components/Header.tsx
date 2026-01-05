@@ -104,8 +104,8 @@ function Header(_props: HeaderProps) {
     }`}>
       <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2 sm:gap-3">
         <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0">
-          <img src={isLight ? "/logo-mobile.svg" : "/logo-mobile-dark.svg"} alt="whattime.city" className="h-9 sm:hidden" />
-          <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" className="h-10 hidden sm:block" />
+          <img src={isLight ? "/logo-mobile.svg" : "/logo-mobile-dark.svg"} alt="whattime.city" width={36} height={36} className="h-9 sm:hidden" />
+          <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" width={160} height={40} className="h-10 hidden sm:block" />
         </button>
         
         <div className="flex-1 max-w-xs hidden sm:block" ref={searchRef}>
