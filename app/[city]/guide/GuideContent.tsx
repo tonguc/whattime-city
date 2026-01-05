@@ -4,7 +4,7 @@ import { City } from '@/lib/cities'
 import { GuideConfig } from '@/lib/guide-content'
 import { useCityContext } from '@/lib/CityContext'
 
-// Premium city-specific content (8 custom cities)
+// Premium city-specific content (15 custom cities)
 import NYCGuideContent from './content/nyc-overview'
 import LondonGuideContent from './content/london-overview'
 import TokyoOverviewContent from './content/tokyo-overview'
@@ -13,6 +13,7 @@ import SingaporeOverviewContent from './content/singapore-overview'
 import ParisOverviewContent from './content/paris-overview'
 import SydneyGuideContent from './content/sydney-overview'
 import IstanbulOverviewContent from './content/istanbul-overview'
+import LosAngelesOverviewContent from './content/los-angeles-overview'
 import HongKongOverviewContent from './content/hong-kong-overview'
 import TorontoOverviewContent from './content/toronto-overview'
 import ShanghaiOverviewContent from './content/shanghai-overview'
@@ -62,6 +63,9 @@ export default function GuideContent({ city, config }: Props) {
     
     case 'istanbul':
       return <IstanbulOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    case 'los-angeles':
+      return <LosAngelesOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
     
     case 'hong-kong':
       return <HongKongOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
