@@ -10,6 +10,7 @@ import { useThemeClasses } from '@/lib/useThemeClasses'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import CompareWidget from '@/components/CompareWidget'
+import ToolsMiniNav from '@/components/ToolsMiniNav'
 
 interface TimeComparisonContentProps {
   fromCity: City
@@ -206,6 +207,17 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
   
   const fromCity = currentFromCity
   const toCity = currentToCity
+  
+  // Sync selected cities to localStorage for cross-tool persistence
+  // Meeting Planner and other tools will read from this
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const slugs = [fromCity.slug, toCity.slug]
+        localStorage.setItem('whattime-meeting-cities', JSON.stringify(slugs))
+      } catch {}
+    }
+  }, [fromCity.slug, toCity.slug])
   
   // Fetch weather for both cities
   useEffect(() => {
@@ -548,7 +560,10 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
     <div className={`min-h-screen transition-colors duration-700 bg-gradient-to-br ${mainTheme.bg}`} style={{ overflow: 'visible' }}>
       <Header />
 
-      <main className="max-w-6xl mx-auto px-4 py-8" style={{ overflow: 'visible' }}>
+      <main className="max-w-6xl mx-auto px-4 py-4 w-full" style={{ overflow: 'visible' }}>
+        {/* Tools Mini Navigation - 5 items */}
+        <ToolsMiniNav />
+        
         {/* Title */}
         <h1 className={`text-2xl sm:text-3xl font-bold text-center mb-2 ${mainTheme.text} transition-all duration-300`}>
           Time Difference between {fromCity.city} and {toCity.city}

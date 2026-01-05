@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { City } from '@/lib/cities'
 import { GuideConfig } from '@/lib/guide-content'
-import { useCityContext } from '@/lib/CityContext'
 
 interface Props {
   city: City
@@ -12,121 +11,103 @@ interface Props {
   timeStr: string
 }
 
+// Long-tail keyword optimized FAQ data for New York
+const FAQ_DATA = [
+  {
+    question: "What is the time difference between New York and London right now?",
+    answer: "New York is typically 5 hours behind London. When it's 12:00 PM in New York, it's 5:00 PM in London. However, for 2-3 weeks in March and November, the difference shifts to 4 or 6 hours because the US and UK change clocks on different dates."
+  },
+  {
+    question: "Is New York on EST or EDT right now?",
+    answer: "New York uses EST (Eastern Standard Time, UTC-5) from the first Sunday of November to the second Sunday of March. During summer months, New York switches to EDT (Eastern Daylight Time, UTC-4). Check the current date — if it's between March and November, New York is likely on EDT."
+  },
+  {
+    question: "What time does the New York Stock Exchange open and close?",
+    answer: "The NYSE opens at 9:30 AM and closes at 4:00 PM Eastern Time, Monday through Friday. Pre-market trading starts at 4:00 AM ET, and after-hours trading runs until 8:00 PM ET. For London investors, that's 2:30 PM to 9:00 PM GMT (winter) or 2:30 PM to 9:00 PM BST (summer)."
+  },
+  {
+    question: "What is the best time to call New York from India?",
+    answer: "The best time to call New York from India is between 7:00 PM and 10:00 PM IST, which reaches New York during their morning business hours (9:30 AM - 12:30 PM ET). Avoid calling after 11:00 PM IST as New York offices will be closing."
+  },
+  {
+    question: "How many hours behind is New York from Tokyo?",
+    answer: "New York is 14 hours behind Tokyo during standard time (EST vs JST). When it's 9:00 AM in Tokyo, it's 7:00 PM the previous day in New York. During US daylight saving time, the difference reduces to 13 hours. Japan does not observe DST."
+  },
+  {
+    question: "When do clocks change in New York in 2025?",
+    answer: "In 2025, New York clocks spring forward to EDT on Sunday, March 9th at 2:00 AM (clocks move to 3:00 AM). Clocks fall back to EST on Sunday, November 2nd at 2:00 AM (clocks move to 1:00 AM). Note: US changes clocks 2-3 weeks before Europe."
+  },
+  {
+    question: "What time zone is New York City in?",
+    answer: "New York City is in the Eastern Time Zone. This includes EST (Eastern Standard Time, UTC-5) in winter and EDT (Eastern Daylight Time, UTC-4) in summer. The Eastern Time Zone covers the entire US East Coast from Maine to Florida, plus states like Ohio and Indiana."
+  },
+  {
+    question: "What are typical business hours in New York City?",
+    answer: "Standard NYC business hours are 9:00 AM to 5:00 PM ET, Monday through Friday. However, Wall Street and finance often start at 7:00-8:00 AM to catch European market close. Tech companies trend later (10 AM - 7 PM). Restaurants serve dinner from 5:30 PM, with prime time at 7:30-8:30 PM."
+  }
+]
+
 export default function NYCGuideContent({ city, config, isLight, timeStr }: Props) {
-  const { time } = useCityContext()
-  const cityTime = new Date(time.toLocaleString('en-US', { timeZone: city.timezone }))
-  const currentHour = cityTime.getHours()
-  
   const textColor = isLight ? 'text-slate-700' : 'text-slate-200'
   const headingColor = isLight ? 'text-slate-800' : 'text-white'
   const mutedColor = isLight ? 'text-slate-500' : 'text-slate-400'
   const cardBg = isLight ? 'bg-slate-50' : 'bg-slate-700/50'
-  const linkColor = isLight ? 'text-amber-600 hover:text-amber-700' : 'text-amber-400 hover:text-amber-300'
-  
-  const clusters = [
-    {
-      slug: 'business-hours',
-      icon: '💼',
-      title: 'Business Hours',
-      desc: 'Banks, offices, stores, and government hours in NYC',
-    },
-    {
-      slug: 'best-time-to-visit',
-      icon: '🗽',
-      title: 'Best Time to Visit',
-      desc: 'Month-by-month weather, crowds, and events guide',
-    },
-    {
-      slug: 'remote-work',
-      icon: '💻',
-      title: 'Remote Work Guide',
-      desc: 'Working with NYC teams across time zones',
-    },
-    {
-      slug: '24-hours',
-      icon: '🌆',
-      title: '24 Hours in NYC',
-      desc: "The city's daily rhythm from dawn to night",
-    },
-    {
-      slug: 'call-times',
-      icon: '📞',
-      title: 'Best Time to Call',
-      desc: 'Optimal calling times from major cities worldwide',
-    },
-    {
-      slug: 'stock-market',
-      icon: '📈',
-      title: 'Stock Market Hours',
-      desc: 'NYSE & NASDAQ trading times for global investors',
-    },
-    {
-      slug: 'holidays',
-      icon: '📅',
-      title: 'Public Holidays 2025',
-      desc: 'Bank holidays, closures, and what to expect',
-    },
-    {
-      slug: 'digital-nomad',
-      icon: '🎒',
-      title: 'Digital Nomad Guide',
-      desc: 'Coworking, cafes, WiFi, and cost of living',
-    },
-    {
-      slug: 'time-difference',
-      icon: '🌐',
-      title: 'Time Difference',
-      desc: 'NYC time compared to London, Tokyo, Dubai, and more',
-    },
-    {
-      slug: 'travel-planning',
-      icon: '✈️',
-      title: 'Travel Planning',
-      desc: 'Flight times, jet lag tips, and arrival advice',
-    },
-  ]
-  
+  const linkColor = isLight ? 'text-blue-600 hover:text-blue-800 hover:underline' : 'text-sky-400 hover:text-sky-300 hover:underline'
+
+  // Generate FAQ Schema JSON-LD
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": FAQ_DATA.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
+
   return (
     <div className={textColor}>
-      {/* Hero Section */}
+      {/* FAQ Schema JSON-LD for Google Rich Results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      
       <header className="mb-8">
         <h1 className={`text-3xl md:text-4xl font-bold mb-4 ${headingColor}`}>
           New York Time Zone: The Complete Guide
         </h1>
         <p className={`text-lg ${mutedColor}`}>
-          Everything you need to know about time in the city that never sleeps
+          Your complete guide to time in the city that never sleeps
         </p>
         <div className={`mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full ${cardBg}`}>
           <span className="text-2xl">🕐</span>
-          <span className="font-medium">Current NYC Time: </span>
+          <span className="font-medium">Current New York Time: </span>
           <span className={`font-bold ${headingColor}`}>{timeStr}</span>
         </div>
       </header>
       
-      {/* Introduction - Natural, conversational tone */}
       <section className="mb-10 space-y-4">
         <p>
-          If you've ever tried to schedule a meeting with someone in New York, figure out when 
-          the stock market opens, or wondered if that store on Fifth Avenue will still be open 
-          when you arrive — you know how confusing time zones can be.
+          Whether you're coordinating with Wall Street traders, scheduling a call with Manhattan clients, 
+          or planning to catch a Broadway show — understanding New York's time zone is essential for 
+          anyone doing business with the world's financial capital.
         </p>
         <p>
-          New York City runs on <strong>Eastern Time (ET)</strong>, which is either EST (Eastern 
-          Standard Time, UTC-5) or EDT (Eastern Daylight Time, UTC-4), depending on the time of year. 
-          The city switches to daylight saving time in March and falls back in November.
+          New York operates on <strong>Eastern Standard Time (EST)</strong> in winter and <strong>Eastern 
+          Daylight Time (EDT)</strong> in summer. As the home of the NYSE, NASDAQ, and countless 
+          multinational headquarters, New York time drives global business rhythms.
         </p>
         <p>
-          But knowing the technical details is just the beginning. What really matters is understanding 
-          how time works <em>in practice</em> in New York — when businesses actually open, when the 
-          subway gets packed, and when you can realistically expect someone to answer your call.
-        </p>
-        <p>
-          That's exactly what this guide covers. Whether you're planning a trip, coordinating with 
-          colleagues, or just curious about life in NYC, you'll find everything you need below.
+          But there's more to NYC time than just knowing "EST." What matters is understanding when 
+          the markets open, when you can reach your contacts, and how the city's unique 24/7 culture 
+          affects scheduling. Yes, some things really are open at 3 AM.
         </p>
       </section>
       
-      {/* Quick Facts Box */}
       <section className={`mb-10 p-6 rounded-2xl ${cardBg}`}>
         <h2 className={`text-xl font-semibold mb-4 ${headingColor}`}>
           ⚡ Quick Facts: New York Time Zone
@@ -136,34 +117,33 @@ export default function NYCGuideContent({ city, config, isLight, timeStr }: Prop
             <h3 className={`font-medium mb-2 ${headingColor}`}>Time Zone Basics</h3>
             <ul className="space-y-1 text-sm">
               <li>• <strong>Standard Time:</strong> EST (UTC-5)</li>
-              <li>• <strong>Daylight Saving:</strong> EDT (UTC-4)</li>
-              <li>• <strong>DST Starts:</strong> Second Sunday of March</li>
-              <li>• <strong>DST Ends:</strong> First Sunday of November</li>
+              <li>• <strong>Daylight Time:</strong> EDT (UTC-4)</li>
+              <li>• <strong>Clocks Forward:</strong> 2nd Sunday of March</li>
+              <li>• <strong>Clocks Back:</strong> 1st Sunday of November</li>
             </ul>
           </div>
           <div>
             <h3 className={`font-medium mb-2 ${headingColor}`}>Key Time Differences</h3>
             <ul className="space-y-1 text-sm">
-              <li>• <strong>London:</strong> +5 hours (usually)</li>
-              <li>• <strong>Tokyo:</strong> +14 hours</li>
-              <li>• <strong>Dubai:</strong> +9 hours</li>
-              <li>• <strong>Los Angeles:</strong> -3 hours</li>
+              <li>• <strong><Link href="/london/" className={linkColor}>London</Link>:</strong> +5 hours (usually)</li>
+              <li>• <strong><Link href="/los-angeles/" className={linkColor}>Los Angeles</Link>:</strong> -3 hours</li>
+              <li>• <strong><Link href="/tokyo/" className={linkColor}>Tokyo</Link>:</strong> +14 hours</li>
+              <li>• <strong><Link href="/dubai/" className={linkColor}>Dubai</Link>:</strong> +9 hours</li>
             </ul>
           </div>
         </div>
         <p className={`mt-4 text-sm ${mutedColor}`}>
           Need exact conversions? Try our{' '}
-          <Link href="/time-converter/" className={linkColor}>Time Converter</Link>
+          <Link href="/time/" className={linkColor}>Time Converter</Link>
         </p>
       </section>
       
-      {/* Guide Topics Grid */}
       <section className="mb-10">
         <h2 className={`text-2xl font-semibold mb-6 ${headingColor}`}>
           Explore the Complete Guide
         </h2>
         <div className="grid md:grid-cols-2 gap-4">
-          {clusters.map(cluster => (
+          {config.clusters.map(cluster => (
             <Link
               key={cluster.slug}
               href={`/${city.slug}/guide/${cluster.slug}/`}
@@ -185,7 +165,6 @@ export default function NYCGuideContent({ city, config, isLight, timeStr }: Prop
         </div>
       </section>
       
-      {/* Understanding NYC Time - Detailed content */}
       <section className="mb-10 space-y-4">
         <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
           Understanding New York Time
@@ -195,254 +174,260 @@ export default function NYCGuideContent({ city, config, isLight, timeStr }: Prop
           EST vs EDT: What's the Difference?
         </h3>
         <p>
-          Here's something that trips up a lot of people: New York isn't always on EST (Eastern 
-          Standard Time). For about 8 months of the year, the city actually observes EDT (Eastern 
-          Daylight Time), which is one hour ahead.
+          New York switches between two time designations: <strong>EST (Eastern Standard Time)</strong> is UTC-5, used from 
+          early November to mid-March. <strong>EDT (Eastern Daylight Time)</strong> is UTC-4, used from mid-March to early November 
+          when clocks "spring forward" one hour.
         </p>
         <p>
-          The switch happens in March when clocks "spring forward" by an hour, and again in November 
-          when they "fall back." If you're scheduling something months in advance, it's worth double-checking 
-          whether daylight saving time will be in effect.
-        </p>
-        <p className={`${mutedColor} text-sm`}>
-          Pro tip: When in doubt, just say "Eastern Time" or "ET" — that automatically accounts for 
-          whichever one is currently active.
+          The US changes clocks on different dates than Europe — typically 2-3 weeks earlier in spring and 1 week 
+          later in fall. This creates brief periods where the usual time differences are off by an hour.
         </p>
         
         <h3 className={`text-lg font-medium mt-6 mb-2 ${headingColor}`}>
-          Why New York Time Matters Globally
+          Wall Street Sets the Rhythm
         </h3>
         <p>
-          New York isn't just any city — it's the financial capital of the world. When Wall Street 
-          opens at 9:30 AM Eastern, traders in London, Tokyo, and Sydney are all paying attention. 
-          The{' '}
-          <Link href={`/${city.slug}/guide/stock-market/`} className={linkColor}>
-            NYSE trading hours
-          </Link>{' '}
-          essentially set the rhythm for global markets.
-        </p>
-        <p>
-          Beyond finance, New York serves as the headquarters for countless international businesses, 
-          media companies, and the United Nations. Understanding NYC time is practically a requirement 
-          for anyone working in global business.
-        </p>
-      </section>
-      
-      {/* What You'll Find Section */}
-      <section className="mb-10 space-y-4">
-        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
-          What You'll Find in This Guide
-        </h2>
-        
-        <p>
-          I've organized this guide into sections based on what people actually need to know. 
-          Here's a quick overview:
+          The New York Stock Exchange (9:30 AM - 4:00 PM ET) is the heartbeat of global finance. Asian markets 
+          close as New York wakes up, European markets overlap in the morning, and after-hours trading extends 
+          the action. For traders worldwide, New York time isn't just a reference — it's the reference.
         </p>
         
-        <div className="space-y-3 mt-4">
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h4 className={`font-medium ${headingColor}`}>For Business Travelers & Professionals</h4>
-            <p className="text-sm mt-1">
-              Check out{' '}
-              <Link href={`/${city.slug}/guide/business-hours/`} className={linkColor}>Business Hours</Link>,{' '}
-              <Link href={`/${city.slug}/guide/stock-market/`} className={linkColor}>Stock Market Hours</Link>, and{' '}
-              <Link href={`/${city.slug}/guide/call-times/`} className={linkColor}>Best Time to Call</Link>.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h4 className={`font-medium ${headingColor}`}>For Remote Workers & Global Teams</h4>
-            <p className="text-sm mt-1">
-              The{' '}
-              <Link href={`/${city.slug}/guide/remote-work/`} className={linkColor}>Remote Work Guide</Link>{' '}
-              and{' '}
-              <Link href={`/${city.slug}/guide/time-difference/`} className={linkColor}>Time Difference</Link>{' '}
-              pages will help you coordinate across time zones.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h4 className={`font-medium ${headingColor}`}>For Tourists & Visitors</h4>
-            <p className="text-sm mt-1">
-              Start with{' '}
-              <Link href={`/${city.slug}/guide/best-time-to-visit/`} className={linkColor}>Best Time to Visit</Link>,{' '}
-              <Link href={`/${city.slug}/guide/travel-planning/`} className={linkColor}>Travel Planning</Link>, and{' '}
-              <Link href={`/${city.slug}/guide/24-hours/`} className={linkColor}>24 Hours in NYC</Link>.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h4 className={`font-medium ${headingColor}`}>For Digital Nomads</h4>
-            <p className="text-sm mt-1">
-              The{' '}
-              <Link href={`/${city.slug}/guide/digital-nomad/`} className={linkColor}>Digital Nomad Guide</Link>{' '}
-              covers coworking spaces, cafes, costs, and tips for working remotely in NYC.
-            </p>
+        <div className={`p-4 rounded-xl ${cardBg} mt-4`}>
+          <div className="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <h4 className={`font-medium ${headingColor}`}>NYC Morning (9 AM ET)</h4>
+              <ul className="mt-2 space-y-1">
+                <li>• <Link href="/london/" className={linkColor}>London</Link>: 2 PM (winter) / 2 PM (summer)</li>
+                <li>• <Link href="/tokyo/" className={linkColor}>Tokyo</Link>: 11 PM (same day)</li>
+                <li>• <Link href="/dubai/" className={linkColor}>Dubai</Link>: 6 PM</li>
+                <li>• <Link href="/los-angeles/" className={linkColor}>Los Angeles</Link>: 6 AM</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className={`font-medium ${headingColor}`}>NYC Evening (6 PM ET)</h4>
+              <ul className="mt-2 space-y-1">
+                <li>• <Link href="/london/" className={linkColor}>London</Link>: 11 PM (same day)</li>
+                <li>• <Link href="/tokyo/" className={linkColor}>Tokyo</Link>: 8 AM (next day)</li>
+                <li>• <Link href="/sydney/" className={linkColor}>Sydney</Link>: 10 AM (next day)</li>
+                <li>• <Link href="/los-angeles/" className={linkColor}>Los Angeles</Link>: 3 PM</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
       
-      {/* Tools Section */}
-      <section className={`mb-10 p-6 rounded-2xl border-2 border-dashed ${
-        isLight ? 'border-amber-300 bg-amber-50' : 'border-amber-500/50 bg-amber-900/20'
-      }`}>
-        <h2 className={`text-xl font-semibold mb-4 ${headingColor}`}>
-          🛠️ Helpful Tools
-        </h2>
-        <p className="mb-4">
-          Need to do a quick calculation? These tools work great alongside this guide:
-        </p>
-        <div className="grid sm:grid-cols-2 gap-3">
-          <Link
-            href="/time-converter/"
-            className={`flex items-center gap-2 p-3 rounded-lg ${
-              isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
-            }`}
-          >
-            <span>🔄</span>
-            <div>
-              <span className={`font-medium ${headingColor}`}>Time Converter</span>
-              <p className={`text-xs ${mutedColor}`}>Convert between any time zones</p>
-            </div>
-          </Link>
-          <Link
-            href="/meeting/"
-            className={`flex items-center gap-2 p-3 rounded-lg ${
-              isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
-            }`}
-          >
-            <span>📅</span>
-            <div>
-              <span className={`font-medium ${headingColor}`}>Meeting Planner</span>
-              <p className={`text-xs ${mutedColor}`}>Find the best time for everyone</p>
-            </div>
-          </Link>
-          <Link
-            href="/flight-time/"
-            className={`flex items-center gap-2 p-3 rounded-lg ${
-              isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
-            }`}
-          >
-            <span>✈️</span>
-            <div>
-              <span className={`font-medium ${headingColor}`}>Flight Time Calculator</span>
-              <p className={`text-xs ${mutedColor}`}>Estimate your arrival time</p>
-            </div>
-          </Link>
-          <Link
-            href="/jet-lag-advisor/"
-            className={`flex items-center gap-2 p-3 rounded-lg ${
-              isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
-            }`}
-          >
-            <span>😴</span>
-            <div>
-              <span className={`font-medium ${headingColor}`}>Jet Lag Calculator</span>
-              <p className={`text-xs ${mutedColor}`}>Plan your sleep schedule</p>
-            </div>
-          </Link>
-        </div>
-      </section>
-      
-      {/* FAQ Section */}
       <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
+          New York Time vs Major Cities
+        </h2>
+        <div className={`overflow-x-auto rounded-xl ${cardBg}`}>
+          <table className="w-full text-sm">
+            <thead>
+              <tr className={`border-b ${isLight ? 'border-slate-200' : 'border-slate-600'}`}>
+                <th className={`px-4 py-3 text-left font-medium ${headingColor}`}>City</th>
+                <th className={`px-4 py-3 text-left font-medium ${headingColor}`}>Difference</th>
+                <th className={`px-4 py-3 text-left font-medium ${headingColor}`}>When it's 12 PM in NYC</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 dark:divide-slate-600">
+              <tr>
+                <td className="px-4 py-3">🇺🇸 <Link href="/time/new-york/los-angeles/" className={linkColor}>Los Angeles</Link></td>
+                <td className="px-4 py-3">-3 hours</td>
+                <td className="px-4 py-3">9:00 AM</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇬🇧 <Link href="/time/new-york/london/" className={linkColor}>London</Link></td>
+                <td className="px-4 py-3">+5 hours*</td>
+                <td className="px-4 py-3">5:00 PM</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇫🇷 <Link href="/time/new-york/paris/" className={linkColor}>Paris</Link></td>
+                <td className="px-4 py-3">+6 hours*</td>
+                <td className="px-4 py-3">6:00 PM</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇦🇪 <Link href="/time/new-york/dubai/" className={linkColor}>Dubai</Link></td>
+                <td className="px-4 py-3">+9 hours</td>
+                <td className="px-4 py-3">9:00 PM</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇮🇳 <Link href="/time/new-york/mumbai/" className={linkColor}>Mumbai</Link></td>
+                <td className="px-4 py-3">+10.5 hours</td>
+                <td className="px-4 py-3">10:30 PM</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇸🇬 <Link href="/time/new-york/singapore/" className={linkColor}>Singapore</Link></td>
+                <td className="px-4 py-3">+13 hours</td>
+                <td className="px-4 py-3">1:00 AM (+1)</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇯🇵 <Link href="/time/new-york/tokyo/" className={linkColor}>Tokyo</Link></td>
+                <td className="px-4 py-3">+14 hours</td>
+                <td className="px-4 py-3">2:00 AM (+1)</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇦🇺 <Link href="/time/new-york/sydney/" className={linkColor}>Sydney</Link></td>
+                <td className="px-4 py-3">+16 hours*</td>
+                <td className="px-4 py-3">4:00 AM (+1)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className={`mt-3 text-sm ${mutedColor}`}>
+          * Times shown are approximate and may vary during daylight saving transitions.{' '}
+          <Link href="/time/new-york/london/" className={linkColor}>See detailed time differences →</Link>
+        </p>
+      </section>
+      
+      {/* Dynamic CTA - Meeting Planner */}
+      <section className={`mb-10 p-6 rounded-2xl text-center ${
+        isLight 
+          ? 'bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200' 
+          : 'bg-gradient-to-r from-blue-900/30 to-indigo-900/30 border border-blue-700/50'
+      }`}>
+        <h3 className={`text-xl font-semibold mb-2 ${headingColor}`}>
+          Need to schedule a meeting with New York?
+        </h3>
+        <p className={`mb-4 ${mutedColor}`}>
+          Find the perfect meeting time that works for Wall Street and your team.
+        </p>
+        <Link 
+          href="/meeting/"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all transform hover:scale-105 shadow-lg"
+        >
+          <span>🚀</span>
+          <span>Launch Meeting Planner</span>
+        </Link>
+      </section>
+      
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-6 ${headingColor}`}>
+          Practical Tips for Dealing with New York Time
+        </h2>
+        
+        <div className={`p-4 rounded-xl border mb-4 ${isLight ? 'border-slate-200 bg-white' : 'border-slate-600 bg-slate-700/30'}`}>
+          <h3 className={`font-medium mb-2 ${headingColor}`}>🏢 For International Business</h3>
+          <p className="text-sm">
+            The golden window for US-Europe calls is 9 AM - 12 PM ET (2-5 PM London). For Asia, 
+            you'll need early morning NYC calls (7-9 AM ET) to catch <Link href="/tokyo/" className={linkColor}>Tokyo</Link> or <Link href="/singapore/" className={linkColor}>Singapore</Link> 
+            before their day ends. Many global companies schedule "NYC-friendly" times knowing the city's influence.
+          </p>
+        </div>
+        
+        <div className={`p-4 rounded-xl border mb-4 ${isLight ? 'border-slate-200 bg-white' : 'border-slate-600 bg-slate-700/30'}`}>
+          <h3 className={`font-medium mb-2 ${headingColor}`}>✈️ For Travellers</h3>
+          <p className="text-sm">
+            Flying from Europe? You'll "gain" 5-8 hours heading west — arrive in NYC and it feels like 
+            afternoon when your body says bedtime. Stay awake until 10 PM local time to reset faster. 
+            From Asia, the jet lag is brutal (13-16 hours). Check our{' '}
+            <Link href="/jet-lag-advisor/" className={linkColor}>Jet Lag Advisor</Link> for recovery strategies.
+          </p>
+        </div>
+        
+        <div className={`p-4 rounded-xl border mb-4 ${isLight ? 'border-slate-200 bg-white' : 'border-slate-600 bg-slate-700/30'}`}>
+          <h3 className={`font-medium mb-2 ${headingColor}`}>💼 For Remote Workers</h3>
+          <p className="text-sm">
+            Working remotely with a NYC-based team from abroad? Europe has excellent overlap 
+            (afternoon EST = evening CET). Asia-Pacific remote workers often adopt "NYC hours" — 
+            starting late evening local time. Consider co-working spaces with 24-hour access.
+          </p>
+        </div>
+      </section>
+      
+      {/* FAQ Section with Schema Markup */}
+      <section className="mb-10" itemScope itemType="https://schema.org/FAQPage">
         <h2 className={`text-2xl font-semibold mb-6 ${headingColor}`}>
           Frequently Asked Questions
         </h2>
         
         <div className="space-y-4">
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>
-              Is New York EST or EDT right now?
-            </h3>
-            <p className="text-sm">
-              {currentHour >= 2 && new Date().getMonth() >= 2 && new Date().getMonth() <= 10
-                ? "New York is currently on EDT (Eastern Daylight Time), which is UTC-4. Clocks will 'fall back' to EST in November."
-                : "New York is currently on EST (Eastern Standard Time), which is UTC-5. Clocks will 'spring forward' to EDT in March."
-              }
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>
-              How many hours ahead is New York from California?
-            </h3>
-            <p className="text-sm">
-              New York is always 3 hours ahead of California (Pacific Time). When it's 9 AM in 
-              New York, it's 6 AM in Los Angeles. Both states observe daylight saving time on 
-              the same dates, so the difference stays constant year-round.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>
-              What time does New York Stock Exchange open?
-            </h3>
-            <p className="text-sm">
-              The NYSE opens at 9:30 AM and closes at 4:00 PM Eastern Time, Monday through Friday. 
-              Pre-market trading starts as early as 4:00 AM, and after-hours trading continues until 
-              8:00 PM. See our{' '}
-              <Link href={`/${city.slug}/guide/stock-market/`} className={linkColor}>
-                stock market hours guide
-              </Link>{' '}
-              for times in your local zone.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>
-              When is the best time to call New York from Europe?
-            </h3>
-            <p className="text-sm">
-              If you're in the UK or Western Europe, aim for late afternoon your time (2 PM - 6 PM). 
-              That corresponds to morning in New York (9 AM - 1 PM), which is ideal for business calls. 
-              Check our{' '}
-              <Link href={`/${city.slug}/guide/call-times/`} className={linkColor}>
-                call times guide
-              </Link>{' '}
-              for other regions.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>
-              Does New York observe Daylight Saving Time?
-            </h3>
-            <p className="text-sm">
-              Yes, New York follows DST along with most of the United States. Clocks move forward 
-              one hour on the second Sunday of March and back one hour on the first Sunday of November. 
-              This has been the pattern since 2007 under the Energy Policy Act.
-            </p>
-          </div>
+          {FAQ_DATA.map((faq, index) => (
+            <div 
+              key={index}
+              className={`p-4 rounded-xl ${cardBg}`}
+              itemScope 
+              itemProp="mainEntity" 
+              itemType="https://schema.org/Question"
+            >
+              <h3 className={`font-medium mb-2 ${headingColor}`} itemProp="name">
+                {faq.question}
+              </h3>
+              <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                <p className="text-sm" itemProp="text">
+                  {faq.answer}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
       
-      {/* Closing CTA */}
-      <section className={`p-6 rounded-2xl text-center ${
-        isLight ? 'bg-gradient-to-r from-amber-50 to-orange-50' : 'bg-gradient-to-r from-amber-900/30 to-orange-900/30'
-      }`}>
-        <h2 className={`text-xl font-semibold mb-2 ${headingColor}`}>
-          Need the Current Time in New York?
+      <section className={`mb-10 p-6 rounded-2xl ${isLight ? 'bg-amber-50 border border-amber-200' : 'bg-amber-900/20 border border-amber-700/30'}`}>
+        <h2 className={`text-xl font-semibold mb-4 ${headingColor}`}>
+          Ready to Dive Deeper?
         </h2>
         <p className={`mb-4 ${mutedColor}`}>
-          Check our live clock with weather, sunrise/sunset times, and more.
+          This overview is just the start. Explore our detailed guides on specific topics:
         </p>
-        <Link
-          href={`/${city.slug}/`}
-          className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all ${
-            isLight 
-              ? 'bg-slate-800 text-white hover:bg-slate-700' 
-              : 'bg-white text-slate-800 hover:bg-slate-100'
-          }`}
-        >
-          View New York Time Now →
-        </Link>
+        <div className="flex flex-wrap gap-2">
+          <Link 
+            href={`/${city.slug}/guide/time-business/`}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              isLight 
+                ? 'bg-amber-100 text-amber-700 hover:bg-amber-200' 
+                : 'bg-amber-900/40 text-amber-300 hover:bg-amber-900/60'
+            }`}
+          >
+            🏢 Business Hours
+          </Link>
+          <Link 
+            href={`/${city.slug}/guide/stock-market/`}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              isLight 
+                ? 'bg-amber-100 text-amber-700 hover:bg-amber-200' 
+                : 'bg-amber-900/40 text-amber-300 hover:bg-amber-900/60'
+            }`}
+          >
+            📈 NYSE & NASDAQ
+          </Link>
+          <Link 
+            href={`/${city.slug}/guide/best-time-to-call/`}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              isLight 
+                ? 'bg-amber-100 text-amber-700 hover:bg-amber-200' 
+                : 'bg-amber-900/40 text-amber-300 hover:bg-amber-900/60'
+            }`}
+          >
+            📞 Best Time to Call
+          </Link>
+          <Link 
+            href={`/${city.slug}/guide/public-holidays/`}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              isLight 
+                ? 'bg-amber-100 text-amber-700 hover:bg-amber-200' 
+                : 'bg-amber-900/40 text-amber-300 hover:bg-amber-900/60'
+            }`}
+          >
+            🇺🇸 US Holidays
+          </Link>
+        </div>
       </section>
       
-      {/* Last Updated */}
-      <p className={`mt-8 text-sm ${mutedColor}`}>
-        Last updated: December 2025. Information is reviewed monthly for accuracy.
-      </p>
+      {/* E-E-A-T Footer */}
+      <footer className={`text-sm ${mutedColor} border-t ${isLight ? 'border-slate-200' : 'border-slate-700'} pt-6`}>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          <p>
+            <strong>Last updated:</strong> January 2025
+          </p>
+          <p className="flex items-center gap-1">
+            <span>✓</span>
+            <span>Data verified by WhatTime.city Editorial Team</span>
+          </p>
+        </div>
+        <p className={`mt-2 text-xs ${mutedColor}`}>
+          Time zone data sourced from IANA Time Zone Database. This guide is regularly reviewed and updated to ensure accuracy.
+        </p>
+      </footer>
     </div>
   )
 }

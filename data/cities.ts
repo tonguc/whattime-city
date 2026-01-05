@@ -266,7 +266,7 @@ export const cities: City[] = [
   // ============ TIER 2: Major Cities ============
   // Americas
   { 
-    slug: 'chicago', city: 'Chicago', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 41.88, lng: -87.63, tier: 2, continent: 'americas',
+    slug: 'chicago', city: 'Chicago', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 41.88, lng: -87.63, tier: 1, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '2.7M', metroPopulation: '9.5M', phoneCode: '+1 312', language: 'English',
       climate: 'Humid continental with hot summers (22-30°C) and cold winters (-6 to 2°C). Famous for wind off Lake Michigan.',
@@ -287,7 +287,7 @@ export const cities: City[] = [
     }
   },
   { 
-    slug: 'miami', city: 'Miami', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 25.76, lng: -80.19, tier: 2, continent: 'americas',
+    slug: 'miami', city: 'Miami', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 25.76, lng: -80.19, tier: 1, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '440K', metroPopulation: '6.2M', phoneCode: '+1 305', language: 'English, Spanish',
       climate: 'Tropical monsoon with hot humid summers (28-33°C) and warm dry winters (15-25°C). Hurricane season Jun-Nov.',
@@ -308,7 +308,7 @@ export const cities: City[] = [
     }
   },
   { 
-    slug: 'san-francisco', city: 'San Francisco', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', lat: 37.77, lng: -122.42, tier: 2, continent: 'americas',
+    slug: 'san-francisco', city: 'San Francisco', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', lat: 37.77, lng: -122.42, tier: 1, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '870K', metroPopulation: '4.7M', phoneCode: '+1 415', language: 'English',
       climate: 'Mediterranean with mild summers (15-22°C) and cool foggy winters. Famous for microclimates and fog.',
@@ -508,7 +508,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'vancouver', city: 'Vancouver', timezone: 'America/Vancouver', country: 'Canada', countryCode: 'CA', lat: 49.28, lng: -123.12, tier: 2, continent: 'americas',
+  { slug: 'vancouver', city: 'Vancouver', timezone: 'America/Vancouver', country: 'Canada', countryCode: 'CA', lat: 49.28, lng: -123.12, tier: 1, continent: 'americas',
     info: {
       currency: 'Canadian Dollar', currencySymbol: 'C$', population: '675K', metroPopulation: '2.6M', phoneCode: '+1 604', language: 'English, Chinese',
       climate: 'Oceanic with mild wet winters (2-8°C) and warm dry summers (15-22°C). Surrounded by mountains and ocean.',
@@ -548,7 +548,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'mexico-city', city: 'Mexico City', timezone: 'America/Mexico_City', country: 'Mexico', countryCode: 'MX', lat: 19.43, lng: -99.13, tier: 2, continent: 'americas',
+  { slug: 'mexico-city', city: 'Mexico City', timezone: 'America/Mexico_City', country: 'Mexico', countryCode: 'MX', lat: 19.43, lng: -99.13, tier: 1, continent: 'americas',
     info: {
       currency: 'Mexican Peso', currencySymbol: 'MX$', population: '9.2M', metroPopulation: '21.8M', phoneCode: '+52 55', language: 'Spanish',
       climate: 'Subtropical highland with mild temperatures year-round (12-25°C) thanks to 2,240m elevation. Rainy season May-October.',
@@ -568,7 +568,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'sao-paulo', city: 'São Paulo', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -23.55, lng: -46.63, tier: 2, continent: 'americas',
+  { slug: 'sao-paulo', city: 'São Paulo', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -23.55, lng: -46.63, tier: 1, continent: 'americas',
     info: {
       currency: 'Brazilian Real', currencySymbol: 'R$', population: '12.3M', metroPopulation: '22M', phoneCode: '+55 11', language: 'Portuguese',
       climate: 'Humid subtropical with warm to hot temperatures year-round (18-28°C). Rainy season October-March.',
@@ -608,7 +608,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'buenos-aires', city: 'Buenos Aires', timezone: 'America/Argentina/Buenos_Aires', country: 'Argentina', countryCode: 'AR', lat: -34.60, lng: -58.38, tier: 2, continent: 'americas',
+  { slug: 'buenos-aires', city: 'Buenos Aires', timezone: 'America/Argentina/Buenos_Aires', country: 'Argentina', countryCode: 'AR', lat: -34.60, lng: -58.38, tier: 1, continent: 'americas',
     info: {
       currency: 'Argentine Peso', currencySymbol: 'AR$', population: '3M', metroPopulation: '15.6M', phoneCode: '+54 11', language: 'Spanish',
       climate: 'Humid subtropical with warm summers (24-30°C) and mild winters (8-15°C). No dry season - rain year-round.',
@@ -630,7 +630,7 @@ export const cities: City[] = [
   },
 
   // Europe
-  { slug: 'madrid', city: 'Madrid', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 40.42, lng: -3.70, tier: 2, continent: 'europe',
+  { slug: 'madrid', city: 'Madrid', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 40.42, lng: -3.70, tier: 1, continent: 'europe',
     info: {
       currency: 'Euro', currencySymbol: '€', population: '3.3M', metroPopulation: '6.7M', phoneCode: '+34 91', language: 'Spanish',
       climate: 'Mediterranean continental with hot summers (25-35°C) and cool winters (2-10°C). Very sunny with low humidity.',
@@ -650,7 +650,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'barcelona', city: 'Barcelona', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 41.39, lng: 2.17, tier: 2, continent: 'europe',
+  { slug: 'barcelona', city: 'Barcelona', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 41.39, lng: 2.17, tier: 1, continent: 'europe',
     info: {
       currency: 'Euro', currencySymbol: '€', population: '1.6M', metroPopulation: '5.6M', phoneCode: '+34 93', language: 'Spanish, Catalan',
       climate: 'Mediterranean with hot summers (24-30°C) and mild winters (8-15°C). Beach city with pleasant year-round weather.',
@@ -670,7 +670,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'rome', city: 'Rome', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 41.90, lng: 12.50, tier: 2, continent: 'europe',
+  { slug: 'rome', city: 'Rome', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 41.90, lng: 12.50, tier: 1, continent: 'europe',
     info: {
       currency: 'Euro', currencySymbol: '€', population: '2.9M', metroPopulation: '4.4M', phoneCode: '+39 06', language: 'Italian',
       climate: 'Mediterranean with hot dry summers (25-32°C) and mild wet winters (5-12°C).',
@@ -710,7 +710,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'amsterdam', city: 'Amsterdam', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 52.37, lng: 4.90, tier: 2, continent: 'europe',
+  { slug: 'amsterdam', city: 'Amsterdam', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 52.37, lng: 4.90, tier: 1, continent: 'europe',
     info: {
       currency: 'Euro', currencySymbol: '€', population: '870K', metroPopulation: '2.5M', phoneCode: '+31 20', language: 'Dutch, English',
       climate: 'Oceanic with mild summers (17-22°C) and cool winters (2-6°C). Rainy year-round but rarely heavy.',
@@ -750,7 +750,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'vienna', city: 'Vienna', timezone: 'Europe/Vienna', country: 'Austria', countryCode: 'AT', lat: 48.21, lng: 16.37, tier: 2, continent: 'europe',
+  { slug: 'vienna', city: 'Vienna', timezone: 'Europe/Vienna', country: 'Austria', countryCode: 'AT', lat: 48.21, lng: 16.37, tier: 1, continent: 'europe',
     info: {
       currency: 'Euro', currencySymbol: '€', population: '1.9M', metroPopulation: '2.6M', phoneCode: '+43 1', language: 'German',
       climate: 'Humid continental with warm summers (20-26°C) and cold winters (-2 to 4°C). Four distinct seasons.',
@@ -770,7 +770,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'zurich', city: 'Zurich', timezone: 'Europe/Zurich', country: 'Switzerland', countryCode: 'CH', lat: 47.37, lng: 8.54, tier: 2, continent: 'europe',
+  { slug: 'zurich', city: 'Zurich', timezone: 'Europe/Zurich', country: 'Switzerland', countryCode: 'CH', lat: 47.37, lng: 8.54, tier: 1, continent: 'europe',
     info: {
       currency: 'Swiss Franc', currencySymbol: 'CHF', population: '420K', metroPopulation: '1.4M', phoneCode: '+41 44', language: 'German',
       climate: 'Oceanic with mild summers (18-24°C) and cold winters (-1 to 4°C). Snow common in winter.',
@@ -830,7 +830,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'frankfurt', city: 'Frankfurt', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 50.11, lng: 8.68, tier: 2, continent: 'europe',
+  { slug: 'frankfurt', city: 'Frankfurt', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 50.11, lng: 8.68, tier: 1, continent: 'europe',
     info: {
       currency: 'Euro', currencySymbol: '€', population: '760K', metroPopulation: '2.3M', phoneCode: '+49 69', language: 'German',
       climate: 'Oceanic with mild summers (17-25°C) and cool winters (0-5°C). Relatively mild for Germany.',
@@ -930,7 +930,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'moscow', city: 'Moscow', timezone: 'Europe/Moscow', country: 'Russia', countryCode: 'RU', lat: 55.76, lng: 37.62, tier: 2, continent: 'europe',
+  { slug: 'moscow', city: 'Moscow', timezone: 'Europe/Moscow', country: 'Russia', countryCode: 'RU', lat: 55.76, lng: 37.62, tier: 1, continent: 'europe',
     info: {
       currency: 'Russian Ruble', currencySymbol: '₽', population: '12.6M', metroPopulation: '17.1M', phoneCode: '+7 495', language: 'Russian',
       climate: 'Humid continental with warm summers (18-25°C) and very cold winters (-10 to -4°C). Snow covers ground November to March.',
@@ -951,7 +951,7 @@ export const cities: City[] = [
     }
   },
   { 
-    slug: 'istanbul', city: 'Istanbul', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 41.01, lng: 28.97, tier: 2, continent: 'europe',
+    slug: 'istanbul', city: 'Istanbul', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 41.01, lng: 28.97, tier: 1, continent: 'europe',
     info: {
       currency: 'Turkish Lira', currencySymbol: '₺', population: '16M', metroPopulation: '20M', phoneCode: '+90 212/216', language: 'Turkish',
       climate: 'Mediterranean transitioning to oceanic with warm summers (25-30°C) and cool wet winters (5-10°C). Expect rain from November to March.',
@@ -991,7 +991,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'lisbon', city: 'Lisbon', timezone: 'Europe/Lisbon', country: 'Portugal', countryCode: 'PT', lat: 38.72, lng: -9.14, tier: 2, continent: 'europe',
+  { slug: 'lisbon', city: 'Lisbon', timezone: 'Europe/Lisbon', country: 'Portugal', countryCode: 'PT', lat: 38.72, lng: -9.14, tier: 1, continent: 'europe',
     info: {
       currency: 'Euro', currencySymbol: '€', population: '550K', metroPopulation: '2.9M', phoneCode: '+351 21', language: 'Portuguese',
       climate: 'Mediterranean with warm dry summers (20-28°C) and mild rainy winters (8-15°C). Sunniest European capital.',
@@ -1011,7 +1011,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'dublin', city: 'Dublin', timezone: 'Europe/Dublin', country: 'Ireland', countryCode: 'IE', lat: 53.35, lng: -6.26, tier: 2, continent: 'europe',
+  { slug: 'dublin', city: 'Dublin', timezone: 'Europe/Dublin', country: 'Ireland', countryCode: 'IE', lat: 53.35, lng: -6.26, tier: 1, continent: 'europe',
     info: {
       currency: 'Euro', currencySymbol: '€', population: '550K', metroPopulation: '2M', phoneCode: '+353 1', language: 'English, Irish',
       climate: 'Oceanic with mild temperatures year-round (4-8°C winter, 15-20°C summer). Frequent rain but rarely heavy.',
@@ -1093,7 +1093,7 @@ export const cities: City[] = [
   },
 
   // Asia
-  { slug: 'beijing', city: 'Beijing', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 39.90, lng: 116.41, tier: 2, continent: 'asia',
+  { slug: 'beijing', city: 'Beijing', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 39.90, lng: 116.41, tier: 1, continent: 'asia',
     info: {
       currency: 'Chinese Yuan', currencySymbol: '¥', population: '21.5M', metroPopulation: '24.5M', phoneCode: '+86 10', language: 'Mandarin',
       climate: 'Humid continental with hot summers (26-32°C) and cold dry winters (-6 to 2°C). Occasional dust storms in spring.',
@@ -1113,7 +1113,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'seoul', city: 'Seoul', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.57, lng: 126.98, tier: 2, continent: 'asia',
+  { slug: 'seoul', city: 'Seoul', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.57, lng: 126.98, tier: 1, continent: 'asia',
     info: {
       currency: 'South Korean Won', currencySymbol: '₩', population: '9.8M', metroPopulation: '25.6M', phoneCode: '+82 2', language: 'Korean',
       climate: 'Humid continental with hot humid summers (25-32°C) and cold winters (-5 to 3°C). Monsoon season July-August.',
@@ -1133,7 +1133,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'mumbai', city: 'Mumbai', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 19.08, lng: 72.88, tier: 2, continent: 'asia',
+  { slug: 'mumbai', city: 'Mumbai', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 19.08, lng: 72.88, tier: 1, continent: 'asia',
     info: {
       currency: 'Indian Rupee', currencySymbol: '₹', population: '20.7M', metroPopulation: '24.4M', phoneCode: '+91 22', language: 'Hindi, Marathi, English',
       climate: 'Tropical wet and dry with hot temperatures year-round (25-35°C). Monsoon season June-September is intense.',
@@ -1153,7 +1153,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'delhi', city: 'New Delhi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 28.61, lng: 77.21, tier: 2, continent: 'asia',
+  { slug: 'delhi', city: 'New Delhi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 28.61, lng: 77.21, tier: 1, continent: 'asia',
     info: {
       currency: 'Indian Rupee', currencySymbol: '₹', population: '16.8M', metroPopulation: '32.9M', phoneCode: '+91 11', language: 'Hindi, English',
       climate: 'Humid subtropical with hot summers (35-45°C) and cool winters (5-20°C). Monsoon July-September. Air quality issues in winter.',
@@ -1193,7 +1193,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'bangkok', city: 'Bangkok', timezone: 'Asia/Bangkok', country: 'Thailand', countryCode: 'TH', lat: 13.76, lng: 100.50, tier: 2, continent: 'asia',
+  { slug: 'bangkok', city: 'Bangkok', timezone: 'Asia/Bangkok', country: 'Thailand', countryCode: 'TH', lat: 13.76, lng: 100.50, tier: 1, continent: 'asia',
     info: {
       currency: 'Thai Baht', currencySymbol: '฿', population: '8.3M', metroPopulation: '14.6M', phoneCode: '+66 2', language: 'Thai',
       climate: 'Tropical wet and dry with hot humid weather year-round (28-35°C). Rainy season May-October but rarely all day.',
@@ -1213,7 +1213,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'jakarta', city: 'Jakarta', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -6.21, lng: 106.85, tier: 2, continent: 'asia',
+  { slug: 'jakarta', city: 'Jakarta', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -6.21, lng: 106.85, tier: 1, continent: 'asia',
     info: {
       currency: 'Indonesian Rupiah', currencySymbol: 'Rp', population: '10.6M', metroPopulation: '34.5M', phoneCode: '+62 21', language: 'Indonesian',
       climate: 'Tropical monsoon with hot humid weather year-round (27-33°C). Wet season November-March with heavy flooding possible.',
@@ -1233,7 +1233,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'kuala-lumpur', city: 'Kuala Lumpur', timezone: 'Asia/Kuala_Lumpur', country: 'Malaysia', countryCode: 'MY', lat: 3.14, lng: 101.69, tier: 2, continent: 'asia',
+  { slug: 'kuala-lumpur', city: 'Kuala Lumpur', timezone: 'Asia/Kuala_Lumpur', country: 'Malaysia', countryCode: 'MY', lat: 3.14, lng: 101.69, tier: 1, continent: 'asia',
     info: {
       currency: 'Malaysian Ringgit', currencySymbol: 'RM', population: '1.8M', metroPopulation: '7.8M', phoneCode: '+60 3', language: 'Malay, English, Chinese, Tamil',
       climate: 'Tropical rainforest with hot humid weather year-round (27-33°C). Rain possible any time but usually afternoon thunderstorms.',
@@ -1315,7 +1315,7 @@ export const cities: City[] = [
   },
 
   // Oceania
-  { slug: 'melbourne', city: 'Melbourne', timezone: 'Australia/Melbourne', country: 'Australia', countryCode: 'AU', lat: -37.81, lng: 144.96, tier: 2, continent: 'oceania',
+  { slug: 'melbourne', city: 'Melbourne', timezone: 'Australia/Melbourne', country: 'Australia', countryCode: 'AU', lat: -37.81, lng: 144.96, tier: 1, continent: 'oceania',
     info: {
       currency: 'Australian Dollar', currencySymbol: 'A$', population: '5.1M', metroPopulation: '5.1M', phoneCode: '+61 3', language: 'English',
       climate: 'Oceanic with warm summers (20-26°C) and mild winters (7-14°C). Famous for four seasons in one day.',
@@ -1357,7 +1357,7 @@ export const cities: City[] = [
   },
 
   // Africa & Middle East
-  { slug: 'cairo', city: 'Cairo', timezone: 'Africa/Cairo', country: 'Egypt', countryCode: 'EG', lat: 30.04, lng: 31.24, tier: 2, continent: 'africa',
+  { slug: 'cairo', city: 'Cairo', timezone: 'Africa/Cairo', country: 'Egypt', countryCode: 'EG', lat: 30.04, lng: 31.24, tier: 1, continent: 'africa',
     info: {
       currency: 'Egyptian Pound', currencySymbol: 'E£', population: '10.1M', metroPopulation: '21.3M', phoneCode: '+20 2', language: 'Arabic',
       climate: 'Hot desert with scorching summers (30-40°C) and mild winters (10-20°C). Very dry with almost no rain.',
@@ -1377,7 +1377,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'johannesburg', city: 'Johannesburg', timezone: 'Africa/Johannesburg', country: 'South Africa', countryCode: 'ZA', lat: -26.20, lng: 28.05, tier: 2, continent: 'africa',
+  { slug: 'johannesburg', city: 'Johannesburg', timezone: 'Africa/Johannesburg', country: 'South Africa', countryCode: 'ZA', lat: -26.20, lng: 28.05, tier: 1, continent: 'africa',
     info: {
       currency: 'South African Rand', currencySymbol: 'R', population: '5.6M', metroPopulation: '8M', phoneCode: '+27 11', language: 'English, Zulu, Afrikaans',
       climate: 'Subtropical highland with warm summers (15-27°C) and mild dry winters (4-17°C). Afternoon thunderstorms in summer.',

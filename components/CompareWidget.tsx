@@ -423,7 +423,7 @@ export default function CompareWidget({
           disabled={!fromCity || !toCity}
           className="w-full md:w-auto h-10 md:h-14 px-6 md:px-8 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 whitespace-nowrap text-sm md:text-base"
         >
-          Compare Time
+          Convert Time
         </button>
       </div>
     </div>

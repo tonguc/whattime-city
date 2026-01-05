@@ -1,6 +1,6 @@
 'use client'
 
-import { useParams } from 'next/navigation'
+import { useParams, usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { cities } from '@/lib/cities'
@@ -8,6 +8,7 @@ import { useCityContext } from '@/lib/CityContext'
 import { getCityDisplayConfig } from '@/lib/cityDisplayConfig'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Breadcrumb from '@/components/Breadcrumb'
 
 export default function GuideLayout({
   children,
@@ -15,15 +16,14 @@ export default function GuideLayout({
   children: React.ReactNode
 }) {
   const params = useParams()
+  const pathname = usePathname()
   const citySlug = params.city as string
   const city = cities.find(c => c.slug === citySlug)
   const { theme, isLight, time, setActiveCity } = useCityContext()
   
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   
   // Sync activeCity when navigating between different city guides
-  // This ensures background theme matches the city being viewed
   useEffect(() => {
     if (city) {
       setActiveCity(city)
@@ -41,40 +41,50 @@ export default function GuideLayout({
   
   if (!city) return null
   
-  // Get city display config (icon, offset, theme, etc.)
   const cityConfig = getCityDisplayConfig(citySlug)
-  
-  // Calculate times for the current city
   const cityTime = new Date(time.toLocaleString('en-US', { timeZone: city.timezone }))
   const localTime = time
   const cityTimeStr = cityTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })
   const localTimeStr = localTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })
   
-  // Calculate hour difference between user's local time and city time
   const cityOffset = cityConfig.utcOffset
   const localOffset = -localTime.getTimezoneOffset() / 60
   const hourDiff = localOffset - cityOffset
   const diffText = hourDiff === 0 ? 'Same time' : hourDiff > 0 ? `+${hourDiff}h ahead` : `${hourDiff}h behind`
   
   const guideLinks = [
-    { slug: '', label: 'Overview', icon: '📖' },
-    { slug: 'business-hours', label: 'Business Hours', icon: '💼' },
-    { slug: 'best-time-to-visit', label: 'Best Time to Visit', icon: cityConfig.visitIcon },
-    { slug: 'remote-work', label: 'Remote Work', icon: '💻' },
-    { slug: '24-hours', label: '24 Hours', icon: '🌆' },
-    { slug: 'call-times', label: 'Call Times', icon: '📞' },
-    { slug: 'stock-market', label: 'Stock Market', icon: '📈' },
-    { slug: 'holidays', label: 'Holidays', icon: '📅' },
-    { slug: 'digital-nomad', label: 'Digital Nomad', icon: '🎒' },
-    { slug: 'time-difference', label: 'Time Difference', icon: '🌍' },
-    { slug: 'travel-planning', label: 'Travel', icon: '✈️' },
+    { slug: '', label: 'Overview', icon: '📖', shortLabel: 'Overview' },
+    { slug: 'time-business', label: 'Time & Business', icon: '💼', shortLabel: 'Business' },
+    { slug: 'travel-guide', label: 'Travel Guide', icon: '✈️', shortLabel: 'Travel' },
+    { slug: 'work-remote', label: 'Work Remote', icon: '💻', shortLabel: 'Remote' },
+    { slug: 'time-zones', label: 'Time Zones', icon: '🌍', shortLabel: 'Zones' },
+    { slug: '24-hours-itinerary', label: '24 Hours in City', icon: '🌆', shortLabel: '24h' },
+  ]
+  
+  // More robust path matching - extract last segment
+  const pathSegments = pathname.split('/').filter(Boolean)
+  const lastSegment = pathSegments[pathSegments.length - 1] || ''
+  
+  // Check if we're on guide overview or a subpage
+  const isGuideOverview = lastSegment === 'guide' || pathname.endsWith('/guide') || pathname.endsWith('/guide/')
+  const currentSlug = isGuideOverview ? '' : lastSegment
+  
+  // Find active page
+  const activePage = guideLinks.find(link => link.slug === currentSlug) || guideLinks[0]
+  
+  // Build breadcrumb items
+  const breadcrumbItems = [
+    { label: 'Home', href: '/' },
+    { label: 'City Guides', href: '/guides/' },
+    { label: city.city, href: `/${citySlug}/` },
+    { label: activePage.label }
   ]
   
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-300`}>
       <Header />
       
-      {/* Time Bar - sticky, flush with header */}
+      {/* Time Bar - sticky */}
       <div className="sticky top-[53px] sm:top-[57px] z-40">
         <div className={`${isLight ? 'bg-amber-50' : 'bg-amber-900'} border-y ${
           isLight ? 'border-amber-200' : 'border-amber-700'
@@ -100,95 +110,76 @@ export default function GuideLayout({
             </Link>
           </div>
         </div>
+        
+        {/* Mobile: Horizontal Scroll Navigation */}
+        <div className={`lg:hidden ${isLight ? 'bg-white/95' : 'bg-slate-900/95'} backdrop-blur-sm border-b ${
+          isLight ? 'border-slate-200' : 'border-slate-700'
+        }`}>
+          <div className="overflow-x-auto scrollbar-hide">
+            <nav className="flex px-4 py-2 gap-1 min-w-max">
+              {guideLinks.map(link => {
+                const href = link.slug ? `/${citySlug}/guide/${link.slug}/` : `/${citySlug}/guide/`
+                const isActive = link.slug === currentSlug
+                
+                return (
+                  <Link
+                    key={link.slug || 'overview'}
+                    href={href}
+                    className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm whitespace-nowrap transition-all ${
+                      isActive
+                        ? 'bg-amber-500 text-white font-semibold shadow-md'
+                        : isLight 
+                          ? 'text-slate-600 hover:bg-slate-100' 
+                          : 'text-slate-400 hover:bg-slate-800'
+                    }`}
+                  >
+                    <span>{link.icon}</span>
+                    <span>{link.shortLabel}</span>
+                  </Link>
+                )
+              })}
+            </nav>
+          </div>
+        </div>
       </div>
       
       <main className="max-w-6xl mx-auto px-4 py-4 md:py-8">
         {/* Breadcrumb */}
-        <nav className={`text-sm mb-3 md:mb-6 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-          <Link href="/" className="hover:underline">Home</Link>
-          <span className="mx-2">›</span>
-          <Link href={`/${citySlug}/`} className="hover:underline">{city.city}</Link>
-          <span className="mx-2">›</span>
-          <span className={isLight ? 'text-slate-700' : 'text-white'}>Guide</span>
-        </nav>
+        <div className="mb-4 md:mb-6">
+          <Breadcrumb items={breadcrumbItems} isLight={isLight} />
+        </div>
         
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-8">
-          {/* Sidebar Navigation - Collapsible on mobile */}
-          <aside className="lg:w-64 flex-shrink-0">
-            {/* Mobile: Collapsible menu */}
-            <div className="lg:hidden mb-2">
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium ${
-                  isLight 
-                    ? 'bg-white/80 text-slate-700 border border-slate-200' 
-                    : 'bg-slate-800/80 text-slate-200 border border-slate-700'
-                }`}
-              >
-                <span className="flex items-center gap-2">
-                  <span>📑</span>
-                  <span>{cityConfig.displayName} Guide Menu</span>
-                </span>
-                <span className={`transition-transform duration-200 ${isMobileMenuOpen ? 'rotate-180' : ''}`}>
-                  ▼
-                </span>
-              </button>
-              
-              {/* Collapsible content */}
-              <div className={`overflow-hidden transition-all duration-300 ${
-                isMobileMenuOpen ? 'max-h-[500px] opacity-100 mt-2' : 'max-h-0 opacity-0'
-              }`}>
-                <div className={`rounded-xl p-3 ${
-                  isLight ? 'bg-white/80 border border-slate-200' : 'bg-slate-800/80 border border-slate-700'
-                }`}>
-                  <nav className="grid grid-cols-2 gap-2">
-                    {guideLinks.map(link => {
-                      const href = `/${citySlug}/guide/${link.slug}`
-                      return (
-                        <Link
-                          key={link.slug}
-                          href={href}
-                          onClick={() => setIsMobileMenuOpen(false)}
-                          className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm ${
-                            isLight 
-                              ? 'hover:bg-slate-100 text-slate-600' 
-                              : 'hover:bg-slate-700 text-slate-300'
-                          }`}
-                        >
-                          <span>{link.icon}</span>
-                          <span className="truncate">{link.label}</span>
-                        </Link>
-                      )
-                    })}
-                  </nav>
-                </div>
-              </div>
-            </div>
-            
-            {/* Desktop: Vertical sticky sidebar */}
-            <div className={`hidden lg:block sticky top-24 rounded-2xl p-4 ${
-              isLight ? 'bg-white/60' : 'bg-slate-800/60'
+          {/* Sidebar Navigation - Desktop only */}
+          <aside className="hidden lg:block lg:w-64 flex-shrink-0">
+            <div className={`sticky top-36 rounded-2xl p-4 ${
+              isLight ? 'bg-white/80' : 'bg-slate-800/80'
             } backdrop-blur-xl border ${
-              isLight ? 'border-white/50' : 'border-slate-700/50'
-            }`}>
+              isLight ? 'border-slate-200' : 'border-slate-700'
+            } shadow-lg`}>
               <h3 className={`font-semibold mb-4 ${isLight ? 'text-slate-800' : 'text-white'}`}>
                 {city.city} Guide
               </h3>
               <nav className="space-y-1">
                 {guideLinks.map(link => {
-                  const href = `/${citySlug}/guide/${link.slug}`
+                  const href = link.slug ? `/${citySlug}/guide/${link.slug}/` : `/${citySlug}/guide/`
+                  const isActive = link.slug === currentSlug
+                  
                   return (
                     <Link
-                      key={link.slug}
+                      key={link.slug || 'overview'}
                       href={href}
-                      className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all ${
-                        isLight 
-                          ? 'hover:bg-slate-100 text-slate-600' 
-                          : 'hover:bg-slate-700 text-slate-300'
+                      className={`flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm transition-all ${
+                        isActive
+                          ? 'bg-amber-500 text-white font-semibold shadow-md'
+                          : isLight 
+                            ? 'hover:bg-slate-100 text-slate-600' 
+                            : 'hover:bg-slate-700 text-slate-300'
                       }`}
                     >
-                      <span>{link.icon}</span>
+                      <span className="text-base">{link.icon}</span>
                       <span>{link.label}</span>
+                      {isActive && <span className="ml-auto">→</span>}
                     </Link>
                   )
                 })}
@@ -201,7 +192,7 @@ export default function GuideLayout({
                 </h4>
                 <div className="space-y-2">
                   <Link
-                    href="/time-converter/"
+                    href="/time/"
                     className={`block px-3 py-2 rounded-lg text-sm ${
                       isLight 
                         ? 'bg-amber-50 text-amber-700 hover:bg-amber-100' 
@@ -227,10 +218,10 @@ export default function GuideLayout({
           
           {/* Main Content */}
           <article className={`flex-1 min-w-0 rounded-2xl p-6 md:p-8 ${
-            isLight ? 'bg-white/80' : 'bg-slate-800/60'
+            isLight ? 'bg-white/90' : 'bg-slate-800/80'
           } backdrop-blur-xl border ${
-            isLight ? 'border-white/50' : 'border-slate-700/50'
-          }`}>
+            isLight ? 'border-slate-200' : 'border-slate-700'
+          } shadow-lg`}>
             {children}
           </article>
         </div>

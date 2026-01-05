@@ -704,6 +704,99 @@ export const sydneyGuide: GuideConfig = {
 }
 
 // ===================
+// ISTANBUL
+// ===================
+export const istanbulGuide: GuideConfig = {
+  citySlug: 'istanbul',
+  cityName: 'Istanbul',
+  timezone: 'Europe/Istanbul',
+  timezoneAbbr: 'TRT',
+  timezoneName: 'Turkey Time',
+  utcOffset: 3,
+  icon: '🕌',
+  tagline: 'Your complete guide to time in the city where East meets West',
+  
+  seo: {
+    title: 'Istanbul Time Zone Guide | TRT, Business Hours & More',
+    description: 'Complete Istanbul time zone guide. Business hours, Borsa Istanbul trading times, best time to call Istanbul, remote work overlap, Turkish holidays, and local tips.',
+    keywords: ['istanbul time zone', 'turkey time now', 'trt time', 'istanbul business hours', 'borsa istanbul hours', 'best time to call istanbul', 'istanbul time difference'],
+    ogTitle: 'Istanbul Time Zone Guide | Complete Turkey Time Resource',
+    ogDescription: 'Everything about Istanbul time: business hours, stock market, holidays, remote work tips. The definitive guide.',
+  },
+  
+  pages: {
+    overview: {
+      title: 'Istanbul Time Zone Guide | TRT, Business Hours & More',
+      description: 'Complete Istanbul time zone guide. Business hours, Borsa Istanbul trading times, best time to call Istanbul, remote work overlap, Turkish holidays, and local tips.',
+      keywords: ['istanbul time zone', 'turkey time', 'trt'],
+    },
+    businessHours: {
+      title: 'Istanbul Business Hours | Banks, Grand Bazaar, Restaurants & More',
+      description: 'What time do businesses open in Istanbul? Complete guide to Turkish store hours, bank schedules, Grand Bazaar times, and restaurant hours.',
+      keywords: ['istanbul business hours', 'turkey shop hours', 'what time do banks open istanbul', 'grand bazaar hours'],
+    },
+    bestTimeToVisit: {
+      title: 'Best Time to Visit Istanbul | Weather, Crowds & Prices by Month',
+      description: 'When to visit Istanbul? Month-by-month guide with weather, tourist crowds, hotel prices, and major events. Spring and fall are ideal!',
+      keywords: ['best time to visit istanbul', 'best month to visit turkey', 'istanbul weather by month', 'istanbul crowd calendar'],
+    },
+    remoteWork: {
+      title: 'Working with Istanbul Teams Remotely | Time Zone Overlap & Meeting Times',
+      description: 'Remote work guide for Istanbul collaboration. Find overlap hours with NYC, London, Dubai. Best meeting times, async tips, and Turkish work culture.',
+      keywords: ['remote work istanbul time zone', 'working with istanbul team', 'time zone overlap calculator', 'best meeting time istanbul'],
+    },
+    twentyFourHours: {
+      title: "Istanbul 24 Hour Guide | What's Open & When in the Bosphorus City",
+      description: "Istanbul hour-by-hour: when Istanbulites wake up, rush hours, bazaar crowds, iftar times, nightlife peaks, and what's open late.",
+      keywords: ['24 hours in istanbul', 'istanbul rush hour times', 'when do bars close istanbul', 'late night food istanbul'],
+    },
+    callTimes: {
+      title: 'Best Time to Call Istanbul | From USA, UK, Europe & More',
+      description: 'When to call Istanbul? Best calling times from New York, London, Dubai, Singapore. Business hours overlap and optimal windows for personal calls.',
+      keywords: ['best time to call istanbul', 'best time to call turkey from usa', 'call istanbul from london time'],
+    },
+    stockMarket: {
+      title: 'Borsa Istanbul Hours | BIST Trading Times for Global Investors',
+      description: 'Borsa Istanbul opens 10:00 AM TRT. Complete Turkish stock exchange trading schedule with auction periods, regular hours, and market holidays.',
+      keywords: ['borsa istanbul hours', 'bist trading times', 'istanbul stock exchange hours', 'turkey market hours', 'bist opening time'],
+    },
+    holidays: {
+      title: "Turkish Public Holidays | Istanbul Closures, Store Hours & What's Open",
+      description: "Turkish public holidays calendar. What's closed on Republic Day, Eid, New Year? Bank hours, store schedules, Grand Bazaar closures in Istanbul.",
+      keywords: ['turkish public holidays', 'istanbul holidays', 'what is closed eid istanbul', 'turkey bank holidays'],
+    },
+    digitalNomad: {
+      title: 'Digital Nomad Istanbul Guide | Coworking, Cafes & Costs',
+      description: 'Work remotely from Istanbul. Best coworking spaces (affordable!), laptop-friendly cafés, WiFi spots, cost of living breakdown, visa options.',
+      keywords: ['digital nomad istanbul', 'best coworking spaces istanbul', 'cafes with wifi istanbul', 'remote work istanbul'],
+    },
+    timeDifference: {
+      title: 'Istanbul Time Difference Calculator | TRT vs World Cities',
+      description: 'Istanbul time difference to New York (+8h), London (+3h), Dubai (-1h), Tokyo (-6h) and 50+ cities. TRT vs GMT explained.',
+      keywords: ['istanbul time difference', 'turkey vs new york time', 'trt vs gmt hours', 'istanbul tokyo time difference'],
+    },
+    travelPlanning: {
+      title: 'Istanbul Travel Time Guide | Flights, Jet Lag Tips & Getting Around',
+      description: 'Plan your Istanbul trip: flight times from major cities, jet lag recovery tips, Istanbul Airport to city center, and navigating the Bosphorus.',
+      keywords: ['istanbul flight times', 'istanbul airport to city', 'istanbul jet lag tips', 'how long flight to istanbul'],
+    },
+  },
+  
+  clusters: [
+    { slug: 'business-hours', icon: '💼', title: 'Business Hours', desc: 'Bank, bazaar, and restaurant hours in Istanbul' },
+    { slug: 'best-time-to-visit', icon: '🕌', title: 'Best Time to Visit', desc: 'Weather, crowds, and events by season' },
+    { slug: 'remote-work', icon: '💻', title: 'Remote Work', desc: 'Working with Istanbul teams across time zones' },
+    { slug: '24-hours', icon: '🌆', title: '24 Hours in Istanbul', desc: 'How Istanbulites live around the clock' },
+    { slug: 'call-times', icon: '📞', title: 'Best Time to Call', desc: 'Optimal calling windows from any country' },
+    { slug: 'stock-market', icon: '📈', title: 'Borsa Istanbul', desc: 'BIST trading hours and market info' },
+    { slug: 'holidays', icon: '📅', title: 'Turkish Holidays', desc: 'Public holidays and what closes' },
+    { slug: 'digital-nomad', icon: '🎒', title: 'Digital Nomad', desc: 'Coworking, cafés, and costs' },
+    { slug: 'time-difference', icon: '🌐', title: 'Time Difference', desc: 'Istanbul time compared to major cities' },
+    { slug: 'travel-planning', icon: '✈️', title: 'Travel Planning', desc: 'Flights, airports, and jet lag tips' },
+  ],
+}
+
+// ===================
 // LOS ANGELES
 // ===================
 export const losAngelesGuide: GuideConfig = {
@@ -807,13 +900,142 @@ export const guideConfigs: Record<string, GuideConfig> = {
   'singapore': singaporeGuide,
   'paris': parisGuide,
   'sydney': sydneyGuide,
+  'istanbul': istanbulGuide,
   'los-angeles': losAngelesGuide,
 }
 
+// All Tier 1 cities that should have guide pages
+const TIER1_GUIDE_CITIES = [
+  'new-york', 'london', 'tokyo', 'paris', 'dubai', 'singapore', 'hong-kong', 'shanghai',
+  'sydney', 'los-angeles', 'toronto', 'berlin', 'chicago', 'miami', 'san-francisco',
+  'vancouver', 'mexico-city', 'sao-paulo', 'buenos-aires', 'madrid', 'barcelona',
+  'amsterdam', 'rome', 'vienna', 'zurich', 'frankfurt', 'lisbon', 'dublin', 'moscow',
+  'saint-petersburg', 'istanbul', 'mumbai', 'delhi', 'bangkok', 'seoul', 'beijing',
+  'shenzhen', 'guangzhou', 'jakarta', 'kuala-lumpur', 'melbourne', 'rio-de-janeiro',
+  'cairo', 'johannesburg'
+]
+
+// Helper to create generic guide config for cities without custom content
+function createGenericGuideConfig(citySlug: string, city: { city: string; timezone: string; country: string }): GuideConfig {
+  const cityName = city.city
+  const timezone = city.timezone
+  const timezoneAbbr = timezone.split('/').pop()?.replace('_', ' ') || 'Local'
+  
+  return {
+    citySlug,
+    cityName,
+    timezone,
+    timezoneAbbr,
+    timezoneName: timezone,
+    utcOffset: 0, // Will be calculated dynamically
+    icon: '🌍',
+    tagline: `Your complete guide to ${cityName} time zones and local insights`,
+    seo: {
+      title: `${cityName} Time Zone Guide`,
+      description: `Complete guide to ${cityName} time zone, business hours, best time to visit, and local tips for travelers and remote workers.`,
+      keywords: [`${cityName} time`, `${cityName} timezone`, `${cityName} business hours`, `${cityName} travel guide`],
+      ogTitle: `${cityName} Time Zone Guide | WhatTime.city`,
+      ogDescription: `Everything you need to know about ${cityName} time zones, business hours, and travel planning.`,
+    },
+    pages: {
+      overview: {
+        title: `${cityName} Guide - Time Zone & Travel Tips`,
+        description: `Complete guide to ${cityName}: time zone info, business hours, travel tips, and more.`,
+        keywords: [`${cityName} guide`, `${cityName} time zone`, `${cityName} travel`],
+      },
+      businessHours: {
+        title: `${cityName} Business Hours Guide`,
+        description: `Typical business hours in ${cityName}, including banks, offices, and retail stores.`,
+        keywords: [`${cityName} business hours`, `${cityName} office hours`, `${cityName} bank hours`],
+      },
+      bestTimeToVisit: {
+        title: `Best Time to Visit ${cityName}`,
+        description: `Find the best time to visit ${cityName} based on weather, crowds, and events.`,
+        keywords: [`best time to visit ${cityName}`, `${cityName} weather`, `${cityName} seasons`],
+      },
+      remoteWork: {
+        title: `Remote Work in ${cityName}`,
+        description: `Guide to remote work in ${cityName}: coworking spaces, internet, and digital nomad tips.`,
+        keywords: [`remote work ${cityName}`, `coworking ${cityName}`, `digital nomad ${cityName}`],
+      },
+      twentyFourHours: {
+        title: `24 Hours in ${cityName}`,
+        description: `How to spend 24 hours in ${cityName}: morning, afternoon, and evening itinerary.`,
+        keywords: [`24 hours ${cityName}`, `one day ${cityName}`, `${cityName} itinerary`],
+      },
+      callTimes: {
+        title: `Best Times to Call ${cityName}`,
+        description: `Find the best times to schedule calls with ${cityName} from anywhere in the world.`,
+        keywords: [`call ${cityName}`, `${cityName} meeting times`, `${cityName} work hours`],
+      },
+      stockMarket: {
+        title: `${cityName} Stock Market Hours`,
+        description: `Stock market trading hours in ${cityName} and global market overlap times.`,
+        keywords: [`${cityName} stock market`, `${cityName} trading hours`, `${cityName} exchange`],
+      },
+      holidays: {
+        title: `${cityName} Public Holidays`,
+        description: `Complete list of public holidays in ${cityName} and ${city.country}.`,
+        keywords: [`${cityName} holidays`, `${city.country} public holidays`, `${cityName} bank holidays`],
+      },
+      digitalNomad: {
+        title: `Digital Nomad Guide to ${cityName}`,
+        description: `Everything digital nomads need to know about living and working in ${cityName}.`,
+        keywords: [`digital nomad ${cityName}`, `${cityName} nomad guide`, `work from ${cityName}`],
+      },
+      timeDifference: {
+        title: `${cityName} Time Difference Calculator`,
+        description: `Calculate time difference between ${cityName} and major world cities.`,
+        keywords: [`${cityName} time difference`, `${cityName} time zone converter`, `${cityName} vs`],
+      },
+      travelPlanning: {
+        title: `${cityName} Travel Planning Guide`,
+        description: `Essential travel planning tips for ${cityName}: visas, transport, and accommodation.`,
+        keywords: [`${cityName} travel planning`, `visit ${cityName}`, `${cityName} trip`],
+      },
+    },
+    clusters: [
+      { slug: 'time-business', icon: '💼', title: 'Time & Business', desc: `Business hours and market times in ${cityName}` },
+      { slug: 'travel-guide', icon: '✈️', title: 'Travel Guide', desc: `Best time to visit and travel tips for ${cityName}` },
+      { slug: 'work-remote', icon: '💻', title: 'Work Remote', desc: `Remote work and digital nomad guide for ${cityName}` },
+      { slug: 'time-zones', icon: '🌍', title: 'Time Zones', desc: `Time zone info and differences for ${cityName}` },
+      { slug: '24-hours-itinerary', icon: '🌆', title: '24 Hours', desc: `One day itinerary for ${cityName}` },
+    ],
+  }
+}
+
+// Import cities for generic config creation
+import { cities } from '@/lib/cities'
+
+// Only 8 premium cities have guide pages with quality content
+const PREMIUM_GUIDE_CITIES = [
+  'new-york',
+  'london',
+  'tokyo',
+  'dubai',
+  'singapore',
+  'paris',
+  'sydney',
+  'istanbul'
+]
+
 export function getGuideConfig(citySlug: string): GuideConfig | null {
-  return guideConfigs[citySlug] || null
+  // Only return config for premium cities with custom content
+  if (guideConfigs[citySlug]) {
+    return guideConfigs[citySlug]
+  }
+  
+  // For premium cities without custom guideConfig, create generic
+  if (PREMIUM_GUIDE_CITIES.includes(citySlug)) {
+    const city = cities.find(c => c.slug === citySlug)
+    if (city) {
+      return createGenericGuideConfig(citySlug, city)
+    }
+  }
+  
+  return null
 }
 
 export function getSupportedGuideCities(): string[] {
-  return Object.keys(guideConfigs)
+  return PREMIUM_GUIDE_CITIES
 }

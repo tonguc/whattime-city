@@ -4,9 +4,10 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useCityContext } from '@/lib/CityContext'
 import { useThemeClasses } from '@/lib/useThemeClasses'
-import { City, searchCities } from '@/lib/cities'
+import { City, searchCities, cities } from '@/lib/cities'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import ToolsMiniNav from '@/components/ToolsMiniNav'
 
 // Note: Metadata is in layout.tsx since this is a client component
 
@@ -75,8 +76,37 @@ export default function CompareTimePage() {
   const [showToDropdown, setShowToDropdown] = useState(false)
   const [toHighlightIndex, setToHighlightIndex] = useState(-1)
   
-  // Initialize fromCity from user's detected location
+  // Initialize fromCity from localStorage (cross-tool persistence) or user's detected location
   useEffect(() => {
+    // First, try to load from localStorage (shared with Meeting Planner)
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('whattime-meeting-cities')
+        if (saved) {
+          const slugs = JSON.parse(saved) as string[]
+          if (slugs.length >= 2) {
+            const from = cities.find(c => c.slug === slugs[0])
+            const to = cities.find(c => c.slug === slugs[1])
+            if (from && to) {
+              setFromCity(from)
+              setFromQuery(from.city)
+              setToCity(to)
+              setToQuery(to.city)
+              return // Don't set detected city if we loaded from localStorage
+            }
+          } else if (slugs.length === 1) {
+            const from = cities.find(c => c.slug === slugs[0])
+            if (from) {
+              setFromCity(from)
+              setFromQuery(from.city)
+              return
+            }
+          }
+        }
+      } catch {}
+    }
+    
+    // Fall back to detected/active city
     if (context.detectedCity) {
       setFromCity(context.detectedCity)
       setFromQuery(context.detectedCity.city)
@@ -192,11 +222,14 @@ export default function CompareTimePage() {
     <div className={`min-h-screen transition-colors duration-700 bg-gradient-to-br ${theme.bg}`}>
       <Header />
       
-      <main className="max-w-4xl mx-auto px-4 py-12">
+      <main className="max-w-6xl mx-auto px-4 py-4 w-full">
+        {/* Tools Mini Navigation - 5 items */}
+        <ToolsMiniNav />
+        
         {/* Title */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-6">
           <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${text}`}>
-            Compare Time Between Cities
+            Time Zone Converter
           </h1>
           <p className={`text-lg ${textMuted}`}>
             See the current time difference between any two cities

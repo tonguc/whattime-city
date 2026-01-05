@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { City } from '@/lib/cities'
 import { GuideConfig } from '@/lib/guide-content'
-import { useCityContext } from '@/lib/CityContext'
 
 interface Props {
   city: City
@@ -12,94 +11,66 @@ interface Props {
   timeStr: string
 }
 
-export default function SydneyGuideContent({ city, config, isLight, timeStr }: Props) {
-  const { time } = useCityContext()
-  const cityTime = new Date(time.toLocaleString('en-US', { timeZone: city.timezone }))
-  const currentHour = cityTime.getHours()
-  const currentMonth = cityTime.getMonth()
-  
+// Long-tail keyword optimized FAQ data for Sydney
+const FAQ_DATA = [
+  {
+    question: "What is the time difference between Sydney and New York right now?",
+    answer: "Sydney is typically 16 hours ahead of New York during US Eastern Standard Time (EST). When it's 9:00 AM in New York, it's 1:00 AM the next day in Sydney. During US daylight saving (EDT), the difference can be 14-15 hours. Both countries observe DST but in opposite seasons."
+  },
+  {
+    question: "Does Sydney use daylight saving time?",
+    answer: "Yes, Sydney and New South Wales observe daylight saving time (DST). Clocks spring forward on the first Sunday of October and fall back on the first Sunday of April. Note: Not all Australian states observe DST — Queensland, Western Australia, and Northern Territory do not change clocks."
+  },
+  {
+    question: "What time does the Australian Stock Exchange open and close?",
+    answer: "The Australian Securities Exchange (ASX) in Sydney opens at 10:00 AM and closes at 4:00 PM AEST/AEDT, Monday through Friday. Pre-market trading runs 7:00-10:00 AM. For New York investors, that's 7:00 PM to 1:00 AM ET (previous evening). For London, it's 11:00 PM to 5:00 AM GMT."
+  },
+  {
+    question: "What is the best time to call Sydney from the UK?",
+    answer: "The best time to call Sydney from the UK is between 6:00 AM and 8:00 AM GMT, which reaches Sydney during their afternoon/evening (5:00 PM - 7:00 PM AEDT). Alternatively, UK evening calls (6-8 PM GMT) catch Sydney's early morning (5-7 AM AEDT) if your contact is an early riser."
+  },
+  {
+    question: "How many hours ahead is Sydney from London?",
+    answer: "Sydney is typically 11 hours ahead of London during GMT (UK winter). When it's 12:00 PM in London, it's 11:00 PM in Sydney. During British Summer Time and Australian winter (April-October overlap), the difference reduces to 9 hours due to opposite DST schedules."
+  },
+  {
+    question: "What time zone is Sydney Australia in?",
+    answer: "Sydney is in Australian Eastern Standard Time (AEST, UTC+10) during winter and Australian Eastern Daylight Time (AEDT, UTC+11) during summer. AEST/AEDT covers New South Wales, Victoria, Tasmania, and ACT. Queensland stays on AEST year-round (no DST)."
+  },
+  {
+    question: "When do clocks change in Sydney Australia in 2025?",
+    answer: "In 2025, Sydney clocks spring forward to AEDT on Sunday, October 5th at 2:00 AM (clocks move to 3:00 AM). Clocks fall back to AEST on Sunday, April 6th at 3:00 AM (clocks move to 2:00 AM). Remember: Australian seasons are opposite to the Northern Hemisphere."
+  },
+  {
+    question: "What are typical business hours in Sydney Australia?",
+    answer: "Standard Sydney business hours are 9:00 AM to 5:00 PM AEST/AEDT, Monday through Friday. The financial district in Martin Place often starts earlier (8:00 AM) to overlap with Asian markets close. Retail shops typically open 9:00 AM to 6:00 PM, with extended Thursday night shopping until 9:00 PM."
+  }
+]
+
+export default function SydneyOverviewContent({ city, config, isLight, timeStr }: Props) {
   const textColor = isLight ? 'text-slate-700' : 'text-slate-200'
   const headingColor = isLight ? 'text-slate-800' : 'text-white'
   const mutedColor = isLight ? 'text-slate-500' : 'text-slate-400'
   const cardBg = isLight ? 'bg-slate-50' : 'bg-slate-700/50'
-  const linkColor = isLight ? 'text-amber-600 hover:text-amber-700' : 'text-amber-400 hover:text-amber-300'
-  
-  // Sydney is in DST from October to April
-  const isDST = currentMonth >= 9 || currentMonth <= 3
-  
-  const clusters = [
-    {
-      slug: 'business-hours',
-      icon: '💼',
-      title: 'Business Hours',
-      desc: 'Banks, offices, stores, and government hours in Sydney',
-    },
-    {
-      slug: 'best-time-to-visit',
-      icon: '🏖️',
-      title: 'Best Time to Visit',
-      desc: 'Month-by-month weather, crowds, and events guide',
-    },
-    {
-      slug: 'remote-work',
-      icon: '💻',
-      title: 'Remote Work Guide',
-      desc: 'Working with Sydney teams across time zones',
-    },
-    {
-      slug: '24-hours',
-      icon: '🌆',
-      title: '24 Hours in Sydney',
-      desc: "The harbour city's daily rhythm from dawn to night",
-    },
-    {
-      slug: 'call-times',
-      icon: '📞',
-      title: 'Best Time to Call',
-      desc: 'Optimal calling times from major cities worldwide',
-    },
-    {
-      slug: 'stock-market',
-      icon: '📈',
-      title: 'Stock Market Hours',
-      desc: 'ASX trading times for global investors',
-    },
-    {
-      slug: 'holidays',
-      icon: '📅',
-      title: 'Public Holidays 2025',
-      desc: 'Bank holidays, closures, and what to expect',
-    },
-    {
-      slug: 'digital-nomad',
-      icon: '🎒',
-      title: 'Digital Nomad Guide',
-      desc: 'Coworking, cafes, WiFi, and cost of living',
-    },
-    {
-      slug: 'time-difference',
-      icon: '🌐',
-      title: 'Time Difference',
-      desc: 'Sydney time compared to London, NYC, Tokyo, and more',
-    },
-    {
-      slug: 'travel-planning',
-      icon: '✈️',
-      title: 'Travel Planning',
-      desc: 'Flight times, jet lag tips, and arrival advice',
-    },
-  ]
-  
+  const linkColor = isLight ? 'text-blue-600 hover:text-blue-800 hover:underline' : 'text-sky-400 hover:text-sky-300 hover:underline'
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": FAQ_DATA.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+    }))
+  }
+
   return (
     <div className={textColor}>
-      {/* Hero Section */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      
       <header className="mb-8">
-        <h1 className={`text-3xl md:text-4xl font-bold mb-4 ${headingColor}`}>
-          Sydney Time Zone: The Complete Guide
-        </h1>
-        <p className={`text-lg ${mutedColor}`}>
-          Everything you need to know about time in Australia's harbour city
-        </p>
+        <h1 className={`text-3xl md:text-4xl font-bold mb-4 ${headingColor}`}>Sydney Time Zone: The Complete Guide</h1>
+        <p className={`text-lg ${mutedColor}`}>Your complete guide to time in Australia's global harbor city</p>
         <div className={`mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full ${cardBg}`}>
           <span className="text-2xl">🕐</span>
           <span className="font-medium">Current Sydney Time: </span>
@@ -107,77 +78,42 @@ export default function SydneyGuideContent({ city, config, isLight, timeStr }: P
         </div>
       </header>
       
-      {/* Introduction - Natural, conversational tone */}
       <section className="mb-10 space-y-4">
-        <p>
-          If you've ever tried to schedule a meeting with someone in Sydney, figure out when 
-          the ASX opens, or wondered what time to call your Australian colleagues without 
-          waking them up — you know that Sydney's time zone can be tricky to navigate.
-        </p>
-        <p>
-          Sydney operates on <strong>Australian Eastern Time (AET)</strong>, which is either AEST 
-          (Australian Eastern Standard Time, UTC+10) or AEDT (Australian Eastern Daylight Time, UTC+11), 
-          depending on the season. Unlike the Northern Hemisphere, Sydney's daylight saving runs from 
-          October to April — right through the Australian summer.
-        </p>
-        <p>
-          But knowing the offset is just the start. What really helps is understanding Sydney's 
-          daily rhythm — when business hours begin, when the beaches get crowded, when cafes 
-          fill with remote workers, and the best windows for international calls.
-        </p>
-        <p>
-          Whether you're planning a trip to see the Opera House, coordinating with Sydney-based 
-          teams, or considering a digital nomad stint in Bondi, this guide has everything you need.
-        </p>
+        <p>Whether you're coordinating with Australian colleagues, planning a trip to see the Sydney Opera House, or tracking the ASX opening — understanding Sydney's time zone (and Australia's unique DST situation) is essential for global business.</p>
+        <p>Sydney operates on <strong>Australian Eastern Standard Time (AEST)</strong> in winter and <strong>Australian Eastern Daylight Time (AEDT)</strong> in summer. As Australia's largest city and financial hub, Sydney time drives business across the Asia-Pacific region.</p>
+        <p>The tricky part? Australia's seasons are opposite to the Northern Hemisphere, and not all Australian states observe daylight saving time. Queensland (Brisbane) stays on AEST year-round, creating a 1-hour difference with Sydney in summer!</p>
       </section>
       
-      {/* Quick Facts Box */}
       <section className={`mb-10 p-6 rounded-2xl ${cardBg}`}>
-        <h2 className={`text-xl font-semibold mb-4 ${headingColor}`}>
-          ⚡ Quick Facts: Sydney Time Zone
-        </h2>
+        <h2 className={`text-xl font-semibold mb-4 ${headingColor}`}>⚡ Quick Facts: Sydney Time Zone</h2>
         <div className="grid md:grid-cols-2 gap-4">
           <div>
             <h3 className={`font-medium mb-2 ${headingColor}`}>Time Zone Basics</h3>
             <ul className="space-y-1 text-sm">
               <li>• <strong>Standard Time:</strong> AEST (UTC+10)</li>
-              <li>• <strong>Daylight Saving:</strong> AEDT (UTC+11)</li>
-              <li>• <strong>DST Starts:</strong> First Sunday of October</li>
-              <li>• <strong>DST Ends:</strong> First Sunday of April</li>
+              <li>• <strong>Daylight Time:</strong> AEDT (UTC+11)</li>
+              <li>• <strong>Clocks Forward:</strong> 1st Sunday of October</li>
+              <li>• <strong>Clocks Back:</strong> 1st Sunday of April</li>
             </ul>
           </div>
           <div>
             <h3 className={`font-medium mb-2 ${headingColor}`}>Key Time Differences</h3>
             <ul className="space-y-1 text-sm">
-              <li>• <strong>London:</strong> +11 hours (usually)</li>
-              <li>• <strong>New York:</strong> +16 hours</li>
-              <li>• <strong>Tokyo:</strong> +2 hours</li>
-              <li>• <strong>Singapore:</strong> +3 hours</li>
+              <li>• <strong><Link href="/new-york/" className={linkColor}>New York</Link>:</strong> -16 hours (EST) / -14 (EDT)</li>
+              <li>• <strong><Link href="/london/" className={linkColor}>London</Link>:</strong> -11 hours (GMT) / -9 (BST)</li>
+              <li>• <strong><Link href="/tokyo/" className={linkColor}>Tokyo</Link>:</strong> -2 hours (AEDT)</li>
+              <li>• <strong><Link href="/singapore/" className={linkColor}>Singapore</Link>:</strong> -3 hours (AEDT)</li>
             </ul>
           </div>
         </div>
-        <p className={`mt-4 text-sm ${mutedColor}`}>
-          Need exact conversions? Try our{' '}
-          <Link href="/time-converter/" className={linkColor}>Time Converter</Link>
-        </p>
+        <p className={`mt-4 text-sm ${mutedColor}`}>Need exact conversions? Try our <Link href="/time/" className={linkColor}>Time Converter</Link></p>
       </section>
       
-      {/* Guide Topics Grid */}
       <section className="mb-10">
-        <h2 className={`text-2xl font-semibold mb-6 ${headingColor}`}>
-          Explore the Complete Guide
-        </h2>
+        <h2 className={`text-2xl font-semibold mb-6 ${headingColor}`}>Explore the Complete Guide</h2>
         <div className="grid md:grid-cols-2 gap-4">
-          {clusters.map(cluster => (
-            <Link
-              key={cluster.slug}
-              href={`/${city.slug}/guide/${cluster.slug}/`}
-              className={`p-4 rounded-xl border transition-all hover:scale-[1.02] ${
-                isLight 
-                  ? 'bg-white border-slate-200 hover:border-amber-300 hover:shadow-md' 
-                  : 'bg-slate-700/30 border-slate-600 hover:border-amber-500/50'
-              }`}
-            >
+          {config.clusters.map(cluster => (
+            <Link key={cluster.slug} href={`/${city.slug}/guide/${cluster.slug}/`} className={`p-4 rounded-xl border transition-all hover:scale-[1.02] ${isLight ? 'bg-white border-slate-200 hover:border-cyan-300 hover:shadow-md' : 'bg-slate-700/30 border-slate-600 hover:border-cyan-500/50'}`}>
               <div className="flex items-start gap-3">
                 <span className="text-2xl">{cluster.icon}</span>
                 <div>
@@ -190,271 +126,123 @@ export default function SydneyGuideContent({ city, config, isLight, timeStr }: P
         </div>
       </section>
       
-      {/* Understanding Sydney Time - Detailed content */}
       <section className="mb-10 space-y-4">
-        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
-          Understanding Sydney Time
-        </h2>
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>Understanding Sydney Time</h2>
         
-        <h3 className={`text-lg font-medium mt-6 mb-2 ${headingColor}`}>
-          AEST vs AEDT: What's the Difference?
-        </h3>
-        <p>
-          Here's something that trips up Northern Hemisphere travelers: Sydney observes daylight 
-          saving time, but on the <em>opposite</em> schedule to Europe and North America. When 
-          New York "springs forward" in March, Sydney is actually "falling back" — and vice versa.
-        </p>
-        <p>
-          <strong>AEST (Australian Eastern Standard Time)</strong> is UTC+10 and runs from the 
-          first Sunday of April to the first Sunday of October. This is Sydney's winter time.
-        </p>
-        <p>
-          <strong>AEDT (Australian Eastern Daylight Time)</strong> is UTC+11 and runs from the 
-          first Sunday of October to the first Sunday of April. Clocks move <em>forward</em> one 
-          hour in spring (October) and <em>back</em> one hour in autumn (April).
-        </p>
+        <h3 className={`text-lg font-medium mt-6 mb-2 ${headingColor}`}>Australia's Confusing DST Situation</h3>
+        <p>Unlike most countries where the entire nation follows the same DST rules, Australia is divided. <strong>New South Wales</strong> (Sydney), <strong>Victoria</strong> (Melbourne), <strong>Tasmania</strong>, <strong>South Australia</strong>, and <strong>ACT</strong> observe daylight saving. <strong>Queensland</strong> (Brisbane), <strong>Western Australia</strong> (Perth), and <strong>Northern Territory</strong> do not.</p>
+        <p>This means Sydney and Brisbane — just 700km apart — have a 1-hour time difference for half the year. When scheduling meetings with "Australia," always confirm which state.</p>
         
-        <h3 className={`text-lg font-medium mt-6 mb-2 ${headingColor}`}>
-          Why New York Matters Globally
-        </h3>
-        <p>
-          Beyond Wall Street, New York is the de facto "coordination hub" for many global operations. 
-          Companies around the world often align their schedules, calls, and deadlines to accommodate 
-          New York business hours — especially those working with American clients or markets.
-        </p>
-        <p>
-          This means that even if you're based in Sydney or Singapore, you'll frequently find yourself 
-          calculating, "What time is it in New York right now?" Understanding EST/EDT helps you coordinate 
-          effectively.
-        </p>
+        <h3 className={`text-lg font-medium mt-6 mb-2 ${headingColor}`}>The Asia-Pacific Bridge</h3>
+        <p>Sydney's position makes it the gateway between Asia and the Americas. Morning in Sydney overlaps with <Link href="/tokyo/" className={linkColor}>Tokyo</Link> and <Link href="/singapore/" className={linkColor}>Singapore's</Link> business day. Sydney's evening catches US West Coast waking up. This makes Sydney a strategic hub for global operations.</p>
         
-        <h3 className={`text-lg font-medium mt-6 mb-2 ${headingColor}`}>
-          Twice a Year, the Gap Changes
-        </h3>
-        <p>
-          Because Sydney and most Northern Hemisphere cities switch to daylight saving on different 
-          dates, the time difference shifts twice a year. For a few weeks in March-April and 
-          October-November, the gap between Sydney and cities like London or New York is one hour 
-          different than usual.
-        </p>
-        <p>
-          This can cause confusion for standing meetings. Always double-check your calendar during 
-          the DST transition weeks, especially if you schedule recurring international calls.
-        </p>
+        <div className={`p-4 rounded-xl ${cardBg} mt-4`}>
+          <div className="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <h4 className={`font-medium ${headingColor}`}>Sydney Morning (9 AM AEDT)</h4>
+              <ul className="mt-2 space-y-1">
+                <li>• <Link href="/new-york/" className={linkColor}>New York</Link>: 5 PM (prev day, EST)</li>
+                <li>• <Link href="/london/" className={linkColor}>London</Link>: 10 PM (prev day)</li>
+                <li>• <Link href="/tokyo/" className={linkColor}>Tokyo</Link>: 7 AM</li>
+                <li>• <Link href="/singapore/" className={linkColor}>Singapore</Link>: 6 AM</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className={`font-medium ${headingColor}`}>Sydney Evening (6 PM AEDT)</h4>
+              <ul className="mt-2 space-y-1">
+                <li>• <Link href="/new-york/" className={linkColor}>New York</Link>: 2 AM (same day, EST)</li>
+                <li>• <Link href="/los-angeles/" className={linkColor}>Los Angeles</Link>: 11 PM (prev day)</li>
+                <li>• <Link href="/london/" className={linkColor}>London</Link>: 7 AM</li>
+                <li>• <Link href="/dubai/" className={linkColor}>Dubai</Link>: 11 AM</li>
+              </ul>
+            </div>
+          </div>
+          <p className={`mt-3 text-xs ${mutedColor}`}>Pro tip: The time difference between Sydney and Northern Hemisphere cities can swing by up to 3 hours through the year as both regions shift clocks in opposite directions.</p>
+        </div>
       </section>
       
-      {/* What You'll Find in This Guide */}
       <section className="mb-10">
-        <h2 className={`text-2xl font-semibold mb-6 ${headingColor}`}>
-          What You'll Find in This Guide
-        </h2>
-        
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h4 className={`font-medium ${headingColor}`}>For Business Travelers & Professionals</h4>
-            <p className="text-sm mt-1">
-              Check out{' '}
-              <Link href={`/${city.slug}/guide/business-hours/`} className={linkColor}>Business Hours</Link>,{' '}
-              <Link href={`/${city.slug}/guide/stock-market/`} className={linkColor}>ASX Stock Market Hours</Link>, and{' '}
-              <Link href={`/${city.slug}/guide/call-times/`} className={linkColor}>Best Time to Call</Link>{' '}
-              for practical coordination tips.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h4 className={`font-medium ${headingColor}`}>For Remote Workers & Global Teams</h4>
-            <p className="text-sm mt-1">
-              The{' '}
-              <Link href={`/${city.slug}/guide/remote-work/`} className={linkColor}>Remote Work Guide</Link>{' '}
-              and{' '}
-              <Link href={`/${city.slug}/guide/time-difference/`} className={linkColor}>Time Difference</Link>{' '}
-              pages will help you coordinate across time zones.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h4 className={`font-medium ${headingColor}`}>For Tourists & Visitors</h4>
-            <p className="text-sm mt-1">
-              Start with{' '}
-              <Link href={`/${city.slug}/guide/best-time-to-visit/`} className={linkColor}>Best Time to Visit</Link>,{' '}
-              <Link href={`/${city.slug}/guide/travel-planning/`} className={linkColor}>Travel Planning</Link>, and{' '}
-              <Link href={`/${city.slug}/guide/24-hours/`} className={linkColor}>24 Hours in Sydney</Link>.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h4 className={`font-medium ${headingColor}`}>For Digital Nomads</h4>
-            <p className="text-sm mt-1">
-              The{' '}
-              <Link href={`/${city.slug}/guide/digital-nomad/`} className={linkColor}>Digital Nomad Guide</Link>{' '}
-              covers coworking spaces, beach-side cafes, costs, and visa options for remote work in Sydney.
-            </p>
-          </div>
+        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>Sydney Time vs Major Cities</h2>
+        <div className={`overflow-x-auto rounded-xl ${cardBg}`}>
+          <table className="w-full text-sm">
+            <thead>
+              <tr className={`border-b ${isLight ? 'border-slate-200' : 'border-slate-600'}`}>
+                <th className={`px-4 py-3 text-left font-medium ${headingColor}`}>City</th>
+                <th className={`px-4 py-3 text-left font-medium ${headingColor}`}>Difference</th>
+                <th className={`px-4 py-3 text-left font-medium ${headingColor}`}>When it's 12 PM in Sydney</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 dark:divide-slate-600">
+              <tr><td className="px-4 py-3">🇺🇸 <Link href="/time/sydney/new-york/" className={linkColor}>New York</Link></td><td className="px-4 py-3">-16 hours*</td><td className="px-4 py-3">8:00 PM (prev)</td></tr>
+              <tr><td className="px-4 py-3">🇺🇸 <Link href="/time/sydney/los-angeles/" className={linkColor}>Los Angeles</Link></td><td className="px-4 py-3">-19 hours*</td><td className="px-4 py-3">5:00 PM (prev)</td></tr>
+              <tr><td className="px-4 py-3">🇬🇧 <Link href="/time/sydney/london/" className={linkColor}>London</Link></td><td className="px-4 py-3">-11 hours*</td><td className="px-4 py-3">1:00 AM</td></tr>
+              <tr><td className="px-4 py-3">🇦🇪 <Link href="/time/sydney/dubai/" className={linkColor}>Dubai</Link></td><td className="px-4 py-3">-7 hours</td><td className="px-4 py-3">5:00 AM</td></tr>
+              <tr><td className="px-4 py-3">🇮🇳 <Link href="/time/sydney/mumbai/" className={linkColor}>Mumbai</Link></td><td className="px-4 py-3">-5.5 hours</td><td className="px-4 py-3">6:30 AM</td></tr>
+              <tr><td className="px-4 py-3">🇸🇬 <Link href="/time/sydney/singapore/" className={linkColor}>Singapore</Link></td><td className="px-4 py-3">-3 hours</td><td className="px-4 py-3">9:00 AM</td></tr>
+              <tr><td className="px-4 py-3">🇯🇵 <Link href="/time/sydney/tokyo/" className={linkColor}>Tokyo</Link></td><td className="px-4 py-3">-2 hours</td><td className="px-4 py-3">10:00 AM</td></tr>
+              <tr><td className="px-4 py-3">🇳🇿 <Link href="/time/sydney/auckland/" className={linkColor}>Auckland</Link></td><td className="px-4 py-3">+2 hours</td><td className="px-4 py-3">2:00 PM</td></tr>
+            </tbody>
+          </table>
         </div>
+        <p className={`mt-3 text-sm ${mutedColor}`}>* Times vary significantly as both Sydney and Northern Hemisphere observe opposite DST. <Link href="/time/sydney/london/" className={linkColor}>See detailed time differences →</Link></p>
       </section>
       
-      {/* Tools Section */}
-      <section className={`mb-10 p-6 rounded-2xl border-2 border-dashed ${
-        isLight ? 'border-amber-300 bg-amber-50' : 'border-amber-500/50 bg-amber-900/20'
-      }`}>
-        <h2 className={`text-xl font-semibold mb-4 ${headingColor}`}>
-          🛠️ Helpful Tools
-        </h2>
-        <p className="mb-4">
-          Need to do a quick calculation? These tools work great alongside this guide:
-        </p>
-        <div className="grid sm:grid-cols-2 gap-3">
-          <Link
-            href="/time-converter/"
-            className={`flex items-center gap-2 p-3 rounded-lg ${
-              isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
-            }`}
-          >
-            <span>🔄</span>
-            <div>
-              <span className={`font-medium ${headingColor}`}>Time Converter</span>
-              <p className={`text-xs ${mutedColor}`}>Convert between any time zones</p>
-            </div>
-          </Link>
-          <Link
-            href="/meeting/"
-            className={`flex items-center gap-2 p-3 rounded-lg ${
-              isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
-            }`}
-          >
-            <span>📅</span>
-            <div>
-              <span className={`font-medium ${headingColor}`}>Meeting Planner</span>
-              <p className={`text-xs ${mutedColor}`}>Find the best time for everyone</p>
-            </div>
-          </Link>
-          <Link
-            href="/flight-time/"
-            className={`flex items-center gap-2 p-3 rounded-lg ${
-              isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
-            }`}
-          >
-            <span>✈️</span>
-            <div>
-              <span className={`font-medium ${headingColor}`}>Flight Time Calculator</span>
-              <p className={`text-xs ${mutedColor}`}>Estimate your arrival time</p>
-            </div>
-          </Link>
-          <Link
-            href="/jet-lag-advisor/"
-            className={`flex items-center gap-2 p-3 rounded-lg ${
-              isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'
-            }`}
-          >
-            <span>😴</span>
-            <div>
-              <span className={`font-medium ${headingColor}`}>Jet Lag Calculator</span>
-              <p className={`text-xs ${mutedColor}`}>Plan your sleep schedule</p>
-            </div>
-          </Link>
-        </div>
-      </section>
-      
-      {/* FAQ Section */}
-      <section className="mb-10">
-        <h2 className={`text-2xl font-semibold mb-6 ${headingColor}`}>
-          Frequently Asked Questions
-        </h2>
-        
-        <div className="space-y-4">
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>
-              Is Sydney AEST or AEDT right now?
-            </h3>
-            <p className="text-sm">
-              {isDST
-                ? "Sydney is currently on AEDT (Australian Eastern Daylight Time), which is UTC+11. Clocks will 'fall back' to AEST in April."
-                : "Sydney is currently on AEST (Australian Eastern Standard Time), which is UTC+10. Clocks will 'spring forward' to AEDT in October."
-              }
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>
-              How many hours ahead is Sydney from London?
-            </h3>
-            <p className="text-sm">
-              Sydney is typically 11 hours ahead of London (GMT), but this can vary slightly when 
-              the UK and Australia are on different daylight saving schedules. During the Northern 
-              Hemisphere summer, the gap may be 9-10 hours, while in Australian summer it's 11 hours.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>
-              What time does the Australian Stock Exchange open?
-            </h3>
-            <p className="text-sm">
-              The ASX (Australian Securities Exchange) opens at 10:00 AM and closes at 4:00 PM Sydney time, 
-              Monday through Friday. Pre-market trading starts at 7:00 AM, and after-hours trading 
-              extends to 5:10 PM. See our{' '}
-              <Link href={`/${city.slug}/guide/stock-market/`} className={linkColor}>
-                stock market hours guide
-              </Link>{' '}
-              for global time conversions.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>
-              When is the best time to call Sydney from the US?
-            </h3>
-            <p className="text-sm">
-              If you're on the US East Coast, early evening your time (6 PM - 9 PM) corresponds to 
-              morning in Sydney (9 AM - 12 PM), which is ideal for business calls. West Coast callers 
-              should aim for 3 PM - 6 PM Pacific Time. Check our{' '}
-              <Link href={`/${city.slug}/guide/call-times/`} className={linkColor}>
-                call times guide
-              </Link>{' '}
-              for detailed schedules.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-lg ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>
-              Does Sydney observe Daylight Saving Time?
-            </h3>
-            <p className="text-sm">
-              Yes, Sydney follows daylight saving time. Clocks move forward one hour on the first 
-              Sunday of October (start of summer) and back one hour on the first Sunday of April 
-              (start of autumn). Note that not all Australian states observe DST — Queensland, 
-              Western Australia, and Northern Territory stay on standard time year-round.
-            </p>
-          </div>
-        </div>
-      </section>
-      
-      {/* Closing CTA */}
-      <section className={`p-6 rounded-2xl text-center ${
-        isLight ? 'bg-gradient-to-r from-amber-50 to-orange-50' : 'bg-gradient-to-r from-amber-900/30 to-orange-900/30'
-      }`}>
-        <h2 className={`text-xl font-semibold mb-2 ${headingColor}`}>
-          Need the Current Time in Sydney?
-        </h2>
-        <p className={`mb-4 ${mutedColor}`}>
-          Check our live clock with weather, sunrise/sunset times, and harbour views.
-        </p>
-        <Link
-          href={`/${city.slug}/`}
-          className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all ${
-            isLight 
-              ? 'bg-slate-800 text-white hover:bg-slate-700' 
-              : 'bg-white text-slate-800 hover:bg-slate-100'
-          }`}
-        >
-          View Sydney Time Now →
+      <section className={`mb-10 p-6 rounded-2xl text-center ${isLight ? 'bg-gradient-to-r from-cyan-50 to-blue-50 border border-cyan-200' : 'bg-gradient-to-r from-cyan-900/30 to-blue-900/30 border border-cyan-700/50'}`}>
+        <h3 className={`text-xl font-semibold mb-2 ${headingColor}`}>Need to schedule a meeting with Sydney?</h3>
+        <p className={`mb-4 ${mutedColor}`}>Find the perfect meeting time across the hemispheres.</p>
+        <Link href="/meeting/" className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-600 hover:bg-cyan-700 text-white font-semibold rounded-xl transition-all transform hover:scale-105 shadow-lg">
+          <span>🚀</span><span>Launch Meeting Planner</span>
         </Link>
       </section>
       
-      {/* Last Updated */}
-      <p className={`mt-8 text-sm ${mutedColor}`}>
-        Last updated: December 2025. Information is reviewed monthly for accuracy.
-      </p>
+      <section className="mb-10">
+        <h2 className={`text-2xl font-semibold mb-6 ${headingColor}`}>Practical Tips for Dealing with Sydney Time</h2>
+        <div className={`p-4 rounded-xl border mb-4 ${isLight ? 'border-slate-200 bg-white' : 'border-slate-600 bg-slate-700/30'}`}>
+          <h3 className={`font-medium mb-2 ${headingColor}`}>🏢 For International Business</h3>
+          <p className="text-sm">Sydney-US calls are tough: <Link href="/new-york/" className={linkColor}>New York's</Link> 5 PM catches Sydney's 9 AM (workable but early). <Link href="/london/" className={linkColor}>London</Link> has better options: 7 AM GMT catches Sydney's 6 PM (end of day). For Asia, Sydney morning aligns perfectly with <Link href="/tokyo/" className={linkColor}>Tokyo</Link> and <Link href="/singapore/" className={linkColor}>Singapore</Link> business hours.</p>
+        </div>
+        <div className={`p-4 rounded-xl border mb-4 ${isLight ? 'border-slate-200 bg-white' : 'border-slate-600 bg-slate-700/30'}`}>
+          <h3 className={`font-medium mb-2 ${headingColor}`}>✈️ For Travellers</h3>
+          <p className="text-sm">Flying from the US or Europe? Prepare for serious jet lag — you're shifting 10-16 hours across the planet. Most overnight flights from the US arrive in Sydney morning, which helps reset your clock. Flights from Asia are much easier (2-5 hour shift). Check our <Link href="/jet-lag-advisor/" className={linkColor}>Jet Lag Advisor</Link>.</p>
+        </div>
+        <div className={`p-4 rounded-xl border mb-4 ${isLight ? 'border-slate-200 bg-white' : 'border-slate-600 bg-slate-700/30'}`}>
+          <h3 className={`font-medium mb-2 ${headingColor}`}>💼 For Remote Workers</h3>
+          <p className="text-sm">Working remotely with US or European teams from Sydney requires flexibility. Many adopt "split shifts" — working Sydney morning for Asia, taking a break, then late evening for US calls. The vibrant café culture and reliable infrastructure make Sydney popular for digital nomads targeting Asia-Pacific markets.</p>
+        </div>
+      </section>
+      
+      <section className="mb-10" itemScope itemType="https://schema.org/FAQPage">
+        <h2 className={`text-2xl font-semibold mb-6 ${headingColor}`}>Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          {FAQ_DATA.map((faq, index) => (
+            <div key={index} className={`p-4 rounded-xl ${cardBg}`} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+              <h3 className={`font-medium mb-2 ${headingColor}`} itemProp="name">{faq.question}</h3>
+              <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                <p className="text-sm" itemProp="text">{faq.answer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      
+      <section className={`mb-10 p-6 rounded-2xl ${isLight ? 'bg-amber-50 border border-amber-200' : 'bg-amber-900/20 border border-amber-700/30'}`}>
+        <h2 className={`text-xl font-semibold mb-4 ${headingColor}`}>Ready to Dive Deeper?</h2>
+        <p className={`mb-4 ${mutedColor}`}>This overview is just the start. Explore our detailed guides:</p>
+        <div className="flex flex-wrap gap-2">
+          <Link href={`/${city.slug}/guide/time-business/`} className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${isLight ? 'bg-amber-100 text-amber-700 hover:bg-amber-200' : 'bg-amber-900/40 text-amber-300 hover:bg-amber-900/60'}`}>🏢 Business Hours</Link>
+          <Link href={`/${city.slug}/guide/stock-market/`} className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${isLight ? 'bg-amber-100 text-amber-700 hover:bg-amber-200' : 'bg-amber-900/40 text-amber-300 hover:bg-amber-900/60'}`}>📈 ASX Trading</Link>
+          <Link href={`/${city.slug}/guide/best-time-to-call/`} className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${isLight ? 'bg-amber-100 text-amber-700 hover:bg-amber-200' : 'bg-amber-900/40 text-amber-300 hover:bg-amber-900/60'}`}>📞 Best Time to Call</Link>
+          <Link href={`/${city.slug}/guide/public-holidays/`} className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${isLight ? 'bg-amber-100 text-amber-700 hover:bg-amber-200' : 'bg-amber-900/40 text-amber-300 hover:bg-amber-900/60'}`}>🇦🇺 Australian Holidays</Link>
+        </div>
+      </section>
+      
+      <footer className={`text-sm ${mutedColor} border-t ${isLight ? 'border-slate-200' : 'border-slate-700'} pt-6`}>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          <p><strong>Last updated:</strong> January 2025</p>
+          <p className="flex items-center gap-1"><span>✓</span><span>Data verified by WhatTime.city Editorial Team</span></p>
+        </div>
+        <p className={`mt-2 text-xs ${mutedColor}`}>Time zone data sourced from IANA Time Zone Database. This guide is regularly reviewed and updated to ensure accuracy.</p>
+      </footer>
     </div>
   )
 }

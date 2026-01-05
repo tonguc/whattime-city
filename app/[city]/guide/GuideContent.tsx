@@ -3,6 +3,8 @@
 import { City } from '@/lib/cities'
 import { GuideConfig } from '@/lib/guide-content'
 import { useCityContext } from '@/lib/CityContext'
+
+// Premium city-specific content (8 custom cities)
 import NYCGuideContent from './content/nyc-overview'
 import LondonGuideContent from './content/london-overview'
 import TokyoOverviewContent from './content/tokyo-overview'
@@ -10,7 +12,8 @@ import DubaiOverviewContent from './content/dubai-overview'
 import SingaporeOverviewContent from './content/singapore-overview'
 import ParisOverviewContent from './content/paris-overview'
 import SydneyGuideContent from './content/sydney-overview'
-import LosAngelesOverviewContent from './content/los-angeles-overview'
+import IstanbulOverviewContent from './content/istanbul-overview'
+import GenericGuideContent from './content/generic-overview'
 
 interface Props {
   city: City
@@ -28,35 +31,34 @@ export default function GuideContent({ city, config }: Props) {
     hour12: true 
   })
   
-  // Render city-specific content
-  if (city.slug === 'london') {
-    return <LondonGuideContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+  // Render city-specific premium content
+  switch (city.slug) {
+    case 'new-york':
+      return <NYCGuideContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    case 'london':
+      return <LondonGuideContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    case 'tokyo':
+      return <TokyoOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    case 'dubai':
+      return <DubaiOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    case 'singapore':
+      return <SingaporeOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    case 'paris':
+      return <ParisOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    case 'sydney':
+      return <SydneyGuideContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    case 'istanbul':
+      return <IstanbulOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    // Should not reach here - 404 handled by page.tsx
+    default:
+      return <GenericGuideContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
   }
-  
-  if (city.slug === 'tokyo') {
-    return <TokyoOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
-  }
-  
-  if (city.slug === 'dubai') {
-    return <DubaiOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
-  }
-  
-  if (city.slug === 'singapore') {
-    return <SingaporeOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
-  }
-  
-  if (city.slug === 'paris') {
-    return <ParisOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
-  }
-  
-  if (city.slug === 'sydney') {
-    return <SydneyGuideContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
-  }
-  
-  if (city.slug === 'los-angeles') {
-    return <LosAngelesOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
-  }
-  
-  // Default to NYC
-  return <NYCGuideContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
 }

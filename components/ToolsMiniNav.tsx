@@ -4,16 +4,11 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useCityContext } from '@/lib/CityContext'
 
-interface ToolsMiniNavProps {
-  onAlarmClick?: () => void
-}
-
-// Normalized tool names (2 words, English only) - ROOT LEVEL URLs for SEO
-// Compare Time is FIRST
+// 5 Tool Navigation - World Alarm removed
 const toolNavItems = [
   {
-    id: 'compare-time',
-    name: 'Compare Time',
+    id: 'time-converter',
+    name: 'Time Converter',
     url: '/time',
     icon: (
       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -68,40 +63,24 @@ const toolNavItems = [
         <polyline points="12 6 12 12 16 10"/>
       </svg>
     )
-  },
-  {
-    id: 'world-alarm',
-    name: 'World Alarm',
-    url: '/world-alarm',
-    isAlarm: true,
-    icon: (
-      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="13" r="8"/>
-        <path d="M12 9v4l2 2"/>
-        <path d="M5 3L2 6"/>
-        <path d="M22 6l-3-3"/>
-      </svg>
-    )
   }
 ]
 
-export default function ToolsMiniNav({ onAlarmClick }: ToolsMiniNavProps) {
+export default function ToolsMiniNav() {
   const pathname = usePathname()
-  const { theme, isLight } = useCityContext()
+  const { isLight } = useCityContext()
   
   return (
     <nav className="mt-2 mb-6">
       {/* Mobile: left-aligned, Desktop: centered */}
       <div className="flex flex-wrap justify-start sm:justify-center gap-2">
         {toolNavItems.map((tool) => {
-          // Enhanced path matching - check if current path matches tool path
-          // Handle both exact match and sub-paths (like /meeting/istanbul-london)
+          // Enhanced path matching
           const isActive = pathname === tool.url || 
                           pathname === `${tool.url}/` ||
                           (tool.id === 'meeting-planner' && pathname?.startsWith('/meeting')) ||
-                          (tool.id === 'compare-time' && pathname?.startsWith('/time'))
+                          (tool.id === 'time-converter' && pathname?.startsWith('/time'))
           
-          // CRITICAL: All items must have identical box model (same border width) to prevent layout shift
           const className = `inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 border ${
             isActive
               ? 'bg-blue-600 text-white border-blue-600 shadow-md'
@@ -109,22 +88,6 @@ export default function ToolsMiniNav({ onAlarmClick }: ToolsMiniNavProps) {
                 ? 'bg-white/60 text-slate-600 hover:bg-white/80 border-slate-200'
                 : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 border-slate-600'
           }`
-          
-          // Alarm item - use button if callback provided
-          if (tool.isAlarm && onAlarmClick) {
-            return (
-              <button
-                key={tool.id}
-                onClick={onAlarmClick}
-                className={className}
-              >
-                <span className={isActive ? 'text-white' : isLight ? 'text-amber-600' : 'text-amber-400'}>
-                  {tool.icon}
-                </span>
-                <span>{tool.name}</span>
-              </button>
-            )
-          }
           
           return (
             <Link

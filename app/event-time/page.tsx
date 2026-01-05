@@ -1,22 +1,121 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, Suspense } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import { cities } from '@/lib/cities'
+import { cities, City } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
 import ToolPageWrapper from '@/components/ToolPageWrapper'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 
-export default function EventTimePage() {
-  const { theme, isLight } = useCityContext()
-  
-  const [eventCity, setEventCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
-  const [eventHour, setEventHour] = useState(14)
-  const [eventMinute, setEventMinute] = useState(0)
-  const [eventName, setEventName] = useState('My Event')
+// 16 Major World Cities for Event Time Display
+const FEATURED_CITIES = [
+  'new-york', 'london', 'tokyo', 'paris',
+  'dubai', 'singapore', 'sydney', 'istanbul',
+  'los-angeles', 'hong-kong', 'berlin', 'mumbai',
+  'toronto', 'sao-paulo', 'seoul', 'amsterdam'
+]
 
-  const popularCities = cities.slice(0, 8)
+// Inner component that uses useSearchParams
+function EventTimeContent() {
+  const { theme, isLight } = useCityContext()
+  const searchParams = useSearchParams()
+  
+  // Check URL params first, then localStorage, then defaults
+  const [eventCity, setEventCity] = useState<City>(() => {
+    // 1. Check URL params
+    const urlCity = searchParams.get('city')
+    if (urlCity) {
+      const city = cities.find(c => c.slug === urlCity)
+      if (city) return city
+    }
+    
+    // 2. Check localStorage
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('whattime-meeting-cities')
+        if (saved) {
+          const slugs = JSON.parse(saved) as string[]
+          if (slugs[0]) {
+            const city = cities.find(c => c.slug === slugs[0])
+            if (city) return city
+          }
+        }
+      } catch {}
+    }
+    return cities.find(c => c.city === 'New York') || cities[0]
+  })
+  
+  const [eventHour, setEventHour] = useState(() => {
+    const urlHour = searchParams.get('hour')
+    return urlHour ? parseInt(urlHour) : 14
+  })
+  
+  const [eventMinute, setEventMinute] = useState(() => {
+    const urlMinute = searchParams.get('minute')
+    return urlMinute ? parseInt(urlMinute) : 0
+  })
+  
+  const [eventName, setEventName] = useState(() => {
+    const urlName = searchParams.get('name')
+    return urlName || 'My Event'
+  })
+  
+  const [copyFeedback, setCopyFeedback] = useState(false)
+  
+  // Sync city to localStorage for cross-tool persistence
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('whattime-meeting-cities')
+        let secondCity = ''
+        if (saved) {
+          const slugs = JSON.parse(saved) as string[]
+          if (slugs[1]) secondCity = slugs[1]
+        }
+        const newSlugs = secondCity ? [eventCity.slug, secondCity] : [eventCity.slug]
+        localStorage.setItem('whattime-meeting-cities', JSON.stringify(newSlugs))
+      } catch {}
+    }
+  }, [eventCity.slug])
+  
+  // Generate shareable URL
+  const getShareUrl = () => {
+    if (typeof window === 'undefined') return ''
+    const params = new URLSearchParams({
+      city: eventCity.slug,
+      hour: eventHour.toString(),
+      minute: eventMinute.toString(),
+      name: eventName
+    })
+    return `${window.location.origin}/event-time?${params.toString()}`
+  }
+  
+  // Copy share URL to clipboard
+  const handleShare = async () => {
+    const url = getShareUrl()
+    try {
+      await navigator.clipboard.writeText(url)
+      setCopyFeedback(true)
+      setTimeout(() => setCopyFeedback(false), 2000)
+    } catch {
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea')
+      textArea.value = url
+      document.body.appendChild(textArea)
+      textArea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textArea)
+      setCopyFeedback(true)
+      setTimeout(() => setCopyFeedback(false), 2000)
+    }
+  }
+
+  // Get 16 featured cities
+  const featuredCities = FEATURED_CITIES
+    .map(slug => cities.find(c => c.slug === slug))
+    .filter((c): c is City => c !== undefined)
 
   const getEventTimeIn = (targetTimezone: string) => {
     const eventDate = new Date()
@@ -40,9 +139,7 @@ export default function EventTimePage() {
     : 'bg-slate-700 border-slate-600 text-white'
 
   return (
-    <ToolPageWrapper footer={<Footer />}>
-      <ToolsMiniNav />
-
+    <>
       <div className="text-center mb-6">
         <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${theme.text}`}>
           Event Time Converter
@@ -67,12 +164,12 @@ export default function EventTimePage() {
           <div>
             <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>Event Location</label>
             <select
-              value={eventCity.city}
-              onChange={(e) => setEventCity(cities.find(c => c.city === e.target.value) || cities[0])}
+              value={eventCity.slug}
+              onChange={(e) => setEventCity(cities.find(c => c.slug === e.target.value) || cities[0])}
               className={`w-full px-4 py-3 rounded-xl border ${inputClass}`}
             >
               {cities.map(city => (
-                <option key={city.city} value={city.city}>{city.city}, {city.country}</option>
+                <option key={city.slug} value={city.slug}>{city.city}, {city.country}</option>
               ))}
             </select>
           </div>
@@ -106,16 +203,56 @@ export default function EventTimePage() {
         </div>
 
         <div>
-          <h3 className={`font-medium mb-3 ${theme.text}`}>"{eventName}" in other time zones:</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {popularCities.map(city => (
-              <div key={city.city} className={`p-3 rounded-xl text-center ${isLight ? 'bg-slate-100' : 'bg-slate-700/50'}`}>
-                <div className={`text-xs ${theme.textMuted}`}>{city.city}</div>
-                <div className={`text-lg font-semibold ${city.city === eventCity.city ? theme.accentText : theme.text}`}>
+          <div className="flex items-center justify-between mb-3">
+            <h3 className={`font-medium ${theme.text}`}>"{eventName}" in other time zones:</h3>
+            
+            {/* Share Event Button */}
+            <button
+              onClick={handleShare}
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all ${
+                copyFeedback
+                  ? 'bg-green-500 text-white'
+                  : isLight
+                    ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                    : 'bg-blue-500 hover:bg-blue-600 text-white'
+              }`}
+            >
+              {copyFeedback ? (
+                <>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Link Copied!</span>
+                </>
+              ) : (
+                <>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                  </svg>
+                  <span>Share Event</span>
+                </>
+              )}
+            </button>
+          </div>
+          
+          {/* 16 Cities Grid - 4x4 on desktop, 4x4 on mobile */}
+          <div className="grid grid-cols-4 gap-2 sm:gap-3">
+            {featuredCities.map(city => (
+              <div key={city.slug} className={`p-2 sm:p-3 rounded-xl text-center ${isLight ? 'bg-slate-100' : 'bg-slate-700/50'}`}>
+                <div className={`text-[10px] sm:text-xs ${theme.textMuted} truncate`}>{city.city}</div>
+                <div className={`text-sm sm:text-lg font-semibold ${city.slug === eventCity.slug ? theme.accentText : theme.text}`}>
                   {getEventTimeIn(city.timezone)}
                 </div>
               </div>
             ))}
+          </div>
+          
+          {/* Share URL Preview */}
+          <div className={`mt-4 p-3 rounded-xl ${isLight ? 'bg-slate-100' : 'bg-slate-700/30'}`}>
+            <p className={`text-xs ${theme.textMuted} mb-1`}>📎 Shareable link:</p>
+            <p className={`text-xs font-mono break-all ${theme.text}`}>
+              {getShareUrl()}
+            </p>
           </div>
         </div>
       </div>
@@ -146,13 +283,13 @@ export default function EventTimePage() {
             <div className={`text-sm font-medium ${theme.text}`}>Meeting Planner</div>
             <div className={`text-xs ${theme.textMuted}`}>Find overlap hours</div>
           </Link>
-          <Link href="/time-converter" className={`p-4 ${boxClass} transition-all hover:scale-[1.02]`}>
+          <Link href="/time" className={`p-4 ${boxClass} transition-all hover:scale-[1.02]`}>
             <div className={`text-sm font-medium ${theme.text}`}>Time Converter</div>
             <div className={`text-xs ${theme.textMuted}`}>Quick conversions</div>
           </Link>
-          <Link href="/world-alarm" className={`p-4 ${boxClass} transition-all hover:scale-[1.02]`}>
-            <div className={`text-sm font-medium ${theme.text}`}>World Alarm</div>
-            <div className={`text-xs ${theme.textMuted}`}>Set event reminders</div>
+          <Link href="/flight-time" className={`p-4 ${boxClass} transition-all hover:scale-[1.02]`}>
+            <div className={`text-sm font-medium ${theme.text}`}>Flight Time</div>
+            <div className={`text-xs ${theme.textMuted}`}>Calculate arrivals</div>
           </Link>
         </div>
       </section>
@@ -162,18 +299,42 @@ export default function EventTimePage() {
         <div className={`space-y-4 ${theme.textMuted}`}>
           <div>
             <h3 className={`font-medium mb-1 ${theme.text}`}>Can I share these times with others?</h3>
-            <p className="text-sm">Yes, you can screenshot or copy the converted times to share on social media or in emails.</p>
+            <p className="text-sm">Yes! Click the "Share Event" button to copy a link that opens this exact event configuration.</p>
           </div>
           <div>
             <h3 className={`font-medium mb-1 ${theme.text}`}>Does it account for DST?</h3>
             <p className="text-sm">Yes, all conversions automatically account for Daylight Saving Time in each location.</p>
           </div>
           <div>
-            <h3 className={`font-medium mb-1 ${theme.text}`}>Can I add more cities?</h3>
-            <p className="text-sm">The display shows 8 major cities. Use the Time Converter for specific city lookups.</p>
+            <h3 className={`font-medium mb-1 ${theme.text}`}>How many cities are shown?</h3>
+            <p className="text-sm">We display 16 major world cities covering all major time zones. Use the Time Converter for specific lookups.</p>
           </div>
         </div>
       </section>
+    </>
+  )
+}
+
+// Loading fallback
+function EventTimeLoading() {
+  return (
+    <div className="text-center py-12">
+      <div className="animate-pulse">
+        <div className="h-10 bg-slate-200 dark:bg-slate-700 rounded w-64 mx-auto mb-4"></div>
+        <div className="h-6 bg-slate-200 dark:bg-slate-700 rounded w-48 mx-auto"></div>
+      </div>
+    </div>
+  )
+}
+
+// Main page component with Suspense wrapper
+export default function EventTimePage() {
+  return (
+    <ToolPageWrapper footer={<Footer />}>
+      <ToolsMiniNav />
+      <Suspense fallback={<EventTimeLoading />}>
+        <EventTimeContent />
+      </Suspense>
     </ToolPageWrapper>
   )
 }

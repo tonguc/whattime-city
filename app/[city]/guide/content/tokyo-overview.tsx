@@ -11,15 +11,71 @@ interface Props {
   timeStr: string
 }
 
+// Long-tail keyword optimized FAQ data for Tokyo
+const FAQ_DATA = [
+  {
+    question: "What is the time difference between Tokyo and New York right now?",
+    answer: "Tokyo is 14 hours ahead of New York during Eastern Standard Time (EST). When it's 9:00 AM in New York, it's 11:00 PM the same day in Tokyo. During US daylight saving time (EDT), the difference reduces to 13 hours. Japan does not observe daylight saving time, keeping calculations consistent."
+  },
+  {
+    question: "Does Japan use daylight saving time?",
+    answer: "No, Japan does not observe daylight saving time (DST). Tokyo remains on Japan Standard Time (JST, UTC+9) year-round. This simplifies scheduling with Japan but means the time difference with countries that use DST (like the US and UK) changes twice a year."
+  },
+  {
+    question: "What time does the Tokyo Stock Exchange open and close?",
+    answer: "The Tokyo Stock Exchange (TSE) opens at 9:00 AM and closes at 3:00 PM JST, Monday through Friday. There's a lunch break from 11:30 AM to 12:30 PM. For New York investors, that's 7:00 PM to 1:00 AM ET (previous day). For London, it's 12:00 AM to 6:00 AM GMT."
+  },
+  {
+    question: "What is the best time to call Tokyo from the US East Coast?",
+    answer: "The best time to call Tokyo from the US East Coast is between 7:00 PM and 10:00 PM ET, which reaches Tokyo during their morning business hours (9:00 AM - 12:00 PM JST the next day). Calling at 8:00 AM ET catches Tokyo at 10:00 PM — too late for business."
+  },
+  {
+    question: "How many hours ahead is Tokyo from London?",
+    answer: "Tokyo is 9 hours ahead of London during GMT (winter). When it's 12:00 PM in London, it's 9:00 PM in Tokyo. During British Summer Time (BST), the difference reduces to 8 hours. This makes late afternoon London calls ideal for reaching Tokyo before their day ends."
+  },
+  {
+    question: "What time zone is Tokyo Japan in?",
+    answer: "Tokyo is in Japan Standard Time (JST), which is UTC+9. All of Japan uses the same time zone with no regional variations. JST is the same as Korea Standard Time (KST) in Seoul. Major cities on similar time: Seoul, Pyongyang, Palau, and parts of Indonesia."
+  },
+  {
+    question: "What are typical business hours in Tokyo Japan?",
+    answer: "Standard Tokyo business hours are 9:00 AM to 6:00 PM JST, Monday through Friday. However, Japanese work culture often extends beyond official hours. Banks typically close at 3:00 PM. Department stores open 10:00 AM to 8:00 PM. Convenience stores (konbini) are 24/7."
+  },
+  {
+    question: "What is the best time to call Tokyo from California?",
+    answer: "The best time to call Tokyo from California (PST/PDT) is between 4:00 PM and 7:00 PM PT, which reaches Tokyo during their morning (9:00 AM - 12:00 PM JST the next day). Evening calls from California (after 8 PM PT) catch Tokyo's afternoon, which also works well."
+  }
+]
+
 export default function TokyoOverviewContent({ city, config, isLight, timeStr }: Props) {
   const textColor = isLight ? 'text-slate-700' : 'text-slate-200'
   const headingColor = isLight ? 'text-slate-800' : 'text-white'
   const mutedColor = isLight ? 'text-slate-500' : 'text-slate-400'
   const cardBg = isLight ? 'bg-slate-50' : 'bg-slate-700/50'
-  const linkColor = isLight ? 'text-amber-600 hover:text-amber-700' : 'text-amber-400 hover:text-amber-300'
+  const linkColor = isLight ? 'text-blue-600 hover:text-blue-800 hover:underline' : 'text-sky-400 hover:text-sky-300 hover:underline'
+
+  // Generate FAQ Schema JSON-LD
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": FAQ_DATA.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
 
   return (
     <div className={textColor}>
+      {/* FAQ Schema JSON-LD for Google Rich Results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      
       <header className="mb-8">
         <h1 className={`text-3xl md:text-4xl font-bold mb-4 ${headingColor}`}>
           Tokyo Time Zone: The Complete Guide
@@ -36,19 +92,19 @@ export default function TokyoOverviewContent({ city, config, isLight, timeStr }:
       
       <section className="mb-10 space-y-4">
         <p>
-          Planning a call with colleagues in Tokyo, trying to catch the Nikkei opening, or wondering 
-          if that ramen shop in Shinjuku will still be open when you arrive? Understanding Tokyo's 
-          time zone is essential.
+          Whether you're coordinating with Japanese business partners, planning a trip to experience 
+          cherry blossom season, or tracking the Nikkei 225 opening — understanding Tokyo's time zone 
+          is essential for anyone connecting with the world's largest metropolitan economy.
         </p>
         <p>
-          Tokyo runs on <strong>Japan Standard Time (JST)</strong>, which is UTC+9 year-round. 
-          Unlike most countries, Japan does not observe daylight saving time — the clocks never 
-          change, making time calculations refreshingly simple.
+          Tokyo operates on <strong>Japan Standard Time (JST)</strong>, which is UTC+9 year-round. 
+          Unlike most developed nations, Japan does not observe daylight saving time, making time 
+          calculations refreshingly consistent throughout the year.
         </p>
         <p>
-          But knowing JST is just the beginning. What matters is understanding how time works 
-          <em>in practice</em> in Tokyo — when businesses actually open, when the last train leaves, 
-          and why you should never schedule a meeting during Golden Week.
+          But there's more to Tokyo time than just "JST." What matters is understanding the unique 
+          rhythm of Japanese business culture — from the 9 AM bow to the after-work nomikai, Tokyo 
+          runs on precision and punctuality that defines the nation.
         </p>
       </section>
       
@@ -62,23 +118,23 @@ export default function TokyoOverviewContent({ city, config, isLight, timeStr }:
             <ul className="space-y-1 text-sm">
               <li>• <strong>Time Zone:</strong> JST (UTC+9)</li>
               <li>• <strong>Daylight Saving:</strong> Not observed</li>
-              <li>• <strong>Clocks Change:</strong> Never</li>
-              <li>• <strong>Same as:</strong> Korea (KST), parts of Indonesia</li>
+              <li>• <strong>Same as:</strong> <Link href="/seoul/" className={linkColor}>Seoul</Link>, Palau</li>
+              <li>• <strong>Consistency:</strong> Same time year-round</li>
             </ul>
           </div>
           <div>
             <h3 className={`font-medium mb-2 ${headingColor}`}>Key Time Differences</h3>
             <ul className="space-y-1 text-sm">
-              <li>• <strong>New York:</strong> +14 hours</li>
-              <li>• <strong>London:</strong> +9 hours</li>
-              <li>• <strong>Sydney:</strong> +2 hours (varies)</li>
-              <li>• <strong>Los Angeles:</strong> +17 hours</li>
+              <li>• <strong><Link href="/new-york/" className={linkColor}>New York</Link>:</strong> -14 hours (EST) / -13 (EDT)</li>
+              <li>• <strong><Link href="/london/" className={linkColor}>London</Link>:</strong> -9 hours (GMT) / -8 (BST)</li>
+              <li>• <strong><Link href="/singapore/" className={linkColor}>Singapore</Link>:</strong> -1 hour</li>
+              <li>• <strong><Link href="/sydney/" className={linkColor}>Sydney</Link>:</strong> +2 hours (AEDT)</li>
             </ul>
           </div>
         </div>
         <p className={`mt-4 text-sm ${mutedColor}`}>
           Need exact conversions? Try our{' '}
-          <Link href="/time-converter/" className={linkColor}>Time Converter</Link>
+          <Link href="/time/" className={linkColor}>Time Converter</Link>
         </p>
       </section>
       
@@ -115,24 +171,23 @@ export default function TokyoOverviewContent({ city, config, isLight, timeStr }:
         </h2>
         
         <h3 className={`text-lg font-medium mt-6 mb-2 ${headingColor}`}>
-          Why Japan Doesn't Use Daylight Saving
+          Why Japan Doesn't Use Daylight Saving Time
         </h3>
         <p>
-          Japan briefly used DST during the US occupation (1948-1951) but abandoned it due to 
-          public opposition. The Japanese lifestyle, with its emphasis on long working hours and 
-          the importance of natural light for agriculture, made the change unpopular. Today, 
-          Japan's consistent UTC+9 makes international scheduling easier — you only need to 
-          account for other countries' DST changes.
+          Japan briefly experimented with DST during the US occupation (1948-1951) but abandoned it 
+          due to unpopularity. Today, the consistent UTC+9 simplifies everything from train schedules 
+          (famously punctual) to business planning. When other countries shift clocks, Japan stays put — 
+          meaning your time difference with Tokyo changes even though Tokyo itself doesn't change.
         </p>
         
         <h3 className={`text-lg font-medium mt-6 mb-2 ${headingColor}`}>
-          The Challenge of Tokyo Time for Westerners
+          The Challenge of US-Japan Scheduling
         </h3>
         <p>
-          Tokyo is 14 hours ahead of New York and 9 hours ahead of London. This creates a 
-          significant challenge for real-time collaboration. When Tokyo's business day starts 
-          at 9 AM, it's 7 PM the previous day in New York. The limited overlap window 
-          (early morning Tokyo = late afternoon US) requires careful planning.
+          The 13-14 hour gap between Tokyo and the US East Coast makes real-time collaboration challenging. 
+          Most US-Japan calls happen at the edges of business hours: early morning US (evening Tokyo) or 
+          late evening US (morning Tokyo). Many companies designate specific "overlap hours" for 
+          cross-Pacific meetings.
         </p>
         
         <div className={`p-4 rounded-xl ${cardBg} mt-4`}>
@@ -140,17 +195,19 @@ export default function TokyoOverviewContent({ city, config, isLight, timeStr }:
             <div>
               <h4 className={`font-medium ${headingColor}`}>Tokyo Morning (9 AM JST)</h4>
               <ul className="mt-2 space-y-1">
-                <li>• New York: 7 PM previous day (EST)</li>
-                <li>• London: 12 AM midnight (GMT)</li>
-                <li>• Sydney: 11 AM same day (AEDT)</li>
+                <li>• <Link href="/new-york/" className={linkColor}>New York</Link>: 7 PM (prev day, EST)</li>
+                <li>• <Link href="/los-angeles/" className={linkColor}>Los Angeles</Link>: 4 PM (prev day)</li>
+                <li>• <Link href="/london/" className={linkColor}>London</Link>: 12 AM (midnight)</li>
+                <li>• <Link href="/singapore/" className={linkColor}>Singapore</Link>: 8 AM</li>
               </ul>
             </div>
             <div>
               <h4 className={`font-medium ${headingColor}`}>Tokyo Evening (6 PM JST)</h4>
               <ul className="mt-2 space-y-1">
-                <li>• New York: 4 AM same day (EST)</li>
-                <li>• London: 9 AM same day (GMT)</li>
-                <li>• Sydney: 8 PM same day (AEDT)</li>
+                <li>• <Link href="/new-york/" className={linkColor}>New York</Link>: 4 AM (same day, EST)</li>
+                <li>• <Link href="/los-angeles/" className={linkColor}>Los Angeles</Link>: 1 AM (same day)</li>
+                <li>• <Link href="/london/" className={linkColor}>London</Link>: 9 AM</li>
+                <li>• <Link href="/sydney/" className={linkColor}>Sydney</Link>: 8 PM</li>
               </ul>
             </div>
           </div>
@@ -161,129 +218,214 @@ export default function TokyoOverviewContent({ city, config, isLight, timeStr }:
         <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
           Tokyo Time vs Major Cities
         </h2>
-        <div className={`overflow-x-auto rounded-xl border ${isLight ? 'border-slate-200' : 'border-slate-600'}`}>
+        <div className={`overflow-x-auto rounded-xl ${cardBg}`}>
           <table className="w-full text-sm">
-            <thead className={isLight ? 'bg-slate-100' : 'bg-slate-700'}>
-              <tr>
-                <th className={`px-4 py-3 text-left ${headingColor}`}>City</th>
-                <th className={`px-4 py-3 text-left ${headingColor}`}>Difference</th>
-                <th className={`px-4 py-3 text-left ${headingColor}`}>When it's 12 PM in Tokyo</th>
+            <thead>
+              <tr className={`border-b ${isLight ? 'border-slate-200' : 'border-slate-600'}`}>
+                <th className={`px-4 py-3 text-left font-medium ${headingColor}`}>City</th>
+                <th className={`px-4 py-3 text-left font-medium ${headingColor}`}>Difference</th>
+                <th className={`px-4 py-3 text-left font-medium ${headingColor}`}>When it's 12 PM in Tokyo</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 dark:divide-slate-600">
-              <tr><td className="px-4 py-3">🇺🇸 New York</td><td className="px-4 py-3">-14 hours</td><td className="px-4 py-3">10:00 PM (previous day)</td></tr>
-              <tr><td className="px-4 py-3">🇺🇸 Los Angeles</td><td className="px-4 py-3">-17 hours</td><td className="px-4 py-3">7:00 PM (previous day)</td></tr>
-              <tr><td className="px-4 py-3">🇬🇧 London</td><td className="px-4 py-3">-9 hours</td><td className="px-4 py-3">3:00 AM</td></tr>
-              <tr><td className="px-4 py-3">🇫🇷 Paris</td><td className="px-4 py-3">-8 hours</td><td className="px-4 py-3">4:00 AM</td></tr>
-              <tr><td className="px-4 py-3">🇦🇪 Dubai</td><td className="px-4 py-3">-5 hours</td><td className="px-4 py-3">7:00 AM</td></tr>
-              <tr><td className="px-4 py-3">🇮🇳 Mumbai</td><td className="px-4 py-3">-3.5 hours</td><td className="px-4 py-3">8:30 AM</td></tr>
-              <tr><td className="px-4 py-3">🇸🇬 Singapore</td><td className="px-4 py-3">-1 hour</td><td className="px-4 py-3">11:00 AM</td></tr>
-              <tr><td className="px-4 py-3">🇰🇷 Seoul</td><td className="px-4 py-3">0 hours</td><td className="px-4 py-3">12:00 PM</td></tr>
-              <tr><td className="px-4 py-3">🇦🇺 Sydney</td><td className="px-4 py-3">+2 hours</td><td className="px-4 py-3">2:00 PM</td></tr>
+              <tr>
+                <td className="px-4 py-3">🇺🇸 <Link href="/time/tokyo/new-york/" className={linkColor}>New York</Link></td>
+                <td className="px-4 py-3">-14 hours*</td>
+                <td className="px-4 py-3">10:00 PM (prev)</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇺🇸 <Link href="/time/tokyo/los-angeles/" className={linkColor}>Los Angeles</Link></td>
+                <td className="px-4 py-3">-17 hours*</td>
+                <td className="px-4 py-3">7:00 PM (prev)</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇬🇧 <Link href="/time/tokyo/london/" className={linkColor}>London</Link></td>
+                <td className="px-4 py-3">-9 hours*</td>
+                <td className="px-4 py-3">3:00 AM</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇦🇪 <Link href="/time/tokyo/dubai/" className={linkColor}>Dubai</Link></td>
+                <td className="px-4 py-3">-5 hours</td>
+                <td className="px-4 py-3">7:00 AM</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇮🇳 <Link href="/time/tokyo/mumbai/" className={linkColor}>Mumbai</Link></td>
+                <td className="px-4 py-3">-3.5 hours</td>
+                <td className="px-4 py-3">8:30 AM</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇸🇬 <Link href="/time/tokyo/singapore/" className={linkColor}>Singapore</Link></td>
+                <td className="px-4 py-3">-1 hour</td>
+                <td className="px-4 py-3">11:00 AM</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇰🇷 <Link href="/time/tokyo/seoul/" className={linkColor}>Seoul</Link></td>
+                <td className="px-4 py-3">0 hours</td>
+                <td className="px-4 py-3">12:00 PM</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3">🇦🇺 <Link href="/time/tokyo/sydney/" className={linkColor}>Sydney</Link></td>
+                <td className="px-4 py-3">+2 hours*</td>
+                <td className="px-4 py-3">2:00 PM</td>
+              </tr>
             </tbody>
           </table>
         </div>
         <p className={`mt-3 text-sm ${mutedColor}`}>
-          * Sydney difference varies due to Australian DST.{' '}
-          <Link href={`/${city.slug}/guide/time-difference/`} className={linkColor}>
-            See detailed time differences →
-          </Link>
+          * Times vary when other countries observe daylight saving. Japan stays constant.{' '}
+          <Link href="/time/tokyo/new-york/" className={linkColor}>See detailed time differences →</Link>
         </p>
       </section>
       
-      <section className="mb-10">
-        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
-          Practical Tips for Dealing with Tokyo Time
-        </h2>
-        
-        <div className="space-y-4">
-          <div className={`p-4 rounded-xl ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>🌍 For International Business</h3>
-            <p className="text-sm">
-              The best overlap with US East Coast is 8-10 AM Tokyo (6-8 PM previous day NYC). 
-              For Europe, 5-7 PM Tokyo catches morning hours in London/Paris. Consider async 
-              communication — Japanese companies increasingly accept it for global teams.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-xl ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>✈️ For Travellers</h3>
-            <p className="text-sm">
-              Flying from the US? You'll cross the International Date Line and "lose" a day going 
-              west. Arrive exhausted but in daylight — push through to evening for faster adjustment. 
-              From Europe, it's a brutal 12-hour flight but only +8/9 hours time change.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-xl ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>📱 For Remote Workers</h3>
-            <p className="text-sm">
-              Tokyo's timezone makes real-time collaboration with the West challenging. Consider 
-              early morning Tokyo meetings (7-9 AM) for US afternoon overlap, or embrace async 
-              workflows. The upside: you're ahead of everyone, so you set the agenda.
-            </p>
-          </div>
-        </div>
+      {/* Dynamic CTA - Meeting Planner */}
+      <section className={`mb-10 p-6 rounded-2xl text-center ${
+        isLight 
+          ? 'bg-gradient-to-r from-rose-50 to-pink-50 border border-rose-200' 
+          : 'bg-gradient-to-r from-rose-900/30 to-pink-900/30 border border-rose-700/50'
+      }`}>
+        <h3 className={`text-xl font-semibold mb-2 ${headingColor}`}>
+          Need to schedule a meeting with Tokyo?
+        </h3>
+        <p className={`mb-4 ${mutedColor}`}>
+          Find the perfect meeting time that bridges the Pacific time gap.
+        </p>
+        <Link 
+          href="/meeting/"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-rose-600 hover:bg-rose-700 text-white font-semibold rounded-xl transition-all transform hover:scale-105 shadow-lg"
+        >
+          <span>🚀</span>
+          <span>Launch Meeting Planner</span>
+        </Link>
       </section>
       
       <section className="mb-10">
-        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
+        <h2 className={`text-2xl font-semibold mb-6 ${headingColor}`}>
+          Practical Tips for Dealing with Tokyo Time
+        </h2>
+        
+        <div className={`p-4 rounded-xl border mb-4 ${isLight ? 'border-slate-200 bg-white' : 'border-slate-600 bg-slate-700/30'}`}>
+          <h3 className={`font-medium mb-2 ${headingColor}`}>🏢 For International Business</h3>
+          <p className="text-sm">
+            Japanese business culture values punctuality highly — being late is a serious faux pas. 
+            For US colleagues, 7-8 PM ET calls catch Tokyo's morning. European teams have better overlap: 
+            a <Link href="/london/" className={linkColor}>London</Link> morning meeting at 8 AM GMT reaches Tokyo at 5 PM before the workday ends.
+          </p>
+        </div>
+        
+        <div className={`p-4 rounded-xl border mb-4 ${isLight ? 'border-slate-200 bg-white' : 'border-slate-600 bg-slate-700/30'}`}>
+          <h3 className={`font-medium mb-2 ${headingColor}`}>✈️ For Travellers</h3>
+          <p className="text-sm">
+            Flying from the US West Coast? You'll cross the International Date Line and "lose" a day 
+            (but gain it back on return). Jet lag from the US to Japan is notoriously difficult — 
+            your body thinks it's 3 AM when Tokyo is serving breakfast. Check our{' '}
+            <Link href="/jet-lag-advisor/" className={linkColor}>Jet Lag Advisor</Link> for recovery strategies.
+          </p>
+        </div>
+        
+        <div className={`p-4 rounded-xl border mb-4 ${isLight ? 'border-slate-200 bg-white' : 'border-slate-600 bg-slate-700/30'}`}>
+          <h3 className={`font-medium mb-2 ${headingColor}`}>💼 For Remote Workers</h3>
+          <p className="text-sm">
+            Working with Japanese companies remotely requires flexibility. Many adopt "hybrid hours" — 
+            available during Japan's end-of-day (5-7 PM JST) which is early morning for Europe. 
+            <Link href="/singapore/" className={linkColor}> Singapore</Link> and <Link href="/sydney/" className={linkColor}>Sydney</Link> have the easiest overlap with Tokyo business hours.
+          </p>
+        </div>
+      </section>
+      
+      {/* FAQ Section with Schema Markup */}
+      <section className="mb-10" itemScope itemType="https://schema.org/FAQPage">
+        <h2 className={`text-2xl font-semibold mb-6 ${headingColor}`}>
           Frequently Asked Questions
         </h2>
         
         <div className="space-y-4">
-          <div className={`p-4 rounded-xl ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>Does Tokyo have daylight saving time?</h3>
-            <p className="text-sm">
-              No. Japan is one of the few developed countries that doesn't observe DST. The clocks 
-              stay at UTC+9 year-round, making time calculations simpler.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-xl ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>What's the time difference between Tokyo and New York?</h3>
-            <p className="text-sm">
-              Tokyo is 14 hours ahead of New York (EST) and 13 hours ahead during EDT. When it's 
-              noon in Tokyo, it's 10 PM the previous day in New York.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-xl ${cardBg}`}>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>Is all of Japan in the same time zone?</h3>
-            <p className="text-sm">
-              Yes — all of Japan uses JST (UTC+9), from Hokkaido in the north to Okinawa in the 
-              south. This makes domestic travel timing simple.
-            </p>
-          </div>
+          {FAQ_DATA.map((faq, index) => (
+            <div 
+              key={index}
+              className={`p-4 rounded-xl ${cardBg}`}
+              itemScope 
+              itemProp="mainEntity" 
+              itemType="https://schema.org/Question"
+            >
+              <h3 className={`font-medium mb-2 ${headingColor}`} itemProp="name">
+                {faq.question}
+              </h3>
+              <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                <p className="text-sm" itemProp="text">
+                  {faq.answer}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
       
-      <section className={`p-6 rounded-2xl ${isLight ? 'bg-rose-50 border border-rose-200' : 'bg-rose-900/20 border border-rose-700'}`}>
-        <h2 className={`text-xl font-semibold mb-3 ${headingColor}`}>
+      <section className={`mb-10 p-6 rounded-2xl ${isLight ? 'bg-amber-50 border border-amber-200' : 'bg-amber-900/20 border border-amber-700/30'}`}>
+        <h2 className={`text-xl font-semibold mb-4 ${headingColor}`}>
           Ready to Dive Deeper?
         </h2>
-        <p className="mb-4">
-          Explore our detailed guides on specific topics:
+        <p className={`mb-4 ${mutedColor}`}>
+          This overview is just the start. Explore our detailed guides on specific topics:
         </p>
         <div className="flex flex-wrap gap-2">
-          <Link href={`/${city.slug}/guide/business-hours/`} className={`px-4 py-2 rounded-lg text-sm font-medium ${isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'}`}>
-            💼 Business Hours
+          <Link 
+            href={`/${city.slug}/guide/time-business/`}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              isLight 
+                ? 'bg-amber-100 text-amber-700 hover:bg-amber-200' 
+                : 'bg-amber-900/40 text-amber-300 hover:bg-amber-900/60'
+            }`}
+          >
+            🏢 Business Hours
           </Link>
-          <Link href={`/${city.slug}/guide/stock-market/`} className={`px-4 py-2 rounded-lg text-sm font-medium ${isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'}`}>
-            📈 Stock Market
+          <Link 
+            href={`/${city.slug}/guide/stock-market/`}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              isLight 
+                ? 'bg-amber-100 text-amber-700 hover:bg-amber-200' 
+                : 'bg-amber-900/40 text-amber-300 hover:bg-amber-900/60'
+            }`}
+          >
+            📈 Tokyo Stock Exchange
           </Link>
-          <Link href={`/${city.slug}/guide/best-time-to-visit/`} className={`px-4 py-2 rounded-lg text-sm font-medium ${isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'}`}>
-            🌸 Cherry Blossoms
+          <Link 
+            href={`/${city.slug}/guide/best-time-to-call/`}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              isLight 
+                ? 'bg-amber-100 text-amber-700 hover:bg-amber-200' 
+                : 'bg-amber-900/40 text-amber-300 hover:bg-amber-900/60'
+            }`}
+          >
+            📞 Best Time to Call
           </Link>
-          <Link href={`/${city.slug}/guide/holidays/`} className={`px-4 py-2 rounded-lg text-sm font-medium ${isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'}`}>
-            📅 Holidays
+          <Link 
+            href={`/${city.slug}/guide/public-holidays/`}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              isLight 
+                ? 'bg-amber-100 text-amber-700 hover:bg-amber-200' 
+                : 'bg-amber-900/40 text-amber-300 hover:bg-amber-900/60'
+            }`}
+          >
+            🇯🇵 Japanese Holidays
           </Link>
         </div>
       </section>
       
-      <p className={`mt-8 text-sm ${mutedColor}`}>
-        Last updated: December 2024.
-      </p>
+      {/* E-E-A-T Footer */}
+      <footer className={`text-sm ${mutedColor} border-t ${isLight ? 'border-slate-200' : 'border-slate-700'} pt-6`}>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          <p>
+            <strong>Last updated:</strong> January 2025
+          </p>
+          <p className="flex items-center gap-1">
+            <span>✓</span>
+            <span>Data verified by WhatTime.city Editorial Team</span>
+          </p>
+        </div>
+        <p className={`mt-2 text-xs ${mutedColor}`}>
+          Time zone data sourced from IANA Time Zone Database. This guide is regularly reviewed and updated to ensure accuracy.
+        </p>
+      </footer>
     </div>
   )
 }

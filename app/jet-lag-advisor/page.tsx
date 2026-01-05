@@ -1,8 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { cities } from '@/lib/cities'
+import { cities, City } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
 import ToolPageWrapper from '@/components/ToolPageWrapper'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
@@ -11,8 +11,48 @@ import Footer from '@/components/Footer'
 export default function JetLagPage() {
   const { theme, isLight } = useCityContext()
   
-  const [fromCity, setFromCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
-  const [toCity, setToCity] = useState(() => cities.find(c => c.city === 'Tokyo') || cities[2])
+  // Initialize from localStorage for cross-tool persistence
+  const [fromCity, setFromCity] = useState<City>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('whattime-meeting-cities')
+        if (saved) {
+          const slugs = JSON.parse(saved) as string[]
+          if (slugs[0]) {
+            const city = cities.find(c => c.slug === slugs[0])
+            if (city) return city
+          }
+        }
+      } catch {}
+    }
+    return cities.find(c => c.city === 'New York') || cities[0]
+  })
+  
+  const [toCity, setToCity] = useState<City>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('whattime-meeting-cities')
+        if (saved) {
+          const slugs = JSON.parse(saved) as string[]
+          if (slugs[1]) {
+            const city = cities.find(c => c.slug === slugs[1])
+            if (city) return city
+          }
+        }
+      } catch {}
+    }
+    return cities.find(c => c.city === 'Tokyo') || cities[2]
+  })
+  
+  // Sync cities to localStorage for cross-tool persistence
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const slugs = [fromCity.slug, toCity.slug]
+        localStorage.setItem('whattime-meeting-cities', JSON.stringify(slugs))
+      } catch {}
+    }
+  }, [fromCity.slug, toCity.slug])
 
   const getTimeDiff = () => {
     const now = new Date()
@@ -66,24 +106,24 @@ export default function JetLagPage() {
           <div>
             <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>Traveling From</label>
             <select
-              value={fromCity.city}
-              onChange={(e) => setFromCity(cities.find(c => c.city === e.target.value) || cities[0])}
+              value={fromCity.slug}
+              onChange={(e) => setFromCity(cities.find(c => c.slug === e.target.value) || cities[0])}
               className={`w-full px-4 py-3 rounded-xl border ${inputClass}`}
             >
               {cities.map(city => (
-                <option key={city.city} value={city.city}>{city.city}, {city.country}</option>
+                <option key={city.slug} value={city.slug}>{city.city}, {city.country}</option>
               ))}
             </select>
           </div>
           <div>
             <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>Traveling To</label>
             <select
-              value={toCity.city}
-              onChange={(e) => setToCity(cities.find(c => c.city === e.target.value) || cities[1])}
+              value={toCity.slug}
+              onChange={(e) => setToCity(cities.find(c => c.slug === e.target.value) || cities[1])}
               className={`w-full px-4 py-3 rounded-xl border ${inputClass}`}
             >
               {cities.map(city => (
-                <option key={city.city} value={city.city}>{city.city}, {city.country}</option>
+                <option key={city.slug} value={city.slug}>{city.city}, {city.country}</option>
               ))}
             </select>
           </div>

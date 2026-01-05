@@ -1,8 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { cities } from '@/lib/cities'
+import { cities, City } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
 import ToolPageWrapper from '@/components/ToolPageWrapper'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
@@ -11,11 +11,52 @@ import Footer from '@/components/Footer'
 export default function FlightTimePage() {
   const { theme, isLight } = useCityContext()
   
-  const [departureCity, setDepartureCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
-  const [arrivalCity, setArrivalCity] = useState(() => cities.find(c => c.city === 'London') || cities[1])
+  // Initialize from localStorage for cross-tool persistence
+  const [departureCity, setDepartureCity] = useState<City>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('whattime-meeting-cities')
+        if (saved) {
+          const slugs = JSON.parse(saved) as string[]
+          if (slugs[0]) {
+            const city = cities.find(c => c.slug === slugs[0])
+            if (city) return city
+          }
+        }
+      } catch {}
+    }
+    return cities.find(c => c.city === 'New York') || cities[0]
+  })
+  
+  const [arrivalCity, setArrivalCity] = useState<City>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('whattime-meeting-cities')
+        if (saved) {
+          const slugs = JSON.parse(saved) as string[]
+          if (slugs[1]) {
+            const city = cities.find(c => c.slug === slugs[1])
+            if (city) return city
+          }
+        }
+      } catch {}
+    }
+    return cities.find(c => c.city === 'London') || cities[1]
+  })
+  
   const [departureHour, setDepartureHour] = useState(10)
   const [departureMinute, setDepartureMinute] = useState(0)
   const [flightDuration, setFlightDuration] = useState({ hours: 7, minutes: 0 })
+  
+  // Sync cities to localStorage for cross-tool persistence
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const slugs = [departureCity.slug, arrivalCity.slug]
+        localStorage.setItem('whattime-meeting-cities', JSON.stringify(slugs))
+      } catch {}
+    }
+  }, [departureCity.slug, arrivalCity.slug])
 
   // Calculate arrival time
   const getArrivalTime = () => {
@@ -68,12 +109,12 @@ export default function FlightTimePage() {
           <div>
             <h3 className={`font-medium mb-3 ${theme.text}`}>Departure</h3>
             <select
-              value={departureCity.city}
-              onChange={(e) => setDepartureCity(cities.find(c => c.city === e.target.value) || cities[0])}
+              value={departureCity.slug}
+              onChange={(e) => setDepartureCity(cities.find(c => c.slug === e.target.value) || cities[0])}
               className={`w-full px-4 py-3 rounded-xl border mb-3 ${inputClass}`}
             >
               {cities.map(city => (
-                <option key={city.city} value={city.city}>{city.city}, {city.country}</option>
+                <option key={city.slug} value={city.slug}>{city.city}, {city.country}</option>
               ))}
             </select>
             <div className="flex gap-2">
@@ -102,12 +143,12 @@ export default function FlightTimePage() {
           <div>
             <h3 className={`font-medium mb-3 ${theme.text}`}>Arrival</h3>
             <select
-              value={arrivalCity.city}
-              onChange={(e) => setArrivalCity(cities.find(c => c.city === e.target.value) || cities[1])}
+              value={arrivalCity.slug}
+              onChange={(e) => setArrivalCity(cities.find(c => c.slug === e.target.value) || cities[1])}
               className={`w-full px-4 py-3 rounded-xl border mb-3 ${inputClass}`}
             >
               {cities.map(city => (
-                <option key={city.city} value={city.city}>{city.city}, {city.country}</option>
+                <option key={city.slug} value={city.slug}>{city.city}, {city.country}</option>
               ))}
             </select>
             <div className={`text-center py-2 text-2xl font-bold ${theme.accentText}`}>
