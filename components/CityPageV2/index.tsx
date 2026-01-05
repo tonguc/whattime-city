@@ -13,18 +13,18 @@ import Footer from '@/components/Footer'
 import WeatherBackground from '@/components/WeatherBackground'
 import AlarmModal, { ActiveAlarmPopup } from '@/components/AlarmModal'
 import { useAlarm, useWeather } from '@/shared/hooks'
-import TimeConverter from '@/components/TimeConverter'
 
-// V2 Components
+// V2 Components - Modular
 import HeroSection from './HeroSection'
+import InfoRow from './InfoRow'
+import ConverterSection from './ConverterSection'
+import CompactInfoCards from './CompactInfoCards'
 import TimeZoneFacts from './TimeZoneFacts'
 import BusinessHoursBox from './BusinessHoursBox'
 import TimeDifferenceTable from './TimeDifferenceTable'
 import GuidePreview from './GuidePreview'
-import EEATFooter from './EEATFooter'
 
 // Existing WorldClock components (reused)
-import QuickInfoCards from '@/components/WorldClock/QuickInfoCards'
 import CityGuideCard from '@/components/WorldClock/CityGuideCard'
 import TravelBridge from '@/components/WorldClock/TravelBridge'
 import MoreCitiesSection from '@/components/WorldClock/MoreCitiesSection'
@@ -176,34 +176,33 @@ export default function CityPageV2({ initialCity }: CityPageV2Props) {
       {/* Main Content */}
       <main className="relative z-10 max-w-6xl mx-auto px-4 py-4">
         
-        {/* 1. HERO SECTION */}
+        {/* 1. HERO SECTION - Clean & Minimal */}
         <HeroSection
           city={selectedCity}
-          time={time}
           localTime={localTime}
           clockMode={clockMode}
-          use12Hour={use12Hour}
-          autoTheme={autoTheme}
           offset={offset}
-          weather={weather}
-          detectedCity={detectedCity}
           isFavorite={isFavorite(selectedCity.slug)}
           onToggleFavorite={() => toggleFavorite(selectedCity.slug)}
           onClockModeToggle={() => setClockMode(clockMode === 'digital' ? 'analog' : 'digital')}
           lang={lang}
         />
         
-        {/* 2. CONVERTER WIDGET */}
-        <div className="mt-4">
-          <TimeConverter currentCitySlug={selectedCity.slug} />
-        </div>
+        {/* 1b. INFO ROW - Weather, Sunrise/Sunset, User Location */}
+        <InfoRow 
+          city={selectedCity}
+          weather={weather}
+          detectedCity={detectedCity}
+          autoTheme={autoTheme}
+        />
         
-        {/* 3. QUICK INFO CARDS */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
-          <QuickInfoCards city={selectedCity} />
-        </div>
+        {/* 2. QUICK INFO (Compact Pills) */}
+        <CompactInfoCards city={selectedCity} />
         
-        {/* 4. CITY GUIDE CARD (Premium cities only) */}
+        {/* 3. CONVERTER WIDGET - Primary Action Area */}
+        <ConverterSection currentCitySlug={selectedCity.slug} />
+        
+        {/* 4. CITY GUIDE BANNER (Premium cities only) */}
         <div className="mt-4">
           <CityGuideCard citySlug={selectedCity.slug} />
         </div>
@@ -211,14 +210,12 @@ export default function CityPageV2({ initialCity }: CityPageV2Props) {
         {/* 5. TRAVEL BRIDGE BANNER */}
         <TravelBridge city={selectedCity} />
         
-        {/* 6. GUIDE PREVIEW (Tab Preview) - Only if city has info */}
+        {/* 6. GUIDE PREVIEW (6 Tab Preview) - Only if city has info */}
         {selectedCity.info && (
-          <div className="mt-4">
-            <GuidePreview city={selectedCity} />
-          </div>
+          <GuidePreview city={selectedCity} />
         )}
         
-        {/* 7 & 8. TIME ZONE FACTS + BUSINESS HOURS (2 columns on desktop) */}
+        {/* 7 & 8. TIME ZONE FACTS + BUSINESS HOURS (2 columns) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
           <TimeZoneFacts city={selectedCity} />
           <BusinessHoursBox city={selectedCity} />
@@ -231,12 +228,12 @@ export default function CityPageV2({ initialCity }: CityPageV2Props) {
         
         {/* Favorite Cities Section */}
         {favoriteCities.length > 0 && (
-          <div className={`rounded-3xl p-6 backdrop-blur-xl border ${theme.card} mt-4`}>
-            <h3 className={`text-xl font-semibold ${theme.text} mb-4`}>
-              ⭐ Your Favorite Cities
+          <div className={`rounded-2xl p-4 backdrop-blur-xl border ${theme.card} mt-4`}>
+            <h3 className={`text-base font-semibold ${theme.text} mb-3`}>
+              ⭐ Your Favorites
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {favoriteCities.map(city => (
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {favoriteCities.slice(0, 6).map(city => (
                 <FavoriteCard
                   key={city.slug}
                   city={city}
@@ -255,7 +252,7 @@ export default function CityPageV2({ initialCity }: CityPageV2Props) {
         {/* 10. MORE CITIES (Same Country/Region) */}
         <MoreCitiesSection selectedCity={selectedCity} />
         
-        {/* 11. WORLD CITIES (Exit Control) */}
+        {/* 11. WORLD CITIES (Exit Control) - Limited by default */}
         <WorldCitiesGrid
           selectedCity={selectedCity}
           onCitySelect={(city) => {
@@ -269,8 +266,7 @@ export default function CityPageV2({ initialCity }: CityPageV2Props) {
           t={{} as any}
         />
         
-        {/* 12. EEAT FOOTER */}
-        <EEATFooter city={selectedCity} />
+        {/* Note: EEAT is now integrated into TimeZoneFacts */}
       </main>
       
       {/* Footer */}
@@ -282,14 +278,14 @@ export default function CityPageV2({ initialCity }: CityPageV2Props) {
       <button 
         onClick={() => setShowAlarmModal(true)} 
         title="Set time alert for any city"
-        className={`fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110 ${theme.accentBg} text-white`}
+        className={`fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full shadow-xl flex items-center justify-center transition-all hover:scale-110 ${theme.accentBg} text-white`}
       >
-        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
           <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
         </svg>
         {alarms.filter(a => a.active).length > 0 && (
-          <span className="absolute -top-1 -right-1 w-6 h-6 flex items-center justify-center text-xs font-bold rounded-full bg-red-500 text-white border-2 border-white">
+          <span className="absolute -top-1 -right-1 w-5 h-5 flex items-center justify-center text-xs font-bold rounded-full bg-red-500 text-white border-2 border-white">
             {alarms.filter(a => a.active).length}
           </span>
         )}

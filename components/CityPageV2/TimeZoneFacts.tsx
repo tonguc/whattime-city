@@ -9,18 +9,17 @@ interface TimeZoneFactsProps {
 
 // DST info by timezone
 const dstInfo: Record<string, { hasDST: boolean; period?: string; note?: string }> = {
-  'America/New_York': { hasDST: true, period: 'March – November' },
-  'America/Los_Angeles': { hasDST: true, period: 'March – November' },
-  'America/Chicago': { hasDST: true, period: 'March – November' },
-  'America/Denver': { hasDST: true, period: 'March – November' },
-  'America/Toronto': { hasDST: true, period: 'March – November' },
-  'Europe/London': { hasDST: true, period: 'March – October' },
-  'Europe/Paris': { hasDST: true, period: 'March – October' },
-  'Europe/Berlin': { hasDST: true, period: 'March – October' },
-  'Europe/Amsterdam': { hasDST: true, period: 'March – October' },
-  'Australia/Sydney': { hasDST: true, period: 'October – April' },
-  'Pacific/Auckland': { hasDST: true, period: 'September – April' },
-  // No DST
+  'America/New_York': { hasDST: true, period: 'Mar–Nov' },
+  'America/Los_Angeles': { hasDST: true, period: 'Mar–Nov' },
+  'America/Chicago': { hasDST: true, period: 'Mar–Nov' },
+  'America/Denver': { hasDST: true, period: 'Mar–Nov' },
+  'America/Toronto': { hasDST: true, period: 'Mar–Nov' },
+  'Europe/London': { hasDST: true, period: 'Mar–Oct' },
+  'Europe/Paris': { hasDST: true, period: 'Mar–Oct' },
+  'Europe/Berlin': { hasDST: true, period: 'Mar–Oct' },
+  'Europe/Amsterdam': { hasDST: true, period: 'Mar–Oct' },
+  'Australia/Sydney': { hasDST: true, period: 'Oct–Apr' },
+  'Pacific/Auckland': { hasDST: true, period: 'Sep–Apr' },
   'Asia/Tokyo': { hasDST: false },
   'Asia/Shanghai': { hasDST: false },
   'Asia/Singapore': { hasDST: false },
@@ -29,114 +28,91 @@ const dstInfo: Record<string, { hasDST: boolean; period?: string; note?: string 
   'Asia/Bangkok': { hasDST: false },
   'Asia/Hong_Kong': { hasDST: false },
   'Asia/Seoul': { hasDST: false },
-  'Europe/Istanbul': { hasDST: false, note: 'Permanent +3 since 2016' },
-  'America/Sao_Paulo': { hasDST: false, note: 'Abolished in 2019' },
+  'Europe/Istanbul': { hasDST: false, note: 'UTC+3 permanent' },
+  'America/Sao_Paulo': { hasDST: false, note: 'No DST since 2019' },
 }
 
 // Timezone abbreviations
-const tzAbbreviations: Record<string, { standard: string; dst?: string; offset: string; dstOffset?: string }> = {
-  'America/New_York': { standard: 'EST', dst: 'EDT', offset: 'UTC-5', dstOffset: 'UTC-4' },
-  'America/Los_Angeles': { standard: 'PST', dst: 'PDT', offset: 'UTC-8', dstOffset: 'UTC-7' },
-  'America/Chicago': { standard: 'CST', dst: 'CDT', offset: 'UTC-6', dstOffset: 'UTC-5' },
-  'America/Denver': { standard: 'MST', dst: 'MDT', offset: 'UTC-7', dstOffset: 'UTC-6' },
-  'America/Toronto': { standard: 'EST', dst: 'EDT', offset: 'UTC-5', dstOffset: 'UTC-4' },
-  'Europe/London': { standard: 'GMT', dst: 'BST', offset: 'UTC+0', dstOffset: 'UTC+1' },
-  'Europe/Paris': { standard: 'CET', dst: 'CEST', offset: 'UTC+1', dstOffset: 'UTC+2' },
-  'Europe/Berlin': { standard: 'CET', dst: 'CEST', offset: 'UTC+1', dstOffset: 'UTC+2' },
-  'Europe/Amsterdam': { standard: 'CET', dst: 'CEST', offset: 'UTC+1', dstOffset: 'UTC+2' },
-  'Europe/Istanbul': { standard: 'TRT', offset: 'UTC+3' },
-  'Asia/Tokyo': { standard: 'JST', offset: 'UTC+9' },
-  'Asia/Shanghai': { standard: 'CST', offset: 'UTC+8' },
-  'Asia/Singapore': { standard: 'SGT', offset: 'UTC+8' },
-  'Asia/Dubai': { standard: 'GST', offset: 'UTC+4' },
-  'Asia/Kolkata': { standard: 'IST', offset: 'UTC+5:30' },
-  'Asia/Bangkok': { standard: 'ICT', offset: 'UTC+7' },
-  'Asia/Hong_Kong': { standard: 'HKT', offset: 'UTC+8' },
-  'Asia/Seoul': { standard: 'KST', offset: 'UTC+9' },
-  'Australia/Sydney': { standard: 'AEST', dst: 'AEDT', offset: 'UTC+10', dstOffset: 'UTC+11' },
-  'Pacific/Auckland': { standard: 'NZST', dst: 'NZDT', offset: 'UTC+12', dstOffset: 'UTC+13' },
-  'America/Sao_Paulo': { standard: 'BRT', offset: 'UTC-3' },
+const tzInfo: Record<string, { abbr: string; offset: string }> = {
+  'America/New_York': { abbr: 'EST/EDT', offset: 'UTC-5/-4' },
+  'America/Los_Angeles': { abbr: 'PST/PDT', offset: 'UTC-8/-7' },
+  'America/Chicago': { abbr: 'CST/CDT', offset: 'UTC-6/-5' },
+  'America/Denver': { abbr: 'MST/MDT', offset: 'UTC-7/-6' },
+  'America/Toronto': { abbr: 'EST/EDT', offset: 'UTC-5/-4' },
+  'Europe/London': { abbr: 'GMT/BST', offset: 'UTC+0/+1' },
+  'Europe/Paris': { abbr: 'CET/CEST', offset: 'UTC+1/+2' },
+  'Europe/Berlin': { abbr: 'CET/CEST', offset: 'UTC+1/+2' },
+  'Europe/Amsterdam': { abbr: 'CET/CEST', offset: 'UTC+1/+2' },
+  'Europe/Istanbul': { abbr: 'TRT', offset: 'UTC+3' },
+  'Asia/Tokyo': { abbr: 'JST', offset: 'UTC+9' },
+  'Asia/Shanghai': { abbr: 'CST', offset: 'UTC+8' },
+  'Asia/Singapore': { abbr: 'SGT', offset: 'UTC+8' },
+  'Asia/Dubai': { abbr: 'GST', offset: 'UTC+4' },
+  'Asia/Kolkata': { abbr: 'IST', offset: 'UTC+5:30' },
+  'Asia/Bangkok': { abbr: 'ICT', offset: 'UTC+7' },
+  'Asia/Hong_Kong': { abbr: 'HKT', offset: 'UTC+8' },
+  'Asia/Seoul': { abbr: 'KST', offset: 'UTC+9' },
+  'Australia/Sydney': { abbr: 'AEST/AEDT', offset: 'UTC+10/+11' },
+  'Pacific/Auckland': { abbr: 'NZST/NZDT', offset: 'UTC+12/+13' },
+  'America/Sao_Paulo': { abbr: 'BRT', offset: 'UTC-3' },
 }
 
 export default function TimeZoneFacts({ city }: TimeZoneFactsProps) {
   const { card, text, textMuted, isLight } = useThemeClasses()
   
-  const tzInfo = tzAbbreviations[city.timezone]
-  const dst = dstInfo[city.timezone]
+  const tz = tzInfo[city.timezone] || { abbr: city.timezone.split('/').pop(), offset: 'UTC' }
+  const dst = dstInfo[city.timezone] || { hasDST: false }
   
-  // Fallback for unknown timezones
-  const tzName = tzInfo?.standard || city.timezone.split('/').pop()?.replace('_', ' ')
-  const offset = tzInfo?.offset || 'UTC'
-  
+  const facts = [
+    { icon: '🕐', label: 'Zone', value: tz.abbr },
+    { icon: '🌐', label: 'Offset', value: tz.offset },
+    { 
+      icon: '🔄', 
+      label: 'DST', 
+      value: dst.hasDST ? `Yes (${dst.period})` : (dst.note || 'No'),
+      highlight: dst.hasDST
+    },
+  ]
+
   return (
-    <section className={`rounded-2xl p-5 border ${card}`}>
-      <h2 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${text}`}>
-        🕐 Time Zone Facts
+    <section className={`rounded-2xl p-4 border ${card}`}>
+      <h2 className={`text-base font-semibold mb-3 flex items-center gap-2 ${text}`}>
+        ⏰ Time Zone Facts
       </h2>
       
-      <ul className={`space-y-3 ${textMuted}`}>
-        {/* Timezone Name */}
-        <li className="flex items-start gap-3">
-          <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
-            isLight ? 'bg-blue-100 text-blue-600' : 'bg-blue-900/50 text-blue-400'
-          }`}>1</span>
-          <div>
-            <span className={`font-medium ${text}`}>Time Zone:</span>{' '}
-            {tzInfo?.dst ? (
-              <span>{tzInfo.standard} / {tzInfo.dst}</span>
-            ) : (
-              <span>{tzName}</span>
-            )}
+      {/* Compact fact rows */}
+      <div className="space-y-2">
+        {facts.map((fact, i) => (
+          <div key={i} className={`flex items-center gap-3 text-sm ${textMuted}`}>
+            <span className="w-5 text-center">{fact.icon}</span>
+            <span className={`w-12 ${isLight ? 'text-slate-500' : 'text-slate-500'}`}>{fact.label}</span>
+            <span className={`font-medium ${fact.highlight ? 'text-green-600' : text}`}>
+              {fact.value}
+            </span>
           </div>
-        </li>
+        ))}
         
-        {/* UTC Offset */}
-        <li className="flex items-start gap-3">
-          <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
-            isLight ? 'bg-green-100 text-green-600' : 'bg-green-900/50 text-green-400'
-          }`}>2</span>
-          <div>
-            <span className={`font-medium ${text}`}>UTC Offset:</span>{' '}
-            {tzInfo?.dstOffset ? (
-              <span>{offset} (standard) / {tzInfo.dstOffset} (daylight)</span>
-            ) : (
-              <span>{offset}</span>
-            )}
-          </div>
-        </li>
-        
-        {/* DST Info */}
-        <li className="flex items-start gap-3">
-          <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
-            isLight ? 'bg-amber-100 text-amber-600' : 'bg-amber-900/50 text-amber-400'
-          }`}>3</span>
-          <div>
-            <span className={`font-medium ${text}`}>Daylight Saving:</span>{' '}
-            {dst?.hasDST ? (
-              <span className="text-green-600 dark:text-green-400">
-                Yes ({dst.period})
-              </span>
-            ) : (
-              <span className="text-slate-500">
-                No {dst?.note ? `– ${dst.note}` : ''}
-              </span>
-            )}
-          </div>
-        </li>
-        
-        {/* IANA Timezone */}
-        <li className="flex items-start gap-3">
-          <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
-            isLight ? 'bg-purple-100 text-purple-600' : 'bg-purple-900/50 text-purple-400'
-          }`}>4</span>
-          <div>
-            <span className={`font-medium ${text}`}>IANA Zone:</span>{' '}
-            <code className={`text-sm px-1.5 py-0.5 rounded ${
-              isLight ? 'bg-slate-100' : 'bg-slate-800'
-            }`}>{city.timezone}</code>
-          </div>
-        </li>
-      </ul>
+        {/* IANA Zone - with tooltip hint */}
+        <div className={`flex items-center gap-3 text-sm ${textMuted}`}>
+          <span className="w-5 text-center">📋</span>
+          <span className={`w-12 ${isLight ? 'text-slate-500' : 'text-slate-500'}`}>IANA</span>
+          <code className={`text-xs px-1.5 py-0.5 rounded font-mono ${
+            isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-800 text-slate-400'
+          }`} title="IANA Time Zone Database identifier">
+            {city.timezone}
+          </code>
+        </div>
+      </div>
+      
+      {/* EEAT - Data Source (moved here from footer) */}
+      <p className={`mt-3 pt-3 border-t text-xs flex items-center gap-1.5 ${
+        isLight ? 'border-slate-200 text-slate-400' : 'border-slate-700 text-slate-500'
+      }`}>
+        <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <span>Data: <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener" className="underline hover:no-underline">IANA Time Zone Database</a></span>
+      </p>
     </section>
   )
 }

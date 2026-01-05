@@ -216,11 +216,18 @@ export default function BusinessHoursBox({ city }: BusinessHoursBoxProps) {
       
       {/* Note */}
       {hours.note && (
-        <p className={`mt-4 text-sm ${isLight ? 'text-emerald-700' : 'text-emerald-300'} flex items-center gap-2`}>
+        <p className={`mt-3 text-sm ${isLight ? 'text-emerald-700' : 'text-emerald-300'} flex items-center gap-2`}>
           <span>💡</span>
           <span>{hours.note}</span>
         </p>
       )}
+      
+      {/* Source Disclaimer */}
+      <p className={`mt-3 pt-3 border-t text-xs ${
+        isLight ? 'border-emerald-200 text-emerald-600/70' : 'border-emerald-800 text-emerald-400/70'
+      }`}>
+        Hours are general references based on official business standards. Actual hours may vary.
+      </p>
     </section>
   )
 }

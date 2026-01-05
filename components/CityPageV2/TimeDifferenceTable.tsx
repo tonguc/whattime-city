@@ -114,11 +114,13 @@ export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) 
                     isLight ? 'border-slate-100 hover:bg-slate-50' : 'border-slate-800 hover:bg-slate-800/50'
                   } transition-colors`}
                 >
-                  {/* City Name - Internal Link */}
+                  {/* City Name - Internal Link - MORE VISIBLE */}
                   <td className="py-3 px-3">
                     <a 
                       href={`/${targetCity.slug}`}
-                      className={`font-medium ${accentText} hover:underline`}
+                      className={`font-medium hover:underline ${
+                        isLight ? 'text-blue-600 hover:text-blue-800' : 'text-blue-400 hover:text-blue-300'
+                      }`}
                     >
                       {targetCity.city}
                     </a>
