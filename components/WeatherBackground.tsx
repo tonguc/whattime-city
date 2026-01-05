@@ -32,7 +32,7 @@ export default function WeatherBackground({ animation, isDay }: WeatherBackgroun
       {animation === 'drizzle' && <DrizzleAnimation />}
       {animation === 'snow' && <SnowAnimation />}
       {animation === 'thunder' && <ThunderAnimation />}
-      {animation === 'clouds' && <CloudyAnimation isDay={isDay} />}
+      {animation === 'clouds' && <StaticClouds isDay={isDay} />}
       {animation === 'fog' && <FogAnimation />}
     </div>
   )
@@ -281,6 +281,34 @@ function NightAnimation() {
             animation: `shootingStar 1.5s linear infinite`,
             animationDelay: `${star.delay}s`,
             boxShadow: '0 0 8px 3px rgba(255,255,255,0.8), -20px 0 20px rgba(255,255,255,0.5), -40px 0 15px rgba(255,255,255,0.3)',
+          }}
+        />
+      ))}
+    </>
+  )
+}
+
+function StaticClouds({ isDay }: { isDay: boolean }) {
+  // Fixed positions for small decorative clouds
+  const clouds = [
+    { left: 5, top: 8, scale: 0.6 },
+    { left: 25, top: 15, scale: 0.5 },
+    { left: 55, top: 6, scale: 0.7 },
+    { left: 75, top: 12, scale: 0.5 },
+    { left: 90, top: 18, scale: 0.4 },
+  ]
+  
+  return (
+    <>
+      {clouds.map((cloud, i) => (
+        <div
+          key={i}
+          className={`absolute rounded-full ${isDay ? 'bg-white/25' : 'bg-slate-400/15'} blur-lg`}
+          style={{
+            left: `${cloud.left}%`,
+            top: `${cloud.top}%`,
+            width: `${80 * cloud.scale}px`,
+            height: `${40 * cloud.scale}px`,
           }}
         />
       ))}
