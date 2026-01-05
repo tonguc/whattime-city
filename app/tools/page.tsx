@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { translations, detectLanguage, Language } from '@/lib/translations'
 import { useThemeClasses } from '@/lib/useThemeClasses'
-import Footer from '@/components/Footer'
 
 // Tool definitions - Normalized names (2 words, English only) - ROOT LEVEL URLs for SEO
 const tools = [
@@ -164,9 +163,6 @@ export default function ToolsPage() {
             </Link>
           ))}
         </div>
-
-        {/* Footer - Full Width */}
-        <Footer />
     </>
   )
 }
