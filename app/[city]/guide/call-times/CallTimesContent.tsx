@@ -102,7 +102,7 @@ export default function CallTimesContent({ city }: Props) {
         
         <p className={`mt-3 text-sm ${mutedColor}`}>
           All times are YOUR local time. Need exact conversion? Use our{' '}
-          <Link href="/time-converter/" className={linkColor}>Time Converter</Link>.
+          <Link href="/time/" className={linkColor}>Time Converter</Link>.
         </p>
       </section>
       

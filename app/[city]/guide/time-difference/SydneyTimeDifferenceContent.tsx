@@ -71,7 +71,7 @@ export default function SydneyTimeDifferenceContent({ city }: Props) {
       }`}>
         <h2 className={`text-xl font-semibold mb-4 ${headingColor}`}>🛠️ Tools</h2>
         <div className="grid sm:grid-cols-2 gap-3">
-          <Link href="/time-converter/" className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white' : 'bg-slate-800'}`}>
+          <Link href="/time/" className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white' : 'bg-slate-800'}`}>
             <span>🔄</span>
             <span className={`font-medium ${headingColor}`}>Time Converter</span>
           </Link>
