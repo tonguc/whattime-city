@@ -28,7 +28,6 @@ import GuidePreview from './GuidePreview'
 import CompactWorldCities from './CompactWorldCities'
 
 // Existing WorldClock components (reused)
-import CityGuideCard from '@/components/WorldClock/CityGuideCard'
 import TravelBridge from '@/components/WorldClock/TravelBridge'
 import MoreCitiesSection from '@/components/WorldClock/MoreCitiesSection'
 import FavoriteCard from '@/components/WorldClock/FavoriteCard'
@@ -253,9 +252,8 @@ export default function CityPageV2({ initialCity }: CityPageV2Props) {
           {/* DIVIDER */}
           <div className={`mx-4 md:mx-6 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`} />
           
-          {/* SECTION 3: GUIDE BANNERS */}
-          <div className="p-4 md:p-6 space-y-3">
-            <CityGuideCard citySlug={selectedCity.slug} />
+          {/* SECTION 3: TRAVEL BRIDGE - Tek CTA Banner */}
+          <div className="p-4 md:p-6">
             <TravelBridge city={selectedCity} />
           </div>
         </div>
@@ -265,7 +263,7 @@ export default function CityPageV2({ initialCity }: CityPageV2Props) {
             Guide Preview + Time Zone Facts + Business Hours + Time Diff
             ═══════════════════════════════════════════════════════════════ */}
         
-        {/* Guide Preview - Only for cities with full info */}
+        {/* Guide Preview - Premium içerik kartı, SEO için güçlü */}
         {selectedCity.info && (
           <GuidePreview city={selectedCity} />
         )}
