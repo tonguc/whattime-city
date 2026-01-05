@@ -13,6 +13,12 @@ import SingaporeOverviewContent from './content/singapore-overview'
 import ParisOverviewContent from './content/paris-overview'
 import SydneyGuideContent from './content/sydney-overview'
 import IstanbulOverviewContent from './content/istanbul-overview'
+import HongKongOverviewContent from './content/hong-kong-overview'
+import TorontoOverviewContent from './content/toronto-overview'
+import ShanghaiOverviewContent from './content/shanghai-overview'
+import SeoulOverviewContent from './content/seoul-overview'
+import BerlinOverviewContent from './content/berlin-overview'
+import AmsterdamOverviewContent from './content/amsterdam-overview'
 import GenericGuideContent from './content/generic-overview'
 
 interface Props {
@@ -56,6 +62,24 @@ export default function GuideContent({ city, config }: Props) {
     
     case 'istanbul':
       return <IstanbulOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    case 'hong-kong':
+      return <HongKongOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    case 'toronto':
+      return <TorontoOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    case 'shanghai':
+      return <ShanghaiOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    case 'seoul':
+      return <SeoulOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    case 'berlin':
+      return <BerlinOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    case 'amsterdam':
+      return <AmsterdamOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
     
     // Should not reach here - 404 handled by page.tsx
     default:

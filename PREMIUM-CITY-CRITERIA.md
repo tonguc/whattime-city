@@ -1,7 +1,7 @@
 # 🏆 Premium Şehir İçerik Kriterleri
 
-## Mevcut Premium Şehirler (8)
-- London, New York, Tokyo, Dubai, Singapore, Paris, Sydney, Istanbul
+## Mevcut Premium Şehirler (15)
+- London, New York, Tokyo, Dubai, Singapore, Paris, Sydney, Istanbul, Los Angeles, Hong Kong, Toronto, Shanghai, Seoul, Berlin, **Amsterdam**
 
 ---
 

@@ -1,6 +1,9 @@
 // Guide content configuration for each city
 // Structure mirrors NYC as the gold standard
 
+// Region types for smart city recommendations (5 regions + hybrid approach)
+export type CityRegion = 'AMERICAS' | 'EUROPE' | 'MENA' | 'ASIA' | 'OCEANIA'
+
 export interface GuideConfig {
   citySlug: string
   cityName: string
@@ -10,6 +13,8 @@ export interface GuideConfig {
   utcOffset: number // hours from UTC (e.g., NYC = -5, London = 0)
   icon: string
   tagline: string
+  region: CityRegion // For smart city recommendations
+  coordinates: { lat: number; lng: number } // For technical Quick Facts
   
   // SEO
   seo: {
@@ -64,6 +69,8 @@ export const newYorkGuide: GuideConfig = {
   utcOffset: -5,
   icon: '🗽',
   tagline: 'Everything you need to know about time in the city that never sleeps',
+  region: 'AMERICAS',
+  coordinates: { lat: 40.7128, lng: -74.0060 },
   
   seo: {
     title: 'New York Time Zone Guide | EST/EDT, Business Hours & More',
@@ -155,8 +162,10 @@ export const londonGuide: GuideConfig = {
   timezoneAbbr: 'GMT/BST',
   timezoneName: 'Greenwich Mean Time',
   utcOffset: 0,
-  icon: '🇬🇧',
+  icon: '🎡',
   tagline: 'Your complete guide to time in the capital of the United Kingdom',
+  region: 'EUROPE',
+  coordinates: { lat: 51.5074, lng: -0.1278 },
   
   seo: {
     title: 'London Time Zone Guide | GMT/BST, Business Hours & More',
@@ -248,8 +257,10 @@ export const tokyoGuide: GuideConfig = {
   timezoneAbbr: 'JST',
   timezoneName: 'Japan Standard Time',
   utcOffset: 9,
-  icon: '🇯🇵',
+  icon: '🍣',
   tagline: 'Your complete guide to time in Japan\'s bustling capital',
+  region: 'ASIA',
+  coordinates: { lat: 35.6762, lng: 139.6503 },
   
   seo: {
     title: 'Tokyo Time Zone Guide | JST, Business Hours & More',
@@ -341,8 +352,10 @@ export const dubaiGuide: GuideConfig = {
   timezoneAbbr: 'GST',
   timezoneName: 'Gulf Standard Time',
   utcOffset: 4,
-  icon: '🇦🇪',
+  icon: '🏙️',
   tagline: 'Your complete guide to time in the UAE\'s global hub',
+  region: 'MENA',
+  coordinates: { lat: 25.2048, lng: 55.2708 },
   
   seo: {
     title: 'Dubai Time Zone Guide | GST, Business Hours & More',
@@ -434,8 +447,10 @@ export const singaporeGuide: GuideConfig = {
   timezoneAbbr: 'SGT',
   timezoneName: 'Singapore Standard Time',
   utcOffset: 8,
-  icon: '🇸🇬',
+  icon: '🦁',
   tagline: 'Your complete guide to time in Asia\'s premier financial hub',
+  region: 'ASIA',
+  coordinates: { lat: 1.3521, lng: 103.8198 },
   
   seo: {
     title: 'Singapore Time Zone Guide | SGT, Business Hours & More',
@@ -527,8 +542,10 @@ export const parisGuide: GuideConfig = {
   timezoneAbbr: 'CET/CEST',
   timezoneName: 'Central European Time',
   utcOffset: 1,
-  icon: '🇫🇷',
+  icon: '🗼',
   tagline: 'Your complete guide to time in the City of Light',
+  region: 'EUROPE',
+  coordinates: { lat: 48.8566, lng: 2.3522 },
   
   seo: {
     title: 'Paris Time Zone Guide | CET/CEST, Business Hours & More',
@@ -622,6 +639,8 @@ export const sydneyGuide: GuideConfig = {
   utcOffset: 10,
   icon: '🦘',
   tagline: 'Your complete guide to time in Australia\'s harbour city',
+  region: 'OCEANIA',
+  coordinates: { lat: -33.8688, lng: 151.2093 },
   
   seo: {
     title: 'Sydney Time Zone Guide | AEST/AEDT, Business Hours & More',
@@ -715,6 +734,8 @@ export const istanbulGuide: GuideConfig = {
   utcOffset: 3,
   icon: '🕌',
   tagline: 'Your complete guide to time in the city where East meets West',
+  region: 'MENA',
+  coordinates: { lat: 41.0082, lng: 28.9784 },
   
   seo: {
     title: 'Istanbul Time Zone Guide | TRT, Business Hours & More',
@@ -808,6 +829,8 @@ export const losAngelesGuide: GuideConfig = {
   utcOffset: -8,
   icon: '🌴',
   tagline: 'Your complete guide to time in the City of Angels',
+  region: 'AMERICAS',
+  coordinates: { lat: 34.0522, lng: -118.2437 },
   
   seo: {
     title: 'Los Angeles Time Zone Guide | PST/PDT, Business Hours & More',
@@ -890,6 +913,576 @@ export const losAngelesGuide: GuideConfig = {
 }
 
 // ===================
+// HONG KONG
+// ===================
+export const hongKongGuide: GuideConfig = {
+  citySlug: 'hong-kong',
+  cityName: 'Hong Kong',
+  timezone: 'Asia/Hong_Kong',
+  timezoneAbbr: 'HKT',
+  timezoneName: 'Hong Kong Time',
+  utcOffset: 8,
+  icon: '🌃',
+  tagline: 'Your complete guide to time in Asia\'s World City',
+  region: 'ASIA',
+  coordinates: { lat: 22.3193, lng: 114.1694 },
+  
+  seo: {
+    title: 'Hong Kong Time Zone Guide | HKT, Business Hours & More',
+    description: 'Complete Hong Kong time zone guide. Business hours, HKEX stock market times, best time to call HK, remote work overlap, public holidays, and local tips.',
+    keywords: ['hong kong time zone', 'hong kong time now', 'hkt time', 'hong kong business hours', 'hkex trading hours', 'best time to call hong kong', 'hong kong time difference'],
+    ogTitle: 'Hong Kong Time Zone Guide | Complete HK Time Resource',
+    ogDescription: 'Everything about Hong Kong time: business hours, stock market, holidays, remote work tips. The definitive guide.',
+  },
+  
+  pages: {
+    overview: {
+      title: 'Hong Kong Time Zone Guide | HKT, Business Hours & More',
+      description: 'Complete Hong Kong time zone guide. Business hours, HKEX trading times, best time to call HK, remote work overlap, public holidays, and local tips.',
+      keywords: ['hong kong time zone', 'hong kong time', 'hkt', 'hong kong standard time'],
+    },
+    businessHours: {
+      title: 'Hong Kong Business Hours | Banks, Shops, Restaurants & Markets',
+      description: 'What time do businesses open in Hong Kong? Complete guide to HK store hours, bank schedules, dim sum times, and night market hours.',
+      keywords: ['hong kong business hours', 'hk shop hours', 'what time do banks open hong kong', 'hong kong restaurant hours', 'central business hours'],
+    },
+    bestTimeToVisit: {
+      title: 'Best Time to Visit Hong Kong | Weather, Events & Prices by Month',
+      description: 'When to visit Hong Kong? Month-by-month guide with weather, festival dates, Chinese New Year, Rugby Sevens, and tourist tips.',
+      keywords: ['best time to visit hong kong', 'hong kong weather by month', 'hong kong chinese new year', 'hong kong tourist season'],
+    },
+    remoteWork: {
+      title: 'Working with Hong Kong Teams Remotely | Time Zone Overlap Guide',
+      description: 'Remote work guide for Hong Kong collaboration. Find overlap hours with NYC, London, Sydney. Best meeting times and HK work culture.',
+      keywords: ['remote work hong kong time zone', 'working with hong kong team', 'hkt time zone overlap', 'best meeting time hong kong'],
+    },
+    twentyFourHours: {
+      title: 'Hong Kong 24 Hour Guide | What\'s Open & When in the City',
+      description: 'Hong Kong hour-by-hour: morning dim sum, lunch crowds, after-work drinks in Lan Kwai Fong, and 24-hour dai pai dongs.',
+      keywords: ['24 hours in hong kong', 'hong kong nightlife hours', 'late night food hong kong', 'lan kwai fong hours'],
+    },
+    callTimes: {
+      title: 'Best Time to Call Hong Kong | From USA, UK, Australia & More',
+      description: 'When to call Hong Kong? Best calling times from New York, London, Sydney. Business hours overlap and optimal windows.',
+      keywords: ['best time to call hong kong', 'call hong kong from usa', 'call hong kong from uk time'],
+    },
+    stockMarket: {
+      title: 'HKEX Trading Hours | Hong Kong Stock Exchange Times',
+      description: 'HKEX opens 9:30 AM HKT. Complete Hong Kong Stock Exchange schedule with pre-market, trading sessions, lunch break, and market holidays.',
+      keywords: ['hkex trading hours', 'hong kong stock exchange times', 'hong kong market hours', 'hkex lunch break'],
+    },
+    holidays: {
+      title: 'Hong Kong Public Holidays | CNY, Buddha\'s Birthday & What\'s Closed',
+      description: 'Hong Kong public holidays calendar. Chinese New Year, Mid-Autumn Festival, Buddha\'s Birthday - what\'s closed and what to expect.',
+      keywords: ['hong kong public holidays', 'chinese new year hong kong', 'hong kong bank holidays', 'mid-autumn festival hong kong'],
+    },
+    digitalNomad: {
+      title: 'Digital Nomad Hong Kong Guide | Coworking, WiFi & Cost of Living',
+      description: 'Work remotely from Hong Kong. Best coworking spaces, laptop-friendly cafes, fast WiFi everywhere, cost of living breakdown, and visa options.',
+      keywords: ['digital nomad hong kong', 'coworking hong kong', 'hong kong cost of living', 'hong kong work visa'],
+    },
+    timeDifference: {
+      title: 'Hong Kong Time Difference Calculator | HKT vs World Cities',
+      description: 'Hong Kong time difference to New York (+13h), London (+8h), Sydney (-3h) and 50+ cities. HKT explained. Live converter included.',
+      keywords: ['hong kong time difference', 'hong kong vs new york time', 'hkt vs est hours', 'hong kong london time difference'],
+    },
+    travelPlanning: {
+      title: 'Hong Kong Travel Guide | Flight Times, HKG Airport & Getting Around',
+      description: 'Flying to Hong Kong? Flight times from NYC (16h), London (12h), Sydney (9h). HKG Airport tips, MTR guide, and getting around.',
+      keywords: ['flight time to hong kong', 'hong kong airport guide', 'hong kong mtr', 'hkg to central'],
+    },
+  },
+  
+  clusters: [
+    { slug: 'business-hours', icon: '💼', title: 'Business Hours', desc: 'Banks, shops, malls, and markets' },
+    { slug: 'best-time-to-visit', icon: '🌸', title: 'Best Time to Visit', desc: 'Weather, festivals, and avoiding humidity' },
+    { slug: 'remote-work', icon: '💻', title: 'Remote Work Guide', desc: 'Working with HK teams across time zones' },
+    { slug: '24-hours', icon: '🌆', title: '24 Hours in Hong Kong', desc: 'The city\'s rhythm from dim sum to nightlife' },
+    { slug: 'call-times', icon: '📞', title: 'Best Time to Call', desc: 'Optimal calling times from major cities' },
+    { slug: 'stock-market', icon: '📈', title: 'Stock Market Hours', desc: 'HKEX trading times for global investors' },
+    { slug: 'holidays', icon: '📅', title: 'Public Holidays', desc: 'CNY, Mid-Autumn, and what to expect' },
+    { slug: 'digital-nomad', icon: '🎒', title: 'Digital Nomad Guide', desc: 'Coworking, WiFi, and cost of living' },
+    { slug: 'time-difference', icon: '🌐', title: 'Time Difference', desc: 'HK time compared to NYC, London, Sydney' },
+    { slug: 'travel-planning', icon: '✈️', title: 'Travel Planning', desc: 'Flight times, HKG tips, and getting around' },
+  ],
+}
+
+// ===================
+// TORONTO
+// ===================
+export const torontoGuide: GuideConfig = {
+  citySlug: 'toronto',
+  cityName: 'Toronto',
+  timezone: 'America/Toronto',
+  timezoneAbbr: 'EST/EDT',
+  timezoneName: 'Eastern Time',
+  utcOffset: -5,
+  icon: '🍁',
+  tagline: 'Your complete guide to time in Canada\'s largest city',
+  region: 'AMERICAS',
+  coordinates: { lat: 43.6532, lng: -79.3832 },
+  
+  seo: {
+    title: 'Toronto Time Zone Guide | EST/EDT, Business Hours & More',
+    description: 'Complete Toronto time zone guide. Business hours, TSX stock market times, best time to call Toronto, remote work overlap, Canadian holidays, and local tips.',
+    keywords: ['toronto time zone', 'toronto time now', 'est edt canada', 'toronto business hours', 'tsx trading hours', 'best time to call toronto', 'toronto time difference'],
+    ogTitle: 'Toronto Time Zone Guide | Complete Canada Time Resource',
+    ogDescription: 'Everything about Toronto time: business hours, stock market, holidays, remote work tips. The definitive guide.',
+  },
+  
+  pages: {
+    overview: {
+      title: 'Toronto Time Zone Guide | EST/EDT, Business Hours & More',
+      description: 'Complete Toronto time zone guide. Business hours, TSX trading times, best time to call Toronto, remote work overlap, Canadian holidays, and local tips.',
+      keywords: ['toronto time zone', 'toronto time', 'est edt canada', 'eastern time toronto'],
+    },
+    businessHours: {
+      title: 'Toronto Business Hours | Banks, Shops, Restaurants & Government',
+      description: 'What time do businesses open in Toronto? Complete guide to Canadian store hours, bank schedules, LCBO times, and government office hours.',
+      keywords: ['toronto business hours', 'canada shop hours', 'what time do banks open toronto', 'lcbo hours', 'toronto restaurant hours'],
+    },
+    bestTimeToVisit: {
+      title: 'Best Time to Visit Toronto | Weather, Events & Prices by Month',
+      description: 'When to visit Toronto? Month-by-month guide with weather, TIFF dates, Caribana, hockey season, and tourist tips. Avoid the brutal winter!',
+      keywords: ['best time to visit toronto', 'toronto weather by month', 'tiff toronto', 'toronto tourist season'],
+    },
+    remoteWork: {
+      title: 'Working with Toronto Teams Remotely | Time Zone Overlap Guide',
+      description: 'Remote work guide for Toronto collaboration. Find overlap hours with London, Sydney, Singapore. Best meeting times and Canadian work culture.',
+      keywords: ['remote work toronto time zone', 'working with toronto team', 'est time zone overlap', 'best meeting time toronto'],
+    },
+    twentyFourHours: {
+      title: 'Toronto 24 Hour Guide | What\'s Open & When in the Six',
+      description: 'Toronto hour-by-hour: morning Tim Hortons runs, Bay Street lunch, after-work drinks on King West, and late-night poutine spots.',
+      keywords: ['24 hours in toronto', 'toronto nightlife hours', 'late night food toronto', 'king west hours'],
+    },
+    callTimes: {
+      title: 'Best Time to Call Toronto | From UK, India, Australia & More',
+      description: 'When to call Toronto? Best calling times from London, Mumbai, Sydney. Business hours overlap and optimal windows.',
+      keywords: ['best time to call toronto', 'call toronto from uk', 'call canada from india time'],
+    },
+    stockMarket: {
+      title: 'TSX Trading Hours | Toronto Stock Exchange Times for Global Investors',
+      description: 'TSX opens 9:30 AM ET. Complete Toronto Stock Exchange schedule with pre-market, regular hours, and market holidays.',
+      keywords: ['tsx trading hours', 'toronto stock exchange times', 'tsx market hours', 'tsx pre market'],
+    },
+    holidays: {
+      title: 'Canadian Holidays in Toronto | Statutory Holidays & What\'s Closed',
+      description: 'Toronto statutory holidays calendar. Canada Day, Thanksgiving, Victoria Day - what\'s closed and what to expect in Ontario.',
+      keywords: ['toronto holidays', 'canadian statutory holidays', 'ontario holidays', 'canada day toronto'],
+    },
+    digitalNomad: {
+      title: 'Digital Nomad Toronto Guide | Coworking, WiFi & Cost of Living',
+      description: 'Work remotely from Toronto. Best coworking spaces, laptop-friendly cafes, fast WiFi, cost of living breakdown, and work permit options.',
+      keywords: ['digital nomad toronto', 'coworking toronto', 'toronto cost of living', 'canada work permit'],
+    },
+    timeDifference: {
+      title: 'Toronto Time Difference Calculator | EST/EDT vs World Cities',
+      description: 'Toronto time difference to London (+5h), Tokyo (+14h), Sydney (+16h) and 50+ cities. EST vs GMT explained. Live converter included.',
+      keywords: ['toronto time difference', 'toronto vs london time', 'est vs gmt hours', 'toronto uk time difference'],
+    },
+    travelPlanning: {
+      title: 'Toronto Travel Guide | Flight Times, Pearson Airport & Getting Around',
+      description: 'Flying to Toronto? Flight times from London (8h), NYC (1.5h), LA (5h). YYZ Pearson tips, UP Express, and getting downtown.',
+      keywords: ['flight time to toronto', 'pearson airport guide', 'yyz to downtown', 'up express toronto'],
+    },
+  },
+  
+  clusters: [
+    { slug: 'business-hours', icon: '💼', title: 'Business Hours', desc: 'Banks, shops, LCBO, and government hours' },
+    { slug: 'best-time-to-visit', icon: '🍁', title: 'Best Time to Visit', desc: 'Weather, TIFF, festivals, and avoiding winter' },
+    { slug: 'remote-work', icon: '💻', title: 'Remote Work Guide', desc: 'Working with Toronto teams across time zones' },
+    { slug: '24-hours', icon: '🌆', title: '24 Hours in Toronto', desc: 'The city\'s rhythm from dawn to late night' },
+    { slug: 'call-times', icon: '📞', title: 'Best Time to Call', desc: 'Optimal calling times from major cities' },
+    { slug: 'stock-market', icon: '📈', title: 'Stock Market Hours', desc: 'TSX trading times for global investors' },
+    { slug: 'holidays', icon: '📅', title: 'Canadian Holidays', desc: 'Statutory holidays and what\'s closed' },
+    { slug: 'digital-nomad', icon: '🎒', title: 'Digital Nomad Guide', desc: 'Coworking, WiFi, and cost of living' },
+    { slug: 'time-difference', icon: '🌐', title: 'Time Difference', desc: 'Toronto time compared to London, Tokyo, Sydney' },
+    { slug: 'travel-planning', icon: '✈️', title: 'Travel Planning', desc: 'Flight times, Pearson tips, and getting around' },
+  ],
+}
+
+// ===================
+// SHANGHAI
+// ===================
+export const shanghaiGuide: GuideConfig = {
+  citySlug: 'shanghai',
+  cityName: 'Shanghai',
+  timezone: 'Asia/Shanghai',
+  timezoneAbbr: 'CST',
+  timezoneName: 'China Standard Time',
+  utcOffset: 8,
+  icon: '🏙️',
+  tagline: 'Your complete guide to time in China\'s financial powerhouse',
+  region: 'ASIA',
+  coordinates: { lat: 31.2304, lng: 121.4737 },
+  
+  seo: {
+    title: 'Shanghai Time Zone Guide | CST, Business Hours & More',
+    description: 'Complete Shanghai time zone guide. Business hours, SSE stock market times, best time to call Shanghai, remote work overlap, Chinese holidays, and local tips.',
+    keywords: ['shanghai time zone', 'shanghai time now', 'china standard time', 'shanghai business hours', 'sse trading hours', 'best time to call shanghai', 'shanghai time difference'],
+    ogTitle: 'Shanghai Time Zone Guide | Complete China Time Resource',
+    ogDescription: 'Everything about Shanghai time: business hours, stock market, holidays, remote work tips. The definitive guide.',
+  },
+  
+  pages: {
+    overview: {
+      title: 'Shanghai Time Zone Guide | CST, Business Hours & More',
+      description: 'Complete Shanghai time zone guide. Business hours, SSE trading times, best time to call Shanghai, remote work overlap, Chinese holidays, and local tips.',
+      keywords: ['shanghai time zone', 'shanghai time', 'china standard time', 'cst china'],
+    },
+    businessHours: {
+      title: 'Shanghai Business Hours | Banks, Shops, Malls & Government',
+      description: 'What time do businesses open in Shanghai? Complete guide to Chinese store hours, bank schedules, mall hours, and government office times.',
+      keywords: ['shanghai business hours', 'china shop hours', 'what time do banks open shanghai', 'shanghai mall hours'],
+    },
+    bestTimeToVisit: {
+      title: 'Best Time to Visit Shanghai | Weather, Events & Prices by Month',
+      description: 'When to visit Shanghai? Month-by-month guide with weather, Chinese New Year, National Day, and tourist tips. Avoid humid summers!',
+      keywords: ['best time to visit shanghai', 'shanghai weather by month', 'shanghai tourist season', 'shanghai spring autumn'],
+    },
+    remoteWork: {
+      title: 'Working with Shanghai Teams Remotely | Time Zone Overlap Guide',
+      description: 'Remote work guide for Shanghai collaboration. Find overlap hours with London, New York, Sydney. Best meeting times and Chinese work culture.',
+      keywords: ['remote work shanghai time zone', 'working with shanghai team', 'cst time zone overlap', 'best meeting time shanghai'],
+    },
+    twentyFourHours: {
+      title: 'Shanghai 24 Hour Guide | What\'s Open & When in the City',
+      description: 'Shanghai hour-by-hour: morning tai chi on the Bund, Lujiazui business lunch, evening Nanjing Road shopping, and late-night street food.',
+      keywords: ['24 hours in shanghai', 'shanghai nightlife hours', 'late night food shanghai', 'nanjing road hours'],
+    },
+    callTimes: {
+      title: 'Best Time to Call Shanghai | From UK, USA, Australia & More',
+      description: 'When to call Shanghai? Best calling times from London, New York, Sydney. Business hours overlap and optimal windows.',
+      keywords: ['best time to call shanghai', 'call shanghai from uk', 'call china from usa time'],
+    },
+    stockMarket: {
+      title: 'SSE Trading Hours | Shanghai Stock Exchange Times for Global Investors',
+      description: 'SSE opens 9:30 AM CST with lunch break. Complete Shanghai Stock Exchange schedule with morning session, afternoon session, and market holidays.',
+      keywords: ['sse trading hours', 'shanghai stock exchange times', 'sse market hours', 'china stock market hours'],
+    },
+    holidays: {
+      title: 'Chinese Holidays in Shanghai | Public Holidays & Golden Week',
+      description: 'Shanghai public holidays calendar. Chinese New Year, National Day Golden Week, Mid-Autumn Festival - what\'s closed and what to expect.',
+      keywords: ['shanghai holidays', 'chinese public holidays', 'golden week china', 'chinese new year shanghai'],
+    },
+    digitalNomad: {
+      title: 'Digital Nomad Shanghai Guide | Coworking, WiFi & Cost of Living',
+      description: 'Work remotely from Shanghai. Best coworking spaces, laptop-friendly cafes, VPN considerations, cost of living, and visa options.',
+      keywords: ['digital nomad shanghai', 'coworking shanghai', 'shanghai cost of living', 'china work visa'],
+    },
+    timeDifference: {
+      title: 'Shanghai Time Difference Calculator | CST vs World Cities',
+      description: 'Shanghai time difference to London (+8h), New York (+13h), Sydney (-2h) and 50+ cities. CST vs GMT explained. Live converter included.',
+      keywords: ['shanghai time difference', 'shanghai vs london time', 'cst vs gmt hours', 'shanghai uk time difference'],
+    },
+    travelPlanning: {
+      title: 'Shanghai Travel Guide | Flight Times, Pudong Airport & Getting Around',
+      description: 'Flying to Shanghai? Flight times from London (11h), NYC (15h), Sydney (10h). PVG Pudong tips, Maglev train, and getting to the city.',
+      keywords: ['flight time to shanghai', 'pudong airport guide', 'pvg to shanghai', 'maglev shanghai'],
+    },
+  },
+  
+  clusters: [
+    { slug: 'business-hours', icon: '💼', title: 'Business Hours', desc: 'Banks, shops, malls, and government hours' },
+    { slug: 'best-time-to-visit', icon: '🌸', title: 'Best Time to Visit', desc: 'Weather, Golden Week, and avoiding crowds' },
+    { slug: 'remote-work', icon: '💻', title: 'Remote Work Guide', desc: 'Working with Shanghai teams across time zones' },
+    { slug: '24-hours', icon: '🌃', title: '24 Hours in Shanghai', desc: 'The city\'s rhythm from dawn to late night' },
+    { slug: 'call-times', icon: '📞', title: 'Best Time to Call', desc: 'Optimal calling times from major cities' },
+    { slug: 'stock-market', icon: '📈', title: 'Stock Market Hours', desc: 'SSE trading times for global investors' },
+    { slug: 'holidays', icon: '🧧', title: 'Chinese Holidays', desc: 'Public holidays and Golden Week planning' },
+    { slug: 'digital-nomad', icon: '🎒', title: 'Digital Nomad Guide', desc: 'Coworking, WiFi, and cost of living' },
+    { slug: 'time-difference', icon: '🌐', title: 'Time Difference', desc: 'Shanghai time compared to London, NYC, Sydney' },
+    { slug: 'travel-planning', icon: '✈️', title: 'Travel Planning', desc: 'Flight times, Pudong tips, and getting around' },
+  ],
+}
+
+// ===================
+// SEOUL
+// ===================
+export const seoulGuide: GuideConfig = {
+  citySlug: 'seoul',
+  cityName: 'Seoul',
+  timezone: 'Asia/Seoul',
+  timezoneAbbr: 'KST',
+  timezoneName: 'Korea Standard Time',
+  utcOffset: 9,
+  icon: '🏯',
+  tagline: 'Your complete guide to time in South Korea\'s dynamic capital',
+  region: 'ASIA',
+  coordinates: { lat: 37.5665, lng: 126.9780 },
+  
+  seo: {
+    title: 'Seoul Time Zone Guide | KST, Business Hours & More',
+    description: 'Complete Seoul time zone guide. Business hours, KOSPI stock market times, best time to call Seoul, remote work overlap, Korean holidays, and local tips.',
+    keywords: ['seoul time zone', 'seoul time now', 'korea standard time', 'seoul business hours', 'kospi trading hours', 'best time to call seoul', 'seoul time difference'],
+    ogTitle: 'Seoul Time Zone Guide | Complete Korea Time Resource',
+    ogDescription: 'Everything about Seoul time: business hours, stock market, holidays, remote work tips. The definitive guide.',
+  },
+  
+  pages: {
+    overview: {
+      title: 'Seoul Time Zone Guide | KST, Business Hours & More',
+      description: 'Complete Seoul time zone guide. Business hours, KOSPI trading times, best time to call Seoul, remote work overlap, Korean holidays, and local tips.',
+      keywords: ['seoul time zone', 'seoul time', 'korea standard time', 'kst korea'],
+    },
+    businessHours: {
+      title: 'Seoul Business Hours | Banks, Shops, Malls & Offices',
+      description: 'What time do businesses open in Seoul? Complete guide to Korean store hours, bank schedules, department store hours, and office times.',
+      keywords: ['seoul business hours', 'korea shop hours', 'what time do banks open seoul', 'seoul mall hours'],
+    },
+    bestTimeToVisit: {
+      title: 'Best Time to Visit Seoul | Weather, Cherry Blossoms & K-pop Events',
+      description: 'When to visit Seoul? Month-by-month guide with weather, cherry blossom season, autumn foliage, and K-pop concert schedules.',
+      keywords: ['best time to visit seoul', 'seoul weather by month', 'seoul cherry blossom', 'seoul autumn foliage'],
+    },
+    remoteWork: {
+      title: 'Working with Seoul Teams Remotely | Time Zone Overlap Guide',
+      description: 'Remote work guide for Seoul collaboration. Find overlap hours with London, New York, Sydney. Best meeting times and Korean work culture.',
+      keywords: ['remote work seoul time zone', 'working with korean team', 'kst time zone overlap', 'best meeting time seoul'],
+    },
+    twentyFourHours: {
+      title: 'Seoul 24 Hour Guide | What\'s Open & When in the City',
+      description: 'Seoul hour-by-hour: morning temple visits, Gangnam business lunch, Myeongdong shopping, and late-night Korean BBQ in Hongdae.',
+      keywords: ['24 hours in seoul', 'seoul nightlife hours', 'late night food seoul', 'hongdae nightlife'],
+    },
+    callTimes: {
+      title: 'Best Time to Call Seoul | From UK, USA, Australia & More',
+      description: 'When to call Seoul? Best calling times from London, New York, Sydney. Business hours overlap and optimal windows.',
+      keywords: ['best time to call seoul', 'call seoul from uk', 'call korea from usa time'],
+    },
+    stockMarket: {
+      title: 'KOSPI Trading Hours | Korea Stock Exchange Times for Global Investors',
+      description: 'KRX opens 9:00 AM KST. Complete Korea Exchange schedule with regular hours, after-hours trading, and market holidays.',
+      keywords: ['kospi trading hours', 'korea stock exchange times', 'krx market hours', 'kospi market open'],
+    },
+    holidays: {
+      title: 'Korean Holidays in Seoul | Public Holidays & Chuseok Guide',
+      description: 'Seoul public holidays calendar. Seollal (Lunar New Year), Chuseok, Liberation Day - what\'s closed and what to expect.',
+      keywords: ['seoul holidays', 'korean public holidays', 'chuseok korea', 'seollal korea'],
+    },
+    digitalNomad: {
+      title: 'Digital Nomad Seoul Guide | Coworking, WiFi & Cost of Living',
+      description: 'Work remotely from Seoul. Best coworking spaces, legendary WiFi speeds, cost of living breakdown, and visa options.',
+      keywords: ['digital nomad seoul', 'coworking seoul', 'seoul cost of living', 'korea digital nomad visa'],
+    },
+    timeDifference: {
+      title: 'Seoul Time Difference Calculator | KST vs World Cities',
+      description: 'Seoul time difference to London (+9h), New York (+14h), Sydney (-2h) and 50+ cities. KST vs GMT explained. Live converter included.',
+      keywords: ['seoul time difference', 'seoul vs london time', 'kst vs gmt hours', 'seoul uk time difference'],
+    },
+    travelPlanning: {
+      title: 'Seoul Travel Guide | Flight Times, Incheon Airport & Getting Around',
+      description: 'Flying to Seoul? Flight times from London (11h), NYC (14h), Sydney (10h). ICN Incheon tips, AREX train, and getting to the city.',
+      keywords: ['flight time to seoul', 'incheon airport guide', 'icn to seoul', 'arex train seoul'],
+    },
+  },
+  
+  clusters: [
+    { slug: 'business-hours', icon: '💼', title: 'Business Hours', desc: 'Banks, shops, chaebols, and office culture' },
+    { slug: 'best-time-to-visit', icon: '🌸', title: 'Best Time to Visit', desc: 'Cherry blossoms, autumn foliage, and festivals' },
+    { slug: 'remote-work', icon: '💻', title: 'Remote Work Guide', desc: 'Working with Korean teams across time zones' },
+    { slug: '24-hours', icon: '🌃', title: '24 Hours in Seoul', desc: 'The city that never sleeps, literally' },
+    { slug: 'call-times', icon: '📞', title: 'Best Time to Call', desc: 'Optimal calling times from major cities' },
+    { slug: 'stock-market', icon: '📈', title: 'Stock Market Hours', desc: 'KOSPI & KRX trading times' },
+    { slug: 'holidays', icon: '🎎', title: 'Korean Holidays', desc: 'Seollal, Chuseok, and public holidays' },
+    { slug: 'digital-nomad', icon: '🎒', title: 'Digital Nomad Guide', desc: 'World\'s fastest WiFi and coworking' },
+    { slug: 'time-difference', icon: '🌐', title: 'Time Difference', desc: 'Seoul time compared to London, NYC, Sydney' },
+    { slug: 'travel-planning', icon: '✈️', title: 'Travel Planning', desc: 'Flight times, Incheon tips, and transit' },
+  ],
+}
+
+// ===================
+// BERLIN
+// ===================
+export const berlinGuide: GuideConfig = {
+  citySlug: 'berlin',
+  cityName: 'Berlin',
+  timezone: 'Europe/Berlin',
+  timezoneAbbr: 'CET/CEST',
+  timezoneName: 'Central European Time',
+  utcOffset: 1,
+  icon: '🐻',
+  tagline: 'Your complete guide to time in Germany\'s capital and Europe\'s startup hub',
+  region: 'EUROPE',
+  coordinates: { lat: 52.5200, lng: 13.4050 },
+  
+  seo: {
+    title: 'Berlin Time Zone Guide | CET/CEST, Business Hours & More',
+    description: 'Complete Berlin time zone guide. Business hours, German work culture, best time to call Berlin, remote work overlap, public holidays, and local tips.',
+    keywords: ['berlin time zone', 'berlin time now', 'central european time', 'berlin business hours', 'german work hours', 'best time to call berlin', 'berlin time difference'],
+    ogTitle: 'Berlin Time Zone Guide | Complete Germany Time Resource',
+    ogDescription: 'Everything about Berlin time: business hours, holidays, remote work tips. The definitive guide.',
+  },
+  
+  pages: {
+    overview: {
+      title: 'Berlin Time Zone Guide | CET/CEST, Business Hours & More',
+      description: 'Complete Berlin time zone guide. Business hours, German work culture, best time to call Berlin, remote work overlap, public holidays, and local tips.',
+      keywords: ['berlin time zone', 'berlin time', 'central european time', 'cet cest germany'],
+    },
+    businessHours: {
+      title: 'Berlin Business Hours | Shops, Banks, Offices & Sundays',
+      description: 'What time do businesses open in Berlin? Complete guide to German store hours, strict Sunday closures, bank schedules, and Spätis.',
+      keywords: ['berlin business hours', 'germany shop hours', 'sunday shopping berlin', 'späti berlin hours'],
+    },
+    bestTimeToVisit: {
+      title: 'Best Time to Visit Berlin | Weather, Events & Prices by Month',
+      description: 'When to visit Berlin? Month-by-month guide with weather, Berlinale, Christmas markets, and avoiding cold winters.',
+      keywords: ['best time to visit berlin', 'berlin weather by month', 'berlinale festival', 'berlin christmas markets'],
+    },
+    remoteWork: {
+      title: 'Working with Berlin Teams Remotely | Time Zone Overlap Guide',
+      description: 'Remote work guide for Berlin collaboration. Find overlap hours with New York, Singapore, Sydney. Best meeting times and German work culture.',
+      keywords: ['remote work berlin time zone', 'working with german team', 'cet time zone overlap', 'best meeting time berlin'],
+    },
+    twentyFourHours: {
+      title: 'Berlin 24 Hour Guide | What\'s Open & When in the City',
+      description: 'Berlin hour-by-hour: morning coffee culture, Mitte business lunch, Kreuzberg evening, and legendary Berghain nights.',
+      keywords: ['24 hours in berlin', 'berlin nightlife hours', 'berghain hours', 'kreuzberg nightlife'],
+    },
+    callTimes: {
+      title: 'Best Time to Call Berlin | From UK, USA, Australia & More',
+      description: 'When to call Berlin? Best calling times from London, New York, Sydney. Business hours overlap and optimal windows.',
+      keywords: ['best time to call berlin', 'call berlin from uk', 'call germany from usa time'],
+    },
+    stockMarket: {
+      title: 'German Stock Market Hours | Xetra & Frankfurt Exchange Times',
+      description: 'Xetra opens 9:00 AM CET. Complete Frankfurt Stock Exchange schedule for DAX trading, market hours, and holidays.',
+      keywords: ['xetra trading hours', 'frankfurt stock exchange times', 'dax market hours', 'german stock market'],
+    },
+    holidays: {
+      title: 'German Holidays in Berlin | Public Holidays & Regional Days',
+      description: 'Berlin public holidays calendar. Tag der Deutschen Einheit, Christmas, Easter - what\'s closed and regional differences.',
+      keywords: ['berlin holidays', 'german public holidays', 'tag der deutschen einheit', 'german christmas holidays'],
+    },
+    digitalNomad: {
+      title: 'Digital Nomad Berlin Guide | Coworking, WiFi & Cost of Living',
+      description: 'Work remotely from Berlin. Best coworking spaces, laptop-friendly cafes, affordable living, and freelancer visa options.',
+      keywords: ['digital nomad berlin', 'coworking berlin', 'berlin cost of living', 'germany freelancer visa'],
+    },
+    timeDifference: {
+      title: 'Berlin Time Difference Calculator | CET/CEST vs World Cities',
+      description: 'Berlin time difference to London (+1h), New York (+6h), Sydney (-9h) and 50+ cities. CET vs GMT explained. Live converter included.',
+      keywords: ['berlin time difference', 'berlin vs london time', 'cet vs gmt hours', 'berlin uk time difference'],
+    },
+    travelPlanning: {
+      title: 'Berlin Travel Guide | Flight Times, BER Airport & Getting Around',
+      description: 'Flying to Berlin? Flight times from London (2h), NYC (9h), Sydney (22h). BER Brandenburg tips and getting to the city.',
+      keywords: ['flight time to berlin', 'ber airport guide', 'berlin brandenburg airport', 'berlin public transport'],
+    },
+  },
+  
+  clusters: [
+    { slug: 'business-hours', icon: '💼', title: 'Business Hours', desc: 'Shops, banks, and strict Sunday rules' },
+    { slug: 'best-time-to-visit', icon: '🎄', title: 'Best Time to Visit', desc: 'Weather, Berlinale, and Christmas markets' },
+    { slug: 'remote-work', icon: '💻', title: 'Remote Work Guide', desc: 'Working with German teams across time zones' },
+    { slug: '24-hours', icon: '🌃', title: '24 Hours in Berlin', desc: 'The city with no closing time' },
+    { slug: 'call-times', icon: '📞', title: 'Best Time to Call', desc: 'Optimal calling times from major cities' },
+    { slug: 'stock-market', icon: '📈', title: 'Stock Market Hours', desc: 'Xetra & DAX trading times' },
+    { slug: 'holidays', icon: '🎊', title: 'German Holidays', desc: 'Public holidays and regional differences' },
+    { slug: 'digital-nomad', icon: '🎒', title: 'Digital Nomad Guide', desc: 'Europe\'s startup capital for remote workers' },
+    { slug: 'time-difference', icon: '🌐', title: 'Time Difference', desc: 'Berlin time compared to London, NYC, Sydney' },
+    { slug: 'travel-planning', icon: '✈️', title: 'Travel Planning', desc: 'Flight times, BER tips, and getting around' },
+  ],
+}
+
+// ===================
+// AMSTERDAM
+// ===================
+export const amsterdamGuide: GuideConfig = {
+  citySlug: 'amsterdam',
+  cityName: 'Amsterdam',
+  timezone: 'Europe/Amsterdam',
+  timezoneAbbr: 'CET/CEST',
+  timezoneName: 'Central European Time',
+  utcOffset: 1,
+  icon: '🌷',
+  tagline: 'Your complete guide to time in the Netherlands\' creative capital',
+  region: 'EUROPE',
+  coordinates: { lat: 52.3676, lng: 4.9041 },
+  
+  seo: {
+    title: 'Amsterdam Time Zone Guide | CET/CEST, Business Hours & More',
+    description: 'Complete Amsterdam time zone guide. Business hours, Dutch work culture, best time to call Amsterdam, remote work overlap, public holidays, and local tips.',
+    keywords: ['amsterdam time zone', 'amsterdam time now', 'netherlands time', 'amsterdam business hours', 'dutch work hours', 'best time to call amsterdam', 'amsterdam time difference'],
+    ogTitle: 'Amsterdam Time Zone Guide | Complete Netherlands Time Resource',
+    ogDescription: 'Everything about Amsterdam time: business hours, holidays, remote work tips. The definitive guide.',
+  },
+  
+  pages: {
+    overview: {
+      title: 'Amsterdam Time Zone Guide | CET/CEST, Business Hours & More',
+      description: 'Complete Amsterdam time zone guide. Business hours, Dutch work culture, best time to call Amsterdam, remote work overlap, public holidays, and local tips.',
+      keywords: ['amsterdam time zone', 'amsterdam time', 'netherlands time', 'cet cest netherlands'],
+    },
+    businessHours: {
+      title: 'Amsterdam Business Hours | Shops, Banks, Museums & Koopzondag',
+      description: 'What time do businesses open in Amsterdam? Complete guide to Dutch store hours, Sunday shopping (koopzondag), bank schedules, and museum times.',
+      keywords: ['amsterdam business hours', 'netherlands shop hours', 'koopzondag amsterdam', 'amsterdam museum hours'],
+    },
+    bestTimeToVisit: {
+      title: 'Best Time to Visit Amsterdam | Tulip Season, King\'s Day & Weather',
+      description: 'When to visit Amsterdam? Month-by-month guide with weather, tulip season (April), King\'s Day, and avoiding summer crowds.',
+      keywords: ['best time to visit amsterdam', 'amsterdam weather by month', 'tulip season amsterdam', 'kings day amsterdam'],
+    },
+    remoteWork: {
+      title: 'Working with Amsterdam Teams Remotely | Time Zone Overlap Guide',
+      description: 'Remote work guide for Amsterdam collaboration. Find overlap hours with New York, Singapore, Sydney. Best meeting times and Dutch work culture.',
+      keywords: ['remote work amsterdam time zone', 'working with dutch team', 'cet time zone overlap', 'best meeting time amsterdam'],
+    },
+    twentyFourHours: {
+      title: 'Amsterdam 24 Hour Guide | What\'s Open & When in the City',
+      description: 'Amsterdam hour-by-hour: morning canal walks, Zuidas business lunch, Jordaan evening, and late-night Leidseplein.',
+      keywords: ['24 hours in amsterdam', 'amsterdam nightlife hours', 'leidseplein nightlife', 'jordaan evening'],
+    },
+    callTimes: {
+      title: 'Best Time to Call Amsterdam | From UK, USA, Australia & More',
+      description: 'When to call Amsterdam? Best calling times from London, New York, Sydney. Business hours overlap and optimal windows.',
+      keywords: ['best time to call amsterdam', 'call amsterdam from uk', 'call netherlands from usa time'],
+    },
+    stockMarket: {
+      title: 'Euronext Amsterdam Hours | AEX Stock Exchange Times',
+      description: 'Euronext Amsterdam opens 9:00 AM CET. Complete AEX trading schedule, market hours, and Dutch market holidays.',
+      keywords: ['euronext amsterdam hours', 'aex trading hours', 'amsterdam stock exchange times', 'dutch stock market'],
+    },
+    holidays: {
+      title: 'Dutch Holidays in Amsterdam | Public Holidays & King\'s Day Guide',
+      description: 'Amsterdam public holidays calendar. Koningsdag (King\'s Day), Liberation Day, Christmas - what\'s closed and what to expect.',
+      keywords: ['amsterdam holidays', 'dutch public holidays', 'koningsdag kings day', 'bevrijdingsdag'],
+    },
+    digitalNomad: {
+      title: 'Digital Nomad Amsterdam Guide | Coworking, WiFi & Cost of Living',
+      description: 'Work remotely from Amsterdam. Best coworking spaces, laptop-friendly cafes, high cost of living reality, and visa options.',
+      keywords: ['digital nomad amsterdam', 'coworking amsterdam', 'amsterdam cost of living', 'netherlands freelancer visa'],
+    },
+    timeDifference: {
+      title: 'Amsterdam Time Difference Calculator | CET/CEST vs World Cities',
+      description: 'Amsterdam time difference to London (+1h), New York (+6h), Sydney (-9h) and 50+ cities. CET vs GMT explained. Live converter included.',
+      keywords: ['amsterdam time difference', 'amsterdam vs london time', 'cet vs gmt hours', 'amsterdam uk time difference'],
+    },
+    travelPlanning: {
+      title: 'Amsterdam Travel Guide | Flight Times, Schiphol Airport & Getting Around',
+      description: 'Flying to Amsterdam? Flight times from London (1h), NYC (8h), Sydney (22h). Schiphol tips, trains to Centraal, and cycling culture.',
+      keywords: ['flight time to amsterdam', 'schiphol airport guide', 'amsterdam centraal', 'amsterdam by bike'],
+    },
+  },
+  
+  clusters: [
+    { slug: 'business-hours', icon: '💼', title: 'Business Hours', desc: 'Shops, banks, and koopzondag rules' },
+    { slug: 'best-time-to-visit', icon: '🌷', title: 'Best Time to Visit', desc: 'Tulips, King\'s Day, and canal season' },
+    { slug: 'remote-work', icon: '💻', title: 'Remote Work Guide', desc: 'Working with Dutch teams across time zones' },
+    { slug: '24-hours', icon: '🌃', title: '24 Hours in Amsterdam', desc: 'From morning canals to late-night bars' },
+    { slug: 'call-times', icon: '📞', title: 'Best Time to Call', desc: 'Optimal calling times from major cities' },
+    { slug: 'stock-market', icon: '📈', title: 'Stock Market Hours', desc: 'Euronext AEX trading times' },
+    { slug: 'holidays', icon: '👑', title: 'Dutch Holidays', desc: 'Koningsdag, Bevrijdingsdag & more' },
+    { slug: 'digital-nomad', icon: '🎒', title: 'Digital Nomad Guide', desc: 'Europe\'s most bike-friendly remote work hub' },
+    { slug: 'time-difference', icon: '🌐', title: 'Time Difference', desc: 'Amsterdam time compared to London, NYC, Sydney' },
+    { slug: 'travel-planning', icon: '✈️', title: 'Travel Planning', desc: 'Flight times, Schiphol tips, and cycling' },
+  ],
+}
+
+// ===================
 // GUIDE REGISTRY
 // ===================
 export const guideConfigs: Record<string, GuideConfig> = {
@@ -898,6 +1491,12 @@ export const guideConfigs: Record<string, GuideConfig> = {
   'tokyo': tokyoGuide,
   'dubai': dubaiGuide,
   'singapore': singaporeGuide,
+  'hong-kong': hongKongGuide,
+  'toronto': torontoGuide,
+  'shanghai': shanghaiGuide,
+  'seoul': seoulGuide,
+  'berlin': berlinGuide,
+  'amsterdam': amsterdamGuide,
   'paris': parisGuide,
   'sydney': sydneyGuide,
   'istanbul': istanbulGuide,
@@ -1007,7 +1606,7 @@ function createGenericGuideConfig(citySlug: string, city: { city: string; timezo
 // Import cities for generic config creation
 import { cities } from '@/lib/cities'
 
-// Only 8 premium cities have guide pages with quality content
+// Premium cities with quality guide content
 const PREMIUM_GUIDE_CITIES = [
   'new-york',
   'london',
@@ -1016,7 +1615,14 @@ const PREMIUM_GUIDE_CITIES = [
   'singapore',
   'paris',
   'sydney',
-  'istanbul'
+  'istanbul',
+  'los-angeles',
+  'hong-kong',
+  'toronto',
+  'shanghai',
+  'seoul',
+  'berlin',
+  'amsterdam'
 ]
 
 export function getGuideConfig(citySlug: string): GuideConfig | null {
@@ -1038,4 +1644,83 @@ export function getGuideConfig(citySlug: string): GuideConfig | null {
 
 export function getSupportedGuideCities(): string[] {
   return PREMIUM_GUIDE_CITIES
+}
+
+// ===================
+// REGION-BASED CITY RECOMMENDATIONS (HYBRID APPROACH)
+// ===================
+
+export interface RecommendedCity {
+  slug: string
+  name: string
+  icon: string
+  reason: string // Why this city is relevant
+}
+
+// City-specific overrides for maximum relevance
+// These cities have unique business/travel connections that don't fit regional defaults
+const CITY_TABLE_OVERRIDES: Record<string, string[]> = {
+  // Istanbul: Bridge between Europe, Middle East, and Russia
+  'istanbul': ['dubai', 'london', 'frankfurt', 'new-york', 'paris', 'berlin', 'singapore', 'moscow'],
+  // Dubai: Global hub connecting East and West
+  'dubai': ['london', 'mumbai', 'singapore', 'istanbul', 'new-york', 'hong-kong', 'frankfurt', 'riyadh'],
+  // Singapore: True global hub, connects everyone
+  'singapore': ['hong-kong', 'tokyo', 'sydney', 'london', 'new-york', 'dubai', 'shanghai', 'mumbai'],
+  // Hong Kong: Asia finance, strong China/West connections
+  'hong-kong': ['shanghai', 'singapore', 'tokyo', 'london', 'new-york', 'sydney', 'dubai', 'taipei'],
+  // Sydney: Oceania hub, strong Asia-Pacific focus
+  'sydney': ['auckland', 'singapore', 'tokyo', 'hong-kong', 'los-angeles', 'london', 'dubai', 'seoul'],
+  // London: Global financial center
+  'london': ['new-york', 'paris', 'frankfurt', 'dubai', 'singapore', 'hong-kong', 'tokyo', 'sydney'],
+  // New York: Americas anchor, global finance
+  'new-york': ['london', 'los-angeles', 'toronto', 'paris', 'tokyo', 'hong-kong', 'sao-paulo', 'dubai'],
+  // Tokyo: Asia's largest economy
+  'tokyo': ['singapore', 'hong-kong', 'shanghai', 'seoul', 'sydney', 'london', 'new-york', 'los-angeles'],
+}
+
+// Default cities per region (used when no override exists)
+const REGION_TABLE_DEFAULTS: Record<CityRegion, string[]> = {
+  AMERICAS: ['london', 'paris', 'tokyo', 'singapore', 'sydney', 'dubai', 'hong-kong', 'berlin', 'seoul'],
+  EUROPE: ['new-york', 'los-angeles', 'tokyo', 'singapore', 'sydney', 'dubai', 'hong-kong', 'toronto', 'shanghai'],
+  MENA: ['london', 'new-york', 'singapore', 'mumbai', 'tokyo', 'frankfurt', 'hong-kong', 'paris', 'sydney'],
+  ASIA: ['london', 'new-york', 'los-angeles', 'sydney', 'dubai', 'paris', 'frankfurt', 'toronto', 'auckland'],
+  OCEANIA: ['singapore', 'tokyo', 'hong-kong', 'los-angeles', 'london', 'auckland', 'dubai', 'seoul', 'shanghai'],
+}
+
+// Get table cities for "City Time vs Major Cities" section
+// Uses override if available, otherwise falls back to regional defaults
+export function getTableCities(currentCity: string, region: CityRegion): string[] {
+  // Check for city-specific override first
+  const override = CITY_TABLE_OVERRIDES[currentCity]
+  if (override) {
+    return override.filter(city => city !== currentCity).slice(0, 8)
+  }
+  
+  // Fall back to regional defaults
+  return REGION_TABLE_DEFAULTS[region].filter(city => city !== currentCity).slice(0, 8)
+}
+
+// Recommended cities for Quick Facts "For Overlap" section
+const REGION_CALL_TARGETS: Record<CityRegion, { targetSlug: string; targetName: string }> = {
+  AMERICAS: { targetSlug: 'london', targetName: 'Europe' },
+  EUROPE: { targetSlug: 'new-york', targetName: 'US East' },
+  MENA: { targetSlug: 'london', targetName: 'Europe' },
+  ASIA: { targetSlug: 'london', targetName: 'Europe' },
+  OCEANIA: { targetSlug: 'singapore', targetName: 'Asia' },
+}
+
+export function getCallTarget(region: CityRegion): { targetSlug: string; targetName: string } {
+  return REGION_CALL_TARGETS[region]
+}
+
+// Get region display name for UI
+export function getRegionDisplayName(region: CityRegion): string {
+  const names: Record<CityRegion, string> = {
+    AMERICAS: 'Americas',
+    EUROPE: 'Europe',
+    MENA: 'Middle East & Turkey',
+    ASIA: 'Asia',
+    OCEANIA: 'Oceania',
+  }
+  return names[region]
 }

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { City } from '@/lib/cities'
 import { GuideConfig } from '@/lib/guide-content'
+import { QuickFacts, CityComparisonTable } from '../components'
 import { useCityContext } from '@/lib/CityContext'
 
 interface Props {
@@ -41,30 +42,8 @@ export default function LosAngelesOverviewContent({ city, config, isLight, timeS
           <p className={`text-6xl font-bold ${headingColor}`}>{timeStr}</p>
         </div>
 
-        {/* Quick Facts */}
-        <div className={`${cardBg} rounded-xl p-6 mb-8 border ${isLight ? 'border-slate-200' : 'border-slate-800'}`}>
-          <h2 className={`text-2xl font-bold mb-4 ${headingColor}`}>
-            ⚡ Quick Facts: Los Angeles Time Zone
-          </h2>
-          <div className="grid md:grid-cols-2 gap-4 text-sm">
-            <div>
-              <span className={mutedColor}>Standard Time (PST):</span>
-              <strong className={`ml-2 ${textColor}`}>UTC-8 (Nov-Mar)</strong>
-            </div>
-            <div>
-              <span className={mutedColor}>Daylight Time (PDT):</span>
-              <strong className={`ml-2 ${textColor}`}>UTC-7 (Mar-Nov)</strong>
-            </div>
-            <div>
-              <span className={mutedColor}>Location:</span>
-              <strong className={`ml-2 ${textColor}`}>California, USA</strong>
-            </div>
-            <div>
-              <span className={mutedColor}>Difference from NYC:</span>
-              <strong className={`ml-2 ${textColor}`}>3 hours behind</strong>
-            </div>
-          </div>
-        </div>
+        {/* Quick Facts - Technical info only */}
+        <QuickFacts config={config} isLight={isLight} />
 
         {/* Intro */}
         <div className={`prose ${isLight ? 'prose-slate' : 'prose-invert'} max-w-none mb-12`}>
@@ -99,6 +78,11 @@ export default function LosAngelesOverviewContent({ city, config, isLight, timeS
               </div>
             </Link>
           ))}
+        </div>
+
+        {/* Region-based City Comparison Table */}
+        <div className="my-12">
+          <CityComparisonTable config={config} isLight={isLight} />
         </div>
 
         {/* Content */}

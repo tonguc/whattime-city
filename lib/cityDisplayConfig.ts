@@ -38,10 +38,10 @@ const CITY_DISPLAY_CONFIG: Record<string, CityDisplayConfig> = {
   // Europe
   'london': { icon: '🎡', utcOffset: 0, visitIcon: '🇬🇧', themeColor: 'blue', displayName: 'London' },
   'paris': { icon: '🗼', utcOffset: 1, visitIcon: '🇫🇷', themeColor: 'indigo', displayName: 'Paris' },
-  'berlin': { icon: '🇩🇪', utcOffset: 1, visitIcon: '🐻', themeColor: 'slate', displayName: 'Berlin' },
+  'berlin': { icon: '🐻', utcOffset: 1, visitIcon: '🎄', themeColor: 'slate', displayName: 'Berlin' },
   'madrid': { icon: '🇪🇸', utcOffset: 1, visitIcon: '☀️', themeColor: 'orange', displayName: 'Madrid' },
   'barcelona': { icon: '🇪🇸', utcOffset: 1, visitIcon: '⚽', themeColor: 'rose', displayName: 'Barcelona' },
-  'amsterdam': { icon: '🇳🇱', utcOffset: 1, visitIcon: '🌷', themeColor: 'orange', displayName: 'Amsterdam' },
+  'amsterdam': { icon: '🌷', utcOffset: 1, visitIcon: '🚲', themeColor: 'orange', displayName: 'Amsterdam' },
   'rome': { icon: '🇮🇹', utcOffset: 1, visitIcon: '🏛️', themeColor: 'amber', displayName: 'Rome' },
   'vienna': { icon: '🇦🇹', utcOffset: 1, visitIcon: '🎵', themeColor: 'red', displayName: 'Vienna' },
   'zurich': { icon: '🇨🇭', utcOffset: 1, visitIcon: '⛰️', themeColor: 'slate', displayName: 'Zurich' },
@@ -61,7 +61,7 @@ const CITY_DISPLAY_CONFIG: Record<string, CityDisplayConfig> = {
   'beijing': { icon: '🇨🇳', utcOffset: 8, visitIcon: '🏯', themeColor: 'red', displayName: 'Beijing' },
   'shenzhen': { icon: '🇨🇳', utcOffset: 8, visitIcon: '💻', themeColor: 'blue', displayName: 'Shenzhen' },
   'guangzhou': { icon: '🇨🇳', utcOffset: 8, visitIcon: '🏢', themeColor: 'emerald', displayName: 'Guangzhou' },
-  'seoul': { icon: '🇰🇷', utcOffset: 9, visitIcon: '🎎', themeColor: 'blue', displayName: 'Seoul' },
+  'seoul': { icon: '🏯', utcOffset: 9, visitIcon: '🌸', themeColor: 'blue', displayName: 'Seoul' },
   'mumbai': { icon: '🇮🇳', utcOffset: 5.5, visitIcon: '🎬', themeColor: 'orange', displayName: 'Mumbai' },
   'delhi': { icon: '🇮🇳', utcOffset: 5.5, visitIcon: '🕌', themeColor: 'orange', displayName: 'Delhi' },
   'bangkok': { icon: '🇹🇭', utcOffset: 7, visitIcon: '🛕', themeColor: 'yellow', displayName: 'Bangkok' },
@@ -114,7 +114,7 @@ const TIER1_CITIES = [
   'cairo', 'johannesburg'
 ]
 
-// Only 8 cities with premium guide content
+// Premium cities with guide content (15 cities)
 const PREMIUM_GUIDE_CITIES = [
   'new-york',
   'london', 
@@ -123,7 +123,14 @@ const PREMIUM_GUIDE_CITIES = [
   'singapore',
   'paris',
   'sydney',
-  'istanbul'
+  'istanbul',
+  'los-angeles',
+  'hong-kong',
+  'toronto',
+  'shanghai',
+  'seoul',
+  'berlin',
+  'amsterdam'
 ]
 
 /**
