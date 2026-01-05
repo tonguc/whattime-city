@@ -222,7 +222,7 @@ export default function LosAngelesCallTimesContent({ city }: Props) {
         </p>
         <p className="text-sm">
           <strong>Pro tip:</strong> Use our{' '}
-          <Link href="/time-converter/" className={linkColor}>Time Zone Converter</Link> for exact 
+          <Link href="/time/" className={linkColor}>Time Zone Converter</Link> for exact 
           calculations during DST transition periods.
         </p>
       </section>

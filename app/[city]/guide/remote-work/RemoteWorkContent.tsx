@@ -520,7 +520,7 @@ export default function RemoteWorkContent({ city }: Props) {
           </Link>
           
           <Link
-            href="/time-converter/"
+            href="/time/"
             className={`p-4 rounded-xl border transition-all hover:scale-[1.02] ${
               isLight ? 'border-blue-200 bg-blue-50 hover:border-blue-400' : 'border-blue-800 bg-blue-900/20 hover:border-blue-600'
             }`}

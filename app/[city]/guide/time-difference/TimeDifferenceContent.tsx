@@ -97,7 +97,7 @@ export default function TimeDifferenceContent({ city }: Props) {
         </div>
         
         <p className={`mt-3 text-sm ${mutedColor}`}>
-          Need real-time conversion? Use our <Link href="/time-converter/" className={linkColor}>Time Converter</Link>.
+          Need real-time conversion? Use our <Link href="/time/" className={linkColor}>Time Converter</Link>.
         </p>
       </section>
       
@@ -190,7 +190,7 @@ export default function TimeDifferenceContent({ city }: Props) {
         </div>
       </section>
       
-      {/* Mini Time Converter Widget */}
+      {/* Mini Compare Time Widget */}
       <section className="mb-10">
         <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>🔄 Quick Converter</h2>
         
@@ -245,14 +245,14 @@ export default function TimeDifferenceContent({ city }: Props) {
           </div>
           
           <Link 
-            href="/time-converter/"
+            href="/time/"
             className={`block w-full text-center py-3 rounded-xl font-medium transition-all ${
               isLight 
                 ? 'bg-amber-500 hover:bg-amber-600 text-white' 
                 : 'bg-amber-600 hover:bg-amber-500 text-white'
             }`}
           >
-            Open Full Time Converter →
+            Open Full Compare Time →
           </Link>
         </div>
       </section>
@@ -260,8 +260,8 @@ export default function TimeDifferenceContent({ city }: Props) {
       <section className={`p-6 rounded-2xl ${cardBg}`}>
         <h2 className={`text-lg font-semibold mb-4 ${headingColor}`}>Related Guides</h2>
         <div className="grid sm:grid-cols-2 gap-3">
-          <Link href="/time-converter/" className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'}`}>
-            <span>🔄</span><span>Time Converter Tool</span>
+          <Link href="/time/" className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'}`}>
+            <span>🔄</span><span>Compare Time Tool</span>
           </Link>
           <Link href={`/${city.slug}/guide/call-times/`} className={`flex items-center gap-2 p-3 rounded-lg ${isLight ? 'bg-white hover:bg-slate-50' : 'bg-slate-800 hover:bg-slate-700'}`}>
             <span>📞</span><span>Best Time to Call NYC</span>
