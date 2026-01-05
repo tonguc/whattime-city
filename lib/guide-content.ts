@@ -1520,6 +1520,28 @@ function createGenericGuideConfig(citySlug: string, city: { city: string; timezo
   const timezone = city.timezone
   const timezoneAbbr = timezone.split('/').pop()?.replace('_', ' ') || 'Local'
   
+  // Determine region based on timezone
+  let region: CityRegion = 'EUROPE' // default
+  if (timezone.startsWith('America/')) {
+    region = 'AMERICAS'
+  } else if (timezone.startsWith('Asia/') || timezone.startsWith('Pacific/')) {
+    if (timezone.includes('Dubai') || timezone.includes('Riyadh') || timezone.includes('Istanbul')) {
+      region = 'MENA'
+    } else {
+      region = 'ASIA'
+    }
+  } else if (timezone.startsWith('Australia/') || timezone.includes('Auckland')) {
+    region = 'OCEANIA'
+  } else if (timezone.startsWith('Europe/')) {
+    if (timezone.includes('Istanbul')) {
+      region = 'MENA'
+    } else {
+      region = 'EUROPE'
+    }
+  } else if (timezone.startsWith('Africa/')) {
+    region = 'EUROPE' // Africa mostly aligns with European business hours
+  }
+  
   return {
     citySlug,
     cityName,
@@ -1529,6 +1551,8 @@ function createGenericGuideConfig(citySlug: string, city: { city: string; timezo
     utcOffset: 0, // Will be calculated dynamically
     icon: '🌍',
     tagline: `Your complete guide to ${cityName} time zones and local insights`,
+    region,
+    coordinates: { lat: 0, lng: 0 }, // Generic - will be overridden by specific configs
     seo: {
       title: `${cityName} Time Zone Guide`,
       description: `Complete guide to ${cityName} time zone, business hours, best time to visit, and local tips for travelers and remote workers.`,
