@@ -1483,6 +1483,481 @@ export const amsterdamGuide: GuideConfig = {
 }
 
 // ===================
+// BANGKOK (Southeast Asia's Hub)
+// ===================
+export const bangkokGuide: GuideConfig = {
+  citySlug: 'bangkok',
+  cityName: 'Bangkok',
+  timezone: 'Asia/Bangkok',
+  timezoneAbbr: 'ICT',
+  timezoneName: 'Indochina Time',
+  utcOffset: 7,
+  icon: '🇹🇭',
+  tagline: 'Your complete guide to time in the City of Angels',
+  region: 'ASIA',
+  coordinates: { lat: 13.7563, lng: 100.5018 },
+  
+  seo: {
+    title: 'Bangkok Time Zone Guide | ICT, Business Hours & Travel Tips',
+    description: 'Complete Bangkok time zone guide. Indochina Time (ICT/UTC+7), Thai business hours, best time to call Bangkok, SET trading hours, and travel planning tips.',
+    keywords: ['bangkok time zone', 'bangkok time now', 'thailand time', 'ict time zone', 'thai business hours', 'best time to call bangkok', 'bangkok time difference', 'set thailand hours'],
+    ogTitle: 'Bangkok Time Zone Guide | Complete Thailand Time Resource',
+    ogDescription: 'Everything about Bangkok time: business hours, SET market, travel planning. The definitive guide to Thailand\'s vibrant capital.',
+  },
+  
+  pages: {
+    overview: {
+      title: 'Bangkok Time Zone Guide | ICT, Business Hours & More',
+      description: 'Complete Bangkok time zone guide. Indochina Time (ICT/UTC+7), Thai business hours, and City of Angels travel tips.',
+      keywords: ['bangkok time zone', 'bangkok time', 'thailand time', 'ict indochina time'],
+    },
+    businessHours: {
+      title: 'Bangkok Business Hours | Shops, Banks, Markets & Malls',
+      description: 'What time do businesses open in Bangkok? Complete guide to Thai business hours, bank schedules, Chatuchak market times, and mall hours.',
+      keywords: ['bangkok business hours', 'thailand shop hours', 'chatuchak market hours', 'bangkok bank hours'],
+    },
+    bestTimeToVisit: {
+      title: 'Best Time to Visit Bangkok | Weather, Monsoon & Festival Season',
+      description: 'When to visit Bangkok? Month-by-month guide with weather, monsoon season timing, Songkran dates, and avoiding the hottest months.',
+      keywords: ['best time to visit bangkok', 'bangkok weather by month', 'bangkok monsoon season', 'songkran festival dates'],
+    },
+    remoteWork: {
+      title: 'Working with Bangkok Teams Remotely | ICT Time Zone Overlap Guide',
+      description: 'Remote work guide for Bangkok collaboration. Find overlap hours with London, New York, Sydney. Thai work culture and digital nomad paradise.',
+      keywords: ['remote work bangkok time zone', 'working with thai team', 'ict time zone overlap', 'best meeting time bangkok'],
+    },
+    twentyFourHours: {
+      title: 'Bangkok 24 Hour Guide | City That Never Sleeps',
+      description: 'Bangkok hour-by-hour: morning temple visits, afternoon shopping, sunset Chao Phraya, and legendary nightlife.',
+      keywords: ['24 hours in bangkok', 'bangkok nightlife', 'khao san road', 'bangkok temples morning'],
+    },
+    callTimes: {
+      title: 'Best Time to Call Bangkok | From UK, USA, Australia & More',
+      description: 'When to call Bangkok? Best calling times from London, New York, Sydney. ICT business hours and optimal windows.',
+      keywords: ['best time to call bangkok', 'call thailand from uk', 'call bangkok from usa', 'ict calling hours'],
+    },
+    stockMarket: {
+      title: 'SET Thailand Trading Hours | Bangkok Stock Exchange Times',
+      description: 'Stock Exchange of Thailand (SET) opens 10:00 AM ICT. Complete SET trading schedule, market hours, and Thai market holidays.',
+      keywords: ['set trading hours', 'thailand stock market hours', 'bangkok stock exchange', 'set thailand times'],
+    },
+    holidays: {
+      title: 'Bangkok Public Holidays | Thai Holidays & Songkran Guide',
+      description: 'Bangkok public holidays calendar. Songkran (Thai New Year), King\'s Birthday, Buddhist holidays. What\'s closed and festival dates.',
+      keywords: ['bangkok holidays', 'thai public holidays', 'songkran dates', 'thailand bank holidays'],
+    },
+    digitalNomad: {
+      title: 'Digital Nomad Bangkok Guide | Coworking, WiFi & Cost of Living',
+      description: 'Work remotely from Bangkok. Best coworking spaces, laptop-friendly cafes, affordable living, and visa options for Thailand.',
+      keywords: ['digital nomad bangkok', 'coworking bangkok', 'thailand cost of living', 'thailand digital nomad visa'],
+    },
+    timeDifference: {
+      title: 'Bangkok Time Difference Calculator | ICT vs World Cities',
+      description: 'Bangkok time difference to London (+7h), New York (+12h), Sydney (-4h). Indochina Time explained with live converter.',
+      keywords: ['bangkok time difference', 'bangkok vs london time', 'ict vs gmt', 'thailand uk time difference'],
+    },
+    travelPlanning: {
+      title: 'Bangkok Travel Guide | Flight Times, Airports & Getting Around',
+      description: 'Flying to Bangkok? Flight times from London (11h), Sydney (9h), Tokyo (6h). Suvarnabhumi and Don Mueang airport tips.',
+      keywords: ['flight time to bangkok', 'suvarnabhumi airport', 'bangkok bts skytrain', 'getting around bangkok'],
+    },
+  },
+  
+  clusters: [
+    { slug: 'business-hours', icon: '🏢', title: 'Business Hours', desc: 'Shops, banks, and Thai work culture' },
+    { slug: 'best-time-to-visit', icon: '☀️', title: 'Best Time to Visit', desc: 'Weather, monsoon, and Songkran' },
+    { slug: 'remote-work', icon: '💻', title: 'Remote Work', desc: 'Working with Thai teams and nomad life' },
+    { slug: '24-hours', icon: '🌃', title: '24 Hours in Bangkok', desc: 'From temples to legendary nightlife' },
+    { slug: 'call-times', icon: '📞', title: 'Best Time to Call', desc: 'Optimal calling windows worldwide' },
+    { slug: 'stock-market', icon: '📈', title: 'SET Thailand Hours', desc: 'Thai stock market trading times' },
+    { slug: 'holidays', icon: '🎉', title: 'Thai Holidays', desc: 'Songkran, Buddhist days, and festivals' },
+    { slug: 'digital-nomad', icon: '🎒', title: 'Digital Nomad', desc: 'The ultimate nomad destination' },
+    { slug: 'time-difference', icon: '🌐', title: 'Time Difference', desc: 'Bangkok vs London, NYC, Sydney' },
+    { slug: 'travel-planning', icon: '✈️', title: 'Travel Planning', desc: 'Airports, BTS, and getting around' },
+  ],
+}
+
+// ===================
+// SÃO PAULO (Latin America's Financial Capital)
+// ===================
+export const saoPauloGuide: GuideConfig = {
+  citySlug: 'sao-paulo',
+  cityName: 'São Paulo',
+  timezone: 'America/Sao_Paulo',
+  timezoneAbbr: 'BRT',
+  timezoneName: 'Brasília Time',
+  utcOffset: -3,
+  icon: '🇧🇷',
+  tagline: 'Your complete guide to time in South America\'s largest city',
+  region: 'AMERICAS',
+  coordinates: { lat: -23.5505, lng: -46.6333 },
+  
+  seo: {
+    title: 'São Paulo Time Zone Guide | BRT, B3 Stock Exchange & Business Hours',
+    description: 'Complete São Paulo time zone guide. Brasília Time (BRT/UTC-3), B3 Bovespa trading hours, best time to call São Paulo, and Brazilian business culture.',
+    keywords: ['são paulo time zone', 'sao paulo time now', 'brazil time', 'brt time zone', 'b3 bovespa hours', 'são paulo business hours', 'best time to call brazil', 'brasilia time'],
+    ogTitle: 'São Paulo Time Zone Guide | Complete Brazil Time Resource',
+    ogDescription: 'Everything about São Paulo time: B3 market hours, business culture, remote work tips. The definitive guide to Latin America\'s financial capital.',
+  },
+  
+  pages: {
+    overview: {
+      title: 'São Paulo Time Zone Guide | BRT, Business Hours & More',
+      description: 'Complete São Paulo time zone guide. Brasília Time (BRT/UTC-3), B3 trading hours, and Brazilian business culture.',
+      keywords: ['são paulo time zone', 'sao paulo time', 'brazil time', 'brt brasilia time'],
+    },
+    businessHours: {
+      title: 'São Paulo Business Hours | Banks, Shops, Markets & Restaurants',
+      description: 'What time do businesses open in São Paulo? Complete guide to Brazilian business hours, bank schedules, Paulista Avenue shopping, and restaurant times.',
+      keywords: ['são paulo business hours', 'brazil shop hours', 'são paulo bank hours', 'paulista avenue hours'],
+    },
+    bestTimeToVisit: {
+      title: 'Best Time to Visit São Paulo | Weather, Carnival & Cultural Season',
+      description: 'When to visit São Paulo? Month-by-month guide with weather, avoiding rainy season, Carnival timing, and cultural festival calendar.',
+      keywords: ['best time to visit são paulo', 'são paulo weather by month', 'são paulo carnival', 'brazil rainy season'],
+    },
+    remoteWork: {
+      title: 'Working with São Paulo Teams Remotely | BRT Time Zone Overlap Guide',
+      description: 'Remote work guide for São Paulo collaboration. Find overlap hours with New York, London, Europe. Brazilian work culture and meeting etiquette.',
+      keywords: ['remote work são paulo time zone', 'working with brazilian team', 'brt time zone overlap', 'best meeting time são paulo'],
+    },
+    twentyFourHours: {
+      title: 'São Paulo 24 Hour Guide | City That Never Sleeps',
+      description: 'São Paulo hour-by-hour: morning at Municipal Market, Paulista afternoon, Vila Madalena evening, and legendary nightlife.',
+      keywords: ['24 hours in são paulo', 'são paulo nightlife', 'paulista avenue', 'vila madalena nightlife'],
+    },
+    callTimes: {
+      title: 'Best Time to Call São Paulo | From USA, UK, Europe & More',
+      description: 'When to call São Paulo? Best calling times from New York, London, Miami. BRT business hours and optimal windows.',
+      keywords: ['best time to call são paulo', 'call brazil from usa', 'call são paulo from uk', 'brt calling hours'],
+    },
+    stockMarket: {
+      title: 'B3 Bovespa Trading Hours | São Paulo Stock Exchange Times',
+      description: 'B3 (Brasil Bolsa Balcão) opens 10:00 AM BRT. Complete Bovespa trading schedule, market hours, and Brazilian market holidays.',
+      keywords: ['b3 trading hours', 'bovespa market hours', 'são paulo stock exchange', 'brazil stock market times'],
+    },
+    holidays: {
+      title: 'São Paulo Public Holidays | Brazilian Holidays & Carnival',
+      description: 'São Paulo public holidays calendar. Carnival, Independence Day, regional holidays. What\'s closed and festival dates.',
+      keywords: ['são paulo holidays', 'brazil public holidays', 'carnival dates brazil', 'brazilian bank holidays'],
+    },
+    digitalNomad: {
+      title: 'Digital Nomad São Paulo Guide | Coworking, WiFi & Cost of Living',
+      description: 'Work remotely from São Paulo. Best coworking spaces, laptop-friendly cafes, affordable living, and visa information for Brazil.',
+      keywords: ['digital nomad são paulo', 'coworking são paulo', 'brazil cost of living', 'brazil digital nomad visa'],
+    },
+    timeDifference: {
+      title: 'São Paulo Time Difference Calculator | BRT vs World Cities',
+      description: 'São Paulo time difference to New York (+2h), London (+3h), Tokyo (+12h). Brasília Time explained with live converter.',
+      keywords: ['são paulo time difference', 'são paulo vs new york time', 'brt vs est', 'brazil uk time difference'],
+    },
+    travelPlanning: {
+      title: 'São Paulo Travel Guide | Flight Times, Airports & Getting Around',
+      description: 'Flying to São Paulo? Flight times from NYC (10h), London (11h), Miami (8h). GRU and CGH airport tips, Metro guide.',
+      keywords: ['flight time to são paulo', 'guarulhos airport', 'são paulo metro', 'getting around são paulo'],
+    },
+  },
+  
+  clusters: [
+    { slug: 'business-hours', icon: '🏢', title: 'Business Hours', desc: 'Banks, shops, and Brazilian work culture' },
+    { slug: 'best-time-to-visit', icon: '🌴', title: 'Best Time to Visit', desc: 'Weather, Carnival, and cultural festivals' },
+    { slug: 'remote-work', icon: '💻', title: 'Remote Work', desc: 'Working with Brazilian teams across time zones' },
+    { slug: '24-hours', icon: '🌃', title: '24 Hours in São Paulo', desc: 'From Paulista to legendary nightlife' },
+    { slug: 'call-times', icon: '📞', title: 'Best Time to Call', desc: 'Optimal calling windows from anywhere' },
+    { slug: 'stock-market', icon: '📈', title: 'B3 Bovespa Hours', desc: 'Brazilian stock market trading times' },
+    { slug: 'holidays', icon: '🎭', title: 'Brazilian Holidays', desc: 'Carnival, national days, and festivals' },
+    { slug: 'digital-nomad', icon: '🎒', title: 'Digital Nomad', desc: 'Coworking and remote work in SP' },
+    { slug: 'time-difference', icon: '🌐', title: 'Time Difference', desc: 'São Paulo vs NYC, London, Miami' },
+    { slug: 'travel-planning', icon: '✈️', title: 'Travel Planning', desc: 'Airports, Metro, and getting around' },
+  ],
+}
+
+// ===================
+// CHICAGO (America's Third City)
+// ===================
+export const chicagoGuide: GuideConfig = {
+  citySlug: 'chicago',
+  cityName: 'Chicago',
+  timezone: 'America/Chicago',
+  timezoneAbbr: 'CST/CDT',
+  timezoneName: 'Central Time',
+  utcOffset: -6,
+  icon: '🌬️',
+  tagline: 'Your complete guide to time in the Windy City',
+  region: 'AMERICAS',
+  coordinates: { lat: 41.8781, lng: -87.6298 },
+  
+  seo: {
+    title: 'Chicago Time Zone Guide | CST/CDT, CME Hours & Business Times',
+    description: 'Complete Chicago time zone guide. Central Time (CST/CDT), CME trading hours, best time to call Chicago, business hours, and Windy City local tips.',
+    keywords: ['chicago time zone', 'chicago time now', 'central time zone', 'cst cdt time', 'cme trading hours', 'chicago business hours', 'best time to call chicago', 'chicago time difference'],
+    ogTitle: 'Chicago Time Zone Guide | Complete Central Time Resource',
+    ogDescription: 'Everything about Chicago time: CME hours, business culture, remote work tips. The definitive guide to America\'s third city.',
+  },
+  
+  pages: {
+    overview: {
+      title: 'Chicago Time Zone Guide | CST/CDT, Business Hours & More',
+      description: 'Complete Chicago time zone guide. Central Time (CST/CDT), CME trading hours, and Windy City business culture.',
+      keywords: ['chicago time zone', 'chicago time', 'central time', 'cst cdt'],
+    },
+    businessHours: {
+      title: 'Chicago Business Hours | Banks, Shops, CME & Restaurants',
+      description: 'What time do businesses open in Chicago? Complete guide to Windy City business hours, bank schedules, Magnificent Mile shopping, and restaurant times.',
+      keywords: ['chicago business hours', 'chicago store hours', 'magnificent mile hours', 'chicago restaurant hours'],
+    },
+    bestTimeToVisit: {
+      title: 'Best Time to Visit Chicago | Weather, Festivals & Lake Season',
+      description: 'When to visit Chicago? Month-by-month guide with weather, Lollapalooza, Taste of Chicago, avoiding harsh winters, and lakefront summer tips.',
+      keywords: ['best time to visit chicago', 'chicago weather by month', 'lollapalooza dates', 'chicago summer festivals'],
+    },
+    remoteWork: {
+      title: 'Working with Chicago Teams Remotely | CST Time Zone Overlap Guide',
+      description: 'Remote work guide for Chicago collaboration. Find overlap hours with New York, London, LA. Central Time zone tips and Midwest work culture.',
+      keywords: ['remote work chicago time zone', 'working with chicago team', 'cst time zone overlap', 'best meeting time chicago'],
+    },
+    twentyFourHours: {
+      title: 'Chicago 24 Hour Guide | Windy City Around the Clock',
+      description: 'Chicago hour-by-hour: morning lakefront run, Loop business lunch, Magnificent Mile shopping, and late-night deep dish.',
+      keywords: ['24 hours in chicago', 'chicago nightlife', 'chicago deep dish', 'chicago lakefront'],
+    },
+    callTimes: {
+      title: 'Best Time to Call Chicago | From NYC, London, LA & More',
+      description: 'When to call Chicago? Best calling times from New York, London, Los Angeles. CST business hours and optimal windows.',
+      keywords: ['best time to call chicago', 'call chicago from new york', 'call chicago from uk', 'cst calling hours'],
+    },
+    stockMarket: {
+      title: 'CME & CBOT Trading Hours | Chicago Futures Market Times',
+      description: 'CME Group and CBOT trading hours in Central Time. Futures market schedule, electronic trading times, and holiday closures.',
+      keywords: ['cme trading hours', 'cbot hours', 'chicago futures market', 'cme group schedule', 'chicago mercantile exchange times'],
+    },
+    holidays: {
+      title: 'Chicago Public Holidays | US Federal Holidays & Local Events',
+      description: 'Chicago public holidays calendar. US federal holidays, Chicago-specific events, and what\'s closed on major holidays.',
+      keywords: ['chicago holidays', 'us federal holidays', 'chicago holiday events', 'chicago christmas'],
+    },
+    digitalNomad: {
+      title: 'Digital Nomad Chicago Guide | Coworking, WiFi & Cost of Living',
+      description: 'Work remotely from Chicago. Best coworking spaces in the Loop, laptop-friendly cafes, cost of living, and visa considerations.',
+      keywords: ['digital nomad chicago', 'coworking chicago', 'chicago cost of living', 'work from chicago'],
+    },
+    timeDifference: {
+      title: 'Chicago Time Difference Calculator | CST/CDT vs World Cities',
+      description: 'Chicago time difference to New York (+1h), London (+6h), LA (-2h). Central Time explained with live converter.',
+      keywords: ['chicago time difference', 'chicago vs new york time', 'cst vs est', 'chicago london time difference'],
+    },
+    travelPlanning: {
+      title: 'Chicago Travel Guide | Flight Times, O\'Hare Airport & Getting Around',
+      description: 'Flying to Chicago? Flight times from NYC (2.5h), London (8h), LA (4h). O\'Hare tips, CTA L train guide, and getting downtown.',
+      keywords: ['flight time to chicago', 'ohare airport guide', 'chicago cta', 'chicago l train'],
+    },
+  },
+  
+  clusters: [
+    { slug: 'business-hours', icon: '🏢', title: 'Business Hours', desc: 'Banks, shops, and Chicago work culture' },
+    { slug: 'best-time-to-visit', icon: '🎭', title: 'Best Time to Visit', desc: 'Festivals, lakefront summer, avoiding winter' },
+    { slug: 'remote-work', icon: '💻', title: 'Remote Work', desc: 'Working with Midwest teams across time zones' },
+    { slug: '24-hours', icon: '🌃', title: '24 Hours in Chicago', desc: 'From sunrise lakefront to late-night pizza' },
+    { slug: 'call-times', icon: '📞', title: 'Best Time to Call', desc: 'Optimal calling windows worldwide' },
+    { slug: 'stock-market', icon: '📈', title: 'CME & CBOT Hours', desc: 'Chicago futures market trading times' },
+    { slug: 'holidays', icon: '🎆', title: 'Public Holidays', desc: 'US federal holidays and local events' },
+    { slug: 'digital-nomad', icon: '🎒', title: 'Digital Nomad', desc: 'Coworking and remote work in the Loop' },
+    { slug: 'time-difference', icon: '🌐', title: 'Time Difference', desc: 'Chicago vs NYC, London, LA' },
+    { slug: 'travel-planning', icon: '✈️', title: 'Travel Planning', desc: 'O\'Hare, Midway, and the L train' },
+  ],
+}
+
+// ===================
+// FRANKFURT (Europe's Financial Capital)
+// ===================
+export const frankfurtGuide: GuideConfig = {
+  citySlug: 'frankfurt',
+  cityName: 'Frankfurt',
+  timezone: 'Europe/Berlin',
+  timezoneAbbr: 'CET/CEST',
+  timezoneName: 'Central European Time',
+  utcOffset: 1,
+  icon: '🏦',
+  tagline: 'Your complete guide to time in Europe\'s financial capital',
+  region: 'EUROPE',
+  coordinates: { lat: 50.1109, lng: 8.6821 },
+  
+  seo: {
+    title: 'Frankfurt Time Zone Guide | CET/CEST, ECB Hours & Business Times',
+    description: 'Complete Frankfurt time zone guide. Central European Time, ECB schedule, stock exchange hours, best time to call Frankfurt, and Mainhattan business culture.',
+    keywords: ['frankfurt time zone', 'frankfurt time now', 'germany time', 'cet time zone', 'ecb trading hours', 'frankfurt stock exchange hours', 'best time to call frankfurt', 'frankfurt business hours'],
+    ogTitle: 'Frankfurt Time Zone Guide | Complete Germany Financial Hub Resource',
+    ogDescription: 'Everything about Frankfurt time: ECB hours, stock exchange, business culture. The definitive guide to Europe\'s financial capital.',
+  },
+  
+  pages: {
+    overview: {
+      title: 'Frankfurt Time Zone Guide | CET/CEST, Business Hours & More',
+      description: 'Complete Frankfurt time zone guide. Central European Time, ECB schedule, stock exchange hours, and Mainhattan business culture.',
+      keywords: ['frankfurt time zone', 'frankfurt time', 'germany time', 'cet cest germany'],
+    },
+    businessHours: {
+      title: 'Frankfurt Business Hours | Banks, ECB, Shops & Restaurants',
+      description: 'What time do businesses open in Frankfurt? Complete guide to German business hours, ECB schedule, bank times, and Sachsenhausen restaurant hours.',
+      keywords: ['frankfurt business hours', 'germany shop hours', 'ecb opening hours', 'frankfurt bank times'],
+    },
+    bestTimeToVisit: {
+      title: 'Best Time to Visit Frankfurt | Weather, Book Fair & Christmas Markets',
+      description: 'When to visit Frankfurt? Month-by-month guide with weather, Book Fair dates, Christmas market season, and trade fair calendar.',
+      keywords: ['best time to visit frankfurt', 'frankfurt weather by month', 'frankfurt book fair', 'frankfurt christmas market'],
+    },
+    remoteWork: {
+      title: 'Working with Frankfurt Teams Remotely | CET Time Zone Overlap Guide',
+      description: 'Remote work guide for Frankfurt collaboration. Find overlap hours with New York, London, Singapore. German work culture and meeting etiquette.',
+      keywords: ['remote work frankfurt time zone', 'working with german team', 'cet time zone overlap', 'best meeting time frankfurt'],
+    },
+    twentyFourHours: {
+      title: 'Frankfurt 24 Hour Guide | Mainhattan Around the Clock',
+      description: 'Frankfurt hour-by-hour: morning at Kleinmarkthalle, Bankenviertel business lunch, Sachsenhausen Apfelwein evening.',
+      keywords: ['24 hours in frankfurt', 'frankfurt nightlife', 'sachsenhausen apfelwein', 'frankfurt day trip'],
+    },
+    callTimes: {
+      title: 'Best Time to Call Frankfurt | From UK, USA, Asia & More',
+      description: 'When to call Frankfurt? Best calling times from London, New York, Singapore. ECB business hours and optimal windows.',
+      keywords: ['best time to call frankfurt', 'call germany from uk', 'call frankfurt from usa', 'cet calling hours'],
+    },
+    stockMarket: {
+      title: 'Frankfurt Stock Exchange Hours | Xetra & DAX Trading Times',
+      description: 'Frankfurt Stock Exchange opens 9:00 AM CET. Complete Xetra trading schedule, DAX index hours, and German market holidays.',
+      keywords: ['frankfurt stock exchange hours', 'xetra trading hours', 'dax market hours', 'german stock market times'],
+    },
+    holidays: {
+      title: 'Frankfurt Public Holidays | German Holidays & Bank Closures',
+      description: 'Frankfurt public holidays calendar. German Unity Day, Christmas, regional Hessen holidays. What\'s closed and business impact.',
+      keywords: ['frankfurt holidays', 'german public holidays', 'hessen holidays', 'germany bank holidays'],
+    },
+    digitalNomad: {
+      title: 'Digital Nomad Frankfurt Guide | Coworking, WiFi & Cost of Living',
+      description: 'Work remotely from Frankfurt. Best coworking spaces, laptop-friendly cafes, high cost of living reality, and EU freelancer visa.',
+      keywords: ['digital nomad frankfurt', 'coworking frankfurt', 'frankfurt cost of living', 'germany freelancer visa'],
+    },
+    timeDifference: {
+      title: 'Frankfurt Time Difference Calculator | CET/CEST vs World Cities',
+      description: 'Frankfurt time difference to London (+1h), New York (+6h), Tokyo (-8h). CET vs GMT explained with live converter.',
+      keywords: ['frankfurt time difference', 'frankfurt vs london time', 'cet vs gmt', 'germany uk time difference'],
+    },
+    travelPlanning: {
+      title: 'Frankfurt Travel Guide | Flight Times, Airport & Getting Around',
+      description: 'Flying to Frankfurt? Flight times from London (1.5h), NYC (8h), Singapore (12h). FRA airport tips and S-Bahn to city center.',
+      keywords: ['flight time to frankfurt', 'frankfurt airport guide', 'fra airport', 'frankfurt hauptbahnhof'],
+    },
+  },
+  
+  clusters: [
+    { slug: 'business-hours', icon: '🏦', title: 'Business Hours', desc: 'ECB, banks, and German work culture' },
+    { slug: 'best-time-to-visit', icon: '📚', title: 'Best Time to Visit', desc: 'Book Fair, Christmas markets, trade fairs' },
+    { slug: 'remote-work', icon: '💻', title: 'Remote Work', desc: 'Working with German teams across time zones' },
+    { slug: '24-hours', icon: '🌃', title: '24 Hours in Frankfurt', desc: 'From Kleinmarkthalle to Sachsenhausen' },
+    { slug: 'call-times', icon: '📞', title: 'Best Time to Call', desc: 'Optimal calling windows worldwide' },
+    { slug: 'stock-market', icon: '📈', title: 'Stock Exchange Hours', desc: 'Xetra and DAX trading times' },
+    { slug: 'holidays', icon: '🎄', title: 'German Holidays', desc: 'Public holidays and bank closures' },
+    { slug: 'digital-nomad', icon: '🎒', title: 'Digital Nomad', desc: 'Coworking and remote work in Mainhattan' },
+    { slug: 'time-difference', icon: '🌐', title: 'Time Difference', desc: 'Frankfurt vs London, NYC, Tokyo' },
+    { slug: 'travel-planning', icon: '✈️', title: 'Travel Planning', desc: 'FRA airport and high-speed rail' },
+  ],
+}
+
+// ===================
+// MUMBAI (India's Financial Capital)
+// ===================
+export const mumbaiGuide: GuideConfig = {
+  citySlug: 'mumbai',
+  cityName: 'Mumbai',
+  timezone: 'Asia/Kolkata',
+  timezoneAbbr: 'IST',
+  timezoneName: 'India Standard Time',
+  utcOffset: 5.5, // Unique 30-minute offset!
+  icon: '🇮🇳',
+  tagline: 'Your complete guide to time in India\'s Maximum City',
+  region: 'ASIA',
+  coordinates: { lat: 19.0760, lng: 72.8777 },
+  
+  seo: {
+    title: 'Mumbai Time Zone Guide | IST, Business Hours & Bollywood Schedule',
+    description: 'Complete Mumbai time zone guide. India Standard Time (IST/UTC+5:30), BSE/NSE trading hours, Bollywood schedules, best time to call Mumbai, and monsoon season planning.',
+    keywords: ['mumbai time zone', 'mumbai time now', 'india standard time', 'ist time zone', 'mumbai business hours', 'bse nse trading hours', 'best time to call mumbai', 'india time difference', 'mumbai vs london time'],
+    ogTitle: 'Mumbai Time Zone Guide | Complete India Time Resource',
+    ogDescription: 'Everything about Mumbai time: IST explained, business hours, stock markets, remote work tips. The definitive guide to India\'s financial capital.',
+  },
+  
+  pages: {
+    overview: {
+      title: 'Mumbai Time Zone Guide | IST, Business Hours & More',
+      description: 'Complete Mumbai time zone guide. India Standard Time (IST/UTC+5:30), business hours, BSE/NSE times, and local tips for India\'s financial capital.',
+      keywords: ['mumbai time zone', 'mumbai time', 'india standard time', 'ist utc+5:30'],
+    },
+    businessHours: {
+      title: 'Mumbai Business Hours | Banks, Shops, Markets & Government Offices',
+      description: 'What time do businesses open in Mumbai? Complete guide to Indian business hours, bank schedules, Crawford Market times, and government office hours.',
+      keywords: ['mumbai business hours', 'india shop hours', 'mumbai bank timings', 'crawford market hours', 'mumbai office hours'],
+    },
+    bestTimeToVisit: {
+      title: 'Best Time to Visit Mumbai | Monsoon, Weather & Festival Season',
+      description: 'When to visit Mumbai? Month-by-month guide with monsoon warnings (June-September), Diwali season, Ganesh Chaturthi, and winter peak season.',
+      keywords: ['best time to visit mumbai', 'mumbai weather by month', 'mumbai monsoon season', 'diwali in mumbai', 'ganesh chaturthi dates'],
+    },
+    remoteWork: {
+      title: 'Working with Mumbai Teams Remotely | IST Time Zone Overlap Guide',
+      description: 'Remote work guide for Mumbai collaboration. Find overlap hours with London, New York, Singapore. Best meeting times and Indian work culture insights.',
+      keywords: ['remote work mumbai time zone', 'working with indian team', 'ist time zone overlap', 'best meeting time mumbai', 'india remote work hours'],
+    },
+    twentyFourHours: {
+      title: 'Mumbai 24 Hour Guide | Maximum City Around the Clock',
+      description: 'Mumbai hour-by-hour: morning local trains, Dalal Street trading, Marine Drive sunset, and Mumbai nightlife scene.',
+      keywords: ['24 hours in mumbai', 'mumbai nightlife hours', 'marine drive evening', 'mumbai local train times'],
+    },
+    callTimes: {
+      title: 'Best Time to Call Mumbai | From UK, USA, UAE & Australia',
+      description: 'When to call Mumbai? Best calling times from London, New York, Dubai, Sydney. Business hours overlap with India Standard Time.',
+      keywords: ['best time to call mumbai', 'call india from uk time', 'call mumbai from usa', 'ist calling hours'],
+    },
+    stockMarket: {
+      title: 'BSE NSE Trading Hours | Mumbai Stock Exchange Times in IST',
+      description: 'BSE and NSE open 9:15 AM IST. Complete Indian stock market schedule, pre-market session, and trading holidays calendar.',
+      keywords: ['bse trading hours', 'nse market timing', 'indian stock market hours', 'sensex trading time', 'nifty market hours'],
+    },
+    holidays: {
+      title: 'Mumbai Public Holidays | Indian Festivals & Bank Holidays Guide',
+      description: 'Mumbai public holidays calendar. Diwali, Holi, Ganesh Chaturthi, Republic Day, Independence Day - what\'s closed and festival dates.',
+      keywords: ['mumbai holidays', 'indian public holidays', 'diwali holiday india', 'ganesh chaturthi mumbai', 'india bank holidays'],
+    },
+    digitalNomad: {
+      title: 'Digital Nomad Mumbai Guide | Coworking, WiFi & Cost of Living',
+      description: 'Work remotely from Mumbai. Best coworking spaces in BKC and Andheri, laptop-friendly cafes, affordable living, and visa information.',
+      keywords: ['digital nomad mumbai', 'coworking mumbai', 'mumbai cost of living', 'india freelancer visa', 'work from mumbai'],
+    },
+    timeDifference: {
+      title: 'Mumbai Time Difference Calculator | IST vs World Cities',
+      description: 'Mumbai time difference to London (+5:30), New York (+10:30), Dubai (+1:30), Singapore (-2:30). The unique 30-minute offset explained.',
+      keywords: ['mumbai time difference', 'mumbai vs london time', 'ist vs gmt hours', 'india uk time difference', 'mumbai new york time'],
+    },
+    travelPlanning: {
+      title: 'Mumbai Travel Guide | Flight Times, Airport & Getting Around',
+      description: 'Flying to Mumbai? Flight times from London (9h), Dubai (3h), Singapore (6h). Chhatrapati Shivaji Airport tips and local train guide.',
+      keywords: ['flight time to mumbai', 'mumbai airport guide', 'bom airport', 'mumbai local train', 'getting around mumbai'],
+    },
+  },
+  
+  clusters: [
+    { slug: 'business-hours', icon: '🏦', title: 'Business Hours', desc: 'Banks, shops, and market timings' },
+    { slug: 'best-time-to-visit', icon: '🌧️', title: 'Best Time to Visit', desc: 'Monsoon, festivals, and peak season' },
+    { slug: 'remote-work', icon: '💻', title: 'Remote Work', desc: 'Working with India teams across time zones' },
+    { slug: '24-hours', icon: '🌃', title: '24 Hours in Mumbai', desc: 'How Mumbaikars live around the clock' },
+    { slug: 'call-times', icon: '📞', title: 'Best Time to Call', desc: 'Optimal calling windows from any country' },
+    { slug: 'stock-market', icon: '📈', title: 'BSE & NSE Hours', desc: 'Indian stock market trading times' },
+    { slug: 'holidays', icon: '🪔', title: 'Public Holidays', desc: 'Diwali, Holi, and festival calendar' },
+    { slug: 'digital-nomad', icon: '🎒', title: 'Digital Nomad', desc: 'Coworking, cafes, and costs' },
+    { slug: 'time-difference', icon: '🌐', title: 'Time Difference', desc: 'Mumbai vs London, NYC, Dubai' },
+    { slug: 'travel-planning', icon: '✈️', title: 'Travel Planning', desc: 'Flights, airport, and local trains' },
+  ],
+}
+
+// ===================
 // GUIDE REGISTRY
 // ===================
 export const guideConfigs: Record<string, GuideConfig> = {
@@ -1501,6 +1976,11 @@ export const guideConfigs: Record<string, GuideConfig> = {
   'sydney': sydneyGuide,
   'istanbul': istanbulGuide,
   'los-angeles': losAngelesGuide,
+  'mumbai': mumbaiGuide,
+  'frankfurt': frankfurtGuide,
+  'chicago': chicagoGuide,
+  'sao-paulo': saoPauloGuide,
+  'bangkok': bangkokGuide,
 }
 
 // All Tier 1 cities that should have guide pages
@@ -1646,7 +2126,12 @@ const PREMIUM_GUIDE_CITIES = [
   'shanghai',
   'seoul',
   'berlin',
-  'amsterdam'
+  'amsterdam',
+  'mumbai',
+  'frankfurt',
+  'chicago',
+  'sao-paulo',
+  'bangkok'
 ]
 
 export function getGuideConfig(citySlug: string): GuideConfig | null {
@@ -1700,6 +2185,16 @@ const CITY_TABLE_OVERRIDES: Record<string, string[]> = {
   'new-york': ['london', 'los-angeles', 'toronto', 'paris', 'tokyo', 'hong-kong', 'sao-paulo', 'dubai'],
   // Tokyo: Asia's largest economy
   'tokyo': ['singapore', 'hong-kong', 'shanghai', 'seoul', 'sydney', 'london', 'new-york', 'los-angeles'],
+  // Mumbai: India's financial capital, strong Middle East/Asia/UK ties
+  'mumbai': ['dubai', 'singapore', 'london', 'hong-kong', 'new-york', 'tokyo', 'sydney', 'frankfurt'],
+  // Frankfurt: Europe's financial hub, ECB headquarters
+  'frankfurt': ['london', 'new-york', 'paris', 'zurich', 'amsterdam', 'dubai', 'singapore', 'tokyo'],
+  // Chicago: America's third city, CME/CBOT futures hub
+  'chicago': ['new-york', 'los-angeles', 'london', 'toronto', 'tokyo', 'frankfurt', 'hong-kong', 'sao-paulo'],
+  // São Paulo: Latin America's financial capital, B3 exchange
+  'sao-paulo': ['new-york', 'miami', 'london', 'buenos-aires', 'mexico-city', 'lisbon', 'tokyo', 'frankfurt'],
+  // Bangkok: Southeast Asia hub, tourism and digital nomad capital
+  'bangkok': ['singapore', 'hong-kong', 'tokyo', 'sydney', 'london', 'dubai', 'mumbai', 'seoul'],
 }
 
 // Default cities per region (used when no override exists)

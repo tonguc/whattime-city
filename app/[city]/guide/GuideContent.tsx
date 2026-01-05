@@ -4,7 +4,7 @@ import { City } from '@/lib/cities'
 import { GuideConfig } from '@/lib/guide-content'
 import { useCityContext } from '@/lib/CityContext'
 
-// Premium city-specific content (15 custom cities)
+// Premium city-specific content (20 custom cities)
 import NYCGuideContent from './content/nyc-overview'
 import LondonGuideContent from './content/london-overview'
 import TokyoOverviewContent from './content/tokyo-overview'
@@ -20,6 +20,11 @@ import ShanghaiOverviewContent from './content/shanghai-overview'
 import SeoulOverviewContent from './content/seoul-overview'
 import BerlinOverviewContent from './content/berlin-overview'
 import AmsterdamOverviewContent from './content/amsterdam-overview'
+import MumbaiOverviewContent from './content/mumbai-overview'
+import FrankfurtOverviewContent from './content/frankfurt-overview'
+import ChicagoOverviewContent from './content/chicago-overview'
+import SaoPauloOverviewContent from './content/sao-paulo-overview'
+import BangkokOverviewContent from './content/bangkok-overview'
 import GenericGuideContent from './content/generic-overview'
 
 interface Props {
@@ -84,6 +89,21 @@ export default function GuideContent({ city, config }: Props) {
     
     case 'amsterdam':
       return <AmsterdamOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    case 'mumbai':
+      return <MumbaiOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    case 'frankfurt':
+      return <FrankfurtOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    case 'chicago':
+      return <ChicagoOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    case 'sao-paulo':
+      return <SaoPauloOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
+    
+    case 'bangkok':
+      return <BangkokOverviewContent city={city} config={config} isLight={isLight} timeStr={timeStr} />
     
     // Should not reach here - 404 handled by page.tsx
     default:
