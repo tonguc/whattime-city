@@ -17,20 +17,20 @@ import { useAlarm, useWeather } from '@/shared/hooks'
 // V2 Components - Modular
 import HeroSection from './HeroSection'
 import InfoRow from './InfoRow'
+import SnippetBlock from './SnippetBlock'
 import ConverterSection from './ConverterSection'
 import CompactInfoCards from './CompactInfoCards'
 import TimeZoneFacts from './TimeZoneFacts'
 import BusinessHoursBox from './BusinessHoursBox'
 import TimeDifferenceTable from './TimeDifferenceTable'
 import GuidePreview from './GuidePreview'
+import CompactWorldCities from './CompactWorldCities'
 
 // Existing WorldClock components (reused)
 import CityGuideCard from '@/components/WorldClock/CityGuideCard'
 import TravelBridge from '@/components/WorldClock/TravelBridge'
 import MoreCitiesSection from '@/components/WorldClock/MoreCitiesSection'
-import WorldCitiesGrid from '@/components/WorldClock/WorldCitiesGrid'
 import FavoriteCard from '@/components/WorldClock/FavoriteCard'
-import type { ContinentFilter } from '@/lib/cities'
 
 interface CityPageV2Props {
   initialCity?: City
@@ -69,8 +69,6 @@ export default function CityPageV2({ initialCity }: CityPageV2Props) {
   const [selectedCity, setSelectedCity] = useState<City>(defaultCity)
   const [time, setTime] = useState(new Date())
   const [lang, setLang] = useState<Language>('en')
-  const [selectedContinent, setSelectedContinent] = useState<ContinentFilter>('all')
-  const [continentFilter, setContinentFilter] = useState('')
   
   // Weather
   const { weather, weatherAnimation } = useWeather(selectedCity.city)
@@ -196,6 +194,9 @@ export default function CityPageV2({ initialCity }: CityPageV2Props) {
           autoTheme={autoTheme}
         />
         
+        {/* 1c. SNIPPET BLOCK - Featured snippet için 2-3 cümle */}
+        <SnippetBlock city={selectedCity} />
+        
         {/* 2. QUICK INFO (Compact Pills) */}
         <CompactInfoCards city={selectedCity} />
         
@@ -252,18 +253,13 @@ export default function CityPageV2({ initialCity }: CityPageV2Props) {
         {/* 10. MORE CITIES (Same Country/Region) */}
         <MoreCitiesSection selectedCity={selectedCity} />
         
-        {/* 11. WORLD CITIES (Exit Control) - Limited by default */}
-        <WorldCitiesGrid
+        {/* 11. WORLD CITIES - Compact, 12 default, "Show more" */}
+        <CompactWorldCities
           selectedCity={selectedCity}
           onCitySelect={(city) => {
             setSelectedCity(city)
             router.push(`/${city.slug}`, { scroll: false })
           }}
-          selectedContinent={selectedContinent}
-          onContinentChange={setSelectedContinent}
-          continentFilter={continentFilter}
-          onFilterChange={setContinentFilter}
-          t={{} as any}
         />
         
         {/* Note: EEAT is now integrated into TimeZoneFacts */}
