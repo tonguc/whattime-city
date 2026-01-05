@@ -52,7 +52,7 @@ export default function LondonOverviewContent({ city, config, isLight, timeStr }
   const headingColor = isLight ? 'text-slate-800' : 'text-white'
   const mutedColor = isLight ? 'text-slate-500' : 'text-slate-400'
   const cardBg = isLight ? 'bg-slate-50' : 'bg-slate-700/50'
-  const linkColor = isLight ? 'text-amber-600 hover:text-amber-700' : 'text-amber-400 hover:text-amber-300'
+  const linkColor = isLight ? 'text-blue-600 hover:text-blue-800 hover:underline' : 'text-sky-400 hover:text-sky-300 hover:underline'
 
   // Generate FAQ Schema JSON-LD
   const faqSchema = {
