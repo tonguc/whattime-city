@@ -329,9 +329,9 @@ function CloudyAnimation({ isDay }: { isDay: boolean }) {
 function FogAnimation() {
   return (
     <>
-      {/* Static fog layers - no movement */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-200/30 via-slate-300/20 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-100/20 via-slate-200/15 to-transparent" />
+      {/* Very subtle fog layers - minimal opacity to not cover background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-white/3 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-white/3 via-white/2 to-transparent" />
     </>
   )
 }
