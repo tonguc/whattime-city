@@ -106,12 +106,7 @@ export default function RootLayout({
         
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Font preload for better CLS - swap ensures text visible immediately */}
-        <link 
-          rel="preload" 
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" 
-          as="style"
-        />
+        {/* Font with display=swap for better CLS */}
         <link 
           rel="stylesheet" 
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
