@@ -13,12 +13,13 @@ import Footer from '@/components/Footer'
 import WeatherBackground from '@/components/WeatherBackground'
 import AlarmModal, { ActiveAlarmPopup } from '@/components/AlarmModal'
 import { useAlarm, useWeather } from '@/shared/hooks'
+import TimeConverter from '@/components/TimeConverter'
+import DigitalClock from '@/components/DigitalClock'
+import AnalogClock from '@/components/AnalogClock'
 
 // V2 Components - Modular
-import HeroSection from './HeroSection'
 import InfoRow from './InfoRow'
 import SnippetBlock from './SnippetBlock'
-import ConverterSection from './ConverterSection'
 import CompactInfoCards from './CompactInfoCards'
 import TimeZoneFacts from './TimeZoneFacts'
 import BusinessHoursBox from './BusinessHoursBox'
@@ -174,60 +175,118 @@ export default function CityPageV2({ initialCity }: CityPageV2Props) {
       {/* Main Content */}
       <main className="relative z-10 max-w-6xl mx-auto px-4 py-4">
         
-        {/* 1. HERO SECTION - Clean & Minimal */}
-        <HeroSection
-          city={selectedCity}
-          localTime={localTime}
-          clockMode={clockMode}
-          offset={offset}
-          isFavorite={isFavorite(selectedCity.slug)}
-          onToggleFavorite={() => toggleFavorite(selectedCity.slug)}
-          onClockModeToggle={() => setClockMode(clockMode === 'digital' ? 'analog' : 'digital')}
-          lang={lang}
-        />
-        
-        {/* 1b. INFO ROW - Weather, Sunrise/Sunset, User Location */}
-        <InfoRow 
-          city={selectedCity}
-          weather={weather}
-          detectedCity={detectedCity}
-          autoTheme={autoTheme}
-        />
-        
-        {/* 1c. SNIPPET BLOCK - Featured snippet için 2-3 cümle */}
-        <SnippetBlock city={selectedCity} />
-        
-        {/* 2. QUICK INFO (Compact Pills) */}
-        <CompactInfoCards city={selectedCity} />
-        
-        {/* 3. CONVERTER WIDGET - Primary Action Area */}
-        <ConverterSection currentCitySlug={selectedCity.slug} />
-        
-        {/* 4. CITY GUIDE BANNER (Premium cities only) */}
-        <div className="mt-4">
-          <CityGuideCard citySlug={selectedCity.slug} />
+        {/* ═══════════════════════════════════════════════════════════════
+            PRIMARY CONTAINER - Ana İçerik Bloğu
+            Hero + InfoRow + Snippet + QuickInfo + Converter + Guide Banners
+            ═══════════════════════════════════════════════════════════════ */}
+        <div className={`rounded-3xl backdrop-blur-xl border ${theme.card} overflow-hidden`}>
+          
+          {/* SECTION 1: HERO - Clock & Core Info */}
+          <div className="p-4 md:p-6">
+            <div className="flex flex-col items-center justify-center w-full gap-3 md:gap-4">
+              
+              {/* H1 - SEO Optimized */}
+              <header className="text-center w-full">
+                <h1 className={`text-2xl md:text-3xl lg:text-4xl font-bold ${theme.text} flex items-center justify-center gap-2 flex-wrap`}>
+                  Current Local Time in {selectedCity.city}
+                  <button
+                    onClick={() => toggleFavorite(selectedCity.slug)}
+                    className={`text-xl transition-all hover:scale-110 ${
+                      isFavorite(selectedCity.slug)
+                        ? 'text-amber-400' 
+                        : isLight ? 'text-slate-300 hover:text-amber-400' : 'text-slate-600 hover:text-amber-400'
+                    }`}
+                    title={isFavorite(selectedCity.slug) ? 'Remove from favorites' : 'Add to favorites'}
+                  >
+                    {isFavorite(selectedCity.slug) ? '★' : '☆'}
+                  </button>
+                </h1>
+                <p className={`text-sm mt-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                  {selectedCity.city}, {selectedCity.country} ({offset})
+                </p>
+              </header>
+              
+              {/* Clock */}
+              <div 
+                className="flex justify-center items-center w-full min-h-[100px] md:min-h-[120px] cursor-pointer"
+                onClick={() => setClockMode(clockMode === 'digital' ? 'analog' : 'digital')}
+              >
+                {clockMode === 'analog' ? (
+                  <AnalogClock time={localTime} />
+                ) : (
+                  <DigitalClock time={localTime} />
+                )}
+              </div>
+              
+              {/* Date */}
+              <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                {localTime.toLocaleDateString(lang, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+              </p>
+            </div>
+            
+            {/* Info Row - Weather, Sunrise/Sunset */}
+            <InfoRow 
+              city={selectedCity}
+              weather={weather}
+              detectedCity={detectedCity}
+              autoTheme={autoTheme}
+            />
+            
+            {/* Snippet Block */}
+            <SnippetBlock city={selectedCity} />
+            
+            {/* Quick Info Pills */}
+            <CompactInfoCards city={selectedCity} />
+          </div>
+          
+          {/* DIVIDER */}
+          <div className={`mx-4 md:mx-6 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`} />
+          
+          {/* SECTION 2: CONVERTER */}
+          <div className="p-4 md:p-6">
+            <h2 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
+              🔄 Compare Time Between Cities
+            </h2>
+            <TimeConverter currentCitySlug={selectedCity.slug} />
+          </div>
+          
+          {/* DIVIDER */}
+          <div className={`mx-4 md:mx-6 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`} />
+          
+          {/* SECTION 3: GUIDE BANNERS */}
+          <div className="p-4 md:p-6 space-y-3">
+            <CityGuideCard citySlug={selectedCity.slug} />
+            <TravelBridge city={selectedCity} />
+          </div>
         </div>
         
-        {/* 5. TRAVEL BRIDGE BANNER */}
-        <TravelBridge city={selectedCity} />
+        {/* ═══════════════════════════════════════════════════════════════
+            SECONDARY CONTENT - Detaylı Bilgiler
+            Guide Preview + Time Zone Facts + Business Hours + Time Diff
+            ═══════════════════════════════════════════════════════════════ */}
         
-        {/* 6. GUIDE PREVIEW (6 Tab Preview) - Only if city has info */}
+        {/* Guide Preview - Only for cities with full info */}
         {selectedCity.info && (
           <GuidePreview city={selectedCity} />
         )}
         
-        {/* 7 & 8. TIME ZONE FACTS + BUSINESS HOURS (2 columns) */}
+        {/* Time Zone Facts + Business Hours (2 columns) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
           <TimeZoneFacts city={selectedCity} />
           <BusinessHoursBox city={selectedCity} />
         </div>
         
-        {/* 9. TIME DIFFERENCE TABLE */}
+        {/* Time Difference Table */}
         <div className="mt-4">
           <TimeDifferenceTable city={selectedCity} />
         </div>
         
-        {/* Favorite Cities Section */}
+        {/* ═══════════════════════════════════════════════════════════════
+            DISCOVERY SECTION - Keşif & Navigasyon
+            Favorites + More Cities + World Cities
+            ═══════════════════════════════════════════════════════════════ */}
+        
+        {/* Favorite Cities */}
         {favoriteCities.length > 0 && (
           <div className={`rounded-2xl p-4 backdrop-blur-xl border ${theme.card} mt-4`}>
             <h3 className={`text-base font-semibold ${theme.text} mb-3`}>
@@ -250,10 +309,10 @@ export default function CityPageV2({ initialCity }: CityPageV2Props) {
           </div>
         )}
         
-        {/* 10. MORE CITIES (Same Country/Region) */}
+        {/* More Cities (Same Country/Region) */}
         <MoreCitiesSection selectedCity={selectedCity} />
         
-        {/* 11. WORLD CITIES - Compact, 12 default, "Show more" */}
+        {/* World Cities - Compact */}
         <CompactWorldCities
           selectedCity={selectedCity}
           onCitySelect={(city) => {
@@ -261,8 +320,6 @@ export default function CityPageV2({ initialCity }: CityPageV2Props) {
             router.push(`/${city.slug}`, { scroll: false })
           }}
         />
-        
-        {/* Note: EEAT is now integrated into TimeZoneFacts */}
       </main>
       
       {/* Footer */}
