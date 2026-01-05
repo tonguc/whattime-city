@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { City } from '@/lib/cities'
 import { GuideConfig } from '@/lib/guide-content'
+import { QuickFacts, CityComparisonTable } from '../components'
 
 interface Props {
   city: City
@@ -84,30 +85,8 @@ export default function SingaporeOverviewContent({ city, config, isLight, timeSt
         <p>Interestingly, Singapore's geographic position suggests it should be UTC+7, but the country adopted UTC+8 in 1982 to align with major trading partners Hong Kong and China — a pragmatic business decision typical of the city-state.</p>
       </section>
       
-      <section className={`mb-10 p-6 rounded-2xl ${cardBg}`}>
-        <h2 className={`text-xl font-semibold mb-4 ${headingColor}`}>⚡ Quick Facts: Singapore Time Zone</h2>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>Time Zone Basics</h3>
-            <ul className="space-y-1 text-sm">
-              <li>• <strong>Time Zone:</strong> SGT (UTC+8)</li>
-              <li>• <strong>Daylight Saving:</strong> Not observed</li>
-              <li>• <strong>Same as:</strong> <Link href="/hong-kong/" className={linkColor}>Hong Kong</Link>, China, Perth</li>
-              <li>• <strong>Consistency:</strong> Same time year-round</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>Key Time Differences</h3>
-            <ul className="space-y-1 text-sm">
-              <li>• <strong><Link href="/new-york/" className={linkColor}>New York</Link>:</strong> -13 hours (EST) / -12 (EDT)</li>
-              <li>• <strong><Link href="/london/" className={linkColor}>London</Link>:</strong> -8 hours (GMT) / -7 (BST)</li>
-              <li>• <strong><Link href="/tokyo/" className={linkColor}>Tokyo</Link>:</strong> +1 hour</li>
-              <li>• <strong><Link href="/sydney/" className={linkColor}>Sydney</Link>:</strong> +3 hours (AEDT)</li>
-            </ul>
-          </div>
-        </div>
-        <p className={`mt-4 text-sm ${mutedColor}`}>Need exact conversions? Try our <Link href="/time/" className={linkColor}>Time Converter</Link></p>
-      </section>
+            {/* Quick Facts - Technical info only, no city links (moved to table) */}
+      <QuickFacts config={config} isLight={isLight} />
       
       <section className="mb-10">
         <h2 className={`text-2xl font-semibold mb-6 ${headingColor}`}>Explore the Complete Guide</h2>
@@ -154,31 +133,8 @@ export default function SingaporeOverviewContent({ city, config, isLight, timeSt
         </div>
       </section>
       
-      <section className="mb-10">
-        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>Singapore Time vs Major Cities</h2>
-        <div className={`overflow-x-auto rounded-xl ${cardBg}`}>
-          <table className="w-full text-sm">
-            <thead>
-              <tr className={`border-b ${isLight ? 'border-slate-200' : 'border-slate-600'}`}>
-                <th className={`px-4 py-3 text-left font-medium ${headingColor}`}>City</th>
-                <th className={`px-4 py-3 text-left font-medium ${headingColor}`}>Difference</th>
-                <th className={`px-4 py-3 text-left font-medium ${headingColor}`}>When it's 12 PM in Singapore</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-200 dark:divide-slate-600">
-              <tr><td className="px-4 py-3">🇺🇸 <Link href="/time/singapore/new-york/" className={linkColor}>New York</Link></td><td className="px-4 py-3">-13 hours*</td><td className="px-4 py-3">11:00 PM (prev)</td></tr>
-              <tr><td className="px-4 py-3">🇺🇸 <Link href="/time/singapore/los-angeles/" className={linkColor}>Los Angeles</Link></td><td className="px-4 py-3">-16 hours*</td><td className="px-4 py-3">8:00 PM (prev)</td></tr>
-              <tr><td className="px-4 py-3">🇬🇧 <Link href="/time/singapore/london/" className={linkColor}>London</Link></td><td className="px-4 py-3">-8 hours*</td><td className="px-4 py-3">4:00 AM</td></tr>
-              <tr><td className="px-4 py-3">🇦🇪 <Link href="/time/singapore/dubai/" className={linkColor}>Dubai</Link></td><td className="px-4 py-3">-4 hours</td><td className="px-4 py-3">8:00 AM</td></tr>
-              <tr><td className="px-4 py-3">🇮🇳 <Link href="/time/singapore/mumbai/" className={linkColor}>Mumbai</Link></td><td className="px-4 py-3">-2.5 hours</td><td className="px-4 py-3">9:30 AM</td></tr>
-              <tr><td className="px-4 py-3">🇭🇰 <Link href="/time/singapore/hong-kong/" className={linkColor}>Hong Kong</Link></td><td className="px-4 py-3">0 hours</td><td className="px-4 py-3">12:00 PM</td></tr>
-              <tr><td className="px-4 py-3">🇯🇵 <Link href="/time/singapore/tokyo/" className={linkColor}>Tokyo</Link></td><td className="px-4 py-3">+1 hour</td><td className="px-4 py-3">1:00 PM</td></tr>
-              <tr><td className="px-4 py-3">🇦🇺 <Link href="/time/singapore/sydney/" className={linkColor}>Sydney</Link></td><td className="px-4 py-3">+3 hours*</td><td className="px-4 py-3">3:00 PM</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p className={`mt-3 text-sm ${mutedColor}`}>* Times vary when other countries observe daylight saving. Singapore stays constant. <Link href="/time/singapore/london/" className={linkColor}>See detailed time differences →</Link></p>
-      </section>
+            {/* Region-based City Comparison Table */}
+      <CityComparisonTable config={config} isLight={isLight} />
       
       <section className={`mb-10 p-6 rounded-2xl text-center ${isLight ? 'bg-gradient-to-r from-red-50 to-orange-50 border border-red-200' : 'bg-gradient-to-r from-red-900/30 to-orange-900/30 border border-red-700/50'}`}>
         <h3 className={`text-xl font-semibold mb-2 ${headingColor}`}>Need to schedule a meeting with Singapore?</h3>

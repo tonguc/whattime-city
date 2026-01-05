@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { City } from '@/lib/cities'
 import { GuideConfig } from '@/lib/guide-content'
+import { QuickFacts, CityComparisonTable } from '../components'
 
 interface Props {
   city: City
@@ -92,35 +93,8 @@ export default function IstanbulOverviewContent({ city, config, isLight, timeStr
         </p>
       </section>
       
-      <section className={`mb-10 p-6 rounded-2xl ${cardBg}`}>
-        <h2 className={`text-xl font-semibold mb-4 ${headingColor}`}>
-          ⚡ Quick Facts: Istanbul Time Zone
-        </h2>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>Time Zone Basics</h3>
-            <ul className="space-y-1 text-sm">
-              <li>• <strong>Time Zone:</strong> TRT (UTC+3)</li>
-              <li>• <strong>Daylight Saving:</strong> Not observed (since 2016)</li>
-              <li>• <strong>Weekend:</strong> Saturday-Sunday</li>
-              <li>• <strong>Same as:</strong> <Link href="/moscow/" className={linkColor}>Moscow</Link>, Riyadh, Nairobi</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className={`font-medium mb-2 ${headingColor}`}>Key Time Differences</h3>
-            <ul className="space-y-1 text-sm">
-              <li>• <strong><Link href="/new-york/" className={linkColor}>New York</Link>:</strong> +8 hours (winter) / +7 (summer)</li>
-              <li>• <strong><Link href="/london/" className={linkColor}>London</Link>:</strong> +3 hours (winter) / +2 (summer)</li>
-              <li>• <strong><Link href="/dubai/" className={linkColor}>Dubai</Link>:</strong> -1 hour</li>
-              <li>• <strong><Link href="/tokyo/" className={linkColor}>Tokyo</Link>:</strong> -6 hours</li>
-            </ul>
-          </div>
-        </div>
-        <p className={`mt-4 text-sm ${mutedColor}`}>
-          Need exact conversions? Try our{' '}
-          <Link href="/time/" className={linkColor}>Time Converter</Link>
-        </p>
-      </section>
+            {/* Quick Facts - Technical info only, no city links (moved to table) */}
+      <QuickFacts config={config} isLight={isLight} />
       
       <section className="mb-10">
         <h2 className={`text-2xl font-semibold mb-6 ${headingColor}`}>
@@ -231,73 +205,8 @@ export default function IstanbulOverviewContent({ city, config, isLight, timeStr
         </div>
       </section>
       
-      <section className="mb-10">
-        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
-          Istanbul Time vs Major Cities
-        </h2>
-        <div className={`overflow-x-auto rounded-xl ${cardBg}`}>
-          <table className="w-full text-sm">
-            <thead>
-              <tr className={`border-b ${isLight ? 'border-slate-200' : 'border-slate-600'}`}>
-                <th className={`px-4 py-3 text-left font-medium ${headingColor}`}>City</th>
-                <th className={`px-4 py-3 text-left font-medium ${headingColor}`}>Difference</th>
-                <th className={`px-4 py-3 text-left font-medium ${headingColor}`}>When it's 12 PM in Istanbul</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-200 dark:divide-slate-600">
-              <tr>
-                <td className="px-4 py-3">🇺🇸 <Link href="/time/istanbul/new-york/" className={linkColor}>New York</Link></td>
-                <td className="px-4 py-3">-8 hours*</td>
-                <td className="px-4 py-3">4:00 AM</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3">🇺🇸 <Link href="/time/istanbul/los-angeles/" className={linkColor}>Los Angeles</Link></td>
-                <td className="px-4 py-3">-11 hours*</td>
-                <td className="px-4 py-3">1:00 AM</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3">🇬🇧 <Link href="/time/istanbul/london/" className={linkColor}>London</Link></td>
-                <td className="px-4 py-3">-3 hours*</td>
-                <td className="px-4 py-3">9:00 AM</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3">🇫🇷 <Link href="/time/istanbul/paris/" className={linkColor}>Paris</Link></td>
-                <td className="px-4 py-3">-2 hours*</td>
-                <td className="px-4 py-3">10:00 AM</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3">🇦🇪 <Link href="/time/istanbul/dubai/" className={linkColor}>Dubai</Link></td>
-                <td className="px-4 py-3">+1 hour</td>
-                <td className="px-4 py-3">1:00 PM</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3">🇮🇳 <Link href="/time/istanbul/mumbai/" className={linkColor}>Mumbai</Link></td>
-                <td className="px-4 py-3">+2.5 hours</td>
-                <td className="px-4 py-3">2:30 PM</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3">🇸🇬 <Link href="/time/istanbul/singapore/" className={linkColor}>Singapore</Link></td>
-                <td className="px-4 py-3">+5 hours</td>
-                <td className="px-4 py-3">5:00 PM</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3">🇯🇵 <Link href="/time/istanbul/tokyo/" className={linkColor}>Tokyo</Link></td>
-                <td className="px-4 py-3">+6 hours</td>
-                <td className="px-4 py-3">6:00 PM</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3">🇦🇺 <Link href="/time/istanbul/sydney/" className={linkColor}>Sydney</Link></td>
-                <td className="px-4 py-3">+8 hours*</td>
-                <td className="px-4 py-3">8:00 PM</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p className={`mt-3 text-sm ${mutedColor}`}>
-          * Times shown are approximate and may vary during daylight saving transitions.{' '}
-          <Link href={`/time/istanbul/london/`} className={linkColor}>See detailed time differences →</Link>
-        </p>
-      </section>
+            {/* Region-based City Comparison Table */}
+      <CityComparisonTable config={config} isLight={isLight} />
       
       {/* Dynamic CTA - Meeting Planner */}
       <section className={`mb-10 p-6 rounded-2xl text-center ${
