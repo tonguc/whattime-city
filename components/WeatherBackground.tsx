@@ -327,10 +327,6 @@ function CloudyAnimation({ isDay }: { isDay: boolean }) {
 }
 
 function FogAnimation() {
-  return (
-    <>
-      {/* Fog only in bottom half - stars remain visible in sky */}
-      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white/8 via-white/4 to-transparent" />
-    </>
-  )
+  // Fog disabled - was covering night sky and stars
+  return null
 }
