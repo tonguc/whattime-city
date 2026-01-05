@@ -32,7 +32,7 @@ export default function WeatherBackground({ animation, isDay }: WeatherBackgroun
       {animation === 'drizzle' && <DrizzleAnimation />}
       {animation === 'snow' && <SnowAnimation />}
       {animation === 'thunder' && <ThunderAnimation />}
-      {animation === 'clouds' && <StaticClouds isDay={isDay} />}
+      {animation === 'clouds' && <CloudyAnimation isDay={isDay} />}
       {animation === 'fog' && <FogAnimation />}
     </div>
   )
@@ -184,13 +184,21 @@ function SunAnimation() {
       <style>{`
         @keyframes sunPulse {
           0%, 100% { transform: scale(1); opacity: 0.5; }
-          50% { transform: scale(1.1); opacity: 0.6; }
+          50% { transform: scale(1.2); opacity: 0.8; }
+        }
+        @keyframes sunRays {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
         }
       `}</style>
       <div className="absolute top-8 right-8">
         <div 
-          className="w-40 h-40 rounded-full bg-yellow-300/50 blur-2xl"
-          style={{ animation: 'sunPulse 6s ease-in-out infinite' }}
+          className="w-40 h-40 rounded-full bg-yellow-300/60 blur-2xl"
+          style={{ animation: 'sunPulse 4s ease-in-out infinite' }}
+        />
+        <div 
+          className="absolute inset-0 w-40 h-40 rounded-full bg-gradient-to-r from-yellow-200/40 via-transparent to-yellow-200/40"
+          style={{ animation: 'sunRays 20s linear infinite' }}
         />
       </div>
     </>
@@ -280,27 +288,37 @@ function NightAnimation() {
   )
 }
 
-function StaticClouds({ isDay }: { isDay: boolean }) {
-  // Fixed positions for small decorative clouds
-  const clouds = [
-    { left: 5, top: 8, scale: 0.6 },
-    { left: 25, top: 15, scale: 0.5 },
-    { left: 55, top: 6, scale: 0.7 },
-    { left: 75, top: 12, scale: 0.5 },
-    { left: 90, top: 18, scale: 0.4 },
-  ]
+function CloudyAnimation({ isDay }: { isDay: boolean }) {
+  const [clouds] = useState(() =>
+    Array.from({ length: 6 }, (_, i) => ({
+      id: i,
+      left: -20 + Math.random() * 10,
+      top: 5 + Math.random() * 25,
+      scale: 0.8 + Math.random() * 0.6,
+      duration: 40 + Math.random() * 30,
+      delay: i * 8
+    }))
+  )
   
   return (
     <>
-      {clouds.map((cloud, i) => (
+      <style>{`
+        @keyframes cloudDrift {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(100vw + 200px)); }
+        }
+      `}</style>
+      {clouds.map((cloud) => (
         <div
-          key={i}
-          className={`absolute rounded-full ${isDay ? 'bg-white/25' : 'bg-slate-400/15'} blur-lg`}
+          key={cloud.id}
+          className={`absolute rounded-full ${isDay ? 'bg-white/30' : 'bg-slate-400/20'} blur-xl`}
           style={{
             left: `${cloud.left}%`,
             top: `${cloud.top}%`,
-            width: `${80 * cloud.scale}px`,
-            height: `${40 * cloud.scale}px`,
+            width: `${150 * cloud.scale}px`,
+            height: `${80 * cloud.scale}px`,
+            animation: `cloudDrift ${cloud.duration}s linear infinite`,
+            animationDelay: `${cloud.delay}s`,
           }}
         />
       ))}
@@ -311,24 +329,9 @@ function StaticClouds({ isDay }: { isDay: boolean }) {
 function FogAnimation() {
   return (
     <>
-      <style>{`
-        @keyframes fogDrift {
-          0%, 100% { opacity: 0.2; transform: translateX(-5%); }
-          50% { opacity: 0.4; transform: translateX(5%); }
-        }
-        @keyframes fogDrift2 {
-          0%, 100% { opacity: 0.3; transform: translateX(3%); }
-          50% { opacity: 0.15; transform: translateX(-3%); }
-        }
-      `}</style>
-      <div 
-        className="absolute inset-0 bg-gradient-to-b from-slate-200/40 via-slate-300/30 to-transparent"
-        style={{ animation: 'fogDrift 15s ease-in-out infinite' }}
-      />
-      <div 
-        className="absolute inset-0 bg-gradient-to-t from-slate-100/30 via-slate-200/20 to-transparent"
-        style={{ animation: 'fogDrift2 20s ease-in-out infinite' }}
-      />
+      {/* Static fog layers - no movement */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-200/30 via-slate-300/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-100/20 via-slate-200/15 to-transparent" />
     </>
   )
 }
