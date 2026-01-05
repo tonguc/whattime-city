@@ -597,7 +597,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
               <div className="flex items-center gap-2">
                 {fromWeather && (
                   <div className={`flex items-center gap-1 px-2 py-1 rounded-lg text-sm ${isLight ? 'bg-gray-100' : 'bg-slate-700'}`}>
-                    <img src={`https:${fromWeather.current.condition.icon}`} alt="" className="w-6 h-6" />
+                    <img src={`https:${fromWeather.current.condition.icon}`} alt="" width={24} height={24} className="w-6 h-6" />
                     <span className={isLight ? 'text-slate-700' : 'text-slate-200'}>{Math.round(fromWeather.current.temp_c)}°</span>
                   </div>
                 )}
@@ -641,7 +641,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
               </div>
               {toWeather && (
                 <div className={`flex items-center gap-1 px-2 py-1 rounded-lg text-sm ${isLight ? 'bg-gray-100' : 'bg-slate-700'}`}>
-                  <img src={`https:${toWeather.current.condition.icon}`} alt="" className="w-6 h-6" />
+                  <img src={`https:${toWeather.current.condition.icon}`} alt="" width={24} height={24} className="w-6 h-6" />
                   <span className={isLight ? 'text-slate-700' : 'text-slate-200'}>{Math.round(toWeather.current.temp_c)}°</span>
                 </div>
               )}

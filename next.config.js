@@ -1,22 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // ✅ "output: 'export'" YOK. (Doğru, sildik)
-  
   // URL sonuna slash ekler (SEO için iyidir)
   trailingSlash: true,
   
   // Resim optimizasyonu (Vercel bunu sever)
   images: {
     formats: ['image/avif', 'image/webp'],
-    // Device sizes varsayılan bırakılabilir ama senin ayarların da kalsın, sorun yok.
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    unoptimized: false, // Vercel'de false olmalı (default budur)
+    unoptimized: false,
   },
 
-  // ⚠️ Experimental "optimizeCss" KALDIRILDI. 
-  // Build hatalarının (TypeError: r is not a constructor) ana sebebi genelde budur.
-  
+  // Critical CSS optimization - requires 'critters' package
+  experimental: {
+    optimizeCss: true,
+  },
+
   // 301 Redirects for SEO - Old /tools/* URLs to new root-level URLs
   async redirects() {
     return [

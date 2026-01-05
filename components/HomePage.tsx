@@ -202,17 +202,23 @@ export default function HomePage() {
                       return <><Icon className="w-4 h-4" /><span className="capitalize">{tod}</span></>
                     })()}
                   </div>
-                  {/* Weather */}
-                  {weather && (
-                    <div className={`flex items-center gap-1.5 px-2 py-1 rounded-full text-sm ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
-                      <img 
-                        src={weather.condition.icon.startsWith('//') ? `https:${weather.condition.icon}` : weather.condition.icon} 
-                        alt={weather.condition.text}
-                        className="w-6 h-6"
-                      />
-                      <span className={text}>{Math.round(weather.temp_c)}°C</span>
-                    </div>
-                  )}
+                  {/* Weather - Fixed size container to prevent CLS */}
+                  <div className={`flex items-center gap-1.5 px-2 py-1 rounded-full text-sm min-w-[70px] ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
+                    {weather ? (
+                      <>
+                        <img 
+                          src={weather.condition.icon.startsWith('//') ? `https:${weather.condition.icon}` : weather.condition.icon} 
+                          alt={weather.condition.text}
+                          width={24}
+                          height={24}
+                          className="w-6 h-6"
+                        />
+                        <span className={text}>{Math.round(weather.temp_c)}°C</span>
+                      </>
+                    ) : (
+                      <span className={`${textMuted} text-xs`}>--°C</span>
+                    )}
+                  </div>
                 </div>
               </div>
               
