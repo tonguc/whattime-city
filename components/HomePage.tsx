@@ -6,7 +6,6 @@ import Link from 'next/link'
 import { useCityContext } from '@/lib/CityContext'
 import { useThemeClasses } from '@/lib/useThemeClasses'
 import { City, cities, searchCities } from '@/lib/cities'
-import { getWeather, WeatherResponse } from '@/lib/weather'
 import { TimeIcons } from '@/components/TimeIcons'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -47,7 +46,8 @@ export default function HomePage() {
   
   const { theme, text, textMuted, card, isLight, accentBg, accentText, bgGradient } = useThemeClasses()
   
-  const [weather, setWeather] = useState<WeatherResponse | null>(null)
+  // Weather state for display
+  const [weather, setWeather] = useState<any>(null)
   
   // Compare tool state
   const [fromCity, setFromCity] = useState<City | null>(null)
@@ -81,7 +81,11 @@ export default function HomePage() {
   // Fetch weather for detected city
   useEffect(() => {
     if (detectedCity) {
-      getWeather(detectedCity.city).then(setWeather).catch(() => {})
+      import('@/lib/weather').then(({ getWeather }) => {
+        getWeather(detectedCity.city).then(data => {
+          if (data) setWeather(data.current)
+        }).catch(() => {})
+      })
     }
   }, [detectedCity])
 
@@ -202,11 +206,11 @@ export default function HomePage() {
                   {weather && (
                     <div className={`flex items-center gap-1.5 px-2 py-1 rounded-full text-sm ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
                       <img 
-                        src={weather.current.condition.icon.startsWith('//') ? `https:${weather.current.condition.icon}` : weather.current.condition.icon} 
-                        alt={weather.current.condition.text}
+                        src={weather.condition.icon.startsWith('//') ? `https:${weather.condition.icon}` : weather.condition.icon} 
+                        alt={weather.condition.text}
                         className="w-6 h-6"
                       />
-                      <span className={text}>{Math.round(weather.current.temp_c)}°C</span>
+                      <span className={text}>{Math.round(weather.temp_c)}°C</span>
                     </div>
                   )}
                 </div>
