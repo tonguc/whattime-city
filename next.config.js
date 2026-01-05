@@ -11,11 +11,6 @@ const nextConfig = {
     unoptimized: false,
   },
 
-  // Critical CSS optimization - requires 'critters' package
-  experimental: {
-    optimizeCss: true,
-  },
-
   // 301 Redirects for SEO - Old /tools/* URLs to new root-level URLs
   async redirects() {
     return [

@@ -103,7 +103,7 @@ function Header(_props: HeaderProps) {
         : 'bg-slate-900/80 border-slate-700'
     }`}>
       <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2 sm:gap-3">
-        <button onClick={handleLogoClick} className="hover:opacity-80 transition-opacity flex-shrink-0">
+        <button onClick={handleLogoClick} aria-label="Go to homepage" className="hover:opacity-80 transition-opacity flex-shrink-0">
           <img src={isLight ? "/logo-mobile.svg" : "/logo-mobile-dark.svg"} alt="whattime.city" width={36} height={36} className="h-9 sm:hidden" />
           <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" width={160} height={40} className="h-10 hidden sm:block" />
         </button>
@@ -132,6 +132,7 @@ function Header(_props: HeaderProps) {
                   <button 
                     key={city.slug}
                     type="button"
+                    aria-label={`View ${city.city}, ${city.country}`}
                     data-search-result-button="true"
                     onClick={(e) => {
                       e.preventDefault()
@@ -186,6 +187,7 @@ function Header(_props: HeaderProps) {
           <div className="relative" ref={settingsRef}>
             <button 
               onClick={() => setShowSettings(!showSettings)}
+              aria-label="Open settings"
               className={`p-2 rounded-lg transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}
               title="Settings"
             >
