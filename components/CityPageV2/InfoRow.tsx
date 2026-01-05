@@ -96,13 +96,23 @@ export default function InfoRow({ city, weather, detectedCity, autoTheme }: Info
           </div>
         )}
         
-        {/* Compare Link */}
-        <a 
-          href={`/time/${city.slug}/london`}
+        {/* Convert CTA - Scroll to Converter */}
+        <button 
+          onClick={() => {
+            const converter = document.getElementById('converter')
+            if (converter) {
+              converter.scrollIntoView({ behavior: 'smooth', block: 'center' })
+              // Focus on first input after scroll
+              setTimeout(() => {
+                const input = converter.querySelector('input')
+                if (input) input.focus()
+              }, 500)
+            }
+          }}
           className={`flex items-center gap-1 ${accentText} hover:underline`}
         >
-          <span>Compare →</span>
-        </a>
+          <span>Convert with another city →</span>
+        </button>
       </div>
     </div>
   )

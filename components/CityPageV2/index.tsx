@@ -242,10 +242,13 @@ export default function CityPageV2({ initialCity }: CityPageV2Props) {
           <div className={`mx-4 md:mx-6 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`} />
           
           {/* SECTION 2: CONVERTER */}
-          <div className="p-4 md:p-6">
-            <h2 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${theme.text}`}>
-              🔄 Compare Time Between Cities
+          <div id="converter" className="p-4 md:p-6">
+            <h2 className={`text-base font-semibold flex items-center gap-2 ${theme.text}`}>
+              🔄 Two-City Time Converter
             </h2>
+            <p className={`text-xs mt-0.5 mb-3 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+              Compare local time between {selectedCity.city} and any other city
+            </p>
             <TimeConverter currentCitySlug={selectedCity.slug} />
           </div>
           
