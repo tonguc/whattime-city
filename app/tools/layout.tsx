@@ -3,6 +3,7 @@
 import { ReactNode, useState } from 'react'
 import { useCityContext } from '@/lib/CityContext'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import AlarmModal, { ActiveAlarmPopup } from '@/components/AlarmModal'
 import { useAlarm } from '@/shared/hooks'
 
@@ -12,14 +13,17 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
   const { alarms, setAlarms, activeAlarm, dismissAlarm } = useAlarm()
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
+    <div className={`min-h-screen flex flex-col bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
       {/* Shared Header - Same as HomePage and WorldClock */}
       <Header />
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-4 sm:py-4">
+      <div className="flex-1 max-w-6xl mx-auto px-4 py-4 sm:py-4 w-full">
         {children}
       </div>
+      
+      {/* Footer - Full width, at bottom */}
+      <Footer />
       
       {/* Floating Alarm Button */}
       <button 

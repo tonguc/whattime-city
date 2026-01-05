@@ -1,9 +1,9 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cities, getCityBySlug, getAllSlugs } from '@/lib/cities'
-import WorldClock from '@/components/WorldClock'
+import CityPage from '@/components/CityPage'
 
-interface CityPageProps {
+interface PageProps {
   params: Promise<{ city: string }>
 }
 
@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 }
 
 // Dinamik metadata
-export async function generateMetadata({ params }: CityPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { city: slug } = await params
   const city = getCityBySlug(slug)
   
@@ -88,7 +88,7 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
   }
 }
 
-export default async function CityPage({ params }: CityPageProps) {
+export default async function Page({ params }: PageProps) {
   const { city: slug } = await params
   const city = getCityBySlug(slug)
   
@@ -97,6 +97,6 @@ export default async function CityPage({ params }: CityPageProps) {
   }
   
   return (
-    <WorldClock initialCity={city} />
+    <CityPage initialCity={city} />
   )
 }

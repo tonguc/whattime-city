@@ -327,26 +327,6 @@ function CloudyAnimation({ isDay }: { isDay: boolean }) {
 }
 
 function FogAnimation() {
-  return (
-    <>
-      <style>{`
-        @keyframes fogDrift {
-          0%, 100% { opacity: 0.2; transform: translateX(-5%); }
-          50% { opacity: 0.4; transform: translateX(5%); }
-        }
-        @keyframes fogDrift2 {
-          0%, 100% { opacity: 0.3; transform: translateX(3%); }
-          50% { opacity: 0.15; transform: translateX(-3%); }
-        }
-      `}</style>
-      <div 
-        className="absolute inset-0 bg-gradient-to-b from-slate-200/40 via-slate-300/30 to-transparent"
-        style={{ animation: 'fogDrift 15s ease-in-out infinite' }}
-      />
-      <div 
-        className="absolute inset-0 bg-gradient-to-t from-slate-100/30 via-slate-200/20 to-transparent"
-        style={{ animation: 'fogDrift2 20s ease-in-out infinite' }}
-      />
-    </>
-  )
+  // Fog disabled - was covering night sky and stars
+  return null
 }

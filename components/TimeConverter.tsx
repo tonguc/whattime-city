@@ -194,18 +194,10 @@ export default function TimeConverter({ currentCitySlug }: TimeConverterProps) {
   
   return (
     <>
-      <div className={`rounded-3xl p-6 backdrop-blur-xl border ${card} mb-4`}>
-        <h3 className={`text-xl font-semibold ${text} mb-4 flex items-center gap-2`}>
-          <svg className={`w-5 h-5 ${isLight ? 'text-blue-500' : 'text-blue-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 6v6l4 2"/>
-            <path d="M16 3l2 2-2 2"/>
-            <path d="M8 21l-2-2 2-2"/>
-          </svg>
-          Two-City Time Converter
-        </h3>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className={`rounded-2xl p-4 border ${
+        isLight ? 'bg-[#F9FAFB] border-slate-200' : 'bg-slate-800/40 border-slate-700'
+      }`}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* From City */}
           <div ref={fromRef} className="relative">
             <label className={`text-xs font-medium mb-1.5 block ${textMuted}`}>

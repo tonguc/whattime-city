@@ -24,57 +24,57 @@ export interface CityDisplayConfig {
 const CITY_DISPLAY_CONFIG: Record<string, CityDisplayConfig> = {
   // Americas
   'new-york': { icon: '🗽', utcOffset: -5, visitIcon: '🗽', themeColor: 'amber', displayName: 'NYC' },
-  'los-angeles': { icon: '🌴', utcOffset: -8, visitIcon: '🎬', themeColor: 'purple', displayName: 'LA' },
+  'los-angeles': { icon: '🎬', utcOffset: -8, visitIcon: '🌴', themeColor: 'purple', displayName: 'LA' },
   'chicago': { icon: '🌬️', utcOffset: -6, visitIcon: '🏙️', themeColor: 'blue', displayName: 'Chicago' },
   'miami': { icon: '🏖️', utcOffset: -5, visitIcon: '🌴', themeColor: 'cyan', displayName: 'Miami' },
   'san-francisco': { icon: '🌉', utcOffset: -8, visitIcon: '🌁', themeColor: 'orange', displayName: 'SF' },
-  'toronto': { icon: '🍁', utcOffset: -5, visitIcon: '🇨🇦', themeColor: 'red', displayName: 'Toronto' },
-  'vancouver': { icon: '🏔️', utcOffset: -8, visitIcon: '🇨🇦', themeColor: 'emerald', displayName: 'Vancouver' },
-  'mexico-city': { icon: '🇲🇽', utcOffset: -6, visitIcon: '🌮', themeColor: 'green', displayName: 'CDMX' },
-  'sao-paulo': { icon: '🇧🇷', utcOffset: -3, visitIcon: '🏙️', themeColor: 'yellow', displayName: 'São Paulo' },
-  'buenos-aires': { icon: '🇦🇷', utcOffset: -3, visitIcon: '💃', themeColor: 'sky', displayName: 'Buenos Aires' },
-  'rio-de-janeiro': { icon: '🇧🇷', utcOffset: -3, visitIcon: '🏖️', themeColor: 'green', displayName: 'Rio' },
+  'toronto': { icon: '🍁', utcOffset: -5, visitIcon: '🏒', themeColor: 'red', displayName: 'Toronto' },
+  'vancouver': { icon: '🏔️', utcOffset: -8, visitIcon: '🌲', themeColor: 'emerald', displayName: 'Vancouver' },
+  'mexico-city': { icon: '🌮', utcOffset: -6, visitIcon: '🏛️', themeColor: 'green', displayName: 'CDMX' },
+  'sao-paulo': { icon: '🏙️', utcOffset: -3, visitIcon: '☕', themeColor: 'yellow', displayName: 'São Paulo' },
+  'buenos-aires': { icon: '💃', utcOffset: -3, visitIcon: '🥩', themeColor: 'sky', displayName: 'Buenos Aires' },
+  'rio-de-janeiro': { icon: '🏖️', utcOffset: -3, visitIcon: '⚽', themeColor: 'green', displayName: 'Rio' },
   
   // Europe
-  'london': { icon: '🎡', utcOffset: 0, visitIcon: '🇬🇧', themeColor: 'blue', displayName: 'London' },
-  'paris': { icon: '🗼', utcOffset: 1, visitIcon: '🇫🇷', themeColor: 'indigo', displayName: 'Paris' },
-  'berlin': { icon: '🐻', utcOffset: 1, visitIcon: '🎄', themeColor: 'slate', displayName: 'Berlin' },
-  'madrid': { icon: '🇪🇸', utcOffset: 1, visitIcon: '☀️', themeColor: 'orange', displayName: 'Madrid' },
-  'barcelona': { icon: '🇪🇸', utcOffset: 1, visitIcon: '⚽', themeColor: 'rose', displayName: 'Barcelona' },
+  'london': { icon: '🎡', utcOffset: 0, visitIcon: '☕', themeColor: 'blue', displayName: 'London' },
+  'paris': { icon: '🗼', utcOffset: 1, visitIcon: '🥐', themeColor: 'indigo', displayName: 'Paris' },
+  'berlin': { icon: '🐻', utcOffset: 1, visitIcon: '🎨', themeColor: 'slate', displayName: 'Berlin' },
+  'madrid': { icon: '☀️', utcOffset: 1, visitIcon: '💃', themeColor: 'orange', displayName: 'Madrid' },
+  'barcelona': { icon: '⚽', utcOffset: 1, visitIcon: '🏖️', themeColor: 'rose', displayName: 'Barcelona' },
   'amsterdam': { icon: '🌷', utcOffset: 1, visitIcon: '🚲', themeColor: 'orange', displayName: 'Amsterdam' },
-  'rome': { icon: '🇮🇹', utcOffset: 1, visitIcon: '🏛️', themeColor: 'amber', displayName: 'Rome' },
-  'vienna': { icon: '🇦🇹', utcOffset: 1, visitIcon: '🎵', themeColor: 'red', displayName: 'Vienna' },
-  'zurich': { icon: '🇨🇭', utcOffset: 1, visitIcon: '⛰️', themeColor: 'slate', displayName: 'Zurich' },
-  'frankfurt': { icon: '🇩🇪', utcOffset: 1, visitIcon: '🏦', themeColor: 'blue', displayName: 'Frankfurt' },
-  'lisbon': { icon: '🇵🇹', utcOffset: 0, visitIcon: '🚃', themeColor: 'yellow', displayName: 'Lisbon' },
-  'dublin': { icon: '🇮🇪', utcOffset: 0, visitIcon: '☘️', themeColor: 'green', displayName: 'Dublin' },
-  'moscow': { icon: '🇷🇺', utcOffset: 3, visitIcon: '🏰', themeColor: 'red', displayName: 'Moscow' },
-  'saint-petersburg': { icon: '🇷🇺', utcOffset: 3, visitIcon: '🏛️', themeColor: 'blue', displayName: 'St. Petersburg' },
-  'istanbul': { icon: '🇹🇷', utcOffset: 3, visitIcon: '🕌', themeColor: 'red', displayName: 'Istanbul' },
+  'rome': { icon: '🏛️', utcOffset: 1, visitIcon: '🍝', themeColor: 'amber', displayName: 'Rome' },
+  'vienna': { icon: '🎵', utcOffset: 1, visitIcon: '🎻', themeColor: 'red', displayName: 'Vienna' },
+  'zurich': { icon: '⛰️', utcOffset: 1, visitIcon: '🏔️', themeColor: 'slate', displayName: 'Zurich' },
+  'frankfurt': { icon: '💶', utcOffset: 1, visitIcon: '🏦', themeColor: 'blue', displayName: 'Frankfurt' },
+  'lisbon': { icon: '🚃', utcOffset: 0, visitIcon: '🏖️', themeColor: 'yellow', displayName: 'Lisbon' },
+  'dublin': { icon: '☘️', utcOffset: 0, visitIcon: '🍺', themeColor: 'green', displayName: 'Dublin' },
+  'moscow': { icon: '🏰', utcOffset: 3, visitIcon: '❄️', themeColor: 'red', displayName: 'Moscow' },
+  'saint-petersburg': { icon: '🏛️', utcOffset: 3, visitIcon: '🎭', themeColor: 'blue', displayName: 'St. Petersburg' },
+  'istanbul': { icon: '🕌', utcOffset: 3, visitIcon: '🌉', themeColor: 'red', displayName: 'Istanbul' },
   
   // Asia
-  'tokyo': { icon: '🍣', utcOffset: 9, visitIcon: '🌸', themeColor: 'rose', displayName: 'Tokyo' },
+  'tokyo': { icon: '🗼', utcOffset: 9, visitIcon: '🌸', themeColor: 'rose', displayName: 'Tokyo' },
   'dubai': { icon: '🏙️', utcOffset: 4, visitIcon: '☀️', themeColor: 'emerald', displayName: 'Dubai' },
-  'singapore': { icon: '🦁', utcOffset: 8, visitIcon: '🇸🇬', themeColor: 'red', displayName: 'Singapore' },
-  'hong-kong': { icon: '🇭🇰', utcOffset: 8, visitIcon: '🌃', themeColor: 'rose', displayName: 'Hong Kong' },
-  'shanghai': { icon: '🇨🇳', utcOffset: 8, visitIcon: '🏙️', themeColor: 'red', displayName: 'Shanghai' },
-  'beijing': { icon: '🇨🇳', utcOffset: 8, visitIcon: '🏯', themeColor: 'red', displayName: 'Beijing' },
-  'shenzhen': { icon: '🇨🇳', utcOffset: 8, visitIcon: '💻', themeColor: 'blue', displayName: 'Shenzhen' },
-  'guangzhou': { icon: '🇨🇳', utcOffset: 8, visitIcon: '🏢', themeColor: 'emerald', displayName: 'Guangzhou' },
+  'singapore': { icon: '🦁', utcOffset: 8, visitIcon: '🌴', themeColor: 'red', displayName: 'Singapore' },
+  'hong-kong': { icon: '🌃', utcOffset: 8, visitIcon: '🏮', themeColor: 'rose', displayName: 'Hong Kong' },
+  'shanghai': { icon: '🏙️', utcOffset: 8, visitIcon: '🎋', themeColor: 'red', displayName: 'Shanghai' },
+  'beijing': { icon: '🏯', utcOffset: 8, visitIcon: '🐉', themeColor: 'red', displayName: 'Beijing' },
+  'shenzhen': { icon: '💻', utcOffset: 8, visitIcon: '🏢', themeColor: 'blue', displayName: 'Shenzhen' },
+  'guangzhou': { icon: '🏢', utcOffset: 8, visitIcon: '🍜', themeColor: 'emerald', displayName: 'Guangzhou' },
   'seoul': { icon: '🏯', utcOffset: 9, visitIcon: '🌸', themeColor: 'blue', displayName: 'Seoul' },
-  'mumbai': { icon: '🇮🇳', utcOffset: 5.5, visitIcon: '🎬', themeColor: 'orange', displayName: 'Mumbai' },
-  'delhi': { icon: '🇮🇳', utcOffset: 5.5, visitIcon: '🕌', themeColor: 'orange', displayName: 'Delhi' },
-  'bangkok': { icon: '🇹🇭', utcOffset: 7, visitIcon: '🛕', themeColor: 'yellow', displayName: 'Bangkok' },
-  'jakarta': { icon: '🇮🇩', utcOffset: 7, visitIcon: '🏝️', themeColor: 'red', displayName: 'Jakarta' },
-  'kuala-lumpur': { icon: '🇲🇾', utcOffset: 8, visitIcon: '🏙️', themeColor: 'blue', displayName: 'KL' },
+  'mumbai': { icon: '🎬', utcOffset: 5.5, visitIcon: '🏛️', themeColor: 'orange', displayName: 'Mumbai' },
+  'delhi': { icon: '🕌', utcOffset: 5.5, visitIcon: '🏛️', themeColor: 'orange', displayName: 'Delhi' },
+  'bangkok': { icon: '🛕', utcOffset: 7, visitIcon: '🍜', themeColor: 'yellow', displayName: 'Bangkok' },
+  'jakarta': { icon: '🏝️', utcOffset: 7, visitIcon: '🌴', themeColor: 'red', displayName: 'Jakarta' },
+  'kuala-lumpur': { icon: '🏙️', utcOffset: 8, visitIcon: '🍜', themeColor: 'blue', displayName: 'KL' },
   
   // Oceania
-  'sydney': { icon: '🦘', utcOffset: 10, visitIcon: '🏖️', themeColor: 'sky', displayName: 'Sydney' },
-  'melbourne': { icon: '🇦🇺', utcOffset: 10, visitIcon: '☕', themeColor: 'blue', displayName: 'Melbourne' },
+  'sydney': { icon: '🎭', utcOffset: 10, visitIcon: '🏖️', themeColor: 'sky', displayName: 'Sydney' },
+  'melbourne': { icon: '☕', utcOffset: 10, visitIcon: '🎨', themeColor: 'blue', displayName: 'Melbourne' },
   
   // Africa
-  'cairo': { icon: '🇪🇬', utcOffset: 2, visitIcon: '🏛️', themeColor: 'amber', displayName: 'Cairo' },
-  'johannesburg': { icon: '🇿🇦', utcOffset: 2, visitIcon: '🦁', themeColor: 'green', displayName: 'Johannesburg' },
+  'cairo': { icon: '🏛️', utcOffset: 2, visitIcon: '🐪', themeColor: 'amber', displayName: 'Cairo' },
+  'johannesburg': { icon: '🦁', utcOffset: 2, visitIcon: '🌍', themeColor: 'green', displayName: 'Johannesburg' },
 }
 
 /**
@@ -114,7 +114,7 @@ const TIER1_CITIES = [
   'cairo', 'johannesburg'
 ]
 
-// Premium cities with guide content (15 cities)
+// Premium cities with guide content (20 cities)
 const PREMIUM_GUIDE_CITIES = [
   'new-york',
   'london', 
@@ -130,7 +130,12 @@ const PREMIUM_GUIDE_CITIES = [
   'shanghai',
   'seoul',
   'berlin',
-  'amsterdam'
+  'amsterdam',
+  'bangkok',
+  'chicago',
+  'frankfurt',
+  'mumbai',
+  'sao-paulo'
 ]
 
 /**
