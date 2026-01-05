@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { GuideConfig, getCallTarget, getRegionDisplayName } from '@/lib/guide-content'
+import { GuideConfig, getCallTarget, getRegionDisplayName, CityRegion } from '@/lib/guide-content'
 
 interface QuickFactsProps {
   config: GuideConfig
@@ -34,21 +34,39 @@ function getDSTInfo(config: GuideConfig): { status: string; period: string } {
   return { status: 'Observed', period: 'Mar → Nov' }
 }
 
-// Helper to get best call time suggestion based on region
-function getBestCallTime(config: GuideConfig): string {
-  switch (config.region) {
+// Get best overlap info with specific cities and time periods
+function getOverlapInfo(region: CityRegion): { morning: { city: string; slug: string; emoji: string }; evening: { city: string; slug: string; emoji: string } } {
+  switch (region) {
     case 'AMERICAS':
-      return '2 PM - 5 PM'
+      return {
+        morning: { city: 'London', slug: 'london', emoji: '🇬🇧' },
+        evening: { city: 'Tokyo', slug: 'tokyo', emoji: '🇯🇵' }
+      }
     case 'EUROPE':
-      return '2 PM - 5 PM'
+      return {
+        morning: { city: 'Singapore', slug: 'singapore', emoji: '🇸🇬' },
+        evening: { city: 'New York', slug: 'new-york', emoji: '🇺🇸' }
+      }
     case 'MENA':
-      return '10 AM - 1 PM'
+      return {
+        morning: { city: 'Singapore', slug: 'singapore', emoji: '🇸🇬' },
+        evening: { city: 'London', slug: 'london', emoji: '🇬🇧' }
+      }
     case 'ASIA':
-      return '5 PM - 8 PM'
+      return {
+        morning: { city: 'Sydney', slug: 'sydney', emoji: '🇦🇺' },
+        evening: { city: 'London', slug: 'london', emoji: '🇬🇧' }
+      }
     case 'OCEANIA':
-      return '4 PM - 7 PM'
+      return {
+        morning: { city: 'Tokyo', slug: 'tokyo', emoji: '🇯🇵' },
+        evening: { city: 'Los Angeles', slug: 'los-angeles', emoji: '🇺🇸' }
+      }
     default:
-      return '2 PM - 5 PM'
+      return {
+        morning: { city: 'London', slug: 'london', emoji: '🇬🇧' },
+        evening: { city: 'New York', slug: 'new-york', emoji: '🇺🇸' }
+      }
   }
 }
 
@@ -57,10 +75,10 @@ export default function QuickFacts({ config, isLight }: QuickFactsProps) {
   const mutedColor = isLight ? 'text-slate-500' : 'text-slate-400'
   const cardBg = isLight ? 'bg-slate-50' : 'bg-slate-700/50'
   const linkColor = isLight ? 'text-blue-600 hover:text-blue-800 hover:underline' : 'text-sky-400 hover:text-sky-300 hover:underline'
+  const pillBg = isLight ? 'bg-blue-100 text-blue-700' : 'bg-blue-900/40 text-blue-300'
   
   const dstInfo = getDSTInfo(config)
-  const callTime = getBestCallTime(config)
-  const callTarget = getCallTarget(config.region)
+  const overlap = getOverlapInfo(config.region)
   const coords = config.coordinates
   const regionName = getRegionDisplayName(config.region)
   
@@ -80,13 +98,34 @@ export default function QuickFacts({ config, isLight }: QuickFactsProps) {
           </ul>
         </div>
         <div>
-          <h3 className={`font-medium mb-2 ${headingColor}`}>Location & Calling</h3>
+          <h3 className={`font-medium mb-2 ${headingColor}`}>Location & Region</h3>
           <ul className="space-y-1 text-sm">
             <li>• <strong>Coordinates:</strong> {formatCoordinate(coords.lat, true)}, {formatCoordinate(coords.lng, false)}</li>
             <li>• <strong>Region:</strong> {regionName}</li>
-            <li>• <strong>Best Call Window:</strong> {callTime}</li>
-            <li>• <strong>For Overlap:</strong> <Link href={`/${callTarget.targetSlug}/`} className={linkColor}>{callTarget.targetName}</Link> business hours</li>
           </ul>
+          
+          {/* Best Overlap - Visual Pills */}
+          <div className="mt-3">
+            <p className={`text-xs font-medium mb-2 ${mutedColor}`}>Best Overlap Windows:</p>
+            <div className="flex flex-wrap gap-2">
+              <Link 
+                href={`/time/${config.citySlug}/${overlap.morning.slug}/`}
+                className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${pillBg} hover:opacity-80 transition-opacity`}
+              >
+                <span>{overlap.morning.emoji}</span>
+                <span>{overlap.morning.city}</span>
+                <span className="opacity-70">(AM)</span>
+              </Link>
+              <Link 
+                href={`/time/${config.citySlug}/${overlap.evening.slug}/`}
+                className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${pillBg} hover:opacity-80 transition-opacity`}
+              >
+                <span>{overlap.evening.emoji}</span>
+                <span>{overlap.evening.city}</span>
+                <span className="opacity-70">(PM)</span>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
       <p className={`mt-4 text-sm ${mutedColor}`}>
