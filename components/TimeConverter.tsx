@@ -194,7 +194,9 @@ export default function TimeConverter({ currentCitySlug }: TimeConverterProps) {
   
   return (
     <>
-      <div className={`rounded-3xl p-6 backdrop-blur-xl border ${card} mb-4`}>
+      <div className={`rounded-3xl p-6 backdrop-blur-xl border mb-4 ${
+        isLight ? 'bg-[#F9FAFB] border-slate-200' : 'bg-slate-800/60 border-slate-700'
+      }`}>
         <h3 className={`text-xl font-semibold ${text} mb-4 flex items-center gap-2`}>
           <svg className={`w-5 h-5 ${isLight ? 'text-blue-500' : 'text-blue-400'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
             <circle cx="12" cy="12" r="10"/>
