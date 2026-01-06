@@ -3723,4 +3723,215 @@ export const cities: City[] = [
   // Canada - Additional Cities
   { slug: 'calgary', city: 'Calgary', timezone: 'America/Edmonton', country: 'Canada', countryCode: 'CA', lat: 51.05, lng: -114.07, tier: 2, continent: 'americas' },
   { slug: 'ottawa', city: 'Ottawa', timezone: 'America/Toronto', country: 'Canada', countryCode: 'CA', lat: 45.42, lng: -75.70, tier: 2, continent: 'americas' },
+
+  // ============ PHASE 1: CRITICAL EXPANSION (50+ cities) ============
+  
+  // INDIA - Additional Major Cities (8 new)
+  { slug: 'surat', city: 'Surat', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 21.17, lng: 72.83, tier: 2, continent: 'asia' },
+  { slug: 'jaipur', city: 'Jaipur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.92, lng: 75.79, tier: 2, continent: 'asia' },
+  { slug: 'lucknow', city: 'Lucknow', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.85, lng: 80.95, tier: 2, continent: 'asia' },
+  { slug: 'kanpur', city: 'Kanpur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.45, lng: 80.35, tier: 3, continent: 'asia' },
+  { slug: 'nagpur', city: 'Nagpur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 21.15, lng: 79.09, tier: 3, continent: 'asia' },
+  { slug: 'indore', city: 'Indore', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.72, lng: 75.86, tier: 3, continent: 'asia' },
+  { slug: 'patna', city: 'Patna', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.59, lng: 85.14, tier: 3, continent: 'asia' },
+  { slug: 'bhopal', city: 'Bhopal', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.26, lng: 77.41, tier: 3, continent: 'asia' },
+  { slug: 'visakhapatnam', city: 'Visakhapatnam', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 17.69, lng: 83.22, tier: 3, continent: 'asia' },
+  { slug: 'vadodara', city: 'Vadodara', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.31, lng: 73.19, tier: 3, continent: 'asia' },
+  { slug: 'ghaziabad', city: 'Ghaziabad', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 28.67, lng: 77.42, tier: 3, continent: 'asia' },
+  { slug: 'ludhiana', city: 'Ludhiana', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.90, lng: 75.85, tier: 3, continent: 'asia' },
+  { slug: 'agra', city: 'Agra', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.18, lng: 78.02, tier: 3, continent: 'asia' },
+  { slug: 'nashik', city: 'Nashik', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.00, lng: 73.79, tier: 3, continent: 'asia' },
+  { slug: 'coimbatore', city: 'Coimbatore', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 11.02, lng: 76.97, tier: 3, continent: 'asia' },
+  { slug: 'kochi', city: 'Kochi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 9.93, lng: 76.27, tier: 3, continent: 'asia' },
+
+  // CHINA - Additional Major Cities (10 new)
+  { slug: 'chongqing', city: 'Chongqing', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 29.56, lng: 106.55, tier: 2, continent: 'asia' },
+  { slug: 'tianjin', city: 'Tianjin', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 39.14, lng: 117.18, tier: 2, continent: 'asia' },
+  { slug: 'wuhan', city: 'Wuhan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.59, lng: 114.31, tier: 2, continent: 'asia' },
+  { slug: 'chengdu', city: 'Chengdu', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.57, lng: 104.07, tier: 2, continent: 'asia' },
+  { slug: 'nanjing', city: 'Nanjing', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 32.06, lng: 118.80, tier: 2, continent: 'asia' },
+  { slug: 'xian', city: "Xi'an", timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 34.34, lng: 108.94, tier: 2, continent: 'asia' },
+  { slug: 'hangzhou', city: 'Hangzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.25, lng: 120.17, tier: 2, continent: 'asia' },
+  { slug: 'suzhou', city: 'Suzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 31.30, lng: 120.62, tier: 3, continent: 'asia' },
+  { slug: 'harbin', city: 'Harbin', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 45.80, lng: 126.53, tier: 3, continent: 'asia' },
+  { slug: 'qingdao', city: 'Qingdao', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 36.07, lng: 120.38, tier: 3, continent: 'asia' },
+  { slug: 'dalian', city: 'Dalian', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 38.91, lng: 121.60, tier: 3, continent: 'asia' },
+  { slug: 'xiamen', city: 'Xiamen', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 24.48, lng: 118.09, tier: 3, continent: 'asia' },
+  { slug: 'zhengzhou', city: 'Zhengzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 34.75, lng: 113.63, tier: 3, continent: 'asia' },
+  { slug: 'changsha', city: 'Changsha', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 28.23, lng: 112.94, tier: 3, continent: 'asia' },
+
+  // PAKISTAN - Major Cities (4 new)
+  { slug: 'lahore', city: 'Lahore', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 31.55, lng: 74.34, tier: 2, continent: 'asia' },
+  { slug: 'faisalabad', city: 'Faisalabad', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 31.42, lng: 73.09, tier: 3, continent: 'asia' },
+  { slug: 'rawalpindi', city: 'Rawalpindi', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 33.60, lng: 73.04, tier: 3, continent: 'asia' },
+  { slug: 'multan', city: 'Multan', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 30.20, lng: 71.45, tier: 3, continent: 'asia' },
+  { slug: 'peshawar', city: 'Peshawar', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 34.01, lng: 71.58, tier: 3, continent: 'asia' },
+  { slug: 'islamabad', city: 'Islamabad', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 33.69, lng: 73.06, tier: 2, continent: 'asia' },
+
+  // BANGLADESH - Major Cities (3 new)
+  { slug: 'chittagong', city: 'Chittagong', timezone: 'Asia/Dhaka', country: 'Bangladesh', countryCode: 'BD', lat: 22.36, lng: 91.78, tier: 2, continent: 'asia' },
+  { slug: 'khulna', city: 'Khulna', timezone: 'Asia/Dhaka', country: 'Bangladesh', countryCode: 'BD', lat: 22.82, lng: 89.55, tier: 3, continent: 'asia' },
+  { slug: 'rajshahi', city: 'Rajshahi', timezone: 'Asia/Dhaka', country: 'Bangladesh', countryCode: 'BD', lat: 24.37, lng: 88.60, tier: 3, continent: 'asia' },
+  { slug: 'sylhet', city: 'Sylhet', timezone: 'Asia/Dhaka', country: 'Bangladesh', countryCode: 'BD', lat: 24.90, lng: 91.87, tier: 3, continent: 'asia' },
+
+  // NIGERIA - Major Cities (5 new)
+  { slug: 'lagos', city: 'Lagos', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 6.52, lng: 3.38, tier: 1, continent: 'africa' },
+  { slug: 'kano', city: 'Kano', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 12.00, lng: 8.52, tier: 3, continent: 'africa' },
+  { slug: 'ibadan', city: 'Ibadan', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 7.38, lng: 3.90, tier: 3, continent: 'africa' },
+  { slug: 'abuja', city: 'Abuja', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 9.07, lng: 7.40, tier: 2, continent: 'africa' },
+  { slug: 'port-harcourt', city: 'Port Harcourt', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 4.82, lng: 7.03, tier: 3, continent: 'africa' },
+  { slug: 'benin-city', city: 'Benin City', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 6.34, lng: 5.63, tier: 3, continent: 'africa' },
+
+  // INDONESIA - Additional Cities (4 new)
+  { slug: 'bandung', city: 'Bandung', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -6.91, lng: 107.61, tier: 2, continent: 'asia' },
+  { slug: 'medan', city: 'Medan', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: 3.59, lng: 98.67, tier: 2, continent: 'asia' },
+  { slug: 'semarang', city: 'Semarang', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -6.97, lng: 110.42, tier: 3, continent: 'asia' },
+  { slug: 'makassar', city: 'Makassar', timezone: 'Asia/Makassar', country: 'Indonesia', countryCode: 'ID', lat: -5.14, lng: 119.42, tier: 3, continent: 'asia' },
+  { slug: 'palembang', city: 'Palembang', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -2.99, lng: 104.76, tier: 3, continent: 'asia' },
+  { slug: 'yogyakarta', city: 'Yogyakarta', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -7.80, lng: 110.36, tier: 3, continent: 'asia' },
+
+  // PHILIPPINES - Major Cities (3 new)
+  { slug: 'cebu', city: 'Cebu City', timezone: 'Asia/Manila', country: 'Philippines', countryCode: 'PH', lat: 10.32, lng: 123.89, tier: 2, continent: 'asia' },
+  { slug: 'davao', city: 'Davao', timezone: 'Asia/Manila', country: 'Philippines', countryCode: 'PH', lat: 7.19, lng: 125.46, tier: 2, continent: 'asia' },
+  { slug: 'quezon-city', city: 'Quezon City', timezone: 'Asia/Manila', country: 'Philippines', countryCode: 'PH', lat: 14.68, lng: 121.04, tier: 2, continent: 'asia' },
+
+  // VIETNAM - Additional Cities (3 new)
+  { slug: 'da-nang', city: 'Da Nang', timezone: 'Asia/Ho_Chi_Minh', country: 'Vietnam', countryCode: 'VN', lat: 16.05, lng: 108.22, tier: 2, continent: 'asia' },
+  { slug: 'can-tho', city: 'Can Tho', timezone: 'Asia/Ho_Chi_Minh', country: 'Vietnam', countryCode: 'VN', lat: 10.03, lng: 105.78, tier: 3, continent: 'asia' },
+  { slug: 'hai-phong', city: 'Hai Phong', timezone: 'Asia/Ho_Chi_Minh', country: 'Vietnam', countryCode: 'VN', lat: 20.86, lng: 106.68, tier: 3, continent: 'asia' },
+
+  // EGYPT - Additional Cities (3 new)
+  { slug: 'alexandria', city: 'Alexandria', timezone: 'Africa/Cairo', country: 'Egypt', countryCode: 'EG', lat: 31.20, lng: 29.92, tier: 2, continent: 'africa' },
+  { slug: 'giza', city: 'Giza', timezone: 'Africa/Cairo', country: 'Egypt', countryCode: 'EG', lat: 30.01, lng: 31.21, tier: 2, continent: 'africa' },
+  { slug: 'sharm-el-sheikh', city: 'Sharm el-Sheikh', timezone: 'Africa/Cairo', country: 'Egypt', countryCode: 'EG', lat: 27.92, lng: 34.33, tier: 3, continent: 'africa' },
+  { slug: 'luxor', city: 'Luxor', timezone: 'Africa/Cairo', country: 'Egypt', countryCode: 'EG', lat: 25.69, lng: 32.64, tier: 3, continent: 'africa' },
+
+  // ETHIOPIA - Additional Cities (2 new)
+  { slug: 'dire-dawa', city: 'Dire Dawa', timezone: 'Africa/Addis_Ababa', country: 'Ethiopia', countryCode: 'ET', lat: 9.60, lng: 41.85, tier: 3, continent: 'africa' },
+  { slug: 'mekelle', city: 'Mekelle', timezone: 'Africa/Addis_Ababa', country: 'Ethiopia', countryCode: 'ET', lat: 13.50, lng: 39.47, tier: 3, continent: 'africa' },
+
+  // KENYA - Additional Cities (2 new)
+  { slug: 'mombasa', city: 'Mombasa', timezone: 'Africa/Nairobi', country: 'Kenya', countryCode: 'KE', lat: -4.05, lng: 39.67, tier: 2, continent: 'africa' },
+  { slug: 'kisumu', city: 'Kisumu', timezone: 'Africa/Nairobi', country: 'Kenya', countryCode: 'KE', lat: -0.10, lng: 34.75, tier: 3, continent: 'africa' },
+
+  // MOROCCO - Additional Cities (2 new)
+  { slug: 'marrakech', city: 'Marrakech', timezone: 'Africa/Casablanca', country: 'Morocco', countryCode: 'MA', lat: 31.63, lng: -8.00, tier: 2, continent: 'africa' },
+  { slug: 'fes', city: 'Fes', timezone: 'Africa/Casablanca', country: 'Morocco', countryCode: 'MA', lat: 34.03, lng: -5.00, tier: 3, continent: 'africa' },
+
+  // GHANA - Additional Cities (2 new)
+  { slug: 'kumasi', city: 'Kumasi', timezone: 'Africa/Accra', country: 'Ghana', countryCode: 'GH', lat: 6.69, lng: -1.62, tier: 3, continent: 'africa' },
+  { slug: 'tamale', city: 'Tamale', timezone: 'Africa/Accra', country: 'Ghana', countryCode: 'GH', lat: 9.40, lng: -0.84, tier: 3, continent: 'africa' },
+
+  // TANZANIA - Additional Cities (2 new)
+  { slug: 'dar-es-salaam', city: 'Dar es Salaam', timezone: 'Africa/Dar_es_Salaam', country: 'Tanzania', countryCode: 'TZ', lat: -6.79, lng: 39.28, tier: 2, continent: 'africa' },
+  { slug: 'zanzibar', city: 'Zanzibar City', timezone: 'Africa/Dar_es_Salaam', country: 'Tanzania', countryCode: 'TZ', lat: -6.17, lng: 39.19, tier: 3, continent: 'africa' },
+
+  // JAPAN - Additional Cities (3 new)
+  { slug: 'fukuoka', city: 'Fukuoka', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 33.59, lng: 130.40, tier: 2, continent: 'asia' },
+  { slug: 'sapporo', city: 'Sapporo', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 43.06, lng: 141.35, tier: 2, continent: 'asia' },
+  { slug: 'kobe', city: 'Kobe', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.69, lng: 135.20, tier: 2, continent: 'asia' },
+  { slug: 'nagoya', city: 'Nagoya', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.18, lng: 136.91, tier: 2, continent: 'asia' },
+
+  // SOUTH KOREA - Additional Cities (2 new)
+  { slug: 'daegu', city: 'Daegu', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.87, lng: 128.60, tier: 2, continent: 'asia' },
+  { slug: 'daejeon', city: 'Daejeon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.35, lng: 127.38, tier: 3, continent: 'asia' },
+
+  // TAIWAN - Additional Cities (2 new)
+  { slug: 'kaohsiung', city: 'Kaohsiung', timezone: 'Asia/Taipei', country: 'Taiwan', countryCode: 'TW', lat: 22.62, lng: 120.31, tier: 2, continent: 'asia' },
+  { slug: 'taichung', city: 'Taichung', timezone: 'Asia/Taipei', country: 'Taiwan', countryCode: 'TW', lat: 24.15, lng: 120.67, tier: 2, continent: 'asia' },
+
+  // MALAYSIA - Additional Cities (2 new)
+  { slug: 'penang', city: 'George Town', timezone: 'Asia/Kuala_Lumpur', country: 'Malaysia', countryCode: 'MY', lat: 5.41, lng: 100.34, tier: 2, continent: 'asia' },
+  { slug: 'johor-bahru', city: 'Johor Bahru', timezone: 'Asia/Kuala_Lumpur', country: 'Malaysia', countryCode: 'MY', lat: 1.49, lng: 103.74, tier: 3, continent: 'asia' },
+
+  // THAILAND - Additional Cities (2 new)
+  { slug: 'chiang-mai', city: 'Chiang Mai', timezone: 'Asia/Bangkok', country: 'Thailand', countryCode: 'TH', lat: 18.79, lng: 98.98, tier: 2, continent: 'asia' },
+  { slug: 'pattaya', city: 'Pattaya', timezone: 'Asia/Bangkok', country: 'Thailand', countryCode: 'TH', lat: 12.93, lng: 100.88, tier: 3, continent: 'asia' },
+
+  // IRAN - Tehran (if missing)
+  { slug: 'tehran', city: 'Tehran', timezone: 'Asia/Tehran', country: 'Iran', countryCode: 'IR', lat: 35.69, lng: 51.39, tier: 1, continent: 'asia' },
+  { slug: 'mashhad', city: 'Mashhad', timezone: 'Asia/Tehran', country: 'Iran', countryCode: 'IR', lat: 36.30, lng: 59.60, tier: 2, continent: 'asia' },
+  { slug: 'isfahan', city: 'Isfahan', timezone: 'Asia/Tehran', country: 'Iran', countryCode: 'IR', lat: 32.65, lng: 51.68, tier: 3, continent: 'asia' },
+
+  // IRAQ - Major Cities
+  { slug: 'baghdad', city: 'Baghdad', timezone: 'Asia/Baghdad', country: 'Iraq', countryCode: 'IQ', lat: 33.31, lng: 44.37, tier: 2, continent: 'asia' },
+  { slug: 'basra', city: 'Basra', timezone: 'Asia/Baghdad', country: 'Iraq', countryCode: 'IQ', lat: 30.51, lng: 47.81, tier: 3, continent: 'asia' },
+
+  // ALGERIA - Additional Cities
+  { slug: 'algiers', city: 'Algiers', timezone: 'Africa/Algiers', country: 'Algeria', countryCode: 'DZ', lat: 36.75, lng: 3.06, tier: 2, continent: 'africa' },
+  { slug: 'oran', city: 'Oran', timezone: 'Africa/Algiers', country: 'Algeria', countryCode: 'DZ', lat: 35.70, lng: -0.63, tier: 3, continent: 'africa' },
+
+  // SUDAN - Khartoum
+  { slug: 'khartoum', city: 'Khartoum', timezone: 'Africa/Khartoum', country: 'Sudan', countryCode: 'SD', lat: 15.50, lng: 32.56, tier: 2, continent: 'africa' },
+
+  // UGANDA - Kampala
+  { slug: 'kampala', city: 'Kampala', timezone: 'Africa/Kampala', country: 'Uganda', countryCode: 'UG', lat: 0.35, lng: 32.58, tier: 2, continent: 'africa' },
+
+  // ANGOLA - Luanda
+  { slug: 'luanda', city: 'Luanda', timezone: 'Africa/Luanda', country: 'Angola', countryCode: 'AO', lat: -8.84, lng: 13.23, tier: 2, continent: 'africa' },
+
+  // MOZAMBIQUE - Maputo
+  { slug: 'maputo', city: 'Maputo', timezone: 'Africa/Maputo', country: 'Mozambique', countryCode: 'MZ', lat: -25.97, lng: 32.58, tier: 3, continent: 'africa' },
+
+  // COTE D'IVOIRE - Abidjan
+  { slug: 'abidjan', city: 'Abidjan', timezone: 'Africa/Abidjan', country: "Côte d'Ivoire", countryCode: 'CI', lat: 5.36, lng: -4.01, tier: 2, continent: 'africa' },
+
+  // SENEGAL - Dakar
+  { slug: 'dakar', city: 'Dakar', timezone: 'Africa/Dakar', country: 'Senegal', countryCode: 'SN', lat: 14.69, lng: -17.44, tier: 2, continent: 'africa' },
+
+  // CAMEROON - Major Cities
+  { slug: 'douala', city: 'Douala', timezone: 'Africa/Douala', country: 'Cameroon', countryCode: 'CM', lat: 4.05, lng: 9.70, tier: 3, continent: 'africa' },
+  { slug: 'yaounde', city: 'Yaoundé', timezone: 'Africa/Douala', country: 'Cameroon', countryCode: 'CM', lat: 3.87, lng: 11.52, tier: 3, continent: 'africa' },
+
+  // DR CONGO - Kinshasa
+  { slug: 'kinshasa', city: 'Kinshasa', timezone: 'Africa/Kinshasa', country: 'DR Congo', countryCode: 'CD', lat: -4.32, lng: 15.31, tier: 2, continent: 'africa' },
+
+  // ZIMBABWE - Harare
+  { slug: 'harare', city: 'Harare', timezone: 'Africa/Harare', country: 'Zimbabwe', countryCode: 'ZW', lat: -17.83, lng: 31.05, tier: 3, continent: 'africa' },
+
+  // ZAMBIA - Lusaka
+  { slug: 'lusaka', city: 'Lusaka', timezone: 'Africa/Lusaka', country: 'Zambia', countryCode: 'ZM', lat: -15.39, lng: 28.32, tier: 3, continent: 'africa' },
+
+  // USA - Additional Major Cities
+  { slug: 'san-antonio', city: 'San Antonio', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 29.42, lng: -98.49, tier: 3, continent: 'americas' },
+  { slug: 'jacksonville', city: 'Jacksonville', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 30.33, lng: -81.66, tier: 3, continent: 'americas' },
+  { slug: 'charlotte', city: 'Charlotte', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 35.23, lng: -80.84, tier: 3, continent: 'americas' },
+  { slug: 'columbus', city: 'Columbus', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 39.96, lng: -83.00, tier: 3, continent: 'americas' },
+  { slug: 'indianapolis', city: 'Indianapolis', timezone: 'America/Indiana/Indianapolis', country: 'United States', countryCode: 'US', lat: 39.77, lng: -86.16, tier: 3, continent: 'americas' },
+  { slug: 'fort-worth', city: 'Fort Worth', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 32.75, lng: -97.33, tier: 3, continent: 'americas' },
+
+  // BRAZIL - Additional Cities
+  { slug: 'curitiba', city: 'Curitiba', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -25.43, lng: -49.27, tier: 2, continent: 'americas' },
+  { slug: 'porto-alegre', city: 'Porto Alegre', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -30.03, lng: -51.23, tier: 2, continent: 'americas' },
+  { slug: 'manaus', city: 'Manaus', timezone: 'America/Manaus', country: 'Brazil', countryCode: 'BR', lat: -3.12, lng: -60.02, tier: 3, continent: 'americas' },
+
+  // COLOMBIA - Additional Cities
+  { slug: 'medellin', city: 'Medellín', timezone: 'America/Bogota', country: 'Colombia', countryCode: 'CO', lat: 6.25, lng: -75.57, tier: 2, continent: 'americas' },
+  { slug: 'cali', city: 'Cali', timezone: 'America/Bogota', country: 'Colombia', countryCode: 'CO', lat: 3.45, lng: -76.53, tier: 2, continent: 'americas' },
+  { slug: 'barranquilla', city: 'Barranquilla', timezone: 'America/Bogota', country: 'Colombia', countryCode: 'CO', lat: 10.96, lng: -74.80, tier: 3, continent: 'americas' },
+
+  // PERU - Additional Cities
+  { slug: 'arequipa', city: 'Arequipa', timezone: 'America/Lima', country: 'Peru', countryCode: 'PE', lat: -16.41, lng: -71.54, tier: 3, continent: 'americas' },
+  { slug: 'cusco', city: 'Cusco', timezone: 'America/Lima', country: 'Peru', countryCode: 'PE', lat: -13.52, lng: -71.97, tier: 3, continent: 'americas' },
+
+  // CHILE - Additional Cities
+  { slug: 'valparaiso', city: 'Valparaíso', timezone: 'America/Santiago', country: 'Chile', countryCode: 'CL', lat: -33.05, lng: -71.62, tier: 3, continent: 'americas' },
+
+  // VENEZUELA - Additional Cities
+  { slug: 'maracaibo', city: 'Maracaibo', timezone: 'America/Caracas', country: 'Venezuela', countryCode: 'VE', lat: 10.67, lng: -71.64, tier: 3, continent: 'americas' },
+  { slug: 'valencia-venezuela', city: 'Valencia', timezone: 'America/Caracas', country: 'Venezuela', countryCode: 'VE', lat: 10.16, lng: -67.99, tier: 3, continent: 'americas' },
+
+  // AUSTRALIA - Additional Cities
+  { slug: 'gold-coast', city: 'Gold Coast', timezone: 'Australia/Brisbane', country: 'Australia', countryCode: 'AU', lat: -28.02, lng: 153.43, tier: 3, continent: 'oceania' },
+  { slug: 'canberra', city: 'Canberra', timezone: 'Australia/Sydney', country: 'Australia', countryCode: 'AU', lat: -35.28, lng: 149.13, tier: 2, continent: 'oceania' },
+  { slug: 'newcastle', city: 'Newcastle', timezone: 'Australia/Sydney', country: 'Australia', countryCode: 'AU', lat: -32.93, lng: 151.78, tier: 3, continent: 'oceania' },
+
+  // NEW ZEALAND - Additional Cities
+  { slug: 'queenstown', city: 'Queenstown', timezone: 'Pacific/Auckland', country: 'New Zealand', countryCode: 'NZ', lat: -45.03, lng: 168.66, tier: 3, continent: 'oceania' },
+
+  // FIJI - Suva
+  { slug: 'suva', city: 'Suva', timezone: 'Pacific/Fiji', country: 'Fiji', countryCode: 'FJ', lat: -18.14, lng: 178.44, tier: 3, continent: 'oceania' },
+
+  // PAPUA NEW GUINEA - Port Moresby
+  { slug: 'port-moresby', city: 'Port Moresby', timezone: 'Pacific/Port_Moresby', country: 'Papua New Guinea', countryCode: 'PG', lat: -9.44, lng: 147.18, tier: 3, continent: 'oceania' },
 ]
