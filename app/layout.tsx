@@ -1,7 +1,13 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
+import dynamic from 'next/dynamic'
 import { CityProvider } from '@/lib/CityContext'
 import './globals.css'
+
+// Dynamic import for ScrollFAB - only loads on client, no SSR
+const GlobalScrollFAB = dynamic(() => import('@/components/GlobalScrollFAB'), {
+  ssr: false
+})
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -138,6 +144,7 @@ export default function RootLayout({
       <body className="antialiased" suppressHydrationWarning>
         <CityProvider>
           {children}
+          <GlobalScrollFAB />
         </CityProvider>
       </body>
     </html>
