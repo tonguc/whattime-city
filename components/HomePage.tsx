@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import { useCityContext } from '@/lib/CityContext'
 import { useThemeClasses } from '@/lib/useThemeClasses'
 import { City, cities, searchCities } from '@/lib/cities'
@@ -10,7 +11,12 @@ import { TimeIcons } from '@/components/TimeIcons'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import CompareWidget from '@/components/CompareWidget'
-import AnalogClock from '@/components/AnalogClock'
+
+// Dynamic import for non-critical components (reduces initial bundle)
+const AnalogClock = dynamic(() => import('@/components/AnalogClock'), { 
+  ssr: false,
+  loading: () => <div className="w-24 h-24" /> // placeholder
+})
 
 
 // Data
@@ -168,9 +174,9 @@ export default function HomePage() {
       <Header />
 
       <main className="max-w-6xl mx-auto px-4 py-4" style={{ overflow: 'visible' }}>
-        {/* YOUR LOCATION - Big Clock with Weather */}
-        {detectedCity ? (
-          <section className={`rounded-3xl p-5 md:p-6 mb-4 backdrop-blur-xl border ${card}`}>
+        {/* YOUR LOCATION - Big Clock with Weather - min-h prevents CLS */}
+        <section className={`rounded-3xl p-5 md:p-6 mb-4 backdrop-blur-xl border ${card} min-h-[140px] md:min-h-[120px]`}>
+          {detectedCity ? (
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-4 md:flex-1">
                 <span className="text-3xl">📍</span>
@@ -182,14 +188,15 @@ export default function HomePage() {
                 </div>
               </div>
               
-              <div className="flex-shrink-0 flex justify-center items-center md:flex-[2]">
+              {/* Clock container with fixed min-height to prevent CLS */}
+              <div className="flex-shrink-0 flex justify-center items-center md:flex-[2] min-h-[70px] md:min-h-[80px]">
                 {/* Digital or Analog Clock based on user preference */}
                 {clockMode === 'analog' ? (
                   <div className="inline-flex mr-5">
                     <AnalogClock time={time} />
                   </div>
                 ) : (
-                  <div className={`text-5xl md:text-6xl font-bold tracking-tight mr-5 ${text}`}>
+                  <div className={`text-5xl md:text-6xl font-bold tracking-tight mr-5 ${text}`} style={{ fontVariantNumeric: 'tabular-nums' }}>
                     {getLocalTime(detectedCity)}
                   </div>
                 )}
@@ -229,31 +236,28 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-          </section>
-        ) : (
-          /* Skeleton for Your Location section - same dimensions to prevent CLS */
-          <section className={`rounded-3xl p-5 md:p-6 mb-4 backdrop-blur-xl border ${card}`}>
+          ) : (
+            /* Loading placeholder - same height to prevent CLS */
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-4 md:flex-1">
-                <div className="w-9 h-9 rounded-full bg-slate-200 animate-pulse" />
+                <span className="text-3xl">📍</span>
                 <div>
-                  <div className={`h-6 w-32 rounded ${isLight ? 'bg-slate-200' : 'bg-slate-700'} animate-pulse`} />
-                  <div className={`h-4 w-48 mt-1 rounded ${isLight ? 'bg-slate-200' : 'bg-slate-700'} animate-pulse`} />
+                  <div className={`h-6 w-32 rounded ${isLight ? 'bg-slate-200' : 'bg-slate-700'}`} />
+                  <div className={`h-4 w-48 mt-1 rounded ${isLight ? 'bg-slate-200' : 'bg-slate-700'}`} />
                 </div>
               </div>
-              <div className="flex-shrink-0 flex justify-center items-center md:flex-[2]">
-                <div className={`h-14 md:h-16 w-40 mr-5 rounded ${isLight ? 'bg-slate-200' : 'bg-slate-700'} animate-pulse`} />
-                <div className={`h-8 w-24 rounded-full ${isLight ? 'bg-slate-100' : 'bg-slate-800'} animate-pulse`} />
+              <div className="flex-shrink-0 flex justify-center items-center md:flex-[2] min-h-[70px] md:min-h-[80px]">
+                <div className={`h-14 w-40 rounded ${isLight ? 'bg-slate-200' : 'bg-slate-700'}`} />
               </div>
               <div className="flex gap-2 md:flex-1 md:justify-end">
-                <div className={`h-10 w-24 rounded-xl ${isLight ? 'bg-slate-200' : 'bg-slate-700'} animate-pulse`} />
+                <div className={`h-10 w-24 rounded-xl ${isLight ? 'bg-slate-200' : 'bg-slate-700'}`} />
               </div>
             </div>
-          </section>
-        )}
+          )}
+        </section>
 
-        {/* HERO - Compare Tool - larger min-h to prevent CLS */}
-        <section className={`rounded-3xl p-6 md:p-8 mb-4 backdrop-blur-xl border ${card} text-center min-h-[280px] md:min-h-[220px]`} style={{ overflow: 'visible' }}>
+        {/* HERO - Compare Tool */}
+        <section className={`rounded-3xl p-6 md:p-8 mb-4 backdrop-blur-xl border ${card} text-center`} style={{ overflow: 'visible' }}>
           <h2 className={`text-2xl md:text-3xl font-bold mb-2 ${text} flex items-center justify-center gap-3`}>
             <svg className="w-8 h-8 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10"/>
@@ -263,8 +267,7 @@ export default function HomePage() {
             World Clock — Convert Time Instantly
           </h2>
           
-          {/* Fixed height container for CompareWidget to prevent CLS */}
-          <div className={`max-w-2xl mx-auto mt-6 p-4 rounded-2xl min-h-[120px] md:min-h-[80px] ${isLight ? 'bg-slate-100' : 'bg-slate-800/50'}`} style={{ overflow: 'visible' }}>
+          <div className={`max-w-2xl mx-auto mt-6 p-4 rounded-2xl ${isLight ? 'bg-slate-100' : 'bg-slate-800/50'}`} style={{ overflow: 'visible' }}>
             <CompareWidget 
               initialFromCity={fromCity}
               initialToCity={toCity}

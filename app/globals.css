@@ -214,3 +214,18 @@ html {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* ============================================
+   PERFORMANCE-OPTIMIZED ANIMATIONS
+   Uses only transform and opacity (GPU-accelerated)
+   ============================================ */
+
+/* Colon blink - opacity only */
+@keyframes colonBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.colon-blink {
+  animation: colonBlink 1s ease-in-out infinite;
+  will-change: opacity;
+}

@@ -293,7 +293,7 @@ export function ActiveAlarmPopup({
 
   return (
     <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
-      <div className={`w-full max-w-sm rounded-3xl p-8 text-center ${isLight ? 'bg-white' : 'bg-slate-800'} shadow-2xl animate-pulse`}>
+      <div className={`w-full max-w-sm rounded-3xl p-8 text-center ${isLight ? 'bg-white' : 'bg-slate-800'} shadow-2xl`}>
         <div className="text-6xl mb-4">🔔</div>
         <h2 className={`text-2xl font-bold mb-2 ${text}`}>{alarm.label}</h2>
         <p className={`text-lg ${textMuted}`}>
