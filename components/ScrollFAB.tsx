@@ -132,8 +132,8 @@ export default function ScrollFAB({
       const viewportHeight = window.innerHeight
       const scrollPercent = (scrollY / (scrollHeight - viewportHeight)) * 100
 
-      // Hide FAB at very top (< 100px scroll)
-      if (scrollY < 100) {
+      // Hide FAB at very top (< 200px scroll) - no need for navigation yet
+      if (scrollY < 200) {
         setIsVisible(false)
         setFabState('hidden')
         return
@@ -142,11 +142,15 @@ export default function ScrollFAB({
       setIsVisible(true)
 
       // Determine FAB state based on scroll position
-      if (scrollPercent < 15) {
+      // Skip "skip-intro" state entirely if no sections - go straight to next/top logic
+      if (scrollPercent < 15 && sections.length > 0) {
+        // Only show "skip intro" if we have defined sections to skip to
         setFabState('skip-intro')
-      } else if (scrollPercent < 85) {
+      } else if (scrollPercent < 80) {
+        // Show "next section" or just "scroll down" if no sections
         setFabState('next-section')
       } else {
+        // Near bottom - always show back to top
         setFabState('back-to-top')
       }
     }
@@ -156,7 +160,7 @@ export default function ScrollFAB({
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [isLongPage])
+  }, [isLongPage, sections.length])
 
   // ==========================================================================
   // FIRST-TIME LABEL LOGIC

@@ -95,17 +95,20 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Google Analytics - lazyOnload for best performance */}
+        {/* Google Analytics - afterInteractive for reliable tracking */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-ED5Y13JE4H"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
-        <Script id="ga4" strategy="lazyOnload">
+        <Script id="ga4" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-ED5Y13JE4H');
+            gtag('config', 'G-ED5Y13JE4H', {
+              page_title: document.title,
+              page_location: window.location.href
+            });
           `}
         </Script>
         
