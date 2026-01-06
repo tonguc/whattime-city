@@ -11,6 +11,14 @@
     "preview": "npx serve out",
     "export": "npm run build"
   },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions", 
+    "last 2 Safari versions",
+    "last 2 Edge versions",
+    "iOS >= 14",
+    "Android >= 10"
+  ],
   "dependencies": {
     "d3-geo": "^3.1.1",
     "lucide-react": "^0.263.1",
