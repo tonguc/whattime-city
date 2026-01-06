@@ -87,7 +87,7 @@ export function useThemeClasses(): ThemeClasses {
     
     // Text colors
     text: isLight ? 'text-slate-800' : 'text-white',
-    textMuted: isLight ? 'text-slate-500' : 'text-slate-400',
+    textMuted: isLight ? 'text-slate-500' : 'text-slate-300',
     
     // Input styling
     input: isLight 
@@ -153,7 +153,7 @@ export function getStaticThemeClasses(isLight: boolean, timeOfDay?: TimeOfDay) {
     card: getCardClass(),
     cardWithRound: `${getCardClass()} rounded-2xl`,
     text: isLight ? 'text-slate-800' : 'text-white',
-    textMuted: isLight ? 'text-slate-500' : 'text-slate-400',
+    textMuted: isLight ? 'text-slate-500' : 'text-slate-300',
     input: isLight 
       ? 'bg-slate-50 border border-slate-300 text-slate-800 placeholder:text-slate-400'
       : 'bg-slate-900 border border-slate-700 text-white placeholder:text-slate-500',

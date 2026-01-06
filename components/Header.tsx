@@ -105,7 +105,7 @@ function Header(_props: HeaderProps) {
       <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2 sm:gap-3">
         {/* Logo - Larger for better visibility */}
         <button onClick={handleLogoClick} aria-label="Go to homepage" className="hover:opacity-80 transition-opacity flex-shrink-0">
-          <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" width={160} height={40} className="h-9 sm:h-12" />
+          <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" width={180} height={45} className="h-10 sm:h-14" />
         </button>
         
         {/* Desktop Search */}
