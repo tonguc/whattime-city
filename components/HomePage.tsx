@@ -169,7 +169,7 @@ export default function HomePage() {
 
       <main className="max-w-6xl mx-auto px-4 py-4" style={{ overflow: 'visible' }}>
         {/* YOUR LOCATION - Big Clock with Weather */}
-        {detectedCity && (
+        {detectedCity ? (
           <section className={`rounded-3xl p-5 md:p-6 mb-4 backdrop-blur-xl border ${card}`}>
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-4 md:flex-1">
@@ -227,6 +227,26 @@ export default function HomePage() {
                   className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${isLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-white'}`}>
                   View City
                 </Link>
+              </div>
+            </div>
+          </section>
+        ) : (
+          /* Skeleton for Your Location section - same dimensions to prevent CLS */
+          <section className={`rounded-3xl p-5 md:p-6 mb-4 backdrop-blur-xl border ${card}`}>
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-4 md:flex-1">
+                <div className="w-9 h-9 rounded-full bg-slate-200 animate-pulse" />
+                <div>
+                  <div className={`h-6 w-32 rounded ${isLight ? 'bg-slate-200' : 'bg-slate-700'} animate-pulse`} />
+                  <div className={`h-4 w-48 mt-1 rounded ${isLight ? 'bg-slate-200' : 'bg-slate-700'} animate-pulse`} />
+                </div>
+              </div>
+              <div className="flex-shrink-0 flex justify-center items-center md:flex-[2]">
+                <div className={`h-14 md:h-16 w-40 mr-5 rounded ${isLight ? 'bg-slate-200' : 'bg-slate-700'} animate-pulse`} />
+                <div className={`h-8 w-24 rounded-full ${isLight ? 'bg-slate-100' : 'bg-slate-800'} animate-pulse`} />
+              </div>
+              <div className="flex gap-2 md:flex-1 md:justify-end">
+                <div className={`h-10 w-24 rounded-xl ${isLight ? 'bg-slate-200' : 'bg-slate-700'} animate-pulse`} />
               </div>
             </div>
           </section>

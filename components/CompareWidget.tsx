@@ -105,6 +105,9 @@ export default function CompareWidget({
   const router = useRouter()
   const { isLight } = useThemeClasses()
   
+  // Mounted state to prevent hydration mismatch and CLS
+  const [mounted, setMounted] = useState(false)
+  
   const [fromCity, setFromCity] = useState<City | null>(initialFromCity)
   const [toCity, setToCity] = useState<City | null>(initialToCity)
   const [fromQuery, setFromQuery] = useState(initialFromCity?.city || '')
@@ -120,6 +123,11 @@ export default function CompareWidget({
   const toInputRef = useRef<HTMLInputElement>(null)
   const fromContainerRef = useRef<HTMLDivElement>(null)
   const toContainerRef = useRef<HTMLDivElement>(null)
+
+  // Set mounted after hydration to prevent CLS
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // Initialize with user's location
   useEffect(() => {
@@ -301,6 +309,33 @@ export default function CompareWidget({
     setToQuery(city.city)
     setShowToDropdown(false)
     onCitiesChange?.(fromCity, city)
+  }
+
+  // Skeleton UI to prevent CLS - same dimensions as real UI
+  if (!mounted) {
+    return (
+      <div className={className}>
+        <div className="flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3">
+          {/* From input skeleton */}
+          <div className="relative flex-1 w-full">
+            <div className={`w-full h-10 md:h-14 rounded-xl border animate-pulse ${isLight ? 'bg-slate-200 border-slate-300' : 'bg-slate-700 border-slate-600'}`} />
+          </div>
+          
+          {/* Swap button skeleton - hidden on mobile */}
+          <div className={`hidden md:block flex-shrink-0 p-2 md:p-3 rounded-xl ${isLight ? 'bg-slate-200' : 'bg-slate-700'} animate-pulse`}>
+            <div className="w-5 h-5" />
+          </div>
+          
+          {/* To input skeleton */}
+          <div className="relative flex-1 w-full">
+            <div className={`w-full h-10 md:h-14 rounded-xl border animate-pulse ${isLight ? 'bg-slate-200 border-slate-300' : 'bg-slate-700 border-slate-600'}`} />
+          </div>
+          
+          {/* Button skeleton */}
+          <div className="w-full md:w-auto h-10 md:h-14 px-6 md:px-8 bg-blue-400 rounded-xl animate-pulse" />
+        </div>
+      </div>
+    )
   }
 
   return (
