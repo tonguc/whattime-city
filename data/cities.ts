@@ -3546,35 +3546,26 @@ export const cities: City[] = [
   { slug: 'cardiff', city: 'Cardiff', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.48, lng: -3.18, tier: 2, continent: 'europe' },
   
   // Germany - Additional Cities
-  { slug: 'hamburg', city: 'Hamburg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 53.55, lng: 9.99, tier: 2, continent: 'europe' },
-  { slug: 'cologne', city: 'Cologne', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 50.94, lng: 6.96, tier: 2, continent: 'europe' },
   { slug: 'stuttgart', city: 'Stuttgart', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 48.78, lng: 9.18, tier: 2, continent: 'europe' },
-  { slug: 'dusseldorf', city: 'Düsseldorf', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 51.23, lng: 6.78, tier: 2, continent: 'europe' },
   
   // France - Additional Cities
-  { slug: 'marseille', city: 'Marseille', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.30, lng: 5.37, tier: 2, continent: 'europe' },
   { slug: 'toulouse', city: 'Toulouse', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.60, lng: 1.44, tier: 2, continent: 'europe' },
   { slug: 'bordeaux', city: 'Bordeaux', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 44.84, lng: -0.58, tier: 2, continent: 'europe' },
   { slug: 'strasbourg', city: 'Strasbourg', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.57, lng: 7.75, tier: 2, continent: 'europe' },
   
   // Italy - Additional Cities
-  { slug: 'naples', city: 'Naples', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 40.85, lng: 14.27, tier: 2, continent: 'europe' },
   { slug: 'turin', city: 'Turin', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.07, lng: 7.69, tier: 2, continent: 'europe' },
   { slug: 'bologna', city: 'Bologna', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.49, lng: 11.34, tier: 2, continent: 'europe' },
   
   // Spain - Additional Cities
-  { slug: 'valencia', city: 'Valencia', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 39.47, lng: -0.38, tier: 2, continent: 'europe' },
-  { slug: 'seville', city: 'Seville', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 37.39, lng: -5.98, tier: 2, continent: 'europe' },
   { slug: 'bilbao', city: 'Bilbao', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 43.26, lng: -2.93, tier: 2, continent: 'europe' },
   { slug: 'malaga', city: 'Málaga', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 36.72, lng: -4.42, tier: 2, continent: 'europe' },
   
   // Netherlands - Additional Cities
-  { slug: 'rotterdam', city: 'Rotterdam', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 51.92, lng: 4.48, tier: 2, continent: 'europe' },
   { slug: 'the-hague', city: 'The Hague', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 52.08, lng: 4.31, tier: 2, continent: 'europe' },
   { slug: 'utrecht', city: 'Utrecht', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 52.09, lng: 5.12, tier: 2, continent: 'europe' },
   
   // Belgium - Additional Cities
-  { slug: 'antwerp', city: 'Antwerp', timezone: 'Europe/Brussels', country: 'Belgium', countryCode: 'BE', lat: 51.22, lng: 4.40, tier: 2, continent: 'europe' },
   { slug: 'ghent', city: 'Ghent', timezone: 'Europe/Brussels', country: 'Belgium', countryCode: 'BE', lat: 51.05, lng: 3.72, tier: 2, continent: 'europe' },
   
   // Switzerland - Additional Cities
@@ -3588,12 +3579,10 @@ export const cities: City[] = [
   { slug: 'graz', city: 'Graz', timezone: 'Europe/Vienna', country: 'Austria', countryCode: 'AT', lat: 47.07, lng: 15.44, tier: 2, continent: 'europe' },
   
   // Poland - Additional Cities
-  { slug: 'krakow', city: 'Kraków', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 50.06, lng: 19.94, tier: 2, continent: 'europe' },
   { slug: 'gdansk', city: 'Gdańsk', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 54.35, lng: 18.65, tier: 2, continent: 'europe' },
   { slug: 'wroclaw', city: 'Wrocław', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 51.11, lng: 17.04, tier: 2, continent: 'europe' },
   
   // Portugal - Additional Cities
-  { slug: 'porto', city: 'Porto', timezone: 'Europe/Lisbon', country: 'Portugal', countryCode: 'PT', lat: 41.16, lng: -8.63, tier: 2, continent: 'europe' },
   { slug: 'faro', city: 'Faro', timezone: 'Europe/Lisbon', country: 'Portugal', countryCode: 'PT', lat: 37.02, lng: -7.93, tier: 3, continent: 'europe' },
   
   // Greece - Additional Cities
@@ -3642,14 +3631,11 @@ export const cities: City[] = [
   { slug: 'constanta', city: 'Constanța', timezone: 'Europe/Bucharest', country: 'Romania', countryCode: 'RO', lat: 44.18, lng: 28.63, tier: 2, continent: 'europe' },
   
   // Turkey - Additional Cities
-  { slug: 'antalya', city: 'Antalya', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 36.90, lng: 30.70, tier: 2, continent: 'europe' },
-  { slug: 'bursa', city: 'Bursa', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 40.19, lng: 29.06, tier: 2, continent: 'europe' },
   { slug: 'adana', city: 'Adana', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 37.00, lng: 35.32, tier: 2, continent: 'europe' },
   { slug: 'gaziantep', city: 'Gaziantep', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 37.07, lng: 37.38, tier: 2, continent: 'europe' },
   { slug: 'konya', city: 'Konya', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 37.87, lng: 32.48, tier: 2, continent: 'europe' },
   
   // Russia - Additional Cities
-  { slug: 'saint-petersburg', city: 'Saint Petersburg', timezone: 'Europe/Moscow', country: 'Russia', countryCode: 'RU', lat: 59.93, lng: 30.34, tier: 1, continent: 'europe' },
   { slug: 'novosibirsk', city: 'Novosibirsk', timezone: 'Asia/Novosibirsk', country: 'Russia', countryCode: 'RU', lat: 55.04, lng: 82.93, tier: 2, continent: 'asia' },
   { slug: 'yekaterinburg', city: 'Yekaterinburg', timezone: 'Asia/Yekaterinburg', country: 'Russia', countryCode: 'RU', lat: 56.84, lng: 60.60, tier: 2, continent: 'asia' },
   { slug: 'kazan', city: 'Kazan', timezone: 'Europe/Moscow', country: 'Russia', countryCode: 'RU', lat: 55.80, lng: 49.11, tier: 2, continent: 'europe' },
@@ -3664,19 +3650,13 @@ export const cities: City[] = [
   { slug: 'kobe', city: 'Kobe', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.69, lng: 135.20, tier: 2, continent: 'asia' },
   
   // South Korea - Additional Cities
-  { slug: 'busan', city: 'Busan', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.18, lng: 129.08, tier: 2, continent: 'asia' },
   { slug: 'incheon', city: 'Incheon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.46, lng: 126.71, tier: 2, continent: 'asia' },
   { slug: 'daegu', city: 'Daegu', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.87, lng: 128.60, tier: 2, continent: 'asia' },
   
   // China - Additional Cities
-  { slug: 'guangzhou', city: 'Guangzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 23.13, lng: 113.26, tier: 1, continent: 'asia' },
-  { slug: 'shenzhen', city: 'Shenzhen', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 22.54, lng: 114.06, tier: 1, continent: 'asia' },
-  { slug: 'chengdu', city: 'Chengdu', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.57, lng: 104.07, tier: 2, continent: 'asia' },
   { slug: 'xian', city: "Xi'an", timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 34.34, lng: 108.94, tier: 2, continent: 'asia' },
   
   // India - Additional Cities
-  { slug: 'chennai', city: 'Chennai', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 13.08, lng: 80.27, tier: 2, continent: 'asia' },
-  { slug: 'hyderabad', city: 'Hyderabad', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 17.39, lng: 78.49, tier: 2, continent: 'asia' },
   { slug: 'pune', city: 'Pune', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 18.52, lng: 73.86, tier: 2, continent: 'asia' },
   { slug: 'ahmedabad', city: 'Ahmedabad', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.02, lng: 72.57, tier: 2, continent: 'asia' },
   
@@ -3687,18 +3667,14 @@ export const cities: City[] = [
   { slug: 'denpasar', city: 'Denpasar', timezone: 'Asia/Makassar', country: 'Indonesia', countryCode: 'ID', lat: -8.65, lng: 115.22, tier: 2, continent: 'asia' },
   
   // Saudi Arabia - Additional Cities
-  { slug: 'jeddah', city: 'Jeddah', timezone: 'Asia/Riyadh', country: 'Saudi Arabia', countryCode: 'SA', lat: 21.49, lng: 39.19, tier: 2, continent: 'asia' },
   { slug: 'dammam', city: 'Dammam', timezone: 'Asia/Riyadh', country: 'Saudi Arabia', countryCode: 'SA', lat: 26.43, lng: 50.10, tier: 2, continent: 'asia' },
   { slug: 'medina', city: 'Medina', timezone: 'Asia/Riyadh', country: 'Saudi Arabia', countryCode: 'SA', lat: 24.47, lng: 39.61, tier: 2, continent: 'asia' },
   
   // Australia - Additional Cities
-  { slug: 'brisbane', city: 'Brisbane', timezone: 'Australia/Brisbane', country: 'Australia', countryCode: 'AU', lat: -27.47, lng: 153.03, tier: 2, continent: 'oceania' },
-  { slug: 'perth', city: 'Perth', timezone: 'Australia/Perth', country: 'Australia', countryCode: 'AU', lat: -31.95, lng: 115.86, tier: 2, continent: 'oceania' },
   { slug: 'adelaide', city: 'Adelaide', timezone: 'Australia/Adelaide', country: 'Australia', countryCode: 'AU', lat: -34.93, lng: 138.60, tier: 2, continent: 'oceania' },
   { slug: 'gold-coast', city: 'Gold Coast', timezone: 'Australia/Brisbane', country: 'Australia', countryCode: 'AU', lat: -28.02, lng: 153.43, tier: 2, continent: 'oceania' },
   
   // Brazil - Additional Cities
-  { slug: 'rio-de-janeiro', city: 'Rio de Janeiro', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -22.91, lng: -43.17, tier: 1, continent: 'americas' },
   { slug: 'salvador', city: 'Salvador', timezone: 'America/Bahia', country: 'Brazil', countryCode: 'BR', lat: -12.97, lng: -38.50, tier: 2, continent: 'americas' },
   { slug: 'brasilia', city: 'Brasília', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -15.79, lng: -47.88, tier: 2, continent: 'americas' },
   { slug: 'fortaleza', city: 'Fortaleza', timezone: 'America/Fortaleza', country: 'Brazil', countryCode: 'BR', lat: -3.72, lng: -38.54, tier: 2, continent: 'americas' },
@@ -3706,8 +3682,6 @@ export const cities: City[] = [
   { slug: 'recife', city: 'Recife', timezone: 'America/Recife', country: 'Brazil', countryCode: 'BR', lat: -8.05, lng: -34.88, tier: 2, continent: 'americas' },
   
   // Mexico - Additional Cities
-  { slug: 'guadalajara', city: 'Guadalajara', timezone: 'America/Mexico_City', country: 'Mexico', countryCode: 'MX', lat: 20.67, lng: -103.35, tier: 2, continent: 'americas' },
-  { slug: 'monterrey', city: 'Monterrey', timezone: 'America/Monterrey', country: 'Mexico', countryCode: 'MX', lat: 25.67, lng: -100.31, tier: 2, continent: 'americas' },
   
   // Argentina - Additional Cities
   { slug: 'cordoba-argentina', city: 'Córdoba', timezone: 'America/Argentina/Cordoba', country: 'Argentina', countryCode: 'AR', lat: -31.42, lng: -64.18, tier: 2, continent: 'americas' },
@@ -3716,13 +3690,10 @@ export const cities: City[] = [
   { slug: 'mar-del-plata', city: 'Mar del Plata', timezone: 'America/Argentina/Buenos_Aires', country: 'Argentina', countryCode: 'AR', lat: -38.00, lng: -57.55, tier: 3, continent: 'americas' },
   
   // South Africa - Additional Cities
-  { slug: 'cape-town', city: 'Cape Town', timezone: 'Africa/Johannesburg', country: 'South Africa', countryCode: 'ZA', lat: -33.93, lng: 18.42, tier: 2, continent: 'africa' },
   { slug: 'durban', city: 'Durban', timezone: 'Africa/Johannesburg', country: 'South Africa', countryCode: 'ZA', lat: -29.86, lng: 31.02, tier: 2, continent: 'africa' },
   { slug: 'port-elizabeth', city: 'Port Elizabeth', timezone: 'Africa/Johannesburg', country: 'South Africa', countryCode: 'ZA', lat: -33.96, lng: 25.60, tier: 2, continent: 'africa' },
   
   // Canada - Additional Cities
-  { slug: 'calgary', city: 'Calgary', timezone: 'America/Edmonton', country: 'Canada', countryCode: 'CA', lat: 51.05, lng: -114.07, tier: 2, continent: 'americas' },
-  { slug: 'ottawa', city: 'Ottawa', timezone: 'America/Toronto', country: 'Canada', countryCode: 'CA', lat: 45.42, lng: -75.70, tier: 2, continent: 'americas' },
 
   // ============ PHASE 1: CRITICAL EXPANSION (50+ cities) ============
   
@@ -3748,10 +3719,7 @@ export const cities: City[] = [
   { slug: 'chongqing', city: 'Chongqing', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 29.56, lng: 106.55, tier: 2, continent: 'asia' },
   { slug: 'tianjin', city: 'Tianjin', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 39.14, lng: 117.18, tier: 2, continent: 'asia' },
   { slug: 'wuhan', city: 'Wuhan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.59, lng: 114.31, tier: 2, continent: 'asia' },
-  { slug: 'chengdu', city: 'Chengdu', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.57, lng: 104.07, tier: 2, continent: 'asia' },
   { slug: 'nanjing', city: 'Nanjing', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 32.06, lng: 118.80, tier: 2, continent: 'asia' },
-  { slug: 'xian', city: "Xi'an", timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 34.34, lng: 108.94, tier: 2, continent: 'asia' },
-  { slug: 'hangzhou', city: 'Hangzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.25, lng: 120.17, tier: 2, continent: 'asia' },
   { slug: 'suzhou', city: 'Suzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 31.30, lng: 120.62, tier: 3, continent: 'asia' },
   { slug: 'harbin', city: 'Harbin', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 45.80, lng: 126.53, tier: 3, continent: 'asia' },
   { slug: 'qingdao', city: 'Qingdao', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 36.07, lng: 120.38, tier: 3, continent: 'asia' },
@@ -3775,7 +3743,6 @@ export const cities: City[] = [
   { slug: 'sylhet', city: 'Sylhet', timezone: 'Asia/Dhaka', country: 'Bangladesh', countryCode: 'BD', lat: 24.90, lng: 91.87, tier: 3, continent: 'asia' },
 
   // NIGERIA - Major Cities (5 new)
-  { slug: 'lagos', city: 'Lagos', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 6.52, lng: 3.38, tier: 1, continent: 'africa' },
   { slug: 'kano', city: 'Kano', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 12.00, lng: 8.52, tier: 3, continent: 'africa' },
   { slug: 'ibadan', city: 'Ibadan', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 7.38, lng: 3.90, tier: 3, continent: 'africa' },
   { slug: 'abuja', city: 'Abuja', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 9.07, lng: 7.40, tier: 2, continent: 'africa' },
@@ -3783,8 +3750,6 @@ export const cities: City[] = [
   { slug: 'benin-city', city: 'Benin City', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 6.34, lng: 5.63, tier: 3, continent: 'africa' },
 
   // INDONESIA - Additional Cities (4 new)
-  { slug: 'bandung', city: 'Bandung', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -6.91, lng: 107.61, tier: 2, continent: 'asia' },
-  { slug: 'medan', city: 'Medan', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: 3.59, lng: 98.67, tier: 2, continent: 'asia' },
   { slug: 'semarang', city: 'Semarang', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -6.97, lng: 110.42, tier: 3, continent: 'asia' },
   { slug: 'makassar', city: 'Makassar', timezone: 'Asia/Makassar', country: 'Indonesia', countryCode: 'ID', lat: -5.14, lng: 119.42, tier: 3, continent: 'asia' },
   { slug: 'palembang', city: 'Palembang', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -2.99, lng: 104.76, tier: 3, continent: 'asia' },
@@ -3815,7 +3780,6 @@ export const cities: City[] = [
   { slug: 'kisumu', city: 'Kisumu', timezone: 'Africa/Nairobi', country: 'Kenya', countryCode: 'KE', lat: -0.10, lng: 34.75, tier: 3, continent: 'africa' },
 
   // MOROCCO - Additional Cities (2 new)
-  { slug: 'marrakech', city: 'Marrakech', timezone: 'Africa/Casablanca', country: 'Morocco', countryCode: 'MA', lat: 31.63, lng: -8.00, tier: 2, continent: 'africa' },
   { slug: 'fes', city: 'Fes', timezone: 'Africa/Casablanca', country: 'Morocco', countryCode: 'MA', lat: 34.03, lng: -5.00, tier: 3, continent: 'africa' },
 
   // GHANA - Additional Cities (2 new)
@@ -3823,17 +3787,11 @@ export const cities: City[] = [
   { slug: 'tamale', city: 'Tamale', timezone: 'Africa/Accra', country: 'Ghana', countryCode: 'GH', lat: 9.40, lng: -0.84, tier: 3, continent: 'africa' },
 
   // TANZANIA - Additional Cities (2 new)
-  { slug: 'dar-es-salaam', city: 'Dar es Salaam', timezone: 'Africa/Dar_es_Salaam', country: 'Tanzania', countryCode: 'TZ', lat: -6.79, lng: 39.28, tier: 2, continent: 'africa' },
   { slug: 'zanzibar', city: 'Zanzibar City', timezone: 'Africa/Dar_es_Salaam', country: 'Tanzania', countryCode: 'TZ', lat: -6.17, lng: 39.19, tier: 3, continent: 'africa' },
 
   // JAPAN - Additional Cities (3 new)
-  { slug: 'fukuoka', city: 'Fukuoka', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 33.59, lng: 130.40, tier: 2, continent: 'asia' },
-  { slug: 'sapporo', city: 'Sapporo', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 43.06, lng: 141.35, tier: 2, continent: 'asia' },
-  { slug: 'kobe', city: 'Kobe', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.69, lng: 135.20, tier: 2, continent: 'asia' },
-  { slug: 'nagoya', city: 'Nagoya', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.18, lng: 136.91, tier: 2, continent: 'asia' },
 
   // SOUTH KOREA - Additional Cities (2 new)
-  { slug: 'daegu', city: 'Daegu', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.87, lng: 128.60, tier: 2, continent: 'asia' },
   { slug: 'daejeon', city: 'Daejeon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.35, lng: 127.38, tier: 3, continent: 'asia' },
 
   // TAIWAN - Additional Cities (2 new)
@@ -3854,43 +3812,32 @@ export const cities: City[] = [
   { slug: 'isfahan', city: 'Isfahan', timezone: 'Asia/Tehran', country: 'Iran', countryCode: 'IR', lat: 32.65, lng: 51.68, tier: 3, continent: 'asia' },
 
   // IRAQ - Major Cities
-  { slug: 'baghdad', city: 'Baghdad', timezone: 'Asia/Baghdad', country: 'Iraq', countryCode: 'IQ', lat: 33.31, lng: 44.37, tier: 2, continent: 'asia' },
   { slug: 'basra', city: 'Basra', timezone: 'Asia/Baghdad', country: 'Iraq', countryCode: 'IQ', lat: 30.51, lng: 47.81, tier: 3, continent: 'asia' },
 
   // ALGERIA - Additional Cities
-  { slug: 'algiers', city: 'Algiers', timezone: 'Africa/Algiers', country: 'Algeria', countryCode: 'DZ', lat: 36.75, lng: 3.06, tier: 2, continent: 'africa' },
   { slug: 'oran', city: 'Oran', timezone: 'Africa/Algiers', country: 'Algeria', countryCode: 'DZ', lat: 35.70, lng: -0.63, tier: 3, continent: 'africa' },
 
   // SUDAN - Khartoum
-  { slug: 'khartoum', city: 'Khartoum', timezone: 'Africa/Khartoum', country: 'Sudan', countryCode: 'SD', lat: 15.50, lng: 32.56, tier: 2, continent: 'africa' },
 
   // UGANDA - Kampala
-  { slug: 'kampala', city: 'Kampala', timezone: 'Africa/Kampala', country: 'Uganda', countryCode: 'UG', lat: 0.35, lng: 32.58, tier: 2, continent: 'africa' },
 
   // ANGOLA - Luanda
-  { slug: 'luanda', city: 'Luanda', timezone: 'Africa/Luanda', country: 'Angola', countryCode: 'AO', lat: -8.84, lng: 13.23, tier: 2, continent: 'africa' },
 
   // MOZAMBIQUE - Maputo
-  { slug: 'maputo', city: 'Maputo', timezone: 'Africa/Maputo', country: 'Mozambique', countryCode: 'MZ', lat: -25.97, lng: 32.58, tier: 3, continent: 'africa' },
 
   // COTE D'IVOIRE - Abidjan
   { slug: 'abidjan', city: 'Abidjan', timezone: 'Africa/Abidjan', country: "Côte d'Ivoire", countryCode: 'CI', lat: 5.36, lng: -4.01, tier: 2, continent: 'africa' },
 
   // SENEGAL - Dakar
-  { slug: 'dakar', city: 'Dakar', timezone: 'Africa/Dakar', country: 'Senegal', countryCode: 'SN', lat: 14.69, lng: -17.44, tier: 2, continent: 'africa' },
 
   // CAMEROON - Major Cities
   { slug: 'douala', city: 'Douala', timezone: 'Africa/Douala', country: 'Cameroon', countryCode: 'CM', lat: 4.05, lng: 9.70, tier: 3, continent: 'africa' },
-  { slug: 'yaounde', city: 'Yaoundé', timezone: 'Africa/Douala', country: 'Cameroon', countryCode: 'CM', lat: 3.87, lng: 11.52, tier: 3, continent: 'africa' },
 
   // DR CONGO - Kinshasa
-  { slug: 'kinshasa', city: 'Kinshasa', timezone: 'Africa/Kinshasa', country: 'DR Congo', countryCode: 'CD', lat: -4.32, lng: 15.31, tier: 2, continent: 'africa' },
 
   // ZIMBABWE - Harare
-  { slug: 'harare', city: 'Harare', timezone: 'Africa/Harare', country: 'Zimbabwe', countryCode: 'ZW', lat: -17.83, lng: 31.05, tier: 3, continent: 'africa' },
 
   // ZAMBIA - Lusaka
-  { slug: 'lusaka', city: 'Lusaka', timezone: 'Africa/Lusaka', country: 'Zambia', countryCode: 'ZM', lat: -15.39, lng: 28.32, tier: 3, continent: 'africa' },
 
   // USA - Additional Major Cities
   { slug: 'san-antonio', city: 'San Antonio', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 29.42, lng: -98.49, tier: 3, continent: 'americas' },
@@ -3906,7 +3853,6 @@ export const cities: City[] = [
   { slug: 'manaus', city: 'Manaus', timezone: 'America/Manaus', country: 'Brazil', countryCode: 'BR', lat: -3.12, lng: -60.02, tier: 3, continent: 'americas' },
 
   // COLOMBIA - Additional Cities
-  { slug: 'medellin', city: 'Medellín', timezone: 'America/Bogota', country: 'Colombia', countryCode: 'CO', lat: 6.25, lng: -75.57, tier: 2, continent: 'americas' },
   { slug: 'cali', city: 'Cali', timezone: 'America/Bogota', country: 'Colombia', countryCode: 'CO', lat: 3.45, lng: -76.53, tier: 2, continent: 'americas' },
   { slug: 'barranquilla', city: 'Barranquilla', timezone: 'America/Bogota', country: 'Colombia', countryCode: 'CO', lat: 10.96, lng: -74.80, tier: 3, continent: 'americas' },
 
@@ -3922,9 +3868,7 @@ export const cities: City[] = [
   { slug: 'valencia-venezuela', city: 'Valencia', timezone: 'America/Caracas', country: 'Venezuela', countryCode: 'VE', lat: 10.16, lng: -67.99, tier: 3, continent: 'americas' },
 
   // AUSTRALIA - Additional Cities
-  { slug: 'gold-coast', city: 'Gold Coast', timezone: 'Australia/Brisbane', country: 'Australia', countryCode: 'AU', lat: -28.02, lng: 153.43, tier: 3, continent: 'oceania' },
   { slug: 'canberra', city: 'Canberra', timezone: 'Australia/Sydney', country: 'Australia', countryCode: 'AU', lat: -35.28, lng: 149.13, tier: 2, continent: 'oceania' },
-  { slug: 'newcastle', city: 'Newcastle', timezone: 'Australia/Sydney', country: 'Australia', countryCode: 'AU', lat: -32.93, lng: 151.78, tier: 3, continent: 'oceania' },
 
   // NEW ZEALAND - Additional Cities
   { slug: 'queenstown', city: 'Queenstown', timezone: 'Pacific/Auckland', country: 'New Zealand', countryCode: 'NZ', lat: -45.03, lng: 168.66, tier: 3, continent: 'oceania' },
@@ -3933,5 +3877,4 @@ export const cities: City[] = [
   { slug: 'suva', city: 'Suva', timezone: 'Pacific/Fiji', country: 'Fiji', countryCode: 'FJ', lat: -18.14, lng: 178.44, tier: 3, continent: 'oceania' },
 
   // PAPUA NEW GUINEA - Port Moresby
-  { slug: 'port-moresby', city: 'Port Moresby', timezone: 'Pacific/Port_Moresby', country: 'Papua New Guinea', countryCode: 'PG', lat: -9.44, lng: 147.18, tier: 3, continent: 'oceania' },
 ]
