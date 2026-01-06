@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import dynamic from 'next/dynamic'
 import { City, getTier1Cities, uses12HourFormat, cities } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
@@ -10,12 +11,17 @@ import { saveCityContext } from '@/lib/city-context'
 import { useCityContext } from '@/lib/CityContext'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import WeatherBackground from '@/components/WeatherBackground'
 import AlarmModal, { ActiveAlarmPopup } from '@/components/AlarmModal'
 import { useAlarm, useWeather } from '@/shared/hooks'
-import TimeConverter from '@/components/TimeConverter'
 import DigitalClock from '@/components/DigitalClock'
-import AnalogClock from '@/components/AnalogClock'
+
+// Dynamic imports - reduces initial bundle size
+const WeatherBackground = dynamic(() => import('@/components/WeatherBackground'), { ssr: false })
+const TimeConverter = dynamic(() => import('@/components/TimeConverter'), { ssr: false })
+const AnalogClock = dynamic(() => import('@/components/AnalogClock'), { 
+  ssr: false,
+  loading: () => <div className="w-24 h-24" />
+})
 
 // V2 Components - Modular
 import InfoRow from './InfoRow'
@@ -23,14 +29,14 @@ import SnippetBlock from './SnippetBlock'
 import CompactInfoCards from './CompactInfoCards'
 import TimeZoneFacts from './TimeZoneFacts'
 import BusinessHoursBox from './BusinessHoursBox'
-import TimeDifferenceTable from './TimeDifferenceTable'
-import GuidePreview from './GuidePreview'
-import CompactWorldCities from './CompactWorldCities'
 
-// CityPage components
-import TravelBridge from './TravelBridge'
-import MoreCitiesSection from './MoreCitiesSection'
-import FavoriteCard from './FavoriteCard'
+// Dynamic imports for below-fold content
+const TimeDifferenceTable = dynamic(() => import('./TimeDifferenceTable'), { ssr: false })
+const GuidePreview = dynamic(() => import('./GuidePreview'), { ssr: false })
+const CompactWorldCities = dynamic(() => import('./CompactWorldCities'), { ssr: false })
+const TravelBridge = dynamic(() => import('./TravelBridge'), { ssr: false })
+const MoreCitiesSection = dynamic(() => import('./MoreCitiesSection'), { ssr: false })
+const FavoriteCard = dynamic(() => import('./FavoriteCard'), { ssr: false })
 
 interface CityPageProps {
   initialCity?: City

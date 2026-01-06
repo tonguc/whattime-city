@@ -8,7 +8,7 @@ interface DigitalClockProps {
 }
 
 export default function DigitalClock({ time }: DigitalClockProps) {
-  const { text, textMuted, accent, isLight } = useThemeClasses()
+  const { text, textMuted, accentText, isLight } = useThemeClasses()
   const { use12Hour } = useCityContext()
   
   const hours24 = time.getHours()
@@ -43,9 +43,9 @@ export default function DigitalClock({ time }: DigitalClockProps) {
         {/* Time digits with fixed width */}
         <div className="flex items-center justify-center" style={{ fontVariantNumeric: 'tabular-nums' }}>
           <span className={`inline-block text-right ${text}`} style={{ width: '1.15em' }}>{h}</span>
-          <span className={`${accent} animate-pulse`}>:</span>
+          <span className={`${accentText} colon-blink`}>:</span>
           <span className={`inline-block text-center ${text}`} style={{ width: '1.15em' }}>{m}</span>
-          <span className={`${accent} animate-pulse`}>:</span>
+          <span className={`${accentText} colon-blink`}>:</span>
           <span className={`inline-block text-center ${textMuted}`} style={{ width: '1.15em' }}>{s}</span>
           
           {/* AM/PM - only show in 12h mode */}
