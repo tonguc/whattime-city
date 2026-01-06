@@ -157,22 +157,22 @@ function Header(_props: HeaderProps) {
           </div>
         </div>
         
-        {/* Navigation - All links visible on mobile */}
+        {/* Navigation - Order: Cities, Guides, Map, Tools */}
         <nav className="flex items-center gap-0.5 sm:gap-1">
           <Link href="/cities" className={`px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
             Cities
           </Link>
-          <Link href="/country" className={`hidden sm:block px-2.5 py-2 rounded-lg text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
-            Countries
+          <Link href="/guides" className={`px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
+            Guides
           </Link>
           <Link href="/map" className={`px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
             Map
           </Link>
-          <Link href="/guides" className={`px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
-            Guides
-          </Link>
           <Link href="/tools" className={`px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
             Tools
+          </Link>
+          <Link href="/country" className={`hidden md:block px-2.5 py-2 rounded-lg text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
+            Countries
           </Link>
           
           <Link 
