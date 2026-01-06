@@ -1,8 +1,5 @@
-// Weather API service with caching
-
-// API key from environment variable (set in Vercel dashboard)
-const API_KEY = process.env.WEATHER_API_KEY || ''
-const BASE_URL = 'https://api.weatherapi.com/v1'
+// Weather API service - calls our secure API route
+// API key stays on server, never exposed to client
 
 export interface WeatherData {
   temp_c: number
@@ -27,7 +24,7 @@ export interface WeatherResponse {
   }
 }
 
-// Simple in-memory cache
+// Simple client-side cache
 const cache: Map<string, { data: WeatherResponse; timestamp: number }> = new Map()
 const CACHE_DURATION = 10 * 60 * 1000 // 10 minutes
 
@@ -41,8 +38,9 @@ export async function getWeather(city: string): Promise<WeatherResponse | null> 
   }
   
   try {
+    // Call our secure API route (not external API directly)
     const response = await fetch(
-      `${BASE_URL}/current.json?key=${API_KEY}&q=${encodeURIComponent(city)}&aqi=no`
+      `/api/weather?city=${encodeURIComponent(city)}`
     )
     
     if (!response.ok) {
