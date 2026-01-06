@@ -1,13 +1,10 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
-import dynamic from 'next/dynamic'
 import { CityProvider } from '@/lib/CityContext'
 import './globals.css'
 
-// Dynamic import for ScrollFAB - only loads on client, no SSR
-const GlobalScrollFAB = dynamic(() => import('@/components/GlobalScrollFAB'), {
-  ssr: false
-})
+// ScrollFAB removed from global layout for performance
+// It will be added to specific long pages that need it
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -95,20 +92,17 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Google Analytics - afterInteractive for reliable tracking */}
+        {/* Google Analytics - lazyOnload for best performance */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-ED5Y13JE4H"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="ga4" strategy="afterInteractive">
+        <Script id="ga4" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-ED5Y13JE4H', {
-              page_title: document.title,
-              page_location: window.location.href
-            });
+            gtag('config', 'G-ED5Y13JE4H');
           `}
         </Script>
         
@@ -147,7 +141,6 @@ export default function RootLayout({
       <body className="antialiased" suppressHydrationWarning>
         <CityProvider>
           {children}
-          <GlobalScrollFAB />
         </CityProvider>
       </body>
     </html>
