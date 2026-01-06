@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { useRouter } from 'next/navigation'
 import { City, cities } from '@/lib/cities'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes } from '@/lib/themes'
@@ -13,7 +14,8 @@ interface TimeConverterProps {
 }
 
 export default function TimeConverter({ currentCitySlug }: TimeConverterProps) {
-  const { text, textMuted, card, input, isLight, theme, accentBg, accentText } = useThemeClasses()
+  const router = useRouter()
+  const { text, textMuted, isLight, accentText } = useThemeClasses()
   const { use12Hour } = useCityContext()
   
   const [fromCity, setFromCity] = useState<City | null>(null)
@@ -23,13 +25,9 @@ export default function TimeConverter({ currentCitySlug }: TimeConverterProps) {
   const [showFromDropdown, setShowFromDropdown] = useState(false)
   const [showToDropdown, setShowToDropdown] = useState(false)
   const [time, setTime] = useState(new Date())
-  const [fromDropdownPos, setFromDropdownPos] = useState({ top: 0, left: 0, width: 0 })
-  const [toDropdownPos, setToDropdownPos] = useState({ top: 0, left: 0, width: 0 })
   
   const fromRef = useRef<HTMLDivElement>(null)
   const toRef = useRef<HTMLDivElement>(null)
-  const fromInputRef = useRef<HTMLDivElement>(null)
-  const toInputRef = useRef<HTMLDivElement>(null)
   
   // Update time every second
   useEffect(() => {
@@ -37,35 +35,12 @@ export default function TimeConverter({ currentCitySlug }: TimeConverterProps) {
     return () => clearInterval(timer)
   }, [])
   
-  // Update dropdown positions
+  // Navigate to time page when both cities are selected
   useEffect(() => {
-    const updatePositions = () => {
-      if (fromInputRef.current) {
-        const rect = fromInputRef.current.getBoundingClientRect()
-        setFromDropdownPos({
-          top: rect.bottom + window.scrollY + 4,
-          left: rect.left + window.scrollX,
-          width: rect.width
-        })
-      }
-      if (toInputRef.current) {
-        const rect = toInputRef.current.getBoundingClientRect()
-        setToDropdownPos({
-          top: rect.bottom + window.scrollY + 4,
-          left: rect.left + window.scrollX,
-          width: rect.width
-        })
-      }
+    if (fromCity && toCity) {
+      router.push(`/time/${fromCity.slug}/${toCity.slug}/`)
     }
-    
-    updatePositions()
-    window.addEventListener('scroll', updatePositions, true)
-    window.addEventListener('resize', updatePositions)
-    return () => {
-      window.removeEventListener('scroll', updatePositions, true)
-      window.removeEventListener('resize', updatePositions)
-    }
-  }, [showFromDropdown, showToDropdown])
+  }, [fromCity, toCity, router])
   
   // Close dropdowns on outside click
   useEffect(() => {
@@ -94,276 +69,214 @@ export default function TimeConverter({ currentCitySlug }: TimeConverterProps) {
   }
   
   const getCityTimeOfDay = (city: City) => {
-    // Use real UTC time (time) for theme calculation
     return getTimeOfDay(time, city.lat, city.lng, city.timezone)
-  }
-  
-  const getTimeDifference = () => {
-    if (!fromCity || !toCity) return null
-    
-    const fromOffset = new Date().toLocaleString('en-US', { timeZone: fromCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
-    const toOffset = new Date().toLocaleString('en-US', { timeZone: toCity.timezone, timeZoneName: 'shortOffset' }).split(' ').pop()
-    
-    const parseOffset = (str: string) => {
-      const match = str?.match(/GMT([+-]?\d+)?/)
-      return match ? (parseInt(match[1]) || 0) : 0
-    }
-    
-    const diff = parseOffset(toOffset || '') - parseOffset(fromOffset || '')
-    return diff
   }
   
   const filteredFromCities = cities.filter(c => 
     c.city.toLowerCase().includes(fromSearch.toLowerCase()) ||
     c.country.toLowerCase().includes(fromSearch.toLowerCase())
-  ).slice(0, 6)
+  ).slice(0, 5)
   
   const filteredToCities = cities.filter(c => 
     c.city.toLowerCase().includes(toSearch.toLowerCase()) ||
     c.country.toLowerCase().includes(toSearch.toLowerCase())
-  ).slice(0, 6)
-  
-  const timeDiff = getTimeDifference()
-  
-  // Dropdown content renderer
-  const renderFromDropdownContent = () => (
-    <div className={`rounded-xl border shadow-lg overflow-hidden ${
-      isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'
-    }`}>
-      {filteredFromCities.map(city => {
-        const tod = getCityTimeOfDay(city)
-        const Icon = TimeIcons[tod]
-        return (
-          <button
-            key={city.slug}
-            onClick={() => {
-              setFromCity(city)
-              setFromSearch('')
-              setShowFromDropdown(false)
-            }}
-            className={`w-full px-4 py-2.5 flex items-center justify-between text-left ${
-              isLight ? 'hover:bg-slate-50' : 'hover:bg-slate-700'
-            }`}
-          >
-            <div>
-              <span className={`font-medium ${text}`}>{city.city}</span>
-              <span className={`text-sm ml-2 ${textMuted}`}>{city.country}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className={`text-sm ${textMuted}`}>{getCityTime(city)}</span>
-              <Icon className={`w-4 h-4 ${themes[tod].accentClass}`} />
-            </div>
-          </button>
-        )
-      })}
-    </div>
-  )
-  
-  const renderToDropdownContent = () => (
-    <div className={`rounded-xl border shadow-lg overflow-hidden ${
-      isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'
-    }`}>
-      {filteredToCities.map(city => {
-        const tod = getCityTimeOfDay(city)
-        const Icon = TimeIcons[tod]
-        return (
-          <button
-            key={city.slug}
-            onClick={() => {
-              setToCity(city)
-              setToSearch('')
-              setShowToDropdown(false)
-            }}
-            className={`w-full px-4 py-2.5 flex items-center justify-between text-left ${
-              isLight ? 'hover:bg-slate-50' : 'hover:bg-slate-700'
-            }`}
-          >
-            <div>
-              <span className={`font-medium ${text}`}>{city.city}</span>
-              <span className={`text-sm ml-2 ${textMuted}`}>{city.country}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className={`text-sm ${textMuted}`}>{getCityTime(city)}</span>
-              <Icon className={`w-4 h-4 ${themes[tod].accentClass}`} />
-            </div>
-          </button>
-        )
-      })}
-    </div>
-  )
+  ).slice(0, 5)
   
   return (
-    <>
-      <div className={`rounded-2xl p-4 border ${
-        isLight ? 'bg-[#F9FAFB] border-slate-200' : 'bg-slate-800/40 border-slate-700'
-      }`}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* From City */}
-          <div ref={fromRef} className="relative">
-            <label className={`text-xs font-medium mb-1.5 block ${textMuted}`}>
-              From city
-            </label>
-            <div className="relative" ref={fromInputRef}>
-              <input
-                type="text"
-                value={fromCity ? fromCity.city : fromSearch}
-                onChange={(e) => {
-                  setFromSearch(e.target.value)
-                  setFromCity(null)
-                  setShowFromDropdown(true)
-                }}
-                onFocus={() => setShowFromDropdown(true)}
-                placeholder="Select a city..."
-                className={`w-full px-4 py-2.5 rounded-xl border text-sm shadow-sm ${
-                  isLight 
-                    ? 'bg-white border-slate-200 text-slate-800 placeholder:text-slate-400'
-                    : 'bg-slate-800/60 border-slate-700 text-white placeholder:text-slate-500'
-                } outline-none focus:ring-2 focus:ring-cyan-500/30`}
-              />
-              {fromCity && (
-                <button
-                  onClick={() => { setFromCity(null); setFromSearch('') }}
-                  className={`absolute right-3 top-1/2 -translate-y-1/2 ${textMuted} hover:${text}`}
-                >
-                  ✕
-                </button>
-              )}
-            </div>
-            
-            {/* Selected From City Time */}
+    <div className={`rounded-2xl p-4 border ${
+      isLight ? 'bg-[#F9FAFB] border-slate-200' : 'bg-slate-800/40 border-slate-700'
+    }`}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* From City */}
+        <div ref={fromRef} className="relative">
+          <label className={`text-xs font-medium mb-1.5 block ${textMuted}`}>
+            From city
+          </label>
+          <div className="relative">
+            <input
+              type="text"
+              value={fromCity ? fromCity.city : fromSearch}
+              onChange={(e) => {
+                setFromSearch(e.target.value)
+                setFromCity(null)
+                setShowFromDropdown(true)
+              }}
+              onFocus={() => !fromCity && setShowFromDropdown(true)}
+              placeholder="Select a city..."
+              className={`w-full px-4 py-2.5 rounded-xl border text-sm shadow-sm ${
+                isLight 
+                  ? 'bg-white border-slate-200 text-slate-800 placeholder:text-slate-400'
+                  : 'bg-slate-800/60 border-slate-700 text-white placeholder:text-slate-500'
+              } outline-none focus:ring-2 focus:ring-cyan-500/30`}
+            />
             {fromCity && (
-              <div className={`mt-2 flex items-center gap-2 ${textMuted}`}>
-                {(() => {
-                  const tod = getCityTimeOfDay(fromCity)
-                  const Icon = TimeIcons[tod]
-                  return (
-                    <>
-                      <Icon className={`w-4 h-4 ${themes[tod].accentClass}`} />
-                      <span className="text-sm">{getCityTime(fromCity)}</span>
-                    </>
-                  )
-                })()}
-              </div>
+              <button
+                onClick={() => { setFromCity(null); setFromSearch('') }}
+                className={`absolute right-3 top-1/2 -translate-y-1/2 ${textMuted} hover:opacity-70`}
+              >
+                ✕
+              </button>
             )}
           </div>
           
-          {/* To City */}
-          <div ref={toRef} className="relative">
-            <label className={`text-xs font-medium mb-1.5 block ${textMuted}`}>
-              To city
-            </label>
-            <div className="relative" ref={toInputRef}>
-              <input
-                type="text"
-                value={toCity ? toCity.city : toSearch}
-                onChange={(e) => {
-                  setToSearch(e.target.value)
-                  setToCity(null)
-                  setShowToDropdown(true)
-                }}
-                onFocus={() => setShowToDropdown(true)}
-                placeholder="Select a city..."
-                className={`w-full px-4 py-2.5 rounded-xl border text-sm shadow-sm ${
-                  isLight 
-                    ? 'bg-white border-slate-200 text-slate-800 placeholder:text-slate-400'
-                    : 'bg-slate-800/60 border-slate-700 text-white placeholder:text-slate-500'
-                } outline-none focus:ring-2 focus:ring-cyan-500/30`}
-              />
-              {toCity && (
-                <button
-                  onClick={() => { setToCity(null); setToSearch('') }}
-                  className={`absolute right-3 top-1/2 -translate-y-1/2 ${textMuted} hover:${text}`}
-                >
-                  ✕
-                </button>
-              )}
-            </div>
-            
-            {/* Selected To City Time */}
-            {toCity && (
-              <div className={`mt-2 flex items-center gap-2 ${textMuted}`}>
-                {(() => {
-                  const tod = getCityTimeOfDay(toCity)
-                  const Icon = TimeIcons[tod]
-                  return (
-                    <>
+          {/* From Dropdown - absolute positioned */}
+          {showFromDropdown && !fromCity && fromSearch && filteredFromCities.length > 0 && (
+            <div className={`absolute left-0 right-0 top-full mt-1 z-50 rounded-xl border shadow-lg overflow-hidden max-h-64 overflow-y-auto ${
+              isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'
+            }`}>
+              {filteredFromCities.map(city => {
+                const tod = getCityTimeOfDay(city)
+                const Icon = TimeIcons[tod]
+                return (
+                  <button
+                    key={city.slug}
+                    onClick={() => {
+                      setFromCity(city)
+                      setFromSearch('')
+                      setShowFromDropdown(false)
+                    }}
+                    className={`w-full px-4 py-2.5 flex items-center justify-between text-left ${
+                      isLight ? 'hover:bg-slate-50' : 'hover:bg-slate-700'
+                    }`}
+                  >
+                    <div>
+                      <span className={`font-medium ${text}`}>{city.city}</span>
+                      <span className={`text-sm ml-2 ${textMuted}`}>{city.country}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className={`text-sm ${textMuted}`}>{getCityTime(city)}</span>
                       <Icon className={`w-4 h-4 ${themes[tod].accentClass}`} />
-                      <span className="text-sm">{getCityTime(toCity)}</span>
-                    </>
-                  )
-                })()}
-              </div>
-            )}
-          </div>
+                    </div>
+                  </button>
+                )
+              })}
+            </div>
+          )}
+          
+          {/* Selected From City Time */}
+          {fromCity && (
+            <div className={`mt-2 flex items-center gap-2 ${textMuted}`}>
+              {(() => {
+                const tod = getCityTimeOfDay(fromCity)
+                const Icon = TimeIcons[tod]
+                return (
+                  <>
+                    <Icon className={`w-4 h-4 ${themes[tod].accentClass}`} />
+                    <span className="text-sm">{getCityTime(fromCity)}</span>
+                  </>
+                )
+              })()}
+            </div>
+          )}
         </div>
         
-        {/* Result */}
-        {fromCity && toCity ? (
-          <div className={`mt-6 pt-4 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
-            <div className="text-center space-y-1">
-              <p className={`text-lg font-medium ${text}`}>
-                {getCityTime(fromCity)} in {fromCity.city} = {getCityTime(toCity)} in {toCity.city}
-              </p>
-              <p className={`text-sm ${textMuted} opacity-70`}>
-                {toCity.city} is {timeDiff === 0 ? 'at the same time' : timeDiff! > 0 ? `+${timeDiff} hours ahead` : `${Math.abs(timeDiff!)} hours behind`} relative to {fromCity.city}
-              </p>
-            </div>
+        {/* To City */}
+        <div ref={toRef} className="relative">
+          <label className={`text-xs font-medium mb-1.5 block ${textMuted}`}>
+            To city
+          </label>
+          <div className="relative">
+            <input
+              type="text"
+              value={toCity ? toCity.city : toSearch}
+              onChange={(e) => {
+                setToSearch(e.target.value)
+                setToCity(null)
+                setShowToDropdown(true)
+              }}
+              onFocus={() => !toCity && setShowToDropdown(true)}
+              placeholder="Select a city..."
+              className={`w-full px-4 py-2.5 rounded-xl border text-sm shadow-sm ${
+                isLight 
+                  ? 'bg-white border-slate-200 text-slate-800 placeholder:text-slate-400'
+                  : 'bg-slate-800/60 border-slate-700 text-white placeholder:text-slate-500'
+              } outline-none focus:ring-2 focus:ring-cyan-500/30`}
+            />
+            {toCity && (
+              <button
+                onClick={() => { setToCity(null); setToSearch('') }}
+                className={`absolute right-3 top-1/2 -translate-y-1/2 ${textMuted} hover:opacity-70`}
+              >
+                ✕
+              </button>
+            )}
           </div>
-        ) : (
-          <p className={`mt-6 text-center text-sm ${textMuted} opacity-70`}>
-            Select two cities to compare their local time.
-          </p>
-        )}
-        
-        {/* Meeting Planner CTA */}
-        <div className={`mt-4 pt-4 border-t ${isLight ? 'border-slate-200/50' : 'border-slate-700/50'}`}>
-          <a 
-            href={currentCitySlug ? `/meeting/${currentCitySlug}` : '/meeting'}
-            className={`flex items-center justify-center gap-2 text-sm font-medium ${textMuted} hover:${accentText} transition-colors`}
-          >
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-              <line x1="16" y1="2" x2="16" y2="6"/>
-              <line x1="8" y1="2" x2="8" y2="6"/>
-              <line x1="3" y1="10" x2="21" y2="10"/>
-            </svg>
-            <span>Need to compare 3+ cities? Use the Meeting Planner</span>
-            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M7 17L17 7M17 7H7M17 7V17"/>
-            </svg>
-          </a>
+          
+          {/* To Dropdown - absolute positioned */}
+          {showToDropdown && !toCity && toSearch && filteredToCities.length > 0 && (
+            <div className={`absolute left-0 right-0 top-full mt-1 z-50 rounded-xl border shadow-lg overflow-hidden max-h-64 overflow-y-auto ${
+              isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'
+            }`}>
+              {filteredToCities.map(city => {
+                const tod = getCityTimeOfDay(city)
+                const Icon = TimeIcons[tod]
+                return (
+                  <button
+                    key={city.slug}
+                    onClick={() => {
+                      setToCity(city)
+                      setToSearch('')
+                      setShowToDropdown(false)
+                    }}
+                    className={`w-full px-4 py-2.5 flex items-center justify-between text-left ${
+                      isLight ? 'hover:bg-slate-50' : 'hover:bg-slate-700'
+                    }`}
+                  >
+                    <div>
+                      <span className={`font-medium ${text}`}>{city.city}</span>
+                      <span className={`text-sm ml-2 ${textMuted}`}>{city.country}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className={`text-sm ${textMuted}`}>{getCityTime(city)}</span>
+                      <Icon className={`w-4 h-4 ${themes[tod].accentClass}`} />
+                    </div>
+                  </button>
+                )
+              })}
+            </div>
+          )}
+          
+          {/* Selected To City Time */}
+          {toCity && (
+            <div className={`mt-2 flex items-center gap-2 ${textMuted}`}>
+              {(() => {
+                const tod = getCityTimeOfDay(toCity)
+                const Icon = TimeIcons[tod]
+                return (
+                  <>
+                    <Icon className={`w-4 h-4 ${themes[tod].accentClass}`} />
+                    <span className="text-sm">{getCityTime(toCity)}</span>
+                  </>
+                )
+              })()}
+            </div>
+          )}
         </div>
       </div>
       
-      {/* Portal-style From Dropdown - rendered at fixed position */}
-      {showFromDropdown && !fromCity && fromSearch && filteredFromCities.length > 0 && (
-        <div
-          style={{
-            position: 'fixed',
-            top: fromDropdownPos.top - window.scrollY,
-            left: fromDropdownPos.left,
-            width: fromDropdownPos.width,
-            zIndex: 99999
-          }}
-        >
-          {renderFromDropdownContent()}
-        </div>
-      )}
+      {/* Help text */}
+      <p className={`mt-6 text-center text-sm ${textMuted} opacity-70`}>
+        Select two cities to compare their local time.
+      </p>
       
-      {/* Portal-style To Dropdown - rendered at fixed position */}
-      {showToDropdown && !toCity && toSearch && filteredToCities.length > 0 && (
-        <div
-          style={{
-            position: 'fixed',
-            top: toDropdownPos.top - window.scrollY,
-            left: toDropdownPos.left,
-            width: toDropdownPos.width,
-            zIndex: 99999
-          }}
+      {/* Meeting Planner CTA */}
+      <div className={`mt-4 pt-4 border-t ${isLight ? 'border-slate-200/50' : 'border-slate-700/50'}`}>
+        <a 
+          href={currentCitySlug ? `/meeting/${currentCitySlug}` : '/meeting'}
+          className={`flex items-center justify-center gap-2 text-sm font-medium ${textMuted} hover:opacity-70 transition-colors`}
         >
-          {renderToDropdownContent()}
-        </div>
-      )}
-    </>
+          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          <span>Need to compare 3+ cities? Use the Meeting Planner</span>
+          <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+          </svg>
+        </a>
+      </div>
+    </div>
   )
 }
