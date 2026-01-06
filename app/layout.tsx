@@ -105,6 +105,9 @@ export default function RootLayout({
         </Script>
         
         {/* Google Fonts REMOVED for performance - using system fonts instead */}
+        {/* Preconnect to Weather API for faster loading */}
+        <link rel="preconnect" href="https://api.weatherapi.com" />
+        <link rel="preconnect" href="https://cdn.weatherapi.com" />
         {/* Prevent FOUC by setting initial theme before React hydration */}
         <script
           dangerouslySetInnerHTML={{
