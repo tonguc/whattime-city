@@ -75,6 +75,7 @@ function DropdownPortal({ isOpen, results, onSelect, inputRef, highlightIndex = 
         <button 
           key={city.slug}
           type="button"
+          aria-label={`Select ${city.city}, ${city.country}`}
           onMouseDown={(e) => {
             e.preventDefault()
             e.stopPropagation()
@@ -330,6 +331,7 @@ export default function CompareWidget({
           {fromQuery && (
             <button
               type="button"
+              aria-label="Clear from city"
               onMouseDown={(e) => {
                 e.preventDefault()
                 e.stopPropagation()
@@ -360,6 +362,7 @@ export default function CompareWidget({
           type="button"
           onClick={handleSwap}
           disabled={!fromCity || !toCity}
+          aria-label="Swap cities"
           className={`flex-shrink-0 p-2 md:p-3 rounded-xl transition-all ${fromCity && toCity ? (isLight ? 'hover:bg-slate-200 text-slate-600 hover:text-slate-800' : 'hover:bg-slate-700 text-slate-400 hover:text-slate-200') : 'opacity-30 cursor-not-allowed text-slate-400'}`}
           title="Swap cities"
         >
@@ -392,6 +395,7 @@ export default function CompareWidget({
           {toQuery && (
             <button
               type="button"
+              aria-label="Clear destination city"
               onMouseDown={(e) => {
                 e.preventDefault()
                 e.stopPropagation()

@@ -113,36 +113,41 @@ export function CityProvider({ children }: { children: ReactNode }) {
     }
   }, [])
   
-  // Detect user location - only set activeCity if no saved city exists
+  // Detect user location - DELAYED to not block initial render
   useEffect(() => {
     if (!activeCityLoaded) return // Wait for localStorage to load first
     
-    if (typeof window !== 'undefined' && 'geolocation' in navigator) {
-      navigator.geolocation.getCurrentPosition(
-        (pos) => {
-          const nearest = findNearestCity(pos.coords.latitude, pos.coords.longitude)
-          setDetectedCity(nearest)
-          // Only set active city if no saved preference exists
-          const hasSavedCity = localStorage.getItem('whattime-active-city')
-          if (!hasSavedCity) {
-            setActiveCityState(nearest)
-            try { localStorage.setItem('whattime-active-city', nearest.slug) } catch {}
-          }
-        },
-        () => {
-          // Fallback to timezone
-          const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
-          const tzCity = cities.find(c => c.timezone === tz) || cities[0]
-          setDetectedCity(tzCity)
-          const hasSavedCity = localStorage.getItem('whattime-active-city')
-          if (!hasSavedCity) {
-            setActiveCityState(tzCity)
-            try { localStorage.setItem('whattime-active-city', tzCity.slug) } catch {}
-          }
-        },
-        { timeout: 5000, maximumAge: 300000 }
-      )
+    // First, use timezone as immediate fallback (no permission needed)
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+    const tzCity = cities.find(c => c.timezone === tz) || cities[0]
+    setDetectedCity(tzCity)
+    const hasSavedCity = localStorage.getItem('whattime-active-city')
+    if (!hasSavedCity) {
+      setActiveCityState(tzCity)
+      try { localStorage.setItem('whattime-active-city', tzCity.slug) } catch {}
     }
+    
+    // Then, try geolocation AFTER 3 seconds (non-blocking)
+    const geoTimeout = setTimeout(() => {
+      if (typeof window !== 'undefined' && 'geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            const nearest = findNearestCity(pos.coords.latitude, pos.coords.longitude)
+            setDetectedCity(nearest)
+            // Only update active city if still using timezone fallback
+            const currentSaved = localStorage.getItem('whattime-active-city')
+            if (!currentSaved || currentSaved === tzCity.slug) {
+              setActiveCityState(nearest)
+              try { localStorage.setItem('whattime-active-city', nearest.slug) } catch {}
+            }
+          },
+          () => { /* Already using timezone fallback, no action needed */ },
+          { timeout: 5000, maximumAge: 300000 }
+        )
+      }
+    }, 3000) // 3 second delay
+    
+    return () => clearTimeout(geoTimeout)
   }, [activeCityLoaded])
   
   // Setters that persist to localStorage
