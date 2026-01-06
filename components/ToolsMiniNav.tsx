@@ -71,9 +71,9 @@ export default function ToolsMiniNav() {
   const { isLight } = useCityContext()
   
   return (
-    <nav className="mt-2 mb-6">
-      {/* Mobile: left-aligned, Desktop: centered */}
-      <div className="flex flex-wrap justify-start sm:justify-center gap-2">
+    <nav className="mt-2 mb-6 -mx-4 px-4">
+      {/* Horizontal scroll on mobile, centered on desktop */}
+      <div className="flex sm:justify-center gap-2 overflow-x-auto scrollbar-hide pb-2 sm:pb-0 sm:overflow-visible sm:flex-wrap">
         {toolNavItems.map((tool) => {
           // Enhanced path matching
           const isActive = pathname === tool.url || 
@@ -81,7 +81,7 @@ export default function ToolsMiniNav() {
                           (tool.id === 'meeting-planner' && pathname?.startsWith('/meeting')) ||
                           (tool.id === 'time-converter' && pathname?.startsWith('/time'))
           
-          const className = `inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 border ${
+          const className = `inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 border whitespace-nowrap flex-shrink-0 ${
             isActive
               ? 'bg-blue-600 text-white border-blue-600 shadow-md'
               : isLight

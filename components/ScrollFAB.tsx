@@ -3,10 +3,12 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 
 // =============================================================================
-// SCROLL FAB - Global Context-Aware Navigation Component
+// SCROLL FAB - Dual Button Navigation Component
 // =============================================================================
-// UX Intent: Reduce scroll effort, decrease bounce rate, minimize perceived complexity
-// Pattern: Morphing FAB that changes action based on scroll position
+// Shows both UP and DOWN buttons based on scroll position
+// - At top: only DOWN visible
+// - In middle: both UP and DOWN visible
+// - At bottom: only UP visible
 // =============================================================================
 
 export interface ScrollSection {
@@ -28,8 +30,6 @@ interface ScrollFABProps {
   minSections?: number
 }
 
-type FABState = 'skip-intro' | 'next-section' | 'back-to-top' | 'hidden'
-
 export default function ScrollFAB({
   sections = [],
   mode = 'auto',
@@ -37,18 +37,13 @@ export default function ScrollFAB({
   viewportMultiplier = 4,
   minSections = 3
 }: ScrollFABProps) {
-  const [fabState, setFabState] = useState<FABState>('hidden')
-  const [currentSectionIndex, setCurrentSectionIndex] = useState(0)
-  const [showLabel, setShowLabel] = useState(false)
+  const [showUp, setShowUp] = useState(false)
+  const [showDown, setShowDown] = useState(false)
   const [isLongPage, setIsLongPage] = useState(false)
-  const [isVisible, setIsVisible] = useState(false)
-  const labelTimeoutRef = useRef<NodeJS.Timeout | null>(null)
-  const hasSeenFAB = useRef(false)
+  const [currentSectionIndex, setCurrentSectionIndex] = useState(0)
 
   // ==========================================================================
   // LONG PAGE DETECTOR
-  // ==========================================================================
-  // Trigger: scrollHeight > 4 * viewportHeight && sectionCount >= minSections
   // ==========================================================================
   useEffect(() => {
     if (mode === 'disabled') {
@@ -67,13 +62,11 @@ export default function ScrollFAB({
       const hasSufficientSections = sections.length >= minSections
       const isLong = scrollHeight > viewportMultiplier * viewportHeight
 
-      setIsLongPage(isLong && (hasSufficientSections || sections.length === 0))
+      setIsLongPage(isLong || (hasSufficientSections && sections.length > 0))
     }
 
     checkPageLength()
     window.addEventListener('resize', checkPageLength)
-    
-    // Re-check after content might have loaded
     const timeout = setTimeout(checkPageLength, 1000)
 
     return () => {
@@ -84,10 +77,6 @@ export default function ScrollFAB({
 
   // ==========================================================================
   // SECTION DETECTION - IntersectionObserver
-  // ==========================================================================
-  // UX-optimal settings:
-  // - threshold: 0.4 (section 40% visible)
-  // - rootMargin: -20% 0px -40% 0px (focus zone in upper-middle viewport)
   // ==========================================================================
   useEffect(() => {
     if (!isLongPage || sections.length === 0) return
@@ -118,11 +107,12 @@ export default function ScrollFAB({
   }, [sections, isLongPage])
 
   // ==========================================================================
-  // SCROLL POSITION TRACKING & STATE DETERMINATION
+  // SCROLL POSITION TRACKING
   // ==========================================================================
   useEffect(() => {
     if (!isLongPage) {
-      setIsVisible(false)
+      setShowUp(false)
+      setShowDown(false)
       return
     }
 
@@ -130,81 +120,27 @@ export default function ScrollFAB({
       const scrollY = window.scrollY
       const scrollHeight = document.documentElement.scrollHeight
       const viewportHeight = window.innerHeight
-      const scrollPercent = (scrollY / (scrollHeight - viewportHeight)) * 100
+      const maxScroll = scrollHeight - viewportHeight
+      const scrollPercent = (scrollY / maxScroll) * 100
 
-      // Hide FAB at very top (< 200px scroll) - no need for navigation yet
-      if (scrollY < 200) {
-        setIsVisible(false)
-        setFabState('hidden')
-        return
-      }
-
-      setIsVisible(true)
-
-      // Determine FAB state based on scroll position
-      // Skip "skip-intro" state entirely if no sections - go straight to next/top logic
-      if (scrollPercent < 15 && sections.length > 0) {
-        // Only show "skip intro" if we have defined sections to skip to
-        setFabState('skip-intro')
-      } else if (scrollPercent < 80) {
-        // Show "next section" or just "scroll down" if no sections
-        setFabState('next-section')
-      } else {
-        // Near bottom - always show back to top
-        setFabState('back-to-top')
-      }
+      // Show UP button after scrolling down 150px
+      setShowUp(scrollY > 150)
+      
+      // Show DOWN button when not at bottom (with 100px buffer)
+      setShowDown(scrollY < maxScroll - 100)
     }
 
-    // Initial check
     handleScroll()
-
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [isLongPage, sections.length])
-
-  // ==========================================================================
-  // FIRST-TIME LABEL LOGIC
-  // ==========================================================================
-  // Rule: Teach, but don't shout
-  // - Only first 1-2 interactions
-  // - Auto-dismiss after 3s
-  // - Max width: 160px
-  // ==========================================================================
-  useEffect(() => {
-    if (!isVisible || hasSeenFAB.current) return
-
-    const seenCount = parseInt(localStorage.getItem('scrollFabSeenCount') || '0', 10)
-    
-    if (seenCount < 2) {
-      setShowLabel(true)
-      
-      labelTimeoutRef.current = setTimeout(() => {
-        setShowLabel(false)
-        localStorage.setItem('scrollFabSeenCount', String(seenCount + 1))
-        hasSeenFAB.current = true
-      }, 3000)
-    } else {
-      hasSeenFAB.current = true
-    }
-
-    return () => {
-      if (labelTimeoutRef.current) {
-        clearTimeout(labelTimeoutRef.current)
-      }
-    }
-  }, [isVisible])
+  }, [isLongPage])
 
   // ==========================================================================
   // HAPTIC FEEDBACK
   // ==========================================================================
-  // Rules:
-  // - Only on section jump or top jump (not every tap)
-  // - iOS: light impact / Android: 10-15ms vibration
-  // - Excessive haptic = toy feel = trust loss
-  // ==========================================================================
   const triggerHaptic = useCallback(() => {
     if ('vibrate' in navigator) {
-      navigator.vibrate(12) // 12ms - subtle
+      navigator.vibrate(12)
     }
   }, [])
 
@@ -216,102 +152,53 @@ export default function ScrollFAB({
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [triggerHaptic])
 
-  const scrollToFirstSection = useCallback(() => {
-    if (sections.length > 0) {
-      triggerHaptic()
-      const firstSection = document.getElementById(sections[0].id)
-      if (firstSection) {
-        const offset = 100
-        const y = firstSection.getBoundingClientRect().top + window.scrollY - offset
-        window.scrollTo({ top: y, behavior: 'smooth' })
-      }
-    } else {
-      // No sections defined - scroll down by viewport height
-      triggerHaptic()
-      window.scrollTo({ 
-        top: window.innerHeight * 0.8, 
-        behavior: 'smooth' 
-      })
-    }
-  }, [sections, triggerHaptic])
-
-  const scrollToNextSection = useCallback(() => {
-    if (sections.length === 0) {
-      // No sections - scroll down by half viewport
-      triggerHaptic()
-      window.scrollTo({ 
-        top: window.scrollY + window.innerHeight * 0.7, 
-        behavior: 'smooth' 
-      })
-      return
-    }
-
-    const nextIndex = Math.min(currentSectionIndex + 1, sections.length - 1)
-    const nextSection = document.getElementById(sections[nextIndex].id)
+  const scrollUp = useCallback(() => {
+    triggerHaptic()
     
-    if (nextSection) {
-      triggerHaptic()
-      const offset = 100
-      const y = nextSection.getBoundingClientRect().top + window.scrollY - offset
-      window.scrollTo({ top: y, behavior: 'smooth' })
+    if (sections.length > 0 && currentSectionIndex > 0) {
+      // Go to previous section
+      const prevSection = document.getElementById(sections[currentSectionIndex - 1].id)
+      if (prevSection) {
+        const offset = 100
+        const y = prevSection.getBoundingClientRect().top + window.scrollY - offset
+        window.scrollTo({ top: y, behavior: 'smooth' })
+        return
+      }
     }
+    
+    // No sections or at first section - scroll up by 70% viewport
+    window.scrollTo({ 
+      top: Math.max(0, window.scrollY - window.innerHeight * 0.7), 
+      behavior: 'smooth' 
+    })
   }, [sections, currentSectionIndex, triggerHaptic])
 
-  // ==========================================================================
-  // ACTION HANDLER
-  // ==========================================================================
-  const handleClick = useCallback(() => {
-    // Hide label on any click
-    setShowLabel(false)
+  const scrollDown = useCallback(() => {
+    triggerHaptic()
     
-    switch (fabState) {
-      case 'skip-intro':
-        scrollToFirstSection()
-        break
-      case 'next-section':
-        scrollToNextSection()
-        break
-      case 'back-to-top':
-        scrollToTop()
-        break
+    if (sections.length > 0 && currentSectionIndex < sections.length - 1) {
+      // Go to next section
+      const nextSection = document.getElementById(sections[currentSectionIndex + 1].id)
+      if (nextSection) {
+        const offset = 100
+        const y = nextSection.getBoundingClientRect().top + window.scrollY - offset
+        window.scrollTo({ top: y, behavior: 'smooth' })
+        return
+      }
     }
-  }, [fabState, scrollToFirstSection, scrollToNextSection, scrollToTop])
-
-  // ==========================================================================
-  // ACCESSIBILITY - Dynamic aria-label
-  // ==========================================================================
-  const getAriaLabel = (): string => {
-    switch (fabState) {
-      case 'skip-intro':
-        return 'Skip introduction, scroll to main content'
-      case 'next-section':
-        return sections[currentSectionIndex + 1]
-          ? `Go to next section: ${sections[currentSectionIndex + 1].label}`
-          : 'Scroll to next section'
-      case 'back-to-top':
-        return 'Back to top of page'
-      default:
-        return 'Scroll navigation'
-    }
-  }
-
-  const getLabel = (): string => {
-    switch (fabState) {
-      case 'skip-intro':
-        return 'Skip intro'
-      case 'next-section':
-        return 'Next'
-      case 'back-to-top':
-        return 'Top'
-      default:
-        return ''
-    }
-  }
+    
+    // No sections or at last section - scroll down by 70% viewport
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight
+    window.scrollTo({ 
+      top: Math.min(maxScroll, window.scrollY + window.innerHeight * 0.7), 
+      behavior: 'smooth' 
+    })
+  }, [sections, currentSectionIndex, triggerHaptic])
 
   // ==========================================================================
   // RENDER CONDITIONS
   // ==========================================================================
-  if (!isLongPage || !isVisible || fabState === 'hidden') {
+  if (!isLongPage || (!showUp && !showDown)) {
     return null
   }
 
@@ -323,93 +210,71 @@ export default function ScrollFAB({
   // ==========================================================================
   // STYLES
   // ==========================================================================
-  const bgColor = isLight 
-    ? 'bg-slate-800 hover:bg-slate-700 text-white' 
-    : 'bg-white hover:bg-slate-100 text-slate-800'
+  const buttonBase = `w-12 h-12 rounded-full flex items-center justify-center shadow-lg ${
+    prefersReducedMotion ? '' : 'transition-all duration-200 ease-out'
+  } active:scale-95 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2`
   
-  const shadowColor = isLight
-    ? 'shadow-lg shadow-slate-800/20'
-    : 'shadow-lg shadow-black/30'
-
-  const labelBg = isLight
-    ? 'bg-slate-800 text-white'
-    : 'bg-white text-slate-800'
+  const buttonLight = 'bg-slate-800 hover:bg-slate-700 text-white shadow-slate-800/20'
+  const buttonDark = 'bg-white hover:bg-slate-100 text-slate-800 shadow-black/30'
+  const buttonStyle = isLight ? buttonLight : buttonDark
 
   return (
-    <>
-      {/* FAB Container */}
-      <div 
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2"
-        style={{ 
-          // Thumb zone positioning for mobile
-          marginBottom: 'env(safe-area-inset-bottom, 0px)' 
-        }}
-      >
-        {/* First-time Label */}
-        {showLabel && (
-          <div 
-            className={`
-              ${labelBg} px-3 py-1.5 rounded-full text-sm font-medium
-              max-w-[160px] truncate
-              ${prefersReducedMotion ? '' : 'animate-fade-in'}
-            `}
-            role="tooltip"
-          >
-            {getLabel()}
-          </div>
-        )}
-
-        {/* FAB Button */}
+    <div 
+      className="fixed bottom-6 right-4 z-50 flex flex-col gap-2"
+      style={{ marginBottom: 'env(safe-area-inset-bottom, 0px)' }}
+    >
+      {/* UP Button */}
+      {showUp && (
         <button
-          onClick={handleClick}
-          aria-label={getAriaLabel()}
-          className={`
-            w-14 h-14 rounded-full ${bgColor} ${shadowColor}
-            flex items-center justify-center
-            ${prefersReducedMotion ? '' : 'transition-all duration-200 ease-out'}
-            active:scale-95
-            focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2
-          `}
+          onClick={scrollUp}
+          onDoubleClick={scrollToTop}
+          aria-label="Scroll up (double-click for top)"
+          title="Tap: scroll up | Double-tap: go to top"
+          className={`${buttonBase} ${buttonStyle}`}
         >
-          {/* Morphing Icon */}
           <svg 
-            width="24" 
-            height="24" 
+            width="20" 
+            height="20" 
             viewBox="0 0 24 24" 
             fill="none" 
             stroke="currentColor" 
             strokeWidth="2.5" 
             strokeLinecap="round" 
             strokeLinejoin="round"
-            className={prefersReducedMotion ? '' : 'transition-transform duration-200'}
-            style={{
-              transform: fabState === 'back-to-top' ? 'rotate(180deg)' : 'rotate(0deg)'
-            }}
           >
-            {/* Chevron Down (morphs to Up via rotation) */}
+            <polyline points="18 15 12 9 6 15" />
+          </svg>
+        </button>
+      )}
+
+      {/* DOWN Button */}
+      {showDown && (
+        <button
+          onClick={scrollDown}
+          aria-label="Scroll down"
+          title="Scroll down"
+          className={`${buttonBase} ${buttonStyle}`}
+        >
+          <svg 
+            width="20" 
+            height="20" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="2.5" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+          >
             <polyline points="6 9 12 15 18 9" />
           </svg>
         </button>
-      </div>
-
-      {/* Inline styles for animation (avoiding globals.css dependency) */}
-      <style jsx>{`
-        @keyframes fade-in {
-          from { opacity: 0; transform: translateX(10px); }
-          to { opacity: 1; transform: translateX(0); }
-        }
-        .animate-fade-in {
-          animation: fade-in 0.2s ease-out;
-        }
-      `}</style>
-    </>
+      )}
+    </div>
   )
 }
 
 // =============================================================================
-// HOOK: useScrollSections
-// =============================================================================
-// Helper hook to automatically detect sections from page headings
+// HOOK: useScrollSections (unchanged)
 // =============================================================================
 export function useScrollSections(selector: string = 'h2[id], section[id]'): ScrollSection[] {
   const [sections, setSections] = useState<ScrollSection[]>([])

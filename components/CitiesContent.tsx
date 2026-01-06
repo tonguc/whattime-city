@@ -2,11 +2,15 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import { cities, City } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
 import { TimeIcons } from '@/components/TimeIcons'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+
+// Lazy load ScrollFAB only when needed
+const ScrollFAB = dynamic(() => import('@/components/ScrollFAB'), { ssr: false })
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 
@@ -95,11 +99,11 @@ export default function CitiesContent() {
           </p>
         </div>
 
-        {/* Sticky Search & Filter Bar */}
-        <div className={`sticky top-[57px] z-40 -mx-4 px-4 py-3 rounded-none sm:rounded-2xl sm:mx-0 sm:mb-4 backdrop-blur-xl border-y sm:border ${
+        {/* Sticky Search & Filter Bar - positioned below header */}
+        <div className={`sticky top-[108px] md:top-[60px] z-40 -mx-4 px-4 py-3 backdrop-blur-xl border-b ${
           isLight 
-            ? 'bg-white/95 border-slate-200' 
-            : 'bg-slate-900/95 border-slate-700'
+            ? 'bg-white/98 border-slate-200' 
+            : 'bg-slate-900/98 border-slate-700'
         }`}>
           {/* Search Input */}
           <div className="relative mb-3">
@@ -335,6 +339,13 @@ export default function CitiesContent() {
       </main>
 
       <Footer />
+      
+      {/* ScrollFAB for long city list */}
+      <ScrollFAB 
+        sections={[]} 
+        mode="forced" 
+        isLight={isLight}
+      />
     </div>
   )
 }
