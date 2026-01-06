@@ -95,10 +95,14 @@ export default function CitiesContent() {
           </p>
         </div>
 
-        {/* Search & Filter Bar */}
-        <div className={`rounded-2xl p-4 mb-4 backdrop-blur-xl border ${theme.card}`}>
+        {/* Sticky Search & Filter Bar */}
+        <div className={`sticky top-[57px] z-40 -mx-4 px-4 py-3 rounded-none sm:rounded-2xl sm:mx-0 sm:mb-4 backdrop-blur-xl border-y sm:border ${
+          isLight 
+            ? 'bg-white/95 border-slate-200' 
+            : 'bg-slate-900/95 border-slate-700'
+        }`}>
           {/* Search Input */}
-          <div className="relative mb-4">
+          <div className="relative mb-3">
             <svg
               className={`absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 ${theme.textMuted}`}
               fill="none"
@@ -125,6 +129,7 @@ export default function CitiesContent() {
                   ? 'bg-white border-slate-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100'
                   : 'bg-slate-800 border-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-900'
               } ${theme.text} outline-none`}
+              style={{ fontSize: '16px' }}
             />
             {searchQuery && (
               <button
@@ -138,11 +143,11 @@ export default function CitiesContent() {
             )}
           </div>
 
-          {/* A-Z Index */}
-          <div className="flex flex-wrap gap-1">
+          {/* A-Z Index - Compact on mobile */}
+          <div className="flex flex-wrap gap-0.5 sm:gap-1">
             <button
               onClick={() => setActiveFilter(null)}
-              className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
+              className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all ${
                 activeFilter === null
                   ? 'bg-blue-500 text-white'
                   : isLight
@@ -159,7 +164,7 @@ export default function CitiesContent() {
                   key={letter}
                   onClick={() => hasCity && handleLetterClick(letter)}
                   disabled={!hasCity}
-                  className={`w-9 h-9 rounded-lg text-sm font-medium transition-all ${
+                  className={`w-7 h-7 sm:w-9 sm:h-9 rounded-lg text-xs sm:text-sm font-medium transition-all ${
                     activeFilter === letter
                       ? 'bg-blue-500 text-white'
                       : hasCity

@@ -3,6 +3,9 @@ import Script from 'next/script'
 import { CityProvider } from '@/lib/CityContext'
 import './globals.css'
 
+// ScrollFAB removed from global layout for performance
+// It will be added to specific long pages that need it
+
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,

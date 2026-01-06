@@ -103,11 +103,12 @@ function Header(_props: HeaderProps) {
         : 'bg-slate-900/80 border-slate-700'
     }`}>
       <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2 sm:gap-3">
+        {/* Logo - Larger on mobile for better visibility */}
         <button onClick={handleLogoClick} aria-label="Go to homepage" className="hover:opacity-80 transition-opacity flex-shrink-0">
-          <img src={isLight ? "/logo-mobile.svg" : "/logo-mobile-dark.svg"} alt="whattime.city" width={40} height={40} className="h-10 sm:hidden" />
-          <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" width={180} height={44} className="h-11 hidden sm:block" />
+          <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" width={140} height={35} className="h-8 sm:h-11" />
         </button>
         
+        {/* Desktop Search */}
         <div className="flex-1 max-w-xs hidden sm:block" ref={searchRef}>
           <div className="relative">
             <div className={`flex items-center gap-2 px-3 py-2 rounded-full ${isLight ? 'bg-slate-100' : 'bg-slate-800'}`}>
@@ -156,20 +157,21 @@ function Header(_props: HeaderProps) {
           </div>
         </div>
         
-        <nav className="flex items-center gap-1 sm:gap-1">
-          <Link href="/cities" className={`hidden sm:block px-2.5 py-2 rounded-lg text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
+        {/* Navigation - Cities visible on mobile too */}
+        <nav className="flex items-center gap-0.5 sm:gap-1">
+          <Link href="/cities" className={`px-2 sm:px-2.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
             Cities
           </Link>
           <Link href="/country" className={`hidden sm:block px-2.5 py-2 rounded-lg text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
             Countries
           </Link>
-          <Link href="/map" className={`px-2.5 py-2 rounded-lg text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
+          <Link href="/map" className={`px-2 sm:px-2.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
             Map
           </Link>
-          <Link href="/guides" className={`px-2.5 py-2 rounded-lg text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
+          <Link href="/guides" className={`hidden xs:block px-2 sm:px-2.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
             Guides
           </Link>
-          <Link href="/tools" className={`px-2.5 py-2 rounded-lg text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
+          <Link href="/tools" className={`px-2 sm:px-2.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
             Tools
           </Link>
           

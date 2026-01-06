@@ -85,8 +85,8 @@ export default function BusinessHoursContent({ city }: Props) {
       </section>
       
       {/* Bank Hours */}
-      <section className="mb-10">
-        <h2 className={`text-2xl font-semibold mb-4 ${headingColor}`}>
+      <section className="mb-10" id="bank-hours">
+        <h2 id="bank-hours" className={`text-2xl font-semibold mb-4 ${headingColor}`}>
           🏦 Bank Hours in New York
         </h2>
         
