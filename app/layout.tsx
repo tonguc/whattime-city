@@ -104,13 +104,7 @@ export default function RootLayout({
           `}
         </Script>
         
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Font with display=swap for better CLS */}
-        <link 
-          rel="stylesheet" 
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-        />
+        {/* Google Fonts REMOVED for performance - using system fonts instead */}
         {/* Prevent FOUC by setting initial theme before React hydration */}
         <script
           dangerouslySetInnerHTML={{
