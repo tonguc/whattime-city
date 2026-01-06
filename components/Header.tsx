@@ -103,9 +103,9 @@ function Header(_props: HeaderProps) {
         : 'bg-slate-900/80 border-slate-700'
     }`}>
       <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2 sm:gap-3">
-        {/* Logo - Larger for better visibility */}
+        {/* Logo with tagline - taller to accommodate subtitle */}
         <button onClick={handleLogoClick} aria-label="Go to homepage" className="hover:opacity-80 transition-opacity flex-shrink-0">
-          <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city" width={160} height={40} className="h-9 sm:h-12" />
+          <img src={isLight ? "/logo.svg" : "/logo-dark.svg"} alt="whattime.city - World Clock" width={200} height={50} className="h-12 sm:h-16" />
         </button>
         
         {/* Desktop Search */}

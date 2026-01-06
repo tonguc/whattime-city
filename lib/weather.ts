@@ -1,6 +1,7 @@
 // Weather API service with caching
 
-const API_KEY = '6fc475e8ec2b4c50a0c135542250812'
+// API key from environment variable (set in Vercel dashboard)
+const API_KEY = process.env.WEATHER_API_KEY || ''
 const BASE_URL = 'https://api.weatherapi.com/v1'
 
 export interface WeatherData {
