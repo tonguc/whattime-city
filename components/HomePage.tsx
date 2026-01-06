@@ -196,7 +196,7 @@ export default function HomePage() {
                     <AnalogClock time={time} />
                   </div>
                 ) : (
-                  <div className={`text-5xl md:text-6xl font-bold tracking-tight mr-5 ${text}`} style={{ fontVariantNumeric: 'tabular-nums' }}>
+                  <div className={`text-5xl md:text-6xl font-bold tracking-tight mr-5 whitespace-nowrap ${text}`} style={{ fontVariantNumeric: 'tabular-nums' }}>
                     {getLocalTime(detectedCity)}
                   </div>
                 )}
