@@ -232,8 +232,8 @@ export default function HomePage() {
           </section>
         )}
 
-        {/* HERO - Compare Tool - min-h prevents CLS */}
-        <section className={`rounded-3xl p-6 md:p-8 mb-4 backdrop-blur-xl border ${card} text-center min-h-[180px] md:min-h-[200px]`} style={{ overflow: 'visible' }}>
+        {/* HERO - Compare Tool - larger min-h to prevent CLS */}
+        <section className={`rounded-3xl p-6 md:p-8 mb-4 backdrop-blur-xl border ${card} text-center min-h-[280px] md:min-h-[220px]`} style={{ overflow: 'visible' }}>
           <h2 className={`text-2xl md:text-3xl font-bold mb-2 ${text} flex items-center justify-center gap-3`}>
             <svg className="w-8 h-8 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10"/>
@@ -243,7 +243,8 @@ export default function HomePage() {
             World Clock — Convert Time Instantly
           </h2>
           
-          <div className={`max-w-2xl mx-auto mt-6 p-4 rounded-2xl ${isLight ? 'bg-slate-100' : 'bg-slate-800/50'}`} style={{ overflow: 'visible' }}>
+          {/* Fixed height container for CompareWidget to prevent CLS */}
+          <div className={`max-w-2xl mx-auto mt-6 p-4 rounded-2xl min-h-[120px] md:min-h-[80px] ${isLight ? 'bg-slate-100' : 'bg-slate-800/50'}`} style={{ overflow: 'visible' }}>
             <CompareWidget 
               initialFromCity={fromCity}
               initialToCity={toCity}
