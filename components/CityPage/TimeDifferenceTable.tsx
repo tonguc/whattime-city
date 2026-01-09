@@ -124,7 +124,7 @@ function getMeetingOverlap(diffHours: number): { level: 'high' | 'limited' | 'no
 }
 
 export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) {
-  const { card, textSection, textMeta, textLabel, textTime, textValue, isLight } = useThemeClasses()
+  const { card, textSection, textMeta, textLabel, isLight } = useThemeClasses()
   
   const comparisonCities = getComparisonCities(city)
   
@@ -145,7 +145,7 @@ export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) 
         <table className="w-full">
           <thead>
             <tr className={`border-y ${isLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-800/50 border-slate-700'}`}>
-              <th className={`py-3 px-4 text-left ${textLabel}`}>CITY</th>
+              <th className={`py-3 pl-5 pr-4 text-left ${textLabel}`}>CITY</th>
               <th className={`py-3 px-4 text-center ${textLabel}`}>NOW</th>
               <th className={`py-3 px-4 text-center ${textLabel}`}>DIFF</th>
               <th className={`py-3 px-4 text-center ${textLabel}`}>OVERLAP</th>
@@ -172,8 +172,8 @@ export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) 
                       : 'border-slate-800 hover:bg-slate-800/30'
                   }`}
                 >
-                  {/* City Name */}
-                  <td className="py-3.5 px-4">
+                  {/* City Name - pl-5 ile Climate ile aynı hizalama */}
+                  <td className="py-3.5 pl-5 pr-4">
                     <a 
                       href={`/${targetCity.slug}`}
                       className={`font-semibold hover:underline flex items-center gap-2 ${
@@ -183,13 +183,13 @@ export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) 
                       <span className="text-lg">{getTimeOfDayIcon(hour)}</span>
                       <span>{targetCity.city}</span>
                     </a>
-                    <span className={`${textMeta} block mt-0.5`}>
+                    <span className={`${textMeta} block mt-0.5 pl-7`}>
                       {targetCity.country}
                     </span>
                   </td>
                   
-                  {/* Current Time - BOLD, MONOSPACE */}
-                  <td className={`py-3.5 px-4 text-center ${textTime}`}>
+                  {/* Current Time - font-mono inline yazıldı */}
+                  <td className={`py-3.5 px-4 text-center font-mono tabular-nums font-bold ${isLight ? 'text-slate-900' : 'text-white'}`}>
                     {currentTime}
                   </td>
                   
