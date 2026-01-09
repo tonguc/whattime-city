@@ -4,26 +4,47 @@ import { useCityContext } from './CityContext'
 import { TimeOfDay } from './sun-calculator'
 
 /**
- * useThemeClasses - Single Source of Truth for Theme Styling
+ * useThemeClasses - ASSERTIVE TYPOGRAPHY SYSTEM
  * 
- * USAGE:
- * const { card, text, textMuted, input, btnPrimary } = useThemeClasses()
+ * ═══════════════════════════════════════════════════════════════
+ * "Bu önemli. Buna bak. Sonra devam et."
+ * ═══════════════════════════════════════════════════════════════
  * 
- * <div className={`rounded-2xl p-6 ${card}`}>
- *   <h2 className={text}>Title</h2>
- *   <p className={textMuted}>Description</p>
- * </div>
- * 
- * THEME MODES:
- * - Auto: Uses dawn/day/dusk/night based on sun position
- * - Light: Fixed light theme
- * - Dark: Fixed dark theme
+ * 3 KATMAN:
+ * 1. SHOUT  → Siyah/Beyaz, Bold, Büyük → GÖZ YAKALAR
+ * 2. SPEAK  → Koyu gri, Semibold → Bilgi verir  
+ * 3. WHISPER → Açık gri, Regular → Destekler (görünmez gibi)
  */
 
 export interface ThemeClasses {
-  // Core
   card: string
   cardWithRound: string
+  
+  // ═══════════════════════════════════════════════════════════════
+  // ASSERTIVE TYPOGRAPHY - "Bana bak" sistemi
+  // ═══════════════════════════════════════════════════════════════
+  
+  // SHOUT - Göz yakalayan
+  textHero: string        // 48px/700 - Sayfa anchor
+  textSection: string     // 26px/700 - Section başlıkları - BÜYÜK
+  textValue: string       // 17px/700 - Önemli değerler (saatler)
+  
+  // SPEAK - Net bilgi
+  textCardTitle: string   // 18px/600 - Kart başlıkları
+  textBody: string        // 15px/400 - Ana içerik
+  
+  // WHISPER - Çok soluk
+  textLabel: string       // 11px/500 - OFFICES, BANKS etiketleri
+  textMeta: string        // 12px/400 - Açıklamalar (çok soluk)
+  textMicro: string       // 11px/600 - Badge'ler
+  
+  // NUMBERS
+  textTime: string        // Monospace, bold
+  textTimeLarge: string   // Büyük saat
+  textCityName: string    // Grid'de şehir ismi
+  textCityTime: string    // Grid'de saat (bold değil)
+  
+  // Legacy
   text: string
   textMuted: string
   
@@ -43,7 +64,7 @@ export interface ThemeClasses {
   border: string
   borderAccent: string
   
-  // Accents (for highlights, badges, etc.)
+  // Accents
   accent: string
   accentBg: string
   accentText: string
@@ -52,8 +73,6 @@ export interface ThemeClasses {
   isLight: boolean
   isDark: boolean
   timeOfDay: TimeOfDay | 'light' | 'dark'
-  
-  // Raw theme object
   theme: ReturnType<typeof useCityContext>['theme']
 }
 
@@ -61,108 +80,158 @@ export function useThemeClasses(): ThemeClasses {
   const { theme, isLight, currentTheme } = useCityContext()
   const isDark = !isLight
   
-  // Determine card class based on time of day for auto mode
   const getCardClass = (): string => {
     if (isLight) {
       return 'bg-white border border-slate-200 backdrop-blur-xl'
     }
-    
-    // Dark themes with time-specific borders
     switch (currentTheme) {
       case 'dawn':
         return 'bg-slate-800/60 border border-orange-700/50 backdrop-blur-xl'
       case 'dusk':
         return 'bg-slate-800/60 border border-purple-700/50 backdrop-blur-xl'
-      case 'night':
-      case 'dark':
       default:
         return 'bg-slate-800/60 border border-slate-700/50 backdrop-blur-xl'
     }
   }
   
+  // ═══════════════════════════════════════════════════════════════
+  // ASSERTIVE COLOR SYSTEM v2
+  // ═══════════════════════════════════════════════════════════════
+  
+  // SHOUT: Maximum kontrast - siyah veya beyaz
+  const colorShout = isLight ? 'text-slate-950' : 'text-white'
+  
+  // SPEAK: Güçlü ama shout değil
+  const colorSpeak = isLight ? 'text-slate-800' : 'text-slate-100'
+  
+  // WHISPER: Bilinçli olarak ÇOK geri planda
+  const colorWhisper = isLight ? 'text-slate-400/70' : 'text-slate-500/70' // opacity ekledim
+  
+  // LABEL: Kategori etiketleri - görünür ama lider değil
+  const colorLabel = isLight ? 'text-slate-500' : 'text-slate-400'
+  
+  // BODY: Okunabilir ama lider değil
+  const colorBody = isLight ? 'text-slate-600' : 'text-slate-300'
+  
   return {
-    // Card styling - use this for all content containers
     card: getCardClass(),
     cardWithRound: `${getCardClass()} rounded-2xl`,
     
-    // Text colors
-    text: isLight ? 'text-slate-800' : 'text-white',
-    textMuted: isLight ? 'text-slate-500' : 'text-slate-300',
+    // ═══════════════════════════════════════════════════════════════
+    // SHOUT - "BANA BAK"
+    // ═══════════════════════════════════════════════════════════════
     
-    // Input styling
+    // Hero - Sayfa anchor'u
+    textHero: `text-hero ${colorShout}`,
+    
+    // Section - Bölüm başlıkları - 26px, BOLD, SİYAH
+    textSection: `text-section ${colorShout}`,
+    
+    // Value - Önemli rakamlar/saatler - LİDER
+    textValue: `text-value ${colorShout}`,
+    
+    // ═══════════════════════════════════════════════════════════════
+    // SPEAK - "Bilgi burada"
+    // ═══════════════════════════════════════════════════════════════
+    
+    textCardTitle: `text-card-title ${colorSpeak}`,
+    textBody: `text-body ${colorBody}`,
+    
+    // ═══════════════════════════════════════════════════════════════
+    // WHISPER - "Gerekirse bak" (ÇOK SOLUK)
+    // ═══════════════════════════════════════════════════════════════
+    
+    // Label - Kategori etiketleri (OFFICES, BANKS)
+    textLabel: `text-label uppercase tracking-wider ${colorLabel}`,
+    
+    // Meta - Açıklamalar, footer notları (çok soluk)
+    textMeta: `text-meta ${colorWhisper}`,
+    
+    // Micro - Badge'ler
+    textMicro: `text-micro uppercase tracking-wider ${colorWhisper}`,
+    
+    // ═══════════════════════════════════════════════════════════════
+    // NUMBERS - Saatler için özel
+    // ═══════════════════════════════════════════════════════════════
+    
+    textTime: `font-mono tabular-nums font-bold ${colorShout}`,
+    textTimeLarge: `font-mono tabular-nums font-bold ${colorShout} tracking-tight`,
+    
+    // World Cities grid için - saat normal, şehir semibold
+    textCityName: `text-body font-medium ${colorSpeak}`, // şehir ismi
+    textCityTime: `font-mono tabular-nums text-sm ${colorLabel}`, // saat - bold DEĞİL
+    
+    // Legacy
+    text: colorShout,
+    textMuted: colorWhisper,
+    
+    // Inputs
     input: isLight 
-      ? 'bg-slate-50 border border-slate-300 text-slate-800 placeholder:text-slate-400'
+      ? 'bg-slate-50 border border-slate-300 text-slate-900 placeholder:text-slate-400'
       : 'bg-slate-900 border border-slate-700 text-white placeholder:text-slate-500',
     inputFocused: 'focus:ring-2 focus:ring-blue-500 focus:outline-none',
     
-    // Button styling
+    // Buttons - daha güçlü
     btnPrimary: isLight
-      ? 'bg-slate-800 text-white hover:bg-slate-700'
-      : 'bg-white text-slate-800 hover:bg-slate-100',
+      ? 'bg-slate-900 text-white hover:bg-slate-800 font-semibold'
+      : 'bg-white text-slate-900 hover:bg-slate-100 font-semibold',
     btnSecondary: isLight
-      ? 'bg-slate-100 text-slate-800 hover:bg-slate-200 border border-slate-200'
-      : 'bg-slate-800 text-white hover:bg-slate-700 border border-slate-700',
+      ? 'bg-slate-100 text-slate-900 hover:bg-slate-200 border border-slate-300 font-medium'
+      : 'bg-slate-800 text-white hover:bg-slate-700 border border-slate-600 font-medium',
     
-    // Background
     bg: theme.bg,
     bgGradient: `bg-gradient-to-br ${theme.bg}`,
-    
-    // Borders
     border: isLight ? 'border-slate-200' : 'border-slate-700',
     borderAccent: theme.accentBorder,
-    
-    // Accent colors (from theme)
     accent: theme.accent,
     accentBg: theme.accentBg,
     accentText: theme.accentText,
-    
-    // State helpers
     isLight,
     isDark,
     timeOfDay: currentTheme,
-    
-    // Raw theme for edge cases
     theme,
   }
 }
 
 /**
- * getStaticThemeClasses - For components without context access
- * Use this only when useCityContext is not available
- * 
- * @param isLight - Whether to use light theme
- * @param timeOfDay - Optional time of day for auto mode
+ * getStaticThemeClasses - Context olmadan kullanım için
  */
 export function getStaticThemeClasses(isLight: boolean, timeOfDay?: TimeOfDay) {
+  const colorShout = isLight ? 'text-slate-950' : 'text-white'
+  const colorSpeak = isLight ? 'text-slate-800' : 'text-slate-100'
+  const colorWhisper = isLight ? 'text-slate-400' : 'text-slate-500'
+  const colorBody = isLight ? 'text-slate-600' : 'text-slate-300'
+  
   const getCardClass = (): string => {
-    if (isLight) {
-      return 'bg-white border border-slate-200 backdrop-blur-xl'
-    }
-    
+    if (isLight) return 'bg-white border border-slate-200 backdrop-blur-xl'
     switch (timeOfDay) {
-      case 'dawn':
-        return 'bg-slate-800/60 border border-orange-700/50 backdrop-blur-xl'
-      case 'dusk':
-        return 'bg-slate-800/60 border border-purple-700/50 backdrop-blur-xl'
-      default:
-        return 'bg-slate-800/60 border border-slate-700/50 backdrop-blur-xl'
+      case 'dawn': return 'bg-slate-800/60 border border-orange-700/50 backdrop-blur-xl'
+      case 'dusk': return 'bg-slate-800/60 border border-purple-700/50 backdrop-blur-xl'
+      default: return 'bg-slate-800/60 border border-slate-700/50 backdrop-blur-xl'
     }
   }
   
   return {
     card: getCardClass(),
     cardWithRound: `${getCardClass()} rounded-2xl`,
-    text: isLight ? 'text-slate-800' : 'text-white',
-    textMuted: isLight ? 'text-slate-500' : 'text-slate-300',
+    text: colorShout,
+    textMuted: colorWhisper,
+    textHero: `text-hero ${colorShout}`,
+    textSection: `text-section ${colorShout}`,
+    textValue: `text-value ${colorShout}`,
+    textCardTitle: `text-card-title ${colorSpeak}`,
+    textBody: `text-body ${colorBody}`,
+    textMeta: `text-meta ${colorWhisper}`,
+    textTime: `font-mono tabular-nums font-bold ${colorShout}`,
     input: isLight 
-      ? 'bg-slate-50 border border-slate-300 text-slate-800 placeholder:text-slate-400'
+      ? 'bg-slate-50 border border-slate-300 text-slate-900 placeholder:text-slate-400'
       : 'bg-slate-900 border border-slate-700 text-white placeholder:text-slate-500',
     btnPrimary: isLight
-      ? 'bg-slate-800 text-white hover:bg-slate-700'
-      : 'bg-white text-slate-800 hover:bg-slate-100',
+      ? 'bg-slate-900 text-white hover:bg-slate-800 font-semibold'
+      : 'bg-white text-slate-900 hover:bg-slate-100 font-semibold',
     btnSecondary: isLight
-      ? 'bg-slate-100 text-slate-800 hover:bg-slate-200 border border-slate-200'
-      : 'bg-slate-800 text-white hover:bg-slate-700 border border-slate-700',
+      ? 'bg-slate-100 text-slate-900 hover:bg-slate-200 border border-slate-300 font-medium'
+      : 'bg-slate-800 text-white hover:bg-slate-700 border border-slate-600 font-medium',
     isLight,
     isDark: !isLight,
   }

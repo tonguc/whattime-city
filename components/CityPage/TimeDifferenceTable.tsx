@@ -188,7 +188,7 @@ export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) 
                   </td>
                   
                   {/* Current Time */}
-                  <td className={`py-2.5 px-3 text-center font-mono text-sm ${text}`}>
+                  <td className={`py-2.5 px-3 text-center text-sm font-medium tabular-nums ${text}`}>
                     {currentTime}
                   </td>
                   
@@ -220,7 +220,7 @@ export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) 
                   
                   {/* Dial Code */}
                   <td className={`py-2.5 px-3 text-right hidden sm:table-cell`}>
-                    <span className={`text-xs font-mono ${textMuted}`}>
+                    <span className={`text-xs ${textMuted}`}>
                       {phoneCode}
                     </span>
                   </td>

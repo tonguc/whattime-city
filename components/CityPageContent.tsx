@@ -227,43 +227,80 @@ export default function CityPageContent({ city }: CityPageContentProps) {
           </div>
           
           {city.info && (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6 pt-6 border-t border-slate-200/20">
-              <div>
-                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>
-                  Currency
+            <>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6 pt-6 border-t border-slate-200/20">
+                <div>
+                  <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>
+                    💰 Currency
+                  </div>
+                  <div className={`font-semibold ${theme.text}`}>
+                    {city.info.currencySymbol} {city.info.currency}
+                  </div>
                 </div>
-                <div className={`font-semibold ${theme.text}`}>
-                  {city.info.currencySymbol} {city.info.currency}
+                <div>
+                  <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>
+                    📞 Phone Code
+                  </div>
+                  <div className={`font-semibold ${theme.text}`}>
+                    {city.info.phoneCode}
+                  </div>
+                </div>
+                <div>
+                  <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>
+                    🗣️ Language
+                  </div>
+                  <div className={`font-semibold ${theme.text}`}>
+                    {city.info.language}
+                  </div>
+                </div>
+                <div>
+                  <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>
+                    🌍 Country
+                  </div>
+                  <Link 
+                    href={`/country/${city.country.toLowerCase().replace(/\s+/g, '-')}`}
+                    className={`font-semibold hover:underline ${theme.text}`}
+                  >
+                    {city.country}
+                  </Link>
                 </div>
               </div>
-              <div>
-                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>
-                  Phone Code
+              
+              {/* Climate Section */}
+              {city.info.climate && (
+                <div className="mt-6 pt-6 border-t border-slate-200/20">
+                  <div className={`text-xs uppercase tracking-wide mb-2 ${theme.textMuted}`}>
+                    ☀️ Climate
+                  </div>
+                  <p className={`text-sm leading-relaxed ${theme.text}`}>
+                    {city.info.climate}
+                  </p>
                 </div>
-                <div className={`font-semibold ${theme.text}`}>
-                  {city.info.phoneCode}
+              )}
+              
+              {/* Top Attractions Section */}
+              {city.info.attractions && city.info.attractions.length > 0 && (
+                <div className="mt-6 pt-6 border-t border-slate-200/20">
+                  <div className={`text-xs uppercase tracking-wide mb-3 ${theme.textMuted}`}>
+                    🏛️ Top Attractions
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {city.info.attractions.slice(0, 5).map((attraction, i) => (
+                      <span 
+                        key={i}
+                        className={`text-sm px-3 py-1.5 rounded-full ${
+                          isLight 
+                            ? 'bg-slate-100 text-slate-700' 
+                            : 'bg-slate-700/50 text-slate-200'
+                        }`}
+                      >
+                        {attraction}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div>
-                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>
-                  Language
-                </div>
-                <div className={`font-semibold ${theme.text}`}>
-                  {city.info.language}
-                </div>
-              </div>
-              <div>
-                <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>
-                  Country
-                </div>
-                <Link 
-                  href={`/country/${city.country.toLowerCase().replace(/\s+/g, '-')}`}
-                  className={`font-semibold hover:underline ${theme.text}`}
-                >
-                  {city.country}
-                </Link>
-              </div>
-            </div>
+              )}
+            </>
           )}
         </div>
       </section>

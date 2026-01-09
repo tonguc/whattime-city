@@ -249,10 +249,11 @@ export default function CityPage({ initialCity }: CityPageProps) {
           
           {/* SECTION 2: CONVERTER */}
           <div id="converter" className="p-4 md:p-6">
-            <h2 className={`text-base font-semibold flex items-center gap-2 ${theme.text}`}>
-              🔄 Two-City Time Converter
+            <h2 className={`text-section flex items-center gap-2 ${isLight ? 'text-slate-900' : 'text-white'}`}>
+              <span>🔄</span>
+              <span>Two-City Time Converter</span>
             </h2>
-            <p className={`text-xs mt-0.5 mb-3 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+            <p className={`text-meta mt-1 mb-4 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
               Compare local time between {selectedCity.city} and any other city
             </p>
             <TimeConverter currentCitySlug={selectedCity.slug} />
@@ -283,6 +284,48 @@ export default function CityPage({ initialCity }: CityPageProps) {
           <BusinessHoursBox city={selectedCity} />
         </div>
         
+        {/* Climate & Attractions - Tüm şehirler için (info varsa) */}
+        {selectedCity.info && (selectedCity.info.climate || (selectedCity.info.attractions && selectedCity.info.attractions.length > 0)) && (
+          <div className={`rounded-2xl p-5 backdrop-blur-xl border ${theme.card} mt-4`}>
+            {/* Climate */}
+            {selectedCity.info.climate && (
+              <div className="mb-5">
+                <h3 className={`text-section flex items-center gap-2 mb-3 ${isLight ? 'text-slate-900' : 'text-white'}`}>
+                  <span>☀️</span>
+                  <span>Climate</span>
+                </h3>
+                <p className={`text-body leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+                  {selectedCity.info.climate}
+                </p>
+              </div>
+            )}
+            
+            {/* Attractions */}
+            {selectedCity.info.attractions && selectedCity.info.attractions.length > 0 && (
+              <div className={selectedCity.info.climate ? 'pt-5 border-t border-slate-200/20' : ''}>
+                <h3 className={`text-section flex items-center gap-2 mb-3 ${isLight ? 'text-slate-900' : 'text-white'}`}>
+                  <span>🏛️</span>
+                  <span>Top Attractions</span>
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {selectedCity.info.attractions.slice(0, 5).map((attraction, i) => (
+                    <span 
+                      key={i}
+                      className={`text-body px-4 py-2 rounded-full font-medium ${
+                        isLight 
+                          ? 'bg-slate-100 text-slate-700' 
+                          : 'bg-slate-700/50 text-slate-200'
+                      }`}
+                    >
+                      {attraction}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+        
         {/* Time Difference Table */}
         <div className="mt-4">
           <TimeDifferenceTable city={selectedCity} />
@@ -296,7 +339,7 @@ export default function CityPage({ initialCity }: CityPageProps) {
         {/* Favorite Cities */}
         {favoriteCities.length > 0 && (
           <div className={`rounded-2xl p-4 backdrop-blur-xl border ${theme.card} mt-4`}>
-            <h3 className={`text-base font-semibold ${theme.text} mb-3`}>
+            <h3 className={`text-section ${isLight ? 'text-slate-900' : 'text-white'} mb-3`}>
               ⭐ Your Favorites
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
