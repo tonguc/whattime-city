@@ -149,7 +149,7 @@ export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) 
               <th className={`py-3 px-4 text-center ${textLabel}`}>NOW</th>
               <th className={`py-3 px-4 text-center ${textLabel}`}>DIFF</th>
               <th className={`py-3 px-4 text-center ${textLabel}`}>OVERLAP</th>
-              <th className={`py-3 px-4 text-right hidden sm:table-cell ${textLabel}`}>DIAL</th>
+              <th className={`py-3 pl-4 pr-5 text-right hidden sm:table-cell ${textLabel}`}>DIAL</th>
             </tr>
           </thead>
           <tbody>
@@ -220,7 +220,7 @@ export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) 
                   </td>
                   
                   {/* Dial Code */}
-                  <td className={`py-3.5 px-4 text-right hidden sm:table-cell`}>
+                  <td className={`py-3.5 pl-4 pr-5 text-right hidden sm:table-cell`}>
                     <span className={`font-mono text-body tabular-nums ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
                       {phoneCode}
                     </span>
