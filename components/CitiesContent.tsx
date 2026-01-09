@@ -268,7 +268,7 @@ export default function CitiesContent() {
                             </div>
                           </div>
                           <div className={`text-right flex-shrink-0 ml-4`}>
-                            <span className={`font-medium tabular-nums ${theme.text}`}>
+                            <span className={`font-mono font-medium tabular-nums ${theme.text}`}>
                               {cityTime}
                             </span>
                           </div>
