@@ -486,7 +486,7 @@ export default function OverlapHeatmap({ cities, referenceTimezone }: OverlapHea
                             {city.city}
                           </span>
                           <div className="flex items-center gap-1.5">
-                            <span className={`font-mono text-xs ${textMuted}`}>
+                            <span className={`text-xs ${textMuted}`}>
                               {formatHour(localHour)}
                             </span>
                             {isAwake ? (
