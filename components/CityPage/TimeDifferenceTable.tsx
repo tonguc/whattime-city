@@ -124,31 +124,32 @@ function getMeetingOverlap(diffHours: number): { level: 'high' | 'limited' | 'no
 }
 
 export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) {
-  const { card, text, textMuted, isLight } = useThemeClasses()
+  const { card, textSection, textMeta, textTime, textBody, isLight } = useThemeClasses()
   
   const comparisonCities = getComparisonCities(city)
   
   return (
     <section className={`rounded-2xl border ${card} overflow-hidden`}>
-      <div className="p-4 pb-2">
-        <h2 className={`text-base font-semibold flex items-center gap-2 ${text}`}>
-          🌐 Time Difference from {city.city}
+      <div className="p-4 pb-3">
+        <h2 className={`flex items-center gap-2 ${textSection}`}>
+          <span>🌐</span>
+          <span>Time Difference from {city.city}</span>
         </h2>
-        <p className={`text-xs mt-0.5 ${textMuted}`}>
+        <p className={`mt-1 ${textMeta}`}>
           Click any city for detailed comparison
         </p>
       </div>
       
       {/* Table */}
       <div className="overflow-x-auto">
-        <table className="w-full text-sm">
+        <table className="w-full">
           <thead>
-            <tr className={`border-y text-xs ${isLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-800/50 border-slate-700'}`}>
-              <th className={`py-2 px-3 text-left font-medium ${textMuted}`}>City</th>
-              <th className={`py-2 px-3 text-center font-medium ${textMuted}`}>Now</th>
-              <th className={`py-2 px-3 text-center font-medium ${textMuted}`}>Diff</th>
-              <th className={`py-2 px-3 text-center font-medium ${textMuted}`}>Overlap</th>
-              <th className={`py-2 px-3 text-right font-medium ${textMuted} hidden sm:table-cell`}>Dial</th>
+            <tr className={`border-y ${isLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-800/50 border-slate-700'}`}>
+              <th className={`py-2.5 px-3 text-left text-micro uppercase tracking-wider font-semibold ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>City</th>
+              <th className={`py-2.5 px-3 text-center text-micro uppercase tracking-wider font-semibold ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Now</th>
+              <th className={`py-2.5 px-3 text-center text-micro uppercase tracking-wider font-semibold ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Diff</th>
+              <th className={`py-2.5 px-3 text-center text-micro uppercase tracking-wider font-semibold ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Overlap</th>
+              <th className={`py-2.5 px-3 text-right text-micro uppercase tracking-wider font-semibold hidden sm:table-cell ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Dial</th>
             </tr>
           </thead>
           <tbody>
@@ -172,55 +173,55 @@ export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) 
                   }`}
                 >
                   {/* City Name + Time of Day Icon */}
-                  <td className="py-2.5 px-3">
+                  <td className="py-3 px-3">
                     <a 
                       href={`/${targetCity.slug}`}
-                      className={`font-medium hover:underline flex items-center gap-1.5 ${
+                      className={`font-semibold hover:underline flex items-center gap-1.5 ${
                         isLight ? 'text-blue-600 hover:text-blue-800' : 'text-blue-400 hover:text-blue-300'
                       }`}
                     >
-                      <span className="text-sm">{getTimeOfDayIcon(hour)}</span>
+                      <span className="text-base">{getTimeOfDayIcon(hour)}</span>
                       <span>{targetCity.city}</span>
                     </a>
-                    <span className={`text-xs block ${textMuted}`}>
+                    <span className={`text-meta block mt-0.5 ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
                       {targetCity.country}
                     </span>
                   </td>
                   
-                  {/* Current Time */}
-                  <td className={`py-2.5 px-3 text-center text-sm font-medium tabular-nums ${text}`}>
+                  {/* Current Time - Monospace, tabular nums */}
+                  <td className={`py-3 px-3 text-center ${textTime}`}>
                     {currentTime}
                   </td>
                   
                   {/* Time Difference */}
-                  <td className="py-2.5 px-3 text-center">
-                    <span className={`inline-flex items-center justify-center min-w-[50px] px-2 py-0.5 rounded-full text-xs font-medium ${
+                  <td className="py-3 px-3 text-center">
+                    <span className={`inline-flex items-center justify-center min-w-[52px] px-2.5 py-1 rounded-full text-xs font-semibold ${
                       isSame 
                         ? isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-700 text-slate-300'
                         : isAhead
-                          ? isLight ? 'bg-red-100 text-red-700' : 'bg-red-900/30 text-red-400'
-                          : isLight ? 'bg-green-100 text-green-700' : 'bg-green-900/30 text-green-400'
+                          ? isLight ? 'bg-red-100 text-red-700' : 'bg-red-900/40 text-red-300'
+                          : isLight ? 'bg-green-100 text-green-700' : 'bg-green-900/40 text-green-300'
                     }`}>
                       {diff}
                     </span>
                   </td>
                   
                   {/* Meeting Overlap */}
-                  <td className="py-2.5 px-3 text-center">
-                    <div className="flex items-center justify-center gap-1">
+                  <td className="py-3 px-3 text-center">
+                    <div className="flex items-center justify-center gap-1.5">
                       <span className={`w-2 h-2 rounded-full ${
                         overlap.level === 'high' ? 'bg-green-500' :
                         overlap.level === 'limited' ? 'bg-amber-500' : 'bg-red-500'
                       }`} />
-                      <span className={`text-xs ${textMuted}`}>
+                      <span className={`text-meta ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
                         {overlap.label}
                       </span>
                     </div>
                   </td>
                   
                   {/* Dial Code */}
-                  <td className={`py-2.5 px-3 text-right hidden sm:table-cell`}>
-                    <span className={`text-xs ${textMuted}`}>
+                  <td className={`py-3 px-3 text-right hidden sm:table-cell`}>
+                    <span className={`font-mono text-meta tabular-nums ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
                       {phoneCode}
                     </span>
                   </td>
@@ -235,7 +236,7 @@ export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) 
       <div className={`p-3 border-t flex flex-wrap items-center justify-between gap-2 ${
         isLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-800/30 border-slate-700'
       }`}>
-        <p className={`text-xs ${textMuted}`}>
+        <p className={`text-meta ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
           <span className="inline-flex items-center gap-1">
             <span className="w-2 h-2 rounded-full bg-green-500" /> Good
           </span>
@@ -247,11 +248,11 @@ export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) 
           <span className="inline-flex items-center gap-1">
             <span className="w-2 h-2 rounded-full bg-red-500" /> None
           </span>
-          <span className="ml-2 opacity-60 hidden sm:inline">= Business hours overlap</span>
+          <span className="ml-2 opacity-70 hidden sm:inline">= Business hours overlap</span>
         </p>
         <a
           href={`/meeting?from=${city.slug}`}
-          className={`text-xs font-medium flex items-center gap-1 ${
+          className={`text-meta font-semibold flex items-center gap-1 ${
             isLight ? 'text-blue-600 hover:text-blue-700' : 'text-blue-400 hover:text-blue-300'
           }`}
         >
