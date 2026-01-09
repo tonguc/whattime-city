@@ -23,6 +23,16 @@ export default {
       fontFamily: {
         sans: ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
         display: ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+        mono: ["ui-monospace", "SFMono-Regular", "SF Mono", "Menlo", "Consolas", "Liberation Mono", "monospace"],
+      },
+      fontSize: {
+        // Typography Scale - 6 distinct levels
+        'hero': ['3rem', { lineHeight: '1.1', fontWeight: '700' }],        // 48px - Page anchor
+        'section': ['1.375rem', { lineHeight: '1.25', fontWeight: '600' }], // 22px - Section titles
+        'card-title': ['1.0625rem', { lineHeight: '1.3', fontWeight: '600' }], // 17px - Card headers
+        'body': ['0.9375rem', { lineHeight: '1.5', fontWeight: '400' }],    // 15px - Body text
+        'meta': ['0.8125rem', { lineHeight: '1.4', fontWeight: '400' }],    // 13px - Helper text
+        'micro': ['0.6875rem', { lineHeight: '1.35', fontWeight: '500' }],  // 11px - Badges, labels
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-in",

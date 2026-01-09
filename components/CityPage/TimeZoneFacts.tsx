@@ -119,7 +119,7 @@ function formatDate(date: Date): string {
 }
 
 export default function TimeZoneFacts({ city }: TimeZoneFactsProps) {
-  const { card, text, textMuted, isLight } = useThemeClasses()
+  const { card, textSection, textBody, textMeta, textNumber, isLight } = useThemeClasses()
   
   const tz = tzInfo[city.timezone] || { abbr: city.timezone.split('/').pop(), offset: 'UTC' }
   const dst = dstInfo[city.timezone] || { hasDST: false }
@@ -138,28 +138,29 @@ export default function TimeZoneFacts({ city }: TimeZoneFactsProps) {
 
   return (
     <section className={`rounded-2xl p-4 border ${card}`}>
-      <h2 className={`text-base font-semibold mb-3 flex items-center gap-2 ${text}`}>
-        ⏰ Time Zone Facts
+      <h2 className={`mb-4 flex items-center gap-2 ${textSection}`}>
+        <span>⏰</span>
+        <span>Time Zone Facts</span>
       </h2>
       
       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
         {/* Left: Fact rows */}
-        <div className="space-y-2 flex-1">
+        <div className="space-y-2.5 flex-1">
           {facts.map((fact, i) => (
-            <div key={i} className={`flex items-center gap-3 text-sm ${textMuted}`}>
-              <span className="w-5 text-center">{fact.icon}</span>
-              <span className={`w-12 ${isLight ? 'text-slate-500' : 'text-slate-500'}`}>{fact.label}</span>
-              <span className={`font-medium ${fact.highlight ? 'text-green-600' : text}`}>
+            <div key={i} className="flex items-center gap-3">
+              <span className="w-5 text-center text-base">{fact.icon}</span>
+              <span className={`w-14 text-meta ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>{fact.label}</span>
+              <span className={`font-semibold ${fact.highlight ? 'text-green-600' : (isLight ? 'text-slate-800' : 'text-white')}`}>
                 {fact.value}
               </span>
             </div>
           ))}
           
           {/* IANA Zone */}
-          <div className={`flex items-center gap-3 text-sm ${textMuted}`}>
-            <span className="w-5 text-center">📋</span>
-            <span className={`w-12 ${isLight ? 'text-slate-500' : 'text-slate-500'}`}>IANA</span>
-            <code className={`text-xs px-1.5 py-0.5 rounded font-mono ${
+          <div className="flex items-center gap-3">
+            <span className="w-5 text-center text-base">📋</span>
+            <span className={`w-14 text-meta ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>IANA</span>
+            <code className={`text-xs px-2 py-1 rounded font-mono ${
               isLight ? 'bg-slate-100 text-slate-600' : 'bg-slate-800 text-slate-400'
             }`} title="IANA Time Zone Database identifier">
               {city.timezone}
@@ -172,13 +173,13 @@ export default function TimeZoneFacts({ city }: TimeZoneFactsProps) {
           <div className={`p-3 rounded-xl text-center min-w-[140px] ${
             isLight ? 'bg-amber-50 border border-amber-200' : 'bg-amber-900/20 border border-amber-700/50'
           }`}>
-            <div className={`text-2xl font-bold ${isLight ? 'text-amber-600' : 'text-amber-400'}`}>
+            <div className={`text-3xl font-bold tabular-nums ${isLight ? 'text-amber-600' : 'text-amber-400'}`}>
               {nextDST.days}
             </div>
-            <div className={`text-xs ${isLight ? 'text-amber-700' : 'text-amber-300'}`}>
+            <div className={`text-meta font-medium ${isLight ? 'text-amber-700' : 'text-amber-300'}`}>
               days until DST {nextDST.action}
             </div>
-            <div className={`text-xs mt-1 ${textMuted}`}>
+            <div className={`text-meta mt-1 ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
               {nextDST.date}
             </div>
           </div>
@@ -190,10 +191,10 @@ export default function TimeZoneFacts({ city }: TimeZoneFactsProps) {
             isLight ? 'bg-slate-50 border border-slate-200' : 'bg-slate-800/50 border border-slate-700'
           }`}>
             <div className="text-2xl">🌍</div>
-            <div className={`text-xs mt-1 ${textMuted}`}>
+            <div className={`text-meta font-medium mt-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
               No DST changes
             </div>
-            <div className={`text-xs ${textMuted}`}>
+            <div className={`text-meta ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
               Time stays constant
             </div>
           </div>
@@ -201,11 +202,11 @@ export default function TimeZoneFacts({ city }: TimeZoneFactsProps) {
       </div>
       
       {/* Bottom: EEAT + Summary */}
-      <div className={`mt-3 pt-3 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
-        <p className={`text-xs ${textMuted}`}>
+      <div className={`mt-4 pt-3 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
+        <p className={`text-meta ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
           {city.city} follows {tz.abbr.split('/')[0]} and {dst.hasDST ? 'observes' : 'does not observe'} Daylight Saving Time.
         </p>
-        <p className={`text-xs mt-1 flex items-center gap-1.5 ${
+        <p className={`text-micro mt-1.5 flex items-center gap-1.5 ${
           isLight ? 'text-slate-400' : 'text-slate-500'
         }`}>
           <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

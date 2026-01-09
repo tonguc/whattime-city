@@ -166,7 +166,7 @@ const defaultHours = {
 }
 
 export default function BusinessHoursBox({ city }: BusinessHoursBoxProps) {
-  const { text, isLight } = useThemeClasses()
+  const { textSection, isLight } = useThemeClasses()
   
   const hours = businessHoursData[city.slug] || defaultHours
   
@@ -176,54 +176,55 @@ export default function BusinessHoursBox({ city }: BusinessHoursBoxProps) {
         ? 'bg-gradient-to-br from-emerald-50 to-green-50 border-emerald-200' 
         : 'bg-gradient-to-br from-emerald-900/20 to-green-900/20 border-emerald-700/50'
     }`}>
-      <h2 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${text}`}>
-        🏢 Business Hours in {city.city}
+      <h2 className={`mb-4 flex items-center gap-2 ${textSection}`}>
+        <span>🏢</span>
+        <span>Business Hours in {city.city}</span>
       </h2>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Standard Business */}
         <div className={`p-3 rounded-xl ${isLight ? 'bg-white/70' : 'bg-slate-800/50'}`}>
-          <div className={`text-xs uppercase tracking-wide mb-1 ${isLight ? 'text-emerald-600' : 'text-emerald-400'}`}>
-            Offices
+          <div className={`text-micro mb-1.5 font-semibold ${isLight ? 'text-emerald-600' : 'text-emerald-400'}`}>
+            OFFICES
           </div>
-          <div className={`font-medium ${text}`}>{hours.standard}</div>
+          <div className={`text-body font-semibold ${isLight ? 'text-slate-800' : 'text-white'}`}>{hours.standard}</div>
         </div>
         
         {/* Banks */}
         <div className={`p-3 rounded-xl ${isLight ? 'bg-white/70' : 'bg-slate-800/50'}`}>
-          <div className={`text-xs uppercase tracking-wide mb-1 ${isLight ? 'text-emerald-600' : 'text-emerald-400'}`}>
-            Banks
+          <div className={`text-micro mb-1.5 font-semibold ${isLight ? 'text-emerald-600' : 'text-emerald-400'}`}>
+            BANKS
           </div>
-          <div className={`font-medium ${text}`}>{hours.banks}</div>
+          <div className={`text-body font-semibold ${isLight ? 'text-slate-800' : 'text-white'}`}>{hours.banks}</div>
         </div>
         
         {/* Shops */}
         <div className={`p-3 rounded-xl ${isLight ? 'bg-white/70' : 'bg-slate-800/50'}`}>
-          <div className={`text-xs uppercase tracking-wide mb-1 ${isLight ? 'text-emerald-600' : 'text-emerald-400'}`}>
-            Shops
+          <div className={`text-micro mb-1.5 font-semibold ${isLight ? 'text-emerald-600' : 'text-emerald-400'}`}>
+            SHOPS
           </div>
-          <div className={`font-medium ${text}`}>{hours.shops}</div>
+          <div className={`text-body font-semibold ${isLight ? 'text-slate-800' : 'text-white'}`}>{hours.shops}</div>
         </div>
         
         {/* Restaurants */}
         <div className={`p-3 rounded-xl ${isLight ? 'bg-white/70' : 'bg-slate-800/50'}`}>
-          <div className={`text-xs uppercase tracking-wide mb-1 ${isLight ? 'text-emerald-600' : 'text-emerald-400'}`}>
-            Restaurants
+          <div className={`text-micro mb-1.5 font-semibold ${isLight ? 'text-emerald-600' : 'text-emerald-400'}`}>
+            RESTAURANTS
           </div>
-          <div className={`font-medium ${text}`}>{hours.restaurants || 'Varies'}</div>
+          <div className={`text-body font-semibold ${isLight ? 'text-slate-800' : 'text-white'}`}>{hours.restaurants || 'Varies'}</div>
         </div>
       </div>
       
       {/* Note */}
       {hours.note && (
-        <p className={`mt-3 text-sm ${isLight ? 'text-emerald-700' : 'text-emerald-300'} flex items-center gap-2`}>
+        <p className={`mt-4 text-body ${isLight ? 'text-emerald-700' : 'text-emerald-300'} flex items-center gap-2`}>
           <span>💡</span>
           <span>{hours.note}</span>
         </p>
       )}
       
       {/* Source Disclaimer */}
-      <p className={`mt-3 pt-3 border-t text-xs ${
+      <p className={`mt-4 pt-3 border-t text-meta ${
         isLight ? 'border-emerald-200 text-emerald-600/70' : 'border-emerald-800 text-emerald-400/70'
       }`}>
         Hours are general references based on official business standards. Actual hours may vary.
