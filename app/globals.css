@@ -3,27 +3,17 @@
 @tailwind utilities;
 
 /* ============================================
-   FONT SYSTEM - Tailwind layer ile override
+   FONT SYSTEM - Simple & Clean
    ============================================ */
 
-@layer base {
-  /* System font for body text */
-  html {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  }
-  
-  /* Monospace font for time displays */
-  .font-mono {
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
-  }
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Custom utility for time displays */
-@layer utilities {
-  .time-display {
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
-    font-variant-numeric: tabular-nums;
-  }
+/* Saatler için monospace */
+.time-display {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace !important;
+  font-variant-numeric: tabular-nums;
 }
 
 /* ============================================
