@@ -283,6 +283,46 @@ export default function CityPage({ initialCity }: CityPageProps) {
           <BusinessHoursBox city={selectedCity} />
         </div>
         
+        {/* Climate & Attractions - Tüm şehirler için (info varsa) */}
+        {selectedCity.info && (selectedCity.info.climate || (selectedCity.info.attractions && selectedCity.info.attractions.length > 0)) && (
+          <div className={`rounded-2xl p-4 backdrop-blur-xl border ${theme.card} mt-4`}>
+            {/* Climate */}
+            {selectedCity.info.climate && (
+              <div className="mb-4">
+                <h3 className={`text-base font-semibold flex items-center gap-2 ${theme.text} mb-2`}>
+                  ☀️ Climate
+                </h3>
+                <p className={`text-sm leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+                  {selectedCity.info.climate}
+                </p>
+              </div>
+            )}
+            
+            {/* Attractions */}
+            {selectedCity.info.attractions && selectedCity.info.attractions.length > 0 && (
+              <div className={selectedCity.info.climate ? 'pt-4 border-t border-slate-200/20' : ''}>
+                <h3 className={`text-base font-semibold flex items-center gap-2 ${theme.text} mb-3`}>
+                  🏛️ Top Attractions
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {selectedCity.info.attractions.slice(0, 5).map((attraction, i) => (
+                    <span 
+                      key={i}
+                      className={`text-sm px-3 py-1.5 rounded-full ${
+                        isLight 
+                          ? 'bg-slate-100 text-slate-700' 
+                          : 'bg-slate-700/50 text-slate-200'
+                      }`}
+                    >
+                      {attraction}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+        
         {/* Time Difference Table */}
         <div className="mt-4">
           <TimeDifferenceTable city={selectedCity} />
