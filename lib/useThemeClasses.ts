@@ -24,22 +24,25 @@ export interface ThemeClasses {
   // ASSERTIVE TYPOGRAPHY - "Bana bak" sistemi
   // ═══════════════════════════════════════════════════════════════
   
-  // SHOUT - Göz yakalayan, kaçırılmaz
+  // SHOUT - Göz yakalayan
   textHero: string        // 48px/700 - Sayfa anchor
-  textSection: string     // 24px/700 - Section başlıkları - BÜYÜK VE KALIN
-  textValue: string       // 17px/700 - Önemli değerler (saatler, rakamlar)
+  textSection: string     // 26px/700 - Section başlıkları - BÜYÜK
+  textValue: string       // 17px/700 - Önemli değerler (saatler)
   
-  // SPEAK - Net bilgi veren
+  // SPEAK - Net bilgi
   textCardTitle: string   // 18px/600 - Kart başlıkları
   textBody: string        // 15px/400 - Ana içerik
   
-  // WHISPER - Bilinçli olarak soluk
-  textMeta: string        // 13px/400 - Yardımcı (50% opacity hissi)
-  textMicro: string       // 11px/600 - Etiketler, badge'ler
+  // WHISPER - Çok soluk
+  textLabel: string       // 11px/500 - OFFICES, BANKS etiketleri
+  textMeta: string        // 12px/400 - Açıklamalar (çok soluk)
+  textMicro: string       // 11px/600 - Badge'ler
   
-  // NUMBERS - Saatler ve rakamlar
-  textTime: string        // Monospace, bold, hizalı
+  // NUMBERS
+  textTime: string        // Monospace, bold
   textTimeLarge: string   // Büyük saat
+  textCityName: string    // Grid'de şehir ismi
+  textCityTime: string    // Grid'de saat (bold değil)
   
   // Legacy
   text: string
@@ -92,17 +95,20 @@ export function useThemeClasses(): ThemeClasses {
   }
   
   // ═══════════════════════════════════════════════════════════════
-  // ASSERTIVE COLOR SYSTEM
+  // ASSERTIVE COLOR SYSTEM v2
   // ═══════════════════════════════════════════════════════════════
   
-  // SHOUT: Maximum kontrast - siyah veya beyaz, kaçış yok
+  // SHOUT: Maximum kontrast - siyah veya beyaz
   const colorShout = isLight ? 'text-slate-950' : 'text-white'
   
   // SPEAK: Güçlü ama shout değil
   const colorSpeak = isLight ? 'text-slate-800' : 'text-slate-100'
   
-  // WHISPER: Bilinçli olarak geri planda
-  const colorWhisper = isLight ? 'text-slate-400' : 'text-slate-500'
+  // WHISPER: Bilinçli olarak ÇOK geri planda
+  const colorWhisper = isLight ? 'text-slate-400/70' : 'text-slate-500/70' // opacity ekledim
+  
+  // LABEL: Kategori etiketleri - görünür ama lider değil
+  const colorLabel = isLight ? 'text-slate-500' : 'text-slate-400'
   
   // BODY: Okunabilir ama lider değil
   const colorBody = isLight ? 'text-slate-600' : 'text-slate-300'
@@ -118,11 +124,11 @@ export function useThemeClasses(): ThemeClasses {
     // Hero - Sayfa anchor'u
     textHero: `text-hero ${colorShout}`,
     
-    // Section - Bölüm başlıkları - EN ÖNEMLİ DEĞİŞİKLİK
-    textSection: `text-section ${colorShout}`, // 24px, 700, siyah
+    // Section - Bölüm başlıkları - 26px, BOLD, SİYAH
+    textSection: `text-section ${colorShout}`,
     
     // Value - Önemli rakamlar/saatler - LİDER
-    textValue: `text-value ${colorShout}`, // 17px, 700, siyah
+    textValue: `text-value ${colorShout}`,
     
     // ═══════════════════════════════════════════════════════════════
     // SPEAK - "Bilgi burada"
@@ -132,10 +138,16 @@ export function useThemeClasses(): ThemeClasses {
     textBody: `text-body ${colorBody}`,
     
     // ═══════════════════════════════════════════════════════════════
-    // WHISPER - "Gerekirse bak"
+    // WHISPER - "Gerekirse bak" (ÇOK SOLUK)
     // ═══════════════════════════════════════════════════════════════
     
+    // Label - Kategori etiketleri (OFFICES, BANKS)
+    textLabel: `text-label uppercase tracking-wider ${colorLabel}`,
+    
+    // Meta - Açıklamalar, footer notları (çok soluk)
     textMeta: `text-meta ${colorWhisper}`,
+    
+    // Micro - Badge'ler
     textMicro: `text-micro uppercase tracking-wider ${colorWhisper}`,
     
     // ═══════════════════════════════════════════════════════════════
@@ -144,6 +156,10 @@ export function useThemeClasses(): ThemeClasses {
     
     textTime: `font-mono tabular-nums font-bold ${colorShout}`,
     textTimeLarge: `font-mono tabular-nums font-bold ${colorShout} tracking-tight`,
+    
+    // World Cities grid için - saat normal, şehir semibold
+    textCityName: `text-body font-medium ${colorSpeak}`, // şehir ismi
+    textCityTime: `font-mono tabular-nums text-sm ${colorLabel}`, // saat - bold DEĞİL
     
     // Legacy
     text: colorShout,

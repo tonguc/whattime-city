@@ -124,7 +124,7 @@ function getMeetingOverlap(diffHours: number): { level: 'high' | 'limited' | 'no
 }
 
 export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) {
-  const { card, textSection, textMeta, textTime, textValue, isLight } = useThemeClasses()
+  const { card, textSection, textMeta, textLabel, textTime, textValue, isLight } = useThemeClasses()
   
   const comparisonCities = getComparisonCities(city)
   
@@ -145,11 +145,11 @@ export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) 
         <table className="w-full">
           <thead>
             <tr className={`border-y ${isLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-800/50 border-slate-700'}`}>
-              <th className={`py-3 px-4 text-left text-micro ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>CITY</th>
-              <th className={`py-3 px-4 text-center text-micro ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>NOW</th>
-              <th className={`py-3 px-4 text-center text-micro ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>DIFF</th>
-              <th className={`py-3 px-4 text-center text-micro ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>OVERLAP</th>
-              <th className={`py-3 px-4 text-right text-micro hidden sm:table-cell ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>DIAL</th>
+              <th className={`py-3 px-4 text-left ${textLabel}`}>CITY</th>
+              <th className={`py-3 px-4 text-center ${textLabel}`}>NOW</th>
+              <th className={`py-3 px-4 text-center ${textLabel}`}>DIFF</th>
+              <th className={`py-3 px-4 text-center ${textLabel}`}>OVERLAP</th>
+              <th className={`py-3 px-4 text-right hidden sm:table-cell ${textLabel}`}>DIAL</th>
             </tr>
           </thead>
           <tbody>

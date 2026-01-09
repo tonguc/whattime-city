@@ -166,7 +166,7 @@ const defaultHours = {
 }
 
 export default function BusinessHoursBox({ city }: BusinessHoursBoxProps) {
-  const { textSection, textValue, textMeta, isLight } = useThemeClasses()
+  const { textSection, textValue, textLabel, textMeta, isLight } = useThemeClasses()
   
   const hours = businessHoursData[city.slug] || defaultHours
   
@@ -184,34 +184,34 @@ export default function BusinessHoursBox({ city }: BusinessHoursBoxProps) {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Standard Business */}
         <div className={`p-4 rounded-xl ${isLight ? 'bg-white/80' : 'bg-slate-800/60'}`}>
-          <div className={`text-micro mb-2 ${isLight ? 'text-emerald-600' : 'text-emerald-400'}`}>
+          <div className={`mb-2 ${isLight ? 'text-emerald-600/80' : 'text-emerald-400/80'} text-label uppercase tracking-wider`}>
             OFFICES
           </div>
-          <div className={`${textValue}`}>{hours.standard}</div>
+          <div className={textValue}>{hours.standard}</div>
         </div>
         
         {/* Banks */}
         <div className={`p-4 rounded-xl ${isLight ? 'bg-white/80' : 'bg-slate-800/60'}`}>
-          <div className={`text-micro mb-2 ${isLight ? 'text-emerald-600' : 'text-emerald-400'}`}>
+          <div className={`mb-2 ${isLight ? 'text-emerald-600/80' : 'text-emerald-400/80'} text-label uppercase tracking-wider`}>
             BANKS
           </div>
-          <div className={`${textValue}`}>{hours.banks}</div>
+          <div className={textValue}>{hours.banks}</div>
         </div>
         
         {/* Shops */}
         <div className={`p-4 rounded-xl ${isLight ? 'bg-white/80' : 'bg-slate-800/60'}`}>
-          <div className={`text-micro mb-2 ${isLight ? 'text-emerald-600' : 'text-emerald-400'}`}>
+          <div className={`mb-2 ${isLight ? 'text-emerald-600/80' : 'text-emerald-400/80'} text-label uppercase tracking-wider`}>
             SHOPS
           </div>
-          <div className={`${textValue}`}>{hours.shops}</div>
+          <div className={textValue}>{hours.shops}</div>
         </div>
         
         {/* Restaurants */}
         <div className={`p-4 rounded-xl ${isLight ? 'bg-white/80' : 'bg-slate-800/60'}`}>
-          <div className={`text-micro mb-2 ${isLight ? 'text-emerald-600' : 'text-emerald-400'}`}>
+          <div className={`mb-2 ${isLight ? 'text-emerald-600/80' : 'text-emerald-400/80'} text-label uppercase tracking-wider`}>
             RESTAURANTS
           </div>
-          <div className={`${textValue}`}>{hours.restaurants || 'Varies'}</div>
+          <div className={textValue}>{hours.restaurants || 'Varies'}</div>
         </div>
       </div>
       
@@ -223,11 +223,11 @@ export default function BusinessHoursBox({ city }: BusinessHoursBoxProps) {
         </p>
       )}
       
-      {/* Source Disclaimer */}
+      {/* Source Disclaimer - çok soluk */}
       <p className={`mt-4 pt-3 border-t ${textMeta} ${
         isLight ? 'border-emerald-200' : 'border-emerald-800'
       }`}>
-        Hours are general references based on official business standards. Actual hours may vary.
+        Hours based on official business standards. Actual hours may vary.
       </p>
     </section>
   )

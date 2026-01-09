@@ -119,7 +119,7 @@ function formatDate(date: Date): string {
 }
 
 export default function TimeZoneFacts({ city }: TimeZoneFactsProps) {
-  const { card, textSection, textValue, textMeta, isLight } = useThemeClasses()
+  const { card, textSection, textValue, textLabel, textMeta, isLight } = useThemeClasses()
   
   const tz = tzInfo[city.timezone] || { abbr: city.timezone.split('/').pop(), offset: 'UTC' }
   const dst = dstInfo[city.timezone] || { hasDST: false }
@@ -149,7 +149,7 @@ export default function TimeZoneFacts({ city }: TimeZoneFactsProps) {
           {facts.map((fact, i) => (
             <div key={i} className="flex items-center gap-3">
               <span className="w-6 text-center text-lg">{fact.icon}</span>
-              <span className={`w-14 ${textMeta}`}>{fact.label}</span>
+              <span className={`w-14 ${textLabel}`}>{fact.label}</span>
               <span className={`${textValue} ${fact.highlight ? 'text-green-600' : ''}`}>
                 {fact.value}
               </span>
@@ -159,7 +159,7 @@ export default function TimeZoneFacts({ city }: TimeZoneFactsProps) {
           {/* IANA Zone */}
           <div className="flex items-center gap-3">
             <span className="w-6 text-center text-lg">📋</span>
-            <span className={`w-14 ${textMeta}`}>IANA</span>
+            <span className={`w-14 ${textLabel}`}>IANA</span>
             <code className={`text-sm px-2.5 py-1 rounded font-mono font-medium ${
               isLight ? 'bg-slate-100 text-slate-700' : 'bg-slate-800 text-slate-300'
             }`}>
@@ -194,23 +194,23 @@ export default function TimeZoneFacts({ city }: TimeZoneFactsProps) {
             <div className={`text-body font-semibold mt-2 ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
               No DST changes
             </div>
-            <div className={`${textMeta}`}>
+            <div className={textMeta}>
               Time stays constant
             </div>
           </div>
         )}
       </div>
       
-      {/* Bottom: Summary */}
+      {/* Bottom: Summary - çok soluk */}
       <div className={`mt-5 pt-4 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
-        <p className={`text-body ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-          {city.city} follows <strong>{tz.abbr.split('/')[0]}</strong> and {dst.hasDST ? 'observes' : 'does not observe'} Daylight Saving Time.
+        <p className={textMeta}>
+          {city.city} follows <span className="font-medium">{tz.abbr.split('/')[0]}</span> · {dst.hasDST ? 'Observes' : 'Does not observe'} Daylight Saving Time
         </p>
-        <p className={`${textMeta} mt-2 flex items-center gap-1.5`}>
-          <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <p className={`${textMeta} mt-1 flex items-center gap-1.5`}>
+          <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
           </svg>
-          <span>Data: <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener" className="underline hover:no-underline">IANA Time Zone Database</a></span>
+          <span>Source: IANA Time Zone Database</span>
         </p>
       </div>
     </section>

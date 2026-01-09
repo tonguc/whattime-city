@@ -27,29 +27,32 @@ export default {
       },
       fontSize: {
         // ═══════════════════════════════════════════════════════════════
-        // ASSERTIVE TYPOGRAPHY SCALE - "Bu önemli, buna bak" 
+        // ASSERTIVE TYPOGRAPHY SCALE v2 - Net hiyerarşi
         // ═══════════════════════════════════════════════════════════════
         
-        // HERO - Sayfa anchor'u, kaçırılmaz
+        // HERO - Sayfa anchor'u
         'hero': ['3rem', { lineHeight: '1.05', fontWeight: '700', letterSpacing: '-0.02em' }],
         
-        // SECTION - Bölüm başlıkları, GÖZ YAKALAMALI
-        'section': ['1.5rem', { lineHeight: '1.2', fontWeight: '700', letterSpacing: '-0.01em' }], // 24px BOLD
+        // SECTION - Bölüm başlıkları - BÜYÜK VE NET
+        'section': ['1.625rem', { lineHeight: '1.2', fontWeight: '700', letterSpacing: '-0.01em' }], // 26px BOLD
         
-        // CARD TITLE - Kart başlıkları, net ve güçlü
+        // CARD TITLE - Kart başlıkları
         'card-title': ['1.125rem', { lineHeight: '1.25', fontWeight: '600' }], // 18px
         
-        // VALUE - Önemli değerler (saatler, rakamlar) - LIDER
+        // VALUE - Önemli değerler (saatler, rakamlar) - LİDER
         'value': ['1.0625rem', { lineHeight: '1.3', fontWeight: '700' }], // 17px BOLD
+        
+        // LABEL - Kategori etiketleri (OFFICES, BANKS) - geri planda
+        'label': ['0.6875rem', { lineHeight: '1.3', fontWeight: '500', letterSpacing: '0.06em' }], // 11px
         
         // BODY - Ana içerik
         'body': ['0.9375rem', { lineHeight: '1.55', fontWeight: '400' }], // 15px
         
-        // META - Yardımcı (bilinçli olarak soluk)
-        'meta': ['0.8125rem', { lineHeight: '1.4', fontWeight: '400' }], // 13px
+        // META - Yardımcı (bilinçli olarak ÇOK soluk)
+        'meta': ['0.75rem', { lineHeight: '1.4', fontWeight: '400' }], // 12px (daha küçük)
         
-        // MICRO - Etiketler, badge'ler
-        'micro': ['0.6875rem', { lineHeight: '1.3', fontWeight: '600', letterSpacing: '0.05em' }], // 11px SEMIBOLD
+        // MICRO - Badge'ler
+        'micro': ['0.6875rem', { lineHeight: '1.3', fontWeight: '600', letterSpacing: '0.05em' }], // 11px
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-in",
