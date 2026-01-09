@@ -188,8 +188,8 @@ export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) 
                     </span>
                   </td>
                   
-                  {/* Current Time - font-mono inline yazıldı */}
-                  <td className={`py-3.5 px-4 text-center font-mono tabular-nums font-bold ${isLight ? 'text-slate-900' : 'text-white'}`}>
+                  {/* Current Time - time-display class ile monospace */}
+                  <td className={`py-3.5 px-4 text-center time-display font-bold ${isLight ? 'text-slate-900' : 'text-white'}`}>
                     {currentTime}
                   </td>
                   

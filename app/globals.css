@@ -2,7 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Font loaded via preload in layout.tsx for better CLS */
+/* ============================================
+   FONT SYSTEM - Tailwind layer ile override
+   ============================================ */
+
+@layer base {
+  /* System font for body text */
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  
+  /* Monospace font for time displays */
+  .font-mono {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+}
+
+/* Custom utility for time displays */
+@layer utilities {
+  .time-display {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
 
 /* ============================================
    CSS CUSTOM PROPERTIES (Variables)
@@ -117,16 +139,6 @@
 /* Prevent layout shift from scrollbar appearing/disappearing */
 html {
   scrollbar-gutter: stable;
-}
-
-/* System fonts - Poppins kaldırıldı (performance) */
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-/* font-mono için override engelleme - saatler için */
-.font-mono {
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace !important;
 }
 
 /* Hide scrollbar for horizontal tabs */
