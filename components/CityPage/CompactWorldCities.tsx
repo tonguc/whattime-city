@@ -33,12 +33,12 @@ export default function CompactWorldCities({ selectedCity, onCitySelect }: Compa
   const remainingCount = totalCities - 12
 
   return (
-    <section className={`rounded-2xl p-4 border ${card} mt-4`}>
+    <section className={`rounded-2xl p-5 border ${card} mt-4`}>
       <h3 className={`mb-4 ${textSection}`}>
         🌍 World Cities
       </h3>
       
-      {/* Compact City Grid - Box style with gray background */}
+      {/* Compact City Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
         {worldCities.map((city) => (
           <a
@@ -48,16 +48,16 @@ export default function CompactWorldCities({ selectedCity, onCitySelect }: Compa
               e.preventDefault()
               onCitySelect(city)
             }}
-            className={`flex items-center justify-between px-3 py-2.5 rounded-lg transition-all ${
+            className={`flex items-center justify-between px-4 py-3 rounded-lg transition-all ${
               isLight 
                 ? 'bg-slate-100 hover:bg-slate-200' 
                 : 'bg-slate-800 hover:bg-slate-700'
             }`}
           >
-            <span className={`text-body font-medium truncate ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
+            <span className={`text-body font-semibold truncate ${isLight ? 'text-slate-800' : 'text-white'}`}>
               {city.city}
             </span>
-            <span className={`font-mono tabular-nums text-meta ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+            <span className={`font-mono tabular-nums font-bold text-body ml-2 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
               {getCurrentTime(city)}
             </span>
           </a>
@@ -68,10 +68,10 @@ export default function CompactWorldCities({ selectedCity, onCitySelect }: Compa
       {!showAll && remainingCount > 0 && (
         <button
           onClick={() => setShowAll(true)}
-          className={`w-full mt-3 py-2.5 rounded-lg text-body font-medium transition-all ${
+          className={`w-full mt-4 py-3 rounded-lg text-body font-semibold transition-all ${
             isLight 
-              ? 'bg-slate-50 hover:bg-slate-100 text-slate-600 border border-slate-200' 
-              : 'bg-slate-800/50 hover:bg-slate-700 text-slate-400 border border-slate-700'
+              ? 'bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200' 
+              : 'bg-slate-800/50 hover:bg-slate-700 text-slate-300 border border-slate-700'
           }`}
         >
           Show {remainingCount} more cities
@@ -82,10 +82,10 @@ export default function CompactWorldCities({ selectedCity, onCitySelect }: Compa
       {showAll && (
         <button
           onClick={() => setShowAll(false)}
-          className={`w-full mt-3 py-2.5 rounded-lg text-body font-medium transition-all ${
+          className={`w-full mt-4 py-3 rounded-lg text-body font-semibold transition-all ${
             isLight 
-              ? 'bg-slate-50 hover:bg-slate-100 text-slate-600 border border-slate-200' 
-              : 'bg-slate-800/50 hover:bg-slate-700 text-slate-400 border border-slate-700'
+              ? 'bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200' 
+              : 'bg-slate-800/50 hover:bg-slate-700 text-slate-300 border border-slate-700'
           }`}
         >
           Show less
@@ -96,7 +96,7 @@ export default function CompactWorldCities({ selectedCity, onCitySelect }: Compa
       <div className="mt-4 text-center">
         <a 
           href="/cities" 
-          className={`text-body font-semibold ${isLight ? 'text-blue-600' : 'text-blue-400'} hover:underline`}
+          className={`text-body font-bold ${isLight ? 'text-blue-600' : 'text-blue-400'} hover:underline`}
         >
           View all {cities.length} cities →
         </a>
