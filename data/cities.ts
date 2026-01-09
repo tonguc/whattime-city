@@ -3416,406 +3416,2324 @@ export const cities: City[] = [
 
   // ========== CAPITAL CITIES FOR NEW COUNTRIES ==========
   // Africa Capitals
-  { slug: 'tripoli', city: 'Tripoli', timezone: 'Africa/Tripoli', country: 'Libya', countryCode: 'LY', lat: 32.89, lng: 13.19, tier: 2, continent: 'africa' },
-  { slug: 'khartoum', city: 'Khartoum', timezone: 'Africa/Khartoum', country: 'Sudan', countryCode: 'SD', lat: 15.59, lng: 32.53, tier: 2, continent: 'africa' },
-  { slug: 'juba', city: 'Juba', timezone: 'Africa/Juba', country: 'South Sudan', countryCode: 'SS', lat: 4.85, lng: 31.58, tier: 3, continent: 'africa' },
-  { slug: 'kampala', city: 'Kampala', timezone: 'Africa/Kampala', country: 'Uganda', countryCode: 'UG', lat: 0.31, lng: 32.58, tier: 2, continent: 'africa' },
-  { slug: 'kigali', city: 'Kigali', timezone: 'Africa/Kigali', country: 'Rwanda', countryCode: 'RW', lat: -1.94, lng: 30.06, tier: 2, continent: 'africa' },
-  { slug: 'gitega', city: 'Gitega', timezone: 'Africa/Bujumbura', country: 'Burundi', countryCode: 'BI', lat: -3.43, lng: 29.93, tier: 3, continent: 'africa' },
-  { slug: 'kinshasa', city: 'Kinshasa', timezone: 'Africa/Kinshasa', country: 'DR Congo', countryCode: 'CD', lat: -4.44, lng: 15.27, tier: 2, continent: 'africa' },
-  { slug: 'brazzaville', city: 'Brazzaville', timezone: 'Africa/Brazzaville', country: 'Congo', countryCode: 'CG', lat: -4.27, lng: 15.28, tier: 2, continent: 'africa' },
-  { slug: 'harare', city: 'Harare', timezone: 'Africa/Harare', country: 'Zimbabwe', countryCode: 'ZW', lat: -17.83, lng: 31.05, tier: 2, continent: 'africa' },
-  { slug: 'lusaka', city: 'Lusaka', timezone: 'Africa/Lusaka', country: 'Zambia', countryCode: 'ZM', lat: -15.39, lng: 28.32, tier: 2, continent: 'africa' },
-  { slug: 'gaborone', city: 'Gaborone', timezone: 'Africa/Gaborone', country: 'Botswana', countryCode: 'BW', lat: -24.65, lng: 25.91, tier: 2, continent: 'africa' },
-  { slug: 'windhoek', city: 'Windhoek', timezone: 'Africa/Windhoek', country: 'Namibia', countryCode: 'NA', lat: -22.56, lng: 17.08, tier: 2, continent: 'africa' },
-  { slug: 'maputo', city: 'Maputo', timezone: 'Africa/Maputo', country: 'Mozambique', countryCode: 'MZ', lat: -25.97, lng: 32.58, tier: 2, continent: 'africa' },
-  { slug: 'luanda', city: 'Luanda', timezone: 'Africa/Luanda', country: 'Angola', countryCode: 'AO', lat: -8.84, lng: 13.23, tier: 2, continent: 'africa' },
-  { slug: 'yaounde', city: 'Yaoundé', timezone: 'Africa/Douala', country: 'Cameroon', countryCode: 'CM', lat: 3.87, lng: 11.52, tier: 2, continent: 'africa' },
-  { slug: 'yamoussoukro', city: 'Yamoussoukro', timezone: 'Africa/Abidjan', country: 'Ivory Coast', countryCode: 'CI', lat: 6.82, lng: -5.28, tier: 3, continent: 'africa' },
-  { slug: 'dakar', city: 'Dakar', timezone: 'Africa/Dakar', country: 'Senegal', countryCode: 'SN', lat: 14.69, lng: -17.44, tier: 2, continent: 'africa' },
-  { slug: 'bamako', city: 'Bamako', timezone: 'Africa/Bamako', country: 'Mali', countryCode: 'ML', lat: 12.64, lng: -8.00, tier: 2, continent: 'africa' },
-  { slug: 'ouagadougou', city: 'Ouagadougou', timezone: 'Africa/Ouagadougou', country: 'Burkina Faso', countryCode: 'BF', lat: 12.37, lng: -1.52, tier: 2, continent: 'africa' },
-  { slug: 'niamey', city: 'Niamey', timezone: 'Africa/Niamey', country: 'Niger', countryCode: 'NE', lat: 13.51, lng: 2.11, tier: 2, continent: 'africa' },
+  { slug: 'tripoli', city: 'Tripoli', timezone: 'Africa/Tripoli', country: 'Libya', countryCode: 'LY', lat: 32.89, lng: 13.19, tier: 2, continent: 'africa',
+    info: {
+      currency: 'Libyan Dinar', currencySymbol: 'LD', population: '1.2M', phoneCode: '+218 21', language: 'Arabic',
+      climate: 'Hot semi-arid with hot dry summers (30-38°C) and mild winters (12-18°C). Very little rainfall.',
+      attractions: ['Red Castle Museum', 'Martyrs\' Square', 'Arch of Marcus Aurelius', 'Old Town Medina', 'Gurgi Mosque'],
+      demographics: 'Capital and largest city of Libya on Mediterranean coast. Ancient Phoenician city with Roman and Ottoman heritage.'
+    }
+  },
+  { slug: 'khartoum', city: 'Khartoum', timezone: 'Africa/Khartoum', country: 'Sudan', countryCode: 'SD', lat: 15.59, lng: 32.53, tier: 2, continent: 'africa',
+    info: {
+      currency: 'Sudanese Pound', currencySymbol: 'SDG', population: '5.3M', phoneCode: '+249 15', language: 'Arabic, English',
+      climate: 'Hot desert with extreme heat (35-45°C) most of year. Brief rainy season July-September. Very dry.',
+      attractions: ['Confluence of the Niles', 'Sudan National Museum', 'Tuti Island', 'Omdurman Souq', 'Republican Palace'],
+      demographics: 'Capital of Sudan, located where Blue and White Nile rivers merge. One of the hottest major cities in the world.'
+    }
+  },
+  { slug: 'juba', city: 'Juba', timezone: 'Africa/Juba', country: 'South Sudan', countryCode: 'SS', lat: 4.85, lng: 31.58, tier: 3, continent: 'africa',
+    info: {
+      currency: 'South Sudanese Pound', currencySymbol: 'SSP', population: '500K', phoneCode: '+211', language: 'English, Arabic, Juba Arabic',
+      climate: 'Tropical with wet season (April-November) and dry season. Hot year-round (25-38°C).',
+      attractions: ['Juba Bridge', 'Nile River', 'Jebel Kujur', 'Nimule National Park', 'Konyo Konyo Market'],
+      demographics: 'Capital of South Sudan, world\'s newest country (2011). Located on the White Nile, growing despite challenges.'
+    }
+  },
+  { slug: 'kampala', city: 'Kampala', timezone: 'Africa/Kampala', country: 'Uganda', countryCode: 'UG', lat: 0.31, lng: 32.58, tier: 2, continent: 'africa',
+    info: {
+      currency: 'Ugandan Shilling', currencySymbol: 'USh', population: '1.7M', phoneCode: '+256 41', language: 'English, Swahili, Luganda',
+      climate: 'Tropical with two rainy seasons (March-May, September-November). Mild temperatures (17-27°C) due to altitude.',
+      attractions: ['Kasubi Tombs', 'Uganda Museum', 'Gadaffi Mosque', 'Ndere Centre', 'Owino Market'],
+      demographics: 'Capital and largest city of Uganda, built on seven hills like Rome. Gateway to mountain gorillas and East African safaris.'
+    }
+  },
+  { slug: 'kigali', city: 'Kigali', timezone: 'Africa/Kigali', country: 'Rwanda', countryCode: 'RW', lat: -1.94, lng: 30.06, tier: 2, continent: 'africa',
+    info: {
+      currency: 'Rwandan Franc', currencySymbol: 'FRw', population: '1.2M', phoneCode: '+250', language: 'Kinyarwanda, English, French',
+      climate: 'Tropical highland with mild temperatures year-round (15-27°C). Two rainy seasons (March-May, October-November).',
+      attractions: ['Kigali Genocide Memorial', 'Kimironko Market', 'Inema Arts Center', 'Mount Kigali', 'Nyamirambo'],
+      demographics: 'Capital and largest city of Rwanda, one of Africa\'s cleanest cities. Known for remarkable post-genocide transformation.'
+    }
+  },
+  { slug: 'gitega', city: 'Gitega', timezone: 'Africa/Bujumbura', country: 'Burundi', countryCode: 'BI', lat: -3.43, lng: 29.93, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Burundian Franc', currencySymbol: 'FBu', population: '135K', phoneCode: '+257 22', language: 'Kirundi, French',
+      climate: 'Tropical highland with mild temperatures year-round (16-26°C). Two rainy seasons.',
+      attractions: ['National Museum', 'Gitega Cathedral', 'Royal Drum Sanctuary', 'Mount Gikizi', 'Ruvubu National Park'],
+      demographics: 'Political capital of Burundi since 2019, located in central highlands. Former royal capital with rich cultural heritage.'
+    }
+  },
+  { slug: 'kinshasa', city: 'Kinshasa', timezone: 'Africa/Kinshasa', country: 'DR Congo', countryCode: 'CD', lat: -4.44, lng: 15.27, tier: 2, continent: 'africa',
+    info: {
+      currency: 'Congolese Franc', currencySymbol: 'FC', population: '17M', phoneCode: '+243 12', language: 'French, Lingala, Kikongo',
+      climate: 'Tropical wet and dry with rainy season (October-May) and dry season. Hot year-round (24-33°C).',
+      attractions: ['Lola ya Bonobo', 'National Museum', 'Académie des Beaux-Arts', 'Mont Ngaliema', 'Marché de la Liberté'],
+      demographics: 'Capital of DR Congo, third-largest city in Africa. Largest French-speaking city in the world, faces Brazzaville across the Congo River.'
+    }
+  },
+  { slug: 'brazzaville', city: 'Brazzaville', timezone: 'Africa/Brazzaville', country: 'Congo', countryCode: 'CG', lat: -4.27, lng: 15.28, tier: 2, continent: 'africa',
+    info: {
+      currency: 'Central African CFA Franc', currencySymbol: 'CFA', population: '1.8M', phoneCode: '+242', language: 'French, Lingala, Kikongo',
+      climate: 'Tropical wet and dry with rainy seasons (October-December, March-May). Temperatures 21-32°C year-round.',
+      attractions: ['Basilique Sainte-Anne', 'Nabemba Tower', 'Poto-Poto School of Painting', 'Pierre Savorgnan de Brazza Memorial', 'Congo River'],
+      demographics: 'Capital of Republic of Congo, directly across the Congo River from Kinshasa. Closest capital cities in the world.'
+    }
+  },
+  { slug: 'harare', city: 'Harare', timezone: 'Africa/Harare', country: 'Zimbabwe', countryCode: 'ZW', lat: -17.83, lng: 31.05, tier: 2, continent: 'africa',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '1.6M', phoneCode: '+263 4', language: 'English, Shona, Ndebele',
+      climate: 'Subtropical highland with warm wet summers (18-26°C) and cool dry winters (7-21°C). Rainy season November-March.',
+      attractions: ['National Gallery', 'Mukuvisi Woodlands', 'Harare Gardens', 'Mbare Musika Market', 'Chapungu Sculpture Park'],
+      demographics: 'Capital and largest city of Zimbabwe, located at 1,483m elevation. Major commercial and cultural center of southern Africa.'
+    }
+  },
+  { slug: 'lusaka', city: 'Lusaka', timezone: 'Africa/Lusaka', country: 'Zambia', countryCode: 'ZM', lat: -15.39, lng: 28.32, tier: 2, continent: 'africa',
+    info: {
+      currency: 'Zambian Kwacha', currencySymbol: 'ZMW', population: '3.3M', phoneCode: '+260 21', language: 'English, Nyanja, Bemba',
+      climate: 'Humid subtropical with warm wet summers (20-27°C) and cool dry winters (10-23°C). Rainy season November-April.',
+      attractions: ['Lusaka National Museum', 'Munda Wanga Environmental Park', 'Freedom Statue', 'Kabwata Cultural Village', 'Arcades Shopping Mall'],
+      demographics: 'Capital and largest city of Zambia, one of fastest-developing cities in southern Africa. Central hub for commerce and government.'
+    }
+  },
+  { slug: 'gaborone', city: 'Gaborone', timezone: 'Africa/Gaborone', country: 'Botswana', countryCode: 'BW', lat: -24.65, lng: 25.91, tier: 2, continent: 'africa',
+    info: {
+      currency: 'Botswana Pula', currencySymbol: 'P', population: '230K', phoneCode: '+267', language: 'English, Setswana',
+      climate: 'Semi-arid with hot summers (25-35°C) and mild dry winters (5-22°C). Rainy season October-April.',
+      attractions: ['Three Dikgosi Monument', 'Gaborone Game Reserve', 'National Museum', 'Mokolodi Nature Reserve', 'Kgale Hill'],
+      demographics: 'Capital and largest city of Botswana, one of fastest-growing cities in Africa. Diamond trade and government center.'
+    }
+  },
+  { slug: 'windhoek', city: 'Windhoek', timezone: 'Africa/Windhoek', country: 'Namibia', countryCode: 'NA', lat: -22.56, lng: 17.08, tier: 2, continent: 'africa',
+    info: {
+      currency: 'Namibian Dollar', currencySymbol: 'N$', population: '430K', phoneCode: '+264 61', language: 'English, Afrikaans, German',
+      climate: 'Semi-arid with warm summers (25-32°C) and mild dry winters (8-22°C). Most rain December-April at 1,700m altitude.',
+      attractions: ['Christuskirche', 'Independence Memorial Museum', 'Craft Centre', 'Joe\'s Beerhouse', 'Daan Viljoen Game Reserve'],
+      demographics: 'Capital of Namibia, cleanest city in Africa. German colonial heritage visible in architecture, gateway to Namib Desert.'
+    }
+  },
+  { slug: 'maputo', city: 'Maputo', timezone: 'Africa/Maputo', country: 'Mozambique', countryCode: 'MZ', lat: -25.97, lng: 32.58, tier: 2, continent: 'africa',
+    info: {
+      currency: 'Mozambican Metical', currencySymbol: 'MT', population: '1.1M', phoneCode: '+258 21', language: 'Portuguese',
+      climate: 'Tropical with hot wet summers (25-32°C) and mild dry winters (18-26°C). Rainy season October-March.',
+      attractions: ['Central Train Station', 'Fortaleza da Nossa Senhora', 'FEIMA Craft Market', 'Natural History Museum', 'Costa do Sol Beach'],
+      demographics: 'Capital and largest city of Mozambique, blend of African and Portuguese colonial heritage. Major port and economic center.'
+    }
+  },
+  { slug: 'luanda', city: 'Luanda', timezone: 'Africa/Luanda', country: 'Angola', countryCode: 'AO', lat: -8.84, lng: 13.23, tier: 2, continent: 'africa',
+    info: {
+      currency: 'Angolan Kwanza', currencySymbol: 'Kz', population: '8.3M', phoneCode: '+244 22', language: 'Portuguese',
+      climate: 'Semi-arid with warm temperatures year-round (24-30°C). Rainy season November-April, dry and cool May-October.',
+      attractions: ['Fortaleza de São Miguel', 'Ilha de Luanda', 'National Museum of Slavery', 'Marginal Promenade', 'Iron Palace'],
+      demographics: 'Capital and largest city of Angola, one of Africa\'s most expensive cities. Major port and oil industry center.'
+    }
+  },
+  { slug: 'yaounde', city: 'Yaoundé', timezone: 'Africa/Douala', country: 'Cameroon', countryCode: 'CM', lat: 3.87, lng: 11.52, tier: 2, continent: 'africa',
+    info: {
+      currency: 'Central African CFA Franc', currencySymbol: 'CFA', population: '4.1M', phoneCode: '+237 2', language: 'French, English',
+      climate: 'Tropical with two rainy seasons (March-June, September-November). Mild due to elevation (750m), 20-28°C.',
+      attractions: ['National Museum', 'Reunification Monument', 'Mvog-Betsi Zoo', 'Mount Fébé', 'Mefou National Park'],
+      demographics: 'Capital of Cameroon since 1922, administrative center. Hilly "city of seven hills" with government and diplomatic functions.'
+    }
+  },
+  { slug: 'yamoussoukro', city: 'Yamoussoukro', timezone: 'Africa/Abidjan', country: 'Ivory Coast', countryCode: 'CI', lat: 6.82, lng: -5.28, tier: 3, continent: 'africa',
+    info: {
+      currency: 'West African CFA Franc', currencySymbol: 'CFA', population: '360K', phoneCode: '+225 30', language: 'French, Baoulé',
+      climate: 'Tropical with rainy seasons (March-June, September-November). Warm year-round (24-32°C).',
+      attractions: ['Basilica of Our Lady of Peace', 'Presidential Palace', 'Sacred Crocodile Lake', 'Félix Houphouët-Boigny Foundation', 'Golf Course'],
+      demographics: 'Official capital of Ivory Coast since 1983. Home to world\'s largest church (Basilica), birthplace of first president.'
+    }
+  },
+  { slug: 'dakar', city: 'Dakar', timezone: 'Africa/Dakar', country: 'Senegal', countryCode: 'SN', lat: 14.69, lng: -17.44, tier: 2, continent: 'africa',
+    info: {
+      currency: 'West African CFA Franc', currencySymbol: 'CFA', population: '1.2M', phoneCode: '+221 33', language: 'French, Wolof',
+      climate: 'Hot semi-arid with dry season (November-May) and wet season. Temperatures 20-32°C, ocean breezes provide relief.',
+      attractions: ['Gorée Island', 'African Renaissance Monument', 'IFAN Museum', 'Lac Rose', 'Mosque of Divinity'],
+      demographics: 'Capital and largest city of Senegal, westernmost city in Africa. Major port and former endpoint of Paris-Dakar Rally.'
+    }
+  },
+  { slug: 'bamako', city: 'Bamako', timezone: 'Africa/Bamako', country: 'Mali', countryCode: 'ML', lat: 12.64, lng: -8.00, tier: 2, continent: 'africa',
+    info: {
+      currency: 'West African CFA Franc', currencySymbol: 'CFA', population: '2.7M', phoneCode: '+223 20', language: 'French, Bambara',
+      climate: 'Tropical savanna with hot dry season (35-40°C) and rainy season June-September (25-32°C).',
+      attractions: ['National Museum of Mali', 'Grand Mosque', 'Point G Hill', 'Bamako Zoo', 'Niger River Promenade'],
+      demographics: 'Capital and largest city of Mali, fastest-growing city in Africa. Major trade and cultural center.'
+    }
+  },
+  { slug: 'ouagadougou', city: 'Ouagadougou', timezone: 'Africa/Ouagadougou', country: 'Burkina Faso', countryCode: 'BF', lat: 12.37, lng: -1.52, tier: 2, continent: 'africa',
+    info: {
+      currency: 'West African CFA Franc', currencySymbol: 'CFA', population: '2.8M', phoneCode: '+226', language: 'French, Mossi',
+      climate: 'Hot semi-arid with extreme heat (35-42°C) most of year. Rainy season June-September.',
+      attractions: ['Grand Mosque', 'National Museum', 'FESPACO Film Festival', 'Bangr-Weoogo Urban Park', 'Grand Marché'],
+      demographics: 'Capital and largest city of Burkina Faso, known as "Ouaga". Hosts Africa\'s largest film festival (FESPACO).'
+    }
+  },
+  { slug: 'niamey', city: 'Niamey', timezone: 'Africa/Niamey', country: 'Niger', countryCode: 'NE', lat: 13.51, lng: 2.11, tier: 2, continent: 'africa',
+    info: {
+      currency: 'West African CFA Franc', currencySymbol: 'CFA', population: '1.3M', phoneCode: '+227', language: 'French, Hausa, Zarma',
+      climate: 'Hot semi-arid with extreme heat (35-45°C) most of year. Brief rainy season June-September.',
+      attractions: ['Grand Mosque', 'National Museum', 'Niger River', 'Grand Marché', 'Kennedy Bridge'],
+      demographics: 'Capital and largest city of Niger, located on the Niger River. Fast-growing city in the Sahel region.'
+    }
+  },
   { slug: 'ndjamena', city: "N'Djamena", timezone: 'Africa/Ndjamena', country: 'Chad', countryCode: 'TD', lat: 12.13, lng: 15.05, tier: 2, continent: 'africa' },
-  { slug: 'antananarivo', city: 'Antananarivo', timezone: 'Indian/Antananarivo', country: 'Madagascar', countryCode: 'MG', lat: -18.91, lng: 47.54, tier: 2, continent: 'africa' },
-  { slug: 'port-louis', city: 'Port Louis', timezone: 'Indian/Mauritius', country: 'Mauritius', countryCode: 'MU', lat: -20.16, lng: 57.50, tier: 3, continent: 'africa' },
-  { slug: 'lilongwe', city: 'Lilongwe', timezone: 'Africa/Blantyre', country: 'Malawi', countryCode: 'MW', lat: -13.98, lng: 33.79, tier: 3, continent: 'africa' },
-  { slug: 'mogadishu', city: 'Mogadishu', timezone: 'Africa/Mogadishu', country: 'Somalia', countryCode: 'SO', lat: 2.04, lng: 45.34, tier: 2, continent: 'africa' },
-  { slug: 'asmara', city: 'Asmara', timezone: 'Africa/Asmara', country: 'Eritrea', countryCode: 'ER', lat: 15.34, lng: 38.93, tier: 3, continent: 'africa' },
-  { slug: 'djibouti-city', city: 'Djibouti City', timezone: 'Africa/Djibouti', country: 'Djibouti', countryCode: 'DJ', lat: 11.59, lng: 43.15, tier: 3, continent: 'africa' },
-  { slug: 'libreville', city: 'Libreville', timezone: 'Africa/Libreville', country: 'Gabon', countryCode: 'GA', lat: 0.39, lng: 9.45, tier: 2, continent: 'africa' },
-  { slug: 'malabo', city: 'Malabo', timezone: 'Africa/Malabo', country: 'Equatorial Guinea', countryCode: 'GQ', lat: 3.75, lng: 8.78, tier: 3, continent: 'africa' },
-  { slug: 'bangui', city: 'Bangui', timezone: 'Africa/Bangui', country: 'Central African Republic', countryCode: 'CF', lat: 4.39, lng: 18.56, tier: 3, continent: 'africa' },
-  { slug: 'bissau', city: 'Bissau', timezone: 'Africa/Bissau', country: 'Guinea-Bissau', countryCode: 'GW', lat: 11.86, lng: -15.60, tier: 3, continent: 'africa' },
-  { slug: 'conakry', city: 'Conakry', timezone: 'Africa/Conakry', country: 'Guinea', countryCode: 'GN', lat: 9.64, lng: -13.58, tier: 3, continent: 'africa' },
-  { slug: 'freetown', city: 'Freetown', timezone: 'Africa/Freetown', country: 'Sierra Leone', countryCode: 'SL', lat: 8.48, lng: -13.23, tier: 3, continent: 'africa' },
-  { slug: 'monrovia', city: 'Monrovia', timezone: 'Africa/Monrovia', country: 'Liberia', countryCode: 'LR', lat: 6.31, lng: -10.80, tier: 3, continent: 'africa' },
-  { slug: 'lome', city: 'Lomé', timezone: 'Africa/Lome', country: 'Togo', countryCode: 'TG', lat: 6.14, lng: 1.21, tier: 3, continent: 'africa' },
-  { slug: 'porto-novo', city: 'Porto-Novo', timezone: 'Africa/Porto-Novo', country: 'Benin', countryCode: 'BJ', lat: 6.50, lng: 2.60, tier: 3, continent: 'africa' },
-  { slug: 'nouakchott', city: 'Nouakchott', timezone: 'Africa/Nouakchott', country: 'Mauritania', countryCode: 'MR', lat: 18.09, lng: -15.98, tier: 3, continent: 'africa' },
-  { slug: 'banjul', city: 'Banjul', timezone: 'Africa/Banjul', country: 'Gambia', countryCode: 'GM', lat: 13.45, lng: -16.58, tier: 3, continent: 'africa' },
-  { slug: 'praia', city: 'Praia', timezone: 'Atlantic/Cape_Verde', country: 'Cape Verde', countryCode: 'CV', lat: 14.93, lng: -23.51, tier: 3, continent: 'africa' },
-  { slug: 'sao-tome', city: 'São Tomé', timezone: 'Africa/Sao_Tome', country: 'São Tomé and Príncipe', countryCode: 'ST', lat: 0.34, lng: 6.73, tier: 3, continent: 'africa' },
-  { slug: 'victoria-seychelles', city: 'Victoria', timezone: 'Indian/Mahe', country: 'Seychelles', countryCode: 'SC', lat: -4.62, lng: 55.45, tier: 3, continent: 'africa' },
-  { slug: 'moroni', city: 'Moroni', timezone: 'Indian/Comoro', country: 'Comoros', countryCode: 'KM', lat: -11.70, lng: 43.26, tier: 3, continent: 'africa' },
-  { slug: 'maseru', city: 'Maseru', timezone: 'Africa/Maseru', country: 'Lesotho', countryCode: 'LS', lat: -29.31, lng: 27.48, tier: 3, continent: 'africa' },
-  { slug: 'mbabane', city: 'Mbabane', timezone: 'Africa/Mbabane', country: 'Eswatini', countryCode: 'SZ', lat: -26.32, lng: 31.13, tier: 3, continent: 'africa' },
+  { slug: 'antananarivo', city: 'Antananarivo', timezone: 'Indian/Antananarivo', country: 'Madagascar', countryCode: 'MG', lat: -18.91, lng: 47.54, tier: 2, continent: 'africa',
+    info: {
+      currency: 'Malagasy Ariary', currencySymbol: 'Ar', population: '1.6M', phoneCode: '+261 20', language: 'Malagasy, French',
+      climate: 'Subtropical highland with warm wet summers (20-28°C) and cool dry winters (10-20°C).',
+      attractions: ['Rova of Antananarivo', 'Tsimbazaza Zoo', 'Analakely Market', 'Lake Anosy', 'Ambohimanga'],
+      demographics: 'Capital and largest city of Madagascar, located at 1,280m elevation in the central highlands.'
+    }
+  },
+  { slug: 'port-louis', city: 'Port Louis', timezone: 'Indian/Mauritius', country: 'Mauritius', countryCode: 'MU', lat: -20.16, lng: 57.50, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Mauritian Rupee', currencySymbol: 'Rs', population: '150K', phoneCode: '+230', language: 'English, French, Creole',
+      climate: 'Tropical with warm wet summers (25-30°C) and mild dry winters (18-24°C). Cyclone season November-April.',
+      attractions: ['Central Market', 'Caudan Waterfront', 'Aapravasi Ghat', 'Blue Penny Museum', 'Champ de Mars'],
+      demographics: 'Capital and largest city of Mauritius, major financial center. UNESCO World Heritage Site for its immigrant history.'
+    }
+  },
+  { slug: 'lilongwe', city: 'Lilongwe', timezone: 'Africa/Blantyre', country: 'Malawi', countryCode: 'MW', lat: -13.98, lng: 33.79, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Malawian Kwacha', currencySymbol: 'MK', population: '1.1M', phoneCode: '+265 1', language: 'English, Chichewa',
+      climate: 'Subtropical highland with warm wet summers (20-28°C) and cool dry winters (10-23°C). Rainy season November-April.',
+      attractions: ['Lilongwe Wildlife Centre', 'Kumbali Cultural Village', 'Old Town Market', 'Lilongwe Nature Sanctuary', 'Parliament Building'],
+      demographics: 'Capital and largest city of Malawi, moved from Zomba in 1975. Planned city divided into Old Town and New City.'
+    }
+  },
+  { slug: 'mogadishu', city: 'Mogadishu', timezone: 'Africa/Mogadishu', country: 'Somalia', countryCode: 'SO', lat: 2.04, lng: 45.34, tier: 2, continent: 'africa',
+    info: {
+      currency: 'Somali Shilling', currencySymbol: 'Sh', population: '2.6M', phoneCode: '+252 1', language: 'Somali, Arabic',
+      climate: 'Hot semi-arid with warm temperatures year-round (25-32°C). Two rainy seasons (April-June, October-November).',
+      attractions: ['Lido Beach', 'Mogadishu Cathedral', 'Bakara Market', 'Arba Rucun Mosque', 'Somali National Museum'],
+      demographics: 'Capital and largest city of Somalia, "White Pearl of the Indian Ocean". Ancient port city undergoing reconstruction.'
+    }
+  },
+  { slug: 'asmara', city: 'Asmara', timezone: 'Africa/Asmara', country: 'Eritrea', countryCode: 'ER', lat: 15.34, lng: 38.93, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Eritrean Nakfa', currencySymbol: 'Nfk', population: '900K', phoneCode: '+291 1', language: 'Tigrinya, Arabic',
+      climate: 'Semi-arid with mild temperatures year-round (15-25°C) due to high altitude. Rainy season June-September.',
+      attractions: ['Fiat Tagliero Building', 'Cathedral of Asmara', 'National Museum', 'Opera House', 'Tank Graveyard'],
+      demographics: 'Capital of Eritrea at 2,325m elevation, UNESCO World Heritage Site for its Modernist architecture.'
+    }
+  },
+  { slug: 'djibouti-city', city: 'Djibouti City', timezone: 'Africa/Djibouti', country: 'Djibouti', countryCode: 'DJ', lat: 11.59, lng: 43.15, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Djiboutian Franc', currencySymbol: 'Fdj', population: '600K', phoneCode: '+253', language: 'French, Arabic, Somali',
+      climate: 'Hot desert with extreme heat (30-42°C). One of the hottest cities in the world. Minimal rainfall.',
+      attractions: ['Lake Assal', 'Hamoudi Mosque', 'Central Market', 'Place du 27 Juin', 'European Quarter'],
+      demographics: 'Capital of Djibouti, strategic port at entrance to Red Sea. Hosts major French, US, and Chinese military bases.'
+    }
+  },
+  { slug: 'libreville', city: 'Libreville', timezone: 'Africa/Libreville', country: 'Gabon', countryCode: 'GA', lat: 0.39, lng: 9.45, tier: 2, continent: 'africa',
+    info: {
+      currency: 'Central African CFA Franc', currencySymbol: 'CFA', population: '850K', phoneCode: '+241', language: 'French',
+      climate: 'Tropical with two rainy seasons and two dry seasons. Hot and humid year-round (24-31°C).',
+      attractions: ['St. Michael\'s Church', 'National Museum', 'Pointe Denis Beach', 'Pongara National Park', 'Mont Bouët Market'],
+      demographics: 'Capital and largest city of Gabon, one of the wealthiest cities in Africa due to oil. Founded as a settlement for freed slaves.'
+    }
+  },
+  { slug: 'malabo', city: 'Malabo', timezone: 'Africa/Malabo', country: 'Equatorial Guinea', countryCode: 'GQ', lat: 3.75, lng: 8.78, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Central African CFA Franc', currencySymbol: 'CFA', population: '300K', phoneCode: '+240 33', language: 'Spanish, French, Portuguese',
+      climate: 'Tropical with heavy rainfall year-round (3000mm+). Warm and humid (23-30°C), wettest July-October.',
+      attractions: ['Malabo Cathedral', 'Pico Basilé', 'Arena Blanca Beach', 'Casa Verde', 'Malabo National Park'],
+      demographics: 'Capital of Equatorial Guinea on Bioko Island. One of Africa\'s wealthiest countries per capita due to oil reserves.'
+    }
+  },
+  { slug: 'bangui', city: 'Bangui', timezone: 'Africa/Bangui', country: 'Central African Republic', countryCode: 'CF', lat: 4.39, lng: 18.56, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Central African CFA Franc', currencySymbol: 'CFA', population: '900K', phoneCode: '+236', language: 'French, Sango',
+      climate: 'Tropical with wet season (May-October) and dry season. Temperatures 21-34°C year-round.',
+      attractions: ['Notre-Dame Cathedral', 'Boganda Museum', 'Presidential Palace', 'Ubangi River', 'Central Market'],
+      demographics: 'Capital and largest city of Central African Republic, located on the Ubangi River bordering DR Congo.'
+    }
+  },
+  { slug: 'bissau', city: 'Bissau', timezone: 'Africa/Bissau', country: 'Guinea-Bissau', countryCode: 'GW', lat: 11.86, lng: -15.60, tier: 3, continent: 'africa',
+    info: {
+      currency: 'West African CFA Franc', currencySymbol: 'CFA', population: '500K', phoneCode: '+245', language: 'Portuguese, Crioulo',
+      climate: 'Tropical with rainy season (June-October) and dry season. Temperatures 24-32°C year-round.',
+      attractions: ['Bandim Market', 'Presidential Palace', 'Bissau Cathedral', 'Pidjiguiti Memorial', 'Fortaleza de São José da Amura'],
+      demographics: 'Capital and largest city of Guinea-Bissau, located on the Geba River estuary. Important port and commercial center.'
+    }
+  },
+  { slug: 'conakry', city: 'Conakry', timezone: 'Africa/Conakry', country: 'Guinea', countryCode: 'GN', lat: 9.64, lng: -13.58, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Guinean Franc', currencySymbol: 'FG', population: '2.0M', phoneCode: '+224', language: 'French, Susu, Fula',
+      climate: 'Tropical monsoon with heavy rainy season (May-November). Temperatures 24-32°C year-round.',
+      attractions: ['Grand Mosque of Conakry', 'Îles de Los', 'National Museum', 'Botanical Garden', 'Boulbinet'],
+      demographics: 'Capital and largest city of Guinea, located on Tombo Island and Kaloum Peninsula. Major port for bauxite exports.'
+    }
+  },
+  { slug: 'freetown', city: 'Freetown', timezone: 'Africa/Freetown', country: 'Sierra Leone', countryCode: 'SL', lat: 8.48, lng: -13.23, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Sierra Leonean Leone', currencySymbol: 'Le', population: '1.2M', phoneCode: '+232 22', language: 'English, Krio',
+      climate: 'Tropical monsoon with heavy rainy season (May-November). Hot and humid year-round (24-32°C).',
+      attractions: ['Cotton Tree', 'Lumley Beach', 'Sierra Leone National Museum', 'Big Market', 'Tacugama Chimpanzee Sanctuary'],
+      demographics: 'Capital and largest city of Sierra Leone, founded in 1792 for freed slaves. Major port on the Atlantic coast.'
+    }
+  },
+  { slug: 'monrovia', city: 'Monrovia', timezone: 'Africa/Monrovia', country: 'Liberia', countryCode: 'LR', lat: 6.31, lng: -10.80, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Liberian Dollar', currencySymbol: 'L$', population: '1.5M', phoneCode: '+231', language: 'English',
+      climate: 'Tropical monsoon with heavy rainy season (May-October). Hot and humid year-round (24-30°C).',
+      attractions: ['Providence Island', 'Liberian National Museum', 'Ducor Palace Hotel', 'Waterside Market', 'Centennial Pavilion'],
+      demographics: 'Capital and largest city of Liberia, named after US President James Monroe. Founded by freed American slaves in 1822.'
+    }
+  },
+  { slug: 'lome', city: 'Lomé', timezone: 'Africa/Lome', country: 'Togo', countryCode: 'TG', lat: 6.14, lng: 1.21, tier: 3, continent: 'africa',
+    info: {
+      currency: 'West African CFA Franc', currencySymbol: 'CFA', population: '1.8M', phoneCode: '+228', language: 'French, Ewe, Kabye',
+      climate: 'Tropical with two rainy seasons (April-July, September-November). Warm year-round (24-32°C).',
+      attractions: ['Grand Marché', 'Independence Monument', 'Lomé Cathedral', 'National Museum', 'Lomé Beach'],
+      demographics: 'Capital and largest city of Togo, major port on Gulf of Guinea. Known for vibrant markets and fetish market.'
+    }
+  },
+  { slug: 'porto-novo', city: 'Porto-Novo', timezone: 'Africa/Porto-Novo', country: 'Benin', countryCode: 'BJ', lat: 6.50, lng: 2.60, tier: 3, continent: 'africa',
+    info: {
+      currency: 'West African CFA Franc', currencySymbol: 'CFA', population: '280K', phoneCode: '+229', language: 'French, Yoruba, Fon',
+      climate: 'Tropical with two rainy seasons (April-July, September-November). Warm year-round (25-33°C).',
+      attractions: ['Royal Palace', 'Ethnographic Museum', 'Grand Mosque', 'Jardin Place Jean Bayol', 'Adjarra Village'],
+      demographics: 'Official capital of Benin (legislature), though Cotonou is larger. Former capital of Dahomey Kingdom with Afro-Brazilian heritage.'
+    }
+  },
+  { slug: 'nouakchott', city: 'Nouakchott', timezone: 'Africa/Nouakchott', country: 'Mauritania', countryCode: 'MR', lat: 18.09, lng: -15.98, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Mauritanian Ouguiya', currencySymbol: 'UM', population: '1.3M', phoneCode: '+222', language: 'Arabic, French',
+      climate: 'Hot desert with warm temperatures year-round (25-35°C). Minimal rainfall, dusty harmattan winds.',
+      attractions: ['Port de Pêche', 'National Museum', 'Saudi Mosque', 'Plage des Pêcheurs', 'Cinquième Market'],
+      demographics: 'Capital and largest city of Mauritania, built in 1958 as a small village. Now home to nearly a third of the country\'s population.'
+    }
+  },
+  { slug: 'banjul', city: 'Banjul', timezone: 'Africa/Banjul', country: 'Gambia', countryCode: 'GM', lat: 13.45, lng: -16.58, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Gambian Dalasi', currencySymbol: 'D', population: '35K', phoneCode: '+220', language: 'English, Mandinka',
+      climate: 'Tropical with dry season (November-May) and wet season. Temperatures 23-34°C year-round.',
+      attractions: ['Arch 22', 'Albert Market', 'Gambia National Museum', 'Kachikally Crocodile Pool', 'Banjul State House'],
+      demographics: 'Capital of The Gambia, located on St Mary\'s Island at the mouth of the Gambia River.'
+    }
+  },
+  { slug: 'praia', city: 'Praia', timezone: 'Atlantic/Cape_Verde', country: 'Cape Verde', countryCode: 'CV', lat: 14.93, lng: -23.51, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Cape Verdean Escudo', currencySymbol: 'CVE', population: '160K', phoneCode: '+238', language: 'Portuguese, Cape Verdean Creole',
+      climate: 'Hot semi-arid with warm temperatures year-round (22-28°C). Brief rainy season August-October.',
+      attractions: ['Plateau district', 'Sucupira Market', 'Praia da Gamboa', 'Ethnographic Museum', 'Presidential Palace'],
+      demographics: 'Capital and largest city of Cape Verde on Santiago Island. Main commercial and political center of the archipelago.'
+    }
+  },
+  { slug: 'sao-tome', city: 'São Tomé', timezone: 'Africa/Sao_Tome', country: 'São Tomé and Príncipe', countryCode: 'ST', lat: 0.34, lng: 6.73, tier: 3, continent: 'africa',
+    info: {
+      currency: 'São Tomé and Príncipe Dobra', currencySymbol: 'Db', population: '80K', phoneCode: '+239', language: 'Portuguese',
+      climate: 'Tropical with two dry seasons. Warm and humid year-round (24-30°C). Heavy rainfall on highlands.',
+      attractions: ['Presidential Palace', 'National Museum', 'Ana Chaves Bay', 'Roça Plantation Houses', 'São Sebastião Museum'],
+      demographics: 'Capital of São Tomé and Príncipe, second-smallest African country. Former Portuguese colony, cocoa and coffee history.'
+    }
+  },
+  { slug: 'victoria-seychelles', city: 'Victoria', timezone: 'Indian/Mahe', country: 'Seychelles', countryCode: 'SC', lat: -4.62, lng: 55.45, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Seychellois Rupee', currencySymbol: 'SCR', population: '30K', phoneCode: '+248', language: 'Seychellois Creole, English, French',
+      climate: 'Tropical with warm humid weather year-round (26-30°C). Rainy season November-February.',
+      attractions: ['Victoria Clock Tower', 'Sir Selwyn Clarke Market', 'Natural History Museum', 'Hindu Temple', 'Botanical Gardens'],
+      demographics: 'Capital of Seychelles, one of smallest capitals in the world. Located on Mahé Island, gateway to pristine beaches and islands.'
+    }
+  },
+  { slug: 'moroni', city: 'Moroni', timezone: 'Indian/Comoro', country: 'Comoros', countryCode: 'KM', lat: -11.70, lng: 43.26, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Comorian Franc', currencySymbol: 'CF', population: '55K', phoneCode: '+269', language: 'Comorian, Arabic, French',
+      climate: 'Tropical marine with hot humid season (November-April) and cooler dry season. Temperatures 24-30°C year-round.',
+      attractions: ['Old Friday Mosque', 'Medina', 'Mount Karthala', 'Itsandra Beach', 'Volo Volo Market'],
+      demographics: 'Capital of Comoros on Grande Comore island. Located near active volcano Mount Karthala, known for ylang-ylang and vanilla.'
+    }
+  },
+  { slug: 'maseru', city: 'Maseru', timezone: 'Africa/Maseru', country: 'Lesotho', countryCode: 'LS', lat: -29.31, lng: 27.48, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Lesotho Loti', currencySymbol: 'L', population: '330K', phoneCode: '+266 22', language: 'Sesotho, English',
+      climate: 'Subtropical highland with warm wet summers (15-28°C) and cool dry winters (0-17°C). Most rain October-April.',
+      attractions: ['Thaba Bosiu', 'Royal Palace', 'Pioneer Mall', 'Ha Kome Cave Houses', 'Kingsway'],
+      demographics: 'Capital and largest city of Lesotho, on border with South Africa. Only country entirely above 1,000m elevation.'
+    }
+  },
+  { slug: 'mbabane', city: 'Mbabane', timezone: 'Africa/Mbabane', country: 'Eswatini', countryCode: 'SZ', lat: -26.32, lng: 31.13, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Swazi Lilangeni', currencySymbol: 'E', population: '95K', phoneCode: '+268 24', language: 'Swati, English',
+      climate: 'Subtropical highland with warm wet summers (15-25°C) and cool dry winters (5-19°C).',
+      attractions: ['Sibebe Rock', 'Swazi Market', 'Mantenga Cultural Village', 'Mlilwane Wildlife Sanctuary', 'Swazi Candles'],
+      demographics: 'Administrative capital of Eswatini (formerly Swaziland), Africa\'s last absolute monarchy. Set in the Dlangeni Hills.'
+    }
+  },
 
   // Europe Capitals
-  { slug: 'luxembourg-city', city: 'Luxembourg City', timezone: 'Europe/Luxembourg', country: 'Luxembourg', countryCode: 'LU', lat: 49.61, lng: 6.13, tier: 3, continent: 'europe' },
-  { slug: 'monaco', city: 'Monaco', timezone: 'Europe/Monaco', country: 'Monaco', countryCode: 'MC', lat: 43.73, lng: 7.42, tier: 3, continent: 'europe' },
-  { slug: 'andorra-la-vella', city: 'Andorra la Vella', timezone: 'Europe/Andorra', country: 'Andorra', countryCode: 'AD', lat: 42.51, lng: 1.52, tier: 3, continent: 'europe' },
-  { slug: 'vaduz', city: 'Vaduz', timezone: 'Europe/Vaduz', country: 'Liechtenstein', countryCode: 'LI', lat: 47.14, lng: 9.52, tier: 3, continent: 'europe' },
-  { slug: 'san-marino', city: 'San Marino', timezone: 'Europe/San_Marino', country: 'San Marino', countryCode: 'SM', lat: 43.94, lng: 12.46, tier: 3, continent: 'europe' },
-  { slug: 'vatican-city', city: 'Vatican City', timezone: 'Europe/Vatican', country: 'Vatican City', countryCode: 'VA', lat: 41.90, lng: 12.45, tier: 3, continent: 'europe' },
-  { slug: 'valletta', city: 'Valletta', timezone: 'Europe/Malta', country: 'Malta', countryCode: 'MT', lat: 35.90, lng: 14.51, tier: 3, continent: 'europe' },
-  { slug: 'nicosia', city: 'Nicosia', timezone: 'Asia/Nicosia', country: 'Cyprus', countryCode: 'CY', lat: 35.17, lng: 33.37, tier: 3, continent: 'europe' },
-  { slug: 'podgorica', city: 'Podgorica', timezone: 'Europe/Podgorica', country: 'Montenegro', countryCode: 'ME', lat: 42.44, lng: 19.26, tier: 3, continent: 'europe' },
-  { slug: 'sarajevo', city: 'Sarajevo', timezone: 'Europe/Sarajevo', country: 'Bosnia and Herzegovina', countryCode: 'BA', lat: 43.86, lng: 18.41, tier: 3, continent: 'europe' },
-  { slug: 'skopje', city: 'Skopje', timezone: 'Europe/Skopje', country: 'North Macedonia', countryCode: 'MK', lat: 42.00, lng: 21.43, tier: 3, continent: 'europe' },
-  { slug: 'tirana', city: 'Tirana', timezone: 'Europe/Tirane', country: 'Albania', countryCode: 'AL', lat: 41.33, lng: 19.82, tier: 3, continent: 'europe' },
-  { slug: 'chisinau', city: 'Chișinău', timezone: 'Europe/Chisinau', country: 'Moldova', countryCode: 'MD', lat: 47.01, lng: 28.86, tier: 3, continent: 'europe' },
-  { slug: 'minsk', city: 'Minsk', timezone: 'Europe/Minsk', country: 'Belarus', countryCode: 'BY', lat: 53.90, lng: 27.57, tier: 2, continent: 'europe' },
-  { slug: 'pristina', city: 'Pristina', timezone: 'Europe/Belgrade', country: 'Kosovo', countryCode: 'XK', lat: 42.66, lng: 21.17, tier: 3, continent: 'europe' },
+  { slug: 'luxembourg-city', city: 'Luxembourg City', timezone: 'Europe/Luxembourg', country: 'Luxembourg', countryCode: 'LU', lat: 49.61, lng: 6.13, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '130K', phoneCode: '+352', language: 'Luxembourgish, French, German',
+      climate: 'Oceanic with mild summers (17-23°C) and cool winters (0-5°C). Rainfall distributed throughout the year.',
+      attractions: ['Old Town', 'Bock Casemates', 'Grand Ducal Palace', 'Grund Quarter', 'Philharmonie Luxembourg'],
+      demographics: 'Capital of Luxembourg, UNESCO World Heritage Site. Major EU and financial center, one of the wealthiest cities in the world.'
+    }
+  },
+  { slug: 'monaco', city: 'Monaco', timezone: 'Europe/Monaco', country: 'Monaco', countryCode: 'MC', lat: 43.73, lng: 7.42, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '40K', phoneCode: '+377', language: 'French, Monégasque',
+      climate: 'Mediterranean with warm dry summers (23-28°C) and mild wet winters (10-14°C). 300+ sunny days.',
+      attractions: ['Monte Carlo Casino', 'Prince\'s Palace', 'Oceanographic Museum', 'Monaco Grand Prix Circuit', 'Exotic Garden'],
+      demographics: 'Second-smallest country in the world, most densely populated. Known for wealth, casinos, yacht harbor, and Formula 1.'
+    }
+  },
+  { slug: 'andorra-la-vella', city: 'Andorra la Vella', timezone: 'Europe/Andorra', country: 'Andorra', countryCode: 'AD', lat: 42.51, lng: 1.52, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '23K', phoneCode: '+376', language: 'Catalan',
+      climate: 'Alpine climate with cold snowy winters (-5 to 5°C) and mild summers (15-25°C).',
+      attractions: ['Caldea Spa', 'Casa de la Vall', 'Grandvalira Ski Resort', 'Sant Esteve Church', 'Meritxell Sanctuary'],
+      demographics: 'Highest capital city in Europe at 1,023m elevation, known for duty-free shopping and skiing.'
+    }
+  },
+  { slug: 'vaduz', city: 'Vaduz', timezone: 'Europe/Vaduz', country: 'Liechtenstein', countryCode: 'LI', lat: 47.14, lng: 9.52, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Swiss Franc', currencySymbol: 'CHF', population: '6K', phoneCode: '+423', language: 'German',
+      climate: 'Oceanic with warm summers (18-25°C) and cold winters (-1 to 5°C). Alpine influence, föhn winds.',
+      attractions: ['Vaduz Castle', 'Kunstmuseum Liechtenstein', 'Postal Museum', 'Red House', 'Liechtenstein National Museum'],
+      demographics: 'Capital of Liechtenstein, one of world\'s smallest countries. Wealthy microstate known for banking, stamps, and Alpine scenery.'
+    }
+  },
+  { slug: 'san-marino', city: 'San Marino', timezone: 'Europe/San_Marino', country: 'San Marino', countryCode: 'SM', lat: 43.94, lng: 12.46, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '4K', phoneCode: '+378', language: 'Italian',
+      climate: 'Mediterranean with warm summers (22-28°C) and cool winters (2-10°C). Pleasant year-round.',
+      attractions: ['Three Towers of San Marino', 'Palazzo Pubblico', 'Basilica di San Marino', 'State Museum', 'Monte Titano'],
+      demographics: 'Capital of San Marino, world\'s oldest republic (founded 301 AD). Perched on Mount Titano, surrounded by Italy.'
+    }
+  },
+  { slug: 'vatican-city', city: 'Vatican City', timezone: 'Europe/Vatican', country: 'Vatican City', countryCode: 'VA', lat: 41.90, lng: 12.45, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '800', phoneCode: '+39 06', language: 'Italian, Latin',
+      climate: 'Mediterranean with hot dry summers (28-32°C) and mild wet winters (8-14°C).',
+      attractions: ['St. Peter\'s Basilica', 'Sistine Chapel', 'Vatican Museums', 'St. Peter\'s Square', 'Vatican Gardens'],
+      demographics: 'World\'s smallest independent state, headquarters of the Roman Catholic Church. Home to Pope and priceless Renaissance art.'
+    }
+  },
+  { slug: 'valletta', city: 'Valletta', timezone: 'Europe/Malta', country: 'Malta', countryCode: 'MT', lat: 35.90, lng: 14.51, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '6K', phoneCode: '+356 21', language: 'Maltese, English',
+      climate: 'Mediterranean with hot dry summers (28-34°C) and mild wet winters (12-16°C). Very sunny.',
+      attractions: ['St. John\'s Co-Cathedral', 'Upper Barrakka Gardens', 'Grandmaster\'s Palace', 'Fort St. Elmo', 'Strait Street'],
+      demographics: 'Capital of Malta, UNESCO World Heritage Site. Built by Knights of St. John in 16th century, smallest EU capital.'
+    }
+  },
+  { slug: 'nicosia', city: 'Nicosia', timezone: 'Asia/Nicosia', country: 'Cyprus', countryCode: 'CY', lat: 35.17, lng: 33.37, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '340K', phoneCode: '+357 22', language: 'Greek, Turkish, English',
+      climate: 'Semi-arid Mediterranean with hot dry summers (30-37°C) and mild wet winters (10-15°C).',
+      attractions: ['Venetian Walls', 'Cyprus Museum', 'Ledra Street', 'Büyük Han', 'Selimiye Mosque'],
+      demographics: 'Capital of Cyprus, last divided capital in the world (Greek south, Turkish north). Ancient city with over 4,500 years of history.'
+    }
+  },
+  { slug: 'podgorica', city: 'Podgorica', timezone: 'Europe/Podgorica', country: 'Montenegro', countryCode: 'ME', lat: 42.44, lng: 19.26, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '190K', phoneCode: '+382 20', language: 'Montenegrin, Serbian',
+      climate: 'Mediterranean with hot dry summers (28-35°C) and mild wet winters (5-12°C). One of Europe\'s sunniest cities.',
+      attractions: ['Millennium Bridge', 'Clock Tower', 'Morača Monastery', 'Skadar Lake', 'Ribnica River'],
+      demographics: 'Capital and largest city of Montenegro. Mix of Ottoman and modern architecture, gateway to coastal and mountain regions.'
+    }
+  },
+  { slug: 'sarajevo', city: 'Sarajevo', timezone: 'Europe/Sarajevo', country: 'Bosnia and Herzegovina', countryCode: 'BA', lat: 43.86, lng: 18.41, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Bosnia and Herzegovina Convertible Mark', currencySymbol: 'KM', population: '420K', phoneCode: '+387 33', language: 'Bosnian, Croatian, Serbian',
+      climate: 'Humid continental with warm summers (20-27°C) and cold snowy winters (-2 to 5°C).',
+      attractions: ['Baščaršija', 'Latin Bridge', 'Gazi Husrev-beg Mosque', 'Tunnel of Hope', 'Yellow Fortress'],
+      demographics: 'Capital of Bosnia and Herzegovina, where WWI started (1914). Mix of Ottoman and Austro-Hungarian heritage, 1984 Winter Olympics host.'
+    }
+  },
+  { slug: 'skopje', city: 'Skopje', timezone: 'Europe/Skopje', country: 'North Macedonia', countryCode: 'MK', lat: 42.00, lng: 21.43, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Macedonian Denar', currencySymbol: 'MKD', population: '550K', phoneCode: '+389 2', language: 'Macedonian, Albanian',
+      climate: 'Continental with hot summers (28-32°C) and cold winters (-2 to 5°C). Dry summers, wet winters.',
+      attractions: ['Old Bazaar', 'Stone Bridge', 'Skopje Fortress', 'Mother Teresa Memorial House', 'Macedonia Square'],
+      demographics: 'Capital of North Macedonia, birthplace of Mother Teresa. Rebuilt after 1963 earthquake with mix of Ottoman and modern architecture.'
+    }
+  },
+  { slug: 'tirana', city: 'Tirana', timezone: 'Europe/Tirane', country: 'Albania', countryCode: 'AL', lat: 41.33, lng: 19.82, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Albanian Lek', currencySymbol: 'L', population: '520K', phoneCode: '+355 4', language: 'Albanian',
+      climate: 'Mediterranean with hot dry summers (28-34°C) and mild wet winters (5-12°C).',
+      attractions: ['Skanderbeg Square', 'Bunk\'Art', 'Et\'hem Bey Mosque', 'National History Museum', 'Dajti Mountain'],
+      demographics: 'Capital and largest city of Albania, transformed from isolated communist state to vibrant European capital. Colorful building facades.'
+    }
+  },
+  { slug: 'chisinau', city: 'Chișinău', timezone: 'Europe/Chisinau', country: 'Moldova', countryCode: 'MD', lat: 47.01, lng: 28.86, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Moldovan Leu', currencySymbol: 'L', population: '700K', phoneCode: '+373 22', language: 'Romanian, Russian',
+      climate: 'Humid continental with warm summers (20-28°C) and cold winters (-3 to 3°C). Moderate rainfall.',
+      attractions: ['Nativity Cathedral', 'Stefan cel Mare Park', 'National Museum of History', 'Triumphal Arch', 'Cricova Winery'],
+      demographics: 'Capital and largest city of Moldova, main economic and cultural center. Known for wine cellars and Soviet-era architecture.'
+    }
+  },
+  { slug: 'minsk', city: 'Minsk', timezone: 'Europe/Minsk', country: 'Belarus', countryCode: 'BY', lat: 53.90, lng: 27.57, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Belarusian Ruble', currencySymbol: 'Br', population: '2.0M', phoneCode: '+375 17', language: 'Belarusian, Russian',
+      climate: 'Humid continental with warm summers (18-24°C) and cold snowy winters (-6 to -2°C).',
+      attractions: ['Independence Avenue', 'Victory Square', 'National Library', 'Trinity Suburb', 'Island of Tears'],
+      demographics: 'Capital and largest city of Belarus, rebuilt after WWII destruction. Known for Soviet-era architecture and wide boulevards.'
+    }
+  },
+  { slug: 'pristina', city: 'Pristina', timezone: 'Europe/Belgrade', country: 'Kosovo', countryCode: 'XK', lat: 42.66, lng: 21.17, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '210K', phoneCode: '+383 38', language: 'Albanian, Serbian',
+      climate: 'Continental with hot summers (22-30°C) and cold winters (-2 to 5°C). Snow in winter.',
+      attractions: ['Newborn Monument', 'National Library', 'Mother Teresa Cathedral', 'Ethnological Museum', 'Germia Park'],
+      demographics: 'Capital and largest city of Kosovo. Young, dynamic city with rich Ottoman and modern history, independence declared 2008.'
+    }
+  },
 
   // Asia Capitals
-  { slug: 'baku', city: 'Baku', timezone: 'Asia/Baku', country: 'Azerbaijan', countryCode: 'AZ', lat: 40.41, lng: 49.87, tier: 2, continent: 'asia' },
-  { slug: 'yerevan', city: 'Yerevan', timezone: 'Asia/Yerevan', country: 'Armenia', countryCode: 'AM', lat: 40.18, lng: 44.51, tier: 3, continent: 'asia' },
-  { slug: 'tbilisi', city: 'Tbilisi', timezone: 'Asia/Tbilisi', country: 'Georgia', countryCode: 'GE', lat: 41.72, lng: 44.79, tier: 3, continent: 'asia' },
-  { slug: 'tashkent', city: 'Tashkent', timezone: 'Asia/Tashkent', country: 'Uzbekistan', countryCode: 'UZ', lat: 41.30, lng: 69.28, tier: 2, continent: 'asia' },
-  { slug: 'astana', city: 'Astana', timezone: 'Asia/Almaty', country: 'Kazakhstan', countryCode: 'KZ', lat: 51.17, lng: 71.43, tier: 2, continent: 'asia' },
-  { slug: 'ashgabat', city: 'Ashgabat', timezone: 'Asia/Ashgabat', country: 'Turkmenistan', countryCode: 'TM', lat: 37.95, lng: 58.38, tier: 3, continent: 'asia' },
-  { slug: 'dushanbe', city: 'Dushanbe', timezone: 'Asia/Dushanbe', country: 'Tajikistan', countryCode: 'TJ', lat: 38.54, lng: 68.77, tier: 3, continent: 'asia' },
-  { slug: 'bishkek', city: 'Bishkek', timezone: 'Asia/Bishkek', country: 'Kyrgyzstan', countryCode: 'KG', lat: 42.87, lng: 74.59, tier: 3, continent: 'asia' },
-  { slug: 'ulaanbaatar', city: 'Ulaanbaatar', timezone: 'Asia/Ulaanbaatar', country: 'Mongolia', countryCode: 'MN', lat: 47.91, lng: 106.91, tier: 3, continent: 'asia' },
-  { slug: 'vientiane', city: 'Vientiane', timezone: 'Asia/Vientiane', country: 'Laos', countryCode: 'LA', lat: 17.97, lng: 102.60, tier: 3, continent: 'asia' },
-  { slug: 'bandar-seri-begawan', city: 'Bandar Seri Begawan', timezone: 'Asia/Brunei', country: 'Brunei', countryCode: 'BN', lat: 4.89, lng: 114.94, tier: 3, continent: 'asia' },
-  { slug: 'dili', city: 'Dili', timezone: 'Asia/Dili', country: 'Timor-Leste', countryCode: 'TL', lat: -8.56, lng: 125.57, tier: 3, continent: 'asia' },
-  { slug: 'male', city: 'Malé', timezone: 'Indian/Maldives', country: 'Maldives', countryCode: 'MV', lat: 4.18, lng: 73.51, tier: 3, continent: 'asia' },
-  { slug: 'thimphu', city: 'Thimphu', timezone: 'Asia/Thimphu', country: 'Bhutan', countryCode: 'BT', lat: 27.47, lng: 89.64, tier: 3, continent: 'asia' },
-  { slug: 'kabul', city: 'Kabul', timezone: 'Asia/Kabul', country: 'Afghanistan', countryCode: 'AF', lat: 34.53, lng: 69.17, tier: 2, continent: 'asia' },
-  { slug: 'baghdad', city: 'Baghdad', timezone: 'Asia/Baghdad', country: 'Iraq', countryCode: 'IQ', lat: 33.31, lng: 44.37, tier: 2, continent: 'asia' },
-  { slug: 'damascus', city: 'Damascus', timezone: 'Asia/Damascus', country: 'Syria', countryCode: 'SY', lat: 33.51, lng: 36.29, tier: 2, continent: 'asia' },
-  { slug: 'amman', city: 'Amman', timezone: 'Asia/Amman', country: 'Jordan', countryCode: 'JO', lat: 31.95, lng: 35.93, tier: 2, continent: 'asia' },
-  { slug: 'beirut', city: 'Beirut', timezone: 'Asia/Beirut', country: 'Lebanon', countryCode: 'LB', lat: 33.89, lng: 35.50, tier: 2, continent: 'asia' },
-  { slug: 'sanaa', city: 'Sanaa', timezone: 'Asia/Aden', country: 'Yemen', countryCode: 'YE', lat: 15.37, lng: 44.19, tier: 3, continent: 'asia' },
-  { slug: 'muscat', city: 'Muscat', timezone: 'Asia/Muscat', country: 'Oman', countryCode: 'OM', lat: 23.59, lng: 58.41, tier: 3, continent: 'asia' },
-  { slug: 'manama', city: 'Manama', timezone: 'Asia/Bahrain', country: 'Bahrain', countryCode: 'BH', lat: 26.23, lng: 50.59, tier: 3, continent: 'asia' },
-  { slug: 'kuwait-city', city: 'Kuwait City', timezone: 'Asia/Kuwait', country: 'Kuwait', countryCode: 'KW', lat: 29.38, lng: 47.99, tier: 2, continent: 'asia' },
-  { slug: 'ramallah', city: 'Ramallah', timezone: 'Asia/Gaza', country: 'Palestine', countryCode: 'PS', lat: 31.90, lng: 35.20, tier: 3, continent: 'asia' },
+  { slug: 'baku', city: 'Baku', timezone: 'Asia/Baku', country: 'Azerbaijan', countryCode: 'AZ', lat: 40.41, lng: 49.87, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Azerbaijani Manat', currencySymbol: '₼', population: '2.3M', phoneCode: '+994 12', language: 'Azerbaijani',
+      climate: 'Semi-arid with hot dry summers (25-35°C) and mild winters (3-8°C). Strong winds common.',
+      attractions: ['Flame Towers', 'Old City (Icherisheher)', 'Heydar Aliyev Center', 'Maiden Tower', 'Highland Park'],
+      demographics: 'Capital and largest city of Azerbaijan, largest city on the Caspian Sea. Major oil and gas hub.'
+    }
+  },
+  { slug: 'yerevan', city: 'Yerevan', timezone: 'Asia/Yerevan', country: 'Armenia', countryCode: 'AM', lat: 40.18, lng: 44.51, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Armenian Dram', currencySymbol: 'AMD', population: '1.1M', phoneCode: '+374 10', language: 'Armenian',
+      climate: 'Continental with hot dry summers (28-35°C) and cold winters (-5 to 3°C). Low rainfall.',
+      attractions: ['Republic Square', 'Cascade Complex', 'Matenadaran', 'Yerevan Opera House', 'Mount Ararat View'],
+      demographics: 'Capital of Armenia, one of world\'s oldest continuously inhabited cities. Pink volcanic stone architecture, view of biblical Mount Ararat.'
+    }
+  },
+  { slug: 'tbilisi', city: 'Tbilisi', timezone: 'Asia/Tbilisi', country: 'Georgia', countryCode: 'GE', lat: 41.72, lng: 44.79, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Georgian Lari', currencySymbol: 'GEL', population: '1.2M', phoneCode: '+995 32', language: 'Georgian',
+      climate: 'Humid subtropical with hot summers (25-32°C) and cool winters (2-8°C). Moderate rainfall.',
+      attractions: ['Old Town', 'Narikala Fortress', 'Sulfur Baths', 'Holy Trinity Cathedral', 'Rustaveli Avenue'],
+      demographics: 'Capital of Georgia, founded in 5th century. Known for thermal baths, wine culture, and unique alphabet. Rising tourism destination.'
+    }
+  },
+  { slug: 'tashkent', city: 'Tashkent', timezone: 'Asia/Tashkent', country: 'Uzbekistan', countryCode: 'UZ', lat: 41.30, lng: 69.28, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Uzbek Som', currencySymbol: 'UZS', population: '2.6M', phoneCode: '+998 71', language: 'Uzbek, Russian',
+      climate: 'Continental with hot dry summers (30-40°C) and cold winters (-2 to 5°C). Low rainfall.',
+      attractions: ['Chorsu Bazaar', 'Khast Imam Complex', 'Tashkent Metro', 'Amir Timur Square', 'Minor Mosque'],
+      demographics: 'Capital of Uzbekistan, largest city in Central Asia. Rebuilt after 1966 earthquake with Soviet-era architecture and Silk Road heritage.'
+    }
+  },
+  { slug: 'astana', city: 'Astana', timezone: 'Asia/Almaty', country: 'Kazakhstan', countryCode: 'KZ', lat: 51.17, lng: 71.43, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Kazakhstani Tenge', currencySymbol: '₸', population: '1.4M', phoneCode: '+7 7172', language: 'Kazakh, Russian',
+      climate: 'Extreme continental with very cold winters (-30 to -15°C) and warm summers (20-30°C).',
+      attractions: ['Bayterek Tower', 'Khan Shatyr', 'Palace of Peace and Reconciliation', 'Nur-Astana Mosque', 'National Museum'],
+      demographics: 'Capital of Kazakhstan since 1997, one of the coldest capitals in the world. Modern planned city.'
+    }
+  },
+  { slug: 'ashgabat', city: 'Ashgabat', timezone: 'Asia/Ashgabat', country: 'Turkmenistan', countryCode: 'TM', lat: 37.95, lng: 58.38, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Turkmenistan Manat', currencySymbol: 'm', population: '1.0M', phoneCode: '+993 12', language: 'Turkmen, Russian',
+      climate: 'Desert climate with very hot summers (35-45°C) and cold winters (0-10°C). Very little rainfall.',
+      attractions: ['Neutrality Monument', 'Turkmenbashi Ruhy Mosque', 'National Museum', 'Earthquake Monument', 'Wedding Palace'],
+      demographics: 'Capital of Turkmenistan, known for white marble buildings and holding Guinness record for most marble buildings.'
+    }
+  },
+  { slug: 'dushanbe', city: 'Dushanbe', timezone: 'Asia/Dushanbe', country: 'Tajikistan', countryCode: 'TJ', lat: 38.54, lng: 68.77, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Tajikistani Somoni', currencySymbol: 'SM', population: '1.0M', phoneCode: '+992 37', language: 'Tajik, Russian',
+      climate: 'Mediterranean-influenced continental with hot summers (28-38°C) and mild winters (0-8°C).',
+      attractions: ['Rudaki Park', 'National Museum', 'Dushanbe Flagpole', 'Ismoil Somoni Monument', 'Hoji Yakoub Mosque'],
+      demographics: 'Capital and largest city of Tajikistan, name means "Monday" (founded on a Monday market day). Growing modern capital.'
+    }
+  },
+  { slug: 'bishkek', city: 'Bishkek', timezone: 'Asia/Bishkek', country: 'Kyrgyzstan', countryCode: 'KG', lat: 42.87, lng: 74.59, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Kyrgyzstani Som', currencySymbol: 'с', population: '1.1M', phoneCode: '+996 312', language: 'Kyrgyz, Russian',
+      climate: 'Continental with hot summers (25-35°C) and cold winters (-5 to 5°C). Low rainfall.',
+      attractions: ['Ala-Too Square', 'State Historical Museum', 'Osh Bazaar', 'Victory Square', 'Panfilov Park'],
+      demographics: 'Capital and largest city of Kyrgyzstan, gateway to the Tian Shan mountains. Growing tourism and tech hub.'
+    }
+  },
+  { slug: 'ulaanbaatar', city: 'Ulaanbaatar', timezone: 'Asia/Ulaanbaatar', country: 'Mongolia', countryCode: 'MN', lat: 47.91, lng: 106.91, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Mongolian Tugrik', currencySymbol: '₮', population: '1.5M', phoneCode: '+976 11', language: 'Mongolian',
+      climate: 'Subarctic with short warm summers (17-25°C) and extremely cold winters (-25 to -15°C). Coldest capital city in the world.',
+      attractions: ['Gandantegchinlen Monastery', 'Genghis Khan Square', 'National Museum', 'Zaisan Memorial', 'Winter Palace of Bogd Khan'],
+      demographics: 'Capital of Mongolia, home to nearly half the country\'s population. Gateway to nomadic culture and Gobi Desert.'
+    }
+  },
+  { slug: 'vientiane', city: 'Vientiane', timezone: 'Asia/Vientiane', country: 'Laos', countryCode: 'LA', lat: 17.97, lng: 102.60, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Lao Kip', currencySymbol: '₭', population: '950K', phoneCode: '+856 21', language: 'Lao',
+      climate: 'Tropical savanna with hot season (March-May), rainy monsoon (June-October), and cool season. Temperatures 22-35°C.',
+      attractions: ['Pha That Luang', 'Patuxai', 'Buddha Park', 'Wat Si Saket', 'Morning Market'],
+      demographics: 'Capital of Laos on the Mekong River, one of the most relaxed capitals in Asia. French colonial influence and Buddhist temples.'
+    }
+  },
+  { slug: 'bandar-seri-begawan', city: 'Bandar Seri Begawan', timezone: 'Asia/Brunei', country: 'Brunei', countryCode: 'BN', lat: 4.89, lng: 114.94, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Brunei Dollar', currencySymbol: 'B$', population: '50K', phoneCode: '+673', language: 'Malay, English',
+      climate: 'Tropical rainforest with high humidity year-round. Temperatures 24-32°C with heavy rainfall.',
+      attractions: ['Omar Ali Saifuddien Mosque', 'Royal Regalia Museum', 'Kampong Ayer Water Village', 'Jame Asr Hassanil Bolkiah Mosque', 'Istana Nurul Iman'],
+      demographics: 'Capital of Brunei, one of the wealthiest cities in Southeast Asia due to oil and gas reserves.'
+    }
+  },
+  { slug: 'dili', city: 'Dili', timezone: 'Asia/Dili', country: 'Timor-Leste', countryCode: 'TL', lat: -8.56, lng: 125.57, tier: 3, continent: 'asia',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '280K', phoneCode: '+670', language: 'Tetum, Portuguese',
+      climate: 'Tropical with wet season (December-May) and dry season. Temperatures 24-32°C year-round.',
+      attractions: ['Cristo Rei Statue', 'Santa Cruz Cemetery', 'Resistance Museum', 'Areia Branca Beach', 'Tais Market'],
+      demographics: 'Capital of Timor-Leste (East Timor), one of world\'s youngest nations (independent 2002). Recovering from past conflicts.'
+    }
+  },
+  { slug: 'male', city: 'Malé', timezone: 'Indian/Maldives', country: 'Maldives', countryCode: 'MV', lat: 4.18, lng: 73.51, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Maldivian Rufiyaa', currencySymbol: 'Rf', population: '250K', phoneCode: '+960', language: 'Dhivehi, English',
+      climate: 'Tropical monsoon with warm temperatures year-round (28-32°C). Wet southwest monsoon May-November.',
+      attractions: ['Malé Friday Mosque', 'National Museum', 'Artificial Beach', 'Sultan Park', 'Fish Market'],
+      demographics: 'Capital of Maldives, one of the most densely populated cities in the world. Located on a small island at risk from rising sea levels.'
+    }
+  },
+  { slug: 'thimphu', city: 'Thimphu', timezone: 'Asia/Thimphu', country: 'Bhutan', countryCode: 'BT', lat: 27.47, lng: 89.64, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Bhutanese Ngultrum', currencySymbol: 'Nu', population: '115K', phoneCode: '+975 2', language: 'Dzongkha',
+      climate: 'Humid subtropical highland with cool summers (15-25°C) and cold winters (0-12°C) at 2,300m altitude.',
+      attractions: ['Tashichho Dzong', 'Buddha Dordenma', 'Memorial Chorten', 'Folk Heritage Museum', 'Centenary Farmers Market'],
+      demographics: 'Capital of Bhutan, one of few capitals without traffic lights. Center of Gross National Happiness philosophy and Buddhist culture.'
+    }
+  },
+  { slug: 'kabul', city: 'Kabul', timezone: 'Asia/Kabul', country: 'Afghanistan', countryCode: 'AF', lat: 34.53, lng: 69.17, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Afghan Afghani', currencySymbol: '؋', population: '4.4M', phoneCode: '+93 20', language: 'Dari, Pashto',
+      climate: 'Semi-arid with hot summers (25-35°C) and cold snowy winters (-5 to 5°C). High altitude at 1,800m.',
+      attractions: ['Gardens of Babur', 'Darul Aman Palace', 'National Museum', 'Blue Mosque', 'Kabul Zoo'],
+      demographics: 'Capital and largest city of Afghanistan, located in a valley in the Hindu Kush. Over 3,500 years of history.'
+    }
+  },
+  { slug: 'baghdad', city: 'Baghdad', timezone: 'Asia/Baghdad', country: 'Iraq', countryCode: 'IQ', lat: 33.31, lng: 44.37, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Iraqi Dinar', currencySymbol: 'IQD', population: '8.8M', phoneCode: '+964 1', language: 'Arabic, Kurdish',
+      climate: 'Hot desert climate with extremely hot summers (40-50°C) and mild winters (5-15°C). Very little rainfall.',
+      attractions: ['Al-Shaheed Monument', 'Iraq Museum', 'Al-Mutanabbi Street', 'Al-Kadhimiya Mosque', 'Firdos Square'],
+      demographics: 'Capital and largest city of Iraq, historic center of Islamic Golden Age. Located on the Tigris River.'
+    }
+  },
+  { slug: 'damascus', city: 'Damascus', timezone: 'Asia/Damascus', country: 'Syria', countryCode: 'SY', lat: 33.51, lng: 36.29, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Syrian Pound', currencySymbol: 'SYP', population: '2.0M', phoneCode: '+963 11', language: 'Arabic',
+      climate: 'Semi-arid with hot dry summers (25-37°C) and cool wet winters (3-12°C). Snow rare but possible.',
+      attractions: ['Umayyad Mosque', 'Old City', 'Azm Palace', 'Saladin\'s Tomb', 'National Museum'],
+      demographics: 'Capital of Syria, one of the oldest continuously inhabited cities in the world (10,000+ years). UNESCO World Heritage Site.'
+    }
+  },
+  { slug: 'amman', city: 'Amman', timezone: 'Asia/Amman', country: 'Jordan', countryCode: 'JO', lat: 31.95, lng: 35.93, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Jordanian Dinar', currencySymbol: 'JD', population: '4.5M', phoneCode: '+962 6', language: 'Arabic',
+      climate: 'Mediterranean with hot dry summers (25-35°C) and cool wet winters (5-12°C). Snow possible in winter.',
+      attractions: ['Roman Amphitheater', 'Citadel', 'Rainbow Street', 'King Abdullah Mosque', 'Jordan Museum'],
+      demographics: 'Capital and largest city of Jordan, one of the oldest continuously inhabited cities in the world.'
+    }
+  },
+  { slug: 'beirut', city: 'Beirut', timezone: 'Asia/Beirut', country: 'Lebanon', countryCode: 'LB', lat: 33.89, lng: 35.50, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Lebanese Pound', currencySymbol: 'L£', population: '2.4M', phoneCode: '+961 1', language: 'Arabic, French, English',
+      climate: 'Mediterranean with hot dry summers (25-32°C) and mild rainy winters (10-17°C).',
+      attractions: ['Pigeon Rocks', 'National Museum', 'Mohammad Al-Amin Mosque', 'Beirut Souks', 'Corniche Beirut'],
+      demographics: 'Capital and largest city of Lebanon, historic crossroads of Eastern and Western cultures. Known as "Paris of the Middle East".'
+    }
+  },
+  { slug: 'sanaa', city: 'Sanaa', timezone: 'Asia/Aden', country: 'Yemen', countryCode: 'YE', lat: 15.37, lng: 44.19, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Yemeni Rial', currencySymbol: 'YER', population: '4.0M', phoneCode: '+967 1', language: 'Arabic',
+      climate: 'Semi-arid with mild temperatures year-round (12-28°C) due to 2,300m elevation. Rainy season July-August.',
+      attractions: ['Old City', 'Bab al-Yemen', 'Great Mosque of Sanaa', 'National Museum', 'Dar al-Hajar'],
+      demographics: 'Capital of Yemen, one of world\'s oldest continuously inhabited cities. UNESCO World Heritage Site with distinctive tower houses.'
+    }
+  },
+  { slug: 'muscat', city: 'Muscat', timezone: 'Asia/Muscat', country: 'Oman', countryCode: 'OM', lat: 23.59, lng: 58.41, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Omani Rial', currencySymbol: 'OMR', population: '1.5M', phoneCode: '+968', language: 'Arabic, English',
+      climate: 'Hot desert with very hot summers (30-42°C) and warm winters (18-26°C). Very little rainfall.',
+      attractions: ['Sultan Qaboos Grand Mosque', 'Royal Opera House', 'Mutrah Souq', 'Al Jalali & Al Mirani Forts', 'Wadi Shab'],
+      demographics: 'Capital and largest city of Oman, nestled between mountains and sea. Known for traditional architecture and modern development.'
+    }
+  },
+  { slug: 'manama', city: 'Manama', timezone: 'Asia/Bahrain', country: 'Bahrain', countryCode: 'BH', lat: 26.23, lng: 50.59, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Bahraini Dinar', currencySymbol: 'BD', population: '450K', phoneCode: '+973', language: 'Arabic, English',
+      climate: 'Hot desert with very hot humid summers (35-45°C) and mild winters (15-22°C). Almost no rainfall.',
+      attractions: ['Bahrain National Museum', 'Al-Fateh Grand Mosque', 'Bahrain Fort', 'Bab el-Bahrain', 'The Avenues Mall'],
+      demographics: 'Capital of Bahrain, major financial hub in the Persian Gulf. One of the oldest continuously inhabited cities in the region.'
+    }
+  },
+  { slug: 'kuwait-city', city: 'Kuwait City', timezone: 'Asia/Kuwait', country: 'Kuwait', countryCode: 'KW', lat: 29.38, lng: 47.99, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Kuwaiti Dinar', currencySymbol: 'KD', population: '3.0M', phoneCode: '+965', language: 'Arabic, English',
+      climate: 'Hot desert with extremely hot summers (40-50°C) and mild winters (10-20°C). Very little rainfall.',
+      attractions: ['Kuwait Towers', 'Grand Mosque', 'Souq Al-Mubarakiya', 'Liberation Tower', 'Scientific Center'],
+      demographics: 'Capital and largest city of Kuwait, one of the richest cities in the world. Modern skyline with traditional souqs.'
+    }
+  },
+  { slug: 'ramallah', city: 'Ramallah', timezone: 'Asia/Gaza', country: 'Palestine', countryCode: 'PS', lat: 31.90, lng: 35.20, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Israeli Shekel', currencySymbol: '₪', population: '40K', phoneCode: '+970 2', language: 'Arabic',
+      climate: 'Mediterranean with hot dry summers (25-30°C) and mild wet winters (5-12°C).',
+      attractions: ['Yasser Arafat Museum', 'Mahmoud Darwish Museum', 'Al-Manara Square', 'Ramallah Cultural Palace', 'Old Town'],
+      demographics: 'De facto administrative capital of the Palestinian Authority in the West Bank. Cultural and economic center with vibrant arts scene.'
+    }
+  },
 
   // Americas Capitals
-  { slug: 'kingston', city: 'Kingston', timezone: 'America/Jamaica', country: 'Jamaica', countryCode: 'JM', lat: 18.00, lng: -76.79, tier: 3, continent: 'americas' },
-  { slug: 'port-of-spain', city: 'Port of Spain', timezone: 'America/Port_of_Spain', country: 'Trinidad and Tobago', countryCode: 'TT', lat: 10.66, lng: -61.51, tier: 3, continent: 'americas' },
-  { slug: 'nassau', city: 'Nassau', timezone: 'America/Nassau', country: 'Bahamas', countryCode: 'BS', lat: 25.08, lng: -77.34, tier: 3, continent: 'americas' },
-  { slug: 'bridgetown', city: 'Bridgetown', timezone: 'America/Barbados', country: 'Barbados', countryCode: 'BB', lat: 13.10, lng: -59.61, tier: 3, continent: 'americas' },
-  { slug: 'port-au-prince', city: 'Port-au-Prince', timezone: 'America/Port-au-Prince', country: 'Haiti', countryCode: 'HT', lat: 18.54, lng: -72.34, tier: 3, continent: 'americas' },
-  { slug: 'santo-domingo', city: 'Santo Domingo', timezone: 'America/Santo_Domingo', country: 'Dominican Republic', countryCode: 'DO', lat: 18.49, lng: -69.90, tier: 2, continent: 'americas' },
-  { slug: 'guatemala-city', city: 'Guatemala City', timezone: 'America/Guatemala', country: 'Guatemala', countryCode: 'GT', lat: 14.63, lng: -90.51, tier: 2, continent: 'americas' },
-  { slug: 'tegucigalpa', city: 'Tegucigalpa', timezone: 'America/Tegucigalpa', country: 'Honduras', countryCode: 'HN', lat: 14.07, lng: -87.19, tier: 3, continent: 'americas' },
-  { slug: 'san-salvador', city: 'San Salvador', timezone: 'America/El_Salvador', country: 'El Salvador', countryCode: 'SV', lat: 13.69, lng: -89.19, tier: 3, continent: 'americas' },
-  { slug: 'managua', city: 'Managua', timezone: 'America/Managua', country: 'Nicaragua', countryCode: 'NI', lat: 12.13, lng: -86.25, tier: 3, continent: 'americas' },
-  { slug: 'belmopan', city: 'Belmopan', timezone: 'America/Belize', country: 'Belize', countryCode: 'BZ', lat: 17.25, lng: -88.77, tier: 3, continent: 'americas' },
-  { slug: 'sucre', city: 'Sucre', timezone: 'America/La_Paz', country: 'Bolivia', countryCode: 'BO', lat: -19.04, lng: -65.26, tier: 3, continent: 'americas' },
-  { slug: 'asuncion', city: 'Asunción', timezone: 'America/Asuncion', country: 'Paraguay', countryCode: 'PY', lat: -25.28, lng: -57.57, tier: 3, continent: 'americas' },
-  { slug: 'quito', city: 'Quito', timezone: 'America/Guayaquil', country: 'Ecuador', countryCode: 'EC', lat: -0.18, lng: -78.47, tier: 2, continent: 'americas' },
-  { slug: 'georgetown', city: 'Georgetown', timezone: 'America/Guyana', country: 'Guyana', countryCode: 'GY', lat: 6.80, lng: -58.16, tier: 3, continent: 'americas' },
-  { slug: 'paramaribo', city: 'Paramaribo', timezone: 'America/Paramaribo', country: 'Suriname', countryCode: 'SR', lat: 5.85, lng: -55.20, tier: 3, continent: 'americas' },
-  { slug: 'san-juan', city: 'San Juan', timezone: 'America/Puerto_Rico', country: 'Puerto Rico', countryCode: 'PR', lat: 18.47, lng: -66.11, tier: 3, continent: 'americas' },
+  { slug: 'kingston', city: 'Kingston', timezone: 'America/Jamaica', country: 'Jamaica', countryCode: 'JM', lat: 18.00, lng: -76.79, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Jamaican Dollar', currencySymbol: 'J$', population: '670K', phoneCode: '+1 876', language: 'English, Jamaican Patois',
+      climate: 'Tropical with warm temperatures year-round (25-33°C). Hurricane season June-November. Drier than north coast.',
+      attractions: ['Bob Marley Museum', 'Devon House', 'Port Royal', 'Hope Botanical Gardens', 'National Gallery'],
+      demographics: 'Capital and largest city of Jamaica, birthplace of reggae music. Cultural and economic hub of the Caribbean.'
+    }
+  },
+  { slug: 'port-of-spain', city: 'Port of Spain', timezone: 'America/Port_of_Spain', country: 'Trinidad and Tobago', countryCode: 'TT', lat: 10.66, lng: -61.51, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Trinidad and Tobago Dollar', currencySymbol: 'TT$', population: '40K', phoneCode: '+1 868', language: 'English, Trinidadian Creole',
+      climate: 'Tropical with dry season (January-May) and wet season. Warm year-round (25-34°C). Outside hurricane belt.',
+      attractions: ['Queen\'s Park Savannah', 'Magnificent Seven', 'Emperor Valley Zoo', 'National Museum', 'Maracas Bay'],
+      demographics: 'Capital of Trinidad and Tobago, famous for Carnival. Major Caribbean financial center and birthplace of steel pan music.'
+    }
+  },
+  { slug: 'nassau', city: 'Nassau', timezone: 'America/Nassau', country: 'Bahamas', countryCode: 'BS', lat: 25.08, lng: -77.34, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Bahamian Dollar', currencySymbol: 'B$', population: '280K', phoneCode: '+1 242', language: 'English',
+      climate: 'Tropical with warm temperatures year-round (22-32°C). Hurricane season June-November. Dry season December-April.',
+      attractions: ['Paradise Island', 'Atlantis Resort', 'Fort Charlotte', 'Straw Market', 'Queen\'s Staircase'],
+      demographics: 'Capital of the Bahamas on New Providence Island. Major cruise port and tourist destination known for beaches and resorts.'
+    }
+  },
+  { slug: 'bridgetown', city: 'Bridgetown', timezone: 'America/Barbados', country: 'Barbados', countryCode: 'BB', lat: 13.10, lng: -59.61, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Barbadian Dollar', currencySymbol: 'Bds$', population: '110K', phoneCode: '+1 246', language: 'English',
+      climate: 'Tropical with warm temperatures year-round (24-30°C). Wet season June-November, dry season December-May.',
+      attractions: ['Parliament Buildings', 'Nidhe Israel Synagogue', 'Carlisle Bay', 'Garrison Historic Area', 'Cheapside Market'],
+      demographics: 'Capital and largest city of Barbados, UNESCO World Heritage Site. Major Caribbean cruise port and financial center.'
+    }
+  },
+  { slug: 'port-au-prince', city: 'Port-au-Prince', timezone: 'America/Port-au-Prince', country: 'Haiti', countryCode: 'HT', lat: 18.54, lng: -72.34, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Haitian Gourde', currencySymbol: 'G', population: '2.6M', phoneCode: '+509 2', language: 'French, Haitian Creole',
+      climate: 'Tropical with wet season (April-November) and dry season. Warm year-round (25-35°C). Hurricane risk.',
+      attractions: ['Iron Market', 'National Palace', 'Musée du Panthéon National', 'Cathédrale Notre-Dame', 'Pétion-Ville'],
+      demographics: 'Capital and largest city of Haiti, on Gulf of Gonâve. Rebuilding after devastating 2010 earthquake.'
+    }
+  },
+  { slug: 'santo-domingo', city: 'Santo Domingo', timezone: 'America/Santo_Domingo', country: 'Dominican Republic', countryCode: 'DO', lat: 18.49, lng: -69.90, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Dominican Peso', currencySymbol: 'RD$', population: '1.0M', phoneCode: '+1 809', language: 'Spanish',
+      climate: 'Tropical with warm temperatures year-round (25-32°C). Rainy season May-November, hurricane risk.',
+      attractions: ['Colonial Zone', 'Alcázar de Colón', 'Cathedral of Santa María', 'National Palace', 'El Malecón'],
+      demographics: 'Capital of Dominican Republic, oldest continuously inhabited European settlement in the Americas (1496). UNESCO World Heritage Site.'
+    }
+  },
+  { slug: 'guatemala-city', city: 'Guatemala City', timezone: 'America/Guatemala', country: 'Guatemala', countryCode: 'GT', lat: 14.63, lng: -90.51, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Guatemalan Quetzal', currencySymbol: 'Q', population: '1.0M', phoneCode: '+502 2', language: 'Spanish',
+      climate: 'Tropical highland with eternal spring temperatures (15-25°C). Rainy season May-October.',
+      attractions: ['Palacio Nacional', 'Central Market', 'Zona Viva', 'Kaminaljuyú', 'Relief Map of Guatemala'],
+      demographics: 'Capital and largest city of Guatemala, largest city in Central America. Mix of modern development and Mayan heritage.'
+    }
+  },
+  { slug: 'tegucigalpa', city: 'Tegucigalpa', timezone: 'America/Tegucigalpa', country: 'Honduras', countryCode: 'HN', lat: 14.07, lng: -87.19, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Honduran Lempira', currencySymbol: 'L', population: '1.2M', phoneCode: '+504 2', language: 'Spanish',
+      climate: 'Tropical highland with mild temperatures year-round (18-28°C) due to elevation. Dry season November-April.',
+      attractions: ['Basilica of Suyapa', 'National Identity Museum', 'La Tigra National Park', 'Central Park', 'Chiminike Children\'s Museum'],
+      demographics: 'Capital and largest city of Honduras in a mountain valley. Colonial architecture mixed with modern development.'
+    }
+  },
+  { slug: 'san-salvador', city: 'San Salvador', timezone: 'America/El_Salvador', country: 'El Salvador', countryCode: 'SV', lat: 13.69, lng: -89.19, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '570K', phoneCode: '+503 2', language: 'Spanish',
+      climate: 'Tropical with dry season (November-April) and wet season. Pleasant temperatures (20-30°C) due to elevation.',
+      attractions: ['National Palace', 'Metropolitan Cathedral', 'El Boquerón Volcano', 'National Museum of Anthropology', 'Zona Rosa'],
+      demographics: 'Capital and largest city of El Salvador in the Boquerón volcano valley. Central American commercial and political hub.'
+    }
+  },
+  { slug: 'managua', city: 'Managua', timezone: 'America/Managua', country: 'Nicaragua', countryCode: 'NI', lat: 12.13, lng: -86.25, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Nicaraguan Córdoba', currencySymbol: 'C$', population: '1.0M', phoneCode: '+505 2', language: 'Spanish',
+      climate: 'Tropical with dry season (November-April) and wet season. Hot year-round (27-35°C).',
+      attractions: ['Tiscapa Lagoon', 'Old Cathedral', 'National Palace', 'Masaya Volcano', 'Puerto Salvador Allende'],
+      demographics: 'Capital and largest city of Nicaragua, on shores of Lake Managua. Rebuilt multiple times after earthquakes.'
+    }
+  },
+  { slug: 'belmopan', city: 'Belmopan', timezone: 'America/Belize', country: 'Belize', countryCode: 'BZ', lat: 17.25, lng: -88.77, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Belize Dollar', currencySymbol: 'BZ$', population: '25K', phoneCode: '+501', language: 'English, Spanish',
+      climate: 'Tropical with wet season (June-November) and dry season. Temperatures 22-32°C year-round.',
+      attractions: ['Belize Archives', 'George Price Centre', 'Guanacaste National Park', 'Actun Tunichil Muknal Cave', 'Belize Zoo'],
+      demographics: 'Capital of Belize since 1970, one of the newest and smallest capitals in the world. Planned city after Hurricane Hattie.'
+    }
+  },
+  { slug: 'sucre', city: 'Sucre', timezone: 'America/La_Paz', country: 'Bolivia', countryCode: 'BO', lat: -19.04, lng: -65.26, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Bolivian Boliviano', currencySymbol: 'Bs', population: '300K', phoneCode: '+591 4', language: 'Spanish, Quechua',
+      climate: 'Subtropical highland with mild temperatures year-round (12-23°C) due to 2,810m altitude. Dry season April-October.',
+      attractions: ['Casa de la Libertad', 'Recoleta Monastery', 'Cretaceous Park', 'Central Market', 'Metropolitan Cathedral'],
+      demographics: 'Constitutional capital of Bolivia, "White City" for its whitewashed buildings. UNESCO World Heritage Site, where Bolivian independence was declared.'
+    }
+  },
+  { slug: 'asuncion', city: 'Asunción', timezone: 'America/Asuncion', country: 'Paraguay', countryCode: 'PY', lat: -25.28, lng: -57.57, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Paraguayan Guaraní', currencySymbol: '₲', population: '540K', phoneCode: '+595 21', language: 'Spanish, Guaraní',
+      climate: 'Humid subtropical with hot summers (25-35°C) and mild winters (12-22°C). Rainfall year-round.',
+      attractions: ['Palacio de los López', 'Panteón Nacional de los Héroes', 'Casa de la Independencia', 'Costanera', 'Metropolitan Cathedral'],
+      demographics: 'Capital and largest city of Paraguay, one of the oldest cities in South America founded in 1537.'
+    }
+  },
+  { slug: 'quito', city: 'Quito', timezone: 'America/Guayaquil', country: 'Ecuador', countryCode: 'EC', lat: -0.18, lng: -78.47, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '2.0M', phoneCode: '+593 2', language: 'Spanish, Quechua',
+      climate: 'Subtropical highland with mild temperatures year-round (10-21°C) due to 2,850m altitude. Rainy season October-May.',
+      attractions: ['Historic Center', 'TelefériQo', 'Mitad del Mundo', 'La Compañía Church', 'El Panecillo'],
+      demographics: 'Capital of Ecuador, highest official capital city in the world. First UNESCO World Heritage City (1978), preserved colonial center.'
+    }
+  },
+  { slug: 'georgetown', city: 'Georgetown', timezone: 'America/Guyana', country: 'Guyana', countryCode: 'GY', lat: 6.80, lng: -58.16, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Guyanese Dollar', currencySymbol: 'G$', population: '240K', phoneCode: '+592', language: 'English, Creole',
+      climate: 'Tropical with two rainy seasons (May-July, November-January). Warm year-round (24-32°C).',
+      attractions: ['St. George\'s Cathedral', 'Stabroek Market', 'Demerara Harbour Bridge', 'Guyana National Museum', 'Promenade Gardens'],
+      demographics: 'Capital and largest city of Guyana, only English-speaking capital in South America. Known for wooden colonial architecture.'
+    }
+  },
+  { slug: 'paramaribo', city: 'Paramaribo', timezone: 'America/Paramaribo', country: 'Suriname', countryCode: 'SR', lat: 5.85, lng: -55.20, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Surinamese Dollar', currencySymbol: 'SRD', population: '250K', phoneCode: '+597', language: 'Dutch, Sranan Tongo',
+      climate: 'Tropical rainforest with warm humid weather year-round (26-32°C). Two rainy seasons.',
+      attractions: ['Historic Inner City', 'Independence Square', 'Central Market', 'Fort Zeelandia', 'Neveh Shalom Synagogue'],
+      demographics: 'Capital and largest city of Suriname, UNESCO World Heritage Site. Unique blend of Dutch colonial architecture and multicultural heritage.'
+    }
+  },
+  { slug: 'san-juan', city: 'San Juan', timezone: 'America/Puerto_Rico', country: 'Puerto Rico', countryCode: 'PR', lat: 18.47, lng: -66.11, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '320K', phoneCode: '+1 787', language: 'Spanish, English',
+      climate: 'Tropical with warm temperatures year-round (25-31°C). Rainy season May-November, hurricane risk.',
+      attractions: ['Old San Juan', 'El Morro Fortress', 'Condado Beach', 'La Fortaleza', 'Castillo San Cristóbal'],
+      demographics: 'Capital of Puerto Rico, second-oldest European settlement in the Americas. Colorful colonial architecture and vibrant culture.'
+    }
+  },
 
   // Oceania Capitals
-  { slug: 'port-moresby', city: 'Port Moresby', timezone: 'Pacific/Port_Moresby', country: 'Papua New Guinea', countryCode: 'PG', lat: -9.44, lng: 147.18, tier: 2, continent: 'oceania' },
-  { slug: 'honiara', city: 'Honiara', timezone: 'Pacific/Guadalcanal', country: 'Solomon Islands', countryCode: 'SB', lat: -9.43, lng: 159.95, tier: 3, continent: 'oceania' },
-  { slug: 'port-vila', city: 'Port Vila', timezone: 'Pacific/Efate', country: 'Vanuatu', countryCode: 'VU', lat: -17.74, lng: 168.32, tier: 3, continent: 'oceania' },
-  { slug: 'apia', city: 'Apia', timezone: 'Pacific/Apia', country: 'Samoa', countryCode: 'WS', lat: -13.83, lng: -171.76, tier: 2, continent: 'oceania' },
-  { slug: 'nukualofa', city: 'Nukuʻalofa', timezone: 'Pacific/Tongatapu', country: 'Tonga', countryCode: 'TO', lat: -21.21, lng: -175.20, tier: 3, continent: 'oceania' },
-  { slug: 'tarawa', city: 'Tarawa', timezone: 'Pacific/Tarawa', country: 'Kiribati', countryCode: 'KI', lat: 1.33, lng: 172.98, tier: 3, continent: 'oceania' },
-  { slug: 'palikir', city: 'Palikir', timezone: 'Pacific/Pohnpei', country: 'Micronesia', countryCode: 'FM', lat: 6.91, lng: 158.16, tier: 3, continent: 'oceania' },
-  { slug: 'ngerulmud', city: 'Ngerulmud', timezone: 'Pacific/Palau', country: 'Palau', countryCode: 'PW', lat: 7.50, lng: 134.62, tier: 3, continent: 'oceania' },
-  { slug: 'majuro', city: 'Majuro', timezone: 'Pacific/Majuro', country: 'Marshall Islands', countryCode: 'MH', lat: 7.09, lng: 171.38, tier: 3, continent: 'oceania' },
-  { slug: 'yaren', city: 'Yaren', timezone: 'Pacific/Nauru', country: 'Nauru', countryCode: 'NR', lat: -0.55, lng: 166.92, tier: 3, continent: 'oceania' },
-  { slug: 'funafuti', city: 'Funafuti', timezone: 'Pacific/Funafuti', country: 'Tuvalu', countryCode: 'TV', lat: -8.52, lng: 179.19, tier: 3, continent: 'oceania' },
+  { slug: 'port-moresby', city: 'Port Moresby', timezone: 'Pacific/Port_Moresby', country: 'Papua New Guinea', countryCode: 'PG', lat: -9.44, lng: 147.18, tier: 2, continent: 'oceania',
+    info: {
+      currency: 'Papua New Guinean Kina', currencySymbol: 'K', population: '400K', phoneCode: '+675', language: 'English, Tok Pisin, Motu',
+      climate: 'Tropical savanna with wet season (December-May) and dry season. Warm year-round (26-32°C).',
+      attractions: ['National Parliament', 'National Museum', 'Port Moresby Nature Park', 'Ela Beach', 'Varirata National Park'],
+      demographics: 'Capital and largest city of Papua New Guinea, one of the world\'s most diverse countries. Gateway to PNG\'s tribal cultures.'
+    }
+  },
+  { slug: 'honiara', city: 'Honiara', timezone: 'Pacific/Guadalcanal', country: 'Solomon Islands', countryCode: 'SB', lat: -9.43, lng: 159.95, tier: 3, continent: 'oceania',
+    info: {
+      currency: 'Solomon Islands Dollar', currencySymbol: 'SI$', population: '85K', phoneCode: '+677', language: 'English, Pijin',
+      climate: 'Tropical rainforest with warm temperatures year-round (24-31°C). Heavy rainfall, especially November-April.',
+      attractions: ['WWII Memorial', 'National Museum', 'Central Market', 'Bonegi Beach', 'Parliament Building'],
+      demographics: 'Capital of Solomon Islands on Guadalcanal. Site of major WWII battles, now peaceful Pacific island capital.'
+    }
+  },
+  { slug: 'port-vila', city: 'Port Vila', timezone: 'Pacific/Efate', country: 'Vanuatu', countryCode: 'VU', lat: -17.74, lng: 168.32, tier: 3, continent: 'oceania',
+    info: {
+      currency: 'Vanuatu Vatu', currencySymbol: 'VT', population: '50K', phoneCode: '+678', language: 'Bislama, English, French',
+      climate: 'Tropical with wet season (November-April) and dry season. Warm year-round (24-30°C). Cyclone risk.',
+      attractions: ['Iririki Island', 'Mele Cascades', 'Ekasup Village', 'Port Vila Market', 'Hideaway Island'],
+      demographics: 'Capital and largest city of Vanuatu on Efate Island. Tourism-based economy with strong traditional Melanesian culture.'
+    }
+  },
+  { slug: 'apia', city: 'Apia', timezone: 'Pacific/Apia', country: 'Samoa', countryCode: 'WS', lat: -13.83, lng: -171.76, tier: 2, continent: 'oceania',
+    info: {
+      currency: 'Samoan Tala', currencySymbol: 'T', population: '37K', phoneCode: '+685', language: 'Samoan, English',
+      climate: 'Tropical with wet season (November-April) and dry season. Temperatures 24-30°C year-round.',
+      attractions: ['Robert Louis Stevenson Museum', 'Papaseea Sliding Rocks', 'To Sua Ocean Trench', 'Palolo Deep Marine Reserve', 'Maketi Fou Market'],
+      demographics: 'Capital and only city of Samoa, located on Upolu island. Important Polynesian cultural center.'
+    }
+  },
+  { slug: 'nukualofa', city: 'Nukuʻalofa', timezone: 'Pacific/Tongatapu', country: 'Tonga', countryCode: 'TO', lat: -21.21, lng: -175.20, tier: 3, continent: 'oceania',
+    info: {
+      currency: 'Tongan Paʻanga', currencySymbol: 'T$', population: '25K', phoneCode: '+676', language: 'Tongan, English',
+      climate: 'Tropical with warm temperatures year-round (22-29°C). Wet season November-April, cyclone risk.',
+      attractions: ['Royal Palace', 'Talamahu Market', 'Royal Tombs', 'Centenary Chapel', 'Pangaimotu Island'],
+      demographics: 'Capital of Tonga, the only remaining Polynesian monarchy. Located on Tongatapu island, recovering from 2022 volcanic eruption and tsunami.'
+    }
+  },
+  { slug: 'tarawa', city: 'Tarawa', timezone: 'Pacific/Tarawa', country: 'Kiribati', countryCode: 'KI', lat: 1.33, lng: 172.98, tier: 3, continent: 'oceania',
+    info: {
+      currency: 'Australian Dollar', currencySymbol: 'A$', population: '65K', phoneCode: '+686', language: 'Gilbertese, English',
+      climate: 'Equatorial with warm temperatures year-round (28-32°C). Rainfall variable, occasional droughts.',
+      attractions: ['WWII Relics', 'Betio Beach', 'Parliament House', 'Sacred Heart Cathedral', 'Red Beach Landing Site'],
+      demographics: 'Capital atoll of Kiribati, site of fierce WWII battle. One of the most densely populated and climate-vulnerable places on Earth.'
+    }
+  },
+  { slug: 'palikir', city: 'Palikir', timezone: 'Pacific/Pohnpei', country: 'Micronesia', countryCode: 'FM', lat: 6.91, lng: 158.16, tier: 3, continent: 'oceania',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '6K', phoneCode: '+691', language: 'English, Pohnpeian',
+      climate: 'Tropical rainforest with warm temperatures year-round (27-30°C). Very high rainfall, one of wettest places on Earth.',
+      attractions: ['FSM Capitol Building', 'Nan Madol', 'Sokehs Rock', 'Kepirohi Waterfall', 'Pohnpei Island'],
+      demographics: 'Capital of Federated States of Micronesia since 1989. Small government center on Pohnpei island near ancient Nan Madol ruins.'
+    }
+  },
+  { slug: 'ngerulmud', city: 'Ngerulmud', timezone: 'Pacific/Palau', country: 'Palau', countryCode: 'PW', lat: 7.50, lng: 134.62, tier: 3, continent: 'oceania',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '400', phoneCode: '+680', language: 'Palauan, English',
+      climate: 'Tropical with warm temperatures year-round (27-31°C). Heavy rainfall, wettest May-November.',
+      attractions: ['Capitol Complex', 'Palau National Congress', 'Melekeok State', 'Rock Islands', 'Ngardmau Waterfall'],
+      demographics: 'Capital of Palau since 2006, one of the smallest and least populated capitals in the world. Government center on Babeldaob island.'
+    }
+  },
+  { slug: 'majuro', city: 'Majuro', timezone: 'Pacific/Majuro', country: 'Marshall Islands', countryCode: 'MH', lat: 7.09, lng: 171.38, tier: 3, continent: 'oceania',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '28K', phoneCode: '+692', language: 'Marshallese, English',
+      climate: 'Tropical with warm temperatures year-round (27-32°C). Heavy rainfall, especially May-November.',
+      attractions: ['Alele Museum', 'Laura Beach', 'Majuro Atoll', 'WWII Sites', 'Traditional Canoe Building'],
+      demographics: 'Capital and largest city of Marshall Islands, located on a coral atoll. Vulnerable to rising sea levels from climate change.'
+    }
+  },
+  { slug: 'yaren', city: 'Yaren', timezone: 'Pacific/Nauru', country: 'Nauru', countryCode: 'NR', lat: -0.55, lng: 166.92, tier: 3, continent: 'oceania',
+    info: {
+      currency: 'Australian Dollar', currencySymbol: 'A$', population: '1K', phoneCode: '+674', language: 'Nauruan, English',
+      climate: 'Equatorial with warm temperatures year-round (26-32°C). Variable rainfall, occasional droughts.',
+      attractions: ['Parliament House', 'Buada Lagoon', 'Command Ridge', 'Anibare Bay', 'Japanese WWII Relics'],
+      demographics: 'De facto capital of Nauru, world\'s smallest republic. Former phosphate mining island, unique as country without official capital.'
+    }
+  },
+  { slug: 'funafuti', city: 'Funafuti', timezone: 'Pacific/Funafuti', country: 'Tuvalu', countryCode: 'TV', lat: -8.52, lng: 179.19, tier: 3, continent: 'oceania',
+    info: {
+      currency: 'Australian Dollar', currencySymbol: 'A$', population: '6K', phoneCode: '+688', language: 'Tuvaluan, English',
+      climate: 'Tropical with warm temperatures year-round (27-32°C). Heavy rainfall, especially November-February.',
+      attractions: ['Funafuti Conservation Area', 'Tuvalu Parliament', 'WWII Relics', 'Fongafale Lagoon', 'Traditional Crafts'],
+      demographics: 'Capital of Tuvalu, one of world\'s smallest and lowest-lying nations. Atoll at risk from rising sea levels.'
+    }
+  },
 
   // === PHASE 1: Additional Cities for G20 + Europe ===
   
   // UK - Additional Cities
-  { slug: 'liverpool', city: 'Liverpool', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.41, lng: -2.98, tier: 2, continent: 'europe' },
-  { slug: 'leeds', city: 'Leeds', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.80, lng: -1.55, tier: 2, continent: 'europe' },
-  { slug: 'bristol', city: 'Bristol', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.45, lng: -2.59, tier: 2, continent: 'europe' },
-  { slug: 'newcastle', city: 'Newcastle', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 54.98, lng: -1.61, tier: 2, continent: 'europe' },
-  { slug: 'cardiff', city: 'Cardiff', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.48, lng: -3.18, tier: 2, continent: 'europe' },
+  { slug: 'liverpool', city: 'Liverpool', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.41, lng: -2.98, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '500K', phoneCode: '+44 151', language: 'English',
+      climate: 'Oceanic with cool summers (16-20°C) and mild winters (3-8°C). Frequent rainfall, Irish Sea influence.',
+      attractions: ['The Beatles Story', 'Liverpool Cathedral', 'Albert Dock', 'Anfield Stadium', 'Walker Art Gallery'],
+      demographics: 'Major port city in northwest England, UNESCO World Heritage waterfront. Birthplace of The Beatles and famous for football.'
+    }
+  },
+  { slug: 'leeds', city: 'Leeds', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.80, lng: -1.55, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '800K', phoneCode: '+44 113', language: 'English',
+      climate: 'Oceanic with cool summers (15-21°C) and mild winters (2-7°C). Frequent rainfall year-round.',
+      attractions: ['Royal Armouries', 'Leeds Art Gallery', 'Kirkstall Abbey', 'Roundhay Park', 'Leeds Corn Exchange'],
+      demographics: 'Third-largest city in UK, major financial and legal center. Known for shopping, universities, and vibrant nightlife.'
+    }
+  },
+  { slug: 'bristol', city: 'Bristol', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.45, lng: -2.59, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '470K', phoneCode: '+44 117', language: 'English',
+      climate: 'Oceanic with mild temperatures (5-22°C). Rainfall throughout the year, slightly drier than other UK cities.',
+      attractions: ['Clifton Suspension Bridge', 'SS Great Britain', 'Bristol Zoo', 'Cabot Tower', 'Harbourside'],
+      demographics: 'Eighth-largest city in England, historic port city. Known for aerospace industry, street art (Banksy), and vibrant music scene.'
+    }
+  },
+  { slug: 'newcastle', city: 'Newcastle', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 54.98, lng: -1.61, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '300K', phoneCode: '+44 191', language: 'English',
+      climate: 'Oceanic with cool summers (15-19°C) and mild winters (2-7°C). Frequent rainfall, often overcast.',
+      attractions: ['Newcastle Castle', 'Tyne Bridge', 'BALTIC Centre', 'Grey\'s Monument', 'Quayside'],
+      demographics: 'Major city in northeast England on River Tyne. Known for nightlife, universities, and passionate football culture.'
+    }
+  },
+  { slug: 'cardiff', city: 'Cardiff', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.48, lng: -3.18, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '365K', phoneCode: '+44 29', language: 'English, Welsh',
+      climate: 'Oceanic with mild temperatures year-round (4-21°C). Frequent rainfall, especially in winter.',
+      attractions: ['Cardiff Castle', 'Millennium Stadium', 'Cardiff Bay', 'National Museum Cardiff', 'Bute Park'],
+      demographics: 'Capital and largest city of Wales, major media and cultural center. Home to Welsh Government and historic coal export port.'
+    }
+  },
   
   // Germany - Additional Cities
-  { slug: 'stuttgart', city: 'Stuttgart', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 48.78, lng: 9.18, tier: 2, continent: 'europe' },
+  { slug: 'stuttgart', city: 'Stuttgart', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 48.78, lng: 9.18, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '635K', phoneCode: '+49 711', language: 'German, Swabian',
+      climate: 'Oceanic with warm summers (18-25°C) and cold winters (-1 to 4°C). Sheltered valley location.',
+      attractions: ['Mercedes-Benz Museum', 'Porsche Museum', 'Staatsgalerie', 'Schlossplatz', 'TV Tower'],
+      demographics: 'Capital of Baden-Württemberg, birthplace of the automobile. Home to Mercedes-Benz and Porsche headquarters.'
+    }
+  },
   
   // France - Additional Cities
-  { slug: 'toulouse', city: 'Toulouse', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.60, lng: 1.44, tier: 2, continent: 'europe' },
-  { slug: 'bordeaux', city: 'Bordeaux', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 44.84, lng: -0.58, tier: 2, continent: 'europe' },
-  { slug: 'strasbourg', city: 'Strasbourg', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.57, lng: 7.75, tier: 2, continent: 'europe' },
+  { slug: 'toulouse', city: 'Toulouse', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.60, lng: 1.44, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '500K', phoneCode: '+33 5', language: 'French, Occitan',
+      climate: 'Oceanic/Mediterranean transition with warm summers (22-28°C) and mild winters (4-10°C). Sunny climate.',
+      attractions: ['Capitole de Toulouse', 'Basilica of Saint-Sernin', 'Cité de l\'Espace', 'Canal du Midi', 'Airbus Factory'],
+      demographics: 'Fourth-largest city in France, "La Ville Rose" (Pink City) for terracotta brick buildings. European aerospace capital (Airbus HQ).'
+    }
+  },
+  { slug: 'bordeaux', city: 'Bordeaux', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 44.84, lng: -0.58, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '260K', phoneCode: '+33 5', language: 'French',
+      climate: 'Oceanic with mild winters (5-12°C) and warm summers (20-28°C). Moderate rainfall year-round.',
+      attractions: ['Place de la Bourse', 'Cité du Vin', 'Saint-André Cathedral', 'Miroir d\'Eau', 'Grand Théâtre'],
+      demographics: 'UNESCO World Heritage City, world capital of wine. Major port on the Garonne River with 18th-century architecture.'
+    }
+  },
+  { slug: 'strasbourg', city: 'Strasbourg', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.57, lng: 7.75, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '290K', phoneCode: '+33 3', language: 'French, Alsatian',
+      climate: 'Oceanic with warm summers (19-25°C) and cold winters (0-5°C). Moderate rainfall year-round.',
+      attractions: ['Strasbourg Cathedral', 'Petite France', 'European Parliament', 'Palais Rohan', 'Covered Bridges'],
+      demographics: 'Capital of Alsace, official seat of European Parliament. UNESCO World Heritage old town, blend of French and German culture.'
+    }
+  },
   
   // Italy - Additional Cities
-  { slug: 'turin', city: 'Turin', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.07, lng: 7.69, tier: 2, continent: 'europe' },
-  { slug: 'bologna', city: 'Bologna', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.49, lng: 11.34, tier: 2, continent: 'europe' },
+  { slug: 'turin', city: 'Turin', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.07, lng: 7.69, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '850K', phoneCode: '+39 011', language: 'Italian',
+      climate: 'Humid subtropical with hot summers (24-30°C) and cold winters (0-7°C). Alpine influence, foggy winters.',
+      attractions: ['Egyptian Museum', 'Mole Antonelliana', 'Royal Palace', 'Piazza San Carlo', 'Shroud of Turin Chapel'],
+      demographics: 'Fourth-largest city in Italy, first capital of unified Italy. Home to FIAT and Juventus FC, elegant Baroque architecture.'
+    }
+  },
+  { slug: 'bologna', city: 'Bologna', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.49, lng: 11.34, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '395K', phoneCode: '+39 051', language: 'Italian',
+      climate: 'Humid subtropical with hot summers (25-35°C) and cold foggy winters (0-8°C).',
+      attractions: ['Piazza Maggiore', 'Two Towers', 'Basilica di San Petronio', 'University of Bologna', 'Archiginnasio'],
+      demographics: 'Capital of Emilia-Romagna, home to world\'s oldest university (1088). Known as "La Dotta" (the learned), "La Grassa" (the fat), "La Rossa" (the red).'
+    }
+  },
   
   // Spain - Additional Cities
-  { slug: 'bilbao', city: 'Bilbao', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 43.26, lng: -2.93, tier: 2, continent: 'europe' },
-  { slug: 'malaga', city: 'Málaga', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 36.72, lng: -4.42, tier: 2, continent: 'europe' },
+  { slug: 'bilbao', city: 'Bilbao', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 43.26, lng: -2.93, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '350K', phoneCode: '+34 94', language: 'Spanish, Basque',
+      climate: 'Oceanic with mild temperatures (8-25°C). Frequent rainfall year-round, especially in autumn.',
+      attractions: ['Guggenheim Museum', 'Casco Viejo', 'San Mamés Stadium', 'Puente Zubizuri', 'Mercado de la Ribera'],
+      demographics: 'Largest city in the Basque Country, transformed from industrial port to cultural destination. Known for gastronomy and architecture.'
+    }
+  },
+  { slug: 'malaga', city: 'Málaga', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 36.72, lng: -4.42, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '580K', phoneCode: '+34 95', language: 'Spanish',
+      climate: 'Mediterranean with hot dry summers (28-32°C) and mild winters (12-18°C). 300+ sunny days per year.',
+      attractions: ['Picasso Museum', 'Alcazaba', 'Gibralfaro Castle', 'Málaga Cathedral', 'Muelle Uno'],
+      demographics: 'Sixth-largest city in Spain, birthplace of Picasso. Gateway to Costa del Sol and major tech hub in southern Europe.'
+    }
+  },
   
   // Netherlands - Additional Cities
-  { slug: 'the-hague', city: 'The Hague', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 52.08, lng: 4.31, tier: 2, continent: 'europe' },
-  { slug: 'utrecht', city: 'Utrecht', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 52.09, lng: 5.12, tier: 2, continent: 'europe' },
+  { slug: 'the-hague', city: 'The Hague', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 52.08, lng: 4.31, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '550K', phoneCode: '+31 70', language: 'Dutch',
+      climate: 'Oceanic with cool summers (17-21°C) and mild winters (2-6°C). Frequent rainfall, North Sea influence.',
+      attractions: ['Mauritshuis', 'Peace Palace', 'Binnenhof', 'Madurodam', 'Scheveningen Beach'],
+      demographics: 'Seat of Dutch government and international law (ICJ, ICC). Third-largest city in Netherlands, home to royal family.'
+    }
+  },
+  { slug: 'utrecht', city: 'Utrecht', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 52.09, lng: 5.12, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '360K', phoneCode: '+31 30', language: 'Dutch',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (1-6°C). Frequent rainfall year-round.',
+      attractions: ['Dom Tower', 'Oudegracht Canal', 'Centraal Museum', 'Rietveld Schröder House', 'Railway Museum'],
+      demographics: 'Fourth-largest city in Netherlands, geographic center of the country. Medieval center with unique wharf cellars along canals.'
+    }
+  },
   
   // Belgium - Additional Cities
-  { slug: 'ghent', city: 'Ghent', timezone: 'Europe/Brussels', country: 'Belgium', countryCode: 'BE', lat: 51.05, lng: 3.72, tier: 2, continent: 'europe' },
+  { slug: 'ghent', city: 'Ghent', timezone: 'Europe/Brussels', country: 'Belgium', countryCode: 'BE', lat: 51.05, lng: 3.72, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '265K', phoneCode: '+32 9', language: 'Dutch, French',
+      climate: 'Oceanic with cool summers (17-22°C) and mild winters (2-7°C). Frequent rainfall year-round.',
+      attractions: ['Gravensteen Castle', 'St. Bavo\'s Cathedral', 'Graslei', 'Belfry of Ghent', 'SMAK Museum'],
+      demographics: 'Third-largest city in Belgium, major university town. Medieval architecture and vibrant cultural scene, often called a hidden gem.'
+    }
+  },
   
   // Switzerland - Additional Cities
-  { slug: 'basel', city: 'Basel', timezone: 'Europe/Zurich', country: 'Switzerland', countryCode: 'CH', lat: 47.56, lng: 7.59, tier: 2, continent: 'europe' },
-  { slug: 'lausanne', city: 'Lausanne', timezone: 'Europe/Zurich', country: 'Switzerland', countryCode: 'CH', lat: 46.52, lng: 6.63, tier: 2, continent: 'europe' },
-  { slug: 'lucerne', city: 'Lucerne', timezone: 'Europe/Zurich', country: 'Switzerland', countryCode: 'CH', lat: 47.05, lng: 8.31, tier: 3, continent: 'europe' },
+  { slug: 'basel', city: 'Basel', timezone: 'Europe/Zurich', country: 'Switzerland', countryCode: 'CH', lat: 47.56, lng: 7.59, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Swiss Franc', currencySymbol: 'CHF', population: '180K', phoneCode: '+41 61', language: 'German, French',
+      climate: 'Oceanic climate with warm summers (18-25°C) and cold winters (0-5°C). Rainfall year-round.',
+      attractions: ['Basel Minster', 'Kunstmuseum Basel', 'Old Town', 'Rhine River Promenade', 'Fondation Beyeler'],
+      demographics: 'Third-largest city in Switzerland, located where Switzerland, Germany, and France meet. Major pharmaceutical hub.'
+    }
+  },
+  { slug: 'lausanne', city: 'Lausanne', timezone: 'Europe/Zurich', country: 'Switzerland', countryCode: 'CH', lat: 46.52, lng: 6.63, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Swiss Franc', currencySymbol: 'CHF', population: '140K', phoneCode: '+41 21', language: 'French',
+      climate: 'Oceanic with warm summers (18-25°C) and cold winters (0-5°C). Lake Geneva moderates temperatures.',
+      attractions: ['Olympic Museum', 'Lausanne Cathedral', 'Ouchy', 'Lake Geneva Waterfront', 'EPFL Campus'],
+      demographics: 'Fourth-largest city in Switzerland, Olympic Capital (IOC headquarters). Major university town overlooking Lake Geneva.'
+    }
+  },
+  { slug: 'lucerne', city: 'Lucerne', timezone: 'Europe/Zurich', country: 'Switzerland', countryCode: 'CH', lat: 47.05, lng: 8.31, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Swiss Franc', currencySymbol: 'CHF', population: '82K', phoneCode: '+41 41', language: 'German',
+      climate: 'Oceanic with warm summers (17-24°C) and cold winters (-1 to 4°C). Rainfall throughout the year.',
+      attractions: ['Chapel Bridge', 'Lion Monument', 'Lake Lucerne', 'Mount Pilatus', 'Old Town'],
+      demographics: 'Gateway to central Switzerland, one of the most visited cities in the country. Medieval architecture and Alpine scenery.'
+    }
+  },
   
   // Austria - Additional Cities
-  { slug: 'salzburg', city: 'Salzburg', timezone: 'Europe/Vienna', country: 'Austria', countryCode: 'AT', lat: 47.80, lng: 13.04, tier: 2, continent: 'europe' },
-  { slug: 'innsbruck', city: 'Innsbruck', timezone: 'Europe/Vienna', country: 'Austria', countryCode: 'AT', lat: 47.26, lng: 11.39, tier: 3, continent: 'europe' },
-  { slug: 'graz', city: 'Graz', timezone: 'Europe/Vienna', country: 'Austria', countryCode: 'AT', lat: 47.07, lng: 15.44, tier: 2, continent: 'europe' },
+  { slug: 'salzburg', city: 'Salzburg', timezone: 'Europe/Vienna', country: 'Austria', countryCode: 'AT', lat: 47.80, lng: 13.04, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '155K', phoneCode: '+43 662', language: 'German',
+      climate: 'Oceanic with warm summers (18-25°C) and cold snowy winters (-2 to 5°C). Alpine influence.',
+      attractions: ['Hohensalzburg Fortress', 'Mozart\'s Birthplace', 'Mirabell Palace', 'Getreidegasse', 'Salzburg Cathedral'],
+      demographics: 'Fourth-largest city in Austria, birthplace of Mozart. UNESCO World Heritage Site, famous for Sound of Music and music festivals.'
+    }
+  },
+  { slug: 'innsbruck', city: 'Innsbruck', timezone: 'Europe/Vienna', country: 'Austria', countryCode: 'AT', lat: 47.26, lng: 11.39, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '130K', phoneCode: '+43 512', language: 'German',
+      climate: 'Oceanic with warm summers (15-25°C) and cold snowy winters (-4 to 4°C). Alpine climate influence.',
+      attractions: ['Golden Roof', 'Nordkette Cable Car', 'Hofburg Palace', 'Bergisel Ski Jump', 'Ambras Castle'],
+      demographics: 'Capital of Tyrol, twice hosted Winter Olympics (1964, 1976). Major Alpine sports and tourism center surrounded by mountains.'
+    }
+  },
+  { slug: 'graz', city: 'Graz', timezone: 'Europe/Vienna', country: 'Austria', countryCode: 'AT', lat: 47.07, lng: 15.44, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '295K', phoneCode: '+43 316', language: 'German',
+      climate: 'Oceanic with warm summers (18-26°C) and cold winters (-2 to 5°C). Less rainfall than western Austria.',
+      attractions: ['Schlossberg', 'Kunsthaus Graz', 'Graz Old Town', 'Eggenberg Palace', 'Murinsel'],
+      demographics: 'Second-largest city in Austria, UNESCO World Heritage Site. Major university town and European Capital of Culture 2003.'
+    }
+  },
   
   // Poland - Additional Cities
-  { slug: 'gdansk', city: 'Gdańsk', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 54.35, lng: 18.65, tier: 2, continent: 'europe' },
-  { slug: 'wroclaw', city: 'Wrocław', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 51.11, lng: 17.04, tier: 2, continent: 'europe' },
+  { slug: 'gdansk', city: 'Gdańsk', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 54.35, lng: 18.65, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Polish Złoty', currencySymbol: 'zł', population: '470K', phoneCode: '+48 58', language: 'Polish',
+      climate: 'Oceanic with cool summers (18-22°C) and cold winters (-1 to 3°C). Baltic Sea moderates temperatures.',
+      attractions: ['Long Market', 'St. Mary\'s Church', 'European Solidarity Centre', 'Neptune Fountain', 'Westerplatte'],
+      demographics: 'Historic port city on Baltic Sea, birthplace of Solidarity movement. Major trade and tourism hub with reconstructed Old Town.'
+    }
+  },
+  { slug: 'wroclaw', city: 'Wrocław', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 51.11, lng: 17.04, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Polish Złoty', currencySymbol: 'zł', population: '640K', phoneCode: '+48 71', language: 'Polish',
+      climate: 'Oceanic with warm summers (18-25°C) and cold winters (-2 to 3°C). Moderate rainfall.',
+      attractions: ['Market Square', 'Centennial Hall', 'Ostrów Tumski', 'Wrocław Dwarfs', 'Racławice Panorama'],
+      demographics: 'Fourth-largest city in Poland, "Venice of Poland" for its 100+ bridges. Historic Silesian capital with over 300 bronze dwarf sculptures.'
+    }
+  },
   
   // Portugal - Additional Cities
-  { slug: 'faro', city: 'Faro', timezone: 'Europe/Lisbon', country: 'Portugal', countryCode: 'PT', lat: 37.02, lng: -7.93, tier: 3, continent: 'europe' },
+  { slug: 'faro', city: 'Faro', timezone: 'Europe/Lisbon', country: 'Portugal', countryCode: 'PT', lat: 37.02, lng: -7.93, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '65K', phoneCode: '+351 289', language: 'Portuguese',
+      climate: 'Mediterranean with hot dry summers (25-30°C) and mild wet winters (10-17°C). 300+ sunny days per year.',
+      attractions: ['Old Town', 'Ria Formosa Natural Park', 'Faro Cathedral', 'Arco da Vila', 'Praia de Faro'],
+      demographics: 'Capital of Algarve region, main gateway for southern Portugal tourism. Historic walled old town and major airport hub.'
+    }
+  },
   
   // Greece - Additional Cities
-  { slug: 'thessaloniki', city: 'Thessaloniki', timezone: 'Europe/Athens', country: 'Greece', countryCode: 'GR', lat: 40.64, lng: 22.94, tier: 2, continent: 'europe' },
-  { slug: 'heraklion', city: 'Heraklion', timezone: 'Europe/Athens', country: 'Greece', countryCode: 'GR', lat: 35.34, lng: 25.13, tier: 3, continent: 'europe' },
-  { slug: 'patras', city: 'Patras', timezone: 'Europe/Athens', country: 'Greece', countryCode: 'GR', lat: 38.25, lng: 21.73, tier: 3, continent: 'europe' },
+  { slug: 'thessaloniki', city: 'Thessaloniki', timezone: 'Europe/Athens', country: 'Greece', countryCode: 'GR', lat: 40.64, lng: 22.94, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '1.1M', phoneCode: '+30 231', language: 'Greek',
+      climate: 'Mediterranean with hot dry summers (28-34°C) and cool wet winters (5-12°C).',
+      attractions: ['White Tower', 'Rotunda', 'Ano Poli', 'Archaeological Museum', 'Ladadika District'],
+      demographics: 'Second-largest city in Greece, co-capital of Byzantine Empire. UNESCO World Heritage Byzantine churches, vibrant food scene.'
+    }
+  },
+  { slug: 'heraklion', city: 'Heraklion', timezone: 'Europe/Athens', country: 'Greece', countryCode: 'GR', lat: 35.34, lng: 25.13, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '175K', phoneCode: '+30 281', language: 'Greek',
+      climate: 'Mediterranean with hot dry summers (25-30°C) and mild wet winters (10-16°C). 300+ sunny days.',
+      attractions: ['Knossos Palace', 'Heraklion Archaeological Museum', 'Koules Fortress', 'Old Town', 'Cretaquarium'],
+      demographics: 'Largest city on Crete, fourth-largest in Greece. Gateway to Minoan civilization ruins and Cretan beaches.'
+    }
+  },
+  { slug: 'patras', city: 'Patras', timezone: 'Europe/Athens', country: 'Greece', countryCode: 'GR', lat: 38.25, lng: 21.73, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '170K', phoneCode: '+30 261', language: 'Greek',
+      climate: 'Mediterranean with hot dry summers (28-33°C) and mild wet winters (8-14°C).',
+      attractions: ['Rio-Antirrio Bridge', 'Patras Castle', 'Saint Andrew Cathedral', 'Roman Odeon', 'Carnival of Patras'],
+      demographics: 'Third-largest city in Greece, gateway to Italy via ferry. Ancient port city known for hosting Greece\'s largest carnival.'
+    }
+  },
   
   // Sweden - Additional Cities
-  { slug: 'gothenburg', city: 'Gothenburg', timezone: 'Europe/Stockholm', country: 'Sweden', countryCode: 'SE', lat: 57.71, lng: 11.97, tier: 2, continent: 'europe' },
-  { slug: 'malmo', city: 'Malmö', timezone: 'Europe/Stockholm', country: 'Sweden', countryCode: 'SE', lat: 55.61, lng: 13.00, tier: 2, continent: 'europe' },
-  { slug: 'uppsala', city: 'Uppsala', timezone: 'Europe/Stockholm', country: 'Sweden', countryCode: 'SE', lat: 59.86, lng: 17.64, tier: 3, continent: 'europe' },
+  { slug: 'gothenburg', city: 'Gothenburg', timezone: 'Europe/Stockholm', country: 'Sweden', countryCode: 'SE', lat: 57.71, lng: 11.97, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Swedish Krona', currencySymbol: 'kr', population: '590K', phoneCode: '+46 31', language: 'Swedish',
+      climate: 'Oceanic with cool summers (16-20°C) and cold winters (-1 to 4°C). Frequent rainfall, mild for latitude.',
+      attractions: ['Liseberg Theme Park', 'Universeum', 'Gothenburg Archipelago', 'Haga District', 'Gothenburg Museum of Art'],
+      demographics: 'Second-largest city in Sweden, major port and industrial center. Home to Volvo and known for sustainable urban development.'
+    }
+  },
+  { slug: 'malmo', city: 'Malmö', timezone: 'Europe/Stockholm', country: 'Sweden', countryCode: 'SE', lat: 55.61, lng: 13.00, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Swedish Krona', currencySymbol: 'kr', population: '350K', phoneCode: '+46 40', language: 'Swedish',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (0-4°C). Rainfall year-round, milder than most of Sweden.',
+      attractions: ['Turning Torso', 'Malmöhus Castle', 'Lilla Torg', 'Ribersborg Beach', 'Öresund Bridge'],
+      demographics: 'Third-largest city in Sweden, connected to Copenhagen by Øresund Bridge. Diverse, multicultural city with modern architecture.'
+    }
+  },
+  { slug: 'uppsala', city: 'Uppsala', timezone: 'Europe/Stockholm', country: 'Sweden', countryCode: 'SE', lat: 59.86, lng: 17.64, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Swedish Krona', currencySymbol: 'kr', population: '180K', phoneCode: '+46 18', language: 'Swedish',
+      climate: 'Humid continental with mild summers (18-22°C) and cold winters (-5 to 0°C). Snow December-March.',
+      attractions: ['Uppsala Cathedral', 'Uppsala University', 'Gamla Uppsala', 'Linnaeus Garden', 'Gustavianum Museum'],
+      demographics: 'Fourth-largest city in Sweden, oldest Scandinavian university (1477). Historic religious center with Viking burial mounds.'
+    }
+  },
   
   // Norway - Additional Cities
-  { slug: 'bergen', city: 'Bergen', timezone: 'Europe/Oslo', country: 'Norway', countryCode: 'NO', lat: 60.39, lng: 5.32, tier: 2, continent: 'europe' },
-  { slug: 'trondheim', city: 'Trondheim', timezone: 'Europe/Oslo', country: 'Norway', countryCode: 'NO', lat: 63.43, lng: 10.40, tier: 2, continent: 'europe' },
-  { slug: 'stavanger', city: 'Stavanger', timezone: 'Europe/Oslo', country: 'Norway', countryCode: 'NO', lat: 58.97, lng: 5.73, tier: 3, continent: 'europe' },
+  { slug: 'bergen', city: 'Bergen', timezone: 'Europe/Oslo', country: 'Norway', countryCode: 'NO', lat: 60.39, lng: 5.32, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Norwegian Krone', currencySymbol: 'kr', population: '285K', phoneCode: '+47', language: 'Norwegian',
+      climate: 'Oceanic with mild temperatures year-round (2-18°C). One of Europe\'s rainiest cities with 240+ rainy days.',
+      attractions: ['Bryggen Wharf', 'Fløibanen Funicular', 'Fish Market', 'KODE Art Museums', 'Fantoft Stave Church'],
+      demographics: 'Second-largest city in Norway, UNESCO World Heritage Site. Gateway to the fjords and historic Hanseatic trading post.'
+    }
+  },
+  { slug: 'trondheim', city: 'Trondheim', timezone: 'Europe/Oslo', country: 'Norway', countryCode: 'NO', lat: 63.43, lng: 10.40, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Norwegian Krone', currencySymbol: 'kr', population: '210K', phoneCode: '+47', language: 'Norwegian',
+      climate: 'Oceanic with mild summers (14-18°C) and cold winters (-3 to 2°C). Frequent precipitation, snow in winter.',
+      attractions: ['Nidaros Cathedral', 'Old Town Bridge', 'Kristiansten Fortress', 'Rockheim', 'Bakklandet'],
+      demographics: 'Third-largest city in Norway, former Viking capital. Home to Norway\'s oldest cathedral, major tech and university hub.'
+    }
+  },
+  { slug: 'stavanger', city: 'Stavanger', timezone: 'Europe/Oslo', country: 'Norway', countryCode: 'NO', lat: 58.97, lng: 5.73, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Norwegian Krone', currencySymbol: 'kr', population: '145K', phoneCode: '+47', language: 'Norwegian',
+      climate: 'Oceanic with mild summers (15-18°C) and cool winters (0-5°C). Frequent rainfall, milder than latitude suggests.',
+      attractions: ['Old Stavanger', 'Pulpit Rock (Preikestolen)', 'Norwegian Petroleum Museum', 'Stavanger Cathedral', 'Lysefjord'],
+      demographics: 'Fourth-largest city in Norway, oil capital of the country. Gateway to dramatic fjord landscapes and hiking.'
+    }
+  },
   
   // Denmark - Additional Cities
-  { slug: 'aarhus', city: 'Aarhus', timezone: 'Europe/Copenhagen', country: 'Denmark', countryCode: 'DK', lat: 56.16, lng: 10.20, tier: 2, continent: 'europe' },
-  { slug: 'odense', city: 'Odense', timezone: 'Europe/Copenhagen', country: 'Denmark', countryCode: 'DK', lat: 55.40, lng: 10.39, tier: 3, continent: 'europe' },
-  { slug: 'aalborg', city: 'Aalborg', timezone: 'Europe/Copenhagen', country: 'Denmark', countryCode: 'DK', lat: 57.05, lng: 9.92, tier: 3, continent: 'europe' },
+  { slug: 'aarhus', city: 'Aarhus', timezone: 'Europe/Copenhagen', country: 'Denmark', countryCode: 'DK', lat: 56.16, lng: 10.20, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Danish Krone', currencySymbol: 'kr', population: '285K', phoneCode: '+45', language: 'Danish',
+      climate: 'Oceanic climate with cool summers (17-21°C) and mild winters (0-4°C). Frequent rainfall year-round.',
+      attractions: ['ARoS Aarhus Art Museum', 'Den Gamle By', 'Moesgaard Museum', 'Aarhus Cathedral', 'Marselisborg Palace'],
+      demographics: 'Second-largest city in Denmark, European Capital of Culture 2017. Major university and tech hub.'
+    }
+  },
+  { slug: 'odense', city: 'Odense', timezone: 'Europe/Copenhagen', country: 'Denmark', countryCode: 'DK', lat: 55.40, lng: 10.39, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Danish Krone', currencySymbol: 'kr', population: '180K', phoneCode: '+45', language: 'Danish',
+      climate: 'Oceanic with mild summers (17-21°C) and cool winters (0-4°C). Rainfall distributed throughout the year.',
+      attractions: ['Hans Christian Andersen Museum', 'Odense Cathedral', 'Funen Village', 'Brandts Kulturcenter', 'Odense Zoo'],
+      demographics: 'Third-largest city in Denmark, birthplace of Hans Christian Andersen. Major cultural center on the island of Funen.'
+    }
+  },
+  { slug: 'aalborg', city: 'Aalborg', timezone: 'Europe/Copenhagen', country: 'Denmark', countryCode: 'DK', lat: 57.05, lng: 9.92, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Danish Krone', currencySymbol: 'kr', population: '120K', phoneCode: '+45', language: 'Danish',
+      climate: 'Oceanic climate with mild summers (15-20°C) and cold winters (0-5°C). Rainfall throughout the year.',
+      attractions: ['Aalborg Zoo', 'Utzon Center', 'Lindholm Høje Viking Burial Site', 'Aalborg Tower', 'Kunsten Museum of Modern Art'],
+      demographics: 'Fourth-largest city in Denmark, major cultural and educational hub in North Jutland.'
+    }
+  },
   
   // Finland - Additional Cities
-  { slug: 'tampere', city: 'Tampere', timezone: 'Europe/Helsinki', country: 'Finland', countryCode: 'FI', lat: 61.50, lng: 23.79, tier: 2, continent: 'europe' },
-  { slug: 'turku', city: 'Turku', timezone: 'Europe/Helsinki', country: 'Finland', countryCode: 'FI', lat: 60.45, lng: 22.27, tier: 2, continent: 'europe' },
-  { slug: 'oulu', city: 'Oulu', timezone: 'Europe/Helsinki', country: 'Finland', countryCode: 'FI', lat: 65.01, lng: 25.47, tier: 3, continent: 'europe' },
+  { slug: 'tampere', city: 'Tampere', timezone: 'Europe/Helsinki', country: 'Finland', countryCode: 'FI', lat: 61.50, lng: 23.79, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '245K', phoneCode: '+358 3', language: 'Finnish, Swedish',
+      climate: 'Humid continental with mild summers (17-22°C) and cold snowy winters (-8 to -2°C). Lakes moderate temperatures.',
+      attractions: ['Särkänniemi Adventure Park', 'Moomin Museum', 'Vapriikki Museum Centre', 'Pyynikki Observation Tower', 'Tampere Cathedral'],
+      demographics: 'Third-largest city in Finland, "Manchester of the North" for industrial heritage. Known for black sausage and sauna culture.'
+    }
+  },
+  { slug: 'turku', city: 'Turku', timezone: 'Europe/Helsinki', country: 'Finland', countryCode: 'FI', lat: 60.45, lng: 22.27, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '195K', phoneCode: '+358 2', language: 'Finnish, Swedish',
+      climate: 'Humid continental with mild summers (17-22°C) and cold winters (-6 to -1°C). Baltic Sea moderates temperatures.',
+      attractions: ['Turku Castle', 'Turku Cathedral', 'Aboa Vetus & Ars Nova', 'Archipelago Trail', 'Forum Marinum'],
+      demographics: 'Oldest city in Finland, former capital until 1812. Gateway to world\'s largest archipelago, European Capital of Culture 2011.'
+    }
+  },
+  { slug: 'oulu', city: 'Oulu', timezone: 'Europe/Helsinki', country: 'Finland', countryCode: 'FI', lat: 65.01, lng: 25.47, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '210K', phoneCode: '+358 8', language: 'Finnish, Swedish',
+      climate: 'Subarctic with short cool summers (15-20°C) and long cold winters (-10 to -4°C). Snow cover 5-6 months.',
+      attractions: ['Market Square', 'Oulu Cathedral', 'Tietomaa Science Centre', 'Nallikari Beach', 'Air Guitar World Championships'],
+      demographics: 'Fifth-largest city in Finland, northernmost major city in the country. Tech hub and university city near the Arctic Circle.'
+    }
+  },
   
   // Ireland - Additional Cities
-  { slug: 'cork', city: 'Cork', timezone: 'Europe/Dublin', country: 'Ireland', countryCode: 'IE', lat: 51.90, lng: -8.47, tier: 2, continent: 'europe' },
-  { slug: 'galway', city: 'Galway', timezone: 'Europe/Dublin', country: 'Ireland', countryCode: 'IE', lat: 53.27, lng: -9.06, tier: 2, continent: 'europe' },
-  { slug: 'limerick', city: 'Limerick', timezone: 'Europe/Dublin', country: 'Ireland', countryCode: 'IE', lat: 52.67, lng: -8.63, tier: 3, continent: 'europe' },
+  { slug: 'cork', city: 'Cork', timezone: 'Europe/Dublin', country: 'Ireland', countryCode: 'IE', lat: 51.90, lng: -8.47, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '210K', phoneCode: '+353 21', language: 'English, Irish',
+      climate: 'Oceanic with mild temperatures year-round (5-18°C). Frequent rainfall, especially in winter.',
+      attractions: ['English Market', 'Blarney Castle', 'St. Fin Barre\'s Cathedral', 'Cork City Gaol', 'Shandon Bells'],
+      demographics: 'Second-largest city in Ireland, known as the "Rebel City". Major port, university town, and European Capital of Culture 2005.'
+    }
+  },
+  { slug: 'galway', city: 'Galway', timezone: 'Europe/Dublin', country: 'Ireland', countryCode: 'IE', lat: 53.27, lng: -9.06, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '85K', phoneCode: '+353 91', language: 'English, Irish',
+      climate: 'Oceanic with mild temperatures year-round (5-18°C). Frequent rainfall and Atlantic winds.',
+      attractions: ['Spanish Arch', 'Claddagh', 'Eyre Square', 'Galway Cathedral', 'Salthill Promenade'],
+      demographics: 'Fourth-largest city in Ireland, gateway to Connemara and Aran Islands. Known as Ireland\'s Cultural Heart, European Capital of Culture 2020.'
+    }
+  },
+  { slug: 'limerick', city: 'Limerick', timezone: 'Europe/Dublin', country: 'Ireland', countryCode: 'IE', lat: 52.67, lng: -8.63, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '100K', phoneCode: '+353 61', language: 'English, Irish',
+      climate: 'Oceanic with mild temperatures year-round (5-18°C). Frequent rainfall, especially in winter.',
+      attractions: ['King John\'s Castle', 'St. Mary\'s Cathedral', 'Hunt Museum', 'Treaty Stone', 'Thomond Park'],
+      demographics: 'Third-largest city in Ireland, on the River Shannon. Historic medieval city known for rugby and revitalized Georgian architecture.'
+    }
+  },
   
   // Czechia - Additional Cities
-  { slug: 'brno', city: 'Brno', timezone: 'Europe/Prague', country: 'Czechia', countryCode: 'CZ', lat: 49.20, lng: 16.61, tier: 2, continent: 'europe' },
-  { slug: 'ostrava', city: 'Ostrava', timezone: 'Europe/Prague', country: 'Czechia', countryCode: 'CZ', lat: 49.84, lng: 18.29, tier: 2, continent: 'europe' },
-  { slug: 'pilsen', city: 'Pilsen', timezone: 'Europe/Prague', country: 'Czechia', countryCode: 'CZ', lat: 49.75, lng: 13.38, tier: 3, continent: 'europe' },
+  { slug: 'brno', city: 'Brno', timezone: 'Europe/Prague', country: 'Czechia', countryCode: 'CZ', lat: 49.20, lng: 16.61, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Czech Koruna', currencySymbol: 'Kč', population: '380K', phoneCode: '+420 5', language: 'Czech',
+      climate: 'Humid continental with warm summers (18-26°C) and cold winters (-2 to 4°C). Moderate rainfall.',
+      attractions: ['Špilberk Castle', 'Villa Tugendhat', 'Cathedral of St. Peter and Paul', 'Brno Underground', 'Old Town Hall'],
+      demographics: 'Second-largest city in Czechia, major university and tech hub. Known for functionalist architecture and MotoGP circuit.'
+    }
+  },
+  { slug: 'ostrava', city: 'Ostrava', timezone: 'Europe/Prague', country: 'Czechia', countryCode: 'CZ', lat: 49.84, lng: 18.29, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Czech Koruna', currencySymbol: 'Kč', population: '285K', phoneCode: '+420 59', language: 'Czech',
+      climate: 'Humid continental with warm summers (18-25°C) and cold winters (-3 to 2°C). Moderate rainfall.',
+      attractions: ['Dolní Vítkovice', 'Landek Park', 'New Town Hall Tower', 'Silesian Ostrava Castle', 'Colours of Ostrava Festival'],
+      demographics: 'Third-largest city in Czechia, former industrial powerhouse. Now reinvented as cultural hub with transformed steel works.'
+    }
+  },
+  { slug: 'pilsen', city: 'Pilsen', timezone: 'Europe/Prague', country: 'Czechia', countryCode: 'CZ', lat: 49.75, lng: 13.38, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Czech Koruna', currencySymbol: 'Kč', population: '175K', phoneCode: '+420 37', language: 'Czech',
+      climate: 'Oceanic with warm summers (17-24°C) and cold winters (-2 to 3°C). Moderate rainfall year-round.',
+      attractions: ['Pilsner Urquell Brewery', 'St. Bartholomew Cathedral', 'Great Synagogue', 'Techmania Science Center', 'Republic Square'],
+      demographics: 'Fourth-largest city in Czechia, birthplace of Pilsner beer. European Capital of Culture 2015, major industrial center.'
+    }
+  },
   
   // Hungary - Additional Cities
-  { slug: 'debrecen', city: 'Debrecen', timezone: 'Europe/Budapest', country: 'Hungary', countryCode: 'HU', lat: 47.53, lng: 21.63, tier: 2, continent: 'europe' },
-  { slug: 'szeged', city: 'Szeged', timezone: 'Europe/Budapest', country: 'Hungary', countryCode: 'HU', lat: 46.25, lng: 20.15, tier: 3, continent: 'europe' },
-  { slug: 'pecs', city: 'Pécs', timezone: 'Europe/Budapest', country: 'Hungary', countryCode: 'HU', lat: 46.07, lng: 18.23, tier: 3, continent: 'europe' },
+  { slug: 'debrecen', city: 'Debrecen', timezone: 'Europe/Budapest', country: 'Hungary', countryCode: 'HU', lat: 47.53, lng: 21.63, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Hungarian Forint', currencySymbol: 'Ft', population: '200K', phoneCode: '+36 52', language: 'Hungarian',
+      climate: 'Humid continental with hot summers (20-28°C) and cold winters (-2 to 4°C). Low rainfall.',
+      attractions: ['Great Reformed Church', 'Déri Museum', 'Great Forest Park', 'Aquaticum', 'Old College'],
+      demographics: 'Second-largest city in Hungary, "Calvinist Rome" for its Protestant heritage. Major university town and cultural center.'
+    }
+  },
+  { slug: 'szeged', city: 'Szeged', timezone: 'Europe/Budapest', country: 'Hungary', countryCode: 'HU', lat: 46.25, lng: 20.15, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Hungarian Forint', currencySymbol: 'Ft', population: '160K', phoneCode: '+36 62', language: 'Hungarian',
+      climate: 'Humid continental with hot summers (22-30°C) and cold winters (-2 to 4°C). Sunniest city in Hungary.',
+      attractions: ['Votive Church', 'Széchenyi Square', 'Szeged Open-Air Festival', 'Reök Palace', 'Pick Salami Museum'],
+      demographics: 'Third-largest city in Hungary, "City of Sunshine". Major university town rebuilt after 1879 flood with grand boulevards.'
+    }
+  },
+  { slug: 'pecs', city: 'Pécs', timezone: 'Europe/Budapest', country: 'Hungary', countryCode: 'HU', lat: 46.07, lng: 18.23, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Hungarian Forint', currencySymbol: 'Ft', population: '145K', phoneCode: '+36 72', language: 'Hungarian',
+      climate: 'Humid continental with warm summers (20-28°C) and mild winters (0-5°C). Mediterranean influence.',
+      attractions: ['Early Christian Necropolis', 'Pécs Cathedral', 'Zsolnay Cultural Quarter', 'Mosque of Pasha Qasim', 'Széchenyi Square'],
+      demographics: 'Fifth-largest city in Hungary, UNESCO World Heritage Site. European Capital of Culture 2010, known for Ottoman heritage and ceramics.'
+    }
+  },
   
   // Romania - Additional Cities
-  { slug: 'cluj-napoca', city: 'Cluj-Napoca', timezone: 'Europe/Bucharest', country: 'Romania', countryCode: 'RO', lat: 46.77, lng: 23.60, tier: 2, continent: 'europe' },
-  { slug: 'timisoara', city: 'Timișoara', timezone: 'Europe/Bucharest', country: 'Romania', countryCode: 'RO', lat: 45.76, lng: 21.23, tier: 2, continent: 'europe' },
-  { slug: 'constanta', city: 'Constanța', timezone: 'Europe/Bucharest', country: 'Romania', countryCode: 'RO', lat: 44.18, lng: 28.63, tier: 2, continent: 'europe' },
+  { slug: 'cluj-napoca', city: 'Cluj-Napoca', timezone: 'Europe/Bucharest', country: 'Romania', countryCode: 'RO', lat: 46.77, lng: 23.60, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Romanian Leu', currencySymbol: 'lei', population: '325K', phoneCode: '+40 264', language: 'Romanian, Hungarian',
+      climate: 'Humid continental with warm summers (18-27°C) and cold snowy winters (-4 to 3°C).',
+      attractions: ['St. Michael\'s Church', 'Central Park', 'National Museum of Transylvanian History', 'Botanical Garden', 'Union Square'],
+      demographics: 'Second-largest city in Romania, unofficial capital of Transylvania. Major IT hub and university city with vibrant cultural scene.'
+    }
+  },
+  { slug: 'timisoara', city: 'Timișoara', timezone: 'Europe/Bucharest', country: 'Romania', countryCode: 'RO', lat: 45.76, lng: 21.23, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Romanian Leu', currencySymbol: 'lei', population: '320K', phoneCode: '+40 256', language: 'Romanian, Hungarian, German',
+      climate: 'Humid continental with warm summers (22-28°C) and cold winters (-2 to 4°C). Moderate rainfall.',
+      attractions: ['Union Square', 'Orthodox Metropolitan Cathedral', 'Timișoara Bastions', 'Revolution Memorial', 'Roses Park'],
+      demographics: 'Third-largest city in Romania, "Little Vienna". First European city with electric street lighting (1884), birthplace of 1989 Revolution.'
+    }
+  },
+  { slug: 'constanta', city: 'Constanța', timezone: 'Europe/Bucharest', country: 'Romania', countryCode: 'RO', lat: 44.18, lng: 28.63, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Romanian Leu', currencySymbol: 'lei', population: '285K', phoneCode: '+40 241', language: 'Romanian',
+      climate: 'Humid subtropical with hot summers (22-30°C) and mild winters (0-7°C). Black Sea moderates temperatures.',
+      attractions: ['Constanța Casino', 'Roman Mosaic Building', 'Mamaia Beach', 'Tomis Harbor', 'Natural History Museum'],
+      demographics: 'Oldest continuously inhabited city in Romania, founded by Greeks as Tomis. Major Black Sea port and summer resort.'
+    }
+  },
   
   // Turkey - Additional Cities
-  { slug: 'adana', city: 'Adana', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 37.00, lng: 35.32, tier: 2, continent: 'europe' },
-  { slug: 'gaziantep', city: 'Gaziantep', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 37.07, lng: 37.38, tier: 2, continent: 'europe' },
-  { slug: 'konya', city: 'Konya', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 37.87, lng: 32.48, tier: 2, continent: 'europe' },
+  { slug: 'adana', city: 'Adana', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 37.00, lng: 35.32, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Turkish Lira', currencySymbol: '₺', population: '2.2M', phoneCode: '+90 322', language: 'Turkish',
+      climate: 'Mediterranean climate with hot dry summers (35-40°C) and mild rainy winters (5-15°C).',
+      attractions: ['Sabancı Central Mosque', 'Stone Bridge', 'Adana Archaeological Museum', 'Seyhan Dam Lake', 'Merkez Park'],
+      demographics: 'Fifth-largest city in Turkey, known for Adana kebab, cotton industry, and as gateway to Çukurova region.'
+    }
+  },
+  { slug: 'gaziantep', city: 'Gaziantep', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 37.07, lng: 37.38, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Turkish Lira', currencySymbol: '₺', population: '2.1M', phoneCode: '+90 342', language: 'Turkish, Kurdish, Arabic',
+      climate: 'Mediterranean with hot dry summers (30-38°C) and cold wet winters (2-8°C). Snow possible in winter.',
+      attractions: ['Zeugma Mosaic Museum', 'Gaziantep Castle', 'Bakırcılar Bazaar', 'Defence and Heroism Panoramic Museum', 'Historic Souks'],
+      demographics: 'Sixth-largest city in Turkey, UNESCO Creative City of Gastronomy. Famous for baklava, pistachios, and copper crafts.'
+    }
+  },
+  { slug: 'konya', city: 'Konya', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 37.87, lng: 32.48, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Turkish Lira', currencySymbol: '₺', population: '2.3M', phoneCode: '+90 332', language: 'Turkish',
+      climate: 'Semi-arid with hot dry summers (28-33°C) and cold snowy winters (-2 to 5°C). Continental influence.',
+      attractions: ['Mevlana Museum', 'Alaeddin Mosque', 'Karatay Madrasah', 'Ince Minaret Museum', 'Sille Village'],
+      demographics: 'Seventh-largest city in Turkey, spiritual home of Whirling Dervishes and Rumi. Important religious and cultural center.'
+    }
+  },
   
   // Russia - Additional Cities
-  { slug: 'novosibirsk', city: 'Novosibirsk', timezone: 'Asia/Novosibirsk', country: 'Russia', countryCode: 'RU', lat: 55.04, lng: 82.93, tier: 2, continent: 'asia' },
-  { slug: 'yekaterinburg', city: 'Yekaterinburg', timezone: 'Asia/Yekaterinburg', country: 'Russia', countryCode: 'RU', lat: 56.84, lng: 60.60, tier: 2, continent: 'asia' },
-  { slug: 'kazan', city: 'Kazan', timezone: 'Europe/Moscow', country: 'Russia', countryCode: 'RU', lat: 55.80, lng: 49.11, tier: 2, continent: 'europe' },
-  { slug: 'sochi', city: 'Sochi', timezone: 'Europe/Moscow', country: 'Russia', countryCode: 'RU', lat: 43.60, lng: 39.73, tier: 2, continent: 'europe' },
-  { slug: 'vladivostok', city: 'Vladivostok', timezone: 'Asia/Vladivostok', country: 'Russia', countryCode: 'RU', lat: 43.12, lng: 131.89, tier: 2, continent: 'asia' },
+  { slug: 'novosibirsk', city: 'Novosibirsk', timezone: 'Asia/Novosibirsk', country: 'Russia', countryCode: 'RU', lat: 55.04, lng: 82.93, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Russian Ruble', currencySymbol: '₽', population: '1.6M', phoneCode: '+7 383', language: 'Russian',
+      climate: 'Humid continental with warm short summers (18-26°C) and very cold winters (-18 to -10°C). Significant snowfall.',
+      attractions: ['Novosibirsk Opera House', 'Akademgorodok', 'Novosibirsk Zoo', 'Lenin Square', 'Alexander Nevsky Cathedral'],
+      demographics: 'Third-largest city in Russia, largest in Siberia. Major scientific and industrial center on the Trans-Siberian Railway.'
+    }
+  },
+  { slug: 'yekaterinburg', city: 'Yekaterinburg', timezone: 'Asia/Yekaterinburg', country: 'Russia', countryCode: 'RU', lat: 56.84, lng: 60.60, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Russian Ruble', currencySymbol: '₽', population: '1.5M', phoneCode: '+7 343', language: 'Russian',
+      climate: 'Humid continental with warm short summers (18-25°C) and very cold long winters (-15 to -8°C). Significant snowfall.',
+      attractions: ['Church on Blood', 'Yeltsin Center', 'Europe-Asia Border', 'Ganina Yama', 'Sevastyanov House'],
+      demographics: 'Fourth-largest city in Russia, capital of the Urals. Site where last Tsar was executed, major industrial and cultural center.'
+    }
+  },
+  { slug: 'kazan', city: 'Kazan', timezone: 'Europe/Moscow', country: 'Russia', countryCode: 'RU', lat: 55.80, lng: 49.11, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Russian Ruble', currencySymbol: '₽', population: '1.3M', phoneCode: '+7 843', language: 'Russian, Tatar',
+      climate: 'Humid continental with warm summers (20-25°C) and cold snowy winters (-10 to -15°C).',
+      attractions: ['Kazan Kremlin', 'Kul Sharif Mosque', 'Bauman Street', 'Temple of All Religions', 'Kazan Family Center'],
+      demographics: 'Capital of Tatarstan, "Third Capital of Russia". UNESCO World Heritage Site blending Russian and Tatar cultures.'
+    }
+  },
+  { slug: 'sochi', city: 'Sochi', timezone: 'Europe/Moscow', country: 'Russia', countryCode: 'RU', lat: 43.60, lng: 39.73, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Russian Ruble', currencySymbol: '₽', population: '440K', phoneCode: '+7 862', language: 'Russian',
+      climate: 'Humid subtropical with warm summers (24-28°C) and mild winters (6-10°C). Wettest city in Russia.',
+      attractions: ['Sochi Olympic Park', 'Rosa Khutor', 'Riviera Park', 'Stalin\'s Dacha', 'Skybridge'],
+      demographics: 'Russia\'s summer capital on Black Sea coast, hosted 2014 Winter Olympics. Unique for beach and ski resorts in same area.'
+    }
+  },
+  { slug: 'vladivostok', city: 'Vladivostok', timezone: 'Asia/Vladivostok', country: 'Russia', countryCode: 'RU', lat: 43.12, lng: 131.89, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Russian Ruble', currencySymbol: '₽', population: '600K', phoneCode: '+7 423', language: 'Russian',
+      climate: 'Humid continental with warm foggy summers (17-22°C) and cold dry winters (-14 to -5°C). Monsoon influence.',
+      attractions: ['Russky Bridge', 'Eagle\'s Nest Hill', 'S-56 Submarine Museum', 'Vladivostok Fortress', 'Sportivnaya Harbor'],
+      demographics: 'Russia\'s Pacific gateway, terminus of Trans-Siberian Railway. Major naval base with stunning Golden Horn Bay setting.'
+    }
+  },
   
   // Japan - Additional Cities
-  { slug: 'yokohama', city: 'Yokohama', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.44, lng: 139.64, tier: 2, continent: 'asia' },
-  { slug: 'nagoya', city: 'Nagoya', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.18, lng: 136.91, tier: 2, continent: 'asia' },
-  { slug: 'sapporo', city: 'Sapporo', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 43.06, lng: 141.35, tier: 2, continent: 'asia' },
-  { slug: 'fukuoka', city: 'Fukuoka', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 33.59, lng: 130.40, tier: 2, continent: 'asia' },
-  { slug: 'kobe', city: 'Kobe', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.69, lng: 135.20, tier: 2, continent: 'asia' },
+  { slug: 'yokohama', city: 'Yokohama', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.44, lng: 139.64, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '3.8M', phoneCode: '+81 45', language: 'Japanese',
+      climate: 'Humid subtropical with hot humid summers (26-31°C) and mild winters (4-10°C). Rainy season June-July.',
+      attractions: ['Minato Mirai 21', 'Chinatown', 'Sankeien Garden', 'Cup Noodles Museum', 'Yokohama Landmark Tower'],
+      demographics: 'Second-largest city in Japan, major port since 1859. Modern waterfront and Japan\'s largest Chinatown.'
+    }
+  },
+  { slug: 'nagoya', city: 'Nagoya', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.18, lng: 136.91, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '2.3M', phoneCode: '+81 52', language: 'Japanese',
+      climate: 'Humid subtropical with hot humid summers (27-33°C) and cool winters (2-10°C). Rainy season in June.',
+      attractions: ['Nagoya Castle', 'Atsuta Shrine', 'Toyota Commemorative Museum', 'Osu Shopping District', 'Higashiyama Zoo'],
+      demographics: 'Fourth-largest city in Japan, center of automotive industry (Toyota). Known for manufacturing, miso cuisine, and samurai heritage.'
+    }
+  },
+  { slug: 'sapporo', city: 'Sapporo', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 43.06, lng: 141.35, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '2.0M', phoneCode: '+81 11', language: 'Japanese',
+      climate: 'Humid continental with warm summers (20-26°C) and cold snowy winters (-4 to 0°C). Heavy snowfall.',
+      attractions: ['Sapporo Snow Festival', 'Odori Park', 'Clock Tower', 'Sapporo Beer Museum', 'Moerenuma Park'],
+      demographics: 'Fifth-largest city in Japan, capital of Hokkaido. Hosted 1972 Winter Olympics, known for ramen, beer, and skiing.'
+    }
+  },
+  { slug: 'fukuoka', city: 'Fukuoka', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 33.59, lng: 130.40, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '1.6M', phoneCode: '+81 92', language: 'Japanese',
+      climate: 'Humid subtropical with hot humid summers (27-33°C) and mild winters (5-10°C). Rainy season in June.',
+      attractions: ['Ohori Park', 'Fukuoka Tower', 'Kushida Shrine', 'Canal City Hakata', 'Dazaifu Tenmangu'],
+      demographics: 'Largest city on Kyushu island, gateway to Asia. Known for Hakata ramen, yatai food stalls, and tech startup scene.'
+    }
+  },
+  { slug: 'kobe', city: 'Kobe', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.69, lng: 135.20, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '1.5M', phoneCode: '+81 78', language: 'Japanese',
+      climate: 'Humid subtropical with hot humid summers (27-33°C) and mild winters (3-10°C). Rainy season in June.',
+      attractions: ['Kobe Port Tower', 'Mount Rokko', 'Nunobiki Herb Garden', 'Arima Onsen', 'Chinatown (Nankinmachi)'],
+      demographics: 'Sixth-largest city in Japan, major port between mountains and sea. Famous for Kobe beef and cosmopolitan atmosphere.'
+    }
+  },
   
   // South Korea - Additional Cities
-  { slug: 'incheon', city: 'Incheon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.46, lng: 126.71, tier: 2, continent: 'asia' },
-  { slug: 'daegu', city: 'Daegu', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.87, lng: 128.60, tier: 2, continent: 'asia' },
+  { slug: 'incheon', city: 'Incheon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.46, lng: 126.71, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '3.0M', phoneCode: '+82 32', language: 'Korean',
+      climate: 'Humid continental with hot humid summers (24-30°C) and cold dry winters (-4 to 4°C).',
+      attractions: ['Incheon Chinatown', 'Songdo Central Park', 'Wolmido Island', 'Incheon Landing Memorial', 'Jayu Park'],
+      demographics: 'Third-largest city in South Korea, home to main international airport. Major port and Songdo smart city development.'
+    }
+  },
+  { slug: 'daegu', city: 'Daegu', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.87, lng: 128.60, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '2.4M', phoneCode: '+82 53', language: 'Korean',
+      climate: 'Humid continental with hot summers (25-33°C) and cold winters (-2 to 8°C). Basin location makes summers hotter.',
+      attractions: ['Apsan Park', 'Seomun Market', 'Donghwasa Temple', 'E-World 83 Tower', 'Daegu Arboretum'],
+      demographics: 'Fourth-largest city in South Korea, known as "Apple City" and textile industry hub. Modern medical tourism destination.'
+    }
+  },
   
   // China - Additional Cities
   { slug: 'xian', city: "Xi'an", timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 34.34, lng: 108.94, tier: 2, continent: 'asia' },
   
   // India - Additional Cities
-  { slug: 'pune', city: 'Pune', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 18.52, lng: 73.86, tier: 2, continent: 'asia' },
-  { slug: 'ahmedabad', city: 'Ahmedabad', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.02, lng: 72.57, tier: 2, continent: 'asia' },
+  { slug: 'pune', city: 'Pune', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 18.52, lng: 73.86, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '3.7M', phoneCode: '+91 20', language: 'Marathi, Hindi, English',
+      climate: 'Tropical wet and dry with hot dry pre-monsoon (35-42°C), monsoon (June-October), and mild winter (12-28°C).',
+      attractions: ['Shaniwar Wada', 'Aga Khan Palace', 'Sinhagad Fort', 'Osho Ashram', 'Dagdusheth Halwai Temple'],
+      demographics: 'Second-largest city in Maharashtra, "Oxford of the East" for its universities. Major IT hub and cultural center of Maratha history.'
+    }
+  },
+  { slug: 'ahmedabad', city: 'Ahmedabad', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.02, lng: 72.57, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '8.6M', phoneCode: '+91 79', language: 'Gujarati, Hindi',
+      climate: 'Semi-arid with hot summers (40-45°C), mild winters (12-28°C). Monsoon June-September.',
+      attractions: ['Sabarmati Ashram', 'Adalaj Stepwell', 'Kankaria Lake', 'Sidi Saiyyed Mosque', 'Akshardham Temple'],
+      demographics: 'Largest city in Gujarat, UNESCO World Heritage City. Major textile and pharmaceutical hub.'
+    }
+  },
   
   // Indonesia - Additional Cities
-  { slug: 'surabaya', city: 'Surabaya', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -7.25, lng: 112.75, tier: 2, continent: 'asia' },
-  { slug: 'bandung', city: 'Bandung', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -6.91, lng: 107.61, tier: 2, continent: 'asia' },
-  { slug: 'medan', city: 'Medan', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: 3.59, lng: 98.67, tier: 2, continent: 'asia' },
-  { slug: 'denpasar', city: 'Denpasar', timezone: 'Asia/Makassar', country: 'Indonesia', countryCode: 'ID', lat: -8.65, lng: 115.22, tier: 2, continent: 'asia' },
+  { slug: 'surabaya', city: 'Surabaya', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -7.25, lng: 112.75, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indonesian Rupiah', currencySymbol: 'Rp', population: '2.9M', phoneCode: '+62 31', language: 'Indonesian, Javanese',
+      climate: 'Tropical monsoon with wet season (November-May) and dry season. Hot year-round (27-34°C).',
+      attractions: ['House of Sampoerna', 'Suramadu Bridge', 'Submarine Monument', 'Tugu Pahlawan', 'Arab Quarter'],
+      demographics: 'Second-largest city in Indonesia, "City of Heroes" for resistance against colonialism. Major port and industrial center in East Java.'
+    }
+  },
+  { slug: 'bandung', city: 'Bandung', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -6.91, lng: 107.61, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indonesian Rupiah', currencySymbol: 'Rp', population: '2.5M', phoneCode: '+62 22', language: 'Indonesian, Sundanese',
+      climate: 'Tropical highland with mild temperatures (17-28°C) due to elevation. Rainy season October-April.',
+      attractions: ['Tangkuban Perahu Volcano', 'Kawah Putih Crater', 'Gedung Sate', 'Trans Studio Bandung', 'Saung Angklung Udjo'],
+      demographics: 'Third-largest city in Indonesia, known as "Paris of Java" for European architecture and fashion outlets.'
+    }
+  },
+  { slug: 'medan', city: 'Medan', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: 3.59, lng: 98.67, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indonesian Rupiah', currencySymbol: 'Rp', population: '2.5M', phoneCode: '+62 61', language: 'Indonesian, Batak',
+      climate: 'Tropical rainforest with high humidity year-round (24-32°C). Rainfall throughout the year, heaviest September-January.',
+      attractions: ['Maimun Palace', 'Great Mosque of Medan', 'Lake Toba', 'Tjong A Fie Mansion', 'Bukit Lawang Orangutans'],
+      demographics: 'Fourth-largest city in Indonesia, capital of North Sumatra. Gateway to Lake Toba and Bukit Lawang rainforest.'
+    }
+  },
+  { slug: 'denpasar', city: 'Denpasar', timezone: 'Asia/Makassar', country: 'Indonesia', countryCode: 'ID', lat: -8.65, lng: 115.22, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indonesian Rupiah', currencySymbol: 'Rp', population: '730K', phoneCode: '+62 361', language: 'Indonesian, Balinese',
+      climate: 'Tropical with wet season (November-March) and dry season. Temperatures 24-33°C year-round.',
+      attractions: ['Bajra Sandhi Monument', 'Bali Museum', 'Badung Market', 'Jagatnatha Temple', 'Sanur Beach'],
+      demographics: 'Capital of Bali province, main gateway for tourists. Blend of traditional Balinese culture and modern development.'
+    }
+  },
   
   // Saudi Arabia - Additional Cities
-  { slug: 'dammam', city: 'Dammam', timezone: 'Asia/Riyadh', country: 'Saudi Arabia', countryCode: 'SA', lat: 26.43, lng: 50.10, tier: 2, continent: 'asia' },
-  { slug: 'medina', city: 'Medina', timezone: 'Asia/Riyadh', country: 'Saudi Arabia', countryCode: 'SA', lat: 24.47, lng: 39.61, tier: 2, continent: 'asia' },
+  { slug: 'dammam', city: 'Dammam', timezone: 'Asia/Riyadh', country: 'Saudi Arabia', countryCode: 'SA', lat: 26.43, lng: 50.10, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Saudi Riyal', currencySymbol: 'SAR', population: '1.2M', phoneCode: '+966 13', language: 'Arabic',
+      climate: 'Hot desert with extremely hot summers (35-45°C) and mild winters (12-22°C). Humid due to Persian Gulf.',
+      attractions: ['Corniche', 'King Abdulaziz Center for World Culture', 'Half Moon Bay', 'Heritage Village', 'Marjan Island'],
+      demographics: 'Capital of Eastern Province, center of Saudi oil industry. Part of Dammam-Dhahran-Khobar metropolitan area.'
+    }
+  },
+  { slug: 'medina', city: 'Medina', timezone: 'Asia/Riyadh', country: 'Saudi Arabia', countryCode: 'SA', lat: 24.47, lng: 39.61, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Saudi Riyal', currencySymbol: 'SAR', population: '1.5M', phoneCode: '+966 14', language: 'Arabic',
+      climate: 'Hot desert with extremely hot summers (35-45°C) and mild winters (15-25°C). Very little rainfall.',
+      attractions: ['Al-Masjid an-Nabawi', 'Quba Mosque', 'Mount Uhud', 'Qiblatain Mosque', 'Al-Baqi Cemetery'],
+      demographics: 'Second holiest city in Islam, burial place of Prophet Muhammad. Receives millions of pilgrims and Hajj visitors annually.'
+    }
+  },
   
   // Australia - Additional Cities
-  { slug: 'adelaide', city: 'Adelaide', timezone: 'Australia/Adelaide', country: 'Australia', countryCode: 'AU', lat: -34.93, lng: 138.60, tier: 2, continent: 'oceania' },
-  { slug: 'gold-coast', city: 'Gold Coast', timezone: 'Australia/Brisbane', country: 'Australia', countryCode: 'AU', lat: -28.02, lng: 153.43, tier: 2, continent: 'oceania' },
+  { slug: 'adelaide', city: 'Adelaide', timezone: 'Australia/Adelaide', country: 'Australia', countryCode: 'AU', lat: -34.93, lng: 138.60, tier: 2, continent: 'oceania',
+    info: {
+      currency: 'Australian Dollar', currencySymbol: 'A$', population: '1.4M', phoneCode: '+61 8', language: 'English',
+      climate: 'Mediterranean climate with hot dry summers (25-35°C) and mild wet winters (8-16°C).',
+      attractions: ['Adelaide Oval', 'Adelaide Central Market', 'Art Gallery of South Australia', 'Glenelg Beach', 'Adelaide Botanic Garden'],
+      demographics: 'Capital of South Australia, known for festivals, wine regions (Barossa Valley), and quality of life.'
+    }
+  },
+  { slug: 'gold-coast', city: 'Gold Coast', timezone: 'Australia/Brisbane', country: 'Australia', countryCode: 'AU', lat: -28.02, lng: 153.43, tier: 2, continent: 'oceania',
+    info: {
+      currency: 'Australian Dollar', currencySymbol: 'A$', population: '700K', phoneCode: '+61 7', language: 'English',
+      climate: 'Humid subtropical with warm wet summers (22-29°C) and mild dry winters (12-21°C). 300+ sunny days.',
+      attractions: ['Surfers Paradise Beach', 'Sea World', 'Currumbin Wildlife Sanctuary', 'SkyPoint Observation Deck', 'Springbrook National Park'],
+      demographics: 'Sixth-largest city in Australia, famous for beaches, theme parks, and nightlife. Major tourist destination south of Brisbane.'
+    }
+  },
   
   // Brazil - Additional Cities
-  { slug: 'salvador', city: 'Salvador', timezone: 'America/Bahia', country: 'Brazil', countryCode: 'BR', lat: -12.97, lng: -38.50, tier: 2, continent: 'americas' },
-  { slug: 'brasilia', city: 'Brasília', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -15.79, lng: -47.88, tier: 2, continent: 'americas' },
-  { slug: 'fortaleza', city: 'Fortaleza', timezone: 'America/Fortaleza', country: 'Brazil', countryCode: 'BR', lat: -3.72, lng: -38.54, tier: 2, continent: 'americas' },
-  { slug: 'belo-horizonte', city: 'Belo Horizonte', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -19.92, lng: -43.94, tier: 2, continent: 'americas' },
-  { slug: 'recife', city: 'Recife', timezone: 'America/Recife', country: 'Brazil', countryCode: 'BR', lat: -8.05, lng: -34.88, tier: 2, continent: 'americas' },
+  { slug: 'salvador', city: 'Salvador', timezone: 'America/Bahia', country: 'Brazil', countryCode: 'BR', lat: -12.97, lng: -38.50, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '2.9M', phoneCode: '+55 71', language: 'Portuguese',
+      climate: 'Tropical with warm temperatures year-round (24-30°C). Rainy season April-July.',
+      attractions: ['Pelourinho', 'Elevador Lacerda', 'Farol da Barra', 'Mercado Modelo', 'Igreja de Nosso Senhor do Bonfim'],
+      demographics: 'Capital of Bahia, first capital of Brazil (1549-1763). Heart of Afro-Brazilian culture, known for capoeira, candomblé, and Carnival.'
+    }
+  },
+  { slug: 'brasilia', city: 'Brasília', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -15.79, lng: -47.88, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '3.1M', phoneCode: '+55 61', language: 'Portuguese',
+      climate: 'Tropical savanna with distinct wet (October-April) and dry seasons. Temperatures 18-28°C year-round.',
+      attractions: ['Cathedral of Brasília', 'National Congress', 'JK Memorial', 'Palácio da Alvorada', 'Praça dos Três Poderes'],
+      demographics: 'Capital of Brazil since 1960, UNESCO World Heritage Site. Planned city designed by Oscar Niemeyer and Lúcio Costa.'
+    }
+  },
+  { slug: 'fortaleza', city: 'Fortaleza', timezone: 'America/Fortaleza', country: 'Brazil', countryCode: 'BR', lat: -3.72, lng: -38.54, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '2.7M', phoneCode: '+55 85', language: 'Portuguese',
+      climate: 'Tropical with consistent warm temperatures (26-32°C). Rainy season February-May, sunny the rest of year.',
+      attractions: ['Praia do Futuro', 'Beach Park', 'Dragão do Mar Cultural Center', 'Mercado Central', 'Iracema Beach'],
+      demographics: 'Fifth-largest city in Brazil, capital of Ceará state. Major tourist destination known for beaches, forró music, and cashew nuts.'
+    }
+  },
+  { slug: 'belo-horizonte', city: 'Belo Horizonte', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -19.92, lng: -43.94, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '2.7M', phoneCode: '+55 31', language: 'Portuguese',
+      climate: 'Tropical highland with warm wet summers (20-28°C) and mild dry winters (15-25°C).',
+      attractions: ['Pampulha Modern Ensemble', 'Mercado Central', 'Praça da Liberdade', 'Inhotim', 'Mangabeiras Park'],
+      demographics: 'Third-largest city in Brazil, first planned modern city in the country. Known for food, culture, and nearby Inhotim museum.'
+    }
+  },
+  { slug: 'recife', city: 'Recife', timezone: 'America/Recife', country: 'Brazil', countryCode: 'BR', lat: -8.05, lng: -34.88, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '1.6M', phoneCode: '+55 81', language: 'Portuguese',
+      climate: 'Tropical with warm temperatures year-round (25-30°C). Rainy season March-August.',
+      attractions: ['Recife Antigo', 'Boa Viagem Beach', 'Marco Zero', 'Ricardo Brennand Institute', 'Olinda Historic Town'],
+      demographics: 'Capital of Pernambuco, "Venice of Brazil" for its waterways and bridges. Major port and cultural center of Northeast Brazil.'
+    }
+  },
   
   // Mexico - Additional Cities
   
   // Argentina - Additional Cities
-  { slug: 'cordoba-argentina', city: 'Córdoba', timezone: 'America/Argentina/Cordoba', country: 'Argentina', countryCode: 'AR', lat: -31.42, lng: -64.18, tier: 2, continent: 'americas' },
-  { slug: 'rosario', city: 'Rosario', timezone: 'America/Argentina/Buenos_Aires', country: 'Argentina', countryCode: 'AR', lat: -32.95, lng: -60.65, tier: 2, continent: 'americas' },
-  { slug: 'mendoza', city: 'Mendoza', timezone: 'America/Argentina/Mendoza', country: 'Argentina', countryCode: 'AR', lat: -32.89, lng: -68.83, tier: 2, continent: 'americas' },
-  { slug: 'mar-del-plata', city: 'Mar del Plata', timezone: 'America/Argentina/Buenos_Aires', country: 'Argentina', countryCode: 'AR', lat: -38.00, lng: -57.55, tier: 3, continent: 'americas' },
+  { slug: 'cordoba-argentina', city: 'Córdoba', timezone: 'America/Argentina/Cordoba', country: 'Argentina', countryCode: 'AR', lat: -31.42, lng: -64.18, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Argentine Peso', currencySymbol: '$', population: '1.5M', phoneCode: '+54 351', language: 'Spanish',
+      climate: 'Humid subtropical with hot summers (20-32°C) and mild dry winters (5-18°C).',
+      attractions: ['Jesuit Block', 'Manzana Jesuítica', 'Sarmiento Park', 'Plaza San Martín', 'Córdoba Cathedral'],
+      demographics: 'Second-largest city in Argentina, UNESCO World Heritage Site. Major industrial center and home to Argentina\'s first university (1613).'
+    }
+  },
+  { slug: 'rosario', city: 'Rosario', timezone: 'America/Argentina/Buenos_Aires', country: 'Argentina', countryCode: 'AR', lat: -32.95, lng: -60.65, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Argentine Peso', currencySymbol: '$', population: '1.3M', phoneCode: '+54 341', language: 'Spanish',
+      climate: 'Humid subtropical with hot summers (24-32°C) and mild winters (8-16°C). Rainfall year-round.',
+      attractions: ['Monumento a la Bandera', 'Paraná River Waterfront', 'Parque de la Independencia', 'La Florida Beach', 'Centro Cultural Parque de España'],
+      demographics: 'Third-largest city in Argentina, birthplace of Che Guevara and Lionel Messi. Major port and industrial center on the Paraná River.'
+    }
+  },
+  { slug: 'mendoza', city: 'Mendoza', timezone: 'America/Argentina/Mendoza', country: 'Argentina', countryCode: 'AR', lat: -32.89, lng: -68.83, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Argentine Peso', currencySymbol: '$', population: '120K', phoneCode: '+54 261', language: 'Spanish',
+      climate: 'Semi-arid with hot dry summers (25-33°C) and mild winters (3-15°C). Very low rainfall, depends on Andes snowmelt.',
+      attractions: ['Wine Routes', 'Aconcagua Provincial Park', 'Plaza Independencia', 'Cerro de la Gloria', 'General San Martín Park'],
+      demographics: 'Capital of Mendoza province, heart of Argentina\'s wine country. Gateway to Aconcagua, the highest peak in the Americas.'
+    }
+  },
+  { slug: 'mar-del-plata', city: 'Mar del Plata', timezone: 'America/Argentina/Buenos_Aires', country: 'Argentina', countryCode: 'AR', lat: -38.00, lng: -57.55, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Argentine Peso', currencySymbol: '$', population: '620K', phoneCode: '+54 223', language: 'Spanish',
+      climate: 'Oceanic with mild summers (20-25°C) and cool winters (8-14°C). Rainfall throughout the year.',
+      attractions: ['Bristol Beach', 'Sea Lion Colony', 'Casino Central', 'Torre Tanque', 'Juan Manuel Fangio Museum'],
+      demographics: 'Seventh-largest city in Argentina, "Pearl of the Atlantic". Major beach resort and fishing port on the Atlantic coast.'
+    }
+  },
   
   // South Africa - Additional Cities
-  { slug: 'durban', city: 'Durban', timezone: 'Africa/Johannesburg', country: 'South Africa', countryCode: 'ZA', lat: -29.86, lng: 31.02, tier: 2, continent: 'africa' },
-  { slug: 'port-elizabeth', city: 'Port Elizabeth', timezone: 'Africa/Johannesburg', country: 'South Africa', countryCode: 'ZA', lat: -33.96, lng: 25.60, tier: 2, continent: 'africa' },
+  { slug: 'durban', city: 'Durban', timezone: 'Africa/Johannesburg', country: 'South Africa', countryCode: 'ZA', lat: -29.86, lng: 31.02, tier: 2, continent: 'africa',
+    info: {
+      currency: 'South African Rand', currencySymbol: 'R', population: '3.7M', phoneCode: '+27 31', language: 'Zulu, English',
+      climate: 'Humid subtropical with warm wet summers (23-28°C) and mild dry winters (16-23°C). Beach weather year-round.',
+      attractions: ['Golden Mile Beach', 'uShaka Marine World', 'Moses Mabhida Stadium', 'Victoria Street Market', 'Durban Botanic Gardens'],
+      demographics: 'Third-largest city in South Africa, largest city in KwaZulu-Natal. Busiest port in Africa and popular surfing destination.'
+    }
+  },
+  { slug: 'port-elizabeth', city: 'Port Elizabeth', timezone: 'Africa/Johannesburg', country: 'South Africa', countryCode: 'ZA', lat: -33.96, lng: 25.60, tier: 2, continent: 'africa',
+    info: {
+      currency: 'South African Rand', currencySymbol: 'R', population: '1.3M', phoneCode: '+27 41', language: 'English, Xhosa, Afrikaans',
+      climate: 'Oceanic with warm summers (20-26°C) and mild winters (12-20°C). Rainfall year-round, sunny climate.',
+      attractions: ['Addo Elephant Park', 'Boardwalk Casino', 'Donkin Reserve', 'Nelson Mandela Bay Stadium', 'Sardinia Bay'],
+      demographics: 'Major seaport in Eastern Cape, "The Friendly City". Gateway to Garden Route and Big Five safaris.'
+    }
+  },
   
   // Canada - Additional Cities
 
   // ============ PHASE 1: CRITICAL EXPANSION (50+ cities) ============
   
   // INDIA - Additional Major Cities (8 new)
-  { slug: 'surat', city: 'Surat', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 21.17, lng: 72.83, tier: 2, continent: 'asia' },
-  { slug: 'jaipur', city: 'Jaipur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.92, lng: 75.79, tier: 2, continent: 'asia' },
-  { slug: 'lucknow', city: 'Lucknow', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.85, lng: 80.95, tier: 2, continent: 'asia' },
-  { slug: 'kanpur', city: 'Kanpur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.45, lng: 80.35, tier: 3, continent: 'asia' },
-  { slug: 'nagpur', city: 'Nagpur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 21.15, lng: 79.09, tier: 3, continent: 'asia' },
-  { slug: 'indore', city: 'Indore', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.72, lng: 75.86, tier: 3, continent: 'asia' },
-  { slug: 'patna', city: 'Patna', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.59, lng: 85.14, tier: 3, continent: 'asia' },
-  { slug: 'bhopal', city: 'Bhopal', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.26, lng: 77.41, tier: 3, continent: 'asia' },
-  { slug: 'visakhapatnam', city: 'Visakhapatnam', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 17.69, lng: 83.22, tier: 3, continent: 'asia' },
-  { slug: 'vadodara', city: 'Vadodara', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.31, lng: 73.19, tier: 3, continent: 'asia' },
-  { slug: 'ghaziabad', city: 'Ghaziabad', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 28.67, lng: 77.42, tier: 3, continent: 'asia' },
-  { slug: 'ludhiana', city: 'Ludhiana', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.90, lng: 75.85, tier: 3, continent: 'asia' },
-  { slug: 'agra', city: 'Agra', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.18, lng: 78.02, tier: 3, continent: 'asia' },
-  { slug: 'nashik', city: 'Nashik', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.00, lng: 73.79, tier: 3, continent: 'asia' },
-  { slug: 'coimbatore', city: 'Coimbatore', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 11.02, lng: 76.97, tier: 3, continent: 'asia' },
-  { slug: 'kochi', city: 'Kochi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 9.93, lng: 76.27, tier: 3, continent: 'asia' },
+  { slug: 'surat', city: 'Surat', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 21.17, lng: 72.83, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '5.5M', phoneCode: '+91 261', language: 'Gujarati, Hindi',
+      climate: 'Tropical wet and dry with hot summers (35-42°C), monsoon (June-September), and mild winters (15-30°C).',
+      attractions: ['Dumas Beach', 'Dutch Garden', 'Surat Castle', 'ISKCON Temple', 'Science Centre'],
+      demographics: 'Eighth-largest city in India, "Diamond City" processing 90% of world\'s diamonds. Major textile and diamond cutting center.'
+    }
+  },
+  { slug: 'jaipur', city: 'Jaipur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.92, lng: 75.79, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '3.1M', phoneCode: '+91 141', language: 'Hindi, Rajasthani',
+      climate: 'Semi-arid with very hot summers (35-45°C) and cool winters (8-22°C). Monsoon July-September.',
+      attractions: ['Amber Fort', 'Hawa Mahal', 'City Palace', 'Jantar Mantar', 'Nahargarh Fort'],
+      demographics: 'Capital of Rajasthan, "Pink City" for its distinctive terracotta-colored buildings. UNESCO World Heritage Site since 2019.'
+    }
+  },
+  { slug: 'lucknow', city: 'Lucknow', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.85, lng: 80.95, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '3.4M', phoneCode: '+91 522', language: 'Hindi, Urdu',
+      climate: 'Humid subtropical with very hot summers (40-45°C) and cool winters (5-22°C). Monsoon July-September.',
+      attractions: ['Bara Imambara', 'Rumi Darwaza', 'Chota Imambara', 'British Residency', 'Hazratganj Market'],
+      demographics: 'Capital of Uttar Pradesh, "City of Nawabs". Known for tehzeeb (culture), kebabs, chikankari embroidery, and Mughal architecture.'
+    }
+  },
+  { slug: 'kanpur', city: 'Kanpur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.45, lng: 80.35, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '3.0M', phoneCode: '+91 512', language: 'Hindi, Urdu',
+      climate: 'Humid subtropical with extreme hot summers (40-48°C) and cool winters (5-20°C). Monsoon July-September.',
+      attractions: ['Kanpur Zoo', 'Phool Bagh', 'Kanpur Memorial Church', 'ISKCON Temple', 'Moti Jheel'],
+      demographics: 'Largest city in Uttar Pradesh by area, "Leather City of India". Major industrial hub on the Ganges River.'
+    }
+  },
+  { slug: 'nagpur', city: 'Nagpur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 21.15, lng: 79.09, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '2.9M', phoneCode: '+91 712', language: 'Marathi, Hindi',
+      climate: 'Tropical wet and dry with very hot summers (40-48°C) and mild winters (10-30°C). Monsoon June-September.',
+      attractions: ['Deekshabhoomi', 'Sitabuldi Fort', 'Futala Lake', 'Dragon Palace Temple', 'Ambazari Lake'],
+      demographics: 'Third-largest city in Maharashtra, geographic center of India. Known as "Orange City" and winter capital of the state.'
+    }
+  },
+  { slug: 'indore', city: 'Indore', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.72, lng: 75.86, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '2.2M', phoneCode: '+91 731', language: 'Hindi, Marathi',
+      climate: 'Tropical wet and dry with hot summers (35-42°C) and mild winters (10-25°C). Monsoon June-September.',
+      attractions: ['Rajwada Palace', 'Lal Bagh Palace', 'Sarafa Bazaar', 'Patalpani Waterfall', 'Central Museum'],
+      demographics: 'Largest city in Madhya Pradesh, cleanest city in India (multiple times). Major commercial and educational hub.'
+    }
+  },
+  { slug: 'patna', city: 'Patna', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.59, lng: 85.14, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '2.0M', phoneCode: '+91 612', language: 'Hindi, Bhojpuri',
+      climate: 'Humid subtropical with very hot summers (40-46°C) and cool winters (8-22°C). Monsoon July-September.',
+      attractions: ['Golghar', 'Patna Museum', 'Mahavir Temple', 'Gandhi Maidan', 'Takht Sri Patna Sahib'],
+      demographics: 'Capital of Bihar, one of the oldest continuously inhabited cities in the world. Ancient name Pataliputra, capital of Mauryan Empire.'
+    }
+  },
+  { slug: 'bhopal', city: 'Bhopal', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.26, lng: 77.41, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '2.0M', phoneCode: '+91 755', language: 'Hindi, Urdu',
+      climate: 'Humid subtropical with hot summers (35-45°C), monsoon (June-September), and mild winters (10-25°C).',
+      attractions: ['Upper Lake', 'Taj-ul-Masajid', 'Bharat Bhavan', 'Van Vihar National Park', 'Sanchi Stupa'],
+      demographics: 'Capital of Madhya Pradesh, known as "City of Lakes". Historic city with Mughal heritage and modern IT development.'
+    }
+  },
+  { slug: 'visakhapatnam', city: 'Visakhapatnam', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 17.69, lng: 83.22, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '2.0M', phoneCode: '+91 891', language: 'Telugu, Hindi, English',
+      climate: 'Tropical wet and dry with hot summers (30-38°C) and mild winters (18-28°C). Monsoon June-October, cyclone risk.',
+      attractions: ['Kailasagiri Hill', 'Submarine Museum', 'Rishikonda Beach', 'Araku Valley', 'Borra Caves'],
+      demographics: 'Largest city in Andhra Pradesh, major port and industrial hub. Known as "City of Destiny" and "Jewel of the East Coast".'
+    }
+  },
+  { slug: 'vadodara', city: 'Vadodara', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.31, lng: 73.19, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '2.1M', phoneCode: '+91 265', language: 'Gujarati, Hindi',
+      climate: 'Tropical wet and dry with hot summers (38-45°C), monsoon (June-September), and mild winters (15-30°C).',
+      attractions: ['Laxmi Vilas Palace', 'Sayaji Gardens', 'Vadodara Museum', 'Kirti Mandir', 'EME Temple'],
+      demographics: 'Third-largest city in Gujarat, "Cultural Capital of Gujarat". Former Gaekwad princely state with magnificent Indo-Saracenic architecture.'
+    }
+  },
+  { slug: 'ghaziabad', city: 'Ghaziabad', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 28.67, lng: 77.42, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.8M', phoneCode: '+91 120', language: 'Hindi, Urdu',
+      climate: 'Humid subtropical with extreme hot summers (40-47°C) and cool winters (5-20°C). Monsoon July-September.',
+      attractions: ['ISKCON Temple', 'Swarna Jayanti Park', 'Shipra Mall', 'Drizzling Land', 'City Forest'],
+      demographics: 'Part of Delhi NCR, one of fastest-growing cities in India. Major industrial and residential hub adjacent to New Delhi.'
+    }
+  },
+  { slug: 'ludhiana', city: 'Ludhiana', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.90, lng: 75.85, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.7M', phoneCode: '+91 161', language: 'Punjabi, Hindi',
+      climate: 'Humid subtropical with very hot summers (40-47°C) and cold foggy winters (4-18°C). Monsoon July-September.',
+      attractions: ['Lodhi Fort', 'Punjab Agricultural University', 'Tiger Zoo', 'Gurudwara Charan Kamal', 'Nehru Rose Garden'],
+      demographics: 'Largest city in Punjab, "Manchester of India" for textile and hosiery industry. Major industrial and commercial hub.'
+    }
+  },
+  { slug: 'agra', city: 'Agra', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.18, lng: 78.02, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.8M', phoneCode: '+91 562', language: 'Hindi, Urdu',
+      climate: 'Semi-arid with extreme summers (40-47°C) and cool winters (5-22°C). Monsoon July-September.',
+      attractions: ['Taj Mahal', 'Agra Fort', 'Fatehpur Sikri', 'Mehtab Bagh', 'Itimad-ud-Daulah Tomb'],
+      demographics: 'Historic city on the banks of Yamuna River, home to three UNESCO World Heritage Sites including the Taj Mahal.'
+    }
+  },
+  { slug: 'nashik', city: 'Nashik', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.00, lng: 73.79, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.6M', phoneCode: '+91 253', language: 'Marathi, Hindi',
+      climate: 'Tropical wet and dry with hot summers (35-42°C) and mild winters (12-30°C). Monsoon June-September.',
+      attractions: ['Trimbakeshwar Temple', 'Sula Vineyards', 'Pandavleni Caves', 'Ramkund', 'Coin Museum'],
+      demographics: 'Fourth-largest city in Maharashtra, known as "Wine Capital of India". Hindu pilgrimage site for Kumbh Mela every 12 years.'
+    }
+  },
+  { slug: 'coimbatore', city: 'Coimbatore', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 11.02, lng: 76.97, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.6M', phoneCode: '+91 422', language: 'Tamil, English',
+      climate: 'Semi-arid with moderate temperatures year-round (20-35°C). Pleasant climate compared to other South Indian cities.',
+      attractions: ['Marudamalai Temple', 'Dhyanalinga', 'VOC Park', 'Brookfields Mall', 'Kovai Kutralam Falls'],
+      demographics: 'Second-largest city in Tamil Nadu, "Manchester of South India" for textile industry. Major engineering and IT hub.'
+    }
+  },
+  { slug: 'kochi', city: 'Kochi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 9.93, lng: 76.27, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '680K', phoneCode: '+91 484', language: 'Malayalam, English',
+      climate: 'Tropical monsoon with heavy southwest monsoon (June-September). Warm and humid year-round (24-32°C).',
+      attractions: ['Fort Kochi', 'Chinese Fishing Nets', 'Mattancherry Palace', 'Jewish Synagogue', 'Kathakali Centre'],
+      demographics: 'Port city in Kerala, "Queen of the Arabian Sea". Historic spice trade center with Portuguese, Dutch, and British heritage.'
+    }
+  },
 
   // CHINA - Additional Major Cities (10 new)
-  { slug: 'chongqing', city: 'Chongqing', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 29.56, lng: 106.55, tier: 2, continent: 'asia' },
-  { slug: 'tianjin', city: 'Tianjin', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 39.14, lng: 117.18, tier: 2, continent: 'asia' },
-  { slug: 'wuhan', city: 'Wuhan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.59, lng: 114.31, tier: 2, continent: 'asia' },
-  { slug: 'nanjing', city: 'Nanjing', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 32.06, lng: 118.80, tier: 2, continent: 'asia' },
-  { slug: 'suzhou', city: 'Suzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 31.30, lng: 120.62, tier: 3, continent: 'asia' },
-  { slug: 'harbin', city: 'Harbin', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 45.80, lng: 126.53, tier: 3, continent: 'asia' },
-  { slug: 'qingdao', city: 'Qingdao', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 36.07, lng: 120.38, tier: 3, continent: 'asia' },
-  { slug: 'dalian', city: 'Dalian', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 38.91, lng: 121.60, tier: 3, continent: 'asia' },
-  { slug: 'xiamen', city: 'Xiamen', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 24.48, lng: 118.09, tier: 3, continent: 'asia' },
-  { slug: 'zhengzhou', city: 'Zhengzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 34.75, lng: 113.63, tier: 3, continent: 'asia' },
-  { slug: 'changsha', city: 'Changsha', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 28.23, lng: 112.94, tier: 3, continent: 'asia' },
+  { slug: 'chongqing', city: 'Chongqing', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 29.56, lng: 106.55, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '32M', phoneCode: '+86 23', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with hot humid summers (28-38°C) and mild foggy winters (5-10°C). Known as one of China\'s "furnace cities".',
+      attractions: ['Hongya Cave', 'Ciqikou Old Town', 'Three Gorges Museum', 'Liberation Monument', 'Yangtze River Cable Car'],
+      demographics: 'Largest municipality in the world by population, major inland port on Yangtze River. Known for hotpot cuisine and mountain city layout.'
+    }
+  },
+  { slug: 'tianjin', city: 'Tianjin', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 39.14, lng: 117.18, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '14M', phoneCode: '+86 22', language: 'Mandarin',
+      climate: 'Humid continental with hot humid summers (26-32°C) and cold dry winters (-5 to 3°C). Monsoon influence.',
+      attractions: ['Tianjin Eye', 'Ancient Culture Street', 'Italian Style District', 'Porcelain House', 'Five Great Avenues'],
+      demographics: 'Fourth-largest city in China, major port near Beijing. Known for European concession architecture and goubuli baozi dumplings.'
+    }
+  },
+  { slug: 'wuhan', city: 'Wuhan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.59, lng: 114.31, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '11M', phoneCode: '+86 27', language: 'Mandarin',
+      climate: 'Humid subtropical with very hot humid summers (28-34°C) and cold winters (2-8°C). Known as one of China\'s "furnace cities".',
+      attractions: ['Yellow Crane Tower', 'East Lake', 'Hubei Provincial Museum', 'Yangtze River Bridge', 'Han Show Theatre'],
+      demographics: 'Capital of Hubei, largest city in central China. Major transport hub at confluence of Yangtze and Han rivers.'
+    }
+  },
+  { slug: 'nanjing', city: 'Nanjing', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 32.06, lng: 118.80, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '9.5M', phoneCode: '+86 25', language: 'Mandarin',
+      climate: 'Humid subtropical with hot humid summers (28-35°C) and cold winters (0-8°C). Known as one of China\'s "furnace cities".',
+      attractions: ['Sun Yat-sen Mausoleum', 'Ming Xiaoling Mausoleum', 'Confucius Temple', 'Nanjing City Wall', 'Purple Mountain'],
+      demographics: 'Capital of Jiangsu province, former capital of China for multiple dynasties. Major cultural and educational center.'
+    }
+  },
+  { slug: 'suzhou', city: 'Suzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 31.30, lng: 120.62, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '10.7M', phoneCode: '+86 512', language: 'Mandarin, Wu',
+      climate: 'Humid subtropical with hot summers (28-34°C) and cool winters (2-8°C). Rainy season June-July.',
+      attractions: ['Classical Gardens', 'Tiger Hill', 'Pingjiang Road', 'Suzhou Museum', 'Zhouzhuang Water Town'],
+      demographics: '"Venice of the East" for its canals, UNESCO World Heritage classical gardens. Major tech hub and silk production center near Shanghai.'
+    }
+  },
+  { slug: 'harbin', city: 'Harbin', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 45.80, lng: 126.53, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '10M', phoneCode: '+86 451', language: 'Mandarin',
+      climate: 'Humid continental with very cold winters (-20 to -10°C) and warm summers (20-28°C). Known as "Ice City".',
+      attractions: ['Harbin Ice Festival', 'Saint Sophia Cathedral', 'Sun Island', 'Central Street', 'Siberian Tiger Park'],
+      demographics: 'Capital of Heilongjiang province, largest city in Northeast China. Russian influence visible in architecture.'
+    }
+  },
+  { slug: 'qingdao', city: 'Qingdao', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 36.07, lng: 120.38, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '10M', phoneCode: '+86 532', language: 'Mandarin',
+      climate: 'Humid subtropical with warm summers (24-28°C) and cold winters (-1 to 5°C). Sea moderates temperatures.',
+      attractions: ['Zhanqiao Pier', 'Tsingtao Beer Museum', 'Badaguan Scenic Area', 'Mount Lao', 'May Fourth Square'],
+      demographics: 'Major seaport in Shandong, known for Tsingtao Beer (founded by German settlers). Beautiful coastal city with European architecture.'
+    }
+  },
+  { slug: 'dalian', city: 'Dalian', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 38.91, lng: 121.60, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '7.5M', phoneCode: '+86 411', language: 'Mandarin',
+      climate: 'Humid continental with warm summers (22-28°C) and cold winters (-5 to 3°C). Sea moderates temperatures.',
+      attractions: ['Xinghai Square', 'Tiger Beach Ocean Park', 'Zhongshan Square', 'Bangchuidao Scenic Area', 'Dalian Forest Zoo'],
+      demographics: 'Major port city in Northeast China, known for beaches, seafood, and Japanese colonial architecture. Important IT outsourcing hub.'
+    }
+  },
+  { slug: 'xiamen', city: 'Xiamen', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 24.48, lng: 118.09, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '4.3M', phoneCode: '+86 592', language: 'Mandarin, Hokkien',
+      climate: 'Humid subtropical with hot humid summers (28-33°C) and mild winters (12-18°C). Typhoon season June-September.',
+      attractions: ['Gulangyu Island', 'Nanputuo Temple', 'Zhongshan Road', 'Huandao Road', 'Xiamen University'],
+      demographics: 'Coastal city in Fujian province, one of China\'s most livable cities. Historic port city, gateway to Taiwan with colonial architecture on Gulangyu.'
+    }
+  },
+  { slug: 'zhengzhou', city: 'Zhengzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 34.75, lng: 113.63, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '10.3M', phoneCode: '+86 371', language: 'Mandarin',
+      climate: 'Humid subtropical with hot humid summers (27-32°C) and cold dry winters (-1 to 5°C). Monsoon July-August.',
+      attractions: ['Shaolin Temple', 'Henan Museum', 'Erqi Memorial Tower', 'Yellow River Scenic Area', 'Zhengzhou Confucius Temple'],
+      demographics: 'Capital of Henan, one of China\'s ancient capitals. Railway hub and gateway to Shaolin Temple, birthplace of Kung Fu.'
+    }
+  },
+  { slug: 'changsha', city: 'Changsha', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 28.23, lng: 112.94, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '10M', phoneCode: '+86 731', language: 'Mandarin, Xiang',
+      climate: 'Humid subtropical with hot humid summers (28-35°C) and cool winters (3-10°C). Rainy in spring.',
+      attractions: ['Orange Isle', 'Yuelu Academy', 'Hunan Provincial Museum', 'Tianxin Pavilion', 'Mount Yuelu'],
+      demographics: 'Capital of Hunan Province, birthplace of Mao Zedong\'s revolutionary activities. Major hub for entertainment and spicy cuisine.'
+    }
+  },
 
   // PAKISTAN - Major Cities (4 new)
-  { slug: 'lahore', city: 'Lahore', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 31.55, lng: 74.34, tier: 2, continent: 'asia' },
-  { slug: 'faisalabad', city: 'Faisalabad', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 31.42, lng: 73.09, tier: 3, continent: 'asia' },
-  { slug: 'rawalpindi', city: 'Rawalpindi', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 33.60, lng: 73.04, tier: 3, continent: 'asia' },
-  { slug: 'multan', city: 'Multan', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 30.20, lng: 71.45, tier: 3, continent: 'asia' },
-  { slug: 'peshawar', city: 'Peshawar', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 34.01, lng: 71.58, tier: 3, continent: 'asia' },
-  { slug: 'islamabad', city: 'Islamabad', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 33.69, lng: 73.06, tier: 2, continent: 'asia' },
+  { slug: 'lahore', city: 'Lahore', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 31.55, lng: 74.34, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Pakistani Rupee', currencySymbol: 'Rs', population: '13M', phoneCode: '+92 42', language: 'Punjabi, Urdu, English',
+      climate: 'Semi-arid with extreme hot summers (40-48°C) and cool foggy winters (5-20°C). Monsoon July-September.',
+      attractions: ['Badshahi Mosque', 'Lahore Fort', 'Shalimar Gardens', 'Minar-e-Pakistan', 'Lahore Museum'],
+      demographics: 'Second-largest city in Pakistan, cultural capital of Punjab. Known as "Heart of Pakistan" for arts, cuisine, and Mughal heritage.'
+    }
+  },
+  { slug: 'faisalabad', city: 'Faisalabad', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 31.42, lng: 73.09, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Pakistani Rupee', currencySymbol: 'Rs', population: '3.6M', phoneCode: '+92 41', language: 'Punjabi, Urdu',
+      climate: 'Semi-arid with extreme hot summers (40-48°C) and mild winters (5-20°C). Monsoon July-September.',
+      attractions: ['Clock Tower', 'Lyallpur Museum', 'Jinnah Garden', 'Chenab Club', 'Gatwala Wildlife Park'],
+      demographics: 'Third-largest city in Pakistan, "Manchester of Pakistan" for textile industry. Major industrial and agricultural hub.'
+    }
+  },
+  { slug: 'rawalpindi', city: 'Rawalpindi', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 33.60, lng: 73.04, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Pakistani Rupee', currencySymbol: 'Rs', population: '2.2M', phoneCode: '+92 51', language: 'Punjabi, Urdu',
+      climate: 'Humid subtropical with hot summers (35-42°C) and cool winters (3-18°C). Monsoon July-September.',
+      attractions: ['Ayub National Park', 'Raja Bazaar', 'Rawalpindi Cricket Stadium', 'Army Museum', 'Liaquat Bagh'],
+      demographics: 'Fourth-largest city in Pakistan, twin city of Islamabad. Major military headquarters and historic garrison town.'
+    }
+  },
+  { slug: 'multan', city: 'Multan', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 30.20, lng: 71.45, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Pakistani Rupee', currencySymbol: 'Rs', population: '2.0M', phoneCode: '+92 61', language: 'Punjabi, Urdu',
+      climate: 'Hot desert with extremely hot summers (40-50°C) and mild winters (8-22°C). Very low rainfall.',
+      attractions: ['Shrine of Bahauddin Zakariya', 'Multan Fort', 'Shah Rukn-e-Alam Tomb', 'Hussain Agahi Bazaar', 'Clock Tower'],
+      demographics: 'Seventh-largest city in Pakistan, "City of Saints" for Sufi shrines. One of the oldest cities in South Asia (5,000+ years).'
+    }
+  },
+  { slug: 'peshawar', city: 'Peshawar', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 34.01, lng: 71.58, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Pakistani Rupee', currencySymbol: 'Rs', population: '2.0M', phoneCode: '+92 91', language: 'Pashto, Urdu',
+      climate: 'Semi-arid with very hot summers (35-42°C) and cool winters (5-18°C). Monsoon July-September.',
+      attractions: ['Peshawar Museum', 'Bala Hisar Fort', 'Qissa Khwani Bazaar', 'Mahabat Khan Mosque', 'Cunningham Clock Tower'],
+      demographics: 'Capital of Khyber Pakhtunkhwa, one of oldest cities in South Asia. Historic gateway to Khyber Pass and Central Asia.'
+    }
+  },
+  { slug: 'islamabad', city: 'Islamabad', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 33.69, lng: 73.06, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Pakistani Rupee', currencySymbol: 'Rs', population: '1.1M', phoneCode: '+92 51', language: 'Urdu, English',
+      climate: 'Humid subtropical with hot summers (30-40°C) and cool winters (3-18°C). Monsoon July-September.',
+      attractions: ['Faisal Mosque', 'Pakistan Monument', 'Daman-e-Koh', 'Margalla Hills', 'Lok Virsa Museum'],
+      demographics: 'Capital of Pakistan since 1960s, planned city designed by Greek architect. One of the most beautiful capitals in South Asia.'
+    }
+  },
 
   // BANGLADESH - Major Cities (3 new)
-  { slug: 'chittagong', city: 'Chittagong', timezone: 'Asia/Dhaka', country: 'Bangladesh', countryCode: 'BD', lat: 22.36, lng: 91.78, tier: 2, continent: 'asia' },
-  { slug: 'khulna', city: 'Khulna', timezone: 'Asia/Dhaka', country: 'Bangladesh', countryCode: 'BD', lat: 22.82, lng: 89.55, tier: 3, continent: 'asia' },
-  { slug: 'rajshahi', city: 'Rajshahi', timezone: 'Asia/Dhaka', country: 'Bangladesh', countryCode: 'BD', lat: 24.37, lng: 88.60, tier: 3, continent: 'asia' },
-  { slug: 'sylhet', city: 'Sylhet', timezone: 'Asia/Dhaka', country: 'Bangladesh', countryCode: 'BD', lat: 24.90, lng: 91.87, tier: 3, continent: 'asia' },
+  { slug: 'chittagong', city: 'Chittagong', timezone: 'Asia/Dhaka', country: 'Bangladesh', countryCode: 'BD', lat: 22.36, lng: 91.78, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Bangladeshi Taka', currencySymbol: '৳', population: '3.0M', phoneCode: '+880 31', language: 'Bengali, Chittagonian',
+      climate: 'Tropical monsoon with hot wet summers (28-35°C) and mild dry winters (15-25°C). Heavy monsoon rains June-September.',
+      attractions: ['Patenga Beach', 'Foy\'s Lake', 'Ethnological Museum', 'Shrine of Bayazid Bostami', 'Chittagong War Cemetery'],
+      demographics: 'Second-largest city in Bangladesh, major seaport handling 90% of country\'s trade. Gateway to Cox\'s Bazar and Hill Tracts.'
+    }
+  },
+  { slug: 'khulna', city: 'Khulna', timezone: 'Asia/Dhaka', country: 'Bangladesh', countryCode: 'BD', lat: 22.82, lng: 89.55, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Bangladeshi Taka', currencySymbol: '৳', population: '1.0M', phoneCode: '+880 41', language: 'Bengali',
+      climate: 'Tropical with hot wet monsoons (June-October) and mild dry winters. Temperatures 20-35°C year-round.',
+      attractions: ['Sundarbans Mangrove Forest', 'Khan Jahan Ali Shrine', 'Sixty Dome Mosque', 'Shipyard', 'Rupsha River'],
+      demographics: 'Third-largest city in Bangladesh, gateway to Sundarbans (world\'s largest mangrove forest). Major industrial and port city.'
+    }
+  },
+  { slug: 'rajshahi', city: 'Rajshahi', timezone: 'Asia/Dhaka', country: 'Bangladesh', countryCode: 'BD', lat: 24.37, lng: 88.60, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Bangladeshi Taka', currencySymbol: '৳', population: '900K', phoneCode: '+880 721', language: 'Bengali',
+      climate: 'Tropical wet and dry with hot summers (35-42°C) and mild winters (10-25°C). Monsoon June-September.',
+      attractions: ['Varendra Research Museum', 'Padma River', 'Puthia Temple Complex', 'Rajshahi University', 'Shahid Zia Shishu Park'],
+      demographics: 'Fourth-largest city in Bangladesh on the Padma River. Known as "Silk City" for silk production, major educational center.'
+    }
+  },
+  { slug: 'sylhet', city: 'Sylhet', timezone: 'Asia/Dhaka', country: 'Bangladesh', countryCode: 'BD', lat: 24.90, lng: 91.87, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Bangladeshi Taka', currencySymbol: '৳', population: '700K', phoneCode: '+880 821', language: 'Bengali, Sylheti',
+      climate: 'Humid subtropical with hot wet summers (28-35°C) and mild dry winters (12-25°C). Very high rainfall.',
+      attractions: ['Shrine of Hazrat Shah Jalal', 'Ratargul Swamp Forest', 'Jaflong', 'Ali Amjad\'s Clock', 'Tea Gardens'],
+      demographics: 'Spiritual capital of Bangladesh, gateway to tea estates and natural beauty. Strong diaspora connections to UK.'
+    }
+  },
 
   // NIGERIA - Major Cities (5 new)
-  { slug: 'kano', city: 'Kano', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 12.00, lng: 8.52, tier: 3, continent: 'africa' },
-  { slug: 'ibadan', city: 'Ibadan', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 7.38, lng: 3.90, tier: 3, continent: 'africa' },
-  { slug: 'abuja', city: 'Abuja', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 9.07, lng: 7.40, tier: 2, continent: 'africa' },
-  { slug: 'port-harcourt', city: 'Port Harcourt', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 4.82, lng: 7.03, tier: 3, continent: 'africa' },
-  { slug: 'benin-city', city: 'Benin City', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 6.34, lng: 5.63, tier: 3, continent: 'africa' },
+  { slug: 'kano', city: 'Kano', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 12.00, lng: 8.52, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Nigerian Naira', currencySymbol: '₦', population: '4.0M', phoneCode: '+234 64', language: 'Hausa, English',
+      climate: 'Semi-arid with hot season (March-May, 35-42°C), rainy season (June-September), and cool harmattan (November-February).',
+      attractions: ['Kano City Walls', 'Gidan Makama Museum', 'Kurmi Market', 'Emir\'s Palace', 'Kano Central Mosque'],
+      demographics: 'Second-largest city in Nigeria, historic center of trans-Saharan trade. Largest Hausa city and ancient commercial hub.'
+    }
+  },
+  { slug: 'ibadan', city: 'Ibadan', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 7.38, lng: 3.90, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Nigerian Naira', currencySymbol: '₦', population: '3.6M', phoneCode: '+234 2', language: 'English, Yoruba',
+      climate: 'Tropical savanna with rainy season (March-October) and dry season. Temperatures 22-33°C year-round.',
+      attractions: ['University of Ibadan', 'Cocoa House', 'Bower\'s Tower', 'Agodi Gardens', 'Trans Amusement Park'],
+      demographics: 'Third-largest city in Nigeria, largest by area in West Africa. Historic Yoruba city and major educational center.'
+    }
+  },
+  { slug: 'abuja', city: 'Abuja', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 9.07, lng: 7.40, tier: 2, continent: 'africa',
+    info: {
+      currency: 'Nigerian Naira', currencySymbol: '₦', population: '3.6M', phoneCode: '+234 9', language: 'English',
+      climate: 'Tropical savanna with wet season (April-October) and dry season. Temperatures 25-35°C year-round.',
+      attractions: ['Aso Rock', 'Nigerian National Mosque', 'Millennium Park', 'Zuma Rock', 'National Church of Nigeria'],
+      demographics: 'Purpose-built capital city since 1991, political and administrative center of Nigeria.'
+    }
+  },
+  { slug: 'port-harcourt', city: 'Port Harcourt', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 4.82, lng: 7.03, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Nigerian Naira', currencySymbol: '₦', population: '3.0M', phoneCode: '+234 84', language: 'English, Igbo, Ijaw',
+      climate: 'Tropical monsoon with heavy rainfall year-round (25-32°C). Wettest June-September.',
+      attractions: ['Port Harcourt Zoo', 'Isaac Boro Park', 'Port Harcourt Tourist Beach', 'Bonny Island', 'Liberation Stadium'],
+      demographics: 'Capital of Rivers State, center of Nigeria\'s oil industry. Major industrial and commercial hub in the Niger Delta.'
+    }
+  },
+  { slug: 'benin-city', city: 'Benin City', timezone: 'Africa/Lagos', country: 'Nigeria', countryCode: 'NG', lat: 6.34, lng: 5.63, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Nigerian Naira', currencySymbol: '₦', population: '1.8M', phoneCode: '+234 52', language: 'English, Edo',
+      climate: 'Tropical with heavy rainfall (April-October) and dry season. Temperatures 23-33°C year-round.',
+      attractions: ['Benin City National Museum', 'Oba Palace', 'Igun Street Bronze Casters', 'Emotan Statue', 'Holy Aruosa Cathedral'],
+      demographics: 'Capital of Edo State, historic center of the ancient Benin Empire. Known for bronze casting and rich cultural heritage.'
+    }
+  },
 
   // INDONESIA - Additional Cities (4 new)
-  { slug: 'semarang', city: 'Semarang', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -6.97, lng: 110.42, tier: 3, continent: 'asia' },
-  { slug: 'makassar', city: 'Makassar', timezone: 'Asia/Makassar', country: 'Indonesia', countryCode: 'ID', lat: -5.14, lng: 119.42, tier: 3, continent: 'asia' },
-  { slug: 'palembang', city: 'Palembang', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -2.99, lng: 104.76, tier: 3, continent: 'asia' },
-  { slug: 'yogyakarta', city: 'Yogyakarta', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -7.80, lng: 110.36, tier: 3, continent: 'asia' },
+  { slug: 'semarang', city: 'Semarang', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -6.97, lng: 110.42, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indonesian Rupiah', currencySymbol: 'Rp', population: '1.8M', phoneCode: '+62 24', language: 'Indonesian, Javanese',
+      climate: 'Tropical monsoon with wet season (November-April) and dry season. Hot and humid year-round (27-33°C).',
+      attractions: ['Sam Poo Kong Temple', 'Lawang Sewu', 'Old Town (Kota Lama)', 'Simpang Lima', 'Great Mosque of Central Java'],
+      demographics: 'Capital of Central Java, fifth-largest city in Indonesia. Major port with Dutch colonial heritage and Chinese influence.'
+    }
+  },
+  { slug: 'makassar', city: 'Makassar', timezone: 'Asia/Makassar', country: 'Indonesia', countryCode: 'ID', lat: -5.14, lng: 119.42, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indonesian Rupiah', currencySymbol: 'Rp', population: '1.5M', phoneCode: '+62 411', language: 'Indonesian, Makassarese',
+      climate: 'Tropical monsoon with wet season (November-April) and dry season. Warm year-round (26-32°C).',
+      attractions: ['Fort Rotterdam', 'Losari Beach', 'Trans Studio Makassar', 'Bantimurung Waterfalls', 'Paotere Harbor'],
+      demographics: 'Largest city in eastern Indonesia, capital of South Sulawesi. Major trade hub and gateway to Toraja highlands.'
+    }
+  },
+  { slug: 'palembang', city: 'Palembang', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -2.99, lng: 104.76, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indonesian Rupiah', currencySymbol: 'Rp', population: '1.7M', phoneCode: '+62 711', language: 'Indonesian, Palembang Malay',
+      climate: 'Tropical rainforest with warm humid weather year-round (26-32°C). Rainfall throughout the year.',
+      attractions: ['Ampera Bridge', 'Sultan Mahmud Badaruddin II Museum', 'Great Mosque of Palembang', 'Kemaro Island', 'Musi River'],
+      demographics: 'Capital of South Sumatra, one of oldest cities in Southeast Asia. Former center of Srivijaya Empire, known for pempek fish cake.'
+    }
+  },
+  { slug: 'yogyakarta', city: 'Yogyakarta', timezone: 'Asia/Jakarta', country: 'Indonesia', countryCode: 'ID', lat: -7.80, lng: 110.36, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indonesian Rupiah', currencySymbol: 'Rp', population: '430K', phoneCode: '+62 274', language: 'Indonesian, Javanese',
+      climate: 'Tropical monsoon with wet season (October-April) and dry season. Warm year-round (26-32°C).',
+      attractions: ['Borobudur Temple', 'Prambanan Temple', 'Kraton (Sultan\'s Palace)', 'Malioboro Street', 'Taman Sari Water Castle'],
+      demographics: 'Cultural heart of Java, Indonesia\'s only royal city with active sultanate. Gateway to UNESCO World Heritage temples.'
+    }
+  },
 
   // PHILIPPINES - Major Cities (3 new)
-  { slug: 'cebu', city: 'Cebu City', timezone: 'Asia/Manila', country: 'Philippines', countryCode: 'PH', lat: 10.32, lng: 123.89, tier: 2, continent: 'asia' },
-  { slug: 'davao', city: 'Davao', timezone: 'Asia/Manila', country: 'Philippines', countryCode: 'PH', lat: 7.19, lng: 125.46, tier: 2, continent: 'asia' },
-  { slug: 'quezon-city', city: 'Quezon City', timezone: 'Asia/Manila', country: 'Philippines', countryCode: 'PH', lat: 14.68, lng: 121.04, tier: 2, continent: 'asia' },
+  { slug: 'cebu', city: 'Cebu City', timezone: 'Asia/Manila', country: 'Philippines', countryCode: 'PH', lat: 10.32, lng: 123.89, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Philippine Peso', currencySymbol: '₱', population: '1.0M', phoneCode: '+63 32', language: 'Cebuano, Filipino, English',
+      climate: 'Tropical with warm temperatures year-round (25-33°C). Dry season January-May, wet season June-December.',
+      attractions: ['Magellan\'s Cross', 'Basilica del Santo Niño', 'Fort San Pedro', 'Taoist Temple', 'Tops Lookout'],
+      demographics: 'Oldest city in Philippines, Queen City of the South. Major trading port, BPO hub, and gateway to Visayas beaches.'
+    }
+  },
+  { slug: 'davao', city: 'Davao', timezone: 'Asia/Manila', country: 'Philippines', countryCode: 'PH', lat: 7.19, lng: 125.46, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Philippine Peso', currencySymbol: '₱', population: '1.8M', phoneCode: '+63 82', language: 'Cebuano, Filipino, English',
+      climate: 'Tropical rainforest with consistent temperatures (24-33°C). Outside typhoon belt, rainfall year-round.',
+      attractions: ['Philippine Eagle Center', 'Mount Apo', 'Eden Nature Park', 'Crocodile Park', 'Samal Island'],
+      demographics: 'Largest city in Mindanao, third-largest in Philippines. Known for durian fruit, safety, and Mount Apo (highest peak).'
+    }
+  },
+  { slug: 'quezon-city', city: 'Quezon City', timezone: 'Asia/Manila', country: 'Philippines', countryCode: 'PH', lat: 14.68, lng: 121.04, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Philippine Peso', currencySymbol: '₱', population: '3.0M', phoneCode: '+63 2', language: 'Filipino, English',
+      climate: 'Tropical with dry season (December-May) and wet season. Hot year-round (25-35°C). Typhoon risk.',
+      attractions: ['Quezon Memorial Circle', 'La Mesa Eco Park', 'Art in Island', 'Eastwood City', 'UP Diliman Campus'],
+      demographics: 'Most populous city in the Philippines, former capital (1948-1976). Part of Metro Manila, home to major universities and government offices.'
+    }
+  },
 
   // VIETNAM - Additional Cities (3 new)
-  { slug: 'da-nang', city: 'Da Nang', timezone: 'Asia/Ho_Chi_Minh', country: 'Vietnam', countryCode: 'VN', lat: 16.05, lng: 108.22, tier: 2, continent: 'asia' },
-  { slug: 'can-tho', city: 'Can Tho', timezone: 'Asia/Ho_Chi_Minh', country: 'Vietnam', countryCode: 'VN', lat: 10.03, lng: 105.78, tier: 3, continent: 'asia' },
-  { slug: 'hai-phong', city: 'Hai Phong', timezone: 'Asia/Ho_Chi_Minh', country: 'Vietnam', countryCode: 'VN', lat: 20.86, lng: 106.68, tier: 3, continent: 'asia' },
+  { slug: 'da-nang', city: 'Da Nang', timezone: 'Asia/Ho_Chi_Minh', country: 'Vietnam', countryCode: 'VN', lat: 16.05, lng: 108.22, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Vietnamese Dong', currencySymbol: '₫', population: '1.2M', phoneCode: '+84 236', language: 'Vietnamese',
+      climate: 'Tropical monsoon with dry season (January-August) and wet season. Temperatures 22-34°C year-round.',
+      attractions: ['Golden Bridge', 'Marble Mountains', 'My Khe Beach', 'Dragon Bridge', 'Ba Na Hills'],
+      demographics: 'Third-largest city in Vietnam, major port and resort destination. Gateway to Hoi An and UNESCO heritage sites.'
+    }
+  },
+  { slug: 'can-tho', city: 'Can Tho', timezone: 'Asia/Ho_Chi_Minh', country: 'Vietnam', countryCode: 'VN', lat: 10.03, lng: 105.78, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Vietnamese Dong', currencySymbol: '₫', population: '1.2M', phoneCode: '+84 292', language: 'Vietnamese',
+      climate: 'Tropical monsoon with wet season (May-November) and dry season. Temperatures 25-35°C year-round.',
+      attractions: ['Cai Rang Floating Market', 'Ninh Kieu Wharf', 'Binh Thuy Ancient House', 'Can Tho Bridge', 'Ong Pagoda'],
+      demographics: 'Largest city in Mekong Delta, rice bowl of Vietnam. Major trading hub for agricultural products and river commerce.'
+    }
+  },
+  { slug: 'hai-phong', city: 'Hai Phong', timezone: 'Asia/Ho_Chi_Minh', country: 'Vietnam', countryCode: 'VN', lat: 20.86, lng: 106.68, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Vietnamese Dong', currencySymbol: '₫', population: '2.0M', phoneCode: '+84 225', language: 'Vietnamese',
+      climate: 'Humid subtropical with hot wet summers (28-33°C) and cool dry winters (15-20°C). Typhoon risk July-November.',
+      attractions: ['Cat Ba Island', 'Do Son Beach', 'Du Hang Pagoda', 'Hai Phong Opera House', 'Elephant Mountain'],
+      demographics: 'Third-largest city in Vietnam, major northern port. Gateway to Ha Long Bay and Cat Ba Island.'
+    }
+  },
 
   // EGYPT - Additional Cities (3 new)
-  { slug: 'alexandria', city: 'Alexandria', timezone: 'Africa/Cairo', country: 'Egypt', countryCode: 'EG', lat: 31.20, lng: 29.92, tier: 2, continent: 'africa' },
-  { slug: 'giza', city: 'Giza', timezone: 'Africa/Cairo', country: 'Egypt', countryCode: 'EG', lat: 30.01, lng: 31.21, tier: 2, continent: 'africa' },
-  { slug: 'sharm-el-sheikh', city: 'Sharm el-Sheikh', timezone: 'Africa/Cairo', country: 'Egypt', countryCode: 'EG', lat: 27.92, lng: 34.33, tier: 3, continent: 'africa' },
-  { slug: 'luxor', city: 'Luxor', timezone: 'Africa/Cairo', country: 'Egypt', countryCode: 'EG', lat: 25.69, lng: 32.64, tier: 3, continent: 'africa' },
+  { slug: 'alexandria', city: 'Alexandria', timezone: 'Africa/Cairo', country: 'Egypt', countryCode: 'EG', lat: 31.20, lng: 29.92, tier: 2, continent: 'africa',
+    info: {
+      currency: 'Egyptian Pound', currencySymbol: 'E£', population: '5.2M', phoneCode: '+20 3', language: 'Arabic',
+      climate: 'Mediterranean climate with mild wet winters (10-18°C) and hot dry summers (25-32°C).',
+      attractions: ['Bibliotheca Alexandrina', 'Qaitbay Citadel', 'Montaza Palace', 'Catacombs of Kom el Shoqafa', 'Corniche'],
+      demographics: 'Second-largest city in Egypt, major Mediterranean port founded by Alexander the Great in 331 BC.'
+    }
+  },
+  { slug: 'giza', city: 'Giza', timezone: 'Africa/Cairo', country: 'Egypt', countryCode: 'EG', lat: 30.01, lng: 31.21, tier: 2, continent: 'africa',
+    info: {
+      currency: 'Egyptian Pound', currencySymbol: 'E£', population: '4.2M', phoneCode: '+20 2', language: 'Arabic',
+      climate: 'Hot desert with very hot summers (28-38°C) and mild winters (10-20°C). Almost no rainfall.',
+      attractions: ['Great Pyramids of Giza', 'Great Sphinx', 'Solar Boat Museum', 'Giza Plateau', 'Sound and Light Show'],
+      demographics: 'Part of Greater Cairo, home to the only surviving Ancient Wonder. Third-largest city in Egypt and major tourist destination.'
+    }
+  },
+  { slug: 'sharm-el-sheikh', city: 'Sharm el-Sheikh', timezone: 'Africa/Cairo', country: 'Egypt', countryCode: 'EG', lat: 27.92, lng: 34.33, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Egyptian Pound', currencySymbol: 'E£', population: '75K', phoneCode: '+20 69', language: 'Arabic, English',
+      climate: 'Hot desert with very hot summers (35-42°C) and warm winters (18-24°C). Almost no rainfall.',
+      attractions: ['Ras Mohammed National Park', 'Naama Bay', 'Tiran Island', 'Old Market', 'Shark\'s Bay'],
+      demographics: 'Premier Red Sea resort city on Sinai Peninsula. World-class diving destination and international conference venue.'
+    }
+  },
+  { slug: 'luxor', city: 'Luxor', timezone: 'Africa/Cairo', country: 'Egypt', countryCode: 'EG', lat: 25.69, lng: 32.64, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Egyptian Pound', currencySymbol: 'E£', population: '510K', phoneCode: '+20 95', language: 'Arabic',
+      climate: 'Hot desert with very hot summers (35-42°C) and mild winters (15-25°C). Almost no rainfall year-round.',
+      attractions: ['Karnak Temple', 'Valley of the Kings', 'Luxor Temple', 'Hatshepsut Temple', 'Colossi of Memnon'],
+      demographics: 'Ancient city of Thebes, "World\'s Greatest Open-Air Museum". Contains one-third of world\'s ancient monuments.'
+    }
+  },
 
   // ETHIOPIA - Additional Cities (2 new)
-  { slug: 'dire-dawa', city: 'Dire Dawa', timezone: 'Africa/Addis_Ababa', country: 'Ethiopia', countryCode: 'ET', lat: 9.60, lng: 41.85, tier: 3, continent: 'africa' },
-  { slug: 'mekelle', city: 'Mekelle', timezone: 'Africa/Addis_Ababa', country: 'Ethiopia', countryCode: 'ET', lat: 13.50, lng: 39.47, tier: 3, continent: 'africa' },
+  { slug: 'dire-dawa', city: 'Dire Dawa', timezone: 'Africa/Addis_Ababa', country: 'Ethiopia', countryCode: 'ET', lat: 9.60, lng: 41.85, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Ethiopian Birr', currencySymbol: 'Br', population: '500K', phoneCode: '+251 25', language: 'Amharic, Oromo, Somali',
+      climate: 'Semi-arid with hot temperatures year-round (22-34°C). Light rainfall in two seasons.',
+      attractions: ['Kefira Market', 'Kezira Quarter', 'Dire Dawa Railway Station', 'Lega Hare Park', 'Chat Qolla'],
+      demographics: 'Second-largest city in Ethiopia, founded in 1902 as railway terminus. Important trade hub near Djibouti border.'
+    }
+  },
+  { slug: 'mekelle', city: 'Mekelle', timezone: 'Africa/Addis_Ababa', country: 'Ethiopia', countryCode: 'ET', lat: 13.50, lng: 39.47, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Ethiopian Birr', currencySymbol: 'Br', population: '500K', phoneCode: '+251 34', language: 'Tigrinya, Amharic',
+      climate: 'Semi-arid highland with mild temperatures year-round (12-27°C). Rainy season June-September.',
+      attractions: ['Martyrs Memorial', 'Mekelle Palace', 'Yohannes IV Museum', 'Abraha Atsbeha Church', 'Gheralta Mountains'],
+      demographics: 'Capital of Tigray Region in northern Ethiopia. Gateway to ancient rock-hewn churches and historic sites of Axum.'
+    }
+  },
 
   // KENYA - Additional Cities (2 new)
-  { slug: 'mombasa', city: 'Mombasa', timezone: 'Africa/Nairobi', country: 'Kenya', countryCode: 'KE', lat: -4.05, lng: 39.67, tier: 2, continent: 'africa' },
-  { slug: 'kisumu', city: 'Kisumu', timezone: 'Africa/Nairobi', country: 'Kenya', countryCode: 'KE', lat: -0.10, lng: 34.75, tier: 3, continent: 'africa' },
+  { slug: 'mombasa', city: 'Mombasa', timezone: 'Africa/Nairobi', country: 'Kenya', countryCode: 'KE', lat: -4.05, lng: 39.67, tier: 2, continent: 'africa',
+    info: {
+      currency: 'Kenyan Shilling', currencySymbol: 'KSh', population: '1.4M', phoneCode: '+254 41', language: 'Swahili, English',
+      climate: 'Tropical with hot humid weather year-round (24-32°C). Long rains April-June, short rains October-December.',
+      attractions: ['Fort Jesus', 'Old Town', 'Diani Beach', 'Haller Park', 'Mombasa Marine National Park'],
+      demographics: 'Second-largest city in Kenya, major East African port. UNESCO World Heritage Fort Jesus reflects Swahili coastal culture.'
+    }
+  },
+  { slug: 'kisumu', city: 'Kisumu', timezone: 'Africa/Nairobi', country: 'Kenya', countryCode: 'KE', lat: -0.10, lng: 34.75, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Kenyan Shilling', currencySymbol: 'KSh', population: '610K', phoneCode: '+254 57', language: 'English, Swahili, Luo',
+      climate: 'Tropical with warm temperatures year-round (20-30°C). Two rainy seasons (March-May, October-December).',
+      attractions: ['Kisumu Impala Sanctuary', 'Kit Mikayi', 'Hippo Point', 'Dunga Beach', 'Kisumu Museum'],
+      demographics: 'Third-largest city in Kenya, on shores of Lake Victoria. Major port and commercial center for western Kenya.'
+    }
+  },
 
   // MOROCCO - Additional Cities (2 new)
-  { slug: 'fes', city: 'Fes', timezone: 'Africa/Casablanca', country: 'Morocco', countryCode: 'MA', lat: 34.03, lng: -5.00, tier: 3, continent: 'africa' },
+  { slug: 'fes', city: 'Fes', timezone: 'Africa/Casablanca', country: 'Morocco', countryCode: 'MA', lat: 34.03, lng: -5.00, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Moroccan Dirham', currencySymbol: 'MAD', population: '1.2M', phoneCode: '+212 5', language: 'Arabic, French, Berber',
+      climate: 'Mediterranean with hot dry summers (30-38°C) and mild wet winters (5-15°C).',
+      attractions: ['Fes el Bali Medina', 'Al-Qarawiyyin University', 'Chouara Tannery', 'Bou Inania Madrasa', 'Dar Batha Museum'],
+      demographics: 'Third-largest city in Morocco, oldest imperial city. Home to world\'s oldest university (859 AD) and largest car-free urban area.'
+    }
+  },
 
   // GHANA - Additional Cities (2 new)
-  { slug: 'kumasi', city: 'Kumasi', timezone: 'Africa/Accra', country: 'Ghana', countryCode: 'GH', lat: 6.69, lng: -1.62, tier: 3, continent: 'africa' },
-  { slug: 'tamale', city: 'Tamale', timezone: 'Africa/Accra', country: 'Ghana', countryCode: 'GH', lat: 9.40, lng: -0.84, tier: 3, continent: 'africa' },
+  { slug: 'kumasi', city: 'Kumasi', timezone: 'Africa/Accra', country: 'Ghana', countryCode: 'GH', lat: 6.69, lng: -1.62, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Ghanaian Cedi', currencySymbol: 'GH₵', population: '3.4M', phoneCode: '+233 32', language: 'English, Twi',
+      climate: 'Tropical with two rainy seasons. Warm and humid year-round (21-32°C).',
+      attractions: ['Kejetia Market', 'Manhyia Palace', 'Kumasi Fort', 'National Cultural Centre', 'Lake Bosomtwe'],
+      demographics: 'Second-largest city in Ghana, capital of the Ashanti Kingdom. Known as "Garden City" and center of Ashanti culture.'
+    }
+  },
+  { slug: 'tamale', city: 'Tamale', timezone: 'Africa/Accra', country: 'Ghana', countryCode: 'GH', lat: 9.40, lng: -0.84, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Ghanaian Cedi', currencySymbol: 'GH₵', population: '400K', phoneCode: '+233 37', language: 'English, Dagbani',
+      climate: 'Tropical savanna with hot dry season (35-42°C) and wet season (May-October). Harmattan winds December-February.',
+      attractions: ['Mole National Park', 'Larabanga Mosque', 'Tamale Central Market', 'Cultural Centre', 'Bolgatanga Crafts'],
+      demographics: 'Largest city in northern Ghana, gateway to Mole National Park. Fast-growing commercial center with predominantly Muslim population.'
+    }
+  },
 
   // TANZANIA - Additional Cities (2 new)
-  { slug: 'zanzibar', city: 'Zanzibar City', timezone: 'Africa/Dar_es_Salaam', country: 'Tanzania', countryCode: 'TZ', lat: -6.17, lng: 39.19, tier: 3, continent: 'africa' },
+  { slug: 'zanzibar', city: 'Zanzibar City', timezone: 'Africa/Dar_es_Salaam', country: 'Tanzania', countryCode: 'TZ', lat: -6.17, lng: 39.19, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Tanzanian Shilling', currencySymbol: 'TSh', population: '500K', phoneCode: '+255 24', language: 'Swahili, English, Arabic',
+      climate: 'Tropical with warm temperatures year-round (25-32°C). Long rains March-May, short rains November-December.',
+      attractions: ['Stone Town', 'House of Wonders', 'Old Fort', 'Freddie Mercury House', 'Spice Plantations'],
+      demographics: 'Capital of Zanzibar, UNESCO World Heritage Stone Town. Historic spice trade center with Arab, Indian, and African influences.'
+    }
+  },
 
   // JAPAN - Additional Cities (3 new)
 
   // SOUTH KOREA - Additional Cities (2 new)
-  { slug: 'daejeon', city: 'Daejeon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.35, lng: 127.38, tier: 3, continent: 'asia' },
+  { slug: 'daejeon', city: 'Daejeon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.35, lng: 127.38, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '1.5M', phoneCode: '+82 42', language: 'Korean',
+      climate: 'Humid continental with hot humid summers (24-31°C) and cold dry winters (-3 to 5°C).',
+      attractions: ['Expo Science Park', 'Hanbat Arboretum', 'National Science Museum', 'Yuseong Hot Springs', 'Gyejoksan Mountain'],
+      demographics: 'Fifth-largest city in South Korea, known as "Silicon Valley of Korea" for research institutes and tech hub. Home to KAIST.'
+    }
+  },
 
   // TAIWAN - Additional Cities (2 new)
-  { slug: 'kaohsiung', city: 'Kaohsiung', timezone: 'Asia/Taipei', country: 'Taiwan', countryCode: 'TW', lat: 22.62, lng: 120.31, tier: 2, continent: 'asia' },
-  { slug: 'taichung', city: 'Taichung', timezone: 'Asia/Taipei', country: 'Taiwan', countryCode: 'TW', lat: 24.15, lng: 120.67, tier: 2, continent: 'asia' },
+  { slug: 'kaohsiung', city: 'Kaohsiung', timezone: 'Asia/Taipei', country: 'Taiwan', countryCode: 'TW', lat: 22.62, lng: 120.31, tier: 2, continent: 'asia',
+    info: {
+      currency: 'New Taiwan Dollar', currencySymbol: 'NT$', population: '2.7M', phoneCode: '+886 7', language: 'Mandarin, Taiwanese',
+      climate: 'Tropical monsoon with hot humid summers (28-33°C) and mild winters (18-24°C). Typhoon season July-October.',
+      attractions: ['Lotus Pond', 'Pier-2 Art Center', 'Fo Guang Shan Buddha Museum', 'Love River', 'Liuhe Night Market'],
+      demographics: 'Second-largest city in Taiwan, major port and industrial center. Known for harbor, temples, and street food.'
+    }
+  },
+  { slug: 'taichung', city: 'Taichung', timezone: 'Asia/Taipei', country: 'Taiwan', countryCode: 'TW', lat: 24.15, lng: 120.67, tier: 2, continent: 'asia',
+    info: {
+      currency: 'New Taiwan Dollar', currencySymbol: 'NT$', population: '2.8M', phoneCode: '+886 4', language: 'Mandarin, Taiwanese',
+      climate: 'Humid subtropical with hot summers (28-33°C) and mild winters (14-20°C). Less rain than other Taiwan cities.',
+      attractions: ['Rainbow Village', 'National Taichung Theater', 'Miyahara Eye Hospital', 'Sun Moon Lake', 'Fengjia Night Market'],
+      demographics: 'Second-largest city in Taiwan, known for bubble tea origin and arts scene. Major manufacturing and cultural hub in central Taiwan.'
+    }
+  },
 
   // MALAYSIA - Additional Cities (2 new)
-  { slug: 'penang', city: 'George Town', timezone: 'Asia/Kuala_Lumpur', country: 'Malaysia', countryCode: 'MY', lat: 5.41, lng: 100.34, tier: 2, continent: 'asia' },
-  { slug: 'johor-bahru', city: 'Johor Bahru', timezone: 'Asia/Kuala_Lumpur', country: 'Malaysia', countryCode: 'MY', lat: 1.49, lng: 103.74, tier: 3, continent: 'asia' },
+  { slug: 'penang', city: 'George Town', timezone: 'Asia/Kuala_Lumpur', country: 'Malaysia', countryCode: 'MY', lat: 5.41, lng: 100.34, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Malaysian Ringgit', currencySymbol: 'RM', population: '720K', phoneCode: '+60 4', language: 'Malay, English, Hokkien, Tamil',
+      climate: 'Tropical with warm humid weather year-round (27-32°C). Heaviest rainfall September-November.',
+      attractions: ['UNESCO Heritage Zone', 'Kek Lok Si Temple', 'Penang Hill', 'Street Art Trail', 'Clan Jetties'],
+      demographics: 'Capital of Penang state, UNESCO World Heritage Site. Known as "Pearl of the Orient" for multicultural heritage and street food.'
+    }
+  },
+  { slug: 'johor-bahru', city: 'Johor Bahru', timezone: 'Asia/Kuala_Lumpur', country: 'Malaysia', countryCode: 'MY', lat: 1.49, lng: 103.74, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Malaysian Ringgit', currencySymbol: 'RM', population: '500K', phoneCode: '+60 7', language: 'Malay, English, Chinese',
+      climate: 'Tropical with warm humid weather year-round (25-33°C). Monsoon seasons November-February.',
+      attractions: ['Legoland Malaysia', 'Sultan Abu Bakar Mosque', 'Arulmigu Sri Rajakaliamman Temple', 'Johor Zoo', 'Danga Bay'],
+      demographics: 'Second-largest city in Malaysia, gateway to Singapore via causeway. Major industrial and tourism hub in southern Malaysia.'
+    }
+  },
 
   // THAILAND - Additional Cities (2 new)
-  { slug: 'chiang-mai', city: 'Chiang Mai', timezone: 'Asia/Bangkok', country: 'Thailand', countryCode: 'TH', lat: 18.79, lng: 98.98, tier: 2, continent: 'asia' },
-  { slug: 'pattaya', city: 'Pattaya', timezone: 'Asia/Bangkok', country: 'Thailand', countryCode: 'TH', lat: 12.93, lng: 100.88, tier: 3, continent: 'asia' },
+  { slug: 'chiang-mai', city: 'Chiang Mai', timezone: 'Asia/Bangkok', country: 'Thailand', countryCode: 'TH', lat: 18.79, lng: 98.98, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Thai Baht', currencySymbol: '฿', population: '130K', phoneCode: '+66 53', language: 'Thai, Northern Thai',
+      climate: 'Tropical savanna with hot season (March-May, 35-40°C), rainy season (June-October), cool season (November-February, 15-25°C).',
+      attractions: ['Doi Suthep Temple', 'Old City', 'Night Bazaar', 'Elephant Nature Park', 'Sunday Walking Street'],
+      demographics: 'Largest city in Northern Thailand, former capital of Lanna Kingdom. Major digital nomad destination and cultural hub.'
+    }
+  },
+  { slug: 'pattaya', city: 'Pattaya', timezone: 'Asia/Bangkok', country: 'Thailand', countryCode: 'TH', lat: 12.93, lng: 100.88, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Thai Baht', currencySymbol: '฿', population: '120K', phoneCode: '+66 38', language: 'Thai, English',
+      climate: 'Tropical savanna with hot season (March-May), rainy season (June-October), and cool season. Temperatures 25-35°C.',
+      attractions: ['Walking Street', 'Sanctuary of Truth', 'Nong Nooch Garden', 'Coral Island', 'Big Buddha Hill'],
+      demographics: 'Major beach resort city on Gulf of Thailand, two hours from Bangkok. Known for vibrant nightlife and water activities.'
+    }
+  },
 
   // IRAN - Tehran (if missing)
-  { slug: 'tehran', city: 'Tehran', timezone: 'Asia/Tehran', country: 'Iran', countryCode: 'IR', lat: 35.69, lng: 51.39, tier: 1, continent: 'asia' },
-  { slug: 'mashhad', city: 'Mashhad', timezone: 'Asia/Tehran', country: 'Iran', countryCode: 'IR', lat: 36.30, lng: 59.60, tier: 2, continent: 'asia' },
-  { slug: 'isfahan', city: 'Isfahan', timezone: 'Asia/Tehran', country: 'Iran', countryCode: 'IR', lat: 32.65, lng: 51.68, tier: 3, continent: 'asia' },
+  { slug: 'tehran', city: 'Tehran', timezone: 'Asia/Tehran', country: 'Iran', countryCode: 'IR', lat: 35.69, lng: 51.39, tier: 1, continent: 'asia',
+    info: {
+      currency: 'Iranian Rial', currencySymbol: 'IRR', population: '9.0M', phoneCode: '+98 21', language: 'Persian (Farsi)',
+      climate: 'Semi-arid with hot dry summers (32-38°C) and cold winters (0-8°C). Snow possible in winter.',
+      attractions: ['Golestan Palace', 'Grand Bazaar', 'National Museum', 'Milad Tower', 'Darband'],
+      demographics: 'Capital and largest city of Iran, 32nd largest city globally. Major economic and cultural center with 5,000+ years of regional history.'
+    }
+  },
+  { slug: 'mashhad', city: 'Mashhad', timezone: 'Asia/Tehran', country: 'Iran', countryCode: 'IR', lat: 36.30, lng: 59.60, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Iranian Rial', currencySymbol: 'IRR', population: '3.3M', phoneCode: '+98 51', language: 'Persian',
+      climate: 'Semi-arid with hot summers (28-35°C) and cold winters (-2 to 8°C). Low rainfall, mostly in winter/spring.',
+      attractions: ['Imam Reza Shrine', 'Nader Shah Tomb', 'Goharshad Mosque', 'Ferdowsi Tomb', 'Kooh Sangi Park'],
+      demographics: 'Second-largest city in Iran, holiest city in the country. Receives 20+ million pilgrims annually to Imam Reza Shrine.'
+    }
+  },
+  { slug: 'isfahan', city: 'Isfahan', timezone: 'Asia/Tehran', country: 'Iran', countryCode: 'IR', lat: 32.65, lng: 51.68, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Iranian Rial', currencySymbol: 'IRR', population: '2.0M', phoneCode: '+98 31', language: 'Persian',
+      climate: 'Semi-arid with hot dry summers (30-38°C) and cold winters (0-10°C). Low rainfall year-round.',
+      attractions: ['Naqsh-e Jahan Square', 'Si-o-se-pol Bridge', 'Shah Mosque', 'Ali Qapu Palace', 'Vank Cathedral'],
+      demographics: 'Third-largest city in Iran, former capital of Persia. UNESCO World Heritage Site, known as "Half of the World" for its beauty.'
+    }
+  },
 
   // IRAQ - Major Cities
-  { slug: 'basra', city: 'Basra', timezone: 'Asia/Baghdad', country: 'Iraq', countryCode: 'IQ', lat: 30.51, lng: 47.81, tier: 3, continent: 'asia' },
+  { slug: 'basra', city: 'Basra', timezone: 'Asia/Baghdad', country: 'Iraq', countryCode: 'IQ', lat: 30.51, lng: 47.81, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Iraqi Dinar', currencySymbol: 'IQD', population: '2.5M', phoneCode: '+964 40', language: 'Arabic',
+      climate: 'Hot desert climate with extremely hot summers (40-50°C) and mild winters (10-20°C). Very dry.',
+      attractions: ['Basra Corniche', 'Sinbad Island', 'Basra Sports City', 'Shatt al-Arab Waterway', 'Basra Old Souq'],
+      demographics: 'Second-largest city in Iraq, major port city near the Persian Gulf. Historic center of trade and commerce.'
+    }
+  },
 
   // ALGERIA - Additional Cities
-  { slug: 'oran', city: 'Oran', timezone: 'Africa/Algiers', country: 'Algeria', countryCode: 'DZ', lat: 35.70, lng: -0.63, tier: 3, continent: 'africa' },
+  { slug: 'oran', city: 'Oran', timezone: 'Africa/Algiers', country: 'Algeria', countryCode: 'DZ', lat: 35.70, lng: -0.63, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Algerian Dinar', currencySymbol: 'DA', population: '1.0M', phoneCode: '+213 41', language: 'Arabic, French',
+      climate: 'Mediterranean with hot dry summers (28-33°C) and mild wet winters (10-17°C).',
+      attractions: ['Santa Cruz Fort', 'Palais du Bey', 'Front de Mer', 'Great Mosque', 'Ahmed Zabana Museum'],
+      demographics: 'Second-largest city in Algeria, major port on Mediterranean coast. Known as "El-Bahia" (The Radiant), birthplace of Raï music.'
+    }
+  },
 
   // SUDAN - Khartoum
 
@@ -3831,7 +5749,14 @@ export const cities: City[] = [
   // SENEGAL - Dakar
 
   // CAMEROON - Major Cities
-  { slug: 'douala', city: 'Douala', timezone: 'Africa/Douala', country: 'Cameroon', countryCode: 'CM', lat: 4.05, lng: 9.70, tier: 3, continent: 'africa' },
+  { slug: 'douala', city: 'Douala', timezone: 'Africa/Douala', country: 'Cameroon', countryCode: 'CM', lat: 4.05, lng: 9.70, tier: 3, continent: 'africa',
+    info: {
+      currency: 'Central African CFA Franc', currencySymbol: 'CFA', population: '3.0M', phoneCode: '+237', language: 'French, English',
+      climate: 'Tropical monsoon with heavy rainfall (June-October). Hot and humid (24-32°C) year-round.',
+      attractions: ['La Pagode', 'Doual\'Art', 'Akwa Palace', 'Wouri River Bridge', 'Bonanjo District'],
+      demographics: 'Largest city and economic capital of Cameroon. Major port handling 95% of country\'s trade.'
+    }
+  },
 
   // DR CONGO - Kinshasa
 
@@ -3840,41 +5765,174 @@ export const cities: City[] = [
   // ZAMBIA - Lusaka
 
   // USA - Additional Major Cities
-  { slug: 'san-antonio', city: 'San Antonio', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 29.42, lng: -98.49, tier: 3, continent: 'americas' },
-  { slug: 'jacksonville', city: 'Jacksonville', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 30.33, lng: -81.66, tier: 3, continent: 'americas' },
-  { slug: 'charlotte', city: 'Charlotte', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 35.23, lng: -80.84, tier: 3, continent: 'americas' },
-  { slug: 'columbus', city: 'Columbus', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 39.96, lng: -83.00, tier: 3, continent: 'americas' },
-  { slug: 'indianapolis', city: 'Indianapolis', timezone: 'America/Indiana/Indianapolis', country: 'United States', countryCode: 'US', lat: 39.77, lng: -86.16, tier: 3, continent: 'americas' },
-  { slug: 'fort-worth', city: 'Fort Worth', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 32.75, lng: -97.33, tier: 3, continent: 'americas' },
+  { slug: 'san-antonio', city: 'San Antonio', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 29.42, lng: -98.49, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '1.5M', phoneCode: '+1 210', language: 'English, Spanish',
+      climate: 'Humid subtropical with hot summers (30-36°C) and mild winters (6-17°C). Rainfall year-round.',
+      attractions: ['The Alamo', 'River Walk', 'San Antonio Missions', 'Pearl District', 'Tower of the Americas'],
+      demographics: 'Seventh-largest city in US, rich in Spanish colonial and Texan history. Home to five 18th-century Spanish missions (UNESCO).'
+    }
+  },
+  { slug: 'jacksonville', city: 'Jacksonville', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 30.33, lng: -81.66, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '950K', phoneCode: '+1 904', language: 'English',
+      climate: 'Humid subtropical with hot humid summers (27-33°C) and mild winters (8-18°C). Hurricane risk June-November.',
+      attractions: ['Jacksonville Zoo', 'Cummer Museum', 'Jacksonville Beach', 'St. Johns River', 'Riverside Arts Market'],
+      demographics: 'Largest city by area in continental US, largest in Florida by population. Major port, naval base, and financial center.'
+    }
+  },
+  { slug: 'charlotte', city: 'Charlotte', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 35.23, lng: -80.84, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '880K', phoneCode: '+1 704', language: 'English',
+      climate: 'Humid subtropical with hot summers (25-33°C) and mild winters (3-12°C). Rainfall year-round.',
+      attractions: ['NASCAR Hall of Fame', 'Freedom Park', 'Discovery Place', 'Carowinds', 'Bank of America Stadium'],
+      demographics: 'Largest city in North Carolina, second-largest US banking center after New York. Fast-growing Southern hub.'
+    }
+  },
+  { slug: 'columbus', city: 'Columbus', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 39.96, lng: -83.00, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '910K', phoneCode: '+1 614', language: 'English',
+      climate: 'Humid continental with hot summers (23-30°C) and cold snowy winters (-3 to 5°C).',
+      attractions: ['Ohio State University', 'German Village', 'COSI Science Center', 'North Market', 'Columbus Zoo'],
+      demographics: 'Capital and largest city of Ohio, home to Ohio State University. Major test market for retail and fast food chains.'
+    }
+  },
+  { slug: 'indianapolis', city: 'Indianapolis', timezone: 'America/Indiana/Indianapolis', country: 'United States', countryCode: 'US', lat: 39.77, lng: -86.16, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '880K', phoneCode: '+1 317', language: 'English',
+      climate: 'Humid continental with hot humid summers (24-30°C) and cold snowy winters (-4 to 4°C).',
+      attractions: ['Indianapolis Motor Speedway', 'Indianapolis Zoo', 'Monument Circle', 'Children\'s Museum', 'White River State Park'],
+      demographics: 'Capital and largest city of Indiana, "Crossroads of America". Famous for Indy 500 and amateur sports capital of the world.'
+    }
+  },
+  { slug: 'fort-worth', city: 'Fort Worth', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 32.75, lng: -97.33, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '960K', phoneCode: '+1 817', language: 'English',
+      climate: 'Humid subtropical with hot summers (28-38°C) and mild winters (3-15°C). Occasional severe thunderstorms.',
+      attractions: ['Fort Worth Stockyards', 'Kimbell Art Museum', 'Sundance Square', 'Fort Worth Zoo', 'Botanic Garden'],
+      demographics: 'Fifth-largest city in Texas, "City of Cowboys and Culture". Part of Dallas-Fort Worth metroplex, major aerospace and defense hub.'
+    }
+  },
 
   // BRAZIL - Additional Cities
-  { slug: 'curitiba', city: 'Curitiba', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -25.43, lng: -49.27, tier: 2, continent: 'americas' },
-  { slug: 'porto-alegre', city: 'Porto Alegre', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -30.03, lng: -51.23, tier: 2, continent: 'americas' },
-  { slug: 'manaus', city: 'Manaus', timezone: 'America/Manaus', country: 'Brazil', countryCode: 'BR', lat: -3.12, lng: -60.02, tier: 3, continent: 'americas' },
+  { slug: 'curitiba', city: 'Curitiba', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -25.43, lng: -49.27, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '1.9M', phoneCode: '+55 41', language: 'Portuguese',
+      climate: 'Humid subtropical with mild summers (18-26°C) and cool winters (8-18°C). Rainfall year-round.',
+      attractions: ['Botanical Garden', 'Oscar Niemeyer Museum', 'Wire Opera House', 'Barigui Park', 'Historic Center'],
+      demographics: 'Capital of Paraná state, known for innovative urban planning and BRT system. One of Brazil\'s greenest cities.'
+    }
+  },
+  { slug: 'porto-alegre', city: 'Porto Alegre', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -30.03, lng: -51.23, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '1.5M', phoneCode: '+55 51', language: 'Portuguese',
+      climate: 'Humid subtropical with hot summers (24-30°C) and cool winters (10-18°C). Rainfall year-round.',
+      attractions: ['Mercado Público', 'Redenção Park', 'Guaíba Waterfront', 'Fundação Iberê Camargo', 'Bom Fim neighborhood'],
+      demographics: 'Capital of Rio Grande do Sul, southernmost major city in Brazil. Known for gaucho culture, churrasco, and World Social Forum.'
+    }
+  },
+  { slug: 'manaus', city: 'Manaus', timezone: 'America/Manaus', country: 'Brazil', countryCode: 'BR', lat: -3.12, lng: -60.02, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '2.2M', phoneCode: '+55 92', language: 'Portuguese',
+      climate: 'Tropical rainforest with high humidity year-round (26-32°C). Rainy season December-May.',
+      attractions: ['Amazon Theatre', 'Meeting of the Waters', 'INPA Bosque', 'Ponta Negra Beach', 'Adolpho Lisbon Market'],
+      demographics: 'Largest city in the Amazon, gateway to the rainforest. Free Trade Zone makes it an industrial center in the jungle.'
+    }
+  },
 
   // COLOMBIA - Additional Cities
-  { slug: 'cali', city: 'Cali', timezone: 'America/Bogota', country: 'Colombia', countryCode: 'CO', lat: 3.45, lng: -76.53, tier: 2, continent: 'americas' },
-  { slug: 'barranquilla', city: 'Barranquilla', timezone: 'America/Bogota', country: 'Colombia', countryCode: 'CO', lat: 10.96, lng: -74.80, tier: 3, continent: 'americas' },
+  { slug: 'cali', city: 'Cali', timezone: 'America/Bogota', country: 'Colombia', countryCode: 'CO', lat: 3.45, lng: -76.53, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Colombian Peso', currencySymbol: '$', population: '2.5M', phoneCode: '+57 2', language: 'Spanish',
+      climate: 'Tropical with consistent warm temperatures (18-30°C). Two rainy seasons (March-May, October-November).',
+      attractions: ['Cristo Rey', 'San Antonio neighborhood', 'Cali Zoo', 'La Ermita Church', 'Río Pance'],
+      demographics: 'Third-largest city in Colombia, world capital of salsa dancing. Major industrial and agricultural center in Valle del Cauca.'
+    }
+  },
+  { slug: 'barranquilla', city: 'Barranquilla', timezone: 'America/Bogota', country: 'Colombia', countryCode: 'CO', lat: 10.96, lng: -74.80, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Colombian Peso', currencySymbol: '$', population: '1.3M', phoneCode: '+57 5', language: 'Spanish',
+      climate: 'Tropical savanna with hot temperatures year-round (26-33°C). Dry season December-April.',
+      attractions: ['Barranquilla Carnival', 'Museo del Caribe', 'Puerta de Oro', 'Catedral Metropolitana', 'Zoológico de Barranquilla'],
+      demographics: 'Fourth-largest city in Colombia, major Caribbean port. Famous for its carnival, second largest in the world.'
+    }
+  },
 
   // PERU - Additional Cities
-  { slug: 'arequipa', city: 'Arequipa', timezone: 'America/Lima', country: 'Peru', countryCode: 'PE', lat: -16.41, lng: -71.54, tier: 3, continent: 'americas' },
-  { slug: 'cusco', city: 'Cusco', timezone: 'America/Lima', country: 'Peru', countryCode: 'PE', lat: -13.52, lng: -71.97, tier: 3, continent: 'americas' },
+  { slug: 'arequipa', city: 'Arequipa', timezone: 'America/Lima', country: 'Peru', countryCode: 'PE', lat: -16.41, lng: -71.54, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Peruvian Sol', currencySymbol: 'S/', population: '1.1M', phoneCode: '+51 54', language: 'Spanish',
+      climate: 'Semi-arid with mild temperatures year-round (10-25°C). Sunny most days with little rainfall.',
+      attractions: ['Santa Catalina Monastery', 'Plaza de Armas', 'Colca Canyon', 'El Misti Volcano', 'Yanahuara Viewpoint'],
+      demographics: 'Second-largest city in Peru, UNESCO World Heritage Site known as the "White City" for its volcanic stone buildings.'
+    }
+  },
+  { slug: 'cusco', city: 'Cusco', timezone: 'America/Lima', country: 'Peru', countryCode: 'PE', lat: -13.52, lng: -71.97, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Peruvian Sol', currencySymbol: 'S/', population: '430K', phoneCode: '+51 84', language: 'Spanish, Quechua',
+      climate: 'Subtropical highland with dry season (May-October) and wet season. Cool temperatures (5-20°C) due to altitude of 3,400m.',
+      attractions: ['Machu Picchu', 'Plaza de Armas', 'Sacsayhuamán', 'Qorikancha', 'Sacred Valley'],
+      demographics: 'Historic capital of the Inca Empire, UNESCO World Heritage Site. Gateway to Machu Picchu and Peru\'s top tourist destination.'
+    }
+  },
 
   // CHILE - Additional Cities
-  { slug: 'valparaiso', city: 'Valparaíso', timezone: 'America/Santiago', country: 'Chile', countryCode: 'CL', lat: -33.05, lng: -71.62, tier: 3, continent: 'americas' },
+  { slug: 'valparaiso', city: 'Valparaíso', timezone: 'America/Santiago', country: 'Chile', countryCode: 'CL', lat: -33.05, lng: -71.62, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Chilean Peso', currencySymbol: '$', population: '300K', phoneCode: '+56 32', language: 'Spanish',
+      climate: 'Mediterranean with warm dry summers (18-24°C) and mild wet winters (10-15°C). Ocean moderates temperatures.',
+      attractions: ['Cerro Alegre', 'Cerro Concepción', 'Historic Funiculars', 'La Sebastiana (Neruda House)', 'Sotomayor Square'],
+      demographics: 'UNESCO World Heritage Site, Chile\'s cultural capital. Known for colorful hillside houses, street art, and bohemian atmosphere.'
+    }
+  },
 
   // VENEZUELA - Additional Cities
-  { slug: 'maracaibo', city: 'Maracaibo', timezone: 'America/Caracas', country: 'Venezuela', countryCode: 'VE', lat: 10.67, lng: -71.64, tier: 3, continent: 'americas' },
-  { slug: 'valencia-venezuela', city: 'Valencia', timezone: 'America/Caracas', country: 'Venezuela', countryCode: 'VE', lat: 10.16, lng: -67.99, tier: 3, continent: 'americas' },
+  { slug: 'maracaibo', city: 'Maracaibo', timezone: 'America/Caracas', country: 'Venezuela', countryCode: 'VE', lat: 10.67, lng: -71.64, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Venezuelan Bolívar', currencySymbol: 'Bs', population: '2.0M', phoneCode: '+58 261', language: 'Spanish',
+      climate: 'Tropical semi-arid with hot temperatures year-round (28-35°C). Brief rainy season October-November.',
+      attractions: ['Lake Maracaibo', 'Basilica of Our Lady of Chiquinquirá', 'Catatumbo Lightning', 'Santa Lucía Historic Center', 'General Rafael Urdaneta Bridge'],
+      demographics: 'Second-largest city in Venezuela, center of oil industry. Known for Catatumbo lightning phenomenon visible from the lake.'
+    }
+  },
+  { slug: 'valencia-venezuela', city: 'Valencia', timezone: 'America/Caracas', country: 'Venezuela', countryCode: 'VE', lat: 10.16, lng: -67.99, tier: 3, continent: 'americas',
+    info: {
+      currency: 'Venezuelan Bolívar', currencySymbol: 'Bs', population: '1.5M', phoneCode: '+58 241', language: 'Spanish',
+      climate: 'Tropical savanna with warm temperatures year-round (24-32°C). Dry season December-April.',
+      attractions: ['Valencia Aquarium', 'Campo Carabobo', 'Metropolitan Cathedral', 'Parque Fernando Peñalver', 'Lake Valencia'],
+      demographics: 'Third-largest city in Venezuela, major industrial center. Historic capital during independence era, automotive manufacturing hub.'
+    }
+  },
 
   // AUSTRALIA - Additional Cities
-  { slug: 'canberra', city: 'Canberra', timezone: 'Australia/Sydney', country: 'Australia', countryCode: 'AU', lat: -35.28, lng: 149.13, tier: 2, continent: 'oceania' },
+  { slug: 'canberra', city: 'Canberra', timezone: 'Australia/Sydney', country: 'Australia', countryCode: 'AU', lat: -35.28, lng: 149.13, tier: 2, continent: 'oceania',
+    info: {
+      currency: 'Australian Dollar', currencySymbol: 'A$', population: '460K', phoneCode: '+61 2', language: 'English',
+      climate: 'Oceanic with warm dry summers (20-28°C) and cold winters (0-12°C). Four distinct seasons.',
+      attractions: ['Parliament House', 'Australian War Memorial', 'National Gallery of Australia', 'Lake Burley Griffin', 'Questacon'],
+      demographics: 'Capital of Australia, planned city designed by Walter Burley Griffin. Government and education hub between Sydney and Melbourne.'
+    }
+  },
 
   // NEW ZEALAND - Additional Cities
-  { slug: 'queenstown', city: 'Queenstown', timezone: 'Pacific/Auckland', country: 'New Zealand', countryCode: 'NZ', lat: -45.03, lng: 168.66, tier: 3, continent: 'oceania' },
+  { slug: 'queenstown', city: 'Queenstown', timezone: 'Pacific/Auckland', country: 'New Zealand', countryCode: 'NZ', lat: -45.03, lng: 168.66, tier: 3, continent: 'oceania',
+    info: {
+      currency: 'New Zealand Dollar', currencySymbol: 'NZ$', population: '16K', phoneCode: '+64 3', language: 'English, Māori',
+      climate: 'Oceanic with warm summers (15-22°C) and cold winters (-2 to 8°C). Four distinct seasons, snow in winter.',
+      attractions: ['Lake Wakatipu', 'Skyline Gondola', 'Milford Sound', 'Coronet Peak', 'Shotover Jet'],
+      demographics: 'Adventure capital of New Zealand in South Island. Famous for bungee jumping, skiing, and Lord of the Rings filming locations.'
+    }
+  },
 
   // FIJI - Suva
-  { slug: 'suva', city: 'Suva', timezone: 'Pacific/Fiji', country: 'Fiji', countryCode: 'FJ', lat: -18.14, lng: 178.44, tier: 3, continent: 'oceania' },
+  { slug: 'suva', city: 'Suva', timezone: 'Pacific/Fiji', country: 'Fiji', countryCode: 'FJ', lat: -18.14, lng: 178.44, tier: 3, continent: 'oceania',
+    info: {
+      currency: 'Fijian Dollar', currencySymbol: 'FJ$', population: '95K', phoneCode: '+679', language: 'English, Fijian, Hindi',
+      climate: 'Tropical rainforest with warm temperatures year-round (23-30°C). Wet season November-April, cyclone risk.',
+      attractions: ['Fiji Museum', 'Colo-i-Suva Forest Park', 'Thurston Gardens', 'Municipal Market', 'University of South Pacific'],
+      demographics: 'Capital of Fiji on Viti Levu island, largest city in South Pacific. Multicultural hub of Fijian, Indian, and European influences.'
+    }
+  },
 
   // PAPUA NEW GUINEA - Port Moresby
 ]
