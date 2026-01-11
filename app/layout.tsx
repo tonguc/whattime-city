@@ -92,12 +92,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Google Analytics - lazyOnload for best performance */}
+        {/* Google Analytics - afterInteractive required for Search Console verification */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-ED5Y13JE4H"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
-        <Script id="ga4" strategy="lazyOnload">
+        <Script id="ga4" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
