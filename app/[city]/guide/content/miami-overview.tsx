@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import { City } from '@/lib/cities'
 import { GuideConfig } from '@/lib/guide-content'
@@ -48,6 +49,8 @@ const FAQ_DATA = [
 ]
 
 export default function MiamiOverviewContent({ city, config, isLight, timeStr }: Props) {
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
+  
   const textColor = isLight ? 'text-slate-700' : 'text-slate-200'
   const headingColor = isLight ? 'text-slate-800' : 'text-white'
   const mutedColor = isLight ? 'text-slate-500' : 'text-slate-400'
@@ -259,20 +262,33 @@ export default function MiamiOverviewContent({ city, config, isLight, timeStr }:
           Frequently Asked Questions
         </h2>
         
-        <div className="space-y-4">
+        <div className="space-y-3">
           {FAQ_DATA.map((faq, index) => (
             <div 
               key={index}
-              className={`p-4 rounded-xl ${cardBg}`}
+              className={`rounded-xl overflow-hidden ${cardBg}`}
               itemScope 
               itemProp="mainEntity" 
               itemType="https://schema.org/Question"
             >
-              <h3 className={`font-medium mb-2 ${headingColor}`} itemProp="name">
-                {faq.question}
-              </h3>
-              <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                <p className="text-sm" itemProp="text">
+              <button
+                onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                className={`w-full p-4 text-left flex items-center justify-between gap-3 ${headingColor} hover:bg-black/5 dark:hover:bg-white/5 transition-colors`}
+              >
+                <h3 className="font-medium pr-2" itemProp="name">
+                  {faq.question}
+                </h3>
+                <span className={`flex-shrink-0 text-lg transition-transform duration-200 ${openFaq === index ? 'rotate-180' : ''}`}>
+                  ▼
+                </span>
+              </button>
+              <div 
+                className={`overflow-hidden transition-all duration-200 ${openFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                itemScope 
+                itemProp="acceptedAnswer" 
+                itemType="https://schema.org/Answer"
+              >
+                <p className={`px-4 pb-4 text-sm ${textColor}`} itemProp="text">
                   {faq.answer}
                 </p>
               </div>

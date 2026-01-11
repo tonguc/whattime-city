@@ -114,7 +114,7 @@ const TIER1_CITIES = [
   'cairo', 'johannesburg'
 ]
 
-// Premium cities with guide content (20 cities)
+// Premium cities with guide content (21 cities)
 const PREMIUM_GUIDE_CITIES = [
   'new-york',
   'london', 
@@ -135,7 +135,8 @@ const PREMIUM_GUIDE_CITIES = [
   'chicago',
   'frankfurt',
   'mumbai',
-  'sao-paulo'
+  'sao-paulo',
+  'miami'
 ]
 
 /**
