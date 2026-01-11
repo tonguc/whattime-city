@@ -1958,6 +1958,101 @@ export const mumbaiGuide: GuideConfig = {
 }
 
 // ===================
+// MIAMI (Gateway to the Americas)
+// ===================
+export const miamiGuide: GuideConfig = {
+  citySlug: 'miami',
+  cityName: 'Miami',
+  timezone: 'America/New_York',
+  timezoneAbbr: 'EST/EDT',
+  timezoneName: 'Eastern Time',
+  utcOffset: -5,
+  icon: '🌴',
+  tagline: 'Your complete guide to time in the Gateway to the Americas',
+  region: 'AMERICAS',
+  coordinates: { lat: 25.7617, lng: -80.1918 },
+  
+  seo: {
+    title: 'Miami Time Zone Guide | EST/EDT, Business Hours & Latin America Connection',
+    description: 'Complete Miami time zone guide. Eastern Time (EST/EDT), Latin American business overlap, cruise port schedules, and Florida time tips. Updated regularly.',
+    keywords: ['miami time zone', 'miami time now', 'est edt florida', 'miami business hours', 'miami to new york time', 'best time to call miami', 'miami latin america time', 'florida time zone'],
+    ogTitle: 'Miami Time Zone Guide | Complete Florida Time Resource',
+    ogDescription: 'Everything about Miami time: business hours, Latin American overlap, cruise schedules, remote work tips. The definitive guide to the Gateway to the Americas.',
+  },
+  
+  pages: {
+    overview: {
+      title: 'Miami Time Zone Guide | EST/EDT, Business Hours & More',
+      description: 'Complete Miami time zone guide. Business hours, Latin American overlap, best time to call Miami, and local tips.',
+      keywords: ['miami time zone', 'miami time', 'est edt florida'],
+    },
+    businessHours: {
+      title: 'Miami Business Hours | Banks, Stores, Latin American Trade Hours',
+      description: 'What time do businesses open in Miami? Complete guide to Miami store hours, bank schedules, Latin American trading overlap.',
+      keywords: ['miami business hours', 'miami store hours', 'miami bank hours', 'latin america business overlap'],
+    },
+    bestTimeToVisit: {
+      title: 'Best Time to Visit Miami | Weather, Hurricane Season & Events',
+      description: 'When to visit Miami? Month-by-month guide with weather, hurricane season info, Art Basel dates, and tourist crowd calendar.',
+      keywords: ['best time to visit miami', 'miami weather by month', 'miami hurricane season', 'art basel miami dates'],
+    },
+    remoteWork: {
+      title: 'Working with Miami Teams Remotely | Time Zone Overlap & Meeting Times',
+      description: 'Remote work guide for Miami collaboration. Find overlap hours with Latin America, Europe. Best meeting times and Miami tech scene.',
+      keywords: ['remote work miami time zone', 'working with miami team', 'miami tech scene', 'best meeting time miami'],
+    },
+    twentyFourHours: {
+      title: "Miami 24 Hour Guide | What's Open & When in the Magic City",
+      description: "Miami hour-by-hour: beach times, lunch crowds, happy hour, nightlife peaks, and South Beach schedules.",
+      keywords: ['24 hours in miami', 'miami nightlife hours', 'south beach schedule', 'miami beach times'],
+    },
+    callTimes: {
+      title: 'Best Time to Call Miami | From Latin America, UK, Europe & More',
+      description: 'When to call Miami? Best calling times from São Paulo, Mexico City, London, Madrid. Business hours overlap guide.',
+      keywords: ['best time to call miami', 'call miami from brazil', 'miami latin america time'],
+    },
+    stockMarket: {
+      title: 'NYSE Hours in Miami Time | Wall Street Trading Schedule',
+      description: 'NYSE opens 9:30 AM Miami time. Complete Wall Street trading schedule for Miami investors and Latin American traders.',
+      keywords: ['nyse hours miami', 'stock market miami time', 'wall street hours est'],
+    },
+    holidays: {
+      title: "Miami Holidays | US Federal Holidays & Latin American Observances",
+      description: "Miami public holidays calendar. US federal holidays, Latin American community observances, and business closure guide.",
+      keywords: ['miami public holidays', 'florida holidays', 'miami bank holidays'],
+    },
+    digitalNomad: {
+      title: 'Digital Nomad Miami Guide | Coworking, WiFi & Cost of Living',
+      description: 'Work remotely from Miami. Best coworking spaces, laptop-friendly cafes, cost of living, and Latin American connectivity.',
+      keywords: ['digital nomad miami', 'miami coworking spaces', 'work from miami'],
+    },
+    timeDifference: {
+      title: 'Miami Time Difference Calculator | EST vs São Paulo, London, More',
+      description: 'Miami time difference to São Paulo (+2h), London (+5h), Mexico City (-1h) and 50+ cities. EST vs Latin America explained.',
+      keywords: ['miami time difference', 'miami vs sao paulo time', 'miami vs london time'],
+    },
+    travelPlanning: {
+      title: 'Miami Travel Guide | Flight Times, Cruise Ports & Airport Tips',
+      description: 'Flying to Miami? Flight times from Latin America, Europe. MIA airport guide, cruise port schedules, and arrival tips.',
+      keywords: ['flight time to miami', 'miami airport guide', 'miami cruise port times'],
+    },
+  },
+  
+  clusters: [
+    { slug: 'business-hours', icon: '💼', title: 'Business Hours', desc: 'Banks, offices, stores, and Latin American overlap' },
+    { slug: 'best-time-to-visit', icon: '🌴', title: 'Best Time to Visit', desc: 'Weather, hurricane season, and events guide' },
+    { slug: 'remote-work', icon: '💻', title: 'Remote Work Guide', desc: 'Working with Miami teams across time zones' },
+    { slug: '24-hours', icon: '🌅', title: '24 Hours in Miami', desc: 'From sunrise beach to South Beach nightlife' },
+    { slug: 'call-times', icon: '📞', title: 'Best Time to Call', desc: 'Optimal calling windows from Latin America & beyond' },
+    { slug: 'stock-market', icon: '📈', title: 'Stock Market Hours', desc: 'NYSE & NASDAQ times for Miami traders' },
+    { slug: 'holidays', icon: '🇺🇸', title: 'Public Holidays', desc: 'US federal holidays and local observances' },
+    { slug: 'digital-nomad', icon: '🎒', title: 'Digital Nomad Guide', desc: 'Coworking, cafes, and the Miami tech scene' },
+    { slug: 'time-difference', icon: '🌐', title: 'Time Difference', desc: 'Miami vs São Paulo, London, Mexico City' },
+    { slug: 'travel-planning', icon: '✈️', title: 'Travel Planning', desc: 'Flights, cruises, and getting around' },
+  ],
+}
+
+// ===================
 // GUIDE REGISTRY
 // ===================
 export const guideConfigs: Record<string, GuideConfig> = {
@@ -1981,6 +2076,7 @@ export const guideConfigs: Record<string, GuideConfig> = {
   'chicago': chicagoGuide,
   'sao-paulo': saoPauloGuide,
   'bangkok': bangkokGuide,
+  'miami': miamiGuide,
 }
 
 // All Tier 1 cities that should have guide pages
@@ -2131,7 +2227,8 @@ const PREMIUM_GUIDE_CITIES = [
   'frankfurt',
   'chicago',
   'sao-paulo',
-  'bangkok'
+  'bangkok',
+  'miami'
 ]
 
 export function getGuideConfig(citySlug: string): GuideConfig | null {
