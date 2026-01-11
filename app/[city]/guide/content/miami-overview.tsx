@@ -278,9 +278,14 @@ export default function MiamiOverviewContent({ city, config, isLight, timeStr }:
                 <h3 className="font-medium pr-2" itemProp="name">
                   {faq.question}
                 </h3>
-                <span className={`flex-shrink-0 text-lg transition-transform duration-200 ${openFaq === index ? 'rotate-180' : ''}`}>
-                  ▼
-                </span>
+                <svg 
+                  className={`w-5 h-5 flex-shrink-0 transition-transform duration-200 ${openFaq === index ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
               </button>
               <div 
                 className={`overflow-hidden transition-all duration-200 ${openFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
