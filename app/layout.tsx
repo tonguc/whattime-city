@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next'
-import Script from 'next/script'
 import { CityProvider } from '@/lib/CityContext'
 import './globals.css'
 
@@ -92,19 +91,21 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Google Analytics - afterInteractive required for Search Console verification */}
-        <Script
+        {/* Google Analytics - Native script tags required for Search Console verification */}
+        <script
+          async
           src="https://www.googletagmanager.com/gtag/js?id=G-ED5Y13JE4H"
-          strategy="afterInteractive"
         />
-        <Script id="ga4" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-ED5Y13JE4H');
-          `}
-        </Script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-ED5Y13JE4H');
+            `
+          }}
+        />
         
         {/* Google Fonts REMOVED for performance - using system fonts instead */}
         {/* Preconnect to Weather API for faster loading */}
