@@ -15,7 +15,7 @@
 
 // ⚠️ CRITICAL: Google Analytics Measurement ID
 // Do not change unless you're migrating to a new GA property
-export const GA_MEASUREMENT_ID = 'G-060GV967M0'
+export const GA_MEASUREMENT_ID = 'G-ED5Y13JE4H'
 
 /**
  * Google Analytics Script Component
