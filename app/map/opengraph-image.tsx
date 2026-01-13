@@ -71,6 +71,7 @@ export default async function OGImage() {
             >
               <div
                 style={{
+                  display: 'flex',
                   background: 'rgba(34, 211, 238, 0.9)',
                   padding: '8px 16px',
                   borderRadius: 8,
@@ -85,7 +86,7 @@ export default async function OGImage() {
         </div>
 
         {/* Footer */}
-        <div style={{ position: 'absolute', bottom: 32, color: 'rgba(255,255,255,0.5)', fontSize: 20 }}>
+        <div style={{ display: 'flex', position: 'absolute', bottom: 32, color: 'rgba(255,255,255,0.5)', fontSize: 20 }}>
           whattime.city - Live World Clock Map
         </div>
       </div>
