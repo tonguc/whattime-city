@@ -257,7 +257,7 @@ export default function MiamiOverviewContent({ city, config, isLight, timeStr }:
       </section>
 
       {/* FAQ Section */}
-      <section className="mb-10" itemScope itemType="https://schema.org/FAQPage">
+      <section className="mb-10">
         <h2 className={`text-2xl font-semibold mb-6 ${headingColor}`}>
           Frequently Asked Questions
         </h2>
@@ -267,15 +267,12 @@ export default function MiamiOverviewContent({ city, config, isLight, timeStr }:
             <div 
               key={index}
               className={`rounded-xl overflow-hidden ${cardBg}`}
-              itemScope 
-              itemProp="mainEntity" 
-              itemType="https://schema.org/Question"
             >
               <button
                 onClick={() => setOpenFaq(openFaq === index ? null : index)}
                 className={`w-full p-4 text-left flex items-center justify-between gap-3 ${headingColor} hover:bg-black/5 dark:hover:bg-white/5 transition-colors`}
               >
-                <h3 className="font-medium pr-2" itemProp="name">
+                <h3 className="font-medium pr-2">
                   {faq.question}
                 </h3>
                 <svg 
@@ -289,11 +286,8 @@ export default function MiamiOverviewContent({ city, config, isLight, timeStr }:
               </button>
               <div 
                 className={`overflow-hidden transition-all duration-200 ${openFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
-                itemScope 
-                itemProp="acceptedAnswer" 
-                itemType="https://schema.org/Answer"
               >
-                <p className={`px-4 pb-4 text-sm ${textColor}`} itemProp="text">
+                <p className={`px-4 pb-4 text-sm ${textColor}`}>
                   {faq.answer}
                 </p>
               </div>
