@@ -2004,9 +2004,161 @@ export const cities: City[] = [
       }
     }
   },
+  { slug: 'tijuana', city: 'Tijuana', timezone: 'America/Tijuana', country: 'Mexico', countryCode: 'MX', lat: 32.53, lng: -117.02, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '1.9M', phoneCode: '+52 664', language: 'Spanish, English',
+      climate: 'Mediterranean with mild summers (18-26°C) and cool winters (10-18°C). Very little rain, mostly winter.',
+      attractions: ['Avenida Revolución', 'Tijuana Cultural Center', 'Playas de Tijuana', 'Valle de Guadalupe nearby', 'Mercado Hidalgo'],
+      demographics: 'Mexico\'s largest border city, most crossed border in the world. Major manufacturing hub with booming food and craft beer scene.'
+    }
+  },
+  { slug: 'puebla', city: 'Puebla', timezone: 'America/Mexico_City', country: 'Mexico', countryCode: 'MX', lat: 19.04, lng: -98.20, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '1.7M', phoneCode: '+52 222', language: 'Spanish',
+      climate: 'Subtropical highland with mild year-round (12-25°C). Rainy season May-October. Pleasant climate.',
+      attractions: ['Puebla Cathedral', 'Zócalo', 'Biblioteca Palafoxiana', 'Cholula Pyramid', 'Barrio del Artista'],
+      demographics: 'UNESCO World Heritage city with stunning colonial architecture. Known for mole poblano, Talavera pottery, and Cinco de Mayo battle site.'
+    }
+  },
+  { slug: 'leon', city: 'León', timezone: 'America/Mexico_City', country: 'Mexico', countryCode: 'MX', lat: 21.12, lng: -101.69, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '1.6M', phoneCode: '+52 477', language: 'Spanish',
+      climate: 'Semi-arid with warm days (20-30°C) and cool nights. Rainy season June-September.',
+      attractions: ['Parque Metropolitano', 'Arco Triunfal', 'Zona Piel', 'Catedral Basílica', 'Parque Explora'],
+      demographics: 'Mexico\'s leather and shoe capital, producing 60% of national footwear. Known as "Shoe Capital of the World".'
+    }
+  },
+  { slug: 'ciudad-juarez', city: 'Ciudad Juárez', timezone: 'America/Ojinaga', country: 'Mexico', countryCode: 'MX', lat: 31.69, lng: -106.42, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '1.5M', phoneCode: '+52 656', language: 'Spanish, English',
+      climate: 'Hot desert with very hot summers (28-38°C) and cold winters (2-15°C). Very dry, occasional dust storms.',
+      attractions: ['Misión de Guadalupe', 'Museo de la Revolución', 'Parque Central', 'Chamizal Park', 'Plaza de la Mexicanidad'],
+      demographics: 'Major border city opposite El Paso, Texas. One of largest maquiladora manufacturing centers in Mexico.'
+    }
+  },
+  { slug: 'zapopan', city: 'Zapopan', timezone: 'America/Mexico_City', country: 'Mexico', countryCode: 'MX', lat: 20.72, lng: -103.39, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '1.5M', phoneCode: '+52 33', language: 'Spanish',
+      climate: 'Subtropical highland with warm days (18-28°C) and cool nights. Rainy season June-October.',
+      attractions: ['Basilica of Our Lady of Zapopan', 'Andares Shopping', 'Bosque Los Colomos', 'Arcos de Zapopan', 'MAZ Museum'],
+      demographics: 'Part of Guadalajara metro, Mexico\'s tech hub. Home to major IT companies and startups, nicknamed "Mexican Silicon Valley".'
+    }
+  },
+  { slug: 'merida', city: 'Mérida', timezone: 'America/Merida', country: 'Mexico', countryCode: 'MX', lat: 20.97, lng: -89.59, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '1M', phoneCode: '+52 999', language: 'Spanish, Yucatec Maya',
+      climate: 'Tropical savanna with hot humid weather (24-36°C). Rainy season May-October. Hottest months April-May.',
+      attractions: ['Plaza Grande', 'Paseo de Montejo', 'Mayan World Museum', 'Uxmal ruins', 'Celestún Biosphere'],
+      demographics: 'Capital of Yucatán, "White City" for limestone buildings. Gateway to Mayan ruins, safest large city in Mexico.'
+    }
+  },
+  { slug: 'san-luis-potosi', city: 'San Luis Potosí', timezone: 'America/Mexico_City', country: 'Mexico', countryCode: 'MX', lat: 22.15, lng: -100.98, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '870K', phoneCode: '+52 444', language: 'Spanish',
+      climate: 'Semi-arid highland with warm days (18-28°C) and cool nights (5-15°C). Rainy season June-September.',
+      attractions: ['Plaza de Armas', 'Templo del Carmen', 'Museo Nacional de la Máscara', 'Real de Catorce', 'Tangamanga Park'],
+      demographics: 'Colonial silver city with baroque architecture. Major automotive manufacturing hub (BMW, GM) in central Mexico.'
+    }
+  },
+  { slug: 'aguascalientes', city: 'Aguascalientes', timezone: 'America/Mexico_City', country: 'Mexico', countryCode: 'MX', lat: 21.88, lng: -102.29, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '950K', phoneCode: '+52 449', language: 'Spanish',
+      climate: 'Semi-arid with warm days (20-30°C) and cool nights. Pleasant year-round, little humidity.',
+      attractions: ['Feria Nacional de San Marcos', 'Jardín de San Marcos', 'Museo Descubre', 'Baños Termales', 'Cathedral'],
+      demographics: 'Named for hot springs, hosts Mexico\'s biggest fair (San Marcos). Automotive and textile manufacturing center.'
+    }
+  },
+  { slug: 'queretaro', city: 'Querétaro', timezone: 'America/Mexico_City', country: 'Mexico', countryCode: 'MX', lat: 20.59, lng: -100.39, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '1M', phoneCode: '+52 442', language: 'Spanish',
+      climate: 'Semi-arid highland with warm days (18-28°C) and cool nights. Rainy season June-September.',
+      attractions: ['Centro Histórico (UNESCO)', 'Aqueduct', 'Templo de Santa Rosa', 'Peña de Bernal', 'Viñedos'],
+      demographics: 'UNESCO World Heritage city, fastest-growing in Mexico. Aerospace industry hub (Bombardier, Safran) with high quality of life.'
+    }
+  },
+  { slug: 'morelia', city: 'Morelia', timezone: 'America/Mexico_City', country: 'Mexico', countryCode: 'MX', lat: 19.70, lng: -101.19, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '850K', phoneCode: '+52 443', language: 'Spanish',
+      climate: 'Subtropical highland with mild temperatures (12-26°C). Rainy season June-October. Pleasant year-round.',
+      attractions: ['Morelia Cathedral', 'Aqueduct', 'Santuario de Guadalupe', 'Monarch Butterfly Sanctuary', 'Janitzio Island'],
+      demographics: 'Capital of Michoacán, UNESCO World Heritage city. Birthplace of independence hero Morelos, gateway to monarch butterflies.'
+    }
+  },
+  { slug: 'saltillo', city: 'Saltillo', timezone: 'America/Monterrey', country: 'Mexico', countryCode: 'MX', lat: 25.42, lng: -101.00, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '830K', phoneCode: '+52 844', language: 'Spanish',
+      climate: 'Semi-arid highland with hot summers (25-33°C) and cold winters (5-18°C). Can see snow occasionally.',
+      attractions: ['Catedral de Santiago', 'Museo del Desierto', 'Plaza de Armas', 'Alameda Zaragoza', 'Sierra de Arteaga'],
+      demographics: 'Capital of Coahuila, oldest city in northern Mexico. Major automotive manufacturing (Chrysler, GM) and sarape textiles.'
+    }
+  },
+  { slug: 'hermosillo', city: 'Hermosillo', timezone: 'America/Hermosillo', country: 'Mexico', countryCode: 'MX', lat: 29.07, lng: -110.96, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '900K', phoneCode: '+52 662', language: 'Spanish',
+      climate: 'Hot desert with extreme summers (35-45°C) and mild winters (10-25°C). One of Mexico\'s hottest cities.',
+      attractions: ['Plaza Zaragoza', 'Cerro de la Campana', 'Museo de Sonora', 'Catedral de la Asunción', 'Bahía de Kino nearby'],
+      demographics: 'Capital of Sonora, gateway to Sea of Cortez. Ford manufacturing plant, cattle ranching, and agricultural center.'
+    }
+  },
+  { slug: 'mexicali', city: 'Mexicali', timezone: 'America/Tijuana', country: 'Mexico', countryCode: 'MX', lat: 32.66, lng: -115.47, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '1M', phoneCode: '+52 686', language: 'Spanish, English',
+      climate: 'Hot desert with extreme summers (40-50°C) and mild winters (8-22°C). Hottest city in Mexico.',
+      attractions: ['La Chinesca', 'Sol del Niño Museum', 'Catedral de Nuestra Señora', 'Bosque de la Ciudad', 'Cañón de Guadalupe'],
+      demographics: 'Capital of Baja California, large Chinese community (La Chinesca). Major agricultural region and maquiladora manufacturing.'
+    }
+  },
+  { slug: 'culiacan', city: 'Culiacán', timezone: 'America/Mazatlan', country: 'Mexico', countryCode: 'MX', lat: 24.81, lng: -107.39, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '960K', phoneCode: '+52 667', language: 'Spanish',
+      climate: 'Semi-arid with hot summers (30-40°C) and mild winters (15-28°C). Rainy season July-September.',
+      attractions: ['Centro de Ciencias', 'Catedral Basílica', 'Jardín Botánico', 'Plazuela Obregón', 'Las Riberas Park'],
+      demographics: 'Capital of Sinaloa, major agricultural hub producing tomatoes and corn. University city with growing economy.'
+    }
+  },
+  { slug: 'chihuahua', city: 'Chihuahua', timezone: 'America/Chihuahua', country: 'Mexico', countryCode: 'MX', lat: 28.63, lng: -106.07, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '930K', phoneCode: '+52 614', language: 'Spanish',
+      climate: 'Semi-arid with hot summers (28-35°C) and cold winters (0-15°C). Large temperature variations.',
+      attractions: ['Catedral de Chihuahua', 'Quinta Gameros', 'Chepe Train to Copper Canyon', 'Museo Casa Chihuahua', 'Grutas Nombre de Dios'],
+      demographics: 'Capital of Mexico\'s largest state, gateway to Copper Canyon. Named for the dog breed, major manufacturing center.'
+    }
+  },
+  { slug: 'toluca', city: 'Toluca', timezone: 'America/Mexico_City', country: 'Mexico', countryCode: 'MX', lat: 19.29, lng: -99.66, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '940K', phoneCode: '+52 722', language: 'Spanish',
+      climate: 'Subtropical highland, one of Mexico\'s coldest cities (8-20°C). Can drop below freezing in winter.',
+      attractions: ['Cosmovitral', 'Nevado de Toluca', 'Portales', 'Catedral de Toluca', 'Centro Cultural Mexiquense'],
+      demographics: 'Capital of Estado de México, highest major city in Mexico (2,680m). Industrial hub near Mexico City with chorizo tradition.'
+    }
+  },
+  { slug: 'acapulco', city: 'Acapulco', timezone: 'America/Mexico_City', country: 'Mexico', countryCode: 'MX', lat: 16.85, lng: -99.88, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '780K', phoneCode: '+52 744', language: 'Spanish',
+      climate: 'Tropical with hot humid weather (26-32°C). Rainy season June-October, dry November-May.',
+      attractions: ['La Quebrada Cliff Divers', 'Costera Beach', 'Fort of San Diego', 'Isla de la Roqueta', 'Pie de la Cuesta'],
+      demographics: 'Mexico\'s original resort destination, famous for cliff divers. Historic Pacific port and 1950s Hollywood glamour.'
+    }
+  },
+  { slug: 'veracruz', city: 'Veracruz', timezone: 'America/Mexico_City', country: 'Mexico', countryCode: 'MX', lat: 19.18, lng: -96.14, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '610K', phoneCode: '+52 229', language: 'Spanish',
+      climate: 'Tropical with hot humid weather (24-32°C). Rainy season June-October. Norte winds in winter.',
+      attractions: ['Malecón', 'San Juan de Ulúa', 'Zócalo', 'Acuario de Veracruz', 'Boca del Río'],
+      demographics: 'Mexico\'s oldest and largest port, where Cortés landed. Known for music, dance (son jarocho), and seafood.'
+    }
+  },
+  { slug: 'oaxaca', city: 'Oaxaca', timezone: 'America/Mexico_City', country: 'Mexico', countryCode: 'MX', lat: 17.07, lng: -96.72, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Mexican Peso', currencySymbol: '$', population: '270K', phoneCode: '+52 951', language: 'Spanish, Zapotec, Mixtec',
+      climate: 'Subtropical highland with mild weather (14-28°C). Rainy season May-October. Pleasant year-round.',
+      attractions: ['Monte Albán', 'Zócalo', 'Santo Domingo Church', 'Hierve el Agua', 'Mezcal distilleries'],
+      demographics: 'UNESCO World Heritage city, center of indigenous Zapotec culture. Famous for mezcal, mole negro, and Day of the Dead.'
+    }
+  },
 
   // Europe
-  { slug: 'manchester', city: 'Manchester', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.48, lng: -2.24, tier: 3, continent: 'europe',
+  { slug: 'manchester', city: 'Manchester', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.48, lng: -2.24, tier: 2, continent: 'europe',
     info: {
       currency: 'British Pound', currencySymbol: '£', population: '550K', metroPopulation: '2.8M', phoneCode: '+44 161', language: 'English',
       climate: 'Oceanic with mild temperatures (4-20°C). Frequent rain. Famous for grey skies.',
@@ -4349,6 +4501,94 @@ export const cities: City[] = [
       demographics: 'Capital and largest city of Wales, major media and cultural center. Home to Welsh Government and historic coal export port.'
     }
   },
+  { slug: 'sheffield', city: 'Sheffield', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.38, lng: -1.47, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '585K', phoneCode: '+44 114', language: 'English',
+      climate: 'Oceanic with mild summers (16-21°C) and cool winters (2-7°C). Frequent rainfall, hilly terrain.',
+      attractions: ['Winter Garden', 'Kelham Island Museum', 'Peak District Gateway', 'Millennium Gallery', 'Sheffield Cathedral'],
+      demographics: 'Steel City transformed into education and tech hub. Two major universities, gateway to Peak District National Park.'
+    }
+  },
+  { slug: 'nottingham', city: 'Nottingham', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.95, lng: -1.15, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '330K', phoneCode: '+44 115', language: 'English',
+      climate: 'Oceanic with mild summers (16-21°C) and cool winters (2-7°C). Moderate rainfall.',
+      attractions: ['Nottingham Castle', 'Old Market Square', 'City of Caves', 'Wollaton Hall', 'Sherwood Forest nearby'],
+      demographics: 'Robin Hood\'s legendary home, historic lace-making center. Major university city with vibrant nightlife.'
+    }
+  },
+  { slug: 'southampton', city: 'Southampton', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.90, lng: -1.40, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '260K', phoneCode: '+44 23', language: 'English',
+      climate: 'Oceanic with mild summers (17-21°C) and cool winters (4-9°C). Relatively sunny for UK.',
+      attractions: ['SeaCity Museum', 'Tudor House', 'Old Town Walls', 'Mayflower Park', 'Southampton FC'],
+      demographics: 'Major cruise port, where Titanic departed. Historic maritime city, home to University of Southampton.'
+    }
+  },
+  { slug: 'leicester', city: 'Leicester', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.63, lng: -1.13, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '355K', phoneCode: '+44 116', language: 'English, Gujarati',
+      climate: 'Oceanic with mild summers (16-21°C) and cool winters (2-7°C). Moderate rainfall.',
+      attractions: ['King Richard III Visitor Centre', 'Leicester Cathedral', 'National Space Centre', 'New Walk Museum', 'Golden Mile'],
+      demographics: 'One of UK\'s most diverse cities, where Richard III was found. Leicester City FC\'s 2016 Premier League miracle.'
+    }
+  },
+  { slug: 'coventry', city: 'Coventry', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.41, lng: -1.51, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '370K', phoneCode: '+44 24', language: 'English',
+      climate: 'Oceanic with mild summers (16-21°C) and cool winters (2-7°C). Central England location.',
+      attractions: ['Coventry Cathedral', 'Transport Museum', 'Herbert Art Gallery', 'St Mary\'s Guildhall', 'Belgrade Theatre'],
+      demographics: 'UK City of Culture 2021, rebuilt after WWII bombing. Historic watchmaking and automotive center.'
+    }
+  },
+  { slug: 'belfast', city: 'Belfast', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 54.60, lng: -5.93, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '345K', phoneCode: '+44 28', language: 'English, Irish',
+      climate: 'Oceanic with cool summers (15-18°C) and mild winters (3-8°C). Frequent rainfall year-round.',
+      attractions: ['Titanic Belfast', 'St George\'s Market', 'Cathedral Quarter', 'Botanic Gardens', 'Peace Walls'],
+      demographics: 'Capital of Northern Ireland, where Titanic was built. Transformed from conflict to cultural tourism destination.'
+    }
+  },
+  { slug: 'brighton', city: 'Brighton', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.82, lng: -0.14, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '290K', phoneCode: '+44 1273', language: 'English',
+      climate: 'Oceanic with mild summers (18-21°C) and cool winters (4-9°C). Sunniest city in UK.',
+      attractions: ['Royal Pavilion', 'Brighton Pier', 'The Lanes', 'British Airways i360', 'Brighton Beach'],
+      demographics: 'London-by-the-Sea, UK\'s most LGBTQ+ friendly city. Famous for Regency architecture and bohemian culture.'
+    }
+  },
+  { slug: 'cambridge', city: 'Cambridge', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.21, lng: 0.12, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '145K', phoneCode: '+44 1223', language: 'English',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (2-8°C). One of UK\'s driest cities.',
+      attractions: ['King\'s College Chapel', 'The Backs', 'Fitzwilliam Museum', 'Punting on the Cam', 'Mathematical Bridge'],
+      demographics: 'World-famous university city (1209), Silicon Fen tech hub. Home to 31 colleges and countless Nobel laureates.'
+    }
+  },
+  { slug: 'oxford', city: 'Oxford', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.75, lng: -1.25, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '155K', phoneCode: '+44 1865', language: 'English',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (2-8°C). Thames Valley location.',
+      attractions: ['Bodleian Library', 'Radcliffe Camera', 'Christ Church', 'Ashmolean Museum', 'Covered Market'],
+      demographics: 'Dreaming spires of world\'s oldest English-speaking university (1096). Harry Potter filming locations.'
+    }
+  },
+  { slug: 'aberdeen', city: 'Aberdeen', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 57.15, lng: -2.09, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '230K', phoneCode: '+44 1224', language: 'English, Scots',
+      climate: 'Oceanic with cool summers (14-18°C) and cold winters (1-7°C). North Sea winds, granite grey skies.',
+      attractions: ['Marischal College', 'Old Aberdeen', 'Aberdeen Art Gallery', 'Footdee', 'Dunnottar Castle nearby'],
+      demographics: 'Granite City, oil capital of Europe. Scotland\'s third-largest city with rich maritime heritage.'
+    }
+  },
+  { slug: 'dundee', city: 'Dundee', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 56.46, lng: -2.97, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '150K', phoneCode: '+44 1382', language: 'English, Scots',
+      climate: 'Oceanic with cool summers (15-18°C) and cold winters (1-7°C). Sunniest city in Scotland.',
+      attractions: ['V&A Dundee', 'RRS Discovery', 'The McManus', 'Verdant Works', 'Law Hill'],
+      demographics: 'Scotland\'s fourth city, UNESCO City of Design. Video game industry hub (GTA), jute and jam heritage.'
+    }
+  },
   
   // Germany - Additional Cities
   { slug: 'stuttgart', city: 'Stuttgart', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 48.78, lng: 9.18, tier: 2, continent: 'europe',
@@ -4357,6 +4597,158 @@ export const cities: City[] = [
       climate: 'Oceanic with warm summers (18-25°C) and cold winters (-1 to 4°C). Sheltered valley location.',
       attractions: ['Mercedes-Benz Museum', 'Porsche Museum', 'Staatsgalerie', 'Schlossplatz', 'TV Tower'],
       demographics: 'Capital of Baden-Württemberg, birthplace of the automobile. Home to Mercedes-Benz and Porsche headquarters.'
+    }
+  },
+  { slug: 'hannover', city: 'Hannover', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 52.37, lng: 9.74, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '535K', phoneCode: '+49 511', language: 'German',
+      climate: 'Oceanic with mild summers (17-23°C) and cold winters (-1 to 4°C). Moderate rainfall year-round.',
+      attractions: ['Herrenhausen Gardens', 'New Town Hall', 'Maschsee Lake', 'Hanover Zoo', 'Sprengel Museum'],
+      demographics: 'Capital of Lower Saxony, major trade fair city (Hannover Messe). Historic royal residence with connections to British monarchy.'
+    }
+  },
+  { slug: 'leipzig', city: 'Leipzig', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 51.34, lng: 12.37, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '600K', phoneCode: '+49 341', language: 'German, Saxon',
+      climate: 'Oceanic/Continental with warm summers (18-24°C) and cold winters (-2 to 3°C). Moderate precipitation.',
+      attractions: ['St. Thomas Church', 'Monument to the Battle of Nations', 'Leipzig Zoo', 'Mädler Passage', 'Gewandhaus'],
+      demographics: 'Saxony\'s largest city, cradle of peaceful 1989 revolution. Historic center of music (Bach), publishing, and trade fairs.'
+    }
+  },
+  { slug: 'dresden', city: 'Dresden', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 51.05, lng: 13.74, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '560K', phoneCode: '+49 351', language: 'German, Saxon',
+      climate: 'Oceanic/Continental with warm summers (18-24°C) and cold winters (-2 to 3°C). Elbe River valley climate.',
+      attractions: ['Frauenkirche', 'Zwinger Palace', 'Green Vault', 'Semperoper', 'Brühl\'s Terrace'],
+      demographics: 'Capital of Saxony, "Florence on the Elbe". Rebuilt baroque city, major semiconductor and tech hub (Silicon Saxony).'
+    }
+  },
+  { slug: 'nuremberg', city: 'Nuremberg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 49.45, lng: 11.08, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '520K', phoneCode: '+49 911', language: 'German, Franconian',
+      climate: 'Continental with warm summers (18-25°C) and cold winters (-3 to 3°C). Colder than western Germany.',
+      attractions: ['Nuremberg Castle', 'Old Town', 'Documentation Center', 'Germanisches Nationalmuseum', 'Nuremberg Zoo'],
+      demographics: 'Second-largest city in Bavaria, historic Holy Roman Empire center. Famous for Christmas market, Lebkuchen, and WWII trials.'
+    }
+  },
+  { slug: 'bremen', city: 'Bremen', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 53.08, lng: 8.80, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '570K', phoneCode: '+49 421', language: 'German, Low German',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (0-5°C). Maritime influence, frequent rain.',
+      attractions: ['Bremen Town Musicians', 'Market Square', 'Schnoor Quarter', 'Beck\'s Brewery', 'Universum Bremen'],
+      demographics: 'Free Hanseatic City, Germany\'s oldest maritime city. Major aerospace (Airbus) and automotive manufacturing center.'
+    }
+  },
+  { slug: 'essen', city: 'Essen', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 51.46, lng: 7.01, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '590K', phoneCode: '+49 201', language: 'German',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (1-5°C). Frequent cloud cover and rain.',
+      attractions: ['Zollverein Coal Mine (UNESCO)', 'Museum Folkwang', 'Grugapark', 'Villa Hügel', 'Baldeneysee'],
+      demographics: 'Heart of Ruhr industrial region, former coal and steel capital. European Green Capital 2017, now service and tech economy.'
+    }
+  },
+  { slug: 'dortmund', city: 'Dortmund', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 51.51, lng: 7.47, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '590K', phoneCode: '+49 231', language: 'German',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (1-5°C). Maritime influenced, moderate rainfall.',
+      attractions: ['Signal Iduna Park', 'Westfalenpark', 'German Football Museum', 'Dortmund U', 'Phoenix Lake'],
+      demographics: 'Largest city in Ruhr region, transformed from steel to tech and logistics. Home to Borussia Dortmund football club.'
+    }
+  },
+  { slug: 'duisburg', city: 'Duisburg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 51.43, lng: 6.76, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '500K', phoneCode: '+49 203', language: 'German',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (1-5°C). Rhine-Ruhr confluence climate.',
+      attractions: ['Landschaftspark Duisburg-Nord', 'Inner Harbour', 'Museum Küppersmühle', 'Tiger & Turtle', 'Duisburg Zoo'],
+      demographics: 'World\'s largest inland port at Rhine-Ruhr confluence. Industrial heritage transformed into cultural landmarks.'
+    }
+  },
+  { slug: 'bochum', city: 'Bochum', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 51.48, lng: 7.22, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '365K', phoneCode: '+49 234', language: 'German',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (1-5°C). Typical Ruhr region weather.',
+      attractions: ['German Mining Museum', 'Starlight Express Theater', 'Bochum Planetarium', 'Bermuda Triangle', 'Ruhr University Botanical Gardens'],
+      demographics: 'Major Ruhr city with strong university presence. Transformed from mining to education, IT, and healthcare economy.'
+    }
+  },
+  { slug: 'wuppertal', city: 'Wuppertal', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 51.26, lng: 7.17, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '355K', phoneCode: '+49 202', language: 'German',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (0-5°C). Hilly terrain, moderate rainfall.',
+      attractions: ['Schwebebahn (Suspension Railway)', 'Von der Heydt Museum', 'Wuppertal Zoo', 'Historische Stadthalle', 'Hardt Park'],
+      demographics: 'Famous for unique suspended monorail (Schwebebahn). Birthplace of Friedrich Engels and Bayer aspirin.'
+    }
+  },
+  { slug: 'bielefeld', city: 'Bielefeld', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 52.03, lng: 8.53, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '335K', phoneCode: '+49 521', language: 'German, Westphalian',
+      climate: 'Oceanic with mild summers (17-22°C) and cold winters (-1 to 4°C). Teutoburg Forest influence.',
+      attractions: ['Sparrenburg Castle', 'Kunsthalle Bielefeld', 'Tierpark Olderdissen', 'Dr. Oetker World', 'Teutoburg Forest'],
+      demographics: 'East Westphalia\'s economic center, known for food industry (Dr. Oetker) and machinery. Subject of famous "conspiracy" joke.'
+    }
+  },
+  { slug: 'bonn', city: 'Bonn', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 50.73, lng: 7.10, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '330K', phoneCode: '+49 228', language: 'German',
+      climate: 'Oceanic with mild summers (17-23°C) and cool winters (1-5°C). Rhine valley moderates temperatures.',
+      attractions: ['Beethoven House', 'Bundesviertel', 'Poppelsdorf Palace', 'Rheinaue Park', 'Haus der Geschichte'],
+      demographics: 'Former West German capital (1949-1990), birthplace of Beethoven. Now UN City with major international organizations.'
+    }
+  },
+  { slug: 'munster', city: 'Münster', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 51.96, lng: 7.63, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '315K', phoneCode: '+49 251', language: 'German, Westphalian',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (0-5°C). Known for frequent rain ("either raining or bells ringing").',
+      attractions: ['Prinzipalmarkt', 'St. Paul\'s Cathedral', 'Aasee Lake', 'LWL Museum', 'Palace of Münster'],
+      demographics: 'Germany\'s bicycle capital with highest bike usage. Historic Peace of Westphalia city, major university town.'
+    }
+  },
+  { slug: 'karlsruhe', city: 'Karlsruhe', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 49.01, lng: 8.40, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '310K', phoneCode: '+49 721', language: 'German, Alemannic',
+      climate: 'Oceanic with warm summers (18-25°C) and mild winters (0-5°C). One of Germany\'s sunniest cities.',
+      attractions: ['Karlsruhe Palace', 'ZKM Center for Art and Media', 'Botanical Garden', 'Federal Constitutional Court', 'Stadtgarten'],
+      demographics: 'Seat of Germany\'s highest courts. Planned "fan city" with streets radiating from palace. Major tech and IT hub.'
+    }
+  },
+  { slug: 'mannheim', city: 'Mannheim', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 49.49, lng: 8.47, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '310K', phoneCode: '+49 621', language: 'German, Palatine',
+      climate: 'Oceanic with warm summers (18-25°C) and mild winters (0-5°C). Rhine valley warmth.',
+      attractions: ['Mannheim Palace', 'Luisenpark', 'Water Tower', 'Technoseum', 'Kunsthalle Mannheim'],
+      demographics: 'Second-largest city in Baden-Württemberg, birthplace of the automobile (Karl Benz). Unique grid street system.'
+    }
+  },
+  { slug: 'augsburg', city: 'Augsburg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 48.37, lng: 10.89, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '300K', phoneCode: '+49 821', language: 'German, Bavarian',
+      climate: 'Continental with warm summers (18-24°C) and cold winters (-3 to 3°C). Alpine foothills influence.',
+      attractions: ['Fuggerei', 'Augsburg Cathedral', 'Town Hall', 'Augsburg Puppet Theatre', 'Maximilianstraße'],
+      demographics: 'One of Germany\'s oldest cities (2,000+ years), home to Fuggerei (world\'s oldest social housing). Fugger banking dynasty center.'
+    }
+  },
+  { slug: 'wiesbaden', city: 'Wiesbaden', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 50.08, lng: 8.24, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '280K', phoneCode: '+49 611', language: 'German',
+      climate: 'Oceanic with warm summers (18-24°C) and mild winters (1-5°C). Sheltered Rhine valley location, very mild.',
+      attractions: ['Kurhaus', 'Nerobergbahn', 'Schlossplatz', 'Thermal Baths', 'Museum Wiesbaden'],
+      demographics: 'Capital of Hesse, famous spa city since Roman times. Known for thermal springs, elegant villas, and casino.'
+    }
+  },
+  { slug: 'braunschweig', city: 'Braunschweig', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 52.27, lng: 10.52, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '250K', phoneCode: '+49 531', language: 'German, Low German',
+      climate: 'Oceanic with mild summers (17-23°C) and cold winters (-1 to 4°C). Transitional climate.',
+      attractions: ['Dankwarderode Castle', 'Brunswick Lion', 'St. Blasii Cathedral', 'Happy Rizzi House', 'Magniviertel'],
+      demographics: 'City of Henry the Lion, major research hub with PTB (Germany\'s standards institute). Strong automotive (VW) connections.'
+    }
+  },
+  { slug: 'kiel', city: 'Kiel', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 54.32, lng: 10.14, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '250K', phoneCode: '+49 431', language: 'German, Low German',
+      climate: 'Oceanic with cool summers (15-20°C) and mild winters (0-4°C). Strong Baltic Sea maritime influence.',
+      attractions: ['Kiel Fjord', 'Kieler Woche (Sailing Week)', 'Maritime Museum', 'Laboe Naval Memorial', 'Holtenauer Schleuse'],
+      demographics: 'Capital of Schleswig-Holstein, major Baltic port. World\'s largest sailing event (Kieler Woche) and naval history.'
     }
   },
   
@@ -4385,6 +4777,118 @@ export const cities: City[] = [
       demographics: 'Capital of Alsace, official seat of European Parliament. UNESCO World Heritage old town, blend of French and German culture.'
     }
   },
+  { slug: 'nantes', city: 'Nantes', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 47.22, lng: -1.55, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '320K', phoneCode: '+33 2', language: 'French',
+      climate: 'Oceanic with mild summers (18-24°C) and cool winters (4-10°C). Frequent rainfall, Atlantic influence.',
+      attractions: ['Les Machines de l\'île', 'Château des Ducs', 'Passage Pommeraye', 'Jardin des Plantes', 'Île de Versailles'],
+      demographics: 'Sixth-largest city in France, former Brittany capital. Creative hub famous for giant mechanical elephant, birthplace of Jules Verne.'
+    }
+  },
+  { slug: 'montpellier', city: 'Montpellier', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.61, lng: 3.88, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '295K', phoneCode: '+33 4', language: 'French',
+      climate: 'Mediterranean with hot dry summers (26-30°C) and mild winters (6-12°C). 300+ sunny days.',
+      attractions: ['Place de la Comédie', 'Fabre Museum', 'Promenade du Peyrou', 'St-Pierre Cathedral', 'Antigone District'],
+      demographics: 'Fastest-growing French city, major university center. Young, dynamic atmosphere near Mediterranean beaches.'
+    }
+  },
+  { slug: 'lille', city: 'Lille', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 50.63, lng: 3.06, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '235K', phoneCode: '+33 3', language: 'French, Picard',
+      climate: 'Oceanic with cool summers (16-22°C) and cold winters (2-7°C). Frequent rain and overcast skies.',
+      attractions: ['Palais des Beaux-Arts', 'Grand Place', 'Vieille Bourse', 'Citadelle', 'Braderie de Lille'],
+      demographics: 'Capital of French Flanders, major Eurostar hub. Flemish architecture, vibrant student life, famous flea market (Braderie).'
+    }
+  },
+  { slug: 'rennes', city: 'Rennes', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.11, lng: -1.68, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '220K', phoneCode: '+33 2', language: 'French, Breton',
+      climate: 'Oceanic with mild summers (17-23°C) and cool winters (4-9°C). Frequent rain year-round.',
+      attractions: ['Parlement de Bretagne', 'Place des Lices', 'Thabor Garden', 'Portes Mordelaises', 'Les Champs Libres'],
+      demographics: 'Capital of Brittany, major tech hub (French Silicon Valley). Young university city, gateway to Breton culture.'
+    }
+  },
+  { slug: 'reims', city: 'Reims', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 49.25, lng: 4.03, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '185K', phoneCode: '+33 3', language: 'French',
+      climate: 'Oceanic with warm summers (18-25°C) and cold winters (1-6°C). Moderate rainfall.',
+      attractions: ['Reims Cathedral (UNESCO)', 'Palais du Tau', 'Champagne Houses', 'Basilica of Saint-Remi', 'Place Drouet d\'Erlon'],
+      demographics: 'Coronation city of French kings, capital of Champagne. UNESCO cathedral, major champagne production (Veuve Clicquot, Taittinger).'
+    }
+  },
+  { slug: 'toulon', city: 'Toulon', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.12, lng: 5.93, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '175K', phoneCode: '+33 4', language: 'French, Provençal',
+      climate: 'Mediterranean with hot dry summers (26-30°C) and mild winters (8-13°C). Very sunny.',
+      attractions: ['Toulon Harbour', 'Mont Faron', 'National Naval Museum', 'Opera House', 'Provençal Market'],
+      demographics: 'France\'s main naval base on Mediterranean. Historic military port, gateway to Côte d\'Azur and Provence.'
+    }
+  },
+  { slug: 'grenoble', city: 'Grenoble', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 45.19, lng: 5.72, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '160K', phoneCode: '+33 4', language: 'French',
+      climate: 'Semi-continental with warm summers (20-28°C) and cold winters (-1 to 6°C). Alpine valley, can be foggy.',
+      attractions: ['Bastille Fortress', 'Grenoble-Bastille Cable Car', 'Musée de Grenoble', 'Place Grenette', 'Chartreuse Mountains'],
+      demographics: 'Capital of French Alps, major research and tech hub. Gateway to ski resorts, hosted 1968 Winter Olympics.'
+    }
+  },
+  { slug: 'dijon', city: 'Dijon', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 47.32, lng: 5.04, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '160K', phoneCode: '+33 3', language: 'French',
+      climate: 'Oceanic/Continental with warm summers (19-26°C) and cold winters (0-6°C). Four distinct seasons.',
+      attractions: ['Palace of the Dukes', 'Notre-Dame de Dijon', 'Owl Trail', 'Musée des Beaux-Arts', 'Burgundy vineyards'],
+      demographics: 'Capital of Burgundy, famous for mustard and wine. Historic Dukes\' palace, gateway to Côte d\'Or vineyards.'
+    }
+  },
+  { slug: 'angers', city: 'Angers', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 47.47, lng: -0.56, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '155K', phoneCode: '+33 2', language: 'French',
+      climate: 'Oceanic with mild summers (18-24°C) and cool winters (4-9°C). Moderate rainfall, Loire Valley influence.',
+      attractions: ['Château d\'Angers', 'Apocalypse Tapestry', 'Cathédrale Saint-Maurice', 'Terra Botanica', 'Cointreau Distillery'],
+      demographics: 'Historic Anjou capital in Loire Valley. Houses world\'s largest medieval tapestry, gateway to Loire châteaux.'
+    }
+  },
+  { slug: 'saint-etienne', city: 'Saint-Étienne', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 45.44, lng: 4.39, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '175K', phoneCode: '+33 4', language: 'French',
+      climate: 'Semi-continental with warm summers (20-26°C) and cold winters (0-6°C). Higher elevation, occasional snow.',
+      attractions: ['Musée d\'Art Moderne', 'Cité du Design', 'Musée de la Mine', 'Geoffroy-Guichard Stadium', 'Pilat Regional Park'],
+      demographics: 'UNESCO City of Design, former mining and manufacturing center. Transformed into design and innovation hub.'
+    }
+  },
+  { slug: 'le-havre', city: 'Le Havre', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 49.49, lng: 0.11, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '170K', phoneCode: '+33 2', language: 'French',
+      climate: 'Oceanic with cool summers (16-21°C) and mild winters (4-8°C). Windy, frequent rain, Channel influence.',
+      attractions: ['UNESCO City Center', 'MuMa (André Malraux Museum)', 'Église Saint-Joseph', 'Les Jardins Suspendus', 'Beach'],
+      demographics: 'France\'s second-largest port, UNESCO World Heritage. Rebuilt by Auguste Perret after WWII, concrete modernist masterpiece.'
+    }
+  },
+  { slug: 'clermont-ferrand', city: 'Clermont-Ferrand', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 45.78, lng: 3.08, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '145K', phoneCode: '+33 4', language: 'French',
+      climate: 'Semi-continental with warm summers (20-27°C) and cold winters (-1 to 6°C). Sheltered by volcanic mountains.',
+      attractions: ['Clermont-Ferrand Cathedral', 'Place de Jaude', 'Puy de Dôme', 'Vulcania', 'ASM Rugby Experience'],
+      demographics: 'Auvergne capital, global headquarters of Michelin tires. Black lava stone cathedral, gateway to volcanic Chaîne des Puys.'
+    }
+  },
+  { slug: 'aix-en-provence', city: 'Aix-en-Provence', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.53, lng: 5.45, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '145K', phoneCode: '+33 4', language: 'French, Provençal',
+      climate: 'Mediterranean with hot dry summers (27-32°C) and mild winters (6-12°C). Very sunny, mistral wind.',
+      attractions: ['Cours Mirabeau', 'Cathédrale Saint-Sauveur', 'Cézanne\'s Studio', 'Fontaine de la Rotonde', 'Quartier Mazarin'],
+      demographics: 'Historic Provence capital, city of fountains and art. Birthplace of Cézanne, major university and festival town.'
+    }
+  },
+  { slug: 'nancy', city: 'Nancy', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.69, lng: 6.18, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '105K', phoneCode: '+33 3', language: 'French',
+      climate: 'Semi-continental with warm summers (18-25°C) and cold winters (0-5°C). Moderate rainfall.',
+      attractions: ['Place Stanislas (UNESCO)', 'Musée de l\'École de Nancy', 'Parc de la Pépinière', 'Ducal Palace', 'Porte de la Craffe'],
+      demographics: 'Capital of Lorraine with UNESCO World Heritage square. Art Nouveau capital (École de Nancy), elegant 18th-century architecture.'
+    }
+  },
   
   // Italy - Additional Cities
   { slug: 'turin', city: 'Turin', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.07, lng: 7.69, tier: 2, continent: 'europe',
@@ -4401,6 +4905,118 @@ export const cities: City[] = [
       climate: 'Humid subtropical with hot summers (25-35°C) and cold foggy winters (0-8°C).',
       attractions: ['Piazza Maggiore', 'Two Towers', 'Basilica di San Petronio', 'University of Bologna', 'Archiginnasio'],
       demographics: 'Capital of Emilia-Romagna, home to world\'s oldest university (1088). Known as "La Dotta" (the learned), "La Grassa" (the fat), "La Rossa" (the red).'
+    }
+  },
+  { slug: 'genoa', city: 'Genoa', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.41, lng: 8.93, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '575K', phoneCode: '+39 010', language: 'Italian, Ligurian',
+      climate: 'Mediterranean with mild summers (24-28°C) and cool winters (6-12°C). Protected by mountains.',
+      attractions: ['Aquarium of Genoa', 'Via Garibaldi (UNESCO)', 'Porto Antico', 'Palazzo Ducale', 'Cimitero di Staglieno'],
+      demographics: 'Italy\'s largest seaport, birthplace of Columbus and pesto. Historic maritime republic with UNESCO palaces.'
+    }
+  },
+  { slug: 'palermo', city: 'Palermo', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 38.12, lng: 13.36, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '650K', phoneCode: '+39 091', language: 'Italian, Sicilian',
+      climate: 'Mediterranean with hot dry summers (28-35°C) and mild winters (10-15°C). Very sunny.',
+      attractions: ['Palermo Cathedral', 'Palazzo dei Normanni', 'Teatro Massimo', 'Quattro Canti', 'Capuchin Catacombs'],
+      demographics: 'Capital of Sicily, crossroads of Mediterranean cultures. Arab-Norman architecture (UNESCO), vibrant street food scene.'
+    }
+  },
+  { slug: 'catania', city: 'Catania', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 37.50, lng: 15.09, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '310K', phoneCode: '+39 095', language: 'Italian, Sicilian',
+      climate: 'Mediterranean with hot summers (28-35°C) and mild winters (10-15°C). In shadow of Mount Etna.',
+      attractions: ['Mount Etna', 'Piazza del Duomo', 'Fish Market (La Pescheria)', 'Roman Amphitheatre', 'Via Etnea'],
+      demographics: 'Sicily\'s second city at foot of Etna volcano. Black lava baroque architecture, major tech and startup hub.'
+    }
+  },
+  { slug: 'bari', city: 'Bari', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 41.13, lng: 16.87, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '320K', phoneCode: '+39 080', language: 'Italian, Barese',
+      climate: 'Mediterranean with hot summers (26-32°C) and mild winters (8-14°C). Adriatic Sea influence.',
+      attractions: ['Basilica San Nicola', 'Bari Vecchia', 'Castello Normanno-Svevo', 'Lungomare', 'Petruzzelli Theatre'],
+      demographics: 'Capital of Puglia, gateway to Greece and Balkans. Pilgrimage site for St. Nicholas, famous for fresh pasta.'
+    }
+  },
+  { slug: 'verona', city: 'Verona', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.44, lng: 10.99, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '260K', phoneCode: '+39 045', language: 'Italian, Venetian',
+      climate: 'Humid subtropical with hot summers (24-30°C) and cold winters (0-8°C). Moderate rainfall.',
+      attractions: ['Arena di Verona', 'Juliet\'s House', 'Piazza delle Erbe', 'Castelvecchio', 'Ponte Pietra'],
+      demographics: 'UNESCO World Heritage city, setting of Romeo and Juliet. Roman amphitheater hosts world-famous opera festival.'
+    }
+  },
+  { slug: 'padua', city: 'Padua', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.41, lng: 11.88, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '210K', phoneCode: '+39 049', language: 'Italian, Venetian',
+      climate: 'Humid subtropical with hot summers (24-30°C) and cold foggy winters (-1 to 7°C).',
+      attractions: ['Scrovegni Chapel (Giotto)', 'Basilica di Sant\'Antonio', 'Prato della Valle', 'University of Padua', 'Botanical Garden (UNESCO)'],
+      demographics: 'Ancient university city (1222), where Galileo taught. Giotto\'s frescoes are Renaissance masterpiece.'
+    }
+  },
+  { slug: 'trieste', city: 'Trieste', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.65, lng: 13.78, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '205K', phoneCode: '+39 040', language: 'Italian, Triestine, Slovene',
+      climate: 'Humid subtropical with warm summers (22-28°C) and cold winters (2-8°C). Bora wind in winter.',
+      attractions: ['Piazza Unità d\'Italia', 'Miramare Castle', 'Roman Theatre', 'Caffè Storici', 'Grotta Gigante'],
+      demographics: 'Border city with Austro-Hungarian heritage, Italy\'s coffee capital. Major port, historic literary center (Joyce, Svevo).'
+    }
+  },
+  { slug: 'brescia', city: 'Brescia', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.54, lng: 10.21, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '200K', phoneCode: '+39 030', language: 'Italian, Brescian',
+      climate: 'Humid subtropical with hot summers (25-32°C) and cold winters (-1 to 6°C). Pre-Alpine location.',
+      attractions: ['Santa Giulia Museum (UNESCO)', 'Roman Capitolium', 'Piazza della Loggia', 'Old Cathedral', 'Brescia Castle'],
+      demographics: 'Industrial powerhouse of Lombardy, UNESCO Lombard heritage. Gateway to Lake Garda and Franciacorta wine region.'
+    }
+  },
+  { slug: 'parma', city: 'Parma', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.80, lng: 10.33, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '200K', phoneCode: '+39 0521', language: 'Italian, Parmigiano',
+      climate: 'Humid subtropical with hot summers (25-33°C) and cold foggy winters (-1 to 6°C).',
+      attractions: ['Parma Cathedral', 'Baptistery', 'Teatro Regio', 'Palazzo della Pilotta', 'Parma ham tours'],
+      demographics: 'UNESCO Creative City of Gastronomy, home of Parmigiano-Reggiano and Prosciutto di Parma. Verdi\'s birthplace nearby.'
+    }
+  },
+  { slug: 'modena', city: 'Modena', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.65, lng: 10.92, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '185K', phoneCode: '+39 059', language: 'Italian, Modenese',
+      climate: 'Humid subtropical with hot summers (25-33°C) and cold foggy winters (-1 to 6°C).',
+      attractions: ['Modena Cathedral (UNESCO)', 'Enzo Ferrari Museum', 'Piazza Grande', 'Acetaia (balsamic vinegar)', 'Palazzo Ducale'],
+      demographics: 'Motor Valley capital - home to Ferrari, Maserati, Lamborghini. Traditional balsamic vinegar origin, Pavarotti\'s hometown.'
+    }
+  },
+  { slug: 'reggio-emilia', city: 'Reggio Emilia', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.70, lng: 10.63, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '170K', phoneCode: '+39 0522', language: 'Italian, Reggiano',
+      climate: 'Humid subtropical with hot summers (25-32°C) and cold foggy winters (-1 to 6°C).',
+      attractions: ['Piazza Prampolini', 'Basilica della Ghiara', 'Musei Civici', 'Teatro Municipale', 'Palazzo del Capitano'],
+      demographics: 'Birthplace of Italian flag (Il Tricolore). Known for Parmigiano-Reggiano, innovative Reggio Emilia education approach.'
+    }
+  },
+  { slug: 'cagliari', city: 'Cagliari', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 39.22, lng: 9.12, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '155K', phoneCode: '+39 070', language: 'Italian, Sardinian',
+      climate: 'Mediterranean with hot dry summers (28-32°C) and mild winters (10-15°C). Very sunny.',
+      attractions: ['Castello district', 'Poetto Beach', 'Roman Amphitheatre', 'Bastione Saint Remy', 'Flamingo lagoons'],
+      demographics: 'Capital of Sardinia, ancient Phoenician port. Beautiful beaches, pink flamingos, and unique Sardinian culture.'
+    }
+  },
+  { slug: 'perugia', city: 'Perugia', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 43.11, lng: 12.39, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '165K', phoneCode: '+39 075', language: 'Italian, Umbrian',
+      climate: 'Humid subtropical with warm summers (24-30°C) and cool winters (2-10°C). Hilltop location.',
+      attractions: ['Piazza IV Novembre', 'Fontana Maggiore', 'Galleria Nazionale', 'Rocca Paolina', 'Eurochocolate Festival'],
+      demographics: 'Capital of Umbria, major university city (Università per Stranieri). Famous for chocolate (Perugina/Baci) and jazz festival.'
+    }
+  },
+  { slug: 'messina', city: 'Messina', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 38.19, lng: 15.55, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '230K', phoneCode: '+39 090', language: 'Italian, Sicilian',
+      climate: 'Mediterranean with hot summers (27-32°C) and mild winters (11-15°C). Strait of Messina breezes.',
+      attractions: ['Messina Cathedral', 'Astronomical Clock', 'Regional Museum', 'Strait of Messina', 'Santuario di Montalto'],
+      demographics: 'Gateway to Sicily across the Strait. Ancient Greek foundation, rebuilt after 1908 earthquake. Major ferry port.'
     }
   },
   
@@ -4421,6 +5037,118 @@ export const cities: City[] = [
       demographics: 'Sixth-largest city in Spain, birthplace of Picasso. Gateway to Costa del Sol and major tech hub in southern Europe.'
     }
   },
+  { slug: 'zaragoza', city: 'Zaragoza', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 41.65, lng: -0.88, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '680K', phoneCode: '+34 976', language: 'Spanish',
+      climate: 'Semi-arid Mediterranean with hot summers (26-35°C) and cold winters (2-10°C). Strong cierzo wind.',
+      attractions: ['Basílica del Pilar', 'Aljafería Palace', 'Plaza del Pilar', 'La Seo Cathedral', 'Expo 2008 site'],
+      demographics: 'Fifth-largest city in Spain, capital of Aragón. Strategic location between Madrid, Barcelona, and Bilbao. Major logistics hub.'
+    }
+  },
+  { slug: 'murcia', city: 'Murcia', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 37.99, lng: -1.13, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '460K', phoneCode: '+34 968', language: 'Spanish',
+      climate: 'Hot semi-arid with very hot summers (30-40°C) and mild winters (8-17°C). One of Europe\'s driest cities.',
+      attractions: ['Murcia Cathedral', 'Real Casino', 'Santa Clara Monastery', 'Terra Natura', 'Salzillo Museum'],
+      demographics: 'Capital of Murcia region, university city. Europe\'s fruit and vegetable garden, major agricultural export center.'
+    }
+  },
+  { slug: 'palma', city: 'Palma de Mallorca', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 39.57, lng: 2.65, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '420K', phoneCode: '+34 971', language: 'Spanish, Catalan',
+      climate: 'Mediterranean with hot summers (25-31°C) and mild winters (10-15°C). 300+ sunny days per year.',
+      attractions: ['Palma Cathedral', 'Bellver Castle', 'Old Town', 'Paseo Marítimo', 'Es Baluard Museum'],
+      demographics: 'Capital of Balearic Islands, major Mediterranean tourist destination. Historic trading port with Gothic architecture.'
+    }
+  },
+  { slug: 'las-palmas', city: 'Las Palmas de Gran Canaria', timezone: 'Atlantic/Canary', country: 'Spain', countryCode: 'ES', lat: 28.10, lng: -15.41, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '380K', phoneCode: '+34 928', language: 'Spanish',
+      climate: 'Subtropical desert with warm year-round (18-26°C). "Eternal spring" climate, minimal temperature variation.',
+      attractions: ['Las Canteras Beach', 'Vegueta Old Town', 'Casa de Colón', 'Alfredo Kraus Auditorium', 'Poema del Mar'],
+      demographics: 'Largest city in Canary Islands, major Atlantic port. Gateway to Africa, historic stopover for Columbus.'
+    }
+  },
+  { slug: 'alicante', city: 'Alicante', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 38.35, lng: -0.48, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '340K', phoneCode: '+34 96', language: 'Spanish, Valencian',
+      climate: 'Hot semi-arid Mediterranean with hot summers (28-32°C) and mild winters (10-17°C). Very sunny.',
+      attractions: ['Santa Bárbara Castle', 'Explanada de España', 'MARQ Museum', 'Postiguet Beach', 'Old Town'],
+      demographics: 'Major Costa Blanca resort city, important port. Growing expat and digital nomad community.'
+    }
+  },
+  { slug: 'cordoba', city: 'Córdoba', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 37.89, lng: -4.77, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '325K', phoneCode: '+34 957', language: 'Spanish',
+      climate: 'Mediterranean with very hot summers (35-45°C) and mild winters (6-14°C). Spain\'s hottest summers.',
+      attractions: ['Mezquita-Catedral', 'Alcázar de los Reyes', 'Jewish Quarter', 'Roman Bridge', 'Patios Festival'],
+      demographics: 'UNESCO World Heritage city, capital of Al-Andalus. The Mezquita represents peak Islamic architecture in Europe.'
+    }
+  },
+  { slug: 'valladolid-spain', city: 'Valladolid', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 41.65, lng: -4.72, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '300K', phoneCode: '+34 983', language: 'Spanish (Castilian)',
+      climate: 'Continental Mediterranean with hot summers (22-32°C) and cold winters (1-9°C). Large temperature swings.',
+      attractions: ['Plaza Mayor', 'National Sculpture Museum', 'Valladolid Cathedral', 'Campo Grande Park', 'Science Museum'],
+      demographics: 'Capital of Castile and León, birthplace of standard Castilian Spanish. Former capital of Spain, automotive industry (Renault).'
+    }
+  },
+  { slug: 'vigo', city: 'Vigo', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 42.24, lng: -8.72, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '295K', phoneCode: '+34 986', language: 'Spanish, Galician',
+      climate: 'Oceanic with mild summers (18-25°C) and cool rainy winters (8-14°C). High rainfall, Atlantic influence.',
+      attractions: ['Cíes Islands', 'Castro Fortress', 'Praza do Rei', 'MARCO Museum', 'Samil Beach'],
+      demographics: 'Galicia\'s largest city, Spain\'s biggest fishing port. Major automotive manufacturing (Citroën/Stellantis).'
+    }
+  },
+  { slug: 'gijon', city: 'Gijón', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 43.54, lng: -5.66, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '270K', phoneCode: '+34 98', language: 'Spanish, Asturian',
+      climate: 'Oceanic with cool summers (18-23°C) and mild winters (8-13°C). Frequent rain, green landscapes.',
+      attractions: ['San Lorenzo Beach', 'Cimadevilla Old Town', 'Laboral Ciudad de la Cultura', 'Aquarium', 'Cerro de Santa Catalina'],
+      demographics: 'Largest city in Asturias, industrial heritage transformed to culture and tourism. Famous for cider and seafood.'
+    }
+  },
+  { slug: 'granada', city: 'Granada', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 37.18, lng: -3.60, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '230K', phoneCode: '+34 958', language: 'Spanish',
+      climate: 'Continental Mediterranean with hot summers (28-36°C) and cold winters (2-12°C). Sierra Nevada nearby.',
+      attractions: ['Alhambra', 'Generalife Gardens', 'Albaicín (UNESCO)', 'Granada Cathedral', 'Sierra Nevada ski'],
+      demographics: 'Last Moorish kingdom in Spain, home to the magnificent Alhambra. Major university city with vibrant tapas culture.'
+    }
+  },
+  { slug: 'vitoria-gasteiz', city: 'Vitoria-Gasteiz', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 42.85, lng: -2.67, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '250K', phoneCode: '+34 945', language: 'Spanish, Basque',
+      climate: 'Oceanic/Continental with cool summers (18-25°C) and cold winters (2-10°C). Moderate rainfall.',
+      attractions: ['Plaza de la Virgen Blanca', 'Santa María Cathedral', 'Artium Museum', 'Green Belt', 'Old Town'],
+      demographics: 'Capital of Basque Country, European Green Capital 2012. Known for medieval old town and sustainable urban planning.'
+    }
+  },
+  { slug: 'santander', city: 'Santander', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 43.46, lng: -3.80, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '175K', phoneCode: '+34 942', language: 'Spanish',
+      climate: 'Oceanic with cool summers (18-23°C) and mild winters (8-13°C). Frequent rain, Bay of Biscay influence.',
+      attractions: ['Sardinero Beach', 'Magdalena Palace', 'Altamira Cave Museum', 'Santander Cathedral', 'Centro Botín'],
+      demographics: 'Capital of Cantabria, elegant seaside resort. Headquarters of Santander Bank, gateway to Picos de Europa.'
+    }
+  },
+  { slug: 'san-sebastian', city: 'San Sebastián', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 43.32, lng: -1.98, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '190K', phoneCode: '+34 943', language: 'Spanish, Basque',
+      climate: 'Oceanic with cool summers (18-24°C) and mild winters (6-12°C). Frequent rain, green surroundings.',
+      attractions: ['La Concha Beach', 'Monte Urgull', 'Old Town (Parte Vieja)', 'San Telmo Museum', 'Pintxos bars'],
+      demographics: 'Spain\'s culinary capital with most Michelin stars per capita. Famous film festival, Belle Époque elegance.'
+    }
+  },
+  { slug: 'santa-cruz-tenerife', city: 'Santa Cruz de Tenerife', timezone: 'Atlantic/Canary', country: 'Spain', countryCode: 'ES', lat: 28.47, lng: -16.25, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '210K', phoneCode: '+34 922', language: 'Spanish',
+      climate: 'Subtropical with warm year-round (18-26°C). "Eternal spring" climate, very pleasant.',
+      attractions: ['Auditorio de Tenerife', 'Parque García Sanabria', 'Carnival', 'Mercado de Nuestra Señora', 'Teide nearby'],
+      demographics: 'Co-capital of Canary Islands, major Atlantic port. Famous for second-largest carnival in the world after Rio.'
+    }
+  },
   
   // Netherlands - Additional Cities
   { slug: 'the-hague', city: 'The Hague', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 52.08, lng: 4.31, tier: 2, continent: 'europe',
@@ -4437,6 +5165,70 @@ export const cities: City[] = [
       climate: 'Oceanic with mild summers (17-22°C) and cool winters (1-6°C). Frequent rainfall year-round.',
       attractions: ['Dom Tower', 'Oudegracht Canal', 'Centraal Museum', 'Rietveld Schröder House', 'Railway Museum'],
       demographics: 'Fourth-largest city in Netherlands, geographic center of the country. Medieval center with unique wharf cellars along canals.'
+    }
+  },
+  { slug: 'eindhoven', city: 'Eindhoven', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 51.44, lng: 5.47, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '240K', phoneCode: '+31 40', language: 'Dutch',
+      climate: 'Oceanic with mild summers (17-23°C) and cool winters (1-6°C). Slightly warmer than north.',
+      attractions: ['Van Abbemuseum', 'Strijp-S', 'Philips Museum', 'Evoluon', 'DAF Museum'],
+      demographics: 'Fifth-largest city, "Brainport" tech hub. Birthplace of Philips, now design and innovation capital with TU Eindhoven.'
+    }
+  },
+  { slug: 'groningen', city: 'Groningen', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 53.22, lng: 6.57, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '235K', phoneCode: '+31 50', language: 'Dutch, Gronings',
+      climate: 'Oceanic with cool summers (16-21°C) and cold winters (0-5°C). North Sea influence, windy.',
+      attractions: ['Grote Markt', 'Martinitoren', 'Groninger Museum', 'Noorderplantsoen', 'Prinsentuin'],
+      demographics: 'Largest city in northern Netherlands, youngest population (25% students). Vibrant university city, cycling capital.'
+    }
+  },
+  { slug: 'tilburg', city: 'Tilburg', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 51.56, lng: 5.09, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '225K', phoneCode: '+31 13', language: 'Dutch, Brabantian',
+      climate: 'Oceanic with mild summers (17-23°C) and cool winters (1-6°C). Southern Netherlands climate.',
+      attractions: ['De Pont Museum', 'Tilburg Textile Museum', 'Safaripark Beekse Bergen', 'Spoorzone', 'Piushaven'],
+      demographics: 'Sixth-largest city, former textile capital transformed into creative hub. Major university town in North Brabant.'
+    }
+  },
+  { slug: 'almere', city: 'Almere', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 52.37, lng: 5.22, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '220K', phoneCode: '+31 36', language: 'Dutch',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (1-5°C). Reclaimed land, IJsselmeer influence.',
+      attractions: ['Floriade Park', 'Oostvaardersplassen', 'De Kemphaan', 'Almere Strand', 'Modern Architecture Tour'],
+      demographics: 'Youngest major city, built on reclaimed land (Flevoland polder). Fastest-growing Dutch city, experimental architecture.'
+    }
+  },
+  { slug: 'breda', city: 'Breda', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 51.59, lng: 4.78, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '185K', phoneCode: '+31 76', language: 'Dutch, Brabantian',
+      climate: 'Oceanic with mild summers (17-23°C) and cool winters (1-6°C). Southern Netherlands.',
+      attractions: ['Grote Kerk', 'Kasteel van Breda', 'Valkenberg Park', 'Grote Markt', 'Begijnhof'],
+      demographics: 'Historic city in North Brabant, Nassau family roots. Known for Carnival celebration, defense academy, and pleasant city center.'
+    }
+  },
+  { slug: 'nijmegen', city: 'Nijmegen', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 51.84, lng: 5.85, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '180K', phoneCode: '+31 24', language: 'Dutch',
+      climate: 'Oceanic with mild summers (17-23°C) and cool winters (1-6°C). Waal River influence.',
+      attractions: ['Valkhof Park', 'St. Stevenskerk', 'Hunnerpark', 'Waalbrug', 'National Liberation Museum'],
+      demographics: 'Oldest city in Netherlands (2,000+ years), Roman Noviomagus. Famous for Four Days Marches, major university city.'
+    }
+  },
+  { slug: 'arnhem', city: 'Arnhem', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 51.98, lng: 5.91, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '165K', phoneCode: '+31 26', language: 'Dutch',
+      climate: 'Oceanic with mild summers (17-23°C) and cool winters (0-6°C). Rhine River, green surroundings.',
+      attractions: ['Airborne Museum', 'John Frost Bridge', 'Netherlands Open Air Museum', 'Burgers\' Zoo', 'Sonsbeek Park'],
+      demographics: 'Capital of Gelderland, famous for WWII "A Bridge Too Far" battle. Fashion city, gateway to Veluwe nature area.'
+    }
+  },
+  { slug: 'maastricht', city: 'Maastricht', timezone: 'Europe/Amsterdam', country: 'Netherlands', countryCode: 'NL', lat: 50.85, lng: 5.69, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '120K', phoneCode: '+31 43', language: 'Dutch, Limburgish, French',
+      climate: 'Oceanic with mild summers (17-23°C) and cool winters (1-6°C). Southernmost, slightly warmer.',
+      attractions: ['Vrijthof Square', 'Basilica of Saint Servatius', 'Bonnefanten Museum', 'Fort Sint Pieter', 'Bookstore Dominicanen'],
+      demographics: 'Oldest city in the south, where Maastricht Treaty (EU) was signed. Burgundian lifestyle, international university town.'
     }
   },
   
@@ -4517,6 +5309,94 @@ export const cities: City[] = [
       climate: 'Oceanic with warm summers (18-25°C) and cold winters (-2 to 3°C). Moderate rainfall.',
       attractions: ['Market Square', 'Centennial Hall', 'Ostrów Tumski', 'Wrocław Dwarfs', 'Racławice Panorama'],
       demographics: 'Fourth-largest city in Poland, "Venice of Poland" for its 100+ bridges. Historic Silesian capital with over 300 bronze dwarf sculptures.'
+    }
+  },
+  { slug: 'lodz', city: 'Łódź', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 51.76, lng: 19.46, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Polish Złoty', currencySymbol: 'zł', population: '670K', phoneCode: '+48 42', language: 'Polish',
+      climate: 'Humid continental with warm summers (18-25°C) and cold winters (-4 to 2°C). Moderate precipitation.',
+      attractions: ['Piotrkowska Street', 'Manufaktura', 'EC1 Science Center', 'Museum of Cinematography', 'Księży Młyn'],
+      demographics: 'Third-largest city, Poland\'s film and textile capital. Former industrial powerhouse transformed into creative hub, "Polish Hollywood".'
+    }
+  },
+  { slug: 'poznan', city: 'Poznań', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 52.41, lng: 16.93, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Polish Złoty', currencySymbol: 'zł', population: '535K', phoneCode: '+48 61', language: 'Polish',
+      climate: 'Oceanic with warm summers (18-24°C) and cold winters (-2 to 3°C). Moderate rainfall year-round.',
+      attractions: ['Old Market Square', 'Town Hall with Goats', 'Cathedral Island', 'Imperial Castle', 'Malta Lake'],
+      demographics: 'Fifth-largest city, birthplace of Polish nation. Major trade fair city, known for St. Martin\'s croissants and business culture.'
+    }
+  },
+  { slug: 'szczecin', city: 'Szczecin', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 53.43, lng: 14.53, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Polish Złoty', currencySymbol: 'zł', population: '400K', phoneCode: '+48 91', language: 'Polish',
+      climate: 'Oceanic with mild summers (17-23°C) and cold winters (-1 to 3°C). Baltic Sea influence.',
+      attractions: ['Pomeranian Dukes Castle', 'Wały Chrobrego', 'Philharmonic Hall', 'National Museum', 'Jasne Błonia'],
+      demographics: 'Seventh-largest city, major Baltic port near German border. Historic Hanseatic city with distinctive modernist architecture.'
+    }
+  },
+  { slug: 'lublin', city: 'Lublin', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 51.25, lng: 22.57, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Polish Złoty', currencySymbol: 'zł', population: '340K', phoneCode: '+48 81', language: 'Polish',
+      climate: 'Humid continental with warm summers (18-25°C) and cold winters (-5 to 1°C). Eastern Poland influence.',
+      attractions: ['Old Town', 'Lublin Castle', 'Majdanek Memorial', 'Krakowskie Przedmieście', 'Open Air Village Museum'],
+      demographics: 'Ninth-largest city, largest city of eastern Poland. Historic multicultural center, major university town, gateway to Ukraine.'
+    }
+  },
+  { slug: 'katowice', city: 'Katowice', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 50.26, lng: 19.03, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Polish Złoty', currencySymbol: 'zł', population: '290K', phoneCode: '+48 32', language: 'Polish, Silesian',
+      climate: 'Humid continental with warm summers (18-24°C) and cold winters (-3 to 2°C). Industrial region climate.',
+      attractions: ['Spodek Arena', 'Nikiszowiec', 'Silesian Museum', 'Market Square', 'Valley of Three Ponds'],
+      demographics: 'Center of Upper Silesian metropolis (2M+). Former coal mining capital transformed into business and culture hub.'
+    }
+  },
+  { slug: 'bialystok', city: 'Białystok', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 53.13, lng: 23.16, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Polish Złoty', currencySymbol: 'zł', population: '295K', phoneCode: '+48 85', language: 'Polish',
+      climate: 'Humid continental with warm summers (17-24°C) and cold winters (-6 to 0°C). Coldest major Polish city.',
+      attractions: ['Branicki Palace', 'Białystok Cathedral', 'Rynek Kościuszki', 'Białowieża Forest nearby', 'Orthodox Church'],
+      demographics: 'Largest city in northeastern Poland, gateway to Białowieża Forest (European bison). Multicultural history with Polish, Belarusian, and Jewish heritage.'
+    }
+  },
+  { slug: 'bydgoszcz', city: 'Bydgoszcz', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 53.12, lng: 18.01, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Polish Złoty', currencySymbol: 'zł', population: '345K', phoneCode: '+48 52', language: 'Polish',
+      climate: 'Oceanic with warm summers (18-24°C) and cold winters (-2 to 2°C). River valley climate.',
+      attractions: ['Mill Island', 'Old Town', 'Opera Nova', 'Bydgoszcz Canal', 'Regional Museum'],
+      demographics: 'Eighth-largest city, "Little Berlin" for waterways. Major cultural center with opera house, gateway to Tuchola Forest.'
+    }
+  },
+  { slug: 'torun', city: 'Toruń', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 53.01, lng: 18.60, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Polish Złoty', currencySymbol: 'zł', population: '200K', phoneCode: '+48 56', language: 'Polish',
+      climate: 'Oceanic with warm summers (18-24°C) and cold winters (-3 to 2°C). Vistula River influence.',
+      attractions: ['Old Town (UNESCO)', 'Copernicus House', 'Town Hall', 'Teutonic Castle Ruins', 'Gingerbread Museum'],
+      demographics: 'UNESCO World Heritage medieval old town, birthplace of Copernicus. Famous for gingerbread (pierniki) tradition since 14th century.'
+    }
+  },
+  { slug: 'czestochowa', city: 'Częstochowa', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 50.81, lng: 19.12, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Polish Złoty', currencySymbol: 'zł', population: '220K', phoneCode: '+48 34', language: 'Polish',
+      climate: 'Humid continental with warm summers (18-24°C) and cold winters (-4 to 2°C). Upland climate.',
+      attractions: ['Jasna Góra Monastery', 'Black Madonna', 'Aleja NMP', 'Museum of Częstochowa', 'Eagle Nests Trail'],
+      demographics: 'Poland\'s spiritual capital, home to Black Madonna icon. Receives 4-5 million pilgrims annually, major Catholic pilgrimage site.'
+    }
+  },
+  { slug: 'rzeszow', city: 'Rzeszów', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 50.04, lng: 22.00, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Polish Złoty', currencySymbol: 'zł', population: '195K', phoneCode: '+48 17', language: 'Polish',
+      climate: 'Humid continental with warm summers (18-25°C) and cold winters (-4 to 2°C). Carpathian foothills influence.',
+      attractions: ['Market Square', 'Rzeszów Castle', 'Underground Tourist Route', 'Multimedia Fountain', 'Lubomirski Palace'],
+      demographics: 'Capital of Podkarpackie, Poland\'s fastest-growing city. Aviation industry hub (Aviation Valley), gateway to Bieszczady Mountains.'
+    }
+  },
+  { slug: 'kielce', city: 'Kielce', timezone: 'Europe/Warsaw', country: 'Poland', countryCode: 'PL', lat: 50.87, lng: 20.63, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Polish Złoty', currencySymbol: 'zł', population: '195K', phoneCode: '+48 41', language: 'Polish',
+      climate: 'Humid continental with warm summers (18-24°C) and cold winters (-4 to 2°C). Holy Cross Mountains influence.',
+      attractions: ['Palace of the Kraków Bishops', 'Kielce Trade Fair', 'Toy and Play Museum', 'Świętokrzyskie Mountains', 'Kadzielnia Reserve'],
+      demographics: 'Capital of Świętokrzyskie, major trade fair city. Gateway to Holy Cross Mountains, oldest Polish mountains.'
     }
   },
   
@@ -4789,6 +5669,94 @@ export const cities: City[] = [
       demographics: 'Seventh-largest city in Turkey, spiritual home of Whirling Dervishes and Rumi. Important religious and cultural center.'
     }
   },
+  { slug: 'mersin', city: 'Mersin', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 36.80, lng: 34.64, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Turkish Lira', currencySymbol: '₺', population: '1.9M', phoneCode: '+90 324', language: 'Turkish',
+      climate: 'Mediterranean with hot humid summers (28-34°C) and mild rainy winters (10-15°C). Year-round sunshine.',
+      attractions: ['Kızkalesi', 'Mersin Marina', 'Atatürk Park', 'Tarsus (St. Paul birthplace)', 'Cennet-Cehennem Caves'],
+      demographics: 'Turkey\'s largest Mediterranean port, free trade zone. Gateway to Cilicia region, near ancient Tarsus.'
+    }
+  },
+  { slug: 'diyarbakir', city: 'Diyarbakır', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 37.91, lng: 40.24, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Turkish Lira', currencySymbol: '₺', population: '1.8M', phoneCode: '+90 412', language: 'Turkish, Kurdish',
+      climate: 'Hot semi-arid with very hot summers (35-42°C) and cold winters (0-7°C). Low rainfall.',
+      attractions: ['Diyarbakır Fortress (UNESCO)', 'Hevsel Gardens (UNESCO)', 'Ulu Mosque', 'Four-Legged Minaret', 'Gazi Mansion'],
+      demographics: 'Largest city in southeastern Turkey, historic Mesopotamian center. UNESCO World Heritage walls, Kurdish cultural capital.'
+    }
+  },
+  { slug: 'kayseri', city: 'Kayseri', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 38.73, lng: 35.49, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Turkish Lira', currencySymbol: '₺', population: '1.4M', phoneCode: '+90 352', language: 'Turkish',
+      climate: 'Continental with hot dry summers (28-33°C) and cold snowy winters (-5 to 3°C). At foot of Mount Erciyes.',
+      attractions: ['Mount Erciyes Ski Resort', 'Kayseri Castle', 'Hunat Hatun Complex', 'Seljuk Museum', 'Develi'],
+      demographics: 'Major Anatolian industrial city, known for entrepreneurship. Historic Seljuk capital, famous for pastırma and mantı.'
+    }
+  },
+  { slug: 'eskisehir', city: 'Eskişehir', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 39.78, lng: 30.52, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Turkish Lira', currencySymbol: '₺', population: '900K', phoneCode: '+90 222', language: 'Turkish',
+      climate: 'Continental with warm summers (25-30°C) and cold snowy winters (-3 to 5°C). Steppe climate.',
+      attractions: ['Odunpazarı (UNESCO)', 'Porsuk River', 'Sazova Park', 'Meerschaum Museum', 'Gondola rides'],
+      demographics: 'Turkey\'s most livable city, major university town. UNESCO historic quarter, known for meerschaum pipes and student life.'
+    }
+  },
+  { slug: 'samsun', city: 'Samsun', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 41.29, lng: 36.33, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Turkish Lira', currencySymbol: '₺', population: '1.4M', phoneCode: '+90 362', language: 'Turkish',
+      climate: 'Humid subtropical with warm summers (24-28°C) and cool wet winters (5-10°C). Black Sea climate.',
+      attractions: ['Bandırma Ferry Museum', 'Atatürk Monument', 'Amazon Village', 'Amisos Hill', 'Batı Park'],
+      demographics: 'Largest Black Sea port, where Atatürk launched independence movement (May 19, 1919). Major tobacco and industrial center.'
+    }
+  },
+  { slug: 'denizli', city: 'Denizli', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 37.77, lng: 29.09, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Turkish Lira', currencySymbol: '₺', population: '1.1M', phoneCode: '+90 258', language: 'Turkish',
+      climate: 'Mediterranean transitional with hot summers (30-36°C) and mild winters (5-12°C). Inland plateau.',
+      attractions: ['Pamukkale (UNESCO)', 'Hierapolis', 'Kaklik Cave', 'Laodikeia', 'Tripolis'],
+      demographics: 'Gateway to Pamukkale travertines, Turkey\'s textile capital. Major rooster symbol, thermal springs region.'
+    }
+  },
+  { slug: 'sanliurfa', city: 'Şanlıurfa', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 37.16, lng: 38.79, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Turkish Lira', currencySymbol: '₺', population: '2.1M', phoneCode: '+90 414', language: 'Turkish, Kurdish, Arabic',
+      climate: 'Hot semi-arid with very hot summers (35-43°C) and mild winters (5-12°C). Desert influence.',
+      attractions: ['Göbekli Tepe (UNESCO)', 'Balıklıgöl', 'Urfa Castle', 'Bazaar', 'Harran'],
+      demographics: 'City of Prophets (Abraham\'s birthplace), gateway to Göbekli Tepe (world\'s oldest temple, 12,000 years). Mesopotamian heritage.'
+    }
+  },
+  { slug: 'trabzon', city: 'Trabzon', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 41.00, lng: 39.72, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Turkish Lira', currencySymbol: '₺', population: '810K', phoneCode: '+90 462', language: 'Turkish',
+      climate: 'Humid subtropical with warm summers (23-27°C) and mild rainy winters (7-11°C). Heavy rainfall, lush green.',
+      attractions: ['Sumela Monastery', 'Hagia Sophia Museum', 'Uzungöl', 'Atatürk Mansion', 'Trabzon Castle'],
+      demographics: 'Historic Black Sea port, former Trebizond Empire capital. Gateway to Sumela Monastery and eastern Black Sea highlands.'
+    }
+  },
+  { slug: 'malatya', city: 'Malatya', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 38.35, lng: 38.31, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Turkish Lira', currencySymbol: '₺', population: '810K', phoneCode: '+90 422', language: 'Turkish, Kurdish',
+      climate: 'Continental with hot dry summers (30-38°C) and cold snowy winters (-3 to 5°C). High altitude.',
+      attractions: ['Aslantepe (UNESCO)', 'Malatya Museum', 'Apricot Orchards', 'Levent Valley', 'Battalgazi'],
+      demographics: 'World apricot capital (85% of dried apricots). UNESCO Aslantepe archaeological site, eastern Anatolian gateway.'
+    }
+  },
+  { slug: 'kocaeli', city: 'Kocaeli', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 40.77, lng: 29.92, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Turkish Lira', currencySymbol: '₺', population: '2M', phoneCode: '+90 262', language: 'Turkish',
+      climate: 'Humid subtropical with warm summers (25-30°C) and cool wet winters (5-10°C). Marmara Sea influence.',
+      attractions: ['İzmit Clock Tower', 'Seka Park', 'Kartepe Ski Resort', 'Sapanca Lake', 'Museum of Archaeology'],
+      demographics: 'Major industrial hub between Istanbul and Ankara. Automotive manufacturing center (Ford, Hyundai), Sapanca Lake tourism.'
+    }
+  },
+  { slug: 'manisa', city: 'Manisa', timezone: 'Europe/Istanbul', country: 'Turkey', countryCode: 'TR', lat: 38.62, lng: 27.43, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Turkish Lira', currencySymbol: '₺', population: '1.5M', phoneCode: '+90 236', language: 'Turkish',
+      climate: 'Mediterranean with hot dry summers (32-38°C) and mild wet winters (6-12°C). Gediz valley.',
+      attractions: ['Sardis Ancient City', 'Sultan Mosque', 'Mesir Festival', 'Spil Mountain', 'Manisa Museum'],
+      demographics: 'Historic Ottoman sultans\' training ground. Famous for Mesir Macunu (UNESCO heritage paste), gateway to ancient Sardis.'
+    }
+  },
   
   // Russia - Additional Cities
   { slug: 'novosibirsk', city: 'Novosibirsk', timezone: 'Asia/Novosibirsk', country: 'Russia', countryCode: 'RU', lat: 55.04, lng: 82.93, tier: 2, continent: 'asia',
@@ -4831,6 +5799,94 @@ export const cities: City[] = [
       demographics: 'Russia\'s Pacific gateway, terminus of Trans-Siberian Railway. Major naval base with stunning Golden Horn Bay setting.'
     }
   },
+  { slug: 'nizhny-novgorod', city: 'Nizhny Novgorod', timezone: 'Europe/Moscow', country: 'Russia', countryCode: 'RU', lat: 56.33, lng: 44.00, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Russian Ruble', currencySymbol: '₽', population: '1.25M', phoneCode: '+7 831', language: 'Russian',
+      climate: 'Humid continental with warm summers (18-25°C) and cold snowy winters (-12 to -5°C). Volga River influence.',
+      attractions: ['Nizhny Novgorod Kremlin', 'Chkalov Staircase', 'Bolshaya Pokrovskaya Street', 'Volga River Embankment', 'Pechersky Monastery'],
+      demographics: 'Fifth-largest city, at Volga-Oka confluence. Historic trading center, formerly closed "Gorky" city, major automotive hub (GAZ).'
+    }
+  },
+  { slug: 'chelyabinsk', city: 'Chelyabinsk', timezone: 'Asia/Yekaterinburg', country: 'Russia', countryCode: 'RU', lat: 55.16, lng: 61.40, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Russian Ruble', currencySymbol: '₽', population: '1.2M', phoneCode: '+7 351', language: 'Russian',
+      climate: 'Humid continental with warm summers (18-26°C) and very cold winters (-15 to -8°C). Ural Mountains influence.',
+      attractions: ['Revolution Square', 'Kirovka Pedestrian Street', 'Regional Museum', 'Gagarin Park', 'Church of the Holy Trinity'],
+      demographics: 'Major Ural industrial center, gateway to Siberia. Famous for 2013 meteorite, steel and tank production (Tankograd in WWII).'
+    }
+  },
+  { slug: 'samara', city: 'Samara', timezone: 'Europe/Samara', country: 'Russia', countryCode: 'RU', lat: 53.20, lng: 50.15, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Russian Ruble', currencySymbol: '₽', population: '1.15M', phoneCode: '+7 846', language: 'Russian',
+      climate: 'Humid continental with hot summers (22-28°C) and cold winters (-12 to -6°C). Volga River influence.',
+      attractions: ['Samara Embankment', 'Stalin\'s Bunker', 'Zhiguli Brewery', 'Samara Space Museum', 'Iversky Monastery'],
+      demographics: 'Sixth-largest city on Volga bend. WWII reserve capital, aerospace capital (Soyuz rockets built here), longest river embankment in Russia.'
+    }
+  },
+  { slug: 'omsk', city: 'Omsk', timezone: 'Asia/Omsk', country: 'Russia', countryCode: 'RU', lat: 54.99, lng: 73.37, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Russian Ruble', currencySymbol: '₽', population: '1.15M', phoneCode: '+7 381', language: 'Russian',
+      climate: 'Humid continental with warm summers (19-26°C) and very cold winters (-18 to -10°C). Extreme temperature range.',
+      attractions: ['Assumption Cathedral', 'Omsk Fortress', 'Lyubinsky Prospekt', 'Vrubel Museum', 'Irtysh River Embankment'],
+      demographics: 'Eighth-largest city, where Dostoevsky was imprisoned. Major oil refining center, former capital of White Russia (1918-1920).'
+    }
+  },
+  { slug: 'rostov-on-don', city: 'Rostov-on-Don', timezone: 'Europe/Moscow', country: 'Russia', countryCode: 'RU', lat: 47.23, lng: 39.72, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Russian Ruble', currencySymbol: '₽', population: '1.15M', phoneCode: '+7 863', language: 'Russian',
+      climate: 'Humid continental with hot summers (25-32°C) and mild winters (-3 to 3°C). Southern Russia, near Black Sea.',
+      attractions: ['Bolshaya Sadovaya Street', 'Rostov Arena', 'Gorky Park', 'Embankment', 'Cathedral of the Nativity'],
+      demographics: 'Gateway to Caucasus, "Southern Capital of Russia". Don Cossack heritage, major trade and education hub.'
+    }
+  },
+  { slug: 'ufa', city: 'Ufa', timezone: 'Asia/Yekaterinburg', country: 'Russia', countryCode: 'RU', lat: 54.74, lng: 55.97, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Russian Ruble', currencySymbol: '₽', population: '1.1M', phoneCode: '+7 347', language: 'Russian, Bashkir, Tatar',
+      climate: 'Humid continental with warm summers (19-26°C) and cold winters (-14 to -8°C). Ural foothills.',
+      attractions: ['Lala Tulip Mosque', 'Salavat Yulaev Monument', 'Congress Hall', 'Victory Park', 'Bashkir Opera House'],
+      demographics: 'Capital of Bashkortostan, major oil refining center. Multicultural city with Tatar, Bashkir, and Russian heritage.'
+    }
+  },
+  { slug: 'krasnoyarsk', city: 'Krasnoyarsk', timezone: 'Asia/Krasnoyarsk', country: 'Russia', countryCode: 'RU', lat: 56.01, lng: 92.85, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Russian Ruble', currencySymbol: '₽', population: '1.1M', phoneCode: '+7 391', language: 'Russian',
+      climate: 'Humid continental with warm summers (18-26°C) and very cold winters (-18 to -10°C). Yenisei River influence.',
+      attractions: ['Stolby Nature Reserve', 'Paraskeva Pyatnitsa Chapel', 'Krasnoyarsk Dam', 'Regional Museum', 'Roev Ruchey Zoo'],
+      demographics: 'Largest city in Siberia proper, on Yenisei River. Major aluminum production (Norilsk Nickel), famous for unique rock pillars.'
+    }
+  },
+  { slug: 'voronezh', city: 'Voronezh', timezone: 'Europe/Moscow', country: 'Russia', countryCode: 'RU', lat: 51.67, lng: 39.18, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Russian Ruble', currencySymbol: '₽', population: '1.05M', phoneCode: '+7 473', language: 'Russian',
+      climate: 'Humid continental with warm summers (20-27°C) and cold winters (-8 to -3°C). Black Earth region.',
+      attractions: ['Admiralty Square', 'Annunciation Cathedral', 'Koltsov Square', 'Voronezh Reservoir', 'Kitten from Lizyukov Street statue'],
+      demographics: 'Birthplace of Russian Navy (Peter the Great). Major aerospace center, known for cartoon kitten statue, gateway to Black Earth region.'
+    }
+  },
+  { slug: 'perm', city: 'Perm', timezone: 'Asia/Yekaterinburg', country: 'Russia', countryCode: 'RU', lat: 58.01, lng: 56.25, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Russian Ruble', currencySymbol: '₽', population: '1.05M', phoneCode: '+7 342', language: 'Russian',
+      climate: 'Humid continental with warm summers (17-24°C) and cold winters (-15 to -8°C). Western Urals.',
+      attractions: ['Perm-36 Gulag Museum', 'Perm Ballet', 'Kama River Embankment', 'Wooden Sculpture Museum', 'Kungur Ice Cave nearby'],
+      demographics: 'Major Ural city on Kama River. Gave name to Permian geological period, famous ballet company, Gulag memorial site.'
+    }
+  },
+  { slug: 'volgograd', city: 'Volgograd', timezone: 'Europe/Volgograd', country: 'Russia', countryCode: 'RU', lat: 48.72, lng: 44.50, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Russian Ruble', currencySymbol: '₽', population: '1M', phoneCode: '+7 844', language: 'Russian',
+      climate: 'Semi-arid with hot summers (25-32°C) and cold winters (-8 to -2°C). Volga River, steppe climate.',
+      attractions: ['Mamayev Kurgan', 'The Motherland Calls statue', 'Panorama Museum', 'Volga Embankment', 'Mill of Gerhardt'],
+      demographics: 'Former Stalingrad, site of WWII\'s bloodiest battle. The Motherland Calls is Europe\'s tallest statue, powerful war memorials.'
+    }
+  },
+  { slug: 'krasnodar', city: 'Krasnodar', timezone: 'Europe/Moscow', country: 'Russia', countryCode: 'RU', lat: 45.04, lng: 38.98, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Russian Ruble', currencySymbol: '₽', population: '950K', phoneCode: '+7 861', language: 'Russian',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (0-6°C). Southern Russia, near Black Sea.',
+      attractions: ['Red Street', 'Krasnodar Park', 'Catherine Monument', 'Aurora Cinema', 'Kuban River Embankment'],
+      demographics: 'Capital of Krasnodar Krai, Russia\'s agricultural heartland. Fastest-growing major city, gateway to Black Sea resorts.'
+    }
+  },
   
   // Japan - Additional Cities
   { slug: 'yokohama', city: 'Yokohama', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.44, lng: 139.64, tier: 2, continent: 'asia',
@@ -4871,6 +5927,94 @@ export const cities: City[] = [
       climate: 'Humid subtropical with hot humid summers (27-33°C) and mild winters (3-10°C). Rainy season in June.',
       attractions: ['Kobe Port Tower', 'Mount Rokko', 'Nunobiki Herb Garden', 'Arima Onsen', 'Chinatown (Nankinmachi)'],
       demographics: 'Sixth-largest city in Japan, major port between mountains and sea. Famous for Kobe beef and cosmopolitan atmosphere.'
+    }
+  },
+  { slug: 'hiroshima', city: 'Hiroshima', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.39, lng: 132.46, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '1.2M', phoneCode: '+81 82', language: 'Japanese',
+      climate: 'Humid subtropical with hot humid summers (27-32°C) and mild winters (3-10°C). Seto Inland Sea climate.',
+      attractions: ['Peace Memorial Park', 'Atomic Bomb Dome (UNESCO)', 'Hiroshima Castle', 'Shukkeien Garden', 'Miyajima Island nearby'],
+      demographics: 'City of peace, rebuilt after 1945. Major industrial center, gateway to Miyajima, famous for okonomiyaki.'
+    }
+  },
+  { slug: 'sendai', city: 'Sendai', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 38.27, lng: 140.87, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '1.1M', phoneCode: '+81 22', language: 'Japanese',
+      climate: 'Humid continental with warm summers (23-28°C) and cold winters (-1 to 6°C). Pacific coast influence.',
+      attractions: ['Zuihoden Mausoleum', 'Sendai Castle ruins', 'Jozenji-dori Avenue', 'Matsushima Bay', 'Tanabata Festival'],
+      demographics: 'Largest city in Tohoku, "City of Trees". University city, gateway to northern Japan, rebuilt after 2011 tsunami.'
+    }
+  },
+  { slug: 'chiba', city: 'Chiba', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.61, lng: 140.12, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '980K', phoneCode: '+81 43', language: 'Japanese',
+      climate: 'Humid subtropical with hot humid summers (26-31°C) and mild winters (3-10°C). Tokyo Bay influence.',
+      attractions: ['Chiba Port Tower', 'Makuhari Messe', 'Chiba Zoological Park', 'Inage Beach', 'Chiba Castle'],
+      demographics: 'Part of Greater Tokyo, home to Tokyo Disneyland area. Major convention center and coastal developments.'
+    }
+  },
+  { slug: 'kitakyushu', city: 'Kitakyushu', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 33.88, lng: 130.88, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '940K', phoneCode: '+81 93', language: 'Japanese',
+      climate: 'Humid subtropical with hot humid summers (27-32°C) and mild winters (4-10°C). Kanmon Straits influence.',
+      attractions: ['Kokura Castle', 'Kawachi Wisteria Garden', 'Mojiko Retro', 'Space World', 'Kanmon Straits'],
+      demographics: 'Northern Kyushu industrial city, gateway to Honshu via Kanmon Tunnel. Transformed from pollution to eco-model city.'
+    }
+  },
+  { slug: 'sakai', city: 'Sakai', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.57, lng: 135.48, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '830K', phoneCode: '+81 72', language: 'Japanese',
+      climate: 'Humid subtropical with hot humid summers (27-33°C) and mild winters (3-10°C). Osaka Bay climate.',
+      attractions: ['Daisen Kofun (UNESCO)', 'Sakai Plaza of Rikyu and Akiko', 'Sakai City Museum', 'Hamadera Park', 'Old Sakai Lighthouse'],
+      demographics: 'Part of Osaka metro, historic trading port. Birthplace of Sen no Rikyu (tea ceremony), famous for knives and bicycles.'
+    }
+  },
+  { slug: 'niigata', city: 'Niigata', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 37.90, lng: 139.02, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '790K', phoneCode: '+81 25', language: 'Japanese',
+      climate: 'Humid continental with warm summers (24-30°C) and cold snowy winters (0-5°C). Sea of Japan snow effect.',
+      attractions: ['Bandai Bridge', 'Niigata Furusatomura', 'Northern Culture Museum', 'Sado Island ferry', 'Sake breweries'],
+      demographics: 'Largest city on Sea of Japan coast, major rice and sake producing region. Gateway to Sado Island.'
+    }
+  },
+  { slug: 'hamamatsu', city: 'Hamamatsu', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.71, lng: 137.73, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '790K', phoneCode: '+81 53', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (2-10°C). Pacific coast sunny climate.',
+      attractions: ['Hamamatsu Castle', 'Act City Tower', 'Lake Hamana', 'Nakatajima Sand Dunes', 'Musical Instrument Museum'],
+      demographics: 'City of music and motorcycles - birthplace of Yamaha, Kawai, Suzuki, and Honda. Major manufacturing center.'
+    }
+  },
+  { slug: 'kumamoto', city: 'Kumamoto', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 32.80, lng: 130.71, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '740K', phoneCode: '+81 96', language: 'Japanese',
+      climate: 'Humid subtropical with hot humid summers (27-33°C) and mild winters (3-10°C). Kyushu interior climate.',
+      attractions: ['Kumamoto Castle', 'Suizenji Garden', 'Mount Aso', 'Kumamon mascot spots', 'Shimada Museum'],
+      demographics: 'Central Kyushu city with one of Japan\'s finest castles. Gateway to Mount Aso volcano, home of Kumamon mascot.'
+    }
+  },
+  { slug: 'okayama', city: 'Okayama', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.66, lng: 133.92, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '720K', phoneCode: '+81 86', language: 'Japanese',
+      climate: 'Mediterranean-like with hot summers (27-33°C) and mild winters (2-10°C). "Land of Sunshine" - low rainfall.',
+      attractions: ['Korakuen Garden', 'Okayama Castle', 'Kurashiki Bikan Historical Quarter', 'Kibitsu Shrine', 'Seto Ohashi Bridge'],
+      demographics: 'Gateway between western Honshu and Shikoku. One of Japan\'s three great gardens, Momotaro (Peach Boy) legend origin.'
+    }
+  },
+  { slug: 'shizuoka', city: 'Shizuoka', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.98, lng: 138.38, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '690K', phoneCode: '+81 54', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-31°C) and mild winters (3-11°C). Pacific coast, Mount Fuji views.',
+      attractions: ['Mount Fuji views', 'Nihondaira', 'Miho no Matsubara (UNESCO)', 'Sunpu Castle', 'Green tea fields'],
+      demographics: 'Between Tokyo and Nagoya with stunning Fuji views. Japan\'s largest green tea producer, Tokugawa Ieyasu\'s retirement city.'
+    }
+  },
+  { slug: 'kagoshima', city: 'Kagoshima', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 31.60, lng: 130.55, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '600K', phoneCode: '+81 99', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (27-32°C) and mild winters (5-12°C). Volcanic ash from Sakurajima.',
+      attractions: ['Sakurajima Volcano', 'Sengan-en Garden', 'Tenmonkan shopping', 'Shiroyama Observatory', 'Ibusuki sand baths'],
+      demographics: 'Southern Kyushu city facing active Sakurajima volcano. Historic Satsuma domain, gateway to southern islands.'
     }
   },
   
@@ -5938,6 +7082,78 @@ export const cities: City[] = [
       demographics: 'Fifth-largest city in South Korea, known as "Silicon Valley of Korea" for research institutes and tech hub. Home to KAIST.'
     }
   },
+  { slug: 'gwangju', city: 'Gwangju', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.16, lng: 126.85, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '1.5M', phoneCode: '+82 62', language: 'Korean',
+      climate: 'Humid subtropical with hot humid summers (25-31°C) and cold dry winters (-2 to 5°C).',
+      attractions: ['May 18th National Cemetery', 'Mudeungsan National Park', 'Gwangju Biennale', 'Art Street', 'Yangnim-dong'],
+      demographics: 'Sixth-largest city, "City of Art" and democracy. Site of 1980 Gwangju Uprising, major cultural and art hub.'
+    }
+  },
+  { slug: 'ulsan', city: 'Ulsan', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.54, lng: 129.31, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '1.1M', phoneCode: '+82 52', language: 'Korean',
+      climate: 'Humid subtropical with hot humid summers (25-30°C) and cold winters (-1 to 6°C). Coastal moderation.',
+      attractions: ['Daewangam Park', 'Ulsan Grand Park', 'Ganjeolgot Cape', 'Petroglyphs of Bangudae', 'Taehwagang National Garden'],
+      demographics: 'Industrial powerhouse, home to Hyundai headquarters. Highest GDP per capita in Korea, major shipbuilding and automotive.'
+    }
+  },
+  { slug: 'suwon', city: 'Suwon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.26, lng: 127.03, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '1.2M', phoneCode: '+82 31', language: 'Korean',
+      climate: 'Humid continental with hot humid summers (24-30°C) and cold dry winters (-5 to 3°C).',
+      attractions: ['Hwaseong Fortress (UNESCO)', 'Korean Folk Village', 'Gwanggyo Lake Park', 'Suwon Galbi Street', 'Haenggung Palace'],
+      demographics: 'Capital of Gyeonggi Province, Samsung Electronics headquarters. UNESCO fortress, famous for Korean BBQ short ribs.'
+    }
+  },
+  { slug: 'changwon', city: 'Changwon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.23, lng: 128.68, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '1.05M', phoneCode: '+82 55', language: 'Korean',
+      climate: 'Humid subtropical with hot humid summers (25-31°C) and mild winters (0-8°C). Southern coast.',
+      attractions: ['Jinhae Cherry Blossoms', 'Junam Reservoir', 'Changwon Marine Park', 'Masan Fish Market', 'House of Changwon'],
+      demographics: 'Merged city (Changwon+Masan+Jinhae), major industrial center. Famous for cherry blossom festival, machinery manufacturing.'
+    }
+  },
+  { slug: 'seongnam', city: 'Seongnam', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.44, lng: 127.14, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '940K', phoneCode: '+82 31', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-6 to 3°C). Seoul metropolitan.',
+      attractions: ['Pangyo Techno Valley', 'Bundang Central Park', 'Namhansanseong (UNESCO)', 'Seongnam Arts Center', 'Tancheon Stream'],
+      demographics: 'Seoul satellite city, Korea\'s startup capital (Pangyo). Home to Naver, Kakao, and major game companies.'
+    }
+  },
+  { slug: 'goyang', city: 'Goyang', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.66, lng: 126.83, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '1.1M', phoneCode: '+82 31', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-7 to 2°C). Han River influence.',
+      attractions: ['KINTEX', 'Ilsan Lake Park', 'Haengjusanseong Fortress', 'Aqua Planet', 'Onemount'],
+      demographics: 'Northwest Seoul satellite, major convention center (KINTEX). Planned city with large parks, film studio complex.'
+    }
+  },
+  { slug: 'yongin', city: 'Yongin', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.24, lng: 127.18, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '1.1M', phoneCode: '+82 31', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-6 to 3°C). Hilly terrain.',
+      attractions: ['Everland', 'Korean Folk Village', 'Samsung Innovation Museum', 'Hwadam Forest', 'Daejanggeum Park'],
+      demographics: 'Theme park city, home to Everland (Korea\'s largest). Samsung training facilities, rapid growth area south of Seoul.'
+    }
+  },
+  { slug: 'cheongju', city: 'Cheongju', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.64, lng: 127.49, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '850K', phoneCode: '+82 43', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-5 to 3°C). Central Korea.',
+      attractions: ['Suamgol Mural Village', 'Sangdangsanseong Fortress', 'Cheongju Early Printing Museum', 'Cheongnamdae', 'Daecheong Lake'],
+      demographics: 'Capital of North Chungcheong, birthplace of world\'s oldest movable metal type printing (Jikji). Growing tech sector.'
+    }
+  },
+  { slug: 'jeonju', city: 'Jeonju', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.82, lng: 127.15, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '660K', phoneCode: '+82 63', language: 'Korean',
+      climate: 'Humid subtropical with hot summers (25-31°C) and cold winters (-3 to 5°C). Basin location.',
+      attractions: ['Jeonju Hanok Village', 'Gyeonggijeon Shrine', 'Omokdae Pavilion', 'Jeonju Bibimbap', 'Nambu Market'],
+      demographics: 'UNESCO Creative City of Gastronomy, birthplace of bibimbap. 800+ traditional hanok houses, Korean culture hub.'
+    }
+  },
 
   // TAIWAN - Additional Cities (2 new)
   { slug: 'kaohsiung', city: 'Kaohsiung', timezone: 'Asia/Taipei', country: 'Taiwan', countryCode: 'TW', lat: 22.62, lng: 120.31, tier: 2, continent: 'asia',
@@ -6141,6 +7357,158 @@ export const cities: City[] = [
       climate: 'Tropical rainforest with high humidity year-round (26-32°C). Rainy season December-May.',
       attractions: ['Amazon Theatre', 'Meeting of the Waters', 'INPA Bosque', 'Ponta Negra Beach', 'Adolpho Lisbon Market'],
       demographics: 'Largest city in the Amazon, gateway to the rainforest. Free Trade Zone makes it an industrial center in the jungle.'
+    }
+  },
+  { slug: 'campinas', city: 'Campinas', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -22.91, lng: -47.06, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '1.2M', phoneCode: '+55 19', language: 'Portuguese',
+      climate: 'Humid subtropical with warm summers (22-30°C) and mild dry winters (12-25°C). Rainy October-March.',
+      attractions: ['Lagoa do Taquaral', 'Bosque dos Jequitibás', 'Mercado Municipal', 'Pedreira do Chapadão', 'Campinas Cathedral'],
+      demographics: 'Brazil\'s Silicon Valley with UNICAMP university and major tech companies. Third-largest economy in São Paulo state.'
+    }
+  },
+  { slug: 'goiania', city: 'Goiânia', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -16.69, lng: -49.25, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '1.5M', phoneCode: '+55 62', language: 'Portuguese',
+      climate: 'Tropical savanna with hot wet summers (22-30°C) and warm dry winters (15-28°C). Distinct dry season May-September.',
+      attractions: ['Parque Flamboyant', 'Bosque dos Buritis', 'Feira Hippie', 'Memorial do Cerrado', 'Goiânia Zoo'],
+      demographics: 'Capital of Goiás, planned city founded in 1933. Major agribusiness hub and gateway to Brazil\'s agricultural heartland.'
+    }
+  },
+  { slug: 'guarulhos', city: 'Guarulhos', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -23.45, lng: -46.53, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '1.4M', phoneCode: '+55 11', language: 'Portuguese',
+      climate: 'Humid subtropical with warm summers (22-28°C) and mild winters (12-22°C). Rainy season October-March.',
+      attractions: ['Zoológico de Guarulhos', 'Bosque Maia', 'Parque Estadual da Cantareira', 'Centro Histórico', 'Lago dos Patos'],
+      demographics: 'Part of São Paulo metro, home to Brazil\'s busiest international airport (GRU). Major industrial and logistics hub.'
+    }
+  },
+  { slug: 'sao-luis', city: 'São Luís', timezone: 'America/Fortaleza', country: 'Brazil', countryCode: 'BR', lat: -2.53, lng: -44.27, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '1.1M', phoneCode: '+55 98', language: 'Portuguese',
+      climate: 'Tropical with high humidity year-round (26-32°C). Heavy rainy season January-June.',
+      attractions: ['Centro Histórico (UNESCO)', 'Praia do Calhau', 'Lençóis Maranhenses nearby', 'Casa das Minas', 'Palácio dos Leões'],
+      demographics: 'Capital of Maranhão, only Brazilian city founded by France. UNESCO World Heritage colonial center with azulejo tiles.'
+    }
+  },
+  { slug: 'maceio', city: 'Maceió', timezone: 'America/Fortaleza', country: 'Brazil', countryCode: 'BR', lat: -9.67, lng: -35.74, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '1M', phoneCode: '+55 82', language: 'Portuguese',
+      climate: 'Tropical with warm temperatures year-round (24-30°C). Rainy season April-August.',
+      attractions: ['Praia de Pajuçara', 'Piscinas Naturais', 'Praia do Francês', 'Museu Théo Brandão', 'Pontal da Barra'],
+      demographics: 'Capital of Alagoas, "Paradise of Waters" with stunning beaches and natural pools. Growing tourism destination.'
+    }
+  },
+  { slug: 'belem', city: 'Belém', timezone: 'America/Fortaleza', country: 'Brazil', countryCode: 'BR', lat: -1.46, lng: -48.50, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '1.5M', phoneCode: '+55 91', language: 'Portuguese',
+      climate: 'Tropical rainforest with high humidity year-round (24-32°C). Rain almost daily, heaviest January-May.',
+      attractions: ['Ver-o-Peso Market', 'Teatro da Paz', 'Estação das Docas', 'Basílica de Nazaré', 'Mangal das Garças'],
+      demographics: 'Capital of Pará at Amazon River mouth, gateway to Amazon. Famous for Círio de Nazaré festival and açaí culture.'
+    }
+  },
+  { slug: 'natal', city: 'Natal', timezone: 'America/Fortaleza', country: 'Brazil', countryCode: 'BR', lat: -5.79, lng: -35.21, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '890K', phoneCode: '+55 84', language: 'Portuguese',
+      climate: 'Tropical with warm temperatures year-round (26-30°C). Mild rainy season March-July, sunny most of year.',
+      attractions: ['Ponta Negra Beach', 'Forte dos Reis Magos', 'Genipabu Dunes', 'Parrachos de Maracajaú', 'Maior Cajueiro do Mundo'],
+      demographics: 'Capital of Rio Grande do Norte, "City of the Sun" with 300+ sunny days. Major beach tourism and WWII history.'
+    }
+  },
+  { slug: 'campo-grande', city: 'Campo Grande', timezone: 'America/Campo_Grande', country: 'Brazil', countryCode: 'BR', lat: -20.47, lng: -54.62, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '900K', phoneCode: '+55 67', language: 'Portuguese',
+      climate: 'Tropical savanna with hot wet summers (23-32°C) and warm dry winters (15-28°C). Dry season May-September.',
+      attractions: ['Parque das Nações Indígenas', 'Mercado Municipal', 'Morada dos Baís', 'Memorial da Cultura Indígena', 'Parque Estadual do Prosa'],
+      demographics: 'Capital of Mato Grosso do Sul, gateway to Pantanal wetlands and Bonito. Major cattle ranching and agribusiness center.'
+    }
+  },
+  { slug: 'teresina', city: 'Teresina', timezone: 'America/Fortaleza', country: 'Brazil', countryCode: 'BR', lat: -5.09, lng: -42.80, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '870K', phoneCode: '+55 86', language: 'Portuguese',
+      climate: 'Tropical with extreme heat (28-40°C). One of Brazil\'s hottest capitals. Short rainy season January-April.',
+      attractions: ['Parque da Cidade', 'Encontro dos Rios', 'Palácio de Karnak', 'Mercado Central', 'Ponte Estaiada'],
+      demographics: 'Capital of Piauí, only state capital in Northeast not on coast. Known for leather goods and cashew production.'
+    }
+  },
+  { slug: 'sao-bernardo-do-campo', city: 'São Bernardo do Campo', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -23.69, lng: -46.56, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '840K', phoneCode: '+55 11', language: 'Portuguese',
+      climate: 'Humid subtropical with warm summers (22-28°C) and mild winters (12-22°C). Rainy October-March.',
+      attractions: ['Parque Estoril', 'Cidade da Criança', 'Museu de Santo André', 'Represa Billings', 'Centro Histórico'],
+      demographics: 'Part of ABC Paulista industrial region, birthplace of Brazilian auto industry. Political base of former President Lula.'
+    }
+  },
+  { slug: 'joao-pessoa', city: 'João Pessoa', timezone: 'America/Fortaleza', country: 'Brazil', countryCode: 'BR', lat: -7.12, lng: -34.86, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '820K', phoneCode: '+55 83', language: 'Portuguese',
+      climate: 'Tropical with warm temperatures year-round (25-30°C). Rainy season March-August.',
+      attractions: ['Praia de Tambaú', 'Ponta do Seixas', 'Centro Histórico', 'Estação Cabo Branco', 'Farol do Cabo Branco'],
+      demographics: 'Capital of Paraíba, easternmost point of Americas. One of Brazil\'s greenest cities and second-oldest in country.'
+    }
+  },
+  { slug: 'sao-jose-dos-campos', city: 'São José dos Campos', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -23.18, lng: -45.88, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '730K', phoneCode: '+55 12', language: 'Portuguese',
+      climate: 'Humid subtropical with warm summers (22-28°C) and mild winters (12-22°C). Rainy October-March.',
+      attractions: ['Parque Vicentina Aranha', 'Memorial Aeroespacial Brasileiro', 'Parque da Cidade', 'Pico do Itapeva', 'Museu de Arte Sacra'],
+      demographics: 'Brazil\'s aerospace capital, home to Embraer and INPE space research. Major tech and defense industry hub.'
+    }
+  },
+  { slug: 'ribeirao-preto', city: 'Ribeirão Preto', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -21.18, lng: -47.81, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '700K', phoneCode: '+55 16', language: 'Portuguese',
+      climate: 'Tropical savanna with hot wet summers (22-30°C) and mild dry winters (14-26°C). Dry May-September.',
+      attractions: ['Parque Prefeito Luiz Roberto Jábali', 'Teatro Pedro II', 'Bosque Zoo Fábio Barreto', 'Pinguim Cervejaria', 'Catedral Metropolitana'],
+      demographics: 'Brazil\'s "Brazilian California" - major sugarcane, coffee, and orange production. Leading healthcare and university center.'
+    }
+  },
+  { slug: 'uberlandia', city: 'Uberlândia', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -18.92, lng: -48.28, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '700K', phoneCode: '+55 34', language: 'Portuguese',
+      climate: 'Tropical savanna with hot wet summers (22-30°C) and mild dry winters (14-27°C). Distinct dry season May-September.',
+      attractions: ['Parque do Sabiá', 'Mercado Municipal', 'Museu Municipal', 'Parque Siquierolli', 'Praia Clube'],
+      demographics: 'Second-largest city in Minas Gerais, major logistics hub in Brazil\'s center. Known for wholesale distribution and agribusiness.'
+    }
+  },
+  { slug: 'sorocaba', city: 'Sorocaba', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -23.50, lng: -47.46, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '680K', phoneCode: '+55 15', language: 'Portuguese',
+      climate: 'Humid subtropical with warm summers (22-28°C) and mild winters (10-22°C). Rainy October-March.',
+      attractions: ['Zoológico de Sorocaba', 'Parque das Águas', 'Mercado Municipal', 'Mosteiro de São Bento', 'Parque Natural Chico Mendes'],
+      demographics: 'One of São Paulo state\'s fastest-growing cities. Major textile, metallurgy, and auto parts manufacturing center.'
+    }
+  },
+  { slug: 'florianopolis', city: 'Florianópolis', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -27.60, lng: -48.55, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '500K', phoneCode: '+55 48', language: 'Portuguese',
+      climate: 'Humid subtropical with warm summers (22-30°C) and mild winters (12-20°C). Year-round mild weather.',
+      attractions: ['Praia da Joaquina', 'Lagoa da Conceição', 'Centro Histórico', 'Ponte Hercílio Luz', 'Praia Mole'],
+      demographics: 'Capital of Santa Catarina, "Magic Island" with 42 beaches. Brazil\'s tech startup hub and highest quality of life.'
+    }
+  },
+  { slug: 'vitoria', city: 'Vitória', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -20.32, lng: -40.34, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '365K', phoneCode: '+55 27', language: 'Portuguese',
+      climate: 'Tropical with warm temperatures year-round (22-30°C). Rainy October-January.',
+      attractions: ['Praia de Camburi', 'Convento da Penha', 'Parque Pedra da Cebola', 'Centro Histórico', 'Ilha do Frade'],
+      demographics: 'Capital of Espírito Santo, island city with major port. Iron ore export hub and gateway to mountain region.'
+    }
+  },
+  { slug: 'santos', city: 'Santos', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -23.96, lng: -46.33, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '430K', phoneCode: '+55 13', language: 'Portuguese',
+      climate: 'Humid subtropical with warm summers (24-30°C) and mild winters (16-22°C). High humidity year-round.',
+      attractions: ['Santos Beach Gardens', 'Monte Serrat', 'Coffee Museum', 'Santos FC Museum', 'Aquário de Santos'],
+      demographics: 'Home to Latin America\'s largest port. Birthplace of Pelé, the "Football City". Major coffee export history.'
+    }
+  },
+  { slug: 'cuiaba', city: 'Cuiabá', timezone: 'America/Cuiaba', country: 'Brazil', countryCode: 'BR', lat: -15.60, lng: -56.10, tier: 2, continent: 'americas',
+    info: {
+      currency: 'Brazilian Real', currencySymbol: 'R$', population: '620K', phoneCode: '+55 65', language: 'Portuguese',
+      climate: 'Tropical savanna with extreme heat (26-40°C). One of Brazil\'s hottest cities. Rainy season October-April.',
+      attractions: ['Parque Nacional de Chapada dos Guimarães', 'Arsenal do Pantanal', 'Museu do Rio Cuiabá', 'Igreja do Rosário', 'SESC Arsenal'],
+      demographics: 'Capital of Mato Grosso, exact geodesic center of South America. Gateway to Pantanal wetlands and Chapada dos Guimarães.'
     }
   },
 
