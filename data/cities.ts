@@ -7585,6 +7585,70 @@ export const cities: City[] = [
       demographics: 'Capital of Australia, planned city designed by Walter Burley Griffin. Government and education hub between Sydney and Melbourne.'
     }
   },
+  { slug: 'hobart', city: 'Hobart', timezone: 'Australia/Hobart', country: 'Australia', countryCode: 'AU', lat: -42.88, lng: 147.33, tier: 2, continent: 'oceania',
+    info: {
+      currency: 'Australian Dollar', currencySymbol: 'A$', population: '240K', phoneCode: '+61 3', language: 'English',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (5-12°C). Four distinct seasons, changeable weather.',
+      attractions: ['MONA Museum', 'Salamanca Market', 'Mount Wellington', 'Battery Point', 'Port Arthur'],
+      demographics: 'Capital of Tasmania, Australia\'s second-oldest city (1804). Gateway to wilderness, famous for MONA and food scene.'
+    }
+  },
+  { slug: 'darwin', city: 'Darwin', timezone: 'Australia/Darwin', country: 'Australia', countryCode: 'AU', lat: -12.46, lng: 130.84, tier: 2, continent: 'oceania',
+    info: {
+      currency: 'Australian Dollar', currencySymbol: 'A$', population: '150K', phoneCode: '+61 8', language: 'English',
+      climate: 'Tropical savanna with wet (Nov-Apr, 25-33°C) and dry (May-Oct, 21-32°C) seasons. Hot year-round.',
+      attractions: ['Mindil Beach Sunset Market', 'Crocosaurus Cove', 'Museum and Art Gallery NT', 'Litchfield National Park', 'Darwin Waterfront'],
+      demographics: 'Capital of Northern Territory, gateway to Kakadu and Top End. Most multicultural city, rebuilt after Cyclone Tracy (1974).'
+    }
+  },
+  { slug: 'newcastle-au', city: 'Newcastle', timezone: 'Australia/Sydney', country: 'Australia', countryCode: 'AU', lat: -32.93, lng: 151.78, tier: 2, continent: 'oceania',
+    info: {
+      currency: 'Australian Dollar', currencySymbol: 'A$', population: '320K', phoneCode: '+61 2', language: 'English',
+      climate: 'Humid subtropical with warm summers (22-28°C) and mild winters (8-17°C). Pleasant year-round.',
+      attractions: ['Nobby\'s Beach', 'Fort Scratchley', 'Newcastle Memorial Walk', 'Honeysuckle Precinct', 'Hunter Valley nearby'],
+      demographics: 'Second-largest city in NSW, transformed from steel town to creative hub. Gateway to Hunter Valley wine region.'
+    }
+  },
+  { slug: 'wollongong', city: 'Wollongong', timezone: 'Australia/Sydney', country: 'Australia', countryCode: 'AU', lat: -34.43, lng: 150.89, tier: 2, continent: 'oceania',
+    info: {
+      currency: 'Australian Dollar', currencySymbol: 'A$', population: '310K', phoneCode: '+61 2', language: 'English',
+      climate: 'Humid subtropical with warm summers (22-26°C) and mild winters (10-17°C). Coastal breezes.',
+      attractions: ['Sea Cliff Bridge', 'Nan Tien Temple', 'Wollongong Botanic Garden', 'North Beach', 'Illawarra Escarpment'],
+      demographics: 'Third-largest city in NSW between mountains and sea. Major university town, former steel city now diversified economy.'
+    }
+  },
+  { slug: 'geelong', city: 'Geelong', timezone: 'Australia/Melbourne', country: 'Australia', countryCode: 'AU', lat: -38.15, lng: 144.36, tier: 2, continent: 'oceania',
+    info: {
+      currency: 'Australian Dollar', currencySymbol: 'A$', population: '270K', phoneCode: '+61 3', language: 'English',
+      climate: 'Oceanic with warm summers (18-25°C) and cool winters (7-14°C). Corio Bay moderation.',
+      attractions: ['Geelong Waterfront', 'Bollards Sculptures', 'National Wool Museum', 'Eastern Beach', 'Narana Aboriginal Centre'],
+      demographics: 'Second-largest city in Victoria on Corio Bay. Gateway to Great Ocean Road, historic wool industry, AFL heartland.'
+    }
+  },
+  { slug: 'cairns', city: 'Cairns', timezone: 'Australia/Brisbane', country: 'Australia', countryCode: 'AU', lat: -16.92, lng: 145.77, tier: 2, continent: 'oceania',
+    info: {
+      currency: 'Australian Dollar', currencySymbol: 'A$', population: '160K', phoneCode: '+61 7', language: 'English',
+      climate: 'Tropical with wet (Dec-Apr, 24-31°C) and dry (May-Nov, 18-26°C) seasons. Hot and humid.',
+      attractions: ['Great Barrier Reef', 'Daintree Rainforest', 'Cairns Esplanade', 'Kuranda Scenic Railway', 'Green Island'],
+      demographics: 'Gateway to Great Barrier Reef and Wet Tropics. Tourism capital of Far North Queensland, tropical lifestyle hub.'
+    }
+  },
+  { slug: 'townsville', city: 'Townsville', timezone: 'Australia/Brisbane', country: 'Australia', countryCode: 'AU', lat: -19.26, lng: 146.82, tier: 2, continent: 'oceania',
+    info: {
+      currency: 'Australian Dollar', currencySymbol: 'A$', population: '195K', phoneCode: '+61 7', language: 'English',
+      climate: 'Tropical savanna with wet (Dec-Apr, 25-32°C) and dry (May-Nov, 18-28°C) seasons. 320 sunny days.',
+      attractions: ['Castle Hill', 'Reef HQ Aquarium', 'The Strand', 'Magnetic Island', 'Museum of Tropical Queensland'],
+      demographics: 'Largest city in North Queensland, gateway to Magnetic Island. Military hub, James Cook University, 320 sunny days per year.'
+    }
+  },
+  { slug: 'sunshine-coast', city: 'Sunshine Coast', timezone: 'Australia/Brisbane', country: 'Australia', countryCode: 'AU', lat: -26.65, lng: 153.07, tier: 2, continent: 'oceania',
+    info: {
+      currency: 'Australian Dollar', currencySymbol: 'A$', population: '350K', phoneCode: '+61 7', language: 'English',
+      climate: 'Humid subtropical with warm summers (22-29°C) and mild winters (12-22°C). 300 sunny days.',
+      attractions: ['Noosa Heads', 'Australia Zoo', 'Glass House Mountains', 'Mooloolaba Beach', 'Eumundi Markets'],
+      demographics: 'Third-largest urban area in Queensland north of Brisbane. Famous beaches, Australia Zoo (Steve Irwin), relaxed lifestyle.'
+    }
+  },
 
   // NEW ZEALAND - Additional Cities
   { slug: 'queenstown', city: 'Queenstown', timezone: 'Pacific/Auckland', country: 'New Zealand', countryCode: 'NZ', lat: -45.03, lng: 168.66, tier: 3, continent: 'oceania',
