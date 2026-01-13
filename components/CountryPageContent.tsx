@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import { useCityContext } from '@/lib/CityContext'
 import { useThemeClasses } from '@/lib/useThemeClasses'
@@ -45,15 +46,83 @@ export default function CountryPageContent({
   relatedCountries,
   seoContent 
 }: CountryPageContentProps) {
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
   const { getLocalTime } = useCityContext()
   const { text, textMuted, card, isLight } = useThemeClasses()
   
   const innerCard = isLight ? 'bg-slate-100' : 'bg-slate-800/50'
   const headingColor = isLight ? 'text-slate-800' : 'text-white'
-  const linkColor = isLight ? 'text-blue-600 hover:text-blue-800' : 'text-sky-400 hover:text-sky-300'
+  
+  // FAQ Data
+  const faqData = [
+    {
+      question: `What time zone is ${country.name} in?`,
+      answer: `${country.name} ${country.timezones.length > 1 
+        ? `spans ${country.timezones.length} time zones: ${country.timezones.join(', ')}` 
+        : `uses ${country.timezones[0]}`}. The capital ${country.capital} uses ${country.timezones[0]}.`
+    },
+    {
+      question: `Does ${country.name} observe Daylight Saving Time?`,
+      answer: seoContent.dstInfo
+    },
+    {
+      question: `What is the best time to call ${country.name} from the US?`,
+      answer: seoContent.bestTimeToCall
+    },
+    {
+      question: `What are typical business hours in ${country.name}?`,
+      answer: seoContent.businessHours
+    },
+    {
+      question: `What currency is used in ${country.name}?`,
+      answer: `${country.name} uses the ${country.currency} (${country.currencySymbol}) as its official currency. The international dialing code is ${country.phoneCode}. Official languages include ${country.languages.join(', ')}.`
+    }
+  ]
+  
+  // FAQ data for schema
+  const faqData = [
+    {
+      question: `What time zone is ${country.name} in?`,
+      answer: `${country.name} ${country.timezones.length > 1 
+        ? `spans ${country.timezones.length} time zones: ${country.timezones.join(', ')}` 
+        : `uses ${country.timezones[0]}`}. The capital ${country.capital} uses ${country.timezones[0]}.`
+    },
+    {
+      question: `Does ${country.name} observe Daylight Saving Time?`,
+      answer: seoContent.dstInfo
+    },
+    {
+      question: `What is the best time to call ${country.name} from the US?`,
+      answer: seoContent.bestTimeToCall
+    },
+    {
+      question: `What are typical business hours in ${country.name}?`,
+      answer: seoContent.businessHours
+    }
+  ]
+  
+  // JSON-LD Schema for FAQ
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
   
   return (
     <>
+      {/* FAQ Schema JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      
       {/* Page Title */}
       <header className="mb-6">
         <h1 className={`text-3xl md:text-4xl font-bold ${headingColor} mb-2 flex items-center gap-3`}>
@@ -278,37 +347,43 @@ export default function CountryPageContent({
         </div>
       </section>
       
-      {/* FAQ Section */}
+      {/* FAQ Section - Accordion */}
       <section className={`rounded-2xl p-5 mb-4 backdrop-blur-xl border ${card}`}>
         <h2 className={`text-lg font-semibold ${headingColor} mb-4`}>
           Frequently Asked Questions About Time in {country.name}
         </h2>
         
         <div className="space-y-3">
-          <div className={`p-4 rounded-xl ${innerCard}`}>
-            <h3 className={`font-medium ${headingColor} mb-2`}>What time zone is {country.name} in?</h3>
-            <p className={`text-sm ${textMuted}`}>
-              {country.name} {country.timezones.length > 1 
-                ? `spans ${country.timezones.length} time zones: ${country.timezones.join(', ')}` 
-                : `uses ${country.timezones[0]}`}. 
-              The capital {country.capital} uses {country.timezones[0]}.
-            </p>
-          </div>
-          
-          <div className={`p-4 rounded-xl ${innerCard}`}>
-            <h3 className={`font-medium ${headingColor} mb-2`}>Does {country.name} observe Daylight Saving Time?</h3>
-            <p className={`text-sm ${textMuted}`}>{seoContent.dstInfo}</p>
-          </div>
-          
-          <div className={`p-4 rounded-xl ${innerCard}`}>
-            <h3 className={`font-medium ${headingColor} mb-2`}>What is the best time to call {country.name} from the US?</h3>
-            <p className={`text-sm ${textMuted}`}>{seoContent.bestTimeToCall}</p>
-          </div>
-          
-          <div className={`p-4 rounded-xl ${innerCard}`}>
-            <h3 className={`font-medium ${headingColor} mb-2`}>What are typical business hours in {country.name}?</h3>
-            <p className={`text-sm ${textMuted}`}>{seoContent.businessHours}</p>
-          </div>
+          {faqData.map((faq, index) => (
+            <div 
+              key={index}
+              className={`rounded-xl overflow-hidden ${innerCard}`}
+            >
+              <button
+                onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                className={`w-full p-4 text-left flex items-center justify-between gap-3 ${headingColor} hover:bg-black/5 dark:hover:bg-white/5 transition-colors`}
+              >
+                <h3 className="font-medium pr-2">
+                  {faq.question}
+                </h3>
+                <svg 
+                  className={`w-5 h-5 flex-shrink-0 transition-transform duration-200 ${openFaq === index ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div 
+                className={`overflow-hidden transition-all duration-200 ${openFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+              >
+                <p className={`px-4 pb-4 text-sm ${textMuted}`}>
+                  {faq.answer}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </>
