@@ -5212,6 +5212,158 @@ export const cities: City[] = [
       demographics: 'Port city in Kerala, "Queen of the Arabian Sea". Historic spice trade center with Portuguese, Dutch, and British heritage.'
     }
   },
+  { slug: 'thane', city: 'Thane', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 19.22, lng: 72.98, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '2.5M', phoneCode: '+91 22', language: 'Marathi, Hindi, English',
+      climate: 'Tropical wet and dry with hot summers (30-38°C) and mild winters (18-32°C). Heavy monsoon June-September.',
+      attractions: ['Upvan Lake', 'Yeoor Hills', 'Talao Pali Lake', 'Kopineshwar Temple', 'Korum Mall'],
+      demographics: 'Part of Mumbai Metropolitan Region, "City of Lakes" with over 30 lakes. Major IT and manufacturing hub with rapid growth.'
+    }
+  },
+  { slug: 'pimpri-chinchwad', city: 'Pimpri-Chinchwad', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 18.63, lng: 73.80, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '2.1M', phoneCode: '+91 20', language: 'Marathi, Hindi, English',
+      climate: 'Tropical wet and dry with hot summers (32-40°C) and pleasant winters (12-28°C). Monsoon June-September.',
+      attractions: ['Bhakti Shakti Garden', 'Morya Gosavi Temple', 'Bird Valley', 'Durga Tekdi', 'Auto Cluster Exhibition Centre'],
+      demographics: 'Twin city of Pune, India\'s automobile hub. Home to Tata Motors, Bajaj Auto, and major manufacturing industries.'
+    }
+  },
+  { slug: 'rajkot', city: 'Rajkot', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.30, lng: 70.80, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '2M', phoneCode: '+91 281', language: 'Gujarati, Hindi, English',
+      climate: 'Semi-arid with very hot summers (38-45°C) and mild winters (12-28°C). Low rainfall, mostly in monsoon.',
+      attractions: ['Watson Museum', 'Kaba Gandhi No Delo', 'Aji Dam', 'Rotary Dolls Museum', 'Race Course Ground'],
+      demographics: 'Fourth-largest city in Gujarat, where Mahatma Gandhi spent his childhood. Major center for auto parts and jewelry manufacturing.'
+    }
+  },
+  { slug: 'meerut', city: 'Meerut', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 28.98, lng: 77.71, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.5M', phoneCode: '+91 121', language: 'Hindi, Urdu, English',
+      climate: 'Humid subtropical with very hot summers (40-47°C) and cold winters (3-20°C). Monsoon July-September.',
+      attractions: ['Augarnath Temple', 'St. John\'s Church', 'Shahid Smarak', 'Hastinapur Wildlife Sanctuary', 'Gandhi Bagh'],
+      demographics: 'Historic city where 1857 Indian Rebellion began. Known as "Sports City of India" for manufacturing sports goods.'
+    }
+  },
+  { slug: 'faridabad', city: 'Faridabad', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 28.41, lng: 77.31, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.5M', phoneCode: '+91 129', language: 'Hindi, Haryanvi, English',
+      climate: 'Humid subtropical with extreme summers (40-47°C) and cold winters (5-20°C). Dusty in summer.',
+      attractions: ['Surajkund', 'Badkhal Lake', 'Raja Nahar Singh Palace', 'Town Park', 'YMCA Tourist Hostel'],
+      demographics: 'Part of Delhi NCR, largest city in Haryana. Major industrial hub for tractors, motorcycles, and refrigerators.'
+    }
+  },
+  { slug: 'varanasi', city: 'Varanasi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.32, lng: 82.99, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.5M', phoneCode: '+91 542', language: 'Hindi, Bhojpuri, English',
+      climate: 'Humid subtropical with very hot summers (35-45°C) and cool winters (5-20°C). Monsoon July-September.',
+      attractions: ['Dashashwamedh Ghat', 'Kashi Vishwanath Temple', 'Sarnath', 'Assi Ghat', 'Ramnagar Fort'],
+      demographics: 'One of world\'s oldest continuously inhabited cities, holiest city in Hinduism. Center for Banarasi silk and classical music.'
+    }
+  },
+  { slug: 'amritsar', city: 'Amritsar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 31.63, lng: 74.87, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.2M', phoneCode: '+91 183', language: 'Punjabi, Hindi, English',
+      climate: 'Humid subtropical with very hot summers (38-45°C) and cold foggy winters (2-15°C). Monsoon July-August.',
+      attractions: ['Golden Temple', 'Jallianwala Bagh', 'Wagah Border', 'Partition Museum', 'Durgiana Temple'],
+      demographics: 'Holiest city of Sikhism, home to the Golden Temple. Cultural capital of Punjab, famous for Amritsari cuisine.'
+    }
+  },
+  { slug: 'prayagraj', city: 'Prayagraj', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.43, lng: 81.85, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.2M', phoneCode: '+91 532', language: 'Hindi, Urdu, English',
+      climate: 'Humid subtropical with very hot summers (40-47°C) and cool winters (8-22°C). Monsoon July-September.',
+      attractions: ['Triveni Sangam', 'Allahabad Fort', 'Anand Bhavan', 'All Saints Cathedral', 'Khusro Bagh'],
+      demographics: 'Formerly Allahabad, confluence of Ganges, Yamuna, and mythical Saraswati. Hosts world\'s largest gathering at Kumbh Mela.'
+    }
+  },
+  { slug: 'jodhpur', city: 'Jodhpur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.24, lng: 73.02, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.4M', phoneCode: '+91 291', language: 'Hindi, Marwari, English',
+      climate: 'Hot desert with extreme summers (38-48°C) and mild winters (8-25°C). Very low rainfall.',
+      attractions: ['Mehrangarh Fort', 'Umaid Bhawan Palace', 'Jaswant Thada', 'Clock Tower', 'Mandore Gardens'],
+      demographics: '"Blue City" and "Sun City" of India, gateway to Thar Desert. Known for handicrafts, furniture, and Rajasthani culture.'
+    }
+  },
+  { slug: 'ranchi', city: 'Ranchi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.34, lng: 85.31, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.1M', phoneCode: '+91 651', language: 'Hindi, Nagpuri, English',
+      climate: 'Humid subtropical with pleasant summers (25-35°C) and cool winters (5-20°C). Heavy monsoon rainfall.',
+      attractions: ['Ranchi Lake', 'Rock Garden', 'Tagore Hill', 'Hundru Falls', 'Pahari Mandir'],
+      demographics: 'Capital of Jharkhand, "City of Waterfalls". Former summer capital of Bihar, birthplace of MS Dhoni.'
+    }
+  },
+  { slug: 'guwahati', city: 'Guwahati', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.14, lng: 91.74, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.1M', phoneCode: '+91 361', language: 'Assamese, Bengali, Hindi, English',
+      climate: 'Humid subtropical with warm summers (28-35°C) and mild winters (10-24°C). Heavy monsoon May-September.',
+      attractions: ['Kamakhya Temple', 'Umananda Island', 'Assam State Museum', 'Pobitora Wildlife Sanctuary', 'Brahmaputra River Cruise'],
+      demographics: 'Gateway to Northeast India on Brahmaputra River. Largest city in Northeast, major center for tea trade and silk.'
+    }
+  },
+  { slug: 'chandigarh', city: 'Chandigarh', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.73, lng: 76.78, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.1M', phoneCode: '+91 172', language: 'Hindi, Punjabi, English',
+      climate: 'Humid subtropical with hot summers (35-44°C) and cold winters (4-18°C). Monsoon July-September.',
+      attractions: ['Rock Garden', 'Sukhna Lake', 'Capitol Complex', 'Rose Garden', 'Elante Mall'],
+      demographics: 'India\'s first planned city designed by Le Corbusier. Union Territory serving as capital for both Punjab and Haryana.'
+    }
+  },
+  { slug: 'mysuru', city: 'Mysuru', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.30, lng: 76.66, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1M', phoneCode: '+91 821', language: 'Kannada, English, Hindi',
+      climate: 'Tropical savanna with pleasant year-round weather (18-35°C). Mild and comfortable most of the year.',
+      attractions: ['Mysore Palace', 'Chamundi Hills', 'Brindavan Gardens', 'St. Philomena\'s Church', 'Mysore Zoo'],
+      demographics: 'Former capital of Mysore Kingdom, "City of Palaces". Known for Dasara festival, silk sarees, and sandalwood products.'
+    }
+  },
+  { slug: 'thiruvananthapuram', city: 'Thiruvananthapuram', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 8.52, lng: 76.94, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '950K', phoneCode: '+91 471', language: 'Malayalam, English, Tamil',
+      climate: 'Tropical monsoon with warm weather year-round (24-33°C). Two monsoon seasons June-September and October-November.',
+      attractions: ['Padmanabhaswamy Temple', 'Kovalam Beach', 'Napier Museum', 'Kuthiramalika Palace', 'Ponmudi Hills'],
+      demographics: 'Capital of Kerala, "Evergreen City of India". Major IT hub and home to ISRO\'s Vikram Sarabhai Space Centre.'
+    }
+  },
+  { slug: 'madurai', city: 'Madurai', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 9.92, lng: 78.12, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.5M', phoneCode: '+91 452', language: 'Tamil, English',
+      climate: 'Semi-arid with hot summers (35-42°C) and warm winters (20-30°C). Northeast monsoon October-December.',
+      attractions: ['Meenakshi Temple', 'Thirumalai Nayakkar Palace', 'Gandhi Memorial Museum', 'Alagar Kovil', 'Vandiyur Mariamman Teppakulam'],
+      demographics: 'One of oldest continuously inhabited cities, over 2,500 years old. Cultural capital of Tamil Nadu, center for Tamil literature.'
+    }
+  },
+  { slug: 'vijayawada', city: 'Vijayawada', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 16.51, lng: 80.65, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.5M', phoneCode: '+91 866', language: 'Telugu, Hindi, English',
+      climate: 'Tropical wet and dry with hot summers (38-45°C) and mild winters (18-32°C). Cyclone risk October-December.',
+      attractions: ['Kanaka Durga Temple', 'Prakasam Barrage', 'Undavalli Caves', 'Bhavani Island', 'Victoria Museum'],
+      demographics: 'Business capital of Andhra Pradesh on Krishna River. Major trade and commercial hub, near new capital Amaravati.'
+    }
+  },
+  { slug: 'bhubaneswar', city: 'Bhubaneswar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.30, lng: 85.82, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '900K', phoneCode: '+91 674', language: 'Odia, Hindi, English',
+      climate: 'Tropical savanna with hot humid summers (35-42°C) and mild winters (15-28°C). Cyclone risk in monsoon.',
+      attractions: ['Lingaraja Temple', 'Udayagiri Caves', 'Nandankanan Zoo', 'Dhauli Shanti Stupa', 'Rajarani Temple'],
+      demographics: 'Capital of Odisha, "Temple City of India" with 700+ temples. Ancient Kalinga capital, emerging IT and education hub.'
+    }
+  },
+  { slug: 'dehradun', city: 'Dehradun', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.32, lng: 78.03, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '800K', phoneCode: '+91 135', language: 'Hindi, Garhwali, English',
+      climate: 'Humid subtropical with warm summers (30-38°C) and cold winters (2-18°C). Heavy monsoon rainfall.',
+      attractions: ['Robber\'s Cave', 'Sahastradhara', 'Forest Research Institute', 'Mindrolling Monastery', 'Tapkeshwar Temple'],
+      demographics: 'Capital of Uttarakhand in Doon Valley. Gateway to Mussoorie and Himalayas, center for elite boarding schools and research.'
+    }
+  },
+  { slug: 'aurangabad', city: 'Aurangabad', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 19.88, lng: 75.34, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.2M', phoneCode: '+91 240', language: 'Marathi, Hindi, Urdu, English',
+      climate: 'Semi-arid with hot summers (35-42°C) and mild winters (12-28°C). Low rainfall, mostly in monsoon.',
+      attractions: ['Ajanta Caves', 'Ellora Caves', 'Bibi Ka Maqbara', 'Daulatabad Fort', 'Panchakki'],
+      demographics: 'Gateway to UNESCO World Heritage sites Ajanta and Ellora. Historic city named after Mughal Emperor Aurangzeb.'
+    }
+  },
 
   // CHINA - Additional Major Cities (10 new)
   { slug: 'chongqing', city: 'Chongqing', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 29.56, lng: 106.55, tier: 2, continent: 'asia',
