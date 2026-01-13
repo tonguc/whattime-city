@@ -79,28 +79,6 @@ export default function CountryPageContent({
     }
   ]
   
-  // FAQ data for schema
-  const faqData = [
-    {
-      question: `What time zone is ${country.name} in?`,
-      answer: `${country.name} ${country.timezones.length > 1 
-        ? `spans ${country.timezones.length} time zones: ${country.timezones.join(', ')}` 
-        : `uses ${country.timezones[0]}`}. The capital ${country.capital} uses ${country.timezones[0]}.`
-    },
-    {
-      question: `Does ${country.name} observe Daylight Saving Time?`,
-      answer: seoContent.dstInfo
-    },
-    {
-      question: `What is the best time to call ${country.name} from the US?`,
-      answer: seoContent.bestTimeToCall
-    },
-    {
-      question: `What are typical business hours in ${country.name}?`,
-      answer: seoContent.businessHours
-    }
-  ]
-  
   // JSON-LD Schema for FAQ
   const faqSchema = {
     "@context": "https://schema.org",
