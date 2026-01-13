@@ -5302,6 +5302,158 @@ export const cities: City[] = [
       demographics: 'Capital of Hunan Province, birthplace of Mao Zedong\'s revolutionary activities. Major hub for entertainment and spicy cuisine.'
     }
   },
+  { slug: 'dongguan', city: 'Dongguan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 23.02, lng: 113.75, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '10.5M', phoneCode: '+86 769', language: 'Mandarin, Cantonese',
+      climate: 'Humid subtropical with hot summers (28-33°C) and mild winters (12-20°C). Typhoon season July-September.',
+      attractions: ['Keyuan Garden', 'Dongguan Museum', 'Songshan Lake', 'Opium War Museum', 'Yinping Mountain'],
+      demographics: 'Major manufacturing hub in Pearl River Delta, known as "World Factory" for electronics. One of China\'s wealthiest cities per capita.'
+    }
+  },
+  { slug: 'foshan', city: 'Foshan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 23.02, lng: 113.12, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '9.5M', phoneCode: '+86 757', language: 'Mandarin, Cantonese',
+      climate: 'Humid subtropical with hot summers (28-34°C) and mild winters (10-18°C). Rainy April-September.',
+      attractions: ['Foshan Ancestral Temple', 'Nanfeng Ancient Kiln', 'Qinghui Garden', 'Wong Fei-hung Memorial', 'Xiqiao Mountain'],
+      demographics: 'Historic ceramics capital and birthplace of Wing Chun kung fu. Major manufacturing center for furniture, ceramics, and home appliances.'
+    }
+  },
+  { slug: 'shenyang', city: 'Shenyang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 41.80, lng: 123.43, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '9.1M', phoneCode: '+86 24', language: 'Mandarin',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-15 to -5°C). Heavy snowfall in winter.',
+      attractions: ['Shenyang Imperial Palace', 'Zhaoling Tomb', 'Fuling Tomb', '9.18 History Museum', 'Beiling Park'],
+      demographics: 'Largest city in Northeast China, former Manchu capital. Major industrial base for automotive, machinery, and aerospace.'
+    }
+  },
+  { slug: 'ningbo', city: 'Ningbo', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 29.87, lng: 121.55, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '9.4M', phoneCode: '+86 574', language: 'Mandarin, Wu',
+      climate: 'Humid subtropical with hot summers (28-35°C) and cool winters (3-10°C). Typhoon risk in summer.',
+      attractions: ['Tianyi Pavilion', 'Dongqian Lake', 'Tianfeng Pagoda', 'Old Bund', 'Putuo Mountain nearby'],
+      demographics: 'Major port city with world\'s busiest cargo port. Historic trading hub with 7,000+ year history, known for business acumen.'
+    }
+  },
+  { slug: 'fuzhou', city: 'Fuzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 26.07, lng: 119.30, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '8.3M', phoneCode: '+86 591', language: 'Mandarin, Min Dong',
+      climate: 'Humid subtropical with hot summers (28-35°C) and mild winters (8-15°C). Typhoon season July-September.',
+      attractions: ['Three Lanes and Seven Alleys', 'Gu Mountain', 'West Lake Park', 'Hualin Temple', 'Mawei Shipyard'],
+      demographics: 'Capital of Fujian Province, historic port on Maritime Silk Road. Major center for lacquerware, jasmine tea, and overseas Chinese ancestry.'
+    }
+  },
+  { slug: 'jinan', city: 'Jinan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 36.65, lng: 116.98, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '9.2M', phoneCode: '+86 531', language: 'Mandarin, Ji-Lu',
+      climate: 'Humid continental with hot summers (27-32°C) and cold winters (-3 to 5°C). Four distinct seasons.',
+      attractions: ['Baotu Spring', 'Daming Lake', 'Thousand Buddha Mountain', 'Quancheng Square', 'Shandong Museum'],
+      demographics: 'Capital of Shandong Province, known as "City of Springs" with 72 famous springs. Major cultural and educational center.'
+    }
+  },
+  { slug: 'changchun', city: 'Changchun', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 43.88, lng: 125.32, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '9M', phoneCode: '+86 431', language: 'Mandarin',
+      climate: 'Humid continental with warm summers (22-28°C) and very cold winters (-18 to -8°C). Long snowy winters.',
+      attractions: ['Puppet Emperor Palace', 'Changchun World Sculpture Park', 'Jingyuetan National Forest', 'Changchun Film Studio', 'South Lake Park'],
+      demographics: 'Capital of Jilin Province, China\'s automotive capital (home of FAW). Former capital of Japanese puppet state Manchukuo.'
+    }
+  },
+  { slug: 'shijiazhuang', city: 'Shijiazhuang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 38.04, lng: 114.48, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '11.2M', phoneCode: '+86 311', language: 'Mandarin, Ji-Lu',
+      climate: 'Semi-arid continental with hot summers (26-32°C) and cold dry winters (-5 to 3°C). Dusty springs.',
+      attractions: ['Zhaozhou Bridge', 'Xibaipo Revolutionary Site', 'Longxing Temple', 'Hebei Museum', 'Cangyan Mountain'],
+      demographics: 'Capital of Hebei Province, major pharmaceutical manufacturing center. Young city that grew rapidly with railway development.'
+    }
+  },
+  { slug: 'hefei', city: 'Hefei', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 31.82, lng: 117.23, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '9.4M', phoneCode: '+86 551', language: 'Mandarin, Jianghuai',
+      climate: 'Humid subtropical with hot summers (28-35°C) and cool winters (0-8°C). Rainy in spring and summer.',
+      attractions: ['Lord Bao Memorial', 'Xiaoyaojin Park', 'Anhui Provincial Museum', 'Swan Lake', 'Science Island'],
+      demographics: 'Capital of Anhui Province, rising tech hub with major AI and quantum computing research. Home to USTC, top science university.'
+    }
+  },
+  { slug: 'nanchang', city: 'Nanchang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 28.68, lng: 115.89, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '6.5M', phoneCode: '+86 791', language: 'Mandarin, Gan',
+      climate: 'Humid subtropical with hot summers (29-35°C) and cool winters (3-10°C). Very hot in July-August.',
+      attractions: ['Tengwang Pavilion', 'August 1st Uprising Memorial', 'Poyang Lake', 'Shengjin Tower', 'Bayi Square'],
+      demographics: 'Capital of Jiangxi Province, birthplace of People\'s Liberation Army. Historic city with 2,200 years of history.'
+    }
+  },
+  { slug: 'kunming', city: 'Kunming', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 25.04, lng: 102.71, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '8.5M', phoneCode: '+86 871', language: 'Mandarin, Yunnan',
+      climate: 'Subtropical highland with spring-like weather year-round (10-24°C). Mild summers and winters.',
+      attractions: ['Stone Forest', 'Dianchi Lake', 'Green Lake Park', 'Western Hills', 'Yunnan Ethnic Village'],
+      demographics: 'Capital of Yunnan Province, "City of Eternal Spring" due to perfect climate. Gateway to Southeast Asia with diverse ethnic cultures.'
+    }
+  },
+  { slug: 'taiyuan', city: 'Taiyuan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 37.87, lng: 112.55, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.3M', phoneCode: '+86 351', language: 'Mandarin, Jin',
+      climate: 'Semi-arid continental with warm summers (22-28°C) and cold dry winters (-10 to 2°C). Low rainfall.',
+      attractions: ['Jinci Temple', 'Shanxi Museum', 'Twin Pagoda Temple', 'Chongshan Temple', 'Yingze Park'],
+      demographics: 'Capital of Shanxi Province, 2,500-year-old city. Major energy base with coal and heavy industry, historic banking center.'
+    }
+  },
+  { slug: 'nanning', city: 'Nanning', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 22.82, lng: 108.32, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '8.8M', phoneCode: '+86 771', language: 'Mandarin, Cantonese, Zhuang',
+      climate: 'Humid subtropical with hot summers (28-33°C) and mild winters (12-18°C). Green city year-round.',
+      attractions: ['Qingxiu Mountain', 'Guangxi Ethnic Museum', 'Nanhu Lake', 'Detian Waterfall nearby', 'China-ASEAN Expo Center'],
+      demographics: 'Capital of Guangxi, "Green City" with lush vegetation. Gateway to ASEAN, hosting annual China-ASEAN Expo.'
+    }
+  },
+  { slug: 'guiyang', city: 'Guiyang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 26.58, lng: 106.72, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '6M', phoneCode: '+86 851', language: 'Mandarin, Southwestern',
+      climate: 'Subtropical highland with mild summers (22-28°C) and cool winters (3-10°C). Foggy and rainy.',
+      attractions: ['Jiaxiu Pavilion', 'Qianling Park', 'Huaxi Park', 'Guizhou Provincial Museum', 'Tianhe Pool'],
+      demographics: 'Capital of Guizhou Province, China\'s Big Data Valley. Emerging tech hub surrounded by karst landscapes and ethnic minority cultures.'
+    }
+  },
+  { slug: 'wuxi', city: 'Wuxi', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 31.49, lng: 120.31, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '7.5M', phoneCode: '+86 510', language: 'Mandarin, Wu',
+      climate: 'Humid subtropical with hot summers (28-35°C) and cool winters (2-8°C). Rainy in spring.',
+      attractions: ['Yuantouzhu', 'Lingshan Giant Buddha', 'Nianhua Bay', 'Huishan Ancient Town', 'Taihu Lake'],
+      demographics: 'Prosperous city on Taihu Lake, known for silk, Yixing clay teapots, and classical gardens. Major semiconductor and IoT industry hub.'
+    }
+  },
+  { slug: 'wenzhou', city: 'Wenzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 28.00, lng: 120.67, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '9.6M', phoneCode: '+86 577', language: 'Mandarin, Wu, Wenzhounese',
+      climate: 'Humid subtropical with hot summers (28-35°C) and mild winters (5-12°C). Typhoon risk July-September.',
+      attractions: ['Yandang Mountain', 'Jiangxin Island', 'Nanxi River', 'Wuma Street', 'Dongtou Islands'],
+      demographics: 'Famous for entrepreneurial spirit and global business networks. Wenzhou merchants known worldwide, major leather and eyewear manufacturing.'
+    }
+  },
+  { slug: 'lanzhou', city: 'Lanzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 36.06, lng: 103.83, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '4.4M', phoneCode: '+86 931', language: 'Mandarin',
+      climate: 'Semi-arid with warm summers (22-30°C) and cold dry winters (-8 to 3°C). Low humidity year-round.',
+      attractions: ['White Pagoda Hill', 'Yellow River Iron Bridge', 'Gansu Provincial Museum', 'Five Spring Mountain', 'Bingling Temple nearby'],
+      demographics: 'Capital of Gansu Province, historic Silk Road city on Yellow River. Known for Lanzhou beef noodles and petrochemical industry.'
+    }
+  },
+  { slug: 'urumqi', city: 'Ürümqi', timezone: 'Asia/Urumqi', country: 'China', countryCode: 'CN', lat: 43.83, lng: 87.58, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '4.1M', phoneCode: '+86 991', language: 'Mandarin, Uyghur',
+      climate: 'Cold semi-arid with hot summers (25-32°C) and very cold winters (-15 to -5°C). Large temperature variations.',
+      attractions: ['Xinjiang International Grand Bazaar', 'Heavenly Lake', 'Red Hill', 'Xinjiang Regional Museum', 'Nanshan Pastures'],
+      demographics: 'Capital of Xinjiang, most inland major city in the world. Silk Road hub with Uyghur, Han, Kazakh, and Hui cultures.'
+    }
+  },
+  { slug: 'shantou', city: 'Shantou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 23.35, lng: 116.68, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.6M', phoneCode: '+86 754', language: 'Mandarin, Teochew',
+      climate: 'Humid subtropical with hot summers (28-33°C) and mild winters (12-18°C). Typhoon risk in summer.',
+      attractions: ['Chen Ci Hong Mansion', 'Nan\'ao Island', 'Queshi Scenic Area', 'Shantou Old Town', 'Zhongshan Park'],
+      demographics: 'Special Economic Zone and ancestral home of Teochew diaspora. Major port city known for Chaoshan cuisine and toy manufacturing.'
+    }
+  },
 
   // PAKISTAN - Major Cities (4 new)
   { slug: 'lahore', city: 'Lahore', timezone: 'Asia/Karachi', country: 'Pakistan', countryCode: 'PK', lat: 31.55, lng: 74.34, tier: 2, continent: 'asia',
