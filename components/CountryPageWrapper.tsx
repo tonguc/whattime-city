@@ -10,15 +10,15 @@ interface CountryPageWrapperProps {
 }
 
 export default function CountryPageWrapper({ children }: CountryPageWrapperProps) {
-  const { theme, isLight } = useCityContext()
+  const { theme } = useCityContext()
   
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg}`}>
       <Header />
       
-      <div className="max-w-6xl mx-auto px-4 py-8">
+      <main className="max-w-6xl mx-auto px-4 py-8">
         {children}
-      </div>
+      </main>
       
       <Footer />
     </div>
