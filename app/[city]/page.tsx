@@ -27,8 +27,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   
   const info = city.info
   // Keep title under 60 characters for SEO
-  // Format: "Current Time in {City}, {Country} | whattime.city" 
-  const title = `Current Time in ${city.city}, ${city.country} | whattime.city`
+  // Handle country-based slugs (e.g., /fiji/ vs /suva/) to avoid duplicate titles
+  // Note: Layout template adds "| whattime.city" suffix automatically
+  const isCountrySlug = slug.toLowerCase() === city.country.toLowerCase().replace(/\s+/g, '-')
+  const title = isCountrySlug
+    ? `Time in ${city.country} Now - ${city.city} Local Time`
+    : `Current Time in ${city.city}, ${city.country}`
   const description = info 
     ? `What time is it in ${city.city}? Check current local time, sunrise & sunset. Population: ${info.population}. Currency: ${info.currency} (${info.currencySymbol}). Phone: ${info.phoneCode}. Top attractions: ${info.attractions.slice(0, 3).join(', ')}.`
     : `What time is it in ${city.city} right now? Check current local time, sunrise at, sunset times, and weather in ${city.city}, ${city.country}. Timezone: ${city.timezone}.`

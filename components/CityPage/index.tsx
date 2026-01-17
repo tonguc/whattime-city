@@ -29,6 +29,7 @@ import SnippetBlock from './SnippetBlock'
 import CompactInfoCards from './CompactInfoCards'
 import TimeZoneFacts from './TimeZoneFacts'
 import BusinessHoursBox from './BusinessHoursBox'
+import SEOContent from './SEOContent'
 
 // Dynamic imports for below-fold content
 const TimeDifferenceTable = dynamic(() => import('./TimeDifferenceTable'), { ssr: false })
@@ -325,6 +326,9 @@ export default function CityPage({ initialCity }: CityPageProps) {
             )}
           </div>
         )}
+        
+        {/* SEO Content - Keyword-rich text for search engines */}
+        <SEOContent city={selectedCity} />
         
         {/* Time Difference Table */}
         <div className="mt-4">
