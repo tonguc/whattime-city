@@ -10287,7 +10287,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'frankfort', city: 'Frankfort', timezone: 'America/Kentucky', country: 'United States', countryCode: 'US', state: 'Kentucky', stateCode: 'KY', lat: 38.20, lng: -84.87, tier: 3, continent: 'americas',
+  { slug: 'frankfort', city: 'Frankfort', timezone: 'America/Kentucky/Louisville', country: 'United States', countryCode: 'US', state: 'Kentucky', stateCode: 'KY', lat: 38.20, lng: -84.87, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '28K', metroPopulation: '75K', phoneCode: '+1 502', language: 'English',
       climate: 'Humid subtropical with hot summers (20-32°C) and cool winters (-3 to 8°C).',
