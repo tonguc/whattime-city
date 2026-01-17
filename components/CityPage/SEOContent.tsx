@@ -67,7 +67,7 @@ export default function SEOContent({ city }: SEOContentProps) {
     })
 
   // Business context
-  const businessHours = city.info?.businessHours || '9:00 AM - 6:00 PM'
+  const businessHours = city.info?.seoContent?.businessHours || '9:00 AM - 6:00 PM'
   const population = city.info?.population || 'major urban center'
   const currency = city.info?.currency || ''
   const phoneCode = city.info?.phoneCode || ''
