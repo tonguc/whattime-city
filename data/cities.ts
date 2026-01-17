@@ -9572,6 +9572,767 @@ export const cities: City[] = [
   { slug: 'ventura', city: 'Ventura', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.27, lng: -119.23, tier: 3, continent: 'americas',
     info: { currency: 'US Dollar', currencySymbol: '$', population: '110K', phoneCode: '+1 805', language: 'English, Spanish', climate: 'Mediterranean.', attractions: ['San Buenaventura Mission', 'Ventura Pier', 'Channel Islands Harbor', 'Main Street', 'Channel Islands National Park gateway'], demographics: 'Mission San Buenaventura. Channel Islands gateway.', airports: [{ code: 'OXR', name: 'Oxnard Airport', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Channel Islands gateway, historic mission, surf culture' }
   },
+  // USA - State Capitals & Tourism Cities (Premium Format)
+  { slug: 'albany', city: 'Albany', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'New York', stateCode: 'NY', lat: 42.65, lng: -73.76, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '100K', metroPopulation: '880K', phoneCode: '+1 518', language: 'English',
+      climate: 'Humid continental with warm summers (20-28°C) and cold, snowy winters (-8 to 2°C). Significant snowfall December-March.',
+      attractions: ['New York State Capitol', 'Empire State Plaza', 'USS Slater', 'New York State Museum', 'Albany Institute of History & Art', 'Washington Park', 'The Egg performing arts center', 'Lark Street', 'Corning Preserve', 'Historic Cherry Hill'],
+      demographics: 'New York State capital since 1797. One of America\'s oldest cities with Dutch colonial heritage. Government, education, and healthcare hub.',
+      airports: [{ code: 'ALB', name: 'Albany International Airport', distance: '10km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'New York State Capitol, Empire State Plaza, Dutch heritage, state government',
+      seoContent: {
+        intro: 'Albany, the capital of New York State, operates on Eastern Standard Time (EST/UTC-5) in winter and Eastern Daylight Time (EDT/UTC-4) in summer. One of America\'s oldest cities, Albany has been New York\'s capital since 1797 and features stunning architecture including the Empire State Plaza.',
+        timezoneFacts: 'Albany shares its timezone with New York City, 150 miles to the south. The State Legislature\'s schedule influences city rhythms. Same timezone as Boston, Philadelphia, and Washington D.C.',
+        bestTimeToVisit: 'Late spring (May-June) and fall (September-October) offer pleasant weather for exploring. Summer brings festivals and outdoor events. Winter is cold but features holiday markets and winter sports nearby.',
+        businessHours: 'Government offices typically operate 8:30 AM to 4:30 PM. Standard businesses 9 AM to 5 PM. Downtown restaurants serve until 10 PM. State Capitol tours available.',
+        timeDifference: 'Albany is UTC-5 (winter) / UTC-4 (summer). When noon in Albany: London 5 PM, Los Angeles 9 AM, Chicago 11 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November, same as all New York State.',
+        localTips: 'Visit the State Capitol\'s Million Dollar Staircase. Lark Street is the local arts district. Tulip Festival in May celebrates Dutch heritage. Parking is easier than NYC.',
+        transportation: 'Albany International Airport serves the Capital Region. Amtrak connects to NYC (2.5 hours) and Montreal. CDTA buses serve metro area. Car useful for exploring.',
+        emergencyNumbers: 'Emergency: 911. Albany Police: 518-438-4000.',
+        publicHolidays: 'US Federal holidays. Tulip Festival (May). Price Chopper Capital Holiday Lights (December).'
+      }
+    }
+  },
+  { slug: 'harrisburg', city: 'Harrisburg', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Pennsylvania', stateCode: 'PA', lat: 40.27, lng: -76.88, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '50K', metroPopulation: '580K', phoneCode: '+1 717', language: 'English',
+      climate: 'Humid continental with warm summers (22-30°C) and cold winters (-5 to 5°C). Moderate snowfall.',
+      attractions: ['Pennsylvania State Capitol', 'National Civil War Museum', 'City Island', 'State Museum of Pennsylvania', 'Broad Street Market', 'Susquehanna River', 'Fort Hunter Mansion', 'Italian Lake', 'Whitaker Center', 'Hersheypark nearby'],
+      demographics: 'Pennsylvania capital since 1812. Key role in American industrialization. Gateway to Pennsylvania Dutch Country and Hershey.',
+      airports: [{ code: 'MDT', name: 'Harrisburg International Airport', distance: '12km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Pennsylvania State Capitol, Three Mile Island history, Hershey nearby, Civil War heritage',
+      seoContent: {
+        intro: 'Harrisburg, capital of Pennsylvania, operates on Eastern Standard Time (EST/UTC-5) in winter and EDT (UTC-4) in summer. This Susquehanna River city features one of America\'s most beautiful state capitols and serves as gateway to Hershey and Pennsylvania Dutch Country.',
+        timezoneFacts: 'Harrisburg shares timezone with Philadelphia (1.5 hours east) and Pittsburgh (3 hours west). Central location makes it accessible from both coasts.',
+        bestTimeToVisit: 'Spring and fall offer mild weather. Summer is perfect for river activities and Hersheypark. Winter brings fewer crowds but occasional snow.',
+        businessHours: 'Government offices 8 AM to 4:30 PM. Businesses 9 AM to 5 PM. Broad Street Market (one of America\'s oldest) has unique hours.',
+        timeDifference: 'UTC-5 (winter) / UTC-4 (summer). Noon in Harrisburg = 5 PM London, 6 PM Paris.',
+        daylightSaving: 'Standard US DST schedule.',
+        localTips: 'The Capitol dome is modeled on St. Peter\'s Basilica. Hersheypark is 15 minutes away. Good base for exploring Amish Country.',
+        transportation: 'MDT airport serves the region. Amtrak Keystone Service to Philadelphia and NYC. I-81 and I-76 (PA Turnpike) provide highway access.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. PA Farm Show (January - largest indoor agricultural event in US).'
+      }
+    }
+  },
+  { slug: 'trenton', city: 'Trenton', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'New Jersey', stateCode: 'NJ', lat: 40.22, lng: -74.76, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '90K', metroPopulation: '370K', phoneCode: '+1 609', language: 'English, Spanish',
+      climate: 'Humid subtropical with warm summers (23-30°C) and cool winters (-3 to 6°C).',
+      attractions: ['New Jersey State House', 'Old Barracks Museum', 'Trenton Battle Monument', 'New Jersey State Museum', 'Grounds For Sculpture', 'William Trent House', 'Patriots Theater', 'Delaware River', 'Arm & Hammer Park', 'Trenton City Museum'],
+      demographics: 'New Jersey capital. Site of pivotal Revolutionary War battle. "Trenton Makes, The World Takes" industrial heritage.',
+      airports: [{ code: 'TTN', name: 'Trenton-Mercer Airport', distance: '8km' }, { code: 'PHL', name: 'Philadelphia International', distance: '50km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Washington Crossing, Revolutionary War history, state capital, industrial heritage',
+      seoContent: {
+        intro: 'Trenton, capital of New Jersey, operates on Eastern Time (EST/UTC-5 winter, EDT/UTC-4 summer). Famous for Washington\'s crossing of the Delaware River in 1776, Trenton played a crucial role in American independence.',
+        timezoneFacts: 'Located between New York (60 miles north) and Philadelphia (30 miles south), both in the same timezone.',
+        bestTimeToVisit: 'Spring and fall for comfortable touring. December for Washington Crossing reenactment. Summer for outdoor festivals.',
+        businessHours: 'Government 8:30 AM to 4:30 PM. Standard business hours apply.',
+        timeDifference: 'UTC-5/UTC-4. Same as NYC and Philadelphia.',
+        daylightSaving: 'Standard US DST.',
+        localTips: 'See the "Trenton Makes" bridge sign. Grounds For Sculpture is world-class. December 25 reenactment of Washington\'s Crossing.',
+        transportation: 'NJ Transit and Amtrak serve Trenton station. Easy access to NYC and Philadelphia by train.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Washington Crossing reenactment (December 25).'
+      }
+    }
+  },
+  { slug: 'annapolis', city: 'Annapolis', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Maryland', stateCode: 'MD', lat: 38.98, lng: -76.49, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '40K', metroPopulation: '580K', phoneCode: '+1 410', language: 'English',
+      climate: 'Humid subtropical with warm summers (24-31°C) and mild winters (0-8°C). Occasional snow.',
+      attractions: ['US Naval Academy', 'Maryland State House', 'City Dock', 'Historic Annapolis', 'Chesapeake Bay', 'St. John\'s College', 'William Paca House', 'Ego Alley', 'Annapolis Maritime Museum', 'Eastport neighborhood'],
+      demographics: 'Maryland capital and home to US Naval Academy. Sailing capital of America. Historic colonial architecture.',
+      airports: [{ code: 'BWI', name: 'Baltimore-Washington International', distance: '35km' }, { code: 'DCA', name: 'Reagan National', distance: '50km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'US Naval Academy, sailing capital, colonial architecture, Chesapeake Bay seafood',
+      seoContent: {
+        intro: 'Annapolis, capital of Maryland and home to the US Naval Academy, operates on Eastern Time (EST/UTC-5 winter, EDT/UTC-4 summer). Known as America\'s Sailing Capital, this colonial gem on Chesapeake Bay served as the US capital in 1783-84.',
+        timezoneFacts: 'Located between Baltimore (30 miles north) and Washington DC (30 miles west), sharing Eastern timezone.',
+        bestTimeToVisit: 'Spring and fall are ideal for sailing and sightseeing. Summer offers water activities. Commissioning Week (May) is spectacular.',
+        businessHours: 'Tourism-focused hours. Many waterfront restaurants open late. Naval Academy tours available most days.',
+        timeDifference: 'UTC-5/UTC-4. Same as DC and Baltimore.',
+        daylightSaving: 'Standard US DST.',
+        localTips: 'Naval Academy tours require ID. Ego Alley is prime people-watching. Fresh crab is a must. Parking challenging downtown.',
+        transportation: 'BWI Airport nearest. No direct rail; bus connections from DC and Baltimore. Ferry service in summer.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Naval Academy Commissioning Week (May). Annapolis Boat Shows (October).'
+      }
+    }
+  },
+  { slug: 'dover', city: 'Dover', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Delaware', stateCode: 'DE', lat: 39.16, lng: -75.52, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '40K', metroPopulation: '180K', phoneCode: '+1 302', language: 'English',
+      climate: 'Humid subtropical with warm summers (23-31°C) and cool winters (-2 to 7°C).',
+      attractions: ['Dover International Speedway', 'First State Heritage Park', 'Air Mobility Command Museum', 'Delaware State Capitol', 'Biggs Museum of American Art', 'John Dickinson Plantation', 'Delaware Agricultural Museum', 'Bombay Hook Wildlife Refuge', 'The Green', 'Delaware State University'],
+      demographics: 'Delaware capital. Home to Dover Air Force Base. NASCAR "Monster Mile" racing tradition. First State history.',
+      airports: [{ code: 'PHL', name: 'Philadelphia International', distance: '110km' }, { code: 'BWI', name: 'Baltimore-Washington International', distance: '130km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Dover International Speedway (Monster Mile), Air Force Base, First State history, tax-free shopping',
+      seoContent: {
+        intro: 'Dover, capital of Delaware (the First State), operates on Eastern Time (EST/UTC-5 winter, EDT/UTC-4 summer). Known for NASCAR\'s "Monster Mile" and Dover Air Force Base, this historic city was where the US Constitution was first ratified.',
+        timezoneFacts: 'Located in the Delmarva Peninsula, sharing timezone with Philadelphia (90 miles north) and Washington DC (90 miles southwest).',
+        bestTimeToVisit: 'NASCAR race weekends (May and September) are major events. Spring and fall offer pleasant weather for touring.',
+        businessHours: 'Government 8 AM to 4:30 PM. NASCAR weekend extends everything.',
+        timeDifference: 'UTC-5/UTC-4. Same as Philadelphia and DC.',
+        daylightSaving: 'Standard US DST.',
+        localTips: 'Delaware has no sales tax. Book early for NASCAR weekends. Air Mobility Command Museum is free and excellent.',
+        transportation: 'No commercial airport; use Philadelphia or Baltimore. DART First State buses serve the area.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. NASCAR races (May, September). Delaware State Fair (July).'
+      }
+    }
+  },
+  { slug: 'santa-fe', city: 'Santa Fe', timezone: 'America/Denver', country: 'United States', countryCode: 'US', state: 'New Mexico', stateCode: 'NM', lat: 35.69, lng: -105.94, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '90K', metroPopulation: '150K', phoneCode: '+1 505', language: 'English, Spanish',
+      climate: 'Semi-arid with mild summers (18-28°C) and cold winters (-8 to 8°C). High altitude (7,000 ft). Over 300 sunny days.',
+      attractions: ['Santa Fe Plaza', 'Palace of the Governors', 'Georgia O\'Keeffe Museum', 'Canyon Road galleries', 'Loretto Chapel', 'Museum Hill', 'San Miguel Chapel', 'Santa Fe Opera', 'Meow Wolf', 'Bandelier National Monument nearby'],
+      demographics: 'Oldest US state capital (founded 1610). Tri-cultural heritage: Native American, Hispanic, Anglo. World-renowned art scene.',
+      airports: [{ code: 'SAF', name: 'Santa Fe Regional', distance: '15km' }, { code: 'ABQ', name: 'Albuquerque International Sunport', distance: '100km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Oldest US capital, adobe architecture, art galleries, Georgia O\'Keeffe, Santa Fe Opera, green chile',
+      seoContent: {
+        intro: 'Santa Fe, capital of New Mexico and America\'s oldest state capital (founded 1610), operates on Mountain Standard Time (MST/UTC-7) in winter and Mountain Daylight Time (MDT/UTC-6) in summer. At 7,000 feet elevation, this city blends Native American, Spanish, and Anglo cultures with world-class art.',
+        timezoneFacts: 'Santa Fe is in the Mountain timezone, 1 hour behind Texas but 2 hours ahead of California. Same as Denver and Phoenix (though AZ doesn\'t observe DST).',
+        bestTimeToVisit: 'Fall (September-October) brings Santa Fe Fiesta and Indian Market. Summer offers opera season. Winter has ski access. Spring is quiet and beautiful.',
+        businessHours: 'Adobe-style pace. Many galleries open 10 AM to 5 PM. Restaurants often close early by big-city standards. Summer opera performances begin at dusk.',
+        timeDifference: 'UTC-7 (winter) / UTC-6 (summer). Noon in Santa Fe = 1 PM Chicago, 2 PM NYC, 7 PM London.',
+        daylightSaving: 'New Mexico observes DST, unlike neighboring Arizona.',
+        localTips: 'Drink lots of water - altitude affects visitors. Canyon Road has 100+ galleries. Green chile goes on everything. Book opera tickets early.',
+        transportation: 'Albuquerque airport (1 hour) has more flights. Santa Fe Regional has limited service. Rail Runner train connects to Albuquerque. Car essential.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Santa Fe Fiesta (September - oldest community celebration in US). Indian Market (August).'
+      }
+    }
+  },
+  { slug: 'juneau', city: 'Juneau', timezone: 'America/Juneau', country: 'United States', countryCode: 'US', state: 'Alaska', stateCode: 'AK', lat: 58.30, lng: -134.42, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '32K', phoneCode: '+1 907', language: 'English',
+      climate: 'Oceanic with cool summers (10-18°C) and mild winters (-5 to 3°C). Very rainy (60+ inches annually). Limited daylight in winter.',
+      attractions: ['Mendenhall Glacier', 'Alaska State Capitol', 'Tracy Arm Fjord', 'Juneau Icefield', 'Mount Roberts Tramway', 'Glacier Gardens', 'Shrine of St. Thérèse', 'Tongass National Forest', 'Whale watching', 'Downtown Juneau'],
+      demographics: 'Alaska capital. Only US capital not accessible by road. Government, tourism, and fishing economy. Tlingit heritage.',
+      airports: [{ code: 'JNU', name: 'Juneau International Airport', distance: '15km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Only roadless US capital, Mendenhall Glacier, Alaska State Capitol, cruise port, whale watching',
+      seoContent: {
+        intro: 'Juneau, capital of Alaska, operates on Alaska Standard Time (AKST/UTC-9) in winter and Alaska Daylight Time (AKDT/UTC-8) in summer. Unique among US capitals, Juneau is not accessible by road - only by air or sea. Nestled between mountains and the sea with the massive Juneau Icefield nearby.',
+        timezoneFacts: 'Alaska Time is 4 hours behind Eastern Time. In summer, Juneau has nearly 19 hours of daylight; in winter, only about 6 hours.',
+        bestTimeToVisit: 'May-September for mild weather, wildlife, and glacier access. Cruise season peaks June-August. Winter is dark but offers northern lights potential.',
+        businessHours: 'Government 8 AM to 4:30 PM. Tourism-focused businesses align with cruise ship schedules.',
+        timeDifference: 'UTC-9 (winter) / UTC-8 (summer). Noon in Juneau = 4 PM NYC, 9 PM London.',
+        daylightSaving: 'Alaska observes DST. Summer daylight is extreme (nearly 19 hours in June).',
+        localTips: 'Layer clothing - weather changes quickly. Mendenhall Glacier is spectacular. Book whale watching tours. Expect rain any day.',
+        transportation: 'No roads in or out. Fly or take Alaska Marine Highway ferry. Rental cars useful in town but can\'t leave Juneau.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Alaska Day (October 18). Celebration (Tlingit gathering, even years).'
+      }
+    }
+  },
+  { slug: 'olympia', city: 'Olympia', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'Washington', stateCode: 'WA', lat: 47.04, lng: -122.90, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '55K', metroPopulation: '290K', phoneCode: '+1 360', language: 'English',
+      climate: 'Oceanic with mild temperatures year-round (5-22°C). Rainy, especially October-May. Little snow.',
+      attractions: ['Washington State Capitol', 'Olympia Farmers Market', 'Hands On Children\'s Museum', 'Olympic National Park nearby', 'Percival Landing', 'Priest Point Park', 'Evergreen State College', 'Wolf Haven International', 'Tumwater Falls', 'Puget Sound'],
+      demographics: 'Washington state capital. Progressive college town (Evergreen State). Government, education, and brewing center.',
+      airports: [{ code: 'SEA', name: 'Seattle-Tacoma International', distance: '95km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Washington State Capitol, Evergreen State College, farmers market, gateway to Olympic Peninsula',
+      seoContent: {
+        intro: 'Olympia, capital of Washington state, operates on Pacific Standard Time (PST/UTC-8) in winter and Pacific Daylight Time (PDT/UTC-7) in summer. This eco-friendly capital at the southern tip of Puget Sound is known for progressive politics and natural beauty.',
+        timezoneFacts: 'Olympia shares Pacific Time with Seattle (60 miles north) and Portland (100 miles south).',
+        bestTimeToVisit: 'Summer (June-September) offers best weather and outdoor activities. Fall brings beautiful colors. Winter is mild but wet.',
+        businessHours: 'Government 8 AM to 5 PM. Local businesses often eco-focused and independent.',
+        timeDifference: 'UTC-8 (winter) / UTC-7 (summer). Noon in Olympia = 3 PM NYC, 8 PM London.',
+        daylightSaving: 'Washington observes DST.',
+        localTips: 'The farmers market is one of the state\'s best. Olympic National Park is a day trip. Capitol building tours are excellent.',
+        transportation: 'Sea-Tac Airport is 1 hour north. Amtrak serves downtown. I-5 corridor access. Limited local transit.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Lakefair (July). Capital City Pride (June).'
+      }
+    }
+  },
+  { slug: 'carson-city', city: 'Carson City', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'Nevada', stateCode: 'NV', lat: 39.16, lng: -119.77, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '58K', phoneCode: '+1 775', language: 'English',
+      climate: 'Semi-arid with warm summers (16-32°C) and cold winters (-6 to 8°C). Low humidity. 265 sunny days.',
+      attractions: ['Nevada State Capitol', 'Nevada State Railroad Museum', 'Nevada State Museum', 'Carson Hot Springs', 'Lake Tahoe nearby', 'Virginia City', 'V&T Railway', 'Mills Park', 'Stewart Indian School', 'Capitol building'],
+      demographics: 'Nevada capital. Historic silver mining heritage. Near Lake Tahoe. Independent city.',
+      airports: [{ code: 'RNO', name: 'Reno-Tahoe International', distance: '45km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Nevada State Capitol, Lake Tahoe access, silver heritage, V&T Railway, casinos',
+      seoContent: {
+        intro: 'Carson City, capital of Nevada, operates on Pacific Standard Time (PST/UTC-8) in winter and PDT (UTC-7) in summer. This historic city, named after Kit Carson, sits at the base of the Sierra Nevada with Lake Tahoe just 30 minutes away.',
+        timezoneFacts: 'Carson City uses Pacific Time, same as Reno and Lake Tahoe. Las Vegas is also Pacific but 400+ miles south.',
+        bestTimeToVisit: 'Year-round destination. Summer for outdoor activities, winter for Tahoe skiing. Fall has pleasant weather and fewer crowds.',
+        businessHours: 'Government 8 AM to 5 PM. Some gaming establishments open 24/7.',
+        timeDifference: 'UTC-8 (winter) / UTC-7 (summer). Noon in Carson City = 3 PM NYC.',
+        daylightSaving: 'Nevada observes DST.',
+        localTips: 'Lake Tahoe is 30 minutes. Virginia City silver mining town is a must-see. No state income tax.',
+        transportation: 'Reno-Tahoe Airport is 30-45 minutes. Car essential. Historic V&T Railway for scenic rides.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Nevada Day (last Friday in October).'
+      }
+    }
+  },
+  { slug: 'key-west', city: 'Key West', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 24.56, lng: -81.78, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '25K', phoneCode: '+1 305', language: 'English, Spanish',
+      climate: 'Tropical with warm year-round temperatures (21-32°C). Hurricane season June-November. Trade winds moderate heat.',
+      attractions: ['Mallory Square sunset', 'Ernest Hemingway Home', 'Southernmost Point', 'Duval Street', 'Fort Zachary Taylor', 'Key West Butterfly Conservatory', 'Harry S. Truman Little White House', 'Key West Aquarium', 'Dry Tortugas day trip', 'Snorkeling and diving'],
+      demographics: 'Southernmost point in continental US. Caribbean influence. LGBTQ-friendly destination. Conch Republic spirit.',
+      airports: [{ code: 'EYW', name: 'Key West International', distance: '5km' }, { code: 'MIA', name: 'Miami International', distance: '260km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Southernmost Point, Hemingway Home, Mallory Square sunset, Duval Street, Conch Republic',
+      seoContent: {
+        intro: 'Key West, the southernmost city in the continental United States, operates on Eastern Standard Time (EST/UTC-5) in winter and EDT (UTC-4) in summer. This Caribbean-flavored island at the end of the Overseas Highway is known for sunsets, Hemingway, and the laid-back Conch Republic lifestyle.',
+        timezoneFacts: 'Despite being closer to Havana than Miami, Key West shares Eastern Time with the rest of Florida.',
+        bestTimeToVisit: 'December-May for best weather and festival season. Summer is hot and humid with hurricane risk. Fantasy Fest (October) is legendary.',
+        businessHours: 'Island time rules. Many bars never close. Restaurants typically 11 AM to 10 PM. Sunset celebration at Mallory Square is a must.',
+        timeDifference: 'UTC-5 (winter) / UTC-4 (summer). Same as Miami and NYC.',
+        daylightSaving: 'Florida observes DST.',
+        localTips: 'Watch sunset at Mallory Square. Rent a scooter. Visit Hemingway\'s six-toed cats. Stay hydrated. The drive from Miami is beautiful but long.',
+        transportation: 'Key West Airport has limited flights. Most drive the Overseas Highway from Miami (4 hours). Bikes and scooters popular locally.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Fantasy Fest (late October). Hemingway Days (July). Conch Republic Independence (April).'
+      }
+    }
+  },
+  { slug: 'palm-springs', city: 'Palm Springs', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 33.83, lng: -116.55, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '48K', metroPopulation: '480K', phoneCode: '+1 760', language: 'English, Spanish',
+      climate: 'Hot desert with extreme summer heat (28-43°C) and mild winters (10-22°C). Over 350 sunny days. Almost no rain.',
+      attractions: ['Palm Springs Aerial Tramway', 'Joshua Tree National Park nearby', 'Palm Canyon Drive', 'Palm Springs Art Museum', 'Indian Canyons', 'Sunnylands', 'Palm Springs Air Museum', 'Mid-century modern architecture', 'Hot springs and spas', 'Coachella Valley'],
+      demographics: 'Desert resort city. LGBTQ-friendly. Mid-century modern architecture mecca. Snowbird destination. Golf capital.',
+      airports: [{ code: 'PSP', name: 'Palm Springs International', distance: '5km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Mid-century modern architecture, desert resort, Coachella nearby, aerial tramway, LGBTQ destination',
+      seoContent: {
+        intro: 'Palm Springs, California\'s iconic desert resort, operates on Pacific Standard Time (PST/UTC-8) in winter and PDT (UTC-7) in summer. This glamorous oasis, beloved by Old Hollywood stars, is now famous for mid-century modern architecture, world-class spas, and proximity to Coachella.',
+        timezoneFacts: 'Palm Springs shares Pacific Time with Los Angeles (100 miles west). Joshua Tree is in the same timezone.',
+        bestTimeToVisit: 'October-April for ideal weather (20-28°C). Summer is extremely hot (40°C+) but offers deals. Modernism Week (February) is huge.',
+        businessHours: 'Resort-style hours. Many hotels have 24-hour spas. Pool season is year-round. Restaurants often close earlier in summer.',
+        timeDifference: 'UTC-8 (winter) / UTC-7 (summer). Noon in Palm Springs = 3 PM NYC.',
+        daylightSaving: 'California observes DST.',
+        localTips: 'Don\'t visit in summer unless you love 110°F heat. Aerial Tramway is 30° cooler at top. Book Modernism Week architecture tours early. Windmills on the drive from LA are iconic.',
+        transportation: 'Palm Springs Airport has major airline service. LA is 2 hours by car. SunLine buses serve valley.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Modernism Week (February). Coachella Festival (April, Indio). Palm Springs International Film Festival (January).'
+      }
+    }
+  },
+  { slug: 'napa', city: 'Napa', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 38.30, lng: -122.29, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '80K', metroPopulation: '140K', phoneCode: '+1 707', language: 'English, Spanish',
+      climate: 'Mediterranean with warm, dry summers (15-30°C) and cool, wet winters (5-15°C). Ideal for wine grapes.',
+      attractions: ['Napa Valley wineries', 'Oxbow Public Market', 'Napa Valley Wine Train', 'Culinary Institute of America at Copia', 'Yountville restaurants', 'Hot air balloon rides', 'Castello di Amorosa', 'Robert Mondavi Winery', 'St. Helena', 'Silverado Trail'],
+      demographics: 'World-renowned wine region. Culinary destination. Over 400 wineries in Napa Valley. Upscale tourism economy.',
+      airports: [{ code: 'SFO', name: 'San Francisco International', distance: '80km' }, { code: 'OAK', name: 'Oakland International', distance: '70km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Napa Valley wine, Michelin-star restaurants, Wine Train, hot air balloons, wine country lifestyle',
+      seoContent: {
+        intro: 'Napa, gateway to world-famous Napa Valley wine country, operates on Pacific Standard Time (PST/UTC-8) in winter and PDT (UTC-7) in summer. This Northern California destination offers over 400 wineries, Michelin-starred restaurants, and stunning vineyard landscapes.',
+        timezoneFacts: 'Napa shares Pacific Time with San Francisco (1 hour south) and Sonoma County (neighboring wine region).',
+        bestTimeToVisit: 'Harvest season (August-October) is magical but crowded. Spring brings mustard blooms. Winter is quiet with fewer crowds and lower prices.',
+        businessHours: 'Wineries typically 10 AM to 5 PM, often requiring reservations. Fine dining often requires reservations weeks ahead. Oxbow Market has varied hours.',
+        timeDifference: 'UTC-8 (winter) / UTC-7 (summer). Noon in Napa = 8 PM London.',
+        daylightSaving: 'California observes DST.',
+        localTips: 'Book winery reservations in advance. Don\'t plan more than 3-4 wineries per day. Designate a driver or hire a tour. Yountville has the best restaurants.',
+        transportation: 'No commercial airport; use SFO or Oakland. VINE buses serve valley. Car essential for winery hopping. Wine Train is scenic alternative.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Napa Valley Film Festival (November). Auction Napa Valley (June). BottleRock music festival (May).'
+      }
+    }
+  },
+  { slug: 'monterey', city: 'Monterey', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 36.60, lng: -121.89, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '30K', metroPopulation: '440K', phoneCode: '+1 831', language: 'English, Spanish',
+      climate: 'Mediterranean with mild temperatures year-round (10-20°C). Frequent fog. Cool summers.',
+      attractions: ['Monterey Bay Aquarium', 'Cannery Row', '17-Mile Drive', 'Fisherman\'s Wharf', 'Carmel-by-the-Sea', 'Big Sur nearby', 'Pebble Beach Golf Links', 'Point Lobos', 'Monterey Jazz Festival', 'Whale watching'],
+      demographics: 'Historic California capital. John Steinbeck\'s Cannery Row. Marine sanctuary. Golf destination.',
+      airports: [{ code: 'MRY', name: 'Monterey Regional', distance: '5km' }, { code: 'SJC', name: 'San Jose International', distance: '100km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Monterey Bay Aquarium, Cannery Row, 17-Mile Drive, Pebble Beach, Big Sur access',
+      seoContent: {
+        intro: 'Monterey, on California\'s stunning Central Coast, operates on Pacific Standard Time (PST/UTC-8) in winter and PDT (UTC-7) in summer. Home to the world-famous Monterey Bay Aquarium and gateway to Big Sur, this historic city offers incredible marine life and Steinbeck literary heritage.',
+        timezoneFacts: 'Monterey shares Pacific Time with San Francisco (2 hours north) and Los Angeles (5.5 hours south).',
+        bestTimeToVisit: 'Year-round destination thanks to mild climate. September brings the Jazz Festival. Whale watching best November-April (gray whales) and April-November (humpbacks).',
+        businessHours: 'Aquarium 10 AM to 5 PM. Cannery Row tourist-focused hours. Carmel shops close early.',
+        timeDifference: 'UTC-8 (winter) / UTC-7 (summer). Noon in Monterey = 3 PM NYC.',
+        daylightSaving: 'California observes DST.',
+        localTips: 'Aquarium tickets sell out - book online. 17-Mile Drive costs $12 but worth it. Dress in layers, it\'s cooler than you expect. Big Sur is a day trip.',
+        transportation: 'Monterey Airport has limited service. San Jose Airport is 1.5 hours. MST buses serve county. Car essential for coastal exploration.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Monterey Jazz Festival (September - longest running jazz festival). Pebble Beach pro-am (February).'
+      }
+    }
+  },
+  { slug: 'sedona', city: 'Sedona', timezone: 'America/Phoenix', country: 'United States', countryCode: 'US', state: 'Arizona', stateCode: 'AZ', lat: 34.87, lng: -111.76, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '10K', metroPopulation: '47K', phoneCode: '+1 928', language: 'English',
+      climate: 'Semi-arid with mild temperatures (2-35°C depending on season). 300+ sunny days. Higher elevation than Phoenix means cooler temps.',
+      attractions: ['Red Rock State Park', 'Cathedral Rock', 'Bell Rock', 'Slide Rock State Park', 'Chapel of the Holy Cross', 'Tlaquepaque Arts Village', 'Vortex sites', 'Oak Creek Canyon', 'Airport Mesa', 'Hiking trails'],
+      demographics: 'Red rock country spiritual destination. New Age vortex center. Art galleries. Outdoor recreation hub.',
+      airports: [{ code: 'FLG', name: 'Flagstaff Pulliam', distance: '45km' }, { code: 'PHX', name: 'Phoenix Sky Harbor', distance: '185km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Red rocks, spiritual vortexes, hiking, New Age destination, stunning sunsets',
+      seoContent: {
+        intro: 'Sedona, Arizona\'s stunning red rock country, operates on Mountain Standard Time (MST/UTC-7) year-round - Arizona does not observe Daylight Saving Time. This spiritual and artistic destination is famous for dramatic red rock formations, energy vortexes, and world-class hiking.',
+        timezoneFacts: 'Arizona does not observe DST (except Navajo Nation). Sedona is always UTC-7. Same as Denver in winter, same as LA in summer.',
+        bestTimeToVisit: 'March-May and September-November offer ideal weather. Summer afternoons bring monsoon storms. Winter is mild but cool.',
+        businessHours: 'Tourist-oriented. Galleries and shops 10 AM to 6 PM. Restaurants close earlier than big cities. Jeep tours operate sunrise to sunset.',
+        timeDifference: 'UTC-7 year-round. Noon in Sedona = 2 PM Chicago, 3 PM NYC.',
+        daylightSaving: 'Arizona does NOT observe DST. Stay on MST year-round.',
+        localTips: 'Sunset at Airport Mesa is spectacular. Cathedral Rock requires a challenging hike. Vortex tours available. Book Jeep tours in advance.',
+        transportation: 'Phoenix Airport is 2 hours; most visitors drive. Flagstaff Airport (45 min) has limited service. Car essential.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Sedona Arts Festival (October). Film Festival (February).'
+      }
+    }
+  },
+  { slug: 'aspen', city: 'Aspen', timezone: 'America/Denver', country: 'United States', countryCode: 'US', state: 'Colorado', stateCode: 'CO', lat: 39.19, lng: -106.82, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '7K', phoneCode: '+1 970', language: 'English',
+      climate: 'Alpine with cold winters (-15 to 0°C) and mild summers (8-25°C). Heavy snowfall. High altitude (8,000 ft).',
+      attractions: ['Aspen Mountain', 'Maroon Bells', 'Aspen Music Festival', 'Wheeler Opera House', 'Aspen Art Museum', 'Independence Pass', 'Snowmass', 'Ajax Mountain', 'Downtown Aspen', 'Ashcroft ghost town'],
+      demographics: 'World-famous ski resort. Celebrity haven. Cultural festivals. Ultra-wealthy playground. Historic mining town.',
+      airports: [{ code: 'ASE', name: 'Aspen/Pitkin County Airport', distance: '5km' }, { code: 'DEN', name: 'Denver International', distance: '350km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Skiing, celebrities, Maroon Bells, Aspen Music Festival, extreme wealth, outdoor lifestyle',
+      seoContent: {
+        intro: 'Aspen, Colorado\'s legendary ski resort and celebrity enclave, operates on Mountain Standard Time (MST/UTC-7) in winter and Mountain Daylight Time (MDT/UTC-6) in summer. This former silver mining town now offers world-class skiing, summer festivals, and some of America\'s most stunning mountain scenery.',
+        timezoneFacts: 'Aspen shares Mountain Time with Denver (3.5 hours drive). Ski conditions are legendary November-April.',
+        bestTimeToVisit: 'Winter (December-March) for skiing. Summer for hiking, music, and food festivals. Fall aspen colors are spectacular. Spring is mud season.',
+        businessHours: 'Ski lifts typically 9 AM to 4 PM. High-end restaurants require reservations. Many businesses are seasonal.',
+        timeDifference: 'UTC-7 (winter) / UTC-6 (summer). Noon in Aspen = 2 PM NYC.',
+        daylightSaving: 'Colorado observes DST.',
+        localTips: 'Altitude sickness is real - acclimate. Maroon Bells requires shuttle in summer. Everything is expensive. Book lodging months ahead for ski season.',
+        transportation: 'Aspen Airport has mountain approaches (weather delays common). Denver is 4 hours. Free in-town shuttle. Car helpful but parking is challenging.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Aspen Music Festival (July-August). Food & Wine Classic (June). X Games (January).'
+      }
+    }
+  },
+  { slug: 'park-city', city: 'Park City', timezone: 'America/Denver', country: 'United States', countryCode: 'US', state: 'Utah', stateCode: 'UT', lat: 40.65, lng: -111.51, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '8K', metroPopulation: '23K', phoneCode: '+1 435', language: 'English',
+      climate: 'Alpine with cold winters (-12 to 2°C) and mild summers (10-28°C). "Greatest Snow on Earth" - 350+ inches annually.',
+      attractions: ['Park City Mountain Resort', 'Deer Valley Resort', 'Sundance Film Festival', 'Historic Main Street', 'Utah Olympic Park', 'Park City Museum', 'Alpine Coaster', 'Hiking and biking trails', 'McPolin Farm', 'Outlet shopping'],
+      demographics: 'Former silver mining town. 2002 Winter Olympics venue. Home of Sundance Film Festival. Ski resort community.',
+      airports: [{ code: 'SLC', name: 'Salt Lake City International', distance: '50km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Sundance Film Festival, Olympic skiing, "Greatest Snow on Earth," historic Main Street',
+      seoContent: {
+        intro: 'Park City, Utah\'s premier mountain resort, operates on Mountain Standard Time (MST/UTC-7) in winter and MDT (UTC-6) in summer. Home to the Sundance Film Festival and 2002 Winter Olympics, this historic silver mining town offers world-class skiing and year-round mountain activities.',
+        timezoneFacts: 'Park City shares Mountain Time with Salt Lake City (35 minutes away). Ski resorts receive 300-500 inches of snow annually.',
+        bestTimeToVisit: 'December-March for skiing. January for Sundance. Summer for hiking and mountain biking. Fall has beautiful colors.',
+        businessHours: 'Ski lifts 9 AM to 4 PM. Main Street shops 10 AM to 9 PM. Sundance screenings run all day during festival.',
+        timeDifference: 'UTC-7 (winter) / UTC-6 (summer). Noon in Park City = 2 PM NYC.',
+        daylightSaving: 'Utah observes DST.',
+        localTips: 'Sundance tickets sell out immediately. Salt Lake airport is very close. Deer Valley is ski-only (no snowboards). Main Street is walkable.',
+        transportation: 'Salt Lake City Airport is 35-45 minutes. Free in-town transit. Canyon bus connects to SLC.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Sundance Film Festival (January). Miners Day (September).'
+      }
+    }
+  },
+  { slug: 'myrtle-beach', city: 'Myrtle Beach', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'South Carolina', stateCode: 'SC', lat: 33.69, lng: -78.89, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '35K', metroPopulation: '480K', phoneCode: '+1 843', language: 'English',
+      climate: 'Humid subtropical with hot summers (24-32°C) and mild winters (5-15°C). Hurricane season June-November.',
+      attractions: ['Myrtle Beach Boardwalk', 'Broadway at the Beach', 'SkyWheel', 'Ripley\'s Aquarium', 'Barefoot Landing', 'Golf courses (100+)', 'Brookgreen Gardens', 'Family Kingdom', 'Carolina Opry', 'State parks'],
+      demographics: 'Grand Strand beach resort. Golf capital (100+ courses). Family vacation destination. Spring break spot.',
+      airports: [{ code: 'MYR', name: 'Myrtle Beach International', distance: '5km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Beach resort, 100+ golf courses, family vacations, boardwalk, SkyWheel',
+      seoContent: {
+        intro: 'Myrtle Beach, South Carolina\'s Grand Strand resort, operates on Eastern Standard Time (EST/UTC-5) in winter and EDT (UTC-4) in summer. This 60-mile stretch of beaches offers family entertainment, over 100 golf courses, and classic American beach vacation vibes.',
+        timezoneFacts: 'Myrtle Beach shares Eastern Time with Charleston (95 miles south) and Charlotte (170 miles west).',
+        bestTimeToVisit: 'May-September for beach weather. Spring and fall offer mild temps and lower prices. Winter is quiet but mild.',
+        businessHours: 'Beach town hours - many attractions open late. Mini-golf courses often open until midnight. Restaurants serve late.',
+        timeDifference: 'UTC-5 (winter) / UTC-4 (summer). Same as NYC and Miami.',
+        daylightSaving: 'South Carolina observes DST.',
+        localTips: 'Book beach hotels early for summer. Over 100 golf courses offer variety. Calabash seafood style is regional specialty. Avoid spring break weeks if seeking quiet.',
+        transportation: 'Myrtle Beach International has good service. Car essential for exploring Grand Strand. The Beach Ride trolley serves oceanfront.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Bike Week (May, October). Sun Fun Festival (June).'
+      }
+    }
+  },
+  { slug: 'sarasota', city: 'Sarasota', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 27.34, lng: -82.53, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '58K', metroPopulation: '840K', phoneCode: '+1 941', language: 'English',
+      climate: 'Humid subtropical with hot summers (25-33°C) and warm winters (12-23°C). Rainy season June-September.',
+      attractions: ['Ringling Museum', 'Siesta Key Beach', 'St. Armands Circle', 'Mote Marine Aquarium', 'Marie Selby Botanical Gardens', 'Sarasota Opera House', 'Ca d\'Zan mansion', 'Lido Key', 'Myakka River State Park', 'Burns Court'],
+      demographics: 'Arts and culture capital of Florida. Ringling circus heritage. Beach destination. Retiree haven.',
+      airports: [{ code: 'SRQ', name: 'Sarasota-Bradenton International', distance: '8km' }, { code: 'TPA', name: 'Tampa International', distance: '80km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Ringling Museum, Siesta Key Beach (ranked #1), arts scene, circus heritage',
+      seoContent: {
+        intro: 'Sarasota, Florida\'s cultural coast, operates on Eastern Standard Time (EST/UTC-5) in winter and EDT (UTC-4) in summer. Known for the Ringling Museum, Siesta Key\'s #1-ranked beach, and a vibrant arts scene, Sarasota offers sophistication alongside Gulf Coast beauty.',
+        timezoneFacts: 'Sarasota shares Eastern Time with Tampa (1 hour north) and Miami.',
+        bestTimeToVisit: 'November-April for ideal weather and cultural season. Summer is hot but offers deals. Siesta Key is beautiful year-round.',
+        businessHours: 'Arts venues have evening performances. Beach businesses open early. St. Armands Circle shops until 9 PM.',
+        timeDifference: 'UTC-5 (winter) / UTC-4 (summer). Same as NYC.',
+        daylightSaving: 'Florida observes DST.',
+        localTips: 'Siesta Key has the world\'s finest quartz sand - it stays cool. Ringling Museum is massive - allow a full day. Book sunset dinners on St. Armands.',
+        transportation: 'SRQ airport has growing service. Tampa Airport 1 hour. SCAT buses serve county. Car recommended.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Sarasota Film Festival (April). Ringling events year-round.'
+      }
+    }
+  },
+  { slug: 'naples-fl', city: 'Naples', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 26.14, lng: -81.79, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '22K', metroPopulation: '395K', phoneCode: '+1 239', language: 'English',
+      climate: 'Tropical savanna with hot summers (25-33°C) and warm winters (14-24°C). Rainy season June-September.',
+      attractions: ['Naples Pier', 'Fifth Avenue South', 'Naples Botanical Garden', 'Artis-Naples', 'Naples Zoo', 'Clam Pass Beach', 'Third Street South', 'Everglades nearby', 'Delnor-Wiggins State Park', 'Tin City'],
+      demographics: 'One of America\'s wealthiest cities. Upscale beach resort. Golf destination. Gateway to Everglades. Retiree paradise.',
+      airports: [{ code: 'RSW', name: 'Southwest Florida International', distance: '45km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Upscale beach resort, Fifth Avenue shopping, Naples Pier, golf, wealthy retirees',
+      seoContent: {
+        intro: 'Naples, one of America\'s wealthiest coastal cities, operates on Eastern Standard Time (EST/UTC-5) in winter and EDT (UTC-4) in summer. This sophisticated Gulf Coast destination offers pristine beaches, world-class golf, upscale shopping, and gateway access to the Everglades.',
+        timezoneFacts: 'Naples shares Eastern Time with Miami (125 miles east across the Everglades).',
+        bestTimeToVisit: 'December-April for perfect weather and snowbird season. Summer is hot with afternoon storms but fewer crowds.',
+        businessHours: 'Upscale shops 10 AM to 6 PM. Fifth Avenue restaurants serve late. Golf courses open at dawn.',
+        timeDifference: 'UTC-5 (winter) / UTC-4 (summer). Same as Miami.',
+        daylightSaving: 'Florida observes DST.',
+        localTips: 'Watch sunset from Naples Pier. Everglades tours leave from nearby. Fifth Avenue rivals Worth Avenue. Many restaurants require reservations in season.',
+        transportation: 'Southwest Florida International (RSW) is 45 minutes. Car essential. Limited transit.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Naples Winter Wine Festival (January - raises millions for charity).'
+      }
+    }
+  },
+  { slug: 'fort-myers', city: 'Fort Myers', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 26.64, lng: -81.87, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '92K', metroPopulation: '790K', phoneCode: '+1 239', language: 'English, Spanish',
+      climate: 'Tropical savanna with hot summers (25-33°C) and warm winters (13-25°C). Hurricane season June-November.',
+      attractions: ['Edison & Ford Winter Estates', 'Fort Myers Beach', 'Sanibel Island', 'Captiva Island', 'Manatee Park', 'IMAG History & Science Center', 'Six Mile Cypress Slough', 'Downtown River District', 'Shell Factory', 'Minnesota Twins spring training'],
+      demographics: 'Gateway to island beaches. Edison and Ford winter homes. Spring training baseball. Growing metro area.',
+      airports: [{ code: 'RSW', name: 'Southwest Florida International', distance: '20km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Edison & Ford Estates, Sanibel Island shelling, beaches, spring training baseball',
+      seoContent: {
+        intro: 'Fort Myers, Florida\'s City of Palms, operates on Eastern Standard Time (EST/UTC-5) in winter and EDT (UTC-4) in summer. Gateway to Sanibel and Captiva Islands, Fort Myers is famous for the winter estates of Thomas Edison and Henry Ford, stunning beaches, and spring training baseball.',
+        timezoneFacts: 'Fort Myers shares Eastern Time with Tampa (2 hours north) and Miami (2.5 hours east).',
+        bestTimeToVisit: 'December-April for ideal weather. Spring training (February-March) brings baseball fans. Summer is hot and stormy but less crowded.',
+        businessHours: 'Beach and tourist-focused hours. Downtown River District comes alive evenings. Spring training games typically 1 PM.',
+        timeDifference: 'UTC-5 (winter) / UTC-4 (summer). Same as NYC.',
+        daylightSaving: 'Florida observes DST.',
+        localTips: 'Sanibel shelling is best at low tide, early morning. Edison Estate Christmas lights are spectacular. Manatees visit in winter.',
+        transportation: 'RSW airport serves the region well. Car essential for island hopping. LeeTran buses available.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Edison Festival of Light (February). Spring training (February-March).'
+      }
+    }
+  },
+  { slug: 'atlantic-city', city: 'Atlantic City', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'New Jersey', stateCode: 'NJ', lat: 39.36, lng: -74.42, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '38K', metroPopulation: '265K', phoneCode: '+1 609', language: 'English',
+      climate: 'Humid subtropical with warm summers (20-28°C) and cool winters (-2 to 7°C). Ocean moderates temperatures.',
+      attractions: ['Atlantic City Boardwalk', 'Steel Pier', 'Casinos', 'Absecon Lighthouse', 'Atlantic City Aquarium', 'Ripley\'s Believe It or Not', 'Miss America Pageant history', 'Ocean Casino Resort', 'Borgata', 'Lucy the Elephant nearby'],
+      demographics: 'East Coast gambling destination. Historic boardwalk resort. Miss America birthplace. Monopoly street names.',
+      airports: [{ code: 'ACY', name: 'Atlantic City International', distance: '15km' }, { code: 'PHL', name: 'Philadelphia International', distance: '100km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Casinos, Boardwalk, Miss America, Monopoly street names, beach resort',
+      seoContent: {
+        intro: 'Atlantic City, New Jersey\'s gaming and beach resort, operates on Eastern Standard Time (EST/UTC-5) in winter and EDT (UTC-4) in summer. Famous for its casinos, historic Boardwalk (the original), and as inspiration for Monopoly\'s street names, AC offers 24/7 entertainment.',
+        timezoneFacts: 'Atlantic City shares Eastern Time with NYC (2 hours north) and Philadelphia (1 hour west).',
+        bestTimeToVisit: 'Summer for beach and Boardwalk. Year-round for casinos. September-October offers pleasant weather. Winter has deals.',
+        businessHours: 'Casinos never close. Boardwalk businesses seasonal. Restaurants serve late.',
+        timeDifference: 'UTC-5 (winter) / UTC-4 (summer). Same as NYC and Philadelphia.',
+        daylightSaving: 'New Jersey observes DST.',
+        localTips: 'Boardwalk rolling chairs are an AC tradition. Gambling age is 21. Steel Pier rides open seasonally. Miss America started here.',
+        transportation: 'Atlantic City Airport has limited service. NJ Transit rail from Philadelphia. AC Expressway from Philly. Jitney buses serve town.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Various casino events year-round. Air Show (August).'
+      }
+    }
+  },
+  { slug: 'gatlinburg', city: 'Gatlinburg', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Tennessee', stateCode: 'TN', lat: 35.71, lng: -83.51, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '4K', metroPopulation: '98K', phoneCode: '+1 865', language: 'English',
+      climate: 'Humid subtropical with warm summers (18-28°C) and cool winters (-3 to 10°C). Higher elevations cooler. Fall colors spectacular.',
+      attractions: ['Great Smoky Mountains National Park', 'Gatlinburg Space Needle', 'Ober Gatlinburg', 'Ripley\'s Aquarium of the Smokies', 'Dollywood nearby', 'Roaring Fork Motor Trail', 'Cades Cove', 'Arts & Crafts Community', 'Moonshine distilleries', 'Pancake houses'],
+      demographics: 'Gateway to Great Smoky Mountains. Tourist town with Appalachian heritage. Honeymoon destination. Arts and crafts tradition.',
+      airports: [{ code: 'TYS', name: 'McGhee Tyson Airport', distance: '65km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Great Smoky Mountains gateway, Dollywood nearby, pancake houses, mountain crafts, moonshine',
+      seoContent: {
+        intro: 'Gatlinburg, Tennessee\'s gateway to the Great Smoky Mountains, operates on Eastern Standard Time (EST/UTC-5) in winter and EDT (UTC-4) in summer. This mountain resort town offers access to America\'s most-visited national park, along with Appalachian crafts, pancake houses, and moonshine distilleries.',
+        timezoneFacts: 'Gatlinburg is in Eastern Time, unusual for Tennessee (most of state is Central). The Smokies straddle the Tennessee/North Carolina border.',
+        bestTimeToVisit: 'October for spectacular fall foliage. Summer is busy but offers full park access. Winter brings Christmas lights. Spring has wildflowers.',
+        businessHours: 'Tourist town hours - many shops open late. National park open 24/7. Ski resort has winter hours.',
+        timeDifference: 'UTC-5 (winter) / UTC-4 (summer). Same as Asheville, NC across the mountains.',
+        daylightSaving: 'Tennessee (Eastern portion) observes DST.',
+        localTips: 'Visit Cades Cove early to avoid traffic. The Great Smoky Mountains National Park is FREE. Dollywood is 30 minutes. Parking can be challenging - use trolley.',
+        transportation: 'Knoxville Airport (TYS) is 1 hour. Car essential. Gatlinburg Trolley serves town and park.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Gatlinburg Winter Magic (November-February lights). Craftsmen\'s Fair (July, October).'
+      }
+    }
+  },
+  { slug: 'south-lake-tahoe', city: 'South Lake Tahoe', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 38.94, lng: -119.98, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '22K', phoneCode: '+1 530', language: 'English',
+      climate: 'Alpine with cold winters (-8 to 5°C) and mild summers (8-25°C). Heavy snowfall. Crystal-clear lake.',
+      attractions: ['Lake Tahoe', 'Heavenly Mountain Resort', 'Emerald Bay State Park', 'Stateline casinos', 'Vikingsholm Castle', 'Ski resorts', 'Beach access', 'Hiking trails', 'Gondola rides', 'Water activities'],
+      demographics: 'Lake Tahoe resort town. California/Nevada border. Ski and beach destination. Casino access across state line.',
+      airports: [{ code: 'RNO', name: 'Reno-Tahoe International', distance: '90km' }, { code: 'SMF', name: 'Sacramento International', distance: '160km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Lake Tahoe, skiing, Heavenly resort, casino border town, crystal-clear water',
+      seoContent: {
+        intro: 'South Lake Tahoe, California\'s premier mountain resort, operates on Pacific Standard Time (PST/UTC-8) in winter and PDT (UTC-7) in summer. Straddling the California-Nevada border, this year-round destination offers world-class skiing, stunning lake access, and casino entertainment.',
+        timezoneFacts: 'Lake Tahoe spans California and Nevada, both in Pacific Time. The state line runs through town, with casinos on the Nevada side.',
+        bestTimeToVisit: 'December-April for skiing. Summer for lake activities and beaches. Fall has fewer crowds. Year-round outdoor activities.',
+        businessHours: 'Ski resorts 9 AM to 4 PM. Nevada casinos 24/7. Beach and water activities seasonal.',
+        timeDifference: 'UTC-8 (winter) / UTC-7 (summer). Same as Sacramento and San Francisco.',
+        daylightSaving: 'California observes DST.',
+        localTips: 'Chains may be required in winter. Heavenly Gondola has amazing views. Nevada side has no sales tax. Emerald Bay is a must-see.',
+        transportation: 'Reno Airport is 1.5 hours. Sacramento 2.5 hours. Winter road conditions can close passes. South Tahoe Area Ground Express (STAGE) buses.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Various ski events. Lake Tahoe Summit (late summer).'
+      }
+    }
+  },
+  { slug: 'vail', city: 'Vail', timezone: 'America/Denver', country: 'United States', countryCode: 'US', state: 'Colorado', stateCode: 'CO', lat: 39.64, lng: -106.37, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '5K', metroPopulation: '55K', phoneCode: '+1 970', language: 'English',
+      climate: 'Alpine with cold winters (-15 to 0°C) and mild summers (7-23°C). Heavy snowfall (350+ inches at summit).',
+      attractions: ['Vail Mountain Resort', 'Vail Village', 'Lionshead Village', 'Betty Ford Alpine Gardens', 'Colorado Ski Museum', 'Back Bowls', 'Blue Sky Basin', 'Gore Creek', 'Gerald R. Ford Amphitheater', 'Golf courses'],
+      demographics: 'World-famous ski resort. European-style village. Wealthy second-home destination. Year-round mountain activities.',
+      airports: [{ code: 'EGE', name: 'Eagle County Regional', distance: '55km' }, { code: 'DEN', name: 'Denver International', distance: '160km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Vail ski resort, Back Bowls, European-style village, celebrity haven, mountain luxury',
+      seoContent: {
+        intro: 'Vail, Colorado\'s iconic ski destination, operates on Mountain Standard Time (MST/UTC-7) in winter and MDT (UTC-6) in summer. America\'s largest single-mountain ski resort, Vail offers legendary back bowls, a European-style village, and year-round mountain luxury.',
+        timezoneFacts: 'Vail shares Mountain Time with Denver (2 hours east). The resort receives 350+ inches of snow annually.',
+        bestTimeToVisit: 'December-April for skiing (Back Bowls open when snow permits). Summer for hiking, biking, and festivals. Fall has great colors.',
+        businessHours: 'Ski lifts 9 AM to 4 PM. Village shops until 9 PM. High-end dining requires reservations.',
+        timeDifference: 'UTC-7 (winter) / UTC-6 (summer). Noon in Vail = 2 PM NYC.',
+        daylightSaving: 'Colorado observes DST.',
+        localTips: 'Altitude is 8,150 feet - acclimate. Epic Pass offers good value. Free village shuttle. Back Bowls are intermediate-friendly despite reputation.',
+        transportation: 'Eagle County Airport (30 minutes) has ski-season flights. Denver Airport 2 hours via I-70. Free in-town shuttle.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Vail Film Festival (April). Bravo! Vail classical music (June-August). Snow Days (December).'
+      }
+    }
+  },
+  // USA - Additional State Capitals (Premium Format)
+  { slug: 'augusta-me', city: 'Augusta', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Maine', stateCode: 'ME', lat: 44.31, lng: -69.78, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '19K', metroPopulation: '120K', phoneCode: '+1 207', language: 'English',
+      climate: 'Humid continental with warm summers (15-27°C) and cold, snowy winters (-12 to 0°C).',
+      attractions: ['Maine State House', 'Old Fort Western', 'Maine State Museum', 'Capitol Park', 'Kennebec River', 'Blaine House', 'Viles Arboretum', 'Howard Hill', 'Pine Tree State Arboretum', 'Holocaust Museum'],
+      demographics: 'Maine capital since 1832. Located on Kennebec River. State government and healthcare center.',
+      airports: [{ code: 'AUG', name: 'Augusta State Airport', distance: '5km' }, { code: 'PWM', name: 'Portland International Jetport', distance: '95km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Maine State Capitol, Old Fort Western (oldest wooden fort), Kennebec River',
+      seoContent: {
+        intro: 'Augusta, capital of Maine, operates on Eastern Standard Time (EST/UTC-5) in winter and EDT (UTC-4) in summer. This historic city on the Kennebec River has been Maine\'s seat of government since 1832.',
+        timezoneFacts: 'Augusta shares Eastern Time with Portland (1 hour south) and Boston (3 hours south).',
+        bestTimeToVisit: 'Summer and fall are ideal. Fall foliage is spectacular. Winter is cold but offers ice fishing.',
+        businessHours: 'Government 8 AM to 5 PM. Traditional New England hours.',
+        timeDifference: 'UTC-5 (winter) / UTC-4 (summer). Same as NYC and Boston.',
+        daylightSaving: 'Maine observes DST.',
+        localTips: 'Old Fort Western is worth a visit. State House dome is impressive.',
+        transportation: 'Portland Jetport is nearest major airport. Car essential.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Maine Maple Sunday (March).'
+      }
+    }
+  },
+  { slug: 'concord-nh', city: 'Concord', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'New Hampshire', stateCode: 'NH', lat: 43.21, lng: -71.54, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '44K', metroPopulation: '150K', phoneCode: '+1 603', language: 'English',
+      climate: 'Humid continental with warm summers (16-28°C) and cold, snowy winters (-10 to 2°C).',
+      attractions: ['New Hampshire State House', 'McAuliffe-Shepard Discovery Center', 'Capitol Center for the Arts', 'White Park', 'Red River Theatres', 'Christa McAuliffe Planetarium', 'Canterbury Shaker Village', 'New Hampshire Historical Society', 'Pierce Manse', 'Downtown Main Street'],
+      demographics: 'New Hampshire capital. Oldest state house where legislature meets in original chambers. No sales or income tax.',
+      airports: [{ code: 'MHT', name: 'Manchester-Boston Regional', distance: '30km' }, { code: 'BOS', name: 'Boston Logan International', distance: '115km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Oldest state house in continuous use, first-in-nation primary, no sales/income tax',
+      seoContent: {
+        intro: 'Concord, capital of New Hampshire, operates on Eastern Time (EST/UTC-5 winter, EDT/UTC-4 summer). Home to the oldest state house where the legislature still meets in its original chambers, Concord is politically significant for hosting the first-in-the-nation presidential primary.',
+        timezoneFacts: 'Concord shares Eastern Time with Boston (1.5 hours south) and Portland, ME.',
+        bestTimeToVisit: 'Fall for foliage, summer for outdoor activities, winter for skiing nearby.',
+        businessHours: 'Government 8 AM to 4:30 PM. No sales tax means shopping is popular.',
+        timeDifference: 'UTC-5 (winter) / UTC-4 (summer). Same as Boston.',
+        daylightSaving: 'New Hampshire observes DST.',
+        localTips: 'No sales tax. Canterbury Shaker Village is fascinating. McAuliffe Center honors Christa McAuliffe.',
+        transportation: 'Manchester Airport 30 minutes. Boston 1.5 hours. Car essential.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. First-in-nation Primary (varies).'
+      }
+    }
+  },
+  { slug: 'montpelier', city: 'Montpelier', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Vermont', stateCode: 'VT', lat: 44.26, lng: -72.58, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '8K', phoneCode: '+1 802', language: 'English',
+      climate: 'Humid continental with warm summers (14-26°C) and very cold, snowy winters (-15 to -2°C).',
+      attractions: ['Vermont State House', 'Hubbard Park', 'Vermont History Museum', 'Rock of Ages quarry', 'New England Culinary Institute', 'Morse Farm Maple Sugarworks', 'North Branch Nature Center', 'T.W. Wood Gallery', 'Lost Nation Theater', 'Stowe nearby'],
+      demographics: 'Smallest US state capital by population. Only state capital without a McDonald\'s. Known for maple syrup and local food.',
+      airports: [{ code: 'BTV', name: 'Burlington International', distance: '60km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Smallest US state capital, no McDonald\'s, maple syrup, Vermont State House',
+      seoContent: {
+        intro: 'Montpelier, America\'s smallest state capital, operates on Eastern Time (EST/UTC-5 winter, EDT/UTC-4 summer). This charming Vermont town of just 8,000 people is the only US state capital without a McDonald\'s, instead celebrating local food and maple syrup traditions.',
+        timezoneFacts: 'Montpelier shares Eastern Time with Burlington (45 minutes northwest) and Boston (3 hours south).',
+        bestTimeToVisit: 'Fall for peak foliage, winter for skiing at nearby Stowe, spring for maple sugaring season.',
+        businessHours: 'Small-town hours. Local shops and restaurants. Strong farm-to-table scene.',
+        timeDifference: 'UTC-5 (winter) / UTC-4 (summer). Same as NYC.',
+        daylightSaving: 'Vermont observes DST.',
+        localTips: 'Visit a maple sugar house in spring. Stowe is 30 minutes. The State House gold dome is beautiful.',
+        transportation: 'Burlington Airport 45 minutes. Car essential in Vermont.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Maple Open House Weekend (March).'
+      }
+    }
+  },
+  { slug: 'cheyenne', city: 'Cheyenne', timezone: 'America/Denver', country: 'United States', countryCode: 'US', state: 'Wyoming', stateCode: 'WY', lat: 41.14, lng: -104.82, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '65K', metroPopulation: '100K', phoneCode: '+1 307', language: 'English',
+      climate: 'Semi-arid with warm summers (13-28°C) and cold winters (-10 to 5°C). High altitude (6,000 ft). Windy.',
+      attractions: ['Wyoming State Capitol', 'Cheyenne Frontier Days', 'Cheyenne Depot Museum', 'Big Boy Steam Engine', 'Terry Bison Ranch', 'Cheyenne Botanic Gardens', 'Nelson Museum of the West', 'Old West Museum', 'F.E. Warren AFB', 'Historic downtown'],
+      demographics: 'Wyoming capital and largest city. Railroad heritage. Frontier Days (world\'s largest outdoor rodeo). Air Force base.',
+      airports: [{ code: 'CYS', name: 'Cheyenne Regional', distance: '5km' }, { code: 'DEN', name: 'Denver International', distance: '160km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Cheyenne Frontier Days rodeo, Big Boy locomotive, Wyoming State Capitol, Western heritage',
+      seoContent: {
+        intro: 'Cheyenne, capital of Wyoming, operates on Mountain Standard Time (MST/UTC-7) in winter and MDT (UTC-6) in summer. Known as the "Magic City of the Plains," Cheyenne hosts Frontier Days, the world\'s largest outdoor rodeo, every July.',
+        timezoneFacts: 'Cheyenne shares Mountain Time with Denver (90 miles south). It\'s the nearest state capital to Denver.',
+        bestTimeToVisit: 'Late July for Frontier Days. Summer is pleasant. Winter can be cold and windy.',
+        businessHours: 'Standard Western hours. Frontier Days extends everything in July.',
+        timeDifference: 'UTC-7 (winter) / UTC-6 (summer). Noon in Cheyenne = 2 PM NYC.',
+        daylightSaving: 'Wyoming observes DST.',
+        localTips: 'Book Frontier Days tickets and hotels months ahead. Big Boy #4004 is the world\'s largest steam locomotive.',
+        transportation: 'Denver Airport 1.5 hours. Small regional airport. Car essential.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Cheyenne Frontier Days (late July - "Daddy of \'em All").'
+      }
+    }
+  },
+  { slug: 'helena', city: 'Helena', timezone: 'America/Denver', country: 'United States', countryCode: 'US', state: 'Montana', stateCode: 'MT', lat: 46.59, lng: -112.04, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '33K', metroPopulation: '83K', phoneCode: '+1 406', language: 'English',
+      climate: 'Semi-arid continental with warm summers (12-28°C) and cold winters (-12 to 2°C). Mountain weather.',
+      attractions: ['Montana State Capitol', 'Cathedral of St. Helena', 'Last Chance Gulch', 'Reeder\'s Alley', 'Gates of the Mountains', 'Great Northern Carousel', 'Montana Historical Society', 'Mount Helena City Park', 'Holter Lake', 'Ghost towns nearby'],
+      demographics: 'Montana capital. Gold rush heritage (Last Chance Gulch). Gateway to Rocky Mountain wilderness.',
+      airports: [{ code: 'HLN', name: 'Helena Regional Airport', distance: '5km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Last Chance Gulch, gold rush history, Montana State Capitol, Cathedral of St. Helena',
+      seoContent: {
+        intro: 'Helena, capital of Montana, operates on Mountain Standard Time (MST/UTC-7) in winter and MDT (UTC-6) in summer. Founded during the gold rush as "Last Chance Gulch," Helena is now Montana\'s government center and gateway to stunning wilderness.',
+        timezoneFacts: 'Helena shares Mountain Time with Billings and is 1.5 hours from Glacier National Park.',
+        bestTimeToVisit: 'Summer for outdoor activities, fall for fewer crowds. Winter is cold but beautiful.',
+        businessHours: 'Standard government hours. Last Chance Gulch has local shops.',
+        timeDifference: 'UTC-7 (winter) / UTC-6 (summer). Noon in Helena = 2 PM NYC.',
+        daylightSaving: 'Montana observes DST.',
+        localTips: 'Gates of the Mountains boat tour is spectacular. Ghost town tours available. Big Sky Country delivers.',
+        transportation: 'Helena Regional has limited service. Car essential in Montana.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Last Chance Stampede (July).'
+      }
+    }
+  },
+  { slug: 'bismarck', city: 'Bismarck', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'North Dakota', stateCode: 'ND', lat: 46.81, lng: -100.78, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '75K', metroPopulation: '130K', phoneCode: '+1 701', language: 'English',
+      climate: 'Continental with warm summers (14-28°C) and very cold winters (-18 to -4°C). Extreme temperature swings.',
+      attractions: ['North Dakota State Capitol', 'North Dakota Heritage Center', 'Fort Abraham Lincoln', 'Missouri River', 'Dakota Zoo', 'Lewis and Clark Riverboat', 'Camp Hancock', 'Buckstop Junction', 'McDowell Dam', 'Theodore Roosevelt connection'],
+      demographics: 'North Dakota capital. Missouri River city. Energy and agriculture center. Northern Plains heritage.',
+      airports: [{ code: 'BIS', name: 'Bismarck Municipal Airport', distance: '5km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Tallest state capitol building, Fort Abraham Lincoln (Custer\'s last command), Missouri River',
+      seoContent: {
+        intro: 'Bismarck, capital of North Dakota, operates on Central Standard Time (CST/UTC-6) in winter and CDT (UTC-5) in summer. Named after German Chancellor Otto von Bismarck, this Missouri River city features America\'s tallest state capitol building.',
+        timezoneFacts: 'Bismarck is in Central Time, same as Chicago and Minneapolis.',
+        bestTimeToVisit: 'Summer for festivals and river activities. Winter is extremely cold but offers local culture.',
+        businessHours: 'Government 8 AM to 5 PM. Traditional Midwestern hours.',
+        timeDifference: 'UTC-6 (winter) / UTC-5 (summer). Noon in Bismarck = 1 PM NYC.',
+        daylightSaving: 'North Dakota observes DST.',
+        localTips: 'Fort Lincoln is where Custer left for Little Bighorn. Theodore Roosevelt NP is 2 hours west.',
+        transportation: 'Bismarck Airport has good regional service. Car essential.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. United Tribes Powwow (September).'
+      }
+    }
+  },
+  { slug: 'pierre', city: 'Pierre', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'South Dakota', stateCode: 'SD', lat: 44.37, lng: -100.35, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '14K', metroPopulation: '22K', phoneCode: '+1 605', language: 'English',
+      climate: 'Semi-arid continental with hot summers (15-32°C) and cold winters (-14 to 0°C).',
+      attractions: ['South Dakota State Capitol', 'Cultural Heritage Center', 'Oahe Dam', 'Farm Island Recreation Area', 'Fighting Stallions Memorial', 'South Dakota Discovery Center', 'LaFramboise Island', 'Capitol Lake', 'Flaming Fountain', 'Lewis and Clark sites'],
+      demographics: 'South Dakota capital. Second smallest state capital by population. Missouri River location. Government and agriculture.',
+      airports: [{ code: 'PIR', name: 'Pierre Regional Airport', distance: '5km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'South Dakota State Capitol, Oahe Dam, Missouri River, small-town capital charm',
+      seoContent: {
+        intro: 'Pierre (pronounced "peer"), capital of South Dakota, operates on Central Standard Time (CST/UTC-6) in winter and CDT (UTC-5) in summer. One of America\'s smallest state capitals, Pierre sits on the Missouri River with impressive outdoor recreation.',
+        timezoneFacts: 'Pierre is in Central Time, on the border with Mountain Time zone to the west.',
+        bestTimeToVisit: 'Summer for fishing and outdoor activities. Fall hunting season is popular.',
+        businessHours: 'Small-town hours. Government-focused economy.',
+        timeDifference: 'UTC-6 (winter) / UTC-5 (summer). Noon in Pierre = 1 PM NYC.',
+        daylightSaving: 'South Dakota observes DST.',
+        localTips: 'Oahe Dam creates massive reservoir. Walleye fishing is excellent. Mount Rushmore is 3 hours.',
+        transportation: 'Pierre Regional has Essential Air Service. Car essential.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays.'
+      }
+    }
+  },
+  { slug: 'frankfort', city: 'Frankfort', timezone: 'America/Kentucky', country: 'United States', countryCode: 'US', state: 'Kentucky', stateCode: 'KY', lat: 38.20, lng: -84.87, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '28K', metroPopulation: '75K', phoneCode: '+1 502', language: 'English',
+      climate: 'Humid subtropical with hot summers (20-32°C) and cool winters (-3 to 8°C).',
+      attractions: ['Kentucky State Capitol', 'Buffalo Trace Distillery', 'Kentucky Military History Museum', 'Old State Capitol', 'Rebecca Ruth Candy', 'Daniel Boone\'s Grave', 'Liberty Hall', 'Kentucky History Center', 'Salato Wildlife Center', 'Capitol Avenue'],
+      demographics: 'Kentucky capital. Heart of bourbon country. Daniel Boone\'s final resting place. State government center.',
+      airports: [{ code: 'LEX', name: 'Blue Grass Airport', distance: '45km' }, { code: 'SDF', name: 'Louisville International', distance: '80km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Bourbon distilleries, Kentucky State Capitol, Daniel Boone\'s grave, bourbon balls',
+      seoContent: {
+        intro: 'Frankfort, capital of Kentucky, operates on Eastern Standard Time (EST/UTC-5) in winter and EDT (UTC-4) in summer. Set in the heart of bourbon country along the Kentucky River, Frankfort is home to Buffalo Trace Distillery and Daniel Boone\'s grave.',
+        timezoneFacts: 'Frankfort is in Eastern Time, same as Louisville and Lexington.',
+        bestTimeToVisit: 'Spring and fall are ideal. Kentucky Derby time (May) brings festivities statewide.',
+        businessHours: 'Government 8 AM to 4:30 PM. Distilleries have tour schedules.',
+        timeDifference: 'UTC-5 (winter) / UTC-4 (summer). Same as NYC.',
+        daylightSaving: 'Kentucky observes DST.',
+        localTips: 'Buffalo Trace offers free tours and tastings. Try bourbon balls at Rebecca Ruth.',
+        transportation: 'Lexington Airport 45 minutes. Car essential.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Kentucky Derby (first Saturday in May).'
+      }
+    }
+  },
+  { slug: 'jefferson-city', city: 'Jefferson City', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Missouri', stateCode: 'MO', lat: 38.58, lng: -92.17, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '43K', metroPopulation: '150K', phoneCode: '+1 573', language: 'English',
+      climate: 'Humid continental with hot summers (20-32°C) and cold winters (-5 to 6°C).',
+      attractions: ['Missouri State Capitol', 'Missouri State Penitentiary tours', 'Jefferson Landing State Historic Site', 'Missouri Governor\'s Mansion', 'Runge Conservation Nature Center', 'Capitol City Trail', 'Ellis-Porter House', 'Prison Brews restaurant', 'Lewis and Clark Trail', 'Lake of the Ozarks nearby'],
+      demographics: 'Missouri capital since 1826. Named after Thomas Jefferson. Historic penitentiary tours popular.',
+      airports: [{ code: 'JEF', name: 'Jefferson City Memorial', distance: '8km' }, { code: 'STL', name: 'St. Louis Lambert International', distance: '200km' }],
+      driving: 'right', voltage: '120V/60Hz', plugType: 'A, B',
+      famousFor: 'Missouri State Capitol, haunted penitentiary tours, Lake of the Ozarks access',
+      seoContent: {
+        intro: 'Jefferson City, capital of Missouri, operates on Central Standard Time (CST/UTC-6) in winter and CDT (UTC-5) in summer. Named after Thomas Jefferson, this Missouri River city features impressive capitol architecture and famous haunted prison tours.',
+        timezoneFacts: 'Jefferson City is in Central Time, same as St. Louis and Kansas City.',
+        bestTimeToVisit: 'Spring and fall for touring. Summer for Lake of the Ozarks. October for haunted prison tours.',
+        businessHours: 'Government 8 AM to 5 PM. Prison tours have scheduled times.',
+        timeDifference: 'UTC-6 (winter) / UTC-5 (summer). Noon in Jeff City = 1 PM NYC.',
+        daylightSaving: 'Missouri observes DST.',
+        localTips: 'The old penitentiary ghost tours are legendary. Lake of the Ozarks is 45 minutes.',
+        transportation: 'Small regional airport. St. Louis 2 hours. Car essential.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays.'
+      }
+    }
+  },
   { slug: 'curitiba', city: 'Curitiba', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -25.43, lng: -49.27, tier: 2, continent: 'americas',
     info: {
       currency: 'Brazilian Real', currencySymbol: 'R$', population: '1.9M', phoneCode: '+55 41', language: 'Portuguese',
