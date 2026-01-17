@@ -63,9 +63,9 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
         }
       ]
     },
-    // ✅ NOINDEX - Tool output, SEO değeri hub sayfalarda
+    // ✅ INDEX - Long-tail SEO value (e.g., "london to new york time")
     robots: {
-      index: false,
+      index: true,
       follow: true,
     }
   }

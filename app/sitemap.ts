@@ -101,10 +101,29 @@ export default async function sitemap() {
     priority: 0.8,
   }))
   
-  // ❌ /time/[from]/[to] sayfaları ÇIKARILDI
-  // ❌ /meeting/[cities] sayfaları ÇIKARILDI
-  // Sebep: noindex tool output - crawl budget israfı önlendi
-  // SEO değeri hub sayfalarda: /istanbul/, /london/, /time-converter/, /meeting/
+  // ✅ /time/[from]/[to] sayfaları - Long-tail SEO value
+  // Tier 1 şehirler arası kombinasyonlar (yüksek arama hacmi)
+  const tier1Slugs = getTier1Cities().map(c => c.slug)
+  const timeComparisonRoutes: Array<{
+    url: string
+    lastModified: Date
+    changeFrequency: 'daily' | 'weekly' | 'monthly'
+    priority: number
+  }> = []
+  
+  // Her Tier 1 şehir için diğer Tier 1 şehirlerle kombinasyon
+  for (const fromSlug of tier1Slugs) {
+    for (const toSlug of tier1Slugs) {
+      if (fromSlug !== toSlug) {
+        timeComparisonRoutes.push({
+          url: `${baseUrl}/time/${fromSlug}/${toSlug}/`,
+          lastModified: new Date(),
+          changeFrequency: 'daily' as const,
+          priority: 0.6,
+        })
+      }
+    }
+  }
 
-  return [...staticRoutes, ...toolRoutes, ...guideRoutes, ...cityRoutes, ...countryRoutes]
+  return [...staticRoutes, ...toolRoutes, ...guideRoutes, ...cityRoutes, ...countryRoutes, ...timeComparisonRoutes]
 }
