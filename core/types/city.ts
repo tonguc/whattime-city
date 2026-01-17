@@ -9,6 +9,12 @@ export type TimeOfDay = 'dawn' | 'day' | 'dusk' | 'night'
 
 export type Tier = 1 | 2 | 3
 
+export interface Airport {
+  code: string
+  name: string
+  distance: string
+}
+
 export interface CityInfo {
   currency: string
   currencySymbol: string
@@ -19,6 +25,12 @@ export interface CityInfo {
   climate: string
   attractions: string[]
   demographics: string
+  // New premium fields
+  airports?: Airport[]
+  driving?: 'left' | 'right'
+  voltage?: string
+  plugType?: string
+  famousFor?: string
   seoContent?: CitySeoContent
 }
 
@@ -41,6 +53,8 @@ export interface City {
   timezone: string
   country: string
   countryCode: string
+  state?: string        // For US cities
+  stateCode?: string    // For US cities (MD, CA, TX...)
   lat: number
   lng: number
   tier?: Tier
