@@ -11,12 +11,21 @@ import type { City } from '@/core/types'
 export const cities: City[] = [
   // ============ TIER 1: Global Hubs ============
   { 
-    slug: 'new-york', city: 'New York', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 40.71, lng: -74.01, tier: 1, continent: 'americas',
+    slug: 'new-york', city: 'New York', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'New York', stateCode: 'NY', lat: 40.71, lng: -74.01, tier: 1, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '8.3M', metroPopulation: '20M', phoneCode: '+1 212/718', language: 'English',
       climate: 'Humid subtropical with hot summers (25-35°C) and cold winters (-5 to 5°C). Expect snow December-March.',
       attractions: ['Statue of Liberty', 'Central Park', 'Empire State Building', 'Times Square', 'Brooklyn Bridge', 'Metropolitan Museum of Art', '9/11 Memorial', 'Broadway', 'High Line', 'Grand Central Terminal'],
       demographics: 'One of the most diverse cities globally with over 800 languages spoken. Major communities from Latin America, Asia, Europe, and the Caribbean. The global capital of finance, media, arts, and fashion.',
+      airports: [
+        { code: 'JFK', name: 'John F. Kennedy International', distance: '24km' },
+        { code: 'LGA', name: 'LaGuardia Airport', distance: '13km' },
+        { code: 'EWR', name: 'Newark Liberty International', distance: '18km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Wall Street, Broadway, Statue of Liberty, Times Square, Central Park, pizza, bagels',
       seoContent: {
         intro: 'New York City, the largest city in the United States, operates on Eastern Standard Time (EST/UTC-5) during winter and Eastern Daylight Time (EDT/UTC-4) during summer. Known as "The City That Never Sleeps," NYC is the world\'s financial capital and home to the United Nations, Wall Street, Broadway, and countless iconic landmarks.',
         timezoneFacts: 'New York observes Daylight Saving Time from the second Sunday in March to the first Sunday in November. The city shares its timezone with major East Coast cities including Boston, Philadelphia, Washington D.C., and Miami. Wall Street trading hours (9:30 AM - 4:00 PM EST) set the rhythm for global financial markets. When it\'s noon in NYC: London 5:00 PM, Tokyo 2:00 AM (next day), Dubai 9:00 PM.',
@@ -200,12 +209,21 @@ export const cities: City[] = [
     }
   },
   { 
-    slug: 'los-angeles', city: 'Los Angeles', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', lat: 34.05, lng: -118.24, tier: 1, continent: 'americas',
+    slug: 'los-angeles', city: 'Los Angeles', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.05, lng: -118.24, tier: 1, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '4M', metroPopulation: '13M', phoneCode: '+1 213/310/323', language: 'English, Spanish',
       climate: 'Mediterranean with warm dry summers (22-30°C) and mild winters (10-18°C). Minimal rainfall. Occasional Santa Ana winds and wildfire risk.',
       attractions: ['Hollywood Sign', 'Santa Monica Pier', 'Universal Studios', 'Getty Center', 'Griffith Observatory', 'Venice Beach', 'Rodeo Drive', 'Disneyland', 'Hollywood Walk of Fame', 'LACMA'],
       demographics: 'Majority-minority city with large Hispanic/Latino population (48%). Significant Asian and African American communities. Entertainment capital of the world.',
+      airports: [
+        { code: 'LAX', name: 'Los Angeles International', distance: '20km' },
+        { code: 'BUR', name: 'Hollywood Burbank Airport', distance: '18km' },
+        { code: 'SNA', name: 'John Wayne Airport', distance: '60km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Hollywood, movie industry, beaches, Lakers NBA, Dodgers MLB, tacos, celebrity culture',
       seoContent: {
         intro: 'Los Angeles, the City of Angels, operates on Pacific Standard Time (PST/UTC-8) in winter and Pacific Daylight Time (PDT/UTC-7) in summer. LA is the entertainment capital of the world, home to Hollywood, major film studios, and the global music industry.',
         timezoneFacts: 'LA is 3 hours behind New York, 8 hours behind London. Pacific Time covers the US West Coast including San Francisco, Seattle, and Las Vegas. Hollywood premiere schedules often drive global entertainment timing.',
@@ -266,12 +284,20 @@ export const cities: City[] = [
   // ============ TIER 2: Major Cities ============
   // Americas
   { 
-    slug: 'chicago', city: 'Chicago', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 41.88, lng: -87.63, tier: 1, continent: 'americas',
+    slug: 'chicago', city: 'Chicago', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Illinois', stateCode: 'IL', lat: 41.88, lng: -87.63, tier: 1, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '2.7M', metroPopulation: '9.5M', phoneCode: '+1 312', language: 'English',
       climate: 'Humid continental with hot summers (22-30°C) and cold winters (-6 to 2°C). Famous for wind off Lake Michigan.',
       attractions: ['Millennium Park', 'Willis Tower', 'Art Institute', 'Navy Pier', 'Magnificent Mile', 'Wrigley Field', 'Cloud Gate', 'Chicago Riverwalk', 'Field Museum', 'Lincoln Park Zoo'],
       demographics: 'Third-largest US city. Diverse with significant African American, Hispanic, and Polish communities. Major financial and transportation hub.',
+      airports: [
+        { code: 'ORD', name: 'O\'Hare International Airport', distance: '27km' },
+        { code: 'MDW', name: 'Midway International Airport', distance: '16km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Deep dish pizza, architecture, blues music, Bulls NBA, Cubs MLB, Lake Michigan',
       seoContent: {
         intro: 'Chicago, the Windy City, operates on Central Standard Time (CST/UTC-6) in winter and Central Daylight Time (CDT/UTC-5) in summer. Located on Lake Michigan\'s shores, it\'s America\'s third-largest city and a global center for finance, culture, and architecture.',
         timezoneFacts: 'Chicago is 1 hour behind New York, 6 hours behind London. Central Time covers major cities like Houston, Dallas, and New Orleans. Chicago Mercantile Exchange is a major global derivatives marketplace.',
@@ -287,12 +313,20 @@ export const cities: City[] = [
     }
   },
   { 
-    slug: 'miami', city: 'Miami', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 25.76, lng: -80.19, tier: 1, continent: 'americas',
+    slug: 'miami', city: 'Miami', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 25.76, lng: -80.19, tier: 1, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '440K', metroPopulation: '6.2M', phoneCode: '+1 305', language: 'English, Spanish',
       climate: 'Tropical monsoon with hot humid summers (28-33°C) and warm dry winters (15-25°C). Hurricane season Jun-Nov.',
       attractions: ['South Beach', 'Art Deco District', 'Little Havana', 'Wynwood Walls', 'Vizcaya Museum', 'Everglades', 'Bayside Marketplace', 'Key Biscayne', 'Design District', 'Pérez Art Museum'],
       demographics: 'Majority Hispanic city with strong Cuban influence. Gateway to Latin America. International banking and cruise ship capital.',
+      airports: [
+        { code: 'MIA', name: 'Miami International Airport', distance: '13km' },
+        { code: 'FLL', name: 'Fort Lauderdale-Hollywood International', distance: '43km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'South Beach, Art Deco, Cuban food, Heat NBA, nightlife, cruise ships, Latin culture',
       seoContent: {
         intro: 'Miami, the Magic City, operates on Eastern Standard Time (EST/UTC-5), same as New York. This tropical metropolis is the gateway between North and Latin America, famous for beaches, art deco architecture, and vibrant nightlife.',
         timezoneFacts: 'Same timezone as New York, Atlanta, and Toronto. 5 hours behind London. Miami\'s position makes it ideal for business with Latin America and Caribbean.',
@@ -308,12 +342,21 @@ export const cities: City[] = [
     }
   },
   { 
-    slug: 'san-francisco', city: 'San Francisco', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', lat: 37.77, lng: -122.42, tier: 1, continent: 'americas',
+    slug: 'san-francisco', city: 'San Francisco', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 37.77, lng: -122.42, tier: 1, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '870K', metroPopulation: '4.7M', phoneCode: '+1 415', language: 'English',
       climate: 'Mediterranean with mild summers (15-22°C) and cool foggy winters. Famous for microclimates and fog.',
       attractions: ['Golden Gate Bridge', 'Alcatraz', 'Fisherman\'s Wharf', 'Cable Cars', 'Chinatown', 'Golden Gate Park', 'Union Square', 'Haight-Ashbury', 'Lombard Street', 'SFMOMA'],
       demographics: 'Tech hub with highly educated, diverse population. Large Asian and LGBTQ+ communities. Most expensive US housing market.',
+      airports: [
+        { code: 'SFO', name: 'San Francisco International', distance: '21km' },
+        { code: 'OAK', name: 'Oakland International', distance: '32km' },
+        { code: 'SJC', name: 'San Jose International', distance: '64km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Golden Gate Bridge, Silicon Valley, tech startups, cable cars, sourdough bread, LGBTQ+ culture',
       seoContent: {
         intro: 'San Francisco, the City by the Bay, operates on Pacific Standard Time (PST/UTC-8) in winter and PDT (UTC-7) in summer. This hilly peninsula city is the heart of Silicon Valley, known for the Golden Gate Bridge, tech innovation, and progressive culture.',
         timezoneFacts: '3 hours behind New York, 8 hours behind London. Pacific Time is the US West Coast standard. Tech companies\' schedules influence global software releases.',
@@ -328,12 +371,19 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'seattle', city: 'Seattle', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', lat: 47.61, lng: -122.33, tier: 2, continent: 'americas',
+  { slug: 'seattle', city: 'Seattle', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'Washington', stateCode: 'WA', lat: 47.61, lng: -122.33, tier: 2, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '740K', metroPopulation: '4M', phoneCode: '+1 206', language: 'English',
       climate: 'Oceanic with mild wet winters (4-8°C) and warm dry summers (16-24°C). Less rainy than reputation suggests - more drizzle than downpours.',
       attractions: ['Space Needle', 'Pike Place Market', 'Museum of Pop Culture', 'Chihuly Garden', 'Seattle Waterfront', 'Capitol Hill', 'Kerry Park', 'Olympic Sculpture Park', 'Pioneer Square', 'Ballard Locks'],
       demographics: 'Tech hub home to Amazon, Microsoft (nearby), and Starbucks HQ. Highly educated population with strong Asian and Scandinavian heritage.',
+      airports: [
+        { code: 'SEA', name: 'Seattle-Tacoma International', distance: '23km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Amazon, Microsoft, Starbucks, Space Needle, grunge music, Pike Place, coffee culture',
       seoContent: {
         intro: 'Seattle, the Emerald City, operates on Pacific Standard Time (PST/UTC-8) in winter and PDT (UTC-7) in summer. Nestled between Puget Sound and the Cascade Mountains, Seattle is a major tech hub and cultural center of the Pacific Northwest.',
         timezoneFacts: 'Same timezone as Los Angeles and San Francisco. 3 hours behind New York, 8 hours behind London. Tech companies here influence global software release schedules.',
@@ -348,12 +398,19 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'boston', city: 'Boston', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 42.36, lng: -71.06, tier: 2, continent: 'americas',
+  { slug: 'boston', city: 'Boston', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Massachusetts', stateCode: 'MA', lat: 42.36, lng: -71.06, tier: 2, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '690K', metroPopulation: '4.9M', phoneCode: '+1 617', language: 'English',
       climate: 'Humid continental with warm summers (20-28°C) and cold snowy winters (-4 to 3°C). Beautiful fall foliage.',
       attractions: ['Freedom Trail', 'Fenway Park', 'Harvard University', 'MIT', 'Boston Common', 'North End', 'New England Aquarium', 'Museum of Fine Arts', 'Faneuil Hall', 'Cambridge'],
       demographics: 'Historic city with world-class universities. Large Irish-American population. Major biotech and financial center.',
+      airports: [
+        { code: 'BOS', name: 'Logan International Airport', distance: '5km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Harvard, MIT, Red Sox, Freedom Trail, clam chowder, Revolutionary history, biotech',
       seoContent: {
         intro: 'Boston, the Cradle of Liberty, operates on Eastern Standard Time (EST/UTC-5), same as New York. One of America\'s oldest cities, Boston combines Revolutionary War history with world-leading universities and innovation.',
         timezoneFacts: 'Same timezone as NYC, Atlanta, and Miami. 5 hours behind London. Harvard and MIT make Boston a global academic hub.',
@@ -368,12 +425,21 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'washington-dc', city: 'Washington D.C.', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 38.91, lng: -77.04, tier: 2, continent: 'americas',
+  { slug: 'washington-dc', city: 'Washington D.C.', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'District of Columbia', stateCode: 'DC', lat: 38.91, lng: -77.04, tier: 2, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '690K', metroPopulation: '6.4M', phoneCode: '+1 202', language: 'English',
       climate: 'Humid subtropical with hot summers (25-32°C) and cool winters (0-8°C). Famous cherry blossoms in spring.',
       attractions: ['Capitol Building', 'White House', 'Smithsonian Museums', 'Lincoln Memorial', 'National Mall', 'Arlington Cemetery', 'Washington Monument', 'Georgetown', 'Library of Congress', 'National Zoo'],
       demographics: 'Nation\'s capital with highly educated population. Diverse city with large African American community and international diplomatic presence.',
+      airports: [
+        { code: 'DCA', name: 'Reagan National Airport', distance: '6km' },
+        { code: 'IAD', name: 'Dulles International Airport', distance: '42km' },
+        { code: 'BWI', name: 'Baltimore/Washington International', distance: '50km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'White House, Capitol, Smithsonian (free!), cherry blossoms, politics, monuments',
       seoContent: {
         intro: 'Washington D.C., the capital of the United States, operates on Eastern Standard Time (EST/UTC-5). This planned city is the center of American government, home to iconic monuments, world-class museums, and historic neighborhoods.',
         timezoneFacts: 'Same timezone as NYC and Boston. Government schedules here affect the nation. Congress typically works Tuesday-Thursday when in session.',
@@ -388,12 +454,19 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'atlanta', city: 'Atlanta', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 33.75, lng: -84.39, tier: 2, continent: 'americas',
+  { slug: 'atlanta', city: 'Atlanta', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Georgia', stateCode: 'GA', lat: 33.75, lng: -84.39, tier: 2, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '500K', metroPopulation: '6.1M', phoneCode: '+1 404', language: 'English',
       climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (3-12°C). Occasional ice storms in winter.',
       attractions: ['Georgia Aquarium', 'World of Coca-Cola', 'Martin Luther King Jr. Site', 'Centennial Olympic Park', 'Atlanta Botanical Garden', 'Piedmont Park', 'High Museum of Art', 'Ponce City Market', 'Fox Theatre', 'Stone Mountain'],
       demographics: 'Major business hub and CNN headquarters. Large African American population and cultural center. Home to many Fortune 500 companies.',
+      airports: [
+        { code: 'ATL', name: 'Hartsfield-Jackson Atlanta International', distance: '16km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'World\'s busiest airport, Coca-Cola, CNN, Martin Luther King Jr., Falcons NFL, hip-hop music',
       seoContent: {
         intro: 'Atlanta, the capital of the New South, operates on Eastern Standard Time (EST/UTC-5). This booming metropolis is a major business hub, birthplace of Coca-Cola and Martin Luther King Jr., and home to the world\'s busiest airport.',
         timezoneFacts: 'Same timezone as NYC and Miami. Hartsfield-Jackson is the world\'s busiest airport, handling 93+ million passengers annually.',
@@ -408,12 +481,20 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'houston', city: 'Houston', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 29.76, lng: -95.37, tier: 2, continent: 'americas',
+  { slug: 'houston', city: 'Houston', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 29.76, lng: -95.37, tier: 2, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '2.3M', metroPopulation: '7.1M', phoneCode: '+1 713', language: 'English, Spanish',
       climate: 'Humid subtropical with hot humid summers (28-35°C) and mild winters (6-16°C). Hurricane risk June-November.',
       attractions: ['Space Center Houston', 'Museum District', 'Houston Zoo', 'Discovery Green', 'The Galleria', 'San Jacinto Monument', 'Buffalo Bayou', 'Minute Maid Park', 'Hermann Park', 'Kemah Boardwalk'],
       demographics: 'America\'s 4th largest city. Extremely diverse with large Hispanic and Asian populations. Energy capital and NASA\'s mission control.',
+      airports: [
+        { code: 'IAH', name: 'George Bush Intercontinental', distance: '37km' },
+        { code: 'HOU', name: 'William P. Hobby Airport', distance: '18km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'NASA Space Center, oil industry, Texans NFL, rodeo, Tex-Mex, diversity',
       seoContent: {
         intro: 'Houston, Space City, operates on Central Standard Time (CST/UTC-6) in winter and CDT (UTC-5) in summer. America\'s 4th largest city is the energy capital, home to NASA\'s Mission Control, and one of the most diverse cities in the nation.',
         timezoneFacts: 'Same timezone as Chicago and Dallas. 1 hour behind New York. "Houston, we have a problem" came from Mission Control here.',
@@ -428,12 +509,20 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'dallas', city: 'Dallas', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 32.78, lng: -96.80, tier: 2, continent: 'americas',
+  { slug: 'dallas', city: 'Dallas', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 32.78, lng: -96.80, tier: 2, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '1.3M', metroPopulation: '7.6M', phoneCode: '+1 214', language: 'English, Spanish',
       climate: 'Humid subtropical with hot summers (30-38°C) and mild winters (3-14°C). Occasional severe thunderstorms and tornadoes.',
       attractions: ['Sixth Floor Museum', 'Dallas Arboretum', 'Reunion Tower', 'Perot Museum', 'Deep Ellum', 'AT&T Stadium', 'Dallas Arts District', 'Klyde Warren Park', 'Bishop Arts District', 'Dallas World Aquarium'],
       demographics: 'Major financial and tech hub. Part of DFW metroplex. Corporate headquarters for AT&T, Southwest Airlines, and many others.',
+      airports: [
+        { code: 'DFW', name: 'Dallas/Fort Worth International', distance: '29km' },
+        { code: 'DAL', name: 'Dallas Love Field', distance: '10km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Cowboys NFL, JFK assassination site, BBQ, State Fair, oil industry, big hair',
       seoContent: {
         intro: 'Dallas, Big D, operates on Central Standard Time (CST/UTC-6). This sprawling Texas metropolis is a major financial center, corporate hub, and cultural destination known for its arts district, JFK history, and Cowboys football.',
         timezoneFacts: 'Same timezone as Houston and Chicago. 1 hour behind New York. DFW is one of the largest and busiest airports in the world.',
@@ -448,12 +537,19 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'denver', city: 'Denver', timezone: 'America/Denver', country: 'United States', countryCode: 'US', lat: 39.74, lng: -104.99, tier: 2, continent: 'americas',
+  { slug: 'denver', city: 'Denver', timezone: 'America/Denver', country: 'United States', countryCode: 'US', state: 'Colorado', stateCode: 'CO', lat: 39.74, lng: -104.99, tier: 2, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '720K', metroPopulation: '2.9M', phoneCode: '+1 303', language: 'English, Spanish',
       climate: 'Semi-arid with sunny days (300+/year), mild winters (-2 to 8°C) and warm summers (18-32°C). Low humidity. Snow common but melts quickly.',
       attractions: ['Red Rocks Amphitheatre', 'Denver Art Museum', 'Union Station', 'Larimer Square', '16th Street Mall', 'Coors Field', 'Denver Botanic Gardens', 'Rocky Mountain National Park', 'LoDo District', 'Mile High Stadium'],
       demographics: 'Mile High City at 5,280 feet elevation. Young, active, educated population. Major outdoor recreation hub with booming tech scene.',
+      airports: [
+        { code: 'DEN', name: 'Denver International Airport', distance: '40km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Mile High City, Broncos NFL, craft beer, skiing, Rocky Mountains, legal cannabis',
       seoContent: {
         intro: 'Denver, the Mile High City, operates on Mountain Standard Time (MST/UTC-7) in winter and MDT (UTC-6) in summer. Sitting exactly one mile above sea level at the base of the Rocky Mountains, Denver combines outdoor adventure with urban sophistication.',
         timezoneFacts: 'Mountain Time is between Pacific and Central. 2 hours behind New York, 1 hour ahead of LA. Only major US city on Mountain Time.',
@@ -468,12 +564,19 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'phoenix', city: 'Phoenix', timezone: 'America/Phoenix', country: 'United States', countryCode: 'US', lat: 33.45, lng: -112.07, tier: 2, continent: 'americas',
+  { slug: 'phoenix', city: 'Phoenix', timezone: 'America/Phoenix', country: 'United States', countryCode: 'US', state: 'Arizona', stateCode: 'AZ', lat: 33.45, lng: -112.07, tier: 2, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '1.6M', metroPopulation: '4.9M', phoneCode: '+1 602', language: 'English, Spanish',
       climate: 'Hot desert with extremely hot summers (35-42°C) and mild winters (12-21°C). Very dry year-round. 300+ sunny days.',
       attractions: ['Desert Botanical Garden', 'Camelback Mountain', 'Heard Museum', 'Papago Park', 'Phoenix Zoo', 'Musical Instrument Museum', 'Taliesin West', 'South Mountain Park', 'Phoenix Art Museum', 'Old Town Scottsdale'],
       demographics: '5th largest US city. Large Hispanic population. Retirement destination and growing tech hub. Sprawling desert metropolis.',
+      airports: [
+        { code: 'PHX', name: 'Phoenix Sky Harbor International', distance: '5km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Extreme heat, no DST, golf courses, Grand Canyon gateway, Suns NBA, retirement destination',
       seoContent: {
         intro: 'Phoenix, the Valley of the Sun, operates on Mountain Standard Time (MST/UTC-7) year-round. Unlike most of the US, Arizona does NOT observe Daylight Saving Time, making Phoenix one of the few US cities with a consistent UTC offset all year.',
         timezoneFacts: 'Arizona (except Navajo Nation) ignores DST. In summer, Phoenix is same time as LA; in winter, same as Denver. This can cause confusion!',
@@ -488,12 +591,19 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'las-vegas', city: 'Las Vegas', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', lat: 36.17, lng: -115.14, tier: 2, continent: 'americas',
+  { slug: 'las-vegas', city: 'Las Vegas', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'Nevada', stateCode: 'NV', lat: 36.17, lng: -115.14, tier: 2, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '640K', metroPopulation: '2.3M', phoneCode: '+1 702', language: 'English, Spanish',
       climate: 'Hot desert with scorching summers (35-42°C) and mild winters (5-15°C). Very dry year-round. Monsoon storms possible July-September.',
       attractions: ['The Strip', 'Fremont Street', 'Bellagio Fountains', 'Grand Canyon Tours', 'Hoover Dam', 'Red Rock Canyon', 'High Roller', 'The Mob Museum', 'Neon Museum', 'Shows & Casinos'],
       demographics: 'Entertainment and hospitality capital. 24/7 city that never sleeps. Growing residential population beyond the Strip.',
+      airports: [
+        { code: 'LAS', name: 'Harry Reid International Airport', distance: '8km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Casinos, The Strip, shows, weddings, 24/7 entertainment, Raiders NFL, conventions',
       seoContent: {
         intro: 'Las Vegas, Sin City, operates on Pacific Standard Time (PST/UTC-8) in winter and PDT (UTC-7) in summer. This desert oasis is the entertainment capital of the world, famous for casinos, shows, and 24-hour excitement.',
         timezoneFacts: 'Same timezone as Los Angeles. Note: Nevada uses DST while neighboring Arizona doesn\'t - crossing the border can be confusing!',
@@ -1480,12 +1590,19 @@ export const cities: City[] = [
 
   // ============ TIER 3: Notable Cities ============
   // United States
-  { slug: 'san-diego', city: 'San Diego', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', lat: 32.72, lng: -117.16, tier: 3, continent: 'americas',
+  { slug: 'san-diego', city: 'San Diego', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 32.72, lng: -117.16, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '1.4M', metroPopulation: '3.3M', phoneCode: '+1 619', language: 'English, Spanish',
       climate: 'Mediterranean with warm dry summers (20-26°C) and mild winters (10-18°C). Near-perfect weather year-round.',
       attractions: ['San Diego Zoo', 'Balboa Park', 'USS Midway', 'Gaslamp Quarter', 'La Jolla Cove', 'Coronado Beach', 'SeaWorld', 'Old Town', 'Cabrillo Monument', 'Petco Park'],
       demographics: 'California\'s second-largest city. Strong military presence with multiple naval bases. Large Hispanic community.',
+      airports: [
+        { code: 'SAN', name: 'San Diego International Airport', distance: '5km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'San Diego Zoo, beaches, craft beer, Navy, Comic-Con, fish tacos, perfect weather',
       seoContent: {
         intro: 'San Diego, America\'s Finest City, operates on Pacific Standard Time (PST/UTC-8) in winter and PDT (UTC-7) in summer. Known for its near-perfect climate, beautiful beaches, and the world-famous San Diego Zoo.',
         timezoneFacts: 'Same timezone as Los Angeles. 3 hours behind New York, 8 hours behind London. Border city with Tijuana, Mexico.',
@@ -1500,12 +1617,19 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'austin', city: 'Austin', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 30.27, lng: -97.74, tier: 3, continent: 'americas',
+  { slug: 'austin', city: 'Austin', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 30.27, lng: -97.74, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '1M', metroPopulation: '2.3M', phoneCode: '+1 512', language: 'English',
       climate: 'Humid subtropical with hot summers (27-36°C) and mild winters (5-17°C). Can be humid.',
       attractions: ['6th Street', 'South Congress', 'Barton Springs', 'Texas State Capitol', 'Lady Bird Lake', 'Zilker Park', 'Rainey Street', 'Congress Avenue Bridge Bats', 'Blanton Museum', 'Mount Bonnell'],
       demographics: 'Texas capital and major tech hub. "Keep Austin Weird" culture. Young, educated population. Live music capital.',
+      airports: [
+        { code: 'AUS', name: 'Austin-Bergstrom International', distance: '13km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'SXSW, live music, BBQ, tech industry, Keep Austin Weird, bats, tacos',
       seoContent: {
         intro: 'Austin, the Live Music Capital of the World, operates on Central Standard Time (CST/UTC-6). Texas\'s capital combines tech innovation with creative culture, known for SXSW, live music, and vibrant food scene.',
         timezoneFacts: 'Same timezone as Dallas and Houston. 1 hour behind New York. Texas is considering permanent DST.',
@@ -1520,12 +1644,19 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'philadelphia', city: 'Philadelphia', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 39.95, lng: -75.17, tier: 3, continent: 'americas',
+  { slug: 'philadelphia', city: 'Philadelphia', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Pennsylvania', stateCode: 'PA', lat: 39.95, lng: -75.17, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '1.6M', metroPopulation: '6.2M', phoneCode: '+1 215', language: 'English',
       climate: 'Humid subtropical with hot summers (24-31°C) and cold winters (-2 to 6°C). Four distinct seasons.',
       attractions: ['Independence Hall', 'Liberty Bell', 'Philadelphia Museum of Art', 'Reading Terminal Market', 'Eastern State Penitentiary', 'LOVE Park', 'Rittenhouse Square', 'South Street', 'Penn\'s Landing', 'Rocky Steps'],
       demographics: 'Birthplace of American democracy. Sixth-largest US city. Strong healthcare and education sectors.',
+      airports: [
+        { code: 'PHL', name: 'Philadelphia International Airport', distance: '11km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Liberty Bell, cheesesteaks, Rocky, Eagles NFL, founding fathers, history',
       seoContent: {
         intro: 'Philadelphia, the City of Brotherly Love, operates on Eastern Standard Time (EST/UTC-5). America\'s first capital and birthplace of the Constitution, Philly blends revolutionary history with modern urban culture.',
         timezoneFacts: 'Same timezone as New York and Washington D.C. 5 hours behind London. Between NYC and DC on the Northeast Corridor.',
@@ -1540,12 +1671,19 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'detroit', city: 'Detroit', timezone: 'America/Detroit', country: 'United States', countryCode: 'US', lat: 42.33, lng: -83.05, tier: 3, continent: 'americas',
+  { slug: 'detroit', city: 'Detroit', timezone: 'America/Detroit', country: 'United States', countryCode: 'US', state: 'Michigan', stateCode: 'MI', lat: 42.33, lng: -83.05, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '640K', metroPopulation: '4.4M', phoneCode: '+1 313', language: 'English',
       climate: 'Humid continental with warm summers (20-28°C) and cold snowy winters (-6 to 1°C). Lake effect weather.',
       attractions: ['Motown Museum', 'Detroit Institute of Arts', 'Ford Piquette Plant', 'Belle Isle', 'Eastern Market', 'Fox Theatre', 'Comerica Park', 'GM Renaissance Center', 'The Henry Ford', 'Heidelberg Project'],
       demographics: 'Motor City and birthplace of Motown. Undergoing urban renaissance. Strong automotive heritage.',
+      airports: [
+        { code: 'DTW', name: 'Detroit Metropolitan Wayne County', distance: '32km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Auto industry, Motown music, Tigers MLB, Lions NFL, Coney dogs, urban revival',
       seoContent: {
         intro: 'Detroit, the Motor City, operates on Eastern Standard Time (EST/UTC-5). Birthplace of the American auto industry and Motown sound, Detroit is experiencing a remarkable urban revival.',
         timezoneFacts: 'Same timezone as New York. Border city with Windsor, Canada. Auto industry schedules influence regional business.',
@@ -1560,12 +1698,19 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'minneapolis', city: 'Minneapolis', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 44.98, lng: -93.27, tier: 3, continent: 'americas',
+  { slug: 'minneapolis', city: 'Minneapolis', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Minnesota', stateCode: 'MN', lat: 44.98, lng: -93.27, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '430K', metroPopulation: '3.7M', phoneCode: '+1 612', language: 'English',
       climate: 'Humid continental with warm summers (20-28°C) and very cold winters (-13 to -4°C). Heavy snowfall.',
       attractions: ['Mall of America', 'Chain of Lakes', 'Minneapolis Sculpture Garden', 'Stone Arch Bridge', 'First Avenue', 'Guthrie Theater', 'Walker Art Center', 'Minnehaha Falls', 'Mill City Museum', 'Target Field'],
       demographics: 'Twin Cities with St. Paul. Strong Scandinavian heritage. Corporate headquarters hub. Very bike-friendly.',
+      airports: [
+        { code: 'MSP', name: 'Minneapolis-Saint Paul International', distance: '16km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Prince, Mall of America, lakes, Vikings NFL, Twins MLB, cold winters, skyways',
       seoContent: {
         intro: 'Minneapolis, the City of Lakes, operates on Central Standard Time (CST/UTC-6). Part of the Twin Cities with St. Paul, Minneapolis offers urban sophistication with Midwest friendliness and abundant natural beauty.',
         timezoneFacts: 'Same timezone as Chicago. 1 hour behind New York. Twin Cities form the 16th largest metro in the US.',
@@ -1580,12 +1725,19 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'portland', city: 'Portland', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', lat: 45.52, lng: -122.68, tier: 3, continent: 'americas',
+  { slug: 'portland', city: 'Portland', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'Oregon', stateCode: 'OR', lat: 45.52, lng: -122.68, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '650K', metroPopulation: '2.5M', phoneCode: '+1 503', language: 'English',
       climate: 'Oceanic with mild wet winters (4-8°C) and warm dry summers (16-26°C). Famous for rain (but mostly drizzle).',
       attractions: ['Powell\'s Books', 'Portland Japanese Garden', 'Pittock Mansion', 'Washington Park', 'Pearl District', 'Hawthorne District', 'Voodoo Doughnut', 'Forest Park', 'Portland Saturday Market', 'International Rose Test Garden'],
       demographics: 'Known for "Keep Portland Weird" culture. Strong craft beer and coffee scene. Progressive politics.',
+      airports: [
+        { code: 'PDX', name: 'Portland International Airport', distance: '16km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Keep Portland Weird, craft beer, coffee, Powell\'s Books, no sales tax, food carts, roses',
       seoContent: {
         intro: 'Portland, the City of Roses, operates on Pacific Standard Time (PST/UTC-8). Oregon\'s largest city is famous for its quirky culture, exceptional food scene, craft beer, and proximity to outdoor adventures.',
         timezoneFacts: 'Same timezone as Seattle and San Francisco. 3 hours behind New York. No sales tax in Oregon.',
@@ -1600,12 +1752,19 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'nashville', city: 'Nashville', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 36.16, lng: -86.78, tier: 3, continent: 'americas',
+  { slug: 'nashville', city: 'Nashville', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Tennessee', stateCode: 'TN', lat: 36.16, lng: -86.78, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '690K', metroPopulation: '2M', phoneCode: '+1 615', language: 'English',
       climate: 'Humid subtropical with hot summers (24-32°C) and mild winters (1-10°C). Occasional ice storms.',
       attractions: ['Grand Ole Opry', 'Country Music Hall of Fame', 'Broadway Honky Tonks', 'Ryman Auditorium', 'The Parthenon', 'Belle Meade Plantation', 'Johnny Cash Museum', 'Printer\'s Alley', 'Music Row', 'Bluebird Cafe'],
       demographics: 'Music City USA. Country music capital. Rapidly growing with healthcare and tech industries.',
+      airports: [
+        { code: 'BNA', name: 'Nashville International Airport', distance: '13km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Country music, Grand Ole Opry, hot chicken, honky tonks, bachelorette parties, healthcare',
       seoContent: {
         intro: 'Nashville, Music City, operates on Central Standard Time (CST/UTC-6). The capital of Tennessee and country music, Nashville has evolved into a diverse cultural hub attracting musicians, entrepreneurs, and tourists.',
         timezoneFacts: 'Same timezone as Chicago and Memphis. 1 hour behind New York. Live music plays around the clock.',
@@ -1620,12 +1779,19 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'new-orleans', city: 'New Orleans', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 29.95, lng: -90.07, tier: 3, continent: 'americas',
+  { slug: 'new-orleans', city: 'New Orleans', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Louisiana', stateCode: 'LA', lat: 29.95, lng: -90.07, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '390K', metroPopulation: '1.3M', phoneCode: '+1 504', language: 'English, French Creole',
       climate: 'Humid subtropical with hot humid summers (27-33°C) and mild winters (8-17°C). Hurricane season Jun-Nov.',
       attractions: ['French Quarter', 'Bourbon Street', 'Jackson Square', 'Garden District', 'St. Louis Cemetery', 'Preservation Hall', 'Cafe Du Monde', 'Frenchmen Street', 'Audubon Zoo', 'WWII Museum'],
       demographics: 'Unique French, African, and Caribbean cultural blend. Birthplace of jazz. Strong food culture.',
+      airports: [
+        { code: 'MSY', name: 'Louis Armstrong New Orleans International', distance: '24km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Jazz music, Mardi Gras, French Quarter, beignets, Cajun/Creole food, voodoo, Saints NFL',
       seoContent: {
         intro: 'New Orleans, the Big Easy, operates on Central Standard Time (CST/UTC-6). This unique American city blends French, African, and Caribbean cultures into an intoxicating mix of jazz, cuisine, and celebration.',
         timezoneFacts: 'Same timezone as Houston and Chicago. 1 hour behind Miami. Mardi Gras date varies each year.',
@@ -1640,12 +1806,19 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'orlando', city: 'Orlando', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 28.54, lng: -81.38, tier: 3, continent: 'americas',
+  { slug: 'orlando', city: 'Orlando', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 28.54, lng: -81.38, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '310K', metroPopulation: '2.7M', phoneCode: '+1 407', language: 'English, Spanish',
       climate: 'Humid subtropical with hot humid summers (25-33°C) and mild winters (10-22°C). Afternoon thunderstorms common.',
       attractions: ['Walt Disney World', 'Universal Studios', 'SeaWorld', 'ICON Park', 'Kennedy Space Center', 'International Drive', 'Lake Eola', 'Disney Springs', 'Universal CityWalk', 'Gatorland'],
       demographics: 'Theme park capital of the world. Major tourist destination. Growing tech sector.',
+      airports: [
+        { code: 'MCO', name: 'Orlando International Airport', distance: '18km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Walt Disney World, Universal Studios, theme parks, Magic NBA, Kennedy Space Center',
       seoContent: {
         intro: 'Orlando, the Theme Park Capital, operates on Eastern Standard Time (EST/UTC-5). Home to Walt Disney World and Universal Studios, Orlando welcomes over 75 million visitors annually.',
         timezoneFacts: 'Same timezone as Miami and New York. Major tourism hub - theme parks consider global visitors.',
@@ -1660,12 +1833,19 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'honolulu', city: 'Honolulu', timezone: 'Pacific/Honolulu', country: 'United States', countryCode: 'US', lat: 21.31, lng: -157.86, tier: 2, continent: 'oceania',
+  { slug: 'honolulu', city: 'Honolulu', timezone: 'Pacific/Honolulu', country: 'United States', countryCode: 'US', state: 'Hawaii', stateCode: 'HI', lat: 21.31, lng: -157.86, tier: 2, continent: 'oceania',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '350K', metroPopulation: '1M', phoneCode: '+1 808', language: 'English, Hawaiian',
       climate: 'Tropical with consistent temperatures (23-30°C) year-round. Trade winds keep it comfortable.',
       attractions: ['Waikiki Beach', 'Diamond Head', 'Pearl Harbor', 'Hanauma Bay', 'Iolani Palace', 'North Shore', 'Ala Moana', 'Chinatown', 'Polynesian Cultural Center', 'Manoa Falls'],
       demographics: 'Hawaii\'s capital. Diverse Pacific Islander, Asian, and mainland American population. Major military presence.',
+      airports: [
+        { code: 'HNL', name: 'Daniel K. Inouye International', distance: '16km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Waikiki Beach, Pearl Harbor, surfing, hula, poke, aloha spirit, tropical paradise',
       seoContent: {
         intro: 'Honolulu, the Crossroads of the Pacific, operates on Hawaii-Aleutian Standard Time (HST/UTC-10). The capital of Hawaii offers tropical paradise with rich Polynesian culture and American convenience.',
         timezoneFacts: 'Hawaii doesn\'t observe DST - always UTC-10. 5-6 hours behind US mainland depending on season. Unique position bridging East and West.',
@@ -1680,12 +1860,19 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'anchorage', city: 'Anchorage', timezone: 'America/Anchorage', country: 'United States', countryCode: 'US', lat: 61.22, lng: -149.90, tier: 3, continent: 'americas',
+  { slug: 'anchorage', city: 'Anchorage', timezone: 'America/Anchorage', country: 'United States', countryCode: 'US', state: 'Alaska', stateCode: 'AK', lat: 61.22, lng: -149.90, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '290K', metroPopulation: '400K', phoneCode: '+1 907', language: 'English',
       climate: 'Subarctic with cool summers (13-19°C) and cold winters (-11 to -5°C). Extreme daylight variation.',
       attractions: ['Denali National Park', 'Glacier cruises', 'Alaska Wildlife Conservation Center', 'Flattop Mountain', 'Anchorage Museum', 'Tony Knowles Coastal Trail', 'Portage Glacier', 'Alyeska Resort', 'Lake Hood', 'Alaska Railroad'],
       demographics: 'Alaska\'s largest city. Gateway to wilderness adventures. Strong Native Alaskan heritage.',
+      airports: [
+        { code: 'ANC', name: 'Ted Stevens Anchorage International', distance: '10km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Last Frontier, Denali, northern lights, midnight sun, salmon fishing, glaciers, Iditarod',
       seoContent: {
         intro: 'Anchorage, Alaska\'s largest city, operates on Alaska Standard Time (AKST/UTC-9). The gateway to America\'s last frontier offers stunning wilderness, abundant wildlife, and extreme seasonal daylight.',
         timezoneFacts: '1 hour behind Pacific Time, 4 hours behind New York. Summer has nearly 20 hours of daylight; winter has barely 5.',
@@ -7285,56 +7472,2106 @@ export const cities: City[] = [
   // ZAMBIA - Lusaka
 
   // USA - Additional Major Cities
-  { slug: 'san-antonio', city: 'San Antonio', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 29.42, lng: -98.49, tier: 3, continent: 'americas',
+  { slug: 'san-antonio', city: 'San Antonio', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 29.42, lng: -98.49, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '1.5M', phoneCode: '+1 210', language: 'English, Spanish',
       climate: 'Humid subtropical with hot summers (30-36°C) and mild winters (6-17°C). Rainfall year-round.',
-      attractions: ['The Alamo', 'River Walk', 'San Antonio Missions', 'Pearl District', 'Tower of the Americas'],
-      demographics: 'Seventh-largest city in US, rich in Spanish colonial and Texan history. Home to five 18th-century Spanish missions (UNESCO).'
+      attractions: ['The Alamo', 'River Walk', 'San Antonio Missions', 'Pearl District', 'Tower of the Americas', 'Market Square', 'Natural Bridge Caverns', 'SeaWorld San Antonio', 'Six Flags Fiesta Texas', 'Japanese Tea Garden'],
+      demographics: 'Seventh-largest city in US, rich in Spanish colonial and Texan history. Home to five 18th-century Spanish missions (UNESCO).',
+      airports: [
+        { code: 'SAT', name: 'San Antonio International Airport', distance: '13km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'The Alamo, River Walk, Spurs NBA, Tex-Mex, Spanish missions (UNESCO), military bases',
+      seoContent: {
+        intro: 'San Antonio, the Alamo City, operates on Central Standard Time (CST/UTC-6). This historic Texas city blends Spanish colonial heritage with modern attractions, featuring the famous River Walk and five UNESCO World Heritage missions.',
+        timezoneFacts: 'Same timezone as Dallas, Houston, and Chicago. 1 hour behind New York. Major military city with multiple bases.',
+        bestTimeToVisit: 'March-May and October-November for pleasant weather. Summer is very hot. Fiesta San Antonio in April is a major event.',
+        businessHours: 'Standard hours 9 AM to 5 PM. River Walk restaurants and bars open late. Many attractions open 9 AM to 5 PM.',
+        timeDifference: 'San Antonio is UTC-6 (CST) / UTC-5 (CDT). When noon in San Antonio: NYC 1 PM, London 6 PM, LA 10 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'River Walk is a must-see. The Alamo is free but expect crowds. Try breakfast tacos. Visit the Pearl for upscale dining.',
+        transportation: 'VIA bus system covers city. Car recommended for attractions. San Antonio Airport (SAT) is 8 miles from downtown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Fiesta San Antonio (April), Stock Show & Rodeo (February).'
+      }
     }
   },
-  { slug: 'jacksonville', city: 'Jacksonville', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 30.33, lng: -81.66, tier: 3, continent: 'americas',
+  { slug: 'jacksonville', city: 'Jacksonville', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 30.33, lng: -81.66, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '950K', phoneCode: '+1 904', language: 'English',
       climate: 'Humid subtropical with hot humid summers (27-33°C) and mild winters (8-18°C). Hurricane risk June-November.',
-      attractions: ['Jacksonville Zoo', 'Cummer Museum', 'Jacksonville Beach', 'St. Johns River', 'Riverside Arts Market'],
-      demographics: 'Largest city by area in continental US, largest in Florida by population. Major port, naval base, and financial center.'
+      attractions: ['Jacksonville Zoo', 'Cummer Museum', 'Jacksonville Beach', 'St. Johns River', 'Riverside Arts Market', 'TIAA Bank Field', 'Catty Shack Ranch', 'Fort George Island', 'Little Talbot Island', 'Museum of Science & History'],
+      demographics: 'Largest city by area in continental US, largest in Florida by population. Major port, naval base, and financial center.',
+      airports: [
+        { code: 'JAX', name: 'Jacksonville International Airport', distance: '21km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Largest US city by area, Jaguars NFL, beaches, Naval Station Mayport, St. Johns River',
+      seoContent: {
+        intro: 'Jacksonville, the Bold City, operates on Eastern Standard Time (EST/UTC-5). As the largest city by area in the continental US, Jacksonville offers miles of beaches, a vibrant arts scene, and major naval presence.',
+        timezoneFacts: 'Same timezone as Miami, Atlanta, and New York. 5 hours behind London. Gateway to Florida\'s First Coast.',
+        bestTimeToVisit: 'March-May and September-November for pleasant weather. Summer is hot and humid with afternoon storms.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Beach areas have more relaxed schedules. Downtown quieter after business hours.',
+        timeDifference: 'Jacksonville is UTC-5 (EST) / UTC-4 (EDT). When noon in Jacksonville: London 5 PM, LA 9 AM, Chicago 11 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Beaches are less crowded than South Florida. River taxis available downtown. Jaguars games at TIAA Bank Field.',
+        transportation: 'JTA buses and Skyway downtown. Car essential for this spread-out city. JAX Airport is 15 miles from downtown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Florida-Georgia football game brings crowds (late October).'
+      }
     }
   },
-  { slug: 'charlotte', city: 'Charlotte', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 35.23, lng: -80.84, tier: 3, continent: 'americas',
+  { slug: 'charlotte', city: 'Charlotte', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'North Carolina', stateCode: 'NC', lat: 35.23, lng: -80.84, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '880K', phoneCode: '+1 704', language: 'English',
       climate: 'Humid subtropical with hot summers (25-33°C) and mild winters (3-12°C). Rainfall year-round.',
-      attractions: ['NASCAR Hall of Fame', 'Freedom Park', 'Discovery Place', 'Carowinds', 'Bank of America Stadium'],
-      demographics: 'Largest city in North Carolina, second-largest US banking center after New York. Fast-growing Southern hub.'
+      attractions: ['NASCAR Hall of Fame', 'Freedom Park', 'Discovery Place', 'Carowinds', 'Bank of America Stadium', 'Billy Graham Library', 'US National Whitewater Center', 'Mint Museum', 'Spectrum Center', 'Romare Bearden Park'],
+      demographics: 'Largest city in North Carolina, second-largest US banking center after New York. Fast-growing Southern hub.',
+      airports: [
+        { code: 'CLT', name: 'Charlotte Douglas International', distance: '11km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Banking capital, NASCAR, Panthers NFL, Hornets NBA, Queen City, craft beer scene',
+      seoContent: {
+        intro: 'Charlotte, the Queen City, operates on Eastern Standard Time (EST/UTC-5). As the second-largest banking center in the US after New York, Charlotte combines Southern charm with big-city amenities.',
+        timezoneFacts: 'Same timezone as New York, Atlanta, and Miami. 5 hours behind London. Major American Airlines hub.',
+        bestTimeToVisit: 'March-May and September-November for pleasant weather. Summer is hot and humid. Spring brings beautiful blooms.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Uptown (downtown) has vibrant nightlife. NoDa arts district open late.',
+        timeDifference: 'Charlotte is UTC-5 (EST) / UTC-4 (EDT). When noon in Charlotte: London 5 PM, LA 9 AM, Chicago 11 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Bank of America and Wells Fargo headquarters here. Try the craft beer scene in NoDa. Panthers and Hornets games popular.',
+        transportation: 'LYNX light rail connects Uptown. Car needed for suburbs. CLT Airport is major hub, 10 miles from Uptown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. NASCAR races throughout the year. Speed Street festival (May).'
+      }
     }
   },
-  { slug: 'columbus', city: 'Columbus', timezone: 'America/New_York', country: 'United States', countryCode: 'US', lat: 39.96, lng: -83.00, tier: 3, continent: 'americas',
+  { slug: 'columbus', city: 'Columbus', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Ohio', stateCode: 'OH', lat: 39.96, lng: -83.00, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '910K', phoneCode: '+1 614', language: 'English',
       climate: 'Humid continental with hot summers (23-30°C) and cold snowy winters (-3 to 5°C).',
-      attractions: ['Ohio State University', 'German Village', 'COSI Science Center', 'North Market', 'Columbus Zoo'],
-      demographics: 'Capital and largest city of Ohio, home to Ohio State University. Major test market for retail and fast food chains.'
+      attractions: ['Ohio State University', 'German Village', 'COSI Science Center', 'North Market', 'Columbus Zoo', 'Franklin Park Conservatory', 'Ohio Stadium', 'Short North Arts District', 'Scioto Mile', 'Arena District'],
+      demographics: 'Capital and largest city of Ohio, home to Ohio State University. Major test market for retail and fast food chains.',
+      airports: [
+        { code: 'CMH', name: 'John Glenn Columbus International', distance: '10km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Ohio State Buckeyes, German Village, test market capital, Wendy\'s HQ, Crew SC MLS',
+      seoContent: {
+        intro: 'Columbus, Ohio\'s capital, operates on Eastern Standard Time (EST/UTC-5). Home to The Ohio State University, Columbus is the state\'s largest city and a major test market for American companies.',
+        timezoneFacts: 'Same timezone as New York and Cleveland. 5 hours behind London. One of America\'s fastest-growing cities.',
+        bestTimeToVisit: 'May-June and September-October for pleasant weather. Fall brings OSU football excitement. Winters are cold.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Campus area busy year-round. Short North has active nightlife.',
+        timeDifference: 'Columbus is UTC-5 (EST) / UTC-4 (EDT). When noon in Columbus: London 5 PM, LA 9 AM, Chicago 11 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'OSU football Saturdays transform the city. German Village has great food. North Market for local vendors.',
+        transportation: 'COTA bus system. Car recommended. John Glenn Airport (CMH) is 6 miles from downtown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. OSU football season (September-November). Ohio State Fair (late July).'
+      }
     }
   },
-  { slug: 'indianapolis', city: 'Indianapolis', timezone: 'America/Indiana/Indianapolis', country: 'United States', countryCode: 'US', lat: 39.77, lng: -86.16, tier: 3, continent: 'americas',
+  { slug: 'indianapolis', city: 'Indianapolis', timezone: 'America/Indiana/Indianapolis', country: 'United States', countryCode: 'US', state: 'Indiana', stateCode: 'IN', lat: 39.77, lng: -86.16, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '880K', phoneCode: '+1 317', language: 'English',
       climate: 'Humid continental with hot humid summers (24-30°C) and cold snowy winters (-4 to 4°C).',
-      attractions: ['Indianapolis Motor Speedway', 'Indianapolis Zoo', 'Monument Circle', 'Children\'s Museum', 'White River State Park'],
-      demographics: 'Capital and largest city of Indiana, "Crossroads of America". Famous for Indy 500 and amateur sports capital of the world.'
+      attractions: ['Indianapolis Motor Speedway', 'Indianapolis Zoo', 'Monument Circle', 'Children\'s Museum', 'White River State Park', 'Lucas Oil Stadium', 'Mass Ave District', 'Newfields Art Museum', 'Indianapolis Museum of Art', 'Victory Field'],
+      demographics: 'Capital and largest city of Indiana, "Crossroads of America". Famous for Indy 500 and amateur sports capital of the world.',
+      airports: [
+        { code: 'IND', name: 'Indianapolis International Airport', distance: '11km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Indy 500, Colts NFL, Pacers NBA, amateur sports capital, crossroads of America',
+      seoContent: {
+        intro: 'Indianapolis, the Crossroads of America, operates on Eastern Standard Time (EST/UTC-5). Home to the legendary Indianapolis 500 and the world\'s largest Children\'s Museum, Indy is the amateur sports capital of the world.',
+        timezoneFacts: 'EST since 2006. Same timezone as New York. Host to numerous major sporting events including NCAA Final Four.',
+        bestTimeToVisit: 'May for Indy 500. Spring and fall for pleasant weather. Winter is cold. Summer has festivals.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Downtown and Mass Ave have active nightlife. Race day changes everything in May.',
+        timeDifference: 'Indianapolis is UTC-5 (EST) / UTC-4 (EDT). When noon in Indianapolis: London 5 PM, LA 9 AM, Chicago 11 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November. Indiana adopted DST in 2006.',
+        localTips: 'Indy 500 (May) requires advance planning. Mass Ave has great dining. Pork tenderloin sandwiches are local specialty.',
+        transportation: 'IndyGo bus and Red Line BRT. Car recommended. IND Airport is 7 miles from downtown - consistently rated top US airport.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Indianapolis 500 (Memorial Day weekend). Indiana State Fair (August).'
+      }
     }
   },
-  { slug: 'fort-worth', city: 'Fort Worth', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', lat: 32.75, lng: -97.33, tier: 3, continent: 'americas',
+  { slug: 'fort-worth', city: 'Fort Worth', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 32.75, lng: -97.33, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '960K', phoneCode: '+1 817', language: 'English',
       climate: 'Humid subtropical with hot summers (28-38°C) and mild winters (3-15°C). Occasional severe thunderstorms.',
-      attractions: ['Fort Worth Stockyards', 'Kimbell Art Museum', 'Sundance Square', 'Fort Worth Zoo', 'Botanic Garden'],
-      demographics: 'Fifth-largest city in Texas, "City of Cowboys and Culture". Part of Dallas-Fort Worth metroplex, major aerospace and defense hub.'
+      attractions: ['Fort Worth Stockyards', 'Kimbell Art Museum', 'Sundance Square', 'Fort Worth Zoo', 'Botanic Garden', 'Amon Carter Museum', 'Modern Art Museum', 'National Cowgirl Museum', 'Bass Performance Hall', 'Water Gardens'],
+      demographics: 'Fifth-largest city in Texas, "City of Cowboys and Culture". Part of Dallas-Fort Worth metroplex, major aerospace and defense hub.',
+      airports: [
+        { code: 'DFW', name: 'Dallas/Fort Worth International', distance: '27km' },
+        { code: 'AFW', name: 'Fort Worth Alliance Airport', distance: '24km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Stockyards, Cowboys and Culture, world-class museums, BBQ, rodeo, Western heritage',
+      seoContent: {
+        intro: 'Fort Worth, Where the West Begins, operates on Central Standard Time (CST/UTC-6). Known as the "City of Cowboys and Culture," Fort Worth uniquely blends authentic Western heritage with world-class art museums.',
+        timezoneFacts: 'Same timezone as Dallas, Houston, and Chicago. 1 hour behind New York. Part of DFW metroplex but distinct identity.',
+        bestTimeToVisit: 'March-May and October-November for pleasant weather. Summer is very hot. Fort Worth Stock Show in January-February.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Stockyards and Sundance Square busy evenings and weekends.',
+        timeDifference: 'Fort Worth is UTC-6 (CST) / UTC-5 (CDT). When noon in Fort Worth: NYC 1 PM, London 6 PM, LA 10 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Stockyards cattle drive at 11:30 AM and 4:00 PM daily. Kimbell Art Museum is free. Try Joe T. Garcia\'s for Tex-Mex.',
+        transportation: 'TEXRail connects to DFW Airport. Trinity Metro buses. Car needed for full exploration. DFW Airport serves the metroplex.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Fort Worth Stock Show & Rodeo (January-February). Main St. Arts Festival (April).'
+      }
     }
   },
 
-  // BRAZIL - Additional Cities
+  // USA - Additional Major Cities (Premium Format)
+  { slug: 'san-jose', city: 'San Jose', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 37.34, lng: -121.89, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '1M', phoneCode: '+1 408', language: 'English, Spanish, Vietnamese',
+      climate: 'Mediterranean with warm dry summers (20-28°C) and mild wet winters (8-15°C). 300+ sunny days.',
+      attractions: ['Tech Museum of Innovation', 'Winchester Mystery House', 'San Jose Museum of Art', 'Santana Row', 'Happy Hollow Park', 'Rosicrucian Egyptian Museum', 'SAP Center', 'Japanese Friendship Garden', 'Municipal Rose Garden', 'Alum Rock Park'],
+      demographics: 'Capital of Silicon Valley and 10th largest US city. Highest median income in US. Major tech hub with Apple, Google, Meta nearby.',
+      airports: [
+        { code: 'SJC', name: 'San Jose International Airport', distance: '5km' },
+        { code: 'SFO', name: 'San Francisco International', distance: '55km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Silicon Valley, tech industry, Apple/Google/Meta, Sharks NHL, highest salaries in US',
+      seoContent: {
+        intro: 'San Jose, the Capital of Silicon Valley, operates on Pacific Standard Time (PST/UTC-8). As the largest city in the Bay Area, San Jose is the heart of the global tech industry, home to countless startups and tech giants.',
+        timezoneFacts: 'Same timezone as San Francisco and Los Angeles. 3 hours behind New York. Tech company schedules influence global software releases.',
+        bestTimeToVisit: 'March-May and September-November for pleasant weather. Summer is warm but dry. Winter is mild with occasional rain.',
+        businessHours: 'Tech culture means flexible hours. Many startups operate around the clock. Standard retail 10 AM to 9 PM.',
+        timeDifference: 'San Jose is UTC-8 (PST) / UTC-7 (PDT). When noon in San Jose: NYC 3 PM, London 8 PM, Tokyo 5 AM (+1).',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Tech workers everywhere. Housing is extremely expensive. VTA light rail connects downtown. Santana Row for upscale shopping.',
+        transportation: 'VTA light rail and buses. Caltrain to San Francisco. SJC Airport is very close to downtown - 3 miles.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Tech conferences throughout the year.'
+      }
+    }
+  },
+  { slug: 'el-paso', city: 'El Paso', timezone: 'America/Denver', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 31.76, lng: -106.49, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '680K', phoneCode: '+1 915', language: 'English, Spanish',
+      climate: 'Hot desert with very hot summers (28-36°C) and mild winters (4-14°C). Very low rainfall, 300+ sunny days.',
+      attractions: ['Franklin Mountains State Park', 'El Paso Museum of Art', 'Hueco Tanks', 'Plaza Theatre', 'San Jacinto Plaza', 'El Paso Zoo', 'Wyler Aerial Tramway', 'Chamizal National Memorial', 'Fort Bliss', 'Star on the Mountain'],
+      demographics: 'Largest US city on Mexican border, forming binational metro with Ciudad Juárez. 80%+ Hispanic population. Major military presence.',
+      airports: [
+        { code: 'ELP', name: 'El Paso International Airport', distance: '10km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Mexican border, Fort Bliss, Sun City, Tex-Mex food, Franklin Mountains, bilingual culture',
+      seoContent: {
+        intro: 'El Paso, the Sun City, operates on Mountain Standard Time (MST/UTC-7). Located on the US-Mexico border across from Ciudad Juárez, El Paso offers unique binational culture and year-round sunshine.',
+        timezoneFacts: 'Only major Texas city in Mountain Time (rest of Texas is Central). Same time as Denver. Cross to Juárez stays same time.',
+        bestTimeToVisit: 'October-April for pleasant weather. Summer is very hot (35°C+). Spring can be windy. Winter is mild.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Cross-border business common. Many businesses bilingual.',
+        timeDifference: 'El Paso is UTC-7 (MST) / UTC-6 (MDT). When noon in El Paso: NYC 2 PM, LA 11 AM, Mexico City 1 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Spanish is widely spoken. Bring passport to visit Juárez. Fort Bliss is huge military installation. Best Mexican food north of border.',
+        transportation: 'Sun Metro buses. Car essential. ELP Airport 10 minutes from downtown. Easy border crossing at multiple points.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Sun Bowl (December). Fiesta de las Flores.'
+      }
+    }
+  },
+  { slug: 'fresno', city: 'Fresno', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 36.75, lng: -119.77, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '540K', phoneCode: '+1 559', language: 'English, Spanish',
+      climate: 'Hot semi-arid with very hot summers (28-38°C) and mild foggy winters (4-12°C). Very dry summers.',
+      attractions: ['Forestiere Underground Gardens', 'Fresno Chaffee Zoo', 'Woodward Park', 'Tower District', 'Fresno Art Museum', 'Island Waterpark', 'Shinzen Japanese Garden', 'Meux Home Museum', 'Yosemite Gateway', 'Blossom Trail'],
+      demographics: 'Agricultural capital of US. Central Valley hub. Large Hispanic and Armenian communities. Gateway to national parks.',
+      airports: [
+        { code: 'FAT', name: 'Fresno Yosemite International', distance: '10km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Agriculture capital, raisins, Yosemite gateway, Central Valley, farming, affordable California',
+      seoContent: {
+        intro: 'Fresno, the heart of California\'s Central Valley, operates on Pacific Standard Time (PST/UTC-8). As the agricultural capital of the US, Fresno produces more food than any other county in America.',
+        timezoneFacts: 'Same timezone as Los Angeles and San Francisco. 3 hours behind New York. Central location between LA and SF.',
+        bestTimeToVisit: 'March-May for Blossom Trail. September-October pleasant. Summer extremely hot. Winter foggy.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Agricultural businesses start early. Tower District has nightlife.',
+        timeDifference: 'Fresno is UTC-8 (PST) / UTC-7 (PDT). When noon in Fresno: NYC 3 PM, London 8 PM, Tokyo 5 AM (+1).',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Gateway to Yosemite (90 min), Sequoia, Kings Canyon. Tule fog dangerous in winter. Underground Gardens unique. Great Mexican food.',
+        transportation: 'FAX buses. Car essential. Fresno Airport small but convenient. Amtrak connects to Bay Area and LA.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Big Fresno Fair (October). Blossom Trail (February-March).'
+      }
+    }
+  },
+  { slug: 'mesa', city: 'Mesa', timezone: 'America/Phoenix', country: 'United States', countryCode: 'US', state: 'Arizona', stateCode: 'AZ', lat: 33.42, lng: -111.83, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '510K', phoneCode: '+1 480', language: 'English, Spanish',
+      climate: 'Hot desert with extremely hot summers (32-42°C) and mild winters (10-20°C). Very dry, 300+ sunny days.',
+      attractions: ['Mesa Arts Center', 'Usery Mountain Regional Park', 'Arizona Museum of Natural History', 'Commemorative Air Force Museum', 'Cubs Spring Training', 'Superstition Mountains', 'Salt River', 'Saguaro Lake', 'Golfland Sunsplash', 'Fresh Foodie Trail'],
+      demographics: 'Third-largest Arizona city. Part of Phoenix metro. Large Mormon population. Spring training destination.',
+      airports: [
+        { code: 'AZA', name: 'Phoenix-Mesa Gateway Airport', distance: '25km' },
+        { code: 'PHX', name: 'Phoenix Sky Harbor', distance: '25km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Spring training baseball, Superstition Mountains, outdoor recreation, affordable Phoenix suburb',
+      seoContent: {
+        intro: 'Mesa, Arizona\'s third-largest city, operates on Mountain Standard Time (MST/UTC-7) year-round. As part of the Phoenix metro, Mesa offers desert beauty with spring training baseball and outdoor adventures.',
+        timezoneFacts: 'Arizona doesn\'t observe DST. Mesa stays UTC-7 year-round. Same as Phoenix and Tucson.',
+        bestTimeToVisit: 'October-April for pleasant weather. February-March for spring training. Summer extremely hot (40°C+).',
+        businessHours: 'Standard hours 9 AM to 5 PM. Many businesses open early to beat heat. Spring training busy February-March.',
+        timeDifference: 'Mesa is always UTC-7. When noon in Mesa: NYC 2 PM (winter) / 3 PM (summer), LA 11 AM / noon.',
+        daylightSaving: 'Arizona does NOT observe DST. Time difference with other states changes seasonally.',
+        localTips: 'Spring training paradise - Cubs play here. Superstition Mountains for hiking. Gateway to Apache Trail. Heat dangerous in summer.',
+        transportation: 'Valley Metro buses and light rail to Phoenix. Car essential. Two airports serve the area.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Spring Training (February-March). Mesa Festival of the Arts.'
+      }
+    }
+  },
+  { slug: 'colorado-springs', city: 'Colorado Springs', timezone: 'America/Denver', country: 'United States', countryCode: 'US', state: 'Colorado', stateCode: 'CO', lat: 38.83, lng: -104.82, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '480K', phoneCode: '+1 719', language: 'English',
+      climate: 'Semi-arid with warm summers (18-28°C) and cold winters (-5 to 8°C). 300+ sunny days. Can snow any month.',
+      attractions: ['Garden of the Gods', 'Pikes Peak', 'US Olympic Training Center', 'Cheyenne Mountain Zoo', 'Air Force Academy', 'Manitou Springs', 'Cave of the Winds', 'Seven Falls', 'Peterson Space Force Base', 'Broadmoor Resort'],
+      demographics: 'Second-largest Colorado city. Major military presence with 5 bases. Conservative. Olympic City USA.',
+      airports: [
+        { code: 'COS', name: 'Colorado Springs Airport', distance: '15km' },
+        { code: 'DEN', name: 'Denver International', distance: '115km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Garden of the Gods, Pikes Peak, Air Force Academy, Olympic Training Center, military bases',
+      seoContent: {
+        intro: 'Colorado Springs, Olympic City USA, operates on Mountain Standard Time (MST/UTC-7). Nestled at the base of Pikes Peak, this city combines stunning natural beauty with significant military presence.',
+        timezoneFacts: 'Same timezone as Denver. 2 hours behind New York. Mountain Time covers Colorado and surrounding states.',
+        bestTimeToVisit: 'May-September for outdoor activities. Fall has beautiful colors. Winter good for nearby skiing. Spring unpredictable.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Outdoor activities start early. Military bases have own schedules.',
+        timeDifference: 'Colorado Springs is UTC-7 (MST) / UTC-6 (MDT). When noon here: NYC 2 PM, LA 11 AM, London 7 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Garden of the Gods is free! Altitude affects visitors (6,000+ ft). Pikes Peak drive requires advance reservation. Military town culture.',
+        transportation: 'Mountain Metro buses. Car essential. COS Airport small but convenient. Denver Airport 90 minutes north.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Space Foundation conference. Pikes Peak Marathon (August).'
+      }
+    }
+  },
+  { slug: 'omaha', city: 'Omaha', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Nebraska', stateCode: 'NE', lat: 41.26, lng: -95.94, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '490K', phoneCode: '+1 402', language: 'English',
+      climate: 'Humid continental with hot summers (23-32°C) and cold winters (-8 to 2°C). Four distinct seasons.',
+      attractions: ['Henry Doorly Zoo', 'Old Market', 'Lauritzen Gardens', 'Durham Museum', 'Bob Kerrey Pedestrian Bridge', 'Joslyn Art Museum', 'College World Series', 'TD Ameritrade Park', 'Heartland of America Park', 'Strategic Air Command Museum'],
+      demographics: 'Largest city in Nebraska. Warren Buffett\'s hometown. Corporate headquarters for several Fortune 500 companies.',
+      airports: [
+        { code: 'OMA', name: 'Eppley Airfield', distance: '5km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Warren Buffett/Berkshire Hathaway, Henry Doorly Zoo, College World Series, steaks, Old Market',
+      seoContent: {
+        intro: 'Omaha, the Gateway to the West, operates on Central Standard Time (CST/UTC-6). Home to Warren Buffett and Berkshire Hathaway, Omaha punches above its weight in business and culture.',
+        timezoneFacts: 'Same timezone as Chicago and Dallas. 1 hour behind New York. Berkshire Hathaway annual meeting draws 40,000+ investors.',
+        bestTimeToVisit: 'May-October for pleasant weather. June for College World Series. Fall has beautiful colors. Winter cold but manageable.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Old Market has lively evening scene. Berkshire meeting first weekend of May.',
+        timeDifference: 'Omaha is UTC-6 (CST) / UTC-5 (CDT). When noon in Omaha: NYC 1 PM, Denver 11 AM, London 6 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Henry Doorly Zoo is world-class. Old Market for dining and shopping. Steaks are excellent. College World Series transforms city.',
+        transportation: 'Metro buses. Car recommended. Eppley Airfield very close to downtown - 5 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. College World Series (June). Berkshire Hathaway Meeting (May).'
+      }
+    }
+  },
+  { slug: 'long-beach', city: 'Long Beach', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 33.77, lng: -118.19, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '470K', phoneCode: '+1 562', language: 'English, Spanish',
+      climate: 'Mediterranean with warm summers (20-26°C) and mild winters (12-18°C). Very pleasant year-round.',
+      attractions: ['Queen Mary', 'Aquarium of the Pacific', 'Long Beach Beach', 'Naples Island', 'Museum of Latin American Art', 'Shoreline Village', 'Long Beach Grand Prix', 'Belmont Shore', 'Earl Burns Miller Japanese Garden', 'Port of Long Beach'],
+      demographics: 'Seventh-largest California city. Major port city - second busiest in US. Diverse with large LGBTQ+ community.',
+      airports: [
+        { code: 'LGB', name: 'Long Beach Airport', distance: '5km' },
+        { code: 'LAX', name: 'Los Angeles International', distance: '32km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Queen Mary, major port, Grand Prix, beaches, LGBTQ+ friendly, Snoop Dogg\'s hometown',
+      seoContent: {
+        intro: 'Long Beach, California\'s seventh-largest city, operates on Pacific Standard Time (PST/UTC-8). This port city combines beach culture with maritime history, anchored by the legendary Queen Mary.',
+        timezoneFacts: 'Same timezone as Los Angeles. 3 hours behind New York. Major Pacific Rim trade hub.',
+        bestTimeToVisit: 'Year-round pleasant weather. April for Grand Prix. Summer for beaches. Spring and fall ideal.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Beach areas and Belmont Shore busy evenings. Port operates 24/7.',
+        timeDifference: 'Long Beach is UTC-8 (PST) / UTC-7 (PDT). When noon here: NYC 3 PM, London 8 PM, Tokyo 5 AM (+1).',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Queen Mary is haunted (allegedly). LGB Airport is JetBlue hub - cheaper flights. Naples Island like mini Venice. Grand Prix is major event.',
+        transportation: 'Metro Blue Line to LA. Long Beach Transit buses. Passport ferry. LGB Airport very convenient.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Grand Prix (April). Long Beach Pride (May).'
+      }
+    }
+  },
+  { slug: 'virginia-beach', city: 'Virginia Beach', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Virginia', stateCode: 'VA', lat: 36.85, lng: -75.98, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '460K', phoneCode: '+1 757', language: 'English',
+      climate: 'Humid subtropical with hot summers (24-31°C) and mild winters (3-11°C). Moderate rainfall year-round.',
+      attractions: ['Virginia Beach Boardwalk', 'First Landing State Park', 'Virginia Aquarium', 'Cape Henry Lighthouse', 'Back Bay National Wildlife Refuge', 'Neptune Statue', 'Military Aviation Museum', 'Edgar Cayce Center', 'Sandbridge Beach', 'Virginia Beach Fishing Pier'],
+      demographics: 'Largest Virginia city. Resort destination with 35 miles of beaches. Major military presence.',
+      airports: [
+        { code: 'ORF', name: 'Norfolk International Airport', distance: '24km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Beaches, boardwalk, Navy SEALs training, resort destination, Neptune Festival',
+      seoContent: {
+        intro: 'Virginia Beach, Virginia\'s largest city, operates on Eastern Standard Time (EST/UTC-5). This resort city offers 35 miles of beaches, a famous boardwalk, and significant military presence.',
+        timezoneFacts: 'Same timezone as Washington D.C. and New York. 5 hours behind London. Naval Station Norfolk is world\'s largest.',
+        bestTimeToVisit: 'May-September for beach season. September for Neptune Festival. Spring and fall pleasant for sightseeing.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Oceanfront businesses extend hours in summer. Resort hours vary seasonally.',
+        timeDifference: 'Virginia Beach is UTC-5 (EST) / UTC-4 (EDT). When noon here: London 5 PM, LA 9 AM, Dubai 9 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Boardwalk is 3 miles long. First Landing is where settlers first arrived. Pungo has berry picking. Military jets common overhead.',
+        transportation: 'Hampton Roads Transit buses. Car essential. Norfolk Airport 30 minutes away. Chesapeake Bay Bridge-Tunnel connects to Eastern Shore.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Neptune Festival (September). Boardwalk Art Show (June).'
+      }
+    }
+  },
+  { slug: 'oakland', city: 'Oakland', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 37.80, lng: -122.27, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '430K', phoneCode: '+1 510', language: 'English, Spanish',
+      climate: 'Mediterranean with mild summers (15-22°C) and cool wet winters (8-14°C). Less fog than San Francisco.',
+      attractions: ['Jack London Square', 'Lake Merritt', 'Oakland Museum of California', 'Chabot Space & Science Center', 'Redwood Regional Park', 'Fox Oakland Theatre', 'Oakland Zoo', 'Temescal Alley', 'Chinatown', 'Mountain View Cemetery'],
+      demographics: 'Diverse city across the bay from San Francisco. Strong African American and Asian communities. Growing tech presence.',
+      airports: [
+        { code: 'OAK', name: 'Oakland International Airport', distance: '14km' },
+        { code: 'SFO', name: 'San Francisco International', distance: '32km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Bay Area, Port of Oakland, diverse culture, Jack London, As MLB (formerly), Warriors NBA (formerly)',
+      seoContent: {
+        intro: 'Oakland, the Brooklyn of the West, operates on Pacific Standard Time (PST/UTC-8). Across the bay from San Francisco, Oakland offers vibrant culture, diverse neighborhoods, and a thriving food scene.',
+        timezoneFacts: 'Same timezone as San Francisco and San Jose. 3 hours behind New York. BART connects to SF in 12 minutes.',
+        bestTimeToVisit: 'Year-round pleasant. September-October warmest. Summer less foggy than SF. Spring has wildflowers.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Jack London Square lively evenings. Temescal and Rockridge for dining.',
+        timeDifference: 'Oakland is UTC-8 (PST) / UTC-7 (PDT). When noon here: NYC 3 PM, London 8 PM, Tokyo 5 AM (+1).',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'OAK airport cheaper than SFO. Lake Merritt is jewel of Oakland. First Fridays art walk. Great food scene, lower prices than SF.',
+        transportation: 'BART connects Bay Area. AC Transit buses. OAK Airport BART station. Ferry to SF from Jack London Square.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Art + Soul Festival (August). Oakland Pride (September).'
+      }
+    }
+  },
+  { slug: 'tulsa', city: 'Tulsa', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Oklahoma', stateCode: 'OK', lat: 36.15, lng: -95.99, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '410K', phoneCode: '+1 918', language: 'English',
+      climate: 'Humid subtropical with hot summers (25-35°C) and mild winters (0-10°C). Tornado risk in spring.',
+      attractions: ['Philbrook Museum', 'Gathering Place', 'Tulsa Zoo', 'Gilcrease Museum', 'BOK Center', 'Route 66', 'Blue Whale of Catoosa', 'Center of the Universe', 'Tulsa Air and Space Museum', 'Greenwood District'],
+      demographics: 'Second-largest Oklahoma city. Oil heritage. Site of 1921 Tulsa Race Massacre. Growing tech scene.',
+      airports: [
+        { code: 'TUL', name: 'Tulsa International Airport', distance: '10km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Oil capital, Art Deco architecture, Route 66, Gathering Place, Black Wall Street history',
+      seoContent: {
+        intro: 'Tulsa, the Oil Capital of the World, operates on Central Standard Time (CST/UTC-6). This Art Deco jewel on Route 66 combines oil heritage with emerging tech scene and world-class parks.',
+        timezoneFacts: 'Same timezone as Dallas and Oklahoma City. 1 hour behind New York. Central Time covers much of middle America.',
+        bestTimeToVisit: 'April-May and September-October ideal. Summer hot and humid. Spring has tornado risk. Winter mild.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Blue Dome District has nightlife. Gathering Place open dawn to 11 PM.',
+        timeDifference: 'Tulsa is UTC-6 (CST) / UTC-5 (CDT). When noon here: NYC 1 PM, Denver 11 AM, London 6 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Gathering Place is world-class park. Learn about Black Wall Street history. Route 66 landmarks throughout. Art Deco walking tours.',
+        transportation: 'Tulsa Transit buses. Car essential. TUL Airport 15 minutes from downtown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Mayfest. Tulsa State Fair (September-October).'
+      }
+    }
+  },
+  { slug: 'arlington-tx', city: 'Arlington', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 32.74, lng: -97.11, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '400K', phoneCode: '+1 817', language: 'English, Spanish',
+      climate: 'Humid subtropical with hot summers (28-37°C) and mild winters (3-15°C). Occasional severe thunderstorms.',
+      attractions: ['AT&T Stadium', 'Globe Life Field', 'Six Flags Over Texas', 'AT&T Stadium Tours', 'Arlington Museum of Art', 'River Legacy Parks', 'Hurricane Harbor', 'UT Arlington', 'International Bowling Museum', 'Theatre Arlington'],
+      demographics: 'Largest city without public transit in US. Entertainment district between Dallas and Fort Worth. Home to Cowboys and Rangers.',
+      airports: [
+        { code: 'DFW', name: 'Dallas/Fort Worth International', distance: '16km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Cowboys AT&T Stadium, Rangers Globe Life Field, Six Flags, entertainment district',
+      seoContent: {
+        intro: 'Arlington, Texas, operates on Central Standard Time (CST/UTC-6). Home to the Dallas Cowboys and Texas Rangers, Arlington is the entertainment hub of the DFW metroplex.',
+        timezoneFacts: 'Same timezone as Dallas and Fort Worth. 1 hour behind New York. Game days affect traffic throughout metroplex.',
+        bestTimeToVisit: 'March-May and September-November for pleasant weather. Summer very hot but Six Flags season. Football season August-January.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Entertainment district hours vary by events. Six Flags seasonal.',
+        timeDifference: 'Arlington is UTC-6 (CST) / UTC-5 (CDT). When noon here: NYC 1 PM, Denver 11 AM, London 6 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'No public transit - car or rideshare required. AT&T Stadium tours even without games. Six Flags has Hurricane Harbor. Parking is paid at venues.',
+        transportation: 'No public transit - largest US city without it. Car or rideshare essential. DFW Airport 20 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Cowboys games Sundays. Rangers season April-October.'
+      }
+    }
+  },
+  { slug: 'wichita', city: 'Wichita', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Kansas', stateCode: 'KS', lat: 37.69, lng: -97.34, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '400K', phoneCode: '+1 316', language: 'English',
+      climate: 'Humid subtropical with hot summers (25-35°C) and cold winters (-4 to 6°C). Tornado Alley location.',
+      attractions: ['Exploration Place', 'Sedgwick County Zoo', 'Old Cowtown Museum', 'Keeper of the Plains', 'Botanica Gardens', 'Museum of World Treasures', 'Wichita Art Museum', 'Great Plains Nature Center', 'Coleman Factory Outlet', 'Historic Delano District'],
+      demographics: 'Largest Kansas city. Air Capital of the World - Boeing, Spirit AeroSystems, Textron. Pizza Hut and White Castle born here.',
+      airports: [
+        { code: 'ICT', name: 'Wichita Dwight D. Eisenhower National', distance: '9km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Air Capital, aircraft manufacturing, Pizza Hut birthplace, Keeper of the Plains, BBQ',
+      seoContent: {
+        intro: 'Wichita, the Air Capital of the World, operates on Central Standard Time (CST/UTC-6). This Kansas hub produces more aircraft than any other city, with Boeing, Spirit AeroSystems, and others.',
+        timezoneFacts: 'Same timezone as Kansas City and Dallas. 1 hour behind New York. Aircraft industry schedules drive local economy.',
+        bestTimeToVisit: 'April-May and September-October ideal. Summer hot. Spring has tornado risk. Winter cold but manageable.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Delano District has evening scene. Aviation industry often early hours.',
+        timeDifference: 'Wichita is UTC-6 (CST) / UTC-5 (CDT). When noon here: NYC 1 PM, Denver 11 AM, London 6 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Keeper of the Plains fire lighting at 9 PM (summer). Aircraft factory tours available. First Pizza Hut here. Tornado shelters common.',
+        transportation: 'Wichita Transit buses. Car essential. ICT Airport 10 minutes from downtown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Riverfest (June). Wichita Asian Festival.'
+      }
+    }
+  },
+  { slug: 'bakersfield', city: 'Bakersfield', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 35.37, lng: -119.02, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '400K', phoneCode: '+1 661', language: 'English, Spanish',
+      climate: 'Hot semi-arid with very hot summers (28-38°C) and mild foggy winters (4-14°C). Very dry.',
+      attractions: ['Buck Owens Crystal Palace', 'Kern County Museum', 'California Living Museum', 'Fox Theater', 'Bakersfield Speedway', 'Murray Family Farms', 'Sequoia National Forest', 'Lake Isabella', 'Tule Elk State Natural Reserve', 'Basque restaurants'],
+      demographics: 'Kern County seat. Oil, agriculture, and country music heritage. Bakersfield Sound originated here.',
+      airports: [
+        { code: 'BFL', name: 'Meadows Field Airport', distance: '6km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Bakersfield Sound country music, oil production, agriculture, Buck Owens, Merle Haggard',
+      seoContent: {
+        intro: 'Bakersfield, birthplace of the Bakersfield Sound, operates on Pacific Standard Time (PST/UTC-8). This Central Valley hub combines country music heritage with oil and agricultural industries.',
+        timezoneFacts: 'Same timezone as Los Angeles. 3 hours behind New York. Gateway between LA and Central Valley.',
+        bestTimeToVisit: 'March-May and October-November pleasant. Summer extremely hot. Winter foggy. Spring has wildflowers.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Buck Owens Crystal Palace for music and dining.',
+        timeDifference: 'Bakersfield is UTC-8 (PST) / UTC-7 (PDT). When noon here: NYC 3 PM, London 8 PM, Tokyo 5 AM (+1).',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Buck Owens Crystal Palace is country music landmark. Basque restaurants unique. Gateway to Sequoias. Kern River for rafting.',
+        transportation: 'GET buses. Car essential. Meadows Field small but convenient. Amtrak connects to Bay Area and LA.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Kern County Fair (September). CALM zoo events.'
+      }
+    }
+  },
+  { slug: 'aurora-co', city: 'Aurora', timezone: 'America/Denver', country: 'United States', countryCode: 'US', state: 'Colorado', stateCode: 'CO', lat: 39.73, lng: -104.83, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '390K', phoneCode: '+1 303/720', language: 'English, Spanish',
+      climate: 'Semi-arid with warm summers (18-30°C) and cold winters (-6 to 6°C). 300+ sunny days. Snow common.',
+      attractions: ['Aurora Reservoir', 'Stanley Marketplace', 'Wings Over the Rockies', 'Cherry Creek State Park', 'Aurora History Museum', 'Morrison Nature Center', 'Southlands Mall', 'DIA proximity', 'Plains Conservation Center', 'Horseshoe Park'],
+      demographics: 'Third-largest Colorado city. Very diverse - most diverse city in state. Gateway to Denver International Airport.',
+      airports: [
+        { code: 'DEN', name: 'Denver International Airport', distance: '19km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Denver metro, DIA gateway, diversity, Wings Over the Rockies, Cherry Creek State Park',
+      seoContent: {
+        intro: 'Aurora, Colorado\'s third-largest city, operates on Mountain Standard Time (MST/UTC-7). As Denver\'s eastern neighbor and DIA gateway, Aurora offers diverse culture and outdoor recreation.',
+        timezoneFacts: 'Same timezone as Denver. 2 hours behind New York. DIA is actually in Aurora/Adams County.',
+        bestTimeToVisit: 'May-September for outdoor activities. Skiing nearby in winter. Fall colors in September. 300+ sunny days.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Stanley Marketplace has varied hours. Near DIA for business travelers.',
+        timeDifference: 'Aurora is UTC-7 (MST) / UTC-6 (MDT). When noon here: NYC 2 PM, LA 11 AM, London 7 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'DIA is actually closer to Aurora than Denver. Stanley Marketplace for food hall. Cherry Creek State Park for beaches. Most diverse Colorado city.',
+        transportation: 'RTD buses and light rail to Denver. A Line to DIA. Car helpful for suburbs.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Global Fest (celebrating diversity). Aurora Fox Arts Center events.'
+      }
+    }
+  },
+  { slug: 'anaheim', city: 'Anaheim', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 33.84, lng: -117.91, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '350K', phoneCode: '+1 714', language: 'English, Spanish',
+      climate: 'Mediterranean with warm summers (22-30°C) and mild winters (10-18°C). Very low rainfall.',
+      attractions: ['Disneyland Resort', 'Disney California Adventure', 'Angel Stadium', 'Honda Center', 'Anaheim Packing District', 'Downtown Disney', 'GardenWalk', 'Center Street Promenade', 'Muzeo', 'Adventure City'],
+      demographics: 'Home to Disneyland. Orange County hub. Angels MLB and Ducks NHL. Major convention destination.',
+      airports: [
+        { code: 'SNA', name: 'John Wayne Airport', distance: '18km' },
+        { code: 'LAX', name: 'Los Angeles International', distance: '48km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Disneyland, Angels MLB, Ducks NHL, conventions, Orange County',
+      seoContent: {
+        intro: 'Anaheim, home of Disneyland, operates on Pacific Standard Time (PST/UTC-8). This Orange County city is the ultimate family destination, combining the Happiest Place on Earth with sports and conventions.',
+        timezoneFacts: 'Same timezone as Los Angeles. 3 hours behind New York. Disney schedules influence global theme park timing.',
+        bestTimeToVisit: 'Weekdays in January-February least crowded at Disney. September-October pleasant. Holidays very crowded.',
+        businessHours: 'Disneyland hours vary by season (typically 9 AM to 10 PM+). Convention Center hosts major events.',
+        timeDifference: 'Anaheim is UTC-8 (PST) / UTC-7 (PDT). When noon here: NYC 3 PM, London 8 PM, Tokyo 5 AM (+1).',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Book Disney 60+ days ahead. MaxPass/Genie+ for skip lines. Packing District for food. Angels and Ducks games fun.',
+        transportation: 'ART buses connect hotels to Disney. Uber/Lyft popular. John Wayne Airport closer than LAX.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Disney has special events (Halloween, Christmas). Angels April-October.'
+      }
+    }
+  },
+  { slug: 'riverside', city: 'Riverside', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 33.95, lng: -117.40, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '320K', phoneCode: '+1 951', language: 'English, Spanish',
+      climate: 'Hot semi-arid with hot summers (25-36°C) and mild winters (8-18°C). Low rainfall.',
+      attractions: ['Mission Inn', 'UC Riverside Botanic Gardens', 'California Citrus State Historic Park', 'Riverside Art Museum', 'Fox Performing Arts Center', 'Mount Rubidoux', 'Fairmount Park', 'March Field Air Museum', 'Parent Washington Navel Orange Tree', 'Downtown Riverside'],
+      demographics: 'Largest Inland Empire city. Birthplace of California citrus industry. UC Riverside campus.',
+      airports: [
+        { code: 'ONT', name: 'Ontario International Airport', distance: '22km' },
+        { code: 'LAX', name: 'Los Angeles International', distance: '90km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Mission Inn, birthplace of California citrus industry, UC Riverside, Inland Empire',
+      seoContent: {
+        intro: 'Riverside, birthplace of California\'s citrus industry, operates on Pacific Standard Time (PST/UTC-8). As the largest Inland Empire city, Riverside offers history, culture, and UC Riverside.',
+        timezoneFacts: 'Same timezone as Los Angeles. 3 hours behind New York. Inland Empire is fastest-growing California region.',
+        bestTimeToVisit: 'October-April for pleasant weather. Summer very hot. Spring has citrus blossoms. December for Mission Inn lights.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Mission Inn and downtown active. UCR brings student life.',
+        timeDifference: 'Riverside is UTC-8 (PST) / UTC-7 (PDT). When noon here: NYC 3 PM, London 8 PM, Tokyo 5 AM (+1).',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Mission Inn is stunning - festival of lights in December. Mount Rubidoux for hiking. Parent Orange Tree is historic. Hot in summer.',
+        transportation: 'RTA buses. Metrolink to LA. Car essential. Ontario Airport 25 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Festival of Lights (November-December). Riverside Airshow.'
+      }
+    }
+  },
+  { slug: 'corpus-christi', city: 'Corpus Christi', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 27.80, lng: -97.40, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '320K', phoneCode: '+1 361', language: 'English, Spanish',
+      climate: 'Humid subtropical with hot summers (28-34°C) and mild winters (10-18°C). Hurricane risk June-November.',
+      attractions: ['USS Lexington', 'Texas State Aquarium', 'Padre Island National Seashore', 'Selena Museum', 'Art Museum of South Texas', 'Harbor Bridge', 'Mustang Island', 'Bob Hall Pier', 'South Texas Botanical Gardens', 'Corpus Christi Beach'],
+      demographics: 'Sparkling City by the Sea. Major port and naval air station. Hispanic majority. Selena\'s hometown.',
+      airports: [
+        { code: 'CRP', name: 'Corpus Christi International', distance: '13km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Beaches, USS Lexington, Selena Quintanilla, port city, Padre Island',
+      seoContent: {
+        intro: 'Corpus Christi, the Sparkling City by the Sea, operates on Central Standard Time (CST/UTC-6). This Texas Gulf Coast city offers beaches, the USS Lexington museum, and Selena\'s legacy.',
+        timezoneFacts: 'Same timezone as San Antonio and Houston. 1 hour behind Miami. Gulf of Mexico vacation destination.',
+        bestTimeToVisit: 'March-May and October-November ideal. Summer hot but beach season. Hurricane season June-November.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Beach businesses vary seasonally. Selena Museum hours limited.',
+        timeDifference: 'Corpus Christi is UTC-6 (CST) / UTC-5 (CDT). When noon here: NYC 1 PM, Denver 11 AM, London 6 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'USS Lexington is must-see. Selena museum small but meaningful. Padre Island for unspoiled beaches. Fishing excellent.',
+        transportation: 'RTA buses. Car essential. CRP Airport 15 minutes. Ferry to Port Aransas.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Fiesta de la Flor (Selena tribute). Beach to Bay Marathon (May).'
+      }
+    }
+  },
+  { slug: 'lexington', city: 'Lexington', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Kentucky', stateCode: 'KY', lat: 38.04, lng: -84.50, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '320K', phoneCode: '+1 859', language: 'English',
+      climate: 'Humid subtropical with hot summers (23-31°C) and cool winters (-2 to 8°C). Four distinct seasons.',
+      attractions: ['Kentucky Horse Park', 'Keeneland Race Course', 'Bourbon Trail', 'Mary Todd Lincoln House', 'Rupp Arena', 'Ashland', 'Arboretum', 'Aviation Museum of Kentucky', 'Horse Farm Tours', 'Downtown Victorian Square'],
+      demographics: 'Horse Capital of the World. Second-largest Kentucky city. University of Kentucky. Bourbon country.',
+      airports: [
+        { code: 'LEX', name: 'Blue Grass Airport', distance: '8km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Horse racing, Kentucky Derby prep, bourbon, UK Wildcats basketball, bluegrass',
+      seoContent: {
+        intro: 'Lexington, the Horse Capital of the World, operates on Eastern Standard Time (EST/UTC-5). Surrounded by rolling bluegrass and horse farms, Lexington offers bourbon, basketball, and beautiful countryside.',
+        timezoneFacts: 'Same timezone as Louisville and Cincinnati. 5 hours behind London. Kentucky Derby horses train here.',
+        bestTimeToVisit: 'April-May for horse racing season. October for fall colors. Spring has Keeneland meets.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Keeneland racing season busy. Bourbon distilleries have tour hours.',
+        timeDifference: 'Lexington is UTC-5 (EST) / UTC-4 (EDT). When noon here: London 5 PM, LA 9 AM, Dubai 9 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Keeneland is beautiful even without racing. Bourbon Trail is a must. UK basketball is religion. Horse farm tours require reservations.',
+        transportation: 'Lextran buses. Car essential for horse farms and bourbon trail. Blue Grass Airport small but convenient.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Keeneland meets (April, October). UK basketball season.'
+      }
+    }
+  },
+  { slug: 'henderson', city: 'Henderson', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'Nevada', stateCode: 'NV', lat: 36.04, lng: -114.98, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '320K', phoneCode: '+1 702', language: 'English, Spanish',
+      climate: 'Hot desert with scorching summers (32-42°C) and mild winters (6-15°C). Very dry. 300+ sunny days.',
+      attractions: ['Lake Las Vegas', 'Sloan Canyon', 'Henderson Bird Viewing Preserve', 'Ethel M Chocolate Factory', 'Clark County Heritage Museum', 'Raiders Practice Facility', 'District at Green Valley Ranch', 'Cowabunga Bay', 'Lion Habitat Ranch', 'Whitney Mesa Recreation Area'],
+      demographics: 'Second-largest Nevada city. Fastest-growing US city multiple times. Safe, family-friendly Vegas suburb.',
+      airports: [
+        { code: 'LAS', name: 'Harry Reid International', distance: '17km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Las Vegas suburb, Lake Las Vegas, family-friendly, Raiders practice facility, Ethel M Chocolates',
+      seoContent: {
+        intro: 'Henderson, Nevada\'s second-largest city, operates on Pacific Standard Time (PST/UTC-8). This fast-growing Las Vegas suburb offers family-friendly living with easy access to Strip attractions.',
+        timezoneFacts: 'Same timezone as Las Vegas. 3 hours behind New York. Nevada uses DST unlike neighboring Arizona.',
+        bestTimeToVisit: 'October-April for pleasant weather. Summer extremely hot (40°C+). Winter mild and sunny.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Lake Las Vegas resort has own schedule. Ethel M tours daily.',
+        timeDifference: 'Henderson is UTC-8 (PST) / UTC-7 (PDT). When noon here: NYC 3 PM, London 8 PM, Phoenix same/1 hour ahead.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November. Note: Arizona doesn\'t observe DST.',
+        localTips: 'Safer and quieter than Vegas. Lake Las Vegas is beautiful. Free Ethel M chocolates at tour. Sloan Canyon for petroglyphs.',
+        transportation: 'RTC buses to Vegas. Car essential. Vegas airport 20 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Henderson events at various parks.'
+      }
+    }
+  },
+  { slug: 'saint-paul', city: 'Saint Paul', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Minnesota', stateCode: 'MN', lat: 44.95, lng: -93.09, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '310K', phoneCode: '+1 651', language: 'English, Hmong, Somali',
+      climate: 'Humid continental with warm summers (20-28°C) and very cold winters (-13 to -4°C). Heavy snow.',
+      attractions: ['State Capitol', 'Cathedral of Saint Paul', 'Como Park Zoo', 'Science Museum of Minnesota', 'Landmark Center', 'Summit Avenue', 'Xcel Energy Center', 'Mickey\'s Diner', 'Historic Fort Snelling', 'Minnesota History Center'],
+      demographics: 'State capital. Twin Cities with Minneapolis. Large Hmong and Somali communities. Historic architecture.',
+      airports: [
+        { code: 'MSP', name: 'Minneapolis-Saint Paul International', distance: '14km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'State capital, Twin Cities, Winter Carnival, Wild NHL, F. Scott Fitzgerald\'s birthplace',
+      seoContent: {
+        intro: 'Saint Paul, Minnesota\'s capital, operates on Central Standard Time (CST/UTC-6). As the quieter half of the Twin Cities, Saint Paul offers historic architecture, state government, and distinctive character.',
+        timezoneFacts: 'Same timezone as Minneapolis. 1 hour behind New York. Twin Cities share MSP airport.',
+        bestTimeToVisit: 'June-August for outdoor activities. January-February for Winter Carnival. Fall colors spectacular.',
+        businessHours: 'Standard hours 9 AM to 5 PM. State Capitol tours available. Como Zoo free admission.',
+        timeDifference: 'Saint Paul is UTC-6 (CST) / UTC-5 (CDT). When noon here: NYC 1 PM, Denver 11 AM, London 6 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Summit Avenue has longest stretch of Victorian homes. Como Zoo is free. Winter Carnival has ice palaces. Skyway system downtown.',
+        transportation: 'Metro Transit buses and Green Line to Minneapolis. MSP Airport accessible by light rail.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Winter Carnival (late January). Minnesota State Fair (late August).'
+      }
+    }
+  },
+  { slug: 'cincinnati', city: 'Cincinnati', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Ohio', stateCode: 'OH', lat: 39.10, lng: -84.51, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '310K', phoneCode: '+1 513', language: 'English',
+      climate: 'Humid continental with hot summers (23-30°C) and cold winters (-4 to 5°C). Four seasons.',
+      attractions: ['Cincinnati Zoo', 'Cincinnati Art Museum', 'Findlay Market', 'Great American Ball Park', 'Over-the-Rhine', 'Fountain Square', 'Newport Aquarium', 'Union Terminal', 'Smale Riverfront Park', 'Carew Tower'],
+      demographics: 'Queen City on Ohio River. Procter & Gamble and Kroger headquarters. German heritage. Revitalized urban core.',
+      airports: [
+        { code: 'CVG', name: 'Cincinnati/Northern Kentucky International', distance: '21km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Cincinnati chili, P&G and Kroger HQs, Reds MLB, Bengals NFL, Over-the-Rhine',
+      seoContent: {
+        intro: 'Cincinnati, the Queen City, operates on Eastern Standard Time (EST/UTC-5). Straddling Ohio and Kentucky on the river, Cincinnati offers German heritage, iconic chili, and corporate headquarters.',
+        timezoneFacts: 'Same timezone as Columbus and Cleveland. 5 hours behind London. CVG airport actually in Kentucky.',
+        bestTimeToVisit: 'April-June and September-October ideal. Summer humid. Oktoberfest in September. Winter cold.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Over-the-Rhine has vibrant nightlife. Findlay Market closes at 6 PM.',
+        timeDifference: 'Cincinnati is UTC-5 (EST) / UTC-4 (EDT). When noon here: London 5 PM, LA 9 AM, Chicago 11 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Cincinnati chili is unique - try Skyline. Over-the-Rhine is revitalized. Zoo is one of oldest in US. Bengals and Reds downtown.',
+        transportation: 'SORTA buses and streetcar downtown. Car recommended. CVG Airport in Kentucky, 15 miles south.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Oktoberfest Zinzinnati (September). Opening Day is unofficial holiday.'
+      }
+    }
+  },
+  { slug: 'stockton', city: 'Stockton', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 37.96, lng: -121.29, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '320K', phoneCode: '+1 209', language: 'English, Spanish, Tagalog',
+      climate: 'Mediterranean with hot dry summers (25-35°C) and mild foggy winters (5-13°C).',
+      attractions: ['Haggin Museum', 'Weber Point Events Center', 'Stockton Arena', 'University of the Pacific', 'Delta waterways', 'Pixie Woods', 'Children\'s Museum of Stockton', 'Micke Grove Zoo', 'Victory Park', 'Downtown Marina'],
+      demographics: 'Diverse San Joaquin Valley city. Major inland port. University of the Pacific. Delta recreation.',
+      airports: [
+        { code: 'SCK', name: 'Stockton Metropolitan Airport', distance: '6km' },
+        { code: 'OAK', name: 'Oakland International', distance: '72km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Delta waterways, inland port, diverse population, asparagus festival, affordable California',
+      seoContent: {
+        intro: 'Stockton, California\'s major inland port, operates on Pacific Standard Time (PST/UTC-8). Located at the heart of the Delta, Stockton offers waterway recreation and diverse culture.',
+        timezoneFacts: 'Same timezone as San Francisco (45 miles west). 3 hours behind New York. Central Valley location.',
+        bestTimeToVisit: 'March-May and September-November pleasant. Summer very hot. Winter foggy. Spring has asparagus festival.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Downtown revitalizing. Delta recreation weekends.',
+        timeDifference: 'Stockton is UTC-8 (PST) / UTC-7 (PDT). When noon here: NYC 3 PM, London 8 PM, Tokyo 5 AM (+1).',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Delta waterways for boating. University of Pacific is pretty campus. Haggin Museum worth visiting. Hot in summer.',
+        transportation: 'RTD buses. ACE train to Bay Area. Car essential. SCK Airport small; OAK or SFO for more flights.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Asparagus Festival (April). Stockton Beer Week.'
+      }
+    }
+  },
+  { slug: 'newark', city: 'Newark', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'New Jersey', stateCode: 'NJ', lat: 40.74, lng: -74.17, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '280K', phoneCode: '+1 973', language: 'English, Spanish, Portuguese',
+      climate: 'Humid subtropical with hot summers (24-30°C) and cold winters (-3 to 5°C). Four seasons.',
+      attractions: ['Newark Museum', 'Prudential Center', 'Branch Brook Park', 'Cathedral Basilica of the Sacred Heart', 'Military Park', 'NJPAC', 'Riverfront Park', 'Ironbound District', 'Newark Penn Station', 'Red Bull Arena'],
+      demographics: 'Largest New Jersey city. Major transportation hub with EWR airport. Portuguese/Brazilian Ironbound district.',
+      airports: [
+        { code: 'EWR', name: 'Newark Liberty International', distance: '6km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Newark Airport (EWR), Ironbound Portuguese food, Devils NHL, Gateway to NYC',
+      seoContent: {
+        intro: 'Newark, New Jersey\'s largest city, operates on Eastern Standard Time (EST/UTC-5). As NYC\'s neighbor with major airport and transit hub, Newark offers diverse culture and easy Manhattan access.',
+        timezoneFacts: 'Same timezone as New York (10 miles away). 5 hours behind London. EWR serves NYC metro area.',
+        bestTimeToVisit: 'April-June and September-October pleasant. Branch Brook Park cherry blossoms in April (more than DC!).',
+        businessHours: 'Standard hours 9 AM to 5 PM. Ironbound restaurants open late. NJPAC for shows.',
+        timeDifference: 'Newark is UTC-5 (EST) / UTC-4 (EDT). When noon here: London 5 PM, LA 9 AM, Paris 6 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Ironbound has best Portuguese food. Branch Brook Park has more cherry blossoms than DC. PATH to NYC. Devils games at Prudential.',
+        transportation: 'NJ Transit trains and buses. PATH to NYC. EWR AirTrain. Newark Penn Station is major hub.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Cherry Blossom Festival (April). Portuguese Day Parade (June).'
+      }
+    }
+  },
+  { slug: 'st-petersburg', city: 'St. Petersburg', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 27.77, lng: -82.64, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '260K', phoneCode: '+1 727', language: 'English, Spanish',
+      climate: 'Humid subtropical with hot humid summers (27-33°C) and warm winters (12-22°C). Afternoon thunderstorms.',
+      attractions: ['Salvador Dalí Museum', 'The Pier', 'Fort De Soto Park', 'Sunken Gardens', 'St. Pete Beach', 'Mahaffey Theater', 'Chihuly Collection', 'Museum of Fine Arts', 'Tropicana Field', 'Grand Central District'],
+      demographics: 'Tampa Bay area. Arts and culture hub. Rays MLB. Sunshine City with Guinness record 768 consecutive sunny days.',
+      airports: [
+        { code: 'PIE', name: 'St. Pete-Clearwater International', distance: '14km' },
+        { code: 'TPA', name: 'Tampa International', distance: '35km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Salvador Dalí Museum, beaches, Rays MLB, sunshine record, arts scene',
+      seoContent: {
+        intro: 'St. Petersburg, the Sunshine City, operates on Eastern Standard Time (EST/UTC-5). Home to the world\'s largest Salvador Dalí collection, St. Pete combines arts, beaches, and legendary sunshine.',
+        timezoneFacts: 'Same timezone as Tampa and Miami. 5 hours behind London. Held Guinness record for 768 straight sunny days.',
+        bestTimeToVisit: 'October-May for best weather. Summer hot and humid with afternoon storms. Spring training nearby.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Beach businesses vary. Dalí Museum open until 5:30 PM (8 PM Thursdays).',
+        timeDifference: 'St. Petersburg is UTC-5 (EST) / UTC-4 (EDT). When noon here: London 5 PM, LA 9 AM, Havana 12 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Dalí Museum is world-class. The Pier has restaurants and attractions. Fort De Soto for pristine beaches. Rays games at Tropicana.',
+        transportation: 'PSTA buses. Car recommended. PIE Airport for budget airlines. TPA 30 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Grand Prix of St. Petersburg (March). Pride (June).'
+      }
+    }
+  },
+  { slug: 'santa-ana', city: 'Santa Ana', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 33.75, lng: -117.87, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '310K', phoneCode: '+1 714', language: 'English, Spanish',
+      climate: 'Mediterranean with warm summers (22-28°C) and mild winters (10-18°C). Very low rainfall.',
+      attractions: ['Bowers Museum', 'Discovery Cube', 'Santa Ana Zoo', 'Artists Village', 'MainPlace Mall', 'Centennial Regional Park', 'Heritage Museum of Orange County', 'Santiago Park', '4th Street Market', 'Old Orange County Courthouse'],
+      demographics: 'Orange County seat. Hispanic majority (78%). Cultural hub with Artists Village. Second most densely populated CA city.',
+      airports: [
+        { code: 'SNA', name: 'John Wayne Airport', distance: '6km' },
+        { code: 'LAX', name: 'Los Angeles International', distance: '55km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Orange County seat, Hispanic culture, Bowers Museum, Artists Village, affordable Orange County',
+      seoContent: {
+        intro: 'Santa Ana, the Orange County seat, operates on Pacific Standard Time (PST/UTC-8). This vibrant city offers rich Hispanic culture, world-class museums, and central Orange County location.',
+        timezoneFacts: 'Same timezone as Los Angeles. 3 hours behind New York. Central to Orange County attractions.',
+        bestTimeToVisit: 'Year-round pleasant weather. Summer slightly warmer. Art Walk first Saturday monthly.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Artists Village has evening scene. 4th Street Market for food.',
+        timeDifference: 'Santa Ana is UTC-8 (PST) / UTC-7 (PDT). When noon here: NYC 3 PM, London 8 PM, Tokyo 5 AM (+1).',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Bowers Museum world-class. Artists Village for First Saturday Art Walk. Best tacos in Orange County. John Wayne Airport very close.',
+        transportation: 'OCTA buses. Metrolink to LA. Car recommended. SNA Airport 10 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Fiestas Patrias (September). Día de los Muertos.'
+      }
+    }
+  },
+  { slug: 'greensboro', city: 'Greensboro', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'North Carolina', stateCode: 'NC', lat: 36.07, lng: -79.79, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '300K', phoneCode: '+1 336', language: 'English',
+      climate: 'Humid subtropical with hot summers (24-32°C) and mild winters (2-10°C). Four seasons.',
+      attractions: ['International Civil Rights Center', 'Greensboro Science Center', 'Tanger Family Bicentennial Garden', 'Greensboro Coliseum', 'Bog Garden', 'Weatherspoon Art Museum', 'Guilford Courthouse', 'Natural Science Center', 'LeBauer Park', 'Downtown Greenway'],
+      demographics: 'Piedmont Triad hub. Civil Rights Movement landmark (lunch counter sit-ins). Insurance and textile heritage.',
+      airports: [
+        { code: 'GSO', name: 'Piedmont Triad International', distance: '15km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Civil Rights sit-ins, ACC Tournament host, textiles, Piedmont Triad',
+      seoContent: {
+        intro: 'Greensboro, a Civil Rights landmark, operates on Eastern Standard Time (EST/UTC-5). Site of the famous 1960 lunch counter sit-ins, Greensboro anchors the Piedmont Triad region.',
+        timezoneFacts: 'Same timezone as Raleigh and Charlotte. 5 hours behind London. ACC Tournament frequent host.',
+        bestTimeToVisit: 'April-May and September-October ideal. Summer humid. Spring for festivals. Fall for foliage.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Downtown revitalizing with restaurants and bars.',
+        timeDifference: 'Greensboro is UTC-5 (EST) / UTC-4 (EDT). When noon here: London 5 PM, LA 9 AM, Chicago 11 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Civil Rights Center is essential visit. ACC Tournament brings crowds. Colleges provide energy. BBQ is Lexington style nearby.',
+        transportation: 'GTA buses. Car recommended. GSO Airport serves Triad region.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Fun Fourth Festival. National Folk Festival.'
+      }
+    }
+  },
+  { slug: 'plano', city: 'Plano', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 33.02, lng: -96.70, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '290K', phoneCode: '+1 972', language: 'English',
+      climate: 'Humid subtropical with hot summers (28-36°C) and mild winters (3-14°C). Thunderstorms in spring.',
+      attractions: ['Legacy West', 'Arbor Hills Nature Preserve', 'Heritage Farmstead Museum', 'Interurban Railway Museum', 'Oak Point Park', 'Downtown Plano', 'Crayola Experience', 'Go Ape Zipline', 'Haggard Park', 'The Shops at Legacy'],
+      demographics: 'Wealthy Dallas suburb. Corporate headquarters for Toyota, JCPenney, Frito-Lay. Consistently ranked best places to live.',
+      airports: [
+        { code: 'DFW', name: 'Dallas/Fort Worth International', distance: '35km' },
+        { code: 'DAL', name: 'Dallas Love Field', distance: '30km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Corporate headquarters (Toyota, JCPenney), wealthy suburb, best places to live, Legacy West',
+      seoContent: {
+        intro: 'Plano, one of America\'s best places to live, operates on Central Standard Time (CST/UTC-6). This affluent Dallas suburb hosts major corporate headquarters including Toyota\'s North American HQ.',
+        timezoneFacts: 'Same timezone as Dallas. 1 hour behind New York. Corporate culture drives work hours.',
+        bestTimeToVisit: 'March-May and October-November pleasant. Summer very hot. Spring has balloon festival.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Legacy West has upscale dining and entertainment.',
+        timeDifference: 'Plano is UTC-6 (CST) / UTC-5 (CDT). When noon here: NYC 1 PM, Denver 11 AM, London 6 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Legacy West is premier destination. Excellent schools. Very safe. Toyota HQ tours sometimes available.',
+        transportation: 'DART light rail to Dallas. Car essential for suburbs. DFW Airport 35 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Plano Balloon Festival (September). Taste of Plano.'
+      }
+    }
+  },
+  { slug: 'lincoln', city: 'Lincoln', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Nebraska', stateCode: 'NE', lat: 40.81, lng: -96.68, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '290K', phoneCode: '+1 402', language: 'English',
+      climate: 'Humid continental with hot summers (22-31°C) and cold winters (-9 to 2°C). Four distinct seasons.',
+      attractions: ['Nebraska State Capitol', 'Sunken Gardens', 'Lincoln Children\'s Zoo', 'Memorial Stadium', 'Haymarket District', 'Sheldon Museum of Art', 'International Quilt Museum', 'Pioneers Park', 'Mueller Planetarium', 'University of Nebraska'],
+      demographics: 'Nebraska capital and university town. Second-largest state city. Cornhuskers football is religion.',
+      airports: [
+        { code: 'LNK', name: 'Lincoln Airport', distance: '8km' },
+        { code: 'OMA', name: 'Omaha Eppley Airfield', distance: '85km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Cornhuskers football, state capital, University of Nebraska, Haymarket District',
+      seoContent: {
+        intro: 'Lincoln, Nebraska\'s capital, operates on Central Standard Time (CST/UTC-6). Home to the University of Nebraska, Lincoln transforms on Cornhuskers football Saturdays when Memorial Stadium becomes the state\'s third-largest city.',
+        timezoneFacts: 'Same timezone as Omaha. 1 hour behind New York. Game day Saturdays dominate fall schedule.',
+        bestTimeToVisit: 'May-October for pleasant weather. Fall for Husker football. Summer has festivals. Winter cold.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Haymarket District busy evenings. Game days change everything.',
+        timeDifference: 'Lincoln is UTC-6 (CST) / UTC-5 (CDT). When noon here: NYC 1 PM, Denver 11 AM, London 6 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Husker football games sell out - plan ahead. Haymarket has great food scene. State Capitol tower is tallest in US.',
+        transportation: 'StarTran buses. Car recommended. LNK Airport small; OMA has more flights.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Husker football Saturdays (September-November). Nebraska State Fair.'
+      }
+    }
+  },
+  { slug: 'irvine', city: 'Irvine', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 33.68, lng: -117.83, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '290K', phoneCode: '+1 949', language: 'English, Mandarin, Korean',
+      climate: 'Mediterranean with warm summers (22-28°C) and mild winters (10-18°C). Very dry, sunny.',
+      attractions: ['Irvine Spectrum Center', 'UC Irvine', 'Great Park Balloon', 'William R. Mason Regional Park', 'San Joaquin Wildlife Sanctuary', 'Irvine Barclay Theatre', 'Tanaka Farms', 'Turtle Rock Nature Center', 'Quail Hill Trail', 'Shady Canyon'],
+      demographics: 'Master-planned city. UC Irvine. Tech and biotech hub. Safest large US city multiple years. Large Asian population.',
+      airports: [
+        { code: 'SNA', name: 'John Wayne Airport', distance: '8km' },
+        { code: 'LAX', name: 'Los Angeles International', distance: '60km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Safest US city, master-planned, UC Irvine, Irvine Spectrum, tech hub',
+      seoContent: {
+        intro: 'Irvine, America\'s safest large city, operates on Pacific Standard Time (PST/UTC-8). This master-planned Orange County city combines tech industry jobs, UC Irvine, and family-friendly environment.',
+        timezoneFacts: 'Same timezone as Los Angeles. 3 hours behind New York. Tech companies set schedules.',
+        bestTimeToVisit: 'Year-round pleasant. Summer slightly warmer. Spring has wildflowers. Great Park events throughout.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Spectrum Center open late. Tech companies have flexible hours.',
+        timeDifference: 'Irvine is UTC-8 (PST) / UTC-7 (PDT). When noon here: NYC 3 PM, London 8 PM, Tokyo 5 AM (+1).',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Great Park balloon ride is free. Spectrum Center for shopping/entertainment. Very safe. Excellent schools draw families.',
+        transportation: 'OCTA buses. Metrolink to LA. Car essential. John Wayne Airport 15 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. UCI events. Global Village Festival.'
+      }
+    }
+  },
+  { slug: 'toledo', city: 'Toledo', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Ohio', stateCode: 'OH', lat: 41.65, lng: -83.54, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '270K', phoneCode: '+1 419', language: 'English',
+      climate: 'Humid continental with warm summers (22-29°C) and cold snowy winters (-6 to 2°C). Lake effect.',
+      attractions: ['Toledo Museum of Art', 'Toledo Zoo', 'National Museum of the Great Lakes', 'Imagination Station', 'Huntington Center', 'Toledo Mud Hens', 'Wildwood Preserve', 'Maumee Bay State Park', 'Fifth Third Field', 'Oliver House'],
+      demographics: 'Glass City - historic glass manufacturing center. Port on Maumee River to Lake Erie. Mud Hens baseball.',
+      airports: [
+        { code: 'TOL', name: 'Toledo Express Airport', distance: '18km' },
+        { code: 'DTW', name: 'Detroit Metro Airport', distance: '76km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Glass City, Toledo Museum of Art (free), Mud Hens baseball, Jeep production',
+      seoContent: {
+        intro: 'Toledo, the Glass City, operates on Eastern Standard Time (EST/UTC-5). Famous for glass manufacturing heritage, Toledo offers a world-class art museum (free admission) and beloved minor league baseball.',
+        timezoneFacts: 'Same timezone as Detroit (60 miles north). 5 hours behind London. Near Michigan border.',
+        bestTimeToVisit: 'May-September for pleasant weather. Summer for baseball. Fall colors. Winter cold with lake effect.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Warehouse District has nightlife. Art museum open late Fridays.',
+        timeDifference: 'Toledo is UTC-5 (EST) / UTC-4 (EDT). When noon here: London 5 PM, LA 9 AM, Chicago 11 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Art Museum is free and world-class. Mud Hens games are fun (M*A*S*H reference). Tony Packo\'s for Hungarian hot dogs.',
+        transportation: 'TARTA buses. Car essential. TOL Airport small; Detroit has more flights.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Rally by the River. Toledo Pride.'
+      }
+    }
+  },
+  { slug: 'durham', city: 'Durham', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'North Carolina', stateCode: 'NC', lat: 35.99, lng: -78.90, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '280K', phoneCode: '+1 919', language: 'English',
+      climate: 'Humid subtropical with hot summers (24-32°C) and mild winters (2-11°C). Four seasons.',
+      attractions: ['Duke University', 'Durham Bulls Athletic Park', 'American Tobacco Campus', 'Sarah P. Duke Gardens', 'Museum of Life and Science', 'Nasher Museum of Art', 'Duke Chapel', 'Brightleaf Square', 'Eno River State Park', 'Durham Performing Arts Center'],
+      demographics: 'Research Triangle hub. Duke University. Tech and biotech jobs. Former tobacco city transformed.',
+      airports: [
+        { code: 'RDU', name: 'Raleigh-Durham International', distance: '19km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Duke University, Durham Bulls (Bull Durham movie), Research Triangle, tech/biotech',
+      seoContent: {
+        intro: 'Durham, a Research Triangle hub, operates on Eastern Standard Time (EST/UTC-5). Home to Duke University and the Durham Bulls, Durham has transformed from tobacco town to thriving tech and food scene.',
+        timezoneFacts: 'Same timezone as Raleigh (20 min away). 5 hours behind London. Research Triangle spans Durham, Raleigh, Chapel Hill.',
+        bestTimeToVisit: 'April-May and September-October ideal. Spring for Duke Gardens. Summer for baseball. Fall for Duke football.',
+        businessHours: 'Standard hours 9 AM to 5 PM. American Tobacco Campus has dining/entertainment. Bulls games evenings.',
+        timeDifference: 'Durham is UTC-5 (EST) / UTC-4 (EDT). When noon here: London 5 PM, LA 9 AM, Chicago 11 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Duke Gardens free and beautiful. Bulls games are classic Americana. American Tobacco Campus is renovated. Great food scene.',
+        transportation: 'GoDurham buses. Car recommended. RDU Airport 20 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. CenterFest (September). Bulls season April-September.'
+      }
+    }
+  },
+  { slug: 'chula-vista', city: 'Chula Vista', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 32.64, lng: -117.08, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '275K', phoneCode: '+1 619', language: 'English, Spanish',
+      climate: 'Mediterranean with warm summers (22-28°C) and mild winters (10-18°C). Very pleasant year-round.',
+      attractions: ['Living Coast Discovery Center', 'Aquatica San Diego', 'US Olympic Training Center', 'Third Avenue Village', 'Otay Valley Regional Park', 'Bayfront Park', 'Sleep Train Amphitheatre', 'Chula Vista Nature Center', 'Marina View Park', 'Heritage Museum'],
+      demographics: 'Second-largest San Diego County city. US Olympic Training Center. Near Mexican border. Growing rapidly.',
+      airports: [
+        { code: 'SAN', name: 'San Diego International', distance: '15km' },
+        { code: 'TIJ', name: 'Tijuana International', distance: '8km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'US Olympic Training Center, border proximity, bayfront development, affordable San Diego',
+      seoContent: {
+        intro: 'Chula Vista, home to the US Olympic Training Center, operates on Pacific Standard Time (PST/UTC-8). The second-largest city in San Diego County offers waterfront access and easy border crossing to Mexico.',
+        timezoneFacts: 'Same timezone as San Diego. 3 hours behind New York. Cross Border Xpress connects to Tijuana airport.',
+        bestTimeToVisit: 'Year-round pleasant weather. Summer for waterparks. Spring and fall ideal. Mild winters.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Third Avenue has dining and shopping.',
+        timeDifference: 'Chula Vista is UTC-8 (PST) / UTC-7 (PDT). When noon here: NYC 3 PM, London 8 PM, Tijuana same.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Olympic Training Center tours available. Cross Border Xpress to fly from Tijuana. Bayfront developing rapidly. Great Mexican food.',
+        transportation: 'MTS trolley to San Diego. Car helpful. SAN Airport 20 minutes. CBX to Tijuana airport.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Lemon Festival (June). Starlight Parade.'
+      }
+    }
+  },
+  { slug: 'fort-wayne', city: 'Fort Wayne', timezone: 'America/Indiana/Indianapolis', country: 'United States', countryCode: 'US', state: 'Indiana', stateCode: 'IN', lat: 41.08, lng: -85.14, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '265K', phoneCode: '+1 260', language: 'English',
+      climate: 'Humid continental with warm summers (22-30°C) and cold snowy winters (-7 to 2°C). Four seasons.',
+      attractions: ['Fort Wayne Children\'s Zoo', 'Promenade Park', 'Parkview Field', 'Science Central', 'Botanical Conservatory', 'History Center', 'Embassy Theatre', 'Headwaters Park', 'Allen County Courthouse', 'Three Rivers'],
+      demographics: 'Second-largest Indiana city. Three rivers confluence. Insurance and healthcare hub. Affordable living.',
+      airports: [
+        { code: 'FWA', name: 'Fort Wayne International', distance: '14km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Three rivers, Children\'s Zoo, TinCaps baseball, affordable Midwest living',
+      seoContent: {
+        intro: 'Fort Wayne, Indiana\'s second-largest city, operates on Eastern Standard Time (EST/UTC-5). At the confluence of three rivers, Fort Wayne offers a revitalized downtown and award-winning Children\'s Zoo.',
+        timezoneFacts: 'Same timezone as Indianapolis. 5 hours behind London. EST since Indiana adopted DST in 2006.',
+        bestTimeToVisit: 'May-September for outdoor activities. Summer for baseball and zoo. Fall colors. Winter is cold.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Downtown revitalizing. TinCaps games evenings.',
+        timeDifference: 'Fort Wayne is UTC-5 (EST) / UTC-4 (EDT). When noon here: London 5 PM, LA 9 AM, Chicago 11 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Children\'s Zoo is top-rated. Promenade Park new riverfront. TinCaps have great stadium. Very affordable city.',
+        transportation: 'Citilink buses. Car essential. FWA Airport has limited flights.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Three Rivers Festival (July). Germanfest.'
+      }
+    }
+  },
+  { slug: 'jersey-city', city: 'Jersey City', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'New Jersey', stateCode: 'NJ', lat: 40.73, lng: -74.08, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '260K', phoneCode: '+1 201', language: 'English, Spanish',
+      climate: 'Humid subtropical with hot summers (24-30°C) and cold winters (-3 to 5°C). Four seasons.',
+      attractions: ['Liberty State Park', 'Statue of Liberty views', 'Liberty Science Center', 'Empty Sky Memorial', 'Exchange Place', 'Loew\'s Jersey Theatre', 'Hamilton Park', 'Journal Square', 'Newport Centre', 'Grove Street'],
+      demographics: 'Second-largest NJ city. NYC skyline views. Major financial center. One of most diverse US cities.',
+      airports: [
+        { code: 'EWR', name: 'Newark Liberty International', distance: '12km' },
+        { code: 'JFK', name: 'JFK International', distance: '35km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'NYC views, Statue of Liberty access, financial district, extreme diversity',
+      seoContent: {
+        intro: 'Jersey City, the Golden Door, operates on Eastern Standard Time (EST/UTC-5). Across the Hudson from Manhattan, Jersey City offers stunning NYC skyline views and direct Statue of Liberty ferry access.',
+        timezoneFacts: 'Same timezone as New York. 5 hours behind London. PATH train to NYC in minutes.',
+        bestTimeToVisit: 'April-June and September-October ideal. Summer can be hot and humid. Liberty views year-round.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Exchange Place mirrors Wall Street hours. Grove Street has nightlife.',
+        timeDifference: 'Jersey City is UTC-5 (EST) / UTC-4 (EDT). When noon here: London 5 PM, LA 9 AM, Paris 6 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Ferry to Statue of Liberty from Liberty State Park. PATH trains to NYC. Exchange Place is mini-Wall Street. Very diverse food scene.',
+        transportation: 'PATH trains to Manhattan. Hudson-Bergen Light Rail. NJ Transit buses. Very accessible without car.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Jersey City Pride. Cultural festivals throughout year.'
+      }
+    }
+  },
+  { slug: 'laredo', city: 'Laredo', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 27.51, lng: -99.51, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '260K', phoneCode: '+1 956', language: 'English, Spanish',
+      climate: 'Semi-arid with very hot summers (30-38°C) and mild winters (8-18°C). Very little rainfall.',
+      attractions: ['San Agustin Cathedral', 'Republic of the Rio Grande Museum', 'Lake Casa Blanca', 'Laredo Center for the Arts', 'Outlet Shoppes at Laredo', 'Plaza San Agustin', 'Fort McIntosh', 'TAMIU Campus', 'Mall del Norte', 'Bridge of the Americas'],
+      demographics: 'Busiest inland port in US. 95%+ Hispanic. Sister city to Nuevo Laredo, Mexico. Trade dominates economy.',
+      airports: [
+        { code: 'LRD', name: 'Laredo International Airport', distance: '5km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Busiest US-Mexico land port, international trade, George Washington Birthday Celebration',
+      seoContent: {
+        intro: 'Laredo, America\'s busiest inland port, operates on Central Standard Time (CST/UTC-6). On the Mexican border across from Nuevo Laredo, Laredo handles more land trade than any US port of entry.',
+        timezoneFacts: 'Same timezone as San Antonio. 1 hour behind New York. Nuevo Laredo is same time.',
+        bestTimeToVisit: 'October-April for pleasant weather. Summer very hot. February for Washington Birthday Celebration.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Trade/customs operates extended hours. Shopping attracts Mexican visitors.',
+        timeDifference: 'Laredo is UTC-6 (CST) / UTC-5 (CDT). When noon here: NYC 1 PM, Denver 11 AM, Mexico City 12 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'George Washington Birthday Celebration is huge. Passport needed for Mexico. Excellent Mexican food. International bridges busy.',
+        transportation: 'El Metro buses. Car essential. LRD Airport small. Bridge crossings to Nuevo Laredo.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Washington Birthday Celebration (February - oldest in US).'
+      }
+    }
+  },
+  { slug: 'madison', city: 'Madison', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Wisconsin', stateCode: 'WI', lat: 43.07, lng: -89.40, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '270K', phoneCode: '+1 608', language: 'English',
+      climate: 'Humid continental with warm summers (20-28°C) and very cold winters (-11 to -2°C). Heavy snow.',
+      attractions: ['State Capitol', 'UW-Madison', 'State Street', 'Olbrich Botanical Gardens', 'Dane County Farmers Market', 'Chazen Museum', 'Memorial Union Terrace', 'Henry Vilas Zoo', 'Camp Randall Stadium', 'Monona Terrace'],
+      demographics: 'Wisconsin capital on isthmus between two lakes. UW-Madison. Tech hub. Liberal, educated, bike-friendly.',
+      airports: [
+        { code: 'MSN', name: 'Dane County Regional Airport', distance: '10km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'State capital, UW-Madison, Badgers football, farmers market, bike-friendly',
+      seoContent: {
+        intro: 'Madison, Wisconsin\'s capital, operates on Central Standard Time (CST/UTC-6). Set on an isthmus between two lakes, Madison combines state government, Big Ten university life, and progressive culture.',
+        timezoneFacts: 'Same timezone as Milwaukee and Chicago. 1 hour behind New York. Badger football Saturdays transform city.',
+        bestTimeToVisit: 'May-October for pleasant weather. Fall for Badger football. Summer for festivals. Winter very cold.',
+        businessHours: 'Standard hours 9 AM to 5 PM. State Street has student life. Farmers Market Saturday mornings.',
+        timeDifference: 'Madison is UTC-6 (CST) / UTC-5 (CDT). When noon here: NYC 1 PM, Denver 11 AM, London 6 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Farmers Market is largest producer-only in US. Memorial Union Terrace iconic. Badger football intense. Very bike-friendly.',
+        transportation: 'Metro Transit buses. Car helpful but bikeable. MSN Airport 15 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Badger football Saturdays. Dane County Farmers Market (April-November).'
+      }
+    }
+  },
+  { slug: 'chandler', city: 'Chandler', timezone: 'America/Phoenix', country: 'United States', countryCode: 'US', state: 'Arizona', stateCode: 'AZ', lat: 33.30, lng: -111.84, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '260K', phoneCode: '+1 480', language: 'English, Spanish',
+      climate: 'Hot desert with extremely hot summers (32-42°C) and mild winters (10-20°C). Very dry, sunny.',
+      attractions: ['Downtown Chandler', 'Chandler Fashion Center', 'Tumbleweed Recreation Center', 'Veterans Oasis Park', 'Arizona Railway Museum', 'Desert Breeze Park', 'Chandler Museum', 'Environmental Education Center', 'Intel Campus', 'San Marcos Hotel'],
+      demographics: 'Phoenix suburb. Major tech hub with Intel\'s largest factory. High-income, fast-growing.',
+      airports: [
+        { code: 'PHX', name: 'Phoenix Sky Harbor', distance: '15km' },
+        { code: 'AZA', name: 'Phoenix-Mesa Gateway', distance: '25km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Intel semiconductor manufacturing, tech hub, Chandler Fashion Center, ostrich capital (historic)',
+      seoContent: {
+        intro: 'Chandler, a Phoenix tech hub, operates on Mountain Standard Time (MST/UTC-7) year-round. Home to Intel\'s largest manufacturing facility, Chandler blends high-tech industry with historic downtown charm.',
+        timezoneFacts: 'Arizona doesn\'t observe DST. Chandler stays UTC-7 year-round. Same as Phoenix.',
+        bestTimeToVisit: 'October-April for pleasant weather. Summer extremely hot. Spring has events.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Downtown Chandler has dining scene. Tech industry flexible hours.',
+        timeDifference: 'Chandler is always UTC-7. When noon here: NYC 2 PM (winter) / 3 PM (summer), LA 11 AM / noon.',
+        daylightSaving: 'Arizona does NOT observe DST. Time difference with other states changes seasonally.',
+        localTips: 'Historic downtown has character. Intel tours sometimes available. Fashion Center for shopping. Heat dangerous in summer.',
+        transportation: 'Valley Metro buses. Car essential. PHX Airport 20 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Ostrich Festival (March). Chandler Jazz Festival.'
+      }
+    }
+  },
+  { slug: 'buffalo', city: 'Buffalo', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'New York', stateCode: 'NY', lat: 42.89, lng: -78.88, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '280K', phoneCode: '+1 716', language: 'English',
+      climate: 'Humid continental with warm summers (20-28°C) and cold snowy winters (-6 to 1°C). Lake effect snow.',
+      attractions: ['Niagara Falls', 'Albright-Knox Art Gallery', 'Buffalo City Hall', 'Canalside', 'Frank Lloyd Wright houses', 'Theodore Roosevelt Inaugural Site', 'Buffalo Zoo', 'Delaware Park', 'Shea\'s Buffalo', 'Anchor Bar'],
+      demographics: 'Second-largest NY city. Gateway to Niagara Falls. Frank Lloyd Wright architecture. Bills Mafia passion.',
+      airports: [
+        { code: 'BUF', name: 'Buffalo Niagara International', distance: '16km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Buffalo wings, Niagara Falls gateway, Bills Mafia, Frank Lloyd Wright, lake effect snow',
+      seoContent: {
+        intro: 'Buffalo, birthplace of the chicken wing, operates on Eastern Standard Time (EST/UTC-5). As the gateway to Niagara Falls, Buffalo offers stunning architecture, passionate sports fans, and legendary snow.',
+        timezoneFacts: 'Same timezone as NYC. 5 hours behind London. Near Canadian border (Toronto 2 hours).',
+        bestTimeToVisit: 'May-September for outdoor activities. Summer for Niagara Falls. Fall colors. Winter is serious snow.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Canalside active in summer. Bills games take over Sundays.',
+        timeDifference: 'Buffalo is UTC-5 (EST) / UTC-4 (EDT). When noon here: London 5 PM, LA 9 AM, Toronto 12 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Anchor Bar invented Buffalo wings. Niagara Falls 20 minutes. Frank Lloyd Wright tours. Bills Mafia tailgates legendary.',
+        transportation: 'Metro buses and rail. Car helpful. BUF Airport 20 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. National Chicken Wing Festival. Bills football Sundays.'
+      }
+    }
+  },
+  { slug: 'lubbock', city: 'Lubbock', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 33.58, lng: -101.86, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '260K', phoneCode: '+1 806', language: 'English, Spanish',
+      climate: 'Semi-arid with hot summers (26-35°C) and mild winters (0-12°C). Very dry. Dust storms possible.',
+      attractions: ['Buddy Holly Center', 'Texas Tech University', 'National Ranching Heritage Center', 'Silent Wings Museum', 'Science Spectrum', 'American Wind Power Center', 'Prairie Dog Town', 'Caprock Winery', 'United Supermarkets Arena', 'Jones AT&T Stadium'],
+      demographics: 'Hub City of West Texas. Texas Tech University. Buddy Holly\'s hometown. Cotton and agriculture center.',
+      airports: [
+        { code: 'LBB', name: 'Lubbock Preston Smith International', distance: '10km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Buddy Holly, Texas Tech Red Raiders, cotton, Hub City of West Texas',
+      seoContent: {
+        intro: 'Lubbock, the Hub City, operates on Central Standard Time (CST/UTC-6). Home to Texas Tech and birthplace of Buddy Holly, Lubbock serves as the agricultural and cultural center of West Texas.',
+        timezoneFacts: 'Same timezone as Dallas (5 hours east). 1 hour behind New York. Hub of the South Plains.',
+        bestTimeToVisit: 'March-May and September-November pleasant. Summer hot. Fall for Red Raiders football. Winter mild.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Depot District has nightlife. Texas Tech events year-round.',
+        timeDifference: 'Lubbock is UTC-6 (CST) / UTC-5 (CDT). When noon here: NYC 1 PM, Denver 11 AM, London 6 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Buddy Holly Center is pilgrimage. Texas Tech football Saturdays. Great steaks and BBQ. Wind farms visible.',
+        transportation: 'Citibus. Car essential. LBB Airport convenient.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Buddy Holly Week (September). Texas Tech football.'
+      }
+    }
+  },
+  { slug: 'scottsdale', city: 'Scottsdale', timezone: 'America/Phoenix', country: 'United States', countryCode: 'US', state: 'Arizona', stateCode: 'AZ', lat: 33.49, lng: -111.93, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '250K', phoneCode: '+1 480', language: 'English',
+      climate: 'Hot desert with extremely hot summers (32-42°C) and mild winters (10-20°C). 300+ sunny days.',
+      attractions: ['Old Town Scottsdale', 'Taliesin West', 'McDowell Sonoran Preserve', 'Scottsdale Fashion Square', 'OdySea Aquarium', 'Butterfly Wonderland', 'Scottsdale Museum of Contemporary Art', 'WestWorld', 'Camelback Mountain', 'Desert Botanical Garden'],
+      demographics: 'Upscale Phoenix suburb. Resorts and spas. Art galleries. Spring training. Frank Lloyd Wright\'s Taliesin West.',
+      airports: [
+        { code: 'PHX', name: 'Phoenix Sky Harbor', distance: '15km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Luxury resorts, spas, Old Town, Taliesin West, spring training, golf',
+      seoContent: {
+        intro: 'Scottsdale, Arizona\'s resort destination, operates on Mountain Standard Time (MST/UTC-7) year-round. Known for world-class spas, golf courses, and Frank Lloyd Wright\'s Taliesin West.',
+        timezoneFacts: 'Arizona doesn\'t observe DST. Scottsdale stays UTC-7 year-round. Same as Phoenix.',
+        bestTimeToVisit: 'October-April for pleasant weather. January-February for art scene. Summer extremely hot (avoid outdoors).',
+        businessHours: 'Standard hours 9 AM to 5 PM. Old Town busy evenings. Resorts have own schedules.',
+        timeDifference: 'Scottsdale is always UTC-7. When noon here: NYC 2 PM (winter) / 3 PM (summer), LA 11 AM / noon.',
+        daylightSaving: 'Arizona does NOT observe DST. Time difference with other states changes seasonally.',
+        localTips: 'Old Town for art galleries. Taliesin West tours essential. Golf capital. Spa resorts world-class. Summer = extreme heat.',
+        transportation: 'Scottsdale Trolley downtown. Valley Metro buses. Car essential. PHX Airport 20 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Scottsdale Arts Festival (March). Spring Training (February-March).'
+      }
+    }
+  },
+  { slug: 'reno', city: 'Reno', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'Nevada', stateCode: 'NV', lat: 39.53, lng: -119.81, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '265K', phoneCode: '+1 775', language: 'English, Spanish',
+      climate: 'Semi-arid with warm summers (18-32°C) and cold winters (-4 to 8°C). High desert at 4,500 ft. 300+ sunny days.',
+      attractions: ['National Automobile Museum', 'Riverwalk District', 'Lake Tahoe', 'Great Reno Balloon Race', 'Fleischmann Planetarium', 'Nevada Museum of Art', 'Animal Ark', 'Sparks Marina', 'Midtown District', 'University of Nevada'],
+      demographics: 'Biggest Little City in the World. Casinos. Tech hub (Tesla Gigafactory nearby). Gateway to Lake Tahoe.',
+      airports: [
+        { code: 'RNO', name: 'Reno-Tahoe International', distance: '6km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Casinos, Lake Tahoe gateway, Tesla Gigafactory, Burning Man staging, skiing',
+      seoContent: {
+        intro: 'Reno, the Biggest Little City in the World, operates on Pacific Standard Time (PST/UTC-8). This high desert city combines casino culture with tech industry growth and year-round outdoor recreation.',
+        timezoneFacts: 'Same timezone as California (Lake Tahoe). 3 hours behind New York. Gateway to Tahoe ski resorts.',
+        bestTimeToVisit: 'Year-round appeal. Summer for Lake Tahoe. Winter for skiing. September for Balloon Race.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Casinos 24/7. Midtown has trendy dining.',
+        timeDifference: 'Reno is UTC-8 (PST) / UTC-7 (PDT). When noon here: NYC 3 PM, London 8 PM, Tahoe same.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Lake Tahoe 45 minutes. Balloon Race is spectacular. Midtown revitalized. Tesla Gigafactory nearby. Burning Man staging ground.',
+        transportation: 'RTC buses. Car essential for Tahoe. RNO Airport very close to downtown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Great Reno Balloon Race (September). Hot August Nights.'
+      }
+    }
+  },
+  { slug: 'glendale-az', city: 'Glendale', timezone: 'America/Phoenix', country: 'United States', countryCode: 'US', state: 'Arizona', stateCode: 'AZ', lat: 33.54, lng: -112.19, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '250K', phoneCode: '+1 623', language: 'English, Spanish',
+      climate: 'Hot desert with extremely hot summers (32-42°C) and mild winters (10-20°C). Very dry.',
+      attractions: ['State Farm Stadium', 'Westgate Entertainment District', 'Glendale Glitters', 'Cerreta Candy Company', 'Sahuaro Ranch Park', 'Glendale Main Street', 'Cabela\'s', 'Gila River Arena', 'Thunderbird Conservation Park', 'Antique Row'],
+      demographics: 'Phoenix suburb. Home to NFL Cardinals and NHL Coyotes. Super Bowl host city. Large Hispanic community.',
+      airports: [
+        { code: 'PHX', name: 'Phoenix Sky Harbor', distance: '15km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Cardinals NFL, Super Bowl host, Westgate Entertainment, Glendale Glitters holiday display',
+      seoContent: {
+        intro: 'Glendale, Super Bowl host city, operates on Mountain Standard Time (MST/UTC-7) year-round. Home to the Arizona Cardinals, Glendale offers sports, entertainment, and holiday celebrations.',
+        timezoneFacts: 'Arizona doesn\'t observe DST. Glendale stays UTC-7 year-round. Same as Phoenix.',
+        bestTimeToVisit: 'October-April for pleasant weather. Football season September-January. December for Glendale Glitters.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Westgate busy on event nights. Antique Row for shopping.',
+        timeDifference: 'Glendale is always UTC-7. When noon here: NYC 2 PM (winter) / 3 PM (summer), LA 11 AM / noon.',
+        daylightSaving: 'Arizona does NOT observe DST. Time difference with other states changes seasonally.',
+        localTips: 'State Farm Stadium hosts Super Bowls. Westgate Entertainment for dining/bars. Glendale Glitters spectacular. Historic downtown has antiques.',
+        transportation: 'Valley Metro buses and light rail. Car essential. PHX Airport 20 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Cardinals football. Glendale Glitters (November-January).'
+      }
+    }
+  },
+  { slug: 'gilbert', city: 'Gilbert', timezone: 'America/Phoenix', country: 'United States', countryCode: 'US', state: 'Arizona', stateCode: 'AZ', lat: 33.35, lng: -111.79, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '270K', phoneCode: '+1 480', language: 'English',
+      climate: 'Hot desert with extremely hot summers (32-42°C) and mild winters (10-20°C). Very dry, sunny.',
+      attractions: ['Gilbert Heritage District', 'Riparian Preserve', 'Freestone Recreation Center', 'Gilbert Historical Museum', 'San Tan Village', 'Agritopia Farm', 'Joe\'s Farm Grill', 'Cosmo Dog Park', 'Gilbert Rotary Centennial Observatory', 'Downtown Gilbert'],
+      demographics: 'Former farming town transformed to suburb. One of fastest-growing US cities. Family-oriented, safe.',
+      airports: [
+        { code: 'PHX', name: 'Phoenix Sky Harbor', distance: '20km' },
+        { code: 'AZA', name: 'Phoenix-Mesa Gateway', distance: '18km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Fastest-growing US city (historic), family-friendly, Riparian Preserve, Agritopia',
+      seoContent: {
+        intro: 'Gilbert, one of America\'s fastest-growing cities, operates on Mountain Standard Time (MST/UTC-7) year-round. This Phoenix suburb transformed from farming community to family-friendly destination.',
+        timezoneFacts: 'Arizona doesn\'t observe DST. Gilbert stays UTC-7 year-round. Same as Phoenix and Mesa.',
+        bestTimeToVisit: 'October-April for pleasant weather. Summer extremely hot. Spring has events.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Heritage District has dining scene. Agritopia farm-to-table.',
+        timeDifference: 'Gilbert is always UTC-7. When noon here: NYC 2 PM (winter) / 3 PM (summer), LA 11 AM / noon.',
+        daylightSaving: 'Arizona does NOT observe DST. Time difference with other states changes seasonally.',
+        localTips: 'Riparian Preserve for bird watching. Agritopia is urban farm community. Heritage District revitalized. Very family-oriented.',
+        transportation: 'Valley Metro buses. Car essential. PHX Airport 25 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Gilbert Days. Harvest Festival at Agritopia.'
+      }
+    }
+  },
+  { slug: 'winston-salem', city: 'Winston-Salem', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'North Carolina', stateCode: 'NC', lat: 36.10, lng: -80.24, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '250K', phoneCode: '+1 336', language: 'English',
+      climate: 'Humid subtropical with hot summers (24-32°C) and mild winters (2-10°C). Four seasons.',
+      attractions: ['Old Salem', 'Reynolda House', 'Southeastern Center for Contemporary Art', 'BB&T Ballpark', 'Quarry Park', 'SciWorks', 'Historic Bethabara Park', 'Wake Forest University', 'Milton Rhodes Center', 'Piedmont Triad Farmers Market'],
+      demographics: 'Piedmont Triad city. Former tobacco capital (R.J. Reynolds). Wake Forest University. Arts focus.',
+      airports: [
+        { code: 'GSO', name: 'Piedmont Triad International', distance: '15km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Tobacco heritage, Old Salem Moravian village, Wake Forest, arts scene, Krispy Kreme birthplace',
+      seoContent: {
+        intro: 'Winston-Salem, City of Arts and Innovation, operates on Eastern Standard Time (EST/UTC-5). This Piedmont city blends Moravian heritage at Old Salem with Wake Forest University culture.',
+        timezoneFacts: 'Same timezone as Raleigh and Greensboro. 5 hours behind London. Part of Piedmont Triad.',
+        bestTimeToVisit: 'April-May and September-October ideal. Summer humid. Fall for Wake Forest football.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Old Salem has own hours. Downtown revitalized.',
+        timeDifference: 'Winston-Salem is UTC-5 (EST) / UTC-4 (EDT). When noon here: London 5 PM, LA 9 AM, Chicago 11 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Old Salem is living history museum. Krispy Kreme originated here. Reynolda House excellent. Wake Forest games popular.',
+        transportation: 'WSTA buses. Car recommended. GSO Airport 20 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Moravian candle teas (December). River Run film festival.'
+      }
+    }
+  },
+  { slug: 'norfolk', city: 'Norfolk', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Virginia', stateCode: 'VA', lat: 36.85, lng: -76.29, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '245K', phoneCode: '+1 757', language: 'English',
+      climate: 'Humid subtropical with hot summers (25-32°C) and mild winters (3-11°C). Moderate rainfall.',
+      attractions: ['Nauticus', 'USS Wisconsin', 'Norfolk Botanical Garden', 'Chrysler Museum', 'Virginia Zoo', 'MacArthur Memorial', 'Ocean View Beach', 'Waterside District', 'NEON District', 'Spirit of Norfolk cruises'],
+      demographics: 'World\'s largest naval base. Hampton Roads hub. Mermaids are city symbol. Cultural destination.',
+      airports: [
+        { code: 'ORF', name: 'Norfolk International Airport', distance: '10km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'World\'s largest naval base, USS Wisconsin, mermaids, Nauticus, Hampton Roads',
+      seoContent: {
+        intro: 'Norfolk, home to the world\'s largest naval base, operates on Eastern Standard Time (EST/UTC-5). This Hampton Roads city offers naval history, mermaid art, and waterfront culture.',
+        timezoneFacts: 'Same timezone as Virginia Beach. 5 hours behind London. Naval operations run 24/7.',
+        bestTimeToVisit: 'April-June and September-October pleasant. Summer hot and humid. Military events year-round.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Waterside District has nightlife. Ghent area trendy.',
+        timeDifference: 'Norfolk is UTC-5 (EST) / UTC-4 (EDT). When noon here: London 5 PM, LA 9 AM, Paris 6 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'USS Wisconsin is must-see. Mermaid statues throughout city. NEON District for arts. Chrysler Museum free.',
+        transportation: 'Hampton Roads Transit buses and light rail. Car helpful. ORF Airport 15 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Harborfest (June). NATO Festival.'
+      }
+    }
+  },
+  { slug: 'chesapeake', city: 'Chesapeake', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Virginia', stateCode: 'VA', lat: 36.77, lng: -76.29, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '250K', phoneCode: '+1 757', language: 'English',
+      climate: 'Humid subtropical with hot summers (25-32°C) and mild winters (3-11°C). Moderate rainfall.',
+      attractions: ['Great Dismal Swamp', 'Chesapeake City Park', 'Northwest River Park', 'Great Bridge Battlefield', 'Greenbrier Mall', 'Chesapeake Arboretum', 'Oak Grove Lake Park', 'Historic Great Bridge', 'Deep Creek', 'Atlantic Kayak'],
+      demographics: 'Hampton Roads city. Great Dismal Swamp. Suburban with rural areas. Part of VA Beach-Norfolk metro.',
+      airports: [
+        { code: 'ORF', name: 'Norfolk International Airport', distance: '18km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Great Dismal Swamp, historic Great Bridge, suburban living, waterways',
+      seoContent: {
+        intro: 'Chesapeake, gateway to the Great Dismal Swamp, operates on Eastern Standard Time (EST/UTC-5). This Hampton Roads city offers nature preserves, historic sites, and suburban quality of life.',
+        timezoneFacts: 'Same timezone as Norfolk and Virginia Beach. 5 hours behind London. Part of Hampton Roads.',
+        bestTimeToVisit: 'April-October for outdoor activities. Fall for Great Dismal Swamp colors. Spring for wildlife.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Mostly suburban shopping centers.',
+        timeDifference: 'Chesapeake is UTC-5 (EST) / UTC-4 (EDT). When noon here: London 5 PM, LA 9 AM, Chicago 11 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Great Dismal Swamp National Wildlife Refuge is unique. Great Bridge historic area. Excellent parks and waterways.',
+        transportation: 'Hampton Roads Transit buses. Car essential. ORF Airport 20 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Battle of Great Bridge commemoration (December).'
+      }
+    }
+  },
+  { slug: 'garland', city: 'Garland', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 32.91, lng: -96.64, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '240K', phoneCode: '+1 972', language: 'English, Spanish, Vietnamese',
+      climate: 'Humid subtropical with hot summers (28-36°C) and mild winters (3-14°C). Thunderstorms in spring.',
+      attractions: ['Firewheel Town Center', 'Downtown Garland Square', 'Hawaiian Falls', 'Garland Landmark Museum', 'Spring Creek Forest Preserve', 'Granville Arts Center', 'Bass Pro Shops', 'Surf and Swim', 'Duck Creek Trail', 'Plaza Theatre'],
+      demographics: 'Dallas suburb. Diverse population. Manufacturing heritage. Large Vietnamese community.',
+      airports: [
+        { code: 'DFW', name: 'Dallas/Fort Worth International', distance: '35km' },
+        { code: 'DAL', name: 'Dallas Love Field', distance: '20km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Diverse Dallas suburb, Firewheel Town Center, Vietnamese food, affordable DFW living',
+      seoContent: {
+        intro: 'Garland, one of DFW\'s most diverse cities, operates on Central Standard Time (CST/UTC-6). This Dallas suburb offers cultural diversity, family attractions, and affordable housing.',
+        timezoneFacts: 'Same timezone as Dallas. 1 hour behind New York. Part of DFW metroplex.',
+        bestTimeToVisit: 'March-May and October-November pleasant. Summer very hot. Spring has severe weather risk.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Firewheel Town Center for shopping.',
+        timeDifference: 'Garland is UTC-6 (CST) / UTC-5 (CDT). When noon here: NYC 1 PM, Denver 11 AM, London 6 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Great Vietnamese food along Garland Road. Hawaiian Falls for summer fun. Downtown Square revitalizing. DART rail to Dallas.',
+        transportation: 'DART buses and Blue Line rail. Car recommended. DAL Airport 25 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Star-Spangled Fourth.'
+      }
+    }
+  },
+  { slug: 'irving', city: 'Irving', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 32.81, lng: -96.95, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '240K', phoneCode: '+1 972', language: 'English, Spanish',
+      climate: 'Humid subtropical with hot summers (28-36°C) and mild winters (3-14°C). Thunderstorms in spring.',
+      attractions: ['Toyota Music Factory', 'Las Colinas', 'Irving Arts Center', 'Mustangs of Las Colinas', 'Mandalay Canal Walk', 'Irving Convention Center', 'Heritage Park', 'Lake Carolyn', 'Texas Lottery Plaza', 'Campion Trail'],
+      demographics: 'Las Colinas business district. Former Cowboys HQ. Major corporate presence (ExxonMobil). Diverse.',
+      airports: [
+        { code: 'DFW', name: 'Dallas/Fort Worth International', distance: '8km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Las Colinas business district, Mustangs sculpture, DFW Airport proximity, corporate headquarters',
+      seoContent: {
+        intro: 'Irving, home to Las Colinas, operates on Central Standard Time (CST/UTC-6). This Dallas suburb hosts major corporate headquarters and the iconic Mustangs of Las Colinas sculpture.',
+        timezoneFacts: 'Same timezone as Dallas. 1 hour behind New York. DFW Airport is actually mostly in Irving.',
+        bestTimeToVisit: 'March-May and October-November pleasant. Summer very hot. Business travel year-round.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Toyota Music Factory for concerts. Las Colinas active.',
+        timeDifference: 'Irving is UTC-6 (CST) / UTC-5 (CDT). When noon here: NYC 1 PM, Denver 11 AM, London 6 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Mustangs sculpture is largest equine sculpture in world. Toyota Music Factory for entertainment. DFW Airport 10 minutes.',
+        transportation: 'DART Orange Line. Car helpful. DFW Airport extremely close.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Canal Fest.'
+      }
+    }
+  },
+  { slug: 'hialeah', city: 'Hialeah', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 25.86, lng: -80.28, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '230K', phoneCode: '+1 305', language: 'Spanish, English',
+      climate: 'Tropical monsoon with hot humid year-round (24-33°C). Wet season May-October. Hurricane risk.',
+      attractions: ['Hialeah Park Racing & Casino', 'Amelia Earhart Park', 'Westland Mall', 'Leah Arts District', 'Flamingos at Hialeah Park', 'Miami Springs Golf Course', 'Milander Park', 'Goodlet Park', 'Triangle Park', 'Palm Avenue'],
+      demographics: 'Sixth-largest Florida city. 95%+ Hispanic (mostly Cuban). Highest Spanish-speaking percentage in US.',
+      airports: [
+        { code: 'MIA', name: 'Miami International Airport', distance: '8km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Highest Spanish-speaking %, Hialeah Park flamingos, Cuban culture, affordable Miami area',
+      seoContent: {
+        intro: 'Hialeah, America\'s most Hispanic city, operates on Eastern Standard Time (EST/UTC-5). Known for its 95%+ Hispanic population and historic Hialeah Park with its famous flamingos.',
+        timezoneFacts: 'Same timezone as Miami. 5 hours behind London. Strong Cuban cultural ties.',
+        bestTimeToVisit: 'November-April for dry season. Summer hot and humid with afternoon storms.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Spanish is primary language. Cuban restaurants abundant.',
+        timeDifference: 'Hialeah is UTC-5 (EST) / UTC-4 (EDT). When noon here: London 5 PM, LA 9 AM, Havana 12 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Spanish is essential - 95% speak Spanish. Hialeah Park flamingos famous. Cuban food excellent. MIA Airport very close.',
+        transportation: 'Metrorail and Metrobus to Miami. Car helpful. MIA Airport 10 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Cuban cultural events. Calle Ocho Festival nearby.'
+      }
+    }
+  },
+  { slug: 'fremont', city: 'Fremont', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 37.55, lng: -121.98, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '230K', phoneCode: '+1 510', language: 'English, Mandarin, Hindi',
+      climate: 'Mediterranean with warm summers (20-28°C) and mild wet winters (8-15°C). Very pleasant.',
+      attractions: ['Mission San Jose', 'Tesla Factory', 'Niles Canyon Railway', 'Quarry Lakes', 'Central Park', 'Fremont Hub', 'Lake Elizabeth', 'Ardenwood Historic Farm', 'Niles District', 'Coyote Hills'],
+      demographics: 'Fourth-largest Bay Area city. Tesla\'s main factory. Large Asian-American community (over 60%).',
+      airports: [
+        { code: 'SJC', name: 'San Jose International', distance: '18km' },
+        { code: 'OAK', name: 'Oakland International', distance: '30km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Tesla factory, diverse population, Mission San Jose, Niles Canyon, Bay Area tech',
+      seoContent: {
+        intro: 'Fremont, home to Tesla\'s main factory, operates on Pacific Standard Time (PST/UTC-8). This diverse Bay Area city combines tech industry with historic missions and diverse Asian-American culture.',
+        timezoneFacts: 'Same timezone as San Jose. 3 hours behind New York. Silicon Valley adjacent.',
+        bestTimeToVisit: 'Year-round pleasant. September-October warmest. Spring has wildflowers.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Niles District for shops. Tech companies flexible hours.',
+        timeDifference: 'Fremont is UTC-8 (PST) / UTC-7 (PDT). When noon here: NYC 3 PM, London 8 PM, Tokyo 5 AM (+1).',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Tesla Factory tours sometimes available. Niles is historic film district. Excellent Indian and Chinese food. BART connects Bay Area.',
+        transportation: 'BART to San Francisco and Oakland. Car helpful for suburbs. SJC and OAK airports accessible.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Festival of India. Fremont Festival of the Arts.'
+      }
+    }
+  },
+  { slug: 'boise', city: 'Boise', timezone: 'America/Boise', country: 'United States', countryCode: 'US', state: 'Idaho', stateCode: 'ID', lat: 43.62, lng: -116.21, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '235K', phoneCode: '+1 208', language: 'English',
+      climate: 'Semi-arid with hot summers (22-34°C) and cold winters (-4 to 5°C). Four seasons. Low humidity.',
+      attractions: ['Boise River Greenbelt', 'Idaho State Capitol', 'Basque Block', 'Boise Art Museum', 'Zoo Boise', 'Bogus Basin', 'Old Idaho Penitentiary', 'World Center for Birds of Prey', 'Capitol Building', 'Julia Davis Park'],
+      demographics: 'Idaho capital. Fastest-growing US metro multiple years. Large Basque community. Outdoor recreation hub.',
+      airports: [
+        { code: 'BOI', name: 'Boise Airport', distance: '6km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Fastest-growing US city, Basque culture, outdoor recreation, Boise State (blue turf), tech growth',
+      seoContent: {
+        intro: 'Boise, the City of Trees, operates on Mountain Standard Time (MST/UTC-7). Idaho\'s capital has become one of America\'s fastest-growing cities, combining outdoor lifestyle with tech industry growth.',
+        timezoneFacts: 'Same timezone as Salt Lake City. 2 hours behind New York. Mountain Time for Idaho.',
+        bestTimeToVisit: 'May-October for outdoor activities. Winter for Bogus Basin skiing. Fall colors beautiful.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Downtown and Basque Block vibrant. Tech industry flexible.',
+        timeDifference: 'Boise is UTC-7 (MST) / UTC-6 (MDT). When noon here: NYC 2 PM, LA 11 AM, Denver 12 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Basque Block has authentic Basque food. Boise State blue turf iconic. Greenbelt for biking. Bogus Basin 45 minutes for skiing.',
+        transportation: 'Valley Regional Transit buses. Car essential. BOI Airport very close to downtown.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Basque Festival (July). Boise State football.'
+      }
+    }
+  },
+  { slug: 'richmond', city: 'Richmond', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Virginia', stateCode: 'VA', lat: 37.54, lng: -77.44, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '230K', phoneCode: '+1 804', language: 'English',
+      climate: 'Humid subtropical with hot summers (24-32°C) and mild winters (0-9°C). Four seasons.',
+      attractions: ['Virginia State Capitol', 'American Civil War Museum', 'Virginia Museum of Fine Arts', 'Lewis Ginter Botanical Garden', 'Maymont', 'Carytown', 'Church Hill', 'Monument Avenue', 'James River', 'Edgar Allan Poe Museum'],
+      demographics: 'Virginia capital. Former Confederate capital. Major food scene. Historic architecture. River recreation.',
+      airports: [
+        { code: 'RIC', name: 'Richmond International Airport', distance: '11km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Virginia capital, Civil War history, food scene, James River, craft beer',
+      seoContent: {
+        intro: 'Richmond, Virginia\'s capital, operates on Eastern Standard Time (EST/UTC-5). This historic city balances Civil War heritage with vibrant food scene, craft beer, and James River recreation.',
+        timezoneFacts: 'Same timezone as Washington D.C. 5 hours behind London. Between DC and North Carolina.',
+        bestTimeToVisit: 'April-May and September-October ideal. Summer humid. Spring has festivals. Fall colors.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Carytown and Church Hill have evening scenes.',
+        timeDifference: 'Richmond is UTC-5 (EST) / UTC-4 (EDT). When noon here: London 5 PM, LA 9 AM, DC 12 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'James River for kayaking and rafting. Carytown for shopping. Church Hill historic. Food scene nationally recognized.',
+        transportation: 'GRTC buses and Pulse BRT. Car helpful. RIC Airport 15 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Richmond Folk Festival. UCI Road World Championships host.'
+      }
+    }
+  },
+  { slug: 'baton-rouge', city: 'Baton Rouge', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Louisiana', stateCode: 'LA', lat: 30.45, lng: -91.15, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '225K', phoneCode: '+1 225', language: 'English',
+      climate: 'Humid subtropical with hot humid summers (26-34°C) and mild winters (6-16°C). High rainfall.',
+      attractions: ['Louisiana State Capitol', 'LSU Campus', 'USS Kidd', 'Capitol Park Museum', 'Magnolia Mound Plantation', 'Shaw Center for the Arts', 'Old State Capitol', 'BREC\'s Baton Rouge Zoo', 'LSU Museum of Art', 'Mike the Tiger habitat'],
+      demographics: 'Louisiana capital. LSU Tigers. Oil refining and petrochemical center. Cajun and Creole culture.',
+      airports: [
+        { code: 'BTR', name: 'Baton Rouge Metropolitan', distance: '11km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'LSU Tigers football, state capital, petrochemical industry, Cajun/Creole food',
+      seoContent: {
+        intro: 'Baton Rouge, Louisiana\'s capital, operates on Central Standard Time (CST/UTC-6). Home to LSU and Death Valley stadium, Baton Rouge combines college football passion with Cajun culture.',
+        timezoneFacts: 'Same timezone as New Orleans. 1 hour behind New York. SEC football Saturdays dominate fall.',
+        bestTimeToVisit: 'October-April for pleasant weather. Fall for LSU football. Summer very hot and humid.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Government Quarter active. LSU campus drives weekend activity.',
+        timeDifference: 'Baton Rouge is UTC-6 (CST) / UTC-5 (CDT). When noon here: NYC 1 PM, Denver 11 AM, New Orleans 12 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'LSU football Saturdays are religion. Mike the Tiger habitat free. State Capitol is tallest in US. Great Cajun food.',
+        transportation: 'CATS buses. Car essential. BTR Airport 15 minutes. New Orleans 80 miles.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. LSU football Saturdays. Mardi Gras celebrations.'
+      }
+    }
+  },
+  { slug: 'spokane', city: 'Spokane', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'Washington', stateCode: 'WA', lat: 47.66, lng: -117.43, tier: 3, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '230K', phoneCode: '+1 509', language: 'English',
+      climate: 'Semi-arid with warm summers (18-30°C) and cold winters (-5 to 3°C). Four seasons. Lower rainfall than Seattle.',
+      attractions: ['Riverfront Park', 'Spokane Falls', 'Manito Park', 'Northwest Museum of Arts & Culture', 'Riverside State Park', 'Gonzaga University', 'Martin Woldson Theater', 'Spokane Valley', 'Mount Spokane', 'Centennial Trail'],
+      demographics: 'Second-largest Washington city. Eastern Washington hub. Four distinct seasons. Gonzaga basketball.',
+      airports: [
+        { code: 'GEG', name: 'Spokane International Airport', distance: '10km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Spokane Falls, Gonzaga basketball, Expo \'74 legacy, Eastern Washington hub, Bloomsday',
+      seoContent: {
+        intro: 'Spokane, the Lilac City, operates on Pacific Standard Time (PST/UTC-8). Eastern Washington\'s hub offers stunning waterfalls downtown, Gonzaga basketball, and four distinct seasons unlike rainy Seattle.',
+        timezoneFacts: 'Same timezone as Seattle but very different climate. 3 hours behind New York. Idaho border nearby.',
+        bestTimeToVisit: 'May-September for outdoor activities. March for Gonzaga basketball. Winter for skiing.',
+        businessHours: 'Standard hours 9 AM to 5 PM. Downtown riverfront active. Gonzaga area has student life.',
+        timeDifference: 'Spokane is UTC-8 (PST) / UTC-7 (PDT). When noon here: NYC 3 PM, London 8 PM, Seattle 12 PM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November.',
+        localTips: 'Spokane Falls spectacular in spring. Gonzaga basketball is big. Bloomsday run in May (50,000+ runners). Four seasons unlike Seattle.',
+        transportation: 'STA buses. Car recommended. GEG Airport 15 minutes.',
+        emergencyNumbers: 'Emergency: 911.',
+        publicHolidays: 'US Federal holidays. Bloomsday (May). Hoopfest (June - world\'s largest 3-on-3 basketball).'
+      }
+    }
+  },
+
+  // USA - Additional Cities (101-150)
+  { slug: 'north-las-vegas', city: 'North Las Vegas', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'Nevada', stateCode: 'NV', lat: 36.20, lng: -115.12, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '265K', phoneCode: '+1 702', language: 'English, Spanish', climate: 'Hot desert with scorching summers and mild winters.', attractions: ['Aliante Nature Discovery Park', 'Craig Ranch Regional Park', 'Nellis Air Force Base', 'Veterans Memorial Park', 'Aliante Casino'], demographics: 'Fast-growing Vegas suburb. Nellis AFB.', airports: [{ code: 'LAS', name: 'Harry Reid International', distance: '20km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Vegas suburb, Nellis AFB, affordable housing' }
+  },
+  { slug: 'huntington-beach', city: 'Huntington Beach', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 33.66, lng: -117.99, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '200K', phoneCode: '+1 714', language: 'English', climate: 'Mediterranean with perfect beach weather year-round.', attractions: ['Huntington Beach Pier', 'International Surfing Museum', 'Bolsa Chica Ecological Reserve', 'Pacific City', 'Main Street'], demographics: 'Surf City USA. 10 miles of beaches.', airports: [{ code: 'SNA', name: 'John Wayne Airport', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Surf City USA, US Open of Surfing, beaches, pier' }
+  },
+  { slug: 'des-moines', city: 'Des Moines', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Iowa', stateCode: 'IA', lat: 41.59, lng: -93.62, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '215K', phoneCode: '+1 515', language: 'English', climate: 'Humid continental with four distinct seasons.', attractions: ['Iowa State Capitol', 'Des Moines Art Center', 'Pappajohn Sculpture Park', 'Iowa State Fair', 'Principal Park'], demographics: 'Iowa capital. Insurance hub. First in the nation caucuses.', airports: [{ code: 'DSM', name: 'Des Moines International', distance: '8km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Iowa caucuses, insurance capital, Iowa State Fair' }
+  },
+  { slug: 'moreno-valley', city: 'Moreno Valley', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 33.94, lng: -117.23, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '210K', phoneCode: '+1 951', language: 'English, Spanish', climate: 'Hot semi-arid with hot summers and mild winters.', attractions: ['Lake Perris', 'Box Springs Mountain Reserve', 'Moreno Valley Mall', 'TownGate', 'March Field Air Museum'], demographics: 'Inland Empire city. Fast-growing. Diverse.', airports: [{ code: 'ONT', name: 'Ontario International', distance: '30km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Inland Empire, logistics hub, Lake Perris' }
+  },
+  { slug: 'fontana', city: 'Fontana', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.09, lng: -117.43, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '215K', phoneCode: '+1 909', language: 'English, Spanish', climate: 'Hot semi-arid with hot summers.', attractions: ['Auto Club Speedway', 'Mary Vagle Nature Center', 'Fontana Park', 'Jurupa Hills', 'Lewis Library'], demographics: 'Inland Empire. NASCAR Auto Club Speedway.', airports: [{ code: 'ONT', name: 'Ontario International', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Auto Club Speedway (NASCAR), steel heritage' }
+  },
+  { slug: 'modesto', city: 'Modesto', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 37.64, lng: -120.99, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '215K', phoneCode: '+1 209', language: 'English, Spanish', climate: 'Mediterranean with hot dry summers.', attractions: ['McHenry Mansion', 'Modesto Arch', 'Great Valley Museum', 'Gallo Center', 'Dry Creek Trail'], demographics: 'Central Valley. Gallo Winery HQ. American Graffiti setting.', airports: [{ code: 'MOD', name: 'Modesto City-County Airport', distance: '5km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Gallo Winery, American Graffiti setting, agriculture' }
+  },
+  { slug: 'fayetteville-nc', city: 'Fayetteville', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'North Carolina', stateCode: 'NC', lat: 35.05, lng: -78.88, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '210K', phoneCode: '+1 910', language: 'English', climate: 'Humid subtropical with hot summers.', attractions: ['Airborne & Special Operations Museum', 'Cape Fear Botanical Garden', 'Museum of the Cape Fear', 'Festival Park', 'Cross Creek Mall'], demographics: 'Fort Liberty (Bragg) adjacent. Major military town.', airports: [{ code: 'FAY', name: 'Fayetteville Regional', distance: '5km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Fort Liberty, Airborne history, military town' }
+  },
+  { slug: 'tacoma', city: 'Tacoma', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'Washington', stateCode: 'WA', lat: 47.25, lng: -122.44, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '220K', phoneCode: '+1 253', language: 'English', climate: 'Oceanic with mild summers and cool wet winters.', attractions: ['Museum of Glass', 'Point Defiance Park', 'Tacoma Art Museum', 'LeMay Car Museum', 'Chihuly Bridge of Glass'], demographics: 'Port city south of Seattle. Museum District.', airports: [{ code: 'SEA', name: 'Seattle-Tacoma International', distance: '25km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Museum of Glass, Dale Chihuly, Point Defiance' }
+  },
+  { slug: 'oxnard', city: 'Oxnard', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.20, lng: -119.18, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '205K', phoneCode: '+1 805', language: 'English, Spanish', climate: 'Mediterranean with perfect weather.', attractions: ['Channel Islands Harbor', 'Oxnard Beach Park', 'Heritage Square', 'Carnegie Art Museum', 'Strawberry Festival'], demographics: 'Ventura County\'s largest. Strawberry capital.', airports: [{ code: 'OXR', name: 'Oxnard Airport', distance: '5km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Strawberries, Channel Islands gateway, beaches' }
+  },
+  { slug: 'yonkers', city: 'Yonkers', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'New York', stateCode: 'NY', lat: 40.93, lng: -73.90, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '200K', phoneCode: '+1 914', language: 'English, Spanish', climate: 'Humid subtropical with four seasons.', attractions: ['Untermyer Park', 'Hudson River Museum', 'Empire City Casino', 'Yonkers Raceway', 'Cross County Shopping'], demographics: 'Fourth-largest NY city. NYC adjacent.', airports: [{ code: 'JFK', name: 'JFK International', distance: '40km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'NYC suburb, Hudson River, Untermyer Park' }
+  },
+  { slug: 'shreveport', city: 'Shreveport', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Louisiana', stateCode: 'LA', lat: 32.53, lng: -93.75, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '190K', phoneCode: '+1 318', language: 'English', climate: 'Humid subtropical with hot summers.', attractions: ['Sci-Port Discovery Center', 'R.W. Norton Art Gallery', 'Shreveport Aquarium', 'Riverboat Casinos', 'Louisiana Boardwalk'], demographics: 'Northwest Louisiana hub. Casinos. Film production.', airports: [{ code: 'SHV', name: 'Shreveport Regional', distance: '8km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Riverboat casinos, Louisiana Boardwalk, oil industry' }
+  },
+  { slug: 'little-rock', city: 'Little Rock', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Arkansas', stateCode: 'AR', lat: 34.75, lng: -92.29, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '205K', phoneCode: '+1 501', language: 'English', climate: 'Humid subtropical with hot summers.', attractions: ['Clinton Presidential Library', 'Little Rock Central High School', 'Big Dam Bridge', 'River Market District', 'Arkansas State Capitol'], demographics: 'Arkansas capital. Civil Rights history.', airports: [{ code: 'LIT', name: 'Clinton National Airport', distance: '6km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Clinton Presidential Library, Central High School, River Market' }
+  },
+  { slug: 'grand-rapids', city: 'Grand Rapids', timezone: 'America/Detroit', country: 'United States', countryCode: 'US', state: 'Michigan', stateCode: 'MI', lat: 42.96, lng: -85.66, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '200K', phoneCode: '+1 616', language: 'English', climate: 'Humid continental with lake effect.', attractions: ['Frederik Meijer Gardens', 'Gerald R. Ford Museum', 'Grand Rapids Art Museum', 'ArtPrize', 'Downtown Market'], demographics: 'Second-largest Michigan city. Furniture capital. ArtPrize.', airports: [{ code: 'GRR', name: 'Gerald R. Ford International', distance: '18km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'ArtPrize, furniture industry, craft beer, Gerald Ford' }
+  },
+  { slug: 'huntsville', city: 'Huntsville', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Alabama', stateCode: 'AL', lat: 34.73, lng: -86.59, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '215K', phoneCode: '+1 256', language: 'English', climate: 'Humid subtropical.', attractions: ['U.S. Space & Rocket Center', 'Huntsville Botanical Garden', 'Monte Sano State Park', 'Lowe Mill ARTS', 'Big Spring Park'], demographics: 'Rocket City. NASA Marshall Space Flight Center.', airports: [{ code: 'HSV', name: 'Huntsville International', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Rocket City, NASA, Space & Rocket Center, defense industry' }
+  },
+  { slug: 'augusta', city: 'Augusta', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Georgia', stateCode: 'GA', lat: 33.47, lng: -81.97, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '200K', phoneCode: '+1 706', language: 'English', climate: 'Humid subtropical.', attractions: ['Augusta National Golf Club', 'Riverwalk Augusta', 'Augusta Museum of History', 'Morris Museum of Art', 'Savannah Rapids Park'], demographics: 'Home of The Masters golf tournament.', airports: [{ code: 'AGS', name: 'Augusta Regional', distance: '10km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'The Masters golf, Augusta National, James Brown, Riverwalk' }
+  },
+  { slug: 'mobile', city: 'Mobile', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Alabama', stateCode: 'AL', lat: 30.69, lng: -88.04, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '190K', phoneCode: '+1 251', language: 'English', climate: 'Humid subtropical.', attractions: ['USS Alabama Battleship', 'Bellingrath Gardens', 'Mobile Carnival Museum', 'GulfQuest Maritime Museum', 'Dauphin Street'], demographics: 'Gulf Coast port. Original US Mardi Gras.', airports: [{ code: 'MOB', name: 'Mobile Regional', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Original US Mardi Gras, USS Alabama, port city, shipbuilding' }
+  },
+  { slug: 'birmingham', city: 'Birmingham', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Alabama', stateCode: 'AL', lat: 33.52, lng: -86.80, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '200K', phoneCode: '+1 205', language: 'English', climate: 'Humid subtropical.', attractions: ['Civil Rights District', 'Vulcan Park', 'Birmingham Museum of Art', 'Barber Vintage Motorsports', 'Railroad Park'], demographics: 'Alabama\'s largest city. Civil Rights history.', airports: [{ code: 'BHM', name: 'Birmingham-Shuttlesworth International', distance: '8km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Civil Rights Movement, Vulcan statue, steel city heritage' }
+  },
+  { slug: 'grand-prairie', city: 'Grand Prairie', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 32.75, lng: -97.00, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '195K', phoneCode: '+1 972', language: 'English, Spanish', climate: 'Humid subtropical with hot summers.', attractions: ['Epic Waters Indoor Waterpark', 'Traders Village', 'Lone Star Park', 'Uptown Theater', 'Lynn Creek Park'], demographics: 'DFW suburb between Dallas and Fort Worth.', airports: [{ code: 'DFW', name: 'DFW International', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Epic Waters, Traders Village, DFW suburb' }
+  },
+  { slug: 'tallahassee', city: 'Tallahassee', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 30.44, lng: -84.28, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '195K', phoneCode: '+1 850', language: 'English', climate: 'Humid subtropical.', attractions: ['Florida State Capitol', 'FSU Campus', 'Cascades Park', 'Tallahassee Museum', 'Mission San Luis'], demographics: 'Florida capital. FSU and FAMU.', airports: [{ code: 'TLH', name: 'Tallahassee International', distance: '10km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Florida State capital, FSU Seminoles, FAMU, college town' }
+  },
+  { slug: 'overland-park', city: 'Overland Park', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Kansas', stateCode: 'KS', lat: 38.98, lng: -94.67, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '195K', phoneCode: '+1 913', language: 'English', climate: 'Humid subtropical with cold winters.', attractions: ['Overland Park Arboretum', 'Deanna Rose Farmstead', 'Museum at Prairiefire', 'Oak Park Mall', 'Indian Creek Trail'], demographics: 'Kansas City suburb. Best places to live.', airports: [{ code: 'MCI', name: 'Kansas City International', distance: '40km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'KC suburb, corporate headquarters, family-friendly' }
+  },
+  { slug: 'cape-coral', city: 'Cape Coral', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 26.56, lng: -81.95, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '205K', phoneCode: '+1 239', language: 'English', climate: 'Tropical savanna.', attractions: ['Sun Splash Family Waterpark', 'Cape Coral Yacht Club', 'Four Mile Cove Ecological Preserve', 'Rotary Park', 'Cape Coral canals'], demographics: 'More canals than any city in world.', airports: [{ code: 'RSW', name: 'Southwest Florida International', distance: '25km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Most canals in world (400+ miles), waterfront living, boating' }
+  },
+  { slug: 'knoxville', city: 'Knoxville', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Tennessee', stateCode: 'TN', lat: 35.96, lng: -83.92, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '190K', phoneCode: '+1 865', language: 'English', climate: 'Humid subtropical.', attractions: ['University of Tennessee', 'Market Square', 'Sunsphere', 'Knoxville Zoo', 'Great Smoky Mountains gateway'], demographics: 'Gateway to Great Smokies. UT Vols.', airports: [{ code: 'TYS', name: 'McGhee Tyson Airport', distance: '20km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Great Smoky Mountains gateway, UT Vols, Sunsphere' }
+  },
+  { slug: 'providence', city: 'Providence', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Rhode Island', stateCode: 'RI', lat: 41.82, lng: -71.41, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '190K', phoneCode: '+1 401', language: 'English', climate: 'Humid continental.', attractions: ['WaterFire', 'RISD Museum', 'Brown University', 'Federal Hill', 'Providence Place'], demographics: 'Rhode Island capital. Brown and RISD.', airports: [{ code: 'PVD', name: 'T.F. Green International', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'WaterFire, Brown University, RISD, Federal Hill Italian food' }
+  },
+  { slug: 'brownsville', city: 'Brownsville', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 25.90, lng: -97.50, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '185K', phoneCode: '+1 956', language: 'English, Spanish', climate: 'Semi-arid with hot summers.', attractions: ['Gladys Porter Zoo', 'SpaceX Starbase', 'Palo Alto Battlefield', 'South Padre Island', 'Historic Downtown'], demographics: 'Southernmost Texas city. SpaceX Starbase.', airports: [{ code: 'BRO', name: 'Brownsville South Padre Island International', distance: '8km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'SpaceX Starbase, southernmost Texas, South Padre gateway' }
+  },
+  { slug: 'newport-news', city: 'Newport News', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Virginia', stateCode: 'VA', lat: 37.09, lng: -76.47, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '185K', phoneCode: '+1 757', language: 'English', climate: 'Humid subtropical.', attractions: ['The Mariners\' Museum', 'Virginia Living Museum', 'Newport News Park', 'Victory Arch', 'Ferguson Center'], demographics: 'Hampton Roads. Shipbuilding. Aircraft carriers.', airports: [{ code: 'PHF', name: 'Newport News/Williamsburg International', distance: '10km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Shipbuilding, aircraft carriers, Mariners Museum' }
+  },
+  { slug: 'tempe', city: 'Tempe', timezone: 'America/Phoenix', country: 'United States', countryCode: 'US', state: 'Arizona', stateCode: 'AZ', lat: 33.43, lng: -111.94, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '185K', phoneCode: '+1 480', language: 'English', climate: 'Hot desert. No DST.', attractions: ['Arizona State University', 'Tempe Town Lake', 'Mill Avenue', 'Tempe Marketplace', 'Desert Botanical Garden'], demographics: 'ASU Sun Devils. College town.', airports: [{ code: 'PHX', name: 'Phoenix Sky Harbor', distance: '5km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'ASU Sun Devils, Tempe Town Lake, Mill Avenue, college town' }
+  },
+  { slug: 'mckinney', city: 'McKinney', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 33.20, lng: -96.62, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '200K', phoneCode: '+1 972', language: 'English', climate: 'Humid subtropical.', attractions: ['Historic Downtown', 'Heard Natural Science Museum', 'Adriatica Village', 'Erwin Park', 'Tupps Brewery'], demographics: 'Fast-growing DFW suburb. Best place to live.', airports: [{ code: 'DFW', name: 'DFW International', distance: '40km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Best place to live, historic downtown, fast growth' }
+  },
+  { slug: 'akron', city: 'Akron', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Ohio', stateCode: 'OH', lat: 41.08, lng: -81.52, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '190K', phoneCode: '+1 330', language: 'English', climate: 'Humid continental.', attractions: ['Stan Hywet Hall', 'Akron Art Museum', 'Cuyahoga Valley National Park', 'Akron Zoo', 'Lock 3'], demographics: 'Rubber City. LeBron James hometown.', airports: [{ code: 'CAK', name: 'Akron-Canton Airport', distance: '20km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Rubber City, Goodyear, LeBron James, Cuyahoga Valley' }
+  },
+  { slug: 'montgomery', city: 'Montgomery', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Alabama', stateCode: 'AL', lat: 32.37, lng: -86.30, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '200K', phoneCode: '+1 334', language: 'English', climate: 'Humid subtropical.', attractions: ['Rosa Parks Museum', 'Civil Rights Memorial', 'Dexter Avenue Baptist Church', 'Alabama State Capitol', 'Montgomery Zoo'], demographics: 'Alabama capital. Civil Rights history.', airports: [{ code: 'MGM', name: 'Montgomery Regional', distance: '12km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Civil Rights history, Rosa Parks, MLK, state capital' }
+  },
+  { slug: 'sioux-falls', city: 'Sioux Falls', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'South Dakota', stateCode: 'SD', lat: 43.55, lng: -96.70, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '195K', phoneCode: '+1 605', language: 'English', climate: 'Humid continental with cold winters.', attractions: ['Falls Park', 'SculptureWalk', 'Washington Pavilion', 'Great Plains Zoo', 'Butterfly House'], demographics: 'South Dakota\'s largest city. No income tax.', airports: [{ code: 'FSD', name: 'Sioux Falls Regional', distance: '5km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Falls Park, no state income tax, financial hub' }
+  },
+  { slug: 'frisco', city: 'Frisco', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 33.15, lng: -96.82, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '220K', phoneCode: '+1 972', language: 'English', climate: 'Humid subtropical.', attractions: ['The Star (Cowboys HQ)', 'Toyota Stadium', 'Dr Pepper Ballpark', 'National Videogame Museum', 'Stonebriar Centre'], demographics: 'Fastest-growing large US city. Cowboys HQ.', airports: [{ code: 'DFW', name: 'DFW International', distance: '30km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Dallas Cowboys HQ, fastest-growing city, sports hub' }
+  },
+  { slug: 'rochester-ny', city: 'Rochester', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'New York', stateCode: 'NY', lat: 43.16, lng: -77.61, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '210K', phoneCode: '+1 585', language: 'English', climate: 'Humid continental with lake effect.', attractions: ['George Eastman Museum', 'Strong National Museum of Play', 'High Falls', 'Rochester Public Market', 'Lilac Festival'], demographics: 'Flour/Flower City. Kodak heritage.', airports: [{ code: 'ROC', name: 'Greater Rochester International', distance: '8km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Kodak heritage, George Eastman Museum, Strong Museum of Play' }
+  },
+  { slug: 'santa-clarita', city: 'Santa Clarita', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.39, lng: -118.54, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '230K', phoneCode: '+1 661', language: 'English, Spanish', climate: 'Semi-arid with hot summers.', attractions: ['Six Flags Magic Mountain', 'Vasquez Rocks', 'William S. Hart Museum', 'Placerita Canyon', 'Old Town Newhall'], demographics: 'LA suburb. Six Flags location.', airports: [{ code: 'BUR', name: 'Hollywood Burbank', distance: '35km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Six Flags Magic Mountain, Vasquez Rocks, safest city' }
+  },
+  { slug: 'worcester', city: 'Worcester', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Massachusetts', stateCode: 'MA', lat: 42.26, lng: -71.80, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '205K', phoneCode: '+1 508', language: 'English', climate: 'Humid continental.', attractions: ['Worcester Art Museum', 'Ecotarium', 'Hanover Theatre', 'Polar Park', 'Green Hill Park'], demographics: 'Second-largest New England city. College town.', airports: [{ code: 'ORH', name: 'Worcester Regional', distance: '6km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Heart of Commonwealth, college town, Polar Park, healthcare' }
+  },
+  { slug: 'vancouver-wa', city: 'Vancouver', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'Washington', stateCode: 'WA', lat: 45.64, lng: -122.66, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '190K', phoneCode: '+1 360', language: 'English', climate: 'Oceanic with mild summers.', attractions: ['Fort Vancouver', 'Pearson Air Museum', 'Waterfront Renaissance', 'Esther Short Park', 'Columbia River'], demographics: 'Portland metro but Washington. No income tax.', airports: [{ code: 'PDX', name: 'Portland International', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Portland suburb, no state income tax, Fort Vancouver' }
+  },
+  { slug: 'port-st-lucie', city: 'Port St. Lucie', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 27.29, lng: -80.35, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '220K', phoneCode: '+1 772', language: 'English', climate: 'Humid subtropical.', attractions: ['Mets Spring Training', 'Port St. Lucie Botanical Gardens', 'St. Lucie Inlet Preserve', 'McCarty Ranch Preserve', 'PGA Village'], demographics: 'Treasure Coast. Mets spring training.', airports: [{ code: 'PBI', name: 'Palm Beach International', distance: '55km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Fast growth, Mets spring training, golf, Treasure Coast' }
+  },
+  { slug: 'chattanooga', city: 'Chattanooga', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Tennessee', stateCode: 'TN', lat: 35.05, lng: -85.31, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '185K', phoneCode: '+1 423', language: 'English', climate: 'Humid subtropical.', attractions: ['Tennessee Aquarium', 'Lookout Mountain', 'Ruby Falls', 'Rock City', 'Walnut Street Bridge'], demographics: 'Scenic City. Fastest internet (Gig City).', airports: [{ code: 'CHA', name: 'Chattanooga Metropolitan', distance: '10km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Tennessee Aquarium, Lookout Mountain, fastest internet' }
+  },
+  { slug: 'oceanside', city: 'Oceanside', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 33.20, lng: -117.38, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '175K', phoneCode: '+1 760', language: 'English, Spanish', climate: 'Mediterranean.', attractions: ['Oceanside Pier', 'Mission San Luis Rey', 'California Surf Museum', 'Harbor Village', 'Camp Pendleton adjacent'], demographics: 'San Diego North County. Camp Pendleton.', airports: [{ code: 'SAN', name: 'San Diego International', distance: '55km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Oceanside Pier, Camp Pendleton, surf culture' }
+  },
+  { slug: 'springfield-mo', city: 'Springfield', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Missouri', stateCode: 'MO', lat: 37.22, lng: -93.29, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '170K', phoneCode: '+1 417', language: 'English', climate: 'Humid subtropical.', attractions: ['Bass Pro Shops HQ', 'Wonders of Wildlife', 'Fantastic Caverns', 'Route 66', 'Wilson\'s Creek Battlefield'], demographics: 'Queen City of the Ozarks. Bass Pro HQ.', airports: [{ code: 'SGF', name: 'Springfield-Branson National', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Bass Pro Shops HQ, Wonders of Wildlife, Ozarks, Route 66' }
+  },
+  { slug: 'elk-grove', city: 'Elk Grove', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 38.41, lng: -121.37, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '175K', phoneCode: '+1 916', language: 'English', climate: 'Mediterranean.', attractions: ['Elk Grove Regional Park', 'Old Town Elk Grove', 'Stone Lakes Wildlife Refuge', 'Laguna Creek Trail', 'Cosumnes River Preserve'], demographics: 'Sacramento suburb. Fast-growing. Diverse.', airports: [{ code: 'SMF', name: 'Sacramento International', distance: '30km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Sacramento suburb, diversity, family-friendly' }
+  },
+  { slug: 'ontario-ca', city: 'Ontario', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.06, lng: -117.65, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '175K', phoneCode: '+1 909', language: 'English, Spanish', climate: 'Hot semi-arid.', attractions: ['Ontario Mills', 'Citizens Business Bank Arena', 'Ontario Convention Center', 'Cucamonga-Guasti Regional Park', 'Museum of History'], demographics: 'Inland Empire. Major airport. Logistics hub.', airports: [{ code: 'ONT', name: 'Ontario International', distance: '5km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Ontario Airport, Ontario Mills, logistics hub' }
+  },
+  { slug: 'salem', city: 'Salem', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'Oregon', stateCode: 'OR', lat: 44.94, lng: -123.04, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '175K', phoneCode: '+1 503', language: 'English, Spanish', climate: 'Oceanic with mild summers.', attractions: ['Oregon State Capitol', 'Willamette University', 'Bush\'s Pasture Park', 'Riverfront Park', 'Enchanted Forest'], demographics: 'Oregon capital. Willamette Valley wine.', airports: [{ code: 'PDX', name: 'Portland International', distance: '75km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Oregon capital, Willamette Valley wine, state government' }
+  },
+  { slug: 'rancho-cucamonga', city: 'Rancho Cucamonga', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.11, lng: -117.59, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '180K', phoneCode: '+1 909', language: 'English, Spanish', climate: 'Hot semi-arid.', attractions: ['Victoria Gardens', 'Cucamonga-Guasti Regional Park', 'Joseph Filippi Winery', 'Lewis Family Playhouse', 'Rancho Santa Ana Botanic Garden'], demographics: 'Inland Empire. Wine heritage.', airports: [{ code: 'ONT', name: 'Ontario International', distance: '10km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Victoria Gardens, wine heritage, Inland Empire' }
+  },
+  { slug: 'eugene', city: 'Eugene', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'Oregon', stateCode: 'OR', lat: 44.05, lng: -123.09, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '175K', phoneCode: '+1 541', language: 'English', climate: 'Oceanic with mild summers.', attractions: ['University of Oregon', 'Autzen Stadium', 'Jordan Schnitzer Museum', 'Alton Baker Park', 'Pre\'s Trail'], demographics: 'TrackTown USA. University of Oregon.', airports: [{ code: 'EUG', name: 'Eugene Airport', distance: '12km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'TrackTown USA, Oregon Ducks, Nike heritage, running' }
+  },
+  { slug: 'fort-lauderdale', city: 'Fort Lauderdale', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 26.12, lng: -80.14, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '185K', phoneCode: '+1 954', language: 'English, Spanish', climate: 'Tropical monsoon.', attractions: ['Fort Lauderdale Beach', 'Las Olas Boulevard', 'Riverwalk', 'NSU Art Museum', 'Bonnet House'], demographics: 'Venice of America. Yachting capital.', airports: [{ code: 'FLL', name: 'Fort Lauderdale-Hollywood International', distance: '5km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Venice of America, beaches, yachting, Spring Break' }
+  },
+  { slug: 'cary', city: 'Cary', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'North Carolina', stateCode: 'NC', lat: 35.79, lng: -78.78, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '180K', phoneCode: '+1 919', language: 'English', climate: 'Humid subtropical.', attractions: ['Cary Arts Center', 'Koka Booth Amphitheatre', 'Hemlock Bluffs', 'Bond Lake', 'Downtown Cary'], demographics: 'Research Triangle suburb. SAS HQ. Best places to live.', airports: [{ code: 'RDU', name: 'Raleigh-Durham International', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Research Triangle, SAS headquarters, best places to live' }
+  },
+  { slug: 'surprise', city: 'Surprise', timezone: 'America/Phoenix', country: 'United States', countryCode: 'US', state: 'Arizona', stateCode: 'AZ', lat: 33.63, lng: -112.33, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '150K', phoneCode: '+1 623', language: 'English, Spanish', climate: 'Hot desert. No DST.', attractions: ['Surprise Stadium', 'Surprise Recreation Campus', 'White Tank Mountains', 'Uptown Alley', 'Surprise Aquatic Center'], demographics: 'Phoenix suburb. Spring training. Fast-growing.', airports: [{ code: 'PHX', name: 'Phoenix Sky Harbor', distance: '35km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Spring training (Rangers/Royals), fast growth' }
+  },
+  { slug: 'peoria-az', city: 'Peoria', timezone: 'America/Phoenix', country: 'United States', countryCode: 'US', state: 'Arizona', stateCode: 'AZ', lat: 33.58, lng: -112.24, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '190K', phoneCode: '+1 623', language: 'English', climate: 'Hot desert. No DST.', attractions: ['Peoria Sports Complex', 'Lake Pleasant', 'Pioneer Living History Museum', 'Old Town Peoria', 'Rio Vista Recreation Center'], demographics: 'Phoenix suburb. Spring training. Family-friendly.', airports: [{ code: 'PHX', name: 'Phoenix Sky Harbor', distance: '25km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Spring training (Mariners/Padres), Lake Pleasant' }
+  },
+  { slug: 'savannah', city: 'Savannah', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Georgia', stateCode: 'GA', lat: 32.08, lng: -81.09, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '145K', phoneCode: '+1 912', language: 'English', climate: 'Humid subtropical.', attractions: ['Forsyth Park', 'Historic District', 'River Street', 'Bonaventure Cemetery', 'SCAD'], demographics: 'Hostess City. Historic squares. SCAD art school.', airports: [{ code: 'SAV', name: 'Savannah/Hilton Head International', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Historic squares, Southern charm, SCAD, River Street' }
+  },
+  { slug: 'clarksville', city: 'Clarksville', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Tennessee', stateCode: 'TN', lat: 36.53, lng: -87.36, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '165K', phoneCode: '+1 931', language: 'English', climate: 'Humid subtropical.', attractions: ['Fort Campbell', 'Dunbar Cave', 'Customs House Museum', 'Liberty Park', 'Downtown Historic District'], demographics: 'Fort Campbell adjacent. Fifth-largest TN city.', airports: [{ code: 'BNA', name: 'Nashville International', distance: '70km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Fort Campbell, military town, fastest-growing TN city' }
+  },
+  { slug: 'syracuse', city: 'Syracuse', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'New York', stateCode: 'NY', lat: 43.05, lng: -76.15, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '150K', phoneCode: '+1 315', language: 'English', climate: 'Humid continental. Snowiest major city.', attractions: ['Syracuse University', 'Destiny USA', 'Museum of Science and Technology', 'Carrier Dome', 'Onondaga Lake'], demographics: 'Salt City. Syracuse Orange. Snowiest US city.', airports: [{ code: 'SYR', name: 'Syracuse Hancock International', distance: '8km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Syracuse Orange, Destiny USA, snowiest city, salt heritage' }
+  },
+  // USA - Additional Cities (152-200)
+  { slug: 'corona', city: 'Corona', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 33.88, lng: -117.57, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '160K', phoneCode: '+1 951', language: 'English, Spanish', climate: 'Hot semi-arid.', attractions: ['Glen Ivy Hot Springs', 'Fender Guitar Factory', 'Corona Heritage Park', 'Dos Lagos', 'Cleveland National Forest'], demographics: 'Inland Empire. Circle City. Fender guitars.', airports: [{ code: 'ONT', name: 'Ontario International', distance: '25km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Circle City, Fender guitars, Glen Ivy Hot Springs' }
+  },
+  { slug: 'lancaster', city: 'Lancaster', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.70, lng: -118.14, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '175K', phoneCode: '+1 661', language: 'English, Spanish', climate: 'Hot semi-arid desert.', attractions: ['Antelope Valley Poppy Reserve', 'Prime Desert Woodland Preserve', 'BLVD', 'Apollo Park', 'Aerospace history'], demographics: 'High desert. Aerospace. Poppy fields.', airports: [{ code: 'PMD', name: 'Palmdale Regional', distance: '20km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Poppy reserve, aerospace, high desert' }
+  },
+  { slug: 'palmdale', city: 'Palmdale', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.58, lng: -118.12, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '170K', phoneCode: '+1 661', language: 'English, Spanish', climate: 'Hot semi-arid desert.', attractions: ['Blackbird Airpark', 'Prime Desert Woodland', 'Palmdale Amphitheater', 'Dry Town Water Park', 'Joe Davies Heritage Airpark'], demographics: 'High desert. Aerospace Valley.', airports: [{ code: 'PMD', name: 'Palmdale Regional', distance: '5km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Aerospace Valley, SR-71 Blackbird, high desert' }
+  },
+  { slug: 'salinas', city: 'Salinas', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 36.68, lng: -121.66, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '165K', phoneCode: '+1 831', language: 'English, Spanish', climate: 'Mediterranean.', attractions: ['National Steinbeck Center', 'Steinbeck House', 'California Rodeo Salinas', 'Toro Park', 'Monterey County wineries'], demographics: 'Salad Bowl of the World. Steinbeck hometown.', airports: [{ code: 'MRY', name: 'Monterey Regional', distance: '25km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'John Steinbeck, Salad Bowl of the World, agriculture' }
+  },
+  { slug: 'pomona', city: 'Pomona', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.06, lng: -117.75, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '150K', phoneCode: '+1 909', language: 'English, Spanish', climate: 'Hot semi-arid.', attractions: ['LA County Fair', 'Fairplex', 'NHRA Finals', 'Pomona College', 'Phillips Mansion'], demographics: 'LA County Fair. Pomona Colleges.', airports: [{ code: 'ONT', name: 'Ontario International', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'LA County Fair, Fairplex, NHRA Finals, Pomona Colleges' }
+  },
+  { slug: 'hayward', city: 'Hayward', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 37.67, lng: -122.08, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '165K', phoneCode: '+1 510', language: 'English, Spanish', climate: 'Mediterranean.', attractions: ['Hayward Japanese Gardens', 'Cal State East Bay', 'Sulphur Creek Nature Center', 'Hayward Area Historical Society', 'Downtown Hayward'], demographics: 'East Bay. Heart of the Bay. Diverse.', airports: [{ code: 'OAK', name: 'Oakland International', distance: '12km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Heart of the Bay, Japanese Gardens, diversity' }
+  },
+  { slug: 'escondido', city: 'Escondido', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 33.12, lng: -117.09, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '150K', phoneCode: '+1 760', language: 'English, Spanish', climate: 'Semi-arid.', attractions: ['San Diego Zoo Safari Park', 'Daley Ranch', 'California Center for the Arts', 'Grape Day Park', 'San Pasqual Battlefield'], demographics: 'San Diego North County. Safari Park.', airports: [{ code: 'SAN', name: 'San Diego International', distance: '45km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'San Diego Zoo Safari Park, wineries, avocados' }
+  },
+  { slug: 'sunnyvale', city: 'Sunnyvale', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 37.37, lng: -122.04, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '155K', phoneCode: '+1 408', language: 'English', climate: 'Mediterranean.', attractions: ['Computer History Museum', 'Apple Park nearby', 'Moffett Field', 'Baylands Park', 'Murphy Avenue'], demographics: 'Silicon Valley. Tech giants. High income.', airports: [{ code: 'SJC', name: 'San Jose International', distance: '10km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Silicon Valley, tech giants, Moffett Field, high income' }
+  },
+  { slug: 'pasadena-tx', city: 'Pasadena', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 29.69, lng: -95.21, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '150K', phoneCode: '+1 713', language: 'English, Spanish', climate: 'Humid subtropical.', attractions: ['Pasadena Historical Museum', 'Armand Bayou Nature Center', 'Strawberry Festival', 'Bay Area Houston', 'Space Center nearby'], demographics: 'Houston suburb. Petrochemical industry.', airports: [{ code: 'IAH', name: 'George Bush Intercontinental', distance: '45km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Petrochemical industry, Strawberry Festival, Urban Cowboy' }
+  },
+  { slug: 'pasadena-ca', city: 'Pasadena', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.15, lng: -118.14, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '140K', phoneCode: '+1 626', language: 'English', climate: 'Mediterranean.', attractions: ['Rose Bowl', 'Huntington Library', 'Caltech', 'Old Town Pasadena', 'Tournament of Roses'], demographics: 'Rose Bowl. Caltech. Old Town.', airports: [{ code: 'BUR', name: 'Hollywood Burbank', distance: '18km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Rose Bowl, Tournament of Roses, Caltech, Huntington Library' }
+  },
+  { slug: 'naperville', city: 'Naperville', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Illinois', stateCode: 'IL', lat: 41.79, lng: -88.15, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '150K', phoneCode: '+1 630', language: 'English', climate: 'Humid continental.', attractions: ['Riverwalk', 'Centennial Beach', 'DuPage Children\'s Museum', 'Naper Settlement', 'Downtown Naperville'], demographics: 'Chicago suburb. Best places to live. Wealthy.', airports: [{ code: 'ORD', name: 'O\'Hare International', distance: '40km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Best places to live, wealthy suburb, Riverwalk' }
+  },
+  { slug: 'bellevue', city: 'Bellevue', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'Washington', stateCode: 'WA', lat: 47.61, lng: -122.20, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '155K', phoneCode: '+1 425', language: 'English', climate: 'Oceanic.', attractions: ['Bellevue Square', 'Downtown Park', 'Meydenbauer Beach', 'Bellevue Arts Museum', 'Microsoft campus nearby'], demographics: 'Seattle Eastside. Tech hub. Microsoft HQ area.', airports: [{ code: 'SEA', name: 'Seattle-Tacoma International', distance: '25km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Tech hub, Microsoft area, Bellevue Square, wealthy suburb' }
+  },
+  { slug: 'joliet', city: 'Joliet', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Illinois', stateCode: 'IL', lat: 41.53, lng: -88.08, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '150K', phoneCode: '+1 815', language: 'English, Spanish', climate: 'Humid continental.', attractions: ['Chicagoland Speedway', 'Rialto Square Theatre', 'Route 66', 'Harrah\'s Joliet Casino', 'Old Joliet Prison'], demographics: 'Chicago suburb. NASCAR. Blues Brothers filming.', airports: [{ code: 'ORD', name: 'O\'Hare International', distance: '60km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Blues Brothers prison, NASCAR, Route 66, casino' }
+  },
+  { slug: 'miramar', city: 'Miramar', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 25.99, lng: -80.23, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '140K', phoneCode: '+1 954', language: 'English, Spanish', climate: 'Tropical monsoon.', attractions: ['Miramar Regional Park', 'Ansin Sports Complex', 'Miramar Cultural Center', 'Hard Rock Stadium nearby', 'Dolphin Mall'], demographics: 'Miami suburb. Diverse. Fast-growing.', airports: [{ code: 'FLL', name: 'Fort Lauderdale-Hollywood International', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Miami suburb, diversity, regional parks' }
+  },
+  { slug: 'paterson', city: 'Paterson', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'New Jersey', stateCode: 'NJ', lat: 40.92, lng: -74.17, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '145K', phoneCode: '+1 973', language: 'English, Spanish, Arabic', climate: 'Humid subtropical.', attractions: ['Great Falls', 'Paterson Museum', 'Lambert Castle', 'Hinchliffe Stadium', 'Historic Silk City'], demographics: 'Silk City. Great Falls. Industrial heritage.', airports: [{ code: 'EWR', name: 'Newark Liberty International', distance: '20km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Great Falls National Historical Park, Silk City heritage' }
+  },
+  { slug: 'santa-rosa', city: 'Santa Rosa', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 38.44, lng: -122.71, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '180K', phoneCode: '+1 707', language: 'English, Spanish', climate: 'Mediterranean.', attractions: ['Charles M. Schulz Museum', 'Luther Burbank Home', 'Sonoma County wineries', 'Safari West', 'Railroad Square'], demographics: 'Sonoma County seat. Wine country. Snoopy hometown.', airports: [{ code: 'STS', name: 'Sonoma County Airport', distance: '10km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Charles Schulz/Snoopy, Sonoma wine country, Luther Burbank' }
+  },
+  { slug: 'roseville', city: 'Roseville', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 38.75, lng: -121.29, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '150K', phoneCode: '+1 916', language: 'English', climate: 'Mediterranean.', attractions: ['Galleria at Roseville', 'Maidu Museum', 'Roseville Golfland', 'Quarry Park', 'Vernon Street Town Square'], demographics: 'Sacramento suburb. Retail hub. Fast-growing.', airports: [{ code: 'SMF', name: 'Sacramento International', distance: '25km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Galleria at Roseville, retail hub, fast growth' }
+  },
+  { slug: 'denton', city: 'Denton', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 33.21, lng: -97.13, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '145K', phoneCode: '+1 940', language: 'English', climate: 'Humid subtropical.', attractions: ['UNT Campus', 'Texas Woman\'s University', 'Denton Square', 'Ray Roberts Lake', 'Little Chapel in the Woods'], demographics: 'Two universities. Music scene. College town.', airports: [{ code: 'DFW', name: 'DFW International', distance: '35km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'UNT, music scene, Denton Square, college town' }
+  },
+  { slug: 'hollywood', city: 'Hollywood', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 26.01, lng: -80.15, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '155K', phoneCode: '+1 954', language: 'English, Spanish', climate: 'Tropical monsoon.', attractions: ['Hollywood Beach Broadwalk', 'Topeekeegee Yugnee Park', 'ArtsPark at Young Circle', 'Seminole Hard Rock', 'Anne Kolb Nature Center'], demographics: 'South Florida. Hollywood Beach. Seminole Hard Rock.', airports: [{ code: 'FLL', name: 'Fort Lauderdale-Hollywood International', distance: '8km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Hollywood Beach Broadwalk, Seminole Hard Rock' }
+  },
+  { slug: 'mcallen', city: 'McAllen', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 26.20, lng: -98.23, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '145K', phoneCode: '+1 956', language: 'English, Spanish', climate: 'Semi-arid subtropical.', attractions: ['Quinta Mazatlan', 'International Museum of Art & Science', 'South Padre Island gateway', 'La Plaza Mall', 'World Birding Center'], demographics: 'Rio Grande Valley. Border city. Birding capital.', airports: [{ code: 'MFE', name: 'McAllen Miller International', distance: '5km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Rio Grande Valley, birding capital, border city' }
+  },
+  { slug: 'killeen', city: 'Killeen', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 31.12, lng: -97.73, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '155K', phoneCode: '+1 254', language: 'English', climate: 'Humid subtropical.', attractions: ['Fort Hood (Cavazos)', 'Vive Les Arts Theatre', 'Lions Club Park', 'Mayborn Science Theater', 'Clear Creek Trail'], demographics: 'Fort Hood (Cavazos). Major military city.', airports: [{ code: 'GRK', name: 'Killeen-Fort Hood Regional', distance: '8km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Fort Hood (Cavazos), military town, Central Texas' }
+  },
+  { slug: 'torrance', city: 'Torrance', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 33.84, lng: -118.34, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '145K', phoneCode: '+1 310', language: 'English, Japanese', climate: 'Mediterranean.', attractions: ['Del Amo Fashion Center', 'Torrance Beach', 'Toyota USA HQ', 'Chen Art Gallery', 'Wilson Park'], demographics: 'South Bay. Toyota USA HQ. Japanese-American community.', airports: [{ code: 'LAX', name: 'Los Angeles International', distance: '12km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Toyota USA HQ, Del Amo Fashion Center, South Bay beaches' }
+  },
+  { slug: 'bridgeport', city: 'Bridgeport', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Connecticut', stateCode: 'CT', lat: 41.17, lng: -73.19, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '145K', phoneCode: '+1 203', language: 'English, Spanish', climate: 'Humid subtropical.', attractions: ['Beardsley Zoo', 'Seaside Park', 'Discovery Museum', 'Captain\'s Cove Seaport', 'P.T. Barnum legacy'], demographics: 'Largest Connecticut city. P.T. Barnum hometown.', airports: [{ code: 'BDR', name: 'Sikorsky Memorial Airport', distance: '6km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'P.T. Barnum hometown, Connecticut largest city, Seaside Park' }
+  },
+  { slug: 'mesquite', city: 'Mesquite', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 32.77, lng: -96.60, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '150K', phoneCode: '+1 972', language: 'English, Spanish', climate: 'Humid subtropical.', attractions: ['Mesquite Championship Rodeo', 'Devil\'s Bowl Speedway', 'Florence Ranch Homestead', 'Mesquite Arts Center', 'Town East Mall'], demographics: 'Rodeo Capital of Texas. Dallas suburb.', airports: [{ code: 'DFW', name: 'DFW International', distance: '35km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Rodeo Capital of Texas, Devil\'s Bowl Speedway' }
+  },
+  { slug: 'fullerton', city: 'Fullerton', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 33.87, lng: -117.93, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '140K', phoneCode: '+1 714', language: 'English, Spanish', climate: 'Mediterranean.', attractions: ['Cal State Fullerton', 'Fullerton Arboretum', 'Downtown Fullerton', 'Muckenthaler Cultural Center', 'Hillcrest Park'], demographics: 'Orange County. CSUF. Historic downtown.', airports: [{ code: 'SNA', name: 'John Wayne Airport', distance: '20km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'CSUF Titans, historic downtown, Orange County' }
+  },
+  { slug: 'topeka', city: 'Topeka', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Kansas', stateCode: 'KS', lat: 39.05, lng: -95.68, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '125K', phoneCode: '+1 785', language: 'English', climate: 'Humid continental.', attractions: ['Kansas State Capitol', 'Brown v. Board of Education site', 'Topeka Zoo', 'Evel Knievel Museum', 'Combat Air Museum'], demographics: 'Kansas capital. Brown v. Board of Education.', airports: [{ code: 'TOP', name: 'Topeka Regional', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Kansas capital, Brown v. Board of Education, Evel Knievel' }
+  },
+  { slug: 'kent', city: 'Kent', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'Washington', stateCode: 'WA', lat: 47.38, lng: -122.23, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '135K', phoneCode: '+1 253', language: 'English', climate: 'Oceanic.', attractions: ['ShoWare Center', 'Green River Trail', 'REI Distribution Center', 'Kent Station', 'Hydroplane racing'], demographics: 'Seattle metro. Industrial hub. REI.', airports: [{ code: 'SEA', name: 'Seattle-Tacoma International', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'REI headquarters, warehouses, Seattle metro' }
+  },
+  { slug: 'olathe', city: 'Olathe', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Kansas', stateCode: 'KS', lat: 38.88, lng: -94.82, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '145K', phoneCode: '+1 913', language: 'English', climate: 'Humid subtropical.', attractions: ['Olathe Lake', 'Mahaffie Stagecoach Stop', 'Johnson County Museum', 'Black Bob Park', 'Great Mall of the Great Plains'], demographics: 'Kansas City suburb. Garmin HQ. Best places to live.', airports: [{ code: 'MCI', name: 'Kansas City International', distance: '50km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Garmin headquarters, Kansas City suburb, best places to live' }
+  },
+  { slug: 'hartford', city: 'Hartford', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Connecticut', stateCode: 'CT', lat: 41.76, lng: -72.68, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '120K', phoneCode: '+1 860', language: 'English', climate: 'Humid continental.', attractions: ['Mark Twain House', 'Wadsworth Atheneum', 'Connecticut State Capitol', 'Bushnell Park', 'Connecticut Science Center'], demographics: 'Connecticut capital. Insurance capital of world.', airports: [{ code: 'BDL', name: 'Bradley International', distance: '20km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Insurance capital, Mark Twain House, Wadsworth Atheneum' }
+  },
+  { slug: 'fayetteville-ar', city: 'Fayetteville', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Arkansas', stateCode: 'AR', lat: 36.08, lng: -94.17, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '95K', phoneCode: '+1 479', language: 'English', climate: 'Humid subtropical.', attractions: ['University of Arkansas', 'Razorback Stadium', 'Wilson Park', 'TheatreSquared', 'Dickson Street'], demographics: 'Arkansas Razorbacks. Walmart region. College town.', airports: [{ code: 'XNA', name: 'Northwest Arkansas Regional', distance: '25km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Arkansas Razorbacks, Walmart region, college town' }
+  },
+  { slug: 'concord-ca', city: 'Concord', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 37.98, lng: -122.03, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '130K', phoneCode: '+1 925', language: 'English, Spanish', climate: 'Mediterranean.', attractions: ['Todos Santos Plaza', 'Concord Pavilion', 'Pixieland Amusement Park', 'Lime Ridge Open Space', 'Mt. Diablo nearby'], demographics: 'East Bay. Contra Costa County seat.', airports: [{ code: 'OAK', name: 'Oakland International', distance: '35km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Concord Pavilion, East Bay, Mt. Diablo gateway' }
+  },
+  { slug: 'visalia', city: 'Visalia', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 36.33, lng: -119.29, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '145K', phoneCode: '+1 559', language: 'English, Spanish', climate: 'Semi-arid.', attractions: ['Sequoia National Park gateway', 'Mooney Grove Park', 'Fox Theatre', 'ImagineU Children\'s Museum', 'Tulare County wineries'], demographics: 'Sequoia gateway. Agriculture hub.', airports: [{ code: 'VIS', name: 'Visalia Municipal', distance: '8km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Sequoia National Park gateway, agriculture, dairy' }
+  },
+  { slug: 'simi-valley', city: 'Simi Valley', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.27, lng: -118.78, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '125K', phoneCode: '+1 805', language: 'English, Spanish', climate: 'Mediterranean.', attractions: ['Reagan Presidential Library', 'Simi Valley Town Center', 'Strathearn Historical Park', 'Rancho Simi Recreation', 'Corriganville Park'], demographics: 'Ventura County. Reagan Library.', airports: [{ code: 'BUR', name: 'Hollywood Burbank', distance: '35km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Reagan Presidential Library, safest city, Ventura County' }
+  },
+  { slug: 'waco', city: 'Waco', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 31.55, lng: -97.15, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '140K', phoneCode: '+1 254', language: 'English', climate: 'Humid subtropical.', attractions: ['Magnolia Market at the Silos', 'Baylor University', 'Mammoth Site', 'Texas Ranger Hall of Fame', 'Cameron Park Zoo'], demographics: 'Baylor Bears. Chip and Joanna Gaines. Central Texas.', airports: [{ code: 'ACT', name: 'Waco Regional', distance: '12km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Magnolia Market/Fixer Upper, Baylor University, Dr Pepper' }
+  },
+  { slug: 'midland', city: 'Midland', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 31.99, lng: -102.08, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '140K', phoneCode: '+1 432', language: 'English, Spanish', climate: 'Semi-arid.', attractions: ['Petroleum Museum', 'Presidential Archives', 'Wagner Noel Performing Arts', 'Midland Rockhounds', 'Bush childhood home'], demographics: 'Permian Basin oil hub. Bush family hometown.', airports: [{ code: 'MAF', name: 'Midland International', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Permian Basin oil, Bush family hometown, Petroleum Museum' }
+  },
+  { slug: 'murfreesboro', city: 'Murfreesboro', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Tennessee', stateCode: 'TN', lat: 35.85, lng: -86.39, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '160K', phoneCode: '+1 615', language: 'English', climate: 'Humid subtropical.', attractions: ['Stones River National Battlefield', 'MTSU', 'Discovery Center', 'Cannonsburgh Village', 'The Avenue shopping'], demographics: 'Fastest-growing TN city. MTSU. Nashville suburb.', airports: [{ code: 'BNA', name: 'Nashville International', distance: '50km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Stones River Battlefield, MTSU, fastest-growing TN city' }
+  },
+  { slug: 'columbia-sc', city: 'Columbia', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'South Carolina', stateCode: 'SC', lat: 34.00, lng: -81.03, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '135K', phoneCode: '+1 803', language: 'English', climate: 'Humid subtropical.', attractions: ['South Carolina State House', 'Riverbanks Zoo', 'University of South Carolina', 'Congaree National Park', 'Five Points'], demographics: 'South Carolina capital. USC Gamecocks.', airports: [{ code: 'CAE', name: 'Columbia Metropolitan', distance: '10km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'State capital, USC Gamecocks, Congaree National Park' }
+  },
+  { slug: 'new-haven', city: 'New Haven', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Connecticut', stateCode: 'CT', lat: 41.31, lng: -72.92, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '135K', phoneCode: '+1 203', language: 'English', climate: 'Humid subtropical.', attractions: ['Yale University', 'Peabody Museum', 'Yale Art Gallery', 'East Rock Park', 'New Haven pizza'], demographics: 'Yale University. Pizza capital. Long Island Sound.', airports: [{ code: 'HVN', name: 'Tweed New Haven', distance: '5km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Yale University, New Haven-style pizza, Peabody Museum' }
+  },
+  { slug: 'sterling-heights', city: 'Sterling Heights', timezone: 'America/Detroit', country: 'United States', countryCode: 'US', state: 'Michigan', stateCode: 'MI', lat: 42.58, lng: -83.03, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '135K', phoneCode: '+1 586', language: 'English', climate: 'Humid continental.', attractions: ['Dodge Park', 'Lakeside Mall', 'Freedom Hill', 'Utica Eisenhower High School', 'Macomb County nature'], demographics: 'Detroit suburb. Fourth-largest Michigan city.', airports: [{ code: 'DTW', name: 'Detroit Metro Airport', distance: '40km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Detroit suburb, manufacturing, Chaldean community' }
+  },
+  { slug: 'rockford', city: 'Rockford', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Illinois', stateCode: 'IL', lat: 42.27, lng: -89.09, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '145K', phoneCode: '+1 815', language: 'English', climate: 'Humid continental.', attractions: ['Anderson Japanese Gardens', 'Discovery Center Museum', 'Rock Cut State Park', 'Burpee Museum', 'Rockford Art Museum'], demographics: 'Illinois third-largest. Aerospace. Manufacturing.', airports: [{ code: 'RFD', name: 'Chicago Rockford International', distance: '8km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Anderson Japanese Gardens, aerospace, Cheap Trick' }
+  },
+  { slug: 'cedar-rapids', city: 'Cedar Rapids', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Iowa', stateCode: 'IA', lat: 42.01, lng: -91.64, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '135K', phoneCode: '+1 319', language: 'English', climate: 'Humid continental.', attractions: ['Cedar Rapids Museum of Art', 'National Czech & Slovak Museum', 'NewBo City Market', 'Indian Creek Nature Center', 'Grant Wood Studio'], demographics: 'Iowa second-largest. Quaker Oats. Collins Aerospace.', airports: [{ code: 'CID', name: 'The Eastern Iowa Airport', distance: '12km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'City of Five Seasons, Quaker Oats, Czech heritage' }
+  },
+  { slug: 'carrollton', city: 'Carrollton', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 32.95, lng: -96.89, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '140K', phoneCode: '+1 972', language: 'English', climate: 'Humid subtropical.', attractions: ['Historic Downtown Carrollton', 'A.W. Perry Homestead Museum', 'Crosby Recreation Center', 'Sandy Lake Amusement Park', 'Rosemeade Rainforest'], demographics: 'Dallas suburb. DART rail. Diverse.', airports: [{ code: 'DFW', name: 'DFW International', distance: '25km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'DFW suburb, DART rail, historic downtown' }
+  },
+  { slug: 'west-valley-city', city: 'West Valley City', timezone: 'America/Denver', country: 'United States', countryCode: 'US', state: 'Utah', stateCode: 'UT', lat: 40.69, lng: -112.00, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '140K', phoneCode: '+1 801', language: 'English, Spanish', climate: 'Semi-arid.', attractions: ['Utah Olympic Oval', 'Maverik Center', 'USANA Amphitheatre', 'Valley Fair Mall', 'Granger Hunter Historic District'], demographics: 'Salt Lake metro. Second-largest Utah city. Olympic venue.', airports: [{ code: 'SLC', name: 'Salt Lake City International', distance: '12km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Olympic Oval, Salt Lake suburb, diverse community' }
+  },
+  { slug: 'elizabeth', city: 'Elizabeth', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'New Jersey', stateCode: 'NJ', lat: 40.66, lng: -74.21, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '140K', phoneCode: '+1 908', language: 'English, Spanish, Portuguese', climate: 'Humid subtropical.', attractions: ['Jersey Gardens', 'First Presbyterian Church', 'Elizabeth Waterfront', 'Warinanco Park', 'Elizabeth Skyport Marina'], demographics: 'NYC metro. Fourth-largest NJ city. Outlets.', airports: [{ code: 'EWR', name: 'Newark Liberty International', distance: '5km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Jersey Gardens outlet mall, Newark Airport adjacent' }
+  },
+  { slug: 'stamford', city: 'Stamford', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Connecticut', stateCode: 'CT', lat: 41.05, lng: -73.54, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '135K', phoneCode: '+1 203', language: 'English', climate: 'Humid subtropical.', attractions: ['Stamford Museum', 'Cove Island Park', 'Palace Theatre', 'Mill River Park', 'Harbor Point'], demographics: 'NYC commuter hub. Corporate headquarters. Finance.', airports: [{ code: 'HPN', name: 'Westchester County Airport', distance: '25km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Corporate headquarters, NYC commuter hub, finance' }
+  },
+  { slug: 'gainesville', city: 'Gainesville', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 29.65, lng: -82.32, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '145K', phoneCode: '+1 352', language: 'English', climate: 'Humid subtropical.', attractions: ['University of Florida', 'Ben Hill Griffin Stadium', 'Butterfly Rainforest', 'Kanapaha Botanical Gardens', 'Devil\'s Millhopper'], demographics: 'Gator Nation. University of Florida. College town.', airports: [{ code: 'GNV', name: 'Gainesville Regional', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'University of Florida, Gator Nation, college town' }
+  },
+  { slug: 'coral-springs', city: 'Coral Springs', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 26.27, lng: -80.27, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '135K', phoneCode: '+1 954', language: 'English, Spanish', climate: 'Tropical monsoon.', attractions: ['Coral Springs Center for the Arts', 'Coral Square Mall', 'Mullins Park', 'Tall Cypress Natural Area', 'Tennis Center'], demographics: 'Broward County. Planned community. Family-friendly.', airports: [{ code: 'FLL', name: 'Fort Lauderdale-Hollywood International', distance: '20km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Planned community, family-friendly, South Florida suburb' }
+  },
+  { slug: 'dayton', city: 'Dayton', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Ohio', stateCode: 'OH', lat: 39.76, lng: -84.19, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '140K', phoneCode: '+1 937', language: 'English', climate: 'Humid continental.', attractions: ['National Museum of the US Air Force', 'Wright Brothers landmarks', 'Carillon Historical Park', 'Dayton Art Institute', 'Five Rivers MetroParks'], demographics: 'Birthplace of Aviation. Wright Brothers. Air Force Museum.', airports: [{ code: 'DAY', name: 'Dayton International', distance: '18km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Birthplace of Aviation, Wright Brothers, Air Force Museum' }
+  },
+  { slug: 'charleston', city: 'Charleston', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'South Carolina', stateCode: 'SC', lat: 32.78, lng: -79.93, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '150K', phoneCode: '+1 843', language: 'English', climate: 'Humid subtropical.', attractions: ['Historic District', 'Fort Sumter', 'Waterfront Park', 'Charleston City Market', 'Rainbow Row'], demographics: 'Holy City. Historic downtown. Southern charm.', airports: [{ code: 'CHS', name: 'Charleston International', distance: '18km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Historic downtown, Fort Sumter, Rainbow Row, Southern cuisine' }
+  },
+  // USA - Additional Cities (201-250+)
+  { slug: 'ann-arbor', city: 'Ann Arbor', timezone: 'America/Detroit', country: 'United States', countryCode: 'US', state: 'Michigan', stateCode: 'MI', lat: 42.28, lng: -83.74, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '125K', phoneCode: '+1 734', language: 'English', climate: 'Humid continental.', attractions: ['University of Michigan', 'Michigan Stadium', 'Ann Arbor Art Fair', 'Nichols Arboretum', 'Zingerman\'s Deli'], demographics: 'University of Michigan. Go Blue. Tree Town.', airports: [{ code: 'DTW', name: 'Detroit Metro Airport', distance: '35km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'University of Michigan, Big House, college town, tech hub' }
+  },
+  { slug: 'cambridge', city: 'Cambridge', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Massachusetts', stateCode: 'MA', lat: 42.37, lng: -71.11, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '120K', phoneCode: '+1 617', language: 'English', climate: 'Humid continental.', attractions: ['Harvard University', 'MIT', 'Harvard Square', 'Harvard Yard', 'MIT Museum'], demographics: 'Harvard and MIT. Biotech hub. Innovation center.', airports: [{ code: 'BOS', name: 'Logan International', distance: '8km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Harvard, MIT, biotech hub, intellectual capital' }
+  },
+  { slug: 'berkeley', city: 'Berkeley', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 37.87, lng: -122.27, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '125K', phoneCode: '+1 510', language: 'English', climate: 'Mediterranean.', attractions: ['UC Berkeley', 'Telegraph Avenue', 'Sather Tower', 'Berkeley Marina', 'Gourmet Ghetto'], demographics: 'UC Berkeley. Free Speech Movement birthplace.', airports: [{ code: 'OAK', name: 'Oakland International', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'UC Berkeley, Free Speech Movement, Gourmet Ghetto, activism' }
+  },
+  { slug: 'alexandria', city: 'Alexandria', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Virginia', stateCode: 'VA', lat: 38.80, lng: -77.05, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '160K', phoneCode: '+1 703', language: 'English', climate: 'Humid subtropical.', attractions: ['Old Town Alexandria', 'George Washington Masonic Memorial', 'Torpedo Factory', 'King Street', 'Mount Vernon nearby'], demographics: 'Historic Old Town. DC suburb. George Washington ties.', airports: [{ code: 'DCA', name: 'Reagan National', distance: '8km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Old Town, George Washington, historic waterfront, DC suburb' }
+  },
+  { slug: 'san-bernardino', city: 'San Bernardino', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.11, lng: -117.29, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '220K', phoneCode: '+1 909', language: 'English, Spanish', climate: 'Hot semi-arid.', attractions: ['San Manuel Stadium', 'Route 66', 'Glen Helen Amphitheater', 'San Bernardino Mountains', 'Original McDonald\'s Site'], demographics: 'Inland Empire. First McDonald\'s. Route 66.', airports: [{ code: 'ONT', name: 'Ontario International', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'First McDonald\'s, Route 66, Inland Empire, mountains gateway' }
+  },
+  { slug: 'glendale-ca', city: 'Glendale', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.14, lng: -118.26, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '195K', phoneCode: '+1 818', language: 'English, Armenian', climate: 'Mediterranean.', attractions: ['Forest Lawn Memorial Park', 'Americana at Brand', 'Brand Park', 'Glendale Galleria', 'Alex Theatre'], demographics: 'LA suburb. Largest Armenian diaspora in US.', airports: [{ code: 'BUR', name: 'Hollywood Burbank', distance: '10km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Armenian community, Forest Lawn, Americana at Brand' }
+  },
+  { slug: 'west-palm-beach', city: 'West Palm Beach', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 26.72, lng: -80.05, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '115K', phoneCode: '+1 561', language: 'English', climate: 'Tropical monsoon.', attractions: ['Clematis Street', 'Norton Museum of Art', 'Palm Beach Zoo', 'CityPlace', 'Worth Avenue nearby'], demographics: 'Palm Beach County seat. Resort area.', airports: [{ code: 'PBI', name: 'Palm Beach International', distance: '5km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Palm Beach resort area, Clematis Street, Norton Museum' }
+  },
+  { slug: 'clearwater', city: 'Clearwater', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 27.97, lng: -82.76, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '115K', phoneCode: '+1 727', language: 'English', climate: 'Humid subtropical.', attractions: ['Clearwater Beach', 'Pier 60', 'Clearwater Marine Aquarium', 'Winter the Dolphin', 'Cleveland Street District'], demographics: 'Best beach in America (multiple years). Winter the Dolphin.', airports: [{ code: 'TPA', name: 'Tampa International', distance: '30km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Clearwater Beach, Winter the Dolphin, Pier 60 sunset' }
+  },
+  { slug: 'lakeland', city: 'Lakeland', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 28.04, lng: -81.95, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '115K', phoneCode: '+1 863', language: 'English', climate: 'Humid subtropical.', attractions: ['Florida Southern College (Frank Lloyd Wright)', 'Hollis Garden', 'Circle B Bar Reserve', 'Lake Mirror', 'Polk Theatre'], demographics: 'Frank Lloyd Wright architecture. Detroit Tigers spring training.', airports: [{ code: 'TPA', name: 'Tampa International', distance: '55km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Frank Lloyd Wright campus, Tigers spring training, lakes' }
+  },
+  { slug: 'pompano-beach', city: 'Pompano Beach', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 26.24, lng: -80.12, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '115K', phoneCode: '+1 954', language: 'English, Spanish', climate: 'Tropical monsoon.', attractions: ['Pompano Beach Pier', 'Isle Casino Racing', 'Hillsboro Inlet Lighthouse', 'Fern Forest Nature Center', 'Sample-McDougald House'], demographics: 'Broward County. Beach resort. Fishing.', airports: [{ code: 'FLL', name: 'Fort Lauderdale-Hollywood International', distance: '12km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Beach pier, fishing, Hillsboro Lighthouse' }
+  },
+  { slug: 'pembroke-pines', city: 'Pembroke Pines', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 26.01, lng: -80.34, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '170K', phoneCode: '+1 954', language: 'English, Spanish', climate: 'Tropical monsoon.', attractions: ['C.B. Smith Park', 'Pembroke Lakes Mall', 'Chapel Trail Nature Preserve', 'City Center', 'Everglades Holiday Park nearby'], demographics: 'Broward County. Second-largest Broward city.', airports: [{ code: 'FLL', name: 'Fort Lauderdale-Hollywood International', distance: '18km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Broward suburb, family-friendly, near Everglades' }
+  },
+  { slug: 'round-rock', city: 'Round Rock', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 30.51, lng: -97.68, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '135K', phoneCode: '+1 512', language: 'English', climate: 'Humid subtropical.', attractions: ['Dell Diamond', 'Round Rock Express', 'Rock\'N River Family Aquatic Center', 'Old Settlers Park', 'Round Rock Premium Outlets'], demographics: 'Dell Technologies HQ. Austin suburb. Sports capital of Texas.', airports: [{ code: 'AUS', name: 'Austin-Bergstrom International', distance: '30km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Dell Technologies HQ, Round Rock Express, sports capital' }
+  },
+  { slug: 'richardson', city: 'Richardson', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 32.95, lng: -96.73, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '120K', phoneCode: '+1 972', language: 'English', climate: 'Humid subtropical.', attractions: ['Telecom Corridor', 'UTD Campus', 'Eisemann Center', 'CityLine', 'Cottonwood Park'], demographics: 'Telecom Corridor. UT Dallas. Tech hub.', airports: [{ code: 'DFW', name: 'DFW International', distance: '25km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Telecom Corridor, UT Dallas, tech companies' }
+  },
+  { slug: 'lewisville', city: 'Lewisville', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 33.05, lng: -96.99, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '115K', phoneCode: '+1 972', language: 'English', climate: 'Humid subtropical.', attractions: ['Lewisville Lake', 'Vista Ridge Mall', 'Old Town Lewisville', 'Music City Mall', 'Lake Park'], demographics: 'DFW suburb. Lewisville Lake recreation.', airports: [{ code: 'DFW', name: 'DFW International', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Lewisville Lake, DFW suburb, recreation' }
+  },
+  { slug: 'sugar-land', city: 'Sugar Land', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 29.62, lng: -95.64, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '115K', phoneCode: '+1 281', language: 'English', climate: 'Humid subtropical.', attractions: ['Sugar Land Town Square', 'Constellation Field', 'Houston Museum of Natural Science at Sugar Land', 'First Colony Mall', 'Brazos River Park'], demographics: 'Houston suburb. Imperial Sugar heritage. Wealthy.', airports: [{ code: 'IAH', name: 'George Bush Intercontinental', distance: '50km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Sugar heritage, wealthy suburb, Town Square' }
+  },
+  { slug: 'amarillo', city: 'Amarillo', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 35.22, lng: -101.83, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '200K', phoneCode: '+1 806', language: 'English, Spanish', climate: 'Semi-arid.', attractions: ['Cadillac Ranch', 'Palo Duro Canyon', 'Route 66 Historic District', 'Big Texan Steak Ranch', 'American Quarter Horse Museum'], demographics: 'Yellow Rose of Texas. Panhandle hub. Route 66.', airports: [{ code: 'AMA', name: 'Rick Husband Amarillo International', distance: '12km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Cadillac Ranch, Palo Duro Canyon, Route 66, Big Texan' }
+  },
+  { slug: 'beaumont', city: 'Beaumont', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 30.08, lng: -94.10, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '115K', phoneCode: '+1 409', language: 'English', climate: 'Humid subtropical.', attractions: ['Spindletop-Gladys City Boomtown', 'McFaddin-Ward House', 'Fire Museum of Texas', 'Gator Country', 'Big Thicket nearby'], demographics: 'Spindletop oil discovery. Golden Triangle.', airports: [{ code: 'BPT', name: 'Jack Brooks Regional', distance: '12km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Spindletop oil discovery, Golden Triangle, Cajun culture' }
+  },
+  { slug: 'college-station', city: 'College Station', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 30.63, lng: -96.33, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '120K', phoneCode: '+1 979', language: 'English', climate: 'Humid subtropical.', attractions: ['Texas A&M University', 'Kyle Field', 'George H.W. Bush Presidential Library', 'Corps of Cadets', 'Bonfire Memorial'], demographics: 'Aggieland. Texas A&M. Tradition-rich.', airports: [{ code: 'CLL', name: 'Easterwood Airport', distance: '8km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Texas A&M, Aggies, 12th Man, Bush Library' }
+  },
+  { slug: 'abilene', city: 'Abilene', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 32.45, lng: -99.73, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '125K', phoneCode: '+1 325', language: 'English', climate: 'Semi-arid.', attractions: ['Frontier Texas!', 'Abilene Zoo', 'Grace Museum', 'National Center for Children\'s Illustrated Literature', 'Buffalo Gap Historic Village'], demographics: 'Storybook Capital. Three universities. West Texas.', airports: [{ code: 'ABI', name: 'Abilene Regional', distance: '8km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Storybook Capital, three universities, West Texas' }
+  },
+  { slug: 'odessa', city: 'Odessa', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Texas', stateCode: 'TX', lat: 31.85, lng: -102.37, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '125K', phoneCode: '+1 432', language: 'English, Spanish', climate: 'Semi-arid.', attractions: ['Permian Basin Petroleum Museum', 'Stonehenge Replica', 'Presidential Museum', 'Globe of the Great Southwest', 'Meteor Crater'], demographics: 'Permian Basin oil. Friday Night Lights. Permian Panthers.', airports: [{ code: 'MAF', name: 'Midland International', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Friday Night Lights, Permian Basin oil, Stonehenge replica' }
+  },
+  { slug: 'fort-collins', city: 'Fort Collins', timezone: 'America/Denver', country: 'United States', countryCode: 'US', state: 'Colorado', stateCode: 'CO', lat: 40.59, lng: -105.08, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '170K', phoneCode: '+1 970', language: 'English', climate: 'Semi-arid.', attractions: ['Colorado State University', 'New Belgium Brewing', 'Old Town', 'Horsetooth Reservoir', 'Cache la Poudre River'], demographics: 'Craft beer capital. CSU Rams. Outdoor recreation.', airports: [{ code: 'DEN', name: 'Denver International', distance: '100km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Craft beer capital, CSU, Old Town, outdoor recreation' }
+  },
+  { slug: 'boulder', city: 'Boulder', timezone: 'America/Denver', country: 'United States', countryCode: 'US', state: 'Colorado', stateCode: 'CO', lat: 40.02, lng: -105.27, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '105K', phoneCode: '+1 303', language: 'English', climate: 'Semi-arid.', attractions: ['Flatirons', 'Pearl Street Mall', 'University of Colorado', 'Chautauqua Park', 'Boulder Creek Path'], demographics: 'CU Buffs. Flatirons. Outdoor lifestyle. Tech hub.', airports: [{ code: 'DEN', name: 'Denver International', distance: '65km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Flatirons, CU Boulder, Pearl Street, outdoor lifestyle' }
+  },
+  { slug: 'arvada', city: 'Arvada', timezone: 'America/Denver', country: 'United States', countryCode: 'US', state: 'Colorado', stateCode: 'CO', lat: 39.80, lng: -105.09, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '125K', phoneCode: '+1 303', language: 'English', climate: 'Semi-arid.', attractions: ['Olde Town Arvada', 'Apex Center', 'Ralston Creek Trail', 'Majestic View Nature Center', 'Two Ponds National Wildlife Refuge'], demographics: 'Denver metro. Olde Town historic. Family-friendly.', airports: [{ code: 'DEN', name: 'Denver International', distance: '45km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Olde Town Arvada, Denver suburb, outdoor access' }
+  },
+  { slug: 'westminster-co', city: 'Westminster', timezone: 'America/Denver', country: 'United States', countryCode: 'US', state: 'Colorado', stateCode: 'CO', lat: 39.84, lng: -105.04, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '115K', phoneCode: '+1 303', language: 'English', climate: 'Semi-arid.', attractions: ['Butterfly Pavilion', 'Westminster Center Park', 'Standley Lake', 'City Park Recreation Center', 'Big Dry Creek Trail'], demographics: 'Denver suburb. Butterfly Pavilion.', airports: [{ code: 'DEN', name: 'Denver International', distance: '40km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Butterfly Pavilion, Denver suburb, Standley Lake' }
+  },
+  { slug: 'lakewood-co', city: 'Lakewood', timezone: 'America/Denver', country: 'United States', countryCode: 'US', state: 'Colorado', stateCode: 'CO', lat: 39.70, lng: -105.08, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '155K', phoneCode: '+1 303', language: 'English', climate: 'Semi-arid.', attractions: ['Colorado Mills', 'Bear Creek Lake Park', 'Red Rocks Park', 'Casa Bonita', 'Belmar shopping'], demographics: 'Largest Denver suburb. Casa Bonita (South Park fame).', airports: [{ code: 'DEN', name: 'Denver International', distance: '50km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Casa Bonita, Red Rocks access, largest Denver suburb' }
+  },
+  { slug: 'centennial', city: 'Centennial', timezone: 'America/Denver', country: 'United States', countryCode: 'US', state: 'Colorado', stateCode: 'CO', lat: 39.58, lng: -104.88, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '110K', phoneCode: '+1 303', language: 'English', climate: 'Semi-arid.', attractions: ['Cherry Creek State Park', 'Centennial Center Park', 'Streets at SouthGlenn', 'Arapahoe County Fairgrounds', 'Piney Creek Trail'], demographics: 'Denver Tech Center area. Wealthy suburb.', airports: [{ code: 'DEN', name: 'Denver International', distance: '35km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Denver Tech Center, Cherry Creek State Park, affluent' }
+  },
+  { slug: 'green-bay', city: 'Green Bay', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Wisconsin', stateCode: 'WI', lat: 44.51, lng: -88.02, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '105K', phoneCode: '+1 920', language: 'English', climate: 'Humid continental.', attractions: ['Lambeau Field', 'Green Bay Packers Hall of Fame', 'Bay Beach Amusement Park', 'National Railroad Museum', 'Wildlife Sanctuary'], demographics: 'Titletown USA. Green Bay Packers. Only publicly owned NFL team.', airports: [{ code: 'GRB', name: 'Green Bay Austin Straubel International', distance: '12km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Green Bay Packers, Lambeau Field, Titletown, cheese' }
+  },
+  { slug: 'lansing', city: 'Lansing', timezone: 'America/Detroit', country: 'United States', countryCode: 'US', state: 'Michigan', stateCode: 'MI', lat: 42.73, lng: -84.56, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '115K', phoneCode: '+1 517', language: 'English', climate: 'Humid continental.', attractions: ['Michigan State Capitol', 'Michigan State University', 'Impression 5 Science Center', 'Potter Park Zoo', 'River Trail'], demographics: 'Michigan capital. MSU Spartans. State government.', airports: [{ code: 'LAN', name: 'Capital Region International', distance: '10km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Michigan capital, MSU Spartans, Oldsmobile heritage' }
+  },
+  { slug: 'flint', city: 'Flint', timezone: 'America/Detroit', country: 'United States', countryCode: 'US', state: 'Michigan', stateCode: 'MI', lat: 43.01, lng: -83.69, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '95K', phoneCode: '+1 810', language: 'English', climate: 'Humid continental.', attractions: ['Flint Institute of Arts', 'Sloan Museum', 'Crossroads Village', 'Flint Cultural Center', 'UM-Flint'], demographics: 'Vehicle City. General Motors birthplace. Resilient.', airports: [{ code: 'FNT', name: 'Bishop International', distance: '8km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'GM birthplace, Vehicle City, auto industry heritage' }
+  },
+  { slug: 'dearborn', city: 'Dearborn', timezone: 'America/Detroit', country: 'United States', countryCode: 'US', state: 'Michigan', stateCode: 'MI', lat: 42.32, lng: -83.18, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '110K', phoneCode: '+1 313', language: 'English, Arabic', climate: 'Humid continental.', attractions: ['Henry Ford Museum', 'Greenfield Village', 'Ford Rouge Factory', 'Arab American National Museum', 'Fairlane Town Center'], demographics: 'Ford Motor Company HQ. Largest Arab-American population.', airports: [{ code: 'DTW', name: 'Detroit Metro Airport', distance: '20km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Ford Motor HQ, Henry Ford Museum, Arab-American community' }
+  },
+  { slug: 'warren', city: 'Warren', timezone: 'America/Detroit', country: 'United States', countryCode: 'US', state: 'Michigan', stateCode: 'MI', lat: 42.49, lng: -83.03, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '135K', phoneCode: '+1 586', language: 'English', climate: 'Humid continental.', attractions: ['GM Technical Center', 'Warren Civic Center', 'Universal Mall', 'Halmich Park', 'Red Oaks Nature Center'], demographics: 'GM Technical Center. Third-largest Michigan city.', airports: [{ code: 'DTW', name: 'Detroit Metro Airport', distance: '35km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'GM Technical Center, auto industry, Detroit suburb' }
+  },
+  { slug: 'springfield-il', city: 'Springfield', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Illinois', stateCode: 'IL', lat: 39.78, lng: -89.65, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '115K', phoneCode: '+1 217', language: 'English', climate: 'Humid continental.', attractions: ['Abraham Lincoln Presidential Library', 'Lincoln Home', 'Illinois State Capitol', 'Lincoln\'s Tomb', 'Route 66'], demographics: 'Illinois capital. Land of Lincoln. Route 66.', airports: [{ code: 'SPI', name: 'Abraham Lincoln Capital', distance: '8km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Abraham Lincoln, Illinois capital, Route 66, horseshoe sandwich' }
+  },
+  { slug: 'peoria-il', city: 'Peoria', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Illinois', stateCode: 'IL', lat: 40.69, lng: -89.59, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '115K', phoneCode: '+1 309', language: 'English', climate: 'Humid continental.', attractions: ['Caterpillar HQ', 'Peoria Riverfront Museum', 'Wildlife Prairie Park', 'Peoria Zoo', 'Spirit of Peoria riverboat'], demographics: 'Caterpillar HQ. Will it play in Peoria?', airports: [{ code: 'PIA', name: 'General Wayne A. Downing Peoria International', distance: '10km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Caterpillar HQ, Will it play in Peoria?, riverfront' }
+  },
+  { slug: 'burbank', city: 'Burbank', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.18, lng: -118.31, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '105K', phoneCode: '+1 818', language: 'English', climate: 'Mediterranean.', attractions: ['Warner Bros. Studio Tour', 'Walt Disney Studios', 'Griffith Park adjacent', 'Downtown Burbank', 'Magnolia Park'], demographics: 'Media Capital of the World. Disney, Warner Bros., NBC.', airports: [{ code: 'BUR', name: 'Hollywood Burbank', distance: '3km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Media Capital, Warner Bros., Disney, NBC, studio tours' }
+  },
+  { slug: 'inglewood', city: 'Inglewood', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 33.96, lng: -118.35, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '105K', phoneCode: '+1 310', language: 'English, Spanish', climate: 'Mediterranean.', attractions: ['SoFi Stadium', 'Intuit Dome', 'The Forum', 'Hollywood Park', 'Randy\'s Donuts'], demographics: 'SoFi Stadium. Rams, Chargers, Clippers. The Forum.', airports: [{ code: 'LAX', name: 'Los Angeles International', distance: '5km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'SoFi Stadium, The Forum, Rams & Chargers, Super Bowl host' }
+  },
+  { slug: 'costa-mesa', city: 'Costa Mesa', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 33.64, lng: -117.92, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '115K', phoneCode: '+1 714', language: 'English', climate: 'Mediterranean.', attractions: ['South Coast Plaza', 'Segerstrom Center for the Arts', 'OC Fair & Event Center', 'Triangle Square', 'Pacific Amphitheatre'], demographics: 'South Coast Plaza. Arts center. OC Fair.', airports: [{ code: 'SNA', name: 'John Wayne Airport', distance: '5km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'South Coast Plaza, Segerstrom Arts, OC Fair' }
+  },
+  { slug: 'santa-clara', city: 'Santa Clara', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 37.35, lng: -121.95, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '130K', phoneCode: '+1 408', language: 'English', climate: 'Mediterranean.', attractions: ['Levi\'s Stadium', 'Santa Clara University', 'California\'s Great America', 'Intel Museum', 'Mission Santa Clara'], demographics: '49ers Levi\'s Stadium. Silicon Valley heart. Intel HQ.', airports: [{ code: 'SJC', name: 'San Jose International', distance: '5km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Levi\'s Stadium, 49ers, Intel HQ, Silicon Valley' }
+  },
+  { slug: 'downey', city: 'Downey', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 33.94, lng: -118.13, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '110K', phoneCode: '+1 562', language: 'English, Spanish', climate: 'Mediterranean.', attractions: ['Oldest Operating McDonald\'s', 'Columbia Memorial Space Center', 'Downey Theatre', 'Apollo spacecraft heritage', 'Stonewood Center'], demographics: 'Apollo command module built here. Oldest McDonald\'s.', airports: [{ code: 'LGB', name: 'Long Beach Airport', distance: '12km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Oldest McDonald\'s, Apollo spacecraft, aerospace heritage' }
+  },
+  { slug: 'garden-grove', city: 'Garden Grove', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 33.77, lng: -117.94, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '175K', phoneCode: '+1 714', language: 'English, Vietnamese', climate: 'Mediterranean.', attractions: ['Christ Cathedral', 'Strawberry Festival', 'Little Saigon adjacent', 'GardenWalk', 'Garden Grove Park'], demographics: 'Christ Cathedral. Near Little Saigon.', airports: [{ code: 'SNA', name: 'John Wayne Airport', distance: '10km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Christ Cathedral (Crystal Cathedral), Strawberry Festival' }
+  },
+  { slug: 'carlsbad', city: 'Carlsbad', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 33.16, lng: -117.35, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '115K', phoneCode: '+1 760', language: 'English', climate: 'Mediterranean.', attractions: ['LEGOLAND California', 'Flower Fields', 'Carlsbad Village', 'Carlsbad State Beach', 'The Crossings Golf Course'], demographics: 'LEGOLAND. Flower Fields. Coastal living.', airports: [{ code: 'SAN', name: 'San Diego International', distance: '50km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'LEGOLAND California, Flower Fields, beach village' }
+  },
+  { slug: 'el-monte', city: 'El Monte', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.07, lng: -118.03, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '115K', phoneCode: '+1 626', language: 'English, Spanish, Chinese', climate: 'Mediterranean.', attractions: ['El Monte Historical Museum', 'Whittier Narrows', 'Santa Fe Dam Recreation Area', 'El Monte City Park', 'End of Santa Fe Trail'], demographics: 'End of Santa Fe Trail. San Gabriel Valley.', airports: [{ code: 'LAX', name: 'Los Angeles International', distance: '35km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'End of Santa Fe Trail, diverse community' }
+  },
+  { slug: 'west-covina', city: 'West Covina', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.07, lng: -117.94, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '105K', phoneCode: '+1 626', language: 'English, Spanish', climate: 'Mediterranean.', attractions: ['Plaza West Covina', 'The Lakes', 'Galster Wilderness Park', 'West Covina Sportsplex', 'BKK Landfill Park'], demographics: 'San Gabriel Valley. LA suburb.', airports: [{ code: 'ONT', name: 'Ontario International', distance: '20km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'San Gabriel Valley, suburban LA, shopping' }
+  },
+  { slug: 'thousand-oaks', city: 'Thousand Oaks', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.17, lng: -118.84, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '125K', phoneCode: '+1 805', language: 'English', climate: 'Mediterranean.', attractions: ['California Lutheran University', 'Conejo Valley', 'Gardens of the World', 'Wildwood Regional Park', 'Civic Arts Plaza'], demographics: 'Conejo Valley. Safest city. Amgen HQ.', airports: [{ code: 'LAX', name: 'Los Angeles International', distance: '60km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Safest city, Amgen HQ, Conejo Valley, outdoor recreation' }
+  },
+  { slug: 'palm-bay', city: 'Palm Bay', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 28.03, lng: -80.59, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '120K', phoneCode: '+1 321', language: 'English', climate: 'Humid subtropical.', attractions: ['Turkey Creek Sanctuary', 'Palm Bay Regional Park', 'Castaway Point Park', 'Indian River Lagoon', 'Space Coast beaches'], demographics: 'Space Coast. Largest city in Brevard County.', airports: [{ code: 'MLB', name: 'Melbourne Orlando International', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Space Coast, Brevard County, Indian River Lagoon' }
+  },
+  { slug: 'jackson', city: 'Jackson', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Mississippi', stateCode: 'MS', lat: 32.30, lng: -90.18, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '150K', phoneCode: '+1 601', language: 'English', climate: 'Humid subtropical.', attractions: ['Mississippi State Capitol', 'Mississippi Civil Rights Museum', 'Old Capitol Museum', 'Mississippi Museum of Art', 'Fondren District'], demographics: 'Mississippi capital. Civil Rights history.', airports: [{ code: 'JAN', name: 'Jackson-Medgar Wiley Evers International', distance: '12km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Mississippi capital, Civil Rights history, blues heritage' }
+  },
+  { slug: 'athens', city: 'Athens', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Georgia', stateCode: 'GA', lat: 33.96, lng: -83.38, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '125K', phoneCode: '+1 706', language: 'English', climate: 'Humid subtropical.', attractions: ['University of Georgia', 'Sanford Stadium', 'Georgia Theatre', 'State Botanical Garden', '40 Watt Club'], demographics: 'UGA Bulldogs. Music scene (R.E.M., B-52s birthplace).', airports: [{ code: 'ATL', name: 'Hartsfield-Jackson Atlanta International', distance: '110km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'UGA Bulldogs, R.E.M./B-52s, music scene, college town' }
+  },
+  { slug: 'charleston-wv', city: 'Charleston', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'West Virginia', stateCode: 'WV', lat: 38.35, lng: -81.63, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '48K', phoneCode: '+1 304', language: 'English', climate: 'Humid subtropical.', attractions: ['West Virginia State Capitol', 'Capitol Market', 'Clay Center', 'Kanawha State Forest', 'Sunrise Carriage Trail'], demographics: 'West Virginia capital. Gold dome capitol. River city.', airports: [{ code: 'CRW', name: 'Yeager Airport', distance: '5km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'West Virginia capital, gold dome capitol, Appalachian culture' }
+  },
+  { slug: 'wilmington', city: 'Wilmington', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Delaware', stateCode: 'DE', lat: 39.75, lng: -75.55, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '70K', phoneCode: '+1 302', language: 'English', climate: 'Humid subtropical.', attractions: ['Riverfront Wilmington', 'Delaware Art Museum', 'Brandywine Zoo', 'Hagley Museum', 'Winterthur'], demographics: 'Corporate capital of America. Credit card industry.', airports: [{ code: 'PHL', name: 'Philadelphia International', distance: '45km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Corporate capital, credit card companies, DuPont heritage' }
+  },
+  { slug: 'santa-barbara', city: 'Santa Barbara', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.42, lng: -119.70, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '90K', phoneCode: '+1 805', language: 'English, Spanish', climate: 'Mediterranean.', attractions: ['State Street', 'Santa Barbara Mission', 'Stearns Wharf', 'UCSB', 'Santa Ynez wine country'], demographics: 'American Riviera. Spanish architecture. Wine country.', airports: [{ code: 'SBA', name: 'Santa Barbara Airport', distance: '12km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'American Riviera, Mission, wine country, beaches' }
+  },
+  { slug: 'santa-maria', city: 'Santa Maria', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.95, lng: -120.44, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '110K', phoneCode: '+1 805', language: 'English, Spanish', climate: 'Mediterranean.', attractions: ['Santa Maria Museum of Flight', 'Santa Maria Valley wineries', 'PCPA Theatre', 'Rancho Nipomo', 'Guadalupe-Nipomo Dunes'], demographics: 'Santa Maria style BBQ. Wine country.', airports: [{ code: 'SMX', name: 'Santa Maria Public Airport', distance: '5km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Santa Maria style BBQ, strawberries, wine country' }
+  },
+  { slug: 'ventura', city: 'Ventura', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 34.27, lng: -119.23, tier: 3, continent: 'americas',
+    info: { currency: 'US Dollar', currencySymbol: '$', population: '110K', phoneCode: '+1 805', language: 'English, Spanish', climate: 'Mediterranean.', attractions: ['San Buenaventura Mission', 'Ventura Pier', 'Channel Islands Harbor', 'Main Street', 'Channel Islands National Park gateway'], demographics: 'Mission San Buenaventura. Channel Islands gateway.', airports: [{ code: 'OXR', name: 'Oxnard Airport', distance: '15km' }], driving: 'right', voltage: '120V/60Hz', plugType: 'A, B', famousFor: 'Channel Islands gateway, historic mission, surf culture' }
+  },
   { slug: 'curitiba', city: 'Curitiba', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -25.43, lng: -49.27, tier: 2, continent: 'americas',
     info: {
       currency: 'Brazilian Real', currencySymbol: 'R$', population: '1.9M', phoneCode: '+55 41', language: 'Portuguese',
@@ -7671,4 +9908,412 @@ export const cities: City[] = [
   },
 
   // PAPUA NEW GUINEA - Port Moresby
+
+  // USA - Additional Cities (Premium Format)
+  { slug: 'baltimore', city: 'Baltimore', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Maryland', stateCode: 'MD', lat: 39.29, lng: -76.61, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '570K', metroPopulation: '2.8M', phoneCode: '+1 410/443', language: 'English',
+      climate: 'Humid subtropical with hot summers (24-32°C) and cold winters (-2 to 7°C). Four distinct seasons with occasional snow.',
+      attractions: ['Inner Harbor', 'National Aquarium', 'Fort McHenry', 'Camden Yards', 'Fells Point', 'Edgar Allan Poe House', 'Walters Art Museum', 'Baltimore Museum of Art', 'Federal Hill', 'Power Plant Live'],
+      demographics: 'Historic seaport city known for blue crabs and maritime heritage. Major medical research hub with Johns Hopkins. Vibrant arts scene and diverse neighborhoods.',
+      airports: [
+        { code: 'BWI', name: 'Baltimore/Washington International', distance: '16km' },
+        { code: 'DCA', name: 'Reagan National Airport', distance: '60km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Blue crabs, Inner Harbor, Johns Hopkins, The Wire, Edgar Allan Poe',
+      seoContent: {
+        intro: 'Baltimore, Charm City, operates on Eastern Standard Time (EST/UTC-5) in winter and EDT (UTC-4) in summer. This historic port city on the Chesapeake Bay is known for its maritime heritage, world-class medical institutions, and distinctive neighborhoods.',
+        timezoneFacts: 'Same timezone as New York, Philadelphia, and Washington D.C. The famous "Star-Spangled Banner" was written here during the War of 1812.',
+        bestTimeToVisit: 'Spring (Apr-May) and fall (Sep-Oct) offer pleasant weather. Summer is hot and humid. Winter is cold but manageable. Artscape festival in July.',
+        businessHours: 'Standard business hours 9 AM to 5 PM. Inner Harbor attractions open 10 AM to 5 PM. Crab houses and seafood restaurants peak in summer evenings.',
+        timeDifference: 'Baltimore is UTC-5 (EST) / UTC-4 (EDT). When noon in Baltimore: London 5 PM, Dubai 9 PM, Tokyo 2 AM (+1), Los Angeles 9 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November. Same schedule as most US states.',
+        localTips: 'Old Bay seasoning is on everything. Crab cakes should have minimal filler. "Hon" is a term of endearment. Water taxis are fun transport. Avoid "The Block" downtown.',
+        transportation: 'Light rail and bus system (MTA). BWI Airport is well-connected with rail. Amtrak stops at Penn Station. MARC trains to D.C. and suburbs.',
+        emergencyNumbers: 'Emergency: 911. Baltimore Police: 410-396-2455.',
+        publicHolidays: 'US Federal holidays. Preakness Stakes (May). Artscape (July). Baltimore Book Festival (September).'
+      }
+    }
+  },
+  { slug: 'memphis', city: 'Memphis', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Tennessee', stateCode: 'TN', lat: 35.15, lng: -90.05, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '630K', metroPopulation: '1.3M', phoneCode: '+1 901', language: 'English',
+      climate: 'Humid subtropical with hot summers (26-34°C) and mild winters (1-10°C). Occasional ice storms in winter.',
+      attractions: ['Graceland', 'Beale Street', 'Sun Studio', 'National Civil Rights Museum', 'Memphis Zoo', 'Stax Museum', 'Mud Island', 'Peabody Hotel', 'Bass Pro Pyramid', 'Overton Park'],
+      demographics: 'Birthplace of rock and roll and home of the blues. Major African American cultural center. FedEx global headquarters.',
+      airports: [
+        { code: 'MEM', name: 'Memphis International Airport', distance: '16km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Elvis Presley, Graceland, Blues music, BBQ, FedEx, Civil Rights history',
+      seoContent: {
+        intro: 'Memphis, Home of the Blues, operates on Central Standard Time (CST/UTC-6) in winter and CDT (UTC-5) in summer. This iconic Mississippi River city is the birthplace of rock and roll, blues music capital, and BBQ heaven.',
+        timezoneFacts: 'Same timezone as Chicago, Nashville, and New Orleans. 1 hour behind New York. Sun Studio recorded Elvis, Johnny Cash, and Jerry Lee Lewis here.',
+        bestTimeToVisit: 'Spring (Mar-May) and fall (Sep-Nov) are ideal. Summer is hot and humid. Memphis in May festival is a highlight. Winter is mild.',
+        businessHours: 'Business hours 9 AM to 5 PM. Beale Street comes alive after 8 PM. BBQ joints often open for lunch through dinner.',
+        timeDifference: 'Memphis is UTC-6 (CST) / UTC-5 (CDT). When noon in Memphis: New York 1 PM, London 6 PM, Tokyo 3 AM (+1).',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November. Same schedule as most US states.',
+        localTips: 'BBQ is dry-rubbed here (no sauce until eating). Peabody Hotel ducks march daily at 11 AM and 5 PM. Beale Street gets loud at night. Sun Studio tours are worth it.',
+        transportation: 'Car is essential - limited public transit. Memphis trolley runs downtown. MEM airport is FedEx hub - cargo capital of North America.',
+        emergencyNumbers: 'Emergency: 911. Memphis Police: 901-545-2677.',
+        publicHolidays: 'US Federal holidays. Elvis Week (August). Memphis in May. Beale Street Music Festival.'
+      }
+    }
+  },
+  { slug: 'milwaukee', city: 'Milwaukee', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Wisconsin', stateCode: 'WI', lat: 43.04, lng: -87.91, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '580K', metroPopulation: '1.6M', phoneCode: '+1 414', language: 'English',
+      climate: 'Humid continental with warm summers (20-28°C) and cold snowy winters (-8 to 0°C). Lake Michigan moderates temperatures.',
+      attractions: ['Milwaukee Art Museum', 'Harley-Davidson Museum', 'Miller Park', 'Historic Third Ward', 'Milwaukee Public Market', 'Lakefront Brewery', 'Discovery World', 'Milwaukee County Zoo', 'Pabst Mansion', 'Bradford Beach'],
+      demographics: 'Brewing capital of America with strong German heritage. Diverse industrial city known for manufacturing and cheese.',
+      airports: [
+        { code: 'MKE', name: 'General Mitchell International', distance: '10km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Beer brewing, Harley-Davidson, cheese, German heritage, Summerfest',
+      seoContent: {
+        intro: 'Milwaukee, Brew City, operates on Central Standard Time (CST/UTC-6) in winter and CDT (UTC-5) in summer. This Lake Michigan city is famous for its brewing heritage, German culture, and the world\'s largest music festival.',
+        timezoneFacts: 'Same timezone as Chicago (90 miles south). Major breweries like Miller and Pabst made Milwaukee the "beer capital." Harley-Davidson was founded here in 1903.',
+        bestTimeToVisit: 'Summer (Jun-Aug) for festivals and lakefront activities. Fall for pleasant weather. Winter is cold and snowy. Summerfest in late June/early July.',
+        businessHours: 'Business hours 9 AM to 5 PM. Breweries and restaurants often open later. Friday fish fry is a tradition.',
+        timeDifference: 'Milwaukee is UTC-6 (CST) / UTC-5 (CDT). When noon in Milwaukee: New York 1 PM, London 6 PM, Los Angeles 10 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November. Same schedule as most US states.',
+        localTips: 'Friday fish fry is mandatory. Cheese curds should squeak. Frozen custard beats ice cream. Summerfest is 11 days of music. Packers games are 90 min away in Green Bay.',
+        transportation: 'The Hop streetcar serves downtown. Bus system (MCTS) covers metro. MKE airport is close to downtown - 15 min ride.',
+        emergencyNumbers: 'Emergency: 911. Milwaukee Police: 414-933-4444.',
+        publicHolidays: 'US Federal holidays. Summerfest (June/July). German Fest (July). Polish Fest (June).'
+      }
+    }
+  },
+  { slug: 'oklahoma-city', city: 'Oklahoma City', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Oklahoma', stateCode: 'OK', lat: 35.47, lng: -97.52, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '680K', metroPopulation: '1.4M', phoneCode: '+1 405', language: 'English',
+      climate: 'Humid subtropical with hot summers (27-35°C) and mild winters (0-10°C). Tornado Alley location - spring storms.',
+      attractions: ['Oklahoma City National Memorial', 'Bricktown', 'Myriad Botanical Gardens', 'National Cowboy Museum', 'Oklahoma City Zoo', 'Science Museum Oklahoma', 'Chesapeake Energy Arena', 'Paseo Arts District', 'Stockyards City', 'Lake Hefner'],
+      demographics: 'State capital and largest city in Oklahoma. Oil and gas hub with growing tech sector. Strong Western and Native American heritage.',
+      airports: [
+        { code: 'OKC', name: 'Will Rogers World Airport', distance: '10km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Oil industry, Thunder NBA team, Western heritage, 1995 Memorial, cowboy culture',
+      seoContent: {
+        intro: 'Oklahoma City, OKC, operates on Central Standard Time (CST/UTC-6) in winter and CDT (UTC-5) in summer. This oil-rich capital city blends Western heritage with modern urban development and is home to the Thunder NBA team.',
+        timezoneFacts: 'Same timezone as Dallas and Kansas City. Located in Tornado Alley - storm chasers are common in spring. Oil derricks once dotted the capitol grounds.',
+        bestTimeToVisit: 'Fall (Sep-Nov) and spring (Mar-May) are pleasant. Summer is very hot. Spring brings tornado risk. Winter is mild with occasional ice storms.',
+        businessHours: 'Business hours 9 AM to 5 PM. Bricktown entertainment district busy evenings and weekends. Stockyards City for authentic Western experience.',
+        timeDifference: 'OKC is UTC-6 (CST) / UTC-5 (CDT). When noon in OKC: New York 1 PM, London 6 PM, Denver 11 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November. Same schedule as most US states.',
+        localTips: 'Onion burgers are a local specialty. The Memorial is powerful and free. Thunder games have great atmosphere. Stockyards City has real working livestock auctions.',
+        transportation: 'Car is essential - spread out city. EMBARK bus system. OKC Streetcar in downtown. Will Rogers Airport is modern and efficient.',
+        emergencyNumbers: 'Emergency: 911. Oklahoma City Police: 405-231-2121.',
+        publicHolidays: 'US Federal holidays. Festival of the Arts (April). State Fair (September). Red Earth Festival (June).'
+      }
+    }
+  },
+  { slug: 'louisville', city: 'Louisville', timezone: 'America/Kentucky/Louisville', country: 'United States', countryCode: 'US', state: 'Kentucky', stateCode: 'KY', lat: 38.25, lng: -85.76, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '630K', metroPopulation: '1.3M', phoneCode: '+1 502', language: 'English',
+      climate: 'Humid subtropical with hot summers (25-32°C) and cool winters (-1 to 8°C). Four seasons with occasional snow.',
+      attractions: ['Churchill Downs', 'Louisville Slugger Museum', 'Muhammad Ali Center', 'Big Four Bridge', 'Louisville Waterfront Park', 'Speed Art Museum', 'Cave Hill Cemetery', 'Louisville Mega Cavern', 'NuLu District', 'Bourbon District'],
+      demographics: 'Largest city in Kentucky on the Ohio River. Famous for bourbon, baseball bats, and the Kentucky Derby. Healthcare and logistics hub.',
+      airports: [
+        { code: 'SDF', name: 'Louisville International Airport', distance: '8km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Kentucky Derby, bourbon whiskey, Louisville Slugger bats, Muhammad Ali, hot browns',
+      seoContent: {
+        intro: 'Louisville, Derby City, operates on Eastern Standard Time (EST/UTC-5) in winter and EDT (UTC-4) in summer. This Ohio River city is home to the Kentucky Derby, bourbon heritage, and the Louisville Slugger.',
+        timezoneFacts: 'On the border of Eastern and Central time zones. Same time as New York. The Kentucky Derby has been held first Saturday of May since 1875.',
+        bestTimeToVisit: 'Spring (Apr-May) for Derby season and pleasant weather. Fall is beautiful. Summer is hot and humid. Winter is mild.',
+        businessHours: 'Business hours 9 AM to 5 PM. Bourbon distilleries typically open 10 AM to 5 PM. Restaurants in NuLu busy evenings.',
+        timeDifference: 'Louisville is UTC-5 (EST) / UTC-4 (EDT). When noon in Louisville: London 5 PM, Chicago 11 AM, Los Angeles 9 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November. Same schedule as most US states.',
+        localTips: 'The Hot Brown sandwich originated here. Bourbon Trail has multiple distillery tours. Derby is more than just a race - it\'s a festival. Muhammad Ali\'s hometown honors him throughout.',
+        transportation: 'TARC bus system. Car is helpful. SDF airport is a major UPS hub - close to downtown.',
+        emergencyNumbers: 'Emergency: 911. Louisville Metro Police: 502-574-7111.',
+        publicHolidays: 'US Federal holidays. Kentucky Derby (May). Forecastle Festival (July). Kentucky State Fair (August).'
+      }
+    }
+  },
+  { slug: 'sacramento', city: 'Sacramento', timezone: 'America/Los_Angeles', country: 'United States', countryCode: 'US', state: 'California', stateCode: 'CA', lat: 38.58, lng: -121.49, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '520K', metroPopulation: '2.4M', phoneCode: '+1 916', language: 'English, Spanish',
+      climate: 'Mediterranean with hot dry summers (28-36°C) and mild wet winters (5-14°C). Very sunny with low humidity.',
+      attractions: ['California State Capitol', 'Old Sacramento', 'Crocker Art Museum', 'Sutter\'s Fort', 'California State Railroad Museum', 'Tower Bridge', 'American River Parkway', 'Golden 1 Center', 'Midtown Sacramento', 'Sacramento Zoo'],
+      demographics: 'California state capital at confluence of Sacramento and American Rivers. Government hub with growing tech scene. Farm-to-fork dining capital.',
+      airports: [
+        { code: 'SMF', name: 'Sacramento International Airport', distance: '16km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'State capital, Gold Rush history, farm-to-fork dining, Kings NBA, craft beer',
+      seoContent: {
+        intro: 'Sacramento, America\'s Farm-to-Fork Capital, operates on Pacific Standard Time (PST/UTC-8) in winter and PDT (UTC-7) in summer. California\'s capital city sits at the heart of the Central Valley, known for Gold Rush history and fresh cuisine.',
+        timezoneFacts: 'Same timezone as San Francisco and Los Angeles. 3 hours behind New York. Gold was discovered at Sutter\'s Mill in 1848, sparking the Gold Rush.',
+        bestTimeToVisit: 'Spring (Mar-May) and fall (Sep-Nov) are ideal. Summer is very hot but dry. Winter is mild and rainy. Farm-to-fork events year-round.',
+        businessHours: 'Government hours 8 AM to 5 PM. Restaurants in Midtown and Downtown busy evenings. Second Saturday art walks monthly.',
+        timeDifference: 'Sacramento is UTC-8 (PST) / UTC-7 (PDT). When noon in Sacramento: New York 3 PM, London 8 PM, Tokyo 5 AM (+1).',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November. Same schedule as most US states.',
+        localTips: 'Old Sacramento feels like stepping back in time. Farm-to-fork restaurants showcase local produce. Kings games at Golden 1 Center. Craft beer scene is strong.',
+        transportation: 'Light rail connects suburbs to downtown. Bus system (SacRT). SMF airport is modern and easy to navigate.',
+        emergencyNumbers: 'Emergency: 911. Sacramento Police: 916-264-5471.',
+        publicHolidays: 'US Federal holidays. Farm-to-Fork Festival (September). Gold Rush Days (September). California State Fair (July).'
+      }
+    }
+  },
+  { slug: 'kansas-city', city: 'Kansas City', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Missouri', stateCode: 'MO', lat: 39.10, lng: -94.58, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '510K', metroPopulation: '2.2M', phoneCode: '+1 816', language: 'English',
+      climate: 'Humid continental with hot summers (25-33°C) and cold winters (-4 to 5°C). Tornadoes possible in spring.',
+      attractions: ['National WWI Museum', 'Nelson-Atkins Museum', 'Country Club Plaza', 'Union Station', 'Kansas City Zoo', 'Kauffman Stadium', 'Power & Light District', 'City Market', 'Jazz District', 'Liberty Memorial'],
+      demographics: 'Straddles Missouri-Kansas border. Famous for BBQ, jazz heritage, and fountains. Growing tech and startup scene.',
+      airports: [
+        { code: 'MCI', name: 'Kansas City International Airport', distance: '24km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'BBQ, jazz music, fountains, Chiefs NFL, Royals MLB, Harry Truman',
+      seoContent: {
+        intro: 'Kansas City, the City of Fountains, operates on Central Standard Time (CST/UTC-6) in winter and CDT (UTC-5) in summer. This twin-city metropolis spanning Missouri and Kansas is legendary for BBQ, jazz, and more fountains than Rome.',
+        timezoneFacts: 'Same timezone as Chicago and St. Louis. The metro spans two states - Missouri and Kansas - but shares the same timezone. Historic jazz district rivaled Harlem.',
+        bestTimeToVisit: 'Spring (Apr-May) and fall (Sep-Oct) are ideal. Summer is hot and humid. Winter is cold. Chiefs football season (Sep-Jan) energizes the city.',
+        businessHours: 'Business hours 9 AM to 5 PM. BBQ joints open lunch through dinner - some close when meat runs out. Jazz clubs busy late evenings.',
+        timeDifference: 'Kansas City is UTC-6 (CST) / UTC-5 (CDT). When noon in KC: New York 1 PM, London 6 PM, Denver 11 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November. Same schedule as most US states.',
+        localTips: 'BBQ is slow-smoked - burnt ends are a delicacy. Joe\'s KC, Q39, and Gates are legendary. Country Club Plaza has beautiful architecture. Chiefs tailgates are epic.',
+        transportation: 'Car is essential - spread out metro. KC Streetcar is free in downtown. MCI airport recently rebuilt with new single terminal.',
+        emergencyNumbers: 'Emergency: 911. Kansas City Police (MO): 816-234-5111.',
+        publicHolidays: 'US Federal holidays. American Royal BBQ (September). Plaza Lighting Ceremony (Thanksgiving). St. Patrick\'s Day Parade.'
+      }
+    }
+  },
+  { slug: 'tucson', city: 'Tucson', timezone: 'America/Phoenix', country: 'United States', countryCode: 'US', state: 'Arizona', stateCode: 'AZ', lat: 32.22, lng: -110.93, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '550K', metroPopulation: '1.0M', phoneCode: '+1 520', language: 'English, Spanish',
+      climate: 'Semi-arid desert with hot summers (30-40°C) and mild winters (8-20°C). Monsoon season July-September. 350+ sunny days.',
+      attractions: ['Saguaro National Park', 'Arizona-Sonora Desert Museum', 'Mission San Xavier', 'Pima Air & Space Museum', 'Mount Lemmon', 'Tucson Botanical Gardens', 'Downtown Tucson', 'Sabino Canyon', 'Tombstone', 'Kartchner Caverns'],
+      demographics: 'Second-largest city in Arizona with strong Mexican heritage. University of Arizona town. UNESCO City of Gastronomy.',
+      airports: [
+        { code: 'TUS', name: 'Tucson International Airport', distance: '13km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Saguaro cacti, Sonoran Desert, Mexican food, University of Arizona, stargazing',
+      seoContent: {
+        intro: 'Tucson, the Old Pueblo, operates on Mountain Standard Time (MST/UTC-7) year-round. Arizona does not observe Daylight Saving Time, making Tucson\'s time constant. This desert city is a UNESCO City of Gastronomy.',
+        timezoneFacts: 'Arizona does NOT observe DST - same time as Pacific in summer, Mountain in winter. Surrounded by the beautiful Sonoran Desert with iconic saguaro cacti.',
+        bestTimeToVisit: 'October to April for pleasant weather. Summer is extremely hot (40°C+). Monsoon season (Jul-Sep) brings dramatic storms. Winter is ideal.',
+        businessHours: 'Business hours 8 AM to 5 PM. Many outdoor activities best early morning or evening due to heat. Restaurants serve late.',
+        timeDifference: 'Tucson is UTC-7 year-round (no DST). When noon in Tucson: New York 2 PM (winter) / 3 PM (summer), London 7 PM (winter) / 8 PM (summer).',
+        daylightSaving: 'Arizona does NOT observe DST. Tucson stays on MST (UTC-7) all year. This means time difference with other cities changes seasonally.',
+        localTips: 'Sonoran hot dogs are a must. Drink lots of water in summer. Mount Lemmon is 30°F cooler than the city. Mexican food here rivals Mexico itself.',
+        transportation: 'Car is essential - spread out desert city. Sun Tran bus system. Sun Link streetcar downtown. TUS airport is small and efficient.',
+        emergencyNumbers: 'Emergency: 911. Tucson Police: 520-791-4444.',
+        publicHolidays: 'US Federal holidays. Gem & Mineral Show (February - world\'s largest). Tucson Meet Yourself (October). Día de los Muertos.'
+      }
+    }
+  },
+  { slug: 'albuquerque', city: 'Albuquerque', timezone: 'America/Denver', country: 'United States', countryCode: 'US', state: 'New Mexico', stateCode: 'NM', lat: 35.08, lng: -106.65, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '560K', metroPopulation: '920K', phoneCode: '+1 505', language: 'English, Spanish',
+      climate: 'Semi-arid with hot summers (27-34°C) and mild winters (-3 to 10°C). High altitude (1,600m) with intense sun. Low humidity.',
+      attractions: ['Old Town Albuquerque', 'Sandia Peak Tramway', 'Balloon Fiesta Park', 'Indian Pueblo Cultural Center', 'ABQ BioPark', 'Petroglyph National Monument', 'Turquoise Trail', 'Breaking Bad Locations', 'National Hispanic Cultural Center', 'Tingley Beach'],
+      demographics: 'Largest city in New Mexico with rich Native American and Hispanic heritage. High-tech research hub with Sandia Labs. Breaking Bad filming location.',
+      airports: [
+        { code: 'ABQ', name: 'Albuquerque International Sunport', distance: '5km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Hot air balloons, Breaking Bad, green chile, Native American culture, Route 66',
+      seoContent: {
+        intro: 'Albuquerque, the Duke City, operates on Mountain Standard Time (MST/UTC-7) in winter and MDT (UTC-6) in summer. This high-desert city is famous for the world\'s largest balloon festival and rich multicultural heritage.',
+        timezoneFacts: 'Same timezone as Denver and Salt Lake City. 2 hours behind New York. At 5,312 feet elevation, the thin air makes hot air ballooning ideal.',
+        bestTimeToVisit: 'Fall (Sep-Nov) for Balloon Fiesta and perfect weather. Spring is pleasant. Summer is hot but dry. Winter is mild with occasional snow.',
+        businessHours: 'Business hours 9 AM to 5 PM. Old Town shops open 10 AM to 6 PM. Green chile is served with everything, all day.',
+        timeDifference: 'Albuquerque is UTC-7 (MST) / UTC-6 (MDT). When noon in ABQ: New York 2 PM, London 7 PM, Los Angeles 11 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November. Unlike neighboring Arizona, New Mexico observes DST.',
+        localTips: 'Always answer "red or green?" (chile). Balloon Fiesta is early October - book hotels months ahead. Breaking Bad tours are popular. Sandia Tramway offers stunning views.',
+        transportation: 'Car is essential. ABQ Ride bus system. Rail Runner connects to Santa Fe. Sunport airport is close to downtown.',
+        emergencyNumbers: 'Emergency: 911. Albuquerque Police: 505-242-2677.',
+        publicHolidays: 'US Federal holidays. Balloon Fiesta (October). State Fair (September). Gathering of Nations (April).'
+      }
+    }
+  },
+  { slug: 'tampa', city: 'Tampa', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Florida', stateCode: 'FL', lat: 27.95, lng: -82.46, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '400K', metroPopulation: '3.2M', phoneCode: '+1 813', language: 'English, Spanish',
+      climate: 'Humid subtropical with hot humid summers (27-33°C) and mild winters (12-22°C). Afternoon thunderstorms in summer. Hurricane risk.',
+      attractions: ['Busch Gardens', 'Tampa Riverwalk', 'Ybor City', 'Florida Aquarium', 'Bayshore Boulevard', 'Tampa Museum of Art', 'Armature Works', 'Big Cat Rescue', 'Lowry Park Zoo', 'Curtis Hixon Waterfront Park'],
+      demographics: 'Major Gulf Coast city with Cuban cigar-making heritage. Growing tech sector. Home to Buccaneers NFL and Lightning NHL.',
+      airports: [
+        { code: 'TPA', name: 'Tampa International Airport', distance: '10km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Busch Gardens, Ybor City cigars, Buccaneers NFL, craft beer, Cuban sandwiches',
+      seoContent: {
+        intro: 'Tampa, Cigar City, operates on Eastern Standard Time (EST/UTC-5) in winter and EDT (UTC-4) in summer. This Gulf Coast metropolis blends historic Cuban heritage with modern attractions and championship sports teams.',
+        timezoneFacts: 'Same timezone as Miami and New York. Tampa Bay area includes St. Petersburg and Clearwater. Ybor City was once the cigar capital of the world.',
+        bestTimeToVisit: 'October to April for pleasant weather. Summer is hot, humid, with daily thunderstorms. Spring break and winter attract crowds.',
+        businessHours: 'Business hours 9 AM to 5 PM. Ybor City nightlife runs late. Beach towns nearby have seasonal hours.',
+        timeDifference: 'Tampa is UTC-5 (EST) / UTC-4 (EDT). When noon in Tampa: London 5 PM, Los Angeles 9 AM, Chicago 11 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November. Same schedule as most US states.',
+        localTips: 'Cuban sandwiches are a must. Ybor City has great nightlife. Afternoon thunderstorms are brief but intense. Clearwater Beach is 30 min away.',
+        transportation: 'Car is essential. HART bus system. Streetcar connects downtown to Ybor City. TPA is one of America\'s best airports.',
+        emergencyNumbers: 'Emergency: 911. Tampa Police: 813-231-6130.',
+        publicHolidays: 'US Federal holidays. Gasparilla Pirate Festival (January). State Fair (February). Outback Bowl (January).'
+      }
+    }
+  },
+  { slug: 'pittsburgh', city: 'Pittsburgh', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Pennsylvania', stateCode: 'PA', lat: 40.44, lng: -79.99, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '300K', metroPopulation: '2.4M', phoneCode: '+1 412', language: 'English',
+      climate: 'Humid continental with warm summers (20-28°C) and cold snowy winters (-5 to 3°C). Four distinct seasons.',
+      attractions: ['Carnegie Museums', 'Point State Park', 'Duquesne Incline', 'Phipps Conservatory', 'PNC Park', 'Andy Warhol Museum', 'Strip District', 'Mount Washington', 'Heinz History Center', 'Randyland'],
+      demographics: 'Steel City transformed into tech and healthcare hub. Strong university presence (CMU, Pitt). Passionate sports culture.',
+      airports: [
+        { code: 'PIT', name: 'Pittsburgh International Airport', distance: '25km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Steel industry heritage, Steelers NFL, Penguins NHL, bridges, Andy Warhol, pierogi',
+      seoContent: {
+        intro: 'Pittsburgh, the Steel City, operates on Eastern Standard Time (EST/UTC-5) in winter and EDT (UTC-4) in summer. This city at the confluence of three rivers has transformed from industrial powerhouse to tech and healthcare hub.',
+        timezoneFacts: 'Same timezone as Philadelphia and New York. Pittsburgh has 446 bridges - more than any other city in the world. Carnegie Mellon is a top robotics center.',
+        bestTimeToVisit: 'Late spring (May-Jun) and fall (Sep-Oct) are ideal. Summer is pleasant. Winter is cold and snowy. Sports seasons drive tourism.',
+        businessHours: 'Business hours 9 AM to 5 PM. Strip District markets best Saturday mornings. Museums typically 10 AM to 5 PM.',
+        timeDifference: 'Pittsburgh is UTC-5 (EST) / UTC-4 (EDT). When noon in Pittsburgh: London 5 PM, Chicago 11 AM, Los Angeles 9 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November. Same schedule as most US states.',
+        localTips: 'Primanti Bros puts fries ON the sandwich. Yinzer is the local dialect. Steelers Sundays are sacred. Take the incline to Mount Washington for views.',
+        transportation: 'Good bus system (Port Authority). "T" light rail downtown and South Hills. PIT airport has free WiFi and easy navigation.',
+        emergencyNumbers: 'Emergency: 911. Pittsburgh Police: 412-255-2827.',
+        publicHolidays: 'US Federal holidays. Three Rivers Arts Festival (June). Steelers season (Sep-Jan). Light Up Night (November).'
+      }
+    }
+  },
+  { slug: 'cleveland', city: 'Cleveland', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Ohio', stateCode: 'OH', lat: 41.50, lng: -81.69, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '370K', metroPopulation: '2.1M', phoneCode: '+1 216', language: 'English',
+      climate: 'Humid continental with warm summers (20-28°C) and cold snowy winters (-6 to 2°C). Lake effect snow in winter.',
+      attractions: ['Rock and Roll Hall of Fame', 'Cleveland Museum of Art', 'West Side Market', 'Playhouse Square', 'Cleveland Metroparks Zoo', 'University Circle', 'Cuyahoga Valley NP', 'Great Lakes Science Center', 'Progressive Field', 'Tremont'],
+      demographics: 'Lake Erie city with strong healthcare and arts institutions. Rock and roll\'s spiritual home. Cleveland Clinic is world-renowned.',
+      airports: [
+        { code: 'CLE', name: 'Cleveland Hopkins International', distance: '16km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Rock and Roll Hall of Fame, Cleveland Clinic, Cavaliers NBA, West Side Market, polka',
+      seoContent: {
+        intro: 'Cleveland, the Rock and Roll Capital, operates on Eastern Standard Time (EST/UTC-5) in winter and EDT (UTC-4) in summer. This Lake Erie city is home to the Rock and Roll Hall of Fame and world-class medical institutions.',
+        timezoneFacts: 'Same timezone as New York and Columbus. Lake Erie creates significant weather effects. Cleveland was once the 5th largest US city.',
+        bestTimeToVisit: 'Late spring (May-Jun) and early fall (Sep-Oct) are best. Summer is pleasant for lakefront. Winter is cold with heavy lake effect snow.',
+        businessHours: 'Business hours 9 AM to 5 PM. West Side Market open Mon, Wed, Fri, Sat. University Circle museums typically 10 AM to 5 PM.',
+        timeDifference: 'Cleveland is UTC-5 (EST) / UTC-4 (EDT). When noon in Cleveland: London 5 PM, Chicago 11 AM, Los Angeles 9 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November. Same schedule as most US states.',
+        localTips: 'Cleveland Museum of Art is FREE and world-class. West Side Market is a foodie paradise. Rock Hall needs at least half a day. Cleveland-style pizza has unique crust.',
+        transportation: 'RTA rail connects airport to downtown. Good bus system. CLE airport is a smaller hub - easy to navigate.',
+        emergencyNumbers: 'Emergency: 911. Cleveland Police: 216-621-1234.',
+        publicHolidays: 'US Federal holidays. Rock Hall Induction Ceremony. Cavaliers season. Cleveland Air Show (Labor Day).'
+      }
+    }
+  },
+  { slug: 'st-louis', city: 'St. Louis', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Missouri', stateCode: 'MO', lat: 38.63, lng: -90.20, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '300K', metroPopulation: '2.8M', phoneCode: '+1 314', language: 'English',
+      climate: 'Humid subtropical with hot humid summers (25-33°C) and cold winters (-4 to 5°C). Tornadoes possible. Four seasons.',
+      attractions: ['Gateway Arch', 'Forest Park', 'City Museum', 'Busch Stadium', 'Missouri Botanical Garden', 'St. Louis Zoo', 'Anheuser-Busch Brewery', 'Cathedral Basilica', 'The Hill', 'Soulard'],
+      demographics: 'Gateway to the West on the Mississippi River. Strong German and Italian heritage. Cardinals baseball is a religion.',
+      airports: [
+        { code: 'STL', name: 'St. Louis Lambert International', distance: '19km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Gateway Arch, Cardinals baseball, toasted ravioli, Budweiser, blues music',
+      seoContent: {
+        intro: 'St. Louis, Gateway to the West, operates on Central Standard Time (CST/UTC-6) in winter and CDT (UTC-5) in summer. This Mississippi River city is marked by the iconic Gateway Arch and passionate Cardinals fandom.',
+        timezoneFacts: 'Same timezone as Chicago and Kansas City. The Gateway Arch is the tallest man-made monument in the US at 630 feet. St. Louis hosted the 1904 World\'s Fair.',
+        bestTimeToVisit: 'Spring (Apr-May) and fall (Sep-Oct) are ideal. Summer is hot and humid. Winter can be cold. Cardinals season (Apr-Oct) is magical.',
+        businessHours: 'Business hours 9 AM to 5 PM. Gateway Arch hours vary seasonally. Free attractions like the Zoo open 9 AM to 5 PM.',
+        timeDifference: 'St. Louis is UTC-6 (CST) / UTC-5 (CDT). When noon in STL: New York 1 PM, London 6 PM, Denver 11 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November. Same schedule as most US states.',
+        localTips: 'Toasted ravioli is a MUST. St. Louis Zoo is FREE and excellent. The Hill has authentic Italian food. Provel cheese is unique to St. Louis.',
+        transportation: 'MetroLink light rail connects airport to downtown. MetroBus serves region. Car helpful for suburbs.',
+        emergencyNumbers: 'Emergency: 911. St. Louis Police: 314-231-1212.',
+        publicHolidays: 'US Federal holidays. Cardinals Opening Day. Fair St. Louis (July 4). Mardi Gras in Soulard (February).'
+      }
+    }
+  },
+  { slug: 'salt-lake-city', city: 'Salt Lake City', timezone: 'America/Denver', country: 'United States', countryCode: 'US', state: 'Utah', stateCode: 'UT', lat: 40.76, lng: -111.89, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '200K', metroPopulation: '1.2M', phoneCode: '+1 801', language: 'English',
+      climate: 'Semi-arid continental with hot summers (25-35°C) and cold snowy winters (-5 to 4°C). Famous powder snow.',
+      attractions: ['Temple Square', 'Park City Ski Resorts', 'Natural History Museum', 'Great Salt Lake', 'Red Butte Garden', 'Utah State Capitol', 'Antelope Island', 'Snowbird', 'Alta', 'The Gateway'],
+      demographics: 'Capital of Utah and headquarters of the LDS Church. Major outdoor recreation hub. Growing tech industry "Silicon Slopes."',
+      airports: [
+        { code: 'SLC', name: 'Salt Lake City International', distance: '8km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: '2002 Winter Olympics, skiing, LDS Temple, outdoor recreation, tech industry',
+      seoContent: {
+        intro: 'Salt Lake City operates on Mountain Standard Time (MST/UTC-7) in winter and MDT (UTC-6) in summer. This mountain metropolis hosted the 2002 Winter Olympics and offers world-class skiing within 30 minutes.',
+        timezoneFacts: 'Same timezone as Denver and Phoenix (winter). 2 hours behind New York. The "Greatest Snow on Earth" draws skiers worldwide.',
+        bestTimeToVisit: 'Winter (Dec-Mar) for skiing. Summer for hiking and national parks. Spring and fall are pleasant. Sundance Film Festival in January.',
+        businessHours: 'Business hours 9 AM to 5 PM. Sunday is quiet due to LDS influence. Ski resorts open early (8:30-9 AM) in season.',
+        timeDifference: 'SLC is UTC-7 (MST) / UTC-6 (MDT). When noon in SLC: New York 2 PM, London 7 PM, Los Angeles 11 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November. Unlike Arizona, Utah observes DST.',
+        localTips: 'Fry sauce (ketchup + mayo) is everywhere. Sunday activities are limited. Altitude (4,300 ft) affects newcomers. Ski resorts are 30-45 min from downtown.',
+        transportation: 'TRAX light rail is excellent. FrontRunner commuter rail. SLC airport recently renovated - easy and modern.',
+        emergencyNumbers: 'Emergency: 911. Salt Lake City Police: 801-799-3000.',
+        publicHolidays: 'US Federal holidays. Pioneer Day (July 24 - Utah only). Sundance Film Festival (January). Days of \'47 Rodeo.'
+      }
+    }
+  },
+  { slug: 'raleigh', city: 'Raleigh', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'North Carolina', stateCode: 'NC', lat: 35.78, lng: -78.64, tier: 2, continent: 'americas',
+    info: {
+      currency: 'US Dollar', currencySymbol: '$', population: '470K', metroPopulation: '1.4M', phoneCode: '+1 919', language: 'English',
+      climate: 'Humid subtropical with hot summers (25-32°C) and mild winters (2-12°C). Four seasons with occasional ice storms.',
+      attractions: ['North Carolina Museum of Art', 'NC State Capitol', 'Pullen Park', 'NC Museum of Natural Sciences', 'William B. Umstead State Park', 'Downtown Raleigh', 'North Hills', 'PNC Arena', 'Historic Oakwood', 'Lake Johnson'],
+      demographics: 'State capital and part of Research Triangle with Durham and Chapel Hill. Major tech hub. Top-ranked universities (NC State, Duke, UNC).',
+      airports: [
+        { code: 'RDU', name: 'Raleigh-Durham International', distance: '18km' }
+      ],
+      driving: 'right',
+      voltage: '120V/60Hz',
+      plugType: 'A, B',
+      famousFor: 'Research Triangle, NC State, tech industry, Southern hospitality, BBQ',
+      seoContent: {
+        intro: 'Raleigh, City of Oaks, operates on Eastern Standard Time (EST/UTC-5) in winter and EDT (UTC-4) in summer. This Research Triangle hub combines Southern charm with cutting-edge technology and world-class universities.',
+        timezoneFacts: 'Same timezone as New York and Atlanta. The Research Triangle (Raleigh, Durham, Chapel Hill) is a major tech and biotech corridor.',
+        bestTimeToVisit: 'Spring (Mar-May) for azaleas and Fall (Sep-Nov) for colors are ideal. Summer is hot and humid. Winter is mild.',
+        businessHours: 'Business hours 9 AM to 5 PM. Downtown Raleigh has growing nightlife. Museums typically 9 AM to 5 PM - many are FREE.',
+        timeDifference: 'Raleigh is UTC-5 (EST) / UTC-4 (EDT). When noon in Raleigh: London 5 PM, Chicago 11 AM, Los Angeles 9 AM.',
+        daylightSaving: 'DST runs second Sunday of March to first Sunday of November. Same schedule as most US states.',
+        localTips: 'NC BBQ is vinegar-based (Eastern style). College sports are huge (NC State, Duke, UNC rivalries). Free museums downtown. Craft beer scene is strong.',
+        transportation: 'Car is essential. GoRaleigh bus system. RDU airport serves the Triangle - shared with Durham.',
+        emergencyNumbers: 'Emergency: 911. Raleigh Police: 919-996-3335.',
+        publicHolidays: 'US Federal holidays. State Fair (October). ACC Tournament. Hopscotch Music Festival (September).'
+      }
+    }
+  },
 ]
