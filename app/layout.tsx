@@ -91,18 +91,42 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Google Analytics - Native script tags required for Search Console verification */}
+        {/* Google Analytics - Fixed for "(not set)" issue */}
+        {/* Step 1: Consent mode FIRST (before gtag loads) */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('consent', 'default', {
+                'analytics_storage': 'granted',
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'wait_for_update': 500
+              });
+            `
+          }}
+        />
+        {/* Step 2: Load gtag.js */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-ED5Y13JE4H"
         />
+        {/* Step 3: Configure GA with proper session handling */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-ED5Y13JE4H');
+              gtag('config', 'G-ED5Y13JE4H', {
+                send_page_view: true,
+                cookie_domain: 'auto',
+                cookie_flags: 'SameSite=None;Secure',
+                page_title: document.title,
+                page_location: window.location.href
+              });
             `
           }}
         />
