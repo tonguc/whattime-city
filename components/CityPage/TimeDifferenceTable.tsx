@@ -175,7 +175,7 @@ export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) 
                   {/* City Name + Time of Day Icon */}
                   <td className="py-3 px-3">
                     <a 
-                      href={`/${targetCity.slug}`}
+                      href={`/time/${city.slug}/${targetCity.slug}/`}
                       className={`font-semibold hover:underline flex items-center gap-1.5 ${
                         isLight ? 'text-blue-600 hover:text-blue-800' : 'text-blue-400 hover:text-blue-300'
                       }`}
