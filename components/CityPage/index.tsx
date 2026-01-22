@@ -331,13 +331,13 @@ export default function CityPage({ initialCity }: CityPageProps) {
         {/* SEO Content - Keyword-rich text for search engines */}
         <SEOContent city={selectedCity} />
         
-        {/* FAQ Section - Schema markup for search engines */}
-        <FAQSection city={selectedCity} />
-        
         {/* Time Difference Table */}
         <div className="mt-4">
           <TimeDifferenceTable city={selectedCity} />
         </div>
+        
+        {/* FAQ Section - Schema markup for search engines */}
+        <FAQSection city={selectedCity} />
         
         {/* ═══════════════════════════════════════════════════════════════
             DISCOVERY SECTION - Keşif & Navigasyon

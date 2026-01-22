@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { City, cities } from '@/lib/cities'
 import { useThemeClasses } from '@/lib/useThemeClasses'
 import Link from 'next/link'
@@ -97,6 +98,25 @@ function getReferenceCities(): { newYork: City | undefined; london: City | undef
   }
 }
 
+// Helper: format time at a given hour with offset
+function formatTimeAt(hour: number, offsetHours: number): string {
+  let newHour = hour + offsetHours
+  let dayShift = ''
+  
+  if (newHour >= 24) {
+    newHour -= 24
+    dayShift = ' (next day)'
+  } else if (newHour < 0) {
+    newHour += 24
+    dayShift = ' (previous day)'
+  }
+  
+  const ampm = newHour >= 12 ? 'PM' : 'AM'
+  const displayHour = newHour > 12 ? newHour - 12 : (newHour === 0 ? 12 : newHour)
+  
+  return `${displayHour}:00 ${ampm}${dayShift}`
+}
+
 // Generate FAQ data for a city
 function generateFAQs(city: City): Array<{ question: string; answer: string }> {
   const hasDST = dstCountries[city.countryCode] ?? false
@@ -168,27 +188,71 @@ function generateFAQs(city: City): Array<{ question: string; answer: string }> {
   return faqs
 }
 
-// Helper: format time at a given hour with offset
-function formatTimeAt(hour: number, offsetHours: number): string {
-  let newHour = hour + offsetHours
-  let dayShift = ''
-  
-  if (newHour >= 24) {
-    newHour -= 24
-    dayShift = ' (next day)'
-  } else if (newHour < 0) {
-    newHour += 24
-    dayShift = ' (previous day)'
-  }
-  
-  const ampm = newHour >= 12 ? 'PM' : 'AM'
-  const displayHour = newHour > 12 ? newHour - 12 : (newHour === 0 ? 12 : newHour)
-  
-  return `${displayHour}:00 ${ampm}${dayShift}`
+// Accordion Item Component
+function FAQItem({ 
+  question, 
+  answer, 
+  isOpen, 
+  onToggle, 
+  isLight 
+}: { 
+  question: string
+  answer: string
+  isOpen: boolean
+  onToggle: () => void
+  isLight: boolean
+}) {
+  return (
+    <div 
+      itemScope 
+      itemProp="mainEntity" 
+      itemType="https://schema.org/Question"
+      className={`border-b last:border-b-0 ${isLight ? 'border-slate-200' : 'border-slate-700'}`}
+    >
+      <button
+        onClick={onToggle}
+        className={`w-full py-4 flex items-center justify-between gap-3 text-left transition-colors ${
+          isLight ? 'hover:bg-slate-50' : 'hover:bg-slate-800/30'
+        }`}
+        aria-expanded={isOpen}
+      >
+        <h3 
+          itemProp="name"
+          className={`font-medium pr-4 ${isLight ? 'text-slate-800' : 'text-white'}`}
+        >
+          {question}
+        </h3>
+        <span className={`flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full transition-transform ${
+          isOpen ? 'rotate-180' : ''
+        } ${isLight ? 'bg-slate-100 text-slate-500' : 'bg-slate-700 text-slate-400'}`}>
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </span>
+      </button>
+      
+      <div 
+        itemScope 
+        itemProp="acceptedAnswer" 
+        itemType="https://schema.org/Answer"
+        className={`overflow-hidden transition-all duration-300 ${
+          isOpen ? 'max-h-96 opacity-100 pb-4' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <p 
+          itemProp="text"
+          className={`text-sm leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-300'}`}
+        >
+          {answer}
+        </p>
+      </div>
+    </div>
+  )
 }
 
 export default function FAQSection({ city }: FAQSectionProps) {
-  const { card, textSection, textBody, isLight } = useThemeClasses()
+  const { card, textSection, isLight } = useThemeClasses()
+  const [openIndex, setOpenIndex] = useState<number | null>(0) // First one open by default
   
   const faqs = generateFAQs(city)
   
@@ -211,6 +275,10 @@ export default function FAQSection({ city }: FAQSectionProps) {
     ? 'text-blue-600 hover:text-blue-800 hover:underline' 
     : 'text-sky-400 hover:text-sky-300 hover:underline'
 
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index)
+  }
+
   return (
     <>
       {/* JSON-LD Schema */}
@@ -221,45 +289,27 @@ export default function FAQSection({ city }: FAQSectionProps) {
       
       {/* FAQ Section */}
       <section className={`rounded-2xl p-5 border ${card} mt-4`}>
-        <h2 className={`mb-5 flex items-center gap-2 ${textSection}`}>
+        <h2 className={`mb-4 flex items-center gap-2 ${textSection}`}>
           <span>❓</span>
           <span>Frequently Asked Questions</span>
         </h2>
         
-        {/* FAQ Items */}
-        <div className="space-y-4" itemScope itemType="https://schema.org/FAQPage">
+        {/* FAQ Accordion */}
+        <div itemScope itemType="https://schema.org/FAQPage">
           {faqs.map((faq, index) => (
-            <div 
+            <FAQItem
               key={index}
-              itemScope 
-              itemProp="mainEntity" 
-              itemType="https://schema.org/Question"
-              className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}
-            >
-              <h3 
-                itemProp="name"
-                className={`font-semibold mb-2 ${isLight ? 'text-slate-800' : 'text-white'}`}
-              >
-                {faq.question}
-              </h3>
-              <div 
-                itemScope 
-                itemProp="acceptedAnswer" 
-                itemType="https://schema.org/Answer"
-              >
-                <p 
-                  itemProp="text"
-                  className={`text-body leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-300'}`}
-                >
-                  {faq.answer}
-                </p>
-              </div>
-            </div>
+              question={faq.question}
+              answer={faq.answer}
+              isOpen={openIndex === index}
+              onToggle={() => toggleFAQ(index)}
+              isLight={isLight}
+            />
           ))}
         </div>
         
         {/* CTA */}
-        <div className={`mt-5 pt-4 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
+        <div className={`mt-4 pt-4 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
           <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
             Need to schedule a meeting with someone in {city.city}?{' '}
             <Link href={`/meeting?from=${city.slug}`} className={linkClass}>
@@ -269,7 +319,7 @@ export default function FAQSection({ city }: FAQSectionProps) {
         </div>
         
         {/* E-E-A-T Footer */}
-        <div className={`mt-4 pt-3 border-t flex flex-wrap justify-between gap-2 text-xs ${
+        <div className={`mt-3 pt-3 border-t flex flex-wrap justify-between gap-2 text-xs ${
           isLight ? 'border-slate-200 text-slate-400' : 'border-slate-700 text-slate-500'
         }`}>
           <span>Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
