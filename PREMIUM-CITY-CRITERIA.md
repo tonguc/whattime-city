@@ -5,6 +5,94 @@
 
 ---
 
+## 🏠 HUB SAYFASI KRİTERLERİ (`/[city]/`)
+
+Hub sayfası = Şehrin ana sayfası (örn: `/istanbul/`, `/new-york/`)
+
+### A) Sayfa Yapısı (Yukarıdan Aşağıya)
+
+| # | Bölüm | Komponent | Açıklama |
+|---|-------|-----------|----------|
+| 1 | Hero | HeroSection | H1 + Clock (Analog/Digital) |
+| 2 | Info Row | InfoRow | Weather, Sunrise/Sunset |
+| 3 | Snippet | SnippetBlock | Quick info |
+| 4 | Quick Info | CompactInfoCards | Currency, Phone, Language pills |
+| 5 | Converter | TimeConverter | İki şehir karşılaştırma |
+| 6 | CTA Banner | TravelBridge | Guide'a yönlendirme |
+| 7 | Guide Preview | GuidePreview | Premium şehirler için cluster kartları |
+| 8 | Time Facts | TimeZoneFacts + BusinessHoursBox | DST, UTC offset, iş saatleri |
+| 9 | Climate | Climate & Attractions | Hava durumu, turistik yerler |
+| 10 | SEO Content | SEOContent | Keyword-rich paragraflar |
+| 11 | Time Table | TimeDifferenceTable | 8 şehir karşılaştırma tablosu |
+| 12 | **FAQ** | **FAQSection** | **7 soru, Accordion, Schema markup** |
+| 13 | Favorites | FavoriteCard | Kullanıcının favori şehirleri |
+| 14 | More Cities | MoreCitiesSection | Aynı ülke/bölgedeki şehirler |
+| 15 | World Cities | CompactWorldCities | Tier 1 şehirler grid |
+
+### B) TimeDifferenceTable - Internal Linking
+
+Tablodaki şehir linkleri `/time/[from]/[to]/` formatında olmalı:
+
+```tsx
+// ✅ DOĞRU - Long-tail SEO değeri
+<a href={`/time/${city.slug}/${targetCity.slug}/`}>
+  {targetCity.city}
+</a>
+
+// ❌ YANLIŞ - Sadece hub'a link
+<a href={`/${targetCity.slug}`}>
+```
+
+### C) FAQSection - Otomatik Dinamik Sorular
+
+7 soru otomatik oluşturulur (Google Keyword Planner verisine dayalı):
+
+| # | Soru Şablonu | Arama Hacmi |
+|---|--------------|-------------|
+| 1 | What time is it in {city} right now? | 1M-10M 🔥 |
+| 2 | What time zone is {city} in? | 100K-1M |
+| 3 | Does {city} use daylight saving time? | High intent |
+| 4 | What is the time difference between {city} and London? | 10K-100K |
+| 5 | What is the time difference between {city} and New York? | 10K-100K |
+| 6 | What is the best time to call {city}? | Business intent |
+| 7 | What are typical business hours in {city}? | Business intent |
+
+### D) FAQSection - Teknik Özellikler
+
+```tsx
+// 1. Accordion yapısı (tıkla aç/kapa)
+const [openIndex, setOpenIndex] = useState<number | null>(0) // İlk soru açık
+
+// 2. JSON-LD Schema
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(...)
+}
+
+// 3. HTML Microdata
+<div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+  <h3 itemProp="name">{question}</h3>
+  <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+    <p itemProp="text">{answer}</p>
+  </div>
+</div>
+
+// 4. E-E-A-T Footer (FAQ içinde)
+<span>Last updated: {month} {year}</span>
+<span>✓ Data verified by WhatTime.city Editorial Team</span>
+```
+
+### E) Dosya Konumları
+
+| Dosya | Konum |
+|-------|-------|
+| FAQSection | `components/CityPage/FAQSection.tsx` |
+| TimeDifferenceTable | `components/CityPage/TimeDifferenceTable.tsx` |
+| CityPage index | `components/CityPage/index.tsx` |
+
+---
+
 ## 📋 Her Premium Şehir İçin Gerekli Dosyalar
 
 ### 1. Guide Config (`lib/guide-content.ts`)
