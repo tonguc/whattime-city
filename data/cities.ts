@@ -14017,6 +14017,388 @@ export const cities: City[] = [
       }
     }
   },
+  
+  // China - New Cities Batch 4 (20 cities with full premium content)
+  { slug: 'yaan', city: 'Ya\'an', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 29.98, lng: 103.00, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '1.5M', metroPopulation: '1.6M', phoneCode: '+86 835', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with cool summers (22-28°C) and mild winters (4-10°C). "Rain City" - 200+ rainy days.',
+      attractions: ['Bifengxia Panda Base', 'Shangli Ancient Town', 'Mengding Mountain', 'Niubei Mountain', 'Ya\'an Museum', 'Qingyi River', 'Labahe Nature Reserve', 'Shimian Anshunchang', 'Tianquan Tea Gardens', 'Lushan Ancient Town'],
+      demographics: 'Gateway to giant panda habitat. Birthplace of tea cultivation - Mengding Mountain has world\'s first planted tea garden. Known as "Rain City" for constant drizzle.',
+      seoContent: {
+        intro: 'Ya\'an, the "Rain City" and panda gateway, operates on China Standard Time (CST/UTC+8). This misty city of 1.5 million is the gateway to giant panda reserves and home to Mengding Mountain, where tea cultivation began 2,000 years ago.',
+        timezoneFacts: 'Same timezone as Beijing. Western Sichuan, edge of Tibetan Plateau.',
+        bestTimeToVisit: 'March-May and September-November. Expect rain anytime - bring umbrella!',
+        businessHours: 'Standard 9 AM to 6 PM. Bifengxia Panda Base 8:30 AM to 4 PM.',
+        timeDifference: 'Ya\'an is UTC+8 year-round. When noon in Ya\'an: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Bifengxia has excellent panda viewing - less crowded than Chengdu. Mengding tea is legendary. Always pack rain gear!',
+        transportation: 'High-speed rail to Chengdu (1 hour). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'bazhong', city: 'Bazhong', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 31.87, lng: 106.77, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.7M', metroPopulation: '3.3M', phoneCode: '+86 827', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with warm summers (25-32°C) and cold winters (2-8°C). Mountain climate.',
+      attractions: ['Guangwu Mountain', 'Nuoshuihe Canyon', 'Enyang Ancient Town', 'Bazhong Stone Carvings', 'Nanlong Mountain', 'Red Army Memorial', 'Kongshan Cave', 'Guangwu Snow Mountain', 'Tongjiang River', 'Sichuan-Shaanxi Revolutionary Base'],
+      demographics: 'Center of the Sichuan-Shaanxi Soviet revolutionary base. Famous for spectacular autumn foliage at Guangwu Mountain - China\'s best fall colors.',
+      seoContent: {
+        intro: 'Bazhong, home of China\'s best autumn colors, operates on China Standard Time (CST/UTC+8). This city of 2.7 million features Guangwu Mountain, famous for the most spectacular autumn foliage in all of China, and rich Red Army revolutionary history.',
+        timezoneFacts: 'Same timezone as Beijing. Northeastern Sichuan, Daba Mountain region.',
+        bestTimeToVisit: 'October-November for autumn colors - absolutely essential! Spring also pleasant.',
+        businessHours: 'Standard 9 AM to 6 PM. Guangwu Mountain 7 AM to 6 PM.',
+        timeDifference: 'Bazhong is UTC+8 year-round. When noon in Bazhong: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Guangwu Mountain autumn (Oct-Nov) rivals New England! Red Army history sites well-preserved. Nuoshuihe Canyon stunning.',
+        transportation: 'Bazhong Enyang Airport (BZX). Limited rail connections.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'aba', city: 'Barkam', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 31.90, lng: 102.22, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.9M', metroPopulation: '0.9M', phoneCode: '+86 837', language: 'Mandarin, Tibetan, Qiang',
+      climate: 'Highland with cool summers (12-22°C) and cold winters (-8 to 5°C). High altitude climate.',
+      attractions: ['Jiuzhaigou Valley (UNESCO)', 'Huanglong (UNESCO)', 'Zoige Grassland', 'Siguniangshan', 'Tibetan Villages', 'Songpan Ancient Town', 'Munigou', 'Huahu (Flower Lake)', 'Dagu Glacier', 'Jiuzhai Huanglong Airport'],
+      demographics: 'Capital of Aba Tibetan and Qiang Autonomous Prefecture. Gateway to Jiuzhaigou and Huanglong UNESCO sites. High-altitude Tibetan culture.',
+      seoContent: {
+        intro: 'Barkam, gateway to Jiuzhaigou, operates on China Standard Time (CST/UTC+8). This Tibetan town of 900,000 is the administrative center for accessing Jiuzhaigou Valley and Huanglong, two of China\'s most spectacular UNESCO World Heritage sites.',
+        timezoneFacts: 'Same timezone as Beijing despite being far west. High altitude - prepare for thin air.',
+        bestTimeToVisit: 'September-October for Jiuzhaigou autumn colors. June-August for flowers.',
+        businessHours: 'Standard 9 AM to 6 PM. Jiuzhaigou 7:30 AM to 5 PM.',
+        timeDifference: 'Barkam is UTC+8 year-round. When noon in Barkam: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Jiuzhaigou requires advance booking. Altitude sickness possible - acclimatize. Tibetan culture authentic. Winter very cold.',
+        transportation: 'Jiuzhai Huanglong Airport (JZH). Long bus rides to sites.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Tibetan festivals.'
+      }
+    }
+  },
+  { slug: 'garze', city: 'Kangding', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.05, lng: 101.96, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '1.1M', metroPopulation: '1.1M', phoneCode: '+86 836', language: 'Mandarin, Tibetan',
+      climate: 'Highland with cool summers (12-22°C) and cold winters (-5 to 8°C). High altitude valley.',
+      attractions: ['Mugecuo Lake', 'Paoma Mountain', 'Tagong Grassland', 'Xinduqiao', 'Gongga Mountain', 'Kangding Love Song Square', 'Nanwu Temple', 'Daocheng Yading', 'Litang Grassland', 'Hailuogou Glacier'],
+      demographics: 'Capital of Garzê Tibetan Autonomous Prefecture. Gateway to western Sichuan Tibetan areas. Famous for "Kangding Love Song" folk melody known to all Chinese.',
+      seoContent: {
+        intro: 'Kangding, city of the famous love song, operates on China Standard Time (CST/UTC+8). This Tibetan gateway of 1.1 million is immortalized in the folk song "Kangding Love Song" and serves as the gateway to spectacular western Sichuan Tibetan landscapes.',
+        timezoneFacts: 'Same timezone as Beijing. Gateway to Tibetan plateau, high altitude.',
+        bestTimeToVisit: 'May-October. September-October for best photography. Winter harsh.',
+        businessHours: 'Standard 9 AM to 6 PM. Scenic areas 8 AM to 5 PM.',
+        timeDifference: 'Kangding is UTC+8 year-round. When noon in Kangding: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Xinduqiao is "Photographer\'s Paradise". Prepare for altitude (2,500m+). Tibetan culture authentic. Drive to Daocheng Yading spectacular.',
+        transportation: 'Kangding Airport (KGT). Gateway for Sichuan-Tibet Highway.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Tibetan festivals.'
+      }
+    }
+  },
+  { slug: 'liangshan', city: 'Xichang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 27.90, lng: 102.27, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.9M', metroPopulation: '5.3M', phoneCode: '+86 834', language: 'Mandarin, Yi',
+      climate: 'Subtropical highland with mild year-round (15-25°C). "City of Eternal Spring".',
+      attractions: ['Xichang Satellite Launch Center', 'Qionghai Lake', 'Luoji Mountain', 'Yi Slave Society Museum', 'Torch Festival Sites', 'Lugu Lake', 'Zhaojue Temple', '螺髻山', 'Moon City Square', 'Xichang Ancient Town'],
+      demographics: 'Capital of Liangshan Yi Autonomous Prefecture. Major satellite launch facility. Famous for Yi Torch Festival - one of China\'s most spectacular ethnic celebrations.',
+      seoContent: {
+        intro: 'Xichang, China\'s satellite city, operates on China Standard Time (CST/UTC+8). This city of 900,000 hosts the Xichang Satellite Launch Center and is capital of Yi ethnic territory, famous for the spectacular Torch Festival each July.',
+        timezoneFacts: 'Same timezone as Beijing. Southern Sichuan plateau, mild climate.',
+        bestTimeToVisit: 'July for Torch Festival - must see! Year-round pleasant climate.',
+        businessHours: 'Standard 9 AM to 6 PM. Launch center tours by special arrangement.',
+        timeDifference: 'Xichang is UTC+8 year-round. When noon in Xichang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Yi Torch Festival (July) is spectacular - fire everywhere! Satellite launches sometimes viewable. Qionghai Lake beautiful. Lugu Lake 3 hours away.',
+        transportation: 'Xichang Qingshan Airport (XIC). Rail connections available.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Yi Torch Festival (July).'
+      }
+    }
+  },
+  { slug: 'chuxiong', city: 'Chuxiong', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 25.03, lng: 101.55, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.6M', metroPopulation: '2.7M', phoneCode: '+86 878', language: 'Mandarin, Yi',
+      climate: 'Subtropical highland with mild summers (20-26°C) and cool winters (6-15°C). Pleasant year-round.',
+      attractions: ['Lufeng World Dinosaur Valley', 'Yuanmou Man Site', 'Zixi Mountain', 'Yi Ten-Month Calendar Park', 'Chuxiong Museum', 'Lucheng Ancient Town', 'Shiyang Ancient Town', 'Black Well Ancient Town', 'Wuding Lion Mountain', 'Yi Torch Festival'],
+      demographics: 'Capital of Chuxiong Yi Autonomous Prefecture. Home to Lufeng dinosaur fossils and Yuanmou Man (1.7 million year old hominid). Yi culture center.',
+      seoContent: {
+        intro: 'Chuxiong, land of dinosaurs and ancient man, operates on China Standard Time (CST/UTC+8). This Yi capital of 600,000 is home to Lufeng\'s dinosaur fossil beds and the 1.7 million year old Yuanmou Man, one of the earliest human ancestors found in Asia.',
+        timezoneFacts: 'Same timezone as Beijing. Central Yunnan plateau.',
+        bestTimeToVisit: 'Year-round pleasant. July for Yi Torch Festival.',
+        businessHours: 'Standard 9 AM to 6 PM. Dinosaur Valley 8:30 AM to 5:30 PM.',
+        timeDifference: 'Chuxiong is UTC+8 year-round. When noon in Chuxiong: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Dinosaur Valley excellent for kids. Yuanmou Man site fascinating. Yi culture distinct from Liangshan Yi. Torch Festival lively.',
+        transportation: 'High-speed rail to Kunming (45 min). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Yi Torch Festival.'
+      }
+    }
+  },
+  { slug: 'honghe', city: 'Mengzi', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 23.37, lng: 103.38, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.4M', metroPopulation: '4.7M', phoneCode: '+86 873', language: 'Mandarin, Hani, Yi',
+      climate: 'Subtropical with warm year-round (16-26°C). Vietnam border climate.',
+      attractions: ['Yuanyang Rice Terraces (UNESCO)', 'Jianshui Ancient Town', 'Swallow Cave', 'Mile Hot Springs', 'Kaiyuan South Lake', 'Zhujia Garden', 'Yellow Cow Falls', 'Hani Villages', 'Sino-Vietnamese Railway', 'Shiping Ancient Town'],
+      demographics: 'Capital of Honghe Hani and Yi Autonomous Prefecture. Gateway to UNESCO Yuanyang Rice Terraces. Historic Sino-Vietnamese Railway terminus.',
+      seoContent: {
+        intro: 'Mengzi, gateway to the rice terraces, operates on China Standard Time (CST/UTC+8). This border city of 400,000 is the gateway to UNESCO-listed Yuanyang Rice Terraces, spectacular cascading paddies carved by the Hani people over 1,300 years.',
+        timezoneFacts: 'Same timezone as Beijing. Southern Yunnan near Vietnam border.',
+        bestTimeToVisit: 'November-April for flooded terraces (best photography). Avoid summer rains.',
+        businessHours: 'Standard 9 AM to 6 PM. Terraces accessible dawn to dusk.',
+        timeDifference: 'Mengzi is UTC+8 year-round. When noon in Mengzi: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Yuanyang sunrise/sunset magical! Stay overnight in Hani villages. Jianshui ancient town excellent. Try crossing-bridge noodles origin.',
+        transportation: 'High-speed rail expanding. No local airport - use Kunming.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'wenshan', city: 'Wenshan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 23.37, lng: 104.24, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.5M', metroPopulation: '3.6M', phoneCode: '+86 876', language: 'Mandarin, Zhuang, Miao',
+      climate: 'Subtropical with warm year-round (16-26°C). Vietnam border climate.',
+      attractions: ['Puzhehei Lake', 'Baise Uprising Memorial', 'Qiubei Lotus Lake', 'Wenshan Sanqi Gardens', 'Guangnan Bagua Village', 'Malipo Tianbao', 'Xichou Karst', 'Zhuang Villages', 'Vietnam Border Sites', 'Laojunshan'],
+      demographics: 'Capital of Wenshan Zhuang and Miao Autonomous Prefecture. Famous for Sanqi (Panax notoginseng) medicinal herb production. Puzhehei featured in Chinese films.',
+      seoContent: {
+        intro: 'Wenshan, land of healing herbs, operates on China Standard Time (CST/UTC+8). This city of 500,000 is the center of Sanqi production, China\'s prized medicinal herb, and gateway to Puzhehei Lake, a stunning karst landscape featured in popular Chinese films.',
+        timezoneFacts: 'Same timezone as Beijing. Southeastern Yunnan near Vietnam.',
+        bestTimeToVisit: 'June-August for Puzhehei lotus flowers. Year-round for Sanqi.',
+        businessHours: 'Standard 9 AM to 6 PM. Puzhehei boat rides available.',
+        timeDifference: 'Wenshan is UTC+8 year-round. When noon in Wenshan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Puzhehei is stunning - rowboat through lotus and karst. Sanqi products sold everywhere. Zhuang minority villages authentic.',
+        transportation: 'Wenshan Puzhehei Airport (WNH). Rail connections limited.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'dehong', city: 'Mangshi', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 24.44, lng: 98.58, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.4M', metroPopulation: '1.4M', phoneCode: '+86 692', language: 'Mandarin, Dai, Jingpo',
+      climate: 'Tropical monsoon with hot wet summers (23-32°C) and warm dry winters (12-25°C). Southeast Asian climate.',
+      attractions: ['Manting Park', 'Ruili Jiegao Border', 'Yingjiang Giant Banyan', 'Mangshi Forest Park', 'Dai Villages', 'Jingpo Villages', 'Moli Waterfall', 'One Pagoda One Temple', 'Zhefang Border Trade', 'Myanmar Border Markets'],
+      demographics: 'Capital of Dehong Dai and Jingpo Autonomous Prefecture. Major China-Myanmar border trade zone. Dai water festival celebrations. Jade trading center.',
+      seoContent: {
+        intro: 'Mangshi, gateway to Myanmar, operates on China Standard Time (CST/UTC+8). This tropical border city of 400,000 is the capital of Dehong, a major China-Myanmar trade zone famous for jade markets, Dai water festivals, and Southeast Asian atmosphere.',
+        timezoneFacts: 'Same timezone as Beijing. Western Yunnan at Myanmar border, tropical.',
+        bestTimeToVisit: 'April for Dai Water Splashing Festival! November-March for pleasant weather.',
+        businessHours: 'Standard 9 AM to 6 PM. Border markets busy mornings.',
+        timeDifference: 'Mangshi is UTC+8 year-round. When noon in Mangshi: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Water Splashing Festival in April - get soaked! Ruili for jade shopping (be careful of fakes). Myanmar border crossing possible with permits.',
+        transportation: 'Dehong Mangshi Airport (LUM). Limited rail.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Dai Water Festival (April).'
+      }
+    }
+  },
+  { slug: 'nujiang', city: 'Liuku', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 25.85, lng: 98.86, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.06M', metroPopulation: '0.55M', phoneCode: '+86 886', language: 'Mandarin, Lisu, Nu',
+      climate: 'Subtropical valley with warm year-round (15-28°C). River canyon microclimate.',
+      attractions: ['Nujiang Grand Canyon', 'Bingzhongluo', 'Stone Moon', 'First Bend of Nujiang', 'Lisu Villages', 'Fogui Ancient Town', 'Laomudeng Church', 'Dimaluo Village', 'Gongshan', 'Three Parallel Rivers (UNESCO)'],
+      demographics: 'Capital of Nujiang Lisu Autonomous Prefecture. Part of UNESCO Three Parallel Rivers. One of China\'s most remote and pristine regions. Unique Lisu and Nu cultures.',
+      seoContent: {
+        intro: 'Liuku, gateway to the last frontier, operates on China Standard Time (CST/UTC+8). This remote town of 60,000 guards the Nujiang Grand Canyon, part of the UNESCO Three Parallel Rivers - one of China\'s last truly wild and unexplored regions.',
+        timezoneFacts: 'Same timezone as Beijing. Far western Yunnan, extremely remote.',
+        bestTimeToVisit: 'October-May dry season. Avoid summer monsoon road closures.',
+        businessHours: 'Standard 9 AM to 6 PM. Limited services in remote areas.',
+        timeDifference: 'Liuku is UTC+8 year-round. When noon in Liuku: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Bingzhongluo is paradise - worth the difficult journey. Roads can be dangerous. Lisu villages very authentic. Limited infrastructure.',
+        transportation: 'No airport. Long bus rides from Kunming or Dali. Improving roads.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Lisu Kuoshi Festival.'
+      }
+    }
+  },
+  { slug: 'diqing', city: 'Shangri-La', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 27.83, lng: 99.70, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.13M', metroPopulation: '0.4M', phoneCode: '+86 887', language: 'Mandarin, Tibetan',
+      climate: 'Highland with cool summers (10-20°C) and cold winters (-7 to 8°C). High altitude Tibetan plateau.',
+      attractions: ['Pudacuo National Park', 'Songzanlin Monastery', 'Dukezong Ancient Town', 'Meili Snow Mountain', 'Tiger Leaping Gorge', 'Napa Lake', 'Baishuitai', 'Shika Snow Mountain', 'Benzilan', 'Yubeng Village'],
+      demographics: 'Capital of Diqing Tibetan Autonomous Prefecture. Renamed from Zhongdian to Shangri-La in 2001, claiming connection to James Hilton\'s Lost Horizon.',
+      seoContent: {
+        intro: 'Shangri-La, the legendary paradise, operates on China Standard Time (CST/UTC+8). This Tibetan town of 130,000 at 3,300m elevation claims to be the inspiration for James Hilton\'s utopia, featuring ancient monasteries, pristine lakes, and sacred snow mountains.',
+        timezoneFacts: 'Same timezone as Beijing. Northwestern Yunnan, Tibetan plateau.',
+        bestTimeToVisit: 'May-June and September-October. Winter very cold. Avoid summer monsoon.',
+        businessHours: 'Standard 9 AM to 6 PM. Songzanlin Monastery 8 AM to 6 PM.',
+        timeDifference: 'Shangri-La is UTC+8 year-round. When noon in Shangri-La: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Altitude sickness common at 3,300m - acclimatize! Songzanlin is "Little Potala". Meili Snow Mountain sacred to Tibetans. Dukezong rebuilt after 2014 fire.',
+        transportation: 'Diqing Shangri-La Airport (DIG). Bus from Lijiang (4 hours).',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Tibetan New Year.'
+      }
+    }
+  },
+  { slug: 'xishuangbanna', city: 'Jinghong', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 22.01, lng: 100.80, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.6M', metroPopulation: '1.3M', phoneCode: '+86 691', language: 'Mandarin, Dai',
+      climate: 'Tropical monsoon with hot wet summers (24-34°C) and warm dry winters (14-26°C). Rainforest climate.',
+      attractions: ['Xishuangbanna Tropical Botanical Garden', 'Wild Elephant Valley', 'Manting Park', 'Ganlan Basin', 'Dai Villages', 'Menglun Tropical Rainforest', 'Menghai Tea Mountains', 'Jinuo Mountain', 'Mekong River Cruises', 'Night Markets'],
+      demographics: 'Capital of Xishuangbanna Dai Autonomous Prefecture. China\'s tropical rainforest region. Pu\'er tea origin. Dai water festival capital. Southeast Asian culture.',
+      seoContent: {
+        intro: 'Jinghong, China\'s tropical paradise, operates on China Standard Time (CST/UTC+8). This rainforest capital of 600,000 is China\'s gateway to Southeast Asia, home to wild elephants, ancient tea trees, Dai water festivals, and lush tropical gardens.',
+        timezoneFacts: 'Same timezone as Beijing despite being far south. Tropical, near Laos/Myanmar.',
+        bestTimeToVisit: 'April for Water Splashing Festival! November-March for dry season.',
+        businessHours: 'Standard 9 AM to 6 PM. Night markets until midnight.',
+        timeDifference: 'Jinghong is UTC+8 year-round. When noon in Jinghong: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Water Festival mid-April is incredible! Wild Elephant Valley for elephant sightings. Buy authentic Pu\'er tea from mountains. Night markets excellent.',
+        transportation: 'Xishuangbanna Gasa Airport (JHG). High-speed rail to Kunming (3 hours).',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Dai Water Festival (April).'
+      }
+    }
+  },
+  { slug: 'puer', city: 'Simao', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 22.78, lng: 100.97, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.3M', metroPopulation: '2.6M', phoneCode: '+86 879', language: 'Mandarin, Hani, Dai',
+      climate: 'Subtropical with warm year-round (17-28°C). Tea-growing highland climate.',
+      attractions: ['Pu\'er Tea Museum', 'Ancient Tea Horse Road', 'Jingmai Ancient Tea Mountain', 'Lancang River', 'Wa Ethnic Villages', 'Menglian Dai Town', 'Simao Port', 'Coffee Plantations', 'Ailao Mountain', 'Wild Elephant Reserve'],
+      demographics: 'Renamed from Simao to Pu\'er in 2007 to honor the famous tea. Origin of Pu\'er tea with ancient 1000+ year old tea trees. China\'s emerging coffee region.',
+      seoContent: {
+        intro: 'Pu\'er, birthplace of the legendary tea, operates on China Standard Time (CST/UTC+8). This city of 300,000 gave its name to Pu\'er tea, the aged fermented tea prized worldwide, and contains ancient tea trees over 1,000 years old in Jingmai Mountain.',
+        timezoneFacts: 'Same timezone as Beijing. Southern Yunnan tea highlands.',
+        bestTimeToVisit: 'Year-round for tea tourism. Spring for fresh tea picking.',
+        businessHours: 'Standard 9 AM to 6 PM. Tea markets and tours available.',
+        timeDifference: 'Pu\'er is UTC+8 year-round. When noon in Pu\'er: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Jingmai has UNESCO-nominated ancient tea forests. Tea tastings everywhere. China\'s coffee is emerging here too. Visit tea factories.',
+        transportation: 'Pu\'er Simao Airport (SYM). Rail connections improving.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'lincang', city: 'Lincang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 23.88, lng: 100.09, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.4M', metroPopulation: '2.5M', phoneCode: '+86 883', language: 'Mandarin, Wa, Dai',
+      climate: 'Subtropical with warm year-round (17-28°C). Tea and coffee highlands.',
+      attractions: ['Cangyuan Wa Villages', 'Wengding Wa Village', 'Shuanglang Ancient Town', 'Gengma Dai Villages', 'Bingdao Tea Village', 'Lancang River', 'Nangun River', 'Ancient Rock Paintings', 'Tea Mountains', 'Burma Border'],
+      demographics: 'Home to the Wa ethnic minority with unique headhunting history. Premium Bingdao tea rivals top Pu\'er. One of China\'s least visited regions.',
+      seoContent: {
+        intro: 'Lincang, land of the Wa people, operates on China Standard Time (CST/UTC+8). This frontier city of 400,000 is home to the Wa ethnic minority with their unique drum-and-dance culture and produces Bingdao tea, among China\'s most expensive.',
+        timezoneFacts: 'Same timezone as Beijing. Southwestern Yunnan near Myanmar.',
+        bestTimeToVisit: 'October-May dry season. April for Wa festivals.',
+        businessHours: 'Standard 9 AM to 6 PM. Limited services in remote Wa areas.',
+        timeDifference: 'Lincang is UTC+8 year-round. When noon in Lincang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Wa villages are fascinating - Wengding still traditional. Bingdao tea extremely expensive but worth tasting. Very off-the-beaten-path.',
+        transportation: 'Lincang Airport (LNJ). Limited connections.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Wa New Year.'
+      }
+    }
+  },
+  { slug: 'anning', city: 'Anning', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 24.92, lng: 102.48, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.4M', metroPopulation: '0.5M', phoneCode: '+86 871', language: 'Mandarin',
+      climate: 'Subtropical highland with mild year-round (15-25°C). "Natural Hot Spring City".',
+      attractions: ['Anning Hot Springs', 'Cao Xi Temple', 'Qinglong Gorge', 'Kunming Steel Industrial Tourism', 'Jinse Park', 'Huanzhong Lake', 'Wenchang Palace', 'Yangzonghai Lake', 'Tanglang River', 'Rose Gardens'],
+      demographics: 'Kunming satellite city famous for natural hot springs. Major steel production center. Known for roses and flower cultivation.',
+      seoContent: {
+        intro: 'Anning, city of hot springs, operates on China Standard Time (CST/UTC+8). This city of 400,000 near Kunming is famous for its natural hot springs known since the Tang Dynasty, plus extensive rose gardens and year-round spring climate.',
+        timezoneFacts: 'Same timezone as Beijing. Central Yunnan, Kunming satellite.',
+        bestTimeToVisit: 'Year-round for hot springs. May for rose festival.',
+        businessHours: 'Standard 9 AM to 6 PM. Hot spring resorts open late.',
+        timeDifference: 'Anning is UTC+8 year-round. When noon in Anning: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Hot springs have 1,000+ year history. Day trip from Kunming easy. Rose cultivation extensive. Cao Xi Temple ancient.',
+        transportation: 'Metro connection to Kunming. High-speed rail nearby.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'tengchong', city: 'Tengchong', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 25.02, lng: 98.50, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.7M', metroPopulation: '0.7M', phoneCode: '+86 875', language: 'Mandarin',
+      climate: 'Subtropical with warm year-round (12-25°C). Volcanic geothermal climate.',
+      attractions: ['Rehai Hot Sea', 'Heshun Ancient Town', 'Ginkgo Village', 'Volcanic Park', 'National Cemetery', 'Beihai Wetland', 'Daying River', 'Jade Market', 'Burma Road Museum', 'Geothermal Fields'],
+      demographics: 'Famous volcanic and geothermal region with boiling hot springs. Historic jade trading center. WWII history - Chinese Expeditionary Force battles. Beautiful Heshun ancient town.',
+      seoContent: {
+        intro: 'Tengchong, land of volcanoes and hot springs, operates on China Standard Time (CST/UTC+8). This geothermal wonder of 700,000 features boiling hot springs, volcanic craters, the beautiful Heshun Ancient Town, and poignant WWII memorial sites.',
+        timezoneFacts: 'Same timezone as Beijing. Far western Yunnan near Myanmar.',
+        bestTimeToVisit: 'October-March for best weather. November for Ginkgo Village golden leaves.',
+        businessHours: 'Standard 9 AM to 6 PM. Rehai Hot Sea 8 AM to 6 PM.',
+        timeDifference: 'Tengchong is UTC+8 year-round. When noon in Tengchong: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Rehai has boiling geysers - eggs cooked in springs! Heshun is China\'s most beautiful town. Ginkgo Village golden in November. WWII cemetery moving.',
+        transportation: 'Tengchong Tuofeng Airport (TCZ). Bus from Baoshan.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'ruili', city: 'Ruili', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 24.01, lng: 97.85, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.2M', metroPopulation: '0.3M', phoneCode: '+86 692', language: 'Mandarin, Dai, Jingpo',
+      climate: 'Tropical monsoon with hot wet summers (24-33°C) and warm dry winters (12-25°C). Border tropical.',
+      attractions: ['Jiegao Border Gate', 'One Village Two Countries', 'Jade Market', 'Jiele Golden Pagoda', 'Dai Villages', 'Ruili River', 'Myanmar Border Markets', 'Nongdao', 'Denghannong', 'Jingpo Villages'],
+      demographics: 'Major China-Myanmar border crossing and trade hub. Largest jade trading center in Asia. Unique "One Village Two Countries" where village straddles border.',
+      seoContent: {
+        intro: 'Ruili, China\'s jade capital, operates on China Standard Time (CST/UTC+8). This border town of 200,000 is Asia\'s largest jade trading center, with the famous "One Village Two Countries" where houses straddle the China-Myanmar border.',
+        timezoneFacts: 'Same timezone as Beijing. At Myanmar border, tropical climate.',
+        bestTimeToVisit: 'November-March for pleasant weather. April for Water Festival.',
+        businessHours: 'Standard 9 AM to 6 PM. Jade markets open early.',
+        timeDifference: 'Ruili is UTC+8 year-round. When noon in Ruili: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Jade market fascinating but beware fakes - bring expert! "One Village Two Countries" unique photo op. Border crossing possible with permit.',
+        transportation: 'Near Mangshi Airport. Bus connections.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Dai Water Festival.'
+      }
+    }
+  },
+  { slug: 'jingdong', city: 'Jingdong', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 24.47, lng: 100.84, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.4M', metroPopulation: '0.4M', phoneCode: '+86 879', language: 'Mandarin, Yi',
+      climate: 'Subtropical highland with mild year-round (15-26°C). Mountain forest climate.',
+      attractions: ['Ailao Mountain', 'Wuliang Mountain', 'Western Black-Crowned Gibbon Reserve', 'Yi Villages', 'Ancient Tea Gardens', 'Jingdong Museum', 'Wen Temple', 'Mountain Trekking', 'Bird Watching Sites', 'Coffee Plantations'],
+      demographics: 'Gateway to Ailao and Wuliang Mountains. Home to critically endangered western black-crested gibbons. Remote Yi minority region.',
+      seoContent: {
+        intro: 'Jingdong, last refuge of the gibbons, operates on China Standard Time (CST/UTC+8). This remote mountain town of 400,000 protects critically endangered western black-crested gibbons in pristine Ailao and Wuliang mountain forests.',
+        timezoneFacts: 'Same timezone as Beijing. Central Yunnan mountains.',
+        bestTimeToVisit: 'October-April for gibbon watching. March-May for bird migration.',
+        businessHours: 'Standard 9 AM to 6 PM. Gibbon tours early morning.',
+        timeDifference: 'Jingdong is UTC+8 year-round. When noon in Jingdong: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Gibbon watching requires early morning trek with guides. Very off-beaten-path. Yi villages authentic. Bird watching excellent.',
+        transportation: 'No airport. Bus from Pu\'er or Kunming. Remote location.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'mojiang', city: 'Mojiang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 23.43, lng: 101.68, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.4M', metroPopulation: '0.4M', phoneCode: '+86 879', language: 'Mandarin, Hani',
+      climate: 'Subtropical with warm year-round (16-27°C). Tropic of Cancer climate.',
+      attractions: ['Tropic of Cancer Monument', 'Twin Festival', 'Hani Sun Temple', 'Mojiang Museum', 'Purple Rice Fields', 'Hani Villages', 'Bixi Ancient Town', 'Mountain Terraces', 'Ailao Mountain East', 'Coffee Plantations'],
+      demographics: 'Located exactly on the Tropic of Cancer. Famous for remarkably high twin birth rate (attributed to local well water). Hani ethnic culture.',
+      seoContent: {
+        intro: 'Mojiang, city of twins on the Tropic of Cancer, operates on China Standard Time (CST/UTC+8). This unique town of 400,000 sits exactly on the Tropic of Cancer and has an unusually high twin birth rate, celebrated in an annual Twin Festival.',
+        timezoneFacts: 'Same timezone as Beijing. Central Yunnan on Tropic of Cancer.',
+        bestTimeToVisit: 'May for Twin Festival. Year-round for Tropic of Cancer marker.',
+        businessHours: 'Standard 9 AM to 6 PM. Twin Festival in May.',
+        timeDifference: 'Mojiang is UTC+8 year-round. When noon in Mojiang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Twin Festival draws thousands of twins worldwide! Tropic of Cancer monument for photos. Local legend credits well water for twins.',
+        transportation: 'No airport. On highway between Kunming and Pu\'er.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Twin Festival (May).'
+      }
+    }
+  },
   { slug: 'dali', city: 'Dali', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 25.59, lng: 100.23, tier: 3, continent: 'asia',
     info: {
       currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.6M', phoneCode: '+86 872', language: 'Mandarin, Bai',
