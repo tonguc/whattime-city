@@ -13233,6 +13233,408 @@ export const cities: City[] = [
       }
     }
   },
+  
+  // China - New Cities Batch 2 (20 cities with full premium content)
+  { slug: 'dezhou', city: 'Dezhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 37.43, lng: 116.36, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.6M', metroPopulation: '5.8M', phoneCode: '+86 534', language: 'Mandarin',
+      climate: 'Humid continental with hot summers (27-32°C) and cold winters (-5 to 3°C). Four distinct seasons.',
+      attractions: ['Dezhou Grand Canal', 'Dongchang Lake', 'Suijiawan', 'Dezhou Museum', 'Ancient City Wall', 'Huanghe Scenic Area', 'Dong\'e Ejiao City', 'Lingxian Temple', 'Qingyun Mountain', 'Dezhou Solar Valley'],
+      demographics: 'Famous for Dezhou braised chicken, one of China\'s most celebrated poultry dishes. Major stop on Beijing-Shanghai rail line. Solar energy industry leader.',
+      seoContent: {
+        intro: 'Dezhou, home of China\'s famous braised chicken, operates on China Standard Time (CST/UTC+8). This city of 5.6 million on the Grand Canal is renowned for Dezhou Braised Chicken, a centuries-old delicacy, and has become a leader in solar energy manufacturing.',
+        timezoneFacts: 'Same timezone as Beijing. Northwestern Shandong, on Beijing-Shanghai corridor.',
+        bestTimeToVisit: 'April-May and September-October. Avoid extreme summer and winter.',
+        businessHours: 'Standard 9 AM to 6 PM. Famous chicken restaurants open early.',
+        timeDifference: 'Dezhou is UTC+8 year-round. When noon in Dezhou: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Must try authentic Dezhou Braised Chicken (德州扒鸡). Solar Valley showcases renewable energy. Grand Canal history sites.',
+        transportation: 'High-speed rail hub on Beijing-Shanghai line. No local airport - use Jinan.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'liaocheng', city: 'Liaocheng', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 36.45, lng: 115.97, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.9M', metroPopulation: '6.1M', phoneCode: '+86 635', language: 'Mandarin',
+      climate: 'Humid continental with hot summers (27-32°C) and cold winters (-4 to 4°C). Four seasons.',
+      attractions: ['Dongchang Lake', 'Guangyue Tower', 'Shanshan Guild Hall', 'Ancient City Wall', 'Iron Pagoda', 'Haiyuan Pavilion', 'Shandong University Museum', 'Linqing Pagoda', 'Grand Canal Sites', 'Wuyang Ancient Town'],
+      demographics: 'Known as "Water City of the North" for its lakes and canals. Historic Grand Canal trading post. Traditional crafts center.',
+      seoContent: {
+        intro: 'Liaocheng, the "Water City of the North," operates on China Standard Time (CST/UTC+8). This city of 5.9 million is surrounded by Dongchang Lake and crisscrossed by canals, earning its nickname as the Venice of northern China.',
+        timezoneFacts: 'Same timezone as Beijing. Western Shandong, Grand Canal heritage.',
+        bestTimeToVisit: 'April-May and September-October for lake scenery. Summer for lotus flowers.',
+        businessHours: 'Standard 9 AM to 6 PM. Lake cruises available.',
+        timeDifference: 'Liaocheng is UTC+8 year-round. When noon in Liaocheng: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Dongchang Lake is China\'s largest urban lake. Climb Guangyue Tower for views. Traditional donkey meat cuisine.',
+        transportation: 'High-speed rail to Jinan. No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'jiaozuo', city: 'Jiaozuo', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 35.22, lng: 113.22, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.5M', metroPopulation: '3.7M', phoneCode: '+86 391', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-32°C) and cold winters (-2 to 5°C). Four seasons.',
+      attractions: ['Yuntai Mountain', 'Qinglong Gorge', 'Hongshi Gorge', 'Yuntai Waterfall', 'Zhuyu Peak', 'Jiaozuo Shadow Puppetry', 'Chenjiagou (Tai Chi birthplace)', 'Qingtian River', 'Shenlong Gorge', 'Yuntaishan Geopark'],
+      demographics: 'Gateway to Yuntai Mountain UNESCO Geopark. Birthplace of Chen-style Tai Chi in Chenjiagou village. Former coal mining center turned tourism hub.',
+      seoContent: {
+        intro: 'Jiaozuo, gateway to Yuntai Mountain, operates on China Standard Time (CST/UTC+8). This city of 3.5 million is home to the spectacular Yuntai Mountain UNESCO Global Geopark and Chenjiagou, the birthplace of Tai Chi.',
+        timezoneFacts: 'Same timezone as Beijing. Northern Henan at foot of Taihang Mountains.',
+        bestTimeToVisit: 'April-May and September-November for Yuntai Mountain. Avoid summer crowds and winter cold.',
+        businessHours: 'Standard 9 AM to 6 PM. Yuntai Mountain 6 AM to 6:30 PM (summer).',
+        timeDifference: 'Jiaozuo is UTC+8 year-round. When noon in Jiaozuo: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Yuntai Mountain has Asia\'s highest waterfall. Visit Chenjiagou for authentic Tai Chi lessons. Try local Si Da Huai medicinal dishes.',
+        transportation: 'High-speed rail to Zhengzhou. No local airport - use Zhengzhou.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'sanmenxia', city: 'Sanmenxia', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 34.77, lng: 111.20, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.3M', metroPopulation: '2.4M', phoneCode: '+86 398', language: 'Mandarin',
+      climate: 'Humid continental with hot summers (26-32°C) and cold winters (-3 to 5°C). Four seasons.',
+      attractions: ['Sanmenxia Dam', 'Swan Lake', 'Hangu Pass', 'Baolun Temple Pagoda', 'Diaoyu Terrace', 'Yellow River Scenic Area', 'Sanmenxia Museum', 'Xibaipo', 'Mianchi Ancient Town', 'Dayu Mythology Park'],
+      demographics: 'City where the Yellow River narrows through three gorges. Famous winter swan migration destination. Site of historic Hangu Pass.',
+      seoContent: {
+        intro: 'Sanmenxia, city of swans and gorges, operates on China Standard Time (CST/UTC+8). This city of 2.3 million is named for the three gorges of the Yellow River and has become famous for hosting thousands of migrating swans each winter.',
+        timezoneFacts: 'Same timezone as Beijing. Western Henan at junction with Shaanxi and Shanxi.',
+        bestTimeToVisit: 'November-February for swan watching. Spring and autumn for general tourism.',
+        businessHours: 'Standard 9 AM to 6 PM. Swan Lake parks open dawn to dusk in winter.',
+        timeDifference: 'Sanmenxia is UTC+8 year-round. When noon in Sanmenxia: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Swan Lake hosts 10,000+ swans November-March - spectacular! Hangu Pass is where Laozi wrote Tao Te Ching. Yellow River dam tours available.',
+        transportation: 'Sanmenxia Railway Station. Small airport with limited flights.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'pingdingshan', city: 'Pingdingshan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 33.74, lng: 113.19, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '4.9M', metroPopulation: '5.0M', phoneCode: '+86 375', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-32°C) and cold winters (-1 to 6°C). Four seasons.',
+      attractions: ['Zhongyue Temple', 'Shimantan Reservoir', 'Yaowangshan', 'Yaoshan Buddha', 'Baofeng Lake', 'Xiangshan Temple', 'Pingdingshan Museum', 'Ruzhou Ru Kiln Site', 'Jialu River', 'Coal Mine Museum'],
+      demographics: 'Major coal mining and industrial city. Home to Ru Kiln, one of China\'s five great Song dynasty kilns producing prized celadon.',
+      seoContent: {
+        intro: 'Pingdingshan, city of coal and celadon, operates on China Standard Time (CST/UTC+8). This city of 4.9 million was once China\'s major coal producer and is home to the legendary Ru Kiln, whose Song dynasty celadon is among the world\'s most valuable ceramics.',
+        timezoneFacts: 'Same timezone as Beijing. Central Henan, industrial heartland.',
+        bestTimeToVisit: 'April-May and September-October. Spring for mountain flowers.',
+        businessHours: 'Standard 9 AM to 6 PM. Ru Kiln museum 9 AM to 5 PM.',
+        timeDifference: 'Pingdingshan is UTC+8 year-round. When noon in Pingdingshan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Ru Kiln celadon is legendary - visit museum and workshops in Ruzhou. Giant Buddha at Yaoshan. Coal mining heritage sites.',
+        transportation: 'High-speed rail connections. No local airport - use Zhengzhou.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'zhoukou', city: 'Zhoukou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 33.63, lng: 114.65, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '8.7M', metroPopulation: '9.0M', phoneCode: '+86 394', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-33°C) and cold winters (-1 to 6°C). Four seasons.',
+      attractions: ['Taihao Mausoleum', 'Laozi Hometown', 'Guandimu', 'Shahe River Park', 'Zhoukou Museum', 'Huaiyang Ancient City', 'Nvwa Palace', 'Luyi Laozi Temple', 'Shenqiu Ancient Town', 'Fuxi Cultural Square'],
+      demographics: 'Birthplace of Chinese civilization mythology - Fuxi, Nvwa, and Shennong legendary figures. Laozi\'s hometown in Luyi County. Major agricultural center.',
+      seoContent: {
+        intro: 'Zhoukou, cradle of Chinese civilization, operates on China Standard Time (CST/UTC+8). This city of 8.7 million is the legendary birthplace of Fuxi (creator of I Ching) and Laozi (founder of Taoism), making it sacred to Chinese culture.',
+        timezoneFacts: 'Same timezone as Beijing. Eastern Henan, heart of the Central Plains.',
+        bestTimeToVisit: 'March-May for temple festivals. February for Taihao Festival (Fuxi worship).',
+        businessHours: 'Standard 9 AM to 6 PM. Temples open 8 AM to 6 PM.',
+        timeDifference: 'Zhoukou is UTC+8 year-round. When noon in Zhoukou: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Taihao Mausoleum Festival in February draws millions. Luyi County is Laozi\'s birthplace. Local cuisine features Huaiyang specialties.',
+        transportation: 'Zhoukou Xihua Airport. High-speed rail expanding.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Taihao Festival (Feb).'
+      }
+    }
+  },
+  { slug: 'shangqiu', city: 'Shangqiu', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 34.41, lng: 115.65, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '7.3M', metroPopulation: '7.6M', phoneCode: '+86 370', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-33°C) and cold winters (-2 to 5°C). Four seasons.',
+      attractions: ['Shangqiu Ancient City', 'Sui Dynasty Canal Site', 'Mausoleum of Emperor Gaozu of Tang', 'Yingtian Academy', 'Xueyuan Lake', 'Huangpi Ruins', 'Zhuangzi Temple', 'Baita Temple', 'Mangdang Mountain', 'Fire God Temple'],
+      demographics: 'One of China\'s oldest continuously inhabited cities. Origin of the Shang Dynasty. Birthplace of philosopher Zhuangzi.',
+      seoContent: {
+        intro: 'Shangqiu, birthplace of the Shang Dynasty, operates on China Standard Time (CST/UTC+8). This ancient city of 7.3 million gave its name to the Shang Dynasty and is the birthplace of Zhuangzi, one of Taoism\'s greatest philosophers.',
+        timezoneFacts: 'Same timezone as Beijing. Eastern Henan, at junction of four provinces.',
+        bestTimeToVisit: 'April-May and September-October for pleasant weather.',
+        businessHours: 'Standard 9 AM to 6 PM. Ancient city sites 8 AM to 6 PM.',
+        timeDifference: 'Shangqiu is UTC+8 year-round. When noon in Shangqiu: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Ancient walled city well-preserved. Yingtian Academy was Song dynasty\'s top school. Zhuangzi Temple in Minquan County.',
+        transportation: 'Major high-speed rail junction. Shangqiu Airport expanding.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'puyang', city: 'Puyang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 35.76, lng: 114.98, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.6M', metroPopulation: '3.8M', phoneCode: '+86 393', language: 'Mandarin',
+      climate: 'Humid continental with hot summers (27-32°C) and cold winters (-4 to 4°C). Four seasons.',
+      attractions: ['Dragon Bone Mosaic Site', 'Cang Jie Temple', 'Puyang Museum', 'Zhongyuan Oilfield', 'Yellow River Wetland', 'Dipi Mountain', 'Zhang Clan Ancestral Hall', 'Qingfeng Ancient City', 'Nanle Ancient Town', 'Puyang Acrobatics Theatre'],
+      demographics: 'Site of the world\'s oldest dragon image (6,400 years old). Birthplace of legendary Cang Jie who invented Chinese characters. Major oil production center.',
+      seoContent: {
+        intro: 'Puyang, city of the first dragon, operates on China Standard Time (CST/UTC+8). This city of 3.6 million is home to the world\'s oldest dragon mosaic (6,400 years) and celebrates Cang Jie, the legendary inventor of Chinese characters.',
+        timezoneFacts: 'Same timezone as Beijing. Northeastern Henan, Yellow River region.',
+        bestTimeToVisit: 'April-May and September-October. Dragon Festival celebrations in spring.',
+        businessHours: 'Standard 9 AM to 6 PM. Museums 9 AM to 5 PM.',
+        timeDifference: 'Puyang is UTC+8 year-round. When noon in Puyang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'See the 6,400-year-old dragon mosaic at museum. Cang Jie Temple honors writing\'s inventor. Famous for acrobatics performances.',
+        transportation: 'High-speed rail to Zhengzhou. No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'hebi', city: 'Hebi', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 35.75, lng: 114.30, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '1.6M', metroPopulation: '1.7M', phoneCode: '+86 392', language: 'Mandarin',
+      climate: 'Humid continental with hot summers (27-32°C) and cold winters (-4 to 4°C). Four seasons.',
+      attractions: ['Yunmeng Mountain', 'Qibin District Ancient Town', 'Qi River Scenic Area', 'Dapi Mountain', 'Xunxian Ancient Town', 'Hebi Cherry Blossom Park', 'Coal Mine Heritage', 'Sankangcun', 'Qi State Ruins', 'Hebi Museum'],
+      demographics: 'Ancient heartland of the State of Qi. One of China\'s cleanest cities - pioneering model city. Former coal mining turned eco-city.',
+      seoContent: {
+        intro: 'Hebi, China\'s model eco-city, operates on China Standard Time (CST/UTC+8). This compact city of 1.6 million has transformed from coal mining to become one of China\'s cleanest and most livable cities, winning national awards for urban planning.',
+        timezoneFacts: 'Same timezone as Beijing. Northern Henan, compact modern city.',
+        bestTimeToVisit: 'March-May for cherry blossoms. September-October for autumn colors.',
+        businessHours: 'Standard 9 AM to 6 PM. Parks open dawn to dusk.',
+        timeDifference: 'Hebi is UTC+8 year-round. When noon in Hebi: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Cherry Blossom Festival in March-April is spectacular. Yunmeng Mountain for hiking. Ancient Qi State history at Xunxian.',
+        transportation: 'High-speed rail to Zhengzhou (1 hour). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'luohe', city: 'Luohe', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 33.57, lng: 114.02, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.8M', metroPopulation: '2.9M', phoneCode: '+86 395', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-33°C) and cold winters (-1 to 6°C). Four seasons.',
+      attractions: ['Jiahu Archaeological Site', 'Sha River Park', 'Luohe Museum', 'Shuanghui Industrial Tourism', 'Xuchang Memorial Hall', 'Shaoling Temple', 'Luohe Riverside', 'Kaishan Temple', 'Leili Statue', 'Ancient Salt Well'],
+      demographics: 'Home to the 9,000-year-old Jiahu site with world\'s oldest wine and flutes. Headquarters of Shuanghui, China\'s largest meat processor.',
+      seoContent: {
+        intro: 'Luohe, cradle of ancient civilization, operates on China Standard Time (CST/UTC+8). This city of 2.8 million is home to Jiahu, a 9,000-year-old site that yielded the world\'s oldest playable musical instruments and evidence of wine production.',
+        timezoneFacts: 'Same timezone as Beijing. Central Henan, on Sha and Li rivers.',
+        bestTimeToVisit: 'April-May and September-October for pleasant weather.',
+        businessHours: 'Standard 9 AM to 6 PM. Archaeological museum 9 AM to 5 PM.',
+        timeDifference: 'Luohe is UTC+8 year-round. When noon in Luohe: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Jiahu site has 9,000-year-old artifacts including bone flutes. Shuanghui factory tours available. River walks pleasant.',
+        transportation: 'High-speed rail hub. No local airport - use Zhengzhou.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'xuchang', city: 'Xuchang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 34.04, lng: 113.85, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '4.4M', metroPopulation: '4.6M', phoneCode: '+86 374', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-33°C) and cold winters (-1 to 6°C). Four seasons.',
+      attractions: ['Cao Cao Memorial Hall', 'Ba Ling Bridge', 'Spring Autumn Tower', 'Xuchang Museum', 'Cao Cao\'s Tomb (Gaoling)', 'Yuzhou Jun Porcelain Kiln', 'Flower Market', 'Cao Ren Temple', 'West Lake Park', 'Pei County Ruins'],
+      demographics: 'Three Kingdoms capital where Cao Cao hosted Emperor Xian. World\'s largest wig production center. Famous for Jun porcelain.',
+      seoContent: {
+        intro: 'Xuchang, Cao Cao\'s Three Kingdoms capital, operates on China Standard Time (CST/UTC+8). This city of 4.4 million was the power base of warlord Cao Cao and is now famous for Jun porcelain and producing 70% of the world\'s wigs.',
+        timezoneFacts: 'Same timezone as Beijing. Central Henan, rich Three Kingdoms history.',
+        bestTimeToVisit: 'April-May for spring flowers. September-October for Jun porcelain festival.',
+        businessHours: 'Standard 9 AM to 6 PM. Three Kingdoms sites 8:30 AM to 5:30 PM.',
+        timeDifference: 'Xuchang is UTC+8 year-round. When noon in Xuchang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Three Kingdoms history everywhere - Cao Cao sites essential. Visit Yuzhou for Jun porcelain kilns. World\'s wig capital!',
+        transportation: 'High-speed rail to Zhengzhou (20 min). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'zhumadian', city: 'Zhumadian', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 32.98, lng: 114.02, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '7.0M', metroPopulation: '7.2M', phoneCode: '+86 396', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-33°C) and cold winters (0-6°C). Four seasons, transitional climate.',
+      attractions: ['Chaya Mountain', 'Nanhai Temple', 'Suiping Liu Ji Ancestral Temple', 'Queshan Hot Springs', 'Zhumadian Museum', 'Tianzhong Mountain', 'Tongling Mountain', 'Ru\'nan Ancient City', 'Yicheng Ancient Town', 'Laojun Mountain'],
+      demographics: 'Heart of the Central Plains, known as Tianzhong (Center of Heaven). Agricultural heartland. Birthplace of Pan Gu creation mythology.',
+      seoContent: {
+        intro: 'Zhumadian, Center of Heaven, operates on China Standard Time (CST/UTC+8). This city of 7 million is named Tianzhong (天中) meaning "Center of Heaven" - ancient Chinese believed this was the exact center of the world under heaven.',
+        timezoneFacts: 'Same timezone as Beijing. Southern Henan, geographic center of ancient China.',
+        bestTimeToVisit: 'April-May and September-October. Spring for mountain flowers.',
+        businessHours: 'Standard 9 AM to 6 PM. Temples open 8 AM to 6 PM.',
+        timeDifference: 'Zhumadian is UTC+8 year-round. When noon in Zhumadian: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Chaya Mountain for hiking and temples. Queshan has ancient hot springs. "Tianzhong" marker at geographic center.',
+        transportation: 'High-speed rail to Wuhan and Zhengzhou. No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'jiyuan', city: 'Jiyuan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 35.07, lng: 112.60, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.73M', metroPopulation: '0.75M', phoneCode: '+86 391', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (26-32°C) and cold winters (-2 to 5°C). Four seasons.',
+      attractions: ['Wangwu Mountain', 'Jidukou Reservoir', 'Yellow River Sanmenxia Dam', 'Yugong\'s Hometown', 'Wangwu Temple', 'Xiaolang Bottom', 'Jiyuan Museum', 'Dongyuan Ancient Village', 'Baiquan Lake', 'Taihang Grand Canyon (nearby)'],
+      demographics: 'Hometown of Yugong, the legendary old man who moved mountains. At the source of the Ji River (one of China\'s four great rivers). Sacred Wangwu Mountain.',
+      seoContent: {
+        intro: 'Jiyuan, home of the man who moved mountains, operates on China Standard Time (CST/UTC+8). This compact city of 730,000 is the legendary hometown of Yugong, whose fable about persistence in moving mountains is known to every Chinese child.',
+        timezoneFacts: 'Same timezone as Beijing. Northwestern Henan, Taihang Mountain region.',
+        bestTimeToVisit: 'April-May and September-October for mountain hiking. Autumn colors spectacular.',
+        businessHours: 'Standard 9 AM to 6 PM. Wangwu Mountain 7 AM to 6 PM.',
+        timeDifference: 'Jiyuan is UTC+8 year-round. When noon in Jiyuan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Wangwu Mountain is Taoist holy site - Tiantan Peak essential. Yugong story immortalized here. Xiaolang Bottom for Yellow River views.',
+        transportation: 'Train connections available. No local airport - use Zhengzhou.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'anyang', city: 'Anyang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 36.10, lng: 114.39, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.5M', metroPopulation: '5.7M', phoneCode: '+86 372', language: 'Mandarin',
+      climate: 'Humid continental with hot summers (27-32°C) and cold winters (-4 to 4°C). Four seasons.',
+      attractions: ['Yin Ruins (UNESCO)', 'Chinese Writing Museum', 'Red Flag Canal', 'Taihang Grand Canyon', 'Yue Fei Temple', 'Youli City', 'Anyang Museum', 'Linzhou Grand Canyon', 'Wanfo Gully', 'Cao Cao Mausoleum'],
+      demographics: 'Last capital of Shang Dynasty (1300-1046 BC). Birthplace of Chinese writing - oracle bone inscriptions found here. Red Flag Canal engineering marvel.',
+      seoContent: {
+        intro: 'Anyang, birthplace of Chinese writing, operates on China Standard Time (CST/UTC+8). This city of 5.5 million is home to the UNESCO-listed Yin Ruins, the last Shang Dynasty capital where oracle bone scripts - the origin of Chinese characters - were discovered.',
+        timezoneFacts: 'Same timezone as Beijing. Northern Henan, ancient cultural heartland.',
+        bestTimeToVisit: 'April-May and September-October. Summer for Taihang Grand Canyon.',
+        businessHours: 'Standard 9 AM to 6 PM. Yin Ruins 8 AM to 6 PM.',
+        timeDifference: 'Anyang is UTC+8 year-round. When noon in Anyang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Yin Ruins UNESCO site is essential - see oracle bones. Chinese Writing Museum is world-class. Red Flag Canal shows 1960s engineering spirit.',
+        transportation: 'High-speed rail to Beijing and Zhengzhou. Anyang Airport expanding.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'ezhou', city: 'Ezhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.39, lng: 114.89, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '1.1M', metroPopulation: '1.2M', phoneCode: '+86 711', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (28-34°C) and cold winters (2-7°C). Rainy spring.',
+      attractions: ['Xishansi Temple', 'Guanyin Pavilion', 'Ezhou Museum', 'Liangzi Lake', 'Lotus Island', 'Ancient City Wall', 'Fan Tower', 'Wuchang Fish Origin', 'Ezhou Wetland', 'Guishan Temple'],
+      demographics: 'Ancient Wu Kingdom capital. Birthplace of the famous Wuchang fish. Now home to Ezhou Huahu Airport, Asia\'s largest cargo hub.',
+      seoContent: {
+        intro: 'Ezhou, home of Wuchang fish, operates on China Standard Time (CST/UTC+8). This compact city of 1.1 million is the origin of the famed Wuchang fish and now hosts Ezhou Huahu Airport, being developed as Asia\'s largest cargo aviation hub.',
+        timezoneFacts: 'Same timezone as Beijing. Eastern Hubei, on Yangtze River opposite Wuhan.',
+        bestTimeToVisit: 'March-May and September-November. Summer hot and humid.',
+        businessHours: 'Standard 9 AM to 6 PM. Lake cruises available.',
+        timeDifference: 'Ezhou is UTC+8 year-round. When noon in Ezhou: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Try authentic Wuchang fish (武昌鱼) - Mao Zedong\'s favorite. Liangzi Lake is scenic. New cargo airport transforming the city.',
+        transportation: 'Ezhou Huahu Airport (for cargo, expanding passenger). Metro to Wuhan. High-speed rail.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'xiaogan', city: 'Xiaogan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.92, lng: 113.92, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '4.9M', metroPopulation: '5.1M', phoneCode: '+86 712', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (28-34°C) and cold winters (1-7°C). Rainy spring.',
+      attractions: ['Dong Yong Filial Piety Park', 'Shuanfeng Mountain', 'Xiaogan Museum', 'Tianxian Ancient Town', 'Maling Mountain', 'Hanchuan Lotus Lake', 'Xiaogan Confucian Temple', 'Yingcheng Hot Springs', 'Dawu Temple', 'Rice Culture Museum'],
+      demographics: 'Named for the legend of Dong Yong, exemplar of filial piety (孝感 = moved by filial piety). Agricultural center famous for sesame candy and rice wine.',
+      seoContent: {
+        intro: 'Xiaogan, city of filial piety, operates on China Standard Time (CST/UTC+8). This city of 4.9 million is named after the legend of Dong Yong, whose filial devotion moved the heavens - 孝感 literally means "moved by filial piety."',
+        timezoneFacts: 'Same timezone as Beijing. Central Hubei, north of Wuhan.',
+        bestTimeToVisit: 'March-May and September-November. Spring for lotus and summer for hot springs.',
+        businessHours: 'Standard 9 AM to 6 PM. Hot springs evening hours.',
+        timeDifference: 'Xiaogan is UTC+8 year-round. When noon in Xiaogan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Legend of Dong Yong celebrated at theme park. Try Xiaogan sesame candy (孝感麻糖). Yingcheng hot springs nearby.',
+        transportation: 'High-speed rail to Wuhan (20 min). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming (filial piety theme), Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'huanggang', city: 'Huanggang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.45, lng: 114.87, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '6.3M', metroPopulation: '6.5M', phoneCode: '+86 713', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (28-34°C) and cold winters (1-7°C). Rainy spring.',
+      attractions: ['Chibi Ancient Battlefield', 'Wuzu Temple', 'Qiyun Mountain', 'Dongpo Red Cliff', 'Li Shizhen Memorial', 'Huanggang Museum', 'Luotian Tianma Mountain', 'Yingshan Hot Springs', 'Dabie Mountain', 'Huangmei Opera Town'],
+      demographics: 'Famous for Huanggang High School, China\'s top academic institution. Birthplace of Li Shizhen, author of Comperta Materia Medica. Chibi (Red Cliffs) battle site.',
+      seoContent: {
+        intro: 'Huanggang, city of scholars, operates on China Standard Time (CST/UTC+8). This city of 6.3 million is famous for Huanggang High School\'s legendary academic results and as birthplace of Li Shizhen, whose 1578 medical encyclopedia remains influential.',
+        timezoneFacts: 'Same timezone as Beijing. Eastern Hubei, Dabie Mountain region.',
+        bestTimeToVisit: 'March-May and September-November. Autumn in Dabie Mountains spectacular.',
+        businessHours: 'Standard 9 AM to 6 PM. Historical sites 8:30 AM to 5:30 PM.',
+        timeDifference: 'Huanggang is UTC+8 year-round. When noon in Huanggang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Li Shizhen Memorial in Qichun essential for TCM enthusiasts. Dongpo Red Cliff for Su Shi poetry. Huangmei opera originated here.',
+        transportation: 'High-speed rail to Wuhan. No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'suizhou', city: 'Suizhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 31.69, lng: 113.38, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.2M', metroPopulation: '2.3M', phoneCode: '+86 722', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-33°C) and mild winters (1-7°C). Four seasons.',
+      attractions: ['Zenghouyi Tomb', 'Shennong Altar', 'Dahongshan Scenic Area', 'Suizhou Museum', 'Yandi Shennong Hometown', 'Leizu Hometown', 'Qianhe Ancient Town', 'Tongbai Mountain', 'Suixian Ancient City', 'Bianzhong Concert Hall'],
+      demographics: 'Birthplace of Shennong (Divine Farmer) and Leizu (silk inventor). Tomb of Marquis Yi yielded the 2,400-year-old bianzhong (bronze bells).',
+      seoContent: {
+        intro: 'Suizhou, birthplace of Shennong, operates on China Standard Time (CST/UTC+8). This city of 2.2 million is the legendary hometown of Shennong who taught agriculture and medicine, and home to the spectacular 2,400-year-old bianzhong bronze bells.',
+        timezoneFacts: 'Same timezone as Beijing. Northern Hubei, cultural heartland.',
+        bestTimeToVisit: 'April for Shennong Festival. September-October for pleasant weather.',
+        businessHours: 'Standard 9 AM to 6 PM. Shennong Altar 8 AM to 6 PM.',
+        timeDifference: 'Suizhou is UTC+8 year-round. When noon in Suizhou: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Bianzhong bells at Hubei Museum are replicas - originals in Wuhan. Shennong Festival in April draws millions. Leizu invented silk here.',
+        transportation: 'High-speed rail to Wuhan (40 min). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Shennong Festival (Apr).'
+      }
+    }
+  },
+  { slug: 'shiyan', city: 'Shiyan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 32.65, lng: 110.78, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.2M', metroPopulation: '3.5M', phoneCode: '+86 719', language: 'Mandarin',
+      climate: 'Humid subtropical with warm summers (24-30°C) and cold winters (-1 to 6°C). Mountain climate.',
+      attractions: ['Wudang Mountain (UNESCO)', 'Danjiangkou Reservoir', 'Shennongjia (nearby)', 'Purple Cloud Palace', 'Nanyan Palace', 'Golden Hall', 'Shiyan Museum', 'Dongfeng Motor City', 'Yun County Dinosaur Museum', 'Fang County Wild Man Area'],
+      demographics: 'Gateway to sacred Wudang Mountain, birthplace of Tai Chi and Taoist martial arts. Home to Dongfeng Motor, major automaker. Water source for South-North Water Transfer.',
+      seoContent: {
+        intro: 'Shiyan, gateway to Wudang Mountain, operates on China Standard Time (CST/UTC+8). This city of 3.2 million guards the UNESCO-listed Wudang Mountain, the sacred Taoist site where Zhang Sanfeng created Tai Chi, and hosts Dongfeng Motor headquarters.',
+        timezoneFacts: 'Same timezone as Beijing. Northwestern Hubei, mountainous region.',
+        bestTimeToVisit: 'April-May and September-October for Wudang. Avoid summer heat on mountain.',
+        businessHours: 'Standard 9 AM to 6 PM. Wudang Mountain 7 AM to 5 PM.',
+        timeDifference: 'Shiyan is UTC+8 year-round. When noon in Shiyan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Wudang Mountain is Tai Chi birthplace - martial arts schools available. Golden Hall at summit is spectacular. Dongfeng factory tours possible.',
+        transportation: 'Wudangshan Airport (WDS). High-speed rail to Wuhan.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'enshi', city: 'Enshi', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.27, lng: 109.49, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.85M', metroPopulation: '4.0M', phoneCode: '+86 718', language: 'Mandarin, Tujia',
+      climate: 'Humid subtropical with cool summers (22-28°C) and mild winters (2-8°C). Mountain climate, misty.',
+      attractions: ['Enshi Grand Canyon', 'Tenglong Cave', 'Mufu Grand Canyon', 'Tujia Girl City', 'Enshi Tusi City', 'Qingjiang Gallery', 'Pingshan Canyon', 'Shibanling', 'Xianfeng Ancient Town', 'Selenium Tea Gardens'],
+      demographics: 'Capital of Enshi Tujia and Miao Autonomous Prefecture. Stunning karst canyons. Known as "World Selenium Capital" for selenium-rich soil producing health foods.',
+      seoContent: {
+        intro: 'Enshi, the "Chinese Grand Canyon," operates on China Standard Time (CST/UTC+8). This mountainous city of 850,000 is home to spectacular karst canyons rivaling the Grand Canyon, unique Tujia minority culture, and the world\'s richest selenium-containing soil.',
+        timezoneFacts: 'Same timezone as Beijing. Southwestern Hubei, mountainous autonomous region.',
+        bestTimeToVisit: 'April-October for canyon visits. Summer cool escape. Autumn colors spectacular.',
+        businessHours: 'Standard 9 AM to 6 PM. Canyon tours 7:30 AM to 4 PM.',
+        timeDifference: 'Enshi is UTC+8 year-round. When noon in Enshi: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Enshi Grand Canyon is stunning - glass walkway thrilling. Try selenium-rich foods (tea, rice). Tujia culture shows available. Cool summer destination.',
+        transportation: 'Enshi Xujiaping Airport (ENH). High-speed rail to Wuhan and Chongqing.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Tujia festivals.'
+      }
+    }
+  },
   { slug: 'dali', city: 'Dali', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 25.59, lng: 100.23, tier: 3, continent: 'asia',
     info: {
       currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.6M', phoneCode: '+86 872', language: 'Mandarin, Bai',
