@@ -6869,6 +6869,409 @@ export const cities: City[] = [
       }
     }
   },
+  
+  // India - New Cities Batch 2 (20 cities with full premium content)
+  { slug: 'darjeeling', city: 'Darjeeling', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.04, lng: 88.26, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.12M', metroPopulation: '0.15M', phoneCode: '+91 354', language: 'Nepali, Bengali, Hindi, English',
+      climate: 'Subtropical highland with cool summers (12-18°C) and cold winters (2-10°C). Heavy monsoon June-September. Mist common.',
+      attractions: ['Tiger Hill Sunrise', 'Darjeeling Himalayan Railway', 'Tea Gardens', 'Batasia Loop', 'Peace Pagoda', 'Himalayan Mountaineering Institute', 'Padmaja Naidu Zoo', 'Rock Garden', 'Observatory Hill', 'Happy Valley Tea Estate'],
+      demographics: 'Queen of the Hills. World-famous for Darjeeling tea. UNESCO toy train. Views of Kanchenjunga, world\'s third-highest peak.',
+      seoContent: {
+        intro: 'Darjeeling, Queen of the Hills, operates on India Standard Time (IST/UTC+5:30). This legendary hill station of 120,000 is famous worldwide for its exquisite tea, the UNESCO toy train, and stunning sunrise views of Kanchenjunga, the world\'s third-highest peak.',
+        timezoneFacts: 'Same timezone as all of India. Far eastern location means early sunrise/sunset compared to western India.',
+        bestTimeToVisit: 'March-May and October-November for clear Kanchenjunga views. Avoid monsoon (June-September). Winter cold but clear.',
+        businessHours: 'Tea gardens tours 8 AM to 4 PM. Toy train various timings. Tiger Hill sunrise 4 AM departure.',
+        timeDifference: 'Darjeeling is UTC+5:30 year-round. When noon in Darjeeling: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Tiger Hill sunrise is magical when clear - book jeep night before. Toy train Darjeeling-Ghum section most scenic. Buy first-flush tea direct from estates.',
+        transportation: 'Nearest airport Bagdogra (IXB) 67km. New Jalpaiguri station (NJP) 62km. Toy train from NJP (7-8 hours) or jeep (3 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Durga Puja (huge!), Diwali, Losar (Tibetan New Year).'
+      }
+    }
+  },
+  { slug: 'gangtok', city: 'Gangtok', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.33, lng: 88.62, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.1M', metroPopulation: '0.15M', phoneCode: '+91 3592', language: 'Nepali, Sikkimese, English, Hindi',
+      climate: 'Subtropical highland with cool summers (15-22°C) and cold winters (4-13°C). Heavy monsoon May-September.',
+      attractions: ['MG Marg', 'Rumtek Monastery', 'Tsomgo Lake', 'Nathula Pass', 'Enchey Monastery', 'Hanuman Tok', 'Ganesh Tok', 'Do Drul Chorten', 'Namgyal Institute', 'Flower Exhibition'],
+      demographics: 'Capital of Sikkim state. Clean, green mountain city. Buddhist monasteries. Gateway to Nathula Pass (India-China border).',
+      seoContent: {
+        intro: 'Gangtok, capital of Sikkim, operates on India Standard Time (IST/UTC+5:30). This pristine hill capital of 100,000 is one of India\'s cleanest cities, offering Buddhist monasteries, the stunning Tsomgo Lake, and the historic Nathula Pass on the India-China border.',
+        timezoneFacts: 'Same timezone as all of India. Eastern Himalayan location.',
+        bestTimeToVisit: 'March-May and October-December for clear views. Monsoon (June-September) heavy but rhododendrons bloom. Nathula closed in winter.',
+        businessHours: 'MG Marg shops 9 AM to 8 PM. Monasteries 7 AM to 4 PM. Nathula requires permits, Wednesday/Thursday closed.',
+        timeDifference: 'Gangtok is UTC+5:30 year-round. When noon in Gangtok: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Nathula Pass permit (Indians only) needs 2 days advance booking. Rumtek Monastery is spectacular. MG Marg pedestrian-only evening. Try momos everywhere!',
+        transportation: 'Nearest airport Bagdogra (IXB) 124km. Pakyong Airport (PYG) 31km (limited flights). NJP station 117km. Shared jeeps common.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar, Saga Dawa, Pang Lhabsol, Diwali.'
+      }
+    }
+  },
+  { slug: 'shillong', city: 'Shillong', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.57, lng: 91.88, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.35M', metroPopulation: '0.4M', phoneCode: '+91 364', language: 'Khasi, English, Hindi',
+      climate: 'Subtropical highland with cool summers (15-24°C) and cold winters (4-16°C). Heavy rainfall - one of wettest places on Earth.',
+      attractions: ['Ward\'s Lake', 'Shillong Peak', 'Elephant Falls', 'Don Bosco Museum', 'Police Bazaar', 'Lady Hydari Park', 'Cathedral of Mary', 'Golf Course', 'Umiam Lake', 'Living Root Bridges (nearby)'],
+      demographics: 'Capital of Meghalaya, "Scotland of the East". Rock music capital of India. Matrilineal Khasi society.',
+      seoContent: {
+        intro: 'Shillong, Scotland of the East, operates on India Standard Time (IST/UTC+5:30). This charming hill capital of 350,000 is the rock music capital of India, set in misty Khasi Hills with colonial architecture and the fascinating matrilineal Khasi culture.',
+        timezoneFacts: 'Same timezone as all of India despite being far east. Sunrise/sunset significantly earlier than western India.',
+        bestTimeToVisit: 'October-May for pleasant weather. March-April for spring flowers. Monsoon (June-September) extremely wet.',
+        businessHours: 'Police Bazaar shops 9 AM to 8 PM. Cafes until 9 PM. Live music venues evening.',
+        timeDifference: 'Shillong is UTC+5:30 year-round. When noon in Shillong: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Rock music scene thriving - check local gigs. Living Root Bridges in Cherrapunji day trip. Try Khasi cuisine - jadoh and tungrymbai. Carry umbrella always!',
+        transportation: 'Shillong Airport (SHL) 30km (limited). Guwahati Airport (GAU) 100km. Trains to Guwahati then taxi/bus.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Nongkrem Dance, Shad Suk Mynsiem, Christmas (big Khasi Christian population).'
+      }
+    }
+  },
+  { slug: 'cherrapunji', city: 'Cherrapunji', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.30, lng: 91.70, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.015M', phoneCode: '+91 364', language: 'Khasi, English, Hindi',
+      climate: 'One of wettest places on Earth. Cool year-round (10-20°C). Monsoon (June-September) brings extreme rainfall - 12,000mm annually.',
+      attractions: ['Living Root Bridges', 'Nohkalikai Falls', 'Seven Sisters Falls', 'Mawsmai Cave', 'Double Decker Root Bridge', 'Eco Park', 'Thangkharang Park', 'Ramakrishna Mission', 'Mawsynram', 'Rainbow Falls'],
+      demographics: 'One of wettest places on Earth. UNESCO-nominated Living Root Bridges. Khasi tribe engineering marvel grown over centuries.',
+      seoContent: {
+        intro: 'Cherrapunji (Sohra), one of the wettest places on Earth, operates on India Standard Time (IST/UTC+5:30). This misty town of 10,000 receives up to 12,000mm of rain annually and is home to the UNESCO-nominated Living Root Bridges, grown by Khasi tribes over centuries.',
+        timezoneFacts: 'Same timezone as all of India. Extreme eastern location - among first places to see sunrise in India.',
+        bestTimeToVisit: 'October-May for trekking to root bridges. Monsoon spectacular but trails slippery. November-February clearest.',
+        businessHours: 'Eco Park 8:30 AM to 5 PM. Root bridge treks best started early morning.',
+        timeDifference: 'Cherrapunji is UTC+5:30 year-round. When noon in Cherrapunji: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Double Decker Root Bridge requires 3,500+ steps - be fit! Hire local guides. Waterproof everything. Nohkalikai Falls best after monsoon.',
+        transportation: 'From Shillong 54km (2 hours). No airport or railway. Taxis and shared vehicles from Shillong.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited medical facilities - Shillong better.',
+        publicHolidays: 'Same as Meghalaya state holidays. Limited impact in small town.'
+      }
+    }
+  },
+  { slug: 'kaziranga', city: 'Kaziranga', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.58, lng: 93.17, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.05M', phoneCode: '+91 3776', language: 'Assamese, Hindi, English',
+      climate: 'Humid subtropical with hot summers (25-37°C) and cool winters (10-25°C). Monsoon June-September causes flooding - park closes.',
+      attractions: ['Kaziranga National Park', 'One-Horned Rhino Safari', 'Elephant Safari', 'Jeep Safari', 'Orchid Park', 'Kakochang Waterfall', 'Panbari Reserve Forest', 'Tea Estates', 'Hollongapar Gibbon Sanctuary', 'Bird Watching'],
+      demographics: 'UNESCO World Heritage Site. Home to two-thirds of world\'s one-horned rhinoceros. Big Five - rhino, elephant, tiger, buffalo, swamp deer.',
+      seoContent: {
+        intro: 'Kaziranga, home of the one-horned rhino, operates on India Standard Time (IST/UTC+5:30). This UNESCO World Heritage Site protects two-thirds of the world\'s one-horned rhinoceros population and offers India\'s best wildlife viewing with elephants, tigers, and buffalo.',
+        timezoneFacts: 'Same timezone as all of India. Eastern Assam location.',
+        bestTimeToVisit: 'November-April when park is open. February-March best for sightings. Park closed June-October due to monsoon flooding.',
+        businessHours: 'Elephant safari 5:30 AM and 3 PM. Jeep safari 8 AM and 2 PM. Park gates close at sunset.',
+        timeDifference: 'Kaziranga is UTC+5:30 year-round. When noon in Kaziranga: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Book elephant safari in advance - limited slots. Multiple ranges - Kohora central, Bagori best for rhinos. Don\'t expect tiger sightings - grass is tall.',
+        transportation: 'Nearest airport Jorhat (97km) or Guwahati (217km). Furkating railway station 75km. NH37 runs along park.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Park rangers available.',
+        publicHolidays: 'Park timings unchanged by holidays. Crowded during school holidays.'
+      }
+    }
+  },
+  { slug: 'imphal', city: 'Imphal', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 24.82, lng: 93.95, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.5M', metroPopulation: '0.6M', phoneCode: '+91 385', language: 'Meiteilon (Manipuri), English, Hindi',
+      climate: 'Humid subtropical with warm summers (20-32°C) and cool winters (4-22°C). Monsoon May-October.',
+      attractions: ['Kangla Fort', 'Ima Keithel (Mothers\' Market)', 'Loktak Lake', 'Keibul Lamjao National Park', 'Shree Govindajee Temple', 'INA Memorial', 'War Cemeteries', 'Manipur State Museum', 'Khonghampat Orchidarium', 'Andro Village'],
+      demographics: 'Capital of Manipur. World\'s only all-women market (Ima Keithel). Home to floating Loktak Lake and endangered Sangai deer.',
+      seoContent: {
+        intro: 'Imphal, jewel of the Northeast, operates on India Standard Time (IST/UTC+5:30). This capital of Manipur hosts Ima Keithel, the world\'s largest all-women market, and the unique Loktak Lake with its floating islands and the endangered dancing deer - Sangai.',
+        timezoneFacts: 'Same timezone as all of India. Easternmost state capital - sunrise around 4:30 AM in summer!',
+        bestTimeToVisit: 'October-March for pleasant weather. Sangai Festival (November) showcases Manipuri culture. Avoid monsoon.',
+        businessHours: 'Ima Keithel 6 AM to 6 PM. Government offices 9:30 AM to 5 PM. Loktak boats available all day.',
+        timeDifference: 'Imphal is UTC+5:30 year-round. When noon in Imphal: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Ima Keithel run entirely by women - unique experience. Loktak phumdis (floating islands) support entire villages. Try Manipuri cuisine - eromba and singju.',
+        transportation: 'Imphal Airport (IMF) 8km. No railway yet (under construction). Flights from Delhi, Kolkata, Guwahati.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Yaoshang (Holi), Ningol Chakouba, Sangai Festival (November).'
+      }
+    }
+  },
+  { slug: 'agartala', city: 'Agartala', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.83, lng: 91.28, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.4M', metroPopulation: '0.5M', phoneCode: '+91 381', language: 'Bengali, Kokborok, Hindi, English',
+      climate: 'Humid subtropical with hot summers (25-35°C) and mild winters (10-25°C). Heavy monsoon May-October.',
+      attractions: ['Ujjayanta Palace', 'Neermahal Water Palace', 'Tripura Sundari Temple', 'Sepahijala Wildlife Sanctuary', 'Jampui Hills', 'Unakoti', 'Heritage Park', 'Bangladesh Border', 'Jagannath Temple', 'State Museum'],
+      demographics: 'Capital of Tripura. Borders Bangladesh on three sides. Mix of Bengali and tribal Kokborok cultures.',
+      seoContent: {
+        intro: 'Agartala, gateway to Bangladesh, operates on India Standard Time (IST/UTC+5:30). This capital of Tripura with 400,000 people borders Bangladesh on three sides, featuring the stunning Ujjayanta Palace and the unique Neermahal water palace in the middle of a lake.',
+        timezoneFacts: 'Same timezone as all of India. Very close to Bangladesh which uses UTC+6.',
+        bestTimeToVisit: 'October-March for pleasant weather. Kharchi Puja (July-August) major festival. Avoid peak monsoon.',
+        businessHours: 'Ujjayanta Palace 10 AM to 5 PM (closed Monday). Shops 10 AM to 8 PM.',
+        timeDifference: 'Agartala is UTC+5:30 year-round. When noon in Agartala: London 6:30 AM, NYC 1:30 AM, Dhaka 12:30 PM (+30 min).',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Neermahal boat ride at sunset is magical. Unakoti rock carvings day trip worth it. Cross to Bangladesh at Akhaura (visa needed). Try mui borok cuisine.',
+        transportation: 'Maharaja Bir Bikram Airport (IXA) 12km. Agartala railway recently connected. Bangladesh border crossing at Akhaura.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Durga Puja, Kharchi Puja, Garia Puja, Christmas.'
+      }
+    }
+  },
+  { slug: 'aizawl', city: 'Aizawl', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.73, lng: 92.72, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.3M', metroPopulation: '0.35M', phoneCode: '+91 389', language: 'Mizo, English, Hindi',
+      climate: 'Humid subtropical highland with mild summers (20-30°C) and cool winters (11-21°C). Monsoon May-September.',
+      attractions: ['Solomon\'s Temple', 'Durtlang Hills', 'Mizoram State Museum', 'Bara Bazaar', 'KV Paradise', 'Reiek Heritage Village', 'Vantawng Falls', 'Tam Dil Lake', 'Blue Mountain', 'Luangmual Handicrafts Centre'],
+      demographics: 'Capital of Mizoram. Most literate state capital in India. Christian majority with strong singing tradition. Ridge-top city.',
+      seoContent: {
+        intro: 'Aizawl, city on the ridge, operates on India Standard Time (IST/UTC+5:30). This capital of Mizoram with 300,000 people is built along a dramatic ridge, is one of India\'s most literate cities, and is known for its strong Christian heritage and beautiful choral singing.',
+        timezoneFacts: 'Same timezone as all of India. Eastern location means early sunrise.',
+        bestTimeToVisit: 'October-March for pleasant weather. Chapchar Kut (March) is major harvest festival. Christmas celebrations spectacular.',
+        businessHours: 'Bara Bazaar 8 AM to 5 PM. Sunday shops closed (Christian observance). Government 9:30 AM to 4:30 PM.',
+        timeDifference: 'Aizawl is UTC+5:30 year-round. When noon in Aizawl: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Sunday is strict rest day - most things closed. Church singing is beautiful. Try bai (local stew). Inner Line Permit may be needed for some areas.',
+        transportation: 'Lengpui Airport (AJL) 32km. No railway. Flights from Kolkata, Guwahati. Long drives from Silchar.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Chapchar Kut (March), Mim Kut, Christmas (BIG celebration), New Year.'
+      }
+    }
+  },
+  { slug: 'kohima', city: 'Kohima', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.67, lng: 94.11, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.1M', metroPopulation: '0.15M', phoneCode: '+91 370', language: 'English, Nagamese, Angami',
+      climate: 'Subtropical highland with cool summers (15-25°C) and cold winters (4-15°C). Monsoon May-September.',
+      attractions: ['War Cemetery', 'Kohima State Museum', 'Kohima Village', 'Dzukou Valley', 'Japfu Peak', 'Hornbill Festival Venue', 'Catholic Cathedral', 'Kohima Zoo', 'Khonoma Green Village', 'Naga Heritage Village'],
+      demographics: 'Capital of Nagaland. Site of WWII Battle of Kohima (turning point against Japan). 16 Naga tribes with distinct cultures.',
+      seoContent: {
+        intro: 'Kohima, where the tide of WWII turned, operates on India Standard Time (IST/UTC+5:30). This Naga capital of 100,000 was the site of the crucial Battle of Kohima in 1944 and today hosts the famous Hornbill Festival showcasing 16 distinct Naga tribal cultures.',
+        timezoneFacts: 'Same timezone as all of India. Eastern Himalayan foothills.',
+        bestTimeToVisit: 'October-May for pleasant weather. Hornbill Festival (December 1-10) is unmissable. Dzukou Valley trek best March-May.',
+        businessHours: 'Shops 9 AM to 6 PM. War Cemetery 8 AM to 5 PM. Sunday many shops closed.',
+        timeDifference: 'Kohima is UTC+5:30 year-round. When noon in Kohima: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'War Cemetery very moving - read the inscriptions. Hornbill Festival (Dec) showcases all Naga tribes. Dzukou Valley trek requires guide. Try smoked pork and bamboo shoot.',
+        transportation: 'Dimapur Airport (DMU) 74km (2.5 hours). Dimapur railway nearest. Inner Line Permit required for foreign nationals.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Sekrenyi, Moatsu, Hornbill Festival (Dec 1-10), Christmas.'
+      }
+    }
+  },
+  { slug: 'dimapur', city: 'Dimapur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.90, lng: 93.73, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.4M', metroPopulation: '0.5M', phoneCode: '+91 3862', language: 'Nagamese, English, Hindi',
+      climate: 'Humid subtropical with hot summers (25-35°C) and mild winters (10-25°C). Heavy monsoon May-September.',
+      attractions: ['Kachari Ruins', 'Rangapahar Reserve Forest', 'Dimapur Ao Baptist Church', 'Triple Falls', 'Nagaland Science Centre', 'Craft Village', 'Hong Kong Market', 'Diezephe Village', 'Chumukedima', 'Intanki Wildlife Sanctuary'],
+      demographics: 'Commercial capital of Nagaland. Only city in the state with plains terrain. Major trading hub for Northeast.',
+      seoContent: {
+        intro: 'Dimapur, gateway to Nagaland, operates on India Standard Time (IST/UTC+5:30). This commercial hub of 400,000 is Nagaland\'s only plains city, featuring ancient Kachari ruins and serving as the entry point for visitors to the Land of Festivals.',
+        timezoneFacts: 'Same timezone as all of India. Gateway to hill state of Nagaland.',
+        bestTimeToVisit: 'October-April for pleasant weather. Transit point to Kohima for Hornbill Festival.',
+        businessHours: 'Hong Kong Market 9 AM to 7 PM. Shops 9 AM to 8 PM.',
+        timeDifference: 'Dimapur is UTC+5:30 year-round. When noon in Dimapur: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Main transit point to Kohima and beyond. Kachari Ruins worth visiting. Hong Kong Market for cheap goods. ILP needed for foreigners beyond city.',
+        transportation: 'Dimapur Airport (DMU). Dimapur Junction on NF Railway. Gateway to Kohima (74km) and rest of Nagaland.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), various tribal festivals, Christmas.'
+      }
+    }
+  },
+  { slug: 'itanagar', city: 'Itanagar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.08, lng: 93.62, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.06M', metroPopulation: '0.1M', phoneCode: '+91 360', language: 'Hindi, Nyishi, English',
+      climate: 'Humid subtropical with warm summers (20-30°C) and cool winters (8-20°C). Heavy monsoon May-October.',
+      attractions: ['Ita Fort', 'Ganga Lake', 'Jawaharlal Nehru State Museum', 'Buddhist Temple', 'Polo Park', 'Namdapha National Park (nearby)', 'Zoological Park', 'Craft Centre', 'Gompa', 'Indira Gandhi Park'],
+      demographics: 'Capital of Arunachal Pradesh. India\'s northeastern frontier. 26 major tribes. Land of the rising sun.',
+      seoContent: {
+        intro: 'Itanagar, land of the dawn-lit mountains, operates on India Standard Time (IST/UTC+5:30). This capital of Arunachal Pradesh with 60,000 people is India\'s northeastern frontier, home to 26 major tribes and featuring the ancient Ita Fort and gateway to pristine wilderness.',
+        timezoneFacts: 'Same timezone as all of India. India\'s easternmost state - first to see sunrise in the country!',
+        bestTimeToVisit: 'October-April for pleasant weather. Tribal festivals throughout year. Monsoon heavy May-September.',
+        businessHours: 'Shops 9 AM to 7 PM. Museum 10 AM to 4 PM (closed Monday).',
+        timeDifference: 'Itanagar is UTC+5:30 year-round. When noon in Itanagar: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Inner Line Permit required for all visitors. Tribal handicrafts excellent. Gateway to Tawang and Namdapha. Book permits well in advance.',
+        transportation: 'Donyi Polo Airport (HGI) 15km (opened 2022). Nearest railway Naharlagun 10km. Long drives from Guwahati (350km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Solung, Mopin, Losar, Si-Donyi, Nyokum.'
+      }
+    }
+  },
+  { slug: 'tawang', city: 'Tawang', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.59, lng: 91.86, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.015M', phoneCode: '+91 3794', language: 'Monpa, Hindi, English',
+      climate: 'Alpine with cool summers (10-20°C) and very cold winters (-15 to 5°C). Snow November-March.',
+      attractions: ['Tawang Monastery', 'Sela Pass', 'PTSO Lake', 'Nuranang Falls', 'Tawang War Memorial', 'Urgelling Monastery', 'Ani Gompa', 'Gorichen Peak', 'Madhuri Lake', 'Craft Centre'],
+      demographics: 'Birthplace of 6th Dalai Lama. Second-largest Buddhist monastery in world after Lhasa. Monpa tribe. 1962 India-China war site.',
+      seoContent: {
+        intro: 'Tawang, the hidden Buddhist jewel, operates on India Standard Time (IST/UTC+5:30). This remote Himalayan town of 10,000 at 3,048m is the birthplace of the 6th Dalai Lama and home to the world\'s second-largest Buddhist monastery after Lhasa\'s Potala.',
+        timezoneFacts: 'Same timezone as all of India. Very high altitude and remote location.',
+        bestTimeToVisit: 'March-October when Sela Pass is reliably open. October-November for clearest views. Winter extremely cold with pass closures.',
+        businessHours: 'Monastery 5 AM to 7 PM. Shops 9 AM to 6 PM. War Memorial 9 AM to 5 PM.',
+        timeDifference: 'Tawang is UTC+5:30 year-round. When noon in Tawang: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Inner Line Permit essential - get in Guwahati or Tezpur. Sela Pass (4,170m) can close suddenly. Altitude sickness possible. Monastery morning prayers 5 AM.',
+        transportation: 'Tawang Helicopter service (limited). Nearest airport Tezpur (320km). Drive from Guwahati 12-14 hours via Sela Pass.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Army assistance available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar (Monpa New Year), Torgya Festival, Buddha Purnima.'
+      }
+    }
+  },
+  { slug: 'bodh-gaya', city: 'Bodh Gaya', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 24.70, lng: 84.99, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.05M', metroPopulation: '0.1M', phoneCode: '+91 631', language: 'Hindi, Magahi, English',
+      climate: 'Humid subtropical with hot summers (35-45°C) and cool winters (8-25°C). Monsoon July-September.',
+      attractions: ['Mahabodhi Temple', 'Bodhi Tree', 'Great Buddha Statue', 'Thai Monastery', 'Japanese Temple', 'Tibetan Monastery', 'Chinese Temple', 'Royal Bhutan Monastery', 'Archaeological Museum', 'Sujata Stupa'],
+      demographics: 'UNESCO World Heritage Site. Where Buddha attained enlightenment. Most sacred Buddhist pilgrimage site. International monasteries from all Buddhist countries.',
+      seoContent: {
+        intro: 'Bodh Gaya, where Buddha attained enlightenment, operates on India Standard Time (IST/UTC+5:30). This UNESCO World Heritage Site of 50,000 is Buddhism\'s holiest place, where Siddhartha Gautama became the Buddha under the Bodhi Tree 2,500 years ago.',
+        timezoneFacts: 'Same timezone as all of India. Central Bihar location.',
+        bestTimeToVisit: 'October-March for pleasant weather. Buddha Purnima (May) and Dalai Lama teachings (December-January) draw huge crowds.',
+        businessHours: 'Mahabodhi Temple 5 AM to 9 PM. Monasteries generally 9 AM to 5 PM. Museum 10 AM to 5 PM.',
+        timeDifference: 'Bodh Gaya is UTC+5:30 year-round. When noon in Bodh Gaya: London 6:30 AM, NYC 1:30 AM, Bangkok 1 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Mahabodhi Temple at dawn is magical. Meditate under Bodhi Tree descendent. Visit monasteries of your country. Check for Dalai Lama teachings schedule.',
+        transportation: 'Gaya Airport (GAY) 17km. Gaya Junction well-connected. Buses from Patna (115km) and Varanasi (240km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Buddha Purnima (biggest celebration), various Buddhist observances.'
+      }
+    }
+  },
+  { slug: 'khajuraho', city: 'Khajuraho', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 24.85, lng: 79.93, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.05M', phoneCode: '+91 7686', language: 'Hindi, Bundelkhandi, English',
+      climate: 'Humid subtropical with hot summers (35-47°C) and cool winters (5-25°C). Monsoon July-September.',
+      attractions: ['Western Group of Temples', 'Eastern Group of Temples', 'Southern Group', 'Kandariya Mahadeva Temple', 'Lakshmana Temple', 'Chaturbhuj Temple', 'Archaeological Museum', 'Light and Sound Show', 'Panna National Park', 'Raneh Falls'],
+      demographics: 'UNESCO World Heritage Site. Medieval Hindu and Jain temples famous for erotic sculptures. Chandela dynasty art (950-1050 AD).',
+      seoContent: {
+        intro: 'Khajuraho, temple city of love, operates on India Standard Time (IST/UTC+5:30). This UNESCO World Heritage Site of 30,000 features medieval temples adorned with exquisite erotic sculptures, representing the pinnacle of Chandela dynasty art from 950-1050 AD.',
+        timezoneFacts: 'Same timezone as all of India. Central Madhya Pradesh location.',
+        bestTimeToVisit: 'October-March for pleasant weather. Khajuraho Dance Festival (February) spectacular. Avoid April-June extreme heat.',
+        businessHours: 'Western Group temples sunrise to sunset. Light and Sound Show 6:30 PM (winter) / 7:30 PM (summer).',
+        timeDifference: 'Khajuraho is UTC+5:30 year-round. When noon in Khajuraho: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Hire a guide to understand sculptures\' symbolism. Western Group most impressive. Light and Sound Show excellent. Panna tiger safari day trip.',
+        transportation: 'Khajuraho Airport (HJR). Khajuraho station limited trains. Buses from Jhansi (175km) and Satna (117km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Maha Shivaratri, Khajuraho Dance Festival (February), Diwali.'
+      }
+    }
+  },
+  { slug: 'orchha', city: 'Orchha', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.35, lng: 78.64, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.015M', phoneCode: '+91 7680', language: 'Hindi, Bundelkhandi',
+      climate: 'Humid subtropical with hot summers (35-47°C) and cool winters (5-25°C). Monsoon July-September.',
+      attractions: ['Orchha Fort Complex', 'Jahangir Mahal', 'Raja Mahal', 'Chaturbhuj Temple', 'Ram Raja Temple', 'Lakshmi Narayan Temple', 'Royal Cenotaphs', 'Betwa River', 'Light and Sound Show', 'Orchha Wildlife Sanctuary'],
+      demographics: 'Medieval Bundela capital. Only temple where Lord Ram is worshipped as king. Stunning palatial architecture on Betwa River island.',
+      seoContent: {
+        intro: 'Orchha, the hidden medieval gem, operates on India Standard Time (IST/UTC+5:30). This forgotten Bundela capital of 10,000 sits on an island in the Betwa River, its stunning palaces and temples frozen in time, far from tourist crowds.',
+        timezoneFacts: 'Same timezone as all of India. Madhya Pradesh-Uttar Pradesh border.',
+        bestTimeToVisit: 'October-March for pleasant weather. Ram Navami (April) huge at Ram Raja Temple. Avoid summer heat.',
+        businessHours: 'Fort complex 8 AM to 6 PM. Ram Raja Temple 8 AM to 12 PM, 5 PM to 9 PM. Light Show evening.',
+        timeDifference: 'Orchha is UTC+5:30 year-round. When noon in Orchha: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Ram Raja Temple guards salute Ram with gun salute twice daily! Sunset from cenotaphs on Betwa magical. Much quieter than Khajuraho. Rafting available.',
+        transportation: 'Jhansi Junction 18km (best connected). No airport nearby. Taxi or auto from Jhansi easy.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ram Navami (special), Diwali, Kartik Purnima.'
+      }
+    }
+  },
+  { slug: 'ujjain', city: 'Ujjain', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.18, lng: 75.78, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.5M', metroPopulation: '0.7M', phoneCode: '+91 734', language: 'Hindi, Malwi',
+      climate: 'Humid subtropical with hot summers (35-45°C) and cool winters (8-25°C). Monsoon July-September.',
+      attractions: ['Mahakaleshwar Temple', 'Ram Ghat', 'Kumbh Mela Site', 'Kal Bhairav Temple', 'Harsiddhi Temple', 'Vedha Shala (Observatory)', 'Sandipani Ashram', 'ISKCON Temple', 'Bade Ganeshji Temple', 'Chintaman Ganesh'],
+      demographics: 'One of seven sacred Hindu cities. Prime Meridian of ancient Hindu astronomers. Simhastha (Kumbh) Mela site. Mahakal Jyotirlinga.',
+      seoContent: {
+        intro: 'Ujjain, city of Mahakal, operates on India Standard Time (IST/UTC+5:30). This ancient city of 500,000 was the Prime Meridian of Hindu astronomy, hosts the Simhastha Kumbh Mela, and is home to Mahakaleshwar, one of twelve sacred Jyotirlingas.',
+        timezoneFacts: 'Same timezone as all of India. Was the reference point for ancient Indian time calculations.',
+        bestTimeToVisit: 'October-March for pleasant weather. Maha Shivaratri spectacular. Simhastha Kumbh every 12 years.',
+        businessHours: 'Mahakaleshwar Temple 4 AM to 11 PM. Bhasma Aarti 4 AM (registration required). Observatory 10 AM to 5 PM.',
+        timeDifference: 'Ujjain is UTC+5:30 year-round. When noon in Ujjain: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Bhasma Aarti (ash ritual) at 4 AM is powerful - book online. Ram Ghat evening aarti beautiful. Simhastha Kumbh draws millions. Try Ujjaini snacks.',
+        transportation: 'Ujjain Junction well-connected. Indore Airport (DEP) 55km. Buses from Indore (1.5 hours) and Bhopal.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Maha Shivaratri (massive), Simhastha Kumbh (every 12 years), Diwali.'
+      }
+    }
+  },
+  { slug: 'ajmer', city: 'Ajmer', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.45, lng: 74.64, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.6M', metroPopulation: '0.7M', phoneCode: '+91 145', language: 'Hindi, Rajasthani',
+      climate: 'Semi-arid with hot summers (35-45°C) and cool winters (5-25°C). Limited monsoon July-September.',
+      attractions: ['Ajmer Sharif Dargah', 'Ana Sagar Lake', 'Adhai Din Ka Jhonpra', 'Taragarh Fort', 'Akbar\'s Palace', 'Soniji Ki Nasiyan', 'Mayo College', 'Prithviraj Smarak', 'Foy Sagar Lake', 'Nareli Jain Temple'],
+      demographics: 'One of holiest Muslim pilgrimage sites in India. Dargah of Sufi saint Moinuddin Chishti. Gateway to Pushkar.',
+      seoContent: {
+        intro: 'Ajmer, Sufi soul of India, operates on India Standard Time (IST/UTC+5:30). This sacred city of 600,000 is home to the Ajmer Sharif Dargah of Sufi saint Moinuddin Chishti, visited by millions of Hindus and Muslims alike seeking blessings.',
+        timezoneFacts: 'Same timezone as all of India. Aravalli Hills location.',
+        bestTimeToVisit: 'October-March for pleasant weather. Urs Festival (anniversary of saint\'s death) draws millions. Avoid summer.',
+        businessHours: 'Dargah 5 AM to 9 PM (extended during Urs). Shops 10 AM to 8 PM.',
+        timeDifference: 'Ajmer is UTC+5:30 year-round. When noon in Ajmer: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Dargah welcomes all religions - dress modestly and cover head. Pushkar 14km for Hindu pilgrimage. Evening at Ana Sagar pleasant. Urs extremely crowded.',
+        transportation: 'Ajmer Junction major railway hub. Jaipur Airport (JAI) 135km. Buses from Jaipur (2.5 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Urs Festival (Islamic calendar), Eid, Diwali.'
+      }
+    }
+  },
+  { slug: 'mount-abu', city: 'Mount Abu', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 24.59, lng: 72.71, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.03M', phoneCode: '+91 2974', language: 'Hindi, Gujarati, Rajasthani',
+      climate: 'Subtropical highland with cool summers (23-34°C) and cold winters (5-20°C). Monsoon July-September.',
+      attractions: ['Dilwara Temples', 'Nakki Lake', 'Sunset Point', 'Guru Shikhar', 'Achalgarh Fort', 'Mount Abu Wildlife Sanctuary', 'Trevor\'s Tank', 'Brahma Kumaris Headquarters', 'Toad Rock', 'Peace Park'],
+      demographics: 'Only hill station in Rajasthan. Dilwara Jain temples considered finest in India. Brahma Kumaris spiritual headquarters.',
+      seoContent: {
+        intro: 'Mount Abu, Rajasthan\'s only hill station, operates on India Standard Time (IST/UTC+5:30). This cool oasis of 20,000 in the Aravalli Range features the exquisite Dilwara Jain temples, considered the finest examples of Jain architecture in India.',
+        timezoneFacts: 'Same timezone as all of India. Hill station - cooler than surrounding desert.',
+        bestTimeToVisit: 'Year-round due to pleasant climate. Summer (March-June) peak season escaping plains heat. Winter nights cold.',
+        businessHours: 'Dilwara Temples 12 PM to 5 PM (non-Jains). Nakki Lake boats 9:30 AM to 6 PM.',
+        timeDifference: 'Mount Abu is UTC+5:30 year-round. When noon in Mount Abu: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Dilwara marble carving is breathtaking - no photography inside. Sunset Point crowded but worth it. Brahma Kumaris offer meditation courses. Try dal baati churma.',
+        transportation: 'Nearest railway Abu Road 28km. Ahmedabad Airport 221km, Udaipur Airport 185km. Taxis and buses from Abu Road.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Mahavir Jayanti, Summer Festival (May-June), Diwali.'
+      }
+    }
+  },
+  { slug: 'dwarka', city: 'Dwarka', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.24, lng: 68.97, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.05M', phoneCode: '+91 2892', language: 'Gujarati, Hindi',
+      climate: 'Semi-arid with hot summers (30-40°C) and mild winters (12-30°C). Limited monsoon. Coastal breezes moderate temperature.',
+      attractions: ['Dwarkadhish Temple', 'Bet Dwarka', 'Nageshwar Jyotirlinga', 'Gomti Ghat', 'Rukmini Devi Temple', 'Lighthouse', 'Beyt Dwarka Island', 'Sudama Setu', 'Bhadkeshwar Mahadev', 'Okha Port'],
+      demographics: 'One of four Char Dham pilgrimage sites. Mythical kingdom of Lord Krishna. One of seven ancient cities of India.',
+      seoContent: {
+        intro: 'Dwarka, kingdom of Lord Krishna, operates on India Standard Time (IST/UTC+5:30). This ancient pilgrimage city of 40,000 is one of the four Char Dham, believed to be the legendary capital of Lord Krishna, now partially submerged in the Arabian Sea.',
+        timezoneFacts: 'Same timezone as all of India. Westernmost point of Gujarat.',
+        bestTimeToVisit: 'October-March for pleasant weather. Janmashtami (Krishna\'s birthday) draws millions. Avoid summer heat.',
+        businessHours: 'Dwarkadhish Temple 7 AM to 12:30 PM, 5 PM to 9:30 PM. Bet Dwarka boats 7 AM to 5 PM.',
+        timeDifference: 'Dwarka is UTC+5:30 year-round. When noon in Dwarka: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Evening aarti at Dwarkadhish powerful. Bet Dwarka boat trip essential - Krishna\'s actual residence. Nageshwar is one of 12 Jyotirlingas. Underwater ruins offshore.',
+        transportation: 'Jamnagar Airport (JGA) 137km. Dwarka station on railway. Buses from Jamnagar and Rajkot.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Janmashtami (massive), Holi, Diwali.'
+      }
+    }
+  },
+  { slug: 'somnath', city: 'Somnath', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.89, lng: 70.40, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.05M', metroPopulation: '0.08M', phoneCode: '+91 2876', language: 'Gujarati, Hindi',
+      climate: 'Semi-arid coastal with hot summers (30-40°C) and mild winters (15-30°C). Limited monsoon. Sea breeze moderates heat.',
+      attractions: ['Somnath Temple', 'Bhalka Tirth', 'Triveni Sangam', 'Somnath Beach', 'Panch Pandav Gufa', 'Somnath Museum', 'Laxmi Narayan Temple', 'Geeta Mandir', 'Junagadh Gate', 'Light and Sound Show'],
+      demographics: 'First among twelve Jyotirlingas. Temple destroyed and rebuilt multiple times throughout history. Where Lord Krishna is believed to have departed earth.',
+      seoContent: {
+        intro: 'Somnath, the eternal shrine, operates on India Standard Time (IST/UTC+5:30). This sacred coastal town of 50,000 is home to the first and most revered of the twelve Jyotirlingas, a temple destroyed by invaders 17 times but rebuilt each time by devotees.',
+        timezoneFacts: 'Same timezone as all of India. Saurashtra coast, Arabian Sea.',
+        bestTimeToVisit: 'October-March for pleasant weather. Maha Shivaratri draws huge crowds. Kartik Purnima fair.',
+        businessHours: 'Somnath Temple 6 AM to 9:30 PM. Light and Sound Show 8 PM (winter) / 8:45 PM (summer).',
+        timeDifference: 'Somnath is UTC+5:30 year-round. When noon in Somnath: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Evening aarti facing ocean is magnificent. Light and Sound Show tells temple\'s history. Bhalka Tirth is where Krishna was shot. Beach sunset beautiful.',
+        transportation: 'Veraval station 6km. Diu Airport 85km, Rajkot Airport 200km. Buses from Junagadh and Rajkot.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Maha Shivaratri (special), Kartik Purnima, Diwali.'
+      }
+    }
+  },
+  { slug: 'vadodara', city: 'Vadodara', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.31, lng: 73.19, tier: 3, continent: 'asia',
     info: {
       currency: 'Indian Rupee', currencySymbol: '₹', population: '2.1M', phoneCode: '+91 265', language: 'Gujarati, Hindi',
       climate: 'Tropical wet and dry with hot summers (38-45°C), monsoon (June-September), and mild winters (15-30°C).',
