@@ -13635,6 +13635,388 @@ export const cities: City[] = [
       }
     }
   },
+  
+  // China - New Cities Batch 3 (20 cities with full premium content)
+  { slug: 'qujing', city: 'Qujing', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 25.49, lng: 103.80, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.8M', metroPopulation: '6.1M', phoneCode: '+86 874', language: 'Mandarin',
+      climate: 'Subtropical highland with mild summers (19-25°C) and cool winters (5-12°C). Year-round spring.',
+      attractions: ['Luoping Rapeseed Fields', 'Jiulong Waterfall', 'Duoyi River', 'Qujing Museum', 'Zhujiang Yuan', 'Fenghuang Valley', 'Shizong Phoenix Valley', 'Pearl River Source', 'Malong Rose Garden', 'Shibao Mountain'],
+      demographics: 'Second largest city in Yunnan. Source of the Pearl River. Famous for stunning spring rapeseed flower fields in Luoping that draw millions.',
+      seoContent: {
+        intro: 'Qujing, city of golden rapeseed fields, operates on China Standard Time (CST/UTC+8). This city of 5.8 million is home to the spectacular Luoping rapeseed fields, where millions of golden flowers bloom each spring creating one of China\'s most iconic landscapes.',
+        timezoneFacts: 'Same timezone as Beijing. Eastern Yunnan plateau, source of Pearl River.',
+        bestTimeToVisit: 'February-March for rapeseed flowers - absolutely essential! Autumn also pleasant.',
+        businessHours: 'Standard 9 AM to 6 PM. Flower fields accessible dawn to dusk.',
+        timeDifference: 'Qujing is UTC+8 year-round. When noon in Qujing: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Luoping rapeseed blooms Feb-Mar - don\'t miss it! Jiulong Waterfall is spectacular. Visit Pearl River source at Zhanyi.',
+        transportation: 'High-speed rail to Kunming (30 min). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'yuxi', city: 'Yuxi', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 24.35, lng: 102.55, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.3M', metroPopulation: '2.4M', phoneCode: '+86 877', language: 'Mandarin, Yi',
+      climate: 'Subtropical highland with mild summers (20-26°C) and cool winters (7-15°C). Eternal spring.',
+      attractions: ['Fuxian Lake', 'Hongta Group', 'Nie\'er Hometown', 'Yuxi Museum', 'Xinping Huashan', 'Tonghai Ancient Town', 'Ailao Mountain', 'Yuanjiang Hot Springs', 'Chengjiang Fossil Site', 'Fuxian Lake Underwater Ruins'],
+      demographics: 'Headquarters of Hongta Group (Yuxi cigarettes), China\'s tobacco capital. Home to Fuxian Lake, China\'s deepest freshwater lake with mysterious underwater ruins.',
+      seoContent: {
+        intro: 'Yuxi, China\'s tobacco capital, operates on China Standard Time (CST/UTC+8). This city of 2.3 million is headquarters of Hongta Group and home to Fuxian Lake, China\'s deepest freshwater lake where mysterious underwater ruins hint at an ancient civilization.',
+        timezoneFacts: 'Same timezone as Beijing. Central Yunnan plateau.',
+        bestTimeToVisit: 'Year-round pleasant. Summer for Fuxian Lake swimming. Spring for flowers.',
+        businessHours: 'Standard 9 AM to 6 PM. Fuxian Lake resorts open year-round.',
+        timeDifference: 'Yuxi is UTC+8 year-round. When noon in Yuxi: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Fuxian Lake water is crystal clear - underwater ruins mystery. Nie\'er (national anthem composer) museum here. Tobacco industry tours available.',
+        transportation: 'High-speed rail to Kunming (20 min). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'baoshan', city: 'Baoshan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 25.11, lng: 99.16, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.4M', metroPopulation: '2.6M', phoneCode: '+86 875', language: 'Mandarin',
+      climate: 'Subtropical highland with warm summers (20-27°C) and mild winters (8-18°C). Pleasant year-round.',
+      attractions: ['Tengchong Hot Springs', 'Heshun Ancient Town', 'Rehai Volcanic Park', 'Gaoligong Mountain', 'National Cemetery of Expeditionary Forces', 'Baoshan Museum', 'Longling Ancient Town', 'Changning Wanda Hot Springs', 'Yiluo River', 'Burma Road Sites'],
+      demographics: 'Historic gateway on ancient Southern Silk Road (Burma Road). Famous for geothermal hot springs at Tengchong. WWII history center - Chinese Expeditionary Force fought here.',
+      seoContent: {
+        intro: 'Baoshan, gateway on the Burma Road, operates on China Standard Time (CST/UTC+8). This city of 2.4 million guards the historic Southern Silk Road and features spectacular volcanic hot springs at Tengchong and poignant WWII history sites.',
+        timezoneFacts: 'Same timezone as Beijing. Western Yunnan near Myanmar border.',
+        bestTimeToVisit: 'October-April for pleasant weather. Hot springs enjoyable year-round.',
+        businessHours: 'Standard 9 AM to 6 PM. Hot springs open late.',
+        timeDifference: 'Baoshan is UTC+8 year-round. When noon in Baoshan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Tengchong hot springs are world-class - Rehai has boiling geysers. Heshun is beautiful ancient town. WWII cemetery very moving.',
+        transportation: 'Baoshan Yunrui Airport (BSD). Drive to Tengchong 2 hours.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'zhaotong', city: 'Zhaotong', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 27.34, lng: 103.72, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.1M', metroPopulation: '5.3M', phoneCode: '+86 870', language: 'Mandarin',
+      climate: 'Subtropical highland with cool summers (18-24°C) and cold winters (0-8°C). Mountain climate.',
+      attractions: ['Dashanbao Black-necked Crane Reserve', 'Dousha Pass', 'Yanjin Hanging Temple', 'Zhaotong Museum', 'Wumeng Mountain', 'Xiaozishan', 'Salt Road Ancient Sites', 'Dashanbao Wetland', 'Shuifu Port', 'Dianchi Source'],
+      demographics: 'One of Yunnan\'s poorest but most scenic regions. Winter home to rare black-necked cranes. Historic "Salt Road" trade route.',
+      seoContent: {
+        intro: 'Zhaotong, home of the black-necked cranes, operates on China Standard Time (CST/UTC+8). This mountainous city of 5.1 million hosts thousands of rare black-necked cranes each winter at Dashanbao, one of the world\'s most important crane habitats.',
+        timezoneFacts: 'Same timezone as Beijing. Northeastern Yunnan, high altitude.',
+        bestTimeToVisit: 'November-March for black-necked crane watching. Summer for mountain escape.',
+        businessHours: 'Standard 9 AM to 6 PM. Crane reserve dawn to dusk.',
+        timeDifference: 'Zhaotong is UTC+8 year-round. When noon in Zhaotong: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Black-necked cranes arrive November, peak in January. Dashanbao at 3,000m is cold - dress warmly. Apple orchards famous.',
+        transportation: 'Zhaotong Airport (ZAT). Limited high-speed rail.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'liupanshui', city: 'Liupanshui', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 26.59, lng: 104.83, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.0M', metroPopulation: '3.2M', phoneCode: '+86 858', language: 'Mandarin, Miao',
+      climate: 'Subtropical highland with cool summers (17-23°C) and mild winters (3-10°C). "Cool Capital of China".',
+      attractions: ['Wumeng Prairie', 'Yushe National Forest Park', 'Maling River Canyon', 'Danxia Mountain', 'Zhijin Cave', 'Liupanshui Museum', 'Shuicheng Ancient Town', 'Langdai Ancient Town', 'Caohai Lake', 'Miao Villages'],
+      demographics: 'Known as the "Cool Capital of China" for its pleasant summer climate. Major coal mining region transformed into eco-tourism destination.',
+      seoContent: {
+        intro: 'Liupanshui, the "Cool Capital of China," operates on China Standard Time (CST/UTC+8). This city of 3 million enjoys average summer temperatures of just 19°C, making it China\'s premier summer escape destination with stunning Wumeng Prairie landscapes.',
+        timezoneFacts: 'Same timezone as Beijing. Western Guizhou plateau, high altitude.',
+        bestTimeToVisit: 'June-August for cool summer escape. Year-round pleasant for most.',
+        businessHours: 'Standard 9 AM to 6 PM. Prairie tours available.',
+        timeDifference: 'Liupanshui is UTC+8 year-round. When noon in Liupanshui: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Perfect summer escape - average 19°C in July! Wumeng Prairie for horseback riding. Miao minority villages for culture.',
+        transportation: 'Liupanshui Yuezhao Airport (LPF). High-speed rail connections.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'anshun', city: 'Anshun', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 26.25, lng: 105.95, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.3M', metroPopulation: '2.5M', phoneCode: '+86 853', language: 'Mandarin, Buyi',
+      climate: 'Subtropical highland with mild summers (20-26°C) and cool winters (5-12°C). Pleasant year-round.',
+      attractions: ['Huangguoshu Waterfall', 'Dragon Palace Cave', 'Tianlong Tunpu', 'Zhijin Cave', 'Getu River', 'Anshun Confucian Temple', 'Shitouzhai', 'Batik Museum', 'Tianxing Bridge', 'Tunpu Ancient Villages'],
+      demographics: 'Gateway to Huangguoshu, Asia\'s largest waterfall. Home to unique Tunpu culture - Ming Dynasty military settlements preserved for 600 years.',
+      seoContent: {
+        intro: 'Anshun, gateway to Asia\'s largest waterfall, operates on China Standard Time (CST/UTC+8). This city of 2.3 million is home to magnificent Huangguoshu Waterfall (77.8m high, 101m wide) and unique Tunpu villages preserving 600-year-old Ming Dynasty culture.',
+        timezoneFacts: 'Same timezone as Beijing. Central Guizhou plateau.',
+        bestTimeToVisit: 'May-October for waterfall at full flow. June-August peak season.',
+        businessHours: 'Standard 9 AM to 6 PM. Huangguoshu 7:30 AM to 6 PM.',
+        timeDifference: 'Anshun is UTC+8 year-round. When noon in Anshun: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Huangguoshu Waterfall is spectacular - can walk behind it! Dragon Palace Cave boat ride magical. Tunpu villages for authentic Ming culture.',
+        transportation: 'Anshun Huangguoshu Airport (AVA). High-speed rail to Guiyang (30 min).',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'bijie', city: 'Bijie', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 27.30, lng: 105.29, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '6.5M', metroPopulation: '6.9M', phoneCode: '+86 857', language: 'Mandarin, Yi, Miao',
+      climate: 'Subtropical highland with cool summers (18-24°C) and cold winters (1-8°C). Mountain climate.',
+      attractions: ['Baili Azalea Forest', 'Zhijin Cave', 'Caohai Lake', 'Jiucaiping Prairie', 'Wujiang River Canyon', 'Bijie Museum', 'Qianxi Ancient Town', 'Weining Grassland', 'Yinhe Cave', 'Yi Torch Festival Sites'],
+      demographics: 'Home to Baili Azalea, world\'s largest natural azalea forest (125 sq km). Major Yi and Miao minority area. One of China\'s poorest regions undergoing transformation.',
+      seoContent: {
+        intro: 'Bijie, home of the world\'s largest azalea forest, operates on China Standard Time (CST/UTC+8). This city of 6.5 million features Baili Azalea, a spectacular 125 sq km natural azalea forest that blooms in a riot of colors each spring.',
+        timezoneFacts: 'Same timezone as Beijing. Northwestern Guizhou, high plateau.',
+        bestTimeToVisit: 'March-May for azalea blooming - don\'t miss it! July for Yi Torch Festival.',
+        businessHours: 'Standard 9 AM to 6 PM. Baili Azalea 8 AM to 6 PM.',
+        timeDifference: 'Bijie is UTC+8 year-round. When noon in Bijie: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Baili Azalea blooms March-May - 125 sq km of flowers! Yi Torch Festival in July spectacular. Zhijin Cave is China\'s most beautiful.',
+        transportation: 'Bijie Feixiong Airport (BFJ). High-speed rail connections.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Yi Torch Festival.'
+      }
+    }
+  },
+  { slug: 'tongren', city: 'Tongren', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 27.72, lng: 109.19, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.1M', metroPopulation: '3.3M', phoneCode: '+86 856', language: 'Mandarin, Dong, Miao',
+      climate: 'Subtropical with warm summers (24-30°C) and mild winters (3-10°C). Humid and misty.',
+      attractions: ['Fanjing Mountain (UNESCO)', 'Jiulong Cave', 'Zhongnan Gate', 'Tongren Ancient Town', 'Yinjiang Dong Villages', 'Shiqian Hot Springs', 'Songtao Miao Villages', 'Wuling Mountain', 'Wanshan Mercury Mines', 'Wujiang River'],
+      demographics: 'Gateway to UNESCO-listed Fanjing Mountain, sacred Buddhist peak with endemic golden monkeys. Historic mercury mining center.',
+      seoContent: {
+        intro: 'Tongren, gateway to sacred Fanjing Mountain, operates on China Standard Time (CST/UTC+8). This city of 3.1 million guards UNESCO-listed Fanjing Mountain, a sacred Buddhist peak home to the rare Guizhou golden monkey and stunning cloud-sea landscapes.',
+        timezoneFacts: 'Same timezone as Beijing. Eastern Guizhou, Wuling Mountain region.',
+        bestTimeToVisit: 'April-October for Fanjing Mountain. Spring and autumn best for clear skies.',
+        businessHours: 'Standard 9 AM to 6 PM. Fanjing Mountain 8 AM to 4 PM.',
+        timeDifference: 'Tongren is UTC+8 year-round. When noon in Tongren: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Fanjing Mountain is spectacular - book ahead! Cloud sea at sunrise magical. Golden monkeys rare sight. Mushroom-shaped peak is iconic.',
+        transportation: 'Tongren Fenghuang Airport (TEN). High-speed rail to Changsha.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'qianxinan', city: 'Xingyi', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 25.09, lng: 104.90, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.8M', metroPopulation: '3.0M', phoneCode: '+86 859', language: 'Mandarin, Buyi, Miao',
+      climate: 'Subtropical with warm summers (23-29°C) and mild winters (6-14°C). Pleasant year-round.',
+      attractions: ['Wanfenglin (Forest of Ten Thousand Peaks)', 'Maling River Gorge', 'Wanfeng Lake', 'Buyi Stone Village', 'Jiulong Waterfall Group', 'Xingyi Museum', 'Ceheng Buyi Villages', 'Nahui Dong Village', 'Beipan River', 'Shuangru Peak'],
+      demographics: 'Capital of Qianxinan Buyi and Miao Autonomous Prefecture. Home to Wanfenglin, one of China\'s most spectacular karst landscapes with 20,000+ cone-shaped peaks.',
+      seoContent: {
+        intro: 'Xingyi, city of ten thousand peaks, operates on China Standard Time (CST/UTC+8). This city of 2.8 million is gateway to Wanfenglin, an extraordinary landscape of over 20,000 karst peaks stretching to the horizon - one of China\'s most surreal natural wonders.',
+        timezoneFacts: 'Same timezone as Beijing. Southwestern Guizhou, near Yunnan border.',
+        bestTimeToVisit: 'Year-round pleasant. Spring for green terraces. Autumn for golden rice.',
+        businessHours: 'Standard 9 AM to 6 PM. Wanfenglin scenic areas 8 AM to 6 PM.',
+        timeDifference: 'Xingyi is UTC+8 year-round. When noon in Xingyi: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Wanfenglin sunset views incredible - thousands of peaks! Maling Gorge for rafting. Buyi villages for authentic minority culture.',
+        transportation: 'Xingyi Wanfenglin Airport (ACX). Limited rail connections.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'kaili', city: 'Kaili', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 26.57, lng: 107.98, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.5M', metroPopulation: '4.5M', phoneCode: '+86 855', language: 'Mandarin, Miao, Dong',
+      climate: 'Subtropical with warm summers (24-30°C) and mild winters (4-10°C). Humid.',
+      attractions: ['Xijiang Thousand Household Miao Village', 'Langde Miao Village', 'Zhenyuan Ancient Town', 'Zhaoxing Dong Village', 'Kaili Miao Museum', 'Basha Gun Village', 'Shidong Miao Village', 'Leishan County', 'Taijiang Sisters Meal Festival', 'Silver Jewelry Markets'],
+      demographics: 'Capital of Qiandongnan Miao and Dong Autonomous Prefecture. Heart of Miao culture with world\'s largest Miao village (Xijiang). Famous for elaborate silver jewelry and festivals.',
+      seoContent: {
+        intro: 'Kaili, heart of Miao culture, operates on China Standard Time (CST/UTC+8). This city is the gateway to Xijiang, the world\'s largest Miao village with 1,300 households, and the cultural center of one of China\'s most fascinating ethnic minority regions.',
+        timezoneFacts: 'Same timezone as Beijing. Southeastern Guizhou, mountainous minority region.',
+        bestTimeToVisit: 'April for Sisters Meal Festival. October for Miao New Year. Year-round for villages.',
+        businessHours: 'Standard 9 AM to 6 PM. Villages accessible dawn to dusk.',
+        timeDifference: 'Kaili is UTC+8 year-round. When noon in Kaili: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Xijiang Miao Village is spectacular - stay overnight for evening lights. Sisters Meal Festival in April features elaborate costumes. Buy authentic silver jewelry.',
+        transportation: 'Huangping Qiandongnan Airport (KJH). High-speed rail to Guiyang.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Miao Sisters Festival, Miao New Year.'
+      }
+    }
+  },
+  { slug: 'panzhihua', city: 'Panzhihua', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 26.58, lng: 101.72, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '1.2M', metroPopulation: '1.3M', phoneCode: '+86 812', language: 'Mandarin',
+      climate: 'Tropical valley with warm winters (12-22°C) and hot dry springs (20-35°C). "Sun City" - 300+ sunny days.',
+      attractions: ['Ertan Dam', 'Miyi Dragon Cave', 'Panzhihua Park', 'Gezala Hot Springs', 'Jinsha River Valley', 'Hongge Hot Springs', 'Ape People Ruins', 'Yanbian Mango Orchards', 'Datian Pomegranate Gardens', 'Winter Sunshine Belt'],
+      demographics: 'China\'s only city named after a flower. Unique winter sunshine destination - "Sun City" with 300+ sunny days. Major steel and vanadium producer.',
+      seoContent: {
+        intro: 'Panzhihua, China\'s "Sun City," operates on China Standard Time (CST/UTC+8). This unique city of 1.2 million enjoys over 300 sunny days yearly and warm winters, making it China\'s premier winter sunshine destination and retirement haven.',
+        timezoneFacts: 'Same timezone as Beijing. Southern Sichuan, Jinsha River valley.',
+        bestTimeToVisit: 'December-February for warm winter sunshine. Spring for mango blossoms.',
+        businessHours: 'Standard 9 AM to 6 PM. Hot springs open late.',
+        timeDifference: 'Panzhihua is UTC+8 year-round. When noon in Panzhihua: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Warm winter destination - many retirees from north China. Famous for mangoes and pomegranates. Hot springs everywhere.',
+        transportation: 'Panzhihua Bao\'anying Airport (PZI). Train to Kunming and Chengdu.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'guangyuan', city: 'Guangyuan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 32.44, lng: 105.84, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.3M', metroPopulation: '2.5M', phoneCode: '+86 839', language: 'Mandarin',
+      climate: 'Humid subtropical with warm summers (24-30°C) and cold winters (1-7°C). Mountain influenced.',
+      attractions: ['Jiange Sword Gate Pass', 'Qianfo Cliff', 'Wu Zetian Temple', 'Zhaohua Ancient Town', 'Tangjia River Nature Reserve', 'Ming Dynasty City Wall', 'Cuiyun Gallery', 'Huangze Temple', 'Mingyue Gorge', 'Cangxi Pear Blossom Valley'],
+      demographics: 'Birthplace of Wu Zetian, China\'s only female emperor. Guards historic Sword Gate Pass (Jiange), key gateway through Qinling Mountains on ancient Shu Road.',
+      seoContent: {
+        intro: 'Guangyuan, birthplace of China\'s only empress, operates on China Standard Time (CST/UTC+8). This city of 2.3 million is the hometown of Wu Zetian, China\'s only female emperor, and guards the legendary Sword Gate Pass on the ancient road to Sichuan.',
+        timezoneFacts: 'Same timezone as Beijing. Northern Sichuan, gateway through mountains.',
+        bestTimeToVisit: 'March-May and September-November. Spring for pear blossoms.',
+        businessHours: 'Standard 9 AM to 6 PM. Historical sites 8:30 AM to 5:30 PM.',
+        timeDifference: 'Guangyuan is UTC+8 year-round. When noon in Guangyuan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Sword Gate Pass is dramatic - understand why it was so strategic. Wu Zetian temple and birthplace sites. Zhaohua ancient town well-preserved.',
+        transportation: 'Guangyuan Panlong Airport (GYS). High-speed rail to Chengdu and Xi\'an.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'suining', city: 'Suining', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.53, lng: 105.59, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.5M', metroPopulation: '3.6M', phoneCode: '+86 825', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with hot summers (26-33°C) and mild winters (5-11°C). Sichuan basin climate.',
+      attractions: ['Lingquan Temple', 'China Dead Sea', 'Guanyin Lake', 'Suining Confucian Temple', 'Songlin Peach Blossom', 'Daying County Salt Lake', 'Suining Museum', 'Guangde Temple', 'Baima Lake', 'Jin Dynasty Tombs'],
+      demographics: 'Home to the "China Dead Sea" - a salt lake resort where visitors float effortlessly. Ancient temple city. Center of Guanyin Buddhist culture.',
+      seoContent: {
+        intro: 'Suining, home of the China Dead Sea, operates on China Standard Time (CST/UTC+8). This city of 3.5 million features a unique salt lake resort where visitors float effortlessly like in the Dead Sea, plus ancient Buddhist temples and Guanyin pilgrimage sites.',
+        timezoneFacts: 'Same timezone as Beijing. Central Sichuan basin.',
+        bestTimeToVisit: 'Year-round for Dead Sea. Spring for peach blossoms. Autumn pleasant.',
+        businessHours: 'Standard 9 AM to 6 PM. Dead Sea resort 9 AM to 10 PM.',
+        timeDifference: 'Suining is UTC+8 year-round. When noon in Suining: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'China Dead Sea is fun - float without effort! Lingquan Temple for Buddhist culture. Peach blossom festival in March.',
+        transportation: 'High-speed rail to Chengdu (1 hour). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'neijiang', city: 'Neijiang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 29.58, lng: 105.06, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.1M', metroPopulation: '3.7M', phoneCode: '+86 832', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with hot summers (27-34°C) and mild winters (5-11°C). Sichuan basin climate.',
+      attractions: ['Zhang Daqian Memorial', 'Shengshui Temple', 'Neijiang Sugar Museum', 'Tuojiang River', 'Qiongjiang River', 'Yunjia Cave', 'Longchang Ancient Town', 'Zipeng Mountain', 'Fan Changjiang Memorial', 'Weiyuan Ancient Grottoes'],
+      demographics: 'Hometown of Zhang Daqian, one of the most influential Chinese painters of the 20th century. Historic "Sugar Capital" of China.',
+      seoContent: {
+        intro: 'Neijiang, hometown of master painter Zhang Daqian, operates on China Standard Time (CST/UTC+8). This city of 3.1 million is the birthplace of Zhang Daqian, considered the Picasso of China, and was historically known as the "Sugar Capital" for its sugar industry.',
+        timezoneFacts: 'Same timezone as Beijing. Central Sichuan basin.',
+        bestTimeToVisit: 'March-May and September-November. Pleasant year-round.',
+        businessHours: 'Standard 9 AM to 6 PM. Zhang Daqian Memorial 9 AM to 5 PM.',
+        timeDifference: 'Neijiang is UTC+8 year-round. When noon in Neijiang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Zhang Daqian Memorial essential for art lovers. Sugar museum tells sweet history. Neijiang noodles are local specialty.',
+        transportation: 'High-speed rail hub. No local airport - use Chengdu.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'nanchong', city: 'Nanchong', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.80, lng: 106.08, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.6M', metroPopulation: '7.1M', phoneCode: '+86 817', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with hot summers (27-34°C) and mild winters (5-11°C). Sichuan basin climate.',
+      attractions: ['Langzhong Ancient City', 'Zhu De Birthplace', 'Nanchong Silk Museum', 'Jialinjiang River', 'Beiling Park', 'Fengshan Temple', 'Zhang Fei Temple', 'Nanchong Museum', 'Peng\'an Xiangyuan', 'Yingshan Ancient Town'],
+      demographics: 'Home to Langzhong, one of China\'s four best-preserved ancient cities. Birthplace of Marshal Zhu De. Historic "Silk City" of China.',
+      seoContent: {
+        intro: 'Nanchong, city of silk and ancient towns, operates on China Standard Time (CST/UTC+8). This city of 5.6 million is home to Langzhong Ancient City, one of China\'s four best-preserved ancient towns, and was the birthplace of Marshal Zhu De, founder of the Red Army.',
+        timezoneFacts: 'Same timezone as Beijing. Northeastern Sichuan basin.',
+        bestTimeToVisit: 'March-May and September-November. Langzhong festivals in spring.',
+        businessHours: 'Standard 9 AM to 6 PM. Langzhong ancient city always accessible.',
+        timeDifference: 'Nanchong is UTC+8 year-round. When noon in Nanchong: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Langzhong Ancient City is exceptional - stay overnight for atmosphere. Zhang Fei Temple for Three Kingdoms history. Silk museum tells textile history.',
+        transportation: 'Nanchong Gaoping Airport (NAO). High-speed rail to Chengdu.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'dazhou', city: 'Dazhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 31.21, lng: 107.50, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.4M', metroPopulation: '5.8M', phoneCode: '+86 818', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with hot summers (27-34°C) and mild winters (4-10°C). Mountain basin.',
+      attractions: ['Bajiao Ancient Town', 'Zhenwu Mountain', 'Quxian Grottoes', 'Dazhou Museum', 'Longtan River', 'Jinlong Temple', 'Xuanhan Baili Canyon', 'Wanyuan Yangchang Canyon', 'Qinglong Lake', 'Bamboo Sea'],
+      demographics: 'Major natural gas production center. Gateway to stunning canyons in Xuanhan and Wanyuan counties. Important transportation hub in northeastern Sichuan.',
+      seoContent: {
+        intro: 'Dazhou, gateway to Sichuan\'s hidden canyons, operates on China Standard Time (CST/UTC+8). This city of 5.4 million is China\'s major natural gas producer and gateway to spectacular undiscovered canyons in Xuanhan and Wanyuan that rival the Grand Canyon.',
+        timezoneFacts: 'Same timezone as Beijing. Northeastern Sichuan, Daba Mountain region.',
+        bestTimeToVisit: 'April-October for canyon exploration. Autumn colors spectacular.',
+        businessHours: 'Standard 9 AM to 6 PM. Canyon tours 8 AM to 5 PM.',
+        timeDifference: 'Dazhou is UTC+8 year-round. When noon in Dazhou: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Xuanhan Baili Canyon is undiscovered gem. Wanyuan canyons equally stunning. Natural gas makes city prosperous but industrial.',
+        transportation: 'Dazhou Heshi Airport (DAX). Major railway junction.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'guangan', city: 'Guang\'an', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.47, lng: 106.63, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.2M', metroPopulation: '4.6M', phoneCode: '+86 826', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with hot summers (27-34°C) and mild winters (5-11°C). Sichuan basin climate.',
+      attractions: ['Deng Xiaoping Hometown', 'Huaying Mountain', 'Tianyi Hot Springs', 'Guang\'an Confucian Temple', 'Siling Mountain', 'Wusheng Ancient Town', 'Yuechi Lake', 'Xiushui River', 'Memorial Hall Complex', 'Baolun Temple'],
+      demographics: 'Birthplace of Deng Xiaoping, architect of China\'s economic reform. Major pilgrimage destination for those interested in modern Chinese history.',
+      seoContent: {
+        intro: 'Guang\'an, birthplace of Deng Xiaoping, operates on China Standard Time (CST/UTC+8). This city of 3.2 million is the hometown of Deng Xiaoping, the leader who transformed China through economic reforms, making it an important site for understanding modern Chinese history.',
+        timezoneFacts: 'Same timezone as Beijing. Eastern Sichuan basin.',
+        bestTimeToVisit: 'Year-round. August 22 (Deng\'s birthday) sees special events.',
+        businessHours: 'Standard 9 AM to 6 PM. Deng Xiaoping Memorial 8:30 AM to 5:30 PM.',
+        timeDifference: 'Guang\'an is UTC+8 year-round. When noon in Guang\'an: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Deng Xiaoping Memorial complex is comprehensive and well-maintained. Huaying Mountain for hiking. Hot springs nearby.',
+        transportation: 'High-speed rail to Chengdu and Chongqing. No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'meishan', city: 'Meishan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.08, lng: 103.85, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.9M', metroPopulation: '3.0M', phoneCode: '+86 28', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with hot summers (26-33°C) and mild winters (5-11°C). Sichuan basin climate.',
+      attractions: ['Three Su Temple', 'Pengzu Mountain', 'Qingshen Bamboo Sea', 'Renshou Black Dragon Beach', 'Meishan Museum', 'Dongpo Lake', 'Laifeng Mountain', 'Hongya Ancient Town', 'Liujiang Ancient Town', 'Washan (Mount Wa)'],
+      demographics: 'Hometown of the Three Sus - Su Xun, Su Shi (Dongpo), and Su Zhe - China\'s most famous literary family. Su Shi (Dongpo) was one of China\'s greatest poets.',
+      seoContent: {
+        intro: 'Meishan, hometown of poet Su Dongpo, operates on China Standard Time (CST/UTC+8). This city of 2.9 million is the birthplace of Su Shi (Su Dongpo), one of China\'s greatest poets and the inventor of Dongpo pork, along with his famous father and brother.',
+        timezoneFacts: 'Same timezone as Beijing. Central-west Sichuan basin.',
+        bestTimeToVisit: 'March-May and September-November. Spring for bamboo forests.',
+        businessHours: 'Standard 9 AM to 6 PM. Three Su Temple 8:30 AM to 6 PM.',
+        timeDifference: 'Meishan is UTC+8 year-round. When noon in Meishan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Three Su Temple honors China\'s greatest literary family. Try authentic Dongpo pork here! Qingshen bamboo sea and crafts.',
+        transportation: 'High-speed rail to Chengdu (20 min). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'ziyang', city: 'Ziyang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.13, lng: 104.63, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.4M', metroPopulation: '3.5M', phoneCode: '+86 28', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with hot summers (27-34°C) and mild winters (5-11°C). Sichuan basin climate.',
+      attractions: ['Chen Yi Hometown', 'Yanxi Lake', 'Ziyang Museum', 'Sancha Lake', 'Baolin Temple', 'Dongyu Island', 'Lezhi Ancient Salt Wells', 'Anyue Stone Carvings', 'Wofo Temple', 'Pengzu Temple'],
+      demographics: 'Birthplace of Marshal Chen Yi, communist military leader and diplomat. Famous for Anyue lemon production (China\'s lemon capital) and ancient Buddhist stone carvings.',
+      seoContent: {
+        intro: 'Ziyang, birthplace of Marshal Chen Yi, operates on China Standard Time (CST/UTC+8). This city of 2.4 million is the hometown of Chen Yi, communist marshal and diplomat, and is famous as China\'s lemon capital, producing 80% of national lemon output.',
+        timezoneFacts: 'Same timezone as Beijing. Central Sichuan basin.',
+        bestTimeToVisit: 'March-May for lemon blossoms. Year-round for stone carvings.',
+        businessHours: 'Standard 9 AM to 6 PM. Stone carving sites 8:30 AM to 5:30 PM.',
+        timeDifference: 'Ziyang is UTC+8 year-round. When noon in Ziyang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Anyue Buddhist stone carvings rival Dazu - less crowded! Lemon orchards beautiful in bloom. Chen Yi Memorial well-maintained.',
+        transportation: 'High-speed rail to Chengdu (20 min). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
   { slug: 'dali', city: 'Dali', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 25.59, lng: 100.23, tier: 3, continent: 'asia',
     info: {
       currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.6M', phoneCode: '+86 872', language: 'Mandarin, Bai',
