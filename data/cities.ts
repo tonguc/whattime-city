@@ -6487,7 +6487,388 @@ export const cities: City[] = [
       demographics: 'Largest city in Andhra Pradesh, major port and industrial hub. Known as "City of Destiny" and "Jewel of the East Coast".'
     }
   },
-  { slug: 'vadodara', city: 'Vadodara', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.31, lng: 73.19, tier: 3, continent: 'asia',
+  
+  // India - New Cities Batch 1 (20 cities with full premium content)
+  { slug: 'srinagar', city: 'Srinagar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 34.08, lng: 74.80, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.3M', metroPopulation: '1.5M', phoneCode: '+91 194', language: 'Kashmiri, Urdu, Hindi, English',
+      climate: 'Humid subtropical highland with warm summers (18-31°C) and cold snowy winters (-2 to 8°C). Four distinct seasons.',
+      attractions: ['Dal Lake', 'Mughal Gardens', 'Shankaracharya Temple', 'Hazratbal Shrine', 'Nishat Bagh', 'Shalimar Bagh', 'Pari Mahal', 'Chashme Shahi', 'Jamia Masjid', 'Floating Vegetable Market'],
+      demographics: 'Summer capital of Jammu & Kashmir. Venice of the East with famous houseboats. Center of Kashmiri handicrafts including Pashmina shawls and carpets.',
+      seoContent: {
+        intro: 'Srinagar, the Venice of the East, operates on India Standard Time (IST/UTC+5:30). This lake city of 1.3 million is the summer capital of Jammu & Kashmir, famous for Dal Lake houseboats, Mughal gardens, and exquisite Kashmiri handicrafts.',
+        timezoneFacts: 'Same timezone as all of India. Located in far north, sunrise/sunset times vary significantly from southern India.',
+        bestTimeToVisit: 'April-October for pleasant weather. March-April for tulip festival. December-February for snow but very cold.',
+        businessHours: 'Shops 10 AM to 8 PM. Government offices 10 AM to 4 PM. Friday prayers close many shops midday.',
+        timeDifference: 'Srinagar is UTC+5:30 year-round. When noon in Srinagar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Houseboat stay on Dal Lake is must-do. Shikara rides at sunset magical. Bargain for Pashmina - check quality. Carry warm clothes even in summer evenings.',
+        transportation: 'Sheikh ul-Alam International Airport (SXR). No railway - nearest station Jammu (290km). Local transport by auto and taxi.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Eid ul-Fitr, Eid ul-Adha, Diwali. Many local holidays.'
+      }
+    }
+  },
+  { slug: 'shimla', city: 'Shimla', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 31.10, lng: 77.17, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.3M', phoneCode: '+91 177', language: 'Hindi, Pahari, English',
+      climate: 'Subtropical highland with warm summers (15-25°C) and cold snowy winters (-4 to 10°C). Monsoon July-September.',
+      attractions: ['The Ridge', 'Mall Road', 'Jakhoo Temple', 'Christ Church', 'Viceregal Lodge', 'Kufri', 'Chadwick Falls', 'Annandale', 'Toy Train', 'Summer Hill'],
+      demographics: 'Capital of Himachal Pradesh. Former summer capital of British India. Queen of Hill Stations with colonial architecture.',
+      seoContent: {
+        intro: 'Shimla, Queen of Hill Stations, operates on India Standard Time (IST/UTC+5:30). This charming hill town of 200,000 was the summer capital of British India and retains its colonial character with Tudor architecture, toy trains, and cool mountain air.',
+        timezoneFacts: 'Same timezone as all of India. Hill station - temperatures much cooler than plains.',
+        bestTimeToVisit: 'March-June for pleasant weather. December-February for snow. Avoid monsoon (July-September).',
+        businessHours: 'Shops on Mall Road 9 AM to 9 PM. Government offices 10 AM to 5 PM.',
+        timeDifference: 'Shimla is UTC+5:30 year-round. When noon in Shimla: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Take the UNESCO Toy Train from Kalka. Walk The Ridge at sunset. Mall Road is pedestrian-only. Book hotels ahead in peak season.',
+        transportation: 'Shimla Airport (SLV) limited flights. Toy Train from Kalka (96km, 5-6 hours). Buses from Delhi (8-10 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Dussehra (big in Kullu), Diwali, Christmas (colonial heritage).'
+      }
+    }
+  },
+  { slug: 'manali', city: 'Manali', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 32.24, lng: 77.19, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.1M', phoneCode: '+91 1902', language: 'Hindi, Pahari, English',
+      climate: 'Humid subtropical highland with cool summers (10-25°C) and cold snowy winters (-7 to 10°C). Heavy snowfall December-February.',
+      attractions: ['Rohtang Pass', 'Solang Valley', 'Hadimba Temple', 'Old Manali', 'Manu Temple', 'Vashisht Hot Springs', 'Jogini Waterfall', 'Atal Tunnel', 'Beas River', 'Mall Road'],
+      demographics: 'Popular Himalayan resort town in Kullu Valley. Adventure sports capital of India. Gateway to Leh-Ladakh.',
+      seoContent: {
+        intro: 'Manali, India\'s adventure capital, operates on India Standard Time (IST/UTC+5:30). This Himalayan resort town of 30,000 in Kullu Valley is the hub for trekking, skiing, paragliding, and the gateway to Leh-Ladakh via the world\'s longest highway tunnel.',
+        timezoneFacts: 'Same timezone as all of India. High altitude (2,050m) means cooler temperatures year-round.',
+        bestTimeToVisit: 'October-February for snow activities. March-June for trekking. Avoid monsoon (July-September).',
+        businessHours: 'Tourist shops 9 AM to 10 PM. Adventure activity bookings start early.',
+        timeDifference: 'Manali is UTC+5:30 year-round. When noon in Manali: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Atal Tunnel to Lahaul open year-round now. Rohtang Pass needs permit. Book adventure activities through registered operators. Old Manali has best cafes.',
+        transportation: 'Nearest airport Bhuntar (KUU) 50km. Buses from Delhi (12-14 hours). Atal Tunnel connects to Lahaul-Spiti.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Mountain rescue available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Dussehra (Kullu Dussehra is famous), Diwali.'
+      }
+    }
+  },
+  { slug: 'leh', city: 'Leh', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 34.16, lng: 77.58, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.05M', phoneCode: '+91 1982', language: 'Ladakhi, Hindi, English',
+      climate: 'Cold desert with warm summers (15-30°C) and extremely cold winters (-20 to -5°C). Very dry, high altitude (3,500m).',
+      attractions: ['Leh Palace', 'Shanti Stupa', 'Pangong Lake', 'Nubra Valley', 'Khardung La', 'Magnetic Hill', 'Hemis Monastery', 'Thiksey Monastery', 'Zanskar Valley', 'Confluence of Indus and Zanskar'],
+      demographics: 'Capital of Ladakh Union Territory. Buddhist heritage with ancient monasteries. High-altitude desert landscape.',
+      seoContent: {
+        intro: 'Leh, the land of high passes, operates on India Standard Time (IST/UTC+5:30). This high-altitude town of 30,000 at 3,500m is the capital of Ladakh, featuring ancient Buddhist monasteries, stunning Himalayan landscapes, and the famous Pangong Lake.',
+        timezoneFacts: 'Same timezone as all of India despite being far north. Sun rises early due to location.',
+        bestTimeToVisit: 'June-September when all passes open. May-June for Hemis Festival. Roads closed October-May.',
+        businessHours: 'Shops 9 AM to 8 PM. Tourist season only June-September for most businesses.',
+        timeDifference: 'Leh is UTC+5:30 year-round. When noon in Leh: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Acclimatize 2-3 days before activities - altitude sickness serious! Inner Line Permit needed for some areas. Carry cash - limited ATMs.',
+        transportation: 'Kushok Bakula Rimpochee Airport (IXL). Manali-Leh Highway (474km, 2 days). Srinagar-Leh Highway (434km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Army help available in emergencies.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar (Tibetan New Year), Hemis Festival (June-July).'
+      }
+    }
+  },
+  { slug: 'rishikesh', city: 'Rishikesh', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.09, lng: 78.27, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.1M', metroPopulation: '0.15M', phoneCode: '+91 135', language: 'Hindi, Garhwali, English',
+      climate: 'Humid subtropical with hot summers (25-40°C) and cool winters (7-20°C). Monsoon July-September brings heavy rain.',
+      attractions: ['Laxman Jhula', 'Ram Jhula', 'Beatles Ashram', 'Triveni Ghat', 'Parmarth Niketan', 'Ganga Aarti', 'Neelkanth Mahadev', 'Rafting on Ganges', 'Bungee Jumping', 'Rajaji National Park'],
+      demographics: 'Yoga Capital of the World. Gateway to Char Dham pilgrimage. Where Beatles stayed in 1968. Adventure sports hub.',
+      seoContent: {
+        intro: 'Rishikesh, Yoga Capital of the World, operates on India Standard Time (IST/UTC+5:30). This sacred town of 100,000 on the Ganges is where the Beatles learned meditation, and today draws millions for yoga, spirituality, and white-water rafting.',
+        timezoneFacts: 'Same timezone as all of India. Ganges flows through here from Himalayas.',
+        bestTimeToVisit: 'September-November and February-May. International Yoga Festival in March. Avoid monsoon (July-August) for rafting.',
+        businessHours: 'Ashrams start 5-6 AM. Cafes until 10 PM. Ganga Aarti at sunset (6-7 PM).',
+        timeDifference: 'Rishikesh is UTC+5:30 year-round. When noon in Rishikesh: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Vegetarian and alcohol-free zone. Book yoga courses in advance. Rafting best September-November. Beatles Ashram now open to public.',
+        transportation: 'Jolly Grant Airport (DED) 20km. Trains to Haridwar (25km). Buses from Delhi (6-7 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Maha Shivaratri (huge here), Diwali, International Yoga Day (June 21).'
+      }
+    }
+  },
+  { slug: 'haridwar', city: 'Haridwar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 29.95, lng: 78.16, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.3M', metroPopulation: '0.4M', phoneCode: '+91 1334', language: 'Hindi, Garhwali, English',
+      climate: 'Humid subtropical with hot summers (25-42°C) and cool winters (5-20°C). Monsoon July-September.',
+      attractions: ['Har Ki Pauri', 'Ganga Aarti', 'Mansa Devi Temple', 'Chandi Devi Temple', 'Maya Devi Temple', 'Rajaji National Park', 'Shantikunj', 'Bharat Mata Temple', 'Daksha Mahadev', 'Cable Car'],
+      demographics: 'Gateway to Char Dham pilgrimage (Kedarnath, Badrinath, Gangotri, Yamunotri). One of seven holiest Hindu cities. Kumbh Mela site.',
+      seoContent: {
+        intro: 'Haridwar, Gateway to the Gods, operates on India Standard Time (IST/UTC+5:30). This ancient city of 300,000 is where the Ganges enters the plains, hosting the spectacular Ganga Aarti and serving as the gateway to Char Dham pilgrimage.',
+        timezoneFacts: 'Same timezone as all of India. Sacred geography - where Ganges leaves Himalayas.',
+        bestTimeToVisit: 'October-March for pleasant weather. Kumbh Mela (every 12 years) and Ardh Kumbh (every 6 years) draw millions.',
+        businessHours: 'Temples 4 AM onwards. Ganga Aarti at Har Ki Pauri 6-7 PM. Shops 8 AM to 9 PM.',
+        timeDifference: 'Haridwar is UTC+5:30 year-round. When noon in Haridwar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Ganga Aarti is unmissable - arrive early for good spot. Vegetarian and alcohol-free city. Dress modestly. Don\'t miss cable car to Mansa Devi.',
+        transportation: 'Jolly Grant Airport (DED) 35km. Haridwar Junction well-connected by train. Buses from Delhi (5-6 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Maha Shivaratri, Ganga Dussehra, Diwali, Kumbh Mela (special years).'
+      }
+    }
+  },
+  { slug: 'udaipur', city: 'Udaipur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 24.58, lng: 73.68, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.5M', metroPopulation: '0.6M', phoneCode: '+91 294', language: 'Hindi, Mewari, English',
+      climate: 'Semi-arid with hot summers (30-42°C), monsoon (July-September), and mild winters (10-28°C). Lakes fill in monsoon.',
+      attractions: ['City Palace', 'Lake Pichola', 'Jag Mandir', 'Lake Palace', 'Jagdish Temple', 'Saheliyon Ki Bari', 'Fateh Sagar Lake', 'Monsoon Palace', 'Bagore Ki Haveli', 'Vintage Car Museum'],
+      demographics: 'Venice of the East. Former capital of Mewar kingdom. Most romantic city in India. James Bond Octopussy filmed here.',
+      seoContent: {
+        intro: 'Udaipur, City of Lakes, operates on India Standard Time (IST/UTC+5:30). This romantic city of 500,000 is the jewel of Rajasthan, with shimmering lakes, the magnificent City Palace, and the floating Lake Palace that appeared in James Bond.',
+        timezoneFacts: 'Same timezone as all of India. Desert state but lakes create microclimate.',
+        bestTimeToVisit: 'September-March for pleasant weather. Monsoon (July-August) fills lakes beautifully. Mewar Festival (March-April).',
+        businessHours: 'Shops 10 AM to 8 PM. City Palace 9:30 AM to 5:30 PM. Lake cruises until sunset.',
+        timeDifference: 'Udaipur is UTC+5:30 year-round. When noon in Udaipur: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Sunset boat ride on Lake Pichola essential. Rooftop restaurants with palace views. Bagore Ki Haveli cultural show nightly. Book heritage hotels early.',
+        transportation: 'Maharana Pratap Airport (UDR) 22km. Train connections to major cities. Buses from Jaipur (6-7 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Holi, Diwali, Mewar Festival, Gangaur Festival.'
+      }
+    }
+  },
+  { slug: 'jaisalmer', city: 'Jaisalmer', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.92, lng: 70.90, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.08M', metroPopulation: '0.1M', phoneCode: '+91 2992', language: 'Hindi, Marwari, English',
+      climate: 'Hot desert with extreme summers (35-48°C) and cool winters (5-24°C). Very little rainfall. Large day-night temperature variation.',
+      attractions: ['Jaisalmer Fort', 'Sam Sand Dunes', 'Patwon Ki Haveli', 'Gadisar Lake', 'Desert National Park', 'Kuldhara Ghost Village', 'Bada Bagh', 'Salim Singh Ki Haveli', 'Desert Safari', 'Longewala War Memorial'],
+      demographics: 'Golden City rising from Thar Desert. One of world\'s few living forts with residents inside. Silk Road trading post.',
+      seoContent: {
+        intro: 'Jaisalmer, the Golden City, operates on India Standard Time (IST/UTC+5:30). This desert jewel of 80,000 rises like a mirage from the Thar Desert, its golden sandstone fort one of the few living forts in the world with people still residing within its walls.',
+        timezoneFacts: 'Same timezone as all of India. Desert location means extreme temperature variations.',
+        bestTimeToVisit: 'October-March for comfortable weather. Desert Festival (February) spectacular. Avoid April-August extreme heat.',
+        businessHours: 'Fort shops 9 AM to 8 PM. Desert safaris depart 3-4 PM for sunset.',
+        timeDifference: 'Jaisalmer is UTC+5:30 year-round. When noon in Jaisalmer: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Desert safari with overnight camping unmissable. Stay inside the fort for unique experience. Sunset from fort ramparts magical. Carry water always.',
+        transportation: 'Jaisalmer Airport (JSA) limited flights. Train from Jodhpur (5-6 hours) and Delhi (18 hours). Desert road trips popular.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Holi, Diwali, Desert Festival (February).'
+      }
+    }
+  },
+  { slug: 'pushkar', city: 'Pushkar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.49, lng: 74.55, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.03M', phoneCode: '+91 145', language: 'Hindi, Marwari, English',
+      climate: 'Semi-arid with hot summers (32-42°C) and cool winters (8-24°C). Monsoon July-September brings limited rain.',
+      attractions: ['Pushkar Lake', 'Brahma Temple', 'Savitri Temple', 'Pushkar Camel Fair', 'Varaha Temple', 'Apteshwar Temple', 'Man Mahal', 'Rose Garden', 'Sunset Point', 'Pushkar Bazaar'],
+      demographics: 'One of oldest cities in India. Only Brahma temple in world. Famous camel fair draws 200,000+ visitors.',
+      seoContent: {
+        intro: 'Pushkar, the Rose Garden of Rajasthan, operates on India Standard Time (IST/UTC+5:30). This ancient pilgrimage town of 20,000 has the world\'s only Brahma temple and hosts the famous Pushkar Camel Fair, one of the world\'s largest livestock fairs.',
+        timezoneFacts: 'Same timezone as all of India. Sacred lake creates unique microclimate.',
+        bestTimeToVisit: 'October-March for pleasant weather. Pushkar Camel Fair (November) is unmissable but crowded.',
+        businessHours: 'Temples 5 AM onwards. Bazaars 9 AM to 9 PM. Camel Fair all day during festival.',
+        timeDifference: 'Pushkar is UTC+5:30 year-round. When noon in Pushkar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Vegetarian and alcohol-free town. Beware of "blessing" scams at ghats. Sunrise hike to Savitri Temple rewarding. Book early for Camel Fair.',
+        transportation: 'Nearest airport Jaipur (150km). Ajmer Junction 14km. Buses from Jaipur (3 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Holi (huge here!), Kartik Purnima, Pushkar Camel Fair (November).'
+      }
+    }
+  },
+  { slug: 'goa', city: 'Panaji', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 15.50, lng: 73.83, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.1M', metroPopulation: '0.7M', phoneCode: '+91 832', language: 'Konkani, English, Hindi, Portuguese',
+      climate: 'Tropical monsoon with hot humid summers (28-35°C), heavy monsoon (June-September), and pleasant winters (21-32°C).',
+      attractions: ['Basilica of Bom Jesus', 'Fort Aguada', 'Calangute Beach', 'Anjuna Flea Market', 'Old Goa Churches', 'Dudhsagar Falls', 'Fontainhas', 'Casino Cruises', 'Spice Plantations', 'Chapora Fort'],
+      demographics: 'India\'s smallest state and top beach destination. Portuguese colonial heritage. Mix of Indian and European culture.',
+      seoContent: {
+        intro: 'Panaji (Goa), India\'s beach paradise, operates on India Standard Time (IST/UTC+5:30). This former Portuguese colony of 700,000 (state) is India\'s premier beach destination, blending colonial churches, vibrant nightlife, and laid-back coastal culture.',
+        timezoneFacts: 'Same timezone as all of India. Coastal location moderates temperatures.',
+        bestTimeToVisit: 'November-February for perfect beach weather. Christmas and New Year extremely busy. Monsoon (June-September) for green landscapes.',
+        businessHours: 'Beach shacks 9 AM to 10 PM (or later). Clubs until 3-4 AM. Siesta common 2-4 PM.',
+        timeDifference: 'Goa is UTC+5:30 year-round. When noon in Goa: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'North Goa for parties, South Goa for relaxation. Rent a scooter to explore. Try Goan fish curry and bebinca. Old Goa churches are UNESCO sites.',
+        transportation: 'Dabolim Airport (GOI) 29km. Madgaon and Thivim railway stations. Konkan Railway scenic route.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Tourist Police: 1800-233-7777.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Goa Liberation Day (Dec 19), Christmas (BIG celebration), Carnival (February).'
+      }
+    }
+  },
+  { slug: 'pondicherry', city: 'Puducherry', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 11.93, lng: 79.83, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.5M', metroPopulation: '0.7M', phoneCode: '+91 413', language: 'Tamil, French, English, Hindi',
+      climate: 'Tropical wet and dry with hot summers (30-38°C) and mild winters (22-30°C). Monsoon October-December (northeast).',
+      attractions: ['Auroville', 'Sri Aurobindo Ashram', 'Promenade Beach', 'French Quarter', 'Paradise Beach', 'Basilica of Sacred Heart', 'Manakula Vinayagar Temple', 'Serenity Beach', 'Botanical Garden', 'French War Memorial'],
+      demographics: 'Former French colony retaining French character. Union Territory. Home to Auroville experimental township.',
+      seoContent: {
+        intro: 'Puducherry (Pondicherry), French India, operates on India Standard Time (IST/UTC+5:30). This former French colony of 500,000 retains its Gallic charm with yellow colonial buildings, boulangeries, and the spiritual Auroville township.',
+        timezoneFacts: 'Same timezone as all of India. Former French colony still has some French cultural influence.',
+        bestTimeToVisit: 'October-March for pleasant weather. Avoid April-June heat. Monsoon October-December.',
+        businessHours: 'French Quarter shops 9 AM to 1 PM, 3 PM to 9 PM (siesta!). Auroville services 9 AM to 5 PM.',
+        timeDifference: 'Puducherry is UTC+5:30 year-round. When noon in Puducherry: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Rent a cycle to explore French Quarter. Sri Aurobindo Ashram has strict timings. Auroville needs advance booking. Try French bakeries and crepes!',
+        transportation: 'Nearest airport Chennai (150km). Puducherry station limited trains. Buses from Chennai (3-4 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bastille Day (July 14 - local celebration), Pongal, Diwali.'
+      }
+    }
+  },
+  { slug: 'mysore', city: 'Mysuru', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.30, lng: 76.66, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.0M', metroPopulation: '1.2M', phoneCode: '+91 821', language: 'Kannada, English, Hindi',
+      climate: 'Tropical savanna with pleasant year-round temperatures (18-35°C). Mild compared to other Indian cities. Monsoon June-September.',
+      attractions: ['Mysore Palace', 'Chamundi Hill', 'Brindavan Gardens', 'St. Philomena\'s Church', 'Mysore Zoo', 'Jaganmohan Palace', 'Devaraja Market', 'Karanji Lake', 'Sand Sculpture Museum', 'Mysore Dasara'],
+      demographics: 'Former capital of Wodeyar dynasty. Cleanest city in India (multiple times). Yoga and silk center. Palace city.',
+      seoContent: {
+        intro: 'Mysuru (Mysore), City of Palaces, operates on India Standard Time (IST/UTC+5:30). This elegant city of 1 million is consistently rated India\'s cleanest, famous for its illuminated palace, Dasara festival, silk sarees, and yoga traditions.',
+        timezoneFacts: 'Same timezone as all of India. Pleasant climate year-round due to elevation.',
+        bestTimeToVisit: 'September-February for pleasant weather. Dasara (October) is spectacular - palace lit with 100,000 bulbs.',
+        businessHours: 'Mysore Palace 10 AM to 5:30 PM. Devaraja Market 6 AM to 9 PM. Sunday palace lighting 7-8 PM.',
+        timeDifference: 'Mysuru is UTC+5:30 year-round. When noon in Mysuru: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Palace is magical on Sunday evenings when lit. Buy silk from government emporium. Yoga courses available. Brindavan Gardens fountain show evening.',
+        transportation: 'Mysore Airport (MYQ) limited flights. Trains from Bangalore (3 hours). NH275 from Bangalore (150km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Dasara (HUGE 10-day festival), Diwali, Ugadi.'
+      }
+    }
+  },
+  { slug: 'hampi', city: 'Hampi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 15.33, lng: 76.46, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.003M', metroPopulation: '0.01M', phoneCode: '+91 8394', language: 'Kannada, Hindi, English',
+      climate: 'Semi-arid with hot summers (35-42°C) and mild winters (18-32°C). Best avoided April-June. Monsoon brings some relief.',
+      attractions: ['Virupaksha Temple', 'Vittala Temple', 'Stone Chariot', 'Elephant Stables', 'Lotus Mahal', 'Hampi Bazaar', 'Matanga Hill Sunrise', 'Coracle Rides', 'Hippie Island', 'Royal Enclosure'],
+      demographics: 'UNESCO World Heritage Site. Ruins of Vijayanagara Empire (14th-16th century). Once world\'s second-largest medieval city.',
+      seoContent: {
+        intro: 'Hampi, ruins of a forgotten empire, operates on India Standard Time (IST/UTC+5:30). This UNESCO site of 3,000 residents was once the world\'s second-largest medieval city, capital of the Vijayanagara Empire, now a stunning boulder-strewn landscape of temples and palaces.',
+        timezoneFacts: 'Same timezone as all of India. Sunrise and sunset over ruins are spectacular.',
+        bestTimeToVisit: 'October-February for comfortable weather. Hampi Utsav (November) for cultural festival. Avoid April-June heat.',
+        businessHours: 'Ruins accessible sunrise to sunset. Virupaksha Temple 6 AM to 9 PM. Cafes until 10 PM.',
+        timeDifference: 'Hampi is UTC+5:30 year-round. When noon in Hampi: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Sunrise from Matanga Hill is magical. Rent a bicycle to explore ruins. Coracle ride across river to Hippie Island. Carry water and sunscreen.',
+        transportation: 'Nearest airport Hubli (160km) or Belgaum (190km). Hospet Junction 13km. Buses from Bangalore (7-8 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Hampi Utsav (November), Virupaksha Car Festival.'
+      }
+    }
+  },
+  { slug: 'ooty', city: 'Ooty', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 11.41, lng: 76.69, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.09M', metroPopulation: '0.1M', phoneCode: '+91 423', language: 'Tamil, English, Kannada',
+      climate: 'Subtropical highland with cool year-round temperatures (5-25°C). Can be cold - warmest in April-June. Monsoon brings mist.',
+      attractions: ['Ooty Lake', 'Botanical Gardens', 'Nilgiri Mountain Railway', 'Doddabetta Peak', 'Rose Garden', 'Tea Estates', 'Pykara Falls', 'Avalanche Lake', 'St. Stephen\'s Church', 'Thread Garden'],
+      demographics: 'Queen of Hill Stations. British-era retreat in Nilgiri Mountains. Tea plantations and chocolate factories.',
+      seoContent: {
+        intro: 'Ooty (Udhagamandalam), Queen of Hill Stations, operates on India Standard Time (IST/UTC+5:30). This colonial-era hill town of 90,000 in the Nilgiri Mountains offers cool respite from South India\'s heat, with tea estates, the UNESCO toy train, and misty landscapes.',
+        timezoneFacts: 'Same timezone as all of India. High altitude (2,240m) means much cooler than plains.',
+        bestTimeToVisit: 'April-June for pleasant weather (summer in plains). October-November post-monsoon clarity. December-January can be cold.',
+        businessHours: 'Botanical Gardens 7 AM to 6:30 PM. Tea factories 9 AM to 6 PM. Boat rides 9 AM to 5:30 PM.',
+        timeDifference: 'Ooty is UTC+5:30 year-round. When noon in Ooty: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Take the UNESCO Nilgiri Mountain Railway from Mettupalayam. Buy local chocolates and tea. Pack warm clothes. Roads can be foggy.',
+        transportation: 'Nearest airport Coimbatore (88km). Nilgiri Mountain Railway from Mettupalayam. Buses from Bangalore and Chennai.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal, Diwali, Summer Festival (May-June).'
+      }
+    }
+  },
+  { slug: 'kodaikanal', city: 'Kodaikanal', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.23, lng: 77.49, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.05M', phoneCode: '+91 4542', language: 'Tamil, English',
+      climate: 'Subtropical highland with cool year-round temperatures (8-20°C). Mist common. Monsoon June-September and October-December.',
+      attractions: ['Kodaikanal Lake', 'Coaker\'s Walk', 'Bryant Park', 'Pillar Rocks', 'Dolphin\'s Nose', 'Pine Forest', 'Bear Shola Falls', 'Green Valley View', 'Kurinji Andavar Temple', 'Silver Cascade'],
+      demographics: 'Princess of Hill Stations. Created around a man-made star-shaped lake. Famous for homemade chocolates and eucalyptus.',
+      seoContent: {
+        intro: 'Kodaikanal, Princess of Hill Stations, operates on India Standard Time (IST/UTC+5:30). This misty hill town of 40,000 is built around a star-shaped lake in the Palani Hills, offering pine forests, homemade chocolates, and romantic mist-covered viewpoints.',
+        timezoneFacts: 'Same timezone as all of India. High altitude (2,133m) keeps it cool year-round.',
+        bestTimeToVisit: 'April-June for clear weather. September-November post-monsoon. Kurinji flowers bloom every 12 years.',
+        businessHours: 'Lake boats 9 AM to 5:30 PM. Shops 9 AM to 9 PM. Viewpoints best early morning.',
+        timeDifference: 'Kodaikanal is UTC+5:30 year-round. When noon in Kodaikanal: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Cycle around the lake (3.5km). Coaker\'s Walk best at sunrise. Buy homemade chocolates and eucalyptus oil. Carry umbrella always.',
+        transportation: 'Nearest airport Madurai (120km). Kodai Road station 80km. Ghat roads from Madurai or Palani.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal, Diwali, Summer Festival (May-June).'
+      }
+    }
+  },
+  { slug: 'munnar', city: 'Munnar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.09, lng: 77.06, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.04M', phoneCode: '+91 4865', language: 'Malayalam, Tamil, English',
+      climate: 'Subtropical highland with cool year-round temperatures (10-25°C). Mist and light rain common. Monsoon June-September.',
+      attractions: ['Tea Plantations', 'Eravikulam National Park', 'Mattupetty Dam', 'Echo Point', 'Top Station', 'Anamudi Peak', 'Neelakurinji Flowers', 'Tea Museum', 'Kundala Lake', 'Attukal Waterfalls'],
+      demographics: 'South India\'s largest tea-growing region. Western Ghats biodiversity hotspot. Home to endangered Nilgiri Tahr.',
+      seoContent: {
+        intro: 'Munnar, Kerala\'s tea country, operates on India Standard Time (IST/UTC+5:30). This hill station of 30,000 is surrounded by endless tea plantations in the Western Ghats, offering cool climate, endangered wildlife, and the rare Neelakurinji flowers that bloom every 12 years.',
+        timezoneFacts: 'Same timezone as all of India. High altitude (1,600m) provides natural air conditioning.',
+        bestTimeToVisit: 'September-May for pleasant weather. December-January can be cold. Neelakurinji blooms every 12 years (next 2030).',
+        businessHours: 'Tea estates tours 9 AM to 4 PM. Eravikulam Park 7:30 AM to 4 PM. Shops until 8 PM.',
+        timeDifference: 'Munnar is UTC+5:30 year-round. When noon in Munnar: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Visit tea museum and estates. Eravikulam for Nilgiri Tahr sightings. Top Station for Tamil Nadu views. Buy fresh tea direct from factories.',
+        transportation: 'Nearest airport Kochi (110km). No railway - drive from Kochi (4-5 hours). Winding ghat roads.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Onam (huge in Kerala), Vishu, Diwali.'
+      }
+    }
+  },
+  { slug: 'alleppey', city: 'Alappuzha', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 9.50, lng: 76.34, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.3M', phoneCode: '+91 477', language: 'Malayalam, English',
+      climate: 'Tropical with hot humid weather year-round (24-33°C). Heavy monsoon June-August. Best October-March.',
+      attractions: ['Backwaters', 'Houseboat Cruises', 'Alappuzha Beach', 'Nehru Trophy Boat Race', 'Marari Beach', 'Krishnapuram Palace', 'Ambalapuzha Temple', 'Pathiramanal Island', 'Coir Industry', 'Village Tours'],
+      demographics: 'Venice of the East. Hub of Kerala backwaters tourism. Famous for houseboats and Nehru Trophy snake boat race.',
+      seoContent: {
+        intro: 'Alappuzha (Alleppey), Venice of the East, operates on India Standard Time (IST/UTC+5:30). This backwater town of 200,000 is the hub of Kerala\'s famous houseboat cruises through palm-fringed canals, offering one of India\'s most unique experiences.',
+        timezoneFacts: 'Same timezone as all of India. Coastal and backwater location moderates temperatures.',
+        bestTimeToVisit: 'October-March for pleasant weather and clear backwaters. August for Nehru Trophy Boat Race. Avoid monsoon (June-July).',
+        businessHours: 'Houseboat departures 12 PM. Village tours morning. Beach shacks until 10 PM.',
+        timeDifference: 'Alappuzha is UTC+5:30 year-round. When noon in Alappuzha: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Overnight houseboat is must-do experience. Book KTDC or reputed operators. Nehru Trophy (Aug) is spectacular. Marari Beach quieter than main beach.',
+        transportation: 'Nearest airport Kochi (75km). Alappuzha railway well-connected. Buses from Kochi (2 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Onam (huge celebration), Vishu, Nehru Trophy (August Saturday).'
+      }
+    }
+  },
+  { slug: 'kovalam', city: 'Kovalam', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 8.40, lng: 76.98, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.05M', phoneCode: '+91 471', language: 'Malayalam, English',
+      climate: 'Tropical with warm year-round temperatures (25-32°C). Monsoon June-September can be rough. October-March ideal.',
+      attractions: ['Lighthouse Beach', 'Hawa Beach', 'Samudra Beach', 'Vizhinjam Mosque', 'Halcyon Castle', 'Ayurveda Centers', 'Vellayani Lake', 'Padmanabhapuram Palace', 'Karamana River', 'Surf Schools'],
+      demographics: 'Kerala\'s first beach resort developed in 1930s. International tourist destination. Ayurveda and wellness hub.',
+      seoContent: {
+        intro: 'Kovalam, Kerala\'s beach paradise, operates on India Standard Time (IST/UTC+5:30). This crescent-shaped beach resort of 20,000 was among India\'s first planned tourist beaches, now famous for Ayurvedic treatments, surfing, and lighthouse views.',
+        timezoneFacts: 'Same timezone as all of India. Southern tip of India - earliest sunrises in the country.',
+        bestTimeToVisit: 'October-March for calm seas and pleasant weather. Avoid monsoon (June-August) for swimming.',
+        businessHours: 'Beach activities 6 AM to 6 PM. Restaurants until 11 PM. Ayurveda treatments by appointment.',
+        timeDifference: 'Kovalam is UTC+5:30 year-round. When noon in Kovalam: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Lighthouse Beach most popular. Ayurveda treatments need multi-day courses. Surfing lessons available. Watch for riptides in monsoon.',
+        transportation: 'Trivandrum Airport (TRV) 15km. Trivandrum Central station 16km. Local buses frequent.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Onam, Vishu, Diwali.'
+      }
+    }
+  },
+  { slug: 'varkala', city: 'Varkala', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 8.73, lng: 76.72, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.06M', phoneCode: '+91 470', language: 'Malayalam, English',
+      climate: 'Tropical with warm year-round temperatures (25-32°C). Monsoon June-September. Best October-March.',
+      attractions: ['Varkala Cliff', 'Papanasam Beach', 'Janardhana Swamy Temple', 'Sivagiri Mutt', 'Kappil Beach', 'Anjengo Fort', 'Edava Beach', 'Ayurveda Treatments', 'Cliff Restaurants', 'Nature Treks'],
+      demographics: 'Cliff beach destination. Pilgrimage site for Hindus (Papanasam). Emerging backpacker and yoga destination.',
+      seoContent: {
+        intro: 'Varkala, the cliff beach, operates on India Standard Time (IST/UTC+5:30). This unique beach town of 40,000 features dramatic red cliffs plunging into the Arabian Sea, ancient temples, and a laid-back atmosphere that draws yogis and backpackers.',
+        timezoneFacts: 'Same timezone as all of India. Southern Kerala coastal location.',
+        bestTimeToVisit: 'October-March for calm seas and cliff-top dining. Monsoon closes many cliff establishments.',
+        businessHours: 'Cliff restaurants 8 AM to 11 PM. Temple 4 AM to 12 PM, 5 PM to 8 PM. Ayurveda by appointment.',
+        timeDifference: 'Varkala is UTC+5:30 year-round. When noon in Varkala: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Sunset from cliff is stunning. Papanasam Beach for Hindu pilgrims - be respectful. North cliff quieter than main cliff. Yoga courses available.',
+        transportation: 'Trivandrum Airport (TRV) 40km. Varkala Sivagiri station on main line. Buses from Trivandrum (1 hour).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Onam, Sivagiri Pilgrimage (Dec 30-Jan 1), Arattu Festival.'
+      }
+    }
+  },
     info: {
       currency: 'Indian Rupee', currencySymbol: '₹', population: '2.1M', phoneCode: '+91 265', language: 'Gujarati, Hindi',
       climate: 'Tropical wet and dry with hot summers (38-45°C), monsoon (June-September), and mild winters (15-30°C).',
