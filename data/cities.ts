@@ -14399,6 +14399,368 @@ export const cities: City[] = [
       }
     }
   },
+  
+  // China - New Cities Batch 5 FINAL (19 cities with full premium content)
+  { slug: 'hulunbuir', city: 'Hulunbuir', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 49.21, lng: 119.77, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.5M', metroPopulation: '2.5M', phoneCode: '+86 470', language: 'Mandarin, Mongolian',
+      climate: 'Subarctic with warm summers (16-25°C) and extremely cold winters (-25 to -10°C). Grassland continental.',
+      attractions: ['Hulunbuir Grassland', 'Hulun Lake', 'Erguna Wetland', 'Manzhouli Border', 'Shiwei Russian Village', 'Moerdaoga Forest', 'Genghis Khan Statue', 'Argun River', 'Evenki Villages', 'Ice and Snow Festival'],
+      demographics: 'Home to China\'s most beautiful grassland - Hulunbuir Prairie. Largest city by area in China. Mongolian, Evenki, and Russian minority cultures.',
+      seoContent: {
+        intro: 'Hulunbuir, land of endless grasslands, operates on China Standard Time (CST/UTC+8). This vast region of 2.5 million people contains China\'s most pristine grasslands, where Mongolian herders maintain traditional nomadic lifestyles across endless green prairies.',
+        timezoneFacts: 'Same timezone as Beijing despite being far northeast. Sunrise very early in summer.',
+        bestTimeToVisit: 'June-September for green grasslands. December-February for ice festival (extremely cold!).',
+        businessHours: 'Standard 9 AM to 6 PM. Grassland tours flexible.',
+        timeDifference: 'Hulunbuir is UTC+8 year-round. When noon in Hulunbuir: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'July-August grassland is stunning! Stay in Mongolian yurts. Manzhouli border town interesting. Winter is brutally cold (-30°C).',
+        transportation: 'Hulunbuir Hailar Airport (HLD). Train connections available.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Naadam Festival (July).'
+      }
+    }
+  },
+  { slug: 'wuhai', city: 'Wuhai', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 39.66, lng: 106.79, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.6M', metroPopulation: '0.6M', phoneCode: '+86 473', language: 'Mandarin',
+      climate: 'Desert with hot summers (22-32°C) and cold winters (-10 to 0°C). Arid continental.',
+      attractions: ['Wuhai Lake', 'Gandesier Monastery', 'Yellow River Canyon', 'Desert Oasis', 'Wuhai Coal Museum', 'Mongolian Border', 'Laoshipai Mountains', 'Jinsha Bay', 'Grape Vineyards', 'Hot Springs'],
+      demographics: 'Desert oasis city on Yellow River. Major coal mining center. Emerging wine region with desert grapes. Gateway between Inner Mongolia regions.',
+      seoContent: {
+        intro: 'Wuhai, desert oasis on the Yellow River, operates on China Standard Time (CST/UTC+8). This city of 600,000 is a surprising oasis in the desert, with a large lake, emerging wine industry, and Yellow River canyon landscapes.',
+        timezoneFacts: 'Same timezone as Beijing. Western Inner Mongolia, desert climate.',
+        bestTimeToVisit: 'May-October. Avoid extreme winter cold and summer heat.',
+        businessHours: 'Standard 9 AM to 6 PM. Desert tours available.',
+        timeDifference: 'Wuhai is UTC+8 year-round. When noon in Wuhai: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Wuhai Lake surprisingly large for desert city. Wine tasting growing industry. Yellow River scenery dramatic.',
+        transportation: 'Wuhai Airport (WUA). Rail connections available.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'bayannur', city: 'Bayannur', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 40.74, lng: 107.39, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '1.7M', metroPopulation: '1.7M', phoneCode: '+86 478', language: 'Mandarin, Mongolian',
+      climate: 'Semi-arid with warm summers (20-30°C) and cold winters (-15 to -5°C). Steppe climate.',
+      attractions: ['Hetao Plain', 'Urad Grassland', 'Wuliangsuhai Lake', 'Yinshan Rock Paintings', 'Ancient Great Wall', 'Alashan Left Banner', 'Dengkou Desert', 'Yellow River Wetland', 'Sunflower Fields', 'Mongolian Villages'],
+      demographics: 'Center of Hetao Plain, China\'s ancient breadbasket. Rich in prehistoric rock art (Yinshan). Sunflower and melon production center.',
+      seoContent: {
+        intro: 'Bayannur, breadbasket of the north, operates on China Standard Time (CST/UTC+8). This city of 1.7 million sits on the fertile Hetao Plain, known since ancient times as the "Northern Granary" and famous for sunflowers stretching to the horizon.',
+        timezoneFacts: 'Same timezone as Beijing. Western Inner Mongolia, agricultural region.',
+        bestTimeToVisit: 'July-August for sunflower blooms. May-September for pleasant weather.',
+        businessHours: 'Standard 9 AM to 6 PM. Agricultural tours available.',
+        timeDifference: 'Bayannur is UTC+8 year-round. When noon in Bayannur: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Sunflower fields spectacular in August! Yinshan rock paintings are prehistoric treasures. Famous for Hetao melons.',
+        transportation: 'Bayannur Tianji Airport (RLK). Rail connections.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'wulanchabu', city: 'Jining', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 41.03, lng: 113.11, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.1M', metroPopulation: '2.1M', phoneCode: '+86 474', language: 'Mandarin, Mongolian',
+      climate: 'Semi-arid with cool summers (18-26°C) and cold winters (-15 to -5°C). Highland steppe.',
+      attractions: ['Huanghuagou Grassland', 'Jiulong Bay', 'Suiyuan Revolution Memorial', 'Volcanic Geopark', 'Chahar Culture', 'Daihai Lake', 'Huiyang Ancient Town', 'Cabbage Museum', 'Data Center Valley', 'Wind Farms'],
+      demographics: 'Cool climate data center hub - "China\'s Cloud Valley". Volcanic landscapes. Chahar Mongolian culture. Famous for potatoes and cabbages.',
+      seoContent: {
+        intro: 'Ulanqab (Jining), China\'s cloud computing capital, operates on China Standard Time (CST/UTC+8). This cool highland city of 2.1 million has become China\'s data center hub due to its naturally cool climate, while featuring volcanic landscapes and Mongolian culture.',
+        timezoneFacts: 'Same timezone as Beijing. Central Inner Mongolia highlands.',
+        bestTimeToVisit: 'June-September for grasslands and comfortable weather.',
+        businessHours: 'Standard 9 AM to 6 PM. Tech facilities by appointment.',
+        timeDifference: 'Ulanqab is UTC+8 year-round. When noon in Ulanqab: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Cool summer escape from Beijing heat. Volcanic geopark unique. Data centers draw tech workers. Excellent potatoes!',
+        transportation: 'Ulanqab Jining Airport (UCB). High-speed rail to Beijing.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'xilinhaote', city: 'Xilinhot', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 43.94, lng: 116.05, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.3M', metroPopulation: '1.1M', phoneCode: '+86 479', language: 'Mandarin, Mongolian',
+      climate: 'Semi-arid with warm summers (17-26°C) and very cold winters (-20 to -8°C). Steppe climate.',
+      attractions: ['Xilingol Grassland', 'Beizi Temple', 'Volcanic Cluster', 'Mongolian Naadam', 'Plateau Lake', 'Horse Culture Museum', 'Enger River', 'Traditional Yurt Camps', 'Cheese and Dairy Farms', 'Wild Horse Reserve'],
+      demographics: 'Heart of Xilingol Grassland, one of China\'s four great grasslands. Center of Mongolian horse culture. Traditional nomadic lifestyle preserved.',
+      seoContent: {
+        intro: 'Xilinhot, heart of the Mongolian steppe, operates on China Standard Time (CST/UTC+8). This grassland capital of 300,000 sits at the center of Xilingol, one of China\'s last great grasslands where traditional Mongolian horse culture thrives.',
+        timezoneFacts: 'Same timezone as Beijing. Central Inner Mongolia steppe.',
+        bestTimeToVisit: 'July-August for Naadam Festival and green grasslands. Very cold winters.',
+        businessHours: 'Standard 9 AM to 6 PM. Grassland activities daytime.',
+        timeDifference: 'Xilinhot is UTC+8 year-round. When noon in Xilinhot: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Naadam Festival in July is incredible - horse racing, archery, wrestling! Stay in yurts. Try fresh dairy products. Winter extremely harsh.',
+        transportation: 'Xilinhot Airport (XIL). Limited rail connections.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Naadam (July).'
+      }
+    }
+  },
+  { slug: 'alxa', city: 'Bayanhot', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 38.83, lng: 105.67, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.25M', metroPopulation: '0.25M', phoneCode: '+86 483', language: 'Mandarin, Mongolian',
+      climate: 'Desert with hot summers (22-32°C) and cold winters (-12 to -2°C). Extreme arid.',
+      attractions: ['Badain Jaran Desert', 'Ejina Poplar Forest', 'Helan Mountains', 'Dongfeng Space Center', 'Yabrai Mountain', 'Desert Lakes', 'Camel Herding', 'Rock Paintings', 'Juyan Lake', 'Ancient Silk Road Sites'],
+      demographics: 'Home to Badain Jaran, world\'s tallest sand dunes (500m). Ejina poplar forest autumn spectacle. Jiuquan Satellite Center nearby.',
+      seoContent: {
+        intro: 'Alxa (Bayanhot), land of the world\'s tallest dunes, operates on China Standard Time (CST/UTC+8). This remote desert capital of 250,000 guards Badain Jaran Desert with the world\'s tallest sand dunes and the spectacular autumn golden poplar forests of Ejina.',
+        timezoneFacts: 'Same timezone as Beijing though geographically far west. Extremely remote.',
+        bestTimeToVisit: 'October for Ejina golden poplars (2 weeks only!). April-May for desert.',
+        businessHours: 'Standard 9 AM to 6 PM. Desert tours require planning.',
+        timeDifference: 'Alxa is UTC+8 year-round. When noon in Alxa: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Ejina poplars in October are magical but crowded! Badain Jaran dunes are spectacular. Very remote - plan carefully. Camel rides available.',
+        transportation: 'Alxa Left Banner Airport (AXF). Long drives required.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'hinggan', city: 'Ulanhot', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 46.07, lng: 122.07, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.35M', metroPopulation: '1.6M', phoneCode: '+86 482', language: 'Mandarin, Mongolian',
+      climate: 'Humid continental with warm summers (18-27°C) and very cold winters (-22 to -10°C). Forest-steppe.',
+      attractions: ['Arxan National Park', 'Wusur River', 'Genghis Khan Temple', 'Arxan Hot Springs', 'Tianchi Lake', 'Stone Forest', 'Birch Forests', 'Hailar', 'Japanese Occupation Sites', 'Volcanic Landscapes'],
+      demographics: 'Where Inner Mongolia autonomous region was founded (1947). Gateway to Arxan National Park. Mix of grassland, forest, and volcanic landscapes.',
+      seoContent: {
+        intro: 'Ulanhot, birthplace of Inner Mongolia, operates on China Standard Time (CST/UTC+8). This historic city of 350,000 is where Inner Mongolia Autonomous Region was founded in 1947 and serves as gateway to stunning Arxan National Park.',
+        timezoneFacts: 'Same timezone as Beijing. Eastern Inner Mongolia, forested region.',
+        bestTimeToVisit: 'June-September for Arxan. Autumn colors spectacular. Winter extremely cold.',
+        businessHours: 'Standard 9 AM to 6 PM. Arxan park 6 AM to 6 PM.',
+        timeDifference: 'Ulanhot is UTC+8 year-round. When noon in Ulanhot: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Arxan National Park is incredibly beautiful - volcanic lakes, hot springs, forests! Less crowded than other parks. Autumn colors rival any in China.',
+        transportation: 'Ulanhot Airport (HLH). Arxan has own airport (YIE).',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'bortala', city: 'Bole', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 44.90, lng: 82.07, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.5M', metroPopulation: '0.5M', phoneCode: '+86 909', language: 'Mandarin, Kazakh, Mongolian',
+      climate: 'Semi-arid with warm summers (20-30°C) and cold winters (-15 to -5°C). Steppe climate.',
+      attractions: ['Sayram Lake', 'Alashankou Border', 'Ebinur Lake', 'Wenquan Hot Springs', 'Alataw Pass', 'Kazakh Villages', 'Mongol Yurt Camps', 'Train to Europe Gateway', 'Bird Watching', 'Lavender Fields'],
+      demographics: 'Home to stunning Sayram Lake. Major Eurasian railway gateway (Alashankou). Kazakh and Mongol minority cultures.',
+      seoContent: {
+        intro: 'Bole, gateway between China and Europe, operates on China Standard Time (CST/UTC+8). This border city of 500,000 guards Alashankou, where China-Europe freight trains cross into Kazakhstan, and features pristine Sayram Lake, Xinjiang\'s largest alpine lake.',
+        timezoneFacts: 'Same timezone as Beijing though far west. Sun rises/sets very late - around 9-10 AM/PM in summer!',
+        bestTimeToVisit: 'June-August for Sayram Lake and lavender. July for lake festivals.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time, but locals operate ~2 hours later.',
+        timeDifference: 'Bole is UTC+8 year-round despite being UTC+5 geographically. When noon in Bole: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Sayram Lake is breathtaking! Alashankou sees China-Europe trains. Adjust to late sunrise/sunset. Lavender fields in June-July.',
+        transportation: 'Bole Alashankou Airport (BPL). International rail gateway.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'changji', city: 'Changji', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 44.01, lng: 87.31, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.4M', metroPopulation: '1.6M', phoneCode: '+86 994', language: 'Mandarin, Kazakh, Hui',
+      climate: 'Semi-arid with hot summers (22-32°C) and cold winters (-15 to -5°C). Desert-steppe transition.',
+      attractions: ['Tianchi Lake', 'Bogda Peak', 'Jimsar Dinosaur Park', 'Mori Kazakh Culture', 'Mulei Singing Sand', 'Ancient Beiting City', 'Tianshan Tianchi', 'Hui Cuisine Street', 'Lavender Fields', 'Keketuohai'],
+      demographics: 'Gateway to Tianchi (Heavenly Lake) at foot of Bogda Peak. Hui Muslim and Kazakh cultures. Dinosaur fossil discoveries.',
+      seoContent: {
+        intro: 'Changji, gateway to Heavenly Lake, operates on China Standard Time (CST/UTC+8). This city of 400,000 is the gateway to Tianchi, the famous "Heavenly Lake" nestled beneath snow-capped Bogda Peak, one of Xinjiang\'s most iconic landscapes.',
+        timezoneFacts: 'Same timezone as Beijing. Central Xinjiang, near Urumqi.',
+        bestTimeToVisit: 'June-September for Tianchi. Spring for wildflowers.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time. Tianchi park 8 AM to 7 PM.',
+        timeDifference: 'Changji is UTC+8 year-round. When noon in Changji: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Tianchi is must-visit from Urumqi! Bogda Peak stunning backdrop. Try Hui cuisine in old town. Dinosaur park for kids.',
+        transportation: 'Near Urumqi Diwopu Airport. High-speed rail.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'ili', city: 'Yining', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 43.92, lng: 81.32, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.6M', metroPopulation: '2.8M', phoneCode: '+86 999', language: 'Mandarin, Kazakh, Uyghur',
+      climate: 'Semi-arid with warm summers (20-30°C) and cold winters (-12 to -2°C). Ili Valley microclimate.',
+      attractions: ['Nalati Grassland', 'Kanas Lake', 'Lavender Fields', 'Ili River', 'Kazakh Villages', 'Huocheng Lavender', 'Guozigou Bridge', 'Qapqal Xibe Town', 'Fruit Orchards', 'Sayram Lake'],
+      demographics: 'Heart of beautiful Ili Valley, China\'s "Little Switzerland". Largest lavender growing region outside Provence. Multi-ethnic harmony - Kazakh, Uyghur, Xibe cultures.',
+      seoContent: {
+        intro: 'Yining, China\'s Little Switzerland, operates on China Standard Time (CST/UTC+8). This city of 600,000 in the Ili Valley is surrounded by alpine meadows, lavender fields rivaling Provence, and some of China\'s most spectacular mountain scenery.',
+        timezoneFacts: 'Same timezone as Beijing though far west. Late sunrise/sunset - adjust schedule!',
+        bestTimeToVisit: 'June-July for lavender blooms! July-August for Nalati grasslands.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time, locals operate later.',
+        timeDifference: 'Yining is UTC+8 year-round despite being UTC+5 geographically. When noon in Yining: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Lavender blooms mid-June to mid-July - spectacular! Nalati grassland like Swiss Alps. Try Kazakh hospitality. Fruit orchards excellent.',
+        transportation: 'Yining Airport (YIN). Long but scenic drives to attractions.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'tacheng', city: 'Tacheng', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 46.75, lng: 82.98, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.17M', metroPopulation: '1.1M', phoneCode: '+86 901', language: 'Mandarin, Kazakh, Russian',
+      climate: 'Semi-arid with warm summers (18-28°C) and cold winters (-18 to -8°C). Steppe climate.',
+      attractions: ['Tacheng Border', 'Wusu Mud Volcano', 'Emin Tower', 'Kazakh Yurt Camps', 'Russian Architecture', 'Tarbagatai Mountains', 'Hoboksar Grassland', 'Sheep Herding', 'Flower Meadows', 'Kazakhstan Border Market'],
+      demographics: 'Remote border city with Russia/Kazakhstan influences. Mix of Kazakh, Russian, Tatar cultures. One of China\'s least visited regions.',
+      seoContent: {
+        intro: 'Tacheng, where cultures converge, operates on China Standard Time (CST/UTC+8). This remote border city of 170,000 sits where Chinese, Kazakh, Russian, and Tatar cultures blend, with unique architecture and traditions found nowhere else in China.',
+        timezoneFacts: 'Same timezone as Beijing. Far northwestern Xinjiang, very remote.',
+        bestTimeToVisit: 'June-August for pleasant weather and flower meadows.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time. Border markets morning.',
+        timeDifference: 'Tacheng is UTC+8 year-round despite being UTC+5 geographically. When noon in Tacheng: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Very off-beaten-path! Russian-style bread and dairy. Border market interesting. Extremely remote - plan carefully.',
+        transportation: 'Tacheng Airport (TCG). Long distances to anywhere.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'altay', city: 'Altay', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 47.85, lng: 88.14, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.2M', metroPopulation: '0.7M', phoneCode: '+86 906', language: 'Mandarin, Kazakh',
+      climate: 'Semi-arid with cool summers (15-25°C) and very cold winters (-25 to -12°C). Mountain-steppe.',
+      attractions: ['Kanas Lake', 'Hemu Village', 'Baihaba Village', 'Altay Mountains', 'Koktokay', 'Irtysh River', 'Skiing Resorts', 'Tuvan Culture', 'Autumn Colors', 'Birch Forests'],
+      demographics: 'Gateway to legendary Kanas Lake and Hemu Village. Home to mysterious Tuvan people. China\'s premier autumn destination. Emerging ski destination.',
+      seoContent: {
+        intro: 'Altay, gateway to Kanas Lake, operates on China Standard Time (CST/UTC+8). This remote city of 200,000 guards access to Kanas Lake, China\'s most mysterious and beautiful lake, and the fairytale village of Hemu with its Tuvan log cabins.',
+        timezoneFacts: 'Same timezone as Beijing though far northwest. Very late sunrise/sunset.',
+        bestTimeToVisit: 'September-October for autumn colors (SPECTACULAR!). January-February for skiing.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time. Kanas park 8 AM to 8 PM (summer).',
+        timeDifference: 'Altay is UTC+8 year-round despite being UTC+6 geographically. When noon in Altay: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Kanas autumn (late Sept) is China\'s most beautiful! Hemu village magical. Book way ahead for peak season. Winter skiing emerging.',
+        transportation: 'Altay Airport (AAT). Kanas has own airport (KJI).',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'hami', city: 'Hami', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 42.83, lng: 93.51, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.6M', metroPopulation: '0.6M', phoneCode: '+86 902', language: 'Mandarin, Uyghur, Kazakh',
+      climate: 'Desert with hot summers (25-38°C) and cold winters (-15 to -5°C). Extreme temperature swings.',
+      attractions: ['Hami Melon Fields', 'Mingsha Mountain', 'Yardang Ghost City', 'Tianshan Scenic Area', 'Hami Museum', 'King\'s Mausoleum', 'Gobi Desert', 'Ancient Hami City', 'Wind Power Corridor', 'Poplar Forests'],
+      demographics: 'Famous for Hami melons, China\'s sweetest. Gateway city on ancient Silk Road. Extreme climate with hot summers and cold winters.',
+      seoContent: {
+        intro: 'Hami, land of the sweetest melons, operates on China Standard Time (CST/UTC+8). This Silk Road oasis of 600,000 is famous worldwide for Hami melons, the sweetest in China, grown in extreme desert conditions that concentrate their sugars.',
+        timezoneFacts: 'Same timezone as Beijing though far west. Sunrise/sunset about 2 hours later than Beijing.',
+        bestTimeToVisit: 'July-September for melon harvest. Spring and autumn for comfortable temperatures.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time.',
+        timeDifference: 'Hami is UTC+8 year-round despite being UTC+6 geographically. When noon in Hami: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Taste authentic Hami melons - incomparably sweet! Yardang formations otherworldly. Extreme temperatures - prepare accordingly.',
+        transportation: 'Hami Airport (HMI). Rail connections on Silk Road route.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'aksu', city: 'Aksu', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 41.17, lng: 80.26, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.7M', metroPopulation: '2.7M', phoneCode: '+86 997', language: 'Mandarin, Uyghur',
+      climate: 'Desert with hot summers (25-35°C) and cold winters (-10 to 0°C). Oasis climate.',
+      attractions: ['Tianshan Grand Canyon', 'Kuqa Ancient City', 'Kizil Thousand Buddha Caves', 'Tarim River', 'Poplar Forests', 'Apple and Walnut Orchards', 'Ancient Silk Road Sites', 'Taklamakan Desert Edge', 'Subash Ancient City', 'Uyghur Old Town'],
+      demographics: 'Ancient Kuqa Kingdom territory on Silk Road. Kizil Caves predate Dunhuang. Famous for apples and walnuts. Gateway to Tianshan Grand Canyon.',
+      seoContent: {
+        intro: 'Aksu, heart of the ancient Silk Road, operates on China Standard Time (CST/UTC+8). This oasis city of 700,000 was once the powerful Kuqa Kingdom and features Kizil Caves, Buddhist grottoes older than Dunhuang, plus spectacular Tianshan Grand Canyon.',
+        timezoneFacts: 'Same timezone as Beijing though far west. Sun rises around 8-9 AM, sets around 10 PM in summer.',
+        bestTimeToVisit: 'May-October for Tianshan Canyon. Autumn for apple/walnut harvest.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time. Locals operate later.',
+        timeDifference: 'Aksu is UTC+8 year-round despite being UTC+5 geographically. When noon in Aksu: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Tianshan Grand Canyon is stunning red rock! Kizil Caves predate Mogao. Aksu apples famous. Adjust to very late sunrise/sunset.',
+        transportation: 'Aksu Airport (AKU). Rail connections available.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'hotan', city: 'Hotan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 37.11, lng: 79.93, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.4M', metroPopulation: '2.5M', phoneCode: '+86 903', language: 'Mandarin, Uyghur',
+      climate: 'Desert with very hot summers (28-40°C) and cold winters (-8 to 2°C). Extreme desert.',
+      attractions: ['Hotan Jade Market', 'White Jade River', 'Taklamakan Desert', 'Ancient Niya Ruins', 'Silk and Carpet Workshops', 'Hotan Museum', 'Imam Asim Mazar', 'Desert Poplar Forests', 'Sunday Bazaar', 'Melikawat Ruins'],
+      demographics: 'World capital of nephrite jade for 5,000 years. Edge of Taklamakan Desert. Ancient Silk Road oasis. Famous for carpets and silk.',
+      seoContent: {
+        intro: 'Hotan, world jade capital for 5,000 years, operates on China Standard Time (CST/UTC+8). This desert oasis of 400,000 has supplied the world\'s finest nephrite jade for millennia, with jade trading continuing in its famous Sunday market.',
+        timezoneFacts: 'Same timezone as Beijing though very far west. Sun rises ~9 AM, sets ~11 PM in summer!',
+        bestTimeToVisit: 'April-May and September-October. Avoid extreme summer heat.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time. Sunday bazaar all day.',
+        timeDifference: 'Hotan is UTC+8 year-round despite being UTC+5 geographically. When noon in Hotan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Jade market fascinating - bring expert to avoid fakes! Sunday bazaar authentic. Desert extremely harsh. Niya ruins require permits.',
+        transportation: 'Hotan Airport (HTN). Long distances to other cities.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'kizilsu', city: 'Artux', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 39.71, lng: 76.17, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.3M', metroPopulation: '0.6M', phoneCode: '+86 908', language: 'Mandarin, Kyrgyz, Uyghur',
+      climate: 'Semi-arid with warm summers (20-32°C) and cold winters (-10 to 0°C). Mountain-desert.',
+      attractions: ['Karakul Lake', 'Muztagh Ata', 'Kongur Tagh', 'Pamir Highway', 'Kyrgyz Yurt Camps', 'Ancient Silk Road', 'Opal Valley', 'Border Mountains', 'Eagle Hunting', 'High Altitude Scenery'],
+      demographics: 'Capital of Kizilsu Kyrgyz Autonomous Prefecture. Gateway to Karakul Lake and Pamir Mountains. Kyrgyz eagle hunting culture.',
+      seoContent: {
+        intro: 'Artux, gateway to the Pamirs, operates on China Standard Time (CST/UTC+8). This Kyrgyz capital of 300,000 guards the ancient Silk Road route through the Pamir Mountains, with stunning Karakul Lake and 7,500m peaks on the horizon.',
+        timezoneFacts: 'Same timezone as Beijing though extremely far west. Latest sunrise/sunset in China - sun sets after 10 PM in summer!',
+        bestTimeToVisit: 'June-September for Karakul Lake and Pamir passes.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time. Tourism seasonal.',
+        timeDifference: 'Artux is UTC+8 year-round despite being UTC+5 geographically. When noon in Artux: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Karakul Lake at 3,600m is breathtaking! Muztagh Ata for mountaineering. Kyrgyz culture authentic. Altitude preparation essential.',
+        transportation: 'Near Kashgar Airport. Karakoram Highway access.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'shihezi', city: 'Shihezi', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 44.30, lng: 86.03, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.6M', metroPopulation: '0.7M', phoneCode: '+86 993', language: 'Mandarin',
+      climate: 'Semi-arid with hot summers (22-32°C) and cold winters (-15 to -5°C). Oasis climate.',
+      attractions: ['Shihezi Military Reclamation Museum', 'Tianshan Tianchi (nearby)', 'Cotton Fields', 'Grape Vineyards', 'Shihezi University', 'Monument to Pioneers', 'Desert Greening Projects', 'Garden City Parks', 'Xinjiang Production Corps History', 'Agricultural Tourism'],
+      demographics: 'Model city built by Xinjiang Production and Construction Corps. Known as "Pearl of the Gobi" - turned desert into gardens. Han-majority planned city.',
+      seoContent: {
+        intro: 'Shihezi, Pearl of the Gobi, operates on China Standard Time (CST/UTC+8). This planned city of 600,000 was carved from desert by the Xinjiang Production Corps, transforming harsh Gobi into a green garden city - a testament to human determination.',
+        timezoneFacts: 'Same timezone as Beijing. Central Xinjiang, oasis in desert.',
+        bestTimeToVisit: 'May-September for green season. August for grape harvest.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time.',
+        timeDifference: 'Shihezi is UTC+8 year-round. When noon in Shihezi: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Military Reclamation Museum tells unique story. Green city in desert impressive. Near Tianchi day trips. Cotton harvest in autumn.',
+        transportation: 'Shihezi Huayuan Airport. Near Urumqi.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'karamay', city: 'Karamay', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 45.59, lng: 84.89, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.5M', metroPopulation: '0.5M', phoneCode: '+86 990', language: 'Mandarin',
+      climate: 'Desert with hot summers (25-35°C) and cold winters (-18 to -8°C). Oil field climate.',
+      attractions: ['Ghost City (Urho)', 'Karamay Oil Field', 'Black Oil Mountain', 'Petroleum Museum', 'Dinosaur Park', 'Gobi Desert', 'Wind City', 'Oil Derrick Forest', 'Yardang Landforms', 'Baijiantan'],
+      demographics: 'China\'s first large oil field city. Name means "black oil" in Uyghur. Wealthy petroleum industry city in Gobi Desert.',
+      seoContent: {
+        intro: 'Karamay, China\'s oil city, operates on China Standard Time (CST/UTC+8). This wealthy desert city of 500,000 sits atop China\'s first major oil field, with otherworldly Yardang "Ghost City" formations and endless oil derricks across the Gobi.',
+        timezoneFacts: 'Same timezone as Beijing. Northern Xinjiang desert.',
+        bestTimeToVisit: 'May-September. Ghost City best at sunset. Avoid winter winds.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time.',
+        timeDifference: 'Karamay is UTC+8 year-round. When noon in Karamay: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Ghost City at sunset is magical! Petroleum industry fascinating. One of China\'s wealthiest cities. Extreme winds common.',
+        transportation: 'Karamay Airport (KRY). Rail connections available.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
   { slug: 'dali', city: 'Dali', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 25.59, lng: 100.23, tier: 3, continent: 'asia',
     info: {
       currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.6M', phoneCode: '+86 872', language: 'Mandarin, Bai',
