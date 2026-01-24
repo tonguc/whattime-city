@@ -8779,6 +8779,891 @@ export const cities: City[] = [
       }
     }
   },
+  
+  // India - New Cities Batch 7 (20 cities with full premium content)
+  { slug: 'wayanad', city: 'Wayanad', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 11.69, lng: 76.13, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.8M', metroPopulation: '0.8M', phoneCode: '+91 4936', language: 'Malayalam, Kannada, Tamil',
+      climate: 'Tropical highland with pleasant year-round temperatures (15-29°C). Southwest monsoon June-September. Mist common.',
+      attractions: ['Edakkal Caves', 'Banasura Sagar Dam', 'Chembra Peak', 'Pookode Lake', 'Wayanad Wildlife Sanctuary', 'Soochipara Falls', 'Meenmutty Falls', 'Kuruva Island', 'Thirunelli Temple', 'Tea Estates'],
+      demographics: 'Green paradise of Kerala. Prehistoric Edakkal cave carvings. Spice and coffee plantations. Tribal heritage.',
+      seoContent: {
+        intro: 'Wayanad, green paradise of Kerala, operates on India Standard Time (IST/UTC+5:30). This misty hill district of 800,000 features prehistoric Edakkal Cave petroglyphs, the heart-shaped Chembra Peak trek, and lush spice plantations at the junction of Kerala, Karnataka, and Tamil Nadu.',
+        timezoneFacts: 'Same timezone as all of India. Western Ghats, Kerala-Karnataka border.',
+        bestTimeToVisit: 'October-May for pleasant weather. Monsoon (June-September) lush but wet. December-February ideal.',
+        businessHours: 'Edakkal Caves 9 AM to 4 PM. Wildlife Sanctuary 6 AM to 6 PM.',
+        timeDifference: 'Wayanad is UTC+5:30 year-round. When noon in Wayanad: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Edakkal Caves have 3,000-year-old petroglyphs! Chembra Peak heart-shaped lake romantic. Bamboo rafting at Kuruva Island. Stay in plantation homestays for authentic experience.',
+        transportation: 'Calicut Airport (CCJ) 100km. No railway - Kozhikode 75km. Scenic drive via Thamarassery Ghat.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Onam, Vishu, Diwali.'
+      }
+    }
+  },
+  { slug: 'thekkady', city: 'Thekkady', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 9.60, lng: 77.16, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.05M', phoneCode: '+91 4869', language: 'Malayalam, Tamil, English',
+      climate: 'Tropical highland with pleasant year-round temperatures (15-30°C). Monsoon June-September. Cool winters.',
+      attractions: ['Periyar Tiger Reserve', 'Periyar Lake', 'Boat Safari', 'Bamboo Rafting', 'Spice Plantations', 'Elephant Junction', 'Mangala Devi Temple', 'Kumily Town', 'Tribal Village Visit', 'Nature Walks'],
+      demographics: 'Gateway to Periyar. India\'s most visited wildlife sanctuary. Spice capital of Kerala. Tamil Nadu border.',
+      seoContent: {
+        intro: 'Thekkady, wildlife and spice haven, operates on India Standard Time (IST/UTC+5:30). This gateway to Periyar Tiger Reserve offers boat safaris on Periyar Lake for elephant and tiger sightings, surrounded by fragrant cardamom and pepper plantations.',
+        timezoneFacts: 'Same timezone as all of India. Idukki district, Kerala-Tamil Nadu border.',
+        bestTimeToVisit: 'October-May for wildlife viewing. Early morning boat safaris best. Monsoon lush but wet.',
+        businessHours: 'Periyar boat rides 7:30 AM to 3:30 PM. Spice tours 9 AM to 5 PM. Bamboo rafting by booking.',
+        timeDifference: 'Thekkady is UTC+5:30 year-round. When noon in Thekkady: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Book KTDC boat safari early - limited seats! Bamboo rafting more wildlife chances than boat. Spice plantation tour aromatic. Kumily market for fresh spices. Elephant camp ethical concerns - research first.',
+        transportation: 'Madurai Airport (IXM) 140km. Kottayam railway 114km. Buses from Kochi (190km) and Madurai.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Forest Office: 04869-222027.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Onam, Vishu, Diwali.'
+      }
+    }
+  },
+  { slug: 'bekal', city: 'Bekal', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.39, lng: 75.03, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.03M', phoneCode: '+91 467', language: 'Malayalam, Kannada, Tulu',
+      climate: 'Tropical with warm year-round temperatures (23-33°C). Heavy monsoon June-September. Humid.',
+      attractions: ['Bekal Fort', 'Bekal Beach', 'Pallikere Beach', 'Backwaters', 'Ananthapura Lake Temple', 'Chandragiri Fort', 'Kappil Beach', 'Nileswaram Palace', 'Valiyaparamba Backwaters', 'Ayurveda Resorts'],
+      demographics: 'Kerala\'s largest fort. Featured in Bollywood films. Pristine beaches. Emerging luxury tourism.',
+      seoContent: {
+        intro: 'Bekal, Kerala\'s fortress on the sea, operates on India Standard Time (IST/UTC+5:30). This emerging destination features Kerala\'s largest and best-preserved fort jutting into the Arabian Sea, pristine beaches, and the only lake temple in India at Ananthapura.',
+        timezoneFacts: 'Same timezone as all of India. Kasaragod district, North Kerala.',
+        bestTimeToVisit: 'October-May for beach and fort visits. Monsoon dramatic but not beach-friendly.',
+        businessHours: 'Bekal Fort 8 AM to 5:30 PM. Beach accessible all day. Backwater cruises by booking.',
+        timeDifference: 'Bekal is UTC+5:30 year-round. When noon in Bekal: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Fort featured in Bombay movie - iconic! Ananthapura temple has resident crocodile Babiya. Valiyaparamba backwaters less touristy than Alleppey. Luxury Ayurveda resorts here.',
+        transportation: 'Kannur Airport (CNN) 75km. Kasaragod railway 16km. Between Mangalore and Kannur.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Onam, Vishu, Eid, Diwali.'
+      }
+    }
+  },
+  { slug: 'shravanabelagola', city: 'Shravanabelagola', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.86, lng: 76.49, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+91 8176', language: 'Kannada, Hindi, English',
+      climate: 'Tropical with warm summers (25-38°C) and pleasant winters (18-32°C). Monsoon June-September.',
+      attractions: ['Gommateshwara (Bahubali)', 'Vindhyagiri Hill', 'Chandragiri Hill', 'Jain Temples', 'Bhandari Basadi', 'Akkana Basadi', 'Mahamasthakabhisheka', 'Museum', 'Chandragupta Basadi', 'Rock Inscriptions'],
+      demographics: 'World\'s tallest monolithic statue. Major Jain pilgrimage. Mahamasthakabhisheka every 12 years.',
+      seoContent: {
+        intro: 'Shravanabelagola, home of the giant Jain statue, operates on India Standard Time (IST/UTC+5:30). This sacred Jain site features the 57-foot Gommateshwara (Bahubali) statue from 983 CE - the world\'s largest monolithic statue, visible for miles.',
+        timezoneFacts: 'Same timezone as all of India. Hassan district, Karnataka.',
+        bestTimeToVisit: 'October-March for pleasant weather. Mahamasthakabhisheka (every 12 years) draws millions - next 2030.',
+        businessHours: 'Vindhyagiri Hill 6:30 AM to 5:30 PM. 614 steps to statue. Leave footwear at base.',
+        timeDifference: 'Shravanabelagola is UTC+5:30 year-round. When noon in Shravanabelagola: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Climb 614 steps barefoot (hot in afternoon - go early!). Statue\'s serene face visible from 25km. Mahamasthakabhisheka head-anointing ceremony next in 2030. Chandragiri Hill smaller but many temples.',
+        transportation: 'Hassan 50km. Bangalore Airport (BLR) 150km. Mysore 85km. Road from Bangalore (3 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Mahavir Jayanti, Mahamasthakabhisheka (12 years), Diwali.'
+      }
+    }
+  },
+  { slug: 'chettinad', city: 'Chettinad', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.10, lng: 78.75, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.05M', metroPopulation: '0.1M', phoneCode: '+91 4565', language: 'Tamil, English',
+      climate: 'Tropical semi-arid with hot summers (30-42°C) and warm winters (22-32°C). Sparse rainfall.',
+      attractions: ['Chettinad Mansions', 'Athangudi Tiles', 'Chettinad Cuisine', 'Karaikudi', 'Pillayarpatti Temple', 'Thirumayam Fort', 'Kanadukathan Palace', 'Antique Shopping', 'Traditional Crafts', 'Heritage Hotels'],
+      demographics: 'Mansion town of merchant princes. 75 villages, 10,000 mansions. Famous Chettinad cuisine. Antique treasure trove.',
+      seoContent: {
+        intro: 'Chettinad, land of merchant palaces, operates on India Standard Time (IST/UTC+5:30). This unique region of 75 villages features over 10,000 abandoned mansions built by Nattukotai Chettiars, known for distinctive architecture, spicy cuisine, and Burma teak treasures.',
+        timezoneFacts: 'Same timezone as all of India. Sivaganga district, Tamil Nadu.',
+        bestTimeToVisit: 'October-March for pleasant weather. Avoid summer heat. Pongal festival (January) colorful.',
+        businessHours: 'Mansions by arrangement. Antique shops 9 AM to 6 PM. Heritage hotels offer tours.',
+        timeDifference: 'Chettinad is UTC+5:30 year-round. When noon in Chettinad: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Stay in heritage mansion hotel! Chettinad cuisine is India\'s spiciest - try Chettinad chicken. Athangudi tiles handmade. Antiques shipped from Burma. Many mansions abandoned - haunting beauty.',
+        transportation: 'Madurai Airport (IXM) 90km. Karaikudi railway. Road from Madurai (2 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal (huge!), Diwali.'
+      }
+    }
+  },
+  { slug: 'nubra-valley', city: 'Nubra Valley', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 34.68, lng: 77.58, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.015M', metroPopulation: '0.015M', phoneCode: '+91 1980', language: 'Ladakhi, Hindi, English',
+      climate: 'Cold desert with warm summers (10-30°C) and frigid winters (-20 to 5°C). Very little rainfall. Snow October-May.',
+      attractions: ['Diskit Monastery', 'Maitreya Buddha Statue', 'Hunder Sand Dunes', 'Bactrian Camels', 'Khardung La Pass', 'Panamik Hot Springs', 'Samstanling Monastery', 'Yarab Tso Lake', 'Turtuk Village', 'Siachen Base'],
+      demographics: 'Valley of flowers in Ladakh. Double-humped Bactrian camels. Silk Route history. Highest motorable pass access.',
+      seoContent: {
+        intro: 'Nubra Valley, Ladakh\'s hidden oasis, operates on India Standard Time (IST/UTC+5:30). This high-altitude desert valley accessed via Khardung La (world\'s highest motorable road) features unique Bactrian camels on cold desert dunes, ancient monasteries, and the last Indian village before Pakistan.',
+        timezoneFacts: 'Same timezone as all of India despite being far north. Near Siachen Glacier.',
+        bestTimeToVisit: 'June-September only (Khardung La closed in winter). July-August ideal. Book permits in advance.',
+        businessHours: 'Monasteries 7 AM to 6 PM. Camel rides 4 PM to 7 PM. Permits checked at checkpoints.',
+        timeDifference: 'Nubra Valley is UTC+5:30 year-round. When noon in Nubra: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Inner Line Permit required - get in Leh! Khardung La at 18,380 feet - acclimatize first. Bactrian camel rides surreal. Turtuk village Balti culture - formerly Pakistan until 1971. Panamik hot springs therapeutic.',
+        transportation: 'No airport. Leh Airport (IXL) + 5-hour drive via Khardung La. Only road access, closed in winter.',
+        emergencyNumbers: 'Emergency: 112. Army assistance available. Limited medical facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar, Hemis Festival, Diwali.'
+      }
+    }
+  },
+  { slug: 'pangong-lake', city: 'Pangong Lake', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 33.76, lng: 78.66, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.001M', metroPopulation: '0.002M', phoneCode: '+91 1982', language: 'Ladakhi, Hindi, English',
+      climate: 'Cold desert with cool summers (5-20°C) and frigid winters (-25 to 0°C). High altitude 4,350m.',
+      attractions: ['Pangong Tso Lake', 'Color-Changing Water', '3 Idiots Location', 'Chang La Pass', 'Spangmik Village', 'Merak Village', 'Marmot Watching', 'Stargazing', 'India-China Border', 'Camping'],
+      demographics: '134km long lake, 60% in Tibet. Famous from 3 Idiots movie. Color changes 5-7 times daily. Military tension zone.',
+      seoContent: {
+        intro: 'Pangong Lake, the color-changing wonder, operates on India Standard Time (IST/UTC+5:30). This 134km endorheic lake at 4,350m spans India and China, famous for its magical color changes from azure to green to red, and immortalized in the film 3 Idiots.',
+        timezoneFacts: 'Same timezone as all of India. 60% of lake in Chinese-controlled Tibet.',
+        bestTimeToVisit: 'May-September only (roads closed in winter). June-July for best colors. Freezes completely in winter.',
+        businessHours: 'Open 24 hours for viewing. Camping by arrangement. Permits checked at Chang La.',
+        timeDifference: 'Pangong Lake is UTC+5:30 year-round. When noon at Pangong: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Inner Line Permit required! 3 Idiots yellow scooter still there (for photos). Lake changes color 5-7 times daily - mesmerizing. Camp overnight for stars. Altitude sickness risk - acclimatize in Leh first.',
+        transportation: 'No airport. Leh Airport (IXL) + 6-hour drive via Chang La. Only road access, seasonal.',
+        emergencyNumbers: 'Emergency: 112. Army assistance available. Very limited facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar, Hemis Festival.'
+      }
+    }
+  },
+  { slug: 'spiti-valley', city: 'Spiti Valley', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 32.25, lng: 78.03, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.015M', phoneCode: '+91 1906', language: 'Spitian, Hindi, English',
+      climate: 'Cold desert with cool summers (5-25°C) and frigid winters (-30 to 0°C). Rain shadow - very dry.',
+      attractions: ['Key Monastery', 'Kaza Town', 'Chandratal Lake', 'Dhankar Monastery', 'Tabo Monastery', 'Pin Valley', 'Kunzum Pass', 'Kibber Village', 'Comic Village', 'Mummy of Sangha Tenzin'],
+      demographics: 'Middle Land between India and Tibet. Oldest monastery Tabo (996 CE). Highest post office (Hikkim). Fossil heaven.',
+      seoContent: {
+        intro: 'Spiti Valley, the Middle Land, operates on India Standard Time (IST/UTC+5:30). This remote cold desert at 4,000m+ is one of India\'s least populated areas, featuring 1,000-year-old Tabo Monastery (Ajanta of Himalayas), dramatic Key Monastery, and the world\'s highest villages.',
+        timezoneFacts: 'Same timezone as all of India. Lahaul and Spiti district, Himachal Pradesh.',
+        bestTimeToVisit: 'June-September via Rohtang. May-October via Shimla. Both routes closed in winter.',
+        businessHours: 'Monasteries 6 AM to 6 PM. Kaza market 9 AM to 7 PM.',
+        timeDifference: 'Spiti Valley is UTC+5:30 year-round. When noon in Spiti: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Inner Line Permit needed for some areas. Tabo murals rival Ajanta. Key Monastery photogenic at sunrise. Hikkim has world\'s highest post office - send postcard! Mummy at Gue village 500 years old.',
+        transportation: 'No airport. Kaza is hub. Manali route via Rohtang/Kunzum. Shimla route via Kinnaur. Both 2-day journeys.',
+        emergencyNumbers: 'Emergency: 112. Very limited facilities - Kaza hospital basic.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar, Buddha Purnima, Diwali.'
+      }
+    }
+  },
+  { slug: 'kinnaur', city: 'Kinnaur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 31.58, lng: 78.42, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.08M', metroPopulation: '0.08M', phoneCode: '+91 1786', language: 'Kinnauri, Hindi, English',
+      climate: 'Varies by elevation - temperate lower, cold desert upper. Apple harvest August-November. Snow December-March.',
+      attractions: ['Kalpa', 'Kinnaur Kailash', 'Chitkul (Last Village)', 'Sangla Valley', 'Baspa River', 'Suicide Point', 'Reckong Peo', 'Nako Lake', 'Ribba Orchards', 'Hindustan-Tibet Road'],
+      demographics: 'Land of God (Kinnar-Kailash). Apple capital of India. Indo-Tibetan border. Mix of Hindu and Buddhist.',
+      seoContent: {
+        intro: 'Kinnaur, land where gods reside, operates on India Standard Time (IST/UTC+5:30). This apple country of 80,000 features the sacred Kinnaur Kailash peak, Chitkul (India\'s last inhabited village before Tibet), and dramatic valleys along the ancient Hindustan-Tibet Road.',
+        timezoneFacts: 'Same timezone as all of India. Indo-Tibetan border, Himachal Pradesh.',
+        bestTimeToVisit: 'April-June and September-October. Apple season August-November. Winter roads may close.',
+        businessHours: 'Apple orchards accessible during harvest. Temples sunrise to sunset.',
+        timeDifference: 'Kinnaur is UTC+5:30 year-round. When noon in Kinnaur: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Kalpa views of Kinnaur Kailash stunning at sunrise. Chitkul is last Indian village - road ends here! Fresh apples best in September. Inner Line Permit needed beyond Karcham. Sangla Valley gorgeous.',
+        transportation: 'No airport. Shimla 235km. Reckong Peo is district HQ. Himalayan Expressway route.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. ITBP assistance available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Fulaich (Flower Festival), Diwali.'
+      }
+    }
+  },
+  { slug: 'chopta', city: 'Chopta', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.29, lng: 79.20, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.001M', metroPopulation: '0.002M', phoneCode: '+91 1364', language: 'Hindi, Garhwali, English',
+      climate: 'Alpine with cool summers (10-20°C) and cold winters (-10 to 5°C). Snow December-March. Monsoon July-September.',
+      attractions: ['Tungnath Temple', 'Chandrashila Peak', 'Deoria Tal', 'Kedarnath Wildlife Sanctuary', 'Bugyals (Meadows)', 'Rhododendron Forests', 'Trekking Base', 'Camping', 'Bird Watching', 'Sunrise Views'],
+      demographics: 'Mini Switzerland of India. Tungnath is highest Shiva temple. Gateway to Chandrashila. Pristine meadows.',
+      seoContent: {
+        intro: 'Chopta, mini Switzerland of Uttarakhand, operates on India Standard Time (IST/UTC+5:30). This pristine hamlet at 2,680m is the base for Tungnath (world\'s highest Shiva temple at 3,680m) and Chandrashila peak, surrounded by rhododendron forests and alpine meadows.',
+        timezoneFacts: 'Same timezone as all of India. Kedarnath Wildlife Sanctuary, Uttarakhand.',
+        bestTimeToVisit: 'April-June for rhododendrons. September-November for clear views. Winter for snow trekking (difficult).',
+        businessHours: 'Tungnath Temple 6 AM to 7 PM. Treks best started early morning.',
+        timeDifference: 'Chopta is UTC+5:30 year-round. When noon in Chopta: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Tungnath-Chandrashila trek easy (4km) - don\'t miss! Chandrashila sunrise over Himalayan peaks incredible. April-May rhododendrons carpet hills red. Deoria Tal reflects Chaukhamba peaks.',
+        transportation: 'No airport. Rishikesh 220km. Haridwar railway 240km. Road via Ukhimath.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Very limited facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivratri (Tungnath), Diwali.'
+      }
+    }
+  },
+  { slug: 'auli', city: 'Auli', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.53, lng: 79.57, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.001M', metroPopulation: '0.003M', phoneCode: '+91 1389', language: 'Hindi, Garhwali, English',
+      climate: 'Alpine with cool summers (10-20°C) and cold winters (-8 to 5°C). Snow December-March. Best skiing January-March.',
+      attractions: ['Skiing', 'Cable Car (Gondola)', 'Artificial Lake', 'Nanda Devi View', 'Gorson Bugyal', 'Kuari Pass Trek', 'Joshimath', 'Badrinath (nearby)', 'Valley of Flowers (seasonal)', 'Chairlift'],
+      demographics: 'India\'s premier ski destination. Asia\'s longest cable car. ITBP ski training. 360° Himalayan panorama.',
+      seoContent: {
+        intro: 'Auli, skiing paradise of India, operates on India Standard Time (IST/UTC+5:30). This premier ski resort at 2,800m features Asia\'s longest cable car (4km), pristine slopes, and a 360-degree panorama of Nanda Devi and other Himalayan giants.',
+        timezoneFacts: 'Same timezone as all of India. Chamoli district, Uttarakhand.',
+        bestTimeToVisit: 'January-March for skiing. April-June and September-November for trekking. Monsoon closes Valley of Flowers.',
+        businessHours: 'Cable car 9 AM to 5 PM. Skiing 10 AM to 4 PM. Equipment rental available.',
+        timeDifference: 'Auli is UTC+5:30 year-round. When noon in Auli: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Gondola ride from Joshimath spectacular! Skiing season January-March - GMVN offers courses. Gorson Bugyal meadow trek easy. Badrinath pilgrimage 45km. Valley of Flowers July-August.',
+        transportation: 'No airport. Jolly Grant Airport Dehradun (290km). Rishikesh railway 265km. Cable car from Joshimath.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. ITBP assistance available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Winter Games (January), Diwali.'
+      }
+    }
+  },
+  { slug: 'valley-of-flowers', city: 'Valley of Flowers', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.73, lng: 79.60, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0M', metroPopulation: '0M', phoneCode: '+91 1389', language: 'Hindi, Garhwali, English',
+      climate: 'Alpine with cool summers (5-17°C). Monsoon brings flowers. Snow closes valley October-May.',
+      attractions: ['UNESCO National Park', 'Alpine Flowers', 'Brahma Kamal', 'Blue Poppy', 'Pushpawati River', 'Hemkund Sahib (nearby)', 'Govindghat', 'Ghangaria Base', 'Bird Watching', 'Nature Photography'],
+      demographics: 'UNESCO World Heritage. 600+ flower species. Discovered by Frank Smythe 1931. Open only 4 months.',
+      seoContent: {
+        intro: 'Valley of Flowers, nature\'s canvas, operates on India Standard Time (IST/UTC+5:30). This UNESCO World Heritage Site blooms with over 600 species of wildflowers during monsoon, including the rare Brahma Kamal and Blue Poppy, accessible only 4 months a year.',
+        timezoneFacts: 'Same timezone as all of India. Nanda Devi Biosphere, Uttarakhand.',
+        bestTimeToVisit: 'July-September only (closed rest of year). Mid-July to mid-August peak bloom. Early July for snow.',
+        businessHours: 'Park 7 AM to 5 PM. Entry fees at Ghangaria. No overnight stay in valley.',
+        timeDifference: 'Valley of Flowers is UTC+5:30 year-round. When noon in Valley: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Open only July-September! 13km trek from Govindghat to Ghangaria, then 4km to valley. Combine with Hemkund Sahib. Brahma Kamal (night-blooming lotus) rare find. Carry rain gear.',
+        transportation: 'No vehicles beyond Govindghat. Jolly Grant Airport Dehradun (295km). Trek or pony/helicopter to Ghangaria.',
+        emergencyNumbers: 'Emergency: 112. Forest Office at Ghangaria.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15). Park closed October-June.'
+      }
+    }
+  },
+  { slug: 'tirthan-valley', city: 'Tirthan Valley', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 31.63, lng: 77.45, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.03M', phoneCode: '+91 1903', language: 'Hindi, Pahari, Kulvi',
+      climate: 'Temperate with pleasant summers (15-28°C) and cold winters (0-15°C). Monsoon July-September.',
+      attractions: ['Great Himalayan National Park', 'Tirthan River', 'Trout Fishing', 'Jalori Pass', 'Serolsar Lake', 'Jibhi', 'Chhoie Waterfall', 'Traditional Villages', 'Birdwatching', 'Riverside Camping'],
+      demographics: 'Gateway to GHNP UNESCO site. Offbeat Himachal. Trout fishing paradise. Eco-tourism pioneer.',
+      seoContent: {
+        intro: 'Tirthan Valley, Himachal\'s hidden gem, operates on India Standard Time (IST/UTC+5:30). This pristine valley is the gateway to Great Himalayan National Park (UNESCO), offering crystal-clear trout streams, ancient villages, and an escape from commercialized hill stations.',
+        timezoneFacts: 'Same timezone as all of India. Kullu district, Himachal Pradesh.',
+        bestTimeToVisit: 'March-June and September-November. Monsoon lush but leeches. Winter cold but beautiful.',
+        businessHours: 'GHNP permits from office. Fishing licenses required. Homestays flexible.',
+        timeDifference: 'Tirthan Valley is UTC+5:30 year-round. When noon in Tirthan: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'GHNP permit required - book ahead! Trout fishing March-June and September-October. Jibhi and Gushaini best bases. Serolsar Lake trek via Jalori Pass. Stay in traditional homestays.',
+        transportation: 'Bhuntar Airport (KUU) 50km. Aut on NH21 nearest. Buses from Aut to Banjar.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. GHNP office: 01903-265320.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Kullu Dussehra, Diwali.'
+      }
+    }
+  },
+  { slug: 'malana', city: 'Malana', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 32.08, lng: 77.33, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.002M', metroPopulation: '0.002M', phoneCode: '+91 1902', language: 'Kanashi (unique), Hindi',
+      climate: 'Alpine with cool summers (10-22°C) and very cold winters (-10 to 5°C). Snow December-March.',
+      attractions: ['Ancient Village', 'Jamlu Devta Temple', 'Unique Democracy', 'Traditional Architecture', 'Malana Creek', 'Trek from Kasol', 'Magic Valley', 'Rasol Village', 'Waichin Valley', 'Cultural Experience'],
+      demographics: 'World\'s oldest democracy. Greek ancestry claimed. Strict untouchability for outsiders. Unique language Kanashi.',
+      seoContent: {
+        intro: 'Malana, the village of taboos, operates on India Standard Time (IST/UTC+5:30). This ancient village claims to be world\'s oldest democracy with Alexander\'s army descendants, practicing strict untouchability against all outsiders - touching locals or their property incurs fines.',
+        timezoneFacts: 'Same timezone as all of India. Parvati Valley, Himachal Pradesh.',
+        bestTimeToVisit: 'April-June and September-November. Winter extremely cold. Monsoon landslide risk.',
+        businessHours: 'Village accessible daytime. Temple closed to outsiders. Guesthouses limited.',
+        timeDifference: 'Malana is UTC+5:30 year-round. When noon in Malana: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'DO NOT touch anyone or anything! Not even walls. Village fines for violations. Unique parliament system. 4km trek from Malana Gate. Guesthouses are for outsiders only - don\'t enter village homes.',
+        transportation: 'No road to village. Jari (base) 20km from Kasol. Trek 4km from Malana Gate. Kasol base for buses.',
+        emergencyNumbers: 'Emergency: 112. No facilities in village - Kasol better.',
+        publicHolidays: 'Fagli Festival (February - unique), Independence Day (Aug 15), Diwali.'
+      }
+    }
+  },
+  { slug: 'bir-billing', city: 'Bir Billing', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 31.88, lng: 76.72, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.015M', phoneCode: '+91 1894', language: 'Hindi, Pahari, Tibetan',
+      climate: 'Subtropical highland with pleasant summers (15-30°C) and cool winters (5-20°C). Good flying weather March-May, Oct-Nov.',
+      attractions: ['Paragliding', 'Billing Takeoff Site', 'Tibetan Colony', 'Chokling Monastery', 'Bir Tea Factory', 'Deer Park Institute', 'Sherabling Monastery', 'Paragliding World Cup Site', 'Cafes', 'Trekking'],
+      demographics: 'Paragliding capital of India. 2015 World Cup venue. Tibetan settlement. Alternative spiritual hub.',
+      seoContent: {
+        intro: 'Bir Billing, paragliding capital of India, operates on India Standard Time (IST/UTC+5:30). This Tibetan settlement hosted the 2015 Paragliding World Cup, offering some of the world\'s best thermals for flight from Billing (2,400m) to landing at Bir.',
+        timezoneFacts: 'Same timezone as all of India. Kangra district, Himachal Pradesh.',
+        bestTimeToVisit: 'March-May and October-November for flying. Monsoon grounds paragliders. Year-round for monasteries.',
+        businessHours: 'Paragliding 9 AM to 5 PM (weather dependent). Monasteries 6 AM to 6 PM.',
+        timeDifference: 'Bir Billing is UTC+5:30 year-round. When noon in Bir: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Book tandem paragliding - 20-30 min flight! Billing is takeoff, Bir is landing. Tibetan monasteries peaceful. Deer Park Institute for meditation courses. Many organic cafes.',
+        transportation: 'Dharamsala Gaggal Airport (DHM) 70km. Pathankot railway 140km. Buses from Dharamsala and Delhi.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar, Buddha Purnima, Diwali.'
+      }
+    }
+  },
+  { slug: 'coorg', city: 'Coorg', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.34, lng: 75.81, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.55M', metroPopulation: '0.55M', phoneCode: '+91 8272', language: 'Kodava, Kannada, English',
+      climate: 'Tropical highland with pleasant year-round temperatures (15-28°C). Heavy monsoon June-September.',
+      attractions: ['Abbey Falls', 'Raja\'s Seat', 'Madikeri Fort', 'Talakaveri', 'Dubare Elephant Camp', 'Namdroling Monastery', 'Coffee Plantations', 'Iruppu Falls', 'Nagarhole National Park', 'Nisargadhama'],
+      demographics: 'Scotland of India. Coffee country. Kodava warrior culture. Highest decorated military community.',
+      seoContent: {
+        intro: 'Coorg (Kodagu), Scotland of India, operates on India Standard Time (IST/UTC+5:30). This misty hill district of 550,000 is Karnataka\'s coffee country, home to the martial Kodava community that has contributed more army officers per capita than any other Indian region.',
+        timezoneFacts: 'Same timezone as all of India. Western Ghats, Karnataka.',
+        bestTimeToVisit: 'October-March for pleasant weather. Monsoon (June-September) lush but very wet. Coffee blossom March-April.',
+        businessHours: 'Abbey Falls 8 AM to 5 PM. Raja\'s Seat sunrise to sunset. Plantations by arrangement.',
+        timeDifference: 'Coorg is UTC+5:30 year-round. When noon in Coorg: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Stay in coffee estate homestays! Try Kodava pandi curry (pork). Talakaveri is Kaveri River origin. Namdroling is largest Tibetan monastery in south. Dubare for ethical elephant interaction.',
+        transportation: 'Mysore Airport (MYQ) 120km. Mysore railway 120km. Scenic drive from Bangalore (250km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Kodava festivals (Kailpodh, Cauvery Sankramana), Diwali.'
+      }
+    }
+  },
+  { slug: 'kabini', city: 'Kabini', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 11.95, lng: 76.37, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.05M', phoneCode: '+91 8228', language: 'Kannada, Hindi, English',
+      climate: 'Tropical with warm year-round temperatures (20-35°C). Monsoon June-September. Summer dry.',
+      attractions: ['Kabini Wildlife Sanctuary', 'Kabini Dam', 'Tiger Safari', 'Elephant Herds', 'Nagarhole National Park', 'Boat Safari', 'Coracle Ride', 'JLR Lodge', 'Birdwatching', 'Photography'],
+      demographics: 'Top tiger and elephant destination. Kabini backwaters. Luxury jungle lodges. Summer elephant gathering.',
+      seoContent: {
+        intro: 'Kabini, jewel of Karnataka\'s wildlife, operates on India Standard Time (IST/UTC+5:30). This premier wildlife destination at Nagarhole National Park is famous for tiger sightings, Asia\'s largest elephant gathering in summer, and luxurious jungle lodges on the backwaters.',
+        timezoneFacts: 'Same timezone as all of India. Karnataka-Kerala border.',
+        bestTimeToVisit: 'April-June for summer elephant herds. October-May for wildlife. June-September closed (monsoon).',
+        businessHours: 'Safari 6:30 AM and 3:30 PM. Boat safari by arrangement. Park closed during monsoon.',
+        timeDifference: 'Kabini is UTC+5:30 year-round. When noon in Kabini: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Summer (April-June) for elephant herds at backwaters - up to 150 elephants! Book JLR or luxury lodges early. Black panther sightings possible. Boat safari excellent for birds. Jeep safari for tigers.',
+        transportation: 'Mysore Airport (MYQ) 80km. Mysore railway 80km. Bangalore Airport (BLR) 220km.',
+        emergencyNumbers: 'Emergency: 112. Forest Office: 08228-264003.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Wildlife Week (October), Diwali.'
+      }
+    }
+  },
+  { slug: 'hampi-anegundi', city: 'Anegundi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 15.36, lng: 76.49, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.005M', metroPopulation: '0.01M', phoneCode: '+91 8394', language: 'Kannada, Hindi, English',
+      climate: 'Tropical with hot summers (30-42°C) and mild winters (18-32°C). Monsoon July-September.',
+      attractions: ['Pampa Sarovar', 'Anjanadri Hill (Hanuman Birthplace)', 'Durga Temple', 'Coracle Crossing', 'Boulder Climbing', 'Kishkindha', 'Ancient Ruins', 'Riverside Camping', 'Village Walks', 'Crafts'],
+      demographics: 'Kishkindha of Ramayana. Hanuman\'s birthplace. Older than Hampi. Community tourism model.',
+      seoContent: {
+        intro: 'Anegundi, the Kishkindha of Ramayana, operates on India Standard Time (IST/UTC+5:30). This ancient village across the river from Hampi is believed to be the mythological monkey kingdom, including Anjanadri Hill - birthplace of Lord Hanuman.',
+        timezoneFacts: 'Same timezone as all of India. Tungabhadra River, Karnataka.',
+        bestTimeToVisit: 'October-February for pleasant weather. Avoid summer heat. Hanuman Jayanti special.',
+        businessHours: 'Temples sunrise to sunset. Coracle rides 7 AM to 6 PM.',
+        timeDifference: 'Anegundi is UTC+5:30 year-round. When noon in Anegundi: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Sunrise from Anjanadri Hill stunning - 575 steps! Coracle ride across Tungabhadra to Hampi. Less touristy than Hampi. Community homestays support village. Pampa Sarovar sacred lake.',
+        transportation: 'Hospet railway 13km. Hubli Airport (HBX) 160km. Cross river from Hampi by coracle.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities - Hospet better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Hanuman Jayanti (special here!), Dussehra, Diwali.'
+      }
+    }
+  },
+  
+  // India - New Cities Batch 8 FINAL (26 cities to reach 200)
+  { slug: 'badrinath', city: 'Badrinath', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.74, lng: 79.49, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.001M', metroPopulation: '0.002M', phoneCode: '+91 1381', language: 'Hindi, Garhwali, Sanskrit',
+      climate: 'Alpine with cool summers (7-18°C) and frigid winters (-15 to 5°C). Open May-November only. Heavy snow.',
+      attractions: ['Badrinath Temple', 'Tapt Kund', 'Neelkanth Peak', 'Mana Village', 'Vasudhara Falls', 'Bheem Pul', 'Vyas Gufa', 'Ganesh Gufa', 'Charan Paduka', 'Satopanth Lake'],
+      demographics: 'One of Char Dham. Vishnu\'s abode. India\'s last village Mana. Adi Shankaracharya established temple.',
+      seoContent: {
+        intro: 'Badrinath, abode of Lord Vishnu, operates on India Standard Time (IST/UTC+5:30). This sacred Char Dham at 3,133m is one of Hinduism\'s holiest sites, featuring the ancient temple established by Adi Shankaracharya and Mana - India\'s last village before Tibet.',
+        timezoneFacts: 'Same timezone as all of India. Chamoli district, Uttarakhand.',
+        bestTimeToVisit: 'May-June and September-October. Temple closed November-April (snow). Monsoon risky.',
+        businessHours: 'Temple 4:30 AM to 1 PM, 3 PM to 9 PM. Tapt Kund 24 hours.',
+        timeDifference: 'Badrinath is UTC+5:30 year-round. When noon in Badrinath: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Tapt Kund hot spring bath before temple visit tradition. Mana Village last before Tibet - try local chai. Bheem Pul natural rock bridge. Aarti at 7 PM spectacular. Book accommodation early in season.',
+        transportation: 'No airport. Jolly Grant Dehradun (317km). Rishikesh railway (297km). Helicopter service available.',
+        emergencyNumbers: 'Emergency: 112. Temple Board: 01381-222224.',
+        publicHolidays: 'Temple opening (Akshaya Tritiya), Badri Kedar Festival, Temple closing (Diwali week).'
+      }
+    }
+  },
+  { slug: 'kedarnath', city: 'Kedarnath', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.73, lng: 79.07, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.0005M', metroPopulation: '0.001M', phoneCode: '+91 1364', language: 'Hindi, Garhwali, Sanskrit',
+      climate: 'Alpine with cold summers (5-15°C) and extreme winters (-20°C). Open May-October only. 2013 flood devastation.',
+      attractions: ['Kedarnath Temple', 'Chorabari Glacier', 'Vasuki Tal', 'Shankaracharya Samadhi', 'Bhairavnath Temple', 'Gaurikund', 'Trek Route', 'Helicopter Views', 'Gandhi Sarovar', 'Retas Kund'],
+      demographics: 'One of 12 Jyotirlingas and Char Dham. Highest Jyotirlinga. 2013 flood killed thousands. Rebuilt stronger.',
+      seoContent: {
+        intro: 'Kedarnath, the highest Jyotirlinga, operates on India Standard Time (IST/UTC+5:30). This sacred Char Dham at 3,583m survived the devastating 2013 floods that killed thousands, with the ancient temple protected miraculously by a boulder now worshipped as Bheem Shila.',
+        timezoneFacts: 'Same timezone as all of India. Rudraprayag district, Uttarakhand.',
+        bestTimeToVisit: 'May-June and September-October. Closed November-April. Monsoon dangerous.',
+        businessHours: 'Temple 4 AM to 3 PM, 5 PM to 9 PM. Trek or helicopter only access.',
+        timeDifference: 'Kedarnath is UTC+5:30 year-round. When noon in Kedarnath: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: '16km trek from Gaurikund or helicopter (book early!). Bheem Shila boulder saved temple in 2013. Start trek by 4 AM. Ponies and palanquins available. Acclimatize properly.',
+        transportation: 'No roads to Kedarnath. Gaurikund base (trek 16km). Phata/Guptkashi helipad. Rishikesh railway 223km from Gaurikund.',
+        emergencyNumbers: 'Emergency: 112. Temple Board: 01364-263200.',
+        publicHolidays: 'Temple opening (Akshaya Tritiya), Shivratri month, Temple closing (Bhai Dooj).'
+      }
+    }
+  },
+  { slug: 'gangotri', city: 'Gangotri', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.99, lng: 78.94, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.0005M', metroPopulation: '0.001M', phoneCode: '+91 1375', language: 'Hindi, Garhwali, Sanskrit',
+      climate: 'Alpine with cool summers (5-20°C) and frigid winters. Open May-October. Source of Ganges.',
+      attractions: ['Gangotri Temple', 'Gaumukh Glacier', 'Bhagirathi River', 'Tapovan', 'Kedartal', 'Pandava Gufa', 'Surya Kund', 'Jalmagna Shivling', 'Bhagirath Shila', 'Submerged Shivling'],
+      demographics: 'Source of River Ganges. One of Char Dham. Gaumukh glacier origin. Sacred to Hindus.',
+      seoContent: {
+        intro: 'Gangotri, source of the sacred Ganges, operates on India Standard Time (IST/UTC+5:30). This Char Dham at 3,100m marks where the Ganges descends from Gaumukh glacier, with the 18th-century temple honoring the river goddess worshipped by millions.',
+        timezoneFacts: 'Same timezone as all of India. Uttarkashi district, Uttarakhand.',
+        bestTimeToVisit: 'May-June and September-October. Closed November-April. Gaumukh trek needs permit.',
+        businessHours: 'Temple 6:15 AM to 2 PM, 3 PM to 9:30 PM (summer).',
+        timeDifference: 'Gangotri is UTC+5:30 year-round. When noon in Gangotri: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Gaumukh trek 18km - permits required, get in Uttarkashi. Submerged Shivling visible only in winter (when temple closed!). Surya Kund for holy dip. Aarti at sunset beautiful.',
+        transportation: 'No airport. Jolly Grant Dehradun (290km). Rishikesh railway (260km). Road from Uttarkashi (100km).',
+        emergencyNumbers: 'Emergency: 112. Temple Board available.',
+        publicHolidays: 'Temple opening (Akshaya Tritiya), Ganga Dussehra (huge!), Temple closing (Diwali).'
+      }
+    }
+  },
+  { slug: 'yamunotri', city: 'Yamunotri', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 31.01, lng: 78.46, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.0003M', metroPopulation: '0.0005M', phoneCode: '+91 1375', language: 'Hindi, Garhwali, Sanskrit',
+      climate: 'Alpine with cool summers (5-18°C) and frigid winters. Open May-October. First of Char Dham.',
+      attractions: ['Yamunotri Temple', 'Surya Kund', 'Divya Shila', 'Janki Chatti', 'Saptrishi Kund', 'Hanuman Chatti', 'Kharsali Village', 'Hot Springs', 'Yamuna Source', 'Trek Route'],
+      demographics: 'Source of River Yamuna. First of Char Dham yatra. Least visited of four. Surya Kund boils rice.',
+      seoContent: {
+        intro: 'Yamunotri, source of the sacred Yamuna, operates on India Standard Time (IST/UTC+5:30). This first stop of Char Dham yatra at 3,293m features the temple of goddess Yamuna and Surya Kund hot spring where pilgrims cook rice and potatoes as prasad.',
+        timezoneFacts: 'Same timezone as all of India. Uttarkashi district, Uttarakhand.',
+        bestTimeToVisit: 'May-June and September-October. Closed November-April. Least crowded of Char Dham.',
+        businessHours: 'Temple 6 AM to 8 PM (summer). Trek from Janki Chatti (6km).',
+        timeDifference: 'Yamunotri is UTC+5:30 year-round. When noon in Yamunotri: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: '6km trek from Janki Chatti - ponies available. Cook rice in Surya Kund as prasad - tradition! Divya Shila rock worship before temple. Least crowded Char Dham - peaceful.',
+        transportation: 'No airport. Jolly Grant Dehradun (290km). Rishikesh railway (260km). Road to Janki Chatti then trek.',
+        emergencyNumbers: 'Emergency: 112. Very limited facilities.',
+        publicHolidays: 'Temple opening (Akshaya Tritiya), Yamuna Jayanti, Temple closing (Yama Dwitiya).'
+      }
+    }
+  },
+  { slug: 'hemkund-sahib', city: 'Hemkund Sahib', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.69, lng: 79.60, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0M', metroPopulation: '0M', phoneCode: '+91 1389', language: 'Punjabi, Hindi, English',
+      climate: 'Alpine with cold summers (5-15°C). Open June-October only. At 4,329m one of highest gurudwaras.',
+      attractions: ['Hemkund Sahib Gurudwara', 'Lokpal Lake', 'Brahma Kamal Flowers', 'Ghangaria Base', 'Laxman Temple', 'Mountain Views', 'Trek', 'Langar', 'Seven Peaks', 'Glacial Lake'],
+      demographics: 'Highest Sikh gurudwara. Guru Gobind Singh meditated here. 6km steep trek. Brahma Kamal blooms.',
+      seoContent: {
+        intro: 'Hemkund Sahib, the highest Sikh shrine, operates on India Standard Time (IST/UTC+5:30). This sacred gurudwara at 4,329m beside the glacial Lokpal Lake is where Guru Gobind Singh meditated in a previous life, accessible only by a steep 6km trek from Ghangaria.',
+        timezoneFacts: 'Same timezone as all of India. Chamoli district, Uttarakhand.',
+        bestTimeToVisit: 'July-September only (snow rest of year). August for Brahma Kamal flowers. June opening crowded.',
+        businessHours: 'Gurudwara 4 AM to 7 PM. Free langar available. No overnight stay at top.',
+        timeDifference: 'Hemkund Sahib is UTC+5:30 year-round. When noon at Hemkund: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Steep 6km trek from Ghangaria - start early! Ponies/porters available. Brahma Kamal rare flower blooms here. Langar (free meal) heartwarming. Combine with Valley of Flowers.',
+        transportation: 'Trek only from Ghangaria. Govindghat base (13km trek to Ghangaria). Jolly Grant Airport Dehradun (295km).',
+        emergencyNumbers: 'Emergency: 112. Gurudwara committee assistance.',
+        publicHolidays: 'Opening day (June), Guru Gobind Singh Jayanti, Baisakhi pilgrims.'
+      }
+    }
+  },
+  { slug: 'dharamshala', city: 'Dharamshala', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 32.22, lng: 76.32, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.05M', metroPopulation: '0.1M', phoneCode: '+91 1892', language: 'Hindi, Pahari, Tibetan, English',
+      climate: 'Subtropical highland with pleasant summers (20-30°C) and cold winters (5-15°C). Heavy monsoon July-September.',
+      attractions: ['HPCA Stadium', 'War Memorial', 'St. John\'s Church', 'Kangra Fort', 'Masrur Temples', 'Tea Gardens', 'Dharamshala Lake', 'TIPA', 'Norbulingka', 'Kangra Art Museum'],
+      demographics: 'Winter capital of Himachal. Cricket stadium with mountain backdrop. Lower town vs McLeodganj upper.',
+      seoContent: {
+        intro: 'Dharamshala, winter capital of Himachal, operates on India Standard Time (IST/UTC+5:30). This hill town of 50,000 is famous for the world\'s most scenic cricket stadium at HPCA, historic churches, and serves as the lower counterpart to McLeodganj above.',
+        timezoneFacts: 'Same timezone as all of India. Kangra Valley, Himachal Pradesh.',
+        bestTimeToVisit: 'March-June and September-November. Cricket matches at HPCA special. Winter cold but clear.',
+        businessHours: 'HPCA Stadium by match. Kangra Fort 9 AM to 6 PM. Tea gardens by arrangement.',
+        timeDifference: 'Dharamshala is UTC+5:30 year-round. When noon in Dharamshala: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'HPCA Stadium cricket with Dhauladhar backdrop incredible! Kangra Fort one of oldest in India. Masrur rock-cut temples like mini Ellora. Lower town more local feel than touristy McLeodganj.',
+        transportation: 'Dharamsala Gaggal Airport (DHM) 15km (limited). Pathankot railway 90km. Buses from Delhi.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), IPL matches, Diwali.'
+      }
+    }
+  },
+  { slug: 'jibhi', city: 'Jibhi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 31.62, lng: 77.34, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.002M', metroPopulation: '0.005M', phoneCode: '+91 1903', language: 'Hindi, Pahari, Kulvi',
+      climate: 'Temperate with pleasant summers (15-28°C) and cold winters (0-15°C). Monsoon July-September.',
+      attractions: ['Jibhi Waterfall', 'Serolsar Lake', 'Jalori Pass', 'Chehni Kothi', 'Tirthan River', 'Traditional Homes', 'Great Himalayan National Park', 'Trout Fishing', 'Wooden Architecture', 'Cafes'],
+      demographics: 'Offbeat Himachal gem. Instagram discovery. Traditional Himachali architecture. Backpacker discovering.',
+      seoContent: {
+        intro: 'Jibhi, Himachal\'s rising star, operates on India Standard Time (IST/UTC+5:30). This tiny hamlet discovered by Instagram has traditional wooden houses, pristine Tirthan River, and serves as base for Serolsar Lake trek via Jalori Pass.',
+        timezoneFacts: 'Same timezone as all of India. Banjar tehsil, Kullu district.',
+        bestTimeToVisit: 'March-June and September-November. Winter snow beautiful but cold. Monsoon lush.',
+        businessHours: 'Cafes 8 AM to 10 PM. Treks best started early. Homestays flexible.',
+        timeDifference: 'Jibhi is UTC+5:30 year-round. When noon in Jibhi: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Serolsar Lake via Jalori Pass stunning trek. Chehni Kothi ancient tower. Stay in traditional wooden homestays. Less crowded than Kasol. River-facing cafes peaceful.',
+        transportation: 'Bhuntar Airport (KUU) 60km. Aut on NH21 then divert. Buses from Aut to Banjar area.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Local fairs, Diwali.'
+      }
+    }
+  },
+  { slug: 'karnal', city: 'Karnal', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 29.69, lng: 76.98, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.3M', metroPopulation: '0.4M', phoneCode: '+91 184', language: 'Hindi, Haryanvi',
+      climate: 'Humid subtropical with hot summers (35-45°C) and cool winters (5-20°C). Monsoon July-September.',
+      attractions: ['Karna Lake', 'Cantonment Area', 'Karnal Fort', 'Chhachhrauli', 'NDRI', 'Agricultural University', 'Pukka Pul', 'Kos Minars', 'GT Road Heritage', 'Dairy Farms'],
+      demographics: 'City of Mahabharata\'s Karna. Rice bowl of India. Major dairy research. GT Road heritage.',
+      seoContent: {
+        intro: 'Karnal, city of the tragic hero Karna, operates on India Standard Time (IST/UTC+5:30). This agricultural hub of 300,000 on Grand Trunk Road is named after Mahabharata\'s Karna, home to India\'s premier dairy research institute NDRI, and the rice bowl of North India.',
+        timezoneFacts: 'Same timezone as all of India. Haryana, GT Road.',
+        bestTimeToVisit: 'October-March for pleasant weather. Avoid extreme summer. Agricultural fairs seasonal.',
+        businessHours: 'Karna Lake 6 AM to 8 PM. NDRI by permission. Standard business hours.',
+        timeDifference: 'Karnal is UTC+5:30 year-round. When noon in Karnal: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Karna Lake peaceful. NDRI produces Vita milk products - tour possible. Kos Minars (Mughal milestones) along GT Road. Try local desi ghee products.',
+        transportation: 'Karnal railway on Delhi-Amritsar line. Chandigarh Airport (IXC) 125km. On NH1 (GT Road).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Haryana Day (Nov 1), Diwali.'
+      }
+    }
+  },
+  { slug: 'kurukshetra', city: 'Kurukshetra', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 29.97, lng: 76.84, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.4M', metroPopulation: '0.5M', phoneCode: '+91 1744', language: 'Hindi, Haryanvi, Sanskrit',
+      climate: 'Humid subtropical with hot summers (35-45°C) and cool winters (5-18°C). Monsoon July-September.',
+      attractions: ['Brahma Sarovar', 'Kurukshetra Panorama', 'Jyotisar', 'Bhadrakali Temple', 'Sheikh Chehli Tomb', 'Sannihit Sarovar', 'Sthaneshwar Mahadev', 'Krishna Museum', 'Science City', 'Solar Eclipse Site'],
+      demographics: 'Mahabharata war battlefield. Gita was spoken here. Most sacred tank during solar eclipse.',
+      seoContent: {
+        intro: 'Kurukshetra, where the Gita was born, operates on India Standard Time (IST/UTC+5:30). This sacred city of 400,000 is where the Mahabharata war was fought and Lord Krishna delivered the Bhagavad Gita to Arjuna, with Brahma Sarovar attracting millions during solar eclipses.',
+        timezoneFacts: 'Same timezone as all of India. Haryana, sacred geography.',
+        bestTimeToVisit: 'October-March for pleasant weather. Solar eclipses draw millions. Gita Jayanti (December) special.',
+        businessHours: 'Brahma Sarovar ghats 24/7. Kurukshetra Panorama 10 AM to 5 PM. Jyotisar sunrise to sunset.',
+        timeDifference: 'Kurukshetra is UTC+5:30 year-round. When noon in Kurukshetra: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Jyotisar is exact spot of Gita sermon - sacred banyan tree. Kurukshetra Panorama shows Mahabharata war. Solar eclipse pilgrimage most auspicious. Brahma Sarovar evening aarti peaceful.',
+        transportation: 'Kurukshetra Junction major railway. Chandigarh Airport (IXC) 90km. On NH1 (GT Road).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Gita Jayanti (December), Solar Eclipses (special), Diwali.'
+      }
+    }
+  },
+  { slug: 'fatehpur-sikri', city: 'Fatehpur Sikri', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.09, lng: 77.66, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.04M', phoneCode: '+91 5613', language: 'Hindi, Urdu',
+      climate: 'Semi-arid with hot summers (35-47°C) and cool winters (5-22°C). Monsoon July-September.',
+      attractions: ['Buland Darwaza', 'Jama Masjid', 'Panch Mahal', 'Tomb of Salim Chishti', 'Diwan-i-Am', 'Diwan-i-Khas', 'Birbal House', 'Jodha Bai Palace', 'Hiran Minar', 'Royal Complex'],
+      demographics: 'UNESCO World Heritage. Akbar\'s abandoned capital. Largest gateway in world. Ghost city.',
+      seoContent: {
+        intro: 'Fatehpur Sikri, Akbar\'s ghost capital, operates on India Standard Time (IST/UTC+5:30). This UNESCO World Heritage city was Mughal Emperor Akbar\'s capital for just 14 years before water scarcity forced abandonment, perfectly preserved with the world\'s largest gateway Buland Darwaza.',
+        timezoneFacts: 'Same timezone as all of India. Agra district, Uttar Pradesh.',
+        bestTimeToVisit: 'October-March for pleasant weather. Avoid extreme summer. Urs at Salim Chishti dargah special.',
+        businessHours: 'Monument complex sunrise to sunset. Jama Masjid 24/7 for worship. Dargah always open.',
+        timeDifference: 'Fatehpur Sikri is UTC+5:30 year-round. When noon in Fatehpur Sikri: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Buland Darwaza is 54m high - world\'s tallest gateway! Salim Chishti dargah for fertility prayers. Akbar\'s genius in secular architecture. Best visited as Agra day trip (40km).',
+        transportation: 'Fatehpur Sikri railway (limited). Agra Cantt 40km. Agra Airport (AGR) 55km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. ASI office available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Urs of Salim Chishti, Eid, Diwali.'
+      }
+    }
+  },
+  { slug: 'nandi-hills', city: 'Nandi Hills', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 13.37, lng: 77.68, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.02M', phoneCode: '+91 8156', language: 'Kannada, English, Hindi',
+      climate: 'Tropical highland with pleasant year-round temperatures (15-28°C). Mist common in mornings.',
+      attractions: ['Sunrise Point', 'Tipu\'s Drop', 'Nandi Temple', 'Tipu Sultan Fort', 'Amrita Sarovar', 'Yoga Nandeeshwara Temple', 'Paragliding', 'Cycling', 'Trekking', 'Photography'],
+      demographics: 'Bangalore\'s sunrise escape. Tipu Sultan\'s summer retreat. 1,478m elevation. Weekend crowds.',
+      seoContent: {
+        intro: 'Nandi Hills, Bangalore\'s sunrise escape, operates on India Standard Time (IST/UTC+5:30). This ancient hill fortress at 1,478m was Tipu Sultan\'s summer retreat, now famous for spectacular sunrise views above clouds, just 60km from Bangalore.',
+        timezoneFacts: 'Same timezone as all of India. Chikkaballapur district, Karnataka.',
+        bestTimeToVisit: 'Year-round pleasant. Sunrise 5:30-6 AM best. Weekdays less crowded. Monsoon misty.',
+        businessHours: 'Gates 6 AM to 10 PM (weekdays), 5:30 AM (weekends for sunrise). Entry fee applies.',
+        timeDifference: 'Nandi Hills is UTC+5:30 year-round. When noon at Nandi Hills: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Arrive by 5 AM for sunrise above clouds! Tipu\'s Drop where prisoners were pushed off. Cycling uphill popular. Weekends extremely crowded - go weekday. Carry warm clothes.',
+        transportation: 'Bangalore Airport (BLR) 40km. Bangalore City 60km. Own vehicle or day trip taxi.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivaratri (Nandi Temple), Diwali.'
+      }
+    }
+  },
+  { slug: 'chikmagalur', city: 'Chikmagalur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 13.32, lng: 75.77, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.12M', metroPopulation: '0.15M', phoneCode: '+91 8262', language: 'Kannada, English, Hindi',
+      climate: 'Tropical highland with pleasant year-round temperatures (15-32°C). Heavy monsoon June-September.',
+      attractions: ['Mullayanagiri Peak', 'Baba Budangiri', 'Coffee Plantations', 'Hebbe Falls', 'Kudremukh', 'Bhadra Wildlife Sanctuary', 'Z Point', 'Kalhatti Falls', 'Kemmanagundi', 'Coffee Museum'],
+      demographics: 'Where Indian coffee began. Baba Budan brought first beans. Karnataka\'s highest peak. Coffee tourism pioneer.',
+      seoContent: {
+        intro: 'Chikmagalur, birthplace of Indian coffee, operates on India Standard Time (IST/UTC+5:30). This misty hill district is where Baba Budan planted India\'s first coffee seeds 400 years ago, now home to Karnataka\'s highest peak Mullayanagiri and lush coffee estates.',
+        timezoneFacts: 'Same timezone as all of India. Western Ghats, Karnataka.',
+        bestTimeToVisit: 'September-February for pleasant weather. Coffee blossom March-April. Monsoon lush but wet.',
+        businessHours: 'Coffee estates by arrangement. Mullayanagiri accessible daytime. Bhadra safari timings fixed.',
+        timeDifference: 'Chikmagalur is UTC+5:30 year-round. When noon in Chikmagalur: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Stay in coffee estate homestays! Mullayanagiri trek for highest peak. Baba Budangiri sacred to Hindus and Muslims. Try filter coffee at source. Kemmanagundi for colonial charm.',
+        transportation: 'Mangalore Airport (IXE) 150km. Kadur/Birur railway 40km. Bangalore 245km by road.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Baba Budan Urs, Dasara, Diwali.'
+      }
+    }
+  },
+  { slug: 'sakleshpur', city: 'Sakleshpur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.94, lng: 75.78, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.03M', phoneCode: '+91 8173', language: 'Kannada, English, Tulu',
+      climate: 'Tropical highland with pleasant year-round temperatures (15-30°C). Very heavy monsoon June-September.',
+      attractions: ['Manjarabad Fort', 'Green Route Trek', 'Coffee Estates', 'Bisle Ghat', 'Agni Gudda Hill', 'Hadlu Waterfall', 'Jenukal Gudda', 'Pandavar Gudda', 'Abandoned Railway', 'Viewpoints'],
+      demographics: 'Offbeat Western Ghats. Abandoned British railway trek. Star-shaped Tipu fort. Coffee country.',
+      seoContent: {
+        intro: 'Sakleshpur, the Green Route paradise, operates on India Standard Time (IST/UTC+5:30). This offbeat hill town features the famous abandoned British railway trek through tunnels and bridges, Tipu\'s unique star-shaped Manjarabad Fort, and endless coffee plantations.',
+        timezoneFacts: 'Same timezone as all of India. Hassan district, Karnataka.',
+        bestTimeToVisit: 'September-May for trekking. Monsoon too dangerous for railway trek. October-February ideal.',
+        businessHours: 'Manjarabad Fort 8 AM to 6 PM. Railway trek best started early. Estates by arrangement.',
+        timeDifference: 'Sakleshpur is UTC+5:30 year-round. When noon in Sakleshpur: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Green Route railway trek through 57 bridges and tunnels - don\'t miss! Manjarabad Fort star-shaped. Stay in coffee estate. Bisle Ghat viewpoint stunning. Less crowded than Coorg.',
+        transportation: 'Mangalore Airport (IXE) 115km. Sakleshpur Road railway on Mangalore line. Hassan 60km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Dasara, Diwali.'
+      }
+    }
+  },
+  { slug: 'gokak', city: 'Gokak Falls', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 16.17, lng: 74.82, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.08M', metroPopulation: '0.1M', phoneCode: '+91 8332', language: 'Kannada, Marathi, Hindi',
+      climate: 'Semi-arid with hot summers (30-42°C) and mild winters (15-30°C). Monsoon transforms falls.',
+      attractions: ['Gokak Falls', 'Hanging Bridge', 'Gokak Valley', 'Hidkal Dam', 'Ghataprabha River', 'Ropeway', 'Viewpoints', 'Power Station', 'Godchinamalaki Falls', 'Industrial Heritage'],
+      demographics: 'Mini Niagara of India. 52m horseshoe falls. First hydro-electric station (1887). Textile mills.',
+      seoContent: {
+        intro: 'Gokak Falls, the Mini Niagara of India, operates on India Standard Time (IST/UTC+5:30). This spectacular 52m horseshoe waterfall on the Ghataprabha River was site of India\'s first hydroelectric station in 1887, connected by a historic hanging bridge.',
+        timezoneFacts: 'Same timezone as all of India. Belgaum district, Karnataka.',
+        bestTimeToVisit: 'July-November for full flow. Monsoon (August-September) most dramatic. Summer nearly dry.',
+        businessHours: 'Falls accessible all day. Hanging bridge 8 AM to 6 PM.',
+        timeDifference: 'Gokak Falls is UTC+5:30 year-round. When noon at Gokak: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Monsoon visit for spectacular falls! Hanging bridge thrilling. First hydro station historical significance. Godchinamalaki Falls nearby. Summer disappointing - low water.',
+        transportation: 'Gokak Road railway. Belgaum Airport (IXG) 65km. Hubli 80km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Dasara, Diwali.'
+      }
+    }
+  },
+  { slug: 'dandeli', city: 'Dandeli', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 15.27, lng: 74.62, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.05M', phoneCode: '+91 8284', language: 'Kannada, Konkani, Marathi',
+      climate: 'Tropical with warm year-round temperatures (20-35°C). Heavy monsoon June-September.',
+      attractions: ['Dandeli Wildlife Sanctuary', 'Kali River Rafting', 'Syntheri Rocks', 'Ulavi Caves', 'Supa Dam', 'Crocodile Park', 'Kavala Caves', 'Jungle Lodges', 'Black Panther Sightings', 'Kayaking'],
+      demographics: 'Karnataka\'s adventure capital. White water rafting hub. Black panther sightings. Western Ghats biodiversity.',
+      seoContent: {
+        intro: 'Dandeli, Karnataka\'s adventure capital, operates on India Standard Time (IST/UTC+5:30). This nature and adventure hub on the Kali River offers Grade II-III white water rafting, black panther sightings in the wildlife sanctuary, and stunning Western Ghats biodiversity.',
+        timezoneFacts: 'Same timezone as all of India. Uttara Kannada district, Karnataka.',
+        bestTimeToVisit: 'October-May for rafting and wildlife. Monsoon closes many activities. September-February ideal.',
+        businessHours: 'Sanctuary 6 AM to 6 PM. Rafting by booking. JLR lodges 24/7.',
+        timeDifference: 'Dandeli is UTC+5:30 year-round. When noon in Dandeli: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Kali River rafting best October-February. Black panther sightings possible! Syntheri Rocks for rappelling. Night safari for wildlife. JLR Kali Adventure Camp popular.',
+        transportation: 'Hubli Airport (HBX) 75km. Dharwad/Alnavar railway 45km. Goa 135km.',
+        emergencyNumbers: 'Emergency: 112. Forest Office: 08284-231585.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Wildlife Week (October), Diwali.'
+      }
+    }
+  },
+  { slug: 'chitradurga', city: 'Chitradurga', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 14.23, lng: 76.40, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.14M', metroPopulation: '0.17M', phoneCode: '+91 8194', language: 'Kannada, Telugu, Hindi',
+      climate: 'Semi-arid with hot summers (30-42°C) and mild winters (15-30°C). Light monsoon.',
+      attractions: ['Chitradurga Fort', 'Stone Fortress', 'Obavva Story', 'Hidimbeshwara Temple', 'Chandravalli Caves', 'Jogimatti Hill', 'Eachanur Temple', 'Akka Thangi Kere', 'Ucchangidurga', 'ISRO Tracking Station'],
+      demographics: 'Stone Fortress. Onake Obavva\'s bravery. 7 walls of defense. Nayak dynasty stronghold.',
+      seoContent: {
+        intro: 'Chitradurga, the Stone Fortress, operates on India Standard Time (IST/UTC+5:30). This formidable fort with 7 concentric walls and 38 gateways is where warrior woman Onake Obavva single-handedly killed enemies with a pestle, becoming Karnataka\'s legendary heroine.',
+        timezoneFacts: 'Same timezone as all of India. Central Karnataka.',
+        bestTimeToVisit: 'October-February for pleasant weather. Avoid summer heat. Dasara celebrations special.',
+        businessHours: 'Fort 6 AM to 6 PM. Chandravalli Caves sunrise to sunset.',
+        timeDifference: 'Chitradurga is UTC+5:30 year-round. When noon in Chitradurga: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Onake Obavva story inspiring - see the passage she defended. 7 walls, 38 entrances - explore thoroughly. Natural granite boulders form defenses. Chandravalli caves for Jain history.',
+        transportation: 'Chitradurga railway. Hubli Airport (HBX) 200km. Bangalore 200km by road.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Onake Obavva Jayanti, Dasara, Diwali.'
+      }
+    }
+  },
+  { slug: 'bidar-fort', city: 'Bidar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 17.91, lng: 77.52, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.22M', metroPopulation: '0.25M', phoneCode: '+91 8482', language: 'Kannada, Urdu, Deccani, Hindi',
+      climate: 'Semi-arid with hot summers (32-42°C) and mild winters (15-30°C). Monsoon July-September.',
+      attractions: ['Bidar Fort', 'Rangeen Mahal', 'Solah Khamba Mosque', 'Bahmani Tombs', 'Mahmud Gawan Madrasa', 'Gurudwara Nanak Jhira', 'Bidriware Craft', 'Chaukhandi Tomb', 'Papnash Shiva Temple', 'Basavakalyan'],
+      demographics: 'Bahmani Sultanate capital. Bidriware UNESCO craft. Black metal inlay unique. Sikh pilgrimage.',
+      seoContent: {
+        intro: 'Bidar, where Bidriware was born, operates on India Standard Time (IST/UTC+5:30). This Bahmani Sultanate capital of 220,000 gave the world Bidriware - the unique black metal silver inlay craft now UNESCO heritage - along with magnificent Islamic architecture and Sikh pilgrimage.',
+        timezoneFacts: 'Same timezone as all of India. Northernmost Karnataka.',
+        bestTimeToVisit: 'October-March for pleasant weather. Urs at dargahs special. Guru Nanak Jayanti at Gurudwara.',
+        businessHours: 'Fort 6 AM to 6 PM. Bidriware workshops 10 AM to 7 PM. Gurudwara 24/7.',
+        timeDifference: 'Bidar is UTC+5:30 year-round. When noon in Bidar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Watch Bidriware craftsmen - 500-year-old technique! Rangeen Mahal for colourful tiles. Mahmud Gawan Madrasa rivals any Persian architecture. Gurudwara Nanak Jhira has natural spring.',
+        transportation: 'Bidar Airport (IXX) limited. Bidar railway. Hyderabad 145km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Guru Nanak Jayanti, Eid, Diwali.'
+      }
+    }
+  },
+  { slug: 'hospet-tungabhadra', city: 'Tungabhadra Dam', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 15.27, lng: 76.34, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.25M', phoneCode: '+91 8394', language: 'Kannada, Telugu, Hindi',
+      climate: 'Semi-arid with hot summers (30-42°C) and mild winters (18-32°C). Monsoon July-September.',
+      attractions: ['Tungabhadra Dam', 'Musical Fountain', 'Pampa Sarovar', 'Hampi (nearby)', 'Hospet Town', 'Dam Garden', 'Boating', 'Sunset Point', 'Irrigation Museum', 'Powerhouse'],
+      demographics: 'Lifeline of Karnataka and Andhra. Musical fountain evening show. Gateway to Hampi.',
+      seoContent: {
+        intro: 'Tungabhadra Dam, the multipurpose marvel, operates on India Standard Time (IST/UTC+5:30). This massive dam built in 1953 irrigates 2 million acres across Karnataka and Andhra Pradesh, famous for its evening musical fountain show and serving as gateway to Hampi ruins.',
+        timezoneFacts: 'Same timezone as all of India. Hospet, Karnataka.',
+        bestTimeToVisit: 'Year-round. Evening for musical fountain. Monsoon for full reservoir.',
+        businessHours: 'Dam 8 AM to 5:30 PM. Musical Fountain 7 PM (45 min show). Garden 8 AM to 8 PM.',
+        timeDifference: 'Tungabhadra Dam is UTC+5:30 year-round. When noon at Tungabhadra: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Musical fountain show don\'t miss - music synchronized! Boating on reservoir. Combine with Hampi visit. Dam illuminated at night. Hospet good base for Hampi.',
+        transportation: 'Hospet Junction railway. Hubli Airport (HBX) 150km. Bangalore 350km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Dam office: 08394-227002.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Dasara, Diwali.'
+      }
+    }
+  },
+  { slug: 'murudeshwar', city: 'Murudeshwar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 14.09, lng: 74.48, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.03M', phoneCode: '+91 8385', language: 'Kannada, Tulu, Konkani',
+      climate: 'Tropical with warm year-round temperatures (24-34°C). Heavy monsoon June-September.',
+      attractions: ['Murudeshwar Temple', 'Giant Shiva Statue', 'Raja Gopura', 'Beach', 'Netrani Island', 'Scuba Diving', 'Idagunji Ganapati', 'Coastal Views', 'Sunset', 'Beach Activities'],
+      demographics: 'World\'s second tallest Shiva statue (123ft). 20-story gopura. Konkan coast pilgrimage.',
+      seoContent: {
+        intro: 'Murudeshwar, home of the towering Shiva, operates on India Standard Time (IST/UTC+5:30). This coastal temple town features the world\'s second-tallest Shiva statue at 123 feet (after Nepal\'s Kailashnath) and a 20-story gopura with elevator offering Arabian Sea views.',
+        timezoneFacts: 'Same timezone as all of India. Uttara Kannada district, Karnataka coast.',
+        bestTimeToVisit: 'October-May for beach and temple. Monsoon dramatic but wet. Shivaratri special.',
+        businessHours: 'Temple 6 AM to 8 PM. Gopura elevator 7:30 AM to 1 PM, 2 PM to 7:30 PM.',
+        timeDifference: 'Murudeshwar is UTC+5:30 year-round. When noon in Murudeshwar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Gopura lift to 18th floor for panoramic views! Netrani Island (1 hour boat) for scuba diving. Beach clean and peaceful. Statue illuminated at night. Idagunji Ganapati powerful temple nearby.',
+        transportation: 'Murudeshwar railway station. Mangalore Airport (IXE) 165km. Goa 150km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Coast Guard: 1554.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivaratri (huge!), Diwali.'
+      }
+    }
+  },
+  { slug: 'yelagiri', city: 'Yelagiri', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.58, lng: 78.63, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.015M', phoneCode: '+91 4179', language: 'Tamil, Kannada, Telugu',
+      climate: 'Tropical highland with pleasant year-round temperatures (13-30°C). 14 hairpin bends to reach.',
+      attractions: ['Punganur Lake', 'Yelagiri Nature Park', 'Swamimalai Hills', 'Jalagamparai Falls', 'Paragliding Point', 'Velavan Temple', 'Fundera Park', 'Rose Garden', 'Telescope House', 'Summer Festival'],
+      demographics: 'Poor man\'s Ooty. 14 hairpin bends. Budget hill station. Chennai weekend escape.',
+      seoContent: {
+        intro: 'Yelagiri, the affordable hill escape, operates on India Standard Time (IST/UTC+5:30). This budget hill station at 1,100m offers Ooty-like experience without the crowds, reached via 14 hairpin bends, popular with Chennai and Bangalore weekenders seeking nature and adventure.',
+        timezoneFacts: 'Same timezone as all of India. Vellore district, Tamil Nadu.',
+        bestTimeToVisit: 'Year-round pleasant. April-June for Summer Festival. Monsoon misty.',
+        businessHours: 'Lake boating 9 AM to 5:30 PM. Nature Park 9 AM to 6 PM. Adventure activities by booking.',
+        timeDifference: 'Yelagiri is UTC+5:30 year-round. When noon in Yelagiri: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: '14 hairpin bends scenic drive or ride! Summer Festival (May) has flower show. Paragliding available. Much cheaper than Ooty. Punganur Lake pedal boating fun.',
+        transportation: 'Jolarpettai railway 25km (hairpin road up). Chennai 230km. Bangalore 170km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Summer Festival (May), Pongal, Diwali.'
+      }
+    }
+  },
+  { slug: 'kurnool', city: 'Kurnool', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 15.83, lng: 78.05, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.5M', metroPopulation: '0.6M', phoneCode: '+91 8518', language: 'Telugu, Urdu, Hindi',
+      climate: 'Semi-arid with hot summers (35-45°C) and mild winters (15-30°C). Low rainfall.',
+      attractions: ['Belum Caves', 'Kurnool Fort', 'Orvakal Rock Garden', 'Yaganti Temple', 'Ahobilam', 'Mahanandi', 'Rollapadu Wildlife Sanctuary', 'Mantralayam (nearby)', 'Konda Reddy Buruju', 'Tungabhadra River'],
+      demographics: 'Former capital of Andhra. Gateway to Belum Caves (India\'s second longest). Rayalaseema region.',
+      seoContent: {
+        intro: 'Kurnool, the gateway to Belum Caves, operates on India Standard Time (IST/UTC+5:30). This former Andhra capital of 500,000 is the base for exploring India\'s second-longest caves at Belum, the Orvakal rock formations, and powerful temples of Rayalaseema.',
+        timezoneFacts: 'Same timezone as all of India. Andhra Pradesh, Rayalaseema.',
+        bestTimeToVisit: 'October-February for pleasant weather. Avoid extreme summer. Temples year-round.',
+        businessHours: 'Belum Caves 10 AM to 5 PM. Orvakal 6 AM to 6 PM. Temples sunrise to sunset.',
+        timeDifference: 'Kurnool is UTC+5:30 year-round. When noon in Kurnool: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Belum Caves 3km long - guided tour essential! Orvakal rocks surreal landscape. Yaganti Nandi growing mysteriously. Ahobilam has 9 Narasimha temples. Mantralayam for Raghavendra Swamy.',
+        transportation: 'Kurnool Airport (KJB) limited. Kurnool City/Town railway. Hyderabad 210km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ugadi, Dasara, Diwali.'
+      }
+    }
+  },
+  { slug: 'lepakshi', city: 'Lepakshi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 13.80, lng: 77.61, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.015M', phoneCode: '+91 8558', language: 'Telugu, Kannada, Hindi',
+      climate: 'Semi-arid with hot summers (30-42°C) and mild winters (15-30°C). Light monsoon.',
+      attractions: ['Veerabhadra Temple', 'Hanging Pillar', 'Nandi Bull', 'Jatayu Rock', 'Ceiling Paintings', 'Nagalinga', 'Kalyana Mandapa', 'Lepakshi Sarees', 'Sculpture Garden', 'Ramayana Sites'],
+      demographics: 'Where Jatayu fell (Ramayana). Hanging pillar mystery. World\'s largest Nandi. Vijayanagara art.',
+      seoContent: {
+        intro: 'Lepakshi, where Ramayana comes alive, operates on India Standard Time (IST/UTC+5:30). This village is where wounded Jatayu fell after fighting Ravana ("Le Pakshi" - Rise Bird), featuring a temple with mysterious hanging pillar that doesn\'t touch ground and world\'s largest Nandi.',
+        timezoneFacts: 'Same timezone as all of India. Anantapur district, Andhra Pradesh.',
+        bestTimeToVisit: 'October-February for pleasant weather. Avoid summer. Shivaratri celebrations.',
+        businessHours: 'Temple 6 AM to 6 PM. Nandi and Jatayu sites accessible all day.',
+        timeDifference: 'Lepakshi is UTC+5:30 year-round. When noon in Lepakshi: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Hanging pillar - pass cloth under to prove it! Nandi monolith 4.5m tall - world\'s largest. Ceiling paintings rival Ajanta. Jatayu Park nearby. Easy day trip from Bangalore (120km).',
+        transportation: 'Hindupur railway 15km. Bangalore Airport (BLR) 120km. On Bangalore-Hyderabad road.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivaratri, Ugadi, Diwali.'
+      }
+    }
+  },
+  { slug: 'gandikota', city: 'Gandikota', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 14.81, lng: 78.29, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.002M', metroPopulation: '0.003M', phoneCode: '+91 8559', language: 'Telugu, Hindi',
+      climate: 'Semi-arid with hot summers (32-45°C) and mild winters (18-32°C). Light rainfall.',
+      attractions: ['Gandikota Gorge', 'Grand Canyon of India', 'Gandikota Fort', 'Pennar River', 'Jamia Masjid', 'Raghunathaswamy Temple', 'Mylavaram Dam', 'Belum Caves (nearby)', 'Camping', 'Stargazing'],
+      demographics: 'Grand Canyon of India. Pennar gorge dramatic. Kalyani Chalukya fort. Offbeat camping destination.',
+      seoContent: {
+        intro: 'Gandikota, the Grand Canyon of India, operates on India Standard Time (IST/UTC+5:30). This dramatic gorge where the Pennar River has carved through red sandstone creates India\'s answer to Arizona\'s Grand Canyon, topped by an ancient fort with Hindu temple and Islamic mosque.',
+        timezoneFacts: 'Same timezone as all of India. Kadapa district, Andhra Pradesh.',
+        bestTimeToVisit: 'October-February for pleasant weather and camping. Sunrise/sunset at gorge spectacular.',
+        businessHours: 'Fort accessible all day. APTDC camping by booking.',
+        timeDifference: 'Gandikota is UTC+5:30 year-round. When noon in Gandikota: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Sunrise at gorge edge breathtaking! Camp overnight for stars. Fort has both temple and mosque - secular harmony. Combine with Belum Caves (60km). Carry supplies - remote location.',
+        transportation: 'Jammalamadugu railway 25km. Kadapa airport (limited) 100km. Bangalore 280km.',
+        emergencyNumbers: 'Emergency: 112. Very limited facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ugadi, Diwali.'
+      }
+    }
+  },
+  { slug: 'araku-valley', city: 'Araku Valley', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 18.33, lng: 82.88, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.03M', phoneCode: '+91 8936', language: 'Telugu, Tribal languages, Hindi',
+      climate: 'Tropical highland with pleasant year-round temperatures (15-30°C). Coffee-growing region.',
+      attractions: ['Borra Caves', 'Coffee Plantations', 'Tribal Museum', 'Chaparai Waterfalls', 'Padmapuram Gardens', 'Ananthagiri', 'Galikonda View Point', 'Toy Train Journey', 'Tribal Villages', 'Araku Valley Road'],
+      demographics: 'Andhra\'s only hill station. Borra Caves million years old. Coffee country. Tribal homeland.',
+      seoContent: {
+        intro: 'Araku Valley, Andhra\'s coffee paradise, operates on India Standard Time (IST/UTC+5:30). This only hill station of Andhra Pradesh features the million-year-old Borra Caves, lush coffee plantations, and the scenic train journey from Visakhapatnam through 58 tunnels.',
+        timezoneFacts: 'Same timezone as all of India. Visakhapatnam district, Andhra Pradesh.',
+        bestTimeToVisit: 'October-March for pleasant weather. Monsoon lush. Train journey year-round highlight.',
+        businessHours: 'Borra Caves 10 AM to 5 PM. Train from Vizag early morning.',
+        timeDifference: 'Araku Valley is UTC+5:30 year-round. When noon in Araku: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Toy train from Vizag through 58 tunnels and 84 bridges - don\'t miss! Borra Caves spectacular stalactites. Try Araku coffee. Tribal Museum for indigenous culture. Stay overnight.',
+        transportation: 'Araku railway station (toy train from Vizag). Visakhapatnam Airport (VTZ) 115km. Scenic road also available.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Itika Pongal (tribal festival), Ugadi, Diwali.'
+      }
+    }
+  },
+  { slug: 'horsley-hills', city: 'Horsley Hills', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 13.66, lng: 78.40, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.003M', metroPopulation: '0.005M', phoneCode: '+91 8559', language: 'Telugu, Kannada, Hindi',
+      climate: 'Tropical highland with pleasant year-round temperatures (12-28°C). Eucalyptus forests.',
+      attractions: ['Viewpoints', 'Gali Banda', 'Horsley Samadhi', 'Kaigal Falls', 'Deer Park', 'Environmental Park', 'Trekking Trails', 'Horse Riding', 'Eucalyptus Forests', 'Sunrise Point'],
+      demographics: 'Andhra\'s Ooty. Named after WD Horsley. Eucalyptus forests. Budget hill station.',
+      seoContent: {
+        intro: 'Horsley Hills, Andhra\'s Ooty, operates on India Standard Time (IST/UTC+5:30). This budget hill station at 1,265m was named after British collector WD Horsley who discovered it, offering eucalyptus forests, cool climate, and peaceful escape from Rayalaseema heat.',
+        timezoneFacts: 'Same timezone as all of India. Chittoor district, Andhra Pradesh.',
+        bestTimeToVisit: 'Year-round pleasant. October-March ideal. Summer refuge from plains heat.',
+        businessHours: 'Viewpoints sunrise to sunset. APTDC resort 24/7. Deer Park 10 AM to 5 PM.',
+        timeDifference: 'Horsley Hills is UTC+5:30 year-round. When noon at Horsley Hills: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Gali Banda (Windy Rock) for valley views. 1,000-year-old tree near Horsley bungalow. Much quieter than Ooty. Good for short family getaway. APTDC has decent accommodation.',
+        transportation: 'Madanapalle railway 25km. Tirupati Airport (TIR) 150km. Bangalore 160km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. APTDC office available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ugadi, Dasara, Diwali.'
+      }
+    }
+  },
+  // India #200 - Completing 200 Indian cities milestone!
+  { slug: 'lambasingi', city: 'Lambasingi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 17.94, lng: 82.74, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.001M', metroPopulation: '0.002M', phoneCode: '+91 8936', language: 'Telugu, Hindi',
+      climate: 'Tropical highland with cool temperatures (0-25°C). Only place in AP to see frost. Known as Kashmir of AP.',
+      attractions: ['Kothapalli Waterfalls', 'Sunrise Point', 'Frost Views', 'Coffee Plantations', 'Thajangi Reservoir', 'Pepper Plantations', 'Chintapalli', 'Tribal Villages', 'Trekking', 'Stargazing'],
+      demographics: 'Kashmir of Andhra Pradesh. Sub-zero temperatures in winter. Offbeat discovery. Pepper growing region.',
+      seoContent: {
+        intro: 'Lambasingi, the Kashmir of Andhra Pradesh, operates on India Standard Time (IST/UTC+5:30). This tiny hamlet at 1,000m is the only place in Andhra Pradesh where temperatures drop to freezing (0°C), offering frost-covered landscapes, pepper plantations, and pristine Eastern Ghats beauty.',
+        timezoneFacts: 'Same timezone as all of India. Visakhapatnam district, Andhra Pradesh.',
+        bestTimeToVisit: 'November-January for frost and coldest temperatures. December best for sub-zero. Monsoon roads difficult.',
+        businessHours: 'Viewpoints accessible all day. Limited facilities - carry supplies.',
+        timeDifference: 'Lambasingi is UTC+5:30 year-round. When noon in Lambasingi: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'December-January for frost - arrive before dawn! Very basic facilities - carry food. Pepper and coffee plantations to explore. Combine with Araku Valley trip. Roads steep and winding.',
+        transportation: 'No railway. Visakhapatnam Airport (VTZ) 107km. Chintapalli 25km. 4WD recommended.',
+        emergencyNumbers: 'Emergency: 112. Very limited facilities - Vizag better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ugadi, Sankranti (frost season!), Diwali.'
+      }
+    }
+  },
   { slug: 'vadodara', city: 'Vadodara', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.31, lng: 73.19, tier: 3, continent: 'asia',
     info: {
       currency: 'Indian Rupee', currencySymbol: '₹', population: '2.1M', phoneCode: '+91 265', language: 'Gujarati, Hindi',
