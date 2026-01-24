@@ -4650,98 +4650,242 @@ export const cities: City[] = [
   // UK - Additional Cities
   { slug: 'liverpool', city: 'Liverpool', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.41, lng: -2.98, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '500K', phoneCode: '+44 151', language: 'English',
+      currency: 'British Pound', currencySymbol: '£', population: '0.5M', metroPopulation: '1.5M', phoneCode: '+44 151', language: 'English',
       climate: 'Oceanic with cool summers (16-20°C) and mild winters (3-8°C). Frequent rainfall, Irish Sea influence.',
-      attractions: ['The Beatles Story', 'Liverpool Cathedral', 'Albert Dock', 'Anfield Stadium', 'Walker Art Gallery'],
-      demographics: 'Major port city in northwest England, UNESCO World Heritage waterfront. Birthplace of The Beatles and famous for football.'
+      attractions: ['The Beatles Story', 'Liverpool Cathedral', 'Albert Dock', 'Anfield Stadium', 'Walker Art Gallery', 'Cavern Club', 'Royal Liver Building', 'Tate Liverpool', 'Merseyside Maritime Museum', 'Strawberry Field'],
+      demographics: 'UNESCO World Heritage waterfront. Birthplace of The Beatles. Two Premier League clubs.',
+      seoContent: {
+        intro: 'Liverpool, birthplace of The Beatles, operates on Greenwich Mean Time (GMT/UTC+0) in winter and British Summer Time (BST/UTC+1) from late March to late October. This UNESCO World Heritage city gave the world the Fab Four, boasts two Premier League football clubs, and features stunning Victorian waterfront architecture.',
+        timezoneFacts: 'Same timezone as London. Liverpool was the gateway to America for millions of emigrants.',
+        bestTimeToVisit: 'May-September for best weather. International Beatleweek (August). Football season August-May.',
+        businessHours: 'Shops 9 AM to 5:30 PM. Beatles Story 9 AM to 7 PM. Cavern Club evenings.',
+        timeDifference: 'Liverpool is UTC+0 (winter) / UTC+1 (summer). When noon in Liverpool: NYC 7 AM, Dubai 4 PM, Tokyo 9 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Beatles tour essential - Cavern Club, Penny Lane, Strawberry Field. Anfield stadium tour for football fans. Albert Dock for museums. Scouse accent friendly!',
+        transportation: 'Liverpool John Lennon Airport (LPL) 12km. Liverpool Lime Street for trains. 2.5 hr from London Euston.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. International Beatleweek (August). Grand National (April).'
+      }
     }
   },
   { slug: 'leeds', city: 'Leeds', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.80, lng: -1.55, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '800K', phoneCode: '+44 113', language: 'English',
+      currency: 'British Pound', currencySymbol: '£', population: '0.8M', metroPopulation: '1.9M', phoneCode: '+44 113', language: 'English',
       climate: 'Oceanic with cool summers (15-21°C) and mild winters (2-7°C). Frequent rainfall year-round.',
-      attractions: ['Royal Armouries', 'Leeds Art Gallery', 'Kirkstall Abbey', 'Roundhay Park', 'Leeds Corn Exchange'],
-      demographics: 'Third-largest city in UK, major financial and legal center. Known for shopping, universities, and vibrant nightlife.'
+      attractions: ['Royal Armouries', 'Leeds Art Gallery', 'Kirkstall Abbey', 'Roundhay Park', 'Leeds Corn Exchange', 'Victoria Quarter', 'Leeds Market', 'Headingley Stadium', 'Temple Newsam', 'Harewood House'],
+      demographics: 'UK\'s third-largest city. Major financial and legal center. Vibrant university city.',
+      seoContent: {
+        intro: 'Leeds, capital of Yorkshire, operates on Greenwich Mean Time (GMT/UTC+0) in winter and British Summer Time (BST/UTC+1) in summer. This thriving city of 800,000 is UK\'s third-largest, serving as the financial capital of the North with major legal, media, and tech sectors.',
+        timezoneFacts: 'Same timezone as London. Leeds is the largest UK city without a cathedral.',
+        bestTimeToVisit: 'May-September for best weather. Leeds Festival (August). Christmas markets popular.',
+        businessHours: 'Shops 9 AM to 5:30 PM. Victoria Quarter 10 AM to 6 PM. Nightlife until 4 AM weekends.',
+        timeDifference: 'Leeds is UTC+0 (winter) / UTC+1 (summer). When noon in Leeds: NYC 7 AM, Dubai 4 PM, Tokyo 9 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Victoria Quarter for shopping in stunning arcades. Kirkstall Abbey ruins atmospheric. Leeds Market one of Europe\'s largest. Great curry in Leeds!',
+        transportation: 'Leeds Bradford Airport (LBA) 16km. Leeds Station for trains. 2.5 hr from London King\'s Cross.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Leeds Festival (August). Tour de Yorkshire (May).'
+      }
     }
   },
   { slug: 'bristol', city: 'Bristol', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.45, lng: -2.59, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '470K', phoneCode: '+44 117', language: 'English',
+      currency: 'British Pound', currencySymbol: '£', population: '0.47M', metroPopulation: '0.7M', phoneCode: '+44 117', language: 'English',
       climate: 'Oceanic with mild temperatures (5-22°C). Rainfall throughout the year, slightly drier than other UK cities.',
-      attractions: ['Clifton Suspension Bridge', 'SS Great Britain', 'Bristol Zoo', 'Cabot Tower', 'Harbourside'],
-      demographics: 'Eighth-largest city in England, historic port city. Known for aerospace industry, street art (Banksy), and vibrant music scene.'
+      attractions: ['Clifton Suspension Bridge', 'SS Great Britain', 'Bristol Zoo', 'Cabot Tower', 'Harbourside', 'Banksy Street Art', 'Bristol Cathedral', 'M Shed', 'Brunel\'s Temple Meads', 'Leigh Woods'],
+      demographics: 'Banksy\'s hometown. Aerospace hub. Vibrant music scene that birthed trip-hop.',
+      seoContent: {
+        intro: 'Bristol, Banksy\'s hometown, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This creative city combines Victorian engineering marvels like Brunel\'s Suspension Bridge with world-famous street art and a music scene that birthed trip-hop.',
+        timezoneFacts: 'Same timezone as London. Bristol briefly had its own time zone until 1880.',
+        bestTimeToVisit: 'May-September for best weather. Bristol Balloon Fiesta (August). Upfest street art (July).',
+        businessHours: 'Shops 9 AM to 5:30 PM. Harbourside restaurants until 11 PM.',
+        timeDifference: 'Bristol is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Banksy street art throughout city - download map! Clifton Suspension Bridge free. Trip to Bath 15 min train.',
+        transportation: 'Bristol Airport (BRS) 13km. Bristol Temple Meads for trains. 1.5 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Bristol Balloon Fiesta (August). St Paul\'s Carnival (July).'
+      }
     }
   },
-  { slug: 'newcastle', city: 'Newcastle', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 54.98, lng: -1.61, tier: 2, continent: 'europe',
+  { slug: 'newcastle', city: 'Newcastle upon Tyne', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 54.98, lng: -1.61, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '300K', phoneCode: '+44 191', language: 'English',
+      currency: 'British Pound', currencySymbol: '£', population: '0.3M', metroPopulation: '0.88M', phoneCode: '+44 191', language: 'English (Geordie)',
       climate: 'Oceanic with cool summers (15-19°C) and mild winters (2-7°C). Frequent rainfall, often overcast.',
-      attractions: ['Newcastle Castle', 'Tyne Bridge', 'BALTIC Centre', 'Grey\'s Monument', 'Quayside'],
-      demographics: 'Major city in northeast England on River Tyne. Known for nightlife, universities, and passionate football culture.'
+      attractions: ['Newcastle Castle', 'Tyne Bridge', 'BALTIC Centre', 'Grey\'s Monument', 'Quayside', 'St James\' Park', 'Angel of the North', 'Victoria Tunnel', 'Jesmond Dene', 'The Sage Gateshead'],
+      demographics: 'Major northeast city. Legendary nightlife. Passionate football culture. Geordie accent.',
+      seoContent: {
+        intro: 'Newcastle upon Tyne, the Geordie capital, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Famous for passionate Newcastle United fans, iconic Tyne Bridge, and legendary nightlife.',
+        timezoneFacts: 'Same timezone as London. Newcastle was major coal port - hence "coals to Newcastle".',
+        bestTimeToVisit: 'May-September for best weather. Great North Run (September). Football season.',
+        businessHours: 'Shops 9 AM to 5:30 PM. Quayside restaurants until 11 PM. Nightlife until 4 AM.',
+        timeDifference: 'Newcastle is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Angel of the North 20m steel sculpture. Quayside for dining. Geordie accent friendly!',
+        transportation: 'Newcastle Airport (NCL) 10km, Metro connected. Newcastle Central for trains. 3 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Great North Run (September).'
+      }
     }
   },
   { slug: 'cardiff', city: 'Cardiff', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.48, lng: -3.18, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '365K', phoneCode: '+44 29', language: 'English, Welsh',
+      currency: 'British Pound', currencySymbol: '£', population: '0.37M', metroPopulation: '0.5M', phoneCode: '+44 29', language: 'English, Welsh',
       climate: 'Oceanic with mild temperatures year-round (4-21°C). Frequent rainfall, especially in winter.',
-      attractions: ['Cardiff Castle', 'Millennium Stadium', 'Cardiff Bay', 'National Museum Cardiff', 'Bute Park'],
-      demographics: 'Capital and largest city of Wales, major media and cultural center. Home to Welsh Government and historic coal export port.'
+      attractions: ['Cardiff Castle', 'Principality Stadium', 'Cardiff Bay', 'National Museum Cardiff', 'Bute Park', 'Castell Coch', 'Wales Millennium Centre', 'St Fagans', 'Cardiff Arcades', 'Mermaid Quay'],
+      demographics: 'Capital of Wales. Home to Welsh Government. Rugby and football mad. Doctor Who filming.',
+      seoContent: {
+        intro: 'Cardiff (Caerdydd), Welsh capital, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Seat of Welsh Government, home to Principality Stadium, and hub for Welsh culture and entertainment.',
+        timezoneFacts: 'Same timezone as London. Cardiff has been capital of Wales only since 1955.',
+        bestTimeToVisit: 'May-September for best weather. Six Nations rugby (Feb-Mar). Winter Wonderland.',
+        businessHours: 'Shops 9 AM to 5:30 PM. Cardiff Bay until late. Stadium events year-round.',
+        timeDifference: 'Cardiff is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Principality Stadium roof closes for concerts! St Fagans open-air museum free. Try Welsh cakes.',
+        transportation: 'Cardiff Airport (CWL) 20km. Cardiff Central for trains. 2 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Wales: 111.',
+        publicHolidays: 'UK bank holidays. Six Nations rugby weekends.'
+      }
     }
   },
   { slug: 'sheffield', city: 'Sheffield', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.38, lng: -1.47, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '585K', phoneCode: '+44 114', language: 'English',
+      currency: 'British Pound', currencySymbol: '£', population: '0.59M', metroPopulation: '0.74M', phoneCode: '+44 114', language: 'English',
       climate: 'Oceanic with mild summers (16-21°C) and cool winters (2-7°C). Frequent rainfall, hilly terrain.',
-      attractions: ['Winter Garden', 'Kelham Island Museum', 'Peak District Gateway', 'Millennium Gallery', 'Sheffield Cathedral'],
-      demographics: 'Steel City transformed into education and tech hub. Two major universities, gateway to Peak District National Park.'
+      attractions: ['Winter Garden', 'Kelham Island Museum', 'Peak District Gateway', 'Millennium Gallery', 'Sheffield Cathedral', 'Crucible Theatre', 'Botanical Gardens', 'Abbeydale Industrial Hamlet', 'Ecclesall Woods', 'Meadowhall'],
+      demographics: 'Steel City transformed into education hub. Gateway to Peak District. World Snooker Championship.',
+      seoContent: {
+        intro: 'Sheffield, the Steel City, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This city on seven hills reinvented itself from industrial powerhouse to university city, serving as gateway to Peak District.',
+        timezoneFacts: 'Same timezone as London. Sheffield still produces more steel than anywhere in UK.',
+        bestTimeToVisit: 'May-September for Peak District hiking. World Snooker Championship (April-May).',
+        businessHours: 'Shops 9 AM to 5:30 PM. Kelham Island trendy evenings.',
+        timeDifference: 'Sheffield is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Winter Garden tropical plants free. Peak District 20 min away. Henderson\'s Relish local obsession.',
+        transportation: 'Sheffield Station for trains. 2 hr from London St Pancras.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. World Snooker Championship (April-May).'
+      }
     }
   },
   { slug: 'nottingham', city: 'Nottingham', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.95, lng: -1.15, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '330K', phoneCode: '+44 115', language: 'English',
+      currency: 'British Pound', currencySymbol: '£', population: '0.33M', metroPopulation: '0.8M', phoneCode: '+44 115', language: 'English',
       climate: 'Oceanic with mild summers (16-21°C) and cool winters (2-7°C). Moderate rainfall.',
-      attractions: ['Nottingham Castle', 'Old Market Square', 'City of Caves', 'Wollaton Hall', 'Sherwood Forest nearby'],
-      demographics: 'Robin Hood\'s legendary home, historic lace-making center. Major university city with vibrant nightlife.'
+      attractions: ['Nottingham Castle', 'Old Market Square', 'City of Caves', 'Wollaton Hall', 'Sherwood Forest', 'Ye Olde Trip to Jerusalem', 'Lace Market', 'National Justice Museum', 'Trent Bridge', 'Green\'s Windmill'],
+      demographics: 'Robin Hood\'s legendary home. Historic lace center. Major university city.',
+      seoContent: {
+        intro: 'Nottingham, home of Robin Hood, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Caves beneath streets, England\'s oldest pub, and nearby Sherwood Forest where the outlaw roamed.',
+        timezoneFacts: 'Same timezone as London. Nottingham Castle where Richard I was held for ransom.',
+        bestTimeToVisit: 'May-September for best weather. Robin Hood Festival (August). Goose Fair (October).',
+        businessHours: 'Shops 9 AM to 5:30 PM. Ye Olde Trip opens early.',
+        timeDifference: 'Nottingham is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'City of Caves tour fascinating. Ye Olde Trip claims England\'s oldest pub. Wollaton Hall is Wayne Manor from Dark Knight.',
+        transportation: 'East Midlands Airport (EMA) 22km. Nottingham Station. 1.5 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Goose Fair (October). Robin Hood Festival (August).'
+      }
     }
   },
   { slug: 'southampton', city: 'Southampton', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.90, lng: -1.40, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '260K', phoneCode: '+44 23', language: 'English',
+      currency: 'British Pound', currencySymbol: '£', population: '0.26M', metroPopulation: '0.9M', phoneCode: '+44 23', language: 'English',
       climate: 'Oceanic with mild summers (17-21°C) and cool winters (4-9°C). Relatively sunny for UK.',
-      attractions: ['SeaCity Museum', 'Tudor House', 'Old Town Walls', 'Mayflower Park', 'Southampton FC'],
-      demographics: 'Major cruise port, where Titanic departed. Historic maritime city, home to University of Southampton.'
+      attractions: ['SeaCity Museum', 'Tudor House', 'Old Town Walls', 'Mayflower Park', 'Southampton FC', 'Bargate', 'Ocean Village', 'City Art Gallery', 'Solent Sky Museum', 'New Forest nearby'],
+      demographics: 'Major cruise port where Titanic departed. Gateway to Isle of Wight and New Forest.',
+      seoContent: {
+        intro: 'Southampton, where the Titanic sailed from, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. UK\'s premier cruise port, where both Titanic and Mayflower began their voyages.',
+        timezoneFacts: 'Same timezone as London. Southampton has UK\'s largest cruise terminal.',
+        bestTimeToVisit: 'May-September for best weather. Southampton Boat Show (September).',
+        businessHours: 'Shops 9 AM to 5:30 PM. Cruise terminals 24/7. Ocean Village until late.',
+        timeDifference: 'Southampton is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'SeaCity Museum Titanic exhibition moving. Ferry to Isle of Wight easy. New Forest 20 min.',
+        transportation: 'Southampton Airport (SOU) 6km. Southampton Central for trains. 1.5 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Southampton Boat Show (September).'
+      }
     }
   },
   { slug: 'leicester', city: 'Leicester', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.63, lng: -1.13, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '355K', phoneCode: '+44 116', language: 'English, Gujarati',
+      currency: 'British Pound', currencySymbol: '£', population: '0.36M', metroPopulation: '0.75M', phoneCode: '+44 116', language: 'English, Gujarati',
       climate: 'Oceanic with mild summers (16-21°C) and cool winters (2-7°C). Moderate rainfall.',
-      attractions: ['King Richard III Visitor Centre', 'Leicester Cathedral', 'National Space Centre', 'New Walk Museum', 'Golden Mile'],
-      demographics: 'One of UK\'s most diverse cities, where Richard III was found. Leicester City FC\'s 2016 Premier League miracle.'
+      attractions: ['King Richard III Visitor Centre', 'Leicester Cathedral', 'National Space Centre', 'New Walk Museum', 'Golden Mile', 'Abbey Park', 'Curve Theatre', 'Leicester Market', 'Belgrave Hall', 'Jewry Wall'],
+      demographics: 'One of UK\'s most diverse cities. Where Richard III discovered. Leicester City 2016 miracle.',
+      seoContent: {
+        intro: 'Leicester, where Richard III was found, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Made football history in 2016 with Leicester City\'s 5000-1 Premier League triumph, and rewrote history when Richard III\'s bones were discovered under a car park.',
+        timezoneFacts: 'Same timezone as London. Leicester is one of England\'s oldest cities.',
+        bestTimeToVisit: 'Year-round. Diwali on Golden Mile (October-November) largest outside India.',
+        businessHours: 'Shops 9 AM to 5:30 PM. Golden Mile restaurants until late.',
+        timeDifference: 'Leicester is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Richard III tomb in Cathedral - found under car park! Golden Mile best Indian food outside India.',
+        transportation: 'East Midlands Airport (EMA) 30km. Leicester Station. 1 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Diwali (Leicester\'s biggest celebration).'
+      }
     }
   },
   { slug: 'coventry', city: 'Coventry', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.41, lng: -1.51, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '370K', phoneCode: '+44 24', language: 'English',
+      currency: 'British Pound', currencySymbol: '£', population: '0.37M', metroPopulation: '0.9M', phoneCode: '+44 24', language: 'English',
       climate: 'Oceanic with mild summers (16-21°C) and cool winters (2-7°C). Central England location.',
-      attractions: ['Coventry Cathedral', 'Transport Museum', 'Herbert Art Gallery', 'St Mary\'s Guildhall', 'Belgrade Theatre'],
-      demographics: 'UK City of Culture 2021, rebuilt after WWII bombing. Historic watchmaking and automotive center.'
+      attractions: ['Coventry Cathedral', 'Transport Museum', 'Herbert Art Gallery', 'St Mary\'s Guildhall', 'Belgrade Theatre', 'Lady Godiva Statue', 'Coventry Canal', 'War Memorial Park', 'Fargo Village', 'Cathedral Ruins'],
+      demographics: 'UK City of Culture 2021. Rebuilt after WWII Blitz. Lady Godiva\'s city.',
+      seoContent: {
+        intro: 'Coventry, the Phoenix City, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Rose from WWII bombing ashes, crowned UK City of Culture 2021, and forever linked to Lady Godiva\'s legendary ride.',
+        timezoneFacts: 'Same timezone as London. Coventry was most bombed UK city in WWII.',
+        bestTimeToVisit: 'May-September for best weather. Christmas markets.',
+        businessHours: 'Shops 9 AM to 5:30 PM. Fargo Village creative quarter evenings.',
+        timeDifference: 'Coventry is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Cathedral ruins next to new cathedral powerful. Transport Museum has world\'s fastest car. "Sent to Coventry" phrase originates here.',
+        transportation: 'Birmingham Airport (BHX) 18km. Coventry Station. 1 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Godiva Festival (July).'
+      }
     }
   },
   { slug: 'belfast', city: 'Belfast', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 54.60, lng: -5.93, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '345K', phoneCode: '+44 28', language: 'English, Irish',
+      currency: 'British Pound', currencySymbol: '£', population: '0.35M', metroPopulation: '0.67M', phoneCode: '+44 28', language: 'English, Irish',
       climate: 'Oceanic with cool summers (15-18°C) and mild winters (3-8°C). Frequent rainfall year-round.',
-      attractions: ['Titanic Belfast', 'St George\'s Market', 'Cathedral Quarter', 'Botanic Gardens', 'Peace Walls'],
-      demographics: 'Capital of Northern Ireland, where Titanic was built. Transformed from conflict to cultural tourism destination.'
+      attractions: ['Titanic Belfast', 'St George\'s Market', 'Cathedral Quarter', 'Botanic Gardens', 'Peace Walls', 'Crumlin Road Gaol', 'Ulster Museum', 'Black Taxi Tours', 'Game of Thrones Tours', 'Giant\'s Causeway nearby'],
+      demographics: 'Capital of Northern Ireland. Where Titanic was built. Transformed from conflict to tourism.',
+      seoContent: {
+        intro: 'Belfast, where Titanic was built, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Northern Ireland\'s capital transformed from conflict zone to cultural destination, featuring world\'s best Titanic exhibition.',
+        timezoneFacts: 'Same timezone as London and Dublin. Belfast in UK but on island of Ireland.',
+        bestTimeToVisit: 'May-September for best weather. St Patrick\'s Day (March 17).',
+        businessHours: 'Shops 9 AM to 5:30 PM. Cathedral Quarter pubs until late. St George\'s Market Fri-Sun.',
+        timeDifference: 'Belfast is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Titanic Belfast museum incredible. Black Taxi tour explains Troubles history. Giant\'s Causeway 1 hr drive.',
+        transportation: 'Belfast International (BFS) 25km, George Best City (BHD) 5km. Belfast Central for trains.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays plus 12th July (NI only). St Patrick\'s Day.'
+      }
     }
   },
   { slug: 'brighton', city: 'Brighton', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.82, lng: -0.14, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '290K', phoneCode: '+44 1273', language: 'English',
+      currency: 'British Pound', currencySymbol: '£', population: '0.29M', metroPopulation: '0.48M', phoneCode: '+44 1273', language: 'English',
       climate: 'Oceanic with mild summers (18-21°C) and cool winters (4-9°C). Sunniest city in UK.',
-      attractions: ['Royal Pavilion', 'Brighton Pier', 'The Lanes', 'British Airways i360', 'Brighton Beach'],
-      demographics: 'London-by-the-Sea, UK\'s most LGBTQ+ friendly city. Famous for Regency architecture and bohemian culture.'
+      attractions: ['Royal Pavilion', 'Brighton Pier', 'The Lanes', 'British Airways i360', 'Brighton Beach', 'North Laine', 'Sea Life Centre', 'Brighton Museum', 'Devil\'s Dyke', 'Volks Railway'],
+      demographics: 'London-by-the-Sea. UK\'s most LGBTQ+ friendly city. Regency architecture. Bohemian culture.',
+      seoContent: {
+        intro: 'Brighton, London-by-the-Sea, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Britain\'s sunniest city famous for Indian-style Royal Pavilion, pebble beach, LGBTQ+ Pride celebration, and bohemian culture.',
+        timezoneFacts: 'Same timezone as London. Just 1 hour from London by train.',
+        bestTimeToVisit: 'May-September for beach weather. Brighton Pride (August). Brighton Festival (May).',
+        businessHours: 'Shops 10 AM to 6 PM. The Lanes boutiques variable. Pier and beach 24/7.',
+        timeDifference: 'Brighton is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Royal Pavilion interior stunning! The Lanes for antiques, North Laine for indie. Beach is pebbles not sand. Pride among world\'s biggest.',
+        transportation: 'No airport - London Gatwick 45 min. Brighton Station. 1 hr from London Victoria.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Brighton Pride (August). Brighton Festival (May).'
+      }
     }
   },
   { slug: 'cambridge', city: 'Cambridge', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.21, lng: 0.12, tier: 2, continent: 'europe',
@@ -4770,10 +4914,1166 @@ export const cities: City[] = [
   },
   { slug: 'dundee', city: 'Dundee', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 56.46, lng: -2.97, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '150K', phoneCode: '+44 1382', language: 'English, Scots',
+      currency: 'British Pound', currencySymbol: '£', population: '0.15M', metroPopulation: '0.2M', phoneCode: '+44 1382', language: 'English, Scots',
       climate: 'Oceanic with cool summers (15-18°C) and cold winters (1-7°C). Sunniest city in Scotland.',
-      attractions: ['V&A Dundee', 'RRS Discovery', 'The McManus', 'Verdant Works', 'Law Hill'],
-      demographics: 'Scotland\'s fourth city, UNESCO City of Design. Video game industry hub (GTA), jute and jam heritage.'
+      attractions: ['V&A Dundee', 'RRS Discovery', 'The McManus', 'Verdant Works', 'Law Hill', 'Broughty Castle', 'Dundee Contemporary Arts', 'Slessor Gardens', 'Mills Observatory', 'Glamis Castle nearby'],
+      demographics: 'UNESCO City of Design. Video game hub (GTA created here). Jute, jam, journalism heritage.',
+      seoContent: {
+        intro: 'Dundee, Scotland\'s sunniest city, operates on Greenwich Mean Time (GMT/UTC+0) in winter and British Summer Time (BST/UTC+1) in summer. This UNESCO City of Design is home to V&A Dundee, birthplace of Grand Theft Auto, and historic home of jute, jam, and journalism.',
+        timezoneFacts: 'Same timezone as London. Dundee is Scotland\'s fourth-largest city and sunniest.',
+        bestTimeToVisit: 'May-September for best weather. V&A Dundee year-round.',
+        businessHours: 'V&A Dundee 10 AM to 5 PM. Discovery Point 10 AM to 6 PM.',
+        timeDifference: 'Dundee is UTC+0 (winter) / UTC+1 (summer). When noon in Dundee: NYC 7 AM, Dubai 4 PM, Tokyo 9 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'V&A Dundee stunning Kengo Kuma building. RRS Discovery Scott\'s Antarctic ship. GTA created here.',
+        transportation: 'Dundee Airport limited. Dundee Station for trains. 1.5 hr from Edinburgh.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Scotland: 111.',
+        publicHolidays: 'UK bank holidays plus Scottish holidays. Dundee Design Festival.'
+      }
+    }
+  },
+  
+  // UK - New Premium Cities (15 additional tourist destinations)
+  { slug: 'bath', city: 'Bath', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.38, lng: -2.36, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.09M', metroPopulation: '0.17M', phoneCode: '+44 1225', language: 'English',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (3-9°C). Sheltered valley.',
+      attractions: ['Roman Baths', 'Bath Abbey', 'Royal Crescent', 'Pulteney Bridge', 'Thermae Bath Spa', 'The Circus', 'Jane Austen Centre', 'Prior Park', 'Sally Lunn\'s', 'Assembly Rooms'],
+      demographics: 'UNESCO World Heritage city. Roman spa town. Georgian architecture. Jane Austen\'s city.',
+      seoContent: {
+        intro: 'Bath, the Georgian gem, operates on Greenwich Mean Time (GMT/UTC+0) in winter and British Summer Time (BST/UTC+1) in summer. This UNESCO World Heritage city features 2,000-year-old Roman Baths and the UK\'s only natural hot springs.',
+        timezoneFacts: 'Same timezone as London. Bath is the only UK place with natural hot springs.',
+        bestTimeToVisit: 'April-October for best weather. Bath Christmas Market magical.',
+        businessHours: 'Roman Baths 9 AM to 6 PM. Thermae Spa until 9:30 PM.',
+        timeDifference: 'Bath is UTC+0 (winter) / UTC+1 (summer). When noon in Bath: NYC 7 AM, Dubai 4 PM, Tokyo 9 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Bathe in same water as Romans at Thermae Spa! Sally Lunn\'s famous buns. 15 min from Bristol.',
+        transportation: 'No airport - Bristol (BRS) 30 min. Bath Spa Station. 1.5 hr from London Paddington.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Bath Christmas Market (Nov-Dec). Jane Austen Festival (September).'
+      }
+    }
+  },
+  { slug: 'york', city: 'York', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.96, lng: -1.08, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.21M', metroPopulation: '0.35M', phoneCode: '+44 1904', language: 'English',
+      climate: 'Oceanic with mild summers (16-21°C) and cool winters (2-7°C). Vale of York.',
+      attractions: ['York Minster', 'The Shambles', 'York City Walls', 'Jorvik Viking Centre', 'National Railway Museum', 'Clifford\'s Tower', 'York Dungeon', 'Betty\'s Tea Rooms', 'Treasurer\'s House', 'Castle Museum'],
+      demographics: 'Viking capital of England. Medieval walled city. Gothic cathedral masterpiece.',
+      seoContent: {
+        intro: 'York, the Viking capital, operates on Greenwich Mean Time (GMT/UTC+0) in winter and British Summer Time (BST/UTC+1) in summer. This medieval walled city features Europe\'s largest Gothic cathedral and The Shambles that inspired Harry Potter\'s Diagon Alley.',
+        timezoneFacts: 'Same timezone as London. York was once England\'s second city.',
+        bestTimeToVisit: 'April-October for best weather. Jorvik Viking Festival (February).',
+        businessHours: 'York Minster 9 AM to 4:30 PM. The Shambles shops 9 AM to 5:30 PM.',
+        timeDifference: 'York is UTC+0 (winter) / UTC+1 (summer). When noon in York: NYC 7 AM, Dubai 4 PM, Tokyo 9 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Walk complete city walls (2 miles). The Shambles inspired Diagon Alley! Ghost tours popular.',
+        transportation: 'No airport - Leeds Bradford 40 min. York Station. 2 hr from London King\'s Cross.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Jorvik Viking Festival (February). York Christmas Festival.'
+      }
+    }
+  },
+  { slug: 'canterbury', city: 'Canterbury', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.28, lng: 1.08, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.06M', metroPopulation: '0.16M', phoneCode: '+44 1227', language: 'English',
+      climate: 'Oceanic with mild summers (18-22°C) and cool winters (3-8°C). Southeast England.',
+      attractions: ['Canterbury Cathedral', 'St Augustine\'s Abbey', 'St Martin\'s Church', 'Canterbury Tales', 'Westgate Towers', 'River Stour', 'King\'s Mile', 'Beaney House', 'Punting', 'Roman Museum'],
+      demographics: 'UNESCO World Heritage. Mother church of Anglicanism. Pilgrimage since 1170.',
+      seoContent: {
+        intro: 'Canterbury, spiritual capital of England, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This UNESCO city has been Christianity\'s English headquarters since 597 AD, where Thomas Becket was martyred.',
+        timezoneFacts: 'Same timezone as London. Canterbury is seat of the Archbishop.',
+        bestTimeToVisit: 'April-October for best weather. Canterbury Festival (October).',
+        businessHours: 'Canterbury Cathedral 9 AM to 5 PM. Shops 9 AM to 5:30 PM.',
+        timeDifference: 'Canterbury is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Cathedral evensong free. Three UNESCO sites in one city! Punt on River Stour.',
+        transportation: 'No airport - London Gatwick 1.5 hr. Canterbury East/West stations. 1 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Canterbury Festival (October).'
+      }
+    }
+  },
+  { slug: 'stratford-upon-avon', city: 'Stratford-upon-Avon', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.19, lng: -1.71, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.03M', metroPopulation: '0.12M', phoneCode: '+44 1789', language: 'English',
+      climate: 'Oceanic with mild summers (16-22°C) and cool winters (2-8°C). Midlands.',
+      attractions: ['Shakespeare\'s Birthplace', 'Royal Shakespeare Theatre', 'Anne Hathaway\'s Cottage', 'Holy Trinity Church', 'Mary Arden\'s Farm', 'Hall\'s Croft', 'River Avon', 'Butterfly Farm', 'Tudor World', 'Bancroft Gardens'],
+      demographics: 'Shakespeare\'s birthplace and burial site. Royal Shakespeare Company home.',
+      seoContent: {
+        intro: 'Stratford-upon-Avon, birthplace of Shakespeare, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This quintessentially English market town is where the Bard was born, lived, and lies buried.',
+        timezoneFacts: 'Same timezone as London. Shakespeare baptized and buried in same church.',
+        bestTimeToVisit: 'April-October for best weather. Shakespeare\'s Birthday (April 23). RSC year-round.',
+        businessHours: 'Shakespeare properties 9 AM to 5 PM. RSC performances evenings.',
+        timeDifference: 'Stratford is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Book RSC tickets in advance! Five Shakespeare houses - get combined ticket.',
+        transportation: 'No airport - Birmingham 40 min. Stratford-upon-Avon Station. 2 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Shakespeare\'s Birthday (April 23).'
+      }
+    }
+  },
+  { slug: 'windsor', city: 'Windsor', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.48, lng: -0.61, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.03M', metroPopulation: '0.14M', phoneCode: '+44 1753', language: 'English',
+      climate: 'Oceanic with mild summers (18-23°C) and cool winters (3-8°C). Thames Valley.',
+      attractions: ['Windsor Castle', 'St George\'s Chapel', 'Changing of the Guard', 'Long Walk', 'Eton College', 'Windsor Great Park', 'Legoland', 'River Thames', 'Windsor Guildhall', 'Crooked House'],
+      demographics: 'World\'s oldest occupied castle. Queen\'s weekend residence. Royal weddings venue.',
+      seoContent: {
+        intro: 'Windsor, home of the world\'s oldest occupied castle, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This royal town houses Windsor Castle, the preferred weekend residence of the monarch.',
+        timezoneFacts: 'Same timezone as London. Windsor is the only royal residence occupied 1,000 years.',
+        bestTimeToVisit: 'April-October for Changing of the Guard. Check royal residence.',
+        businessHours: 'Windsor Castle 10 AM to 5:15 PM. Changing of the Guard 11 AM.',
+        timeDifference: 'Windsor is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Check Royal Standard flag. St George\'s Chapel has royal tombs. Legoland nearby.',
+        transportation: 'No airport - Heathrow 10 min. Windsor stations. 50 min from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Garter Day (June). Royal events.'
+      }
+    }
+  },
+  { slug: 'salisbury', city: 'Salisbury', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.07, lng: -1.80, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.05M', metroPopulation: '0.11M', phoneCode: '+44 1722', language: 'English',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (3-8°C). Wiltshire downs.',
+      attractions: ['Salisbury Cathedral', 'Magna Carta', 'Stonehenge', 'Old Sarum', 'Cathedral Close', 'Mompesson House', 'Arundells', 'Salisbury Museum', 'River Avon', 'Medieval Streets'],
+      demographics: 'Gateway to Stonehenge. Britain\'s tallest spire. Original Magna Carta.',
+      seoContent: {
+        intro: 'Salisbury, gateway to Stonehenge, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This medieval city features Britain\'s tallest cathedral spire (123m) and one of four original Magna Cartas.',
+        timezoneFacts: 'Same timezone as London. Salisbury has best-preserved Magna Carta.',
+        bestTimeToVisit: 'April-October for best weather. Summer solstice at Stonehenge.',
+        businessHours: 'Salisbury Cathedral 9 AM to 5 PM. Stonehenge 9:30 AM to 7 PM.',
+        timeDifference: 'Salisbury is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Stonehenge 10 miles - book timed tickets! Magna Carta in Chapter House.',
+        transportation: 'No airport - Southampton 40 min. Salisbury Station. 1.5 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Summer Solstice at Stonehenge.'
+      }
+    }
+  },
+  { slug: 'inverness', city: 'Inverness', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 57.48, lng: -4.22, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.05M', metroPopulation: '0.07M', phoneCode: '+44 1463', language: 'English, Scottish Gaelic',
+      climate: 'Oceanic with cool summers (13-18°C) and cold winters (1-6°C). Highland location.',
+      attractions: ['Loch Ness', 'Urquhart Castle', 'Inverness Castle', 'Culloden Battlefield', 'Clava Cairns', 'River Ness', 'Victorian Market', 'Caledonian Canal', 'Dolphins', 'Highland Games'],
+      demographics: 'Capital of Scottish Highlands. Gateway to Loch Ness. Culloden history.',
+      seoContent: {
+        intro: 'Inverness, Highland Capital, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This city is gateway to Loch Ness and the spectacular Scottish Highlands.',
+        timezoneFacts: 'Same timezone as London. Inverness is UK\'s most northerly city.',
+        bestTimeToVisit: 'May-September for best weather. Highland Games various dates.',
+        businessHours: 'Loch Ness cruises 9 AM to 5 PM. Culloden 9 AM to 5:30 PM.',
+        timeDifference: 'Inverness is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Loch Ness cruise essential. Culloden heartbreaking. North Coast 500 starts here.',
+        transportation: 'Inverness Airport (INV) 15km. Inverness Station. 3.5 hr from Edinburgh.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Scotland: 111.',
+        publicHolidays: 'UK bank holidays plus Scottish holidays. Highland Games.'
+      }
+    }
+  },
+  { slug: 'st-andrews', city: 'St Andrews', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 56.34, lng: -2.80, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.02M', metroPopulation: '0.02M', phoneCode: '+44 1334', language: 'English, Scots',
+      climate: 'Oceanic with cool summers (14-18°C) and cold winters (2-7°C). North Sea coast.',
+      attractions: ['Old Course', 'St Andrews Links', 'St Andrews Cathedral', 'St Andrews Castle', 'University of St Andrews', 'West Sands Beach', 'British Golf Museum', 'St Rule\'s Tower', 'Swilcan Bridge', 'Pier Walk'],
+      demographics: 'Home of golf since 1552. Scotland\'s oldest university. Prince William met Kate here.',
+      seoContent: {
+        intro: 'St Andrews, Home of Golf, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Golf was invented here in 1552, and Prince William met Kate at Scotland\'s oldest university.',
+        timezoneFacts: 'Same timezone as London. St Andrews medieval pilgrimage site.',
+        bestTimeToVisit: 'May-September for best weather. The Open Championship.',
+        businessHours: 'Old Course ballot closes day before. Cathedral ruins daylight.',
+        timeDifference: 'St Andrews is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Old Course ballot - enter day before! Swilcan Bridge iconic. West Sands is Chariots of Fire beach.',
+        transportation: 'No airport - Edinburgh 1.5 hr. Leuchars Station + bus.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Scotland: 111.',
+        publicHolidays: 'UK bank holidays plus Scottish holidays. The Open Championship.'
+      }
+    }
+  },
+  { slug: 'chester', city: 'Chester', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.19, lng: -2.89, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.08M', metroPopulation: '0.13M', phoneCode: '+44 1244', language: 'English',
+      climate: 'Oceanic with cool summers (16-20°C) and mild winters (3-8°C). Welsh border.',
+      attractions: ['Chester Rows', 'Chester City Walls', 'Chester Cathedral', 'Chester Zoo', 'Eastgate Clock', 'Roman Amphitheatre', 'River Dee', 'Grosvenor Museum', 'Chester Racecourse', 'Medieval Quarters'],
+      demographics: 'Most complete Roman walls in Britain. Unique two-level shopping rows.',
+      seoContent: {
+        intro: 'Chester, Roman fortress city, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Britain\'s most complete Roman walls and unique medieval shopping galleries (The Rows).',
+        timezoneFacts: 'Same timezone as London. Chester founded as Roman fortress 79 AD.',
+        bestTimeToVisit: 'April-October for best weather. Chester Races. Christmas markets.',
+        businessHours: 'Chester Rows 9 AM to 5:30 PM. Chester Zoo 10 AM to 5 PM.',
+        timeDifference: 'Chester is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Walk complete city walls (2 miles). Eastgate Clock photo spot. Chester Zoo excellent.',
+        transportation: 'No airport - Manchester 1 hr, Liverpool 45 min. Chester Station.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Chester Races.'
+      }
+    }
+  },
+  { slug: 'lake-district', city: 'Lake District', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 54.46, lng: -3.09, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.04M', metroPopulation: '0.04M', phoneCode: '+44 15394', language: 'English',
+      climate: 'Oceanic with cool summers (13-19°C) and cold wet winters (1-7°C). Wettest place in England.',
+      attractions: ['Windermere', 'Ambleside', 'Keswick', 'Grasmere', 'Scafell Pike', 'Beatrix Potter', 'Wordsworth\'s Dove Cottage', 'Castlerigg Stone Circle', 'Ullswater', 'Hawkshead'],
+      demographics: 'UNESCO World Heritage. England\'s largest national park. Wordsworth and Beatrix Potter country.',
+      seoContent: {
+        intro: 'The Lake District, England\'s Lake Country, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. England\'s highest peak (Scafell Pike) and largest lake (Windermere), inspiring Wordsworth and Beatrix Potter.',
+        timezoneFacts: 'Same timezone as London. Lake District is England\'s wettest region.',
+        bestTimeToVisit: 'May-September for best weather. Autumn colors spectacular.',
+        businessHours: 'Visitor centers 9 AM to 5 PM. Boat cruises vary seasonally.',
+        timeDifference: 'Lake District is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Windermere cruise essential. Wordsworth\'s Dove Cottage. Always pack rain gear!',
+        transportation: 'No airport - Manchester 2 hr. Windermere Station. 3 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Mountain Rescue available. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Grasmere Sports (August).'
+      }
+    }
+  },
+  { slug: 'cotswolds', city: 'Cotswolds', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.83, lng: -1.74, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.14M', metroPopulation: '0.14M', phoneCode: '+44 1451', language: 'English',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (2-8°C). Rolling hills.',
+      attractions: ['Bourton-on-the-Water', 'Bibury', 'Stow-on-the-Wold', 'Castle Combe', 'Broadway', 'Chipping Campden', 'Arlington Row', 'Blenheim Palace', 'Sudeley Castle', 'Cotswold Way'],
+      demographics: 'Area of Outstanding Natural Beauty. Honey-colored stone villages. Quintessential England.',
+      seoContent: {
+        intro: 'The Cotswolds, quintessential England, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. 800 square miles of honey-colored stone villages and picture-perfect countryside.',
+        timezoneFacts: 'Same timezone as London. Cotswolds spans six counties.',
+        bestTimeToVisit: 'May-September for best weather. Lavender June-August. Christmas magical.',
+        businessHours: 'Village shops 9 AM to 5 PM. Pubs serve lunch and dinner.',
+        timeDifference: 'Cotswolds is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Bibury\'s Arlington Row most photographed. Bourton-on-the-Water is Venice of Cotswolds. Car essential.',
+        transportation: 'No airport - Bristol or Birmingham 1 hr. Moreton-in-Marsh has train. Car essential.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Cheese Rolling (May). Village fetes summer.'
+      }
+    }
+  },
+  { slug: 'cornwall', city: 'Cornwall', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.27, lng: -5.05, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.57M', metroPopulation: '0.57M', phoneCode: '+44 1872', language: 'English, Cornish',
+      climate: 'Oceanic with mild summers (17-20°C) and mild winters (6-10°C). UK\'s mildest climate.',
+      attractions: ['St Ives', 'Penzance', 'Newquay', 'Padstow', 'Eden Project', 'Tintagel Castle', 'Land\'s End', 'St Michael\'s Mount', 'Minack Theatre', 'Tate St Ives'],
+      demographics: 'Celtic nation. England\'s surf capital. Artists\' haven. Pasty homeland.',
+      seoContent: {
+        intro: 'Cornwall, England\'s Celtic tip, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. UK\'s mildest climate, best surf beaches, and dramatic coastline inspiring countless artists.',
+        timezoneFacts: 'Same timezone as London. Cornwall sunset 30 min later than London.',
+        bestTimeToVisit: 'May-September for beach weather. Newquay surf year-round.',
+        businessHours: 'Tourist attractions 10 AM to 5 PM. Beach cafes seasonal.',
+        timeDifference: 'Cornwall is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'St Ives best art town. Padstow for Rick Stein seafood. Cornish pasty - crimp on side!',
+        transportation: 'Newquay Airport (NQY) small. London Paddington to Penzance 5 hr. Car essential.',
+        emergencyNumbers: 'Emergency: 999. RNLI for coast. NHS: 111.',
+        publicHolidays: 'UK bank holidays. St Piran\'s Day (March 5). Obby Oss (May Day).'
+      }
+    }
+  },
+  { slug: 'portsmouth', city: 'Portsmouth', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.82, lng: -1.08, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.21M', metroPopulation: '0.86M', phoneCode: '+44 23', language: 'English',
+      climate: 'Oceanic with mild summers (17-21°C) and cool winters (4-9°C). Coastal, sunny.',
+      attractions: ['Historic Dockyard', 'HMS Victory', 'Mary Rose', 'HMS Warrior', 'Spinnaker Tower', 'Gunwharf Quays', 'Southsea Beach', 'D-Day Museum', 'Charles Dickens Birthplace', 'Portsmouth FC'],
+      demographics: 'Home of the Royal Navy. Nelson\'s HMS Victory. Britain\'s only island city.',
+      seoContent: {
+        intro: 'Portsmouth, home of the Royal Navy, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Britain\'s only island city houses HMS Victory where Nelson died and the D-Day embarkation point.',
+        timezoneFacts: 'Same timezone as London. Portsmouth is Britain\'s principal naval base for 500+ years.',
+        bestTimeToVisit: 'April-October for best weather. D-Day anniversary (June 6).',
+        businessHours: 'Historic Dockyard 10 AM to 5 PM. Spinnaker Tower 10 AM to 6 PM.',
+        timeDifference: 'Portsmouth is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Historic Dockyard needs full day. HMS Victory where Nelson died. Ferry to Isle of Wight.',
+        transportation: 'No airport - Southampton 30 min. Portsmouth Harbour Station. 1.5 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. D-Day commemorations (June). Navy Days.'
+      }
+    }
+  },
+  { slug: 'plymouth', city: 'Plymouth', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.38, lng: -4.14, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.26M', metroPopulation: '0.27M', phoneCode: '+44 1752', language: 'English',
+      climate: 'Oceanic with mild summers (17-20°C) and mild winters (5-10°C). Coastal.',
+      attractions: ['Plymouth Hoe', 'Mayflower Steps', 'National Marine Aquarium', 'Barbican', 'Smeaton\'s Tower', 'Royal William Yard', 'Dartmoor Gateway', 'Drake\'s Island', 'Plymouth Gin Distillery', 'Mount Edgcumbe'],
+      demographics: 'Where Mayflower sailed to America. Drake played bowls before Armada. Britain\'s Ocean City.',
+      seoContent: {
+        intro: 'Plymouth, Britain\'s Ocean City, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. The Mayflower departed for America in 1620 and Sir Francis Drake played bowls before defeating the Armada.',
+        timezoneFacts: 'Same timezone as London. Plymouth is where Pilgrim Fathers left for New World.',
+        bestTimeToVisit: 'May-September for best weather. British Firework Championships (August).',
+        businessHours: 'Mayflower Steps accessible 24/7. National Marine Aquarium 10 AM to 5 PM.',
+        timeDifference: 'Plymouth is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Mayflower Steps where Pilgrims departed. Plymouth Gin oldest working distillery. Dartmoor 20 min.',
+        transportation: 'No airport - Exeter 1 hr. Plymouth Station. 3.5 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. British Firework Championships (August).'
+      }
+    }
+  },
+  { slug: 'durham', city: 'Durham', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 54.78, lng: -1.57, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.05M', metroPopulation: '0.09M', phoneCode: '+44 191', language: 'English',
+      climate: 'Oceanic with cool summers (15-19°C) and cold winters (2-7°C). River valley.',
+      attractions: ['Durham Cathedral', 'Durham Castle', 'River Wear', 'Palace Green', 'Prebends Bridge', 'Botanic Garden', 'Oriental Museum', 'Crook Hall', 'Wharton Park', 'Lumiere Festival'],
+      demographics: 'UNESCO World Heritage cathedral and castle. England\'s third-oldest university. Harry Potter filming.',
+      seoContent: {
+        intro: 'Durham, the castle on the rock, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This UNESCO World Heritage city features a Norman cathedral (Harry Potter\'s Hogwarts cloisters), a castle turned university college, and dramatic river loops.',
+        timezoneFacts: 'Same timezone as London. Durham Cathedral was Europe\'s first Gothic building.',
+        bestTimeToVisit: 'April-October for best weather. Lumiere light festival (November - biennial).',
+        businessHours: 'Durham Cathedral 10 AM to 4 PM. Castle tours limited - book ahead.',
+        timeDifference: 'Durham is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Cathedral cloisters are Hogwarts! Climb tower for views (325 steps). Lumiere spectacular.',
+        transportation: 'No airport - Newcastle 30 min. Durham Station. 2.5 hr from London King\'s Cross.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Lumiere Festival (November). Durham Miners\' Gala (July).'
+      }
+    }
+  },
+  { slug: 'warwick', city: 'Warwick', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.28, lng: -1.59, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.03M', metroPopulation: '0.14M', phoneCode: '+44 1926', language: 'English',
+      climate: 'Oceanic with mild summers (16-22°C) and cool winters (2-8°C). Midlands.',
+      attractions: ['Warwick Castle', 'Lord Leycester Hospital', 'Collegiate Church of St Mary', 'Mill Garden', 'St John\'s House Museum', 'Market Hall Museum', 'Hill Close Gardens', 'Warwick Racecourse', 'Castle Park', 'River Avon'],
+      demographics: 'Home to England\'s finest medieval castle. Historic county town. Merlin Entertainment attraction.',
+      seoContent: {
+        intro: 'Warwick, home to England\'s finest medieval castle, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This historic county town features the spectacular Warwick Castle, now a major attraction with jousting, dungeons, and trebuchet demonstrations.',
+        timezoneFacts: 'Same timezone as London. Warwick Castle has stood for over 1,100 years.',
+        bestTimeToVisit: 'April-October for castle events. Summer jousting tournaments. Christmas spectacular.',
+        businessHours: 'Warwick Castle 10 AM to 5 PM. Town shops 9 AM to 5:30 PM.',
+        timeDifference: 'Warwick is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Warwick Castle needs full day! Trebuchet fires daily. Combine with Stratford-upon-Avon (8 miles). Lord Leycester Hospital medieval.',
+        transportation: 'No airport - Birmingham 30 min. Warwick Station. 1.5 hr from London Marylebone.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Castle events throughout year.'
+      }
+    }
+  },
+  { slug: 'lincoln', city: 'Lincoln', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.23, lng: -0.54, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.1M', metroPopulation: '0.13M', phoneCode: '+44 1522', language: 'English',
+      climate: 'Oceanic with mild summers (16-21°C) and cool winters (2-7°C). East Midlands.',
+      attractions: ['Lincoln Cathedral', 'Lincoln Castle', 'Steep Hill', 'Magna Carta', 'Bailgate', 'Brayford Pool', 'Museum of Lincolnshire Life', 'Bishop\'s Palace', 'Jews\' House', 'High Bridge'],
+      demographics: 'Magnificent Gothic cathedral. One of four Magna Cartas. Steep Hill voted Britain\'s best.',
+      seoContent: {
+        intro: 'Lincoln, city of the imp, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This hilltop city features a magnificent Gothic cathedral that was once the world\'s tallest building, one of four surviving Magna Cartas, and Steep Hill - voted Britain\'s best street.',
+        timezoneFacts: 'Same timezone as London. Lincoln Cathedral was world\'s tallest building for 238 years.',
+        bestTimeToVisit: 'April-October for best weather. Lincoln Christmas Market (December) - largest in UK.',
+        businessHours: 'Lincoln Cathedral 9 AM to 5 PM. Castle 10 AM to 4 PM. Steep Hill shops variable.',
+        timeDifference: 'Lincoln is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Steep Hill is steep - worth it! Magna Carta in castle. Christmas Market UK\'s largest. Lincoln Imp in cathedral.',
+        transportation: 'No airport - East Midlands 1 hr. Lincoln Central Station. 2 hr from London King\'s Cross.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Lincoln Christmas Market (December).'
+      }
+    }
+  },
+  { slug: 'exeter', city: 'Exeter', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.72, lng: -3.53, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.13M', metroPopulation: '0.18M', phoneCode: '+44 1392', language: 'English',
+      climate: 'Oceanic with mild summers (17-21°C) and mild winters (4-9°C). Devon.',
+      attractions: ['Exeter Cathedral', 'Underground Passages', 'Royal Albert Memorial Museum', 'Quayside', 'Guildhall', 'Rougemont Castle', 'Northernhay Gardens', 'Custom House', 'Exeter Phoenix', 'Powderham Castle'],
+      demographics: 'Historic Devon capital. Roman walls. Gateway to English Riviera and Dartmoor.',
+      seoContent: {
+        intro: 'Exeter, Devon\'s capital, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This historic city features a magnificent Norman cathedral, medieval underground passages, and serves as gateway to both the English Riviera and Dartmoor National Park.',
+        timezoneFacts: 'Same timezone as London. Exeter was founded by the Romans as Isca Dumnoniorum.',
+        bestTimeToVisit: 'May-September for best weather. Exeter Festival (July). Christmas market.',
+        businessHours: 'Exeter Cathedral 9 AM to 5 PM. Underground Passages tours hourly.',
+        timeDifference: 'Exeter is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Underground Passages unique in UK! Cathedral longest unbroken Gothic ceiling. Quayside for food. Gateway to Jurassic Coast.',
+        transportation: 'Exeter Airport (EXT) 8km. Exeter St Davids Station. 2.5 hr from London Paddington.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Exeter Festival (July).'
+      }
+    }
+  },
+  { slug: 'norwich', city: 'Norwich', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.63, lng: 1.30, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.14M', metroPopulation: '0.21M', phoneCode: '+44 1603', language: 'English',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (2-8°C). East Anglia, drier.',
+      attractions: ['Norwich Cathedral', 'Norwich Castle', 'The Lanes', 'Elm Hill', 'Norwich Market', 'Sainsbury Centre', 'Dragon Hall', 'The Forum', 'Plantation Garden', 'Norfolk Broads nearby'],
+      demographics: 'England\'s first UNESCO City of Literature. Medieval churches. Colman\'s Mustard heritage.',
+      seoContent: {
+        intro: 'Norwich, England\'s first UNESCO City of Literature, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This medieval city has more churches than any other English city north of London, cobbled lanes, and serves as gateway to the Norfolk Broads.',
+        timezoneFacts: 'Same timezone as London. Norwich was England\'s second-largest city in medieval times.',
+        bestTimeToVisit: 'May-September for best weather. Norwich Literary Festival. Norfolk Broads summer.',
+        businessHours: 'Norwich Cathedral 7:30 AM to 6 PM. Castle 10 AM to 5 PM. Market Mon-Sat.',
+        timeDifference: 'Norwich is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Elm Hill most photographed medieval street! Norwich Market one of largest outdoor. Colman\'s Mustard Shop. Norfolk Broads boat hire.',
+        transportation: 'Norwich Airport (NWI) 6km. Norwich Station. 2 hr from London Liverpool Street.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Norwich Literary Festival.'
+      }
+    }
+  },
+  { slug: 'blackpool', city: 'Blackpool', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.81, lng: -3.05, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.14M', metroPopulation: '0.32M', phoneCode: '+44 1253', language: 'English',
+      climate: 'Oceanic with cool summers (15-19°C) and mild winters (3-8°C). Irish Sea coast, windy.',
+      attractions: ['Blackpool Tower', 'Blackpool Pleasure Beach', 'Blackpool Illuminations', 'Winter Gardens', 'Blackpool Piers', 'Madame Tussauds', 'SEA LIFE Blackpool', 'Blackpool Zoo', 'Stanley Park', 'Comedy Carpet'],
+      demographics: 'Britain\'s most famous seaside resort. Tower inspired by Eiffel. Illuminations since 1879.',
+      seoContent: {
+        intro: 'Blackpool, Britain\'s Vegas, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This iconic seaside resort features the famous Blackpool Tower (inspired by Eiffel Tower), Pleasure Beach rollercoasters, and the spectacular Illuminations that have dazzled since 1879.',
+        timezoneFacts: 'Same timezone as London. Blackpool Tower opened in 1894, half Eiffel Tower\'s height.',
+        bestTimeToVisit: 'July-August for beach. Illuminations September-November. Year-round entertainment.',
+        businessHours: 'Blackpool Tower 10 AM to 10 PM. Pleasure Beach seasonal hours vary.',
+        timeDifference: 'Blackpool is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Illuminations free - drive or walk promenade! Pleasure Beach Big One rollercoaster. Tower Ballroom Dancing. Fish and chips essential.',
+        transportation: 'No airport - Manchester or Liverpool 1 hr. Blackpool North Station. 3 hr from London Euston.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Blackpool Illuminations (Sept-Nov).'
+      }
+    }
+  },
+  { slug: 'bournemouth', city: 'Bournemouth', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.72, lng: -1.88, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.18M', metroPopulation: '0.47M', phoneCode: '+44 1202', language: 'English',
+      climate: 'Oceanic with mild summers (18-21°C) and mild winters (4-9°C). One of UK\'s sunniest.',
+      attractions: ['Bournemouth Beach', 'Bournemouth Pier', 'Russell-Cotes Museum', 'Lower Gardens', 'Oceanarium', 'Bournemouth Air Festival', 'Alum Chine', 'Boscombe Pier', 'Adventure Wonderland', 'Compton Acres'],
+      demographics: '7 miles of golden sandy beaches. Victorian resort. UK\'s sunniest coastal town.',
+      seoContent: {
+        intro: 'Bournemouth, Britain\'s sunniest seaside, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This Victorian resort boasts 7 miles of golden sandy beaches (rare for UK!), award-winning gardens, and one of the highest sunshine records in Britain.',
+        timezoneFacts: 'Same timezone as London. Bournemouth has more hours of sunshine than most UK cities.',
+        bestTimeToVisit: 'May-September for beach weather. Bournemouth Air Festival (August). Christmas market.',
+        businessHours: 'Beach accessible 24/7. Pier attractions 10 AM to 6 PM. Gardens dawn to dusk.',
+        timeDifference: 'Bournemouth is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Sandy beaches rare in UK - Bournemouth has 7 miles! Air Festival spectacular free event. Russell-Cotes museum quirky. Jurassic Coast nearby.',
+        transportation: 'Bournemouth Airport (BOH) 8km. Bournemouth Station. 2 hr from London Waterloo.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Bournemouth Air Festival (August).'
+      }
+    }
+  },
+  { slug: 'hull', city: 'Hull', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.74, lng: -0.33, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.26M', metroPopulation: '0.57M', phoneCode: '+44 1482', language: 'English',
+      climate: 'Oceanic with cool summers (16-20°C) and cold winters (2-7°C). Humber Estuary.',
+      attractions: ['The Deep', 'Humber Bridge', 'Hull Marina', 'Museums Quarter', 'Ferens Art Gallery', 'Hull Minster', 'Fruit Market', 'Spurn Point', 'Beverley', 'Freedom Quay'],
+      demographics: 'UK City of Culture 2017. William Wilberforce birthplace. The Deep aquarium.',
+      seoContent: {
+        intro: 'Hull (Kingston upon Hull), UK City of Culture 2017, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This underrated city features The Deep (one of UK\'s best aquariums), the birthplace of anti-slavery campaigner William Wilberforce, and a transformed cultural scene.',
+        timezoneFacts: 'Same timezone as London. Hull has its own cream-colored telephone boxes, not red.',
+        bestTimeToVisit: 'April-October for best weather. Hull Fair (October) - Europe\'s largest travelling fair.',
+        businessHours: 'The Deep 10 AM to 5 PM. Museums Quarter 10 AM to 5 PM.',
+        timeDifference: 'Hull is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'The Deep aquarium world-class! Fruit Market is hip creative quarter. Hull Fair Europe\'s largest. Humber Bridge impressive. Cream phone boxes!',
+        transportation: 'No airport - Humberside (HUY) 25km. Hull Paragon Station. 2.5 hr from London King\'s Cross.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Hull Fair (October).'
+      }
+    }
+  },
+  { slug: 'stirling', city: 'Stirling', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 56.12, lng: -3.94, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.05M', metroPopulation: '0.09M', phoneCode: '+44 1786', language: 'English, Scots',
+      climate: 'Oceanic with cool summers (14-18°C) and cold winters (1-6°C). Central Scotland.',
+      attractions: ['Stirling Castle', 'Wallace Monument', 'Bannockburn', 'Old Town Jail', 'Church of the Holy Rude', 'Smith Art Gallery', 'Cambuskenneth Abbey', 'King\'s Knot', 'Argyll\'s Lodging', 'Bridge of Allan'],
+      demographics: 'Gateway to the Highlands. Wallace and Bruce history. Scotland\'s most historically important city.',
+      seoContent: {
+        intro: 'Stirling, Scotland\'s historic heart, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This city witnessed Scotland\'s greatest battles - Wallace at Stirling Bridge (1297) and Bruce at Bannockburn (1314). Its castle rivals Edinburgh\'s.',
+        timezoneFacts: 'Same timezone as London. Stirling Castle has been besieged at least 16 times.',
+        bestTimeToVisit: 'May-September for best weather. Bannockburn Live (June). Highland Games.',
+        businessHours: 'Stirling Castle 9:30 AM to 5 PM. Wallace Monument 10 AM to 5 PM.',
+        timeDifference: 'Stirling is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Castle views rival Edinburgh! Wallace Monument 246 steps but worth it. Bannockburn visitor centre excellent. Gateway to Highlands.',
+        transportation: 'No airport - Glasgow or Edinburgh 45 min. Stirling Station. 1 hr from Edinburgh.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Scotland: 111.',
+        publicHolidays: 'UK bank holidays plus Scottish holidays. Bannockburn commemorations.'
+      }
+    }
+  },
+  { slug: 'perth-scotland', city: 'Perth', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 56.39, lng: -3.43, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.05M', metroPopulation: '0.15M', phoneCode: '+44 1738', language: 'English, Scots',
+      climate: 'Oceanic with cool summers (14-19°C) and cold winters (1-7°C). Perthshire.',
+      attractions: ['Scone Palace', 'Perth Concert Hall', 'Black Watch Museum', 'Perth Art Gallery', 'North Inch', 'St John\'s Kirk', 'Fergusson Gallery', 'Branklyn Garden', 'Huntingtower Castle', 'Bell\'s Cherrybank'],
+      demographics: 'Scotland\'s ancient capital. Where Scottish kings were crowned on Stone of Scone. The Fair City.',
+      seoContent: {
+        intro: 'Perth, The Fair City, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Scotland\'s ancient capital where kings were crowned at Scone Palace on the legendary Stone of Destiny. Gateway to the Scottish Highlands and whisky country.',
+        timezoneFacts: 'Same timezone as London. Perth was Scotland\'s capital until 1437.',
+        bestTimeToVisit: 'May-September for best weather. Perth Festival of the Arts (May). Highland Games.',
+        businessHours: 'Scone Palace 9:30 AM to 5 PM (seasonal). Black Watch Museum 10 AM to 4:30 PM.',
+        timeDifference: 'Perth is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Scone Palace where kings crowned - Stone of Scone replica. Black Watch Museum excellent. Gateway to Highland Perthshire whisky.',
+        transportation: 'No airport - Edinburgh or Dundee 1 hr. Perth Station. 1.5 hr from Edinburgh.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Scotland: 111.',
+        publicHolidays: 'UK bank holidays plus Scottish holidays. Perth Festival (May).'
+      }
+    }
+  },
+  { slug: 'fort-william', city: 'Fort William', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 56.82, lng: -5.11, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+44 1397', language: 'English, Scottish Gaelic',
+      climate: 'Oceanic with cool summers (13-17°C) and cold winters (1-6°C). Very wet, mountain weather.',
+      attractions: ['Ben Nevis', 'Jacobite Steam Train', 'Nevis Range', 'Glen Nevis', 'West Highland Museum', 'Neptune\'s Staircase', 'Glenfinnan Viaduct', 'Commando Memorial', 'Steall Falls', 'Old Inverlochy Castle'],
+      demographics: 'Outdoor capital of UK. Base for Ben Nevis. Harry Potter train. Start/end of West Highland Way.',
+      seoContent: {
+        intro: 'Fort William, the Outdoor Capital of UK, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Base camp for climbing Ben Nevis (UK\'s highest peak), home to the Jacobite Steam Train (Harry Potter\'s Hogwarts Express), and gateway to some of Scotland\'s most dramatic scenery.',
+        timezoneFacts: 'Same timezone as London. Ben Nevis summit can be 10°C colder than Fort William.',
+        bestTimeToVisit: 'May-September for climbing and hiking. Jacobite train runs April-October. Skiing winter.',
+        businessHours: 'Jacobite train departs 10:15 AM. Mountain gondola 10 AM to 5 PM.',
+        timeDifference: 'Fort William is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Book Jacobite Steam Train weeks ahead! Ben Nevis climb takes 7-9 hours. Glenfinnan Viaduct is Harry Potter bridge. Bring waterproofs!',
+        transportation: 'No airport - Inverness 1.5 hr. Fort William Station (scenic route). 5 hr from Glasgow.',
+        emergencyNumbers: 'Emergency: 999. Mountain Rescue available. NHS Scotland: 111.',
+        publicHolidays: 'UK bank holidays plus Scottish holidays. Mountain festivals.'
+      }
+    }
+  },
+  { slug: 'swansea', city: 'Swansea', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.62, lng: -3.94, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.24M', metroPopulation: '0.3M', phoneCode: '+44 1792', language: 'English, Welsh',
+      climate: 'Oceanic with mild summers (17-20°C) and mild winters (4-9°C). Coastal, wet.',
+      attractions: ['Gower Peninsula', 'Mumbles', 'Swansea Bay', 'Dylan Thomas Centre', 'National Waterfront Museum', 'LC Swansea', 'Rhossili Bay', 'Swansea Market', 'Plantasia', 'Three Cliffs Bay'],
+      demographics: 'Wales\' second city. Dylan Thomas\' birthplace. Gateway to UK\'s first AONB.',
+      seoContent: {
+        intro: 'Swansea (Abertawe), Wales\' second city, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Birthplace of Dylan Thomas, gateway to the stunning Gower Peninsula (UK\'s first Area of Outstanding Natural Beauty), and home to some of Britain\'s best beaches.',
+        timezoneFacts: 'Same timezone as London. Swansea was once the world\'s copper capital.',
+        bestTimeToVisit: 'May-September for beaches. Dylan Thomas Festival (October-November).',
+        businessHours: 'Swansea Market 8 AM to 5 PM (closed Sun). Mumbles restaurants until late.',
+        timeDifference: 'Swansea is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Gower Peninsula essential - Rhossili voted best UK beach! Mumbles for ice cream. Swansea Market for cockles and laverbread.',
+        transportation: 'No airport - Cardiff 1 hr. Swansea Station. 3 hr from London Paddington.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Wales: 111.',
+        publicHolidays: 'UK bank holidays. Dylan Thomas Festival (October-November).'
+      }
+    }
+  },
+  { slug: 'snowdonia', city: 'Snowdonia', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.07, lng: -4.08, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.03M', metroPopulation: '0.03M', phoneCode: '+44 1766', language: 'English, Welsh',
+      climate: 'Mountain climate with cool summers (12-17°C) and cold winters (0-6°C). Very wet, unpredictable.',
+      attractions: ['Mount Snowdon', 'Snowdon Mountain Railway', 'Zip World', 'Portmeirion', 'Blaenau Ffestiniog', 'Betws-y-Coed', 'Llanberis', 'Harlech Castle', 'Dolgellau', 'Cader Idris'],
+      demographics: 'Wales\' highest mountain. National Park. Slate mining heritage. Adventure sports capital.',
+      seoContent: {
+        intro: 'Snowdonia (Eryri), Wales\' mountain kingdom, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Home to Wales\' highest peak Mount Snowdon (1,085m), Europe\'s longest zip line, and the whimsical Italian village of Portmeirion.',
+        timezoneFacts: 'Same timezone as London. Snowdon summit can be 10°C colder than the base.',
+        bestTimeToVisit: 'May-September for hiking. Mountain Railway runs March-October. Winter challenging.',
+        businessHours: 'Snowdon Railway from 9 AM (weather dependent). Zip World sessions booked.',
+        timeDifference: 'Snowdonia is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Snowdon Railway or hike (6 hrs return). Zip World amazing! Portmeirion where The Prisoner filmed. Welsh language dominant here.',
+        transportation: 'No airport - Manchester 2 hr. Llanberis for Snowdon. Betws-y-Coed Station.',
+        emergencyNumbers: 'Emergency: 999. Mountain Rescue available. NHS Wales: 111.',
+        publicHolidays: 'UK bank holidays. Snowdon Race (July).'
+      }
+    }
+  },
+  { slug: 'conwy', city: 'Conwy', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.28, lng: -3.83, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.01M', metroPopulation: '0.03M', phoneCode: '+44 1492', language: 'English, Welsh',
+      climate: 'Oceanic with mild summers (16-19°C) and mild winters (4-8°C). North Wales coast.',
+      attractions: ['Conwy Castle', 'Town Walls', 'Smallest House in Britain', 'Conwy Suspension Bridge', 'Plas Mawr', 'Aberconwy House', 'RSPB Conwy', 'Conwy Quay', 'Bodnant Garden', 'Great Orme nearby'],
+      demographics: 'UNESCO World Heritage castle and walls. Complete medieval walled town. Gateway to Snowdonia.',
+      seoContent: {
+        intro: 'Conwy, the walled wonder, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This UNESCO World Heritage town features one of Britain\'s finest medieval castles, complete town walls you can walk, and the Smallest House in Britain.',
+        timezoneFacts: 'Same timezone as London. Conwy Castle took just 4 years to build (1283-1287).',
+        bestTimeToVisit: 'April-October for best weather. Food festivals. Christmas events.',
+        businessHours: 'Conwy Castle 9:30 AM to 5 PM. Smallest House 10 AM to 5 PM.',
+        timeDifference: 'Conwy is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Walk complete town walls! Smallest House genuinely tiny. Suspension bridge by Telford. Combine with Llandudno (4 miles).',
+        transportation: 'No airport - Manchester 1.5 hr. Conwy Station. 3 hr from London Euston.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Wales: 111.',
+        publicHolidays: 'UK bank holidays. Conwy Feast. Honey Fair (September).'
+      }
+    }
+  },
+  { slug: 'llandudno', city: 'Llandudno', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.32, lng: -3.83, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.02M', metroPopulation: '0.06M', phoneCode: '+44 1492', language: 'English, Welsh',
+      climate: 'Oceanic with mild summers (16-19°C) and mild winters (4-8°C). North Wales coast, sheltered.',
+      attractions: ['Great Orme', 'Great Orme Tramway', 'Llandudno Pier', 'Happy Valley', 'Llandudno Promenade', 'Alice in Wonderland Trail', 'St Tudno\'s Church', 'West Shore', 'Great Orme Mines', 'Mostyn Gallery'],
+      demographics: 'Queen of Welsh Resorts. Victorian seaside elegance. Alice in Wonderland connection.',
+      seoContent: {
+        intro: 'Llandudno, the Queen of Welsh Resorts, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This elegant Victorian seaside town curves between two headlands, featuring Britain\'s longest pier, a tramway to the Great Orme, and a connection to Alice in Wonderland.',
+        timezoneFacts: 'Same timezone as London. Alice Liddell (the real Alice in Wonderland) holidayed here.',
+        bestTimeToVisit: 'May-September for beach weather. Victorian Extravaganza (May). Christmas lights.',
+        businessHours: 'Great Orme Tramway 10 AM to 5 PM (seasonal). Pier attractions variable.',
+        timeDifference: 'Llandudno is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Great Orme tramway Britain\'s only cable-hauled street tram! Alice Trail free. Victorian architecture pristine. Great Orme Bronze Age mines.',
+        transportation: 'No airport - Manchester 1.5 hr. Llandudno Station. 3 hr from London Euston.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Wales: 111.',
+        publicHolidays: 'UK bank holidays. Victorian Extravaganza (May).'
+      }
+    }
+  },
+  { slug: 'jersey', city: 'Jersey', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'JE', lat: 49.21, lng: -2.13, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound/Jersey Pound', currencySymbol: '£', population: '0.1M', metroPopulation: '0.1M', phoneCode: '+44 1534', language: 'English, French, Jèrriais',
+      climate: 'Oceanic with mild summers (17-21°C) and mild winters (5-10°C). Channel Islands, sunny.',
+      attractions: ['Jersey War Tunnels', 'Mont Orgueil Castle', 'Elizabeth Castle', 'St Helier', 'Jersey Zoo', 'La Hougue Bie', 'Corbière Lighthouse', 'St Brelade\'s Bay', 'Durrell Wildlife', 'Liberation Square'],
+      demographics: 'Crown dependency in Channel Islands. Not part of UK proper. Tax haven. German Occupation history.',
+      seoContent: {
+        intro: 'Jersey, the largest Channel Island, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This British Crown Dependency (not technically part of the UK) combines French and British culture, German Occupation history, beautiful beaches, and Gerald Durrell\'s famous zoo.',
+        timezoneFacts: 'Same timezone as London. Jersey is closer to France than to England.',
+        bestTimeToVisit: 'May-September for beach weather. Liberation Day (May 9). Battle of Flowers (August).',
+        businessHours: 'War Tunnels 10 AM to 5 PM. Jersey Zoo 9:30 AM to 5 PM.',
+        timeDifference: 'Jersey is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'War Tunnels moving WWII experience. Durrell Wildlife (Jersey Zoo) conservation focused. French influence - try seafood! Jersey milk and potatoes famous.',
+        transportation: 'Jersey Airport (JER) with UK flights. Ferry from Poole/Portsmouth. Island bus network.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 612612. Hospital: 01534 442000.',
+        publicHolidays: 'UK bank holidays plus Liberation Day (May 9). Battle of Flowers (August).'
+      }
+    }
+  },
+  
+  // UK - Additional Cities Batch 2 (30 more cities)
+  { slug: 'winchester', city: 'Winchester', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.06, lng: -1.31, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.05M', metroPopulation: '0.12M', phoneCode: '+44 1962', language: 'English',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (3-8°C). Hampshire downs.',
+      attractions: ['Winchester Cathedral', 'Great Hall & Round Table', 'Winchester College', 'City Mill', 'Wolvesey Castle', 'Hospital of St Cross', 'Winchester City Museum', 'Westgate Museum', 'Jane Austen\'s Grave', 'Water Meadows'],
+      demographics: 'England\'s ancient capital. Alfred the Great\'s city. Jane Austen buried here. Round Table.',
+      seoContent: {
+        intro: 'Winchester, England\'s ancient capital, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This city was the capital of England before London, home to King Alfred the Great, features Europe\'s longest medieval cathedral, and houses the legendary Round Table.',
+        timezoneFacts: 'Same timezone as London. Winchester was England\'s capital for over 400 years.',
+        bestTimeToVisit: 'April-October for best weather. Winchester Christmas Market (November-December).',
+        businessHours: 'Winchester Cathedral 9 AM to 5 PM. Great Hall 10 AM to 5 PM.',
+        timeDifference: 'Winchester is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Round Table is medieval but legendary! Jane Austen grave in cathedral. Christmas Market excellent. Cathedral longest in Europe.',
+        transportation: 'No airport - Southampton 15 min. Winchester Station. 1 hr from London Waterloo.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Winchester Christmas Market.'
+      }
+    }
+  },
+  { slug: 'whitby', city: 'Whitby', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 54.49, lng: -0.61, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+44 1947', language: 'English',
+      climate: 'Oceanic with cool summers (14-18°C) and cold winters (2-7°C). North Sea coast, often misty.',
+      attractions: ['Whitby Abbey', '199 Steps', 'Dracula Experience', 'Captain Cook Memorial Museum', 'Whitby Jet', 'Magpie Cafe', 'Whitby Harbour', 'St Mary\'s Church', 'Whale Bone Arch', 'Whitby Beach'],
+      demographics: 'Bram Stoker\'s Dracula inspiration. Captain Cook\'s hometown. Whitby jet jewelry. Gothic atmosphere.',
+      seoContent: {
+        intro: 'Whitby, Dracula\'s landing place, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This atmospheric fishing town inspired Bram Stoker\'s Dracula, launched Captain Cook\'s voyages, and hosts the famous Whitby Goth Weekend twice yearly.',
+        timezoneFacts: 'Same timezone as London. Whitby Abbey ruins date from 657 AD.',
+        bestTimeToVisit: 'May-September for best weather. Whitby Goth Weekend (April & October). Regatta (August).',
+        businessHours: 'Whitby Abbey 10 AM to 5 PM. Fish and chip shops until late.',
+        timeDifference: 'Whitby is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: '199 steps to Abbey - Dracula climbed them! Magpie Cafe best fish & chips. Whitby jet unique black gemstone. Goth Weekend spectacular.',
+        transportation: 'No airport - nearest Teesside. No direct trains. 1.5 hr from York by bus.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Whitby Goth Weekend (April & October). Regatta (August).'
+      }
+    }
+  },
+  { slug: 'isle-of-skye', city: 'Isle of Skye', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 57.27, lng: -6.22, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+44 1478', language: 'English, Scottish Gaelic',
+      climate: 'Oceanic with cool summers (12-16°C) and mild winters (3-7°C). Very wet, changeable.',
+      attractions: ['Fairy Pools', 'Old Man of Storr', 'Quiraing', 'Dunvegan Castle', 'Portree', 'Neist Point Lighthouse', 'Talisker Distillery', 'Kilt Rock', 'Eilean Donan Castle nearby', 'Fairy Glen'],
+      demographics: 'Scotland\'s most beautiful island. Fairy Pools. Old Man of Storr. Gaelic culture stronghold.',
+      seoContent: {
+        intro: 'Isle of Skye, the Misty Isle, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Scotland\'s most magical island features the ethereal Fairy Pools, dramatic Old Man of Storr, and some of the most breathtaking landscapes in Britain.',
+        timezoneFacts: 'Same timezone as London. Skye is connected to mainland by bridge since 1995.',
+        bestTimeToVisit: 'May-September for best weather (still rainy!). Avoid midges June-August. Quieter in spring/autumn.',
+        businessHours: 'Talisker Distillery 10 AM to 5 PM. Dunvegan Castle 10 AM to 5:30 PM.',
+        timeDifference: 'Isle of Skye is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Book accommodation months ahead! Fairy Pools early morning for no crowds. Old Man of Storr hike 2 hours. Bring waterproofs always. Single-track roads - use passing places.',
+        transportation: 'No airport - Inverness 2.5 hr. Skye Bridge toll-free. Ferry from Mallaig.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Scotland: 111.',
+        publicHolidays: 'UK bank holidays plus Scottish holidays. Skye Highland Games.'
+      }
+    }
+  },
+  { slug: 'caernarfon', city: 'Caernarfon', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.14, lng: -4.27, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.01M', metroPopulation: '0.03M', phoneCode: '+44 1286', language: 'Welsh, English',
+      climate: 'Oceanic with mild summers (15-19°C) and mild winters (4-8°C). Menai Strait.',
+      attractions: ['Caernarfon Castle', 'Town Walls', 'Segontium Roman Fort', 'Welsh Highland Railway', 'Menai Strait', 'Victoria Dock', 'Anglesey nearby', 'Snowdon nearby', 'Doc Fictoria', 'Royal Welch Fusiliers Museum'],
+      demographics: 'UNESCO World Heritage castle. Prince of Wales investiture. Welsh language heartland.',
+      seoContent: {
+        intro: 'Caernarfon, the Royal Town, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This UNESCO World Heritage town features Edward I\'s most impressive castle, where Prince Charles was invested as Prince of Wales in 1969, and is the heartland of Welsh language and culture.',
+        timezoneFacts: 'Same timezone as London. Caernarfon Castle took 47 years to build.',
+        bestTimeToVisit: 'April-October for best weather. Welsh Highland Railway runs March-October.',
+        businessHours: 'Caernarfon Castle 9:30 AM to 5 PM. Town shops variable.',
+        timeDifference: 'Caernarfon is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Castle is most impressive of Edward I\'s ring. Welsh spoken everywhere! Gateway to Snowdon. Welsh Highland Railway to Porthmadog scenic.',
+        transportation: 'No airport - Manchester 2 hr. Bangor Station 15 min away.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Wales: 111.',
+        publicHolidays: 'UK bank holidays. Royal events at castle.'
+      }
+    }
+  },
+  { slug: 'dover', city: 'Dover', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.13, lng: 1.31, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.03M', metroPopulation: '0.11M', phoneCode: '+44 1304', language: 'English',
+      climate: 'Oceanic with mild summers (17-21°C) and cool winters (4-8°C). Channel coast.',
+      attractions: ['White Cliffs of Dover', 'Dover Castle', 'Secret Wartime Tunnels', 'Dover Museum', 'Roman Painted House', 'Western Heights', 'South Foreland Lighthouse', 'St Mary\'s Church', 'Bronze Age Boat', 'Samphire Hoe'],
+      demographics: 'Gateway to England. Famous White Cliffs. WWII tunnels. Busiest ferry port.',
+      seoContent: {
+        intro: 'Dover, Gateway to England, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. The iconic White Cliffs have welcomed (and warned) visitors for millennia, while Dover Castle\'s Secret Wartime Tunnels housed the Dunkirk evacuation command center.',
+        timezoneFacts: 'Same timezone as London. Dover is the closest point to France (21 miles).',
+        bestTimeToVisit: 'April-October for cliff walks. Castle open year-round. Clear days for France views.',
+        businessHours: 'Dover Castle 10 AM to 5 PM. White Cliffs accessible daylight hours.',
+        timeDifference: 'Dover is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Walk the White Cliffs - see France on clear days! Secret Tunnels essential. Castle is England\'s largest. Ferries to Calais 90 min.',
+        transportation: 'No airport - London Gatwick 1.5 hr. Dover Priory Station. 1.5 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Dover Regatta.'
+      }
+    }
+  },
+  { slug: 'hastings', city: 'Hastings', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.85, lng: 0.57, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.09M', metroPopulation: '0.18M', phoneCode: '+44 1424', language: 'English',
+      climate: 'Oceanic with mild summers (17-21°C) and cool winters (4-9°C). Sunniest town in UK.',
+      attractions: ['Hastings Castle', 'Battle Abbey', '1066 Story', 'Hastings Old Town', 'Smugglers Adventure', 'East Hill Cliff Railway', 'Fishermen\'s Quarter', 'Jerwood Gallery', 'Stade', 'Hastings Pier'],
+      demographics: '1066 Battle of Hastings nearby. Norman Conquest. Largest beach-launched fishing fleet in Europe.',
+      seoContent: {
+        intro: 'Hastings, where 1066 changed everything, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. The Battle of Hastings (actually fought 6 miles away at Battle) changed English history forever. Today Hastings combines seaside charm with the largest beach-launched fishing fleet in Europe.',
+        timezoneFacts: 'Same timezone as London. The Battle of Hastings was fought on October 14, 1066.',
+        bestTimeToVisit: 'May-September for beach. Jack in the Green (May). Pirate Day (July).',
+        businessHours: 'Hastings Castle 10 AM to 5 PM. Battle Abbey 10 AM to 5 PM.',
+        timeDifference: 'Hastings is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Battle Abbey is actual 1066 site - 6 miles from Hastings! Old Town charming. Cliff railways Victorian. Stade fishing boats on beach unique.',
+        transportation: 'No airport - London Gatwick 1.5 hr. Hastings Station. 1.5 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Jack in the Green (May). Pirate Day (July).'
+      }
+    }
+  },
+  { slug: 'glastonbury', city: 'Glastonbury', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.15, lng: -2.71, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+44 1458', language: 'English',
+      climate: 'Oceanic with mild summers (17-21°C) and cool winters (3-8°C). Somerset Levels, misty.',
+      attractions: ['Glastonbury Tor', 'Glastonbury Abbey', 'Chalice Well', 'Somerset Rural Life Museum', 'Glastonbury Festival site (Pilton)', 'High Street shops', 'Lake Village Museum', 'Wearyall Hill', 'St John\'s Church', 'Tribunal'],
+      demographics: 'Mythical Isle of Avalon. King Arthur legends. World\'s most famous music festival. New Age capital.',
+      seoContent: {
+        intro: 'Glastonbury, the Isle of Avalon, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This mystical town claims King Arthur\'s burial site, Joseph of Arimathea\'s visit, and hosts the world\'s most famous music festival at nearby Worthy Farm.',
+        timezoneFacts: 'Same timezone as London. Glastonbury was once an island surrounded by marshes.',
+        bestTimeToVisit: 'Year-round for mystical atmosphere. Festival late June (tickets sell out instantly). Solstices special.',
+        businessHours: 'Abbey 9 AM to 6 PM. Tor accessible 24/7. Mystical shops until late.',
+        timeDifference: 'Glastonbury is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Climb the Tor at sunrise! Abbey claims Arthur\'s grave. Chalice Well healing waters. Festival is at Pilton (6 miles). High Street full of crystals and magic.',
+        transportation: 'No airport - Bristol 30 min. No train station. Bus from Bristol/Bath.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Glastonbury Festival (June). Solstices.'
+      }
+    }
+  },
+  { slug: 'wells', city: 'Wells', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.21, lng: -2.65, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+44 1749', language: 'English',
+      climate: 'Oceanic with mild summers (17-21°C) and cool winters (3-8°C). Somerset.',
+      attractions: ['Wells Cathedral', 'Bishop\'s Palace', 'Vicar\'s Close', 'Wells Market Place', 'St Cuthbert\'s Church', 'Wells Museum', 'Wookey Hole Caves', 'Cheddar Gorge nearby', 'Moat and Swans', 'Chain Gate'],
+      demographics: 'England\'s smallest city. Stunning cathedral. Bishop\'s Palace swans ring bell for food.',
+      seoContent: {
+        intro: 'Wells, England\'s smallest city, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This tiny city (population 12,000) punches above its weight with a magnificent cathedral, Europe\'s oldest residential street (Vicar\'s Close), and swans that ring a bell for food at the Bishop\'s Palace.',
+        timezoneFacts: 'Same timezone as London. Wells has been a city since 1205.',
+        bestTimeToVisit: 'April-October for best weather. Christmas at the Cathedral. Summer concerts.',
+        businessHours: 'Wells Cathedral 7 AM to 6 PM. Bishop\'s Palace 10 AM to 4 PM.',
+        timeDifference: 'Wells is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Watch swans ring bell at Bishop\'s Palace! Vicar\'s Close oldest complete medieval street. Combine with Glastonbury (6 miles) and Cheddar Gorge.',
+        transportation: 'No airport - Bristol 30 min. No train station. Bus from Bristol/Bath.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Wells Cathedral events.'
+      }
+    }
+  },
+  { slug: 'harrogate', city: 'Harrogate', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.99, lng: -1.54, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.08M', metroPopulation: '0.16M', phoneCode: '+44 1423', language: 'English',
+      climate: 'Oceanic with cool summers (15-20°C) and cold winters (1-7°C). Yorkshire.',
+      attractions: ['Betty\'s Café Tea Rooms', 'Turkish Baths', 'Valley Gardens', 'Royal Pump Room Museum', 'Harlow Carr RHS Garden', 'The Stray', 'Montpellier Quarter', 'Mother Shipton\'s Cave nearby', 'Fountains Abbey nearby', 'Harrogate Convention Centre'],
+      demographics: 'Elegant Victorian spa town. Betty\'s famous tea rooms. Happiest place to live in UK.',
+      seoContent: {
+        intro: 'Harrogate, the English Spa, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This elegant Victorian spa town regularly tops UK\'s happiest places to live, famous for Betty\'s Tea Rooms, Turkish Baths, and beautiful Valley Gardens.',
+        timezoneFacts: 'Same timezone as London. Harrogate\'s spa waters contain more minerals than any other UK spa.',
+        bestTimeToVisit: 'April-October for gardens. Spring Flower Show. Christmas markets.',
+        businessHours: 'Betty\'s 9 AM to 9 PM (queue expected!). Turkish Baths booking essential.',
+        timeDifference: 'Harrogate is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Betty\'s queue worth it - go early! Turkish Baths Victorian experience. Valley Gardens stunning. Near Fountains Abbey (UNESCO). Yorkshire Dales close.',
+        transportation: 'No airport - Leeds Bradford 20 min. Harrogate Station. 2.5 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Harrogate Flower Shows.'
+      }
+    }
+  },
+  { slug: 'oban', city: 'Oban', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 56.41, lng: -5.47, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+44 1631', language: 'English, Scottish Gaelic',
+      climate: 'Oceanic with cool summers (13-17°C) and mild winters (4-8°C). West coast, wet.',
+      attractions: ['McCaig\'s Tower', 'Oban Distillery', 'Dunollie Castle', 'Oban Bay', 'Ferries to Islands', 'War and Peace Museum', 'Pulpit Hill', 'Ganavan Sands', 'Seafood restaurants', 'Cathedral of St Columba'],
+      demographics: 'Gateway to the Isles. Seafood capital of Scotland. McCaig\'s Tower. Whisky distillery.',
+      seoContent: {
+        intro: 'Oban, Gateway to the Isles, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This charming harbor town is the departure point for ferries to Mull, Iona, and the Hebrides, known as the Seafood Capital of Scotland with its famous waterfront restaurants.',
+        timezoneFacts: 'Same timezone as London. Oban means "little bay" in Gaelic.',
+        bestTimeToVisit: 'May-September for ferries and weather. Oban Games (August). Seafood Festival.',
+        businessHours: 'Oban Distillery 9:30 AM to 5 PM. Ferry terminal early morning.',
+        timeDifference: 'Oban is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Seafood from green shacks on pier incredible! McCaig\'s Tower views at sunset. Ferry to Mull/Iona popular day trip. Oban whisky distillery one of oldest.',
+        transportation: 'No airport - Glasgow 2.5 hr. Oban Station (scenic West Highland Line). Ferry hub.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Scotland: 111.',
+        publicHolidays: 'UK bank holidays plus Scottish holidays. Oban Highland Games (August).'
+      }
+    }
+  },
+  { slug: 'tenby', city: 'Tenby', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.67, lng: -4.70, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.005M', metroPopulation: '0.015M', phoneCode: '+44 1834', language: 'English, Welsh',
+      climate: 'Oceanic with mild summers (16-20°C) and mild winters (5-9°C). Pembrokeshire coast.',
+      attractions: ['Colourful Harbour', 'Town Walls', 'Castle Beach', 'North Beach', 'Caldey Island', 'Tudor Merchant\'s House', 'St Mary\'s Church', 'Tenby Museum', 'Lifeboat Station', 'Five Arches'],
+      demographics: 'Wales\' prettiest town. Pastel-colored Georgian houses. Medieval walls. Three beaches.',
+      seoContent: {
+        intro: 'Tenby, the Jewel of Pembrokeshire, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This walled medieval town with pastel-colored Georgian houses is regularly voted the prettiest town in Wales, featuring three beautiful beaches and boat trips to Caldey Island monastery.',
+        timezoneFacts: 'Same timezone as London. Tenby\'s town walls date from the 13th century.',
+        bestTimeToVisit: 'May-September for beaches. Caldey Island boats Easter-October. Arts Festival September.',
+        businessHours: 'Caldey Island boats 10 AM to 3 PM. Town shops 9 AM to 5 PM.',
+        timeDifference: 'Tenby is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Harbour photos at high tide! Caldey Island monks make perfume and chocolate. Three beaches to choose from. Walk the town walls. Pembrokeshire Coast Path nearby.',
+        transportation: 'No airport - Cardiff 2 hr. Tenby Station. 4 hr from London Paddington.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Wales: 111.',
+        publicHolidays: 'UK bank holidays. Tenby Arts Festival (September).'
+      }
+    }
+  },
+  { slug: 'brecon-beacons', city: 'Brecon Beacons', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.88, lng: -3.43, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.03M', metroPopulation: '0.03M', phoneCode: '+44 1874', language: 'English, Welsh',
+      climate: 'Mountain climate with cool summers (13-18°C) and cold winters (1-6°C). Very wet.',
+      attractions: ['Pen y Fan', 'Brecon Town', 'Waterfalls Country', 'Big Pit Mining Museum', 'Llangorse Lake', 'Brecon Cathedral', 'Monmouthshire & Brecon Canal', 'Dan yr Ogof Caves', 'Dark Sky Reserve', 'Blorenge'],
+      demographics: 'Second Welsh national park. Pen y Fan highest peak in South Wales. Dark Sky Reserve. SAS training.',
+      seoContent: {
+        intro: 'Brecon Beacons (Bannau Brycheiniog), Wales\' second national park, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This mountain range features Pen y Fan (South Wales\' highest peak), spectacular waterfalls, and one of only five International Dark Sky Reserves.',
+        timezoneFacts: 'Same timezone as London. Brecon Beacons covers 520 square miles.',
+        bestTimeToVisit: 'May-September for hiking. Stargazing year-round (clearer winter). Waterfalls after rain.',
+        businessHours: 'Big Pit 10 AM to 4 PM. Dan yr Ogof Caves 10 AM to 3 PM.',
+        timeDifference: 'Brecon Beacons is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Pen y Fan hike 2-3 hours but busy! Waterfall Country (Sgwd yr Eira walk behind waterfall). Dark Sky Reserve - no light pollution. SAS train here.',
+        transportation: 'No airport - Cardiff 1 hr. No train station in park. Car essential.',
+        emergencyNumbers: 'Emergency: 999. Mountain Rescue available. NHS Wales: 111.',
+        publicHolidays: 'UK bank holidays. Brecon Jazz Festival (August).'
+      }
+    }
+  },
+  { slug: 'isle-of-man', city: 'Isle of Man', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'IM', lat: 54.24, lng: -4.55, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound/Manx Pound', currencySymbol: '£', population: '0.08M', metroPopulation: '0.08M', phoneCode: '+44 1624', language: 'English, Manx Gaelic',
+      climate: 'Oceanic with cool summers (14-17°C) and mild winters (4-8°C). Irish Sea.',
+      attractions: ['TT Motorcycle Races', 'Laxey Wheel', 'Castle Rushen', 'Peel Castle', 'Snaefell Mountain', 'Douglas Promenade', 'Manx Electric Railway', 'Cregneash Village', 'Point of Ayre', 'House of Manannan'],
+      demographics: 'Crown dependency. TT Races world-famous. Viking heritage. Tailless Manx cats. Tax haven.',
+      seoContent: {
+        intro: 'Isle of Man, the TT Island, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This self-governing Crown Dependency in the Irish Sea is world-famous for the deadly TT motorcycle races, Viking heritage, the world\'s oldest continuous parliament (Tynwald), and tailless Manx cats.',
+        timezoneFacts: 'Same timezone as London. Tynwald has met continuously since 979 AD.',
+        bestTimeToVisit: 'May-September for best weather. TT Races late May/early June. Manx National Week.',
+        businessHours: 'Laxey Wheel 10 AM to 4 PM. TT course used as public roads normally.',
+        timeDifference: 'Isle of Man is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'TT Races most dangerous motorsport - book years ahead! Laxey Wheel largest working waterwheel. Electric railway Victorian. No speed limit on some roads during TT.',
+        transportation: 'Ronaldsway Airport (IOM) with UK flights. Ferry from Liverpool/Heysham. Steam railways.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 631212.',
+        publicHolidays: 'UK bank holidays plus Tynwald Day (July 5). TT Race period.'
+      }
+    }
+  },
+  { slug: 'guernsey', city: 'Guernsey', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GG', lat: 49.45, lng: -2.54, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound/Guernsey Pound', currencySymbol: '£', population: '0.06M', metroPopulation: '0.06M', phoneCode: '+44 1481', language: 'English, French, Guernésiais',
+      climate: 'Oceanic with mild summers (17-20°C) and mild winters (6-10°C). Channel Islands, sunny.',
+      attractions: ['Castle Cornet', 'Hauteville House (Victor Hugo)', 'German Occupation Museum', 'Little Chapel', 'Sausmarez Manor', 'St Peter Port', 'Herm Island', 'Sark Island', 'Cliff Paths', 'Candie Gardens'],
+      demographics: 'Crown dependency. Victor Hugo\'s exile home. German Occupation. Tax haven. Car-free Sark nearby.',
+      seoContent: {
+        intro: 'Guernsey, Victor Hugo\'s island, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This Crown Dependency in the Channel Islands is where Victor Hugo wrote Les Misérables in exile, features WWII German fortifications, and serves as gateway to car-free Sark and tiny Herm.',
+        timezoneFacts: 'Same timezone as London. Guernsey is closer to France than England.',
+        bestTimeToVisit: 'May-September for best weather. Liberation Day (May 9). Battle of Flowers.',
+        businessHours: 'Castle Cornet 10 AM to 4 PM. Victor Hugo House 10 AM to 4 PM.',
+        timeDifference: 'Guernsey is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Victor Hugo\'s Hauteville House fascinating! Little Chapel made of broken china. Day trip to Sark (no cars) or Herm (20 min). German bunkers everywhere.',
+        transportation: 'Guernsey Airport (GCI) with UK flights. Ferry from Poole/Portsmouth. Inter-island ferries.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 725111.',
+        publicHolidays: 'UK bank holidays plus Liberation Day (May 9).'
+      }
+    }
+  },
+  { slug: 'rye', city: 'Rye', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.95, lng: 0.73, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.005M', metroPopulation: '0.01M', phoneCode: '+44 1797', language: 'English',
+      climate: 'Oceanic with mild summers (17-21°C) and cool winters (4-8°C). Romney Marsh.',
+      attractions: ['Mermaid Street', 'Mermaid Inn', 'Ypres Tower', 'Lamb House', 'St Mary\'s Church', 'Rye Castle Museum', 'Camber Sands nearby', 'Landgate', 'Gun Garden', 'Rye Harbour Nature Reserve'],
+      demographics: 'One of England\'s most atmospheric towns. Medieval cobbled streets. Mermaid Inn smugglers.',
+      seoContent: {
+        intro: 'Rye, frozen in time, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This impossibly picturesque medieval town features cobbled Mermaid Street, the smugglers\' haunt Mermaid Inn (1420), and is one of the best-preserved medieval towns in England.',
+        timezoneFacts: 'Same timezone as London. Rye was once a thriving port - now 2 miles from the sea.',
+        bestTimeToVisit: 'April-October for best weather. Rye Arts Festival (September). Christmas atmospheric.',
+        businessHours: 'Ypres Tower 10:30 AM to 5 PM. Mermaid Inn accommodation/restaurant.',
+        timeDifference: 'Rye is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Mermaid Street most photographed! Mermaid Inn has secret passages. Camber Sands beach 3 miles. Lamb House was Henry James\' home. Arrive early - gets busy.',
+        transportation: 'No airport - London Gatwick 1.5 hr. Rye Station. 1 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Rye Arts Festival (September).'
+      }
+    }
+  },
+  { slug: 'reading', city: 'Reading', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.45, lng: -0.98, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.23M', metroPopulation: '0.46M', phoneCode: '+44 118', language: 'English',
+      climate: 'Oceanic with mild summers (18-23°C) and cool winters (3-8°C). Thames Valley.',
+      attractions: ['Reading Festival', 'Reading Abbey Ruins', 'Forbury Gardens', 'Museum of English Rural Life', 'River Thames', 'The Oracle', 'Caversham', 'Reading Gaol (Oscar Wilde)', 'Madejski Stadium', 'Basildon Park'],
+      demographics: 'Silicon Valley of UK. Reading Festival. Oscar Wilde imprisoned here. Major tech hub.',
+      seoContent: {
+        intro: 'Reading, Britain\'s Silicon Valley, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This major tech hub hosts the legendary Reading Festival, features the ruins where Henry I is buried, and is where Oscar Wilde was imprisoned and wrote De Profundis.',
+        timezoneFacts: 'Same timezone as London. Reading is one of the largest UK towns without city status.',
+        bestTimeToVisit: 'Year-round for business. Reading Festival (August Bank Holiday). Real Ale Festival.',
+        businessHours: 'The Oracle 9 AM to 8 PM. Abbey Ruins accessible daylight.',
+        timeDifference: 'Reading is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Reading Festival legendary since 1971! Abbey ruins atmospheric. Oscar Wilde imprisoned at Reading Gaol. Major tech employers - Microsoft UK HQ nearby.',
+        transportation: 'No airport - London Heathrow 30 min. Reading Station major hub. 25 min from London Paddington.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Reading Festival (August).'
+      }
+    }
+  },
+  { slug: 'derby', city: 'Derby', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.92, lng: -1.47, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.26M', metroPopulation: '0.34M', phoneCode: '+44 1332', language: 'English',
+      climate: 'Oceanic with mild summers (16-21°C) and cool winters (2-7°C). East Midlands.',
+      attractions: ['Derby Cathedral', 'Rolls-Royce', 'Derby Museum & Art Gallery', 'Silk Mill (UNESCO)', 'Pickford\'s House', 'Arboretum', 'Pride Park Stadium', 'Kedleston Hall', 'Derby Gaol', 'Derwent Valley Mills'],
+      demographics: 'Birthplace of Industrial Revolution. Rolls-Royce HQ. First factory (Silk Mill). Bonnie Prince Charlie.',
+      seoContent: {
+        intro: 'Derby, birthplace of the factory, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This city launched the Industrial Revolution at Lombe\'s Silk Mill (1721), hosts Rolls-Royce headquarters, and features UNESCO World Heritage Derwent Valley Mills.',
+        timezoneFacts: 'Same timezone as London. Derby\'s Silk Mill was the world\'s first factory.',
+        bestTimeToVisit: 'Year-round. Derby Festé (September). Derwent Valley Mills any time.',
+        businessHours: 'Museum & Art Gallery 10 AM to 5 PM. Silk Mill 10 AM to 4 PM.',
+        timeDifference: 'Derby is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Silk Mill (Museum of Making) is where factories began! Kedleston Hall National Trust. Rolls-Royce still major employer. Gateway to Peak District.',
+        transportation: 'East Midlands Airport (EMA) 15 min. Derby Station. 1.5 hr from London St Pancras.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Derby Festé (September).'
+      }
+    }
+  },
+  { slug: 'stoke-on-trent', city: 'Stoke-on-Trent', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.00, lng: -2.18, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.26M', metroPopulation: '0.37M', phoneCode: '+44 1782', language: 'English',
+      climate: 'Oceanic with mild summers (16-20°C) and cool winters (2-7°C). Staffordshire.',
+      attractions: ['Wedgwood Museum', 'World of Wedgwood', 'Potteries Museum', 'Emma Bridgewater Factory', 'Gladstone Pottery Museum', 'Trentham Estate', 'Monkey Forest', 'Middleport Pottery', 'Etruria Industrial Museum', 'Alton Towers nearby'],
+      demographics: 'The Potteries. Wedgwood, Royal Doulton, Emma Bridgewater. Six towns. Arnold Bennett novels.',
+      seoContent: {
+        intro: 'Stoke-on-Trent, The Potteries, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This city of six towns is the world capital of ceramics, home to Wedgwood, Royal Doulton, and Emma Bridgewater, where you can paint your own pottery and watch masters at work.',
+        timezoneFacts: 'Same timezone as London. Stoke-on-Trent is actually six towns merged in 1910.',
+        bestTimeToVisit: 'Year-round for pottery. Alton Towers nearby for theme park. Christmas pottery sales.',
+        businessHours: 'World of Wedgwood 10 AM to 5 PM. Emma Bridgewater 9 AM to 5 PM.',
+        timeDifference: 'Stoke-on-Trent is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Wedgwood factory tour excellent! Emma Bridgewater decorate your own. Gladstone Pottery authentic. Outlet stores for bargains. Alton Towers 30 min.',
+        transportation: 'No airport - Manchester 1 hr. Stoke-on-Trent Station. 1.5 hr from London Euston.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Stoke Literary Festival.'
+      }
+    }
+  },
+  { slug: 'scarborough', city: 'Scarborough', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 54.28, lng: -0.40, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.06M', metroPopulation: '0.1M', phoneCode: '+44 1723', language: 'English',
+      climate: 'Oceanic with cool summers (15-19°C) and cold winters (2-7°C). Yorkshire coast.',
+      attractions: ['Scarborough Castle', 'South Bay', 'North Bay', 'Scarborough Spa', 'Peasholm Park', 'Sea Life Centre', 'Stephen Joseph Theatre', 'Rotunda Museum', 'Open Air Theatre', 'Anne Brontë\'s Grave'],
+      demographics: 'Britain\'s first seaside resort (1620s). Scarborough Fair song. Anne Brontë buried here.',
+      seoContent: {
+        intro: 'Scarborough, Britain\'s original seaside resort, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This Yorkshire coast town pioneered seaside holidays in the 1620s, inspired the famous folk song, and is where Anne Brontë is buried overlooking the sea she loved.',
+        timezoneFacts: 'Same timezone as London. Scarborough had Britain\'s first seaside hotel in 1660s.',
+        bestTimeToVisit: 'June-September for beach. Open Air Theatre summer concerts. Seafest.',
+        businessHours: 'Scarborough Castle 10 AM to 5 PM. Sea Life 10 AM to 5 PM.',
+        timeDifference: 'Scarborough is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Two bays - South busy, North quieter. Castle views superb. Anne Brontë grave in St Mary\'s. Stephen Joseph Theatre premieres Alan Ayckbourn plays.',
+        transportation: 'No airport - nearest Leeds Bradford 1.5 hr. Scarborough Station. 3 hr from London King\'s Cross.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Scarborough Seafest.'
+      }
+    }
+  },
+  { slug: 'eastbourne', city: 'Eastbourne', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.77, lng: 0.29, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.1M', metroPopulation: '0.17M', phoneCode: '+44 1323', language: 'English',
+      climate: 'Oceanic with mild summers (18-21°C) and mild winters (4-9°C). Sunniest place in UK.',
+      attractions: ['Beachy Head', 'Seven Sisters', 'Eastbourne Pier', 'Bandstand', 'Redoubt Fortress', 'Towner Art Gallery', 'Devonshire Park', 'Carpet Gardens', 'South Downs Way', 'Birling Gap'],
+      demographics: 'Sunniest place in Britain. Beachy Head cliffs. Victorian elegance. Tennis championships.',
+      seoContent: {
+        intro: 'Eastbourne, the Sunshine Coast, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Britain\'s sunniest town features the dramatic Beachy Head chalk cliffs, the stunning Seven Sisters, Victorian seafront elegance, and international tennis championships.',
+        timezoneFacts: 'Same timezone as London. Eastbourne averages 1,935 hours of sunshine annually.',
+        bestTimeToVisit: 'May-September for best weather. Eastbourne International Tennis (June). Airbourne airshow (August).',
+        businessHours: 'Beachy Head accessible 24/7. Pier attractions 10 AM to 6 PM.',
+        timeDifference: 'Eastbourne is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Beachy Head walk dramatic but be careful at edges! Seven Sisters best view from Seaford. Bandstand concerts summer. Victorian pier elegant. Tennis championship at Devonshire Park.',
+        transportation: 'No airport - London Gatwick 1 hr. Eastbourne Station. 1.5 hr from London Victoria.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Airbourne (August). Tennis International (June).'
+      }
+    }
+  },
+  { slug: 'chichester', city: 'Chichester', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.84, lng: -0.78, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.03M', metroPopulation: '0.12M', phoneCode: '+44 1243', language: 'English',
+      climate: 'Oceanic with mild summers (18-22°C) and mild winters (4-9°C). West Sussex coast.',
+      attractions: ['Chichester Cathedral', 'Fishbourne Roman Palace', 'Pallant House Gallery', 'Chichester Festival Theatre', 'Goodwood', 'Chichester Harbour', 'Market Cross', 'Guildhall Museum', 'West Wittering Beach', 'Bosham'],
+      demographics: 'Roman heritage. Magnificent cathedral. Festival Theatre. Goodwood racing and aviation.',
+      seoContent: {
+        intro: 'Chichester, the Roman city, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This elegant cathedral city features Britain\'s largest Roman palace (Fishbourne), a stunning Norman cathedral with modern art, the famous Chichester Festival Theatre, and nearby Goodwood\'s racing events.',
+        timezoneFacts: 'Same timezone as London. Chichester\'s street plan follows the original Roman layout.',
+        bestTimeToVisit: 'May-September for best weather. Goodwood Festival of Speed (July). Theatre season.',
+        businessHours: 'Cathedral 7:15 AM to 6 PM. Fishbourne Palace 10 AM to 5 PM.',
+        timeDifference: 'Chichester is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Fishbourne Roman Palace mosaics amazing! Cathedral has Chagall window. Festival Theatre excellent. Goodwood events various. West Wittering Beach nearby.',
+        transportation: 'No airport - London Gatwick 1 hr. Chichester Station. 1.5 hr from London Victoria.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Goodwood Festival of Speed (July). Goodwood Revival (September).'
+      }
+    }
+  },
+  { slug: 'arundel', city: 'Arundel', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.85, lng: -0.55, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.004M', metroPopulation: '0.01M', phoneCode: '+44 1903', language: 'English',
+      climate: 'Oceanic with mild summers (18-22°C) and mild winters (4-9°C). South Downs.',
+      attractions: ['Arundel Castle', 'Arundel Cathedral', 'WWT Arundel', 'Arundel Town', 'River Arun', 'Swanbourne Lake', 'Arundel Museum', 'Castle Gardens', 'Antiquarian Shops', 'South Downs Way'],
+      demographics: 'Fairy-tale castle. Duke of Norfolk\'s seat. Gothic cathedral. Antiques capital.',
+      seoContent: {
+        intro: 'Arundel, the fairy-tale town, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This picture-perfect town is dominated by Arundel Castle, ancestral home of the Duke of Norfolk, with a magnificent Gothic cathedral and antique shops lining the steep high street.',
+        timezoneFacts: 'Same timezone as London. Arundel Castle has been the Duke of Norfolk\'s seat for over 850 years.',
+        bestTimeToVisit: 'April-October for castle gardens. Arundel Festival (August). Christmas markets.',
+        businessHours: 'Arundel Castle 10 AM to 5 PM (closed Nov-Mar). Cathedral 9 AM to 6 PM.',
+        timeDifference: 'Arundel is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Castle gardens stunning! Cathedral surprisingly grand. Antique shops on high street. WWT Wetland Centre for birds. Combine with Chichester.',
+        transportation: 'No airport - London Gatwick 45 min. Arundel Station. 1.5 hr from London Victoria.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Arundel Festival (August).'
+      }
+    }
+  },
+  { slug: 'lewes', city: 'Lewes', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.87, lng: 0.01, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.02M', metroPopulation: '0.05M', phoneCode: '+44 1273', language: 'English',
+      climate: 'Oceanic with mild summers (17-21°C) and cool winters (4-9°C). South Downs.',
+      attractions: ['Lewes Castle', 'Lewes Bonfire Night', 'Anne of Cleves House', 'Harvey\'s Brewery', 'Fifteenth Century Bookshop', 'Priory Park', 'Southover Grange', 'River Ouse', 'Tom Paine Statue', 'Cliffe High Street'],
+      demographics: 'Britain\'s most extreme Bonfire Night. County town of East Sussex. Tom Paine\'s town.',
+      seoContent: {
+        intro: 'Lewes, Britain\'s bonfire capital, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This county town hosts Britain\'s most extreme Bonfire Night (November 5), was home to revolutionary Tom Paine, and features a Norman castle, Harvey\'s Brewery, and charming "twittens" (alleyways).',
+        timezoneFacts: 'Same timezone as London. Lewes Bonfire Night traditions date back 400+ years.',
+        bestTimeToVisit: 'Year-round. Bonfire Night (November 5) incredible but chaotic. Summer for castle.',
+        businessHours: 'Lewes Castle 10 AM to 5 PM. Harvey\'s Brewery tours by appointment.',
+        timeDifference: 'Lewes is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Bonfire Night (Nov 5) unlike anywhere else - book accommodation months ahead! Harvey\'s Sussex Best local ale. Twittens (alleys) to explore. Near Glyndebourne opera.',
+        transportation: 'No airport - London Gatwick 45 min. Lewes Station. 1 hr from London Victoria.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. LEWES BONFIRE NIGHT (November 5 - massive event).'
+      }
+    }
+  },
+  { slug: 'margate', city: 'Margate', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.39, lng: 1.39, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.06M', metroPopulation: '0.14M', phoneCode: '+44 1843', language: 'English',
+      climate: 'Oceanic with mild summers (17-21°C) and cool winters (4-8°C). Kent coast.',
+      attractions: ['Turner Contemporary', 'Margate Beach', 'Dreamland', 'Shell Grotto', 'Old Town', 'Harbour Arm', 'Theatre Royal', 'Margate Caves', 'Tudor House', 'Walpole Bay Tidal Pool'],
+      demographics: 'Turner\'s inspiration. Art renaissance. Dreamland vintage theme park. Tracey Emin\'s hometown.',
+      seoContent: {
+        intro: 'Margate, Turner\'s inspiration, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This Kent coast town has undergone an artistic renaissance with Turner Contemporary gallery, the mysterious Shell Grotto, vintage Dreamland theme park, and is hometown of Tracey Emin.',
+        timezoneFacts: 'Same timezone as London. Turner painted many of his famous sunsets here.',
+        bestTimeToVisit: 'May-September for beach. Turner Contemporary year-round. Dreamland summer.',
+        businessHours: 'Turner Contemporary 10 AM to 5 PM. Dreamland hours vary seasonally.',
+        timeDifference: 'Margate is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Turner Contemporary free! Shell Grotto mysterious - origins unknown. Dreamland retro rides. Old Town vintage shops. Tracey Emin neon on harbour.',
+        transportation: 'No airport - London Gatwick 1.5 hr. Margate Station. 1.5 hr from London St Pancras.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Margate Soul Festival.'
+      }
+    }
+  },
+  { slug: 'pitlochry', city: 'Pitlochry', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 56.70, lng: -3.73, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.003M', metroPopulation: '0.003M', phoneCode: '+44 1796', language: 'English, Scots',
+      climate: 'Oceanic with cool summers (13-18°C) and cold winters (0-6°C). Highland Perthshire.',
+      attractions: ['Pitlochry Festival Theatre', 'Blair Castle', 'Salmon Ladder', 'Edradour Distillery', 'Queen\'s View', 'Pass of Killiecrankie', 'Loch Faskally', 'Ben Vrackie', 'Black Spout Waterfall', 'Explorers Garden'],
+      demographics: 'Highland resort town. Victorian elegance. Theatre in the Hills. Gateway to Highlands.',
+      seoContent: {
+        intro: 'Pitlochry, the Gateway to the Highlands, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This Victorian resort town features the "Theatre in the Hills," Scotland\'s smallest distillery (Edradour), a salmon ladder, and Queen Victoria\'s favorite view.',
+        timezoneFacts: 'Same timezone as London. Queen Victoria loved Pitlochry so much she stayed 6 times.',
+        bestTimeToVisit: 'May-October for best weather. Theatre season April-October. Salmon ladder autumn.',
+        businessHours: 'Edradour Distillery 10 AM to 4 PM. Theatre performances evenings.',
+        timeDifference: 'Pitlochry is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Edradour smallest traditional distillery! Salmon ladder Oct-Nov for fish. Queen\'s View stunning. Blair Castle nearby. Festival Theatre excellent.',
+        transportation: 'No airport - Edinburgh or Inverness 1.5 hr. Pitlochry Station. Scenic A9.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Scotland: 111.',
+        publicHolidays: 'UK bank holidays plus Scottish holidays. Pitlochry Highland Games.'
+      }
+    }
+  },
+  { slug: 'aviemore', city: 'Aviemore', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 57.20, lng: -3.83, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.003M', metroPopulation: '0.003M', phoneCode: '+44 1479', language: 'English, Scots',
+      climate: 'Subarctic/Oceanic with cool summers (12-17°C) and cold winters (-2 to 5°C). Cairngorms.',
+      attractions: ['CairnGorm Mountain', 'Cairngorm Reindeer Herd', 'Strathspey Railway', 'Rothiemurchus', 'Loch Morlich', 'Cairngorm Funicular', 'Highland Wildlife Park', 'Landmark Forest Adventure Park', 'RSPB Loch Garten', 'Skiing'],
+      demographics: 'Scotland\'s ski capital. Cairngorms National Park. Reindeer. Outdoor adventure hub.',
+      seoContent: {
+        intro: 'Aviemore, Scotland\'s outdoor capital, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This Cairngorms resort town is Scotland\'s premier ski destination, home to Britain\'s only free-roaming reindeer herd, and offers year-round adventure in Britain\'s largest national park.',
+        timezoneFacts: 'Same timezone as London. Cairngorms plateau is Britain\'s coldest place.',
+        bestTimeToVisit: 'December-April for skiing. May-September for hiking. Reindeer year-round.',
+        businessHours: 'Cairngorm Mountain 8:30 AM to 4:30 PM. Reindeer visits 11 AM daily.',
+        timeDifference: 'Aviemore is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Reindeer herd visit magical! CairnGorm Mountain even in summer. Loch Morlich beach (yes, beach!). Funicular railway. Highland Wildlife Park for animals.',
+        transportation: 'No airport - Inverness 40 min. Aviemore Station. 3 hr from Edinburgh.',
+        emergencyNumbers: 'Emergency: 999. Mountain Rescue available. NHS Scotland: 111.',
+        publicHolidays: 'UK bank holidays plus Scottish holidays. Ski season Dec-Apr.'
+      }
+    }
+  },
+  { slug: 'buxton', city: 'Buxton', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.26, lng: -1.91, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.02M', metroPopulation: '0.02M', phoneCode: '+44 1298', language: 'English',
+      climate: 'Oceanic with cool summers (14-18°C) and cold winters (1-6°C). Peak District, one of coldest UK towns.',
+      attractions: ['Buxton Crescent', 'Poole\'s Cavern', 'Pavilion Gardens', 'Buxton Opera House', 'Solomon\'s Temple', 'Buxton Museum', 'St Ann\'s Well', 'Corbar Hill', 'Buxton Water Source', 'Country Park'],
+      demographics: 'Spa town. Buxton Water source. Highest market town in England. Peak District gateway.',
+      seoContent: {
+        intro: 'Buxton, the spa in the hills, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. England\'s highest market town is a Georgian spa resort in the Peak District, source of famous Buxton Water, with a stunning crescent rivaling Bath\'s.',
+        timezoneFacts: 'Same timezone as London. Buxton is 1,000 feet above sea level.',
+        bestTimeToVisit: 'May-September for best weather. Buxton Festival (July). International Gilbert & Sullivan Festival.',
+        businessHours: 'Pavilion Gardens daylight. Opera House performances evenings.',
+        timeDifference: 'Buxton is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Crescent restored to hotel/spa! Poole\'s Cavern stalactites. Fill water bottles at St Ann\'s Well free. Opera House beautiful. Peak District on doorstep.',
+        transportation: 'No airport - Manchester 1 hr. Buxton Station. 2.5 hr from London St Pancras.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Buxton Festival (July). Well Dressings.'
+      }
     }
   },
   
@@ -6198,10 +7498,1028 @@ export const cities: City[] = [
   },
   { slug: 'kagoshima', city: 'Kagoshima', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 31.60, lng: 130.55, tier: 2, continent: 'asia',
     info: {
-      currency: 'Japanese Yen', currencySymbol: '¥', population: '600K', phoneCode: '+81 99', language: 'Japanese',
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.6M', metroPopulation: '1.0M', phoneCode: '+81 99', language: 'Japanese',
       climate: 'Humid subtropical with hot summers (27-32°C) and mild winters (5-12°C). Volcanic ash from Sakurajima.',
-      attractions: ['Sakurajima Volcano', 'Sengan-en Garden', 'Tenmonkan shopping', 'Shiroyama Observatory', 'Ibusuki sand baths'],
-      demographics: 'Southern Kyushu city facing active Sakurajima volcano. Historic Satsuma domain, gateway to southern islands.'
+      attractions: ['Sakurajima Volcano', 'Sengan-en Garden', 'Tenmonkan Shopping', 'Shiroyama Observatory', 'Ibusuki Sand Baths', 'Kagoshima Aquarium', 'Satsuma Shochu', 'Reimeikan Museum', 'Iso Beach', 'Shoko Shuseikan'],
+      demographics: 'Naples of the East. Active Sakurajima volcano. Historic Satsuma domain. Gateway to Yakushima and southern islands.',
+      seoContent: {
+        intro: 'Kagoshima, the Naples of the East, operates on Japan Standard Time (JST/UTC+9). This southern Kyushu city of 600,000 faces the dramatically active Sakurajima volcano across the bay, offering unique volcanic landscapes, samurai history, and gateway to tropical southern islands.',
+        timezoneFacts: 'Same timezone as all of Japan. Southernmost major city on Kyushu.',
+        bestTimeToVisit: 'March-May and October-November for pleasant weather. Summer hot and humid. Check volcanic activity before visiting.',
+        businessHours: 'Shops 10 AM to 8 PM. Sengan-en 8:30 AM to 5:30 PM. Sakurajima ferry 24 hours.',
+        timeDifference: 'Kagoshima is UTC+9 year-round. When noon in Kagoshima: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Sakurajima ferry just 15 minutes! Ibusuki sand baths unique experience. Try Satsuma-age (fried fish cakes) and shochu. Volcanic ash umbrella useful. Saigo Takamori last samurai from here.',
+        transportation: 'Kagoshima Airport (KOJ) 35km. Kagoshima-Chuo Station for Kyushu Shinkansen. Sakurajima ferry from city center.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance). Volcanic alerts posted.',
+        publicHolidays: 'Standard Japanese holidays. Ohara Festival (November) major local celebration.'
+      }
+    }
+  },
+  
+  // Japan - New Premium Cities Batch 1 (17 cities)
+  { slug: 'nara', city: 'Nara', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.69, lng: 135.80, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.35M', metroPopulation: '1.5M', phoneCode: '+81 742', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-33°C) and cool winters (1-9°C). Pleasant spring and autumn.',
+      attractions: ['Todai-ji Temple', 'Great Buddha (Daibutsu)', 'Nara Park Deer', 'Kasuga Taisha', 'Kofuku-ji', 'Isuien Garden', 'Naramachi', 'Yoshikien Garden', 'Nara National Museum', 'Horyu-ji'],
+      demographics: 'Japan\'s first permanent capital (710-784). 1,200+ sacred deer roam freely. UNESCO World Heritage temples.',
+      seoContent: {
+        intro: 'Nara, Japan\'s first permanent capital, operates on Japan Standard Time (JST/UTC+9). This ancient city of 350,000 was the seat of Japanese government from 710-784 CE, now famous for 1,200+ sacred deer roaming freely among UNESCO World Heritage temples and the world\'s largest bronze Buddha.',
+        timezoneFacts: 'Same timezone as all of Japan. Easy day trip from Osaka (45 min) or Kyoto (45 min).',
+        bestTimeToVisit: 'March-May for cherry blossoms. October-November for autumn colors. Avoid Golden Week and Obon crowds.',
+        businessHours: 'Todai-ji 7:30 AM to 5:30 PM (varies by season). Shops 10 AM to 6 PM. Deer active all day.',
+        timeDifference: 'Nara is UTC+9 year-round. When noon in Nara: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Buy shika senbei (deer crackers) ¥200 - deer will bow for them! Daibutsu 15m tall world\'s largest bronze Buddha. Walk through Buddha\'s nostril for luck. Naramachi old merchant district charming.',
+        transportation: 'Kintetsu Nara Station most convenient. JR Nara Station also available. No airport - use Osaka KIX or Itami.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Omizutori (March) at Todai-ji spectacular fire ceremony.'
+      }
+    }
+  },
+  { slug: 'nikko', city: 'Nikko', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.75, lng: 139.60, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.08M', metroPopulation: '0.08M', phoneCode: '+81 288', language: 'Japanese',
+      climate: 'Humid continental with warm summers (20-28°C) and cold snowy winters (-5 to 5°C). Mountain climate.',
+      attractions: ['Toshogu Shrine', 'Kegon Falls', 'Lake Chuzenji', 'Shinkyo Bridge', 'Rinno-ji Temple', 'Yumoto Onsen', 'Senjogahara Marshland', 'Ryuzu Falls', 'Kanmangafuchi Abyss', 'Edo Wonderland'],
+      demographics: 'UNESCO World Heritage shrines and temples. Tokugawa Ieyasu\'s mausoleum. Famous for "See no evil" monkeys.',
+      seoContent: {
+        intro: 'Nikko, where the Tokugawa shoguns rest, operates on Japan Standard Time (JST/UTC+9). This UNESCO World Heritage mountain town of 80,000 houses the lavish Toshogu Shrine mausoleum of Tokugawa Ieyasu, spectacular waterfalls, and serene Lake Chuzenji amidst the mountains.',
+        timezoneFacts: 'Same timezone as all of Japan. 2 hours from Tokyo by train.',
+        bestTimeToVisit: 'October-November for legendary autumn colors. May-June pleasant. Winter snowy but atmospheric.',
+        businessHours: 'Toshogu 8 AM to 5 PM (4 PM winter). Kegon Falls 8 AM to 5 PM. Onsen evenings.',
+        timeDifference: 'Nikko is UTC+9 year-round. When noon in Nikko: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Toshogu\'s "see no evil, speak no evil, hear no evil" monkeys iconic! Kegon Falls 97m drop spectacular. Lake Chuzenji autumn reflection stunning. Try yuba (tofu skin) - local specialty. World Heritage pass saves money.',
+        transportation: 'Tobu Nikko Line from Asakusa (2 hours). JR Nikko Line via Utsunomiya. No airport nearby.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Grand Festival (May 17-18) features samurai procession.'
+      }
+    }
+  },
+  { slug: 'kamakura', city: 'Kamakura', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.32, lng: 139.55, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.17M', metroPopulation: '0.17M', phoneCode: '+81 467', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (25-31°C) and mild winters (4-10°C). Ocean moderates temperatures.',
+      attractions: ['Great Buddha (Daibutsu)', 'Tsurugaoka Hachimangu', 'Hase-dera Temple', 'Hokoku-ji Bamboo Grove', 'Enoshima Island', 'Komachi Street', 'Zeniarai Benten', 'Kencho-ji', 'Engaku-ji', 'Yuigahama Beach'],
+      demographics: 'Medieval capital of samurai Japan (1185-1333). Coastal temple town. Day trip from Tokyo.',
+      seoContent: {
+        intro: 'Kamakura, capital of samurai Japan, operates on Japan Standard Time (JST/UTC+9). This coastal temple town of 170,000 was the seat of Japan\'s first military government (1185-1333), now famous for the iconic 13m outdoor Great Buddha, Zen temples, and seaside atmosphere just an hour from Tokyo.',
+        timezoneFacts: 'Same timezone as all of Japan. Perfect Tokyo day trip (1 hour from Shinjuku).',
+        bestTimeToVisit: 'June for hydrangeas at Hase-dera. March-April cherry blossoms. Autumn pleasant. Summer crowded but beach access.',
+        businessHours: 'Great Buddha 8 AM to 5:30 PM. Temples typically 8 AM to 4:30 PM. Komachi Street shops 10 AM to 6 PM.',
+        timeDifference: 'Kamakura is UTC+9 year-round. When noon in Kamakura: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Great Buddha outdoor since 1498 tsunami destroyed the hall! Hokoku-ji bamboo grove magical. Wash money at Zeniarai Benten for prosperity. Try shirasu (whitebait) - local specialty. Enoden train scenic.',
+        transportation: 'JR Yokosuka Line from Tokyo (1 hour). Enoden tram connects sites. No airport - use Tokyo Haneda or Narita.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Tsurugaoka Hachimangu festivals throughout year.'
+      }
+    }
+  },
+  { slug: 'hakone', city: 'Hakone', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.23, lng: 139.11, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.01M', metroPopulation: '0.03M', phoneCode: '+81 460', language: 'Japanese',
+      climate: 'Mountain climate with warm summers (20-28°C) and cold winters (0-8°C). Fog common. Hot springs year-round.',
+      attractions: ['Lake Ashi', 'Hakone Shrine', 'Owakudani Valley', 'Open Air Museum', 'Mt. Fuji Views', 'Hakone Ropeway', 'Pirate Ship Cruise', 'Hakone Checkpoint', 'Pola Museum', 'Onsen Resorts'],
+      demographics: 'Premier onsen resort near Tokyo. Volcanic hot springs. Mt. Fuji views. Edo-period checkpoint.',
+      seoContent: {
+        intro: 'Hakone, Tokyo\'s hot spring escape, operates on Japan Standard Time (JST/UTC+9). This premier onsen resort town of 10,000 offers volcanic hot springs, stunning Mt. Fuji views across Lake Ashi, and the steaming Owakudani valley - all accessible in a day trip or ryokan overnight from Tokyo.',
+        timezoneFacts: 'Same timezone as all of Japan. 90 minutes from Tokyo by Romance Car.',
+        bestTimeToVisit: 'Clear days for Mt. Fuji views (winter best). Autumn colors spectacular. Spring cherry blossoms. Avoid rainy season.',
+        businessHours: 'Ropeway 9 AM to 5 PM. Open Air Museum 9 AM to 5 PM. Ryokan check-in typically 3 PM.',
+        timeDifference: 'Hakone is UTC+9 year-round. When noon in Hakone: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Hakone Free Pass covers all transport! Owakudani black eggs add 7 years to life (legend). Clear days for Fuji rare - check weather. Book ryokan with private onsen. Pirate ship across Lake Ashi fun.',
+        transportation: 'Odakyu Romance Car from Shinjuku (85 min). Hakone loop uses train, cable car, ropeway, boat. No airport nearby.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance). Volcanic alerts monitored.',
+        publicHolidays: 'Standard Japanese holidays. Daimyo Gyoretsu (November) feudal procession.'
+      }
+    }
+  },
+  { slug: 'kanazawa', city: 'Kanazawa', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.56, lng: 136.65, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.46M', metroPopulation: '0.75M', phoneCode: '+81 76', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (25-32°C) and cold snowy winters (1-7°C). Sea of Japan brings heavy snow.',
+      attractions: ['Kenroku-en Garden', 'Kanazawa Castle', 'Higashi Chaya District', '21st Century Museum', 'Omicho Market', 'Nagamachi Samurai District', 'Myoryu-ji (Ninja Temple)', 'D.T. Suzuki Museum', 'Gold Leaf Workshops', 'Kutani Pottery'],
+      demographics: 'Little Kyoto. Escaped WWII bombing. Traditional arts center. One of Japan\'s top 3 gardens.',
+      seoContent: {
+        intro: 'Kanazawa, the Little Kyoto, operates on Japan Standard Time (JST/UTC+9). This Sea of Japan gem of 460,000 escaped WWII bombing, preserving Kenroku-en (one of Japan\'s top 3 gardens), geisha districts, samurai quarters, and traditional crafts like gold leaf production where 99% of Japan\'s gold leaf is made.',
+        timezoneFacts: 'Same timezone as all of Japan. 2.5 hours from Tokyo by Hokuriku Shinkansen.',
+        bestTimeToVisit: 'Spring cherry blossoms and autumn colors at Kenroku-en. Winter yukitsuri (snow protection) beautiful. Summer humid.',
+        businessHours: 'Kenroku-en 7 AM to 6 PM (varies). Omicho Market 9 AM to 5 PM. Museums closed Mondays.',
+        timeDifference: 'Kanazawa is UTC+9 year-round. When noon in Kanazawa: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Kenroku-en early morning for fewer crowds. Gold leaf ice cream unique experience. Higashi Chaya geisha district atmospheric evenings. Omicho Market for fresh crab. Ninja Temple needs reservation!',
+        transportation: 'Kanazawa Station via Hokuriku Shinkansen (2.5 hr from Tokyo). Komatsu Airport (KMQ) 40km. Loop bus covers attractions.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Hyakumangoku Festival (June) major celebration.'
+      }
+    }
+  },
+  { slug: 'takayama', city: 'Takayama', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.14, lng: 137.25, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.09M', metroPopulation: '0.09M', phoneCode: '+81 577', language: 'Japanese',
+      climate: 'Humid continental with warm summers (18-28°C) and cold snowy winters (-5 to 5°C). Mountain basin climate.',
+      attractions: ['Sanmachi Suji Old Town', 'Morning Markets', 'Takayama Festival', 'Hida Folk Village', 'Sakurayama Hachimangu', 'Kusakabe Heritage House', 'Hida Beef', 'Sake Breweries', 'Shirakawa-go (nearby)', 'Onsen'],
+      demographics: 'Little Kyoto of Hida. Edo-period streets preserved. Traditional carpentry. Japanese Alps gateway.',
+      seoContent: {
+        intro: 'Takayama, Little Kyoto of the Alps, operates on Japan Standard Time (JST/UTC+9). This mountain town of 90,000 in the Japanese Alps preserves Edo-period streets, morning markets unchanged for centuries, and serves as gateway to the UNESCO-listed thatched-roof villages of Shirakawa-go.',
+        timezoneFacts: 'Same timezone as all of Japan. Relatively isolated in Japanese Alps.',
+        bestTimeToVisit: 'Spring and autumn Takayama Festivals (April 14-15, October 9-10) spectacular. Winter for snow and onsen. Summer pleasant escape.',
+        businessHours: 'Morning markets 7 AM to noon. Sanmachi shops 9 AM to 5 PM. Sake breweries have tasting hours.',
+        timeDifference: 'Takayama is UTC+9 year-round. When noon in Takayama: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Morning markets (Jinya-mae and Miyagawa) for local produce. Sanmachi sake breweries open for tasting. Hida beef rivals Kobe. Festivals have UNESCO floats. Day trip to Shirakawa-go essential.',
+        transportation: 'JR Takayama Line from Nagoya (2.5 hr) or Toyama (1.5 hr). Nohi Bus to Shirakawa-go. No airport.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Takayama Festivals (April, October) UNESCO Intangible Heritage.'
+      }
+    }
+  },
+  { slug: 'miyajima', city: 'Miyajima', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.30, lng: 132.32, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.002M', metroPopulation: '0.002M', phoneCode: '+81 829', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (3-10°C). Island maritime climate.',
+      attractions: ['Itsukushima Shrine', 'Floating Torii Gate', 'Mt. Misen', 'Daisho-in Temple', 'Momijidani Park', 'Five-Story Pagoda', 'Omotesando Shopping', 'Deer', 'Ropeway', 'Senjokaku Pavilion'],
+      demographics: 'Sacred island. UNESCO World Heritage. One of Japan\'s three most scenic views. Floating torii iconic.',
+      seoContent: {
+        intro: 'Miyajima, the Sacred Island, operates on Japan Standard Time (JST/UTC+9). This UNESCO World Heritage island near Hiroshima is home to Japan\'s most photographed sight - the floating torii gate of Itsukushima Shrine, which appears to float on water at high tide.',
+        timezoneFacts: 'Same timezone as all of Japan. Easy day trip from Hiroshima (1 hour with ferry).',
+        bestTimeToVisit: 'High tide for floating torii effect - check tide tables! Autumn colors spectacular. Spring cherry blossoms lovely. Avoid peak weekends.',
+        businessHours: 'Itsukushima Shrine 6:30 AM to 6 PM (varies). Ropeway 9 AM to 5 PM. Shops until 5:30 PM.',
+        timeDifference: 'Miyajima is UTC+9 year-round. When noon in Miyajima: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'CHECK TIDE TABLES for floating torii! Mt. Misen hike or ropeway for views. Deer roam freely but don\'t feed. Try momiji manju (maple leaf cakes). Stay overnight for illuminated shrine.',
+        transportation: 'JR Sanyo Line to Miyajimaguchi + 10-min ferry. From Hiroshima Peace Park, direct ferry available. JR Pass covers both.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Kangensai (July) boat festival unique.'
+      }
+    }
+  },
+  { slug: 'naha', city: 'Naha', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 26.21, lng: 127.68, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.32M', metroPopulation: '0.8M', phoneCode: '+81 98', language: 'Japanese, Okinawan',
+      climate: 'Subtropical with hot humid summers (27-32°C) and mild winters (15-20°C). Typhoon season May-October.',
+      attractions: ['Shuri Castle', 'Kokusai Street', 'Makishi Public Market', 'Tsuboya Pottery District', 'Okinawa Prefectural Museum', 'Naminoue Shrine', 'American Village (Chatan)', 'Beaches', 'Awamori Distilleries', 'Ryukyu Dance'],
+      demographics: 'Capital of Okinawa. Ryukyu Kingdom heritage. Unique culture and cuisine. US military presence.',
+      seoContent: {
+        intro: 'Naha, capital of tropical Okinawa, operates on Japan Standard Time (JST/UTC+9) despite being closer to Taiwan than Tokyo. This subtropical city of 320,000 was seat of the independent Ryukyu Kingdom until 1879, offering unique culture, cuisine, and beaches distinct from mainland Japan.',
+        timezoneFacts: 'Uses JST (UTC+9) like all Japan despite southwestern location. Actually should be UTC+8 geographically.',
+        bestTimeToVisit: 'March-May pleasant before rainy season. October-November ideal. Avoid typhoon season (August-September).',
+        businessHours: 'Shuri Castle 8:30 AM to 6 PM (varies). Kokusai Street shops 10 AM to 10 PM. Market morning best.',
+        timeDifference: 'Naha is UTC+9 year-round. When noon in Naha: London 3 AM, NYC 10 PM (previous day), Taipei 11 AM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Shuri Castle rebuilt after 2019 fire - still worth visiting. Kokusai Street lively at night. Try Okinawan soba, goya champuru, and awamori. Makishi Market for exotic foods. Beach access easy.',
+        transportation: 'Naha Airport (OKA) 4km from city, monorail connected. Yui Rail monorail covers city. Rent car for island exploration.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Naha Giant Tug-of-War (October) Guinness record holder.'
+      }
+    }
+  },
+  { slug: 'nagasaki', city: 'Nagasaki', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 32.75, lng: 129.88, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.41M', metroPopulation: '0.6M', phoneCode: '+81 95', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (5-10°C). Hilly terrain.',
+      attractions: ['Peace Park', 'Atomic Bomb Museum', 'Glover Garden', 'Dejima', 'Oura Church', 'Mt. Inasa Night View', 'Megane Bridge', 'Chinatown', 'Hashima Island (Gunkanjima)', 'Nagasaki Kunchi Festival'],
+      demographics: 'Second atomic bomb city. Only open port during isolation. Western and Chinese influences unique in Japan.',
+      seoContent: {
+        intro: 'Nagasaki, Japan\'s window to the world, operates on Japan Standard Time (JST/UTC+9). This hilly port city of 410,000 was Japan\'s sole international port for 200 years of isolation, the second city struck by atomic bomb, and today offers poignant history alongside exotic Western and Chinese heritage.',
+        timezoneFacts: 'Same timezone as all of Japan. Western Kyushu, historically closest to China and Korea.',
+        bestTimeToVisit: 'March-May and October-November pleasant. Kunchi Festival (October 7-9) spectacular. August 9 for Peace Memorial.',
+        businessHours: 'Peace Park 24 hours. Atomic Bomb Museum 8:30 AM to 5:30 PM. Glover Garden 8 AM to 6 PM.',
+        timeDifference: 'Nagasaki is UTC+9 year-round. When noon in Nagasaki: London 3 AM, NYC 10 PM (previous day), Shanghai 11 AM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Mt. Inasa night view one of Japan\'s top 3. Gunkanjima tours fascinating abandoned island. Dejima was only foreign contact point. Try champon noodles and castella cake. Tram covers city well.',
+        transportation: 'Nagasaki Airport (NGS) 35km. Nagasaki Station for limited express trains. Tram network excellent.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Peace Memorial Day (August 9). Nagasaki Kunchi (October 7-9).'
+      }
+    }
+  },
+  { slug: 'matsuyama', city: 'Matsuyama', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 33.84, lng: 132.77, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.51M', metroPopulation: '0.65M', phoneCode: '+81 89', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (4-10°C). Seto Inland Sea moderates climate.',
+      attractions: ['Dogo Onsen', 'Matsuyama Castle', 'Ishite-ji Temple', 'Botchan Train', 'Ninomaru Historical Garden', 'Shiki Memorial Museum', 'Shimanami Kaido', 'Tobe Pottery', 'Kashima Island', 'Imabari Towels'],
+      demographics: 'Shikoku\'s largest city. Japan\'s oldest onsen (Dogo). Matsuyama Castle original. Soseki\'s "Botchan" setting.',
+      seoContent: {
+        intro: 'Matsuyama, city of Japan\'s oldest hot spring, operates on Japan Standard Time (JST/UTC+9). This largest Shikoku city of 510,000 features Dogo Onsen (3,000 years old, said to inspire Spirited Away\'s bathhouse) and one of Japan\'s 12 original castles standing on a hilltop.',
+        timezoneFacts: 'Same timezone as all of Japan. Northern Shikoku, gateway to island.',
+        bestTimeToVisit: 'Year-round for onsen. Spring cherry blossoms at castle beautiful. Cycling Shimanami Kaido spring/autumn.',
+        businessHours: 'Dogo Onsen 6 AM to 11 PM. Matsuyama Castle 9 AM to 5 PM. Botchan Train runs daytime.',
+        timeDifference: 'Matsuyama is UTC+9 year-round. When noon in Matsuyama: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Dogo Onsen bathhouse inspired Spirited Away! Castle ropeway or climb, original structure. Botchan Train replica charming. Shimanami Kaido cycling route to Hiroshima spectacular.',
+        transportation: 'Matsuyama Airport (MYJ) 6km. JR and Iyotetsu trains. Ferries to Hiroshima and Kyushu.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Dogo Onsen festivals. Matsuyama Autumn Festival.'
+      }
+    }
+  },
+  { slug: 'beppu', city: 'Beppu', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 33.28, lng: 131.50, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.12M', metroPopulation: '0.12M', phoneCode: '+81 977', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (4-10°C). Steam visible year-round.',
+      attractions: ['Beppu Hells (Jigoku)', 'Takegawara Onsen', 'Beppu Tower', 'Sand Baths', 'Mud Baths', 'Mount Tsurumi Ropeway', 'Kannawa District', 'Oita Marine Palace', 'Jigoku-Mushi Cooking', 'Onsen Theme Park'],
+      demographics: 'Japan\'s onsen capital. More hot spring water than anywhere. 8 "Hells" of colored pools. Steam everywhere.',
+      seoContent: {
+        intro: 'Beppu, Japan\'s hot spring capital, operates on Japan Standard Time (JST/UTC+9). This steaming city of 120,000 produces more hot spring water than anywhere else in Japan, featuring the famous 8 "Hells" (Jigoku) - bubbling pools of blue, red, and boiling mud, plus sand baths and countless public onsen.',
+        timezoneFacts: 'Same timezone as all of Japan. Eastern Kyushu coast.',
+        bestTimeToVisit: 'Year-round for onsen. Winter steam more dramatic. Avoid Golden Week crowds.',
+        businessHours: 'Jigoku Hells 8 AM to 5 PM. Sand baths 8:30 AM to 10 PM. Many onsen open until late.',
+        timeDifference: 'Beppu is UTC+9 year-round. When noon in Beppu: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Hell tour pass covers all 7 main hells. Takegawara sand bath unique experience. Try jigoku-mushi (hell-steamed) cooking. Kannawa district atmospheric with steam vents. Many free foot baths.',
+        transportation: 'Oita Airport (OIT) 40km (shared with Oita). JR Nippo Line from Fukuoka (2 hr). Ferries to Osaka/Kobe.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Beppu Onsen Festival (April).'
+      }
+    }
+  },
+  { slug: 'shirakawa-go', city: 'Shirakawa-go', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.26, lng: 136.91, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.002M', metroPopulation: '0.002M', phoneCode: '+81 5769', language: 'Japanese',
+      climate: 'Heavy snow climate with warm summers (18-28°C) and very cold snowy winters (-5 to 3°C). 2m+ snow common.',
+      attractions: ['Gassho-zukuri Houses', 'Shiroyama Viewpoint', 'Wada House', 'Kanda House', 'Myozenji Temple', 'Ogimachi Village', 'Winter Illumination', 'Sake Brewery', 'Doburoku Festival', 'Rice Paddies'],
+      demographics: 'UNESCO World Heritage village. Thatched-roof gassho-zukuri farmhouses. Isolated mountain community preserved.',
+      seoContent: {
+        intro: 'Shirakawa-go, the thatched-roof wonderland, operates on Japan Standard Time (JST/UTC+9). This UNESCO World Heritage village of 2,000 preserves gassho-zukuri farmhouses with steep thatched roofs designed to shed heavy snow, creating a fairy-tale landscape especially magical in winter.',
+        timezoneFacts: 'Same timezone as all of Japan. Remote mountain valley, historically isolated.',
+        bestTimeToVisit: 'Winter (January-February) for snow-covered houses and illumination events (book months ahead!). Autumn colors beautiful. Summer green rice paddies.',
+        businessHours: 'Village accessible 24/7. House museums 9 AM to 5 PM. Cafes limited hours.',
+        timeDifference: 'Shirakawa-go is UTC+9 year-round. When noon in Shirakawa-go: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Winter illumination lottery - enter months ahead! Shiroyama viewpoint for iconic photo (10 min climb). Stay overnight in gassho house. Doburoku sake festival (October) wild. Book Wada/Kanda house tours.',
+        transportation: 'Nohi Bus from Takayama (50 min) or Kanazawa (75 min). No train access. Very limited parking.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance). Very limited services.',
+        publicHolidays: 'Standard Japanese holidays. Doburoku Festival (October 14-19). Winter Illumination (January-February, lottery).'
+      }
+    }
+  },
+  { slug: 'naoshima', city: 'Naoshima', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.46, lng: 133.99, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.003M', metroPopulation: '0.003M', phoneCode: '+81 87', language: 'Japanese',
+      climate: 'Mediterranean-like with warm summers (26-31°C) and mild winters (5-10°C). Seto Inland Sea climate pleasant.',
+      attractions: ['Chichu Art Museum', 'Benesse House', 'Yellow Pumpkin', 'Red Pumpkin', 'Art House Project', 'Lee Ufan Museum', 'Ando Museum', 'I Love Yu Bathhouse', 'Beaches', 'Teshima Art Museum (nearby)'],
+      demographics: 'Art island. Benesse Holdings transformed industrial island. Tadao Ando architecture. Contemporary art pilgrimage.',
+      seoContent: {
+        intro: 'Naoshima, Japan\'s art island, operates on Japan Standard Time (JST/UTC+9). This tiny Seto Inland Sea island of 3,000 was transformed by Benesse Holdings into an open-air contemporary art museum, featuring Tadao Ando\'s stunning museums, Yayoi Kusama\'s iconic pumpkins, and art-infused traditional houses.',
+        timezoneFacts: 'Same timezone as all of Japan. Seto Inland Sea, Kagawa Prefecture.',
+        bestTimeToVisit: 'March-November for cycling. Setouchi Triennale years (every 3 years) special. Mondays many museums closed.',
+        businessHours: 'Museums 10 AM to 6 PM. Closed Mondays (except Benesse House). Art House Project 10 AM to 4:30 PM.',
+        timeDifference: 'Naoshima is UTC+9 year-round. When noon in Naoshima: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Book Chichu Art Museum tickets online - often sells out! Yellow Pumpkin on pier iconic. Rent bicycle to explore. Stay at Benesse House for night viewing. Art House Project scattered through village. Teshima island worth combining.',
+        transportation: 'Ferries from Uno (Okayama, 20 min) or Takamatsu (1 hour). No cars needed - bicycle best. Uno accessible from Okayama by train.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance). Limited facilities.',
+        publicHolidays: 'Standard Japanese holidays. Setouchi Triennale (every 3 years, spring-autumn) major art festival.'
+      }
+    }
+  },
+  { slug: 'koyasan', city: 'Koyasan', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.21, lng: 135.59, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.003M', metroPopulation: '0.003M', phoneCode: '+81 736', language: 'Japanese',
+      climate: 'Mountain climate with cool summers (18-26°C) and cold snowy winters (-3 to 5°C). 800m elevation.',
+      attractions: ['Okunoin Cemetery', 'Kongobu-ji Temple', 'Danjo Garan', 'Torodo Hall', 'Shukubo Temple Stays', 'Morning Prayers', 'Vegetarian Cuisine (Shojin Ryori)', 'Kobo Daishi Mausoleum', 'Reihokan Museum', 'Daimon Gate'],
+      demographics: 'UNESCO World Heritage. Shingon Buddhism headquarters. 117 temples. Cemetery of 200,000 graves.',
+      seoContent: {
+        intro: 'Koyasan, sacred mountaintop monastery, operates on Japan Standard Time (JST/UTC+9). This UNESCO World Heritage site at 800m elevation is headquarters of Shingon Buddhism since 816 CE, featuring 117 temples, Japan\'s most atmospheric cemetery with 200,000 graves, and unforgettable temple stay experiences.',
+        timezoneFacts: 'Same timezone as all of Japan. 90 minutes from Osaka by train + cable car.',
+        bestTimeToVisit: 'May-November for pleasant weather. Autumn colors spectacular. Winter snowy and cold but mystical.',
+        businessHours: 'Okunoin 24/7 accessible. Kongobu-ji 8:30 AM to 5 PM. Temple stays check-in by 5 PM.',
+        timeDifference: 'Koyasan is UTC+9 year-round. When noon in Koyasan: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Stay overnight in shukubo (temple lodging) - essential experience! Morning prayers at 6 AM. Okunoin cemetery walk at night atmospheric. Shojin ryori vegetarian cuisine unique. Book temple stay ahead.',
+        transportation: 'Nankai Railway from Osaka-Namba + cable car (2 hours total). Bus within Koyasan. No cars recommended.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance). Limited facilities.',
+        publicHolidays: 'Standard Japanese holidays. Aoba Festival (June 15) celebrates Kobo Daishi.'
+      }
+    }
+  },
+  { slug: 'ise', city: 'Ise', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.49, lng: 136.71, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.12M', metroPopulation: '0.15M', phoneCode: '+81 596', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (3-10°C). Pacific coast moderate.',
+      attractions: ['Ise Grand Shrine (Naiku)', 'Ise Grand Shrine (Geku)', 'Oharai-machi', 'Okage Yokocho', 'Meoto Iwa (Wedded Rocks)', 'Toba Aquarium', 'Pearl Island', 'Ama Divers', 'Futami', 'Akafuku Mochi'],
+      demographics: 'Shinto\'s holiest shrine. Rebuilt every 20 years. 6 million visitors annually. Spiritual heart of Japan.',
+      seoContent: {
+        intro: 'Ise, spiritual heart of Japan, operates on Japan Standard Time (JST/UTC+9). This city of 120,000 is home to Ise Grand Shrine (Ise Jingu), Shinto\'s holiest site dedicated to sun goddess Amaterasu, rebuilt every 20 years in an unbroken tradition for over 1,300 years.',
+        timezoneFacts: 'Same timezone as all of Japan. Mie Prefecture, Pacific coast.',
+        bestTimeToVisit: 'Year-round pilgrimage destination. Avoid New Year (extremely crowded). Spring and autumn pleasant.',
+        businessHours: 'Ise Jingu 5 AM to 6 PM (varies by season). Oharai-machi shops 9:30 AM to 5:30 PM.',
+        timeDifference: 'Ise is UTC+9 year-round. When noon in Ise: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Visit Geku (outer shrine) before Naiku (inner shrine) - traditional order. Oharai-machi old street charming. Try Akafuku mochi - sold here 300+ years. Meoto Iwa sunrise beautiful. Photography restricted in shrine.',
+        transportation: 'Kintetsu or JR to Iseshi Station. Chubu Centrair Airport (NGO) 90km. Direct Kintetsu from Osaka/Nagoya.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Shikinen Sengu (shrine rebuild) every 20 years (next 2033).'
+      }
+    }
+  },
+  
+  // Japan - New Premium Cities Batch 2 & 3 (35 cities to reach 69 total)
+  { slug: 'himeji', city: 'Himeji', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.83, lng: 134.69, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.53M', metroPopulation: '0.75M', phoneCode: '+81 79', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-33°C) and mild winters (2-10°C). Seto Inland Sea climate.',
+      attractions: ['Himeji Castle', 'Kokoen Garden', 'Engyoji Temple', 'Mt. Shosha Ropeway', 'Himeji City Museum', 'Tegarayama Park', 'Nada Fighting Festival', 'Ieshima Islands', 'Shoshazan', 'Sake Breweries'],
+      demographics: 'Japan\'s most magnificent castle. UNESCO World Heritage. White Heron Castle. Only castle never destroyed.',
+      seoContent: {
+        intro: 'Himeji, home of the White Heron Castle, operates on Japan Standard Time (JST/UTC+9). This city of 530,000 is dominated by Japan\'s most spectacular castle - the UNESCO World Heritage Himeji Castle, the only major castle never destroyed by war, earthquake, or fire.',
+        timezoneFacts: 'Same timezone as all of Japan. Between Osaka and Hiroshima on San\'yo Shinkansen.',
+        bestTimeToVisit: 'Spring cherry blossoms around castle stunning. Autumn colors beautiful. Any clear day for castle views.',
+        businessHours: 'Himeji Castle 9 AM to 5 PM. Kokoen 9 AM to 5 PM. Engyoji ropeway 8:30 AM to 5 PM.',
+        timeDifference: 'Himeji is UTC+9 year-round. When noon in Himeji: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Castle featured in Last Samurai. Combined castle + Kokoen ticket saves money. Mt. Shosha Engyoji temple complex stunning. Walk from station - castle visible entire way.',
+        transportation: 'JR Himeji Station on San\'yo Shinkansen. Castle 15-min walk from station. Kobe Airport 70km.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Himeji Castle Festival (August). Nada Fighting Festival (October).'
+      }
+    }
+  },
+  { slug: 'otaru', city: 'Otaru', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 43.19, lng: 141.00, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.11M', metroPopulation: '0.11M', phoneCode: '+81 134', language: 'Japanese',
+      climate: 'Humid continental with warm summers (18-26°C) and cold snowy winters (-7 to 2°C). Heavy snowfall.',
+      attractions: ['Otaru Canal', 'Music Box Museum', 'Sakaimachi Street', 'Glassworks', 'LeTAO Cheesecake', 'Sushi Street', 'Otaru Aquarium', 'Snow Light Path Festival', 'Tenguyama Ropeway', 'Herring Mansions'],
+      demographics: 'Romantic canal city. Former herring wealth. Glass and music boxes. Sushi capital of Hokkaido.',
+      seoContent: {
+        intro: 'Otaru, the romantic canal city, operates on Japan Standard Time (JST/UTC+9). This nostalgic port town of 110,000 near Sapporo charms visitors with its gas-lit canal, Victorian warehouses, glassworks, music boxes, and reputation as Hokkaido\'s sushi capital.',
+        timezoneFacts: 'Same timezone as all of Japan. 40 minutes from Sapporo.',
+        bestTimeToVisit: 'February for Snow Light Path Festival. Summer pleasant. Year-round for sushi and sweets.',
+        businessHours: 'Sakaimachi shops 9 AM to 6 PM. Sushi restaurants lunch and dinner. Canal lit until 10 PM.',
+        timeDifference: 'Otaru is UTC+9 year-round. When noon in Otaru: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Canal most romantic at night! Sushi Street freshest seafood. LeTAO cheesecake famous. Make your own music box. Snow Light Path magical.',
+        transportation: 'JR from Sapporo (35 min). New Chitose Airport 70km via Sapporo.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Snow Light Path Festival (February).'
+      }
+    }
+  },
+  { slug: 'hakodate', city: 'Hakodate', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 41.77, lng: 140.73, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.25M', metroPopulation: '0.35M', phoneCode: '+81 138', language: 'Japanese',
+      climate: 'Humid continental with cool summers (17-25°C) and cold snowy winters (-5 to 2°C).',
+      attractions: ['Mt. Hakodate Night View', 'Motomachi District', 'Morning Market', 'Goryokaku Fort', 'Red Brick Warehouses', 'Trappistine Convent', 'Yunokawa Onsen', 'Streetcar', 'Kanemori Complex', 'Western Churches'],
+      demographics: 'One of Japan\'s 3 best night views. First international port. Western architecture. Fresh seafood.',
+      seoContent: {
+        intro: 'Hakodate, city of million-dollar views, operates on Japan Standard Time (JST/UTC+9). This southern Hokkaido port of 250,000 offers one of Japan\'s three best night views from Mt. Hakodate, charming Western-influenced historic district, and freshest morning market seafood.',
+        timezoneFacts: 'Same timezone as all of Japan. Gateway to Hokkaido via Shinkansen.',
+        bestTimeToVisit: 'Clear nights for Mt. Hakodate view (winter clearest). Spring cherry blossoms at Goryokaku. Summer pleasant.',
+        businessHours: 'Mt. Hakodate ropeway until 10 PM. Morning Market 5 AM to 2 PM. Goryokaku Tower 8 AM to 7 PM.',
+        timeDifference: 'Hakodate is UTC+9 year-round. When noon in Hakodate: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Mt. Hakodate night view rivals Hong Kong! Goryokaku star-shaped from tower. Morning Market ikura-don essential. Stay Yunokawa onsen.',
+        transportation: 'Hakodate Airport 9km. Hokkaido Shinkansen from Tokyo (4 hr). Ferries to Aomori.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Hakodate Port Festival (August).'
+      }
+    }
+  },
+  { slug: 'furano', city: 'Furano', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 43.34, lng: 142.38, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.02M', metroPopulation: '0.02M', phoneCode: '+81 167', language: 'Japanese',
+      climate: 'Humid continental with warm summers (15-26°C) and very cold winters (-15 to -2°C). Heavy snow.',
+      attractions: ['Farm Tomita Lavender', 'Furano Ski Resort', 'Furano Winery', 'Blue Pond (Biei)', 'Shikisai no Oka', 'Ningle Terrace', 'Patchwork Road', 'Cheese Factory', 'Melon Farms', 'Lavender Fields'],
+      demographics: 'Lavender capital of Japan. Ski resort. Biei rolling hills. Drama filming fame.',
+      seoContent: {
+        intro: 'Furano, the lavender paradise, operates on Japan Standard Time (JST/UTC+9). This central Hokkaido town transforms into purple lavender fields in July, while neighboring Biei offers the ethereal Blue Pond and patchwork farmlands, and winter brings premier skiing.',
+        timezoneFacts: 'Same timezone as all of Japan. Central Hokkaido, 2 hours from Sapporo.',
+        bestTimeToVisit: 'July for lavender peak. June-September for flowers. December-March for skiing. Blue Pond year-round.',
+        businessHours: 'Farm Tomita 8:30 AM to 5 PM (summer). Ski resort 8:30 AM to 8 PM. Blue Pond sunrise to sunset.',
+        timeDifference: 'Furano is UTC+9 year-round. When noon in Furano: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Farm Tomita free, crowded midday. Blue Pond early morning for reflection. Melon and lavender ice cream. Rental car recommended.',
+        transportation: 'JR Furano Line from Sapporo (2 hr). New Chitose Airport 110km. Rental car for Biei.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Lavender Festival (July).'
+      }
+    }
+  },
+  { slug: 'noboribetsu', city: 'Noboribetsu', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 42.41, lng: 141.11, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.05M', metroPopulation: '0.05M', phoneCode: '+81 143', language: 'Japanese',
+      climate: 'Humid continental with cool summers (17-24°C) and cold snowy winters (-8 to 1°C). Volcanic activity.',
+      attractions: ['Jigokudani (Hell Valley)', 'Oyunuma Pond', 'Dai-ichi Takimotokan', 'Date Jidaimura', 'Bear Park', 'Lake Kuttara', 'Onsen Streets', 'Demon Statues', 'Marine Park', 'Orofure Pass'],
+      demographics: 'Hokkaido\'s top onsen resort. 9 types of hot springs. Hell Valley volcanic landscape.',
+      seoContent: {
+        intro: 'Noboribetsu, Hokkaido\'s onsen paradise, operates on Japan Standard Time (JST/UTC+9). This premier hot spring resort features dramatic Hell Valley with steaming vents, and 9 different types of therapeutic hot spring water - the most variety in Japan.',
+        timezoneFacts: 'Same timezone as all of Japan. Southern Hokkaido, 1 hour from Sapporo.',
+        bestTimeToVisit: 'Year-round for onsen. Autumn colors around Hell Valley stunning. Winter snow adds drama.',
+        businessHours: 'Hell Valley trail 24/7. Hotels onsen typically 24 hours. Edo Village 9 AM to 5 PM.',
+        timeDifference: 'Noboribetsu is UTC+9 year-round. When noon in Noboribetsu: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Dai-ichi Takimotokan has 35 baths! Hell Valley walk free. Lake Kuttara Japan\'s second clearest.',
+        transportation: 'JR Noboribetsu Station + bus. New Chitose Airport 60km. Direct bus from Sapporo.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Hell Festival (August).'
+      }
+    }
+  },
+  { slug: 'takamatsu', city: 'Takamatsu', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.34, lng: 134.05, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.42M', metroPopulation: '0.84M', phoneCode: '+81 87', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (3-10°C). Seto Inland Sea climate.',
+      attractions: ['Ritsurin Garden', 'Naoshima Island', 'Sanuki Udon', 'Tamamo Park', 'Yashima', 'Kotohira Shrine', 'Shodoshima Island', 'Megijima Island', 'Great Seto Bridge', 'Setouchi Triennale'],
+      demographics: 'Gateway to Shikoku. Sanuki udon birthplace. Art islands access. Japan\'s finest strolling garden.',
+      seoContent: {
+        intro: 'Takamatsu, udon capital and art island gateway, operates on Japan Standard Time (JST/UTC+9). This Shikoku city of 420,000 is launching point for Naoshima and art islands, home to Japan\'s finest strolling garden Ritsurin, and birthplace of Sanuki udon.',
+        timezoneFacts: 'Same timezone as all of Japan. Northern Shikoku, gateway from Honshu.',
+        bestTimeToVisit: 'Setouchi Triennale years. Spring and autumn for Ritsurin. Year-round for udon.',
+        businessHours: 'Ritsurin Garden 5:30 AM to 7 PM. Udon shops 7 AM to 3 PM (sell out!). Ferries frequent.',
+        timeDifference: 'Takamatsu is UTC+9 year-round. When noon in Takamatsu: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Ritsurin takes 2 hours to explore. Udon shops lunch only - go early! Kotohira 785 steps worth it.',
+        transportation: 'Takamatsu Airport 15km. JR Shikoku hub. Ferries to Naoshima and Kobe.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Setouchi Triennale (every 3 years).'
+      }
+    }
+  },
+  { slug: 'tokushima', city: 'Tokushima', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.07, lng: 134.55, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.25M', metroPopulation: '0.4M', phoneCode: '+81 88', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (3-10°C).',
+      attractions: ['Awa Odori Festival', 'Naruto Whirlpools', 'Iya Valley', 'Mt. Bizan', 'Ryozen-ji Temple', 'Otsuka Museum', 'Kazurabashi Bridge', 'Oboke Gorge', 'Indigo Dyeing', 'Tokushima Ramen'],
+      demographics: 'Awa Odori dance festival. Naruto whirlpools. Shikoku Pilgrimage starts here. Iya Valley remote.',
+      seoContent: {
+        intro: 'Tokushima, land of the Awa Odori, operates on Japan Standard Time (JST/UTC+9). This city hosts Japan\'s largest dance festival (1.3M visitors), offers dramatic Naruto whirlpools, marks the start of the 88-temple pilgrimage, and accesses the remote Iya Valley.',
+        timezoneFacts: 'Same timezone as all of Japan. Eastern Shikoku.',
+        bestTimeToVisit: 'August 12-15 for Awa Odori (book months ahead). Spring/autumn for whirlpools.',
+        businessHours: 'Naruto Whirlpools tide-dependent. Mt. Bizan ropeway 9 AM to 9 PM.',
+        timeDifference: 'Tokushima is UTC+9 year-round. When noon in Tokushima: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Awa Odori "fools dance" - join in! Naruto whirlpools check tide tables. Iya vine bridges thrilling.',
+        transportation: 'Tokushima Airport 9km. JR and bus from Osaka (2.5 hr).',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Awa Odori (August 12-15).'
+      }
+    }
+  },
+  { slug: 'kochi', city: 'Kochi', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 33.56, lng: 133.53, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.32M', metroPopulation: '0.55M', phoneCode: '+81 88', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (4-12°C). High rainfall.',
+      attractions: ['Kochi Castle', 'Sunday Market', 'Katsurahama Beach', 'Hirome Market', 'Makino Garden', 'Sakamoto Ryoma Museum', 'Yosakoi Festival', 'Bonito Tataki', 'Chikurin-ji', 'Shimanto River'],
+      demographics: 'Original castle donjon. Yosakoi birthplace. Sakamoto Ryoma homeland. Bonito capital.',
+      seoContent: {
+        intro: 'Kochi, wild heart of Shikoku, operates on Japan Standard Time (JST/UTC+9). This city preserves one of Japan\'s 12 original castle donjons, hosts the energetic Yosakoi Festival, and was birthplace of Sakamoto Ryoma who modernized Japan.',
+        timezoneFacts: 'Same timezone as all of Japan. Southern Shikoku, Pacific coast.',
+        bestTimeToVisit: 'August for Yosakoi. Spring and autumn pleasant. Sunday Market year-round.',
+        businessHours: 'Kochi Castle 9 AM to 5 PM. Sunday Market 5 AM to 6 PM. Hirome Market 11 AM to 11 PM.',
+        timeDifference: 'Kochi is UTC+9 year-round. When noon in Kochi: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Sunday Market 300+ years old! Katsuo no tataki essential. Castle original donjon - climb for views.',
+        transportation: 'Kochi Airport 11km. JR from Okayama (2.5 hr).',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Yosakoi Festival (August 9-12).'
+      }
+    }
+  },
+  { slug: 'kawaguchiko', city: 'Kawaguchiko', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.50, lng: 138.76, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.03M', metroPopulation: '0.05M', phoneCode: '+81 555', language: 'Japanese',
+      climate: 'Humid continental with warm summers (18-27°C) and cold winters (-5 to 5°C). Mountain climate.',
+      attractions: ['Mt. Fuji Views', 'Lake Kawaguchiko', 'Chureito Pagoda', 'Fuji-Q Highland', 'Oshino Hakkai', 'Fuji Five Lakes', 'Mt. Tenjo Ropeway', 'Oishi Park', 'Kubota Museum', 'Fuji Sengen Shrine'],
+      demographics: 'Best Mt. Fuji views. Fuji Five Lakes area. Classic Chureito Pagoda photo.',
+      seoContent: {
+        intro: 'Kawaguchiko, the Mt. Fuji viewpoint, operates on Japan Standard Time (JST/UTC+9). This lakeside town offers the most accessible and famous views of Mt. Fuji, including the iconic Chureito Pagoda shot, as central hub of the Fuji Five Lakes.',
+        timezoneFacts: 'Same timezone as all of Japan. 2 hours from Tokyo.',
+        bestTimeToVisit: 'Clear winter days for clearest Fuji views. Cherry blossom season. Autumn leaves November.',
+        businessHours: 'Chureito Pagoda 24/7. Ropeway 9 AM to 5 PM. Fuji-Q Highland 10 AM to 5 PM.',
+        timeDifference: 'Kawaguchiko is UTC+9 year-round. When noon in Kawaguchiko: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Fuji visible only 30% of days! Chureito sunrise stunning but crowded. Fuji climbing July-August only.',
+        transportation: 'Fuji Excursion train from Shinjuku (2 hr). Highway bus from Tokyo.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Shibazakura Festival (April-May).'
+      }
+    }
+  },
+  { slug: 'atami', city: 'Atami', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.10, lng: 139.07, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.04M', metroPopulation: '0.04M', phoneCode: '+81 557', language: 'Japanese',
+      climate: 'Humid subtropical with warm summers (24-30°C) and mild winters (5-12°C). Coastal onsen.',
+      attractions: ['Atami Onsen', 'MOA Museum', 'Atami Castle', 'Kinomiya Shrine', 'Sun Beach', 'Year-round Fireworks', 'Plum Blossoms', 'Akao Garden', 'Hatsushima Island', 'Izu Gateway'],
+      demographics: 'Tokyo\'s closest onsen. Year-round fireworks. Honeymoon capital of Showa era. MOA Museum world-class.',
+      seoContent: {
+        intro: 'Atami, Tokyo\'s hot spring escape, operates on Japan Standard Time (JST/UTC+9). This seaside onsen town is just 45 minutes from Tokyo by Shinkansen, offering year-round fireworks, world-class MOA Museum, and gateway to Izu Peninsula.',
+        timezoneFacts: 'Same timezone as all of Japan. Closest major onsen to Tokyo.',
+        bestTimeToVisit: 'Year-round for onsen and fireworks. January-March plum blossoms. Summer for beach.',
+        businessHours: 'MOA Museum 9:30 AM to 4:30 PM, closed Thursday. Ryokan check-in 3 PM.',
+        timeDifference: 'Atami is UTC+9 year-round. When noon in Atami: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Fireworks almost every week! MOA has National Treasures. 2,000-year-old tree at Kinomiya.',
+        transportation: 'Tokaido Shinkansen from Tokyo (45 min). Gateway to Izu Peninsula.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Fireworks year-round. Plum Festival (Jan-Mar).'
+      }
+    }
+  },
+  { slug: 'kusatsu-onsen', city: 'Kusatsu Onsen', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.62, lng: 138.60, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.006M', metroPopulation: '0.006M', phoneCode: '+81 279', language: 'Japanese',
+      climate: 'Highland climate with cool summers (15-25°C) and cold snowy winters (-10 to 2°C). 1,200m elevation.',
+      attractions: ['Yubatake', 'Yumomi Show', 'Sainokawara Bath', 'Free Public Baths', 'Netsunoyu', 'Ski Resorts', 'Yubatake Light-Up', 'Shirane Volcano', 'Onsen Manju', 'Foot Baths'],
+      demographics: 'Japan\'s #1 rated onsen. Yubatake iconic. Acidic healing waters. 19 free public baths.',
+      seoContent: {
+        intro: 'Kusatsu Onsen, Japan\'s top-rated hot spring, operates on Japan Standard Time (JST/UTC+9). This mountain onsen at 1,200m consistently ranks #1 in Japan, famous for its massive Yubatake churning 32,300 liters per minute of healing acidic water.',
+        timezoneFacts: 'Same timezone as all of Japan. Gunma Prefecture highlands.',
+        bestTimeToVisit: 'Year-round for onsen. Winter for snow and skiing. Autumn spectacular.',
+        businessHours: 'Yubatake 24/7 (lit at night). Yumomi shows scheduled. Free baths early to late.',
+        timeDifference: 'Kusatsu is UTC+9 year-round. When noon in Kusatsu: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Yubatake lit at night beautiful! 19 free public baths. Waters too acidic for soap. Try onsen manju.',
+        transportation: 'JR Naganohara-Kusatsuguchi + bus. Direct highway bus from Tokyo (4 hr).',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Yubatake Candle Night (December).'
+      }
+    }
+  },
+  { slug: 'matsumoto', city: 'Matsumoto', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.24, lng: 137.97, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.24M', metroPopulation: '0.43M', phoneCode: '+81 263', language: 'Japanese',
+      climate: 'Humid continental with warm summers (20-30°C) and cold snowy winters (-5 to 5°C). Mountain basin.',
+      attractions: ['Matsumoto Castle', 'Kamikochi', 'Nawate Street', 'Nakamachi Street', 'Japan Ukiyo-e Museum', 'Former Kaichi School', 'Utsukushigahara', 'Wasabi Farms', 'City Museum', 'Hotaka Shrine'],
+      demographics: 'Crow Castle - Japan\'s oldest 5-tier wooden castle. Gateway to Japanese Alps. Kamikochi access.',
+      seoContent: {
+        intro: 'Matsumoto, castle city of the Alps, operates on Japan Standard Time (JST/UTC+9). This city is home to the stunning black "Crow Castle" (Japan\'s oldest 5-tier wooden castle) and serves as gateway to Kamikochi\'s pristine alpine scenery.',
+        timezoneFacts: 'Same timezone as all of Japan. Central Honshu, Japanese Alps gateway.',
+        bestTimeToVisit: 'April-November for Kamikochi. Cherry blossoms at castle April. Autumn colors October.',
+        businessHours: 'Matsumoto Castle 8:30 AM to 5 PM. Kamikochi 4:30 AM to 7 PM. Nawate shops 10 AM to 6 PM.',
+        timeDifference: 'Matsumoto is UTC+9 year-round. When noon in Matsumoto: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Castle moat reflection stunning. Kamikochi requires bus. Daio Wasabi Farm Japan\'s largest. Try soba.',
+        transportation: 'Matsumoto Airport 6km. JR Azusa from Shinjuku (2.5 hr). Bus to Kamikochi.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Tenjin Festival (July).'
+      }
+    }
+  },
+  { slug: 'asahikawa', city: 'Asahikawa', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 43.77, lng: 142.37, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.33M', metroPopulation: '0.35M', phoneCode: '+81 166', language: 'Japanese',
+      climate: 'Humid continental with warm summers (17-27°C) and very cold winters (-12 to -2°C). Japan\'s coldest.',
+      attractions: ['Asahiyama Zoo', 'Winter Festival', 'Otokoyama Sake', 'Ramen Village', 'Snow Crystal Museum', 'Daisetsuzan Gateway', 'Ainu Museum', 'Kamikawa Shrine', 'Tokiwa Park', 'Ice Sculptures'],
+      demographics: 'Second-largest in Hokkaido. Japan\'s coldest city. Famous zoo. Gateway to Daisetsuzan.',
+      seoContent: {
+        intro: 'Asahikawa, Hokkaido\'s frozen heart, operates on Japan Standard Time (JST/UTC+9). Japan\'s coldest city (record -41°C) is home to revolutionary Asahiyama Zoo with underwater tunnels, gateway to Daisetsuzan, and birthplace of soy sauce ramen.',
+        timezoneFacts: 'Same timezone as all of Japan. Central Hokkaido hub.',
+        bestTimeToVisit: 'February for Winter Festival. Summer for zoo and hiking. Year-round for ramen.',
+        businessHours: 'Asahiyama Zoo 9:30 AM to 5 PM. Ramen Village 11 AM to 8 PM.',
+        timeDifference: 'Asahikawa is UTC+9 year-round. When noon in Asahikawa: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Asahiyama Zoo penguin walks in winter! Winter Festival rivals Sapporo. Asahikawa ramen soy sauce base.',
+        transportation: 'Asahikawa Airport 16km. JR from Sapporo (1.5 hr). Gateway to Furano.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Winter Festival (February).'
+      }
+    }
+  },
+  { slug: 'okinawa-islands', city: 'Okinawa Islands', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 26.50, lng: 127.93, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '1.5M', metroPopulation: '1.5M', phoneCode: '+81 98', language: 'Japanese, Okinawan',
+      climate: 'Subtropical with hot summers (27-32°C) and mild winters (15-20°C). Typhoon season May-October.',
+      attractions: ['Kerama Islands', 'Ishigaki Island', 'Miyako Island', 'Churaumi Aquarium', 'Beaches', 'Diving', 'Snorkeling', 'Ryukyu Culture', 'Okinawan Cuisine', 'Island Hopping'],
+      demographics: 'Japan\'s tropical paradise. 160 islands. World-class diving. Unique Ryukyu culture distinct from mainland.',
+      seoContent: {
+        intro: 'Okinawa Islands, Japan\'s tropical paradise, operates on Japan Standard Time (JST/UTC+9). This subtropical archipelago of 160 islands offers world-class diving at Kerama, pristine beaches of Ishigaki and Miyako, and unique Ryukyu culture distinct from mainland Japan.',
+        timezoneFacts: 'Uses JST (UTC+9) despite southwestern location. Closer to Taiwan than Tokyo.',
+        bestTimeToVisit: 'March-May pleasant before rainy season. October-November ideal. Avoid typhoon season.',
+        businessHours: 'Churaumi Aquarium 8:30 AM to 7 PM. Ferry schedules vary by island. Diving operators morning start.',
+        timeDifference: 'Okinawa is UTC+9 year-round. When noon in Okinawa: London 3 AM, NYC 10 PM (previous day), Taipei 11 AM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Kerama Islands 30 min from Naha - best diving. Ishigaki gateway to Yaeyama. Try Okinawan soba and awamori.',
+        transportation: 'Naha Airport hub. Flights to outer islands. Ferries connect islands. Rental car essential.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Naha Giant Tug-of-War (October).'
+      }
+    }
+  },
+  { slug: 'nagano', city: 'Nagano', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.65, lng: 138.18, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.37M', metroPopulation: '0.5M', phoneCode: '+81 26', language: 'Japanese',
+      climate: 'Humid continental with warm summers (20-30°C) and cold snowy winters (-5 to 5°C). Mountain basin.',
+      attractions: ['Zenko-ji Temple', 'Snow Monkeys (Jigokudani)', '1998 Olympics Sites', 'Togakushi Shrine', 'Obuse', 'Nozawa Onsen', 'Hakuba', 'Soba Noodles', 'Matsushiro Castle', 'Apple Orchards'],
+      demographics: '1998 Winter Olympics host. Zenko-ji 1,400 years old. Snow Monkeys famous. Ski resort access.',
+      seoContent: {
+        intro: 'Nagano, 1998 Winter Olympics city, operates on Japan Standard Time (JST/UTC+9). This mountain city of 370,000 is home to the 1,400-year-old Zenko-ji Temple, famous snow monkeys bathing in hot springs, and gateway to premier ski resorts like Hakuba.',
+        timezoneFacts: 'Same timezone as all of Japan. Central Honshu mountains.',
+        bestTimeToVisit: 'Winter for snow monkeys and skiing. Spring cherry blossoms at Zenko-ji. Autumn colors spectacular.',
+        businessHours: 'Zenko-ji 5:30 AM to 4:30 PM. Snow Monkeys 8:30 AM to 5 PM. Ski resorts 8:30 AM to 4:30 PM.',
+        timeDifference: 'Nagano is UTC+9 year-round. When noon in Nagano: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Snow Monkeys best in winter - they bathe to stay warm! Zenko-ji O-Kaidan pitch-black passage. Try oyaki dumplings.',
+        transportation: 'Hokuriku Shinkansen from Tokyo (1.5 hr). Bus to Snow Monkeys (40 min). Gateway to ski resorts.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Gokaicho (once every 7 years at Zenko-ji).'
+      }
+    }
+  },
+  { slug: 'aomori', city: 'Aomori', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 40.82, lng: 140.74, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.28M', metroPopulation: '0.32M', phoneCode: '+81 17', language: 'Japanese',
+      climate: 'Humid continental with warm summers (18-27°C) and cold snowy winters (-4 to 3°C). Heavy snow.',
+      attractions: ['Nebuta Festival', 'Sannai-Maruyama Site', 'Hirosaki Castle', 'Aomori Museum of Art', 'A-Factory', 'Apple Orchards', 'Shirakami Mountains', 'Oirase Gorge', 'Lake Towada', 'Seikan Tunnel'],
+      demographics: 'Nebuta Festival spectacular. Japan\'s apple capital. Jomon UNESCO sites. Northern Honshu gateway.',
+      seoContent: {
+        intro: 'Aomori, land of the Nebuta Festival, operates on Japan Standard Time (JST/UTC+9). This northern Honshu city of 280,000 hosts Japan\'s most spectacular summer festival with illuminated floats, produces most of Japan\'s apples, and accesses the stunning Oirase Gorge.',
+        timezoneFacts: 'Same timezone as all of Japan. Northern tip of Honshu.',
+        bestTimeToVisit: 'August 2-7 for Nebuta Festival (book months ahead). Autumn for Oirase Gorge. Spring for Hirosaki cherry blossoms.',
+        businessHours: 'Sannai-Maruyama 9 AM to 5 PM. A-Factory 9 AM to 8 PM. Museum 9:30 AM to 5 PM.',
+        timeDifference: 'Aomori is UTC+9 year-round. When noon in Aomori: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Nebuta illuminated floats incredible! Try apple products everywhere. Oirase Gorge autumn colors Japan\'s best.',
+        transportation: 'Aomori Airport 9km. Tohoku Shinkansen from Tokyo (3 hr). Seikan Tunnel to Hokkaido.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Aomori Nebuta Festival (August 2-7).'
+      }
+    }
+  },
+  { slug: 'toyama', city: 'Toyama', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.69, lng: 137.21, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.42M', metroPopulation: '0.6M', phoneCode: '+81 76', language: 'Japanese',
+      climate: 'Humid subtropical/continental with warm summers (22-30°C) and cold snowy winters (-1 to 6°C). Heavy snow.',
+      attractions: ['Tateyama Kurobe Alpine Route', 'Snow Walls', 'Toyama Glass Museum', 'Kurobe Gorge', 'Toyama Bay Sushi', 'Firefly Squid', 'Johana', 'Gokayama', 'Unazuki Onsen', 'Kurobe Dam'],
+      demographics: 'Alpine Route gateway. Snow walls 20m high. Toyama Bay rich seafood. Pharmaceutical industry.',
+      seoContent: {
+        intro: 'Toyama, gateway to the Japan Alps, operates on Japan Standard Time (JST/UTC+9). This Sea of Japan city of 420,000 is the starting point for the spectacular Tateyama Kurobe Alpine Route with 20m snow walls, and offers the richest bay seafood in Japan.',
+        timezoneFacts: 'Same timezone as all of Japan. Sea of Japan coast.',
+        bestTimeToVisit: 'April-June for snow walls (peak mid-April to May). Year-round for seafood. Autumn for Kurobe Gorge.',
+        businessHours: 'Alpine Route 7 AM to 5 PM (seasonal). Glass Museum 9 AM to 5 PM. Markets morning.',
+        timeDifference: 'Toyama is UTC+9 year-round. When noon in Toyama: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Snow walls 20m high in April-May! Firefly squid March-June. Toyama Bay sushi freshest. Alpine Route book ahead.',
+        transportation: 'Toyama Airport 7km. Hokuriku Shinkansen from Tokyo (2 hr). Alpine Route from Tateyama.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Snow Wall opening (mid-April).'
+      }
+    }
+  },
+  { slug: 'akita', city: 'Akita', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 39.72, lng: 140.10, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.31M', metroPopulation: '0.32M', phoneCode: '+81 18', language: 'Japanese',
+      climate: 'Humid continental with warm summers (20-28°C) and cold snowy winters (-3 to 3°C). Heavy snow.',
+      attractions: ['Kanto Festival', 'Kakunodate Samurai District', 'Lake Tazawa', 'Nyuto Onsen', 'Akita Dog', 'Oga Peninsula', 'Namahage', 'Kiritanpo Hot Pot', 'Senshu Park', 'Akita Museum of Art'],
+      demographics: 'Kanto lantern festival. Kakunodate samurai town. Akita dogs origin. Namahage demons.',
+      seoContent: {
+        intro: 'Akita, land of festivals and traditions, operates on Japan Standard Time (JST/UTC+9). This northern city of 310,000 hosts the spectacular Kanto Festival with towering lantern poles, accesses beautifully preserved Kakunodate samurai district, and is homeland of the famous Akita dog breed.',
+        timezoneFacts: 'Same timezone as all of Japan. Northern Honshu, Sea of Japan side.',
+        bestTimeToVisit: 'August 3-6 for Kanto Festival. Spring cherry blossoms at Kakunodate. Winter for Namahage.',
+        businessHours: 'Museums 9 AM to 5 PM. Kakunodate samurai houses 9 AM to 5 PM.',
+        timeDifference: 'Akita is UTC+9 year-round. When noon in Akita: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Kanto Festival lantern poles incredible! Kakunodate has Japan\'s best samurai district. Lake Tazawa deepest in Japan. Namahage demon ritual unique.',
+        transportation: 'Akita Airport 20km. Akita Shinkansen from Tokyo (4 hr). Gateway to Kakunodate.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Akita Kanto Festival (August 3-6).'
+      }
+    }
+  },
+  { slug: 'ishigaki', city: 'Ishigaki', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 24.34, lng: 124.16, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.05M', metroPopulation: '0.05M', phoneCode: '+81 980', language: 'Japanese, Yaeyama',
+      climate: 'Subtropical with hot summers (28-32°C) and mild winters (18-22°C). Typhoon season May-October.',
+      attractions: ['Kabira Bay', 'Yaeyama Islands', 'Taketomi Island', 'Iriomote Island', 'Diving', 'Manta Rays', 'Beaches', 'Ishigaki Beef', 'Stargazing', 'Water Buffalo'],
+      demographics: 'Gateway to Yaeyama Islands. Japan\'s best beach at Kabira. Manta diving world-class. Closer to Taiwan than Tokyo.',
+      seoContent: {
+        intro: 'Ishigaki, Japan\'s tropical frontier, operates on Japan Standard Time (JST/UTC+9). This subtropical island of 50,000 is gateway to the pristine Yaeyama Islands, featuring Kabira Bay (voted Japan\'s most beautiful beach), world-class manta ray diving, and the car-free village of Taketomi.',
+        timezoneFacts: 'Uses JST (UTC+9) despite being closer to Taiwan than Tokyo.',
+        bestTimeToVisit: 'March-May and October-November ideal. Avoid typhoon season. Manta rays September-November.',
+        businessHours: 'Ferries to islands 8 AM to 5 PM. Diving operators morning departures.',
+        timeDifference: 'Ishigaki is UTC+9 year-round. When noon in Ishigaki: London 3 AM, NYC 10 PM (previous day), Taipei 11 AM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Kabira Bay glass-bottom boats (no swimming). Taketomi water buffalo carts charming. Iriomote jungle pristine. Ishigaki beef rivals Kobe!',
+        transportation: 'New Ishigaki Airport direct from Tokyo/Osaka. Ferries to Yaeyama Islands from port.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Ishigaki Festivals (summer).'
+      }
+    }
+  },
+  { slug: 'yakushima', city: 'Yakushima', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 30.35, lng: 130.50, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+81 997', language: 'Japanese',
+      climate: 'Subtropical to alpine (varies by elevation). Very high rainfall "35 days per month". Moss forests.',
+      attractions: ['Jomon Sugi (7,000-year-old cedar)', 'Shiratani Unsuikyo', 'Princess Mononoke Forest', 'Yakusugi Land', 'Sea Turtles', 'Waterfalls', 'Hot Springs', 'Hiking', 'UNESCO World Heritage', 'Endemic Wildlife'],
+      demographics: 'UNESCO World Heritage. Ancient cedars 7,000+ years old. Princess Mononoke inspiration. Wettest place in Japan.',
+      seoContent: {
+        intro: 'Yakushima, the mystical forest island, operates on Japan Standard Time (JST/UTC+9). This UNESCO World Heritage island inspired Studio Ghibli\'s Princess Mononoke, featuring ancient Jomon Sugi cedars over 7,000 years old and moss-covered forests receiving Japan\'s highest rainfall.',
+        timezoneFacts: 'Same timezone as all of Japan. South of Kagoshima.',
+        bestTimeToVisit: 'March-May or September-November for hiking. Summer for sea turtles. Rain gear always essential.',
+        businessHours: 'Trails accessible dawn to dusk. Yakusugi Land 8:30 AM to 5 PM. Ferries scheduled.',
+        timeDifference: 'Yakushima is UTC+9 year-round. When noon in Yakushima: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Jomon Sugi trek 10+ hours - start before dawn! Shiratani Unsuikyo is Mononoke forest. Rain is part of experience. Sea turtles nest May-July.',
+        transportation: 'Yakushima Airport from Kagoshima/Osaka. High-speed ferry from Kagoshima (2 hr). No cars needed for main treks.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance). Limited facilities.',
+        publicHolidays: 'Standard Japanese holidays.'
+      }
+    }
+  },
+  
+  // Japan - Final Batch (15 cities to reach 69 total)
+  { slug: 'wakayama', city: 'Wakayama', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.23, lng: 135.17, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.36M', metroPopulation: '0.8M', phoneCode: '+81 73', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (3-10°C). Pacific coast.',
+      attractions: ['Kumano Kodo Pilgrimage', 'Wakayama Castle', 'Kimiidera Temple', 'Kuroshio Market', 'Marina City', 'Kada', 'Adventure World Pandas', 'Shirahama Beach', 'Nachi Falls', 'Koyasan Gateway'],
+      demographics: 'Kumano Kodo UNESCO pilgrimage start. Wakayama ramen famous. Adventure World pandas popular.',
+      seoContent: {
+        intro: 'Wakayama, gateway to the sacred Kumano Kodo, operates on Japan Standard Time (JST/UTC+9). This Pacific coast city of 360,000 is the starting point for the UNESCO Kumano Kodo pilgrimage trails, home to Adventure World\'s beloved pandas, and famous for its rich tonkotsu-shoyu ramen.',
+        timezoneFacts: 'Same timezone as all of Japan. Kii Peninsula, south of Osaka.',
+        bestTimeToVisit: 'Spring and autumn for Kumano Kodo hiking. Summer for Shirahama beaches. Year-round for ramen.',
+        businessHours: 'Wakayama Castle 9 AM to 5 PM. Kuroshio Market 10 AM to 6 PM. Adventure World 10 AM to 5 PM.',
+        timeDifference: 'Wakayama is UTC+9 year-round. When noon in Wakayama: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Kumano Kodo UNESCO pilgrimage - multiple routes. Adventure World pandas adorable. Wakayama ramen rich and unique. Shirahama has white sand beach.',
+        transportation: 'Nankai Airport (limited). JR from Osaka (1 hr). Gateway to Kumano Kodo and Koyasan.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Kumano Fireworks (August).'
+      }
+    }
+  },
+  { slug: 'kurashiki', city: 'Kurashiki', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.59, lng: 133.77, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.48M', metroPopulation: '0.48M', phoneCode: '+81 86', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-33°C) and mild winters (2-10°C). Seto Inland Sea.',
+      attractions: ['Bikan Historical Quarter', 'Ohara Museum of Art', 'Kurashiki Canal', 'White-Walled Warehouses', 'Ivy Square', 'Kojima Jeans Street', 'Washuzan Hill', 'Seto Ohashi Bridge', 'Folk Craft Museum', 'Achi Shrine'],
+      demographics: 'Edo-period merchant quarter preserved. Japan\'s first Western art museum. Kojima denim capital.',
+      seoContent: {
+        intro: 'Kurashiki, the canal town of white warehouses, operates on Japan Standard Time (JST/UTC+9). This beautifully preserved city of 480,000 features the Bikan Historical Quarter with willow-lined canals, white-walled Edo-period warehouses, and Japan\'s first Western art museum, the Ohara.',
+        timezoneFacts: 'Same timezone as all of Japan. Okayama Prefecture, easy from Okayama city.',
+        bestTimeToVisit: 'Spring and autumn most pleasant. Evening canal illumination romantic. Summer hot but lively.',
+        businessHours: 'Ohara Museum 9 AM to 5 PM, closed Monday. Bikan shops 10 AM to 5 PM. Canal illumination until 10 PM.',
+        timeDifference: 'Kurashiki is UTC+9 year-round. When noon in Kurashiki: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Bikan Quarter most photogenic at dusk! Ohara Museum has El Greco and Monet. Kojima is Japan\'s denim capital. Punt boat rides on canal. Combine with Okayama day trip.',
+        transportation: 'JR Kurashiki Station 15-min walk to Bikan. From Okayama (15 min). Okayama Airport nearby.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Kurashiki Spring Festival. Achi Shrine Festival.'
+      }
+    }
+  },
+  { slug: 'kinosaki', city: 'Kinosaki Onsen', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.63, lng: 134.81, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.004M', metroPopulation: '0.08M', phoneCode: '+81 796', language: 'Japanese',
+      climate: 'Humid subtropical with warm summers (22-30°C) and cold snowy winters (-2 to 6°C). Sea of Japan snow.',
+      attractions: ['7 Public Onsen', 'Willow-Lined Streets', 'Onsen-Hopping in Yukata', 'Kinosaki Ropeway', 'Onsenji Temple', 'Genbudo Caves', 'Snow Crab (Winter)', 'Tajima Beef', 'Stork Sanctuary', 'Traditional Ryokan'],
+      demographics: 'Classic onsen town with 7 public baths. Yukata strolling culture. Snow crab in winter.',
+      seoContent: {
+        intro: 'Kinosaki Onsen, the quintessential Japanese hot spring town, operates on Japan Standard Time (JST/UTC+9). This charming town of 4,000 is famous for its 7 public bathhouses connected by willow-lined streets, where visitors stroll in yukata and wooden geta sandals hopping between baths.',
+        timezoneFacts: 'Same timezone as all of Japan. Northern Hyogo, Sea of Japan coast.',
+        bestTimeToVisit: 'November-March for snow crab. Summer for strolling. Year-round for onsen. Winter snowy and atmospheric.',
+        businessHours: '7 public onsen 7 AM to 11 PM (varies). Ryokan check-in 3 PM. Shops until 6 PM.',
+        timeDifference: 'Kinosaki is UTC+9 year-round. When noon in Kinosaki: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Ryokan includes free pass to all 7 onsen! Yukata strolling is the experience. Each bath has different character. Snow crab November-March legendary. Ropeway for mountain views.',
+        transportation: 'JR Kinosaki Onsen Station from Kyoto (2.5 hr) or Osaka (2.5 hr). No airport nearby.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Kinosaki Fireworks (August).'
+      }
+    }
+  },
+  { slug: 'hakuba', city: 'Hakuba', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.70, lng: 137.86, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.009M', metroPopulation: '0.009M', phoneCode: '+81 261', language: 'Japanese',
+      climate: 'Mountain climate with cool summers (15-25°C) and very cold snowy winters (-10 to 0°C). Heavy powder snow.',
+      attractions: ['Hakuba Valley Ski Resorts', 'Happo-One', '1998 Olympic Venues', 'Powder Snow', 'Summer Hiking', 'Mountain Biking', 'Hakuba Goryu', 'Tsugaike', 'Green Season', 'Hot Springs'],
+      demographics: '1998 Winter Olympics venue. Japan\'s best powder snow. 10 interconnected resorts. International ski destination.',
+      seoContent: {
+        intro: 'Hakuba, Japan\'s premier ski destination, operates on Japan Standard Time (JST/UTC+9). This 1998 Winter Olympics host village of 9,000 offers 10 interconnected ski resorts with legendary Japanese powder snow, attracting skiers and snowboarders from around the world.',
+        timezoneFacts: 'Same timezone as all of Japan. Northern Nagano, Japanese Alps.',
+        bestTimeToVisit: 'December-March for skiing (January-February best powder). Summer for hiking and mountain biking.',
+        businessHours: 'Ski lifts 8 AM to 4:30 PM. Night skiing at select resorts. Summer activities 9 AM to 5 PM.',
+        timeDifference: 'Hakuba is UTC+9 year-round. When noon in Hakuba: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Happo-One hosted 1998 Olympics. Powder snow legendary - arrive early after snowfall. Multi-resort passes available. Summer hiking spectacular. Onsen after skiing perfect.',
+        transportation: 'Bus from Nagano Station (1 hr). Direct bus from Tokyo/Shinjuku (5 hr). Nearest airport Matsumoto.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Ski season December-April.'
+      }
+    }
+  },
+  { slug: 'nozawa-onsen', city: 'Nozawa Onsen', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.92, lng: 138.44, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.003M', metroPopulation: '0.003M', phoneCode: '+81 269', language: 'Japanese',
+      climate: 'Mountain climate with cool summers (15-25°C) and very cold snowy winters (-10 to 0°C). Heavy snowfall.',
+      attractions: ['Nozawa Onsen Ski Resort', '13 Free Public Baths', 'Dosojin Fire Festival', 'O-Yu Bathhouse', 'Village Atmosphere', 'Nozawa Sake', 'Oyaki Dumplings', 'Powder Snow', 'Onsen Eggs', 'Traditional Ryokan'],
+      demographics: 'Traditional ski village since 1912. 13 free public baths. Famous fire festival. Authentic Japan atmosphere.',
+      seoContent: {
+        intro: 'Nozawa Onsen, the traditional ski village, operates on Japan Standard Time (JST/UTC+9). This charming village of 3,000 has been a ski destination since 1912, combining excellent powder skiing with 13 free public hot spring baths and one of Japan\'s most spectacular fire festivals.',
+        timezoneFacts: 'Same timezone as all of Japan. Northern Nagano mountains.',
+        bestTimeToVisit: 'December-March for skiing. January 15 for Dosojin Fire Festival. Year-round for onsen.',
+        businessHours: 'Ski lifts 8:30 AM to 4:30 PM. Public baths 5 AM to 11 PM. O-Yu main bathhouse 6 AM to 11 PM.',
+        timeDifference: 'Nozawa Onsen is UTC+9 year-round. When noon in Nozawa: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: '13 public baths all FREE! Dosojin Fire Festival (Jan 15) wild and unmissable. Village walkable. Try oyaki dumplings. O-Yu is main bathhouse. Authentic old Japan feel.',
+        transportation: 'Bus from Iiyama Station (25 min) on Hokuriku Shinkansen. Direct bus from Tokyo available.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Dosojin Fire Festival (January 15) - UNESCO nominated.'
+      }
+    }
+  },
+  { slug: 'tottori', city: 'Tottori', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.50, lng: 134.24, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.19M', metroPopulation: '0.19M', phoneCode: '+81 857', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (25-32°C) and cold winters (1-8°C). Sea of Japan side.',
+      attractions: ['Tottori Sand Dunes', 'Sand Museum', 'Uradome Coast', 'Mt. Daisen', 'Hakuto Shrine', 'Matsuba Crab', 'Camel Rides', 'Paragliding', 'Pear Orchards', 'Jinpukaku Villa'],
+      demographics: 'Japan\'s only large sand dunes. Least populated prefecture. Detective Conan creator hometown.',
+      seoContent: {
+        intro: 'Tottori, land of sand dunes, operates on Japan Standard Time (JST/UTC+9). This city of 190,000 is famous for Japan\'s only large sand dunes - 16km of Sahara-like landscape along the Sea of Japan coast, plus the rotating Sand Museum featuring incredible sand sculptures.',
+        timezoneFacts: 'Same timezone as all of Japan. San\'in coast, Sea of Japan side.',
+        bestTimeToVisit: 'Spring and autumn for comfortable dune walking. Winter for snow on dunes (rare sight). November-March for crab.',
+        businessHours: 'Sand Dunes 24/7 accessible. Sand Museum 9 AM to 5 PM. Chair lift to dunes 9 AM to 5 PM.',
+        timeDifference: 'Tottori is UTC+9 year-round. When noon in Tottori: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Dunes best at sunrise or sunset. Camel rides available! Sand Museum changes theme annually. Matsuba crab winter specialty. Snow on dunes magical but rare.',
+        transportation: 'Tottori Airport (TTJ) 20 min. JR from Osaka (2.5 hr). Limited express from Kyoto.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Sand Festival at Sand Museum.'
+      }
+    }
+  },
+  { slug: 'miyazaki', city: 'Miyazaki', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 31.91, lng: 131.42, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.40M', metroPopulation: '0.55M', phoneCode: '+81 985', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (5-12°C). Warm Pacific coast.',
+      attractions: ['Takachiho Gorge', 'Aoshima Island', 'Udo Shrine', 'Sun Messe Nichinan (Moai)', 'Miyazaki Shrine', 'Seagaia Resort', 'Mango', 'Chicken Nanban', 'Phoenix Trees', 'Baseball Camps'],
+      demographics: 'Mythological birthplace of Japan. Takachiho gorge stunning. Honeymoon destination. Baseball spring training.',
+      seoContent: {
+        intro: 'Miyazaki, mythological birthplace of Japan, operates on Japan Standard Time (JST/UTC+9). This sunny Pacific coast city of 400,000 is considered where Japanese mythology began, featuring the stunning Takachiho Gorge, mysterious Udo Shrine in a sea cave, and replica Easter Island Moai statues.',
+        timezoneFacts: 'Same timezone as all of Japan. Southeast Kyushu, Pacific coast.',
+        bestTimeToVisit: 'Year-round mild climate. Spring and autumn most pleasant. Summer for beaches. Takachiho year-round.',
+        businessHours: 'Takachiho Gorge boats 8:30 AM to 5 PM. Udo Shrine 6 AM to 7 PM. Sun Messe 9:30 AM to 5 PM.',
+        timeDifference: 'Miyazaki is UTC+9 year-round. When noon in Miyazaki: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Takachiho rowboat through gorge magical! Udo Shrine throw lucky balls into rock. Moai replicas with Easter Island permission. Chicken nanban invented here. Mango expensive but incredible.',
+        transportation: 'Miyazaki Airport (KMI) 5km from city. JR from Fukuoka (4 hr). Takachiho 1.5 hr by bus.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Takachiho Kagura (traditional dance) year-round.'
+      }
+    }
+  },
+  { slug: 'onomichi', city: 'Onomichi', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.41, lng: 133.21, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.13M', metroPopulation: '0.13M', phoneCode: '+81 848', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (3-10°C). Seto Inland Sea.',
+      attractions: ['Shimanami Kaido', 'Temple Walk', 'Senkoji Park', 'Ropeway', 'Cat Alley', 'Onomichi Ramen', 'Literature Alley', 'Cycling', '25 Temples', 'Setoda (Ikuchijima)'],
+      demographics: 'Shimanami Kaido cycling start. Hillside temple town. Cats everywhere. Film setting.',
+      seoContent: {
+        intro: 'Onomichi, the hillside temple town, operates on Japan Standard Time (JST/UTC+9). This atmospheric city of 130,000 is the starting point of the famous Shimanami Kaido cycling route to Shikoku, featuring narrow slopes dotted with 25 temples, countless cats, and nostalgic alleyways.',
+        timezoneFacts: 'Same timezone as all of Japan. Hiroshima Prefecture, Seto Inland Sea.',
+        bestTimeToVisit: 'Spring cherry blossoms at temples. Autumn pleasant for cycling. Year-round for temple walk.',
+        businessHours: 'Senkoji Ropeway 9 AM to 5:15 PM. Temples dawn to dusk. Ramen shops 11 AM to 3 PM typically.',
+        timeDifference: 'Onomichi is UTC+9 year-round. When noon in Onomichi: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Shimanami Kaido 70km cycling to Imabari - rent bikes here! Temple Walk climbs hillside. Cat Alley for cat lovers. Onomichi ramen has flat noodles. Many films shot here.',
+        transportation: 'JR Onomichi Station on San\'yo Line. From Hiroshima (1.5 hr). Shimanami Kaido bike rental at station.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Onomichi Minato Festival.'
+      }
+    }
+  },
+  { slug: 'izumo', city: 'Izumo', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.37, lng: 132.75, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.17M', metroPopulation: '0.17M', phoneCode: '+81 853', language: 'Japanese',
+      climate: 'Humid subtropical with warm summers (24-30°C) and cool winters (2-8°C). Sea of Japan side.',
+      attractions: ['Izumo Taisha', 'Hinomisaki Shrine', 'Hinomisaki Lighthouse', 'Izumo Soba', 'Shimane Museum of Ancient Izumo', 'En-Musubi (Matchmaking)', 'Inasa Beach', 'Kamiari Festival', 'Warigo Soba', 'Old Taisha Station'],
+      demographics: 'Izumo Taisha - one of Japan\'s most important shrines. God of marriage. October all gods gather here.',
+      seoContent: {
+        intro: 'Izumo, where the gods gather, operates on Japan Standard Time (JST/UTC+9). This city of 170,000 is home to Izumo Taisha, one of Japan\'s most ancient and important Shinto shrines, where all 8 million gods are said to gather in October (Kamiarizuki - "month with gods").',
+        timezoneFacts: 'Same timezone as all of Japan. Shimane Prefecture, San\'in coast.',
+        bestTimeToVisit: 'October (lunar calendar) for Kamiari Festival when gods gather. Year-round for shrine. Avoid New Year crowds.',
+        businessHours: 'Izumo Taisha 6 AM to 8 PM. Museum 9 AM to 5 PM. Soba shops 11 AM to 3 PM.',
+        timeDifference: 'Izumo is UTC+9 year-round. When noon in Izumo: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Izumo Taisha for en-musubi (marriage matchmaking)! Clap 4 times not 2 here. October gods from all Japan gather. Izumo soba served in 3 stacked bowls (warigo). Shimenawa rope massive.',
+        transportation: 'Izumo Airport (IZO) 25 min. JR from Matsue (30 min). Limited express from Osaka (4 hr).',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Kamiari Festival (October lunar) - most important.'
+      }
+    }
+  },
+  { slug: 'karuizawa', city: 'Karuizawa', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.35, lng: 138.60, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.02M', metroPopulation: '0.02M', phoneCode: '+81 267', language: 'Japanese',
+      climate: 'Highland climate with cool summers (18-26°C) and cold winters (-8 to 3°C). 1,000m elevation.',
+      attractions: ['Karuizawa Prince Shopping Plaza', 'Shiraito Falls', 'Kyu-Karuizawa Ginza', 'Stone Church', 'Wild Bird Sanctuary', 'Cycling', 'John Lennon Trail', 'Mt. Asama', 'Art Museums', 'Imperial Villa'],
+      demographics: 'Elite summer resort since Meiji era. Emperor meets commoner love story. John Lennon\'s favorite. Outlet shopping.',
+      seoContent: {
+        intro: 'Karuizawa, the elite mountain resort, operates on Japan Standard Time (JST/UTC+9). This highland retreat of 20,000 at 1,000m has been Japan\'s premier summer escape since the Meiji era, where Emperor Akihito met his wife, John Lennon spent summers, and today offers outlet shopping and nature.',
+        timezoneFacts: 'Same timezone as all of Japan. Nagano Prefecture, 1 hour from Tokyo by Shinkansen.',
+        bestTimeToVisit: 'Summer for cool escape from Tokyo heat. Autumn colors beautiful. Winter for skiing. Spring fresh.',
+        businessHours: 'Prince Shopping Plaza 10 AM to 8 PM. Kyu-Karuizawa shops 10 AM to 6 PM. Shiraito Falls daylight.',
+        timeDifference: 'Karuizawa is UTC+9 year-round. When noon in Karuizawa: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Prince Shopping Plaza Japan\'s largest outlet. John Lennon loved Mampei Hotel cafe. Cycling around town popular. Stone Church weddings famous. Summer 10°C cooler than Tokyo.',
+        transportation: 'Hokuriku Shinkansen from Tokyo (1 hr). Karuizawa Station directly at outlet mall.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Summer peak season July-August.'
+      }
+    }
+  },
+  { slug: 'gifu', city: 'Gifu', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.42, lng: 136.76, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.40M', metroPopulation: '0.82M', phoneCode: '+81 58', language: 'Japanese',
+      climate: 'Humid subtropical with hot humid summers (26-34°C) and cold winters (0-8°C). Basin heat.',
+      attractions: ['Cormorant Fishing (Ukai)', 'Gifu Castle', 'Nagaragawa River', 'Mt. Kinka Ropeway', 'Great Buddha', 'Yanagase Shopping', 'Paper Umbrella Making', 'Nobunaga History', 'Shirakawa-go Gateway', 'Gujo Hachiman'],
+      demographics: 'Cormorant fishing 1,300 years old. Oda Nobunaga\'s base. Traditional crafts. Gateway to Shirakawa-go.',
+      seoContent: {
+        intro: 'Gifu, city of cormorant fishing, operates on Japan Standard Time (JST/UTC+9). This city of 400,000 has practiced ukai (cormorant fishing) on the Nagaragawa River for 1,300 years, was Oda Nobunaga\'s stronghold, and serves as gateway to UNESCO-listed Shirakawa-go.',
+        timezoneFacts: 'Same timezone as all of Japan. Central Honshu, between Nagoya and Shirakawa-go.',
+        bestTimeToVisit: 'May 11 - October 15 for cormorant fishing. Cherry blossoms at castle April. Year-round for crafts.',
+        businessHours: 'Cormorant fishing 7:45 PM start (summer). Gifu Castle 9:30 AM to 5:30 PM. Ropeway 9 AM to 6 PM.',
+        timeDifference: 'Gifu is UTC+9 year-round. When noon in Gifu: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Cormorant fishing boat tours magical! Oda Nobunaga unified Japan from here. Paper umbrella and lantern crafts. Gifu Great Buddha wood construction. Gujo Hachiman nearby for Obon dance.',
+        transportation: 'JR Gifu Station from Nagoya (20 min). Chubu Centrair Airport 1 hr. Gateway to Shirakawa-go.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Cormorant fishing season May-October.'
+      }
+    }
+  },
+  { slug: 'yamaguchi', city: 'Yamaguchi', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.19, lng: 131.47, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.19M', metroPopulation: '0.5M', phoneCode: '+81 83', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (2-10°C). Seto Inland Sea side.',
+      attractions: ['Rurikoji Temple (5-story Pagoda)', 'Akiyoshido Cave', 'Akiyoshidai Karst', 'Kozan Park', 'Xavier Memorial Church', 'SL Yamaguchi Steam Train', 'Motonosumi Shrine', 'Tsunoshima Bridge', 'Iwakuni Kintaikyo', 'Fugu (Shimonoseki)'],
+      demographics: 'Western Honshu Kyoto. Francis Xavier landed here. Meiji Restoration leaders from here. Dramatic landscapes.',
+      seoContent: {
+        intro: 'Yamaguchi, the Western Kyoto, operates on Japan Standard Time (JST/UTC+9). This city of 190,000 was called "Western Kyoto" for its cultural refinement, features Japan\'s largest limestone cave, and produced many leaders of the Meiji Restoration that modernized Japan.',
+        timezoneFacts: 'Same timezone as all of Japan. Western tip of Honshu.',
+        bestTimeToVisit: 'Spring and autumn for comfortable sightseeing. Year-round for cave (constant temperature).',
+        businessHours: 'Rurikoji dawn to dusk. Akiyoshido Cave 8:30 AM to 4:30 PM. SL Yamaguchi weekends.',
+        timeDifference: 'Yamaguchi is UTC+9 year-round. When noon in Yamaguchi: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Rurikoji 5-story pagoda rivals Kyoto. Akiyoshido Japan\'s largest cave - 1km walk inside. Motonosumi 123 red torii by sea. SL steam train scenic. Shimonoseki for fugu.',
+        transportation: 'JR Yamaguchi Station. Yamaguchi Ube Airport 30 min. San\'yo Shinkansen stops at Shin-Yamaguchi.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Yamaguchi Gion Festival (July).'
+      }
+    }
+  },
+  { slug: 'sasebo', city: 'Sasebo', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 33.18, lng: 129.72, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.24M', metroPopulation: '0.24M', phoneCode: '+81 956', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (4-10°C). Coastal.',
+      attractions: ['Kujukushima (99 Islands)', 'Huis Ten Bosch', 'Sasebo Burger', 'Pearl Sea Resort', 'Saikaibashi Bridge', 'Tenkaiho Observatory', 'US Naval Base', 'Lemon Steak', 'Sunset Cruises', 'Island Hopping'],
+      demographics: 'Kujukushima 208 islands spectacular. Huis Ten Bosch Dutch theme park. Naval port. American influence.',
+      seoContent: {
+        intro: 'Sasebo, city of 99 islands, operates on Japan Standard Time (JST/UTC+9). This naval port city of 240,000 is gateway to the stunning Kujukushima archipelago (actually 208 islands), home to the Dutch-themed Huis Ten Bosch park, and famous for its American-influenced Sasebo Burger.',
+        timezoneFacts: 'Same timezone as all of Japan. Northern Nagasaki Prefecture.',
+        bestTimeToVisit: 'Year-round for Kujukushima. Spring and autumn most pleasant. Huis Ten Bosch illumination winter.',
+        businessHours: 'Kujukushima cruises 9 AM to 5 PM. Huis Ten Bosch 9 AM to 10 PM. Burger shops 11 AM to 8 PM.',
+        timeDifference: 'Sasebo is UTC+9 year-round. When noon in Sasebo: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Kujukushima sunset cruise breathtaking! Sasebo Burger bigger than regular - American navy influence. Huis Ten Bosch illumination famous. Tenkaiho best viewpoint for islands.',
+        transportation: 'JR Sasebo Station from Hakata (2 hr). Nagasaki Airport 1.5 hr. Bus to Huis Ten Bosch.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Huis Ten Bosch events year-round.'
+      }
+    }
+  },
+  { slug: 'utsunomiya', city: 'Utsunomiya', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.57, lng: 139.88, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.52M', metroPopulation: '0.9M', phoneCode: '+81 28', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (25-32°C) and cold winters (-2 to 8°C).',
+      attractions: ['Gyoza (Dumplings)', 'Oya History Museum', 'Futaarayama Shrine', 'Utsunomiya Castle Ruins', 'Gyoza Street', 'Jazz Bars', 'Cycling', 'Nikko Gateway', 'Hachimanyama Park', 'Local Sake'],
+      demographics: 'Japan\'s Gyoza capital. Underground Oya stone quarry cathedral. Gateway to Nikko. Jazz culture.',
+      seoContent: {
+        intro: 'Utsunomiya, the Gyoza capital of Japan, operates on Japan Standard Time (JST/UTC+9). This city of 520,000 consumes more gyoza dumplings per capita than anywhere in Japan, features the cathedral-like underground Oya stone quarry, and serves as the gateway to UNESCO-listed Nikko.',
+        timezoneFacts: 'Same timezone as all of Japan. Tochigi Prefecture, 50 min from Tokyo.',
+        bestTimeToVisit: 'Year-round for gyoza. Spring and autumn pleasant. Gateway to Nikko autumn colors.',
+        businessHours: 'Gyoza shops 11 AM to 9 PM. Oya History Museum 9 AM to 5 PM. Station area shops until 8 PM.',
+        timeDifference: 'Utsunomiya is UTC+9 year-round. When noon in Utsunomiya: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Gyoza pilgrimage - try multiple shops! Oya quarry underground cathedral stunning. Station has gyoza street. Gateway to Nikko (40 min). Jazz bars famous.',
+        transportation: 'Tohoku Shinkansen from Tokyo (50 min). JR to Nikko (40 min). No major airport.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Gyoza Festival (November).'
+      }
+    }
+  },
+  { slug: 'mito', city: 'Mito', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.37, lng: 140.47, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.27M', metroPopulation: '0.65M', phoneCode: '+81 29', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (25-32°C) and cold winters (-1 to 8°C).',
+      attractions: ['Kairakuen Garden', 'Plum Blossoms', 'Senba Lake', 'Tokugawa Museum', 'Natto', 'Mito Komon Statue', 'Kobuntei', 'Art Tower Mito', 'Oarai Beach', 'Hitachi Seaside Park'],
+      demographics: 'Kairakuen - one of Japan\'s 3 great gardens. Plum blossom capital. Natto fermented soybean origin.',
+      seoContent: {
+        intro: 'Mito, city of plum blossoms, operates on Japan Standard Time (JST/UTC+9). This city of 270,000 is home to Kairakuen, one of Japan\'s three great gardens famous for 3,000 plum trees, and is the birthplace of natto (fermented soybeans) - Japan\'s most divisive food.',
+        timezoneFacts: 'Same timezone as all of Japan. Ibaraki Prefecture, 1 hour from Tokyo.',
+        bestTimeToVisit: 'Late February-March for plum blossom festival at Kairakuen. Spring through autumn pleasant.',
+        businessHours: 'Kairakuen 6 AM to 7 PM (varies). Tokugawa Museum 9:30 AM to 5 PM. Art Tower Mito 10 AM to 6 PM.',
+        timeDifference: 'Mito is UTC+9 year-round. When noon in Mito: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Kairakuen plum festival late Feb-early Mar spectacular! Natto originated here - try it. Hitachi Seaside Park nemophila (April-May) incredible. Art Tower modern architecture.',
+        transportation: 'JR Joban Line from Tokyo (1 hr). Limited express available. Ibaraki Airport 40 min.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Mito Plum Festival (Feb-Mar).'
+      }
     }
   },
   
@@ -6487,6 +8805,3345 @@ export const cities: City[] = [
       demographics: 'Largest city in Andhra Pradesh, major port and industrial hub. Known as "City of Destiny" and "Jewel of the East Coast".'
     }
   },
+  
+  // India - New Cities Batch 1 (20 cities with full premium content)
+  { slug: 'srinagar', city: 'Srinagar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 34.08, lng: 74.80, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.3M', metroPopulation: '1.5M', phoneCode: '+91 194', language: 'Kashmiri, Urdu, Hindi, English',
+      climate: 'Humid subtropical highland with warm summers (18-31°C) and cold snowy winters (-2 to 8°C). Four distinct seasons.',
+      attractions: ['Dal Lake', 'Mughal Gardens', 'Shankaracharya Temple', 'Hazratbal Shrine', 'Nishat Bagh', 'Shalimar Bagh', 'Pari Mahal', 'Chashme Shahi', 'Jamia Masjid', 'Floating Vegetable Market'],
+      demographics: 'Summer capital of Jammu & Kashmir. Venice of the East with famous houseboats. Center of Kashmiri handicrafts including Pashmina shawls and carpets.',
+      seoContent: {
+        intro: 'Srinagar, the Venice of the East, operates on India Standard Time (IST/UTC+5:30). This lake city of 1.3 million is the summer capital of Jammu & Kashmir, famous for Dal Lake houseboats, Mughal gardens, and exquisite Kashmiri handicrafts.',
+        timezoneFacts: 'Same timezone as all of India. Located in far north, sunrise/sunset times vary significantly from southern India.',
+        bestTimeToVisit: 'April-October for pleasant weather. March-April for tulip festival. December-February for snow but very cold.',
+        businessHours: 'Shops 10 AM to 8 PM. Government offices 10 AM to 4 PM. Friday prayers close many shops midday.',
+        timeDifference: 'Srinagar is UTC+5:30 year-round. When noon in Srinagar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Houseboat stay on Dal Lake is must-do. Shikara rides at sunset magical. Bargain for Pashmina - check quality. Carry warm clothes even in summer evenings.',
+        transportation: 'Sheikh ul-Alam International Airport (SXR). No railway - nearest station Jammu (290km). Local transport by auto and taxi.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Eid ul-Fitr, Eid ul-Adha, Diwali. Many local holidays.'
+      }
+    }
+  },
+  { slug: 'shimla', city: 'Shimla', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 31.10, lng: 77.17, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.3M', phoneCode: '+91 177', language: 'Hindi, Pahari, English',
+      climate: 'Subtropical highland with warm summers (15-25°C) and cold snowy winters (-4 to 10°C). Monsoon July-September.',
+      attractions: ['The Ridge', 'Mall Road', 'Jakhoo Temple', 'Christ Church', 'Viceregal Lodge', 'Kufri', 'Chadwick Falls', 'Annandale', 'Toy Train', 'Summer Hill'],
+      demographics: 'Capital of Himachal Pradesh. Former summer capital of British India. Queen of Hill Stations with colonial architecture.',
+      seoContent: {
+        intro: 'Shimla, Queen of Hill Stations, operates on India Standard Time (IST/UTC+5:30). This charming hill town of 200,000 was the summer capital of British India and retains its colonial character with Tudor architecture, toy trains, and cool mountain air.',
+        timezoneFacts: 'Same timezone as all of India. Hill station - temperatures much cooler than plains.',
+        bestTimeToVisit: 'March-June for pleasant weather. December-February for snow. Avoid monsoon (July-September).',
+        businessHours: 'Shops on Mall Road 9 AM to 9 PM. Government offices 10 AM to 5 PM.',
+        timeDifference: 'Shimla is UTC+5:30 year-round. When noon in Shimla: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Take the UNESCO Toy Train from Kalka. Walk The Ridge at sunset. Mall Road is pedestrian-only. Book hotels ahead in peak season.',
+        transportation: 'Shimla Airport (SLV) limited flights. Toy Train from Kalka (96km, 5-6 hours). Buses from Delhi (8-10 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Dussehra (big in Kullu), Diwali, Christmas (colonial heritage).'
+      }
+    }
+  },
+  { slug: 'manali', city: 'Manali', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 32.24, lng: 77.19, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.1M', phoneCode: '+91 1902', language: 'Hindi, Pahari, English',
+      climate: 'Humid subtropical highland with cool summers (10-25°C) and cold snowy winters (-7 to 10°C). Heavy snowfall December-February.',
+      attractions: ['Rohtang Pass', 'Solang Valley', 'Hadimba Temple', 'Old Manali', 'Manu Temple', 'Vashisht Hot Springs', 'Jogini Waterfall', 'Atal Tunnel', 'Beas River', 'Mall Road'],
+      demographics: 'Popular Himalayan resort town in Kullu Valley. Adventure sports capital of India. Gateway to Leh-Ladakh.',
+      seoContent: {
+        intro: 'Manali, India\'s adventure capital, operates on India Standard Time (IST/UTC+5:30). This Himalayan resort town of 30,000 in Kullu Valley is the hub for trekking, skiing, paragliding, and the gateway to Leh-Ladakh via the world\'s longest highway tunnel.',
+        timezoneFacts: 'Same timezone as all of India. High altitude (2,050m) means cooler temperatures year-round.',
+        bestTimeToVisit: 'October-February for snow activities. March-June for trekking. Avoid monsoon (July-September).',
+        businessHours: 'Tourist shops 9 AM to 10 PM. Adventure activity bookings start early.',
+        timeDifference: 'Manali is UTC+5:30 year-round. When noon in Manali: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Atal Tunnel to Lahaul open year-round now. Rohtang Pass needs permit. Book adventure activities through registered operators. Old Manali has best cafes.',
+        transportation: 'Nearest airport Bhuntar (KUU) 50km. Buses from Delhi (12-14 hours). Atal Tunnel connects to Lahaul-Spiti.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Mountain rescue available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Dussehra (Kullu Dussehra is famous), Diwali.'
+      }
+    }
+  },
+  { slug: 'leh', city: 'Leh', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 34.16, lng: 77.58, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.05M', phoneCode: '+91 1982', language: 'Ladakhi, Hindi, English',
+      climate: 'Cold desert with warm summers (15-30°C) and extremely cold winters (-20 to -5°C). Very dry, high altitude (3,500m).',
+      attractions: ['Leh Palace', 'Shanti Stupa', 'Pangong Lake', 'Nubra Valley', 'Khardung La', 'Magnetic Hill', 'Hemis Monastery', 'Thiksey Monastery', 'Zanskar Valley', 'Confluence of Indus and Zanskar'],
+      demographics: 'Capital of Ladakh Union Territory. Buddhist heritage with ancient monasteries. High-altitude desert landscape.',
+      seoContent: {
+        intro: 'Leh, the land of high passes, operates on India Standard Time (IST/UTC+5:30). This high-altitude town of 30,000 at 3,500m is the capital of Ladakh, featuring ancient Buddhist monasteries, stunning Himalayan landscapes, and the famous Pangong Lake.',
+        timezoneFacts: 'Same timezone as all of India despite being far north. Sun rises early due to location.',
+        bestTimeToVisit: 'June-September when all passes open. May-June for Hemis Festival. Roads closed October-May.',
+        businessHours: 'Shops 9 AM to 8 PM. Tourist season only June-September for most businesses.',
+        timeDifference: 'Leh is UTC+5:30 year-round. When noon in Leh: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Acclimatize 2-3 days before activities - altitude sickness serious! Inner Line Permit needed for some areas. Carry cash - limited ATMs.',
+        transportation: 'Kushok Bakula Rimpochee Airport (IXL). Manali-Leh Highway (474km, 2 days). Srinagar-Leh Highway (434km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Army help available in emergencies.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar (Tibetan New Year), Hemis Festival (June-July).'
+      }
+    }
+  },
+  { slug: 'rishikesh', city: 'Rishikesh', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.09, lng: 78.27, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.1M', metroPopulation: '0.15M', phoneCode: '+91 135', language: 'Hindi, Garhwali, English',
+      climate: 'Humid subtropical with hot summers (25-40°C) and cool winters (7-20°C). Monsoon July-September brings heavy rain.',
+      attractions: ['Laxman Jhula', 'Ram Jhula', 'Beatles Ashram', 'Triveni Ghat', 'Parmarth Niketan', 'Ganga Aarti', 'Neelkanth Mahadev', 'Rafting on Ganges', 'Bungee Jumping', 'Rajaji National Park'],
+      demographics: 'Yoga Capital of the World. Gateway to Char Dham pilgrimage. Where Beatles stayed in 1968. Adventure sports hub.',
+      seoContent: {
+        intro: 'Rishikesh, Yoga Capital of the World, operates on India Standard Time (IST/UTC+5:30). This sacred town of 100,000 on the Ganges is where the Beatles learned meditation, and today draws millions for yoga, spirituality, and white-water rafting.',
+        timezoneFacts: 'Same timezone as all of India. Ganges flows through here from Himalayas.',
+        bestTimeToVisit: 'September-November and February-May. International Yoga Festival in March. Avoid monsoon (July-August) for rafting.',
+        businessHours: 'Ashrams start 5-6 AM. Cafes until 10 PM. Ganga Aarti at sunset (6-7 PM).',
+        timeDifference: 'Rishikesh is UTC+5:30 year-round. When noon in Rishikesh: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Vegetarian and alcohol-free zone. Book yoga courses in advance. Rafting best September-November. Beatles Ashram now open to public.',
+        transportation: 'Jolly Grant Airport (DED) 20km. Trains to Haridwar (25km). Buses from Delhi (6-7 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Maha Shivaratri (huge here), Diwali, International Yoga Day (June 21).'
+      }
+    }
+  },
+  { slug: 'haridwar', city: 'Haridwar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 29.95, lng: 78.16, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.3M', metroPopulation: '0.4M', phoneCode: '+91 1334', language: 'Hindi, Garhwali, English',
+      climate: 'Humid subtropical with hot summers (25-42°C) and cool winters (5-20°C). Monsoon July-September.',
+      attractions: ['Har Ki Pauri', 'Ganga Aarti', 'Mansa Devi Temple', 'Chandi Devi Temple', 'Maya Devi Temple', 'Rajaji National Park', 'Shantikunj', 'Bharat Mata Temple', 'Daksha Mahadev', 'Cable Car'],
+      demographics: 'Gateway to Char Dham pilgrimage (Kedarnath, Badrinath, Gangotri, Yamunotri). One of seven holiest Hindu cities. Kumbh Mela site.',
+      seoContent: {
+        intro: 'Haridwar, Gateway to the Gods, operates on India Standard Time (IST/UTC+5:30). This ancient city of 300,000 is where the Ganges enters the plains, hosting the spectacular Ganga Aarti and serving as the gateway to Char Dham pilgrimage.',
+        timezoneFacts: 'Same timezone as all of India. Sacred geography - where Ganges leaves Himalayas.',
+        bestTimeToVisit: 'October-March for pleasant weather. Kumbh Mela (every 12 years) and Ardh Kumbh (every 6 years) draw millions.',
+        businessHours: 'Temples 4 AM onwards. Ganga Aarti at Har Ki Pauri 6-7 PM. Shops 8 AM to 9 PM.',
+        timeDifference: 'Haridwar is UTC+5:30 year-round. When noon in Haridwar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Ganga Aarti is unmissable - arrive early for good spot. Vegetarian and alcohol-free city. Dress modestly. Don\'t miss cable car to Mansa Devi.',
+        transportation: 'Jolly Grant Airport (DED) 35km. Haridwar Junction well-connected by train. Buses from Delhi (5-6 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Maha Shivaratri, Ganga Dussehra, Diwali, Kumbh Mela (special years).'
+      }
+    }
+  },
+  { slug: 'udaipur', city: 'Udaipur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 24.58, lng: 73.68, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.5M', metroPopulation: '0.6M', phoneCode: '+91 294', language: 'Hindi, Mewari, English',
+      climate: 'Semi-arid with hot summers (30-42°C), monsoon (July-September), and mild winters (10-28°C). Lakes fill in monsoon.',
+      attractions: ['City Palace', 'Lake Pichola', 'Jag Mandir', 'Lake Palace', 'Jagdish Temple', 'Saheliyon Ki Bari', 'Fateh Sagar Lake', 'Monsoon Palace', 'Bagore Ki Haveli', 'Vintage Car Museum'],
+      demographics: 'Venice of the East. Former capital of Mewar kingdom. Most romantic city in India. James Bond Octopussy filmed here.',
+      seoContent: {
+        intro: 'Udaipur, City of Lakes, operates on India Standard Time (IST/UTC+5:30). This romantic city of 500,000 is the jewel of Rajasthan, with shimmering lakes, the magnificent City Palace, and the floating Lake Palace that appeared in James Bond.',
+        timezoneFacts: 'Same timezone as all of India. Desert state but lakes create microclimate.',
+        bestTimeToVisit: 'September-March for pleasant weather. Monsoon (July-August) fills lakes beautifully. Mewar Festival (March-April).',
+        businessHours: 'Shops 10 AM to 8 PM. City Palace 9:30 AM to 5:30 PM. Lake cruises until sunset.',
+        timeDifference: 'Udaipur is UTC+5:30 year-round. When noon in Udaipur: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Sunset boat ride on Lake Pichola essential. Rooftop restaurants with palace views. Bagore Ki Haveli cultural show nightly. Book heritage hotels early.',
+        transportation: 'Maharana Pratap Airport (UDR) 22km. Train connections to major cities. Buses from Jaipur (6-7 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Holi, Diwali, Mewar Festival, Gangaur Festival.'
+      }
+    }
+  },
+  { slug: 'jaisalmer', city: 'Jaisalmer', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.92, lng: 70.90, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.08M', metroPopulation: '0.1M', phoneCode: '+91 2992', language: 'Hindi, Marwari, English',
+      climate: 'Hot desert with extreme summers (35-48°C) and cool winters (5-24°C). Very little rainfall. Large day-night temperature variation.',
+      attractions: ['Jaisalmer Fort', 'Sam Sand Dunes', 'Patwon Ki Haveli', 'Gadisar Lake', 'Desert National Park', 'Kuldhara Ghost Village', 'Bada Bagh', 'Salim Singh Ki Haveli', 'Desert Safari', 'Longewala War Memorial'],
+      demographics: 'Golden City rising from Thar Desert. One of world\'s few living forts with residents inside. Silk Road trading post.',
+      seoContent: {
+        intro: 'Jaisalmer, the Golden City, operates on India Standard Time (IST/UTC+5:30). This desert jewel of 80,000 rises like a mirage from the Thar Desert, its golden sandstone fort one of the few living forts in the world with people still residing within its walls.',
+        timezoneFacts: 'Same timezone as all of India. Desert location means extreme temperature variations.',
+        bestTimeToVisit: 'October-March for comfortable weather. Desert Festival (February) spectacular. Avoid April-August extreme heat.',
+        businessHours: 'Fort shops 9 AM to 8 PM. Desert safaris depart 3-4 PM for sunset.',
+        timeDifference: 'Jaisalmer is UTC+5:30 year-round. When noon in Jaisalmer: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Desert safari with overnight camping unmissable. Stay inside the fort for unique experience. Sunset from fort ramparts magical. Carry water always.',
+        transportation: 'Jaisalmer Airport (JSA) limited flights. Train from Jodhpur (5-6 hours) and Delhi (18 hours). Desert road trips popular.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Holi, Diwali, Desert Festival (February).'
+      }
+    }
+  },
+  { slug: 'pushkar', city: 'Pushkar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.49, lng: 74.55, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.03M', phoneCode: '+91 145', language: 'Hindi, Marwari, English',
+      climate: 'Semi-arid with hot summers (32-42°C) and cool winters (8-24°C). Monsoon July-September brings limited rain.',
+      attractions: ['Pushkar Lake', 'Brahma Temple', 'Savitri Temple', 'Pushkar Camel Fair', 'Varaha Temple', 'Apteshwar Temple', 'Man Mahal', 'Rose Garden', 'Sunset Point', 'Pushkar Bazaar'],
+      demographics: 'One of oldest cities in India. Only Brahma temple in world. Famous camel fair draws 200,000+ visitors.',
+      seoContent: {
+        intro: 'Pushkar, the Rose Garden of Rajasthan, operates on India Standard Time (IST/UTC+5:30). This ancient pilgrimage town of 20,000 has the world\'s only Brahma temple and hosts the famous Pushkar Camel Fair, one of the world\'s largest livestock fairs.',
+        timezoneFacts: 'Same timezone as all of India. Sacred lake creates unique microclimate.',
+        bestTimeToVisit: 'October-March for pleasant weather. Pushkar Camel Fair (November) is unmissable but crowded.',
+        businessHours: 'Temples 5 AM onwards. Bazaars 9 AM to 9 PM. Camel Fair all day during festival.',
+        timeDifference: 'Pushkar is UTC+5:30 year-round. When noon in Pushkar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Vegetarian and alcohol-free town. Beware of "blessing" scams at ghats. Sunrise hike to Savitri Temple rewarding. Book early for Camel Fair.',
+        transportation: 'Nearest airport Jaipur (150km). Ajmer Junction 14km. Buses from Jaipur (3 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Holi (huge here!), Kartik Purnima, Pushkar Camel Fair (November).'
+      }
+    }
+  },
+  { slug: 'goa', city: 'Panaji', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 15.50, lng: 73.83, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.1M', metroPopulation: '0.7M', phoneCode: '+91 832', language: 'Konkani, English, Hindi, Portuguese',
+      climate: 'Tropical monsoon with hot humid summers (28-35°C), heavy monsoon (June-September), and pleasant winters (21-32°C).',
+      attractions: ['Basilica of Bom Jesus', 'Fort Aguada', 'Calangute Beach', 'Anjuna Flea Market', 'Old Goa Churches', 'Dudhsagar Falls', 'Fontainhas', 'Casino Cruises', 'Spice Plantations', 'Chapora Fort'],
+      demographics: 'India\'s smallest state and top beach destination. Portuguese colonial heritage. Mix of Indian and European culture.',
+      seoContent: {
+        intro: 'Panaji (Goa), India\'s beach paradise, operates on India Standard Time (IST/UTC+5:30). This former Portuguese colony of 700,000 (state) is India\'s premier beach destination, blending colonial churches, vibrant nightlife, and laid-back coastal culture.',
+        timezoneFacts: 'Same timezone as all of India. Coastal location moderates temperatures.',
+        bestTimeToVisit: 'November-February for perfect beach weather. Christmas and New Year extremely busy. Monsoon (June-September) for green landscapes.',
+        businessHours: 'Beach shacks 9 AM to 10 PM (or later). Clubs until 3-4 AM. Siesta common 2-4 PM.',
+        timeDifference: 'Goa is UTC+5:30 year-round. When noon in Goa: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'North Goa for parties, South Goa for relaxation. Rent a scooter to explore. Try Goan fish curry and bebinca. Old Goa churches are UNESCO sites.',
+        transportation: 'Dabolim Airport (GOI) 29km. Madgaon and Thivim railway stations. Konkan Railway scenic route.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Tourist Police: 1800-233-7777.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Goa Liberation Day (Dec 19), Christmas (BIG celebration), Carnival (February).'
+      }
+    }
+  },
+  { slug: 'pondicherry', city: 'Puducherry', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 11.93, lng: 79.83, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.5M', metroPopulation: '0.7M', phoneCode: '+91 413', language: 'Tamil, French, English, Hindi',
+      climate: 'Tropical wet and dry with hot summers (30-38°C) and mild winters (22-30°C). Monsoon October-December (northeast).',
+      attractions: ['Auroville', 'Sri Aurobindo Ashram', 'Promenade Beach', 'French Quarter', 'Paradise Beach', 'Basilica of Sacred Heart', 'Manakula Vinayagar Temple', 'Serenity Beach', 'Botanical Garden', 'French War Memorial'],
+      demographics: 'Former French colony retaining French character. Union Territory. Home to Auroville experimental township.',
+      seoContent: {
+        intro: 'Puducherry (Pondicherry), French India, operates on India Standard Time (IST/UTC+5:30). This former French colony of 500,000 retains its Gallic charm with yellow colonial buildings, boulangeries, and the spiritual Auroville township.',
+        timezoneFacts: 'Same timezone as all of India. Former French colony still has some French cultural influence.',
+        bestTimeToVisit: 'October-March for pleasant weather. Avoid April-June heat. Monsoon October-December.',
+        businessHours: 'French Quarter shops 9 AM to 1 PM, 3 PM to 9 PM (siesta!). Auroville services 9 AM to 5 PM.',
+        timeDifference: 'Puducherry is UTC+5:30 year-round. When noon in Puducherry: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Rent a cycle to explore French Quarter. Sri Aurobindo Ashram has strict timings. Auroville needs advance booking. Try French bakeries and crepes!',
+        transportation: 'Nearest airport Chennai (150km). Puducherry station limited trains. Buses from Chennai (3-4 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bastille Day (July 14 - local celebration), Pongal, Diwali.'
+      }
+    }
+  },
+  { slug: 'mysore', city: 'Mysuru', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.30, lng: 76.66, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.0M', metroPopulation: '1.2M', phoneCode: '+91 821', language: 'Kannada, English, Hindi',
+      climate: 'Tropical savanna with pleasant year-round temperatures (18-35°C). Mild compared to other Indian cities. Monsoon June-September.',
+      attractions: ['Mysore Palace', 'Chamundi Hill', 'Brindavan Gardens', 'St. Philomena\'s Church', 'Mysore Zoo', 'Jaganmohan Palace', 'Devaraja Market', 'Karanji Lake', 'Sand Sculpture Museum', 'Mysore Dasara'],
+      demographics: 'Former capital of Wodeyar dynasty. Cleanest city in India (multiple times). Yoga and silk center. Palace city.',
+      seoContent: {
+        intro: 'Mysuru (Mysore), City of Palaces, operates on India Standard Time (IST/UTC+5:30). This elegant city of 1 million is consistently rated India\'s cleanest, famous for its illuminated palace, Dasara festival, silk sarees, and yoga traditions.',
+        timezoneFacts: 'Same timezone as all of India. Pleasant climate year-round due to elevation.',
+        bestTimeToVisit: 'September-February for pleasant weather. Dasara (October) is spectacular - palace lit with 100,000 bulbs.',
+        businessHours: 'Mysore Palace 10 AM to 5:30 PM. Devaraja Market 6 AM to 9 PM. Sunday palace lighting 7-8 PM.',
+        timeDifference: 'Mysuru is UTC+5:30 year-round. When noon in Mysuru: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Palace is magical on Sunday evenings when lit. Buy silk from government emporium. Yoga courses available. Brindavan Gardens fountain show evening.',
+        transportation: 'Mysore Airport (MYQ) limited flights. Trains from Bangalore (3 hours). NH275 from Bangalore (150km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Dasara (HUGE 10-day festival), Diwali, Ugadi.'
+      }
+    }
+  },
+  { slug: 'hampi', city: 'Hampi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 15.33, lng: 76.46, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.003M', metroPopulation: '0.01M', phoneCode: '+91 8394', language: 'Kannada, Hindi, English',
+      climate: 'Semi-arid with hot summers (35-42°C) and mild winters (18-32°C). Best avoided April-June. Monsoon brings some relief.',
+      attractions: ['Virupaksha Temple', 'Vittala Temple', 'Stone Chariot', 'Elephant Stables', 'Lotus Mahal', 'Hampi Bazaar', 'Matanga Hill Sunrise', 'Coracle Rides', 'Hippie Island', 'Royal Enclosure'],
+      demographics: 'UNESCO World Heritage Site. Ruins of Vijayanagara Empire (14th-16th century). Once world\'s second-largest medieval city.',
+      seoContent: {
+        intro: 'Hampi, ruins of a forgotten empire, operates on India Standard Time (IST/UTC+5:30). This UNESCO site of 3,000 residents was once the world\'s second-largest medieval city, capital of the Vijayanagara Empire, now a stunning boulder-strewn landscape of temples and palaces.',
+        timezoneFacts: 'Same timezone as all of India. Sunrise and sunset over ruins are spectacular.',
+        bestTimeToVisit: 'October-February for comfortable weather. Hampi Utsav (November) for cultural festival. Avoid April-June heat.',
+        businessHours: 'Ruins accessible sunrise to sunset. Virupaksha Temple 6 AM to 9 PM. Cafes until 10 PM.',
+        timeDifference: 'Hampi is UTC+5:30 year-round. When noon in Hampi: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Sunrise from Matanga Hill is magical. Rent a bicycle to explore ruins. Coracle ride across river to Hippie Island. Carry water and sunscreen.',
+        transportation: 'Nearest airport Hubli (160km) or Belgaum (190km). Hospet Junction 13km. Buses from Bangalore (7-8 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Hampi Utsav (November), Virupaksha Car Festival.'
+      }
+    }
+  },
+  { slug: 'ooty', city: 'Ooty', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 11.41, lng: 76.69, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.09M', metroPopulation: '0.1M', phoneCode: '+91 423', language: 'Tamil, English, Kannada',
+      climate: 'Subtropical highland with cool year-round temperatures (5-25°C). Can be cold - warmest in April-June. Monsoon brings mist.',
+      attractions: ['Ooty Lake', 'Botanical Gardens', 'Nilgiri Mountain Railway', 'Doddabetta Peak', 'Rose Garden', 'Tea Estates', 'Pykara Falls', 'Avalanche Lake', 'St. Stephen\'s Church', 'Thread Garden'],
+      demographics: 'Queen of Hill Stations. British-era retreat in Nilgiri Mountains. Tea plantations and chocolate factories.',
+      seoContent: {
+        intro: 'Ooty (Udhagamandalam), Queen of Hill Stations, operates on India Standard Time (IST/UTC+5:30). This colonial-era hill town of 90,000 in the Nilgiri Mountains offers cool respite from South India\'s heat, with tea estates, the UNESCO toy train, and misty landscapes.',
+        timezoneFacts: 'Same timezone as all of India. High altitude (2,240m) means much cooler than plains.',
+        bestTimeToVisit: 'April-June for pleasant weather (summer in plains). October-November post-monsoon clarity. December-January can be cold.',
+        businessHours: 'Botanical Gardens 7 AM to 6:30 PM. Tea factories 9 AM to 6 PM. Boat rides 9 AM to 5:30 PM.',
+        timeDifference: 'Ooty is UTC+5:30 year-round. When noon in Ooty: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Take the UNESCO Nilgiri Mountain Railway from Mettupalayam. Buy local chocolates and tea. Pack warm clothes. Roads can be foggy.',
+        transportation: 'Nearest airport Coimbatore (88km). Nilgiri Mountain Railway from Mettupalayam. Buses from Bangalore and Chennai.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal, Diwali, Summer Festival (May-June).'
+      }
+    }
+  },
+  { slug: 'kodaikanal', city: 'Kodaikanal', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.23, lng: 77.49, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.05M', phoneCode: '+91 4542', language: 'Tamil, English',
+      climate: 'Subtropical highland with cool year-round temperatures (8-20°C). Mist common. Monsoon June-September and October-December.',
+      attractions: ['Kodaikanal Lake', 'Coaker\'s Walk', 'Bryant Park', 'Pillar Rocks', 'Dolphin\'s Nose', 'Pine Forest', 'Bear Shola Falls', 'Green Valley View', 'Kurinji Andavar Temple', 'Silver Cascade'],
+      demographics: 'Princess of Hill Stations. Created around a man-made star-shaped lake. Famous for homemade chocolates and eucalyptus.',
+      seoContent: {
+        intro: 'Kodaikanal, Princess of Hill Stations, operates on India Standard Time (IST/UTC+5:30). This misty hill town of 40,000 is built around a star-shaped lake in the Palani Hills, offering pine forests, homemade chocolates, and romantic mist-covered viewpoints.',
+        timezoneFacts: 'Same timezone as all of India. High altitude (2,133m) keeps it cool year-round.',
+        bestTimeToVisit: 'April-June for clear weather. September-November post-monsoon. Kurinji flowers bloom every 12 years.',
+        businessHours: 'Lake boats 9 AM to 5:30 PM. Shops 9 AM to 9 PM. Viewpoints best early morning.',
+        timeDifference: 'Kodaikanal is UTC+5:30 year-round. When noon in Kodaikanal: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Cycle around the lake (3.5km). Coaker\'s Walk best at sunrise. Buy homemade chocolates and eucalyptus oil. Carry umbrella always.',
+        transportation: 'Nearest airport Madurai (120km). Kodai Road station 80km. Ghat roads from Madurai or Palani.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal, Diwali, Summer Festival (May-June).'
+      }
+    }
+  },
+  { slug: 'munnar', city: 'Munnar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.09, lng: 77.06, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.04M', phoneCode: '+91 4865', language: 'Malayalam, Tamil, English',
+      climate: 'Subtropical highland with cool year-round temperatures (10-25°C). Mist and light rain common. Monsoon June-September.',
+      attractions: ['Tea Plantations', 'Eravikulam National Park', 'Mattupetty Dam', 'Echo Point', 'Top Station', 'Anamudi Peak', 'Neelakurinji Flowers', 'Tea Museum', 'Kundala Lake', 'Attukal Waterfalls'],
+      demographics: 'South India\'s largest tea-growing region. Western Ghats biodiversity hotspot. Home to endangered Nilgiri Tahr.',
+      seoContent: {
+        intro: 'Munnar, Kerala\'s tea country, operates on India Standard Time (IST/UTC+5:30). This hill station of 30,000 is surrounded by endless tea plantations in the Western Ghats, offering cool climate, endangered wildlife, and the rare Neelakurinji flowers that bloom every 12 years.',
+        timezoneFacts: 'Same timezone as all of India. High altitude (1,600m) provides natural air conditioning.',
+        bestTimeToVisit: 'September-May for pleasant weather. December-January can be cold. Neelakurinji blooms every 12 years (next 2030).',
+        businessHours: 'Tea estates tours 9 AM to 4 PM. Eravikulam Park 7:30 AM to 4 PM. Shops until 8 PM.',
+        timeDifference: 'Munnar is UTC+5:30 year-round. When noon in Munnar: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Visit tea museum and estates. Eravikulam for Nilgiri Tahr sightings. Top Station for Tamil Nadu views. Buy fresh tea direct from factories.',
+        transportation: 'Nearest airport Kochi (110km). No railway - drive from Kochi (4-5 hours). Winding ghat roads.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Onam (huge in Kerala), Vishu, Diwali.'
+      }
+    }
+  },
+  { slug: 'alleppey', city: 'Alappuzha', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 9.50, lng: 76.34, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.3M', phoneCode: '+91 477', language: 'Malayalam, English',
+      climate: 'Tropical with hot humid weather year-round (24-33°C). Heavy monsoon June-August. Best October-March.',
+      attractions: ['Backwaters', 'Houseboat Cruises', 'Alappuzha Beach', 'Nehru Trophy Boat Race', 'Marari Beach', 'Krishnapuram Palace', 'Ambalapuzha Temple', 'Pathiramanal Island', 'Coir Industry', 'Village Tours'],
+      demographics: 'Venice of the East. Hub of Kerala backwaters tourism. Famous for houseboats and Nehru Trophy snake boat race.',
+      seoContent: {
+        intro: 'Alappuzha (Alleppey), Venice of the East, operates on India Standard Time (IST/UTC+5:30). This backwater town of 200,000 is the hub of Kerala\'s famous houseboat cruises through palm-fringed canals, offering one of India\'s most unique experiences.',
+        timezoneFacts: 'Same timezone as all of India. Coastal and backwater location moderates temperatures.',
+        bestTimeToVisit: 'October-March for pleasant weather and clear backwaters. August for Nehru Trophy Boat Race. Avoid monsoon (June-July).',
+        businessHours: 'Houseboat departures 12 PM. Village tours morning. Beach shacks until 10 PM.',
+        timeDifference: 'Alappuzha is UTC+5:30 year-round. When noon in Alappuzha: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Overnight houseboat is must-do experience. Book KTDC or reputed operators. Nehru Trophy (Aug) is spectacular. Marari Beach quieter than main beach.',
+        transportation: 'Nearest airport Kochi (75km). Alappuzha railway well-connected. Buses from Kochi (2 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Onam (huge celebration), Vishu, Nehru Trophy (August Saturday).'
+      }
+    }
+  },
+  { slug: 'kovalam', city: 'Kovalam', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 8.40, lng: 76.98, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.05M', phoneCode: '+91 471', language: 'Malayalam, English',
+      climate: 'Tropical with warm year-round temperatures (25-32°C). Monsoon June-September can be rough. October-March ideal.',
+      attractions: ['Lighthouse Beach', 'Hawa Beach', 'Samudra Beach', 'Vizhinjam Mosque', 'Halcyon Castle', 'Ayurveda Centers', 'Vellayani Lake', 'Padmanabhapuram Palace', 'Karamana River', 'Surf Schools'],
+      demographics: 'Kerala\'s first beach resort developed in 1930s. International tourist destination. Ayurveda and wellness hub.',
+      seoContent: {
+        intro: 'Kovalam, Kerala\'s beach paradise, operates on India Standard Time (IST/UTC+5:30). This crescent-shaped beach resort of 20,000 was among India\'s first planned tourist beaches, now famous for Ayurvedic treatments, surfing, and lighthouse views.',
+        timezoneFacts: 'Same timezone as all of India. Southern tip of India - earliest sunrises in the country.',
+        bestTimeToVisit: 'October-March for calm seas and pleasant weather. Avoid monsoon (June-August) for swimming.',
+        businessHours: 'Beach activities 6 AM to 6 PM. Restaurants until 11 PM. Ayurveda treatments by appointment.',
+        timeDifference: 'Kovalam is UTC+5:30 year-round. When noon in Kovalam: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Lighthouse Beach most popular. Ayurveda treatments need multi-day courses. Surfing lessons available. Watch for riptides in monsoon.',
+        transportation: 'Trivandrum Airport (TRV) 15km. Trivandrum Central station 16km. Local buses frequent.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Onam, Vishu, Diwali.'
+      }
+    }
+  },
+  { slug: 'varkala', city: 'Varkala', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 8.73, lng: 76.72, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.06M', phoneCode: '+91 470', language: 'Malayalam, English',
+      climate: 'Tropical with warm year-round temperatures (25-32°C). Monsoon June-September. Best October-March.',
+      attractions: ['Varkala Cliff', 'Papanasam Beach', 'Janardhana Swamy Temple', 'Sivagiri Mutt', 'Kappil Beach', 'Anjengo Fort', 'Edava Beach', 'Ayurveda Treatments', 'Cliff Restaurants', 'Nature Treks'],
+      demographics: 'Cliff beach destination. Pilgrimage site for Hindus (Papanasam). Emerging backpacker and yoga destination.',
+      seoContent: {
+        intro: 'Varkala, the cliff beach, operates on India Standard Time (IST/UTC+5:30). This unique beach town of 40,000 features dramatic red cliffs plunging into the Arabian Sea, ancient temples, and a laid-back atmosphere that draws yogis and backpackers.',
+        timezoneFacts: 'Same timezone as all of India. Southern Kerala coastal location.',
+        bestTimeToVisit: 'October-March for calm seas and cliff-top dining. Monsoon closes many cliff establishments.',
+        businessHours: 'Cliff restaurants 8 AM to 11 PM. Temple 4 AM to 12 PM, 5 PM to 8 PM. Ayurveda by appointment.',
+        timeDifference: 'Varkala is UTC+5:30 year-round. When noon in Varkala: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Sunset from cliff is stunning. Papanasam Beach for Hindu pilgrims - be respectful. North cliff quieter than main cliff. Yoga courses available.',
+        transportation: 'Trivandrum Airport (TRV) 40km. Varkala Sivagiri station on main line. Buses from Trivandrum (1 hour).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Onam, Sivagiri Pilgrimage (Dec 30-Jan 1), Arattu Festival.'
+      }
+    }
+  },
+  
+  // India - New Cities Batch 2 (20 cities with full premium content)
+  { slug: 'darjeeling', city: 'Darjeeling', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.04, lng: 88.26, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.12M', metroPopulation: '0.15M', phoneCode: '+91 354', language: 'Nepali, Bengali, Hindi, English',
+      climate: 'Subtropical highland with cool summers (12-18°C) and cold winters (2-10°C). Heavy monsoon June-September. Mist common.',
+      attractions: ['Tiger Hill Sunrise', 'Darjeeling Himalayan Railway', 'Tea Gardens', 'Batasia Loop', 'Peace Pagoda', 'Himalayan Mountaineering Institute', 'Padmaja Naidu Zoo', 'Rock Garden', 'Observatory Hill', 'Happy Valley Tea Estate'],
+      demographics: 'Queen of the Hills. World-famous for Darjeeling tea. UNESCO toy train. Views of Kanchenjunga, world\'s third-highest peak.',
+      seoContent: {
+        intro: 'Darjeeling, Queen of the Hills, operates on India Standard Time (IST/UTC+5:30). This legendary hill station of 120,000 is famous worldwide for its exquisite tea, the UNESCO toy train, and stunning sunrise views of Kanchenjunga, the world\'s third-highest peak.',
+        timezoneFacts: 'Same timezone as all of India. Far eastern location means early sunrise/sunset compared to western India.',
+        bestTimeToVisit: 'March-May and October-November for clear Kanchenjunga views. Avoid monsoon (June-September). Winter cold but clear.',
+        businessHours: 'Tea gardens tours 8 AM to 4 PM. Toy train various timings. Tiger Hill sunrise 4 AM departure.',
+        timeDifference: 'Darjeeling is UTC+5:30 year-round. When noon in Darjeeling: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Tiger Hill sunrise is magical when clear - book jeep night before. Toy train Darjeeling-Ghum section most scenic. Buy first-flush tea direct from estates.',
+        transportation: 'Nearest airport Bagdogra (IXB) 67km. New Jalpaiguri station (NJP) 62km. Toy train from NJP (7-8 hours) or jeep (3 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Durga Puja (huge!), Diwali, Losar (Tibetan New Year).'
+      }
+    }
+  },
+  { slug: 'gangtok', city: 'Gangtok', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.33, lng: 88.62, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.1M', metroPopulation: '0.15M', phoneCode: '+91 3592', language: 'Nepali, Sikkimese, English, Hindi',
+      climate: 'Subtropical highland with cool summers (15-22°C) and cold winters (4-13°C). Heavy monsoon May-September.',
+      attractions: ['MG Marg', 'Rumtek Monastery', 'Tsomgo Lake', 'Nathula Pass', 'Enchey Monastery', 'Hanuman Tok', 'Ganesh Tok', 'Do Drul Chorten', 'Namgyal Institute', 'Flower Exhibition'],
+      demographics: 'Capital of Sikkim state. Clean, green mountain city. Buddhist monasteries. Gateway to Nathula Pass (India-China border).',
+      seoContent: {
+        intro: 'Gangtok, capital of Sikkim, operates on India Standard Time (IST/UTC+5:30). This pristine hill capital of 100,000 is one of India\'s cleanest cities, offering Buddhist monasteries, the stunning Tsomgo Lake, and the historic Nathula Pass on the India-China border.',
+        timezoneFacts: 'Same timezone as all of India. Eastern Himalayan location.',
+        bestTimeToVisit: 'March-May and October-December for clear views. Monsoon (June-September) heavy but rhododendrons bloom. Nathula closed in winter.',
+        businessHours: 'MG Marg shops 9 AM to 8 PM. Monasteries 7 AM to 4 PM. Nathula requires permits, Wednesday/Thursday closed.',
+        timeDifference: 'Gangtok is UTC+5:30 year-round. When noon in Gangtok: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Nathula Pass permit (Indians only) needs 2 days advance booking. Rumtek Monastery is spectacular. MG Marg pedestrian-only evening. Try momos everywhere!',
+        transportation: 'Nearest airport Bagdogra (IXB) 124km. Pakyong Airport (PYG) 31km (limited flights). NJP station 117km. Shared jeeps common.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar, Saga Dawa, Pang Lhabsol, Diwali.'
+      }
+    }
+  },
+  { slug: 'shillong', city: 'Shillong', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.57, lng: 91.88, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.35M', metroPopulation: '0.4M', phoneCode: '+91 364', language: 'Khasi, English, Hindi',
+      climate: 'Subtropical highland with cool summers (15-24°C) and cold winters (4-16°C). Heavy rainfall - one of wettest places on Earth.',
+      attractions: ['Ward\'s Lake', 'Shillong Peak', 'Elephant Falls', 'Don Bosco Museum', 'Police Bazaar', 'Lady Hydari Park', 'Cathedral of Mary', 'Golf Course', 'Umiam Lake', 'Living Root Bridges (nearby)'],
+      demographics: 'Capital of Meghalaya, "Scotland of the East". Rock music capital of India. Matrilineal Khasi society.',
+      seoContent: {
+        intro: 'Shillong, Scotland of the East, operates on India Standard Time (IST/UTC+5:30). This charming hill capital of 350,000 is the rock music capital of India, set in misty Khasi Hills with colonial architecture and the fascinating matrilineal Khasi culture.',
+        timezoneFacts: 'Same timezone as all of India despite being far east. Sunrise/sunset significantly earlier than western India.',
+        bestTimeToVisit: 'October-May for pleasant weather. March-April for spring flowers. Monsoon (June-September) extremely wet.',
+        businessHours: 'Police Bazaar shops 9 AM to 8 PM. Cafes until 9 PM. Live music venues evening.',
+        timeDifference: 'Shillong is UTC+5:30 year-round. When noon in Shillong: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Rock music scene thriving - check local gigs. Living Root Bridges in Cherrapunji day trip. Try Khasi cuisine - jadoh and tungrymbai. Carry umbrella always!',
+        transportation: 'Shillong Airport (SHL) 30km (limited). Guwahati Airport (GAU) 100km. Trains to Guwahati then taxi/bus.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Nongkrem Dance, Shad Suk Mynsiem, Christmas (big Khasi Christian population).'
+      }
+    }
+  },
+  { slug: 'cherrapunji', city: 'Cherrapunji', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.30, lng: 91.70, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.015M', phoneCode: '+91 364', language: 'Khasi, English, Hindi',
+      climate: 'One of wettest places on Earth. Cool year-round (10-20°C). Monsoon (June-September) brings extreme rainfall - 12,000mm annually.',
+      attractions: ['Living Root Bridges', 'Nohkalikai Falls', 'Seven Sisters Falls', 'Mawsmai Cave', 'Double Decker Root Bridge', 'Eco Park', 'Thangkharang Park', 'Ramakrishna Mission', 'Mawsynram', 'Rainbow Falls'],
+      demographics: 'One of wettest places on Earth. UNESCO-nominated Living Root Bridges. Khasi tribe engineering marvel grown over centuries.',
+      seoContent: {
+        intro: 'Cherrapunji (Sohra), one of the wettest places on Earth, operates on India Standard Time (IST/UTC+5:30). This misty town of 10,000 receives up to 12,000mm of rain annually and is home to the UNESCO-nominated Living Root Bridges, grown by Khasi tribes over centuries.',
+        timezoneFacts: 'Same timezone as all of India. Extreme eastern location - among first places to see sunrise in India.',
+        bestTimeToVisit: 'October-May for trekking to root bridges. Monsoon spectacular but trails slippery. November-February clearest.',
+        businessHours: 'Eco Park 8:30 AM to 5 PM. Root bridge treks best started early morning.',
+        timeDifference: 'Cherrapunji is UTC+5:30 year-round. When noon in Cherrapunji: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Double Decker Root Bridge requires 3,500+ steps - be fit! Hire local guides. Waterproof everything. Nohkalikai Falls best after monsoon.',
+        transportation: 'From Shillong 54km (2 hours). No airport or railway. Taxis and shared vehicles from Shillong.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited medical facilities - Shillong better.',
+        publicHolidays: 'Same as Meghalaya state holidays. Limited impact in small town.'
+      }
+    }
+  },
+  { slug: 'kaziranga', city: 'Kaziranga', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.58, lng: 93.17, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.05M', phoneCode: '+91 3776', language: 'Assamese, Hindi, English',
+      climate: 'Humid subtropical with hot summers (25-37°C) and cool winters (10-25°C). Monsoon June-September causes flooding - park closes.',
+      attractions: ['Kaziranga National Park', 'One-Horned Rhino Safari', 'Elephant Safari', 'Jeep Safari', 'Orchid Park', 'Kakochang Waterfall', 'Panbari Reserve Forest', 'Tea Estates', 'Hollongapar Gibbon Sanctuary', 'Bird Watching'],
+      demographics: 'UNESCO World Heritage Site. Home to two-thirds of world\'s one-horned rhinoceros. Big Five - rhino, elephant, tiger, buffalo, swamp deer.',
+      seoContent: {
+        intro: 'Kaziranga, home of the one-horned rhino, operates on India Standard Time (IST/UTC+5:30). This UNESCO World Heritage Site protects two-thirds of the world\'s one-horned rhinoceros population and offers India\'s best wildlife viewing with elephants, tigers, and buffalo.',
+        timezoneFacts: 'Same timezone as all of India. Eastern Assam location.',
+        bestTimeToVisit: 'November-April when park is open. February-March best for sightings. Park closed June-October due to monsoon flooding.',
+        businessHours: 'Elephant safari 5:30 AM and 3 PM. Jeep safari 8 AM and 2 PM. Park gates close at sunset.',
+        timeDifference: 'Kaziranga is UTC+5:30 year-round. When noon in Kaziranga: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Book elephant safari in advance - limited slots. Multiple ranges - Kohora central, Bagori best for rhinos. Don\'t expect tiger sightings - grass is tall.',
+        transportation: 'Nearest airport Jorhat (97km) or Guwahati (217km). Furkating railway station 75km. NH37 runs along park.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Park rangers available.',
+        publicHolidays: 'Park timings unchanged by holidays. Crowded during school holidays.'
+      }
+    }
+  },
+  { slug: 'imphal', city: 'Imphal', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 24.82, lng: 93.95, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.5M', metroPopulation: '0.6M', phoneCode: '+91 385', language: 'Meiteilon (Manipuri), English, Hindi',
+      climate: 'Humid subtropical with warm summers (20-32°C) and cool winters (4-22°C). Monsoon May-October.',
+      attractions: ['Kangla Fort', 'Ima Keithel (Mothers\' Market)', 'Loktak Lake', 'Keibul Lamjao National Park', 'Shree Govindajee Temple', 'INA Memorial', 'War Cemeteries', 'Manipur State Museum', 'Khonghampat Orchidarium', 'Andro Village'],
+      demographics: 'Capital of Manipur. World\'s only all-women market (Ima Keithel). Home to floating Loktak Lake and endangered Sangai deer.',
+      seoContent: {
+        intro: 'Imphal, jewel of the Northeast, operates on India Standard Time (IST/UTC+5:30). This capital of Manipur hosts Ima Keithel, the world\'s largest all-women market, and the unique Loktak Lake with its floating islands and the endangered dancing deer - Sangai.',
+        timezoneFacts: 'Same timezone as all of India. Easternmost state capital - sunrise around 4:30 AM in summer!',
+        bestTimeToVisit: 'October-March for pleasant weather. Sangai Festival (November) showcases Manipuri culture. Avoid monsoon.',
+        businessHours: 'Ima Keithel 6 AM to 6 PM. Government offices 9:30 AM to 5 PM. Loktak boats available all day.',
+        timeDifference: 'Imphal is UTC+5:30 year-round. When noon in Imphal: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Ima Keithel run entirely by women - unique experience. Loktak phumdis (floating islands) support entire villages. Try Manipuri cuisine - eromba and singju.',
+        transportation: 'Imphal Airport (IMF) 8km. No railway yet (under construction). Flights from Delhi, Kolkata, Guwahati.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Yaoshang (Holi), Ningol Chakouba, Sangai Festival (November).'
+      }
+    }
+  },
+  { slug: 'agartala', city: 'Agartala', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.83, lng: 91.28, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.4M', metroPopulation: '0.5M', phoneCode: '+91 381', language: 'Bengali, Kokborok, Hindi, English',
+      climate: 'Humid subtropical with hot summers (25-35°C) and mild winters (10-25°C). Heavy monsoon May-October.',
+      attractions: ['Ujjayanta Palace', 'Neermahal Water Palace', 'Tripura Sundari Temple', 'Sepahijala Wildlife Sanctuary', 'Jampui Hills', 'Unakoti', 'Heritage Park', 'Bangladesh Border', 'Jagannath Temple', 'State Museum'],
+      demographics: 'Capital of Tripura. Borders Bangladesh on three sides. Mix of Bengali and tribal Kokborok cultures.',
+      seoContent: {
+        intro: 'Agartala, gateway to Bangladesh, operates on India Standard Time (IST/UTC+5:30). This capital of Tripura with 400,000 people borders Bangladesh on three sides, featuring the stunning Ujjayanta Palace and the unique Neermahal water palace in the middle of a lake.',
+        timezoneFacts: 'Same timezone as all of India. Very close to Bangladesh which uses UTC+6.',
+        bestTimeToVisit: 'October-March for pleasant weather. Kharchi Puja (July-August) major festival. Avoid peak monsoon.',
+        businessHours: 'Ujjayanta Palace 10 AM to 5 PM (closed Monday). Shops 10 AM to 8 PM.',
+        timeDifference: 'Agartala is UTC+5:30 year-round. When noon in Agartala: London 6:30 AM, NYC 1:30 AM, Dhaka 12:30 PM (+30 min).',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Neermahal boat ride at sunset is magical. Unakoti rock carvings day trip worth it. Cross to Bangladesh at Akhaura (visa needed). Try mui borok cuisine.',
+        transportation: 'Maharaja Bir Bikram Airport (IXA) 12km. Agartala railway recently connected. Bangladesh border crossing at Akhaura.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Durga Puja, Kharchi Puja, Garia Puja, Christmas.'
+      }
+    }
+  },
+  { slug: 'aizawl', city: 'Aizawl', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.73, lng: 92.72, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.3M', metroPopulation: '0.35M', phoneCode: '+91 389', language: 'Mizo, English, Hindi',
+      climate: 'Humid subtropical highland with mild summers (20-30°C) and cool winters (11-21°C). Monsoon May-September.',
+      attractions: ['Solomon\'s Temple', 'Durtlang Hills', 'Mizoram State Museum', 'Bara Bazaar', 'KV Paradise', 'Reiek Heritage Village', 'Vantawng Falls', 'Tam Dil Lake', 'Blue Mountain', 'Luangmual Handicrafts Centre'],
+      demographics: 'Capital of Mizoram. Most literate state capital in India. Christian majority with strong singing tradition. Ridge-top city.',
+      seoContent: {
+        intro: 'Aizawl, city on the ridge, operates on India Standard Time (IST/UTC+5:30). This capital of Mizoram with 300,000 people is built along a dramatic ridge, is one of India\'s most literate cities, and is known for its strong Christian heritage and beautiful choral singing.',
+        timezoneFacts: 'Same timezone as all of India. Eastern location means early sunrise.',
+        bestTimeToVisit: 'October-March for pleasant weather. Chapchar Kut (March) is major harvest festival. Christmas celebrations spectacular.',
+        businessHours: 'Bara Bazaar 8 AM to 5 PM. Sunday shops closed (Christian observance). Government 9:30 AM to 4:30 PM.',
+        timeDifference: 'Aizawl is UTC+5:30 year-round. When noon in Aizawl: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Sunday is strict rest day - most things closed. Church singing is beautiful. Try bai (local stew). Inner Line Permit may be needed for some areas.',
+        transportation: 'Lengpui Airport (AJL) 32km. No railway. Flights from Kolkata, Guwahati. Long drives from Silchar.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Chapchar Kut (March), Mim Kut, Christmas (BIG celebration), New Year.'
+      }
+    }
+  },
+  { slug: 'kohima', city: 'Kohima', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.67, lng: 94.11, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.1M', metroPopulation: '0.15M', phoneCode: '+91 370', language: 'English, Nagamese, Angami',
+      climate: 'Subtropical highland with cool summers (15-25°C) and cold winters (4-15°C). Monsoon May-September.',
+      attractions: ['War Cemetery', 'Kohima State Museum', 'Kohima Village', 'Dzukou Valley', 'Japfu Peak', 'Hornbill Festival Venue', 'Catholic Cathedral', 'Kohima Zoo', 'Khonoma Green Village', 'Naga Heritage Village'],
+      demographics: 'Capital of Nagaland. Site of WWII Battle of Kohima (turning point against Japan). 16 Naga tribes with distinct cultures.',
+      seoContent: {
+        intro: 'Kohima, where the tide of WWII turned, operates on India Standard Time (IST/UTC+5:30). This Naga capital of 100,000 was the site of the crucial Battle of Kohima in 1944 and today hosts the famous Hornbill Festival showcasing 16 distinct Naga tribal cultures.',
+        timezoneFacts: 'Same timezone as all of India. Eastern Himalayan foothills.',
+        bestTimeToVisit: 'October-May for pleasant weather. Hornbill Festival (December 1-10) is unmissable. Dzukou Valley trek best March-May.',
+        businessHours: 'Shops 9 AM to 6 PM. War Cemetery 8 AM to 5 PM. Sunday many shops closed.',
+        timeDifference: 'Kohima is UTC+5:30 year-round. When noon in Kohima: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'War Cemetery very moving - read the inscriptions. Hornbill Festival (Dec) showcases all Naga tribes. Dzukou Valley trek requires guide. Try smoked pork and bamboo shoot.',
+        transportation: 'Dimapur Airport (DMU) 74km (2.5 hours). Dimapur railway nearest. Inner Line Permit required for foreign nationals.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Sekrenyi, Moatsu, Hornbill Festival (Dec 1-10), Christmas.'
+      }
+    }
+  },
+  { slug: 'dimapur', city: 'Dimapur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.90, lng: 93.73, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.4M', metroPopulation: '0.5M', phoneCode: '+91 3862', language: 'Nagamese, English, Hindi',
+      climate: 'Humid subtropical with hot summers (25-35°C) and mild winters (10-25°C). Heavy monsoon May-September.',
+      attractions: ['Kachari Ruins', 'Rangapahar Reserve Forest', 'Dimapur Ao Baptist Church', 'Triple Falls', 'Nagaland Science Centre', 'Craft Village', 'Hong Kong Market', 'Diezephe Village', 'Chumukedima', 'Intanki Wildlife Sanctuary'],
+      demographics: 'Commercial capital of Nagaland. Only city in the state with plains terrain. Major trading hub for Northeast.',
+      seoContent: {
+        intro: 'Dimapur, gateway to Nagaland, operates on India Standard Time (IST/UTC+5:30). This commercial hub of 400,000 is Nagaland\'s only plains city, featuring ancient Kachari ruins and serving as the entry point for visitors to the Land of Festivals.',
+        timezoneFacts: 'Same timezone as all of India. Gateway to hill state of Nagaland.',
+        bestTimeToVisit: 'October-April for pleasant weather. Transit point to Kohima for Hornbill Festival.',
+        businessHours: 'Hong Kong Market 9 AM to 7 PM. Shops 9 AM to 8 PM.',
+        timeDifference: 'Dimapur is UTC+5:30 year-round. When noon in Dimapur: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Main transit point to Kohima and beyond. Kachari Ruins worth visiting. Hong Kong Market for cheap goods. ILP needed for foreigners beyond city.',
+        transportation: 'Dimapur Airport (DMU). Dimapur Junction on NF Railway. Gateway to Kohima (74km) and rest of Nagaland.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), various tribal festivals, Christmas.'
+      }
+    }
+  },
+  { slug: 'itanagar', city: 'Itanagar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.08, lng: 93.62, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.06M', metroPopulation: '0.1M', phoneCode: '+91 360', language: 'Hindi, Nyishi, English',
+      climate: 'Humid subtropical with warm summers (20-30°C) and cool winters (8-20°C). Heavy monsoon May-October.',
+      attractions: ['Ita Fort', 'Ganga Lake', 'Jawaharlal Nehru State Museum', 'Buddhist Temple', 'Polo Park', 'Namdapha National Park (nearby)', 'Zoological Park', 'Craft Centre', 'Gompa', 'Indira Gandhi Park'],
+      demographics: 'Capital of Arunachal Pradesh. India\'s northeastern frontier. 26 major tribes. Land of the rising sun.',
+      seoContent: {
+        intro: 'Itanagar, land of the dawn-lit mountains, operates on India Standard Time (IST/UTC+5:30). This capital of Arunachal Pradesh with 60,000 people is India\'s northeastern frontier, home to 26 major tribes and featuring the ancient Ita Fort and gateway to pristine wilderness.',
+        timezoneFacts: 'Same timezone as all of India. India\'s easternmost state - first to see sunrise in the country!',
+        bestTimeToVisit: 'October-April for pleasant weather. Tribal festivals throughout year. Monsoon heavy May-September.',
+        businessHours: 'Shops 9 AM to 7 PM. Museum 10 AM to 4 PM (closed Monday).',
+        timeDifference: 'Itanagar is UTC+5:30 year-round. When noon in Itanagar: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Inner Line Permit required for all visitors. Tribal handicrafts excellent. Gateway to Tawang and Namdapha. Book permits well in advance.',
+        transportation: 'Donyi Polo Airport (HGI) 15km (opened 2022). Nearest railway Naharlagun 10km. Long drives from Guwahati (350km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Solung, Mopin, Losar, Si-Donyi, Nyokum.'
+      }
+    }
+  },
+  { slug: 'tawang', city: 'Tawang', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.59, lng: 91.86, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.015M', phoneCode: '+91 3794', language: 'Monpa, Hindi, English',
+      climate: 'Alpine with cool summers (10-20°C) and very cold winters (-15 to 5°C). Snow November-March.',
+      attractions: ['Tawang Monastery', 'Sela Pass', 'PTSO Lake', 'Nuranang Falls', 'Tawang War Memorial', 'Urgelling Monastery', 'Ani Gompa', 'Gorichen Peak', 'Madhuri Lake', 'Craft Centre'],
+      demographics: 'Birthplace of 6th Dalai Lama. Second-largest Buddhist monastery in world after Lhasa. Monpa tribe. 1962 India-China war site.',
+      seoContent: {
+        intro: 'Tawang, the hidden Buddhist jewel, operates on India Standard Time (IST/UTC+5:30). This remote Himalayan town of 10,000 at 3,048m is the birthplace of the 6th Dalai Lama and home to the world\'s second-largest Buddhist monastery after Lhasa\'s Potala.',
+        timezoneFacts: 'Same timezone as all of India. Very high altitude and remote location.',
+        bestTimeToVisit: 'March-October when Sela Pass is reliably open. October-November for clearest views. Winter extremely cold with pass closures.',
+        businessHours: 'Monastery 5 AM to 7 PM. Shops 9 AM to 6 PM. War Memorial 9 AM to 5 PM.',
+        timeDifference: 'Tawang is UTC+5:30 year-round. When noon in Tawang: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Inner Line Permit essential - get in Guwahati or Tezpur. Sela Pass (4,170m) can close suddenly. Altitude sickness possible. Monastery morning prayers 5 AM.',
+        transportation: 'Tawang Helicopter service (limited). Nearest airport Tezpur (320km). Drive from Guwahati 12-14 hours via Sela Pass.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Army assistance available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar (Monpa New Year), Torgya Festival, Buddha Purnima.'
+      }
+    }
+  },
+  { slug: 'bodh-gaya', city: 'Bodh Gaya', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 24.70, lng: 84.99, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.05M', metroPopulation: '0.1M', phoneCode: '+91 631', language: 'Hindi, Magahi, English',
+      climate: 'Humid subtropical with hot summers (35-45°C) and cool winters (8-25°C). Monsoon July-September.',
+      attractions: ['Mahabodhi Temple', 'Bodhi Tree', 'Great Buddha Statue', 'Thai Monastery', 'Japanese Temple', 'Tibetan Monastery', 'Chinese Temple', 'Royal Bhutan Monastery', 'Archaeological Museum', 'Sujata Stupa'],
+      demographics: 'UNESCO World Heritage Site. Where Buddha attained enlightenment. Most sacred Buddhist pilgrimage site. International monasteries from all Buddhist countries.',
+      seoContent: {
+        intro: 'Bodh Gaya, where Buddha attained enlightenment, operates on India Standard Time (IST/UTC+5:30). This UNESCO World Heritage Site of 50,000 is Buddhism\'s holiest place, where Siddhartha Gautama became the Buddha under the Bodhi Tree 2,500 years ago.',
+        timezoneFacts: 'Same timezone as all of India. Central Bihar location.',
+        bestTimeToVisit: 'October-March for pleasant weather. Buddha Purnima (May) and Dalai Lama teachings (December-January) draw huge crowds.',
+        businessHours: 'Mahabodhi Temple 5 AM to 9 PM. Monasteries generally 9 AM to 5 PM. Museum 10 AM to 5 PM.',
+        timeDifference: 'Bodh Gaya is UTC+5:30 year-round. When noon in Bodh Gaya: London 6:30 AM, NYC 1:30 AM, Bangkok 1 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Mahabodhi Temple at dawn is magical. Meditate under Bodhi Tree descendent. Visit monasteries of your country. Check for Dalai Lama teachings schedule.',
+        transportation: 'Gaya Airport (GAY) 17km. Gaya Junction well-connected. Buses from Patna (115km) and Varanasi (240km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Buddha Purnima (biggest celebration), various Buddhist observances.'
+      }
+    }
+  },
+  { slug: 'khajuraho', city: 'Khajuraho', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 24.85, lng: 79.93, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.05M', phoneCode: '+91 7686', language: 'Hindi, Bundelkhandi, English',
+      climate: 'Humid subtropical with hot summers (35-47°C) and cool winters (5-25°C). Monsoon July-September.',
+      attractions: ['Western Group of Temples', 'Eastern Group of Temples', 'Southern Group', 'Kandariya Mahadeva Temple', 'Lakshmana Temple', 'Chaturbhuj Temple', 'Archaeological Museum', 'Light and Sound Show', 'Panna National Park', 'Raneh Falls'],
+      demographics: 'UNESCO World Heritage Site. Medieval Hindu and Jain temples famous for erotic sculptures. Chandela dynasty art (950-1050 AD).',
+      seoContent: {
+        intro: 'Khajuraho, temple city of love, operates on India Standard Time (IST/UTC+5:30). This UNESCO World Heritage Site of 30,000 features medieval temples adorned with exquisite erotic sculptures, representing the pinnacle of Chandela dynasty art from 950-1050 AD.',
+        timezoneFacts: 'Same timezone as all of India. Central Madhya Pradesh location.',
+        bestTimeToVisit: 'October-March for pleasant weather. Khajuraho Dance Festival (February) spectacular. Avoid April-June extreme heat.',
+        businessHours: 'Western Group temples sunrise to sunset. Light and Sound Show 6:30 PM (winter) / 7:30 PM (summer).',
+        timeDifference: 'Khajuraho is UTC+5:30 year-round. When noon in Khajuraho: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Hire a guide to understand sculptures\' symbolism. Western Group most impressive. Light and Sound Show excellent. Panna tiger safari day trip.',
+        transportation: 'Khajuraho Airport (HJR). Khajuraho station limited trains. Buses from Jhansi (175km) and Satna (117km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Maha Shivaratri, Khajuraho Dance Festival (February), Diwali.'
+      }
+    }
+  },
+  { slug: 'orchha', city: 'Orchha', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.35, lng: 78.64, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.015M', phoneCode: '+91 7680', language: 'Hindi, Bundelkhandi',
+      climate: 'Humid subtropical with hot summers (35-47°C) and cool winters (5-25°C). Monsoon July-September.',
+      attractions: ['Orchha Fort Complex', 'Jahangir Mahal', 'Raja Mahal', 'Chaturbhuj Temple', 'Ram Raja Temple', 'Lakshmi Narayan Temple', 'Royal Cenotaphs', 'Betwa River', 'Light and Sound Show', 'Orchha Wildlife Sanctuary'],
+      demographics: 'Medieval Bundela capital. Only temple where Lord Ram is worshipped as king. Stunning palatial architecture on Betwa River island.',
+      seoContent: {
+        intro: 'Orchha, the hidden medieval gem, operates on India Standard Time (IST/UTC+5:30). This forgotten Bundela capital of 10,000 sits on an island in the Betwa River, its stunning palaces and temples frozen in time, far from tourist crowds.',
+        timezoneFacts: 'Same timezone as all of India. Madhya Pradesh-Uttar Pradesh border.',
+        bestTimeToVisit: 'October-March for pleasant weather. Ram Navami (April) huge at Ram Raja Temple. Avoid summer heat.',
+        businessHours: 'Fort complex 8 AM to 6 PM. Ram Raja Temple 8 AM to 12 PM, 5 PM to 9 PM. Light Show evening.',
+        timeDifference: 'Orchha is UTC+5:30 year-round. When noon in Orchha: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Ram Raja Temple guards salute Ram with gun salute twice daily! Sunset from cenotaphs on Betwa magical. Much quieter than Khajuraho. Rafting available.',
+        transportation: 'Jhansi Junction 18km (best connected). No airport nearby. Taxi or auto from Jhansi easy.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ram Navami (special), Diwali, Kartik Purnima.'
+      }
+    }
+  },
+  { slug: 'ujjain', city: 'Ujjain', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.18, lng: 75.78, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.5M', metroPopulation: '0.7M', phoneCode: '+91 734', language: 'Hindi, Malwi',
+      climate: 'Humid subtropical with hot summers (35-45°C) and cool winters (8-25°C). Monsoon July-September.',
+      attractions: ['Mahakaleshwar Temple', 'Ram Ghat', 'Kumbh Mela Site', 'Kal Bhairav Temple', 'Harsiddhi Temple', 'Vedha Shala (Observatory)', 'Sandipani Ashram', 'ISKCON Temple', 'Bade Ganeshji Temple', 'Chintaman Ganesh'],
+      demographics: 'One of seven sacred Hindu cities. Prime Meridian of ancient Hindu astronomers. Simhastha (Kumbh) Mela site. Mahakal Jyotirlinga.',
+      seoContent: {
+        intro: 'Ujjain, city of Mahakal, operates on India Standard Time (IST/UTC+5:30). This ancient city of 500,000 was the Prime Meridian of Hindu astronomy, hosts the Simhastha Kumbh Mela, and is home to Mahakaleshwar, one of twelve sacred Jyotirlingas.',
+        timezoneFacts: 'Same timezone as all of India. Was the reference point for ancient Indian time calculations.',
+        bestTimeToVisit: 'October-March for pleasant weather. Maha Shivaratri spectacular. Simhastha Kumbh every 12 years.',
+        businessHours: 'Mahakaleshwar Temple 4 AM to 11 PM. Bhasma Aarti 4 AM (registration required). Observatory 10 AM to 5 PM.',
+        timeDifference: 'Ujjain is UTC+5:30 year-round. When noon in Ujjain: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Bhasma Aarti (ash ritual) at 4 AM is powerful - book online. Ram Ghat evening aarti beautiful. Simhastha Kumbh draws millions. Try Ujjaini snacks.',
+        transportation: 'Ujjain Junction well-connected. Indore Airport (DEP) 55km. Buses from Indore (1.5 hours) and Bhopal.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Maha Shivaratri (massive), Simhastha Kumbh (every 12 years), Diwali.'
+      }
+    }
+  },
+  { slug: 'ajmer', city: 'Ajmer', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.45, lng: 74.64, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.6M', metroPopulation: '0.7M', phoneCode: '+91 145', language: 'Hindi, Rajasthani',
+      climate: 'Semi-arid with hot summers (35-45°C) and cool winters (5-25°C). Limited monsoon July-September.',
+      attractions: ['Ajmer Sharif Dargah', 'Ana Sagar Lake', 'Adhai Din Ka Jhonpra', 'Taragarh Fort', 'Akbar\'s Palace', 'Soniji Ki Nasiyan', 'Mayo College', 'Prithviraj Smarak', 'Foy Sagar Lake', 'Nareli Jain Temple'],
+      demographics: 'One of holiest Muslim pilgrimage sites in India. Dargah of Sufi saint Moinuddin Chishti. Gateway to Pushkar.',
+      seoContent: {
+        intro: 'Ajmer, Sufi soul of India, operates on India Standard Time (IST/UTC+5:30). This sacred city of 600,000 is home to the Ajmer Sharif Dargah of Sufi saint Moinuddin Chishti, visited by millions of Hindus and Muslims alike seeking blessings.',
+        timezoneFacts: 'Same timezone as all of India. Aravalli Hills location.',
+        bestTimeToVisit: 'October-March for pleasant weather. Urs Festival (anniversary of saint\'s death) draws millions. Avoid summer.',
+        businessHours: 'Dargah 5 AM to 9 PM (extended during Urs). Shops 10 AM to 8 PM.',
+        timeDifference: 'Ajmer is UTC+5:30 year-round. When noon in Ajmer: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Dargah welcomes all religions - dress modestly and cover head. Pushkar 14km for Hindu pilgrimage. Evening at Ana Sagar pleasant. Urs extremely crowded.',
+        transportation: 'Ajmer Junction major railway hub. Jaipur Airport (JAI) 135km. Buses from Jaipur (2.5 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Urs Festival (Islamic calendar), Eid, Diwali.'
+      }
+    }
+  },
+  { slug: 'mount-abu', city: 'Mount Abu', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 24.59, lng: 72.71, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.03M', phoneCode: '+91 2974', language: 'Hindi, Gujarati, Rajasthani',
+      climate: 'Subtropical highland with cool summers (23-34°C) and cold winters (5-20°C). Monsoon July-September.',
+      attractions: ['Dilwara Temples', 'Nakki Lake', 'Sunset Point', 'Guru Shikhar', 'Achalgarh Fort', 'Mount Abu Wildlife Sanctuary', 'Trevor\'s Tank', 'Brahma Kumaris Headquarters', 'Toad Rock', 'Peace Park'],
+      demographics: 'Only hill station in Rajasthan. Dilwara Jain temples considered finest in India. Brahma Kumaris spiritual headquarters.',
+      seoContent: {
+        intro: 'Mount Abu, Rajasthan\'s only hill station, operates on India Standard Time (IST/UTC+5:30). This cool oasis of 20,000 in the Aravalli Range features the exquisite Dilwara Jain temples, considered the finest examples of Jain architecture in India.',
+        timezoneFacts: 'Same timezone as all of India. Hill station - cooler than surrounding desert.',
+        bestTimeToVisit: 'Year-round due to pleasant climate. Summer (March-June) peak season escaping plains heat. Winter nights cold.',
+        businessHours: 'Dilwara Temples 12 PM to 5 PM (non-Jains). Nakki Lake boats 9:30 AM to 6 PM.',
+        timeDifference: 'Mount Abu is UTC+5:30 year-round. When noon in Mount Abu: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Dilwara marble carving is breathtaking - no photography inside. Sunset Point crowded but worth it. Brahma Kumaris offer meditation courses. Try dal baati churma.',
+        transportation: 'Nearest railway Abu Road 28km. Ahmedabad Airport 221km, Udaipur Airport 185km. Taxis and buses from Abu Road.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Mahavir Jayanti, Summer Festival (May-June), Diwali.'
+      }
+    }
+  },
+  { slug: 'dwarka', city: 'Dwarka', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.24, lng: 68.97, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.05M', phoneCode: '+91 2892', language: 'Gujarati, Hindi',
+      climate: 'Semi-arid with hot summers (30-40°C) and mild winters (12-30°C). Limited monsoon. Coastal breezes moderate temperature.',
+      attractions: ['Dwarkadhish Temple', 'Bet Dwarka', 'Nageshwar Jyotirlinga', 'Gomti Ghat', 'Rukmini Devi Temple', 'Lighthouse', 'Beyt Dwarka Island', 'Sudama Setu', 'Bhadkeshwar Mahadev', 'Okha Port'],
+      demographics: 'One of four Char Dham pilgrimage sites. Mythical kingdom of Lord Krishna. One of seven ancient cities of India.',
+      seoContent: {
+        intro: 'Dwarka, kingdom of Lord Krishna, operates on India Standard Time (IST/UTC+5:30). This ancient pilgrimage city of 40,000 is one of the four Char Dham, believed to be the legendary capital of Lord Krishna, now partially submerged in the Arabian Sea.',
+        timezoneFacts: 'Same timezone as all of India. Westernmost point of Gujarat.',
+        bestTimeToVisit: 'October-March for pleasant weather. Janmashtami (Krishna\'s birthday) draws millions. Avoid summer heat.',
+        businessHours: 'Dwarkadhish Temple 7 AM to 12:30 PM, 5 PM to 9:30 PM. Bet Dwarka boats 7 AM to 5 PM.',
+        timeDifference: 'Dwarka is UTC+5:30 year-round. When noon in Dwarka: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Evening aarti at Dwarkadhish powerful. Bet Dwarka boat trip essential - Krishna\'s actual residence. Nageshwar is one of 12 Jyotirlingas. Underwater ruins offshore.',
+        transportation: 'Jamnagar Airport (JGA) 137km. Dwarka station on railway. Buses from Jamnagar and Rajkot.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Janmashtami (massive), Holi, Diwali.'
+      }
+    }
+  },
+  { slug: 'somnath', city: 'Somnath', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.89, lng: 70.40, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.05M', metroPopulation: '0.08M', phoneCode: '+91 2876', language: 'Gujarati, Hindi',
+      climate: 'Semi-arid coastal with hot summers (30-40°C) and mild winters (15-30°C). Limited monsoon. Sea breeze moderates heat.',
+      attractions: ['Somnath Temple', 'Bhalka Tirth', 'Triveni Sangam', 'Somnath Beach', 'Panch Pandav Gufa', 'Somnath Museum', 'Laxmi Narayan Temple', 'Geeta Mandir', 'Junagadh Gate', 'Light and Sound Show'],
+      demographics: 'First among twelve Jyotirlingas. Temple destroyed and rebuilt multiple times throughout history. Where Lord Krishna is believed to have departed earth.',
+      seoContent: {
+        intro: 'Somnath, the eternal shrine, operates on India Standard Time (IST/UTC+5:30). This sacred coastal town of 50,000 is home to the first and most revered of the twelve Jyotirlingas, a temple destroyed by invaders 17 times but rebuilt each time by devotees.',
+        timezoneFacts: 'Same timezone as all of India. Saurashtra coast, Arabian Sea.',
+        bestTimeToVisit: 'October-March for pleasant weather. Maha Shivaratri draws huge crowds. Kartik Purnima fair.',
+        businessHours: 'Somnath Temple 6 AM to 9:30 PM. Light and Sound Show 8 PM (winter) / 8:45 PM (summer).',
+        timeDifference: 'Somnath is UTC+5:30 year-round. When noon in Somnath: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Evening aarti facing ocean is magnificent. Light and Sound Show tells temple\'s history. Bhalka Tirth is where Krishna was shot. Beach sunset beautiful.',
+        transportation: 'Veraval station 6km. Diu Airport 85km, Rajkot Airport 200km. Buses from Junagadh and Rajkot.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Maha Shivaratri (special), Kartik Purnima, Diwali.'
+      }
+    }
+  },
+  
+  // India - New Cities Batch 3 (20 cities with full premium content)
+  { slug: 'rameswaram', city: 'Rameswaram', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 9.29, lng: 79.31, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.05M', metroPopulation: '0.06M', phoneCode: '+91 4573', language: 'Tamil, English',
+      climate: 'Tropical with hot year-round temperatures (26-36°C). Northeast monsoon October-December. Sea breeze provides relief.',
+      attractions: ['Ramanathaswamy Temple', 'Pamban Bridge', 'Dhanushkodi', 'Agni Theertham', 'Adam\'s Bridge', 'Five-Faced Hanuman Temple', 'Gandhamadhana Parvatham', 'Villoondi Tirtham', 'APJ Abdul Kalam Memorial', 'Pamban Island'],
+      demographics: 'One of four Char Dham sites. Island connected by India\'s first sea bridge. Where Lord Rama built bridge to Lanka. Birthplace of APJ Abdul Kalam.',
+      seoContent: {
+        intro: 'Rameswaram, where Rama crossed to Lanka, operates on India Standard Time (IST/UTC+5:30). This sacred island of 50,000 is one of the four Char Dham, where Lord Rama is believed to have built the bridge to Lanka, now a stunning pilgrimage destination.',
+        timezoneFacts: 'Same timezone as all of India. Island in Gulf of Mannar.',
+        bestTimeToVisit: 'October-April for pleasant weather. Maha Shivaratri and Ram Navami major festivals. Avoid cyclone season.',
+        businessHours: 'Ramanathaswamy Temple 5 AM to 1 PM, 3 PM to 9 PM. 22 wells bath ritual early morning.',
+        timeDifference: 'Rameswaram is UTC+5:30 year-round. When noon in Rameswaram: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Bathing in 22 sacred wells is ritual - be prepared to get wet! Pamban Bridge train ride thrilling. Dhanushkodi ghost town haunting. APJ Kalam memorial touching.',
+        transportation: 'Rameswaram station connected to Chennai. Madurai Airport (IXM) 174km. Pamban Bridge only rail connection.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Maha Shivaratri, Ram Navami, Pongal, Diwali.'
+      }
+    }
+  },
+  { slug: 'kanyakumari', city: 'Kanyakumari', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 8.08, lng: 77.54, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.03M', phoneCode: '+91 4652', language: 'Tamil, Malayalam, English',
+      climate: 'Tropical with warm year-round temperatures (24-32°C). Two monsoons - southwest (June-September) and northeast (October-November).',
+      attractions: ['Vivekananda Rock Memorial', 'Thiruvalluvar Statue', 'Kanyakumari Temple', 'Triveni Sangam', 'Gandhi Memorial', 'Sunrise/Sunset Point', 'Padmanabhapuram Palace', 'Thirparappu Falls', 'Mathur Hanging Trough', 'Our Lady of Ransom Church'],
+      demographics: 'Southernmost tip of Indian mainland. Where three seas meet - Bay of Bengal, Arabian Sea, Indian Ocean. Named after goddess Kanya Kumari.',
+      seoContent: {
+        intro: 'Kanyakumari, Land\'s End of India, operates on India Standard Time (IST/UTC+5:30). This southernmost tip of the Indian mainland where three seas meet offers the unique spectacle of watching both sunrise and sunset over the ocean from the same spot.',
+        timezoneFacts: 'Same timezone as all of India. Southernmost point of mainland India.',
+        bestTimeToVisit: 'October-March for pleasant weather. Full moon days special - see both sunrise and sunset. Vivekananda Jayanti (January 12).',
+        businessHours: 'Vivekananda Memorial ferry 8 AM to 4 PM. Temple 4:30 AM to 12:30 PM, 4 PM to 8 PM.',
+        timeDifference: 'Kanyakumari is UTC+5:30 year-round. When noon in Kanyakumari: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Sunrise and sunset from same point - magical! Ferry to Vivekananda Rock can be crowded. Triveni Sangam - three seas meet. Full moon nights spectacular.',
+        transportation: 'Kanyakumari station on rail network. Trivandrum Airport (TRV) 90km. Buses from all major southern cities.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal, Vivekananda Jayanti (Jan 12), Chitra Pournami (April full moon).'
+      }
+    }
+  },
+  { slug: 'mahabalipuram', city: 'Mahabalipuram', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.62, lng: 80.19, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.03M', phoneCode: '+91 44', language: 'Tamil, English',
+      climate: 'Tropical wet and dry with hot summers (30-40°C) and warm winters (22-30°C). Northeast monsoon October-December.',
+      attractions: ['Shore Temple', 'Pancha Rathas', 'Arjuna\'s Penance', 'Krishna\'s Butter Ball', 'Tiger Cave', 'Crocodile Bank', 'Dakshinachitra', 'Beach Sculpture', 'Mahishasuramardini Cave', 'Lighthouse'],
+      demographics: 'UNESCO World Heritage Site. 7th-8th century Pallava dynasty stone temples. One of the oldest port towns in India.',
+      seoContent: {
+        intro: 'Mahabalipuram, open-air museum of Pallava art, operates on India Standard Time (IST/UTC+5:30). This UNESCO beach town of 20,000 features stunning 7th-8th century stone temples and the world\'s largest bas-relief, carved by the Pallava dynasty.',
+        timezoneFacts: 'Same timezone as all of India. Coromandel Coast, Bay of Bengal.',
+        bestTimeToVisit: 'November-February for pleasant weather. Dance Festival (Dec-Jan) spectacular. Avoid peak monsoon.',
+        businessHours: 'Shore Temple sunrise to sunset. Five Rathas 6 AM to 6 PM. Beach sculptures 24/7.',
+        timeDifference: 'Mahabalipuram is UTC+5:30 year-round. When noon in Mahabalipuram: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Shore Temple at sunrise is magical. Krishna\'s Butter Ball defies physics! Dance Festival (Dec-Jan) against monument backdrop. Beach has stone carving workshops.',
+        transportation: 'Chennai Airport (MAA) 60km. No railway - bus or taxi from Chennai. ECR scenic coastal drive.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal, Mamallapuram Dance Festival (Dec-Jan), Diwali.'
+      }
+    }
+  },
+  { slug: 'thanjavur', city: 'Thanjavur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.79, lng: 79.14, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.3M', metroPopulation: '0.4M', phoneCode: '+91 4362', language: 'Tamil, English',
+      climate: 'Tropical with hot summers (30-40°C) and warm winters (22-30°C). Northeast monsoon October-December. Rice bowl of Tamil Nadu.',
+      attractions: ['Brihadeeswarar Temple', 'Thanjavur Palace', 'Saraswathi Mahal Library', 'Art Gallery', 'Schwartz Church', 'Sangeetha Mahal', 'Bell Tower', 'Tamil University', 'Sivaganga Park', 'Thanjavur Paintings'],
+      demographics: 'UNESCO World Heritage Brihadeeswarar Temple. Capital of Chola Empire. Center of Carnatic music and Bharatanatyam dance.',
+      seoContent: {
+        intro: 'Thanjavur, cultural capital of Tamil Nadu, operates on India Standard Time (IST/UTC+5:30). This Chola dynasty capital of 300,000 is home to the UNESCO Brihadeeswarar Temple with its engineering marvel dome and is the birthplace of Carnatic music.',
+        timezoneFacts: 'Same timezone as all of India. Cauvery Delta region.',
+        bestTimeToVisit: 'October-March for pleasant weather. Natyanjali Dance Festival (February-March). Temple festivals throughout year.',
+        businessHours: 'Big Temple 6 AM to 12:30 PM, 4 PM to 8:30 PM. Palace Museum 9 AM to 6 PM.',
+        timeDifference: 'Thanjavur is UTC+5:30 year-round. When noon in Thanjavur: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Big Temple dome is single granite piece - engineering wonder! Saraswathi Mahal has ancient palm-leaf manuscripts. Buy Thanjavur paintings and bobblehead dolls.',
+        transportation: 'Thanjavur Junction on rail network. Tiruchirapalli Airport (TRZ) 56km. Buses from Chennai (6 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal, Natyanjali Festival, Maha Shivaratri, Diwali.'
+      }
+    }
+  },
+  { slug: 'tiruchirappalli', city: 'Tiruchirappalli', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.79, lng: 78.69, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.0M', metroPopulation: '1.2M', phoneCode: '+91 431', language: 'Tamil, English',
+      climate: 'Tropical with hot summers (32-40°C) and warm winters (22-32°C). Northeast monsoon October-December.',
+      attractions: ['Rockfort Temple', 'Ranganathaswamy Temple', 'Jambukeswarar Temple', 'St. Joseph\'s Church', 'BHEL Township', 'Gandhi Market', 'Mukkombu Dam', 'Kallanai Dam', 'Upper Anaicut', 'Thiruvanaikaval'],
+      demographics: 'Ancient temple city. Rockfort landmark visible across city. Ranganathaswamy is largest functioning Hindu temple. Educational and industrial hub.',
+      seoContent: {
+        intro: 'Tiruchirappalli (Trichy), city of the Rock, operates on India Standard Time (IST/UTC+5:30). This ancient city of 1 million is dominated by the iconic Rockfort temple and houses Ranganathaswamy, the world\'s largest functioning Hindu temple.',
+        timezoneFacts: 'Same timezone as all of India. Central Tamil Nadu.',
+        bestTimeToVisit: 'November-February for pleasant weather. Vaikunta Ekadasi (December) at Ranganathaswamy draws millions.',
+        businessHours: 'Rockfort Temple 6 AM to 8 PM. Ranganathaswamy 6 AM to 1 PM, 3 PM to 9 PM.',
+        timeDifference: 'Trichy is UTC+5:30 year-round. When noon in Trichy: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Climb Rockfort 417 steps for city views. Ranganathaswamy temple complex is like a city. Srirangam island between two rivers. Try Trichy\'s famous idlis.',
+        transportation: 'Tiruchirappalli Airport (TRZ). Junction on main rail lines. Buses to all Tamil Nadu cities.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal, Vaikunta Ekadasi (special), Diwali.'
+      }
+    }
+  },
+  { slug: 'tirupati', city: 'Tirupati', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 13.63, lng: 79.42, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.5M', metroPopulation: '0.7M', phoneCode: '+91 877', language: 'Telugu, Tamil, English',
+      climate: 'Tropical with hot summers (30-42°C) and warm winters (18-32°C). Light monsoon. Tirumala hills cooler.',
+      attractions: ['Tirumala Venkateswara Temple', 'ISKCON Temple', 'Sri Kapileswara Swamy Temple', 'Chandragiri Fort', 'TTD Gardens', 'Talakona Waterfall', 'Srikalahasti Temple', 'Akasa Ganga', 'Silathoranam', 'Deer Park'],
+      demographics: 'Richest and most visited pilgrimage site in the world. 50,000-100,000 pilgrims daily. Temple receives more donations than Vatican.',
+      seoContent: {
+        intro: 'Tirupati, abode of Lord Venkateswara, operates on India Standard Time (IST/UTC+5:30). This pilgrimage city of 500,000 serves the world\'s richest and most visited religious site - Tirumala temple receives 50,000-100,000 pilgrims daily.',
+        timezoneFacts: 'Same timezone as all of India. Southeastern Andhra Pradesh.',
+        bestTimeToVisit: 'Year-round pilgrimage. September-February most pleasant. Brahmotsavam (September) is major festival.',
+        businessHours: 'Tirumala Temple 24/7 for darshan. Special darshan timings vary. Free darshan queues very long.',
+        timeDifference: 'Tirupati is UTC+5:30 year-round. When noon in Tirupati: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Book darshan online weeks ahead! Free darshan can take 10-20 hours. ₹300 special darshan faster. Hair tonsuring is tradition. Laddoo prasadam famous.',
+        transportation: 'Tirupati Airport (TIR) 15km. Tirupati station well-connected. TTD buses to Tirumala (30km hill drive).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. TTD helpline: 0877-2277777.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Brahmotsavam (September), Vaikunta Ekadasi, Ugadi, Diwali.'
+      }
+    }
+  },
+  { slug: 'warangal', city: 'Warangal', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 17.98, lng: 79.60, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.8M', metroPopulation: '1.0M', phoneCode: '+91 870', language: 'Telugu, Urdu, Hindi',
+      climate: 'Tropical with hot summers (32-42°C) and mild winters (15-30°C). Monsoon June-September.',
+      attractions: ['Warangal Fort', 'Thousand Pillar Temple', 'Ramappa Temple (UNESCO)', 'Bhadrakali Temple', 'Pakhal Lake', 'Kakatiya Musical Garden', 'Eturnagaram Wildlife Sanctuary', 'Kakatiya Thoranam', 'Padmakshi Temple', 'Regional Science Centre'],
+      demographics: 'Former Kakatiya dynasty capital. UNESCO Ramappa Temple. Known for intricate stone carvings and engineering feats.',
+      seoContent: {
+        intro: 'Warangal, city of stone gates, operates on India Standard Time (IST/UTC+5:30). This former Kakatiya capital of 800,000 features the UNESCO-listed Ramappa Temple and the iconic stone gateways (Kakatiya Thoranam) that inspired Telangana\'s state emblem.',
+        timezoneFacts: 'Same timezone as all of India. Northern Telangana.',
+        bestTimeToVisit: 'October-March for pleasant weather. Bathukamma Festival (September-October) colorful.',
+        businessHours: 'Fort and temples sunrise to sunset. Museums 10 AM to 5 PM.',
+        timeDifference: 'Warangal is UTC+5:30 year-round. When noon in Warangal: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Ramappa Temple floats on water (laterite brick)! Thousand Pillar Temple has musical pillars. Pakhal Lake picnic spot. Try Warangal\'s Biryani.',
+        transportation: 'Warangal station on main line. Hyderabad Airport (HYD) 150km. Buses from Hyderabad (3 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bathukamma, Ugadi, Dussehra, Diwali.'
+      }
+    }
+  },
+  { slug: 'bidar', city: 'Bidar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 17.91, lng: 77.52, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.25M', phoneCode: '+91 8482', language: 'Kannada, Urdu, Deccani',
+      climate: 'Semi-arid with hot summers (32-42°C) and mild winters (12-28°C). Monsoon June-September.',
+      attractions: ['Bidar Fort', 'Mahmud Gawan Madrasa', 'Bahmani Tombs', 'Gurudwara Nanak Jhira Sahib', 'Chaukhandi of Hazrat Khalil Ullah', 'Solah Khamba Mosque', 'Rangin Mahal', 'Papnash Shiva Temple', 'Bidriware Workshops', 'Ashtur Tombs'],
+      demographics: 'Former Bahmani Sultanate capital. Unique Bidriware metal craft (UNESCO Intangible Heritage). Syncretic Deccani culture.',
+      seoContent: {
+        intro: 'Bidar, city of black metal art, operates on India Standard Time (IST/UTC+5:30). This Bahmani Sultanate capital of 200,000 is the birthplace of Bidriware, the distinctive black metal inlay craft recognized by UNESCO as Intangible Cultural Heritage.',
+        timezoneFacts: 'Same timezone as all of India. Northeastern Karnataka on Deccan Plateau.',
+        bestTimeToVisit: 'October-March for pleasant weather. Guru Nanak Jayanti at Nanak Jhira. Urs at Sufi shrines.',
+        businessHours: 'Fort 6 AM to 6 PM. Bidriware workshops 10 AM to 6 PM. Tombs sunrise to sunset.',
+        timeDifference: 'Bidar is UTC+5:30 year-round. When noon in Bidar: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Visit Bidriware workshops to see craft being made. Fort triple moat engineering marvel. Mahmud Gawan Madrasa was Oxford of the East. Try Bidar\'s Deccani cuisine.',
+        transportation: 'Bidar station on rail line. Hyderabad Airport (HYD) 140km. Buses from Hyderabad and Bangalore.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Guru Nanak Jayanti, Eid, Ugadi, Diwali.'
+      }
+    }
+  },
+  { slug: 'bijapur', city: 'Vijayapura', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 16.83, lng: 75.71, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.35M', metroPopulation: '0.4M', phoneCode: '+91 8352', language: 'Kannada, Urdu, Deccani',
+      climate: 'Semi-arid with hot summers (35-42°C) and mild winters (15-30°C). Light monsoon June-September.',
+      attractions: ['Gol Gumbaz', 'Ibrahim Roza', 'Bara Kaman', 'Jama Masjid', 'Malik-e-Maidan Cannon', 'Asar Mahal', 'Upli Burj', 'Gagan Mahal', 'Sat Manzil', 'Archaeological Museum'],
+      demographics: 'Former Adil Shahi Sultanate capital. Gol Gumbaz has second largest dome in the world. Called "Agra of the South".',
+      seoContent: {
+        intro: 'Vijayapura (Bijapur), the Agra of the South, operates on India Standard Time (IST/UTC+5:30). This Adil Shahi capital of 350,000 features Gol Gumbaz with the world\'s second-largest dome and famous Whispering Gallery.',
+        timezoneFacts: 'Same timezone as all of India. Northern Karnataka, Deccan Plateau.',
+        bestTimeToVisit: 'October-March for pleasant weather. Avoid extreme summer. Urs festivals at tombs.',
+        businessHours: 'Gol Gumbaz 6 AM to 6 PM. Ibrahim Roza 6 AM to 6 PM. Museum 10 AM to 5 PM.',
+        timeDifference: 'Vijayapura is UTC+5:30 year-round. When noon in Vijayapura: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Whisper in Gol Gumbaz dome - hear it 37m away! Ibrahim Roza inspired Taj Mahal. Malik-e-Maidan is massive cannon. Best seen over 2 days.',
+        transportation: 'Bijapur station on rail line. Hubli Airport (HBX) 200km. Buses from Bangalore (8 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Eid, Ugadi, Dussehra, Diwali.'
+      }
+    }
+  },
+  { slug: 'badami', city: 'Badami', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 15.92, lng: 75.68, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.04M', phoneCode: '+91 8357', language: 'Kannada, English',
+      climate: 'Semi-arid with hot summers (35-42°C) and mild winters (15-30°C). Light monsoon June-September.',
+      attractions: ['Badami Cave Temples', 'Agastya Lake', 'Bhutanatha Temple', 'Fort and Museums', 'Aihole (nearby)', 'Pattadakal (nearby)', 'Mahakuta Temple', 'Lower Shivalaya', 'Banashankari Temple', 'Rock Climbing'],
+      demographics: 'Chalukya dynasty capital (6th century). Rock-cut cave temples. Part of Badami-Aihole-Pattadakal UNESCO circuit.',
+      seoContent: {
+        intro: 'Badami, cradle of Chalukya architecture, operates on India Standard Time (IST/UTC+5:30). This ancient capital of 30,000 features stunning 6th-century rock-cut caves and forms the UNESCO circuit with nearby Aihole and Pattadakal.',
+        timezoneFacts: 'Same timezone as all of India. North Karnataka, Malaprabha Valley.',
+        bestTimeToVisit: 'October-March for pleasant weather. Morning light best for caves. Avoid summer heat.',
+        businessHours: 'Cave temples 6 AM to 6 PM. Fort sunrise to sunset. Combine with Aihole/Pattadakal day trip.',
+        timeDifference: 'Badami is UTC+5:30 year-round. When noon in Badami: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Cave 3 has famous Vishnu panels - morning light best. Agastya Lake sunset beautiful. Aihole (44km) and Pattadakal (22km) must-visit. Rock climbing popular.',
+        transportation: 'Badami station on Hubli-Sholapur line. Hubli Airport (HBX) 110km. Buses from Hubli and Bangalore.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Banashankari Jatra (January-February), Ugadi, Diwali.'
+      }
+    }
+  },
+  { slug: 'belur', city: 'Belur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 13.16, lng: 75.87, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.04M', phoneCode: '+91 8177', language: 'Kannada, English',
+      climate: 'Tropical with warm summers (25-35°C) and mild winters (15-28°C). Monsoon June-September.',
+      attractions: ['Chennakeshava Temple', 'Kappe Chennigaraya Temple', 'Halebidu (nearby)', 'Shravanabelagola (nearby)', 'Temple Sculptures', 'Yagachi Dam', 'Hoysala Architecture', 'Stone Carvings', 'Musical Pillars', 'Darpana Sundari'],
+      demographics: 'Hoysala dynasty capital. Chennakeshava Temple took 103 years to build. Stone carving pinnacle of Indian art.',
+      seoContent: {
+        intro: 'Belur, jewel of Hoysala art, operates on India Standard Time (IST/UTC+5:30). This temple town of 30,000 houses Chennakeshava Temple, a 103-year masterpiece of Hoysala architecture where no two sculptures are alike among thousands.',
+        timezoneFacts: 'Same timezone as all of India. Hassan district, Western Karnataka.',
+        bestTimeToVisit: 'October-March for pleasant weather. Combine with Halebidu and Shravanabelagola.',
+        businessHours: 'Temple 7:30 AM to 5:30 PM (summer), 7:30 AM to 7:30 PM. Guide services available.',
+        timeDifference: 'Belur is UTC+5:30 year-round. When noon in Belur: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Hire guide to understand intricate carvings! Every sculpture is unique. Darpana Sundari (lady with mirror) most famous. Halebidu just 16km away.',
+        transportation: 'Hassan station 38km. Mangalore Airport (IXE) 180km. Buses from Bangalore, Mysore, Hassan.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Hoysala Mahotsava, Ugadi, Dussehra, Diwali.'
+      }
+    }
+  },
+  { slug: 'madikeri', city: 'Madikeri', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.42, lng: 75.74, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.05M', phoneCode: '+91 8272', language: 'Kodava, Kannada, English',
+      climate: 'Tropical highland with cool summers (15-25°C) and mild winters (10-22°C). Heavy monsoon June-September. Misty year-round.',
+      attractions: ['Abbey Falls', 'Raja\'s Seat', 'Madikeri Fort', 'Omkareshwara Temple', 'Talacauvery', 'Dubare Elephant Camp', 'Nisargadhama', 'Namdroling Monastery', 'Coffee Plantations', 'Mandalpatti Viewpoint'],
+      demographics: 'Headquarters of Coorg (Kodagu). Coffee and spice capital of India. Distinct Kodava martial culture. Scotland of India.',
+      seoContent: {
+        intro: 'Madikeri, heart of Coorg, operates on India Standard Time (IST/UTC+5:30). This misty hill town of 40,000 is the capital of Kodagu, India\'s coffee country, home to the warrior Kodava people and endless emerald coffee plantations.',
+        timezoneFacts: 'Same timezone as all of India. Western Ghats, high rainfall region.',
+        bestTimeToVisit: 'October-March for pleasant weather. Monsoon (June-September) lush but very wet. March-May coffee blossom.',
+        businessHours: 'Raja\'s Seat 5:30 AM to 7:30 PM. Abbey Falls 9 AM to 5 PM. Plantation tours by appointment.',
+        timeDifference: 'Madikeri is UTC+5:30 year-round. When noon in Madikeri: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Stay in coffee plantation homestay - authentic experience! Dubare elephant camp morning bathing. Try pandi curry (pork) and Kodava cuisine. Talacauvery is Cauvery source.',
+        transportation: 'Nearest airport Mangalore (IXE) 135km or Mysore (MYQ) 120km. No railway. Buses from Bangalore (6 hours) and Mysore (3 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Kailpodh (harvest), Puthari, Kaveri Sankramana, Diwali.'
+      }
+    }
+  },
+  { slug: 'udupi', city: 'Udupi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 13.34, lng: 74.75, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.3M', phoneCode: '+91 820', language: 'Kannada, Tulu, Konkani',
+      climate: 'Tropical monsoon with hot summers (28-36°C) and warm winters (22-32°C). Very heavy monsoon June-September.',
+      attractions: ['Sri Krishna Temple', 'Malpe Beach', 'St. Mary\'s Island', 'Kaup Beach and Lighthouse', 'Manipal University', 'Anegudde Vinayaka Temple', 'Kudlu Falls', 'Udupi Cuisine', 'Pajaka Kshetra', 'Delta Beach'],
+      demographics: 'Birthplace of Udupi cuisine - vegetarian restaurants worldwide. Sri Krishna Mutt pilgrimage. Education hub (Manipal University).',
+      seoContent: {
+        intro: 'Udupi, birthplace of South Indian cuisine, operates on India Standard Time (IST/UTC+5:30). This temple town of 200,000 is the origin of Udupi restaurants found worldwide, home to the sacred Sri Krishna Temple and pristine coastal beaches.',
+        timezoneFacts: 'Same timezone as all of India. Karnataka coast, Arabian Sea.',
+        bestTimeToVisit: 'October-May for beaches and temples. Paryaya Festival (January, every 2 years) special. Monsoon dramatic but wet.',
+        businessHours: 'Sri Krishna Temple 5 AM to 9 PM. Malpe Beach boats 8 AM to 5 PM.',
+        timeDifference: 'Udupi is UTC+5:30 year-round. When noon in Udupi: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Eat at original Udupi restaurants near temple! St. Mary\'s Island has hexagonal basalt rocks. Manipal worth visiting. Try goli baje and neer dosa.',
+        transportation: 'Udupi station on Konkan Railway. Mangalore Airport (IXE) 60km. Buses from Bangalore (8 hours) and Mangalore (2 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Paryaya (biennial), Krishna Janmashtami, Dussehra, Diwali.'
+      }
+    }
+  },
+  { slug: 'gokarna', city: 'Gokarna', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 14.55, lng: 74.32, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.04M', phoneCode: '+91 8386', language: 'Kannada, Konkani, English',
+      climate: 'Tropical monsoon with hot summers (28-36°C) and warm winters (22-32°C). Heavy monsoon June-September.',
+      attractions: ['Om Beach', 'Kudle Beach', 'Half Moon Beach', 'Paradise Beach', 'Mahabaleshwara Temple', 'Gokarna Beach', 'Mirjan Fort', 'Yana Rocks', 'Vibhuti Falls', 'Beach Trekking'],
+      demographics: 'Ancient temple town turned beach paradise. Alternative to Goa - more laid-back. Sacred Mahabaleshwara Shiva temple. Hippie trail destination.',
+      seoContent: {
+        intro: 'Gokarna, where spirituality meets the sea, operates on India Standard Time (IST/UTC+5:30). This sacred beach town of 30,000 offers an alternative to crowded Goa, with pristine beaches like Om Beach and the ancient Mahabaleshwara Temple.',
+        timezoneFacts: 'Same timezone as all of India. Karnataka coast, Arabian Sea.',
+        bestTimeToVisit: 'October-March for beach weather. Maha Shivaratri huge at temple. Monsoon dramatic but beaches unsafe.',
+        businessHours: 'Temple 6 AM to 12:30 PM, 5 PM to 8 PM. Beach shacks seasonal. Trek routes daytime only.',
+        timeDifference: 'Gokarna is UTC+5:30 year-round. When noon in Gokarna: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Beach trek from Gokarna to Paradise Beach beautiful (2-3 hours). Stay on Om Beach for vibe. Temple sacred - dress modestly. Boat rides between beaches available.',
+        transportation: 'Gokarna Road station on Konkan Railway. Goa Airport (GOI) 140km. Buses from Bangalore (8 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Maha Shivaratri (massive), Rathotsava, Diwali.'
+      }
+    }
+  },
+  { slug: 'hospet', city: 'Hosapete', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 15.27, lng: 76.39, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.25M', phoneCode: '+91 8394', language: 'Kannada, Telugu, Hindi',
+      climate: 'Semi-arid with hot summers (35-42°C) and mild winters (18-32°C). Light monsoon June-September.',
+      attractions: ['Hampi (nearby)', 'Tungabhadra Dam', 'Hampi Bazaar', 'Virupaksha Temple', 'Vittala Temple', 'Stone Chariot', 'Daroji Bear Sanctuary', 'Kamalapur Museum', 'Matanga Hill', 'Royal Enclosure'],
+      demographics: 'Gateway city to UNESCO Hampi. Industrial town. Tungabhadra Dam project hub. Base for Hampi exploration.',
+      seoContent: {
+        intro: 'Hosapete (Hospet), gateway to Hampi, operates on India Standard Time (IST/UTC+5:30). This industrial town of 200,000 serves as the base for exploring UNESCO World Heritage Hampi ruins, just 13km away.',
+        timezoneFacts: 'Same timezone as all of India. North Karnataka, Tungabhadra River basin.',
+        bestTimeToVisit: 'October-February for pleasant weather. Hampi Utsav (November) cultural festival. Avoid summer heat.',
+        businessHours: 'Gateway to Hampi ruins (sunrise to sunset). Dam visits morning best.',
+        timeDifference: 'Hosapete is UTC+5:30 year-round. When noon in Hosapete: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Stay in Hospet or Hampi - both have options. Tungabhadra Dam evening lights. Rent bicycle in Hampi. Allow 2-3 days for ruins.',
+        transportation: 'Hosapete Junction on rail line. Hubli Airport (HBX) 143km. Buses from Bangalore (6 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Hampi Utsav (November), Ugadi, Diwali.'
+      }
+    }
+  },
+  { slug: 'kumbakonam', city: 'Kumbakonam', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.96, lng: 79.38, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.15M', metroPopulation: '0.2M', phoneCode: '+91 435', language: 'Tamil, English',
+      climate: 'Tropical with hot summers (30-40°C) and warm winters (22-32°C). Northeast monsoon October-December.',
+      attractions: ['Mahamaham Tank', 'Adi Kumbeswarar Temple', 'Sarangapani Temple', 'Navagraha Temples', 'Airavatesvara Temple (UNESCO)', 'Darasuram', 'Swamimalai Bronze Casting', 'Kumbakonam Coffee', 'Degree Coffee', 'Silk Weaving'],
+      demographics: 'Temple town with 188 temples. Mahamaham festival every 12 years draws millions. Center of South Indian bronze casting.',
+      seoContent: {
+        intro: 'Kumbakonam, city of temples, operates on India Standard Time (IST/UTC+5:30). This ancient town of 150,000 has 188 temples and hosts the Mahamaham festival every 12 years, when millions bathe in the sacred tank.',
+        timezoneFacts: 'Same timezone as all of India. Cauvery Delta, Tamil Nadu.',
+        bestTimeToVisit: 'October-March for pleasant weather. Mahamaham Festival (every 12 years - next 2028). Temple festivals throughout year.',
+        businessHours: 'Temples 6 AM to 12 PM, 4 PM to 9 PM. Bronze workshops 9 AM to 6 PM.',
+        timeDifference: 'Kumbakonam is UTC+5:30 year-round. When noon in Kumbakonam: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Try famous Kumbakonam degree coffee! Airavatesvara Temple (UNESCO) at Darasuram 4km. Visit Navagraha (9 planets) temples. Swamimalai bronze casting workshops.',
+        transportation: 'Kumbakonam Junction on rail line. Trichy Airport (TRZ) 96km. Buses from Chennai (6 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal, Mahamaham (every 12 years), Thai Poosam, Diwali.'
+      }
+    }
+  },
+  { slug: 'chidambaram', city: 'Chidambaram', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 11.40, lng: 79.69, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.06M', metroPopulation: '0.08M', phoneCode: '+91 4144', language: 'Tamil, English',
+      climate: 'Tropical with hot summers (30-40°C) and warm winters (22-32°C). Northeast monsoon October-December.',
+      attractions: ['Nataraja Temple', 'Thillai Kali Amman Temple', 'Pichavaram Mangroves', 'Annamalai University', 'Chidambaram Palace', 'Koothanur Saraswathi Temple', 'Vaitheeswaran Temple', 'Sirkali', 'Coastal Backwaters', 'Dance Festivals'],
+      demographics: 'Nataraja Temple is Shiva\'s cosmic dance shrine. One of five Pancha Bhuta Sthalams (space element). Pichavaram mangroves second largest in world.',
+      seoContent: {
+        intro: 'Chidambaram, abode of the cosmic dancer, operates on India Standard Time (IST/UTC+5:30). This sacred town of 60,000 houses the Nataraja Temple where Shiva performs his cosmic dance, and offers access to Pichavaram, the world\'s second-largest mangrove forest.',
+        timezoneFacts: 'Same timezone as all of India. Cuddalore district, Tamil Nadu coast.',
+        bestTimeToVisit: 'October-March for pleasant weather. Natyanjali Dance Festival (February-March). Margazhi season (December-January) special.',
+        businessHours: 'Nataraja Temple 6 AM to 12 PM, 5 PM to 10 PM. Pichavaram boats 9 AM to 5 PM.',
+        timeDifference: 'Chidambaram is UTC+5:30 year-round. When noon in Chidambaram: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Nataraja Temple managed by Dikshitars (hereditary priests). Pichavaram mangrove boat ride magical. Natyanjali Festival sees best Bharatanatyam dancers. Akasha Lingam represents space.',
+        transportation: 'Chidambaram station on rail line. Chennai Airport (MAA) 235km. Buses from Chennai (5 hours) and Pondicherry (1.5 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Natyanjali Festival (Feb-Mar), Ani Thirumanjanam (June), Margazhi (Dec-Jan), Diwali.'
+      }
+    }
+  },
+  { slug: 'pollachi', city: 'Pollachi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.66, lng: 77.01, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.1M', metroPopulation: '0.15M', phoneCode: '+91 4259', language: 'Tamil, English',
+      climate: 'Tropical with moderate temperatures year-round (22-35°C). Monsoon June-September and October-November. Coconut growing region.',
+      attractions: ['Anamalai Tiger Reserve', 'Topslip', 'Valparai', 'Aliyar Dam', 'Monkey Falls', 'Parambikulam Tiger Reserve', 'Sethumadai', 'Coconut Farms', 'Film City', 'Maruthamalai Temple'],
+      demographics: 'Coconut capital of South India. Gateway to Anamalai Hills. Popular Tamil film shooting location. Agricultural hub.',
+      seoContent: {
+        intro: 'Pollachi, coconut capital of India, operates on India Standard Time (IST/UTC+5:30). This agricultural town of 100,000 is surrounded by endless coconut groves and serves as the gateway to the Anamalai Tiger Reserve and misty Valparai hill station.',
+        timezoneFacts: 'Same timezone as all of India. Western Tamil Nadu, Anamalai foothills.',
+        bestTimeToVisit: 'September-May for wildlife and hills. Monsoon lush but leeches in forests. Winter best for Topslip.',
+        businessHours: 'Anamalai park 6 AM to 6 PM. Dam visits 9 AM to 5 PM. Coconut markets early morning.',
+        timeDifference: 'Pollachi is UTC+5:30 year-round. When noon in Pollachi: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Topslip elephant camp early morning best. Valparai drive through 40 hairpin bends! Book forest stays in advance. Fresh coconut water everywhere!',
+        transportation: 'Pollachi Junction on rail line. Coimbatore Airport (CJB) 40km. Buses from Coimbatore (1 hour).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Forest office: 04253-252356.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal, Diwali, Maruthamalai Temple festivals.'
+      }
+    }
+  },
+  { slug: 'yercaud', city: 'Yercaud', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 11.78, lng: 78.21, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.04M', phoneCode: '+91 4281', language: 'Tamil, English',
+      climate: 'Subtropical highland with cool year-round temperatures (14-29°C). Pleasant escape from plains heat. Mist common.',
+      attractions: ['Yercaud Lake', 'Shevaroy Temple', 'Lady\'s Seat', 'Gent\'s Seat', 'Pagoda Point', 'Killiyur Falls', 'Bear\'s Cave', 'Botanical Garden', 'Coffee Plantations', 'Anna Park'],
+      demographics: 'Poor man\'s Ooty - affordable hill station. Coffee and orange growing region. 32 hairpin bends to reach.',
+      seoContent: {
+        intro: 'Yercaud, the poor man\'s Ooty, operates on India Standard Time (IST/UTC+5:30). This affordable hill station of 30,000 in the Shevaroy Hills offers cool respite from Tamil Nadu\'s heat, with coffee plantations, a serene lake, and misty viewpoints.',
+        timezoneFacts: 'Same timezone as all of India. Shevaroy Hills, Salem district.',
+        bestTimeToVisit: 'Year-round pleasant. Summer Festival (May) with flower show. Monsoon misty and green.',
+        businessHours: 'Lake boating 8:30 AM to 5:30 PM. Viewpoints accessible daytime. Botanical Garden 10 AM to 6 PM.',
+        timeDifference: 'Yercaud is UTC+5:30 year-round. When noon in Yercaud: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: '32 hairpin bends make the drive exciting! Lake boating peaceful. Coffee fresh from estates. Shevaroy Temple at 5000ft highest point. Much less crowded than Ooty.',
+        transportation: 'Salem Junction 35km (1.5 hours). Salem Airport (no commercial). Buses from Chennai (6 hours) and Bangalore (5 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal, Summer Festival (May), Diwali.'
+      }
+    }
+  },
+  
+  // India - New Cities Batch 4 (20 cities with full premium content)
+  { slug: 'diu', city: 'Diu', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.71, lng: 70.98, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.05M', metroPopulation: '0.06M', phoneCode: '+91 2875', language: 'Gujarati, Portuguese, Hindi',
+      climate: 'Tropical with warm year-round temperatures (25-35°C). Sea breeze moderates heat. Light monsoon.',
+      attractions: ['Diu Fort', 'Nagoa Beach', 'St. Paul\'s Church', 'Naida Caves', 'Gangeshwar Temple', 'Jallandhar Beach', 'INS Khukri Memorial', 'Diu Museum', 'Zampa Gateway', 'Shell Museum'],
+      demographics: 'Former Portuguese colony until 1961. Union Territory with Daman. Alcohol permitted unlike dry Gujarat next door.',
+      seoContent: {
+        intro: 'Diu, Portuguese India\'s island gem, operates on India Standard Time (IST/UTC+5:30). This tiny Union Territory of 50,000 was a Portuguese colony until 1961, retaining churches, forts, and a relaxed vibe - plus legal alcohol unlike neighboring dry Gujarat.',
+        timezoneFacts: 'Same timezone as all of India. Island off Gujarat coast.',
+        bestTimeToVisit: 'October-May for pleasant beach weather. Avoid monsoon. Christmas and New Year popular.',
+        businessHours: 'Beach activities 6 AM to 6 PM. Fort 7 AM to 6 PM. Bars until late.',
+        timeDifference: 'Diu is UTC+5:30 year-round. When noon in Diu: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Alcohol is legal here - Gujaratis flock for this! Nagoa Beach best for swimming. Portuguese churches beautiful. Rent a scooter to explore.',
+        transportation: 'Diu Airport (DIU) limited flights. Una railway 12km. Buses from Ahmedabad (8 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Diu Liberation Day (Dec 19), Christmas, Holi, Diwali.'
+      }
+    }
+  },
+  { slug: 'daman', city: 'Daman', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.42, lng: 72.85, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.2M', phoneCode: '+91 260', language: 'Gujarati, Portuguese, Hindi',
+      climate: 'Tropical with warm year-round temperatures (22-35°C). Coastal humidity. Monsoon June-September.',
+      attractions: ['Moti Daman Fort', 'Nani Daman Fort', 'Devka Beach', 'Jampore Beach', 'Church of Bom Jesus', 'Lighthouse', 'Dominican Monastery', 'Nani Daman Jetty', 'Mirasol Water Park', 'Somnath Temple'],
+      demographics: 'Former Portuguese colony. Union Territory with Diu. Popular weekend getaway from Mumbai and Gujarat for alcohol.',
+      seoContent: {
+        intro: 'Daman, where Portugal meets Gujarat, operates on India Standard Time (IST/UTC+5:30). This coastal Union Territory of 40,000 was Portuguese until 1961 and remains a popular weekend escape from dry Gujarat, with beaches, churches, and legal bars.',
+        timezoneFacts: 'Same timezone as all of India. Gujarat coast, Arabian Sea.',
+        bestTimeToVisit: 'October-March for pleasant weather. Weekends very crowded with Gujaratis. Monsoon wet.',
+        businessHours: 'Beaches accessible all day. Churches 8 AM to 6 PM. Bars and restaurants until late.',
+        timeDifference: 'Daman is UTC+5:30 year-round. When noon in Daman: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Moti Daman (Big Daman) has forts and churches. Nani Daman has beaches and nightlife. Weekend crowds intense. Try seafood!',
+        transportation: 'Nearest airport Mumbai (180km) or Surat (130km). Vapi railway 12km. Well-connected by road.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Daman Liberation Day (Dec 19), Christmas, Nariyal Purnima, Diwali.'
+      }
+    }
+  },
+  { slug: 'silvassa', city: 'Silvassa', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.27, lng: 73.01, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.1M', metroPopulation: '0.4M', phoneCode: '+91 260', language: 'Gujarati, Marathi, Hindi',
+      climate: 'Tropical with hot summers (30-40°C) and mild winters (15-30°C). Heavy monsoon June-September.',
+      attractions: ['Dadra Nagar Haveli Garden', 'Vanganga Lake', 'Tribal Museum', 'Hirwa Van Garden', 'Satmaliya Deer Park', 'Dudhni Lake', 'Lion Safari', 'Nakshatra Garden', 'Swaminarayan Temple', 'Island Garden'],
+      demographics: 'Capital of Dadra and Nagar Haveli and Daman and Diu UT. Former Portuguese territory. Industrial and tourist hub.',
+      seoContent: {
+        intro: 'Silvassa, capital of merged territories, operates on India Standard Time (IST/UTC+5:30). This green city of 100,000 is the capital of Dadra and Nagar Haveli and Daman and Diu Union Territory, offering nature parks, tribal culture, and tax-free shopping.',
+        timezoneFacts: 'Same timezone as all of India. Between Gujarat and Maharashtra.',
+        bestTimeToVisit: 'October-March for pleasant weather. Monsoon (June-September) makes forests lush.',
+        businessHours: 'Gardens 9 AM to 6 PM. Lion Safari timings fixed. Industrial areas 24/7.',
+        timeDifference: 'Silvassa is UTC+5:30 year-round. When noon in Silvassa: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Dudhni Lake boating and water sports popular. Tribal Museum showcases Varli art. Tax-free alcohol available. Good weekend trip from Mumbai.',
+        transportation: 'Nearest airport Mumbai (180km). Vapi railway 18km. NH48 passes through.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Liberation Day (Aug 2), Tarpa Festival, Diwali.'
+      }
+    }
+  },
+  { slug: 'port-blair', city: 'Port Blair', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 11.67, lng: 92.74, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.15M', metroPopulation: '0.4M', phoneCode: '+91 3192', language: 'Hindi, Bengali, Tamil, Telugu, English',
+      climate: 'Tropical with warm year-round temperatures (23-31°C). Heavy monsoon May-October. Humidity high.',
+      attractions: ['Cellular Jail', 'Ross Island', 'North Bay Island', 'Corbyn\'s Cove Beach', 'Radhanagar Beach', 'Havelock Island', 'Neil Island', 'Mahatma Gandhi Marine National Park', 'Anthropological Museum', 'Samudrika Naval Museum'],
+      demographics: 'Capital of Andaman and Nicobar Islands UT. Historic Cellular Jail (Kala Pani). Gateway to pristine islands.',
+      seoContent: {
+        intro: 'Port Blair, gateway to the Andamans, operates on India Standard Time (IST/UTC+5:30). This island capital of 150,000 is the entry point to India\'s most pristine beaches, home to the historic Cellular Jail where freedom fighters were imprisoned.',
+        timezoneFacts: 'Same timezone as mainland India despite being far east. Sunrise around 5 AM, sunset around 5 PM.',
+        bestTimeToVisit: 'October-May for clear weather and water sports. Monsoon (May-September) closes many islands.',
+        businessHours: 'Cellular Jail 9 AM to 12:30 PM, 1:30 PM to 5 PM. Ferry bookings early morning.',
+        timeDifference: 'Port Blair is UTC+5:30 year-round. When noon in Port Blair: London 6:30 AM, NYC 1:30 AM, Bangkok 1 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Book Havelock/Neil ferries in advance! Cellular Jail light show moving. Radhanagar Beach (Havelock) is Asia\'s best. Carry cash - ATMs limited on islands.',
+        transportation: 'Veer Savarkar Airport (IXZ). Ships from Chennai/Kolkata (3-4 days). Inter-island ferries and seaplanes.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Coast Guard: 1554.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Island Tourism Festival (Jan), Subhash Mela, Diwali.'
+      }
+    }
+  },
+  { slug: 'kavaratti', city: 'Kavaratti', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.57, lng: 72.64, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.07M', phoneCode: '+91 4896', language: 'Malayalam, Dhivehi, English',
+      climate: 'Tropical with warm year-round temperatures (25-32°C). Monsoon May-September. Coral islands.',
+      attractions: ['Kavaratti Beach', 'Ujra Mosque', 'Marine Aquarium', 'Water Sports', 'Dolphin Dive Centre', 'Lighthouse', 'Agatti Island', 'Bangaram Island', 'Glass Bottom Boats', 'Kayaking'],
+      demographics: 'Capital of Lakshadweep UT. 36 coral islands, only 10 inhabited. Restricted entry - permit required.',
+      seoContent: {
+        intro: 'Kavaratti, capital of Lakshadweep, operates on India Standard Time (IST/UTC+5:30). This tiny coral island capital of 10,000 is the gateway to India\'s only coral archipelago - 36 islands with crystal-clear lagoons, requiring special permits to visit.',
+        timezoneFacts: 'Same timezone as mainland India. Remote Arabian Sea location.',
+        bestTimeToVisit: 'October-May for calm seas and water sports. Monsoon closes most activities.',
+        businessHours: 'Water sports 9 AM to 5 PM. Government offices 9:30 AM to 5 PM.',
+        timeDifference: 'Kavaratti is UTC+5:30 year-round. When noon in Kavaratti: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Entry permit required for all tourists - apply through SPORTS or tour operators. Bangaram only island open to foreigners. Alcohol prohibited (Muslim islands). Pristine coral reefs!',
+        transportation: 'Agatti Airport (AGX) then boat. Ships from Kochi (14-20 hours). Helicopter service available.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Eid ul-Fitr, Eid ul-Adha, Milad-un-Nabi.'
+      }
+    }
+  },
+  { slug: 'pelling', city: 'Pelling', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.30, lng: 88.23, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.02M', phoneCode: '+91 3595', language: 'Nepali, Sikkimese, English',
+      climate: 'Subtropical highland with cool summers (15-22°C) and cold winters (4-12°C). Heavy monsoon May-September.',
+      attractions: ['Kanchenjunga Views', 'Pemayangtse Monastery', 'Rabdentse Ruins', 'Khecheopalri Lake', 'Sangachoeling Monastery', 'Darap Village', 'Rimbi Waterfalls', 'Skywalk', 'Helicopter Rides', 'Singshore Bridge'],
+      demographics: 'Hill town with best Kanchenjunga views. Gateway to West Sikkim monasteries. Laid-back alternative to Gangtok.',
+      seoContent: {
+        intro: 'Pelling, balcony to Kanchenjunga, operates on India Standard Time (IST/UTC+5:30). This quiet hill town of 10,000 offers the best views of the world\'s third-highest peak and serves as gateway to Sikkim\'s ancient monasteries.',
+        timezoneFacts: 'Same timezone as all of India. West Sikkim, Himalayan foothills.',
+        bestTimeToVisit: 'October-December and March-May for clear Kanchenjunga views. Monsoon clouds hide mountains.',
+        businessHours: 'Monasteries 7 AM to 4 PM. Skywalk 9 AM to 5 PM.',
+        timeDifference: 'Pelling is UTC+5:30 year-round. When noon in Pelling: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Wake early for Kanchenjunga sunrise! Pemayangtse is Sikkim\'s oldest monastery. Khecheopalri is wish-fulfilling lake. Quieter than Gangtok.',
+        transportation: 'Nearest airport Bagdogra (IXB) 151km. No railway. Shared jeeps from Gangtok (5 hours) or NJP.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar, Saga Dawa, Pang Lhabsol, Diwali.'
+      }
+    }
+  },
+  { slug: 'kalimpong', city: 'Kalimpong', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.06, lng: 88.47, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.05M', metroPopulation: '0.06M', phoneCode: '+91 3552', language: 'Nepali, Bengali, Hindi, English',
+      climate: 'Subtropical highland with cool summers (15-25°C) and cold winters (5-15°C). Monsoon June-September.',
+      attractions: ['Durpin Monastery', 'Deolo Hill', 'Dr. Graham\'s Homes', 'Mangal Dham', 'Cactus Nursery', 'Flower Nurseries', 'Teesta Bazaar', 'Morgan House', 'Pine View Nursery', 'Army Golf Course'],
+      demographics: 'Former trade route to Tibet. Famous for flower nurseries. More Tibetan influence than Darjeeling.',
+      seoContent: {
+        intro: 'Kalimpong, orchid capital of India, operates on India Standard Time (IST/UTC+5:30). This quiet hill town of 50,000 was once the gateway to Tibet, now famous for its flower nurseries supplying orchids and cacti worldwide.',
+        timezoneFacts: 'Same timezone as all of India. Darjeeling district, West Bengal.',
+        bestTimeToVisit: 'March-May for flowers blooming. October-December for clear views. Monsoon wet.',
+        businessHours: 'Nurseries 8 AM to 5 PM. Monasteries 7 AM to 5 PM.',
+        timeDifference: 'Kalimpong is UTC+5:30 year-round. When noon in Kalimpong: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Visit nurseries - buy orchids and cacti! Deolo Hill for Kanchenjunga views. Less touristy than Darjeeling. Try Tibetan food.',
+        transportation: 'Nearest airport Bagdogra (IXB) 75km. NJP station 65km. Shared jeeps available.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Durga Puja, Losar, Diwali.'
+      }
+    }
+  },
+  { slug: 'siliguri', city: 'Siliguri', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.71, lng: 88.43, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.7M', metroPopulation: '1.0M', phoneCode: '+91 353', language: 'Bengali, Nepali, Hindi',
+      climate: 'Humid subtropical with hot summers (30-38°C) and mild winters (10-25°C). Heavy monsoon June-September.',
+      attractions: ['Mahananda Wildlife Sanctuary', 'Salugara Monastery', 'ISKCON Temple', 'Hong Kong Market', 'Kali Mandir', 'North Bengal Science Centre', 'Surya Sen Park', 'City Centre Mall', 'Coronation Bridge', 'Sevoke Road'],
+      demographics: 'Gateway to Northeast India. Chicken\'s Neck corridor. Major commercial hub connecting Darjeeling, Sikkim, Bhutan, Nepal.',
+      seoContent: {
+        intro: 'Siliguri, gateway to the Himalayas, operates on India Standard Time (IST/UTC+5:30). This bustling city of 700,000 is the crucial corridor to Northeast India through the "Chicken\'s Neck" and serves as the base for trips to Darjeeling, Sikkim, Bhutan, and Nepal.',
+        timezoneFacts: 'Same timezone as all of India. Strategic location in narrow corridor.',
+        bestTimeToVisit: 'October-March for pleasant weather. Transit hub - usually short stays.',
+        businessHours: 'Hong Kong Market 10 AM to 8 PM. Commercial areas 10 AM to 9 PM.',
+        timeDifference: 'Siliguri is UTC+5:30 year-round. When noon in Siliguri: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Hong Kong Market for cheap electronics and clothes. Gateway to everywhere - Darjeeling, Gangtok, Bhutan, Nepal all accessible. NJP/Bagdogra are actually in Siliguri area.',
+        transportation: 'Bagdogra Airport (IXB) 12km. New Jalpaiguri (NJP) major junction. National highways to all directions.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Durga Puja (huge!), Diwali, Holi.'
+      }
+    }
+  },
+  { slug: 'jorhat', city: 'Jorhat', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.76, lng: 94.22, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.15M', metroPopulation: '0.4M', phoneCode: '+91 376', language: 'Assamese, Hindi, English',
+      climate: 'Humid subtropical with warm summers (25-35°C) and mild winters (10-25°C). Heavy monsoon May-September.',
+      attractions: ['Majuli Island', 'Tea Estates', 'Gibbon Wildlife Sanctuary', 'Tocklai Tea Research', 'Gymkhana Club', 'Rajmai Hills', 'Thengal Manor', 'Kaziranga (nearby)', 'Nimati Ghat', 'War Cemeteries'],
+      demographics: 'Tea capital of the world. Gateway to Majuli - world\'s largest river island. Former Ahom capital.',
+      seoContent: {
+        intro: 'Jorhat, tea capital of the world, operates on India Standard Time (IST/UTC+5:30). This historic city of 150,000 is surrounded by tea estates and serves as the gateway to Majuli, the world\'s largest river island and a hub of Assamese Vaishnavite culture.',
+        timezoneFacts: 'Same timezone as all of India. Upper Assam, Brahmaputra Valley.',
+        bestTimeToVisit: 'October-April for pleasant weather. Majuli best November-March. Monsoon floods.',
+        businessHours: 'Tea estate tours 9 AM to 4 PM. Majuli ferries from 8 AM.',
+        timeDifference: 'Jorhat is UTC+5:30 year-round. When noon in Jorhat: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Visit Tocklai - world\'s oldest tea research station. Majuli ferry from Nimati Ghat. Tea estate homestays available. Gateway to Kaziranga too.',
+        transportation: 'Jorhat Airport (JRH). Jorhat Town station. Ferries to Majuli from Nimati Ghat.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bihu (3 times a year!), Durga Puja, Diwali.'
+      }
+    }
+  },
+  { slug: 'tezpur', city: 'Tezpur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.63, lng: 92.80, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.1M', metroPopulation: '0.15M', phoneCode: '+91 3712', language: 'Assamese, Bengali, Hindi',
+      climate: 'Humid subtropical with warm summers (25-35°C) and mild winters (10-22°C). Heavy monsoon May-September.',
+      attractions: ['Agnigarh Hill', 'Cole Park', 'Mahabhairab Temple', 'Da Parbatia', 'Chitralekha Udyan', 'Bamuni Hills', 'Nameri National Park', 'Tezpur University', 'Hazara Pukhuri', 'Bhairabi Temple'],
+      demographics: 'City of Blood - legendary battle between Krishna and Banasura. Gateway to Arunachal. Air Force base.',
+      seoContent: {
+        intro: 'Tezpur, city of eternal romance, operates on India Standard Time (IST/UTC+5:30). This historic city of 100,000 on the Brahmaputra is steeped in legend - site of the mythological battle between Lord Krishna and demon Banasura over princess Usha.',
+        timezoneFacts: 'Same timezone as all of India. Central Assam, north bank of Brahmaputra.',
+        bestTimeToVisit: 'October-April for pleasant weather. Nameri best November-March. Monsoon floods common.',
+        businessHours: 'Parks 6 AM to 6 PM. Temples sunrise to sunset.',
+        timeDifference: 'Tezpur is UTC+5:30 year-round. When noon in Tezpur: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Agnigarh Hill for Brahmaputra views. Gateway to Tawang - scenic drive. Nameri for rafting and wildlife. Air Force heritage.',
+        transportation: 'Tezpur Airport (TEZ) limited flights. Nearest railway Rangapara. NH15 to Tawang.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bihu, Durga Puja, Diwali.'
+      }
+    }
+  },
+  { slug: 'dibrugarh', city: 'Dibrugarh', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.47, lng: 94.91, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.15M', metroPopulation: '0.4M', phoneCode: '+91 373', language: 'Assamese, Hindi, English',
+      climate: 'Humid subtropical with warm summers (25-35°C) and mild winters (8-22°C). Heavy monsoon May-September.',
+      attractions: ['Tea Gardens', 'Brahmaputra River', 'Namphake Village', 'Dehing Patkai Wildlife Sanctuary', 'Radha Krishna Mandir', 'Tai Phake Monastery', 'Jokai Botanical Garden', 'Naharkatia Oil Fields', 'Bogibeel Bridge', 'Cultural Centers'],
+      demographics: 'Tea city of India. Easternmost major city. Gateway to Arunachal Pradesh. Oil and tea economy.',
+      seoContent: {
+        intro: 'Dibrugarh, tea city of India, operates on India Standard Time (IST/UTC+5:30). This easternmost major city of 150,000 is the heart of Assam\'s tea industry, surrounded by lush gardens and serving as the gateway to eastern Arunachal Pradesh.',
+        timezoneFacts: 'Same timezone as all of India despite being far east. Sunrise as early as 4:30 AM in summer!',
+        bestTimeToVisit: 'October-April for pleasant weather. Tea plucking season March-November.',
+        businessHours: 'Tea estate tours 9 AM to 4 PM. Market areas 9 AM to 8 PM.',
+        timeDifference: 'Dibrugarh is UTC+5:30 year-round. When noon in Dibrugarh: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Stay in tea estate bungalows for authentic experience. Bogibeel Bridge is India\'s longest. Namphake is Tai-Phake Buddhist village. Try Assamese thali.',
+        transportation: 'Dibrugarh Airport (DIB). Dibrugarh Town railway. Gateway to Pasighat and eastern Arunachal.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bihu (3 times!), Durga Puja, Diwali.'
+      }
+    }
+  },
+  { slug: 'majuli', city: 'Majuli', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.95, lng: 94.17, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.17M', metroPopulation: '0.17M', phoneCode: '+91 3775', language: 'Assamese, Mising',
+      climate: 'Humid subtropical with warm summers (25-35°C) and mild winters (10-22°C). Monsoon floods reduce island size annually.',
+      attractions: ['Satras (Monasteries)', 'Kamalabari Satra', 'Auniati Satra', 'Dakhinpat Satra', 'Mask Making', 'Pottery Villages', 'Mising Tribal Culture', 'Raas Festival', 'Birdwatching', 'Sunset Points'],
+      demographics: 'World\'s largest river island (shrinking). Vaishnavite cultural hub. 22 satras (monasteries). Mising tribal homeland.',
+      seoContent: {
+        intro: 'Majuli, the world\'s largest river island, operates on India Standard Time (IST/UTC+5:30). This UNESCO-nominated island of 170,000 in the Brahmaputra is the heartland of Assamese Vaishnavite culture, with 22 ancient satras (monasteries) and unique mask-making traditions.',
+        timezoneFacts: 'Same timezone as all of India. Mid-Brahmaputra, Upper Assam.',
+        bestTimeToVisit: 'November-March for dry weather. Raas Festival (November) spectacular. Monsoon floods island.',
+        businessHours: 'Satras 7 AM to 5 PM. Ferries 8 AM to 4 PM.',
+        timeDifference: 'Majuli is UTC+5:30 year-round. When noon in Majuli: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Island is shrinking due to erosion - visit before it disappears! Stay in satra guesthouses. Watch mask-making. Raas festival in November incredible. Cycle around island.',
+        transportation: 'Ferry from Nimati Ghat (Jorhat) or Neamati. No airport. Jorhat Airport (JRH) 25km from ferry point.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited medical facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bihu, Raas Festival (November), Ali-Aye-Ligang.'
+      }
+    }
+  },
+  { slug: 'ziro', city: 'Ziro', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.59, lng: 93.83, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.03M', phoneCode: '+91 3788', language: 'Apatani, Hindi, English',
+      climate: 'Subtropical highland with cool summers (15-25°C) and cold winters (0-15°C). Monsoon May-September.',
+      attractions: ['Ziro Valley', 'Apatani Villages', 'Talley Valley Wildlife Sanctuary', 'Pine Groves', 'Ziro Music Festival', 'Tribal Homestays', 'Paddy Fields', 'Meghna Cave', 'Tarin Fish Farm', 'Dolo Mando'],
+      demographics: 'Home of Apatani tribe. UNESCO World Heritage tentative list. Famous Ziro Music Festival. Sustainable rice-fish farming.',
+      seoContent: {
+        intro: 'Ziro, valley of the Apatani, operates on India Standard Time (IST/UTC+5:30). This stunning valley of 30,000 is home to the Apatani tribe known for their unique nose plugs (now discontinued) and sustainable rice-fish cultivation that earned UNESCO tentative status.',
+        timezoneFacts: 'Same timezone as all of India. Lower Subansiri district, Arunachal Pradesh.',
+        bestTimeToVisit: 'March-October for pleasant weather. September for Ziro Music Festival. Dree Festival (July) for Apatani culture.',
+        businessHours: 'Villages accessible daytime. Music Festival 4-day event in September.',
+        timeDifference: 'Ziro is UTC+5:30 year-round. When noon in Ziro: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Inner Line Permit required! Ziro Music Festival (Sept) is India\'s best outdoor music fest. Stay in tribal homestays. Try Apatani rice beer. Paddy fields stunning.',
+        transportation: 'Nearest airport Lilabari (110km) or Itanagar. North Lakhimpur railway 115km. Scenic drive from Itanagar (5 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities - Itanagar better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Dree Festival (July), Myoko, Ziro Music Festival (September).'
+      }
+    }
+  },
+  { slug: 'bomdila', city: 'Bomdila', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.26, lng: 92.42, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.015M', phoneCode: '+91 3782', language: 'Monpa, Hindi, English',
+      climate: 'Subtropical highland with cool summers (10-20°C) and cold winters (-5 to 10°C). Snow possible in winter.',
+      attractions: ['Bomdila Monastery', 'Bomdila View Point', 'Apple Orchards', 'Craft Centre', 'Ethnographic Museum', 'Upper Gompa', 'Lower Gompa', 'Sessa Orchid Sanctuary', 'RR Hill', 'Eagle\'s Nest Wildlife Sanctuary'],
+      demographics: 'District HQ of West Kameng. Monpa Buddhist tribe. En route to Tawang. Apple growing region.',
+      seoContent: {
+        intro: 'Bomdila, gateway to Tawang, operates on India Standard Time (IST/UTC+5:30). This hill town of 10,000 is home to the Monpa Buddhist tribe and serves as an acclimatization stop on the spectacular drive to Tawang, with monasteries, apple orchards, and Himalayan views.',
+        timezoneFacts: 'Same timezone as all of India. West Kameng district, Arunachal Pradesh.',
+        bestTimeToVisit: 'March-June and September-November. Winter brings snow. Stop here to acclimatize before Tawang.',
+        businessHours: 'Monasteries 6 AM to 6 PM. Craft Centre 9 AM to 5 PM.',
+        timeDifference: 'Bomdila is UTC+5:30 year-round. When noon in Bomdila: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Inner Line Permit required! Stop here before Tawang for altitude adjustment. Buy Monpa handicrafts. Apple season August-October. Road to Tawang stunning but long.',
+        transportation: 'No airport. Tezpur (180km) nearest. Road from Guwahati via Tezpur. Shared sumos to Tawang.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Army help available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar, Torgya, Buddha Purnima.'
+      }
+    }
+  },
+  { slug: 'pasighat', city: 'Pasighat', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 28.07, lng: 95.33, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.05M', metroPopulation: '0.06M', phoneCode: '+91 368', language: 'Adi, Hindi, English',
+      climate: 'Humid subtropical with warm summers (20-32°C) and mild winters (8-22°C). Heavy monsoon May-September.',
+      attractions: ['Daying Ering Wildlife Sanctuary', 'Siang River', 'Hanging Bridge', 'Bodak Village', 'Orange Orchards', 'Pangin', 'Kekar Monying', 'Tribal Villages', 'River Rafting', 'Winter Carnival'],
+      demographics: 'Oldest town in Arunachal (1911). Adi tribal homeland. Gateway to Siang Valley. Orange cultivation center.',
+      seoContent: {
+        intro: 'Pasighat, the oldest town in Arunachal, operates on India Standard Time (IST/UTC+5:30). This Adi tribal town of 50,000 on the Siang River was established in 1911 and serves as the gateway to one of India\'s most remote and spectacular regions.',
+        timezoneFacts: 'Same timezone as all of India. Easternmost Arunachal, Siang River.',
+        bestTimeToVisit: 'October-April for pleasant weather. Solung Festival (September) for Adi culture. River rafting November-March.',
+        businessHours: 'Market 8 AM to 6 PM. Government 9:30 AM to 4:30 PM.',
+        timeDifference: 'Pasighat is UTC+5:30 year-round. When noon in Pasighat: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Inner Line Permit required! Siang River rafting world-class. Adi villages for authentic experience. Orange season December-January. Gateway to Mechuka.',
+        transportation: 'Pasighat Airport (IXT) limited flights. Dibrugarh railway 260km. Road from Itanagar (280km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited medical facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Solung (September), Aran, Diwali.'
+      }
+    }
+  },
+  { slug: 'nainital', city: 'Nainital', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 29.38, lng: 79.46, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.05M', phoneCode: '+91 5942', language: 'Hindi, Kumaoni, English',
+      climate: 'Subtropical highland with cool summers (15-27°C) and cold winters (0-15°C). Monsoon June-September.',
+      attractions: ['Naini Lake', 'Naina Devi Temple', 'Mall Road', 'Snow View Point', 'Tiffin Top', 'Eco Cave Gardens', 'High Altitude Zoo', 'Governor\'s House', 'Lands End', 'Pangot Bird Sanctuary'],
+      demographics: 'Lake District of India. British-era hill station. Governor\'s summer headquarters. Kumaon region gem.',
+      seoContent: {
+        intro: 'Nainital, the Lake District of India, operates on India Standard Time (IST/UTC+5:30). This charming British-era hill station of 40,000 is built around the eye-shaped Naini Lake, offering colonial architecture, boat rides, and panoramic Himalayan views.',
+        timezoneFacts: 'Same timezone as all of India. Kumaon Hills, Uttarakhand.',
+        bestTimeToVisit: 'March-June for pleasant weather. October-February for clear views but cold. Monsoon brings landslides.',
+        businessHours: 'Lake boats 6 AM to 6 PM. Mall Road shops 9 AM to 9 PM. Ropeway 10 AM to 5 PM.',
+        timeDifference: 'Nainital is UTC+5:30 year-round. When noon in Nainital: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Boat ride on Naini Lake essential. Ropeway to Snow View for Himalayan panorama. Mall Road pedestrian zone. Try Bal Mithai sweet.',
+        transportation: 'Nearest airport Pantnagar (65km). Kathgodam railway 35km. Buses from Delhi (7-8 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Nanda Devi Mela (September), Diwali.'
+      }
+    }
+  },
+  { slug: 'mussoorie', city: 'Mussoorie', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.45, lng: 78.07, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.04M', phoneCode: '+91 135', language: 'Hindi, Garhwali, English',
+      climate: 'Subtropical highland with cool summers (15-25°C) and cold winters (1-10°C). Monsoon June-September brings mist.',
+      attractions: ['Kempty Falls', 'Gun Hill', 'Lal Tibba', 'Mall Road', 'Camel\'s Back Road', 'Company Garden', 'Landour', 'Christ Church', 'Lake Mist', 'Mussoorie Lake'],
+      demographics: 'Queen of Hills. British-era summer capital of India. Landour cantonment. Gateway to Yamunotri.',
+      seoContent: {
+        intro: 'Mussoorie, Queen of the Hills, operates on India Standard Time (IST/UTC+5:30). This British-era hill station of 30,000 above Dehradun was once the summer capital of India, offering Mall Road strolls, Himalayan views, and the historic Landour cantonment.',
+        timezoneFacts: 'Same timezone as all of India. Garhwal Hills, Uttarakhand.',
+        bestTimeToVisit: 'March-June for pleasant weather. September-November for clear views. December-February for possible snow.',
+        businessHours: 'Mall Road shops 9 AM to 10 PM. Ropeway 10 AM to 7 PM.',
+        timeDifference: 'Mussoorie is UTC+5:30 year-round. When noon in Mussoorie: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Walk Camel\'s Back Road at sunset. Landour for quieter cafes and Ruskin Bond vibes. Gun Hill ropeway for views. Kempty Falls crowded but fun.',
+        transportation: 'Dehradun Jolly Grant Airport (DED) 60km. Dehradun railway 35km. Easy drive from Delhi (6 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Summer Festival (May-June), Diwali.'
+      }
+    }
+  },
+  { slug: 'almora', city: 'Almora', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 29.60, lng: 79.66, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.05M', phoneCode: '+91 5962', language: 'Hindi, Kumaoni, English',
+      climate: 'Subtropical highland with cool summers (15-28°C) and cold winters (2-15°C). Monsoon June-September.',
+      attractions: ['Bright End Corner', 'Kasar Devi Temple', 'Chitai Temple', 'Nanda Devi Temple', 'Katarmal Sun Temple', 'Jageshwar', 'Deer Park', 'Binsar Wildlife Sanctuary', 'Zero Point', 'Lala Bazaar'],
+      demographics: 'Cultural capital of Kumaon. Ancient Chand dynasty capital. Swami Vivekananda and other luminaries visited. Hippie trail destination.',
+      seoContent: {
+        intro: 'Almora, cultural heart of Kumaon, operates on India Standard Time (IST/UTC+5:30). This ancient hill town of 40,000 was the Chand dynasty capital, attracting luminaries from Swami Vivekananda to hippies seeking spiritual energy at Kasar Devi.',
+        timezoneFacts: 'Same timezone as all of India. Kumaon Hills, Uttarakhand.',
+        bestTimeToVisit: 'March-June and September-November for pleasant weather. Winter cold but clear.',
+        businessHours: 'Temples sunrise to sunset. Lala Bazaar 9 AM to 8 PM.',
+        timeDifference: 'Almora is UTC+5:30 year-round. When noon in Almora: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Kasar Devi on Van Allen Belt - special energy. Bright End Corner for sunrise. Jageshwar temple complex day trip. Buy traditional Almora sweets.',
+        transportation: 'Nearest airport Pantnagar (117km). Kathgodam railway 90km. Buses from Delhi (8-9 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Nanda Devi Mela, Dussehra (special here), Diwali.'
+      }
+    }
+  },
+  { slug: 'ranikhet', city: 'Ranikhet', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 29.64, lng: 79.43, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.02M', phoneCode: '+91 5966', language: 'Hindi, Kumaoni, English',
+      climate: 'Subtropical highland with cool summers (12-25°C) and cold winters (0-12°C). Less crowded than Nainital.',
+      attractions: ['Chaubatia Gardens', 'Golf Course', 'Kumaon Regimental Museum', 'Jhula Devi Temple', 'Majkhali', 'Dwarahat Temples', 'Rani Jheel', 'Upat Golf Course', 'Ashiyana Park', 'Tarikhet'],
+      demographics: 'Queen\'s Meadow. Kumaon Regiment headquarters. British-era cantonment. Known for apricots and apples.',
+      seoContent: {
+        intro: 'Ranikhet, Queen\'s Meadow, operates on India Standard Time (IST/UTC+5:30). This peaceful cantonment town of 20,000 is home to the Kumaon Regiment, offering pristine air, apple orchards, one of Asia\'s highest golf courses, and unobstructed Himalayan views.',
+        timezoneFacts: 'Same timezone as all of India. Kumaon Hills, Uttarakhand.',
+        bestTimeToVisit: 'March-June and September-November. Winter beautiful but cold. Less crowded than Nainital year-round.',
+        businessHours: 'Chaubatia Gardens 10 AM to 5 PM. Golf Course by booking.',
+        timeDifference: 'Ranikhet is UTC+5:30 year-round. When noon in Ranikhet: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Chaubatia for fruit orchards and Himalayan views. Asia\'s highest golf course at Upat. Much quieter than Nainital. Try apricot products.',
+        transportation: 'Nearest airport Pantnagar (112km). Kathgodam railway 80km. Buses from Delhi (8-9 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Military Hospital available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Kumaon Regiment Raising Day, Dussehra, Diwali.'
+      }
+    }
+  },
+  { slug: 'kasauli', city: 'Kasauli', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.90, lng: 76.96, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+91 1792', language: 'Hindi, Pahari, English',
+      climate: 'Subtropical highland with cool summers (15-30°C) and cold winters (4-15°C). Peaceful year-round.',
+      attractions: ['Monkey Point', 'Christ Church', 'Gilbert Trail', 'Sunset Point', 'Kasauli Brewery', 'Mall Road', 'Timber Trail', 'Nahri Temple', 'Kasauli Club', 'Air Force Museum'],
+      demographics: 'Sleepy British cantonment. Oldest brewery in Asia (Kasauli Brewery). No commercialization - peaceful retreat.',
+      seoContent: {
+        intro: 'Kasauli, where time stands still, operates on India Standard Time (IST/UTC+5:30). This tiny British cantonment of 10,000 is deliberately undeveloped, offering colonial churches, forest trails, and Asia\'s oldest brewery in a peaceful escape from city chaos.',
+        timezoneFacts: 'Same timezone as all of India. Solan district, Himachal Pradesh.',
+        bestTimeToVisit: 'Year-round pleasant. March-June and September-November ideal. Monsoon misty. Winter cold but charming.',
+        businessHours: 'Limited shops 9 AM to 7 PM. Brewery visits by appointment. Monkey Point sunrise to sunset.',
+        timeDifference: 'Kasauli is UTC+5:30 year-round. When noon in Kasauli: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Deliberately sleepy - no malls or chaos. Monkey Point for views (Hanuman footprint). Kasauli Brewery makes India\'s first single malt. Walk Gilbert Trail. No crowds!',
+        transportation: 'Nearest airport Chandigarh (60km). Kalka railway 35km. Toy Train passes nearby. Drive from Delhi (5 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Military Hospital available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Christmas (colonial heritage), Diwali.'
+      }
+    }
+  },
+  
+  // India - New Cities Batch 5 (20 cities with full premium content)
+  { slug: 'puri', city: 'Puri', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 19.81, lng: 85.83, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.25M', phoneCode: '+91 6752', language: 'Odia, Hindi, English',
+      climate: 'Tropical with warm year-round temperatures (22-35°C). Monsoon June-September. Cyclone risk October-November.',
+      attractions: ['Jagannath Temple', 'Puri Beach', 'Konark Sun Temple (nearby)', 'Chilika Lake', 'Rath Yatra', 'Gundicha Temple', 'Swargadwar Beach', 'Raghurajpur Artist Village', 'Sakshigopal Temple', 'Lokanath Temple'],
+      demographics: 'One of four Char Dham. Jagannath Temple - non-Hindus not allowed inside. Origin of word "Juggernaut" from Rath Yatra.',
+      seoContent: {
+        intro: 'Puri, abode of Lord Jagannath, operates on India Standard Time (IST/UTC+5:30). This sacred Char Dham city of 200,000 hosts the world-famous Rath Yatra where massive chariots carry deities through streets - the origin of the English word "Juggernaut".',
+        timezoneFacts: 'Same timezone as all of India. Odisha coast, Bay of Bengal.',
+        bestTimeToVisit: 'October-March for pleasant weather. Rath Yatra (June-July) spectacular but extremely crowded. Avoid cyclone season.',
+        businessHours: 'Jagannath Temple 5 AM to 11 PM. Beach activities sunrise to sunset.',
+        timeDifference: 'Puri is UTC+5:30 year-round. When noon in Puri: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Non-Hindus cannot enter Jagannath Temple - view from rooftop library opposite. Konark Sun Temple 35km - must visit. Try Mahaprasad from temple kitchen. Rath Yatra life-changing.',
+        transportation: 'Biju Patnaik Airport Bhubaneswar (60km). Puri railway station. Well-connected by train.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Rath Yatra (June-July), Snana Yatra, Diwali.'
+      }
+    }
+  },
+  { slug: 'konark', city: 'Konark', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 19.89, lng: 86.09, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.02M', phoneCode: '+91 6758', language: 'Odia, Hindi, English',
+      climate: 'Tropical with warm year-round temperatures (22-35°C). Monsoon June-September. Sea breeze moderates heat.',
+      attractions: ['Sun Temple (UNESCO)', 'Konark Beach', 'Archaeological Museum', 'Chandrabhaga Beach', 'Ramachandi Temple', 'Konark Dance Festival', 'Stone Chariot', 'Erotic Sculptures', 'Navagraha', 'Mayadevi Temple'],
+      demographics: 'UNESCO World Heritage Sun Temple. Black Pagoda. 13th century Kalinga architecture masterpiece. Dance festival venue.',
+      seoContent: {
+        intro: 'Konark, shrine of the Sun God, operates on India Standard Time (IST/UTC+5:30). This UNESCO World Heritage site features the spectacular 13th-century Sun Temple, designed as a massive stone chariot with 24 intricately carved wheels pulled by seven horses.',
+        timezoneFacts: 'Same timezone as all of India. Odisha coast, Bay of Bengal.',
+        bestTimeToVisit: 'October-March for pleasant weather. Konark Dance Festival (December) world-class. Sunrise at temple stunning.',
+        businessHours: 'Sun Temple 6 AM to 8 PM. Museum 10 AM to 5 PM (closed Friday).',
+        timeDifference: 'Konark is UTC+5:30 year-round. When noon in Konark: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Sunrise at temple designed to illuminate inner sanctum. Dance Festival (Dec) against temple backdrop magical. Combine with Puri (35km). Erotic sculptures rival Khajuraho.',
+        transportation: 'No airport or railway. Bhubaneswar (65km) or Puri (35km) then road. Taxis and buses available.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities - Puri better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Konark Dance Festival (December), Magha Saptami (February).'
+      }
+    }
+  },
+  { slug: 'gwalior', city: 'Gwalior', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.22, lng: 78.18, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.2M', metroPopulation: '1.5M', phoneCode: '+91 751', language: 'Hindi, Bundeli',
+      climate: 'Humid subtropical with very hot summers (40-48°C) and cool winters (5-22°C). Monsoon July-September.',
+      attractions: ['Gwalior Fort', 'Man Singh Palace', 'Sas Bahu Temples', 'Teli Ka Mandir', 'Jai Vilas Palace', 'Tomb of Tansen', 'Gujari Mahal', 'Sun Temple', 'Tigra Dam', 'Zoo'],
+      demographics: 'One of India\'s most impregnable forts. Birthplace of Hindustani classical music. Scindia royal heritage.',
+      seoContent: {
+        intro: 'Gwalior, fortress of music, operates on India Standard Time (IST/UTC+5:30). This historic city of 1.2 million boasts one of India\'s most magnificent forts, the birthplace of Hindustani classical music at Tansen\'s tomb, and the opulent Scindia palace.',
+        timezoneFacts: 'Same timezone as all of India. Northern Madhya Pradesh.',
+        bestTimeToVisit: 'October-March for pleasant weather. Tansen Music Festival (November-December) draws maestros. Avoid summer heat.',
+        businessHours: 'Fort 8 AM to 6 PM. Jai Vilas Palace 10 AM to 5 PM (closed Monday). Sound and Light Show evening.',
+        timeDifference: 'Gwalior is UTC+5:30 year-round. When noon in Gwalior: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Fort has world\'s second-largest chandelier at Jai Vilas - weighs 3.5 tons! Man Singh Palace tiles stunning. Tansen Music Festival for classical music. Gateway to Orchha.',
+        transportation: 'Gwalior Airport (GWL). Gwalior Junction major railway. 3 hours from Agra, 5 hours from Delhi.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Tansen Festival (Nov-Dec), Dussehra, Diwali.'
+      }
+    }
+  },
+  { slug: 'mathura', city: 'Mathura', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.49, lng: 77.67, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.4M', metroPopulation: '0.5M', phoneCode: '+91 565', language: 'Hindi, Braj Bhasha',
+      climate: 'Humid subtropical with very hot summers (40-47°C) and cool winters (5-22°C). Monsoon July-September.',
+      attractions: ['Krishna Janmabhoomi', 'Dwarkadhish Temple', 'Vishram Ghat', 'Mathura Museum', 'Govardhan Hill', 'Kusum Sarovar', 'Radha Kund', 'Gita Mandir', 'Jama Masjid', 'Kans Qila'],
+      demographics: 'Birthplace of Lord Krishna. One of seven sacred cities (Sapta Puri). Center of Braj culture. Twin city of Vrindavan.',
+      seoContent: {
+        intro: 'Mathura, birthplace of Lord Krishna, operates on India Standard Time (IST/UTC+5:30). This sacred city of 400,000 is where Krishna was born 5,000 years ago in a prison cell, now one of Hinduism\'s seven holiest cities and the heart of Braj culture.',
+        timezoneFacts: 'Same timezone as all of India. Uttar Pradesh, Yamuna River.',
+        bestTimeToVisit: 'October-March for pleasant weather. Janmashtami (August-September) massive celebrations. Holi (March) legendary here.',
+        businessHours: 'Temples 5 AM to 12 PM, 4 PM to 9 PM. Vishram Ghat aarti 7 PM.',
+        timeDifference: 'Mathura is UTC+5:30 year-round. When noon in Mathura: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Janmashtami at midnight in Krishna Janmabhoomi unforgettable. Holi here is intense - be prepared for colors! Combine with Vrindavan (15km). Try pedas (milk sweets).',
+        transportation: 'Mathura Junction on Delhi-Agra line. Agra Airport (AGR) 60km. 2 hours from Delhi, 1 hour from Agra.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Janmashtami (massive!), Holi (legendary!), Diwali.'
+      }
+    }
+  },
+  { slug: 'vrindavan', city: 'Vrindavan', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.58, lng: 77.70, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.07M', metroPopulation: '0.1M', phoneCode: '+91 565', language: 'Hindi, Braj Bhasha',
+      climate: 'Humid subtropical with very hot summers (40-47°C) and cool winters (5-22°C). Monsoon July-September.',
+      attractions: ['Banke Bihari Temple', 'ISKCON Temple', 'Prem Mandir', 'Radha Raman Temple', 'Govind Dev Temple', 'Nidhivan', 'Seva Kunj', 'Rangaji Temple', 'Madan Mohan Temple', 'Keshi Ghat'],
+      demographics: 'Krishna\'s childhood playground. 5,000+ temples. ISKCON headquarters. Widows\' ashrams. Intense devotion.',
+      seoContent: {
+        intro: 'Vrindavan, playground of Krishna, operates on India Standard Time (IST/UTC+5:30). This intensely spiritual town of 70,000 has over 5,000 temples where Krishna played as a child, including ISKCON\'s global headquarters and the mesmerizing Banke Bihari Temple.',
+        timezoneFacts: 'Same timezone as all of India. Uttar Pradesh, Braj region.',
+        bestTimeToVisit: 'October-March for pleasant weather. Janmashtami (August-September) incredible. Holi here is world-famous.',
+        businessHours: 'Banke Bihari 7:45 AM to 12 PM, 5:30 PM to 9:30 PM. ISKCON 4:30 AM to 1 PM, 4 PM to 8:30 PM.',
+        timeDifference: 'Vrindavan is UTC+5:30 year-round. When noon in Vrindavan: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Banke Bihari curtain ritual unique - deity too beautiful for continuous viewing! Prem Mandir lit up at night stunning. Widows\' Holi at ashrams moving. Don\'t miss evening aarti.',
+        transportation: 'Mathura Junction 15km. Agra Airport (AGR) 75km. Auto-rickshaws from Mathura.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Janmashtami (massive!), Holi (world-famous!), Radhashtami, Diwali.'
+      }
+    }
+  },
+  { slug: 'sanchi', city: 'Sanchi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.48, lng: 77.74, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+91 7482', language: 'Hindi, English',
+      climate: 'Tropical with hot summers (35-45°C) and mild winters (10-28°C). Monsoon July-September.',
+      attractions: ['Great Stupa', 'Sanchi Museum', 'Ashoka Pillar', 'Monastery Ruins', 'Gupta Temple', 'Stupa 2', 'Stupa 3', 'Udayagiri Caves (nearby)', 'Vidisha (nearby)', 'Buddhist Monuments'],
+      demographics: 'UNESCO World Heritage. Oldest stone structures in India. Buddhist center from 3rd century BCE. Ashoka built Great Stupa.',
+      seoContent: {
+        intro: 'Sanchi, crown jewel of Buddhist heritage, operates on India Standard Time (IST/UTC+5:30). This UNESCO site features India\'s oldest stone structures, including the magnificent Great Stupa built by Emperor Ashoka in the 3rd century BCE to house Buddha\'s relics.',
+        timezoneFacts: 'Same timezone as all of India. Near Bhopal, Madhya Pradesh.',
+        bestTimeToVisit: 'October-March for pleasant weather. Buddha Purnima (May) special. Sunrise and sunset at stupa magical.',
+        businessHours: 'Monuments sunrise to sunset. Museum 10 AM to 5 PM (closed Friday).',
+        timeDifference: 'Sanchi is UTC+5:30 year-round. When noon in Sanchi: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Great Stupa gateways (toranas) are masterpieces - study the carvings. Combine with Udayagiri Caves. Bhimbetka (45km) for prehistoric rock art. Half-day from Bhopal.',
+        transportation: 'Sanchi railway station. Bhopal Airport (BHO) 46km. Easy day trip from Bhopal.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities - Bhopal better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Buddha Purnima (May), Diwali.'
+      }
+    }
+  },
+  { slug: 'mandu', city: 'Mandu', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.37, lng: 75.40, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+91 7292', language: 'Hindi, Malvi',
+      climate: 'Tropical with hot summers (35-42°C) and mild winters (10-28°C). Monsoon transforms landscape dramatically.',
+      attractions: ['Jahaz Mahal', 'Hindola Mahal', 'Rani Roopmati Pavilion', 'Baz Bahadur Palace', 'Jami Masjid', 'Hoshang Shah Tomb', 'Rewa Kund', 'Dai Ki Chhoti Behen', 'Ashrafi Mahal', 'Echo Point'],
+      demographics: 'City of Joy. Romantic legend of Baz Bahadur and Roopmati. Afghan architecture. Ghost town atmosphere.',
+      seoContent: {
+        intro: 'Mandu, City of Joy, operates on India Standard Time (IST/UTC+5:30). This haunting citadel perched at 600m features the romantic Jahaz Mahal (Ship Palace) and the tragic love story of Sultan Baz Bahadur and Hindu singer Rani Roopmati.',
+        timezoneFacts: 'Same timezone as all of India. Malwa plateau, Madhya Pradesh.',
+        bestTimeToVisit: 'July-September for magical monsoon (green transformation). October-March for pleasant weather. Avoid summer.',
+        businessHours: 'Monuments sunrise to sunset. Best visited over 2 days.',
+        timeDifference: 'Mandu is UTC+5:30 year-round. When noon in Mandu: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Monsoon is best time - Jahaz Mahal reflected in full lakes! Roopmati Pavilion at sunset for valley views. Hoshang Shah Tomb inspired Taj Mahal. Rent bicycle to explore.',
+        transportation: 'No airport or railway. Indore (100km) nearest. Road from Indore via Dhar.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities - Indore better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Mandu Festival (December), Diwali.'
+      }
+    }
+  },
+  { slug: 'cuttack', city: 'Cuttack', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.46, lng: 85.88, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.7M', metroPopulation: '1.0M', phoneCode: '+91 671', language: 'Odia, Hindi, English',
+      climate: 'Tropical with warm year-round temperatures (22-38°C). Heavy monsoon June-September. Cyclone risk.',
+      attractions: ['Barabati Fort', 'Cuttack Chandi Temple', 'Netaji Birthplace', 'Dhabaleswar Temple', 'Stone Revetment', 'Qadam-i-Rasul', 'Ansupa Lake', 'Bhitarkanika (nearby)', 'Silver Filigree', 'Durga Puja Pandals'],
+      demographics: 'Former capital of Odisha. Silver filigree (tarakasi) craft. Birthplace of Netaji Subhas Chandra Bose. Twin city of Bhubaneswar.',
+      seoContent: {
+        intro: 'Cuttack, Silver City of India, operates on India Standard Time (IST/UTC+5:30). This ancient city of 700,000 is famous for exquisite silver filigree (tarakasi) jewelry, as the birthplace of freedom fighter Netaji Subhas Chandra Bose, and for spectacular Durga Puja celebrations.',
+        timezoneFacts: 'Same timezone as all of India. Between Mahanadi and Kathajodi rivers.',
+        bestTimeToVisit: 'October-March for pleasant weather. Durga Puja (September-October) for silver pandals. Bali Yatra fair (November).',
+        businessHours: 'Silver markets 10 AM to 8 PM. Temples sunrise to sunset.',
+        timeDifference: 'Cuttack is UTC+5:30 year-round. When noon in Cuttack: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Buy silver filigree - centuries-old craft! Durga Puja pandals here are silver-clad masterpieces. Netaji Museum touching. Bali Yatra fair is ancient trade tradition.',
+        transportation: 'Bhubaneswar Airport (BBI) 28km. Cuttack Junction railway. Twin city with Bhubaneswar.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Durga Puja (massive!), Netaji Jayanti (Jan 23), Diwali.'
+      }
+    }
+  },
+  { slug: 'bhitarkanika', city: 'Bhitarkanika', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.73, lng: 87.03, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.02M', phoneCode: '+91 6729', language: 'Odia, Hindi',
+      climate: 'Tropical with warm year-round temperatures (20-35°C). Monsoon June-September closes park. Mangrove ecosystem.',
+      attractions: ['Bhitarkanika National Park', 'Saltwater Crocodiles', 'Gahirmatha Beach', 'Olive Ridley Turtles', 'Mangrove Forests', 'Dangmal', 'Bagagahana', 'Bird Watching', 'Boat Safari', 'Ekakula Beach'],
+      demographics: 'India\'s second-largest mangrove ecosystem. Largest saltwater crocodile population. Olive Ridley turtle nesting at Gahirmatha.',
+      seoContent: {
+        intro: 'Bhitarkanika, realm of crocodiles, operates on India Standard Time (IST/UTC+5:30). This Ramsar wetland is India\'s second-largest mangrove ecosystem, home to the world\'s largest saltwater crocodile population and the mass nesting of Olive Ridley turtles at Gahirmatha.',
+        timezoneFacts: 'Same timezone as all of India. Odisha coast, Bay of Bengal.',
+        bestTimeToVisit: 'September-May (closed monsoon). January-March for turtle nesting. Winter for migratory birds.',
+        businessHours: 'Park 6 AM to 4:30 PM. Boat safaris by booking. Closed during monsoon.',
+        timeDifference: 'Bhitarkanika is UTC+5:30 year-round. When noon in Bhitarkanika: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'World\'s largest saltwater croc (23 feet) was here! Gahirmatha turtle nesting January-March magical. Book forest department cottages. Carry mosquito repellent.',
+        transportation: 'Bhubaneswar Airport (BBI) 150km. Bhadrak railway 60km. Road to Chandbali then boat.',
+        emergencyNumbers: 'Emergency: 112. Forest office: 06729-272460.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Wildlife Week (October), Diwali.'
+      }
+    }
+  },
+  { slug: 'chilika', city: 'Chilika', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 19.72, lng: 85.32, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.2M', phoneCode: '+91 6756', language: 'Odia, Hindi',
+      climate: 'Tropical with warm year-round temperatures (20-35°C). Lagoon ecosystem. Best wildlife viewing in winter.',
+      attractions: ['Chilika Lake', 'Nalabana Bird Sanctuary', 'Irrawaddy Dolphins', 'Kalijai Temple', 'Mangalajodi', 'Satpada', 'Rambha', 'Bird Island', 'Breakfast Island', 'Prawn Aquaculture'],
+      demographics: 'Asia\'s largest brackish water lagoon. Ramsar Wetland. Million migratory birds in winter. Irrawaddy dolphins.',
+      seoContent: {
+        intro: 'Chilika, Asia\'s largest coastal lagoon, operates on India Standard Time (IST/UTC+5:30). This Ramsar wetland spanning 1,100 sq km hosts over a million migratory birds in winter, rare Irrawaddy dolphins, and the mystical Kalijai Temple on an island.',
+        timezoneFacts: 'Same timezone as all of India. Odisha coast, connected to Bay of Bengal.',
+        bestTimeToVisit: 'November-February for migratory birds. December-January peak. Irrawaddy dolphins year-round at Satpada.',
+        businessHours: 'Boat rides 6 AM to 5 PM. Nalabana accessible by boat only.',
+        timeDifference: 'Chilika is UTC+5:30 year-round. When noon in Chilika: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Mangalajodi for bird photography - community-led conservation success. Satpada for Irrawaddy dolphin spotting. Kalijai Temple on island sacred. Fresh prawns and crabs!',
+        transportation: 'Bhubaneswar Airport (BBI) 100km. Balugaon railway on lake shore. Puri 50km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. OTDC: 0674-2432177.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Makara Mela (Kalijai Temple), Diwali.'
+      }
+    }
+  },
+  { slug: 'auroville', city: 'Auroville', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.01, lng: 79.81, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.003M', metroPopulation: '0.003M', phoneCode: '+91 413', language: 'English, French, Tamil',
+      climate: 'Tropical with hot summers (30-40°C) and warm winters (20-30°C). Northeast monsoon October-December.',
+      attractions: ['Matrimandir', 'Visitor Centre', 'Solar Kitchen', 'Auroville Beach', 'Sadhana Forest', 'Botanical Gardens', 'Sustainable Communities', 'Handicraft Workshops', 'Organic Farms', 'Town Hall'],
+      demographics: 'Experimental township. Founded 1968 by The Mother. 3,000 residents from 60 countries. UNESCO-endorsed. No money, no religion, no politics.',
+      seoContent: {
+        intro: 'Auroville, the City of Dawn, operates on India Standard Time (IST/UTC+5:30). This experimental township of 3,000 from 60 nations was founded in 1968 for "human unity" - a UNESCO-endorsed utopia with no money system, featuring the golden Matrimandir meditation sphere.',
+        timezoneFacts: 'Same timezone as all of India. Near Pondicherry, Tamil Nadu.',
+        bestTimeToVisit: 'November-March for pleasant weather. Matrimandir visits by appointment only.',
+        businessHours: 'Visitor Centre 9 AM to 5 PM. Matrimandir viewing 9 AM to 4:30 PM (closed Tuesday). Inner chamber by prior booking.',
+        timeDifference: 'Auroville is UTC+5:30 year-round. When noon in Auroville: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Book Matrimandir inner chamber months ahead! Visitor Centre explains philosophy. Explore by bicycle. Buy handicrafts at boutiques. Respect the silence zone.',
+        transportation: 'Pondicherry 12km. Chennai Airport (MAA) 150km. Pondicherry has limited flights.',
+        emergencyNumbers: 'Emergency: 112. Auroville Health Centre available.',
+        publicHolidays: 'Auroville Birthday (Feb 28), The Mother\'s Birthday (Feb 21), Independence Day (Aug 15), Diwali.'
+      }
+    }
+  },
+  { slug: 'karaikal', city: 'Karaikal', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.92, lng: 79.83, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.1M', metroPopulation: '0.2M', phoneCode: '+91 4368', language: 'Tamil, French, English',
+      climate: 'Tropical with warm year-round temperatures (25-38°C). Northeast monsoon October-December brings most rain.',
+      attractions: ['Karaikal Beach', 'Notre Dame des Anges', 'Karaikal Ammaiyar Temple', 'Thirunallar Temple', 'French Heritage', 'Kailasanathar Temple', 'Fishing Harbor', 'Veeranam Lake', 'Dutch Cemetery', 'Peralam'],
+      demographics: 'Former French colony. Part of Puducherry UT. Major fishing port. Shani temple pilgrimage.',
+      seoContent: {
+        intro: 'Karaikal, French enclave of Tamil Nadu, operates on India Standard Time (IST/UTC+5:30). This former French territory of 100,000 is part of Puducherry Union Territory, featuring French colonial heritage, the powerful Thirunallar Shani temple, and a vibrant fishing culture.',
+        timezoneFacts: 'Same timezone as all of India. Tamil Nadu coast, Bay of Bengal.',
+        bestTimeToVisit: 'October-March for pleasant weather. Shani transit dates draw millions to Thirunallar. Avoid cyclone season.',
+        businessHours: 'Thirunallar Temple 6 AM to 12:30 PM, 4 PM to 9 PM. Beach accessible all day.',
+        timeDifference: 'Karaikal is UTC+5:30 year-round. When noon in Karaikal: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Thirunallar Shani temple draws millions during Shani transits - plan ahead! French architecture in town. Fresh seafood from harbor. Quieter than Pondicherry.',
+        transportation: 'Nearest airport Trichy (TRZ) 135km. Karaikal railway station. Buses from Pondicherry (130km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bastille Day (July 14), Pongal, Diwali.'
+      }
+    }
+  },
+  { slug: 'yanam', city: 'Yanam', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 16.73, lng: 82.22, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.05M', phoneCode: '+91 884', language: 'Telugu, French, English',
+      climate: 'Tropical with warm year-round temperatures (25-38°C). Monsoon June-September and October-November.',
+      attractions: ['Yanam Beach', 'French War Memorial', 'Godavari River', 'Sree Venugopala Swamy Temple', 'Church of Our Lady of Lourdes', 'Rajiv Gandhi Park', 'Light House', 'Mangrove Forests', 'French Architecture', 'Fishing Villages'],
+      demographics: 'Smallest district of Puducherry UT. Former French colony. Godavari delta. Alcohol available (Andhra is dry).',
+      seoContent: {
+        intro: 'Yanam, the French pocket in Andhra, operates on India Standard Time (IST/UTC+5:30). This tiny enclave of 40,000 in the Godavari delta is one of four districts of Puducherry UT, preserving French heritage and attracting Andhra visitors for legal alcohol.',
+        timezoneFacts: 'Same timezone as all of India. Godavari delta, surrounded by Andhra Pradesh.',
+        bestTimeToVisit: 'October-March for pleasant weather. Godavari pushkaram (every 12 years). Avoid monsoon floods.',
+        businessHours: 'Temple 6 AM to 8 PM. Riverside accessible all day. Liquor shops busy!',
+        timeDifference: 'Yanam is UTC+5:30 year-round. When noon in Yanam: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Legal alcohol here - Andhra crowds on weekends! Godavari river boat rides. French street names. Very small - half day enough. Combine with Kakinada.',
+        transportation: 'Rajahmundry Airport (RJA) 25km. Kakinada railway 15km. Road from Rajahmundry.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bastille Day (July 14), Ugadi, Diwali.'
+      }
+    }
+  },
+  { slug: 'mahe', city: 'Mahe', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 11.70, lng: 75.54, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.05M', phoneCode: '+91 490', language: 'Malayalam, French, English',
+      climate: 'Tropical with warm year-round temperatures (24-34°C). Heavy southwest monsoon June-September.',
+      attractions: ['Mahe River', 'St. Theresa\'s Church', 'Tagore Park', 'Beach', 'French Architecture', 'Light House', 'Fishing Harbor', 'Azhiyur Beach', 'St. George Fort Ruins', 'Kannur (nearby)'],
+      demographics: 'Smallest district of Puducherry UT. French enclave in Kerala. Only 9 sq km. Alcohol tourism from dry Kerala.',
+      seoContent: {
+        intro: 'Mahe, France in Kerala, operates on India Standard Time (IST/UTC+5:30). This tiny French enclave of just 9 sq km in Kerala is part of Puducherry UT, famous as an alcohol oasis in increasingly restrictive Kerala, with colonial charm on the Mahe River.',
+        timezoneFacts: 'Same timezone as all of India. North Kerala coast, Malabar region.',
+        bestTimeToVisit: 'October-May for pleasant weather. Monsoon heavy but green. Combine with Kannur.',
+        businessHours: 'Liquor shops 9 AM to 9 PM. Riverside accessible all day.',
+        timeDifference: 'Mahe is UTC+5:30 year-round. When noon in Mahe: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Alcohol significantly cheaper than Kerala! Tiny place - few hours enough. French street names remain. Riverside evening walks pleasant. Gateway to Kannur.',
+        transportation: 'Kannur Airport (CNN) 25km. Mahe railway station. Road from Kannur/Kozhikode.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bastille Day (July 14), Onam, Diwali.'
+      }
+    }
+  },
+  { slug: 'mcleodganj', city: 'McLeodganj', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 32.24, lng: 76.32, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.03M', phoneCode: '+91 1892', language: 'Tibetan, Hindi, English',
+      climate: 'Subtropical highland with cool summers (15-25°C) and cold winters (0-10°C). Monsoon July-September. Snow possible.',
+      attractions: ['Tsuglagkhang Complex', 'Dalai Lama Temple', 'Namgyal Monastery', 'Bhagsunag Waterfall', 'Triund Trek', 'Tibet Museum', 'Norbulingka Institute', 'St. John\'s Church', 'Dal Lake', 'Dharamkot'],
+      demographics: 'Little Lhasa. Seat of Tibetan Government-in-Exile. Dalai Lama\'s residence since 1960. Backpacker hub.',
+      seoContent: {
+        intro: 'McLeodganj, Little Lhasa of India, operates on India Standard Time (IST/UTC+5:30). This Tibetan exile capital of 10,000 has been home to the Dalai Lama since 1960, featuring monasteries, the Tibet Museum documenting Chinese occupation, and the popular Triund trek.',
+        timezoneFacts: 'Same timezone as all of India. Kangra Valley, Himachal Pradesh.',
+        bestTimeToVisit: 'March-June and September-November. Monsoon brings landslides. Winter cold but fewer crowds. Losar (Tibetan New Year) special.',
+        businessHours: 'Tsuglagkhang 8 AM to 8 PM. Tibet Museum 9 AM to 5 PM (closed Monday).',
+        timeDifference: 'McLeodganj is UTC+5:30 year-round. When noon in McLeodganj: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Dalai Lama teachings - check schedule! Tibet Museum moving. Triund trek stunning but crowded. Buy Tibetan handicrafts. Momos everywhere! Dharamkot for quieter vibe.',
+        transportation: 'Dharamsala Gaggal Airport (DHM) 15km (limited). Pathankot railway 90km. Buses from Delhi (10-12 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Delek Hospital for Tibetans.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar (Tibetan New Year), Dalai Lama Birthday (July 6), Diwali.'
+      }
+    }
+  },
+  { slug: 'dalhousie', city: 'Dalhousie', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 32.54, lng: 75.97, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+91 1899', language: 'Hindi, Pahari, English',
+      climate: 'Subtropical highland with cool summers (15-25°C) and cold winters (-2 to 10°C). Snow December-February.',
+      attractions: ['Khajjiar', 'Kalatop Wildlife Sanctuary', 'Dainkund Peak', 'Chamera Lake', 'St. John\'s Church', 'Subhash Baoli', 'Panchpula', 'Satdhara Falls', 'Gandhi Chowk', 'Mall Road'],
+      demographics: 'Named after Lord Dalhousie. British summer retreat. Subhash Chandra Bose stayed here. Gateway to Khajjiar (Mini Switzerland).',
+      seoContent: {
+        intro: 'Dalhousie, the Scotland of India, operates on India Standard Time (IST/UTC+5:30). This Victorian-era hill station of 10,000 spreads across five hills, offering colonial churches, pine forests, and access to Khajjiar - often called the "Mini Switzerland of India".',
+        timezoneFacts: 'Same timezone as all of India. Chamba district, Himachal Pradesh.',
+        bestTimeToVisit: 'March-June and September-November for pleasant weather. December-February for snow. Monsoon brings landslides.',
+        businessHours: 'Mall Road shops 9 AM to 9 PM. Khajjiar accessible daytime.',
+        timeDifference: 'Dalhousie is UTC+5:30 year-round. When noon in Dalhousie: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Khajjiar (Mini Switzerland) 24km - don\'t miss! Dainkund Peak highest point - paragliding available. Kalatop forest walk. Less crowded than Shimla/Manali.',
+        transportation: 'Pathankot railway 80km. No airport nearby. Buses from Delhi (11 hours) via Pathankot.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Minjar Fair (July-August), Diwali.'
+      }
+    }
+  },
+  { slug: 'khajjiar', city: 'Khajjiar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 32.55, lng: 76.06, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.002M', metroPopulation: '0.002M', phoneCode: '+91 1899', language: 'Hindi, Pahari, English',
+      climate: 'Subtropical highland with cool summers (12-22°C) and cold winters (-5 to 8°C). Snow December-February.',
+      attractions: ['Khajjiar Lake', 'Khajji Nag Temple', 'Golden Devi Temple', 'Meadows', 'Zorbing', 'Horse Riding', 'Paragliding', 'Forest Walks', 'Swiss Embassy Signboard', 'Photography'],
+      demographics: 'Mini Switzerland of India. 6,500 feet altitude. Saucer-shaped meadow. Swiss ambassador\'s plaque.',
+      seoContent: {
+        intro: 'Khajjiar, Mini Switzerland of India, operates on India Standard Time (IST/UTC+5:30). This stunning meadow at 6,500 feet was declared "Mini Switzerland" by Swiss ambassador in 1992, featuring a saucer-shaped green surrounded by deodar forests.',
+        timezoneFacts: 'Same timezone as all of India. Chamba district, Himachal Pradesh.',
+        bestTimeToVisit: 'March-June for green meadows. December-February for snow. September-November pleasant.',
+        businessHours: 'Meadow accessible all day. Adventure activities 9 AM to 5 PM.',
+        timeDifference: 'Khajjiar is UTC+5:30 year-round. When noon in Khajjiar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Go early for photography without crowds! Horse riding and zorbing on meadow. 9-hole golf course. Floating island in lake! Combine with Dalhousie (24km).',
+        transportation: 'Dalhousie 24km. Pathankot railway 100km. No direct buses - taxi from Dalhousie.',
+        emergencyNumbers: 'Emergency: 112. Limited facilities - Dalhousie better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Minjar Fair, Diwali.'
+      }
+    }
+  },
+  { slug: 'kullu', city: 'Kullu', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 31.96, lng: 77.11, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.15M', phoneCode: '+91 1902', language: 'Hindi, Pahari, Kulvi',
+      climate: 'Subtropical highland with pleasant summers (15-30°C) and cold winters (0-15°C). Monsoon July-September.',
+      attractions: ['Kullu Dussehra', 'Raghunath Temple', 'Great Himalayan National Park', 'Bijli Mahadev', 'Manikaran', 'Kasol', 'Rafting on Beas', 'Shawl Weaving', 'Sultanpur Palace', 'Jagannathi Devi Temple'],
+      demographics: 'Valley of Gods. Kullu shawls famous. Dussehra festival unique - gods gather! Gateway to Manali.',
+      seoContent: {
+        intro: 'Kullu, Valley of Gods, operates on India Standard Time (IST/UTC+5:30). This sacred valley of 20,000 hosts India\'s most unique Dussehra where 200+ local deities gather, is famous for handwoven Kullu shawls, and serves as gateway to Manali and Kasol.',
+        timezoneFacts: 'Same timezone as all of India. Beas Valley, Himachal Pradesh.',
+        bestTimeToVisit: 'March-June and September-November. Dussehra (October) spectacular - 7-day celebration! Winter cold.',
+        businessHours: 'Shawl shops 9 AM to 8 PM. Rafting seasonal (May-June, Sept-Oct).',
+        timeDifference: 'Kullu is UTC+5:30 year-round. When noon in Kullu: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Kullu Dussehra (October) is must-see - 200 gods parade! Buy authentic Kullu shawls. Bijli Mahadev lightning-struck Shiva lingam. Rafting on Beas thrilling.',
+        transportation: 'Bhuntar Airport (KUU) 10km. Nearest railway Jogindernagar (100km). Buses from Delhi (12 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Kullu Dussehra (October - major!), Diwali.'
+      }
+    }
+  },
+  { slug: 'kasol', city: 'Kasol', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 32.01, lng: 77.32, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.002M', metroPopulation: '0.003M', phoneCode: '+91 1902', language: 'Hindi, English, Hebrew',
+      climate: 'Subtropical highland with cool summers (10-25°C) and cold winters (-5 to 10°C). Snow possible December-February.',
+      attractions: ['Parvati Valley', 'Kheerganga Trek', 'Manikaran Gurudwara', 'Hot Springs', 'Tosh', 'Malana', 'Chalal', 'Israeli Cafes', 'River Parvati', 'Trekking'],
+      demographics: 'Mini Israel of India. Backpacker paradise. Trekking hub. Alternative culture. Hemp region.',
+      seoContent: {
+        intro: 'Kasol, Mini Israel of India, operates on India Standard Time (IST/UTC+5:30). This backpacker haven in Parvati Valley has a strong Israeli traveler presence, featuring Hebrew signboards, falafel cafes, riverside camping, and access to legendary treks like Kheerganga.',
+        timezoneFacts: 'Same timezone as all of India. Parvati Valley, Himachal Pradesh.',
+        bestTimeToVisit: 'March-June and September-November. Winter snowy but magical. Monsoon brings landslides.',
+        businessHours: 'Cafes 8 AM to 10 PM. Manikaran Gurudwara 24/7. Treks best started early morning.',
+        timeDifference: 'Kasol is UTC+5:30 year-round. When noon in Kasol: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Kheerganga trek (12km) hot springs reward at top! Manikaran hot springs sacred. Tosh and Chalal for quieter vibes. Israeli food everywhere. Budget paradise.',
+        transportation: 'Bhuntar Airport (KUU) 31km. No railway. Buses from Bhuntar and Delhi.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited medical facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Dussehra, Diwali.'
+      }
+    }
+  },
+  
+  // India - New Cities Batch 6 (20 cities with full premium content)
+  { slug: 'bikaner', city: 'Bikaner', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 28.02, lng: 73.31, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.7M', metroPopulation: '0.8M', phoneCode: '+91 151', language: 'Hindi, Marwari, Rajasthani',
+      climate: 'Hot desert with extreme summers (40-48°C) and cool winters (5-25°C). Very little rainfall. Dust storms common.',
+      attractions: ['Junagarh Fort', 'Karni Mata Temple (Rat Temple)', 'Lalgarh Palace', 'Camel Breeding Farm', 'Rampuria Havelis', 'Gajner Palace', 'Bhandasar Jain Temple', 'Camel Festival', 'USTA Art', 'Bhujia'],
+      demographics: 'Camel country. Famous for Bikaneri bhujia snacks. Karni Mata rat temple unique. Desert fortress never conquered.',
+      seoContent: {
+        intro: 'Bikaner, camel country capital, operates on India Standard Time (IST/UTC+5:30). This desert city of 700,000 boasts the unconquered Junagarh Fort, the bizarre Karni Mata rat temple with 25,000 sacred rats, and Asia\'s largest camel breeding farm.',
+        timezoneFacts: 'Same timezone as all of India. Thar Desert, Rajasthan.',
+        bestTimeToVisit: 'October-March for pleasant weather. Camel Festival (January) spectacular. Avoid scorching summer.',
+        businessHours: 'Junagarh Fort 10 AM to 5 PM. Karni Mata Temple sunrise to sunset. Camel Farm 3 PM to 5 PM.',
+        timeDifference: 'Bikaner is UTC+5:30 year-round. When noon in Bikaner: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Karni Mata rat temple - white rat sighting very auspicious! Camel Festival in January great. Buy Bikaneri bhujia. Junagarh Fort has 37 palaces inside!',
+        transportation: 'Bikaner Airport (limited). Bikaner Junction railway. 5 hours from Jaipur, overnight from Delhi.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Camel Festival (January), Gangaur, Diwali.'
+      }
+    }
+  },
+  { slug: 'chittorgarh', city: 'Chittorgarh', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 24.88, lng: 74.63, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.12M', metroPopulation: '0.15M', phoneCode: '+91 1472', language: 'Hindi, Mewari, Rajasthani',
+      climate: 'Semi-arid with hot summers (35-45°C) and mild winters (10-28°C). Monsoon July-September.',
+      attractions: ['Chittorgarh Fort', 'Vijay Stambh', 'Kirti Stambh', 'Rana Kumbha Palace', 'Padmini Palace', 'Meera Temple', 'Gaumukh Reservoir', 'Fateh Prakash Palace', 'Kalika Mata Temple', 'Light & Sound Show'],
+      demographics: 'Largest fort in India. Three johar (mass self-immolation) in history. Rajput valor symbol. Rani Padmini legend.',
+      seoContent: {
+        intro: 'Chittorgarh, citadel of Rajput pride, operates on India Standard Time (IST/UTC+5:30). This historic city is home to India\'s largest fort spanning 700 acres, where three legendary johar (mass self-immolation) occurred including that of Rani Padmini.',
+        timezoneFacts: 'Same timezone as all of India. Southern Rajasthan.',
+        bestTimeToVisit: 'October-March for pleasant weather. Light & Sound Show evening. Jauhar Mela (March) commemorates sacrifice.',
+        businessHours: 'Fort 9:45 AM to 6:30 PM. Light & Sound Show 7 PM (winter) / 8 PM (summer).',
+        timeDifference: 'Chittorgarh is UTC+5:30 year-round. When noon in Chittorgarh: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Fort needs 4-5 hours minimum - hire guide. Vijay Stambh (Victory Tower) 9 stories of intricate carvings. Rani Padmini Palace reflection pool strategic. Light & Sound Show moving.',
+        transportation: 'Chittorgarh Junction railway. No airport - Udaipur (115km) nearest. 2 hours from Udaipur.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Jauhar Mela (March), Meera Mahotsav, Diwali.'
+      }
+    }
+  },
+  { slug: 'bundi', city: 'Bundi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.44, lng: 75.64, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.1M', metroPopulation: '0.1M', phoneCode: '+91 747', language: 'Hindi, Hadoti, Rajasthani',
+      climate: 'Semi-arid with hot summers (35-45°C) and mild winters (8-25°C). Monsoon July-September.',
+      attractions: ['Taragarh Fort', 'Bundi Palace', 'Chitrashala Murals', 'Raniji ki Baori', 'Nawal Sagar Lake', 'Sukh Mahal', 'Phool Sagar Palace', '84 Pillared Cenotaph', 'Stepwells', 'Blue Houses'],
+      demographics: 'Hidden gem of Rajasthan. Kipling wrote "Kim" at Sukh Mahal. Finest murals in India. 50+ stepwells.',
+      seoContent: {
+        intro: 'Bundi, Rajasthan\'s best-kept secret, operates on India Standard Time (IST/UTC+5:30). This atmospheric town of 100,000 captivated Kipling who wrote "Kim" here, featuring India\'s finest miniature murals at Chitrashala and over 50 ancient stepwells.',
+        timezoneFacts: 'Same timezone as all of India. Hadoti region, Rajasthan.',
+        bestTimeToVisit: 'October-March for pleasant weather. Bundi Utsav (November) cultural festival. Kajli Teej (August) unique.',
+        businessHours: 'Palace 8 AM to 5 PM. Stepwells accessible all day. Taragarh Fort sunrise to sunset.',
+        timeDifference: 'Bundi is UTC+5:30 year-round. When noon in Bundi: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Chitrashala murals are India\'s finest - don\'t miss! Raniji ki Baori is spectacular stepwell. Sukh Mahal where Kipling stayed. Much less touristy than Udaipur. Blue houses rival Jodhpur.',
+        transportation: 'Bundi has small railway station. Kota Junction 35km (main line). No airport - Jaipur (210km) nearest.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bundi Utsav (November), Kajli Teej, Diwali.'
+      }
+    }
+  },
+  { slug: 'kumbhalgarh', city: 'Kumbhalgarh', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.15, lng: 73.59, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+91 2954', language: 'Hindi, Mewari, Rajasthani',
+      climate: 'Semi-arid highland with pleasant summers (25-38°C) and cool winters (8-25°C). Monsoon July-September.',
+      attractions: ['Kumbhalgarh Fort', 'Great Wall of India', 'Badal Mahal', 'Kumbhalgarh Wildlife Sanctuary', 'Vedi Temple', 'Neelkanth Temple', 'Mammadev Temple', 'Light & Sound Show', 'Ranakpur (nearby)', 'Leopards'],
+      demographics: 'Second longest wall after China. Birthplace of Maharana Pratap. UNESCO World Heritage. 360+ temples inside.',
+      seoContent: {
+        intro: 'Kumbhalgarh, home of the Great Wall of India, operates on India Standard Time (IST/UTC+5:30). This UNESCO World Heritage fort has 36km walls - second only to China\'s Great Wall - enclosing 360+ temples and the birthplace of legendary warrior Maharana Pratap.',
+        timezoneFacts: 'Same timezone as all of India. Aravalli Hills, Rajasthan.',
+        bestTimeToVisit: 'October-March for pleasant weather. Light & Sound Show evening. Combine with Ranakpur Jain temples.',
+        businessHours: 'Fort 9 AM to 6 PM. Light & Sound Show 6:45 PM. Wildlife Sanctuary sunrise to sunset.',
+        timeDifference: 'Kumbhalgarh is UTC+5:30 year-round. When noon in Kumbhalgarh: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Wall is 15 feet wide - 8 horses could ride abreast! Ranakpur Jain temple 30km - 1,444 pillars, no two alike. Wildlife sanctuary has leopards. Badal Mahal at highest point.',
+        transportation: 'No railway or airport. Udaipur 84km. Ranakpur 30km. Hire taxi from Udaipur.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities - Udaipur better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Maharana Pratap Jayanti, Diwali.'
+      }
+    }
+  },
+  { slug: 'ranakpur', city: 'Ranakpur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.12, lng: 73.47, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.003M', metroPopulation: '0.003M', phoneCode: '+91 2934', language: 'Hindi, Mewari, Rajasthani',
+      climate: 'Semi-arid with pleasant summers (25-38°C) and cool winters (8-25°C). Monsoon July-September.',
+      attractions: ['Ranakpur Jain Temple', '1444 Pillars', 'Chaumukha Temple', 'Sun Temple', 'Amba Mata Temple', 'Sadri', 'Mucchal Mahavir', 'Narlai', 'Leopard Safari', 'Sculpture Details'],
+      demographics: 'Greatest Jain temple complex. No two pillars alike among 1,444. 15th century white marble wonder.',
+      seoContent: {
+        intro: 'Ranakpur, Jain architectural marvel, operates on India Standard Time (IST/UTC+5:30). This temple complex features the stunning Chaumukha Temple with 1,444 intricately carved marble pillars - no two alike - built in the 15th century as one of Jainism\'s holiest sites.',
+        timezoneFacts: 'Same timezone as all of India. Aravalli Hills, Rajasthan.',
+        bestTimeToVisit: 'October-March for pleasant weather. Morning light best for photography. Jain festivals special.',
+        businessHours: 'Temple 12 noon to 5 PM for non-Jains. Jains can enter from 6 AM. Closed during prayers.',
+        timeDifference: 'Ranakpur is UTC+5:30 year-round. When noon in Ranakpur: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'No two pillars of 1,444 are same - look closely! Photography allowed (rare for Jain temples). Dress modestly, remove leather. Combine with Kumbhalgarh (30km). Stunning at noon when light enters.',
+        transportation: 'No railway or airport. Udaipur 95km. Jodhpur 165km. Between Udaipur-Jodhpur route.',
+        emergencyNumbers: 'Emergency: 112. Limited facilities - Udaipur better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Mahavir Jayanti, Paryushan, Diwali.'
+      }
+    }
+  },
+  { slug: 'rann-of-kutch', city: 'Rann of Kutch', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.85, lng: 69.81, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.05M', metroPopulation: '0.1M', phoneCode: '+91 2836', language: 'Gujarati, Kutchi, Hindi',
+      climate: 'Hot desert with extreme summers (40-50°C) and mild winters (12-28°C). Monsoon floods salt flats.',
+      attractions: ['White Rann', 'Rann Utsav', 'Kalo Dungar', 'India Bridge', 'Dholavira', 'Mandvi Beach', 'Bhuj', 'Tribal Villages', 'Handicrafts', 'Wild Ass Sanctuary'],
+      demographics: 'World\'s largest salt desert. Rann Utsav tent city. Indo-Pakistani border. Harappan site Dholavira.',
+      seoContent: {
+        intro: 'Rann of Kutch, the white desert, operates on India Standard Time (IST/UTC+5:30). This surreal landscape of 7,500 sq km is the world\'s largest salt desert, hosting the spectacular Rann Utsav festival when the white expanse glows under full moon.',
+        timezoneFacts: 'Same timezone as all of India. Gujarat-Pakistan border.',
+        bestTimeToVisit: 'November-February only (Rann Utsav season). Full moon nights magical. Rest of year flooded or too hot.',
+        businessHours: 'Rann Utsav 6 PM to 11 PM. Permits required for border areas.',
+        timeDifference: 'Rann of Kutch is UTC+5:30 year-round. When noon in Kutch: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Full moon night at White Rann life-changing! Book Rann Utsav tents early. Kalo Dungar viewpoint at sunset. Buy Kutchi embroidery and handicrafts. Wild Ass Sanctuary unique.',
+        transportation: 'Bhuj Airport (BHU) 80km. Bhuj railway. Rann Utsav buses from Bhuj.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Rann Utsav (Nov-Feb), Navratri, Diwali.'
+      }
+    }
+  },
+  { slug: 'bhuj', city: 'Bhuj', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.25, lng: 69.67, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.25M', phoneCode: '+91 2832', language: 'Gujarati, Kutchi, Hindi',
+      climate: 'Hot desert with extreme summers (40-48°C) and mild winters (10-28°C). Monsoon July-September.',
+      attractions: ['Aina Mahal', 'Prag Mahal', 'Kutch Museum', 'Hamirsar Lake', 'Swaminarayan Temple', 'Bhujia Hill', 'Sharad Baug Palace', 'Handicraft Villages', 'Rann Gateway', 'Earthquake Memorial'],
+      demographics: 'Gateway to Rann. 2001 earthquake devastated city. Kutchi handicraft center. Aina Mahal mirrors.',
+      seoContent: {
+        intro: 'Bhuj, gateway to the Rann, operates on India Standard Time (IST/UTC+5:30). This resilient city of 200,000 rebuilt after the devastating 2001 earthquake, serving as the launchpad for White Rann expeditions and center for exquisite Kutchi handicrafts.',
+        timezoneFacts: 'Same timezone as all of India. Kutch district headquarters.',
+        bestTimeToVisit: 'October-March for pleasant weather. Gateway to Rann Utsav. Avoid scorching summer.',
+        businessHours: 'Aina Mahal 9 AM to 12 PM, 3 PM to 6 PM (closed Thursday). Handicraft shops 10 AM to 8 PM.',
+        timeDifference: 'Bhuj is UTC+5:30 year-round. When noon in Bhuj: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Aina Mahal (Mirror Palace) survived earthquake - stunning! Visit handicraft villages for authentic Kutchi work. Base for Rann trips. 2001 earthquake memorial moving.',
+        transportation: 'Bhuj Airport (BHU). Bhuj railway station. Gateway to Rann of Kutch.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Navratri (huge!), Diwali.'
+      }
+    }
+  },
+  { slug: 'pachmarhi', city: 'Pachmarhi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.47, lng: 78.43, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.015M', metroPopulation: '0.02M', phoneCode: '+91 7578', language: 'Hindi, English',
+      climate: 'Subtropical highland with pleasant summers (20-35°C) and cool winters (5-20°C). Monsoon July-September spectacular.',
+      attractions: ['Bee Falls', 'Jata Shankar Cave', 'Pandava Caves', 'Dhoopgarh', 'Satpura National Park', 'Priyadarshini Point', 'Handi Khoh', 'Apsara Vihar', 'Mahadeo Hills', 'Christ Church'],
+      demographics: 'Queen of Satpura. Only hill station in MP. British cantonment. Army headquarters. UNESCO Biosphere.',
+      seoContent: {
+        intro: 'Pachmarhi, Queen of Satpura, operates on India Standard Time (IST/UTC+5:30). This only hill station of Madhya Pradesh at 1,067m is a cantonment town of 15,000, featuring caves where Pandavas hid, waterfalls, and the UNESCO Satpura Biosphere Reserve.',
+        timezoneFacts: 'Same timezone as all of India. Satpura Range, Madhya Pradesh.',
+        bestTimeToVisit: 'Year-round pleasant. Monsoon (July-September) waterfalls at peak. October-March ideal.',
+        businessHours: 'Caves and viewpoints 6 AM to 6 PM. Satpura safaris morning and evening.',
+        timeDifference: 'Pachmarhi is UTC+5:30 year-round. When noon in Pachmarhi: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Dhoopgarh highest point for sunrise. Bee Falls natural pool for swimming. Satpura safari for tigers and leopards. Pandava Caves 5 rock-cut chambers. Book army accommodation if eligible.',
+        transportation: 'Pipariya railway 47km. No airport - Bhopal (195km) nearest. Scenic drive from Pipariya.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Military Hospital available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivratri (huge at caves), Diwali.'
+      }
+    }
+  },
+  { slug: 'omkareshwar', city: 'Omkareshwar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.24, lng: 76.15, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+91 7280', language: 'Hindi, Malvi',
+      climate: 'Tropical with hot summers (35-45°C) and mild winters (12-28°C). Monsoon July-September.',
+      attractions: ['Omkareshwar Jyotirlinga', 'Mamleshwar Temple', 'Om-shaped Island', 'Narmada River', 'Gauri Somnath Temple', 'Siddhanath Temple', 'Kedareshwar Temple', 'Parikrama', 'Boat Ride', 'Ghats'],
+      demographics: 'One of 12 Jyotirlingas. Island naturally shaped like Om. Narmada pilgrimage. Two Jyotirlingas in one place.',
+      seoContent: {
+        intro: 'Omkareshwar, the Om-shaped island, operates on India Standard Time (IST/UTC+5:30). This sacred island in the Narmada River is naturally shaped like the Hindu Om symbol and uniquely houses 2 of India\'s 12 Jyotirlingas - Omkareshwar and Mamleshwar.',
+        timezoneFacts: 'Same timezone as all of India. Narmada River, Madhya Pradesh.',
+        bestTimeToVisit: 'October-March for pleasant weather. Shivratri (February-March) massive celebration.',
+        businessHours: 'Temples 5 AM to 9 PM. Evening aarti 7 PM. Boat rides 6 AM to 6 PM.',
+        timeDifference: 'Omkareshwar is UTC+5:30 year-round. When noon in Omkareshwar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Only place with 2 Jyotirlingas! Island parikrama (circumambulation) 7km walk. Boat ride to see Om shape. Evening Narmada aarti beautiful. Simple accommodations.',
+        transportation: 'Omkareshwar Road railway 12km. No airport - Indore (80km) nearest. Buses from Indore.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivratri (massive!), Kartik Purnima, Diwali.'
+      }
+    }
+  },
+  { slug: 'ajanta', city: 'Ajanta', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.55, lng: 75.70, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+91 2438', language: 'Marathi, Hindi, English',
+      climate: 'Tropical with hot summers (35-45°C) and mild winters (15-30°C). Monsoon July-September.',
+      attractions: ['Ajanta Caves (UNESCO)', 'Buddhist Murals', 'Rock-Cut Monasteries', 'Cave 1 Paintings', 'Cave 26 Sleeping Buddha', 'Viewpoint', 'Waghora River', 'Visitor Centre', 'Night Show', 'Museum'],
+      demographics: 'UNESCO World Heritage. 30 rock-cut Buddhist caves. 2nd century BCE to 6th century CE. Rediscovered 1819.',
+      seoContent: {
+        intro: 'Ajanta, masterpiece of Buddhist art, operates on India Standard Time (IST/UTC+5:30). These 30 UNESCO World Heritage rock-cut caves spanning 2nd century BCE to 6th century CE contain the finest surviving examples of ancient Indian painting, lost for centuries until 1819.',
+        timezoneFacts: 'Same timezone as all of India. Sahyadri Hills, Maharashtra.',
+        bestTimeToVisit: 'October-March for pleasant weather. Avoid summer heat. Closed Mondays. Morning visit best for light.',
+        businessHours: 'Caves 9 AM to 5:30 PM. Closed Monday. Last entry 5 PM.',
+        timeDifference: 'Ajanta is UTC+5:30 year-round. When noon in Ajanta: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Cave 1 has finest paintings - Bodhisattva Padmapani iconic. Cave 26 has 24-foot reclining Buddha. Hire official guide - paintings need explanation. Green buses eco-friendly transport. Combine with Ellora (100km).',
+        transportation: 'Jalgaon railway 60km. Aurangabad Airport (IXU) 100km. Green buses from parking to caves.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities - Aurangabad better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Buddha Purnima, Diwali. Closed Mondays.'
+      }
+    }
+  },
+  { slug: 'ellora', city: 'Ellora', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.03, lng: 75.18, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+91 2437', language: 'Marathi, Hindi, English',
+      climate: 'Tropical with hot summers (35-45°C) and mild winters (15-30°C). Monsoon July-September.',
+      attractions: ['Ellora Caves (UNESCO)', 'Kailasa Temple', 'Buddhist Caves', 'Hindu Caves', 'Jain Caves', 'Cave 16', 'Religious Harmony', 'Rock Carving', 'Grishneshwar Temple', 'Museum'],
+      demographics: 'UNESCO World Heritage. 34 caves - Buddhist, Hindu, Jain. Kailasa Temple carved from single rock. 6th-11th century.',
+      seoContent: {
+        intro: 'Ellora, epitome of rock-cut architecture, operates on India Standard Time (IST/UTC+5:30). These 34 UNESCO caves uniquely represent Buddhist, Hindu, and Jain traditions side-by-side, crowned by the Kailasa Temple - the world\'s largest monolithic structure carved from a single rock.',
+        timezoneFacts: 'Same timezone as all of India. Sahyadri Hills, Maharashtra.',
+        bestTimeToVisit: 'October-March for pleasant weather. Avoid summer. Closed Tuesdays. Ellora Festival (March) cultural.',
+        businessHours: 'Caves 6 AM to 6 PM. Closed Tuesday. Kailasa Temple best in morning light.',
+        timeDifference: 'Ellora is UTC+5:30 year-round. When noon in Ellora: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Kailasa Temple (Cave 16) is mind-blowing - 200,000 tons of rock removed! Three religions in harmony rare. Buddhist caves (1-12), Hindu (13-29), Jain (30-34). Grishneshwar nearby is Jyotirlinga.',
+        transportation: 'Aurangabad Airport (IXU) 30km. Aurangabad railway 30km. Better connected than Ajanta.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities - Aurangabad better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ellora Festival (March), Diwali. Closed Tuesdays.'
+      }
+    }
+  },
+  { slug: 'lonavala', city: 'Lonavala', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 18.75, lng: 73.41, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.06M', metroPopulation: '0.08M', phoneCode: '+91 2114', language: 'Marathi, Hindi, English',
+      climate: 'Tropical highland with pleasant summers (20-35°C) and cool winters (10-25°C). Heavy monsoon June-September spectacular.',
+      attractions: ['Tiger\'s Leap', 'Bhushi Dam', 'Karla Caves', 'Bhaja Caves', 'Lohagad Fort', 'Rajmachi Fort', 'Duke\'s Nose', 'Khandala', 'Chikki', 'Waterfalls'],
+      demographics: 'Mumbai-Pune weekend escape. Hill station. Famous for chikki sweets. Monsoon paradise. Adventure sports.',
+      seoContent: {
+        intro: 'Lonavala, Mumbai\'s mountain escape, operates on India Standard Time (IST/UTC+5:30). This popular hill station of 60,000 in the Sahyadris is the weekend getaway for Mumbai and Pune, famous for misty valleys, ancient caves, Chikki sweets, and spectacular monsoon waterfalls.',
+        timezoneFacts: 'Same timezone as all of India. Western Ghats, Maharashtra.',
+        bestTimeToVisit: 'Monsoon (June-September) magical with waterfalls. October-May pleasant. Weekdays less crowded.',
+        businessHours: 'Caves 9 AM to 5 PM. Dams and viewpoints sunrise to sunset. Chikki shops 9 AM to 9 PM.',
+        timeDifference: 'Lonavala is UTC+5:30 year-round. When noon in Lonavala: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Monsoon transforms the valley - waterfalls everywhere! Bhushi Dam crowded but fun. Tiger\'s Leap viewpoint stunning. Buy Maganlal Chikki. Karla Caves have largest rock-cut chaitya in India.',
+        transportation: 'Lonavala railway station on Mumbai-Pune line. Mumbai Airport (BOM) 95km. Pune Airport (PNQ) 70km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ganesh Chaturthi (huge!), Diwali.'
+      }
+    }
+  },
+  { slug: 'mahabaleshwar', city: 'Mahabaleshwar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 17.92, lng: 73.66, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.015M', metroPopulation: '0.02M', phoneCode: '+91 2168', language: 'Marathi, Hindi, English',
+      climate: 'Subtropical highland with pleasant summers (15-30°C) and mild winters (10-25°C). Very heavy monsoon June-September.',
+      attractions: ['Arthur\'s Seat', 'Venna Lake', 'Mapro Garden', 'Pratapgad Fort', 'Wilson Point', 'Lingmala Waterfall', 'Panchgani', 'Table Land', 'Strawberry Farms', 'Old Mahabaleshwar'],
+      demographics: 'Queen of hill stations. Highest rainfall in Maharashtra. Strawberry capital. Five rivers originate here.',
+      seoContent: {
+        intro: 'Mahabaleshwar, strawberry capital of India, operates on India Standard Time (IST/UTC+5:30). This British-era hill station at 1,353m is Maharashtra\'s highest, where five rivers including Krishna originate, famous for strawberries, viewpoints, and the nearby Panchgani plateau.',
+        timezoneFacts: 'Same timezone as all of India. Western Ghats, Maharashtra.',
+        bestTimeToVisit: 'September-May recommended. Monsoon (June-August) extremely heavy but green. Strawberry season December-May.',
+        businessHours: 'Viewpoints sunrise to sunset. Mapro Garden 8 AM to 9 PM. Boat rides 9 AM to 6 PM.',
+        timeDifference: 'Mahabaleshwar is UTC+5:30 year-round. When noon in Mahabaleshwar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Fresh strawberries and cream at Mapro! Arthur\'s Seat for stunning valley views. Pratapgad Fort where Shivaji killed Afzal Khan. Table Land in Panchgani is Asia\'s second largest plateau. Horse rides popular.',
+        transportation: 'No railway or airport. Pune (120km). Satara railway 60km. Scenic drive from Pune.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ganesh Chaturthi, Strawberry Festival (March), Diwali.'
+      }
+    }
+  },
+  { slug: 'shirdi', city: 'Shirdi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 19.77, lng: 74.48, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.05M', phoneCode: '+91 2423', language: 'Marathi, Hindi, English',
+      climate: 'Tropical with hot summers (35-42°C) and mild winters (15-30°C). Monsoon July-September.',
+      attractions: ['Sai Baba Samadhi Mandir', 'Dwarkamai', 'Chavadi', 'Lendi Baug', 'Sai Heritage Village', 'Shani Shingnapur (nearby)', 'Wet N Joy Water Park', 'Gurusthan', 'Khandoba Temple', 'Museum'],
+      demographics: 'Sai Baba\'s holy land. 30,000+ pilgrims daily. Second richest temple in India. Massive trust operations.',
+      seoContent: {
+        intro: 'Shirdi, abode of Sai Baba, operates on India Standard Time (IST/UTC+5:30). This pilgrimage town receives over 30,000 devotees daily at the Samadhi Mandir of Sai Baba, the 19th-century saint who preached religious harmony, making it India\'s second-richest temple.',
+        timezoneFacts: 'Same timezone as all of India. Ahmednagar district, Maharashtra.',
+        bestTimeToVisit: 'Year-round pilgrimage. October-March pleasant. Festivals extremely crowded. Weekdays better.',
+        businessHours: 'Temple 4 AM to 10:30 PM. Darshan queues shortest early morning. Aartis: Kakad (4:30 AM), Madhyan (12 PM), Dhup (6 PM), Shej (10:15 PM).',
+        timeDifference: 'Shirdi is UTC+5:30 year-round. When noon in Shirdi: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Book darshan online to avoid queues! Dwarkamai where Sai Baba lived has sacred fire. Free prasad and accommodation available. Shani Shingnapur day trip for doorless village.',
+        transportation: 'Shirdi Airport (SAG) 14km. Sainagar Shirdi railway. Well-connected by road from Mumbai (250km) and Pune (185km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Sansthan Hospital: 02423-258500.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Guru Purnima, Ram Navami (massive!), Dussehra, Diwali.'
+      }
+    }
+  },
+  { slug: 'nashik-trimbak', city: 'Trimbakeshwar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 19.93, lng: 73.53, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.03M', phoneCode: '+91 2594', language: 'Marathi, Hindi',
+      climate: 'Tropical highland with pleasant summers (20-35°C) and cool winters (10-25°C). Heavy monsoon July-September.',
+      attractions: ['Trimbakeshwar Temple', 'Brahmagiri Hill', 'Godavari Origin', 'Gangadwar', 'Kushavarta Kund', 'Anjaneri Hill', 'Brahmagiri Trek', 'Kala Ram Temple (Nashik)', 'Coin Museum', 'Pandavleni Caves'],
+      demographics: 'One of 12 Jyotirlingas. Origin of Godavari River. Kumbh Mela site. Only Jyotirlinga with three faces (Brahma, Vishnu, Shiva).',
+      seoContent: {
+        intro: 'Trimbakeshwar, source of the Godavari, operates on India Standard Time (IST/UTC+5:30). This sacred town hosts one of 12 Jyotirlingas with a unique three-faced lingam representing Brahma, Vishnu, and Shiva, and the origin point of the Godavari at Brahmagiri Hill.',
+        timezoneFacts: 'Same timezone as all of India. Sahyadris, Maharashtra.',
+        bestTimeToVisit: 'Year-round pilgrimage. Monsoon stunning but wet. Shravan month (July-August) crowded. Kumbh Mela every 12 years.',
+        businessHours: 'Temple 5:30 AM to 9 PM. Brahmagiri Trek early morning. Special pujas by appointment.',
+        timeDifference: 'Trimbakeshwar is UTC+5:30 year-round. When noon in Trimbakeshwar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Only Jyotirlinga with Trimurti (three gods)! Non-Hindus can\'t enter inner sanctum. Brahmagiri Trek for Godavari source. Kaal Sarp Dosh puja popular here. Nashik wineries nearby.',
+        transportation: 'Nashik Road railway 35km. Nashik Airport (ISK) 40km (limited). Road from Nashik (28km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivratri (massive!), Shravan month, Kumbh Mela (every 12 years).'
+      }
+    }
+  },
+  { slug: 'alibaug', city: 'Alibaug', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 18.64, lng: 72.88, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.1M', phoneCode: '+91 2141', language: 'Marathi, Hindi, English',
+      climate: 'Tropical with warm year-round temperatures (22-35°C). Monsoon June-September. Coastal humidity.',
+      attractions: ['Alibaug Beach', 'Kolaba Fort', 'Kihim Beach', 'Kashid Beach', 'Murud-Janjira Fort', 'Mandwa Beach', 'Varsoli Beach', 'Kanakeshwar Temple', 'Israeli Beach', 'Water Sports'],
+      demographics: 'Mini Goa near Mumbai. Weekend beach escape. Coastal fortresses. Mumbai-Alibaug RoRo ferry.',
+      seoContent: {
+        intro: 'Alibaug, Mumbai\'s beach escape, operates on India Standard Time (IST/UTC+5:30). This coastal town of 20,000 is just a ferry ride from Mumbai, offering sandy beaches, the dramatic sea fort Kolaba, and the impregnable island fortress of Murud-Janjira nearby.',
+        timezoneFacts: 'Same timezone as all of India. Konkan coast, Maharashtra.',
+        bestTimeToVisit: 'October-May for pleasant beach weather. Monsoon dramatic but not beach-friendly. Weekdays less crowded.',
+        businessHours: 'Kolaba Fort accessible at low tide. Beaches all day. Water sports 9 AM to 5 PM.',
+        timeDifference: 'Alibaug is UTC+5:30 year-round. When noon in Alibaug: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Kolaba Fort walk only at low tide - check timings! Murud-Janjira never conquered - day trip worth it. RoRo catamaran from Gateway of India fastest. Kashid beach cleanest.',
+        transportation: 'Mandwa Jetty - catamaran from Mumbai (1 hour). No airport or railway. Road from Mumbai via Pen (100km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Coast Guard: 1554.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ganesh Chaturthi (huge!), Diwali.'
+      }
+    }
+  },
+  { slug: 'tarkarli', city: 'Tarkarli', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 16.02, lng: 73.47, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.005M', metroPopulation: '0.02M', phoneCode: '+91 2366', language: 'Marathi, Konkani, Hindi',
+      climate: 'Tropical with warm year-round temperatures (22-35°C). Monsoon June-September heavy. Clearest water October-May.',
+      attractions: ['Tarkarli Beach', 'Scuba Diving', 'Sindhudurg Fort', 'Devbagh Beach', 'Tsunami Island', 'Karli River', 'Snorkeling', 'Dolphin Watching', 'Malvan', 'Backwater Rides'],
+      demographics: 'Maharashtra\'s best-kept secret. Clearest water in India. Scuba diving hub. Sindhudurg Fort built by Shivaji.',
+      seoContent: {
+        intro: 'Tarkarli, Maharashtra\'s underwater paradise, operates on India Standard Time (IST/UTC+5:30). This hidden gem offers India\'s clearest coastal water for scuba diving and snorkeling, with the dramatic Sindhudurg Fort built by Shivaji rising from the sea.',
+        timezoneFacts: 'Same timezone as all of India. Sindhudurg district, Konkan coast.',
+        bestTimeToVisit: 'October-May for clear water and water sports. December-February ideal. Monsoon closes activities.',
+        businessHours: 'Water sports 8 AM to 5 PM. Sindhudurg Fort 6 AM to 6 PM. Boat rides by tide.',
+        timeDifference: 'Tarkarli is UTC+5:30 year-round. When noon in Tarkarli: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'India\'s best scuba outside Andamans! Sindhudurg Fort has Shivaji\'s handprint in stone. Malvan cuisine famous - try Malvani fish curry. Book MTDC houseboat. Dolphin sightings common.',
+        transportation: 'Sindhudurg Airport (SDW) 25km (limited). Kudal railway 35km. Road from Mumbai (480km) or Goa (120km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Coast Guard: 1554.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivaji Jayanti (Feb 19), Ganesh Chaturthi, Diwali.'
+      }
+    }
+  },
+  
+  // India - New Cities Batch 7 (20 cities with full premium content)
+  { slug: 'wayanad', city: 'Wayanad', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 11.69, lng: 76.13, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.8M', metroPopulation: '0.8M', phoneCode: '+91 4936', language: 'Malayalam, Kannada, Tamil',
+      climate: 'Tropical highland with pleasant year-round temperatures (15-29°C). Southwest monsoon June-September. Mist common.',
+      attractions: ['Edakkal Caves', 'Banasura Sagar Dam', 'Chembra Peak', 'Pookode Lake', 'Wayanad Wildlife Sanctuary', 'Soochipara Falls', 'Meenmutty Falls', 'Kuruva Island', 'Thirunelli Temple', 'Tea Estates'],
+      demographics: 'Green paradise of Kerala. Prehistoric Edakkal cave carvings. Spice and coffee plantations. Tribal heritage.',
+      seoContent: {
+        intro: 'Wayanad, green paradise of Kerala, operates on India Standard Time (IST/UTC+5:30). This misty hill district of 800,000 features prehistoric Edakkal Cave petroglyphs, the heart-shaped Chembra Peak trek, and lush spice plantations at the junction of Kerala, Karnataka, and Tamil Nadu.',
+        timezoneFacts: 'Same timezone as all of India. Western Ghats, Kerala-Karnataka border.',
+        bestTimeToVisit: 'October-May for pleasant weather. Monsoon (June-September) lush but wet. December-February ideal.',
+        businessHours: 'Edakkal Caves 9 AM to 4 PM. Wildlife Sanctuary 6 AM to 6 PM.',
+        timeDifference: 'Wayanad is UTC+5:30 year-round. When noon in Wayanad: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Edakkal Caves have 3,000-year-old petroglyphs! Chembra Peak heart-shaped lake romantic. Bamboo rafting at Kuruva Island. Stay in plantation homestays for authentic experience.',
+        transportation: 'Calicut Airport (CCJ) 100km. No railway - Kozhikode 75km. Scenic drive via Thamarassery Ghat.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Onam, Vishu, Diwali.'
+      }
+    }
+  },
+  { slug: 'thekkady', city: 'Thekkady', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 9.60, lng: 77.16, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.05M', phoneCode: '+91 4869', language: 'Malayalam, Tamil, English',
+      climate: 'Tropical highland with pleasant year-round temperatures (15-30°C). Monsoon June-September. Cool winters.',
+      attractions: ['Periyar Tiger Reserve', 'Periyar Lake', 'Boat Safari', 'Bamboo Rafting', 'Spice Plantations', 'Elephant Junction', 'Mangala Devi Temple', 'Kumily Town', 'Tribal Village Visit', 'Nature Walks'],
+      demographics: 'Gateway to Periyar. India\'s most visited wildlife sanctuary. Spice capital of Kerala. Tamil Nadu border.',
+      seoContent: {
+        intro: 'Thekkady, wildlife and spice haven, operates on India Standard Time (IST/UTC+5:30). This gateway to Periyar Tiger Reserve offers boat safaris on Periyar Lake for elephant and tiger sightings, surrounded by fragrant cardamom and pepper plantations.',
+        timezoneFacts: 'Same timezone as all of India. Idukki district, Kerala-Tamil Nadu border.',
+        bestTimeToVisit: 'October-May for wildlife viewing. Early morning boat safaris best. Monsoon lush but wet.',
+        businessHours: 'Periyar boat rides 7:30 AM to 3:30 PM. Spice tours 9 AM to 5 PM. Bamboo rafting by booking.',
+        timeDifference: 'Thekkady is UTC+5:30 year-round. When noon in Thekkady: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Book KTDC boat safari early - limited seats! Bamboo rafting more wildlife chances than boat. Spice plantation tour aromatic. Kumily market for fresh spices. Elephant camp ethical concerns - research first.',
+        transportation: 'Madurai Airport (IXM) 140km. Kottayam railway 114km. Buses from Kochi (190km) and Madurai.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Forest Office: 04869-222027.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Onam, Vishu, Diwali.'
+      }
+    }
+  },
+  { slug: 'bekal', city: 'Bekal', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.39, lng: 75.03, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.03M', phoneCode: '+91 467', language: 'Malayalam, Kannada, Tulu',
+      climate: 'Tropical with warm year-round temperatures (23-33°C). Heavy monsoon June-September. Humid.',
+      attractions: ['Bekal Fort', 'Bekal Beach', 'Pallikere Beach', 'Backwaters', 'Ananthapura Lake Temple', 'Chandragiri Fort', 'Kappil Beach', 'Nileswaram Palace', 'Valiyaparamba Backwaters', 'Ayurveda Resorts'],
+      demographics: 'Kerala\'s largest fort. Featured in Bollywood films. Pristine beaches. Emerging luxury tourism.',
+      seoContent: {
+        intro: 'Bekal, Kerala\'s fortress on the sea, operates on India Standard Time (IST/UTC+5:30). This emerging destination features Kerala\'s largest and best-preserved fort jutting into the Arabian Sea, pristine beaches, and the only lake temple in India at Ananthapura.',
+        timezoneFacts: 'Same timezone as all of India. Kasaragod district, North Kerala.',
+        bestTimeToVisit: 'October-May for beach and fort visits. Monsoon dramatic but not beach-friendly.',
+        businessHours: 'Bekal Fort 8 AM to 5:30 PM. Beach accessible all day. Backwater cruises by booking.',
+        timeDifference: 'Bekal is UTC+5:30 year-round. When noon in Bekal: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Fort featured in Bombay movie - iconic! Ananthapura temple has resident crocodile Babiya. Valiyaparamba backwaters less touristy than Alleppey. Luxury Ayurveda resorts here.',
+        transportation: 'Kannur Airport (CNN) 75km. Kasaragod railway 16km. Between Mangalore and Kannur.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Onam, Vishu, Eid, Diwali.'
+      }
+    }
+  },
+  { slug: 'shravanabelagola', city: 'Shravanabelagola', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.86, lng: 76.49, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+91 8176', language: 'Kannada, Hindi, English',
+      climate: 'Tropical with warm summers (25-38°C) and pleasant winters (18-32°C). Monsoon June-September.',
+      attractions: ['Gommateshwara (Bahubali)', 'Vindhyagiri Hill', 'Chandragiri Hill', 'Jain Temples', 'Bhandari Basadi', 'Akkana Basadi', 'Mahamasthakabhisheka', 'Museum', 'Chandragupta Basadi', 'Rock Inscriptions'],
+      demographics: 'World\'s tallest monolithic statue. Major Jain pilgrimage. Mahamasthakabhisheka every 12 years.',
+      seoContent: {
+        intro: 'Shravanabelagola, home of the giant Jain statue, operates on India Standard Time (IST/UTC+5:30). This sacred Jain site features the 57-foot Gommateshwara (Bahubali) statue from 983 CE - the world\'s largest monolithic statue, visible for miles.',
+        timezoneFacts: 'Same timezone as all of India. Hassan district, Karnataka.',
+        bestTimeToVisit: 'October-March for pleasant weather. Mahamasthakabhisheka (every 12 years) draws millions - next 2030.',
+        businessHours: 'Vindhyagiri Hill 6:30 AM to 5:30 PM. 614 steps to statue. Leave footwear at base.',
+        timeDifference: 'Shravanabelagola is UTC+5:30 year-round. When noon in Shravanabelagola: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Climb 614 steps barefoot (hot in afternoon - go early!). Statue\'s serene face visible from 25km. Mahamasthakabhisheka head-anointing ceremony next in 2030. Chandragiri Hill smaller but many temples.',
+        transportation: 'Hassan 50km. Bangalore Airport (BLR) 150km. Mysore 85km. Road from Bangalore (3 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Mahavir Jayanti, Mahamasthakabhisheka (12 years), Diwali.'
+      }
+    }
+  },
+  { slug: 'chettinad', city: 'Chettinad', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.10, lng: 78.75, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.05M', metroPopulation: '0.1M', phoneCode: '+91 4565', language: 'Tamil, English',
+      climate: 'Tropical semi-arid with hot summers (30-42°C) and warm winters (22-32°C). Sparse rainfall.',
+      attractions: ['Chettinad Mansions', 'Athangudi Tiles', 'Chettinad Cuisine', 'Karaikudi', 'Pillayarpatti Temple', 'Thirumayam Fort', 'Kanadukathan Palace', 'Antique Shopping', 'Traditional Crafts', 'Heritage Hotels'],
+      demographics: 'Mansion town of merchant princes. 75 villages, 10,000 mansions. Famous Chettinad cuisine. Antique treasure trove.',
+      seoContent: {
+        intro: 'Chettinad, land of merchant palaces, operates on India Standard Time (IST/UTC+5:30). This unique region of 75 villages features over 10,000 abandoned mansions built by Nattukotai Chettiars, known for distinctive architecture, spicy cuisine, and Burma teak treasures.',
+        timezoneFacts: 'Same timezone as all of India. Sivaganga district, Tamil Nadu.',
+        bestTimeToVisit: 'October-March for pleasant weather. Avoid summer heat. Pongal festival (January) colorful.',
+        businessHours: 'Mansions by arrangement. Antique shops 9 AM to 6 PM. Heritage hotels offer tours.',
+        timeDifference: 'Chettinad is UTC+5:30 year-round. When noon in Chettinad: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Stay in heritage mansion hotel! Chettinad cuisine is India\'s spiciest - try Chettinad chicken. Athangudi tiles handmade. Antiques shipped from Burma. Many mansions abandoned - haunting beauty.',
+        transportation: 'Madurai Airport (IXM) 90km. Karaikudi railway. Road from Madurai (2 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal (huge!), Diwali.'
+      }
+    }
+  },
+  { slug: 'nubra-valley', city: 'Nubra Valley', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 34.68, lng: 77.58, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.015M', metroPopulation: '0.015M', phoneCode: '+91 1980', language: 'Ladakhi, Hindi, English',
+      climate: 'Cold desert with warm summers (10-30°C) and frigid winters (-20 to 5°C). Very little rainfall. Snow October-May.',
+      attractions: ['Diskit Monastery', 'Maitreya Buddha Statue', 'Hunder Sand Dunes', 'Bactrian Camels', 'Khardung La Pass', 'Panamik Hot Springs', 'Samstanling Monastery', 'Yarab Tso Lake', 'Turtuk Village', 'Siachen Base'],
+      demographics: 'Valley of flowers in Ladakh. Double-humped Bactrian camels. Silk Route history. Highest motorable pass access.',
+      seoContent: {
+        intro: 'Nubra Valley, Ladakh\'s hidden oasis, operates on India Standard Time (IST/UTC+5:30). This high-altitude desert valley accessed via Khardung La (world\'s highest motorable road) features unique Bactrian camels on cold desert dunes, ancient monasteries, and the last Indian village before Pakistan.',
+        timezoneFacts: 'Same timezone as all of India despite being far north. Near Siachen Glacier.',
+        bestTimeToVisit: 'June-September only (Khardung La closed in winter). July-August ideal. Book permits in advance.',
+        businessHours: 'Monasteries 7 AM to 6 PM. Camel rides 4 PM to 7 PM. Permits checked at checkpoints.',
+        timeDifference: 'Nubra Valley is UTC+5:30 year-round. When noon in Nubra: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Inner Line Permit required - get in Leh! Khardung La at 18,380 feet - acclimatize first. Bactrian camel rides surreal. Turtuk village Balti culture - formerly Pakistan until 1971. Panamik hot springs therapeutic.',
+        transportation: 'No airport. Leh Airport (IXL) + 5-hour drive via Khardung La. Only road access, closed in winter.',
+        emergencyNumbers: 'Emergency: 112. Army assistance available. Limited medical facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar, Hemis Festival, Diwali.'
+      }
+    }
+  },
+  { slug: 'pangong-lake', city: 'Pangong Lake', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 33.76, lng: 78.66, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.001M', metroPopulation: '0.002M', phoneCode: '+91 1982', language: 'Ladakhi, Hindi, English',
+      climate: 'Cold desert with cool summers (5-20°C) and frigid winters (-25 to 0°C). High altitude 4,350m.',
+      attractions: ['Pangong Tso Lake', 'Color-Changing Water', '3 Idiots Location', 'Chang La Pass', 'Spangmik Village', 'Merak Village', 'Marmot Watching', 'Stargazing', 'India-China Border', 'Camping'],
+      demographics: '134km long lake, 60% in Tibet. Famous from 3 Idiots movie. Color changes 5-7 times daily. Military tension zone.',
+      seoContent: {
+        intro: 'Pangong Lake, the color-changing wonder, operates on India Standard Time (IST/UTC+5:30). This 134km endorheic lake at 4,350m spans India and China, famous for its magical color changes from azure to green to red, and immortalized in the film 3 Idiots.',
+        timezoneFacts: 'Same timezone as all of India. 60% of lake in Chinese-controlled Tibet.',
+        bestTimeToVisit: 'May-September only (roads closed in winter). June-July for best colors. Freezes completely in winter.',
+        businessHours: 'Open 24 hours for viewing. Camping by arrangement. Permits checked at Chang La.',
+        timeDifference: 'Pangong Lake is UTC+5:30 year-round. When noon at Pangong: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Inner Line Permit required! 3 Idiots yellow scooter still there (for photos). Lake changes color 5-7 times daily - mesmerizing. Camp overnight for stars. Altitude sickness risk - acclimatize in Leh first.',
+        transportation: 'No airport. Leh Airport (IXL) + 6-hour drive via Chang La. Only road access, seasonal.',
+        emergencyNumbers: 'Emergency: 112. Army assistance available. Very limited facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar, Hemis Festival.'
+      }
+    }
+  },
+  { slug: 'spiti-valley', city: 'Spiti Valley', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 32.25, lng: 78.03, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.015M', phoneCode: '+91 1906', language: 'Spitian, Hindi, English',
+      climate: 'Cold desert with cool summers (5-25°C) and frigid winters (-30 to 0°C). Rain shadow - very dry.',
+      attractions: ['Key Monastery', 'Kaza Town', 'Chandratal Lake', 'Dhankar Monastery', 'Tabo Monastery', 'Pin Valley', 'Kunzum Pass', 'Kibber Village', 'Comic Village', 'Mummy of Sangha Tenzin'],
+      demographics: 'Middle Land between India and Tibet. Oldest monastery Tabo (996 CE). Highest post office (Hikkim). Fossil heaven.',
+      seoContent: {
+        intro: 'Spiti Valley, the Middle Land, operates on India Standard Time (IST/UTC+5:30). This remote cold desert at 4,000m+ is one of India\'s least populated areas, featuring 1,000-year-old Tabo Monastery (Ajanta of Himalayas), dramatic Key Monastery, and the world\'s highest villages.',
+        timezoneFacts: 'Same timezone as all of India. Lahaul and Spiti district, Himachal Pradesh.',
+        bestTimeToVisit: 'June-September via Rohtang. May-October via Shimla. Both routes closed in winter.',
+        businessHours: 'Monasteries 6 AM to 6 PM. Kaza market 9 AM to 7 PM.',
+        timeDifference: 'Spiti Valley is UTC+5:30 year-round. When noon in Spiti: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Inner Line Permit needed for some areas. Tabo murals rival Ajanta. Key Monastery photogenic at sunrise. Hikkim has world\'s highest post office - send postcard! Mummy at Gue village 500 years old.',
+        transportation: 'No airport. Kaza is hub. Manali route via Rohtang/Kunzum. Shimla route via Kinnaur. Both 2-day journeys.',
+        emergencyNumbers: 'Emergency: 112. Very limited facilities - Kaza hospital basic.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar, Buddha Purnima, Diwali.'
+      }
+    }
+  },
+  { slug: 'kinnaur', city: 'Kinnaur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 31.58, lng: 78.42, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.08M', metroPopulation: '0.08M', phoneCode: '+91 1786', language: 'Kinnauri, Hindi, English',
+      climate: 'Varies by elevation - temperate lower, cold desert upper. Apple harvest August-November. Snow December-March.',
+      attractions: ['Kalpa', 'Kinnaur Kailash', 'Chitkul (Last Village)', 'Sangla Valley', 'Baspa River', 'Suicide Point', 'Reckong Peo', 'Nako Lake', 'Ribba Orchards', 'Hindustan-Tibet Road'],
+      demographics: 'Land of God (Kinnar-Kailash). Apple capital of India. Indo-Tibetan border. Mix of Hindu and Buddhist.',
+      seoContent: {
+        intro: 'Kinnaur, land where gods reside, operates on India Standard Time (IST/UTC+5:30). This apple country of 80,000 features the sacred Kinnaur Kailash peak, Chitkul (India\'s last inhabited village before Tibet), and dramatic valleys along the ancient Hindustan-Tibet Road.',
+        timezoneFacts: 'Same timezone as all of India. Indo-Tibetan border, Himachal Pradesh.',
+        bestTimeToVisit: 'April-June and September-October. Apple season August-November. Winter roads may close.',
+        businessHours: 'Apple orchards accessible during harvest. Temples sunrise to sunset.',
+        timeDifference: 'Kinnaur is UTC+5:30 year-round. When noon in Kinnaur: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Kalpa views of Kinnaur Kailash stunning at sunrise. Chitkul is last Indian village - road ends here! Fresh apples best in September. Inner Line Permit needed beyond Karcham. Sangla Valley gorgeous.',
+        transportation: 'No airport. Shimla 235km. Reckong Peo is district HQ. Himalayan Expressway route.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. ITBP assistance available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Fulaich (Flower Festival), Diwali.'
+      }
+    }
+  },
+  { slug: 'chopta', city: 'Chopta', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.29, lng: 79.20, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.001M', metroPopulation: '0.002M', phoneCode: '+91 1364', language: 'Hindi, Garhwali, English',
+      climate: 'Alpine with cool summers (10-20°C) and cold winters (-10 to 5°C). Snow December-March. Monsoon July-September.',
+      attractions: ['Tungnath Temple', 'Chandrashila Peak', 'Deoria Tal', 'Kedarnath Wildlife Sanctuary', 'Bugyals (Meadows)', 'Rhododendron Forests', 'Trekking Base', 'Camping', 'Bird Watching', 'Sunrise Views'],
+      demographics: 'Mini Switzerland of India. Tungnath is highest Shiva temple. Gateway to Chandrashila. Pristine meadows.',
+      seoContent: {
+        intro: 'Chopta, mini Switzerland of Uttarakhand, operates on India Standard Time (IST/UTC+5:30). This pristine hamlet at 2,680m is the base for Tungnath (world\'s highest Shiva temple at 3,680m) and Chandrashila peak, surrounded by rhododendron forests and alpine meadows.',
+        timezoneFacts: 'Same timezone as all of India. Kedarnath Wildlife Sanctuary, Uttarakhand.',
+        bestTimeToVisit: 'April-June for rhododendrons. September-November for clear views. Winter for snow trekking (difficult).',
+        businessHours: 'Tungnath Temple 6 AM to 7 PM. Treks best started early morning.',
+        timeDifference: 'Chopta is UTC+5:30 year-round. When noon in Chopta: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Tungnath-Chandrashila trek easy (4km) - don\'t miss! Chandrashila sunrise over Himalayan peaks incredible. April-May rhododendrons carpet hills red. Deoria Tal reflects Chaukhamba peaks.',
+        transportation: 'No airport. Rishikesh 220km. Haridwar railway 240km. Road via Ukhimath.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Very limited facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivratri (Tungnath), Diwali.'
+      }
+    }
+  },
+  { slug: 'auli', city: 'Auli', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.53, lng: 79.57, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.001M', metroPopulation: '0.003M', phoneCode: '+91 1389', language: 'Hindi, Garhwali, English',
+      climate: 'Alpine with cool summers (10-20°C) and cold winters (-8 to 5°C). Snow December-March. Best skiing January-March.',
+      attractions: ['Skiing', 'Cable Car (Gondola)', 'Artificial Lake', 'Nanda Devi View', 'Gorson Bugyal', 'Kuari Pass Trek', 'Joshimath', 'Badrinath (nearby)', 'Valley of Flowers (seasonal)', 'Chairlift'],
+      demographics: 'India\'s premier ski destination. Asia\'s longest cable car. ITBP ski training. 360° Himalayan panorama.',
+      seoContent: {
+        intro: 'Auli, skiing paradise of India, operates on India Standard Time (IST/UTC+5:30). This premier ski resort at 2,800m features Asia\'s longest cable car (4km), pristine slopes, and a 360-degree panorama of Nanda Devi and other Himalayan giants.',
+        timezoneFacts: 'Same timezone as all of India. Chamoli district, Uttarakhand.',
+        bestTimeToVisit: 'January-March for skiing. April-June and September-November for trekking. Monsoon closes Valley of Flowers.',
+        businessHours: 'Cable car 9 AM to 5 PM. Skiing 10 AM to 4 PM. Equipment rental available.',
+        timeDifference: 'Auli is UTC+5:30 year-round. When noon in Auli: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Gondola ride from Joshimath spectacular! Skiing season January-March - GMVN offers courses. Gorson Bugyal meadow trek easy. Badrinath pilgrimage 45km. Valley of Flowers July-August.',
+        transportation: 'No airport. Jolly Grant Airport Dehradun (290km). Rishikesh railway 265km. Cable car from Joshimath.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. ITBP assistance available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Winter Games (January), Diwali.'
+      }
+    }
+  },
+  { slug: 'valley-of-flowers', city: 'Valley of Flowers', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.73, lng: 79.60, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0M', metroPopulation: '0M', phoneCode: '+91 1389', language: 'Hindi, Garhwali, English',
+      climate: 'Alpine with cool summers (5-17°C). Monsoon brings flowers. Snow closes valley October-May.',
+      attractions: ['UNESCO National Park', 'Alpine Flowers', 'Brahma Kamal', 'Blue Poppy', 'Pushpawati River', 'Hemkund Sahib (nearby)', 'Govindghat', 'Ghangaria Base', 'Bird Watching', 'Nature Photography'],
+      demographics: 'UNESCO World Heritage. 600+ flower species. Discovered by Frank Smythe 1931. Open only 4 months.',
+      seoContent: {
+        intro: 'Valley of Flowers, nature\'s canvas, operates on India Standard Time (IST/UTC+5:30). This UNESCO World Heritage Site blooms with over 600 species of wildflowers during monsoon, including the rare Brahma Kamal and Blue Poppy, accessible only 4 months a year.',
+        timezoneFacts: 'Same timezone as all of India. Nanda Devi Biosphere, Uttarakhand.',
+        bestTimeToVisit: 'July-September only (closed rest of year). Mid-July to mid-August peak bloom. Early July for snow.',
+        businessHours: 'Park 7 AM to 5 PM. Entry fees at Ghangaria. No overnight stay in valley.',
+        timeDifference: 'Valley of Flowers is UTC+5:30 year-round. When noon in Valley: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Open only July-September! 13km trek from Govindghat to Ghangaria, then 4km to valley. Combine with Hemkund Sahib. Brahma Kamal (night-blooming lotus) rare find. Carry rain gear.',
+        transportation: 'No vehicles beyond Govindghat. Jolly Grant Airport Dehradun (295km). Trek or pony/helicopter to Ghangaria.',
+        emergencyNumbers: 'Emergency: 112. Forest Office at Ghangaria.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15). Park closed October-June.'
+      }
+    }
+  },
+  { slug: 'tirthan-valley', city: 'Tirthan Valley', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 31.63, lng: 77.45, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.03M', phoneCode: '+91 1903', language: 'Hindi, Pahari, Kulvi',
+      climate: 'Temperate with pleasant summers (15-28°C) and cold winters (0-15°C). Monsoon July-September.',
+      attractions: ['Great Himalayan National Park', 'Tirthan River', 'Trout Fishing', 'Jalori Pass', 'Serolsar Lake', 'Jibhi', 'Chhoie Waterfall', 'Traditional Villages', 'Birdwatching', 'Riverside Camping'],
+      demographics: 'Gateway to GHNP UNESCO site. Offbeat Himachal. Trout fishing paradise. Eco-tourism pioneer.',
+      seoContent: {
+        intro: 'Tirthan Valley, Himachal\'s hidden gem, operates on India Standard Time (IST/UTC+5:30). This pristine valley is the gateway to Great Himalayan National Park (UNESCO), offering crystal-clear trout streams, ancient villages, and an escape from commercialized hill stations.',
+        timezoneFacts: 'Same timezone as all of India. Kullu district, Himachal Pradesh.',
+        bestTimeToVisit: 'March-June and September-November. Monsoon lush but leeches. Winter cold but beautiful.',
+        businessHours: 'GHNP permits from office. Fishing licenses required. Homestays flexible.',
+        timeDifference: 'Tirthan Valley is UTC+5:30 year-round. When noon in Tirthan: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'GHNP permit required - book ahead! Trout fishing March-June and September-October. Jibhi and Gushaini best bases. Serolsar Lake trek via Jalori Pass. Stay in traditional homestays.',
+        transportation: 'Bhuntar Airport (KUU) 50km. Aut on NH21 nearest. Buses from Aut to Banjar.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. GHNP office: 01903-265320.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Kullu Dussehra, Diwali.'
+      }
+    }
+  },
+  { slug: 'malana', city: 'Malana', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 32.08, lng: 77.33, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.002M', metroPopulation: '0.002M', phoneCode: '+91 1902', language: 'Kanashi (unique), Hindi',
+      climate: 'Alpine with cool summers (10-22°C) and very cold winters (-10 to 5°C). Snow December-March.',
+      attractions: ['Ancient Village', 'Jamlu Devta Temple', 'Unique Democracy', 'Traditional Architecture', 'Malana Creek', 'Trek from Kasol', 'Magic Valley', 'Rasol Village', 'Waichin Valley', 'Cultural Experience'],
+      demographics: 'World\'s oldest democracy. Greek ancestry claimed. Strict untouchability for outsiders. Unique language Kanashi.',
+      seoContent: {
+        intro: 'Malana, the village of taboos, operates on India Standard Time (IST/UTC+5:30). This ancient village claims to be world\'s oldest democracy with Alexander\'s army descendants, practicing strict untouchability against all outsiders - touching locals or their property incurs fines.',
+        timezoneFacts: 'Same timezone as all of India. Parvati Valley, Himachal Pradesh.',
+        bestTimeToVisit: 'April-June and September-November. Winter extremely cold. Monsoon landslide risk.',
+        businessHours: 'Village accessible daytime. Temple closed to outsiders. Guesthouses limited.',
+        timeDifference: 'Malana is UTC+5:30 year-round. When noon in Malana: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'DO NOT touch anyone or anything! Not even walls. Village fines for violations. Unique parliament system. 4km trek from Malana Gate. Guesthouses are for outsiders only - don\'t enter village homes.',
+        transportation: 'No road to village. Jari (base) 20km from Kasol. Trek 4km from Malana Gate. Kasol base for buses.',
+        emergencyNumbers: 'Emergency: 112. No facilities in village - Kasol better.',
+        publicHolidays: 'Fagli Festival (February - unique), Independence Day (Aug 15), Diwali.'
+      }
+    }
+  },
+  { slug: 'bir-billing', city: 'Bir Billing', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 31.88, lng: 76.72, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.015M', phoneCode: '+91 1894', language: 'Hindi, Pahari, Tibetan',
+      climate: 'Subtropical highland with pleasant summers (15-30°C) and cool winters (5-20°C). Good flying weather March-May, Oct-Nov.',
+      attractions: ['Paragliding', 'Billing Takeoff Site', 'Tibetan Colony', 'Chokling Monastery', 'Bir Tea Factory', 'Deer Park Institute', 'Sherabling Monastery', 'Paragliding World Cup Site', 'Cafes', 'Trekking'],
+      demographics: 'Paragliding capital of India. 2015 World Cup venue. Tibetan settlement. Alternative spiritual hub.',
+      seoContent: {
+        intro: 'Bir Billing, paragliding capital of India, operates on India Standard Time (IST/UTC+5:30). This Tibetan settlement hosted the 2015 Paragliding World Cup, offering some of the world\'s best thermals for flight from Billing (2,400m) to landing at Bir.',
+        timezoneFacts: 'Same timezone as all of India. Kangra district, Himachal Pradesh.',
+        bestTimeToVisit: 'March-May and October-November for flying. Monsoon grounds paragliders. Year-round for monasteries.',
+        businessHours: 'Paragliding 9 AM to 5 PM (weather dependent). Monasteries 6 AM to 6 PM.',
+        timeDifference: 'Bir Billing is UTC+5:30 year-round. When noon in Bir: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Book tandem paragliding - 20-30 min flight! Billing is takeoff, Bir is landing. Tibetan monasteries peaceful. Deer Park Institute for meditation courses. Many organic cafes.',
+        transportation: 'Dharamsala Gaggal Airport (DHM) 70km. Pathankot railway 140km. Buses from Dharamsala and Delhi.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar, Buddha Purnima, Diwali.'
+      }
+    }
+  },
+  { slug: 'coorg', city: 'Coorg', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.34, lng: 75.81, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.55M', metroPopulation: '0.55M', phoneCode: '+91 8272', language: 'Kodava, Kannada, English',
+      climate: 'Tropical highland with pleasant year-round temperatures (15-28°C). Heavy monsoon June-September.',
+      attractions: ['Abbey Falls', 'Raja\'s Seat', 'Madikeri Fort', 'Talakaveri', 'Dubare Elephant Camp', 'Namdroling Monastery', 'Coffee Plantations', 'Iruppu Falls', 'Nagarhole National Park', 'Nisargadhama'],
+      demographics: 'Scotland of India. Coffee country. Kodava warrior culture. Highest decorated military community.',
+      seoContent: {
+        intro: 'Coorg (Kodagu), Scotland of India, operates on India Standard Time (IST/UTC+5:30). This misty hill district of 550,000 is Karnataka\'s coffee country, home to the martial Kodava community that has contributed more army officers per capita than any other Indian region.',
+        timezoneFacts: 'Same timezone as all of India. Western Ghats, Karnataka.',
+        bestTimeToVisit: 'October-March for pleasant weather. Monsoon (June-September) lush but very wet. Coffee blossom March-April.',
+        businessHours: 'Abbey Falls 8 AM to 5 PM. Raja\'s Seat sunrise to sunset. Plantations by arrangement.',
+        timeDifference: 'Coorg is UTC+5:30 year-round. When noon in Coorg: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Stay in coffee estate homestays! Try Kodava pandi curry (pork). Talakaveri is Kaveri River origin. Namdroling is largest Tibetan monastery in south. Dubare for ethical elephant interaction.',
+        transportation: 'Mysore Airport (MYQ) 120km. Mysore railway 120km. Scenic drive from Bangalore (250km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Kodava festivals (Kailpodh, Cauvery Sankramana), Diwali.'
+      }
+    }
+  },
+  { slug: 'kabini', city: 'Kabini', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 11.95, lng: 76.37, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.05M', phoneCode: '+91 8228', language: 'Kannada, Hindi, English',
+      climate: 'Tropical with warm year-round temperatures (20-35°C). Monsoon June-September. Summer dry.',
+      attractions: ['Kabini Wildlife Sanctuary', 'Kabini Dam', 'Tiger Safari', 'Elephant Herds', 'Nagarhole National Park', 'Boat Safari', 'Coracle Ride', 'JLR Lodge', 'Birdwatching', 'Photography'],
+      demographics: 'Top tiger and elephant destination. Kabini backwaters. Luxury jungle lodges. Summer elephant gathering.',
+      seoContent: {
+        intro: 'Kabini, jewel of Karnataka\'s wildlife, operates on India Standard Time (IST/UTC+5:30). This premier wildlife destination at Nagarhole National Park is famous for tiger sightings, Asia\'s largest elephant gathering in summer, and luxurious jungle lodges on the backwaters.',
+        timezoneFacts: 'Same timezone as all of India. Karnataka-Kerala border.',
+        bestTimeToVisit: 'April-June for summer elephant herds. October-May for wildlife. June-September closed (monsoon).',
+        businessHours: 'Safari 6:30 AM and 3:30 PM. Boat safari by arrangement. Park closed during monsoon.',
+        timeDifference: 'Kabini is UTC+5:30 year-round. When noon in Kabini: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Summer (April-June) for elephant herds at backwaters - up to 150 elephants! Book JLR or luxury lodges early. Black panther sightings possible. Boat safari excellent for birds. Jeep safari for tigers.',
+        transportation: 'Mysore Airport (MYQ) 80km. Mysore railway 80km. Bangalore Airport (BLR) 220km.',
+        emergencyNumbers: 'Emergency: 112. Forest Office: 08228-264003.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Wildlife Week (October), Diwali.'
+      }
+    }
+  },
+  { slug: 'hampi-anegundi', city: 'Anegundi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 15.36, lng: 76.49, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.005M', metroPopulation: '0.01M', phoneCode: '+91 8394', language: 'Kannada, Hindi, English',
+      climate: 'Tropical with hot summers (30-42°C) and mild winters (18-32°C). Monsoon July-September.',
+      attractions: ['Pampa Sarovar', 'Anjanadri Hill (Hanuman Birthplace)', 'Durga Temple', 'Coracle Crossing', 'Boulder Climbing', 'Kishkindha', 'Ancient Ruins', 'Riverside Camping', 'Village Walks', 'Crafts'],
+      demographics: 'Kishkindha of Ramayana. Hanuman\'s birthplace. Older than Hampi. Community tourism model.',
+      seoContent: {
+        intro: 'Anegundi, the Kishkindha of Ramayana, operates on India Standard Time (IST/UTC+5:30). This ancient village across the river from Hampi is believed to be the mythological monkey kingdom, including Anjanadri Hill - birthplace of Lord Hanuman.',
+        timezoneFacts: 'Same timezone as all of India. Tungabhadra River, Karnataka.',
+        bestTimeToVisit: 'October-February for pleasant weather. Avoid summer heat. Hanuman Jayanti special.',
+        businessHours: 'Temples sunrise to sunset. Coracle rides 7 AM to 6 PM.',
+        timeDifference: 'Anegundi is UTC+5:30 year-round. When noon in Anegundi: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Sunrise from Anjanadri Hill stunning - 575 steps! Coracle ride across Tungabhadra to Hampi. Less touristy than Hampi. Community homestays support village. Pampa Sarovar sacred lake.',
+        transportation: 'Hospet railway 13km. Hubli Airport (HBX) 160km. Cross river from Hampi by coracle.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities - Hospet better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Hanuman Jayanti (special here!), Dussehra, Diwali.'
+      }
+    }
+  },
+  
+  // India - New Cities Batch 8 FINAL (26 cities to reach 200)
+  { slug: 'badrinath', city: 'Badrinath', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.74, lng: 79.49, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.001M', metroPopulation: '0.002M', phoneCode: '+91 1381', language: 'Hindi, Garhwali, Sanskrit',
+      climate: 'Alpine with cool summers (7-18°C) and frigid winters (-15 to 5°C). Open May-November only. Heavy snow.',
+      attractions: ['Badrinath Temple', 'Tapt Kund', 'Neelkanth Peak', 'Mana Village', 'Vasudhara Falls', 'Bheem Pul', 'Vyas Gufa', 'Ganesh Gufa', 'Charan Paduka', 'Satopanth Lake'],
+      demographics: 'One of Char Dham. Vishnu\'s abode. India\'s last village Mana. Adi Shankaracharya established temple.',
+      seoContent: {
+        intro: 'Badrinath, abode of Lord Vishnu, operates on India Standard Time (IST/UTC+5:30). This sacred Char Dham at 3,133m is one of Hinduism\'s holiest sites, featuring the ancient temple established by Adi Shankaracharya and Mana - India\'s last village before Tibet.',
+        timezoneFacts: 'Same timezone as all of India. Chamoli district, Uttarakhand.',
+        bestTimeToVisit: 'May-June and September-October. Temple closed November-April (snow). Monsoon risky.',
+        businessHours: 'Temple 4:30 AM to 1 PM, 3 PM to 9 PM. Tapt Kund 24 hours.',
+        timeDifference: 'Badrinath is UTC+5:30 year-round. When noon in Badrinath: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Tapt Kund hot spring bath before temple visit tradition. Mana Village last before Tibet - try local chai. Bheem Pul natural rock bridge. Aarti at 7 PM spectacular. Book accommodation early in season.',
+        transportation: 'No airport. Jolly Grant Dehradun (317km). Rishikesh railway (297km). Helicopter service available.',
+        emergencyNumbers: 'Emergency: 112. Temple Board: 01381-222224.',
+        publicHolidays: 'Temple opening (Akshaya Tritiya), Badri Kedar Festival, Temple closing (Diwali week).'
+      }
+    }
+  },
+  { slug: 'kedarnath', city: 'Kedarnath', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.73, lng: 79.07, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.0005M', metroPopulation: '0.001M', phoneCode: '+91 1364', language: 'Hindi, Garhwali, Sanskrit',
+      climate: 'Alpine with cold summers (5-15°C) and extreme winters (-20°C). Open May-October only. 2013 flood devastation.',
+      attractions: ['Kedarnath Temple', 'Chorabari Glacier', 'Vasuki Tal', 'Shankaracharya Samadhi', 'Bhairavnath Temple', 'Gaurikund', 'Trek Route', 'Helicopter Views', 'Gandhi Sarovar', 'Retas Kund'],
+      demographics: 'One of 12 Jyotirlingas and Char Dham. Highest Jyotirlinga. 2013 flood killed thousands. Rebuilt stronger.',
+      seoContent: {
+        intro: 'Kedarnath, the highest Jyotirlinga, operates on India Standard Time (IST/UTC+5:30). This sacred Char Dham at 3,583m survived the devastating 2013 floods that killed thousands, with the ancient temple protected miraculously by a boulder now worshipped as Bheem Shila.',
+        timezoneFacts: 'Same timezone as all of India. Rudraprayag district, Uttarakhand.',
+        bestTimeToVisit: 'May-June and September-October. Closed November-April. Monsoon dangerous.',
+        businessHours: 'Temple 4 AM to 3 PM, 5 PM to 9 PM. Trek or helicopter only access.',
+        timeDifference: 'Kedarnath is UTC+5:30 year-round. When noon in Kedarnath: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: '16km trek from Gaurikund or helicopter (book early!). Bheem Shila boulder saved temple in 2013. Start trek by 4 AM. Ponies and palanquins available. Acclimatize properly.',
+        transportation: 'No roads to Kedarnath. Gaurikund base (trek 16km). Phata/Guptkashi helipad. Rishikesh railway 223km from Gaurikund.',
+        emergencyNumbers: 'Emergency: 112. Temple Board: 01364-263200.',
+        publicHolidays: 'Temple opening (Akshaya Tritiya), Shivratri month, Temple closing (Bhai Dooj).'
+      }
+    }
+  },
+  { slug: 'gangotri', city: 'Gangotri', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.99, lng: 78.94, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.0005M', metroPopulation: '0.001M', phoneCode: '+91 1375', language: 'Hindi, Garhwali, Sanskrit',
+      climate: 'Alpine with cool summers (5-20°C) and frigid winters. Open May-October. Source of Ganges.',
+      attractions: ['Gangotri Temple', 'Gaumukh Glacier', 'Bhagirathi River', 'Tapovan', 'Kedartal', 'Pandava Gufa', 'Surya Kund', 'Jalmagna Shivling', 'Bhagirath Shila', 'Submerged Shivling'],
+      demographics: 'Source of River Ganges. One of Char Dham. Gaumukh glacier origin. Sacred to Hindus.',
+      seoContent: {
+        intro: 'Gangotri, source of the sacred Ganges, operates on India Standard Time (IST/UTC+5:30). This Char Dham at 3,100m marks where the Ganges descends from Gaumukh glacier, with the 18th-century temple honoring the river goddess worshipped by millions.',
+        timezoneFacts: 'Same timezone as all of India. Uttarkashi district, Uttarakhand.',
+        bestTimeToVisit: 'May-June and September-October. Closed November-April. Gaumukh trek needs permit.',
+        businessHours: 'Temple 6:15 AM to 2 PM, 3 PM to 9:30 PM (summer).',
+        timeDifference: 'Gangotri is UTC+5:30 year-round. When noon in Gangotri: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Gaumukh trek 18km - permits required, get in Uttarkashi. Submerged Shivling visible only in winter (when temple closed!). Surya Kund for holy dip. Aarti at sunset beautiful.',
+        transportation: 'No airport. Jolly Grant Dehradun (290km). Rishikesh railway (260km). Road from Uttarkashi (100km).',
+        emergencyNumbers: 'Emergency: 112. Temple Board available.',
+        publicHolidays: 'Temple opening (Akshaya Tritiya), Ganga Dussehra (huge!), Temple closing (Diwali).'
+      }
+    }
+  },
+  { slug: 'yamunotri', city: 'Yamunotri', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 31.01, lng: 78.46, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.0003M', metroPopulation: '0.0005M', phoneCode: '+91 1375', language: 'Hindi, Garhwali, Sanskrit',
+      climate: 'Alpine with cool summers (5-18°C) and frigid winters. Open May-October. First of Char Dham.',
+      attractions: ['Yamunotri Temple', 'Surya Kund', 'Divya Shila', 'Janki Chatti', 'Saptrishi Kund', 'Hanuman Chatti', 'Kharsali Village', 'Hot Springs', 'Yamuna Source', 'Trek Route'],
+      demographics: 'Source of River Yamuna. First of Char Dham yatra. Least visited of four. Surya Kund boils rice.',
+      seoContent: {
+        intro: 'Yamunotri, source of the sacred Yamuna, operates on India Standard Time (IST/UTC+5:30). This first stop of Char Dham yatra at 3,293m features the temple of goddess Yamuna and Surya Kund hot spring where pilgrims cook rice and potatoes as prasad.',
+        timezoneFacts: 'Same timezone as all of India. Uttarkashi district, Uttarakhand.',
+        bestTimeToVisit: 'May-June and September-October. Closed November-April. Least crowded of Char Dham.',
+        businessHours: 'Temple 6 AM to 8 PM (summer). Trek from Janki Chatti (6km).',
+        timeDifference: 'Yamunotri is UTC+5:30 year-round. When noon in Yamunotri: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: '6km trek from Janki Chatti - ponies available. Cook rice in Surya Kund as prasad - tradition! Divya Shila rock worship before temple. Least crowded Char Dham - peaceful.',
+        transportation: 'No airport. Jolly Grant Dehradun (290km). Rishikesh railway (260km). Road to Janki Chatti then trek.',
+        emergencyNumbers: 'Emergency: 112. Very limited facilities.',
+        publicHolidays: 'Temple opening (Akshaya Tritiya), Yamuna Jayanti, Temple closing (Yama Dwitiya).'
+      }
+    }
+  },
+  { slug: 'hemkund-sahib', city: 'Hemkund Sahib', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.69, lng: 79.60, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0M', metroPopulation: '0M', phoneCode: '+91 1389', language: 'Punjabi, Hindi, English',
+      climate: 'Alpine with cold summers (5-15°C). Open June-October only. At 4,329m one of highest gurudwaras.',
+      attractions: ['Hemkund Sahib Gurudwara', 'Lokpal Lake', 'Brahma Kamal Flowers', 'Ghangaria Base', 'Laxman Temple', 'Mountain Views', 'Trek', 'Langar', 'Seven Peaks', 'Glacial Lake'],
+      demographics: 'Highest Sikh gurudwara. Guru Gobind Singh meditated here. 6km steep trek. Brahma Kamal blooms.',
+      seoContent: {
+        intro: 'Hemkund Sahib, the highest Sikh shrine, operates on India Standard Time (IST/UTC+5:30). This sacred gurudwara at 4,329m beside the glacial Lokpal Lake is where Guru Gobind Singh meditated in a previous life, accessible only by a steep 6km trek from Ghangaria.',
+        timezoneFacts: 'Same timezone as all of India. Chamoli district, Uttarakhand.',
+        bestTimeToVisit: 'July-September only (snow rest of year). August for Brahma Kamal flowers. June opening crowded.',
+        businessHours: 'Gurudwara 4 AM to 7 PM. Free langar available. No overnight stay at top.',
+        timeDifference: 'Hemkund Sahib is UTC+5:30 year-round. When noon at Hemkund: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Steep 6km trek from Ghangaria - start early! Ponies/porters available. Brahma Kamal rare flower blooms here. Langar (free meal) heartwarming. Combine with Valley of Flowers.',
+        transportation: 'Trek only from Ghangaria. Govindghat base (13km trek to Ghangaria). Jolly Grant Airport Dehradun (295km).',
+        emergencyNumbers: 'Emergency: 112. Gurudwara committee assistance.',
+        publicHolidays: 'Opening day (June), Guru Gobind Singh Jayanti, Baisakhi pilgrims.'
+      }
+    }
+  },
+  { slug: 'dharamshala', city: 'Dharamshala', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 32.22, lng: 76.32, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.05M', metroPopulation: '0.1M', phoneCode: '+91 1892', language: 'Hindi, Pahari, Tibetan, English',
+      climate: 'Subtropical highland with pleasant summers (20-30°C) and cold winters (5-15°C). Heavy monsoon July-September.',
+      attractions: ['HPCA Stadium', 'War Memorial', 'St. John\'s Church', 'Kangra Fort', 'Masrur Temples', 'Tea Gardens', 'Dharamshala Lake', 'TIPA', 'Norbulingka', 'Kangra Art Museum'],
+      demographics: 'Winter capital of Himachal. Cricket stadium with mountain backdrop. Lower town vs McLeodganj upper.',
+      seoContent: {
+        intro: 'Dharamshala, winter capital of Himachal, operates on India Standard Time (IST/UTC+5:30). This hill town of 50,000 is famous for the world\'s most scenic cricket stadium at HPCA, historic churches, and serves as the lower counterpart to McLeodganj above.',
+        timezoneFacts: 'Same timezone as all of India. Kangra Valley, Himachal Pradesh.',
+        bestTimeToVisit: 'March-June and September-November. Cricket matches at HPCA special. Winter cold but clear.',
+        businessHours: 'HPCA Stadium by match. Kangra Fort 9 AM to 6 PM. Tea gardens by arrangement.',
+        timeDifference: 'Dharamshala is UTC+5:30 year-round. When noon in Dharamshala: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'HPCA Stadium cricket with Dhauladhar backdrop incredible! Kangra Fort one of oldest in India. Masrur rock-cut temples like mini Ellora. Lower town more local feel than touristy McLeodganj.',
+        transportation: 'Dharamsala Gaggal Airport (DHM) 15km (limited). Pathankot railway 90km. Buses from Delhi.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), IPL matches, Diwali.'
+      }
+    }
+  },
+  { slug: 'jibhi', city: 'Jibhi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 31.62, lng: 77.34, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.002M', metroPopulation: '0.005M', phoneCode: '+91 1903', language: 'Hindi, Pahari, Kulvi',
+      climate: 'Temperate with pleasant summers (15-28°C) and cold winters (0-15°C). Monsoon July-September.',
+      attractions: ['Jibhi Waterfall', 'Serolsar Lake', 'Jalori Pass', 'Chehni Kothi', 'Tirthan River', 'Traditional Homes', 'Great Himalayan National Park', 'Trout Fishing', 'Wooden Architecture', 'Cafes'],
+      demographics: 'Offbeat Himachal gem. Instagram discovery. Traditional Himachali architecture. Backpacker discovering.',
+      seoContent: {
+        intro: 'Jibhi, Himachal\'s rising star, operates on India Standard Time (IST/UTC+5:30). This tiny hamlet discovered by Instagram has traditional wooden houses, pristine Tirthan River, and serves as base for Serolsar Lake trek via Jalori Pass.',
+        timezoneFacts: 'Same timezone as all of India. Banjar tehsil, Kullu district.',
+        bestTimeToVisit: 'March-June and September-November. Winter snow beautiful but cold. Monsoon lush.',
+        businessHours: 'Cafes 8 AM to 10 PM. Treks best started early. Homestays flexible.',
+        timeDifference: 'Jibhi is UTC+5:30 year-round. When noon in Jibhi: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Serolsar Lake via Jalori Pass stunning trek. Chehni Kothi ancient tower. Stay in traditional wooden homestays. Less crowded than Kasol. River-facing cafes peaceful.',
+        transportation: 'Bhuntar Airport (KUU) 60km. Aut on NH21 then divert. Buses from Aut to Banjar area.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Local fairs, Diwali.'
+      }
+    }
+  },
+  { slug: 'karnal', city: 'Karnal', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 29.69, lng: 76.98, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.3M', metroPopulation: '0.4M', phoneCode: '+91 184', language: 'Hindi, Haryanvi',
+      climate: 'Humid subtropical with hot summers (35-45°C) and cool winters (5-20°C). Monsoon July-September.',
+      attractions: ['Karna Lake', 'Cantonment Area', 'Karnal Fort', 'Chhachhrauli', 'NDRI', 'Agricultural University', 'Pukka Pul', 'Kos Minars', 'GT Road Heritage', 'Dairy Farms'],
+      demographics: 'City of Mahabharata\'s Karna. Rice bowl of India. Major dairy research. GT Road heritage.',
+      seoContent: {
+        intro: 'Karnal, city of the tragic hero Karna, operates on India Standard Time (IST/UTC+5:30). This agricultural hub of 300,000 on Grand Trunk Road is named after Mahabharata\'s Karna, home to India\'s premier dairy research institute NDRI, and the rice bowl of North India.',
+        timezoneFacts: 'Same timezone as all of India. Haryana, GT Road.',
+        bestTimeToVisit: 'October-March for pleasant weather. Avoid extreme summer. Agricultural fairs seasonal.',
+        businessHours: 'Karna Lake 6 AM to 8 PM. NDRI by permission. Standard business hours.',
+        timeDifference: 'Karnal is UTC+5:30 year-round. When noon in Karnal: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Karna Lake peaceful. NDRI produces Vita milk products - tour possible. Kos Minars (Mughal milestones) along GT Road. Try local desi ghee products.',
+        transportation: 'Karnal railway on Delhi-Amritsar line. Chandigarh Airport (IXC) 125km. On NH1 (GT Road).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Haryana Day (Nov 1), Diwali.'
+      }
+    }
+  },
+  { slug: 'kurukshetra', city: 'Kurukshetra', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 29.97, lng: 76.84, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.4M', metroPopulation: '0.5M', phoneCode: '+91 1744', language: 'Hindi, Haryanvi, Sanskrit',
+      climate: 'Humid subtropical with hot summers (35-45°C) and cool winters (5-18°C). Monsoon July-September.',
+      attractions: ['Brahma Sarovar', 'Kurukshetra Panorama', 'Jyotisar', 'Bhadrakali Temple', 'Sheikh Chehli Tomb', 'Sannihit Sarovar', 'Sthaneshwar Mahadev', 'Krishna Museum', 'Science City', 'Solar Eclipse Site'],
+      demographics: 'Mahabharata war battlefield. Gita was spoken here. Most sacred tank during solar eclipse.',
+      seoContent: {
+        intro: 'Kurukshetra, where the Gita was born, operates on India Standard Time (IST/UTC+5:30). This sacred city of 400,000 is where the Mahabharata war was fought and Lord Krishna delivered the Bhagavad Gita to Arjuna, with Brahma Sarovar attracting millions during solar eclipses.',
+        timezoneFacts: 'Same timezone as all of India. Haryana, sacred geography.',
+        bestTimeToVisit: 'October-March for pleasant weather. Solar eclipses draw millions. Gita Jayanti (December) special.',
+        businessHours: 'Brahma Sarovar ghats 24/7. Kurukshetra Panorama 10 AM to 5 PM. Jyotisar sunrise to sunset.',
+        timeDifference: 'Kurukshetra is UTC+5:30 year-round. When noon in Kurukshetra: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Jyotisar is exact spot of Gita sermon - sacred banyan tree. Kurukshetra Panorama shows Mahabharata war. Solar eclipse pilgrimage most auspicious. Brahma Sarovar evening aarti peaceful.',
+        transportation: 'Kurukshetra Junction major railway. Chandigarh Airport (IXC) 90km. On NH1 (GT Road).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Gita Jayanti (December), Solar Eclipses (special), Diwali.'
+      }
+    }
+  },
+  { slug: 'fatehpur-sikri', city: 'Fatehpur Sikri', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.09, lng: 77.66, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.04M', phoneCode: '+91 5613', language: 'Hindi, Urdu',
+      climate: 'Semi-arid with hot summers (35-47°C) and cool winters (5-22°C). Monsoon July-September.',
+      attractions: ['Buland Darwaza', 'Jama Masjid', 'Panch Mahal', 'Tomb of Salim Chishti', 'Diwan-i-Am', 'Diwan-i-Khas', 'Birbal House', 'Jodha Bai Palace', 'Hiran Minar', 'Royal Complex'],
+      demographics: 'UNESCO World Heritage. Akbar\'s abandoned capital. Largest gateway in world. Ghost city.',
+      seoContent: {
+        intro: 'Fatehpur Sikri, Akbar\'s ghost capital, operates on India Standard Time (IST/UTC+5:30). This UNESCO World Heritage city was Mughal Emperor Akbar\'s capital for just 14 years before water scarcity forced abandonment, perfectly preserved with the world\'s largest gateway Buland Darwaza.',
+        timezoneFacts: 'Same timezone as all of India. Agra district, Uttar Pradesh.',
+        bestTimeToVisit: 'October-March for pleasant weather. Avoid extreme summer. Urs at Salim Chishti dargah special.',
+        businessHours: 'Monument complex sunrise to sunset. Jama Masjid 24/7 for worship. Dargah always open.',
+        timeDifference: 'Fatehpur Sikri is UTC+5:30 year-round. When noon in Fatehpur Sikri: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Buland Darwaza is 54m high - world\'s tallest gateway! Salim Chishti dargah for fertility prayers. Akbar\'s genius in secular architecture. Best visited as Agra day trip (40km).',
+        transportation: 'Fatehpur Sikri railway (limited). Agra Cantt 40km. Agra Airport (AGR) 55km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. ASI office available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Urs of Salim Chishti, Eid, Diwali.'
+      }
+    }
+  },
+  { slug: 'nandi-hills', city: 'Nandi Hills', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 13.37, lng: 77.68, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.02M', phoneCode: '+91 8156', language: 'Kannada, English, Hindi',
+      climate: 'Tropical highland with pleasant year-round temperatures (15-28°C). Mist common in mornings.',
+      attractions: ['Sunrise Point', 'Tipu\'s Drop', 'Nandi Temple', 'Tipu Sultan Fort', 'Amrita Sarovar', 'Yoga Nandeeshwara Temple', 'Paragliding', 'Cycling', 'Trekking', 'Photography'],
+      demographics: 'Bangalore\'s sunrise escape. Tipu Sultan\'s summer retreat. 1,478m elevation. Weekend crowds.',
+      seoContent: {
+        intro: 'Nandi Hills, Bangalore\'s sunrise escape, operates on India Standard Time (IST/UTC+5:30). This ancient hill fortress at 1,478m was Tipu Sultan\'s summer retreat, now famous for spectacular sunrise views above clouds, just 60km from Bangalore.',
+        timezoneFacts: 'Same timezone as all of India. Chikkaballapur district, Karnataka.',
+        bestTimeToVisit: 'Year-round pleasant. Sunrise 5:30-6 AM best. Weekdays less crowded. Monsoon misty.',
+        businessHours: 'Gates 6 AM to 10 PM (weekdays), 5:30 AM (weekends for sunrise). Entry fee applies.',
+        timeDifference: 'Nandi Hills is UTC+5:30 year-round. When noon at Nandi Hills: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Arrive by 5 AM for sunrise above clouds! Tipu\'s Drop where prisoners were pushed off. Cycling uphill popular. Weekends extremely crowded - go weekday. Carry warm clothes.',
+        transportation: 'Bangalore Airport (BLR) 40km. Bangalore City 60km. Own vehicle or day trip taxi.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivaratri (Nandi Temple), Diwali.'
+      }
+    }
+  },
+  { slug: 'chikmagalur', city: 'Chikmagalur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 13.32, lng: 75.77, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.12M', metroPopulation: '0.15M', phoneCode: '+91 8262', language: 'Kannada, English, Hindi',
+      climate: 'Tropical highland with pleasant year-round temperatures (15-32°C). Heavy monsoon June-September.',
+      attractions: ['Mullayanagiri Peak', 'Baba Budangiri', 'Coffee Plantations', 'Hebbe Falls', 'Kudremukh', 'Bhadra Wildlife Sanctuary', 'Z Point', 'Kalhatti Falls', 'Kemmanagundi', 'Coffee Museum'],
+      demographics: 'Where Indian coffee began. Baba Budan brought first beans. Karnataka\'s highest peak. Coffee tourism pioneer.',
+      seoContent: {
+        intro: 'Chikmagalur, birthplace of Indian coffee, operates on India Standard Time (IST/UTC+5:30). This misty hill district is where Baba Budan planted India\'s first coffee seeds 400 years ago, now home to Karnataka\'s highest peak Mullayanagiri and lush coffee estates.',
+        timezoneFacts: 'Same timezone as all of India. Western Ghats, Karnataka.',
+        bestTimeToVisit: 'September-February for pleasant weather. Coffee blossom March-April. Monsoon lush but wet.',
+        businessHours: 'Coffee estates by arrangement. Mullayanagiri accessible daytime. Bhadra safari timings fixed.',
+        timeDifference: 'Chikmagalur is UTC+5:30 year-round. When noon in Chikmagalur: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Stay in coffee estate homestays! Mullayanagiri trek for highest peak. Baba Budangiri sacred to Hindus and Muslims. Try filter coffee at source. Kemmanagundi for colonial charm.',
+        transportation: 'Mangalore Airport (IXE) 150km. Kadur/Birur railway 40km. Bangalore 245km by road.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Baba Budan Urs, Dasara, Diwali.'
+      }
+    }
+  },
+  { slug: 'sakleshpur', city: 'Sakleshpur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.94, lng: 75.78, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.03M', phoneCode: '+91 8173', language: 'Kannada, English, Tulu',
+      climate: 'Tropical highland with pleasant year-round temperatures (15-30°C). Very heavy monsoon June-September.',
+      attractions: ['Manjarabad Fort', 'Green Route Trek', 'Coffee Estates', 'Bisle Ghat', 'Agni Gudda Hill', 'Hadlu Waterfall', 'Jenukal Gudda', 'Pandavar Gudda', 'Abandoned Railway', 'Viewpoints'],
+      demographics: 'Offbeat Western Ghats. Abandoned British railway trek. Star-shaped Tipu fort. Coffee country.',
+      seoContent: {
+        intro: 'Sakleshpur, the Green Route paradise, operates on India Standard Time (IST/UTC+5:30). This offbeat hill town features the famous abandoned British railway trek through tunnels and bridges, Tipu\'s unique star-shaped Manjarabad Fort, and endless coffee plantations.',
+        timezoneFacts: 'Same timezone as all of India. Hassan district, Karnataka.',
+        bestTimeToVisit: 'September-May for trekking. Monsoon too dangerous for railway trek. October-February ideal.',
+        businessHours: 'Manjarabad Fort 8 AM to 6 PM. Railway trek best started early. Estates by arrangement.',
+        timeDifference: 'Sakleshpur is UTC+5:30 year-round. When noon in Sakleshpur: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Green Route railway trek through 57 bridges and tunnels - don\'t miss! Manjarabad Fort star-shaped. Stay in coffee estate. Bisle Ghat viewpoint stunning. Less crowded than Coorg.',
+        transportation: 'Mangalore Airport (IXE) 115km. Sakleshpur Road railway on Mangalore line. Hassan 60km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Dasara, Diwali.'
+      }
+    }
+  },
+  { slug: 'gokak', city: 'Gokak Falls', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 16.17, lng: 74.82, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.08M', metroPopulation: '0.1M', phoneCode: '+91 8332', language: 'Kannada, Marathi, Hindi',
+      climate: 'Semi-arid with hot summers (30-42°C) and mild winters (15-30°C). Monsoon transforms falls.',
+      attractions: ['Gokak Falls', 'Hanging Bridge', 'Gokak Valley', 'Hidkal Dam', 'Ghataprabha River', 'Ropeway', 'Viewpoints', 'Power Station', 'Godchinamalaki Falls', 'Industrial Heritage'],
+      demographics: 'Mini Niagara of India. 52m horseshoe falls. First hydro-electric station (1887). Textile mills.',
+      seoContent: {
+        intro: 'Gokak Falls, the Mini Niagara of India, operates on India Standard Time (IST/UTC+5:30). This spectacular 52m horseshoe waterfall on the Ghataprabha River was site of India\'s first hydroelectric station in 1887, connected by a historic hanging bridge.',
+        timezoneFacts: 'Same timezone as all of India. Belgaum district, Karnataka.',
+        bestTimeToVisit: 'July-November for full flow. Monsoon (August-September) most dramatic. Summer nearly dry.',
+        businessHours: 'Falls accessible all day. Hanging bridge 8 AM to 6 PM.',
+        timeDifference: 'Gokak Falls is UTC+5:30 year-round. When noon at Gokak: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Monsoon visit for spectacular falls! Hanging bridge thrilling. First hydro station historical significance. Godchinamalaki Falls nearby. Summer disappointing - low water.',
+        transportation: 'Gokak Road railway. Belgaum Airport (IXG) 65km. Hubli 80km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Dasara, Diwali.'
+      }
+    }
+  },
+  { slug: 'dandeli', city: 'Dandeli', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 15.27, lng: 74.62, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.05M', phoneCode: '+91 8284', language: 'Kannada, Konkani, Marathi',
+      climate: 'Tropical with warm year-round temperatures (20-35°C). Heavy monsoon June-September.',
+      attractions: ['Dandeli Wildlife Sanctuary', 'Kali River Rafting', 'Syntheri Rocks', 'Ulavi Caves', 'Supa Dam', 'Crocodile Park', 'Kavala Caves', 'Jungle Lodges', 'Black Panther Sightings', 'Kayaking'],
+      demographics: 'Karnataka\'s adventure capital. White water rafting hub. Black panther sightings. Western Ghats biodiversity.',
+      seoContent: {
+        intro: 'Dandeli, Karnataka\'s adventure capital, operates on India Standard Time (IST/UTC+5:30). This nature and adventure hub on the Kali River offers Grade II-III white water rafting, black panther sightings in the wildlife sanctuary, and stunning Western Ghats biodiversity.',
+        timezoneFacts: 'Same timezone as all of India. Uttara Kannada district, Karnataka.',
+        bestTimeToVisit: 'October-May for rafting and wildlife. Monsoon closes many activities. September-February ideal.',
+        businessHours: 'Sanctuary 6 AM to 6 PM. Rafting by booking. JLR lodges 24/7.',
+        timeDifference: 'Dandeli is UTC+5:30 year-round. When noon in Dandeli: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Kali River rafting best October-February. Black panther sightings possible! Syntheri Rocks for rappelling. Night safari for wildlife. JLR Kali Adventure Camp popular.',
+        transportation: 'Hubli Airport (HBX) 75km. Dharwad/Alnavar railway 45km. Goa 135km.',
+        emergencyNumbers: 'Emergency: 112. Forest Office: 08284-231585.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Wildlife Week (October), Diwali.'
+      }
+    }
+  },
+  { slug: 'chitradurga', city: 'Chitradurga', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 14.23, lng: 76.40, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.14M', metroPopulation: '0.17M', phoneCode: '+91 8194', language: 'Kannada, Telugu, Hindi',
+      climate: 'Semi-arid with hot summers (30-42°C) and mild winters (15-30°C). Light monsoon.',
+      attractions: ['Chitradurga Fort', 'Stone Fortress', 'Obavva Story', 'Hidimbeshwara Temple', 'Chandravalli Caves', 'Jogimatti Hill', 'Eachanur Temple', 'Akka Thangi Kere', 'Ucchangidurga', 'ISRO Tracking Station'],
+      demographics: 'Stone Fortress. Onake Obavva\'s bravery. 7 walls of defense. Nayak dynasty stronghold.',
+      seoContent: {
+        intro: 'Chitradurga, the Stone Fortress, operates on India Standard Time (IST/UTC+5:30). This formidable fort with 7 concentric walls and 38 gateways is where warrior woman Onake Obavva single-handedly killed enemies with a pestle, becoming Karnataka\'s legendary heroine.',
+        timezoneFacts: 'Same timezone as all of India. Central Karnataka.',
+        bestTimeToVisit: 'October-February for pleasant weather. Avoid summer heat. Dasara celebrations special.',
+        businessHours: 'Fort 6 AM to 6 PM. Chandravalli Caves sunrise to sunset.',
+        timeDifference: 'Chitradurga is UTC+5:30 year-round. When noon in Chitradurga: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Onake Obavva story inspiring - see the passage she defended. 7 walls, 38 entrances - explore thoroughly. Natural granite boulders form defenses. Chandravalli caves for Jain history.',
+        transportation: 'Chitradurga railway. Hubli Airport (HBX) 200km. Bangalore 200km by road.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Onake Obavva Jayanti, Dasara, Diwali.'
+      }
+    }
+  },
+  { slug: 'bidar-fort', city: 'Bidar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 17.91, lng: 77.52, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.22M', metroPopulation: '0.25M', phoneCode: '+91 8482', language: 'Kannada, Urdu, Deccani, Hindi',
+      climate: 'Semi-arid with hot summers (32-42°C) and mild winters (15-30°C). Monsoon July-September.',
+      attractions: ['Bidar Fort', 'Rangeen Mahal', 'Solah Khamba Mosque', 'Bahmani Tombs', 'Mahmud Gawan Madrasa', 'Gurudwara Nanak Jhira', 'Bidriware Craft', 'Chaukhandi Tomb', 'Papnash Shiva Temple', 'Basavakalyan'],
+      demographics: 'Bahmani Sultanate capital. Bidriware UNESCO craft. Black metal inlay unique. Sikh pilgrimage.',
+      seoContent: {
+        intro: 'Bidar, where Bidriware was born, operates on India Standard Time (IST/UTC+5:30). This Bahmani Sultanate capital of 220,000 gave the world Bidriware - the unique black metal silver inlay craft now UNESCO heritage - along with magnificent Islamic architecture and Sikh pilgrimage.',
+        timezoneFacts: 'Same timezone as all of India. Northernmost Karnataka.',
+        bestTimeToVisit: 'October-March for pleasant weather. Urs at dargahs special. Guru Nanak Jayanti at Gurudwara.',
+        businessHours: 'Fort 6 AM to 6 PM. Bidriware workshops 10 AM to 7 PM. Gurudwara 24/7.',
+        timeDifference: 'Bidar is UTC+5:30 year-round. When noon in Bidar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Watch Bidriware craftsmen - 500-year-old technique! Rangeen Mahal for colourful tiles. Mahmud Gawan Madrasa rivals any Persian architecture. Gurudwara Nanak Jhira has natural spring.',
+        transportation: 'Bidar Airport (IXX) limited. Bidar railway. Hyderabad 145km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Guru Nanak Jayanti, Eid, Diwali.'
+      }
+    }
+  },
+  { slug: 'hospet-tungabhadra', city: 'Tungabhadra Dam', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 15.27, lng: 76.34, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.25M', phoneCode: '+91 8394', language: 'Kannada, Telugu, Hindi',
+      climate: 'Semi-arid with hot summers (30-42°C) and mild winters (18-32°C). Monsoon July-September.',
+      attractions: ['Tungabhadra Dam', 'Musical Fountain', 'Pampa Sarovar', 'Hampi (nearby)', 'Hospet Town', 'Dam Garden', 'Boating', 'Sunset Point', 'Irrigation Museum', 'Powerhouse'],
+      demographics: 'Lifeline of Karnataka and Andhra. Musical fountain evening show. Gateway to Hampi.',
+      seoContent: {
+        intro: 'Tungabhadra Dam, the multipurpose marvel, operates on India Standard Time (IST/UTC+5:30). This massive dam built in 1953 irrigates 2 million acres across Karnataka and Andhra Pradesh, famous for its evening musical fountain show and serving as gateway to Hampi ruins.',
+        timezoneFacts: 'Same timezone as all of India. Hospet, Karnataka.',
+        bestTimeToVisit: 'Year-round. Evening for musical fountain. Monsoon for full reservoir.',
+        businessHours: 'Dam 8 AM to 5:30 PM. Musical Fountain 7 PM (45 min show). Garden 8 AM to 8 PM.',
+        timeDifference: 'Tungabhadra Dam is UTC+5:30 year-round. When noon at Tungabhadra: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Musical fountain show don\'t miss - music synchronized! Boating on reservoir. Combine with Hampi visit. Dam illuminated at night. Hospet good base for Hampi.',
+        transportation: 'Hospet Junction railway. Hubli Airport (HBX) 150km. Bangalore 350km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Dam office: 08394-227002.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Dasara, Diwali.'
+      }
+    }
+  },
+  { slug: 'murudeshwar', city: 'Murudeshwar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 14.09, lng: 74.48, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.03M', phoneCode: '+91 8385', language: 'Kannada, Tulu, Konkani',
+      climate: 'Tropical with warm year-round temperatures (24-34°C). Heavy monsoon June-September.',
+      attractions: ['Murudeshwar Temple', 'Giant Shiva Statue', 'Raja Gopura', 'Beach', 'Netrani Island', 'Scuba Diving', 'Idagunji Ganapati', 'Coastal Views', 'Sunset', 'Beach Activities'],
+      demographics: 'World\'s second tallest Shiva statue (123ft). 20-story gopura. Konkan coast pilgrimage.',
+      seoContent: {
+        intro: 'Murudeshwar, home of the towering Shiva, operates on India Standard Time (IST/UTC+5:30). This coastal temple town features the world\'s second-tallest Shiva statue at 123 feet (after Nepal\'s Kailashnath) and a 20-story gopura with elevator offering Arabian Sea views.',
+        timezoneFacts: 'Same timezone as all of India. Uttara Kannada district, Karnataka coast.',
+        bestTimeToVisit: 'October-May for beach and temple. Monsoon dramatic but wet. Shivaratri special.',
+        businessHours: 'Temple 6 AM to 8 PM. Gopura elevator 7:30 AM to 1 PM, 2 PM to 7:30 PM.',
+        timeDifference: 'Murudeshwar is UTC+5:30 year-round. When noon in Murudeshwar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Gopura lift to 18th floor for panoramic views! Netrani Island (1 hour boat) for scuba diving. Beach clean and peaceful. Statue illuminated at night. Idagunji Ganapati powerful temple nearby.',
+        transportation: 'Murudeshwar railway station. Mangalore Airport (IXE) 165km. Goa 150km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Coast Guard: 1554.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivaratri (huge!), Diwali.'
+      }
+    }
+  },
+  { slug: 'yelagiri', city: 'Yelagiri', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.58, lng: 78.63, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.015M', phoneCode: '+91 4179', language: 'Tamil, Kannada, Telugu',
+      climate: 'Tropical highland with pleasant year-round temperatures (13-30°C). 14 hairpin bends to reach.',
+      attractions: ['Punganur Lake', 'Yelagiri Nature Park', 'Swamimalai Hills', 'Jalagamparai Falls', 'Paragliding Point', 'Velavan Temple', 'Fundera Park', 'Rose Garden', 'Telescope House', 'Summer Festival'],
+      demographics: 'Poor man\'s Ooty. 14 hairpin bends. Budget hill station. Chennai weekend escape.',
+      seoContent: {
+        intro: 'Yelagiri, the affordable hill escape, operates on India Standard Time (IST/UTC+5:30). This budget hill station at 1,100m offers Ooty-like experience without the crowds, reached via 14 hairpin bends, popular with Chennai and Bangalore weekenders seeking nature and adventure.',
+        timezoneFacts: 'Same timezone as all of India. Vellore district, Tamil Nadu.',
+        bestTimeToVisit: 'Year-round pleasant. April-June for Summer Festival. Monsoon misty.',
+        businessHours: 'Lake boating 9 AM to 5:30 PM. Nature Park 9 AM to 6 PM. Adventure activities by booking.',
+        timeDifference: 'Yelagiri is UTC+5:30 year-round. When noon in Yelagiri: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: '14 hairpin bends scenic drive or ride! Summer Festival (May) has flower show. Paragliding available. Much cheaper than Ooty. Punganur Lake pedal boating fun.',
+        transportation: 'Jolarpettai railway 25km (hairpin road up). Chennai 230km. Bangalore 170km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Summer Festival (May), Pongal, Diwali.'
+      }
+    }
+  },
+  { slug: 'kurnool', city: 'Kurnool', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 15.83, lng: 78.05, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.5M', metroPopulation: '0.6M', phoneCode: '+91 8518', language: 'Telugu, Urdu, Hindi',
+      climate: 'Semi-arid with hot summers (35-45°C) and mild winters (15-30°C). Low rainfall.',
+      attractions: ['Belum Caves', 'Kurnool Fort', 'Orvakal Rock Garden', 'Yaganti Temple', 'Ahobilam', 'Mahanandi', 'Rollapadu Wildlife Sanctuary', 'Mantralayam (nearby)', 'Konda Reddy Buruju', 'Tungabhadra River'],
+      demographics: 'Former capital of Andhra. Gateway to Belum Caves (India\'s second longest). Rayalaseema region.',
+      seoContent: {
+        intro: 'Kurnool, the gateway to Belum Caves, operates on India Standard Time (IST/UTC+5:30). This former Andhra capital of 500,000 is the base for exploring India\'s second-longest caves at Belum, the Orvakal rock formations, and powerful temples of Rayalaseema.',
+        timezoneFacts: 'Same timezone as all of India. Andhra Pradesh, Rayalaseema.',
+        bestTimeToVisit: 'October-February for pleasant weather. Avoid extreme summer. Temples year-round.',
+        businessHours: 'Belum Caves 10 AM to 5 PM. Orvakal 6 AM to 6 PM. Temples sunrise to sunset.',
+        timeDifference: 'Kurnool is UTC+5:30 year-round. When noon in Kurnool: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Belum Caves 3km long - guided tour essential! Orvakal rocks surreal landscape. Yaganti Nandi growing mysteriously. Ahobilam has 9 Narasimha temples. Mantralayam for Raghavendra Swamy.',
+        transportation: 'Kurnool Airport (KJB) limited. Kurnool City/Town railway. Hyderabad 210km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ugadi, Dasara, Diwali.'
+      }
+    }
+  },
+  { slug: 'lepakshi', city: 'Lepakshi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 13.80, lng: 77.61, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.015M', phoneCode: '+91 8558', language: 'Telugu, Kannada, Hindi',
+      climate: 'Semi-arid with hot summers (30-42°C) and mild winters (15-30°C). Light monsoon.',
+      attractions: ['Veerabhadra Temple', 'Hanging Pillar', 'Nandi Bull', 'Jatayu Rock', 'Ceiling Paintings', 'Nagalinga', 'Kalyana Mandapa', 'Lepakshi Sarees', 'Sculpture Garden', 'Ramayana Sites'],
+      demographics: 'Where Jatayu fell (Ramayana). Hanging pillar mystery. World\'s largest Nandi. Vijayanagara art.',
+      seoContent: {
+        intro: 'Lepakshi, where Ramayana comes alive, operates on India Standard Time (IST/UTC+5:30). This village is where wounded Jatayu fell after fighting Ravana ("Le Pakshi" - Rise Bird), featuring a temple with mysterious hanging pillar that doesn\'t touch ground and world\'s largest Nandi.',
+        timezoneFacts: 'Same timezone as all of India. Anantapur district, Andhra Pradesh.',
+        bestTimeToVisit: 'October-February for pleasant weather. Avoid summer. Shivaratri celebrations.',
+        businessHours: 'Temple 6 AM to 6 PM. Nandi and Jatayu sites accessible all day.',
+        timeDifference: 'Lepakshi is UTC+5:30 year-round. When noon in Lepakshi: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Hanging pillar - pass cloth under to prove it! Nandi monolith 4.5m tall - world\'s largest. Ceiling paintings rival Ajanta. Jatayu Park nearby. Easy day trip from Bangalore (120km).',
+        transportation: 'Hindupur railway 15km. Bangalore Airport (BLR) 120km. On Bangalore-Hyderabad road.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivaratri, Ugadi, Diwali.'
+      }
+    }
+  },
+  { slug: 'gandikota', city: 'Gandikota', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 14.81, lng: 78.29, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.002M', metroPopulation: '0.003M', phoneCode: '+91 8559', language: 'Telugu, Hindi',
+      climate: 'Semi-arid with hot summers (32-45°C) and mild winters (18-32°C). Light rainfall.',
+      attractions: ['Gandikota Gorge', 'Grand Canyon of India', 'Gandikota Fort', 'Pennar River', 'Jamia Masjid', 'Raghunathaswamy Temple', 'Mylavaram Dam', 'Belum Caves (nearby)', 'Camping', 'Stargazing'],
+      demographics: 'Grand Canyon of India. Pennar gorge dramatic. Kalyani Chalukya fort. Offbeat camping destination.',
+      seoContent: {
+        intro: 'Gandikota, the Grand Canyon of India, operates on India Standard Time (IST/UTC+5:30). This dramatic gorge where the Pennar River has carved through red sandstone creates India\'s answer to Arizona\'s Grand Canyon, topped by an ancient fort with Hindu temple and Islamic mosque.',
+        timezoneFacts: 'Same timezone as all of India. Kadapa district, Andhra Pradesh.',
+        bestTimeToVisit: 'October-February for pleasant weather and camping. Sunrise/sunset at gorge spectacular.',
+        businessHours: 'Fort accessible all day. APTDC camping by booking.',
+        timeDifference: 'Gandikota is UTC+5:30 year-round. When noon in Gandikota: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Sunrise at gorge edge breathtaking! Camp overnight for stars. Fort has both temple and mosque - secular harmony. Combine with Belum Caves (60km). Carry supplies - remote location.',
+        transportation: 'Jammalamadugu railway 25km. Kadapa airport (limited) 100km. Bangalore 280km.',
+        emergencyNumbers: 'Emergency: 112. Very limited facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ugadi, Diwali.'
+      }
+    }
+  },
+  { slug: 'araku-valley', city: 'Araku Valley', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 18.33, lng: 82.88, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.03M', phoneCode: '+91 8936', language: 'Telugu, Tribal languages, Hindi',
+      climate: 'Tropical highland with pleasant year-round temperatures (15-30°C). Coffee-growing region.',
+      attractions: ['Borra Caves', 'Coffee Plantations', 'Tribal Museum', 'Chaparai Waterfalls', 'Padmapuram Gardens', 'Ananthagiri', 'Galikonda View Point', 'Toy Train Journey', 'Tribal Villages', 'Araku Valley Road'],
+      demographics: 'Andhra\'s only hill station. Borra Caves million years old. Coffee country. Tribal homeland.',
+      seoContent: {
+        intro: 'Araku Valley, Andhra\'s coffee paradise, operates on India Standard Time (IST/UTC+5:30). This only hill station of Andhra Pradesh features the million-year-old Borra Caves, lush coffee plantations, and the scenic train journey from Visakhapatnam through 58 tunnels.',
+        timezoneFacts: 'Same timezone as all of India. Visakhapatnam district, Andhra Pradesh.',
+        bestTimeToVisit: 'October-March for pleasant weather. Monsoon lush. Train journey year-round highlight.',
+        businessHours: 'Borra Caves 10 AM to 5 PM. Train from Vizag early morning.',
+        timeDifference: 'Araku Valley is UTC+5:30 year-round. When noon in Araku: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Toy train from Vizag through 58 tunnels and 84 bridges - don\'t miss! Borra Caves spectacular stalactites. Try Araku coffee. Tribal Museum for indigenous culture. Stay overnight.',
+        transportation: 'Araku railway station (toy train from Vizag). Visakhapatnam Airport (VTZ) 115km. Scenic road also available.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Itika Pongal (tribal festival), Ugadi, Diwali.'
+      }
+    }
+  },
+  { slug: 'horsley-hills', city: 'Horsley Hills', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 13.66, lng: 78.40, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.003M', metroPopulation: '0.005M', phoneCode: '+91 8559', language: 'Telugu, Kannada, Hindi',
+      climate: 'Tropical highland with pleasant year-round temperatures (12-28°C). Eucalyptus forests.',
+      attractions: ['Viewpoints', 'Gali Banda', 'Horsley Samadhi', 'Kaigal Falls', 'Deer Park', 'Environmental Park', 'Trekking Trails', 'Horse Riding', 'Eucalyptus Forests', 'Sunrise Point'],
+      demographics: 'Andhra\'s Ooty. Named after WD Horsley. Eucalyptus forests. Budget hill station.',
+      seoContent: {
+        intro: 'Horsley Hills, Andhra\'s Ooty, operates on India Standard Time (IST/UTC+5:30). This budget hill station at 1,265m was named after British collector WD Horsley who discovered it, offering eucalyptus forests, cool climate, and peaceful escape from Rayalaseema heat.',
+        timezoneFacts: 'Same timezone as all of India. Chittoor district, Andhra Pradesh.',
+        bestTimeToVisit: 'Year-round pleasant. October-March ideal. Summer refuge from plains heat.',
+        businessHours: 'Viewpoints sunrise to sunset. APTDC resort 24/7. Deer Park 10 AM to 5 PM.',
+        timeDifference: 'Horsley Hills is UTC+5:30 year-round. When noon at Horsley Hills: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Gali Banda (Windy Rock) for valley views. 1,000-year-old tree near Horsley bungalow. Much quieter than Ooty. Good for short family getaway. APTDC has decent accommodation.',
+        transportation: 'Madanapalle railway 25km. Tirupati Airport (TIR) 150km. Bangalore 160km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. APTDC office available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ugadi, Dasara, Diwali.'
+      }
+    }
+  },
+  // India #200 - Completing 200 Indian cities milestone!
+  { slug: 'lambasingi', city: 'Lambasingi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 17.94, lng: 82.74, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.001M', metroPopulation: '0.002M', phoneCode: '+91 8936', language: 'Telugu, Hindi',
+      climate: 'Tropical highland with cool temperatures (0-25°C). Only place in AP to see frost. Known as Kashmir of AP.',
+      attractions: ['Kothapalli Waterfalls', 'Sunrise Point', 'Frost Views', 'Coffee Plantations', 'Thajangi Reservoir', 'Pepper Plantations', 'Chintapalli', 'Tribal Villages', 'Trekking', 'Stargazing'],
+      demographics: 'Kashmir of Andhra Pradesh. Sub-zero temperatures in winter. Offbeat discovery. Pepper growing region.',
+      seoContent: {
+        intro: 'Lambasingi, the Kashmir of Andhra Pradesh, operates on India Standard Time (IST/UTC+5:30). This tiny hamlet at 1,000m is the only place in Andhra Pradesh where temperatures drop to freezing (0°C), offering frost-covered landscapes, pepper plantations, and pristine Eastern Ghats beauty.',
+        timezoneFacts: 'Same timezone as all of India. Visakhapatnam district, Andhra Pradesh.',
+        bestTimeToVisit: 'November-January for frost and coldest temperatures. December best for sub-zero. Monsoon roads difficult.',
+        businessHours: 'Viewpoints accessible all day. Limited facilities - carry supplies.',
+        timeDifference: 'Lambasingi is UTC+5:30 year-round. When noon in Lambasingi: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'December-January for frost - arrive before dawn! Very basic facilities - carry food. Pepper and coffee plantations to explore. Combine with Araku Valley trip. Roads steep and winding.',
+        transportation: 'No railway. Visakhapatnam Airport (VTZ) 107km. Chintapalli 25km. 4WD recommended.',
+        emergencyNumbers: 'Emergency: 112. Very limited facilities - Vizag better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ugadi, Sankranti (frost season!), Diwali.'
+      }
+    }
+  },
+  
+  // India - Critical Missing Cities (8 important additions)
+  { slug: 'ayodhya', city: 'Ayodhya', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.79, lng: 82.19, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.08M', metroPopulation: '0.5M', phoneCode: '+91 5278', language: 'Hindi, Awadhi',
+      climate: 'Humid subtropical with hot summers (35-45°C) and cool winters (5-20°C). Monsoon July-September.',
+      attractions: ['Ram Mandir (2024)', 'Ram Janmabhoomi', 'Hanuman Garhi', 'Kanak Bhawan', 'Nageshwarnath Temple', 'Saryu River', 'Guptar Ghat', 'Dashrath Mahal', 'Treta Ke Thakur', 'Ram Ki Paidi'],
+      demographics: 'Birthplace of Lord Ram. One of 7 sacred cities. Ram Mandir opened January 2024. Now India\'s top pilgrimage.',
+      seoContent: {
+        intro: 'Ayodhya, birthplace of Lord Ram, operates on India Standard Time (IST/UTC+5:30). This ancient city witnessed history when the grand Ram Mandir opened in January 2024 after centuries of dispute, transforming it into India\'s most visited pilgrimage destination with millions of devotees.',
+        timezoneFacts: 'Same timezone as all of India. Saryu River banks, Uttar Pradesh.',
+        bestTimeToVisit: 'October-March for pleasant weather. Ram Navami (March-April) massive celebration. Diwali spectacular (Ram\'s return).',
+        businessHours: 'Ram Mandir 7 AM to 11 PM (darshan). Hanuman Garhi 5 AM to 10 PM. Saryu Aarti 7 PM.',
+        timeDifference: 'Ayodhya is UTC+5:30 year-round. When noon in Ayodhya: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Ram Mandir darshan - book online or expect long queues! Hanuman Garhi climb 76 steps. Saryu River aarti beautiful. Diwali here is Ram\'s homecoming - millions of diyas. City transformed since 2024.',
+        transportation: 'Ayodhya Dham Junction railway (upgraded). Ayodhya Airport (AYJ) opened 2024. Lucknow (130km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ram Mandir helpline available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ram Navami (MASSIVE!), Diwali (MASSIVE - Deepotsav!), Vivah Panchami.'
+      }
+    }
+  },
+  { slug: 'srisailam', city: 'Srisailam', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 16.08, lng: 78.87, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.05M', phoneCode: '+91 8524', language: 'Telugu, Hindi',
+      climate: 'Tropical with hot summers (30-42°C) and mild winters (15-30°C). Monsoon July-September. Forest area.',
+      attractions: ['Mallikarjuna Jyotirlinga', 'Bhramaramba Devi', 'Srisailam Dam', 'Akkamahadevi Caves', 'Pathala Ganga', 'Sakshi Ganapati', 'Sikhareswaram', 'Nallamala Forest', 'Chenchu Tribal Museum', 'Ropeway'],
+      demographics: 'One of 12 Jyotirlingas. Only place with both Jyotirlinga AND Shakti Peeth. Nallamala forest setting.',
+      seoContent: {
+        intro: 'Srisailam, the Southern Kashi, operates on India Standard Time (IST/UTC+5:30). This sacred hilltop shrine in Nallamala forest is the only place in India housing both a Jyotirlinga (Mallikarjuna) and a Shakti Peeth (Bhramaramba) together, drawing millions of devotees.',
+        timezoneFacts: 'Same timezone as all of India. Nallamala Hills, Andhra Pradesh.',
+        bestTimeToVisit: 'October-February for pleasant weather. Shivaratri massive. Monsoon forest lush but roads tricky.',
+        businessHours: 'Temple 4:30 AM to 10 PM. Special darshan timings vary. Ropeway to Pathala Ganga 7 AM to 5 PM.',
+        timeDifference: 'Srisailam is UTC+5:30 year-round. When noon in Srisailam: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Only temple with Jyotirlinga + Shakti Peeth! Pathala Ganga by ropeway - Krishna River sacred dip. Akkamahadevi Caves meditation. Nallamala forest drive scenic. Tiger reserve nearby.',
+        transportation: 'No airport. Markapur Road railway 90km. Hyderabad 230km. Ghat road driving.',
+        emergencyNumbers: 'Emergency: 112. Temple Devasthanam: 08524-287760.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivaratri (MASSIVE!), Ugadi, Diwali.'
+      }
+    }
+  },
+  { slug: 'bhimashankar', city: 'Bhimashankar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 19.07, lng: 73.54, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.005M', metroPopulation: '0.01M', phoneCode: '+91 2135', language: 'Marathi, Hindi',
+      climate: 'Tropical highland with pleasant summers (18-30°C) and cool winters (10-25°C). Very heavy monsoon June-September.',
+      attractions: ['Bhimashankar Jyotirlinga', 'Bhimashankar Wildlife Sanctuary', 'Giant Malabar Squirrel', 'Gupt Bhimashankar', 'Hanuman Lake', 'Nagphani (Duke\'s Nose)', 'Bombay Point', 'Shidi Ghat Trek', 'Waterfalls', 'Trekking'],
+      demographics: 'One of 12 Jyotirlingas. Origin of Bhima River. Giant Indian squirrel habitat. Monsoon trekking paradise.',
+      seoContent: {
+        intro: 'Bhimashankar, forest Jyotirlinga, operates on India Standard Time (IST/UTC+5:30). This sacred Shiva temple in the Western Ghats is one of 12 Jyotirlingas, set within a wildlife sanctuary famous for the endangered giant Malabar squirrel and origin of the Bhima River.',
+        timezoneFacts: 'Same timezone as all of India. Sahyadri Hills, Maharashtra.',
+        bestTimeToVisit: 'October-May for temple. Monsoon (July-September) spectacular waterfalls but slippery. Shivaratri crowded.',
+        businessHours: 'Temple 5 AM to 9:30 PM. Sanctuary permits at entry. Treks best started early.',
+        timeDifference: 'Bhimashankar is UTC+5:30 year-round. When noon in Bhimashankar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Shidi Ghat trek challenging but rewarding (steep ladders!). Giant Malabar squirrel early morning. Gupt Bhimashankar original lingam. Monsoon transforms into waterfall paradise.',
+        transportation: 'No railway or airport. Pune 125km. Drives through ghat roads. Trekking routes from Karjat.',
+        emergencyNumbers: 'Emergency: 112. Forest Office available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivaratri (MASSIVE!), Ganesh Chaturthi, Diwali.'
+      }
+    }
+  },
+  { slug: 'deoghar', city: 'Deoghar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 24.49, lng: 86.70, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.25M', phoneCode: '+91 6432', language: 'Hindi, Santali, Bengali',
+      climate: 'Humid subtropical with hot summers (35-45°C) and cool winters (8-22°C). Monsoon July-September.',
+      attractions: ['Baidyanath Jyotirlinga', 'Basukinath Temple', 'Trikut Pahar', 'Naulakha Mandir', 'Satsang Ashram', 'Tapovan', 'Ropeway', 'Nandan Pahar', 'Rikhia Ashram', 'Kanwar Yatra Route'],
+      demographics: 'One of 12 Jyotirlingas. Vaidyanath - Lord of Physicians. Kanwar Yatra destination. Satsang Ashram HQ.',
+      seoContent: {
+        intro: 'Deoghar, abode of the Divine Doctor, operates on India Standard Time (IST/UTC+5:30). This sacred city houses the Baidyanath Jyotirlinga - known as Vaidyanath (Lord of Physicians) - one of 12 Jyotirlingas and the destination of millions during the annual Kanwar Yatra.',
+        timezoneFacts: 'Same timezone as all of India. Santhal Pargana, Jharkhand.',
+        bestTimeToVisit: 'October-March for pleasant weather. Shravan month (July-August) Kanwar Yatra massive. Shivaratri huge.',
+        businessHours: 'Temple 4 AM to 9 PM. Ropeway to Trikut 8 AM to 5 PM.',
+        timeDifference: 'Deoghar is UTC+5:30 year-round. When noon in Deoghar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Vaidyanath means healer - prayers for health. Shravan month sees 5M+ Kanwariyas! Basukinath 42km important part of yatra. Trikut hills for views. Satsang Ashram peaceful.',
+        transportation: 'Baidyanath Dham railway (Jasidih Junction). Nearest airport Patna (280km) or Ranchi (260km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Temple Devasthanam available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivaratri (MASSIVE!), Shravan month (Kanwar Yatra), Diwali.'
+      }
+    }
+  },
+  { slug: 'sabarimala', city: 'Sabarimala', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 9.43, lng: 77.08, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.001M', metroPopulation: '0.005M', phoneCode: '+91 4735', language: 'Malayalam, Tamil, Hindi',
+      climate: 'Tropical highland with pleasant temperatures (15-30°C). Monsoon June-September closes temple. Forest setting.',
+      attractions: ['Ayyappa Temple', 'Pathinettam Padi (18 Holy Steps)', 'Makaravilakku', 'Pamba River', 'Sannidhanam', 'Malikappuram Devi Temple', 'Pandalam Palace', 'Erumeli', 'Neelimala View Point', 'Forest Trek'],
+      demographics: 'India\'s Hajj equivalent. 50M+ pilgrims annually. 41-day vrutham (penance). Women 10-50 historically restricted.',
+      seoContent: {
+        intro: 'Sabarimala, the forest pilgrimage, operates on India Standard Time (IST/UTC+5:30). This mountaintop temple of Lord Ayyappa receives 50+ million pilgrims annually (second only to Mecca), requiring 41 days of strict penance wearing black, culminating in the Makaravilakku festival.',
+        timezoneFacts: 'Same timezone as all of India. Periyar Tiger Reserve, Kerala.',
+        bestTimeToVisit: 'Mid-November to mid-January (Mandala-Makaravilakku season). Makaravilakku (January 14) peak. Closed most of year.',
+        businessHours: 'Temple opens only during specific seasons. Mandala Puja season main period.',
+        timeDifference: 'Sabarimala is UTC+5:30 year-round. When noon in Sabarimala: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: '41-day vrutham mandatory - strict celibacy, black clothes, vegetarian. Trek 5km from Pamba. Irumudi (offering bundle) required. Makaravilakku star sighting divine. Swamiye Saranam Ayyappa!',
+        transportation: 'No vehicles to temple - trek from Pamba. Kottayam railway 90km. Cochin Airport (COK) 155km.',
+        emergencyNumbers: 'Emergency: 112. Devaswom Board: 04735-202028.',
+        publicHolidays: 'Temple open: Mandala Season (Nov-Dec), Makaravilakku (Jan), Vishu, Monthly openings. Closed most of year.'
+      }
+    }
+  },
+  { slug: 'palani', city: 'Palani', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.45, lng: 77.52, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.07M', metroPopulation: '0.1M', phoneCode: '+91 4545', language: 'Tamil, Hindi',
+      climate: 'Tropical highland with pleasant temperatures (20-35°C). Monsoon October-December (northeast).',
+      attractions: ['Palani Murugan Temple', 'Winch', 'Ropeway', 'Idumban Shrine', 'Periyanayaki Amman Temple', 'Kulandai Velappar Temple', 'Thaipusam', 'Panchamirtham', 'Thai Poosam', 'Hill Steps'],
+      demographics: 'One of 6 abodes of Murugan. Second richest temple in TN. Navapashanam idol. Panchamirtham famous.',
+      seoContent: {
+        intro: 'Palani, abode of the youthful god, operates on India Standard Time (IST/UTC+5:30). This hilltop temple of Lord Murugan (Dhandayuthapani) is one of his six sacred abodes, famous for the Navapashanam idol made of nine poisonous substances and the divine Panchamirtham prasadam.',
+        timezoneFacts: 'Same timezone as all of India. Dindigul district, Tamil Nadu.',
+        bestTimeToVisit: 'Year-round. Thai Poosam (January-February) massive - million+ pilgrims. Pongal festive.',
+        businessHours: 'Temple 6 AM to 8:30 PM. Winch and ropeway 6 AM to 8 PM.',
+        timeDifference: 'Palani is UTC+5:30 year-round. When noon in Palani: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Ropeway or 693 steps - your choice! Panchamirtham prasadam unique (banana-honey-ghee). Thai Poosam kavadi-bearers intense. Navapashanam idol made from 9 medicinal poisons. Second richest TN temple.',
+        transportation: 'Palani railway junction. Madurai Airport (IXM) 120km. Coimbatore Airport (CJB) 110km.',
+        emergencyNumbers: 'Emergency: 112. Temple Devasthanam: 04545-241479.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Thai Poosam (MASSIVE!), Pongal, Diwali.'
+      }
+    }
+  },
+  { slug: 'noida', city: 'Noida', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 28.57, lng: 77.32, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '6.4M', metroPopulation: '10M', phoneCode: '+91 120', language: 'Hindi, English, Punjabi',
+      climate: 'Humid subtropical with extreme hot summers (40-47°C) and cool winters (5-20°C). Monsoon July-September. Pollution winter issue.',
+      attractions: ['Worlds of Wonder', 'DLF Mall of India', 'Okhla Bird Sanctuary', 'Botanical Garden', 'ISKCON Noida', 'Buddh International Circuit', 'Film City', 'Sector 18 Market', 'Grand Venice Mall', 'Noida Golf Course'],
+      demographics: 'New Okhla Industrial Development Authority. IT/BPO hub. Part of Delhi NCR. Planned city.',
+      seoContent: {
+        intro: 'Noida, the IT powerhouse of NCR, operates on India Standard Time (IST/UTC+5:30). This planned city of 6.4 million is a major IT/BPO hub in Delhi NCR, home to the Buddh International Circuit (India\'s F1 venue) and the massive DLF Mall of India.',
+        timezoneFacts: 'Same timezone as all of India. Gautam Buddha Nagar, Uttar Pradesh.',
+        bestTimeToVisit: 'October-March for pleasant weather. Avoid summer heat and winter pollution. Weekends for malls.',
+        businessHours: 'IT companies 9 AM to 6 PM. Malls 10 AM to 10 PM. Metro 6 AM to 11 PM.',
+        timeDifference: 'Noida is UTC+5:30 year-round. When noon in Noida: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Delhi Metro Blue Line connects to Delhi. Film City studio tours. Buddh Circuit hosted F1 2011-2013. DLF Mall of India is India\'s largest. Greater Noida has Expo Mart.',
+        transportation: 'Noida Metro + Delhi Metro integrated. IGI Airport Delhi (35km). Noida has no railway - use Metro.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Diwali, Holi, Eid.'
+      }
+    }
+  },
+  { slug: 'gurugram', city: 'Gurugram', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 28.46, lng: 77.03, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '2.5M', metroPopulation: '10M', phoneCode: '+91 124', language: 'Hindi, English, Punjabi, Haryanvi',
+      climate: 'Humid subtropical with extreme hot summers (40-47°C) and cool winters (5-20°C). Monsoon July-September. Pollution issue.',
+      attractions: ['Cyber City', 'Kingdom of Dreams', 'Ambience Mall', 'Cyber Hub', 'Sultanpur Bird Sanctuary', 'Leisure Valley Park', 'Appu Ghar', 'Golf Courses', 'DLF Phase 5', 'Sheetla Mata Mandir'],
+      demographics: 'Millennium City. Fortune 500 headquarters. India\'s highest per capita income. Former Gurgaon. Guru Dronacharya\'s village.',
+      seoContent: {
+        intro: 'Gurugram, India\'s Millennium City, operates on India Standard Time (IST/UTC+5:30). This corporate powerhouse of 2.5 million (formerly Gurgaon - named after Guru Dronacharya) has India\'s highest per capita income, hosting headquarters of over 250 Fortune 500 companies in its gleaming Cyber City.',
+        timezoneFacts: 'Same timezone as all of India. Haryana, Delhi NCR.',
+        bestTimeToVisit: 'October-March for pleasant weather. Avoid extreme summer and winter pollution. Cyber Hub lively evenings.',
+        businessHours: 'Corporate offices 9 AM to 6 PM. Cyber Hub restaurants until midnight. Malls 10 AM to 10 PM.',
+        timeDifference: 'Gurugram is UTC+5:30 year-round. When noon in Gurugram: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Cyber Hub for dining and nightlife. Kingdom of Dreams for Bollywood culture. Renamed from Gurgaon in 2016. Traffic notorious - use Metro. Sultanpur for birdwatching.',
+        transportation: 'Delhi Metro Yellow Line + Rapid Metro. IGI Airport Delhi (15km - closest NCR city!). Gurugram railway limited.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Haryana Day (Nov 1), Diwali, Holi.'
+      }
+    }
+  },
   { slug: 'vadodara', city: 'Vadodara', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.31, lng: 73.19, tier: 3, continent: 'asia',
     info: {
       currency: 'Indian Rupee', currencySymbol: '₹', population: '2.1M', phoneCode: '+91 265', language: 'Gujarati, Hindi',
@@ -6637,14 +12294,6 @@ export const cities: City[] = [
       climate: 'Humid subtropical with hot summers (35-44°C) and cold winters (4-18°C). Monsoon July-September.',
       attractions: ['Rock Garden', 'Sukhna Lake', 'Capitol Complex', 'Rose Garden', 'Elante Mall'],
       demographics: 'India\'s first planned city designed by Le Corbusier. Union Territory serving as capital for both Punjab and Haryana.'
-    }
-  },
-  { slug: 'mysuru', city: 'Mysuru', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.30, lng: 76.66, tier: 2, continent: 'asia',
-    info: {
-      currency: 'Indian Rupee', currencySymbol: '₹', population: '1M', phoneCode: '+91 821', language: 'Kannada, English, Hindi',
-      climate: 'Tropical savanna with pleasant year-round weather (18-35°C). Mild and comfortable most of the year.',
-      attractions: ['Mysore Palace', 'Chamundi Hills', 'Brindavan Gardens', 'St. Philomena\'s Church', 'Mysore Zoo'],
-      demographics: 'Former capital of Mysore Kingdom, "City of Palaces". Known for Dasara festival, silk sarees, and sandalwood products.'
     }
   },
   { slug: 'thiruvananthapuram', city: 'Thiruvananthapuram', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 8.52, lng: 76.94, tier: 2, continent: 'asia',
@@ -12829,6 +18478,1936 @@ export const cities: City[] = [
       climate: 'Humid subtropical with mild summers (23-29°C) and cool winters (4-10°C). Rainy.',
       attractions: ['Zunyi Conference Site', 'Loushan Pass', 'Chishui Waterfall', 'Maotai Town', 'Hailongtun'],
       demographics: 'Site of pivotal 1935 Zunyi Conference. Gateway to Maotai distillery. Red tourism center.'
+    }
+  },
+  
+  // China - New Cities Batch (20 cities with full premium content)
+  { slug: 'zhuzhou', city: 'Zhuzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 27.83, lng: 113.13, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.9M', metroPopulation: '4.5M', phoneCode: '+86 731', language: 'Mandarin, Xiang',
+      climate: 'Humid subtropical with hot summers (28-34°C) and cool winters (4-10°C). Rainy spring.',
+      attractions: ['Yanling Shennong Temple', 'Zhuzhou Tower', 'Shenlong Urban Wetland', 'Railway Museum', 'Lusong District', 'Yan Emperor Mausoleum', 'Daijing Scenic Area', 'Shimen Peak', 'Zhuzhou Art Museum', 'Jiulong Park'],
+      demographics: 'Major railway hub and industrial city in Hunan. Home to CRRC, China\'s largest train manufacturer. Known as the "Train City."',
+      seoContent: {
+        intro: 'Zhuzhou, the "Train City" of China, operates on China Standard Time (CST/UTC+8). This industrial hub of 3.9 million is headquarters of CRRC, the world\'s largest rolling stock manufacturer, producing high-speed trains for the world.',
+        timezoneFacts: 'Same timezone as Beijing. Central China transportation hub connecting north-south rail lines.',
+        bestTimeToVisit: 'March-May for spring flowers. September-November for pleasant weather. Summer hot and humid.',
+        businessHours: 'Standard 9 AM to 6 PM. CRRC facilities by appointment only.',
+        timeDifference: 'Zhuzhou is UTC+8 year-round. When noon in Zhuzhou: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Visit Yanling - birthplace of legendary Shennong. Railway Museum showcases train history. Close to Changsha (30 min by train).',
+        transportation: 'Major railway junction. High-speed rail to Changsha, Guangzhou, Beijing. Changsha Huanghua Airport nearby.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day (Oct 1-7).'
+      }
+    }
+  },
+  { slug: 'yichang', city: 'Yichang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.69, lng: 111.29, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '4.0M', metroPopulation: '4.2M', phoneCode: '+86 717', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-33°C) and mild winters (3-9°C). Misty gorges.',
+      attractions: ['Three Gorges Dam', 'Gezhouba Dam', 'Three Gorges Tribe Scenic Area', 'Xiling Gorge', 'Sanyou Cave', 'Quyuan Temple', 'Chexi Folk Village', 'Yichang Museum', 'Binjiang Park', 'Xiba Scenic Area'],
+      demographics: 'Gateway city to the Three Gorges. Home to the world\'s largest hydroelectric dam. Major hub for Yangtze River cruises.',
+      seoContent: {
+        intro: 'Yichang, gateway to the Three Gorges, operates on China Standard Time (CST/UTC+8). This city of 4 million is home to the Three Gorges Dam, the world\'s largest hydroelectric power station generating over 100 TWh annually.',
+        timezoneFacts: 'Same timezone as Beijing. Key city on the Yangtze River, dividing upper and middle reaches.',
+        bestTimeToVisit: 'April-May and September-October for dam visits and cruises. Avoid summer flood season.',
+        businessHours: 'Standard 9 AM to 6 PM. Three Gorges Dam tours 8 AM to 5 PM.',
+        timeDifference: 'Yichang is UTC+8 year-round. When noon in Yichang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Three Gorges Dam tour essential - book ahead. Yangtze cruises start/end here. Try Yichang orange and river fish dishes.',
+        transportation: 'Sanxia Airport (YIH) 26km. Yangtze River cruise terminal. High-speed rail to Wuhan.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat (Qu Yuan hometown nearby), Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'kaifeng', city: 'Kaifeng', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 34.80, lng: 114.31, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '4.6M', metroPopulation: '4.8M', phoneCode: '+86 378', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-32°C) and cold winters (-2 to 5°C). Four seasons.',
+      attractions: ['Millennium City Park', 'Iron Pagoda', 'Dragon Pavilion', 'Qingming Riverside Landscape Garden', 'Kaifeng City Wall', 'Daxiangguo Temple', 'Kaifeng Museum', 'Baogong Temple', 'Shanshangan Guild Hall', 'Jewish History Memorial'],
+      demographics: 'Ancient capital of Northern Song Dynasty (960-1127). Once world\'s largest city. One of China\'s Eight Great Ancient Capitals.',
+      seoContent: {
+        intro: 'Kaifeng, the ancient Song Dynasty capital, operates on China Standard Time (CST/UTC+8). This historic city of 4.6 million was once the world\'s largest and most prosperous city, capital of the Northern Song Dynasty.',
+        timezoneFacts: 'Same timezone as Beijing. One of China\'s eight ancient capitals with 4,100+ years of history.',
+        bestTimeToVisit: 'April for Qingming Festival recreations. September-October for chrysanthemum festival. Spring and autumn best.',
+        businessHours: 'Standard 9 AM to 6 PM. Night markets famous - Drum Tower area until midnight.',
+        timeDifference: 'Kaifeng is UTC+8 year-round. When noon in Kaifeng: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Qingming Riverside Park recreates Song Dynasty life. Famous for xiaolongbao (soup dumplings). Night market essential - try bucket chicken.',
+        transportation: 'High-speed rail to Zhengzhou (20 min) and beyond. Near Zhengzhou Xinzheng Airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming (special celebrations), Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'xiangyang', city: 'Xiangyang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 32.01, lng: 112.14, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.3M', metroPopulation: '5.6M', phoneCode: '+86 710', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-33°C) and cold winters (1-7°C). Four distinct seasons.',
+      attractions: ['Xiangyang Ancient City Wall', 'Longzhong', 'Green Shadow Wall', 'Xiangyang Moat', 'Xianshan Temple', 'Gulongzhong Scenic Area', 'Xiangyang Museum', 'Mi Fu Shrine', 'Tanxi Temple', 'Han River Bridge'],
+      demographics: 'Historic city on Han River. Zhuge Liang\'s Longzhong retreat. Major Three Kingdoms history site. Auto manufacturing center.',
+      seoContent: {
+        intro: 'Xiangyang, the ancient fortress city, operates on China Standard Time (CST/UTC+8). This city of 5.3 million on the Han River is famous for its well-preserved ancient walls and Three Kingdoms history - Zhuge Liang emerged from Longzhong here.',
+        timezoneFacts: 'Same timezone as Beijing. Strategic city in central China, historically vital for north-south control.',
+        bestTimeToVisit: 'March-May and September-November for pleasant weather. Cherry blossoms in spring.',
+        businessHours: 'Standard 9 AM to 6 PM. Longzhong scenic area 8 AM to 6 PM.',
+        timeDifference: 'Xiangyang is UTC+8 year-round. When noon in Xiangyang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Walk the ancient city walls - among China\'s best preserved. Visit Longzhong (Zhuge Liang\'s retreat). Try Xiangyang beef noodles.',
+        transportation: 'Liuji Airport (XFN) 18km. High-speed rail expanding. On Han River.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'yueyang', city: 'Yueyang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 29.37, lng: 113.09, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.0M', metroPopulation: '5.2M', phoneCode: '+86 730', language: 'Mandarin, Xiang',
+      climate: 'Humid subtropical with hot summers (28-34°C) and cool winters (3-8°C). Lakeside humidity.',
+      attractions: ['Yueyang Tower', 'Dongting Lake', 'Junshan Island', 'Miluo River', 'Qu Yuan Memorial Temple', 'Yueyang Ancient City', 'Bianhe Street', 'Shenglong Tower', 'Nanhu Park', 'Cishi Tower'],
+      demographics: 'Located on Dongting Lake. Site of Yueyang Tower, one of China\'s three great towers. Qu Yuan (Dragon Boat Festival origin) drowned in nearby Miluo River.',
+      seoContent: {
+        intro: 'Yueyang, city of the famous tower, operates on China Standard Time (CST/UTC+8). This city of 5 million sits on Dongting Lake and is home to Yueyang Tower, one of the Three Great Towers of southern China, celebrated in literature for millennia.',
+        timezoneFacts: 'Same timezone as Beijing. On the shores of Dongting Lake, China\'s second-largest freshwater lake.',
+        bestTimeToVisit: 'March-May for spring and lotus. Dragon Boat Festival (June) is special here - Qu Yuan\'s homeland.',
+        businessHours: 'Standard 9 AM to 6 PM. Yueyang Tower 7:30 AM to 6:30 PM.',
+        timeDifference: 'Yueyang is UTC+8 year-round. When noon in Yueyang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Yueyang Tower sunset is magical. Boat to Junshan Island for silver needle tea. Dragon Boat races in June. Visit Qu Yuan Memorial.',
+        transportation: 'Sanhe Airport (YYA) 19km. High-speed rail to Changsha, Wuhan.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year, Qingming, Labor Day, Dragon Boat (major celebration - Qu Yuan origin), Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'zhanjiang', city: 'Zhanjiang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 21.27, lng: 110.36, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '7.0M', metroPopulation: '7.4M', phoneCode: '+86 759', language: 'Mandarin, Cantonese, Leizhou',
+      climate: 'Tropical monsoon with hot humid summers (28-33°C) and mild winters (15-20°C). Typhoon season July-September.',
+      attractions: ['Huguangyan Maar Lake', 'Donghai Island', 'Zhanjiang Port', 'Naozhou Island', 'Guandi Temple', 'Haibin Park', 'Cunjin Bridge', 'French Colonial District', 'Techeng Island', 'Xuwen Coral Reef'],
+      demographics: 'Major port city in western Guangdong. Largest city on Leizhou Peninsula. Important naval base. Gateway to Hainan Island.',
+      seoContent: {
+        intro: 'Zhanjiang, the "Pearl of the South China Sea," operates on China Standard Time (CST/UTC+8). This port city of 7 million is the largest on the Leizhou Peninsula, featuring unique volcanic geology and serving as a major South China naval base.',
+        timezoneFacts: 'Same timezone as Beijing despite being far south. Tropical climate with year-round warmth.',
+        bestTimeToVisit: 'October-April to avoid typhoon season and extreme summer heat. November-March most pleasant.',
+        businessHours: 'Standard 9 AM to 6 PM. Seafood markets from dawn.',
+        timeDifference: 'Zhanjiang is UTC+8 year-round. When noon in Zhanjiang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Fresh seafood is excellent - try Zhanjiang chicken and oysters. Visit Huguangyan volcanic lake. Ferry to Hainan available.',
+        transportation: 'Zhanjiang Airport (ZHA) 5km. Port to Hainan. High-speed rail since 2018.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'zhaoqing', city: 'Zhaoqing', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 23.05, lng: 112.47, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '4.1M', metroPopulation: '4.3M', phoneCode: '+86 758', language: 'Mandarin, Cantonese',
+      climate: 'Humid subtropical with hot summers (28-33°C) and mild winters (10-17°C). Moderate rainfall.',
+      attractions: ['Seven Star Crags', 'Dinghu Mountain', 'Zhaoqing City Wall', 'Panlong Gorge', 'Zhaoqing Museum', 'Chongxi Tower', 'Plum Monastery', 'Dinghu National Nature Reserve', 'Deqing Longmother Temple', 'Fengkai Heishiyan'],
+      demographics: 'Historic city west of Guangzhou. Famous for Seven Star Crags karst landscape. Birthplace of Duan inkstones (China\'s finest).',
+      seoContent: {
+        intro: 'Zhaoqing, city of Seven Star Crags, operates on China Standard Time (CST/UTC+8). This scenic city of 4.1 million is known for its stunning karst limestone formations and as the birthplace of Duan inkstones, China\'s most prized writing stones.',
+        timezoneFacts: 'Same timezone as Beijing. Part of Greater Bay Area, gateway to western Guangdong.',
+        bestTimeToVisit: 'October-April for pleasant weather. Avoid summer heat and humidity.',
+        businessHours: 'Standard 9 AM to 6 PM. Seven Star Crags 7:30 AM to 5:30 PM.',
+        timeDifference: 'Zhaoqing is UTC+8 year-round. When noon in Zhaoqing: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Seven Star Crags park is beautiful - like Guilin in miniature. Dinghu Mountain for hiking and temples. Buy Duan inkstones as souvenirs.',
+        transportation: 'High-speed rail to Guangzhou (30 min). Part of Greater Bay Area network.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'jingzhou', city: 'Jingzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.33, lng: 112.24, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.2M', metroPopulation: '5.6M', phoneCode: '+86 716', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (28-34°C) and cold winters (2-7°C). Four seasons.',
+      attractions: ['Jingzhou Ancient City Wall', 'Jingzhou Museum', 'Zhanghuatai', 'Jiulong Yuan', 'Chu King\'s Tomb', 'Guandi Temple', 'Kaiyuan Temple', 'Phoenix Terrace', 'Jiangling Town', 'Wulin Ancient Town'],
+      demographics: 'Ancient capital of Chu State (770-223 BC). One of best-preserved ancient city walls in China. Famous "borrowing Jingzhou" Three Kingdoms story.',
+      seoContent: {
+        intro: 'Jingzhou, the ancient Chu capital, operates on China Standard Time (CST/UTC+8). This city of 5.2 million has one of China\'s best-preserved ancient city walls (11.3 km) and was the strategic prize in the famous Three Kingdoms "borrowing Jingzhou" story.',
+        timezoneFacts: 'Same timezone as Beijing. Historic city in Hubei on the Yangtze River.',
+        bestTimeToVisit: 'March-May and September-November. Summer hot and humid.',
+        businessHours: 'Standard 9 AM to 6 PM. City wall accessible until sunset.',
+        timeDifference: 'Jingzhou is UTC+8 year-round. When noon in Jingzhou: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Walk the complete 11.3km ancient city wall. Museum has excellent Chu Kingdom artifacts. "Borrowing Jingzhou" is famous Three Kingdoms tale.',
+        transportation: 'Shashi Airport (SHS). High-speed rail to Wuhan.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat (Chu culture related), Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'xianyang', city: 'Xianyang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 34.33, lng: 108.71, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '4.3M', metroPopulation: '4.9M', phoneCode: '+86 29', language: 'Mandarin',
+      climate: 'Semi-arid continental with hot summers (26-32°C) and cold winters (-4 to 4°C). Dry climate.',
+      attractions: ['Maoling Mausoleum', 'Zhaoling Mausoleum', 'Qianling Mausoleum', 'Xianyang Museum', 'Hanyangling Mausoleum', 'Famen Temple', 'Binxian Big Buddha Temple', 'Xianyang Lake', 'Weiyang Palace Site', 'Zhouling'],
+      demographics: 'First capital of unified China under Qin Dynasty (221-206 BC). Adjacent to Xi\'an. Surrounded by Han and Tang dynasty imperial tombs.',
+      seoContent: {
+        intro: 'Xianyang, the first imperial capital, operates on China Standard Time (CST/UTC+8). This city of 4.3 million was the capital of the Qin Dynasty that first unified China in 221 BC, and is surrounded by magnificent Han and Tang imperial tombs.',
+        timezoneFacts: 'Same timezone as Beijing. Shares metropolitan area with Xi\'an.',
+        bestTimeToVisit: 'April-May and September-October. Similar to Xi\'an. Avoid summer heat.',
+        businessHours: 'Standard 9 AM to 6 PM. Tomb sites typically 8:30 AM to 5:30 PM.',
+        timeDifference: 'Xianyang is UTC+8 year-round. When noon in Xianyang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Explore Han and Tang dynasty tombs - less crowded than Terracotta Army. Qianling has only unexcavated Tang empress tomb. Airport serves Xi\'an.',
+        transportation: 'Xi\'an Xianyang International Airport (XIY) located here. Metro Line 1 connects to Xi\'an.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming (tomb-sweeping significant), Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'xinxiang', city: 'Xinxiang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 35.30, lng: 113.87, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '6.0M', metroPopulation: '6.2M', phoneCode: '+86 373', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-32°C) and cold winters (-2 to 5°C). Four seasons.',
+      attractions: ['Baligou Scenic Area', 'Yuntai Mountain (nearby)', 'Bigan Temple', 'Wangmang Ridge', 'Jiuliangou', 'Fanzhai Village', 'Xinxiang Museum', 'Weihui Ancient City', 'Huixian Dinosaur Museum', 'Guanshan Geological Park'],
+      demographics: 'Northern Henan industrial city. Gateway to Yuntai Mountain scenic area. Birthplace of Bigan (loyal minister of Shang Dynasty).',
+      seoContent: {
+        intro: 'Xinxiang, gateway to Yuntai Mountain, operates on China Standard Time (CST/UTC+8). This city of 6 million in northern Henan is a major industrial center and gateway to UNESCO Global Geopark Yuntai Mountain\'s stunning waterfalls and cliffs.',
+        timezoneFacts: 'Same timezone as Beijing. Northern Henan, near Taihang Mountain range.',
+        bestTimeToVisit: 'April-May and September-October for Yuntai Mountain. Avoid summer crowds.',
+        businessHours: 'Standard 9 AM to 6 PM. Yuntai Mountain 6:30 AM to 6:30 PM (summer).',
+        timeDifference: 'Xinxiang is UTC+8 year-round. When noon in Xinxiang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Day trip to Yuntai Mountain (1 hour). Visit Bigan Temple - first loyal minister shrine. Baligou for quieter mountain scenery.',
+        transportation: 'High-speed rail to Zhengzhou (20 min). No airport - use Zhengzhou.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'yibin', city: 'Yibin', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 28.77, lng: 104.64, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '4.6M', metroPopulation: '5.6M', phoneCode: '+86 831', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with hot summers (27-33°C) and mild winters (6-11°C). Misty river valleys.',
+      attractions: ['Shunan Bamboo Sea', 'Lizhuang Ancient Town', 'Wuliangye Distillery', 'Cuiping Mountain', 'Daguanlou', 'Flowing Cup Pavilion', 'Xingwen Stone Forest', 'Gongxian Hanging Coffins', 'Nanxi Ancient Town', 'Wuliangye Old Cellar'],
+      demographics: 'Where the Yangtze River begins (Min + Jinsha confluence). Home to Wuliangye, one of China\'s most famous baijiu brands. Surrounded by bamboo forests.',
+      seoContent: {
+        intro: 'Yibin, where the Yangtze begins, operates on China Standard Time (CST/UTC+8). This city of 4.6 million marks where the Min and Jinsha rivers merge to form the Yangtze River, and is home to Wuliangye, one of China\'s most prestigious baijiu liquors.',
+        timezoneFacts: 'Same timezone as Beijing. "First City on the Yangtze" - the great river officially starts here.',
+        bestTimeToVisit: 'March-May and September-November. Spring in Bamboo Sea is magical.',
+        businessHours: 'Standard 9 AM to 6 PM. Wuliangye tours by appointment.',
+        timeDifference: 'Yibin is UTC+8 year-round. When noon in Yibin: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Shunan Bamboo Sea is stunning - Crouching Tiger location. Tour Wuliangye distillery. Try local burning noodles (ran mian). Lizhuang has WWII history.',
+        transportation: 'Wuliangye Airport (YBP) 16km. High-speed rail to Chengdu (1 hour).',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'luzhou', city: 'Luzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 28.87, lng: 105.44, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '4.3M', metroPopulation: '5.1M', phoneCode: '+86 830', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with hot summers (27-33°C) and mild winters (6-11°C). Misty river climate.',
+      attractions: ['Luzhou Laojiao Distillery', 'Fobao Forest Park', 'Zhangba Ancient Town', 'Yubei Ancient Town', 'Huanghe Ancient Town', 'Fangshan Scenic Area', 'Luzhou Old Cellar Pool', 'Baizhanghe Forest', 'Gulin County Caves', 'Hejiang Buddha Caves'],
+      demographics: 'Famous for Luzhou Laojiao baijiu (1573 origin). City of wine at Yangtze and Tuo rivers confluence. Multiple ancient towns.',
+      seoContent: {
+        intro: 'Luzhou, the "Wine City," operates on China Standard Time (CST/UTC+8). This city of 4.3 million is famous for Luzhou Laojiao, one of China\'s oldest and most prestigious baijiu brands with continuous production since 1573.',
+        timezoneFacts: 'Same timezone as Beijing. At confluence of Yangtze and Tuo rivers.',
+        bestTimeToVisit: 'March-May and September-November. Autumn harvest season interesting for distillery visits.',
+        businessHours: 'Standard 9 AM to 6 PM. Distillery tours available.',
+        timeDifference: 'Luzhou is UTC+8 year-round. When noon in Luzhou: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Tour Luzhou Laojiao distillery - cellars over 450 years old. Explore ancient towns on weekends. Try local baijiu varieties.',
+        transportation: 'Yunlong Airport (LZO) 10km. High-speed rail expanding.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'shaoguan', city: 'Shaoguan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 24.80, lng: 113.60, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.9M', metroPopulation: '3.0M', phoneCode: '+86 751', language: 'Mandarin, Cantonese, Hakka',
+      climate: 'Humid subtropical with hot summers (28-34°C) and cool winters (8-14°C). Mountain-influenced.',
+      attractions: ['Danxia Mountain', 'Nanhua Temple', 'Maba Man Site', 'Zhuji Lane', 'Cloud Gate Mountain', 'Fengkai Ancient City', 'Shaoguan Museum', 'Jinjiang River', 'Nanling National Forest Park', 'Ruyuan Yao Autonomous County'],
+      demographics: 'Gateway to northern Guangdong. Home to UNESCO-listed Danxia landforms. Nanhua Temple is sixth patriarch\'s Chan Buddhist headquarters.',
+      seoContent: {
+        intro: 'Shaoguan, gateway to Danxia Mountain, operates on China Standard Time (CST/UTC+8). This city of 2.9 million is home to the UNESCO-listed Danxia landform and Nanhua Temple, headquarters of the Sixth Patriarch of Chan (Zen) Buddhism.',
+        timezoneFacts: 'Same timezone as Beijing. Northern Guangdong gateway, cooler than coastal areas.',
+        bestTimeToVisit: 'September-May to avoid summer heat. Spring for Danxia colors.',
+        businessHours: 'Standard 9 AM to 6 PM. Danxia Mountain 7 AM to 6 PM.',
+        timeDifference: 'Shaoguan is UTC+8 year-round. When noon in Shaoguan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Danxia Mountain sunrise is spectacular. Nanhua Temple is Chan Buddhism holy site. Zhuji Lane - many Cantonese trace ancestry here.',
+        transportation: 'Danxia Airport (HSC). High-speed rail to Guangzhou (50 min).',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'huangshi', city: 'Huangshi', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.20, lng: 115.04, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.5M', metroPopulation: '2.7M', phoneCode: '+86 714', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (28-34°C) and cold winters (2-7°C). Four seasons.',
+      attractions: ['Huangshi National Mine Park', 'Cihu Scenic Area', 'Xisai Mountain', 'Tonglüshan Ancient Mine', 'Leifeng Tower', 'Dongfang Mountain', 'Huangshi Museum', 'Ci Lake', 'Tieshan District Heritage', 'Yangxin County'],
+      demographics: 'Major mining and industrial city in Hubei. 3,000 years of copper mining history. Tonglüshan is world\'s oldest known copper mine.',
+      seoContent: {
+        intro: 'Huangshi, the "Bronze Capital," operates on China Standard Time (CST/UTC+8). This city of 2.5 million has 3,000 years of mining history and features Tonglüshan Ancient Copper Mine, the world\'s oldest known copper mining site.',
+        timezoneFacts: 'Same timezone as Beijing. Eastern Hubei, industrial heartland.',
+        bestTimeToVisit: 'March-May and September-November. Mine Park interesting year-round.',
+        businessHours: 'Standard 9 AM to 6 PM. National Mine Park 8:30 AM to 5 PM.',
+        timeDifference: 'Huangshi is UTC+8 year-round. When noon in Huangshi: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'National Mine Park is unique - open pit mine as park. Tonglüshan ancient copper mine is 3,000 years old. Xisai Mountain for views.',
+        transportation: 'High-speed rail to Wuhan (30 min). No airport - use Wuhan.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'zhoushan', city: 'Zhoushan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.00, lng: 122.10, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '1.2M', metroPopulation: '1.2M', phoneCode: '+86 580', language: 'Mandarin, Wu',
+      climate: 'Humid subtropical marine with mild summers (25-30°C) and cool winters (5-10°C). Typhoon risk July-September.',
+      attractions: ['Mount Putuo', 'Zhoushan Cross-Sea Bridge', 'Shengsi Islands', 'Dongji Islands', 'Taohua Island', 'Shenjiamen Fishing Port', 'Dinghai Ancient City', 'Zhujiajian Beach', 'Baibu Sand Beach', 'Nansha Beach'],
+      demographics: 'China\'s only archipelago prefecture-level city. Home to sacred Mount Putuo, one of four Buddhist sacred mountains. Major fishing port.',
+      seoContent: {
+        intro: 'Zhoushan, China\'s island city, operates on China Standard Time (CST/UTC+8). This archipelago of 1.2 million is China\'s only island prefecture-level city and home to Mount Putuo, one of China\'s four sacred Buddhist mountains.',
+        timezoneFacts: 'Same timezone as Beijing. Archipelago in East China Sea with 1,390 islands.',
+        bestTimeToVisit: 'May-June and September-October. Avoid typhoon season (July-September).',
+        businessHours: 'Standard 9 AM to 6 PM. Mount Putuo temples from 6 AM.',
+        timeDifference: 'Zhoushan is UTC+8 year-round. When noon in Zhoushan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Mount Putuo is major pilgrimage site - Guanyin Bodhisattva\'s home. Fresh seafood excellent. Cross-sea bridge is engineering marvel (48km).',
+        transportation: 'Zhoushan Putuoshan Airport (ZUH). Cross-sea bridge to Ningbo. Ferries throughout islands.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Guanyin festivals.'
+      }
+    }
+  },
+  { slug: 'xinyang', city: 'Xinyang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 32.13, lng: 114.07, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '6.2M', metroPopulation: '6.5M', phoneCode: '+86 376', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-32°C) and cold winters (0-6°C). Tea-growing climate.',
+      attractions: ['Jigong Mountain', 'Nanwan Lake', 'Xinyang Maojian Tea Plantations', 'Lingshan Temple', 'Tangquan Hot Springs', 'Xinyang Museum', 'Shihe District Ancient Town', 'Huangbai Mountain', 'Dabie Mountain', 'Guanyin Village'],
+      demographics: 'Southern Henan city famous for Xinyang Maojian, one of China\'s top ten teas. Gateway to Dabie Mountains.',
+      seoContent: {
+        intro: 'Xinyang, the "Tea Capital," operates on China Standard Time (CST/UTC+8). This city of 6.2 million is famous for Xinyang Maojian, considered one of China\'s ten most famous teas, grown on the misty slopes of the Dabie Mountains.',
+        timezoneFacts: 'Same timezone as Beijing. Southern Henan, at border with Hubei, culturally southern.',
+        bestTimeToVisit: 'April for tea picking season - Maojian harvest. Spring and autumn pleasant.',
+        businessHours: 'Standard 9 AM to 6 PM. Tea markets busy in mornings.',
+        timeDifference: 'Xinyang is UTC+8 year-round. When noon in Xinyang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Visit tea plantations in April for picking experience. Jigong Mountain is cool retreat. Buy authentic Maojian tea directly from farmers.',
+        transportation: 'Xinyang Minggang Airport (XAI) 35km. High-speed rail to Wuhan (1 hour) and Zhengzhou.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming (tea picking begins), Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'nanyang', city: 'Nanyang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 32.99, lng: 112.53, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '9.7M', metroPopulation: '10.1M', phoneCode: '+86 377', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-33°C) and cold winters (-1 to 6°C). Four seasons.',
+      attractions: ['Wuhou Shrine', 'Baotianman Nature Reserve', 'Xixia Dinosaur Park', 'Nanyang Ancient City', 'Medical Saint Shrine', 'Yueji Garden', 'Funiu Mountain', 'Danjiang Wetland', 'Nanyang Han Dynasty Painting Gallery', 'Laojie Temple'],
+      demographics: 'Largest city in Henan by area. Birthplace of Zhang Zhongjing (father of Chinese clinical medicine). Rich Three Kingdoms history - Zhuge Liang was from here.',
+      seoContent: {
+        intro: 'Nanyang, city of the Medical Saint, operates on China Standard Time (CST/UTC+8). This city of 9.7 million is the birthplace of Zhang Zhongjing, the "Hippocrates of China," and Zhuge Liang, the legendary strategist of Three Kingdoms.',
+        timezoneFacts: 'Same timezone as Beijing. Largest prefecture in Henan by area.',
+        bestTimeToVisit: 'April-May and September-October. Spring for flowers.',
+        businessHours: 'Standard 9 AM to 6 PM. Shrines open 8 AM to 6 PM.',
+        timeDifference: 'Nanyang is UTC+8 year-round. When noon in Nanyang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Wuhou Shrine for Zhuge Liang history. Medical Saint Shrine honors Zhang Zhongjing. Xixia has important dinosaur fossil finds.',
+        transportation: 'Nanyang Jiangying Airport (NNY). High-speed rail expanding.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'meizhou', city: 'Meizhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 24.29, lng: 116.12, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.9M', metroPopulation: '4.4M', phoneCode: '+86 753', language: 'Mandarin, Hakka',
+      climate: 'Humid subtropical with hot summers (28-34°C) and mild winters (10-16°C). Good rainfall.',
+      attractions: ['Hakka Tulou clusters', 'Yinnashan National Park', 'Qianfo Temple', 'Kejia Museum', 'Lingguang Temple', 'Changtong Old Street', 'Yannanfei Tea Gardens', 'Xiongjizi Tulou', 'Songkou Ancient Town', 'Ketian Stone Village'],
+      demographics: 'World Hakka Capital. Cultural heartland of Hakka Chinese - millions of overseas Chinese trace roots here including Lee Kuan Yew and Deng Xiaoping.',
+      seoContent: {
+        intro: 'Meizhou, the "World Hakka Capital," operates on China Standard Time (CST/UTC+8). This city of 3.9 million is the cultural heartland of the Hakka people - millions of overseas Chinese including Lee Kuan Yew trace their roots to this region.',
+        timezoneFacts: 'Same timezone as Beijing. Eastern Guangdong, Hakka heartland.',
+        bestTimeToVisit: 'October-April to avoid summer heat. Spring Festival for Hakka traditions.',
+        businessHours: 'Standard 9 AM to 6 PM. Tulou tours 8 AM to 5:30 PM.',
+        timeDifference: 'Meizhou is UTC+8 year-round. When noon in Meizhou: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Explore Hakka tulou roundhouses. Kejia Museum explains Hakka history and diaspora. Try Hakka cuisine - salt-baked chicken, stuffed tofu, pounded tea.',
+        transportation: 'Meizhou Meixian Airport (MXZ). High-speed rail to Guangzhou (3.5 hours).',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days - big Hakka celebration), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'jiuquan', city: 'Jiuquan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 39.73, lng: 98.49, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '1.1M', metroPopulation: '1.1M', phoneCode: '+86 937', language: 'Mandarin',
+      climate: 'Cold desert with hot summers (20-30°C) and cold winters (-12 to -2°C). Very dry, extreme temperatures.',
+      attractions: ['Jiuquan Satellite Launch Center', 'Mogao Caves (nearby Dunhuang)', 'Great Wall ruins (Jiayuguan)', 'Jiuquan Museum', 'Bell and Drum Tower', 'Jiuquan Park', 'Ming Dynasty City Wall', 'West Lake', 'Hexi Corridor sites', 'Gobi Desert'],
+      demographics: 'Home to China\'s first and most-used satellite launch center. Gateway to Dunhuang and western Silk Road. Hexi Corridor city.',
+      seoContent: {
+        intro: 'Jiuquan, home of China\'s space program, operates on China Standard Time (CST/UTC+8). This desert city of 1.1 million hosts the Jiuquan Satellite Launch Center, China\'s oldest space launch site where Shenzhou astronauts begin their journeys.',
+        timezoneFacts: 'Same timezone as Beijing though geographically should be UTC+6. Sunrise/sunset notably "late" - sun rises around 7:30 AM even in summer.',
+        bestTimeToVisit: 'May-June and September-October. Extreme temperatures other times. Spring has sandstorms.',
+        businessHours: 'Standard 9 AM to 6 PM but locals often operate on shifted schedule due to late sunrise.',
+        timeDifference: 'Jiuquan is UTC+8 year-round despite being far west. When noon in Jiuquan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Space center tours sometimes available - check regulations. Gateway to Dunhuang Mogao Caves (4 hours). Jiayuguan (Great Wall end) 20km away.',
+        transportation: 'Jiuquan Airport (CHW). Long-distance buses to Dunhuang. Train connections.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'weinan', city: 'Weinan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 34.50, lng: 109.51, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '4.7M', metroPopulation: '5.3M', phoneCode: '+86 913', language: 'Mandarin',
+      climate: 'Semi-arid continental with hot summers (26-32°C) and cold winters (-3 to 5°C). Dry climate.',
+      attractions: ['Huashan Mountain', 'Sima Qian Temple', 'Hancheng Ancient City', 'Dali Ancient Town', 'Dangjia Village', 'Tongguan Ancient Town', 'Fuping Pottery Village', 'Chengcheng Ruins', 'Yellow River Wetland', 'Shaanxi Cangma'],
+      demographics: 'Eastern Shaanxi city. Gateway to Mount Huashan, one of China\'s five sacred Taoist mountains. Birthplace of historian Sima Qian.',
+      seoContent: {
+        intro: 'Weinan, gateway to Mount Huashan, operates on China Standard Time (CST/UTC+8). This city of 4.7 million is the gateway to Huashan, one of China\'s five sacred mountains famous for its precipitous plank walks and stunning sunrise views.',
+        timezoneFacts: 'Same timezone as Beijing. Eastern Shaanxi, Yellow River region.',
+        bestTimeToVisit: 'April-May and September-October for Huashan climbing. Avoid summer heat and winter ice.',
+        businessHours: 'Standard 9 AM to 6 PM. Huashan 24 hours (night climbs popular).',
+        timeDifference: 'Weinan is UTC+8 year-round. When noon in Weinan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Huashan is challenging but rewarding - plank walk is famous. Night climb for sunrise is tradition. Sima Qian (historian) temple worth visiting. Hancheng for ancient architecture.',
+        transportation: 'High-speed rail to Xi\'an (30 min). Direct trains to Huashan station. No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  
+  // China - New Cities Batch 2 (20 cities with full premium content)
+  { slug: 'dezhou', city: 'Dezhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 37.43, lng: 116.36, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.6M', metroPopulation: '5.8M', phoneCode: '+86 534', language: 'Mandarin',
+      climate: 'Humid continental with hot summers (27-32°C) and cold winters (-5 to 3°C). Four distinct seasons.',
+      attractions: ['Dezhou Grand Canal', 'Dongchang Lake', 'Suijiawan', 'Dezhou Museum', 'Ancient City Wall', 'Huanghe Scenic Area', 'Dong\'e Ejiao City', 'Lingxian Temple', 'Qingyun Mountain', 'Dezhou Solar Valley'],
+      demographics: 'Famous for Dezhou braised chicken, one of China\'s most celebrated poultry dishes. Major stop on Beijing-Shanghai rail line. Solar energy industry leader.',
+      seoContent: {
+        intro: 'Dezhou, home of China\'s famous braised chicken, operates on China Standard Time (CST/UTC+8). This city of 5.6 million on the Grand Canal is renowned for Dezhou Braised Chicken, a centuries-old delicacy, and has become a leader in solar energy manufacturing.',
+        timezoneFacts: 'Same timezone as Beijing. Northwestern Shandong, on Beijing-Shanghai corridor.',
+        bestTimeToVisit: 'April-May and September-October. Avoid extreme summer and winter.',
+        businessHours: 'Standard 9 AM to 6 PM. Famous chicken restaurants open early.',
+        timeDifference: 'Dezhou is UTC+8 year-round. When noon in Dezhou: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Must try authentic Dezhou Braised Chicken (德州扒鸡). Solar Valley showcases renewable energy. Grand Canal history sites.',
+        transportation: 'High-speed rail hub on Beijing-Shanghai line. No local airport - use Jinan.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'liaocheng', city: 'Liaocheng', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 36.45, lng: 115.97, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.9M', metroPopulation: '6.1M', phoneCode: '+86 635', language: 'Mandarin',
+      climate: 'Humid continental with hot summers (27-32°C) and cold winters (-4 to 4°C). Four seasons.',
+      attractions: ['Dongchang Lake', 'Guangyue Tower', 'Shanshan Guild Hall', 'Ancient City Wall', 'Iron Pagoda', 'Haiyuan Pavilion', 'Shandong University Museum', 'Linqing Pagoda', 'Grand Canal Sites', 'Wuyang Ancient Town'],
+      demographics: 'Known as "Water City of the North" for its lakes and canals. Historic Grand Canal trading post. Traditional crafts center.',
+      seoContent: {
+        intro: 'Liaocheng, the "Water City of the North," operates on China Standard Time (CST/UTC+8). This city of 5.9 million is surrounded by Dongchang Lake and crisscrossed by canals, earning its nickname as the Venice of northern China.',
+        timezoneFacts: 'Same timezone as Beijing. Western Shandong, Grand Canal heritage.',
+        bestTimeToVisit: 'April-May and September-October for lake scenery. Summer for lotus flowers.',
+        businessHours: 'Standard 9 AM to 6 PM. Lake cruises available.',
+        timeDifference: 'Liaocheng is UTC+8 year-round. When noon in Liaocheng: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Dongchang Lake is China\'s largest urban lake. Climb Guangyue Tower for views. Traditional donkey meat cuisine.',
+        transportation: 'High-speed rail to Jinan. No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'jiaozuo', city: 'Jiaozuo', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 35.22, lng: 113.22, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.5M', metroPopulation: '3.7M', phoneCode: '+86 391', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-32°C) and cold winters (-2 to 5°C). Four seasons.',
+      attractions: ['Yuntai Mountain', 'Qinglong Gorge', 'Hongshi Gorge', 'Yuntai Waterfall', 'Zhuyu Peak', 'Jiaozuo Shadow Puppetry', 'Chenjiagou (Tai Chi birthplace)', 'Qingtian River', 'Shenlong Gorge', 'Yuntaishan Geopark'],
+      demographics: 'Gateway to Yuntai Mountain UNESCO Geopark. Birthplace of Chen-style Tai Chi in Chenjiagou village. Former coal mining center turned tourism hub.',
+      seoContent: {
+        intro: 'Jiaozuo, gateway to Yuntai Mountain, operates on China Standard Time (CST/UTC+8). This city of 3.5 million is home to the spectacular Yuntai Mountain UNESCO Global Geopark and Chenjiagou, the birthplace of Tai Chi.',
+        timezoneFacts: 'Same timezone as Beijing. Northern Henan at foot of Taihang Mountains.',
+        bestTimeToVisit: 'April-May and September-November for Yuntai Mountain. Avoid summer crowds and winter cold.',
+        businessHours: 'Standard 9 AM to 6 PM. Yuntai Mountain 6 AM to 6:30 PM (summer).',
+        timeDifference: 'Jiaozuo is UTC+8 year-round. When noon in Jiaozuo: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Yuntai Mountain has Asia\'s highest waterfall. Visit Chenjiagou for authentic Tai Chi lessons. Try local Si Da Huai medicinal dishes.',
+        transportation: 'High-speed rail to Zhengzhou. No local airport - use Zhengzhou.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'sanmenxia', city: 'Sanmenxia', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 34.77, lng: 111.20, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.3M', metroPopulation: '2.4M', phoneCode: '+86 398', language: 'Mandarin',
+      climate: 'Humid continental with hot summers (26-32°C) and cold winters (-3 to 5°C). Four seasons.',
+      attractions: ['Sanmenxia Dam', 'Swan Lake', 'Hangu Pass', 'Baolun Temple Pagoda', 'Diaoyu Terrace', 'Yellow River Scenic Area', 'Sanmenxia Museum', 'Xibaipo', 'Mianchi Ancient Town', 'Dayu Mythology Park'],
+      demographics: 'City where the Yellow River narrows through three gorges. Famous winter swan migration destination. Site of historic Hangu Pass.',
+      seoContent: {
+        intro: 'Sanmenxia, city of swans and gorges, operates on China Standard Time (CST/UTC+8). This city of 2.3 million is named for the three gorges of the Yellow River and has become famous for hosting thousands of migrating swans each winter.',
+        timezoneFacts: 'Same timezone as Beijing. Western Henan at junction with Shaanxi and Shanxi.',
+        bestTimeToVisit: 'November-February for swan watching. Spring and autumn for general tourism.',
+        businessHours: 'Standard 9 AM to 6 PM. Swan Lake parks open dawn to dusk in winter.',
+        timeDifference: 'Sanmenxia is UTC+8 year-round. When noon in Sanmenxia: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Swan Lake hosts 10,000+ swans November-March - spectacular! Hangu Pass is where Laozi wrote Tao Te Ching. Yellow River dam tours available.',
+        transportation: 'Sanmenxia Railway Station. Small airport with limited flights.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'pingdingshan', city: 'Pingdingshan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 33.74, lng: 113.19, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '4.9M', metroPopulation: '5.0M', phoneCode: '+86 375', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-32°C) and cold winters (-1 to 6°C). Four seasons.',
+      attractions: ['Zhongyue Temple', 'Shimantan Reservoir', 'Yaowangshan', 'Yaoshan Buddha', 'Baofeng Lake', 'Xiangshan Temple', 'Pingdingshan Museum', 'Ruzhou Ru Kiln Site', 'Jialu River', 'Coal Mine Museum'],
+      demographics: 'Major coal mining and industrial city. Home to Ru Kiln, one of China\'s five great Song dynasty kilns producing prized celadon.',
+      seoContent: {
+        intro: 'Pingdingshan, city of coal and celadon, operates on China Standard Time (CST/UTC+8). This city of 4.9 million was once China\'s major coal producer and is home to the legendary Ru Kiln, whose Song dynasty celadon is among the world\'s most valuable ceramics.',
+        timezoneFacts: 'Same timezone as Beijing. Central Henan, industrial heartland.',
+        bestTimeToVisit: 'April-May and September-October. Spring for mountain flowers.',
+        businessHours: 'Standard 9 AM to 6 PM. Ru Kiln museum 9 AM to 5 PM.',
+        timeDifference: 'Pingdingshan is UTC+8 year-round. When noon in Pingdingshan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Ru Kiln celadon is legendary - visit museum and workshops in Ruzhou. Giant Buddha at Yaoshan. Coal mining heritage sites.',
+        transportation: 'High-speed rail connections. No local airport - use Zhengzhou.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'zhoukou', city: 'Zhoukou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 33.63, lng: 114.65, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '8.7M', metroPopulation: '9.0M', phoneCode: '+86 394', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-33°C) and cold winters (-1 to 6°C). Four seasons.',
+      attractions: ['Taihao Mausoleum', 'Laozi Hometown', 'Guandimu', 'Shahe River Park', 'Zhoukou Museum', 'Huaiyang Ancient City', 'Nvwa Palace', 'Luyi Laozi Temple', 'Shenqiu Ancient Town', 'Fuxi Cultural Square'],
+      demographics: 'Birthplace of Chinese civilization mythology - Fuxi, Nvwa, and Shennong legendary figures. Laozi\'s hometown in Luyi County. Major agricultural center.',
+      seoContent: {
+        intro: 'Zhoukou, cradle of Chinese civilization, operates on China Standard Time (CST/UTC+8). This city of 8.7 million is the legendary birthplace of Fuxi (creator of I Ching) and Laozi (founder of Taoism), making it sacred to Chinese culture.',
+        timezoneFacts: 'Same timezone as Beijing. Eastern Henan, heart of the Central Plains.',
+        bestTimeToVisit: 'March-May for temple festivals. February for Taihao Festival (Fuxi worship).',
+        businessHours: 'Standard 9 AM to 6 PM. Temples open 8 AM to 6 PM.',
+        timeDifference: 'Zhoukou is UTC+8 year-round. When noon in Zhoukou: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Taihao Mausoleum Festival in February draws millions. Luyi County is Laozi\'s birthplace. Local cuisine features Huaiyang specialties.',
+        transportation: 'Zhoukou Xihua Airport. High-speed rail expanding.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Taihao Festival (Feb).'
+      }
+    }
+  },
+  { slug: 'shangqiu', city: 'Shangqiu', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 34.41, lng: 115.65, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '7.3M', metroPopulation: '7.6M', phoneCode: '+86 370', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-33°C) and cold winters (-2 to 5°C). Four seasons.',
+      attractions: ['Shangqiu Ancient City', 'Sui Dynasty Canal Site', 'Mausoleum of Emperor Gaozu of Tang', 'Yingtian Academy', 'Xueyuan Lake', 'Huangpi Ruins', 'Zhuangzi Temple', 'Baita Temple', 'Mangdang Mountain', 'Fire God Temple'],
+      demographics: 'One of China\'s oldest continuously inhabited cities. Origin of the Shang Dynasty. Birthplace of philosopher Zhuangzi.',
+      seoContent: {
+        intro: 'Shangqiu, birthplace of the Shang Dynasty, operates on China Standard Time (CST/UTC+8). This ancient city of 7.3 million gave its name to the Shang Dynasty and is the birthplace of Zhuangzi, one of Taoism\'s greatest philosophers.',
+        timezoneFacts: 'Same timezone as Beijing. Eastern Henan, at junction of four provinces.',
+        bestTimeToVisit: 'April-May and September-October for pleasant weather.',
+        businessHours: 'Standard 9 AM to 6 PM. Ancient city sites 8 AM to 6 PM.',
+        timeDifference: 'Shangqiu is UTC+8 year-round. When noon in Shangqiu: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Ancient walled city well-preserved. Yingtian Academy was Song dynasty\'s top school. Zhuangzi Temple in Minquan County.',
+        transportation: 'Major high-speed rail junction. Shangqiu Airport expanding.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'puyang', city: 'Puyang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 35.76, lng: 114.98, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.6M', metroPopulation: '3.8M', phoneCode: '+86 393', language: 'Mandarin',
+      climate: 'Humid continental with hot summers (27-32°C) and cold winters (-4 to 4°C). Four seasons.',
+      attractions: ['Dragon Bone Mosaic Site', 'Cang Jie Temple', 'Puyang Museum', 'Zhongyuan Oilfield', 'Yellow River Wetland', 'Dipi Mountain', 'Zhang Clan Ancestral Hall', 'Qingfeng Ancient City', 'Nanle Ancient Town', 'Puyang Acrobatics Theatre'],
+      demographics: 'Site of the world\'s oldest dragon image (6,400 years old). Birthplace of legendary Cang Jie who invented Chinese characters. Major oil production center.',
+      seoContent: {
+        intro: 'Puyang, city of the first dragon, operates on China Standard Time (CST/UTC+8). This city of 3.6 million is home to the world\'s oldest dragon mosaic (6,400 years) and celebrates Cang Jie, the legendary inventor of Chinese characters.',
+        timezoneFacts: 'Same timezone as Beijing. Northeastern Henan, Yellow River region.',
+        bestTimeToVisit: 'April-May and September-October. Dragon Festival celebrations in spring.',
+        businessHours: 'Standard 9 AM to 6 PM. Museums 9 AM to 5 PM.',
+        timeDifference: 'Puyang is UTC+8 year-round. When noon in Puyang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'See the 6,400-year-old dragon mosaic at museum. Cang Jie Temple honors writing\'s inventor. Famous for acrobatics performances.',
+        transportation: 'High-speed rail to Zhengzhou. No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'hebi', city: 'Hebi', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 35.75, lng: 114.30, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '1.6M', metroPopulation: '1.7M', phoneCode: '+86 392', language: 'Mandarin',
+      climate: 'Humid continental with hot summers (27-32°C) and cold winters (-4 to 4°C). Four seasons.',
+      attractions: ['Yunmeng Mountain', 'Qibin District Ancient Town', 'Qi River Scenic Area', 'Dapi Mountain', 'Xunxian Ancient Town', 'Hebi Cherry Blossom Park', 'Coal Mine Heritage', 'Sankangcun', 'Qi State Ruins', 'Hebi Museum'],
+      demographics: 'Ancient heartland of the State of Qi. One of China\'s cleanest cities - pioneering model city. Former coal mining turned eco-city.',
+      seoContent: {
+        intro: 'Hebi, China\'s model eco-city, operates on China Standard Time (CST/UTC+8). This compact city of 1.6 million has transformed from coal mining to become one of China\'s cleanest and most livable cities, winning national awards for urban planning.',
+        timezoneFacts: 'Same timezone as Beijing. Northern Henan, compact modern city.',
+        bestTimeToVisit: 'March-May for cherry blossoms. September-October for autumn colors.',
+        businessHours: 'Standard 9 AM to 6 PM. Parks open dawn to dusk.',
+        timeDifference: 'Hebi is UTC+8 year-round. When noon in Hebi: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Cherry Blossom Festival in March-April is spectacular. Yunmeng Mountain for hiking. Ancient Qi State history at Xunxian.',
+        transportation: 'High-speed rail to Zhengzhou (1 hour). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'luohe', city: 'Luohe', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 33.57, lng: 114.02, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.8M', metroPopulation: '2.9M', phoneCode: '+86 395', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-33°C) and cold winters (-1 to 6°C). Four seasons.',
+      attractions: ['Jiahu Archaeological Site', 'Sha River Park', 'Luohe Museum', 'Shuanghui Industrial Tourism', 'Xuchang Memorial Hall', 'Shaoling Temple', 'Luohe Riverside', 'Kaishan Temple', 'Leili Statue', 'Ancient Salt Well'],
+      demographics: 'Home to the 9,000-year-old Jiahu site with world\'s oldest wine and flutes. Headquarters of Shuanghui, China\'s largest meat processor.',
+      seoContent: {
+        intro: 'Luohe, cradle of ancient civilization, operates on China Standard Time (CST/UTC+8). This city of 2.8 million is home to Jiahu, a 9,000-year-old site that yielded the world\'s oldest playable musical instruments and evidence of wine production.',
+        timezoneFacts: 'Same timezone as Beijing. Central Henan, on Sha and Li rivers.',
+        bestTimeToVisit: 'April-May and September-October for pleasant weather.',
+        businessHours: 'Standard 9 AM to 6 PM. Archaeological museum 9 AM to 5 PM.',
+        timeDifference: 'Luohe is UTC+8 year-round. When noon in Luohe: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Jiahu site has 9,000-year-old artifacts including bone flutes. Shuanghui factory tours available. River walks pleasant.',
+        transportation: 'High-speed rail hub. No local airport - use Zhengzhou.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'xuchang', city: 'Xuchang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 34.04, lng: 113.85, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '4.4M', metroPopulation: '4.6M', phoneCode: '+86 374', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-33°C) and cold winters (-1 to 6°C). Four seasons.',
+      attractions: ['Cao Cao Memorial Hall', 'Ba Ling Bridge', 'Spring Autumn Tower', 'Xuchang Museum', 'Cao Cao\'s Tomb (Gaoling)', 'Yuzhou Jun Porcelain Kiln', 'Flower Market', 'Cao Ren Temple', 'West Lake Park', 'Pei County Ruins'],
+      demographics: 'Three Kingdoms capital where Cao Cao hosted Emperor Xian. World\'s largest wig production center. Famous for Jun porcelain.',
+      seoContent: {
+        intro: 'Xuchang, Cao Cao\'s Three Kingdoms capital, operates on China Standard Time (CST/UTC+8). This city of 4.4 million was the power base of warlord Cao Cao and is now famous for Jun porcelain and producing 70% of the world\'s wigs.',
+        timezoneFacts: 'Same timezone as Beijing. Central Henan, rich Three Kingdoms history.',
+        bestTimeToVisit: 'April-May for spring flowers. September-October for Jun porcelain festival.',
+        businessHours: 'Standard 9 AM to 6 PM. Three Kingdoms sites 8:30 AM to 5:30 PM.',
+        timeDifference: 'Xuchang is UTC+8 year-round. When noon in Xuchang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Three Kingdoms history everywhere - Cao Cao sites essential. Visit Yuzhou for Jun porcelain kilns. World\'s wig capital!',
+        transportation: 'High-speed rail to Zhengzhou (20 min). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'zhumadian', city: 'Zhumadian', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 32.98, lng: 114.02, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '7.0M', metroPopulation: '7.2M', phoneCode: '+86 396', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-33°C) and cold winters (0-6°C). Four seasons, transitional climate.',
+      attractions: ['Chaya Mountain', 'Nanhai Temple', 'Suiping Liu Ji Ancestral Temple', 'Queshan Hot Springs', 'Zhumadian Museum', 'Tianzhong Mountain', 'Tongling Mountain', 'Ru\'nan Ancient City', 'Yicheng Ancient Town', 'Laojun Mountain'],
+      demographics: 'Heart of the Central Plains, known as Tianzhong (Center of Heaven). Agricultural heartland. Birthplace of Pan Gu creation mythology.',
+      seoContent: {
+        intro: 'Zhumadian, Center of Heaven, operates on China Standard Time (CST/UTC+8). This city of 7 million is named Tianzhong (天中) meaning "Center of Heaven" - ancient Chinese believed this was the exact center of the world under heaven.',
+        timezoneFacts: 'Same timezone as Beijing. Southern Henan, geographic center of ancient China.',
+        bestTimeToVisit: 'April-May and September-October. Spring for mountain flowers.',
+        businessHours: 'Standard 9 AM to 6 PM. Temples open 8 AM to 6 PM.',
+        timeDifference: 'Zhumadian is UTC+8 year-round. When noon in Zhumadian: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Chaya Mountain for hiking and temples. Queshan has ancient hot springs. "Tianzhong" marker at geographic center.',
+        transportation: 'High-speed rail to Wuhan and Zhengzhou. No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'jiyuan', city: 'Jiyuan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 35.07, lng: 112.60, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.73M', metroPopulation: '0.75M', phoneCode: '+86 391', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (26-32°C) and cold winters (-2 to 5°C). Four seasons.',
+      attractions: ['Wangwu Mountain', 'Jidukou Reservoir', 'Yellow River Sanmenxia Dam', 'Yugong\'s Hometown', 'Wangwu Temple', 'Xiaolang Bottom', 'Jiyuan Museum', 'Dongyuan Ancient Village', 'Baiquan Lake', 'Taihang Grand Canyon (nearby)'],
+      demographics: 'Hometown of Yugong, the legendary old man who moved mountains. At the source of the Ji River (one of China\'s four great rivers). Sacred Wangwu Mountain.',
+      seoContent: {
+        intro: 'Jiyuan, home of the man who moved mountains, operates on China Standard Time (CST/UTC+8). This compact city of 730,000 is the legendary hometown of Yugong, whose fable about persistence in moving mountains is known to every Chinese child.',
+        timezoneFacts: 'Same timezone as Beijing. Northwestern Henan, Taihang Mountain region.',
+        bestTimeToVisit: 'April-May and September-October for mountain hiking. Autumn colors spectacular.',
+        businessHours: 'Standard 9 AM to 6 PM. Wangwu Mountain 7 AM to 6 PM.',
+        timeDifference: 'Jiyuan is UTC+8 year-round. When noon in Jiyuan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Wangwu Mountain is Taoist holy site - Tiantan Peak essential. Yugong story immortalized here. Xiaolang Bottom for Yellow River views.',
+        transportation: 'Train connections available. No local airport - use Zhengzhou.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'anyang', city: 'Anyang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 36.10, lng: 114.39, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.5M', metroPopulation: '5.7M', phoneCode: '+86 372', language: 'Mandarin',
+      climate: 'Humid continental with hot summers (27-32°C) and cold winters (-4 to 4°C). Four seasons.',
+      attractions: ['Yin Ruins (UNESCO)', 'Chinese Writing Museum', 'Red Flag Canal', 'Taihang Grand Canyon', 'Yue Fei Temple', 'Youli City', 'Anyang Museum', 'Linzhou Grand Canyon', 'Wanfo Gully', 'Cao Cao Mausoleum'],
+      demographics: 'Last capital of Shang Dynasty (1300-1046 BC). Birthplace of Chinese writing - oracle bone inscriptions found here. Red Flag Canal engineering marvel.',
+      seoContent: {
+        intro: 'Anyang, birthplace of Chinese writing, operates on China Standard Time (CST/UTC+8). This city of 5.5 million is home to the UNESCO-listed Yin Ruins, the last Shang Dynasty capital where oracle bone scripts - the origin of Chinese characters - were discovered.',
+        timezoneFacts: 'Same timezone as Beijing. Northern Henan, ancient cultural heartland.',
+        bestTimeToVisit: 'April-May and September-October. Summer for Taihang Grand Canyon.',
+        businessHours: 'Standard 9 AM to 6 PM. Yin Ruins 8 AM to 6 PM.',
+        timeDifference: 'Anyang is UTC+8 year-round. When noon in Anyang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Yin Ruins UNESCO site is essential - see oracle bones. Chinese Writing Museum is world-class. Red Flag Canal shows 1960s engineering spirit.',
+        transportation: 'High-speed rail to Beijing and Zhengzhou. Anyang Airport expanding.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'ezhou', city: 'Ezhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.39, lng: 114.89, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '1.1M', metroPopulation: '1.2M', phoneCode: '+86 711', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (28-34°C) and cold winters (2-7°C). Rainy spring.',
+      attractions: ['Xishansi Temple', 'Guanyin Pavilion', 'Ezhou Museum', 'Liangzi Lake', 'Lotus Island', 'Ancient City Wall', 'Fan Tower', 'Wuchang Fish Origin', 'Ezhou Wetland', 'Guishan Temple'],
+      demographics: 'Ancient Wu Kingdom capital. Birthplace of the famous Wuchang fish. Now home to Ezhou Huahu Airport, Asia\'s largest cargo hub.',
+      seoContent: {
+        intro: 'Ezhou, home of Wuchang fish, operates on China Standard Time (CST/UTC+8). This compact city of 1.1 million is the origin of the famed Wuchang fish and now hosts Ezhou Huahu Airport, being developed as Asia\'s largest cargo aviation hub.',
+        timezoneFacts: 'Same timezone as Beijing. Eastern Hubei, on Yangtze River opposite Wuhan.',
+        bestTimeToVisit: 'March-May and September-November. Summer hot and humid.',
+        businessHours: 'Standard 9 AM to 6 PM. Lake cruises available.',
+        timeDifference: 'Ezhou is UTC+8 year-round. When noon in Ezhou: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Try authentic Wuchang fish (武昌鱼) - Mao Zedong\'s favorite. Liangzi Lake is scenic. New cargo airport transforming the city.',
+        transportation: 'Ezhou Huahu Airport (for cargo, expanding passenger). Metro to Wuhan. High-speed rail.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'xiaogan', city: 'Xiaogan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.92, lng: 113.92, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '4.9M', metroPopulation: '5.1M', phoneCode: '+86 712', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (28-34°C) and cold winters (1-7°C). Rainy spring.',
+      attractions: ['Dong Yong Filial Piety Park', 'Shuanfeng Mountain', 'Xiaogan Museum', 'Tianxian Ancient Town', 'Maling Mountain', 'Hanchuan Lotus Lake', 'Xiaogan Confucian Temple', 'Yingcheng Hot Springs', 'Dawu Temple', 'Rice Culture Museum'],
+      demographics: 'Named for the legend of Dong Yong, exemplar of filial piety (孝感 = moved by filial piety). Agricultural center famous for sesame candy and rice wine.',
+      seoContent: {
+        intro: 'Xiaogan, city of filial piety, operates on China Standard Time (CST/UTC+8). This city of 4.9 million is named after the legend of Dong Yong, whose filial devotion moved the heavens - 孝感 literally means "moved by filial piety."',
+        timezoneFacts: 'Same timezone as Beijing. Central Hubei, north of Wuhan.',
+        bestTimeToVisit: 'March-May and September-November. Spring for lotus and summer for hot springs.',
+        businessHours: 'Standard 9 AM to 6 PM. Hot springs evening hours.',
+        timeDifference: 'Xiaogan is UTC+8 year-round. When noon in Xiaogan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Legend of Dong Yong celebrated at theme park. Try Xiaogan sesame candy (孝感麻糖). Yingcheng hot springs nearby.',
+        transportation: 'High-speed rail to Wuhan (20 min). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming (filial piety theme), Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'huanggang', city: 'Huanggang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.45, lng: 114.87, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '6.3M', metroPopulation: '6.5M', phoneCode: '+86 713', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (28-34°C) and cold winters (1-7°C). Rainy spring.',
+      attractions: ['Chibi Ancient Battlefield', 'Wuzu Temple', 'Qiyun Mountain', 'Dongpo Red Cliff', 'Li Shizhen Memorial', 'Huanggang Museum', 'Luotian Tianma Mountain', 'Yingshan Hot Springs', 'Dabie Mountain', 'Huangmei Opera Town'],
+      demographics: 'Famous for Huanggang High School, China\'s top academic institution. Birthplace of Li Shizhen, author of Comperta Materia Medica. Chibi (Red Cliffs) battle site.',
+      seoContent: {
+        intro: 'Huanggang, city of scholars, operates on China Standard Time (CST/UTC+8). This city of 6.3 million is famous for Huanggang High School\'s legendary academic results and as birthplace of Li Shizhen, whose 1578 medical encyclopedia remains influential.',
+        timezoneFacts: 'Same timezone as Beijing. Eastern Hubei, Dabie Mountain region.',
+        bestTimeToVisit: 'March-May and September-November. Autumn in Dabie Mountains spectacular.',
+        businessHours: 'Standard 9 AM to 6 PM. Historical sites 8:30 AM to 5:30 PM.',
+        timeDifference: 'Huanggang is UTC+8 year-round. When noon in Huanggang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Li Shizhen Memorial in Qichun essential for TCM enthusiasts. Dongpo Red Cliff for Su Shi poetry. Huangmei opera originated here.',
+        transportation: 'High-speed rail to Wuhan. No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'suizhou', city: 'Suizhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 31.69, lng: 113.38, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.2M', metroPopulation: '2.3M', phoneCode: '+86 722', language: 'Mandarin',
+      climate: 'Humid subtropical with hot summers (27-33°C) and mild winters (1-7°C). Four seasons.',
+      attractions: ['Zenghouyi Tomb', 'Shennong Altar', 'Dahongshan Scenic Area', 'Suizhou Museum', 'Yandi Shennong Hometown', 'Leizu Hometown', 'Qianhe Ancient Town', 'Tongbai Mountain', 'Suixian Ancient City', 'Bianzhong Concert Hall'],
+      demographics: 'Birthplace of Shennong (Divine Farmer) and Leizu (silk inventor). Tomb of Marquis Yi yielded the 2,400-year-old bianzhong (bronze bells).',
+      seoContent: {
+        intro: 'Suizhou, birthplace of Shennong, operates on China Standard Time (CST/UTC+8). This city of 2.2 million is the legendary hometown of Shennong who taught agriculture and medicine, and home to the spectacular 2,400-year-old bianzhong bronze bells.',
+        timezoneFacts: 'Same timezone as Beijing. Northern Hubei, cultural heartland.',
+        bestTimeToVisit: 'April for Shennong Festival. September-October for pleasant weather.',
+        businessHours: 'Standard 9 AM to 6 PM. Shennong Altar 8 AM to 6 PM.',
+        timeDifference: 'Suizhou is UTC+8 year-round. When noon in Suizhou: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Bianzhong bells at Hubei Museum are replicas - originals in Wuhan. Shennong Festival in April draws millions. Leizu invented silk here.',
+        transportation: 'High-speed rail to Wuhan (40 min). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Shennong Festival (Apr).'
+      }
+    }
+  },
+  { slug: 'shiyan', city: 'Shiyan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 32.65, lng: 110.78, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.2M', metroPopulation: '3.5M', phoneCode: '+86 719', language: 'Mandarin',
+      climate: 'Humid subtropical with warm summers (24-30°C) and cold winters (-1 to 6°C). Mountain climate.',
+      attractions: ['Wudang Mountain (UNESCO)', 'Danjiangkou Reservoir', 'Shennongjia (nearby)', 'Purple Cloud Palace', 'Nanyan Palace', 'Golden Hall', 'Shiyan Museum', 'Dongfeng Motor City', 'Yun County Dinosaur Museum', 'Fang County Wild Man Area'],
+      demographics: 'Gateway to sacred Wudang Mountain, birthplace of Tai Chi and Taoist martial arts. Home to Dongfeng Motor, major automaker. Water source for South-North Water Transfer.',
+      seoContent: {
+        intro: 'Shiyan, gateway to Wudang Mountain, operates on China Standard Time (CST/UTC+8). This city of 3.2 million guards the UNESCO-listed Wudang Mountain, the sacred Taoist site where Zhang Sanfeng created Tai Chi, and hosts Dongfeng Motor headquarters.',
+        timezoneFacts: 'Same timezone as Beijing. Northwestern Hubei, mountainous region.',
+        bestTimeToVisit: 'April-May and September-October for Wudang. Avoid summer heat on mountain.',
+        businessHours: 'Standard 9 AM to 6 PM. Wudang Mountain 7 AM to 5 PM.',
+        timeDifference: 'Shiyan is UTC+8 year-round. When noon in Shiyan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Wudang Mountain is Tai Chi birthplace - martial arts schools available. Golden Hall at summit is spectacular. Dongfeng factory tours possible.',
+        transportation: 'Wudangshan Airport (WDS). High-speed rail to Wuhan.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'enshi', city: 'Enshi', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.27, lng: 109.49, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.85M', metroPopulation: '4.0M', phoneCode: '+86 718', language: 'Mandarin, Tujia',
+      climate: 'Humid subtropical with cool summers (22-28°C) and mild winters (2-8°C). Mountain climate, misty.',
+      attractions: ['Enshi Grand Canyon', 'Tenglong Cave', 'Mufu Grand Canyon', 'Tujia Girl City', 'Enshi Tusi City', 'Qingjiang Gallery', 'Pingshan Canyon', 'Shibanling', 'Xianfeng Ancient Town', 'Selenium Tea Gardens'],
+      demographics: 'Capital of Enshi Tujia and Miao Autonomous Prefecture. Stunning karst canyons. Known as "World Selenium Capital" for selenium-rich soil producing health foods.',
+      seoContent: {
+        intro: 'Enshi, the "Chinese Grand Canyon," operates on China Standard Time (CST/UTC+8). This mountainous city of 850,000 is home to spectacular karst canyons rivaling the Grand Canyon, unique Tujia minority culture, and the world\'s richest selenium-containing soil.',
+        timezoneFacts: 'Same timezone as Beijing. Southwestern Hubei, mountainous autonomous region.',
+        bestTimeToVisit: 'April-October for canyon visits. Summer cool escape. Autumn colors spectacular.',
+        businessHours: 'Standard 9 AM to 6 PM. Canyon tours 7:30 AM to 4 PM.',
+        timeDifference: 'Enshi is UTC+8 year-round. When noon in Enshi: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Enshi Grand Canyon is stunning - glass walkway thrilling. Try selenium-rich foods (tea, rice). Tujia culture shows available. Cool summer destination.',
+        transportation: 'Enshi Xujiaping Airport (ENH). High-speed rail to Wuhan and Chongqing.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Tujia festivals.'
+      }
+    }
+  },
+  
+  // China - New Cities Batch 3 (20 cities with full premium content)
+  { slug: 'qujing', city: 'Qujing', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 25.49, lng: 103.80, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.8M', metroPopulation: '6.1M', phoneCode: '+86 874', language: 'Mandarin',
+      climate: 'Subtropical highland with mild summers (19-25°C) and cool winters (5-12°C). Year-round spring.',
+      attractions: ['Luoping Rapeseed Fields', 'Jiulong Waterfall', 'Duoyi River', 'Qujing Museum', 'Zhujiang Yuan', 'Fenghuang Valley', 'Shizong Phoenix Valley', 'Pearl River Source', 'Malong Rose Garden', 'Shibao Mountain'],
+      demographics: 'Second largest city in Yunnan. Source of the Pearl River. Famous for stunning spring rapeseed flower fields in Luoping that draw millions.',
+      seoContent: {
+        intro: 'Qujing, city of golden rapeseed fields, operates on China Standard Time (CST/UTC+8). This city of 5.8 million is home to the spectacular Luoping rapeseed fields, where millions of golden flowers bloom each spring creating one of China\'s most iconic landscapes.',
+        timezoneFacts: 'Same timezone as Beijing. Eastern Yunnan plateau, source of Pearl River.',
+        bestTimeToVisit: 'February-March for rapeseed flowers - absolutely essential! Autumn also pleasant.',
+        businessHours: 'Standard 9 AM to 6 PM. Flower fields accessible dawn to dusk.',
+        timeDifference: 'Qujing is UTC+8 year-round. When noon in Qujing: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Luoping rapeseed blooms Feb-Mar - don\'t miss it! Jiulong Waterfall is spectacular. Visit Pearl River source at Zhanyi.',
+        transportation: 'High-speed rail to Kunming (30 min). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'yuxi', city: 'Yuxi', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 24.35, lng: 102.55, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.3M', metroPopulation: '2.4M', phoneCode: '+86 877', language: 'Mandarin, Yi',
+      climate: 'Subtropical highland with mild summers (20-26°C) and cool winters (7-15°C). Eternal spring.',
+      attractions: ['Fuxian Lake', 'Hongta Group', 'Nie\'er Hometown', 'Yuxi Museum', 'Xinping Huashan', 'Tonghai Ancient Town', 'Ailao Mountain', 'Yuanjiang Hot Springs', 'Chengjiang Fossil Site', 'Fuxian Lake Underwater Ruins'],
+      demographics: 'Headquarters of Hongta Group (Yuxi cigarettes), China\'s tobacco capital. Home to Fuxian Lake, China\'s deepest freshwater lake with mysterious underwater ruins.',
+      seoContent: {
+        intro: 'Yuxi, China\'s tobacco capital, operates on China Standard Time (CST/UTC+8). This city of 2.3 million is headquarters of Hongta Group and home to Fuxian Lake, China\'s deepest freshwater lake where mysterious underwater ruins hint at an ancient civilization.',
+        timezoneFacts: 'Same timezone as Beijing. Central Yunnan plateau.',
+        bestTimeToVisit: 'Year-round pleasant. Summer for Fuxian Lake swimming. Spring for flowers.',
+        businessHours: 'Standard 9 AM to 6 PM. Fuxian Lake resorts open year-round.',
+        timeDifference: 'Yuxi is UTC+8 year-round. When noon in Yuxi: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Fuxian Lake water is crystal clear - underwater ruins mystery. Nie\'er (national anthem composer) museum here. Tobacco industry tours available.',
+        transportation: 'High-speed rail to Kunming (20 min). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'baoshan', city: 'Baoshan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 25.11, lng: 99.16, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.4M', metroPopulation: '2.6M', phoneCode: '+86 875', language: 'Mandarin',
+      climate: 'Subtropical highland with warm summers (20-27°C) and mild winters (8-18°C). Pleasant year-round.',
+      attractions: ['Tengchong Hot Springs', 'Heshun Ancient Town', 'Rehai Volcanic Park', 'Gaoligong Mountain', 'National Cemetery of Expeditionary Forces', 'Baoshan Museum', 'Longling Ancient Town', 'Changning Wanda Hot Springs', 'Yiluo River', 'Burma Road Sites'],
+      demographics: 'Historic gateway on ancient Southern Silk Road (Burma Road). Famous for geothermal hot springs at Tengchong. WWII history center - Chinese Expeditionary Force fought here.',
+      seoContent: {
+        intro: 'Baoshan, gateway on the Burma Road, operates on China Standard Time (CST/UTC+8). This city of 2.4 million guards the historic Southern Silk Road and features spectacular volcanic hot springs at Tengchong and poignant WWII history sites.',
+        timezoneFacts: 'Same timezone as Beijing. Western Yunnan near Myanmar border.',
+        bestTimeToVisit: 'October-April for pleasant weather. Hot springs enjoyable year-round.',
+        businessHours: 'Standard 9 AM to 6 PM. Hot springs open late.',
+        timeDifference: 'Baoshan is UTC+8 year-round. When noon in Baoshan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Tengchong hot springs are world-class - Rehai has boiling geysers. Heshun is beautiful ancient town. WWII cemetery very moving.',
+        transportation: 'Baoshan Yunrui Airport (BSD). Drive to Tengchong 2 hours.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'zhaotong', city: 'Zhaotong', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 27.34, lng: 103.72, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.1M', metroPopulation: '5.3M', phoneCode: '+86 870', language: 'Mandarin',
+      climate: 'Subtropical highland with cool summers (18-24°C) and cold winters (0-8°C). Mountain climate.',
+      attractions: ['Dashanbao Black-necked Crane Reserve', 'Dousha Pass', 'Yanjin Hanging Temple', 'Zhaotong Museum', 'Wumeng Mountain', 'Xiaozishan', 'Salt Road Ancient Sites', 'Dashanbao Wetland', 'Shuifu Port', 'Dianchi Source'],
+      demographics: 'One of Yunnan\'s poorest but most scenic regions. Winter home to rare black-necked cranes. Historic "Salt Road" trade route.',
+      seoContent: {
+        intro: 'Zhaotong, home of the black-necked cranes, operates on China Standard Time (CST/UTC+8). This mountainous city of 5.1 million hosts thousands of rare black-necked cranes each winter at Dashanbao, one of the world\'s most important crane habitats.',
+        timezoneFacts: 'Same timezone as Beijing. Northeastern Yunnan, high altitude.',
+        bestTimeToVisit: 'November-March for black-necked crane watching. Summer for mountain escape.',
+        businessHours: 'Standard 9 AM to 6 PM. Crane reserve dawn to dusk.',
+        timeDifference: 'Zhaotong is UTC+8 year-round. When noon in Zhaotong: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Black-necked cranes arrive November, peak in January. Dashanbao at 3,000m is cold - dress warmly. Apple orchards famous.',
+        transportation: 'Zhaotong Airport (ZAT). Limited high-speed rail.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'liupanshui', city: 'Liupanshui', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 26.59, lng: 104.83, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.0M', metroPopulation: '3.2M', phoneCode: '+86 858', language: 'Mandarin, Miao',
+      climate: 'Subtropical highland with cool summers (17-23°C) and mild winters (3-10°C). "Cool Capital of China".',
+      attractions: ['Wumeng Prairie', 'Yushe National Forest Park', 'Maling River Canyon', 'Danxia Mountain', 'Zhijin Cave', 'Liupanshui Museum', 'Shuicheng Ancient Town', 'Langdai Ancient Town', 'Caohai Lake', 'Miao Villages'],
+      demographics: 'Known as the "Cool Capital of China" for its pleasant summer climate. Major coal mining region transformed into eco-tourism destination.',
+      seoContent: {
+        intro: 'Liupanshui, the "Cool Capital of China," operates on China Standard Time (CST/UTC+8). This city of 3 million enjoys average summer temperatures of just 19°C, making it China\'s premier summer escape destination with stunning Wumeng Prairie landscapes.',
+        timezoneFacts: 'Same timezone as Beijing. Western Guizhou plateau, high altitude.',
+        bestTimeToVisit: 'June-August for cool summer escape. Year-round pleasant for most.',
+        businessHours: 'Standard 9 AM to 6 PM. Prairie tours available.',
+        timeDifference: 'Liupanshui is UTC+8 year-round. When noon in Liupanshui: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Perfect summer escape - average 19°C in July! Wumeng Prairie for horseback riding. Miao minority villages for culture.',
+        transportation: 'Liupanshui Yuezhao Airport (LPF). High-speed rail connections.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'anshun', city: 'Anshun', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 26.25, lng: 105.95, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.3M', metroPopulation: '2.5M', phoneCode: '+86 853', language: 'Mandarin, Buyi',
+      climate: 'Subtropical highland with mild summers (20-26°C) and cool winters (5-12°C). Pleasant year-round.',
+      attractions: ['Huangguoshu Waterfall', 'Dragon Palace Cave', 'Tianlong Tunpu', 'Zhijin Cave', 'Getu River', 'Anshun Confucian Temple', 'Shitouzhai', 'Batik Museum', 'Tianxing Bridge', 'Tunpu Ancient Villages'],
+      demographics: 'Gateway to Huangguoshu, Asia\'s largest waterfall. Home to unique Tunpu culture - Ming Dynasty military settlements preserved for 600 years.',
+      seoContent: {
+        intro: 'Anshun, gateway to Asia\'s largest waterfall, operates on China Standard Time (CST/UTC+8). This city of 2.3 million is home to magnificent Huangguoshu Waterfall (77.8m high, 101m wide) and unique Tunpu villages preserving 600-year-old Ming Dynasty culture.',
+        timezoneFacts: 'Same timezone as Beijing. Central Guizhou plateau.',
+        bestTimeToVisit: 'May-October for waterfall at full flow. June-August peak season.',
+        businessHours: 'Standard 9 AM to 6 PM. Huangguoshu 7:30 AM to 6 PM.',
+        timeDifference: 'Anshun is UTC+8 year-round. When noon in Anshun: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Huangguoshu Waterfall is spectacular - can walk behind it! Dragon Palace Cave boat ride magical. Tunpu villages for authentic Ming culture.',
+        transportation: 'Anshun Huangguoshu Airport (AVA). High-speed rail to Guiyang (30 min).',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'bijie', city: 'Bijie', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 27.30, lng: 105.29, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '6.5M', metroPopulation: '6.9M', phoneCode: '+86 857', language: 'Mandarin, Yi, Miao',
+      climate: 'Subtropical highland with cool summers (18-24°C) and cold winters (1-8°C). Mountain climate.',
+      attractions: ['Baili Azalea Forest', 'Zhijin Cave', 'Caohai Lake', 'Jiucaiping Prairie', 'Wujiang River Canyon', 'Bijie Museum', 'Qianxi Ancient Town', 'Weining Grassland', 'Yinhe Cave', 'Yi Torch Festival Sites'],
+      demographics: 'Home to Baili Azalea, world\'s largest natural azalea forest (125 sq km). Major Yi and Miao minority area. One of China\'s poorest regions undergoing transformation.',
+      seoContent: {
+        intro: 'Bijie, home of the world\'s largest azalea forest, operates on China Standard Time (CST/UTC+8). This city of 6.5 million features Baili Azalea, a spectacular 125 sq km natural azalea forest that blooms in a riot of colors each spring.',
+        timezoneFacts: 'Same timezone as Beijing. Northwestern Guizhou, high plateau.',
+        bestTimeToVisit: 'March-May for azalea blooming - don\'t miss it! July for Yi Torch Festival.',
+        businessHours: 'Standard 9 AM to 6 PM. Baili Azalea 8 AM to 6 PM.',
+        timeDifference: 'Bijie is UTC+8 year-round. When noon in Bijie: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Baili Azalea blooms March-May - 125 sq km of flowers! Yi Torch Festival in July spectacular. Zhijin Cave is China\'s most beautiful.',
+        transportation: 'Bijie Feixiong Airport (BFJ). High-speed rail connections.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Yi Torch Festival.'
+      }
+    }
+  },
+  { slug: 'tongren', city: 'Tongren', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 27.72, lng: 109.19, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.1M', metroPopulation: '3.3M', phoneCode: '+86 856', language: 'Mandarin, Dong, Miao',
+      climate: 'Subtropical with warm summers (24-30°C) and mild winters (3-10°C). Humid and misty.',
+      attractions: ['Fanjing Mountain (UNESCO)', 'Jiulong Cave', 'Zhongnan Gate', 'Tongren Ancient Town', 'Yinjiang Dong Villages', 'Shiqian Hot Springs', 'Songtao Miao Villages', 'Wuling Mountain', 'Wanshan Mercury Mines', 'Wujiang River'],
+      demographics: 'Gateway to UNESCO-listed Fanjing Mountain, sacred Buddhist peak with endemic golden monkeys. Historic mercury mining center.',
+      seoContent: {
+        intro: 'Tongren, gateway to sacred Fanjing Mountain, operates on China Standard Time (CST/UTC+8). This city of 3.1 million guards UNESCO-listed Fanjing Mountain, a sacred Buddhist peak home to the rare Guizhou golden monkey and stunning cloud-sea landscapes.',
+        timezoneFacts: 'Same timezone as Beijing. Eastern Guizhou, Wuling Mountain region.',
+        bestTimeToVisit: 'April-October for Fanjing Mountain. Spring and autumn best for clear skies.',
+        businessHours: 'Standard 9 AM to 6 PM. Fanjing Mountain 8 AM to 4 PM.',
+        timeDifference: 'Tongren is UTC+8 year-round. When noon in Tongren: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Fanjing Mountain is spectacular - book ahead! Cloud sea at sunrise magical. Golden monkeys rare sight. Mushroom-shaped peak is iconic.',
+        transportation: 'Tongren Fenghuang Airport (TEN). High-speed rail to Changsha.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'qianxinan', city: 'Xingyi', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 25.09, lng: 104.90, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.8M', metroPopulation: '3.0M', phoneCode: '+86 859', language: 'Mandarin, Buyi, Miao',
+      climate: 'Subtropical with warm summers (23-29°C) and mild winters (6-14°C). Pleasant year-round.',
+      attractions: ['Wanfenglin (Forest of Ten Thousand Peaks)', 'Maling River Gorge', 'Wanfeng Lake', 'Buyi Stone Village', 'Jiulong Waterfall Group', 'Xingyi Museum', 'Ceheng Buyi Villages', 'Nahui Dong Village', 'Beipan River', 'Shuangru Peak'],
+      demographics: 'Capital of Qianxinan Buyi and Miao Autonomous Prefecture. Home to Wanfenglin, one of China\'s most spectacular karst landscapes with 20,000+ cone-shaped peaks.',
+      seoContent: {
+        intro: 'Xingyi, city of ten thousand peaks, operates on China Standard Time (CST/UTC+8). This city of 2.8 million is gateway to Wanfenglin, an extraordinary landscape of over 20,000 karst peaks stretching to the horizon - one of China\'s most surreal natural wonders.',
+        timezoneFacts: 'Same timezone as Beijing. Southwestern Guizhou, near Yunnan border.',
+        bestTimeToVisit: 'Year-round pleasant. Spring for green terraces. Autumn for golden rice.',
+        businessHours: 'Standard 9 AM to 6 PM. Wanfenglin scenic areas 8 AM to 6 PM.',
+        timeDifference: 'Xingyi is UTC+8 year-round. When noon in Xingyi: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Wanfenglin sunset views incredible - thousands of peaks! Maling Gorge for rafting. Buyi villages for authentic minority culture.',
+        transportation: 'Xingyi Wanfenglin Airport (ACX). Limited rail connections.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'kaili', city: 'Kaili', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 26.57, lng: 107.98, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.5M', metroPopulation: '4.5M', phoneCode: '+86 855', language: 'Mandarin, Miao, Dong',
+      climate: 'Subtropical with warm summers (24-30°C) and mild winters (4-10°C). Humid.',
+      attractions: ['Xijiang Thousand Household Miao Village', 'Langde Miao Village', 'Zhenyuan Ancient Town', 'Zhaoxing Dong Village', 'Kaili Miao Museum', 'Basha Gun Village', 'Shidong Miao Village', 'Leishan County', 'Taijiang Sisters Meal Festival', 'Silver Jewelry Markets'],
+      demographics: 'Capital of Qiandongnan Miao and Dong Autonomous Prefecture. Heart of Miao culture with world\'s largest Miao village (Xijiang). Famous for elaborate silver jewelry and festivals.',
+      seoContent: {
+        intro: 'Kaili, heart of Miao culture, operates on China Standard Time (CST/UTC+8). This city is the gateway to Xijiang, the world\'s largest Miao village with 1,300 households, and the cultural center of one of China\'s most fascinating ethnic minority regions.',
+        timezoneFacts: 'Same timezone as Beijing. Southeastern Guizhou, mountainous minority region.',
+        bestTimeToVisit: 'April for Sisters Meal Festival. October for Miao New Year. Year-round for villages.',
+        businessHours: 'Standard 9 AM to 6 PM. Villages accessible dawn to dusk.',
+        timeDifference: 'Kaili is UTC+8 year-round. When noon in Kaili: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Xijiang Miao Village is spectacular - stay overnight for evening lights. Sisters Meal Festival in April features elaborate costumes. Buy authentic silver jewelry.',
+        transportation: 'Huangping Qiandongnan Airport (KJH). High-speed rail to Guiyang.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Miao Sisters Festival, Miao New Year.'
+      }
+    }
+  },
+  { slug: 'panzhihua', city: 'Panzhihua', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 26.58, lng: 101.72, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '1.2M', metroPopulation: '1.3M', phoneCode: '+86 812', language: 'Mandarin',
+      climate: 'Tropical valley with warm winters (12-22°C) and hot dry springs (20-35°C). "Sun City" - 300+ sunny days.',
+      attractions: ['Ertan Dam', 'Miyi Dragon Cave', 'Panzhihua Park', 'Gezala Hot Springs', 'Jinsha River Valley', 'Hongge Hot Springs', 'Ape People Ruins', 'Yanbian Mango Orchards', 'Datian Pomegranate Gardens', 'Winter Sunshine Belt'],
+      demographics: 'China\'s only city named after a flower. Unique winter sunshine destination - "Sun City" with 300+ sunny days. Major steel and vanadium producer.',
+      seoContent: {
+        intro: 'Panzhihua, China\'s "Sun City," operates on China Standard Time (CST/UTC+8). This unique city of 1.2 million enjoys over 300 sunny days yearly and warm winters, making it China\'s premier winter sunshine destination and retirement haven.',
+        timezoneFacts: 'Same timezone as Beijing. Southern Sichuan, Jinsha River valley.',
+        bestTimeToVisit: 'December-February for warm winter sunshine. Spring for mango blossoms.',
+        businessHours: 'Standard 9 AM to 6 PM. Hot springs open late.',
+        timeDifference: 'Panzhihua is UTC+8 year-round. When noon in Panzhihua: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Warm winter destination - many retirees from north China. Famous for mangoes and pomegranates. Hot springs everywhere.',
+        transportation: 'Panzhihua Bao\'anying Airport (PZI). Train to Kunming and Chengdu.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'guangyuan', city: 'Guangyuan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 32.44, lng: 105.84, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.3M', metroPopulation: '2.5M', phoneCode: '+86 839', language: 'Mandarin',
+      climate: 'Humid subtropical with warm summers (24-30°C) and cold winters (1-7°C). Mountain influenced.',
+      attractions: ['Jiange Sword Gate Pass', 'Qianfo Cliff', 'Wu Zetian Temple', 'Zhaohua Ancient Town', 'Tangjia River Nature Reserve', 'Ming Dynasty City Wall', 'Cuiyun Gallery', 'Huangze Temple', 'Mingyue Gorge', 'Cangxi Pear Blossom Valley'],
+      demographics: 'Birthplace of Wu Zetian, China\'s only female emperor. Guards historic Sword Gate Pass (Jiange), key gateway through Qinling Mountains on ancient Shu Road.',
+      seoContent: {
+        intro: 'Guangyuan, birthplace of China\'s only empress, operates on China Standard Time (CST/UTC+8). This city of 2.3 million is the hometown of Wu Zetian, China\'s only female emperor, and guards the legendary Sword Gate Pass on the ancient road to Sichuan.',
+        timezoneFacts: 'Same timezone as Beijing. Northern Sichuan, gateway through mountains.',
+        bestTimeToVisit: 'March-May and September-November. Spring for pear blossoms.',
+        businessHours: 'Standard 9 AM to 6 PM. Historical sites 8:30 AM to 5:30 PM.',
+        timeDifference: 'Guangyuan is UTC+8 year-round. When noon in Guangyuan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Sword Gate Pass is dramatic - understand why it was so strategic. Wu Zetian temple and birthplace sites. Zhaohua ancient town well-preserved.',
+        transportation: 'Guangyuan Panlong Airport (GYS). High-speed rail to Chengdu and Xi\'an.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'suining', city: 'Suining', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.53, lng: 105.59, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.5M', metroPopulation: '3.6M', phoneCode: '+86 825', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with hot summers (26-33°C) and mild winters (5-11°C). Sichuan basin climate.',
+      attractions: ['Lingquan Temple', 'China Dead Sea', 'Guanyin Lake', 'Suining Confucian Temple', 'Songlin Peach Blossom', 'Daying County Salt Lake', 'Suining Museum', 'Guangde Temple', 'Baima Lake', 'Jin Dynasty Tombs'],
+      demographics: 'Home to the "China Dead Sea" - a salt lake resort where visitors float effortlessly. Ancient temple city. Center of Guanyin Buddhist culture.',
+      seoContent: {
+        intro: 'Suining, home of the China Dead Sea, operates on China Standard Time (CST/UTC+8). This city of 3.5 million features a unique salt lake resort where visitors float effortlessly like in the Dead Sea, plus ancient Buddhist temples and Guanyin pilgrimage sites.',
+        timezoneFacts: 'Same timezone as Beijing. Central Sichuan basin.',
+        bestTimeToVisit: 'Year-round for Dead Sea. Spring for peach blossoms. Autumn pleasant.',
+        businessHours: 'Standard 9 AM to 6 PM. Dead Sea resort 9 AM to 10 PM.',
+        timeDifference: 'Suining is UTC+8 year-round. When noon in Suining: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'China Dead Sea is fun - float without effort! Lingquan Temple for Buddhist culture. Peach blossom festival in March.',
+        transportation: 'High-speed rail to Chengdu (1 hour). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'neijiang', city: 'Neijiang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 29.58, lng: 105.06, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.1M', metroPopulation: '3.7M', phoneCode: '+86 832', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with hot summers (27-34°C) and mild winters (5-11°C). Sichuan basin climate.',
+      attractions: ['Zhang Daqian Memorial', 'Shengshui Temple', 'Neijiang Sugar Museum', 'Tuojiang River', 'Qiongjiang River', 'Yunjia Cave', 'Longchang Ancient Town', 'Zipeng Mountain', 'Fan Changjiang Memorial', 'Weiyuan Ancient Grottoes'],
+      demographics: 'Hometown of Zhang Daqian, one of the most influential Chinese painters of the 20th century. Historic "Sugar Capital" of China.',
+      seoContent: {
+        intro: 'Neijiang, hometown of master painter Zhang Daqian, operates on China Standard Time (CST/UTC+8). This city of 3.1 million is the birthplace of Zhang Daqian, considered the Picasso of China, and was historically known as the "Sugar Capital" for its sugar industry.',
+        timezoneFacts: 'Same timezone as Beijing. Central Sichuan basin.',
+        bestTimeToVisit: 'March-May and September-November. Pleasant year-round.',
+        businessHours: 'Standard 9 AM to 6 PM. Zhang Daqian Memorial 9 AM to 5 PM.',
+        timeDifference: 'Neijiang is UTC+8 year-round. When noon in Neijiang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Zhang Daqian Memorial essential for art lovers. Sugar museum tells sweet history. Neijiang noodles are local specialty.',
+        transportation: 'High-speed rail hub. No local airport - use Chengdu.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'nanchong', city: 'Nanchong', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.80, lng: 106.08, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.6M', metroPopulation: '7.1M', phoneCode: '+86 817', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with hot summers (27-34°C) and mild winters (5-11°C). Sichuan basin climate.',
+      attractions: ['Langzhong Ancient City', 'Zhu De Birthplace', 'Nanchong Silk Museum', 'Jialinjiang River', 'Beiling Park', 'Fengshan Temple', 'Zhang Fei Temple', 'Nanchong Museum', 'Peng\'an Xiangyuan', 'Yingshan Ancient Town'],
+      demographics: 'Home to Langzhong, one of China\'s four best-preserved ancient cities. Birthplace of Marshal Zhu De. Historic "Silk City" of China.',
+      seoContent: {
+        intro: 'Nanchong, city of silk and ancient towns, operates on China Standard Time (CST/UTC+8). This city of 5.6 million is home to Langzhong Ancient City, one of China\'s four best-preserved ancient towns, and was the birthplace of Marshal Zhu De, founder of the Red Army.',
+        timezoneFacts: 'Same timezone as Beijing. Northeastern Sichuan basin.',
+        bestTimeToVisit: 'March-May and September-November. Langzhong festivals in spring.',
+        businessHours: 'Standard 9 AM to 6 PM. Langzhong ancient city always accessible.',
+        timeDifference: 'Nanchong is UTC+8 year-round. When noon in Nanchong: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Langzhong Ancient City is exceptional - stay overnight for atmosphere. Zhang Fei Temple for Three Kingdoms history. Silk museum tells textile history.',
+        transportation: 'Nanchong Gaoping Airport (NAO). High-speed rail to Chengdu.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'dazhou', city: 'Dazhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 31.21, lng: 107.50, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.4M', metroPopulation: '5.8M', phoneCode: '+86 818', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with hot summers (27-34°C) and mild winters (4-10°C). Mountain basin.',
+      attractions: ['Bajiao Ancient Town', 'Zhenwu Mountain', 'Quxian Grottoes', 'Dazhou Museum', 'Longtan River', 'Jinlong Temple', 'Xuanhan Baili Canyon', 'Wanyuan Yangchang Canyon', 'Qinglong Lake', 'Bamboo Sea'],
+      demographics: 'Major natural gas production center. Gateway to stunning canyons in Xuanhan and Wanyuan counties. Important transportation hub in northeastern Sichuan.',
+      seoContent: {
+        intro: 'Dazhou, gateway to Sichuan\'s hidden canyons, operates on China Standard Time (CST/UTC+8). This city of 5.4 million is China\'s major natural gas producer and gateway to spectacular undiscovered canyons in Xuanhan and Wanyuan that rival the Grand Canyon.',
+        timezoneFacts: 'Same timezone as Beijing. Northeastern Sichuan, Daba Mountain region.',
+        bestTimeToVisit: 'April-October for canyon exploration. Autumn colors spectacular.',
+        businessHours: 'Standard 9 AM to 6 PM. Canyon tours 8 AM to 5 PM.',
+        timeDifference: 'Dazhou is UTC+8 year-round. When noon in Dazhou: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Xuanhan Baili Canyon is undiscovered gem. Wanyuan canyons equally stunning. Natural gas makes city prosperous but industrial.',
+        transportation: 'Dazhou Heshi Airport (DAX). Major railway junction.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'guangan', city: 'Guang\'an', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.47, lng: 106.63, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '3.2M', metroPopulation: '4.6M', phoneCode: '+86 826', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with hot summers (27-34°C) and mild winters (5-11°C). Sichuan basin climate.',
+      attractions: ['Deng Xiaoping Hometown', 'Huaying Mountain', 'Tianyi Hot Springs', 'Guang\'an Confucian Temple', 'Siling Mountain', 'Wusheng Ancient Town', 'Yuechi Lake', 'Xiushui River', 'Memorial Hall Complex', 'Baolun Temple'],
+      demographics: 'Birthplace of Deng Xiaoping, architect of China\'s economic reform. Major pilgrimage destination for those interested in modern Chinese history.',
+      seoContent: {
+        intro: 'Guang\'an, birthplace of Deng Xiaoping, operates on China Standard Time (CST/UTC+8). This city of 3.2 million is the hometown of Deng Xiaoping, the leader who transformed China through economic reforms, making it an important site for understanding modern Chinese history.',
+        timezoneFacts: 'Same timezone as Beijing. Eastern Sichuan basin.',
+        bestTimeToVisit: 'Year-round. August 22 (Deng\'s birthday) sees special events.',
+        businessHours: 'Standard 9 AM to 6 PM. Deng Xiaoping Memorial 8:30 AM to 5:30 PM.',
+        timeDifference: 'Guang\'an is UTC+8 year-round. When noon in Guang\'an: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Deng Xiaoping Memorial complex is comprehensive and well-maintained. Huaying Mountain for hiking. Hot springs nearby.',
+        transportation: 'High-speed rail to Chengdu and Chongqing. No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'meishan', city: 'Meishan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.08, lng: 103.85, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.9M', metroPopulation: '3.0M', phoneCode: '+86 28', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with hot summers (26-33°C) and mild winters (5-11°C). Sichuan basin climate.',
+      attractions: ['Three Su Temple', 'Pengzu Mountain', 'Qingshen Bamboo Sea', 'Renshou Black Dragon Beach', 'Meishan Museum', 'Dongpo Lake', 'Laifeng Mountain', 'Hongya Ancient Town', 'Liujiang Ancient Town', 'Washan (Mount Wa)'],
+      demographics: 'Hometown of the Three Sus - Su Xun, Su Shi (Dongpo), and Su Zhe - China\'s most famous literary family. Su Shi (Dongpo) was one of China\'s greatest poets.',
+      seoContent: {
+        intro: 'Meishan, hometown of poet Su Dongpo, operates on China Standard Time (CST/UTC+8). This city of 2.9 million is the birthplace of Su Shi (Su Dongpo), one of China\'s greatest poets and the inventor of Dongpo pork, along with his famous father and brother.',
+        timezoneFacts: 'Same timezone as Beijing. Central-west Sichuan basin.',
+        bestTimeToVisit: 'March-May and September-November. Spring for bamboo forests.',
+        businessHours: 'Standard 9 AM to 6 PM. Three Su Temple 8:30 AM to 6 PM.',
+        timeDifference: 'Meishan is UTC+8 year-round. When noon in Meishan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Three Su Temple honors China\'s greatest literary family. Try authentic Dongpo pork here! Qingshen bamboo sea and crafts.',
+        transportation: 'High-speed rail to Chengdu (20 min). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'ziyang', city: 'Ziyang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.13, lng: 104.63, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.4M', metroPopulation: '3.5M', phoneCode: '+86 28', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with hot summers (27-34°C) and mild winters (5-11°C). Sichuan basin climate.',
+      attractions: ['Chen Yi Hometown', 'Yanxi Lake', 'Ziyang Museum', 'Sancha Lake', 'Baolin Temple', 'Dongyu Island', 'Lezhi Ancient Salt Wells', 'Anyue Stone Carvings', 'Wofo Temple', 'Pengzu Temple'],
+      demographics: 'Birthplace of Marshal Chen Yi, communist military leader and diplomat. Famous for Anyue lemon production (China\'s lemon capital) and ancient Buddhist stone carvings.',
+      seoContent: {
+        intro: 'Ziyang, birthplace of Marshal Chen Yi, operates on China Standard Time (CST/UTC+8). This city of 2.4 million is the hometown of Chen Yi, communist marshal and diplomat, and is famous as China\'s lemon capital, producing 80% of national lemon output.',
+        timezoneFacts: 'Same timezone as Beijing. Central Sichuan basin.',
+        bestTimeToVisit: 'March-May for lemon blossoms. Year-round for stone carvings.',
+        businessHours: 'Standard 9 AM to 6 PM. Stone carving sites 8:30 AM to 5:30 PM.',
+        timeDifference: 'Ziyang is UTC+8 year-round. When noon in Ziyang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Anyue Buddhist stone carvings rival Dazu - less crowded! Lemon orchards beautiful in bloom. Chen Yi Memorial well-maintained.',
+        transportation: 'High-speed rail to Chengdu (20 min). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  
+  // China - New Cities Batch 4 (20 cities with full premium content)
+  { slug: 'yaan', city: 'Ya\'an', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 29.98, lng: 103.00, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '1.5M', metroPopulation: '1.6M', phoneCode: '+86 835', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with cool summers (22-28°C) and mild winters (4-10°C). "Rain City" - 200+ rainy days.',
+      attractions: ['Bifengxia Panda Base', 'Shangli Ancient Town', 'Mengding Mountain', 'Niubei Mountain', 'Ya\'an Museum', 'Qingyi River', 'Labahe Nature Reserve', 'Shimian Anshunchang', 'Tianquan Tea Gardens', 'Lushan Ancient Town'],
+      demographics: 'Gateway to giant panda habitat. Birthplace of tea cultivation - Mengding Mountain has world\'s first planted tea garden. Known as "Rain City" for constant drizzle.',
+      seoContent: {
+        intro: 'Ya\'an, the "Rain City" and panda gateway, operates on China Standard Time (CST/UTC+8). This misty city of 1.5 million is the gateway to giant panda reserves and home to Mengding Mountain, where tea cultivation began 2,000 years ago.',
+        timezoneFacts: 'Same timezone as Beijing. Western Sichuan, edge of Tibetan Plateau.',
+        bestTimeToVisit: 'March-May and September-November. Expect rain anytime - bring umbrella!',
+        businessHours: 'Standard 9 AM to 6 PM. Bifengxia Panda Base 8:30 AM to 4 PM.',
+        timeDifference: 'Ya\'an is UTC+8 year-round. When noon in Ya\'an: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Bifengxia has excellent panda viewing - less crowded than Chengdu. Mengding tea is legendary. Always pack rain gear!',
+        transportation: 'High-speed rail to Chengdu (1 hour). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'bazhong', city: 'Bazhong', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 31.87, lng: 106.77, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.7M', metroPopulation: '3.3M', phoneCode: '+86 827', language: 'Mandarin, Sichuanese',
+      climate: 'Humid subtropical with warm summers (25-32°C) and cold winters (2-8°C). Mountain climate.',
+      attractions: ['Guangwu Mountain', 'Nuoshuihe Canyon', 'Enyang Ancient Town', 'Bazhong Stone Carvings', 'Nanlong Mountain', 'Red Army Memorial', 'Kongshan Cave', 'Guangwu Snow Mountain', 'Tongjiang River', 'Sichuan-Shaanxi Revolutionary Base'],
+      demographics: 'Center of the Sichuan-Shaanxi Soviet revolutionary base. Famous for spectacular autumn foliage at Guangwu Mountain - China\'s best fall colors.',
+      seoContent: {
+        intro: 'Bazhong, home of China\'s best autumn colors, operates on China Standard Time (CST/UTC+8). This city of 2.7 million features Guangwu Mountain, famous for the most spectacular autumn foliage in all of China, and rich Red Army revolutionary history.',
+        timezoneFacts: 'Same timezone as Beijing. Northeastern Sichuan, Daba Mountain region.',
+        bestTimeToVisit: 'October-November for autumn colors - absolutely essential! Spring also pleasant.',
+        businessHours: 'Standard 9 AM to 6 PM. Guangwu Mountain 7 AM to 6 PM.',
+        timeDifference: 'Bazhong is UTC+8 year-round. When noon in Bazhong: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Guangwu Mountain autumn (Oct-Nov) rivals New England! Red Army history sites well-preserved. Nuoshuihe Canyon stunning.',
+        transportation: 'Bazhong Enyang Airport (BZX). Limited rail connections.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'aba', city: 'Barkam', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 31.90, lng: 102.22, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.9M', metroPopulation: '0.9M', phoneCode: '+86 837', language: 'Mandarin, Tibetan, Qiang',
+      climate: 'Highland with cool summers (12-22°C) and cold winters (-8 to 5°C). High altitude climate.',
+      attractions: ['Jiuzhaigou Valley (UNESCO)', 'Huanglong (UNESCO)', 'Zoige Grassland', 'Siguniangshan', 'Tibetan Villages', 'Songpan Ancient Town', 'Munigou', 'Huahu (Flower Lake)', 'Dagu Glacier', 'Jiuzhai Huanglong Airport'],
+      demographics: 'Capital of Aba Tibetan and Qiang Autonomous Prefecture. Gateway to Jiuzhaigou and Huanglong UNESCO sites. High-altitude Tibetan culture.',
+      seoContent: {
+        intro: 'Barkam, gateway to Jiuzhaigou, operates on China Standard Time (CST/UTC+8). This Tibetan town of 900,000 is the administrative center for accessing Jiuzhaigou Valley and Huanglong, two of China\'s most spectacular UNESCO World Heritage sites.',
+        timezoneFacts: 'Same timezone as Beijing despite being far west. High altitude - prepare for thin air.',
+        bestTimeToVisit: 'September-October for Jiuzhaigou autumn colors. June-August for flowers.',
+        businessHours: 'Standard 9 AM to 6 PM. Jiuzhaigou 7:30 AM to 5 PM.',
+        timeDifference: 'Barkam is UTC+8 year-round. When noon in Barkam: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Jiuzhaigou requires advance booking. Altitude sickness possible - acclimatize. Tibetan culture authentic. Winter very cold.',
+        transportation: 'Jiuzhai Huanglong Airport (JZH). Long bus rides to sites.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Tibetan festivals.'
+      }
+    }
+  },
+  { slug: 'garze', city: 'Kangding', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.05, lng: 101.96, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '1.1M', metroPopulation: '1.1M', phoneCode: '+86 836', language: 'Mandarin, Tibetan',
+      climate: 'Highland with cool summers (12-22°C) and cold winters (-5 to 8°C). High altitude valley.',
+      attractions: ['Mugecuo Lake', 'Paoma Mountain', 'Tagong Grassland', 'Xinduqiao', 'Gongga Mountain', 'Kangding Love Song Square', 'Nanwu Temple', 'Daocheng Yading', 'Litang Grassland', 'Hailuogou Glacier'],
+      demographics: 'Capital of Garzê Tibetan Autonomous Prefecture. Gateway to western Sichuan Tibetan areas. Famous for "Kangding Love Song" folk melody known to all Chinese.',
+      seoContent: {
+        intro: 'Kangding, city of the famous love song, operates on China Standard Time (CST/UTC+8). This Tibetan gateway of 1.1 million is immortalized in the folk song "Kangding Love Song" and serves as the gateway to spectacular western Sichuan Tibetan landscapes.',
+        timezoneFacts: 'Same timezone as Beijing. Gateway to Tibetan plateau, high altitude.',
+        bestTimeToVisit: 'May-October. September-October for best photography. Winter harsh.',
+        businessHours: 'Standard 9 AM to 6 PM. Scenic areas 8 AM to 5 PM.',
+        timeDifference: 'Kangding is UTC+8 year-round. When noon in Kangding: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Xinduqiao is "Photographer\'s Paradise". Prepare for altitude (2,500m+). Tibetan culture authentic. Drive to Daocheng Yading spectacular.',
+        transportation: 'Kangding Airport (KGT). Gateway for Sichuan-Tibet Highway.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Tibetan festivals.'
+      }
+    }
+  },
+  { slug: 'liangshan', city: 'Xichang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 27.90, lng: 102.27, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.9M', metroPopulation: '5.3M', phoneCode: '+86 834', language: 'Mandarin, Yi',
+      climate: 'Subtropical highland with mild year-round (15-25°C). "City of Eternal Spring".',
+      attractions: ['Xichang Satellite Launch Center', 'Qionghai Lake', 'Luoji Mountain', 'Yi Slave Society Museum', 'Torch Festival Sites', 'Lugu Lake', 'Zhaojue Temple', '螺髻山', 'Moon City Square', 'Xichang Ancient Town'],
+      demographics: 'Capital of Liangshan Yi Autonomous Prefecture. Major satellite launch facility. Famous for Yi Torch Festival - one of China\'s most spectacular ethnic celebrations.',
+      seoContent: {
+        intro: 'Xichang, China\'s satellite city, operates on China Standard Time (CST/UTC+8). This city of 900,000 hosts the Xichang Satellite Launch Center and is capital of Yi ethnic territory, famous for the spectacular Torch Festival each July.',
+        timezoneFacts: 'Same timezone as Beijing. Southern Sichuan plateau, mild climate.',
+        bestTimeToVisit: 'July for Torch Festival - must see! Year-round pleasant climate.',
+        businessHours: 'Standard 9 AM to 6 PM. Launch center tours by special arrangement.',
+        timeDifference: 'Xichang is UTC+8 year-round. When noon in Xichang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Yi Torch Festival (July) is spectacular - fire everywhere! Satellite launches sometimes viewable. Qionghai Lake beautiful. Lugu Lake 3 hours away.',
+        transportation: 'Xichang Qingshan Airport (XIC). Rail connections available.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Yi Torch Festival (July).'
+      }
+    }
+  },
+  { slug: 'chuxiong', city: 'Chuxiong', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 25.03, lng: 101.55, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.6M', metroPopulation: '2.7M', phoneCode: '+86 878', language: 'Mandarin, Yi',
+      climate: 'Subtropical highland with mild summers (20-26°C) and cool winters (6-15°C). Pleasant year-round.',
+      attractions: ['Lufeng World Dinosaur Valley', 'Yuanmou Man Site', 'Zixi Mountain', 'Yi Ten-Month Calendar Park', 'Chuxiong Museum', 'Lucheng Ancient Town', 'Shiyang Ancient Town', 'Black Well Ancient Town', 'Wuding Lion Mountain', 'Yi Torch Festival'],
+      demographics: 'Capital of Chuxiong Yi Autonomous Prefecture. Home to Lufeng dinosaur fossils and Yuanmou Man (1.7 million year old hominid). Yi culture center.',
+      seoContent: {
+        intro: 'Chuxiong, land of dinosaurs and ancient man, operates on China Standard Time (CST/UTC+8). This Yi capital of 600,000 is home to Lufeng\'s dinosaur fossil beds and the 1.7 million year old Yuanmou Man, one of the earliest human ancestors found in Asia.',
+        timezoneFacts: 'Same timezone as Beijing. Central Yunnan plateau.',
+        bestTimeToVisit: 'Year-round pleasant. July for Yi Torch Festival.',
+        businessHours: 'Standard 9 AM to 6 PM. Dinosaur Valley 8:30 AM to 5:30 PM.',
+        timeDifference: 'Chuxiong is UTC+8 year-round. When noon in Chuxiong: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Dinosaur Valley excellent for kids. Yuanmou Man site fascinating. Yi culture distinct from Liangshan Yi. Torch Festival lively.',
+        transportation: 'High-speed rail to Kunming (45 min). No local airport.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Yi Torch Festival.'
+      }
+    }
+  },
+  { slug: 'honghe', city: 'Mengzi', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 23.37, lng: 103.38, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.4M', metroPopulation: '4.7M', phoneCode: '+86 873', language: 'Mandarin, Hani, Yi',
+      climate: 'Subtropical with warm year-round (16-26°C). Vietnam border climate.',
+      attractions: ['Yuanyang Rice Terraces (UNESCO)', 'Jianshui Ancient Town', 'Swallow Cave', 'Mile Hot Springs', 'Kaiyuan South Lake', 'Zhujia Garden', 'Yellow Cow Falls', 'Hani Villages', 'Sino-Vietnamese Railway', 'Shiping Ancient Town'],
+      demographics: 'Capital of Honghe Hani and Yi Autonomous Prefecture. Gateway to UNESCO Yuanyang Rice Terraces. Historic Sino-Vietnamese Railway terminus.',
+      seoContent: {
+        intro: 'Mengzi, gateway to the rice terraces, operates on China Standard Time (CST/UTC+8). This border city of 400,000 is the gateway to UNESCO-listed Yuanyang Rice Terraces, spectacular cascading paddies carved by the Hani people over 1,300 years.',
+        timezoneFacts: 'Same timezone as Beijing. Southern Yunnan near Vietnam border.',
+        bestTimeToVisit: 'November-April for flooded terraces (best photography). Avoid summer rains.',
+        businessHours: 'Standard 9 AM to 6 PM. Terraces accessible dawn to dusk.',
+        timeDifference: 'Mengzi is UTC+8 year-round. When noon in Mengzi: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Yuanyang sunrise/sunset magical! Stay overnight in Hani villages. Jianshui ancient town excellent. Try crossing-bridge noodles origin.',
+        transportation: 'High-speed rail expanding. No local airport - use Kunming.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'wenshan', city: 'Wenshan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 23.37, lng: 104.24, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.5M', metroPopulation: '3.6M', phoneCode: '+86 876', language: 'Mandarin, Zhuang, Miao',
+      climate: 'Subtropical with warm year-round (16-26°C). Vietnam border climate.',
+      attractions: ['Puzhehei Lake', 'Baise Uprising Memorial', 'Qiubei Lotus Lake', 'Wenshan Sanqi Gardens', 'Guangnan Bagua Village', 'Malipo Tianbao', 'Xichou Karst', 'Zhuang Villages', 'Vietnam Border Sites', 'Laojunshan'],
+      demographics: 'Capital of Wenshan Zhuang and Miao Autonomous Prefecture. Famous for Sanqi (Panax notoginseng) medicinal herb production. Puzhehei featured in Chinese films.',
+      seoContent: {
+        intro: 'Wenshan, land of healing herbs, operates on China Standard Time (CST/UTC+8). This city of 500,000 is the center of Sanqi production, China\'s prized medicinal herb, and gateway to Puzhehei Lake, a stunning karst landscape featured in popular Chinese films.',
+        timezoneFacts: 'Same timezone as Beijing. Southeastern Yunnan near Vietnam.',
+        bestTimeToVisit: 'June-August for Puzhehei lotus flowers. Year-round for Sanqi.',
+        businessHours: 'Standard 9 AM to 6 PM. Puzhehei boat rides available.',
+        timeDifference: 'Wenshan is UTC+8 year-round. When noon in Wenshan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Puzhehei is stunning - rowboat through lotus and karst. Sanqi products sold everywhere. Zhuang minority villages authentic.',
+        transportation: 'Wenshan Puzhehei Airport (WNH). Rail connections limited.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'dehong', city: 'Mangshi', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 24.44, lng: 98.58, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.4M', metroPopulation: '1.4M', phoneCode: '+86 692', language: 'Mandarin, Dai, Jingpo',
+      climate: 'Tropical monsoon with hot wet summers (23-32°C) and warm dry winters (12-25°C). Southeast Asian climate.',
+      attractions: ['Manting Park', 'Ruili Jiegao Border', 'Yingjiang Giant Banyan', 'Mangshi Forest Park', 'Dai Villages', 'Jingpo Villages', 'Moli Waterfall', 'One Pagoda One Temple', 'Zhefang Border Trade', 'Myanmar Border Markets'],
+      demographics: 'Capital of Dehong Dai and Jingpo Autonomous Prefecture. Major China-Myanmar border trade zone. Dai water festival celebrations. Jade trading center.',
+      seoContent: {
+        intro: 'Mangshi, gateway to Myanmar, operates on China Standard Time (CST/UTC+8). This tropical border city of 400,000 is the capital of Dehong, a major China-Myanmar trade zone famous for jade markets, Dai water festivals, and Southeast Asian atmosphere.',
+        timezoneFacts: 'Same timezone as Beijing. Western Yunnan at Myanmar border, tropical.',
+        bestTimeToVisit: 'April for Dai Water Splashing Festival! November-March for pleasant weather.',
+        businessHours: 'Standard 9 AM to 6 PM. Border markets busy mornings.',
+        timeDifference: 'Mangshi is UTC+8 year-round. When noon in Mangshi: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Water Splashing Festival in April - get soaked! Ruili for jade shopping (be careful of fakes). Myanmar border crossing possible with permits.',
+        transportation: 'Dehong Mangshi Airport (LUM). Limited rail.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Dai Water Festival (April).'
+      }
+    }
+  },
+  { slug: 'nujiang', city: 'Liuku', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 25.85, lng: 98.86, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.06M', metroPopulation: '0.55M', phoneCode: '+86 886', language: 'Mandarin, Lisu, Nu',
+      climate: 'Subtropical valley with warm year-round (15-28°C). River canyon microclimate.',
+      attractions: ['Nujiang Grand Canyon', 'Bingzhongluo', 'Stone Moon', 'First Bend of Nujiang', 'Lisu Villages', 'Fogui Ancient Town', 'Laomudeng Church', 'Dimaluo Village', 'Gongshan', 'Three Parallel Rivers (UNESCO)'],
+      demographics: 'Capital of Nujiang Lisu Autonomous Prefecture. Part of UNESCO Three Parallel Rivers. One of China\'s most remote and pristine regions. Unique Lisu and Nu cultures.',
+      seoContent: {
+        intro: 'Liuku, gateway to the last frontier, operates on China Standard Time (CST/UTC+8). This remote town of 60,000 guards the Nujiang Grand Canyon, part of the UNESCO Three Parallel Rivers - one of China\'s last truly wild and unexplored regions.',
+        timezoneFacts: 'Same timezone as Beijing. Far western Yunnan, extremely remote.',
+        bestTimeToVisit: 'October-May dry season. Avoid summer monsoon road closures.',
+        businessHours: 'Standard 9 AM to 6 PM. Limited services in remote areas.',
+        timeDifference: 'Liuku is UTC+8 year-round. When noon in Liuku: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Bingzhongluo is paradise - worth the difficult journey. Roads can be dangerous. Lisu villages very authentic. Limited infrastructure.',
+        transportation: 'No airport. Long bus rides from Kunming or Dali. Improving roads.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Lisu Kuoshi Festival.'
+      }
+    }
+  },
+  { slug: 'diqing', city: 'Shangri-La', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 27.83, lng: 99.70, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.13M', metroPopulation: '0.4M', phoneCode: '+86 887', language: 'Mandarin, Tibetan',
+      climate: 'Highland with cool summers (10-20°C) and cold winters (-7 to 8°C). High altitude Tibetan plateau.',
+      attractions: ['Pudacuo National Park', 'Songzanlin Monastery', 'Dukezong Ancient Town', 'Meili Snow Mountain', 'Tiger Leaping Gorge', 'Napa Lake', 'Baishuitai', 'Shika Snow Mountain', 'Benzilan', 'Yubeng Village'],
+      demographics: 'Capital of Diqing Tibetan Autonomous Prefecture. Renamed from Zhongdian to Shangri-La in 2001, claiming connection to James Hilton\'s Lost Horizon.',
+      seoContent: {
+        intro: 'Shangri-La, the legendary paradise, operates on China Standard Time (CST/UTC+8). This Tibetan town of 130,000 at 3,300m elevation claims to be the inspiration for James Hilton\'s utopia, featuring ancient monasteries, pristine lakes, and sacred snow mountains.',
+        timezoneFacts: 'Same timezone as Beijing. Northwestern Yunnan, Tibetan plateau.',
+        bestTimeToVisit: 'May-June and September-October. Winter very cold. Avoid summer monsoon.',
+        businessHours: 'Standard 9 AM to 6 PM. Songzanlin Monastery 8 AM to 6 PM.',
+        timeDifference: 'Shangri-La is UTC+8 year-round. When noon in Shangri-La: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Altitude sickness common at 3,300m - acclimatize! Songzanlin is "Little Potala". Meili Snow Mountain sacred to Tibetans. Dukezong rebuilt after 2014 fire.',
+        transportation: 'Diqing Shangri-La Airport (DIG). Bus from Lijiang (4 hours).',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Tibetan New Year.'
+      }
+    }
+  },
+  { slug: 'xishuangbanna', city: 'Jinghong', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 22.01, lng: 100.80, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.6M', metroPopulation: '1.3M', phoneCode: '+86 691', language: 'Mandarin, Dai',
+      climate: 'Tropical monsoon with hot wet summers (24-34°C) and warm dry winters (14-26°C). Rainforest climate.',
+      attractions: ['Xishuangbanna Tropical Botanical Garden', 'Wild Elephant Valley', 'Manting Park', 'Ganlan Basin', 'Dai Villages', 'Menglun Tropical Rainforest', 'Menghai Tea Mountains', 'Jinuo Mountain', 'Mekong River Cruises', 'Night Markets'],
+      demographics: 'Capital of Xishuangbanna Dai Autonomous Prefecture. China\'s tropical rainforest region. Pu\'er tea origin. Dai water festival capital. Southeast Asian culture.',
+      seoContent: {
+        intro: 'Jinghong, China\'s tropical paradise, operates on China Standard Time (CST/UTC+8). This rainforest capital of 600,000 is China\'s gateway to Southeast Asia, home to wild elephants, ancient tea trees, Dai water festivals, and lush tropical gardens.',
+        timezoneFacts: 'Same timezone as Beijing despite being far south. Tropical, near Laos/Myanmar.',
+        bestTimeToVisit: 'April for Water Splashing Festival! November-March for dry season.',
+        businessHours: 'Standard 9 AM to 6 PM. Night markets until midnight.',
+        timeDifference: 'Jinghong is UTC+8 year-round. When noon in Jinghong: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Water Festival mid-April is incredible! Wild Elephant Valley for elephant sightings. Buy authentic Pu\'er tea from mountains. Night markets excellent.',
+        transportation: 'Xishuangbanna Gasa Airport (JHG). High-speed rail to Kunming (3 hours).',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Dai Water Festival (April).'
+      }
+    }
+  },
+  { slug: 'puer', city: 'Simao', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 22.78, lng: 100.97, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.3M', metroPopulation: '2.6M', phoneCode: '+86 879', language: 'Mandarin, Hani, Dai',
+      climate: 'Subtropical with warm year-round (17-28°C). Tea-growing highland climate.',
+      attractions: ['Pu\'er Tea Museum', 'Ancient Tea Horse Road', 'Jingmai Ancient Tea Mountain', 'Lancang River', 'Wa Ethnic Villages', 'Menglian Dai Town', 'Simao Port', 'Coffee Plantations', 'Ailao Mountain', 'Wild Elephant Reserve'],
+      demographics: 'Renamed from Simao to Pu\'er in 2007 to honor the famous tea. Origin of Pu\'er tea with ancient 1000+ year old tea trees. China\'s emerging coffee region.',
+      seoContent: {
+        intro: 'Pu\'er, birthplace of the legendary tea, operates on China Standard Time (CST/UTC+8). This city of 300,000 gave its name to Pu\'er tea, the aged fermented tea prized worldwide, and contains ancient tea trees over 1,000 years old in Jingmai Mountain.',
+        timezoneFacts: 'Same timezone as Beijing. Southern Yunnan tea highlands.',
+        bestTimeToVisit: 'Year-round for tea tourism. Spring for fresh tea picking.',
+        businessHours: 'Standard 9 AM to 6 PM. Tea markets and tours available.',
+        timeDifference: 'Pu\'er is UTC+8 year-round. When noon in Pu\'er: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Jingmai has UNESCO-nominated ancient tea forests. Tea tastings everywhere. China\'s coffee is emerging here too. Visit tea factories.',
+        transportation: 'Pu\'er Simao Airport (SYM). Rail connections improving.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'lincang', city: 'Lincang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 23.88, lng: 100.09, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.4M', metroPopulation: '2.5M', phoneCode: '+86 883', language: 'Mandarin, Wa, Dai',
+      climate: 'Subtropical with warm year-round (17-28°C). Tea and coffee highlands.',
+      attractions: ['Cangyuan Wa Villages', 'Wengding Wa Village', 'Shuanglang Ancient Town', 'Gengma Dai Villages', 'Bingdao Tea Village', 'Lancang River', 'Nangun River', 'Ancient Rock Paintings', 'Tea Mountains', 'Burma Border'],
+      demographics: 'Home to the Wa ethnic minority with unique headhunting history. Premium Bingdao tea rivals top Pu\'er. One of China\'s least visited regions.',
+      seoContent: {
+        intro: 'Lincang, land of the Wa people, operates on China Standard Time (CST/UTC+8). This frontier city of 400,000 is home to the Wa ethnic minority with their unique drum-and-dance culture and produces Bingdao tea, among China\'s most expensive.',
+        timezoneFacts: 'Same timezone as Beijing. Southwestern Yunnan near Myanmar.',
+        bestTimeToVisit: 'October-May dry season. April for Wa festivals.',
+        businessHours: 'Standard 9 AM to 6 PM. Limited services in remote Wa areas.',
+        timeDifference: 'Lincang is UTC+8 year-round. When noon in Lincang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Wa villages are fascinating - Wengding still traditional. Bingdao tea extremely expensive but worth tasting. Very off-the-beaten-path.',
+        transportation: 'Lincang Airport (LNJ). Limited connections.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Wa New Year.'
+      }
+    }
+  },
+  { slug: 'anning', city: 'Anning', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 24.92, lng: 102.48, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.4M', metroPopulation: '0.5M', phoneCode: '+86 871', language: 'Mandarin',
+      climate: 'Subtropical highland with mild year-round (15-25°C). "Natural Hot Spring City".',
+      attractions: ['Anning Hot Springs', 'Cao Xi Temple', 'Qinglong Gorge', 'Kunming Steel Industrial Tourism', 'Jinse Park', 'Huanzhong Lake', 'Wenchang Palace', 'Yangzonghai Lake', 'Tanglang River', 'Rose Gardens'],
+      demographics: 'Kunming satellite city famous for natural hot springs. Major steel production center. Known for roses and flower cultivation.',
+      seoContent: {
+        intro: 'Anning, city of hot springs, operates on China Standard Time (CST/UTC+8). This city of 400,000 near Kunming is famous for its natural hot springs known since the Tang Dynasty, plus extensive rose gardens and year-round spring climate.',
+        timezoneFacts: 'Same timezone as Beijing. Central Yunnan, Kunming satellite.',
+        bestTimeToVisit: 'Year-round for hot springs. May for rose festival.',
+        businessHours: 'Standard 9 AM to 6 PM. Hot spring resorts open late.',
+        timeDifference: 'Anning is UTC+8 year-round. When noon in Anning: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Hot springs have 1,000+ year history. Day trip from Kunming easy. Rose cultivation extensive. Cao Xi Temple ancient.',
+        transportation: 'Metro connection to Kunming. High-speed rail nearby.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'tengchong', city: 'Tengchong', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 25.02, lng: 98.50, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.7M', metroPopulation: '0.7M', phoneCode: '+86 875', language: 'Mandarin',
+      climate: 'Subtropical with warm year-round (12-25°C). Volcanic geothermal climate.',
+      attractions: ['Rehai Hot Sea', 'Heshun Ancient Town', 'Ginkgo Village', 'Volcanic Park', 'National Cemetery', 'Beihai Wetland', 'Daying River', 'Jade Market', 'Burma Road Museum', 'Geothermal Fields'],
+      demographics: 'Famous volcanic and geothermal region with boiling hot springs. Historic jade trading center. WWII history - Chinese Expeditionary Force battles. Beautiful Heshun ancient town.',
+      seoContent: {
+        intro: 'Tengchong, land of volcanoes and hot springs, operates on China Standard Time (CST/UTC+8). This geothermal wonder of 700,000 features boiling hot springs, volcanic craters, the beautiful Heshun Ancient Town, and poignant WWII memorial sites.',
+        timezoneFacts: 'Same timezone as Beijing. Far western Yunnan near Myanmar.',
+        bestTimeToVisit: 'October-March for best weather. November for Ginkgo Village golden leaves.',
+        businessHours: 'Standard 9 AM to 6 PM. Rehai Hot Sea 8 AM to 6 PM.',
+        timeDifference: 'Tengchong is UTC+8 year-round. When noon in Tengchong: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Rehai has boiling geysers - eggs cooked in springs! Heshun is China\'s most beautiful town. Ginkgo Village golden in November. WWII cemetery moving.',
+        transportation: 'Tengchong Tuofeng Airport (TCZ). Bus from Baoshan.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'ruili', city: 'Ruili', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 24.01, lng: 97.85, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.2M', metroPopulation: '0.3M', phoneCode: '+86 692', language: 'Mandarin, Dai, Jingpo',
+      climate: 'Tropical monsoon with hot wet summers (24-33°C) and warm dry winters (12-25°C). Border tropical.',
+      attractions: ['Jiegao Border Gate', 'One Village Two Countries', 'Jade Market', 'Jiele Golden Pagoda', 'Dai Villages', 'Ruili River', 'Myanmar Border Markets', 'Nongdao', 'Denghannong', 'Jingpo Villages'],
+      demographics: 'Major China-Myanmar border crossing and trade hub. Largest jade trading center in Asia. Unique "One Village Two Countries" where village straddles border.',
+      seoContent: {
+        intro: 'Ruili, China\'s jade capital, operates on China Standard Time (CST/UTC+8). This border town of 200,000 is Asia\'s largest jade trading center, with the famous "One Village Two Countries" where houses straddle the China-Myanmar border.',
+        timezoneFacts: 'Same timezone as Beijing. At Myanmar border, tropical climate.',
+        bestTimeToVisit: 'November-March for pleasant weather. April for Water Festival.',
+        businessHours: 'Standard 9 AM to 6 PM. Jade markets open early.',
+        timeDifference: 'Ruili is UTC+8 year-round. When noon in Ruili: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Jade market fascinating but beware fakes - bring expert! "One Village Two Countries" unique photo op. Border crossing possible with permit.',
+        transportation: 'Near Mangshi Airport. Bus connections.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Dai Water Festival.'
+      }
+    }
+  },
+  { slug: 'jingdong', city: 'Jingdong', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 24.47, lng: 100.84, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.4M', metroPopulation: '0.4M', phoneCode: '+86 879', language: 'Mandarin, Yi',
+      climate: 'Subtropical highland with mild year-round (15-26°C). Mountain forest climate.',
+      attractions: ['Ailao Mountain', 'Wuliang Mountain', 'Western Black-Crowned Gibbon Reserve', 'Yi Villages', 'Ancient Tea Gardens', 'Jingdong Museum', 'Wen Temple', 'Mountain Trekking', 'Bird Watching Sites', 'Coffee Plantations'],
+      demographics: 'Gateway to Ailao and Wuliang Mountains. Home to critically endangered western black-crested gibbons. Remote Yi minority region.',
+      seoContent: {
+        intro: 'Jingdong, last refuge of the gibbons, operates on China Standard Time (CST/UTC+8). This remote mountain town of 400,000 protects critically endangered western black-crested gibbons in pristine Ailao and Wuliang mountain forests.',
+        timezoneFacts: 'Same timezone as Beijing. Central Yunnan mountains.',
+        bestTimeToVisit: 'October-April for gibbon watching. March-May for bird migration.',
+        businessHours: 'Standard 9 AM to 6 PM. Gibbon tours early morning.',
+        timeDifference: 'Jingdong is UTC+8 year-round. When noon in Jingdong: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Gibbon watching requires early morning trek with guides. Very off-beaten-path. Yi villages authentic. Bird watching excellent.',
+        transportation: 'No airport. Bus from Pu\'er or Kunming. Remote location.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'mojiang', city: 'Mojiang', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 23.43, lng: 101.68, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.4M', metroPopulation: '0.4M', phoneCode: '+86 879', language: 'Mandarin, Hani',
+      climate: 'Subtropical with warm year-round (16-27°C). Tropic of Cancer climate.',
+      attractions: ['Tropic of Cancer Monument', 'Twin Festival', 'Hani Sun Temple', 'Mojiang Museum', 'Purple Rice Fields', 'Hani Villages', 'Bixi Ancient Town', 'Mountain Terraces', 'Ailao Mountain East', 'Coffee Plantations'],
+      demographics: 'Located exactly on the Tropic of Cancer. Famous for remarkably high twin birth rate (attributed to local well water). Hani ethnic culture.',
+      seoContent: {
+        intro: 'Mojiang, city of twins on the Tropic of Cancer, operates on China Standard Time (CST/UTC+8). This unique town of 400,000 sits exactly on the Tropic of Cancer and has an unusually high twin birth rate, celebrated in an annual Twin Festival.',
+        timezoneFacts: 'Same timezone as Beijing. Central Yunnan on Tropic of Cancer.',
+        bestTimeToVisit: 'May for Twin Festival. Year-round for Tropic of Cancer marker.',
+        businessHours: 'Standard 9 AM to 6 PM. Twin Festival in May.',
+        timeDifference: 'Mojiang is UTC+8 year-round. When noon in Mojiang: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Twin Festival draws thousands of twins worldwide! Tropic of Cancer monument for photos. Local legend credits well water for twins.',
+        transportation: 'No airport. On highway between Kunming and Pu\'er.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Twin Festival (May).'
+      }
+    }
+  },
+  
+  // China - New Cities Batch 5 FINAL (19 cities with full premium content)
+  { slug: 'hulunbuir', city: 'Hulunbuir', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 49.21, lng: 119.77, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.5M', metroPopulation: '2.5M', phoneCode: '+86 470', language: 'Mandarin, Mongolian',
+      climate: 'Subarctic with warm summers (16-25°C) and extremely cold winters (-25 to -10°C). Grassland continental.',
+      attractions: ['Hulunbuir Grassland', 'Hulun Lake', 'Erguna Wetland', 'Manzhouli Border', 'Shiwei Russian Village', 'Moerdaoga Forest', 'Genghis Khan Statue', 'Argun River', 'Evenki Villages', 'Ice and Snow Festival'],
+      demographics: 'Home to China\'s most beautiful grassland - Hulunbuir Prairie. Largest city by area in China. Mongolian, Evenki, and Russian minority cultures.',
+      seoContent: {
+        intro: 'Hulunbuir, land of endless grasslands, operates on China Standard Time (CST/UTC+8). This vast region of 2.5 million people contains China\'s most pristine grasslands, where Mongolian herders maintain traditional nomadic lifestyles across endless green prairies.',
+        timezoneFacts: 'Same timezone as Beijing despite being far northeast. Sunrise very early in summer.',
+        bestTimeToVisit: 'June-September for green grasslands. December-February for ice festival (extremely cold!).',
+        businessHours: 'Standard 9 AM to 6 PM. Grassland tours flexible.',
+        timeDifference: 'Hulunbuir is UTC+8 year-round. When noon in Hulunbuir: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'July-August grassland is stunning! Stay in Mongolian yurts. Manzhouli border town interesting. Winter is brutally cold (-30°C).',
+        transportation: 'Hulunbuir Hailar Airport (HLD). Train connections available.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Naadam Festival (July).'
+      }
+    }
+  },
+  { slug: 'wuhai', city: 'Wuhai', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 39.66, lng: 106.79, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.6M', metroPopulation: '0.6M', phoneCode: '+86 473', language: 'Mandarin',
+      climate: 'Desert with hot summers (22-32°C) and cold winters (-10 to 0°C). Arid continental.',
+      attractions: ['Wuhai Lake', 'Gandesier Monastery', 'Yellow River Canyon', 'Desert Oasis', 'Wuhai Coal Museum', 'Mongolian Border', 'Laoshipai Mountains', 'Jinsha Bay', 'Grape Vineyards', 'Hot Springs'],
+      demographics: 'Desert oasis city on Yellow River. Major coal mining center. Emerging wine region with desert grapes. Gateway between Inner Mongolia regions.',
+      seoContent: {
+        intro: 'Wuhai, desert oasis on the Yellow River, operates on China Standard Time (CST/UTC+8). This city of 600,000 is a surprising oasis in the desert, with a large lake, emerging wine industry, and Yellow River canyon landscapes.',
+        timezoneFacts: 'Same timezone as Beijing. Western Inner Mongolia, desert climate.',
+        bestTimeToVisit: 'May-October. Avoid extreme winter cold and summer heat.',
+        businessHours: 'Standard 9 AM to 6 PM. Desert tours available.',
+        timeDifference: 'Wuhai is UTC+8 year-round. When noon in Wuhai: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Wuhai Lake surprisingly large for desert city. Wine tasting growing industry. Yellow River scenery dramatic.',
+        transportation: 'Wuhai Airport (WUA). Rail connections available.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'bayannur', city: 'Bayannur', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 40.74, lng: 107.39, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '1.7M', metroPopulation: '1.7M', phoneCode: '+86 478', language: 'Mandarin, Mongolian',
+      climate: 'Semi-arid with warm summers (20-30°C) and cold winters (-15 to -5°C). Steppe climate.',
+      attractions: ['Hetao Plain', 'Urad Grassland', 'Wuliangsuhai Lake', 'Yinshan Rock Paintings', 'Ancient Great Wall', 'Alashan Left Banner', 'Dengkou Desert', 'Yellow River Wetland', 'Sunflower Fields', 'Mongolian Villages'],
+      demographics: 'Center of Hetao Plain, China\'s ancient breadbasket. Rich in prehistoric rock art (Yinshan). Sunflower and melon production center.',
+      seoContent: {
+        intro: 'Bayannur, breadbasket of the north, operates on China Standard Time (CST/UTC+8). This city of 1.7 million sits on the fertile Hetao Plain, known since ancient times as the "Northern Granary" and famous for sunflowers stretching to the horizon.',
+        timezoneFacts: 'Same timezone as Beijing. Western Inner Mongolia, agricultural region.',
+        bestTimeToVisit: 'July-August for sunflower blooms. May-September for pleasant weather.',
+        businessHours: 'Standard 9 AM to 6 PM. Agricultural tours available.',
+        timeDifference: 'Bayannur is UTC+8 year-round. When noon in Bayannur: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Sunflower fields spectacular in August! Yinshan rock paintings are prehistoric treasures. Famous for Hetao melons.',
+        transportation: 'Bayannur Tianji Airport (RLK). Rail connections.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'wulanchabu', city: 'Jining', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 41.03, lng: 113.11, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '2.1M', metroPopulation: '2.1M', phoneCode: '+86 474', language: 'Mandarin, Mongolian',
+      climate: 'Semi-arid with cool summers (18-26°C) and cold winters (-15 to -5°C). Highland steppe.',
+      attractions: ['Huanghuagou Grassland', 'Jiulong Bay', 'Suiyuan Revolution Memorial', 'Volcanic Geopark', 'Chahar Culture', 'Daihai Lake', 'Huiyang Ancient Town', 'Cabbage Museum', 'Data Center Valley', 'Wind Farms'],
+      demographics: 'Cool climate data center hub - "China\'s Cloud Valley". Volcanic landscapes. Chahar Mongolian culture. Famous for potatoes and cabbages.',
+      seoContent: {
+        intro: 'Ulanqab (Jining), China\'s cloud computing capital, operates on China Standard Time (CST/UTC+8). This cool highland city of 2.1 million has become China\'s data center hub due to its naturally cool climate, while featuring volcanic landscapes and Mongolian culture.',
+        timezoneFacts: 'Same timezone as Beijing. Central Inner Mongolia highlands.',
+        bestTimeToVisit: 'June-September for grasslands and comfortable weather.',
+        businessHours: 'Standard 9 AM to 6 PM. Tech facilities by appointment.',
+        timeDifference: 'Ulanqab is UTC+8 year-round. When noon in Ulanqab: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Cool summer escape from Beijing heat. Volcanic geopark unique. Data centers draw tech workers. Excellent potatoes!',
+        transportation: 'Ulanqab Jining Airport (UCB). High-speed rail to Beijing.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'xilinhaote', city: 'Xilinhot', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 43.94, lng: 116.05, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.3M', metroPopulation: '1.1M', phoneCode: '+86 479', language: 'Mandarin, Mongolian',
+      climate: 'Semi-arid with warm summers (17-26°C) and very cold winters (-20 to -8°C). Steppe climate.',
+      attractions: ['Xilingol Grassland', 'Beizi Temple', 'Volcanic Cluster', 'Mongolian Naadam', 'Plateau Lake', 'Horse Culture Museum', 'Enger River', 'Traditional Yurt Camps', 'Cheese and Dairy Farms', 'Wild Horse Reserve'],
+      demographics: 'Heart of Xilingol Grassland, one of China\'s four great grasslands. Center of Mongolian horse culture. Traditional nomadic lifestyle preserved.',
+      seoContent: {
+        intro: 'Xilinhot, heart of the Mongolian steppe, operates on China Standard Time (CST/UTC+8). This grassland capital of 300,000 sits at the center of Xilingol, one of China\'s last great grasslands where traditional Mongolian horse culture thrives.',
+        timezoneFacts: 'Same timezone as Beijing. Central Inner Mongolia steppe.',
+        bestTimeToVisit: 'July-August for Naadam Festival and green grasslands. Very cold winters.',
+        businessHours: 'Standard 9 AM to 6 PM. Grassland activities daytime.',
+        timeDifference: 'Xilinhot is UTC+8 year-round. When noon in Xilinhot: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Naadam Festival in July is incredible - horse racing, archery, wrestling! Stay in yurts. Try fresh dairy products. Winter extremely harsh.',
+        transportation: 'Xilinhot Airport (XIL). Limited rail connections.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day. Naadam (July).'
+      }
+    }
+  },
+  { slug: 'alxa', city: 'Bayanhot', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 38.83, lng: 105.67, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.25M', metroPopulation: '0.25M', phoneCode: '+86 483', language: 'Mandarin, Mongolian',
+      climate: 'Desert with hot summers (22-32°C) and cold winters (-12 to -2°C). Extreme arid.',
+      attractions: ['Badain Jaran Desert', 'Ejina Poplar Forest', 'Helan Mountains', 'Dongfeng Space Center', 'Yabrai Mountain', 'Desert Lakes', 'Camel Herding', 'Rock Paintings', 'Juyan Lake', 'Ancient Silk Road Sites'],
+      demographics: 'Home to Badain Jaran, world\'s tallest sand dunes (500m). Ejina poplar forest autumn spectacle. Jiuquan Satellite Center nearby.',
+      seoContent: {
+        intro: 'Alxa (Bayanhot), land of the world\'s tallest dunes, operates on China Standard Time (CST/UTC+8). This remote desert capital of 250,000 guards Badain Jaran Desert with the world\'s tallest sand dunes and the spectacular autumn golden poplar forests of Ejina.',
+        timezoneFacts: 'Same timezone as Beijing though geographically far west. Extremely remote.',
+        bestTimeToVisit: 'October for Ejina golden poplars (2 weeks only!). April-May for desert.',
+        businessHours: 'Standard 9 AM to 6 PM. Desert tours require planning.',
+        timeDifference: 'Alxa is UTC+8 year-round. When noon in Alxa: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Ejina poplars in October are magical but crowded! Badain Jaran dunes are spectacular. Very remote - plan carefully. Camel rides available.',
+        transportation: 'Alxa Left Banner Airport (AXF). Long drives required.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'hinggan', city: 'Ulanhot', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 46.07, lng: 122.07, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.35M', metroPopulation: '1.6M', phoneCode: '+86 482', language: 'Mandarin, Mongolian',
+      climate: 'Humid continental with warm summers (18-27°C) and very cold winters (-22 to -10°C). Forest-steppe.',
+      attractions: ['Arxan National Park', 'Wusur River', 'Genghis Khan Temple', 'Arxan Hot Springs', 'Tianchi Lake', 'Stone Forest', 'Birch Forests', 'Hailar', 'Japanese Occupation Sites', 'Volcanic Landscapes'],
+      demographics: 'Where Inner Mongolia autonomous region was founded (1947). Gateway to Arxan National Park. Mix of grassland, forest, and volcanic landscapes.',
+      seoContent: {
+        intro: 'Ulanhot, birthplace of Inner Mongolia, operates on China Standard Time (CST/UTC+8). This historic city of 350,000 is where Inner Mongolia Autonomous Region was founded in 1947 and serves as gateway to stunning Arxan National Park.',
+        timezoneFacts: 'Same timezone as Beijing. Eastern Inner Mongolia, forested region.',
+        bestTimeToVisit: 'June-September for Arxan. Autumn colors spectacular. Winter extremely cold.',
+        businessHours: 'Standard 9 AM to 6 PM. Arxan park 6 AM to 6 PM.',
+        timeDifference: 'Ulanhot is UTC+8 year-round. When noon in Ulanhot: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Arxan National Park is incredibly beautiful - volcanic lakes, hot springs, forests! Less crowded than other parks. Autumn colors rival any in China.',
+        transportation: 'Ulanhot Airport (HLH). Arxan has own airport (YIE).',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'bortala', city: 'Bole', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 44.90, lng: 82.07, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.5M', metroPopulation: '0.5M', phoneCode: '+86 909', language: 'Mandarin, Kazakh, Mongolian',
+      climate: 'Semi-arid with warm summers (20-30°C) and cold winters (-15 to -5°C). Steppe climate.',
+      attractions: ['Sayram Lake', 'Alashankou Border', 'Ebinur Lake', 'Wenquan Hot Springs', 'Alataw Pass', 'Kazakh Villages', 'Mongol Yurt Camps', 'Train to Europe Gateway', 'Bird Watching', 'Lavender Fields'],
+      demographics: 'Home to stunning Sayram Lake. Major Eurasian railway gateway (Alashankou). Kazakh and Mongol minority cultures.',
+      seoContent: {
+        intro: 'Bole, gateway between China and Europe, operates on China Standard Time (CST/UTC+8). This border city of 500,000 guards Alashankou, where China-Europe freight trains cross into Kazakhstan, and features pristine Sayram Lake, Xinjiang\'s largest alpine lake.',
+        timezoneFacts: 'Same timezone as Beijing though far west. Sun rises/sets very late - around 9-10 AM/PM in summer!',
+        bestTimeToVisit: 'June-August for Sayram Lake and lavender. July for lake festivals.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time, but locals operate ~2 hours later.',
+        timeDifference: 'Bole is UTC+8 year-round despite being UTC+5 geographically. When noon in Bole: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Sayram Lake is breathtaking! Alashankou sees China-Europe trains. Adjust to late sunrise/sunset. Lavender fields in June-July.',
+        transportation: 'Bole Alashankou Airport (BPL). International rail gateway.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'changji', city: 'Changji', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 44.01, lng: 87.31, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.4M', metroPopulation: '1.6M', phoneCode: '+86 994', language: 'Mandarin, Kazakh, Hui',
+      climate: 'Semi-arid with hot summers (22-32°C) and cold winters (-15 to -5°C). Desert-steppe transition.',
+      attractions: ['Tianchi Lake', 'Bogda Peak', 'Jimsar Dinosaur Park', 'Mori Kazakh Culture', 'Mulei Singing Sand', 'Ancient Beiting City', 'Tianshan Tianchi', 'Hui Cuisine Street', 'Lavender Fields', 'Keketuohai'],
+      demographics: 'Gateway to Tianchi (Heavenly Lake) at foot of Bogda Peak. Hui Muslim and Kazakh cultures. Dinosaur fossil discoveries.',
+      seoContent: {
+        intro: 'Changji, gateway to Heavenly Lake, operates on China Standard Time (CST/UTC+8). This city of 400,000 is the gateway to Tianchi, the famous "Heavenly Lake" nestled beneath snow-capped Bogda Peak, one of Xinjiang\'s most iconic landscapes.',
+        timezoneFacts: 'Same timezone as Beijing. Central Xinjiang, near Urumqi.',
+        bestTimeToVisit: 'June-September for Tianchi. Spring for wildflowers.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time. Tianchi park 8 AM to 7 PM.',
+        timeDifference: 'Changji is UTC+8 year-round. When noon in Changji: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Tianchi is must-visit from Urumqi! Bogda Peak stunning backdrop. Try Hui cuisine in old town. Dinosaur park for kids.',
+        transportation: 'Near Urumqi Diwopu Airport. High-speed rail.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'ili', city: 'Yining', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 43.92, lng: 81.32, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.6M', metroPopulation: '2.8M', phoneCode: '+86 999', language: 'Mandarin, Kazakh, Uyghur',
+      climate: 'Semi-arid with warm summers (20-30°C) and cold winters (-12 to -2°C). Ili Valley microclimate.',
+      attractions: ['Nalati Grassland', 'Kanas Lake', 'Lavender Fields', 'Ili River', 'Kazakh Villages', 'Huocheng Lavender', 'Guozigou Bridge', 'Qapqal Xibe Town', 'Fruit Orchards', 'Sayram Lake'],
+      demographics: 'Heart of beautiful Ili Valley, China\'s "Little Switzerland". Largest lavender growing region outside Provence. Multi-ethnic harmony - Kazakh, Uyghur, Xibe cultures.',
+      seoContent: {
+        intro: 'Yining, China\'s Little Switzerland, operates on China Standard Time (CST/UTC+8). This city of 600,000 in the Ili Valley is surrounded by alpine meadows, lavender fields rivaling Provence, and some of China\'s most spectacular mountain scenery.',
+        timezoneFacts: 'Same timezone as Beijing though far west. Late sunrise/sunset - adjust schedule!',
+        bestTimeToVisit: 'June-July for lavender blooms! July-August for Nalati grasslands.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time, locals operate later.',
+        timeDifference: 'Yining is UTC+8 year-round despite being UTC+5 geographically. When noon in Yining: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Lavender blooms mid-June to mid-July - spectacular! Nalati grassland like Swiss Alps. Try Kazakh hospitality. Fruit orchards excellent.',
+        transportation: 'Yining Airport (YIN). Long but scenic drives to attractions.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'tacheng', city: 'Tacheng', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 46.75, lng: 82.98, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.17M', metroPopulation: '1.1M', phoneCode: '+86 901', language: 'Mandarin, Kazakh, Russian',
+      climate: 'Semi-arid with warm summers (18-28°C) and cold winters (-18 to -8°C). Steppe climate.',
+      attractions: ['Tacheng Border', 'Wusu Mud Volcano', 'Emin Tower', 'Kazakh Yurt Camps', 'Russian Architecture', 'Tarbagatai Mountains', 'Hoboksar Grassland', 'Sheep Herding', 'Flower Meadows', 'Kazakhstan Border Market'],
+      demographics: 'Remote border city with Russia/Kazakhstan influences. Mix of Kazakh, Russian, Tatar cultures. One of China\'s least visited regions.',
+      seoContent: {
+        intro: 'Tacheng, where cultures converge, operates on China Standard Time (CST/UTC+8). This remote border city of 170,000 sits where Chinese, Kazakh, Russian, and Tatar cultures blend, with unique architecture and traditions found nowhere else in China.',
+        timezoneFacts: 'Same timezone as Beijing. Far northwestern Xinjiang, very remote.',
+        bestTimeToVisit: 'June-August for pleasant weather and flower meadows.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time. Border markets morning.',
+        timeDifference: 'Tacheng is UTC+8 year-round despite being UTC+5 geographically. When noon in Tacheng: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Very off-beaten-path! Russian-style bread and dairy. Border market interesting. Extremely remote - plan carefully.',
+        transportation: 'Tacheng Airport (TCG). Long distances to anywhere.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'altay', city: 'Altay', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 47.85, lng: 88.14, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.2M', metroPopulation: '0.7M', phoneCode: '+86 906', language: 'Mandarin, Kazakh',
+      climate: 'Semi-arid with cool summers (15-25°C) and very cold winters (-25 to -12°C). Mountain-steppe.',
+      attractions: ['Kanas Lake', 'Hemu Village', 'Baihaba Village', 'Altay Mountains', 'Koktokay', 'Irtysh River', 'Skiing Resorts', 'Tuvan Culture', 'Autumn Colors', 'Birch Forests'],
+      demographics: 'Gateway to legendary Kanas Lake and Hemu Village. Home to mysterious Tuvan people. China\'s premier autumn destination. Emerging ski destination.',
+      seoContent: {
+        intro: 'Altay, gateway to Kanas Lake, operates on China Standard Time (CST/UTC+8). This remote city of 200,000 guards access to Kanas Lake, China\'s most mysterious and beautiful lake, and the fairytale village of Hemu with its Tuvan log cabins.',
+        timezoneFacts: 'Same timezone as Beijing though far northwest. Very late sunrise/sunset.',
+        bestTimeToVisit: 'September-October for autumn colors (SPECTACULAR!). January-February for skiing.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time. Kanas park 8 AM to 8 PM (summer).',
+        timeDifference: 'Altay is UTC+8 year-round despite being UTC+6 geographically. When noon in Altay: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Kanas autumn (late Sept) is China\'s most beautiful! Hemu village magical. Book way ahead for peak season. Winter skiing emerging.',
+        transportation: 'Altay Airport (AAT). Kanas has own airport (KJI).',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'hami', city: 'Hami', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 42.83, lng: 93.51, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.6M', metroPopulation: '0.6M', phoneCode: '+86 902', language: 'Mandarin, Uyghur, Kazakh',
+      climate: 'Desert with hot summers (25-38°C) and cold winters (-15 to -5°C). Extreme temperature swings.',
+      attractions: ['Hami Melon Fields', 'Mingsha Mountain', 'Yardang Ghost City', 'Tianshan Scenic Area', 'Hami Museum', 'King\'s Mausoleum', 'Gobi Desert', 'Ancient Hami City', 'Wind Power Corridor', 'Poplar Forests'],
+      demographics: 'Famous for Hami melons, China\'s sweetest. Gateway city on ancient Silk Road. Extreme climate with hot summers and cold winters.',
+      seoContent: {
+        intro: 'Hami, land of the sweetest melons, operates on China Standard Time (CST/UTC+8). This Silk Road oasis of 600,000 is famous worldwide for Hami melons, the sweetest in China, grown in extreme desert conditions that concentrate their sugars.',
+        timezoneFacts: 'Same timezone as Beijing though far west. Sunrise/sunset about 2 hours later than Beijing.',
+        bestTimeToVisit: 'July-September for melon harvest. Spring and autumn for comfortable temperatures.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time.',
+        timeDifference: 'Hami is UTC+8 year-round despite being UTC+6 geographically. When noon in Hami: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Taste authentic Hami melons - incomparably sweet! Yardang formations otherworldly. Extreme temperatures - prepare accordingly.',
+        transportation: 'Hami Airport (HMI). Rail connections on Silk Road route.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'aksu', city: 'Aksu', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 41.17, lng: 80.26, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.7M', metroPopulation: '2.7M', phoneCode: '+86 997', language: 'Mandarin, Uyghur',
+      climate: 'Desert with hot summers (25-35°C) and cold winters (-10 to 0°C). Oasis climate.',
+      attractions: ['Tianshan Grand Canyon', 'Kuqa Ancient City', 'Kizil Thousand Buddha Caves', 'Tarim River', 'Poplar Forests', 'Apple and Walnut Orchards', 'Ancient Silk Road Sites', 'Taklamakan Desert Edge', 'Subash Ancient City', 'Uyghur Old Town'],
+      demographics: 'Ancient Kuqa Kingdom territory on Silk Road. Kizil Caves predate Dunhuang. Famous for apples and walnuts. Gateway to Tianshan Grand Canyon.',
+      seoContent: {
+        intro: 'Aksu, heart of the ancient Silk Road, operates on China Standard Time (CST/UTC+8). This oasis city of 700,000 was once the powerful Kuqa Kingdom and features Kizil Caves, Buddhist grottoes older than Dunhuang, plus spectacular Tianshan Grand Canyon.',
+        timezoneFacts: 'Same timezone as Beijing though far west. Sun rises around 8-9 AM, sets around 10 PM in summer.',
+        bestTimeToVisit: 'May-October for Tianshan Canyon. Autumn for apple/walnut harvest.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time. Locals operate later.',
+        timeDifference: 'Aksu is UTC+8 year-round despite being UTC+5 geographically. When noon in Aksu: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Tianshan Grand Canyon is stunning red rock! Kizil Caves predate Mogao. Aksu apples famous. Adjust to very late sunrise/sunset.',
+        transportation: 'Aksu Airport (AKU). Rail connections available.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'hotan', city: 'Hotan', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 37.11, lng: 79.93, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.4M', metroPopulation: '2.5M', phoneCode: '+86 903', language: 'Mandarin, Uyghur',
+      climate: 'Desert with very hot summers (28-40°C) and cold winters (-8 to 2°C). Extreme desert.',
+      attractions: ['Hotan Jade Market', 'White Jade River', 'Taklamakan Desert', 'Ancient Niya Ruins', 'Silk and Carpet Workshops', 'Hotan Museum', 'Imam Asim Mazar', 'Desert Poplar Forests', 'Sunday Bazaar', 'Melikawat Ruins'],
+      demographics: 'World capital of nephrite jade for 5,000 years. Edge of Taklamakan Desert. Ancient Silk Road oasis. Famous for carpets and silk.',
+      seoContent: {
+        intro: 'Hotan, world jade capital for 5,000 years, operates on China Standard Time (CST/UTC+8). This desert oasis of 400,000 has supplied the world\'s finest nephrite jade for millennia, with jade trading continuing in its famous Sunday market.',
+        timezoneFacts: 'Same timezone as Beijing though very far west. Sun rises ~9 AM, sets ~11 PM in summer!',
+        bestTimeToVisit: 'April-May and September-October. Avoid extreme summer heat.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time. Sunday bazaar all day.',
+        timeDifference: 'Hotan is UTC+8 year-round despite being UTC+5 geographically. When noon in Hotan: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Jade market fascinating - bring expert to avoid fakes! Sunday bazaar authentic. Desert extremely harsh. Niya ruins require permits.',
+        transportation: 'Hotan Airport (HTN). Long distances to other cities.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'kizilsu', city: 'Artux', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 39.71, lng: 76.17, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.3M', metroPopulation: '0.6M', phoneCode: '+86 908', language: 'Mandarin, Kyrgyz, Uyghur',
+      climate: 'Semi-arid with warm summers (20-32°C) and cold winters (-10 to 0°C). Mountain-desert.',
+      attractions: ['Karakul Lake', 'Muztagh Ata', 'Kongur Tagh', 'Pamir Highway', 'Kyrgyz Yurt Camps', 'Ancient Silk Road', 'Opal Valley', 'Border Mountains', 'Eagle Hunting', 'High Altitude Scenery'],
+      demographics: 'Capital of Kizilsu Kyrgyz Autonomous Prefecture. Gateway to Karakul Lake and Pamir Mountains. Kyrgyz eagle hunting culture.',
+      seoContent: {
+        intro: 'Artux, gateway to the Pamirs, operates on China Standard Time (CST/UTC+8). This Kyrgyz capital of 300,000 guards the ancient Silk Road route through the Pamir Mountains, with stunning Karakul Lake and 7,500m peaks on the horizon.',
+        timezoneFacts: 'Same timezone as Beijing though extremely far west. Latest sunrise/sunset in China - sun sets after 10 PM in summer!',
+        bestTimeToVisit: 'June-September for Karakul Lake and Pamir passes.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time. Tourism seasonal.',
+        timeDifference: 'Artux is UTC+8 year-round despite being UTC+5 geographically. When noon in Artux: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Karakul Lake at 3,600m is breathtaking! Muztagh Ata for mountaineering. Kyrgyz culture authentic. Altitude preparation essential.',
+        transportation: 'Near Kashgar Airport. Karakoram Highway access.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'shihezi', city: 'Shihezi', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 44.30, lng: 86.03, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.6M', metroPopulation: '0.7M', phoneCode: '+86 993', language: 'Mandarin',
+      climate: 'Semi-arid with hot summers (22-32°C) and cold winters (-15 to -5°C). Oasis climate.',
+      attractions: ['Shihezi Military Reclamation Museum', 'Tianshan Tianchi (nearby)', 'Cotton Fields', 'Grape Vineyards', 'Shihezi University', 'Monument to Pioneers', 'Desert Greening Projects', 'Garden City Parks', 'Xinjiang Production Corps History', 'Agricultural Tourism'],
+      demographics: 'Model city built by Xinjiang Production and Construction Corps. Known as "Pearl of the Gobi" - turned desert into gardens. Han-majority planned city.',
+      seoContent: {
+        intro: 'Shihezi, Pearl of the Gobi, operates on China Standard Time (CST/UTC+8). This planned city of 600,000 was carved from desert by the Xinjiang Production Corps, transforming harsh Gobi into a green garden city - a testament to human determination.',
+        timezoneFacts: 'Same timezone as Beijing. Central Xinjiang, oasis in desert.',
+        bestTimeToVisit: 'May-September for green season. August for grape harvest.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time.',
+        timeDifference: 'Shihezi is UTC+8 year-round. When noon in Shihezi: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Military Reclamation Museum tells unique story. Green city in desert impressive. Near Tianchi day trips. Cotton harvest in autumn.',
+        transportation: 'Shihezi Huayuan Airport. Near Urumqi.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
+    }
+  },
+  { slug: 'karamay', city: 'Karamay', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 45.59, lng: 84.89, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Chinese Yuan', currencySymbol: '¥', population: '0.5M', metroPopulation: '0.5M', phoneCode: '+86 990', language: 'Mandarin',
+      climate: 'Desert with hot summers (25-35°C) and cold winters (-18 to -8°C). Oil field climate.',
+      attractions: ['Ghost City (Urho)', 'Karamay Oil Field', 'Black Oil Mountain', 'Petroleum Museum', 'Dinosaur Park', 'Gobi Desert', 'Wind City', 'Oil Derrick Forest', 'Yardang Landforms', 'Baijiantan'],
+      demographics: 'China\'s first large oil field city. Name means "black oil" in Uyghur. Wealthy petroleum industry city in Gobi Desert.',
+      seoContent: {
+        intro: 'Karamay, China\'s oil city, operates on China Standard Time (CST/UTC+8). This wealthy desert city of 500,000 sits atop China\'s first major oil field, with otherworldly Yardang "Ghost City" formations and endless oil derricks across the Gobi.',
+        timezoneFacts: 'Same timezone as Beijing. Northern Xinjiang desert.',
+        bestTimeToVisit: 'May-September. Ghost City best at sunset. Avoid winter winds.',
+        businessHours: 'Standard 9 AM to 6 PM Beijing time.',
+        timeDifference: 'Karamay is UTC+8 year-round. When noon in Karamay: London 4 AM, NYC 11 PM (-1), Tokyo 1 PM.',
+        daylightSaving: 'China does not observe Daylight Saving Time. UTC+8 year-round.',
+        localTips: 'Ghost City at sunset is magical! Petroleum industry fascinating. One of China\'s wealthiest cities. Extreme winds common.',
+        transportation: 'Karamay Airport (KRY). Rail connections available.',
+        emergencyNumbers: 'Police: 110. Ambulance: 120. Fire: 119.',
+        publicHolidays: 'New Year, Chinese New Year (7 days), Qingming, Labor Day, Dragon Boat, Mid-Autumn, National Day.'
+      }
     }
   },
   { slug: 'dali', city: 'Dali', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 25.59, lng: 100.23, tier: 3, continent: 'asia',
