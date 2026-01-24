@@ -6921,6 +6921,308 @@ export const cities: City[] = [
     }
   },
   
+  // Japan - Final Batch (15 cities to reach 69 total)
+  { slug: 'wakayama', city: 'Wakayama', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.23, lng: 135.17, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.36M', metroPopulation: '0.8M', phoneCode: '+81 73', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (3-10°C). Pacific coast.',
+      attractions: ['Kumano Kodo Pilgrimage', 'Wakayama Castle', 'Kimiidera Temple', 'Kuroshio Market', 'Marina City', 'Kada', 'Adventure World Pandas', 'Shirahama Beach', 'Nachi Falls', 'Koyasan Gateway'],
+      demographics: 'Kumano Kodo UNESCO pilgrimage start. Wakayama ramen famous. Adventure World pandas popular.',
+      seoContent: {
+        intro: 'Wakayama, gateway to the sacred Kumano Kodo, operates on Japan Standard Time (JST/UTC+9). This Pacific coast city of 360,000 is the starting point for the UNESCO Kumano Kodo pilgrimage trails, home to Adventure World\'s beloved pandas, and famous for its rich tonkotsu-shoyu ramen.',
+        timezoneFacts: 'Same timezone as all of Japan. Kii Peninsula, south of Osaka.',
+        bestTimeToVisit: 'Spring and autumn for Kumano Kodo hiking. Summer for Shirahama beaches. Year-round for ramen.',
+        businessHours: 'Wakayama Castle 9 AM to 5 PM. Kuroshio Market 10 AM to 6 PM. Adventure World 10 AM to 5 PM.',
+        timeDifference: 'Wakayama is UTC+9 year-round. When noon in Wakayama: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Kumano Kodo UNESCO pilgrimage - multiple routes. Adventure World pandas adorable. Wakayama ramen rich and unique. Shirahama has white sand beach.',
+        transportation: 'Nankai Airport (limited). JR from Osaka (1 hr). Gateway to Kumano Kodo and Koyasan.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Kumano Fireworks (August).'
+      }
+    }
+  },
+  { slug: 'kurashiki', city: 'Kurashiki', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.59, lng: 133.77, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.48M', metroPopulation: '0.48M', phoneCode: '+81 86', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-33°C) and mild winters (2-10°C). Seto Inland Sea.',
+      attractions: ['Bikan Historical Quarter', 'Ohara Museum of Art', 'Kurashiki Canal', 'White-Walled Warehouses', 'Ivy Square', 'Kojima Jeans Street', 'Washuzan Hill', 'Seto Ohashi Bridge', 'Folk Craft Museum', 'Achi Shrine'],
+      demographics: 'Edo-period merchant quarter preserved. Japan\'s first Western art museum. Kojima denim capital.',
+      seoContent: {
+        intro: 'Kurashiki, the canal town of white warehouses, operates on Japan Standard Time (JST/UTC+9). This beautifully preserved city of 480,000 features the Bikan Historical Quarter with willow-lined canals, white-walled Edo-period warehouses, and Japan\'s first Western art museum, the Ohara.',
+        timezoneFacts: 'Same timezone as all of Japan. Okayama Prefecture, easy from Okayama city.',
+        bestTimeToVisit: 'Spring and autumn most pleasant. Evening canal illumination romantic. Summer hot but lively.',
+        businessHours: 'Ohara Museum 9 AM to 5 PM, closed Monday. Bikan shops 10 AM to 5 PM. Canal illumination until 10 PM.',
+        timeDifference: 'Kurashiki is UTC+9 year-round. When noon in Kurashiki: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Bikan Quarter most photogenic at dusk! Ohara Museum has El Greco and Monet. Kojima is Japan\'s denim capital. Punt boat rides on canal. Combine with Okayama day trip.',
+        transportation: 'JR Kurashiki Station 15-min walk to Bikan. From Okayama (15 min). Okayama Airport nearby.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Kurashiki Spring Festival. Achi Shrine Festival.'
+      }
+    }
+  },
+  { slug: 'kinosaki', city: 'Kinosaki Onsen', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.63, lng: 134.81, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.004M', metroPopulation: '0.08M', phoneCode: '+81 796', language: 'Japanese',
+      climate: 'Humid subtropical with warm summers (22-30°C) and cold snowy winters (-2 to 6°C). Sea of Japan snow.',
+      attractions: ['7 Public Onsen', 'Willow-Lined Streets', 'Onsen-Hopping in Yukata', 'Kinosaki Ropeway', 'Onsenji Temple', 'Genbudo Caves', 'Snow Crab (Winter)', 'Tajima Beef', 'Stork Sanctuary', 'Traditional Ryokan'],
+      demographics: 'Classic onsen town with 7 public baths. Yukata strolling culture. Snow crab in winter.',
+      seoContent: {
+        intro: 'Kinosaki Onsen, the quintessential Japanese hot spring town, operates on Japan Standard Time (JST/UTC+9). This charming town of 4,000 is famous for its 7 public bathhouses connected by willow-lined streets, where visitors stroll in yukata and wooden geta sandals hopping between baths.',
+        timezoneFacts: 'Same timezone as all of Japan. Northern Hyogo, Sea of Japan coast.',
+        bestTimeToVisit: 'November-March for snow crab. Summer for strolling. Year-round for onsen. Winter snowy and atmospheric.',
+        businessHours: '7 public onsen 7 AM to 11 PM (varies). Ryokan check-in 3 PM. Shops until 6 PM.',
+        timeDifference: 'Kinosaki is UTC+9 year-round. When noon in Kinosaki: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Ryokan includes free pass to all 7 onsen! Yukata strolling is the experience. Each bath has different character. Snow crab November-March legendary. Ropeway for mountain views.',
+        transportation: 'JR Kinosaki Onsen Station from Kyoto (2.5 hr) or Osaka (2.5 hr). No airport nearby.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Kinosaki Fireworks (August).'
+      }
+    }
+  },
+  { slug: 'hakuba', city: 'Hakuba', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.70, lng: 137.86, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.009M', metroPopulation: '0.009M', phoneCode: '+81 261', language: 'Japanese',
+      climate: 'Mountain climate with cool summers (15-25°C) and very cold snowy winters (-10 to 0°C). Heavy powder snow.',
+      attractions: ['Hakuba Valley Ski Resorts', 'Happo-One', '1998 Olympic Venues', 'Powder Snow', 'Summer Hiking', 'Mountain Biking', 'Hakuba Goryu', 'Tsugaike', 'Green Season', 'Hot Springs'],
+      demographics: '1998 Winter Olympics venue. Japan\'s best powder snow. 10 interconnected resorts. International ski destination.',
+      seoContent: {
+        intro: 'Hakuba, Japan\'s premier ski destination, operates on Japan Standard Time (JST/UTC+9). This 1998 Winter Olympics host village of 9,000 offers 10 interconnected ski resorts with legendary Japanese powder snow, attracting skiers and snowboarders from around the world.',
+        timezoneFacts: 'Same timezone as all of Japan. Northern Nagano, Japanese Alps.',
+        bestTimeToVisit: 'December-March for skiing (January-February best powder). Summer for hiking and mountain biking.',
+        businessHours: 'Ski lifts 8 AM to 4:30 PM. Night skiing at select resorts. Summer activities 9 AM to 5 PM.',
+        timeDifference: 'Hakuba is UTC+9 year-round. When noon in Hakuba: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Happo-One hosted 1998 Olympics. Powder snow legendary - arrive early after snowfall. Multi-resort passes available. Summer hiking spectacular. Onsen after skiing perfect.',
+        transportation: 'Bus from Nagano Station (1 hr). Direct bus from Tokyo/Shinjuku (5 hr). Nearest airport Matsumoto.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Ski season December-April.'
+      }
+    }
+  },
+  { slug: 'nozawa-onsen', city: 'Nozawa Onsen', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.92, lng: 138.44, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.003M', metroPopulation: '0.003M', phoneCode: '+81 269', language: 'Japanese',
+      climate: 'Mountain climate with cool summers (15-25°C) and very cold snowy winters (-10 to 0°C). Heavy snowfall.',
+      attractions: ['Nozawa Onsen Ski Resort', '13 Free Public Baths', 'Dosojin Fire Festival', 'O-Yu Bathhouse', 'Village Atmosphere', 'Nozawa Sake', 'Oyaki Dumplings', 'Powder Snow', 'Onsen Eggs', 'Traditional Ryokan'],
+      demographics: 'Traditional ski village since 1912. 13 free public baths. Famous fire festival. Authentic Japan atmosphere.',
+      seoContent: {
+        intro: 'Nozawa Onsen, the traditional ski village, operates on Japan Standard Time (JST/UTC+9). This charming village of 3,000 has been a ski destination since 1912, combining excellent powder skiing with 13 free public hot spring baths and one of Japan\'s most spectacular fire festivals.',
+        timezoneFacts: 'Same timezone as all of Japan. Northern Nagano mountains.',
+        bestTimeToVisit: 'December-March for skiing. January 15 for Dosojin Fire Festival. Year-round for onsen.',
+        businessHours: 'Ski lifts 8:30 AM to 4:30 PM. Public baths 5 AM to 11 PM. O-Yu main bathhouse 6 AM to 11 PM.',
+        timeDifference: 'Nozawa Onsen is UTC+9 year-round. When noon in Nozawa: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: '13 public baths all FREE! Dosojin Fire Festival (Jan 15) wild and unmissable. Village walkable. Try oyaki dumplings. O-Yu is main bathhouse. Authentic old Japan feel.',
+        transportation: 'Bus from Iiyama Station (25 min) on Hokuriku Shinkansen. Direct bus from Tokyo available.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Dosojin Fire Festival (January 15) - UNESCO nominated.'
+      }
+    }
+  },
+  { slug: 'tottori', city: 'Tottori', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.50, lng: 134.24, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.19M', metroPopulation: '0.19M', phoneCode: '+81 857', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (25-32°C) and cold winters (1-8°C). Sea of Japan side.',
+      attractions: ['Tottori Sand Dunes', 'Sand Museum', 'Uradome Coast', 'Mt. Daisen', 'Hakuto Shrine', 'Matsuba Crab', 'Camel Rides', 'Paragliding', 'Pear Orchards', 'Jinpukaku Villa'],
+      demographics: 'Japan\'s only large sand dunes. Least populated prefecture. Detective Conan creator hometown.',
+      seoContent: {
+        intro: 'Tottori, land of sand dunes, operates on Japan Standard Time (JST/UTC+9). This city of 190,000 is famous for Japan\'s only large sand dunes - 16km of Sahara-like landscape along the Sea of Japan coast, plus the rotating Sand Museum featuring incredible sand sculptures.',
+        timezoneFacts: 'Same timezone as all of Japan. San\'in coast, Sea of Japan side.',
+        bestTimeToVisit: 'Spring and autumn for comfortable dune walking. Winter for snow on dunes (rare sight). November-March for crab.',
+        businessHours: 'Sand Dunes 24/7 accessible. Sand Museum 9 AM to 5 PM. Chair lift to dunes 9 AM to 5 PM.',
+        timeDifference: 'Tottori is UTC+9 year-round. When noon in Tottori: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Dunes best at sunrise or sunset. Camel rides available! Sand Museum changes theme annually. Matsuba crab winter specialty. Snow on dunes magical but rare.',
+        transportation: 'Tottori Airport (TTJ) 20 min. JR from Osaka (2.5 hr). Limited express from Kyoto.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Sand Festival at Sand Museum.'
+      }
+    }
+  },
+  { slug: 'miyazaki', city: 'Miyazaki', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 31.91, lng: 131.42, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.40M', metroPopulation: '0.55M', phoneCode: '+81 985', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (5-12°C). Warm Pacific coast.',
+      attractions: ['Takachiho Gorge', 'Aoshima Island', 'Udo Shrine', 'Sun Messe Nichinan (Moai)', 'Miyazaki Shrine', 'Seagaia Resort', 'Mango', 'Chicken Nanban', 'Phoenix Trees', 'Baseball Camps'],
+      demographics: 'Mythological birthplace of Japan. Takachiho gorge stunning. Honeymoon destination. Baseball spring training.',
+      seoContent: {
+        intro: 'Miyazaki, mythological birthplace of Japan, operates on Japan Standard Time (JST/UTC+9). This sunny Pacific coast city of 400,000 is considered where Japanese mythology began, featuring the stunning Takachiho Gorge, mysterious Udo Shrine in a sea cave, and replica Easter Island Moai statues.',
+        timezoneFacts: 'Same timezone as all of Japan. Southeast Kyushu, Pacific coast.',
+        bestTimeToVisit: 'Year-round mild climate. Spring and autumn most pleasant. Summer for beaches. Takachiho year-round.',
+        businessHours: 'Takachiho Gorge boats 8:30 AM to 5 PM. Udo Shrine 6 AM to 7 PM. Sun Messe 9:30 AM to 5 PM.',
+        timeDifference: 'Miyazaki is UTC+9 year-round. When noon in Miyazaki: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Takachiho rowboat through gorge magical! Udo Shrine throw lucky balls into rock. Moai replicas with Easter Island permission. Chicken nanban invented here. Mango expensive but incredible.',
+        transportation: 'Miyazaki Airport (KMI) 5km from city. JR from Fukuoka (4 hr). Takachiho 1.5 hr by bus.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Takachiho Kagura (traditional dance) year-round.'
+      }
+    }
+  },
+  { slug: 'onomichi', city: 'Onomichi', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.41, lng: 133.21, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.13M', metroPopulation: '0.13M', phoneCode: '+81 848', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (3-10°C). Seto Inland Sea.',
+      attractions: ['Shimanami Kaido', 'Temple Walk', 'Senkoji Park', 'Ropeway', 'Cat Alley', 'Onomichi Ramen', 'Literature Alley', 'Cycling', '25 Temples', 'Setoda (Ikuchijima)'],
+      demographics: 'Shimanami Kaido cycling start. Hillside temple town. Cats everywhere. Film setting.',
+      seoContent: {
+        intro: 'Onomichi, the hillside temple town, operates on Japan Standard Time (JST/UTC+9). This atmospheric city of 130,000 is the starting point of the famous Shimanami Kaido cycling route to Shikoku, featuring narrow slopes dotted with 25 temples, countless cats, and nostalgic alleyways.',
+        timezoneFacts: 'Same timezone as all of Japan. Hiroshima Prefecture, Seto Inland Sea.',
+        bestTimeToVisit: 'Spring cherry blossoms at temples. Autumn pleasant for cycling. Year-round for temple walk.',
+        businessHours: 'Senkoji Ropeway 9 AM to 5:15 PM. Temples dawn to dusk. Ramen shops 11 AM to 3 PM typically.',
+        timeDifference: 'Onomichi is UTC+9 year-round. When noon in Onomichi: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Shimanami Kaido 70km cycling to Imabari - rent bikes here! Temple Walk climbs hillside. Cat Alley for cat lovers. Onomichi ramen has flat noodles. Many films shot here.',
+        transportation: 'JR Onomichi Station on San\'yo Line. From Hiroshima (1.5 hr). Shimanami Kaido bike rental at station.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Onomichi Minato Festival.'
+      }
+    }
+  },
+  { slug: 'izumo', city: 'Izumo', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.37, lng: 132.75, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.17M', metroPopulation: '0.17M', phoneCode: '+81 853', language: 'Japanese',
+      climate: 'Humid subtropical with warm summers (24-30°C) and cool winters (2-8°C). Sea of Japan side.',
+      attractions: ['Izumo Taisha', 'Hinomisaki Shrine', 'Hinomisaki Lighthouse', 'Izumo Soba', 'Shimane Museum of Ancient Izumo', 'En-Musubi (Matchmaking)', 'Inasa Beach', 'Kamiari Festival', 'Warigo Soba', 'Old Taisha Station'],
+      demographics: 'Izumo Taisha - one of Japan\'s most important shrines. God of marriage. October all gods gather here.',
+      seoContent: {
+        intro: 'Izumo, where the gods gather, operates on Japan Standard Time (JST/UTC+9). This city of 170,000 is home to Izumo Taisha, one of Japan\'s most ancient and important Shinto shrines, where all 8 million gods are said to gather in October (Kamiarizuki - "month with gods").',
+        timezoneFacts: 'Same timezone as all of Japan. Shimane Prefecture, San\'in coast.',
+        bestTimeToVisit: 'October (lunar calendar) for Kamiari Festival when gods gather. Year-round for shrine. Avoid New Year crowds.',
+        businessHours: 'Izumo Taisha 6 AM to 8 PM. Museum 9 AM to 5 PM. Soba shops 11 AM to 3 PM.',
+        timeDifference: 'Izumo is UTC+9 year-round. When noon in Izumo: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Izumo Taisha for en-musubi (marriage matchmaking)! Clap 4 times not 2 here. October gods from all Japan gather. Izumo soba served in 3 stacked bowls (warigo). Shimenawa rope massive.',
+        transportation: 'Izumo Airport (IZO) 25 min. JR from Matsue (30 min). Limited express from Osaka (4 hr).',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Kamiari Festival (October lunar) - most important.'
+      }
+    }
+  },
+  { slug: 'karuizawa', city: 'Karuizawa', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.35, lng: 138.60, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.02M', metroPopulation: '0.02M', phoneCode: '+81 267', language: 'Japanese',
+      climate: 'Highland climate with cool summers (18-26°C) and cold winters (-8 to 3°C). 1,000m elevation.',
+      attractions: ['Karuizawa Prince Shopping Plaza', 'Shiraito Falls', 'Kyu-Karuizawa Ginza', 'Stone Church', 'Wild Bird Sanctuary', 'Cycling', 'John Lennon Trail', 'Mt. Asama', 'Art Museums', 'Imperial Villa'],
+      demographics: 'Elite summer resort since Meiji era. Emperor meets commoner love story. John Lennon\'s favorite. Outlet shopping.',
+      seoContent: {
+        intro: 'Karuizawa, the elite mountain resort, operates on Japan Standard Time (JST/UTC+9). This highland retreat of 20,000 at 1,000m has been Japan\'s premier summer escape since the Meiji era, where Emperor Akihito met his wife, John Lennon spent summers, and today offers outlet shopping and nature.',
+        timezoneFacts: 'Same timezone as all of Japan. Nagano Prefecture, 1 hour from Tokyo by Shinkansen.',
+        bestTimeToVisit: 'Summer for cool escape from Tokyo heat. Autumn colors beautiful. Winter for skiing. Spring fresh.',
+        businessHours: 'Prince Shopping Plaza 10 AM to 8 PM. Kyu-Karuizawa shops 10 AM to 6 PM. Shiraito Falls daylight.',
+        timeDifference: 'Karuizawa is UTC+9 year-round. When noon in Karuizawa: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Prince Shopping Plaza Japan\'s largest outlet. John Lennon loved Mampei Hotel cafe. Cycling around town popular. Stone Church weddings famous. Summer 10°C cooler than Tokyo.',
+        transportation: 'Hokuriku Shinkansen from Tokyo (1 hr). Karuizawa Station directly at outlet mall.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Summer peak season July-August.'
+      }
+    }
+  },
+  { slug: 'gifu', city: 'Gifu', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.42, lng: 136.76, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.40M', metroPopulation: '0.82M', phoneCode: '+81 58', language: 'Japanese',
+      climate: 'Humid subtropical with hot humid summers (26-34°C) and cold winters (0-8°C). Basin heat.',
+      attractions: ['Cormorant Fishing (Ukai)', 'Gifu Castle', 'Nagaragawa River', 'Mt. Kinka Ropeway', 'Great Buddha', 'Yanagase Shopping', 'Paper Umbrella Making', 'Nobunaga History', 'Shirakawa-go Gateway', 'Gujo Hachiman'],
+      demographics: 'Cormorant fishing 1,300 years old. Oda Nobunaga\'s base. Traditional crafts. Gateway to Shirakawa-go.',
+      seoContent: {
+        intro: 'Gifu, city of cormorant fishing, operates on Japan Standard Time (JST/UTC+9). This city of 400,000 has practiced ukai (cormorant fishing) on the Nagaragawa River for 1,300 years, was Oda Nobunaga\'s stronghold, and serves as gateway to UNESCO-listed Shirakawa-go.',
+        timezoneFacts: 'Same timezone as all of Japan. Central Honshu, between Nagoya and Shirakawa-go.',
+        bestTimeToVisit: 'May 11 - October 15 for cormorant fishing. Cherry blossoms at castle April. Year-round for crafts.',
+        businessHours: 'Cormorant fishing 7:45 PM start (summer). Gifu Castle 9:30 AM to 5:30 PM. Ropeway 9 AM to 6 PM.',
+        timeDifference: 'Gifu is UTC+9 year-round. When noon in Gifu: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Cormorant fishing boat tours magical! Oda Nobunaga unified Japan from here. Paper umbrella and lantern crafts. Gifu Great Buddha wood construction. Gujo Hachiman nearby for Obon dance.',
+        transportation: 'JR Gifu Station from Nagoya (20 min). Chubu Centrair Airport 1 hr. Gateway to Shirakawa-go.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Cormorant fishing season May-October.'
+      }
+    }
+  },
+  { slug: 'yamaguchi', city: 'Yamaguchi', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.19, lng: 131.47, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.19M', metroPopulation: '0.5M', phoneCode: '+81 83', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (2-10°C). Seto Inland Sea side.',
+      attractions: ['Rurikoji Temple (5-story Pagoda)', 'Akiyoshido Cave', 'Akiyoshidai Karst', 'Kozan Park', 'Xavier Memorial Church', 'SL Yamaguchi Steam Train', 'Motonosumi Shrine', 'Tsunoshima Bridge', 'Iwakuni Kintaikyo', 'Fugu (Shimonoseki)'],
+      demographics: 'Western Honshu Kyoto. Francis Xavier landed here. Meiji Restoration leaders from here. Dramatic landscapes.',
+      seoContent: {
+        intro: 'Yamaguchi, the Western Kyoto, operates on Japan Standard Time (JST/UTC+9). This city of 190,000 was called "Western Kyoto" for its cultural refinement, features Japan\'s largest limestone cave, and produced many leaders of the Meiji Restoration that modernized Japan.',
+        timezoneFacts: 'Same timezone as all of Japan. Western tip of Honshu.',
+        bestTimeToVisit: 'Spring and autumn for comfortable sightseeing. Year-round for cave (constant temperature).',
+        businessHours: 'Rurikoji dawn to dusk. Akiyoshido Cave 8:30 AM to 4:30 PM. SL Yamaguchi weekends.',
+        timeDifference: 'Yamaguchi is UTC+9 year-round. When noon in Yamaguchi: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Rurikoji 5-story pagoda rivals Kyoto. Akiyoshido Japan\'s largest cave - 1km walk inside. Motonosumi 123 red torii by sea. SL steam train scenic. Shimonoseki for fugu.',
+        transportation: 'JR Yamaguchi Station. Yamaguchi Ube Airport 30 min. San\'yo Shinkansen stops at Shin-Yamaguchi.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Yamaguchi Gion Festival (July).'
+      }
+    }
+  },
+  { slug: 'sasebo', city: 'Sasebo', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 33.18, lng: 129.72, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.24M', metroPopulation: '0.24M', phoneCode: '+81 956', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (4-10°C). Coastal.',
+      attractions: ['Kujukushima (99 Islands)', 'Huis Ten Bosch', 'Sasebo Burger', 'Pearl Sea Resort', 'Saikaibashi Bridge', 'Tenkaiho Observatory', 'US Naval Base', 'Lemon Steak', 'Sunset Cruises', 'Island Hopping'],
+      demographics: 'Kujukushima 208 islands spectacular. Huis Ten Bosch Dutch theme park. Naval port. American influence.',
+      seoContent: {
+        intro: 'Sasebo, city of 99 islands, operates on Japan Standard Time (JST/UTC+9). This naval port city of 240,000 is gateway to the stunning Kujukushima archipelago (actually 208 islands), home to the Dutch-themed Huis Ten Bosch park, and famous for its American-influenced Sasebo Burger.',
+        timezoneFacts: 'Same timezone as all of Japan. Northern Nagasaki Prefecture.',
+        bestTimeToVisit: 'Year-round for Kujukushima. Spring and autumn most pleasant. Huis Ten Bosch illumination winter.',
+        businessHours: 'Kujukushima cruises 9 AM to 5 PM. Huis Ten Bosch 9 AM to 10 PM. Burger shops 11 AM to 8 PM.',
+        timeDifference: 'Sasebo is UTC+9 year-round. When noon in Sasebo: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Kujukushima sunset cruise breathtaking! Sasebo Burger bigger than regular - American navy influence. Huis Ten Bosch illumination famous. Tenkaiho best viewpoint for islands.',
+        transportation: 'JR Sasebo Station from Hakata (2 hr). Nagasaki Airport 1.5 hr. Bus to Huis Ten Bosch.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Huis Ten Bosch events year-round.'
+      }
+    }
+  },
+  { slug: 'utsunomiya', city: 'Utsunomiya', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.57, lng: 139.88, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.52M', metroPopulation: '0.9M', phoneCode: '+81 28', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (25-32°C) and cold winters (-2 to 8°C).',
+      attractions: ['Gyoza (Dumplings)', 'Oya History Museum', 'Futaarayama Shrine', 'Utsunomiya Castle Ruins', 'Gyoza Street', 'Jazz Bars', 'Cycling', 'Nikko Gateway', 'Hachimanyama Park', 'Local Sake'],
+      demographics: 'Japan\'s Gyoza capital. Underground Oya stone quarry cathedral. Gateway to Nikko. Jazz culture.',
+      seoContent: {
+        intro: 'Utsunomiya, the Gyoza capital of Japan, operates on Japan Standard Time (JST/UTC+9). This city of 520,000 consumes more gyoza dumplings per capita than anywhere in Japan, features the cathedral-like underground Oya stone quarry, and serves as the gateway to UNESCO-listed Nikko.',
+        timezoneFacts: 'Same timezone as all of Japan. Tochigi Prefecture, 50 min from Tokyo.',
+        bestTimeToVisit: 'Year-round for gyoza. Spring and autumn pleasant. Gateway to Nikko autumn colors.',
+        businessHours: 'Gyoza shops 11 AM to 9 PM. Oya History Museum 9 AM to 5 PM. Station area shops until 8 PM.',
+        timeDifference: 'Utsunomiya is UTC+9 year-round. When noon in Utsunomiya: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Gyoza pilgrimage - try multiple shops! Oya quarry underground cathedral stunning. Station has gyoza street. Gateway to Nikko (40 min). Jazz bars famous.',
+        transportation: 'Tohoku Shinkansen from Tokyo (50 min). JR to Nikko (40 min). No major airport.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Gyoza Festival (November).'
+      }
+    }
+  },
+  { slug: 'mito', city: 'Mito', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.37, lng: 140.47, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.27M', metroPopulation: '0.65M', phoneCode: '+81 29', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (25-32°C) and cold winters (-1 to 8°C).',
+      attractions: ['Kairakuen Garden', 'Plum Blossoms', 'Senba Lake', 'Tokugawa Museum', 'Natto', 'Mito Komon Statue', 'Kobuntei', 'Art Tower Mito', 'Oarai Beach', 'Hitachi Seaside Park'],
+      demographics: 'Kairakuen - one of Japan\'s 3 great gardens. Plum blossom capital. Natto fermented soybean origin.',
+      seoContent: {
+        intro: 'Mito, city of plum blossoms, operates on Japan Standard Time (JST/UTC+9). This city of 270,000 is home to Kairakuen, one of Japan\'s three great gardens famous for 3,000 plum trees, and is the birthplace of natto (fermented soybeans) - Japan\'s most divisive food.',
+        timezoneFacts: 'Same timezone as all of Japan. Ibaraki Prefecture, 1 hour from Tokyo.',
+        bestTimeToVisit: 'Late February-March for plum blossom festival at Kairakuen. Spring through autumn pleasant.',
+        businessHours: 'Kairakuen 6 AM to 7 PM (varies). Tokugawa Museum 9:30 AM to 5 PM. Art Tower Mito 10 AM to 6 PM.',
+        timeDifference: 'Mito is UTC+9 year-round. When noon in Mito: London 3 AM, NYC 10 PM (previous day), Sydney 2 PM.',
+        daylightSaving: 'Japan does not observe Daylight Saving Time. JST (UTC+9) applies year-round.',
+        localTips: 'Kairakuen plum festival late Feb-early Mar spectacular! Natto originated here - try it. Hitachi Seaside Park nemophila (April-May) incredible. Art Tower modern architecture.',
+        transportation: 'JR Joban Line from Tokyo (1 hr). Limited express available. Ibaraki Airport 40 min.',
+        emergencyNumbers: 'Emergency: 110 (police), 119 (fire/ambulance).',
+        publicHolidays: 'Standard Japanese holidays. Mito Plum Festival (Feb-Mar).'
+      }
+    }
+  },
+  
   // South Korea - Additional Cities
   { slug: 'incheon', city: 'Incheon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.46, lng: 126.71, tier: 2, continent: 'asia',
     info: {
