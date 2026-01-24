@@ -4650,98 +4650,242 @@ export const cities: City[] = [
   // UK - Additional Cities
   { slug: 'liverpool', city: 'Liverpool', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.41, lng: -2.98, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '500K', phoneCode: '+44 151', language: 'English',
+      currency: 'British Pound', currencySymbol: '£', population: '0.5M', metroPopulation: '1.5M', phoneCode: '+44 151', language: 'English',
       climate: 'Oceanic with cool summers (16-20°C) and mild winters (3-8°C). Frequent rainfall, Irish Sea influence.',
-      attractions: ['The Beatles Story', 'Liverpool Cathedral', 'Albert Dock', 'Anfield Stadium', 'Walker Art Gallery'],
-      demographics: 'Major port city in northwest England, UNESCO World Heritage waterfront. Birthplace of The Beatles and famous for football.'
+      attractions: ['The Beatles Story', 'Liverpool Cathedral', 'Albert Dock', 'Anfield Stadium', 'Walker Art Gallery', 'Cavern Club', 'Royal Liver Building', 'Tate Liverpool', 'Merseyside Maritime Museum', 'Strawberry Field'],
+      demographics: 'UNESCO World Heritage waterfront. Birthplace of The Beatles. Two Premier League clubs.',
+      seoContent: {
+        intro: 'Liverpool, birthplace of The Beatles, operates on Greenwich Mean Time (GMT/UTC+0) in winter and British Summer Time (BST/UTC+1) from late March to late October. This UNESCO World Heritage city gave the world the Fab Four, boasts two Premier League football clubs, and features stunning Victorian waterfront architecture.',
+        timezoneFacts: 'Same timezone as London. Liverpool was the gateway to America for millions of emigrants.',
+        bestTimeToVisit: 'May-September for best weather. International Beatleweek (August). Football season August-May.',
+        businessHours: 'Shops 9 AM to 5:30 PM. Beatles Story 9 AM to 7 PM. Cavern Club evenings.',
+        timeDifference: 'Liverpool is UTC+0 (winter) / UTC+1 (summer). When noon in Liverpool: NYC 7 AM, Dubai 4 PM, Tokyo 9 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Beatles tour essential - Cavern Club, Penny Lane, Strawberry Field. Anfield stadium tour for football fans. Albert Dock for museums. Scouse accent friendly!',
+        transportation: 'Liverpool John Lennon Airport (LPL) 12km. Liverpool Lime Street for trains. 2.5 hr from London Euston.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. International Beatleweek (August). Grand National (April).'
+      }
     }
   },
   { slug: 'leeds', city: 'Leeds', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.80, lng: -1.55, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '800K', phoneCode: '+44 113', language: 'English',
+      currency: 'British Pound', currencySymbol: '£', population: '0.8M', metroPopulation: '1.9M', phoneCode: '+44 113', language: 'English',
       climate: 'Oceanic with cool summers (15-21°C) and mild winters (2-7°C). Frequent rainfall year-round.',
-      attractions: ['Royal Armouries', 'Leeds Art Gallery', 'Kirkstall Abbey', 'Roundhay Park', 'Leeds Corn Exchange'],
-      demographics: 'Third-largest city in UK, major financial and legal center. Known for shopping, universities, and vibrant nightlife.'
+      attractions: ['Royal Armouries', 'Leeds Art Gallery', 'Kirkstall Abbey', 'Roundhay Park', 'Leeds Corn Exchange', 'Victoria Quarter', 'Leeds Market', 'Headingley Stadium', 'Temple Newsam', 'Harewood House'],
+      demographics: 'UK\'s third-largest city. Major financial and legal center. Vibrant university city.',
+      seoContent: {
+        intro: 'Leeds, capital of Yorkshire, operates on Greenwich Mean Time (GMT/UTC+0) in winter and British Summer Time (BST/UTC+1) in summer. This thriving city of 800,000 is UK\'s third-largest, serving as the financial capital of the North with major legal, media, and tech sectors.',
+        timezoneFacts: 'Same timezone as London. Leeds is the largest UK city without a cathedral.',
+        bestTimeToVisit: 'May-September for best weather. Leeds Festival (August). Christmas markets popular.',
+        businessHours: 'Shops 9 AM to 5:30 PM. Victoria Quarter 10 AM to 6 PM. Nightlife until 4 AM weekends.',
+        timeDifference: 'Leeds is UTC+0 (winter) / UTC+1 (summer). When noon in Leeds: NYC 7 AM, Dubai 4 PM, Tokyo 9 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Victoria Quarter for shopping in stunning arcades. Kirkstall Abbey ruins atmospheric. Leeds Market one of Europe\'s largest. Great curry in Leeds!',
+        transportation: 'Leeds Bradford Airport (LBA) 16km. Leeds Station for trains. 2.5 hr from London King\'s Cross.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Leeds Festival (August). Tour de Yorkshire (May).'
+      }
     }
   },
   { slug: 'bristol', city: 'Bristol', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.45, lng: -2.59, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '470K', phoneCode: '+44 117', language: 'English',
+      currency: 'British Pound', currencySymbol: '£', population: '0.47M', metroPopulation: '0.7M', phoneCode: '+44 117', language: 'English',
       climate: 'Oceanic with mild temperatures (5-22°C). Rainfall throughout the year, slightly drier than other UK cities.',
-      attractions: ['Clifton Suspension Bridge', 'SS Great Britain', 'Bristol Zoo', 'Cabot Tower', 'Harbourside'],
-      demographics: 'Eighth-largest city in England, historic port city. Known for aerospace industry, street art (Banksy), and vibrant music scene.'
+      attractions: ['Clifton Suspension Bridge', 'SS Great Britain', 'Bristol Zoo', 'Cabot Tower', 'Harbourside', 'Banksy Street Art', 'Bristol Cathedral', 'M Shed', 'Brunel\'s Temple Meads', 'Leigh Woods'],
+      demographics: 'Banksy\'s hometown. Aerospace hub. Vibrant music scene that birthed trip-hop.',
+      seoContent: {
+        intro: 'Bristol, Banksy\'s hometown, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This creative city combines Victorian engineering marvels like Brunel\'s Suspension Bridge with world-famous street art and a music scene that birthed trip-hop.',
+        timezoneFacts: 'Same timezone as London. Bristol briefly had its own time zone until 1880.',
+        bestTimeToVisit: 'May-September for best weather. Bristol Balloon Fiesta (August). Upfest street art (July).',
+        businessHours: 'Shops 9 AM to 5:30 PM. Harbourside restaurants until 11 PM.',
+        timeDifference: 'Bristol is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Banksy street art throughout city - download map! Clifton Suspension Bridge free. Trip to Bath 15 min train.',
+        transportation: 'Bristol Airport (BRS) 13km. Bristol Temple Meads for trains. 1.5 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Bristol Balloon Fiesta (August). St Paul\'s Carnival (July).'
+      }
     }
   },
-  { slug: 'newcastle', city: 'Newcastle', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 54.98, lng: -1.61, tier: 2, continent: 'europe',
+  { slug: 'newcastle', city: 'Newcastle upon Tyne', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 54.98, lng: -1.61, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '300K', phoneCode: '+44 191', language: 'English',
+      currency: 'British Pound', currencySymbol: '£', population: '0.3M', metroPopulation: '0.88M', phoneCode: '+44 191', language: 'English (Geordie)',
       climate: 'Oceanic with cool summers (15-19°C) and mild winters (2-7°C). Frequent rainfall, often overcast.',
-      attractions: ['Newcastle Castle', 'Tyne Bridge', 'BALTIC Centre', 'Grey\'s Monument', 'Quayside'],
-      demographics: 'Major city in northeast England on River Tyne. Known for nightlife, universities, and passionate football culture.'
+      attractions: ['Newcastle Castle', 'Tyne Bridge', 'BALTIC Centre', 'Grey\'s Monument', 'Quayside', 'St James\' Park', 'Angel of the North', 'Victoria Tunnel', 'Jesmond Dene', 'The Sage Gateshead'],
+      demographics: 'Major northeast city. Legendary nightlife. Passionate football culture. Geordie accent.',
+      seoContent: {
+        intro: 'Newcastle upon Tyne, the Geordie capital, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Famous for passionate Newcastle United fans, iconic Tyne Bridge, and legendary nightlife.',
+        timezoneFacts: 'Same timezone as London. Newcastle was major coal port - hence "coals to Newcastle".',
+        bestTimeToVisit: 'May-September for best weather. Great North Run (September). Football season.',
+        businessHours: 'Shops 9 AM to 5:30 PM. Quayside restaurants until 11 PM. Nightlife until 4 AM.',
+        timeDifference: 'Newcastle is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Angel of the North 20m steel sculpture. Quayside for dining. Geordie accent friendly!',
+        transportation: 'Newcastle Airport (NCL) 10km, Metro connected. Newcastle Central for trains. 3 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Great North Run (September).'
+      }
     }
   },
   { slug: 'cardiff', city: 'Cardiff', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.48, lng: -3.18, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '365K', phoneCode: '+44 29', language: 'English, Welsh',
+      currency: 'British Pound', currencySymbol: '£', population: '0.37M', metroPopulation: '0.5M', phoneCode: '+44 29', language: 'English, Welsh',
       climate: 'Oceanic with mild temperatures year-round (4-21°C). Frequent rainfall, especially in winter.',
-      attractions: ['Cardiff Castle', 'Millennium Stadium', 'Cardiff Bay', 'National Museum Cardiff', 'Bute Park'],
-      demographics: 'Capital and largest city of Wales, major media and cultural center. Home to Welsh Government and historic coal export port.'
+      attractions: ['Cardiff Castle', 'Principality Stadium', 'Cardiff Bay', 'National Museum Cardiff', 'Bute Park', 'Castell Coch', 'Wales Millennium Centre', 'St Fagans', 'Cardiff Arcades', 'Mermaid Quay'],
+      demographics: 'Capital of Wales. Home to Welsh Government. Rugby and football mad. Doctor Who filming.',
+      seoContent: {
+        intro: 'Cardiff (Caerdydd), Welsh capital, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Seat of Welsh Government, home to Principality Stadium, and hub for Welsh culture and entertainment.',
+        timezoneFacts: 'Same timezone as London. Cardiff has been capital of Wales only since 1955.',
+        bestTimeToVisit: 'May-September for best weather. Six Nations rugby (Feb-Mar). Winter Wonderland.',
+        businessHours: 'Shops 9 AM to 5:30 PM. Cardiff Bay until late. Stadium events year-round.',
+        timeDifference: 'Cardiff is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Principality Stadium roof closes for concerts! St Fagans open-air museum free. Try Welsh cakes.',
+        transportation: 'Cardiff Airport (CWL) 20km. Cardiff Central for trains. 2 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Wales: 111.',
+        publicHolidays: 'UK bank holidays. Six Nations rugby weekends.'
+      }
     }
   },
   { slug: 'sheffield', city: 'Sheffield', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.38, lng: -1.47, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '585K', phoneCode: '+44 114', language: 'English',
+      currency: 'British Pound', currencySymbol: '£', population: '0.59M', metroPopulation: '0.74M', phoneCode: '+44 114', language: 'English',
       climate: 'Oceanic with mild summers (16-21°C) and cool winters (2-7°C). Frequent rainfall, hilly terrain.',
-      attractions: ['Winter Garden', 'Kelham Island Museum', 'Peak District Gateway', 'Millennium Gallery', 'Sheffield Cathedral'],
-      demographics: 'Steel City transformed into education and tech hub. Two major universities, gateway to Peak District National Park.'
+      attractions: ['Winter Garden', 'Kelham Island Museum', 'Peak District Gateway', 'Millennium Gallery', 'Sheffield Cathedral', 'Crucible Theatre', 'Botanical Gardens', 'Abbeydale Industrial Hamlet', 'Ecclesall Woods', 'Meadowhall'],
+      demographics: 'Steel City transformed into education hub. Gateway to Peak District. World Snooker Championship.',
+      seoContent: {
+        intro: 'Sheffield, the Steel City, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This city on seven hills reinvented itself from industrial powerhouse to university city, serving as gateway to Peak District.',
+        timezoneFacts: 'Same timezone as London. Sheffield still produces more steel than anywhere in UK.',
+        bestTimeToVisit: 'May-September for Peak District hiking. World Snooker Championship (April-May).',
+        businessHours: 'Shops 9 AM to 5:30 PM. Kelham Island trendy evenings.',
+        timeDifference: 'Sheffield is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Winter Garden tropical plants free. Peak District 20 min away. Henderson\'s Relish local obsession.',
+        transportation: 'Sheffield Station for trains. 2 hr from London St Pancras.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. World Snooker Championship (April-May).'
+      }
     }
   },
   { slug: 'nottingham', city: 'Nottingham', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.95, lng: -1.15, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '330K', phoneCode: '+44 115', language: 'English',
+      currency: 'British Pound', currencySymbol: '£', population: '0.33M', metroPopulation: '0.8M', phoneCode: '+44 115', language: 'English',
       climate: 'Oceanic with mild summers (16-21°C) and cool winters (2-7°C). Moderate rainfall.',
-      attractions: ['Nottingham Castle', 'Old Market Square', 'City of Caves', 'Wollaton Hall', 'Sherwood Forest nearby'],
-      demographics: 'Robin Hood\'s legendary home, historic lace-making center. Major university city with vibrant nightlife.'
+      attractions: ['Nottingham Castle', 'Old Market Square', 'City of Caves', 'Wollaton Hall', 'Sherwood Forest', 'Ye Olde Trip to Jerusalem', 'Lace Market', 'National Justice Museum', 'Trent Bridge', 'Green\'s Windmill'],
+      demographics: 'Robin Hood\'s legendary home. Historic lace center. Major university city.',
+      seoContent: {
+        intro: 'Nottingham, home of Robin Hood, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Caves beneath streets, England\'s oldest pub, and nearby Sherwood Forest where the outlaw roamed.',
+        timezoneFacts: 'Same timezone as London. Nottingham Castle where Richard I was held for ransom.',
+        bestTimeToVisit: 'May-September for best weather. Robin Hood Festival (August). Goose Fair (October).',
+        businessHours: 'Shops 9 AM to 5:30 PM. Ye Olde Trip opens early.',
+        timeDifference: 'Nottingham is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'City of Caves tour fascinating. Ye Olde Trip claims England\'s oldest pub. Wollaton Hall is Wayne Manor from Dark Knight.',
+        transportation: 'East Midlands Airport (EMA) 22km. Nottingham Station. 1.5 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Goose Fair (October). Robin Hood Festival (August).'
+      }
     }
   },
   { slug: 'southampton', city: 'Southampton', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.90, lng: -1.40, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '260K', phoneCode: '+44 23', language: 'English',
+      currency: 'British Pound', currencySymbol: '£', population: '0.26M', metroPopulation: '0.9M', phoneCode: '+44 23', language: 'English',
       climate: 'Oceanic with mild summers (17-21°C) and cool winters (4-9°C). Relatively sunny for UK.',
-      attractions: ['SeaCity Museum', 'Tudor House', 'Old Town Walls', 'Mayflower Park', 'Southampton FC'],
-      demographics: 'Major cruise port, where Titanic departed. Historic maritime city, home to University of Southampton.'
+      attractions: ['SeaCity Museum', 'Tudor House', 'Old Town Walls', 'Mayflower Park', 'Southampton FC', 'Bargate', 'Ocean Village', 'City Art Gallery', 'Solent Sky Museum', 'New Forest nearby'],
+      demographics: 'Major cruise port where Titanic departed. Gateway to Isle of Wight and New Forest.',
+      seoContent: {
+        intro: 'Southampton, where the Titanic sailed from, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. UK\'s premier cruise port, where both Titanic and Mayflower began their voyages.',
+        timezoneFacts: 'Same timezone as London. Southampton has UK\'s largest cruise terminal.',
+        bestTimeToVisit: 'May-September for best weather. Southampton Boat Show (September).',
+        businessHours: 'Shops 9 AM to 5:30 PM. Cruise terminals 24/7. Ocean Village until late.',
+        timeDifference: 'Southampton is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'SeaCity Museum Titanic exhibition moving. Ferry to Isle of Wight easy. New Forest 20 min.',
+        transportation: 'Southampton Airport (SOU) 6km. Southampton Central for trains. 1.5 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Southampton Boat Show (September).'
+      }
     }
   },
   { slug: 'leicester', city: 'Leicester', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.63, lng: -1.13, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '355K', phoneCode: '+44 116', language: 'English, Gujarati',
+      currency: 'British Pound', currencySymbol: '£', population: '0.36M', metroPopulation: '0.75M', phoneCode: '+44 116', language: 'English, Gujarati',
       climate: 'Oceanic with mild summers (16-21°C) and cool winters (2-7°C). Moderate rainfall.',
-      attractions: ['King Richard III Visitor Centre', 'Leicester Cathedral', 'National Space Centre', 'New Walk Museum', 'Golden Mile'],
-      demographics: 'One of UK\'s most diverse cities, where Richard III was found. Leicester City FC\'s 2016 Premier League miracle.'
+      attractions: ['King Richard III Visitor Centre', 'Leicester Cathedral', 'National Space Centre', 'New Walk Museum', 'Golden Mile', 'Abbey Park', 'Curve Theatre', 'Leicester Market', 'Belgrave Hall', 'Jewry Wall'],
+      demographics: 'One of UK\'s most diverse cities. Where Richard III discovered. Leicester City 2016 miracle.',
+      seoContent: {
+        intro: 'Leicester, where Richard III was found, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Made football history in 2016 with Leicester City\'s 5000-1 Premier League triumph, and rewrote history when Richard III\'s bones were discovered under a car park.',
+        timezoneFacts: 'Same timezone as London. Leicester is one of England\'s oldest cities.',
+        bestTimeToVisit: 'Year-round. Diwali on Golden Mile (October-November) largest outside India.',
+        businessHours: 'Shops 9 AM to 5:30 PM. Golden Mile restaurants until late.',
+        timeDifference: 'Leicester is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Richard III tomb in Cathedral - found under car park! Golden Mile best Indian food outside India.',
+        transportation: 'East Midlands Airport (EMA) 30km. Leicester Station. 1 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Diwali (Leicester\'s biggest celebration).'
+      }
     }
   },
   { slug: 'coventry', city: 'Coventry', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.41, lng: -1.51, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '370K', phoneCode: '+44 24', language: 'English',
+      currency: 'British Pound', currencySymbol: '£', population: '0.37M', metroPopulation: '0.9M', phoneCode: '+44 24', language: 'English',
       climate: 'Oceanic with mild summers (16-21°C) and cool winters (2-7°C). Central England location.',
-      attractions: ['Coventry Cathedral', 'Transport Museum', 'Herbert Art Gallery', 'St Mary\'s Guildhall', 'Belgrade Theatre'],
-      demographics: 'UK City of Culture 2021, rebuilt after WWII bombing. Historic watchmaking and automotive center.'
+      attractions: ['Coventry Cathedral', 'Transport Museum', 'Herbert Art Gallery', 'St Mary\'s Guildhall', 'Belgrade Theatre', 'Lady Godiva Statue', 'Coventry Canal', 'War Memorial Park', 'Fargo Village', 'Cathedral Ruins'],
+      demographics: 'UK City of Culture 2021. Rebuilt after WWII Blitz. Lady Godiva\'s city.',
+      seoContent: {
+        intro: 'Coventry, the Phoenix City, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Rose from WWII bombing ashes, crowned UK City of Culture 2021, and forever linked to Lady Godiva\'s legendary ride.',
+        timezoneFacts: 'Same timezone as London. Coventry was most bombed UK city in WWII.',
+        bestTimeToVisit: 'May-September for best weather. Christmas markets.',
+        businessHours: 'Shops 9 AM to 5:30 PM. Fargo Village creative quarter evenings.',
+        timeDifference: 'Coventry is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Cathedral ruins next to new cathedral powerful. Transport Museum has world\'s fastest car. "Sent to Coventry" phrase originates here.',
+        transportation: 'Birmingham Airport (BHX) 18km. Coventry Station. 1 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Godiva Festival (July).'
+      }
     }
   },
   { slug: 'belfast', city: 'Belfast', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 54.60, lng: -5.93, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '345K', phoneCode: '+44 28', language: 'English, Irish',
+      currency: 'British Pound', currencySymbol: '£', population: '0.35M', metroPopulation: '0.67M', phoneCode: '+44 28', language: 'English, Irish',
       climate: 'Oceanic with cool summers (15-18°C) and mild winters (3-8°C). Frequent rainfall year-round.',
-      attractions: ['Titanic Belfast', 'St George\'s Market', 'Cathedral Quarter', 'Botanic Gardens', 'Peace Walls'],
-      demographics: 'Capital of Northern Ireland, where Titanic was built. Transformed from conflict to cultural tourism destination.'
+      attractions: ['Titanic Belfast', 'St George\'s Market', 'Cathedral Quarter', 'Botanic Gardens', 'Peace Walls', 'Crumlin Road Gaol', 'Ulster Museum', 'Black Taxi Tours', 'Game of Thrones Tours', 'Giant\'s Causeway nearby'],
+      demographics: 'Capital of Northern Ireland. Where Titanic was built. Transformed from conflict to tourism.',
+      seoContent: {
+        intro: 'Belfast, where Titanic was built, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Northern Ireland\'s capital transformed from conflict zone to cultural destination, featuring world\'s best Titanic exhibition.',
+        timezoneFacts: 'Same timezone as London and Dublin. Belfast in UK but on island of Ireland.',
+        bestTimeToVisit: 'May-September for best weather. St Patrick\'s Day (March 17).',
+        businessHours: 'Shops 9 AM to 5:30 PM. Cathedral Quarter pubs until late. St George\'s Market Fri-Sun.',
+        timeDifference: 'Belfast is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Titanic Belfast museum incredible. Black Taxi tour explains Troubles history. Giant\'s Causeway 1 hr drive.',
+        transportation: 'Belfast International (BFS) 25km, George Best City (BHD) 5km. Belfast Central for trains.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays plus 12th July (NI only). St Patrick\'s Day.'
+      }
     }
   },
   { slug: 'brighton', city: 'Brighton', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.82, lng: -0.14, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '290K', phoneCode: '+44 1273', language: 'English',
+      currency: 'British Pound', currencySymbol: '£', population: '0.29M', metroPopulation: '0.48M', phoneCode: '+44 1273', language: 'English',
       climate: 'Oceanic with mild summers (18-21°C) and cool winters (4-9°C). Sunniest city in UK.',
-      attractions: ['Royal Pavilion', 'Brighton Pier', 'The Lanes', 'British Airways i360', 'Brighton Beach'],
-      demographics: 'London-by-the-Sea, UK\'s most LGBTQ+ friendly city. Famous for Regency architecture and bohemian culture.'
+      attractions: ['Royal Pavilion', 'Brighton Pier', 'The Lanes', 'British Airways i360', 'Brighton Beach', 'North Laine', 'Sea Life Centre', 'Brighton Museum', 'Devil\'s Dyke', 'Volks Railway'],
+      demographics: 'London-by-the-Sea. UK\'s most LGBTQ+ friendly city. Regency architecture. Bohemian culture.',
+      seoContent: {
+        intro: 'Brighton, London-by-the-Sea, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Britain\'s sunniest city famous for Indian-style Royal Pavilion, pebble beach, LGBTQ+ Pride celebration, and bohemian culture.',
+        timezoneFacts: 'Same timezone as London. Just 1 hour from London by train.',
+        bestTimeToVisit: 'May-September for beach weather. Brighton Pride (August). Brighton Festival (May).',
+        businessHours: 'Shops 10 AM to 6 PM. The Lanes boutiques variable. Pier and beach 24/7.',
+        timeDifference: 'Brighton is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Royal Pavilion interior stunning! The Lanes for antiques, North Laine for indie. Beach is pebbles not sand. Pride among world\'s biggest.',
+        transportation: 'No airport - London Gatwick 45 min. Brighton Station. 1 hr from London Victoria.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Brighton Pride (August). Brighton Festival (May).'
+      }
     }
   },
   { slug: 'cambridge', city: 'Cambridge', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.21, lng: 0.12, tier: 2, continent: 'europe',
@@ -4770,10 +4914,304 @@ export const cities: City[] = [
   },
   { slug: 'dundee', city: 'Dundee', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 56.46, lng: -2.97, tier: 2, continent: 'europe',
     info: {
-      currency: 'British Pound', currencySymbol: '£', population: '150K', phoneCode: '+44 1382', language: 'English, Scots',
+      currency: 'British Pound', currencySymbol: '£', population: '0.15M', metroPopulation: '0.2M', phoneCode: '+44 1382', language: 'English, Scots',
       climate: 'Oceanic with cool summers (15-18°C) and cold winters (1-7°C). Sunniest city in Scotland.',
-      attractions: ['V&A Dundee', 'RRS Discovery', 'The McManus', 'Verdant Works', 'Law Hill'],
-      demographics: 'Scotland\'s fourth city, UNESCO City of Design. Video game industry hub (GTA), jute and jam heritage.'
+      attractions: ['V&A Dundee', 'RRS Discovery', 'The McManus', 'Verdant Works', 'Law Hill', 'Broughty Castle', 'Dundee Contemporary Arts', 'Slessor Gardens', 'Mills Observatory', 'Glamis Castle nearby'],
+      demographics: 'UNESCO City of Design. Video game hub (GTA created here). Jute, jam, journalism heritage.',
+      seoContent: {
+        intro: 'Dundee, Scotland\'s sunniest city, operates on Greenwich Mean Time (GMT/UTC+0) in winter and British Summer Time (BST/UTC+1) in summer. This UNESCO City of Design is home to V&A Dundee, birthplace of Grand Theft Auto, and historic home of jute, jam, and journalism.',
+        timezoneFacts: 'Same timezone as London. Dundee is Scotland\'s fourth-largest city and sunniest.',
+        bestTimeToVisit: 'May-September for best weather. V&A Dundee year-round.',
+        businessHours: 'V&A Dundee 10 AM to 5 PM. Discovery Point 10 AM to 6 PM.',
+        timeDifference: 'Dundee is UTC+0 (winter) / UTC+1 (summer). When noon in Dundee: NYC 7 AM, Dubai 4 PM, Tokyo 9 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'V&A Dundee stunning Kengo Kuma building. RRS Discovery Scott\'s Antarctic ship. GTA created here.',
+        transportation: 'Dundee Airport limited. Dundee Station for trains. 1.5 hr from Edinburgh.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Scotland: 111.',
+        publicHolidays: 'UK bank holidays plus Scottish holidays. Dundee Design Festival.'
+      }
+    }
+  },
+  
+  // UK - New Premium Cities (15 additional tourist destinations)
+  { slug: 'bath', city: 'Bath', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.38, lng: -2.36, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.09M', metroPopulation: '0.17M', phoneCode: '+44 1225', language: 'English',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (3-9°C). Sheltered valley.',
+      attractions: ['Roman Baths', 'Bath Abbey', 'Royal Crescent', 'Pulteney Bridge', 'Thermae Bath Spa', 'The Circus', 'Jane Austen Centre', 'Prior Park', 'Sally Lunn\'s', 'Assembly Rooms'],
+      demographics: 'UNESCO World Heritage city. Roman spa town. Georgian architecture. Jane Austen\'s city.',
+      seoContent: {
+        intro: 'Bath, the Georgian gem, operates on Greenwich Mean Time (GMT/UTC+0) in winter and British Summer Time (BST/UTC+1) in summer. This UNESCO World Heritage city features 2,000-year-old Roman Baths and the UK\'s only natural hot springs.',
+        timezoneFacts: 'Same timezone as London. Bath is the only UK place with natural hot springs.',
+        bestTimeToVisit: 'April-October for best weather. Bath Christmas Market magical.',
+        businessHours: 'Roman Baths 9 AM to 6 PM. Thermae Spa until 9:30 PM.',
+        timeDifference: 'Bath is UTC+0 (winter) / UTC+1 (summer). When noon in Bath: NYC 7 AM, Dubai 4 PM, Tokyo 9 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Bathe in same water as Romans at Thermae Spa! Sally Lunn\'s famous buns. 15 min from Bristol.',
+        transportation: 'No airport - Bristol (BRS) 30 min. Bath Spa Station. 1.5 hr from London Paddington.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Bath Christmas Market (Nov-Dec). Jane Austen Festival (September).'
+      }
+    }
+  },
+  { slug: 'york', city: 'York', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.96, lng: -1.08, tier: 2, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.21M', metroPopulation: '0.35M', phoneCode: '+44 1904', language: 'English',
+      climate: 'Oceanic with mild summers (16-21°C) and cool winters (2-7°C). Vale of York.',
+      attractions: ['York Minster', 'The Shambles', 'York City Walls', 'Jorvik Viking Centre', 'National Railway Museum', 'Clifford\'s Tower', 'York Dungeon', 'Betty\'s Tea Rooms', 'Treasurer\'s House', 'Castle Museum'],
+      demographics: 'Viking capital of England. Medieval walled city. Gothic cathedral masterpiece.',
+      seoContent: {
+        intro: 'York, the Viking capital, operates on Greenwich Mean Time (GMT/UTC+0) in winter and British Summer Time (BST/UTC+1) in summer. This medieval walled city features Europe\'s largest Gothic cathedral and The Shambles that inspired Harry Potter\'s Diagon Alley.',
+        timezoneFacts: 'Same timezone as London. York was once England\'s second city.',
+        bestTimeToVisit: 'April-October for best weather. Jorvik Viking Festival (February).',
+        businessHours: 'York Minster 9 AM to 4:30 PM. The Shambles shops 9 AM to 5:30 PM.',
+        timeDifference: 'York is UTC+0 (winter) / UTC+1 (summer). When noon in York: NYC 7 AM, Dubai 4 PM, Tokyo 9 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Walk complete city walls (2 miles). The Shambles inspired Diagon Alley! Ghost tours popular.',
+        transportation: 'No airport - Leeds Bradford 40 min. York Station. 2 hr from London King\'s Cross.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Jorvik Viking Festival (February). York Christmas Festival.'
+      }
+    }
+  },
+  { slug: 'canterbury', city: 'Canterbury', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.28, lng: 1.08, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.06M', metroPopulation: '0.16M', phoneCode: '+44 1227', language: 'English',
+      climate: 'Oceanic with mild summers (18-22°C) and cool winters (3-8°C). Southeast England.',
+      attractions: ['Canterbury Cathedral', 'St Augustine\'s Abbey', 'St Martin\'s Church', 'Canterbury Tales', 'Westgate Towers', 'River Stour', 'King\'s Mile', 'Beaney House', 'Punting', 'Roman Museum'],
+      demographics: 'UNESCO World Heritage. Mother church of Anglicanism. Pilgrimage since 1170.',
+      seoContent: {
+        intro: 'Canterbury, spiritual capital of England, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This UNESCO city has been Christianity\'s English headquarters since 597 AD, where Thomas Becket was martyred.',
+        timezoneFacts: 'Same timezone as London. Canterbury is seat of the Archbishop.',
+        bestTimeToVisit: 'April-October for best weather. Canterbury Festival (October).',
+        businessHours: 'Canterbury Cathedral 9 AM to 5 PM. Shops 9 AM to 5:30 PM.',
+        timeDifference: 'Canterbury is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Cathedral evensong free. Three UNESCO sites in one city! Punt on River Stour.',
+        transportation: 'No airport - London Gatwick 1.5 hr. Canterbury East/West stations. 1 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Canterbury Festival (October).'
+      }
+    }
+  },
+  { slug: 'stratford-upon-avon', city: 'Stratford-upon-Avon', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.19, lng: -1.71, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.03M', metroPopulation: '0.12M', phoneCode: '+44 1789', language: 'English',
+      climate: 'Oceanic with mild summers (16-22°C) and cool winters (2-8°C). Midlands.',
+      attractions: ['Shakespeare\'s Birthplace', 'Royal Shakespeare Theatre', 'Anne Hathaway\'s Cottage', 'Holy Trinity Church', 'Mary Arden\'s Farm', 'Hall\'s Croft', 'River Avon', 'Butterfly Farm', 'Tudor World', 'Bancroft Gardens'],
+      demographics: 'Shakespeare\'s birthplace and burial site. Royal Shakespeare Company home.',
+      seoContent: {
+        intro: 'Stratford-upon-Avon, birthplace of Shakespeare, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This quintessentially English market town is where the Bard was born, lived, and lies buried.',
+        timezoneFacts: 'Same timezone as London. Shakespeare baptized and buried in same church.',
+        bestTimeToVisit: 'April-October for best weather. Shakespeare\'s Birthday (April 23). RSC year-round.',
+        businessHours: 'Shakespeare properties 9 AM to 5 PM. RSC performances evenings.',
+        timeDifference: 'Stratford is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Book RSC tickets in advance! Five Shakespeare houses - get combined ticket.',
+        transportation: 'No airport - Birmingham 40 min. Stratford-upon-Avon Station. 2 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Shakespeare\'s Birthday (April 23).'
+      }
+    }
+  },
+  { slug: 'windsor', city: 'Windsor', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.48, lng: -0.61, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.03M', metroPopulation: '0.14M', phoneCode: '+44 1753', language: 'English',
+      climate: 'Oceanic with mild summers (18-23°C) and cool winters (3-8°C). Thames Valley.',
+      attractions: ['Windsor Castle', 'St George\'s Chapel', 'Changing of the Guard', 'Long Walk', 'Eton College', 'Windsor Great Park', 'Legoland', 'River Thames', 'Windsor Guildhall', 'Crooked House'],
+      demographics: 'World\'s oldest occupied castle. Queen\'s weekend residence. Royal weddings venue.',
+      seoContent: {
+        intro: 'Windsor, home of the world\'s oldest occupied castle, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This royal town houses Windsor Castle, the preferred weekend residence of the monarch.',
+        timezoneFacts: 'Same timezone as London. Windsor is the only royal residence occupied 1,000 years.',
+        bestTimeToVisit: 'April-October for Changing of the Guard. Check royal residence.',
+        businessHours: 'Windsor Castle 10 AM to 5:15 PM. Changing of the Guard 11 AM.',
+        timeDifference: 'Windsor is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Check Royal Standard flag. St George\'s Chapel has royal tombs. Legoland nearby.',
+        transportation: 'No airport - Heathrow 10 min. Windsor stations. 50 min from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Garter Day (June). Royal events.'
+      }
+    }
+  },
+  { slug: 'salisbury', city: 'Salisbury', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.07, lng: -1.80, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.05M', metroPopulation: '0.11M', phoneCode: '+44 1722', language: 'English',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (3-8°C). Wiltshire downs.',
+      attractions: ['Salisbury Cathedral', 'Magna Carta', 'Stonehenge', 'Old Sarum', 'Cathedral Close', 'Mompesson House', 'Arundells', 'Salisbury Museum', 'River Avon', 'Medieval Streets'],
+      demographics: 'Gateway to Stonehenge. Britain\'s tallest spire. Original Magna Carta.',
+      seoContent: {
+        intro: 'Salisbury, gateway to Stonehenge, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This medieval city features Britain\'s tallest cathedral spire (123m) and one of four original Magna Cartas.',
+        timezoneFacts: 'Same timezone as London. Salisbury has best-preserved Magna Carta.',
+        bestTimeToVisit: 'April-October for best weather. Summer solstice at Stonehenge.',
+        businessHours: 'Salisbury Cathedral 9 AM to 5 PM. Stonehenge 9:30 AM to 7 PM.',
+        timeDifference: 'Salisbury is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Stonehenge 10 miles - book timed tickets! Magna Carta in Chapter House.',
+        transportation: 'No airport - Southampton 40 min. Salisbury Station. 1.5 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Summer Solstice at Stonehenge.'
+      }
+    }
+  },
+  { slug: 'inverness', city: 'Inverness', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 57.48, lng: -4.22, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.05M', metroPopulation: '0.07M', phoneCode: '+44 1463', language: 'English, Scottish Gaelic',
+      climate: 'Oceanic with cool summers (13-18°C) and cold winters (1-6°C). Highland location.',
+      attractions: ['Loch Ness', 'Urquhart Castle', 'Inverness Castle', 'Culloden Battlefield', 'Clava Cairns', 'River Ness', 'Victorian Market', 'Caledonian Canal', 'Dolphins', 'Highland Games'],
+      demographics: 'Capital of Scottish Highlands. Gateway to Loch Ness. Culloden history.',
+      seoContent: {
+        intro: 'Inverness, Highland Capital, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This city is gateway to Loch Ness and the spectacular Scottish Highlands.',
+        timezoneFacts: 'Same timezone as London. Inverness is UK\'s most northerly city.',
+        bestTimeToVisit: 'May-September for best weather. Highland Games various dates.',
+        businessHours: 'Loch Ness cruises 9 AM to 5 PM. Culloden 9 AM to 5:30 PM.',
+        timeDifference: 'Inverness is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Loch Ness cruise essential. Culloden heartbreaking. North Coast 500 starts here.',
+        transportation: 'Inverness Airport (INV) 15km. Inverness Station. 3.5 hr from Edinburgh.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Scotland: 111.',
+        publicHolidays: 'UK bank holidays plus Scottish holidays. Highland Games.'
+      }
+    }
+  },
+  { slug: 'st-andrews', city: 'St Andrews', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 56.34, lng: -2.80, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.02M', metroPopulation: '0.02M', phoneCode: '+44 1334', language: 'English, Scots',
+      climate: 'Oceanic with cool summers (14-18°C) and cold winters (2-7°C). North Sea coast.',
+      attractions: ['Old Course', 'St Andrews Links', 'St Andrews Cathedral', 'St Andrews Castle', 'University of St Andrews', 'West Sands Beach', 'British Golf Museum', 'St Rule\'s Tower', 'Swilcan Bridge', 'Pier Walk'],
+      demographics: 'Home of golf since 1552. Scotland\'s oldest university. Prince William met Kate here.',
+      seoContent: {
+        intro: 'St Andrews, Home of Golf, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Golf was invented here in 1552, and Prince William met Kate at Scotland\'s oldest university.',
+        timezoneFacts: 'Same timezone as London. St Andrews medieval pilgrimage site.',
+        bestTimeToVisit: 'May-September for best weather. The Open Championship.',
+        businessHours: 'Old Course ballot closes day before. Cathedral ruins daylight.',
+        timeDifference: 'St Andrews is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Old Course ballot - enter day before! Swilcan Bridge iconic. West Sands is Chariots of Fire beach.',
+        transportation: 'No airport - Edinburgh 1.5 hr. Leuchars Station + bus.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Scotland: 111.',
+        publicHolidays: 'UK bank holidays plus Scottish holidays. The Open Championship.'
+      }
+    }
+  },
+  { slug: 'chester', city: 'Chester', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.19, lng: -2.89, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.08M', metroPopulation: '0.13M', phoneCode: '+44 1244', language: 'English',
+      climate: 'Oceanic with cool summers (16-20°C) and mild winters (3-8°C). Welsh border.',
+      attractions: ['Chester Rows', 'Chester City Walls', 'Chester Cathedral', 'Chester Zoo', 'Eastgate Clock', 'Roman Amphitheatre', 'River Dee', 'Grosvenor Museum', 'Chester Racecourse', 'Medieval Quarters'],
+      demographics: 'Most complete Roman walls in Britain. Unique two-level shopping rows.',
+      seoContent: {
+        intro: 'Chester, Roman fortress city, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Britain\'s most complete Roman walls and unique medieval shopping galleries (The Rows).',
+        timezoneFacts: 'Same timezone as London. Chester founded as Roman fortress 79 AD.',
+        bestTimeToVisit: 'April-October for best weather. Chester Races. Christmas markets.',
+        businessHours: 'Chester Rows 9 AM to 5:30 PM. Chester Zoo 10 AM to 5 PM.',
+        timeDifference: 'Chester is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Walk complete city walls (2 miles). Eastgate Clock photo spot. Chester Zoo excellent.',
+        transportation: 'No airport - Manchester 1 hr, Liverpool 45 min. Chester Station.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Chester Races.'
+      }
+    }
+  },
+  { slug: 'lake-district', city: 'Lake District', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 54.46, lng: -3.09, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.04M', metroPopulation: '0.04M', phoneCode: '+44 15394', language: 'English',
+      climate: 'Oceanic with cool summers (13-19°C) and cold wet winters (1-7°C). Wettest place in England.',
+      attractions: ['Windermere', 'Ambleside', 'Keswick', 'Grasmere', 'Scafell Pike', 'Beatrix Potter', 'Wordsworth\'s Dove Cottage', 'Castlerigg Stone Circle', 'Ullswater', 'Hawkshead'],
+      demographics: 'UNESCO World Heritage. England\'s largest national park. Wordsworth and Beatrix Potter country.',
+      seoContent: {
+        intro: 'The Lake District, England\'s Lake Country, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. England\'s highest peak (Scafell Pike) and largest lake (Windermere), inspiring Wordsworth and Beatrix Potter.',
+        timezoneFacts: 'Same timezone as London. Lake District is England\'s wettest region.',
+        bestTimeToVisit: 'May-September for best weather. Autumn colors spectacular.',
+        businessHours: 'Visitor centers 9 AM to 5 PM. Boat cruises vary seasonally.',
+        timeDifference: 'Lake District is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Windermere cruise essential. Wordsworth\'s Dove Cottage. Always pack rain gear!',
+        transportation: 'No airport - Manchester 2 hr. Windermere Station. 3 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Mountain Rescue available. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Grasmere Sports (August).'
+      }
+    }
+  },
+  { slug: 'cotswolds', city: 'Cotswolds', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.83, lng: -1.74, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.14M', metroPopulation: '0.14M', phoneCode: '+44 1451', language: 'English',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (2-8°C). Rolling hills.',
+      attractions: ['Bourton-on-the-Water', 'Bibury', 'Stow-on-the-Wold', 'Castle Combe', 'Broadway', 'Chipping Campden', 'Arlington Row', 'Blenheim Palace', 'Sudeley Castle', 'Cotswold Way'],
+      demographics: 'Area of Outstanding Natural Beauty. Honey-colored stone villages. Quintessential England.',
+      seoContent: {
+        intro: 'The Cotswolds, quintessential England, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. 800 square miles of honey-colored stone villages and picture-perfect countryside.',
+        timezoneFacts: 'Same timezone as London. Cotswolds spans six counties.',
+        bestTimeToVisit: 'May-September for best weather. Lavender June-August. Christmas magical.',
+        businessHours: 'Village shops 9 AM to 5 PM. Pubs serve lunch and dinner.',
+        timeDifference: 'Cotswolds is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Bibury\'s Arlington Row most photographed. Bourton-on-the-Water is Venice of Cotswolds. Car essential.',
+        transportation: 'No airport - Bristol or Birmingham 1 hr. Moreton-in-Marsh has train. Car essential.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Cheese Rolling (May). Village fetes summer.'
+      }
+    }
+  },
+  { slug: 'cornwall', city: 'Cornwall', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.27, lng: -5.05, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.57M', metroPopulation: '0.57M', phoneCode: '+44 1872', language: 'English, Cornish',
+      climate: 'Oceanic with mild summers (17-20°C) and mild winters (6-10°C). UK\'s mildest climate.',
+      attractions: ['St Ives', 'Penzance', 'Newquay', 'Padstow', 'Eden Project', 'Tintagel Castle', 'Land\'s End', 'St Michael\'s Mount', 'Minack Theatre', 'Tate St Ives'],
+      demographics: 'Celtic nation. England\'s surf capital. Artists\' haven. Pasty homeland.',
+      seoContent: {
+        intro: 'Cornwall, England\'s Celtic tip, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. UK\'s mildest climate, best surf beaches, and dramatic coastline inspiring countless artists.',
+        timezoneFacts: 'Same timezone as London. Cornwall sunset 30 min later than London.',
+        bestTimeToVisit: 'May-September for beach weather. Newquay surf year-round.',
+        businessHours: 'Tourist attractions 10 AM to 5 PM. Beach cafes seasonal.',
+        timeDifference: 'Cornwall is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'St Ives best art town. Padstow for Rick Stein seafood. Cornish pasty - crimp on side!',
+        transportation: 'Newquay Airport (NQY) small. London Paddington to Penzance 5 hr. Car essential.',
+        emergencyNumbers: 'Emergency: 999. RNLI for coast. NHS: 111.',
+        publicHolidays: 'UK bank holidays. St Piran\'s Day (March 5). Obby Oss (May Day).'
+      }
+    }
+  },
+  { slug: 'portsmouth', city: 'Portsmouth', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.82, lng: -1.08, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.21M', metroPopulation: '0.86M', phoneCode: '+44 23', language: 'English',
+      climate: 'Oceanic with mild summers (17-21°C) and cool winters (4-9°C). Coastal, sunny.',
+      attractions: ['Historic Dockyard', 'HMS Victory', 'Mary Rose', 'HMS Warrior', 'Spinnaker Tower', 'Gunwharf Quays', 'Southsea Beach', 'D-Day Museum', 'Charles Dickens Birthplace', 'Portsmouth FC'],
+      demographics: 'Home of the Royal Navy. Nelson\'s HMS Victory. Britain\'s only island city.',
+      seoContent: {
+        intro: 'Portsmouth, home of the Royal Navy, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Britain\'s only island city houses HMS Victory where Nelson died and the D-Day embarkation point.',
+        timezoneFacts: 'Same timezone as London. Portsmouth is Britain\'s principal naval base for 500+ years.',
+        bestTimeToVisit: 'April-October for best weather. D-Day anniversary (June 6).',
+        businessHours: 'Historic Dockyard 10 AM to 5 PM. Spinnaker Tower 10 AM to 6 PM.',
+        timeDifference: 'Portsmouth is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Historic Dockyard needs full day. HMS Victory where Nelson died. Ferry to Isle of Wight.',
+        transportation: 'No airport - Southampton 30 min. Portsmouth Harbour Station. 1.5 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. D-Day commemorations (June). Navy Days.'
+      }
+    }
+  },
+  { slug: 'plymouth', city: 'Plymouth', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.38, lng: -4.14, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.26M', metroPopulation: '0.27M', phoneCode: '+44 1752', language: 'English',
+      climate: 'Oceanic with mild summers (17-20°C) and mild winters (5-10°C). Coastal.',
+      attractions: ['Plymouth Hoe', 'Mayflower Steps', 'National Marine Aquarium', 'Barbican', 'Smeaton\'s Tower', 'Royal William Yard', 'Dartmoor Gateway', 'Drake\'s Island', 'Plymouth Gin Distillery', 'Mount Edgcumbe'],
+      demographics: 'Where Mayflower sailed to America. Drake played bowls before Armada. Britain\'s Ocean City.',
+      seoContent: {
+        intro: 'Plymouth, Britain\'s Ocean City, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. The Mayflower departed for America in 1620 and Sir Francis Drake played bowls before defeating the Armada.',
+        timezoneFacts: 'Same timezone as London. Plymouth is where Pilgrim Fathers left for New World.',
+        bestTimeToVisit: 'May-September for best weather. British Firework Championships (August).',
+        businessHours: 'Mayflower Steps accessible 24/7. National Marine Aquarium 10 AM to 5 PM.',
+        timeDifference: 'Plymouth is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Mayflower Steps where Pilgrims departed. Plymouth Gin oldest working distillery. Dartmoor 20 min.',
+        transportation: 'No airport - Exeter 1 hr. Plymouth Station. 3.5 hr from London.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. British Firework Championships (August).'
+      }
     }
   },
   
