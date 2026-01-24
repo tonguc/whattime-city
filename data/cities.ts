@@ -7271,6 +7271,388 @@ export const cities: City[] = [
       }
     }
   },
+  
+  // India - New Cities Batch 3 (20 cities with full premium content)
+  { slug: 'rameswaram', city: 'Rameswaram', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 9.29, lng: 79.31, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.05M', metroPopulation: '0.06M', phoneCode: '+91 4573', language: 'Tamil, English',
+      climate: 'Tropical with hot year-round temperatures (26-36°C). Northeast monsoon October-December. Sea breeze provides relief.',
+      attractions: ['Ramanathaswamy Temple', 'Pamban Bridge', 'Dhanushkodi', 'Agni Theertham', 'Adam\'s Bridge', 'Five-Faced Hanuman Temple', 'Gandhamadhana Parvatham', 'Villoondi Tirtham', 'APJ Abdul Kalam Memorial', 'Pamban Island'],
+      demographics: 'One of four Char Dham sites. Island connected by India\'s first sea bridge. Where Lord Rama built bridge to Lanka. Birthplace of APJ Abdul Kalam.',
+      seoContent: {
+        intro: 'Rameswaram, where Rama crossed to Lanka, operates on India Standard Time (IST/UTC+5:30). This sacred island of 50,000 is one of the four Char Dham, where Lord Rama is believed to have built the bridge to Lanka, now a stunning pilgrimage destination.',
+        timezoneFacts: 'Same timezone as all of India. Island in Gulf of Mannar.',
+        bestTimeToVisit: 'October-April for pleasant weather. Maha Shivaratri and Ram Navami major festivals. Avoid cyclone season.',
+        businessHours: 'Ramanathaswamy Temple 5 AM to 1 PM, 3 PM to 9 PM. 22 wells bath ritual early morning.',
+        timeDifference: 'Rameswaram is UTC+5:30 year-round. When noon in Rameswaram: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Bathing in 22 sacred wells is ritual - be prepared to get wet! Pamban Bridge train ride thrilling. Dhanushkodi ghost town haunting. APJ Kalam memorial touching.',
+        transportation: 'Rameswaram station connected to Chennai. Madurai Airport (IXM) 174km. Pamban Bridge only rail connection.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Maha Shivaratri, Ram Navami, Pongal, Diwali.'
+      }
+    }
+  },
+  { slug: 'kanyakumari', city: 'Kanyakumari', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 8.08, lng: 77.54, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.03M', phoneCode: '+91 4652', language: 'Tamil, Malayalam, English',
+      climate: 'Tropical with warm year-round temperatures (24-32°C). Two monsoons - southwest (June-September) and northeast (October-November).',
+      attractions: ['Vivekananda Rock Memorial', 'Thiruvalluvar Statue', 'Kanyakumari Temple', 'Triveni Sangam', 'Gandhi Memorial', 'Sunrise/Sunset Point', 'Padmanabhapuram Palace', 'Thirparappu Falls', 'Mathur Hanging Trough', 'Our Lady of Ransom Church'],
+      demographics: 'Southernmost tip of Indian mainland. Where three seas meet - Bay of Bengal, Arabian Sea, Indian Ocean. Named after goddess Kanya Kumari.',
+      seoContent: {
+        intro: 'Kanyakumari, Land\'s End of India, operates on India Standard Time (IST/UTC+5:30). This southernmost tip of the Indian mainland where three seas meet offers the unique spectacle of watching both sunrise and sunset over the ocean from the same spot.',
+        timezoneFacts: 'Same timezone as all of India. Southernmost point of mainland India.',
+        bestTimeToVisit: 'October-March for pleasant weather. Full moon days special - see both sunrise and sunset. Vivekananda Jayanti (January 12).',
+        businessHours: 'Vivekananda Memorial ferry 8 AM to 4 PM. Temple 4:30 AM to 12:30 PM, 4 PM to 8 PM.',
+        timeDifference: 'Kanyakumari is UTC+5:30 year-round. When noon in Kanyakumari: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Sunrise and sunset from same point - magical! Ferry to Vivekananda Rock can be crowded. Triveni Sangam - three seas meet. Full moon nights spectacular.',
+        transportation: 'Kanyakumari station on rail network. Trivandrum Airport (TRV) 90km. Buses from all major southern cities.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal, Vivekananda Jayanti (Jan 12), Chitra Pournami (April full moon).'
+      }
+    }
+  },
+  { slug: 'mahabalipuram', city: 'Mahabalipuram', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.62, lng: 80.19, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.03M', phoneCode: '+91 44', language: 'Tamil, English',
+      climate: 'Tropical wet and dry with hot summers (30-40°C) and warm winters (22-30°C). Northeast monsoon October-December.',
+      attractions: ['Shore Temple', 'Pancha Rathas', 'Arjuna\'s Penance', 'Krishna\'s Butter Ball', 'Tiger Cave', 'Crocodile Bank', 'Dakshinachitra', 'Beach Sculpture', 'Mahishasuramardini Cave', 'Lighthouse'],
+      demographics: 'UNESCO World Heritage Site. 7th-8th century Pallava dynasty stone temples. One of the oldest port towns in India.',
+      seoContent: {
+        intro: 'Mahabalipuram, open-air museum of Pallava art, operates on India Standard Time (IST/UTC+5:30). This UNESCO beach town of 20,000 features stunning 7th-8th century stone temples and the world\'s largest bas-relief, carved by the Pallava dynasty.',
+        timezoneFacts: 'Same timezone as all of India. Coromandel Coast, Bay of Bengal.',
+        bestTimeToVisit: 'November-February for pleasant weather. Dance Festival (Dec-Jan) spectacular. Avoid peak monsoon.',
+        businessHours: 'Shore Temple sunrise to sunset. Five Rathas 6 AM to 6 PM. Beach sculptures 24/7.',
+        timeDifference: 'Mahabalipuram is UTC+5:30 year-round. When noon in Mahabalipuram: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Shore Temple at sunrise is magical. Krishna\'s Butter Ball defies physics! Dance Festival (Dec-Jan) against monument backdrop. Beach has stone carving workshops.',
+        transportation: 'Chennai Airport (MAA) 60km. No railway - bus or taxi from Chennai. ECR scenic coastal drive.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal, Mamallapuram Dance Festival (Dec-Jan), Diwali.'
+      }
+    }
+  },
+  { slug: 'thanjavur', city: 'Thanjavur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.79, lng: 79.14, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.3M', metroPopulation: '0.4M', phoneCode: '+91 4362', language: 'Tamil, English',
+      climate: 'Tropical with hot summers (30-40°C) and warm winters (22-30°C). Northeast monsoon October-December. Rice bowl of Tamil Nadu.',
+      attractions: ['Brihadeeswarar Temple', 'Thanjavur Palace', 'Saraswathi Mahal Library', 'Art Gallery', 'Schwartz Church', 'Sangeetha Mahal', 'Bell Tower', 'Tamil University', 'Sivaganga Park', 'Thanjavur Paintings'],
+      demographics: 'UNESCO World Heritage Brihadeeswarar Temple. Capital of Chola Empire. Center of Carnatic music and Bharatanatyam dance.',
+      seoContent: {
+        intro: 'Thanjavur, cultural capital of Tamil Nadu, operates on India Standard Time (IST/UTC+5:30). This Chola dynasty capital of 300,000 is home to the UNESCO Brihadeeswarar Temple with its engineering marvel dome and is the birthplace of Carnatic music.',
+        timezoneFacts: 'Same timezone as all of India. Cauvery Delta region.',
+        bestTimeToVisit: 'October-March for pleasant weather. Natyanjali Dance Festival (February-March). Temple festivals throughout year.',
+        businessHours: 'Big Temple 6 AM to 12:30 PM, 4 PM to 8:30 PM. Palace Museum 9 AM to 6 PM.',
+        timeDifference: 'Thanjavur is UTC+5:30 year-round. When noon in Thanjavur: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Big Temple dome is single granite piece - engineering wonder! Saraswathi Mahal has ancient palm-leaf manuscripts. Buy Thanjavur paintings and bobblehead dolls.',
+        transportation: 'Thanjavur Junction on rail network. Tiruchirapalli Airport (TRZ) 56km. Buses from Chennai (6 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal, Natyanjali Festival, Maha Shivaratri, Diwali.'
+      }
+    }
+  },
+  { slug: 'tiruchirappalli', city: 'Tiruchirappalli', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.79, lng: 78.69, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.0M', metroPopulation: '1.2M', phoneCode: '+91 431', language: 'Tamil, English',
+      climate: 'Tropical with hot summers (32-40°C) and warm winters (22-32°C). Northeast monsoon October-December.',
+      attractions: ['Rockfort Temple', 'Ranganathaswamy Temple', 'Jambukeswarar Temple', 'St. Joseph\'s Church', 'BHEL Township', 'Gandhi Market', 'Mukkombu Dam', 'Kallanai Dam', 'Upper Anaicut', 'Thiruvanaikaval'],
+      demographics: 'Ancient temple city. Rockfort landmark visible across city. Ranganathaswamy is largest functioning Hindu temple. Educational and industrial hub.',
+      seoContent: {
+        intro: 'Tiruchirappalli (Trichy), city of the Rock, operates on India Standard Time (IST/UTC+5:30). This ancient city of 1 million is dominated by the iconic Rockfort temple and houses Ranganathaswamy, the world\'s largest functioning Hindu temple.',
+        timezoneFacts: 'Same timezone as all of India. Central Tamil Nadu.',
+        bestTimeToVisit: 'November-February for pleasant weather. Vaikunta Ekadasi (December) at Ranganathaswamy draws millions.',
+        businessHours: 'Rockfort Temple 6 AM to 8 PM. Ranganathaswamy 6 AM to 1 PM, 3 PM to 9 PM.',
+        timeDifference: 'Trichy is UTC+5:30 year-round. When noon in Trichy: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Climb Rockfort 417 steps for city views. Ranganathaswamy temple complex is like a city. Srirangam island between two rivers. Try Trichy\'s famous idlis.',
+        transportation: 'Tiruchirappalli Airport (TRZ). Junction on main rail lines. Buses to all Tamil Nadu cities.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal, Vaikunta Ekadasi (special), Diwali.'
+      }
+    }
+  },
+  { slug: 'tirupati', city: 'Tirupati', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 13.63, lng: 79.42, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.5M', metroPopulation: '0.7M', phoneCode: '+91 877', language: 'Telugu, Tamil, English',
+      climate: 'Tropical with hot summers (30-42°C) and warm winters (18-32°C). Light monsoon. Tirumala hills cooler.',
+      attractions: ['Tirumala Venkateswara Temple', 'ISKCON Temple', 'Sri Kapileswara Swamy Temple', 'Chandragiri Fort', 'TTD Gardens', 'Talakona Waterfall', 'Srikalahasti Temple', 'Akasa Ganga', 'Silathoranam', 'Deer Park'],
+      demographics: 'Richest and most visited pilgrimage site in the world. 50,000-100,000 pilgrims daily. Temple receives more donations than Vatican.',
+      seoContent: {
+        intro: 'Tirupati, abode of Lord Venkateswara, operates on India Standard Time (IST/UTC+5:30). This pilgrimage city of 500,000 serves the world\'s richest and most visited religious site - Tirumala temple receives 50,000-100,000 pilgrims daily.',
+        timezoneFacts: 'Same timezone as all of India. Southeastern Andhra Pradesh.',
+        bestTimeToVisit: 'Year-round pilgrimage. September-February most pleasant. Brahmotsavam (September) is major festival.',
+        businessHours: 'Tirumala Temple 24/7 for darshan. Special darshan timings vary. Free darshan queues very long.',
+        timeDifference: 'Tirupati is UTC+5:30 year-round. When noon in Tirupati: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Book darshan online weeks ahead! Free darshan can take 10-20 hours. ₹300 special darshan faster. Hair tonsuring is tradition. Laddoo prasadam famous.',
+        transportation: 'Tirupati Airport (TIR) 15km. Tirupati station well-connected. TTD buses to Tirumala (30km hill drive).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. TTD helpline: 0877-2277777.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Brahmotsavam (September), Vaikunta Ekadasi, Ugadi, Diwali.'
+      }
+    }
+  },
+  { slug: 'warangal', city: 'Warangal', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 17.98, lng: 79.60, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.8M', metroPopulation: '1.0M', phoneCode: '+91 870', language: 'Telugu, Urdu, Hindi',
+      climate: 'Tropical with hot summers (32-42°C) and mild winters (15-30°C). Monsoon June-September.',
+      attractions: ['Warangal Fort', 'Thousand Pillar Temple', 'Ramappa Temple (UNESCO)', 'Bhadrakali Temple', 'Pakhal Lake', 'Kakatiya Musical Garden', 'Eturnagaram Wildlife Sanctuary', 'Kakatiya Thoranam', 'Padmakshi Temple', 'Regional Science Centre'],
+      demographics: 'Former Kakatiya dynasty capital. UNESCO Ramappa Temple. Known for intricate stone carvings and engineering feats.',
+      seoContent: {
+        intro: 'Warangal, city of stone gates, operates on India Standard Time (IST/UTC+5:30). This former Kakatiya capital of 800,000 features the UNESCO-listed Ramappa Temple and the iconic stone gateways (Kakatiya Thoranam) that inspired Telangana\'s state emblem.',
+        timezoneFacts: 'Same timezone as all of India. Northern Telangana.',
+        bestTimeToVisit: 'October-March for pleasant weather. Bathukamma Festival (September-October) colorful.',
+        businessHours: 'Fort and temples sunrise to sunset. Museums 10 AM to 5 PM.',
+        timeDifference: 'Warangal is UTC+5:30 year-round. When noon in Warangal: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Ramappa Temple floats on water (laterite brick)! Thousand Pillar Temple has musical pillars. Pakhal Lake picnic spot. Try Warangal\'s Biryani.',
+        transportation: 'Warangal station on main line. Hyderabad Airport (HYD) 150km. Buses from Hyderabad (3 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bathukamma, Ugadi, Dussehra, Diwali.'
+      }
+    }
+  },
+  { slug: 'bidar', city: 'Bidar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 17.91, lng: 77.52, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.25M', phoneCode: '+91 8482', language: 'Kannada, Urdu, Deccani',
+      climate: 'Semi-arid with hot summers (32-42°C) and mild winters (12-28°C). Monsoon June-September.',
+      attractions: ['Bidar Fort', 'Mahmud Gawan Madrasa', 'Bahmani Tombs', 'Gurudwara Nanak Jhira Sahib', 'Chaukhandi of Hazrat Khalil Ullah', 'Solah Khamba Mosque', 'Rangin Mahal', 'Papnash Shiva Temple', 'Bidriware Workshops', 'Ashtur Tombs'],
+      demographics: 'Former Bahmani Sultanate capital. Unique Bidriware metal craft (UNESCO Intangible Heritage). Syncretic Deccani culture.',
+      seoContent: {
+        intro: 'Bidar, city of black metal art, operates on India Standard Time (IST/UTC+5:30). This Bahmani Sultanate capital of 200,000 is the birthplace of Bidriware, the distinctive black metal inlay craft recognized by UNESCO as Intangible Cultural Heritage.',
+        timezoneFacts: 'Same timezone as all of India. Northeastern Karnataka on Deccan Plateau.',
+        bestTimeToVisit: 'October-March for pleasant weather. Guru Nanak Jayanti at Nanak Jhira. Urs at Sufi shrines.',
+        businessHours: 'Fort 6 AM to 6 PM. Bidriware workshops 10 AM to 6 PM. Tombs sunrise to sunset.',
+        timeDifference: 'Bidar is UTC+5:30 year-round. When noon in Bidar: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Visit Bidriware workshops to see craft being made. Fort triple moat engineering marvel. Mahmud Gawan Madrasa was Oxford of the East. Try Bidar\'s Deccani cuisine.',
+        transportation: 'Bidar station on rail line. Hyderabad Airport (HYD) 140km. Buses from Hyderabad and Bangalore.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Guru Nanak Jayanti, Eid, Ugadi, Diwali.'
+      }
+    }
+  },
+  { slug: 'bijapur', city: 'Vijayapura', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 16.83, lng: 75.71, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.35M', metroPopulation: '0.4M', phoneCode: '+91 8352', language: 'Kannada, Urdu, Deccani',
+      climate: 'Semi-arid with hot summers (35-42°C) and mild winters (15-30°C). Light monsoon June-September.',
+      attractions: ['Gol Gumbaz', 'Ibrahim Roza', 'Bara Kaman', 'Jama Masjid', 'Malik-e-Maidan Cannon', 'Asar Mahal', 'Upli Burj', 'Gagan Mahal', 'Sat Manzil', 'Archaeological Museum'],
+      demographics: 'Former Adil Shahi Sultanate capital. Gol Gumbaz has second largest dome in the world. Called "Agra of the South".',
+      seoContent: {
+        intro: 'Vijayapura (Bijapur), the Agra of the South, operates on India Standard Time (IST/UTC+5:30). This Adil Shahi capital of 350,000 features Gol Gumbaz with the world\'s second-largest dome and famous Whispering Gallery.',
+        timezoneFacts: 'Same timezone as all of India. Northern Karnataka, Deccan Plateau.',
+        bestTimeToVisit: 'October-March for pleasant weather. Avoid extreme summer. Urs festivals at tombs.',
+        businessHours: 'Gol Gumbaz 6 AM to 6 PM. Ibrahim Roza 6 AM to 6 PM. Museum 10 AM to 5 PM.',
+        timeDifference: 'Vijayapura is UTC+5:30 year-round. When noon in Vijayapura: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Whisper in Gol Gumbaz dome - hear it 37m away! Ibrahim Roza inspired Taj Mahal. Malik-e-Maidan is massive cannon. Best seen over 2 days.',
+        transportation: 'Bijapur station on rail line. Hubli Airport (HBX) 200km. Buses from Bangalore (8 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Eid, Ugadi, Dussehra, Diwali.'
+      }
+    }
+  },
+  { slug: 'badami', city: 'Badami', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 15.92, lng: 75.68, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.04M', phoneCode: '+91 8357', language: 'Kannada, English',
+      climate: 'Semi-arid with hot summers (35-42°C) and mild winters (15-30°C). Light monsoon June-September.',
+      attractions: ['Badami Cave Temples', 'Agastya Lake', 'Bhutanatha Temple', 'Fort and Museums', 'Aihole (nearby)', 'Pattadakal (nearby)', 'Mahakuta Temple', 'Lower Shivalaya', 'Banashankari Temple', 'Rock Climbing'],
+      demographics: 'Chalukya dynasty capital (6th century). Rock-cut cave temples. Part of Badami-Aihole-Pattadakal UNESCO circuit.',
+      seoContent: {
+        intro: 'Badami, cradle of Chalukya architecture, operates on India Standard Time (IST/UTC+5:30). This ancient capital of 30,000 features stunning 6th-century rock-cut caves and forms the UNESCO circuit with nearby Aihole and Pattadakal.',
+        timezoneFacts: 'Same timezone as all of India. North Karnataka, Malaprabha Valley.',
+        bestTimeToVisit: 'October-March for pleasant weather. Morning light best for caves. Avoid summer heat.',
+        businessHours: 'Cave temples 6 AM to 6 PM. Fort sunrise to sunset. Combine with Aihole/Pattadakal day trip.',
+        timeDifference: 'Badami is UTC+5:30 year-round. When noon in Badami: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Cave 3 has famous Vishnu panels - morning light best. Agastya Lake sunset beautiful. Aihole (44km) and Pattadakal (22km) must-visit. Rock climbing popular.',
+        transportation: 'Badami station on Hubli-Sholapur line. Hubli Airport (HBX) 110km. Buses from Hubli and Bangalore.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Banashankari Jatra (January-February), Ugadi, Diwali.'
+      }
+    }
+  },
+  { slug: 'belur', city: 'Belur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 13.16, lng: 75.87, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.04M', phoneCode: '+91 8177', language: 'Kannada, English',
+      climate: 'Tropical with warm summers (25-35°C) and mild winters (15-28°C). Monsoon June-September.',
+      attractions: ['Chennakeshava Temple', 'Kappe Chennigaraya Temple', 'Halebidu (nearby)', 'Shravanabelagola (nearby)', 'Temple Sculptures', 'Yagachi Dam', 'Hoysala Architecture', 'Stone Carvings', 'Musical Pillars', 'Darpana Sundari'],
+      demographics: 'Hoysala dynasty capital. Chennakeshava Temple took 103 years to build. Stone carving pinnacle of Indian art.',
+      seoContent: {
+        intro: 'Belur, jewel of Hoysala art, operates on India Standard Time (IST/UTC+5:30). This temple town of 30,000 houses Chennakeshava Temple, a 103-year masterpiece of Hoysala architecture where no two sculptures are alike among thousands.',
+        timezoneFacts: 'Same timezone as all of India. Hassan district, Western Karnataka.',
+        bestTimeToVisit: 'October-March for pleasant weather. Combine with Halebidu and Shravanabelagola.',
+        businessHours: 'Temple 7:30 AM to 5:30 PM (summer), 7:30 AM to 7:30 PM. Guide services available.',
+        timeDifference: 'Belur is UTC+5:30 year-round. When noon in Belur: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Hire guide to understand intricate carvings! Every sculpture is unique. Darpana Sundari (lady with mirror) most famous. Halebidu just 16km away.',
+        transportation: 'Hassan station 38km. Mangalore Airport (IXE) 180km. Buses from Bangalore, Mysore, Hassan.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Hoysala Mahotsava, Ugadi, Dussehra, Diwali.'
+      }
+    }
+  },
+  { slug: 'madikeri', city: 'Madikeri', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.42, lng: 75.74, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.05M', phoneCode: '+91 8272', language: 'Kodava, Kannada, English',
+      climate: 'Tropical highland with cool summers (15-25°C) and mild winters (10-22°C). Heavy monsoon June-September. Misty year-round.',
+      attractions: ['Abbey Falls', 'Raja\'s Seat', 'Madikeri Fort', 'Omkareshwara Temple', 'Talacauvery', 'Dubare Elephant Camp', 'Nisargadhama', 'Namdroling Monastery', 'Coffee Plantations', 'Mandalpatti Viewpoint'],
+      demographics: 'Headquarters of Coorg (Kodagu). Coffee and spice capital of India. Distinct Kodava martial culture. Scotland of India.',
+      seoContent: {
+        intro: 'Madikeri, heart of Coorg, operates on India Standard Time (IST/UTC+5:30). This misty hill town of 40,000 is the capital of Kodagu, India\'s coffee country, home to the warrior Kodava people and endless emerald coffee plantations.',
+        timezoneFacts: 'Same timezone as all of India. Western Ghats, high rainfall region.',
+        bestTimeToVisit: 'October-March for pleasant weather. Monsoon (June-September) lush but very wet. March-May coffee blossom.',
+        businessHours: 'Raja\'s Seat 5:30 AM to 7:30 PM. Abbey Falls 9 AM to 5 PM. Plantation tours by appointment.',
+        timeDifference: 'Madikeri is UTC+5:30 year-round. When noon in Madikeri: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Stay in coffee plantation homestay - authentic experience! Dubare elephant camp morning bathing. Try pandi curry (pork) and Kodava cuisine. Talacauvery is Cauvery source.',
+        transportation: 'Nearest airport Mangalore (IXE) 135km or Mysore (MYQ) 120km. No railway. Buses from Bangalore (6 hours) and Mysore (3 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Kailpodh (harvest), Puthari, Kaveri Sankramana, Diwali.'
+      }
+    }
+  },
+  { slug: 'udupi', city: 'Udupi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 13.34, lng: 74.75, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.3M', phoneCode: '+91 820', language: 'Kannada, Tulu, Konkani',
+      climate: 'Tropical monsoon with hot summers (28-36°C) and warm winters (22-32°C). Very heavy monsoon June-September.',
+      attractions: ['Sri Krishna Temple', 'Malpe Beach', 'St. Mary\'s Island', 'Kaup Beach and Lighthouse', 'Manipal University', 'Anegudde Vinayaka Temple', 'Kudlu Falls', 'Udupi Cuisine', 'Pajaka Kshetra', 'Delta Beach'],
+      demographics: 'Birthplace of Udupi cuisine - vegetarian restaurants worldwide. Sri Krishna Mutt pilgrimage. Education hub (Manipal University).',
+      seoContent: {
+        intro: 'Udupi, birthplace of South Indian cuisine, operates on India Standard Time (IST/UTC+5:30). This temple town of 200,000 is the origin of Udupi restaurants found worldwide, home to the sacred Sri Krishna Temple and pristine coastal beaches.',
+        timezoneFacts: 'Same timezone as all of India. Karnataka coast, Arabian Sea.',
+        bestTimeToVisit: 'October-May for beaches and temples. Paryaya Festival (January, every 2 years) special. Monsoon dramatic but wet.',
+        businessHours: 'Sri Krishna Temple 5 AM to 9 PM. Malpe Beach boats 8 AM to 5 PM.',
+        timeDifference: 'Udupi is UTC+5:30 year-round. When noon in Udupi: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Eat at original Udupi restaurants near temple! St. Mary\'s Island has hexagonal basalt rocks. Manipal worth visiting. Try goli baje and neer dosa.',
+        transportation: 'Udupi station on Konkan Railway. Mangalore Airport (IXE) 60km. Buses from Bangalore (8 hours) and Mangalore (2 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Paryaya (biennial), Krishna Janmashtami, Dussehra, Diwali.'
+      }
+    }
+  },
+  { slug: 'gokarna', city: 'Gokarna', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 14.55, lng: 74.32, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.04M', phoneCode: '+91 8386', language: 'Kannada, Konkani, English',
+      climate: 'Tropical monsoon with hot summers (28-36°C) and warm winters (22-32°C). Heavy monsoon June-September.',
+      attractions: ['Om Beach', 'Kudle Beach', 'Half Moon Beach', 'Paradise Beach', 'Mahabaleshwara Temple', 'Gokarna Beach', 'Mirjan Fort', 'Yana Rocks', 'Vibhuti Falls', 'Beach Trekking'],
+      demographics: 'Ancient temple town turned beach paradise. Alternative to Goa - more laid-back. Sacred Mahabaleshwara Shiva temple. Hippie trail destination.',
+      seoContent: {
+        intro: 'Gokarna, where spirituality meets the sea, operates on India Standard Time (IST/UTC+5:30). This sacred beach town of 30,000 offers an alternative to crowded Goa, with pristine beaches like Om Beach and the ancient Mahabaleshwara Temple.',
+        timezoneFacts: 'Same timezone as all of India. Karnataka coast, Arabian Sea.',
+        bestTimeToVisit: 'October-March for beach weather. Maha Shivaratri huge at temple. Monsoon dramatic but beaches unsafe.',
+        businessHours: 'Temple 6 AM to 12:30 PM, 5 PM to 8 PM. Beach shacks seasonal. Trek routes daytime only.',
+        timeDifference: 'Gokarna is UTC+5:30 year-round. When noon in Gokarna: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Beach trek from Gokarna to Paradise Beach beautiful (2-3 hours). Stay on Om Beach for vibe. Temple sacred - dress modestly. Boat rides between beaches available.',
+        transportation: 'Gokarna Road station on Konkan Railway. Goa Airport (GOI) 140km. Buses from Bangalore (8 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Maha Shivaratri (massive), Rathotsava, Diwali.'
+      }
+    }
+  },
+  { slug: 'hospet', city: 'Hosapete', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 15.27, lng: 76.39, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.25M', phoneCode: '+91 8394', language: 'Kannada, Telugu, Hindi',
+      climate: 'Semi-arid with hot summers (35-42°C) and mild winters (18-32°C). Light monsoon June-September.',
+      attractions: ['Hampi (nearby)', 'Tungabhadra Dam', 'Hampi Bazaar', 'Virupaksha Temple', 'Vittala Temple', 'Stone Chariot', 'Daroji Bear Sanctuary', 'Kamalapur Museum', 'Matanga Hill', 'Royal Enclosure'],
+      demographics: 'Gateway city to UNESCO Hampi. Industrial town. Tungabhadra Dam project hub. Base for Hampi exploration.',
+      seoContent: {
+        intro: 'Hosapete (Hospet), gateway to Hampi, operates on India Standard Time (IST/UTC+5:30). This industrial town of 200,000 serves as the base for exploring UNESCO World Heritage Hampi ruins, just 13km away.',
+        timezoneFacts: 'Same timezone as all of India. North Karnataka, Tungabhadra River basin.',
+        bestTimeToVisit: 'October-February for pleasant weather. Hampi Utsav (November) cultural festival. Avoid summer heat.',
+        businessHours: 'Gateway to Hampi ruins (sunrise to sunset). Dam visits morning best.',
+        timeDifference: 'Hosapete is UTC+5:30 year-round. When noon in Hosapete: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Stay in Hospet or Hampi - both have options. Tungabhadra Dam evening lights. Rent bicycle in Hampi. Allow 2-3 days for ruins.',
+        transportation: 'Hosapete Junction on rail line. Hubli Airport (HBX) 143km. Buses from Bangalore (6 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Hampi Utsav (November), Ugadi, Diwali.'
+      }
+    }
+  },
+  { slug: 'kumbakonam', city: 'Kumbakonam', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.96, lng: 79.38, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.15M', metroPopulation: '0.2M', phoneCode: '+91 435', language: 'Tamil, English',
+      climate: 'Tropical with hot summers (30-40°C) and warm winters (22-32°C). Northeast monsoon October-December.',
+      attractions: ['Mahamaham Tank', 'Adi Kumbeswarar Temple', 'Sarangapani Temple', 'Navagraha Temples', 'Airavatesvara Temple (UNESCO)', 'Darasuram', 'Swamimalai Bronze Casting', 'Kumbakonam Coffee', 'Degree Coffee', 'Silk Weaving'],
+      demographics: 'Temple town with 188 temples. Mahamaham festival every 12 years draws millions. Center of South Indian bronze casting.',
+      seoContent: {
+        intro: 'Kumbakonam, city of temples, operates on India Standard Time (IST/UTC+5:30). This ancient town of 150,000 has 188 temples and hosts the Mahamaham festival every 12 years, when millions bathe in the sacred tank.',
+        timezoneFacts: 'Same timezone as all of India. Cauvery Delta, Tamil Nadu.',
+        bestTimeToVisit: 'October-March for pleasant weather. Mahamaham Festival (every 12 years - next 2028). Temple festivals throughout year.',
+        businessHours: 'Temples 6 AM to 12 PM, 4 PM to 9 PM. Bronze workshops 9 AM to 6 PM.',
+        timeDifference: 'Kumbakonam is UTC+5:30 year-round. When noon in Kumbakonam: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Try famous Kumbakonam degree coffee! Airavatesvara Temple (UNESCO) at Darasuram 4km. Visit Navagraha (9 planets) temples. Swamimalai bronze casting workshops.',
+        transportation: 'Kumbakonam Junction on rail line. Trichy Airport (TRZ) 96km. Buses from Chennai (6 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal, Mahamaham (every 12 years), Thai Poosam, Diwali.'
+      }
+    }
+  },
+  { slug: 'chidambaram', city: 'Chidambaram', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 11.40, lng: 79.69, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.06M', metroPopulation: '0.08M', phoneCode: '+91 4144', language: 'Tamil, English',
+      climate: 'Tropical with hot summers (30-40°C) and warm winters (22-32°C). Northeast monsoon October-December.',
+      attractions: ['Nataraja Temple', 'Thillai Kali Amman Temple', 'Pichavaram Mangroves', 'Annamalai University', 'Chidambaram Palace', 'Koothanur Saraswathi Temple', 'Vaitheeswaran Temple', 'Sirkali', 'Coastal Backwaters', 'Dance Festivals'],
+      demographics: 'Nataraja Temple is Shiva\'s cosmic dance shrine. One of five Pancha Bhuta Sthalams (space element). Pichavaram mangroves second largest in world.',
+      seoContent: {
+        intro: 'Chidambaram, abode of the cosmic dancer, operates on India Standard Time (IST/UTC+5:30). This sacred town of 60,000 houses the Nataraja Temple where Shiva performs his cosmic dance, and offers access to Pichavaram, the world\'s second-largest mangrove forest.',
+        timezoneFacts: 'Same timezone as all of India. Cuddalore district, Tamil Nadu coast.',
+        bestTimeToVisit: 'October-March for pleasant weather. Natyanjali Dance Festival (February-March). Margazhi season (December-January) special.',
+        businessHours: 'Nataraja Temple 6 AM to 12 PM, 5 PM to 10 PM. Pichavaram boats 9 AM to 5 PM.',
+        timeDifference: 'Chidambaram is UTC+5:30 year-round. When noon in Chidambaram: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Nataraja Temple managed by Dikshitars (hereditary priests). Pichavaram mangrove boat ride magical. Natyanjali Festival sees best Bharatanatyam dancers. Akasha Lingam represents space.',
+        transportation: 'Chidambaram station on rail line. Chennai Airport (MAA) 235km. Buses from Chennai (5 hours) and Pondicherry (1.5 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Natyanjali Festival (Feb-Mar), Ani Thirumanjanam (June), Margazhi (Dec-Jan), Diwali.'
+      }
+    }
+  },
+  { slug: 'pollachi', city: 'Pollachi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.66, lng: 77.01, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.1M', metroPopulation: '0.15M', phoneCode: '+91 4259', language: 'Tamil, English',
+      climate: 'Tropical with moderate temperatures year-round (22-35°C). Monsoon June-September and October-November. Coconut growing region.',
+      attractions: ['Anamalai Tiger Reserve', 'Topslip', 'Valparai', 'Aliyar Dam', 'Monkey Falls', 'Parambikulam Tiger Reserve', 'Sethumadai', 'Coconut Farms', 'Film City', 'Maruthamalai Temple'],
+      demographics: 'Coconut capital of South India. Gateway to Anamalai Hills. Popular Tamil film shooting location. Agricultural hub.',
+      seoContent: {
+        intro: 'Pollachi, coconut capital of India, operates on India Standard Time (IST/UTC+5:30). This agricultural town of 100,000 is surrounded by endless coconut groves and serves as the gateway to the Anamalai Tiger Reserve and misty Valparai hill station.',
+        timezoneFacts: 'Same timezone as all of India. Western Tamil Nadu, Anamalai foothills.',
+        bestTimeToVisit: 'September-May for wildlife and hills. Monsoon lush but leeches in forests. Winter best for Topslip.',
+        businessHours: 'Anamalai park 6 AM to 6 PM. Dam visits 9 AM to 5 PM. Coconut markets early morning.',
+        timeDifference: 'Pollachi is UTC+5:30 year-round. When noon in Pollachi: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Topslip elephant camp early morning best. Valparai drive through 40 hairpin bends! Book forest stays in advance. Fresh coconut water everywhere!',
+        transportation: 'Pollachi Junction on rail line. Coimbatore Airport (CJB) 40km. Buses from Coimbatore (1 hour).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Forest office: 04253-252356.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal, Diwali, Maruthamalai Temple festivals.'
+      }
+    }
+  },
+  { slug: 'yercaud', city: 'Yercaud', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 11.78, lng: 78.21, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.04M', phoneCode: '+91 4281', language: 'Tamil, English',
+      climate: 'Subtropical highland with cool year-round temperatures (14-29°C). Pleasant escape from plains heat. Mist common.',
+      attractions: ['Yercaud Lake', 'Shevaroy Temple', 'Lady\'s Seat', 'Gent\'s Seat', 'Pagoda Point', 'Killiyur Falls', 'Bear\'s Cave', 'Botanical Garden', 'Coffee Plantations', 'Anna Park'],
+      demographics: 'Poor man\'s Ooty - affordable hill station. Coffee and orange growing region. 32 hairpin bends to reach.',
+      seoContent: {
+        intro: 'Yercaud, the poor man\'s Ooty, operates on India Standard Time (IST/UTC+5:30). This affordable hill station of 30,000 in the Shevaroy Hills offers cool respite from Tamil Nadu\'s heat, with coffee plantations, a serene lake, and misty viewpoints.',
+        timezoneFacts: 'Same timezone as all of India. Shevaroy Hills, Salem district.',
+        bestTimeToVisit: 'Year-round pleasant. Summer Festival (May) with flower show. Monsoon misty and green.',
+        businessHours: 'Lake boating 8:30 AM to 5:30 PM. Viewpoints accessible daytime. Botanical Garden 10 AM to 6 PM.',
+        timeDifference: 'Yercaud is UTC+5:30 year-round. When noon in Yercaud: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: '32 hairpin bends make the drive exciting! Lake boating peaceful. Coffee fresh from estates. Shevaroy Temple at 5000ft highest point. Much less crowded than Ooty.',
+        transportation: 'Salem Junction 35km (1.5 hours). Salem Airport (no commercial). Buses from Chennai (6 hours) and Bangalore (5 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Pongal, Summer Festival (May), Diwali.'
+      }
+    }
+  },
   { slug: 'vadodara', city: 'Vadodara', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.31, lng: 73.19, tier: 3, continent: 'asia',
     info: {
       currency: 'Indian Rupee', currencySymbol: '₹', population: '2.1M', phoneCode: '+91 265', language: 'Gujarati, Hindi',
