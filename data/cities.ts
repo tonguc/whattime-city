@@ -8437,6 +8437,348 @@ export const cities: City[] = [
       }
     }
   },
+  
+  // India - New Cities Batch 6 (20 cities with full premium content)
+  { slug: 'bikaner', city: 'Bikaner', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 28.02, lng: 73.31, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.7M', metroPopulation: '0.8M', phoneCode: '+91 151', language: 'Hindi, Marwari, Rajasthani',
+      climate: 'Hot desert with extreme summers (40-48°C) and cool winters (5-25°C). Very little rainfall. Dust storms common.',
+      attractions: ['Junagarh Fort', 'Karni Mata Temple (Rat Temple)', 'Lalgarh Palace', 'Camel Breeding Farm', 'Rampuria Havelis', 'Gajner Palace', 'Bhandasar Jain Temple', 'Camel Festival', 'USTA Art', 'Bhujia'],
+      demographics: 'Camel country. Famous for Bikaneri bhujia snacks. Karni Mata rat temple unique. Desert fortress never conquered.',
+      seoContent: {
+        intro: 'Bikaner, camel country capital, operates on India Standard Time (IST/UTC+5:30). This desert city of 700,000 boasts the unconquered Junagarh Fort, the bizarre Karni Mata rat temple with 25,000 sacred rats, and Asia\'s largest camel breeding farm.',
+        timezoneFacts: 'Same timezone as all of India. Thar Desert, Rajasthan.',
+        bestTimeToVisit: 'October-March for pleasant weather. Camel Festival (January) spectacular. Avoid scorching summer.',
+        businessHours: 'Junagarh Fort 10 AM to 5 PM. Karni Mata Temple sunrise to sunset. Camel Farm 3 PM to 5 PM.',
+        timeDifference: 'Bikaner is UTC+5:30 year-round. When noon in Bikaner: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Karni Mata rat temple - white rat sighting very auspicious! Camel Festival in January great. Buy Bikaneri bhujia. Junagarh Fort has 37 palaces inside!',
+        transportation: 'Bikaner Airport (limited). Bikaner Junction railway. 5 hours from Jaipur, overnight from Delhi.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Camel Festival (January), Gangaur, Diwali.'
+      }
+    }
+  },
+  { slug: 'chittorgarh', city: 'Chittorgarh', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 24.88, lng: 74.63, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.12M', metroPopulation: '0.15M', phoneCode: '+91 1472', language: 'Hindi, Mewari, Rajasthani',
+      climate: 'Semi-arid with hot summers (35-45°C) and mild winters (10-28°C). Monsoon July-September.',
+      attractions: ['Chittorgarh Fort', 'Vijay Stambh', 'Kirti Stambh', 'Rana Kumbha Palace', 'Padmini Palace', 'Meera Temple', 'Gaumukh Reservoir', 'Fateh Prakash Palace', 'Kalika Mata Temple', 'Light & Sound Show'],
+      demographics: 'Largest fort in India. Three johar (mass self-immolation) in history. Rajput valor symbol. Rani Padmini legend.',
+      seoContent: {
+        intro: 'Chittorgarh, citadel of Rajput pride, operates on India Standard Time (IST/UTC+5:30). This historic city is home to India\'s largest fort spanning 700 acres, where three legendary johar (mass self-immolation) occurred including that of Rani Padmini.',
+        timezoneFacts: 'Same timezone as all of India. Southern Rajasthan.',
+        bestTimeToVisit: 'October-March for pleasant weather. Light & Sound Show evening. Jauhar Mela (March) commemorates sacrifice.',
+        businessHours: 'Fort 9:45 AM to 6:30 PM. Light & Sound Show 7 PM (winter) / 8 PM (summer).',
+        timeDifference: 'Chittorgarh is UTC+5:30 year-round. When noon in Chittorgarh: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Fort needs 4-5 hours minimum - hire guide. Vijay Stambh (Victory Tower) 9 stories of intricate carvings. Rani Padmini Palace reflection pool strategic. Light & Sound Show moving.',
+        transportation: 'Chittorgarh Junction railway. No airport - Udaipur (115km) nearest. 2 hours from Udaipur.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Jauhar Mela (March), Meera Mahotsav, Diwali.'
+      }
+    }
+  },
+  { slug: 'bundi', city: 'Bundi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.44, lng: 75.64, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.1M', metroPopulation: '0.1M', phoneCode: '+91 747', language: 'Hindi, Hadoti, Rajasthani',
+      climate: 'Semi-arid with hot summers (35-45°C) and mild winters (8-25°C). Monsoon July-September.',
+      attractions: ['Taragarh Fort', 'Bundi Palace', 'Chitrashala Murals', 'Raniji ki Baori', 'Nawal Sagar Lake', 'Sukh Mahal', 'Phool Sagar Palace', '84 Pillared Cenotaph', 'Stepwells', 'Blue Houses'],
+      demographics: 'Hidden gem of Rajasthan. Kipling wrote "Kim" at Sukh Mahal. Finest murals in India. 50+ stepwells.',
+      seoContent: {
+        intro: 'Bundi, Rajasthan\'s best-kept secret, operates on India Standard Time (IST/UTC+5:30). This atmospheric town of 100,000 captivated Kipling who wrote "Kim" here, featuring India\'s finest miniature murals at Chitrashala and over 50 ancient stepwells.',
+        timezoneFacts: 'Same timezone as all of India. Hadoti region, Rajasthan.',
+        bestTimeToVisit: 'October-March for pleasant weather. Bundi Utsav (November) cultural festival. Kajli Teej (August) unique.',
+        businessHours: 'Palace 8 AM to 5 PM. Stepwells accessible all day. Taragarh Fort sunrise to sunset.',
+        timeDifference: 'Bundi is UTC+5:30 year-round. When noon in Bundi: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Chitrashala murals are India\'s finest - don\'t miss! Raniji ki Baori is spectacular stepwell. Sukh Mahal where Kipling stayed. Much less touristy than Udaipur. Blue houses rival Jodhpur.',
+        transportation: 'Bundi has small railway station. Kota Junction 35km (main line). No airport - Jaipur (210km) nearest.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bundi Utsav (November), Kajli Teej, Diwali.'
+      }
+    }
+  },
+  { slug: 'kumbhalgarh', city: 'Kumbhalgarh', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.15, lng: 73.59, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+91 2954', language: 'Hindi, Mewari, Rajasthani',
+      climate: 'Semi-arid highland with pleasant summers (25-38°C) and cool winters (8-25°C). Monsoon July-September.',
+      attractions: ['Kumbhalgarh Fort', 'Great Wall of India', 'Badal Mahal', 'Kumbhalgarh Wildlife Sanctuary', 'Vedi Temple', 'Neelkanth Temple', 'Mammadev Temple', 'Light & Sound Show', 'Ranakpur (nearby)', 'Leopards'],
+      demographics: 'Second longest wall after China. Birthplace of Maharana Pratap. UNESCO World Heritage. 360+ temples inside.',
+      seoContent: {
+        intro: 'Kumbhalgarh, home of the Great Wall of India, operates on India Standard Time (IST/UTC+5:30). This UNESCO World Heritage fort has 36km walls - second only to China\'s Great Wall - enclosing 360+ temples and the birthplace of legendary warrior Maharana Pratap.',
+        timezoneFacts: 'Same timezone as all of India. Aravalli Hills, Rajasthan.',
+        bestTimeToVisit: 'October-March for pleasant weather. Light & Sound Show evening. Combine with Ranakpur Jain temples.',
+        businessHours: 'Fort 9 AM to 6 PM. Light & Sound Show 6:45 PM. Wildlife Sanctuary sunrise to sunset.',
+        timeDifference: 'Kumbhalgarh is UTC+5:30 year-round. When noon in Kumbhalgarh: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Wall is 15 feet wide - 8 horses could ride abreast! Ranakpur Jain temple 30km - 1,444 pillars, no two alike. Wildlife sanctuary has leopards. Badal Mahal at highest point.',
+        transportation: 'No railway or airport. Udaipur 84km. Ranakpur 30km. Hire taxi from Udaipur.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities - Udaipur better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Maharana Pratap Jayanti, Diwali.'
+      }
+    }
+  },
+  { slug: 'ranakpur', city: 'Ranakpur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 25.12, lng: 73.47, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.003M', metroPopulation: '0.003M', phoneCode: '+91 2934', language: 'Hindi, Mewari, Rajasthani',
+      climate: 'Semi-arid with pleasant summers (25-38°C) and cool winters (8-25°C). Monsoon July-September.',
+      attractions: ['Ranakpur Jain Temple', '1444 Pillars', 'Chaumukha Temple', 'Sun Temple', 'Amba Mata Temple', 'Sadri', 'Mucchal Mahavir', 'Narlai', 'Leopard Safari', 'Sculpture Details'],
+      demographics: 'Greatest Jain temple complex. No two pillars alike among 1,444. 15th century white marble wonder.',
+      seoContent: {
+        intro: 'Ranakpur, Jain architectural marvel, operates on India Standard Time (IST/UTC+5:30). This temple complex features the stunning Chaumukha Temple with 1,444 intricately carved marble pillars - no two alike - built in the 15th century as one of Jainism\'s holiest sites.',
+        timezoneFacts: 'Same timezone as all of India. Aravalli Hills, Rajasthan.',
+        bestTimeToVisit: 'October-March for pleasant weather. Morning light best for photography. Jain festivals special.',
+        businessHours: 'Temple 12 noon to 5 PM for non-Jains. Jains can enter from 6 AM. Closed during prayers.',
+        timeDifference: 'Ranakpur is UTC+5:30 year-round. When noon in Ranakpur: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'No two pillars of 1,444 are same - look closely! Photography allowed (rare for Jain temples). Dress modestly, remove leather. Combine with Kumbhalgarh (30km). Stunning at noon when light enters.',
+        transportation: 'No railway or airport. Udaipur 95km. Jodhpur 165km. Between Udaipur-Jodhpur route.',
+        emergencyNumbers: 'Emergency: 112. Limited facilities - Udaipur better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Mahavir Jayanti, Paryushan, Diwali.'
+      }
+    }
+  },
+  { slug: 'rann-of-kutch', city: 'Rann of Kutch', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.85, lng: 69.81, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.05M', metroPopulation: '0.1M', phoneCode: '+91 2836', language: 'Gujarati, Kutchi, Hindi',
+      climate: 'Hot desert with extreme summers (40-50°C) and mild winters (12-28°C). Monsoon floods salt flats.',
+      attractions: ['White Rann', 'Rann Utsav', 'Kalo Dungar', 'India Bridge', 'Dholavira', 'Mandvi Beach', 'Bhuj', 'Tribal Villages', 'Handicrafts', 'Wild Ass Sanctuary'],
+      demographics: 'World\'s largest salt desert. Rann Utsav tent city. Indo-Pakistani border. Harappan site Dholavira.',
+      seoContent: {
+        intro: 'Rann of Kutch, the white desert, operates on India Standard Time (IST/UTC+5:30). This surreal landscape of 7,500 sq km is the world\'s largest salt desert, hosting the spectacular Rann Utsav festival when the white expanse glows under full moon.',
+        timezoneFacts: 'Same timezone as all of India. Gujarat-Pakistan border.',
+        bestTimeToVisit: 'November-February only (Rann Utsav season). Full moon nights magical. Rest of year flooded or too hot.',
+        businessHours: 'Rann Utsav 6 PM to 11 PM. Permits required for border areas.',
+        timeDifference: 'Rann of Kutch is UTC+5:30 year-round. When noon in Kutch: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Full moon night at White Rann life-changing! Book Rann Utsav tents early. Kalo Dungar viewpoint at sunset. Buy Kutchi embroidery and handicrafts. Wild Ass Sanctuary unique.',
+        transportation: 'Bhuj Airport (BHU) 80km. Bhuj railway. Rann Utsav buses from Bhuj.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Rann Utsav (Nov-Feb), Navratri, Diwali.'
+      }
+    }
+  },
+  { slug: 'bhuj', city: 'Bhuj', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.25, lng: 69.67, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.25M', phoneCode: '+91 2832', language: 'Gujarati, Kutchi, Hindi',
+      climate: 'Hot desert with extreme summers (40-48°C) and mild winters (10-28°C). Monsoon July-September.',
+      attractions: ['Aina Mahal', 'Prag Mahal', 'Kutch Museum', 'Hamirsar Lake', 'Swaminarayan Temple', 'Bhujia Hill', 'Sharad Baug Palace', 'Handicraft Villages', 'Rann Gateway', 'Earthquake Memorial'],
+      demographics: 'Gateway to Rann. 2001 earthquake devastated city. Kutchi handicraft center. Aina Mahal mirrors.',
+      seoContent: {
+        intro: 'Bhuj, gateway to the Rann, operates on India Standard Time (IST/UTC+5:30). This resilient city of 200,000 rebuilt after the devastating 2001 earthquake, serving as the launchpad for White Rann expeditions and center for exquisite Kutchi handicrafts.',
+        timezoneFacts: 'Same timezone as all of India. Kutch district headquarters.',
+        bestTimeToVisit: 'October-March for pleasant weather. Gateway to Rann Utsav. Avoid scorching summer.',
+        businessHours: 'Aina Mahal 9 AM to 12 PM, 3 PM to 6 PM (closed Thursday). Handicraft shops 10 AM to 8 PM.',
+        timeDifference: 'Bhuj is UTC+5:30 year-round. When noon in Bhuj: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Aina Mahal (Mirror Palace) survived earthquake - stunning! Visit handicraft villages for authentic Kutchi work. Base for Rann trips. 2001 earthquake memorial moving.',
+        transportation: 'Bhuj Airport (BHU). Bhuj railway station. Gateway to Rann of Kutch.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Navratri (huge!), Diwali.'
+      }
+    }
+  },
+  { slug: 'pachmarhi', city: 'Pachmarhi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.47, lng: 78.43, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.015M', metroPopulation: '0.02M', phoneCode: '+91 7578', language: 'Hindi, English',
+      climate: 'Subtropical highland with pleasant summers (20-35°C) and cool winters (5-20°C). Monsoon July-September spectacular.',
+      attractions: ['Bee Falls', 'Jata Shankar Cave', 'Pandava Caves', 'Dhoopgarh', 'Satpura National Park', 'Priyadarshini Point', 'Handi Khoh', 'Apsara Vihar', 'Mahadeo Hills', 'Christ Church'],
+      demographics: 'Queen of Satpura. Only hill station in MP. British cantonment. Army headquarters. UNESCO Biosphere.',
+      seoContent: {
+        intro: 'Pachmarhi, Queen of Satpura, operates on India Standard Time (IST/UTC+5:30). This only hill station of Madhya Pradesh at 1,067m is a cantonment town of 15,000, featuring caves where Pandavas hid, waterfalls, and the UNESCO Satpura Biosphere Reserve.',
+        timezoneFacts: 'Same timezone as all of India. Satpura Range, Madhya Pradesh.',
+        bestTimeToVisit: 'Year-round pleasant. Monsoon (July-September) waterfalls at peak. October-March ideal.',
+        businessHours: 'Caves and viewpoints 6 AM to 6 PM. Satpura safaris morning and evening.',
+        timeDifference: 'Pachmarhi is UTC+5:30 year-round. When noon in Pachmarhi: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Dhoopgarh highest point for sunrise. Bee Falls natural pool for swimming. Satpura safari for tigers and leopards. Pandava Caves 5 rock-cut chambers. Book army accommodation if eligible.',
+        transportation: 'Pipariya railway 47km. No airport - Bhopal (195km) nearest. Scenic drive from Pipariya.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Military Hospital available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivratri (huge at caves), Diwali.'
+      }
+    }
+  },
+  { slug: 'omkareshwar', city: 'Omkareshwar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.24, lng: 76.15, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+91 7280', language: 'Hindi, Malvi',
+      climate: 'Tropical with hot summers (35-45°C) and mild winters (12-28°C). Monsoon July-September.',
+      attractions: ['Omkareshwar Jyotirlinga', 'Mamleshwar Temple', 'Om-shaped Island', 'Narmada River', 'Gauri Somnath Temple', 'Siddhanath Temple', 'Kedareshwar Temple', 'Parikrama', 'Boat Ride', 'Ghats'],
+      demographics: 'One of 12 Jyotirlingas. Island naturally shaped like Om. Narmada pilgrimage. Two Jyotirlingas in one place.',
+      seoContent: {
+        intro: 'Omkareshwar, the Om-shaped island, operates on India Standard Time (IST/UTC+5:30). This sacred island in the Narmada River is naturally shaped like the Hindu Om symbol and uniquely houses 2 of India\'s 12 Jyotirlingas - Omkareshwar and Mamleshwar.',
+        timezoneFacts: 'Same timezone as all of India. Narmada River, Madhya Pradesh.',
+        bestTimeToVisit: 'October-March for pleasant weather. Shivratri (February-March) massive celebration.',
+        businessHours: 'Temples 5 AM to 9 PM. Evening aarti 7 PM. Boat rides 6 AM to 6 PM.',
+        timeDifference: 'Omkareshwar is UTC+5:30 year-round. When noon in Omkareshwar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Only place with 2 Jyotirlingas! Island parikrama (circumambulation) 7km walk. Boat ride to see Om shape. Evening Narmada aarti beautiful. Simple accommodations.',
+        transportation: 'Omkareshwar Road railway 12km. No airport - Indore (80km) nearest. Buses from Indore.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivratri (massive!), Kartik Purnima, Diwali.'
+      }
+    }
+  },
+  { slug: 'ajanta', city: 'Ajanta', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.55, lng: 75.70, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+91 2438', language: 'Marathi, Hindi, English',
+      climate: 'Tropical with hot summers (35-45°C) and mild winters (15-30°C). Monsoon July-September.',
+      attractions: ['Ajanta Caves (UNESCO)', 'Buddhist Murals', 'Rock-Cut Monasteries', 'Cave 1 Paintings', 'Cave 26 Sleeping Buddha', 'Viewpoint', 'Waghora River', 'Visitor Centre', 'Night Show', 'Museum'],
+      demographics: 'UNESCO World Heritage. 30 rock-cut Buddhist caves. 2nd century BCE to 6th century CE. Rediscovered 1819.',
+      seoContent: {
+        intro: 'Ajanta, masterpiece of Buddhist art, operates on India Standard Time (IST/UTC+5:30). These 30 UNESCO World Heritage rock-cut caves spanning 2nd century BCE to 6th century CE contain the finest surviving examples of ancient Indian painting, lost for centuries until 1819.',
+        timezoneFacts: 'Same timezone as all of India. Sahyadri Hills, Maharashtra.',
+        bestTimeToVisit: 'October-March for pleasant weather. Avoid summer heat. Closed Mondays. Morning visit best for light.',
+        businessHours: 'Caves 9 AM to 5:30 PM. Closed Monday. Last entry 5 PM.',
+        timeDifference: 'Ajanta is UTC+5:30 year-round. When noon in Ajanta: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Cave 1 has finest paintings - Bodhisattva Padmapani iconic. Cave 26 has 24-foot reclining Buddha. Hire official guide - paintings need explanation. Green buses eco-friendly transport. Combine with Ellora (100km).',
+        transportation: 'Jalgaon railway 60km. Aurangabad Airport (IXU) 100km. Green buses from parking to caves.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities - Aurangabad better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Buddha Purnima, Diwali. Closed Mondays.'
+      }
+    }
+  },
+  { slug: 'ellora', city: 'Ellora', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.03, lng: 75.18, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+91 2437', language: 'Marathi, Hindi, English',
+      climate: 'Tropical with hot summers (35-45°C) and mild winters (15-30°C). Monsoon July-September.',
+      attractions: ['Ellora Caves (UNESCO)', 'Kailasa Temple', 'Buddhist Caves', 'Hindu Caves', 'Jain Caves', 'Cave 16', 'Religious Harmony', 'Rock Carving', 'Grishneshwar Temple', 'Museum'],
+      demographics: 'UNESCO World Heritage. 34 caves - Buddhist, Hindu, Jain. Kailasa Temple carved from single rock. 6th-11th century.',
+      seoContent: {
+        intro: 'Ellora, epitome of rock-cut architecture, operates on India Standard Time (IST/UTC+5:30). These 34 UNESCO caves uniquely represent Buddhist, Hindu, and Jain traditions side-by-side, crowned by the Kailasa Temple - the world\'s largest monolithic structure carved from a single rock.',
+        timezoneFacts: 'Same timezone as all of India. Sahyadri Hills, Maharashtra.',
+        bestTimeToVisit: 'October-March for pleasant weather. Avoid summer. Closed Tuesdays. Ellora Festival (March) cultural.',
+        businessHours: 'Caves 6 AM to 6 PM. Closed Tuesday. Kailasa Temple best in morning light.',
+        timeDifference: 'Ellora is UTC+5:30 year-round. When noon in Ellora: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Kailasa Temple (Cave 16) is mind-blowing - 200,000 tons of rock removed! Three religions in harmony rare. Buddhist caves (1-12), Hindu (13-29), Jain (30-34). Grishneshwar nearby is Jyotirlinga.',
+        transportation: 'Aurangabad Airport (IXU) 30km. Aurangabad railway 30km. Better connected than Ajanta.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities - Aurangabad better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ellora Festival (March), Diwali. Closed Tuesdays.'
+      }
+    }
+  },
+  { slug: 'lonavala', city: 'Lonavala', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 18.75, lng: 73.41, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.06M', metroPopulation: '0.08M', phoneCode: '+91 2114', language: 'Marathi, Hindi, English',
+      climate: 'Tropical highland with pleasant summers (20-35°C) and cool winters (10-25°C). Heavy monsoon June-September spectacular.',
+      attractions: ['Tiger\'s Leap', 'Bhushi Dam', 'Karla Caves', 'Bhaja Caves', 'Lohagad Fort', 'Rajmachi Fort', 'Duke\'s Nose', 'Khandala', 'Chikki', 'Waterfalls'],
+      demographics: 'Mumbai-Pune weekend escape. Hill station. Famous for chikki sweets. Monsoon paradise. Adventure sports.',
+      seoContent: {
+        intro: 'Lonavala, Mumbai\'s mountain escape, operates on India Standard Time (IST/UTC+5:30). This popular hill station of 60,000 in the Sahyadris is the weekend getaway for Mumbai and Pune, famous for misty valleys, ancient caves, Chikki sweets, and spectacular monsoon waterfalls.',
+        timezoneFacts: 'Same timezone as all of India. Western Ghats, Maharashtra.',
+        bestTimeToVisit: 'Monsoon (June-September) magical with waterfalls. October-May pleasant. Weekdays less crowded.',
+        businessHours: 'Caves 9 AM to 5 PM. Dams and viewpoints sunrise to sunset. Chikki shops 9 AM to 9 PM.',
+        timeDifference: 'Lonavala is UTC+5:30 year-round. When noon in Lonavala: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Monsoon transforms the valley - waterfalls everywhere! Bhushi Dam crowded but fun. Tiger\'s Leap viewpoint stunning. Buy Maganlal Chikki. Karla Caves have largest rock-cut chaitya in India.',
+        transportation: 'Lonavala railway station on Mumbai-Pune line. Mumbai Airport (BOM) 95km. Pune Airport (PNQ) 70km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ganesh Chaturthi (huge!), Diwali.'
+      }
+    }
+  },
+  { slug: 'mahabaleshwar', city: 'Mahabaleshwar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 17.92, lng: 73.66, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.015M', metroPopulation: '0.02M', phoneCode: '+91 2168', language: 'Marathi, Hindi, English',
+      climate: 'Subtropical highland with pleasant summers (15-30°C) and mild winters (10-25°C). Very heavy monsoon June-September.',
+      attractions: ['Arthur\'s Seat', 'Venna Lake', 'Mapro Garden', 'Pratapgad Fort', 'Wilson Point', 'Lingmala Waterfall', 'Panchgani', 'Table Land', 'Strawberry Farms', 'Old Mahabaleshwar'],
+      demographics: 'Queen of hill stations. Highest rainfall in Maharashtra. Strawberry capital. Five rivers originate here.',
+      seoContent: {
+        intro: 'Mahabaleshwar, strawberry capital of India, operates on India Standard Time (IST/UTC+5:30). This British-era hill station at 1,353m is Maharashtra\'s highest, where five rivers including Krishna originate, famous for strawberries, viewpoints, and the nearby Panchgani plateau.',
+        timezoneFacts: 'Same timezone as all of India. Western Ghats, Maharashtra.',
+        bestTimeToVisit: 'September-May recommended. Monsoon (June-August) extremely heavy but green. Strawberry season December-May.',
+        businessHours: 'Viewpoints sunrise to sunset. Mapro Garden 8 AM to 9 PM. Boat rides 9 AM to 6 PM.',
+        timeDifference: 'Mahabaleshwar is UTC+5:30 year-round. When noon in Mahabaleshwar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Fresh strawberries and cream at Mapro! Arthur\'s Seat for stunning valley views. Pratapgad Fort where Shivaji killed Afzal Khan. Table Land in Panchgani is Asia\'s second largest plateau. Horse rides popular.',
+        transportation: 'No railway or airport. Pune (120km). Satara railway 60km. Scenic drive from Pune.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ganesh Chaturthi, Strawberry Festival (March), Diwali.'
+      }
+    }
+  },
+  { slug: 'shirdi', city: 'Shirdi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 19.77, lng: 74.48, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.05M', phoneCode: '+91 2423', language: 'Marathi, Hindi, English',
+      climate: 'Tropical with hot summers (35-42°C) and mild winters (15-30°C). Monsoon July-September.',
+      attractions: ['Sai Baba Samadhi Mandir', 'Dwarkamai', 'Chavadi', 'Lendi Baug', 'Sai Heritage Village', 'Shani Shingnapur (nearby)', 'Wet N Joy Water Park', 'Gurusthan', 'Khandoba Temple', 'Museum'],
+      demographics: 'Sai Baba\'s holy land. 30,000+ pilgrims daily. Second richest temple in India. Massive trust operations.',
+      seoContent: {
+        intro: 'Shirdi, abode of Sai Baba, operates on India Standard Time (IST/UTC+5:30). This pilgrimage town receives over 30,000 devotees daily at the Samadhi Mandir of Sai Baba, the 19th-century saint who preached religious harmony, making it India\'s second-richest temple.',
+        timezoneFacts: 'Same timezone as all of India. Ahmednagar district, Maharashtra.',
+        bestTimeToVisit: 'Year-round pilgrimage. October-March pleasant. Festivals extremely crowded. Weekdays better.',
+        businessHours: 'Temple 4 AM to 10:30 PM. Darshan queues shortest early morning. Aartis: Kakad (4:30 AM), Madhyan (12 PM), Dhup (6 PM), Shej (10:15 PM).',
+        timeDifference: 'Shirdi is UTC+5:30 year-round. When noon in Shirdi: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Book darshan online to avoid queues! Dwarkamai where Sai Baba lived has sacred fire. Free prasad and accommodation available. Shani Shingnapur day trip for doorless village.',
+        transportation: 'Shirdi Airport (SAG) 14km. Sainagar Shirdi railway. Well-connected by road from Mumbai (250km) and Pune (185km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Sansthan Hospital: 02423-258500.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Guru Purnima, Ram Navami (massive!), Dussehra, Diwali.'
+      }
+    }
+  },
+  { slug: 'nashik-trimbak', city: 'Trimbakeshwar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 19.93, lng: 73.53, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.03M', phoneCode: '+91 2594', language: 'Marathi, Hindi',
+      climate: 'Tropical highland with pleasant summers (20-35°C) and cool winters (10-25°C). Heavy monsoon July-September.',
+      attractions: ['Trimbakeshwar Temple', 'Brahmagiri Hill', 'Godavari Origin', 'Gangadwar', 'Kushavarta Kund', 'Anjaneri Hill', 'Brahmagiri Trek', 'Kala Ram Temple (Nashik)', 'Coin Museum', 'Pandavleni Caves'],
+      demographics: 'One of 12 Jyotirlingas. Origin of Godavari River. Kumbh Mela site. Only Jyotirlinga with three faces (Brahma, Vishnu, Shiva).',
+      seoContent: {
+        intro: 'Trimbakeshwar, source of the Godavari, operates on India Standard Time (IST/UTC+5:30). This sacred town hosts one of 12 Jyotirlingas with a unique three-faced lingam representing Brahma, Vishnu, and Shiva, and the origin point of the Godavari at Brahmagiri Hill.',
+        timezoneFacts: 'Same timezone as all of India. Sahyadris, Maharashtra.',
+        bestTimeToVisit: 'Year-round pilgrimage. Monsoon stunning but wet. Shravan month (July-August) crowded. Kumbh Mela every 12 years.',
+        businessHours: 'Temple 5:30 AM to 9 PM. Brahmagiri Trek early morning. Special pujas by appointment.',
+        timeDifference: 'Trimbakeshwar is UTC+5:30 year-round. When noon in Trimbakeshwar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Only Jyotirlinga with Trimurti (three gods)! Non-Hindus can\'t enter inner sanctum. Brahmagiri Trek for Godavari source. Kaal Sarp Dosh puja popular here. Nashik wineries nearby.',
+        transportation: 'Nashik Road railway 35km. Nashik Airport (ISK) 40km (limited). Road from Nashik (28km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivratri (massive!), Shravan month, Kumbh Mela (every 12 years).'
+      }
+    }
+  },
+  { slug: 'alibaug', city: 'Alibaug', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 18.64, lng: 72.88, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.1M', phoneCode: '+91 2141', language: 'Marathi, Hindi, English',
+      climate: 'Tropical with warm year-round temperatures (22-35°C). Monsoon June-September. Coastal humidity.',
+      attractions: ['Alibaug Beach', 'Kolaba Fort', 'Kihim Beach', 'Kashid Beach', 'Murud-Janjira Fort', 'Mandwa Beach', 'Varsoli Beach', 'Kanakeshwar Temple', 'Israeli Beach', 'Water Sports'],
+      demographics: 'Mini Goa near Mumbai. Weekend beach escape. Coastal fortresses. Mumbai-Alibaug RoRo ferry.',
+      seoContent: {
+        intro: 'Alibaug, Mumbai\'s beach escape, operates on India Standard Time (IST/UTC+5:30). This coastal town of 20,000 is just a ferry ride from Mumbai, offering sandy beaches, the dramatic sea fort Kolaba, and the impregnable island fortress of Murud-Janjira nearby.',
+        timezoneFacts: 'Same timezone as all of India. Konkan coast, Maharashtra.',
+        bestTimeToVisit: 'October-May for pleasant beach weather. Monsoon dramatic but not beach-friendly. Weekdays less crowded.',
+        businessHours: 'Kolaba Fort accessible at low tide. Beaches all day. Water sports 9 AM to 5 PM.',
+        timeDifference: 'Alibaug is UTC+5:30 year-round. When noon in Alibaug: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Kolaba Fort walk only at low tide - check timings! Murud-Janjira never conquered - day trip worth it. RoRo catamaran from Gateway of India fastest. Kashid beach cleanest.',
+        transportation: 'Mandwa Jetty - catamaran from Mumbai (1 hour). No airport or railway. Road from Mumbai via Pen (100km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Coast Guard: 1554.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ganesh Chaturthi (huge!), Diwali.'
+      }
+    }
+  },
+  { slug: 'tarkarli', city: 'Tarkarli', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 16.02, lng: 73.47, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.005M', metroPopulation: '0.02M', phoneCode: '+91 2366', language: 'Marathi, Konkani, Hindi',
+      climate: 'Tropical with warm year-round temperatures (22-35°C). Monsoon June-September heavy. Clearest water October-May.',
+      attractions: ['Tarkarli Beach', 'Scuba Diving', 'Sindhudurg Fort', 'Devbagh Beach', 'Tsunami Island', 'Karli River', 'Snorkeling', 'Dolphin Watching', 'Malvan', 'Backwater Rides'],
+      demographics: 'Maharashtra\'s best-kept secret. Clearest water in India. Scuba diving hub. Sindhudurg Fort built by Shivaji.',
+      seoContent: {
+        intro: 'Tarkarli, Maharashtra\'s underwater paradise, operates on India Standard Time (IST/UTC+5:30). This hidden gem offers India\'s clearest coastal water for scuba diving and snorkeling, with the dramatic Sindhudurg Fort built by Shivaji rising from the sea.',
+        timezoneFacts: 'Same timezone as all of India. Sindhudurg district, Konkan coast.',
+        bestTimeToVisit: 'October-May for clear water and water sports. December-February ideal. Monsoon closes activities.',
+        businessHours: 'Water sports 8 AM to 5 PM. Sindhudurg Fort 6 AM to 6 PM. Boat rides by tide.',
+        timeDifference: 'Tarkarli is UTC+5:30 year-round. When noon in Tarkarli: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'India\'s best scuba outside Andamans! Sindhudurg Fort has Shivaji\'s handprint in stone. Malvan cuisine famous - try Malvani fish curry. Book MTDC houseboat. Dolphin sightings common.',
+        transportation: 'Sindhudurg Airport (SDW) 25km (limited). Kudal railway 35km. Road from Mumbai (480km) or Goa (120km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Coast Guard: 1554.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivaji Jayanti (Feb 19), Ganesh Chaturthi, Diwali.'
+      }
+    }
+  },
   { slug: 'vadodara', city: 'Vadodara', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.31, lng: 73.19, tier: 3, continent: 'asia',
     info: {
       currency: 'Indian Rupee', currencySymbol: '₹', population: '2.1M', phoneCode: '+91 265', language: 'Gujarati, Hindi',
