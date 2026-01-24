@@ -7805,14 +7805,6 @@ export const cities: City[] = [
       demographics: 'India\'s first planned city designed by Le Corbusier. Union Territory serving as capital for both Punjab and Haryana.'
     }
   },
-  { slug: 'mysuru', city: 'Mysuru', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.30, lng: 76.66, tier: 2, continent: 'asia',
-    info: {
-      currency: 'Indian Rupee', currencySymbol: '₹', population: '1M', phoneCode: '+91 821', language: 'Kannada, English, Hindi',
-      climate: 'Tropical savanna with pleasant year-round weather (18-35°C). Mild and comfortable most of the year.',
-      attractions: ['Mysore Palace', 'Chamundi Hills', 'Brindavan Gardens', 'St. Philomena\'s Church', 'Mysore Zoo'],
-      demographics: 'Former capital of Mysore Kingdom, "City of Palaces". Known for Dasara festival, silk sarees, and sandalwood products.'
-    }
-  },
   { slug: 'thiruvananthapuram', city: 'Thiruvananthapuram', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 8.52, lng: 76.94, tier: 2, continent: 'asia',
     info: {
       currency: 'Indian Rupee', currencySymbol: '₹', population: '950K', phoneCode: '+91 471', language: 'Malayalam, English, Tamil',
