@@ -7653,6 +7653,408 @@ export const cities: City[] = [
       }
     }
   },
+  
+  // India - New Cities Batch 4 (20 cities with full premium content)
+  { slug: 'diu', city: 'Diu', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.71, lng: 70.98, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.05M', metroPopulation: '0.06M', phoneCode: '+91 2875', language: 'Gujarati, Portuguese, Hindi',
+      climate: 'Tropical with warm year-round temperatures (25-35°C). Sea breeze moderates heat. Light monsoon.',
+      attractions: ['Diu Fort', 'Nagoa Beach', 'St. Paul\'s Church', 'Naida Caves', 'Gangeshwar Temple', 'Jallandhar Beach', 'INS Khukri Memorial', 'Diu Museum', 'Zampa Gateway', 'Shell Museum'],
+      demographics: 'Former Portuguese colony until 1961. Union Territory with Daman. Alcohol permitted unlike dry Gujarat next door.',
+      seoContent: {
+        intro: 'Diu, Portuguese India\'s island gem, operates on India Standard Time (IST/UTC+5:30). This tiny Union Territory of 50,000 was a Portuguese colony until 1961, retaining churches, forts, and a relaxed vibe - plus legal alcohol unlike neighboring dry Gujarat.',
+        timezoneFacts: 'Same timezone as all of India. Island off Gujarat coast.',
+        bestTimeToVisit: 'October-May for pleasant beach weather. Avoid monsoon. Christmas and New Year popular.',
+        businessHours: 'Beach activities 6 AM to 6 PM. Fort 7 AM to 6 PM. Bars until late.',
+        timeDifference: 'Diu is UTC+5:30 year-round. When noon in Diu: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Alcohol is legal here - Gujaratis flock for this! Nagoa Beach best for swimming. Portuguese churches beautiful. Rent a scooter to explore.',
+        transportation: 'Diu Airport (DIU) limited flights. Una railway 12km. Buses from Ahmedabad (8 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Diu Liberation Day (Dec 19), Christmas, Holi, Diwali.'
+      }
+    }
+  },
+  { slug: 'daman', city: 'Daman', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.42, lng: 72.85, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.2M', phoneCode: '+91 260', language: 'Gujarati, Portuguese, Hindi',
+      climate: 'Tropical with warm year-round temperatures (22-35°C). Coastal humidity. Monsoon June-September.',
+      attractions: ['Moti Daman Fort', 'Nani Daman Fort', 'Devka Beach', 'Jampore Beach', 'Church of Bom Jesus', 'Lighthouse', 'Dominican Monastery', 'Nani Daman Jetty', 'Mirasol Water Park', 'Somnath Temple'],
+      demographics: 'Former Portuguese colony. Union Territory with Diu. Popular weekend getaway from Mumbai and Gujarat for alcohol.',
+      seoContent: {
+        intro: 'Daman, where Portugal meets Gujarat, operates on India Standard Time (IST/UTC+5:30). This coastal Union Territory of 40,000 was Portuguese until 1961 and remains a popular weekend escape from dry Gujarat, with beaches, churches, and legal bars.',
+        timezoneFacts: 'Same timezone as all of India. Gujarat coast, Arabian Sea.',
+        bestTimeToVisit: 'October-March for pleasant weather. Weekends very crowded with Gujaratis. Monsoon wet.',
+        businessHours: 'Beaches accessible all day. Churches 8 AM to 6 PM. Bars and restaurants until late.',
+        timeDifference: 'Daman is UTC+5:30 year-round. When noon in Daman: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Moti Daman (Big Daman) has forts and churches. Nani Daman has beaches and nightlife. Weekend crowds intense. Try seafood!',
+        transportation: 'Nearest airport Mumbai (180km) or Surat (130km). Vapi railway 12km. Well-connected by road.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Daman Liberation Day (Dec 19), Christmas, Nariyal Purnima, Diwali.'
+      }
+    }
+  },
+  { slug: 'silvassa', city: 'Silvassa', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.27, lng: 73.01, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.1M', metroPopulation: '0.4M', phoneCode: '+91 260', language: 'Gujarati, Marathi, Hindi',
+      climate: 'Tropical with hot summers (30-40°C) and mild winters (15-30°C). Heavy monsoon June-September.',
+      attractions: ['Dadra Nagar Haveli Garden', 'Vanganga Lake', 'Tribal Museum', 'Hirwa Van Garden', 'Satmaliya Deer Park', 'Dudhni Lake', 'Lion Safari', 'Nakshatra Garden', 'Swaminarayan Temple', 'Island Garden'],
+      demographics: 'Capital of Dadra and Nagar Haveli and Daman and Diu UT. Former Portuguese territory. Industrial and tourist hub.',
+      seoContent: {
+        intro: 'Silvassa, capital of merged territories, operates on India Standard Time (IST/UTC+5:30). This green city of 100,000 is the capital of Dadra and Nagar Haveli and Daman and Diu Union Territory, offering nature parks, tribal culture, and tax-free shopping.',
+        timezoneFacts: 'Same timezone as all of India. Between Gujarat and Maharashtra.',
+        bestTimeToVisit: 'October-March for pleasant weather. Monsoon (June-September) makes forests lush.',
+        businessHours: 'Gardens 9 AM to 6 PM. Lion Safari timings fixed. Industrial areas 24/7.',
+        timeDifference: 'Silvassa is UTC+5:30 year-round. When noon in Silvassa: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Dudhni Lake boating and water sports popular. Tribal Museum showcases Varli art. Tax-free alcohol available. Good weekend trip from Mumbai.',
+        transportation: 'Nearest airport Mumbai (180km). Vapi railway 18km. NH48 passes through.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Liberation Day (Aug 2), Tarpa Festival, Diwali.'
+      }
+    }
+  },
+  { slug: 'port-blair', city: 'Port Blair', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 11.67, lng: 92.74, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.15M', metroPopulation: '0.4M', phoneCode: '+91 3192', language: 'Hindi, Bengali, Tamil, Telugu, English',
+      climate: 'Tropical with warm year-round temperatures (23-31°C). Heavy monsoon May-October. Humidity high.',
+      attractions: ['Cellular Jail', 'Ross Island', 'North Bay Island', 'Corbyn\'s Cove Beach', 'Radhanagar Beach', 'Havelock Island', 'Neil Island', 'Mahatma Gandhi Marine National Park', 'Anthropological Museum', 'Samudrika Naval Museum'],
+      demographics: 'Capital of Andaman and Nicobar Islands UT. Historic Cellular Jail (Kala Pani). Gateway to pristine islands.',
+      seoContent: {
+        intro: 'Port Blair, gateway to the Andamans, operates on India Standard Time (IST/UTC+5:30). This island capital of 150,000 is the entry point to India\'s most pristine beaches, home to the historic Cellular Jail where freedom fighters were imprisoned.',
+        timezoneFacts: 'Same timezone as mainland India despite being far east. Sunrise around 5 AM, sunset around 5 PM.',
+        bestTimeToVisit: 'October-May for clear weather and water sports. Monsoon (May-September) closes many islands.',
+        businessHours: 'Cellular Jail 9 AM to 12:30 PM, 1:30 PM to 5 PM. Ferry bookings early morning.',
+        timeDifference: 'Port Blair is UTC+5:30 year-round. When noon in Port Blair: London 6:30 AM, NYC 1:30 AM, Bangkok 1 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Book Havelock/Neil ferries in advance! Cellular Jail light show moving. Radhanagar Beach (Havelock) is Asia\'s best. Carry cash - ATMs limited on islands.',
+        transportation: 'Veer Savarkar Airport (IXZ). Ships from Chennai/Kolkata (3-4 days). Inter-island ferries and seaplanes.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Coast Guard: 1554.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Island Tourism Festival (Jan), Subhash Mela, Diwali.'
+      }
+    }
+  },
+  { slug: 'kavaratti', city: 'Kavaratti', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.57, lng: 72.64, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.07M', phoneCode: '+91 4896', language: 'Malayalam, Dhivehi, English',
+      climate: 'Tropical with warm year-round temperatures (25-32°C). Monsoon May-September. Coral islands.',
+      attractions: ['Kavaratti Beach', 'Ujra Mosque', 'Marine Aquarium', 'Water Sports', 'Dolphin Dive Centre', 'Lighthouse', 'Agatti Island', 'Bangaram Island', 'Glass Bottom Boats', 'Kayaking'],
+      demographics: 'Capital of Lakshadweep UT. 36 coral islands, only 10 inhabited. Restricted entry - permit required.',
+      seoContent: {
+        intro: 'Kavaratti, capital of Lakshadweep, operates on India Standard Time (IST/UTC+5:30). This tiny coral island capital of 10,000 is the gateway to India\'s only coral archipelago - 36 islands with crystal-clear lagoons, requiring special permits to visit.',
+        timezoneFacts: 'Same timezone as mainland India. Remote Arabian Sea location.',
+        bestTimeToVisit: 'October-May for calm seas and water sports. Monsoon closes most activities.',
+        businessHours: 'Water sports 9 AM to 5 PM. Government offices 9:30 AM to 5 PM.',
+        timeDifference: 'Kavaratti is UTC+5:30 year-round. When noon in Kavaratti: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Entry permit required for all tourists - apply through SPORTS or tour operators. Bangaram only island open to foreigners. Alcohol prohibited (Muslim islands). Pristine coral reefs!',
+        transportation: 'Agatti Airport (AGX) then boat. Ships from Kochi (14-20 hours). Helicopter service available.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Eid ul-Fitr, Eid ul-Adha, Milad-un-Nabi.'
+      }
+    }
+  },
+  { slug: 'pelling', city: 'Pelling', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.30, lng: 88.23, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.02M', phoneCode: '+91 3595', language: 'Nepali, Sikkimese, English',
+      climate: 'Subtropical highland with cool summers (15-22°C) and cold winters (4-12°C). Heavy monsoon May-September.',
+      attractions: ['Kanchenjunga Views', 'Pemayangtse Monastery', 'Rabdentse Ruins', 'Khecheopalri Lake', 'Sangachoeling Monastery', 'Darap Village', 'Rimbi Waterfalls', 'Skywalk', 'Helicopter Rides', 'Singshore Bridge'],
+      demographics: 'Hill town with best Kanchenjunga views. Gateway to West Sikkim monasteries. Laid-back alternative to Gangtok.',
+      seoContent: {
+        intro: 'Pelling, balcony to Kanchenjunga, operates on India Standard Time (IST/UTC+5:30). This quiet hill town of 10,000 offers the best views of the world\'s third-highest peak and serves as gateway to Sikkim\'s ancient monasteries.',
+        timezoneFacts: 'Same timezone as all of India. West Sikkim, Himalayan foothills.',
+        bestTimeToVisit: 'October-December and March-May for clear Kanchenjunga views. Monsoon clouds hide mountains.',
+        businessHours: 'Monasteries 7 AM to 4 PM. Skywalk 9 AM to 5 PM.',
+        timeDifference: 'Pelling is UTC+5:30 year-round. When noon in Pelling: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Wake early for Kanchenjunga sunrise! Pemayangtse is Sikkim\'s oldest monastery. Khecheopalri is wish-fulfilling lake. Quieter than Gangtok.',
+        transportation: 'Nearest airport Bagdogra (IXB) 151km. No railway. Shared jeeps from Gangtok (5 hours) or NJP.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar, Saga Dawa, Pang Lhabsol, Diwali.'
+      }
+    }
+  },
+  { slug: 'kalimpong', city: 'Kalimpong', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.06, lng: 88.47, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.05M', metroPopulation: '0.06M', phoneCode: '+91 3552', language: 'Nepali, Bengali, Hindi, English',
+      climate: 'Subtropical highland with cool summers (15-25°C) and cold winters (5-15°C). Monsoon June-September.',
+      attractions: ['Durpin Monastery', 'Deolo Hill', 'Dr. Graham\'s Homes', 'Mangal Dham', 'Cactus Nursery', 'Flower Nurseries', 'Teesta Bazaar', 'Morgan House', 'Pine View Nursery', 'Army Golf Course'],
+      demographics: 'Former trade route to Tibet. Famous for flower nurseries. More Tibetan influence than Darjeeling.',
+      seoContent: {
+        intro: 'Kalimpong, orchid capital of India, operates on India Standard Time (IST/UTC+5:30). This quiet hill town of 50,000 was once the gateway to Tibet, now famous for its flower nurseries supplying orchids and cacti worldwide.',
+        timezoneFacts: 'Same timezone as all of India. Darjeeling district, West Bengal.',
+        bestTimeToVisit: 'March-May for flowers blooming. October-December for clear views. Monsoon wet.',
+        businessHours: 'Nurseries 8 AM to 5 PM. Monasteries 7 AM to 5 PM.',
+        timeDifference: 'Kalimpong is UTC+5:30 year-round. When noon in Kalimpong: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Visit nurseries - buy orchids and cacti! Deolo Hill for Kanchenjunga views. Less touristy than Darjeeling. Try Tibetan food.',
+        transportation: 'Nearest airport Bagdogra (IXB) 75km. NJP station 65km. Shared jeeps available.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Durga Puja, Losar, Diwali.'
+      }
+    }
+  },
+  { slug: 'siliguri', city: 'Siliguri', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.71, lng: 88.43, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.7M', metroPopulation: '1.0M', phoneCode: '+91 353', language: 'Bengali, Nepali, Hindi',
+      climate: 'Humid subtropical with hot summers (30-38°C) and mild winters (10-25°C). Heavy monsoon June-September.',
+      attractions: ['Mahananda Wildlife Sanctuary', 'Salugara Monastery', 'ISKCON Temple', 'Hong Kong Market', 'Kali Mandir', 'North Bengal Science Centre', 'Surya Sen Park', 'City Centre Mall', 'Coronation Bridge', 'Sevoke Road'],
+      demographics: 'Gateway to Northeast India. Chicken\'s Neck corridor. Major commercial hub connecting Darjeeling, Sikkim, Bhutan, Nepal.',
+      seoContent: {
+        intro: 'Siliguri, gateway to the Himalayas, operates on India Standard Time (IST/UTC+5:30). This bustling city of 700,000 is the crucial corridor to Northeast India through the "Chicken\'s Neck" and serves as the base for trips to Darjeeling, Sikkim, Bhutan, and Nepal.',
+        timezoneFacts: 'Same timezone as all of India. Strategic location in narrow corridor.',
+        bestTimeToVisit: 'October-March for pleasant weather. Transit hub - usually short stays.',
+        businessHours: 'Hong Kong Market 10 AM to 8 PM. Commercial areas 10 AM to 9 PM.',
+        timeDifference: 'Siliguri is UTC+5:30 year-round. When noon in Siliguri: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Hong Kong Market for cheap electronics and clothes. Gateway to everywhere - Darjeeling, Gangtok, Bhutan, Nepal all accessible. NJP/Bagdogra are actually in Siliguri area.',
+        transportation: 'Bagdogra Airport (IXB) 12km. New Jalpaiguri (NJP) major junction. National highways to all directions.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Durga Puja (huge!), Diwali, Holi.'
+      }
+    }
+  },
+  { slug: 'jorhat', city: 'Jorhat', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.76, lng: 94.22, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.15M', metroPopulation: '0.4M', phoneCode: '+91 376', language: 'Assamese, Hindi, English',
+      climate: 'Humid subtropical with warm summers (25-35°C) and mild winters (10-25°C). Heavy monsoon May-September.',
+      attractions: ['Majuli Island', 'Tea Estates', 'Gibbon Wildlife Sanctuary', 'Tocklai Tea Research', 'Gymkhana Club', 'Rajmai Hills', 'Thengal Manor', 'Kaziranga (nearby)', 'Nimati Ghat', 'War Cemeteries'],
+      demographics: 'Tea capital of the world. Gateway to Majuli - world\'s largest river island. Former Ahom capital.',
+      seoContent: {
+        intro: 'Jorhat, tea capital of the world, operates on India Standard Time (IST/UTC+5:30). This historic city of 150,000 is surrounded by tea estates and serves as the gateway to Majuli, the world\'s largest river island and a hub of Assamese Vaishnavite culture.',
+        timezoneFacts: 'Same timezone as all of India. Upper Assam, Brahmaputra Valley.',
+        bestTimeToVisit: 'October-April for pleasant weather. Majuli best November-March. Monsoon floods.',
+        businessHours: 'Tea estate tours 9 AM to 4 PM. Majuli ferries from 8 AM.',
+        timeDifference: 'Jorhat is UTC+5:30 year-round. When noon in Jorhat: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Visit Tocklai - world\'s oldest tea research station. Majuli ferry from Nimati Ghat. Tea estate homestays available. Gateway to Kaziranga too.',
+        transportation: 'Jorhat Airport (JRH). Jorhat Town station. Ferries to Majuli from Nimati Ghat.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bihu (3 times a year!), Durga Puja, Diwali.'
+      }
+    }
+  },
+  { slug: 'tezpur', city: 'Tezpur', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.63, lng: 92.80, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.1M', metroPopulation: '0.15M', phoneCode: '+91 3712', language: 'Assamese, Bengali, Hindi',
+      climate: 'Humid subtropical with warm summers (25-35°C) and mild winters (10-22°C). Heavy monsoon May-September.',
+      attractions: ['Agnigarh Hill', 'Cole Park', 'Mahabhairab Temple', 'Da Parbatia', 'Chitralekha Udyan', 'Bamuni Hills', 'Nameri National Park', 'Tezpur University', 'Hazara Pukhuri', 'Bhairabi Temple'],
+      demographics: 'City of Blood - legendary battle between Krishna and Banasura. Gateway to Arunachal. Air Force base.',
+      seoContent: {
+        intro: 'Tezpur, city of eternal romance, operates on India Standard Time (IST/UTC+5:30). This historic city of 100,000 on the Brahmaputra is steeped in legend - site of the mythological battle between Lord Krishna and demon Banasura over princess Usha.',
+        timezoneFacts: 'Same timezone as all of India. Central Assam, north bank of Brahmaputra.',
+        bestTimeToVisit: 'October-April for pleasant weather. Nameri best November-March. Monsoon floods common.',
+        businessHours: 'Parks 6 AM to 6 PM. Temples sunrise to sunset.',
+        timeDifference: 'Tezpur is UTC+5:30 year-round. When noon in Tezpur: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Agnigarh Hill for Brahmaputra views. Gateway to Tawang - scenic drive. Nameri for rafting and wildlife. Air Force heritage.',
+        transportation: 'Tezpur Airport (TEZ) limited flights. Nearest railway Rangapara. NH15 to Tawang.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bihu, Durga Puja, Diwali.'
+      }
+    }
+  },
+  { slug: 'dibrugarh', city: 'Dibrugarh', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.47, lng: 94.91, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.15M', metroPopulation: '0.4M', phoneCode: '+91 373', language: 'Assamese, Hindi, English',
+      climate: 'Humid subtropical with warm summers (25-35°C) and mild winters (8-22°C). Heavy monsoon May-September.',
+      attractions: ['Tea Gardens', 'Brahmaputra River', 'Namphake Village', 'Dehing Patkai Wildlife Sanctuary', 'Radha Krishna Mandir', 'Tai Phake Monastery', 'Jokai Botanical Garden', 'Naharkatia Oil Fields', 'Bogibeel Bridge', 'Cultural Centers'],
+      demographics: 'Tea city of India. Easternmost major city. Gateway to Arunachal Pradesh. Oil and tea economy.',
+      seoContent: {
+        intro: 'Dibrugarh, tea city of India, operates on India Standard Time (IST/UTC+5:30). This easternmost major city of 150,000 is the heart of Assam\'s tea industry, surrounded by lush gardens and serving as the gateway to eastern Arunachal Pradesh.',
+        timezoneFacts: 'Same timezone as all of India despite being far east. Sunrise as early as 4:30 AM in summer!',
+        bestTimeToVisit: 'October-April for pleasant weather. Tea plucking season March-November.',
+        businessHours: 'Tea estate tours 9 AM to 4 PM. Market areas 9 AM to 8 PM.',
+        timeDifference: 'Dibrugarh is UTC+5:30 year-round. When noon in Dibrugarh: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Stay in tea estate bungalows for authentic experience. Bogibeel Bridge is India\'s longest. Namphake is Tai-Phake Buddhist village. Try Assamese thali.',
+        transportation: 'Dibrugarh Airport (DIB). Dibrugarh Town railway. Gateway to Pasighat and eastern Arunachal.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bihu (3 times!), Durga Puja, Diwali.'
+      }
+    }
+  },
+  { slug: 'majuli', city: 'Majuli', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.95, lng: 94.17, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.17M', metroPopulation: '0.17M', phoneCode: '+91 3775', language: 'Assamese, Mising',
+      climate: 'Humid subtropical with warm summers (25-35°C) and mild winters (10-22°C). Monsoon floods reduce island size annually.',
+      attractions: ['Satras (Monasteries)', 'Kamalabari Satra', 'Auniati Satra', 'Dakhinpat Satra', 'Mask Making', 'Pottery Villages', 'Mising Tribal Culture', 'Raas Festival', 'Birdwatching', 'Sunset Points'],
+      demographics: 'World\'s largest river island (shrinking). Vaishnavite cultural hub. 22 satras (monasteries). Mising tribal homeland.',
+      seoContent: {
+        intro: 'Majuli, the world\'s largest river island, operates on India Standard Time (IST/UTC+5:30). This UNESCO-nominated island of 170,000 in the Brahmaputra is the heartland of Assamese Vaishnavite culture, with 22 ancient satras (monasteries) and unique mask-making traditions.',
+        timezoneFacts: 'Same timezone as all of India. Mid-Brahmaputra, Upper Assam.',
+        bestTimeToVisit: 'November-March for dry weather. Raas Festival (November) spectacular. Monsoon floods island.',
+        businessHours: 'Satras 7 AM to 5 PM. Ferries 8 AM to 4 PM.',
+        timeDifference: 'Majuli is UTC+5:30 year-round. When noon in Majuli: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Island is shrinking due to erosion - visit before it disappears! Stay in satra guesthouses. Watch mask-making. Raas festival in November incredible. Cycle around island.',
+        transportation: 'Ferry from Nimati Ghat (Jorhat) or Neamati. No airport. Jorhat Airport (JRH) 25km from ferry point.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited medical facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bihu, Raas Festival (November), Ali-Aye-Ligang.'
+      }
+    }
+  },
+  { slug: 'ziro', city: 'Ziro', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.59, lng: 93.83, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.03M', phoneCode: '+91 3788', language: 'Apatani, Hindi, English',
+      climate: 'Subtropical highland with cool summers (15-25°C) and cold winters (0-15°C). Monsoon May-September.',
+      attractions: ['Ziro Valley', 'Apatani Villages', 'Talley Valley Wildlife Sanctuary', 'Pine Groves', 'Ziro Music Festival', 'Tribal Homestays', 'Paddy Fields', 'Meghna Cave', 'Tarin Fish Farm', 'Dolo Mando'],
+      demographics: 'Home of Apatani tribe. UNESCO World Heritage tentative list. Famous Ziro Music Festival. Sustainable rice-fish farming.',
+      seoContent: {
+        intro: 'Ziro, valley of the Apatani, operates on India Standard Time (IST/UTC+5:30). This stunning valley of 30,000 is home to the Apatani tribe known for their unique nose plugs (now discontinued) and sustainable rice-fish cultivation that earned UNESCO tentative status.',
+        timezoneFacts: 'Same timezone as all of India. Lower Subansiri district, Arunachal Pradesh.',
+        bestTimeToVisit: 'March-October for pleasant weather. September for Ziro Music Festival. Dree Festival (July) for Apatani culture.',
+        businessHours: 'Villages accessible daytime. Music Festival 4-day event in September.',
+        timeDifference: 'Ziro is UTC+5:30 year-round. When noon in Ziro: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Inner Line Permit required! Ziro Music Festival (Sept) is India\'s best outdoor music fest. Stay in tribal homestays. Try Apatani rice beer. Paddy fields stunning.',
+        transportation: 'Nearest airport Lilabari (110km) or Itanagar. North Lakhimpur railway 115km. Scenic drive from Itanagar (5 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities - Itanagar better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Dree Festival (July), Myoko, Ziro Music Festival (September).'
+      }
+    }
+  },
+  { slug: 'bomdila', city: 'Bomdila', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.26, lng: 92.42, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.015M', phoneCode: '+91 3782', language: 'Monpa, Hindi, English',
+      climate: 'Subtropical highland with cool summers (10-20°C) and cold winters (-5 to 10°C). Snow possible in winter.',
+      attractions: ['Bomdila Monastery', 'Bomdila View Point', 'Apple Orchards', 'Craft Centre', 'Ethnographic Museum', 'Upper Gompa', 'Lower Gompa', 'Sessa Orchid Sanctuary', 'RR Hill', 'Eagle\'s Nest Wildlife Sanctuary'],
+      demographics: 'District HQ of West Kameng. Monpa Buddhist tribe. En route to Tawang. Apple growing region.',
+      seoContent: {
+        intro: 'Bomdila, gateway to Tawang, operates on India Standard Time (IST/UTC+5:30). This hill town of 10,000 is home to the Monpa Buddhist tribe and serves as an acclimatization stop on the spectacular drive to Tawang, with monasteries, apple orchards, and Himalayan views.',
+        timezoneFacts: 'Same timezone as all of India. West Kameng district, Arunachal Pradesh.',
+        bestTimeToVisit: 'March-June and September-November. Winter brings snow. Stop here to acclimatize before Tawang.',
+        businessHours: 'Monasteries 6 AM to 6 PM. Craft Centre 9 AM to 5 PM.',
+        timeDifference: 'Bomdila is UTC+5:30 year-round. When noon in Bomdila: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Inner Line Permit required! Stop here before Tawang for altitude adjustment. Buy Monpa handicrafts. Apple season August-October. Road to Tawang stunning but long.',
+        transportation: 'No airport. Tezpur (180km) nearest. Road from Guwahati via Tezpur. Shared sumos to Tawang.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Army help available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar, Torgya, Buddha Purnima.'
+      }
+    }
+  },
+  { slug: 'pasighat', city: 'Pasighat', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 28.07, lng: 95.33, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.05M', metroPopulation: '0.06M', phoneCode: '+91 368', language: 'Adi, Hindi, English',
+      climate: 'Humid subtropical with warm summers (20-32°C) and mild winters (8-22°C). Heavy monsoon May-September.',
+      attractions: ['Daying Ering Wildlife Sanctuary', 'Siang River', 'Hanging Bridge', 'Bodak Village', 'Orange Orchards', 'Pangin', 'Kekar Monying', 'Tribal Villages', 'River Rafting', 'Winter Carnival'],
+      demographics: 'Oldest town in Arunachal (1911). Adi tribal homeland. Gateway to Siang Valley. Orange cultivation center.',
+      seoContent: {
+        intro: 'Pasighat, the oldest town in Arunachal, operates on India Standard Time (IST/UTC+5:30). This Adi tribal town of 50,000 on the Siang River was established in 1911 and serves as the gateway to one of India\'s most remote and spectacular regions.',
+        timezoneFacts: 'Same timezone as all of India. Easternmost Arunachal, Siang River.',
+        bestTimeToVisit: 'October-April for pleasant weather. Solung Festival (September) for Adi culture. River rafting November-March.',
+        businessHours: 'Market 8 AM to 6 PM. Government 9:30 AM to 4:30 PM.',
+        timeDifference: 'Pasighat is UTC+5:30 year-round. When noon in Pasighat: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Inner Line Permit required! Siang River rafting world-class. Adi villages for authentic experience. Orange season December-January. Gateway to Mechuka.',
+        transportation: 'Pasighat Airport (IXT) limited flights. Dibrugarh railway 260km. Road from Itanagar (280km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited medical facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Solung (September), Aran, Diwali.'
+      }
+    }
+  },
+  { slug: 'nainital', city: 'Nainital', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 29.38, lng: 79.46, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.05M', phoneCode: '+91 5942', language: 'Hindi, Kumaoni, English',
+      climate: 'Subtropical highland with cool summers (15-27°C) and cold winters (0-15°C). Monsoon June-September.',
+      attractions: ['Naini Lake', 'Naina Devi Temple', 'Mall Road', 'Snow View Point', 'Tiffin Top', 'Eco Cave Gardens', 'High Altitude Zoo', 'Governor\'s House', 'Lands End', 'Pangot Bird Sanctuary'],
+      demographics: 'Lake District of India. British-era hill station. Governor\'s summer headquarters. Kumaon region gem.',
+      seoContent: {
+        intro: 'Nainital, the Lake District of India, operates on India Standard Time (IST/UTC+5:30). This charming British-era hill station of 40,000 is built around the eye-shaped Naini Lake, offering colonial architecture, boat rides, and panoramic Himalayan views.',
+        timezoneFacts: 'Same timezone as all of India. Kumaon Hills, Uttarakhand.',
+        bestTimeToVisit: 'March-June for pleasant weather. October-February for clear views but cold. Monsoon brings landslides.',
+        businessHours: 'Lake boats 6 AM to 6 PM. Mall Road shops 9 AM to 9 PM. Ropeway 10 AM to 5 PM.',
+        timeDifference: 'Nainital is UTC+5:30 year-round. When noon in Nainital: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Boat ride on Naini Lake essential. Ropeway to Snow View for Himalayan panorama. Mall Road pedestrian zone. Try Bal Mithai sweet.',
+        transportation: 'Nearest airport Pantnagar (65km). Kathgodam railway 35km. Buses from Delhi (7-8 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Nanda Devi Mela (September), Diwali.'
+      }
+    }
+  },
+  { slug: 'mussoorie', city: 'Mussoorie', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.45, lng: 78.07, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.04M', phoneCode: '+91 135', language: 'Hindi, Garhwali, English',
+      climate: 'Subtropical highland with cool summers (15-25°C) and cold winters (1-10°C). Monsoon June-September brings mist.',
+      attractions: ['Kempty Falls', 'Gun Hill', 'Lal Tibba', 'Mall Road', 'Camel\'s Back Road', 'Company Garden', 'Landour', 'Christ Church', 'Lake Mist', 'Mussoorie Lake'],
+      demographics: 'Queen of Hills. British-era summer capital of India. Landour cantonment. Gateway to Yamunotri.',
+      seoContent: {
+        intro: 'Mussoorie, Queen of the Hills, operates on India Standard Time (IST/UTC+5:30). This British-era hill station of 30,000 above Dehradun was once the summer capital of India, offering Mall Road strolls, Himalayan views, and the historic Landour cantonment.',
+        timezoneFacts: 'Same timezone as all of India. Garhwal Hills, Uttarakhand.',
+        bestTimeToVisit: 'March-June for pleasant weather. September-November for clear views. December-February for possible snow.',
+        businessHours: 'Mall Road shops 9 AM to 10 PM. Ropeway 10 AM to 7 PM.',
+        timeDifference: 'Mussoorie is UTC+5:30 year-round. When noon in Mussoorie: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Walk Camel\'s Back Road at sunset. Landour for quieter cafes and Ruskin Bond vibes. Gun Hill ropeway for views. Kempty Falls crowded but fun.',
+        transportation: 'Dehradun Jolly Grant Airport (DED) 60km. Dehradun railway 35km. Easy drive from Delhi (6 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Summer Festival (May-June), Diwali.'
+      }
+    }
+  },
+  { slug: 'almora', city: 'Almora', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 29.60, lng: 79.66, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.05M', phoneCode: '+91 5962', language: 'Hindi, Kumaoni, English',
+      climate: 'Subtropical highland with cool summers (15-28°C) and cold winters (2-15°C). Monsoon June-September.',
+      attractions: ['Bright End Corner', 'Kasar Devi Temple', 'Chitai Temple', 'Nanda Devi Temple', 'Katarmal Sun Temple', 'Jageshwar', 'Deer Park', 'Binsar Wildlife Sanctuary', 'Zero Point', 'Lala Bazaar'],
+      demographics: 'Cultural capital of Kumaon. Ancient Chand dynasty capital. Swami Vivekananda and other luminaries visited. Hippie trail destination.',
+      seoContent: {
+        intro: 'Almora, cultural heart of Kumaon, operates on India Standard Time (IST/UTC+5:30). This ancient hill town of 40,000 was the Chand dynasty capital, attracting luminaries from Swami Vivekananda to hippies seeking spiritual energy at Kasar Devi.',
+        timezoneFacts: 'Same timezone as all of India. Kumaon Hills, Uttarakhand.',
+        bestTimeToVisit: 'March-June and September-November for pleasant weather. Winter cold but clear.',
+        businessHours: 'Temples sunrise to sunset. Lala Bazaar 9 AM to 8 PM.',
+        timeDifference: 'Almora is UTC+5:30 year-round. When noon in Almora: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Kasar Devi on Van Allen Belt - special energy. Bright End Corner for sunrise. Jageshwar temple complex day trip. Buy traditional Almora sweets.',
+        transportation: 'Nearest airport Pantnagar (117km). Kathgodam railway 90km. Buses from Delhi (8-9 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Nanda Devi Mela, Dussehra (special here), Diwali.'
+      }
+    }
+  },
+  { slug: 'ranikhet', city: 'Ranikhet', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 29.64, lng: 79.43, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.02M', phoneCode: '+91 5966', language: 'Hindi, Kumaoni, English',
+      climate: 'Subtropical highland with cool summers (12-25°C) and cold winters (0-12°C). Less crowded than Nainital.',
+      attractions: ['Chaubatia Gardens', 'Golf Course', 'Kumaon Regimental Museum', 'Jhula Devi Temple', 'Majkhali', 'Dwarahat Temples', 'Rani Jheel', 'Upat Golf Course', 'Ashiyana Park', 'Tarikhet'],
+      demographics: 'Queen\'s Meadow. Kumaon Regiment headquarters. British-era cantonment. Known for apricots and apples.',
+      seoContent: {
+        intro: 'Ranikhet, Queen\'s Meadow, operates on India Standard Time (IST/UTC+5:30). This peaceful cantonment town of 20,000 is home to the Kumaon Regiment, offering pristine air, apple orchards, one of Asia\'s highest golf courses, and unobstructed Himalayan views.',
+        timezoneFacts: 'Same timezone as all of India. Kumaon Hills, Uttarakhand.',
+        bestTimeToVisit: 'March-June and September-November. Winter beautiful but cold. Less crowded than Nainital year-round.',
+        businessHours: 'Chaubatia Gardens 10 AM to 5 PM. Golf Course by booking.',
+        timeDifference: 'Ranikhet is UTC+5:30 year-round. When noon in Ranikhet: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Chaubatia for fruit orchards and Himalayan views. Asia\'s highest golf course at Upat. Much quieter than Nainital. Try apricot products.',
+        transportation: 'Nearest airport Pantnagar (112km). Kathgodam railway 80km. Buses from Delhi (8-9 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Military Hospital available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Kumaon Regiment Raising Day, Dussehra, Diwali.'
+      }
+    }
+  },
+  { slug: 'kasauli', city: 'Kasauli', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 30.90, lng: 76.96, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+91 1792', language: 'Hindi, Pahari, English',
+      climate: 'Subtropical highland with cool summers (15-30°C) and cold winters (4-15°C). Peaceful year-round.',
+      attractions: ['Monkey Point', 'Christ Church', 'Gilbert Trail', 'Sunset Point', 'Kasauli Brewery', 'Mall Road', 'Timber Trail', 'Nahri Temple', 'Kasauli Club', 'Air Force Museum'],
+      demographics: 'Sleepy British cantonment. Oldest brewery in Asia (Kasauli Brewery). No commercialization - peaceful retreat.',
+      seoContent: {
+        intro: 'Kasauli, where time stands still, operates on India Standard Time (IST/UTC+5:30). This tiny British cantonment of 10,000 is deliberately undeveloped, offering colonial churches, forest trails, and Asia\'s oldest brewery in a peaceful escape from city chaos.',
+        timezoneFacts: 'Same timezone as all of India. Solan district, Himachal Pradesh.',
+        bestTimeToVisit: 'Year-round pleasant. March-June and September-November ideal. Monsoon misty. Winter cold but charming.',
+        businessHours: 'Limited shops 9 AM to 7 PM. Brewery visits by appointment. Monkey Point sunrise to sunset.',
+        timeDifference: 'Kasauli is UTC+5:30 year-round. When noon in Kasauli: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Deliberately sleepy - no malls or chaos. Monkey Point for views (Hanuman footprint). Kasauli Brewery makes India\'s first single malt. Walk Gilbert Trail. No crowds!',
+        transportation: 'Nearest airport Chandigarh (60km). Kalka railway 35km. Toy Train passes nearby. Drive from Delhi (5 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Military Hospital available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Christmas (colonial heritage), Diwali.'
+      }
+    }
+  },
   { slug: 'vadodara', city: 'Vadodara', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.31, lng: 73.19, tier: 3, continent: 'asia',
     info: {
       currency: 'Indian Rupee', currencySymbol: '₹', population: '2.1M', phoneCode: '+91 265', language: 'Gujarati, Hindi',
