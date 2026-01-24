@@ -8055,6 +8055,388 @@ export const cities: City[] = [
       }
     }
   },
+  
+  // India - New Cities Batch 5 (20 cities with full premium content)
+  { slug: 'puri', city: 'Puri', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 19.81, lng: 85.83, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.25M', phoneCode: '+91 6752', language: 'Odia, Hindi, English',
+      climate: 'Tropical with warm year-round temperatures (22-35°C). Monsoon June-September. Cyclone risk October-November.',
+      attractions: ['Jagannath Temple', 'Puri Beach', 'Konark Sun Temple (nearby)', 'Chilika Lake', 'Rath Yatra', 'Gundicha Temple', 'Swargadwar Beach', 'Raghurajpur Artist Village', 'Sakshigopal Temple', 'Lokanath Temple'],
+      demographics: 'One of four Char Dham. Jagannath Temple - non-Hindus not allowed inside. Origin of word "Juggernaut" from Rath Yatra.',
+      seoContent: {
+        intro: 'Puri, abode of Lord Jagannath, operates on India Standard Time (IST/UTC+5:30). This sacred Char Dham city of 200,000 hosts the world-famous Rath Yatra where massive chariots carry deities through streets - the origin of the English word "Juggernaut".',
+        timezoneFacts: 'Same timezone as all of India. Odisha coast, Bay of Bengal.',
+        bestTimeToVisit: 'October-March for pleasant weather. Rath Yatra (June-July) spectacular but extremely crowded. Avoid cyclone season.',
+        businessHours: 'Jagannath Temple 5 AM to 11 PM. Beach activities sunrise to sunset.',
+        timeDifference: 'Puri is UTC+5:30 year-round. When noon in Puri: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Non-Hindus cannot enter Jagannath Temple - view from rooftop library opposite. Konark Sun Temple 35km - must visit. Try Mahaprasad from temple kitchen. Rath Yatra life-changing.',
+        transportation: 'Biju Patnaik Airport Bhubaneswar (60km). Puri railway station. Well-connected by train.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Rath Yatra (June-July), Snana Yatra, Diwali.'
+      }
+    }
+  },
+  { slug: 'konark', city: 'Konark', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 19.89, lng: 86.09, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.02M', phoneCode: '+91 6758', language: 'Odia, Hindi, English',
+      climate: 'Tropical with warm year-round temperatures (22-35°C). Monsoon June-September. Sea breeze moderates heat.',
+      attractions: ['Sun Temple (UNESCO)', 'Konark Beach', 'Archaeological Museum', 'Chandrabhaga Beach', 'Ramachandi Temple', 'Konark Dance Festival', 'Stone Chariot', 'Erotic Sculptures', 'Navagraha', 'Mayadevi Temple'],
+      demographics: 'UNESCO World Heritage Sun Temple. Black Pagoda. 13th century Kalinga architecture masterpiece. Dance festival venue.',
+      seoContent: {
+        intro: 'Konark, shrine of the Sun God, operates on India Standard Time (IST/UTC+5:30). This UNESCO World Heritage site features the spectacular 13th-century Sun Temple, designed as a massive stone chariot with 24 intricately carved wheels pulled by seven horses.',
+        timezoneFacts: 'Same timezone as all of India. Odisha coast, Bay of Bengal.',
+        bestTimeToVisit: 'October-March for pleasant weather. Konark Dance Festival (December) world-class. Sunrise at temple stunning.',
+        businessHours: 'Sun Temple 6 AM to 8 PM. Museum 10 AM to 5 PM (closed Friday).',
+        timeDifference: 'Konark is UTC+5:30 year-round. When noon in Konark: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Sunrise at temple designed to illuminate inner sanctum. Dance Festival (Dec) against temple backdrop magical. Combine with Puri (35km). Erotic sculptures rival Khajuraho.',
+        transportation: 'No airport or railway. Bhubaneswar (65km) or Puri (35km) then road. Taxis and buses available.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities - Puri better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Konark Dance Festival (December), Magha Saptami (February).'
+      }
+    }
+  },
+  { slug: 'gwalior', city: 'Gwalior', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.22, lng: 78.18, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '1.2M', metroPopulation: '1.5M', phoneCode: '+91 751', language: 'Hindi, Bundeli',
+      climate: 'Humid subtropical with very hot summers (40-48°C) and cool winters (5-22°C). Monsoon July-September.',
+      attractions: ['Gwalior Fort', 'Man Singh Palace', 'Sas Bahu Temples', 'Teli Ka Mandir', 'Jai Vilas Palace', 'Tomb of Tansen', 'Gujari Mahal', 'Sun Temple', 'Tigra Dam', 'Zoo'],
+      demographics: 'One of India\'s most impregnable forts. Birthplace of Hindustani classical music. Scindia royal heritage.',
+      seoContent: {
+        intro: 'Gwalior, fortress of music, operates on India Standard Time (IST/UTC+5:30). This historic city of 1.2 million boasts one of India\'s most magnificent forts, the birthplace of Hindustani classical music at Tansen\'s tomb, and the opulent Scindia palace.',
+        timezoneFacts: 'Same timezone as all of India. Northern Madhya Pradesh.',
+        bestTimeToVisit: 'October-March for pleasant weather. Tansen Music Festival (November-December) draws maestros. Avoid summer heat.',
+        businessHours: 'Fort 8 AM to 6 PM. Jai Vilas Palace 10 AM to 5 PM (closed Monday). Sound and Light Show evening.',
+        timeDifference: 'Gwalior is UTC+5:30 year-round. When noon in Gwalior: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Fort has world\'s second-largest chandelier at Jai Vilas - weighs 3.5 tons! Man Singh Palace tiles stunning. Tansen Music Festival for classical music. Gateway to Orchha.',
+        transportation: 'Gwalior Airport (GWL). Gwalior Junction major railway. 3 hours from Agra, 5 hours from Delhi.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Tansen Festival (Nov-Dec), Dussehra, Diwali.'
+      }
+    }
+  },
+  { slug: 'mathura', city: 'Mathura', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.49, lng: 77.67, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.4M', metroPopulation: '0.5M', phoneCode: '+91 565', language: 'Hindi, Braj Bhasha',
+      climate: 'Humid subtropical with very hot summers (40-47°C) and cool winters (5-22°C). Monsoon July-September.',
+      attractions: ['Krishna Janmabhoomi', 'Dwarkadhish Temple', 'Vishram Ghat', 'Mathura Museum', 'Govardhan Hill', 'Kusum Sarovar', 'Radha Kund', 'Gita Mandir', 'Jama Masjid', 'Kans Qila'],
+      demographics: 'Birthplace of Lord Krishna. One of seven sacred cities (Sapta Puri). Center of Braj culture. Twin city of Vrindavan.',
+      seoContent: {
+        intro: 'Mathura, birthplace of Lord Krishna, operates on India Standard Time (IST/UTC+5:30). This sacred city of 400,000 is where Krishna was born 5,000 years ago in a prison cell, now one of Hinduism\'s seven holiest cities and the heart of Braj culture.',
+        timezoneFacts: 'Same timezone as all of India. Uttar Pradesh, Yamuna River.',
+        bestTimeToVisit: 'October-March for pleasant weather. Janmashtami (August-September) massive celebrations. Holi (March) legendary here.',
+        businessHours: 'Temples 5 AM to 12 PM, 4 PM to 9 PM. Vishram Ghat aarti 7 PM.',
+        timeDifference: 'Mathura is UTC+5:30 year-round. When noon in Mathura: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Janmashtami at midnight in Krishna Janmabhoomi unforgettable. Holi here is intense - be prepared for colors! Combine with Vrindavan (15km). Try pedas (milk sweets).',
+        transportation: 'Mathura Junction on Delhi-Agra line. Agra Airport (AGR) 60km. 2 hours from Delhi, 1 hour from Agra.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Janmashtami (massive!), Holi (legendary!), Diwali.'
+      }
+    }
+  },
+  { slug: 'vrindavan', city: 'Vrindavan', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 27.58, lng: 77.70, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.07M', metroPopulation: '0.1M', phoneCode: '+91 565', language: 'Hindi, Braj Bhasha',
+      climate: 'Humid subtropical with very hot summers (40-47°C) and cool winters (5-22°C). Monsoon July-September.',
+      attractions: ['Banke Bihari Temple', 'ISKCON Temple', 'Prem Mandir', 'Radha Raman Temple', 'Govind Dev Temple', 'Nidhivan', 'Seva Kunj', 'Rangaji Temple', 'Madan Mohan Temple', 'Keshi Ghat'],
+      demographics: 'Krishna\'s childhood playground. 5,000+ temples. ISKCON headquarters. Widows\' ashrams. Intense devotion.',
+      seoContent: {
+        intro: 'Vrindavan, playground of Krishna, operates on India Standard Time (IST/UTC+5:30). This intensely spiritual town of 70,000 has over 5,000 temples where Krishna played as a child, including ISKCON\'s global headquarters and the mesmerizing Banke Bihari Temple.',
+        timezoneFacts: 'Same timezone as all of India. Uttar Pradesh, Braj region.',
+        bestTimeToVisit: 'October-March for pleasant weather. Janmashtami (August-September) incredible. Holi here is world-famous.',
+        businessHours: 'Banke Bihari 7:45 AM to 12 PM, 5:30 PM to 9:30 PM. ISKCON 4:30 AM to 1 PM, 4 PM to 8:30 PM.',
+        timeDifference: 'Vrindavan is UTC+5:30 year-round. When noon in Vrindavan: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Banke Bihari curtain ritual unique - deity too beautiful for continuous viewing! Prem Mandir lit up at night stunning. Widows\' Holi at ashrams moving. Don\'t miss evening aarti.',
+        transportation: 'Mathura Junction 15km. Agra Airport (AGR) 75km. Auto-rickshaws from Mathura.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Janmashtami (massive!), Holi (world-famous!), Radhashtami, Diwali.'
+      }
+    }
+  },
+  { slug: 'sanchi', city: 'Sanchi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 23.48, lng: 77.74, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+91 7482', language: 'Hindi, English',
+      climate: 'Tropical with hot summers (35-45°C) and mild winters (10-28°C). Monsoon July-September.',
+      attractions: ['Great Stupa', 'Sanchi Museum', 'Ashoka Pillar', 'Monastery Ruins', 'Gupta Temple', 'Stupa 2', 'Stupa 3', 'Udayagiri Caves (nearby)', 'Vidisha (nearby)', 'Buddhist Monuments'],
+      demographics: 'UNESCO World Heritage. Oldest stone structures in India. Buddhist center from 3rd century BCE. Ashoka built Great Stupa.',
+      seoContent: {
+        intro: 'Sanchi, crown jewel of Buddhist heritage, operates on India Standard Time (IST/UTC+5:30). This UNESCO site features India\'s oldest stone structures, including the magnificent Great Stupa built by Emperor Ashoka in the 3rd century BCE to house Buddha\'s relics.',
+        timezoneFacts: 'Same timezone as all of India. Near Bhopal, Madhya Pradesh.',
+        bestTimeToVisit: 'October-March for pleasant weather. Buddha Purnima (May) special. Sunrise and sunset at stupa magical.',
+        businessHours: 'Monuments sunrise to sunset. Museum 10 AM to 5 PM (closed Friday).',
+        timeDifference: 'Sanchi is UTC+5:30 year-round. When noon in Sanchi: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Great Stupa gateways (toranas) are masterpieces - study the carvings. Combine with Udayagiri Caves. Bhimbetka (45km) for prehistoric rock art. Half-day from Bhopal.',
+        transportation: 'Sanchi railway station. Bhopal Airport (BHO) 46km. Easy day trip from Bhopal.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities - Bhopal better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Buddha Purnima (May), Diwali.'
+      }
+    }
+  },
+  { slug: 'mandu', city: 'Mandu', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.37, lng: 75.40, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+91 7292', language: 'Hindi, Malvi',
+      climate: 'Tropical with hot summers (35-42°C) and mild winters (10-28°C). Monsoon transforms landscape dramatically.',
+      attractions: ['Jahaz Mahal', 'Hindola Mahal', 'Rani Roopmati Pavilion', 'Baz Bahadur Palace', 'Jami Masjid', 'Hoshang Shah Tomb', 'Rewa Kund', 'Dai Ki Chhoti Behen', 'Ashrafi Mahal', 'Echo Point'],
+      demographics: 'City of Joy. Romantic legend of Baz Bahadur and Roopmati. Afghan architecture. Ghost town atmosphere.',
+      seoContent: {
+        intro: 'Mandu, City of Joy, operates on India Standard Time (IST/UTC+5:30). This haunting citadel perched at 600m features the romantic Jahaz Mahal (Ship Palace) and the tragic love story of Sultan Baz Bahadur and Hindu singer Rani Roopmati.',
+        timezoneFacts: 'Same timezone as all of India. Malwa plateau, Madhya Pradesh.',
+        bestTimeToVisit: 'July-September for magical monsoon (green transformation). October-March for pleasant weather. Avoid summer.',
+        businessHours: 'Monuments sunrise to sunset. Best visited over 2 days.',
+        timeDifference: 'Mandu is UTC+5:30 year-round. When noon in Mandu: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Monsoon is best time - Jahaz Mahal reflected in full lakes! Roopmati Pavilion at sunset for valley views. Hoshang Shah Tomb inspired Taj Mahal. Rent bicycle to explore.',
+        transportation: 'No airport or railway. Indore (100km) nearest. Road from Indore via Dhar.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited facilities - Indore better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Mandu Festival (December), Diwali.'
+      }
+    }
+  },
+  { slug: 'cuttack', city: 'Cuttack', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.46, lng: 85.88, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.7M', metroPopulation: '1.0M', phoneCode: '+91 671', language: 'Odia, Hindi, English',
+      climate: 'Tropical with warm year-round temperatures (22-38°C). Heavy monsoon June-September. Cyclone risk.',
+      attractions: ['Barabati Fort', 'Cuttack Chandi Temple', 'Netaji Birthplace', 'Dhabaleswar Temple', 'Stone Revetment', 'Qadam-i-Rasul', 'Ansupa Lake', 'Bhitarkanika (nearby)', 'Silver Filigree', 'Durga Puja Pandals'],
+      demographics: 'Former capital of Odisha. Silver filigree (tarakasi) craft. Birthplace of Netaji Subhas Chandra Bose. Twin city of Bhubaneswar.',
+      seoContent: {
+        intro: 'Cuttack, Silver City of India, operates on India Standard Time (IST/UTC+5:30). This ancient city of 700,000 is famous for exquisite silver filigree (tarakasi) jewelry, as the birthplace of freedom fighter Netaji Subhas Chandra Bose, and for spectacular Durga Puja celebrations.',
+        timezoneFacts: 'Same timezone as all of India. Between Mahanadi and Kathajodi rivers.',
+        bestTimeToVisit: 'October-March for pleasant weather. Durga Puja (September-October) for silver pandals. Bali Yatra fair (November).',
+        businessHours: 'Silver markets 10 AM to 8 PM. Temples sunrise to sunset.',
+        timeDifference: 'Cuttack is UTC+5:30 year-round. When noon in Cuttack: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Buy silver filigree - centuries-old craft! Durga Puja pandals here are silver-clad masterpieces. Netaji Museum touching. Bali Yatra fair is ancient trade tradition.',
+        transportation: 'Bhubaneswar Airport (BBI) 28km. Cuttack Junction railway. Twin city with Bhubaneswar.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Durga Puja (massive!), Netaji Jayanti (Jan 23), Diwali.'
+      }
+    }
+  },
+  { slug: 'bhitarkanika', city: 'Bhitarkanika', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 20.73, lng: 87.03, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.02M', phoneCode: '+91 6729', language: 'Odia, Hindi',
+      climate: 'Tropical with warm year-round temperatures (20-35°C). Monsoon June-September closes park. Mangrove ecosystem.',
+      attractions: ['Bhitarkanika National Park', 'Saltwater Crocodiles', 'Gahirmatha Beach', 'Olive Ridley Turtles', 'Mangrove Forests', 'Dangmal', 'Bagagahana', 'Bird Watching', 'Boat Safari', 'Ekakula Beach'],
+      demographics: 'India\'s second-largest mangrove ecosystem. Largest saltwater crocodile population. Olive Ridley turtle nesting at Gahirmatha.',
+      seoContent: {
+        intro: 'Bhitarkanika, realm of crocodiles, operates on India Standard Time (IST/UTC+5:30). This Ramsar wetland is India\'s second-largest mangrove ecosystem, home to the world\'s largest saltwater crocodile population and the mass nesting of Olive Ridley turtles at Gahirmatha.',
+        timezoneFacts: 'Same timezone as all of India. Odisha coast, Bay of Bengal.',
+        bestTimeToVisit: 'September-May (closed monsoon). January-March for turtle nesting. Winter for migratory birds.',
+        businessHours: 'Park 6 AM to 4:30 PM. Boat safaris by booking. Closed during monsoon.',
+        timeDifference: 'Bhitarkanika is UTC+5:30 year-round. When noon in Bhitarkanika: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'World\'s largest saltwater croc (23 feet) was here! Gahirmatha turtle nesting January-March magical. Book forest department cottages. Carry mosquito repellent.',
+        transportation: 'Bhubaneswar Airport (BBI) 150km. Bhadrak railway 60km. Road to Chandbali then boat.',
+        emergencyNumbers: 'Emergency: 112. Forest office: 06729-272460.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Wildlife Week (October), Diwali.'
+      }
+    }
+  },
+  { slug: 'chilika', city: 'Chilika', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 19.72, lng: 85.32, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.2M', phoneCode: '+91 6756', language: 'Odia, Hindi',
+      climate: 'Tropical with warm year-round temperatures (20-35°C). Lagoon ecosystem. Best wildlife viewing in winter.',
+      attractions: ['Chilika Lake', 'Nalabana Bird Sanctuary', 'Irrawaddy Dolphins', 'Kalijai Temple', 'Mangalajodi', 'Satpada', 'Rambha', 'Bird Island', 'Breakfast Island', 'Prawn Aquaculture'],
+      demographics: 'Asia\'s largest brackish water lagoon. Ramsar Wetland. Million migratory birds in winter. Irrawaddy dolphins.',
+      seoContent: {
+        intro: 'Chilika, Asia\'s largest coastal lagoon, operates on India Standard Time (IST/UTC+5:30). This Ramsar wetland spanning 1,100 sq km hosts over a million migratory birds in winter, rare Irrawaddy dolphins, and the mystical Kalijai Temple on an island.',
+        timezoneFacts: 'Same timezone as all of India. Odisha coast, connected to Bay of Bengal.',
+        bestTimeToVisit: 'November-February for migratory birds. December-January peak. Irrawaddy dolphins year-round at Satpada.',
+        businessHours: 'Boat rides 6 AM to 5 PM. Nalabana accessible by boat only.',
+        timeDifference: 'Chilika is UTC+5:30 year-round. When noon in Chilika: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Mangalajodi for bird photography - community-led conservation success. Satpada for Irrawaddy dolphin spotting. Kalijai Temple on island sacred. Fresh prawns and crabs!',
+        transportation: 'Bhubaneswar Airport (BBI) 100km. Balugaon railway on lake shore. Puri 50km.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. OTDC: 0674-2432177.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Makara Mela (Kalijai Temple), Diwali.'
+      }
+    }
+  },
+  { slug: 'auroville', city: 'Auroville', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 12.01, lng: 79.81, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.003M', metroPopulation: '0.003M', phoneCode: '+91 413', language: 'English, French, Tamil',
+      climate: 'Tropical with hot summers (30-40°C) and warm winters (20-30°C). Northeast monsoon October-December.',
+      attractions: ['Matrimandir', 'Visitor Centre', 'Solar Kitchen', 'Auroville Beach', 'Sadhana Forest', 'Botanical Gardens', 'Sustainable Communities', 'Handicraft Workshops', 'Organic Farms', 'Town Hall'],
+      demographics: 'Experimental township. Founded 1968 by The Mother. 3,000 residents from 60 countries. UNESCO-endorsed. No money, no religion, no politics.',
+      seoContent: {
+        intro: 'Auroville, the City of Dawn, operates on India Standard Time (IST/UTC+5:30). This experimental township of 3,000 from 60 nations was founded in 1968 for "human unity" - a UNESCO-endorsed utopia with no money system, featuring the golden Matrimandir meditation sphere.',
+        timezoneFacts: 'Same timezone as all of India. Near Pondicherry, Tamil Nadu.',
+        bestTimeToVisit: 'November-March for pleasant weather. Matrimandir visits by appointment only.',
+        businessHours: 'Visitor Centre 9 AM to 5 PM. Matrimandir viewing 9 AM to 4:30 PM (closed Tuesday). Inner chamber by prior booking.',
+        timeDifference: 'Auroville is UTC+5:30 year-round. When noon in Auroville: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Book Matrimandir inner chamber months ahead! Visitor Centre explains philosophy. Explore by bicycle. Buy handicrafts at boutiques. Respect the silence zone.',
+        transportation: 'Pondicherry 12km. Chennai Airport (MAA) 150km. Pondicherry has limited flights.',
+        emergencyNumbers: 'Emergency: 112. Auroville Health Centre available.',
+        publicHolidays: 'Auroville Birthday (Feb 28), The Mother\'s Birthday (Feb 21), Independence Day (Aug 15), Diwali.'
+      }
+    }
+  },
+  { slug: 'karaikal', city: 'Karaikal', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.92, lng: 79.83, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.1M', metroPopulation: '0.2M', phoneCode: '+91 4368', language: 'Tamil, French, English',
+      climate: 'Tropical with warm year-round temperatures (25-38°C). Northeast monsoon October-December brings most rain.',
+      attractions: ['Karaikal Beach', 'Notre Dame des Anges', 'Karaikal Ammaiyar Temple', 'Thirunallar Temple', 'French Heritage', 'Kailasanathar Temple', 'Fishing Harbor', 'Veeranam Lake', 'Dutch Cemetery', 'Peralam'],
+      demographics: 'Former French colony. Part of Puducherry UT. Major fishing port. Shani temple pilgrimage.',
+      seoContent: {
+        intro: 'Karaikal, French enclave of Tamil Nadu, operates on India Standard Time (IST/UTC+5:30). This former French territory of 100,000 is part of Puducherry Union Territory, featuring French colonial heritage, the powerful Thirunallar Shani temple, and a vibrant fishing culture.',
+        timezoneFacts: 'Same timezone as all of India. Tamil Nadu coast, Bay of Bengal.',
+        bestTimeToVisit: 'October-March for pleasant weather. Shani transit dates draw millions to Thirunallar. Avoid cyclone season.',
+        businessHours: 'Thirunallar Temple 6 AM to 12:30 PM, 4 PM to 9 PM. Beach accessible all day.',
+        timeDifference: 'Karaikal is UTC+5:30 year-round. When noon in Karaikal: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Thirunallar Shani temple draws millions during Shani transits - plan ahead! French architecture in town. Fresh seafood from harbor. Quieter than Pondicherry.',
+        transportation: 'Nearest airport Trichy (TRZ) 135km. Karaikal railway station. Buses from Pondicherry (130km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bastille Day (July 14), Pongal, Diwali.'
+      }
+    }
+  },
+  { slug: 'yanam', city: 'Yanam', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 16.73, lng: 82.22, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.05M', phoneCode: '+91 884', language: 'Telugu, French, English',
+      climate: 'Tropical with warm year-round temperatures (25-38°C). Monsoon June-September and October-November.',
+      attractions: ['Yanam Beach', 'French War Memorial', 'Godavari River', 'Sree Venugopala Swamy Temple', 'Church of Our Lady of Lourdes', 'Rajiv Gandhi Park', 'Light House', 'Mangrove Forests', 'French Architecture', 'Fishing Villages'],
+      demographics: 'Smallest district of Puducherry UT. Former French colony. Godavari delta. Alcohol available (Andhra is dry).',
+      seoContent: {
+        intro: 'Yanam, the French pocket in Andhra, operates on India Standard Time (IST/UTC+5:30). This tiny enclave of 40,000 in the Godavari delta is one of four districts of Puducherry UT, preserving French heritage and attracting Andhra visitors for legal alcohol.',
+        timezoneFacts: 'Same timezone as all of India. Godavari delta, surrounded by Andhra Pradesh.',
+        bestTimeToVisit: 'October-March for pleasant weather. Godavari pushkaram (every 12 years). Avoid monsoon floods.',
+        businessHours: 'Temple 6 AM to 8 PM. Riverside accessible all day. Liquor shops busy!',
+        timeDifference: 'Yanam is UTC+5:30 year-round. When noon in Yanam: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Legal alcohol here - Andhra crowds on weekends! Godavari river boat rides. French street names. Very small - half day enough. Combine with Kakinada.',
+        transportation: 'Rajahmundry Airport (RJA) 25km. Kakinada railway 15km. Road from Rajahmundry.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bastille Day (July 14), Ugadi, Diwali.'
+      }
+    }
+  },
+  { slug: 'mahe', city: 'Mahe', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 11.70, lng: 75.54, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.04M', metroPopulation: '0.05M', phoneCode: '+91 490', language: 'Malayalam, French, English',
+      climate: 'Tropical with warm year-round temperatures (24-34°C). Heavy southwest monsoon June-September.',
+      attractions: ['Mahe River', 'St. Theresa\'s Church', 'Tagore Park', 'Beach', 'French Architecture', 'Light House', 'Fishing Harbor', 'Azhiyur Beach', 'St. George Fort Ruins', 'Kannur (nearby)'],
+      demographics: 'Smallest district of Puducherry UT. French enclave in Kerala. Only 9 sq km. Alcohol tourism from dry Kerala.',
+      seoContent: {
+        intro: 'Mahe, France in Kerala, operates on India Standard Time (IST/UTC+5:30). This tiny French enclave of just 9 sq km in Kerala is part of Puducherry UT, famous as an alcohol oasis in increasingly restrictive Kerala, with colonial charm on the Mahe River.',
+        timezoneFacts: 'Same timezone as all of India. North Kerala coast, Malabar region.',
+        bestTimeToVisit: 'October-May for pleasant weather. Monsoon heavy but green. Combine with Kannur.',
+        businessHours: 'Liquor shops 9 AM to 9 PM. Riverside accessible all day.',
+        timeDifference: 'Mahe is UTC+5:30 year-round. When noon in Mahe: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Alcohol significantly cheaper than Kerala! Tiny place - few hours enough. French street names remain. Riverside evening walks pleasant. Gateway to Kannur.',
+        transportation: 'Kannur Airport (CNN) 25km. Mahe railway station. Road from Kannur/Kozhikode.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Bastille Day (July 14), Onam, Diwali.'
+      }
+    }
+  },
+  { slug: 'mcleodganj', city: 'McLeodganj', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 32.24, lng: 76.32, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.03M', phoneCode: '+91 1892', language: 'Tibetan, Hindi, English',
+      climate: 'Subtropical highland with cool summers (15-25°C) and cold winters (0-10°C). Monsoon July-September. Snow possible.',
+      attractions: ['Tsuglagkhang Complex', 'Dalai Lama Temple', 'Namgyal Monastery', 'Bhagsunag Waterfall', 'Triund Trek', 'Tibet Museum', 'Norbulingka Institute', 'St. John\'s Church', 'Dal Lake', 'Dharamkot'],
+      demographics: 'Little Lhasa. Seat of Tibetan Government-in-Exile. Dalai Lama\'s residence since 1960. Backpacker hub.',
+      seoContent: {
+        intro: 'McLeodganj, Little Lhasa of India, operates on India Standard Time (IST/UTC+5:30). This Tibetan exile capital of 10,000 has been home to the Dalai Lama since 1960, featuring monasteries, the Tibet Museum documenting Chinese occupation, and the popular Triund trek.',
+        timezoneFacts: 'Same timezone as all of India. Kangra Valley, Himachal Pradesh.',
+        bestTimeToVisit: 'March-June and September-November. Monsoon brings landslides. Winter cold but fewer crowds. Losar (Tibetan New Year) special.',
+        businessHours: 'Tsuglagkhang 8 AM to 8 PM. Tibet Museum 9 AM to 5 PM (closed Monday).',
+        timeDifference: 'McLeodganj is UTC+5:30 year-round. When noon in McLeodganj: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Dalai Lama teachings - check schedule! Tibet Museum moving. Triund trek stunning but crowded. Buy Tibetan handicrafts. Momos everywhere! Dharamkot for quieter vibe.',
+        transportation: 'Dharamsala Gaggal Airport (DHM) 15km (limited). Pathankot railway 90km. Buses from Delhi (10-12 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Delek Hospital for Tibetans.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Losar (Tibetan New Year), Dalai Lama Birthday (July 6), Diwali.'
+      }
+    }
+  },
+  { slug: 'dalhousie', city: 'Dalhousie', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 32.54, lng: 75.97, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+91 1899', language: 'Hindi, Pahari, English',
+      climate: 'Subtropical highland with cool summers (15-25°C) and cold winters (-2 to 10°C). Snow December-February.',
+      attractions: ['Khajjiar', 'Kalatop Wildlife Sanctuary', 'Dainkund Peak', 'Chamera Lake', 'St. John\'s Church', 'Subhash Baoli', 'Panchpula', 'Satdhara Falls', 'Gandhi Chowk', 'Mall Road'],
+      demographics: 'Named after Lord Dalhousie. British summer retreat. Subhash Chandra Bose stayed here. Gateway to Khajjiar (Mini Switzerland).',
+      seoContent: {
+        intro: 'Dalhousie, the Scotland of India, operates on India Standard Time (IST/UTC+5:30). This Victorian-era hill station of 10,000 spreads across five hills, offering colonial churches, pine forests, and access to Khajjiar - often called the "Mini Switzerland of India".',
+        timezoneFacts: 'Same timezone as all of India. Chamba district, Himachal Pradesh.',
+        bestTimeToVisit: 'March-June and September-November for pleasant weather. December-February for snow. Monsoon brings landslides.',
+        businessHours: 'Mall Road shops 9 AM to 9 PM. Khajjiar accessible daytime.',
+        timeDifference: 'Dalhousie is UTC+5:30 year-round. When noon in Dalhousie: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Khajjiar (Mini Switzerland) 24km - don\'t miss! Dainkund Peak highest point - paragliding available. Kalatop forest walk. Less crowded than Shimla/Manali.',
+        transportation: 'Pathankot railway 80km. No airport nearby. Buses from Delhi (11 hours) via Pathankot.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Minjar Fair (July-August), Diwali.'
+      }
+    }
+  },
+  { slug: 'khajjiar', city: 'Khajjiar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 32.55, lng: 76.06, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.002M', metroPopulation: '0.002M', phoneCode: '+91 1899', language: 'Hindi, Pahari, English',
+      climate: 'Subtropical highland with cool summers (12-22°C) and cold winters (-5 to 8°C). Snow December-February.',
+      attractions: ['Khajjiar Lake', 'Khajji Nag Temple', 'Golden Devi Temple', 'Meadows', 'Zorbing', 'Horse Riding', 'Paragliding', 'Forest Walks', 'Swiss Embassy Signboard', 'Photography'],
+      demographics: 'Mini Switzerland of India. 6,500 feet altitude. Saucer-shaped meadow. Swiss ambassador\'s plaque.',
+      seoContent: {
+        intro: 'Khajjiar, Mini Switzerland of India, operates on India Standard Time (IST/UTC+5:30). This stunning meadow at 6,500 feet was declared "Mini Switzerland" by Swiss ambassador in 1992, featuring a saucer-shaped green surrounded by deodar forests.',
+        timezoneFacts: 'Same timezone as all of India. Chamba district, Himachal Pradesh.',
+        bestTimeToVisit: 'March-June for green meadows. December-February for snow. September-November pleasant.',
+        businessHours: 'Meadow accessible all day. Adventure activities 9 AM to 5 PM.',
+        timeDifference: 'Khajjiar is UTC+5:30 year-round. When noon in Khajjiar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Go early for photography without crowds! Horse riding and zorbing on meadow. 9-hole golf course. Floating island in lake! Combine with Dalhousie (24km).',
+        transportation: 'Dalhousie 24km. Pathankot railway 100km. No direct buses - taxi from Dalhousie.',
+        emergencyNumbers: 'Emergency: 112. Limited facilities - Dalhousie better.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Minjar Fair, Diwali.'
+      }
+    }
+  },
+  { slug: 'kullu', city: 'Kullu', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 31.96, lng: 77.11, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.02M', metroPopulation: '0.15M', phoneCode: '+91 1902', language: 'Hindi, Pahari, Kulvi',
+      climate: 'Subtropical highland with pleasant summers (15-30°C) and cold winters (0-15°C). Monsoon July-September.',
+      attractions: ['Kullu Dussehra', 'Raghunath Temple', 'Great Himalayan National Park', 'Bijli Mahadev', 'Manikaran', 'Kasol', 'Rafting on Beas', 'Shawl Weaving', 'Sultanpur Palace', 'Jagannathi Devi Temple'],
+      demographics: 'Valley of Gods. Kullu shawls famous. Dussehra festival unique - gods gather! Gateway to Manali.',
+      seoContent: {
+        intro: 'Kullu, Valley of Gods, operates on India Standard Time (IST/UTC+5:30). This sacred valley of 20,000 hosts India\'s most unique Dussehra where 200+ local deities gather, is famous for handwoven Kullu shawls, and serves as gateway to Manali and Kasol.',
+        timezoneFacts: 'Same timezone as all of India. Beas Valley, Himachal Pradesh.',
+        bestTimeToVisit: 'March-June and September-November. Dussehra (October) spectacular - 7-day celebration! Winter cold.',
+        businessHours: 'Shawl shops 9 AM to 8 PM. Rafting seasonal (May-June, Sept-Oct).',
+        timeDifference: 'Kullu is UTC+5:30 year-round. When noon in Kullu: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Kullu Dussehra (October) is must-see - 200 gods parade! Buy authentic Kullu shawls. Bijli Mahadev lightning-struck Shiva lingam. Rafting on Beas thrilling.',
+        transportation: 'Bhuntar Airport (KUU) 10km. Nearest railway Jogindernagar (100km). Buses from Delhi (12 hours).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Kullu Dussehra (October - major!), Diwali.'
+      }
+    }
+  },
+  { slug: 'kasol', city: 'Kasol', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 32.01, lng: 77.32, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.002M', metroPopulation: '0.003M', phoneCode: '+91 1902', language: 'Hindi, English, Hebrew',
+      climate: 'Subtropical highland with cool summers (10-25°C) and cold winters (-5 to 10°C). Snow possible December-February.',
+      attractions: ['Parvati Valley', 'Kheerganga Trek', 'Manikaran Gurudwara', 'Hot Springs', 'Tosh', 'Malana', 'Chalal', 'Israeli Cafes', 'River Parvati', 'Trekking'],
+      demographics: 'Mini Israel of India. Backpacker paradise. Trekking hub. Alternative culture. Hemp region.',
+      seoContent: {
+        intro: 'Kasol, Mini Israel of India, operates on India Standard Time (IST/UTC+5:30). This backpacker haven in Parvati Valley has a strong Israeli traveler presence, featuring Hebrew signboards, falafel cafes, riverside camping, and access to legendary treks like Kheerganga.',
+        timezoneFacts: 'Same timezone as all of India. Parvati Valley, Himachal Pradesh.',
+        bestTimeToVisit: 'March-June and September-November. Winter snowy but magical. Monsoon brings landslides.',
+        businessHours: 'Cafes 8 AM to 10 PM. Manikaran Gurudwara 24/7. Treks best started early morning.',
+        timeDifference: 'Kasol is UTC+5:30 year-round. When noon in Kasol: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Kheerganga trek (12km) hot springs reward at top! Manikaran hot springs sacred. Tosh and Chalal for quieter vibes. Israeli food everywhere. Budget paradise.',
+        transportation: 'Bhuntar Airport (KUU) 31km. No railway. Buses from Bhuntar and Delhi.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Limited medical facilities.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Dussehra, Diwali.'
+      }
+    }
+  },
   { slug: 'vadodara', city: 'Vadodara', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.31, lng: 73.19, tier: 3, continent: 'asia',
     info: {
       currency: 'Indian Rupee', currencySymbol: '₹', population: '2.1M', phoneCode: '+91 265', language: 'Gujarati, Hindi',
