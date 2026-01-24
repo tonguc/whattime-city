@@ -9664,6 +9664,168 @@ export const cities: City[] = [
       }
     }
   },
+  
+  // India - Critical Missing Cities (8 important additions)
+  { slug: 'ayodhya', city: 'Ayodhya', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 26.79, lng: 82.19, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.08M', metroPopulation: '0.5M', phoneCode: '+91 5278', language: 'Hindi, Awadhi',
+      climate: 'Humid subtropical with hot summers (35-45°C) and cool winters (5-20°C). Monsoon July-September.',
+      attractions: ['Ram Mandir (2024)', 'Ram Janmabhoomi', 'Hanuman Garhi', 'Kanak Bhawan', 'Nageshwarnath Temple', 'Saryu River', 'Guptar Ghat', 'Dashrath Mahal', 'Treta Ke Thakur', 'Ram Ki Paidi'],
+      demographics: 'Birthplace of Lord Ram. One of 7 sacred cities. Ram Mandir opened January 2024. Now India\'s top pilgrimage.',
+      seoContent: {
+        intro: 'Ayodhya, birthplace of Lord Ram, operates on India Standard Time (IST/UTC+5:30). This ancient city witnessed history when the grand Ram Mandir opened in January 2024 after centuries of dispute, transforming it into India\'s most visited pilgrimage destination with millions of devotees.',
+        timezoneFacts: 'Same timezone as all of India. Saryu River banks, Uttar Pradesh.',
+        bestTimeToVisit: 'October-March for pleasant weather. Ram Navami (March-April) massive celebration. Diwali spectacular (Ram\'s return).',
+        businessHours: 'Ram Mandir 7 AM to 11 PM (darshan). Hanuman Garhi 5 AM to 10 PM. Saryu Aarti 7 PM.',
+        timeDifference: 'Ayodhya is UTC+5:30 year-round. When noon in Ayodhya: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Ram Mandir darshan - book online or expect long queues! Hanuman Garhi climb 76 steps. Saryu River aarti beautiful. Diwali here is Ram\'s homecoming - millions of diyas. City transformed since 2024.',
+        transportation: 'Ayodhya Dham Junction railway (upgraded). Ayodhya Airport (AYJ) opened 2024. Lucknow (130km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ram Mandir helpline available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Ram Navami (MASSIVE!), Diwali (MASSIVE - Deepotsav!), Vivah Panchami.'
+      }
+    }
+  },
+  { slug: 'srisailam', city: 'Srisailam', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 16.08, lng: 78.87, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.03M', metroPopulation: '0.05M', phoneCode: '+91 8524', language: 'Telugu, Hindi',
+      climate: 'Tropical with hot summers (30-42°C) and mild winters (15-30°C). Monsoon July-September. Forest area.',
+      attractions: ['Mallikarjuna Jyotirlinga', 'Bhramaramba Devi', 'Srisailam Dam', 'Akkamahadevi Caves', 'Pathala Ganga', 'Sakshi Ganapati', 'Sikhareswaram', 'Nallamala Forest', 'Chenchu Tribal Museum', 'Ropeway'],
+      demographics: 'One of 12 Jyotirlingas. Only place with both Jyotirlinga AND Shakti Peeth. Nallamala forest setting.',
+      seoContent: {
+        intro: 'Srisailam, the Southern Kashi, operates on India Standard Time (IST/UTC+5:30). This sacred hilltop shrine in Nallamala forest is the only place in India housing both a Jyotirlinga (Mallikarjuna) and a Shakti Peeth (Bhramaramba) together, drawing millions of devotees.',
+        timezoneFacts: 'Same timezone as all of India. Nallamala Hills, Andhra Pradesh.',
+        bestTimeToVisit: 'October-February for pleasant weather. Shivaratri massive. Monsoon forest lush but roads tricky.',
+        businessHours: 'Temple 4:30 AM to 10 PM. Special darshan timings vary. Ropeway to Pathala Ganga 7 AM to 5 PM.',
+        timeDifference: 'Srisailam is UTC+5:30 year-round. When noon in Srisailam: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Only temple with Jyotirlinga + Shakti Peeth! Pathala Ganga by ropeway - Krishna River sacred dip. Akkamahadevi Caves meditation. Nallamala forest drive scenic. Tiger reserve nearby.',
+        transportation: 'No airport. Markapur Road railway 90km. Hyderabad 230km. Ghat road driving.',
+        emergencyNumbers: 'Emergency: 112. Temple Devasthanam: 08524-287760.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivaratri (MASSIVE!), Ugadi, Diwali.'
+      }
+    }
+  },
+  { slug: 'bhimashankar', city: 'Bhimashankar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 19.07, lng: 73.54, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.005M', metroPopulation: '0.01M', phoneCode: '+91 2135', language: 'Marathi, Hindi',
+      climate: 'Tropical highland with pleasant summers (18-30°C) and cool winters (10-25°C). Very heavy monsoon June-September.',
+      attractions: ['Bhimashankar Jyotirlinga', 'Bhimashankar Wildlife Sanctuary', 'Giant Malabar Squirrel', 'Gupt Bhimashankar', 'Hanuman Lake', 'Nagphani (Duke\'s Nose)', 'Bombay Point', 'Shidi Ghat Trek', 'Waterfalls', 'Trekking'],
+      demographics: 'One of 12 Jyotirlingas. Origin of Bhima River. Giant Indian squirrel habitat. Monsoon trekking paradise.',
+      seoContent: {
+        intro: 'Bhimashankar, forest Jyotirlinga, operates on India Standard Time (IST/UTC+5:30). This sacred Shiva temple in the Western Ghats is one of 12 Jyotirlingas, set within a wildlife sanctuary famous for the endangered giant Malabar squirrel and origin of the Bhima River.',
+        timezoneFacts: 'Same timezone as all of India. Sahyadri Hills, Maharashtra.',
+        bestTimeToVisit: 'October-May for temple. Monsoon (July-September) spectacular waterfalls but slippery. Shivaratri crowded.',
+        businessHours: 'Temple 5 AM to 9:30 PM. Sanctuary permits at entry. Treks best started early.',
+        timeDifference: 'Bhimashankar is UTC+5:30 year-round. When noon in Bhimashankar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Shidi Ghat trek challenging but rewarding (steep ladders!). Giant Malabar squirrel early morning. Gupt Bhimashankar original lingam. Monsoon transforms into waterfall paradise.',
+        transportation: 'No railway or airport. Pune 125km. Drives through ghat roads. Trekking routes from Karjat.',
+        emergencyNumbers: 'Emergency: 112. Forest Office available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivaratri (MASSIVE!), Ganesh Chaturthi, Diwali.'
+      }
+    }
+  },
+  { slug: 'deoghar', city: 'Deoghar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 24.49, lng: 86.70, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.2M', metroPopulation: '0.25M', phoneCode: '+91 6432', language: 'Hindi, Santali, Bengali',
+      climate: 'Humid subtropical with hot summers (35-45°C) and cool winters (8-22°C). Monsoon July-September.',
+      attractions: ['Baidyanath Jyotirlinga', 'Basukinath Temple', 'Trikut Pahar', 'Naulakha Mandir', 'Satsang Ashram', 'Tapovan', 'Ropeway', 'Nandan Pahar', 'Rikhia Ashram', 'Kanwar Yatra Route'],
+      demographics: 'One of 12 Jyotirlingas. Vaidyanath - Lord of Physicians. Kanwar Yatra destination. Satsang Ashram HQ.',
+      seoContent: {
+        intro: 'Deoghar, abode of the Divine Doctor, operates on India Standard Time (IST/UTC+5:30). This sacred city houses the Baidyanath Jyotirlinga - known as Vaidyanath (Lord of Physicians) - one of 12 Jyotirlingas and the destination of millions during the annual Kanwar Yatra.',
+        timezoneFacts: 'Same timezone as all of India. Santhal Pargana, Jharkhand.',
+        bestTimeToVisit: 'October-March for pleasant weather. Shravan month (July-August) Kanwar Yatra massive. Shivaratri huge.',
+        businessHours: 'Temple 4 AM to 9 PM. Ropeway to Trikut 8 AM to 5 PM.',
+        timeDifference: 'Deoghar is UTC+5:30 year-round. When noon in Deoghar: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Vaidyanath means healer - prayers for health. Shravan month sees 5M+ Kanwariyas! Basukinath 42km important part of yatra. Trikut hills for views. Satsang Ashram peaceful.',
+        transportation: 'Baidyanath Dham railway (Jasidih Junction). Nearest airport Patna (280km) or Ranchi (260km).',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Temple Devasthanam available.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Shivaratri (MASSIVE!), Shravan month (Kanwar Yatra), Diwali.'
+      }
+    }
+  },
+  { slug: 'sabarimala', city: 'Sabarimala', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 9.43, lng: 77.08, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.001M', metroPopulation: '0.005M', phoneCode: '+91 4735', language: 'Malayalam, Tamil, Hindi',
+      climate: 'Tropical highland with pleasant temperatures (15-30°C). Monsoon June-September closes temple. Forest setting.',
+      attractions: ['Ayyappa Temple', 'Pathinettam Padi (18 Holy Steps)', 'Makaravilakku', 'Pamba River', 'Sannidhanam', 'Malikappuram Devi Temple', 'Pandalam Palace', 'Erumeli', 'Neelimala View Point', 'Forest Trek'],
+      demographics: 'India\'s Hajj equivalent. 50M+ pilgrims annually. 41-day vrutham (penance). Women 10-50 historically restricted.',
+      seoContent: {
+        intro: 'Sabarimala, the forest pilgrimage, operates on India Standard Time (IST/UTC+5:30). This mountaintop temple of Lord Ayyappa receives 50+ million pilgrims annually (second only to Mecca), requiring 41 days of strict penance wearing black, culminating in the Makaravilakku festival.',
+        timezoneFacts: 'Same timezone as all of India. Periyar Tiger Reserve, Kerala.',
+        bestTimeToVisit: 'Mid-November to mid-January (Mandala-Makaravilakku season). Makaravilakku (January 14) peak. Closed most of year.',
+        businessHours: 'Temple opens only during specific seasons. Mandala Puja season main period.',
+        timeDifference: 'Sabarimala is UTC+5:30 year-round. When noon in Sabarimala: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: '41-day vrutham mandatory - strict celibacy, black clothes, vegetarian. Trek 5km from Pamba. Irumudi (offering bundle) required. Makaravilakku star sighting divine. Swamiye Saranam Ayyappa!',
+        transportation: 'No vehicles to temple - trek from Pamba. Kottayam railway 90km. Cochin Airport (COK) 155km.',
+        emergencyNumbers: 'Emergency: 112. Devaswom Board: 04735-202028.',
+        publicHolidays: 'Temple open: Mandala Season (Nov-Dec), Makaravilakku (Jan), Vishu, Monthly openings. Closed most of year.'
+      }
+    }
+  },
+  { slug: 'palani', city: 'Palani', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 10.45, lng: 77.52, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '0.07M', metroPopulation: '0.1M', phoneCode: '+91 4545', language: 'Tamil, Hindi',
+      climate: 'Tropical highland with pleasant temperatures (20-35°C). Monsoon October-December (northeast).',
+      attractions: ['Palani Murugan Temple', 'Winch', 'Ropeway', 'Idumban Shrine', 'Periyanayaki Amman Temple', 'Kulandai Velappar Temple', 'Thaipusam', 'Panchamirtham', 'Thai Poosam', 'Hill Steps'],
+      demographics: 'One of 6 abodes of Murugan. Second richest temple in TN. Navapashanam idol. Panchamirtham famous.',
+      seoContent: {
+        intro: 'Palani, abode of the youthful god, operates on India Standard Time (IST/UTC+5:30). This hilltop temple of Lord Murugan (Dhandayuthapani) is one of his six sacred abodes, famous for the Navapashanam idol made of nine poisonous substances and the divine Panchamirtham prasadam.',
+        timezoneFacts: 'Same timezone as all of India. Dindigul district, Tamil Nadu.',
+        bestTimeToVisit: 'Year-round. Thai Poosam (January-February) massive - million+ pilgrims. Pongal festive.',
+        businessHours: 'Temple 6 AM to 8:30 PM. Winch and ropeway 6 AM to 8 PM.',
+        timeDifference: 'Palani is UTC+5:30 year-round. When noon in Palani: London 6:30 AM, NYC 1:30 AM, Singapore 3 PM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Ropeway or 693 steps - your choice! Panchamirtham prasadam unique (banana-honey-ghee). Thai Poosam kavadi-bearers intense. Navapashanam idol made from 9 medicinal poisons. Second richest TN temple.',
+        transportation: 'Palani railway junction. Madurai Airport (IXM) 120km. Coimbatore Airport (CJB) 110km.',
+        emergencyNumbers: 'Emergency: 112. Temple Devasthanam: 04545-241479.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Thai Poosam (MASSIVE!), Pongal, Diwali.'
+      }
+    }
+  },
+  { slug: 'noida', city: 'Noida', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 28.57, lng: 77.32, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '6.4M', metroPopulation: '10M', phoneCode: '+91 120', language: 'Hindi, English, Punjabi',
+      climate: 'Humid subtropical with extreme hot summers (40-47°C) and cool winters (5-20°C). Monsoon July-September. Pollution winter issue.',
+      attractions: ['Worlds of Wonder', 'DLF Mall of India', 'Okhla Bird Sanctuary', 'Botanical Garden', 'ISKCON Noida', 'Buddh International Circuit', 'Film City', 'Sector 18 Market', 'Grand Venice Mall', 'Noida Golf Course'],
+      demographics: 'New Okhla Industrial Development Authority. IT/BPO hub. Part of Delhi NCR. Planned city.',
+      seoContent: {
+        intro: 'Noida, the IT powerhouse of NCR, operates on India Standard Time (IST/UTC+5:30). This planned city of 6.4 million is a major IT/BPO hub in Delhi NCR, home to the Buddh International Circuit (India\'s F1 venue) and the massive DLF Mall of India.',
+        timezoneFacts: 'Same timezone as all of India. Gautam Buddha Nagar, Uttar Pradesh.',
+        bestTimeToVisit: 'October-March for pleasant weather. Avoid summer heat and winter pollution. Weekends for malls.',
+        businessHours: 'IT companies 9 AM to 6 PM. Malls 10 AM to 10 PM. Metro 6 AM to 11 PM.',
+        timeDifference: 'Noida is UTC+5:30 year-round. When noon in Noida: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Delhi Metro Blue Line connects to Delhi. Film City studio tours. Buddh Circuit hosted F1 2011-2013. DLF Mall of India is India\'s largest. Greater Noida has Expo Mart.',
+        transportation: 'Noida Metro + Delhi Metro integrated. IGI Airport Delhi (35km). Noida has no railway - use Metro.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Diwali, Holi, Eid.'
+      }
+    }
+  },
+  { slug: 'gurugram', city: 'Gurugram', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 28.46, lng: 77.03, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Indian Rupee', currencySymbol: '₹', population: '2.5M', metroPopulation: '10M', phoneCode: '+91 124', language: 'Hindi, English, Punjabi, Haryanvi',
+      climate: 'Humid subtropical with extreme hot summers (40-47°C) and cool winters (5-20°C). Monsoon July-September. Pollution issue.',
+      attractions: ['Cyber City', 'Kingdom of Dreams', 'Ambience Mall', 'Cyber Hub', 'Sultanpur Bird Sanctuary', 'Leisure Valley Park', 'Appu Ghar', 'Golf Courses', 'DLF Phase 5', 'Sheetla Mata Mandir'],
+      demographics: 'Millennium City. Fortune 500 headquarters. India\'s highest per capita income. Former Gurgaon. Guru Dronacharya\'s village.',
+      seoContent: {
+        intro: 'Gurugram, India\'s Millennium City, operates on India Standard Time (IST/UTC+5:30). This corporate powerhouse of 2.5 million (formerly Gurgaon - named after Guru Dronacharya) has India\'s highest per capita income, hosting headquarters of over 250 Fortune 500 companies in its gleaming Cyber City.',
+        timezoneFacts: 'Same timezone as all of India. Haryana, Delhi NCR.',
+        bestTimeToVisit: 'October-March for pleasant weather. Avoid extreme summer and winter pollution. Cyber Hub lively evenings.',
+        businessHours: 'Corporate offices 9 AM to 6 PM. Cyber Hub restaurants until midnight. Malls 10 AM to 10 PM.',
+        timeDifference: 'Gurugram is UTC+5:30 year-round. When noon in Gurugram: London 6:30 AM, NYC 1:30 AM, Dubai 10:30 AM.',
+        daylightSaving: 'India does not observe Daylight Saving Time. IST (UTC+5:30) applies year-round.',
+        localTips: 'Cyber Hub for dining and nightlife. Kingdom of Dreams for Bollywood culture. Renamed from Gurgaon in 2016. Traffic notorious - use Metro. Sultanpur for birdwatching.',
+        transportation: 'Delhi Metro Yellow Line + Rapid Metro. IGI Airport Delhi (15km - closest NCR city!). Gurugram railway limited.',
+        emergencyNumbers: 'Emergency: 112. Police: 100. Ambulance: 102.',
+        publicHolidays: 'Republic Day (Jan 26), Independence Day (Aug 15), Haryana Day (Nov 1), Diwali, Holi.'
+      }
+    }
+  },
   { slug: 'vadodara', city: 'Vadodara', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 22.31, lng: 73.19, tier: 3, continent: 'asia',
     info: {
       currency: 'Indian Rupee', currencySymbol: '₹', population: '2.1M', phoneCode: '+91 265', language: 'Gujarati, Hindi',
