@@ -5214,6 +5214,326 @@ export const cities: City[] = [
       }
     }
   },
+  { slug: 'durham', city: 'Durham', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 54.78, lng: -1.57, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.05M', metroPopulation: '0.09M', phoneCode: '+44 191', language: 'English',
+      climate: 'Oceanic with cool summers (15-19°C) and cold winters (2-7°C). River valley.',
+      attractions: ['Durham Cathedral', 'Durham Castle', 'River Wear', 'Palace Green', 'Prebends Bridge', 'Botanic Garden', 'Oriental Museum', 'Crook Hall', 'Wharton Park', 'Lumiere Festival'],
+      demographics: 'UNESCO World Heritage cathedral and castle. England\'s third-oldest university. Harry Potter filming.',
+      seoContent: {
+        intro: 'Durham, the castle on the rock, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This UNESCO World Heritage city features a Norman cathedral (Harry Potter\'s Hogwarts cloisters), a castle turned university college, and dramatic river loops.',
+        timezoneFacts: 'Same timezone as London. Durham Cathedral was Europe\'s first Gothic building.',
+        bestTimeToVisit: 'April-October for best weather. Lumiere light festival (November - biennial).',
+        businessHours: 'Durham Cathedral 10 AM to 4 PM. Castle tours limited - book ahead.',
+        timeDifference: 'Durham is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Cathedral cloisters are Hogwarts! Climb tower for views (325 steps). Lumiere spectacular.',
+        transportation: 'No airport - Newcastle 30 min. Durham Station. 2.5 hr from London King\'s Cross.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Lumiere Festival (November). Durham Miners\' Gala (July).'
+      }
+    }
+  },
+  { slug: 'warwick', city: 'Warwick', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.28, lng: -1.59, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.03M', metroPopulation: '0.14M', phoneCode: '+44 1926', language: 'English',
+      climate: 'Oceanic with mild summers (16-22°C) and cool winters (2-8°C). Midlands.',
+      attractions: ['Warwick Castle', 'Lord Leycester Hospital', 'Collegiate Church of St Mary', 'Mill Garden', 'St John\'s House Museum', 'Market Hall Museum', 'Hill Close Gardens', 'Warwick Racecourse', 'Castle Park', 'River Avon'],
+      demographics: 'Home to England\'s finest medieval castle. Historic county town. Merlin Entertainment attraction.',
+      seoContent: {
+        intro: 'Warwick, home to England\'s finest medieval castle, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This historic county town features the spectacular Warwick Castle, now a major attraction with jousting, dungeons, and trebuchet demonstrations.',
+        timezoneFacts: 'Same timezone as London. Warwick Castle has stood for over 1,100 years.',
+        bestTimeToVisit: 'April-October for castle events. Summer jousting tournaments. Christmas spectacular.',
+        businessHours: 'Warwick Castle 10 AM to 5 PM. Town shops 9 AM to 5:30 PM.',
+        timeDifference: 'Warwick is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Warwick Castle needs full day! Trebuchet fires daily. Combine with Stratford-upon-Avon (8 miles). Lord Leycester Hospital medieval.',
+        transportation: 'No airport - Birmingham 30 min. Warwick Station. 1.5 hr from London Marylebone.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Castle events throughout year.'
+      }
+    }
+  },
+  { slug: 'lincoln', city: 'Lincoln', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.23, lng: -0.54, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.1M', metroPopulation: '0.13M', phoneCode: '+44 1522', language: 'English',
+      climate: 'Oceanic with mild summers (16-21°C) and cool winters (2-7°C). East Midlands.',
+      attractions: ['Lincoln Cathedral', 'Lincoln Castle', 'Steep Hill', 'Magna Carta', 'Bailgate', 'Brayford Pool', 'Museum of Lincolnshire Life', 'Bishop\'s Palace', 'Jews\' House', 'High Bridge'],
+      demographics: 'Magnificent Gothic cathedral. One of four Magna Cartas. Steep Hill voted Britain\'s best.',
+      seoContent: {
+        intro: 'Lincoln, city of the imp, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This hilltop city features a magnificent Gothic cathedral that was once the world\'s tallest building, one of four surviving Magna Cartas, and Steep Hill - voted Britain\'s best street.',
+        timezoneFacts: 'Same timezone as London. Lincoln Cathedral was world\'s tallest building for 238 years.',
+        bestTimeToVisit: 'April-October for best weather. Lincoln Christmas Market (December) - largest in UK.',
+        businessHours: 'Lincoln Cathedral 9 AM to 5 PM. Castle 10 AM to 4 PM. Steep Hill shops variable.',
+        timeDifference: 'Lincoln is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Steep Hill is steep - worth it! Magna Carta in castle. Christmas Market UK\'s largest. Lincoln Imp in cathedral.',
+        transportation: 'No airport - East Midlands 1 hr. Lincoln Central Station. 2 hr from London King\'s Cross.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Lincoln Christmas Market (December).'
+      }
+    }
+  },
+  { slug: 'exeter', city: 'Exeter', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.72, lng: -3.53, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.13M', metroPopulation: '0.18M', phoneCode: '+44 1392', language: 'English',
+      climate: 'Oceanic with mild summers (17-21°C) and mild winters (4-9°C). Devon.',
+      attractions: ['Exeter Cathedral', 'Underground Passages', 'Royal Albert Memorial Museum', 'Quayside', 'Guildhall', 'Rougemont Castle', 'Northernhay Gardens', 'Custom House', 'Exeter Phoenix', 'Powderham Castle'],
+      demographics: 'Historic Devon capital. Roman walls. Gateway to English Riviera and Dartmoor.',
+      seoContent: {
+        intro: 'Exeter, Devon\'s capital, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This historic city features a magnificent Norman cathedral, medieval underground passages, and serves as gateway to both the English Riviera and Dartmoor National Park.',
+        timezoneFacts: 'Same timezone as London. Exeter was founded by the Romans as Isca Dumnoniorum.',
+        bestTimeToVisit: 'May-September for best weather. Exeter Festival (July). Christmas market.',
+        businessHours: 'Exeter Cathedral 9 AM to 5 PM. Underground Passages tours hourly.',
+        timeDifference: 'Exeter is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Underground Passages unique in UK! Cathedral longest unbroken Gothic ceiling. Quayside for food. Gateway to Jurassic Coast.',
+        transportation: 'Exeter Airport (EXT) 8km. Exeter St Davids Station. 2.5 hr from London Paddington.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Exeter Festival (July).'
+      }
+    }
+  },
+  { slug: 'norwich', city: 'Norwich', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 52.63, lng: 1.30, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.14M', metroPopulation: '0.21M', phoneCode: '+44 1603', language: 'English',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (2-8°C). East Anglia, drier.',
+      attractions: ['Norwich Cathedral', 'Norwich Castle', 'The Lanes', 'Elm Hill', 'Norwich Market', 'Sainsbury Centre', 'Dragon Hall', 'The Forum', 'Plantation Garden', 'Norfolk Broads nearby'],
+      demographics: 'England\'s first UNESCO City of Literature. Medieval churches. Colman\'s Mustard heritage.',
+      seoContent: {
+        intro: 'Norwich, England\'s first UNESCO City of Literature, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This medieval city has more churches than any other English city north of London, cobbled lanes, and serves as gateway to the Norfolk Broads.',
+        timezoneFacts: 'Same timezone as London. Norwich was England\'s second-largest city in medieval times.',
+        bestTimeToVisit: 'May-September for best weather. Norwich Literary Festival. Norfolk Broads summer.',
+        businessHours: 'Norwich Cathedral 7:30 AM to 6 PM. Castle 10 AM to 5 PM. Market Mon-Sat.',
+        timeDifference: 'Norwich is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Elm Hill most photographed medieval street! Norwich Market one of largest outdoor. Colman\'s Mustard Shop. Norfolk Broads boat hire.',
+        transportation: 'Norwich Airport (NWI) 6km. Norwich Station. 2 hr from London Liverpool Street.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Norwich Literary Festival.'
+      }
+    }
+  },
+  { slug: 'blackpool', city: 'Blackpool', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.81, lng: -3.05, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.14M', metroPopulation: '0.32M', phoneCode: '+44 1253', language: 'English',
+      climate: 'Oceanic with cool summers (15-19°C) and mild winters (3-8°C). Irish Sea coast, windy.',
+      attractions: ['Blackpool Tower', 'Blackpool Pleasure Beach', 'Blackpool Illuminations', 'Winter Gardens', 'Blackpool Piers', 'Madame Tussauds', 'SEA LIFE Blackpool', 'Blackpool Zoo', 'Stanley Park', 'Comedy Carpet'],
+      demographics: 'Britain\'s most famous seaside resort. Tower inspired by Eiffel. Illuminations since 1879.',
+      seoContent: {
+        intro: 'Blackpool, Britain\'s Vegas, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This iconic seaside resort features the famous Blackpool Tower (inspired by Eiffel Tower), Pleasure Beach rollercoasters, and the spectacular Illuminations that have dazzled since 1879.',
+        timezoneFacts: 'Same timezone as London. Blackpool Tower opened in 1894, half Eiffel Tower\'s height.',
+        bestTimeToVisit: 'July-August for beach. Illuminations September-November. Year-round entertainment.',
+        businessHours: 'Blackpool Tower 10 AM to 10 PM. Pleasure Beach seasonal hours vary.',
+        timeDifference: 'Blackpool is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Illuminations free - drive or walk promenade! Pleasure Beach Big One rollercoaster. Tower Ballroom Dancing. Fish and chips essential.',
+        transportation: 'No airport - Manchester or Liverpool 1 hr. Blackpool North Station. 3 hr from London Euston.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Blackpool Illuminations (Sept-Nov).'
+      }
+    }
+  },
+  { slug: 'bournemouth', city: 'Bournemouth', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 50.72, lng: -1.88, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.18M', metroPopulation: '0.47M', phoneCode: '+44 1202', language: 'English',
+      climate: 'Oceanic with mild summers (18-21°C) and mild winters (4-9°C). One of UK\'s sunniest.',
+      attractions: ['Bournemouth Beach', 'Bournemouth Pier', 'Russell-Cotes Museum', 'Lower Gardens', 'Oceanarium', 'Bournemouth Air Festival', 'Alum Chine', 'Boscombe Pier', 'Adventure Wonderland', 'Compton Acres'],
+      demographics: '7 miles of golden sandy beaches. Victorian resort. UK\'s sunniest coastal town.',
+      seoContent: {
+        intro: 'Bournemouth, Britain\'s sunniest seaside, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This Victorian resort boasts 7 miles of golden sandy beaches (rare for UK!), award-winning gardens, and one of the highest sunshine records in Britain.',
+        timezoneFacts: 'Same timezone as London. Bournemouth has more hours of sunshine than most UK cities.',
+        bestTimeToVisit: 'May-September for beach weather. Bournemouth Air Festival (August). Christmas market.',
+        businessHours: 'Beach accessible 24/7. Pier attractions 10 AM to 6 PM. Gardens dawn to dusk.',
+        timeDifference: 'Bournemouth is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Sandy beaches rare in UK - Bournemouth has 7 miles! Air Festival spectacular free event. Russell-Cotes museum quirky. Jurassic Coast nearby.',
+        transportation: 'Bournemouth Airport (BOH) 8km. Bournemouth Station. 2 hr from London Waterloo.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Bournemouth Air Festival (August).'
+      }
+    }
+  },
+  { slug: 'hull', city: 'Hull', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.74, lng: -0.33, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.26M', metroPopulation: '0.57M', phoneCode: '+44 1482', language: 'English',
+      climate: 'Oceanic with cool summers (16-20°C) and cold winters (2-7°C). Humber Estuary.',
+      attractions: ['The Deep', 'Humber Bridge', 'Hull Marina', 'Museums Quarter', 'Ferens Art Gallery', 'Hull Minster', 'Fruit Market', 'Spurn Point', 'Beverley', 'Freedom Quay'],
+      demographics: 'UK City of Culture 2017. William Wilberforce birthplace. The Deep aquarium.',
+      seoContent: {
+        intro: 'Hull (Kingston upon Hull), UK City of Culture 2017, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This underrated city features The Deep (one of UK\'s best aquariums), the birthplace of anti-slavery campaigner William Wilberforce, and a transformed cultural scene.',
+        timezoneFacts: 'Same timezone as London. Hull has its own cream-colored telephone boxes, not red.',
+        bestTimeToVisit: 'April-October for best weather. Hull Fair (October) - Europe\'s largest travelling fair.',
+        businessHours: 'The Deep 10 AM to 5 PM. Museums Quarter 10 AM to 5 PM.',
+        timeDifference: 'Hull is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'The Deep aquarium world-class! Fruit Market is hip creative quarter. Hull Fair Europe\'s largest. Humber Bridge impressive. Cream phone boxes!',
+        transportation: 'No airport - Humberside (HUY) 25km. Hull Paragon Station. 2.5 hr from London King\'s Cross.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS: 111.',
+        publicHolidays: 'UK bank holidays. Hull Fair (October).'
+      }
+    }
+  },
+  { slug: 'stirling', city: 'Stirling', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 56.12, lng: -3.94, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.05M', metroPopulation: '0.09M', phoneCode: '+44 1786', language: 'English, Scots',
+      climate: 'Oceanic with cool summers (14-18°C) and cold winters (1-6°C). Central Scotland.',
+      attractions: ['Stirling Castle', 'Wallace Monument', 'Bannockburn', 'Old Town Jail', 'Church of the Holy Rude', 'Smith Art Gallery', 'Cambuskenneth Abbey', 'King\'s Knot', 'Argyll\'s Lodging', 'Bridge of Allan'],
+      demographics: 'Gateway to the Highlands. Wallace and Bruce history. Scotland\'s most historically important city.',
+      seoContent: {
+        intro: 'Stirling, Scotland\'s historic heart, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This city witnessed Scotland\'s greatest battles - Wallace at Stirling Bridge (1297) and Bruce at Bannockburn (1314). Its castle rivals Edinburgh\'s.',
+        timezoneFacts: 'Same timezone as London. Stirling Castle has been besieged at least 16 times.',
+        bestTimeToVisit: 'May-September for best weather. Bannockburn Live (June). Highland Games.',
+        businessHours: 'Stirling Castle 9:30 AM to 5 PM. Wallace Monument 10 AM to 5 PM.',
+        timeDifference: 'Stirling is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Castle views rival Edinburgh! Wallace Monument 246 steps but worth it. Bannockburn visitor centre excellent. Gateway to Highlands.',
+        transportation: 'No airport - Glasgow or Edinburgh 45 min. Stirling Station. 1 hr from Edinburgh.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Scotland: 111.',
+        publicHolidays: 'UK bank holidays plus Scottish holidays. Bannockburn commemorations.'
+      }
+    }
+  },
+  { slug: 'perth-scotland', city: 'Perth', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 56.39, lng: -3.43, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.05M', metroPopulation: '0.15M', phoneCode: '+44 1738', language: 'English, Scots',
+      climate: 'Oceanic with cool summers (14-19°C) and cold winters (1-7°C). Perthshire.',
+      attractions: ['Scone Palace', 'Perth Concert Hall', 'Black Watch Museum', 'Perth Art Gallery', 'North Inch', 'St John\'s Kirk', 'Fergusson Gallery', 'Branklyn Garden', 'Huntingtower Castle', 'Bell\'s Cherrybank'],
+      demographics: 'Scotland\'s ancient capital. Where Scottish kings were crowned on Stone of Scone. The Fair City.',
+      seoContent: {
+        intro: 'Perth, The Fair City, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Scotland\'s ancient capital where kings were crowned at Scone Palace on the legendary Stone of Destiny. Gateway to the Scottish Highlands and whisky country.',
+        timezoneFacts: 'Same timezone as London. Perth was Scotland\'s capital until 1437.',
+        bestTimeToVisit: 'May-September for best weather. Perth Festival of the Arts (May). Highland Games.',
+        businessHours: 'Scone Palace 9:30 AM to 5 PM (seasonal). Black Watch Museum 10 AM to 4:30 PM.',
+        timeDifference: 'Perth is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Scone Palace where kings crowned - Stone of Scone replica. Black Watch Museum excellent. Gateway to Highland Perthshire whisky.',
+        transportation: 'No airport - Edinburgh or Dundee 1 hr. Perth Station. 1.5 hr from Edinburgh.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Scotland: 111.',
+        publicHolidays: 'UK bank holidays plus Scottish holidays. Perth Festival (May).'
+      }
+    }
+  },
+  { slug: 'fort-william', city: 'Fort William', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 56.82, lng: -5.11, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+44 1397', language: 'English, Scottish Gaelic',
+      climate: 'Oceanic with cool summers (13-17°C) and cold winters (1-6°C). Very wet, mountain weather.',
+      attractions: ['Ben Nevis', 'Jacobite Steam Train', 'Nevis Range', 'Glen Nevis', 'West Highland Museum', 'Neptune\'s Staircase', 'Glenfinnan Viaduct', 'Commando Memorial', 'Steall Falls', 'Old Inverlochy Castle'],
+      demographics: 'Outdoor capital of UK. Base for Ben Nevis. Harry Potter train. Start/end of West Highland Way.',
+      seoContent: {
+        intro: 'Fort William, the Outdoor Capital of UK, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Base camp for climbing Ben Nevis (UK\'s highest peak), home to the Jacobite Steam Train (Harry Potter\'s Hogwarts Express), and gateway to some of Scotland\'s most dramatic scenery.',
+        timezoneFacts: 'Same timezone as London. Ben Nevis summit can be 10°C colder than Fort William.',
+        bestTimeToVisit: 'May-September for climbing and hiking. Jacobite train runs April-October. Skiing winter.',
+        businessHours: 'Jacobite train departs 10:15 AM. Mountain gondola 10 AM to 5 PM.',
+        timeDifference: 'Fort William is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Book Jacobite Steam Train weeks ahead! Ben Nevis climb takes 7-9 hours. Glenfinnan Viaduct is Harry Potter bridge. Bring waterproofs!',
+        transportation: 'No airport - Inverness 1.5 hr. Fort William Station (scenic route). 5 hr from Glasgow.',
+        emergencyNumbers: 'Emergency: 999. Mountain Rescue available. NHS Scotland: 111.',
+        publicHolidays: 'UK bank holidays plus Scottish holidays. Mountain festivals.'
+      }
+    }
+  },
+  { slug: 'swansea', city: 'Swansea', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.62, lng: -3.94, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.24M', metroPopulation: '0.3M', phoneCode: '+44 1792', language: 'English, Welsh',
+      climate: 'Oceanic with mild summers (17-20°C) and mild winters (4-9°C). Coastal, wet.',
+      attractions: ['Gower Peninsula', 'Mumbles', 'Swansea Bay', 'Dylan Thomas Centre', 'National Waterfront Museum', 'LC Swansea', 'Rhossili Bay', 'Swansea Market', 'Plantasia', 'Three Cliffs Bay'],
+      demographics: 'Wales\' second city. Dylan Thomas\' birthplace. Gateway to UK\'s first AONB.',
+      seoContent: {
+        intro: 'Swansea (Abertawe), Wales\' second city, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Birthplace of Dylan Thomas, gateway to the stunning Gower Peninsula (UK\'s first Area of Outstanding Natural Beauty), and home to some of Britain\'s best beaches.',
+        timezoneFacts: 'Same timezone as London. Swansea was once the world\'s copper capital.',
+        bestTimeToVisit: 'May-September for beaches. Dylan Thomas Festival (October-November).',
+        businessHours: 'Swansea Market 8 AM to 5 PM (closed Sun). Mumbles restaurants until late.',
+        timeDifference: 'Swansea is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Gower Peninsula essential - Rhossili voted best UK beach! Mumbles for ice cream. Swansea Market for cockles and laverbread.',
+        transportation: 'No airport - Cardiff 1 hr. Swansea Station. 3 hr from London Paddington.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Wales: 111.',
+        publicHolidays: 'UK bank holidays. Dylan Thomas Festival (October-November).'
+      }
+    }
+  },
+  { slug: 'snowdonia', city: 'Snowdonia', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.07, lng: -4.08, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.03M', metroPopulation: '0.03M', phoneCode: '+44 1766', language: 'English, Welsh',
+      climate: 'Mountain climate with cool summers (12-17°C) and cold winters (0-6°C). Very wet, unpredictable.',
+      attractions: ['Mount Snowdon', 'Snowdon Mountain Railway', 'Zip World', 'Portmeirion', 'Blaenau Ffestiniog', 'Betws-y-Coed', 'Llanberis', 'Harlech Castle', 'Dolgellau', 'Cader Idris'],
+      demographics: 'Wales\' highest mountain. National Park. Slate mining heritage. Adventure sports capital.',
+      seoContent: {
+        intro: 'Snowdonia (Eryri), Wales\' mountain kingdom, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. Home to Wales\' highest peak Mount Snowdon (1,085m), Europe\'s longest zip line, and the whimsical Italian village of Portmeirion.',
+        timezoneFacts: 'Same timezone as London. Snowdon summit can be 10°C colder than the base.',
+        bestTimeToVisit: 'May-September for hiking. Mountain Railway runs March-October. Winter challenging.',
+        businessHours: 'Snowdon Railway from 9 AM (weather dependent). Zip World sessions booked.',
+        timeDifference: 'Snowdonia is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Snowdon Railway or hike (6 hrs return). Zip World amazing! Portmeirion where The Prisoner filmed. Welsh language dominant here.',
+        transportation: 'No airport - Manchester 2 hr. Llanberis for Snowdon. Betws-y-Coed Station.',
+        emergencyNumbers: 'Emergency: 999. Mountain Rescue available. NHS Wales: 111.',
+        publicHolidays: 'UK bank holidays. Snowdon Race (July).'
+      }
+    }
+  },
+  { slug: 'conwy', city: 'Conwy', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.28, lng: -3.83, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.01M', metroPopulation: '0.03M', phoneCode: '+44 1492', language: 'English, Welsh',
+      climate: 'Oceanic with mild summers (16-19°C) and mild winters (4-8°C). North Wales coast.',
+      attractions: ['Conwy Castle', 'Town Walls', 'Smallest House in Britain', 'Conwy Suspension Bridge', 'Plas Mawr', 'Aberconwy House', 'RSPB Conwy', 'Conwy Quay', 'Bodnant Garden', 'Great Orme nearby'],
+      demographics: 'UNESCO World Heritage castle and walls. Complete medieval walled town. Gateway to Snowdonia.',
+      seoContent: {
+        intro: 'Conwy, the walled wonder, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This UNESCO World Heritage town features one of Britain\'s finest medieval castles, complete town walls you can walk, and the Smallest House in Britain.',
+        timezoneFacts: 'Same timezone as London. Conwy Castle took just 4 years to build (1283-1287).',
+        bestTimeToVisit: 'April-October for best weather. Food festivals. Christmas events.',
+        businessHours: 'Conwy Castle 9:30 AM to 5 PM. Smallest House 10 AM to 5 PM.',
+        timeDifference: 'Conwy is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Walk complete town walls! Smallest House genuinely tiny. Suspension bridge by Telford. Combine with Llandudno (4 miles).',
+        transportation: 'No airport - Manchester 1.5 hr. Conwy Station. 3 hr from London Euston.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Wales: 111.',
+        publicHolidays: 'UK bank holidays. Conwy Feast. Honey Fair (September).'
+      }
+    }
+  },
+  { slug: 'llandudno', city: 'Llandudno', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.32, lng: -3.83, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound', currencySymbol: '£', population: '0.02M', metroPopulation: '0.06M', phoneCode: '+44 1492', language: 'English, Welsh',
+      climate: 'Oceanic with mild summers (16-19°C) and mild winters (4-8°C). North Wales coast, sheltered.',
+      attractions: ['Great Orme', 'Great Orme Tramway', 'Llandudno Pier', 'Happy Valley', 'Llandudno Promenade', 'Alice in Wonderland Trail', 'St Tudno\'s Church', 'West Shore', 'Great Orme Mines', 'Mostyn Gallery'],
+      demographics: 'Queen of Welsh Resorts. Victorian seaside elegance. Alice in Wonderland connection.',
+      seoContent: {
+        intro: 'Llandudno, the Queen of Welsh Resorts, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This elegant Victorian seaside town curves between two headlands, featuring Britain\'s longest pier, a tramway to the Great Orme, and a connection to Alice in Wonderland.',
+        timezoneFacts: 'Same timezone as London. Alice Liddell (the real Alice in Wonderland) holidayed here.',
+        bestTimeToVisit: 'May-September for beach weather. Victorian Extravaganza (May). Christmas lights.',
+        businessHours: 'Great Orme Tramway 10 AM to 5 PM (seasonal). Pier attractions variable.',
+        timeDifference: 'Llandudno is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'Great Orme tramway Britain\'s only cable-hauled street tram! Alice Trail free. Victorian architecture pristine. Great Orme Bronze Age mines.',
+        transportation: 'No airport - Manchester 1.5 hr. Llandudno Station. 3 hr from London Euston.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 101. NHS Wales: 111.',
+        publicHolidays: 'UK bank holidays. Victorian Extravaganza (May).'
+      }
+    }
+  },
+  { slug: 'jersey', city: 'Jersey', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'JE', lat: 49.21, lng: -2.13, tier: 3, continent: 'europe',
+    info: {
+      currency: 'British Pound/Jersey Pound', currencySymbol: '£', population: '0.1M', metroPopulation: '0.1M', phoneCode: '+44 1534', language: 'English, French, Jèrriais',
+      climate: 'Oceanic with mild summers (17-21°C) and mild winters (5-10°C). Channel Islands, sunny.',
+      attractions: ['Jersey War Tunnels', 'Mont Orgueil Castle', 'Elizabeth Castle', 'St Helier', 'Jersey Zoo', 'La Hougue Bie', 'Corbière Lighthouse', 'St Brelade\'s Bay', 'Durrell Wildlife', 'Liberation Square'],
+      demographics: 'Crown dependency in Channel Islands. Not part of UK proper. Tax haven. German Occupation history.',
+      seoContent: {
+        intro: 'Jersey, the largest Channel Island, operates on GMT/UTC+0 in winter and BST/UTC+1 in summer. This British Crown Dependency (not technically part of the UK) combines French and British culture, German Occupation history, beautiful beaches, and Gerald Durrell\'s famous zoo.',
+        timezoneFacts: 'Same timezone as London. Jersey is closer to France than to England.',
+        bestTimeToVisit: 'May-September for beach weather. Liberation Day (May 9). Battle of Flowers (August).',
+        businessHours: 'War Tunnels 10 AM to 5 PM. Jersey Zoo 9:30 AM to 5 PM.',
+        timeDifference: 'Jersey is UTC+0 (winter) / UTC+1 (summer). When noon: NYC 7 AM, Dubai 4 PM.',
+        daylightSaving: 'UK observes BST from last Sunday of March to last Sunday of October.',
+        localTips: 'War Tunnels moving WWII experience. Durrell Wildlife (Jersey Zoo) conservation focused. French influence - try seafood! Jersey milk and potatoes famous.',
+        transportation: 'Jersey Airport (JER) with UK flights. Ferry from Poole/Portsmouth. Island bus network.',
+        emergencyNumbers: 'Emergency: 999. Police non-emergency: 612612. Hospital: 01534 442000.',
+        publicHolidays: 'UK bank holidays plus Liberation Day (May 9). Battle of Flowers (August).'
+      }
+    }
+  },
   
   // Germany - Additional Cities
   { slug: 'stuttgart', city: 'Stuttgart', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 48.78, lng: 9.18, tier: 2, continent: 'europe',
