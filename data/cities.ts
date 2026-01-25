@@ -6239,6 +6239,144 @@ export const cities: City[] = [
     }
   },
   
+  // Germany - Additional Tourist Cities
+  { slug: 'heidelberg', city: 'Heidelberg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 49.40, lng: 8.69, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.16M', metroPopulation: '0.6M', phoneCode: '+49 6221', language: 'German',
+      climate: 'Temperate with warm summers (18-26°C) and mild winters (0-6°C). One of Germany\'s warmest cities.',
+      attractions: ['Heidelberg Castle', 'Old Town', 'Old Bridge', 'Philosopher\'s Walk', 'University (oldest in Germany)', 'Student Prison', 'Church of the Holy Spirit', 'Great Tun', 'Neckar River', 'Königstuhl'],
+      demographics: 'Germany\'s most romantic city. Oldest university (1386). Inspired poets and painters. Undamaged in WWII.'
+    }
+  },
+  { slug: 'freiburg', city: 'Freiburg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 47.99, lng: 7.85, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.23M', metroPopulation: '0.65M', phoneCode: '+49 761', language: 'German, Alemannic',
+      climate: 'Temperate with warm summers (18-26°C) and mild winters (0-6°C). Germany\'s sunniest city.',
+      attractions: ['Freiburg Minster', 'Altstadt', 'Bächle (water channels)', 'Schlossberg', 'Münsterplatz Market', 'Augustinermuseum', 'Black Forest gateway', 'Schauinsland', 'Old Town Gates', 'University'],
+      demographics: 'Black Forest gateway. Germany\'s eco-capital. Sunniest German city. Medieval Bächle waterways. University town.'
+    }
+  },
+  { slug: 'lubeck', city: 'Lübeck', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 53.87, lng: 10.69, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.22M', metroPopulation: '0.35M', phoneCode: '+49 451', language: 'German, Low German',
+      climate: 'Oceanic with cool summers (16-21°C) and cold winters (-1 to 4°C). Baltic Sea influence.',
+      attractions: ['Holstentor', 'Old Town (UNESCO)', 'Marienkirche', 'Town Hall', 'Buddenbrookhaus', 'Marzipan shops', 'St. Annen Museum', 'Travemünde beach', 'Salt warehouses', 'Hospital of the Holy Spirit'],
+      demographics: 'UNESCO Hanseatic queen. Marzipan capital. Thomas Mann\'s city. Medieval brick Gothic. Baltic gateway.'
+    }
+  },
+  { slug: 'rothenburg-ob-der-tauber', city: 'Rothenburg ob der Tauber', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 49.38, lng: 10.18, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+49 9861', language: 'German, Franconian',
+      climate: 'Continental with warm summers (17-25°C) and cold winters (-3 to 4°C). Can be cold and foggy.',
+      attractions: ['Medieval Town Walls', 'Plönlein', 'Town Hall', 'St. Jakob\'s Church', 'Crime Museum', 'Christmas Museum', 'Night Watchman Tour', 'Käthe Wohlfahrt', 'Romantic Road', 'Burggarten'],
+      demographics: 'Germany\'s best-preserved medieval town. Romantic Road highlight. Christmas year-round. Fairytale Germany.'
+    }
+  },
+  { slug: 'bamberg', city: 'Bamberg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 49.89, lng: 10.89, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.08M', metroPopulation: '0.22M', phoneCode: '+49 951', language: 'German, Franconian',
+      climate: 'Continental with warm summers (17-25°C) and cold winters (-2 to 4°C). River valley climate.',
+      attractions: ['UNESCO Old Town', 'Bamberg Cathedral', 'Old Town Hall (on bridge)', 'Little Venice', 'Smoked Beer (Rauchbier)', 'New Residence', 'Rose Garden', 'Altenburg Castle', 'St. Michael\'s', 'Breweries'],
+      demographics: 'UNESCO World Heritage. Built on seven hills like Rome. Unique smoked beer. Old Town Hall on island.'
+    }
+  },
+  { slug: 'regensburg', city: 'Regensburg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 49.02, lng: 12.10, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.15M', metroPopulation: '0.33M', phoneCode: '+49 941', language: 'German, Bavarian',
+      climate: 'Continental with warm summers (17-25°C) and cold winters (-3 to 4°C). Danube valley.',
+      attractions: ['UNESCO Old Town', 'Stone Bridge', 'Regensburg Cathedral', 'Walhalla', 'Historic Sausage Kitchen', 'Thurn und Taxis Palace', 'Document Neupfarrplatz', 'Danube River', 'Old Town Hall', 'Porta Praetoria'],
+      demographics: 'UNESCO medieval trading city. Oldest stone bridge in Germany. Walhalla nearby. Historic sausage kitchen since 1135.'
+    }
+  },
+  { slug: 'wurzburg', city: 'Würzburg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 49.79, lng: 9.95, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.13M', metroPopulation: '0.29M', phoneCode: '+49 931', language: 'German, Franconian',
+      climate: 'Continental with warm summers (18-26°C) and cold winters (-2 to 5°C). Wine-friendly climate.',
+      attractions: ['Würzburg Residence (UNESCO)', 'Marienberg Fortress', 'Old Main Bridge', 'Käppele', 'Franconian Wine', 'Dom St. Kilian', 'Röntgen Museum', 'Romantic Road start', 'Vineyards', 'Neumünster'],
+      demographics: 'UNESCO Baroque palace. Romantic Road start. Franconian wine capital. Rebuilt after WWII. Tiepolo ceiling.'
+    }
+  },
+  { slug: 'trier', city: 'Trier', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 49.76, lng: 6.64, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.11M', metroPopulation: '0.27M', phoneCode: '+49 651', language: 'German',
+      climate: 'Oceanic with mild summers (17-24°C) and cool winters (0-6°C). Moselle valley wine climate.',
+      attractions: ['Porta Nigra (UNESCO)', 'Roman Baths', 'Cathedral', 'Basilica of Constantine', 'Karl Marx House', 'Amphitheater', 'Imperial Baths', 'Moselle wine', 'Main Market', 'Electoral Palace'],
+      demographics: 'Germany\'s oldest city (2,000+ years). UNESCO Roman monuments. Karl Marx birthplace. Moselle wine region.'
+    }
+  },
+  { slug: 'aachen', city: 'Aachen', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 50.78, lng: 6.08, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.25M', metroPopulation: '0.55M', phoneCode: '+49 241', language: 'German',
+      climate: 'Oceanic with mild summers (16-22°C) and cool winters (1-6°C). High rainfall, mild winters.',
+      attractions: ['Aachen Cathedral (UNESCO)', 'Charlemagne\'s Throne', 'Town Hall', 'Hot Springs', 'Elisenbrunnen', 'Couven Museum', 'Carolus Thermen spa', 'Printen cookies', 'Three-country point', 'RWTH University'],
+      demographics: 'Charlemagne\'s capital. UNESCO cathedral (first German site). Hot springs since Roman times. Printen cookies.'
+    }
+  },
+  { slug: 'potsdam', city: 'Potsdam', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 52.40, lng: 13.07, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.18M', metroPopulation: '0.18M', phoneCode: '+49 331', language: 'German',
+      climate: 'Continental with warm summers (18-24°C) and cold winters (-2 to 4°C). Similar to Berlin.',
+      attractions: ['Sanssouci Palace (UNESCO)', 'Sanssouci Park', 'New Palace', 'Cecilienhof', 'Dutch Quarter', 'Babelsberg Studios', 'Glienicke Bridge', 'Potsdam Conference site', 'Chinese House', 'Orangery Palace'],
+      demographics: 'UNESCO Prussian palaces. Frederick the Great\'s Sanssouci. Potsdam Conference (1945). Babelsberg film studios.'
+    }
+  },
+  { slug: 'konstanz', city: 'Konstanz', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 47.66, lng: 9.18, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.08M', metroPopulation: '0.15M', phoneCode: '+49 7531', language: 'German, Alemannic',
+      climate: 'Temperate lake climate with mild summers (18-24°C) and cool winters (0-5°C). Lake Constance moderates.',
+      attractions: ['Lake Constance (Bodensee)', 'Konstanz Cathedral', 'Old Town', 'Imperia statue', 'Council Building', 'Mainau Island', 'Niederburg', 'Swiss border', 'Seerhein', 'Harbor'],
+      demographics: 'Lake Constance\'s largest city. Swiss border. Council of Constance (1414-1418). Flower island Mainau.'
+    }
+  },
+  { slug: 'baden-baden', city: 'Baden-Baden', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 48.76, lng: 8.24, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.06M', metroPopulation: '0.08M', phoneCode: '+49 7221', language: 'German',
+      climate: 'Temperate with warm summers (18-26°C) and mild winters (0-6°C). Sheltered Black Forest valley.',
+      attractions: ['Friedrichsbad', 'Caracalla Spa', 'Kurhaus & Casino', 'Lichtentaler Allee', 'Trinkhalle', 'Black Forest', 'Festspielhaus', 'Museum Frieder Burda', 'Old Town', 'Roman Bath Ruins'],
+      demographics: 'Europe\'s summer capital. Historic spa town. World-famous casino. Black Forest gateway. Royal retreat.'
+    }
+  },
+  { slug: 'garmisch-partenkirchen', city: 'Garmisch-Partenkirchen', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 47.50, lng: 11.10, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.03M', metroPopulation: '0.03M', phoneCode: '+49 8821', language: 'German, Bavarian',
+      climate: 'Alpine with cool summers (14-23°C) and cold snowy winters (-5 to 3°C). Heavy snowfall.',
+      attractions: ['Zugspitze', 'Partnachklamm', 'Olympic Ski Stadium', 'Eibsee', 'Historic town centers', 'Cable cars', 'Skiing', 'Hiking', 'Painted houses', 'Alpspitze'],
+      demographics: 'Zugspitze (Germany\'s highest peak). 1936 Winter Olympics. Alpine resort. Two towns merged. Bavarian Alps gateway.'
+    }
+  },
+  { slug: 'marburg', city: 'Marburg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 50.81, lng: 8.77, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.08M', metroPopulation: '0.12M', phoneCode: '+49 6421', language: 'German',
+      climate: 'Oceanic with mild summers (16-23°C) and cool winters (0-5°C). Lahn valley.',
+      attractions: ['Landgrave\'s Castle', 'Old Town', 'St. Elizabeth\'s Church', 'Old University', 'Market Square', 'Lahn River', 'Grimm Brothers\' sites', 'Botanical Garden', 'Kaiser Wilhelm Tower', 'Stairs and alleys'],
+      demographics: 'Brothers Grimm university. Fairytale old town. First Protestant university. Gothic St. Elizabeth\'s. Car-free center.'
+    }
+  },
+  { slug: 'weimar', city: 'Weimar', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 50.98, lng: 11.33, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.07M', metroPopulation: '0.07M', phoneCode: '+49 3643', language: 'German',
+      climate: 'Continental with warm summers (17-24°C) and cold winters (-2 to 4°C). Thuringian climate.',
+      attractions: ['Goethe House (UNESCO)', 'Schiller House', 'Bauhaus Museum', 'Duchess Anna Amalia Library', 'Park an der Ilm', 'Buchenwald Memorial', 'City Palace', 'Herder Church', 'Belvedere Palace', 'German National Theatre'],
+      demographics: 'UNESCO Classical Weimar. Goethe and Schiller. Bauhaus birthplace. Weimar Republic. Buchenwald nearby.'
+    }
+  },
+  { slug: 'quedlinburg', city: 'Quedlinburg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 51.79, lng: 11.15, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.02M', metroPopulation: '0.02M', phoneCode: '+49 3946', language: 'German',
+      climate: 'Continental with warm summers (17-24°C) and cold winters (-2 to 4°C). Harz foothills.',
+      attractions: ['UNESCO Old Town', 'Castle Hill', 'Collegiate Church', '1,300 half-timbered houses', 'Market Square', 'Finkenherd', 'Lyonel Feininger Gallery', 'Münzenberg', 'Town Hall', 'Harz gateway'],
+      demographics: 'UNESCO half-timbered town. 1,300+ historic houses. Birthplace of Germany. Harz mountains gateway. Medieval time capsule.'
+    }
+  },
+  { slug: 'passau', city: 'Passau', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 48.57, lng: 13.46, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.05M', metroPopulation: '0.12M', phoneCode: '+49 851', language: 'German, Bavarian',
+      climate: 'Continental with warm summers (17-25°C) and cold winters (-3 to 4°C). River confluence.',
+      attractions: ['Three Rivers Point', 'St. Stephen\'s Cathedral', 'World\'s largest cathedral organ', 'Veste Oberhaus', 'Old Town', 'Danube River cruises', 'Glass Museum', 'Inn River', 'Ilz River', 'Austrian border'],
+      demographics: 'City of Three Rivers (Danube, Inn, Ilz). World\'s largest cathedral organ. Danube cruise hub. Austrian border.'
+    }
+  },
+  
   // France - Additional Cities
   { slug: 'toulouse', city: 'Toulouse', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.60, lng: 1.44, tier: 2, continent: 'europe',
     info: {
@@ -6250,326 +6388,1774 @@ export const cities: City[] = [
   },
   { slug: 'bordeaux', city: 'Bordeaux', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 44.84, lng: -0.58, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '260K', phoneCode: '+33 5', language: 'French',
+      currency: 'Euro', currencySymbol: '€', population: '0.26M', metroPopulation: '1.2M', phoneCode: '+33 5', language: 'French',
       climate: 'Oceanic with mild winters (5-12°C) and warm summers (20-28°C). Moderate rainfall year-round.',
-      attractions: ['Place de la Bourse', 'Cité du Vin', 'Saint-André Cathedral', 'Miroir d\'Eau', 'Grand Théâtre'],
-      demographics: 'UNESCO World Heritage City, world capital of wine. Major port on the Garonne River with 18th-century architecture.'
+      attractions: ['Place de la Bourse', 'Cité du Vin', 'Saint-André Cathedral', 'Miroir d\'Eau', 'Grand Théâtre', 'Rue Sainte-Catherine', 'Pont de Pierre', 'Darwin Ecosystem', 'Saint-Émilion', 'Médoc Wine Route'],
+      demographics: 'UNESCO World Heritage city. World capital of wine. 18th-century golden stone architecture.',
+      seoContent: {
+        intro: 'Bordeaux, world capital of wine, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO World Heritage city features stunning 18th-century limestone architecture, the world\'s largest urban wine region, and the famous Miroir d\'Eau water mirror.',
+        timezoneFacts: 'Same timezone as Paris. Bordeaux produces over 700 million bottles of wine annually.',
+        bestTimeToVisit: 'May-October for best weather. Wine harvest September. Bordeaux Wine Festival (June, biennial).',
+        businessHours: 'Shops 10 AM to 7 PM. Cité du Vin 10 AM to 6 PM. Wine tastings throughout day.',
+        timeDifference: 'Bordeaux is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM, Dubai 3 PM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Saint-Émilion day trip essential! Miroir d\'Eau best at sunset. Cité du Vin wine museum world-class. Médoc châteaux book ahead.',
+        transportation: 'Bordeaux-Mérignac Airport (BOD) 12km. Bordeaux Saint-Jean TGV. 2 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Bordeaux Wine Festival (June). Vendanges (September).'
+      }
     }
   },
   { slug: 'strasbourg', city: 'Strasbourg', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.57, lng: 7.75, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '290K', phoneCode: '+33 3', language: 'French, Alsatian',
-      climate: 'Oceanic with warm summers (19-25°C) and cold winters (0-5°C). Moderate rainfall year-round.',
-      attractions: ['Strasbourg Cathedral', 'Petite France', 'European Parliament', 'Palais Rohan', 'Covered Bridges'],
-      demographics: 'Capital of Alsace, official seat of European Parliament. UNESCO World Heritage old town, blend of French and German culture.'
+      currency: 'Euro', currencySymbol: '€', population: '0.29M', metroPopulation: '0.8M', phoneCode: '+33 3', language: 'French, Alsatian',
+      climate: 'Continental with warm summers (19-25°C) and cold winters (0-5°C). Can be very cold in winter.',
+      attractions: ['Strasbourg Cathedral', 'Petite France', 'European Parliament', 'Palais Rohan', 'Covered Bridges', 'Barrage Vauban', 'Maison Kammerzell', 'Orangerie Park', 'Christmas Markets', 'Rhine River'],
+      demographics: 'Capital of Alsace. European Parliament seat. UNESCO old town. Franco-German culture.',
+      seoContent: {
+        intro: 'Strasbourg, Capital of Europe, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city hosts the European Parliament, features a stunning Gothic cathedral, and holds Europe\'s oldest Christmas market (since 1570).',
+        timezoneFacts: 'Same timezone as Paris and Berlin. Strasbourg has alternated between French and German rule.',
+        bestTimeToVisit: 'May-September for warm weather. Christmas Market (late Nov-Dec) magical but crowded.',
+        businessHours: 'Shops 10 AM to 7 PM. Cathedral 7 AM to 7 PM. European Parliament tours by appointment.',
+        timeDifference: 'Strasbourg is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Christmas Market is Europe\'s oldest! Try tarte flambée and choucroute. Petite France most photogenic. Cathedral clock shows at 12:30 PM.',
+        transportation: 'Strasbourg Airport (SXB) 15km. Strasbourg TGV station. 1 hr 50 min from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Marché de Noël (Nov-Dec).'
+      }
     }
   },
   { slug: 'nantes', city: 'Nantes', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 47.22, lng: -1.55, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '320K', phoneCode: '+33 2', language: 'French',
+      currency: 'Euro', currencySymbol: '€', population: '0.32M', metroPopulation: '1.0M', phoneCode: '+33 2', language: 'French',
       climate: 'Oceanic with mild summers (18-24°C) and cool winters (4-10°C). Frequent rainfall, Atlantic influence.',
-      attractions: ['Les Machines de l\'île', 'Château des Ducs', 'Passage Pommeraye', 'Jardin des Plantes', 'Île de Versailles'],
-      demographics: 'Sixth-largest city in France, former Brittany capital. Creative hub famous for giant mechanical elephant, birthplace of Jules Verne.'
+      attractions: ['Les Machines de l\'île', 'Château des Ducs', 'Passage Pommeraye', 'Jardin des Plantes', 'Île de Versailles', 'Cathedral', 'Lieu Unique', 'Mémorial de l\'Abolition', 'Trentemoult', 'Le Voyage à Nantes'],
+      demographics: 'Birthplace of Jules Verne. Giant mechanical elephant. Creative arts hub. Former Brittany capital.',
+      seoContent: {
+        intro: 'Nantes, city of Jules Verne, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This creative city is famous for Les Machines de l\'île with its giant mechanical elephant, birthplace of Jules Verne, and voted France\'s most livable city.',
+        timezoneFacts: 'Same timezone as Paris. Nantes was historically capital of Brittany.',
+        bestTimeToVisit: 'May-September for best weather. Le Voyage à Nantes art trail (summer). Machines year-round.',
+        businessHours: 'Shops 10 AM to 7 PM. Machines de l\'île 10 AM to 6 PM (varies seasonally).',
+        timeDifference: 'Nantes is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Ride the Giant Elephant - book ahead! Passage Pommeraye beautiful arcade. Follow green line for Le Voyage à Nantes trail.',
+        transportation: 'Nantes Atlantique Airport (NTE) 10km. Nantes TGV station. 2.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Le Voyage à Nantes (July-August).'
+      }
     }
   },
   { slug: 'montpellier', city: 'Montpellier', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.61, lng: 3.88, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '295K', phoneCode: '+33 4', language: 'French',
+      currency: 'Euro', currencySymbol: '€', population: '0.3M', metroPopulation: '0.6M', phoneCode: '+33 4', language: 'French',
       climate: 'Mediterranean with hot dry summers (26-30°C) and mild winters (6-12°C). 300+ sunny days.',
-      attractions: ['Place de la Comédie', 'Fabre Museum', 'Promenade du Peyrou', 'St-Pierre Cathedral', 'Antigone District'],
-      demographics: 'Fastest-growing French city, major university center. Young, dynamic atmosphere near Mediterranean beaches.'
+      attractions: ['Place de la Comédie', 'Fabre Museum', 'Promenade du Peyrou', 'St-Pierre Cathedral', 'Antigone District', 'Écusson (Old Town)', 'Arc de Triomphe', 'Jardin des Plantes', 'Beaches', 'Palavas-les-Flots'],
+      demographics: 'Fastest-growing French city. Major university since 1220. Young, dynamic. Near Mediterranean beaches.',
+      seoContent: {
+        intro: 'Montpellier, France\'s fastest-growing city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This dynamic Mediterranean university city combines medieval charm with bold modern architecture, 300 days of sunshine, and nearby beaches.',
+        timezoneFacts: 'Same timezone as Paris. Montpellier has one of Europe\'s oldest universities (1220).',
+        bestTimeToVisit: 'April-October for best weather. Summer for beaches. Les Estivales wine festival (Friday evenings).',
+        businessHours: 'Shops 10 AM to 7 PM. Place de la Comédie cafés open late.',
+        timeDifference: 'Montpellier is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Écusson medieval center car-free. Beaches 15 min by tram. Antigone district bold postmodern. Les Estivales Friday evenings in summer.',
+        transportation: 'Montpellier Airport (MPL) 8km. Montpellier Saint-Roch TGV. 3.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Les Estivales (summer).'
+      }
     }
   },
   { slug: 'lille', city: 'Lille', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 50.63, lng: 3.06, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '235K', phoneCode: '+33 3', language: 'French, Picard',
+      currency: 'Euro', currencySymbol: '€', population: '0.24M', metroPopulation: '1.2M', phoneCode: '+33 3', language: 'French, Picard',
       climate: 'Oceanic with cool summers (16-22°C) and cold winters (2-7°C). Frequent rain and overcast skies.',
-      attractions: ['Palais des Beaux-Arts', 'Grand Place', 'Vieille Bourse', 'Citadelle', 'Braderie de Lille'],
-      demographics: 'Capital of French Flanders, major Eurostar hub. Flemish architecture, vibrant student life, famous flea market (Braderie).'
+      attractions: ['Palais des Beaux-Arts', 'Grand Place', 'Vieille Bourse', 'Citadelle', 'Braderie de Lille', 'Hospice Comtesse', 'Rue de la Monnaie', 'Wazemmes Market', 'La Piscine (Roubaix)', 'Beffroi'],
+      demographics: 'Capital of French Flanders. Major Eurostar hub. Flemish heritage. Europe\'s largest flea market.',
+      seoContent: {
+        intro: 'Lille, capital of French Flanders, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This vibrant Eurostar-connected city blends French and Flemish culture, hosts Europe\'s largest flea market (Braderie), and boasts excellent museums.',
+        timezoneFacts: 'Same timezone as Paris and Brussels. Lille is closer to Brussels and London than to Marseille.',
+        bestTimeToVisit: 'May-September for best weather. Braderie de Lille (first weekend September) unmissable.',
+        businessHours: 'Shops 10 AM to 7 PM. Grand Place restaurants until late. Braderie 24 hours!',
+        timeDifference: 'Lille is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Braderie (Sept) is Europe\'s largest flea market - arrive early! Try moules-frites and welsh. La Piscine museum in Roubaix stunning.',
+        transportation: 'Lille Airport (LIL) 15km. Lille-Flandres & Lille-Europe stations. Eurostar to London 1.5 hr.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Braderie de Lille (September).'
+      }
     }
   },
   { slug: 'rennes', city: 'Rennes', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.11, lng: -1.68, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '220K', phoneCode: '+33 2', language: 'French, Breton',
+      currency: 'Euro', currencySymbol: '€', population: '0.22M', metroPopulation: '0.75M', phoneCode: '+33 2', language: 'French, Breton',
       climate: 'Oceanic with mild summers (17-23°C) and cool winters (4-9°C). Frequent rain year-round.',
-      attractions: ['Parlement de Bretagne', 'Place des Lices', 'Thabor Garden', 'Portes Mordelaises', 'Les Champs Libres'],
-      demographics: 'Capital of Brittany, major tech hub (French Silicon Valley). Young university city, gateway to Breton culture.'
+      attractions: ['Parlement de Bretagne', 'Place des Lices', 'Thabor Garden', 'Portes Mordelaises', 'Les Champs Libres', 'Cathedral', 'Rue Saint-Michel', 'Opéra', 'Place Sainte-Anne', 'Colombier Park'],
+      demographics: 'Capital of Brittany. French tech hub. Young university city. Gateway to Breton culture.',
+      seoContent: {
+        intro: 'Rennes, capital of Brittany, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This dynamic tech hub blends medieval timber-framed houses with innovation, hosts one of France\'s largest markets, and is gateway to Celtic Brittany.',
+        timezoneFacts: 'Same timezone as Paris. Rennes is the gateway to Breton Celtic culture.',
+        bestTimeToVisit: 'May-September for best weather. Saturday market at Place des Lices year-round.',
+        businessHours: 'Shops 10 AM to 7 PM. Saturday market 7 AM to 1 PM.',
+        timeDifference: 'Rennes is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Saturday market at Place des Lices is France\'s second-largest! Try galettes (Breton crêpes). Gateway to Mont Saint-Michel.',
+        transportation: 'No major airport - Nantes 1.5 hr. Rennes TGV station. 1.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Les Transmusicales (December).'
+      }
     }
   },
   { slug: 'reims', city: 'Reims', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 49.25, lng: 4.03, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '185K', phoneCode: '+33 3', language: 'French',
-      climate: 'Oceanic with warm summers (18-25°C) and cold winters (1-6°C). Moderate rainfall.',
-      attractions: ['Reims Cathedral (UNESCO)', 'Palais du Tau', 'Champagne Houses', 'Basilica of Saint-Remi', 'Place Drouet d\'Erlon'],
-      demographics: 'Coronation city of French kings, capital of Champagne. UNESCO cathedral, major champagne production (Veuve Clicquot, Taittinger).'
+      currency: 'Euro', currencySymbol: '€', population: '0.19M', metroPopulation: '0.3M', phoneCode: '+33 3', language: 'French',
+      climate: 'Oceanic/Continental with warm summers (18-25°C) and cold winters (1-6°C). Moderate rainfall.',
+      attractions: ['Reims Cathedral', 'Palais du Tau', 'Champagne Houses', 'Basilica of Saint-Remi', 'Place Drouet d\'Erlon', 'Veuve Clicquot', 'Taittinger', 'Pommery', 'Musée des Beaux-Arts', 'Carnegie Library'],
+      demographics: 'Coronation city of French kings. Capital of Champagne. UNESCO cathedral. Major champagne houses.',
+      seoContent: {
+        intro: 'Reims, Coronation City, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This city crowned 33 French kings in its UNESCO Gothic cathedral and is capital of Champagne, home to Veuve Clicquot and Taittinger.',
+        timezoneFacts: 'Same timezone as Paris. Reims Cathedral is where Joan of Arc crowned Charles VII.',
+        bestTimeToVisit: 'May-October for best weather. Champagne harvest September. Christmas market.',
+        businessHours: 'Champagne houses 10 AM to 6 PM (book ahead). Cathedral 7:30 AM to 7:30 PM.',
+        timeDifference: 'Reims is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Book champagne house tours ahead! Cathedral smiling angel famous. Palais du Tau has coronation treasures.',
+        transportation: 'No major airport - Paris CDG 1.5 hr. Reims TGV station. 45 min from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Habits de Lumière (December).'
+      }
     }
   },
   { slug: 'toulon', city: 'Toulon', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.12, lng: 5.93, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '175K', phoneCode: '+33 4', language: 'French, Provençal',
-      climate: 'Mediterranean with hot dry summers (26-30°C) and mild winters (8-13°C). Very sunny.',
-      attractions: ['Toulon Harbour', 'Mont Faron', 'National Naval Museum', 'Opera House', 'Provençal Market'],
-      demographics: 'France\'s main naval base on Mediterranean. Historic military port, gateway to Côte d\'Azur and Provence.'
+      currency: 'Euro', currencySymbol: '€', population: '0.18M', metroPopulation: '0.6M', phoneCode: '+33 4', language: 'French, Provençal',
+      climate: 'Mediterranean with hot dry summers (26-30°C) and mild winters (8-13°C). Very sunny, 300+ days.',
+      attractions: ['Toulon Harbour', 'Mont Faron', 'National Naval Museum', 'Opera House', 'Provençal Market', 'Old Town', 'Tour Royale', 'Plages du Mourillon', 'Cable Car', 'Îles d\'Hyères nearby'],
+      demographics: 'France\'s main naval base. Mediterranean port. Gateway to Côte d\'Azur and Provence. Rugby city.',
+      seoContent: {
+        intro: 'Toulon, France\'s naval capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Mediterranean port houses France\'s main naval fleet, features a beautiful harbor, and serves as gateway to the stunning Îles d\'Hyères.',
+        timezoneFacts: 'Same timezone as Paris. Toulon has been France\'s main naval base since Louis XIV.',
+        bestTimeToVisit: 'May-October for best weather. Avoid August crowds.',
+        businessHours: 'Provençal market 8 AM to 12:30 PM. Cable car to Mont Faron 9 AM to 6 PM.',
+        timeDifference: 'Toulon is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Mont Faron cable car for views! Ferry to Îles d\'Hyères. Mourillon beaches best. Naval Museum impressive.',
+        transportation: 'Toulon-Hyères Airport (TLN) 20km. Toulon station. 4 hr from Paris by TGV.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays.'
+      }
     }
   },
   { slug: 'grenoble', city: 'Grenoble', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 45.19, lng: 5.72, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '160K', phoneCode: '+33 4', language: 'French',
+      currency: 'Euro', currencySymbol: '€', population: '0.16M', metroPopulation: '0.7M', phoneCode: '+33 4', language: 'French',
       climate: 'Semi-continental with warm summers (20-28°C) and cold winters (-1 to 6°C). Alpine valley, can be foggy.',
-      attractions: ['Bastille Fortress', 'Grenoble-Bastille Cable Car', 'Musée de Grenoble', 'Place Grenette', 'Chartreuse Mountains'],
-      demographics: 'Capital of French Alps, major research and tech hub. Gateway to ski resorts, hosted 1968 Winter Olympics.'
+      attractions: ['Bastille Fortress', 'Grenoble-Bastille Cable Car', 'Musée de Grenoble', 'Place Grenette', 'Chartreuse Mountains', 'Belledonne Range', 'Old Town', 'Jardin de Ville', 'Musée Dauphinois', 'Fort de la Bastille'],
+      demographics: 'Capital of French Alps. Major research hub. 1968 Winter Olympics. Gateway to ski resorts.',
+      seoContent: {
+        intro: 'Grenoble, capital of the French Alps, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This mountain-ringed city hosted the 1968 Winter Olympics, is a major research hub, and offers year-round access to world-class skiing and hiking.',
+        timezoneFacts: 'Same timezone as Paris. Grenoble is surrounded by three mountain ranges.',
+        bestTimeToVisit: 'December-April for skiing. June-September for hiking. Summer can be hot in valley.',
+        businessHours: 'Shops 10 AM to 7 PM. Cable car 9 AM to midnight (summer). Ski resorts 9 AM to 5 PM.',
+        timeDifference: 'Grenoble is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Bastille cable car (bubbles) iconic! Alpe d\'Huez, Les Deux Alpes nearby. Valley foggy while mountains sunny.',
+        transportation: 'Grenoble-Alpes-Isère Airport (GNB) 40km. Lyon (LYS) 1 hr. Grenoble station. 3 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Mountain rescue: 112.',
+        publicHolidays: 'French national holidays. Ski season December-April.'
+      }
     }
   },
   { slug: 'dijon', city: 'Dijon', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 47.32, lng: 5.04, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '160K', phoneCode: '+33 3', language: 'French',
-      climate: 'Oceanic/Continental with warm summers (19-26°C) and cold winters (0-6°C). Four distinct seasons.',
-      attractions: ['Palace of the Dukes', 'Notre-Dame de Dijon', 'Owl Trail', 'Musée des Beaux-Arts', 'Burgundy vineyards'],
-      demographics: 'Capital of Burgundy, famous for mustard and wine. Historic Dukes\' palace, gateway to Côte d\'Or vineyards.'
+      currency: 'Euro', currencySymbol: '€', population: '0.16M', metroPopulation: '0.4M', phoneCode: '+33 3', language: 'French',
+      climate: 'Continental with warm summers (19-26°C) and cold winters (0-6°C). Four distinct seasons.',
+      attractions: ['Palace of the Dukes', 'Notre-Dame de Dijon', 'Owl Trail', 'Musée des Beaux-Arts', 'Burgundy Vineyards', 'Halles Market', 'Chouette Owl', 'Parc de l\'Arquebuse', 'Chartreuse de Champmol', 'Cité de la Gastronomie'],
+      demographics: 'Capital of Burgundy. Famous for mustard and wine. Historic Dukes\' palace. UNESCO vineyard gateway.',
+      seoContent: {
+        intro: 'Dijon, capital of Burgundy, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This gastronomic city is famous for mustard, serves as gateway to UNESCO Burgundy vineyards, and features a stunning Dukes\' Palace now housing a world-class art museum.',
+        timezoneFacts: 'Same timezone as Paris. Dijon mustard has been made here since the 13th century.',
+        bestTimeToVisit: 'May-October for best weather. Wine harvest September. Gastronomic Fair (November).',
+        businessHours: 'Shops 10 AM to 7 PM. Halles Market Tuesday, Thursday, Friday, Saturday mornings.',
+        timeDifference: 'Dijon is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Follow the Owl Trail (52 bronze owls)! Touch the chouette owl for luck. Maille mustard shop. Route des Grands Crus wine route.',
+        transportation: 'Dijon-Bourgogne Airport (DIJ) limited. Dijon-Ville TGV station. 1.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Foire Gastronomique (November).'
+      }
     }
   },
   { slug: 'angers', city: 'Angers', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 47.47, lng: -0.56, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '155K', phoneCode: '+33 2', language: 'French',
-      climate: 'Oceanic with mild summers (18-24°C) and cool winters (4-9°C). Moderate rainfall, Loire Valley influence.',
-      attractions: ['Château d\'Angers', 'Apocalypse Tapestry', 'Cathédrale Saint-Maurice', 'Terra Botanica', 'Cointreau Distillery'],
-      demographics: 'Historic Anjou capital in Loire Valley. Houses world\'s largest medieval tapestry, gateway to Loire châteaux.'
+      currency: 'Euro', currencySymbol: '€', population: '0.16M', metroPopulation: '0.42M', phoneCode: '+33 2', language: 'French',
+      climate: 'Oceanic with mild summers (18-24°C) and cool winters (4-9°C). Moderate rainfall, Loire Valley.',
+      attractions: ['Château d\'Angers', 'Apocalypse Tapestry', 'Cathédrale Saint-Maurice', 'Terra Botanica', 'Cointreau Distillery', 'Maison d\'Adam', 'Jardin des Plantes', 'Musée Jean-Lurçat', 'Place du Ralliement', 'Loire Valley Châteaux'],
+      demographics: 'Historic Anjou capital. World\'s largest medieval tapestry. Gateway to Loire châteaux. Cointreau home.',
+      seoContent: {
+        intro: 'Angers, heart of Anjou, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Loire Valley city houses the world\'s largest medieval tapestry (Apocalypse), serves as gateway to famous châteaux, and is birthplace of Cointreau liqueur.',
+        timezoneFacts: 'Same timezone as Paris. Angers\' Apocalypse Tapestry dates from 1377.',
+        bestTimeToVisit: 'May-September for best weather. Loire Valley châteaux spring-autumn.',
+        businessHours: 'Château d\'Angers 10 AM to 6 PM. Cointreau tours by appointment.',
+        timeDifference: 'Angers is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Apocalypse Tapestry is 104m long - incredible! Cointreau distillery tour. Gateway to Saumur, Chinon, Amboise.',
+        transportation: 'Angers Loire Airport (ANE) limited. Angers Saint-Laud TGV. 1.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Anjou Festival (July).'
+      }
     }
   },
   { slug: 'saint-etienne', city: 'Saint-Étienne', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 45.44, lng: 4.39, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '175K', phoneCode: '+33 4', language: 'French',
+      currency: 'Euro', currencySymbol: '€', population: '0.18M', metroPopulation: '0.52M', phoneCode: '+33 4', language: 'French',
       climate: 'Semi-continental with warm summers (20-26°C) and cold winters (0-6°C). Higher elevation, occasional snow.',
-      attractions: ['Musée d\'Art Moderne', 'Cité du Design', 'Musée de la Mine', 'Geoffroy-Guichard Stadium', 'Pilat Regional Park'],
-      demographics: 'UNESCO City of Design, former mining and manufacturing center. Transformed into design and innovation hub.'
+      attractions: ['Musée d\'Art Moderne', 'Cité du Design', 'Musée de la Mine', 'Geoffroy-Guichard Stadium', 'Pilat Regional Park', 'Place Jean Jaurès', 'Old Town', 'Planétarium', 'Manufacture d\'Armes', 'MUSIC museum'],
+      demographics: 'UNESCO City of Design. Former mining and arms manufacturing. AS Saint-Étienne football. Design hub.',
+      seoContent: {
+        intro: 'Saint-Étienne, UNESCO City of Design, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This former industrial powerhouse reinvented itself as a design and innovation capital, featuring excellent museums and access to Pilat Natural Park.',
+        timezoneFacts: 'Same timezone as Paris. Saint-Étienne was once France\'s arms manufacturing capital.',
+        bestTimeToVisit: 'May-September for best weather. Design Biennale (odd years).',
+        businessHours: 'Cité du Design 10 AM to 6 PM. Musée de la Mine 9 AM to 6 PM.',
+        timeDifference: 'Saint-Étienne is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Cité du Design in former arms factory. Mine museum goes underground. Pilat park for hiking.',
+        transportation: 'No major airport - Lyon (LYS) 1 hr. Saint-Étienne-Châteaucreux TGV. 2.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Design Biennale (March, odd years).'
+      }
     }
   },
   { slug: 'le-havre', city: 'Le Havre', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 49.49, lng: 0.11, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '170K', phoneCode: '+33 2', language: 'French',
-      climate: 'Oceanic with cool summers (16-21°C) and mild winters (4-8°C). Windy, frequent rain, Channel influence.',
-      attractions: ['UNESCO City Center', 'MuMa (André Malraux Museum)', 'Église Saint-Joseph', 'Les Jardins Suspendus', 'Beach'],
-      demographics: 'France\'s second-largest port, UNESCO World Heritage. Rebuilt by Auguste Perret after WWII, concrete modernist masterpiece.'
+      currency: 'Euro', currencySymbol: '€', population: '0.17M', metroPopulation: '0.29M', phoneCode: '+33 2', language: 'French',
+      climate: 'Oceanic with cool summers (16-21°C) and mild winters (4-8°C). Windy, frequent rain, Channel coast.',
+      attractions: ['UNESCO City Center', 'MuMa (André Malraux Museum)', 'Église Saint-Joseph', 'Les Jardins Suspendus', 'Beach', 'Volcan (Niemeyer)', 'Appartement Témoin', 'Port', 'Sainte-Adresse', 'Étretat nearby'],
+      demographics: 'France\'s second-largest port. UNESCO World Heritage. Rebuilt by Auguste Perret. Modernist masterpiece.',
+      seoContent: {
+        intro: 'Le Havre, UNESCO concrete city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This city was rebuilt by Auguste Perret after WWII and is now a UNESCO World Heritage site showcasing remarkable modernist concrete architecture.',
+        timezoneFacts: 'Same timezone as Paris. Le Havre was 80% destroyed in WWII.',
+        bestTimeToVisit: 'May-September for best weather. Un Été Au Havre summer festival.',
+        businessHours: 'MuMa 11 AM to 6 PM. Appartement Témoin tours limited.',
+        timeDifference: 'Le Havre is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Saint-Joseph church tower stunning! Appartement Témoin shows 1950s living. Étretat cliffs 30 min away - essential visit.',
+        transportation: 'No major airport - Paris 2.5 hr. Le Havre station. 2 hr from Paris Saint-Lazare.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Un Été Au Havre (summer).'
+      }
     }
   },
   { slug: 'clermont-ferrand', city: 'Clermont-Ferrand', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 45.78, lng: 3.08, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '145K', phoneCode: '+33 4', language: 'French',
+      currency: 'Euro', currencySymbol: '€', population: '0.15M', metroPopulation: '0.49M', phoneCode: '+33 4', language: 'French',
       climate: 'Semi-continental with warm summers (20-27°C) and cold winters (-1 to 6°C). Sheltered by volcanic mountains.',
-      attractions: ['Clermont-Ferrand Cathedral', 'Place de Jaude', 'Puy de Dôme', 'Vulcania', 'ASM Rugby Experience'],
-      demographics: 'Auvergne capital, global headquarters of Michelin tires. Black lava stone cathedral, gateway to volcanic Chaîne des Puys.'
+      attractions: ['Clermont-Ferrand Cathedral', 'Place de Jaude', 'Puy de Dôme', 'Vulcania', 'ASM Rugby Experience', 'Notre-Dame du Port', 'Montferrand Old Town', 'Parc Bargoin', 'Lecoq Garden', 'Chaîne des Puys'],
+      demographics: 'Auvergne capital. Michelin headquarters. Black lava cathedral. Gateway to UNESCO volcanoes.',
+      seoContent: {
+        intro: 'Clermont-Ferrand, city of volcanoes, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This city is global headquarters of Michelin tires, features a striking black lava stone cathedral, and serves as gateway to the UNESCO Chaîne des Puys volcanic chain.',
+        timezoneFacts: 'Same timezone as Paris. Clermont-Ferrand\'s cathedral is built from local black volcanic rock.',
+        bestTimeToVisit: 'May-September for volcano hiking. Short Film Festival (February). Rugby season.',
+        businessHours: 'Vulcania 10 AM to 6 PM (seasonal). Puy de Dôme cogwheel 9 AM to 7 PM (summer).',
+        timeDifference: 'Clermont-Ferrand is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Puy de Dôme views stunning - take cogwheel train! Vulcania theme park fun. Black cathedral unique. Try truffade and Saint-Nectaire cheese.',
+        transportation: 'Clermont-Ferrand Airport (CFE) 7km. Clermont-Ferrand station. 3.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Short Film Festival (February).'
+      }
     }
   },
   { slug: 'aix-en-provence', city: 'Aix-en-Provence', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.53, lng: 5.45, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '145K', phoneCode: '+33 4', language: 'French, Provençal',
+      currency: 'Euro', currencySymbol: '€', population: '0.15M', metroPopulation: '0.4M', phoneCode: '+33 4', language: 'French, Provençal',
       climate: 'Mediterranean with hot dry summers (27-32°C) and mild winters (6-12°C). Very sunny, mistral wind.',
-      attractions: ['Cours Mirabeau', 'Cathédrale Saint-Sauveur', 'Cézanne\'s Studio', 'Fontaine de la Rotonde', 'Quartier Mazarin'],
-      demographics: 'Historic Provence capital, city of fountains and art. Birthplace of Cézanne, major university and festival town.'
+      attractions: ['Cours Mirabeau', 'Cathédrale Saint-Sauveur', 'Cézanne\'s Studio', 'Fontaine de la Rotonde', 'Quartier Mazarin', 'Montagne Sainte-Victoire', 'Granet Museum', 'Hôtel de Caumont', 'Markets', 'Thermal Baths'],
+      demographics: 'Historic Provence capital. City of fountains. Birthplace of Cézanne. Major festival town.',
+      seoContent: {
+        intro: 'Aix-en-Provence, city of a thousand fountains, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This elegant Provençal city is birthplace of painter Cézanne, famous for its plane tree-lined boulevards, and hosts one of Europe\'s finest classical music festivals.',
+        timezoneFacts: 'Same timezone as Paris. Aix was capital of Provence for nearly 500 years.',
+        bestTimeToVisit: 'April-October for best weather. Festival d\'Aix (July) for opera. Markets year-round.',
+        businessHours: 'Shops 10 AM to 7 PM. Cézanne Studio 10 AM to 6 PM. Markets daily mornings.',
+        timeDifference: 'Aix is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Cézanne trail follows artist\'s footsteps. Cours Mirabeau perfect for café sitting. Sainte-Victoire mountain inspired Cézanne. Try calissons.',
+        transportation: 'Marseille Airport (MRS) 30 min. Aix-en-Provence TGV station. 3 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Festival d\'Aix (July).'
+      }
     }
   },
   { slug: 'nancy', city: 'Nancy', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.69, lng: 6.18, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '105K', phoneCode: '+33 3', language: 'French',
+      currency: 'Euro', currencySymbol: '€', population: '0.11M', metroPopulation: '0.44M', phoneCode: '+33 3', language: 'French',
       climate: 'Semi-continental with warm summers (18-25°C) and cold winters (0-5°C). Moderate rainfall.',
-      attractions: ['Place Stanislas (UNESCO)', 'Musée de l\'École de Nancy', 'Parc de la Pépinière', 'Ducal Palace', 'Porte de la Craffe'],
-      demographics: 'Capital of Lorraine with UNESCO World Heritage square. Art Nouveau capital (École de Nancy), elegant 18th-century architecture.'
+      attractions: ['Place Stanislas', 'Musée de l\'École de Nancy', 'Parc de la Pépinière', 'Ducal Palace', 'Porte de la Craffe', 'Arc Héré', 'Musée des Beaux-Arts', 'Villa Majorelle', 'Saint-Epvre Basilica', 'Place de la Carrière'],
+      demographics: 'Capital of Lorraine. UNESCO World Heritage square. Art Nouveau capital (École de Nancy).',
+      seoContent: {
+        intro: 'Nancy, Art Nouveau capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This elegant city boasts UNESCO\'s most beautiful square (Place Stanislas), pioneered Art Nouveau design, and features stunning 18th-century Baroque architecture.',
+        timezoneFacts: 'Same timezone as Paris. Place Stanislas is named after the last Duke of Lorraine.',
+        bestTimeToVisit: 'May-September for best weather. Place Stanislas summer light shows. Christmas market.',
+        businessHours: 'Musée de l\'École de Nancy 10 AM to 6 PM. Place Stanislas accessible 24/7.',
+        timeDifference: 'Nancy is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Place Stanislas at night is magical - light show! École de Nancy museum in beautiful villa. Bergamot candy is local specialty.',
+        transportation: 'No major airport - Metz 1 hr. Nancy TGV station. 1.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Rendez-vous Place Stanislas (summer).'
+      }
+    }
+  },
+  
+  // France - Additional Premium Tourist Cities
+  { slug: 'avignon', city: 'Avignon', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.95, lng: 4.81, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.09M', metroPopulation: '0.53M', phoneCode: '+33 4', language: 'French, Provençal',
+      climate: 'Mediterranean with hot summers (27-32°C) and mild winters (5-11°C). Mistral wind, very sunny.',
+      attractions: ['Palais des Papes', 'Pont d\'Avignon', 'Rocher des Doms', 'Place de l\'Horloge', 'Ramparts', 'Petit Palais', 'Rue des Teinturiers', 'Collection Lambert', 'Villeneuve-lès-Avignon', 'Provence villages'],
+      demographics: 'City of Popes. UNESCO World Heritage. Famous theatre festival. Gateway to Provence.',
+      seoContent: {
+        intro: 'Avignon, City of Popes, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city was seat of the Catholic papacy in the 14th century, features the largest Gothic palace ever built (Palais des Papes), and hosts the world\'s greatest theatre festival.',
+        timezoneFacts: 'Same timezone as Paris. Seven popes ruled from Avignon from 1309 to 1377.',
+        bestTimeToVisit: 'April-October for best weather. Festival d\'Avignon (July) - book months ahead!',
+        businessHours: 'Palais des Papes 9 AM to 7 PM. Festival venues July evenings.',
+        timeDifference: 'Avignon is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Festival d\'Avignon (July) transforms city - book early! Pont d\'Avignon only goes halfway. Châteauneuf-du-Pape nearby.',
+        transportation: 'Avignon-Provence TGV station 6km. Marseille (MRS) 1 hr. 2.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Festival d\'Avignon (July).'
+      }
+    }
+  },
+  { slug: 'cannes', city: 'Cannes', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.55, lng: 7.02, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.07M', metroPopulation: '0.2M', phoneCode: '+33 4', language: 'French',
+      climate: 'Mediterranean with hot summers (26-30°C) and mild winters (9-14°C). 300 days of sunshine.',
+      attractions: ['La Croisette', 'Palais des Festivals', 'Le Suquet', 'Îles de Lérins', 'Marché Forville', 'Port Vieux', 'Rue d\'Antibes', 'Plage de la Croisette', 'Musée de la Castre', 'Red Carpet Steps'],
+      demographics: 'Home of Cannes Film Festival. Côte d\'Azur glamour. Luxury shopping. Yacht harbor.',
+      seoContent: {
+        intro: 'Cannes, glamour capital of the Côte d\'Azur, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. World-famous for its annual Film Festival, this resort city features the legendary La Croisette promenade and stunning beaches.',
+        timezoneFacts: 'Same timezone as Paris. Cannes Film Festival started in 1946.',
+        bestTimeToVisit: 'May-September for beach. Film Festival mid-May. Avoid August crowds.',
+        businessHours: 'Beaches 9 AM to 7 PM. Rue d\'Antibes shops 10 AM to 7 PM.',
+        timeDifference: 'Cannes is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Film Festival mostly industry but red carpet viewable. Île Sainte-Marguerite has Man in Iron Mask prison. Public beaches between private ones.',
+        transportation: 'Nice Côte d\'Azur Airport (NCE) 25km. Cannes station. 5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Cannes Film Festival (May).'
+      }
+    }
+  },
+  { slug: 'monaco', city: 'Monaco', timezone: 'Europe/Paris', country: 'Monaco', countryCode: 'MC', lat: 43.73, lng: 7.42, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.04M', metroPopulation: '0.04M', phoneCode: '+377', language: 'French, Monégasque',
+      climate: 'Mediterranean with warm summers (24-28°C) and mild winters (10-14°C). Very sunny, protected from mistral.',
+      attractions: ['Monte Carlo Casino', 'Prince\'s Palace', 'Monaco Grand Prix Circuit', 'Oceanographic Museum', 'Monaco Cathedral', 'Jardin Exotique', 'La Condamine', 'Larvotto Beach', 'Fontvieille', 'Old Monaco'],
+      demographics: 'Independent principality. Tax haven. F1 Grand Prix. World\'s second smallest country. Grimaldi royal family.',
+      seoContent: {
+        intro: 'Monaco, the glamorous principality, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. The world\'s second-smallest country packs in a famous casino, F1 Grand Prix, the Grimaldi royal family, and more millionaires per capita than anywhere on Earth.',
+        timezoneFacts: 'Same timezone as Paris. Monaco is an independent principality, not part of France.',
+        bestTimeToVisit: 'April-October for best weather. F1 Grand Prix (late May). Yacht Show (September).',
+        businessHours: 'Casino opens 2 PM (gaming). Palace 10 AM to 5 PM. Oceanographic Museum 10 AM to 6 PM.',
+        timeDifference: 'Monaco is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Monaco observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Casino requires smart dress. Grand Prix week book year ahead. Changing of Guard at Palace 11:55 AM. Walk the F1 circuit any day.',
+        transportation: 'Nice Airport (NCE) 22km. Monaco-Monte Carlo station. Helicopter from Nice.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. Ambulance: 9375 2525.',
+        publicHolidays: 'Monaco holidays. National Day (November 19). F1 Grand Prix (May).'
+      }
+    }
+  },
+  { slug: 'saint-tropez', city: 'Saint-Tropez', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.27, lng: 6.64, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.004M', metroPopulation: '0.01M', phoneCode: '+33 4', language: 'French',
+      climate: 'Mediterranean with hot summers (27-30°C) and mild winters (9-14°C). Very sunny, sheltered.',
+      attractions: ['Port de Saint-Tropez', 'Place des Lices', 'Pampelonne Beach', 'Citadelle', 'Musée de l\'Annonciade', 'La Ponche', 'Club 55', 'Vieux Port', 'Sentier du Littoral', 'Ramatuelle'],
+      demographics: 'Legendary Riviera resort. Brigitte Bardot made it famous. Yacht spotting. Beach clubs.',
+      seoContent: {
+        intro: 'Saint-Tropez, the legendary Riviera village, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. Brigitte Bardot put this fishing village on the map in the 1950s, and it remains the ultimate Mediterranean playground for the jet set.',
+        timezoneFacts: 'Same timezone as Paris. Brigitte Bardot\'s "And God Created Woman" (1956) launched Saint-Tropez.',
+        bestTimeToVisit: 'May-September for beach. August extremely crowded. May-June and September best.',
+        businessHours: 'Beach clubs 10 AM to sunset. Place des Lices market Tuesday and Saturday.',
+        timeDifference: 'Saint-Tropez is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Book beach clubs ahead in summer. Port yacht-watching is free! Avoid August unless you love crowds.',
+        transportation: 'No airport - Toulon-Hyères (TLN) 1 hr. No train - bus or boat from Saint-Raphaël.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Les Voiles de Saint-Tropez (September-October).'
+      }
+    }
+  },
+  { slug: 'biarritz', city: 'Biarritz', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.48, lng: -1.56, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.03M', metroPopulation: '0.13M', phoneCode: '+33 5', language: 'French, Basque',
+      climate: 'Oceanic with mild summers (20-25°C) and mild winters (8-13°C). Atlantic influence, can be rainy.',
+      attractions: ['Grande Plage', 'Rocher de la Vierge', 'Phare de Biarritz', 'Côte des Basques', 'Aquarium', 'Port Vieux', 'Hôtel du Palais', 'Chapelle Impériale', 'Casino', 'Surf beaches'],
+      demographics: 'Elegant Basque coast resort. Napoleon III\'s favorite. Europe\'s surf capital. Basque culture.',
+      seoContent: {
+        intro: 'Biarritz, Europe\'s surf capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This elegant Basque coast resort was beloved by Napoleon III and Empress Eugénie, and now attracts surfers from around the world.',
+        timezoneFacts: 'Same timezone as Paris. Empress Eugénie built Hôtel du Palais as her summer residence.',
+        bestTimeToVisit: 'May-October for best weather. Surfing year-round. July-August crowded.',
+        businessHours: 'Beaches 24/7. Aquarium 9:30 AM to 7 PM.',
+        timeDifference: 'Biarritz is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Côte des Basques is surf beach. Grande Plage for swimming. San Sebastián (Spain) 45 min. Try Basque pintxos!',
+        transportation: 'Biarritz Airport (BIQ) 5km. Biarritz station. 4.5 hr from Paris by TGV.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Surf festivals.'
+      }
+    }
+  },
+  { slug: 'colmar', city: 'Colmar', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.08, lng: 7.36, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.07M', metroPopulation: '0.13M', phoneCode: '+33 3', language: 'French, Alsatian',
+      climate: 'Continental with warm summers (19-26°C) and cold winters (-1 to 5°C). One of France\'s driest cities.',
+      attractions: ['Petite Venise', 'Maison des Têtes', 'Musée Unterlinden', 'Maison Pfister', 'Koïfhus', 'Place de l\'Ancienne Douane', 'Isenheim Altarpiece', 'Covered Market', 'Bartholdi Museum', 'Alsace Wine Route'],
+      demographics: 'Most Alsatian city. Petite Venise canals. Statue of Liberty sculptor\'s birthplace. Wine capital.',
+      seoContent: {
+        intro: 'Colmar, capital of Alsatian wine, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This fairy-tale town features picture-perfect Petite Venise, is birthplace of Statue of Liberty sculptor Bartholdi, and houses the masterpiece Isenheim Altarpiece.',
+        timezoneFacts: 'Same timezone as Paris. Colmar is one of the driest cities in France.',
+        bestTimeToVisit: 'April-October for best weather. Christmas Market magical. Wine harvest September.',
+        businessHours: 'Musée Unterlinden 9 AM to 6 PM. Christmas Market 10 AM to 8 PM.',
+        timeDifference: 'Colmar is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Isenheim Altarpiece is masterpiece! Petite Venise boat rides charming. Try tarte flambée and gewürztraminer.',
+        transportation: 'Basel-Mulhouse Airport (BSL) 1 hr. Colmar station. 2.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Marché de Noël (Nov-Dec).'
+      }
+    }
+  },
+  { slug: 'carcassonne', city: 'Carcassonne', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.21, lng: 2.35, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.05M', metroPopulation: '0.11M', phoneCode: '+33 4', language: 'French, Occitan',
+      climate: 'Mediterranean with hot summers (25-30°C) and mild winters (5-11°C). Can be windy.',
+      attractions: ['La Cité (UNESCO)', 'Château Comtal', 'Basilique Saint-Nazaire', 'Ramparts Walk', 'Canal du Midi', 'Ville Basse', 'Porte Narbonnaise', 'Pont Vieux', 'Musée de l\'Inquisition', 'Cathar Country'],
+      demographics: 'Europe\'s largest medieval fortress. UNESCO World Heritage. Cathar history. Cassoulet capital.',
+      seoContent: {
+        intro: 'Carcassonne, Europe\'s largest medieval fortress, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO citadel with 52 towers and double walls transports you to the Middle Ages and is the heartland of Cathar history.',
+        timezoneFacts: 'Same timezone as Paris. Carcassonne\'s walls have protected the city for over 2,500 years.',
+        bestTimeToVisit: 'April-October for best weather. Bastille Day fireworks (July 14) spectacular.',
+        businessHours: 'Château Comtal 10 AM to 6 PM. La Cité open 24/7.',
+        timeDifference: 'Carcassonne is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Stay inside La Cité for atmosphere! July 14 fireworks famous. Cassoulet is local specialty. Canal du Midi UNESCO too.',
+        transportation: 'Carcassonne Airport (CCF) 4km. Carcassonne station. 1 hr from Toulouse.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Festival de Carcassonne (July).'
+      }
+    }
+  },
+  { slug: 'arles', city: 'Arles', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.68, lng: 4.63, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.05M', metroPopulation: '0.09M', phoneCode: '+33 4', language: 'French, Provençal',
+      climate: 'Mediterranean with hot summers (27-32°C) and mild winters (5-12°C). Mistral wind, very sunny.',
+      attractions: ['Roman Amphitheatre', 'Théâtre Antique', 'Church of St Trophime', 'Van Gogh Trail', 'Fondation Vincent van Gogh', 'Luma Arles', 'Alyscamps', 'Place du Forum', 'Camargue Gateway', 'Les Rencontres'],
+      demographics: 'UNESCO Roman and Romanesque. Van Gogh lived here. Gateway to Camargue. Photography capital.',
+      seoContent: {
+        intro: 'Arles, Van Gogh\'s Provence, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city inspired over 300 Van Gogh paintings, features stunning Roman monuments, and serves as gateway to the wild Camargue.',
+        timezoneFacts: 'Same timezone as Paris. Van Gogh painted 300+ works in Arles in just 15 months.',
+        bestTimeToVisit: 'April-October for best weather. Les Rencontres photo festival (July-Sept).',
+        businessHours: 'Roman sites 9 AM to 6 PM. Fondation Van Gogh 10 AM to 6 PM.',
+        timeDifference: 'Arles is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Van Gogh trail shows painting locations! Amphitheatre has bullfights (bloodless). Camargue white horses nearby. Luma tower by Gehry.',
+        transportation: 'Marseille Airport (MRS) 1 hr. Arles station. 4 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Les Rencontres (July-September).'
+      }
+    }
+  },
+  { slug: 'mont-saint-michel', city: 'Mont-Saint-Michel', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.64, lng: -1.51, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.00003M', metroPopulation: '0.001M', phoneCode: '+33 2', language: 'French',
+      climate: 'Oceanic with mild summers (16-21°C) and cool winters (5-10°C). Dramatic tides, often misty.',
+      attractions: ['Abbey', 'Grande Rue', 'Ramparts', 'Tidal Bay', 'La Mère Poulard', 'Musée Maritime', 'Gardens', 'Night Illuminations', 'Bay Walks', 'Scriptorial d\'Avranches'],
+      demographics: 'France\'s most iconic monument. UNESCO World Heritage. Benedictine abbey. Europe\'s highest tides.',
+      seoContent: {
+        intro: 'Mont-Saint-Michel, France\'s marvel, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO island abbey rises dramatically from tidal flats, experiences Europe\'s highest tides, and has been a pilgrimage site for over 1,000 years.',
+        timezoneFacts: 'Same timezone as Paris. Tides here can reach 14 meters - Europe\'s highest.',
+        bestTimeToVisit: 'May-September for best weather. Off-season for fewer crowds. Check tide times.',
+        businessHours: 'Abbey 9 AM to 7 PM (summer). Island accessible 24/7.',
+        timeDifference: 'Mont-Saint-Michel is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Stay overnight for no crowds! Check tide times. Bay walks with guide only. Omelettes at La Mère Poulard famous.',
+        transportation: 'Rennes (1.5 hr) or Saint-Malo (1 hr). Shuttle bus from parking. No direct train.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Night illuminations summer.'
+      }
+    }
+  },
+  { slug: 'saint-malo', city: 'Saint-Malo', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.65, lng: -2.00, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.05M', metroPopulation: '0.08M', phoneCode: '+33 2', language: 'French, Breton',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (6-10°C). Can be windy, dramatic tides.',
+      attractions: ['Intra-Muros', 'Ramparts Walk', 'Grande Plage', 'Fort National', 'Cathédrale Saint-Vincent', 'Grand Aquarium', 'Île du Grand Bé', 'Château de Saint-Malo', 'Demeure de Corsaire', 'Dinard'],
+      demographics: 'Corsair city. Walled old town rebuilt after WWII. Gateway to Channel Islands. Dramatic tides.',
+      seoContent: {
+        intro: 'Saint-Malo, corsair city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This walled port city was rebuilt stone-by-stone after WWII, has dramatic tides revealing walking paths to islands, and was home to legendary privateers.',
+        timezoneFacts: 'Same timezone as Paris. Saint-Malo privateers were pirates with royal permission.',
+        bestTimeToVisit: 'May-September for best weather. Check tide times for island walks.',
+        businessHours: 'Ramparts accessible 24/7. Grand Aquarium 10 AM to 6 PM.',
+        timeDifference: 'Saint-Malo is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Walk ramparts for full circuit! At low tide walk to Fort National. Ferries to Jersey and Guernsey.',
+        transportation: 'Dinard-Pleurtuit Airport (DNR) 15km. Saint-Malo station. 2.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Étonnants Voyageurs (May).'
+      }
+    }
+  },
+  { slug: 'chamonix', city: 'Chamonix', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 45.92, lng: 6.87, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+33 4', language: 'French',
+      climate: 'Alpine with cool summers (12-22°C) and cold winters (-5 to 3°C). Snow December-April.',
+      attractions: ['Aiguille du Midi', 'Mont Blanc', 'Mer de Glace', 'Vallée Blanche', 'Montenvers Railway', 'Chamonix town', 'Ski areas', 'Lac Blanc', 'Paragliding', 'UTMB trail'],
+      demographics: 'Birthplace of alpinism. Mont Blanc gateway. Legendary skiing. UTMB ultramarathon.',
+      seoContent: {
+        intro: 'Chamonix, birthplace of alpinism, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This legendary mountain resort sits at the foot of Mont Blanc, hosted the first Winter Olympics (1924), and offers world-class skiing and mountaineering.',
+        timezoneFacts: 'Same timezone as Paris. First Winter Olympics held here in 1924.',
+        bestTimeToVisit: 'December-April for skiing. June-September for hiking. Aiguille du Midi year-round.',
+        businessHours: 'Aiguille du Midi cable car 8 AM to 4 PM. Ski lifts 9 AM to 4:30 PM.',
+        timeDifference: 'Chamonix is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Aiguille du Midi to 3,842m - dress warmly! Book ahead in season. UTMB (August) world\'s greatest ultramarathon.',
+        transportation: 'Geneva Airport (GVA) 1 hr. Chamonix-Mont-Blanc station. Bus from Geneva.',
+        emergencyNumbers: 'Emergency: 112. Mountain rescue: 112. PGHM: 04 50 53 16 89.',
+        publicHolidays: 'French national holidays. UTMB (August). Ski season Dec-Apr.'
+      }
+    }
+  },
+  { slug: 'versailles', city: 'Versailles', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.80, lng: 2.13, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.09M', metroPopulation: '0.09M', phoneCode: '+33 1', language: 'French',
+      climate: 'Oceanic with mild summers (18-25°C) and cool winters (2-7°C). Similar to Paris.',
+      attractions: ['Palace of Versailles', 'Hall of Mirrors', 'Gardens', 'Grand Trianon', 'Petit Trianon', 'Marie Antoinette\'s Estate', 'Musical Fountains', 'Grand Canal', 'Orangerie', 'Town of Versailles'],
+      demographics: 'Sun King\'s palace. UNESCO World Heritage. French Revolution starting point. Musical fountains.',
+      seoContent: {
+        intro: 'Versailles, the Sun King\'s palace, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO masterpiece was Louis XIV\'s residence, featuring the Hall of Mirrors, 800 hectares of gardens, and Marie Antoinette\'s hamlet.',
+        timezoneFacts: 'Same timezone as Paris. Treaty of Versailles (1919) signed in Hall of Mirrors.',
+        bestTimeToVisit: 'April-October for gardens. Musical Fountains weekends. Tuesday-Friday least crowded.',
+        businessHours: 'Palace 9 AM to 6:30 PM. Gardens 8 AM to 8:30 PM (summer). Closed Mondays.',
+        timeDifference: 'Versailles is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Book timed tickets online - essential! Musical Fountains spectacular. Rent bikes for gardens.',
+        transportation: 'RER C from Paris (30 min). Versailles Rive Gauche station closest.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Musical Fountains (April-October weekends).'
+      }
+    }
+  },
+  { slug: 'giverny', city: 'Giverny', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 49.08, lng: 1.53, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.0005M', metroPopulation: '0.001M', phoneCode: '+33 2', language: 'French',
+      climate: 'Oceanic with mild summers (17-24°C) and cool winters (3-8°C). Best in spring/summer.',
+      attractions: ['Monet\'s House', 'Water Lily Pond', 'Japanese Bridge', 'Clos Normand', 'Musée des Impressionnismes', 'Village', 'Church', 'Monet\'s Grave', 'American Artists Colony', 'Seine views'],
+      demographics: 'Monet\'s home for 43 years. Water Lilies painted here. Impressionism pilgrimage. Stunning gardens.',
+      seoContent: {
+        intro: 'Giverny, Monet\'s paradise, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This tiny village is where Claude Monet lived for 43 years and painted his famous Water Lilies, with the iconic Japanese bridge and gardens open for visitors.',
+        timezoneFacts: 'Same timezone as Paris. Monet painted over 250 Water Lily paintings here.',
+        bestTimeToVisit: 'April-October (gardens closed winter). Late spring for wisteria. Summer for water lilies.',
+        businessHours: 'Monet\'s House 9:30 AM to 6 PM (April-November). Book ahead!',
+        timeDifference: 'Giverny is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Book tickets online - essential! Arrive at 9:30 AM opening. Gardens closed winter. Combine with Rouen.',
+        transportation: 'Vernon station (4km) + shuttle. 45 min from Paris Saint-Lazare to Vernon.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Gardens open April-November only.'
+      }
+    }
+  },
+  { slug: 'honfleur', city: 'Honfleur', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 49.42, lng: 0.23, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+33 2', language: 'French',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (4-9°C). Frequent rain, atmospheric mist.',
+      attractions: ['Vieux Bassin', 'Sainte-Catherine Church', 'Lieutenance', 'Musée Eugène Boudin', 'Les Maisons Satie', 'Greniers à Sel', 'Côte de Grâce', 'Pont de Normandie', 'Seafood restaurants', 'Art galleries'],
+      demographics: 'Impressionist painters\' paradise. Picturesque harbor. Wooden church unique. Normandy coast gateway.',
+      seoContent: {
+        intro: 'Honfleur, the painters\' port, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This picturesque harbor town inspired Monet and the Impressionists, features France\'s largest wooden church, and offers Normandy\'s finest seafood.',
+        timezoneFacts: 'Same timezone as Paris. Boudin and Monet both painted Honfleur\'s harbor.',
+        bestTimeToVisit: 'May-September for best weather. Year-round charm. Weekends can be crowded.',
+        businessHours: 'Musée Eugène Boudin 10 AM to 6 PM. Restaurants serve lunch and dinner.',
+        timeDifference: 'Honfleur is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Vieux Bassin most photographed! Sainte-Catherine church entirely wooden. Seafood platter essential.',
+        transportation: 'Le Havre 25 min. Deauville 15 min. No train station. Bus from Le Havre.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Shrimp Festival (October).'
+      }
+    }
+  },
+  { slug: 'etretat', city: 'Étretat', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 49.71, lng: 0.21, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.001M', metroPopulation: '0.002M', phoneCode: '+33 2', language: 'French',
+      climate: 'Oceanic with cool summers (16-21°C) and mild winters (4-9°C). Windy, dramatic weather.',
+      attractions: ['Falaise d\'Aval', 'L\'Aiguille (The Needle)', 'Falaise d\'Amont', 'Chapelle Notre-Dame', 'Les Jardins d\'Étretat', 'Beach', 'Arsène Lupin connection', 'Golf course', 'Fécamp nearby', 'Cliff walks'],
+      demographics: 'Iconic white cliffs. Monet and Courbet painted here. Arsène Lupin\'s Needle. Dramatic coastline.',
+      seoContent: {
+        intro: 'Étretat, Normandy\'s dramatic cliffs, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. These spectacular white chalk cliffs inspired Monet, Courbet, and Arsène Lupin writer Maurice Leblanc, featuring the iconic Needle formation.',
+        timezoneFacts: 'Same timezone as Paris. Arsène Lupin\'s "Hollow Needle" is set here.',
+        bestTimeToVisit: 'May-September for best weather. Dramatic any season. Avoid strong winds.',
+        businessHours: 'Jardins d\'Étretat 10 AM to 7 PM. Beach accessible 24/7.',
+        timeDifference: 'Étretat is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Walk to both cliff tops! Les Jardins contemporary gardens. Lupin Netflix renewed interest. Le Havre 30 min.',
+        transportation: 'Le Havre 30 min. No train station. Bus from Le Havre infrequent.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays.'
+      }
+    }
+  },
+  
+  // France - Additional Cities (New Batch)
+  { slug: 'rouen', city: 'Rouen', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 49.44, lng: 1.10, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.11M', metroPopulation: '0.66M', phoneCode: '+33 2', language: 'French',
+      climate: 'Oceanic with mild summers (17-23°C) and cool winters (3-8°C). Frequent rain.',
+      attractions: ['Rouen Cathedral', 'Gros-Horloge', 'Place du Vieux-Marché', 'Musée des Beaux-Arts', 'Rue du Gros-Horloge', 'Saint-Maclou Church', 'Aître Saint-Maclou', 'Joan of Arc sites', 'Half-timbered houses', 'Seine riverfront'],
+      demographics: 'Normandy capital. Monet painted cathedral 30 times. Joan of Arc martyrdom site. Gothic masterpiece.',
+      seoContent: {
+        intro: 'Rouen, capital of Normandy, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Gothic city is where Joan of Arc was martyred, Monet painted the cathedral 30 times, and medieval half-timbered houses line atmospheric streets.',
+        timezoneFacts: 'Same timezone as Paris. Monet painted Rouen Cathedral at different times of day in 1892-93.',
+        bestTimeToVisit: 'May-September for best weather. Armada festival (every 4 years). Christmas markets charming.',
+        businessHours: 'Cathedral 8 AM to 7 PM. Museums 10 AM to 6 PM. Closed Tuesdays.',
+        timeDifference: 'Rouen is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Gros-Horloge astronomical clock stunning! Aître Saint-Maclou ossuary eerie. Cathedral light show summer nights.',
+        transportation: 'Paris 1.5 hr by train. Rouen Rive Droite station. No major airport.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Armada (every 4 years). Joan of Arc festival (May).'
+      }
+    }
+  },
+  { slug: 'tours', city: 'Tours', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 47.39, lng: 0.69, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.14M', metroPopulation: '0.5M', phoneCode: '+33 2', language: 'French',
+      climate: 'Oceanic with mild summers (18-25°C) and cool winters (3-9°C). Garden of France climate.',
+      attractions: ['Place Plumereau', 'Tours Cathedral', 'Musée des Beaux-Arts', 'Old Town', 'Loire châteaux base', 'Guinguettes', 'Saint-Martin Basilica', 'CCCOD', 'Wine tours', 'Half-timbered houses'],
+      demographics: 'Loire Valley gateway. Perfect French accent. Student city. Châteaux base. Garden of France.',
+      seoContent: {
+        intro: 'Tours, gateway to Loire Valley, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This elegant city is the perfect base for château-hopping, is famous for its pure French accent, and has a vibrant old town with medieval squares.',
+        timezoneFacts: 'Same timezone as Paris. Tours French is considered the purest accent in France.',
+        bestTimeToVisit: 'April-October for châteaux. Spring for gardens. Summer for guinguettes (riverside bars).',
+        businessHours: 'Châteaux 9 AM to 6 PM. Place Plumereau cafés until late.',
+        timeDifference: 'Tours is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Best base for Loire châteaux! Place Plumereau nightlife. Vouvray wine nearby. Rent car or join tours.',
+        transportation: 'Tours Val de Loire Airport (TUF) 6km. Tours station. 1 hr from Paris by TGV.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Fêtes Musicales (summer).'
+      }
+    }
+  },
+  { slug: 'caen', city: 'Caen', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 49.18, lng: -0.37, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.11M', metroPopulation: '0.4M', phoneCode: '+33 2', language: 'French',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (4-9°C). Moderate rainfall.',
+      attractions: ['Mémorial de Caen', 'D-Day beaches', 'William the Conqueror Castle', 'Abbaye aux Hommes', 'Abbaye aux Dames', 'Old Town', 'Vieux Saint-Sauveur', 'Marina', 'Pegasus Bridge', 'Bayeux nearby'],
+      demographics: 'William the Conqueror city. D-Day memorial. Rebuilt after WWII. Normandy history capital.',
+      seoContent: {
+        intro: 'Caen, city of William the Conqueror, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This historic city was largely rebuilt after D-Day, houses the superb Mémorial de Caen WWII museum, and serves as gateway to the landing beaches.',
+        timezoneFacts: 'Same timezone as Paris. William the Conqueror was Duke of Normandy before conquering England.',
+        bestTimeToVisit: 'May-September best. June 6 D-Day anniversary. Allow full day for Mémorial.',
+        businessHours: 'Mémorial 9 AM to 7 PM. D-Day beaches accessible 24/7.',
+        timeDifference: 'Caen is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Mémorial needs full day! D-Day beaches with guide recommended. Bayeux Tapestry 30 min. Calvados country.',
+        transportation: 'Caen-Carpiquet Airport (CFR) 5km. Caen station. 2 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. D-Day Anniversary (June 6).'
+      }
+    }
+  },
+  { slug: 'metz', city: 'Metz', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 49.12, lng: 6.18, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.12M', metroPopulation: '0.39M', phoneCode: '+33 3', language: 'French',
+      climate: 'Semi-continental with warm summers (18-25°C) and cold winters (0-6°C). Lorraine climate.',
+      attractions: ['Centre Pompidou-Metz', 'Metz Cathedral', 'Place Saint-Louis', 'Porte des Allemands', 'Temple Neuf', 'Imperial Quarter', 'Esplanade', 'Moselle river', 'Markets', 'Chagall windows'],
+      demographics: 'Centre Pompidou-Metz. Largest Gothic windows (Chagall). German Imperial Quarter. Crossroads city.',
+      seoContent: {
+        intro: 'Metz, city of light, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Lorraine capital has the Centre Pompidou-Metz modern art museum, a cathedral with the largest stained glass windows in the world including Chagalls, and a fascinating German Imperial quarter.',
+        timezoneFacts: 'Same timezone as Paris. Metz was German (1871-1918) leaving unique architecture.',
+        bestTimeToVisit: 'May-September best. Christmas market one of France\'s best. Year-round for Pompidou.',
+        businessHours: 'Pompidou-Metz 10 AM to 6 PM. Cathedral 8 AM to 7 PM. Closed Tuesdays.',
+        timeDifference: 'Metz is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Pompidou-Metz architecture stunning! Cathedral windows best on sunny days. Imperial Quarter walk. Mirabelle plums local.',
+        transportation: 'Metz-Nancy-Lorraine Airport (ETZ) 20km. Metz-Ville station. 1.5 hr from Paris TGV.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Mirabelle Festival (August).'
+      }
+    }
+  },
+  { slug: 'amiens', city: 'Amiens', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 49.89, lng: 2.30, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.13M', metroPopulation: '0.4M', phoneCode: '+33 3', language: 'French',
+      climate: 'Oceanic with mild summers (17-23°C) and cool winters (2-7°C). Northern France.',
+      attractions: ['Amiens Cathedral', 'Hortillonnages', 'Quartier Saint-Leu', 'Jules Verne House', 'Musée de Picardie', 'Beffroi', 'Light show', 'WWI sites', 'Christmas market', 'Floating gardens'],
+      demographics: 'France\'s largest Gothic cathedral. Jules Verne city. Floating gardens. Somme WWI sites.',
+      seoContent: {
+        intro: 'Amiens, cathedral city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Picardy capital has France\'s largest Gothic cathedral (UNESCO), unique floating gardens (hortillonnages), and was home to Jules Verne.',
+        timezoneFacts: 'Same timezone as Paris. Amiens Cathedral could fit Notre-Dame de Paris twice inside.',
+        bestTimeToVisit: 'June-September for hortillonnages tours. Summer light show on cathedral. Christmas market.',
+        businessHours: 'Cathedral 8:30 AM to 6:30 PM. Hortillonnages tours April-October.',
+        timeDifference: 'Amiens is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Cathedral light show (summer) spectacular! Hortillonnages boat tour unique. Jules Verne house interesting.',
+        transportation: 'Paris 1.5 hr by train. Amiens station. No major airport - use Paris CDG.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Fête du Chti (local festival).'
+      }
+    }
+  },
+  { slug: 'la-rochelle', city: 'La Rochelle', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 46.16, lng: -1.15, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.08M', metroPopulation: '0.21M', phoneCode: '+33 5', language: 'French',
+      climate: 'Oceanic with mild summers (18-24°C) and cool winters (5-11°C). Sunniest Atlantic coast.',
+      attractions: ['Vieux Port', 'Tour Saint-Nicolas', 'Tour de la Chaîne', 'Aquarium', 'Old Town', 'Île de Ré', 'Fort Boyard', 'Maritime Museum', 'Natural History Museum', 'Minimes marina'],
+      demographics: 'Historic Atlantic port. Huguenot history. Île de Ré gateway. Seafood haven. Bike-friendly.',
+      seoContent: {
+        intro: 'La Rochelle, the white city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This charming Atlantic port has iconic medieval towers, is gateway to beautiful Île de Ré, and is one of France\'s most bike-friendly cities.',
+        timezoneFacts: 'Same timezone as Paris. La Rochelle was a major Huguenot stronghold besieged by Richelieu.',
+        bestTimeToVisit: 'May-September for weather. July-August busy. Spring/autumn quieter. Francofolies (July).',
+        businessHours: 'Aquarium 9 AM to 8 PM. Towers 10 AM to 6 PM.',
+        timeDifference: 'La Rochelle is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Rent bikes - flat city! Île de Ré stunning day trip. Aquarium excellent. Fort Boyard visible from port.',
+        transportation: 'La Rochelle Airport (LRH) 3km. La Rochelle-Ville station. 3 hr from Paris TGV.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Francofolies (July). Grand Pavois boat show (Sept).'
+      }
+    }
+  },
+  { slug: 'perpignan', city: 'Perpignan', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 42.70, lng: 2.90, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.12M', metroPopulation: '0.32M', phoneCode: '+33 4', language: 'French, Catalan',
+      climate: 'Mediterranean with hot summers (25-32°C) and mild winters (8-14°C). Very sunny, tramontane wind.',
+      attractions: ['Palais des Rois de Majorque', 'Castillet', 'Place de la Loge', 'Cathedral Saint-Jean', 'Train station', 'Promenade des Platanes', 'Visa pour l\'Image', 'Collioure nearby', 'Spanish border', 'Casa Xanxo'],
+      demographics: 'Catalan capital of France. Dalí called station "center of universe". Gateway to Spain. Visa pour l\'Image festival.',
+      seoContent: {
+        intro: 'Perpignan, French Catalonia capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This sunny city has a fascinating Catalan heritage, was declared the "center of the universe" by Dalí, and hosts the world\'s premier photojournalism festival.',
+        timezoneFacts: 'Same timezone as Paris. Dalí proclaimed Perpignan station the cosmic center of the universe.',
+        bestTimeToVisit: 'May-October for best weather. Visa pour l\'Image (September). Avoid August heat.',
+        businessHours: 'Palais des Rois 10 AM to 6 PM. Siesta observed.',
+        timeDifference: 'Perpignan is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Visa pour l\'Image (Sept) world-class! Collioure artists\' village 30 min. Barcelona 2 hr. Catalan spoken.',
+        transportation: 'Perpignan Airport (PGF) 5km. Perpignan station. TGV to Barcelona.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Visa pour l\'Image (September). Sant Jordi (April 23).'
+      }
+    }
+  },
+  { slug: 'antibes', city: 'Antibes', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.58, lng: 7.13, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.07M', metroPopulation: '0.17M', phoneCode: '+33 4', language: 'French',
+      climate: 'Mediterranean with hot summers (24-29°C) and mild winters (10-14°C). Very sunny.',
+      attractions: ['Musée Picasso', 'Cap d\'Antibes', 'Vieille Ville', 'Port Vauban', 'Marché Provençal', 'Ramparts', 'Juan-les-Pins', 'Marineland', 'Beaches', 'Fort Carré'],
+      demographics: 'Picasso museum in château. Superyacht capital. Cap d\'Antibes millionaires. Jazz à Juan festival.',
+      seoContent: {
+        intro: 'Antibes, Riviera gem, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Côte d\'Azur town has a Picasso museum in a seaside château, Europe\'s largest superyacht harbour, and hosts the legendary Jazz à Juan festival.',
+        timezoneFacts: 'Same timezone as Paris. Picasso worked in Antibes château in 1946, leaving his works there.',
+        bestTimeToVisit: 'May-October for beach. Jazz à Juan (July). Year-round mild.',
+        businessHours: 'Musée Picasso 10 AM to 6 PM. Market 6 AM to 1 PM.',
+        timeDifference: 'Antibes is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Picasso Museum stunning location! Port Vauban superyachts. Cap d\'Antibes walk. Juan-les-Pins for nightlife.',
+        transportation: 'Nice Airport (NCE) 20km. Antibes station. Train along coast.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Jazz à Juan (July).'
+      }
+    }
+  },
+  { slug: 'ajaccio', city: 'Ajaccio', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 41.92, lng: 8.74, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.07M', metroPopulation: '0.1M', phoneCode: '+33 4', language: 'French, Corsican',
+      climate: 'Mediterranean with hot summers (25-30°C) and mild winters (10-14°C). Sunniest French city.',
+      attractions: ['Maison Bonaparte', 'Citadel', 'Fesch Museum', 'Place de Gaulle', 'Sanguinaires Islands', 'Cathedral', 'Market', 'Beaches', 'Calanques de Piana nearby', 'Corsican products'],
+      demographics: 'Napoleon\'s birthplace. Corsica capital. Most sun in France. Italian influence. Mountain and sea.',
+      seoContent: {
+        intro: 'Ajaccio, Napoleon\'s birthplace, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. The capital of Corsica is France\'s sunniest city, where the Emperor was born in 1769, and gateway to the island\'s spectacular mountains and coastline.',
+        timezoneFacts: 'Same timezone as Paris. Napoleon was born here on August 15, 1769.',
+        bestTimeToVisit: 'May-October for weather. August 15 Napoleon festival. Avoid August crowds.',
+        businessHours: 'Maison Bonaparte 10 AM to 5 PM. Market mornings.',
+        timeDifference: 'Ajaccio is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Napoleon everywhere! Sanguinaires Islands sunset trip. Calanques de Piana UNESCO. Corsican charcuterie essential.',
+        transportation: 'Ajaccio Napoleon Bonaparte Airport (AJA) 5km. Ferries from Nice/Marseille.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Napoleon Festival (August 15).'
+      }
+    }
+  },
+  { slug: 'orleans', city: 'Orléans', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 47.90, lng: 1.90, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.12M', metroPopulation: '0.44M', phoneCode: '+33 2', language: 'French',
+      climate: 'Oceanic with mild summers (18-25°C) and cool winters (2-8°C). Loire Valley climate.',
+      attractions: ['Cathédrale Sainte-Croix', 'Maison de Jeanne d\'Arc', 'Place du Martroi', 'Hôtel Groslot', 'Loire riverfront', 'Parc Floral', 'FRAC Centre', 'Old Town', 'Rue de Bourgogne', 'Loire châteaux'],
+      demographics: 'Joan of Arc city. Loire gateway. Student city. Vinegar capital. Loire cycling route.',
+      seoContent: {
+        intro: 'Orléans, Joan of Arc\'s city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Loire Valley city was liberated by Joan of Arc in 1429, making it a pilgrimage site for her devotees, and serves as gateway to the famous châteaux.',
+        timezoneFacts: 'Same timezone as Paris. Joan of Arc lifted the siege of Orléans on May 8, 1429.',
+        bestTimeToVisit: 'April-October best. Fêtes de Jeanne d\'Arc (May). Loire à Vélo cycling.',
+        businessHours: 'Cathedral 9 AM to 6 PM. Museums 10 AM to 6 PM.',
+        timeDifference: 'Orléans is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Joan of Arc festival (May) spectacular! Loire à Vélo cycling. Chambord 1.5 hr. Famous for vinegar.',
+        transportation: 'Paris 1 hr by train. Orléans station. Paris Orly Airport 100km.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Fêtes de Jeanne d\'Arc (May 7-8).'
+      }
+    }
+  },
+  { slug: 'limoges', city: 'Limoges', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 45.83, lng: 1.26, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.13M', metroPopulation: '0.28M', phoneCode: '+33 5', language: 'French',
+      climate: 'Oceanic with mild summers (18-25°C) and cool winters (2-8°C). Central France.',
+      attractions: ['Musée National Adrien Dubouché', 'Cathedral Saint-Étienne', 'Quartier de la Boucherie', 'Gare de Limoges', 'Chapel of Saint-Aurélien', 'Porcelain factories', 'Jardins de l\'Évêché', 'Pavillon du Verdurier', 'Enamel workshops', 'Medieval streets'],
+      demographics: 'World porcelain capital. Enamel art center. Beautiful station. Limousin capital. Craft heritage.',
+      seoContent: {
+        intro: 'Limoges, porcelain capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This central French city has been synonymous with fine porcelain for 250 years, also famous for enamel work, and has one of France\'s most beautiful train stations.',
+        timezoneFacts: 'Same timezone as Paris. Limoges porcelain started in 1771 after kaolin discovery nearby.',
+        bestTimeToVisit: 'May-September best. Year-round for porcelain museums and shopping.',
+        businessHours: 'Porcelain museum 10 AM to 5:30 PM. Factory visits by appointment.',
+        timeDifference: 'Limoges is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Porcelain museum excellent! Factory outlets for bargains. Train station stunning. Boucherie quarter medieval.',
+        transportation: 'Limoges-Bellegarde Airport (LIG) 8km. Limoges-Bénédictins station (beautiful!). 3 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Ostensions (every 7 years).'
+      }
+    }
+  },
+  { slug: 'besancon', city: 'Besançon', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 47.24, lng: 6.02, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.12M', metroPopulation: '0.25M', phoneCode: '+33 3', language: 'French',
+      climate: 'Semi-continental with warm summers (18-26°C) and cold winters (-1 to 6°C). Jura influence.',
+      attractions: ['Citadel (UNESCO)', 'Vauban fortifications', 'Cathédrale Saint-Jean', 'Astronomical Clock', 'Musée du Temps', 'Doubs river loop', 'Quai Vauban', 'Victor Hugo birthplace', 'Lumière brothers', 'Comté cheese'],
+      demographics: 'UNESCO Vauban citadel. Watchmaking capital. Victor Hugo birthplace. Comté cheese region.',
+      seoContent: {
+        intro: 'Besançon, citadel city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Franche-Comté capital has a spectacular UNESCO Vauban citadel, was France\'s watchmaking capital, and is birthplace of Victor Hugo and the Lumière brothers.',
+        timezoneFacts: 'Same timezone as Paris. Besançon was French watchmaking capital, now museum showcase.',
+        bestTimeToVisit: 'May-September best. Allow half day for Citadel. Christmas markets.',
+        businessHours: 'Citadel 9 AM to 6 PM. Musée du Temps 10 AM to 6 PM.',
+        timeDifference: 'Besançon is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Citadel views spectacular! Musée du Temps for clock lovers. Comté cheese fondue. Doubs river walk.',
+        transportation: 'Besançon Franche-Comté TGV 10km. Besançon Viotte station. 2.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays.'
+      }
+    }
+  },
+  { slug: 'mulhouse', city: 'Mulhouse', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 47.75, lng: 7.34, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.11M', metroPopulation: '0.28M', phoneCode: '+33 3', language: 'French, Alsatian',
+      climate: 'Semi-continental with warm summers (18-26°C) and cold winters (-1 to 6°C). Alsace plain.',
+      attractions: ['Cité de l\'Automobile', 'Cité du Train', 'EDF Electropolis', 'Temple Saint-Étienne', 'Old Town', 'Stoffels (printed fabrics)', 'Place de la Réunion', 'Zoo', 'Parc de Wesserling', 'Swiss/German border'],
+      demographics: 'World\'s greatest car collection. Largest train museum. Industrial heritage. Swiss-German crossroads.',
+      seoContent: {
+        intro: 'Mulhouse, museum city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Alsatian industrial city has the world\'s greatest car collection (Schlumpf), France\'s largest train museum, and sits at the crossroads of France, Germany, and Switzerland.',
+        timezoneFacts: 'Same timezone as Paris. Schlumpf collection has over 400 cars including Bugattis.',
+        bestTimeToVisit: 'Year-round for museums. December for Alsatian Christmas markets.',
+        businessHours: 'Cité de l\'Automobile 10 AM to 6 PM. Museums closed Mondays.',
+        timeDifference: 'Mulhouse is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Cité de l\'Automobile car lovers\' paradise! Cité du Train impressive. Basel 30 min. Freiburg 50 min.',
+        transportation: 'EuroAirport Basel-Mulhouse-Freiburg (BSL) 25km. Mulhouse station. TGV to Paris 2.5 hr.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Alsace Christmas markets.'
+      }
     }
   },
   
   // Italy - Additional Cities
   { slug: 'turin', city: 'Turin', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.07, lng: 7.69, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '850K', phoneCode: '+39 011', language: 'Italian',
-      climate: 'Humid subtropical with hot summers (24-30°C) and cold winters (0-7°C). Alpine influence, foggy winters.',
-      attractions: ['Egyptian Museum', 'Mole Antonelliana', 'Royal Palace', 'Piazza San Carlo', 'Shroud of Turin Chapel'],
-      demographics: 'Fourth-largest city in Italy, first capital of unified Italy. Home to FIAT and Juventus FC, elegant Baroque architecture.'
+      currency: 'Euro', currencySymbol: '€', population: '0.85M', metroPopulation: '1.7M', phoneCode: '+39 011', language: 'Italian',
+      climate: 'Continental with hot summers (24-30°C) and cold winters (0-7°C). Alpine influence, foggy winters.',
+      attractions: ['Egyptian Museum', 'Mole Antonelliana', 'Royal Palace', 'Piazza San Carlo', 'Shroud of Turin', 'Museo del Cinema', 'Lingotto', 'Superga Basilica', 'Palazzo Madama', 'Via Roma'],
+      demographics: 'First capital of unified Italy. FIAT and Juventus home. Elegant Baroque architecture. Chocolate and café culture.',
+      seoContent: {
+        intro: 'Turin, Italy\'s first capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This elegant Baroque city houses the world\'s best Egyptian museum outside Cairo, the mysterious Shroud of Turin, and was home to FIAT and Italian unification.',
+        timezoneFacts: 'Same timezone as Rome. Turin was capital of Italy from 1861 to 1865.',
+        bestTimeToVisit: 'April-June and September-October best. Winter can be foggy but atmospheric. Shroud rarely displayed.',
+        businessHours: 'Shops 9:30 AM to 7:30 PM. Museums 9 AM to 7 PM. Closed Mondays typically.',
+        timeDifference: 'Turin is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Egyptian Museum is world-class! Bicerin (chocolate coffee) at Caffè Al Bicerin. Aperitivo culture strong. Eataly flagship here.',
+        transportation: 'Turin Caselle Airport (TRN) 16km. Porta Nuova & Porta Susa stations. 1 hr from Milan by train.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. San Giovanni (June 24) patron saint. Salone del Gusto (October).'
+      }
     }
   },
   { slug: 'bologna', city: 'Bologna', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.49, lng: 11.34, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '395K', phoneCode: '+39 051', language: 'Italian',
+      currency: 'Euro', currencySymbol: '€', population: '0.4M', metroPopulation: '1.0M', phoneCode: '+39 051', language: 'Italian',
       climate: 'Humid subtropical with hot summers (25-35°C) and cold foggy winters (0-8°C).',
-      attractions: ['Piazza Maggiore', 'Two Towers', 'Basilica di San Petronio', 'University of Bologna', 'Archiginnasio'],
-      demographics: 'Capital of Emilia-Romagna, home to world\'s oldest university (1088). Known as "La Dotta" (the learned), "La Grassa" (the fat), "La Rossa" (the red).'
+      attractions: ['Piazza Maggiore', 'Two Towers', 'Basilica di San Petronio', 'University of Bologna', 'Archiginnasio', 'Quadrilatero', 'Santo Stefano', 'Porticos', 'Ducati Museum', 'FICO Eataly World'],
+      demographics: 'World\'s oldest university (1088). La Dotta (learned), La Grassa (fat), La Rossa (red). Portico city. Food capital.',
+      seoContent: {
+        intro: 'Bologna, Italy\'s food capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city is home to the world\'s oldest university (1088), 40km of historic porticos, and Italy\'s finest cuisine - birthplace of tortellini, tagliatelle, and mortadella.',
+        timezoneFacts: 'Same timezone as Rome. Bologna\'s university predates Oxford and Cambridge.',
+        bestTimeToVisit: 'April-June and September-October best. Winter foggy but atmospheric. Avoid August closures.',
+        businessHours: 'Shops 9 AM to 7:30 PM. Lunch break common 1-3:30 PM. Museums closed Mondays.',
+        timeDifference: 'Bologna is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Quadrilatero food market essential! Climb Torre degli Asinelli (498 steps). Tagliatelle al ragù (NOT spaghetti bolognese). Porticos are UNESCO.',
+        transportation: 'Bologna Marconi Airport (BLQ) 6km. Bologna Centrale station - major hub. 35 min from Florence.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. San Petronio (October 4) patron saint.'
+      }
     }
   },
   { slug: 'genoa', city: 'Genoa', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.41, lng: 8.93, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '575K', phoneCode: '+39 010', language: 'Italian, Ligurian',
+      currency: 'Euro', currencySymbol: '€', population: '0.58M', metroPopulation: '0.85M', phoneCode: '+39 010', language: 'Italian, Ligurian',
       climate: 'Mediterranean with mild summers (24-28°C) and cool winters (6-12°C). Protected by mountains.',
-      attractions: ['Aquarium of Genoa', 'Via Garibaldi (UNESCO)', 'Porto Antico', 'Palazzo Ducale', 'Cimitero di Staglieno'],
-      demographics: 'Italy\'s largest seaport, birthplace of Columbus and pesto. Historic maritime republic with UNESCO palaces.'
+      attractions: ['Aquarium of Genoa', 'Via Garibaldi (UNESCO)', 'Porto Antico', 'Palazzo Ducale', 'Cimitero di Staglieno', 'Rolli Palaces', 'Galata Museum', 'Boccadasse', 'Lanterna', 'Caruggi'],
+      demographics: 'Italy\'s largest seaport. Columbus birthplace. Pesto origin. Historic maritime republic. UNESCO palaces.',
+      seoContent: {
+        intro: 'Genoa, La Superba, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This historic maritime republic is birthplace of Christopher Columbus and pesto, features Europe\'s largest aquarium, and UNESCO-listed Renaissance palaces.',
+        timezoneFacts: 'Same timezone as Rome. Genoa rivaled Venice as a maritime superpower.',
+        bestTimeToVisit: 'April-October for best weather. Avoid August heat. Spring for fewer tourists.',
+        businessHours: 'Shops 9 AM to 7:30 PM. Aquarium 9 AM to 8 PM. Museums closed Mondays.',
+        timeDifference: 'Genoa is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Get lost in caruggi (narrow lanes)! Aquarium excellent. Pesto here is authentic. Focaccia di Recco unique. Boccadasse fishing village charming.',
+        transportation: 'Genoa Cristoforo Colombo Airport (GOA) 7km. Genova Piazza Principe & Brignole stations.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. San Giovanni Battista (June 24) patron saint.'
+      }
     }
   },
   { slug: 'palermo', city: 'Palermo', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 38.12, lng: 13.36, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '650K', phoneCode: '+39 091', language: 'Italian, Sicilian',
+      currency: 'Euro', currencySymbol: '€', population: '0.65M', metroPopulation: '1.0M', phoneCode: '+39 091', language: 'Italian, Sicilian',
       climate: 'Mediterranean with hot dry summers (28-35°C) and mild winters (10-15°C). Very sunny.',
-      attractions: ['Palermo Cathedral', 'Palazzo dei Normanni', 'Teatro Massimo', 'Quattro Canti', 'Capuchin Catacombs'],
-      demographics: 'Capital of Sicily, crossroads of Mediterranean cultures. Arab-Norman architecture (UNESCO), vibrant street food scene.'
+      attractions: ['Palermo Cathedral', 'Palazzo dei Normanni', 'Teatro Massimo', 'Quattro Canti', 'Capuchin Catacombs', 'Monreale Cathedral', 'La Martorana', 'Ballarò Market', 'Mondello Beach', 'Street Food'],
+      demographics: 'Sicily capital. Arab-Norman UNESCO heritage. Mediterranean crossroads. Vibrant street food. Mafia history.',
+      seoContent: {
+        intro: 'Palermo, capital of Sicily, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This chaotic, beautiful city is a crossroads of civilizations with UNESCO Arab-Norman architecture, legendary street food, and Italy\'s largest opera house (Teatro Massimo).',
+        timezoneFacts: 'Same timezone as Rome. Palermo was ruled by Arabs, Normans, Spanish, and Bourbons.',
+        bestTimeToVisit: 'April-June and September-October best. Summer very hot. Festino di Santa Rosalia (July) spectacular.',
+        businessHours: 'Shops 9 AM to 1 PM, 4-8 PM. Markets morning until 2 PM. Siesta observed.',
+        timeDifference: 'Palermo is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Street food essential - arancini, panelle, sfincione! Monreale mosaics stunning. Ballarò market authentic. Teatro Massimo Godfather filmed here.',
+        transportation: 'Palermo Falcone-Borsellino Airport (PMO) 35km. Palermo Centrale station. Ferries to mainland.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Santa Rosalia (July 15) patron saint - 5-day festival.'
+      }
     }
   },
   { slug: 'catania', city: 'Catania', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 37.50, lng: 15.09, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '310K', phoneCode: '+39 095', language: 'Italian, Sicilian',
+      currency: 'Euro', currencySymbol: '€', population: '0.31M', metroPopulation: '0.75M', phoneCode: '+39 095', language: 'Italian, Sicilian',
       climate: 'Mediterranean with hot summers (28-35°C) and mild winters (10-15°C). In shadow of Mount Etna.',
-      attractions: ['Mount Etna', 'Piazza del Duomo', 'Fish Market (La Pescheria)', 'Roman Amphitheatre', 'Via Etnea'],
-      demographics: 'Sicily\'s second city at foot of Etna volcano. Black lava baroque architecture, major tech and startup hub.'
+      attractions: ['Mount Etna', 'Piazza del Duomo', 'Fish Market', 'Roman Amphitheatre', 'Via Etnea', 'Elephant Fountain', 'Monastery of San Nicolò', 'Ursino Castle', 'Bellini Garden', 'Baroque architecture'],
+      demographics: 'Sicily\'s second city. Mount Etna gateway. Black lava Baroque. Tech hub. Bellini birthplace.',
+      seoContent: {
+        intro: 'Catania, city under the volcano, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This vibrant Sicilian city sits at the foot of Mount Etna (Europe\'s most active volcano), features dramatic black lava Baroque architecture, and has a legendary fish market.',
+        timezoneFacts: 'Same timezone as Rome. Catania has been destroyed and rebuilt 7 times by Etna.',
+        bestTimeToVisit: 'April-June and September-October best. Summer very hot. Etna accessible year-round.',
+        businessHours: 'Shops 9 AM to 1 PM, 4-8 PM. Fish Market 7 AM to 1 PM daily. Siesta observed.',
+        timeDifference: 'Catania is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Fish Market (La Pescheria) is theatre! Etna excursions book ahead. Arancini here are cone-shaped. Street food excellent. Sant\'Agata festival (Feb) huge.',
+        transportation: 'Catania Fontanarossa Airport (CTA) 7km - Sicily\'s busiest. Catania Centrale station.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Sant\'Agata (February 3-5) massive festival.'
+      }
     }
   },
   { slug: 'bari', city: 'Bari', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 41.13, lng: 16.87, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '320K', phoneCode: '+39 080', language: 'Italian, Barese',
+      currency: 'Euro', currencySymbol: '€', population: '0.32M', metroPopulation: '1.3M', phoneCode: '+39 080', language: 'Italian, Barese',
       climate: 'Mediterranean with hot summers (26-32°C) and mild winters (8-14°C). Adriatic Sea influence.',
-      attractions: ['Basilica San Nicola', 'Bari Vecchia', 'Castello Normanno-Svevo', 'Lungomare', 'Petruzzelli Theatre'],
-      demographics: 'Capital of Puglia, gateway to Greece and Balkans. Pilgrimage site for St. Nicholas, famous for fresh pasta.'
+      attractions: ['Basilica San Nicola', 'Bari Vecchia', 'Castello Normanno-Svevo', 'Lungomare', 'Petruzzelli Theatre', 'Cathedral', 'Piazza Mercantile', 'Strada delle Orecchiette', 'Porto Vecchio', 'Polignano a Mare'],
+      demographics: 'Puglia capital. St. Nicholas pilgrimage. Gateway to Greece. Orecchiette pasta. Adriatic port.',
+      seoContent: {
+        intro: 'Bari, capital of Puglia, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Adriatic port city holds the relics of St. Nicholas (yes, Santa Claus), has a maze-like old town where women make fresh orecchiette in the streets, and is gateway to Puglia\'s treasures.',
+        timezoneFacts: 'Same timezone as Rome. St. Nicholas\' bones were brought here from Turkey in 1087.',
+        bestTimeToVisit: 'April-June and September-October best. Summer busy with beach tourists.',
+        businessHours: 'Shops 9 AM to 1 PM, 4:30-8 PM. Restaurants dinner from 8 PM. Markets morning.',
+        timeDifference: 'Bari is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Watch orecchiette being made in Bari Vecchia! San Nicola basilica for pilgrims. Focaccia barese delicious. Day trip to Alberobello, Polignano.',
+        transportation: 'Bari Karol Wojtyła Airport (BRI) 8km. Bari Centrale station. Ferries to Greece/Albania.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. San Nicola (May 7-9, December 6) patron saint.'
+      }
     }
   },
   { slug: 'verona', city: 'Verona', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.44, lng: 10.99, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '260K', phoneCode: '+39 045', language: 'Italian, Venetian',
+      currency: 'Euro', currencySymbol: '€', population: '0.26M', metroPopulation: '0.48M', phoneCode: '+39 045', language: 'Italian, Venetian',
       climate: 'Humid subtropical with hot summers (24-30°C) and cold winters (0-8°C). Moderate rainfall.',
-      attractions: ['Arena di Verona', 'Juliet\'s House', 'Piazza delle Erbe', 'Castelvecchio', 'Ponte Pietra'],
-      demographics: 'UNESCO World Heritage city, setting of Romeo and Juliet. Roman amphitheater hosts world-famous opera festival.'
+      attractions: ['Arena di Verona', 'Juliet\'s House', 'Piazza delle Erbe', 'Castelvecchio', 'Ponte Pietra', 'Piazza Bra', 'Torre dei Lamberti', 'San Zeno Basilica', 'Giardino Giusti', 'Roman Theatre'],
+      demographics: 'Romeo and Juliet setting. Roman amphitheater opera. UNESCO World Heritage. Lake Garda gateway. Wine region.',
+      seoContent: {
+        intro: 'Verona, city of Romeo and Juliet, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city is famed for Shakespeare\'s star-crossed lovers, hosts world-class opera in a Roman amphitheater, and is gateway to Lake Garda and Valpolicella wine country.',
+        timezoneFacts: 'Same timezone as Rome. The Arena opera festival has run since 1913.',
+        bestTimeToVisit: 'June-August for Arena opera. April-October for sightseeing. Vinitaly wine fair (April).',
+        businessHours: 'Shops 9 AM to 7:30 PM. Arena performances start 9 PM (summer). Museums closed Mondays.',
+        timeDifference: 'Verona is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Arena opera is magical - book ahead! Juliet\'s balcony very crowded. Vinitaly (April) world\'s largest wine fair. Lake Garda 30 min.',
+        transportation: 'Verona Villafranca Airport (VRN) 10km. Verona Porta Nuova station. 1 hr from Venice.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Arena Opera Festival (June-September).'
+      }
     }
   },
   { slug: 'padua', city: 'Padua', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.41, lng: 11.88, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '210K', phoneCode: '+39 049', language: 'Italian, Venetian',
+      currency: 'Euro', currencySymbol: '€', population: '0.21M', metroPopulation: '0.43M', phoneCode: '+39 049', language: 'Italian, Venetian',
       climate: 'Humid subtropical with hot summers (24-30°C) and cold foggy winters (-1 to 7°C).',
-      attractions: ['Scrovegni Chapel (Giotto)', 'Basilica di Sant\'Antonio', 'Prato della Valle', 'University of Padua', 'Botanical Garden (UNESCO)'],
-      demographics: 'Ancient university city (1222), where Galileo taught. Giotto\'s frescoes are Renaissance masterpiece.'
+      attractions: ['Scrovegni Chapel', 'Basilica di Sant\'Antonio', 'Prato della Valle', 'University of Padua', 'Botanical Garden', 'Caffè Pedrocchi', 'Palazzo della Ragione', 'Piazza dei Signori', 'Orto Botanico', 'Euganean Hills'],
+      demographics: 'Ancient university city. Giotto\'s masterpiece. St. Anthony pilgrimage. UNESCO botanical garden. Galileo taught here.',
+      seoContent: {
+        intro: 'Padua, city of saints and scholars, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This ancient city houses Giotto\'s Scrovegni Chapel frescoes (a Renaissance masterpiece), Europe\'s oldest botanical garden (UNESCO), and the basilica of St. Anthony.',
+        timezoneFacts: 'Same timezone as Rome. Galileo taught at Padua University for 18 years.',
+        bestTimeToVisit: 'April-June and September-October best. Book Scrovegni Chapel in advance (limited entry).',
+        businessHours: 'Scrovegni Chapel timed entry (book online). Basilica 6:30 AM to 7 PM. Siesta observed.',
+        timeDifference: 'Padua is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Scrovegni Chapel MUST be booked ahead - limited to 25 people for 15 min! Caffè Pedrocchi historic. Basilica free but queues. Venice 30 min.',
+        transportation: 'Venice Marco Polo (VCE) 45 min. Padova station. 25 min from Venice by train.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Sant\'Antonio (June 13) patron saint.'
+      }
     }
   },
   { slug: 'trieste', city: 'Trieste', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.65, lng: 13.78, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '205K', phoneCode: '+39 040', language: 'Italian, Triestine, Slovene',
+      currency: 'Euro', currencySymbol: '€', population: '0.2M', metroPopulation: '0.24M', phoneCode: '+39 040', language: 'Italian, Triestine, Slovene',
       climate: 'Humid subtropical with warm summers (22-28°C) and cold winters (2-8°C). Bora wind in winter.',
-      attractions: ['Piazza Unità d\'Italia', 'Miramare Castle', 'Roman Theatre', 'Caffè Storici', 'Grotta Gigante'],
-      demographics: 'Border city with Austro-Hungarian heritage, Italy\'s coffee capital. Major port, historic literary center (Joyce, Svevo).'
+      attractions: ['Piazza Unità d\'Italia', 'Miramare Castle', 'Roman Theatre', 'Caffè Storici', 'Grotta Gigante', 'Canal Grande', 'Risiera di San Sabba', 'Castello di San Giusto', 'Barcola Beach', 'Carso plateau'],
+      demographics: 'Austro-Hungarian heritage. Italy\'s coffee capital. James Joyce lived here. Border city. Literary tradition.',
+      seoContent: {
+        intro: 'Trieste, Italy\'s coffee capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This elegant border city blends Italian, Austrian, and Slavic cultures, has Europe\'s largest sea-facing square, and is where James Joyce wrote much of Ulysses.',
+        timezoneFacts: 'Same timezone as Rome. Trieste was part of Austria-Hungary until 1918.',
+        bestTimeToVisit: 'April-October for best weather. Bora wind can be extreme in winter. Barcolana regatta (October).',
+        businessHours: 'Historic cafés open early. Shops 9 AM to 7:30 PM. Miramare Castle 9 AM to 7 PM.',
+        timeDifference: 'Trieste is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Coffee culture unique - un nero is espresso! Miramare Castle tragic history. Historic cafés (Caffè degli Specchi, San Marco). Slovenia border 5 min.',
+        transportation: 'Trieste Airport (TRS) 35km. Trieste Centrale station. 2 hr from Venice.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Barcolana regatta (October) - world\'s largest.'
+      }
     }
   },
   { slug: 'brescia', city: 'Brescia', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.54, lng: 10.21, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '200K', phoneCode: '+39 030', language: 'Italian, Brescian',
+      currency: 'Euro', currencySymbol: '€', population: '0.2M', metroPopulation: '0.55M', phoneCode: '+39 030', language: 'Italian, Brescian',
       climate: 'Humid subtropical with hot summers (25-32°C) and cold winters (-1 to 6°C). Pre-Alpine location.',
-      attractions: ['Santa Giulia Museum (UNESCO)', 'Roman Capitolium', 'Piazza della Loggia', 'Old Cathedral', 'Brescia Castle'],
-      demographics: 'Industrial powerhouse of Lombardy, UNESCO Lombard heritage. Gateway to Lake Garda and Franciacorta wine region.'
+      attractions: ['Santa Giulia Museum', 'Roman Capitolium', 'Piazza della Loggia', 'Old Cathedral', 'Brescia Castle', 'Winged Victory', 'Mille Miglia Museum', 'New Cathedral', 'Franciacorta', 'Lake Garda'],
+      demographics: 'UNESCO Lombard heritage. Mille Miglia race. Industrial powerhouse. Lake Garda gateway. Franciacorta wine.',
+      seoContent: {
+        intro: 'Brescia, Lioness of Italy, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city has remarkable Roman and Lombard heritage, is start/finish of the legendary Mille Miglia race, and is gateway to Lake Garda and Franciacorta wine country.',
+        timezoneFacts: 'Same timezone as Rome. Brescia was called "Lioness of Italy" for its resistance in 1849.',
+        bestTimeToVisit: 'April-October for best weather. Mille Miglia (May). Franciacorta wine tours year-round.',
+        businessHours: 'Shops 9 AM to 7:30 PM. Santa Giulia Museum 10 AM to 6 PM. Closed Mondays.',
+        timeDifference: 'Brescia is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Santa Giulia Museum exceptional! Winged Victory bronze masterpiece. Franciacorta is Italy\'s champagne. Lake Garda 30 min. Mille Miglia spectacular.',
+        transportation: 'Milan airports closest. Brescia station. 1 hr from Milan by train.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Mille Miglia (May). Saints Faustino and Giovita (Feb 15).'
+      }
     }
   },
   { slug: 'parma', city: 'Parma', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.80, lng: 10.33, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '200K', phoneCode: '+39 0521', language: 'Italian, Parmigiano',
+      currency: 'Euro', currencySymbol: '€', population: '0.2M', metroPopulation: '0.45M', phoneCode: '+39 0521', language: 'Italian, Parmigiano',
       climate: 'Humid subtropical with hot summers (25-33°C) and cold foggy winters (-1 to 6°C).',
-      attractions: ['Parma Cathedral', 'Baptistery', 'Teatro Regio', 'Palazzo della Pilotta', 'Parma ham tours'],
-      demographics: 'UNESCO Creative City of Gastronomy, home of Parmigiano-Reggiano and Prosciutto di Parma. Verdi\'s birthplace nearby.'
+      attractions: ['Parma Cathedral', 'Baptistery', 'Teatro Regio', 'Palazzo della Pilotta', 'Parma Ham tours', 'Galleria Nazionale', 'Camera di San Paolo', 'Parco Ducale', 'Parmigiano factories', 'Verdi sites'],
+      demographics: 'UNESCO Creative City of Gastronomy. Parmigiano-Reggiano and Prosciutto di Parma. Opera tradition. Verdi country.',
+      seoContent: {
+        intro: 'Parma, Italy\'s food capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO Creative City of Gastronomy is birthplace of Parmigiano-Reggiano and Prosciutto di Parma, has a world-class opera house, and is heart of Verdi country.',
+        timezoneFacts: 'Same timezone as Rome. Verdi was born near Parma and his operas premiered at Teatro Regio.',
+        bestTimeToVisit: 'April-June and September-October best. Festival Verdi (autumn). Avoid August closures.',
+        businessHours: 'Food shops 8 AM to 1 PM, 3:30-7:30 PM. Restaurants lunch 12:30-2 PM, dinner 7:30-10 PM.',
+        timeDifference: 'Parma is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Visit Parmigiano dairy and prosciutto cellar! Baptistery interior stunning. Correggio frescoes in Cathedral. Culatello even more prized than prosciutto.',
+        transportation: 'Parma Airport (PMF) limited. Parma station. 1 hr from Bologna/Milan.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Festival Verdi (September-October).'
+      }
     }
   },
   { slug: 'modena', city: 'Modena', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.65, lng: 10.92, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '185K', phoneCode: '+39 059', language: 'Italian, Modenese',
+      currency: 'Euro', currencySymbol: '€', population: '0.19M', metroPopulation: '0.35M', phoneCode: '+39 059', language: 'Italian, Modenese',
       climate: 'Humid subtropical with hot summers (25-33°C) and cold foggy winters (-1 to 6°C).',
-      attractions: ['Modena Cathedral (UNESCO)', 'Enzo Ferrari Museum', 'Piazza Grande', 'Acetaia (balsamic vinegar)', 'Palazzo Ducale'],
-      demographics: 'Motor Valley capital - home to Ferrari, Maserati, Lamborghini. Traditional balsamic vinegar origin, Pavarotti\'s hometown.'
+      attractions: ['Modena Cathedral', 'Enzo Ferrari Museum', 'Piazza Grande', 'Acetaia tours', 'Palazzo Ducale', 'Ghirlandina Tower', 'Ferrari Maranello', 'Lamborghini', 'Maserati', 'Osteria Francescana'],
+      demographics: 'Motor Valley capital - Ferrari, Maserati, Lamborghini. Traditional balsamic vinegar. Pavarotti hometown. UNESCO cathedral.',
+      seoContent: {
+        intro: 'Modena, heart of Motor Valley, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This city is home to Ferrari, Maserati, and Lamborghini, produces the world\'s finest balsamic vinegar, was Pavarotti\'s hometown, and has a UNESCO cathedral.',
+        timezoneFacts: 'Same timezone as Rome. Ferrari factory in nearby Maranello opened in 1947.',
+        bestTimeToVisit: 'April-June and September-October best. Book Ferrari Museum and factory tours ahead.',
+        businessHours: 'Ferrari Museum 9:30 AM to 6 PM. Acetaie by appointment. Avoid August closures.',
+        timeDifference: 'Modena is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Ferrari Museum + factory tour book weeks ahead! Traditional balsamic aged 12-25+ years. Osteria Francescana world\'s best restaurant (book months ahead).',
+        transportation: 'Bologna Airport (BLQ) 40 min. Modena station. 30 min from Bologna.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. San Geminiano (January 31) patron saint.'
+      }
     }
   },
   { slug: 'reggio-emilia', city: 'Reggio Emilia', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.70, lng: 10.63, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '170K', phoneCode: '+39 0522', language: 'Italian, Reggiano',
+      currency: 'Euro', currencySymbol: '€', population: '0.17M', metroPopulation: '0.53M', phoneCode: '+39 0522', language: 'Italian, Reggiano',
       climate: 'Humid subtropical with hot summers (25-32°C) and cold foggy winters (-1 to 6°C).',
-      attractions: ['Piazza Prampolini', 'Basilica della Ghiara', 'Musei Civici', 'Teatro Municipale', 'Palazzo del Capitano'],
-      demographics: 'Birthplace of Italian flag (Il Tricolore). Known for Parmigiano-Reggiano, innovative Reggio Emilia education approach.'
+      attractions: ['Piazza Prampolini', 'Basilica della Ghiara', 'Musei Civici', 'Teatro Municipale', 'Palazzo del Capitano', 'Sala del Tricolore', 'Mauriziano', 'Reggio Emilia AV station', 'Chiostri di San Pietro', 'Parmigiano dairies'],
+      demographics: 'Birthplace of Italian flag. Parmigiano-Reggiano origin. Reggio Emilia education approach. Modern architecture.',
+      seoContent: {
+        intro: 'Reggio Emilia, birthplace of the Italian flag, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This cultured city is where the Tricolore was born in 1797, shares origin of Parmigiano-Reggiano, and pioneered the world-famous Reggio Emilia education approach.',
+        timezoneFacts: 'Same timezone as Rome. The Italian flag (il Tricolore) was adopted here in 1797.',
+        bestTimeToVisit: 'April-June and September-October best. Parmigiano tours year-round (book ahead).',
+        businessHours: 'Shops 9 AM to 7:30 PM. Sala del Tricolore visits by appointment. Museums closed Mondays.',
+        timeDifference: 'Reggio Emilia is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Sala del Tricolore where Italian flag born! Calatrava high-speed station stunning. Parmigiano-Reggiano from HERE not Parma. Erbazzone local specialty.',
+        transportation: 'Reggio Emilia AV Mediopadana (high-speed). Reggio Emilia station (regular). Bologna Airport 1 hr.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Flag Day (January 7).'
+      }
     }
   },
   { slug: 'cagliari', city: 'Cagliari', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 39.22, lng: 9.12, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '155K', phoneCode: '+39 070', language: 'Italian, Sardinian',
+      currency: 'Euro', currencySymbol: '€', population: '0.15M', metroPopulation: '0.43M', phoneCode: '+39 070', language: 'Italian, Sardinian',
       climate: 'Mediterranean with hot dry summers (28-32°C) and mild winters (10-15°C). Very sunny.',
-      attractions: ['Castello district', 'Poetto Beach', 'Roman Amphitheatre', 'Bastione Saint Remy', 'Flamingo lagoons'],
-      demographics: 'Capital of Sardinia, ancient Phoenician port. Beautiful beaches, pink flamingos, and unique Sardinian culture.'
+      attractions: ['Castello district', 'Poetto Beach', 'Roman Amphitheatre', 'Bastione Saint Remy', 'Flamingo lagoons', 'National Archaeological Museum', 'Marina district', 'San Benedetto Market', 'Torre dell\'Elefante', 'Nora archaeological site'],
+      demographics: 'Sardinia capital. Ancient Phoenician port. Beautiful beaches. Pink flamingos. Unique Sardinian culture.',
+      seoContent: {
+        intro: 'Cagliari, capital of Sardinia, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This ancient Mediterranean city has stunning beaches, a hilltop historic center with panoramic views, pink flamingos in urban lagoons, and serves as gateway to Sardinia\'s unique culture.',
+        timezoneFacts: 'Same timezone as Rome. Sardinia has its own language and unique traditions.',
+        bestTimeToVisit: 'May-October for beach. Spring for wildflowers. Sant\'Efisio festival (May 1) spectacular.',
+        businessHours: 'Shops 9 AM to 1 PM, 4:30-8 PM. Beaches 24/7. Markets morning.',
+        timeDifference: 'Cagliari is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Poetto Beach 8km long! Flamingos in Molentargius lagoon year-round. San Benedetto Market excellent. Try culurgiones and porceddu.',
+        transportation: 'Cagliari Elmas Airport (CAG) 7km. Ferries from mainland. Limited trains.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Sant\'Efisio (May 1-4) huge procession.'
+      }
     }
   },
   { slug: 'perugia', city: 'Perugia', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 43.11, lng: 12.39, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '165K', phoneCode: '+39 075', language: 'Italian, Umbrian',
+      currency: 'Euro', currencySymbol: '€', population: '0.17M', metroPopulation: '0.35M', phoneCode: '+39 075', language: 'Italian, Umbrian',
       climate: 'Humid subtropical with warm summers (24-30°C) and cool winters (2-10°C). Hilltop location.',
-      attractions: ['Piazza IV Novembre', 'Fontana Maggiore', 'Galleria Nazionale', 'Rocca Paolina', 'Eurochocolate Festival'],
-      demographics: 'Capital of Umbria, major university city (Università per Stranieri). Famous for chocolate (Perugina/Baci) and jazz festival.'
+      attractions: ['Piazza IV Novembre', 'Fontana Maggiore', 'Galleria Nazionale', 'Rocca Paolina', 'Eurochocolate Festival', 'Palazzo dei Priori', 'San Lorenzo Cathedral', 'Umbria Jazz', 'Etruscan Well', 'Corso Vannucci'],
+      demographics: 'Umbria capital. Major university city. Famous for chocolate (Baci). Jazz and chocolate festivals. Etruscan heritage.',
+      seoContent: {
+        intro: 'Perugia, heart of Umbria, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This hilltop university city is famous for chocolate (Baci Perugina), hosts world-class jazz and chocolate festivals, and is a perfect base for exploring Umbria\'s hill towns.',
+        timezoneFacts: 'Same timezone as Rome. Università per Stranieri teaches Italian to foreigners since 1921.',
+        bestTimeToVisit: 'April-October best. Umbria Jazz (July). Eurochocolate (October). Avoid August closures.',
+        businessHours: 'Shops 9 AM to 1 PM, 3:30-7:30 PM. Corso Vannucci passeggiata evening.',
+        timeDifference: 'Perugia is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Eurochocolate (Oct) is chocolate heaven! Umbria Jazz world-class. Rocca Paolina underground city. Day trips to Assisi, Orvieto, Spoleto.',
+        transportation: 'Perugia San Francesco Airport (PEG) 12km. Perugia station. 2.5 hr from Rome.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Sant\'Ercolano (March 1) patron saint.'
+      }
     }
   },
   { slug: 'messina', city: 'Messina', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 38.19, lng: 15.55, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '230K', phoneCode: '+39 090', language: 'Italian, Sicilian',
+      currency: 'Euro', currencySymbol: '€', population: '0.23M', metroPopulation: '0.48M', phoneCode: '+39 090', language: 'Italian, Sicilian',
       climate: 'Mediterranean with hot summers (27-32°C) and mild winters (11-15°C). Strait of Messina breezes.',
-      attractions: ['Messina Cathedral', 'Astronomical Clock', 'Regional Museum', 'Strait of Messina', 'Santuario di Montalto'],
-      demographics: 'Gateway to Sicily across the Strait. Ancient Greek foundation, rebuilt after 1908 earthquake. Major ferry port.'
+      attractions: ['Messina Cathedral', 'Astronomical Clock', 'Regional Museum', 'Strait of Messina', 'Santuario di Montalto', 'Fontana di Orione', 'Church of the Annunciation', 'Port', 'Capo Peloro', 'Taormina nearby'],
+      demographics: 'Gateway to Sicily. Rebuilt after 1908 earthquake. Major ferry port. Astronomical clock largest in world.',
+      seoContent: {
+        intro: 'Messina, gateway to Sicily, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This port city guards the narrow strait to mainland Italy, has the world\'s largest astronomical clock in its cathedral, and was heroically rebuilt after a devastating 1908 earthquake.',
+        timezoneFacts: 'Same timezone as Rome. The 1908 Messina earthquake was one of Europe\'s deadliest.',
+        bestTimeToVisit: 'April-October for best weather. Ferragosto (August 15) procession. Taormina nearby.',
+        businessHours: 'Cathedral clock show at noon. Shops 9 AM to 1 PM, 4-8 PM.',
+        timeDifference: 'Messina is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Astronomical clock noon show famous! Ferries to mainland every 20 min. Taormina 50 min. Swim at Capo Peloro where seas meet.',
+        transportation: 'Catania Airport (CTA) 1.5 hr. Messina Centrale station. Ferries to Villa San Giovanni (20 min).',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Madonna della Lettera (June 3) patron saint. Vara procession (August 15).'
+      }
+    }
+  },
+  
+  // Italy - Additional Premium Tourist Destinations
+  { slug: 'siena', city: 'Siena', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 43.32, lng: 11.33, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.05M', metroPopulation: '0.12M', phoneCode: '+39 0577', language: 'Italian',
+      climate: 'Humid subtropical with warm summers (22-30°C) and cool winters (2-10°C). Tuscan hills.',
+      attractions: ['Piazza del Campo', 'Il Palio', 'Duomo di Siena', 'Torre del Mangia', 'Palazzo Pubblico', 'Contrade', 'Pinacoteca', 'San Domenico', 'Fontebranda', 'Chianti region'],
+      demographics: 'Medieval masterpiece. Il Palio horse race. Gothic cathedral. UNESCO World Heritage.',
+      seoContent: {
+        intro: 'Siena, Florence\'s eternal rival, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO medieval city hosts the legendary Palio horse race and has Italy\'s most beautiful piazza - the shell-shaped Campo.',
+        timezoneFacts: 'Same timezone as Rome. The Palio has been run since at least 1633.',
+        bestTimeToVisit: 'April-October best. Palio (July 2 and August 16). Avoid August heat.',
+        businessHours: 'Duomo 10:30 AM to 7 PM. Shops 9 AM to 1 PM, 3:30-7:30 PM.',
+        timeDifference: 'Siena is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Il Palio tickets impossible - watch free in Campo! Duomo floor uncovered Aug-Oct. Panforte and ricciarelli sweets.',
+        transportation: 'Florence Airport (FLR) 1 hr. Siena station outside walls. Bus from Florence better.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Il Palio (July 2, August 16).'
+      }
+    }
+  },
+  { slug: 'pisa', city: 'Pisa', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 43.72, lng: 10.40, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.09M', metroPopulation: '0.2M', phoneCode: '+39 050', language: 'Italian',
+      climate: 'Mediterranean with warm summers (24-30°C) and mild winters (5-12°C). Coastal.',
+      attractions: ['Leaning Tower', 'Piazza dei Miracoli', 'Cathedral', 'Baptistery', 'Camposanto', 'Piazza dei Cavalieri', 'Santa Maria della Spina', 'Lungarni', 'University', 'Luminara'],
+      demographics: 'Leaning Tower fame. UNESCO Piazza dei Miracoli. Historic maritime republic. Tuscany gateway.',
+      seoContent: {
+        intro: 'Pisa, home of the Leaning Tower, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. Beyond the famous tilting bell tower, this UNESCO city has stunning Romanesque architecture and serves as gateway to Tuscany.',
+        timezoneFacts: 'Same timezone as Rome. The tower began leaning during construction in 1173.',
+        bestTimeToVisit: 'April-October best. Book Tower climb ahead in summer. Luminara (June 16).',
+        businessHours: 'Tower 9 AM to 8 PM (summer). Book tower tickets online!',
+        timeDifference: 'Pisa is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Book Tower climb weeks ahead! Explore beyond Piazza dei Miracoli. Luminara June 16 candle festival.',
+        transportation: 'Pisa Galileo Galilei Airport (PSA) 2km - Tuscany\'s main. 1 hr from Florence.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. San Ranieri (June 17). Luminara (June 16).'
+      }
+    }
+  },
+  { slug: 'ravenna', city: 'Ravenna', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.42, lng: 12.20, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.16M', metroPopulation: '0.39M', phoneCode: '+39 0544', language: 'Italian',
+      climate: 'Humid subtropical with hot summers (25-32°C) and cool winters (1-8°C). Near Adriatic.',
+      attractions: ['UNESCO Mosaics', 'Basilica di San Vitale', 'Mausoleo di Galla Placidia', 'Sant\'Apollinare Nuovo', 'Dante\'s Tomb', 'Classe Basilica', 'Baptistery', 'Beaches', 'Ravenna Festival'],
+      demographics: 'UNESCO Byzantine mosaics. Three-time capital. Dante\'s tomb. Mosaic art capital.',
+      seoContent: {
+        intro: 'Ravenna, city of mosaics, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city has the finest Byzantine mosaics outside Istanbul and is where Dante wrote the Divine Comedy and is buried.',
+        timezoneFacts: 'Same timezone as Rome. Ravenna was capital of Western Roman Empire, then Byzantine Italy.',
+        bestTimeToVisit: 'April-October best. Ravenna Festival (June-July). Beach season June-September.',
+        businessHours: 'Mosaics sites 9 AM to 7 PM. Combined ticket available.',
+        timeDifference: 'Ravenna is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Get combined mosaic ticket! Galla Placidia tiny but stunning. Dante\'s Tomb - Florence still wants him back!',
+        transportation: 'Bologna Airport (BLQ) 1 hr. Ravenna station. 1.5 hr from Bologna.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Ravenna Festival (June-July).'
+      }
+    }
+  },
+  { slug: 'matera', city: 'Matera', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 40.67, lng: 16.60, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.06M', metroPopulation: '0.06M', phoneCode: '+39 0835', language: 'Italian',
+      climate: 'Mediterranean with hot summers (26-33°C) and mild winters (4-12°C). Semi-arid.',
+      attractions: ['Sassi di Matera', 'Cave dwellings', 'Rock churches', 'Casa Noha', 'Palombaro Lungo', 'Parco della Murgia', 'Cathedral', 'Cave hotels', 'Viewpoints', 'Film locations'],
+      demographics: 'UNESCO Sassi cave city. European Capital of Culture 2019. Ancient troglodyte settlement. Film location.',
+      seoContent: {
+        intro: 'Matera, the cave city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city\'s Sassi cave dwellings are now a stunning 2019 European Capital of Culture, setting for Bond and biblical films.',
+        timezoneFacts: 'Same timezone as Rome. Sassi have been inhabited for 9,000+ years.',
+        bestTimeToVisit: 'April-June and September-October best. Summer very hot.',
+        businessHours: 'Cave churches 10 AM to 7 PM. Casa Noha 10 AM to 6 PM.',
+        timeDifference: 'Matera is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Stay in a cave hotel! Sunrise/sunset viewpoints stunning. Bread of Matera famous. Get lost in the lanes.',
+        transportation: 'Bari Airport (BRI) 1 hr. FAL train from Bari. No direct mainline trains.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Madonna della Bruna (July 2).'
+      }
+    }
+  },
+  { slug: 'taormina', city: 'Taormina', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 37.85, lng: 15.29, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+39 0942', language: 'Italian, Sicilian',
+      climate: 'Mediterranean with hot summers (26-32°C) and mild winters (10-15°C). Sea breezes.',
+      attractions: ['Greek Theatre', 'Corso Umberto', 'Isola Bella', 'Mount Etna views', 'Piazza IX Aprile', 'Palazzo Corvaja', 'Villa Comunale', 'Castelmola', 'Beaches', 'Cable car'],
+      demographics: 'Sicily\'s glamorous resort. Greek Theatre with Etna views. Belle époque tourism. Film festival.',
+      seoContent: {
+        intro: 'Taormina, Sicily\'s glamour resort, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This hilltop jewel has a Greek theatre with Mount Etna as backdrop and remains Italy\'s most scenic resort.',
+        timezoneFacts: 'Same timezone as Rome. Goethe called this theatre view the finest in the world.',
+        bestTimeToVisit: 'April-June and September-October best. July-August very crowded.',
+        businessHours: 'Greek Theatre 9 AM to 7 PM. Corso shops 10 AM to 10 PM (summer).',
+        timeDifference: 'Taormina is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Greek Theatre at sunrise or sunset! Cable car to Isola Bella beach. Castelmola village for views.',
+        transportation: 'Catania Airport (CTA) 50 min. Taormina-Giardini station then bus.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Taormina Film Fest (June).'
+      }
+    }
+  },
+  { slug: 'amalfi', city: 'Amalfi', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 40.63, lng: 14.60, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.005M', metroPopulation: '0.04M', phoneCode: '+39 089', language: 'Italian',
+      climate: 'Mediterranean with warm summers (26-30°C) and mild winters (10-14°C). Coastal microclimate.',
+      attractions: ['Amalfi Cathedral', 'Cloister of Paradise', 'Paper Museum', 'Amalfi Coast', 'Ravello', 'Positano', 'Atrani', 'Limoncello', 'Marina Grande', 'Path of the Gods'],
+      demographics: 'Ancient maritime republic. UNESCO coastline. Limoncello origin. Paper-making tradition.',
+      seoContent: {
+        intro: 'Amalfi, heart of the divine coast, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This town gave its name to Italy\'s most spectacular UNESCO coastline and was once a maritime republic rivaling Venice.',
+        timezoneFacts: 'Same timezone as Rome. Amalfi was one of Italy\'s four great maritime republics.',
+        bestTimeToVisit: 'April-June and September-October best. July-August very crowded.',
+        businessHours: 'Cathedral 9 AM to 5 PM. Shops 10 AM to 10 PM (summer).',
+        timeDifference: 'Amalfi is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Path of the Gods hike spectacular! Ravello for views. Atrani hidden gem. Drive not for nervous drivers!',
+        transportation: 'Naples Airport (NAP) 1.5 hr. SITA bus from Sorrento. Ferries from Salerno.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Sant\'Andrea (November 30).'
+      }
+    }
+  },
+  { slug: 'sorrento', city: 'Sorrento', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 40.63, lng: 14.38, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.02M', metroPopulation: '0.08M', phoneCode: '+39 081', language: 'Italian',
+      climate: 'Mediterranean with warm summers (26-30°C) and mild winters (10-14°C). Cliff-top.',
+      attractions: ['Piazza Tasso', 'Marina Grande', 'Corso Italia', 'Vallone dei Mulini', 'Sedile Dominova', 'Limoncello', 'Cloister of San Francesco', 'Bagni della Regina Giovanna', 'Capri ferry', 'Amalfi Coast base'],
+      demographics: 'Gateway to Amalfi Coast and Capri. Cliff-top town. Limoncello and inlaid wood. O Sole Mio.',
+      seoContent: {
+        intro: 'Sorrento, gateway to the divine coast, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This cliff-top town is the perfect base for Amalfi Coast, Capri, and Pompeii, famous for limoncello, inlaid wood, and the song O Sole Mio.',
+        timezoneFacts: 'Same timezone as Rome. O Sole Mio was written about Sorrento in 1898.',
+        bestTimeToVisit: 'April-October best. May-June and September ideal. August crowded.',
+        businessHours: 'Shops 9 AM to 1 PM, 4-8 PM. Ferries to Capri hourly.',
+        timeDifference: 'Sorrento is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Base for Capri, Amalfi, Pompeii! Limoncello tasting. Marina Grande for seafood. Circumvesuviana train from Naples.',
+        transportation: 'Naples Airport (NAP) 1.5 hr. Circumvesuviana from Naples. Ferries to Capri.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Sant\'Antonino (February 14).'
+      }
+    }
+  },
+  { slug: 'capri', city: 'Capri', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 40.55, lng: 14.22, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+39 081', language: 'Italian',
+      climate: 'Mediterranean with warm summers (25-29°C) and mild winters (10-14°C). Island breeze.',
+      attractions: ['Blue Grotto', 'Marina Grande', 'Piazzetta', 'Gardens of Augustus', 'Villa Jovis', 'Anacapri', 'Monte Solaro', 'Faraglioni rocks', 'Via Krupp', 'Designer shopping'],
+      demographics: 'Glamorous island. Blue Grotto. Roman emperors\' retreat. Jet-set destination. Faraglioni rocks.',
+      seoContent: {
+        intro: 'Capri, island of dreams, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This glamorous island has enchanted visitors since Roman emperors, featuring the magical Blue Grotto, dramatic Faraglioni rocks, and chic Piazzetta.',
+        timezoneFacts: 'Same timezone as Rome. Emperor Tiberius ruled Rome from Capri for 10 years.',
+        bestTimeToVisit: 'April-October. Avoid August crowds. Blue Grotto weather-dependent.',
+        businessHours: 'Blue Grotto 9 AM to 5 PM (weather). Ferries from 7 AM.',
+        timeDifference: 'Capri is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Blue Grotto go early! Chairlift to Monte Solaro. Anacapri quieter than Capri town. Very expensive.',
+        transportation: 'Ferry from Naples (45 min), Sorrento (20 min). No cars for tourists.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. San Costanzo (May 14).'
+      }
+    }
+  },
+  { slug: 'cinque-terre', city: 'Cinque Terre', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.13, lng: 9.71, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.004M', metroPopulation: '0.004M', phoneCode: '+39 0187', language: 'Italian, Ligurian',
+      climate: 'Mediterranean with warm summers (24-28°C) and mild winters (8-12°C). Coastal microclimate.',
+      attractions: ['Five villages', 'Hiking trails', 'Riomaggiore', 'Manarola', 'Corniglia', 'Vernazza', 'Monterosso', 'Vineyards', 'Swimming', 'Train connections'],
+      demographics: 'UNESCO five villages. Car-free. Terraced vineyards. Hiking paradise. Instagram famous.',
+      seoContent: {
+        intro: 'Cinque Terre, five lands of wonder, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. These five UNESCO car-free villages clinging to the Ligurian coast are connected by hiking trails and trains, famous for colorful houses and terraced vineyards.',
+        timezoneFacts: 'Same timezone as Rome. The terraced vineyards date back 1,000 years.',
+        bestTimeToVisit: 'April-June and September-October best. Summer extremely crowded. Avoid August.',
+        businessHours: 'Trains every 20-30 min. Hiking trails dawn to dusk.',
+        timeDifference: 'Cinque Terre is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Cinque Terre Card for trains and trails. Manarola at sunset. Vernazza prettiest. Monterosso has beach. Pesto, focaccia, sciacchetrà wine.',
+        transportation: 'La Spezia or Genoa airports. La Spezia station then Cinque Terre trains. No cars!',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Local patron saints vary by village.'
+      }
+    }
+  },
+  
+  // Italy - Additional Cities (New Batch)
+  { slug: 'lucca', city: 'Lucca', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 43.84, lng: 10.51, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.09M', metroPopulation: '0.39M', phoneCode: '+39 0583', language: 'Italian',
+      climate: 'Mediterranean with warm summers (24-30°C) and mild winters (4-11°C). Protected by hills.',
+      attractions: ['City Walls', 'Piazza dell\'Anfiteatro', 'Torre Guinigi', 'San Michele in Foro', 'Duomo', 'Via Fillungo', 'Puccini birthplace', 'Torre delle Ore', 'Lucca Comics', 'Olive oil'],
+      demographics: 'Intact Renaissance walls. Bike-friendly. Puccini birthplace. Comics festival. Olive oil region.',
+      seoContent: {
+        intro: 'Lucca, the walled city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This perfectly preserved Renaissance city is encircled by intact 16th-century walls (now a tree-lined promenade), is birthplace of Puccini, and hosts Europe\'s largest comics festival.',
+        timezoneFacts: 'Same timezone as Rome. Lucca\'s walls were never breached in war.',
+        bestTimeToVisit: 'April-October best. Lucca Comics (October/November). Summer Music Festival.',
+        businessHours: 'Torre Guinigi 9:30 AM to 7:30 PM. Walls walkable 24/7.',
+        timeDifference: 'Lucca is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Rent a bike to ride the walls! Piazza dell\'Anfiteatro is Roman oval. Torre Guinigi has trees on top. Lucca Comics book early.',
+        transportation: 'Pisa Airport (PSA) 20 min. Lucca station. 30 min from Pisa.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Santa Croce (September 14). Lucca Comics (October).'
+      }
+    }
+  },
+  { slug: 'positano', city: 'Positano', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 40.63, lng: 14.48, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.004M', metroPopulation: '0.004M', phoneCode: '+39 089', language: 'Italian',
+      climate: 'Mediterranean with warm summers (26-30°C) and mild winters (10-14°C). Sheltered by cliffs.',
+      attractions: ['Vertical village', 'Spiaggia Grande', 'Chiesa Santa Maria Assunta', 'Li Galli islands', 'Fornillo Beach', 'Positano fashion', 'Path of the Gods', 'Amalfi Coast views', 'Boat tours', 'Moda Positano'],
+      demographics: 'Most photographed Amalfi town. Vertical village. Fashion destination. Steinbeck stayed here.',
+      seoContent: {
+        intro: 'Positano, the vertical village, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This impossibly photogenic cascade of pastel houses tumbling to the sea is the Amalfi Coast\'s most iconic image, a fashion destination, and where Steinbeck famously stayed.',
+        timezoneFacts: 'Same timezone as Rome. Steinbeck wrote about Positano in 1953 for Harper\'s Bazaar.',
+        bestTimeToVisit: 'April-June and September-October best. July-August extremely crowded.',
+        businessHours: 'Beach 24/7. Boutiques 10 AM to 10 PM. Restaurants dinner from 7 PM.',
+        timeDifference: 'Positano is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Stairs everywhere - pack light! Fornillo Beach quieter. Boat to Li Galli. Moda Positano fashion. Very expensive.',
+        transportation: 'Naples Airport (NAP) 1.5 hr. SITA bus from Sorrento. Ferries from Naples.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Assumption (August 15).'
+      }
+    }
+  },
+  { slug: 'como', city: 'Como', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.81, lng: 9.08, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.08M', metroPopulation: '0.6M', phoneCode: '+39 031', language: 'Italian',
+      climate: 'Humid subtropical with warm summers (22-28°C) and cold winters (1-7°C). Lake effect.',
+      attractions: ['Lake Como', 'Duomo', 'Funicular to Brunate', 'Villa Olmo', 'Piazza Cavour', 'Silk Museum', 'Lakefront walk', 'Bellagio nearby', 'Villa d\'Este', 'Varenna'],
+      demographics: 'Lake Como gateway. Silk capital. Celebrity villas. Alpine lake beauty. Swiss border.',
+      seoContent: {
+        intro: 'Como, gateway to Lake Como, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This elegant lakeside city is where celebrities have villas, the historic center of Italian silk production, and starting point for exploring Italy\'s most glamorous lake.',
+        timezoneFacts: 'Same timezone as Rome. Lake Como has been a retreat for the wealthy since Roman times.',
+        bestTimeToVisit: 'April-October best. May-June for gardens. Avoid August crowds.',
+        businessHours: 'Funicular 6 AM to 10:30 PM. Silk Museum 10 AM to 6 PM.',
+        timeDifference: 'Como is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Funicular to Brunate for views! Bellagio by ferry. Villa d\'Este gardens stunning. Silk shopping.',
+        transportation: 'Milan Malpensa (MXP) 50 min. Como San Giovanni station. 40 min from Milan.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Sant\'Abbondio (August 31).'
+      }
+    }
+  },
+  { slug: 'lecce', city: 'Lecce', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 40.35, lng: 18.17, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.1M', metroPopulation: '0.26M', phoneCode: '+39 0832', language: 'Italian, Salentino',
+      climate: 'Mediterranean with hot summers (28-34°C) and mild winters (8-14°C). Dry heat.',
+      attractions: ['Piazza del Duomo', 'Basilica di Santa Croce', 'Roman Amphitheatre', 'Baroque architecture', 'Castello Carlo V', 'Porta Napoli', 'Otranto nearby', 'Salento beaches', 'Papier-mâché', 'Pasticciotto'],
+      demographics: 'Florence of the South. Baroque masterpiece. Salento capital. Lecce stone. Pasticciotto pastry.',
+      seoContent: {
+        intro: 'Lecce, Florence of the South, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Baroque jewel in Puglia\'s Salento heel has ornate golden-stone buildings, is gateway to beautiful beaches, and is famous for papier-mâché crafts and pasticciotto pastry.',
+        timezoneFacts: 'Same timezone as Rome. Lecce Baroque developed in 17th century using soft local limestone.',
+        bestTimeToVisit: 'April-June and September-October best. Summer hot but beaches.',
+        businessHours: 'Churches 8 AM to 12 PM, 4-7 PM. Shops with siesta.',
+        timeDifference: 'Lecce is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Santa Croce facade incredible! Pasticciotto for breakfast. Otranto and Gallipoli day trips. La Notte della Taranta (August).',
+        transportation: 'Brindisi Airport (BDS) 40 min. Lecce station. 6 hr from Rome.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Sant\'Oronzo (August 24-26). La Notte della Taranta.'
+      }
+    }
+  },
+  { slug: 'bergamo', city: 'Bergamo', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.70, lng: 9.67, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.12M', metroPopulation: '0.5M', phoneCode: '+39 035', language: 'Italian, Bergamasque',
+      climate: 'Humid subtropical with warm summers (22-28°C) and cold winters (0-6°C). Pre-Alpine.',
+      attractions: ['Città Alta', 'Piazza Vecchia', 'Venetian Walls (UNESCO)', 'Cappella Colleoni', 'Funicular', 'Santa Maria Maggiore', 'Accademia Carrara', 'Rocca', 'Via Gombito', 'Polenta taragna'],
+      demographics: 'Two cities in one. UNESCO Venetian walls. Città Alta medieval. Budget airline hub. Donizetti birthplace.',
+      seoContent: {
+        intro: 'Bergamo, city of two levels, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. The UNESCO-listed Città Alta (Upper Town) has perfectly preserved medieval streets encircled by Venetian walls, while the lower city offers modern amenities.',
+        timezoneFacts: 'Same timezone as Rome. Venetian walls were built 1561-1588, never attacked.',
+        bestTimeToVisit: 'April-October best. Year-round for Città Alta. Avoid August closures.',
+        businessHours: 'Funicular 7 AM to 12:30 AM. Museums 10 AM to 6 PM.',
+        timeDifference: 'Bergamo is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Funicular to Città Alta essential! Walk the walls. Cappella Colleoni ornate. Polenta taragna local dish. Budget flights here.',
+        transportation: 'Bergamo Orio al Serio Airport (BGY) 4km - budget hub. Bergamo station. 50 min from Milan.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Sant\'Alessandro (August 26).'
+      }
+    }
+  },
+  { slug: 'assisi', city: 'Assisi', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 43.07, lng: 12.62, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.03M', metroPopulation: '0.03M', phoneCode: '+39 075', language: 'Italian, Umbrian',
+      climate: 'Mediterranean with warm summers (24-30°C) and cool winters (3-10°C). Hilltop.',
+      attractions: ['Basilica of St. Francis', 'Giotto frescoes', 'Santa Chiara', 'Rocca Maggiore', 'Piazza del Comune', 'Temple of Minerva', 'Hermitage', 'Via San Francesco', 'UNESCO center', 'Pilgrimage'],
+      demographics: 'St. Francis birthplace. Giotto masterpieces. UNESCO World Heritage. Pilgrimage site. Peaceful spirituality.',
+      seoContent: {
+        intro: 'Assisi, city of St. Francis, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO hilltop city is birthplace of St. Francis and St. Clare, home to Giotto\'s greatest frescoes, and one of Christianity\'s most important pilgrimage sites.',
+        timezoneFacts: 'Same timezone as Rome. St. Francis founded the Franciscan Order here in 1209.',
+        bestTimeToVisit: 'April-October best. October 4 St. Francis feast. Easter and Christmas special.',
+        businessHours: 'Basilica 6 AM to 6:45 PM. Modest dress required.',
+        timeDifference: 'Assisi is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Basilica frescoes in two churches! Dress modestly. Hermitage above town peaceful. Stay overnight for evening peace.',
+        transportation: 'Perugia San Francesco Airport 15km. Assisi station 5km (bus). 2 hr from Rome.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. San Francesco (October 4). Calendimaggio (May).'
+      }
+    }
+  },
+  { slug: 'orvieto', city: 'Orvieto', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 42.72, lng: 12.11, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.02M', metroPopulation: '0.02M', phoneCode: '+39 0763', language: 'Italian',
+      climate: 'Mediterranean with warm summers (24-30°C) and cool winters (3-10°C). Hilltop plateau.',
+      attractions: ['Duomo', 'Underground caves', 'St. Patrick\'s Well', 'Funicular', 'Palazzo del Popolo', 'Torre del Moro', 'Etruscan necropolis', 'Orvieto Classico wine', 'Quartiere Medievale', 'Cliff views'],
+      demographics: 'Spectacular cathedral. Underground city. Orvieto Classico wine. Etruscan heritage. Volcanic plateau.',
+      seoContent: {
+        intro: 'Orvieto, city on the cliff, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This dramatic hilltop city has one of Italy\'s most stunning cathedrals, a mysterious underground labyrinth, and produces the famous Orvieto Classico white wine.',
+        timezoneFacts: 'Same timezone as Rome. The Duomo took 300 years to build (1290-1590s).',
+        bestTimeToVisit: 'April-October best. Corpus Domini (May/June). Umbria Jazz Winter (Dec-Jan).',
+        businessHours: 'Duomo 9 AM to 6 PM. Underground tours scheduled. Funicular 7 AM to 8:30 PM.',
+        timeDifference: 'Orvieto is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Duomo facade dazzling! Underground tour fascinating. St. Patrick\'s Well 248 steps. Orvieto Classico wine local.',
+        transportation: 'Rome 1.5 hr by train. Orvieto station then funicular. Easy day trip from Rome.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Corpus Domini procession (May/June).'
+      }
+    }
+  },
+  { slug: 'ferrara', city: 'Ferrara', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.84, lng: 11.62, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.13M', metroPopulation: '0.35M', phoneCode: '+39 0532', language: 'Italian',
+      climate: 'Humid subtropical with hot summers (25-32°C) and cold foggy winters (0-7°C). Po Valley.',
+      attractions: ['Este Castle', 'Palazzo dei Diamanti', 'Cathedral', 'Medieval walls', 'Corso Ercole I d\'Este', 'Palazzo Schifanoia', 'Jewish Ghetto', 'Bike city', 'Renaissance center', 'Po Delta'],
+      demographics: 'UNESCO Renaissance city. Este dynasty. Palazzo dei Diamanti. Italy\'s most bike-friendly. Po Delta gateway.',
+      seoContent: {
+        intro: 'Ferrara, the Renaissance city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city was shaped by the Este dynasty, has the best-preserved Renaissance center in Italy, and is the country\'s most bike-friendly city.',
+        timezoneFacts: 'Same timezone as Rome. Este dynasty made Ferrara a Renaissance cultural capital.',
+        bestTimeToVisit: 'April-June and September-October best. Buskers Festival (August).',
+        businessHours: 'Este Castle 9:30 AM to 5:30 PM. Palazzo dei Diamanti varies by exhibition.',
+        timeDifference: 'Ferrara is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Rent a bike - flat and car-free! Este Castle moat. Palazzo dei Diamanti 8,500 diamonds. Cappellacci di zucca local pasta.',
+        transportation: 'Bologna Airport (BLQ) 50 min. Ferrara station. 30 min from Bologna.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Palio di San Giorgio (May). Buskers Festival (August).'
+      }
+    }
+  },
+  { slug: 'mantua', city: 'Mantua', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.16, lng: 10.79, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.05M', metroPopulation: '0.42M', phoneCode: '+39 0376', language: 'Italian',
+      climate: 'Humid subtropical with hot summers (24-30°C) and cold foggy winters (-1 to 6°C). Lake surrounded.',
+      attractions: ['Palazzo Ducale', 'Palazzo Te', 'Piazza delle Erbe', 'Basilica di Sant\'Andrea', 'Rotonda di San Lorenzo', 'Lakes', 'Gonzaga heritage', 'Camera degli Sposi', 'Teatro Bibiena', 'Tortelli di zucca'],
+      demographics: 'UNESCO Gonzaga city. Surrounded by lakes. Palazzo Te frescoes. Italian Capital of Culture. Virgil\'s birthplace.',
+      seoContent: {
+        intro: 'Mantua, city of the Gonzaga, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city surrounded by three lakes was seat of the Gonzaga dynasty, has stunning Renaissance palaces, and is birthplace of the poet Virgil.',
+        timezoneFacts: 'Same timezone as Rome. Gonzaga family ruled Mantua for 400 years (1328-1707).',
+        bestTimeToVisit: 'April-October best. Mantova Letteratura festival (September).',
+        businessHours: 'Palazzo Ducale 8:15 AM to 7:15 PM. Palazzo Te 9 AM to 6 PM.',
+        timeDifference: 'Mantua is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Palazzo Ducale huge - allow 2 hours! Palazzo Te frescoes wild. Camera degli Sposi book ahead. Tortelli di zucca local.',
+        transportation: 'Verona Airport (VRN) 45 min. Mantova station. 1.5 hr from Milan.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Sant\'Anselmo (March 18). Festivaletteratura (September).'
+      }
+    }
+  },
+  { slug: 'san-gimignano', city: 'San Gimignano', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 43.47, lng: 11.04, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.008M', metroPopulation: '0.008M', phoneCode: '+39 0577', language: 'Italian',
+      climate: 'Mediterranean with warm summers (24-30°C) and cool winters (3-10°C). Tuscan hilltop.',
+      attractions: ['Medieval towers', 'Piazza della Cisterna', 'Collegiata', 'Palazzo Comunale', 'Torre Grossa', 'Vernaccia wine', 'Torture Museum', 'Rocca', 'Saffron', 'UNESCO center'],
+      demographics: 'Medieval Manhattan. 14 remaining towers. Vernaccia wine. UNESCO World Heritage. Tuscan icon.',
+      seoContent: {
+        intro: 'San Gimignano, medieval Manhattan, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO hilltop town still has 14 of its original 72 medieval towers, produces famous Vernaccia white wine, and is Tuscany\'s most iconic skyline.',
+        timezoneFacts: 'Same timezone as Rome. In medieval times, 72 towers competed for family prestige.',
+        bestTimeToVisit: 'April-June and September-October best. Extremely crowded midday.',
+        businessHours: 'Torre Grossa 10 AM to 7 PM. Collegiata 10 AM to 5 PM.',
+        timeDifference: 'San Gimignano is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Arrive early or stay overnight! Torre Grossa climbable. Vernaccia wine tasting. Gelateria Dondoli world champion.',
+        transportation: 'Florence 1.5 hr by bus. No train - bus from Poggibonsi. Day trip from Florence/Siena.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Santa Fina (March 12). Medieval festival (June).'
+      }
+    }
+  },
+  { slug: 'urbino', city: 'Urbino', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 43.73, lng: 12.64, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.01M', metroPopulation: '0.04M', phoneCode: '+39 0722', language: 'Italian',
+      climate: 'Mediterranean with warm summers (22-28°C) and cool winters (2-9°C). Inland hills.',
+      attractions: ['Palazzo Ducale', 'Galleria Nazionale', 'Raphael\'s birthplace', 'Duomo', 'Oratorio di San Giovanni', 'University', 'Fortezza Albornoz', 'Piazza della Repubblica', 'Renaissance center', 'Views'],
+      demographics: 'UNESCO Renaissance gem. Raphael\'s birthplace. Ducal Palace masterpiece. Ancient university. Hidden treasure.',
+      seoContent: {
+        intro: 'Urbino, Renaissance jewel, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO hilltop city is birthplace of Raphael, has one of Italy\'s finest Renaissance palaces, and remains a living university town off the tourist trail.',
+        timezoneFacts: 'Same timezone as Rome. Duke Federico da Montefeltro made Urbino a Renaissance center.',
+        bestTimeToVisit: 'April-October best. Student life in term time. Festa del Duca (August).',
+        businessHours: 'Palazzo Ducale 8:30 AM to 7:15 PM. Raphael\'s house 9 AM to 1 PM, 3-7 PM.',
+        timeDifference: 'Urbino is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Palazzo Ducale studiolo incredible! Raphael house modest but moving. Crescia local flatbread. University gives life.',
+        transportation: 'No train - bus from Pesaro (40 min). Ancona or Rimini airports 1.5 hr.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Festa del Duca (August). San Crescentino (June 1).'
+      }
     }
   },
   
   // Spain - Additional Cities
   { slug: 'bilbao', city: 'Bilbao', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 43.26, lng: -2.93, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '350K', phoneCode: '+34 94', language: 'Spanish, Basque',
+      currency: 'Euro', currencySymbol: '€', population: '0.35M', metroPopulation: '1.0M', phoneCode: '+34 94', language: 'Spanish, Basque',
       climate: 'Oceanic with mild temperatures (8-25°C). Frequent rainfall year-round, especially in autumn.',
-      attractions: ['Guggenheim Museum', 'Casco Viejo', 'San Mamés Stadium', 'Puente Zubizuri', 'Mercado de la Ribera'],
-      demographics: 'Largest city in the Basque Country, transformed from industrial port to cultural destination. Known for gastronomy and architecture.'
+      attractions: ['Guggenheim Museum', 'Casco Viejo', 'San Mamés Stadium', 'Puente Zubizuri', 'Mercado de la Ribera', 'Arriaga Theatre', 'Fine Arts Museum', 'Funicular de Artxanda', 'Alhóndiga', 'Pintxos bars'],
+      demographics: 'Largest Basque city. Guggenheim effect. Transformed from industrial to cultural. World-class gastronomy.',
+      seoContent: {
+        intro: 'Bilbao, the Guggenheim city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Basque city was transformed from industrial decline to cultural destination by Frank Gehry\'s spectacular Guggenheim Museum, and now rivals San Sebastián for Spain\'s best pintxos.',
+        timezoneFacts: 'Same timezone as Madrid. The "Guggenheim effect" became a model for urban regeneration worldwide.',
+        bestTimeToVisit: 'May-October for best weather. Aste Nagusia festival (August). Rainy in winter.',
+        businessHours: 'Guggenheim 10 AM to 8 PM. Pintxos bars 11 AM to 11 PM. Siesta observed.',
+        timeDifference: 'Bilbao is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Pintxos crawl in Casco Viejo essential! Guggenheim exterior free. San Mamés for Athletic Club. Take funicular for views.',
+        transportation: 'Bilbao Airport (BIO) 12km. Bilbao-Abando station. 5 hr from Madrid by train.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Aste Nagusia (August). Santiago (July 25).'
+      }
     }
   },
   { slug: 'malaga', city: 'Málaga', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 36.72, lng: -4.42, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '580K', phoneCode: '+34 95', language: 'Spanish',
-      climate: 'Mediterranean with hot dry summers (28-32°C) and mild winters (12-18°C). 300+ sunny days per year.',
-      attractions: ['Picasso Museum', 'Alcazaba', 'Gibralfaro Castle', 'Málaga Cathedral', 'Muelle Uno'],
-      demographics: 'Sixth-largest city in Spain, birthplace of Picasso. Gateway to Costa del Sol and major tech hub in southern Europe.'
+      currency: 'Euro', currencySymbol: '€', population: '0.58M', metroPopulation: '1.0M', phoneCode: '+34 95', language: 'Spanish',
+      climate: 'Mediterranean with hot dry summers (28-32°C) and mild winters (12-18°C). 300+ sunny days.',
+      attractions: ['Picasso Museum', 'Alcazaba', 'Gibralfaro Castle', 'Málaga Cathedral', 'Muelle Uno', 'Centre Pompidou', 'Atarazanas Market', 'La Malagueta Beach', 'Calle Larios', 'Soho district'],
+      demographics: 'Picasso\'s birthplace. Costa del Sol gateway. Tech hub. 300 sunny days. Cultural renaissance.',
+      seoContent: {
+        intro: 'Málaga, Picasso\'s birthplace, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Costa del Sol capital has transformed into a cultural powerhouse with multiple museums, 300 days of sunshine, and is now Spain\'s tech hub rivaling Barcelona.',
+        timezoneFacts: 'Same timezone as Madrid. Picasso was born here in 1881 and lived his first 10 years in Málaga.',
+        bestTimeToVisit: 'Year-round mild. Spring and autumn best. Summer hot but beaches. Feria (August).',
+        businessHours: 'Picasso Museum 10 AM to 7 PM. Shops 10 AM to 2 PM, 5-9 PM.',
+        timeDifference: 'Málaga is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Picasso Museum essential! Alcazaba and Gibralfaro combo. Atarazanas market for tapas. Soho for street art. Great for digital nomads.',
+        transportation: 'Málaga-Costa del Sol Airport (AGP) 8km - major hub. Málaga María Zambrano AVE. 2.5 hr from Madrid.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Feria de Málaga (August). Semana Santa spectacular.'
+      }
     }
   },
   { slug: 'zaragoza', city: 'Zaragoza', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 41.65, lng: -0.88, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '680K', phoneCode: '+34 976', language: 'Spanish',
+      currency: 'Euro', currencySymbol: '€', population: '0.68M', metroPopulation: '0.75M', phoneCode: '+34 976', language: 'Spanish',
       climate: 'Semi-arid Mediterranean with hot summers (26-35°C) and cold winters (2-10°C). Strong cierzo wind.',
-      attractions: ['Basílica del Pilar', 'Aljafería Palace', 'Plaza del Pilar', 'La Seo Cathedral', 'Expo 2008 site'],
-      demographics: 'Fifth-largest city in Spain, capital of Aragón. Strategic location between Madrid, Barcelona, and Bilbao. Major logistics hub.'
+      attractions: ['Basílica del Pilar', 'Aljafería Palace', 'Plaza del Pilar', 'La Seo Cathedral', 'Expo 2008 site', 'Puente de Piedra', 'El Tubo', 'Goya Museum', 'Roman walls', 'Parque Grande'],
+      demographics: 'Aragón capital. Basílica del Pilar. Moorish Aljafería Palace. Strategic crossroads. Goya connections.',
+      seoContent: {
+        intro: 'Zaragoza, heart of Aragón, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This strategic city between Madrid and Barcelona features the stunning Basílica del Pilar, a UNESCO Moorish palace, and is Spain\'s fifth-largest city with excellent tapas.',
+        timezoneFacts: 'Same timezone as Madrid. Zaragoza was Spain\'s fifth kingdom alongside Castile, León, Navarra, and Portugal.',
+        bestTimeToVisit: 'March-June and September-November best. Summer hot. Fiestas del Pilar (October).',
+        businessHours: 'Basílica 6:45 AM to 8:30 PM. Shops 10 AM to 2 PM, 5-8:30 PM.',
+        timeDifference: 'Zaragoza is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'El Tubo for tapas crawl! Aljafería is stunning Moorish palace. Pilar tower for views. Goya born nearby.',
+        transportation: 'Zaragoza Airport (ZAZ) 10km. Zaragoza-Delicias AVE. 1.5 hr from Madrid/Barcelona.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Fiestas del Pilar (October 12). San Valero (January 29).'
+      }
     }
   },
   { slug: 'murcia', city: 'Murcia', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 37.99, lng: -1.13, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '460K', phoneCode: '+34 968', language: 'Spanish',
-      climate: 'Hot semi-arid with very hot summers (30-40°C) and mild winters (8-17°C). One of Europe\'s driest cities.',
-      attractions: ['Murcia Cathedral', 'Real Casino', 'Santa Clara Monastery', 'Terra Natura', 'Salzillo Museum'],
-      demographics: 'Capital of Murcia region, university city. Europe\'s fruit and vegetable garden, major agricultural export center.'
+      currency: 'Euro', currencySymbol: '€', population: '0.46M', metroPopulation: '0.65M', phoneCode: '+34 968', language: 'Spanish',
+      climate: 'Hot semi-arid with very hot summers (30-40°C) and mild winters (8-17°C). One of Europe\'s driest.',
+      attractions: ['Murcia Cathedral', 'Real Casino', 'Santa Clara Monastery', 'Terra Natura', 'Salzillo Museum', 'Plaza Cardenal Belluga', 'Floridablanca Garden', 'La Manga nearby', 'Tapas bars', 'Semana Santa'],
+      demographics: 'Murcia region capital. Europe\'s orchard. Baroque cathedral. University city. Authentic Spanish.',
+      seoContent: {
+        intro: 'Murcia, Spain\'s garden, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This authentic Spanish university city is often overlooked by tourists but rewards visitors with a stunning Baroque cathedral, excellent tapas, and gateway to pristine beaches.',
+        timezoneFacts: 'Same timezone as Madrid. Murcia region supplies much of Europe\'s fruit and vegetables.',
+        bestTimeToVisit: 'March-May and September-November best. Summer extremely hot. Semana Santa spectacular.',
+        businessHours: 'Cathedral 10 AM to 1 PM, 5-8 PM. Shops 10 AM to 2 PM, 5-9 PM.',
+        timeDifference: 'Murcia is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Real Casino stunning inside! Tapas free with drinks. Semana Santa processions famous. La Manga beaches 45 min.',
+        transportation: 'Murcia-San Javier Airport (MJV) or Alicante (ALC). Murcia del Carmen station.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Bando de la Huerta (spring). Semana Santa.'
+      }
     }
   },
   { slug: 'palma', city: 'Palma de Mallorca', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 39.57, lng: 2.65, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '420K', phoneCode: '+34 971', language: 'Spanish, Catalan',
-      climate: 'Mediterranean with hot summers (25-31°C) and mild winters (10-15°C). 300+ sunny days per year.',
-      attractions: ['Palma Cathedral', 'Bellver Castle', 'Old Town', 'Paseo Marítimo', 'Es Baluard Museum'],
-      demographics: 'Capital of Balearic Islands, major Mediterranean tourist destination. Historic trading port with Gothic architecture.'
+      currency: 'Euro', currencySymbol: '€', population: '0.42M', metroPopulation: '0.65M', phoneCode: '+34 971', language: 'Spanish, Catalan',
+      climate: 'Mediterranean with hot summers (25-31°C) and mild winters (10-15°C). 300+ sunny days.',
+      attractions: ['Palma Cathedral', 'Bellver Castle', 'Old Town', 'Paseo Marítimo', 'Es Baluard Museum', 'Arab Baths', 'La Seu', 'Santa Catalina', 'Palma Aquarium', 'Serra de Tramuntana'],
+      demographics: 'Balearic Islands capital. Stunning Gothic cathedral. Mediterranean lifestyle. Year-round destination.',
+      seoContent: {
+        intro: 'Palma de Mallorca, Balearic jewel, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Mediterranean capital has a spectacular Gothic cathedral, charming old town, and is gateway to Mallorca\'s stunning beaches and UNESCO Serra de Tramuntana.',
+        timezoneFacts: 'Same timezone as mainland Spain. Mallorca has been inhabited since 5000 BC.',
+        bestTimeToVisit: 'April-October best. May-June and September-October ideal. July-August busy.',
+        businessHours: 'Cathedral 10 AM to 5:15 PM. Shops 10 AM to 2 PM, 5-8 PM.',
+        timeDifference: 'Palma is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Cathedral interior by Gaudí! Santa Catalina trendy. Bellver Castle unique circular. Rent car for Serra de Tramuntana.',
+        transportation: 'Palma de Mallorca Airport (PMI) 8km - Spain\'s 3rd busiest. Ferries from Barcelona/Valencia.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Sant Sebastià (January 20). Corpus Christi.'
+      }
     }
   },
   { slug: 'las-palmas', city: 'Las Palmas de Gran Canaria', timezone: 'Atlantic/Canary', country: 'Spain', countryCode: 'ES', lat: 28.10, lng: -15.41, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '380K', phoneCode: '+34 928', language: 'Spanish',
-      climate: 'Subtropical desert with warm year-round (18-26°C). "Eternal spring" climate, minimal temperature variation.',
-      attractions: ['Las Canteras Beach', 'Vegueta Old Town', 'Casa de Colón', 'Alfredo Kraus Auditorium', 'Poema del Mar'],
-      demographics: 'Largest city in Canary Islands, major Atlantic port. Gateway to Africa, historic stopover for Columbus.'
+      currency: 'Euro', currencySymbol: '€', population: '0.38M', metroPopulation: '0.65M', phoneCode: '+34 928', language: 'Spanish',
+      climate: 'Subtropical desert with warm year-round (18-26°C). "Eternal spring" climate, minimal variation.',
+      attractions: ['Las Canteras Beach', 'Vegueta Old Town', 'Casa de Colón', 'Alfredo Kraus Auditorium', 'Poema del Mar', 'Cathedral', 'Triana shopping', 'Teror', 'Maspalomas dunes', 'Digital nomad hub'],
+      demographics: 'Canary Islands\' largest city. Columbus stopped here. Eternal spring. Digital nomad paradise. African gateway.',
+      seoContent: {
+        intro: 'Las Palmas de Gran Canaria, city of eternal spring, operates on Western European Time (WET/UTC+0) in winter and WEST/UTC+1 in summer - one hour behind mainland Spain. This Canary Islands capital has perfect year-round weather, urban beach life, and is now a top digital nomad destination.',
+        timezoneFacts: 'Canary Islands are 1 hour behind mainland Spain. Columbus stopped here en route to America.',
+        bestTimeToVisit: 'Year-round perfect! Carnival (February-March) spectacular. Winter escapes European cold.',
+        businessHours: 'Shops 10 AM to 2 PM, 5-9 PM. Beach accessible 24/7.',
+        timeDifference: 'Las Palmas is UTC+0 (winter) / UTC+1 (summer). 1 hr behind mainland Spain.',
+        daylightSaving: 'Canary Islands observe WEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Las Canteras beach urban paradise! Vegueta old town charming. Carnival rivals Rio. Maspalomas dunes 45 min. Digital nomad visa popular.',
+        transportation: 'Gran Canaria Airport (LPA) 25km. No trains - buses. Ferries between islands.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Carnival (February-March). Virgen del Pino (September 8).'
+      }
     }
   },
   { slug: 'alicante', city: 'Alicante', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 38.35, lng: -0.48, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '340K', phoneCode: '+34 96', language: 'Spanish, Valencian',
+      currency: 'Euro', currencySymbol: '€', population: '0.34M', metroPopulation: '0.76M', phoneCode: '+34 96', language: 'Spanish, Valencian',
       climate: 'Hot semi-arid Mediterranean with hot summers (28-32°C) and mild winters (10-17°C). Very sunny.',
-      attractions: ['Santa Bárbara Castle', 'Explanada de España', 'MARQ Museum', 'Postiguet Beach', 'Old Town'],
-      demographics: 'Major Costa Blanca resort city, important port. Growing expat and digital nomad community.'
+      attractions: ['Santa Bárbara Castle', 'Explanada de España', 'MARQ Museum', 'Postiguet Beach', 'Old Town', 'San Juan Beach', 'Central Market', 'Tabarca Island', 'El Barrio', 'Port area'],
+      demographics: 'Costa Blanca capital. Hilltop castle. Beach city. Expat haven. Digital nomad hub.',
+      seoContent: {
+        intro: 'Alicante, Costa Blanca capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This sunny beach city has a dramatic hilltop castle, beautiful promenade, and has become a major destination for expats and digital nomads seeking Mediterranean lifestyle.',
+        timezoneFacts: 'Same timezone as Madrid. Alicante has over 3,000 hours of sunshine per year.',
+        bestTimeToVisit: 'Year-round pleasant. April-October for beach. Hogueras de San Juan (June).',
+        businessHours: 'Castle 10 AM to 8 PM (summer). Shops 10 AM to 2 PM, 5-9 PM.',
+        timeDifference: 'Alicante is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Castle lift from Postiguet beach! Explanada promenade iconic. Tabarca Island day trip. Hogueras (June) like Valencia\'s Fallas.',
+        transportation: 'Alicante-Elche Airport (ALC) 9km - major hub. Alicante Terminal station.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Hogueras de San Juan (June 20-24). Moros y Cristianos.'
+      }
     }
   },
   { slug: 'cordoba', city: 'Córdoba', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 37.89, lng: -4.77, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '325K', phoneCode: '+34 957', language: 'Spanish',
-      climate: 'Mediterranean with very hot summers (35-45°C) and mild winters (6-14°C). Spain\'s hottest summers.',
-      attractions: ['Mezquita-Catedral', 'Alcázar de los Reyes', 'Jewish Quarter', 'Roman Bridge', 'Patios Festival'],
-      demographics: 'UNESCO World Heritage city, capital of Al-Andalus. The Mezquita represents peak Islamic architecture in Europe.'
+      currency: 'Euro', currencySymbol: '€', population: '0.33M', metroPopulation: '0.34M', phoneCode: '+34 957', language: 'Spanish',
+      climate: 'Mediterranean with very hot summers (30-40°C) and mild winters (6-14°C). Spain\'s hottest.',
+      attractions: ['Mezquita-Cathedral', 'Alcázar', 'Jewish Quarter', 'Roman Bridge', 'Patios', 'Medina Azahara', 'Calleja de las Flores', 'Palacio de Viana', 'Flamenco', 'Plaza de la Corredera'],
+      demographics: 'Medieval Caliphate capital. Mezquita masterpiece. UNESCO old town. Patio culture. Andalusian soul.',
+      seoContent: {
+        intro: 'Córdoba, jewel of Al-Andalus, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city was capital of the Western Caliphate and home to the Mezquita - a mosque-cathedral of staggering beauty and one of the world\'s most important Islamic monuments.',
+        timezoneFacts: 'Same timezone as Madrid. In the 10th century, Córdoba was Europe\'s largest city.',
+        bestTimeToVisit: 'March-May and September-November. Summer extremely hot (40°C+). Patio Festival (May).',
+        businessHours: 'Mezquita 10 AM to 7 PM. Shops 10 AM to 2 PM, 5:30-9 PM.',
+        timeDifference: 'Córdoba is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Mezquita early morning best! Patio Festival (May) opens private courtyards. Medina Azahara UNESCO site nearby. Free entry Mezquita 8:30-9:30 AM.',
+        transportation: 'Córdoba station on Madrid-Seville AVE line. 1 hr 45 min from Madrid. No major airport.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Patios Festival (May). Feria (late May). San Rafael (October 24).'
+      }
     }
   },
   { slug: 'valladolid-spain', city: 'Valladolid', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 41.65, lng: -4.72, tier: 2, continent: 'europe',
@@ -6598,10 +8184,22 @@ export const cities: City[] = [
   },
   { slug: 'granada', city: 'Granada', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 37.18, lng: -3.60, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '230K', phoneCode: '+34 958', language: 'Spanish',
+      currency: 'Euro', currencySymbol: '€', population: '0.23M', metroPopulation: '0.54M', phoneCode: '+34 958', language: 'Spanish',
       climate: 'Continental Mediterranean with hot summers (28-36°C) and cold winters (2-12°C). Sierra Nevada nearby.',
-      attractions: ['Alhambra', 'Generalife Gardens', 'Albaicín (UNESCO)', 'Granada Cathedral', 'Sierra Nevada ski'],
-      demographics: 'Last Moorish kingdom in Spain, home to the magnificent Alhambra. Major university city with vibrant tapas culture.'
+      attractions: ['Alhambra', 'Generalife Gardens', 'Albaicín', 'Granada Cathedral', 'Sierra Nevada ski', 'Sacromonte caves', 'Royal Chapel', 'Mirador San Nicolás', 'Free tapas', 'Flamenco'],
+      demographics: 'Last Moorish kingdom. Alhambra palace. University city. Free tapas tradition. Flamenco heartland.',
+      seoContent: {
+        intro: 'Granada, last Moorish kingdom, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This enchanting city is home to the Alhambra (Spain\'s most visited monument), the atmospheric Albaicín quarter, and is one of the last places in Spain with free tapas with drinks.',
+        timezoneFacts: 'Same timezone as Madrid. Granada fell to Catholic Monarchs in 1492, ending 780 years of Moorish Spain.',
+        bestTimeToVisit: 'March-June and September-November best. Summer very hot. Book Alhambra months ahead!',
+        businessHours: 'Alhambra 8:30 AM to 8 PM. Tapas bars 1-4 PM, 8 PM-midnight.',
+        timeDifference: 'Granada is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'BOOK ALHAMBRA MONTHS AHEAD! Free tapas with drinks. Mirador San Nicolás sunset. Sacromonte for flamenco caves. Sierra Nevada ski 45 min.',
+        transportation: 'Granada-Jaén Airport (GRX) 15km. Granada station. 4 hr from Madrid (AVE coming).',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Día de la Toma (January 2). Corpus Christi. Virgen de las Angustias (September).'
+      }
     }
   },
   { slug: 'vitoria-gasteiz', city: 'Vitoria-Gasteiz', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 42.85, lng: -2.67, tier: 2, continent: 'europe',
@@ -6614,26 +8212,366 @@ export const cities: City[] = [
   },
   { slug: 'santander', city: 'Santander', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 43.46, lng: -3.80, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '175K', phoneCode: '+34 942', language: 'Spanish',
-      climate: 'Oceanic with cool summers (18-23°C) and mild winters (8-13°C). Frequent rain, Bay of Biscay influence.',
-      attractions: ['Sardinero Beach', 'Magdalena Palace', 'Altamira Cave Museum', 'Santander Cathedral', 'Centro Botín'],
-      demographics: 'Capital of Cantabria, elegant seaside resort. Headquarters of Santander Bank, gateway to Picos de Europa.'
+      currency: 'Euro', currencySymbol: '€', population: '0.18M', metroPopulation: '0.4M', phoneCode: '+34 942', language: 'Spanish',
+      climate: 'Oceanic with cool summers (18-23°C) and mild winters (8-13°C). Frequent rain, Bay of Biscay.',
+      attractions: ['Sardinero Beach', 'Magdalena Palace', 'Altamira Cave Museum', 'Santander Cathedral', 'Centro Botín', 'Peninsula de la Magdalena', 'Picos de Europa', 'Comillas', 'Santillana del Mar', 'Liébana'],
+      demographics: 'Cantabria capital. Elegant resort. Santander Bank HQ. Picos de Europa gateway. Altamira caves.',
+      seoContent: {
+        intro: 'Santander, elegant Cantabrian capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This refined seaside city has beautiful beaches, the stunning Centro Botín art center, and is gateway to Picos de Europa mountains and UNESCO Altamira cave.',
+        timezoneFacts: 'Same timezone as Madrid. Santander Bank, one of world\'s largest, was founded here in 1857.',
+        bestTimeToVisit: 'June-September for beach. Year-round mild but rainy. Summer festivals.',
+        businessHours: 'Centro Botín 10 AM to 9 PM. Beaches 24/7. Shops 10 AM to 2 PM, 5-8:30 PM.',
+        timeDifference: 'Santander is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Centro Botín by Renzo Piano! Magdalena Palace grounds free. Altamira cave replica (original closed). Comillas and Santillana del Mar day trips.',
+        transportation: 'Santander Airport (SDR) 5km. Santander station. Ferry to UK (Plymouth/Portsmouth).',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Santiago (July 25). Virgen del Mar (September).'
+      }
     }
   },
   { slug: 'san-sebastian', city: 'San Sebastián', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 43.32, lng: -1.98, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '190K', phoneCode: '+34 943', language: 'Spanish, Basque',
+      currency: 'Euro', currencySymbol: '€', population: '0.19M', metroPopulation: '0.44M', phoneCode: '+34 943', language: 'Spanish, Basque',
       climate: 'Oceanic with cool summers (18-24°C) and mild winters (6-12°C). Frequent rain, green surroundings.',
-      attractions: ['La Concha Beach', 'Monte Urgull', 'Old Town (Parte Vieja)', 'San Telmo Museum', 'Pintxos bars'],
-      demographics: 'Spain\'s culinary capital with most Michelin stars per capita. Famous film festival, Belle Époque elegance.'
+      attractions: ['La Concha Beach', 'Monte Urgull', 'Parte Vieja', 'San Telmo Museum', 'Pintxos bars', 'Monte Igueldo', 'Peine del Viento', 'Aquarium', 'Miramar Palace', 'Zurriola surf beach'],
+      demographics: 'World\'s highest Michelin stars per capita. La Concha beach. Film festival. Pintxos paradise.',
+      seoContent: {
+        intro: 'San Sebastián, Spain\'s culinary capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This elegant Basque city has the world\'s highest concentration of Michelin stars per capita, one of Europe\'s best beaches (La Concha), and a legendary pintxos scene.',
+        timezoneFacts: 'Same timezone as Madrid. San Sebastián has more Michelin stars per capita than anywhere else.',
+        bestTimeToVisit: 'May-September for beach. Film Festival (September). Pintxos year-round. Expect rain.',
+        businessHours: 'Pintxos bars 11 AM to 3 PM, 7-11 PM. Museums 10 AM to 8 PM.',
+        timeDifference: 'San Sebastián is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Pintxos crawl in Parte Vieja essential! La Concha stunning. Zurriola for surfers. Book Michelin restaurants months ahead.',
+        transportation: 'San Sebastián Airport (EAS) 20km (limited). Bilbao Airport (BIO) 1 hr. Renfe station.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Tamborrada (January 20). Film Festival (September).'
+      }
     }
   },
   { slug: 'santa-cruz-tenerife', city: 'Santa Cruz de Tenerife', timezone: 'Atlantic/Canary', country: 'Spain', countryCode: 'ES', lat: 28.47, lng: -16.25, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '210K', phoneCode: '+34 922', language: 'Spanish',
-      climate: 'Subtropical with warm year-round (18-26°C). "Eternal spring" climate, very pleasant.',
-      attractions: ['Auditorio de Tenerife', 'Parque García Sanabria', 'Carnival', 'Mercado de Nuestra Señora', 'Teide nearby'],
-      demographics: 'Co-capital of Canary Islands, major Atlantic port. Famous for second-largest carnival in the world after Rio.'
+      currency: 'Euro', currencySymbol: '€', population: '0.21M', metroPopulation: '0.4M', phoneCode: '+34 922', language: 'Spanish',
+      climate: 'Subtropical with warm year-round (18-28°C). Mild, pleasant. Spring-like always.',
+      attractions: ['Auditorio de Tenerife', 'Plaza de España', 'Mercado de Nuestra Señora de África', 'García Sanabria Park', 'Carnival', 'Teide National Park', 'La Laguna UNESCO', 'Playa de Las Teresitas', 'Anaga mountains', 'Museums'],
+      demographics: 'Tenerife capital. World\'s second-best Carnival. Auditorio landmark. Gateway to Mount Teide.',
+      seoContent: {
+        intro: 'Santa Cruz de Tenerife, Canary Islands capital, operates on Western European Time (WET/UTC+0) in winter and WEST/UTC+1 in summer - one hour behind mainland Spain. This vibrant city hosts the world\'s second-largest Carnival and is gateway to UNESCO Teide National Park.',
+        timezoneFacts: 'Canary Islands are 1 hour behind mainland Spain. Santa Cruz shares capital duties with Las Palmas.',
+        bestTimeToVisit: 'Year-round pleasant! Carnival (February) world-class. Christmas in warm weather.',
+        businessHours: 'Shops 10 AM to 2 PM, 5-8 PM. Auditorio tours available.',
+        timeDifference: 'Santa Cruz is UTC+0 (winter) / UTC+1 (summer). 1 hr behind mainland Spain.',
+        daylightSaving: 'Canary Islands observe WEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Carnival is incredible - book early! Teide for Spain\'s highest peak. La Laguna UNESCO town. Mercado for local food.',
+        transportation: 'Tenerife North Airport (TFN) 11km. Tenerife South (TFS) 60km. Ferries between islands.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Carnival (February). Día de la Cruz (May 3).'
+      }
+    }
+  },
+  
+  // Spain - Additional Premium Tourist Destinations
+  { slug: 'toledo', city: 'Toledo', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 39.86, lng: -4.03, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.08M', metroPopulation: '0.09M', phoneCode: '+34 925', language: 'Spanish',
+      climate: 'Continental Mediterranean with hot summers (28-35°C) and cold winters (2-10°C).',
+      attractions: ['Alcázar', 'Toledo Cathedral', 'El Greco Museum', 'Synagogue of Santa María', 'Monastery of San Juan', 'Puente de San Martín', 'Jewish Quarter', 'Sword making', 'Marzipan', 'City walls'],
+      demographics: 'City of Three Cultures (Christian, Muslim, Jewish). UNESCO World Heritage. El Greco\'s city. Imperial capital.',
+      seoContent: {
+        intro: 'Toledo, City of Three Cultures, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO hilltop city was Spain\'s imperial capital, where Christians, Muslims, and Jews lived together, and is famed for El Greco, sword-making, and marzipan.',
+        timezoneFacts: 'Same timezone as Madrid. Toledo was capital of Spain until 1561.',
+        bestTimeToVisit: 'March-June and September-November best. Summer very hot. Day trip from Madrid popular.',
+        businessHours: 'Cathedral 10 AM to 6 PM. Shops 10 AM to 2 PM, 5-8 PM.',
+        timeDifference: 'Toledo is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Stay overnight for evening magic! El Greco masterpieces in several locations. Sword shops traditional. Marzipan from Santo Tomé.',
+        transportation: 'Madrid Barajas 1 hr. Toledo station. 30 min from Madrid by AVE.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Corpus Christi (major). Virgen del Sagrario (August 15).'
+      }
+    }
+  },
+  { slug: 'segovia', city: 'Segovia', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 40.95, lng: -4.12, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.05M', metroPopulation: '0.05M', phoneCode: '+34 921', language: 'Spanish',
+      climate: 'Continental with warm summers (22-30°C) and cold winters (-2 to 8°C). Can snow.',
+      attractions: ['Roman Aqueduct', 'Alcázar', 'Segovia Cathedral', 'Jewish Quarter', 'Cochinillo (roast suckling pig)', 'Casa de los Picos', 'Vera Cruz Church', 'La Granja Palace', 'City walls', 'Plaza Mayor'],
+      demographics: 'Roman Aqueduct UNESCO. Disney castle inspiration (Alcázar). Cochinillo gastronomy. Day trip classic.',
+      seoContent: {
+        intro: 'Segovia, city of the aqueduct, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city has a spectacular Roman aqueduct, an Alcázar that inspired Disney\'s Cinderella Castle, and is famous for cochinillo (roast suckling pig).',
+        timezoneFacts: 'Same timezone as Madrid. The aqueduct was built in the 1st century AD without mortar.',
+        bestTimeToVisit: 'April-October best. Can be very cold in winter. Easy day trip from Madrid.',
+        businessHours: 'Alcázar 10 AM to 6 PM. Restaurants lunch from 1 PM.',
+        timeDifference: 'Segovia is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Cochinillo at Mesón de Cándido or José María! Alcázar inspired Cinderella Castle. La Granja palace nearby. Aqueduct best from Plaza Azoguejo.',
+        transportation: 'Madrid 1 hr. Segovia-Guiomar AVE station. 27 min from Madrid by AVE.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. San Frutos (October 25). San Juan (June 24).'
+      }
+    }
+  },
+  { slug: 'salamanca', city: 'Salamanca', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 40.97, lng: -5.66, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.15M', metroPopulation: '0.21M', phoneCode: '+34 923', language: 'Spanish',
+      climate: 'Continental Mediterranean with warm summers (24-32°C) and cold winters (0-8°C).',
+      attractions: ['Plaza Mayor', 'University of Salamanca', 'New and Old Cathedrals', 'Casa de las Conchas', 'Frog on skull', 'Puente Romano', 'Huerto de Calixto', 'Art Nouveau Museum', 'Clerecía', 'Nightlife'],
+      demographics: 'Spain\'s oldest university (1218). Golden sandstone UNESCO city. Student nightlife. Spanish language capital.',
+      seoContent: {
+        intro: 'Salamanca, Spain\'s golden city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO university city glows gold at sunset, has Spain\'s most beautiful Plaza Mayor, and is the best place to learn Spanish, with vibrant student nightlife.',
+        timezoneFacts: 'Same timezone as Madrid. University of Salamanca is Spain\'s oldest and was among Europe\'s greatest.',
+        bestTimeToVisit: 'April-June and September-November best. Student life in term time. Summer quieter.',
+        businessHours: 'University 10 AM to 7 PM. Plaza Mayor cafés until late.',
+        timeDifference: 'Salamanca is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Find the frog on university façade - good luck! Plaza Mayor sunset golden. Great for learning Spanish. Student nightlife legendary.',
+        transportation: 'Madrid 2 hr. Salamanca station. 1.5 hr from Madrid by train.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Virgen de la Vega (September 8).'
+      }
+    }
+  },
+  { slug: 'ibiza', city: 'Ibiza', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 38.91, lng: 1.43, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.05M', metroPopulation: '0.15M', phoneCode: '+34 971', language: 'Spanish, Catalan',
+      climate: 'Mediterranean with hot summers (26-30°C) and mild winters (12-16°C). 300 sunny days.',
+      attractions: ['Dalt Vila (UNESCO)', 'Superclubs', 'Beaches', 'Es Vedrà', 'Sunset at Café del Mar', 'Formentera', 'Hippie markets', 'Marina', 'Cathedral', 'Cala Comte'],
+      demographics: 'World clubbing capital. UNESCO old town. Sunset worship. Hippie heritage. Balearic paradise.',
+      seoContent: {
+        intro: 'Ibiza, White Island, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Balearic island is the world\'s clubbing capital with legendary superclubs, but also has a UNESCO old town, stunning beaches, and famous sunsets at Café del Mar.',
+        timezoneFacts: 'Same timezone as mainland Spain. Ibiza\'s club scene emerged in the 1980s.',
+        bestTimeToVisit: 'May-October. June and September best balance. July-August peak season and prices.',
+        businessHours: 'Clubs open midnight to 6 AM. Beaches 24/7. Shops 10 AM to 2 PM, 5-10 PM.',
+        timeDifference: 'Ibiza is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Dalt Vila old town for culture! Sunset at Café del Mar ritual. Formentera day trip. Hippy markets Wednesday/Saturday. Book clubs ahead.',
+        transportation: 'Ibiza Airport (IBZ) 7km. Ferries from Barcelona/Valencia/Palma.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Mare de Déu de les Neus (August 5).'
+      }
+    }
+  },
+  { slug: 'ronda', city: 'Ronda', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 36.74, lng: -5.17, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.03M', metroPopulation: '0.03M', phoneCode: '+34 952', language: 'Spanish',
+      climate: 'Mediterranean with warm summers (24-32°C) and mild winters (6-14°C). Mountain location.',
+      attractions: ['Puente Nuevo', 'El Tajo gorge', 'Plaza de Toros', 'Arab Baths', 'Old Town', 'Casa del Rey Moro', 'Alameda del Tajo', 'Mondragón Palace', 'Wine country', 'White villages'],
+      demographics: 'Dramatic gorge city. Birthplace of modern bullfighting. Hemingway and Orson Welles loved it. White village gateway.',
+      seoContent: {
+        intro: 'Ronda, cliffside drama, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This spectacular town is split by El Tajo gorge with the iconic Puente Nuevo bridge, is birthplace of modern bullfighting, and was beloved by Hemingway and Orson Welles.',
+        timezoneFacts: 'Same timezone as Madrid. Modern bullfighting rules were established here in the 18th century.',
+        bestTimeToVisit: 'March-June and September-November best. Easter Feria. Avoid summer heat.',
+        businessHours: 'Puente Nuevo viewpoints 24/7. Plaza de Toros 10 AM to 6 PM.',
+        timeDifference: 'Ronda is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Puente Nuevo best in morning light! Orson Welles\' ashes scattered here. Gateway to white villages (pueblos blancos). Excellent wines.',
+        transportation: 'Málaga Airport 1.5 hr. Ronda station. Scenic train from Algeciras.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Feria de Pedro Romero (September). Semana Santa.'
+      }
+    }
+  },
+  { slug: 'marbella', city: 'Marbella', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 36.51, lng: -4.89, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.15M', metroPopulation: '0.2M', phoneCode: '+34 952', language: 'Spanish',
+      climate: 'Mediterranean with hot summers (26-32°C) and mild winters (12-18°C). 320 sunny days.',
+      attractions: ['Puerto Banús', 'Old Town', 'Golden Mile', 'Beach clubs', 'Orange Square', 'La Concha mountain', 'Funny Beach', 'Marbella Club', 'Nightlife', 'Golf courses'],
+      demographics: 'Costa del Sol glamour. Puerto Banús yacht harbour. Celebrity playground. Golf destination. Beach clubs.',
+      seoContent: {
+        intro: 'Marbella, Costa del Sol glamour, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This upscale resort is the playground of the rich and famous, with Puerto Banús yacht harbour, exclusive beach clubs, and year-round sunshine.',
+        timezoneFacts: 'Same timezone as Madrid. Marbella developed as a resort in the 1950s for European aristocracy.',
+        bestTimeToVisit: 'May-October for beach. Year-round mild. Summer peak season.',
+        businessHours: 'Beach clubs 10 AM to sunset. Puerto Banús shops until late.',
+        timeDifference: 'Marbella is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Old Town charming and less expensive! Puerto Banús for celebrity spotting. Beach clubs can be pricey. Golf courses world-class.',
+        transportation: 'Málaga Airport (AGP) 45 min. No train - buses. Expensive taxis.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. San Bernabé (June 11). Feria (June).'
+      }
+    }
+  },
+  
+  // Spain - Additional Cities (New Batch)
+  { slug: 'santiago-de-compostela', city: 'Santiago de Compostela', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 42.88, lng: -8.54, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.1M', metroPopulation: '0.18M', phoneCode: '+34 981', language: 'Spanish, Galician',
+      climate: 'Oceanic with mild summers (17-24°C) and cool wet winters (6-12°C). Galicia\'s rainy climate.',
+      attractions: ['Cathedral', 'Plaza del Obradoiro', 'Camino de Santiago end', 'Old Town', 'Praza da Quintana', 'Hostal dos Reis Católicos', 'Alameda Park', 'Mercado de Abastos', 'Rúa do Franco', 'Pilgrim museum'],
+      demographics: 'End of Camino de Santiago. St. James\' tomb. UNESCO World Heritage. Galicia capital. Pilgrimage destination.',
+      seoContent: {
+        intro: 'Santiago de Compostela, end of the Camino, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city is the legendary endpoint of the Camino de Santiago pilgrimage, where St. James is said to be buried, with a stunning cathedral and atmospheric old town.',
+        timezoneFacts: 'Same timezone as Madrid. Pilgrims have walked here for over 1,000 years.',
+        bestTimeToVisit: 'May-October best. St. James Day (July 25) huge. Rainy year-round.',
+        businessHours: 'Cathedral 7 AM to 9 PM. Pilgrim office 8 AM to 8 PM.',
+        timeDifference: 'Santiago is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Pilgrims arrive all day! Botafumeiro swings on holy days. Mercado de Abastos for seafood. Rúa do Franco tapas.',
+        transportation: 'Santiago Airport (SCQ) 12km. Santiago station. 5 hr from Madrid.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Santiago Apóstol (July 25) - huge celebration.'
+      }
+    }
+  },
+  { slug: 'cadiz', city: 'Cádiz', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 36.53, lng: -6.29, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.12M', metroPopulation: '0.65M', phoneCode: '+34 956', language: 'Spanish',
+      climate: 'Mediterranean with warm summers (24-29°C) and mild winters (12-17°C). Atlantic influence, windy.',
+      attractions: ['Cathedral', 'Torre Tavira', 'Playa de la Caleta', 'Old Town', 'Carnival', 'Mercado Central', 'Roman Theatre', 'Constitution Plaza', 'Genoves Park', 'Seafood'],
+      demographics: 'Oldest city in Western Europe. Carnival second to Rio. Phoenician founded. Atlantic outpost. Seafood paradise.',
+      seoContent: {
+        intro: 'Cádiz, Europe\'s oldest city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Phoenician-founded port city (3,000+ years old) has Spain\'s second-best Carnival, Atlantic beaches, and is a seafood lover\'s paradise.',
+        timezoneFacts: 'Same timezone as Madrid. Cádiz was founded by Phoenicians around 1100 BC.',
+        bestTimeToVisit: 'March-October best. Carnival (February) spectacular. Windy in winter.',
+        businessHours: 'Torre Tavira 10 AM to 6 PM. Cathedral 10 AM to 7 PM.',
+        timeDifference: 'Cádiz is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Carnival is incredible! Torre Tavira camera obscura. Mercado Central for fried fish. Playa de la Caleta sunset.',
+        transportation: 'Jerez Airport (XRY) 35km. Cádiz station. 4 hr from Madrid.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Carnival (February). Virgen del Rosario (October).'
+      }
+    }
+  },
+  { slug: 'pamplona', city: 'Pamplona', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 42.81, lng: -1.64, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.2M', metroPopulation: '0.36M', phoneCode: '+34 948', language: 'Spanish, Basque',
+      climate: 'Oceanic with warm summers (18-27°C) and cool winters (2-10°C). Transitional climate.',
+      attractions: ['San Fermín', 'Running of the Bulls', 'Cathedral', 'Plaza del Castillo', 'Citadel', 'Camino de Santiago', 'Old Town', 'Hemingway statue', 'City walls', 'Pintxos'],
+      demographics: 'San Fermín festival. Running of the Bulls. Hemingway made it famous. Navarra capital. Camino stop.',
+      seoContent: {
+        intro: 'Pamplona, home of San Fermín, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Navarran capital is world-famous for the Running of the Bulls, was immortalized by Hemingway, and is a key stop on the Camino de Santiago.',
+        timezoneFacts: 'Same timezone as Madrid. Running of the Bulls has occurred since at least 1591.',
+        bestTimeToVisit: 'San Fermín (July 6-14) or avoid it! Year-round pleasant. Spring/autumn best.',
+        businessHours: 'Cathedral 10 AM to 6 PM. San Fermín: everything changes.',
+        timeDifference: 'Pamplona is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'San Fermín book months ahead! Plaza del Castillo for pintxos. Citadel park. Hemingway drank at Café Iruña.',
+        transportation: 'Pamplona Airport (PNA) 6km (limited). Pamplona station. 3 hr from Madrid.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. San Fermín (July 6-14).'
+      }
+    }
+  },
+  { slug: 'girona', city: 'Girona', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 41.98, lng: 2.82, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.1M', metroPopulation: '0.16M', phoneCode: '+34 972', language: 'Spanish, Catalan',
+      climate: 'Mediterranean with warm summers (23-30°C) and mild winters (5-12°C). Costa Brava gateway.',
+      attractions: ['Jewish Quarter', 'Cathedral', 'Onyar River houses', 'Game of Thrones locations', 'Arab Baths', 'Sant Feliu', 'Rambla de la Llibertat', 'El Celler de Can Roca', 'City walls', 'Costa Brava'],
+      demographics: 'Best preserved Jewish Quarter in Europe. Game of Thrones location. El Celler de Can Roca. Costa Brava gateway.',
+      seoContent: {
+        intro: 'Girona, the little Barcelona, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This photogenic Catalan city has Europe\'s best-preserved Jewish quarter, was a Game of Thrones filming location, and is home to El Celler de Can Roca restaurant.',
+        timezoneFacts: 'Same timezone as Madrid. Girona\'s Jewish quarter (Call) dates back to the 9th century.',
+        bestTimeToVisit: 'April-October best. Temps de Flors flower festival (May). Avoid August crowds.',
+        businessHours: 'Cathedral 10 AM to 7 PM. Jewish Quarter accessible 24/7.',
+        timeDifference: 'Girona is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Walk the city walls! Jewish Quarter atmospheric. El Celler book months ahead. Costa Brava 30 min.',
+        transportation: 'Girona-Costa Brava Airport (GRO) 13km - budget flights. Girona station. 1 hr from Barcelona.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Temps de Flors (May). Sant Narcís (October-November).'
+      }
+    }
+  },
+  { slug: 'burgos', city: 'Burgos', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 42.34, lng: -3.70, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.18M', metroPopulation: '0.19M', phoneCode: '+34 947', language: 'Spanish',
+      climate: 'Continental with warm summers (18-28°C) and cold winters (-1 to 8°C). Meseta climate.',
+      attractions: ['Burgos Cathedral', 'Arco de Santa María', 'Monastery of Las Huelgas', 'Cartuja de Miraflores', 'El Cid statue', 'Paseo del Espolón', 'Human Evolution Museum', 'Camino de Santiago', 'Morcilla', 'Tapas'],
+      demographics: 'UNESCO Gothic cathedral. El Cid\'s city. Human Evolution Museum. Camino stop. Morcilla sausage.',
+      seoContent: {
+        intro: 'Burgos, city of El Cid, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Castilian city has a UNESCO Gothic cathedral of extraordinary beauty, is legendary El Cid\'s hometown, and houses the Human Evolution Museum with prehistoric finds.',
+        timezoneFacts: 'Same timezone as Madrid. El Cid (Rodrigo Díaz de Vivar) was born near Burgos around 1043.',
+        bestTimeToVisit: 'May-October best. Very cold in winter. San Pedro y San Pablo (June 29).',
+        businessHours: 'Cathedral 9:30 AM to 7 PM. Museums 10 AM to 8 PM.',
+        timeDifference: 'Burgos is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Cathedral interior stunning! Human Evolution Museum excellent. Try morcilla (blood sausage). Camino pilgrims passing.',
+        transportation: 'Burgos-Villafría Airport (RGS) limited. Burgos Rosa de Lima station. 2.5 hr from Madrid.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. San Pedro y San Pablo (June 29).'
+      }
+    }
+  },
+  { slug: 'oviedo', city: 'Oviedo', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 43.36, lng: -5.85, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.22M', metroPopulation: '0.84M', phoneCode: '+34 98', language: 'Spanish, Asturian',
+      climate: 'Oceanic with mild summers (17-23°C) and cool winters (5-12°C). Rainy, green.',
+      attractions: ['Pre-Romanesque churches', 'Cathedral', 'Old Town', 'Fontán Market', 'Woody Allen statue', 'Campo de San Francisco', 'Santa María del Naranco', 'San Miguel de Lillo', 'Cider houses', 'Sculptures'],
+      demographics: 'Pre-Romanesque UNESCO churches. Asturias capital. Woody Allen\'s favorite city. Cider culture. Green Spain.',
+      seoContent: {
+        intro: 'Oviedo, jewel of Asturias, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This elegant regional capital has UNESCO Pre-Romanesque churches, was declared Woody Allen\'s favorite Spanish city, and has a wonderful cider-pouring culture.',
+        timezoneFacts: 'Same timezone as Madrid. Pre-Romanesque churches date from 9th century.',
+        bestTimeToVisit: 'May-October best. Rainy year-round. San Mateo festival (September).',
+        businessHours: 'Churches 10 AM to 1 PM, 3:30-6 PM. Cider houses evening.',
+        timeDifference: 'Oviedo is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Pre-Romanesque churches UNESCO! Cider poured from height (escanciado). Woody Allen statue. Old Town sculptures everywhere.',
+        transportation: 'Asturias Airport (OVD) 40km. Oviedo station. 5 hr from Madrid.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. San Mateo (September 21).'
+      }
+    }
+  },
+  { slug: 'tarragona', city: 'Tarragona', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 41.12, lng: 1.25, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.13M', metroPopulation: '0.35M', phoneCode: '+34 977', language: 'Spanish, Catalan',
+      climate: 'Mediterranean with hot summers (25-30°C) and mild winters (9-14°C). Costa Daurada.',
+      attractions: ['Roman Amphitheatre', 'Tarraco UNESCO', 'Cathedral', 'Roman Walls', 'Balcó del Mediterrani', 'Rambla Nova', 'Archaeological Museum', 'Pont del Diable', 'Human Towers', 'Beaches'],
+      demographics: 'Roman Tarraco UNESCO. Roman amphitheatre by sea. Human towers (castells). Costa Daurada beaches.',
+      seoContent: {
+        intro: 'Tarragona, Roman Tarraco, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city was once Roman Spain\'s capital, has a spectacular amphitheatre overlooking the sea, and is home to the tradition of human towers (castells).',
+        timezoneFacts: 'Same timezone as Madrid. Tarraco was capital of Roman Hispania Tarraconensis.',
+        bestTimeToVisit: 'April-October best. Santa Tecla festival (September) with castells.',
+        businessHours: 'Roman sites 9 AM to 9 PM (summer). Cathedral 10 AM to 7 PM.',
+        timeDifference: 'Tarragona is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Amphitheatre by sea unique! Santa Tecla castells amazing. Balcó del Mediterrani viewpoint. PortAventura nearby.',
+        transportation: 'Barcelona Airport (BCN) 1 hr. Tarragona station. 1 hr from Barcelona.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Santa Tecla (September 23).'
+      }
+    }
+  },
+  { slug: 'caceres', city: 'Cáceres', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 39.47, lng: -6.37, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.1M', metroPopulation: '0.1M', phoneCode: '+34 927', language: 'Spanish',
+      climate: 'Mediterranean with hot summers (28-36°C) and mild winters (5-13°C). Extremadura.',
+      attractions: ['UNESCO Old Town', 'Plaza Mayor', 'Torre de Bujaco', 'Concatedral', 'Jewish Quarter', 'Casa del Sol', 'Palacio de Carvajal', 'Game of Thrones', 'Storks', 'Iberian ham'],
+      demographics: 'UNESCO medieval ensemble. Time-capsule old town. Game of Thrones location. Stork city. Extremaduran cuisine.',
+      seoContent: {
+        intro: 'Cáceres, medieval time capsule, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO old town is one of Europe\'s most complete medieval ensembles, was a Game of Thrones filming location, and is famous for stork nests on every tower.',
+        timezoneFacts: 'Same timezone as Madrid. The medieval old town has remained virtually unchanged.',
+        bestTimeToVisit: 'March-June and September-November best. WOMAD festival (May). Summer very hot.',
+        businessHours: 'Old town accessible 24/7. Torre de Bujaco 10 AM to 2 PM, 5-8 PM.',
+        timeDifference: 'Cáceres is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Old Town at sunset magical! Game of Thrones tour. Storks everywhere (Feb-Aug). Try Torta del Casar cheese.',
+        transportation: 'No airport - use Madrid (3 hr). Cáceres station. 4 hr from Madrid.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. San Jorge (April 23). WOMAD (May).'
+      }
+    }
+  },
+  { slug: 'cuenca', city: 'Cuenca', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 40.07, lng: -2.13, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.06M', metroPopulation: '0.06M', phoneCode: '+34 969', language: 'Spanish',
+      climate: 'Continental Mediterranean with warm summers (22-32°C) and cold winters (0-9°C). High altitude.',
+      attractions: ['Casas Colgadas', 'Parador', 'Cathedral', 'Abstract Art Museum', 'San Pablo Bridge', 'Huécar Gorge', 'Old Town', 'Enchanted City', 'Semana Santa', 'Morteruelo'],
+      demographics: 'Hanging Houses UNESCO. Dramatic gorge setting. Spanish Abstract Art Museum. Enchanted City rocks.',
+      seoContent: {
+        intro: 'Cuenca, city of Hanging Houses, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO dramatic gorge-top city is famous for its Casas Colgadas (Hanging Houses), an excellent abstract art museum, and the nearby Enchanted City rock formations.',
+        timezoneFacts: 'Same timezone as Madrid. Hanging Houses date from 15th century.',
+        bestTimeToVisit: 'April-October best. Semana Santa (religious music week). Can be cold.',
+        businessHours: 'Abstract Art Museum 11 AM to 2 PM, 4-8 PM. Hanging Houses exterior 24/7.',
+        timeDifference: 'Cuenca is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Hanging Houses from San Pablo Bridge! Abstract Art Museum excellent. Enchanted City 30 min. Semana Santa religious music unique.',
+        transportation: 'Madrid 1 hr by AVE. Cuenca Fernando Zóbel station. Easy day trip from Madrid.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Semana de Música Religiosa (Easter). San Mateo (September 21).'
+      }
     }
   },
   
@@ -12988,6 +14926,136 @@ export const cities: City[] = [
       climate: 'Humid subtropical with hot summers (25-31°C) and cold winters (-3 to 5°C). Basin location.',
       attractions: ['Jeonju Hanok Village', 'Gyeonggijeon Shrine', 'Omokdae Pavilion', 'Jeonju Bibimbap', 'Nambu Market'],
       demographics: 'UNESCO Creative City of Gastronomy, birthplace of bibimbap. 800+ traditional hanok houses, Korean culture hub.'
+    }
+  },
+  
+  // South Korea - Additional Tourist Cities
+  { slug: 'jeju', city: 'Jeju', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 33.50, lng: 126.53, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.49M', metroPopulation: '0.7M', phoneCode: '+82 64', language: 'Korean, Jeju dialect',
+      climate: 'Humid subtropical with mild winters (5-8°C) and warm summers (25-29°C). Typhoon season July-September.',
+      attractions: ['Hallasan Mountain', 'Seongsan Ilchulbong', 'Manjanggul Cave', 'Jeju Olle Trails', 'Haenyeo divers', 'Teddy Bear Museum', 'Cheonjiyeon Waterfall', 'Loveland', 'Black pork BBQ', 'Jeju Stone Park'],
+      demographics: 'Korea\'s Hawaii. UNESCO triple crown. Honeymoon island. Volcanic landscape. Unique culture and dialect.'
+    }
+  },
+  { slug: 'gyeongju', city: 'Gyeongju', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.86, lng: 129.22, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.26M', metroPopulation: '0.26M', phoneCode: '+82 54', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-3 to 6°C). Pleasant springs and falls.',
+      attractions: ['Bulguksa Temple (UNESCO)', 'Seokguram Grotto', 'Tumuli Park (royal tombs)', 'Anapji Pond', 'Cheomseongdae Observatory', 'National Museum', 'Gyochon Hanok Village', 'Bomun Lake', 'Yangdong Village', 'Namsan Mountain'],
+      demographics: 'Museum without walls. 1,000-year Silla capital. UNESCO treasures everywhere. Korea\'s ancient heart.'
+    }
+  },
+  { slug: 'gangneung', city: 'Gangneung', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.75, lng: 128.90, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.21M', metroPopulation: '0.21M', phoneCode: '+82 33', language: 'Korean',
+      climate: 'Humid continental with warm summers (23-28°C) and cold winters (-4 to 4°C). Sea moderates climate.',
+      attractions: ['Gyeongpo Beach', 'Ojukheon House', 'Jeongdongjin Sunrise', 'Coffee Street', '2018 Olympics venues', 'Anmok Beach cafés', 'Seongyojang House', 'Gyeongpo Lake', 'Jumunjin Port', 'BTS filming locations'],
+      demographics: '2018 Winter Olympics coastal city. Coffee culture capital. Sunrise destination. BTS filming spots. Beach resort.'
+    }
+  },
+  { slug: 'sokcho', city: 'Sokcho', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 38.21, lng: 128.59, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.08M', metroPopulation: '0.08M', phoneCode: '+82 33', language: 'Korean',
+      climate: 'Humid continental with cool summers (22-27°C) and cold winters (-5 to 3°C). Mountain-sea climate.',
+      attractions: ['Seoraksan National Park', 'Sokcho Beach', 'Abai Village', 'Naksansa Temple', 'Cheoksan Hot Springs', 'Yeonggeumjeong Pavilion', 'Daepo Port', 'Teddy Bear Farm', 'Cable car', 'Fresh seafood'],
+      demographics: 'Seoraksan gateway. Korea\'s most beautiful national park. Fresh squid capital. North Korea views on clear days.'
+    }
+  },
+  { slug: 'andong', city: 'Andong', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.57, lng: 128.73, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.16M', metroPopulation: '0.16M', phoneCode: '+82 54', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-6 to 4°C). Inland basin.',
+      attractions: ['Hahoe Folk Village (UNESCO)', 'Mask Museum', 'Dosan Seowon', 'Bongjeongsa Temple', 'Andong Jjimdak', 'Woryeonggyo Bridge', 'Confucian Academy', 'Mask Dance Festival', 'Soju Museum', 'Traditional markets'],
+      demographics: 'UNESCO Hahoe village. Confucian heartland. Traditional mask culture. Jjimdak (braised chicken) origin. Spirit of old Korea.'
+    }
+  },
+  { slug: 'yeosu', city: 'Yeosu', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 34.76, lng: 127.66, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.28M', metroPopulation: '0.28M', phoneCode: '+82 61', language: 'Korean',
+      climate: 'Humid subtropical with warm summers (24-29°C) and mild winters (1-8°C). Coastal mild climate.',
+      attractions: ['Expo 2012 site', 'Odongdo Island', 'Yeosu Cable Car', 'Hyangiram Hermitage', 'Yi Sun-sin sites', 'Yeosu Night Sea', 'Aqua Planet', 'Dolsan Bridge', 'Jungang Market', 'Fresh sashimi'],
+      demographics: '2012 World Expo city. Beautiful night sea (famous song). Admiral Yi Sun-sin history. Island-hopping paradise.'
+    }
+  },
+  { slug: 'mokpo', city: 'Mokpo', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 34.79, lng: 126.39, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.23M', metroPopulation: '0.23M', phoneCode: '+82 61', language: 'Korean',
+      climate: 'Humid subtropical with warm summers (24-28°C) and mild winters (0-7°C). Southwestern coastal.',
+      attractions: ['Yudalsan Mountain', 'Gatbawi Rock', 'National Maritime Museum', 'Old Japanese Quarter', 'Mokpo Modern History Museum', 'Samhakdo Island', 'Ferries to islands', 'Hongeo (fermented skate)', 'Night view', 'Art district'],
+      demographics: 'Gateway to southwestern islands. Japanese colonial architecture. Hongeo (fermented skate) capital. Port city charm.'
+    }
+  },
+  { slug: 'chuncheon', city: 'Chuncheon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.87, lng: 127.73, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.28M', metroPopulation: '0.28M', phoneCode: '+82 33', language: 'Korean',
+      climate: 'Humid continental with warm summers (23-29°C) and very cold winters (-8 to 2°C). Lake basin.',
+      attractions: ['Nami Island', 'Dakgalbi Street', 'Soyang Dam', 'Cheongpyeong Temple', 'Jade Garden', 'Animation Museum', 'Soyanggang Skywalk', 'Winter Sonata locations', 'Lake Uiam', 'Rail bike'],
+      demographics: 'Dakgalbi (spicy chicken) capital. Nami Island gateway. Winter Sonata filming. Lake city. K-drama pilgrimage.'
+    }
+  },
+  { slug: 'pohang', city: 'Pohang', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.02, lng: 129.37, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.51M', metroPopulation: '0.51M', phoneCode: '+82 54', language: 'Korean',
+      climate: 'Humid continental with warm summers (24-29°C) and cold winters (-2 to 6°C). East coast.',
+      attractions: ['Homigot Sunrise Plaza', 'Space Walk', 'POSCO Steel Museum', 'Bogyeongsa Temple', 'Jukdo Market', 'Yeongildae Beach', 'Guryongpo Japanese Village', 'Hwanho Park', 'Fresh crab', 'Light festival'],
+      demographics: 'Sunrise landmark (Homigot). Steel city (POSCO). East coast beaches. Fresh snow crab. Industrial and natural mix.'
+    }
+  },
+  { slug: 'pyeongchang', city: 'Pyeongchang', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.37, lng: 128.39, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.04M', metroPopulation: '0.04M', phoneCode: '+82 33', language: 'Korean',
+      climate: 'Humid continental with cool summers (20-26°C) and very cold snowy winters (-10 to 0°C). Mountain climate.',
+      attractions: ['2018 Winter Olympics Park', 'Alpensia Resort', 'Woljeongsa Temple', 'Odaesan National Park', 'Ski resorts', 'Olympic Sliding Centre', 'Herb Farm', 'Trout Festival', 'Phoenix Park', 'Lee Hyoseok Cultural Village'],
+      demographics: '2018 Winter Olympics host. Mountain county. Ski resorts. Buddhist temples. High-altitude farming (potatoes, herbs).'
+    }
+  },
+  { slug: 'wonju', city: 'Wonju', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.35, lng: 127.95, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.36M', metroPopulation: '0.36M', phoneCode: '+82 33', language: 'Korean',
+      climate: 'Humid continental with warm summers (23-29°C) and cold winters (-7 to 3°C). Mountain basin.',
+      attractions: ['Chiaksan National Park', 'Guryongsa Temple', 'Museum SAN', 'Wonju Rail Park', 'Hanji Theme Park', 'Baegunsan Mountain', 'Gangwon Gamyeong', 'Hoejae-ri Stone Buddha', 'Traditional markets', 'Oak Valley Resort'],
+      demographics: 'Gangwon-do capital. Chiaksan gateway. Traditional hanji paper. Medical device industry hub. Mountain city.'
+    }
+  },
+  { slug: 'sejong', city: 'Sejong', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.48, lng: 127.29, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.38M', metroPopulation: '0.38M', phoneCode: '+82 44', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-5 to 4°C). Central Korea.',
+      attractions: ['Government Complex', 'National Arboretum', 'Sejong Lake Park', 'Bear Tree Park', 'Jochiwon traditional market', 'Milmaru Observatory', 'BRT system', 'Smart City', 'Bike paths', 'Central Park'],
+      demographics: 'New administrative capital (2012). Government ministries relocated. Planned smart city. Korea\'s youngest city.'
+    }
+  },
+  { slug: 'gimhae', city: 'Gimhae', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.23, lng: 128.88, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.54M', metroPopulation: '0.54M', phoneCode: '+82 55', language: 'Korean',
+      climate: 'Humid subtropical with hot summers (25-31°C) and mild winters (0-8°C). Nakdong River delta.',
+      attractions: ['Gimhae International Airport', 'Royal Tomb of King Suro', 'National Museum of Gimhae', 'Gimhae Lotte Water Park', 'Bongha Village (Roh Moo-hyun)', 'Clayarch Gimhae Museum', 'Jillye Art Village', 'Nakdong River Estuary', 'Gaya history', 'Jinyeong Station'],
+      demographics: 'Ancient Gaya kingdom capital. Busan airport location. President Roh Moo-hyun hometown. Growing satellite city.'
+    }
+  },
+  { slug: 'hwaseong', city: 'Hwaseong', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.20, lng: 126.83, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.9M', metroPopulation: '0.9M', phoneCode: '+82 31', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-5 to 4°C). West coast.',
+      attractions: ['Samsung Electronics HQ', 'Jebudo Island', 'Goongpyeong Port', 'Hyundai Motor Studio', 'Yungneung & Geolleung Royal Tombs', 'Dongtan Lake Park', 'Seosin Lake', 'Baegot Port', 'Mud flats', 'Sunset views'],
+      demographics: 'Korea\'s fastest growing city. Samsung semiconductor hub. Dongtan new town. West coast tidal flats.'
+    }
+  },
+  { slug: 'namyangju', city: 'Namyangju', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.64, lng: 127.21, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.73M', metroPopulation: '0.73M', phoneCode: '+82 31', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-7 to 3°C). Han River valley.',
+      attractions: ['Dasan Heritage Site', 'Bukhangang Railway', 'Paldang Dam', 'Moran Park', 'Surak Mountain', 'Water Garden', 'Organic farms', 'Hangang Bicycle Path', 'Seolbong Park', 'Jeongmyeolsa Temple'],
+      demographics: 'Seoul eastern suburb. Dasan Jeong Yakyong heritage. Organic farming area. Bukhangang scenic train. Nature escape.'
+    }
+  },
+  { slug: 'ansan', city: 'Ansan', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.32, lng: 126.83, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.66M', metroPopulation: '0.66M', phoneCode: '+82 31', language: 'Korean, various (multicultural)',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-4 to 4°C). West coast.',
+      attractions: ['Daebu Island', 'Sihwa Lake', 'Multicultural Street', 'Ansan Starlight Village', 'Hwarang Amusement Park', 'Seongho Memorial Hall', 'Nojeokbong Park', 'Gyeonggi Saltworks', 'Reed wetlands', 'Seafood markets'],
+      demographics: 'Korea\'s most multicultural city. Industrial hub. Daebu Island escape. Sihwa Lake tidal power. Foreign worker community.'
     }
   },
 
