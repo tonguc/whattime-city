@@ -7378,63 +7378,164 @@ export const cities: City[] = [
   // Spain - Additional Cities
   { slug: 'bilbao', city: 'Bilbao', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 43.26, lng: -2.93, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '350K', phoneCode: '+34 94', language: 'Spanish, Basque',
+      currency: 'Euro', currencySymbol: '€', population: '0.35M', metroPopulation: '1.0M', phoneCode: '+34 94', language: 'Spanish, Basque',
       climate: 'Oceanic with mild temperatures (8-25°C). Frequent rainfall year-round, especially in autumn.',
-      attractions: ['Guggenheim Museum', 'Casco Viejo', 'San Mamés Stadium', 'Puente Zubizuri', 'Mercado de la Ribera'],
-      demographics: 'Largest city in the Basque Country, transformed from industrial port to cultural destination. Known for gastronomy and architecture.'
+      attractions: ['Guggenheim Museum', 'Casco Viejo', 'San Mamés Stadium', 'Puente Zubizuri', 'Mercado de la Ribera', 'Arriaga Theatre', 'Fine Arts Museum', 'Funicular de Artxanda', 'Alhóndiga', 'Pintxos bars'],
+      demographics: 'Largest Basque city. Guggenheim effect. Transformed from industrial to cultural. World-class gastronomy.',
+      seoContent: {
+        intro: 'Bilbao, the Guggenheim city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Basque city was transformed from industrial decline to cultural destination by Frank Gehry\'s spectacular Guggenheim Museum, and now rivals San Sebastián for Spain\'s best pintxos.',
+        timezoneFacts: 'Same timezone as Madrid. The "Guggenheim effect" became a model for urban regeneration worldwide.',
+        bestTimeToVisit: 'May-October for best weather. Aste Nagusia festival (August). Rainy in winter.',
+        businessHours: 'Guggenheim 10 AM to 8 PM. Pintxos bars 11 AM to 11 PM. Siesta observed.',
+        timeDifference: 'Bilbao is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Pintxos crawl in Casco Viejo essential! Guggenheim exterior free. San Mamés for Athletic Club. Take funicular for views.',
+        transportation: 'Bilbao Airport (BIO) 12km. Bilbao-Abando station. 5 hr from Madrid by train.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Aste Nagusia (August). Santiago (July 25).'
+      }
     }
   },
   { slug: 'malaga', city: 'Málaga', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 36.72, lng: -4.42, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '580K', phoneCode: '+34 95', language: 'Spanish',
-      climate: 'Mediterranean with hot dry summers (28-32°C) and mild winters (12-18°C). 300+ sunny days per year.',
-      attractions: ['Picasso Museum', 'Alcazaba', 'Gibralfaro Castle', 'Málaga Cathedral', 'Muelle Uno'],
-      demographics: 'Sixth-largest city in Spain, birthplace of Picasso. Gateway to Costa del Sol and major tech hub in southern Europe.'
+      currency: 'Euro', currencySymbol: '€', population: '0.58M', metroPopulation: '1.0M', phoneCode: '+34 95', language: 'Spanish',
+      climate: 'Mediterranean with hot dry summers (28-32°C) and mild winters (12-18°C). 300+ sunny days.',
+      attractions: ['Picasso Museum', 'Alcazaba', 'Gibralfaro Castle', 'Málaga Cathedral', 'Muelle Uno', 'Centre Pompidou', 'Atarazanas Market', 'La Malagueta Beach', 'Calle Larios', 'Soho district'],
+      demographics: 'Picasso\'s birthplace. Costa del Sol gateway. Tech hub. 300 sunny days. Cultural renaissance.',
+      seoContent: {
+        intro: 'Málaga, Picasso\'s birthplace, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Costa del Sol capital has transformed into a cultural powerhouse with multiple museums, 300 days of sunshine, and is now Spain\'s tech hub rivaling Barcelona.',
+        timezoneFacts: 'Same timezone as Madrid. Picasso was born here in 1881 and lived his first 10 years in Málaga.',
+        bestTimeToVisit: 'Year-round mild. Spring and autumn best. Summer hot but beaches. Feria (August).',
+        businessHours: 'Picasso Museum 10 AM to 7 PM. Shops 10 AM to 2 PM, 5-9 PM.',
+        timeDifference: 'Málaga is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Picasso Museum essential! Alcazaba and Gibralfaro combo. Atarazanas market for tapas. Soho for street art. Great for digital nomads.',
+        transportation: 'Málaga-Costa del Sol Airport (AGP) 8km - major hub. Málaga María Zambrano AVE. 2.5 hr from Madrid.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Feria de Málaga (August). Semana Santa spectacular.'
+      }
     }
   },
   { slug: 'zaragoza', city: 'Zaragoza', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 41.65, lng: -0.88, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '680K', phoneCode: '+34 976', language: 'Spanish',
+      currency: 'Euro', currencySymbol: '€', population: '0.68M', metroPopulation: '0.75M', phoneCode: '+34 976', language: 'Spanish',
       climate: 'Semi-arid Mediterranean with hot summers (26-35°C) and cold winters (2-10°C). Strong cierzo wind.',
-      attractions: ['Basílica del Pilar', 'Aljafería Palace', 'Plaza del Pilar', 'La Seo Cathedral', 'Expo 2008 site'],
-      demographics: 'Fifth-largest city in Spain, capital of Aragón. Strategic location between Madrid, Barcelona, and Bilbao. Major logistics hub.'
+      attractions: ['Basílica del Pilar', 'Aljafería Palace', 'Plaza del Pilar', 'La Seo Cathedral', 'Expo 2008 site', 'Puente de Piedra', 'El Tubo', 'Goya Museum', 'Roman walls', 'Parque Grande'],
+      demographics: 'Aragón capital. Basílica del Pilar. Moorish Aljafería Palace. Strategic crossroads. Goya connections.',
+      seoContent: {
+        intro: 'Zaragoza, heart of Aragón, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This strategic city between Madrid and Barcelona features the stunning Basílica del Pilar, a UNESCO Moorish palace, and is Spain\'s fifth-largest city with excellent tapas.',
+        timezoneFacts: 'Same timezone as Madrid. Zaragoza was Spain\'s fifth kingdom alongside Castile, León, Navarra, and Portugal.',
+        bestTimeToVisit: 'March-June and September-November best. Summer hot. Fiestas del Pilar (October).',
+        businessHours: 'Basílica 6:45 AM to 8:30 PM. Shops 10 AM to 2 PM, 5-8:30 PM.',
+        timeDifference: 'Zaragoza is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'El Tubo for tapas crawl! Aljafería is stunning Moorish palace. Pilar tower for views. Goya born nearby.',
+        transportation: 'Zaragoza Airport (ZAZ) 10km. Zaragoza-Delicias AVE. 1.5 hr from Madrid/Barcelona.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Fiestas del Pilar (October 12). San Valero (January 29).'
+      }
     }
   },
   { slug: 'murcia', city: 'Murcia', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 37.99, lng: -1.13, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '460K', phoneCode: '+34 968', language: 'Spanish',
-      climate: 'Hot semi-arid with very hot summers (30-40°C) and mild winters (8-17°C). One of Europe\'s driest cities.',
-      attractions: ['Murcia Cathedral', 'Real Casino', 'Santa Clara Monastery', 'Terra Natura', 'Salzillo Museum'],
-      demographics: 'Capital of Murcia region, university city. Europe\'s fruit and vegetable garden, major agricultural export center.'
+      currency: 'Euro', currencySymbol: '€', population: '0.46M', metroPopulation: '0.65M', phoneCode: '+34 968', language: 'Spanish',
+      climate: 'Hot semi-arid with very hot summers (30-40°C) and mild winters (8-17°C). One of Europe\'s driest.',
+      attractions: ['Murcia Cathedral', 'Real Casino', 'Santa Clara Monastery', 'Terra Natura', 'Salzillo Museum', 'Plaza Cardenal Belluga', 'Floridablanca Garden', 'La Manga nearby', 'Tapas bars', 'Semana Santa'],
+      demographics: 'Murcia region capital. Europe\'s orchard. Baroque cathedral. University city. Authentic Spanish.',
+      seoContent: {
+        intro: 'Murcia, Spain\'s garden, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This authentic Spanish university city is often overlooked by tourists but rewards visitors with a stunning Baroque cathedral, excellent tapas, and gateway to pristine beaches.',
+        timezoneFacts: 'Same timezone as Madrid. Murcia region supplies much of Europe\'s fruit and vegetables.',
+        bestTimeToVisit: 'March-May and September-November best. Summer extremely hot. Semana Santa spectacular.',
+        businessHours: 'Cathedral 10 AM to 1 PM, 5-8 PM. Shops 10 AM to 2 PM, 5-9 PM.',
+        timeDifference: 'Murcia is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Real Casino stunning inside! Tapas free with drinks. Semana Santa processions famous. La Manga beaches 45 min.',
+        transportation: 'Murcia-San Javier Airport (MJV) or Alicante (ALC). Murcia del Carmen station.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Bando de la Huerta (spring). Semana Santa.'
+      }
     }
   },
   { slug: 'palma', city: 'Palma de Mallorca', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 39.57, lng: 2.65, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '420K', phoneCode: '+34 971', language: 'Spanish, Catalan',
-      climate: 'Mediterranean with hot summers (25-31°C) and mild winters (10-15°C). 300+ sunny days per year.',
-      attractions: ['Palma Cathedral', 'Bellver Castle', 'Old Town', 'Paseo Marítimo', 'Es Baluard Museum'],
-      demographics: 'Capital of Balearic Islands, major Mediterranean tourist destination. Historic trading port with Gothic architecture.'
+      currency: 'Euro', currencySymbol: '€', population: '0.42M', metroPopulation: '0.65M', phoneCode: '+34 971', language: 'Spanish, Catalan',
+      climate: 'Mediterranean with hot summers (25-31°C) and mild winters (10-15°C). 300+ sunny days.',
+      attractions: ['Palma Cathedral', 'Bellver Castle', 'Old Town', 'Paseo Marítimo', 'Es Baluard Museum', 'Arab Baths', 'La Seu', 'Santa Catalina', 'Palma Aquarium', 'Serra de Tramuntana'],
+      demographics: 'Balearic Islands capital. Stunning Gothic cathedral. Mediterranean lifestyle. Year-round destination.',
+      seoContent: {
+        intro: 'Palma de Mallorca, Balearic jewel, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Mediterranean capital has a spectacular Gothic cathedral, charming old town, and is gateway to Mallorca\'s stunning beaches and UNESCO Serra de Tramuntana.',
+        timezoneFacts: 'Same timezone as mainland Spain. Mallorca has been inhabited since 5000 BC.',
+        bestTimeToVisit: 'April-October best. May-June and September-October ideal. July-August busy.',
+        businessHours: 'Cathedral 10 AM to 5:15 PM. Shops 10 AM to 2 PM, 5-8 PM.',
+        timeDifference: 'Palma is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Cathedral interior by Gaudí! Santa Catalina trendy. Bellver Castle unique circular. Rent car for Serra de Tramuntana.',
+        transportation: 'Palma de Mallorca Airport (PMI) 8km - Spain\'s 3rd busiest. Ferries from Barcelona/Valencia.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Sant Sebastià (January 20). Corpus Christi.'
+      }
     }
   },
   { slug: 'las-palmas', city: 'Las Palmas de Gran Canaria', timezone: 'Atlantic/Canary', country: 'Spain', countryCode: 'ES', lat: 28.10, lng: -15.41, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '380K', phoneCode: '+34 928', language: 'Spanish',
-      climate: 'Subtropical desert with warm year-round (18-26°C). "Eternal spring" climate, minimal temperature variation.',
-      attractions: ['Las Canteras Beach', 'Vegueta Old Town', 'Casa de Colón', 'Alfredo Kraus Auditorium', 'Poema del Mar'],
-      demographics: 'Largest city in Canary Islands, major Atlantic port. Gateway to Africa, historic stopover for Columbus.'
+      currency: 'Euro', currencySymbol: '€', population: '0.38M', metroPopulation: '0.65M', phoneCode: '+34 928', language: 'Spanish',
+      climate: 'Subtropical desert with warm year-round (18-26°C). "Eternal spring" climate, minimal variation.',
+      attractions: ['Las Canteras Beach', 'Vegueta Old Town', 'Casa de Colón', 'Alfredo Kraus Auditorium', 'Poema del Mar', 'Cathedral', 'Triana shopping', 'Teror', 'Maspalomas dunes', 'Digital nomad hub'],
+      demographics: 'Canary Islands\' largest city. Columbus stopped here. Eternal spring. Digital nomad paradise. African gateway.',
+      seoContent: {
+        intro: 'Las Palmas de Gran Canaria, city of eternal spring, operates on Western European Time (WET/UTC+0) in winter and WEST/UTC+1 in summer - one hour behind mainland Spain. This Canary Islands capital has perfect year-round weather, urban beach life, and is now a top digital nomad destination.',
+        timezoneFacts: 'Canary Islands are 1 hour behind mainland Spain. Columbus stopped here en route to America.',
+        bestTimeToVisit: 'Year-round perfect! Carnival (February-March) spectacular. Winter escapes European cold.',
+        businessHours: 'Shops 10 AM to 2 PM, 5-9 PM. Beach accessible 24/7.',
+        timeDifference: 'Las Palmas is UTC+0 (winter) / UTC+1 (summer). 1 hr behind mainland Spain.',
+        daylightSaving: 'Canary Islands observe WEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Las Canteras beach urban paradise! Vegueta old town charming. Carnival rivals Rio. Maspalomas dunes 45 min. Digital nomad visa popular.',
+        transportation: 'Gran Canaria Airport (LPA) 25km. No trains - buses. Ferries between islands.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Carnival (February-March). Virgen del Pino (September 8).'
+      }
     }
   },
   { slug: 'alicante', city: 'Alicante', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 38.35, lng: -0.48, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '340K', phoneCode: '+34 96', language: 'Spanish, Valencian',
+      currency: 'Euro', currencySymbol: '€', population: '0.34M', metroPopulation: '0.76M', phoneCode: '+34 96', language: 'Spanish, Valencian',
       climate: 'Hot semi-arid Mediterranean with hot summers (28-32°C) and mild winters (10-17°C). Very sunny.',
-      attractions: ['Santa Bárbara Castle', 'Explanada de España', 'MARQ Museum', 'Postiguet Beach', 'Old Town'],
-      demographics: 'Major Costa Blanca resort city, important port. Growing expat and digital nomad community.'
+      attractions: ['Santa Bárbara Castle', 'Explanada de España', 'MARQ Museum', 'Postiguet Beach', 'Old Town', 'San Juan Beach', 'Central Market', 'Tabarca Island', 'El Barrio', 'Port area'],
+      demographics: 'Costa Blanca capital. Hilltop castle. Beach city. Expat haven. Digital nomad hub.',
+      seoContent: {
+        intro: 'Alicante, Costa Blanca capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This sunny beach city has a dramatic hilltop castle, beautiful promenade, and has become a major destination for expats and digital nomads seeking Mediterranean lifestyle.',
+        timezoneFacts: 'Same timezone as Madrid. Alicante has over 3,000 hours of sunshine per year.',
+        bestTimeToVisit: 'Year-round pleasant. April-October for beach. Hogueras de San Juan (June).',
+        businessHours: 'Castle 10 AM to 8 PM (summer). Shops 10 AM to 2 PM, 5-9 PM.',
+        timeDifference: 'Alicante is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Castle lift from Postiguet beach! Explanada promenade iconic. Tabarca Island day trip. Hogueras (June) like Valencia\'s Fallas.',
+        transportation: 'Alicante-Elche Airport (ALC) 9km - major hub. Alicante Terminal station.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Hogueras de San Juan (June 20-24). Moros y Cristianos.'
+      }
     }
   },
   { slug: 'cordoba', city: 'Córdoba', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 37.89, lng: -4.77, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '325K', phoneCode: '+34 957', language: 'Spanish',
+      currency: 'Euro', currencySymbol: '€', population: '0.33M', metroPopulation: '0.34M', phoneCode: '+34 957', language: 'Spanish',
+      climate: 'Mediterranean with very hot summers (30-40°C) and mild winters (6-14°C). Spain\'s hottest.',
+      attractions: ['Mezquita-Cathedral', 'Alcázar', 'Jewish Quarter', 'Roman Bridge', 'Patios', 'Medina Azahara', 'Calleja de las Flores', 'Palacio de Viana', 'Flamenco', 'Plaza de la Corredera'],
+      demographics: 'Medieval Caliphate capital. Mezquita masterpiece. UNESCO old town. Patio culture. Andalusian soul.',
+      seoContent: {
+        intro: 'Córdoba, jewel of Al-Andalus, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city was capital of the Western Caliphate and home to the Mezquita - a mosque-cathedral of staggering beauty and one of the world\'s most important Islamic monuments.',
+        timezoneFacts: 'Same timezone as Madrid. In the 10th century, Córdoba was Europe\'s largest city.',
+        bestTimeToVisit: 'March-May and September-November. Summer extremely hot (40°C+). Patio Festival (May).',
+        businessHours: 'Mezquita 10 AM to 7 PM. Shops 10 AM to 2 PM, 5:30-9 PM.',
+        timeDifference: 'Córdoba is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Mezquita early morning best! Patio Festival (May) opens private courtyards. Medina Azahara UNESCO site nearby. Free entry Mezquita 8:30-9:30 AM.',
+        transportation: 'Córdoba station on Madrid-Seville AVE line. 1 hr 45 min from Madrid. No major airport.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Patios Festival (May). Feria (late May). San Rafael (October 24).'
+      }
+    }
+  },
       climate: 'Mediterranean with very hot summers (35-45°C) and mild winters (6-14°C). Spain\'s hottest summers.',
       attractions: ['Mezquita-Catedral', 'Alcázar de los Reyes', 'Jewish Quarter', 'Roman Bridge', 'Patios Festival'],
       demographics: 'UNESCO World Heritage city, capital of Al-Andalus. The Mezquita represents peak Islamic architecture in Europe.'
@@ -7466,10 +7567,22 @@ export const cities: City[] = [
   },
   { slug: 'granada', city: 'Granada', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 37.18, lng: -3.60, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '230K', phoneCode: '+34 958', language: 'Spanish',
+      currency: 'Euro', currencySymbol: '€', population: '0.23M', metroPopulation: '0.54M', phoneCode: '+34 958', language: 'Spanish',
       climate: 'Continental Mediterranean with hot summers (28-36°C) and cold winters (2-12°C). Sierra Nevada nearby.',
-      attractions: ['Alhambra', 'Generalife Gardens', 'Albaicín (UNESCO)', 'Granada Cathedral', 'Sierra Nevada ski'],
-      demographics: 'Last Moorish kingdom in Spain, home to the magnificent Alhambra. Major university city with vibrant tapas culture.'
+      attractions: ['Alhambra', 'Generalife Gardens', 'Albaicín', 'Granada Cathedral', 'Sierra Nevada ski', 'Sacromonte caves', 'Royal Chapel', 'Mirador San Nicolás', 'Free tapas', 'Flamenco'],
+      demographics: 'Last Moorish kingdom. Alhambra palace. University city. Free tapas tradition. Flamenco heartland.',
+      seoContent: {
+        intro: 'Granada, last Moorish kingdom, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This enchanting city is home to the Alhambra (Spain\'s most visited monument), the atmospheric Albaicín quarter, and is one of the last places in Spain with free tapas with drinks.',
+        timezoneFacts: 'Same timezone as Madrid. Granada fell to Catholic Monarchs in 1492, ending 780 years of Moorish Spain.',
+        bestTimeToVisit: 'March-June and September-November best. Summer very hot. Book Alhambra months ahead!',
+        businessHours: 'Alhambra 8:30 AM to 8 PM. Tapas bars 1-4 PM, 8 PM-midnight.',
+        timeDifference: 'Granada is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'BOOK ALHAMBRA MONTHS AHEAD! Free tapas with drinks. Mirador San Nicolás sunset. Sacromonte for flamenco caves. Sierra Nevada ski 45 min.',
+        transportation: 'Granada-Jaén Airport (GRX) 15km. Granada station. 4 hr from Madrid (AVE coming).',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Día de la Toma (January 2). Corpus Christi. Virgen de las Angustias (September).'
+      }
     }
   },
   { slug: 'vitoria-gasteiz', city: 'Vitoria-Gasteiz', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 42.85, lng: -2.67, tier: 2, continent: 'europe',
@@ -7482,26 +7595,184 @@ export const cities: City[] = [
   },
   { slug: 'santander', city: 'Santander', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 43.46, lng: -3.80, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '175K', phoneCode: '+34 942', language: 'Spanish',
-      climate: 'Oceanic with cool summers (18-23°C) and mild winters (8-13°C). Frequent rain, Bay of Biscay influence.',
-      attractions: ['Sardinero Beach', 'Magdalena Palace', 'Altamira Cave Museum', 'Santander Cathedral', 'Centro Botín'],
-      demographics: 'Capital of Cantabria, elegant seaside resort. Headquarters of Santander Bank, gateway to Picos de Europa.'
+      currency: 'Euro', currencySymbol: '€', population: '0.18M', metroPopulation: '0.4M', phoneCode: '+34 942', language: 'Spanish',
+      climate: 'Oceanic with cool summers (18-23°C) and mild winters (8-13°C). Frequent rain, Bay of Biscay.',
+      attractions: ['Sardinero Beach', 'Magdalena Palace', 'Altamira Cave Museum', 'Santander Cathedral', 'Centro Botín', 'Peninsula de la Magdalena', 'Picos de Europa', 'Comillas', 'Santillana del Mar', 'Liébana'],
+      demographics: 'Cantabria capital. Elegant resort. Santander Bank HQ. Picos de Europa gateway. Altamira caves.',
+      seoContent: {
+        intro: 'Santander, elegant Cantabrian capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This refined seaside city has beautiful beaches, the stunning Centro Botín art center, and is gateway to Picos de Europa mountains and UNESCO Altamira cave.',
+        timezoneFacts: 'Same timezone as Madrid. Santander Bank, one of world\'s largest, was founded here in 1857.',
+        bestTimeToVisit: 'June-September for beach. Year-round mild but rainy. Summer festivals.',
+        businessHours: 'Centro Botín 10 AM to 9 PM. Beaches 24/7. Shops 10 AM to 2 PM, 5-8:30 PM.',
+        timeDifference: 'Santander is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Centro Botín by Renzo Piano! Magdalena Palace grounds free. Altamira cave replica (original closed). Comillas and Santillana del Mar day trips.',
+        transportation: 'Santander Airport (SDR) 5km. Santander station. Ferry to UK (Plymouth/Portsmouth).',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Santiago (July 25). Virgen del Mar (September).'
+      }
     }
   },
   { slug: 'san-sebastian', city: 'San Sebastián', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 43.32, lng: -1.98, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '190K', phoneCode: '+34 943', language: 'Spanish, Basque',
+      currency: 'Euro', currencySymbol: '€', population: '0.19M', metroPopulation: '0.44M', phoneCode: '+34 943', language: 'Spanish, Basque',
       climate: 'Oceanic with cool summers (18-24°C) and mild winters (6-12°C). Frequent rain, green surroundings.',
-      attractions: ['La Concha Beach', 'Monte Urgull', 'Old Town (Parte Vieja)', 'San Telmo Museum', 'Pintxos bars'],
-      demographics: 'Spain\'s culinary capital with most Michelin stars per capita. Famous film festival, Belle Époque elegance.'
+      attractions: ['La Concha Beach', 'Monte Urgull', 'Parte Vieja', 'San Telmo Museum', 'Pintxos bars', 'Monte Igueldo', 'Peine del Viento', 'Aquarium', 'Miramar Palace', 'Zurriola surf beach'],
+      demographics: 'World\'s highest Michelin stars per capita. La Concha beach. Film festival. Pintxos paradise.',
+      seoContent: {
+        intro: 'San Sebastián, Spain\'s culinary capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This elegant Basque city has the world\'s highest concentration of Michelin stars per capita, one of Europe\'s best beaches (La Concha), and a legendary pintxos scene.',
+        timezoneFacts: 'Same timezone as Madrid. San Sebastián has more Michelin stars per capita than anywhere else.',
+        bestTimeToVisit: 'May-September for beach. Film Festival (September). Pintxos year-round. Expect rain.',
+        businessHours: 'Pintxos bars 11 AM to 3 PM, 7-11 PM. Museums 10 AM to 8 PM.',
+        timeDifference: 'San Sebastián is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Pintxos crawl in Parte Vieja essential! La Concha stunning. Zurriola for surfers. Book Michelin restaurants months ahead.',
+        transportation: 'San Sebastián Airport (EAS) 20km (limited). Bilbao Airport (BIO) 1 hr. Renfe station.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Tamborrada (January 20). Film Festival (September).'
+      }
     }
   },
   { slug: 'santa-cruz-tenerife', city: 'Santa Cruz de Tenerife', timezone: 'Atlantic/Canary', country: 'Spain', countryCode: 'ES', lat: 28.47, lng: -16.25, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '210K', phoneCode: '+34 922', language: 'Spanish',
-      climate: 'Subtropical with warm year-round (18-26°C). "Eternal spring" climate, very pleasant.',
-      attractions: ['Auditorio de Tenerife', 'Parque García Sanabria', 'Carnival', 'Mercado de Nuestra Señora', 'Teide nearby'],
-      demographics: 'Co-capital of Canary Islands, major Atlantic port. Famous for second-largest carnival in the world after Rio.'
+      currency: 'Euro', currencySymbol: '€', population: '0.21M', metroPopulation: '0.4M', phoneCode: '+34 922', language: 'Spanish',
+      climate: 'Subtropical with warm year-round (18-28°C). Mild, pleasant. Spring-like always.',
+      attractions: ['Auditorio de Tenerife', 'Plaza de España', 'Mercado de Nuestra Señora de África', 'García Sanabria Park', 'Carnival', 'Teide National Park', 'La Laguna UNESCO', 'Playa de Las Teresitas', 'Anaga mountains', 'Museums'],
+      demographics: 'Tenerife capital. World\'s second-best Carnival. Auditorio landmark. Gateway to Mount Teide.',
+      seoContent: {
+        intro: 'Santa Cruz de Tenerife, Canary Islands capital, operates on Western European Time (WET/UTC+0) in winter and WEST/UTC+1 in summer - one hour behind mainland Spain. This vibrant city hosts the world\'s second-largest Carnival and is gateway to UNESCO Teide National Park.',
+        timezoneFacts: 'Canary Islands are 1 hour behind mainland Spain. Santa Cruz shares capital duties with Las Palmas.',
+        bestTimeToVisit: 'Year-round pleasant! Carnival (February) world-class. Christmas in warm weather.',
+        businessHours: 'Shops 10 AM to 2 PM, 5-8 PM. Auditorio tours available.',
+        timeDifference: 'Santa Cruz is UTC+0 (winter) / UTC+1 (summer). 1 hr behind mainland Spain.',
+        daylightSaving: 'Canary Islands observe WEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Carnival is incredible - book early! Teide for Spain\'s highest peak. La Laguna UNESCO town. Mercado for local food.',
+        transportation: 'Tenerife North Airport (TFN) 11km. Tenerife South (TFS) 60km. Ferries between islands.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Carnival (February). Día de la Cruz (May 3).'
+      }
+    }
+  },
+  
+  // Spain - Additional Premium Tourist Destinations
+  { slug: 'toledo', city: 'Toledo', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 39.86, lng: -4.03, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.08M', metroPopulation: '0.09M', phoneCode: '+34 925', language: 'Spanish',
+      climate: 'Continental Mediterranean with hot summers (28-35°C) and cold winters (2-10°C).',
+      attractions: ['Alcázar', 'Toledo Cathedral', 'El Greco Museum', 'Synagogue of Santa María', 'Monastery of San Juan', 'Puente de San Martín', 'Jewish Quarter', 'Sword making', 'Marzipan', 'City walls'],
+      demographics: 'City of Three Cultures (Christian, Muslim, Jewish). UNESCO World Heritage. El Greco\'s city. Imperial capital.',
+      seoContent: {
+        intro: 'Toledo, City of Three Cultures, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO hilltop city was Spain\'s imperial capital, where Christians, Muslims, and Jews lived together, and is famed for El Greco, sword-making, and marzipan.',
+        timezoneFacts: 'Same timezone as Madrid. Toledo was capital of Spain until 1561.',
+        bestTimeToVisit: 'March-June and September-November best. Summer very hot. Day trip from Madrid popular.',
+        businessHours: 'Cathedral 10 AM to 6 PM. Shops 10 AM to 2 PM, 5-8 PM.',
+        timeDifference: 'Toledo is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Stay overnight for evening magic! El Greco masterpieces in several locations. Sword shops traditional. Marzipan from Santo Tomé.',
+        transportation: 'Madrid Barajas 1 hr. Toledo station. 30 min from Madrid by AVE.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Corpus Christi (major). Virgen del Sagrario (August 15).'
+      }
+    }
+  },
+  { slug: 'segovia', city: 'Segovia', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 40.95, lng: -4.12, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.05M', metroPopulation: '0.05M', phoneCode: '+34 921', language: 'Spanish',
+      climate: 'Continental with warm summers (22-30°C) and cold winters (-2 to 8°C). Can snow.',
+      attractions: ['Roman Aqueduct', 'Alcázar', 'Segovia Cathedral', 'Jewish Quarter', 'Cochinillo (roast suckling pig)', 'Casa de los Picos', 'Vera Cruz Church', 'La Granja Palace', 'City walls', 'Plaza Mayor'],
+      demographics: 'Roman Aqueduct UNESCO. Disney castle inspiration (Alcázar). Cochinillo gastronomy. Day trip classic.',
+      seoContent: {
+        intro: 'Segovia, city of the aqueduct, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city has a spectacular Roman aqueduct, an Alcázar that inspired Disney\'s Cinderella Castle, and is famous for cochinillo (roast suckling pig).',
+        timezoneFacts: 'Same timezone as Madrid. The aqueduct was built in the 1st century AD without mortar.',
+        bestTimeToVisit: 'April-October best. Can be very cold in winter. Easy day trip from Madrid.',
+        businessHours: 'Alcázar 10 AM to 6 PM. Restaurants lunch from 1 PM.',
+        timeDifference: 'Segovia is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Cochinillo at Mesón de Cándido or José María! Alcázar inspired Cinderella Castle. La Granja palace nearby. Aqueduct best from Plaza Azoguejo.',
+        transportation: 'Madrid 1 hr. Segovia-Guiomar AVE station. 27 min from Madrid by AVE.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. San Frutos (October 25). San Juan (June 24).'
+      }
+    }
+  },
+  { slug: 'salamanca', city: 'Salamanca', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 40.97, lng: -5.66, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.15M', metroPopulation: '0.21M', phoneCode: '+34 923', language: 'Spanish',
+      climate: 'Continental Mediterranean with warm summers (24-32°C) and cold winters (0-8°C).',
+      attractions: ['Plaza Mayor', 'University of Salamanca', 'New and Old Cathedrals', 'Casa de las Conchas', 'Frog on skull', 'Puente Romano', 'Huerto de Calixto', 'Art Nouveau Museum', 'Clerecía', 'Nightlife'],
+      demographics: 'Spain\'s oldest university (1218). Golden sandstone UNESCO city. Student nightlife. Spanish language capital.',
+      seoContent: {
+        intro: 'Salamanca, Spain\'s golden city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO university city glows gold at sunset, has Spain\'s most beautiful Plaza Mayor, and is the best place to learn Spanish, with vibrant student nightlife.',
+        timezoneFacts: 'Same timezone as Madrid. University of Salamanca is Spain\'s oldest and was among Europe\'s greatest.',
+        bestTimeToVisit: 'April-June and September-November best. Student life in term time. Summer quieter.',
+        businessHours: 'University 10 AM to 7 PM. Plaza Mayor cafés until late.',
+        timeDifference: 'Salamanca is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Find the frog on university façade - good luck! Plaza Mayor sunset golden. Great for learning Spanish. Student nightlife legendary.',
+        transportation: 'Madrid 2 hr. Salamanca station. 1.5 hr from Madrid by train.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Virgen de la Vega (September 8).'
+      }
+    }
+  },
+  { slug: 'ibiza', city: 'Ibiza', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 38.91, lng: 1.43, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.05M', metroPopulation: '0.15M', phoneCode: '+34 971', language: 'Spanish, Catalan',
+      climate: 'Mediterranean with hot summers (26-30°C) and mild winters (12-16°C). 300 sunny days.',
+      attractions: ['Dalt Vila (UNESCO)', 'Superclubs', 'Beaches', 'Es Vedrà', 'Sunset at Café del Mar', 'Formentera', 'Hippie markets', 'Marina', 'Cathedral', 'Cala Comte'],
+      demographics: 'World clubbing capital. UNESCO old town. Sunset worship. Hippie heritage. Balearic paradise.',
+      seoContent: {
+        intro: 'Ibiza, White Island, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Balearic island is the world\'s clubbing capital with legendary superclubs, but also has a UNESCO old town, stunning beaches, and famous sunsets at Café del Mar.',
+        timezoneFacts: 'Same timezone as mainland Spain. Ibiza\'s club scene emerged in the 1980s.',
+        bestTimeToVisit: 'May-October. June and September best balance. July-August peak season and prices.',
+        businessHours: 'Clubs open midnight to 6 AM. Beaches 24/7. Shops 10 AM to 2 PM, 5-10 PM.',
+        timeDifference: 'Ibiza is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Dalt Vila old town for culture! Sunset at Café del Mar ritual. Formentera day trip. Hippy markets Wednesday/Saturday. Book clubs ahead.',
+        transportation: 'Ibiza Airport (IBZ) 7km. Ferries from Barcelona/Valencia/Palma.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Mare de Déu de les Neus (August 5).'
+      }
+    }
+  },
+  { slug: 'ronda', city: 'Ronda', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 36.74, lng: -5.17, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.03M', metroPopulation: '0.03M', phoneCode: '+34 952', language: 'Spanish',
+      climate: 'Mediterranean with warm summers (24-32°C) and mild winters (6-14°C). Mountain location.',
+      attractions: ['Puente Nuevo', 'El Tajo gorge', 'Plaza de Toros', 'Arab Baths', 'Old Town', 'Casa del Rey Moro', 'Alameda del Tajo', 'Mondragón Palace', 'Wine country', 'White villages'],
+      demographics: 'Dramatic gorge city. Birthplace of modern bullfighting. Hemingway and Orson Welles loved it. White village gateway.',
+      seoContent: {
+        intro: 'Ronda, cliffside drama, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This spectacular town is split by El Tajo gorge with the iconic Puente Nuevo bridge, is birthplace of modern bullfighting, and was beloved by Hemingway and Orson Welles.',
+        timezoneFacts: 'Same timezone as Madrid. Modern bullfighting rules were established here in the 18th century.',
+        bestTimeToVisit: 'March-June and September-November best. Easter Feria. Avoid summer heat.',
+        businessHours: 'Puente Nuevo viewpoints 24/7. Plaza de Toros 10 AM to 6 PM.',
+        timeDifference: 'Ronda is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Puente Nuevo best in morning light! Orson Welles\' ashes scattered here. Gateway to white villages (pueblos blancos). Excellent wines.',
+        transportation: 'Málaga Airport 1.5 hr. Ronda station. Scenic train from Algeciras.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. Feria de Pedro Romero (September). Semana Santa.'
+      }
+    }
+  },
+  { slug: 'marbella', city: 'Marbella', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 36.51, lng: -4.89, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.15M', metroPopulation: '0.2M', phoneCode: '+34 952', language: 'Spanish',
+      climate: 'Mediterranean with hot summers (26-32°C) and mild winters (12-18°C). 320 sunny days.',
+      attractions: ['Puerto Banús', 'Old Town', 'Golden Mile', 'Beach clubs', 'Orange Square', 'La Concha mountain', 'Funny Beach', 'Marbella Club', 'Nightlife', 'Golf courses'],
+      demographics: 'Costa del Sol glamour. Puerto Banús yacht harbour. Celebrity playground. Golf destination. Beach clubs.',
+      seoContent: {
+        intro: 'Marbella, Costa del Sol glamour, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This upscale resort is the playground of the rich and famous, with Puerto Banús yacht harbour, exclusive beach clubs, and year-round sunshine.',
+        timezoneFacts: 'Same timezone as Madrid. Marbella developed as a resort in the 1950s for European aristocracy.',
+        bestTimeToVisit: 'May-October for beach. Year-round mild. Summer peak season.',
+        businessHours: 'Beach clubs 10 AM to sunset. Puerto Banús shops until late.',
+        timeDifference: 'Marbella is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Spain observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Old Town charming and less expensive! Puerto Banús for celebrity spotting. Beach clubs can be pricey. Golf courses world-class.',
+        transportation: 'Málaga Airport (AGP) 45 min. No train - buses. Expensive taxis.',
+        emergencyNumbers: 'Emergency: 112. Police: 091. Ambulance: 061.',
+        publicHolidays: 'Spanish national holidays. San Bernabé (June 11). Feria (June).'
+      }
     }
   },
   
