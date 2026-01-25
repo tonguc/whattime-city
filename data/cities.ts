@@ -6239,6 +6239,144 @@ export const cities: City[] = [
     }
   },
   
+  // Germany - Additional Tourist Cities
+  { slug: 'heidelberg', city: 'Heidelberg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 49.40, lng: 8.69, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.16M', metroPopulation: '0.6M', phoneCode: '+49 6221', language: 'German',
+      climate: 'Temperate with warm summers (18-26°C) and mild winters (0-6°C). One of Germany\'s warmest cities.',
+      attractions: ['Heidelberg Castle', 'Old Town', 'Old Bridge', 'Philosopher\'s Walk', 'University (oldest in Germany)', 'Student Prison', 'Church of the Holy Spirit', 'Great Tun', 'Neckar River', 'Königstuhl'],
+      demographics: 'Germany\'s most romantic city. Oldest university (1386). Inspired poets and painters. Undamaged in WWII.'
+    }
+  },
+  { slug: 'freiburg', city: 'Freiburg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 47.99, lng: 7.85, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.23M', metroPopulation: '0.65M', phoneCode: '+49 761', language: 'German, Alemannic',
+      climate: 'Temperate with warm summers (18-26°C) and mild winters (0-6°C). Germany\'s sunniest city.',
+      attractions: ['Freiburg Minster', 'Altstadt', 'Bächle (water channels)', 'Schlossberg', 'Münsterplatz Market', 'Augustinermuseum', 'Black Forest gateway', 'Schauinsland', 'Old Town Gates', 'University'],
+      demographics: 'Black Forest gateway. Germany\'s eco-capital. Sunniest German city. Medieval Bächle waterways. University town.'
+    }
+  },
+  { slug: 'lubeck', city: 'Lübeck', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 53.87, lng: 10.69, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.22M', metroPopulation: '0.35M', phoneCode: '+49 451', language: 'German, Low German',
+      climate: 'Oceanic with cool summers (16-21°C) and cold winters (-1 to 4°C). Baltic Sea influence.',
+      attractions: ['Holstentor', 'Old Town (UNESCO)', 'Marienkirche', 'Town Hall', 'Buddenbrookhaus', 'Marzipan shops', 'St. Annen Museum', 'Travemünde beach', 'Salt warehouses', 'Hospital of the Holy Spirit'],
+      demographics: 'UNESCO Hanseatic queen. Marzipan capital. Thomas Mann\'s city. Medieval brick Gothic. Baltic gateway.'
+    }
+  },
+  { slug: 'rothenburg-ob-der-tauber', city: 'Rothenburg ob der Tauber', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 49.38, lng: 10.18, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+49 9861', language: 'German, Franconian',
+      climate: 'Continental with warm summers (17-25°C) and cold winters (-3 to 4°C). Can be cold and foggy.',
+      attractions: ['Medieval Town Walls', 'Plönlein', 'Town Hall', 'St. Jakob\'s Church', 'Crime Museum', 'Christmas Museum', 'Night Watchman Tour', 'Käthe Wohlfahrt', 'Romantic Road', 'Burggarten'],
+      demographics: 'Germany\'s best-preserved medieval town. Romantic Road highlight. Christmas year-round. Fairytale Germany.'
+    }
+  },
+  { slug: 'bamberg', city: 'Bamberg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 49.89, lng: 10.89, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.08M', metroPopulation: '0.22M', phoneCode: '+49 951', language: 'German, Franconian',
+      climate: 'Continental with warm summers (17-25°C) and cold winters (-2 to 4°C). River valley climate.',
+      attractions: ['UNESCO Old Town', 'Bamberg Cathedral', 'Old Town Hall (on bridge)', 'Little Venice', 'Smoked Beer (Rauchbier)', 'New Residence', 'Rose Garden', 'Altenburg Castle', 'St. Michael\'s', 'Breweries'],
+      demographics: 'UNESCO World Heritage. Built on seven hills like Rome. Unique smoked beer. Old Town Hall on island.'
+    }
+  },
+  { slug: 'regensburg', city: 'Regensburg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 49.02, lng: 12.10, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.15M', metroPopulation: '0.33M', phoneCode: '+49 941', language: 'German, Bavarian',
+      climate: 'Continental with warm summers (17-25°C) and cold winters (-3 to 4°C). Danube valley.',
+      attractions: ['UNESCO Old Town', 'Stone Bridge', 'Regensburg Cathedral', 'Walhalla', 'Historic Sausage Kitchen', 'Thurn und Taxis Palace', 'Document Neupfarrplatz', 'Danube River', 'Old Town Hall', 'Porta Praetoria'],
+      demographics: 'UNESCO medieval trading city. Oldest stone bridge in Germany. Walhalla nearby. Historic sausage kitchen since 1135.'
+    }
+  },
+  { slug: 'wurzburg', city: 'Würzburg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 49.79, lng: 9.95, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.13M', metroPopulation: '0.29M', phoneCode: '+49 931', language: 'German, Franconian',
+      climate: 'Continental with warm summers (18-26°C) and cold winters (-2 to 5°C). Wine-friendly climate.',
+      attractions: ['Würzburg Residence (UNESCO)', 'Marienberg Fortress', 'Old Main Bridge', 'Käppele', 'Franconian Wine', 'Dom St. Kilian', 'Röntgen Museum', 'Romantic Road start', 'Vineyards', 'Neumünster'],
+      demographics: 'UNESCO Baroque palace. Romantic Road start. Franconian wine capital. Rebuilt after WWII. Tiepolo ceiling.'
+    }
+  },
+  { slug: 'trier', city: 'Trier', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 49.76, lng: 6.64, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.11M', metroPopulation: '0.27M', phoneCode: '+49 651', language: 'German',
+      climate: 'Oceanic with mild summers (17-24°C) and cool winters (0-6°C). Moselle valley wine climate.',
+      attractions: ['Porta Nigra (UNESCO)', 'Roman Baths', 'Cathedral', 'Basilica of Constantine', 'Karl Marx House', 'Amphitheater', 'Imperial Baths', 'Moselle wine', 'Main Market', 'Electoral Palace'],
+      demographics: 'Germany\'s oldest city (2,000+ years). UNESCO Roman monuments. Karl Marx birthplace. Moselle wine region.'
+    }
+  },
+  { slug: 'aachen', city: 'Aachen', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 50.78, lng: 6.08, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.25M', metroPopulation: '0.55M', phoneCode: '+49 241', language: 'German',
+      climate: 'Oceanic with mild summers (16-22°C) and cool winters (1-6°C). High rainfall, mild winters.',
+      attractions: ['Aachen Cathedral (UNESCO)', 'Charlemagne\'s Throne', 'Town Hall', 'Hot Springs', 'Elisenbrunnen', 'Couven Museum', 'Carolus Thermen spa', 'Printen cookies', 'Three-country point', 'RWTH University'],
+      demographics: 'Charlemagne\'s capital. UNESCO cathedral (first German site). Hot springs since Roman times. Printen cookies.'
+    }
+  },
+  { slug: 'potsdam', city: 'Potsdam', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 52.40, lng: 13.07, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.18M', metroPopulation: '0.18M', phoneCode: '+49 331', language: 'German',
+      climate: 'Continental with warm summers (18-24°C) and cold winters (-2 to 4°C). Similar to Berlin.',
+      attractions: ['Sanssouci Palace (UNESCO)', 'Sanssouci Park', 'New Palace', 'Cecilienhof', 'Dutch Quarter', 'Babelsberg Studios', 'Glienicke Bridge', 'Potsdam Conference site', 'Chinese House', 'Orangery Palace'],
+      demographics: 'UNESCO Prussian palaces. Frederick the Great\'s Sanssouci. Potsdam Conference (1945). Babelsberg film studios.'
+    }
+  },
+  { slug: 'konstanz', city: 'Konstanz', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 47.66, lng: 9.18, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.08M', metroPopulation: '0.15M', phoneCode: '+49 7531', language: 'German, Alemannic',
+      climate: 'Temperate lake climate with mild summers (18-24°C) and cool winters (0-5°C). Lake Constance moderates.',
+      attractions: ['Lake Constance (Bodensee)', 'Konstanz Cathedral', 'Old Town', 'Imperia statue', 'Council Building', 'Mainau Island', 'Niederburg', 'Swiss border', 'Seerhein', 'Harbor'],
+      demographics: 'Lake Constance\'s largest city. Swiss border. Council of Constance (1414-1418). Flower island Mainau.'
+    }
+  },
+  { slug: 'baden-baden', city: 'Baden-Baden', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 48.76, lng: 8.24, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.06M', metroPopulation: '0.08M', phoneCode: '+49 7221', language: 'German',
+      climate: 'Temperate with warm summers (18-26°C) and mild winters (0-6°C). Sheltered Black Forest valley.',
+      attractions: ['Friedrichsbad', 'Caracalla Spa', 'Kurhaus & Casino', 'Lichtentaler Allee', 'Trinkhalle', 'Black Forest', 'Festspielhaus', 'Museum Frieder Burda', 'Old Town', 'Roman Bath Ruins'],
+      demographics: 'Europe\'s summer capital. Historic spa town. World-famous casino. Black Forest gateway. Royal retreat.'
+    }
+  },
+  { slug: 'garmisch-partenkirchen', city: 'Garmisch-Partenkirchen', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 47.50, lng: 11.10, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.03M', metroPopulation: '0.03M', phoneCode: '+49 8821', language: 'German, Bavarian',
+      climate: 'Alpine with cool summers (14-23°C) and cold snowy winters (-5 to 3°C). Heavy snowfall.',
+      attractions: ['Zugspitze', 'Partnachklamm', 'Olympic Ski Stadium', 'Eibsee', 'Historic town centers', 'Cable cars', 'Skiing', 'Hiking', 'Painted houses', 'Alpspitze'],
+      demographics: 'Zugspitze (Germany\'s highest peak). 1936 Winter Olympics. Alpine resort. Two towns merged. Bavarian Alps gateway.'
+    }
+  },
+  { slug: 'marburg', city: 'Marburg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 50.81, lng: 8.77, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.08M', metroPopulation: '0.12M', phoneCode: '+49 6421', language: 'German',
+      climate: 'Oceanic with mild summers (16-23°C) and cool winters (0-5°C). Lahn valley.',
+      attractions: ['Landgrave\'s Castle', 'Old Town', 'St. Elizabeth\'s Church', 'Old University', 'Market Square', 'Lahn River', 'Grimm Brothers\' sites', 'Botanical Garden', 'Kaiser Wilhelm Tower', 'Stairs and alleys'],
+      demographics: 'Brothers Grimm university. Fairytale old town. First Protestant university. Gothic St. Elizabeth\'s. Car-free center.'
+    }
+  },
+  { slug: 'weimar', city: 'Weimar', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 50.98, lng: 11.33, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.07M', metroPopulation: '0.07M', phoneCode: '+49 3643', language: 'German',
+      climate: 'Continental with warm summers (17-24°C) and cold winters (-2 to 4°C). Thuringian climate.',
+      attractions: ['Goethe House (UNESCO)', 'Schiller House', 'Bauhaus Museum', 'Duchess Anna Amalia Library', 'Park an der Ilm', 'Buchenwald Memorial', 'City Palace', 'Herder Church', 'Belvedere Palace', 'German National Theatre'],
+      demographics: 'UNESCO Classical Weimar. Goethe and Schiller. Bauhaus birthplace. Weimar Republic. Buchenwald nearby.'
+    }
+  },
+  { slug: 'quedlinburg', city: 'Quedlinburg', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 51.79, lng: 11.15, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.02M', metroPopulation: '0.02M', phoneCode: '+49 3946', language: 'German',
+      climate: 'Continental with warm summers (17-24°C) and cold winters (-2 to 4°C). Harz foothills.',
+      attractions: ['UNESCO Old Town', 'Castle Hill', 'Collegiate Church', '1,300 half-timbered houses', 'Market Square', 'Finkenherd', 'Lyonel Feininger Gallery', 'Münzenberg', 'Town Hall', 'Harz gateway'],
+      demographics: 'UNESCO half-timbered town. 1,300+ historic houses. Birthplace of Germany. Harz mountains gateway. Medieval time capsule.'
+    }
+  },
+  { slug: 'passau', city: 'Passau', timezone: 'Europe/Berlin', country: 'Germany', countryCode: 'DE', lat: 48.57, lng: 13.46, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.05M', metroPopulation: '0.12M', phoneCode: '+49 851', language: 'German, Bavarian',
+      climate: 'Continental with warm summers (17-25°C) and cold winters (-3 to 4°C). River confluence.',
+      attractions: ['Three Rivers Point', 'St. Stephen\'s Cathedral', 'World\'s largest cathedral organ', 'Veste Oberhaus', 'Old Town', 'Danube River cruises', 'Glass Museum', 'Inn River', 'Ilz River', 'Austrian border'],
+      demographics: 'City of Three Rivers (Danube, Inn, Ilz). World\'s largest cathedral organ. Danube cruise hub. Austrian border.'
+    }
+  },
+  
   // France - Additional Cities
   { slug: 'toulouse', city: 'Toulouse', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.60, lng: 1.44, tier: 2, continent: 'europe',
     info: {
