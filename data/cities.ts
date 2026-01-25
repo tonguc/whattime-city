@@ -6874,130 +6874,504 @@ export const cities: City[] = [
   // Italy - Additional Cities
   { slug: 'turin', city: 'Turin', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.07, lng: 7.69, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '850K', phoneCode: '+39 011', language: 'Italian',
-      climate: 'Humid subtropical with hot summers (24-30°C) and cold winters (0-7°C). Alpine influence, foggy winters.',
-      attractions: ['Egyptian Museum', 'Mole Antonelliana', 'Royal Palace', 'Piazza San Carlo', 'Shroud of Turin Chapel'],
-      demographics: 'Fourth-largest city in Italy, first capital of unified Italy. Home to FIAT and Juventus FC, elegant Baroque architecture.'
+      currency: 'Euro', currencySymbol: '€', population: '0.85M', metroPopulation: '1.7M', phoneCode: '+39 011', language: 'Italian',
+      climate: 'Continental with hot summers (24-30°C) and cold winters (0-7°C). Alpine influence, foggy winters.',
+      attractions: ['Egyptian Museum', 'Mole Antonelliana', 'Royal Palace', 'Piazza San Carlo', 'Shroud of Turin', 'Museo del Cinema', 'Lingotto', 'Superga Basilica', 'Palazzo Madama', 'Via Roma'],
+      demographics: 'First capital of unified Italy. FIAT and Juventus home. Elegant Baroque architecture. Chocolate and café culture.',
+      seoContent: {
+        intro: 'Turin, Italy\'s first capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This elegant Baroque city houses the world\'s best Egyptian museum outside Cairo, the mysterious Shroud of Turin, and was home to FIAT and Italian unification.',
+        timezoneFacts: 'Same timezone as Rome. Turin was capital of Italy from 1861 to 1865.',
+        bestTimeToVisit: 'April-June and September-October best. Winter can be foggy but atmospheric. Shroud rarely displayed.',
+        businessHours: 'Shops 9:30 AM to 7:30 PM. Museums 9 AM to 7 PM. Closed Mondays typically.',
+        timeDifference: 'Turin is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Egyptian Museum is world-class! Bicerin (chocolate coffee) at Caffè Al Bicerin. Aperitivo culture strong. Eataly flagship here.',
+        transportation: 'Turin Caselle Airport (TRN) 16km. Porta Nuova & Porta Susa stations. 1 hr from Milan by train.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. San Giovanni (June 24) patron saint. Salone del Gusto (October).'
+      }
     }
   },
   { slug: 'bologna', city: 'Bologna', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.49, lng: 11.34, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '395K', phoneCode: '+39 051', language: 'Italian',
+      currency: 'Euro', currencySymbol: '€', population: '0.4M', metroPopulation: '1.0M', phoneCode: '+39 051', language: 'Italian',
       climate: 'Humid subtropical with hot summers (25-35°C) and cold foggy winters (0-8°C).',
-      attractions: ['Piazza Maggiore', 'Two Towers', 'Basilica di San Petronio', 'University of Bologna', 'Archiginnasio'],
-      demographics: 'Capital of Emilia-Romagna, home to world\'s oldest university (1088). Known as "La Dotta" (the learned), "La Grassa" (the fat), "La Rossa" (the red).'
+      attractions: ['Piazza Maggiore', 'Two Towers', 'Basilica di San Petronio', 'University of Bologna', 'Archiginnasio', 'Quadrilatero', 'Santo Stefano', 'Porticos', 'Ducati Museum', 'FICO Eataly World'],
+      demographics: 'World\'s oldest university (1088). La Dotta (learned), La Grassa (fat), La Rossa (red). Portico city. Food capital.',
+      seoContent: {
+        intro: 'Bologna, Italy\'s food capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city is home to the world\'s oldest university (1088), 40km of historic porticos, and Italy\'s finest cuisine - birthplace of tortellini, tagliatelle, and mortadella.',
+        timezoneFacts: 'Same timezone as Rome. Bologna\'s university predates Oxford and Cambridge.',
+        bestTimeToVisit: 'April-June and September-October best. Winter foggy but atmospheric. Avoid August closures.',
+        businessHours: 'Shops 9 AM to 7:30 PM. Lunch break common 1-3:30 PM. Museums closed Mondays.',
+        timeDifference: 'Bologna is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Quadrilatero food market essential! Climb Torre degli Asinelli (498 steps). Tagliatelle al ragù (NOT spaghetti bolognese). Porticos are UNESCO.',
+        transportation: 'Bologna Marconi Airport (BLQ) 6km. Bologna Centrale station - major hub. 35 min from Florence.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. San Petronio (October 4) patron saint.'
+      }
     }
   },
   { slug: 'genoa', city: 'Genoa', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.41, lng: 8.93, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '575K', phoneCode: '+39 010', language: 'Italian, Ligurian',
+      currency: 'Euro', currencySymbol: '€', population: '0.58M', metroPopulation: '0.85M', phoneCode: '+39 010', language: 'Italian, Ligurian',
       climate: 'Mediterranean with mild summers (24-28°C) and cool winters (6-12°C). Protected by mountains.',
-      attractions: ['Aquarium of Genoa', 'Via Garibaldi (UNESCO)', 'Porto Antico', 'Palazzo Ducale', 'Cimitero di Staglieno'],
-      demographics: 'Italy\'s largest seaport, birthplace of Columbus and pesto. Historic maritime republic with UNESCO palaces.'
+      attractions: ['Aquarium of Genoa', 'Via Garibaldi (UNESCO)', 'Porto Antico', 'Palazzo Ducale', 'Cimitero di Staglieno', 'Rolli Palaces', 'Galata Museum', 'Boccadasse', 'Lanterna', 'Caruggi'],
+      demographics: 'Italy\'s largest seaport. Columbus birthplace. Pesto origin. Historic maritime republic. UNESCO palaces.',
+      seoContent: {
+        intro: 'Genoa, La Superba, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This historic maritime republic is birthplace of Christopher Columbus and pesto, features Europe\'s largest aquarium, and UNESCO-listed Renaissance palaces.',
+        timezoneFacts: 'Same timezone as Rome. Genoa rivaled Venice as a maritime superpower.',
+        bestTimeToVisit: 'April-October for best weather. Avoid August heat. Spring for fewer tourists.',
+        businessHours: 'Shops 9 AM to 7:30 PM. Aquarium 9 AM to 8 PM. Museums closed Mondays.',
+        timeDifference: 'Genoa is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Get lost in caruggi (narrow lanes)! Aquarium excellent. Pesto here is authentic. Focaccia di Recco unique. Boccadasse fishing village charming.',
+        transportation: 'Genoa Cristoforo Colombo Airport (GOA) 7km. Genova Piazza Principe & Brignole stations.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. San Giovanni Battista (June 24) patron saint.'
+      }
     }
   },
   { slug: 'palermo', city: 'Palermo', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 38.12, lng: 13.36, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '650K', phoneCode: '+39 091', language: 'Italian, Sicilian',
+      currency: 'Euro', currencySymbol: '€', population: '0.65M', metroPopulation: '1.0M', phoneCode: '+39 091', language: 'Italian, Sicilian',
       climate: 'Mediterranean with hot dry summers (28-35°C) and mild winters (10-15°C). Very sunny.',
-      attractions: ['Palermo Cathedral', 'Palazzo dei Normanni', 'Teatro Massimo', 'Quattro Canti', 'Capuchin Catacombs'],
-      demographics: 'Capital of Sicily, crossroads of Mediterranean cultures. Arab-Norman architecture (UNESCO), vibrant street food scene.'
+      attractions: ['Palermo Cathedral', 'Palazzo dei Normanni', 'Teatro Massimo', 'Quattro Canti', 'Capuchin Catacombs', 'Monreale Cathedral', 'La Martorana', 'Ballarò Market', 'Mondello Beach', 'Street Food'],
+      demographics: 'Sicily capital. Arab-Norman UNESCO heritage. Mediterranean crossroads. Vibrant street food. Mafia history.',
+      seoContent: {
+        intro: 'Palermo, capital of Sicily, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This chaotic, beautiful city is a crossroads of civilizations with UNESCO Arab-Norman architecture, legendary street food, and Italy\'s largest opera house (Teatro Massimo).',
+        timezoneFacts: 'Same timezone as Rome. Palermo was ruled by Arabs, Normans, Spanish, and Bourbons.',
+        bestTimeToVisit: 'April-June and September-October best. Summer very hot. Festino di Santa Rosalia (July) spectacular.',
+        businessHours: 'Shops 9 AM to 1 PM, 4-8 PM. Markets morning until 2 PM. Siesta observed.',
+        timeDifference: 'Palermo is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Street food essential - arancini, panelle, sfincione! Monreale mosaics stunning. Ballarò market authentic. Teatro Massimo Godfather filmed here.',
+        transportation: 'Palermo Falcone-Borsellino Airport (PMO) 35km. Palermo Centrale station. Ferries to mainland.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Santa Rosalia (July 15) patron saint - 5-day festival.'
+      }
     }
   },
   { slug: 'catania', city: 'Catania', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 37.50, lng: 15.09, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '310K', phoneCode: '+39 095', language: 'Italian, Sicilian',
+      currency: 'Euro', currencySymbol: '€', population: '0.31M', metroPopulation: '0.75M', phoneCode: '+39 095', language: 'Italian, Sicilian',
       climate: 'Mediterranean with hot summers (28-35°C) and mild winters (10-15°C). In shadow of Mount Etna.',
-      attractions: ['Mount Etna', 'Piazza del Duomo', 'Fish Market (La Pescheria)', 'Roman Amphitheatre', 'Via Etnea'],
-      demographics: 'Sicily\'s second city at foot of Etna volcano. Black lava baroque architecture, major tech and startup hub.'
+      attractions: ['Mount Etna', 'Piazza del Duomo', 'Fish Market', 'Roman Amphitheatre', 'Via Etnea', 'Elephant Fountain', 'Monastery of San Nicolò', 'Ursino Castle', 'Bellini Garden', 'Baroque architecture'],
+      demographics: 'Sicily\'s second city. Mount Etna gateway. Black lava Baroque. Tech hub. Bellini birthplace.',
+      seoContent: {
+        intro: 'Catania, city under the volcano, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This vibrant Sicilian city sits at the foot of Mount Etna (Europe\'s most active volcano), features dramatic black lava Baroque architecture, and has a legendary fish market.',
+        timezoneFacts: 'Same timezone as Rome. Catania has been destroyed and rebuilt 7 times by Etna.',
+        bestTimeToVisit: 'April-June and September-October best. Summer very hot. Etna accessible year-round.',
+        businessHours: 'Shops 9 AM to 1 PM, 4-8 PM. Fish Market 7 AM to 1 PM daily. Siesta observed.',
+        timeDifference: 'Catania is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Fish Market (La Pescheria) is theatre! Etna excursions book ahead. Arancini here are cone-shaped. Street food excellent. Sant\'Agata festival (Feb) huge.',
+        transportation: 'Catania Fontanarossa Airport (CTA) 7km - Sicily\'s busiest. Catania Centrale station.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Sant\'Agata (February 3-5) massive festival.'
+      }
     }
   },
   { slug: 'bari', city: 'Bari', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 41.13, lng: 16.87, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '320K', phoneCode: '+39 080', language: 'Italian, Barese',
+      currency: 'Euro', currencySymbol: '€', population: '0.32M', metroPopulation: '1.3M', phoneCode: '+39 080', language: 'Italian, Barese',
       climate: 'Mediterranean with hot summers (26-32°C) and mild winters (8-14°C). Adriatic Sea influence.',
-      attractions: ['Basilica San Nicola', 'Bari Vecchia', 'Castello Normanno-Svevo', 'Lungomare', 'Petruzzelli Theatre'],
-      demographics: 'Capital of Puglia, gateway to Greece and Balkans. Pilgrimage site for St. Nicholas, famous for fresh pasta.'
+      attractions: ['Basilica San Nicola', 'Bari Vecchia', 'Castello Normanno-Svevo', 'Lungomare', 'Petruzzelli Theatre', 'Cathedral', 'Piazza Mercantile', 'Strada delle Orecchiette', 'Porto Vecchio', 'Polignano a Mare'],
+      demographics: 'Puglia capital. St. Nicholas pilgrimage. Gateway to Greece. Orecchiette pasta. Adriatic port.',
+      seoContent: {
+        intro: 'Bari, capital of Puglia, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Adriatic port city holds the relics of St. Nicholas (yes, Santa Claus), has a maze-like old town where women make fresh orecchiette in the streets, and is gateway to Puglia\'s treasures.',
+        timezoneFacts: 'Same timezone as Rome. St. Nicholas\' bones were brought here from Turkey in 1087.',
+        bestTimeToVisit: 'April-June and September-October best. Summer busy with beach tourists.',
+        businessHours: 'Shops 9 AM to 1 PM, 4:30-8 PM. Restaurants dinner from 8 PM. Markets morning.',
+        timeDifference: 'Bari is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Watch orecchiette being made in Bari Vecchia! San Nicola basilica for pilgrims. Focaccia barese delicious. Day trip to Alberobello, Polignano.',
+        transportation: 'Bari Karol Wojtyła Airport (BRI) 8km. Bari Centrale station. Ferries to Greece/Albania.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. San Nicola (May 7-9, December 6) patron saint.'
+      }
     }
   },
   { slug: 'verona', city: 'Verona', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.44, lng: 10.99, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '260K', phoneCode: '+39 045', language: 'Italian, Venetian',
+      currency: 'Euro', currencySymbol: '€', population: '0.26M', metroPopulation: '0.48M', phoneCode: '+39 045', language: 'Italian, Venetian',
       climate: 'Humid subtropical with hot summers (24-30°C) and cold winters (0-8°C). Moderate rainfall.',
-      attractions: ['Arena di Verona', 'Juliet\'s House', 'Piazza delle Erbe', 'Castelvecchio', 'Ponte Pietra'],
-      demographics: 'UNESCO World Heritage city, setting of Romeo and Juliet. Roman amphitheater hosts world-famous opera festival.'
+      attractions: ['Arena di Verona', 'Juliet\'s House', 'Piazza delle Erbe', 'Castelvecchio', 'Ponte Pietra', 'Piazza Bra', 'Torre dei Lamberti', 'San Zeno Basilica', 'Giardino Giusti', 'Roman Theatre'],
+      demographics: 'Romeo and Juliet setting. Roman amphitheater opera. UNESCO World Heritage. Lake Garda gateway. Wine region.',
+      seoContent: {
+        intro: 'Verona, city of Romeo and Juliet, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city is famed for Shakespeare\'s star-crossed lovers, hosts world-class opera in a Roman amphitheater, and is gateway to Lake Garda and Valpolicella wine country.',
+        timezoneFacts: 'Same timezone as Rome. The Arena opera festival has run since 1913.',
+        bestTimeToVisit: 'June-August for Arena opera. April-October for sightseeing. Vinitaly wine fair (April).',
+        businessHours: 'Shops 9 AM to 7:30 PM. Arena performances start 9 PM (summer). Museums closed Mondays.',
+        timeDifference: 'Verona is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Arena opera is magical - book ahead! Juliet\'s balcony very crowded. Vinitaly (April) world\'s largest wine fair. Lake Garda 30 min.',
+        transportation: 'Verona Villafranca Airport (VRN) 10km. Verona Porta Nuova station. 1 hr from Venice.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Arena Opera Festival (June-September).'
+      }
     }
   },
   { slug: 'padua', city: 'Padua', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.41, lng: 11.88, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '210K', phoneCode: '+39 049', language: 'Italian, Venetian',
+      currency: 'Euro', currencySymbol: '€', population: '0.21M', metroPopulation: '0.43M', phoneCode: '+39 049', language: 'Italian, Venetian',
       climate: 'Humid subtropical with hot summers (24-30°C) and cold foggy winters (-1 to 7°C).',
-      attractions: ['Scrovegni Chapel (Giotto)', 'Basilica di Sant\'Antonio', 'Prato della Valle', 'University of Padua', 'Botanical Garden (UNESCO)'],
-      demographics: 'Ancient university city (1222), where Galileo taught. Giotto\'s frescoes are Renaissance masterpiece.'
+      attractions: ['Scrovegni Chapel', 'Basilica di Sant\'Antonio', 'Prato della Valle', 'University of Padua', 'Botanical Garden', 'Caffè Pedrocchi', 'Palazzo della Ragione', 'Piazza dei Signori', 'Orto Botanico', 'Euganean Hills'],
+      demographics: 'Ancient university city. Giotto\'s masterpiece. St. Anthony pilgrimage. UNESCO botanical garden. Galileo taught here.',
+      seoContent: {
+        intro: 'Padua, city of saints and scholars, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This ancient city houses Giotto\'s Scrovegni Chapel frescoes (a Renaissance masterpiece), Europe\'s oldest botanical garden (UNESCO), and the basilica of St. Anthony.',
+        timezoneFacts: 'Same timezone as Rome. Galileo taught at Padua University for 18 years.',
+        bestTimeToVisit: 'April-June and September-October best. Book Scrovegni Chapel in advance (limited entry).',
+        businessHours: 'Scrovegni Chapel timed entry (book online). Basilica 6:30 AM to 7 PM. Siesta observed.',
+        timeDifference: 'Padua is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Scrovegni Chapel MUST be booked ahead - limited to 25 people for 15 min! Caffè Pedrocchi historic. Basilica free but queues. Venice 30 min.',
+        transportation: 'Venice Marco Polo (VCE) 45 min. Padova station. 25 min from Venice by train.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Sant\'Antonio (June 13) patron saint.'
+      }
     }
   },
   { slug: 'trieste', city: 'Trieste', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.65, lng: 13.78, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '205K', phoneCode: '+39 040', language: 'Italian, Triestine, Slovene',
+      currency: 'Euro', currencySymbol: '€', population: '0.2M', metroPopulation: '0.24M', phoneCode: '+39 040', language: 'Italian, Triestine, Slovene',
       climate: 'Humid subtropical with warm summers (22-28°C) and cold winters (2-8°C). Bora wind in winter.',
-      attractions: ['Piazza Unità d\'Italia', 'Miramare Castle', 'Roman Theatre', 'Caffè Storici', 'Grotta Gigante'],
-      demographics: 'Border city with Austro-Hungarian heritage, Italy\'s coffee capital. Major port, historic literary center (Joyce, Svevo).'
+      attractions: ['Piazza Unità d\'Italia', 'Miramare Castle', 'Roman Theatre', 'Caffè Storici', 'Grotta Gigante', 'Canal Grande', 'Risiera di San Sabba', 'Castello di San Giusto', 'Barcola Beach', 'Carso plateau'],
+      demographics: 'Austro-Hungarian heritage. Italy\'s coffee capital. James Joyce lived here. Border city. Literary tradition.',
+      seoContent: {
+        intro: 'Trieste, Italy\'s coffee capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This elegant border city blends Italian, Austrian, and Slavic cultures, has Europe\'s largest sea-facing square, and is where James Joyce wrote much of Ulysses.',
+        timezoneFacts: 'Same timezone as Rome. Trieste was part of Austria-Hungary until 1918.',
+        bestTimeToVisit: 'April-October for best weather. Bora wind can be extreme in winter. Barcolana regatta (October).',
+        businessHours: 'Historic cafés open early. Shops 9 AM to 7:30 PM. Miramare Castle 9 AM to 7 PM.',
+        timeDifference: 'Trieste is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Coffee culture unique - un nero is espresso! Miramare Castle tragic history. Historic cafés (Caffè degli Specchi, San Marco). Slovenia border 5 min.',
+        transportation: 'Trieste Airport (TRS) 35km. Trieste Centrale station. 2 hr from Venice.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Barcolana regatta (October) - world\'s largest.'
+      }
     }
   },
   { slug: 'brescia', city: 'Brescia', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 45.54, lng: 10.21, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '200K', phoneCode: '+39 030', language: 'Italian, Brescian',
+      currency: 'Euro', currencySymbol: '€', population: '0.2M', metroPopulation: '0.55M', phoneCode: '+39 030', language: 'Italian, Brescian',
       climate: 'Humid subtropical with hot summers (25-32°C) and cold winters (-1 to 6°C). Pre-Alpine location.',
-      attractions: ['Santa Giulia Museum (UNESCO)', 'Roman Capitolium', 'Piazza della Loggia', 'Old Cathedral', 'Brescia Castle'],
-      demographics: 'Industrial powerhouse of Lombardy, UNESCO Lombard heritage. Gateway to Lake Garda and Franciacorta wine region.'
+      attractions: ['Santa Giulia Museum', 'Roman Capitolium', 'Piazza della Loggia', 'Old Cathedral', 'Brescia Castle', 'Winged Victory', 'Mille Miglia Museum', 'New Cathedral', 'Franciacorta', 'Lake Garda'],
+      demographics: 'UNESCO Lombard heritage. Mille Miglia race. Industrial powerhouse. Lake Garda gateway. Franciacorta wine.',
+      seoContent: {
+        intro: 'Brescia, Lioness of Italy, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city has remarkable Roman and Lombard heritage, is start/finish of the legendary Mille Miglia race, and is gateway to Lake Garda and Franciacorta wine country.',
+        timezoneFacts: 'Same timezone as Rome. Brescia was called "Lioness of Italy" for its resistance in 1849.',
+        bestTimeToVisit: 'April-October for best weather. Mille Miglia (May). Franciacorta wine tours year-round.',
+        businessHours: 'Shops 9 AM to 7:30 PM. Santa Giulia Museum 10 AM to 6 PM. Closed Mondays.',
+        timeDifference: 'Brescia is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Santa Giulia Museum exceptional! Winged Victory bronze masterpiece. Franciacorta is Italy\'s champagne. Lake Garda 30 min. Mille Miglia spectacular.',
+        transportation: 'Milan airports closest. Brescia station. 1 hr from Milan by train.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Mille Miglia (May). Saints Faustino and Giovita (Feb 15).'
+      }
     }
   },
   { slug: 'parma', city: 'Parma', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.80, lng: 10.33, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '200K', phoneCode: '+39 0521', language: 'Italian, Parmigiano',
+      currency: 'Euro', currencySymbol: '€', population: '0.2M', metroPopulation: '0.45M', phoneCode: '+39 0521', language: 'Italian, Parmigiano',
       climate: 'Humid subtropical with hot summers (25-33°C) and cold foggy winters (-1 to 6°C).',
-      attractions: ['Parma Cathedral', 'Baptistery', 'Teatro Regio', 'Palazzo della Pilotta', 'Parma ham tours'],
-      demographics: 'UNESCO Creative City of Gastronomy, home of Parmigiano-Reggiano and Prosciutto di Parma. Verdi\'s birthplace nearby.'
+      attractions: ['Parma Cathedral', 'Baptistery', 'Teatro Regio', 'Palazzo della Pilotta', 'Parma Ham tours', 'Galleria Nazionale', 'Camera di San Paolo', 'Parco Ducale', 'Parmigiano factories', 'Verdi sites'],
+      demographics: 'UNESCO Creative City of Gastronomy. Parmigiano-Reggiano and Prosciutto di Parma. Opera tradition. Verdi country.',
+      seoContent: {
+        intro: 'Parma, Italy\'s food capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO Creative City of Gastronomy is birthplace of Parmigiano-Reggiano and Prosciutto di Parma, has a world-class opera house, and is heart of Verdi country.',
+        timezoneFacts: 'Same timezone as Rome. Verdi was born near Parma and his operas premiered at Teatro Regio.',
+        bestTimeToVisit: 'April-June and September-October best. Festival Verdi (autumn). Avoid August closures.',
+        businessHours: 'Food shops 8 AM to 1 PM, 3:30-7:30 PM. Restaurants lunch 12:30-2 PM, dinner 7:30-10 PM.',
+        timeDifference: 'Parma is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Visit Parmigiano dairy and prosciutto cellar! Baptistery interior stunning. Correggio frescoes in Cathedral. Culatello even more prized than prosciutto.',
+        transportation: 'Parma Airport (PMF) limited. Parma station. 1 hr from Bologna/Milan.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Festival Verdi (September-October).'
+      }
     }
   },
   { slug: 'modena', city: 'Modena', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.65, lng: 10.92, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '185K', phoneCode: '+39 059', language: 'Italian, Modenese',
+      currency: 'Euro', currencySymbol: '€', population: '0.19M', metroPopulation: '0.35M', phoneCode: '+39 059', language: 'Italian, Modenese',
       climate: 'Humid subtropical with hot summers (25-33°C) and cold foggy winters (-1 to 6°C).',
-      attractions: ['Modena Cathedral (UNESCO)', 'Enzo Ferrari Museum', 'Piazza Grande', 'Acetaia (balsamic vinegar)', 'Palazzo Ducale'],
-      demographics: 'Motor Valley capital - home to Ferrari, Maserati, Lamborghini. Traditional balsamic vinegar origin, Pavarotti\'s hometown.'
+      attractions: ['Modena Cathedral', 'Enzo Ferrari Museum', 'Piazza Grande', 'Acetaia tours', 'Palazzo Ducale', 'Ghirlandina Tower', 'Ferrari Maranello', 'Lamborghini', 'Maserati', 'Osteria Francescana'],
+      demographics: 'Motor Valley capital - Ferrari, Maserati, Lamborghini. Traditional balsamic vinegar. Pavarotti hometown. UNESCO cathedral.',
+      seoContent: {
+        intro: 'Modena, heart of Motor Valley, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This city is home to Ferrari, Maserati, and Lamborghini, produces the world\'s finest balsamic vinegar, was Pavarotti\'s hometown, and has a UNESCO cathedral.',
+        timezoneFacts: 'Same timezone as Rome. Ferrari factory in nearby Maranello opened in 1947.',
+        bestTimeToVisit: 'April-June and September-October best. Book Ferrari Museum and factory tours ahead.',
+        businessHours: 'Ferrari Museum 9:30 AM to 6 PM. Acetaie by appointment. Avoid August closures.',
+        timeDifference: 'Modena is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Ferrari Museum + factory tour book weeks ahead! Traditional balsamic aged 12-25+ years. Osteria Francescana world\'s best restaurant (book months ahead).',
+        transportation: 'Bologna Airport (BLQ) 40 min. Modena station. 30 min from Bologna.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. San Geminiano (January 31) patron saint.'
+      }
     }
   },
   { slug: 'reggio-emilia', city: 'Reggio Emilia', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.70, lng: 10.63, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '170K', phoneCode: '+39 0522', language: 'Italian, Reggiano',
+      currency: 'Euro', currencySymbol: '€', population: '0.17M', metroPopulation: '0.53M', phoneCode: '+39 0522', language: 'Italian, Reggiano',
       climate: 'Humid subtropical with hot summers (25-32°C) and cold foggy winters (-1 to 6°C).',
-      attractions: ['Piazza Prampolini', 'Basilica della Ghiara', 'Musei Civici', 'Teatro Municipale', 'Palazzo del Capitano'],
-      demographics: 'Birthplace of Italian flag (Il Tricolore). Known for Parmigiano-Reggiano, innovative Reggio Emilia education approach.'
+      attractions: ['Piazza Prampolini', 'Basilica della Ghiara', 'Musei Civici', 'Teatro Municipale', 'Palazzo del Capitano', 'Sala del Tricolore', 'Mauriziano', 'Reggio Emilia AV station', 'Chiostri di San Pietro', 'Parmigiano dairies'],
+      demographics: 'Birthplace of Italian flag. Parmigiano-Reggiano origin. Reggio Emilia education approach. Modern architecture.',
+      seoContent: {
+        intro: 'Reggio Emilia, birthplace of the Italian flag, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This cultured city is where the Tricolore was born in 1797, shares origin of Parmigiano-Reggiano, and pioneered the world-famous Reggio Emilia education approach.',
+        timezoneFacts: 'Same timezone as Rome. The Italian flag (il Tricolore) was adopted here in 1797.',
+        bestTimeToVisit: 'April-June and September-October best. Parmigiano tours year-round (book ahead).',
+        businessHours: 'Shops 9 AM to 7:30 PM. Sala del Tricolore visits by appointment. Museums closed Mondays.',
+        timeDifference: 'Reggio Emilia is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Sala del Tricolore where Italian flag born! Calatrava high-speed station stunning. Parmigiano-Reggiano from HERE not Parma. Erbazzone local specialty.',
+        transportation: 'Reggio Emilia AV Mediopadana (high-speed). Reggio Emilia station (regular). Bologna Airport 1 hr.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Flag Day (January 7).'
+      }
     }
   },
   { slug: 'cagliari', city: 'Cagliari', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 39.22, lng: 9.12, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '155K', phoneCode: '+39 070', language: 'Italian, Sardinian',
+      currency: 'Euro', currencySymbol: '€', population: '0.15M', metroPopulation: '0.43M', phoneCode: '+39 070', language: 'Italian, Sardinian',
       climate: 'Mediterranean with hot dry summers (28-32°C) and mild winters (10-15°C). Very sunny.',
-      attractions: ['Castello district', 'Poetto Beach', 'Roman Amphitheatre', 'Bastione Saint Remy', 'Flamingo lagoons'],
-      demographics: 'Capital of Sardinia, ancient Phoenician port. Beautiful beaches, pink flamingos, and unique Sardinian culture.'
+      attractions: ['Castello district', 'Poetto Beach', 'Roman Amphitheatre', 'Bastione Saint Remy', 'Flamingo lagoons', 'National Archaeological Museum', 'Marina district', 'San Benedetto Market', 'Torre dell\'Elefante', 'Nora archaeological site'],
+      demographics: 'Sardinia capital. Ancient Phoenician port. Beautiful beaches. Pink flamingos. Unique Sardinian culture.',
+      seoContent: {
+        intro: 'Cagliari, capital of Sardinia, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This ancient Mediterranean city has stunning beaches, a hilltop historic center with panoramic views, pink flamingos in urban lagoons, and serves as gateway to Sardinia\'s unique culture.',
+        timezoneFacts: 'Same timezone as Rome. Sardinia has its own language and unique traditions.',
+        bestTimeToVisit: 'May-October for beach. Spring for wildflowers. Sant\'Efisio festival (May 1) spectacular.',
+        businessHours: 'Shops 9 AM to 1 PM, 4:30-8 PM. Beaches 24/7. Markets morning.',
+        timeDifference: 'Cagliari is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Poetto Beach 8km long! Flamingos in Molentargius lagoon year-round. San Benedetto Market excellent. Try culurgiones and porceddu.',
+        transportation: 'Cagliari Elmas Airport (CAG) 7km. Ferries from mainland. Limited trains.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Sant\'Efisio (May 1-4) huge procession.'
+      }
     }
   },
   { slug: 'perugia', city: 'Perugia', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 43.11, lng: 12.39, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '165K', phoneCode: '+39 075', language: 'Italian, Umbrian',
+      currency: 'Euro', currencySymbol: '€', population: '0.17M', metroPopulation: '0.35M', phoneCode: '+39 075', language: 'Italian, Umbrian',
       climate: 'Humid subtropical with warm summers (24-30°C) and cool winters (2-10°C). Hilltop location.',
-      attractions: ['Piazza IV Novembre', 'Fontana Maggiore', 'Galleria Nazionale', 'Rocca Paolina', 'Eurochocolate Festival'],
-      demographics: 'Capital of Umbria, major university city (Università per Stranieri). Famous for chocolate (Perugina/Baci) and jazz festival.'
+      attractions: ['Piazza IV Novembre', 'Fontana Maggiore', 'Galleria Nazionale', 'Rocca Paolina', 'Eurochocolate Festival', 'Palazzo dei Priori', 'San Lorenzo Cathedral', 'Umbria Jazz', 'Etruscan Well', 'Corso Vannucci'],
+      demographics: 'Umbria capital. Major university city. Famous for chocolate (Baci). Jazz and chocolate festivals. Etruscan heritage.',
+      seoContent: {
+        intro: 'Perugia, heart of Umbria, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This hilltop university city is famous for chocolate (Baci Perugina), hosts world-class jazz and chocolate festivals, and is a perfect base for exploring Umbria\'s hill towns.',
+        timezoneFacts: 'Same timezone as Rome. Università per Stranieri teaches Italian to foreigners since 1921.',
+        bestTimeToVisit: 'April-October best. Umbria Jazz (July). Eurochocolate (October). Avoid August closures.',
+        businessHours: 'Shops 9 AM to 1 PM, 3:30-7:30 PM. Corso Vannucci passeggiata evening.',
+        timeDifference: 'Perugia is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Eurochocolate (Oct) is chocolate heaven! Umbria Jazz world-class. Rocca Paolina underground city. Day trips to Assisi, Orvieto, Spoleto.',
+        transportation: 'Perugia San Francesco Airport (PEG) 12km. Perugia station. 2.5 hr from Rome.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Sant\'Ercolano (March 1) patron saint.'
+      }
     }
   },
   { slug: 'messina', city: 'Messina', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 38.19, lng: 15.55, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '230K', phoneCode: '+39 090', language: 'Italian, Sicilian',
+      currency: 'Euro', currencySymbol: '€', population: '0.23M', metroPopulation: '0.48M', phoneCode: '+39 090', language: 'Italian, Sicilian',
       climate: 'Mediterranean with hot summers (27-32°C) and mild winters (11-15°C). Strait of Messina breezes.',
-      attractions: ['Messina Cathedral', 'Astronomical Clock', 'Regional Museum', 'Strait of Messina', 'Santuario di Montalto'],
-      demographics: 'Gateway to Sicily across the Strait. Ancient Greek foundation, rebuilt after 1908 earthquake. Major ferry port.'
+      attractions: ['Messina Cathedral', 'Astronomical Clock', 'Regional Museum', 'Strait of Messina', 'Santuario di Montalto', 'Fontana di Orione', 'Church of the Annunciation', 'Port', 'Capo Peloro', 'Taormina nearby'],
+      demographics: 'Gateway to Sicily. Rebuilt after 1908 earthquake. Major ferry port. Astronomical clock largest in world.',
+      seoContent: {
+        intro: 'Messina, gateway to Sicily, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This port city guards the narrow strait to mainland Italy, has the world\'s largest astronomical clock in its cathedral, and was heroically rebuilt after a devastating 1908 earthquake.',
+        timezoneFacts: 'Same timezone as Rome. The 1908 Messina earthquake was one of Europe\'s deadliest.',
+        bestTimeToVisit: 'April-October for best weather. Ferragosto (August 15) procession. Taormina nearby.',
+        businessHours: 'Cathedral clock show at noon. Shops 9 AM to 1 PM, 4-8 PM.',
+        timeDifference: 'Messina is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Astronomical clock noon show famous! Ferries to mainland every 20 min. Taormina 50 min. Swim at Capo Peloro where seas meet.',
+        transportation: 'Catania Airport (CTA) 1.5 hr. Messina Centrale station. Ferries to Villa San Giovanni (20 min).',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Madonna della Lettera (June 3) patron saint. Vara procession (August 15).'
+      }
+    }
+  },
+  
+  // Italy - Additional Premium Tourist Destinations
+  { slug: 'siena', city: 'Siena', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 43.32, lng: 11.33, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.05M', metroPopulation: '0.12M', phoneCode: '+39 0577', language: 'Italian',
+      climate: 'Humid subtropical with warm summers (22-30°C) and cool winters (2-10°C). Tuscan hills.',
+      attractions: ['Piazza del Campo', 'Il Palio', 'Duomo di Siena', 'Torre del Mangia', 'Palazzo Pubblico', 'Contrade', 'Pinacoteca', 'San Domenico', 'Fontebranda', 'Chianti region'],
+      demographics: 'Medieval masterpiece. Il Palio horse race. Gothic cathedral. UNESCO World Heritage.',
+      seoContent: {
+        intro: 'Siena, Florence\'s eternal rival, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO medieval city hosts the legendary Palio horse race and has Italy\'s most beautiful piazza - the shell-shaped Campo.',
+        timezoneFacts: 'Same timezone as Rome. The Palio has been run since at least 1633.',
+        bestTimeToVisit: 'April-October best. Palio (July 2 and August 16). Avoid August heat.',
+        businessHours: 'Duomo 10:30 AM to 7 PM. Shops 9 AM to 1 PM, 3:30-7:30 PM.',
+        timeDifference: 'Siena is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Il Palio tickets impossible - watch free in Campo! Duomo floor uncovered Aug-Oct. Panforte and ricciarelli sweets.',
+        transportation: 'Florence Airport (FLR) 1 hr. Siena station outside walls. Bus from Florence better.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Il Palio (July 2, August 16).'
+      }
+    }
+  },
+  { slug: 'pisa', city: 'Pisa', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 43.72, lng: 10.40, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.09M', metroPopulation: '0.2M', phoneCode: '+39 050', language: 'Italian',
+      climate: 'Mediterranean with warm summers (24-30°C) and mild winters (5-12°C). Coastal.',
+      attractions: ['Leaning Tower', 'Piazza dei Miracoli', 'Cathedral', 'Baptistery', 'Camposanto', 'Piazza dei Cavalieri', 'Santa Maria della Spina', 'Lungarni', 'University', 'Luminara'],
+      demographics: 'Leaning Tower fame. UNESCO Piazza dei Miracoli. Historic maritime republic. Tuscany gateway.',
+      seoContent: {
+        intro: 'Pisa, home of the Leaning Tower, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. Beyond the famous tilting bell tower, this UNESCO city has stunning Romanesque architecture and serves as gateway to Tuscany.',
+        timezoneFacts: 'Same timezone as Rome. The tower began leaning during construction in 1173.',
+        bestTimeToVisit: 'April-October best. Book Tower climb ahead in summer. Luminara (June 16).',
+        businessHours: 'Tower 9 AM to 8 PM (summer). Book tower tickets online!',
+        timeDifference: 'Pisa is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Book Tower climb weeks ahead! Explore beyond Piazza dei Miracoli. Luminara June 16 candle festival.',
+        transportation: 'Pisa Galileo Galilei Airport (PSA) 2km - Tuscany\'s main. 1 hr from Florence.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. San Ranieri (June 17). Luminara (June 16).'
+      }
+    }
+  },
+  { slug: 'ravenna', city: 'Ravenna', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.42, lng: 12.20, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.16M', metroPopulation: '0.39M', phoneCode: '+39 0544', language: 'Italian',
+      climate: 'Humid subtropical with hot summers (25-32°C) and cool winters (1-8°C). Near Adriatic.',
+      attractions: ['UNESCO Mosaics', 'Basilica di San Vitale', 'Mausoleo di Galla Placidia', 'Sant\'Apollinare Nuovo', 'Dante\'s Tomb', 'Classe Basilica', 'Baptistery', 'Beaches', 'Ravenna Festival'],
+      demographics: 'UNESCO Byzantine mosaics. Three-time capital. Dante\'s tomb. Mosaic art capital.',
+      seoContent: {
+        intro: 'Ravenna, city of mosaics, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city has the finest Byzantine mosaics outside Istanbul and is where Dante wrote the Divine Comedy and is buried.',
+        timezoneFacts: 'Same timezone as Rome. Ravenna was capital of Western Roman Empire, then Byzantine Italy.',
+        bestTimeToVisit: 'April-October best. Ravenna Festival (June-July). Beach season June-September.',
+        businessHours: 'Mosaics sites 9 AM to 7 PM. Combined ticket available.',
+        timeDifference: 'Ravenna is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Get combined mosaic ticket! Galla Placidia tiny but stunning. Dante\'s Tomb - Florence still wants him back!',
+        transportation: 'Bologna Airport (BLQ) 1 hr. Ravenna station. 1.5 hr from Bologna.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Ravenna Festival (June-July).'
+      }
+    }
+  },
+  { slug: 'matera', city: 'Matera', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 40.67, lng: 16.60, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.06M', metroPopulation: '0.06M', phoneCode: '+39 0835', language: 'Italian',
+      climate: 'Mediterranean with hot summers (26-33°C) and mild winters (4-12°C). Semi-arid.',
+      attractions: ['Sassi di Matera', 'Cave dwellings', 'Rock churches', 'Casa Noha', 'Palombaro Lungo', 'Parco della Murgia', 'Cathedral', 'Cave hotels', 'Viewpoints', 'Film locations'],
+      demographics: 'UNESCO Sassi cave city. European Capital of Culture 2019. Ancient troglodyte settlement. Film location.',
+      seoContent: {
+        intro: 'Matera, the cave city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city\'s Sassi cave dwellings are now a stunning 2019 European Capital of Culture, setting for Bond and biblical films.',
+        timezoneFacts: 'Same timezone as Rome. Sassi have been inhabited for 9,000+ years.',
+        bestTimeToVisit: 'April-June and September-October best. Summer very hot.',
+        businessHours: 'Cave churches 10 AM to 7 PM. Casa Noha 10 AM to 6 PM.',
+        timeDifference: 'Matera is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Stay in a cave hotel! Sunrise/sunset viewpoints stunning. Bread of Matera famous. Get lost in the lanes.',
+        transportation: 'Bari Airport (BRI) 1 hr. FAL train from Bari. No direct mainline trains.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Madonna della Bruna (July 2).'
+      }
+    }
+  },
+  { slug: 'taormina', city: 'Taormina', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 37.85, lng: 15.29, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+39 0942', language: 'Italian, Sicilian',
+      climate: 'Mediterranean with hot summers (26-32°C) and mild winters (10-15°C). Sea breezes.',
+      attractions: ['Greek Theatre', 'Corso Umberto', 'Isola Bella', 'Mount Etna views', 'Piazza IX Aprile', 'Palazzo Corvaja', 'Villa Comunale', 'Castelmola', 'Beaches', 'Cable car'],
+      demographics: 'Sicily\'s glamorous resort. Greek Theatre with Etna views. Belle époque tourism. Film festival.',
+      seoContent: {
+        intro: 'Taormina, Sicily\'s glamour resort, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This hilltop jewel has a Greek theatre with Mount Etna as backdrop and remains Italy\'s most scenic resort.',
+        timezoneFacts: 'Same timezone as Rome. Goethe called this theatre view the finest in the world.',
+        bestTimeToVisit: 'April-June and September-October best. July-August very crowded.',
+        businessHours: 'Greek Theatre 9 AM to 7 PM. Corso shops 10 AM to 10 PM (summer).',
+        timeDifference: 'Taormina is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Greek Theatre at sunrise or sunset! Cable car to Isola Bella beach. Castelmola village for views.',
+        transportation: 'Catania Airport (CTA) 50 min. Taormina-Giardini station then bus.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Taormina Film Fest (June).'
+      }
+    }
+  },
+  { slug: 'amalfi', city: 'Amalfi', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 40.63, lng: 14.60, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.005M', metroPopulation: '0.04M', phoneCode: '+39 089', language: 'Italian',
+      climate: 'Mediterranean with warm summers (26-30°C) and mild winters (10-14°C). Coastal microclimate.',
+      attractions: ['Amalfi Cathedral', 'Cloister of Paradise', 'Paper Museum', 'Amalfi Coast', 'Ravello', 'Positano', 'Atrani', 'Limoncello', 'Marina Grande', 'Path of the Gods'],
+      demographics: 'Ancient maritime republic. UNESCO coastline. Limoncello origin. Paper-making tradition.',
+      seoContent: {
+        intro: 'Amalfi, heart of the divine coast, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This town gave its name to Italy\'s most spectacular UNESCO coastline and was once a maritime republic rivaling Venice.',
+        timezoneFacts: 'Same timezone as Rome. Amalfi was one of Italy\'s four great maritime republics.',
+        bestTimeToVisit: 'April-June and September-October best. July-August very crowded.',
+        businessHours: 'Cathedral 9 AM to 5 PM. Shops 10 AM to 10 PM (summer).',
+        timeDifference: 'Amalfi is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Path of the Gods hike spectacular! Ravello for views. Atrani hidden gem. Drive not for nervous drivers!',
+        transportation: 'Naples Airport (NAP) 1.5 hr. SITA bus from Sorrento. Ferries from Salerno.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Sant\'Andrea (November 30).'
+      }
+    }
+  },
+  { slug: 'sorrento', city: 'Sorrento', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 40.63, lng: 14.38, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.02M', metroPopulation: '0.08M', phoneCode: '+39 081', language: 'Italian',
+      climate: 'Mediterranean with warm summers (26-30°C) and mild winters (10-14°C). Cliff-top.',
+      attractions: ['Piazza Tasso', 'Marina Grande', 'Corso Italia', 'Vallone dei Mulini', 'Sedile Dominova', 'Limoncello', 'Cloister of San Francesco', 'Bagni della Regina Giovanna', 'Capri ferry', 'Amalfi Coast base'],
+      demographics: 'Gateway to Amalfi Coast and Capri. Cliff-top town. Limoncello and inlaid wood. O Sole Mio.',
+      seoContent: {
+        intro: 'Sorrento, gateway to the divine coast, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This cliff-top town is the perfect base for Amalfi Coast, Capri, and Pompeii, famous for limoncello, inlaid wood, and the song O Sole Mio.',
+        timezoneFacts: 'Same timezone as Rome. O Sole Mio was written about Sorrento in 1898.',
+        bestTimeToVisit: 'April-October best. May-June and September ideal. August crowded.',
+        businessHours: 'Shops 9 AM to 1 PM, 4-8 PM. Ferries to Capri hourly.',
+        timeDifference: 'Sorrento is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Base for Capri, Amalfi, Pompeii! Limoncello tasting. Marina Grande for seafood. Circumvesuviana train from Naples.',
+        transportation: 'Naples Airport (NAP) 1.5 hr. Circumvesuviana from Naples. Ferries to Capri.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Sant\'Antonino (February 14).'
+      }
+    }
+  },
+  { slug: 'capri', city: 'Capri', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 40.55, lng: 14.22, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+39 081', language: 'Italian',
+      climate: 'Mediterranean with warm summers (25-29°C) and mild winters (10-14°C). Island breeze.',
+      attractions: ['Blue Grotto', 'Marina Grande', 'Piazzetta', 'Gardens of Augustus', 'Villa Jovis', 'Anacapri', 'Monte Solaro', 'Faraglioni rocks', 'Via Krupp', 'Designer shopping'],
+      demographics: 'Glamorous island. Blue Grotto. Roman emperors\' retreat. Jet-set destination. Faraglioni rocks.',
+      seoContent: {
+        intro: 'Capri, island of dreams, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This glamorous island has enchanted visitors since Roman emperors, featuring the magical Blue Grotto, dramatic Faraglioni rocks, and chic Piazzetta.',
+        timezoneFacts: 'Same timezone as Rome. Emperor Tiberius ruled Rome from Capri for 10 years.',
+        bestTimeToVisit: 'April-October. Avoid August crowds. Blue Grotto weather-dependent.',
+        businessHours: 'Blue Grotto 9 AM to 5 PM (weather). Ferries from 7 AM.',
+        timeDifference: 'Capri is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Blue Grotto go early! Chairlift to Monte Solaro. Anacapri quieter than Capri town. Very expensive.',
+        transportation: 'Ferry from Naples (45 min), Sorrento (20 min). No cars for tourists.',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. San Costanzo (May 14).'
+      }
+    }
+  },
+  { slug: 'cinque-terre', city: 'Cinque Terre', timezone: 'Europe/Rome', country: 'Italy', countryCode: 'IT', lat: 44.13, lng: 9.71, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.004M', metroPopulation: '0.004M', phoneCode: '+39 0187', language: 'Italian, Ligurian',
+      climate: 'Mediterranean with warm summers (24-28°C) and mild winters (8-12°C). Coastal microclimate.',
+      attractions: ['Five villages', 'Hiking trails', 'Riomaggiore', 'Manarola', 'Corniglia', 'Vernazza', 'Monterosso', 'Vineyards', 'Swimming', 'Train connections'],
+      demographics: 'UNESCO five villages. Car-free. Terraced vineyards. Hiking paradise. Instagram famous.',
+      seoContent: {
+        intro: 'Cinque Terre, five lands of wonder, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. These five UNESCO car-free villages clinging to the Ligurian coast are connected by hiking trails and trains, famous for colorful houses and terraced vineyards.',
+        timezoneFacts: 'Same timezone as Rome. The terraced vineyards date back 1,000 years.',
+        bestTimeToVisit: 'April-June and September-October best. Summer extremely crowded. Avoid August.',
+        businessHours: 'Trains every 20-30 min. Hiking trails dawn to dusk.',
+        timeDifference: 'Cinque Terre is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Italy observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Cinque Terre Card for trains and trails. Manarola at sunset. Vernazza prettiest. Monterosso has beach. Pesto, focaccia, sciacchetrà wine.',
+        transportation: 'La Spezia or Genoa airports. La Spezia station then Cinque Terre trains. No cars!',
+        emergencyNumbers: 'Emergency: 112. Police: 113. Ambulance: 118. Fire: 115.',
+        publicHolidays: 'Italian national holidays. Local patron saints vary by village.'
+      }
     }
   },
   
