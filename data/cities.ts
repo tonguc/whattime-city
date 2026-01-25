@@ -8020,11 +8020,6 @@ export const cities: City[] = [
       }
     }
   },
-      climate: 'Mediterranean with very hot summers (35-45°C) and mild winters (6-14°C). Spain\'s hottest summers.',
-      attractions: ['Mezquita-Catedral', 'Alcázar de los Reyes', 'Jewish Quarter', 'Roman Bridge', 'Patios Festival'],
-      demographics: 'UNESCO World Heritage city, capital of Al-Andalus. The Mezquita represents peak Islamic architecture in Europe.'
-    }
-  },
   { slug: 'valladolid-spain', city: 'Valladolid', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 41.65, lng: -4.72, tier: 2, continent: 'europe',
     info: {
       currency: 'Euro', currencySymbol: '€', population: '300K', phoneCode: '+34 983', language: 'Spanish (Castilian)',
