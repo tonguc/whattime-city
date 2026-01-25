@@ -6250,130 +6250,624 @@ export const cities: City[] = [
   },
   { slug: 'bordeaux', city: 'Bordeaux', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 44.84, lng: -0.58, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '260K', phoneCode: '+33 5', language: 'French',
+      currency: 'Euro', currencySymbol: '€', population: '0.26M', metroPopulation: '1.2M', phoneCode: '+33 5', language: 'French',
       climate: 'Oceanic with mild winters (5-12°C) and warm summers (20-28°C). Moderate rainfall year-round.',
-      attractions: ['Place de la Bourse', 'Cité du Vin', 'Saint-André Cathedral', 'Miroir d\'Eau', 'Grand Théâtre'],
-      demographics: 'UNESCO World Heritage City, world capital of wine. Major port on the Garonne River with 18th-century architecture.'
+      attractions: ['Place de la Bourse', 'Cité du Vin', 'Saint-André Cathedral', 'Miroir d\'Eau', 'Grand Théâtre', 'Rue Sainte-Catherine', 'Pont de Pierre', 'Darwin Ecosystem', 'Saint-Émilion', 'Médoc Wine Route'],
+      demographics: 'UNESCO World Heritage city. World capital of wine. 18th-century golden stone architecture.',
+      seoContent: {
+        intro: 'Bordeaux, world capital of wine, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO World Heritage city features stunning 18th-century limestone architecture, the world\'s largest urban wine region, and the famous Miroir d\'Eau water mirror.',
+        timezoneFacts: 'Same timezone as Paris. Bordeaux produces over 700 million bottles of wine annually.',
+        bestTimeToVisit: 'May-October for best weather. Wine harvest September. Bordeaux Wine Festival (June, biennial).',
+        businessHours: 'Shops 10 AM to 7 PM. Cité du Vin 10 AM to 6 PM. Wine tastings throughout day.',
+        timeDifference: 'Bordeaux is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM, Dubai 3 PM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Saint-Émilion day trip essential! Miroir d\'Eau best at sunset. Cité du Vin wine museum world-class. Médoc châteaux book ahead.',
+        transportation: 'Bordeaux-Mérignac Airport (BOD) 12km. Bordeaux Saint-Jean TGV. 2 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Bordeaux Wine Festival (June). Vendanges (September).'
+      }
     }
   },
   { slug: 'strasbourg', city: 'Strasbourg', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.57, lng: 7.75, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '290K', phoneCode: '+33 3', language: 'French, Alsatian',
-      climate: 'Oceanic with warm summers (19-25°C) and cold winters (0-5°C). Moderate rainfall year-round.',
-      attractions: ['Strasbourg Cathedral', 'Petite France', 'European Parliament', 'Palais Rohan', 'Covered Bridges'],
-      demographics: 'Capital of Alsace, official seat of European Parliament. UNESCO World Heritage old town, blend of French and German culture.'
+      currency: 'Euro', currencySymbol: '€', population: '0.29M', metroPopulation: '0.8M', phoneCode: '+33 3', language: 'French, Alsatian',
+      climate: 'Continental with warm summers (19-25°C) and cold winters (0-5°C). Can be very cold in winter.',
+      attractions: ['Strasbourg Cathedral', 'Petite France', 'European Parliament', 'Palais Rohan', 'Covered Bridges', 'Barrage Vauban', 'Maison Kammerzell', 'Orangerie Park', 'Christmas Markets', 'Rhine River'],
+      demographics: 'Capital of Alsace. European Parliament seat. UNESCO old town. Franco-German culture.',
+      seoContent: {
+        intro: 'Strasbourg, Capital of Europe, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city hosts the European Parliament, features a stunning Gothic cathedral, and holds Europe\'s oldest Christmas market (since 1570).',
+        timezoneFacts: 'Same timezone as Paris and Berlin. Strasbourg has alternated between French and German rule.',
+        bestTimeToVisit: 'May-September for warm weather. Christmas Market (late Nov-Dec) magical but crowded.',
+        businessHours: 'Shops 10 AM to 7 PM. Cathedral 7 AM to 7 PM. European Parliament tours by appointment.',
+        timeDifference: 'Strasbourg is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Christmas Market is Europe\'s oldest! Try tarte flambée and choucroute. Petite France most photogenic. Cathedral clock shows at 12:30 PM.',
+        transportation: 'Strasbourg Airport (SXB) 15km. Strasbourg TGV station. 1 hr 50 min from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Marché de Noël (Nov-Dec).'
+      }
     }
   },
   { slug: 'nantes', city: 'Nantes', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 47.22, lng: -1.55, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '320K', phoneCode: '+33 2', language: 'French',
+      currency: 'Euro', currencySymbol: '€', population: '0.32M', metroPopulation: '1.0M', phoneCode: '+33 2', language: 'French',
       climate: 'Oceanic with mild summers (18-24°C) and cool winters (4-10°C). Frequent rainfall, Atlantic influence.',
-      attractions: ['Les Machines de l\'île', 'Château des Ducs', 'Passage Pommeraye', 'Jardin des Plantes', 'Île de Versailles'],
-      demographics: 'Sixth-largest city in France, former Brittany capital. Creative hub famous for giant mechanical elephant, birthplace of Jules Verne.'
+      attractions: ['Les Machines de l\'île', 'Château des Ducs', 'Passage Pommeraye', 'Jardin des Plantes', 'Île de Versailles', 'Cathedral', 'Lieu Unique', 'Mémorial de l\'Abolition', 'Trentemoult', 'Le Voyage à Nantes'],
+      demographics: 'Birthplace of Jules Verne. Giant mechanical elephant. Creative arts hub. Former Brittany capital.',
+      seoContent: {
+        intro: 'Nantes, city of Jules Verne, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This creative city is famous for Les Machines de l\'île with its giant mechanical elephant, birthplace of Jules Verne, and voted France\'s most livable city.',
+        timezoneFacts: 'Same timezone as Paris. Nantes was historically capital of Brittany.',
+        bestTimeToVisit: 'May-September for best weather. Le Voyage à Nantes art trail (summer). Machines year-round.',
+        businessHours: 'Shops 10 AM to 7 PM. Machines de l\'île 10 AM to 6 PM (varies seasonally).',
+        timeDifference: 'Nantes is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Ride the Giant Elephant - book ahead! Passage Pommeraye beautiful arcade. Follow green line for Le Voyage à Nantes trail.',
+        transportation: 'Nantes Atlantique Airport (NTE) 10km. Nantes TGV station. 2.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Le Voyage à Nantes (July-August).'
+      }
     }
   },
   { slug: 'montpellier', city: 'Montpellier', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.61, lng: 3.88, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '295K', phoneCode: '+33 4', language: 'French',
+      currency: 'Euro', currencySymbol: '€', population: '0.3M', metroPopulation: '0.6M', phoneCode: '+33 4', language: 'French',
       climate: 'Mediterranean with hot dry summers (26-30°C) and mild winters (6-12°C). 300+ sunny days.',
-      attractions: ['Place de la Comédie', 'Fabre Museum', 'Promenade du Peyrou', 'St-Pierre Cathedral', 'Antigone District'],
-      demographics: 'Fastest-growing French city, major university center. Young, dynamic atmosphere near Mediterranean beaches.'
+      attractions: ['Place de la Comédie', 'Fabre Museum', 'Promenade du Peyrou', 'St-Pierre Cathedral', 'Antigone District', 'Écusson (Old Town)', 'Arc de Triomphe', 'Jardin des Plantes', 'Beaches', 'Palavas-les-Flots'],
+      demographics: 'Fastest-growing French city. Major university since 1220. Young, dynamic. Near Mediterranean beaches.',
+      seoContent: {
+        intro: 'Montpellier, France\'s fastest-growing city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This dynamic Mediterranean university city combines medieval charm with bold modern architecture, 300 days of sunshine, and nearby beaches.',
+        timezoneFacts: 'Same timezone as Paris. Montpellier has one of Europe\'s oldest universities (1220).',
+        bestTimeToVisit: 'April-October for best weather. Summer for beaches. Les Estivales wine festival (Friday evenings).',
+        businessHours: 'Shops 10 AM to 7 PM. Place de la Comédie cafés open late.',
+        timeDifference: 'Montpellier is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Écusson medieval center car-free. Beaches 15 min by tram. Antigone district bold postmodern. Les Estivales Friday evenings in summer.',
+        transportation: 'Montpellier Airport (MPL) 8km. Montpellier Saint-Roch TGV. 3.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Les Estivales (summer).'
+      }
     }
   },
   { slug: 'lille', city: 'Lille', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 50.63, lng: 3.06, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '235K', phoneCode: '+33 3', language: 'French, Picard',
+      currency: 'Euro', currencySymbol: '€', population: '0.24M', metroPopulation: '1.2M', phoneCode: '+33 3', language: 'French, Picard',
       climate: 'Oceanic with cool summers (16-22°C) and cold winters (2-7°C). Frequent rain and overcast skies.',
-      attractions: ['Palais des Beaux-Arts', 'Grand Place', 'Vieille Bourse', 'Citadelle', 'Braderie de Lille'],
-      demographics: 'Capital of French Flanders, major Eurostar hub. Flemish architecture, vibrant student life, famous flea market (Braderie).'
+      attractions: ['Palais des Beaux-Arts', 'Grand Place', 'Vieille Bourse', 'Citadelle', 'Braderie de Lille', 'Hospice Comtesse', 'Rue de la Monnaie', 'Wazemmes Market', 'La Piscine (Roubaix)', 'Beffroi'],
+      demographics: 'Capital of French Flanders. Major Eurostar hub. Flemish heritage. Europe\'s largest flea market.',
+      seoContent: {
+        intro: 'Lille, capital of French Flanders, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This vibrant Eurostar-connected city blends French and Flemish culture, hosts Europe\'s largest flea market (Braderie), and boasts excellent museums.',
+        timezoneFacts: 'Same timezone as Paris and Brussels. Lille is closer to Brussels and London than to Marseille.',
+        bestTimeToVisit: 'May-September for best weather. Braderie de Lille (first weekend September) unmissable.',
+        businessHours: 'Shops 10 AM to 7 PM. Grand Place restaurants until late. Braderie 24 hours!',
+        timeDifference: 'Lille is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Braderie (Sept) is Europe\'s largest flea market - arrive early! Try moules-frites and welsh. La Piscine museum in Roubaix stunning.',
+        transportation: 'Lille Airport (LIL) 15km. Lille-Flandres & Lille-Europe stations. Eurostar to London 1.5 hr.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Braderie de Lille (September).'
+      }
     }
   },
   { slug: 'rennes', city: 'Rennes', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.11, lng: -1.68, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '220K', phoneCode: '+33 2', language: 'French, Breton',
+      currency: 'Euro', currencySymbol: '€', population: '0.22M', metroPopulation: '0.75M', phoneCode: '+33 2', language: 'French, Breton',
       climate: 'Oceanic with mild summers (17-23°C) and cool winters (4-9°C). Frequent rain year-round.',
-      attractions: ['Parlement de Bretagne', 'Place des Lices', 'Thabor Garden', 'Portes Mordelaises', 'Les Champs Libres'],
-      demographics: 'Capital of Brittany, major tech hub (French Silicon Valley). Young university city, gateway to Breton culture.'
+      attractions: ['Parlement de Bretagne', 'Place des Lices', 'Thabor Garden', 'Portes Mordelaises', 'Les Champs Libres', 'Cathedral', 'Rue Saint-Michel', 'Opéra', 'Place Sainte-Anne', 'Colombier Park'],
+      demographics: 'Capital of Brittany. French tech hub. Young university city. Gateway to Breton culture.',
+      seoContent: {
+        intro: 'Rennes, capital of Brittany, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This dynamic tech hub blends medieval timber-framed houses with innovation, hosts one of France\'s largest markets, and is gateway to Celtic Brittany.',
+        timezoneFacts: 'Same timezone as Paris. Rennes is the gateway to Breton Celtic culture.',
+        bestTimeToVisit: 'May-September for best weather. Saturday market at Place des Lices year-round.',
+        businessHours: 'Shops 10 AM to 7 PM. Saturday market 7 AM to 1 PM.',
+        timeDifference: 'Rennes is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Saturday market at Place des Lices is France\'s second-largest! Try galettes (Breton crêpes). Gateway to Mont Saint-Michel.',
+        transportation: 'No major airport - Nantes 1.5 hr. Rennes TGV station. 1.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Les Transmusicales (December).'
+      }
     }
   },
   { slug: 'reims', city: 'Reims', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 49.25, lng: 4.03, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '185K', phoneCode: '+33 3', language: 'French',
-      climate: 'Oceanic with warm summers (18-25°C) and cold winters (1-6°C). Moderate rainfall.',
-      attractions: ['Reims Cathedral (UNESCO)', 'Palais du Tau', 'Champagne Houses', 'Basilica of Saint-Remi', 'Place Drouet d\'Erlon'],
-      demographics: 'Coronation city of French kings, capital of Champagne. UNESCO cathedral, major champagne production (Veuve Clicquot, Taittinger).'
+      currency: 'Euro', currencySymbol: '€', population: '0.19M', metroPopulation: '0.3M', phoneCode: '+33 3', language: 'French',
+      climate: 'Oceanic/Continental with warm summers (18-25°C) and cold winters (1-6°C). Moderate rainfall.',
+      attractions: ['Reims Cathedral', 'Palais du Tau', 'Champagne Houses', 'Basilica of Saint-Remi', 'Place Drouet d\'Erlon', 'Veuve Clicquot', 'Taittinger', 'Pommery', 'Musée des Beaux-Arts', 'Carnegie Library'],
+      demographics: 'Coronation city of French kings. Capital of Champagne. UNESCO cathedral. Major champagne houses.',
+      seoContent: {
+        intro: 'Reims, Coronation City, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This city crowned 33 French kings in its UNESCO Gothic cathedral and is capital of Champagne, home to Veuve Clicquot and Taittinger.',
+        timezoneFacts: 'Same timezone as Paris. Reims Cathedral is where Joan of Arc crowned Charles VII.',
+        bestTimeToVisit: 'May-October for best weather. Champagne harvest September. Christmas market.',
+        businessHours: 'Champagne houses 10 AM to 6 PM (book ahead). Cathedral 7:30 AM to 7:30 PM.',
+        timeDifference: 'Reims is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Book champagne house tours ahead! Cathedral smiling angel famous. Palais du Tau has coronation treasures.',
+        transportation: 'No major airport - Paris CDG 1.5 hr. Reims TGV station. 45 min from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Habits de Lumière (December).'
+      }
     }
   },
   { slug: 'toulon', city: 'Toulon', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.12, lng: 5.93, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '175K', phoneCode: '+33 4', language: 'French, Provençal',
-      climate: 'Mediterranean with hot dry summers (26-30°C) and mild winters (8-13°C). Very sunny.',
-      attractions: ['Toulon Harbour', 'Mont Faron', 'National Naval Museum', 'Opera House', 'Provençal Market'],
-      demographics: 'France\'s main naval base on Mediterranean. Historic military port, gateway to Côte d\'Azur and Provence.'
+      currency: 'Euro', currencySymbol: '€', population: '0.18M', metroPopulation: '0.6M', phoneCode: '+33 4', language: 'French, Provençal',
+      climate: 'Mediterranean with hot dry summers (26-30°C) and mild winters (8-13°C). Very sunny, 300+ days.',
+      attractions: ['Toulon Harbour', 'Mont Faron', 'National Naval Museum', 'Opera House', 'Provençal Market', 'Old Town', 'Tour Royale', 'Plages du Mourillon', 'Cable Car', 'Îles d\'Hyères nearby'],
+      demographics: 'France\'s main naval base. Mediterranean port. Gateway to Côte d\'Azur and Provence. Rugby city.',
+      seoContent: {
+        intro: 'Toulon, France\'s naval capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Mediterranean port houses France\'s main naval fleet, features a beautiful harbor, and serves as gateway to the stunning Îles d\'Hyères.',
+        timezoneFacts: 'Same timezone as Paris. Toulon has been France\'s main naval base since Louis XIV.',
+        bestTimeToVisit: 'May-October for best weather. Avoid August crowds.',
+        businessHours: 'Provençal market 8 AM to 12:30 PM. Cable car to Mont Faron 9 AM to 6 PM.',
+        timeDifference: 'Toulon is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Mont Faron cable car for views! Ferry to Îles d\'Hyères. Mourillon beaches best. Naval Museum impressive.',
+        transportation: 'Toulon-Hyères Airport (TLN) 20km. Toulon station. 4 hr from Paris by TGV.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays.'
+      }
     }
   },
   { slug: 'grenoble', city: 'Grenoble', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 45.19, lng: 5.72, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '160K', phoneCode: '+33 4', language: 'French',
+      currency: 'Euro', currencySymbol: '€', population: '0.16M', metroPopulation: '0.7M', phoneCode: '+33 4', language: 'French',
       climate: 'Semi-continental with warm summers (20-28°C) and cold winters (-1 to 6°C). Alpine valley, can be foggy.',
-      attractions: ['Bastille Fortress', 'Grenoble-Bastille Cable Car', 'Musée de Grenoble', 'Place Grenette', 'Chartreuse Mountains'],
-      demographics: 'Capital of French Alps, major research and tech hub. Gateway to ski resorts, hosted 1968 Winter Olympics.'
+      attractions: ['Bastille Fortress', 'Grenoble-Bastille Cable Car', 'Musée de Grenoble', 'Place Grenette', 'Chartreuse Mountains', 'Belledonne Range', 'Old Town', 'Jardin de Ville', 'Musée Dauphinois', 'Fort de la Bastille'],
+      demographics: 'Capital of French Alps. Major research hub. 1968 Winter Olympics. Gateway to ski resorts.',
+      seoContent: {
+        intro: 'Grenoble, capital of the French Alps, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This mountain-ringed city hosted the 1968 Winter Olympics, is a major research hub, and offers year-round access to world-class skiing and hiking.',
+        timezoneFacts: 'Same timezone as Paris. Grenoble is surrounded by three mountain ranges.',
+        bestTimeToVisit: 'December-April for skiing. June-September for hiking. Summer can be hot in valley.',
+        businessHours: 'Shops 10 AM to 7 PM. Cable car 9 AM to midnight (summer). Ski resorts 9 AM to 5 PM.',
+        timeDifference: 'Grenoble is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Bastille cable car (bubbles) iconic! Alpe d\'Huez, Les Deux Alpes nearby. Valley foggy while mountains sunny.',
+        transportation: 'Grenoble-Alpes-Isère Airport (GNB) 40km. Lyon (LYS) 1 hr. Grenoble station. 3 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Mountain rescue: 112.',
+        publicHolidays: 'French national holidays. Ski season December-April.'
+      }
     }
   },
   { slug: 'dijon', city: 'Dijon', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 47.32, lng: 5.04, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '160K', phoneCode: '+33 3', language: 'French',
-      climate: 'Oceanic/Continental with warm summers (19-26°C) and cold winters (0-6°C). Four distinct seasons.',
-      attractions: ['Palace of the Dukes', 'Notre-Dame de Dijon', 'Owl Trail', 'Musée des Beaux-Arts', 'Burgundy vineyards'],
-      demographics: 'Capital of Burgundy, famous for mustard and wine. Historic Dukes\' palace, gateway to Côte d\'Or vineyards.'
+      currency: 'Euro', currencySymbol: '€', population: '0.16M', metroPopulation: '0.4M', phoneCode: '+33 3', language: 'French',
+      climate: 'Continental with warm summers (19-26°C) and cold winters (0-6°C). Four distinct seasons.',
+      attractions: ['Palace of the Dukes', 'Notre-Dame de Dijon', 'Owl Trail', 'Musée des Beaux-Arts', 'Burgundy Vineyards', 'Halles Market', 'Chouette Owl', 'Parc de l\'Arquebuse', 'Chartreuse de Champmol', 'Cité de la Gastronomie'],
+      demographics: 'Capital of Burgundy. Famous for mustard and wine. Historic Dukes\' palace. UNESCO vineyard gateway.',
+      seoContent: {
+        intro: 'Dijon, capital of Burgundy, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This gastronomic city is famous for mustard, serves as gateway to UNESCO Burgundy vineyards, and features a stunning Dukes\' Palace now housing a world-class art museum.',
+        timezoneFacts: 'Same timezone as Paris. Dijon mustard has been made here since the 13th century.',
+        bestTimeToVisit: 'May-October for best weather. Wine harvest September. Gastronomic Fair (November).',
+        businessHours: 'Shops 10 AM to 7 PM. Halles Market Tuesday, Thursday, Friday, Saturday mornings.',
+        timeDifference: 'Dijon is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Follow the Owl Trail (52 bronze owls)! Touch the chouette owl for luck. Maille mustard shop. Route des Grands Crus wine route.',
+        transportation: 'Dijon-Bourgogne Airport (DIJ) limited. Dijon-Ville TGV station. 1.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Foire Gastronomique (November).'
+      }
     }
   },
   { slug: 'angers', city: 'Angers', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 47.47, lng: -0.56, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '155K', phoneCode: '+33 2', language: 'French',
-      climate: 'Oceanic with mild summers (18-24°C) and cool winters (4-9°C). Moderate rainfall, Loire Valley influence.',
-      attractions: ['Château d\'Angers', 'Apocalypse Tapestry', 'Cathédrale Saint-Maurice', 'Terra Botanica', 'Cointreau Distillery'],
-      demographics: 'Historic Anjou capital in Loire Valley. Houses world\'s largest medieval tapestry, gateway to Loire châteaux.'
+      currency: 'Euro', currencySymbol: '€', population: '0.16M', metroPopulation: '0.42M', phoneCode: '+33 2', language: 'French',
+      climate: 'Oceanic with mild summers (18-24°C) and cool winters (4-9°C). Moderate rainfall, Loire Valley.',
+      attractions: ['Château d\'Angers', 'Apocalypse Tapestry', 'Cathédrale Saint-Maurice', 'Terra Botanica', 'Cointreau Distillery', 'Maison d\'Adam', 'Jardin des Plantes', 'Musée Jean-Lurçat', 'Place du Ralliement', 'Loire Valley Châteaux'],
+      demographics: 'Historic Anjou capital. World\'s largest medieval tapestry. Gateway to Loire châteaux. Cointreau home.',
+      seoContent: {
+        intro: 'Angers, heart of Anjou, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This Loire Valley city houses the world\'s largest medieval tapestry (Apocalypse), serves as gateway to famous châteaux, and is birthplace of Cointreau liqueur.',
+        timezoneFacts: 'Same timezone as Paris. Angers\' Apocalypse Tapestry dates from 1377.',
+        bestTimeToVisit: 'May-September for best weather. Loire Valley châteaux spring-autumn.',
+        businessHours: 'Château d\'Angers 10 AM to 6 PM. Cointreau tours by appointment.',
+        timeDifference: 'Angers is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Apocalypse Tapestry is 104m long - incredible! Cointreau distillery tour. Gateway to Saumur, Chinon, Amboise.',
+        transportation: 'Angers Loire Airport (ANE) limited. Angers Saint-Laud TGV. 1.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Anjou Festival (July).'
+      }
     }
   },
   { slug: 'saint-etienne', city: 'Saint-Étienne', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 45.44, lng: 4.39, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '175K', phoneCode: '+33 4', language: 'French',
+      currency: 'Euro', currencySymbol: '€', population: '0.18M', metroPopulation: '0.52M', phoneCode: '+33 4', language: 'French',
       climate: 'Semi-continental with warm summers (20-26°C) and cold winters (0-6°C). Higher elevation, occasional snow.',
-      attractions: ['Musée d\'Art Moderne', 'Cité du Design', 'Musée de la Mine', 'Geoffroy-Guichard Stadium', 'Pilat Regional Park'],
-      demographics: 'UNESCO City of Design, former mining and manufacturing center. Transformed into design and innovation hub.'
+      attractions: ['Musée d\'Art Moderne', 'Cité du Design', 'Musée de la Mine', 'Geoffroy-Guichard Stadium', 'Pilat Regional Park', 'Place Jean Jaurès', 'Old Town', 'Planétarium', 'Manufacture d\'Armes', 'MUSIC museum'],
+      demographics: 'UNESCO City of Design. Former mining and arms manufacturing. AS Saint-Étienne football. Design hub.',
+      seoContent: {
+        intro: 'Saint-Étienne, UNESCO City of Design, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This former industrial powerhouse reinvented itself as a design and innovation capital, featuring excellent museums and access to Pilat Natural Park.',
+        timezoneFacts: 'Same timezone as Paris. Saint-Étienne was once France\'s arms manufacturing capital.',
+        bestTimeToVisit: 'May-September for best weather. Design Biennale (odd years).',
+        businessHours: 'Cité du Design 10 AM to 6 PM. Musée de la Mine 9 AM to 6 PM.',
+        timeDifference: 'Saint-Étienne is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Cité du Design in former arms factory. Mine museum goes underground. Pilat park for hiking.',
+        transportation: 'No major airport - Lyon (LYS) 1 hr. Saint-Étienne-Châteaucreux TGV. 2.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Design Biennale (March, odd years).'
+      }
     }
   },
   { slug: 'le-havre', city: 'Le Havre', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 49.49, lng: 0.11, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '170K', phoneCode: '+33 2', language: 'French',
-      climate: 'Oceanic with cool summers (16-21°C) and mild winters (4-8°C). Windy, frequent rain, Channel influence.',
-      attractions: ['UNESCO City Center', 'MuMa (André Malraux Museum)', 'Église Saint-Joseph', 'Les Jardins Suspendus', 'Beach'],
-      demographics: 'France\'s second-largest port, UNESCO World Heritage. Rebuilt by Auguste Perret after WWII, concrete modernist masterpiece.'
+      currency: 'Euro', currencySymbol: '€', population: '0.17M', metroPopulation: '0.29M', phoneCode: '+33 2', language: 'French',
+      climate: 'Oceanic with cool summers (16-21°C) and mild winters (4-8°C). Windy, frequent rain, Channel coast.',
+      attractions: ['UNESCO City Center', 'MuMa (André Malraux Museum)', 'Église Saint-Joseph', 'Les Jardins Suspendus', 'Beach', 'Volcan (Niemeyer)', 'Appartement Témoin', 'Port', 'Sainte-Adresse', 'Étretat nearby'],
+      demographics: 'France\'s second-largest port. UNESCO World Heritage. Rebuilt by Auguste Perret. Modernist masterpiece.',
+      seoContent: {
+        intro: 'Le Havre, UNESCO concrete city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This city was rebuilt by Auguste Perret after WWII and is now a UNESCO World Heritage site showcasing remarkable modernist concrete architecture.',
+        timezoneFacts: 'Same timezone as Paris. Le Havre was 80% destroyed in WWII.',
+        bestTimeToVisit: 'May-September for best weather. Un Été Au Havre summer festival.',
+        businessHours: 'MuMa 11 AM to 6 PM. Appartement Témoin tours limited.',
+        timeDifference: 'Le Havre is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Saint-Joseph church tower stunning! Appartement Témoin shows 1950s living. Étretat cliffs 30 min away - essential visit.',
+        transportation: 'No major airport - Paris 2.5 hr. Le Havre station. 2 hr from Paris Saint-Lazare.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Un Été Au Havre (summer).'
+      }
     }
   },
   { slug: 'clermont-ferrand', city: 'Clermont-Ferrand', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 45.78, lng: 3.08, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '145K', phoneCode: '+33 4', language: 'French',
+      currency: 'Euro', currencySymbol: '€', population: '0.15M', metroPopulation: '0.49M', phoneCode: '+33 4', language: 'French',
       climate: 'Semi-continental with warm summers (20-27°C) and cold winters (-1 to 6°C). Sheltered by volcanic mountains.',
-      attractions: ['Clermont-Ferrand Cathedral', 'Place de Jaude', 'Puy de Dôme', 'Vulcania', 'ASM Rugby Experience'],
-      demographics: 'Auvergne capital, global headquarters of Michelin tires. Black lava stone cathedral, gateway to volcanic Chaîne des Puys.'
+      attractions: ['Clermont-Ferrand Cathedral', 'Place de Jaude', 'Puy de Dôme', 'Vulcania', 'ASM Rugby Experience', 'Notre-Dame du Port', 'Montferrand Old Town', 'Parc Bargoin', 'Lecoq Garden', 'Chaîne des Puys'],
+      demographics: 'Auvergne capital. Michelin headquarters. Black lava cathedral. Gateway to UNESCO volcanoes.',
+      seoContent: {
+        intro: 'Clermont-Ferrand, city of volcanoes, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This city is global headquarters of Michelin tires, features a striking black lava stone cathedral, and serves as gateway to the UNESCO Chaîne des Puys volcanic chain.',
+        timezoneFacts: 'Same timezone as Paris. Clermont-Ferrand\'s cathedral is built from local black volcanic rock.',
+        bestTimeToVisit: 'May-September for volcano hiking. Short Film Festival (February). Rugby season.',
+        businessHours: 'Vulcania 10 AM to 6 PM (seasonal). Puy de Dôme cogwheel 9 AM to 7 PM (summer).',
+        timeDifference: 'Clermont-Ferrand is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Puy de Dôme views stunning - take cogwheel train! Vulcania theme park fun. Black cathedral unique. Try truffade and Saint-Nectaire cheese.',
+        transportation: 'Clermont-Ferrand Airport (CFE) 7km. Clermont-Ferrand station. 3.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Short Film Festival (February).'
+      }
     }
   },
   { slug: 'aix-en-provence', city: 'Aix-en-Provence', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.53, lng: 5.45, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '145K', phoneCode: '+33 4', language: 'French, Provençal',
+      currency: 'Euro', currencySymbol: '€', population: '0.15M', metroPopulation: '0.4M', phoneCode: '+33 4', language: 'French, Provençal',
       climate: 'Mediterranean with hot dry summers (27-32°C) and mild winters (6-12°C). Very sunny, mistral wind.',
-      attractions: ['Cours Mirabeau', 'Cathédrale Saint-Sauveur', 'Cézanne\'s Studio', 'Fontaine de la Rotonde', 'Quartier Mazarin'],
-      demographics: 'Historic Provence capital, city of fountains and art. Birthplace of Cézanne, major university and festival town.'
+      attractions: ['Cours Mirabeau', 'Cathédrale Saint-Sauveur', 'Cézanne\'s Studio', 'Fontaine de la Rotonde', 'Quartier Mazarin', 'Montagne Sainte-Victoire', 'Granet Museum', 'Hôtel de Caumont', 'Markets', 'Thermal Baths'],
+      demographics: 'Historic Provence capital. City of fountains. Birthplace of Cézanne. Major festival town.',
+      seoContent: {
+        intro: 'Aix-en-Provence, city of a thousand fountains, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This elegant Provençal city is birthplace of painter Cézanne, famous for its plane tree-lined boulevards, and hosts one of Europe\'s finest classical music festivals.',
+        timezoneFacts: 'Same timezone as Paris. Aix was capital of Provence for nearly 500 years.',
+        bestTimeToVisit: 'April-October for best weather. Festival d\'Aix (July) for opera. Markets year-round.',
+        businessHours: 'Shops 10 AM to 7 PM. Cézanne Studio 10 AM to 6 PM. Markets daily mornings.',
+        timeDifference: 'Aix is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Cézanne trail follows artist\'s footsteps. Cours Mirabeau perfect for café sitting. Sainte-Victoire mountain inspired Cézanne. Try calissons.',
+        transportation: 'Marseille Airport (MRS) 30 min. Aix-en-Provence TGV station. 3 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Festival d\'Aix (July).'
+      }
     }
   },
   { slug: 'nancy', city: 'Nancy', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.69, lng: 6.18, tier: 2, continent: 'europe',
     info: {
-      currency: 'Euro', currencySymbol: '€', population: '105K', phoneCode: '+33 3', language: 'French',
+      currency: 'Euro', currencySymbol: '€', population: '0.11M', metroPopulation: '0.44M', phoneCode: '+33 3', language: 'French',
       climate: 'Semi-continental with warm summers (18-25°C) and cold winters (0-5°C). Moderate rainfall.',
-      attractions: ['Place Stanislas (UNESCO)', 'Musée de l\'École de Nancy', 'Parc de la Pépinière', 'Ducal Palace', 'Porte de la Craffe'],
-      demographics: 'Capital of Lorraine with UNESCO World Heritage square. Art Nouveau capital (École de Nancy), elegant 18th-century architecture.'
+      attractions: ['Place Stanislas', 'Musée de l\'École de Nancy', 'Parc de la Pépinière', 'Ducal Palace', 'Porte de la Craffe', 'Arc Héré', 'Musée des Beaux-Arts', 'Villa Majorelle', 'Saint-Epvre Basilica', 'Place de la Carrière'],
+      demographics: 'Capital of Lorraine. UNESCO World Heritage square. Art Nouveau capital (École de Nancy).',
+      seoContent: {
+        intro: 'Nancy, Art Nouveau capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This elegant city boasts UNESCO\'s most beautiful square (Place Stanislas), pioneered Art Nouveau design, and features stunning 18th-century Baroque architecture.',
+        timezoneFacts: 'Same timezone as Paris. Place Stanislas is named after the last Duke of Lorraine.',
+        bestTimeToVisit: 'May-September for best weather. Place Stanislas summer light shows. Christmas market.',
+        businessHours: 'Musée de l\'École de Nancy 10 AM to 6 PM. Place Stanislas accessible 24/7.',
+        timeDifference: 'Nancy is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Place Stanislas at night is magical - light show! École de Nancy museum in beautiful villa. Bergamot candy is local specialty.',
+        transportation: 'No major airport - Metz 1 hr. Nancy TGV station. 1.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Rendez-vous Place Stanislas (summer).'
+      }
+    }
+  },
+  
+  // France - Additional Premium Tourist Cities
+  { slug: 'avignon', city: 'Avignon', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.95, lng: 4.81, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.09M', metroPopulation: '0.53M', phoneCode: '+33 4', language: 'French, Provençal',
+      climate: 'Mediterranean with hot summers (27-32°C) and mild winters (5-11°C). Mistral wind, very sunny.',
+      attractions: ['Palais des Papes', 'Pont d\'Avignon', 'Rocher des Doms', 'Place de l\'Horloge', 'Ramparts', 'Petit Palais', 'Rue des Teinturiers', 'Collection Lambert', 'Villeneuve-lès-Avignon', 'Provence villages'],
+      demographics: 'City of Popes. UNESCO World Heritage. Famous theatre festival. Gateway to Provence.',
+      seoContent: {
+        intro: 'Avignon, City of Popes, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city was seat of the Catholic papacy in the 14th century, features the largest Gothic palace ever built (Palais des Papes), and hosts the world\'s greatest theatre festival.',
+        timezoneFacts: 'Same timezone as Paris. Seven popes ruled from Avignon from 1309 to 1377.',
+        bestTimeToVisit: 'April-October for best weather. Festival d\'Avignon (July) - book months ahead!',
+        businessHours: 'Palais des Papes 9 AM to 7 PM. Festival venues July evenings.',
+        timeDifference: 'Avignon is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Festival d\'Avignon (July) transforms city - book early! Pont d\'Avignon only goes halfway. Châteauneuf-du-Pape nearby.',
+        transportation: 'Avignon-Provence TGV station 6km. Marseille (MRS) 1 hr. 2.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Festival d\'Avignon (July).'
+      }
+    }
+  },
+  { slug: 'cannes', city: 'Cannes', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.55, lng: 7.02, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.07M', metroPopulation: '0.2M', phoneCode: '+33 4', language: 'French',
+      climate: 'Mediterranean with hot summers (26-30°C) and mild winters (9-14°C). 300 days of sunshine.',
+      attractions: ['La Croisette', 'Palais des Festivals', 'Le Suquet', 'Îles de Lérins', 'Marché Forville', 'Port Vieux', 'Rue d\'Antibes', 'Plage de la Croisette', 'Musée de la Castre', 'Red Carpet Steps'],
+      demographics: 'Home of Cannes Film Festival. Côte d\'Azur glamour. Luxury shopping. Yacht harbor.',
+      seoContent: {
+        intro: 'Cannes, glamour capital of the Côte d\'Azur, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. World-famous for its annual Film Festival, this resort city features the legendary La Croisette promenade and stunning beaches.',
+        timezoneFacts: 'Same timezone as Paris. Cannes Film Festival started in 1946.',
+        bestTimeToVisit: 'May-September for beach. Film Festival mid-May. Avoid August crowds.',
+        businessHours: 'Beaches 9 AM to 7 PM. Rue d\'Antibes shops 10 AM to 7 PM.',
+        timeDifference: 'Cannes is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Film Festival mostly industry but red carpet viewable. Île Sainte-Marguerite has Man in Iron Mask prison. Public beaches between private ones.',
+        transportation: 'Nice Côte d\'Azur Airport (NCE) 25km. Cannes station. 5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Cannes Film Festival (May).'
+      }
+    }
+  },
+  { slug: 'monaco', city: 'Monaco', timezone: 'Europe/Paris', country: 'Monaco', countryCode: 'MC', lat: 43.73, lng: 7.42, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.04M', metroPopulation: '0.04M', phoneCode: '+377', language: 'French, Monégasque',
+      climate: 'Mediterranean with warm summers (24-28°C) and mild winters (10-14°C). Very sunny, protected from mistral.',
+      attractions: ['Monte Carlo Casino', 'Prince\'s Palace', 'Monaco Grand Prix Circuit', 'Oceanographic Museum', 'Monaco Cathedral', 'Jardin Exotique', 'La Condamine', 'Larvotto Beach', 'Fontvieille', 'Old Monaco'],
+      demographics: 'Independent principality. Tax haven. F1 Grand Prix. World\'s second smallest country. Grimaldi royal family.',
+      seoContent: {
+        intro: 'Monaco, the glamorous principality, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. The world\'s second-smallest country packs in a famous casino, F1 Grand Prix, the Grimaldi royal family, and more millionaires per capita than anywhere on Earth.',
+        timezoneFacts: 'Same timezone as Paris. Monaco is an independent principality, not part of France.',
+        bestTimeToVisit: 'April-October for best weather. F1 Grand Prix (late May). Yacht Show (September).',
+        businessHours: 'Casino opens 2 PM (gaming). Palace 10 AM to 5 PM. Oceanographic Museum 10 AM to 6 PM.',
+        timeDifference: 'Monaco is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'Monaco observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Casino requires smart dress. Grand Prix week book year ahead. Changing of Guard at Palace 11:55 AM. Walk the F1 circuit any day.',
+        transportation: 'Nice Airport (NCE) 22km. Monaco-Monte Carlo station. Helicopter from Nice.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. Ambulance: 9375 2525.',
+        publicHolidays: 'Monaco holidays. National Day (November 19). F1 Grand Prix (May).'
+      }
+    }
+  },
+  { slug: 'saint-tropez', city: 'Saint-Tropez', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.27, lng: 6.64, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.004M', metroPopulation: '0.01M', phoneCode: '+33 4', language: 'French',
+      climate: 'Mediterranean with hot summers (27-30°C) and mild winters (9-14°C). Very sunny, sheltered.',
+      attractions: ['Port de Saint-Tropez', 'Place des Lices', 'Pampelonne Beach', 'Citadelle', 'Musée de l\'Annonciade', 'La Ponche', 'Club 55', 'Vieux Port', 'Sentier du Littoral', 'Ramatuelle'],
+      demographics: 'Legendary Riviera resort. Brigitte Bardot made it famous. Yacht spotting. Beach clubs.',
+      seoContent: {
+        intro: 'Saint-Tropez, the legendary Riviera village, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. Brigitte Bardot put this fishing village on the map in the 1950s, and it remains the ultimate Mediterranean playground for the jet set.',
+        timezoneFacts: 'Same timezone as Paris. Brigitte Bardot\'s "And God Created Woman" (1956) launched Saint-Tropez.',
+        bestTimeToVisit: 'May-September for beach. August extremely crowded. May-June and September best.',
+        businessHours: 'Beach clubs 10 AM to sunset. Place des Lices market Tuesday and Saturday.',
+        timeDifference: 'Saint-Tropez is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Book beach clubs ahead in summer. Port yacht-watching is free! Avoid August unless you love crowds.',
+        transportation: 'No airport - Toulon-Hyères (TLN) 1 hr. No train - bus or boat from Saint-Raphaël.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Les Voiles de Saint-Tropez (September-October).'
+      }
+    }
+  },
+  { slug: 'biarritz', city: 'Biarritz', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.48, lng: -1.56, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.03M', metroPopulation: '0.13M', phoneCode: '+33 5', language: 'French, Basque',
+      climate: 'Oceanic with mild summers (20-25°C) and mild winters (8-13°C). Atlantic influence, can be rainy.',
+      attractions: ['Grande Plage', 'Rocher de la Vierge', 'Phare de Biarritz', 'Côte des Basques', 'Aquarium', 'Port Vieux', 'Hôtel du Palais', 'Chapelle Impériale', 'Casino', 'Surf beaches'],
+      demographics: 'Elegant Basque coast resort. Napoleon III\'s favorite. Europe\'s surf capital. Basque culture.',
+      seoContent: {
+        intro: 'Biarritz, Europe\'s surf capital, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This elegant Basque coast resort was beloved by Napoleon III and Empress Eugénie, and now attracts surfers from around the world.',
+        timezoneFacts: 'Same timezone as Paris. Empress Eugénie built Hôtel du Palais as her summer residence.',
+        bestTimeToVisit: 'May-October for best weather. Surfing year-round. July-August crowded.',
+        businessHours: 'Beaches 24/7. Aquarium 9:30 AM to 7 PM.',
+        timeDifference: 'Biarritz is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Côte des Basques is surf beach. Grande Plage for swimming. San Sebastián (Spain) 45 min. Try Basque pintxos!',
+        transportation: 'Biarritz Airport (BIQ) 5km. Biarritz station. 4.5 hr from Paris by TGV.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Surf festivals.'
+      }
+    }
+  },
+  { slug: 'colmar', city: 'Colmar', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.08, lng: 7.36, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.07M', metroPopulation: '0.13M', phoneCode: '+33 3', language: 'French, Alsatian',
+      climate: 'Continental with warm summers (19-26°C) and cold winters (-1 to 5°C). One of France\'s driest cities.',
+      attractions: ['Petite Venise', 'Maison des Têtes', 'Musée Unterlinden', 'Maison Pfister', 'Koïfhus', 'Place de l\'Ancienne Douane', 'Isenheim Altarpiece', 'Covered Market', 'Bartholdi Museum', 'Alsace Wine Route'],
+      demographics: 'Most Alsatian city. Petite Venise canals. Statue of Liberty sculptor\'s birthplace. Wine capital.',
+      seoContent: {
+        intro: 'Colmar, capital of Alsatian wine, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This fairy-tale town features picture-perfect Petite Venise, is birthplace of Statue of Liberty sculptor Bartholdi, and houses the masterpiece Isenheim Altarpiece.',
+        timezoneFacts: 'Same timezone as Paris. Colmar is one of the driest cities in France.',
+        bestTimeToVisit: 'April-October for best weather. Christmas Market magical. Wine harvest September.',
+        businessHours: 'Musée Unterlinden 9 AM to 6 PM. Christmas Market 10 AM to 8 PM.',
+        timeDifference: 'Colmar is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Isenheim Altarpiece is masterpiece! Petite Venise boat rides charming. Try tarte flambée and gewürztraminer.',
+        transportation: 'Basel-Mulhouse Airport (BSL) 1 hr. Colmar station. 2.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Marché de Noël (Nov-Dec).'
+      }
+    }
+  },
+  { slug: 'carcassonne', city: 'Carcassonne', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.21, lng: 2.35, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.05M', metroPopulation: '0.11M', phoneCode: '+33 4', language: 'French, Occitan',
+      climate: 'Mediterranean with hot summers (25-30°C) and mild winters (5-11°C). Can be windy.',
+      attractions: ['La Cité (UNESCO)', 'Château Comtal', 'Basilique Saint-Nazaire', 'Ramparts Walk', 'Canal du Midi', 'Ville Basse', 'Porte Narbonnaise', 'Pont Vieux', 'Musée de l\'Inquisition', 'Cathar Country'],
+      demographics: 'Europe\'s largest medieval fortress. UNESCO World Heritage. Cathar history. Cassoulet capital.',
+      seoContent: {
+        intro: 'Carcassonne, Europe\'s largest medieval fortress, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO citadel with 52 towers and double walls transports you to the Middle Ages and is the heartland of Cathar history.',
+        timezoneFacts: 'Same timezone as Paris. Carcassonne\'s walls have protected the city for over 2,500 years.',
+        bestTimeToVisit: 'April-October for best weather. Bastille Day fireworks (July 14) spectacular.',
+        businessHours: 'Château Comtal 10 AM to 6 PM. La Cité open 24/7.',
+        timeDifference: 'Carcassonne is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Stay inside La Cité for atmosphere! July 14 fireworks famous. Cassoulet is local specialty. Canal du Midi UNESCO too.',
+        transportation: 'Carcassonne Airport (CCF) 4km. Carcassonne station. 1 hr from Toulouse.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Festival de Carcassonne (July).'
+      }
+    }
+  },
+  { slug: 'arles', city: 'Arles', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 43.68, lng: 4.63, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.05M', metroPopulation: '0.09M', phoneCode: '+33 4', language: 'French, Provençal',
+      climate: 'Mediterranean with hot summers (27-32°C) and mild winters (5-12°C). Mistral wind, very sunny.',
+      attractions: ['Roman Amphitheatre', 'Théâtre Antique', 'Church of St Trophime', 'Van Gogh Trail', 'Fondation Vincent van Gogh', 'Luma Arles', 'Alyscamps', 'Place du Forum', 'Camargue Gateway', 'Les Rencontres'],
+      demographics: 'UNESCO Roman and Romanesque. Van Gogh lived here. Gateway to Camargue. Photography capital.',
+      seoContent: {
+        intro: 'Arles, Van Gogh\'s Provence, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO city inspired over 300 Van Gogh paintings, features stunning Roman monuments, and serves as gateway to the wild Camargue.',
+        timezoneFacts: 'Same timezone as Paris. Van Gogh painted 300+ works in Arles in just 15 months.',
+        bestTimeToVisit: 'April-October for best weather. Les Rencontres photo festival (July-Sept).',
+        businessHours: 'Roman sites 9 AM to 6 PM. Fondation Van Gogh 10 AM to 6 PM.',
+        timeDifference: 'Arles is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Van Gogh trail shows painting locations! Amphitheatre has bullfights (bloodless). Camargue white horses nearby. Luma tower by Gehry.',
+        transportation: 'Marseille Airport (MRS) 1 hr. Arles station. 4 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Les Rencontres (July-September).'
+      }
+    }
+  },
+  { slug: 'mont-saint-michel', city: 'Mont-Saint-Michel', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.64, lng: -1.51, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.00003M', metroPopulation: '0.001M', phoneCode: '+33 2', language: 'French',
+      climate: 'Oceanic with mild summers (16-21°C) and cool winters (5-10°C). Dramatic tides, often misty.',
+      attractions: ['Abbey', 'Grande Rue', 'Ramparts', 'Tidal Bay', 'La Mère Poulard', 'Musée Maritime', 'Gardens', 'Night Illuminations', 'Bay Walks', 'Scriptorial d\'Avranches'],
+      demographics: 'France\'s most iconic monument. UNESCO World Heritage. Benedictine abbey. Europe\'s highest tides.',
+      seoContent: {
+        intro: 'Mont-Saint-Michel, France\'s marvel, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO island abbey rises dramatically from tidal flats, experiences Europe\'s highest tides, and has been a pilgrimage site for over 1,000 years.',
+        timezoneFacts: 'Same timezone as Paris. Tides here can reach 14 meters - Europe\'s highest.',
+        bestTimeToVisit: 'May-September for best weather. Off-season for fewer crowds. Check tide times.',
+        businessHours: 'Abbey 9 AM to 7 PM (summer). Island accessible 24/7.',
+        timeDifference: 'Mont-Saint-Michel is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Stay overnight for no crowds! Check tide times. Bay walks with guide only. Omelettes at La Mère Poulard famous.',
+        transportation: 'Rennes (1.5 hr) or Saint-Malo (1 hr). Shuttle bus from parking. No direct train.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Night illuminations summer.'
+      }
+    }
+  },
+  { slug: 'saint-malo', city: 'Saint-Malo', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.65, lng: -2.00, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.05M', metroPopulation: '0.08M', phoneCode: '+33 2', language: 'French, Breton',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (6-10°C). Can be windy, dramatic tides.',
+      attractions: ['Intra-Muros', 'Ramparts Walk', 'Grande Plage', 'Fort National', 'Cathédrale Saint-Vincent', 'Grand Aquarium', 'Île du Grand Bé', 'Château de Saint-Malo', 'Demeure de Corsaire', 'Dinard'],
+      demographics: 'Corsair city. Walled old town rebuilt after WWII. Gateway to Channel Islands. Dramatic tides.',
+      seoContent: {
+        intro: 'Saint-Malo, corsair city, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This walled port city was rebuilt stone-by-stone after WWII, has dramatic tides revealing walking paths to islands, and was home to legendary privateers.',
+        timezoneFacts: 'Same timezone as Paris. Saint-Malo privateers were pirates with royal permission.',
+        bestTimeToVisit: 'May-September for best weather. Check tide times for island walks.',
+        businessHours: 'Ramparts accessible 24/7. Grand Aquarium 10 AM to 6 PM.',
+        timeDifference: 'Saint-Malo is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Walk ramparts for full circuit! At low tide walk to Fort National. Ferries to Jersey and Guernsey.',
+        transportation: 'Dinard-Pleurtuit Airport (DNR) 15km. Saint-Malo station. 2.5 hr from Paris.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Étonnants Voyageurs (May).'
+      }
+    }
+  },
+  { slug: 'chamonix', city: 'Chamonix', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 45.92, lng: 6.87, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+33 4', language: 'French',
+      climate: 'Alpine with cool summers (12-22°C) and cold winters (-5 to 3°C). Snow December-April.',
+      attractions: ['Aiguille du Midi', 'Mont Blanc', 'Mer de Glace', 'Vallée Blanche', 'Montenvers Railway', 'Chamonix town', 'Ski areas', 'Lac Blanc', 'Paragliding', 'UTMB trail'],
+      demographics: 'Birthplace of alpinism. Mont Blanc gateway. Legendary skiing. UTMB ultramarathon.',
+      seoContent: {
+        intro: 'Chamonix, birthplace of alpinism, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This legendary mountain resort sits at the foot of Mont Blanc, hosted the first Winter Olympics (1924), and offers world-class skiing and mountaineering.',
+        timezoneFacts: 'Same timezone as Paris. First Winter Olympics held here in 1924.',
+        bestTimeToVisit: 'December-April for skiing. June-September for hiking. Aiguille du Midi year-round.',
+        businessHours: 'Aiguille du Midi cable car 8 AM to 4 PM. Ski lifts 9 AM to 4:30 PM.',
+        timeDifference: 'Chamonix is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Aiguille du Midi to 3,842m - dress warmly! Book ahead in season. UTMB (August) world\'s greatest ultramarathon.',
+        transportation: 'Geneva Airport (GVA) 1 hr. Chamonix-Mont-Blanc station. Bus from Geneva.',
+        emergencyNumbers: 'Emergency: 112. Mountain rescue: 112. PGHM: 04 50 53 16 89.',
+        publicHolidays: 'French national holidays. UTMB (August). Ski season Dec-Apr.'
+      }
+    }
+  },
+  { slug: 'versailles', city: 'Versailles', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 48.80, lng: 2.13, tier: 2, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.09M', metroPopulation: '0.09M', phoneCode: '+33 1', language: 'French',
+      climate: 'Oceanic with mild summers (18-25°C) and cool winters (2-7°C). Similar to Paris.',
+      attractions: ['Palace of Versailles', 'Hall of Mirrors', 'Gardens', 'Grand Trianon', 'Petit Trianon', 'Marie Antoinette\'s Estate', 'Musical Fountains', 'Grand Canal', 'Orangerie', 'Town of Versailles'],
+      demographics: 'Sun King\'s palace. UNESCO World Heritage. French Revolution starting point. Musical fountains.',
+      seoContent: {
+        intro: 'Versailles, the Sun King\'s palace, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This UNESCO masterpiece was Louis XIV\'s residence, featuring the Hall of Mirrors, 800 hectares of gardens, and Marie Antoinette\'s hamlet.',
+        timezoneFacts: 'Same timezone as Paris. Treaty of Versailles (1919) signed in Hall of Mirrors.',
+        bestTimeToVisit: 'April-October for gardens. Musical Fountains weekends. Tuesday-Friday least crowded.',
+        businessHours: 'Palace 9 AM to 6:30 PM. Gardens 8 AM to 8:30 PM (summer). Closed Mondays.',
+        timeDifference: 'Versailles is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Book timed tickets online - essential! Musical Fountains spectacular. Rent bikes for gardens.',
+        transportation: 'RER C from Paris (30 min). Versailles Rive Gauche station closest.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Musical Fountains (April-October weekends).'
+      }
+    }
+  },
+  { slug: 'giverny', city: 'Giverny', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 49.08, lng: 1.53, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.0005M', metroPopulation: '0.001M', phoneCode: '+33 2', language: 'French',
+      climate: 'Oceanic with mild summers (17-24°C) and cool winters (3-8°C). Best in spring/summer.',
+      attractions: ['Monet\'s House', 'Water Lily Pond', 'Japanese Bridge', 'Clos Normand', 'Musée des Impressionnismes', 'Village', 'Church', 'Monet\'s Grave', 'American Artists Colony', 'Seine views'],
+      demographics: 'Monet\'s home for 43 years. Water Lilies painted here. Impressionism pilgrimage. Stunning gardens.',
+      seoContent: {
+        intro: 'Giverny, Monet\'s paradise, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This tiny village is where Claude Monet lived for 43 years and painted his famous Water Lilies, with the iconic Japanese bridge and gardens open for visitors.',
+        timezoneFacts: 'Same timezone as Paris. Monet painted over 250 Water Lily paintings here.',
+        bestTimeToVisit: 'April-October (gardens closed winter). Late spring for wisteria. Summer for water lilies.',
+        businessHours: 'Monet\'s House 9:30 AM to 6 PM (April-November). Book ahead!',
+        timeDifference: 'Giverny is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Book tickets online - essential! Arrive at 9:30 AM opening. Gardens closed winter. Combine with Rouen.',
+        transportation: 'Vernon station (4km) + shuttle. 45 min from Paris Saint-Lazare to Vernon.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Gardens open April-November only.'
+      }
+    }
+  },
+  { slug: 'honfleur', city: 'Honfleur', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 49.42, lng: 0.23, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+33 2', language: 'French',
+      climate: 'Oceanic with mild summers (17-22°C) and cool winters (4-9°C). Frequent rain, atmospheric mist.',
+      attractions: ['Vieux Bassin', 'Sainte-Catherine Church', 'Lieutenance', 'Musée Eugène Boudin', 'Les Maisons Satie', 'Greniers à Sel', 'Côte de Grâce', 'Pont de Normandie', 'Seafood restaurants', 'Art galleries'],
+      demographics: 'Impressionist painters\' paradise. Picturesque harbor. Wooden church unique. Normandy coast gateway.',
+      seoContent: {
+        intro: 'Honfleur, the painters\' port, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. This picturesque harbor town inspired Monet and the Impressionists, features France\'s largest wooden church, and offers Normandy\'s finest seafood.',
+        timezoneFacts: 'Same timezone as Paris. Boudin and Monet both painted Honfleur\'s harbor.',
+        bestTimeToVisit: 'May-September for best weather. Year-round charm. Weekends can be crowded.',
+        businessHours: 'Musée Eugène Boudin 10 AM to 6 PM. Restaurants serve lunch and dinner.',
+        timeDifference: 'Honfleur is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Vieux Bassin most photographed! Sainte-Catherine church entirely wooden. Seafood platter essential.',
+        transportation: 'Le Havre 25 min. Deauville 15 min. No train station. Bus from Le Havre.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays. Shrimp Festival (October).'
+      }
+    }
+  },
+  { slug: 'etretat', city: 'Étretat', timezone: 'Europe/Paris', country: 'France', countryCode: 'FR', lat: 49.71, lng: 0.21, tier: 3, continent: 'europe',
+    info: {
+      currency: 'Euro', currencySymbol: '€', population: '0.001M', metroPopulation: '0.002M', phoneCode: '+33 2', language: 'French',
+      climate: 'Oceanic with cool summers (16-21°C) and mild winters (4-9°C). Windy, dramatic weather.',
+      attractions: ['Falaise d\'Aval', 'L\'Aiguille (The Needle)', 'Falaise d\'Amont', 'Chapelle Notre-Dame', 'Les Jardins d\'Étretat', 'Beach', 'Arsène Lupin connection', 'Golf course', 'Fécamp nearby', 'Cliff walks'],
+      demographics: 'Iconic white cliffs. Monet and Courbet painted here. Arsène Lupin\'s Needle. Dramatic coastline.',
+      seoContent: {
+        intro: 'Étretat, Normandy\'s dramatic cliffs, operates on Central European Time (CET/UTC+1) in winter and CEST/UTC+2 in summer. These spectacular white chalk cliffs inspired Monet, Courbet, and Arsène Lupin writer Maurice Leblanc, featuring the iconic Needle formation.',
+        timezoneFacts: 'Same timezone as Paris. Arsène Lupin\'s "Hollow Needle" is set here.',
+        bestTimeToVisit: 'May-September for best weather. Dramatic any season. Avoid strong winds.',
+        businessHours: 'Jardins d\'Étretat 10 AM to 7 PM. Beach accessible 24/7.',
+        timeDifference: 'Étretat is UTC+1 (winter) / UTC+2 (summer). When noon: London 11 AM, NYC 6 AM.',
+        daylightSaving: 'France observes CEST from last Sunday of March to last Sunday of October.',
+        localTips: 'Walk to both cliff tops! Les Jardins contemporary gardens. Lupin Netflix renewed interest. Le Havre 30 min.',
+        transportation: 'Le Havre 30 min. No train station. Bus from Le Havre infrequent.',
+        emergencyNumbers: 'Emergency: 112. Police: 17. SAMU: 15. Fire: 18.',
+        publicHolidays: 'French national holidays.'
+      }
     }
   },
   
