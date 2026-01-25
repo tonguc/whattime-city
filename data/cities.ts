@@ -15077,6 +15077,7 @@ export const cities: City[] = [
   { slug: 'pyeongtaek', city: 'Pyeongtaek', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.99, lng: 127.09, tier: 2, continent: 'asia',
     info: {
       currency: 'South Korean Won', currencySymbol: '₩', population: '0.52M', metroPopulation: '0.52M', phoneCode: '+82 31', language: 'Korean, English',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-6 to 4°C). West coast plains.',
       attractions: ['Camp Humphreys (largest US base)', 'Pyeongtaek Port', 'Samsung semiconductor', 'LG Electronics', 'Pyeongtaek Lake', 'Anjung traditional market', 'International community', 'Songtan entertainment', 'Seohae Bridge', 'Industrial complexes'],
       demographics: 'Largest US military base in Asia. Samsung/LG factories. Major port city. Fastest growing city. International community.'
     }
