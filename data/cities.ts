@@ -10461,6 +10461,239 @@ export const cities: City[] = [
     }
   },
   
+  // Japan - Additional Cities (30 new)
+  { slug: 'kawasaki', city: 'Kawasaki', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.52, lng: 139.72, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '1.54M', metroPopulation: '1.54M', phoneCode: '+81 44', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-31°C) and mild winters (3-10°C). Tokyo Bay influence.',
+      attractions: ['Kawasaki Daishi Temple', 'Fujiko F. Fujio Museum', 'Lazona Kawasaki', 'Nihon Minka-en', 'Kanamara Matsuri', 'Toshiba Science Museum', 'Yomiuri Land', 'Industrial Zone', 'Warehousing District', 'Nightlife'],
+      demographics: 'Japan\'s 8th largest city. Between Tokyo and Yokohama. Doraemon museum. Famous Kanamara fertility festival. Industrial heritage.'
+    }
+  },
+  { slug: 'saitama', city: 'Saitama', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.86, lng: 139.65, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '1.32M', metroPopulation: '1.32M', phoneCode: '+81 48', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and cold winters (1-9°C). Inland from coast.',
+      attractions: ['Saitama Super Arena', 'Railway Museum', 'Omiya Bonsai Village', 'Hikawa Shrine', 'Omiya Park', 'Iwatsuki Castle', 'Saitama Stadium', 'Urawa Reds', 'Musashi Ichinomiya', 'Shopping districts'],
+      demographics: 'Saitama Prefecture capital. Railway Museum. Bonsai village. Major sports venues. Tokyo bedroom community.'
+    }
+  },
+  { slug: 'sagamihara', city: 'Sagamihara', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.57, lng: 139.37, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.72M', metroPopulation: '0.72M', phoneCode: '+81 42', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-31°C) and cold winters (1-9°C). Inland Kanagawa.',
+      attractions: ['JAXA Sagamihara Campus', 'Lake Sagami', 'Lake Tsukui', 'Sagamiko Resort', 'Mt. Takao access', 'US Army Camp Zama', 'Machida access', 'Nature parks', 'Onsen facilities', 'Outdoor activities'],
+      demographics: 'Kanagawa\'s 3rd largest city. JAXA space center. Lake resorts. US military presence. Gateway to mountains.'
+    }
+  },
+  { slug: 'hachioji', city: 'Hachioji', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.66, lng: 139.32, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.58M', metroPopulation: '0.58M', phoneCode: '+81 42', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and cold winters (0-8°C). Mountain basin, cooler than central Tokyo.',
+      attractions: ['Mt. Takao', 'Hachioji Castle ruins', 'Tama Forest Science Garden', 'University town', 'Outlet malls', 'Musashino Imperial Mausoleum', 'Hiking trails', 'Nature parks', 'Sake breweries', 'Student culture'],
+      demographics: 'Western Tokyo. Mt. Takao gateway (Michelin 3-star). University city (21 universities). Nature escape from Tokyo.'
+    }
+  },
+  { slug: 'funabashi', city: 'Funabashi', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.69, lng: 140.00, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.64M', metroPopulation: '0.64M', phoneCode: '+81 47', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-31°C) and mild winters (2-10°C). Tokyo Bay.',
+      attractions: ['LaLaport Tokyo-Bay', 'IKEA Tokyo-Bay', 'Funabashi Andersen Park', 'Sanbanze', 'Funabashi Keiba', 'ららぽーと', 'Seafood markets', 'Nori seaweed', 'Beach parks', 'Shopping malls'],
+      demographics: 'Chiba\'s 2nd largest city. Major shopping destination (LaLaport). Andersen Park. Seaweed (nori) production. Tokyo commuter hub.'
+    }
+  },
+  { slug: 'niigata', city: 'Niigata', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 37.90, lng: 139.02, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.79M', metroPopulation: '1.1M', phoneCode: '+81 25', language: 'Japanese',
+      climate: 'Humid continental with warm summers (23-30°C) and cold snowy winters (-1 to 5°C). Sea of Japan coast, heavy snowfall.',
+      attractions: ['Sake breweries', 'Ponshukan', 'Bandai Bridge', 'Furumachi Geisha', 'Niigata Furusato Village', 'Sado Island ferries', 'Rice paddies', 'Fish market', 'Toki Messe', 'Art museums'],
+      demographics: 'Sea of Japan largest city. Rice and sake capital. Sado Island gateway. Heavy snowfall. Koshihikari rice origin.'
+    }
+  },
+  { slug: 'hamamatsu', city: 'Hamamatsu', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.71, lng: 137.73, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.79M', metroPopulation: '1.1M', phoneCode: '+81 53', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (3-10°C). Pacific coast, sunny.',
+      attractions: ['Lake Hamana', 'Hamamatsu Castle', 'Nakatajima Sand Dunes', 'Musical Instrument Museum', 'Yamaha/Kawai/Roland', 'Act City', 'Unagi (eel)', 'Fruit picking', 'Shizuoka tea', 'Suzuki Museum'],
+      demographics: 'Shizuoka\'s largest city. Musical instrument capital (Yamaha, Kawai, Roland). Unagi eel specialty. Lake Hamana oysters.'
+    }
+  },
+  { slug: 'higashiosaka', city: 'Higashiosaka', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.68, lng: 135.60, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.49M', metroPopulation: '0.49M', phoneCode: '+81 6', language: 'Japanese, Osaka dialect',
+      attractions: ['Hanazono Rugby Stadium', 'Small factory district', 'Shitennoji Temple area', 'Isaniwa Shrine', 'Higashiosaka City Museum', 'Shopping arcades', 'Traditional industries', 'Rugby museum', 'SME manufacturing', 'Local food'],
+      demographics: 'Osaka Prefecture 3rd largest. Rugby birthplace in Japan. Small factory hub. Traditional manufacturing. Working-class charm.'
+    }
+  },
+  { slug: 'nishinomiya', city: 'Nishinomiya', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.74, lng: 135.34, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.49M', metroPopulation: '0.49M', phoneCode: '+81 798', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (3-10°C). Osaka Bay.',
+      attractions: ['Koshien Stadium', 'Nishinomiya Shrine', 'Hanshin Tigers', 'Sake breweries', 'Shukugawa Cherry Blossoms', 'Kwansei Gakuin', 'Outlet malls', 'Affluent neighborhoods', 'Mt. Rokko access', 'Ebisu Festival'],
+      demographics: 'Between Osaka and Kobe. Koshien Stadium (high school baseball mecca). Hanshin Tigers home. Sake brewing. Affluent residential.'
+    }
+  },
+  { slug: 'kakunodate', city: 'Kakunodate', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 39.60, lng: 140.56, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.03M', metroPopulation: '0.03M', phoneCode: '+81 187', language: 'Japanese',
+      climate: 'Humid continental with warm summers (22-28°C) and cold snowy winters (-5 to 2°C). Heavy snowfall.',
+      attractions: ['Samurai District', 'Weeping Cherry Trees', 'Bukeyashiki (Samurai Houses)', 'Aoyagi Samurai Manor', 'Ishiguro Samurai House', 'Cherry Bark Craft', 'Hinokinai River', 'Autumn foliage', 'Traditional crafts', 'Rice fields'],
+      demographics: 'Little Kyoto of Tohoku. Preserved samurai district. Weeping cherry blossoms (April). Cherry bark (kabazaiku) crafts. Time capsule.'
+    }
+  },
+  { slug: 'hirosaki', city: 'Hirosaki', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 40.60, lng: 140.47, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.17M', metroPopulation: '0.35M', phoneCode: '+81 172', language: 'Japanese, Tsugaru dialect',
+      climate: 'Humid continental with warm summers (22-28°C) and cold snowy winters (-4 to 2°C). Heavy snowfall.',
+      attractions: ['Hirosaki Castle', 'Cherry Blossom Festival', '2,600 Cherry Trees', 'Neputa Festival', 'French Renaissance architecture', 'Apple orchards', 'Tsugaru Shamisen', 'Mt. Iwaki', 'Apple pie', 'Historic churches'],
+      demographics: 'Best cherry blossoms in Japan (2,600 trees). Hirosaki Castle. Apple capital. Neputa summer festival. Tsugaru culture.'
+    }
+  },
+  { slug: 'aizuwakamatsu', city: 'Aizuwakamatsu', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 37.49, lng: 139.93, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.12M', metroPopulation: '0.12M', phoneCode: '+81 242', language: 'Japanese',
+      climate: 'Humid continental with warm summers (23-29°C) and cold snowy winters (-3 to 3°C). Mountain basin.',
+      attractions: ['Tsuruga Castle', 'Byakkotai Memorial', 'Higashiyama Onsen', 'Ouchijuku', 'Sake breweries', 'Aizu lacquerware', 'Sazaedo Temple', 'Iimori Hill', 'Local ramen', 'Samurai history'],
+      demographics: 'Last samurai stronghold (Byakkotai). Tsuruga Castle. Aizu sake and lacquerware. Ouchijuku post town nearby. Samurai spirit.'
+    }
+  },
+  { slug: 'tsuruoka', city: 'Tsuruoka', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 38.73, lng: 139.83, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.12M', metroPopulation: '0.12M', phoneCode: '+81 235', language: 'Japanese',
+      climate: 'Humid continental with warm summers (23-29°C) and cold snowy winters (-2 to 4°C). Sea of Japan coast.',
+      attractions: ['Dewa Sanzan', 'Mt. Haguro', 'Mt. Gassan', 'Mt. Yudono', 'Sokushinbutsu (mummies)', 'Yamabushi culture', 'Gyokusenji Temple', 'Shonai rice', 'UNESCO food city', 'Pilgrim trails'],
+      demographics: 'Dewa Sanzan gateway. Sacred mountains. Yamabushi mountain monks. UNESCO Creative City of Gastronomy. Spiritual Japan.'
+    }
+  },
+  { slug: 'towada', city: 'Towada', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 40.61, lng: 141.21, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.06M', metroPopulation: '0.06M', phoneCode: '+81 176', language: 'Japanese',
+      climate: 'Humid continental with cool summers (20-26°C) and cold snowy winters (-5 to 2°C). Highland lake.',
+      attractions: ['Lake Towada', 'Oirase Stream', 'Towada Art Center', 'Autumn foliage', 'Maidens of the Lake statue', 'Kayaking', 'Hiking', 'Nature walks', 'Contemporary art', 'Hot springs'],
+      demographics: 'Lake Towada caldera lake. Oirase Valley (stunning autumn). Towada Art Center modern art. Nature paradise. Autumn destination.'
+    }
+  },
+  { slug: 'hagi', city: 'Hagi', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.41, lng: 131.40, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.05M', metroPopulation: '0.05M', phoneCode: '+81 838', language: 'Japanese',
+      climate: 'Humid subtropical with warm summers (25-30°C) and mild winters (3-10°C). Sea of Japan coast.',
+      attractions: ['Hagi Castle Town', 'Samurai District', 'Hagi Pottery', 'Shoin Shrine', 'Meiji Restoration sites', 'Tokoji Temple', 'Kasayama', 'White-walled warehouses', 'UNESCO sites', 'Historical walks'],
+      demographics: 'Meiji Restoration birthplace. Samurai castle town preserved. Famous Hagi-yaki pottery. UNESCO World Heritage. Japanese history capital.'
+    }
+  },
+  { slug: 'tsuwano', city: 'Tsuwano', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.47, lng: 131.77, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.007M', metroPopulation: '0.007M', phoneCode: '+81 856', language: 'Japanese',
+      climate: 'Humid subtropical with warm summers (25-30°C) and cold winters (0-7°C). Mountain valley.',
+      attractions: ['Taikodani Inari Shrine', 'Koi fish streams', 'Tsuwano Castle ruins', 'Mori Ogai Memorial', 'Catholic Church', 'Samurai houses', 'SL Yamaguchi steam train', 'Traditional streetscape', 'Washi paper', 'Yabusame'],
+      demographics: 'Little Kyoto of San\'in. Koi swimming in streets. Taikodani Inari vermillion gates. Steam train destination. Hidden gem.'
+    }
+  },
+  { slug: 'magome', city: 'Magome', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.52, lng: 137.57, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.001M', metroPopulation: '0.001M', phoneCode: '+81 573', language: 'Japanese',
+      climate: 'Highland climate with warm summers (22-28°C) and cold winters (-3 to 5°C). Mountain pass.',
+      attractions: ['Nakasendo Trail', 'Magome-Tsumago hike', 'Post town preservation', 'Stone-paved streets', 'Toson Memorial', 'Ryokan inns', 'Traditional crafts', 'Mountain views', 'Waki-honjin', 'Edo atmosphere'],
+      demographics: 'Nakasendo post town. 8km hike to Tsumago. Perfectly preserved Edo-era streetscape. Shimazaki Toson birthplace. Walking Japan.'
+    }
+  },
+  { slug: 'tsumago', city: 'Tsumago', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.58, lng: 137.60, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.001M', metroPopulation: '0.001M', phoneCode: '+81 264', language: 'Japanese',
+      climate: 'Highland climate with warm summers (22-28°C) and cold winters (-3 to 5°C). Mountain valley.',
+      attractions: ['Nakasendo Trail', 'Post town preservation', 'No power lines visible', 'Waki-honjin Museum', 'Honjin', 'Traditional inns', 'Kiso Valley', 'Hiking to Magome', 'First preserved town', 'Time capsule'],
+      demographics: 'Japan\'s first preserved post town. No cars, no power lines. Nakasendo hiking. Most authentic Edo streetscape. Living museum.'
+    }
+  },
+  { slug: 'gero-onsen', city: 'Gero Onsen', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.80, lng: 137.24, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.03M', metroPopulation: '0.03M', phoneCode: '+81 576', language: 'Japanese',
+      climate: 'Humid subtropical with warm summers (24-30°C) and cold winters (-2 to 6°C). River valley.',
+      attractions: ['Hot springs', 'Gero Onsen Gassho Village', 'Onsenji Temple', 'Foot baths', 'Rotenburo', 'Hida beef', 'Spa hopping', 'River views', 'Traditional ryokan', 'Gassho-zukuri houses'],
+      demographics: 'One of Japan\'s 3 famous onsen (with Kusatsu, Arima). Alkaline springs good for skin. Riverside hot springs. Traditional spa town.'
+    }
+  },
+  { slug: 'arima-onsen', city: 'Arima Onsen', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.80, lng: 135.25, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+81 78', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (2-9°C). Mountain valley above Kobe.',
+      attractions: ['Kinsen (gold water)', 'Ginsen (silver water)', 'Taiko-no-Yu', 'Onsen temple', 'Zuihoji Temple', 'Toy Museum', 'Tansan crackers', 'Ropeway', 'Mt. Rokko access', 'Historic bathhouses'],
+      demographics: 'Japan\'s oldest onsen (1,400+ years). Two spring types: gold and silver. Near Kobe. Toyotomi Hideyoshi\'s favorite. Mountain retreat.'
+    }
+  },
+  { slug: 'dogo-onsen', city: 'Dogo Onsen', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 33.85, lng: 132.79, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.01M', metroPopulation: '0.52M', phoneCode: '+81 89', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-31°C) and mild winters (4-10°C). Inland Shikoku.',
+      attractions: ['Dogo Onsen Honkan', 'Spirited Away inspiration', 'Botchan train', 'Isaniwa Shrine', 'Matsuyama Castle', 'Foot baths', 'Shopping arcade', 'Natsume Soseki sites', 'Tsubaki no Yu', 'Asuka no Yu'],
+      demographics: 'Japan\'s oldest hot spring (3,000 years). Inspired Spirited Away bathhouse. Dogo Onsen Honkan. Matsuyama\'s treasure. Must-visit onsen.'
+    }
+  },
+  { slug: 'ibusuki', city: 'Ibusuki', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 31.23, lng: 130.65, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.04M', metroPopulation: '0.04M', phoneCode: '+81 993', language: 'Japanese',
+      climate: 'Subtropical with hot summers (27-32°C) and mild winters (8-13°C). Southernmost Kyushu.',
+      attractions: ['Sand baths', 'Sunamushi Onsen', 'Lake Ikeda', 'Kaimon-dake volcano', 'JR southernmost station', 'Flower parks', 'Nagasakibana', 'Satsuma Peninsula', 'Tropical plants', 'Hot spring steam'],
+      demographics: 'Famous sand bath onsen (buried in hot sand). Tropical southern Kyushu. Kaimon-dake \"Satsuma Fuji\". Unique spa experience.'
+    }
+  },
+  { slug: 'shirahama', city: 'Shirahama', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 33.68, lng: 135.35, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.02M', metroPopulation: '0.02M', phoneCode: '+81 739', language: 'Japanese',
+      climate: 'Subtropical with hot summers (26-31°C) and mild winters (6-12°C). Pacific coast.',
+      attractions: ['Shirahama Beach', 'Adventure World', 'Sandanbeki Cliffs', 'Senjojiki', 'Tore Tore Market', 'Shirasuna no Yu', 'Engetsu Island', 'Onsen', 'Pandas', 'White sand'],
+      demographics: 'White sand beach resort. Adventure World (pandas). Ancient onsen. Dramatic coastline. Osaka beach escape. 1,300-year-old springs.'
+    }
+  },
+  { slug: 'kurobe', city: 'Kurobe', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.87, lng: 137.45, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.04M', metroPopulation: '0.04M', phoneCode: '+81 765', language: 'Japanese',
+      climate: 'Humid continental with warm summers (23-29°C) and cold snowy winters (-1 to 5°C). Mountain/coast.',
+      attractions: ['Kurobe Dam', 'Tateyama Kurobe Alpine Route', 'Unazuki Onsen', 'Kurobe Gorge Railway', 'Snow walls (spring)', 'YKK factory', 'Nyuzen tulips', 'Toyama Bay', 'Firefly squid', 'Mountain scenery'],
+      demographics: 'Kurobe Dam (Japan\'s tallest). Tateyama Alpine Route. Unazuki Onsen. Kurobe Gorge train. Snow corridor (April-June). Dramatic scenery.'
+    }
+  },
+  { slug: 'shiretoko', city: 'Shiretoko', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 44.07, lng: 145.05, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+81 152', language: 'Japanese',
+      climate: 'Subarctic with cool summers (15-22°C) and very cold winters (-10 to -2°C). Drift ice in winter.',
+      attractions: ['Shiretoko Five Lakes', 'Kamuiwakka Falls', 'Brown bears', 'Drift ice', 'UNESCO World Heritage', 'Shiretoko Pass', 'Wildlife cruises', 'Rausu', 'Utoro', 'Eagles'],
+      demographics: 'UNESCO World Heritage. Last wilderness in Japan. Brown bears. Drift ice (Feb-Mar). Edge of the world. Untouched nature.'
+    }
+  },
+  { slug: 'rebun', city: 'Rebun', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 45.43, lng: 141.04, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.003M', metroPopulation: '0.003M', phoneCode: '+81 163', language: 'Japanese',
+      climate: 'Subarctic maritime with cool summers (15-20°C) and cold winters (-5 to 2°C). Northernmost inhabited island.',
+      attractions: ['Alpine flowers at sea level', 'Hiking trails', 'Cape Sukoton', 'Momoiwa Observatory', 'Sea urchin', 'Wild flowers', 'Rishiri view', 'Kitanokano fields', 'Remote beauty', 'Fishing villages'],
+      demographics: 'Flower floating island. Alpine flowers at sea level. Japan\'s northernmost islands. Remote paradise. Summer hiking. Pristine nature.'
+    }
+  },
+  { slug: 'rishiri', city: 'Rishiri', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 45.18, lng: 141.24, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.005M', metroPopulation: '0.005M', phoneCode: '+81 163', language: 'Japanese',
+      climate: 'Subarctic maritime with cool summers (15-20°C) and cold winters (-5 to 2°C). Remote island.',
+      attractions: ['Mt. Rishiri', 'Rishiri-Fuji', 'Otatomari Pond', 'Senhoushi Cape', 'Cycling route', 'Sea urchin', 'Kelp', 'Shiroi Koibito package', 'Island circumference', 'Hiking'],
+      demographics: 'Rishiri-Fuji volcanic island. Shiroi Koibito cookie image. Best sea urchin in Japan. Cycling paradise. Japan\'s northern frontier.'
+    }
+  },
+  { slug: 'tomonoura', city: 'Tomonoura', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.38, lng: 133.38, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.005M', metroPopulation: '0.005M', phoneCode: '+81 84', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-31°C) and mild winters (4-10°C). Seto Inland Sea.',
+      attractions: ['Historic port', 'Joyato lighthouse', 'Ponyo inspiration', 'Fukuzenji Temple', 'Irohamaru Museum', 'Traditional townscape', 'Seto Inland Sea views', 'Historic warehouses', 'Herbal liquor', 'Fishing village'],
+      demographics: 'Ponyo\'s town (Miyazaki). Historic Edo port preserved. Seto Inland Sea beauty. Waiting for the tide. Japan\'s most nostalgic harbor.'
+    }
+  },
+  { slug: 'ogimachi', city: 'Ogimachi', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.26, lng: 136.91, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.002M', metroPopulation: '0.002M', phoneCode: '+81 5769', language: 'Japanese',
+      climate: 'Heavy snow climate with warm summers (22-28°C) and very cold snowy winters (-5 to 3°C). 2+ meters snow.',
+      attractions: ['Gassho-zukuri houses', 'UNESCO World Heritage', 'Shiroyama Viewpoint', 'Wada House', 'Myozenji Temple', 'Doburoku Festival', 'Rice paddies', 'Winter illumination', 'Open-air museum', 'Traditional life'],
+      demographics: 'Shirakawa-go main village. UNESCO gassho-zukuri farmhouses. Winter wonderland. Living World Heritage. Iconic Japan scenery.'
+    }
+  },
+
   // South Korea - Additional Cities
   { slug: 'incheon', city: 'Incheon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.46, lng: 126.71, tier: 2, continent: 'asia',
     info: {
