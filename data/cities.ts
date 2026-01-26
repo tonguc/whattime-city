@@ -10521,6 +10521,7 @@ export const cities: City[] = [
   { slug: 'higashiosaka', city: 'Higashiosaka', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.68, lng: 135.60, tier: 2, continent: 'asia',
     info: {
       currency: 'Japanese Yen', currencySymbol: '¥', population: '0.49M', metroPopulation: '0.49M', phoneCode: '+81 6', language: 'Japanese, Osaka dialect',
+      climate: 'Humid subtropical with hot summers (26-33°C) and mild winters (3-10°C). Osaka plain.',
       attractions: ['Hanazono Rugby Stadium', 'Small factory district', 'Shitennoji Temple area', 'Isaniwa Shrine', 'Higashiosaka City Museum', 'Shopping arcades', 'Traditional industries', 'Rugby museum', 'SME manufacturing', 'Local food'],
       demographics: 'Osaka Prefecture 3rd largest. Rugby birthplace in Japan. Small factory hub. Traditional manufacturing. Working-class charm.'
     }
