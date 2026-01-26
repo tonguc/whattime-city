@@ -10461,6 +10461,240 @@ export const cities: City[] = [
     }
   },
   
+  // Japan - Additional Cities (30 new)
+  { slug: 'kawasaki', city: 'Kawasaki', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.52, lng: 139.72, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '1.54M', metroPopulation: '1.54M', phoneCode: '+81 44', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-31°C) and mild winters (3-10°C). Tokyo Bay influence.',
+      attractions: ['Kawasaki Daishi Temple', 'Fujiko F. Fujio Museum', 'Lazona Kawasaki', 'Nihon Minka-en', 'Kanamara Matsuri', 'Toshiba Science Museum', 'Yomiuri Land', 'Industrial Zone', 'Warehousing District', 'Nightlife'],
+      demographics: 'Japan\'s 8th largest city. Between Tokyo and Yokohama. Doraemon museum. Famous Kanamara fertility festival. Industrial heritage.'
+    }
+  },
+  { slug: 'saitama', city: 'Saitama', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.86, lng: 139.65, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '1.32M', metroPopulation: '1.32M', phoneCode: '+81 48', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and cold winters (1-9°C). Inland from coast.',
+      attractions: ['Saitama Super Arena', 'Railway Museum', 'Omiya Bonsai Village', 'Hikawa Shrine', 'Omiya Park', 'Iwatsuki Castle', 'Saitama Stadium', 'Urawa Reds', 'Musashi Ichinomiya', 'Shopping districts'],
+      demographics: 'Saitama Prefecture capital. Railway Museum. Bonsai village. Major sports venues. Tokyo bedroom community.'
+    }
+  },
+  { slug: 'sagamihara', city: 'Sagamihara', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.57, lng: 139.37, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.72M', metroPopulation: '0.72M', phoneCode: '+81 42', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-31°C) and cold winters (1-9°C). Inland Kanagawa.',
+      attractions: ['JAXA Sagamihara Campus', 'Lake Sagami', 'Lake Tsukui', 'Sagamiko Resort', 'Mt. Takao access', 'US Army Camp Zama', 'Machida access', 'Nature parks', 'Onsen facilities', 'Outdoor activities'],
+      demographics: 'Kanagawa\'s 3rd largest city. JAXA space center. Lake resorts. US military presence. Gateway to mountains.'
+    }
+  },
+  { slug: 'hachioji', city: 'Hachioji', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.66, lng: 139.32, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.58M', metroPopulation: '0.58M', phoneCode: '+81 42', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and cold winters (0-8°C). Mountain basin, cooler than central Tokyo.',
+      attractions: ['Mt. Takao', 'Hachioji Castle ruins', 'Tama Forest Science Garden', 'University town', 'Outlet malls', 'Musashino Imperial Mausoleum', 'Hiking trails', 'Nature parks', 'Sake breweries', 'Student culture'],
+      demographics: 'Western Tokyo. Mt. Takao gateway (Michelin 3-star). University city (21 universities). Nature escape from Tokyo.'
+    }
+  },
+  { slug: 'funabashi', city: 'Funabashi', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.69, lng: 140.00, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.64M', metroPopulation: '0.64M', phoneCode: '+81 47', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-31°C) and mild winters (2-10°C). Tokyo Bay.',
+      attractions: ['LaLaport Tokyo-Bay', 'IKEA Tokyo-Bay', 'Funabashi Andersen Park', 'Sanbanze', 'Funabashi Keiba', 'ららぽーと', 'Seafood markets', 'Nori seaweed', 'Beach parks', 'Shopping malls'],
+      demographics: 'Chiba\'s 2nd largest city. Major shopping destination (LaLaport). Andersen Park. Seaweed (nori) production. Tokyo commuter hub.'
+    }
+  },
+  { slug: 'niigata', city: 'Niigata', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 37.90, lng: 139.02, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.79M', metroPopulation: '1.1M', phoneCode: '+81 25', language: 'Japanese',
+      climate: 'Humid continental with warm summers (23-30°C) and cold snowy winters (-1 to 5°C). Sea of Japan coast, heavy snowfall.',
+      attractions: ['Sake breweries', 'Ponshukan', 'Bandai Bridge', 'Furumachi Geisha', 'Niigata Furusato Village', 'Sado Island ferries', 'Rice paddies', 'Fish market', 'Toki Messe', 'Art museums'],
+      demographics: 'Sea of Japan largest city. Rice and sake capital. Sado Island gateway. Heavy snowfall. Koshihikari rice origin.'
+    }
+  },
+  { slug: 'hamamatsu', city: 'Hamamatsu', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.71, lng: 137.73, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.79M', metroPopulation: '1.1M', phoneCode: '+81 53', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (3-10°C). Pacific coast, sunny.',
+      attractions: ['Lake Hamana', 'Hamamatsu Castle', 'Nakatajima Sand Dunes', 'Musical Instrument Museum', 'Yamaha/Kawai/Roland', 'Act City', 'Unagi (eel)', 'Fruit picking', 'Shizuoka tea', 'Suzuki Museum'],
+      demographics: 'Shizuoka\'s largest city. Musical instrument capital (Yamaha, Kawai, Roland). Unagi eel specialty. Lake Hamana oysters.'
+    }
+  },
+  { slug: 'higashiosaka', city: 'Higashiosaka', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.68, lng: 135.60, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.49M', metroPopulation: '0.49M', phoneCode: '+81 6', language: 'Japanese, Osaka dialect',
+      climate: 'Humid subtropical with hot summers (26-33°C) and mild winters (3-10°C). Osaka plain.',
+      attractions: ['Hanazono Rugby Stadium', 'Small factory district', 'Shitennoji Temple area', 'Isaniwa Shrine', 'Higashiosaka City Museum', 'Shopping arcades', 'Traditional industries', 'Rugby museum', 'SME manufacturing', 'Local food'],
+      demographics: 'Osaka Prefecture 3rd largest. Rugby birthplace in Japan. Small factory hub. Traditional manufacturing. Working-class charm.'
+    }
+  },
+  { slug: 'nishinomiya', city: 'Nishinomiya', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.74, lng: 135.34, tier: 2, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.49M', metroPopulation: '0.49M', phoneCode: '+81 798', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (3-10°C). Osaka Bay.',
+      attractions: ['Koshien Stadium', 'Nishinomiya Shrine', 'Hanshin Tigers', 'Sake breweries', 'Shukugawa Cherry Blossoms', 'Kwansei Gakuin', 'Outlet malls', 'Affluent neighborhoods', 'Mt. Rokko access', 'Ebisu Festival'],
+      demographics: 'Between Osaka and Kobe. Koshien Stadium (high school baseball mecca). Hanshin Tigers home. Sake brewing. Affluent residential.'
+    }
+  },
+  { slug: 'kakunodate', city: 'Kakunodate', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 39.60, lng: 140.56, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.03M', metroPopulation: '0.03M', phoneCode: '+81 187', language: 'Japanese',
+      climate: 'Humid continental with warm summers (22-28°C) and cold snowy winters (-5 to 2°C). Heavy snowfall.',
+      attractions: ['Samurai District', 'Weeping Cherry Trees', 'Bukeyashiki (Samurai Houses)', 'Aoyagi Samurai Manor', 'Ishiguro Samurai House', 'Cherry Bark Craft', 'Hinokinai River', 'Autumn foliage', 'Traditional crafts', 'Rice fields'],
+      demographics: 'Little Kyoto of Tohoku. Preserved samurai district. Weeping cherry blossoms (April). Cherry bark (kabazaiku) crafts. Time capsule.'
+    }
+  },
+  { slug: 'hirosaki', city: 'Hirosaki', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 40.60, lng: 140.47, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.17M', metroPopulation: '0.35M', phoneCode: '+81 172', language: 'Japanese, Tsugaru dialect',
+      climate: 'Humid continental with warm summers (22-28°C) and cold snowy winters (-4 to 2°C). Heavy snowfall.',
+      attractions: ['Hirosaki Castle', 'Cherry Blossom Festival', '2,600 Cherry Trees', 'Neputa Festival', 'French Renaissance architecture', 'Apple orchards', 'Tsugaru Shamisen', 'Mt. Iwaki', 'Apple pie', 'Historic churches'],
+      demographics: 'Best cherry blossoms in Japan (2,600 trees). Hirosaki Castle. Apple capital. Neputa summer festival. Tsugaru culture.'
+    }
+  },
+  { slug: 'aizuwakamatsu', city: 'Aizuwakamatsu', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 37.49, lng: 139.93, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.12M', metroPopulation: '0.12M', phoneCode: '+81 242', language: 'Japanese',
+      climate: 'Humid continental with warm summers (23-29°C) and cold snowy winters (-3 to 3°C). Mountain basin.',
+      attractions: ['Tsuruga Castle', 'Byakkotai Memorial', 'Higashiyama Onsen', 'Ouchijuku', 'Sake breweries', 'Aizu lacquerware', 'Sazaedo Temple', 'Iimori Hill', 'Local ramen', 'Samurai history'],
+      demographics: 'Last samurai stronghold (Byakkotai). Tsuruga Castle. Aizu sake and lacquerware. Ouchijuku post town nearby. Samurai spirit.'
+    }
+  },
+  { slug: 'tsuruoka', city: 'Tsuruoka', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 38.73, lng: 139.83, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.12M', metroPopulation: '0.12M', phoneCode: '+81 235', language: 'Japanese',
+      climate: 'Humid continental with warm summers (23-29°C) and cold snowy winters (-2 to 4°C). Sea of Japan coast.',
+      attractions: ['Dewa Sanzan', 'Mt. Haguro', 'Mt. Gassan', 'Mt. Yudono', 'Sokushinbutsu (mummies)', 'Yamabushi culture', 'Gyokusenji Temple', 'Shonai rice', 'UNESCO food city', 'Pilgrim trails'],
+      demographics: 'Dewa Sanzan gateway. Sacred mountains. Yamabushi mountain monks. UNESCO Creative City of Gastronomy. Spiritual Japan.'
+    }
+  },
+  { slug: 'towada', city: 'Towada', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 40.61, lng: 141.21, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.06M', metroPopulation: '0.06M', phoneCode: '+81 176', language: 'Japanese',
+      climate: 'Humid continental with cool summers (20-26°C) and cold snowy winters (-5 to 2°C). Highland lake.',
+      attractions: ['Lake Towada', 'Oirase Stream', 'Towada Art Center', 'Autumn foliage', 'Maidens of the Lake statue', 'Kayaking', 'Hiking', 'Nature walks', 'Contemporary art', 'Hot springs'],
+      demographics: 'Lake Towada caldera lake. Oirase Valley (stunning autumn). Towada Art Center modern art. Nature paradise. Autumn destination.'
+    }
+  },
+  { slug: 'hagi', city: 'Hagi', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.41, lng: 131.40, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.05M', metroPopulation: '0.05M', phoneCode: '+81 838', language: 'Japanese',
+      climate: 'Humid subtropical with warm summers (25-30°C) and mild winters (3-10°C). Sea of Japan coast.',
+      attractions: ['Hagi Castle Town', 'Samurai District', 'Hagi Pottery', 'Shoin Shrine', 'Meiji Restoration sites', 'Tokoji Temple', 'Kasayama', 'White-walled warehouses', 'UNESCO sites', 'Historical walks'],
+      demographics: 'Meiji Restoration birthplace. Samurai castle town preserved. Famous Hagi-yaki pottery. UNESCO World Heritage. Japanese history capital.'
+    }
+  },
+  { slug: 'tsuwano', city: 'Tsuwano', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.47, lng: 131.77, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.007M', metroPopulation: '0.007M', phoneCode: '+81 856', language: 'Japanese',
+      climate: 'Humid subtropical with warm summers (25-30°C) and cold winters (0-7°C). Mountain valley.',
+      attractions: ['Taikodani Inari Shrine', 'Koi fish streams', 'Tsuwano Castle ruins', 'Mori Ogai Memorial', 'Catholic Church', 'Samurai houses', 'SL Yamaguchi steam train', 'Traditional streetscape', 'Washi paper', 'Yabusame'],
+      demographics: 'Little Kyoto of San\'in. Koi swimming in streets. Taikodani Inari vermillion gates. Steam train destination. Hidden gem.'
+    }
+  },
+  { slug: 'magome', city: 'Magome', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.52, lng: 137.57, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.001M', metroPopulation: '0.001M', phoneCode: '+81 573', language: 'Japanese',
+      climate: 'Highland climate with warm summers (22-28°C) and cold winters (-3 to 5°C). Mountain pass.',
+      attractions: ['Nakasendo Trail', 'Magome-Tsumago hike', 'Post town preservation', 'Stone-paved streets', 'Toson Memorial', 'Ryokan inns', 'Traditional crafts', 'Mountain views', 'Waki-honjin', 'Edo atmosphere'],
+      demographics: 'Nakasendo post town. 8km hike to Tsumago. Perfectly preserved Edo-era streetscape. Shimazaki Toson birthplace. Walking Japan.'
+    }
+  },
+  { slug: 'tsumago', city: 'Tsumago', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.58, lng: 137.60, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.001M', metroPopulation: '0.001M', phoneCode: '+81 264', language: 'Japanese',
+      climate: 'Highland climate with warm summers (22-28°C) and cold winters (-3 to 5°C). Mountain valley.',
+      attractions: ['Nakasendo Trail', 'Post town preservation', 'No power lines visible', 'Waki-honjin Museum', 'Honjin', 'Traditional inns', 'Kiso Valley', 'Hiking to Magome', 'First preserved town', 'Time capsule'],
+      demographics: 'Japan\'s first preserved post town. No cars, no power lines. Nakasendo hiking. Most authentic Edo streetscape. Living museum.'
+    }
+  },
+  { slug: 'gero-onsen', city: 'Gero Onsen', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 35.80, lng: 137.24, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.03M', metroPopulation: '0.03M', phoneCode: '+81 576', language: 'Japanese',
+      climate: 'Humid subtropical with warm summers (24-30°C) and cold winters (-2 to 6°C). River valley.',
+      attractions: ['Hot springs', 'Gero Onsen Gassho Village', 'Onsenji Temple', 'Foot baths', 'Rotenburo', 'Hida beef', 'Spa hopping', 'River views', 'Traditional ryokan', 'Gassho-zukuri houses'],
+      demographics: 'One of Japan\'s 3 famous onsen (with Kusatsu, Arima). Alkaline springs good for skin. Riverside hot springs. Traditional spa town.'
+    }
+  },
+  { slug: 'arima-onsen', city: 'Arima Onsen', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.80, lng: 135.25, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+81 78', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (2-9°C). Mountain valley above Kobe.',
+      attractions: ['Kinsen (gold water)', 'Ginsen (silver water)', 'Taiko-no-Yu', 'Onsen temple', 'Zuihoji Temple', 'Toy Museum', 'Tansan crackers', 'Ropeway', 'Mt. Rokko access', 'Historic bathhouses'],
+      demographics: 'Japan\'s oldest onsen (1,400+ years). Two spring types: gold and silver. Near Kobe. Toyotomi Hideyoshi\'s favorite. Mountain retreat.'
+    }
+  },
+  { slug: 'dogo-onsen', city: 'Dogo Onsen', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 33.85, lng: 132.79, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.01M', metroPopulation: '0.52M', phoneCode: '+81 89', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-31°C) and mild winters (4-10°C). Inland Shikoku.',
+      attractions: ['Dogo Onsen Honkan', 'Spirited Away inspiration', 'Botchan train', 'Isaniwa Shrine', 'Matsuyama Castle', 'Foot baths', 'Shopping arcade', 'Natsume Soseki sites', 'Tsubaki no Yu', 'Asuka no Yu'],
+      demographics: 'Japan\'s oldest hot spring (3,000 years). Inspired Spirited Away bathhouse. Dogo Onsen Honkan. Matsuyama\'s treasure. Must-visit onsen.'
+    }
+  },
+  { slug: 'ibusuki', city: 'Ibusuki', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 31.23, lng: 130.65, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.04M', metroPopulation: '0.04M', phoneCode: '+81 993', language: 'Japanese',
+      climate: 'Subtropical with hot summers (27-32°C) and mild winters (8-13°C). Southernmost Kyushu.',
+      attractions: ['Sand baths', 'Sunamushi Onsen', 'Lake Ikeda', 'Kaimon-dake volcano', 'JR southernmost station', 'Flower parks', 'Nagasakibana', 'Satsuma Peninsula', 'Tropical plants', 'Hot spring steam'],
+      demographics: 'Famous sand bath onsen (buried in hot sand). Tropical southern Kyushu. Kaimon-dake \"Satsuma Fuji\". Unique spa experience.'
+    }
+  },
+  { slug: 'shirahama', city: 'Shirahama', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 33.68, lng: 135.35, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.02M', metroPopulation: '0.02M', phoneCode: '+81 739', language: 'Japanese',
+      climate: 'Subtropical with hot summers (26-31°C) and mild winters (6-12°C). Pacific coast.',
+      attractions: ['Shirahama Beach', 'Adventure World', 'Sandanbeki Cliffs', 'Senjojiki', 'Tore Tore Market', 'Shirasuna no Yu', 'Engetsu Island', 'Onsen', 'Pandas', 'White sand'],
+      demographics: 'White sand beach resort. Adventure World (pandas). Ancient onsen. Dramatic coastline. Osaka beach escape. 1,300-year-old springs.'
+    }
+  },
+  { slug: 'kurobe', city: 'Kurobe', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.87, lng: 137.45, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.04M', metroPopulation: '0.04M', phoneCode: '+81 765', language: 'Japanese',
+      climate: 'Humid continental with warm summers (23-29°C) and cold snowy winters (-1 to 5°C). Mountain/coast.',
+      attractions: ['Kurobe Dam', 'Tateyama Kurobe Alpine Route', 'Unazuki Onsen', 'Kurobe Gorge Railway', 'Snow walls (spring)', 'YKK factory', 'Nyuzen tulips', 'Toyama Bay', 'Firefly squid', 'Mountain scenery'],
+      demographics: 'Kurobe Dam (Japan\'s tallest). Tateyama Alpine Route. Unazuki Onsen. Kurobe Gorge train. Snow corridor (April-June). Dramatic scenery.'
+    }
+  },
+  { slug: 'shiretoko', city: 'Shiretoko', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 44.07, lng: 145.05, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.01M', metroPopulation: '0.01M', phoneCode: '+81 152', language: 'Japanese',
+      climate: 'Subarctic with cool summers (15-22°C) and very cold winters (-10 to -2°C). Drift ice in winter.',
+      attractions: ['Shiretoko Five Lakes', 'Kamuiwakka Falls', 'Brown bears', 'Drift ice', 'UNESCO World Heritage', 'Shiretoko Pass', 'Wildlife cruises', 'Rausu', 'Utoro', 'Eagles'],
+      demographics: 'UNESCO World Heritage. Last wilderness in Japan. Brown bears. Drift ice (Feb-Mar). Edge of the world. Untouched nature.'
+    }
+  },
+  { slug: 'rebun', city: 'Rebun', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 45.43, lng: 141.04, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.003M', metroPopulation: '0.003M', phoneCode: '+81 163', language: 'Japanese',
+      climate: 'Subarctic maritime with cool summers (15-20°C) and cold winters (-5 to 2°C). Northernmost inhabited island.',
+      attractions: ['Alpine flowers at sea level', 'Hiking trails', 'Cape Sukoton', 'Momoiwa Observatory', 'Sea urchin', 'Wild flowers', 'Rishiri view', 'Kitanokano fields', 'Remote beauty', 'Fishing villages'],
+      demographics: 'Flower floating island. Alpine flowers at sea level. Japan\'s northernmost islands. Remote paradise. Summer hiking. Pristine nature.'
+    }
+  },
+  { slug: 'rishiri', city: 'Rishiri', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 45.18, lng: 141.24, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.005M', metroPopulation: '0.005M', phoneCode: '+81 163', language: 'Japanese',
+      climate: 'Subarctic maritime with cool summers (15-20°C) and cold winters (-5 to 2°C). Remote island.',
+      attractions: ['Mt. Rishiri', 'Rishiri-Fuji', 'Otatomari Pond', 'Senhoushi Cape', 'Cycling route', 'Sea urchin', 'Kelp', 'Shiroi Koibito package', 'Island circumference', 'Hiking'],
+      demographics: 'Rishiri-Fuji volcanic island. Shiroi Koibito cookie image. Best sea urchin in Japan. Cycling paradise. Japan\'s northern frontier.'
+    }
+  },
+  { slug: 'tomonoura', city: 'Tomonoura', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.38, lng: 133.38, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.005M', metroPopulation: '0.005M', phoneCode: '+81 84', language: 'Japanese',
+      climate: 'Humid subtropical with hot summers (26-31°C) and mild winters (4-10°C). Seto Inland Sea.',
+      attractions: ['Historic port', 'Joyato lighthouse', 'Ponyo inspiration', 'Fukuzenji Temple', 'Irohamaru Museum', 'Traditional townscape', 'Seto Inland Sea views', 'Historic warehouses', 'Herbal liquor', 'Fishing village'],
+      demographics: 'Ponyo\'s town (Miyazaki). Historic Edo port preserved. Seto Inland Sea beauty. Waiting for the tide. Japan\'s most nostalgic harbor.'
+    }
+  },
+  { slug: 'ogimachi', city: 'Ogimachi', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 36.26, lng: 136.91, tier: 3, continent: 'asia',
+    info: {
+      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.002M', metroPopulation: '0.002M', phoneCode: '+81 5769', language: 'Japanese',
+      climate: 'Heavy snow climate with warm summers (22-28°C) and very cold snowy winters (-5 to 3°C). 2+ meters snow.',
+      attractions: ['Gassho-zukuri houses', 'UNESCO World Heritage', 'Shiroyama Viewpoint', 'Wada House', 'Myozenji Temple', 'Doburoku Festival', 'Rice paddies', 'Winter illumination', 'Open-air museum', 'Traditional life'],
+      demographics: 'Shirakawa-go main village. UNESCO gassho-zukuri farmhouses. Winter wonderland. Living World Heritage. Iconic Japan scenery.'
+    }
+  },
+
   // South Korea - Additional Cities
   { slug: 'incheon', city: 'Incheon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.46, lng: 126.71, tier: 2, continent: 'asia',
     info: {
@@ -15056,6 +15290,366 @@ export const cities: City[] = [
       climate: 'Humid continental with hot summers (24-30°C) and cold winters (-4 to 4°C). West coast.',
       attractions: ['Daebu Island', 'Sihwa Lake', 'Multicultural Street', 'Ansan Starlight Village', 'Hwarang Amusement Park', 'Seongho Memorial Hall', 'Nojeokbong Park', 'Gyeonggi Saltworks', 'Reed wetlands', 'Seafood markets'],
       demographics: 'Korea\'s most multicultural city. Industrial hub. Daebu Island escape. Sihwa Lake tidal power. Foreign worker community.'
+    }
+  },
+  { slug: 'bucheon', city: 'Bucheon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.50, lng: 126.76, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.83M', metroPopulation: '0.83M', phoneCode: '+82 32', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-5 to 4°C). Seoul metro area.',
+      attractions: ['Bucheon International Fantastic Film Festival', 'Aiins World', 'Bucheon Philharmonic', 'Korea Manhwa Museum', 'Sangdong Lake Park', 'Civic Center', 'Peach farms', 'Sosakbeol Eco Park', 'Ojeong Logistics', 'Theme parks'],
+      demographics: 'UNESCO Creative City of Literature. Fantastic film festival. K-comics (manhwa) hub. Dense urban city between Seoul and Incheon.'
+    }
+  },
+  { slug: 'cheonan', city: 'Cheonan', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.81, lng: 127.11, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.65M', metroPopulation: '0.65M', phoneCode: '+82 41', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-6 to 4°C). Central Korea.',
+      attractions: ['Independence Hall of Korea', 'Arario Gallery', 'Galleria Department Store', 'Taejosan Mountain', 'Gwangdeoksa Temple', 'KTX station', 'Samsung Display', 'Walnut cookies', 'Byeongcheon traditional market', 'Hot springs'],
+      demographics: 'Chungnam capital. Independence Hall. Samsung Display HQ. KTX hub city. Famous walnut cookies (hodu-gwaja).'
+    }
+  },
+  { slug: 'pyeongtaek', city: 'Pyeongtaek', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.99, lng: 127.09, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.52M', metroPopulation: '0.52M', phoneCode: '+82 31', language: 'Korean, English',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-6 to 4°C). West coast plains.',
+      attractions: ['Camp Humphreys (largest US base)', 'Pyeongtaek Port', 'Samsung semiconductor', 'LG Electronics', 'Pyeongtaek Lake', 'Anjung traditional market', 'International community', 'Songtan entertainment', 'Seohae Bridge', 'Industrial complexes'],
+      demographics: 'Largest US military base in Asia. Samsung/LG factories. Major port city. Fastest growing city. International community.'
+    }
+  },
+  { slug: 'gimpo', city: 'Gimpo', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.62, lng: 126.72, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.47M', metroPopulation: '0.47M', phoneCode: '+82 31', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-6 to 4°C). Han River estuary.',
+      attractions: ['Gimpo International Airport', 'Jangneung Royal Tomb', 'Gimpo Art Village', 'Ara Waterway', 'Hangang New Town', 'Gyeyang Mountain', 'Peace Nuri Park', 'Outlet malls', 'DMZ nearby', 'Gyeonggi rice'],
+      demographics: 'Gimpo Airport city. Seoul domestic flights. Ara Waterway connects to Incheon. New town development. DMZ proximity.'
+    }
+  },
+  { slug: 'siheung', city: 'Siheung', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.38, lng: 126.80, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.49M', metroPopulation: '0.49M', phoneCode: '+82 31', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-4 to 4°C). West coast.',
+      attractions: ['Oido Island', 'Gaetgol Eco Park', 'Sihwa MTV', 'Wolot Historical Park', 'Siheung Lotus Theme Park', 'Soraepogu Port', 'Mud flats', 'Seoul National University campus', 'Industrial complexes', 'Seafood restaurants'],
+      demographics: 'West coast industrial city. Oido seafood island. Sihwa tidal power. Seoul National University Siheung campus. Mud flat experiences.'
+    }
+  },
+  { slug: 'paju', city: 'Paju', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.76, lng: 126.78, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.47M', metroPopulation: '0.47M', phoneCode: '+82 31', language: 'Korean',
+      climate: 'Humid continental with hot summers (23-29°C) and very cold winters (-8 to 3°C). DMZ border.',
+      attractions: ['DMZ tours', 'Imjingak Peace Park', 'Paju Book City', 'Heyri Art Village', 'Provence Village', 'Odusan Unification Observatory', 'Majang Lake', 'Premium outlets', 'English Village', 'Farm experiences'],
+      demographics: 'DMZ border city. Paju Book City (publishing). Heyri Art Village. Imjingak Peace Park. Closest city to North Korea.'
+    }
+  },
+  { slug: 'uijeongbu', city: 'Uijeongbu', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.74, lng: 127.05, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.45M', metroPopulation: '0.45M', phoneCode: '+82 31', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-7 to 3°C). Mountain valley.',
+      attractions: ['Budaejjigae Street', 'Hoeryong Temple', 'Suraksan Mountain', 'Jangam Lake', 'US military bases', 'Uijeongbu Light Rail', 'Shopping districts', 'Dobongsan Mountain', 'Traditional markets', 'K-drama locations'],
+      demographics: 'Budaejjigae (army stew) origin city. US military presence. Gateway to Bukhansan. Light rail system. Northern Seoul suburb.'
+    }
+  },
+  { slug: 'gumi', city: 'Gumi', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.12, lng: 128.34, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.41M', metroPopulation: '0.41M', phoneCode: '+82 54', language: 'Korean',
+      climate: 'Humid continental with hot summers (25-31°C) and cold winters (-5 to 5°C). Inland basin.',
+      attractions: ['Geumo Mountain', 'Park Chung-hee birthplace', 'Gumi Electronics Valley', 'Samsung/LG factories', 'Nakdong River', 'Doseol Temple', 'Indong Market', 'Industrial Tourism', 'Geumosan Cable Car', 'Tech museums'],
+      demographics: 'Korea\'s electronics capital. Samsung/LG manufacturing. Park Chung-hee hometown. High-tech industrial city. "Korean Silicon Valley."'
+    }
+  },
+  { slug: 'jinju', city: 'Jinju', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.18, lng: 128.11, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.35M', metroPopulation: '0.35M', phoneCode: '+82 55', language: 'Korean',
+      climate: 'Humid subtropical with hot summers (25-31°C) and mild winters (-2 to 7°C). Nam River.',
+      attractions: ['Jinjuseong Fortress', 'Namgang Yudeung Festival', 'Jinju National Museum', 'Chokseongnu Pavilion', 'Gyeongsang National University', 'Nongae Rock', 'Silk industry', 'Bibimbap origin', 'Nam River', 'Lantern festival'],
+      demographics: 'Lantern festival city (UNESCO). Jinjuseong fortress. Silk tradition. Bibimbap origin claim. Gyeongnam cultural center.'
+    }
+  },
+  { slug: 'asan', city: 'Asan', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.79, lng: 127.00, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.32M', metroPopulation: '0.32M', phoneCode: '+82 41', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-6 to 4°C). Central Korea.',
+      attractions: ['Asan Spavis', 'Hyeonchungsa Shrine', 'Oebam Village', 'Dogo Hot Springs', 'Onyang Folk Museum', 'Samsung Display', 'Piagol Valley', 'Independence movement sites', 'Admiral Yi Sun-sin shrine', 'Hot spring resorts'],
+      demographics: 'Hot springs resort city. Admiral Yi Sun-sin heritage. Samsung Display manufacturing. Growing tech hub. Spa tourism.'
+    }
+  },
+  { slug: 'iksan', city: 'Iksan', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.95, lng: 126.96, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.28M', metroPopulation: '0.28M', phoneCode: '+82 63', language: 'Korean',
+      climate: 'Humid subtropical with hot summers (25-31°C) and cold winters (-4 to 5°C). Honam plain.',
+      attractions: ['Mireuksa Temple Site (UNESCO)', 'Wanggungri Five-Story Pagoda', 'Jewelry Museum', 'Iksan Civic Center', 'KTX station', 'Baekje heritage', 'Agricultural plains', 'Ssangneung Royal Tombs', 'Traditional markets', 'Rice farming'],
+      demographics: 'UNESCO Baekje Historic Area. Mireuksa temple ruins. Jewelry industry. Agricultural center. KTX junction city.'
+    }
+  },
+  { slug: 'gunsan', city: 'Gunsan', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.97, lng: 126.74, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.27M', metroPopulation: '0.27M', phoneCode: '+82 63', language: 'Korean',
+      climate: 'Humid subtropical with warm summers (24-29°C) and cold winters (-3 to 5°C). West coast.',
+      attractions: ['Gunsan Modern History Museum', 'Dongguksa Temple (Japanese)', 'Wolmyeong Park', 'Saemangeum Seawall', 'Lee Sung-dang Bakery', 'Japanese colonial architecture', 'Eunpa Lake', 'Seonyudo Island', 'Port area', 'Time travel streets'],
+      demographics: 'Japanese colonial architecture preserved. Modern history tourism. Saemangeum reclamation. Port city. "Time travel" destination.'
+    }
+  },
+  { slug: 'chungju', city: 'Chungju', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.99, lng: 127.93, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.21M', metroPopulation: '0.21M', phoneCode: '+82 43', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-7 to 3°C). Inland basin.',
+      attractions: ['Chungju Lake', 'Suanbo Hot Springs', 'World Martial Arts Festival', 'Tangeumdae', 'Central Tower', 'Chungju Dam', 'Apple orchards', 'Goguryeo Monuments', 'Water sports', 'Traditional markets'],
+      demographics: 'Chungbuk capital. World Martial Arts Festival. Chungju Lake recreation. Suanbo hot springs. Apple production.'
+    }
+  },
+  { slug: 'geoje', city: 'Geoje', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 34.88, lng: 128.62, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.24M', metroPopulation: '0.24M', phoneCode: '+82 55', language: 'Korean',
+      climate: 'Humid subtropical with warm summers (24-28°C) and mild winters (2-9°C). Island climate.',
+      attractions: ['Oedo-Botania', 'Geoje POW Camp', 'Hakdong Mongdol Beach', 'Windy Hill', 'Gujora Beach', 'Samsung/DSME shipyards', 'Maengjongjuk Forest', 'Coastal drive', 'Hallyeo National Park', 'Fresh seafood'],
+      demographics: 'Korea\'s second largest island. Shipbuilding (Samsung Heavy/DSME). Oedo botanical island. Beautiful coastline. POW camp history.'
+    }
+  },
+  { slug: 'yangsan', city: 'Yangsan', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.34, lng: 129.04, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.35M', metroPopulation: '0.35M', phoneCode: '+82 55', language: 'Korean',
+      climate: 'Humid subtropical with hot summers (25-31°C) and mild winters (0-8°C). Mountain valley.',
+      attractions: ['Tongdosa Temple', 'Yeongchuksan Mountain', 'Yangsan Tower', 'Buddha statue', 'Pusan National University Yangsan', 'Medical complex', 'Hwaeomneup Wetland', 'Premium outlets', 'Cable car', 'Temple stays'],
+      demographics: 'Tongdosa Temple (one of three jewel temples). Busan suburb. Medical hub. Growing residential city. Buddhist heritage.'
+    }
+  },
+  { slug: 'icheon', city: 'Icheon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.28, lng: 127.44, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.22M', metroPopulation: '0.22M', phoneCode: '+82 31', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-7 to 3°C). Inland.',
+      attractions: ['Icheon Ceramics Village', 'SK Hynix', 'Miranda Spa', 'Rice Cultural Festival', 'Cerapia', 'Seolbong Park', 'Premium rice', 'Pottery workshops', 'Hot springs', 'Golf courses'],
+      demographics: 'Korea\'s ceramics capital. SK Hynix semiconductor. Famous rice (Icheon rice). Pottery tradition. Spa resorts.'
+    }
+  },
+  { slug: 'tongyeong', city: 'Tongyeong', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 34.85, lng: 128.43, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.13M', metroPopulation: '0.13M', phoneCode: '+82 55', language: 'Korean',
+      climate: 'Humid subtropical with warm summers (24-28°C) and mild winters (2-8°C). Coastal.',
+      attractions: ['Hallyeosudo Cable Car', 'Admiral Yi Sun-sin sites', 'Dongpirang Mural Village', 'Gangguan Port', 'Yun Isang Memorial', 'Hansando Island', 'Undersea Tunnel', 'Dara Park', 'Fresh oysters', 'Island hopping'],
+      demographics: 'Admiral Yi Sun-sin\'s naval base. Composer Yun Isang hometown. Oyster capital. Beautiful harbor. "Korea\'s Naples."'
+    }
+  },
+  { slug: 'gwangmyeong', city: 'Gwangmyeong', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.48, lng: 126.86, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.31M', metroPopulation: '0.31M', phoneCode: '+82 2', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-5 to 4°C). Seoul metro.',
+      attractions: ['Gwangmyeong Cave', 'IKEA Korea 1st store', 'Costco', 'KTX Gwangmyeong Station', 'Gwangmyeong Speedom', 'Outlet malls', 'Cheolsan Station area', 'Upcycled cave attraction', 'Theme park', 'Shopping'],
+      demographics: 'Former gold mine turned attraction. KTX station to Seoul. IKEA first Korean store. Retail hub. Compact dense city.'
+    }
+  },
+  { slug: 'hanam', city: 'Hanam', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.54, lng: 127.21, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.29M', metroPopulation: '0.29M', phoneCode: '+82 31', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-6 to 4°C). Han River.',
+      attractions: ['Starfield Hanam', 'Misa-ri Rowing Course', 'Misari Cafe Street', 'Paldang Dam', 'Namhansan Fortress nearby', 'Hanam Union Tower', 'Doksandong Fortress', 'Han River parks', 'Live music cafes', 'Water sports'],
+      demographics: 'Starfield mega mall. 1988 Olympics rowing venue. Misari cafe street. Eastern Seoul suburb. Growing new town.'
+    }
+  },
+  { slug: 'yangju', city: 'Yangju', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.78, lng: 127.05, tier: 2, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.23M', metroPopulation: '0.23M', phoneCode: '+82 31', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-29°C) and cold winters (-8 to 2°C). Northern suburbs.',
+      attractions: ['Jangheung Art Park', 'Songchuwon', 'Hoeryongsa Temple', 'Royal Tombs', 'Rail bike', 'Yangju Byeolsandae Nori', 'Gamisul Valley', 'Farms and ranches', 'Buddhist heritage', 'Mountain hiking'],
+      demographics: 'Northern Seoul suburb. Traditional mask dance (UNESCO). Rail bike course. Growing residential area. Agricultural heritage.'
+    }
+  },
+  { slug: 'osan', city: 'Osan', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.15, lng: 127.07, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.23M', metroPopulation: '0.23M', phoneCode: '+82 31', language: 'Korean, English',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-6 to 4°C). Central Gyeonggi.',
+      attractions: ['Osan Air Base', 'Muljangori Wetland', 'Doksan Fortress', 'Osan Traditional Market', 'International community', 'O-bok Strawberry Farm', 'Hwaseong Fortress nearby', 'Shopping streets', 'American restaurants', 'Multicultural area'],
+      demographics: 'Osan Air Base city. US military presence. International community. Strawberry farming. Multicultural restaurants.'
+    }
+  },
+  { slug: 'gunpo', city: 'Gunpo', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.36, lng: 126.94, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.27M', metroPopulation: '0.27M', phoneCode: '+82 31', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-5 to 4°C). Seoul metro.',
+      attractions: ['Surisan Mountain', 'Gunpo Royal Azalea Festival', 'Citizens Park', 'Sanbon New Town', 'Daeyami Station', 'Gyeonggi Grand Park nearby', 'Reservoir parks', 'Hiking trails', 'Suburban life', 'Shopping centers'],
+      demographics: 'Quiet residential city. Surisan hiking. Royal Azalea Festival. Seoul commuter suburb. New town development.'
+    }
+  },
+  { slug: 'donghae', city: 'Donghae', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.52, lng: 129.11, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.09M', metroPopulation: '0.09M', phoneCode: '+82 33', language: 'Korean',
+      climate: 'Humid continental with mild summers (22-27°C) and cold winters (-3 to 5°C). East coast.',
+      attractions: ['Mureung Valley', 'Chuam Beach', 'Mangsang Beach', 'Donghae Port', 'Cheongok Cave', 'Doota Resort', 'Sunrise spots', 'Fresh seafood', 'East Sea views', 'Cement industry'],
+      demographics: 'East Sea port city. Mureung Valley beauty spot. Cheongok limestone cave. Fresh squid. Gateway to Gangwon coast.'
+    }
+  },
+  { slug: 'samcheok', city: 'Samcheok', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.45, lng: 129.17, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.06M', metroPopulation: '0.06M', phoneCode: '+82 33', language: 'Korean',
+      climate: 'Humid continental with mild summers (22-27°C) and cold winters (-2 to 6°C). East coast.',
+      attractions: ['Hwanseon Cave', 'Haesindang Park (Penis Park)', 'Samcheok Beach', 'Jukseoru Pavilion', 'Ocean Rail Bike', 'Daegeum Cave', 'Coastal scenery', 'Deokpung Valley', 'Fresh seafood', 'Sunrise views'],
+      demographics: 'Famous limestone caves. Haesindang Park (unique). Ocean rail bike. Coastal scenery. Rural east coast charm.'
+    }
+  },
+  { slug: 'gwacheon', city: 'Gwacheon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.43, lng: 126.99, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.07M', metroPopulation: '0.07M', phoneCode: '+82 2', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-5 to 4°C). Mountain valley.',
+      attractions: ['Seoul Grand Park', 'Seoul Land', 'National Museum of Modern Art', 'Seoul Zoo', 'Gwacheon Science Museum', 'Government Complex', 'Cheonggyesan Mountain', 'Racecourse', 'Cherry blossoms', 'Family attractions'],
+      demographics: 'Government complex city. Seoul Land theme park. National Museum of Modern Art. Seoul Zoo. Family destination.'
+    }
+  },
+  { slug: 'gongju', city: 'Gongju', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.45, lng: 127.12, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.11M', metroPopulation: '0.11M', phoneCode: '+82 41', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-6 to 4°C). Geum River.',
+      attractions: ['Gongsanseong Fortress (UNESCO)', 'Royal Tombs of Baekje', 'National Museum', 'Magoksa Temple', 'Geum River', 'Baekje Cultural Land', 'Gyeryongsan National Park', 'Chestnut festival', 'Historic sites', 'University town'],
+      demographics: 'UNESCO Baekje Historic Area. Former Baekje capital. Gongsanseong Fortress. Chestnut capital. Ancient Korean history.'
+    }
+  },
+  { slug: 'buyeo', city: 'Buyeo', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.28, lng: 126.91, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.07M', metroPopulation: '0.07M', phoneCode: '+82 41', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-6 to 4°C). Geum River.',
+      attractions: ['Busosanseong Fortress (UNESCO)', 'Jeongnimsa Temple Site', 'Baekje Royal Tombs', 'Nakhwaam Rock', 'Gudeurae Sculpture Park', 'National Buyeo Museum', 'Seodong Lotus Festival', 'Baekje Cultural Festival', 'Gungnamji Pond', 'Historic capital'],
+      demographics: 'UNESCO Baekje Historic Area. Last Baekje capital. Nakhwaam tragic history. Lotus festival. Ancient kingdom heritage.'
+    }
+  },
+  { slug: 'gyeryong', city: 'Gyeryong', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.27, lng: 127.25, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.04M', metroPopulation: '0.04M', phoneCode: '+82 42', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-6 to 4°C). Mountain.',
+      attractions: ['Gyeryongsan National Park', 'Three Military HQs', 'Donghaksa Temple', 'Gapsa Temple', 'Autumn foliage', 'Military culture', 'Hiking trails', 'Shamanism sites', 'Natural beauty', 'Cherry blossoms'],
+      demographics: 'Korea\'s military capital. All three service HQs. Gyeryongsan National Park. Sacred mountain. Smallest city by population.'
+    }
+  },
+  { slug: 'nonsan', city: 'Nonsan', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.19, lng: 127.10, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.12M', metroPopulation: '0.12M', phoneCode: '+82 41', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-6 to 4°C). Plains.',
+      attractions: ['Army Training Center', 'Gwanchoksa Temple', 'Eunjin Mireuk Buddha', 'Sunshine Land', 'Strawberry farms', 'Tapjeongho Lake', 'Military experience', 'Dunjeonri Dolmen', 'Agricultural plains', 'Traditional markets'],
+      demographics: 'Korea\'s main military training center. Tallest stone Buddha (Eunjin Mireuk). Strawberry capital. Agricultural area.'
+    }
+  },
+  { slug: 'boryeong', city: 'Boryeong', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.33, lng: 126.61, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.10M', metroPopulation: '0.10M', phoneCode: '+82 41', language: 'Korean',
+      climate: 'Humid subtropical with warm summers (24-29°C) and cold winters (-3 to 5°C). West coast.',
+      attractions: ['Boryeong Mud Festival', 'Daecheon Beach', 'Mud cosmetics', 'Muchangpo Beach', 'Seohae Island hopping', 'Oeam Folk Village', 'Mud skincare', 'Summer festivals', 'Seafood', 'Coastal scenery'],
+      demographics: 'Boryeong Mud Festival (world famous). Daecheon Beach. Mud cosmetics industry. Summer party destination. West coast resort.'
+    }
+  },
+  { slug: 'seosan', city: 'Seosan', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.78, lng: 126.45, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.18M', metroPopulation: '0.18M', phoneCode: '+82 41', language: 'Korean',
+      climate: 'Humid subtropical with warm summers (24-29°C) and cold winters (-4 to 5°C). West coast.',
+      attractions: ['Seosan Bird Sanctuary', 'Haemieupseong Fortress', 'Ganwolam Hermitage', 'Buseoksa Temple', 'Sunset views', 'Garlic festival', 'Catholic martyrdom sites', 'Tidal flats', 'Migratory birds', 'Agricultural plains'],
+      demographics: 'Bird watching paradise. Haemieupseong historical fortress. Catholic martyrdom history. Garlic capital. Sunset destination.'
+    }
+  },
+  { slug: 'dangjin', city: 'Dangjin', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.89, lng: 126.63, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.17M', metroPopulation: '0.17M', phoneCode: '+82 41', language: 'Korean',
+      climate: 'Humid subtropical with warm summers (24-29°C) and cold winters (-4 to 5°C). West coast.',
+      attractions: ['Sapgyoho Lake', 'Waemok Village', 'Hyundai Steel', 'Solmoe Shrine', 'Ham Deok Beach', 'Catholic pilgrimage', 'Industrial tours', 'Lotus flower festival', 'Tidal flats', 'Sunrise views'],
+      demographics: 'Major industrial port. Hyundai Steel. Catholic pilgrimage site (Solmoe). Sapgyoho recreational lake. Growing industrial city.'
+    }
+  },
+  { slug: 'jecheon', city: 'Jecheon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.13, lng: 128.21, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.13M', metroPopulation: '0.13M', phoneCode: '+82 43', language: 'Korean',
+      climate: 'Humid continental with cool summers (22-28°C) and very cold winters (-9 to 2°C). Mountain basin.',
+      attractions: ['Cheongpung Cultural Complex', 'Uirimji Reservoir', 'Cheongpung Lake', 'Beopjusa Temple nearby', 'Korean medicine', 'Mountain hiking', 'Winter sports', 'Traditional herbal medicine', 'Hwangsanbeol Eco Park', 'Film locations'],
+      demographics: 'Korean traditional medicine city. Cheongpung Lake beauty. Mountain retreat. Herbal medicine markets. Healing tourism.'
+    }
+  },
+  { slug: 'yeoju', city: 'Yeoju', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.30, lng: 127.64, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.11M', metroPopulation: '0.11M', phoneCode: '+82 31', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-7 to 3°C). Han River.',
+      attractions: ['Yeongneung Royal Tomb (UNESCO)', 'Silleuksa Temple', 'Yeoju Ceramics', 'King Sejong\'s Tomb', 'Premium Outlets', 'Godal Island', 'Han River views', 'Rice farming', 'Pottery village', 'Royal heritage'],
+      demographics: 'King Sejong\'s burial place (UNESCO). Ceramics tradition. Premium outlets. Han River scenic area. Royal Joseon heritage.'
+    }
+  },
+  { slug: 'pocheon', city: 'Pocheon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.89, lng: 127.20, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.15M', metroPopulation: '0.15M', phoneCode: '+82 31', language: 'Korean',
+      climate: 'Humid continental with warm summers (23-29°C) and very cold winters (-10 to 2°C). Mountain.',
+      attractions: ['Pocheon Art Valley', 'Herb Island', 'Sanjeong Lake', 'Idong Makgeolli Village', 'Bear Town', 'Bidulginang Waterfall', 'Baekun Valley', 'Adventure parks', 'Wine cave', 'Natural scenery'],
+      demographics: 'Art Valley (flooded quarry). Herb Island theme park. Makgeolli (rice wine) town. Nature escapes. Northern Gyeonggi recreation.'
+    }
+  },
+  { slug: 'dongducheon', city: 'Dongducheon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.90, lng: 127.06, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.09M', metroPopulation: '0.09M', phoneCode: '+82 31', language: 'Korean, English',
+      climate: 'Humid continental with warm summers (23-29°C) and very cold winters (-9 to 2°C). Mountain valley.',
+      attractions: ['Soyo Mountain', 'Camp Casey', 'Rock Festival', 'Bosan-dong shopping', 'Jajaeam Hermitage', 'Hiking trails', 'International community', 'US military culture', 'Multicultural area', 'Nature parks'],
+      demographics: 'US military base city (Camp Casey). Dongducheon Rock Festival. International community. Soyo Mountain gateway. Border area.'
+    }
+  },
+  { slug: 'gapyeong', city: 'Gapyeong', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.83, lng: 127.51, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.06M', metroPopulation: '0.06M', phoneCode: '+82 31', language: 'Korean',
+      climate: 'Humid continental with warm summers (23-29°C) and cold winters (-8 to 2°C). Mountain valley.',
+      attractions: ['Nami Island', 'Petite France', 'Garden of Morning Calm', 'Cheongpyeong Dam', 'Jarasum Island Jazz', 'Italian Village', 'Rail bike', 'Zip wire', 'Pine forests', 'K-drama locations'],
+      demographics: 'Nami Island (Winter Sonata). Petite France. Garden of Morning Calm. Seoul day trip paradise. K-drama filming mecca.'
+    }
+  },
+  { slug: 'taebaek', city: 'Taebaek', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 37.16, lng: 128.99, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.04M', metroPopulation: '0.04M', phoneCode: '+82 33', language: 'Korean',
+      climate: 'Highland continental with cool summers (18-25°C) and very cold winters (-12 to -2°C). Highest city.',
+      attractions: ['Taebaeksan Mountain', 'Coal Museum', 'High1 Resort', 'Hwangji Pond', 'Snow Festival', 'Coal mining heritage', 'Heaven Lake', 'Alpine flowers', 'Sunflower festival', 'Mountain hiking'],
+      demographics: 'Korea\'s highest city (700m+). Taebaeksan sacred mountain. Former coal mining capital. Snow festival. Cool summer retreat.'
+    }
+  },
+  { slug: 'yeongju', city: 'Yeongju', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.81, lng: 128.62, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.10M', metroPopulation: '0.10M', phoneCode: '+82 54', language: 'Korean',
+      climate: 'Humid continental with warm summers (23-29°C) and cold winters (-7 to 3°C). Mountain basin.',
+      attractions: ['Buseoksa Temple (UNESCO)', 'Sosu Seowon (UNESCO)', 'Sobaeksan National Park', 'Seonbichon Village', 'Apple orchards', 'Confucian heritage', 'Ginseng', 'Mountain trails', 'Traditional architecture', 'Autumn foliage'],
+      demographics: 'UNESCO World Heritage temples and seowon. Sobaeksan gateway. Apple and ginseng farming. Confucian scholarship heritage.'
+    }
+  },
+  { slug: 'mungyeong', city: 'Mungyeong', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.59, lng: 128.20, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.07M', metroPopulation: '0.07M', phoneCode: '+82 54', language: 'Korean',
+      climate: 'Humid continental with warm summers (23-29°C) and cold winters (-7 to 3°C). Mountain pass.',
+      attractions: ['Mungyeongsaejae Pass', 'Chasabal Ceramics', 'Mungyeong Coal Museum', 'Ancient road gates', 'Omija (schisandra) berries', 'Sagnongsan Mountain', 'Traditional fortress gates', 'Film location', 'Autumn foliage', 'Pottery village'],
+      demographics: 'Historic Mungyeongsaejae pass (ancient route). Omija berry capital. Traditional ceramics. Mountain gateway. Sageuk film location.'
+    }
+  },
+  { slug: 'sangju', city: 'Sangju', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.41, lng: 128.16, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.10M', metroPopulation: '0.10M', phoneCode: '+82 54', language: 'Korean',
+      climate: 'Humid continental with hot summers (24-30°C) and cold winters (-6 to 4°C). Basin.',
+      attractions: ['Sangju Bicycle Museum', 'Gyeongsang-gamyeong Park', 'Dried Persimmon Village', 'Gonggeomji Reservoir', 'Namsan Fortress', 'Nakdong River source', 'Traditional markets', 'Persimmon festival', 'Rural landscape', 'Agricultural heritage'],
+      demographics: 'Dried persimmon (gotgam) capital. Bicycle culture. Traditional Gyeongsang center. Agricultural heartland. Historic provincial capital.'
+    }
+  },
+  { slug: 'gimcheon', city: 'Gimcheon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 36.12, lng: 128.11, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.14M', metroPopulation: '0.14M', phoneCode: '+82 54', language: 'Korean',
+      climate: 'Humid continental with hot summers (25-31°C) and cold winters (-5 to 5°C). Basin.',
+      attractions: ['Jikjisa Temple', 'KTX Gimcheon-Gumi Station', 'Grape farms', 'Seongjusan Mountain', 'Samdobong Peak', 'Traditional markets', 'Railway junction', 'Agriculture', 'Buddhist heritage', 'Mountain hiking'],
+      demographics: 'Major railway junction. Jikjisa Temple. Grape cultivation. KTX stop. Historic transport hub connecting regions.'
+    }
+  },
+  { slug: 'yeongcheon', city: 'Yeongcheon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.97, lng: 128.94, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.10M', metroPopulation: '0.10M', phoneCode: '+82 54', language: 'Korean',
+      climate: 'Humid continental with hot summers (25-31°C) and cold winters (-5 to 5°C). Inland.',
+      attractions: ['Eunhaesa Temple', 'Hot springs', 'Bohyeonsan Mountain', 'Grape wine', 'Stargazing observatory', 'Gatbawi Buddha nearby', 'Traditional markets', 'Agricultural plains', 'Thermal spas', 'Temple stays'],
+      demographics: 'Hot spring resort city. Grape wine production. Eunhaesa Temple. Observatory for stargazing. Relaxation destination.'
+    }
+  },
+  { slug: 'miryang', city: 'Miryang', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.49, lng: 128.75, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.11M', metroPopulation: '0.11M', phoneCode: '+82 55', language: 'Korean',
+      climate: 'Humid subtropical with hot summers (25-32°C) and mild winters (-2 to 7°C). River valley.',
+      attractions: ['Yeongnamnu Pavilion', 'Pyochungsa Temple', 'Ice Valley', 'Miryang River', 'Arirang legend', 'Traditional theater', 'KTX station', 'Buddhist temples', 'Summer Ice Valley', 'Historic pavilion'],
+      demographics: 'Miryang Arirang origin. Yeongnamnu Pavilion (Korean treasure). Summer Ice Valley phenomenon. KTX access. Traditional culture.'
+    }
+  },
+  { slug: 'sacheon', city: 'Sacheon', timezone: 'Asia/Seoul', country: 'South Korea', countryCode: 'KR', lat: 35.00, lng: 128.06, tier: 3, continent: 'asia',
+    info: {
+      currency: 'South Korean Won', currencySymbol: '₩', population: '0.11M', metroPopulation: '0.11M', phoneCode: '+82 55', language: 'Korean',
+      climate: 'Humid subtropical with warm summers (24-29°C) and mild winters (0-8°C). South coast.',
+      attractions: ['Sacheon Aerospace Museum', 'Korea Aerospace Industries', 'Samseonggung Shrine', 'Sillan Beach', 'Waryong-dong Mural Village', 'Namhae Bridge view', 'Fresh seafood', 'Aircraft spotting', 'Coastal scenery', 'Industrial tourism'],
+      demographics: 'Korea Aerospace Industries HQ. Aviation industry. Aerospace museum. South coast beaches. Aircraft manufacturing.'
     }
   },
 
