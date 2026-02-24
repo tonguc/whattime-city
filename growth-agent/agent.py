@@ -1585,7 +1585,8 @@ async def batch_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
         except Exception as e:
             state["failed"] += 1
-            await update.message.reply_text(f"❌ {city_name}: {str(e)[:100]}")
+            logger.error(f"Batch error {city}: {e}", exc_info=True)
+            await update.message.reply_text(f"❌ {city_name}: {str(e)[:200]}")
         
         state["queue"] = state["queue"][1:] if state["queue"] else []
         await asyncio.sleep(4)
