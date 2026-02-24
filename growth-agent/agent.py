@@ -988,8 +988,7 @@ async def scheduled_friday_batch(app):
     await app.bot.send_message(
         chat_id=chat_id,
         text=f"🤖 *Haftalık Otomatik Batch Başladı*\n{len(cities)} şehir işlenecek:\n" + 
-             "\n".join([f"• {c}" for c in cities]),
-        parse_mode='Markdown'
+             "\n".join([f"• {c}" for c in cities])
     )
     
     success = 0
@@ -1020,8 +1019,7 @@ async def scheduled_friday_batch(app):
     
     await app.bot.send_message(
         chat_id=chat_id,
-        text=f"✅ *Haftalık Batch Tamamlandı*\n{success}/{len(cities)} başarılı",
-        parse_mode='Markdown'
+        text=f"✅ *Haftalık Batch Tamamlandı*\n{success}/{len(cities)} başarılı"
     )
 
 async def scheduled_monday_report(app):
@@ -1059,7 +1057,7 @@ async def scheduled_monday_report(app):
 *Bu Hafta Önerilen Şehirler:*
 /queue ile gör"""
     
-    await app.bot.send_message(chat_id=chat_id, text=report, parse_mode='Markdown')
+    await app.bot.send_message(chat_id=chat_id, text=report)
 
 def run_scheduler(app):
     """Background scheduler thread"""
@@ -1102,31 +1100,31 @@ def run_scheduler(app):
 # ============================================================
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("""🚀 *Growth Agent v4\\.0*
+    await update.message.reply_text("""🚀 *Growth Agent v4.0*
 GSC Connected \\| Scheduler \\| Diff Analyzer
 
 *İçerik:*
-/run \\[city\\] — GSC\\-aware içerik üret
-/batch \\[n\\] — Priority queue'dan toplu
-/research \\[city\\] — Rakip analizi
+/run [city] — GSC-aware içerik üret
+/batch [n] — Priority queue'dan toplu
+/research [city] — Rakip analizi
 
 *GSC:*
 /gsc — GSC verisi yenile
 /opportunities — Top keyword fırsatları
-/gscstats \\[city\\] — Şehir GSC verisi
+/gscstats [city] — Şehir GSC verisi
 
 *Sistem:*
 /status — Durum
 /budget — Bütçe
 /stats — İstatistikler
-/history \\[city\\] — Geçmiş
+/history [city] — Geçmiş
 /queue — Priority queue
 /seed — Queue doldur
 /auto on/off — Scheduler
-/site \\[isim\\] — Site seç
+/site [isim] — Site seç
 
 *Analiz:*
-/report — Haftalık rapor""", parse_mode='Markdown')
+/report — Haftalık rapor""")
 
 async def status_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     config = get_config()
@@ -1157,7 +1155,7 @@ async def status_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 ⚙️ `{config.get("GITHUB_REPO","?")}` → `{config.get("GITHUB_BRANCH","?")}`"""
     
-    await update.message.reply_text(msg, parse_mode='Markdown')
+    await update.message.reply_text(msg)
 
 async def gsc_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("🔄 GSC verisi yenileniyor...")
@@ -1167,8 +1165,7 @@ async def gsc_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_text(
                 f"✅ GSC güncellendi!\n\n"
                 f"🏙️ {count} şehir priority güncellendi\n"
-                f"Top fırsatlar: /opportunities",
-                parse_mode='Markdown'
+                f"Top fırsatlar: /opportunities"
             )
         else:
             await update.message.reply_text("⚠️ GSC'den veri gelmedi. Credentials kontrol et.")
@@ -1192,7 +1189,7 @@ async def opportunities_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         msg += f"{icon} `{query[:40]}`{city_str}\n"
         msg += f"   {imp} imp | pos {pos:.0f} | CTR {ctr*100:.1f}% | {opp_type}\n\n"
     
-    await update.message.reply_text(msg[:3500], parse_mode='Markdown')
+    await update.message.reply_text(msg[:3500])
 
 async def gscstats_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not context.args:
@@ -1221,24 +1218,25 @@ async def gscstats_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     imp, clk, ctr, pos, top_q, updated, priority = row
     
-    msg = f"""📊 *{city_name} — GSC Verisi*
-
-📈 Impressions: {imp:,}
-👆 Clicks: {clk:,}
-📊 CTR: {ctr*100:.1f}%
-📍 Avg Position: {pos:.1f}
-🔑 Top Query: `{top_q}`
-🎯 Priority Score: {priority:.0f}/100
-
-*Top Keywords:*
-"""
+    lines = [
+        f"📊 {city_name} — GSC Verisi",
+        f"",
+        f"📈 Impressions: {imp:,}",
+        f"👆 Clicks: {clk:,}",
+        f"📊 CTR: {ctr*100:.1f}%",
+        f"📍 Avg Position: {pos:.1f}",
+        f"🔑 Top Query: {top_q}",
+        f"🎯 Priority Score: {priority:.0f}/100",
+        f"",
+        f"Top Keywords:",
+    ]
     for kw in keywords:
         q, i, cl, ct, p, ot = kw
-        msg += f"• `{q[:35]}` — {i} imp | pos {p:.0f} | {ot}\n"
+        lines.append(f"• {q[:40]} — {i} imp | pos {p:.0f} | {ot}")
+    lines.append(f"")
+    lines.append(f"Son güncelleme: {(updated or 'N/A')[:16]}")
     
-    msg += f"\n🕐 Son güncelleme: {(updated or 'N/A')[:16]}"
-    
-    await update.message.reply_text(msg, parse_mode='Markdown')
+    await update.message.reply_text("\n".join(lines))
 
 async def run_city_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not context.args:
@@ -1249,10 +1247,9 @@ async def run_city_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     city_name = city_slug.replace('-', ' ').title()
     
     await update.message.reply_text(
-        f"🔍 *{city_name}* işleniyor\\.\\.\\.\n"
+        f"🔍 *{city_name}* işleniyor...\n"
         f"1️⃣ GSC veri yükle\n2️⃣ Mevcut içerik oku\n"
-        f"3️⃣ İçerik üret \\(Sonnet\\)\n4️⃣ Validate\n5️⃣ Diff analiz\n6️⃣ GitHub PR",
-        parse_mode='Markdown'
+        f"3️⃣ İçerik üret (Sonnet)\n4️⃣ Validate\n5️⃣ Diff analiz\n6️⃣ GitHub PR"
     )
     
     try:
@@ -1309,12 +1306,11 @@ async def run_city_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
             diff_summary = diff.get("summary", "")[:120]
             
             await update.message.reply_text(
-                f"✅ *{city_name}* tamamlandı\\!\n\n"
+                f"✅ *{city_name}* tamamlandı!\n\n"
                 f"⭐ Skor: {validation['score']}/100\n"
                 f"📝 {diff_summary}\n"
-                f"🔤 {tokens:,} token \\(~${tokens * 0.000003:.4f}\\)\n\n"
-                f"📎 {pr_url}",
-                parse_mode='Markdown'
+                f"🔤 {tokens:,} token (~${tokens * 0.000003:.4f})\n\n"
+                f"📎 {pr_url}"
             )
         else:
             state["failed"] += 1
@@ -1344,7 +1340,7 @@ async def batch_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         # Show GSC context
         ctx = "\n".join([f"{i+1}. {r[0]} (score:{r[1]:.0f}, {r[2]} imp, pos:{r[3]:.0f})"
                          for i, r in enumerate(priority_rows[:n])])
-        await update.message.reply_text(f"🎯 *GSC Priority Queue:*\n```\n{ctx}\n```", parse_mode='Markdown')
+        await update.message.reply_text(f"🎯 *GSC Priority Queue:*\n```\n{ctx}\n```")
     
     state["queue"] = cities.copy()
     success = 0
@@ -1389,8 +1385,7 @@ async def batch_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     cost = state["token_used"] * 0.000003
     await update.message.reply_text(
-        f"🎉 *Batch tamamlandı\\!*\n✅ {success}/{n} | 💰 ~${cost:.4f}",
-        parse_mode='Markdown'
+        f"🎉 *Batch tamamlandı!*\n✅ {success}/{n} | 💰 ~${cost:.4f}"
     )
 
 async def auto_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -1453,13 +1448,13 @@ async def queue_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("📋 Queue boş. /seed + /gsc çalıştır.")
         return
     
-    msg = "📋 *Priority Queue \\(GSC\\-Enhanced\\)*\n\n"
+    msg = "📋 *Priority Queue (GSC-Enhanced)*\n\n"
     for i, row in enumerate(rows):
         city, score, imp, pos, ctr = row
         gsc_info = f" | {imp} imp, pos {pos:.0f}" if imp else ""
-        msg += f"{i+1}\\. `{city}` — {score:.0f}/100{gsc_info}\n"
+        msg += f"{i+1}. `{city}` — {score:.0f}/100{gsc_info}\n"
     
-    await update.message.reply_text(msg, parse_mode='Markdown')
+    await update.message.reply_text(msg)
 
 async def history_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not context.args:
@@ -1482,7 +1477,7 @@ async def history_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
             msg += f"⚠️ {', '.join(issues[:2])}\n"
         msg += "\n"
     
-    await update.message.reply_text(msg[:3000], parse_mode='Markdown')
+    await update.message.reply_text(msg[:3000])
 
 async def stats_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     stats = db_get_stats()
@@ -1495,8 +1490,7 @@ async def stats_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"✅ Tamamlanan: {stats['processed']}\n"
         f"⭐ Ort. kalite: {stats['avg_score']}/100\n"
         f"🔑 GSC keywords: {stats['gsc_keywords']}\n\n"
-        f"Session: {state['processed']} şehir | ${cost:.4f}",
-        parse_mode='Markdown'
+        f"Session: {state['processed']} şehir | ${cost:.4f}"
     )
 
 async def budget_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -1511,8 +1505,7 @@ async def budget_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"Harcanan: ${cost:.4f}\n"
         f"Kalan: ${remaining:.2f}\n"
         f"Limit: ${state['monthly_budget']:.0f}\n"
-        f"Token: {state['token_used']:,}",
-        parse_mode='Markdown'
+        f"Token: {state['token_used']:,}"
     )
 
 async def research_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -1538,7 +1531,7 @@ Return JSON: {{
             msg = f"🔬 *{city_name}*\n\n"
             msg += "📌 *Boşluklar:*\n" + "\n".join(f"• {g}" for g in result.get("gaps", [])[:3])
             msg += "\n\n🎯 *Strateji:*\n" + result.get("angle", "")[:200]
-            await update.message.reply_text(msg[:3500], parse_mode='Markdown')
+            await update.message.reply_text(msg[:3500])
         else:
             await update.message.reply_text(f"📊 {resp[:1000]}")
     except Exception as e:
@@ -1559,7 +1552,7 @@ Be specific and actionable. Agency level."""
     
     try:
         report, _, _ = ask_claude(prompt, task_type="report")
-        await update.message.reply_text(f"📊 *Rapor*\n\n{report[:3500]}", parse_mode='Markdown')
+        await update.message.reply_text(f"📊 *Rapor*\n\n{report[:3500]}")
     except Exception as e:
         await update.message.reply_text(f"❌ {str(e)}")
 
@@ -1572,21 +1565,21 @@ async def site_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(f"❌ config-{site}.env yok")
         return
     state["active_site"] = site
-    await update.message.reply_text(f"✅ Site: *{site}*", parse_mode='Markdown')
+    await update.message.reply_text(f"✅ Site: *{site}*")
 
 async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("""📖 *v4\\.0 Komutlar*
+    await update.message.reply_text("""📖 *v4.0 Komutlar*
 
 *İçerik:*
-/run \\[city\\], /batch \\[n\\], /research \\[city\\]
+/run [city], /batch [n], /research [city]
 
 *GSC:*
-/gsc, /opportunities, /gscstats \\[city\\]
+/gsc, /opportunities, /gscstats [city]
 
 *Sistem:*
 /status, /budget, /stats, /queue, /seed
-/history \\[city\\], /site \\[isim\\]
-/auto on/off, /report""", parse_mode='Markdown')
+/history [city], /site [isim]
+/auto on/off, /report""")
 
 # ============================================================
 # MAIN
