@@ -102,8 +102,16 @@ export default async function Page({ params }: PageProps) {
 
   let seoData = null
   try {
-    const mod = await import(`@/data/seo/${slug}-seo`)
-    seoData = mod[Object.keys(mod)[0]] || null
+    const fs = require('fs')
+    const path = require('path')
+    const filePath = path.join(process.cwd(), 'data', 'seo', `${slug}-seo.ts`)
+    if (fs.existsSync(filePath)) {
+      const fileContent = fs.readFileSync(filePath, 'utf-8')
+      const match = fileContent.match(/export const \w+ = ({[\s\S]*});?\s*$/)
+      if (match) {
+        seoData = JSON.parse(match[1].replace(/'/g, '"'))
+      }
+    }
   } catch {
     seoData = null
   }
