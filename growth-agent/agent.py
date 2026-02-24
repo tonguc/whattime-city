@@ -796,6 +796,41 @@ def github_get_file(file_path: str) -> str:
         return base64.b64decode(r.json()["content"]).decode("utf-8")
     return ""
 
+
+def ts_lint_check(file_content: str, file_path: str) -> tuple:
+    """
+    Pre-PR TypeScript lint guard.
+    Blocks dangerous patterns that cause build failures.
+    Returns (passed: bool, issues: list)
+    """
+    issues = []
+    lines = file_content.split("\n")
+    
+    forbidden_patterns = [
+        ("import type", "Type imports forbidden — causes build errors if type not found"),
+        ("import {", "Named imports forbidden in generated files"),
+        (": CityPageSEO", "CityPageSEO type annotation forbidden"),
+        (": City ", "Inline type annotations forbidden"),
+        ("interface ", "Interface declarations forbidden in generated files"),
+        ("satisfies ", "satisfies keyword may cause TS version issues"),
+    ]
+    
+    for i, line in enumerate(lines, 1):
+        for pattern, reason in forbidden_patterns:
+            if pattern in line:
+                issues.append(f"Line {i}: {reason} — `{line.strip()[:60]}`")
+    
+    # Must have export const
+    if "export const" not in file_content:
+        issues.append("No export const found — file may be empty or malformed")
+    
+    # Must end with as const or be plain object
+    if "as const" not in file_content:
+        issues.append("Warning: no 'as const' — add for type safety")
+    
+    passed = len([i for i in issues if "Warning" not in i]) == 0
+    return passed, issues
+
 def github_create_pr(title: str, branch_name: str, body: str, files: dict) -> str:
     config = get_config()
     token = config.get("GITHUB_TOKEN", "")
@@ -1028,21 +1063,16 @@ def generate_tsx(city_slug: str, seo_data: dict, quality_score: int, diff: dict)
     var = city_slug.replace('-', '_')
     changes = " | ".join(diff.get("improvements", [])[:3])
     
-    return f"""// ============================================================
-// Growth Agent v4.0 — GSC-Optimized SEO Content
-// City: {city_name}
-// Generated: {datetime.now().isoformat()}
-// Quality Score: {quality_score}/100
+    return f"""// Growth Agent v4.5 — GSC-Optimized SEO Content
+// City: {city_name} | Score: {quality_score}/100 | {datetime.now().strftime('%Y-%m-%d')}
 // Changes: {changes}
-// ============================================================
+// RULE: No type imports. Plain runtime objects only. as const for safety.
 
-import type {{ CityPageSEO }} from '@/core/types/city';
+export const {var}SEOData = {json.dumps(seo_data, indent=2, ensure_ascii=False)} as const;
 
-export const {var}SEOData: CityPageSEO = {json.dumps(seo_data, indent=2, ensure_ascii=False)};
+export const {var}FAQSchema = {json.dumps(seo_data.get('faq_schema', {}), indent=2, ensure_ascii=False)} as const;
 
-export const {var}FAQSchema = {json.dumps(seo_data.get('faq_schema', {}), indent=2, ensure_ascii=False)};
-
-export const {var}TimezoneFacts = {json.dumps(seo_data.get('timezone_facts', {}), indent=2, ensure_ascii=False)};
+export const {var}TimezoneFacts = {json.dumps(seo_data.get('timezone_facts', {}), indent=2, ensure_ascii=False)} as const;
 """
 
 # ============================================================
@@ -1426,6 +1456,16 @@ async def run_city_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
         tsx = generate_tsx(city_slug, seo_data, validation["score"], diff)
         
+        # Pre-PR TypeScript lint guard
+        lint_passed, lint_issues = ts_lint_check(tsx, f"data/seo/{city_slug}-seo.ts")
+        if not lint_passed:
+            await update.message.reply_text(
+                f"TS Lint FAILED — PR blocked\n\n" +
+                "\n".join(lint_issues[:5])
+            )
+            state["failed"] += 1
+            return
+        
         # Build rich PR body with diff
         issues_text = "\n".join([f"- ⚠️ {i}" for i in validation["issues"]]) or "✅ Tüm kontroller geçti"
         diff_text = "\n".join([f"- ✅ {imp}" for imp in diff.get("improvements", [])]) or "- İçerik oluşturuldu"
@@ -1518,6 +1558,11 @@ async def batch_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
             if seo_data:
                 validation = validate_content(seo_data, city)
                 tsx = generate_tsx(city, validation["content"], validation["score"], {})
+                lint_ok, lint_errs = ts_lint_check(tsx, f"data/seo/{city}-seo.ts")
+                if not lint_ok:
+                    state["failed"] += 1
+                    await update.message.reply_text(f"TS Lint FAIL: {city} — {lint_errs[0][:80]}")
+                    continue
                 result = github_create_pr(
                     f"SEO v4: {city_name} — {validation['score']}/100",
                     city,
