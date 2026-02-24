@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Growth Agent v4.0 - Tonguc Karacay
+Growth Agent v4.5 - Tonguc Karacay
 Full SEO Growth Engine — GSC Connected, Scheduler, Diff Analyzer
+Faz 4.5: Decision Log + Lessons Memory + GSC Priority Queue v2
 """
 
 import os
@@ -94,6 +95,51 @@ WHATTIME.CITY PAGE STRUCTURE:
 - Internal links: /time/[city1]/[city2]/ format ONLY
 """
 
+
+# ============================================================
+# FAILURE REASON CODES (Faz 4.5 — Decision Log)
+# ============================================================
+
+FAILURE_CODES = {
+    "faq_missing":              "FAQ section missing or < 8 questions",
+    "schema_missing":           "JSON-LD FAQPage schema absent",
+    "eeat_missing":             "E-E-A-T footer not present",
+    "internal_links_low":       "Internal /time/ links missing or wrong format",
+    "thin_content":             "Content blocks < 3 or wordcount too low",
+    "meta_desc_short":          "Meta description < 100 characters",
+    "placeholder_text":         "Template placeholders not replaced",
+    "intent_missing":           "Primary search intent not addressed",
+    "semantic_gap":             "Key timezone/DST entities missing",
+    "heading_structure":        "H1/H2 hierarchy inconsistent",
+    "duplicate_risk":           "Content too similar to other cities",
+    "readability_low":          "Answers not direct or too verbose",
+    "factual_risk":             "UTC offset or DST dates may be inaccurate",
+}
+
+def classify_failure_codes(issues: list) -> list:
+    """Map validator issue strings to standardized failure reason codes"""
+    codes = []
+    issue_text = " ".join(issues).lower()
+    
+    if "faq" in issue_text and ("missing" in issue_text or "/8" in issue_text):
+        codes.append("faq_missing")
+    if "schema" in issue_text:
+        codes.append("schema_missing")
+    if "e-e-a-t" in issue_text or "footer" in issue_text:
+        codes.append("eeat_missing")
+    if "link" in issue_text:
+        codes.append("internal_links_low")
+    if "block" in issue_text or "content" in issue_text:
+        codes.append("thin_content")
+    if "meta" in issue_text or "desc" in issue_text:
+        codes.append("meta_desc_short")
+    if "placeholder" in issue_text:
+        codes.append("placeholder_text")
+    if "short" in issue_text and "faq" in issue_text:
+        codes.append("readability_low")
+    
+    return codes if codes else ["intent_missing"]
+
 # ============================================================
 # CONFIG
 # ============================================================
@@ -148,8 +194,26 @@ def init_db():
         model_used TEXT,
         tokens_used INTEGER,
         improvement_notes TEXT,
-        status TEXT DEFAULT 'completed'
+        status TEXT DEFAULT 'completed',
+        failure_reason_codes TEXT,
+        what_fixed_it TEXT,
+        retry_count INTEGER DEFAULT 0,
+        last_failure_score INTEGER,
+        last_success_score INTEGER
     )''')
+    
+    # Migrate existing table
+    for col, defn in [
+        ("failure_reason_codes", "TEXT"),
+        ("what_fixed_it", "TEXT"),
+        ("retry_count", "INTEGER DEFAULT 0"),
+        ("last_failure_score", "INTEGER"),
+        ("last_success_score", "INTEGER"),
+    ]:
+        try:
+            c.execute(f"ALTER TABLE city_history ADD COLUMN {col} {defn}")
+        except:
+            pass
     
     c.execute('''CREATE TABLE IF NOT EXISTS city_priority (
         city_slug TEXT PRIMARY KEY,
@@ -196,15 +260,21 @@ def init_db():
     conn.commit()
     conn.close()
 
-def db_record_processing(city_slug, quality_score, pr_url, issues, model, tokens, notes, status="completed"):
+def db_record_processing(city_slug, quality_score, pr_url, issues, model, tokens, notes, status="completed",
+                         failure_codes=None, what_fixed_it=None, retry_count=0,
+                         last_failure_score=None, last_success_score=None):
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
     now = datetime.now().isoformat()
     
     c.execute('''INSERT INTO city_history 
-                 (city_slug, processed_at, quality_score, pr_url, issues, model_used, tokens_used, improvement_notes, status)
-                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)''',
-              (city_slug, now, quality_score, pr_url, json.dumps(issues), model, tokens, notes, status))
+                 (city_slug, processed_at, quality_score, pr_url, issues, model_used, tokens_used,
+                  improvement_notes, status, failure_reason_codes, what_fixed_it, retry_count,
+                  last_failure_score, last_success_score)
+                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
+              (city_slug, now, quality_score, pr_url, json.dumps(issues), model, tokens, notes, status,
+               json.dumps(failure_codes or []), what_fixed_it or "",
+               retry_count, last_failure_score, last_success_score))
     
     c.execute('''INSERT OR REPLACE INTO city_priority 
                  (city_slug, last_processed, process_count, avg_quality_score, updated_at,
@@ -369,47 +439,91 @@ def extract_city_from_query(query: str) -> str:
     
     return ""
 
+def get_position_multiplier(position: float) -> tuple:
+    """
+    Graduated position multiplier for GSC Priority Queue v2.
+    Returns (multiplier, zone_name)
+    
+    Zone logic:
+    - 1-3:   0.6x  Already ranking well, diminishing returns
+    - 4-7:   1.2x  First page but not top — worth improving
+    - 8-12:  3.5x  HIGH VALUE push zone — small effort, big jump
+    - 13-20: 2.5x  Still push zone but harder
+    - 21-50: 1.3x  Content gap — needs work
+    - 50+:   1.0x  Deep gap — possible but slow
+    """
+    if position <= 3:
+        return 0.6, 'top3'
+    elif position <= 7:
+        return 1.2, 'first_page'
+    elif position <= 12:
+        return 3.5, 'push_zone_high'
+    elif position <= 20:
+        return 2.5, 'push_zone_mid'
+    elif position <= 50:
+        return 1.3, 'content_gap'
+    else:
+        return 1.0, 'deep_gap'
+
 def calculate_opportunity_score(row: dict) -> tuple:
     """
-    Calculate opportunity score and type for a GSC row.
-    Returns (score, opportunity_type)
+    GSC Priority Queue v2 — spec-compliant opportunity scoring.
+    
+    Formula:
+      base = impressions × position_multiplier
+      ctr_gap_bonus = max(0, expected_ctr - current_ctr) × impressions × 50
+      quality_deficit_bonus = applied downstream when quality score known
     
     Types:
-    - 'push': position 8-20, good impressions → push to top 5
-    - 'ctr_fix': position 1-7 but low CTR → fix title/meta
-    - 'content_gap': impressions but no clicks, position 20+ → create/improve content
-    - 'quick_win': high impressions, low position → immediate opportunity
+    - push_zone_high: pos 8-12 (3.5x) → highest ROI
+    - push_zone_mid:  pos 13-20 (2.5x) → good ROI
+    - ctr_fix:        pos 1-7 but CTR < 5% → fix title/meta
+    - content_gap:    pos 21-50 → create/strengthen content
+    - deep_gap:       pos 50+ → significant content needed
+    - quick_win:      high impressions regardless of position
     """
     impressions = row['impressions']
     clicks = row['clicks']
     ctr = row['ctr']
     position = row['position']
     
-    score = 0
-    opp_type = 'low_priority'
-    
     if impressions < 5:
         return 0, 'insufficient_data'
     
-    # Push zone: position 8-20
-    if 8 <= position <= 20 and impressions >= 20:
-        score = impressions * (21 - position) * 2
-        opp_type = 'push'
+    pos_multiplier, zone = get_position_multiplier(position)
     
-    # CTR fix: good position but low CTR
-    elif position <= 7 and ctr < 0.05 and impressions >= 15:
-        score = impressions * (0.1 - ctr) * 500
+    # Expected CTR by position (approximate industry benchmarks)
+    expected_ctr_map = {
+        'top3': 0.25, 'first_page': 0.08,
+        'push_zone_high': 0.03, 'push_zone_mid': 0.02,
+        'content_gap': 0.01, 'deep_gap': 0.005
+    }
+    expected_ctr = expected_ctr_map.get(zone, 0.01)
+    ctr_gap = max(0, expected_ctr - ctr)
+    
+    # Base score
+    base = impressions * pos_multiplier
+    
+    # CTR gap bonus
+    ctr_bonus = ctr_gap * impressions * 50
+    
+    score = base + ctr_bonus
+    
+    # Determine opportunity type
+    if zone == 'top3' and ctr < 0.15:
         opp_type = 'ctr_fix'
-    
-    # Content gap: impressions but barely ranking
-    elif position > 20 and impressions >= 10:
-        score = impressions * 3
+    elif zone == 'first_page' and ctr < 0.05:
+        opp_type = 'ctr_fix'
+    elif zone in ('push_zone_high', 'push_zone_mid'):
+        opp_type = 'push'
+    elif zone == 'content_gap':
         opp_type = 'content_gap'
-    
-    # Quick win: high impressions anywhere
+    elif zone == 'deep_gap':
+        opp_type = 'content_gap'
     elif impressions >= 50:
-        score = impressions * max(0, (50 - position))
         opp_type = 'quick_win'
+    else:
+        opp_type = 'low_priority'
     
     return score, opp_type
 
@@ -792,7 +906,32 @@ def validate_content(content: dict, city_slug: str) -> dict:
         issues.append("Placeholder text found")
         score -= 25
     
-    return {"score": max(0, score), "issues": issues, "passed": score >= 70, "content": content}
+    failure_codes = classify_failure_codes(issues)
+    
+    suggested_fixes = []
+    if "faq_missing" in failure_codes:
+        suggested_fixes.append("Add all 8 FAQ questions with direct answers")
+    if "schema_missing" in failure_codes:
+        suggested_fixes.append("Build JSON-LD FAQPage schema from FAQ data")
+    if "eeat_missing" in failure_codes:
+        suggested_fixes.append("Add E-E-A-T footer with WhatTime.city attribution")
+    if "internal_links_low" in failure_codes:
+        suggested_fixes.append("Add /time/[city]/[other]/ format links")
+    if "thin_content" in failure_codes:
+        suggested_fixes.append("Expand content blocks to 150+ words each")
+    if "meta_desc_short" in failure_codes:
+        suggested_fixes.append("Write 130-160 char meta description")
+    if "placeholder_text" in failure_codes:
+        suggested_fixes.append("Replace all [City] placeholders with real data")
+    
+    return {
+        "score": max(0, score),
+        "issues": issues,
+        "passed": score >= 70,
+        "content": content,
+        "failure_reason_codes": failure_codes,
+        "suggested_fixes": suggested_fixes,
+    }
 
 def generate_city_seo(city_slug: str, existing: dict = None, retry_issues: list = None,
                       gsc_data: dict = None) -> tuple:
@@ -914,6 +1053,8 @@ async def process_city_full(city_slug: str, update, max_retries: int = 2) -> tup
     """Complete pipeline: read → GSC → generate → validate → retry → PR"""
     tokens_total = 0
     last_issues = None
+    attempt_scores = []          # Track score per attempt
+    attempt_failure_codes = []   # Track failure codes per attempt
     
     # Get GSC data for this city
     conn = sqlite3.connect(DB_PATH)
@@ -953,13 +1094,34 @@ async def process_city_full(city_slug: str, update, max_retries: int = 2) -> tup
         
         validation = validate_content(seo_data, city_slug)
         seo_data = validation["content"]
+        attempt_scores.append(validation["score"])
+        attempt_failure_codes = validation.get("failure_reason_codes", [])
         
         if validation["passed"]:
+            # Build what_fixed_it if this was a retry
+            what_fixed = None
+            if attempt > 0 and len(attempt_scores) > 1:
+                prev_score = attempt_scores[-2]
+                curr_score = attempt_scores[-1]
+                diff_temp = analyze_diff(old_content, seo_data)
+                improvements = diff_temp.get("improvements", [])
+                what_fixed = f"Score {prev_score}→{curr_score} | Fixed: {', '.join(attempt_failure_codes[:3])} | {'; '.join(improvements[:3])}"
+            
+            validation["what_fixed_it"] = what_fixed
+            validation["retry_count"] = attempt
+            validation["last_failure_score"] = attempt_scores[-2] if len(attempt_scores) > 1 else None
+            validation["last_success_score"] = validation["score"]
+            
             diff = analyze_diff(old_content, seo_data)
             return seo_data, validation, diff, tokens_total, model
         
         last_issues = validation["issues"]
     
+    # All retries exhausted
+    validation["what_fixed_it"] = None
+    validation["retry_count"] = max_retries
+    validation["last_failure_score"] = attempt_scores[-1] if attempt_scores else 0
+    validation["last_success_score"] = None
     diff = analyze_diff(old_content, seo_data) if seo_data else {"summary": "Failed", "improvements": []}
     return seo_data, validation, diff, tokens_total, model
 
@@ -1574,12 +1736,66 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 /run [city], /batch [n], /research [city]
 
 *GSC:*
-/gsc, /opportunities, /gscstats [city]
+/gsc, /opportunities, /gscstats [city], /lessons
 
 *Sistem:*
 /status, /budget, /stats, /queue, /seed
 /history [city], /site [isim]
 /auto on/off, /report""")
+
+
+async def lessons_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Show what the agent has learned — failure patterns and fixes"""
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    
+    # Most common failure codes
+    c.execute('''SELECT failure_reason_codes, COUNT(*) as cnt 
+                 FROM city_history 
+                 WHERE failure_reason_codes IS NOT NULL AND failure_reason_codes != "[]"
+                 GROUP BY failure_reason_codes ORDER BY cnt DESC LIMIT 10''')
+    failures = c.fetchall()
+    
+    # Successful retries with what_fixed_it
+    c.execute('''SELECT city_slug, last_failure_score, last_success_score, what_fixed_it, retry_count
+                 FROM city_history 
+                 WHERE what_fixed_it IS NOT NULL AND what_fixed_it != "" AND last_success_score IS NOT NULL
+                 ORDER BY processed_at DESC LIMIT 5''')
+    fixes = c.fetchall()
+    
+    # Overall retry stats
+    c.execute('SELECT AVG(retry_count), MAX(retry_count), COUNT(*) FROM city_history WHERE retry_count > 0')
+    retry_stats = c.fetchone()
+    conn.close()
+    
+    msg = "🧠 Agent Lessons — Decision Log\n\n"
+    
+    if failures:
+        msg += "Most Common Failures:\n"
+        code_counter = {}
+        for codes_json, cnt in failures:
+            try:
+                codes = json.loads(codes_json)
+                for code in codes:
+                    code_counter[code] = code_counter.get(code, 0) + cnt
+            except:
+                pass
+        for code, cnt in sorted(code_counter.items(), key=lambda x: -x[1])[:6]:
+            msg += f"  {cnt}x {code}\n"
+    
+    if fixes:
+        msg += "\nRecent Successful Fixes:\n"
+        for city, fail_score, success_score, fix, retries in fixes:
+            msg += f"  {city}: {fail_score}→{success_score} ({retries} retries)\n"
+            if fix:
+                msg += f"    {fix[:80]}\n"
+    
+    if retry_stats and retry_stats[2]:
+        msg += f"\nRetry Stats: avg {retry_stats[0]:.1f}, max {retry_stats[1]}, total {retry_stats[2]} cities retried"
+    else:
+        msg += "\nNo retry data yet — run more cities to build lessons"
+    
+    await update.message.reply_text(msg[:3500])
 
 # ============================================================
 # MAIN
@@ -1608,7 +1824,7 @@ def main():
         ("gsc", gsc_cmd), ("opportunities", opportunities_cmd),
         ("gscstats", gscstats_cmd), ("research", research_cmd),
         ("history", history_cmd), ("stats", stats_cmd),
-        ("report", report_cmd), ("help", help_cmd),
+        ("report", report_cmd), ("lessons", lessons_cmd), ("help", help_cmd),
     ]
     for cmd, handler in handlers:
         app.add_handler(CommandHandler(cmd, handler))
