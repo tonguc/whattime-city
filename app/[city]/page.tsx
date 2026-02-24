@@ -105,6 +105,7 @@ export default async function Page({ params }: PageProps) {
     const fs = require('fs')
     const path = require('path')
     const filePath = path.join(process.cwd(), 'data', 'seo', `${slug}-seo.ts`)
+    console.log('SEO file path:', filePath, 'exists:', fs.existsSync(filePath))
     if (fs.existsSync(filePath)) {
       const fileContent = fs.readFileSync(filePath, 'utf-8')
       const match = fileContent.match(/export const \w+ = ([\s\S]*?) as const;/)
