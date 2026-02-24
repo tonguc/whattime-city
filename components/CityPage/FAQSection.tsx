@@ -261,7 +261,7 @@ export default function FAQSection({ city, seoData }: FAQSectionProps) {
   const faqSchema = seoData?.faq_schema || {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    'mainEntity': faqs.map(faq => ({
+    'mainEntity': faqs.map((faq: { question: string; answer: string }) => ({
       '@type': 'Question',
       'name': faq.question,
       'acceptedAnswer': {
