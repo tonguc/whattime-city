@@ -6,9 +6,9 @@
 // Changes: 
 // ============================================================
 
-import type { CityPageSEO } from '@/core/types/city';
 
-export const cairoSEOData: CityPageSEO = {
+
+export const cairoSEOData = {
   "faq": [
     {
       "question": "What time is it in Cairo right now?",
@@ -281,4 +281,4 @@ export const cairoTimezoneFacts = {
   "dst_start": "Not applicable",
   "dst_end": "Not applicable",
   "dst_offset": "Not applicable"
-};
+} as const;
