@@ -297,7 +297,7 @@ export default function FAQSection({ city, seoData }: FAQSectionProps) {
         
         {/* FAQ Accordion */}
         <div itemScope itemType="https://schema.org/FAQPage">
-          {faqs.map((faq, index) => (
+          {faqs.map((faq: { question: string; answer: string }, index: number) => (
             <FAQItem
               key={index}
               question={faq.question}
