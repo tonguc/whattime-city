@@ -7,6 +7,7 @@ import Link from 'next/link'
 
 interface FAQSectionProps {
   city: City
+  seoData?: any
 }
 
 // DST info by country code
@@ -250,14 +251,14 @@ function FAQItem({
   )
 }
 
-export default function FAQSection({ city }: FAQSectionProps) {
+export default function FAQSection({ city, seoData }: FAQSectionProps) {
   const { card, textSection, isLight } = useThemeClasses()
   const [openIndex, setOpenIndex] = useState<number | null>(0) // First one open by default
   
-  const faqs = generateFAQs(city)
+  const faqs = (seoData?.faq && seoData.faq.length > 0) ? seoData.faq : generateFAQs(city)
   
   // Generate JSON-LD Schema
-  const faqSchema = {
+  const faqSchema = seoData?.faq_schema || {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     'mainEntity': faqs.map(faq => ({

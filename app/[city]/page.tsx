@@ -99,8 +99,16 @@ export default async function Page({ params }: PageProps) {
   if (!city) {
     notFound()
   }
+
+  let seoData = null
+  try {
+    const mod = await import(`@/data/seo/${slug}-seo`)
+    seoData = mod[Object.keys(mod)[0]] || null
+  } catch {
+    seoData = null
+  }
   
   return (
-    <CityPage initialCity={city} />
+    <CityPage initialCity={city} seoData={seoData} />
   )
 }
