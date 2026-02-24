@@ -107,7 +107,7 @@ export default async function Page({ params }: PageProps) {
     const filePath = path.join(process.cwd(), 'data', 'seo', `${slug}-seo.ts`)
     if (fs.existsSync(filePath)) {
       const fileContent = fs.readFileSync(filePath, 'utf-8')
-      const match = fileContent.match(/export const \w+ = ({[\s\S]*});?\s*$/)
+      const match = fileContent.match(/export const \w+ = ([\s\S]*?) as const;/)
       if (match) {
         seoData = JSON.parse(match[1].replace(/'/g, '"'))
       }
