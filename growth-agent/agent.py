@@ -656,18 +656,29 @@ def ask_claude(prompt: str, system: str = None, task_type: str = "simple",
 
 def github_get_file(file_path: str) -> str:
     config = get_config()
-    headers = {
-        "Authorization": f"token {config.get('GITHUB_TOKEN', '')}",
-        "Accept": "application/vnd.github.v3+json"
-    }
+    token = config.get("GITHUB_TOKEN", "")
     branch = config.get("GITHUB_BRANCH", "staging")
     repo = config.get("GITHUB_REPO", "")
     
+    # Use raw URL for large files (API has 1MB limit)
+    r = requests.get(
+        f"https://raw.githubusercontent.com/{repo}/{branch}/{file_path}",
+        headers={"Authorization": f"token {token}"},
+        timeout=30
+    )
+    if r.status_code == 200:
+        return r.text
+    
+    # Fallback: API with base64
+    headers = {
+        "Authorization": f"token {token}",
+        "Accept": "application/vnd.github.v3+json"
+    }
     r = requests.get(
         f"https://api.github.com/repos/{repo}/contents/{file_path}?ref={branch}",
         headers=headers, timeout=15
     )
-    if r.status_code == 200:
+    if r.status_code == 200 and r.json().get("content"):
         return base64.b64decode(r.json()["content"]).decode("utf-8")
     return ""
 
