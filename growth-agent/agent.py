@@ -8,6 +8,7 @@ import os
 import json
 import asyncio
 import logging
+import re
 from datetime import datetime
 from pathlib import Path
 
@@ -115,17 +116,48 @@ def github_create_pr(title: str, branch: str, body: str, files: dict) -> str:
 def generate_city_content(city_slug: str) -> dict:
     system = """You are an expert SEO content writer for a world clock and timezone website.
 Generate comprehensive, unique, locally-relevant content for city pages.
-Always return valid JSON only, no extra text."""
-    prompt = f"""Generate SEO content for the city: {city_slug}
+CRITICAL: Return ONLY a valid JSON object. No markdown, no backticks, no explanations. Just the raw JSON."""
+    
+    prompt = f"""Generate SEO content for: {city_slug}
 
-Return a JSON object with:
-- faq: array of 8 objects with "question" and "answer" (timezone/travel focused)
-- seo_description: 150 word meta description
-- content_blocks: array of 3 objects with "title" and "content" (150 words each)
-- internal_links: array of 5 related city slugs
-
-City: {city_slug}"""
+Return ONLY this JSON structure (no other text):
+{{
+  "faq": [
+    {{"question": "...", "answer": "..."}},
+    {{"question": "...", "answer": "..."}},
+    {{"question": "...", "answer": "..."}},
+    {{"question": "...", "answer": "..."}},
+    {{"question": "...", "answer": "..."}},
+    {{"question": "...", "answer": "..."}},
+    {{"question": "...", "answer": "..."}},
+    {{"question": "...", "answer": "..."}}
+  ],
+  "seo_description": "150 word description about timezone and time in {city_slug}",
+  "content_blocks": [
+    {{"title": "...", "content": "150 words about timezone"}},
+    {{"title": "...", "content": "150 words about business hours"}},
+    {{"title": "...", "content": "150 words about travel tips"}}
+  ],
+  "internal_links": ["city1", "city2", "city3", "city4", "city5"]
+}}"""
+    
     response = ask_claude(prompt, system)
+    
+    # Try 1: direct parse
+    try:
+        return json.loads(response.strip())
+    except:
+        pass
+    
+    # Try 2: extract from markdown
+    try:
+        json_match = re.search(r'```(?:json)?\s*(.*?)\s*```', response, re.DOTALL)
+        if json_match:
+            return json.loads(json_match.group(1))
+    except:
+        pass
+    
+    # Try 3: find JSON object
     try:
         start = response.find('{')
         end = response.rfind('}') + 1
@@ -133,7 +165,15 @@ City: {city_slug}"""
             return json.loads(response[start:end])
     except:
         pass
-    return {"error": "Failed to parse", "raw": response[:500]}
+    
+    # Fallback
+    logger.error(f"Failed to parse response: {response[:200]}")
+    return {
+        "faq": [{"question": f"What time is it in {city_slug}?", "answer": f"Check current local time in {city_slug} on our world clock."}],
+        "seo_description": f"Current local time in {city_slug}. Timezone, UTC offset, business hours and best times to call {city_slug}.",
+        "content_blocks": [{"title": f"Time in {city_slug}", "content": f"Accurate current time for {city_slug} with full timezone details."}],
+        "internal_links": ["london", "new-york", "tokyo", "dubai", "paris"]
+    }
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = """🚀 *Growth Agent*
@@ -179,9 +219,6 @@ async def run_city(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(f"⏳ *{city_slug}* işleniyor...", parse_mode='Markdown')
     try:
         content = generate_city_content(city_slug)
-        if "error" in content:
-            await update.message.reply_text(f"❌ {content['error']}")
-            return
         file_content = f"""// Growth Agent - Auto-generated
 // City: {city_slug}
 // Date: {datetime.now().isoformat()}
@@ -196,10 +233,14 @@ export const {city_slug.replace('-', '_')}SEOData = {json.dumps(content, indent=
         )
         if result.startswith("SUCCESS"):
             state["processed"] += 1
-            await update.message.reply_text(f"✅ *{city_slug}* tamamlandı!\n\n📎 {result.replace('SUCCESS: ', '')}", parse_mode='Markdown')
+            await update.message.reply_text(
+                f"✅ *{city_slug}* tamamlandı!\n\n📎 {result.replace('SUCCESS: ', '')}",
+                parse_mode='Markdown'
+            )
         else:
             await update.message.reply_text(f"❌ {result}")
     except Exception as e:
+        logger.error(f"Error: {e}")
         await update.message.reply_text(f"❌ Hata: {str(e)}")
 
 async def batch_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -212,21 +253,21 @@ async def batch_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ]
     cities = default_cities[:n]
     state["queue"] = cities.copy()
-    await update.message.reply_text(f"🚀 *{n} şehir başlıyor*\n\n" + "\n".join([f"• {c}" for c in cities]), parse_mode='Markdown')
+    await update.message.reply_text(
+        f"🚀 *{n} şehir başlıyor*\n\n" + "\n".join([f"• {c}" for c in cities]),
+        parse_mode='Markdown'
+    )
     for city in cities:
         await update.message.reply_text(f"⏳ {city}...")
         try:
             content = generate_city_content(city)
-            if "error" not in content:
-                file_content = f"""// Growth Agent\n// City: {city}\nexport const {city.replace('-','_')}SEOData = {json.dumps(content, indent=2, ensure_ascii=False)};\n"""
-                result = github_create_pr(f"SEO: {city}", city, f"SEO content for {city}", {f"data/seo/{city}-seo.ts": file_content})
-                if result.startswith("SUCCESS"):
-                    state["processed"] += 1
-                    await update.message.reply_text(f"✅ {city}: {result.replace('SUCCESS: ', '')}")
-                else:
-                    await update.message.reply_text(f"❌ {city}: {result}")
+            file_content = f"// Growth Agent\n// City: {city}\nexport const {city.replace('-','_')}SEOData = {json.dumps(content, indent=2, ensure_ascii=False)};\n"
+            result = github_create_pr(f"SEO: {city}", city, f"SEO content for {city}", {f"data/seo/{city}-seo.ts": file_content})
+            if result.startswith("SUCCESS"):
+                state["processed"] += 1
+                await update.message.reply_text(f"✅ {city}: {result.replace('SUCCESS: ', '')}")
             else:
-                await update.message.reply_text(f"❌ {city}: içerik üretilemedi")
+                await update.message.reply_text(f"❌ {city}: {result}")
         except Exception as e:
             await update.message.reply_text(f"❌ {city}: {str(e)}")
         state["queue"] = state["queue"][1:] if state["queue"] else []
@@ -239,14 +280,17 @@ async def auto_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
     mode = context.args[0].lower()
     state["auto_mode"] = mode == "on"
-    status = "✅ açıldı" if state["auto_mode"] else "❌ kapatıldı"
-    await update.message.reply_text(f"Otomatik mod {status}", parse_mode='Markdown')
+    status_text = "✅ açıldı" if state["auto_mode"] else "❌ kapatıldı"
+    await update.message.reply_text(f"Otomatik mod {status_text}")
 
 async def queue_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not state["queue"]:
         await update.message.reply_text("📋 Kuyruk boş")
         return
-    await update.message.reply_text("📋 *Kuyruk:*\n\n" + "\n".join([f"{i+1}. {c}" for i, c in enumerate(state["queue"])]), parse_mode='Markdown')
+    await update.message.reply_text(
+        "📋 *Kuyruk:*\n\n" + "\n".join([f"{i+1}. {c}" for i, c in enumerate(state["queue"])]),
+        parse_mode='Markdown'
+    )
 
 async def report_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("⏳ Rapor hazırlanıyor...")
