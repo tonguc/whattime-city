@@ -62,6 +62,7 @@ function findNearestCity(lat: number, lng: number): City {
 }
 
 export default function CityPage({ initialCity, seoData }: CityPageProps) {
+  console.log("SEODATA:", seoData ? "EXISTS faq:" + seoData?.faq?.length : "NULL")
   const router = useRouter()
   const { 
     setActiveCity, 
