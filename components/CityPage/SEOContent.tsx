@@ -78,6 +78,7 @@ export default function SEOContent({ city, seoData }: SEOContentProps) {
   return (
     <section className={`rounded-2xl p-5 border ${card} mt-4`}>
       <h2 className={`mb-4 flex items-center gap-2 ${textSection}`}>
+        <span>📍</span>
         <span>About {city.city} Time Zone</span>
       </h2>
 
@@ -102,27 +103,7 @@ export default function SEOContent({ city, seoData }: SEOContentProps) {
         </div>
       )}
 
-      {timeDiffTable.length > 0 && (
-        <div className="mt-5 overflow-x-auto">
-          <h3 className={`font-semibold mb-3 ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>{city.city} Time Differences</h3>
-          <table className={`w-full text-sm ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-            <thead>
-              <tr className={`border-b ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
-                <th className="text-left py-2 pr-4">City</th>
-                <th className="text-left py-2">Difference</th>
-              </tr>
-            </thead>
-            <tbody>
-              {timeDiffTable.map((row, i) => (
-                <tr key={i} className={`border-b ${isLight ? 'border-slate-100' : 'border-slate-800'}`}>
-                  <td className="py-2 pr-4"><Link href={row.link} className={linkClass}>{row.city}</Link></td>
-                  <td className="py-2">{row.difference}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+
 
       <div className={`mt-5 p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
         <h3 className={`text-sm font-semibold mb-2 ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>Quick Facts: {city.city} Time</h3>
