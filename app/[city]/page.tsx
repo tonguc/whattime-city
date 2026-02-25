@@ -104,14 +104,14 @@ export default async function Page({ params }: PageProps) {
   try {
     const fs = require('fs')
     const path = require('path')
-    const filePath = path.join(process.cwd(), 'data', 'seo', `${slug}-seo.ts`)
-    console.log('SEO file path:', filePath, 'exists:', fs.existsSync(filePath))
-    if (fs.existsSync(filePath)) {
-      const fileContent = fs.readFileSync(filePath, 'utf-8')
+    const jsonPath = path.join(process.cwd(), 'data', 'seo', `${slug}-seo.json`)
+    const tsPath = path.join(process.cwd(), 'data', 'seo', `${slug}-seo.ts`)
+    if (fs.existsSync(jsonPath)) {
+      seoData = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'))
+    } else if (fs.existsSync(tsPath)) {
+      const fileContent = fs.readFileSync(tsPath, 'utf-8')
       const match = fileContent.match(/export const \w+ = ([\s\S]*?) as const;/)
-      if (match) {
-        seoData = JSON.parse(match[1].replace(/'/g, '"'))
-      }
+      if (match) seoData = JSON.parse(match[1])
     }
   } catch {
     seoData = null
