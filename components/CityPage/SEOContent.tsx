@@ -6,6 +6,7 @@ import { useThemeClasses } from '@/lib/useThemeClasses'
 
 interface SEOContentProps {
   city: City
+  seoData?: any
 }
 
 // UTC offset calculation
@@ -45,7 +46,7 @@ const majorCities: Record<string, { slug: string; offset: number }> = {
   'Hong Kong': { slug: 'hong-kong', offset: 8 }
 }
 
-export default function SEOContent({ city }: SEOContentProps) {
+export default function SEOContent({ city, seoData }: SEOContentProps) {
   const { card, textSection, textBody, isLight } = useThemeClasses()
   
   const offset = getUTCOffset(city.timezone)
