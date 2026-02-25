@@ -330,7 +330,7 @@ export default function CityPage({ initialCity, seoData }: CityPageProps) {
         )}
         
         {/* SEO Content - Keyword-rich text for search engines */}
-        <SEOContent city={selectedCity} />
+        <SEOContent city={selectedCity} seoData={seoData} />
         
         {/* Time Difference Table */}
         <div className="mt-4">
