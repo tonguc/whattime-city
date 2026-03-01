@@ -1,9 +1,4 @@
-// Growth Agent v4.5 — GSC-Optimized SEO Content
-// City: Baghdad | Score: 90/100 | 2026-02-28
-// Changes: Word count +926 words | FAQ updated (8 questions with Schema markup) | JSON-LD FAQ Schema ADDED
-// RULE: No type imports. Plain runtime objects only. as const for safety.
-
-export const baghdadSEOData = {
+{
   "faq": [
     {
       "question": "What time is it in Baghdad right now?",
@@ -38,76 +33,7 @@ export const baghdadSEOData = {
       "answer": "Baghdad businesses typically operate 9:00 AM to 5:00 PM AST, Sunday through Thursday. Government offices often close earlier around 2:00 PM. Friday and Saturday constitute the weekend, with most commercial activity resuming Sunday morning."
     }
   ],
-  "faq_schema": {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What time is it in Baghdad right now?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Baghdad operates on Arabia Standard Time (AST), UTC+3 year-round. The city maintains a consistent +3 hour offset from Coordinated Universal Time throughout the year, with no daylight saving time adjustments."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What time zone is Baghdad in?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Baghdad uses Arabia Standard Time (AST), UTC+3. Iraq permanently adopted this timezone in 2007 and does not observe daylight saving time, unlike neighboring countries such as Jordan or Lebanon."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does Baghdad observe daylight saving time?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Iraq abolished daylight saving time in 2007 and has maintained Arabia Standard Time (UTC+3) year-round since then, providing consistent business hours and eliminating seasonal clock changes."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the time difference between Baghdad and New York?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Baghdad is 8 hours ahead of New York during Eastern Standard Time (November-March) and 7 hours ahead during Eastern Daylight Time (March-November). When it's noon in New York, it's 7-8 PM in Baghdad."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the time difference between Baghdad and London?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Baghdad is 3 hours ahead of London during Greenwich Mean Time (October-March) and 2 hours ahead during British Summer Time (March-October). The time gap narrows during UK summer months."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What time does the stock exchange open in Baghdad?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The Iraq Stock Exchange opens at 10:00 AM AST and closes at 1:00 PM AST, Sunday through Thursday. Trading sessions are shorter than most global exchanges, reflecting regional business practices and the Friday-Saturday weekend."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the best time to call Baghdad from the US?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Call Baghdad between 1:00-5:00 AM EST (9:00 AM-1:00 PM in Baghdad) to reach business hours. For evening calls, 11:00 AM-3:00 PM EST works well for connecting after 6:00 PM Baghdad time."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What are typical business hours in Baghdad?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Baghdad businesses typically operate 9:00 AM to 5:00 PM AST, Sunday through Thursday. Government offices often close earlier around 2:00 PM. Friday and Saturday constitute the weekend, with most commercial activity resuming Sunday morning."
-        }
-      }
-    ]
-  },
+  "faq_schema": "__PLACEHOLDER__",
   "seo_description": "Current time in Baghdad, Iraq. Arabia Standard Time (UTC+3). No daylight saving time. Time differences with major cities, business hours, and timezone information.",
   "seo_title": "Current Time in Baghdad — UTC+3 Timezone & World Clock",
   "content_blocks": [
@@ -188,85 +114,4 @@ export const baghdadSEOData = {
     "dst_offset": "N/A"
   },
   "improvement_notes": "Enhanced entity signals with Iraq Stock Exchange hours (10 AM-1 PM AST), specific DST abolition date (2007), regional context with GCC timezone alignment. Improved internal linking structure with 5 contextual links. Strengthened business hours coverage with Sunday-Thursday work week and government office schedules. Added precise time difference calculations accounting for DST variations in comparison cities. Optimized for 'current time iraq baghdad' query with UTC+3 prominence and Arabia Standard Time terminology throughout."
-} as const;
-
-export const baghdadFAQSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What time is it in Baghdad right now?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Baghdad operates on Arabia Standard Time (AST), UTC+3 year-round. The city maintains a consistent +3 hour offset from Coordinated Universal Time throughout the year, with no daylight saving time adjustments."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What time zone is Baghdad in?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Baghdad uses Arabia Standard Time (AST), UTC+3. Iraq permanently adopted this timezone in 2007 and does not observe daylight saving time, unlike neighboring countries such as Jordan or Lebanon."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does Baghdad observe daylight saving time?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Iraq abolished daylight saving time in 2007 and has maintained Arabia Standard Time (UTC+3) year-round since then, providing consistent business hours and eliminating seasonal clock changes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the time difference between Baghdad and New York?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Baghdad is 8 hours ahead of New York during Eastern Standard Time (November-March) and 7 hours ahead during Eastern Daylight Time (March-November). When it's noon in New York, it's 7-8 PM in Baghdad."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the time difference between Baghdad and London?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Baghdad is 3 hours ahead of London during Greenwich Mean Time (October-March) and 2 hours ahead during British Summer Time (March-October). The time gap narrows during UK summer months."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What time does the stock exchange open in Baghdad?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The Iraq Stock Exchange opens at 10:00 AM AST and closes at 1:00 PM AST, Sunday through Thursday. Trading sessions are shorter than most global exchanges, reflecting regional business practices and the Friday-Saturday weekend."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the best time to call Baghdad from the US?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Call Baghdad between 1:00-5:00 AM EST (9:00 AM-1:00 PM in Baghdad) to reach business hours. For evening calls, 11:00 AM-3:00 PM EST works well for connecting after 6:00 PM Baghdad time."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are typical business hours in Baghdad?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Baghdad businesses typically operate 9:00 AM to 5:00 PM AST, Sunday through Thursday. Government offices often close earlier around 2:00 PM. Friday and Saturday constitute the weekend, with most commercial activity resuming Sunday morning."
-      }
-    }
-  ]
-} as const;
-
-export const baghdadTimezoneFacts = {
-  "full_name": "Arabia Standard Time",
-  "abbreviation": "AST",
-  "utc_offset": "+03:00",
-  "dst_observed": false,
-  "dst_start": "Not observed",
-  "dst_end": "Not observed",
-  "dst_offset": "N/A"
-} as const;
+}

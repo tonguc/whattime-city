@@ -1,9 +1,4 @@
-// Growth Agent v4.5 — GSC-Optimized SEO Content
-// City: Calgary | Score: 90/100 | 2026-02-26
-// Changes: 
-// RULE: No type imports. Plain runtime objects only. as const for safety.
-
-export const calgarySEOData = {
+{
   "faq": [
     {
       "question": "What time is it in Calgary right now?",
@@ -38,76 +33,7 @@ export const calgarySEOData = {
       "answer": "Standard Calgary business hours are 9:00 AM - 5:00 PM Mountain Time, Monday through Friday. The energy sector (oil, gas, utilities) often starts earlier at 7:30-8:00 AM to align with market openings. Banks operate 9:30 AM - 4:00 PM, while retail stores typically run 10:00 AM - 6:00 PM weekdays and 10:00 AM - 5:00 PM Saturdays. Government offices maintain strict 8:15 AM - 4:30 PM schedules."
     }
   ],
-  "faq_schema": {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What time is it in Calgary right now?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Calgary operates on Mountain Time (MT), which is UTC-7 during Mountain Daylight Time (MDT) from March to November, and UTC-7 during Mountain Standard Time (MST) from November to March. The city follows the same timezone as Denver and Edmonton, making it 2 hours behind New York and 7 hours behind London during standard time."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What time zone is Calgary in?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Calgary is in the Mountain Time Zone (MT). During daylight saving time (March to November), the city observes Mountain Daylight Time (MDT/UTC-6). During standard time (November to March), it observes Mountain Standard Time (MST/UTC-7). This timezone is shared with major cities like Denver, Phoenix (no DST), and Edmonton."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does Calgary observe daylight saving time?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Calgary observes daylight saving time from the second Sunday in March (2:00 AM local time) to the first Sunday in November (2:00 AM local time). Clocks move forward one hour in spring (to MDT/UTC-6) and back one hour in fall (to MST/UTC-7). This synchronizes Calgary's business hours with major US markets during peak trading periods."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the time difference between Calgary and New York?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Calgary is 2 hours behind New York year-round. When it's 12:00 PM (noon) in New York, it's 10:00 AM in Calgary. Both cities observe daylight saving time on the same schedule, maintaining the consistent 2-hour difference. This makes Calgary ideal for companies coordinating between Mountain and Eastern time zones."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the time difference between Calgary and London?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Calgary is 7 hours behind London during winter (MST vs GMT) and 6 hours behind during summer (MDT vs BST). When London is at 5:00 PM, Calgary is at 10:00 AM (winter) or 11:00 AM (summer). The time difference shifts briefly during the 2-3 week periods when DST transitions occur on different dates in North America versus Europe."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What time does the stock exchange open in Calgary?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The Toronto Stock Exchange (TSX), which Calgary companies trade on, opens at 7:30 AM Mountain Time (9:30 AM Eastern Time) and closes at 2:00 PM Mountain Time (4:00 PM Eastern Time). Calgary's energy sector businesses closely monitor both TSX and New York Stock Exchange hours. The Calgary office hours align perfectly with North American trading sessions."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the best time to call Calgary from the US?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "From the East Coast (EST/EDT), call Calgary between 11:00 AM - 5:00 PM Eastern (9:00 AM - 3:00 PM Calgary time). From the West Coast (PST/PDT), call between 10:00 AM - 6:00 PM Pacific (11:00 AM - 7:00 PM Calgary time). Calgary's energy sector typically starts meetings at 8:00 AM MT, while professional services firms follow 9:00 AM - 5:00 PM schedules."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What are typical business hours in Calgary?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Standard Calgary business hours are 9:00 AM - 5:00 PM Mountain Time, Monday through Friday. The energy sector (oil, gas, utilities) often starts earlier at 7:30-8:00 AM to align with market openings. Banks operate 9:30 AM - 4:00 PM, while retail stores typically run 10:00 AM - 6:00 PM weekdays and 10:00 AM - 5:00 PM Saturdays. Government offices maintain strict 8:15 AM - 4:30 PM schedules."
-        }
-      }
-    ]
-  },
+  "faq_schema": "__PLACEHOLDER__",
   "seo_description": "Current time in Calgary, Alberta. Mountain Time (MST/MDT UTC-6/-7), daylight saving info, time differences with NYC, London, and business hours.",
   "seo_title": "Current Time in Calgary — Mountain Time Zone, UTC Offset & Clock",
   "content_blocks": [
@@ -195,85 +121,4 @@ export const calgarySEOData = {
     "dst_offset": "UTC-6"
   },
   "improvement_notes": "Created comprehensive Calgary timezone content targeting 'canada city calgary hours' query (GSC #1). Content emphasizes: (1) Energy sector business hours differentiation (7:30 AM starts vs standard 9:00 AM), (2) TSX trading alignment specific to Calgary's oil/gas economy, (3) Strategic timezone positioning between Eastern and Pacific markets, (4) International calling windows with specific hour recommendations for US East/West Coast, Europe, and Asia, (5) Entity-first timezone naming (Mountain Standard Time MST/UTC-7, Mountain Daylight Time MDT/UTC-6), (6) Internal linking strategy to high-value city pairs (New York, London, Tokyo) using /time/[from]/[to]/ structure, (7) Business hours quotable facts (banking 9:30-4:00, energy sector 7:30 AM starts), (8) DST transition dates with exact times for technical accuracy. All 8 FAQ answers provide direct answers first, followed by Calgary-specific context. Time difference table covers 8 strategic cities with mathematically accurate hour differences accounting for DST variations."
-} as const;
-
-export const calgaryFAQSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What time is it in Calgary right now?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Calgary operates on Mountain Time (MT), which is UTC-7 during Mountain Daylight Time (MDT) from March to November, and UTC-7 during Mountain Standard Time (MST) from November to March. The city follows the same timezone as Denver and Edmonton, making it 2 hours behind New York and 7 hours behind London during standard time."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What time zone is Calgary in?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Calgary is in the Mountain Time Zone (MT). During daylight saving time (March to November), the city observes Mountain Daylight Time (MDT/UTC-6). During standard time (November to March), it observes Mountain Standard Time (MST/UTC-7). This timezone is shared with major cities like Denver, Phoenix (no DST), and Edmonton."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does Calgary observe daylight saving time?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Calgary observes daylight saving time from the second Sunday in March (2:00 AM local time) to the first Sunday in November (2:00 AM local time). Clocks move forward one hour in spring (to MDT/UTC-6) and back one hour in fall (to MST/UTC-7). This synchronizes Calgary's business hours with major US markets during peak trading periods."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the time difference between Calgary and New York?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Calgary is 2 hours behind New York year-round. When it's 12:00 PM (noon) in New York, it's 10:00 AM in Calgary. Both cities observe daylight saving time on the same schedule, maintaining the consistent 2-hour difference. This makes Calgary ideal for companies coordinating between Mountain and Eastern time zones."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the time difference between Calgary and London?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Calgary is 7 hours behind London during winter (MST vs GMT) and 6 hours behind during summer (MDT vs BST). When London is at 5:00 PM, Calgary is at 10:00 AM (winter) or 11:00 AM (summer). The time difference shifts briefly during the 2-3 week periods when DST transitions occur on different dates in North America versus Europe."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What time does the stock exchange open in Calgary?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The Toronto Stock Exchange (TSX), which Calgary companies trade on, opens at 7:30 AM Mountain Time (9:30 AM Eastern Time) and closes at 2:00 PM Mountain Time (4:00 PM Eastern Time). Calgary's energy sector businesses closely monitor both TSX and New York Stock Exchange hours. The Calgary office hours align perfectly with North American trading sessions."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the best time to call Calgary from the US?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "From the East Coast (EST/EDT), call Calgary between 11:00 AM - 5:00 PM Eastern (9:00 AM - 3:00 PM Calgary time). From the West Coast (PST/PDT), call between 10:00 AM - 6:00 PM Pacific (11:00 AM - 7:00 PM Calgary time). Calgary's energy sector typically starts meetings at 8:00 AM MT, while professional services firms follow 9:00 AM - 5:00 PM schedules."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are typical business hours in Calgary?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Standard Calgary business hours are 9:00 AM - 5:00 PM Mountain Time, Monday through Friday. The energy sector (oil, gas, utilities) often starts earlier at 7:30-8:00 AM to align with market openings. Banks operate 9:30 AM - 4:00 PM, while retail stores typically run 10:00 AM - 6:00 PM weekdays and 10:00 AM - 5:00 PM Saturdays. Government offices maintain strict 8:15 AM - 4:30 PM schedules."
-      }
-    }
-  ]
-} as const;
-
-export const calgaryTimezoneFacts = {
-  "full_name": "Mountain Time",
-  "abbreviation": "MST/MDT",
-  "utc_offset": "UTC-7 (MST) / UTC-6 (MDT)",
-  "dst_observed": true,
-  "dst_start": "Second Sunday in March at 2:00 AM (clocks forward to 3:00 AM)",
-  "dst_end": "First Sunday in November at 2:00 AM (clocks back to 1:00 AM)",
-  "dst_offset": "UTC-6"
-} as const;
+}

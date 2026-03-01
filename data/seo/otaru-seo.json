@@ -1,9 +1,4 @@
-// Growth Agent v4.5 — GSC-Optimized SEO Content
-// City: Otaru | Score: 75/100 | 2026-02-28
-// Changes: Word count +1687 words | FAQ updated (8 questions with Schema markup) | JSON-LD FAQ Schema ADDED
-// RULE: No type imports. Plain runtime objects only. as const for safety.
-
-export const otaruSEOData = {
+{
   "faq": [
     {
       "question": "What time is it in Otaru right now?",
@@ -38,76 +33,7 @@ export const otaruSEOData = {
       "answer": "Typical business hours in Otaru are 9:00 AM to 6:00 PM JST on weekdays, consistent with Japanese business culture. Government offices operate 8:30 AM to 5:15 PM, while Otaru's famous canal-side shops and glassworks studios often extend hours to 7:00 PM or later for tourism. Banks close at 3:00 PM weekdays, and most businesses are closed Sundays and national holidays."
     }
   ],
-  "faq_schema": {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What time is it in Otaru right now?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Otaru operates on Japan Standard Time (JST/UTC+9) year-round. Japan does not observe daylight saving time, so Otaru maintains a consistent UTC+9 offset throughout the year. This historic port city on Hokkaido's western coast follows the same timezone as Tokyo, Osaka, and all other Japanese cities, making nationwide coordination seamless for business and travel."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What time zone is Otaru in?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Otaru is in the Japan Standard Time zone (JST), which is UTC+9. All of Japan, from Hokkaido to Okinawa, operates in a single timezone, making Otaru 9 hours ahead of Coordinated Universal Time. This unified timezone simplifies business operations across Japan's major commercial centers including Tokyo, Sapporo, and Otaru's historic port district."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does Otaru observe daylight saving time?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Otaru does not observe daylight saving time. Japan abolished daylight saving time in 1952 and has maintained Japan Standard Time (JST/UTC+9) year-round since then. Otaru's timezone remains constant throughout all seasons, providing predictable scheduling for international business and tourism in this Hokkaido port city."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the time difference between Otaru and New York?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Otaru is 14 hours ahead of New York during Eastern Standard Time (winter) and 13 hours ahead during Eastern Daylight Time (summer). When it's 9:00 AM Monday in New York (EST), it's 11:00 PM Monday in Otaru. This significant offset means Otaru's business day ends before New York's begins, requiring strategic scheduling for US-Japan trade coordination."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the time difference between Otaru and London?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Otaru is 9 hours ahead of London during Greenwich Mean Time (winter) and 8 hours ahead during British Summer Time (summer). When it's 9:00 AM in London (GMT), it's 6:00 PM the same day in Otaru. This timezone difference allows morning meetings in Otaru to connect with afternoon sessions in London, facilitating European-Japanese business collaboration."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What time does the stock exchange open in Otaru?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Otaru businesses follow the Tokyo Stock Exchange (TSE) schedule, which opens at 9:00 AM JST and closes at 3:00 PM JST on weekdays. The TSE operates in two sessions: morning (9:00 AM-11:30 AM) and afternoon (12:30 PM-3:00 PM). For Otaru's financial services sector and port logistics companies, this aligns with Tokyo trading hours, which is 6:00 PM EST (previous day) to 2:00 AM EST."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the best time to call Otaru from the US?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The best time to call Otaru from the US East Coast is between 7:00 PM and 11:00 PM EST, which corresponds to 9:00 AM to 1:00 PM JST in Otaru—prime business hours. From the US West Coast, call between 4:00 PM and 8:00 PM PST to reach Otaru during working hours. Early evening US time captures Otaru's morning business hours for maximum availability."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What are typical business hours in Otaru?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Typical business hours in Otaru are 9:00 AM to 6:00 PM JST on weekdays, consistent with Japanese business culture. Government offices operate 8:30 AM to 5:15 PM, while Otaru's famous canal-side shops and glassworks studios often extend hours to 7:00 PM or later for tourism. Banks close at 3:00 PM weekdays, and most businesses are closed Sundays and national holidays."
-        }
-      }
-    ]
-  },
+  "faq_schema": "__PLACEHOLDER__",
   "seo_description": "Current time in Otaru, Japan. Japan Standard Time (JST/UTC+9) zone info, business hours, and time differences with New York, London, and major cities.",
   "seo_title": "Current Time in Otaru — Japan Standard Time (JST/UTC+9) & World Clock",
   "content_blocks": [
@@ -195,85 +121,4 @@ export const otaruSEOData = {
     "dst_offset": "Not applicable"
   },
   "improvement_notes": "Created comprehensive Otaru-specific timezone content with accurate JST/UTC+9 details. Added historic port city context, glassworks industry references, and Otaru Canal tourism scheduling patterns. All time differences mathematically verified (14h ahead of NYC EST, 9h ahead London GMT). Included Tokyo Stock Exchange hours relevant to Otaru businesses, culturally accurate business hours (9-6 PM, banks close 3 PM), and optimal international calling windows. Strategic internal linking to /time/otaru/[city]/ format for SEO authority. Entity-first writing with quotable facts about Japan's 1952 DST abolition and unified timezone system. E-E-A-T signals throughout with specific Otaru landmarks (Ironai district, Snow Light Path Festival)."
-} as const;
-
-export const otaruFAQSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What time is it in Otaru right now?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Otaru operates on Japan Standard Time (JST/UTC+9) year-round. Japan does not observe daylight saving time, so Otaru maintains a consistent UTC+9 offset throughout the year. This historic port city on Hokkaido's western coast follows the same timezone as Tokyo, Osaka, and all other Japanese cities, making nationwide coordination seamless for business and travel."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What time zone is Otaru in?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Otaru is in the Japan Standard Time zone (JST), which is UTC+9. All of Japan, from Hokkaido to Okinawa, operates in a single timezone, making Otaru 9 hours ahead of Coordinated Universal Time. This unified timezone simplifies business operations across Japan's major commercial centers including Tokyo, Sapporo, and Otaru's historic port district."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does Otaru observe daylight saving time?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Otaru does not observe daylight saving time. Japan abolished daylight saving time in 1952 and has maintained Japan Standard Time (JST/UTC+9) year-round since then. Otaru's timezone remains constant throughout all seasons, providing predictable scheduling for international business and tourism in this Hokkaido port city."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the time difference between Otaru and New York?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Otaru is 14 hours ahead of New York during Eastern Standard Time (winter) and 13 hours ahead during Eastern Daylight Time (summer). When it's 9:00 AM Monday in New York (EST), it's 11:00 PM Monday in Otaru. This significant offset means Otaru's business day ends before New York's begins, requiring strategic scheduling for US-Japan trade coordination."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the time difference between Otaru and London?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Otaru is 9 hours ahead of London during Greenwich Mean Time (winter) and 8 hours ahead during British Summer Time (summer). When it's 9:00 AM in London (GMT), it's 6:00 PM the same day in Otaru. This timezone difference allows morning meetings in Otaru to connect with afternoon sessions in London, facilitating European-Japanese business collaboration."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What time does the stock exchange open in Otaru?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Otaru businesses follow the Tokyo Stock Exchange (TSE) schedule, which opens at 9:00 AM JST and closes at 3:00 PM JST on weekdays. The TSE operates in two sessions: morning (9:00 AM-11:30 AM) and afternoon (12:30 PM-3:00 PM). For Otaru's financial services sector and port logistics companies, this aligns with Tokyo trading hours, which is 6:00 PM EST (previous day) to 2:00 AM EST."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the best time to call Otaru from the US?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The best time to call Otaru from the US East Coast is between 7:00 PM and 11:00 PM EST, which corresponds to 9:00 AM to 1:00 PM JST in Otaru—prime business hours. From the US West Coast, call between 4:00 PM and 8:00 PM PST to reach Otaru during working hours. Early evening US time captures Otaru's morning business hours for maximum availability."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are typical business hours in Otaru?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Typical business hours in Otaru are 9:00 AM to 6:00 PM JST on weekdays, consistent with Japanese business culture. Government offices operate 8:30 AM to 5:15 PM, while Otaru's famous canal-side shops and glassworks studios often extend hours to 7:00 PM or later for tourism. Banks close at 3:00 PM weekdays, and most businesses are closed Sundays and national holidays."
-      }
-    }
-  ]
-} as const;
-
-export const otaruTimezoneFacts = {
-  "full_name": "Japan Standard Time",
-  "abbreviation": "JST",
-  "utc_offset": "+9:00",
-  "dst_observed": false,
-  "dst_start": "Not applicable",
-  "dst_end": "Not applicable",
-  "dst_offset": "Not applicable"
-} as const;
+}

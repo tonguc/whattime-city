@@ -1,9 +1,4 @@
-// Growth Agent v4.5 — GSC-Optimized SEO Content
-// City: Tokyo | Score: 90/100 | 2026-02-26
-// Changes: 
-// RULE: No type imports. Plain runtime objects only. as const for safety.
-
-export const tokyoSEOData = {
+{
   "faq": [
     {
       "question": "What time is it in Tokyo right now?",
@@ -38,76 +33,7 @@ export const tokyoSEOData = {
       "answer": "Standard business hours in Tokyo run from 9:00 AM to 6:00 PM JST, Monday through Friday, though many professionals work until 7:00-8:00 PM. Government offices operate 8:30 AM-5:15 PM. Major banks open 9:00 AM-3:00 PM for counter services. Japan's work culture traditionally emphasizes long hours, though recent reforms are encouraging more balanced schedules."
     }
   ],
-  "faq_schema": {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What time is it in Tokyo right now?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tokyo operates on Japan Standard Time (JST/UTC+9) year-round. Japan does not observe daylight saving time, so Tokyo maintains a consistent 9-hour offset ahead of Coordinated Universal Time throughout the year. This makes Tokyo 14 hours ahead of New York (EST) and 9 hours ahead of London (GMT) during standard time periods."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What time zone is Tokyo in?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tokyo is in the Japan Standard Time zone (JST), which is UTC+9. This timezone covers all of Japan, from Hokkaido to Okinawa. JST is one hour ahead of China Standard Time and shares the same offset with South Korea's KST, making business coordination across East Asia straightforward."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does Tokyo observe daylight saving time?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Japan abolished daylight saving time in 1951 and has not observed it since. Tokyo maintains Japan Standard Time (UTC+9) throughout the entire year, providing consistent business hours and eliminating the twice-yearly clock changes common in North America and Europe. This stability is particularly valued by international businesses operating with Japanese partners."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the time difference between Tokyo and New York?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tokyo is 14 hours ahead of New York during Eastern Standard Time (November-March) and 13 hours ahead during Eastern Daylight Time (March-November). When it's 9:00 AM Monday in New York, it's 11:00 PM Monday in Tokyo during EST, or 10:00 PM during EDT. This significant gap means there's minimal business hour overlap between the two cities."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the time difference between Tokyo and London?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tokyo is 9 hours ahead of London during Greenwich Mean Time (late October-late March) and 8 hours ahead during British Summer Time (late March-late October). When London reaches 9:00 AM, Tokyo is already at 6:00 PM (GMT) or 5:00 PM (BST), providing a narrow 2-3 hour window for real-time business communication between the financial capitals."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What time does the stock exchange open in Tokyo?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The Tokyo Stock Exchange (TSE) opens at 9:00 AM JST and closes at 3:00 PM JST, with a lunch break from 11:30 AM to 12:30 PM JST. This translates to 8:00 PM-2:00 AM EST for New York traders (with the midday break 2:30-3:30 AM EST). The TSE is the world's third-largest stock exchange by market capitalization, trading over 3,800 listed companies."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the best time to call Tokyo from the US?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The optimal time to call Tokyo from the US East Coast is between 7:00 PM and 10:00 PM EST, which corresponds to 9:00 AM-12:00 PM JST the following day—prime Tokyo business hours. From the US West Coast, call between 4:00 PM and 7:00 PM PST to reach Tokyo during their morning working hours (9:00 AM-12:00 PM JST)."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What are typical business hours in Tokyo?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Standard business hours in Tokyo run from 9:00 AM to 6:00 PM JST, Monday through Friday, though many professionals work until 7:00-8:00 PM. Government offices operate 8:30 AM-5:15 PM. Major banks open 9:00 AM-3:00 PM for counter services. Japan's work culture traditionally emphasizes long hours, though recent reforms are encouraging more balanced schedules."
-        }
-      }
-    ]
-  },
+  "faq_schema": "__PLACEHOLDER__",
   "seo_description": "Current time in Tokyo, Japan (JST/UTC+9). Live world clock, timezone converter, and business hours for Japan's capital. No daylight saving time.",
   "seo_title": "Current Time in Tokyo — Japan Standard Time (JST/UTC+9)",
   "content_blocks": [
@@ -194,85 +120,4 @@ export const tokyoSEOData = {
     "dst_offset": "Not applicable"
   },
   "improvement_notes": "Created comprehensive Tokyo timezone content targeting 'current time in tokyo' query (82 impressions, position 73.9). Implemented entity-first JST/UTC+9 references throughout, added Tokyo Stock Exchange specific trading hours (9AM-3PM with lunch break), culturally accurate business hours reflecting Japanese work culture, and strategic internal linking to /time/tokyo/new-york/ and /time/tokyo/london/ comparison pages. All 8 FAQ questions optimized for high-volume search patterns with direct answers first. Content emphasizes Tokyo's unique no-DST policy as a differentiator and includes specific calling windows from US East/West Coast and Europe. Time difference table includes 8 major cities with accurate hour calculations accounting for DST variations."
-} as const;
-
-export const tokyoFAQSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What time is it in Tokyo right now?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Tokyo operates on Japan Standard Time (JST/UTC+9) year-round. Japan does not observe daylight saving time, so Tokyo maintains a consistent 9-hour offset ahead of Coordinated Universal Time throughout the year. This makes Tokyo 14 hours ahead of New York (EST) and 9 hours ahead of London (GMT) during standard time periods."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What time zone is Tokyo in?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Tokyo is in the Japan Standard Time zone (JST), which is UTC+9. This timezone covers all of Japan, from Hokkaido to Okinawa. JST is one hour ahead of China Standard Time and shares the same offset with South Korea's KST, making business coordination across East Asia straightforward."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does Tokyo observe daylight saving time?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Japan abolished daylight saving time in 1951 and has not observed it since. Tokyo maintains Japan Standard Time (UTC+9) throughout the entire year, providing consistent business hours and eliminating the twice-yearly clock changes common in North America and Europe. This stability is particularly valued by international businesses operating with Japanese partners."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the time difference between Tokyo and New York?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Tokyo is 14 hours ahead of New York during Eastern Standard Time (November-March) and 13 hours ahead during Eastern Daylight Time (March-November). When it's 9:00 AM Monday in New York, it's 11:00 PM Monday in Tokyo during EST, or 10:00 PM during EDT. This significant gap means there's minimal business hour overlap between the two cities."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the time difference between Tokyo and London?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Tokyo is 9 hours ahead of London during Greenwich Mean Time (late October-late March) and 8 hours ahead during British Summer Time (late March-late October). When London reaches 9:00 AM, Tokyo is already at 6:00 PM (GMT) or 5:00 PM (BST), providing a narrow 2-3 hour window for real-time business communication between the financial capitals."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What time does the stock exchange open in Tokyo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The Tokyo Stock Exchange (TSE) opens at 9:00 AM JST and closes at 3:00 PM JST, with a lunch break from 11:30 AM to 12:30 PM JST. This translates to 8:00 PM-2:00 AM EST for New York traders (with the midday break 2:30-3:30 AM EST). The TSE is the world's third-largest stock exchange by market capitalization, trading over 3,800 listed companies."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the best time to call Tokyo from the US?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The optimal time to call Tokyo from the US East Coast is between 7:00 PM and 10:00 PM EST, which corresponds to 9:00 AM-12:00 PM JST the following day—prime Tokyo business hours. From the US West Coast, call between 4:00 PM and 7:00 PM PST to reach Tokyo during their morning working hours (9:00 AM-12:00 PM JST)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are typical business hours in Tokyo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Standard business hours in Tokyo run from 9:00 AM to 6:00 PM JST, Monday through Friday, though many professionals work until 7:00-8:00 PM. Government offices operate 8:30 AM-5:15 PM. Major banks open 9:00 AM-3:00 PM for counter services. Japan's work culture traditionally emphasizes long hours, though recent reforms are encouraging more balanced schedules."
-      }
-    }
-  ]
-} as const;
-
-export const tokyoTimezoneFacts = {
-  "full_name": "Japan Standard Time",
-  "abbreviation": "JST",
-  "utc_offset": "+9:00",
-  "dst_observed": false,
-  "dst_start": "Not applicable",
-  "dst_end": "Not applicable",
-  "dst_offset": "Not applicable"
-} as const;
+}
