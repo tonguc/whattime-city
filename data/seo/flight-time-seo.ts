@@ -1,4 +1,14 @@
 export const flightTimeSEO = {
+  metadata: {
+    title: "Flight Time Calculator — Arrival Time in Local Time | WhatTime.city",
+    description: "Calculate your arrival time in local time when crossing time zones. Enter departure city, arrival city, and flight duration to get accurate local arrival time.",
+    canonical: "https://whattime.city/flight-time",
+    openGraph: {
+      title: "Flight Time Calculator — WhatTime.city",
+      description: "Calculate your arrival time in local time when crossing time zones.",
+      url: "https://whattime.city/flight-time"
+    }
+  },
   content: {
     h1: "Flight Time Calculator",
     intro: "Calculate your arrival time in local time when crossing time zones.",
