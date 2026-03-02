@@ -1,272 +1,40 @@
-'use client'
+import type { Metadata } from 'next'
+import { flightTimeSEO } from '@/data/seo/flight-time-seo'
+import FlightTimeClient from './FlightTimeClient'
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { cities, City } from '@/lib/cities'
-import { useCityContext } from '@/lib/CityContext'
-import ToolPageWrapper from '@/components/ToolPageWrapper'
-import ToolsMiniNav from '@/components/ToolsMiniNav'
-import Footer from '@/components/Footer'
+export async function generateMetadata(): Promise<Metadata> {
+  const { metadata } = flightTimeSEO
+  return {
+    title: metadata.title,
+    description: metadata.description,
+    alternates: { canonical: metadata.canonical },
+    openGraph: {
+      title: metadata.openGraph.title,
+      description: metadata.openGraph.description,
+      url: metadata.openGraph.url,
+      type: 'website',
+    },
+  }
+}
 
 export default function FlightTimePage() {
-  const { theme, isLight } = useCityContext()
-  
-  // Initialize from localStorage for cross-tool persistence
-  const [departureCity, setDepartureCity] = useState<City>(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        const saved = localStorage.getItem('whattime-meeting-cities')
-        if (saved) {
-          const slugs = JSON.parse(saved) as string[]
-          if (slugs[0]) {
-            const city = cities.find(c => c.slug === slugs[0])
-            if (city) return city
-          }
-        }
-      } catch {}
-    }
-    return cities.find(c => c.city === 'New York') || cities[0]
-  })
-  
-  const [arrivalCity, setArrivalCity] = useState<City>(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        const saved = localStorage.getItem('whattime-meeting-cities')
-        if (saved) {
-          const slugs = JSON.parse(saved) as string[]
-          if (slugs[1]) {
-            const city = cities.find(c => c.slug === slugs[1])
-            if (city) return city
-          }
-        }
-      } catch {}
-    }
-    return cities.find(c => c.city === 'London') || cities[1]
-  })
-  
-  const [departureHour, setDepartureHour] = useState(10)
-  const [departureMinute, setDepartureMinute] = useState(0)
-  const [flightDuration, setFlightDuration] = useState({ hours: 7, minutes: 0 })
-  
-  // Sync cities to localStorage for cross-tool persistence
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        const slugs = [departureCity.slug, arrivalCity.slug]
-        localStorage.setItem('whattime-meeting-cities', JSON.stringify(slugs))
-      } catch {}
-    }
-  }, [departureCity.slug, arrivalCity.slug])
-
-  // Calculate arrival time
-  const getArrivalTime = () => {
-    const departure = new Date()
-    departure.setHours(departureHour, departureMinute, 0, 0)
-    
-    const arrivalUTC = new Date(departure.getTime() + (flightDuration.hours * 60 + flightDuration.minutes) * 60 * 1000)
-    
-    const depOffset = new Date(departure.toLocaleString('en-US', { timeZone: departureCity.timezone }))
-    const arrOffset = new Date(departure.toLocaleString('en-US', { timeZone: arrivalCity.timezone }))
-    const tzDiff = arrOffset.getTime() - depOffset.getTime()
-    
-    const arrivalLocal = new Date(arrivalUTC.getTime() + tzDiff)
-    
-    return {
-      time: arrivalLocal.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true }),
-      nextDay: arrivalLocal.getDate() !== departure.getDate()
-    }
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: flightTimeSEO.content.faq.map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
   }
 
-  const arrival = getArrivalTime()
-
-  // Dynamic styles based on theme (like HomePage)
-  const cardClass = `rounded-2xl p-6 backdrop-blur-xl border ${theme.card}`
-  const boxClass = isLight 
-    ? 'bg-white/60 border border-white/70 rounded-xl' 
-    : 'bg-slate-800/60 border border-slate-600/60 rounded-xl'
-  const inputClass = isLight 
-    ? 'bg-white border-slate-200 text-slate-800' 
-    : 'bg-slate-700 border-slate-600 text-white'
-
   return (
-    <ToolPageWrapper footer={<Footer />}>
-      <ToolsMiniNav />
-
-      {/* Tool Hero */}
-      <div className="text-center mb-6">
-        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${theme.text}`}>
-          Flight Time Calculator
-        </h1>
-        <p className={`text-lg ${theme.textMuted}`}>
-          Calculate your arrival time in local time
-        </p>
-      </div>
-
-      {/* Tool Interface - Main Card */}
-      <div className={`${cardClass} mb-4`}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Departure */}
-          <div>
-            <h3 className={`font-medium mb-3 ${theme.text}`}>Departure</h3>
-            <select
-              value={departureCity.slug}
-              onChange={(e) => setDepartureCity(cities.find(c => c.slug === e.target.value) || cities[0])}
-              className={`w-full px-4 py-3 rounded-xl border mb-3 ${inputClass}`}
-            >
-              {cities.map(city => (
-                <option key={city.slug} value={city.slug}>{city.city}, {city.country}</option>
-              ))}
-            </select>
-            <div className="flex gap-2">
-              <select
-                value={departureHour}
-                onChange={(e) => setDepartureHour(parseInt(e.target.value))}
-                className={`flex-1 px-3 py-2 rounded-lg border ${inputClass}`}
-              >
-                {Array.from({ length: 24 }, (_, i) => (
-                  <option key={i} value={i}>{i.toString().padStart(2, '0')}:00</option>
-                ))}
-              </select>
-              <select
-                value={departureMinute}
-                onChange={(e) => setDepartureMinute(parseInt(e.target.value))}
-                className={`flex-1 px-3 py-2 rounded-lg border ${inputClass}`}
-              >
-                {[0, 15, 30, 45].map(m => (
-                  <option key={m} value={m}>:{m.toString().padStart(2, '0')}</option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          {/* Arrival */}
-          <div>
-            <h3 className={`font-medium mb-3 ${theme.text}`}>Arrival</h3>
-            <select
-              value={arrivalCity.slug}
-              onChange={(e) => setArrivalCity(cities.find(c => c.slug === e.target.value) || cities[1])}
-              className={`w-full px-4 py-3 rounded-xl border mb-3 ${inputClass}`}
-            >
-              {cities.map(city => (
-                <option key={city.slug} value={city.slug}>{city.city}, {city.country}</option>
-              ))}
-            </select>
-            <div className={`text-center py-2 text-2xl font-bold ${theme.accentText}`}>
-              {arrival.time} {arrival.nextDay && <span className="text-sm">(+1 day)</span>}
-            </div>
-          </div>
-        </div>
-
-        {/* Flight Duration */}
-        <div className={`mt-6 pt-6 border-t ${isLight ? 'border-slate-200/50' : 'border-slate-600/50'}`}>
-          <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>
-            Flight Duration
-          </label>
-          <div className="flex gap-4 items-center">
-            <div className="flex items-center gap-2">
-              <input
-                type="number"
-                min="0"
-                max="24"
-                value={flightDuration.hours}
-                onChange={(e) => setFlightDuration({ ...flightDuration, hours: parseInt(e.target.value) || 0 })}
-                className={`w-20 px-3 py-2 rounded-lg border text-center ${inputClass}`}
-              />
-              <span className={theme.textMuted}>hours</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <input
-                type="number"
-                min="0"
-                max="59"
-                value={flightDuration.minutes}
-                onChange={(e) => setFlightDuration({ ...flightDuration, minutes: parseInt(e.target.value) || 0 })}
-                className={`w-20 px-3 py-2 rounded-lg border text-center ${inputClass}`}
-              />
-              <span className={theme.textMuted}>minutes</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* SEO SECTION 1: Common Use Cases */}
-      <section className={`${cardClass} mb-4`}>
-        <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
-          Common Use Cases
-        </h2>
-        <ul className={`space-y-3 ${theme.textMuted}`}>
-          <li className="flex gap-3">
-            <span className={`${theme.accentText} mt-1`}>•</span>
-            <div><strong>Airport pickup coordination</strong> — Let someone know exactly when you'll land in their time.</div>
-          </li>
-          <li className="flex gap-3">
-            <span className={`${theme.accentText} mt-1`}>•</span>
-            <div><strong>Hotel check-in planning</strong> — Verify if you'll arrive in time for check-in.</div>
-          </li>
-          <li className="flex gap-3">
-            <span className={`${theme.accentText} mt-1`}>•</span>
-            <div><strong>Connecting flight timing</strong> — Ensure you have enough layover time.</div>
-          </li>
-          <li className="flex gap-3">
-            <span className={`${theme.accentText} mt-1`}>•</span>
-            <div><strong>Meeting scheduling on arrival day</strong> — Know if you can make that afternoon meeting.</div>
-          </li>
-        </ul>
-      </section>
-
-      {/* SEO SECTION 2: Who Is This Tool For? */}
-      <section className={`${cardClass} mb-4`}>
-        <h2 className={`text-xl font-semibold mb-3 ${theme.text}`}>
-          Who Is This Tool For?
-        </h2>
-        <p className={theme.textMuted}>
-          Frequent flyers, travel planners, and anyone booking international flights will find this tool useful. 
-          It eliminates confusion about what time you'll actually arrive at your destination in local time, 
-          especially when crossing multiple time zones.
-        </p>
-      </section>
-
-      {/* SEO SECTION 3: Related Tools */}
-      <section className={`${cardClass} mb-4`}>
-        <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
-          Related Tools
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <Link href="/jet-lag-advisor" className={`p-4 ${boxClass} transition-all hover:scale-[1.02]`}>
-            <div className={`text-sm font-medium ${theme.text}`}>Jet Lag Advisor</div>
-            <div className={`text-xs ${theme.textMuted}`}>Recovery tips</div>
-          </Link>
-          <Link href="/time-converter" className={`p-4 ${boxClass} transition-all hover:scale-[1.02]`}>
-            <div className={`text-sm font-medium ${theme.text}`}>Time Converter</div>
-            <div className={`text-xs ${theme.textMuted}`}>Quick conversions</div>
-          </Link>
-          <Link href="/world-alarm" className={`p-4 ${boxClass} transition-all hover:scale-[1.02]`}>
-            <div className={`text-sm font-medium ${theme.text}`}>World Alarm</div>
-            <div className={`text-xs ${theme.textMuted}`}>Set travel alarms</div>
-          </Link>
-        </div>
-      </section>
-
-      {/* SEO SECTION 4: FAQ */}
-      <section className={`${cardClass} mb-4`}>
-        <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
-          Frequently Asked Questions
-        </h2>
-        <div className={`space-y-4 ${theme.textMuted}`}>
-          <div>
-            <h3 className={`font-medium mb-1 ${theme.text}`}>Does this calculate actual flight distance?</h3>
-            <p className="text-sm">No, you need to input the flight duration. Check your airline for estimated flight time.</p>
-          </div>
-          <div>
-            <h3 className={`font-medium mb-1 ${theme.text}`}>What does "+1 day" mean?</h3>
-            <p className="text-sm">This indicates you'll arrive on the following calendar day due to time zone differences or long flight duration.</p>
-          </div>
-          <div>
-            <h3 className={`font-medium mb-1 ${theme.text}`}>Does it account for DST?</h3>
-            <p className="text-sm">Yes, Daylight Saving Time is automatically applied for both departure and arrival cities.</p>
-          </div>
-        </div>
-      </section>
-    </ToolPageWrapper>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <FlightTimeClient />
+    </>
   )
 }
