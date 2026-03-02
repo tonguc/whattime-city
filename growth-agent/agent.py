@@ -1000,7 +1000,7 @@ async def process_city_full(city_slug: str, update, max_retries: int = 2) -> tup
         seo_data   = validation["content"]
         attempt_scores.append(validation["score"])
         attempt_failure_codes = validation.get("failure_reason_codes", [])
-        if validation["passed"]:
+        if validation["passed"] and "placeholder_text" not in validation.get("failure_reason_codes", []):
             what_fixed = None
             if attempt > 0 and len(attempt_scores) > 1:
                 prev_score   = attempt_scores[-2]
