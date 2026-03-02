@@ -775,7 +775,7 @@ def github_create_pr(title: str, branch_name: str, body: str, files: dict) -> st
     if r.status_code != 200:
         return f"ERROR: Base branch: {r.text[:150]}"
     sha        = r.json()["object"]["sha"]
-    new_branch = f"growth-agent/{branch_name}-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
+    new_branch = f"seo-{branch_name}-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
     r = requests.post(f"https://api.github.com/repos/{repo}/git/refs",
                       headers=headers,
                       json={"ref": f"refs/heads/{new_branch}", "sha": sha}, timeout=15)
@@ -958,7 +958,7 @@ export const {var}SEOData = {json.dumps(seo_data, indent=2, ensure_ascii=False)}
 
 export const {var}FAQSchema = {json.dumps(seo_data.get('faq_schema', {}), indent=2, ensure_ascii=False)} as const;
 
-export const {var}TimezoneFacts = {json.dumps(seo_data.get('timezone_facts', {}), indent=2, ensure_ascii=False)} as const;
+export const {var}TimezoneFacts = {json.dumps(seo_data.get('timezone_facts') or {}, indent=2, ensure_ascii=False)} as const;
 """
 
 # ============================================================
