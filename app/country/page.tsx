@@ -2,23 +2,23 @@ import { Metadata } from 'next'
 import CountriesContent from '@/components/CountriesContent'
 
 export const metadata: Metadata = {
-  title: 'Time Zones by Country - All Countries List | whattime.city',
-  description: 'Browse time zones for 80+ countries worldwide. Find current local time, daylight saving info, and timezone details for any country.',
-  keywords: ['time zones by country', 'world time zones', 'countries time zones', 'international time zones', 'country time list'],
+  title: 'Time Zones by Country — Current Local Time for 191 Countries | whattime.city',
+  description: 'Explore current local time and time zone for all 191 countries. Albania, Austria, Brazil, Japan and more — find any country\'s exact time instantly.',
+  keywords: ['time zones by country', 'world time zones', 'countries time zones', 'international time zones', 'country local time', 'albania time zone', 'austria time zone', 'brazil time zone'],
   openGraph: {
-    title: 'Time Zones by Country - World Time Zone Guide',
-    description: 'Complete list of countries and their time zones. Find current time anywhere in the world.',
+    title: 'Time Zones by Country — 191 Countries | whattime.city',
+    description: 'Current local time and time zone info for all 191 countries. Find any country instantly.',
     type: 'website',
     siteName: 'whattime.city',
-    url: 'https://whattime.city/country'
+    url: 'https://whattime.city/country/'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Time Zones by Country | whattime.city',
-    description: 'Browse time zones for 80+ countries worldwide.'
+    title: 'Time Zones by Country — 191 Countries | whattime.city',
+    description: 'Current local time and time zone for all 191 countries. Find any country instantly.'
   },
   alternates: {
-    canonical: 'https://whattime.city/country'
+    canonical: 'https://whattime.city/country/'
   }
 }
 

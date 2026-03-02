@@ -42,6 +42,7 @@ const FAQSection = dynamic(() => import('./FAQSection'), { ssr: false })
 
 interface CityPageProps {
   initialCity?: City
+  seoData?: any
 }
 
 function findNearestCity(lat: number, lng: number): City {
@@ -60,7 +61,7 @@ function findNearestCity(lat: number, lng: number): City {
   return nearest
 }
 
-export default function CityPage({ initialCity }: CityPageProps) {
+export default function CityPage({ initialCity, seoData }: CityPageProps) {
   const router = useRouter()
   const { 
     setActiveCity, 
@@ -329,7 +330,7 @@ export default function CityPage({ initialCity }: CityPageProps) {
         )}
         
         {/* SEO Content - Keyword-rich text for search engines */}
-        <SEOContent city={selectedCity} />
+        <SEOContent city={selectedCity} seoData={seoData} />
         
         {/* Time Difference Table */}
         <div className="mt-4">
@@ -337,7 +338,7 @@ export default function CityPage({ initialCity }: CityPageProps) {
         </div>
         
         {/* FAQ Section - Schema markup for search engines */}
-        <FAQSection city={selectedCity} />
+        <FAQSection city={selectedCity} seoData={seoData} />
         
         {/* ═══════════════════════════════════════════════════════════════
             DISCOVERY SECTION - Keşif & Navigasyon

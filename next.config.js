@@ -108,6 +108,22 @@ const nextConfig = {
       },
     ]
   },
+  async redirects() {
+    return [
+      { source: '/rome-compared-to-san-francisco/', destination: '/time/rome/san-francisco/', permanent: true },
+      { source: '/rome-compared-to-san-francisco', destination: '/time/rome/san-francisco/', permanent: true },
+      { source: '/paris-compared-to-san-francisco/', destination: '/time/paris/san-francisco/', permanent: true },
+      { source: '/paris-compared-to-san-francisco', destination: '/time/paris/san-francisco/', permanent: true },
+      { source: '/paris-versus-san-francisco/', destination: '/time/paris/san-francisco/', permanent: true },
+      { source: '/paris-versus-san-francisco', destination: '/time/paris/san-francisco/', permanent: true },
+      { source: '/china-vs-san-francisco/', destination: '/time/beijing/san-francisco/', permanent: true },
+      { source: '/china-vs-san-francisco', destination: '/time/beijing/san-francisco/', permanent: true },
+      { source: '/china-compared-to-san-francisco/', destination: '/time/beijing/san-francisco/', permanent: true },
+      { source: '/china-compared-to-san-francisco', destination: '/time/beijing/san-francisco/', permanent: true },
+      { source: '/nigeria-vs-brazil/', destination: '/time/lagos/sao-paulo/', permanent: true },
+      { source: '/nigeria-vs-brazil', destination: '/time/lagos/sao-paulo/', permanent: true },
+    ]
+  },
 }
 
 module.exports = nextConfig
