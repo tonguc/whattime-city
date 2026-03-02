@@ -10,8 +10,8 @@ export const flightTimeSEO = {
     ],
     whoIsItFor: "Frequent flyers, travel planners, and anyone booking international flights will find this tool useful. It eliminates confusion about what time you'll actually arrive at your destination in local time, especially when crossing multiple time zones.",
     sections: [
-      { title: "How It Works", body: "Enter your departure city, arrival city, departure time, and flight duration. The calculator accounts for time zone differences and daylight saving time automatically." },
-      { title: "Time Zone Accuracy", body: "All calculations use the IANA Time Zone Database to ensure accurate UTC offsets and DST rules for every city worldwide." }
+      { title: "How It Works", content: "Enter your departure city, arrival city, departure time, and flight duration. The calculator accounts for time zone differences and daylight saving time automatically." },
+      { title: "Time Zone Accuracy", content: "All calculations use the IANA Time Zone Database to ensure accurate UTC offsets and DST rules for every city worldwide." }
     ],
     internalLinks: [
       { label: "Time Converter", href: "/time-converter", description: "Quick conversions" },
