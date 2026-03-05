@@ -4110,14 +4110,6 @@ export const cities: City[] = [
       demographics: 'Capital of Luxembourg, UNESCO World Heritage Site. Major EU and financial center, one of the wealthiest cities in the world.'
     }
   },
-  { slug: 'monaco', city: 'Monaco', timezone: 'Europe/Monaco', country: 'Monaco', countryCode: 'MC', lat: 43.73, lng: 7.42, tier: 3, continent: 'europe',
-    info: {
-      currency: 'Euro', currencySymbol: '€', population: '40K', phoneCode: '+377', language: 'French, Monégasque',
-      climate: 'Mediterranean with warm dry summers (23-28°C) and mild wet winters (10-14°C). 300+ sunny days.',
-      attractions: ['Monte Carlo Casino', 'Prince\'s Palace', 'Oceanographic Museum', 'Monaco Grand Prix Circuit', 'Exotic Garden'],
-      demographics: 'Second-smallest country in the world, most densely populated. Known for wealth, casinos, yacht harbor, and Formula 1.'
-    }
-  },
   { slug: 'andorra-la-vella', city: 'Andorra la Vella', timezone: 'Europe/Andorra', country: 'Andorra', countryCode: 'AD', lat: 42.51, lng: 1.52, tier: 3, continent: 'europe',
     info: {
       currency: 'Euro', currencySymbol: '€', population: '23K', phoneCode: '+376', language: 'Catalan',
@@ -5214,7 +5206,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'durham', city: 'Durham', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 54.78, lng: -1.57, tier: 3, continent: 'europe',
+  { slug: 'durham-uk', city: 'Durham', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 54.78, lng: -1.57, tier: 3, continent: 'europe',
     info: {
       currency: 'British Pound', currencySymbol: '£', population: '0.05M', metroPopulation: '0.09M', phoneCode: '+44 191', language: 'English',
       climate: 'Oceanic with cool summers (15-19°C) and cold winters (2-7°C). River valley.',
@@ -5254,7 +5246,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'lincoln', city: 'Lincoln', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.23, lng: -0.54, tier: 3, continent: 'europe',
+  { slug: 'lincoln-uk', city: 'Lincoln', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 53.23, lng: -0.54, tier: 3, continent: 'europe',
     info: {
       currency: 'British Pound', currencySymbol: '£', population: '0.1M', metroPopulation: '0.13M', phoneCode: '+44 1522', language: 'English',
       climate: 'Oceanic with mild summers (16-21°C) and cool winters (2-7°C). East Midlands.',
@@ -5616,7 +5608,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'dover', city: 'Dover', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.13, lng: 1.31, tier: 3, continent: 'europe',
+  { slug: 'dover-uk', city: 'Dover', timezone: 'Europe/London', country: 'United Kingdom', countryCode: 'GB', lat: 51.13, lng: 1.31, tier: 3, continent: 'europe',
     info: {
       currency: 'British Pound', currencySymbol: '£', population: '0.03M', metroPopulation: '0.11M', phoneCode: '+44 1304', language: 'English',
       climate: 'Oceanic with mild summers (17-21°C) and cool winters (4-8°C). Channel coast.',
@@ -8272,7 +8264,7 @@ export const cities: City[] = [
   },
   
   // Spain - Additional Premium Tourist Destinations
-  { slug: 'toledo', city: 'Toledo', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 39.86, lng: -4.03, tier: 2, continent: 'europe',
+  { slug: 'toledo-spain', city: 'Toledo', timezone: 'Europe/Madrid', country: 'Spain', countryCode: 'ES', lat: 39.86, lng: -4.03, tier: 2, continent: 'europe',
     info: {
       currency: 'Euro', currencySymbol: '€', population: '0.08M', metroPopulation: '0.09M', phoneCode: '+34 925', language: 'Spanish',
       climate: 'Continental Mediterranean with hot summers (28-35°C) and cold winters (2-10°C).',
@@ -9898,7 +9890,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'kochi', city: 'Kochi', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 33.56, lng: 133.53, tier: 2, continent: 'asia',
+  { slug: 'kochi-japan', city: 'Kochi', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 33.56, lng: 133.53, tier: 2, continent: 'asia',
     info: {
       currency: 'Japanese Yen', currencySymbol: '¥', population: '0.32M', metroPopulation: '0.55M', phoneCode: '+81 88', language: 'Japanese',
       climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (4-12°C). High rainfall.',
@@ -10500,22 +10492,6 @@ export const cities: City[] = [
       climate: 'Humid subtropical with hot summers (26-31°C) and mild winters (2-10°C). Tokyo Bay.',
       attractions: ['LaLaport Tokyo-Bay', 'IKEA Tokyo-Bay', 'Funabashi Andersen Park', 'Sanbanze', 'Funabashi Keiba', 'ららぽーと', 'Seafood markets', 'Nori seaweed', 'Beach parks', 'Shopping malls'],
       demographics: 'Chiba\'s 2nd largest city. Major shopping destination (LaLaport). Andersen Park. Seaweed (nori) production. Tokyo commuter hub.'
-    }
-  },
-  { slug: 'niigata', city: 'Niigata', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 37.90, lng: 139.02, tier: 2, continent: 'asia',
-    info: {
-      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.79M', metroPopulation: '1.1M', phoneCode: '+81 25', language: 'Japanese',
-      climate: 'Humid continental with warm summers (23-30°C) and cold snowy winters (-1 to 5°C). Sea of Japan coast, heavy snowfall.',
-      attractions: ['Sake breweries', 'Ponshukan', 'Bandai Bridge', 'Furumachi Geisha', 'Niigata Furusato Village', 'Sado Island ferries', 'Rice paddies', 'Fish market', 'Toki Messe', 'Art museums'],
-      demographics: 'Sea of Japan largest city. Rice and sake capital. Sado Island gateway. Heavy snowfall. Koshihikari rice origin.'
-    }
-  },
-  { slug: 'hamamatsu', city: 'Hamamatsu', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.71, lng: 137.73, tier: 2, continent: 'asia',
-    info: {
-      currency: 'Japanese Yen', currencySymbol: '¥', population: '0.79M', metroPopulation: '1.1M', phoneCode: '+81 53', language: 'Japanese',
-      climate: 'Humid subtropical with hot summers (26-32°C) and mild winters (3-10°C). Pacific coast, sunny.',
-      attractions: ['Lake Hamana', 'Hamamatsu Castle', 'Nakatajima Sand Dunes', 'Musical Instrument Museum', 'Yamaha/Kawai/Roland', 'Act City', 'Unagi (eel)', 'Fruit picking', 'Shizuoka tea', 'Suzuki Museum'],
-      demographics: 'Shizuoka\'s largest city. Musical instrument capital (Yamaha, Kawai, Roland). Unagi eel specialty. Lake Hamana oysters.'
     }
   },
   { slug: 'higashiosaka', city: 'Higashiosaka', timezone: 'Asia/Tokyo', country: 'Japan', countryCode: 'JP', lat: 34.68, lng: 135.60, tier: 2, continent: 'asia',
@@ -14364,7 +14340,7 @@ export const cities: City[] = [
       demographics: 'Second-largest city in Tamil Nadu, "Manchester of South India" for textile industry. Major engineering and IT hub.'
     }
   },
-  { slug: 'kochi', city: 'Kochi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 9.93, lng: 76.27, tier: 3, continent: 'asia',
+  { slug: 'kochi-india', city: 'Kochi', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 9.93, lng: 76.27, tier: 3, continent: 'asia',
     info: {
       currency: 'Indian Rupee', currencySymbol: '₹', population: '680K', phoneCode: '+91 484', language: 'Malayalam, English',
       climate: 'Tropical monsoon with heavy southwest monsoon (June-September). Warm and humid year-round (24-32°C).',
@@ -16688,7 +16664,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'lincoln', city: 'Lincoln', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Nebraska', stateCode: 'NE', lat: 40.81, lng: -96.68, tier: 3, continent: 'americas',
+  { slug: 'lincoln-us', city: 'Lincoln', timezone: 'America/Chicago', country: 'United States', countryCode: 'US', state: 'Nebraska', stateCode: 'NE', lat: 40.81, lng: -96.68, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '290K', phoneCode: '+1 402', language: 'English',
       climate: 'Humid continental with hot summers (22-31°C) and cold winters (-9 to 2°C). Four distinct seasons.',
@@ -16744,7 +16720,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'toledo', city: 'Toledo', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Ohio', stateCode: 'OH', lat: 41.65, lng: -83.54, tier: 3, continent: 'americas',
+  { slug: 'toledo-us', city: 'Toledo', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Ohio', stateCode: 'OH', lat: 41.65, lng: -83.54, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '270K', phoneCode: '+1 419', language: 'English',
       climate: 'Humid continental with warm summers (22-29°C) and cold snowy winters (-6 to 2°C). Lake effect.',
@@ -16772,7 +16748,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'durham', city: 'Durham', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'North Carolina', stateCode: 'NC', lat: 35.99, lng: -78.90, tier: 3, continent: 'americas',
+  { slug: 'durham-us', city: 'Durham', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'North Carolina', stateCode: 'NC', lat: 35.99, lng: -78.90, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '280K', phoneCode: '+1 919', language: 'English',
       climate: 'Humid subtropical with hot summers (24-32°C) and mild winters (2-11°C). Four seasons.',
@@ -17976,7 +17952,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'dover', city: 'Dover', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Delaware', stateCode: 'DE', lat: 39.16, lng: -75.52, tier: 3, continent: 'americas',
+  { slug: 'dover-us', city: 'Dover', timezone: 'America/New_York', country: 'United States', countryCode: 'US', state: 'Delaware', stateCode: 'DE', lat: 39.16, lng: -75.52, tier: 3, continent: 'americas',
     info: {
       currency: 'US Dollar', currencySymbol: '$', population: '40K', metroPopulation: '180K', phoneCode: '+1 302', language: 'English',
       climate: 'Humid subtropical with warm summers (23-31°C) and cool winters (-2 to 7°C).',
