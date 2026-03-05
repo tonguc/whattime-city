@@ -1444,7 +1444,7 @@ export const citiesCore: CityCore[] = [
   { slug: 'changzhou', city: 'Changzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 31.81, lng: 119.97, tier: 3, continent: 'asia' },
   { slug: 'shaoxing', city: 'Shaoxing', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.00, lng: 120.58, tier: 3, continent: 'asia' },
   { slug: 'jiaxing', city: 'Jiaxing', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 30.75, lng: 120.76, tier: 3, continent: 'asia' },
-  { slug: 'huaian', city: 'Huai\', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 33.61, lng: 119.02, tier: 3, continent: 'asia' },
+  { slug: 'huaian', city: 'Huai'an', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 33.61, lng: 119.02, tier: 3, continent: 'asia' },
   { slug: 'yancheng', city: 'Yancheng', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 33.35, lng: 120.16, tier: 3, continent: 'asia' },
   { slug: 'taizhou-jiangsu', city: 'Taizhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 32.46, lng: 119.92, tier: 3, continent: 'asia' },
   { slug: 'yangzhou', city: 'Yangzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 32.39, lng: 119.43, tier: 3, continent: 'asia' },
