@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { City, getTier1Cities, uses12HourFormat, cities } from '@/lib/cities'
+import { City, getTier1Cities, uses12HourFormat } from '@/lib/cities'
+import { citiesCore } from '@/data/cities-core'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import { detectLanguage, Language } from '@/lib/translations'
@@ -37,10 +38,10 @@ interface CityPageV2Props {
 }
 
 function findNearestCity(lat: number, lng: number): City {
-  let nearest = cities[0]
+  let nearest = citiesCore[0]
   let minDist = Infinity
   
-  for (const city of cities) {
+  for (const city of citiesCore) {
     const dist = Math.sqrt(
       Math.pow(city.lat - lat, 2) + Math.pow(city.lng - lng, 2)
     )
@@ -86,7 +87,7 @@ export default function CityPageV2({ initialCity }: CityPageV2Props) {
   }, [selectedCity, setActiveCity])
   
   const isFavorite = (slug: string) => favorites.includes(slug)
-  const favoriteCities = cities.filter(c => favorites.includes(c.slug))
+  const favoriteCities = citiesCore.filter(c => favorites.includes(c.slug))
   
   // Save city context for tools navigation
   useEffect(() => {
@@ -118,7 +119,7 @@ export default function CityPageV2({ initialCity }: CityPageV2Props) {
         },
         () => {
           const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
-          const cityByTz = cities.find(c => c.timezone === tz) || cities[0]
+          const cityByTz = citiesCore.find(c => c.timezone === tz) || citiesCore[0]
           setDetectedCity(cityByTz)
           if (!initialCity) {
             setSelectedCity(cityByTz)
@@ -128,7 +129,7 @@ export default function CityPageV2({ initialCity }: CityPageV2Props) {
       )
     } else {
       const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
-      const cityByTz = cities.find(c => c.timezone === tz) || cities[0]
+      const cityByTz = citiesCore.find(c => c.timezone === tz) || citiesCore[0]
       setDetectedCity(cityByTz)
       if (!initialCity) {
         setSelectedCity(cityByTz)
@@ -279,7 +280,7 @@ export default function CityPageV2({ initialCity }: CityPageV2Props) {
         
         {/* Time Difference Table */}
         <div className="mt-4">
-          <TimeDifferenceTable city={selectedCity} />
+          <TimeDifferenceTable city={selectedCity} allCities={citiesCore} />
         </div>
         
         {/* ═══════════════════════════════════════════════════════════════
