@@ -21,7 +21,7 @@ function getCurrentTime(city: City): string {
   })
 }
 
-export default function CompactWorldCities({ selectedCity, onCitySelect }: CompactWorldCitiesProps) {
+export default function CompactWorldCities({ selectedCity, onCitySelect, totalCityCount }: CompactWorldCitiesProps) {
   const { card, text, textMuted, isLight } = useThemeClasses()
   const [showAll, setShowAll] = useState(false)
   
