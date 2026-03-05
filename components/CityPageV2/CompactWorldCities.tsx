@@ -1,12 +1,13 @@
 'use client'
 
 import { useState } from 'react'
-import { City, getTier1Cities, cities } from '@/lib/cities'
+import { City, getTier1Cities } from '@/lib/cities'
 import { useThemeClasses } from '@/lib/useThemeClasses'
 
 interface CompactWorldCitiesProps {
   selectedCity: City
   onCitySelect: (city: City) => void
+  totalCityCount?: number
 }
 
 // Get current time for a city
@@ -94,7 +95,7 @@ export default function CompactWorldCities({ selectedCity, onCitySelect }: Compa
           href="/cities" 
           className={`text-sm ${isLight ? 'text-blue-600' : 'text-blue-400'} hover:underline`}
         >
-          View all {cities.length} cities →
+          View all {totalCityCount ?? 1600} cities →
         </a>
       </div>
     </section>

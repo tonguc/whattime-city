@@ -1,10 +1,11 @@
 'use client'
 
-import { City, cities, getTier1Cities } from '@/lib/cities'
+import { City, getTier1Cities } from '@/lib/cities'
 import { useThemeClasses } from '@/lib/useThemeClasses'
 
 interface TimeDifferenceTableProps {
   city: City
+  allCities?: City[]
 }
 
 // Phone codes by country
@@ -50,7 +51,7 @@ function getComparisonCities(city: City): City[] {
   
   if (targetSlugs) {
     return targetSlugs
-      .map(slug => cities.find(c => c.slug === slug))
+      .map(slug => allCities.find(c => c.slug === slug))
       .filter((c): c is City => c !== undefined)
   }
   
@@ -123,7 +124,7 @@ function getMeetingOverlap(diffHours: number): { level: 'high' | 'limited' | 'no
   }
 }
 
-export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) {
+export default function TimeDifferenceTable({ city, allCities = [] }: TimeDifferenceTableProps) {
   const { card, text, textMuted, isLight } = useThemeClasses()
   
   const comparisonCities = getComparisonCities(city)
