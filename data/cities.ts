@@ -19858,8 +19858,8 @@ export const cities: City[] = [
     info: {
       currency: 'Brazilian Real', currencySymbol: 'R$', population: '620K', metroPopulation: '700K', phoneCode: '+55 47', language: 'Portuguese',
       climate: 'Humid subtropical with warm summers (20-30°C) and mild winters (10-20°C). High rainfall year-round.',
-      attractions: ['Joinville Dance Festival', 'Museum of Immigration', 'Rua das Palmeiras', 'Parque da Caixa d'Água', 'Mirante do Morro do Finder', 'Lagoa do Saguaçu', 'Expoville', 'Bicycle Museum', 'German heritage sites', 'Dona Francisca road'],
-      demographics: 'Largest city in Santa Catarina. Founded by German immigrants 1851. Hosts world's largest dance festival.',
+      attractions: ['Joinville Dance Festival', 'Museum of Immigration', 'Rua das Palmeiras', 'Parque da Caixa d Agua', 'Mirante do Morro do Finder', 'Lagoa do Saguaçu', 'Expoville', 'Bicycle Museum', 'German heritage sites', 'Dona Francisca road'],
+      demographics: 'Largest city in Santa Catarina. Founded by German immigrants 1851. Hosts worlds largest dance festival.',
     }
   },
   { slug: 'londrina', city: 'Londrina', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -23.31, lng: -51.16, tier: 3, continent: 'americas',
