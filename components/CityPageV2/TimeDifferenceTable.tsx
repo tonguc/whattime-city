@@ -46,7 +46,7 @@ const cityComparisonTargets: Record<string, string[]> = {
 }
 
 // Get comparison cities for a given city
-function getComparisonCities(city: City): City[] {
+function getComparisonCities(city: City, allCities: City[] = []): City[] {
   const targetSlugs = cityComparisonTargets[city.slug]
   
   if (targetSlugs) {
@@ -127,7 +127,7 @@ function getMeetingOverlap(diffHours: number): { level: 'high' | 'limited' | 'no
 export default function TimeDifferenceTable({ city, allCities = [] }: TimeDifferenceTableProps) {
   const { card, text, textMuted, isLight } = useThemeClasses()
   
-  const comparisonCities = getComparisonCities(city)
+  const comparisonCities = getComparisonCities(city, allCities)
   
   return (
     <section className={`rounded-2xl border ${card} overflow-hidden`}>
