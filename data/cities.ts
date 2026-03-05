@@ -19851,7 +19851,7 @@ export const cities: City[] = [
       currency: 'Brazilian Real', currencySymbol: 'R$', population: '40K', metroPopulation: '40K', phoneCode: '+55 54', language: 'Portuguese',
       climate: 'Humid subtropical highland with cool summers (15-25°C) and cold winters (2-12°C). Snow possible June-August.',
       attractions: ['Natal Luz Christmas Festival', 'Lago Negro', 'Serra Gaúcha scenery', 'Chocolate shops', 'Fondue restaurants', 'Gramado Film Festival', 'Mini Mundo', 'Canela waterfalls', 'Hydrangeas November', 'Dreamland Museum'],
-      demographics: 'Alpine-style resort town. German and Italian heritage. Brazil's Christmas capital with 7 million visitors during Natal Luz.',
+      demographics: 'Alpine-style resort town. German and Italian heritage. Brazils Christmas capital with 7 million visitors during Natal Luz.',
     }
   },
   { slug: 'joinville', city: 'Joinville', timezone: 'America/Sao_Paulo', country: 'Brazil', countryCode: 'BR', lat: -26.30, lng: -48.85, tier: 3, continent: 'americas',
