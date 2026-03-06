@@ -590,7 +590,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
               <div className="flex items-center gap-3">
                 <TimeOfDayIcon timeOfDay={fromTimeOfDay} size="lg" />
                 <div>
-                  <h2 className={`text-lg font-semibold ${mainTheme.text}`}>{fromCity.city}</h2>
+                  <h2 className={`text-lg font-semibold ${mainTheme.text}`}><Link href={`/${fromCity.slug}`} className="hover:underline">{fromCity.city}</Link></h2>
                   <p className={`text-xs ${mainTheme.textMuted}`}>{fromCity.country}</p>
                 </div>
               </div>
@@ -635,7 +635,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
               <div className="flex items-center gap-3">
                 <TimeOfDayIcon timeOfDay={toTimeOfDay} size="lg" />
                 <div>
-                  <h2 className={`text-lg font-semibold ${mainTheme.text}`}>{toCity.city}</h2>
+                  <h2 className={`text-lg font-semibold ${mainTheme.text}`}><Link href={`/${toCity.slug}`} className="hover:underline">{toCity.city}</Link></h2>
                   <p className={`text-xs ${mainTheme.textMuted}`}>{toCity.country}</p>
                 </div>
               </div>
