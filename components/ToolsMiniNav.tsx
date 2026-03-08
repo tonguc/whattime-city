@@ -68,7 +68,7 @@ const toolNavItems = [
 
 export default function ToolsMiniNav() {
   const pathname = usePathname()
-  const { isLight } = useCityContext()
+  const { isLight, detectedCity } = useCityContext()
   
   return (
     <nav className="mt-2 mb-6 -mx-4 px-4">
@@ -93,7 +93,9 @@ export default function ToolsMiniNav() {
           const citySlugMatch = pathname?.match(/^\/([a-z0-9-]+)$/)
           const isCityPage = citySlugMatch && !['meeting', 'time', 'flight-time', 'jet-lag-advisor', 'event-time', 'time-converter', 'cities', 'guides', 'map', 'tools', 'countries', 'world-alarm', 'world-clock'].includes(citySlugMatch[1])
           const href = (tool.id === 'meeting-planner' && isCityPage)
-            ? `/meeting/${citySlugMatch[1]}`
+            ? (detectedCity && detectedCity.slug !== citySlugMatch[1]
+                ? `/meeting/${citySlugMatch[1]}-vs-${detectedCity.slug}`
+                : `/meeting/${citySlugMatch[1]}`)
             : tool.url
 
           return (
