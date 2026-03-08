@@ -89,10 +89,17 @@ export default function ToolsMiniNav() {
                 : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 border-slate-600'
           }`
           
+          // If on a city page and navigating to meeting planner, include city slug
+          const citySlugMatch = pathname?.match(/^\/([a-z0-9-]+)$/)
+          const isCityPage = citySlugMatch && !['meeting', 'time', 'flight-time', 'jet-lag-advisor', 'event-time', 'time-converter', 'cities', 'guides', 'map', 'tools', 'countries', 'world-alarm', 'world-clock'].includes(citySlugMatch[1])
+          const href = (tool.id === 'meeting-planner' && isCityPage)
+            ? `/meeting/${citySlugMatch[1]}`
+            : tool.url
+
           return (
             <Link
               key={tool.id}
-              href={tool.url}
+              href={href}
               className={className}
             >
               <span className={isActive ? 'text-white' : isLight ? 'text-amber-600' : 'text-amber-400'}>
