@@ -23719,7 +23719,6 @@ export const cities: City[] = [
     info: { currency: 'Indonesian Rupiah', currencySymbol: 'Rp', population: '0.5M', phoneCode: '+62 370', language: 'Indonesian, Sasak', climate: 'Tropical (22-32°C). Dry season June to October. Near Lombok Island beaches.', attractions: ['Mayura Water Palace', 'Pura Meru Temple', 'Senggigi Beach access', 'Gili Islands access', 'Lombok Strait views'], demographics: 'Capital of West Nusa Tenggara on Lombok Island. Gateway to Gili Islands and Mount Rinjani.' } },
   { slug: 'ambon', city: 'Ambon', timezone: 'Asia/Jayapura', country: 'Indonesia', countryCode: 'ID', lat: -3.69, lng: 128.18, tier: 3, continent: 'asia',
     info: { currency: 'Indonesian Rupiah', currencySymbol: 'Rp', population: '0.4M', phoneCode: '+62 911', language: 'Indonesian, Ambonese Malay', climate: 'Equatorial (24-31°C). Two distinct rainy seasons. High humidity.', attractions: ['Natsepa Beach', 'Fort Victoria', 'Pattimura Monument', 'Martha Christina Tiahahu Statue', 'Liang Beach'], demographics: 'Historic Spice Islands capital. Portuguese and Dutch colonial history. Clove and nutmeg heritage.' } },
-]
 
   // UAE - Additional Cities
   { slug: 'sharjah', city: 'Sharjah', timezone: 'Asia/Dubai', country: 'United Arab Emirates', countryCode: 'AE', lat: 25.34, lng: 55.39, tier: 2, continent: 'asia',
