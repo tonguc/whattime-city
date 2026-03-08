@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { useCityContext } from '@/lib/CityContext'
 import { cities } from '@/lib/cities'
 
@@ -69,7 +69,19 @@ const toolNavItems = [
 
 export default function ToolsMiniNav() {
   const pathname = usePathname()
+  const router = useRouter()
   const { isLight, detectedCity } = useCityContext()
+
+  const handleMeetingClick = (e: React.MouseEvent, citySlug: string) => {
+    e.preventDefault()
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+    const userCity = cities.find(c => c.timezone === tz)
+    if (userCity && userCity.slug !== citySlug) {
+      router.push(`/meeting/${citySlug}-vs-${userCity.slug}`)
+    } else {
+      router.push(`/meeting/${citySlug}`)
+    }
+  }
   
   return (
     <nav className="mt-2 mb-6 -mx-4 px-4">
@@ -108,6 +120,7 @@ export default function ToolsMiniNav() {
             <Link
               key={tool.id}
               href={href}
+              onClick={tool.id === 'meeting-planner' && isCityPage ? (e) => handleMeetingClick(e, citySlugMatch![1]) : undefined}
               className={className}
             >
               <span className={isActive ? 'text-white' : isLight ? 'text-amber-600' : 'text-amber-400'}>
