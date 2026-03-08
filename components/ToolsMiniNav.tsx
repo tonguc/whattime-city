@@ -101,7 +101,7 @@ export default function ToolsMiniNav() {
           }`
           
           // If on a city page and navigating to meeting planner, include city slug
-          const citySlugMatch = pathname?.match(/^\/([a-z0-9-]+)$/)
+          const citySlugMatch = pathname?.replace(/\/$/, '').match(/^\/([a-z0-9-]+)$/)
           const isCityPage = citySlugMatch && !['meeting', 'time', 'flight-time', 'jet-lag-advisor', 'event-time', 'time-converter', 'cities', 'guides', 'map', 'tools', 'countries', 'world-alarm', 'world-clock'].includes(citySlugMatch[1])
           const getMeetingHref = () => {
             if (tool.id !== 'meeting-planner' || !isCityPage) return tool.url
