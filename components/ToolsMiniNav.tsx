@@ -74,8 +74,10 @@ export default function ToolsMiniNav() {
 
   const handleMeetingClick = (e: React.MouseEvent, citySlug: string) => {
     e.preventDefault()
-    if (detectedCity && detectedCity.slug !== citySlug) {
-      router.push(`/meeting/${citySlug}-vs-${detectedCity.slug}`)
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+    const userCity = cities.find(c => c.timezone === tz)
+    if (userCity && userCity.slug !== citySlug) {
+      router.push(`/meeting/${citySlug}-vs-${userCity.slug}`)
     } else {
       router.push(`/meeting/${citySlug}`)
     }
