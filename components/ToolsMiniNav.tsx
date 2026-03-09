@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useCityContext } from '@/lib/CityContext'
 
@@ -50,10 +49,10 @@ export default function ToolsMiniNav() {
           const href = tool.id === 'meeting-planner' && citySlug ? `/meeting/${citySlug}` : tool.url
 
           return (
-            <Link key={tool.id} href={href} onClick={tool.id === 'meeting-planner' ? handleMeetingClick : undefined} className={className}>
+            <a key={tool.id} href={href} onClick={tool.id === 'meeting-planner' ? handleMeetingClick : undefined} className={className}>
               <span className={isActive ? 'text-white' : isLight ? 'text-amber-600' : 'text-amber-400'}>{tool.icon}</span>
               <span>{tool.name}</span>
-            </Link>
+            </a>
           )
         })}
       </div>
