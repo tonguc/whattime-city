@@ -77,7 +77,7 @@ export default function MeetingPlannerWidget({ city }: Props) {
         Business hours: 9 AM – 5 PM · Overlap calculated on open
       </p>
 
-      
+      <a
         href={`/meeting/${city.slug}`}
         onClick={handleClick}
         className={`w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-sm transition-all hover:scale-[1.01] ${
