@@ -1,5 +1,7 @@
 'use client'
 
+'use client'
+
 import { usePathname, useRouter } from 'next/navigation'
 import { cities } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
