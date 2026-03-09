@@ -1,4 +1,5 @@
 'use client'
+import { cities } from '@/lib/cities'
 
 import { City, cities, getTier1Cities } from '@/lib/cities'
 import { useThemeClasses } from '@/lib/useThemeClasses'
