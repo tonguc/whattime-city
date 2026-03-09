@@ -274,53 +274,41 @@ export default function CityPage({ initialCity, seoData }: CityPageProps) {
             Guide Preview + Time Zone Facts + Business Hours + Time Diff
             ═══════════════════════════════════════════════════════════════ */}
         
-        {/* MEETING PLANNER WIDGET */}
+        {/* 3. MEETING PLANNER WIDGET */}
         <MeetingPlannerWidget city={selectedCity} />
 
-        {/* BUSINESS HOURS + TIME ZONE FACTS */}
+        {/* 4. BUSINESS HOURS + TIME ZONE FACTS - 2 col desktop, 1 col mobile */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
           <BusinessHoursBox city={selectedCity} />
           <TimeZoneFacts city={selectedCity} />
         </div>
 
-        {/* CITY GUIDE */}
+        {/* 5. CITY GUIDE */}
         {selectedCity.info && (
           <GuidePreview city={selectedCity} />
         )}
-        
-        {/* Climate & Attractions - Tüm şehirler için (info varsa) */}
+
+        {/* 6. CLIMATE & ATTRACTIONS */}
         {selectedCity.info && (selectedCity.info.climate || (selectedCity.info.attractions && selectedCity.info.attractions.length > 0)) && (
           <div className={`rounded-2xl p-5 backdrop-blur-xl border ${theme.card} mt-4`}>
-            {/* Climate */}
             {selectedCity.info.climate && (
               <div className="mb-5">
                 <h3 className={`text-section flex items-center gap-2 mb-3 ${isLight ? 'text-slate-900' : 'text-white'}`}>
-                  <span>☀️</span>
-                  <span>Climate</span>
+                  <span>☀️</span><span>Climate</span>
                 </h3>
                 <p className={`text-body leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
                   {selectedCity.info.climate}
                 </p>
               </div>
             )}
-            
-            {/* Attractions */}
             {selectedCity.info.attractions && selectedCity.info.attractions.length > 0 && (
               <div className={selectedCity.info.climate ? 'pt-5 border-t border-slate-200/20' : ''}>
                 <h3 className={`text-section flex items-center gap-2 mb-3 ${isLight ? 'text-slate-900' : 'text-white'}`}>
-                  <span>🏛️</span>
-                  <span>Top Attractions</span>
+                  <span>🏛️</span><span>Top Attractions</span>
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {selectedCity.info.attractions.slice(0, 5).map((attraction, i) => (
-                    <span 
-                      key={i}
-                      className={`text-body px-4 py-2 rounded-full font-medium ${
-                        isLight 
-                          ? 'bg-slate-100 text-slate-700' 
-                          : 'bg-slate-700/50 text-slate-200'
-                      }`}
-                    >
+                    <span key={i} className={`text-body px-4 py-2 rounded-full font-medium ${isLight ? 'bg-slate-100 text-slate-700' : 'bg-slate-700/50 text-slate-200'}`}>
                       {attraction}
                     </span>
                   ))}
@@ -329,23 +317,22 @@ export default function CityPage({ initialCity, seoData }: CityPageProps) {
             )}
           </div>
         )}
-        
-        {/* SEO Content - Keyword-rich text for search engines */}
+
+        {/* 7. LONG CONTENT */}
         <SEOContent city={selectedCity} seoData={seoData} />
-        
-        {/* Time Difference Table */}
+
+        {/* 8. TIME DIFFERENCE TABLE */}
         <div className="mt-4">
           <TimeDifferenceTable city={selectedCity} />
         </div>
-        
-        {/* FAQ Section - Schema markup for search engines */}
+
+        {/* 9. FAQ */}
         <FAQSection city={selectedCity} seoData={seoData} />
 
-        {/* TRAVEL TOOLS - Flight Time + Jet Lag */}
+        {/* 10. TRAVEL TOOLS */}
         <div className={`rounded-2xl p-5 backdrop-blur-xl border ${theme.card} mt-4`}>
           <h3 className={`text-section flex items-center gap-2 mb-4 ${isLight ? 'text-slate-900' : 'text-white'}`}>
-            <span>✈️</span>
-            <span>Travel Tools</span>
+            <span>✈️</span><span>Travel Tools</span>
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <a href="/flight-time/" className={`flex items-center gap-3 p-4 rounded-xl transition-all hover:scale-[1.02] ${isLight ? 'bg-slate-50 hover:bg-slate-100 border border-slate-200' : 'bg-slate-800/60 hover:bg-slate-700/60 border border-slate-600'}`}>
@@ -363,8 +350,7 @@ export default function CityPage({ initialCity, seoData }: CityPageProps) {
               <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${isLight ? 'bg-purple-100' : 'bg-purple-900/40'}`}>
                 <svg className="w-5 h-5 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
-                  <path d="M8.5 8.5v.01"/>
-                  <path d="M16 15.5v.01"/>
+                  <path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/>
                 </svg>
               </div>
               <div>
