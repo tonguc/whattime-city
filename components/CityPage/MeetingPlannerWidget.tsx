@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function MeetingPlannerWidget({ city }: Props) {
-  const { isLight, theme } = useThemeClasses()
+  const { isLight, card } = useThemeClasses()
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -16,7 +16,7 @@ export default function MeetingPlannerWidget({ city }: Props) {
   }
 
   return (
-    <div className={`rounded-2xl p-5 backdrop-blur-xl border ${theme.card} mt-4`}>
+    <div className={`rounded-2xl p-5 mt-4 ${card}`}>
       <h3 className={`text-section flex items-center gap-2 mb-1 ${isLight ? 'text-slate-900' : 'text-white'}`}>
         <span>📅</span>
         <span>Meeting Planner</span>
