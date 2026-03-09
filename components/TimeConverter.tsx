@@ -57,12 +57,7 @@ export default function TimeConverter({ currentCitySlug }: TimeConverterProps) {
     return () => clearInterval(timer)
   }, [])
   
-  // Navigate to time page when both cities are selected
-  useEffect(() => {
-    if (fromCity && toCity) {
-      router.push(`/time/${fromCity.slug}/${toCity.slug}/`)
-    }
-  }, [fromCity, toCity, router])
+  // Navigation removed - converter stays on city page
   
   // Close dropdowns on outside click
   useEffect(() => {
