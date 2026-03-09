@@ -2,7 +2,7 @@
 
 'use client'
 
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { cities } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
 
@@ -18,7 +18,6 @@ const EXCLUDED_SLUGS = ['meeting', 'time', 'flight-time', 'jet-lag-advisor', 'ev
 
 export default function ToolsMiniNav() {
   const pathname = usePathname()
-  const router = useRouter()
   const { isLight, detectedCity } = useCityContext()
 
   const cleanPath = pathname?.replace(/\/$/, '') ?? ''
@@ -27,13 +26,13 @@ export default function ToolsMiniNav() {
 
   const handleMeetingClick = (e: React.MouseEvent) => {
     e.preventDefault()
-    if (!citySlug) { router.push('/meeting'); return }
+    if (!citySlug) { window.location.href = '/meeting'; return }
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
     const userCity = cities.find((c: any) => c.timezone === tz)
     if (userCity && userCity.slug !== citySlug) {
-      router.push(`/meeting/${citySlug}-vs-${userCity.slug}`)
+      window.location.href = `/meeting/${citySlug}-vs-${userCity.slug}`
     } else {
-      router.push(`/meeting/${citySlug}`)
+      window.location.href = `/meeting/${citySlug}`
     }
   }
 
