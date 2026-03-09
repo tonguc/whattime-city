@@ -1,6 +1,7 @@
 'use client'
 
 import { usePathname, useRouter } from 'next/navigation'
+import { cities } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
 
 const toolNavItems = [
@@ -25,8 +26,10 @@ export default function ToolsMiniNav() {
   const handleMeetingClick = (e: React.MouseEvent) => {
     e.preventDefault()
     if (!citySlug) { router.push('/meeting'); return }
-    if (detectedCity?.slug && detectedCity.slug !== citySlug) {
-      router.push(`/meeting/${citySlug}-vs-${detectedCity.slug}`)
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+    const userCity = cities.find((c: any) => c.timezone === tz)
+    if (userCity && userCity.slug !== citySlug) {
+      router.push(`/meeting/${citySlug}-vs-${userCity.slug}`)
     } else {
       router.push(`/meeting/${citySlug}`)
     }
