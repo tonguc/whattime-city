@@ -251,7 +251,8 @@ export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) 
           <span className="ml-2 opacity-70 hidden sm:inline">= Business hours overlap</span>
         </p>
         <a
-          href={`/meeting?from=${city.slug}`}
+          href={`/meeting/${city.slug}`}
+          onClick={(e) => { e.preventDefault(); const tz = Intl.DateTimeFormat().resolvedOptions().timeZone; const u = cities.find((c) => c.timezone === tz); window.location.href = (u && u.slug !== city.slug) ? `/meeting/${city.slug}-vs-${u.slug}` : `/meeting/${city.slug}`; }}
           className={`text-meta font-semibold flex items-center gap-1 ${
             isLight ? 'text-blue-600 hover:text-blue-700' : 'text-blue-400 hover:text-blue-300'
           }`}
