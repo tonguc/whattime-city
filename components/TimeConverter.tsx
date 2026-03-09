@@ -271,11 +271,34 @@ export default function TimeConverter({ currentCitySlug }: TimeConverterProps) {
         </div>
       </div>
       
-      {/* Help text */}
-      <p className={`mt-6 text-center text-sm ${textMuted} opacity-70`}>
-        Select two cities to compare their local time.
-      </p>
-      
+      {/* Time diff + Convert button */}
+      {fromCity && toCity && (() => {
+        const getOffsetMinutes = (tz: string) => {
+          const now = new Date()
+          const utc = new Date(now.toLocaleString('en-US', { timeZone: 'UTC' }))
+          const local = new Date(now.toLocaleString('en-US', { timeZone: tz }))
+          return (local.getTime() - utc.getTime()) / 60000
+        }
+        const diff = Math.round((getOffsetMinutes(toCity.timezone) - getOffsetMinutes(fromCity.timezone)) / 60)
+        const absDiff = Math.abs(diff)
+        const diffText = diff === 0
+          ? `${toCity.city} is in the same time zone as ${fromCity.city}`
+          : `${toCity.city} is ${absDiff}h ${diff > 0 ? 'ahead of' : 'behind'} ${fromCity.city}`
+        return (
+          <div className={`mt-4 flex items-center justify-between gap-3 flex-wrap`}>
+            <p className={`text-sm ${textMuted}`}>{diffText}</p>
+            
+              href={`/time/${fromCity.slug}/${toCity.slug}/`}
+              className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold transition-all hover:scale-[1.02] whitespace-nowrap ${
+                isLight ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-blue-500 text-white hover:bg-blue-600'
+              }`}
+            >
+              Convert Time →
+            </a>
+          </div>
+        )
+      })()}
+
       {/* Meeting Planner CTA */}
       <div className={`mt-4 pt-4 border-t ${isLight ? 'border-slate-200/50' : 'border-slate-700/50'}`}>
         <a 
@@ -288,7 +311,7 @@ export default function TimeConverter({ currentCitySlug }: TimeConverterProps) {
             <line x1="8" y1="2" x2="8" y2="6"/>
             <line x1="3" y1="10" x2="21" y2="10"/>
           </svg>
-          <span>Planning a meeting across time zones? Find the best time using the Meeting Planner</span>
+          <span>Need to compare more cities? Use the Meeting Planner</span>
           <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path d="M7 17L17 7M17 7H7M17 7V17"/>
           </svg>
