@@ -1,9 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useCityContext } from '@/lib/CityContext'
-import { cities } from '@/lib/cities'
 
 const toolNavItems = [
   { id: 'time-converter', name: 'Time Converter', url: '/time', icon: (<svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>) },
@@ -13,33 +12,9 @@ const toolNavItems = [
   { id: 'event-time', name: 'Event Time', url: '/event-time', icon: (<svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 10"/></svg>) }
 ]
 
-const EXCLUDED_SLUGS = ['meeting', 'time', 'flight-time', 'jet-lag-advisor', 'event-time', 'time-converter', 'cities', 'guides', 'map', 'tools', 'countries', 'world-alarm', 'world-clock', 'search', 'about', 'privacy', 'contact']
-
 export default function ToolsMiniNav() {
   const pathname = usePathname()
   const { isLight } = useCityContext()
-  const [mounted, setMounted] = useState(false)
-  const [citySlug, setCitySlug] = useState<string | null>(null)
-
-  useEffect(() => {
-    setMounted(true)
-    const cleanPath = pathname?.replace(/\/$/, '') ?? ''
-    const slugMatch = cleanPath.match(/^\/([a-z0-9-]+)$/)
-    const slug = slugMatch && !EXCLUDED_SLUGS.includes(slugMatch[1]) ? slugMatch[1] : null
-    setCitySlug(slug)
-  }, [pathname])
-
-  const handleMeetingClick = (e: React.MouseEvent) => {
-    e.preventDefault()
-    if (!citySlug) { window.location.href = '/meeting'; return }
-    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
-    const userCity = cities.find((c: any) => c.timezone === tz)
-    if (userCity && userCity.slug !== citySlug) {
-      window.location.href = `/meeting/${citySlug}-vs-${userCity.slug}`
-    } else {
-      window.location.href = `/meeting/${citySlug}`
-    }
-  }
 
   return (
     <nav className="mt-2 mb-6 -mx-4 px-4">
@@ -55,20 +30,11 @@ export default function ToolsMiniNav() {
               : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 border-slate-600'
           }`
 
-          if (tool.id === 'meeting-planner' && mounted && citySlug) {
-            return (
-              <a key={tool.id} href={`/meeting/${citySlug}`} onClick={handleMeetingClick} className={className}>
-                <span className={isActive ? 'text-white' : isLight ? 'text-amber-600' : 'text-amber-400'}>{tool.icon}</span>
-                <span>{tool.name}</span>
-              </a>
-            )
-          }
-
           return (
-            <a key={tool.id} href={tool.url} className={className}>
+            <Link key={tool.id} href={tool.url} className={className}>
               <span className={isActive ? 'text-white' : isLight ? 'text-amber-600' : 'text-amber-400'}>{tool.icon}</span>
               <span>{tool.name}</span>
-            </a>
+            </Link>
           )
         })}
       </div>
