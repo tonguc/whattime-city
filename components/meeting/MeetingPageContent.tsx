@@ -104,7 +104,17 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
   // Prevent URL sync on initial mount
   const isInitialMount = useRef(true)
   
-  // NO automatic detectedCity adding - user must explicitly click "Use my location"
+  // Auto-add detectedCity when only one city from URL
+  useEffect(() => {
+    if (initialCities.length === 1 && detectedCity && detectedCity.slug !== initialCities[0].slug) {
+      setSelectedCities(prev => {
+        if (prev.length === 1 && !prev.find(c => c.slug === detectedCity.slug)) {
+          return [...prev, detectedCity]
+        }
+        return prev
+      })
+    }
+  }, [detectedCity])
   
   // Search effect
   useEffect(() => {
