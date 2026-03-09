@@ -277,13 +277,9 @@ export default function CityPage({ initialCity, seoData }: CityPageProps) {
         {/* MEETING PLANNER WIDGET */}
         <MeetingPlannerWidget city={selectedCity} />
 
-        {/* BUSINESS HOURS */}
-        <div className="mt-4">
+        {/* BUSINESS HOURS + TIME ZONE FACTS */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
           <BusinessHoursBox city={selectedCity} />
-        </div>
-
-        {/* TIME ZONE FACTS */}
-        <div className="mt-4">
           <TimeZoneFacts city={selectedCity} />
         </div>
 

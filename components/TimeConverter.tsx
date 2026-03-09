@@ -16,10 +16,32 @@ interface TimeConverterProps {
 export default function TimeConverter({ currentCitySlug }: TimeConverterProps) {
   const router = useRouter()
   const { text, textMuted, isLight, accentText } = useThemeClasses()
-  const { use12Hour } = useCityContext()
+  const { use12Hour, detectedCity } = useCityContext()
   
-  const [fromCity, setFromCity] = useState<City | null>(null)
+  const [fromCity, setFromCity] = useState<City | null>(() => {
+    if (typeof window === 'undefined') return null
+    return cities.find(c => c.slug === '') || null
+  })
   const [toCity, setToCity] = useState<City | null>(null)
+
+  // Pre-fill from currentCitySlug
+  useEffect(() => {
+    if (currentCitySlug) {
+      const city = cities.find(c => c.slug === currentCitySlug)
+      if (city) setFromCity(city)
+    }
+  }, [currentCitySlug])
+
+  // Pre-fill To with detectedCity or New York
+  useEffect(() => {
+    if (toCity) return // don't override if already set
+    if (detectedCity && detectedCity.slug !== currentCitySlug) {
+      setToCity(detectedCity)
+    } else {
+      const ny = cities.find(c => c.slug === 'new-york')
+      if (ny && ny.slug !== currentCitySlug) setToCity(ny)
+    }
+  }, [detectedCity])
   const [fromSearch, setFromSearch] = useState('')
   const [toSearch, setToSearch] = useState('')
   const [showFromDropdown, setShowFromDropdown] = useState(false)
@@ -271,7 +293,7 @@ export default function TimeConverter({ currentCitySlug }: TimeConverterProps) {
             <line x1="8" y1="2" x2="8" y2="6"/>
             <line x1="3" y1="10" x2="21" y2="10"/>
           </svg>
-          <span>Need to compare 3+ cities? Use the Meeting Planner</span>
+          <span>Planning a meeting across time zones? Find the best time using the Meeting Planner</span>
           <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path d="M7 17L17 7M17 7H7M17 7V17"/>
           </svg>
