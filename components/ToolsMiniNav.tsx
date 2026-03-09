@@ -50,7 +50,7 @@ export default function ToolsMiniNav() {
               : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 border-slate-600'
           }`
 
-          const href = tool.id === 'meeting-planner' && citySlug ? `/meeting/${citySlug}` : tool.url
+          const href = tool.id === 'meeting-planner' && citySlug ? '#' : tool.url
 
           return (
             <a key={tool.id} href={href} onClick={tool.id === 'meeting-planner' ? handleMeetingClick : undefined} className={className}>
