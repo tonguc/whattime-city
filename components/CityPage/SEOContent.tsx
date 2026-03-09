@@ -106,20 +106,31 @@ export default function SEOContent({ city, seoData }: SEOContentProps) {
 
 
 
-      {internalLinks.length > 0 && (
-        <div className={`mt-5 p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-          <h3 className={`text-sm font-semibold mb-3 ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
-            Useful Tools & Time Comparisons
-          </h3>
-          <ul className={`text-sm space-y-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-            {internalLinks.map((link, i) => {
-              const url = typeof link === 'string' ? link : (link as any).url
-              const anchor = typeof link === 'string' ? link : (link as any).anchor
-              return <li key={i}><Link href={url} className={linkClass}>→ {anchor}</Link></li>
-            })}
-          </ul>
-        </div>
-      )}
+      {(() => {
+        const compareTargets = ['new-york', 'london', 'tokyo', 'dubai', 'sydney', 'singapore', 'paris', 'chicago', 'toronto', 'hong-kong', 'berlin', 'madrid']
+        const compareNames: Record<string, string> = {
+          'new-york': 'New York', 'london': 'London', 'tokyo': 'Tokyo', 'dubai': 'Dubai',
+          'sydney': 'Sydney', 'singapore': 'Singapore', 'paris': 'Paris', 'chicago': 'Chicago',
+          'toronto': 'Toronto', 'hong-kong': 'Hong Kong', 'berlin': 'Berlin', 'madrid': 'Madrid'
+        }
+        const links = compareTargets.filter(t => t !== city.slug)
+        return (
+          <div className={`mt-5 p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+            <h3 className={`text-sm font-semibold mb-3 ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
+              Popular Time Comparisons from {city.city}
+            </h3>
+            <ul className={`text-sm space-y-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+              {links.map((target, i) => (
+                <li key={i}>
+                  <Link href={`/time/${city.slug}/${target}/`} className={linkClass}>
+                    {city.city} vs {compareNames[target]} Time Difference
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      })()}
 
       <div className={`mt-5 p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
         <h3 className={`text-sm font-semibold mb-2 ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>Quick Facts: {city.city} Time</h3>
