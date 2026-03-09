@@ -1,10 +1,9 @@
 'use client'
 
-'use client'
-
+import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import { cities } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
+import { cities } from '@/lib/cities'
 
 const toolNavItems = [
   { id: 'time-converter', name: 'Time Converter', url: '/time', icon: (<svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>) },
@@ -18,11 +17,17 @@ const EXCLUDED_SLUGS = ['meeting', 'time', 'flight-time', 'jet-lag-advisor', 'ev
 
 export default function ToolsMiniNav() {
   const pathname = usePathname()
-  const { isLight, detectedCity } = useCityContext()
+  const { isLight } = useCityContext()
+  const [mounted, setMounted] = useState(false)
+  const [citySlug, setCitySlug] = useState<string | null>(null)
 
-  const cleanPath = pathname?.replace(/\/$/, '') ?? ''
-  const slugMatch = cleanPath.match(/^\/([a-z0-9-]+)$/)
-  const citySlug = slugMatch && !EXCLUDED_SLUGS.includes(slugMatch[1]) ? slugMatch[1] : null
+  useEffect(() => {
+    setMounted(true)
+    const cleanPath = pathname?.replace(/\/$/, '') ?? ''
+    const slugMatch = cleanPath.match(/^\/([a-z0-9-]+)$/)
+    const slug = slugMatch && !EXCLUDED_SLUGS.includes(slugMatch[1]) ? slugMatch[1] : null
+    setCitySlug(slug)
+  }, [pathname])
 
   const handleMeetingClick = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -50,10 +55,17 @@ export default function ToolsMiniNav() {
               : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 border-slate-600'
           }`
 
-          const href = tool.id === 'meeting-planner' && citySlug ? '#' : tool.url
+          if (tool.id === 'meeting-planner' && mounted && citySlug) {
+            return (
+              <a key={tool.id} href={`/meeting/${citySlug}`} onClick={handleMeetingClick} className={className}>
+                <span className={isActive ? 'text-white' : isLight ? 'text-amber-600' : 'text-amber-400'}>{tool.icon}</span>
+                <span>{tool.name}</span>
+              </a>
+            )
+          }
 
           return (
-            <a key={tool.id} href={href} onClick={tool.id === 'meeting-planner' ? handleMeetingClick : undefined} className={className}>
+            <a key={tool.id} href={tool.url} className={className}>
               <span className={isActive ? 'text-white' : isLight ? 'text-amber-600' : 'text-amber-400'}>{tool.icon}</span>
               <span>{tool.name}</span>
             </a>
