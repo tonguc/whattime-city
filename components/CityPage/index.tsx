@@ -30,6 +30,7 @@ import CompactInfoCards from './CompactInfoCards'
 import TimeZoneFacts from './TimeZoneFacts'
 import BusinessHoursBox from './BusinessHoursBox'
 import SEOContent from './SEOContent'
+import MeetingPlannerWidget from './MeetingPlannerWidget'
 
 // Dynamic imports for below-fold content
 const TimeDifferenceTable = dynamic(() => import('./TimeDifferenceTable'), { ssr: false })
@@ -265,10 +266,7 @@ export default function CityPage({ initialCity, seoData }: CityPageProps) {
           {/* DIVIDER */}
           <div className={`mx-4 md:mx-6 border-t ${isLight ? 'border-slate-200' : 'border-slate-700'}`} />
           
-          {/* SECTION 3: TRAVEL BRIDGE - Tek CTA Banner */}
-          <div className="p-4 md:p-6">
-            <TravelBridge city={selectedCity} />
-          </div>
+
         </div>
         
         {/* ═══════════════════════════════════════════════════════════════
@@ -276,16 +274,23 @@ export default function CityPage({ initialCity, seoData }: CityPageProps) {
             Guide Preview + Time Zone Facts + Business Hours + Time Diff
             ═══════════════════════════════════════════════════════════════ */}
         
-        {/* Guide Preview - Premium içerik kartı, SEO için güçlü */}
+        {/* MEETING PLANNER WIDGET */}
+        <MeetingPlannerWidget city={selectedCity} />
+
+        {/* BUSINESS HOURS */}
+        <div className="mt-4">
+          <BusinessHoursBox city={selectedCity} />
+        </div>
+
+        {/* TIME ZONE FACTS */}
+        <div className="mt-4">
+          <TimeZoneFacts city={selectedCity} />
+        </div>
+
+        {/* CITY GUIDE */}
         {selectedCity.info && (
           <GuidePreview city={selectedCity} />
         )}
-        
-        {/* Time Zone Facts + Business Hours (2 columns) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
-          <TimeZoneFacts city={selectedCity} />
-          <BusinessHoursBox city={selectedCity} />
-        </div>
         
         {/* Climate & Attractions - Tüm şehirler için (info varsa) */}
         {selectedCity.info && (selectedCity.info.climate || (selectedCity.info.attractions && selectedCity.info.attractions.length > 0)) && (
@@ -339,6 +344,40 @@ export default function CityPage({ initialCity, seoData }: CityPageProps) {
         
         {/* FAQ Section - Schema markup for search engines */}
         <FAQSection city={selectedCity} seoData={seoData} />
+
+        {/* TRAVEL TOOLS - Flight Time + Jet Lag */}
+        <div className={`rounded-2xl p-5 backdrop-blur-xl border ${theme.card} mt-4`}>
+          <h3 className={`text-section flex items-center gap-2 mb-4 ${isLight ? 'text-slate-900' : 'text-white'}`}>
+            <span>✈️</span>
+            <span>Travel Tools</span>
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="/flight-time/" className={`flex items-center gap-3 p-4 rounded-xl transition-all hover:scale-[1.02] ${isLight ? 'bg-slate-50 hover:bg-slate-100 border border-slate-200' : 'bg-slate-800/60 hover:bg-slate-700/60 border border-slate-600'}`}>
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${isLight ? 'bg-blue-100' : 'bg-blue-900/40'}`}>
+                <svg className="w-5 h-5 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+                </svg>
+              </div>
+              <div>
+                <div className={`font-semibold text-sm ${isLight ? 'text-slate-800' : 'text-white'}`}>Flight Time Calculator</div>
+                <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Calculate arrival time in local time</div>
+              </div>
+            </a>
+            <a href="/jet-lag-advisor/" className={`flex items-center gap-3 p-4 rounded-xl transition-all hover:scale-[1.02] ${isLight ? 'bg-slate-50 hover:bg-slate-100 border border-slate-200' : 'bg-slate-800/60 hover:bg-slate-700/60 border border-slate-600'}`}>
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${isLight ? 'bg-purple-100' : 'bg-purple-900/40'}`}>
+                <svg className="w-5 h-5 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
+                  <path d="M8.5 8.5v.01"/>
+                  <path d="M16 15.5v.01"/>
+                </svg>
+              </div>
+              <div>
+                <div className={`font-semibold text-sm ${isLight ? 'text-slate-800' : 'text-white'}`}>Jet Lag Advisor</div>
+                <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Personalized jet lag recovery plan</div>
+              </div>
+            </a>
+          </div>
+        </div>
         
         {/* ═══════════════════════════════════════════════════════════════
             DISCOVERY SECTION - Keşif & Navigasyon
