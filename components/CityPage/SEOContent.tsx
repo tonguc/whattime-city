@@ -44,6 +44,7 @@ const majorCities: Record<string, { slug: string; offset: number }> = {
 
 export default function SEOContent({ city, seoData }: SEOContentProps) {
   const { card, textSection, textBody, isLight } = useThemeClasses()
+  const [expanded, setExpanded] = useState(false)
   const offset = getUTCOffset(city.timezone)
   const hasDST = dstCountries[city.countryCode] ?? false
   const linkClass = isLight
@@ -85,12 +86,20 @@ export default function SEOContent({ city, seoData }: SEOContentProps) {
 
       {contentBlocks.length > 0 ? (
         <div className={`space-y-5 ${textBody} leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-          {contentBlocks.map((block, i) => (
+          {(expanded ? contentBlocks : contentBlocks.slice(0, 2)).map((block, i) => (
             <div key={i}>
               <h3 className={`font-semibold mb-2 ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>{block.title}</h3>
               <p>{block.content}</p>
             </div>
           ))}
+          {contentBlocks.length > 2 && (
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className={`text-sm font-medium ${isLight ? 'text-blue-600 hover:text-blue-800' : 'text-sky-400 hover:text-sky-300'}`}
+            >
+              {expanded ? 'Read less ↑' : 'Read more ↓'}
+            </button>
+          )}
         </div>
       ) : (
         <div className={`space-y-4 ${textBody} leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
@@ -119,15 +128,19 @@ export default function SEOContent({ city, seoData }: SEOContentProps) {
             <h3 className={`text-sm font-semibold mb-3 ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
               Popular Time Comparisons from {city.city}
             </h3>
-            <ul className={`text-sm space-y-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+            <div className="grid grid-cols-2 gap-2">
               {links.map((target, i) => (
-                <li key={i}>
-                  <Link href={`/time/${city.slug}/${target}/`} className={linkClass}>
-                    {city.city} vs {compareNames[target]} Time Difference
-                  </Link>
-                </li>
+                <Link
+                  key={i}
+                  href={`/time/${city.slug}/${target}/`}
+                  className={`px-3 py-2 rounded-lg text-sm text-center transition-all hover:scale-[1.02] ${
+                    isLight ? 'bg-white border border-slate-200 text-blue-600 hover:border-blue-300' : 'bg-slate-700/50 border border-slate-600 text-sky-400 hover:border-sky-500'
+                  }`}
+                >
+                  {city.city} ↔ {compareNames[target]}
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
         )
       })()}
