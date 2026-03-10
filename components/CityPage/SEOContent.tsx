@@ -117,11 +117,11 @@ export default function SEOContent({ city, seoData }: SEOContentProps) {
 
 
       {(() => {
-        const compareTargets = ['new-york', 'london', 'tokyo', 'dubai', 'sydney', 'singapore', 'paris', 'chicago', 'toronto', 'hong-kong', 'berlin', 'madrid']
+        const compareTargets = ['new-york', 'london', 'tokyo', 'dubai', 'sydney', 'singapore', 'paris', 'chicago', 'toronto', 'hong-kong', 'berlin', 'madrid', 'amsterdam']
         const compareNames: Record<string, string> = {
           'new-york': 'New York', 'london': 'London', 'tokyo': 'Tokyo', 'dubai': 'Dubai',
           'sydney': 'Sydney', 'singapore': 'Singapore', 'paris': 'Paris', 'chicago': 'Chicago',
-          'toronto': 'Toronto', 'hong-kong': 'Hong Kong', 'berlin': 'Berlin', 'madrid': 'Madrid'
+          'toronto': 'Toronto', 'hong-kong': 'Hong Kong', 'berlin': 'Berlin', 'madrid': 'Madrid', 'amsterdam': 'Amsterdam'
         }
         const links = compareTargets.filter(t => t !== city.slug)
         return (
@@ -134,7 +134,7 @@ export default function SEOContent({ city, seoData }: SEOContentProps) {
                 <Link
                   key={i}
                   href={`/time/${city.slug}/${target}/`}
-                  className={`px-3 py-2 rounded-lg text-sm text-center transition-all hover:scale-[1.02] ${
+                  className={`px-3 py-2 rounded-lg text-sm text-left transition-all hover:scale-[1.02] ${
                     isLight ? 'bg-white border border-slate-200 text-blue-600 hover:border-blue-300' : 'bg-slate-700/50 border border-slate-600 text-sky-400 hover:border-sky-500'
                   }`}
                 >
