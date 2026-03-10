@@ -129,7 +129,7 @@ export default function SEOContent({ city, seoData }: SEOContentProps) {
             <h3 className={`text-sm font-semibold mb-3 ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
               Popular Time Comparisons from {city.city}
             </h3>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-3 gap-2">
               {links.map((target, i) => (
                 <Link
                   key={i}
@@ -138,7 +138,7 @@ export default function SEOContent({ city, seoData }: SEOContentProps) {
                     isLight ? 'bg-white border border-slate-200 text-blue-600 hover:border-blue-300' : 'bg-slate-700/50 border border-slate-600 text-sky-400 hover:border-sky-500'
                   }`}
                 >
-                  {city.city} ↔ {compareNames[target]}
+                  {city.city} vs {compareNames[target]} Time Difference
                 </Link>
               ))}
             </div>
