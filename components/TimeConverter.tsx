@@ -287,7 +287,7 @@ export default function TimeConverter({ currentCitySlug }: TimeConverterProps) {
         return (
           <div className={`mt-4 flex items-center justify-between gap-3 flex-wrap`}>
             <p className={`text-sm ${textMuted}`}>{diffText}</p>
-            
+            <a
               href={`/time/${fromCity.slug}/${toCity.slug}/`}
               className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold transition-all hover:scale-[1.02] whitespace-nowrap ${
                 isLight ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-blue-500 text-white hover:bg-blue-600'
