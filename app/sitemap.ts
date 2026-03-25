@@ -48,6 +48,7 @@ export default async function sitemap() {
     { slug: 'pst-to-est', priority: 0.8 },
     { slug: 'gmt-to-est', priority: 0.8 },
     { slug: 'cst-to-est', priority: 0.8 },
+    { slug: 'military-time', priority: 0.8 },
     { slug: 'flight-time', priority: 0.7 },
     { slug: 'jet-lag-advisor', priority: 0.7 },
     { slug: 'event-time', priority: 0.7 },
