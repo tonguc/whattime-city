@@ -257,11 +257,11 @@ export default async function AreaCodePage({ params }: Props) {
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <main className="max-w-3xl mx-auto px-4 py-8">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">
+      <div>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800">
           Area Code {data.code}
         </h1>
-        <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
+        <p className="text-lg text-slate-600 mb-6">
           {data.city}, {data.state} · {data.tzAbbr} ({data.utcOffset})
         </p>
 
@@ -275,57 +275,57 @@ export default async function AreaCodePage({ params }: Props) {
             { label: 'DST', value: data.observesDST ? 'Observed' : 'Not observed' },
             { label: 'Introduced', value: data.introduced },
           ].map(({ label, value }) => (
-            <div key={label} className="rounded-xl border border-slate-200 dark:border-slate-700 p-3 bg-white dark:bg-slate-900">
-              <div className="text-xs text-slate-400 dark:text-slate-500 uppercase tracking-wide mb-1">{label}</div>
-              <div className="font-semibold text-slate-800 dark:text-white text-sm">{value}</div>
+            <div key={label} className="rounded-xl border border-slate-200 p-3 bg-white">
+              <div className="text-xs text-slate-400 uppercase tracking-wide mb-1">{label}</div>
+              <div className="font-semibold text-slate-800 text-sm">{value}</div>
             </div>
           ))}
         </div>
 
         {/* Coverage */}
-        <section className="rounded-xl border border-slate-200 dark:border-slate-700 p-5 bg-white dark:bg-slate-900 mb-6">
-          <h2 className="font-semibold text-slate-800 dark:text-white mb-2">Coverage Area</h2>
-          <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">{data.coverageArea}</p>
+        <section className="rounded-xl border border-slate-200 p-5 bg-white mb-6">
+          <h2 className="font-semibold text-slate-800 mb-2">Coverage Area</h2>
+          <p className="text-sm text-slate-600 mb-3">{data.coverageArea}</p>
           {data.notes && (
-            <p className="text-sm text-slate-500 dark:text-slate-400 border-t border-slate-100 dark:border-slate-800 pt-3">{data.notes}</p>
+            <p className="text-sm text-slate-500 border-t border-slate-100 pt-3">{data.notes}</p>
           )}
           <div className="mt-3">
             <div className="text-xs text-slate-400 uppercase tracking-wide mb-2">Major Cities</div>
             <div className="flex flex-wrap gap-2">
               {data.majorCities.map(c => (
-                <span key={c} className="px-2 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs">{c}</span>
+                <span key={c} className="px-2 py-1 rounded-md bg-slate-100 text-slate-600 text-xs">{c}</span>
               ))}
             </div>
           </div>
         </section>
 
         {/* Time Zone Info */}
-        <section className="rounded-xl border border-slate-200 dark:border-slate-700 p-5 bg-white dark:bg-slate-900 mb-6">
-          <h2 className="font-semibold text-slate-800 dark:text-white mb-3">Time Zone Details</h2>
+        <section className="rounded-xl border border-slate-200 p-5 bg-white mb-6">
+          <h2 className="font-semibold text-slate-800 mb-3">Time Zone Details</h2>
           <dl className="grid grid-cols-2 gap-3 text-sm">
             <div>
-              <dt className="text-slate-400 dark:text-slate-500 text-xs uppercase">Standard Time</dt>
-              <dd className="text-slate-700 dark:text-slate-300 font-medium mt-0.5">{data.tzAbbr.split('/')[0]} ({data.utcOffset})</dd>
+              <dt className="text-slate-400 text-xs uppercase">Standard Time</dt>
+              <dd className="text-slate-700 font-medium mt-0.5">{data.tzAbbr.split('/')[0]} ({data.utcOffset})</dd>
             </div>
             <div>
-              <dt className="text-slate-400 dark:text-slate-500 text-xs uppercase">Daylight Time</dt>
-              <dd className="text-slate-700 dark:text-slate-300 font-medium mt-0.5">
+              <dt className="text-slate-400 text-xs uppercase">Daylight Time</dt>
+              <dd className="text-slate-700 font-medium mt-0.5">
                 {data.observesDST ? `${data.tzAbbr.split('/')[1] || 'DST'} (${data.utcOffsetDST})` : 'Not observed'}
               </dd>
             </div>
             <div>
-              <dt className="text-slate-400 dark:text-slate-500 text-xs uppercase">DST 2026 Start</dt>
-              <dd className="text-slate-700 dark:text-slate-300 font-medium mt-0.5">{data.observesDST ? 'March 8, 2026' : '—'}</dd>
+              <dt className="text-slate-400 text-xs uppercase">DST 2026 Start</dt>
+              <dd className="text-slate-700 font-medium mt-0.5">{data.observesDST ? 'March 8, 2026' : '—'}</dd>
             </div>
             <div>
-              <dt className="text-slate-400 dark:text-slate-500 text-xs uppercase">DST 2026 End</dt>
-              <dd className="text-slate-700 dark:text-slate-300 font-medium mt-0.5">{data.observesDST ? 'November 1, 2026' : '—'}</dd>
+              <dt className="text-slate-400 text-xs uppercase">DST 2026 End</dt>
+              <dd className="text-slate-700 font-medium mt-0.5">{data.observesDST ? 'November 1, 2026' : '—'}</dd>
             </div>
           </dl>
-          <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+          <div className="mt-4 pt-4 border-t border-slate-100">
             <Link
               href={`/${data.citySlug}`}
-              className="text-sm text-sky-600 dark:text-sky-400 hover:underline"
+              className="text-sm text-sky-600 hover:underline"
             >
               → See current time in {data.city}
             </Link>
@@ -334,12 +334,12 @@ export default async function AreaCodePage({ params }: Props) {
 
         {/* FAQ */}
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
+          <h2 className="text-2xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-white dark:bg-slate-900">
-                <h3 className="font-semibold text-slate-800 dark:text-white mb-2">{item.name}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400">{item.acceptedAnswer.text}</p>
+              <div key={i} className="rounded-2xl border border-slate-100 p-4 bg-slate-50">
+                <h3 className="font-semibold text-slate-800 mb-2">{item.name}</h3>
+                <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
               </div>
             ))}
           </div>
@@ -347,7 +347,7 @@ export default async function AreaCodePage({ params }: Props) {
 
         {/* Other area codes */}
         <section className="mb-8">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-3">Other Area Codes</h2>
+          <h2 className="text-xl font-semibold text-slate-800 mb-3">Other Area Codes</h2>
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
             {Object.values(areaCodes)
               .filter(d => d.code !== data.code)
@@ -355,16 +355,16 @@ export default async function AreaCodePage({ params }: Props) {
                 <Link
                   key={d.code}
                   href={`/area-code/${d.code}`}
-                  className="p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-sky-300 dark:hover:border-sky-600 transition-colors text-center"
+                  className="p-3 rounded-xl border border-slate-200 bg-white hover:border-sky-300 transition-colors text-center"
                 >
-                  <div className="font-bold text-sky-600 dark:text-sky-400">{d.code}</div>
-                  <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{d.city}, {d.stateCode}</div>
+                  <div className="font-bold text-sky-600">{d.code}</div>
+                  <div className="text-xs text-slate-500 mt-0.5">{d.city}, {d.stateCode}</div>
                 </Link>
               ))}
           </div>
         </section>
 
-        <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/30 text-xs text-slate-500 dark:text-slate-400">
+        <footer className="rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500">
           Area code data sourced from the{' '}
           <a href="https://www.nanpa.com" target="_blank" rel="noopener noreferrer" className="underline">
             North American Numbering Plan Administration (NANPA)
@@ -375,7 +375,7 @@ export default async function AreaCodePage({ params }: Props) {
           </a>
           . Last updated March 2026.
         </footer>
-      </main>
+      </div>
     </ContentPageWrapper>
   )
 }

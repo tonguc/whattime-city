@@ -95,11 +95,11 @@ export default function PSTtoESTPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <main className="max-w-3xl mx-auto px-4 py-8">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">
+      <div>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800">
           PST to EST Converter
         </h1>
-        <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
+        <p className="text-lg text-slate-600 mb-6">
           Pacific Standard Time → Eastern Standard Time · PST is <strong>3 hours behind</strong> EST
         </p>
 
@@ -107,17 +107,17 @@ export default function PSTtoESTPage() {
 
         {/* Explainer */}
         <section className="mt-8 mb-6">
-          <h2 className="text-2xl font-semibold text-slate-800 dark:text-white mb-3">
+          <h2 className="text-2xl font-semibold text-slate-800 mb-3">
             PST vs EST — What You Need to Know
           </h2>
-          <div className="space-y-4 text-slate-600 dark:text-slate-400">
+          <div className="space-y-4 text-slate-600">
             <p>
-              <strong className="text-slate-700 dark:text-slate-300">Pacific Standard Time (PST)</strong> is UTC-8.
+              <strong className="text-slate-700">Pacific Standard Time (PST)</strong> is UTC-8.
               It covers the US West Coast, including California, Washington, Oregon, and Nevada.
               During Daylight Saving Time (March–November), it becomes <strong>PDT (UTC-7)</strong>.
             </p>
             <p>
-              <strong className="text-slate-700 dark:text-slate-300">Eastern Standard Time (EST)</strong> is UTC-5.
+              <strong className="text-slate-700">Eastern Standard Time (EST)</strong> is UTC-5.
               It covers the US East Coast, including New York, Florida, Massachusetts, and Georgia.
               During Daylight Saving Time, it becomes <strong>EDT (UTC-4)</strong>.
             </p>
@@ -130,28 +130,28 @@ export default function PSTtoESTPage() {
 
         {/* FAQ */}
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-slate-800 dark:text-white mb-4">
+          <h2 className="text-2xl font-semibold text-slate-800 mb-4">
             Frequently Asked Questions
           </h2>
           <div className="space-y-4">
             {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-white dark:bg-slate-900">
-                <h3 className="font-semibold text-slate-800 dark:text-white mb-2">{item.name}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400">{item.acceptedAnswer.text}</p>
+              <div key={i} className="rounded-2xl border border-slate-100 p-4 bg-slate-50">
+                <h3 className="font-semibold text-slate-800 mb-2">{item.name}</h3>
+                <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* E-E-A-T Footer */}
-        <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/30 text-xs text-slate-500 dark:text-slate-400">
+        <footer className="rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500">
           Timezone data sourced from{' '}
           <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">
             IANA Time Zone Database
           </a>
           . Last updated March 2026.
         </footer>
-      </main>
+      </div>
     </ContentPageWrapper>
   )
 }

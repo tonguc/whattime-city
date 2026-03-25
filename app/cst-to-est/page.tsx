@@ -87,11 +87,11 @@ export default function CSTtoESTPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <main className="max-w-3xl mx-auto px-4 py-8">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">
+      <div>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800">
           CST to EST Converter
         </h1>
-        <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
+        <p className="text-lg text-slate-600 mb-6">
           Central Standard Time → Eastern Standard Time · CST is <strong>1 hour behind</strong> EST
         </p>
 
@@ -99,17 +99,17 @@ export default function CSTtoESTPage() {
 
         {/* Explainer */}
         <section className="mt-8 mb-6">
-          <h2 className="text-2xl font-semibold text-slate-800 dark:text-white mb-3">
+          <h2 className="text-2xl font-semibold text-slate-800 mb-3">
             CST vs EST — What You Need to Know
           </h2>
-          <div className="space-y-4 text-slate-600 dark:text-slate-400">
+          <div className="space-y-4 text-slate-600">
             <p>
-              <strong className="text-slate-700 dark:text-slate-300">Central Standard Time (CST)</strong> is UTC-6.
+              <strong className="text-slate-700">Central Standard Time (CST)</strong> is UTC-6.
               It covers much of the central United States including Illinois, Texas, Minnesota, and Louisiana.
               During Daylight Saving Time (March–November), CST becomes <strong>CDT (UTC-5)</strong>.
             </p>
             <p>
-              <strong className="text-slate-700 dark:text-slate-300">Eastern Standard Time (EST)</strong> is UTC-5.
+              <strong className="text-slate-700">Eastern Standard Time (EST)</strong> is UTC-5.
               It covers the US East Coast: New York, Florida, Georgia, and the Atlantic provinces of Canada.
               During summer it becomes <strong>EDT (UTC-4)</strong>.
             </p>
@@ -122,28 +122,28 @@ export default function CSTtoESTPage() {
 
         {/* FAQ */}
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-slate-800 dark:text-white mb-4">
+          <h2 className="text-2xl font-semibold text-slate-800 mb-4">
             Frequently Asked Questions
           </h2>
           <div className="space-y-4">
             {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-white dark:bg-slate-900">
-                <h3 className="font-semibold text-slate-800 dark:text-white mb-2">{item.name}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400">{item.acceptedAnswer.text}</p>
+              <div key={i} className="rounded-2xl border border-slate-100 p-4 bg-slate-50">
+                <h3 className="font-semibold text-slate-800 mb-2">{item.name}</h3>
+                <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* E-E-A-T Footer */}
-        <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/30 text-xs text-slate-500 dark:text-slate-400">
+        <footer className="rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500">
           Timezone data sourced from{' '}
           <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">
             IANA Time Zone Database
           </a>
           . Last updated March 2026.
         </footer>
-      </main>
+      </div>
     </ContentPageWrapper>
   )
 }

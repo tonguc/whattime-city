@@ -65,19 +65,19 @@ export default function MilitaryTimeClient() {
   return (
     <div className="space-y-4 mb-8">
       {/* Live Clock */}
-      <div className="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 bg-white dark:bg-slate-900">
+      <div className="rounded-2xl border border-slate-200 p-6 bg-white">
         <div className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3 text-center">
           Current Time
         </div>
         <div className="grid grid-cols-2 gap-4 text-center">
           <div>
-            <div className="text-3xl font-mono font-bold text-sky-600 dark:text-sky-400 tabular-nums">
+            <div className="text-3xl font-mono font-bold text-sky-600 tabular-nums">
               {currentMilitary || '——:——'}
             </div>
             <div className="text-xs text-slate-400 mt-1">24-hour (military)</div>
           </div>
           <div>
-            <div className="text-3xl font-mono font-bold text-slate-800 dark:text-white tabular-nums">
+            <div className="text-3xl font-mono font-bold text-slate-800 tabular-nums">
               {currentStandard || '——:——'}
             </div>
             <div className="text-xs text-slate-400 mt-1">12-hour (standard)</div>
@@ -88,8 +88,8 @@ export default function MilitaryTimeClient() {
       {/* Converters */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Military → Standard */}
-        <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-white dark:bg-slate-900">
-          <h3 className="font-semibold text-slate-700 dark:text-slate-300 mb-3 text-sm">Military → Standard</h3>
+        <div className="rounded-xl border border-slate-200 p-4 bg-white">
+          <h3 className="font-semibold text-slate-700 mb-3 text-sm">Military → Standard</h3>
           <div className="flex gap-2">
             <input
               type="text"
@@ -97,7 +97,7 @@ export default function MilitaryTimeClient() {
               onChange={e => setMilInput(e.target.value.replace(/\D/g, '').slice(0, 4))}
               placeholder="e.g. 1430"
               maxLength={4}
-              className="flex-1 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-800 dark:text-white font-mono text-sm"
+              className="flex-1 px-3 py-2 rounded-lg border border-slate-200 bg-white text-slate-800 font-mono text-sm"
               onKeyDown={e => e.key === 'Enter' && handleMilConvert()}
             />
             <button
@@ -108,20 +108,20 @@ export default function MilitaryTimeClient() {
             </button>
           </div>
           {milResult && (
-            <div className="mt-3 p-3 rounded-lg bg-sky-50 dark:bg-sky-900/20 border border-sky-200 dark:border-sky-800">
-              <span className="font-mono font-bold text-sky-700 dark:text-sky-300">{milInput} = {milResult}</span>
+            <div className="mt-3 p-3 rounded-lg bg-sky-50 border border-sky-200">
+              <span className="font-mono font-bold text-sky-700">{milInput} = {milResult}</span>
             </div>
           )}
         </div>
 
         {/* Standard → Military */}
-        <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-white dark:bg-slate-900">
-          <h3 className="font-semibold text-slate-700 dark:text-slate-300 mb-3 text-sm">Standard → Military</h3>
+        <div className="rounded-xl border border-slate-200 p-4 bg-white">
+          <h3 className="font-semibold text-slate-700 mb-3 text-sm">Standard → Military</h3>
           <div className="flex gap-2">
             <select
               value={stdHour}
               onChange={e => setStdHour(parseInt(e.target.value))}
-              className="flex-1 px-2 py-2 rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-800 dark:text-white text-sm"
+              className="flex-1 px-2 py-2 rounded-lg border border-slate-200 bg-white text-slate-800 text-sm"
             >
               {Array.from({ length: 12 }, (_, i) => i + 1).map(h => (
                 <option key={h} value={h}>{h}</option>
@@ -130,7 +130,7 @@ export default function MilitaryTimeClient() {
             <select
               value={stdMin}
               onChange={e => setStdMin(parseInt(e.target.value))}
-              className="flex-1 px-2 py-2 rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-800 dark:text-white text-sm"
+              className="flex-1 px-2 py-2 rounded-lg border border-slate-200 bg-white text-slate-800 text-sm"
             >
               {Array.from({ length: 60 }, (_, i) => i).map(m => (
                 <option key={m} value={m}>{m.toString().padStart(2, '0')}</option>
@@ -139,7 +139,7 @@ export default function MilitaryTimeClient() {
             <select
               value={stdAmPm}
               onChange={e => setStdAmPm(e.target.value as 'AM' | 'PM')}
-              className="px-2 py-2 rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-800 dark:text-white text-sm"
+              className="px-2 py-2 rounded-lg border border-slate-200 bg-white text-slate-800 text-sm"
             >
               <option value="AM">AM</option>
               <option value="PM">PM</option>
@@ -152,8 +152,8 @@ export default function MilitaryTimeClient() {
             </button>
           </div>
           {stdResult && (
-            <div className="mt-3 p-3 rounded-lg bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800">
-              <span className="font-mono font-bold text-emerald-700 dark:text-emerald-300">
+            <div className="mt-3 p-3 rounded-lg bg-emerald-50 border border-emerald-200">
+              <span className="font-mono font-bold text-emerald-700">
                 {stdHour}:{stdMin.toString().padStart(2, '0')} {stdAmPm} = {stdResult}
               </span>
             </div>

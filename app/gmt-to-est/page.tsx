@@ -87,11 +87,11 @@ export default function GMTtoESTPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <main className="max-w-3xl mx-auto px-4 py-8">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">
+      <div>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800">
           GMT to EST Converter
         </h1>
-        <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
+        <p className="text-lg text-slate-600 mb-6">
           Greenwich Mean Time → Eastern Standard Time · GMT is <strong>5 hours ahead</strong> of EST
         </p>
 
@@ -99,17 +99,17 @@ export default function GMTtoESTPage() {
 
         {/* Explainer */}
         <section className="mt-8 mb-6">
-          <h2 className="text-2xl font-semibold text-slate-800 dark:text-white mb-3">
+          <h2 className="text-2xl font-semibold text-slate-800 mb-3">
             GMT vs EST — What You Need to Know
           </h2>
-          <div className="space-y-4 text-slate-600 dark:text-slate-400">
+          <div className="space-y-4 text-slate-600">
             <p>
-              <strong className="text-slate-700 dark:text-slate-300">Greenwich Mean Time (GMT)</strong> is UTC+0.
+              <strong className="text-slate-700">Greenwich Mean Time (GMT)</strong> is UTC+0.
               It is the standard time used in the UK during winter, as well as in Ireland, Portugal, and parts of West Africa.
               The UK switches to <strong>BST (British Summer Time, UTC+1)</strong> during summer.
             </p>
             <p>
-              <strong className="text-slate-700 dark:text-slate-300">Eastern Standard Time (EST)</strong> is UTC-5.
+              <strong className="text-slate-700">Eastern Standard Time (EST)</strong> is UTC-5.
               It covers the US East Coast including New York, Boston, Miami, and Washington D.C.
               During summer, it shifts to <strong>EDT (UTC-4)</strong>.
             </p>
@@ -118,9 +118,9 @@ export default function GMTtoESTPage() {
               the US and UK switch clocks on different dates in March and October/November, creating short windows
               where the difference is only 4 hours.
             </p>
-            <div className="rounded-lg bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 p-4 text-sm">
-              <strong className="text-amber-700 dark:text-amber-400">Watch out in 2026:</strong>
-              <ul className="mt-2 space-y-1 list-disc list-inside text-amber-700 dark:text-amber-400">
+            <div className="rounded-lg bg-amber-50 border border-amber-200 p-4 text-sm">
+              <strong className="text-amber-700">Watch out in 2026:</strong>
+              <ul className="mt-2 space-y-1 list-disc list-inside text-amber-700">
                 <li>March 8–29, 2026: US switches to EDT before UK switches to BST → <strong>4-hour gap</strong></li>
                 <li>March 29 – November 1, 2026: Both on summer time → <strong>5-hour gap</strong></li>
                 <li>October 25 – November 1, 2026: UK switches back before US → <strong>4-hour gap</strong></li>
@@ -132,28 +132,28 @@ export default function GMTtoESTPage() {
 
         {/* FAQ */}
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-slate-800 dark:text-white mb-4">
+          <h2 className="text-2xl font-semibold text-slate-800 mb-4">
             Frequently Asked Questions
           </h2>
           <div className="space-y-4">
             {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-white dark:bg-slate-900">
-                <h3 className="font-semibold text-slate-800 dark:text-white mb-2">{item.name}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400">{item.acceptedAnswer.text}</p>
+              <div key={i} className="rounded-2xl border border-slate-100 p-4 bg-slate-50">
+                <h3 className="font-semibold text-slate-800 mb-2">{item.name}</h3>
+                <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* E-E-A-T Footer */}
-        <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/30 text-xs text-slate-500 dark:text-slate-400">
+        <footer className="rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500">
           Timezone data sourced from{' '}
           <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">
             IANA Time Zone Database
           </a>
           . Last updated March 2026.
         </footer>
-      </main>
+      </div>
     </ContentPageWrapper>
   )
 }

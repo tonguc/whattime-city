@@ -66,23 +66,23 @@ export default function CSTtoPSTPage() {
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <main className="max-w-3xl mx-auto px-4 py-8">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">
+      <div>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800">
           CST to PST Converter
         </h1>
-        <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
+        <p className="text-lg text-slate-600 mb-6">
           Central Standard Time → Pacific Standard Time · CST is <strong>2 hours ahead</strong> of PST
         </p>
         <TZPairClient config={config} />
         <section className="mt-8 mb-6">
-          <h2 className="text-2xl font-semibold text-slate-800 dark:text-white mb-3">CST vs PST — What You Need to Know</h2>
-          <div className="space-y-4 text-slate-600 dark:text-slate-400">
+          <h2 className="text-2xl font-semibold text-slate-800 mb-3">CST vs PST — What You Need to Know</h2>
+          <div className="space-y-4 text-slate-600">
             <p>
-              <strong className="text-slate-700 dark:text-slate-300">CST (UTC-6)</strong> — Central US: Chicago, Houston, Dallas, Minneapolis.
+              <strong className="text-slate-700">CST (UTC-6)</strong> — Central US: Chicago, Houston, Dallas, Minneapolis.
               Summer: <strong>CDT (UTC-5)</strong>.
             </p>
             <p>
-              <strong className="text-slate-700 dark:text-slate-300">PST (UTC-8)</strong> — West Coast: LA, San Francisco, Seattle.
+              <strong className="text-slate-700">PST (UTC-8)</strong> — West Coast: LA, San Francisco, Seattle.
               Summer: <strong>PDT (UTC-7)</strong>.
             </p>
             <p>
@@ -92,20 +92,20 @@ export default function CSTtoPSTPage() {
           </div>
         </section>
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
+          <h2 className="text-2xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-white dark:bg-slate-900">
-                <h3 className="font-semibold text-slate-800 dark:text-white mb-2">{item.name}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400">{item.acceptedAnswer.text}</p>
+              <div key={i} className="rounded-2xl border border-slate-100 p-4 bg-slate-50">
+                <h3 className="font-semibold text-slate-800 mb-2">{item.name}</h3>
+                <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
               </div>
             ))}
           </div>
         </section>
-        <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/30 text-xs text-slate-500 dark:text-slate-400">
+        <footer className="rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500">
           Timezone data sourced from <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">IANA Time Zone Database</a>. Last updated March 2026.
         </footer>
-      </main>
+      </div>
     </ContentPageWrapper>
   )
 }

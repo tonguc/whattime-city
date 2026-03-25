@@ -82,32 +82,32 @@ export default function ISTtoESTPage() {
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <main className="max-w-3xl mx-auto px-4 py-8">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">
+      <div>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800">
           IST to EST Converter
         </h1>
-        <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
+        <p className="text-lg text-slate-600 mb-6">
           India Standard Time → Eastern Standard Time · IST is <strong>10.5 hours ahead</strong> of EST
         </p>
         <TZPairClient config={config} />
         <section className="mt-8 mb-6">
-          <h2 className="text-2xl font-semibold text-slate-800 dark:text-white mb-3">IST vs EST — What You Need to Know</h2>
-          <div className="space-y-4 text-slate-600 dark:text-slate-400">
+          <h2 className="text-2xl font-semibold text-slate-800 mb-3">IST vs EST — What You Need to Know</h2>
+          <div className="space-y-4 text-slate-600">
             <p>
-              <strong className="text-slate-700 dark:text-slate-300">India Standard Time (IST)</strong> is UTC+5:30 — a half-hour offset that applies uniformly
+              <strong className="text-slate-700">India Standard Time (IST)</strong> is UTC+5:30 — a half-hour offset that applies uniformly
               across all of India. India does not observe DST. IST is used in Mumbai, Delhi, Bangalore, and every other Indian city.
             </p>
             <p>
-              <strong className="text-slate-700 dark:text-slate-300">Eastern Standard Time (EST)</strong> is UTC-5 (EDT: UTC-4 in summer).
+              <strong className="text-slate-700">Eastern Standard Time (EST)</strong> is UTC-5 (EDT: UTC-4 in summer).
             </p>
             <p>
               With a 10.5-hour gap, India and the US East Coast have <strong>minimal business-hours overlap</strong>.
               The standard strategy for India-US teams is the <strong>"end of India day / start of US day"</strong> window:
               6:30–8:00 PM IST = 8:00–9:30 AM EST.
             </p>
-            <div className="rounded-lg bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 p-4 text-sm">
-              <strong className="text-amber-700 dark:text-amber-400">Note on DST shift:</strong>
-              <p className="text-amber-700 dark:text-amber-400 mt-1">
+            <div className="rounded-lg bg-amber-50 border border-amber-200 p-4 text-sm">
+              <strong className="text-amber-700">Note on DST shift:</strong>
+              <p className="text-amber-700 mt-1">
                 The gap changes when the US observes DST (March–November): 10.5h → 9.5h.
                 India stays at UTC+5:30 year-round, so the overlap window shifts by 1 hour during US summer.
               </p>
@@ -115,20 +115,20 @@ export default function ISTtoESTPage() {
           </div>
         </section>
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
+          <h2 className="text-2xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-white dark:bg-slate-900">
-                <h3 className="font-semibold text-slate-800 dark:text-white mb-2">{item.name}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400">{item.acceptedAnswer.text}</p>
+              <div key={i} className="rounded-2xl border border-slate-100 p-4 bg-slate-50">
+                <h3 className="font-semibold text-slate-800 mb-2">{item.name}</h3>
+                <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
               </div>
             ))}
           </div>
         </section>
-        <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/30 text-xs text-slate-500 dark:text-slate-400">
+        <footer className="rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500">
           Timezone data sourced from <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">IANA Time Zone Database</a>. Last updated March 2026.
         </footer>
-      </main>
+      </div>
     </ContentPageWrapper>
   )
 }

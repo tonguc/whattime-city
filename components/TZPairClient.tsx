@@ -123,48 +123,48 @@ export default function TZPairClient({ config }: Props) {
     <div>
       {/* Live Clocks */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 bg-white dark:bg-slate-900 text-center">
-          <div className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">
+        <div className="rounded-2xl border border-slate-200 p-6 bg-slate-50 text-center">
+          <div className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-1">
             {config.fromAbbr}
           </div>
-          <div className="text-4xl font-mono font-bold text-slate-800 dark:text-white mb-1 tabular-nums">
+          <div className="text-4xl font-mono font-bold text-slate-800 mb-1 tabular-nums">
             {fromTime || '—'}
           </div>
-          <div className="text-sm text-slate-500 dark:text-slate-400">{fromDate}</div>
-          <div className="mt-2 text-xs text-slate-400 dark:text-slate-500">{fromOffset}</div>
+          <div className="text-sm text-slate-500">{fromDate}</div>
+          <div className="mt-2 text-xs text-slate-400">{fromOffset}</div>
         </div>
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 bg-white dark:bg-slate-900 text-center">
-          <div className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">
+        <div className="rounded-2xl border border-slate-200 p-6 bg-slate-50 text-center">
+          <div className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-1">
             {config.toAbbr}
           </div>
-          <div className="text-4xl font-mono font-bold text-slate-800 dark:text-white mb-1 tabular-nums">
+          <div className="text-4xl font-mono font-bold text-slate-800 mb-1 tabular-nums">
             {toTime || '—'}
           </div>
-          <div className="text-sm text-slate-500 dark:text-slate-400">{toDate}</div>
-          <div className="mt-2 text-xs text-slate-400 dark:text-slate-500">{toOffset}</div>
+          <div className="text-sm text-slate-500">{toDate}</div>
+          <div className="mt-2 text-xs text-slate-400">{toOffset}</div>
         </div>
       </div>
 
       {/* Time Difference Banner */}
-      <div className="rounded-xl border border-sky-200 dark:border-sky-800 bg-sky-50 dark:bg-sky-900/20 p-4 mb-6 text-center">
-        <p className="text-sky-700 dark:text-sky-300 font-medium">{aheadBehind}</p>
+      <div className="rounded-xl border border-sky-200 bg-sky-50 p-4 mb-6 text-center">
+        <p className="text-sky-700 font-medium">{aheadBehind}</p>
       </div>
 
       {/* Conversion Table */}
       <div className="mb-6">
-        <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-3">
+        <h2 className="text-xl font-semibold text-slate-800 mb-3">
           {config.fromAbbr} to {config.toAbbr} Conversion Table
         </h2>
-        <div className="rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+        <div className="rounded-xl border border-slate-200 overflow-hidden">
           <table className="w-full text-sm">
-            <thead className="bg-slate-50 dark:bg-slate-800">
+            <thead className="bg-slate-50">
               <tr>
-                <th className="text-left px-4 py-2 text-slate-600 dark:text-slate-300 font-semibold">{config.fromAbbr}</th>
-                <th className="text-left px-4 py-2 text-slate-600 dark:text-slate-300 font-semibold">{config.toAbbr}</th>
-                <th className="text-left px-4 py-2 text-slate-600 dark:text-slate-300 font-semibold hidden sm:table-cell">Overlap</th>
+                <th className="text-left px-4 py-2 text-slate-600 font-semibold">{config.fromAbbr}</th>
+                <th className="text-left px-4 py-2 text-slate-600 font-semibold">{config.toAbbr}</th>
+                <th className="text-left px-4 py-2 text-slate-600 font-semibold hidden sm:table-cell">Overlap</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+            <tbody className="divide-y divide-slate-100">
               {Array.from({ length: 24 }, (_, h) => {
                 const { hour: hTo, dayShift } = convertHour(h, diffHours)
                 const fromBiz = isBusinessHour(h)
@@ -174,13 +174,13 @@ export default function TZPairClient({ config }: Props) {
                   <tr
                     key={h}
                     className={bothBiz
-                      ? 'bg-emerald-50 dark:bg-emerald-900/10'
-                      : 'bg-white dark:bg-slate-900'}
+                      ? 'bg-emerald-50'
+                      : 'bg-white'}
                   >
-                    <td className="px-4 py-2 text-slate-700 dark:text-slate-300 font-mono">
+                    <td className="px-4 py-2 text-slate-700 font-mono">
                       {formatHour12(h)}
                     </td>
-                    <td className="px-4 py-2 text-slate-700 dark:text-slate-300 font-mono">
+                    <td className="px-4 py-2 text-slate-700 font-mono">
                       {formatHour12(hTo)}
                       {dayShift && (
                         <span className="ml-1 text-xs text-slate-400">
@@ -190,7 +190,7 @@ export default function TZPairClient({ config }: Props) {
                     </td>
                     <td className="px-4 py-2 hidden sm:table-cell">
                       {bothBiz && (
-                        <span className="text-xs text-emerald-600 dark:text-emerald-400 font-medium">
+                        <span className="text-xs text-emerald-600 font-medium">
                           Business hours
                         </span>
                       )}
@@ -202,8 +202,8 @@ export default function TZPairClient({ config }: Props) {
           </table>
         </div>
         {overlap.length > 0 && (
-          <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-            <span className="inline-block w-3 h-3 rounded-sm bg-emerald-100 dark:bg-emerald-900/30 border border-emerald-300 mr-1" />
+          <p className="mt-2 text-sm text-slate-600">
+            <span className="inline-block w-3 h-3 rounded-sm bg-emerald-100 border border-emerald-300 mr-1" />
             Green rows = business hours overlap ({formatHour12(overlap[0])} – {formatHour12(overlap[overlap.length - 1] + 1)} {config.fromAbbr})
           </p>
         )}
@@ -211,23 +211,23 @@ export default function TZPairClient({ config }: Props) {
 
       {/* Cities */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-        <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-white dark:bg-slate-900">
+        <div className="rounded-xl border border-slate-200 p-4 bg-white">
           <div className="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-2">
             Major {config.fromAbbr} Cities
           </div>
           <ul className="space-y-1">
             {config.fromCities.map(c => (
-              <li key={c} className="text-sm text-slate-600 dark:text-slate-300">{c}</li>
+              <li key={c} className="text-sm text-slate-600">{c}</li>
             ))}
           </ul>
         </div>
-        <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-white dark:bg-slate-900">
+        <div className="rounded-xl border border-slate-200 p-4 bg-white">
           <div className="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-2">
             Major {config.toAbbr} Cities
           </div>
           <ul className="space-y-1">
             {config.toCities.map(c => (
-              <li key={c} className="text-sm text-slate-600 dark:text-slate-300">{c}</li>
+              <li key={c} className="text-sm text-slate-600">{c}</li>
             ))}
           </ul>
         </div>
@@ -237,24 +237,24 @@ export default function TZPairClient({ config }: Props) {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <Link
           href="/time-converter"
-          className="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-sky-300 dark:hover:border-sky-600 transition-colors"
+          className="p-4 rounded-xl border border-slate-200 bg-white hover:border-sky-300 transition-colors"
         >
-          <div className="font-medium text-slate-800 dark:text-white text-sm">Time Converter</div>
-          <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">Convert any two cities</div>
+          <div className="font-medium text-slate-800 text-sm">Time Converter</div>
+          <div className="text-xs text-slate-500 mt-1">Convert any two cities</div>
         </Link>
         <Link
           href="/meeting"
-          className="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-sky-300 dark:hover:border-sky-600 transition-colors"
+          className="p-4 rounded-xl border border-slate-200 bg-white hover:border-sky-300 transition-colors"
         >
-          <div className="font-medium text-slate-800 dark:text-white text-sm">Meeting Planner</div>
-          <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">Find the best overlap time</div>
+          <div className="font-medium text-slate-800 text-sm">Meeting Planner</div>
+          <div className="text-xs text-slate-500 mt-1">Find the best overlap time</div>
         </Link>
         <Link
           href="/"
-          className="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-sky-300 dark:hover:border-sky-600 transition-colors"
+          className="p-4 rounded-xl border border-slate-200 bg-white hover:border-sky-300 transition-colors"
         >
-          <div className="font-medium text-slate-800 dark:text-white text-sm">World Clock</div>
-          <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">Current time in 400+ cities</div>
+          <div className="font-medium text-slate-800 text-sm">World Clock</div>
+          <div className="text-xs text-slate-500 mt-1">Current time in 400+ cities</div>
         </Link>
       </div>
     </div>
