@@ -1359,6 +1359,14 @@ export const countries: Country[] = [
     languages: ['Tuvaluan', 'English'], continent: 'oceania',
     description: 'Tuvalu uses Tuvalu Time (UTC+12). Funafuti is the capital of this small Pacific nation.',
     timezones: ['TVT (UTC+12)']
+  },
+  // ========== ADDITIONAL ASIAN COUNTRIES ==========
+  {
+    code: 'IR', name: 'Iran', slug: 'iran', capital: 'Tehran',
+    population: '86M', currency: 'Iranian Rial', currencySymbol: '﷼', phoneCode: '+98',
+    languages: ['Persian'], continent: 'asia',
+    description: 'Iran uses Iran Standard Time (IRST, UTC+3:30) and observes Daylight Saving Time (IRDT, UTC+4:30). Tehran is the capital. Iran is one of few countries with a 30-minute UTC offset that also observes DST.',
+    timezones: ['IRST (UTC+3:30)', 'IRDT (UTC+4:30)']
   }
 ]
 

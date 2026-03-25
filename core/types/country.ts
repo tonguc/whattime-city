@@ -29,4 +29,6 @@ export interface Country {
   description: string
   timezones: string[]
   seo?: CountrySeo
+  /** Hub page slug — varsa /[hubSlug]/ sayfasına yönlendirir */
+  hubSlug?: string
 }
