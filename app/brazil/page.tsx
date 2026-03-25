@@ -100,7 +100,7 @@ const faqSchema = {
       name: 'What is the best time to call Brazil from the US?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'From US Eastern time (EST), the best window to reach Brazil during business hours is 8:00 AM to 1:00 PM EST, which corresponds to 9:00 AM to 2:00 PM BRT in São Paulo. From US Pacific time (PST), try 5:00 AM to 10:00 AM PST for the same São Paulo window.',
+        text: 'From US Eastern time (EST), the best window to reach Brazil during business hours is 7:00 AM to 12:00 PM EST, which corresponds to 9:00 AM to 2:00 PM BRT in São Paulo. From US Pacific time (PST), try 4:00 AM to 9:00 AM PST for the same São Paulo morning window.',
       },
     },
     {

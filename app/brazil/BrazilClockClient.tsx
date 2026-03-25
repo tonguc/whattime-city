@@ -46,11 +46,11 @@ function getCityTime(timezone: string) {
 }
 
 const CALL_WINDOWS = [
-  { from: 'EST (New York)', window: '8:00 AM – 1:00 PM EST', brt: '9:00 AM – 2:00 PM BRT', note: 'Overlap with São Paulo morning' },
-  { from: 'PST (Los Angeles)', window: '5:00 AM – 10:00 AM PST', brt: '9:00 AM – 2:00 PM BRT', note: 'Early morning US West Coast' },
+  { from: 'EST (New York)', window: '7:00 AM – 12:00 PM EST', brt: '9:00 AM – 2:00 PM BRT', note: 'Overlap with São Paulo morning' },
+  { from: 'PST (Los Angeles)', window: '4:00 AM – 9:00 AM PST', brt: '9:00 AM – 2:00 PM BRT', note: 'Early morning US West Coast' },
   { from: 'GMT (London)', window: '12:00 PM – 5:00 PM GMT', brt: '9:00 AM – 2:00 PM BRT', note: 'Good afternoon overlap' },
   { from: 'CET (Berlin/Paris)', window: '1:00 PM – 6:00 PM CET', brt: '9:00 AM – 2:00 PM BRT', note: 'Afternoon Europe = morning Brazil' },
-  { from: 'IST (India)', window: '5:30 PM – 10:30 PM IST', brt: '8:00 AM – 1:00 PM BRT', note: 'Evening India = morning Brazil' },
+  { from: 'IST (India)', window: '5:30 PM – 10:30 PM IST', brt: '9:00 AM – 2:00 PM BRT', note: 'Evening India = morning Brazil' },
 ]
 
 const BRAZIL_CITIES = [

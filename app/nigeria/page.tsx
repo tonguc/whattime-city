@@ -93,7 +93,7 @@ const faqSchema = {
       name: 'What is the best time to call Nigeria from the US?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'From US Eastern time (EST), the best window to reach Nigeria during business hours (8 AM–5 PM WAT) is 3:00 AM to 12:00 PM EST. From US Pacific time (PST), try 12:00 AM to 9:00 AM PST. For practical calls, 8:00–11:00 AM EST (2:00–5:00 PM WAT) is the most realistic overlap.',
+        text: 'From US Eastern time (EST), the best window to reach Nigeria during business hours (8 AM–5 PM WAT) is 2:00 AM to 11:00 AM EST. From US Pacific time (PST), try 11:00 PM to 8:00 AM PST. For practical calls, 7:00–11:00 AM EST (1:00–5:00 PM WAT) catches Nigeria\'s afternoon while remaining a reasonable US morning hour.',
       },
     },
     {

@@ -46,11 +46,11 @@ function getCityTime(timezone: string) {
 }
 
 const CALL_WINDOWS = [
-  { from: 'EST (New York)', window: '3:00 AM – 12:00 PM EST', wat: '8:00 AM – 5:00 PM WAT', note: 'Full Nigeria business day' },
-  { from: 'PST (Los Angeles)', window: '12:00 AM – 9:00 AM PST', wat: '8:00 AM – 5:00 PM WAT', note: 'Midnight–morning US West' },
-  { from: 'GMT (London)', window: '8:00 AM – 5:00 PM GMT', wat: '9:00 AM – 6:00 PM WAT', note: 'Best overlap — only 1h diff' },
-  { from: 'CET (Berlin/Paris)', window: '9:00 AM – 6:00 PM CET', wat: '9:00 AM – 6:00 PM WAT', note: 'Perfect overlap — same hours' },
-  { from: 'Toronto (EST)', window: '3:00 AM – 12:00 PM EST', wat: '8:00 AM – 5:00 PM WAT', note: 'Large Nigerian diaspora in Canada' },
+  { from: 'EST (New York)', window: '2:00 AM – 11:00 AM EST', wat: '8:00 AM – 5:00 PM WAT', note: 'Full Nigeria business day' },
+  { from: 'PST (Los Angeles)', window: '11:00 PM – 8:00 AM PST', wat: '8:00 AM – 5:00 PM WAT', note: 'Late night US West Coast' },
+  { from: 'GMT (London)', window: '7:00 AM – 4:00 PM GMT', wat: '8:00 AM – 5:00 PM WAT', note: 'Best overlap — only 1h diff' },
+  { from: 'CET (Berlin/Paris)', window: '8:00 AM – 5:00 PM CET', wat: '8:00 AM – 5:00 PM WAT', note: 'Perfect overlap — same hours' },
+  { from: 'Toronto (EST)', window: '2:00 AM – 11:00 AM EST', wat: '8:00 AM – 5:00 PM WAT', note: 'Large Nigerian diaspora in Canada' },
   { from: 'IST (India)', window: '12:30 PM – 9:30 PM IST', wat: '8:00 AM – 5:00 PM WAT', note: 'Afternoon India = morning Nigeria' },
 ]
 
