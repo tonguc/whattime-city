@@ -43,6 +43,7 @@ export default async function sitemap() {
     { slug: 'time', priority: 0.9 },
     { slug: 'time-converter', priority: 0.8 },
     { slug: 'meeting', priority: 0.8 },
+    { slug: 'india', priority: 0.9 },
     { slug: 'daylight-saving-time', priority: 0.8 },
     // Timezone pair pages — high-volume abbreviation queries
     { slug: 'pst-to-est', priority: 0.8 },
