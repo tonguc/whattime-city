@@ -13929,7 +13929,7 @@ export const cities: City[] = [
       }
     }
   },
-  { slug: 'bidar-fort', city: 'Bidar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', lat: 17.91, lng: 77.52, tier: 3, continent: 'asia',
+  { slug: 'bidar-fort', city: 'Bidar', timezone: 'Asia/Kolkata', country: 'India', countryCode: 'IN', state: 'Karnataka', stateCode: 'KA', lat: 17.91, lng: 77.52, tier: 3, continent: 'asia',
     info: {
       currency: 'Indian Rupee', currencySymbol: '₹', population: '0.22M', metroPopulation: '0.25M', phoneCode: '+91 8482', language: 'Kannada, Urdu, Deccani, Hindi',
       climate: 'Semi-arid with hot summers (32-42°C) and mild winters (15-30°C). Monsoon July-September.',
@@ -20326,7 +20326,7 @@ export const cities: City[] = [
     info: { currency: 'Brazilian Real', currencySymbol: 'R$', population: '240K', metroPopulation: '280K', phoneCode: '+55 66', language: 'Portuguese', climate: 'Tropical savanna with hot rainy season (October-April) and hot dry season (May-September).', attractions: ['Parque Estadual da Serra de Ricardo Franco', 'Rio Vermelho waterfront', 'Museu do Índio', 'Parque Natural Municipal', 'Catedral Nossa Senhora Aparecida', 'Rondon monument', 'Centro Cultural', 'Estádio Luthero Lopes', 'Pantanal south access', 'Soja fields panorama'], demographics: 'Soy capital of Mato Grosso. Major logistics hub on BR-163 soy highway. Pantanal southern access.' } },
   { slug: 'sinop', city: 'Sinop', timezone: 'America/Cuiaba', country: 'Brazil', countryCode: 'BR', lat: -11.86, lng: -55.51, tier: 3, continent: 'americas',
     info: { currency: 'Brazilian Real', currencySymbol: 'R$', population: '160K', metroPopulation: '190K', phoneCode: '+55 66', language: 'Portuguese', climate: 'Tropical savanna with hot rainy season (October-April) and hot dry season (May-September).', attractions: ['Rio Teles Pires waterfront', 'Parque Ecológico Municipal', 'Museu Municipal', 'Catedral Nossa Senhora Aparecida', 'Salto do Teles Pires', 'BR-163 highway frontier', 'Amazon-Cerrado transition', 'Centro Cultural', 'Praça Central', 'Agronegócio tours'], demographics: 'Northern Mato Grosso agribusiness frontier. Soy belt expansion capital. Gateway to Amazon. Rapid growth colonization city.' } },
-  { slug: 'santarem-pa', city: 'Marabá', timezone: 'America/Belem', country: 'Brazil', countryCode: 'BR', lat: -5.37, lng: -49.12, tier: 3, continent: 'americas',
+  { slug: 'santarem-pa', city: 'Santarém', timezone: 'America/Santarem', country: 'Brazil', countryCode: 'BR', state: 'Pará', stateCode: 'PA', lat: -2.44, lng: -54.71, tier: 3, continent: 'americas',
     info: { currency: 'Brazilian Real', currencySymbol: 'R$', population: '280K', metroPopulation: '340K', phoneCode: '+55 94', language: 'Portuguese', climate: 'Equatorial with year-round heat (26-34°C). Rainy season November-May.', attractions: ['Tocantins River waterfront', 'Parque Ambiental', 'Mercado Municipal', 'Catedral Santo André', 'Praça Brasil', 'Itacaiúnas River confluence', 'Carajás iron ore mine nearby', 'Tucuruí dam', 'Amazon frontier landscapes', 'Xingú River nearby'], demographics: 'Eastern Amazon frontier city. Gateway to Carajás iron ore mine world largest. Tocantins-Araguaia river confluence. Rapid growth from mining.' } },
 
   { slug: 'barranquilla', city: 'Barranquilla', timezone: 'America/Bogota', country: 'Colombia', countryCode: 'CO', lat: 10.96, lng: -74.80, tier: 3, continent: 'americas',
@@ -21091,7 +21091,7 @@ export const cities: City[] = [
       demographics: 'UNESCO World Heritage wetland. Largest prefecture-level city in Jiangsu. Major nature reserves.'
     }
   },
-  { slug: 'taizhou-jiangsu', city: 'Taizhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 32.46, lng: 119.92, tier: 3, continent: 'asia',
+  { slug: 'taizhou-jiangsu', city: 'Taizhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', state: 'Jiangsu', stateCode: 'JS', lat: 32.46, lng: 119.92, tier: 3, continent: 'asia',
     info: {
       currency: 'Chinese Yuan', currencySymbol: '¥', population: '4.5M', phoneCode: '+86 523', language: 'Mandarin, Jianghuai',
       climate: 'Humid subtropical with hot summers (27-33°C) and cool winters (1-8°C). Rainy spring.',
@@ -21131,7 +21131,7 @@ export const cities: City[] = [
       demographics: 'Birthplace of Xiang Yu, legendary warrior. Young but fast-growing city. E-commerce hub.'
     }
   },
-  { slug: 'taizhou-zhejiang', city: 'Taizhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 28.66, lng: 121.42, tier: 3, continent: 'asia',
+  { slug: 'taizhou-zhejiang', city: 'Taizhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', state: 'Zhejiang', stateCode: 'ZJ', lat: 28.66, lng: 121.42, tier: 3, continent: 'asia',
     info: {
       currency: 'Chinese Yuan', currencySymbol: '¥', population: '6.7M', phoneCode: '+86 576', language: 'Mandarin, Wu, Min',
       climate: 'Humid subtropical with hot summers (28-34°C) and mild winters (5-12°C). Typhoons in summer.',
@@ -21219,7 +21219,7 @@ export const cities: City[] = [
       demographics: 'Most populous city in Anhui. Major agricultural center. Ancient state of Ying.'
     }
   },
-  { slug: 'suzhou-anhui', city: 'Suzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', lat: 33.64, lng: 116.98, tier: 3, continent: 'asia',
+  { slug: 'suzhou-anhui', city: 'Suzhou', timezone: 'Asia/Shanghai', country: 'China', countryCode: 'CN', state: 'Anhui', stateCode: 'AH', lat: 33.64, lng: 116.98, tier: 3, continent: 'asia',
     info: {
       currency: 'Chinese Yuan', currencySymbol: '¥', population: '5.4M', phoneCode: '+86 557', language: 'Mandarin, Zhongyuan',
       climate: 'Humid subtropical with hot summers (27-34°C) and cold winters (-2 to 5°C). Moderate rainfall.',

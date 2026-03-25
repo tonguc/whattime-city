@@ -9,7 +9,6 @@ interface TimeComparePageProps {
 
 // ✅ FORCE DYNAMIC - Bu sayfa asla pre-render edilmez
 // Build süresi: ~25 dakika → ~2 dakika
-// SEO: Tool output - değer hub sayfalarda (/istanbul/, /london/)
 export const dynamic = 'force-dynamic'
 
 // Helper: Slug'dan şehir bulma
@@ -17,57 +16,147 @@ function getCityBySlug(slug: string): City | undefined {
   return cities.find(c => c.slug === slug)
 }
 
+// Server-side UTC offset hesaplama (DST-aware)
+function getUTCOffset(timezone: string): number {
+  const now = new Date()
+  const utc = new Date(now.toLocaleString('en-US', { timeZone: 'UTC' }))
+  const local = new Date(now.toLocaleString('en-US', { timeZone: timezone }))
+  return (local.getTime() - utc.getTime()) / (1000 * 60 * 60)
+}
+
+function formatDiff(hours: number): string {
+  const abs = Math.abs(hours)
+  const h = Math.floor(abs)
+  const m = Math.round((abs - h) * 60)
+  return m > 0 ? `${h}h ${m}min` : `${h} hour${h !== 1 ? 's' : ''}`
+}
+
+function countBusinessOverlap(diffHours: number): number {
+  let count = 0
+  for (let h = 9; h < 17; h++) {
+    const toH = (h + diffHours + 24) % 24
+    if (toH >= 9 && toH < 17) count++
+  }
+  return count
+}
+
 // Dinamik SEO Metadata
 export async function generateMetadata({ params }: TimeComparePageProps): Promise<Metadata> {
   const { from, to } = await params
   const fromCity = getCityBySlug(from)
   const toCity = getCityBySlug(to)
-  
+
   if (!fromCity || !toCity) {
-    return { 
+    return {
       title: 'City Not Found - whattime.city',
       description: 'The requested city comparison could not be found.',
-      robots: {
-        index: false,
-        follow: false,
-      }
+      robots: { index: false, follow: false },
     }
   }
-  
-  const title = `${fromCity.city} to ${toCity.city} Time Difference`
-  const description = `Current time in ${fromCity.city} vs ${toCity.city}. See live clocks, time difference, best time to call, and business hours overlap.`
-  
+
+  const fromOffset = getUTCOffset(fromCity.timezone)
+  const toOffset = getUTCOffset(toCity.timezone)
+  const diffHours = toOffset - fromOffset
+  const absDiff = Math.abs(diffHours)
+  const direction = diffHours > 0 ? 'ahead of' : diffHours < 0 ? 'behind' : 'same as'
+  const diffStr = formatDiff(absDiff)
+  const overlapHours = countBusinessOverlap(diffHours)
+
+  const title = diffHours === 0
+    ? `${fromCity.city} and ${toCity.city} Time — Same Time Zone`
+    : `${fromCity.city} to ${toCity.city} Time — ${diffStr} ${diffHours > 0 ? 'Ahead' : 'Behind'}`
+
+  const description = diffHours === 0
+    ? `${fromCity.city} and ${toCity.city} share the same UTC offset. Live clock, conversion table, and meeting planner for both cities.`
+    : `${toCity.city} is ${diffStr} ${direction} ${fromCity.city}. ${overlapHours > 0 ? `${overlapHours}h business overlap.` : 'No standard business hour overlap.'} Live clock and meeting planner.`
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: `What is the time difference between ${fromCity.city} and ${toCity.city}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: diffHours === 0
+            ? `${fromCity.city} and ${toCity.city} are in the same time zone — no difference.`
+            : `${toCity.city} is ${diffStr} ${direction} ${fromCity.city}. When it is noon in ${fromCity.city}, it is ${String((12 + diffHours + 24) % 24).padStart(2, '0')}:00 in ${toCity.city}.`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `What is the best time to call between ${fromCity.city} and ${toCity.city}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: overlapHours > 0
+            ? `There are ${overlapHours} overlapping business hours (9 AM–5 PM) between ${fromCity.city} and ${toCity.city}. Schedule calls during that window for the best experience.`
+            : `There is no standard business-hour overlap between ${fromCity.city} and ${toCity.city}. Consider early morning or late evening calls, or use async communication.`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `Is ${toCity.city} ahead or behind ${fromCity.city}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: diffHours === 0
+            ? `${fromCity.city} and ${toCity.city} are at the same UTC offset.`
+            : `${toCity.city} is ${diffStr} ${direction} ${fromCity.city} (UTC${toOffset >= 0 ? '+' : ''}${toOffset} vs UTC${fromOffset >= 0 ? '+' : ''}${fromOffset}).`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `What time zone is ${fromCity.city} in?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `${fromCity.city} is in the ${fromCity.timezone.replace(/_/g, ' ')} time zone (UTC${fromOffset >= 0 ? '+' : ''}${fromOffset}).`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `What time zone is ${toCity.city} in?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `${toCity.city} is in the ${toCity.timezone.replace(/_/g, ' ')} time zone (UTC${toOffset >= 0 ? '+' : ''}${toOffset}).`,
+        },
+      },
+    ],
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://whattime.city/' },
+      { '@type': 'ListItem', position: 2, name: 'Time Difference', item: 'https://whattime.city/time/' },
+      { '@type': 'ListItem', position: 3, name: `${fromCity.city} to ${toCity.city}`, item: `https://whattime.city/time/${from}/${to}/` },
+    ],
+  }
+
   return {
     title,
     description,
     keywords: [
       `${fromCity.city} ${toCity.city} time difference`,
-      `time in ${fromCity.city} vs ${toCity.city}`,
       `${fromCity.city} to ${toCity.city} time`,
+      `time in ${fromCity.city} vs ${toCity.city}`,
       `best time to call ${toCity.city} from ${fromCity.city}`,
-      'time zone converter',
-      'world clock'
+      `${fromCity.city} ${toCity.city} time converter`,
     ],
     openGraph: {
-      title: `${fromCity.city} ↔ ${toCity.city} Time Converter`,
+      title: `${fromCity.city} ↔ ${toCity.city} — ${diffHours === 0 ? 'Same Time Zone' : `${diffStr} difference`}`,
       description,
       type: 'website',
       siteName: 'whattime.city',
       url: `https://whattime.city/time/${from}/${to}/`,
-      images: [
-        {
-          url: `https://whattime.city/og-image.png`,
-          width: 1200,
-          height: 630,
-          alt: `${fromCity.city} to ${toCity.city} Time Comparison`
-        }
-      ]
+      images: [{ url: 'https://whattime.city/og-image.png', width: 1200, height: 630, alt: `${fromCity.city} to ${toCity.city} Time` }],
     },
-    // ✅ INDEX - Long-tail SEO value (e.g., "london to new york time")
-    robots: {
-      index: true,
-      follow: true,
-    }
+    alternates: { canonical: `https://whattime.city/time/${from}/${to}/` },
+    robots: { index: true, follow: true },
+    other: {
+      'schema:faq': JSON.stringify(faqSchema),
+      'schema:breadcrumb': JSON.stringify(breadcrumbSchema),
+    },
   }
 }
 
@@ -76,11 +165,93 @@ export default async function TimeComparePage({ params }: TimeComparePageProps) 
   const { from, to } = await params
   const fromCity = getCityBySlug(from)
   const toCity = getCityBySlug(to)
-  
-  // Eğer şehir veritabanında hiç yoksa 404 ver
+
   if (!fromCity || !toCity) {
     notFound()
   }
-  
-  return <TimeComparisonContent fromCity={fromCity} toCity={toCity} />
+
+  const fromOffset = getUTCOffset(fromCity.timezone)
+  const toOffset = getUTCOffset(toCity.timezone)
+  const diffHours = toOffset - fromOffset
+  const absDiff = Math.abs(diffHours)
+  const direction = diffHours > 0 ? 'ahead of' : diffHours < 0 ? 'behind' : 'same as'
+  const diffStr = formatDiff(absDiff)
+  const overlapHours = countBusinessOverlap(diffHours)
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: `What is the time difference between ${fromCity.city} and ${toCity.city}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: diffHours === 0
+            ? `${fromCity.city} and ${toCity.city} are in the same time zone — no difference.`
+            : `${toCity.city} is ${diffStr} ${direction} ${fromCity.city}. When it is noon in ${fromCity.city}, it is ${String((12 + diffHours + 24) % 24).padStart(2, '0')}:00 in ${toCity.city}.`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `What is the best time to call between ${fromCity.city} and ${toCity.city}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: overlapHours > 0
+            ? `There are ${overlapHours} overlapping business hours (9 AM–5 PM) between ${fromCity.city} and ${toCity.city}. Schedule calls during that window for the best experience.`
+            : `There is no standard business-hour overlap between ${fromCity.city} and ${toCity.city}. Consider early morning or late evening calls, or use async communication.`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `Is ${toCity.city} ahead or behind ${fromCity.city}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: diffHours === 0
+            ? `${fromCity.city} and ${toCity.city} are at the same UTC offset.`
+            : `${toCity.city} is ${diffStr} ${direction} ${fromCity.city} (UTC${toOffset >= 0 ? '+' : ''}${toOffset} vs UTC${fromOffset >= 0 ? '+' : ''}${fromOffset}).`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `What time zone is ${fromCity.city} in?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `${fromCity.city} is in the ${fromCity.timezone.replace(/_/g, ' ')} time zone (UTC${fromOffset >= 0 ? '+' : ''}${fromOffset}).`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `What time zone is ${toCity.city} in?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `${toCity.city} is in the ${toCity.timezone.replace(/_/g, ' ')} time zone (UTC${toOffset >= 0 ? '+' : ''}${toOffset}).`,
+        },
+      },
+    ],
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://whattime.city/' },
+      { '@type': 'ListItem', position: 2, name: 'Time Difference', item: 'https://whattime.city/time/' },
+      { '@type': 'ListItem', position: 3, name: `${fromCity.city} to ${toCity.city}`, item: `https://whattime.city/time/${from}/${to}/` },
+    ],
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <TimeComparisonContent fromCity={fromCity} toCity={toCity} />
+    </>
+  )
 }
