@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import TimeConverterClient from './TimeConverterClient'
 
 export const metadata: Metadata = {
-  title: 'Time Zone Converter — Free, Instant, 400+ Cities',
-  description: 'Convert time between 400+ cities instantly. DST-aware and accurate. Pick two cities, enter a time, get the exact local equivalent — no sign-up needed.',
+  title: 'Time Zone Converter — Convert Any Time Between 400+ Cities',
+  description: 'Convert any time between 400+ cities instantly. What time is 3 PM EST in London? Pick two cities, enter a time, get the exact local equivalent — DST-aware, no sign-up needed.',
   alternates: {
     canonical: 'https://whattime.city/time-converter',
   },
@@ -86,6 +86,55 @@ const faqSchema = {
         text: 'GMT (Greenwich Mean Time, UTC+0) is 5 hours ahead of EST (UTC-5) during standard time, and 4 hours ahead during EDT (Eastern Daylight Time, UTC-4).',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'What time is it in India when it is 9 AM in London?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'When it is 9:00 AM in London (GMT), it is 2:30 PM IST in India (UTC+5:30). India Standard Time is always 5 hours 30 minutes ahead of GMT. During British Summer Time (BST, UTC+1), it is 1:30 PM IST when London shows 9:00 AM.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I convert London time to New York time?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'London (GMT, UTC+0) is 5 hours ahead of New York (EST, UTC-5) in winter, and 4 hours ahead in summer when New York uses EDT (UTC-4) and London uses BST (UTC+1). To convert: subtract 5 hours from London time in winter, or 4 hours in summer. Example: 3:00 PM GMT = 10:00 AM EST.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the time difference between Australia (Sydney) and the UK (London)?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sydney (AEST, UTC+10) is 10 hours ahead of London (GMT, UTC+0) in winter. During Australian summer (AEDT, UTC+11) and UK summer (BST, UTC+1), the difference is 10 hours. The gap can briefly be 9 or 11 hours during the weeks when only one country has changed its clocks.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I convert EST to CET (Central European Time)?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'CET (UTC+1) is 6 hours ahead of EST (UTC-5). To convert EST to CET, add 6 hours. Example: 9:00 AM EST = 3:00 PM CET. During US daylight saving (EDT, UTC-4), CET is 5 hours ahead. During European summer (CEST, UTC+2), CEST is 7 hours ahead of EST.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the time difference between IST (India) and PST (US Pacific)?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'IST (UTC+5:30) is 13 hours 30 minutes ahead of PST (UTC-8). During US Pacific Daylight Time (PDT, UTC-7), the difference is 12 hours 30 minutes. This corridor — India to US West Coast — is common for tech industry scheduling between Bengaluru/Mumbai and San Francisco/Seattle.',
+      },
+    },
+  ],
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://whattime.city/' },
+    { '@type': 'ListItem', position: 2, name: 'Time Zone Converter', item: 'https://whattime.city/time-converter/' },
   ],
 }
 
@@ -99,6 +148,10 @@ export default function TimeConverterPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <TimeConverterClient />
     </>
