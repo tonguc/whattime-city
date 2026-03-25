@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import { getCountryBySlug, getAllCountrySlugs, getCitiesByCountryCode } from '@/lib/cities'
+import { COUNTRY_HUB_SLUGS } from '@/data'
 import CountryPageWrapper from '@/components/CountryPageWrapper'
 import CountryPageContent from '@/components/CountryPageContent'
 
@@ -69,8 +70,15 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
 
 export default async function CountryPage({ params }: CountryPageProps) {
   const { country: slug } = await params
+
+  // Hub page varsa 301 redirect
+  const hubSlug = COUNTRY_HUB_SLUGS[slug]
+  if (hubSlug) {
+    redirect(`/${hubSlug}/`)
+  }
+
   const country = getCountryBySlug(slug)
-  
+
   if (!country) {
     notFound()
   }
