@@ -10,10 +10,10 @@ interface ContentPageWrapperProps {
 }
 
 export default function ContentPageWrapper({ children }: ContentPageWrapperProps) {
-  const { theme } = useCityContext()
+  const { theme, isLight } = useCityContext()
 
   return (
-    <div className={`min-h-screen flex flex-col bg-gradient-to-br ${theme.bg} transition-colors duration-1000`}>
+    <div className={`min-h-screen flex flex-col bg-gradient-to-br ${theme.bg} transition-colors duration-1000${!isLight ? ' dark' : ''}`}>
       <Header />
       <div className="flex-1 max-w-6xl mx-auto px-4 py-6 w-full">
         {children}

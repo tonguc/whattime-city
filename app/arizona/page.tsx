@@ -25,7 +25,7 @@ const faqSchema = {
 }
 
 const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://whattime.city/' }, { '@type': 'ListItem', position: 2, name: 'Time in Arizona', item: 'https://whattime.city/arizona/' }] }
-const card = 'rounded-2xl border border-slate-200 bg-white p-6'
+const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function ArizonaTimePage() {
   return (
@@ -33,10 +33,10 @@ export default function ArizonaTimePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in Arizona</h1>
-      <p className="text-sm text-slate-500 mb-6">Mountain Standard Time (MST) · UTC−7 · Year-round · No Daylight Saving Time · Navajo Nation exception</p>
+      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Mountain Standard Time (MST) · UTC−7 · Year-round · No Daylight Saving Time · Navajo Nation exception</p>
       <ArizonaClockClient />
       <section className="mt-4 mb-4"><div className={card}>
-        <h2 className="text-xl font-semibold text-slate-800 mb-4">Arizona vs Other US Time Zones — Winter vs Summer</h2>
+        <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Arizona vs Other US Time Zones — Winter vs Summer</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead><tr className="border-b border-slate-200"><th className="text-left py-2 pr-4 font-medium text-slate-600">State / Region</th><th className="text-left py-2 pr-4 font-medium text-slate-600">Winter offset vs Arizona</th><th className="text-left py-2 font-medium text-slate-600">Summer offset vs Arizona</th></tr></thead>
@@ -52,16 +52,16 @@ export default function ArizonaTimePage() {
         </div>
       </div></section>
       <section className="mb-4"><div className={card}>
-        <h2 className="text-xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
-        <div className="space-y-3">{faqSchema.mainEntity.map((item, i) => (<div key={i} className="rounded-xl border border-slate-100 bg-slate-50 p-4"><div className="font-medium text-slate-800 text-sm mb-1">{item.name}</div><div className="text-slate-600 text-sm leading-relaxed">{item.acceptedAnswer.text}</div></div>))}</div>
+        <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
+        <div className="space-y-3">{faqSchema.mainEntity.map((item, i) => (<div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4"><div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div><div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div></div>))}</div>
       </div></section>
       <section className="mb-4"><div className={card}>
-        <h2 className="text-xl font-semibold text-slate-800 mb-4">Arizona City Times & Converters</h2>
+        <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Arizona City Times & Converters</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-          {[{ label: 'Phoenix time', href: '/phoenix/' }, { label: 'Tucson time', href: '/tucson/' }, { label: 'Scottsdale time', href: '/scottsdale/' }, { label: 'Phoenix → Los Angeles', href: '/time/phoenix/los-angeles/' }, { label: 'Phoenix → New York', href: '/time/phoenix/new-york/' }, { label: 'Phoenix → Chicago', href: '/time/phoenix/chicago/' }, { label: 'Phoenix → London', href: '/time/phoenix/london/' }, { label: 'Time converter tool', href: '/time-converter/' }].map(lnk => (<Link key={lnk.href} href={lnk.href} className="px-3 py-2 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-colors text-center">{lnk.label}</Link>))}
+          {[{ label: 'Phoenix time', href: '/phoenix/' }, { label: 'Tucson time', href: '/tucson/' }, { label: 'Scottsdale time', href: '/scottsdale/' }, { label: 'Phoenix → Los Angeles', href: '/time/phoenix/los-angeles/' }, { label: 'Phoenix → New York', href: '/time/phoenix/new-york/' }, { label: 'Phoenix → Chicago', href: '/time/phoenix/chicago/' }, { label: 'Phoenix → London', href: '/time/phoenix/london/' }, { label: 'Time converter tool', href: '/time-converter/' }].map(lnk => (<Link key={lnk.href} href={lnk.href} className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center">{lnk.label}</Link>))}
         </div>
       </div></section>
-      <footer className="text-xs text-slate-400 text-center mt-2 mb-4">Time zone data powered by the IANA Time Zone Database. Arizona: America/Phoenix (MST UTC−7, no DST). Navajo Nation: America/Denver (MST/MDT).</footer>
+      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">Time zone data powered by the IANA Time Zone Database. Arizona: America/Phoenix (MST UTC−7, no DST). Navajo Nation: America/Denver (MST/MDT).</footer>
     </ContentPageWrapper>
   )
 }

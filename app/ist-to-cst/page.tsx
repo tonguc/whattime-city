@@ -73,7 +73,7 @@ export default function IstToCstPage() {
       <TZPairClient config={config} />
       <section className="mt-4 mb-4">
         <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 mb-4">IST vs CST — What You Need to Know</h2>
+          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">IST vs CST — What You Need to Know</h2>
           <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
             <p dangerouslySetInnerHTML={{ __html: '<strong>India Standard Time (IST)</strong> is UTC+5:30. India does not observe DST.' }} />
             <p dangerouslySetInnerHTML={{ __html: '<strong>Central Standard Time (CST)</strong> is UTC-6. CDT (UTC-5) is observed from March to November in states including Illinois, Texas, and Minnesota.' }} />
@@ -87,10 +87,10 @@ export default function IstToCstPage() {
       </section>
       <section className="mb-4">
         <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
+          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
           <div className="space-y-3">
             {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 bg-slate-50 p-4">
+              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
                 <h3 className="font-semibold text-slate-800 text-sm mb-1">{item.name}</h3>
                 <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
               </div>

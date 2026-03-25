@@ -74,7 +74,7 @@ const breadcrumbSchema = {
   ],
 }
 
-const card = 'rounded-2xl border border-slate-200 bg-white p-6'
+const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function SouthKoreaTimePage() {
   return (
@@ -85,7 +85,7 @@ export default function SouthKoreaTimePage() {
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">
         Current Time in South Korea
       </h1>
-      <p className="text-sm text-slate-500 mb-6">
+      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
         Korea Standard Time (KST) · UTC+9 · No Daylight Saving Time · Same as Japan (JST)
       </p>
 
@@ -94,7 +94,7 @@ export default function SouthKoreaTimePage() {
 
       <section className="mt-4 mb-4">
         <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 mb-4">South Korea Time Zone — KST Explained</h2>
+          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">South Korea Time Zone — KST Explained</h2>
           <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
             <p>
               South Korea uses <strong>Korea Standard Time (KST, UTC+9)</strong>, fixed year-round.
@@ -126,12 +126,12 @@ export default function SouthKoreaTimePage() {
 
       <section className="mb-4">
         <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
+          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
           <div className="space-y-3">
             {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 bg-slate-50 p-4">
-                <div className="font-medium text-slate-800 text-sm mb-1">{item.name}</div>
-                <div className="text-slate-600 text-sm leading-relaxed">{item.acceptedAnswer.text}</div>
+              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
+                <div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div>
+                <div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div>
               </div>
             ))}
           </div>
@@ -140,7 +140,7 @@ export default function SouthKoreaTimePage() {
 
       <section className="mb-4">
         <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 mb-4">South Korea City Times & Converters</h2>
+          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">South Korea City Times & Converters</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
             {[
               { label: 'Seoul time', href: '/seoul/' },
@@ -154,7 +154,7 @@ export default function SouthKoreaTimePage() {
               { label: 'Time converter tool', href: '/time-converter/' },
             ].map(lnk => (
               <Link key={lnk.href} href={lnk.href}
-                className="px-3 py-2 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-colors text-center">
+                className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center">
                 {lnk.label}
               </Link>
             ))}
@@ -162,7 +162,7 @@ export default function SouthKoreaTimePage() {
         </div>
       </section>
 
-      <footer className="text-xs text-slate-400 text-center mt-2 mb-4">
+      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">
         Time zone data powered by the IANA Time Zone Database. South Korea: Asia/Seoul (KST, UTC+9). No DST.
       </footer>
     </ContentPageWrapper>

@@ -81,7 +81,7 @@ export default function IstToGmtPage() {
       <TZPairClient config={config} />
       <section className="mt-4 mb-4">
         <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 mb-4">IST vs GMT — What You Need to Know</h2>
+          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">IST vs GMT — What You Need to Know</h2>
           <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
             <p dangerouslySetInnerHTML={{ __html: "<strong>India Standard Time (IST)</strong> is UTC+5:30. India does not observe DST, making IST one of the world's most consistent time zones." }} />
             <p dangerouslySetInnerHTML={{ __html: '<strong>Greenwich Mean Time (GMT)</strong> is UTC+0. The UK observes British Summer Time (BST, UTC+1) from late March to late October.' }} />
@@ -95,10 +95,10 @@ export default function IstToGmtPage() {
       </section>
       <section className="mb-4">
         <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
+          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
           <div className="space-y-3">
             {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 bg-slate-50 p-4">
+              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
                 <h3 className="font-semibold text-slate-800 text-sm mb-1">{item.name}</h3>
                 <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
               </div>
