@@ -1,0 +1,158 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import ContentPageWrapper from '@/components/ContentPageWrapper'
+import MichiganClockClient from './MichiganClockClient'
+
+export const metadata: Metadata = {
+  title: 'Time in Michigan Now — EST/EDT (UTC−5/−4) · Detroit, Grand Rapids · Upper Peninsula CST',
+  description:
+    'What time is it in Michigan right now? Most of Michigan uses Eastern Time (EST/EDT). Four western Upper Peninsula counties use Central Time (CST/CDT). Live Detroit clock, Michigan vs world cities, and best time to call.',
+  keywords: [
+    'time in michigan', 'michigan time now', 'what time is it in michigan',
+    'detroit time', 'michigan time zone', 'EST michigan', 'EDT michigan',
+    'eastern time michigan', 'michigan utc-5', 'grand rapids time',
+    'michigan upper peninsula time zone', 'michigan two time zones',
+    'michigan time vs california', 'michigan time vs chicago', 'michigan time vs london',
+    'current time detroit', 'michigan CST counties',
+  ],
+  alternates: { canonical: 'https://whattime.city/michigan/' },
+  openGraph: {
+    title: 'Current Time in Michigan — EST/EDT (UTC−5/−4) · UP western counties on CST',
+    description: 'Live Michigan time. Most of Michigan uses EST/EDT (Eastern Time). Four western Upper Peninsula counties use CST/CDT (Central Time). Detroit, Grand Rapids, Lansing on Eastern Time.',
+    type: 'website', url: 'https://whattime.city/michigan/', siteName: 'whattime.city',
+  },
+}
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What time is it in Michigan right now?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Most of Michigan uses Eastern Time — EST (UTC−5) in winter and EDT (UTC−4) during Daylight Saving Time. This includes Detroit, Grand Rapids, Lansing, Ann Arbor, Flint, and most of the Upper Peninsula. However, four counties in the western Upper Peninsula — Iron, Gogebic, Menominee, and Dickinson — use Central Time (CST/CDT), which is 1 hour behind the rest of Michigan.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Michigan have two time zones?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Michigan has two time zones. The Lower Peninsula and most of the Upper Peninsula use Eastern Time (EST/EDT). Four western Upper Peninsula counties — Iron, Gogebic, Menominee, and Dickinson — use Central Time (CST/CDT) because they are geographically and economically tied to Wisconsin, which uses Central Time. This makes Michigan one of a small number of US states split between two time zones.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the time difference between Michigan and California?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Detroit (Eastern Time) is always 3 hours ahead of Los Angeles (Pacific Time). When it is 9:00 AM in Los Angeles, it is 12:00 PM in Detroit. Both states switch to Daylight Saving Time on the same dates, so the 3-hour gap is constant year-round.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the time difference between Michigan and Chicago?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Detroit (Eastern Time) is always 1 hour ahead of Chicago (Central Time). When it is 9:00 AM in Chicago, it is 10:00 AM in Detroit. Note that the four western Upper Peninsula counties of Michigan are on Central Time — the same as Chicago — so there is no time difference between those counties and Illinois.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Michigan observe Daylight Saving Time?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. All of Michigan observes Daylight Saving Time. The Lower Peninsula and most of the Upper Peninsula switch between EST and EDT. The four western UP counties switch between CST and CDT. All clock changes happen on the same federal dates: second Sunday of March (spring forward) and first Sunday of November (fall back).' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What time zone is Detroit in?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Detroit uses Eastern Time — EST (UTC−5) in winter and EDT (UTC−4) during Daylight Saving Time. The IANA identifier is America/Detroit. Detroit is in the same time zone as New York, Philadelphia, and Miami. Detroit sits near the border with Canada (Windsor, Ontario), which also uses Eastern Time.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the time difference between Michigan and London?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Detroit (EST, UTC−5) is 5 hours behind London (GMT, UTC+0) in winter. During both US and UK Daylight Saving Time, Detroit (EDT, UTC−4) is typically 5–6 hours behind London (BST, UTC+1), with minor variation during the spring and autumn transition periods when the two countries change clocks on slightly different dates.' },
+    },
+  ],
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://whattime.city/' },
+    { '@type': 'ListItem', position: 2, name: 'Time in Michigan', item: 'https://whattime.city/michigan/' },
+  ],
+}
+
+const card = 'rounded-2xl border border-slate-200 bg-white p-6'
+
+export default function MichiganTimePage() {
+  return (
+    <ContentPageWrapper>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in Michigan</h1>
+      <p className="text-sm text-slate-500 mb-6">Eastern Time (ET) · EST (UTC−5) in winter · EDT (UTC−4) during DST · W. Upper Peninsula counties use CST/CDT</p>
+      <MichiganClockClient />
+      <section className="mt-4 mb-4">
+        <div className={card}>
+          <h2 className="text-xl font-semibold text-slate-800 mb-4">Michigan Time Zones</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-slate-200">
+                  <th className="text-left py-2 pr-4 font-medium text-slate-600">Region</th>
+                  <th className="text-left py-2 pr-4 font-medium text-slate-600">Winter</th>
+                  <th className="text-left py-2 pr-4 font-medium text-slate-600">Summer</th>
+                  <th className="text-left py-2 font-medium text-slate-600">Cities / Counties</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                {[
+                  { region: 'Lower Peninsula + most of UP', winter: 'EST (UTC−5)', summer: 'EDT (UTC−4)', cities: 'Detroit, Grand Rapids, Lansing, Ann Arbor, Flint, Marquette' },
+                  { region: 'Western Upper Peninsula', winter: 'CST (UTC−6)', summer: 'CDT (UTC−5)', cities: 'Iron, Gogebic, Menominee, Dickinson counties (e.g. Iron Mountain, Ironwood)' },
+                ].map(row => (
+                  <tr key={row.region}>
+                    <td className="py-2 pr-4 font-medium text-slate-700">{row.region}</td>
+                    <td className="py-2 pr-4 text-slate-500">{row.winter}</td>
+                    <td className="py-2 pr-4 text-slate-500">{row.summer}</td>
+                    <td className="py-2 text-slate-700">{row.cities}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section className="mb-4">
+        <div className={card}>
+          <h2 className="text-xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
+          <div className="space-y-3">
+            {faqSchema.mainEntity.map((item, i) => (
+              <div key={i} className="rounded-xl border border-slate-100 bg-slate-50 p-4">
+                <div className="font-medium text-slate-800 text-sm mb-1">{item.name}</div>
+                <div className="text-slate-600 text-sm leading-relaxed">{item.acceptedAnswer.text}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="mb-4">
+        <div className={card}>
+          <h2 className="text-xl font-semibold text-slate-800 mb-4">Michigan City Times & Converters</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
+            {[
+              { label: 'Detroit time', href: '/detroit/' },
+              { label: 'Grand Rapids time', href: '/grand-rapids/' },
+              { label: 'Lansing time', href: '/lansing/' },
+              { label: 'Detroit → Chicago', href: '/time/detroit/chicago/' },
+              { label: 'Detroit → Los Angeles', href: '/time/detroit/los-angeles/' },
+              { label: 'Detroit → London', href: '/time/detroit/london/' },
+              { label: 'Detroit → Toronto', href: '/time/detroit/toronto/' },
+              { label: 'Detroit → Tokyo', href: '/time/detroit/tokyo/' },
+              { label: 'Time converter tool', href: '/time-converter/' },
+            ].map(lnk => (
+              <Link key={lnk.href} href={lnk.href}
+                className="px-3 py-2 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-colors text-center">
+                {lnk.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+      <footer className="text-xs text-slate-400 text-center mt-2 mb-4">
+        Time zone data powered by the IANA Time Zone Database. Michigan: America/Detroit (EST/EDT) · America/Menominee (CST/CDT, western UP counties).
+      </footer>
+    </ContentPageWrapper>
+  )
+}
