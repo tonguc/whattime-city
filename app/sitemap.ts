@@ -45,6 +45,11 @@ export default async function sitemap() {
     { slug: 'meeting', priority: 0.8 },
     { slug: 'india', priority: 0.9 },
     { slug: 'daylight-saving-time', priority: 0.8 },
+    // DST cluster subpages
+    { slug: 'daylight-saving-time/usa', priority: 0.8 },
+    { slug: 'daylight-saving-time/uk', priority: 0.8 },
+    { slug: 'daylight-saving-time/europe', priority: 0.8 },
+    { slug: 'daylight-saving-time/australia', priority: 0.8 },
     // Timezone pair pages — high-volume abbreviation queries
     { slug: 'pst-to-est', priority: 0.8 },
     { slug: 'gmt-to-est', priority: 0.8 },
@@ -53,6 +58,12 @@ export default async function sitemap() {
     { slug: 'ist-to-est', priority: 0.8 },
     { slug: 'est-to-gmt', priority: 0.8 },
     { slug: 'cst-to-pst', priority: 0.8 },
+    // New TZ pairs — India corridor + Asia/Pacific
+    { slug: 'ist-to-pst', priority: 0.8 },
+    { slug: 'ist-to-cst', priority: 0.8 },
+    { slug: 'ist-to-gmt', priority: 0.8 },
+    { slug: 'jst-to-est', priority: 0.7 },
+    { slug: 'aest-to-est', priority: 0.7 },
     { slug: 'military-time', priority: 0.8 },
     { slug: 'flight-time', priority: 0.7 },
     { slug: 'jet-lag-advisor', priority: 0.7 },
