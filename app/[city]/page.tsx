@@ -47,34 +47,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ? `What time is it in ${city.city}? Check current local time, sunrise & sunset. Population: ${info.population}. Currency: ${info.currency} (${info.currencySymbol}). Phone: ${info.phoneCode}. Top attractions: ${info.attractions.slice(0, 3).join(', ')}.`
     : `What time is it in ${city.city} right now? Check current local time, sunrise at, sunset times, and weather in ${city.city}, ${city.country}. Timezone: ${city.timezone}.`)
   
-  const keywords = [
-    `time in ${city.city}`,
-    `${city.city} time now`,
-    `what time is it in ${city.city}`,
-    `${city.city} current time`,
-    `${city.city} local time`,
-    `${city.city} timezone`,
-    `${city.city} sunrise sunset`,
-    `${city.country} time`,
-    `${city.timezone}`
-  ]
-  
-  // Add rich keywords if info exists
-  if (info) {
-    keywords.push(
-      `${city.city} population`,
-      `${city.city} currency`,
-      `${city.city} phone code`,
-      `things to do in ${city.city}`,
-      `${city.city} attractions`,
-      `${city.city} weather`
-    )
-  }
-  
   return {
     title,
     description,
-    keywords,
     openGraph: {
       title: `Current Time in ${city.city} - What Time Is It Now?`,
       description: info 
