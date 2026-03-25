@@ -74,9 +74,10 @@ export default function ESTtoGMTPage() {
           Eastern Standard Time → Greenwich Mean Time · EST is <strong>5 hours behind</strong> GMT
         </p>
         <TZPairClient config={config} />
-        <section className="mt-8 mb-6">
+        <section className="mt-4 mb-4">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6">
             <h2 className="text-xl font-semibold text-slate-800 mb-4">EST vs GMT — What You Need to Know</h2>
-          <div className="space-y-4 text-slate-600">
+            <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
             <p>
               <strong className="text-slate-700">EST (UTC-5)</strong> is the US East Coast in winter.
               Summer: <strong>EDT (UTC-4)</strong>.
@@ -95,9 +96,11 @@ export default function ESTtoGMTPage() {
                 <li>After Nov 1: EST vs GMT → <strong>5h</strong></li>
               </ul>
             </div>
+            </div>
           </div>
         </section>
-        <section className="mb-8">
+        <section className="mb-4">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6">
             <h2 className="text-xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
             <div className="space-y-3">
             {faqSchema.mainEntity.map((item, i) => (

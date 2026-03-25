@@ -90,9 +90,10 @@ export default function ISTtoESTPage() {
           India Standard Time → Eastern Standard Time · IST is <strong>10.5 hours ahead</strong> of EST
         </p>
         <TZPairClient config={config} />
-        <section className="mt-8 mb-6">
+        <section className="mt-4 mb-4">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6">
             <h2 className="text-xl font-semibold text-slate-800 mb-4">IST vs EST — What You Need to Know</h2>
-          <div className="space-y-4 text-slate-600">
+            <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
             <p>
               <strong className="text-slate-700">India Standard Time (IST)</strong> is UTC+5:30 — a half-hour offset that applies uniformly
               across all of India. India does not observe DST. IST is used in Mumbai, Delhi, Bangalore, and every other Indian city.
@@ -112,9 +113,11 @@ export default function ISTtoESTPage() {
                 India stays at UTC+5:30 year-round, so the overlap window shifts by 1 hour during US summer.
               </p>
             </div>
+            </div>
           </div>
         </section>
-        <section className="mb-8">
+        <section className="mb-4">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6">
             <h2 className="text-xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
             <div className="space-y-3">
             {faqSchema.mainEntity.map((item, i) => (

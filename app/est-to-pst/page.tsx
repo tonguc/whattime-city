@@ -82,9 +82,10 @@ export default function ESTtoPSTPage() {
           Eastern Standard Time → Pacific Standard Time · EST is <strong>3 hours ahead</strong> of PST
         </p>
         <TZPairClient config={config} />
-        <section className="mt-8 mb-6">
+        <section className="mt-4 mb-4">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6">
             <h2 className="text-xl font-semibold text-slate-800 mb-4">EST vs PST — What You Need to Know</h2>
-          <div className="space-y-4 text-slate-600">
+            <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
             <p>
               <strong className="text-slate-700">Eastern Standard Time (EST)</strong> is UTC-5, covering the US East Coast.
               During summer it becomes <strong>EDT (UTC-4)</strong>.
@@ -97,9 +98,11 @@ export default function ESTtoPSTPage() {
               The gap is always <strong>3 hours</strong>. A common pain point: East Coast teams finishing at 5 PM EST
               leave the West Coast only until 2 PM PST for same-day collaboration.
             </p>
+            </div>
           </div>
         </section>
-        <section className="mb-8">
+        <section className="mb-4">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6">
             <h2 className="text-xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
             <div className="space-y-3">
             {faqSchema.mainEntity.map((item, i) => (
