@@ -68,6 +68,10 @@ export default async function sitemap() {
     { slug: 'egypt', priority: 0.9 },
     { slug: 'illinois', priority: 0.9 },
     { slug: 'washington-state', priority: 0.9 },
+    { slug: 'vietnam', priority: 0.9 },
+    { slug: 'russia', priority: 0.9 },
+    { slug: 'netherlands', priority: 0.9 },
+    { slug: 'spain', priority: 0.9 },
     { slug: 'daylight-saving-time', priority: 0.8 },
     // DST cluster subpages
     { slug: 'daylight-saving-time/usa', priority: 0.8 },
