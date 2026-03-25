@@ -131,11 +131,12 @@ export default function MilitaryTimePage() {
         <MilitaryTimeClient />
 
         {/* Full Chart */}
-        <section className="mt-8 mb-6">
-          <h2 className="text-2xl font-semibold text-slate-800 mb-3">
-            Military Time Chart — 0000 to 2359
-          </h2>
-          <div className="rounded-xl border border-slate-200 overflow-hidden">
+        <section className="mt-4 mb-4">
+          <div className="rounded-2xl border border-slate-200 bg-white overflow-hidden">
+          <div className="px-6 pt-6 pb-4 border-b border-slate-100">
+            <h2 className="text-xl font-semibold text-slate-800">Military Time Chart — 0000 to 2359</h2>
+          </div>
+          <div className="overflow-hidden">
             <table className="w-full text-sm">
               <thead className="bg-slate-50">
                 <tr>
@@ -155,13 +156,13 @@ export default function MilitaryTimePage() {
               </tbody>
             </table>
           </div>
+          </div>
         </section>
 
         {/* How to convert */}
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold text-slate-800 mb-3">
-            How to Convert Military Time
-          </h2>
+        <section className="mb-4">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6">
+          <h2 className="text-xl font-semibold text-slate-800 mb-4">How to Convert Military Time</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="rounded-xl border border-emerald-200 p-4 bg-emerald-50">
               <h3 className="font-semibold text-emerald-700 mb-2">Military → Standard</h3>
@@ -188,13 +189,13 @@ export default function MilitaryTimePage() {
               </div>
             </div>
           </div>
+          </div>
         </section>
 
         {/* Quick reference */}
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold text-slate-800 mb-3">
-            Quick Reference — Common Times
-          </h2>
+        <section className="mb-4">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6">
+          <h2 className="text-xl font-semibold text-slate-800 mb-4">Quick Reference — Common Times</h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
             {[
               { mil: '0000', std: '12:00 AM' },
@@ -216,26 +217,28 @@ export default function MilitaryTimePage() {
               </div>
             ))}
           </div>
+          </div>
         </section>
 
         {/* FAQ */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-slate-800 mb-4">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-4">
+        <section className="mb-4">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6">
+          <h2 className="text-xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
+          <div className="space-y-3">
             {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-2xl border border-slate-100 p-4 bg-slate-50">
-                <h3 className="font-semibold text-slate-800 mb-2">{item.name}</h3>
+              <div key={i} className="rounded-xl border border-slate-100 bg-slate-50 p-4">
+                <h3 className="font-semibold text-slate-800 text-sm mb-1">{item.name}</h3>
                 <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
               </div>
             ))}
           </div>
+          </div>
         </section>
 
         {/* Related Tools */}
-        <section className="mb-8">
-          <h2 className="text-xl font-semibold text-slate-800 mb-3">Related Tools</h2>
+        <section className="mb-4">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6">
+          <h2 className="text-xl font-semibold text-slate-800 mb-4">Related Tools</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {[
               { href: '/time-converter', title: 'Time Converter', desc: 'Convert between any two cities' },
@@ -251,6 +254,7 @@ export default function MilitaryTimePage() {
                 <div className="text-xs text-slate-500 mt-1">{desc}</div>
               </a>
             ))}
+          </div>
           </div>
         </section>
 

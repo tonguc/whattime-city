@@ -75,7 +75,7 @@ export default function ESTtoGMTPage() {
         </p>
         <TZPairClient config={config} />
         <section className="mt-8 mb-6">
-          <h2 className="text-2xl font-semibold text-slate-800 mb-3">EST vs GMT — What You Need to Know</h2>
+            <h2 className="text-xl font-semibold text-slate-800 mb-4">EST vs GMT — What You Need to Know</h2>
           <div className="space-y-4 text-slate-600">
             <p>
               <strong className="text-slate-700">EST (UTC-5)</strong> is the US East Coast in winter.
@@ -98,14 +98,15 @@ export default function ESTtoGMTPage() {
           </div>
         </section>
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-4">
+            <h2 className="text-xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
+            <div className="space-y-3">
             {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-2xl border border-slate-100 p-4 bg-slate-50">
-                <h3 className="font-semibold text-slate-800 mb-2">{item.name}</h3>
+              <div key={i} className="rounded-xl border border-slate-100 bg-slate-50 p-4">
+                <h3 className="font-semibold text-slate-800 text-sm mb-1">{item.name}</h3>
                 <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
               </div>
             ))}
+            </div>
           </div>
         </section>
         <footer className="rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500">

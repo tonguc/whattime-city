@@ -106,11 +106,12 @@ export default function PSTtoESTPage() {
         <TZPairClient config={config} />
 
         {/* Explainer */}
-        <section className="mt-8 mb-6">
-          <h2 className="text-2xl font-semibold text-slate-800 mb-3">
+        <section className="mt-4 mb-4">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6">
+            <h2 className="text-xl font-semibold text-slate-800 mb-4">
             PST vs EST — What You Need to Know
-          </h2>
-          <div className="space-y-4 text-slate-600">
+            </h2>
+            <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
             <p>
               <strong className="text-slate-700">Pacific Standard Time (PST)</strong> is UTC-8.
               It covers the US West Coast, including California, Washington, Oregon, and Nevada.
@@ -125,21 +126,22 @@ export default function PSTtoESTPage() {
               The difference is always <strong>3 hours</strong> — when it&apos;s 9 AM in Los Angeles, it&apos;s noon in New York.
               Because both zones observe DST on the same dates, the gap never changes to 2 or 4 hours.
             </p>
+            </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-slate-800 mb-4">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-4">
+        <section className="mb-4">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6">
+            <h2 className="text-xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
+            <div className="space-y-3">
             {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-2xl border border-slate-100 p-4 bg-slate-50">
-                <h3 className="font-semibold text-slate-800 mb-2">{item.name}</h3>
+              <div key={i} className="rounded-xl border border-slate-100 bg-slate-50 p-4">
+                <h3 className="font-semibold text-slate-800 text-sm mb-1">{item.name}</h3>
                 <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
               </div>
             ))}
+            </div>
           </div>
         </section>
 

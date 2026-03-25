@@ -333,21 +333,24 @@ export default async function AreaCodePage({ params }: Props) {
         </section>
 
         {/* FAQ */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-2xl border border-slate-100 p-4 bg-slate-50">
-                <h3 className="font-semibold text-slate-800 mb-2">{item.name}</h3>
-                <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
-              </div>
-            ))}
+        <section className="mb-4">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6">
+            <h2 className="text-xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              {faqSchema.mainEntity.map((item, i) => (
+                <div key={i} className="rounded-xl border border-slate-100 bg-slate-50 p-4">
+                  <h3 className="font-semibold text-slate-800 text-sm mb-1">{item.name}</h3>
+                  <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* Other area codes */}
-        <section className="mb-8">
-          <h2 className="text-xl font-semibold text-slate-800 mb-3">Other Area Codes</h2>
+        <section className="mb-4">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6">
+          <h2 className="text-xl font-semibold text-slate-800 mb-4">Other Area Codes</h2>
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
             {Object.values(areaCodes)
               .filter(d => d.code !== data.code)
@@ -361,6 +364,7 @@ export default async function AreaCodePage({ params }: Props) {
                   <div className="text-xs text-slate-500 mt-0.5">{d.city}, {d.stateCode}</div>
                 </Link>
               ))}
+          </div>
           </div>
         </section>
 

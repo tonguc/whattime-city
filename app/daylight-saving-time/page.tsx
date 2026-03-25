@@ -22,53 +22,14 @@ export const metadata: Metadata = {
   },
 }
 
-// DST data for 2026
 const dstData = {
   northAmerica: {
-    region: 'United States & Canada',
-    springForward: 'March 8, 2026',
-    fallBack: 'November 1, 2026',
     rule: 'Second Sunday in March → First Sunday in November',
-    change: '+1 hour (clocks spring forward at 2:00 AM)',
     exceptions: 'Arizona (except Navajo Nation), Hawaii, Puerto Rico, US territories do not observe DST.',
   },
   europe: {
-    region: 'European Union & UK',
-    springForward: 'March 29, 2026',
-    fallBack: 'October 25, 2026',
     rule: 'Last Sunday in March → Last Sunday in October',
-    change: '+1 hour (clocks spring forward at 1:00 AM UTC)',
     notes: 'UK follows the same dates as EU post-Brexit. EU has been considering abolishing DST since 2019 but no final decision has been made.',
-  },
-  australia: {
-    region: 'Australia (DST states)',
-    springForward: 'October 4, 2026',
-    fallBack: 'April 5, 2026',
-    rule: 'First Sunday in October → First Sunday in April (Southern Hemisphere — reversed)',
-    change: '+1 hour',
-    exceptions: 'Queensland, Western Australia, Northern Territory, and most of South Australia do not observe DST.',
-  },
-  newZealand: {
-    region: 'New Zealand',
-    springForward: 'September 27, 2026',
-    fallBack: 'April 5, 2026',
-    rule: 'Last Sunday in September → First Sunday in April',
-    change: '+1 hour',
-  },
-  mexico: {
-    region: 'Mexico',
-    springForward: 'April 5, 2026',
-    fallBack: 'October 25, 2026',
-    rule: 'First Sunday in April → Last Sunday in October',
-    change: '+1 hour',
-    exceptions: 'Sonora, most of Quintana Roo, and some border regions do not observe DST.',
-  },
-  chile: {
-    region: 'Chile',
-    springForward: 'September 6, 2026',
-    fallBack: 'April 5, 2026',
-    rule: 'First Saturday in September (midnight) → First Saturday in April (midnight)',
-    change: '+1 hour',
   },
 }
 
@@ -177,6 +138,8 @@ const articleSchema = {
   },
 }
 
+const card = 'rounded-2xl border border-slate-200 bg-white'
+
 export default function DaylightSavingTimePage() {
   return (
     <ContentPageWrapper>
@@ -189,132 +152,131 @@ export default function DaylightSavingTimePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      <div>
+      {/* Page Hero */}
+      <div className="mb-6">
         <h1 className="text-3xl sm:text-4xl font-bold mb-3 text-slate-800">
           Daylight Saving Time 2026
         </h1>
-        <p className="text-lg text-slate-600 mb-8">
+        <p className="text-lg text-slate-600">
           Exact dates for when clocks change in 2026 — United States, UK, Europe, Australia, and every other region.
         </p>
+      </div>
 
-        {/* Quick Reference Table */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-slate-800">
-            2026 DST Dates at a Glance
-          </h2>
-          <div className="overflow-x-auto rounded-xl border border-slate-200">
+      {/* Quick Reference Table */}
+      <section className="mb-4">
+        <div className={`${card} overflow-hidden`}>
+          <div className="px-6 pt-6 pb-4 border-b border-slate-100">
+            <h2 className="text-xl font-semibold text-slate-800">2026 DST Dates at a Glance</h2>
+          </div>
+          <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead className="bg-slate-50">
                 <tr>
-                  <th className="text-left px-4 py-3 text-slate-700 font-semibold">Region</th>
-                  <th className="text-left px-4 py-3 text-slate-700 font-semibold">Clocks Forward</th>
-                  <th className="text-left px-4 py-3 text-slate-700 font-semibold">Clocks Back</th>
+                  <th className="text-left px-6 py-3 text-slate-700 font-semibold">Region</th>
+                  <th className="text-left px-6 py-3 text-slate-700 font-semibold">Clocks Forward</th>
+                  <th className="text-left px-6 py-3 text-slate-700 font-semibold">Clocks Back</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-200">
-                <tr className="bg-white">
-                  <td className="px-4 py-3 text-slate-700 font-medium">United States & Canada</td>
-                  <td className="px-4 py-3 text-emerald-600 font-medium">March 8, 2026</td>
-                  <td className="px-4 py-3 text-amber-600 font-medium">November 1, 2026</td>
+              <tbody className="divide-y divide-slate-100">
+                <tr>
+                  <td className="px-6 py-3 text-slate-700 font-medium">United States & Canada</td>
+                  <td className="px-6 py-3 text-emerald-600 font-medium">March 8, 2026</td>
+                  <td className="px-6 py-3 text-amber-600 font-medium">November 1, 2026</td>
                 </tr>
                 <tr className="bg-slate-50/50">
-                  <td className="px-4 py-3 text-slate-700 font-medium">European Union & UK</td>
-                  <td className="px-4 py-3 text-emerald-600 font-medium">March 29, 2026</td>
-                  <td className="px-4 py-3 text-amber-600 font-medium">October 25, 2026</td>
+                  <td className="px-6 py-3 text-slate-700 font-medium">European Union & UK</td>
+                  <td className="px-6 py-3 text-emerald-600 font-medium">March 29, 2026</td>
+                  <td className="px-6 py-3 text-amber-600 font-medium">October 25, 2026</td>
                 </tr>
-                <tr className="bg-white">
-                  <td className="px-4 py-3 text-slate-700 font-medium">Australia (DST states)</td>
-                  <td className="px-4 py-3 text-emerald-600 font-medium">October 4, 2026</td>
-                  <td className="px-4 py-3 text-amber-600 font-medium">April 5, 2026</td>
-                </tr>
-                <tr className="bg-slate-50/50">
-                  <td className="px-4 py-3 text-slate-700 font-medium">New Zealand</td>
-                  <td className="px-4 py-3 text-emerald-600 font-medium">September 27, 2026</td>
-                  <td className="px-4 py-3 text-amber-600 font-medium">April 5, 2026</td>
-                </tr>
-                <tr className="bg-white">
-                  <td className="px-4 py-3 text-slate-700 font-medium">Mexico</td>
-                  <td className="px-4 py-3 text-emerald-600 font-medium">April 5, 2026</td>
-                  <td className="px-4 py-3 text-amber-600 font-medium">October 25, 2026</td>
+                <tr>
+                  <td className="px-6 py-3 text-slate-700 font-medium">Australia (DST states)</td>
+                  <td className="px-6 py-3 text-emerald-600 font-medium">October 4, 2026</td>
+                  <td className="px-6 py-3 text-amber-600 font-medium">April 5, 2026</td>
                 </tr>
                 <tr className="bg-slate-50/50">
-                  <td className="px-4 py-3 text-slate-700 font-medium">Chile</td>
-                  <td className="px-4 py-3 text-emerald-600 font-medium">September 6, 2026</td>
-                  <td className="px-4 py-3 text-amber-600 font-medium">April 5, 2026</td>
+                  <td className="px-6 py-3 text-slate-700 font-medium">New Zealand</td>
+                  <td className="px-6 py-3 text-emerald-600 font-medium">September 27, 2026</td>
+                  <td className="px-6 py-3 text-amber-600 font-medium">April 5, 2026</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-3 text-slate-700 font-medium">Mexico</td>
+                  <td className="px-6 py-3 text-emerald-600 font-medium">April 5, 2026</td>
+                  <td className="px-6 py-3 text-amber-600 font-medium">October 25, 2026</td>
+                </tr>
+                <tr className="bg-slate-50/50">
+                  <td className="px-6 py-3 text-slate-700 font-medium">Chile</td>
+                  <td className="px-6 py-3 text-emerald-600 font-medium">September 6, 2026</td>
+                  <td className="px-6 py-3 text-amber-600 font-medium">April 5, 2026</td>
                 </tr>
               </tbody>
             </table>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* US & Canada */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-3 text-slate-800">
-            United States & Canada — DST 2026
-          </h2>
-          <div className="rounded-xl border border-slate-200 p-5 bg-white">
-            <div className="grid sm:grid-cols-2 gap-4 mb-4">
-              <div className="p-4 rounded-lg bg-emerald-50 border border-emerald-200">
-                <div className="text-xs font-medium text-emerald-600 uppercase tracking-wide mb-1">Spring Forward</div>
-                <div className="text-xl font-bold text-slate-800">March 8, 2026</div>
-                <div className="text-sm text-slate-600 mt-1">2:00 AM → 3:00 AM</div>
-              </div>
-              <div className="p-4 rounded-lg bg-amber-50 border border-amber-200">
-                <div className="text-xs font-medium text-amber-600 uppercase tracking-wide mb-1">Fall Back</div>
-                <div className="text-xl font-bold text-slate-800">November 1, 2026</div>
-                <div className="text-sm text-slate-600 mt-1">2:00 AM → 1:00 AM</div>
-              </div>
+      {/* US & Canada */}
+      <section className="mb-4">
+        <div className={`${card} p-6`}>
+          <h2 className="text-xl font-semibold mb-4 text-slate-800">United States & Canada — DST 2026</h2>
+          <div className="grid sm:grid-cols-2 gap-4 mb-4">
+            <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200">
+              <div className="text-xs font-medium text-emerald-600 uppercase tracking-wide mb-1">Spring Forward</div>
+              <div className="text-xl font-bold text-slate-800">March 8, 2026</div>
+              <div className="text-sm text-slate-600 mt-1">2:00 AM → 3:00 AM</div>
             </div>
-            <p className="text-sm text-slate-600">
-              <strong className="text-slate-700">Rule:</strong> {dstData.northAmerica.rule}
-            </p>
-            <p className="text-sm text-slate-600 mt-2">
-              <strong className="text-slate-700">Exceptions:</strong> {dstData.northAmerica.exceptions}
-            </p>
-          </div>
-        </section>
-
-        {/* UK & Europe */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-3 text-slate-800">
-            United Kingdom & Europe — DST 2026
-          </h2>
-          <div className="rounded-xl border border-slate-200 p-5 bg-white">
-            <div className="grid sm:grid-cols-2 gap-4 mb-4">
-              <div className="p-4 rounded-lg bg-emerald-50 border border-emerald-200">
-                <div className="text-xs font-medium text-emerald-600 uppercase tracking-wide mb-1">Spring Forward (BST / CEST begins)</div>
-                <div className="text-xl font-bold text-slate-800">March 29, 2026</div>
-                <div className="text-sm text-slate-600 mt-1">1:00 AM UTC → 2:00 AM UTC</div>
-              </div>
-              <div className="p-4 rounded-lg bg-amber-50 border border-amber-200">
-                <div className="text-xs font-medium text-amber-600 uppercase tracking-wide mb-1">Fall Back (GMT / CET resumes)</div>
-                <div className="text-xl font-bold text-slate-800">October 25, 2026</div>
-                <div className="text-sm text-slate-600 mt-1">2:00 AM UTC → 1:00 AM UTC</div>
-              </div>
+            <div className="p-4 rounded-xl bg-amber-50 border border-amber-200">
+              <div className="text-xs font-medium text-amber-600 uppercase tracking-wide mb-1">Fall Back</div>
+              <div className="text-xl font-bold text-slate-800">November 1, 2026</div>
+              <div className="text-sm text-slate-600 mt-1">2:00 AM → 1:00 AM</div>
             </div>
-            <p className="text-sm text-slate-600">
-              <strong className="text-slate-700">Rule:</strong> {dstData.europe.rule}
-            </p>
-            <p className="text-sm text-slate-600 mt-2">
-              <strong className="text-slate-700">Note:</strong> {dstData.europe.notes}
-            </p>
           </div>
-        </section>
+          <p className="text-sm text-slate-600">
+            <strong className="text-slate-700">Rule:</strong> {dstData.northAmerica.rule}
+          </p>
+          <p className="text-sm text-slate-600 mt-2">
+            <strong className="text-slate-700">Exceptions:</strong> {dstData.northAmerica.exceptions}
+          </p>
+        </div>
+      </section>
 
-        {/* Australia & NZ */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-3 text-slate-800">
-            Australia & New Zealand — DST 2026
-          </h2>
-          <div className="rounded-xl border border-slate-200 p-5 bg-white mb-3">
+      {/* UK & Europe */}
+      <section className="mb-4">
+        <div className={`${card} p-6`}>
+          <h2 className="text-xl font-semibold mb-4 text-slate-800">United Kingdom & Europe — DST 2026</h2>
+          <div className="grid sm:grid-cols-2 gap-4 mb-4">
+            <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200">
+              <div className="text-xs font-medium text-emerald-600 uppercase tracking-wide mb-1">Spring Forward (BST / CEST begins)</div>
+              <div className="text-xl font-bold text-slate-800">March 29, 2026</div>
+              <div className="text-sm text-slate-600 mt-1">1:00 AM UTC → 2:00 AM UTC</div>
+            </div>
+            <div className="p-4 rounded-xl bg-amber-50 border border-amber-200">
+              <div className="text-xs font-medium text-amber-600 uppercase tracking-wide mb-1">Fall Back (GMT / CET resumes)</div>
+              <div className="text-xl font-bold text-slate-800">October 25, 2026</div>
+              <div className="text-sm text-slate-600 mt-1">2:00 AM UTC → 1:00 AM UTC</div>
+            </div>
+          </div>
+          <p className="text-sm text-slate-600">
+            <strong className="text-slate-700">Rule:</strong> {dstData.europe.rule}
+          </p>
+          <p className="text-sm text-slate-600 mt-2">
+            <strong className="text-slate-700">Note:</strong> {dstData.europe.notes}
+          </p>
+        </div>
+      </section>
+
+      {/* Australia & NZ */}
+      <section className="mb-4">
+        <div className={`${card} p-6`}>
+          <h2 className="text-xl font-semibold mb-4 text-slate-800">Australia & New Zealand — DST 2026</h2>
+          <div className="mb-4 pb-4 border-b border-slate-100">
             <h3 className="font-semibold text-slate-700 mb-3">Australia (NSW, Victoria, Tasmania, South Australia, ACT)</h3>
-            <div className="grid sm:grid-cols-2 gap-4 mb-4">
-              <div className="p-4 rounded-lg bg-emerald-50 border border-emerald-200">
+            <div className="grid sm:grid-cols-2 gap-4 mb-3">
+              <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200">
                 <div className="text-xs font-medium text-emerald-600 uppercase tracking-wide mb-1">Spring Forward</div>
                 <div className="text-xl font-bold text-slate-800">October 4, 2026</div>
                 <div className="text-sm text-slate-600 mt-1">2:00 AM → 3:00 AM</div>
               </div>
-              <div className="p-4 rounded-lg bg-amber-50 border border-amber-200">
+              <div className="p-4 rounded-xl bg-amber-50 border border-amber-200">
                 <div className="text-xs font-medium text-amber-600 uppercase tracking-wide mb-1">Fall Back</div>
                 <div className="text-xl font-bold text-slate-800">April 5, 2026</div>
                 <div className="text-sm text-slate-600 mt-1">3:00 AM → 2:00 AM</div>
@@ -324,29 +286,29 @@ export default function DaylightSavingTimePage() {
               <strong className="text-slate-700">Exceptions:</strong> Queensland, Western Australia, and Northern Territory do not observe DST.
             </p>
           </div>
-          <div className="rounded-xl border border-slate-200 p-5 bg-white">
+          <div>
             <h3 className="font-semibold text-slate-700 mb-3">New Zealand</h3>
             <div className="grid sm:grid-cols-2 gap-4">
-              <div className="p-4 rounded-lg bg-emerald-50 border border-emerald-200">
+              <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200">
                 <div className="text-xs font-medium text-emerald-600 uppercase tracking-wide mb-1">Spring Forward</div>
                 <div className="text-xl font-bold text-slate-800">September 27, 2026</div>
                 <div className="text-sm text-slate-600 mt-1">2:00 AM → 3:00 AM NZST</div>
               </div>
-              <div className="p-4 rounded-lg bg-amber-50 border border-amber-200">
+              <div className="p-4 rounded-xl bg-amber-50 border border-amber-200">
                 <div className="text-xs font-medium text-amber-600 uppercase tracking-wide mb-1">Fall Back</div>
                 <div className="text-xl font-bold text-slate-800">April 5, 2026</div>
                 <div className="text-sm text-slate-600 mt-1">3:00 AM → 2:00 AM NZST</div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Countries without DST */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-3 text-slate-800">
-            Countries That Do Not Observe DST
-          </h2>
-          <p className="text-slate-600 mb-4">
+      {/* Countries without DST */}
+      <section className="mb-4">
+        <div className={`${card} p-6`}>
+          <h2 className="text-xl font-semibold mb-2 text-slate-800">Countries That Do Not Observe DST</h2>
+          <p className="text-slate-600 mb-4 text-sm">
             About 70% of the world does not observe Daylight Saving Time. Most of Asia, Africa, and equatorial regions keep a fixed UTC offset year-round.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -360,32 +322,32 @@ export default function DaylightSavingTimePage() {
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Why DST */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-3 text-slate-800">
-            Why Does Daylight Saving Time Exist?
-          </h2>
-          <div className="prose prose-slate max-w-none">
-            <p className="text-slate-600 mb-3">
+      {/* Why DST */}
+      <section className="mb-4">
+        <div className={`${card} p-6`}>
+          <h2 className="text-xl font-semibold mb-4 text-slate-800">Why Does Daylight Saving Time Exist?</h2>
+          <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
+            <p>
               DST was first introduced widely during World War I to conserve coal by reducing the need for artificial lighting in the evening. Germany adopted it first in April 1916, and most of Europe and North America followed within months.
             </p>
-            <p className="text-slate-600 mb-3">
+            <p>
               The modern US DST schedule — second Sunday in March to first Sunday in November — was established by the Energy Policy Act of 2005. The EU uses the last Sunday in March and last Sunday in October.
             </p>
-            <p className="text-slate-600">
+            <p>
               The claimed energy savings are contested by modern research. However, DST persists because changing it requires international coordination and political consensus. The EU voted to end DST in 2019 but implementation has been delayed indefinitely.
             </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* FAQ */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-slate-800">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-4">
+      {/* FAQ */}
+      <section className="mb-4">
+        <div className={`${card} p-6`}>
+          <h2 className="text-xl font-semibold mb-4 text-slate-800">Frequently Asked Questions</h2>
+          <div className="space-y-3">
             {[
               {
                 q: 'When do clocks spring forward in the US in 2026?',
@@ -404,66 +366,51 @@ export default function DaylightSavingTimePage() {
                 a: 'The US and EU use different rules. The US switches on the second Sunday in March and first Sunday in November. The EU uses the last Sunday in March and October. This creates a 3-week window (March 8–29) and a 4-week window (October 25 – November 1) where the US–Europe time difference shifts by 1 hour.',
               },
               {
-                q: 'What states don\'t observe daylight saving time?',
+                q: "What states don't observe daylight saving time?",
                 a: 'Arizona (except the Navajo Nation), Hawaii, and all US territories (Puerto Rico, US Virgin Islands, Guam, American Samoa, Northern Mariana Islands) do not observe DST.',
               },
             ].map((item, i) => (
-              <div
-                key={i}
-                className="rounded-2xl border border-slate-100 p-4 bg-slate-50"
-              >
-                <h3 className="font-semibold text-slate-800 mb-2">{item.q}</h3>
+              <div key={i} className="rounded-xl border border-slate-100 bg-slate-50 p-4">
+                <h3 className="font-semibold text-slate-800 mb-1 text-sm">{item.q}</h3>
                 <p className="text-sm text-slate-600">{item.a}</p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Related Tools CTA */}
-        <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-3 text-slate-800">Related Tools</h2>
+      {/* Related Tools */}
+      <section className="mb-4">
+        <div className={`${card} p-6`}>
+          <h2 className="text-xl font-semibold mb-4 text-slate-800">Related Tools</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <Link
-              href="/time-converter"
-              className="p-4 rounded-xl border border-slate-200 bg-white hover:border-sky-300 transition-colors"
-            >
-              <div className="font-medium text-slate-800">Time Converter</div>
+            <Link href="/time-converter" className="p-4 rounded-xl border border-slate-200 bg-slate-50 hover:border-sky-300 transition-colors">
+              <div className="font-medium text-slate-800 text-sm">Time Converter</div>
               <div className="text-xs text-slate-500 mt-1">Convert between any two cities</div>
             </Link>
-            <Link
-              href="/meeting"
-              className="p-4 rounded-xl border border-slate-200 bg-white hover:border-sky-300 transition-colors"
-            >
-              <div className="font-medium text-slate-800">Meeting Planner</div>
+            <Link href="/meeting" className="p-4 rounded-xl border border-slate-200 bg-slate-50 hover:border-sky-300 transition-colors">
+              <div className="font-medium text-slate-800 text-sm">Meeting Planner</div>
               <div className="text-xs text-slate-500 mt-1">Find overlapping business hours</div>
             </Link>
-            <Link
-              href="/"
-              className="p-4 rounded-xl border border-slate-200 bg-white hover:border-sky-300 transition-colors"
-            >
-              <div className="font-medium text-slate-800">World Clock</div>
+            <Link href="/" className="p-4 rounded-xl border border-slate-200 bg-slate-50 hover:border-sky-300 transition-colors">
+              <div className="font-medium text-slate-800 text-sm">World Clock</div>
               <div className="text-xs text-slate-500 mt-1">Current time in 400+ cities</div>
             </Link>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* E-E-A-T Footer */}
-        <footer className="rounded-xl border border-slate-200 p-4 bg-slate-50">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-slate-500">
-            <span>
-              DST rules sourced from{' '}
-              <a
-                href="https://www.iana.org/time-zones"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:no-underline"
-              >
-                IANA Time Zone Database
-              </a>
-            </span>
-            <span>Last updated: March 2026 · Verified by WhatTime.city Editorial Team</span>
-          </div>
-        </footer>
+      {/* E-E-A-T Footer */}
+      <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-slate-500">
+          <span>
+            DST rules sourced from{' '}
+            <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">
+              IANA Time Zone Database
+            </a>
+          </span>
+          <span>Last updated: March 2026 · Verified by WhatTime.city Editorial Team</span>
+        </div>
       </div>
     </ContentPageWrapper>
   )
