@@ -566,10 +566,17 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
         
         {/* Title */}
         <h1 className={`text-2xl sm:text-3xl font-bold text-center mb-2 ${mainTheme.text} transition-all duration-300`}>
-          Time Difference between {fromCity.city} and {toCity.city}
+          {fromCity.city} to {toCity.city} Time Difference
         </h1>
-        
-        <p className={`text-sm text-center mb-6 ${mainTheme.textMuted}`}>
+
+        <p className={`text-sm text-center mb-1 font-medium ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
+          {diffHours === 0
+            ? `${fromCity.city} and ${toCity.city} are in the same time zone`
+            : `${toCity.city} is ${formatTimeDifference(Math.abs(diffHours))} ${diffHours > 0 ? 'ahead of' : 'behind'} ${fromCity.city}`
+          }
+        </p>
+
+        <p className={`text-xs text-center mb-6 ${mainTheme.textMuted}`}>
           {fromTimezoneStr} → {toTimezoneStr}
         </p>
         
@@ -1253,39 +1260,44 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
         {/* SEO Content Section */}
         <section className={`rounded-2xl p-6 border ${mainTheme.card}`}>
           <h2 className={`text-xl font-semibold mb-4 ${mainTheme.text}`}>
-            Time Difference Between {fromCity.city} and {toCity.city}
+            {fromCity.city} to {toCity.city} — Time Zone Guide
           </h2>
           <div className={`space-y-4 text-sm ${mainTheme.textMuted}`}>
-            <p>
-              {fromCity.city}, {fromCity.country} and {toCity.city}, {toCity.country} are separated by a time 
-              difference of {formatTimeDifference(Math.abs(diffHours))}. When it's noon in {fromCity.city}, 
-              it's {diffHours > 0 ? `${formatTimeDifference(diffHours)} later` : diffHours < 0 ? `${formatTimeDifference(Math.abs(diffHours))} earlier` : 'the same time'} in {toCity.city}.
-            </p>
-            <p>
-              {fromCity.city} operates on {fromCity.timezone.replace('_', ' ')} timezone, while {toCity.city} uses {toCity.timezone.replace('_', ' ')}. 
-              Both cities may observe Daylight Saving Time at different dates, which can temporarily change 
-              the time difference by an hour.
-            </p>
-            
-            <h3 className={`text-base font-medium mt-4 ${isLight ? 'text-slate-700' : 'text-white'}`}>
-              Best Time to Call
+
+            <h3 className={`text-base font-semibold ${isLight ? 'text-slate-700' : 'text-white'}`}>
+              How many hours {diffHours === 0 ? 'apart are' : 'is'} {fromCity.city} {diffHours === 0 ? 'and' : (diffHours > 0 ? 'behind' : 'ahead of')} {toCity.city}?
             </h3>
             <p>
-              {Math.abs(diffHours) <= 3 
-                ? `With only ${formatTimeDifference(Math.abs(diffHours))} difference, scheduling calls between ${fromCity.city} and ${toCity.city} is relatively easy.`
-                : Math.abs(diffHours) <= 6
-                ? `To catch business hours in both cities, consider scheduling calls during ${diffHours > 0 ? `early morning in ${fromCity.city}` : `late afternoon in ${fromCity.city}`}.`
-                : `Due to the ${formatTimeDifference(Math.abs(diffHours))} difference, finding overlapping business hours can be challenging.`
+              {diffHours === 0
+                ? `${fromCity.city} and ${toCity.city} share the same UTC offset — there is no time difference between them.`
+                : `${toCity.city} is ${formatTimeDifference(Math.abs(diffHours))} ${diffHours > 0 ? 'ahead of' : 'behind'} ${fromCity.city}. When it is 12:00 noon in ${fromCity.city}, it is ${String((12 + diffHours + 24) % 24).padStart(2, '0')}:00 in ${toCity.city}.`
+              }
+              {' '}{fromCity.city} operates on {fromCity.timezone.replace(/_/g, ' ')} (UTC{fromOffset >= 0 ? '+' : ''}{fromOffset}), while {toCity.city} uses {toCity.timezone.replace(/_/g, ' ')} (UTC{toOffset >= 0 ? '+' : ''}{toOffset}).
+            </p>
+
+            <h3 className={`text-base font-semibold ${isLight ? 'text-slate-700' : 'text-white'}`}>
+              Best time to call between {fromCity.city} and {toCity.city}
+            </h3>
+            <p>
+              {overlapHours.length > 0
+                ? `There ${overlapHours.length === 1 ? 'is' : 'are'} ${overlapHours.length} hour${overlapHours.length !== 1 ? 's' : ''} of overlapping business time (9 AM–5 PM) between ${fromCity.city} and ${toCity.city}. The best window is ${overlapHours[0].fromHour.toString().padStart(2, '0')}:00–${(overlapHours[overlapHours.length - 1].fromHour + 1).toString().padStart(2, '0')}:00 ${fromCity.city} time (${overlapHours[0].toHour.toString().padStart(2, '0')}:00–${(overlapHours[overlapHours.length - 1].toHour + 1).toString().padStart(2, '0')}:00 in ${toCity.city}).`
+                : `Standard business hours (9 AM–5 PM) do not overlap between ${fromCity.city} and ${toCity.city} due to the ${formatTimeDifference(Math.abs(diffHours))} difference. Consider early morning or late evening calls, or async communication.`
               }
             </p>
-            
-            <h3 className={`text-base font-medium mt-4 ${isLight ? 'text-slate-700' : 'text-white'}`}>
-              Flight Considerations
+
+            <h3 className={`text-base font-semibold ${isLight ? 'text-slate-700' : 'text-white'}`}>
+              Does the {fromCity.city}–{toCity.city} time difference change?
             </h3>
             <p>
-              The distance between {fromCity.city} and {toCity.city} is approximately {flightInfo.distance.toLocaleString()} km. 
-              A direct flight typically takes around {flightInfo.hours} hours. When traveling, remember that your arrival time 
-              will be in local time. Use our <Link href="/flight-time/" className="text-cyan-500 hover:underline">Flight Time Calculator</Link> for accurate arrival predictions.
+              The time difference can shift by up to one hour when either city observes Daylight Saving Time (DST). DST transition dates differ between countries — typically March/April in the Northern Hemisphere and October in the Southern Hemisphere. Always verify the live difference above when scheduling important meetings near DST changeover dates.
+            </p>
+
+            <h3 className={`text-base font-semibold ${isLight ? 'text-slate-700' : 'text-white'}`}>
+              Flying between {fromCity.city} and {toCity.city}
+            </h3>
+            <p>
+              The distance between {fromCity.city} and {toCity.city} is approximately {flightInfo.distance.toLocaleString()} km. A direct flight typically takes around {flightInfo.hours} hours. Your arrival clock will show local {toCity.city} time — use our{' '}
+              <Link href="/flight-time/" className="text-cyan-500 hover:underline">Flight Time Calculator</Link> to predict exact arrival times.
             </p>
           </div>
         </section>
