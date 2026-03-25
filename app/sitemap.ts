@@ -56,6 +56,10 @@ export default async function sitemap() {
     { slug: 'france', priority: 0.9 },
     { slug: 'mexico', priority: 0.9 },
     { slug: 'dubai', priority: 0.9 },
+    { slug: 'singapore', priority: 0.9 },
+    { slug: 'south-korea', priority: 0.9 },
+    { slug: 'china', priority: 0.9 },
+    { slug: 'texas', priority: 0.9 },
     { slug: 'daylight-saving-time', priority: 0.8 },
     // DST cluster subpages
     { slug: 'daylight-saving-time/usa', priority: 0.8 },
