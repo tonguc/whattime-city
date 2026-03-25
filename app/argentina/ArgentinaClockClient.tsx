@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { useCityContext } from '@/context/CityContext'
+import { useCityContext } from '@/lib/CityContext'
 const AR_TZ = 'America/Argentina/Buenos_Aires'
 function getARTime() {
   const now = new Date()

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useCityContext } from '@/context/CityContext'
+import { useCityContext } from '@/lib/CityContext'
 
 const MI_TZ = 'America/Detroit'
 const UP_TZ = 'America/Menominee'  // western Upper Peninsula (CST/CDT)

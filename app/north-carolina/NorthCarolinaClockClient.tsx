@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { useCityContext } from '@/context/CityContext'
+import { useCityContext } from '@/lib/CityContext'
 const NC_TZ = 'America/New_York'
 function getNCTime() {
   const now = new Date()

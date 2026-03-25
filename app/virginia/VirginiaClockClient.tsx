@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { useCityContext } from '@/context/CityContext'
+import { useCityContext } from '@/lib/CityContext'
 const VA_TZ = 'America/New_York'
 function getVATime() {
   const now = new Date()

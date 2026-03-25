@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { useCityContext } from '@/context/CityContext'
+import { useCityContext } from '@/lib/CityContext'
 const KE_TZ = 'Africa/Nairobi'
 function getKETime() {
   const now = new Date()

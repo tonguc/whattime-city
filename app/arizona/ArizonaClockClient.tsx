@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { useCityContext } from '@/context/CityContext'
+import { useCityContext } from '@/lib/CityContext'
 const AZ_TZ = 'America/Phoenix'
 const NAVAJO_TZ = 'America/Denver'  // Navajo Nation observes MDT in summer
 function getAZTime() {

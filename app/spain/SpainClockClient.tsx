@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useCityContext } from '@/context/CityContext'
+import { useCityContext } from '@/lib/CityContext'
 
 const ES_TZ = 'Europe/Madrid'
 const CANARY_TZ = 'Atlantic/Canary'

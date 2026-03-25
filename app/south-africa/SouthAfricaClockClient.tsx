@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { useCityContext } from '@/context/CityContext'
+import { useCityContext } from '@/lib/CityContext'
 const ZA_TZ = 'Africa/Johannesburg'
 function getZATime() {
   const now = new Date()
