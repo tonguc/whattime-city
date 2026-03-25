@@ -50,6 +50,9 @@ export default async function sitemap() {
     { slug: 'philippines', priority: 0.9 },
     { slug: 'uk', priority: 0.9 },
     { slug: 'australia', priority: 0.9 },
+    { slug: 'japan', priority: 0.9 },
+    { slug: 'germany', priority: 0.9 },
+    { slug: 'canada', priority: 0.9 },
     { slug: 'daylight-saving-time', priority: 0.8 },
     // DST cluster subpages
     { slug: 'daylight-saving-time/usa', priority: 0.8 },
