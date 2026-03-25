@@ -18,6 +18,27 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function FlightTimePage() {
+  const webAppSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Flight Time Calculator',
+    url: 'https://whattime.city/flight-time',
+    description: 'Calculate your exact arrival time in local time when crossing time zones. Enter departure city, arrival city, and flight duration.',
+    applicationCategory: 'TravelApplication',
+    operatingSystem: 'Web',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    featureList: [
+      'Calculate local arrival time across time zones',
+      'Automatic Daylight Saving Time adjustment',
+      'IANA Time Zone Database accuracy',
+      'Supports 400+ cities worldwide',
+    ],
+  }
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -30,6 +51,10 @@ export default function FlightTimePage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
