@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useCityContext } from '@/lib/CityContext'
 
 function toMilitary(h: number, m: number): string {
   return `${h.toString().padStart(2, '0')}${m.toString().padStart(2, '0')}`
@@ -28,6 +29,7 @@ function standardToMilitary(h: number, m: number, isPM: boolean): string {
 }
 
 export default function MilitaryTimeClient() {
+  const { theme, isLight } = useCityContext()
   const [currentMilitary, setCurrentMilitary] = useState('')
   const [currentStandard, setCurrentStandard] = useState('')
 
@@ -62,25 +64,30 @@ export default function MilitaryTimeClient() {
     setStdResult(standardToMilitary(stdHour, stdMin, stdAmPm === 'PM'))
   }
 
+  const cardClass = `rounded-2xl border ${theme.card}`
+  const inputClass = isLight
+    ? 'bg-white border-slate-200 text-slate-800'
+    : 'bg-slate-700 border-slate-600 text-white'
+
   return (
     <div className="space-y-4 mb-8">
       {/* Live Clock */}
-      <div className="rounded-2xl border border-slate-200 p-6 bg-white">
-        <div className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3 text-center">
+      <div className={`${cardClass} p-6`}>
+        <div className={`text-xs font-semibold uppercase tracking-widest mb-3 text-center ${theme.textMuted}`}>
           Current Time
         </div>
         <div className="grid grid-cols-2 gap-4 text-center">
           <div>
-            <div className="text-3xl font-mono font-bold text-sky-600 tabular-nums">
+            <div className={`text-3xl font-mono font-bold tabular-nums ${isLight ? 'text-sky-600' : 'text-sky-400'}`}>
               {currentMilitary || '——:——'}
             </div>
-            <div className="text-xs text-slate-400 mt-1">24-hour (military)</div>
+            <div className={`text-xs mt-1 ${theme.textMuted}`}>24-hour (military)</div>
           </div>
           <div>
-            <div className="text-3xl font-mono font-bold text-slate-800 tabular-nums">
+            <div className={`text-3xl font-mono font-bold tabular-nums ${theme.text}`}>
               {currentStandard || '——:——'}
             </div>
-            <div className="text-xs text-slate-400 mt-1">12-hour (standard)</div>
+            <div className={`text-xs mt-1 ${theme.textMuted}`}>12-hour (standard)</div>
           </div>
         </div>
       </div>
@@ -88,8 +95,8 @@ export default function MilitaryTimeClient() {
       {/* Converters */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Military → Standard */}
-        <div className="rounded-xl border border-slate-200 p-4 bg-white">
-          <h3 className="font-semibold text-slate-700 mb-3 text-sm">Military → Standard</h3>
+        <div className={`rounded-xl border p-4 ${isLight ? 'border-slate-200 bg-white' : 'border-slate-700 bg-slate-800/40'}`}>
+          <h3 className={`font-semibold mb-3 text-sm ${theme.text}`}>Military → Standard</h3>
           <div className="flex gap-2">
             <input
               type="text"
@@ -97,7 +104,7 @@ export default function MilitaryTimeClient() {
               onChange={e => setMilInput(e.target.value.replace(/\D/g, '').slice(0, 4))}
               placeholder="e.g. 1430"
               maxLength={4}
-              className="flex-1 px-3 py-2 rounded-lg border border-slate-200 bg-white text-slate-800 font-mono text-sm"
+              className={`flex-1 px-3 py-2 rounded-lg border font-mono text-sm ${inputClass}`}
               onKeyDown={e => e.key === 'Enter' && handleMilConvert()}
             />
             <button
@@ -108,20 +115,20 @@ export default function MilitaryTimeClient() {
             </button>
           </div>
           {milResult && (
-            <div className="mt-3 p-3 rounded-lg bg-sky-50 border border-sky-200">
-              <span className="font-mono font-bold text-sky-700">{milInput} = {milResult}</span>
+            <div className={`mt-3 p-3 rounded-lg ${isLight ? 'bg-sky-50 border border-sky-200' : 'bg-sky-900/30 border border-sky-700'}`}>
+              <span className={`font-mono font-bold ${isLight ? 'text-sky-700' : 'text-sky-300'}`}>{milInput} = {milResult}</span>
             </div>
           )}
         </div>
 
         {/* Standard → Military */}
-        <div className="rounded-xl border border-slate-200 p-4 bg-white">
-          <h3 className="font-semibold text-slate-700 mb-3 text-sm">Standard → Military</h3>
+        <div className={`rounded-xl border p-4 ${isLight ? 'border-slate-200 bg-white' : 'border-slate-700 bg-slate-800/40'}`}>
+          <h3 className={`font-semibold mb-3 text-sm ${theme.text}`}>Standard → Military</h3>
           <div className="flex gap-2">
             <select
               value={stdHour}
               onChange={e => setStdHour(parseInt(e.target.value))}
-              className="flex-1 px-2 py-2 rounded-lg border border-slate-200 bg-white text-slate-800 text-sm"
+              className={`flex-1 px-2 py-2 rounded-lg border text-sm ${inputClass}`}
             >
               {Array.from({ length: 12 }, (_, i) => i + 1).map(h => (
                 <option key={h} value={h}>{h}</option>
@@ -130,7 +137,7 @@ export default function MilitaryTimeClient() {
             <select
               value={stdMin}
               onChange={e => setStdMin(parseInt(e.target.value))}
-              className="flex-1 px-2 py-2 rounded-lg border border-slate-200 bg-white text-slate-800 text-sm"
+              className={`flex-1 px-2 py-2 rounded-lg border text-sm ${inputClass}`}
             >
               {Array.from({ length: 60 }, (_, i) => i).map(m => (
                 <option key={m} value={m}>{m.toString().padStart(2, '0')}</option>
@@ -139,7 +146,7 @@ export default function MilitaryTimeClient() {
             <select
               value={stdAmPm}
               onChange={e => setStdAmPm(e.target.value as 'AM' | 'PM')}
-              className="px-2 py-2 rounded-lg border border-slate-200 bg-white text-slate-800 text-sm"
+              className={`px-2 py-2 rounded-lg border text-sm ${inputClass}`}
             >
               <option value="AM">AM</option>
               <option value="PM">PM</option>
@@ -152,8 +159,8 @@ export default function MilitaryTimeClient() {
             </button>
           </div>
           {stdResult && (
-            <div className="mt-3 p-3 rounded-lg bg-emerald-50 border border-emerald-200">
-              <span className="font-mono font-bold text-emerald-700">
+            <div className={`mt-3 p-3 rounded-lg ${isLight ? 'bg-emerald-50 border border-emerald-200' : 'bg-emerald-900/30 border border-emerald-700'}`}>
+              <span className={`font-mono font-bold ${isLight ? 'text-emerald-700' : 'text-emerald-300'}`}>
                 {stdHour}:{stdMin.toString().padStart(2, '0')} {stdAmPm} = {stdResult}
               </span>
             </div>
