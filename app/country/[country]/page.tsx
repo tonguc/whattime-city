@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
   const cities = getCitiesByCountryCode(country.code)
   const cityNames = cities.slice(0, 5).map(c => c.city).join(', ')
   
-  const title = `Time in ${country.name} - Time Zones | whattime.city`
+  const title = `Time in ${country.name} — Time Zones & Current Time`
   const description = `What time is it in ${country.name} right now? Check current local time in ${country.capital}${cityNames ? `, ${cityNames}` : ''} and all ${country.name} time zones. ${country.timezones[0]}. Population: ${country.population}. Currency: ${country.currency} (${country.currencySymbol}). Phone code: ${country.phoneCode}.`
   
   return {
@@ -58,7 +58,7 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Time in ${country.name} Now | whattime.city`,
+      title: `Time in ${country.name} Now`,
       description: `Current time in ${country.capital} and all ${country.name} cities. ${country.timezones[0]}.`
     },
     alternates: {

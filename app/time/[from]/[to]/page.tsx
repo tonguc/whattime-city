@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
     }
   }
   
-  const title = `${fromCity.city} to ${toCity.city} Time Difference | whattime.city`
+  const title = `${fromCity.city} to ${toCity.city} Time Difference`
   const description = `Current time in ${fromCity.city} vs ${toCity.city}. See live clocks, time difference, best time to call, and business hours overlap.`
   
   return {

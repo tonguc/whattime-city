@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import WidgetGenerator from '@/components/WidgetGenerator'
 
 export const metadata: Metadata = {
-  title: 'Free Clock Widget for Your Website | whattime.city',
+  title: 'Free Clock Widget for Your Website',
   description: 'Get a free, beautiful clock widget for your website or blog. Customizable design, auto day/night theme, multiple sizes. Copy the embed code and paste it to your site.',
   keywords: [
     'clock widget',

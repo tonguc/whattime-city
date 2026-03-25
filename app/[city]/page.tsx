@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Time in ${city.city} Now | whattime.city`,
+      title: `Time in ${city.city} Now`,
       description: info
         ? `Current time in ${city.city}. ${info.population} people. ${info.currency} (${info.currencySymbol}).`
         : `Current local time in ${city.city}, ${city.country}. Live clock with sunrise & sunset.`

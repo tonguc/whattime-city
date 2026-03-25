@@ -3,7 +3,7 @@ import { Suspense } from 'react'
 import SharedMeetingView from '@/components/SharedMeetingView'
 
 export const metadata: Metadata = {
-  title: 'Shared Meeting Time | whattime.city',
+  title: 'Shared Meeting Time',
   description: 'View meeting times across multiple time zones. Find the best time to meet with your global team.',
   keywords: [
     'meeting planner',

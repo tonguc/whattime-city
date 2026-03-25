@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cityList = parseCities(params.cities)
   if (!cityList) {
     return {
-      title: 'Meeting Planner: Find Best Time to Call Across Time Zones | whattime.city',
+      title: 'Meeting Planner — Find Best Time to Call Across Time Zones',
       description: 'Schedule meetings across time zones. Find business hours overlap and best time to call with our time zone converter.',
       robots: {
         index: false,
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (cityList.length === 1) {
     const city = cityList[0]
     return {
-      title: `Best Time to Call ${city.city}: Current Time & Business Hours | whattime.city`,
+      title: `Best Time to Call ${city.city} — Current Time & Business Hours`,
       description: `Check current time in ${city.city} (${city.timezone}). Find best time to call ${city.city} considering business hours (9 AM - 5 PM local time).`,
       keywords: `${city.city} time, current time ${city.city}, best time to call ${city.city}, ${city.city} business hours, ${city.timezone}`,
       openGraph: {
@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cityNamesText = cityNames.join(', ').replace(/, ([^,]*)$/, ' & $1')
   
   return {
-    title: `Best Time to Call ${cityNamesText}: Business Hours Overlap | whattime.city`,
+    title: `Best Time to Call ${cityNamesText} — Business Hours Overlap`,
     description: `Find the best meeting time between ${cityNamesText}. Compare business hours, calculate time differences, and schedule calls across time zones with working hours overlap.`,
     keywords: `time zone converter, ${cityNamesText} time difference, best time to call, business hours overlap, meeting planner, schedule across time zones`,
     openGraph: {
