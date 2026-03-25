@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import ContentPageWrapper from '@/components/ContentPageWrapper'
 import TZPairClient, { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
@@ -79,7 +80,7 @@ const faqSchema = {
 
 export default function ISTtoESTPage() {
   return (
-    <>
+    <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <main className="max-w-3xl mx-auto px-4 py-8">
         <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">
@@ -128,6 +129,6 @@ export default function ISTtoESTPage() {
           Timezone data sourced from <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">IANA Time Zone Database</a>. Last updated March 2026.
         </footer>
       </main>
-    </>
+    </ContentPageWrapper>
   )
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import ContentPageWrapper from '@/components/ContentPageWrapper'
 import MilitaryTimeClient from './MilitaryTimeClient'
 
 export const metadata: Metadata = {
@@ -109,7 +110,7 @@ const webAppSchema = {
 
 export default function MilitaryTimePage() {
   return (
-    <>
+    <ContentPageWrapper>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
@@ -259,6 +260,6 @@ export default function MilitaryTimePage() {
           Last updated March 2026.
         </footer>
       </main>
-    </>
+    </ContentPageWrapper>
   )
 }

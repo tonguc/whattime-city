@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import ContentPageWrapper from '@/components/ContentPageWrapper'
 
 export const metadata: Metadata = {
   title: 'Daylight Saving Time 2026 — Dates, Countries & Clock Changes',
@@ -178,7 +179,7 @@ const articleSchema = {
 
 export default function DaylightSavingTimePage() {
   return (
-    <>
+    <ContentPageWrapper>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -464,6 +465,6 @@ export default function DaylightSavingTimePage() {
           </div>
         </footer>
       </main>
-    </>
+    </ContentPageWrapper>
   )
 }

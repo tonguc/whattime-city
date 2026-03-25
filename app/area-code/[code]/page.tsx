@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import ContentPageWrapper from '@/components/ContentPageWrapper'
 import Link from 'next/link'
 
 interface AreaCodeData {
@@ -254,7 +255,7 @@ export default async function AreaCodePage({ params }: Props) {
   }
 
   return (
-    <>
+    <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <main className="max-w-3xl mx-auto px-4 py-8">
         <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">
@@ -375,6 +376,6 @@ export default async function AreaCodePage({ params }: Props) {
           . Last updated March 2026.
         </footer>
       </main>
-    </>
+    </ContentPageWrapper>
   )
 }

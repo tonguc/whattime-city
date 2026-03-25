@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import ContentPageWrapper from '@/components/ContentPageWrapper'
 import TZPairClient, { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
@@ -81,7 +82,7 @@ const faqSchema = {
 
 export default function GMTtoESTPage() {
   return (
-    <>
+    <ContentPageWrapper>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -153,6 +154,6 @@ export default function GMTtoESTPage() {
           . Last updated March 2026.
         </footer>
       </main>
-    </>
+    </ContentPageWrapper>
   )
 }
