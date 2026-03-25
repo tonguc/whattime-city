@@ -80,6 +80,19 @@ const nextConfig = {
       { source: '/china-compared-to-san-francisco',    destination: '/time/beijing/san-francisco/', permanent: true },
       { source: '/nigeria-vs-brazil/',                 destination: '/time/lagos/sao-paulo/',       permanent: true },
       { source: '/nigeria-vs-brazil',                  destination: '/time/lagos/sao-paulo/',       permanent: true },
+
+      // ── Guide URL 301s (old slug → canonical slug) ─────────────────
+      // best-time-to-call → call-times  (8 premium cities)
+      ...['new-york', 'london', 'tokyo', 'dubai', 'singapore', 'paris', 'sydney', 'istanbul'].flatMap(city => [
+        { source: `/${city}/guide/best-time-to-call/`, destination: `/${city}/guide/call-times/`, permanent: true },
+        { source: `/${city}/guide/best-time-to-call`,  destination: `/${city}/guide/call-times/`, permanent: true },
+        // public-holidays → holidays
+        { source: `/${city}/guide/public-holidays/`,   destination: `/${city}/guide/holidays/`,   permanent: true },
+        { source: `/${city}/guide/public-holidays`,    destination: `/${city}/guide/holidays/`,   permanent: true },
+        // 24-hours-itinerary → 24-hours
+        { source: `/${city}/guide/24-hours-itinerary/`, destination: `/${city}/guide/24-hours/`,  permanent: true },
+        { source: `/${city}/guide/24-hours-itinerary`,  destination: `/${city}/guide/24-hours/`,  permanent: true },
+      ]),
     ]
   },
 }

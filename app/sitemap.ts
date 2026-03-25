@@ -2,7 +2,7 @@ import { cities, countries, getTier1Cities } from '@/lib/cities'
 
 export default async function sitemap() {
   const baseUrl = 'https://whattime.city'
-  
+
   // Ana sayfalar (trailing slash ile)
   const staticRoutes = [
     {
@@ -36,23 +36,22 @@ export default async function sitemap() {
       priority: 0.8,
     },
   ]
-  
-  // Tool sayfaları (trailing slash ile) - ROOT LEVEL URLs for SEO
-  // ✅ /time ve /meeting ana tool sayfaları indexed
-  // ❌ /time/[from]/[to] ve /meeting/[cities] noindex (sitemap'te YOK)
+
+  // Tool + content sayfaları
   const toolRoutes = [
     { slug: 'time', priority: 0.9 },
     { slug: 'time-converter', priority: 0.8 },
     { slug: 'meeting', priority: 0.8 },
     { slug: 'daylight-saving-time', priority: 0.8 },
+    // Timezone pair pages — high-volume abbreviation queries
     { slug: 'pst-to-est', priority: 0.8 },
     { slug: 'gmt-to-est', priority: 0.8 },
     { slug: 'cst-to-est', priority: 0.8 },
-    { slug: 'military-time', priority: 0.8 },
     { slug: 'est-to-pst', priority: 0.8 },
     { slug: 'ist-to-est', priority: 0.8 },
     { slug: 'est-to-gmt', priority: 0.8 },
     { slug: 'cst-to-pst', priority: 0.8 },
+    { slug: 'military-time', priority: 0.8 },
     { slug: 'flight-time', priority: 0.7 },
     { slug: 'jet-lag-advisor', priority: 0.7 },
     { slug: 'event-time', priority: 0.7 },
@@ -63,14 +62,22 @@ export default async function sitemap() {
     changeFrequency: 'weekly' as const,
     priority: tool.priority,
   }))
-  
+
+  // Area code pages
+  const areaCodeRoutes = ['929', '404', '437', '206', '408', '212', '310', '312', '305', '415'].map(code => ({
+    url: `${baseUrl}/area-code/${code}/`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
   // Guide sayfaları - SADECE 8 PREMIUM ŞEHİR (kaliteli içerik var)
   // Her biri pillar + 10 cluster = 11 sayfa
   const premiumGuideCities = [
-    'new-york', 'london', 'tokyo', 'dubai', 
+    'new-york', 'london', 'tokyo', 'dubai',
     'singapore', 'paris', 'sydney', 'istanbul'
   ]
-  
+
   const premiumClusterSlugs = [
     '', // pillar page (overview)
     'business-hours',
@@ -84,24 +91,24 @@ export default async function sitemap() {
     'time-difference',
     'travel-planning',
   ]
-  
-  const guideRoutes = premiumGuideCities.flatMap((citySlug) => 
+
+  const guideRoutes = premiumGuideCities.flatMap((citySlug) =>
     premiumClusterSlugs.map((slug) => ({
       url: slug ? `${baseUrl}/${citySlug}/guide/${slug}/` : `${baseUrl}/${citySlug}/guide/`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
-      priority: slug ? 0.7 : 0.8, // pillar: 0.8, cluster: 0.7
+      priority: slug ? 0.7 : 0.8,
     }))
   )
-  
-  // Tüm şehir sayfaları (trailing slash ile) - ✅ HUB PAGES (SEO VALUE HERE)
+
+  // Tüm şehir sayfaları (trailing slash ile)
   const cityRoutes = cities.map((city) => ({
     url: `${baseUrl}/${city.slug}/`,
     lastModified: new Date(),
     changeFrequency: 'daily' as const,
     priority: city.tier === 1 ? 0.9 : city.tier === 2 ? 0.8 : 0.7,
   }))
-  
+
   // Tüm ülke sayfaları (trailing slash ile)
   const countryRoutes = countries.map((country) => ({
     url: `${baseUrl}/country/${country.slug}/`,
@@ -109,9 +116,8 @@ export default async function sitemap() {
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }))
-  
-  // ✅ /time/[from]/[to] sayfaları - Long-tail SEO value
-  // Tier 1 şehirler arası kombinasyonlar (yüksek arama hacmi)
+
+  // /time/[from]/[to] — Tier 1 şehirler arası kombinasyonlar
   const tier1Slugs = getTier1Cities().map(c => c.slug)
   const timeComparisonRoutes: Array<{
     url: string
@@ -119,8 +125,7 @@ export default async function sitemap() {
     changeFrequency: 'daily' | 'weekly' | 'monthly'
     priority: number
   }> = []
-  
-  // Her Tier 1 şehir için diğer Tier 1 şehirlerle kombinasyon
+
   for (const fromSlug of tier1Slugs) {
     for (const toSlug of tier1Slugs) {
       if (fromSlug !== toSlug) {
@@ -134,5 +139,13 @@ export default async function sitemap() {
     }
   }
 
-  return [...staticRoutes, ...toolRoutes, ...guideRoutes, ...cityRoutes, ...countryRoutes, ...timeComparisonRoutes]
+  return [
+    ...staticRoutes,
+    ...toolRoutes,
+    ...areaCodeRoutes,
+    ...guideRoutes,
+    ...cityRoutes,
+    ...countryRoutes,
+    ...timeComparisonRoutes,
+  ]
 }
