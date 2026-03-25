@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { useCityContext } from '@/lib/CityContext'
 
@@ -15,30 +15,21 @@ export interface TZPairConfig {
   toCities: string[]
 }
 
-function getCurrentTime(timezone: string): string {
-  return new Date().toLocaleTimeString('en-US', {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: true,
-    timeZone: timezone,
+function formatTime(date: Date, timezone: string): string {
+  return date.toLocaleTimeString('en-US', {
+    hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: timezone,
   })
 }
 
-function getCurrentDate(timezone: string): string {
-  return new Date().toLocaleDateString('en-US', {
-    weekday: 'long',
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-    timeZone: timezone,
+function formatDate(date: Date, timezone: string): string {
+  return date.toLocaleDateString('en-US', {
+    weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: timezone,
   })
 }
 
-function getUTCOffset(timezone: string): string {
-  const now = new Date()
-  const utc = new Date(now.toLocaleString('en-US', { timeZone: 'UTC' }))
-  const local = new Date(now.toLocaleString('en-US', { timeZone: timezone }))
+function computeUTCOffset(date: Date, timezone: string): string {
+  const utc = new Date(date.toLocaleString('en-US', { timeZone: 'UTC' }))
+  const local = new Date(date.toLocaleString('en-US', { timeZone: timezone }))
   const diff = (local.getTime() - utc.getTime()) / (1000 * 60 * 60)
   const sign = diff >= 0 ? '+' : ''
   const hours = Math.floor(Math.abs(diff))
@@ -48,10 +39,9 @@ function getUTCOffset(timezone: string): string {
     : `UTC${sign}${Math.round(diff)}`
 }
 
-function getTimeDiffHours(fromTz: string, toTz: string): number {
-  const now = new Date()
-  const from = new Date(now.toLocaleString('en-US', { timeZone: fromTz }))
-  const to = new Date(now.toLocaleString('en-US', { timeZone: toTz }))
+function computeTimeDiff(date: Date, fromTz: string, toTz: string): number {
+  const from = new Date(date.toLocaleString('en-US', { timeZone: fromTz }))
+  const to = new Date(date.toLocaleString('en-US', { timeZone: toTz }))
   return (to.getTime() - from.getTime()) / (1000 * 60 * 60)
 }
 
@@ -73,34 +63,65 @@ function isBusinessHour(hour: number): boolean {
   return hour >= 9 && hour < 18
 }
 
+interface ClockState {
+  fromTime: string
+  toTime: string
+  fromDate: string
+  toDate: string
+  fromOffset: string
+  toOffset: string
+  diffHours: number
+}
+
 interface Props {
   config: TZPairConfig
 }
 
 export default function TZPairClient({ config }: Props) {
   const { theme, isLight } = useCityContext()
-  const [fromTime, setFromTime] = useState('')
-  const [toTime, setToTime] = useState('')
-  const [fromDate, setFromDate] = useState('')
-  const [toDate, setToDate] = useState('')
-  const [fromOffset, setFromOffset] = useState('')
-  const [toOffset, setToOffset] = useState('')
-  const [diffHours, setDiffHours] = useState(0)
+
+  // UTC offset and diff only change at DST boundaries — compute once, refresh hourly
+  const staticRef = useRef({ fromOffset: '', toOffset: '', diffHours: 0 })
+
+  const [clocks, setClocks] = useState<ClockState>({
+    fromTime: '', toTime: '', fromDate: '', toDate: '',
+    fromOffset: '', toOffset: '', diffHours: 0,
+  })
 
   useEffect(() => {
-    const update = () => {
-      setFromTime(getCurrentTime(config.fromTimezone))
-      setToTime(getCurrentTime(config.toTimezone))
-      setFromDate(getCurrentDate(config.fromTimezone))
-      setToDate(getCurrentDate(config.toTimezone))
-      setFromOffset(getUTCOffset(config.fromTimezone))
-      setToOffset(getUTCOffset(config.toTimezone))
-      setDiffHours(getTimeDiffHours(config.fromTimezone, config.toTimezone))
+    const computeStatic = (date: Date) => {
+      staticRef.current = {
+        fromOffset: computeUTCOffset(date, config.fromTimezone),
+        toOffset: computeUTCOffset(date, config.toTimezone),
+        diffHours: computeTimeDiff(date, config.fromTimezone, config.toTimezone),
+      }
     }
+
+    const update = () => {
+      const now = new Date()
+      setClocks({
+        fromTime: formatTime(now, config.fromTimezone),
+        toTime: formatTime(now, config.toTimezone),
+        fromDate: formatDate(now, config.fromTimezone),
+        toDate: formatDate(now, config.toTimezone),
+        ...staticRef.current,
+      })
+    }
+
+    computeStatic(new Date())
     update()
-    const interval = setInterval(update, 1000)
-    return () => clearInterval(interval)
+
+    const ticker = setInterval(update, 1000)
+    // Recompute UTC offsets/diff every hour in case DST boundary is crossed
+    const hourly = setInterval(() => computeStatic(new Date()), 60 * 60 * 1000)
+
+    return () => {
+      clearInterval(ticker)
+      clearInterval(hourly)
+    }
   }, [config])
+
+  const { fromTime, toTime, fromDate, toDate, fromOffset, toOffset, diffHours } = clocks
 
   const diffAbs = Math.abs(diffHours)
   const diffHrs = Math.floor(diffAbs)
@@ -114,7 +135,6 @@ export default function TZPairClient({ config }: Props) {
     ? `${config.toAbbr} is ${diffLabel} behind ${config.fromAbbr}`
     : `${config.fromAbbr} and ${config.toAbbr} are the same time`
 
-  // Business hours overlap: from 9-17 in both zones
   const overlap: number[] = []
   for (let h = 0; h < 24; h++) {
     const { hour: hTo } = convertHour(h, diffHours)
@@ -173,19 +193,12 @@ export default function TZPairClient({ config }: Props) {
             <tbody className={`divide-y ${isLight ? 'divide-slate-100' : 'divide-slate-700'}`}>
               {Array.from({ length: 24 }, (_, h) => {
                 const { hour: hTo, dayShift } = convertHour(h, diffHours)
-                const fromBiz = isBusinessHour(h)
-                const toBiz = isBusinessHour(hTo)
-                const bothBiz = fromBiz && toBiz
+                const bothBiz = isBusinessHour(h) && isBusinessHour(hTo)
                 return (
-                  <tr
-                    key={h}
-                    className={bothBiz
-                      ? (isLight ? 'bg-emerald-50' : 'bg-emerald-900/20')
-                      : (isLight ? 'bg-white' : 'bg-slate-900/20')}
-                  >
-                    <td className={`px-4 py-2 font-mono ${textMain}`}>
-                      {formatHour12(h)}
-                    </td>
+                  <tr key={h} className={bothBiz
+                    ? (isLight ? 'bg-emerald-50' : 'bg-emerald-900/20')
+                    : (isLight ? 'bg-white' : 'bg-slate-900/20')}>
+                    <td className={`px-4 py-2 font-mono ${textMain}`}>{formatHour12(h)}</td>
                     <td className={`px-4 py-2 font-mono ${textMain}`}>
                       {formatHour12(hTo)}
                       {dayShift && (
@@ -241,24 +254,15 @@ export default function TZPairClient({ config }: Props) {
 
       {/* Related Tools */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <Link
-          href="/time-converter"
-          className={`p-4 rounded-xl border transition-colors ${isLight ? 'border-slate-200 bg-white hover:border-sky-300' : 'border-slate-700 bg-slate-800/40 hover:border-sky-600'}`}
-        >
+        <Link href="/time-converter" className={`p-4 rounded-xl border transition-colors ${isLight ? 'border-slate-200 bg-white hover:border-sky-300' : 'border-slate-700 bg-slate-800/40 hover:border-sky-600'}`}>
           <div className={`font-medium text-sm ${textMain}`}>Time Converter</div>
           <div className={`text-xs mt-1 ${textMuted}`}>Convert any two cities</div>
         </Link>
-        <Link
-          href="/meeting"
-          className={`p-4 rounded-xl border transition-colors ${isLight ? 'border-slate-200 bg-white hover:border-sky-300' : 'border-slate-700 bg-slate-800/40 hover:border-sky-600'}`}
-        >
+        <Link href="/meeting" className={`p-4 rounded-xl border transition-colors ${isLight ? 'border-slate-200 bg-white hover:border-sky-300' : 'border-slate-700 bg-slate-800/40 hover:border-sky-600'}`}>
           <div className={`font-medium text-sm ${textMain}`}>Meeting Planner</div>
           <div className={`text-xs mt-1 ${textMuted}`}>Find the best overlap time</div>
         </Link>
-        <Link
-          href="/"
-          className={`p-4 rounded-xl border transition-colors ${isLight ? 'border-slate-200 bg-white hover:border-sky-300' : 'border-slate-700 bg-slate-800/40 hover:border-sky-600'}`}
-        >
+        <Link href="/" className={`p-4 rounded-xl border transition-colors ${isLight ? 'border-slate-200 bg-white hover:border-sky-300' : 'border-slate-700 bg-slate-800/40 hover:border-sky-600'}`}>
           <div className={`font-medium text-sm ${textMain}`}>World Clock</div>
           <div className={`text-xs mt-1 ${textMuted}`}>Current time in 400+ cities</div>
         </Link>

@@ -95,7 +95,6 @@ export default function PSTtoESTPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div>
         <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800">
           PST to EST Converter
         </h1>
@@ -153,7 +152,6 @@ export default function PSTtoESTPage() {
           </a>
           . Last updated March 2026.
         </footer>
-      </div>
     </ContentPageWrapper>
   )
 }

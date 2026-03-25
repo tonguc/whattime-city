@@ -82,7 +82,6 @@ export default function ISTtoESTPage() {
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <div>
         <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800">
           IST to EST Converter
         </h1>
@@ -132,7 +131,6 @@ export default function ISTtoESTPage() {
         <footer className="rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500">
           Timezone data sourced from <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">IANA Time Zone Database</a>. Last updated March 2026.
         </footer>
-      </div>
     </ContentPageWrapper>
   )
 }

@@ -2,36 +2,37 @@ import { cities, countries, getTier1Cities } from '@/lib/cities'
 
 export default async function sitemap() {
   const baseUrl = 'https://whattime.city'
+  const now = new Date()
 
   // Ana sayfalar (trailing slash ile)
   const staticRoutes = [
     {
       url: `${baseUrl}/`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'daily' as const,
       priority: 1,
     },
     {
       url: `${baseUrl}/map/`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'daily' as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/country/`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/widget/`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/tools/`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
@@ -58,7 +59,7 @@ export default async function sitemap() {
     { slug: 'world-alarm', priority: 0.7 },
   ].map((tool) => ({
     url: `${baseUrl}/${tool.slug}/`,
-    lastModified: new Date(),
+    lastModified: now,
     changeFrequency: 'weekly' as const,
     priority: tool.priority,
   }))
@@ -66,7 +67,7 @@ export default async function sitemap() {
   // Area code pages
   const areaCodeRoutes = ['929', '404', '437', '206', '408', '212', '310', '312', '305', '415'].map(code => ({
     url: `${baseUrl}/area-code/${code}/`,
-    lastModified: new Date(),
+    lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
@@ -95,7 +96,7 @@ export default async function sitemap() {
   const guideRoutes = premiumGuideCities.flatMap((citySlug) =>
     premiumClusterSlugs.map((slug) => ({
       url: slug ? `${baseUrl}/${citySlug}/guide/${slug}/` : `${baseUrl}/${citySlug}/guide/`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'weekly' as const,
       priority: slug ? 0.7 : 0.8,
     }))
@@ -104,7 +105,7 @@ export default async function sitemap() {
   // Tüm şehir sayfaları (trailing slash ile)
   const cityRoutes = cities.map((city) => ({
     url: `${baseUrl}/${city.slug}/`,
-    lastModified: new Date(),
+    lastModified: now,
     changeFrequency: 'daily' as const,
     priority: city.tier === 1 ? 0.9 : city.tier === 2 ? 0.8 : 0.7,
   }))
@@ -112,7 +113,7 @@ export default async function sitemap() {
   // Tüm ülke sayfaları (trailing slash ile)
   const countryRoutes = countries.map((country) => ({
     url: `${baseUrl}/country/${country.slug}/`,
-    lastModified: new Date(),
+    lastModified: now,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }))
@@ -131,7 +132,7 @@ export default async function sitemap() {
       if (fromSlug !== toSlug) {
         timeComparisonRoutes.push({
           url: `${baseUrl}/time/${fromSlug}/${toSlug}/`,
-          lastModified: new Date(),
+          lastModified: now,
           changeFrequency: 'daily' as const,
           priority: 0.6,
         })
