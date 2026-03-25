@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import GermanyClockClient from './GermanyClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in Germany Now — CET/CEST (UTC+1/+2) · Berlin, Munich, Hamburg',
@@ -141,6 +142,7 @@ export default function GermanyTimePage() {
       </p>
 
       <GermanyClockClient />
+      <CountryFactsSection hubSlug="germany" />
 
       <section className="mt-4 mb-4">
         <div className={card}>

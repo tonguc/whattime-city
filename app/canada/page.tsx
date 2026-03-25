@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import CanadaClockClient from './CanadaClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in Canada Now — All Time Zones · Toronto, Vancouver, Montreal, Calgary',
@@ -141,6 +142,7 @@ export default function CanadaTimePage() {
       </p>
 
       <CanadaClockClient />
+      <CountryFactsSection hubSlug="canada" />
 
       <section className="mt-4 mb-4">
         <div className={card}>

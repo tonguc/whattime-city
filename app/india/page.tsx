@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import IndiaClockClient from './IndiaClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in India Now — India Standard Time (IST, UTC+5:30)',
@@ -144,6 +145,7 @@ export default function IndiaTimePage() {
 
       {/* Live clock + comparisons (client) */}
       <IndiaClockClient />
+      <CountryFactsSection hubSlug="india" />
 
       {/* IST Explained */}
       <section className="mt-4 mb-4">

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import MexicoClockClient from './MexicoClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in Mexico Now — CST (UTC−6) · Mexico City, Cancún, Tijuana',
@@ -131,6 +132,7 @@ export default function MexicoTimePage() {
       </p>
 
       <MexicoClockClient />
+      <CountryFactsSection hubSlug="mexico" />
 
       <section className="mt-4 mb-4">
         <div className={card}>

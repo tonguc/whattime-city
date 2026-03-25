@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import FranceClockClient from './FranceClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in France Now — CET/CEST (UTC+1/+2) · Paris, Lyon, Marseille',
@@ -122,6 +123,7 @@ export default function FranceTimePage() {
       </p>
 
       <FranceClockClient />
+      <CountryFactsSection hubSlug="france" />
 
       <section className="mt-4 mb-4">
         <div className={card}>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import NigeriaClockClient from './NigeriaClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in Nigeria Now — WAT (UTC+1) · Lagos, Abuja',
@@ -146,6 +147,7 @@ export default function NigeriaTimePage() {
       </p>
 
       <NigeriaClockClient />
+      <CountryFactsSection hubSlug="nigeria" />
 
       {/* WAT Explained */}
       <section className="mt-4 mb-4">

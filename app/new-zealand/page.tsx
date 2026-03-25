@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import NewZealandClockClient from './NewZealandClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in New Zealand Now — NZST/NZDT (UTC+12/+13) · Auckland, Wellington · Chatham Islands',
@@ -83,6 +84,7 @@ export default function NewZealandTimePage() {
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in New Zealand</h1>
       <p className="text-sm text-slate-500 mb-6">NZST (UTC+12) in winter · NZDT (UTC+13) in summer · Chatham Islands +45 min ahead</p>
       <NewZealandClockClient />
+      <CountryFactsSection hubSlug="new-zealand" />
       <section className="mt-4 mb-4">
         <div className={card}>
           <h2 className="text-xl font-semibold text-slate-800 mb-4">New Zealand Time Zones</h2>

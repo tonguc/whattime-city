@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import PakistanClockClient from './PakistanClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in Pakistan Now — PKT (UTC+5) · Karachi, Lahore, Islamabad',
@@ -83,6 +84,7 @@ export default function PakistanTimePage() {
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in Pakistan</h1>
       <p className="text-sm text-slate-500 mb-6">Pakistan Standard Time (PKT) · UTC+5 · No Daylight Saving Time</p>
       <PakistanClockClient />
+      <CountryFactsSection hubSlug="pakistan" />
       <section className="mt-4 mb-4">
         <div className={card}>
           <h2 className="text-xl font-semibold text-slate-800 mb-4">Pakistan Time Zone — PKT Explained</h2>

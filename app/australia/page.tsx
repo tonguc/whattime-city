@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import AustraliaClockClient from './AustraliaClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in Australia Now — AEST/AEDT · Sydney, Melbourne, Brisbane, Perth',
@@ -148,6 +149,7 @@ export default function AustraliaTimePage() {
       </p>
 
       <AustraliaClockClient />
+      <CountryFactsSection hubSlug="australia" />
 
       {/* Australia Time Zones Explained */}
       <section className="mt-4 mb-4">

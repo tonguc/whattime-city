@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import EgyptClockClient from './EgyptClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in Egypt Now — EET (UTC+2) · Cairo, Alexandria · No DST',
@@ -83,6 +84,7 @@ export default function EgyptTimePage() {
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in Egypt</h1>
       <p className="text-sm text-slate-500 mb-6">Eastern European Time (EET) · UTC+2 · No Daylight Saving Time since 2011</p>
       <EgyptClockClient />
+      <CountryFactsSection hubSlug="egypt" />
       <section className="mt-4 mb-4">
         <div className={card}>
           <h2 className="text-xl font-semibold text-slate-800 mb-4">EET Quick Reference — When it is noon in Cairo</h2>

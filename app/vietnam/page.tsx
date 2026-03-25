@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import VietnamClockClient from './VietnamClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in Vietnam Now — ICT (UTC+7) · Ho Chi Minh City, Hanoi · No DST',
@@ -83,6 +84,7 @@ export default function VietnamTimePage() {
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in Vietnam</h1>
       <p className="text-sm text-slate-500 mb-6">Indochina Time (ICT) · UTC+7 · No Daylight Saving Time</p>
       <VietnamClockClient />
+      <CountryFactsSection hubSlug="vietnam" />
       <section className="mt-4 mb-4">
         <div className={card}>
           <h2 className="text-xl font-semibold text-slate-800 mb-4">ICT Quick Reference — When it is noon in Ho Chi Minh City</h2>

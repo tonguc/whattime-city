@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import SouthKoreaClockClient from './SouthKoreaClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in South Korea Now — KST (UTC+9) · Seoul, Busan · No DST',
@@ -89,6 +90,7 @@ export default function SouthKoreaTimePage() {
       </p>
 
       <SouthKoreaClockClient />
+      <CountryFactsSection hubSlug="south-korea" />
 
       <section className="mt-4 mb-4">
         <div className={card}>

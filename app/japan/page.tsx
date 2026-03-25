@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import JapanClockClient from './JapanClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in Japan Now — JST (UTC+9) · Tokyo, Osaka, Kyoto',
@@ -141,6 +142,7 @@ export default function JapanTimePage() {
       </p>
 
       <JapanClockClient />
+      <CountryFactsSection hubSlug="japan" />
 
       <section className="mt-4 mb-4">
         <div className={card}>

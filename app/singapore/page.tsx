@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import SingaporeClockClient from './SingaporeClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in Singapore Now — SGT (UTC+8) · No Daylight Saving Time',
@@ -88,6 +89,7 @@ export default function SingaporeTimePage() {
       </p>
 
       <SingaporeClockClient />
+      <CountryFactsSection hubSlug="singapore" />
 
       <section className="mt-4 mb-4">
         <div className={card}>

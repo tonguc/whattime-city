@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import BrazilClockClient from './BrazilClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in Brazil Now — BRT (UTC−3) · São Paulo, Rio, Brasília',
@@ -145,6 +146,7 @@ export default function BrazilTimePage() {
       </p>
 
       <BrazilClockClient />
+      <CountryFactsSection hubSlug="brazil" />
 
       {/* BRT Explained */}
       <section className="mt-4 mb-4">

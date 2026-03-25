@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import UKClockClient from './UKClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in the UK Now — GMT/BST (UTC+0/+1) · London, Manchester, Edinburgh',
@@ -148,6 +149,7 @@ export default function UKTimePage() {
       </p>
 
       <UKClockClient />
+      <CountryFactsSection hubSlug="uk" />
 
       {/* GMT/BST Explained */}
       <section className="mt-4 mb-4">

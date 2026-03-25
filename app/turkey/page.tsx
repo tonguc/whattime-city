@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import TurkeyClockClient from './TurkeyClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in Turkey Now — TRT (UTC+3) · Istanbul, Ankara · No DST since 2016',
@@ -83,6 +84,7 @@ export default function TurkeyTimePage() {
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in Turkey</h1>
       <p className="text-sm text-slate-500 mb-6">Turkey Time (TRT) · UTC+3 · No Daylight Saving Time since September 2016</p>
       <TurkeyClockClient />
+      <CountryFactsSection hubSlug="turkey" />
       <section className="mt-4 mb-4">
         <div className={card}>
           <h2 className="text-xl font-semibold text-slate-800 mb-4">Turkey Time Zone — TRT & the 2016 DST Abolition</h2>

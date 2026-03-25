@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import NetherlandsClockClient from './NetherlandsClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in the Netherlands Now — CET/CEST (UTC+1/+2) · Amsterdam, Rotterdam',
@@ -83,6 +84,7 @@ export default function NetherlandsTimePage() {
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in the Netherlands</h1>
       <p className="text-sm text-slate-500 mb-6">Central European Time (CET) · UTC+1 in winter · CEST (UTC+2) during Daylight Saving Time</p>
       <NetherlandsClockClient />
+      <CountryFactsSection hubSlug="netherlands" />
       <section className="mt-4 mb-4">
         <div className={card}>
           <h2 className="text-xl font-semibold text-slate-800 mb-4">CET Quick Reference — When it is noon in Amsterdam</h2>

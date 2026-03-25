@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import IndonesiaClockClient from './IndonesiaClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in Indonesia Now — WIB/WITA/WIT · Jakarta, Bali, Papua',
@@ -83,6 +84,7 @@ export default function IndonesiaTimePage() {
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in Indonesia</h1>
       <p className="text-sm text-slate-500 mb-6">Three time zones: WIB (UTC+7) · WITA (UTC+8) · WIT (UTC+9) · No Daylight Saving Time</p>
       <IndonesiaClockClient />
+      <CountryFactsSection hubSlug="indonesia" />
       <section className="mt-4 mb-4">
         <div className={card}>
           <h2 className="text-xl font-semibold text-slate-800 mb-4">Indonesia Time Zones at a Glance</h2>

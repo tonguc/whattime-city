@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import PeruClockClient from './PeruClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in Peru Now — PET (UTC−5) · Lima · No DST',
@@ -34,6 +35,7 @@ export default function PeruTimePage() {
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in Peru</h1>
       <p className="text-sm text-slate-500 mb-6">Peru Time (PET) · UTC−5 · No Daylight Saving Time</p>
       <PeruClockClient />
+      <CountryFactsSection hubSlug="peru" />
       <section className="mt-4 mb-4"><div className={card}>
         <h2 className="text-xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
         <div className="space-y-3">{faqSchema.mainEntity.map((item, i) => (<div key={i} className="rounded-xl border border-slate-100 bg-slate-50 p-4"><div className="font-medium text-slate-800 text-sm mb-1">{item.name}</div><div className="text-slate-600 text-sm leading-relaxed">{item.acceptedAnswer.text}</div></div>))}</div>

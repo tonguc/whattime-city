@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import PhilippinesClockClient from './PhilippinesClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in the Philippines Now — PHT (UTC+8) · Manila, Cebu, Davao',
@@ -147,6 +148,7 @@ export default function PhilippinesTimePage() {
       </p>
 
       <PhilippinesClockClient />
+      <CountryFactsSection hubSlug="philippines" />
 
       {/* PHT Explained */}
       <section className="mt-4 mb-4">

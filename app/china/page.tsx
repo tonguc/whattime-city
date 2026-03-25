@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import ChinaClockClient from './ChinaClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in China Now — CST (UTC+8) · Beijing, Shanghai · 1 Time Zone',
@@ -89,6 +90,7 @@ export default function ChinaTimePage() {
       </p>
 
       <ChinaClockClient />
+      <CountryFactsSection hubSlug="china" />
 
       <section className="mt-4 mb-4">
         <div className={card}>

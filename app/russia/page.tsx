@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import RussiaClockClient from './RussiaClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
   title: 'Time in Russia Now — MSK (UTC+3) · Moscow · 11 Time Zones · No DST',
@@ -84,6 +85,7 @@ export default function RussiaTimePage() {
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in Russia</h1>
       <p className="text-sm text-slate-500 mb-6">Moscow Time (MSK) · UTC+3 · 11 Time Zones · No Daylight Saving Time since 2014</p>
       <RussiaClockClient />
+      <CountryFactsSection hubSlug="russia" />
       <section className="mt-4 mb-4">
         <div className={card}>
           <h2 className="text-xl font-semibold text-slate-800 mb-4">Russia Time Zones Overview</h2>
