@@ -40,9 +40,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   // Handle country-based slugs (e.g., /fiji/ vs /suva/) to avoid duplicate titles
   // Note: Layout template adds "| whattime.city" suffix automatically
   const isCountrySlug = slug.toLowerCase() === city.country.toLowerCase().replace(/\s+/g, '-')
+  // Disambiguate same-name cities using state (e.g., Augusta, GA vs Augusta, ME)
+  const location = city.stateCode
+    ? `${city.city}, ${city.stateCode}`
+    : `${city.city}, ${city.country}`
   const title = seoData?.seo_title || (isCountrySlug
     ? `Time in ${city.country} Now - ${city.city} Local Time`
-    : `Current Time in ${city.city}, ${city.country}`)
+    : `Current Time in ${location}`)
   const description = seoData?.seo_description || (info 
     ? `What time is it in ${city.city}? Check current local time, sunrise & sunset. Population: ${info.population}. Currency: ${info.currency} (${info.currencySymbol}). Phone: ${info.phoneCode}. Top attractions: ${info.attractions.slice(0, 3).join(', ')}.`
     : `What time is it in ${city.city} right now? Check current local time, sunrise at, sunset times, and weather in ${city.city}, ${city.country}. Timezone: ${city.timezone}.`)
@@ -51,7 +55,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     openGraph: {
-      title: `Current Time in ${city.city} - What Time Is It Now?`,
+      title: `Current Time in ${location} - What Time Is It Now?`,
       description: info 
         ? `Live local time in ${city.city}. Population: ${info.population}. Currency: ${info.currencySymbol}. Top spots: ${info.attractions.slice(0, 2).join(', ')}.`
         : `Live local time in ${city.city}, ${city.country}. Check sunrise, sunset and weather.`,
@@ -62,7 +66,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Time in ${city.city} Now`,
+      title: city.stateCode ? `Time in ${city.city}, ${city.stateCode} Now` : `Time in ${city.city} Now`,
       description: info
         ? `Current time in ${city.city}. ${info.population} people. ${info.currency} (${info.currencySymbol}).`
         : `Current local time in ${city.city}, ${city.country}. Live clock with sunrise & sunset.`

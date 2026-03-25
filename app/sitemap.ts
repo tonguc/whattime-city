@@ -44,6 +44,7 @@ export default async function sitemap() {
     { slug: 'time', priority: 0.9 },
     { slug: 'time-converter', priority: 0.8 },
     { slug: 'meeting', priority: 0.8 },
+    { slug: 'daylight-saving-time', priority: 0.8 },
     { slug: 'flight-time', priority: 0.7 },
     { slug: 'jet-lag-advisor', priority: 0.7 },
     { slug: 'event-time', priority: 0.7 },
