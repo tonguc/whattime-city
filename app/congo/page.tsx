@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Congo right now?', acceptedAnswer: { '@type': 'Answer', text: 'Congo uses WAT (UTC+1). Brazzaville is the capital. The live clock above shows the current local time in Congo.' } },
     { '@type': 'Question', name: 'What time zone is Brazzaville in?', acceptedAnswer: { '@type': 'Answer', text: 'Brazzaville uses WAT (UTC+1). The IANA time zone identifier is Africa/Brazzaville. ' } },
-    { '@type': 'Question', name: 'Does Congo observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Congo offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Congo observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. The Republic of Congo does not observe Daylight Saving Time. It uses West Africa Time (WAT, UTC+1) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Congo?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Congo is during local business hours: Monday–Friday, 9 AM–5 PM WAT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Puerto Rico right now?', acceptedAnswer: { '@type': 'Answer', text: 'Puerto Rico uses AST (UTC-4). San Juan is the capital. The live clock above shows the current local time in Puerto Rico.' } },
     { '@type': 'Question', name: 'What time zone is San Juan in?', acceptedAnswer: { '@type': 'Answer', text: 'San Juan uses AST (UTC-4). The IANA time zone identifier is America/Puerto_Rico. ' } },
-    { '@type': 'Question', name: 'Does Puerto Rico observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Puerto Rico offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Puerto Rico observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Puerto Rico does not observe Daylight Saving Time. Puerto Rico uses Atlantic Standard Time (AST, UTC-4) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Puerto Rico?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Puerto Rico is during local business hours: Monday–Friday, 9 AM–5 PM AST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

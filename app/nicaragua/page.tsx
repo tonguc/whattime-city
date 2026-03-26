@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Nicaragua right now?', acceptedAnswer: { '@type': 'Answer', text: 'Nicaragua uses CST (UTC-6). Managua is the capital. The live clock above shows the current local time in Nicaragua.' } },
     { '@type': 'Question', name: 'What time zone is Managua in?', acceptedAnswer: { '@type': 'Answer', text: 'Managua uses CST (UTC-6). The IANA time zone identifier is America/Managua. ' } },
-    { '@type': 'Question', name: 'Does Nicaragua observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Nicaragua offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Nicaragua observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Nicaragua does not observe Daylight Saving Time. Nicaragua uses Central Standard Time (CST, UTC-6) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Nicaragua?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Nicaragua is during local business hours: Monday–Friday, 9 AM–5 PM CST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

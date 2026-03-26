@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Togo right now?', acceptedAnswer: { '@type': 'Answer', text: 'Togo uses GMT (UTC+0). Lomé is the capital. The live clock above shows the current local time in Togo.' } },
     { '@type': 'Question', name: 'What time zone is Lomé in?', acceptedAnswer: { '@type': 'Answer', text: 'Lomé uses GMT (UTC+0). The IANA time zone identifier is Africa/Lome. ' } },
-    { '@type': 'Question', name: 'Does Togo observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Togo offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Togo observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Togo does not observe Daylight Saving Time. Togo uses Greenwich Mean Time (GMT, UTC+0) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Togo?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Togo is during local business hours: Monday–Friday, 9 AM–5 PM GMT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Cape Verde right now?', acceptedAnswer: { '@type': 'Answer', text: 'Cape Verde uses CVT (UTC-1). Praia is the capital. The live clock above shows the current local time in Cape Verde.' } },
     { '@type': 'Question', name: 'What time zone is Praia in?', acceptedAnswer: { '@type': 'Answer', text: 'Praia uses CVT (UTC-1). The IANA time zone identifier is Atlantic/Cape_Verde. ' } },
-    { '@type': 'Question', name: 'Does Cape Verde observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Cape Verde offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Cape Verde observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Cape Verde does not observe Daylight Saving Time. Cape Verde uses Cape Verde Time (CVT, UTC-1) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Cape Verde?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Cape Verde is during local business hours: Monday–Friday, 9 AM–5 PM CVT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

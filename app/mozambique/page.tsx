@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Mozambique right now?', acceptedAnswer: { '@type': 'Answer', text: 'Mozambique uses CAT (UTC+2). Maputo is the capital. The live clock above shows the current local time in Mozambique.' } },
     { '@type': 'Question', name: 'What time zone is Maputo in?', acceptedAnswer: { '@type': 'Answer', text: 'Maputo uses CAT (UTC+2). The IANA time zone identifier is Africa/Maputo. ' } },
-    { '@type': 'Question', name: 'Does Mozambique observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Mozambique offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Mozambique observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Mozambique does not observe Daylight Saving Time. Mozambique uses Central Africa Time (CAT, UTC+2) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Mozambique?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Mozambique is during local business hours: Monday–Friday, 9 AM–5 PM CAT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

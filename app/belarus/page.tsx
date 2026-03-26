@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Belarus right now?', acceptedAnswer: { '@type': 'Answer', text: 'Belarus uses MSK (UTC+3). Minsk is the capital. The live clock above shows the current local time in Belarus.' } },
     { '@type': 'Question', name: 'What time zone is Minsk in?', acceptedAnswer: { '@type': 'Answer', text: 'Minsk uses MSK (UTC+3). The IANA time zone identifier is Europe/Minsk. ' } },
-    { '@type': 'Question', name: 'Does Belarus observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Belarus offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Belarus observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Belarus does not observe Daylight Saving Time. Belarus uses Moscow Time (MSK, UTC+3) year-round, having permanently adopted summer time in 2011.' } },
     { '@type': 'Question', name: 'What is the best time to call Belarus?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Belarus is during local business hours: Monday–Friday, 9 AM–5 PM MSK. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

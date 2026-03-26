@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Dominican Republic right now?', acceptedAnswer: { '@type': 'Answer', text: 'Dominican Republic uses AST (UTC-4). Santo Domingo is the capital. The live clock above shows the current local time in Dominican Republic.' } },
     { '@type': 'Question', name: 'What time zone is Santo Domingo in?', acceptedAnswer: { '@type': 'Answer', text: 'Santo Domingo uses AST (UTC-4). The IANA time zone identifier is America/Santo_Domingo. ' } },
-    { '@type': 'Question', name: 'Does Dominican Republic observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Dominican Republic offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Dominican Republic observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. The Dominican Republic does not observe Daylight Saving Time. The Dominican Republic uses Atlantic Standard Time (AST, UTC-4) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Dominican Republic?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Dominican Republic is during local business hours: Monday–Friday, 9 AM–5 PM AST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

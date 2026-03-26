@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Bosnia and Herzegovina right now?', acceptedAnswer: { '@type': 'Answer', text: 'Bosnia and Herzegovina uses CET (UTC+1). Sarajevo is the capital. The live clock above shows the current local time in Bosnia and Herzegovina.' } },
     { '@type': 'Question', name: 'What time zone is Sarajevo in?', acceptedAnswer: { '@type': 'Answer', text: 'Sarajevo uses CET (UTC+1). The IANA time zone identifier is Europe/Sarajevo. Bosnia and Herzegovina spans multiple time zones: CET (UTC+1), CEST (UTC+2).' } },
-    { '@type': 'Question', name: 'Does Bosnia and Herzegovina observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Bosnia and Herzegovina offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Bosnia and Herzegovina observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Bosnia and Herzegovina observes Central European Summer Time (CEST, UTC+2) from the last Sunday in March to the last Sunday in October. Outside this period, it uses CET (UTC+1).' } },
     { '@type': 'Question', name: 'What is the best time to call Bosnia and Herzegovina?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Bosnia and Herzegovina is during local business hours: Monday–Friday, 9 AM–5 PM CET. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

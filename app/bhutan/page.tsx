@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Bhutan right now?', acceptedAnswer: { '@type': 'Answer', text: 'Bhutan uses BTT (UTC+6). Thimphu is the capital. The live clock above shows the current local time in Bhutan.' } },
     { '@type': 'Question', name: 'What time zone is Thimphu in?', acceptedAnswer: { '@type': 'Answer', text: 'Thimphu uses BTT (UTC+6). The IANA time zone identifier is Asia/Thimphu. ' } },
-    { '@type': 'Question', name: 'Does Bhutan observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Bhutan offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Bhutan observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Bhutan does not observe Daylight Saving Time. Bhutan uses Bhutan Time (BTT, UTC+6) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Bhutan?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Bhutan is during local business hours: Monday–Friday, 9 AM–5 PM BTT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

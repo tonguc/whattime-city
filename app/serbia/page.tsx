@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Serbia right now?', acceptedAnswer: { '@type': 'Answer', text: 'Serbia uses CET (UTC+1). Belgrade is the capital. The live clock above shows the current local time in Serbia.' } },
     { '@type': 'Question', name: 'What time zone is Belgrade in?', acceptedAnswer: { '@type': 'Answer', text: 'Belgrade uses CET (UTC+1). The IANA time zone identifier is Europe/Belgrade. Serbia spans multiple time zones: CET (UTC+1), CEST (UTC+2).' } },
-    { '@type': 'Question', name: 'Does Serbia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Serbia offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Serbia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Serbia observes Central European Summer Time (CEST, UTC+2) from the last Sunday in March to the last Sunday in October. Outside this period, Serbia uses CET (UTC+1).' } },
     { '@type': 'Question', name: 'What is the best time to call Serbia?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Serbia is during local business hours: Monday–Friday, 9 AM–5 PM CET. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Lesotho right now?', acceptedAnswer: { '@type': 'Answer', text: 'Lesotho uses SAST (UTC+2). Maseru is the capital. The live clock above shows the current local time in Lesotho.' } },
     { '@type': 'Question', name: 'What time zone is Maseru in?', acceptedAnswer: { '@type': 'Answer', text: 'Maseru uses SAST (UTC+2). The IANA time zone identifier is Africa/Maseru. ' } },
-    { '@type': 'Question', name: 'Does Lesotho observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Lesotho offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Lesotho observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Lesotho does not observe Daylight Saving Time. Lesotho uses South Africa Standard Time (SAST, UTC+2) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Lesotho?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Lesotho is during local business hours: Monday–Friday, 9 AM–5 PM SAST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

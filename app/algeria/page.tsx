@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Algeria right now?', acceptedAnswer: { '@type': 'Answer', text: 'Algeria uses CET (UTC+1). Algiers is the capital. The live clock above shows the current local time in Algeria.' } },
     { '@type': 'Question', name: 'What time zone is Algiers in?', acceptedAnswer: { '@type': 'Answer', text: 'Algiers uses CET (UTC+1). The IANA time zone identifier is Africa/Algiers. ' } },
-    { '@type': 'Question', name: 'Does Algeria observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Algeria offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Algeria observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Algeria does not observe Daylight Saving Time. Algeria uses Central European Time (CET, UTC+1) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Algeria?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Algeria is during local business hours: Monday–Friday, 9 AM–5 PM CET. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

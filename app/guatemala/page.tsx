@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Guatemala right now?', acceptedAnswer: { '@type': 'Answer', text: 'Guatemala uses CST (UTC-6). Guatemala City is the capital. The live clock above shows the current local time in Guatemala.' } },
     { '@type': 'Question', name: 'What time zone is Guatemala City in?', acceptedAnswer: { '@type': 'Answer', text: 'Guatemala City uses CST (UTC-6). The IANA time zone identifier is America/Guatemala. ' } },
-    { '@type': 'Question', name: 'Does Guatemala observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Guatemala offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Guatemala observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Guatemala does not observe Daylight Saving Time. Guatemala uses Central Standard Time (CST, UTC-6) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Guatemala?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Guatemala is during local business hours: Monday–Friday, 9 AM–5 PM CST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Jordan right now?', acceptedAnswer: { '@type': 'Answer', text: 'Jordan uses EET (UTC+3). Amman is the capital. The live clock above shows the current local time in Jordan.' } },
     { '@type': 'Question', name: 'What time zone is Amman in?', acceptedAnswer: { '@type': 'Answer', text: 'Amman uses EET (UTC+3). The IANA time zone identifier is Asia/Amman. ' } },
-    { '@type': 'Question', name: 'Does Jordan observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Jordan offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Jordan observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Jordan does not observe Daylight Saving Time. Jordan permanently adopted UTC+3 (Arabia Standard Time) in 2022 and no longer changes clocks.' } },
     { '@type': 'Question', name: 'What is the best time to call Jordan?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Jordan is during local business hours: Monday–Friday, 9 AM–5 PM EET. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

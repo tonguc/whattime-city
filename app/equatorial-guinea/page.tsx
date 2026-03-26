@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Equatorial Guinea right now?', acceptedAnswer: { '@type': 'Answer', text: 'Equatorial Guinea uses WAT (UTC+1). Malabo is the capital. The live clock above shows the current local time in Equatorial Guinea.' } },
     { '@type': 'Question', name: 'What time zone is Malabo in?', acceptedAnswer: { '@type': 'Answer', text: 'Malabo uses WAT (UTC+1). The IANA time zone identifier is Africa/Malabo. ' } },
-    { '@type': 'Question', name: 'Does Equatorial Guinea observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Equatorial Guinea offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Equatorial Guinea observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Equatorial Guinea does not observe Daylight Saving Time. It uses West Africa Time (WAT, UTC+1) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Equatorial Guinea?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Equatorial Guinea is during local business hours: Monday–Friday, 9 AM–5 PM WAT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

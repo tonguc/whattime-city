@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Palau right now?', acceptedAnswer: { '@type': 'Answer', text: 'Palau uses PWT (UTC+9). Ngerulmud is the capital. The live clock above shows the current local time in Palau.' } },
     { '@type': 'Question', name: 'What time zone is Ngerulmud in?', acceptedAnswer: { '@type': 'Answer', text: 'Ngerulmud uses PWT (UTC+9). The IANA time zone identifier is Pacific/Palau. ' } },
-    { '@type': 'Question', name: 'Does Palau observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Palau offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Palau observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Palau does not observe Daylight Saving Time. Palau uses Palau Time (PWT, UTC+9) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Palau?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Palau is during local business hours: Monday–Friday, 9 AM–5 PM PWT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

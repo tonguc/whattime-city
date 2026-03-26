@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Norway right now?', acceptedAnswer: { '@type': 'Answer', text: 'Norway uses CET (UTC+1). Oslo is the capital. The live clock above shows the current local time in Norway.' } },
     { '@type': 'Question', name: 'What time zone is Oslo in?', acceptedAnswer: { '@type': 'Answer', text: 'Oslo uses CET (UTC+1). The IANA time zone identifier is Europe/Oslo. Norway spans multiple time zones: CET (UTC+1), CEST (UTC+2).' } },
-    { '@type': 'Question', name: 'Does Norway observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Norway offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Norway observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Norway observes Central European Summer Time (CEST, UTC+2) from the last Sunday in March to the last Sunday in October. Outside this period, Norway uses CET (UTC+1).' } },
     { '@type': 'Question', name: 'What is the best time to call Norway?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Norway is during local business hours: Monday–Friday, 9 AM–5 PM CET. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

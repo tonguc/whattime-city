@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Vatican City right now?', acceptedAnswer: { '@type': 'Answer', text: 'Vatican City uses CET (UTC+1). Vatican City is the capital. The live clock above shows the current local time in Vatican City.' } },
     { '@type': 'Question', name: 'What time zone is Vatican City in?', acceptedAnswer: { '@type': 'Answer', text: 'Vatican City uses CET (UTC+1). The IANA time zone identifier is Europe/Vatican. Vatican City spans multiple time zones: CET (UTC+1), CEST (UTC+2).' } },
-    { '@type': 'Question', name: 'Does Vatican City observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Vatican City offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Vatican City observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Vatican City observes Central European Summer Time (CEST, UTC+2) from the last Sunday in March to the last Sunday in October, following Italian time. Outside DST, Vatican City uses CET (UTC+1).' } },
     { '@type': 'Question', name: 'What is the best time to call Vatican City?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Vatican City is during local business hours: Monday–Friday, 9 AM–5 PM CET. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

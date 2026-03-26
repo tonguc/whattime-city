@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in El Salvador right now?', acceptedAnswer: { '@type': 'Answer', text: 'El Salvador uses CST (UTC-6). San Salvador is the capital. The live clock above shows the current local time in El Salvador.' } },
     { '@type': 'Question', name: 'What time zone is San Salvador in?', acceptedAnswer: { '@type': 'Answer', text: 'San Salvador uses CST (UTC-6). The IANA time zone identifier is America/El_Salvador. ' } },
-    { '@type': 'Question', name: 'Does El Salvador observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current El Salvador offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does El Salvador observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. El Salvador does not observe Daylight Saving Time. El Salvador uses Central Standard Time (CST, UTC-6) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call El Salvador?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call El Salvador is during local business hours: Monday–Friday, 9 AM–5 PM CST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Jamaica right now?', acceptedAnswer: { '@type': 'Answer', text: 'Jamaica uses EST (UTC-5). Kingston is the capital. The live clock above shows the current local time in Jamaica.' } },
     { '@type': 'Question', name: 'What time zone is Kingston in?', acceptedAnswer: { '@type': 'Answer', text: 'Kingston uses EST (UTC-5). The IANA time zone identifier is America/Jamaica. ' } },
-    { '@type': 'Question', name: 'Does Jamaica observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Jamaica offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Jamaica observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Jamaica does not observe Daylight Saving Time. Jamaica uses Eastern Standard Time (EST, UTC-5) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Jamaica?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Jamaica is during local business hours: Monday–Friday, 9 AM–5 PM EST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

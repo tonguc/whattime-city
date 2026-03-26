@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Papua New Guinea right now?', acceptedAnswer: { '@type': 'Answer', text: 'Papua New Guinea uses PGT (UTC+10). Port Moresby is the capital. The live clock above shows the current local time in Papua New Guinea.' } },
     { '@type': 'Question', name: 'What time zone is Port Moresby in?', acceptedAnswer: { '@type': 'Answer', text: 'Port Moresby uses PGT (UTC+10). The IANA time zone identifier is Pacific/Port_Moresby. ' } },
-    { '@type': 'Question', name: 'Does Papua New Guinea observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Papua New Guinea offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Papua New Guinea observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Papua New Guinea does not observe Daylight Saving Time. Papua New Guinea uses Papua New Guinea Time (PGT, UTC+10) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Papua New Guinea?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Papua New Guinea is during local business hours: Monday–Friday, 9 AM–5 PM PGT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Bolivia right now?', acceptedAnswer: { '@type': 'Answer', text: 'Bolivia uses BOT (UTC-4). Sucre is the capital. The live clock above shows the current local time in Bolivia.' } },
     { '@type': 'Question', name: 'What time zone is Sucre in?', acceptedAnswer: { '@type': 'Answer', text: 'Sucre uses BOT (UTC-4). The IANA time zone identifier is America/La_Paz. ' } },
-    { '@type': 'Question', name: 'Does Bolivia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Bolivia offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Bolivia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Bolivia does not observe Daylight Saving Time. Bolivia uses Bolivia Time (BOT, UTC-4) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Bolivia?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Bolivia is during local business hours: Monday–Friday, 9 AM–5 PM BOT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Kiribati right now?', acceptedAnswer: { '@type': 'Answer', text: 'Kiribati uses GILT (UTC+12). Tarawa is the capital. The live clock above shows the current local time in Kiribati.' } },
     { '@type': 'Question', name: 'What time zone is Tarawa in?', acceptedAnswer: { '@type': 'Answer', text: 'Tarawa uses GILT (UTC+12). The IANA time zone identifier is Pacific/Tarawa. Kiribati spans multiple time zones: GILT (UTC+12), PHOT (UTC+13), LINT (UTC+14).' } },
-    { '@type': 'Question', name: 'Does Kiribati observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Kiribati offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Kiribati observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Kiribati does not observe Daylight Saving Time. Kiribati uses Gilbert Island Time (GILT, UTC+12) or Line Islands Time (LINT, UTC+14) year-round depending on the island group.' } },
     { '@type': 'Question', name: 'What is the best time to call Kiribati?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Kiribati is during local business hours: Monday–Friday, 9 AM–5 PM GILT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

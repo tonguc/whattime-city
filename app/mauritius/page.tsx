@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Mauritius right now?', acceptedAnswer: { '@type': 'Answer', text: 'Mauritius uses MUT (UTC+4). Port Louis is the capital. The live clock above shows the current local time in Mauritius.' } },
     { '@type': 'Question', name: 'What time zone is Port Louis in?', acceptedAnswer: { '@type': 'Answer', text: 'Port Louis uses MUT (UTC+4). The IANA time zone identifier is Indian/Mauritius. ' } },
-    { '@type': 'Question', name: 'Does Mauritius observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Mauritius offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Mauritius observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Mauritius does not observe Daylight Saving Time. Mauritius uses Mauritius Time (MUT, UTC+4) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Mauritius?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Mauritius is during local business hours: Monday–Friday, 9 AM–5 PM MUT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

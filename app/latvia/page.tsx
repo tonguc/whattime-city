@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Latvia right now?', acceptedAnswer: { '@type': 'Answer', text: 'Latvia uses EET (UTC+2). Riga is the capital. The live clock above shows the current local time in Latvia.' } },
     { '@type': 'Question', name: 'What time zone is Riga in?', acceptedAnswer: { '@type': 'Answer', text: 'Riga uses EET (UTC+2). The IANA time zone identifier is Europe/Riga. Latvia spans multiple time zones: EET (UTC+2), EEST (UTC+3).' } },
-    { '@type': 'Question', name: 'Does Latvia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Latvia offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Latvia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Latvia observes Eastern European Summer Time (EEST, UTC+3) from the last Sunday in March to the last Sunday in October. Outside this period, Latvia uses EET (UTC+2).' } },
     { '@type': 'Question', name: 'What is the best time to call Latvia?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Latvia is during local business hours: Monday–Friday, 9 AM–5 PM EET. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

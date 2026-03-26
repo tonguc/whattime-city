@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Sudan right now?', acceptedAnswer: { '@type': 'Answer', text: 'Sudan uses CAT (UTC+2). Khartoum is the capital. The live clock above shows the current local time in Sudan.' } },
     { '@type': 'Question', name: 'What time zone is Khartoum in?', acceptedAnswer: { '@type': 'Answer', text: 'Khartoum uses CAT (UTC+2). The IANA time zone identifier is Africa/Khartoum. ' } },
-    { '@type': 'Question', name: 'Does Sudan observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Sudan offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Sudan observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Sudan does not observe Daylight Saving Time. Sudan uses East Africa Time (EAT, UTC+3) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Sudan?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Sudan is during local business hours: Monday–Friday, 9 AM–5 PM CAT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

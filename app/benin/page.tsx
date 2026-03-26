@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Benin right now?', acceptedAnswer: { '@type': 'Answer', text: 'Benin uses WAT (UTC+1). Porto-Novo is the capital. The live clock above shows the current local time in Benin.' } },
     { '@type': 'Question', name: 'What time zone is Porto-Novo in?', acceptedAnswer: { '@type': 'Answer', text: 'Porto-Novo uses WAT (UTC+1). The IANA time zone identifier is Africa/Porto-Novo. ' } },
-    { '@type': 'Question', name: 'Does Benin observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Benin offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Benin observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Benin does not observe Daylight Saving Time. Benin uses West Africa Time (WAT, UTC+1) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Benin?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Benin is during local business hours: Monday–Friday, 9 AM–5 PM WAT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Montenegro right now?', acceptedAnswer: { '@type': 'Answer', text: 'Montenegro uses CET (UTC+1). Podgorica is the capital. The live clock above shows the current local time in Montenegro.' } },
     { '@type': 'Question', name: 'What time zone is Podgorica in?', acceptedAnswer: { '@type': 'Answer', text: 'Podgorica uses CET (UTC+1). The IANA time zone identifier is Europe/Podgorica. Montenegro spans multiple time zones: CET (UTC+1), CEST (UTC+2).' } },
-    { '@type': 'Question', name: 'Does Montenegro observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Montenegro offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Montenegro observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Montenegro observes Central European Summer Time (CEST, UTC+2) from the last Sunday in March to the last Sunday in October. Outside this period, Montenegro uses CET (UTC+1).' } },
     { '@type': 'Question', name: 'What is the best time to call Montenegro?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Montenegro is during local business hours: Monday–Friday, 9 AM–5 PM CET. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

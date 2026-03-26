@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in United Arab Emirates right now?', acceptedAnswer: { '@type': 'Answer', text: 'United Arab Emirates uses GST (UTC+4). Abu Dhabi is the capital. The live clock above shows the current local time in United Arab Emirates.' } },
     { '@type': 'Question', name: 'What time zone is Abu Dhabi in?', acceptedAnswer: { '@type': 'Answer', text: 'Abu Dhabi uses GST (UTC+4). The IANA time zone identifier is Asia/Dubai. ' } },
-    { '@type': 'Question', name: 'Does United Arab Emirates observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current United Arab Emirates offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does United Arab Emirates observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. The United Arab Emirates does not observe Daylight Saving Time. The UAE uses Gulf Standard Time (GST, UTC+4) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call United Arab Emirates?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call United Arab Emirates is during local business hours: Monday–Friday, 9 AM–5 PM GST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

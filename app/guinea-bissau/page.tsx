@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Guinea-Bissau right now?', acceptedAnswer: { '@type': 'Answer', text: 'Guinea-Bissau uses GMT (UTC+0). Bissau is the capital. The live clock above shows the current local time in Guinea-Bissau.' } },
     { '@type': 'Question', name: 'What time zone is Bissau in?', acceptedAnswer: { '@type': 'Answer', text: 'Bissau uses GMT (UTC+0). The IANA time zone identifier is Africa/Bissau. ' } },
-    { '@type': 'Question', name: 'Does Guinea-Bissau observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Guinea-Bissau offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Guinea-Bissau observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Guinea-Bissau does not observe Daylight Saving Time. Guinea-Bissau uses Greenwich Mean Time (GMT, UTC+0) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Guinea-Bissau?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Guinea-Bissau is during local business hours: Monday–Friday, 9 AM–5 PM GMT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

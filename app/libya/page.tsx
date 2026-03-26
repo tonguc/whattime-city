@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Libya right now?', acceptedAnswer: { '@type': 'Answer', text: 'Libya uses EET (UTC+2). Tripoli is the capital. The live clock above shows the current local time in Libya.' } },
     { '@type': 'Question', name: 'What time zone is Tripoli in?', acceptedAnswer: { '@type': 'Answer', text: 'Tripoli uses EET (UTC+2). The IANA time zone identifier is Africa/Tripoli. ' } },
-    { '@type': 'Question', name: 'Does Libya observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Libya offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Libya observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Libya does not observe Daylight Saving Time. Libya uses Eastern European Time (EET, UTC+2) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Libya?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Libya is during local business hours: Monday–Friday, 9 AM–5 PM EET. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

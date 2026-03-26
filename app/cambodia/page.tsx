@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Cambodia right now?', acceptedAnswer: { '@type': 'Answer', text: 'Cambodia uses ICT (UTC+7). Phnom Penh is the capital. The live clock above shows the current local time in Cambodia.' } },
     { '@type': 'Question', name: 'What time zone is Phnom Penh in?', acceptedAnswer: { '@type': 'Answer', text: 'Phnom Penh uses ICT (UTC+7). The IANA time zone identifier is Asia/Phnom_Penh. ' } },
-    { '@type': 'Question', name: 'Does Cambodia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Cambodia offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Cambodia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Cambodia does not observe Daylight Saving Time. Cambodia uses Indochina Time (ICT, UTC+7) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Cambodia?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Cambodia is during local business hours: Monday–Friday, 9 AM–5 PM ICT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

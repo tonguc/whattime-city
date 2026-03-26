@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Djibouti right now?', acceptedAnswer: { '@type': 'Answer', text: 'Djibouti uses EAT (UTC+3). Djibouti City is the capital. The live clock above shows the current local time in Djibouti.' } },
     { '@type': 'Question', name: 'What time zone is Djibouti City in?', acceptedAnswer: { '@type': 'Answer', text: 'Djibouti City uses EAT (UTC+3). The IANA time zone identifier is Africa/Djibouti. ' } },
-    { '@type': 'Question', name: 'Does Djibouti observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Djibouti offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Djibouti observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Djibouti does not observe Daylight Saving Time. Djibouti uses East Africa Time (EAT, UTC+3) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Djibouti?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Djibouti is during local business hours: Monday–Friday, 9 AM–5 PM EAT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

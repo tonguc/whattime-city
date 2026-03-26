@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Armenia right now?', acceptedAnswer: { '@type': 'Answer', text: 'Armenia uses AMT (UTC+4). Yerevan is the capital. The live clock above shows the current local time in Armenia.' } },
     { '@type': 'Question', name: 'What time zone is Yerevan in?', acceptedAnswer: { '@type': 'Answer', text: 'Yerevan uses AMT (UTC+4). The IANA time zone identifier is Asia/Yerevan. ' } },
-    { '@type': 'Question', name: 'Does Armenia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Armenia offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Armenia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Armenia does not observe Daylight Saving Time. Armenia uses Armenia Time (AMT, UTC+4) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Armenia?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Armenia is during local business hours: Monday–Friday, 9 AM–5 PM AMT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

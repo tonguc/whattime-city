@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Tajikistan right now?', acceptedAnswer: { '@type': 'Answer', text: 'Tajikistan uses TJT (UTC+5). Dushanbe is the capital. The live clock above shows the current local time in Tajikistan.' } },
     { '@type': 'Question', name: 'What time zone is Dushanbe in?', acceptedAnswer: { '@type': 'Answer', text: 'Dushanbe uses TJT (UTC+5). The IANA time zone identifier is Asia/Dushanbe. ' } },
-    { '@type': 'Question', name: 'Does Tajikistan observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Tajikistan offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Tajikistan observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Tajikistan does not observe Daylight Saving Time. Tajikistan uses Tajikistan Time (TJT, UTC+5) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Tajikistan?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Tajikistan is during local business hours: Monday–Friday, 9 AM–5 PM TJT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

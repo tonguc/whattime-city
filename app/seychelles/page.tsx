@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Seychelles right now?', acceptedAnswer: { '@type': 'Answer', text: 'Seychelles uses SCT (UTC+4). Victoria is the capital. The live clock above shows the current local time in Seychelles.' } },
     { '@type': 'Question', name: 'What time zone is Victoria in?', acceptedAnswer: { '@type': 'Answer', text: 'Victoria uses SCT (UTC+4). The IANA time zone identifier is Indian/Mahe. ' } },
-    { '@type': 'Question', name: 'Does Seychelles observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Seychelles offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Seychelles observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Seychelles does not observe Daylight Saving Time. Seychelles uses Seychelles Time (SCT, UTC+4) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Seychelles?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Seychelles is during local business hours: Monday–Friday, 9 AM–5 PM SCT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

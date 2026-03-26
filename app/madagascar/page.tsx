@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Madagascar right now?', acceptedAnswer: { '@type': 'Answer', text: 'Madagascar uses EAT (UTC+3). Antananarivo is the capital. The live clock above shows the current local time in Madagascar.' } },
     { '@type': 'Question', name: 'What time zone is Antananarivo in?', acceptedAnswer: { '@type': 'Answer', text: 'Antananarivo uses EAT (UTC+3). The IANA time zone identifier is Indian/Antananarivo. ' } },
-    { '@type': 'Question', name: 'Does Madagascar observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Madagascar offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Madagascar observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Madagascar does not observe Daylight Saving Time. Madagascar uses East Africa Time (EAT, UTC+3) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Madagascar?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Madagascar is during local business hours: Monday–Friday, 9 AM–5 PM EAT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

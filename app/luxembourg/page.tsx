@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Luxembourg right now?', acceptedAnswer: { '@type': 'Answer', text: 'Luxembourg uses CET (UTC+1). Luxembourg City is the capital. The live clock above shows the current local time in Luxembourg.' } },
     { '@type': 'Question', name: 'What time zone is Luxembourg City in?', acceptedAnswer: { '@type': 'Answer', text: 'Luxembourg City uses CET (UTC+1). The IANA time zone identifier is Europe/Luxembourg. Luxembourg spans multiple time zones: CET (UTC+1), CEST (UTC+2).' } },
-    { '@type': 'Question', name: 'Does Luxembourg observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Luxembourg offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Luxembourg observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Luxembourg observes Central European Summer Time (CEST, UTC+2) from the last Sunday in March to the last Sunday in October. Outside this period, Luxembourg uses CET (UTC+1).' } },
     { '@type': 'Question', name: 'What is the best time to call Luxembourg?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Luxembourg is during local business hours: Monday–Friday, 9 AM–5 PM CET. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Sierra Leone right now?', acceptedAnswer: { '@type': 'Answer', text: 'Sierra Leone uses GMT (UTC+0). Freetown is the capital. The live clock above shows the current local time in Sierra Leone.' } },
     { '@type': 'Question', name: 'What time zone is Freetown in?', acceptedAnswer: { '@type': 'Answer', text: 'Freetown uses GMT (UTC+0). The IANA time zone identifier is Africa/Freetown. ' } },
-    { '@type': 'Question', name: 'Does Sierra Leone observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Sierra Leone offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Sierra Leone observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Sierra Leone does not observe Daylight Saving Time. Sierra Leone uses Greenwich Mean Time (GMT, UTC+0) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Sierra Leone?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Sierra Leone is during local business hours: Monday–Friday, 9 AM–5 PM GMT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

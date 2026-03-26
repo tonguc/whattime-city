@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Iraq right now?', acceptedAnswer: { '@type': 'Answer', text: 'Iraq uses AST (UTC+3). Baghdad is the capital. The live clock above shows the current local time in Iraq.' } },
     { '@type': 'Question', name: 'What time zone is Baghdad in?', acceptedAnswer: { '@type': 'Answer', text: 'Baghdad uses AST (UTC+3). The IANA time zone identifier is Asia/Baghdad. ' } },
-    { '@type': 'Question', name: 'Does Iraq observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Iraq offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Iraq observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Iraq does not observe Daylight Saving Time. Iraq uses Arabia Standard Time (AST, UTC+3) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Iraq?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Iraq is during local business hours: Monday–Friday, 9 AM–5 PM AST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

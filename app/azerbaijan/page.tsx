@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Azerbaijan right now?', acceptedAnswer: { '@type': 'Answer', text: 'Azerbaijan uses AZT (UTC+4). Baku is the capital. The live clock above shows the current local time in Azerbaijan.' } },
     { '@type': 'Question', name: 'What time zone is Baku in?', acceptedAnswer: { '@type': 'Answer', text: 'Baku uses AZT (UTC+4). The IANA time zone identifier is Asia/Baku. ' } },
-    { '@type': 'Question', name: 'Does Azerbaijan observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Azerbaijan offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Azerbaijan observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Azerbaijan does not observe Daylight Saving Time. Azerbaijan uses Azerbaijan Time (AZT, UTC+4) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Azerbaijan?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Azerbaijan is during local business hours: Monday–Friday, 9 AM–5 PM AZT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

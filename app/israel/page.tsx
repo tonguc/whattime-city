@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Israel right now?', acceptedAnswer: { '@type': 'Answer', text: 'Israel uses IST (UTC+2). Jerusalem is the capital. The live clock above shows the current local time in Israel.' } },
     { '@type': 'Question', name: 'What time zone is Jerusalem in?', acceptedAnswer: { '@type': 'Answer', text: 'Jerusalem uses IST (UTC+2). The IANA time zone identifier is Asia/Jerusalem. Israel spans multiple time zones: IST (UTC+2), IDT (UTC+3).' } },
-    { '@type': 'Question', name: 'Does Israel observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Israel offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Israel observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Israel observes Daylight Saving Time (IDT, UTC+3) in summer. In 2026, clocks spring forward on the last Friday before April 2 and fall back on the last Sunday before November 1. Outside DST, Israel uses Israel Standard Time (IST, UTC+2).' } },
     { '@type': 'Question', name: 'What is the best time to call Israel?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Israel is during local business hours: Monday–Friday, 9 AM–5 PM IST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

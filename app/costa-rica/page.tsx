@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Costa Rica right now?', acceptedAnswer: { '@type': 'Answer', text: 'Costa Rica uses CST (UTC-6). San José is the capital. The live clock above shows the current local time in Costa Rica.' } },
     { '@type': 'Question', name: 'What time zone is San José in?', acceptedAnswer: { '@type': 'Answer', text: 'San José uses CST (UTC-6). The IANA time zone identifier is America/Costa_Rica. ' } },
-    { '@type': 'Question', name: 'Does Costa Rica observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Costa Rica offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Costa Rica observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Costa Rica does not observe Daylight Saving Time. Costa Rica uses Central Standard Time (CST, UTC-6) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Costa Rica?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Costa Rica is during local business hours: Monday–Friday, 9 AM–5 PM CST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

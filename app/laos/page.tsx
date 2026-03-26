@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Laos right now?', acceptedAnswer: { '@type': 'Answer', text: 'Laos uses ICT (UTC+7). Vientiane is the capital. The live clock above shows the current local time in Laos.' } },
     { '@type': 'Question', name: 'What time zone is Vientiane in?', acceptedAnswer: { '@type': 'Answer', text: 'Vientiane uses ICT (UTC+7). The IANA time zone identifier is Asia/Vientiane. ' } },
-    { '@type': 'Question', name: 'Does Laos observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Laos offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Laos observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Laos does not observe Daylight Saving Time. Laos uses Indochina Time (ICT, UTC+7) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Laos?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Laos is during local business hours: Monday–Friday, 9 AM–5 PM ICT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

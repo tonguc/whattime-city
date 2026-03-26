@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in South Sudan right now?', acceptedAnswer: { '@type': 'Answer', text: 'South Sudan uses CAT (UTC+2). Juba is the capital. The live clock above shows the current local time in South Sudan.' } },
     { '@type': 'Question', name: 'What time zone is Juba in?', acceptedAnswer: { '@type': 'Answer', text: 'Juba uses CAT (UTC+2). The IANA time zone identifier is Africa/Juba. ' } },
-    { '@type': 'Question', name: 'Does South Sudan observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current South Sudan offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does South Sudan observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. South Sudan does not observe Daylight Saving Time. South Sudan uses East Africa Time (EAT, UTC+3) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call South Sudan?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call South Sudan is during local business hours: Monday–Friday, 9 AM–5 PM CAT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in United States right now?', acceptedAnswer: { '@type': 'Answer', text: 'United States uses EST (UTC-5). Washington D.C. is the capital. The live clock above shows the current local time in United States.' } },
     { '@type': 'Question', name: 'What time zone is Washington D.C. in?', acceptedAnswer: { '@type': 'Answer', text: 'Washington D.C. uses EST (UTC-5). The IANA time zone identifier is America/New_York. United States spans multiple time zones: EST (UTC-5), CST (UTC-6), MST (UTC-7), PST (UTC-8), AKST (UTC-9), HST (UTC-10).' } },
-    { '@type': 'Question', name: 'Does United States observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current United States offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does United States observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Most of the United States observes Daylight Saving Time from the second Sunday in March (spring forward) to the first Sunday in November (fall back). Exceptions: Arizona (except the Navajo Nation) and Hawaii do not observe DST.' } },
     { '@type': 'Question', name: 'What is the best time to call United States?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call United States is during local business hours: Monday–Friday, 9 AM–5 PM EST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

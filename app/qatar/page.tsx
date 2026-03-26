@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Qatar right now?', acceptedAnswer: { '@type': 'Answer', text: 'Qatar uses AST (UTC+3). Doha is the capital. The live clock above shows the current local time in Qatar.' } },
     { '@type': 'Question', name: 'What time zone is Doha in?', acceptedAnswer: { '@type': 'Answer', text: 'Doha uses AST (UTC+3). The IANA time zone identifier is Asia/Qatar. ' } },
-    { '@type': 'Question', name: 'Does Qatar observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Qatar offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Qatar observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Qatar does not observe Daylight Saving Time. Qatar uses Arabia Standard Time (AST, UTC+3) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Qatar?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Qatar is during local business hours: Monday–Friday, 9 AM–5 PM AST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

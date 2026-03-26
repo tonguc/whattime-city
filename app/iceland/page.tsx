@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Iceland right now?', acceptedAnswer: { '@type': 'Answer', text: 'Iceland uses GMT (UTC+0). Reykjavik is the capital. The live clock above shows the current local time in Iceland.' } },
     { '@type': 'Question', name: 'What time zone is Reykjavik in?', acceptedAnswer: { '@type': 'Answer', text: 'Reykjavik uses GMT (UTC+0). The IANA time zone identifier is Atlantic/Reykjavik. ' } },
-    { '@type': 'Question', name: 'Does Iceland observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Iceland offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Iceland observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Iceland does not observe Daylight Saving Time. Iceland uses Greenwich Mean Time (GMT, UTC+0) year-round, making it unique among European countries.' } },
     { '@type': 'Question', name: 'What is the best time to call Iceland?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Iceland is during local business hours: Monday–Friday, 9 AM–5 PM GMT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

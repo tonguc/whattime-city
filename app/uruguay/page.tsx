@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Uruguay right now?', acceptedAnswer: { '@type': 'Answer', text: 'Uruguay uses UYT (UTC-3). Montevideo is the capital. The live clock above shows the current local time in Uruguay.' } },
     { '@type': 'Question', name: 'What time zone is Montevideo in?', acceptedAnswer: { '@type': 'Answer', text: 'Montevideo uses UYT (UTC-3). The IANA time zone identifier is America/Montevideo. ' } },
-    { '@type': 'Question', name: 'Does Uruguay observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Uruguay offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Uruguay observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Uruguay does not observe Daylight Saving Time. Uruguay permanently abolished DST in 2015 and uses Uruguay Standard Time (UYT, UTC-3) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Uruguay?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Uruguay is during local business hours: Monday–Friday, 9 AM–5 PM UYT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Palestine right now?', acceptedAnswer: { '@type': 'Answer', text: 'Palestine uses EET (UTC+2). Ramallah is the capital. The live clock above shows the current local time in Palestine.' } },
     { '@type': 'Question', name: 'What time zone is Ramallah in?', acceptedAnswer: { '@type': 'Answer', text: 'Ramallah uses EET (UTC+2). The IANA time zone identifier is Asia/Gaza. Palestine spans multiple time zones: EET (UTC+2), EEST (UTC+3).' } },
-    { '@type': 'Question', name: 'Does Palestine observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Palestine offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Palestine observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Palestine (West Bank and Gaza) observes Daylight Saving Time. Palestine springs forward in spring and falls back in autumn, though exact dates may vary.' } },
     { '@type': 'Question', name: 'What is the best time to call Palestine?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Palestine is during local business hours: Monday–Friday, 9 AM–5 PM EET. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Vanuatu right now?', acceptedAnswer: { '@type': 'Answer', text: 'Vanuatu uses VUT (UTC+11). Port Vila is the capital. The live clock above shows the current local time in Vanuatu.' } },
     { '@type': 'Question', name: 'What time zone is Port Vila in?', acceptedAnswer: { '@type': 'Answer', text: 'Port Vila uses VUT (UTC+11). The IANA time zone identifier is Pacific/Efate. ' } },
-    { '@type': 'Question', name: 'Does Vanuatu observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Vanuatu offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Vanuatu observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Vanuatu does not observe Daylight Saving Time. Vanuatu uses Vanuatu Time (VUT, UTC+11) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Vanuatu?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Vanuatu is during local business hours: Monday–Friday, 9 AM–5 PM VUT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

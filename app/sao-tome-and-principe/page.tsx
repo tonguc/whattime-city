@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in São Tomé and Príncipe right now?', acceptedAnswer: { '@type': 'Answer', text: 'São Tomé and Príncipe uses GMT (UTC+0). São Tomé is the capital. The live clock above shows the current local time in São Tomé and Príncipe.' } },
     { '@type': 'Question', name: 'What time zone is São Tomé in?', acceptedAnswer: { '@type': 'Answer', text: 'São Tomé uses GMT (UTC+0). The IANA time zone identifier is Africa/Sao_Tome. ' } },
-    { '@type': 'Question', name: 'Does São Tomé and Príncipe observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current São Tomé and Príncipe offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does São Tomé and Príncipe observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. São Tomé and Príncipe does not observe Daylight Saving Time. It uses Greenwich Mean Time (GMT, UTC+0) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call São Tomé and Príncipe?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call São Tomé and Príncipe is during local business hours: Monday–Friday, 9 AM–5 PM GMT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Trinidad and Tobago right now?', acceptedAnswer: { '@type': 'Answer', text: 'Trinidad and Tobago uses AST (UTC-4). Port of Spain is the capital. The live clock above shows the current local time in Trinidad and Tobago.' } },
     { '@type': 'Question', name: 'What time zone is Port of Spain in?', acceptedAnswer: { '@type': 'Answer', text: 'Port of Spain uses AST (UTC-4). The IANA time zone identifier is America/Port_of_Spain. ' } },
-    { '@type': 'Question', name: 'Does Trinidad and Tobago observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Trinidad and Tobago offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Trinidad and Tobago observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Trinidad and Tobago does not observe Daylight Saving Time. Trinidad and Tobago uses Atlantic Standard Time (AST, UTC-4) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Trinidad and Tobago?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Trinidad and Tobago is during local business hours: Monday–Friday, 9 AM–5 PM AST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

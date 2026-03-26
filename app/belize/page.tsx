@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Belize right now?', acceptedAnswer: { '@type': 'Answer', text: 'Belize uses CST (UTC-6). Belmopan is the capital. The live clock above shows the current local time in Belize.' } },
     { '@type': 'Question', name: 'What time zone is Belmopan in?', acceptedAnswer: { '@type': 'Answer', text: 'Belmopan uses CST (UTC-6). The IANA time zone identifier is America/Belize. ' } },
-    { '@type': 'Question', name: 'Does Belize observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Belize offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Belize observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Belize does not observe Daylight Saving Time. Belize uses Central Standard Time (CST, UTC-6) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Belize?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Belize is during local business hours: Monday–Friday, 9 AM–5 PM CST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

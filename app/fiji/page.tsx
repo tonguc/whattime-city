@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Fiji right now?', acceptedAnswer: { '@type': 'Answer', text: 'Fiji uses FJT (UTC+12). Suva is the capital. The live clock above shows the current local time in Fiji.' } },
     { '@type': 'Question', name: 'What time zone is Suva in?', acceptedAnswer: { '@type': 'Answer', text: 'Suva uses FJT (UTC+12). The IANA time zone identifier is Pacific/Fiji. Fiji spans multiple time zones: FJT (UTC+12), FJST (UTC+13).' } },
-    { '@type': 'Question', name: 'Does Fiji observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Fiji offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Fiji observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Fiji observes Daylight Saving Time. Fiji springs forward in October and falls back in January (Southern Hemisphere schedule).' } },
     { '@type': 'Question', name: 'What is the best time to call Fiji?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Fiji is during local business hours: Monday–Friday, 9 AM–5 PM FJT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Ecuador right now?', acceptedAnswer: { '@type': 'Answer', text: 'Ecuador uses ECT (UTC-5). Quito is the capital. The live clock above shows the current local time in Ecuador.' } },
     { '@type': 'Question', name: 'What time zone is Quito in?', acceptedAnswer: { '@type': 'Answer', text: 'Quito uses ECT (UTC-5). The IANA time zone identifier is America/Guayaquil. Ecuador spans multiple time zones: ECT (UTC-5), GALT (UTC-6).' } },
-    { '@type': 'Question', name: 'Does Ecuador observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Ecuador offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Ecuador observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Ecuador does not observe Daylight Saving Time. Ecuador uses Ecuador Time (ECT, UTC-5) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Ecuador?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Ecuador is during local business hours: Monday–Friday, 9 AM–5 PM ECT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

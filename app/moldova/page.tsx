@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Moldova right now?', acceptedAnswer: { '@type': 'Answer', text: 'Moldova uses EET (UTC+2). Chișinău is the capital. The live clock above shows the current local time in Moldova.' } },
     { '@type': 'Question', name: 'What time zone is Chișinău in?', acceptedAnswer: { '@type': 'Answer', text: 'Chișinău uses EET (UTC+2). The IANA time zone identifier is Europe/Chisinau. Moldova spans multiple time zones: EET (UTC+2), EEST (UTC+3).' } },
-    { '@type': 'Question', name: 'Does Moldova observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Moldova offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Moldova observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Moldova observes Eastern European Summer Time (EEST, UTC+3) from the last Sunday in March to the last Sunday in October. Outside this period, Moldova uses EET (UTC+2).' } },
     { '@type': 'Question', name: 'What is the best time to call Moldova?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Moldova is during local business hours: Monday–Friday, 9 AM–5 PM EET. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

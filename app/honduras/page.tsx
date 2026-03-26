@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Honduras right now?', acceptedAnswer: { '@type': 'Answer', text: 'Honduras uses CST (UTC-6). Tegucigalpa is the capital. The live clock above shows the current local time in Honduras.' } },
     { '@type': 'Question', name: 'What time zone is Tegucigalpa in?', acceptedAnswer: { '@type': 'Answer', text: 'Tegucigalpa uses CST (UTC-6). The IANA time zone identifier is America/Tegucigalpa. ' } },
-    { '@type': 'Question', name: 'Does Honduras observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Honduras offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Honduras observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Honduras does not observe Daylight Saving Time. Honduras uses Central Standard Time (CST, UTC-6) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Honduras?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Honduras is during local business hours: Monday–Friday, 9 AM–5 PM CST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Kazakhstan right now?', acceptedAnswer: { '@type': 'Answer', text: 'Kazakhstan uses AQTT (UTC+5). Astana is the capital. The live clock above shows the current local time in Kazakhstan.' } },
     { '@type': 'Question', name: 'What time zone is Astana in?', acceptedAnswer: { '@type': 'Answer', text: 'Astana uses AQTT (UTC+5). The IANA time zone identifier is Asia/Almaty. Kazakhstan spans multiple time zones: AQTT (UTC+5), ALMT (UTC+6).' } },
-    { '@type': 'Question', name: 'Does Kazakhstan observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Kazakhstan offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Kazakhstan observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Kazakhstan does not observe Daylight Saving Time. Kazakhstan uses Alma-Ata Time (ALMT, UTC+6) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Kazakhstan?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Kazakhstan is during local business hours: Monday–Friday, 9 AM–5 PM AQTT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Timor-Leste right now?', acceptedAnswer: { '@type': 'Answer', text: 'Timor-Leste uses TLT (UTC+9). Dili is the capital. The live clock above shows the current local time in Timor-Leste.' } },
     { '@type': 'Question', name: 'What time zone is Dili in?', acceptedAnswer: { '@type': 'Answer', text: 'Dili uses TLT (UTC+9). The IANA time zone identifier is Asia/Dili. ' } },
-    { '@type': 'Question', name: 'Does Timor-Leste observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Timor-Leste offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Timor-Leste observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Timor-Leste (East Timor) does not observe Daylight Saving Time. Timor-Leste uses Timor-Leste Time (TLT, UTC+9) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Timor-Leste?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Timor-Leste is during local business hours: Monday–Friday, 9 AM–5 PM TLT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

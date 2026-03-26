@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Ireland right now?', acceptedAnswer: { '@type': 'Answer', text: 'Ireland uses GMT (UTC+0). Dublin is the capital. The live clock above shows the current local time in Ireland.' } },
     { '@type': 'Question', name: 'What time zone is Dublin in?', acceptedAnswer: { '@type': 'Answer', text: 'Dublin uses GMT (UTC+0). The IANA time zone identifier is Europe/Dublin. Ireland spans multiple time zones: GMT (UTC+0), IST (UTC+1).' } },
-    { '@type': 'Question', name: 'Does Ireland observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Ireland offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Ireland observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Ireland observes Irish Standard Time (IST, UTC+1) from the last Sunday in March to the last Sunday in October. Outside this period, Ireland uses Greenwich Mean Time (GMT, UTC+0).' } },
     { '@type': 'Question', name: 'What is the best time to call Ireland?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Ireland is during local business hours: Monday–Friday, 9 AM–5 PM GMT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

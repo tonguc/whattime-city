@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Paraguay right now?', acceptedAnswer: { '@type': 'Answer', text: 'Paraguay uses PYT (UTC-4). Asunción is the capital. The live clock above shows the current local time in Paraguay.' } },
     { '@type': 'Question', name: 'What time zone is Asunción in?', acceptedAnswer: { '@type': 'Answer', text: 'Asunción uses PYT (UTC-4). The IANA time zone identifier is America/Asuncion. Paraguay spans multiple time zones: PYT (UTC-4), PYST (UTC-3).' } },
-    { '@type': 'Question', name: 'Does Paraguay observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Paraguay offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Paraguay observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Paraguay observes Daylight Saving Time (PYST, UTC-3) from the first Sunday in October to the fourth Sunday in March (Southern Hemisphere summer). Outside DST, Paraguay uses PYT (UTC-4).' } },
     { '@type': 'Question', name: 'What is the best time to call Paraguay?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Paraguay is during local business hours: Monday–Friday, 9 AM–5 PM PYT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

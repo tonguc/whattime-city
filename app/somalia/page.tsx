@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Somalia right now?', acceptedAnswer: { '@type': 'Answer', text: 'Somalia uses EAT (UTC+3). Mogadishu is the capital. The live clock above shows the current local time in Somalia.' } },
     { '@type': 'Question', name: 'What time zone is Mogadishu in?', acceptedAnswer: { '@type': 'Answer', text: 'Mogadishu uses EAT (UTC+3). The IANA time zone identifier is Africa/Mogadishu. ' } },
-    { '@type': 'Question', name: 'Does Somalia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Somalia offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Somalia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Somalia does not observe Daylight Saving Time. Somalia uses East Africa Time (EAT, UTC+3) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Somalia?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Somalia is during local business hours: Monday–Friday, 9 AM–5 PM EAT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

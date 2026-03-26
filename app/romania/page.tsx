@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Romania right now?', acceptedAnswer: { '@type': 'Answer', text: 'Romania uses EET (UTC+2). Bucharest is the capital. The live clock above shows the current local time in Romania.' } },
     { '@type': 'Question', name: 'What time zone is Bucharest in?', acceptedAnswer: { '@type': 'Answer', text: 'Bucharest uses EET (UTC+2). The IANA time zone identifier is Europe/Bucharest. Romania spans multiple time zones: EET (UTC+2), EEST (UTC+3).' } },
-    { '@type': 'Question', name: 'Does Romania observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Romania offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Romania observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Romania observes Eastern European Summer Time (EEST, UTC+3) from the last Sunday in March to the last Sunday in October. Outside this period, Romania uses EET (UTC+2).' } },
     { '@type': 'Question', name: 'What is the best time to call Romania?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Romania is during local business hours: Monday–Friday, 9 AM–5 PM EET. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

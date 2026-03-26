@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Maldives right now?', acceptedAnswer: { '@type': 'Answer', text: 'Maldives uses MVT (UTC+5). Malé is the capital. The live clock above shows the current local time in Maldives.' } },
     { '@type': 'Question', name: 'What time zone is Malé in?', acceptedAnswer: { '@type': 'Answer', text: 'Malé uses MVT (UTC+5). The IANA time zone identifier is Indian/Maldives. ' } },
-    { '@type': 'Question', name: 'Does Maldives observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Maldives offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Maldives observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Maldives does not observe Daylight Saving Time. Maldives uses Maldives Time (MVT, UTC+5) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Maldives?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Maldives is during local business hours: Monday–Friday, 9 AM–5 PM MVT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

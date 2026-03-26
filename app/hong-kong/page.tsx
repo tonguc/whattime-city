@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Hong Kong right now?', acceptedAnswer: { '@type': 'Answer', text: 'Hong Kong uses HKT (UTC+8). Hong Kong is the capital. The live clock above shows the current local time in Hong Kong.' } },
     { '@type': 'Question', name: 'What time zone is Hong Kong in?', acceptedAnswer: { '@type': 'Answer', text: 'Hong Kong uses HKT (UTC+8). The IANA time zone identifier is Asia/Hong_Kong. ' } },
-    { '@type': 'Question', name: 'Does Hong Kong observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Hong Kong offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Hong Kong observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Hong Kong does not observe Daylight Saving Time. Hong Kong uses Hong Kong Time (HKT, UTC+8) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Hong Kong?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Hong Kong is during local business hours: Monday–Friday, 9 AM–5 PM HKT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

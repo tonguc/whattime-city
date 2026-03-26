@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Haiti right now?', acceptedAnswer: { '@type': 'Answer', text: 'Haiti uses EST (UTC-5). Port-au-Prince is the capital. The live clock above shows the current local time in Haiti.' } },
     { '@type': 'Question', name: 'What time zone is Port-au-Prince in?', acceptedAnswer: { '@type': 'Answer', text: 'Port-au-Prince uses EST (UTC-5). The IANA time zone identifier is America/Port-au-Prince. Haiti spans multiple time zones: EST (UTC-5), EDT (UTC-4).' } },
-    { '@type': 'Question', name: 'Does Haiti observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Haiti offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Haiti observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Haiti observes Eastern Daylight Time (EDT, UTC-4) from spring to autumn. Outside DST, Haiti uses Eastern Standard Time (EST, UTC-5).' } },
     { '@type': 'Question', name: 'What is the best time to call Haiti?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Haiti is during local business hours: Monday–Friday, 9 AM–5 PM EST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

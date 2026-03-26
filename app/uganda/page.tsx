@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Uganda right now?', acceptedAnswer: { '@type': 'Answer', text: 'Uganda uses EAT (UTC+3). Kampala is the capital. The live clock above shows the current local time in Uganda.' } },
     { '@type': 'Question', name: 'What time zone is Kampala in?', acceptedAnswer: { '@type': 'Answer', text: 'Kampala uses EAT (UTC+3). The IANA time zone identifier is Africa/Kampala. ' } },
-    { '@type': 'Question', name: 'Does Uganda observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Uganda offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Uganda observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Uganda does not observe Daylight Saving Time. Uganda uses East Africa Time (EAT, UTC+3) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Uganda?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Uganda is during local business hours: Monday–Friday, 9 AM–5 PM EAT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

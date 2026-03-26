@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Kuwait right now?', acceptedAnswer: { '@type': 'Answer', text: 'Kuwait uses AST (UTC+3). Kuwait City is the capital. The live clock above shows the current local time in Kuwait.' } },
     { '@type': 'Question', name: 'What time zone is Kuwait City in?', acceptedAnswer: { '@type': 'Answer', text: 'Kuwait City uses AST (UTC+3). The IANA time zone identifier is Asia/Kuwait. ' } },
-    { '@type': 'Question', name: 'Does Kuwait observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Kuwait offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Kuwait observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Kuwait does not observe Daylight Saving Time. Kuwait uses Arabia Standard Time (AST, UTC+3) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Kuwait?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Kuwait is during local business hours: Monday–Friday, 9 AM–5 PM AST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

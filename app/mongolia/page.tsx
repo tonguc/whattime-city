@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Mongolia right now?', acceptedAnswer: { '@type': 'Answer', text: 'Mongolia uses ULAT (UTC+8). Ulaanbaatar is the capital. The live clock above shows the current local time in Mongolia.' } },
     { '@type': 'Question', name: 'What time zone is Ulaanbaatar in?', acceptedAnswer: { '@type': 'Answer', text: 'Ulaanbaatar uses ULAT (UTC+8). The IANA time zone identifier is Asia/Ulaanbaatar. Mongolia spans multiple time zones: ULAT (UTC+8), HOVT (UTC+7).' } },
-    { '@type': 'Question', name: 'Does Mongolia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Mongolia offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Mongolia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Mongolia does not observe Daylight Saving Time. Mongolia uses Ulaanbaatar Time (ULAT, UTC+8) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Mongolia?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Mongolia is during local business hours: Monday–Friday, 9 AM–5 PM ULAT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

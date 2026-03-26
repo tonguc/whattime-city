@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Tuvalu right now?', acceptedAnswer: { '@type': 'Answer', text: 'Tuvalu uses TVT (UTC+12). Funafuti is the capital. The live clock above shows the current local time in Tuvalu.' } },
     { '@type': 'Question', name: 'What time zone is Funafuti in?', acceptedAnswer: { '@type': 'Answer', text: 'Funafuti uses TVT (UTC+12). The IANA time zone identifier is Pacific/Funafuti. ' } },
-    { '@type': 'Question', name: 'Does Tuvalu observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Tuvalu offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Tuvalu observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Tuvalu does not observe Daylight Saving Time. Tuvalu uses Tuvalu Time (TVT, UTC+12) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Tuvalu?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Tuvalu is during local business hours: Monday–Friday, 9 AM–5 PM TVT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

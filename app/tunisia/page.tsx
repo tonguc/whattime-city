@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Tunisia right now?', acceptedAnswer: { '@type': 'Answer', text: 'Tunisia uses CET (UTC+1). Tunis is the capital. The live clock above shows the current local time in Tunisia.' } },
     { '@type': 'Question', name: 'What time zone is Tunis in?', acceptedAnswer: { '@type': 'Answer', text: 'Tunis uses CET (UTC+1). The IANA time zone identifier is Africa/Tunis. ' } },
-    { '@type': 'Question', name: 'Does Tunisia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Tunisia offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Tunisia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Tunisia does not observe Daylight Saving Time. Tunisia uses Central European Time (CET, UTC+1) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Tunisia?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Tunisia is during local business hours: Monday–Friday, 9 AM–5 PM CET. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

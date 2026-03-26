@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Liberia right now?', acceptedAnswer: { '@type': 'Answer', text: 'Liberia uses GMT (UTC+0). Monrovia is the capital. The live clock above shows the current local time in Liberia.' } },
     { '@type': 'Question', name: 'What time zone is Monrovia in?', acceptedAnswer: { '@type': 'Answer', text: 'Monrovia uses GMT (UTC+0). The IANA time zone identifier is Africa/Monrovia. ' } },
-    { '@type': 'Question', name: 'Does Liberia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Liberia offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Liberia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Liberia does not observe Daylight Saving Time. Liberia uses Greenwich Mean Time (GMT, UTC+0) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Liberia?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Liberia is during local business hours: Monday–Friday, 9 AM–5 PM GMT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

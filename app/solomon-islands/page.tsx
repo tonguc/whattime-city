@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Solomon Islands right now?', acceptedAnswer: { '@type': 'Answer', text: 'Solomon Islands uses SBT (UTC+11). Honiara is the capital. The live clock above shows the current local time in Solomon Islands.' } },
     { '@type': 'Question', name: 'What time zone is Honiara in?', acceptedAnswer: { '@type': 'Answer', text: 'Honiara uses SBT (UTC+11). The IANA time zone identifier is Pacific/Guadalcanal. ' } },
-    { '@type': 'Question', name: 'Does Solomon Islands observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Solomon Islands offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Solomon Islands observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Solomon Islands does not observe Daylight Saving Time. Solomon Islands uses Solomon Islands Time (SBT, UTC+11) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Solomon Islands?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Solomon Islands is during local business hours: Monday–Friday, 9 AM–5 PM SBT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

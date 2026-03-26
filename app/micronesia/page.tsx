@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Micronesia right now?', acceptedAnswer: { '@type': 'Answer', text: 'Micronesia uses CHUT (UTC+10). Palikir is the capital. The live clock above shows the current local time in Micronesia.' } },
     { '@type': 'Question', name: 'What time zone is Palikir in?', acceptedAnswer: { '@type': 'Answer', text: 'Palikir uses CHUT (UTC+10). The IANA time zone identifier is Pacific/Pohnpei. Micronesia spans multiple time zones: CHUT (UTC+10), PONT (UTC+11).' } },
-    { '@type': 'Question', name: 'Does Micronesia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Micronesia offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Micronesia observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Micronesia does not observe Daylight Saving Time. Micronesia uses Chuuk Time (CHUT, UTC+10) or Pohnpei/Kosrae Time (UTC+11) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Micronesia?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Micronesia is during local business hours: Monday–Friday, 9 AM–5 PM CHUT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

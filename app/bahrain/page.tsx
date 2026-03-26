@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Bahrain right now?', acceptedAnswer: { '@type': 'Answer', text: 'Bahrain uses AST (UTC+3). Manama is the capital. The live clock above shows the current local time in Bahrain.' } },
     { '@type': 'Question', name: 'What time zone is Manama in?', acceptedAnswer: { '@type': 'Answer', text: 'Manama uses AST (UTC+3). The IANA time zone identifier is Asia/Bahrain. ' } },
-    { '@type': 'Question', name: 'Does Bahrain observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Bahrain offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Bahrain observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Bahrain does not observe Daylight Saving Time. Bahrain uses Arabia Standard Time (AST, UTC+3) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Bahrain?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Bahrain is during local business hours: Monday–Friday, 9 AM–5 PM AST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

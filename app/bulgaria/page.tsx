@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Bulgaria right now?', acceptedAnswer: { '@type': 'Answer', text: 'Bulgaria uses EET (UTC+2). Sofia is the capital. The live clock above shows the current local time in Bulgaria.' } },
     { '@type': 'Question', name: 'What time zone is Sofia in?', acceptedAnswer: { '@type': 'Answer', text: 'Sofia uses EET (UTC+2). The IANA time zone identifier is Europe/Sofia. Bulgaria spans multiple time zones: EET (UTC+2), EEST (UTC+3).' } },
-    { '@type': 'Question', name: 'Does Bulgaria observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Bulgaria offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Bulgaria observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Bulgaria observes Eastern European Summer Time (EEST, UTC+3) from the last Sunday in March to the last Sunday in October. Outside this period, Bulgaria uses EET (UTC+2).' } },
     { '@type': 'Question', name: 'What is the best time to call Bulgaria?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Bulgaria is during local business hours: Monday–Friday, 9 AM–5 PM EET. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

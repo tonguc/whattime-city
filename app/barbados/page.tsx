@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Barbados right now?', acceptedAnswer: { '@type': 'Answer', text: 'Barbados uses AST (UTC-4). Bridgetown is the capital. The live clock above shows the current local time in Barbados.' } },
     { '@type': 'Question', name: 'What time zone is Bridgetown in?', acceptedAnswer: { '@type': 'Answer', text: 'Bridgetown uses AST (UTC-4). The IANA time zone identifier is America/Barbados. ' } },
-    { '@type': 'Question', name: 'Does Barbados observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Barbados offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Barbados observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Barbados does not observe Daylight Saving Time. Barbados uses Atlantic Standard Time (AST, UTC-4) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Barbados?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Barbados is during local business hours: Monday–Friday, 9 AM–5 PM AST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

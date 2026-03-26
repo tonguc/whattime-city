@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Samoa right now?', acceptedAnswer: { '@type': 'Answer', text: 'Samoa uses WST (UTC+13). Apia is the capital. The live clock above shows the current local time in Samoa.' } },
     { '@type': 'Question', name: 'What time zone is Apia in?', acceptedAnswer: { '@type': 'Answer', text: 'Apia uses WST (UTC+13). The IANA time zone identifier is Pacific/Apia. ' } },
-    { '@type': 'Question', name: 'Does Samoa observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Samoa offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Samoa observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Samoa observes Daylight Saving Time. Samoa springs forward in September/October and falls back in April (Southern Hemisphere schedule).' } },
     { '@type': 'Question', name: 'What is the best time to call Samoa?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Samoa is during local business hours: Monday–Friday, 9 AM–5 PM WST. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

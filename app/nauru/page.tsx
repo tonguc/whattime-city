@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Nauru right now?', acceptedAnswer: { '@type': 'Answer', text: 'Nauru uses NRT (UTC+12). Yaren is the capital. The live clock above shows the current local time in Nauru.' } },
     { '@type': 'Question', name: 'What time zone is Yaren in?', acceptedAnswer: { '@type': 'Answer', text: 'Yaren uses NRT (UTC+12). The IANA time zone identifier is Pacific/Nauru. ' } },
-    { '@type': 'Question', name: 'Does Nauru observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Nauru offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Nauru observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Nauru does not observe Daylight Saving Time. Nauru uses Nauru Time (NRT, UTC+12) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Nauru?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Nauru is during local business hours: Monday–Friday, 9 AM–5 PM NRT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

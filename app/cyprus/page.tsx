@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Cyprus right now?', acceptedAnswer: { '@type': 'Answer', text: 'Cyprus uses EET (UTC+2). Nicosia is the capital. The live clock above shows the current local time in Cyprus.' } },
     { '@type': 'Question', name: 'What time zone is Nicosia in?', acceptedAnswer: { '@type': 'Answer', text: 'Nicosia uses EET (UTC+2). The IANA time zone identifier is Asia/Nicosia. Cyprus spans multiple time zones: EET (UTC+2), EEST (UTC+3).' } },
-    { '@type': 'Question', name: 'Does Cyprus observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Cyprus offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Cyprus observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Cyprus observes Eastern European Summer Time (EEST, UTC+3) from the last Sunday in March to the last Sunday in October. Outside this period, Cyprus uses EET (UTC+2).' } },
     { '@type': 'Question', name: 'What is the best time to call Cyprus?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Cyprus is during local business hours: Monday–Friday, 9 AM–5 PM EET. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

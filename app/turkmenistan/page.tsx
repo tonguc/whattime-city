@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Turkmenistan right now?', acceptedAnswer: { '@type': 'Answer', text: 'Turkmenistan uses TMT (UTC+5). Ashgabat is the capital. The live clock above shows the current local time in Turkmenistan.' } },
     { '@type': 'Question', name: 'What time zone is Ashgabat in?', acceptedAnswer: { '@type': 'Answer', text: 'Ashgabat uses TMT (UTC+5). The IANA time zone identifier is Asia/Ashgabat. ' } },
-    { '@type': 'Question', name: 'Does Turkmenistan observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Turkmenistan offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Turkmenistan observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Turkmenistan does not observe Daylight Saving Time. Turkmenistan uses Turkmenistan Time (TMT, UTC+5) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Turkmenistan?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Turkmenistan is during local business hours: Monday–Friday, 9 AM–5 PM TMT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

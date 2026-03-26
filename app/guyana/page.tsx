@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Guyana right now?', acceptedAnswer: { '@type': 'Answer', text: 'Guyana uses GYT (UTC-4). Georgetown is the capital. The live clock above shows the current local time in Guyana.' } },
     { '@type': 'Question', name: 'What time zone is Georgetown in?', acceptedAnswer: { '@type': 'Answer', text: 'Georgetown uses GYT (UTC-4). The IANA time zone identifier is America/Guyana. ' } },
-    { '@type': 'Question', name: 'Does Guyana observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Guyana offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Guyana observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Guyana does not observe Daylight Saving Time. Guyana uses Guyana Time (GYT, UTC-4) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Guyana?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Guyana is during local business hours: Monday–Friday, 9 AM–5 PM GYT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }

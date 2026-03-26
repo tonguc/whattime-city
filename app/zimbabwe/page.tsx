@@ -18,7 +18,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'What time is it in Zimbabwe right now?', acceptedAnswer: { '@type': 'Answer', text: 'Zimbabwe uses CAT (UTC+2). Harare is the capital. The live clock above shows the current local time in Zimbabwe.' } },
     { '@type': 'Question', name: 'What time zone is Harare in?', acceptedAnswer: { '@type': 'Answer', text: 'Harare uses CAT (UTC+2). The IANA time zone identifier is Africa/Harare. ' } },
-    { '@type': 'Question', name: 'Does Zimbabwe observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Zimbabwe offset in the time difference table.' } },
+    { '@type': 'Question', name: 'Does Zimbabwe observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Zimbabwe does not observe Daylight Saving Time. Zimbabwe uses Central Africa Time (CAT, UTC+2) year-round.' } },
     { '@type': 'Question', name: 'What is the best time to call Zimbabwe?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Zimbabwe is during local business hours: Monday–Friday, 9 AM–5 PM CAT. Check the Best Time to Call table on this page for your time zone.' } },
   ],
 }
