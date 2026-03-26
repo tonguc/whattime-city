@@ -1,4 +1,5 @@
 import { cities, countries, getTier1Cities } from '@/lib/cities'
+import { COUNTRY_HUB_SLUGS } from '@/data/hubPages'
 
 export default async function sitemap() {
   const baseUrl = 'https://whattime.city'
@@ -156,6 +157,7 @@ export default async function sitemap() {
     { slug: 'ist-to-gmt', priority: 0.8 },
     { slug: 'jst-to-est', priority: 0.7 },
     { slug: 'aest-to-est', priority: 0.7 },
+    { slug: 'cet-to-est', priority: 0.7 },
     { slug: 'military-time', priority: 0.8 },
     { slug: 'flight-time', priority: 0.7 },
     { slug: 'jet-lag-advisor', priority: 0.7 },
@@ -222,6 +224,31 @@ export default async function sitemap() {
     priority: 0.8,
   }))
 
+  // Hub sayfaları — COUNTRY_HUB_SLUGS'tan dinamik (232 ülke/bölge)
+  const hubSlugsInToolRoutes = new Set([
+    'india','brazil','nigeria','california','philippines','uk','australia','japan',
+    'germany','canada','france','mexico','dubai','singapore','south-korea','china',
+    'texas','turkey','pakistan','florida','new-york-state','indonesia','egypt',
+    'illinois','washington-state','vietnam','russia','netherlands','spain','ohio',
+    'georgia-state','michigan','new-zealand','sweden','italy','argentina','saudi-arabia',
+    'north-carolina','pennsylvania','arizona','colorado','virginia','minnesota',
+    'south-africa','kenya','thailand','malaysia','colombia','morocco','tennessee',
+    'nevada','oregon','massachusetts','poland','ukraine','bangladesh','ethiopia',
+    'wisconsin','maryland','new-jersey','utah','peru','chile','greece','portugal',
+    'connecticut','missouri','indiana','iowa','ghana','tanzania','venezuela','myanmar',
+    'kansas','alabama','south-carolina','kentucky','iran','nepal','cuba','cameroon',
+    'oklahoma','louisiana','arkansas','mississippi','senegal','ivory-coast','angola',
+    'uzbekistan','north-dakota','west-virginia','nebraska','new-mexico',
+  ])
+  const hubRoutes = Object.values(COUNTRY_HUB_SLUGS)
+    .filter(slug => !hubSlugsInToolRoutes.has(slug))
+    .map(slug => ({
+      url: `${baseUrl}/${slug}/`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    }))
+
   // /time/[from]/[to] — Tier 1 şehirler arası kombinasyonlar
   const tier1Slugs = getTier1Cities().map(c => c.slug)
   const timeComparisonRoutes: Array<{
@@ -247,6 +274,7 @@ export default async function sitemap() {
   return [
     ...staticRoutes,
     ...toolRoutes,
+    ...hubRoutes,
     ...areaCodeRoutes,
     ...guideRoutes,
     ...cityRoutes,
