@@ -36,33 +36,33 @@ export default function ISTtoCET() {
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800">IST to CET Converter</h1>
-      <p className="text-lg text-slate-600 mb-6">India Standard Time → Central European Time · IST is <strong>4 hours 30 minutes ahead</strong> of CET</p>
+      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">IST to CET Converter</h1>
+      <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">India Standard Time → Central European Time · IST is <strong>4 hours 30 minutes ahead</strong> of CET</p>
       <TZPairClient config={config} />
       <section className="mt-4 mb-4">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 mb-4">IST vs CET — India to Europe</h2>
-          <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
-            <p><strong className="text-slate-700">IST (UTC+5:30)</strong> — India Standard Time, fixed year-round with no DST. One national time zone for the entire country.</p>
-            <p><strong className="text-slate-700">CET (UTC+1)</strong> — Central European Time. Shifts to CEST (UTC+2) in summer (late March–late October).</p>
+        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
+          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">IST vs CET — India to Europe</h2>
+          <div className="space-y-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+            <p><strong className="text-slate-700 dark:text-slate-200">IST (UTC+5:30)</strong> — India Standard Time, fixed year-round with no DST. One national time zone for the entire country.</p>
+            <p><strong className="text-slate-700 dark:text-slate-200">CET (UTC+1)</strong> — Central European Time. Shifts to CEST (UTC+2) in summer (late March–late October).</p>
             <p>Best overlap: <strong>1:30–5:30 PM IST = 9:00 AM–1:00 PM CET</strong> (winter). Indian afternoons are consistently the prime window for Bangalore, Mumbai, or Delhi teams coordinating with Frankfurt, Berlin, or Paris.</p>
           </div>
         </div>
       </section>
       <section className="mb-4">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
+        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
+          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
           <div className="space-y-3">
             {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 bg-slate-50 p-4">
-                <h3 className="font-semibold text-slate-800 text-sm mb-1">{item.name}</h3>
-                <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
+              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
+                <h3 className="font-semibold text-slate-800 dark:text-white text-sm mb-1">{item.name}</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-300">{item.acceptedAnswer.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
-      <footer className="rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500">
+      <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/50 text-xs text-slate-500 dark:text-slate-400">
         Timezone data sourced from <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">IANA Time Zone Database</a>. Last updated March 2026.
       </footer>
     </ContentPageWrapper>

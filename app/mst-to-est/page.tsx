@@ -74,26 +74,26 @@ export default function MSTtoEST() {
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800">
+      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">
         MST to EST Converter
       </h1>
-      <p className="text-lg text-slate-600 mb-6">
+      <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
         Mountain Standard Time → Eastern Standard Time · MST is <strong>2 hours behind</strong> EST
       </p>
 
       <TZPairClient config={config} />
 
       <section className="mt-4 mb-4">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 mb-4">MST vs EST — What You Need to Know</h2>
-          <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
+        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
+          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">MST vs EST — What You Need to Know</h2>
+          <div className="space-y-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
             <p>
-              <strong className="text-slate-700">Mountain Standard Time (MST)</strong> is UTC-7.
+              <strong className="text-slate-700 dark:text-slate-200">Mountain Standard Time (MST)</strong> is UTC-7.
               It covers the Rocky Mountain states: Colorado, Utah, Montana, Wyoming, New Mexico, and Idaho.
               During Daylight Saving Time, MST becomes <strong>MDT (UTC-6)</strong>.
             </p>
             <p>
-              <strong className="text-slate-700">Eastern Standard Time (EST)</strong> is UTC-5.
+              <strong className="text-slate-700 dark:text-slate-200">Eastern Standard Time (EST)</strong> is UTC-5.
               It covers the US East Coast: New York, Florida, Georgia, and the Atlantic seaboard.
               During summer it becomes <strong>EDT (UTC-4)</strong>.
             </p>
@@ -105,20 +105,20 @@ export default function MSTtoEST() {
       </section>
 
       <section className="mb-4">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
+        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
+          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
           <div className="space-y-3">
             {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 bg-slate-50 p-4">
-                <h3 className="font-semibold text-slate-800 text-sm mb-1">{item.name}</h3>
-                <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
+              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
+                <h3 className="font-semibold text-slate-800 dark:text-white text-sm mb-1">{item.name}</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-300">{item.acceptedAnswer.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <footer className="rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500">
+      <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/50 text-xs text-slate-500 dark:text-slate-400">
         Timezone data sourced from{' '}
         <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">
           IANA Time Zone Database

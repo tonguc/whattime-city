@@ -153,7 +153,7 @@ export default function TZPairClient({ config }: Props) {
           <div className={`text-xs font-semibold uppercase tracking-widest mb-1 ${textMuted}`}>
             {config.fromAbbr}
           </div>
-          <div className={`text-4xl font-mono font-bold mb-1 tabular-nums ${textMain}`}>
+          <div className={`text-4xl font-bold mb-1 tabular-nums tracking-tight ${textMain}`}>
             {fromTime || '—'}
           </div>
           <div className={`text-sm ${textMuted}`}>{fromDate}</div>
@@ -163,7 +163,7 @@ export default function TZPairClient({ config }: Props) {
           <div className={`text-xs font-semibold uppercase tracking-widest mb-1 ${textMuted}`}>
             {config.toAbbr}
           </div>
-          <div className={`text-4xl font-mono font-bold mb-1 tabular-nums ${textMain}`}>
+          <div className={`text-4xl font-bold mb-1 tabular-nums tracking-tight ${textMain}`}>
             {toTime || '—'}
           </div>
           <div className={`text-sm ${textMuted}`}>{toDate}</div>
@@ -198,8 +198,8 @@ export default function TZPairClient({ config }: Props) {
                   <tr key={h} className={bothBiz
                     ? (isLight ? 'bg-emerald-50' : 'bg-emerald-900/20')
                     : (isLight ? 'bg-white' : 'bg-slate-900/20')}>
-                    <td className={`px-4 py-2 font-mono ${textMain}`}>{formatHour12(h)}</td>
-                    <td className={`px-4 py-2 font-mono ${textMain}`}>
+                    <td className={`px-4 py-2 tabular-nums ${textMain}`}>{formatHour12(h)}</td>
+                    <td className={`px-4 py-2 tabular-nums ${textMain}`}>
                       {formatHour12(hTo)}
                       {dayShift && (
                         <span className={`ml-1 text-xs ${textMuted}`}>

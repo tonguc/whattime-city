@@ -36,33 +36,33 @@ export default function UTCtoIST() {
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800">UTC to IST Converter</h1>
-      <p className="text-lg text-slate-600 mb-6">Coordinated Universal Time → India Standard Time · UTC is <strong>5 hours 30 minutes behind</strong> IST</p>
+      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">UTC to IST Converter</h1>
+      <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">Coordinated Universal Time → India Standard Time · UTC is <strong>5 hours 30 minutes behind</strong> IST</p>
       <TZPairClient config={config} />
       <section className="mt-4 mb-4">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 mb-4">UTC vs IST — Converting to India Time</h2>
-          <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
-            <p><strong className="text-slate-700">UTC (UTC+0)</strong> — Coordinated Universal Time, the world's primary time standard. Used in aviation, software, finance, and international communications.</p>
-            <p><strong className="text-slate-700">IST (UTC+5:30)</strong> — India Standard Time, a fixed half-hour offset. No DST. The entire country of India — from Mumbai to Kolkata — uses the same single time zone.</p>
+        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
+          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">UTC vs IST — Converting to India Time</h2>
+          <div className="space-y-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+            <p><strong className="text-slate-700 dark:text-slate-200">UTC (UTC+0)</strong> — Coordinated Universal Time, the world's primary time standard. Used in aviation, software, finance, and international communications.</p>
+            <p><strong className="text-slate-700 dark:text-slate-200">IST (UTC+5:30)</strong> — India Standard Time, a fixed half-hour offset. No DST. The entire country of India — from Mumbai to Kolkata — uses the same single time zone.</p>
             <p>Quick reference: UTC + 5:30 = IST. IST business hours (9 AM–6 PM IST) = UTC 3:30 AM–12:30 PM. Teams working across UTC and IST often schedule standups at UTC 4:00–5:00 AM = IST 9:30–10:30 AM.</p>
           </div>
         </div>
       </section>
       <section className="mb-4">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
+        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
+          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
           <div className="space-y-3">
             {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 bg-slate-50 p-4">
-                <h3 className="font-semibold text-slate-800 text-sm mb-1">{item.name}</h3>
-                <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
+              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
+                <h3 className="font-semibold text-slate-800 dark:text-white text-sm mb-1">{item.name}</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-300">{item.acceptedAnswer.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
-      <footer className="rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500">
+      <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/50 text-xs text-slate-500 dark:text-slate-400">
         Timezone data sourced from <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">IANA Time Zone Database</a>. Last updated March 2026.
       </footer>
     </ContentPageWrapper>
