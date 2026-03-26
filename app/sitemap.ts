@@ -158,6 +158,21 @@ export default async function sitemap() {
     { slug: 'jst-to-est', priority: 0.7 },
     { slug: 'aest-to-est', priority: 0.7 },
     { slug: 'cet-to-est', priority: 0.7 },
+    // US Timezone hub
+    { slug: 'us-time-zones', priority: 0.9 },
+    // US Timezone explainer pages — high search volume
+    { slug: 'eastern-time-zone', priority: 0.9 },
+    { slug: 'central-time-zone', priority: 0.9 },
+    { slug: 'mountain-time-zone', priority: 0.9 },
+    { slug: 'pacific-time-zone', priority: 0.9 },
+    // New TZ pair pages — US domestic + UTC
+    { slug: 'pst-to-cst', priority: 0.8 },
+    { slug: 'mst-to-est', priority: 0.8 },
+    { slug: 'est-to-mst', priority: 0.8 },
+    { slug: 'utc-to-est', priority: 0.8 },
+    { slug: 'utc-to-pst', priority: 0.8 },
+    { slug: 'est-to-utc', priority: 0.8 },
+    { slug: 'pst-to-utc', priority: 0.8 },
     { slug: 'military-time', priority: 0.8 },
     { slug: 'flight-time', priority: 0.7 },
     { slug: 'jet-lag-advisor', priority: 0.7 },
