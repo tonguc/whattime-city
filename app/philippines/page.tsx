@@ -152,7 +152,7 @@ export default function PhilippinesTimePage() {
       {/* PHT Explained */}
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in Singapore","href":"/singapore/"},{"label":"Time in Malaysia","href":"/malaysia/"},{"label":"Time in Japan","href":"/japan/"},{"label":"Time in South Korea","href":"/south-korea/"},{"label":"Time in Indonesia","href":"/indonesia/"},{"label":"Manila time","href":"/manila/"},{"label":"Time in China","href":"/china/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database.

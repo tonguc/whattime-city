@@ -84,7 +84,7 @@ export default function OhioTimePage() {
       <OhioClockClient />
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"New York time","href":"/new-york/"},{"label":"Time in Michigan","href":"/michigan/"},{"label":"Time in Pennsylvania","href":"/pennsylvania/"},{"label":"Time in Indiana","href":"/indiana/"},{"label":"Time in Kentucky","href":"/kentucky/"},{"label":"Time in Illinois","href":"/illinois/"},{"label":"Time in New York State","href":"/new-york-state/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database. Ohio: America/New_York (EST UTC−5 / EDT UTC−4).

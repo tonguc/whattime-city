@@ -145,7 +145,7 @@ export default function GermanyTimePage() {
 
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in France","href":"/france/"},{"label":"Time in Netherlands","href":"/netherlands/"},{"label":"Time in Austria","href":"/austria/"},{"label":"Time in Switzerland","href":"/switzerland/"},{"label":"Time in Poland","href":"/poland/"},{"label":"Berlin time","href":"/berlin/"},{"label":"London time","href":"/london/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database.

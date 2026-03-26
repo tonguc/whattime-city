@@ -143,7 +143,7 @@ export default function DubaiTimePage() {
 
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in Saudi Arabia","href":"/saudi-arabia/"},{"label":"Time in Qatar","href":"/qatar/"},{"label":"Time in Bahrain","href":"/bahrain/"},{"label":"Time in Kuwait","href":"/kuwait/"},{"label":"Time in India","href":"/india/"},{"label":"London time","href":"/london/"},{"label":"New York time","href":"/new-york/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database.

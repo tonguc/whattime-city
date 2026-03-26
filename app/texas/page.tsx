@@ -91,7 +91,7 @@ export default function TexasTimePage() {
 
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"New York time","href":"/new-york/"},{"label":"Time in Florida","href":"/florida/"},{"label":"Time in California","href":"/california/"},{"label":"Time in Mexico","href":"/mexico/"},{"label":"Houston time","href":"/houston/"},{"label":"Dallas time","href":"/dallas/"},{"label":"Time in Louisiana","href":"/louisiana/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database.

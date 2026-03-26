@@ -86,7 +86,7 @@ export default function EgyptTimePage() {
       <CountryFactsSection hubSlug="egypt" />
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in Saudi Arabia","href":"/saudi-arabia/"},{"label":"Time in Turkey","href":"/turkey/"},{"label":"Time in Nigeria","href":"/nigeria/"},{"label":"Time in Kenya","href":"/kenya/"},{"label":"Cairo time","href":"/cairo/"},{"label":"London time","href":"/london/"},{"label":"Dubai time","href":"/dubai/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database. Egypt: Africa/Cairo (EET UTC+2, no DST since 2011).

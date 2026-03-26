@@ -86,7 +86,7 @@ export default function NetherlandsTimePage() {
       <CountryFactsSection hubSlug="netherlands" />
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in Germany","href":"/germany/"},{"label":"Time in Belgium","href":"/belgium/"},{"label":"Time in France","href":"/france/"},{"label":"Time in UK","href":"/uk/"},{"label":"Amsterdam time","href":"/amsterdam/"},{"label":"London time","href":"/london/"},{"label":"Time in Luxembourg","href":"/luxembourg/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database. Netherlands: Europe/Amsterdam (CET UTC+1 / CEST UTC+2).

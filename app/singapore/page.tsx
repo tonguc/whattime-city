@@ -92,7 +92,7 @@ export default function SingaporeTimePage() {
 
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in Malaysia","href":"/malaysia/"},{"label":"Time in Indonesia","href":"/indonesia/"},{"label":"Time in Philippines","href":"/philippines/"},{"label":"Time in China","href":"/china/"},{"label":"Time in Japan","href":"/japan/"},{"label":"Time in Hong Kong","href":"/hong-kong/"},{"label":"Dubai time","href":"/dubai/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database. Singapore: Asia/Singapore (SGT, UTC+8). No DST.

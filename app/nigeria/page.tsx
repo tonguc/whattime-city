@@ -151,7 +151,7 @@ export default function NigeriaTimePage() {
       {/* WAT Explained */}
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in Ghana","href":"/ghana/"},{"label":"Time in Kenya","href":"/kenya/"},{"label":"Time in South Africa","href":"/south-africa/"},{"label":"Time in Cameroon","href":"/cameroon/"},{"label":"Time in Senegal","href":"/senegal/"},{"label":"Lagos time","href":"/lagos/"},{"label":"London time","href":"/london/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database.

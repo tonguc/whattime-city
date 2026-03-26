@@ -145,7 +145,7 @@ export default function CanadaTimePage() {
 
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"New York time","href":"/new-york/"},{"label":"Time in UK","href":"/uk/"},{"label":"Time in USA","href":"/united-states/"},{"label":"Toronto time","href":"/toronto/"},{"label":"Vancouver time","href":"/vancouver/"},{"label":"Time in France","href":"/france/"},{"label":"Time in Australia","href":"/australia/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database.

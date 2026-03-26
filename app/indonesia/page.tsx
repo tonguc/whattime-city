@@ -86,7 +86,7 @@ export default function IndonesiaTimePage() {
       <CountryFactsSection hubSlug="indonesia" />
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in Malaysia","href":"/malaysia/"},{"label":"Time in Singapore","href":"/singapore/"},{"label":"Time in Philippines","href":"/philippines/"},{"label":"Time in Australia","href":"/australia/"},{"label":"Time in Thailand","href":"/thailand/"},{"label":"Jakarta time","href":"/jakarta/"},{"label":"Bali time","href":"/bali/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database. Indonesia: Asia/Jakarta (WIB UTC+7) · Asia/Makassar (WITA UTC+8) · Asia/Jayapura (WIT UTC+9).

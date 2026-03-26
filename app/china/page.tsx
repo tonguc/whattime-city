@@ -93,7 +93,7 @@ export default function ChinaTimePage() {
 
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in Japan","href":"/japan/"},{"label":"Time in South Korea","href":"/south-korea/"},{"label":"Time in Singapore","href":"/singapore/"},{"label":"Time in Hong Kong","href":"/hong-kong/"},{"label":"Time in Taiwan","href":"/taiwan/"},{"label":"Beijing time","href":"/beijing/"},{"label":"Shanghai time","href":"/shanghai/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database. China: Asia/Shanghai (CST, UTC+8). No DST.

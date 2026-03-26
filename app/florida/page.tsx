@@ -79,7 +79,7 @@ export default function FloridaTimePage() {
       <FloridaClockClient />
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"New York time","href":"/new-york/"},{"label":"Time in Cuba","href":"/cuba/"},{"label":"Miami time","href":"/miami/"},{"label":"Time in Georgia (State)","href":"/georgia-state/"},{"label":"Time in Texas","href":"/texas/"},{"label":"Time in New York State","href":"/new-york-state/"},{"label":"Time in Mexico","href":"/mexico/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database. Florida (most): America/New_York (EST/EDT). Panhandle: America/Chicago.

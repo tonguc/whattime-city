@@ -86,7 +86,7 @@ export default function TurkeyTimePage() {
       <CountryFactsSection hubSlug="turkey" />
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in Greece","href":"/greece/"},{"label":"Time in UAE","href":"/united-arab-emirates/"},{"label":"Time in Russia","href":"/russia/"},{"label":"Time in Egypt","href":"/egypt/"},{"label":"Istanbul time","href":"/istanbul/"},{"label":"London time","href":"/london/"},{"label":"Time in Germany","href":"/germany/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database. Turkey: Europe/Istanbul (TRT, UTC+3). No DST since 2016.

@@ -84,7 +84,7 @@ export default function IllinoisTimePage() {
       <IllinoisClockClient />
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"New York time","href":"/new-york/"},{"label":"Time in Michigan","href":"/michigan/"},{"label":"Time in Indiana","href":"/indiana/"},{"label":"Time in Wisconsin","href":"/wisconsin/"},{"label":"Time in Ohio","href":"/ohio/"},{"label":"Chicago time","href":"/chicago/"},{"label":"Time in Missouri","href":"/missouri/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database. Illinois: America/Chicago (CST UTC−6 / CDT UTC−5).

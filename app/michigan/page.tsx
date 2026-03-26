@@ -85,7 +85,7 @@ export default function MichiganTimePage() {
       <MichiganClockClient />
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"New York time","href":"/new-york/"},{"label":"Time in Ohio","href":"/ohio/"},{"label":"Time in Illinois","href":"/illinois/"},{"label":"Time in Indiana","href":"/indiana/"},{"label":"Time in Wisconsin","href":"/wisconsin/"},{"label":"Detroit time","href":"/detroit/"},{"label":"Time in New York State","href":"/new-york-state/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database. Michigan: America/Detroit (EST/EDT) · America/Menominee (CST/CDT, western UP counties).

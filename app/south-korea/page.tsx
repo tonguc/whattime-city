@@ -93,7 +93,7 @@ export default function SouthKoreaTimePage() {
 
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in Japan","href":"/japan/"},{"label":"Time in China","href":"/china/"},{"label":"Time in Philippines","href":"/philippines/"},{"label":"Time in Singapore","href":"/singapore/"},{"label":"Seoul time","href":"/seoul/"},{"label":"Tokyo time","href":"/tokyo/"},{"label":"New York time","href":"/new-york/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database. South Korea: Asia/Seoul (KST, UTC+9). No DST.

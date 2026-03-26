@@ -126,7 +126,7 @@ export default function FranceTimePage() {
 
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in Germany","href":"/germany/"},{"label":"Time in Spain","href":"/spain/"},{"label":"Time in Italy","href":"/italy/"},{"label":"Time in UK","href":"/uk/"},{"label":"Time in Belgium","href":"/belgium/"},{"label":"Paris time","href":"/paris/"},{"label":"London time","href":"/london/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database.

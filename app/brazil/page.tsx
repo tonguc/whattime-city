@@ -150,7 +150,7 @@ export default function BrazilTimePage() {
       {/* BRT Explained */}
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in Argentina","href":"/argentina/"},{"label":"Time in Colombia","href":"/colombia/"},{"label":"Time in Peru","href":"/peru/"},{"label":"Time in Portugal","href":"/portugal/"},{"label":"New York time","href":"/new-york/"},{"label":"London time","href":"/london/"},{"label":"São Paulo time","href":"/sao-paulo/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database.

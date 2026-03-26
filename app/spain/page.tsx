@@ -86,7 +86,7 @@ export default function SpainTimePage() {
       <CountryFactsSection hubSlug="spain" />
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in France","href":"/france/"},{"label":"Time in Portugal","href":"/portugal/"},{"label":"Time in Italy","href":"/italy/"},{"label":"Time in UK","href":"/uk/"},{"label":"Time in Mexico","href":"/mexico/"},{"label":"Madrid time","href":"/madrid/"},{"label":"Barcelona time","href":"/barcelona/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database. Spain: Europe/Madrid (CET UTC+1 / CEST UTC+2) · Atlantic/Canary (WET UTC+0 / WEST UTC+1).

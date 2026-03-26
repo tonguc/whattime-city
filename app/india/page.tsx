@@ -149,7 +149,7 @@ export default function IndiaTimePage() {
       {/* IST Explained */}
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in Pakistan","href":"/pakistan/"},{"label":"Time in Bangladesh","href":"/bangladesh/"},{"label":"Time in Sri Lanka","href":"/sri-lanka/"},{"label":"Time in Nepal","href":"/nepal/"},{"label":"Time in UAE","href":"/united-arab-emirates/"},{"label":"Mumbai time","href":"/mumbai/"},{"label":"New Delhi time","href":"/new-delhi/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database.

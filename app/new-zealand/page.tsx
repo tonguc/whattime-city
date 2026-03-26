@@ -86,7 +86,7 @@ export default function NewZealandTimePage() {
       <CountryFactsSection hubSlug="new-zealand" />
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in Australia","href":"/australia/"},{"label":"Time in Fiji","href":"/fiji/"},{"label":"Time in Singapore","href":"/singapore/"},{"label":"Auckland time","href":"/auckland/"},{"label":"Sydney time","href":"/sydney/"},{"label":"London time","href":"/london/"},{"label":"New York time","href":"/new-york/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database. New Zealand: Pacific/Auckland (NZST UTC+12 / NZDT UTC+13) · Pacific/Chatham (CHAST UTC+12:45 / CHADT UTC+13:45).

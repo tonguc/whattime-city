@@ -84,7 +84,7 @@ export default function NewYorkStateTimePage() {
       <NewYorkStateClockClient />
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"New York time","href":"/new-york/"},{"label":"Time in New Jersey","href":"/new-jersey/"},{"label":"Time in Connecticut","href":"/connecticut/"},{"label":"Time in Pennsylvania","href":"/pennsylvania/"},{"label":"Time in Massachusetts","href":"/massachusetts/"},{"label":"Time in Florida","href":"/florida/"},{"label":"Time in California","href":"/california/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database. New York: America/New_York (EST UTC−5 / EDT UTC−4).

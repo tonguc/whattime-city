@@ -86,7 +86,7 @@ export default function PakistanTimePage() {
       <CountryFactsSection hubSlug="pakistan" />
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in India","href":"/india/"},{"label":"Time in Afghanistan","href":"/afghanistan/"},{"label":"Time in UAE","href":"/united-arab-emirates/"},{"label":"Time in Iran","href":"/iran/"},{"label":"Time in Bangladesh","href":"/bangladesh/"},{"label":"Karachi time","href":"/karachi/"},{"label":"Dubai time","href":"/dubai/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database. Pakistan: Asia/Karachi (PKT, UTC+5). No DST.

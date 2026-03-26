@@ -151,7 +151,7 @@ export default function CaliforniaTimePage() {
       {/* PST/PDT Explained */}
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"New York time","href":"/new-york/"},{"label":"Time in Texas","href":"/texas/"},{"label":"Time in Washington State","href":"/washington-state/"},{"label":"Time in Nevada","href":"/nevada/"},{"label":"Time in Oregon","href":"/oregon/"},{"label":"Los Angeles time","href":"/los-angeles/"},{"label":"San Francisco time","href":"/san-francisco/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database.

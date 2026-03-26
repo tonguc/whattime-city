@@ -86,7 +86,7 @@ export default function VietnamTimePage() {
       <CountryFactsSection hubSlug="vietnam" />
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in Thailand","href":"/thailand/"},{"label":"Time in Cambodia","href":"/cambodia/"},{"label":"Time in Singapore","href":"/singapore/"},{"label":"Time in Malaysia","href":"/malaysia/"},{"label":"Time in China","href":"/china/"},{"label":"Ho Chi Minh City time","href":"/ho-chi-minh-city/"},{"label":"Hanoi time","href":"/hanoi/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database. Vietnam: Asia/Ho_Chi_Minh (ICT UTC+7, no DST).

@@ -87,7 +87,7 @@ export default function RussiaTimePage() {
       <CountryFactsSection hubSlug="russia" />
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Moscow time","href":"/moscow/"},{"label":"Time in Ukraine","href":"/ukraine/"},{"label":"Time in Kazakhstan","href":"/kazakhstan/"},{"label":"Time in Germany","href":"/germany/"},{"label":"Time in Turkey","href":"/turkey/"},{"label":"London time","href":"/london/"},{"label":"New York time","href":"/new-york/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database. Russia spans 11 IANA zones from Europe/Kaliningrad (UTC+2) to Asia/Kamchatka (UTC+12). No DST since October 2014.

@@ -145,7 +145,7 @@ export default function JapanTimePage() {
 
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in South Korea","href":"/south-korea/"},{"label":"Time in China","href":"/china/"},{"label":"Time in Singapore","href":"/singapore/"},{"label":"Time in Australia","href":"/australia/"},{"label":"Time in Philippines","href":"/philippines/"},{"label":"Tokyo time","href":"/tokyo/"},{"label":"Osaka time","href":"/osaka/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database.

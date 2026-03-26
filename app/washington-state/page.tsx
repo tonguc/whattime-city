@@ -84,7 +84,7 @@ export default function WashingtonStateTimePage() {
       <WashingtonStateClockClient />
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in Oregon","href":"/oregon/"},{"label":"Time in California","href":"/california/"},{"label":"Time in Idaho","href":"/idaho/"},{"label":"New York time","href":"/new-york/"},{"label":"Seattle time","href":"/seattle/"},{"label":"Time in Canada","href":"/canada/"},{"label":"Time in New York State","href":"/new-york-state/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database. Washington State: America/Los_Angeles (PST UTC−8 / PDT UTC−7).

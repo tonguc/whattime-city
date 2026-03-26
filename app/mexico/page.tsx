@@ -135,7 +135,7 @@ export default function MexicoTimePage() {
 
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[]}
+        links={[{"label":"Time in USA","href":"/united-states/"},{"label":"Time in Cuba","href":"/cuba/"},{"label":"Time in Guatemala","href":"/guatemala/"},{"label":"Time in Colombia","href":"/colombia/"},{"label":"Mexico City time","href":"/mexico-city/"},{"label":"New York time","href":"/new-york/"},{"label":"Los Angeles time","href":"/los-angeles/"},{"label":"Time converter tool","href":"/time-converter/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database.
