@@ -15,6 +15,7 @@ import ToolsMiniNav from '@/components/ToolsMiniNav'
 interface TimeComparisonContentProps {
   fromCity: City
   toCity: City
+  pairContext?: string
 }
 
 // Get timezone offset in hours
@@ -174,7 +175,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
   )
 }
 
-export default function TimeComparisonContent({ fromCity: initialFromCity, toCity: initialToCity }: TimeComparisonContentProps) {
+export default function TimeComparisonContent({ fromCity: initialFromCity, toCity: initialToCity, pairContext }: TimeComparisonContentProps) {
   const context = useCityContext()
   const [time, setTime] = useState(new Date())
   const [currentFromCity, setCurrentFromCity] = useState<City>(initialFromCity)
@@ -577,10 +578,17 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
           }
         </p>
 
-        <p className={`text-xs text-center mb-6 ${mainTheme.textMuted}`}>
+        <p className={`text-xs text-center mb-4 ${mainTheme.textMuted}`}>
           {fromTimezoneStr} → {toTimezoneStr}
         </p>
-        
+
+        {/* Pair-specific context — SSR visible to Google */}
+        {pairContext && (
+          <p className={`text-sm text-center max-w-2xl mx-auto mb-6 leading-relaxed ${mainTheme.textMuted}`}>
+            {pairContext}
+          </p>
+        )}
+
         {/* Compare Widget */}
         <div className="mb-8" style={{ position: 'relative', zIndex: 50, overflow: 'visible' }}>
           <CompareWidget 

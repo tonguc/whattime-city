@@ -177,6 +177,36 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
   }
 }
 
+// Pair-specific context for top-traffic city combinations
+const PAIR_CONTEXTS: Record<string, string> = {
+  'singapore-london': 'Singapore (SGT, UTC+8) does not observe Daylight Saving Time. London alternates between GMT (UTC+0) in winter and BST (UTC+1) in summer, so the gap varies between 7 and 8 hours throughout the year. This corridor is vital for global forex trading — the SGX afternoon session partially overlaps the LSE morning open.',
+  'london-singapore': 'London (GMT/BST) is 7–8 hours behind Singapore (SGT, UTC+8). When London switches to British Summer Time, the gap narrows to 7 hours; in winter (GMT) it widens to 8 hours. Singapore maintains no DST, making it a reliable anchor for Asia-Pacific scheduling.',
+  'london-sydney': 'London (GMT/BST) and Sydney (AEST/AEDT) sit 9–11 hours apart depending on each city\'s DST cycle. The gap is smallest when both cities are near summer simultaneously and largest when seasons diverge. Business-hour overlap is minimal — the ASX typically closes before the LSE opens each day.',
+  'sydney-london': 'Sydney (AEDT/AEST, UTC+10/+11) runs 9–11 hours ahead of London (GMT/BST). The precise gap shifts seasonally as Australia and the UK observe DST on opposite schedules. Calls from Sydney must be placed early morning to reach London during business hours.',
+  'new-york-london': 'New York (EST/EDT) is 4–5 hours behind London (GMT/BST). Both cities observe DST but on slightly different schedules, creating a brief period each spring when the gap is 5 hours. The most active window for both the NYSE and LSE occurs when New York opens at 9:30 AM ET — then 2:30 PM in London.',
+  'london-new-york': 'London (GMT/BST) is 4–5 hours ahead of New York (EST/EDT). The NYSE opens at 9:30 AM ET (2:30 PM London time), creating a 1.5–2 hour window each afternoon where both the London and New York markets are simultaneously active — the peak of global equity trading volume.',
+  'los-angeles-london': 'Los Angeles (PST/PDT) runs 7–8 hours behind London (GMT/BST). The gap is 8 hours in winter and shrinks to 7 hours when both cities are on DST. The LA–London corridor connects Hollywood with British media and entertainment, US tech with UK fintech, and West Coast venture capital with London finance.',
+  'london-los-angeles': 'London is 7–8 hours ahead of Los Angeles (PST/PDT). In winter the gap is 8 hours; in summer both cities observe DST, narrowing it to 7–8 hours depending on exact changeover dates. This corridor links entertainment, media, and tech sectors across the Atlantic.',
+  'singapore-lagos': 'Singapore (SGT, UTC+8) and Lagos (WAT, UTC+1) are always exactly 7 hours apart — neither city observes Daylight Saving Time. This fixed gap makes scheduling across the Nigeria–Singapore business corridor straightforward and consistent year-round.',
+  'lagos-singapore': 'Lagos (WAT, UTC+1) is 7 hours behind Singapore (SGT, UTC+8). Both cities observe no DST, keeping the difference permanently fixed. Nigeria is sub-Saharan Africa\'s largest economy; Singapore serves as Asia\'s primary hub for West African trade finance.',
+  'dublin-dubai': 'Dublin alternates between GMT (UTC+0) in winter and IST (Irish Standard Time, UTC+1) in summer. Dubai observes GST (UTC+4) year-round with no DST. The gap is 4 hours in winter and 3 hours in summer. Ireland and the UAE are closely linked through financial services, aviation, and technology industries.',
+  'dubai-dublin': 'Dubai (GST, UTC+4) is 3–4 hours ahead of Dublin (GMT/IST). Dubai observes no DST while Ireland moves between GMT and Irish Standard Time, making the gap 4 hours in winter and 3 hours in summer. The UAE is a major destination for Irish financial services and tech exports.',
+  'los-angeles-san-francisco': 'Los Angeles and San Francisco are both on Pacific Time — PST (UTC−8) in winter and PDT (UTC−7) in summer. There is no time difference between them at any point in the year, as both cities change clocks on identical schedules.',
+  'san-francisco-los-angeles': 'San Francisco and Los Angeles share the Pacific Time Zone (PST/PDT). There is zero time difference between them in winter, summer, or at any other time. Both cities observe DST simultaneously each spring and fall.',
+  'tokyo-seattle': 'Tokyo (JST, UTC+9) observes no Daylight Saving Time. Seattle uses PST (UTC−8) in winter and PDT (UTC−7) in summer, making the gap either 17 or 16 hours. Japan\'s technology sector maintains strong ties with Seattle\'s aerospace, gaming, and cloud computing industries.',
+  'tokyo-san-francisco': 'Tokyo (JST, UTC+9) is 16–17 hours ahead of San Francisco (PST/PDT). The gap is 17 hours during US standard time and 16 hours during PDT. Japan and Silicon Valley share deep connections in venture capital, semiconductor supply chains, and consumer technology.',
+  'delhi-tel-aviv': 'New Delhi (IST, UTC+5:30) is 2.5–3.5 hours ahead of Tel Aviv. Israel observes IST (UTC+2) in winter and IDT (UTC+3) in summer; India\'s IST never changes. The gap is 2.5 hours during Israeli summer and 3.5 hours in winter. India–Israel ties span technology, defense, agriculture, and pharmaceuticals.',
+  'san-francisco-dublin': 'San Francisco (PST/PDT, UTC−8/−7) is 8–9 hours behind Dublin (GMT/IST). The gap is 8 hours in winter and shifts as each country enters DST on a slightly different schedule. Ireland hosts the European headquarters of many Silicon Valley tech companies, making this one of the most active transatlantic tech corridors.',
+  'sao-paulo-san-francisco': 'São Paulo (BRT, UTC−3) is 5 hours ahead of San Francisco (PST/PDT, UTC−8/−7) during US standard time. Brazil observes limited DST, while the US Pacific coast has a fixed DST schedule; the gap can occasionally be 4 hours. Brazil\'s B3 exchange and São Paulo\'s fintech scene have growing ties with Silicon Valley.',
+  'chicago-san-francisco': 'Chicago (CST/CDT) is always exactly 2 hours ahead of San Francisco (PST/PDT). Both cities change their clocks on the same schedule each spring and fall, so the 2-hour gap never changes. Chicago\'s CME Group and San Francisco\'s tech and finance sectors frequently coordinate across this consistent time gap.',
+  'new-york-nairobi': 'New York (EST/EDT) is 7–8 hours behind Nairobi (EAT, UTC+3). Nairobi observes no DST, while New York does, causing the gap to change seasonally — 8 hours in winter, 7 hours when New York is on EDT. Kenya and the US maintain important trade, development, and tech sector links through this corridor.',
+  'dubai-new-york': 'Dubai (GST, UTC+4) is 8–9 hours ahead of New York (EST/EDT). Dubai observes no DST; New York does. The gap is 9 hours in winter and 8 hours during EDT. Dubai serves as the gateway between New York\'s financial markets and Middle Eastern and South Asian economies.',
+  'doha-dubai': 'Doha (AST, UTC+3) and Dubai (GST, UTC+4) are always exactly 1 hour apart, with Dubai ahead. Neither Qatar nor the UAE observes Daylight Saving Time, so the difference is fixed at 60 minutes throughout the entire year — making scheduling across the Gulf perfectly predictable.',
+  'doha-johannesburg': 'Doha (AST, UTC+3) is 1 hour ahead of Johannesburg (SAST, UTC+2). Neither Qatar nor South Africa observes Daylight Saving Time, so this 1-hour difference is permanent and unchanging. Qatar and South Africa are linked through energy, investment, and African development finance.',
+  'los-angeles-seoul': 'Los Angeles (PST/PDT, UTC−8/−7) is 16–17 hours behind Seoul (KST, UTC+9). South Korea observes no DST, while LA does — making the gap 17 hours in winter and 16 hours in summer. The K-entertainment industry (K-pop, K-drama), gaming, and semiconductor supply chains create significant scheduling demand across this corridor.',
+  'lagos-amsterdam': 'Lagos (WAT, UTC+1) and Amsterdam (CET/CEST, UTC+1/+2) share the same UTC offset in winter — zero time difference. In summer, when the Netherlands switches to CEST (UTC+2), Lagos remains on WAT, placing Amsterdam 1 hour ahead. Nigeria and the Netherlands maintain substantial trade ties in energy, agriculture, and logistics.',
+}
+
 // Ana Sayfa Bileşeni
 export default async function TimeComparePage({ params }: TimeComparePageProps) {
   const { from, to } = await params
@@ -268,7 +298,11 @@ export default async function TimeComparePage({ params }: TimeComparePageProps) 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <TimeComparisonContent fromCity={fromCity} toCity={toCity} />
+      <TimeComparisonContent
+        fromCity={fromCity}
+        toCity={toCity}
+        pairContext={PAIR_CONTEXTS[`${from}-${to}`]}
+      />
     </>
   )
 }
