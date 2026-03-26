@@ -79,14 +79,17 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
   const callWindow = getBestCallWindow(fromOffset, toOffset, fromCity.city)
 
   const title = diffHours === 0
-    ? `${fromCity.city} and ${toCity.city} Time — Same Time Zone`
-    : `${fromCity.city} to ${toCity.city} Time — Current Time Difference`
+    ? `${fromCity.city} to ${toCity.city} Time — Same Time Zone`
+    : `${fromCity.city} to ${toCity.city} Time — ${toCity.city} ${diffStr} ${diffHours > 0 ? 'Ahead' : 'Behind'}`
+
+  const fromUtcLabel = `UTC${fromOffset >= 0 ? '+' : ''}${fromOffset % 1 === 0 ? fromOffset : fromOffset.toFixed(1)}`
+  const toUtcLabel = `UTC${toOffset >= 0 ? '+' : ''}${toOffset % 1 === 0 ? toOffset : toOffset.toFixed(1)}`
 
   const description = diffHours === 0
-    ? `${fromCity.city} and ${toCity.city} share the same UTC offset. Live clock, conversion table, and meeting planner for both cities.`
+    ? `${fromCity.city} and ${toCity.city} share the same time zone (${fromUtcLabel}). Live clocks, overlap calendar, and conversion table.`
     : callWindow
-      ? `${toCity.city} is ${diffStr} ${direction} ${fromCity.city}. Best call window: ${callWindow}. Live clock & overlap calculator.`
-      : `${toCity.city} is ${diffStr} ${direction} ${fromCity.city}. No business-hour overlap — schedule async or use early/late calls. Live clock & meeting planner.`
+      ? `${toCity.city} is ${diffStr} ${direction} ${fromCity.city} (${fromUtcLabel} vs ${toUtcLabel}). Best call window: ${callWindow}. Live clock & meeting planner.`
+      : `${toCity.city} is ${diffStr} ${direction} ${fromCity.city} (${fromUtcLabel} vs ${toUtcLabel}). No business-hour overlap. Live clocks & async scheduling guide.`
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -162,7 +165,7 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
       `${fromCity.city} ${toCity.city} time converter`,
     ],
     openGraph: {
-      title: `${fromCity.city} ↔ ${toCity.city} — ${diffHours === 0 ? 'Same Time Zone' : `${diffStr} difference`}`,
+      title: `${fromCity.city} ↔ ${toCity.city} — ${diffHours === 0 ? 'Same Time Zone' : `${toCity.city} ${diffStr} ${diffHours > 0 ? 'Ahead' : 'Behind'}`}`,
       description,
       type: 'website',
       siteName: 'whattime.city',
@@ -171,10 +174,6 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
     },
     alternates: { canonical: `https://whattime.city/time/${from}/${to}/` },
     robots: { index: true, follow: true },
-    other: {
-      'schema:faq': JSON.stringify(faqSchema),
-      'schema:breadcrumb': JSON.stringify(breadcrumbSchema),
-    },
   }
 }
 

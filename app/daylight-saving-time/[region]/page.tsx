@@ -430,9 +430,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `https://whattime.city/daylight-saving-time/${region}/`,
       siteName: 'whattime.city',
     },
-    other: {
-      'schema:breadcrumb': JSON.stringify(breadcrumb),
-    },
   }
 }
 
