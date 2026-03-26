@@ -182,7 +182,7 @@ export default async function sitemap() {
   // Her biri pillar + 10 cluster = 11 sayfa
   const premiumGuideCities = [
     'new-york', 'london', 'tokyo', 'dubai',
-    'singapore', 'paris', 'sydney', 'istanbul'
+    'singapore', 'paris', 'sydney', 'istanbul', 'los-angeles'
   ]
 
   const premiumClusterSlugs = [

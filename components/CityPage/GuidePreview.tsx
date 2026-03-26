@@ -234,13 +234,35 @@ export default function GuidePreview({ city, weather }: GuidePreviewProps) {
           ))}
         </div>
         
-        {/* CTA - View Full Guide */}
-        <div className="mt-4 flex justify-end">
+        {/* CTA - View Full Guide + quick links */}
+        <div className="mt-4 flex flex-wrap items-center gap-2 justify-between">
+          <div className="flex gap-2">
+            <a
+              href={`/${city.slug}/guide/call-times/`}
+              className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium transition-all border ${
+                isLight
+                  ? 'border-slate-200 text-slate-600 hover:bg-slate-100'
+                  : 'border-slate-700 text-slate-300 hover:bg-slate-800'
+              }`}
+            >
+              📞 Best Time to Call
+            </a>
+            <a
+              href={`/${city.slug}/guide/holidays/`}
+              className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium transition-all border ${
+                isLight
+                  ? 'border-slate-200 text-slate-600 hover:bg-slate-100'
+                  : 'border-slate-700 text-slate-300 hover:bg-slate-800'
+              }`}
+            >
+              🗓 Public Holidays
+            </a>
+          </div>
           <a
             href={`/${city.slug}/guide/`}
             className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-              isLight 
-                ? 'bg-blue-600 text-white hover:bg-blue-700' 
+              isLight
+                ? 'bg-blue-600 text-white hover:bg-blue-700'
                 : 'bg-blue-500 text-white hover:bg-blue-600'
             }`}
           >
