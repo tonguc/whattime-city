@@ -192,19 +192,28 @@ Tema context'ini sağlar. Server component olabilir.
 
 ---
 
-## Roadmap — Kalan Maddeler
+## Roadmap — Tamamlanan Maddeler (Bu Oturum)
 
-### ⏳ Yüksek Öncelikli
-- [ ] `/time/` pair sayfaları title+meta optimize — pos 10-20'deki 8 sayfa:
-  - /time/singapore/lagos/ (pos 16), /time/dublin/dubai/ (pos 13)
-  - /time/los-angeles/san-francisco/ (pos 11), /time/tokyo/seattle/ (pos 10)
-- [ ] Broken guide links fix — 16 broken internal link
-- [ ] Top 20 `/time/` sayfasına içerik zenginleştirme (FAQ H2, meta desc CTR)
+### ✅ Tamamlandı
+- [x] Full site teknik SEO audit — tüm `ssr: false` sorunu tespit ve düzeltme
+- [x] `/time/` pair sayfaları title+meta optimize:
+  - "Current Time Difference" → "City N Hours Ahead/Behind"
+  - UTC offset labels description'a eklendi
+  - `other:` alanı temizlendi (redundant schema gürültüsü)
+- [x] Broken guide links fix — Miami, GuidePreview.tsx + CityGuideCard.tsx'e eklendi
+- [x] Top 20 `/time/` sayfasına içerik zenginleştirme:
+  - 26 city pair için PAIR_CONTEXTS lookup eklendi (SSR, Google görür)
+  - singapore/london, london/sydney, new-york/london, sydney/london, la/london vb.
+  - Her pair için: DST davranışı, UTC offset'ler, iş koridoru bilgisi
+- [x] `ist-to-pst`, `ist-to-cst`, `ist-to-gmt`, `aest-to-est`, `jst-to-est`, `cet-to-est` — ZATEN MEVCUTTU
+- [x] BreadcrumbList schema — zaten mevcut (`<script>` tag JSX'te, satır 267-270)
+- [x] DST cluster — ZATEN TAMAMLANMIŞTI (usa/uk/europe/australia/canada/nz/mexico/countries)
+- [x] India time hub — ZATEN MEVCUTTU (/india/page.tsx)
 
-### ⏳ Orta Öncelikli
-- [ ] `ist-to-pst` converter sayfası — IST↔Pacific (Hint-Silikon Vadisi koridoru)
-- [ ] `ist-to-cst` converter sayfası
-- [ ] BreadcrumbList schema — /time/ pair sayfalarına ekle
+### ⏳ Sonraki İzleme
+- [ ] 4 hafta sonra GSC'de etki ölçümü: pos 40-60 sayfaları → hedef pos 15-25
+- [ ] singapore/london (137 imp), new-york/london (110 imp) takibi
+- [ ] CTR iyileşmesi: "City N Hours Ahead" title formatı etkisi
 
 ---
 
