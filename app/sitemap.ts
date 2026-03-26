@@ -171,7 +171,7 @@ export default async function sitemap() {
   }))
 
   // Area code pages
-  const areaCodeRoutes = ['929', '404', '437', '206', '408', '212', '310', '312', '305', '415'].map(code => ({
+  const areaCodeRoutes = ['929', '404', '437', '206', '408', '212', '213', '310', '312', '305', '415'].map(code => ({
     url: `${baseUrl}/area-code/${code}/`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
