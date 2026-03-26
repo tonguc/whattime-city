@@ -1,53 +1,6 @@
 'use client'
-import { useState, useEffect } from 'react'
-import { useCityContext } from '@/lib/CityContext'
-import { getFlagUrl } from '@/shared/utils'
-
-const MX_TZ = 'America/Mexico_City'
-
-function getMXTime() {
-  const now = new Date()
-  return {
-    time: now.toLocaleTimeString('en-US', { timeZone: MX_TZ, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }),
-    date: now.toLocaleDateString('en-US', { timeZone: MX_TZ, weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
-    tzAbbr: now.toLocaleTimeString('en-US', { timeZone: MX_TZ, timeZoneName: 'short' }).split(' ').pop() ?? 'CST',
-  }
-}
-
+import HeroClockDisplay from '@/components/HeroClockDisplay'
+const MEXICO_TZ = 'America/Mexico_City'
 export default function MexicoClockClient() {
-  const [mx, setMx] = useState({ time: '--:--:--', date: '', tzAbbr: 'CST' })
-  const [mounted, setMounted] = useState(false)
-  const { isLight } = useCityContext()
-
-  useEffect(() => {
-    setMounted(true)
-    const update = () => setMx(getMXTime())
-    update()
-    const id = setInterval(update, 1000)
-    return () => clearInterval(id)
-  }, [])
-
-  const card = isLight ? 'rounded-2xl border border-slate-200 bg-white p-6' : 'rounded-2xl border border-slate-700 bg-slate-800 p-6'
-  const tp = isLight ? 'text-slate-800' : 'text-white'
-  const ts = isLight ? 'text-slate-500' : 'text-slate-400'
-
-  return (
-    <div className={`${card} text-center`}>
-      <div className="flex items-center justify-center gap-3 mb-2">
-        <img src={getFlagUrl('MX', 'sm')} alt="MX flag" className="w-7 h-5 object-cover rounded-sm" />
-        <div className="text-left">
-          <div className="text-xs uppercase tracking-widest font-medium text-green-600">Live Mexico City Time</div>
-          <div className={`text-xs ${ts}`}>CST · UTC−6 · No DST since 2023</div>
-        </div>
-      </div>
-      <div className={`font-mono text-5xl sm:text-6xl font-bold tracking-tight mt-3 ${tp}`}>
-        {mounted ? mx.time : '--:--:--'}
-      </div>
-      <div className={`text-sm mt-1 ${ts}`}>{mounted ? mx.date : ''}</div>
-      <div className={`mt-3 inline-flex items-center gap-2 text-xs rounded-full px-3 py-1 ${isLight ? 'bg-slate-100 text-slate-500' : 'bg-slate-700/50 text-slate-400'}`}>
-        <span className="w-2 h-2 rounded-full bg-green-500 inline-block" />
-        CDMX · Guadalajara · Monterrey · No DST since 2023
-      </div>
-    </div>
-  )
+  return <HeroClockDisplay tz={MEXICO_TZ} countryCode="MX" countryName="Mexico" tzLabel="EST · UTC-5" />
 }
