@@ -178,7 +178,7 @@ export default function ClockComparisonSection({ primaryTz, countryName }: Props
                 <tr key={hub.city}>
                   <td className={`py-2 pr-4 font-medium ${rowText}`}>{hub.city}</td>
                   <td className={`py-2 pr-4 hidden sm:table-cell ${muted}`}>{getTzAbbr(hub.tz)}</td>
-                  <td className={`py-2 pr-4 font-mono ${rowText}`}>{getLocalTime(hub.tz)}</td>
+                  <td className={`py-2 pr-4 tabular-nums ${rowText}`}>{getLocalTime(hub.tz)}</td>
                   <td className={`py-2 pr-4 font-semibold ${diffColor}`}>{diffLabel(diff)}</td>
                   <td className="py-2 hidden md:table-cell">
                     <span className={`text-xs px-2 py-0.5 rounded-lg ${pill}`}>{getBestCallTime(hub.tz)}</span>
