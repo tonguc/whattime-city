@@ -211,6 +211,12 @@ export default function USTimeZonesClient() {
               { label: 'EST to GMT', href: '/est-to-gmt/' },
               { label: 'GMT to EST', href: '/gmt-to-est/' },
               { label: 'Full Converter', href: '/time-converter/' },
+              { label: 'Eastern Time Zone', href: '/eastern-time-zone/' },
+              { label: 'Central Time Zone', href: '/central-time-zone/' },
+              { label: 'Mountain Time Zone', href: '/mountain-time-zone/' },
+              { label: 'Pacific Time Zone', href: '/pacific-time-zone/' },
+              { label: 'Alaska Time Zone', href: '/alaska-time-zone/' },
+              { label: 'Hawaii Time Zone', href: '/hawaii-time-zone/' },
             ].map(link => (
               <Link
                 key={link.href}
