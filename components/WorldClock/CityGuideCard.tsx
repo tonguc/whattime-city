@@ -59,6 +59,15 @@ const CITY_GUIDES: CityGuideConfig[] = [
     colorDark: 'bg-gradient-to-r from-green-900/50 to-yellow-900/50 border-2 border-green-600 hover:border-green-500',
     buttonColor: 'bg-green-500 group-hover:bg-green-600 dark:group-hover:bg-green-400'
   },
+  {
+    slug: 'miami',
+    emoji: '🌴',
+    title: 'Miami Time Guide',
+    description: 'Art Basel, South Beach hours, Latin America hub & more',
+    colorLight: 'bg-gradient-to-r from-cyan-100 to-teal-100 border-2 border-cyan-300 hover:border-cyan-400',
+    colorDark: 'bg-gradient-to-r from-cyan-900/50 to-teal-900/50 border-2 border-cyan-600 hover:border-cyan-500',
+    buttonColor: 'bg-cyan-500 group-hover:bg-cyan-600 dark:group-hover:bg-cyan-400'
+  },
   // EUROPE
   {
     slug: 'london',

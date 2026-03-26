@@ -26,10 +26,10 @@ export default function GuidePreview({ city, weather }: GuidePreviewProps) {
   
   // Only show for premium cities (tier 1) that have actual guide pages
   const premiumCitiesWithGuide = [
-    'new-york', 'london', 'tokyo', 'paris', 'dubai', 'singapore', 
+    'new-york', 'london', 'tokyo', 'paris', 'dubai', 'singapore',
     'hong-kong', 'sydney', 'los-angeles', 'chicago', 'toronto',
     'frankfurt', 'amsterdam', 'berlin', 'mumbai', 'bangkok',
-    'seoul', 'shanghai', 'sao-paulo', 'istanbul'
+    'seoul', 'shanghai', 'sao-paulo', 'istanbul', 'miami'
   ]
   
   if (!info || !premiumCitiesWithGuide.includes(city.slug)) return null
