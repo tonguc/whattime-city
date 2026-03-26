@@ -10,18 +10,21 @@ import SingaporeCallTimesContent from './SingaporeCallTimesContent'
 import ParisCallTimesContent from './ParisCallTimesContent'
 import SydneyCallTimesContent from './SydneyCallTimesContent'
 import LosAngelesCallTimesContent from './LosAngelesCallTimesContent'
+import IstanbulCallTimesContent from './IstanbulCallTimesContent'
 
 type Props = { params: Promise<{ city: string }> }
 
 export async function generateStaticParams() {
   return [
-    { city: 'new-york' }, 
-    { city: 'london' }, 
-    { city: 'tokyo' }, 
-    { city: 'dubai' }, 
-    { city: 'singapore' }, 
-    { city: 'paris' }, 
-    { city: 'sydney' }
+    { city: 'new-york' },
+    { city: 'london' },
+    { city: 'tokyo' },
+    { city: 'dubai' },
+    { city: 'singapore' },
+    { city: 'paris' },
+    { city: 'sydney' },
+    { city: 'los-angeles' },
+    { city: 'istanbul' },
   ]
 }
 
@@ -539,6 +542,7 @@ export default async function CallTimesPage({ params }: Props) {
   if (citySlug === 'los-angeles') return renderWithSchema(LosAngelesCallTimesContent)
   if (citySlug === 'sydney') return renderWithSchema(SydneyCallTimesContent)
   if (citySlug === 'new-york') return renderWithSchema(CallTimesContent)
-  
+  if (citySlug === 'istanbul') return <IstanbulCallTimesContent city={city as any} />
+
   return <CallTimesContent city={city as any} />
 }
