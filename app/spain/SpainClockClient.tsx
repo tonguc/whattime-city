@@ -1,4 +1,5 @@
 'use client'
+import { getFlagUrl } from '@/shared/utils'
 
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
@@ -59,7 +60,7 @@ export default function SpainClockClient() {
     <div className="space-y-4">
       <div className={cardBase}>
         <div className="flex items-center gap-3 mb-1">
-          <span className="text-2xl">🇪🇸</span>
+          <img src={getFlagUrl('ES', 'sm')} alt="ES flag" className="w-7 h-5 object-cover rounded-sm" />
           <div>
             <div className={`text-xs font-medium uppercase tracking-wider ${textSecondary}`}>Spain (mainland) · {mounted ? es.tzAbbr : 'CET'}</div>
             <div className={`text-xs ${textSecondary}`}>{mounted && es.tzAbbr === 'CEST' ? 'CEST · UTC+2 · Central European Summer Time' : 'CET · UTC+1 · Central European Time'}</div>

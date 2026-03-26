@@ -1,4 +1,5 @@
 'use client'
+import { getFlagUrl } from '@/shared/utils'
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
 const PL_TZ = 'Europe/Warsaw'
@@ -45,7 +46,7 @@ export default function PolandClockClient() {
     <div className="space-y-4">
       <div className={card}>
         <div className="flex items-center gap-3 mb-1">
-          <span className="text-2xl">🇵🇱</span>
+          <img src={getFlagUrl('PL', 'sm')} alt="PL flag" className="w-7 h-5 object-cover rounded-sm" />
           <div>
             <div className={`text-xs font-medium uppercase tracking-wider ${ts}`}>Poland · {mounted ? pl.tzAbbr : 'CET'}</div>
             <div className={`text-xs ${ts}`}>{mounted && pl.tzAbbr === 'CEST' ? 'CEST · UTC+2 · Central European Summer Time' : 'CET · UTC+1 · Central European Time'}</div>

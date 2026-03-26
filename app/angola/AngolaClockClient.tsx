@@ -1,4 +1,5 @@
 'use client'
+import { getFlagUrl } from '@/shared/utils'
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
 const AO_TZ = 'Africa/Luanda'
@@ -45,7 +46,7 @@ export default function AngolaClockClient() {
     <div className="space-y-4">
       <div className={card}>
         <div className="flex items-center gap-3 mb-1">
-          <span className="text-2xl">🇦🇴</span>
+          <img src={getFlagUrl('AO', 'sm')} alt="AO flag" className="w-7 h-5 object-cover rounded-sm" />
           <div>
             <div className={`text-xs font-medium uppercase tracking-wider ${ts}`}>Angola · WAT · UTC+1</div>
             <div className={`text-xs ${ts}`}>WAT · UTC+1 · West Africa Time · No DST</div>

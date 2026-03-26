@@ -1,4 +1,5 @@
 'use client'
+import { getFlagUrl } from '@/shared/utils'
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
 const SA_TZ = 'Asia/Riyadh'
@@ -44,7 +45,7 @@ export default function SaudiArabiaClockClient() {
     <div className="space-y-4">
       <div className={card}>
         <div className="flex items-center gap-3 mb-1">
-          <span className="text-2xl">🇸🇦</span>
+          <img src={getFlagUrl('SA', 'sm')} alt="SA flag" className="w-7 h-5 object-cover rounded-sm" />
           <div>
             <div className={`text-xs font-medium uppercase tracking-wider ${ts}`}>Saudi Arabia · AST</div>
             <div className={`text-xs ${ts}`}>AST · UTC+3 · Arabia Standard Time · No Daylight Saving Time</div>

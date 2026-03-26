@@ -1,4 +1,5 @@
 'use client'
+import { getFlagUrl } from '@/shared/utils'
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
 const BD_TZ = 'Asia/Dhaka'
@@ -45,7 +46,7 @@ export default function BangladeshClockClient() {
     <div className="space-y-4">
       <div className={card}>
         <div className="flex items-center gap-3 mb-1">
-          <span className="text-2xl">🇧🇩</span>
+          <img src={getFlagUrl('BD', 'sm')} alt="BD flag" className="w-7 h-5 object-cover rounded-sm" />
           <div>
             <div className={`text-xs font-medium uppercase tracking-wider ${ts}`}>Bangladesh · BST · UTC+6</div>
             <div className={`text-xs ${ts}`}>BST · UTC+6 · Bangladesh Standard Time · No DST</div>

@@ -1,4 +1,5 @@
 'use client'
+import { getFlagUrl } from '@/shared/utils'
 
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
@@ -69,7 +70,7 @@ export default function RussiaClockClient() {
     <div className="space-y-4">
       <div className={cardBase}>
         <div className="flex items-center gap-3 mb-1">
-          <span className="text-2xl">🇷🇺</span>
+          <img src={getFlagUrl('RU', 'sm')} alt="RU flag" className="w-7 h-5 object-cover rounded-sm" />
           <div>
             <div className={`text-xs font-medium uppercase tracking-wider ${textSecondary}`}>Moscow · Moscow Time</div>
             <div className={`text-xs ${textSecondary}`}>MSK · UTC+3 · No Daylight Saving Time · Russia reference clock</div>

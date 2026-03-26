@@ -1,4 +1,5 @@
 'use client'
+import { getFlagUrl } from '@/shared/utils'
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
 const ZA_TZ = 'Africa/Johannesburg'
@@ -44,7 +45,7 @@ export default function SouthAfricaClockClient() {
     <div className="space-y-4">
       <div className={card}>
         <div className="flex items-center gap-3 mb-1">
-          <span className="text-2xl">🇿🇦</span>
+          <img src={getFlagUrl('ZA', 'sm')} alt="ZA flag" className="w-7 h-5 object-cover rounded-sm" />
           <div>
             <div className={`text-xs font-medium uppercase tracking-wider ${ts}`}>South Africa · SAST</div>
             <div className={`text-xs ${ts}`}>SAST · UTC+2 · South Africa Standard Time · No Daylight Saving Time</div>

@@ -1,4 +1,5 @@
 'use client'
+import { getFlagUrl } from '@/shared/utils'
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
 const CM_TZ = 'Africa/Douala'
@@ -45,7 +46,7 @@ export default function CameroonClockClient() {
     <div className="space-y-4">
       <div className={card}>
         <div className="flex items-center gap-3 mb-1">
-          <span className="text-2xl">🇨🇲</span>
+          <img src={getFlagUrl('CM', 'sm')} alt="CM flag" className="w-7 h-5 object-cover rounded-sm" />
           <div>
             <div className={`text-xs font-medium uppercase tracking-wider ${ts}`}>Cameroon · WAT · UTC+1</div>
             <div className={`text-xs ${ts}`}>WAT · UTC+1 · West Africa Time · No DST</div>

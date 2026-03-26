@@ -1,4 +1,5 @@
 'use client'
+import { getFlagUrl } from '@/shared/utils'
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
 const IT_TZ = 'Europe/Rome'
@@ -45,7 +46,7 @@ export default function ItalyClockClient() {
     <div className="space-y-4">
       <div className={card}>
         <div className="flex items-center gap-3 mb-1">
-          <span className="text-2xl">🇮🇹</span>
+          <img src={getFlagUrl('IT', 'sm')} alt="IT flag" className="w-7 h-5 object-cover rounded-sm" />
           <div>
             <div className={`text-xs font-medium uppercase tracking-wider ${ts}`}>Italy · {mounted ? it.tzAbbr : 'CET'}</div>
             <div className={`text-xs ${ts}`}>{mounted && it.tzAbbr === 'CEST' ? 'CEST · UTC+2 · Central European Summer Time' : 'CET · UTC+1 · Central European Time'}</div>

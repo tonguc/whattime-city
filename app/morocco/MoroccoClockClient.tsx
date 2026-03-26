@@ -1,4 +1,5 @@
 'use client'
+import { getFlagUrl } from '@/shared/utils'
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
 const MA_TZ = 'Africa/Casablanca'
@@ -56,7 +57,7 @@ export default function MoroccoClockClient() {
     <div className="space-y-4">
       <div className={card}>
         <div className="flex items-center gap-3 mb-1">
-          <span className="text-2xl">🇲🇦</span>
+          <img src={getFlagUrl('MA', 'sm')} alt="MA flag" className="w-7 h-5 object-cover rounded-sm" />
           <div>
             <div className={`text-xs font-medium uppercase tracking-wider ${ts}`}>Morocco · {mounted ? ma.tzAbbr : 'WET'}</div>
             <div className={`text-xs ${ts}`}>{isSummer ? 'WEST · UTC+1 · Western European Summer Time' : 'WET · UTC+0 · Western European Time'}</div>
