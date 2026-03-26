@@ -160,13 +160,16 @@ export default async function sitemap() {
     { slug: 'cet-to-est', priority: 0.7 },
     // US Timezone hub
     { slug: 'us-time-zones', priority: 0.9 },
-    // European TZ explainer
+    // European TZ explainers
     { slug: 'cest-timezone', priority: 0.8 },
+    { slug: 'bst-timezone', priority: 0.8 },
     // US Timezone explainer pages — high search volume
     { slug: 'eastern-time-zone', priority: 0.9 },
     { slug: 'central-time-zone', priority: 0.9 },
     { slug: 'mountain-time-zone', priority: 0.9 },
     { slug: 'pacific-time-zone', priority: 0.9 },
+    { slug: 'alaska-time-zone', priority: 0.8 },
+    { slug: 'hawaii-time-zone', priority: 0.8 },
     // New TZ pair pages — US domestic + UTC
     { slug: 'est-to-cst', priority: 0.8 },
     { slug: 'gmt-to-pst', priority: 0.8 },
@@ -178,6 +181,8 @@ export default async function sitemap() {
     { slug: 'utc-to-mst', priority: 0.8 },
     { slug: 'mst-to-utc', priority: 0.8 },
     { slug: 'jst-to-pst', priority: 0.8 },
+    { slug: 'aest-to-pst', priority: 0.7 },
+    { slug: 'cet-to-pst', priority: 0.7 },
     { slug: 'pst-to-cst', priority: 0.8 },
     { slug: 'mst-to-est', priority: 0.8 },
     { slug: 'est-to-mst', priority: 0.8 },
