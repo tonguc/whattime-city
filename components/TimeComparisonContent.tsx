@@ -569,10 +569,11 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
           {fromCity.city} to {toCity.city} Time Difference
         </h1>
 
+        {/* Direct Answer Block — for featured snippets */}
         <p className={`text-sm text-center mb-1 font-medium ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
           {diffHours === 0
-            ? `${fromCity.city} and ${toCity.city} are in the same time zone`
-            : `${toCity.city} is ${formatTimeDifference(Math.abs(diffHours))} ${diffHours > 0 ? 'ahead of' : 'behind'} ${fromCity.city}`
+            ? `${fromCity.city} and ${toCity.city} are in the same time zone — no time difference.`
+            : `${toCity.city} is ${formatTimeDifference(Math.abs(diffHours))} ${diffHours > 0 ? 'ahead of' : 'behind'} ${fromCity.city}. When it is noon in ${fromCity.city}, it is ${String((12 + diffHours + 24) % 24).padStart(2, '0')}:00 in ${toCity.city}.`
           }
         </p>
 
@@ -1265,7 +1266,10 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
           <div className={`space-y-4 text-sm ${mainTheme.textMuted}`}>
 
             <h3 className={`text-base font-semibold ${isLight ? 'text-slate-700' : 'text-white'}`}>
-              How many hours {diffHours === 0 ? 'apart are' : 'is'} {fromCity.city} {diffHours === 0 ? 'and' : (diffHours > 0 ? 'behind' : 'ahead of')} {toCity.city}?
+              {diffHours === 0
+                ? `Is there a time difference between ${fromCity.city} and ${toCity.city}?`
+                : `How many hours is ${fromCity.city} ${diffHours > 0 ? 'behind' : 'ahead of'} ${toCity.city}?`
+              }
             </h3>
             <p>
               {diffHours === 0
@@ -1276,7 +1280,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
             </p>
 
             <h3 className={`text-base font-semibold ${isLight ? 'text-slate-700' : 'text-white'}`}>
-              Best time to call between {fromCity.city} and {toCity.city}
+              What is the best time to call {toCity.city} from {fromCity.city}?
             </h3>
             <p>
               {overlapHours.length > 0
@@ -1286,7 +1290,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
             </p>
 
             <h3 className={`text-base font-semibold ${isLight ? 'text-slate-700' : 'text-white'}`}>
-              Does the {fromCity.city}–{toCity.city} time difference change?
+              Does the {fromCity.city} to {toCity.city} time difference change throughout the year?
             </h3>
             <p>
               The time difference can shift by up to one hour when either city observes Daylight Saving Time (DST). DST transition dates differ between countries — typically March/April in the Northern Hemisphere and October in the Southern Hemisphere. Always verify the live difference above when scheduling important meetings near DST changeover dates.
