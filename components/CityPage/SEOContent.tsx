@@ -1,6 +1,4 @@
 'use client'
-import { useState } from 'react'
-
 import Link from 'next/link'
 import { City } from '@/lib/cities'
 import { useThemeClasses } from '@/lib/useThemeClasses'
@@ -45,7 +43,7 @@ const majorCities: Record<string, { slug: string; offset: number }> = {
 
 export default function SEOContent({ city, seoData }: SEOContentProps) {
   const { card, textSection, textBody, isLight } = useThemeClasses()
-  const [expanded, setExpanded] = useState(false)
+
   const offset = getUTCOffset(city.timezone)
   const hasDST = dstCountries[city.countryCode] ?? false
   const linkClass = isLight
@@ -87,20 +85,12 @@ export default function SEOContent({ city, seoData }: SEOContentProps) {
 
       {contentBlocks.length > 0 ? (
         <div className={`space-y-5 ${textBody} leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-          {(expanded ? contentBlocks : contentBlocks.slice(0, 2)).map((block, i) => (
+          {contentBlocks.map((block, i) => (
             <div key={i}>
               <h3 className={`font-semibold mb-2 ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>{block.title}</h3>
               <p>{block.content}</p>
             </div>
           ))}
-          {contentBlocks.length > 2 && (
-            <button
-              onClick={() => setExpanded(!expanded)}
-              className={`text-sm font-medium ${isLight ? 'text-blue-600 hover:text-blue-800' : 'text-sky-400 hover:text-sky-300'}`}
-            >
-              {expanded ? 'Read less ↑' : 'Read more ↓'}
-            </button>
-          )}
         </div>
       ) : (
         <div className={`space-y-4 ${textBody} leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>

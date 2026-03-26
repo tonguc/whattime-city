@@ -39,7 +39,7 @@ const CompactWorldCities = dynamic(() => import('./CompactWorldCities'), { ssr: 
 const TravelBridge = dynamic(() => import('./TravelBridge'), { ssr: false })
 const MoreCitiesSection = dynamic(() => import('./MoreCitiesSection'), { ssr: false })
 const FavoriteCard = dynamic(() => import('./FavoriteCard'), { ssr: false })
-const FAQSection = dynamic(() => import('./FAQSection'), { ssr: false })
+const FAQSection = dynamic(() => import('./FAQSection'))
 
 interface CityPageProps {
   initialCity?: City
