@@ -35,32 +35,32 @@ export default function BSTtoCST() {
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800">BST to CST Converter</h1>
-      <p className="text-lg text-slate-600 mb-6">British Summer Time → Central Standard Time · BST is <strong>6 hours ahead</strong> of CDT in summer</p>
+      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">BST to CST Converter</h1>
+      <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">British Summer Time → Central Standard Time · BST is <strong>6 hours ahead</strong> of CDT in summer</p>
       <TZPairClient config={config} />
       <section className="mt-4 mb-4">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 mb-4">BST vs CST — London to Chicago</h2>
-          <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
-            <p><strong className="text-slate-700">BST</strong> is UTC+1 (UK summer). <strong className="text-slate-700">CST</strong> is UTC-6 (US Central winter). In summer when both use daylight saving: BST (UTC+1) vs CDT (UTC-5) = 6 hours.</p>
+        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
+          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">BST vs CST — London to Chicago</h2>
+          <div className="space-y-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+            <p><strong className="text-slate-700 dark:text-slate-200">BST</strong> is UTC+1 (UK summer). <strong className="text-slate-700 dark:text-slate-200">CST</strong> is UTC-6 (US Central winter). In summer when both use daylight saving: BST (UTC+1) vs CDT (UTC-5) = 6 hours.</p>
             <p>Best overlap window: <strong>3:00–6:00 PM BST = 9:00 AM–12:00 PM CDT</strong>.</p>
           </div>
         </div>
       </section>
       <section className="mb-4">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
+        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
+          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
           <div className="space-y-3">
             {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 bg-slate-50 p-4">
-                <h3 className="font-semibold text-slate-800 text-sm mb-1">{item.name}</h3>
-                <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
+              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
+                <h3 className="font-semibold text-slate-800 dark:text-white text-sm mb-1">{item.name}</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-300">{item.acceptedAnswer.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
-      <footer className="rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500">
+      <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/50 text-xs text-slate-500 dark:text-slate-400">
         Timezone data sourced from <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">IANA Time Zone Database</a>. Last updated March 2026.
       </footer>
     </ContentPageWrapper>

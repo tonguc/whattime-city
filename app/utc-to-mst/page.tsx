@@ -36,32 +36,32 @@ export default function UTCtoMST() {
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800">UTC to MST Converter</h1>
-      <p className="text-lg text-slate-600 mb-6">Coordinated Universal Time → Mountain Standard Time · UTC is <strong>7 hours ahead</strong> of MST</p>
+      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">UTC to MST Converter</h1>
+      <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">Coordinated Universal Time → Mountain Standard Time · UTC is <strong>7 hours ahead</strong> of MST</p>
       <TZPairClient config={config} />
       <section className="mt-4 mb-4">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 mb-4">UTC vs MST — What You Need to Know</h2>
-          <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
-            <p><strong className="text-slate-700">UTC</strong> is the global time standard with no DST. <strong className="text-slate-700">MST (UTC-7)</strong> covers the Rocky Mountain states. In summer, MST shifts to <strong>MDT (UTC-6)</strong> — except Arizona, which stays at UTC-7 year-round.</p>
+        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
+          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">UTC vs MST — What You Need to Know</h2>
+          <div className="space-y-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+            <p><strong className="text-slate-700 dark:text-slate-200">UTC</strong> is the global time standard with no DST. <strong className="text-slate-700 dark:text-slate-200">MST (UTC-7)</strong> covers the Rocky Mountain states. In summer, MST shifts to <strong>MDT (UTC-6)</strong> — except Arizona, which stays at UTC-7 year-round.</p>
             <p>15:00 UTC is 8:00 AM MST — a common server log anchor for Mountain Time operations.</p>
           </div>
         </div>
       </section>
       <section className="mb-4">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 mb-4">Frequently Asked Questions</h2>
+        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
+          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
           <div className="space-y-3">
             {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 bg-slate-50 p-4">
-                <h3 className="font-semibold text-slate-800 text-sm mb-1">{item.name}</h3>
-                <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
+              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
+                <h3 className="font-semibold text-slate-800 dark:text-white text-sm mb-1">{item.name}</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-300">{item.acceptedAnswer.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
-      <footer className="rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500">
+      <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/50 text-xs text-slate-500 dark:text-slate-400">
         Timezone data sourced from <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">IANA Time Zone Database</a>. Last updated March 2026.
       </footer>
     </ContentPageWrapper>
