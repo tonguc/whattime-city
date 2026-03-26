@@ -44,7 +44,7 @@ export default function HeroClockDisplay({ tz, countryCode, countryName, tzLabel
           {countryName} · {mounted && abbr ? abbr : tzLabel.split(' ')[0]}
         </span>
       </div>
-      <div className={`font-mono text-5xl sm:text-6xl font-bold tracking-tight ${tp}`}>
+      <div className={`text-5xl sm:text-6xl font-semibold tracking-tight tabular-nums ${tp}`}>
         {mounted ? time : '--:--:--'}
       </div>
       <div className={`text-sm mt-2 ${ts}`}>{mounted ? date : ''}</div>
