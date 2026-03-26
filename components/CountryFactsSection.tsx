@@ -168,7 +168,7 @@ export default function CountryFactsSection({ hubSlug }: Props) {
     : 'rounded-2xl border border-slate-700 bg-slate-800 p-5 mt-4 mb-4'
   const innerCard = isLight
     ? 'rounded-xl bg-slate-100 p-4'
-    : 'bg-slate-800/50 p-4 rounded-xl'
+    : 'bg-slate-900/60 p-4 rounded-xl'
   const heading = isLight ? 'text-slate-800' : 'text-white'
   const muted = isLight ? 'text-slate-500' : 'text-slate-400'
   const chipLang = isLight ? 'bg-slate-200 text-slate-700' : 'bg-slate-700 text-slate-200'
