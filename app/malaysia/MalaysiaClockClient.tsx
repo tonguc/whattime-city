@@ -1,4 +1,5 @@
 'use client'
+import ClockComparisonSection from '@/components/ClockComparisonSection'
 import { getFlagUrl } from '@/shared/utils'
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
@@ -54,13 +55,7 @@ export default function MalaysiaClockClient() {
         <div className={`font-mono text-5xl sm:text-6xl font-bold tracking-tight mt-3 ${tp}`}>{mounted ? my.time : '--:--:--'}</div>
         <div className={`text-sm mt-1 ${ts}`}>{mounted ? my.date : ''}</div>
       </div>
-      <div className={card}>
-        <h2 className={`text-base font-semibold mb-3 ${tp}`}>Malaysia vs World Cities</h2>
-        <table className="w-full text-sm">
-          <thead><tr className={`border-b ${tr}`}><th className={`text-left py-2 pr-4 font-medium ${ts}`}>City</th><th className={`text-left py-2 pr-4 font-medium ${ts}`}>Zone</th><th className={`text-left py-2 font-medium ${ts}`}>Local Time</th></tr></thead>
-          <tbody className={`divide-y ${tr}`}>{ZONES.map((z, i) => (<tr key={z.city}><td className={`py-2 pr-4 font-medium ${tp}`}>{z.city}</td><td className={`py-2 pr-4 ${ts}`}>{mounted ? others[i].abbr : z.label}</td><td className={`py-2 font-mono ${tp}`}>{mounted ? others[i].time : '--:--'}</td></tr>))}</tbody>
-        </table>
-      </div>
+      <ClockComparisonSection primaryTz={MY_TZ} countryName="Malaysia" />
     </div>
   )
 }

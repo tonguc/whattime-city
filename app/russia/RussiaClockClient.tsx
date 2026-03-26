@@ -1,4 +1,5 @@
 'use client'
+import ClockComparisonSection from '@/components/ClockComparisonSection'
 import { getFlagUrl } from '@/shared/utils'
 
 import { useState, useEffect } from 'react'
@@ -109,29 +110,7 @@ export default function RussiaClockClient() {
         <p className={`text-xs mt-3 ${textSecondary}`}>Russia has 11 time zones spanning UTC+2 (Kaliningrad) to UTC+12 (Kamchatka). Moscow Time (MSK, UTC+3) is used as the official reference nationwide. Russia abolished Daylight Saving Time in 2014.</p>
       </div>
 
-      <div className={cardBase}>
-        <h2 className={`text-base font-semibold mb-3 ${textPrimary}`}>Moscow vs World Cities</h2>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className={`border-b ${tableRowClass}`}>
-                <th className={`text-left py-2 pr-4 font-medium ${textSecondary}`}>City</th>
-                <th className={`text-left py-2 pr-4 font-medium ${textSecondary}`}>Zone</th>
-                <th className={`text-left py-2 font-medium ${textSecondary}`}>Local Time</th>
-              </tr>
-            </thead>
-            <tbody className={`divide-y ${tableRowClass}`}>
-              {COMPARE_ZONES.map((z, i) => (
-                <tr key={z.city}>
-                  <td className={`py-2 pr-4 font-medium ${textPrimary}`}>{z.city}</td>
-                  <td className={`py-2 pr-4 ${textSecondary}`}>{mounted ? others[i].abbr : z.label}</td>
-                  <td className={`py-2 font-mono ${textPrimary}`}>{mounted ? others[i].time : '--:--'}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <ClockComparisonSection primaryTz={MSK_TZ} countryName="Moscow" />
     </div>
   )
 }

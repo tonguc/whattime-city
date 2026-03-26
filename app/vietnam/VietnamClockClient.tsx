@@ -1,4 +1,5 @@
 'use client'
+import ClockComparisonSection from '@/components/ClockComparisonSection'
 import { getFlagUrl } from '@/shared/utils'
 
 import { useState, useEffect } from 'react'
@@ -67,61 +68,7 @@ export default function VietnamClockClient() {
         <div className={`text-sm mt-1 ${textSecondary}`}>{mounted ? vn.date : ''}</div>
       </div>
 
-      <div className={cardBase}>
-        <h2 className={`text-base font-semibold mb-3 ${textPrimary}`}>Vietnam vs World Cities</h2>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className={`border-b ${tableRowClass}`}>
-                <th className={`text-left py-2 pr-4 font-medium ${textSecondary}`}>City</th>
-                <th className={`text-left py-2 pr-4 font-medium ${textSecondary}`}>Zone</th>
-                <th className={`text-left py-2 font-medium ${textSecondary}`}>Local Time</th>
-              </tr>
-            </thead>
-            <tbody className={`divide-y ${tableRowClass}`}>
-              {COMPARE_ZONES.map((z, i) => (
-                <tr key={z.city}>
-                  <td className={`py-2 pr-4 font-medium ${textPrimary}`}>{z.city}</td>
-                  <td className={`py-2 pr-4 ${textSecondary}`}>{mounted ? others[i].abbr : z.label}</td>
-                  <td className={`py-2 font-mono ${textPrimary}`}>{mounted ? others[i].time : '--:--'}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div className={cardBase}>
-        <h2 className={`text-base font-semibold mb-3 ${textPrimary}`}>Best Time to Call Vietnam (ICT UTC+7)</h2>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className={`border-b ${tableRowClass}`}>
-                <th className={`text-left py-2 pr-4 font-medium ${textSecondary}`}>Calling From</th>
-                <th className={`text-left py-2 font-medium ${textSecondary}`}>Call during (local time) → Vietnam receives 9 AM–6 PM</th>
-              </tr>
-            </thead>
-            <tbody className={`divide-y ${tableRowClass}`}>
-              {[
-                { from: 'New York (EST, UTC−5)', window: '9 PM – 6 AM next day (evening overlap only)' },
-                { from: 'New York (EDT, UTC−4)', window: '10 PM – 7 AM next day (US summer)' },
-                { from: 'Los Angeles (PST, UTC−8)', window: '6 PM – 3 AM next day' },
-                { from: 'London (GMT, UTC+0)', window: '2 AM – 11 AM (morning calls reach afternoon Vietnam)' },
-                { from: 'London (BST, UTC+1)', window: '3 AM – 12 PM' },
-                { from: 'Dubai (GST, UTC+4)', window: '6 AM – 3 PM (good overlap)' },
-                { from: 'Singapore (SGT, UTC+8)', window: '10 AM – 7 PM (1h ahead; excellent overlap)' },
-                { from: 'Tokyo (JST, UTC+9)', window: '11 AM – 8 PM (2h ahead; good overlap)' },
-                { from: 'Sydney (AEST, UTC+10)', window: '12 PM – 9 PM (3h ahead; afternoon overlap)' },
-              ].map(r => (
-                <tr key={r.from}>
-                  <td className={`py-2 pr-4 font-medium ${textPrimary} whitespace-nowrap`}>{r.from}</td>
-                  <td className={`py-2 ${textSecondary}`}>{r.window}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <ClockComparisonSection primaryTz={VN_TZ} countryName="Vietnam" />
     </div>
   )
 }

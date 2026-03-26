@@ -1,4 +1,5 @@
 'use client'
+import ClockComparisonSection from '@/components/ClockComparisonSection'
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
 const AZ_TZ = 'America/Phoenix'
@@ -65,16 +66,7 @@ export default function ArizonaClockClient() {
           </div>
         )}
       </div>
-      <div className={card}>
-        <h2 className={`text-base font-semibold mb-3 ${tp}`}>Arizona vs Other Cities</h2>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead><tr className={`border-b ${tr}`}><th className={`text-left py-2 pr-4 font-medium ${ts}`}>City</th><th className={`text-left py-2 pr-4 font-medium ${ts}`}>Zone</th><th className={`text-left py-2 font-medium ${ts}`}>Local Time</th></tr></thead>
-            <tbody className={`divide-y ${tr}`}>{ZONES.map((z, i) => (<tr key={z.city}><td className={`py-2 pr-4 font-medium ${tp}`}>{z.city}</td><td className={`py-2 pr-4 ${ts}`}>{mounted ? others[i].abbr : z.label}</td><td className={`py-2 font-mono ${tp}`}>{mounted ? others[i].time : '--:--'}</td></tr>))}</tbody>
-          </table>
-        </div>
-        <p className={`text-xs mt-3 ${ts}`}>In winter, Arizona (MST, UTC−7) matches Mountain Time (Colorado, Utah). In summer, Arizona matches Pacific Daylight Time (California, PDT, UTC−7) because Arizona does not spring forward.</p>
-      </div>
+            <ClockComparisonSection primaryTz={AZ_TZ} countryName="Arizona" />
     </div>
   )
 }

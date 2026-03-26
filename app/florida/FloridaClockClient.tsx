@@ -1,4 +1,5 @@
 'use client'
+import ClockComparisonSection from '@/components/ClockComparisonSection'
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
@@ -135,29 +136,7 @@ export default function FloridaClockClient() {
         </div>
       </div>
 
-      <div className={`rounded-2xl p-5 ${card}`}>
-        <h2 className={`text-lg font-semibold mb-3 ${head}`}>Florida Time vs World Cities</h2>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className={`border-b ${div}`}>
-                <th className={`text-left py-2 pr-4 font-medium ${muted}`}>City</th>
-                <th className={`text-left py-2 pr-4 font-medium ${muted}`}>Zone</th>
-                <th className={`text-left py-2 font-medium ${muted}`}>Current Time</th>
-              </tr>
-            </thead>
-            <tbody className={`divide-y ${div}`}>
-              {WORLD_CITIES.map(c => (
-                <tr key={c.name}>
-                  <td className={`py-2 pr-4 ${text}`}>{c.name}</td>
-                  <td className={`py-2 pr-4 ${muted}`}>{c.label}</td>
-                  <td className={`py-2 font-mono ${text}`}>{mounted ? cityTimes[c.name] ?? '--:--' : '--:--'}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <ClockComparisonSection primaryTz="America/New_York" countryName="Florida" />
 
       <div className={`rounded-2xl p-5 ${card}`}>
         <h2 className={`text-lg font-semibold mb-3 ${head}`}>Best Time to Call Florida</h2>

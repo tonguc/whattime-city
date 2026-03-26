@@ -1,4 +1,5 @@
 'use client'
+import ClockComparisonSection from '@/components/ClockComparisonSection'
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
@@ -110,36 +111,7 @@ export default function IndiaClockClient() {
         </div>
       </div>
 
-      {/* IST vs World Cities */}
-      <div className={`rounded-2xl ${card} p-6`}>
-        <h2 className={`text-lg font-semibold mb-4 ${text}`}>India Time vs World Cities</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {WORLD_CITIES.map((city, i) => {
-            const cityOffset = getUTCOffset(city.timezone)
-            const diff = formatDiff(istOffset, cityOffset)
-            const istAhead = istOffset > cityOffset
-            return (
-              <div
-                key={city.name}
-                className={`flex items-center justify-between px-4 py-3 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}
-              >
-                <div>
-                  <div className={`font-medium text-sm ${text}`}>{city.name}</div>
-                  <div className={`text-xs ${muted}`}>{city.label}</div>
-                </div>
-                <div className="text-right">
-                  <div className={`font-bold tabular-nums ${text}`}>
-                    {mounted ? cityTimes[i] : '--:--'}
-                  </div>
-                  <div className={`text-xs font-medium ${istAhead ? (isLight ? 'text-blue-600' : 'text-blue-400') : (isLight ? 'text-amber-600' : 'text-amber-400')}`}>
-                    IST {diff} {istAhead ? 'ahead' : 'behind'}
-                  </div>
-                </div>
-              </div>
-            )
-          })}
-        </div>
-      </div>
+      <ClockComparisonSection primaryTz="Asia/Kolkata" countryName="India" />
 
       {/* Best Time to Call India */}
       <div className={`rounded-2xl ${card} p-6`}>
