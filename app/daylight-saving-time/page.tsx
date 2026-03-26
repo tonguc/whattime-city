@@ -379,6 +379,34 @@ export default function DaylightSavingTimePage() {
         </div>
       </section>
 
+      {/* Region sub-pages */}
+      <section className="mb-4">
+        <div className={`${card} p-6`}>
+          <h2 className="text-xl font-semibold mb-4 text-slate-800">DST Guides by Region</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'United States', href: '/daylight-saving-time/usa/', sub: 'Mar 8 – Nov 1' },
+              { label: 'Canada', href: '/daylight-saving-time/canada/', sub: 'Mar 8 – Nov 1' },
+              { label: 'United Kingdom', href: '/daylight-saving-time/uk/', sub: 'Mar 29 – Oct 25' },
+              { label: 'Europe', href: '/daylight-saving-time/europe/', sub: 'Mar 29 – Oct 25' },
+              { label: 'Australia', href: '/daylight-saving-time/australia/', sub: 'Oct 4 – Apr 5' },
+              { label: 'New Zealand', href: '/daylight-saving-time/new-zealand/', sub: 'Sep 27 – Apr 5' },
+              { label: 'Mexico', href: '/daylight-saving-time/mexico/', sub: 'Mostly abolished 2022' },
+              { label: 'All Countries', href: '/daylight-saving-time/countries/', sub: 'Full country list' },
+            ].map((r) => (
+              <Link
+                key={r.href}
+                href={r.href}
+                className="p-3 rounded-xl border border-slate-200 bg-slate-50 hover:border-sky-300 hover:bg-sky-50 transition-colors"
+              >
+                <div className="font-medium text-slate-700 text-sm">{r.label}</div>
+                <div className="text-xs text-slate-400 mt-0.5">{r.sub}</div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Related Tools */}
       <section className="mb-4">
         <div className={`${card} p-6`}>
