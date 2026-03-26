@@ -1,98 +1,133 @@
 # CLAUDE.md — whattime.city Project Memory
 
 Bu dosya oturumlar arası hafıza kaybını önlemek için tutulur.
-**Her yeni oturumda önce bu dosyayı oku.**
+**Her yeni oturumda önce bu dosyayı oku. Bir şey "eksik" gibi görünüyorsa önce kodu kontrol et.**
 
 ---
 
-## Tamamlanan İşler (Kronolojik)
+## Site Mimarisi — Genel Bakış
 
-### Converter Sayfaları (62 sayfa)
-Tüm TZ çifti converter sayfaları `ConverterPageShell` bileşenini kullanıyor:
-- `aest-to-{cst,est,gmt,mst,pst,utc}` (6 sayfa)
-- `bst-to-{cst,est,pst}` (3 sayfa)
-- `cet-to-{cst,est,gmt,ist,pst}` (5 sayfa)
-- `cst-to-{est,gmt,mst,pst,utc}` (5 sayfa)
-- `est-to-{cst,gmt,mst,pst,utc}` (5 sayfa)
-- `gmt-to-{cst,est,ist,mst,pst}` (5 sayfa)
-- `ist-to-{cet,cst,est,gmt,jst,mst,pst,utc}` (8 sayfa)
-- `jst-to-{cst,est,gmt,ist,mst,pst,utc}` (7 sayfa)
-- `mst-to-{cst,est,gmt,pst,utc}` (5 sayfa)
-- `pst-to-{cst,est,gmt,mst,utc}` (5 sayfa)
-- `utc-to-{cst,est,ist,jst,mst,pst}` (6 sayfa)
-- `bst-timezone`, `cest-timezone`, `alaska-time-zone`, `central-time-zone`, `eastern-time-zone`, `hawaii-time-zone`, `mountain-time-zone`, `pacific-time-zone`, `us-time-zones` (açıklayıcı sayfalar)
+### Route Tipleri
+| Tip | Pattern | Açıklama |
+|-----|---------|----------|
+| **Şehir sayfası** | `/[city]/` | 400+ şehir, dinamik route, SEO data ile zenginleştirilmiş |
+| **Şehir guide'ları** | `/[city]/guide/*` | Her şehir için rehber alt sayfaları |
+| **Ülke/eyalet saatı** | `/india/`, `/japan/`, `/california/` vb. | Özel ClockClient + HubPageLayout ile standalone sayfalar |
+| **TZ converter** | `/pst-to-est/` vb. | 62 converter sayfası, ConverterPageShell kullanır |
+| **DST cluster** | `/daylight-saving-time/*` | Ana hub + 7 bölge + countries tablosu |
+| **Araçlar** | `/meeting/`, `/time-converter/`, `/flight-time/` vb. | Interaktif araçlar |
+| **Bilgi sayfaları** | `/eastern-time-zone/`, `/military-time/` vb. | TZ açıklayıcı sayfalar |
 
-**ÖNEMLİ:** Tüm converter sayfaları `ConverterPageShell` kullanır — `ContentPageWrapper` + ham JSX DEĞİL.
+---
 
-### DST Sayfaları
-- `/daylight-saving-time/` — ana hub (tüm bölge özet tablosu) ✅
+## Tamamlanan İşler
+
+### 1. Ülke/Eyalet Standalone Sayfaları
+Her ülke ve ABD eyaleti kendi `ClockClient.tsx` + `page.tsx` dosyasına sahip.
+**180+ sayfa** — Afghanistan'dan Zimbabwe'ye kadar her ülke, Alabama'dan Wisconsin'e kadar her eyalet.
+Tüm bu sayfalar `HeroClockDisplay` bileşeniyle live saat gösterir.
+
+**Özel içerikli hub sayfaları (CountryFactsSection + HubPageLayout):**
+- `/india/` ✅ — IST UTC+5:30, 11 FAQ, no DST vurgusu
+- `/pakistan/` ✅ — PKT UTC+5
+- `/bangladesh/` ✅ — BST UTC+6
+- `/sri-lanka/` ✅
+- `/nepal/` ✅ — NPT UTC+5:45
+
+### 2. TZ Converter Sayfaları (62 sayfa) — ConverterPageShell kullanır
+```
+aest↔{cst,est,gmt,mst,pst,utc}     bst↔{cst,est,pst}
+cet↔{cst,est,gmt,ist,pst}          cst↔{est,gmt,mst,pst,utc}
+est↔{cst,gmt,mst,pst,utc}          gmt↔{cst,est,ist,mst,pst}
+ist↔{cet,cst,est,gmt,jst,mst,pst,utc}   jst↔{cst,est,gmt,ist,mst,pst,utc}
+mst↔{cst,est,gmt,pst,utc}          pst↔{cst,est,gmt,mst,utc}
+utc↔{cst,est,ist,jst,mst,pst}
+```
+**ÖNEMLİ:** Bunlar zaten yapılmış. Yeni converter eklenecekse yeni pair olmalı.
+
+### 3. DST Sayfaları — Tümü tamamlandı
+- `/daylight-saving-time/` — ana hub ✅
 - `/daylight-saving-time/usa/` ✅
 - `/daylight-saving-time/uk/` ✅
 - `/daylight-saving-time/europe/` ✅
 - `/daylight-saving-time/australia/` ✅
 - `/daylight-saving-time/canada/` ✅
 - `/daylight-saving-time/new-zealand/` ✅
-- `/daylight-saving-time/mexico/` ✅ (2022'de kaldırıldı — önemli SEO açısı)
+- `/daylight-saving-time/mexico/` ✅ (2022'de kaldırıldı — SEO açısı)
 - `/daylight-saving-time/countries/` ✅ (tüm ülkeler tablosu)
 
-### India Hub Sayfası
-- `/india/` ✅ — live clock, 11 FAQ schema, IST vs US/UK/Dubai/Singapore/Australia
-- `app/india/IndiaClockClient.tsx` + `app/india/page.tsx` mevcut
-- İlgili şehirler: /new-delhi/, /mumbai/, /bangalore/, /chennai/, /kolkata/
+### 4. City Guide Sistemi — `/[city]/guide/*`
+**Her şehir için ortak guide sayfaları** (generic fallback bileşenlerle):
+- `holidays/` — tatil takvimi
+- `call-times/` — en iyi arama saatleri
+- `business-hours/` — iş saatleri
+- `best-time-to-visit/`, `digital-nomad/`, `remote-work/`, `travel-guide/`, vb.
 
-### SEO Data Dosyaları (data/seo/)
-Mevcut şehirler için SEO JSON dosyaları var (FAQ schema, content blocks, time_difference_table):
+**Özel city-specific bileşenler olan şehirler:**
+
+| Şehir | holidays | call-times | business-hours |
+|-------|----------|------------|----------------|
+| London | ✅ LondonHolidaysContent | ✅ LondonCallTimesContent | ✅ LondonBusinessHoursContent |
+| Tokyo | ✅ TokyoHolidaysContent | ✅ TokyoCallTimesContent | — |
+| Dubai | ✅ DubaiHolidaysContent | ✅ DubaiCallTimesContent | ✅ DubaiBusinessHoursContent |
+| Singapore | ✅ SingaporeHolidaysContent | ✅ SingaporeCallTimesContent | ✅ SingaporeBusinessHoursContent |
+| Paris | ✅ ParisHolidaysContent | ✅ ParisCallTimesContent | ✅ ParisBusinessHoursContent |
+| Sydney | ✅ SydneyHolidaysContent | ✅ SydneyCallTimesContent | ✅ SydneyBusinessHoursContent |
+| Istanbul | ✅ IstanbulHolidaysContent | ✅ IstanbulCallTimesContent | — |
+| Los Angeles | ✅ LosAngelesHolidaysContent | ✅ LosAngelesCallTimesContent | ✅ LosAngelesBusinessHoursContent |
+| New York | ✅ NewYorkHolidaysContent | ✅ NewYorkCallTimesContent | — |
+
+### 5. SEO Data Dosyaları (data/seo/*.json)
+Şu an JSON SEO data'sı olan şehirler:
 amsterdam, ankara, atlanta, baghdad, beijing, berlin, boston, brussels, buenos-aires,
 cairo, calgary, dallas, delhi, denver, dubai, frankfurt, geneva, havana, houston,
 jakarta, johannesburg, kuala-lumpur, las-vegas, los-angeles, madrid, melbourne,
 mexico-city, miami, milan, montreal, moscow, munich, oslo, paris, phoenix, prague,
-rio-de-janeiro, rome, sao-paulo, **seattle** ✅, **singapore** ✅, shanghai, stockholm,
-tehran, **tokyo** ✅ (placeholder fix), vancouver, vienna, washington-dc, zurich
+rio-de-janeiro, rome, sao-paulo, **seattle** ✅, **singapore** ✅, shanghai,
+stockholm, tehran, **tokyo** ✅, vancouver, vienna, washington-dc, zurich
 
-### Tatil Sayfaları (app/[city]/guide/holidays/)
-City-specific HolidaysContent bileşenleri:
-- `LondonHolidaysContent.tsx` ✅
-- `TokyoHolidaysContent.tsx` ✅
-- `DubaiHolidaysContent.tsx` ✅
-- `SingaporeHolidaysContent.tsx` ✅
-- `ParisHolidaysContent.tsx` ✅
-- `SydneyHolidaysContent.tsx` ✅
-- `IstanbulHolidaysContent.tsx` ✅
-- `LosAngelesHolidaysContent.tsx` ✅ (César Chávez Day dahil)
-- `NewYorkHolidaysContent.tsx` ✅ (NYSE trading notes dahil)
-- Generic `HolidaysContent.tsx` — diğer şehirler için fallback
+### 6. TZ Açıklayıcı Sayfalar
+- `/eastern-time-zone/` ✅
+- `/central-time-zone/` ✅
+- `/mountain-time-zone/` ✅
+- `/pacific-time-zone/` ✅
+- `/alaska-time-zone/` ✅
+- `/hawaii-time-zone/` ✅
+- `/us-time-zones/` ✅
+- `/bst-timezone/` ✅
+- `/cest-timezone/` ✅
 
-holidays/page.tsx routing sırası: london → tokyo → dubai → singapore → paris → sydney → istanbul → los-angeles → new-york → generic
+### 7. Araçlar (app/tools/ + standalone)
+- `/meeting/` — Meeting Planner ✅
+- `/time-converter/` — Time Converter ✅
+- `/flight-time/` — Flight Time Calculator ✅
+- `/military-time/` — Military Time Converter ✅
+- `/alarm/` — World Alarm ✅
+- `/widget/` — Embed Widget ✅
 
 ---
 
 ## Design System — Tema Kuralları
 
-### ASLA `dark:` Tailwind Variant Kullanma
-`dark:bg-slate-800`, `dark:text-white` gibi class'lar ÇALIŞMAZ.
-Bunun yerine `useCityContext()` hook'undan `theme` ve `isLight` kullan.
+### ❌ ASLA `dark:` Tailwind Variant Kullanma
+`dark:bg-slate-800`, `dark:text-white` vb. class'lar ÇALIŞMAZ.
+Neden: `ContentPageWrapper` iç div'e `dark` class ekliyor ama Tailwind JIT bu class'ları üretmiyor.
+**Bunun yerine `useCityContext()` kullan.**
 
-### useCityContext() Kullanımı
+### ✅ Doğru Kullanım
 ```tsx
 'use client'
 import { useCityContext } from '@/lib/CityContext'
 
 const { theme, isLight } = useCityContext()
+// theme.card, theme.text, theme.textMuted kullan
 ```
-
-### theme Objesindeki Alanlar
-| Alan | Açıklama |
-|------|----------|
-| `theme.card` | Kart arka planı + border (rounded-2xl dahil değil, sadece bg+border) |
-| `theme.text` | Başlık/ana metin rengi |
-| `theme.textMuted` | İkincil metin rengi |
-| `theme.bg` | Sayfa arka planı |
 
 ### 6 Tema Modu
 | Mod | isLight | theme.card | theme.text | theme.textMuted |
-|-----|---------|-----------|-----------|----------------|
-| `day` | true | `border border-slate-100 bg-white` | `text-slate-800` | `text-slate-500` |
-| `light` | true | `border border-slate-100 bg-white` | `text-slate-800` | `text-slate-500` |
+|-----|---------|------------|------------|-----------------|
+| `day` | **true** | `border border-slate-100 bg-white` | `text-slate-800` | `text-slate-500` |
+| `light` | **true** | `border border-slate-100 bg-white` | `text-slate-800` | `text-slate-500` |
 | `night` | false | `border border-slate-700/50 bg-slate-900/60` | `text-slate-100` | `text-slate-400` |
 | `dark` | false | `border border-slate-700/50 bg-slate-800/60` | `text-slate-100` | `text-slate-400` |
 | `dawn` | false | `border border-slate-700/50 bg-slate-800/60` | `text-slate-100` | `text-slate-400` |
@@ -100,14 +135,14 @@ const { theme, isLight } = useCityContext()
 
 **isLight = true SADECE `day` ve `light` modlarında.**
 
-### Nested Kart (Kart İçinde Kart)
+### Nested Kart (kart içinde kart)
 ```tsx
 const nestedCardClass = isLight
   ? 'rounded-xl border border-slate-100 bg-slate-50 p-4'
   : 'rounded-xl border border-slate-700/50 bg-slate-800/50 p-4'
 ```
 
-### Footer / Küçük Bilgi Kutusu
+### Footer / Bilgi Kutusu
 ```tsx
 const footerClass = isLight
   ? 'rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500'
@@ -115,14 +150,14 @@ const footerClass = isLight
 ```
 
 ### Font Kuralı
-- Saat/rakam gösterimi: `tabular-nums` (font-mono KULLANMA)
+- Saat/rakam: `tabular-nums` kullan — `font-mono` KULLANMA
 
 ---
 
 ## Bileşen Mimarisi
 
-### ConverterPageShell
-Tüm TZ converter sayfalarının şablonu. `'use client'` bileşeni.
+### ConverterPageShell — TZ converter sayfaları için
+`'use client'` bileşeni, `useCityContext()` içeride kullanır.
 ```tsx
 import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
@@ -138,38 +173,45 @@ import type { TZPairConfig } from '@/components/TZPairClient'
 />
 ```
 
-### ContentPageWrapper
-Tüm içerik sayfalarının wrapper'ı. Tema context'ini sağlar.
-Server component olabilir (ConverterPageShell gibi client sub-component'ler içinde useCityContext kullan).
+### ContentPageWrapper — İçerik sayfaları için wrapper
+Tema context'ini sağlar. Server component olabilir.
 
-### HubPageLayout + HubPageHeader
-Şehir hub sayfaları (india, pakistan vb.) için kullanılır.
+### HubPageLayout + HubPageHeader + CountryFactsSection
+Ülke hub sayfaları için (india, pakistan vb.):
+```tsx
+<HubPageHeader title="Current Time in India" subtitle="IST · UTC+5:30 · No DST" />
+<IndiaClockClient />
+<CountryFactsSection hubSlug="india" />
+<HubPageLayout faqItems={...} links={...} linksTitle="..." footerText="..." />
+```
+
+### HeroClockDisplay — Live saat bileşeni
+```tsx
+<HeroClockDisplay tz="Asia/Kolkata" countryCode="IN" countryName="India" tzLabel="IST · UTC+5:30" />
+```
+
+---
+
+## Roadmap — Kalan Maddeler
+
+### ⏳ Yüksek Öncelikli
+- [ ] `/time/` pair sayfaları title+meta optimize — pos 10-20'deki 8 sayfa:
+  - /time/singapore/lagos/ (pos 16), /time/dublin/dubai/ (pos 13)
+  - /time/los-angeles/san-francisco/ (pos 11), /time/tokyo/seattle/ (pos 10)
+- [ ] Broken guide links fix — 16 broken internal link
+- [ ] Top 20 `/time/` sayfasına içerik zenginleştirme (FAQ H2, meta desc CTR)
+
+### ⏳ Orta Öncelikli
+- [ ] `ist-to-pst` converter sayfası — IST↔Pacific (Hint-Silikon Vadisi koridoru)
+- [ ] `ist-to-cst` converter sayfası
+- [ ] BreadcrumbList schema — /time/ pair sayfalarına ekle
 
 ---
 
 ## Git Workflow
 - Feature branch: `claude/review-seo-analysis-sBM2v`
 - Squash merge to main
-- Her squash merge sonrası local branch'i senkronize et:
+- Her squash merge sonrası branch'i senkronize et:
   ```bash
-  git fetch origin main && git reset --hard origin/main && git push --force-with-lease origin <branch>
+  git fetch origin main && git reset --hard origin/main && git push --force-with-lease origin claude/review-seo-analysis-sBM2v
   ```
-
----
-
-## Roadmap — Kalan Maddeler (ROADMAP_MARCH_APRIL_2026.md)
-
-### Tamamlandı ✅
-- [x] India hub sayfası (`/india/`)
-- [x] DST country cluster (usa/uk/europe/australia/canada/new-zealand/mexico/countries)
-- [x] Seattle SEO data
-- [x] Singapore SEO data
-- [x] Tokyo SEO data (placeholder fix)
-- [x] NewYork + LosAngeles holiday sayfaları
-- [x] 62 converter sayfa dark mode fix (ConverterPageShell)
-
-### Bekleyen ⏳
-- [ ] `/time/` pair sayfaları title+meta optimize (§1.1) — pos 10-20'deki 8 sayfa
-- [ ] Broken guide links fix (§1.2) — 16 broken link
-- [ ] Top 20 `/time/` sayfasına içerik zenginleştirme (§3)
-- [ ] IST↔PST, IST↔CST converter sayfaları (§4.2) — `ist-to-pst`, `ist-to-cst` eksik
