@@ -55,7 +55,8 @@ export default function CompactWorldCities({ selectedCity, onCitySelect }: Compa
             </span>
           </a>
         ))}
-      
+      </div>
+
       {/* All Cities Link */}
       <div className="mt-4 text-center">
         <a 
