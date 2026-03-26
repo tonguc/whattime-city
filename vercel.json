@@ -7,8 +7,7 @@
     "deploymentEnabled": {
       "main": true,
       "staging": true,
-      "claude/review-seo-analysis-sBM2v": false,
-      "claude/resume-work-KTIWa": false
+      "claude/*": false
     }
   },
   "regions": [
