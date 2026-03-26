@@ -222,7 +222,169 @@ const REGIONS = {
         a: 'Sydney is on AEDT (Australian Eastern Daylight Time, UTC+11) during DST from the first Sunday in October to the first Sunday in April.',
       },
     ],
-    relatedRegions: ['usa', 'uk', 'europe'],
+    relatedRegions: ['usa', 'uk', 'europe', 'canada', 'new-zealand'],
+  },
+  canada: {
+    title: 'Daylight Saving Time 2026 Canada — Start & End Dates',
+    description:
+      'When do clocks change in Canada in 2026? DST starts March 8 and ends November 1. Exception: Saskatchewan does not observe DST. Full province-by-province guide.',
+    h1: 'Daylight Saving Time 2026 — Canada',
+    intro:
+      'Canada observes Daylight Saving Time from the second Sunday in March to the first Sunday in November — the same federal schedule as the United States. In 2026, clocks spring forward on March 8 and fall back on November 1. Saskatchewan and parts of British Columbia do not participate.',
+    start: 'March 8, 2026',
+    startNote: 'Second Sunday in March — clocks spring forward 1 hour at 2:00 AM local time',
+    end: 'November 1, 2026',
+    endNote: 'First Sunday in November — clocks fall back 1 hour at 2:00 AM local time',
+    rule: 'Second Sunday in March → First Sunday in November (most provinces)',
+    details: [
+      {
+        heading: 'Which Canadian provinces do not observe DST?',
+        body: 'Saskatchewan is the most notable exception — the province stays on Central Standard Time (CST, UTC-6) year-round and does not observe DST. Most of northeast British Columbia (e.g., Fort St. John) also remains on MST. The Yukon moved to permanent Mountain Standard Time (MST, UTC-7) in 2020, effectively making it permanent "summer time" but without clock changes.',
+      },
+      {
+        heading: 'Canadian time zones during DST (March 8 – November 1)',
+        body: 'During DST: Newfoundland = NDT (UTC-2:30), Atlantic = ADT (UTC-3), Eastern = EDT (UTC-4), Central = CDT (UTC-5), Mountain = MDT (UTC-6), Pacific = PDT (UTC-7). Saskatchewan remains at CST (UTC-6) year-round — the same as CDT during summer.',
+      },
+      {
+        heading: 'Does Canada have the same DST dates as the US?',
+        body: 'Yes. Canada and the United States coordinate their DST schedule — both spring forward on the second Sunday in March and fall back on the first Sunday in November. This keeps the time differences between Canadian and American cities stable throughout the year.',
+      },
+      {
+        heading: 'Will Canada abolish Daylight Saving Time?',
+        body: 'Several Canadian provinces have passed legislation to make DST permanent, including British Columbia, Ontario, and Quebec. However, these laws are conditional on neighbouring US states making the same change. As of 2026, no province has unilaterally ended clock changes, and Canada continues to observe DST.',
+      },
+    ],
+    faq: [
+      {
+        q: 'When does daylight saving time start in Canada in 2026?',
+        a: 'DST begins in Canada on Sunday, March 8, 2026. Clocks spring forward 1 hour at 2:00 AM local time in all observing provinces.',
+      },
+      {
+        q: 'When does daylight saving time end in Canada in 2026?',
+        a: 'DST ends on Sunday, November 1, 2026. Clocks fall back 1 hour at 2:00 AM local time.',
+      },
+      {
+        q: 'Does Saskatchewan observe daylight saving time?',
+        a: 'No. Saskatchewan stays on Central Standard Time (CST, UTC-6) year-round. During summer, this is the same offset as CDT — so Saskatchewan effectively has permanent "summer time" without any clock changes.',
+      },
+      {
+        q: 'What time zone is Toronto in during daylight saving time?',
+        a: 'Toronto (Ontario) is in the Eastern time zone. During DST (March 8 – November 1, 2026) it is on EDT (UTC-4). In winter it returns to EST (UTC-5).',
+      },
+      {
+        q: 'What time zone is Vancouver in during daylight saving time?',
+        a: 'Vancouver (British Columbia) is in the Pacific time zone. During DST it is on PDT (UTC-7). In winter it is on PST (UTC-8).',
+      },
+    ],
+    relatedRegions: ['usa', 'uk', 'europe', 'australia'],
+  },
+  'new-zealand': {
+    title: 'Daylight Saving Time 2026 New Zealand — NZDT Dates',
+    description:
+      'When do clocks change in New Zealand in 2026? NZ DST starts September 27 and ends April 5. Full guide to New Zealand Daylight Time (NZDT) and time zone.',
+    h1: 'Daylight Saving Time 2026 — New Zealand',
+    intro:
+      'New Zealand observes Daylight Saving Time in the Southern Hemisphere summer. Clocks spring forward on the last Sunday in September and fall back on the first Sunday in April. In 2026, DST starts September 27 and ends April 5.',
+    start: 'September 27, 2026',
+    startNote: 'Last Sunday in September — clocks spring forward 1 hour at 2:00 AM NZST → 3:00 AM NZDT',
+    end: 'April 5, 2026',
+    endNote: 'First Sunday in April — clocks fall back 1 hour at 3:00 AM NZDT → 2:00 AM NZST',
+    rule: 'Last Sunday in September → First Sunday in April',
+    details: [
+      {
+        heading: 'New Zealand time zones — NZST and NZDT',
+        body: 'New Zealand Standard Time (NZST) is UTC+12. During DST, New Zealand Daylight Time (NZDT) is UTC+13, making New Zealand one of the most advanced time zones on the planet. The Chatham Islands are 45 minutes ahead of the mainland: CHAST (UTC+12:45) in winter and CHADT (UTC+13:45) in summer.',
+      },
+      {
+        heading: 'How does New Zealand DST differ from Australia?',
+        body: "New Zealand springs forward in late September, about one week before Australia's DST-observing states (early October). New Zealand and Australia also end DST on the same date — first Sunday in April. During the overlapping period, Sydney (AEDT, UTC+11) is 2 hours behind Auckland (NZDT, UTC+13).",
+      },
+      {
+        heading: 'How does NZ DST affect calls with the UK or US?',
+        body: 'During NZ summer (DST): Auckland (NZDT, UTC+13) is 13 hours ahead of London (GMT) and 18 hours ahead of New York (EST). When the Northern Hemisphere switches to summer time, these gaps narrow — London–Auckland becomes 12h, New York–Auckland becomes 17h.',
+      },
+      {
+        heading: 'Does all of New Zealand observe DST?',
+        body: 'Yes, DST applies throughout New Zealand including the Chatham Islands. The Chatham Islands maintain their unique 45-minute offset from the mainland in both standard and daylight time.',
+      },
+    ],
+    faq: [
+      {
+        q: 'When do clocks go forward in New Zealand in 2026?',
+        a: 'Clocks spring forward 1 hour at 2:00 AM on Sunday, September 27, 2026. New Zealand moves from NZST (UTC+12) to NZDT (UTC+13).',
+      },
+      {
+        q: 'When do clocks go back in New Zealand in 2026?',
+        a: 'Clocks fall back 1 hour at 3:00 AM on Sunday, April 5, 2026. New Zealand returns from NZDT (UTC+13) to NZST (UTC+12).',
+      },
+      {
+        q: 'What time zone is Auckland in during summer?',
+        a: 'Auckland is on NZDT (New Zealand Daylight Time, UTC+13) during DST from September 27 to April 5. In winter it is on NZST (UTC+12).',
+      },
+      {
+        q: 'Is New Zealand the first country to observe DST each year?',
+        a: "New Zealand is among the first countries to start DST each year due to its eastern longitude. It springs forward in late September, before Australia (early October) and long before the Northern Hemisphere (March).",
+      },
+      {
+        q: 'What is the time difference between New Zealand and the UK during NZ summer?',
+        a: 'During NZ DST (September–April) when the UK is on GMT (UTC+0), Auckland (NZDT, UTC+13) is 13 hours ahead of London. Once the UK moves to BST (UTC+1) in late March, the difference narrows to 12 hours.',
+      },
+    ],
+    relatedRegions: ['australia', 'usa', 'uk', 'europe'],
+  },
+  mexico: {
+    title: 'Daylight Saving Time Mexico 2026 — Does Mexico Observe DST?',
+    description:
+      'Does Mexico observe daylight saving time in 2026? Most of Mexico abolished DST in 2022. Only Baja California (border zone) still changes clocks. Full guide.',
+    h1: 'Daylight Saving Time in Mexico — 2026 Update',
+    intro:
+      'Mexico abolished Daylight Saving Time for most of the country in October 2022. As of 2026, only the Baja California border zone continues to observe clock changes, aligned with the US Pacific time schedule. The rest of Mexico stays on a fixed UTC offset year-round.',
+    start: 'March 8, 2026',
+    startNote: 'Baja California (border zone) only — aligned with US Pacific DST schedule',
+    end: 'November 1, 2026',
+    endNote: 'Baja California (border zone) only — clocks fall back with US Pacific time',
+    rule: 'Most of Mexico: No DST since October 2022 · Baja California border zone: follows US Pacific DST',
+    details: [
+      {
+        heading: 'When did Mexico abolish Daylight Saving Time?',
+        body: 'Mexico\'s Congress passed a law in October 2022 eliminating DST for most of the country. The last clock change for most Mexican states was on October 30, 2022. Mexico City, Guadalajara, Monterrey, Cancún, and all other major cities now stay on their standard UTC offset year-round.',
+      },
+      {
+        heading: 'Which part of Mexico still observes DST?',
+        body: 'Only the Baja California "border zone" (Municipio de Mexicali and the Tijuana–Ensenada corridor) continues to observe DST, synchronized with the US Pacific time zone. This exception exists to maintain business continuity with California and other US border states. Baja California springs forward on March 8, 2026 and falls back on November 1, 2026.',
+      },
+      {
+        heading: 'What time zone is Mexico City in 2026?',
+        body: 'Mexico City is on Central Standard Time (CST, UTC-6) year-round since 2022. There are no clock changes. Previously Mexico City was on CDT (UTC-5) during summer — that no longer applies.',
+      },
+      {
+        heading: 'Mexican time zones in 2026 (no DST)',
+        body: 'Most of Mexico: Central Standard Time (CST, UTC-6) · Sonora: Mountain Standard Time (MST, UTC-7) · Baja California Sur & Sinaloa: Mountain Standard Time (MST, UTC-7) · Baja California border zone: Pacific time, follows US DST (PST/PDT, UTC-8/-7).',
+      },
+    ],
+    faq: [
+      {
+        q: 'Does Mexico observe daylight saving time in 2026?',
+        a: 'No — most of Mexico does not observe DST in 2026. Mexico abolished daylight saving time in October 2022. The only exception is the Baja California border zone, which still follows the US Pacific DST schedule.',
+      },
+      {
+        q: 'When did Mexico stop daylight saving time?',
+        a: 'Mexico ended DST for most of the country after October 30, 2022, when Congress passed legislation abolishing clock changes. The law took effect immediately.',
+      },
+      {
+        q: 'What time zone is Cancún in?',
+        a: 'Cancún is in the Eastern Standard Time zone (EST, UTC-5) year-round. It moved from Central time to Eastern time in 2015, and has not observed DST since then.',
+      },
+      {
+        q: 'What time zone is Tijuana in 2026?',
+        a: 'Tijuana (Baja California border zone) still observes DST and is synchronized with California. It is on PST (UTC-8) in winter and PDT (UTC-7) during DST (March 8 – November 1, 2026).',
+      },
+      {
+        q: 'What is the time difference between Mexico City and New York in 2026?',
+        a: 'Mexico City is on CST (UTC-6) year-round. New York is on EST (UTC-5) in winter and EDT (UTC-4) in summer. So: winter = 1 hour difference, summer (DST) = 2 hours difference. Mexico City no longer shifts its clocks, so the gap changes based only on New York\'s DST schedule.',
+      },
+    ],
+    relatedRegions: ['usa', 'uk', 'europe', 'canada'],
   },
 } as const
 
@@ -233,6 +395,9 @@ const REGION_LABELS: Record<Region, string> = {
   uk: 'United Kingdom',
   europe: 'Europe',
   australia: 'Australia',
+  canada: 'Canada',
+  'new-zealand': 'New Zealand',
+  mexico: 'Mexico',
 }
 
 export async function generateStaticParams() {
