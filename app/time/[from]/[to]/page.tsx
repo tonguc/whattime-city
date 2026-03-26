@@ -64,11 +64,11 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
 
   const title = diffHours === 0
     ? `${fromCity.city} and ${toCity.city} Time — Same Time Zone`
-    : `${fromCity.city} to ${toCity.city} Time — ${diffStr} ${diffHours > 0 ? 'Ahead' : 'Behind'}`
+    : `${fromCity.city} to ${toCity.city} Time Difference — ${diffStr}`
 
   const description = diffHours === 0
     ? `${fromCity.city} and ${toCity.city} share the same UTC offset. Live clock, conversion table, and meeting planner for both cities.`
-    : `${toCity.city} is ${diffStr} ${direction} ${fromCity.city}. ${overlapHours > 0 ? `${overlapHours}h business overlap.` : 'No standard business hour overlap.'} Live clock and meeting planner.`
+    : `${toCity.city} is currently ${diffStr} ${direction} ${fromCity.city}. ${overlapHours > 0 ? `${overlapHours}-hour business overlap window.` : 'No standard business hour overlap.'} Live clock, conversion table, and meeting planner.`
 
   const faqSchema = {
     '@context': 'https://schema.org',
