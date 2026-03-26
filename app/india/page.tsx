@@ -110,6 +110,30 @@ const faqSchema = {
         text: 'India\'s UTC+5:30 offset was established during British colonial rule to approximate the midpoint of the country\'s longitude, which spans roughly 68°E to 97°E. A whole-hour offset of UTC+5 or UTC+6 would put either the east or west significantly off solar noon.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'What is the time difference between India and Australia?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'IST is 4 hours 30 minutes behind Australian Eastern Standard Time (AEST, UTC+10). During Australian Eastern Daylight Time (AEDT, UTC+11), IST is 5 hours 30 minutes behind. When it is 9:00 AM IST, it is 1:30 PM AEST.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the time difference between India and Singapore?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'IST is 2 hours 30 minutes behind Singapore Time (SGT, UTC+8). Singapore does not observe DST, so this difference is constant year-round. When it is 9:00 AM IST, it is 11:30 AM in Singapore.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the time difference between India and Dubai?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'IST is 1 hour 30 minutes ahead of Gulf Standard Time (GST, UTC+4). Dubai does not observe DST. When it is 9:00 AM in Dubai, it is 10:30 AM IST.',
+      },
+    },
   ],
 }
 
@@ -149,7 +173,7 @@ export default function IndiaTimePage() {
       {/* IST Explained */}
             <HubPageLayout
         faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
-        links={[{"label":"Time in Pakistan","href":"/pakistan/"},{"label":"Time in Bangladesh","href":"/bangladesh/"},{"label":"Time in Sri Lanka","href":"/sri-lanka/"},{"label":"Time in Nepal","href":"/nepal/"},{"label":"Time in UAE","href":"/united-arab-emirates/"},{"label":"Mumbai time","href":"/mumbai/"},{"label":"New Delhi time","href":"/new-delhi/"},{"label":"Time converter tool","href":"/time-converter/"}]}
+        links={[{"label":"New Delhi time","href":"/new-delhi/"},{"label":"Mumbai time","href":"/mumbai/"},{"label":"Bangalore time","href":"/bangalore/"},{"label":"Chennai time","href":"/chennai/"},{"label":"Kolkata time","href":"/kolkata/"},{"label":"Time in Pakistan","href":"/pakistan/"},{"label":"Time in Bangladesh","href":"/bangladesh/"},{"label":"Time in Sri Lanka","href":"/sri-lanka/"}]}
         linksTitle="Related Time Pages"
         footerText="
         Time zone data powered by the IANA Time Zone Database.
