@@ -88,6 +88,7 @@ interface Props {
 export default function CountryFactsSection({ hubSlug }: Props) {
   const { isLight } = useCityContext()
   const [now, setNow] = useState<Date | null>(null)
+  const [citiesOpen, setCitiesOpen] = useState(false)
 
   useEffect(() => {
     setNow(new Date())
@@ -109,6 +110,37 @@ export default function CountryFactsSection({ hubSlug }: Props) {
   const dstInfo = genDstInfo(country, countrySlug)
   const travelTips = genTravelTips(country)
   const funFacts = genFunFacts(country)
+
+  // UTC offset extracted from timezones string e.g. "CST (UTC−5)" → "UTC−5"
+  const utcOffset = country.timezones[0]?.match(/UTC[−-]?\+?\d+(?::\d+)?/)?.[0] ?? country.timezones[0]
+
+  // DST: yes if NOT in no-dst list
+  const noDstSlugs = ['japan','china','india','singapore','thailand','vietnam','indonesia','malaysia',
+    'philippines','south-korea','qatar','saudi-arabia','united-arab-emirates','russia','turkey',
+    'uzbekistan','bangladesh','myanmar','nepal','pakistan','iran','senegal','ghana','nigeria','kenya',
+    'ethiopia','tanzania','cameroon','angola','ivory-coast','venezuela','colombia','peru','argentina',
+    'brazil','egypt']
+  const hasDst = !noDstSlugs.includes(countrySlug)
+
+  // Primary IANA timezone (from first city, or fallback)
+  const primaryTz = cities[0]?.timezone ?? 'UTC'
+
+  // Specific call windows: compute "9 AM hub = what time in ref city?"
+  const getCallWindow = (refTz: string, refLabel: string) => {
+    if (!now) return null
+    const hubLocal = new Date(now.toLocaleString('en-US', { timeZone: primaryTz }))
+    const refLocal  = new Date(now.toLocaleString('en-US', { timeZone: refTz }))
+    const diffH = Math.round((refLocal.getTime() - hubLocal.getTime()) / 3600000)
+    // When hub opens at 9 AM, it's 9+diffH in ref city
+    const startH = Math.max(9 + diffH, 8)
+    const endH   = Math.min(17 + diffH, 20)
+    if (startH >= endH) return `Limited overlap with ${refLabel}`
+    const fmt = (h: number) => {
+      const hr = ((h % 24) + 24) % 24
+      return `${hr % 12 === 0 ? 12 : hr % 12}:00 ${hr >= 12 ? 'PM' : 'AM'}`
+    }
+    return `${refLabel}: ${fmt(startH)} – ${fmt(endH)}`
+  }
 
   // ── Theme classes ──────────────────────────────────────────────────────
   const card = isLight
@@ -160,6 +192,21 @@ export default function CountryFactsSection({ hubSlug }: Props) {
             </div>
           ))}
         </div>
+        {/* UTC offset + DST row */}
+        <div className="grid grid-cols-2 gap-3 mt-3">
+          <div className={innerCard}>
+            <div className={`text-xs mb-1 ${muted}`}>🕐 UTC Offset</div>
+            <div className={`text-base font-semibold ${heading}`}>{utcOffset}</div>
+          </div>
+          <div className={innerCard}>
+            <div className={`text-xs mb-1 ${muted}`}>🔄 Daylight Saving Time</div>
+            <span className={`inline-block px-2.5 py-0.5 rounded-full text-sm font-semibold ${
+              hasDst
+                ? (isLight ? 'bg-green-100 text-green-700' : 'bg-green-900/50 text-green-300')
+                : (isLight ? 'bg-slate-200 text-slate-600' : 'bg-slate-700 text-slate-400')
+            }`}>{hasDst ? 'Yes — observed' : 'No — fixed offset'}</span>
+          </div>
+        </div>
         <div className={`mt-3 ${innerCard}`}>
           <div className={`text-xs mb-2 ${muted}`}>🗣️ Official Languages</div>
           <div className="flex flex-wrap gap-2">
@@ -186,25 +233,39 @@ export default function CountryFactsSection({ hubSlug }: Props) {
         </div>
       </section>
 
-      {/* ── Major Cities ────────────────────────────────────────────── */}
+      {/* ── All Cities Accordion ────────────────────────────────────── */}
       {cities.length > 0 && (
         <section className={card}>
-          <h2 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${heading}`}>
-            {flagImg(country.code)}
-            Major Cities in {country.name} ({cities.length} {cities.length === 1 ? 'city' : 'cities'})
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-            {cities.map(city => (
-              <Link key={city.slug} href={`/${city.slug}`} className={cityLink}>
-                <div>
-                  <div className={`font-medium ${heading}`}>{city.city}</div>
-                  <div className={`text-xs ${muted}`}>{city.timezone.split('/').pop()?.replace('_', ' ')}</div>
-                </div>
-                <div className={`text-lg font-bold tabular-nums ${heading}`}>{getTime(city.timezone)}</div>
-              </Link>
-            ))}
-          </div>
-          <p className={`text-xs mt-4 ${muted}`}>Click on any city to see detailed local time, sunrise/sunset times, and weather information.</p>
+          <button
+            onClick={() => setCitiesOpen(o => !o)}
+            className={`w-full flex items-center justify-between gap-3 ${heading}`}
+            aria-expanded={citiesOpen}
+          >
+            <h2 className={`text-lg font-semibold flex items-center gap-2 ${heading}`}>
+              {flagImg(country.code)}
+              Cities in {country.name} ({cities.length} {cities.length === 1 ? 'city' : 'cities'})
+            </h2>
+            <svg className={`w-5 h-5 flex-shrink-0 transition-transform duration-200 ${citiesOpen ? 'rotate-180' : ''} ${muted}`}
+              fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          {!citiesOpen && (
+            <p className={`text-sm mt-2 ${muted}`}>View all {cities.length} cities with live local times →</p>
+          )}
+          {citiesOpen && (
+            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+              {cities.map(city => (
+                <Link key={city.slug} href={`/${city.slug}`} className={cityLink}>
+                  <div>
+                    <div className={`font-medium ${heading}`}>{city.city}</div>
+                    <div className={`text-xs ${muted}`}>{city.timezone.split('/').pop()?.replace('_', ' ')}</div>
+                  </div>
+                  <div className={`text-lg font-bold tabular-nums ${heading}`}>{getTime(city.timezone)}</div>
+                </Link>
+              ))}
+            </div>
+          )}
         </section>
       )}
 
@@ -213,8 +274,27 @@ export default function CountryFactsSection({ hubSlug }: Props) {
         <h2 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${heading}`}>
           <span>📞</span> Best Time to Call {country.name}
         </h2>
+        {/* Specific call windows */}
+        {now && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
+            {[
+              { tz: 'America/New_York',    label: 'From USA (EST/EDT)' },
+              { tz: 'America/Los_Angeles', label: 'From USA (PST/PDT)' },
+              { tz: 'Europe/London',       label: 'From UK (GMT/BST)' },
+              { tz: 'Europe/Paris',        label: 'From Europe (CET)' },
+            ].map(ref => {
+              const window = getCallWindow(ref.tz, ref.label)
+              return window ? (
+                <div key={ref.tz} className={innerCard}>
+                  <div className={`text-xs mb-0.5 ${muted}`}>{ref.label}</div>
+                  <div className={`text-sm font-semibold ${heading}`}>{window.split(': ')[1]}</div>
+                </div>
+              ) : null
+            })}
+          </div>
+        )}
         <p className={`text-sm ${muted}`}>{bestTimeToCall}</p>
-        <p className={`text-sm mt-3 ${muted}`}>Standard business hours in {country.name} are typically 9:00 AM to 5:00 PM or 6:00 PM local time, Monday through Friday. {businessHours}</p>
+        <p className={`text-sm mt-3 ${muted}`}>Standard business hours in {country.name}: Monday–Friday, 9 AM–5 PM local time. {businessHours}</p>
       </section>
 
       {/* ── Travel Tips ─────────────────────────────────────────────── */}
@@ -251,21 +331,6 @@ export default function CountryFactsSection({ hubSlug }: Props) {
         </div>
       </section>
 
-      {/* ── Cities list ─────────────────────────────────────────────── */}
-      {cities.length > 0 && (
-        <section className={card}>
-          <h2 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${heading}`}>
-            {flagImg(country.code)}
-            Cities in {country.name}
-          </h2>
-          <p className={`text-sm mb-3 ${muted}`}>Explore local time in {cities.length} {cities.length === 1 ? 'city' : 'cities'} across {country.name}:</p>
-          <div className="flex flex-wrap gap-2">
-            {cities.map(city => (
-              <Link key={city.slug} href={`/${city.slug}`} className={tagLink}>{city.city}</Link>
-            ))}
-          </div>
-        </section>
-      )}
 
       {/* ── Other Countries ─────────────────────────────────────────── */}
       {relatedCountries.length > 0 && (
