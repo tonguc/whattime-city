@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
+import HubPageLayout from '@/components/HubPageLayout'
+import HubPageHeader from '@/components/HubPageHeader'
 import TurkeyClockClient from './TurkeyClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
@@ -74,78 +75,23 @@ const breadcrumbSchema = {
   ],
 }
 
-const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function TurkeyTimePage() {
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in Turkey</h1>
-      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Turkey Time (TRT) · UTC+3 · No Daylight Saving Time since September 2016</p>
+      <HubPageHeader title="Current Time in Turkey" subtitle="Turkey Time (TRT) · UTC+3 · No Daylight Saving Time since September 2016" />
       <TurkeyClockClient />
       <CountryFactsSection hubSlug="turkey" />
-      <section className="mt-4 mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Turkey Time Zone — TRT & the 2016 DST Abolition</h2>
-          <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
-            <p>Turkey abolished Daylight Saving Time on <strong>September 8, 2016</strong>, permanently moving to <strong>UTC+3 (TRT)</strong>. Previously, Turkey oscillated between EET (UTC+2) in winter and EEST (UTC+3) in summer. The government cited public confusion and minimal economic benefit as reasons for the change.</p>
-            <p>The result: Turkey now shares UTC+3 with Moscow and East Africa year-round. When Europe is on standard time (winter), Turkey is 2 hours ahead of Central Europe and 3 hours ahead of the UK. When Europe switches to summer time, the gap narrows to 1h (vs CET) and 2h (vs UK).</p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
-              {[
-                { label: 'Time Zone', value: 'TRT' },
-                { label: 'UTC Offset', value: 'UTC+3' },
-                { label: 'Daylight Saving', value: 'No DST (since 2016)' },
-                { label: 'Same as', value: 'Moscow (MSK)' },
-              ].map(item => (
-                <div key={item.label} className="rounded-xl bg-slate-50 p-3 text-center">
-                  <div className="text-xs text-slate-500 mb-1">{item.label}</div>
-                  <div className="font-bold text-slate-800 text-sm">{item.value}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div>
-                <div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Turkey City Times & Converters</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-            {[
-              { label: 'Istanbul time', href: '/istanbul/' },
-              { label: 'Ankara time', href: '/ankara/' },
-              { label: 'Izmir time', href: '/izmir/' },
-              { label: 'Istanbul → London', href: '/time/istanbul/london/' },
-              { label: 'Istanbul → New York', href: '/time/istanbul/new-york/' },
-              { label: 'Istanbul → Dubai', href: '/time/istanbul/dubai/' },
-              { label: 'Istanbul → Berlin', href: '/time/istanbul/berlin/' },
-              { label: 'Turkey country info', href: '/country/turkey/' },
-              { label: 'Time converter tool', href: '/time-converter/' },
-            ].map(lnk => (
-              <Link key={lnk.href} href={lnk.href}
-                className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center">
-                {lnk.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">
+            <HubPageLayout
+        faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
+        links={[]}
+        linksTitle="Related Time Pages"
+        footerText="
         Time zone data powered by the IANA Time Zone Database. Turkey: Europe/Istanbul (TRT, UTC+3). No DST since 2016.
-      </footer>
+      "
+      />
     </ContentPageWrapper>
   )
 }

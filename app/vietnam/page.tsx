@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
+import HubPageLayout from '@/components/HubPageLayout'
+import HubPageHeader from '@/components/HubPageHeader'
 import VietnamClockClient from './VietnamClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
@@ -74,94 +75,23 @@ const breadcrumbSchema = {
   ],
 }
 
-const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function VietnamTimePage() {
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in Vietnam</h1>
-      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Indochina Time (ICT) · UTC+7 · No Daylight Saving Time</p>
+      <HubPageHeader title="Current Time in Vietnam" subtitle="Indochina Time (ICT) · UTC+7 · No Daylight Saving Time" />
       <VietnamClockClient />
       <CountryFactsSection hubSlug="vietnam" />
-      <section className="mt-4 mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">ICT Quick Reference — When it is noon in Ho Chi Minh City</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-slate-200">
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">City / Region</th>
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">UTC Offset</th>
-                  <th className="text-left py-2 font-medium text-slate-600">Local Time (when ICT = 12:00)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {[
-                  { city: 'Bangkok / Jakarta (WIB)', utc: 'UTC+7', local: '12:00 PM', note: 'same time zone' },
-                  { city: 'Singapore / Kuala Lumpur', utc: 'UTC+8', local: '1:00 PM', note: '1h ahead, no DST' },
-                  { city: 'Beijing / Hong Kong', utc: 'UTC+8', local: '1:00 PM', note: '1h ahead, no DST' },
-                  { city: 'Tokyo / Seoul', utc: 'UTC+9', local: '2:00 PM', note: '2h ahead, no DST' },
-                  { city: 'Sydney (AEST)', utc: 'UTC+10', local: '3:00 PM', note: '4h ahead during AEDT' },
-                  { city: 'Dubai', utc: 'UTC+4', local: '9:00 AM', note: '3h behind, no DST' },
-                  { city: 'London (GMT)', utc: 'UTC+0', local: '5:00 AM', note: '6h behind during BST' },
-                  { city: 'New York (EST)', utc: 'UTC−5', local: '12:00 AM midnight', note: '11h behind during EDT' },
-                  { city: 'Los Angeles (PST)', utc: 'UTC−8', local: '9:00 PM prev. day', note: '14h behind during PDT' },
-                ].map(row => (
-                  <tr key={row.city}>
-                    <td className="py-2 pr-4 font-medium text-slate-700">{row.city}</td>
-                    <td className="py-2 pr-4 text-slate-500">{row.utc}</td>
-                    <td className="py-2 text-slate-700">
-                      {row.local}
-                      <span className="ml-2 text-xs text-slate-400">({row.note})</span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div>
-                <div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Vietnam City Times & Converters</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-            {[
-              { label: 'Ho Chi Minh City time', href: '/ho-chi-minh-city/' },
-              { label: 'Hanoi time', href: '/hanoi/' },
-              { label: 'Da Nang time', href: '/da-nang/' },
-              { label: 'HCMC → Singapore', href: '/time/ho-chi-minh-city/singapore/' },
-              { label: 'HCMC → London', href: '/time/ho-chi-minh-city/london/' },
-              { label: 'HCMC → Sydney', href: '/time/ho-chi-minh-city/sydney/' },
-              { label: 'HCMC → Tokyo', href: '/time/ho-chi-minh-city/tokyo/' },
-              { label: 'HCMC → New York', href: '/time/ho-chi-minh-city/new-york/' },
-              { label: 'Time converter tool', href: '/time-converter/' },
-            ].map(lnk => (
-              <Link key={lnk.href} href={lnk.href}
-                className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center">
-                {lnk.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">
+            <HubPageLayout
+        faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
+        links={[]}
+        linksTitle="Related Time Pages"
+        footerText="
         Time zone data powered by the IANA Time Zone Database. Vietnam: Asia/Ho_Chi_Minh (ICT UTC+7, no DST).
-      </footer>
+      "
+      />
     </ContentPageWrapper>
   )
 }

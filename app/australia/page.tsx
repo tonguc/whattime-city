@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
+import HubPageLayout from '@/components/HubPageLayout'
+import HubPageHeader from '@/components/HubPageHeader'
 import AustraliaClockClient from './AustraliaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
@@ -127,7 +128,6 @@ const breadcrumbSchema = {
   ],
 }
 
-const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function AustraliaTimePage() {
   return (
@@ -141,155 +141,25 @@ export default function AustraliaTimePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">
+      <HubPageHeader title="
         Current Time in Australia
-      </h1>
-      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
+      " subtitle="
         Australian Eastern Standard Time (AEST) · UTC+10 · Multiple time zones across the country
-      </p>
+      " />
 
       <AustraliaClockClient />
       <CountryFactsSection hubSlug="australia" />
 
       {/* Australia Time Zones Explained */}
-      <section className="mt-4 mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Australia Time Zones Explained</h2>
-          <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
-            <p>
-              Australia spans a vast east-west distance — about as wide as the continental United States —
-              so it uses <strong>five main time zones</strong>. Uniquely, two of these use
-              30-minute offsets (UTC+9:30 and UTC+10:30) rather than the standard whole-hour increments
-              used by most countries.
-            </p>
-            <p>
-              <strong>Not all states observe Daylight Saving Time.</strong> NSW, Victoria, South Australia,
-              Tasmania, and the ACT switch clocks during the Southern Hemisphere summer (October–April).
-              Queensland, Western Australia, and the Northern Territory do not observe DST. This creates
-              a dynamic where Sydney and Brisbane can be 0 or 1 hour apart depending on the time of year.
-            </p>
-            <div className="overflow-x-auto mt-4">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-slate-200">
-                    <th className="text-left py-2 pr-4 font-medium text-slate-600">Zone</th>
-                    <th className="text-left py-2 pr-4 font-medium text-slate-600">Standard</th>
-                    <th className="text-left py-2 pr-4 font-medium text-slate-600">DST</th>
-                    <th className="text-left py-2 font-medium text-slate-600">States / Territories</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100">
-                  {[
-                    { zone: 'AWST', std: 'UTC+8', dst: 'No DST', states: 'Western Australia (Perth)' },
-                    { zone: 'ACWST', std: 'UTC+8:45', dst: 'No DST', states: 'Eucla, WA (small region)' },
-                    { zone: 'ACST', std: 'UTC+9:30', dst: 'ACDT UTC+10:30', states: 'SA (Adelaide), NT (Darwin, no DST)' },
-                    { zone: 'AEST', std: 'UTC+10', dst: 'AEDT UTC+11', states: 'QLD (Brisbane, no DST), NSW, VIC, TAS, ACT' },
-                    { zone: 'LHST', std: 'UTC+10:30', dst: 'LHDT UTC+11', states: 'Lord Howe Island' },
-                  ].map((row) => (
-                    <tr key={row.zone}>
-                      <td className="py-2 pr-4 font-bold text-slate-700">{row.zone}</td>
-                      <td className="py-2 pr-4 text-slate-500">{row.std}</td>
-                      <td className="py-2 pr-4 text-slate-500">{row.dst}</td>
-                      <td className="py-2 text-slate-600">{row.states}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Quick Reference */}
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">AEST Quick Reference — When it is noon in Sydney</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-slate-200">
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">City / Region</th>
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">Time Zone</th>
-                  <th className="text-left py-2 font-medium text-slate-600">Local Time (when AEST = 12:00)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {[
-                  { city: 'Melbourne', tz: 'AEST (UTC+10)', local: '12:00 PM (same)', dst: 'Both switch together' },
-                  { city: 'Brisbane', tz: 'AEST (UTC+10)', local: '12:00 PM (same)', dst: 'Brisbane has no DST — differs Oct–Apr' },
-                  { city: 'Adelaide', tz: 'ACST (UTC+9:30)', local: '11:30 AM', dst: '12:30 PM ACDT Oct–Apr' },
-                  { city: 'Darwin', tz: 'ACST (UTC+9:30)', local: '11:30 AM', dst: 'No DST (always 30min behind)' },
-                  { city: 'Perth', tz: 'AWST (UTC+8)', local: '10:00 AM', dst: 'No DST' },
-                  { city: 'Tokyo', tz: 'JST (UTC+9)', local: '11:00 AM', dst: 'No DST' },
-                  { city: 'Singapore', tz: 'SGT (UTC+8)', local: '10:00 AM', dst: 'No DST' },
-                  { city: 'London', tz: 'GMT (UTC+0)', local: '2:00 AM', dst: '3:00 AM BST in summer' },
-                  { city: 'New York', tz: 'EST (UTC−5)', local: '9:00 PM (prev)', dst: '10:00 PM EDT' },
-                  { city: 'Los Angeles', tz: 'PST (UTC−8)', local: '6:00 PM (prev)', dst: '7:00 PM PDT' },
-                ].map((row) => (
-                  <tr key={row.city}>
-                    <td className="py-2 pr-4 font-medium text-slate-700">{row.city}</td>
-                    <td className="py-2 pr-4 text-slate-500">{row.tz}</td>
-                    <td className="py-2 text-slate-700">
-                      {row.local}
-                      {row.dst !== 'No DST' && row.dst !== 'Both switch together' && (
-                        <span className="ml-2 text-xs text-slate-400">({row.dst})</span>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div>
-                <div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Internal links */}
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Australian City Times & Converters</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-            {[
-              { label: 'Sydney time', href: '/sydney/' },
-              { label: 'Melbourne time', href: '/melbourne/' },
-              { label: 'Brisbane time', href: '/brisbane/' },
-              { label: 'Perth time', href: '/perth/' },
-              { label: 'Adelaide time', href: '/adelaide/' },
-              { label: 'Darwin time', href: '/darwin/' },
-              { label: 'Sydney → New York', href: '/time/sydney/new-york/' },
-              { label: 'Sydney → London', href: '/time/sydney/london/' },
-              { label: 'Australia country info', href: '/country/australia/' },
-            ].map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">
+            <HubPageLayout
+        faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
+        links={[]}
+        linksTitle="Related Time Pages"
+        footerText="
         Time zone data powered by the IANA Time Zone Database.
         Australia main zone: Australia/Sydney (AEST UTC+10 / AEDT UTC+11). DST in NSW, VIC, SA, TAS, ACT.
-      </footer>
+      "
+      />
     </ContentPageWrapper>
   )
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
+import HubPageLayout from '@/components/HubPageLayout'
+import HubPageHeader from '@/components/HubPageHeader'
 import NevadaClockClient from './NevadaClockClient'
 
 export const metadata: Metadata = {
@@ -24,27 +25,20 @@ const faqSchema = {
 }
 
 const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://whattime.city/' }, { '@type': 'ListItem', position: 2, name: 'Time in Nevada', item: 'https://whattime.city/nevada/' }] }
-const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function NevadaTimePage() {
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in Nevada</h1>
-      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Pacific Time (PST/PDT) · Las Vegas · UTC−8 / UTC−7</p>
+      <HubPageHeader title="Current Time in Nevada" subtitle="Pacific Time (PST/PDT) · Las Vegas · UTC−8 / UTC−7" />
       <NevadaClockClient />
-      <section className="mt-4 mb-4"><div className={card}>
-        <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-        <div className="space-y-3">{faqSchema.mainEntity.map((item, i) => (<div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4"><div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div><div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div></div>))}</div>
-      </div></section>
-      <section className="mb-4"><div className={card}>
-        <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Nevada City Times & Converters</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-          {[{ label: 'Las Vegas time', href: '/las-vegas/' }, { label: 'Los Angeles time', href: '/los-angeles/' }, { label: 'Seattle time', href: '/seattle/' }, { label: 'Time in Oregon', href: '/oregon/' }, { label: 'Time in Arizona', href: '/arizona/' }, { label: 'Time in California', href: '/california/' }, { label: 'Time in Washington State', href: '/washington-state/' }, { label: 'Time converter tool', href: '/time-converter/' }].map(lnk => (<Link key={lnk.href} href={lnk.href} className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center">{lnk.label}</Link>))}
-        </div>
-      </div></section>
-      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">Time zone data powered by the IANA Time Zone Database. Nevada: America/Los_Angeles (PST/PDT, Pacific Time).</footer>
+            <HubPageLayout
+        faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
+        links={[{ label: 'Las Vegas time', href: '/las-vegas/' }, { label: 'Los Angeles time', href: '/los-angeles/' }, { label: 'Seattle time', href: '/seattle/' }, { label: 'Time in Oregon', href: '/oregon/' }, { label: 'Time in Arizona', href: '/arizona/' }, { label: 'Time in California', href: '/california/' }, { label: 'Time in Washington State', href: '/washington-state/' }, { label: 'Time converter tool', href: '/time-converter/' }]}
+        linksTitle="Nevada City Times & Converters"
+        footerText="Time zone data powered by the IANA Time Zone Database. Nevada: America/Los_Angeles (PST/PDT, Pacific Time)."
+      />
     </ContentPageWrapper>
   )
 }

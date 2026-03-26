@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
+import HubPageLayout from '@/components/HubPageLayout'
+import HubPageHeader from '@/components/HubPageHeader'
 import PhilippinesClockClient from './PhilippinesClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
@@ -126,7 +127,6 @@ const breadcrumbSchema = {
   ],
 }
 
-const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function PhilippinesTimePage() {
   return (
@@ -140,145 +140,25 @@ export default function PhilippinesTimePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">
+      <HubPageHeader title="
         Current Time in the Philippines
-      </h1>
-      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
+      " subtitle="
         Philippine Time (PHT) · UTC+8 · No Daylight Saving Time
-      </p>
+      " />
 
       <PhilippinesClockClient />
       <CountryFactsSection hubSlug="philippines" />
 
       {/* PHT Explained */}
-      <section className="mt-4 mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Philippines Time Zone — PHT Explained</h2>
-          <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
-            <p>
-              The Philippines uses <strong>Philippine Time (PHT)</strong>, which is UTC+8. The entire
-              country — all 7,641 islands from Luzon in the north to Mindanao in the south — operates
-              on a single time zone. This makes scheduling calls nationwide straightforward.
-            </p>
-            <p>
-              <strong>The Philippines does not observe Daylight Saving Time.</strong> PHT is fixed at
-              UTC+8 year-round. The practical effect: the Philippines sits in the same time zone as
-              Singapore, Malaysia, China, Hong Kong, and Taiwan. When counting hours to the US, the
-              Philippines is often "the next day" — Manila is 13 hours ahead of New York in winter,
-              which means Monday morning in Manila is still Sunday evening in New York.
-            </p>
-            <p>
-              The Philippines has a large diaspora in the US and Middle East, driving high demand for
-              international calling windows. The BPO (Business Process Outsourcing) industry — one
-              of the Philippines' largest employers — specifically operates in night shifts to overlap
-              with US business hours.
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
-              {[
-                { label: 'Time Zone', value: 'PHT' },
-                { label: 'UTC Offset', value: 'UTC+8' },
-                { label: 'Daylight Saving', value: 'No DST' },
-                { label: 'Number of TZs', value: '1 (nationwide)' },
-              ].map((item) => (
-                <div key={item.label} className="rounded-xl bg-slate-50 p-3 text-center">
-                  <div className="text-xs text-slate-500 mb-1">{item.label}</div>
-                  <div className="font-bold text-slate-800 text-sm">{item.value}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Quick Reference Table */}
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">PHT Quick Reference — When it is noon in Manila</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-slate-200">
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">City / Region</th>
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">Time Zone</th>
-                  <th className="text-left py-2 font-medium text-slate-600">Local Time (when PHT = 12:00)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {[
-                  { city: 'New York', tz: 'EST (UTC−5)', local: '11:00 PM (prev day)', dst: '12:00 AM midnight EDT' },
-                  { city: 'Los Angeles', tz: 'PST (UTC−8)', local: '8:00 PM (prev day)', dst: '9:00 PM PDT' },
-                  { city: 'London', tz: 'GMT (UTC+0)', local: '4:00 AM', dst: '5:00 AM BST in summer' },
-                  { city: 'Berlin / Paris', tz: 'CET (UTC+1)', local: '5:00 AM', dst: '6:00 AM CEST in summer' },
-                  { city: 'Dubai', tz: 'GST (UTC+4)', local: '8:00 AM', dst: 'No DST' },
-                  { city: 'Mumbai (IST)', tz: 'IST (UTC+5:30)', local: '9:30 AM', dst: 'No DST' },
-                  { city: 'Singapore', tz: 'SGT (UTC+8)', local: '12:00 PM (same)', dst: 'No DST' },
-                  { city: 'Tokyo', tz: 'JST (UTC+9)', local: '1:00 PM', dst: 'No DST' },
-                  { city: 'Sydney', tz: 'AEST (UTC+10)', local: '2:00 PM', dst: '3:00 PM AEDT in summer' },
-                ].map((row) => (
-                  <tr key={row.city}>
-                    <td className="py-2 pr-4 font-medium text-slate-700">{row.city}</td>
-                    <td className="py-2 pr-4 text-slate-500">{row.tz}</td>
-                    <td className="py-2 text-slate-700">
-                      {row.local}
-                      {row.dst !== 'No DST' && (
-                        <span className="ml-2 text-xs text-slate-400">({row.dst})</span>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div>
-                <div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Internal links */}
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Philippines City Times & Converters</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-            {[
-              { label: 'Manila time', href: '/manila/' },
-              { label: 'Cebu time', href: '/cebu/' },
-              { label: 'Davao time', href: '/davao/' },
-              { label: 'Manila → New York', href: '/time/manila/new-york/' },
-              { label: 'Manila → London', href: '/time/manila/london/' },
-              { label: 'Manila → Los Angeles', href: '/time/manila/los-angeles/' },
-              { label: 'Manila → Singapore', href: '/time/manila/singapore/' },
-              { label: 'Philippines country info', href: '/country/philippines/' },
-              { label: 'Time converter tool', href: '/time-converter/' },
-            ].map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">
+            <HubPageLayout
+        faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
+        links={[]}
+        linksTitle="Related Time Pages"
+        footerText="
         Time zone data powered by the IANA Time Zone Database.
         Philippines: Asia/Manila (PHT, UTC+8). No DST observed.
-      </footer>
+      "
+      />
     </ContentPageWrapper>
   )
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
+import HubPageLayout from '@/components/HubPageLayout'
+import HubPageHeader from '@/components/HubPageHeader'
 import NewYorkStateClockClient from './NewYorkStateClockClient'
 
 export const metadata: Metadata = {
@@ -73,93 +74,22 @@ const breadcrumbSchema = {
   ],
 }
 
-const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function NewYorkStateTimePage() {
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in New York</h1>
-      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Eastern Time (ET) · EST (UTC−5) in winter · EDT (UTC−4) during Daylight Saving Time</p>
+      <HubPageHeader title="Current Time in New York" subtitle="Eastern Time (ET) · EST (UTC−5) in winter · EDT (UTC−4) during Daylight Saving Time" />
       <NewYorkStateClockClient />
-      <section className="mt-4 mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">EST Quick Reference — When it is noon in New York</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-slate-200">
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">City / Region</th>
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">Time Zone</th>
-                  <th className="text-left py-2 font-medium text-slate-600">Local Time (when EST = 12:00)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {[
-                  { city: 'Los Angeles', tz: 'PST (UTC−8)', local: '9:00 AM', dst: '9:00 AM PDT (gap constant)' },
-                  { city: 'Chicago / Dallas', tz: 'CST (UTC−6)', local: '11:00 AM', dst: '11:00 AM CDT (gap constant)' },
-                  { city: 'London', tz: 'GMT (UTC+0)', local: '5:00 PM', dst: '5:00 PM BST (gap roughly constant)' },
-                  { city: 'Berlin / Paris', tz: 'CET (UTC+1)', local: '6:00 PM', dst: '6:00 PM CEST' },
-                  { city: 'Dubai', tz: 'GST (UTC+4)', local: '9:00 PM', dst: 'No DST' },
-                  { city: 'Mumbai (IST)', tz: 'IST (UTC+5:30)', local: '10:30 PM', dst: 'No DST' },
-                  { city: 'Singapore', tz: 'SGT (UTC+8)', local: '1:00 AM next day', dst: 'No DST' },
-                  { city: 'Tokyo', tz: 'JST (UTC+9)', local: '2:00 AM next day', dst: 'No DST' },
-                  { city: 'Sydney', tz: 'AEST (UTC+10)', local: '3:00 AM next day', dst: 'AEDT varies' },
-                ].map(row => (
-                  <tr key={row.city}>
-                    <td className="py-2 pr-4 font-medium text-slate-700">{row.city}</td>
-                    <td className="py-2 pr-4 text-slate-500">{row.tz}</td>
-                    <td className="py-2 text-slate-700">
-                      {row.local}
-                      {row.dst !== 'No DST' && <span className="ml-2 text-xs text-slate-400">({row.dst})</span>}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div>
-                <div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">New York City Times & Converters</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-            {[
-              { label: 'New York City time', href: '/new-york/' },
-              { label: 'Buffalo time', href: '/buffalo/' },
-              { label: 'Albany time', href: '/albany/' },
-              { label: 'NYC → London', href: '/time/new-york/london/' },
-              { label: 'NYC → Los Angeles', href: '/time/new-york/los-angeles/' },
-              { label: 'NYC → Tokyo', href: '/time/new-york/tokyo/' },
-              { label: 'NYC → Mumbai', href: '/time/new-york/mumbai/' },
-              { label: 'NYC → Dubai', href: '/time/new-york/dubai/' },
-              { label: 'Time converter tool', href: '/time-converter/' },
-            ].map(lnk => (
-              <Link key={lnk.href} href={lnk.href}
-                className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center">
-                {lnk.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">
+            <HubPageLayout
+        faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
+        links={[]}
+        linksTitle="Related Time Pages"
+        footerText="
         Time zone data powered by the IANA Time Zone Database. New York: America/New_York (EST UTC−5 / EDT UTC−4).
-      </footer>
+      "
+      />
     </ContentPageWrapper>
   )
 }

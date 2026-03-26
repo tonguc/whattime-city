@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
+import HubPageLayout from '@/components/HubPageLayout'
+import HubPageHeader from '@/components/HubPageHeader'
 import RussiaClockClient from './RussiaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
@@ -75,95 +76,23 @@ const breadcrumbSchema = {
   ],
 }
 
-const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function RussiaTimePage() {
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in Russia</h1>
-      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Moscow Time (MSK) · UTC+3 · 11 Time Zones · No Daylight Saving Time since 2014</p>
+      <HubPageHeader title="Current Time in Russia" subtitle="Moscow Time (MSK) · UTC+3 · 11 Time Zones · No Daylight Saving Time since 2014" />
       <RussiaClockClient />
       <CountryFactsSection hubSlug="russia" />
-      <section className="mt-4 mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Russia Time Zones Overview</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-slate-200">
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">Zone Name</th>
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">Abbreviation</th>
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">UTC</th>
-                  <th className="text-left py-2 font-medium text-slate-600">Key Cities</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {[
-                  { name: 'Kaliningrad Time', abbr: 'KALT', utc: 'UTC+2', cities: 'Kaliningrad' },
-                  { name: 'Moscow Time', abbr: 'MSK', utc: 'UTC+3', cities: 'Moscow, St Petersburg, Murmansk, Volgograd' },
-                  { name: 'Samara Time', abbr: 'SAMT', utc: 'UTC+4', cities: 'Samara, Udmurtia, Saratov' },
-                  { name: 'Yekaterinburg Time', abbr: 'YEKT', utc: 'UTC+5', cities: 'Yekaterinburg, Chelyabinsk, Tyumen' },
-                  { name: 'Omsk Time', abbr: 'OMST', utc: 'UTC+6', cities: 'Omsk' },
-                  { name: 'Krasnoyarsk Time', abbr: 'KRAT', utc: 'UTC+7', cities: 'Krasnoyarsk, Novosibirsk, Tomsk' },
-                  { name: 'Irkutsk Time', abbr: 'IRKT', utc: 'UTC+8', cities: 'Irkutsk, Ulan-Ude' },
-                  { name: 'Yakutsk Time', abbr: 'YAKT', utc: 'UTC+9', cities: 'Yakutsk, Chita' },
-                  { name: 'Vladivostok Time', abbr: 'VLAT', utc: 'UTC+10', cities: 'Vladivostok, Khabarovsk' },
-                  { name: 'Magadan Time', abbr: 'MAGT', utc: 'UTC+11', cities: 'Magadan, Sakhalin, South Kuril Islands' },
-                  { name: 'Kamchatka Time', abbr: 'PETT', utc: 'UTC+12', cities: 'Petropavlovsk-Kamchatsky, Chukotka' },
-                ].map(row => (
-                  <tr key={row.abbr}>
-                    <td className="py-2 pr-4 font-medium text-slate-700">{row.name}</td>
-                    <td className="py-2 pr-4 text-slate-500">{row.abbr}</td>
-                    <td className="py-2 pr-4 text-slate-500">{row.utc}</td>
-                    <td className="py-2 text-slate-700">{row.cities}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div>
-                <div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Russia City Times & Converters</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-            {[
-              { label: 'Moscow time', href: '/moscow/' },
-              { label: 'St Petersburg time', href: '/saint-petersburg/' },
-              { label: 'Vladivostok time', href: '/vladivostok/' },
-              { label: 'Novosibirsk time', href: '/novosibirsk/' },
-              { label: 'Moscow → London', href: '/time/moscow/london/' },
-              { label: 'Moscow → New York', href: '/time/moscow/new-york/' },
-              { label: 'Moscow → Dubai', href: '/time/moscow/dubai/' },
-              { label: 'Moscow → Beijing', href: '/time/moscow/beijing/' },
-              { label: 'Time converter tool', href: '/time-converter/' },
-            ].map(lnk => (
-              <Link key={lnk.href} href={lnk.href}
-                className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center">
-                {lnk.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">
+            <HubPageLayout
+        faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
+        links={[]}
+        linksTitle="Related Time Pages"
+        footerText="
         Time zone data powered by the IANA Time Zone Database. Russia spans 11 IANA zones from Europe/Kaliningrad (UTC+2) to Asia/Kamchatka (UTC+12). No DST since October 2014.
-      </footer>
+      "
+      />
     </ContentPageWrapper>
   )
 }

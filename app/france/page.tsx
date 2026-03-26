@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
+import HubPageLayout from '@/components/HubPageLayout'
+import HubPageHeader from '@/components/HubPageHeader'
 import FranceClockClient from './FranceClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
@@ -107,7 +108,6 @@ const breadcrumbSchema = {
   ],
 }
 
-const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function FranceTimePage() {
   return (
@@ -115,82 +115,24 @@ export default function FranceTimePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">
+      <HubPageHeader title="
         Current Time in France
-      </h1>
-      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
+      " subtitle="
         Central European Time (CET) · UTC+1 in winter · CEST (UTC+2) during Central European Summer Time
-      </p>
+      " />
 
       <FranceClockClient />
       <CountryFactsSection hubSlug="france" />
 
-      <section className="mt-4 mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">France Time Zone — CET & CEST Explained</h2>
-          <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
-            <p>
-              Metropolitan France uses <strong>Central European Time (CET, UTC+1)</strong> in winter
-              and <strong>Central European Summer Time (CEST, UTC+2)</strong> from late March to late October.
-              This is the same schedule as Germany, Italy, Spain, and most continental European nations.
-            </p>
-            <p>
-              Geographically, Paris sits at roughly 2°E longitude, which corresponds to UTC+0:08 in mean
-              solar time. France's use of CET (UTC+1) rather than GMT is a historical legacy — France
-              aligned itself with German Central European Time in 1940 and has maintained it since, even
-              after liberation. This means French sunrises are somewhat later than geography would suggest.
-            </p>
-            <p>
-              France also has <strong>12 overseas territories</strong> spanning time zones from UTC−10
-              (French Polynesia) to UTC+12 (Wallis and Futuna). When people ask "what time is it in France,"
-              they typically mean metropolitan France (Europe/Paris).
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div>
-                <div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">France City Times & Converters</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-            {[
-              { label: 'Paris time', href: '/paris/' },
-              { label: 'Lyon time', href: '/lyon/' },
-              { label: 'Marseille time', href: '/marseille/' },
-              { label: 'Paris → New York', href: '/time/paris/new-york/' },
-              { label: 'Paris → London', href: '/time/paris/london/' },
-              { label: 'Paris → Dubai', href: '/time/paris/dubai/' },
-              { label: 'Paris → Mumbai', href: '/time/paris/mumbai/' },
-              { label: 'France country info', href: '/country/france/' },
-              { label: 'Time converter tool', href: '/time-converter/' },
-            ].map((link) => (
-              <Link key={link.href} href={link.href}
-                className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center">
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">
+            <HubPageLayout
+        faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
+        links={[]}
+        linksTitle="Related Time Pages"
+        footerText="
         Time zone data powered by the IANA Time Zone Database.
         France: Europe/Paris (CET UTC+1 / CEST UTC+2). DST observed.
-      </footer>
+      "
+      />
     </ContentPageWrapper>
   )
 }

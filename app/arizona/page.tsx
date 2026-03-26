@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
+import HubPageLayout from '@/components/HubPageLayout'
+import HubPageHeader from '@/components/HubPageHeader'
 import ArizonaClockClient from './ArizonaClockClient'
 
 export const metadata: Metadata = {
@@ -25,43 +26,20 @@ const faqSchema = {
 }
 
 const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://whattime.city/' }, { '@type': 'ListItem', position: 2, name: 'Time in Arizona', item: 'https://whattime.city/arizona/' }] }
-const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function ArizonaTimePage() {
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in Arizona</h1>
-      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Mountain Standard Time (MST) · UTC−7 · Year-round · No Daylight Saving Time · Navajo Nation exception</p>
+      <HubPageHeader title="Current Time in Arizona" subtitle="Mountain Standard Time (MST) · UTC−7 · Year-round · No Daylight Saving Time · Navajo Nation exception" />
       <ArizonaClockClient />
-      <section className="mt-4 mb-4"><div className={card}>
-        <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Arizona vs Other US Time Zones — Winter vs Summer</h2>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead><tr className="border-b border-slate-200"><th className="text-left py-2 pr-4 font-medium text-slate-600">State / Region</th><th className="text-left py-2 pr-4 font-medium text-slate-600">Winter offset vs Arizona</th><th className="text-left py-2 font-medium text-slate-600">Summer offset vs Arizona</th></tr></thead>
-            <tbody className="divide-y divide-slate-100">
-              {[
-                { region: 'California (Pacific)', winter: 'AZ +1h ahead', summer: 'Same time (both UTC−7)' },
-                { region: 'Colorado / Utah (Mountain)', winter: 'Same time (both UTC−7)', summer: 'CO/UT +1h ahead (MDT)' },
-                { region: 'Texas / Illinois (Central)', winter: 'AZ +1h ahead', summer: 'TX/IL +2h ahead (CDT)' },
-                { region: 'New York / Florida (Eastern)', winter: 'AZ +2h ahead', summer: 'NY/FL +3h ahead (EDT)' },
-              ].map(r => (<tr key={r.region}><td className="py-2 pr-4 font-medium text-slate-700">{r.region}</td><td className="py-2 pr-4 text-slate-600">{r.winter}</td><td className="py-2 text-slate-600">{r.summer}</td></tr>))}
-            </tbody>
-          </table>
-        </div>
-      </div></section>
-      <section className="mb-4"><div className={card}>
-        <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-        <div className="space-y-3">{faqSchema.mainEntity.map((item, i) => (<div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4"><div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div><div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div></div>))}</div>
-      </div></section>
-      <section className="mb-4"><div className={card}>
-        <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Arizona City Times & Converters</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-          {[{ label: 'Phoenix time', href: '/phoenix/' }, { label: 'Tucson time', href: '/tucson/' }, { label: 'Scottsdale time', href: '/scottsdale/' }, { label: 'Phoenix → Los Angeles', href: '/time/phoenix/los-angeles/' }, { label: 'Phoenix → New York', href: '/time/phoenix/new-york/' }, { label: 'Phoenix → Chicago', href: '/time/phoenix/chicago/' }, { label: 'Phoenix → London', href: '/time/phoenix/london/' }, { label: 'Time converter tool', href: '/time-converter/' }].map(lnk => (<Link key={lnk.href} href={lnk.href} className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center">{lnk.label}</Link>))}
-        </div>
-      </div></section>
-      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">Time zone data powered by the IANA Time Zone Database. Arizona: America/Phoenix (MST UTC−7, no DST). Navajo Nation: America/Denver (MST/MDT).</footer>
+            <HubPageLayout
+        faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
+        links={[{ label: 'Phoenix time', href: '/phoenix/' }, { label: 'Tucson time', href: '/tucson/' }, { label: 'Scottsdale time', href: '/scottsdale/' }, { label: 'Phoenix → Los Angeles', href: '/time/phoenix/los-angeles/' }, { label: 'Phoenix → New York', href: '/time/phoenix/new-york/' }, { label: 'Phoenix → Chicago', href: '/time/phoenix/chicago/' }, { label: 'Phoenix → London', href: '/time/phoenix/london/' }, { label: 'Time converter tool', href: '/time-converter/' }]}
+        linksTitle="Frequently Asked Questions"
+        footerText="Time zone data powered by the IANA Time Zone Database. Arizona: America/Phoenix (MST UTC−7, no DST). Navajo Nation: America/Denver (MST/MDT)."
+      />
     </ContentPageWrapper>
   )
 }

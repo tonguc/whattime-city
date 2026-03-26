@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
+import HubPageLayout from '@/components/HubPageLayout'
+import HubPageHeader from '@/components/HubPageHeader'
 import IndonesiaClockClient from './IndonesiaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
@@ -74,85 +75,23 @@ const breadcrumbSchema = {
   ],
 }
 
-const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function IndonesiaTimePage() {
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in Indonesia</h1>
-      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Three time zones: WIB (UTC+7) · WITA (UTC+8) · WIT (UTC+9) · No Daylight Saving Time</p>
+      <HubPageHeader title="Current Time in Indonesia" subtitle="Three time zones: WIB (UTC+7) · WITA (UTC+8) · WIT (UTC+9) · No Daylight Saving Time" />
       <IndonesiaClockClient />
       <CountryFactsSection hubSlug="indonesia" />
-      <section className="mt-4 mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Indonesia Time Zones at a Glance</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-slate-200">
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">Zone</th>
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">UTC Offset</th>
-                  <th className="text-left py-2 font-medium text-slate-600">Covers</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {[
-                  { zone: 'WIB — Waktu Indonesia Barat', utc: 'UTC+7', covers: 'Java, Sumatra, West/Central Kalimantan (Jakarta, Bandung, Surabaya, Medan)' },
-                  { zone: 'WITA — Waktu Indonesia Tengah', utc: 'UTC+8', covers: 'Bali, Sulawesi, East/South Kalimantan, Lombok, Sumbawa (Denpasar, Makassar, Mataram)' },
-                  { zone: 'WIT — Waktu Indonesia Timur', utc: 'UTC+9', covers: 'Papua, West Papua, Maluku, North Maluku (Jayapura, Ambon, Manokwari)' },
-                ].map(row => (
-                  <tr key={row.zone}>
-                    <td className="py-2 pr-4 font-medium text-slate-700">{row.zone}</td>
-                    <td className="py-2 pr-4 text-slate-500">{row.utc}</td>
-                    <td className="py-2 text-slate-700">{row.covers}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div>
-                <div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Indonesia City Times & Converters</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-            {[
-              { label: 'Jakarta time', href: '/jakarta/' },
-              { label: 'Bali time', href: '/bali/' },
-              { label: 'Surabaya time', href: '/surabaya/' },
-              { label: 'Makassar time', href: '/makassar/' },
-              { label: 'Jakarta → Singapore', href: '/time/jakarta/singapore/' },
-              { label: 'Jakarta → London', href: '/time/jakarta/london/' },
-              { label: 'Jakarta → Sydney', href: '/time/jakarta/sydney/' },
-              { label: 'Jakarta → Tokyo', href: '/time/jakarta/tokyo/' },
-              { label: 'Time converter tool', href: '/time-converter/' },
-            ].map(lnk => (
-              <Link key={lnk.href} href={lnk.href}
-                className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center">
-                {lnk.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">
+            <HubPageLayout
+        faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
+        links={[]}
+        linksTitle="Related Time Pages"
+        footerText="
         Time zone data powered by the IANA Time Zone Database. Indonesia: Asia/Jakarta (WIB UTC+7) · Asia/Makassar (WITA UTC+8) · Asia/Jayapura (WIT UTC+9).
-      </footer>
+      "
+      />
     </ContentPageWrapper>
   )
 }

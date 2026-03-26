@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
+import HubPageLayout from '@/components/HubPageLayout'
+import HubPageHeader from '@/components/HubPageHeader'
 import NigeriaClockClient from './NigeriaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
@@ -125,7 +126,6 @@ const breadcrumbSchema = {
   ],
 }
 
-const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function NigeriaTimePage() {
   return (
@@ -139,145 +139,25 @@ export default function NigeriaTimePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">
+      <HubPageHeader title="
         Current Time in Nigeria
-      </h1>
-      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
+      " subtitle="
         West Africa Time (WAT) · UTC+1 · No Daylight Saving Time
-      </p>
+      " />
 
       <NigeriaClockClient />
       <CountryFactsSection hubSlug="nigeria" />
 
       {/* WAT Explained */}
-      <section className="mt-4 mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Nigeria Time Zone — WAT Explained</h2>
-          <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
-            <p>
-              Nigeria uses <strong>West Africa Time (WAT)</strong>, which is UTC+1. All of Nigeria — from
-              Lagos on the Atlantic coast to Maiduguri near Lake Chad — operates on a single time zone.
-              This makes scheduling calls and meetings straightforward compared to countries with multiple zones.
-            </p>
-            <p>
-              <strong>Nigeria does not observe Daylight Saving Time.</strong> WAT is fixed at UTC+1
-              year-round. The practical consequence: Nigeria's offset from European countries changes by
-              one hour twice a year when Europe adjusts its clocks. For example, Nigeria and the Netherlands
-              are on the same time in winter (both UTC+1), but the Netherlands moves to UTC+2 in summer —
-              making it 1 hour ahead of Nigeria.
-            </p>
-            <p>
-              Nigeria is Africa's largest economy and most populous country. Its large diaspora in the UK,
-              US, and Canada creates significant demand for international calling and scheduling — which is
-              why Nigeria-related time queries are among the fastest-growing on time sites globally.
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
-              {[
-                { label: 'Time Zone', value: 'WAT' },
-                { label: 'UTC Offset', value: 'UTC+1' },
-                { label: 'Daylight Saving', value: 'No DST' },
-                { label: 'Number of TZs', value: '1 (nationwide)' },
-              ].map((item) => (
-                <div key={item.label} className="rounded-xl bg-slate-50 p-3 text-center">
-                  <div className="text-xs text-slate-500 mb-1">{item.label}</div>
-                  <div className="font-bold text-slate-800 text-sm">{item.value}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Quick Reference Table */}
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">WAT Quick Reference — When it is noon in Lagos</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-slate-200">
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">City / Region</th>
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">Time Zone</th>
-                  <th className="text-left py-2 font-medium text-slate-600">Local Time (when WAT = 12:00)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {[
-                  { city: 'New York', tz: 'EST (UTC−5)', local: '6:00 AM', dst: '7:00 AM EDT in summer' },
-                  { city: 'Los Angeles', tz: 'PST (UTC−8)', local: '3:00 AM', dst: '4:00 AM PDT in summer' },
-                  { city: 'Toronto', tz: 'EST (UTC−5)', local: '6:00 AM', dst: '7:00 AM EDT in summer' },
-                  { city: 'London', tz: 'GMT (UTC+0)', local: '11:00 AM', dst: '12:00 PM BST (same)' },
-                  { city: 'Amsterdam / Netherlands', tz: 'CET (UTC+1)', local: '12:00 PM (same)', dst: '1:00 PM CEST in summer' },
-                  { city: 'Berlin / Paris', tz: 'CET (UTC+1)', local: '12:00 PM (same)', dst: '1:00 PM CEST in summer' },
-                  { city: 'Nairobi', tz: 'EAT (UTC+3)', local: '2:00 PM', dst: 'No DST' },
-                  { city: 'Dubai', tz: 'GST (UTC+4)', local: '3:00 PM', dst: 'No DST' },
-                  { city: 'Singapore', tz: 'SGT (UTC+8)', local: '7:00 PM', dst: 'No DST' },
-                  { city: 'São Paulo', tz: 'BRT (UTC−3)', local: '8:00 AM', dst: 'No DST since 2019' },
-                ].map((row) => (
-                  <tr key={row.city}>
-                    <td className="py-2 pr-4 font-medium text-slate-700">{row.city}</td>
-                    <td className="py-2 pr-4 text-slate-500">{row.tz}</td>
-                    <td className="py-2 text-slate-700">
-                      {row.local}
-                      {row.dst !== 'No DST' && row.dst !== 'No DST since 2019' && (
-                        <span className="ml-2 text-xs text-slate-400">({row.dst})</span>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div>
-                <div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Internal links */}
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Nigeria Time Differences & Converters</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-            {[
-              { label: 'Lagos time', href: '/lagos/' },
-              { label: 'Abuja time', href: '/abuja/' },
-              { label: 'Lagos → London', href: '/time/lagos/london/' },
-              { label: 'Lagos → New York', href: '/time/lagos/new-york/' },
-              { label: 'Lagos → Netherlands', href: '/time/lagos/amsterdam/' },
-              { label: 'Lagos → Singapore', href: '/time/lagos/singapore/' },
-              { label: 'Lagos → Toronto', href: '/time/lagos/toronto/' },
-              { label: 'Nigeria country info', href: '/country/nigeria/' },
-              { label: 'Time converter tool', href: '/time-converter/' },
-            ].map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">
+            <HubPageLayout
+        faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
+        links={[]}
+        linksTitle="Related Time Pages"
+        footerText="
         Time zone data powered by the IANA Time Zone Database.
         Nigeria: Africa/Lagos (WAT, UTC+1). No DST observed.
-      </footer>
+      "
+      />
     </ContentPageWrapper>
   )
 }

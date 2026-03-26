@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
+import HubPageLayout from '@/components/HubPageLayout'
+import HubPageHeader from '@/components/HubPageHeader'
 import SingaporeClockClient from './SingaporeClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
@@ -73,7 +74,6 @@ const breadcrumbSchema = {
   ],
 }
 
-const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function SingaporeTimePage() {
   return (
@@ -81,89 +81,23 @@ export default function SingaporeTimePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">
+      <HubPageHeader title="
         Current Time in Singapore
-      </h1>
-      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
+      " subtitle="
         Singapore Standard Time (SGT) · UTC+8 · No Daylight Saving Time
-      </p>
+      " />
 
       <SingaporeClockClient />
       <CountryFactsSection hubSlug="singapore" />
 
-      <section className="mt-4 mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Singapore Time Zone — SGT Explained</h2>
-          <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
-            <p>
-              Singapore uses <strong>Singapore Standard Time (SGT, UTC+8)</strong>, fixed year-round with no
-              Daylight Saving Time. At roughly 1°N latitude — just north of the equator — Singapore experiences
-              minimal seasonal daylight variation, making clock changes unnecessary.
-            </p>
-            <p>
-              Interestingly, Singapore's geographic longitude (103°E) corresponds to UTC+6:52 in mean solar time.
-              Singapore officially moved from UTC+7:30 to UTC+8 in 1982 to align with Malaysia and the broader
-              regional business community. This makes Singapore one of a cluster of UTC+8 nations: China, Hong
-              Kong, Taiwan, Philippines, and Malaysia all share the same clock.
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
-              {[
-                { label: 'Time Zone', value: 'SGT' },
-                { label: 'UTC Offset', value: 'UTC+8' },
-                { label: 'Daylight Saving', value: 'No DST' },
-                { label: 'Number of TZs', value: '1 (city-state)' },
-              ].map(item => (
-                <div key={item.label} className="rounded-xl bg-slate-50 p-3 text-center">
-                  <div className="text-xs text-slate-500 mb-1">{item.label}</div>
-                  <div className="font-bold text-slate-800 text-sm">{item.value}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div>
-                <div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Singapore Times & Converters</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-            {[
-              { label: 'Singapore city time', href: '/singapore-city/' },
-              { label: 'Singapore → London', href: '/time/singapore/london/' },
-              { label: 'Singapore → New York', href: '/time/singapore/new-york/' },
-              { label: 'Singapore → Tokyo', href: '/time/singapore/tokyo/' },
-              { label: 'Singapore → Mumbai', href: '/time/singapore/mumbai/' },
-              { label: 'Singapore → Sydney', href: '/time/singapore/sydney/' },
-              { label: 'Singapore → Dubai', href: '/time/singapore/dubai/' },
-              { label: 'Singapore country info', href: '/country/singapore/' },
-              { label: 'Time converter tool', href: '/time-converter/' },
-            ].map(lnk => (
-              <Link key={lnk.href} href={lnk.href}
-                className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center">
-                {lnk.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">
+            <HubPageLayout
+        faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
+        links={[]}
+        linksTitle="Related Time Pages"
+        footerText="
         Time zone data powered by the IANA Time Zone Database. Singapore: Asia/Singapore (SGT, UTC+8). No DST.
-      </footer>
+      "
+      />
     </ContentPageWrapper>
   )
 }

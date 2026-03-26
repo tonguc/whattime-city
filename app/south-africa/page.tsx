@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
+import HubPageLayout from '@/components/HubPageLayout'
+import HubPageHeader from '@/components/HubPageHeader'
 import SouthAfricaClockClient from './SouthAfricaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
@@ -25,28 +26,21 @@ const faqSchema = {
 }
 
 const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://whattime.city/' }, { '@type': 'ListItem', position: 2, name: 'Time in South Africa', item: 'https://whattime.city/south-africa/' }] }
-const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function SouthAfricaTimePage() {
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in South Africa</h1>
-      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">South Africa Standard Time (SAST) · UTC+2 · No Daylight Saving Time</p>
+      <HubPageHeader title="Current Time in South Africa" subtitle="South Africa Standard Time (SAST) · UTC+2 · No Daylight Saving Time" />
       <SouthAfricaClockClient />
       <CountryFactsSection hubSlug="south-africa" />
-      <section className="mt-4 mb-4"><div className={card}>
-        <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-        <div className="space-y-3">{faqSchema.mainEntity.map((item, i) => (<div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4"><div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div><div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div></div>))}</div>
-      </div></section>
-      <section className="mb-4"><div className={card}>
-        <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">South Africa City Times & Converters</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-          {[{ label: 'Johannesburg time', href: '/johannesburg/' }, { label: 'Cape Town time', href: '/cape-town/' }, { label: 'Durban time', href: '/durban/' }, { label: 'Johannesburg → London', href: '/time/johannesburg/london/' }, { label: 'Johannesburg → New York', href: '/time/johannesburg/new-york/' }, { label: 'Johannesburg → Dubai', href: '/time/johannesburg/dubai/' }, { label: 'Johannesburg → Mumbai', href: '/time/johannesburg/mumbai/' }, { label: 'Time converter tool', href: '/time-converter/' }].map(lnk => (<Link key={lnk.href} href={lnk.href} className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center">{lnk.label}</Link>))}
-        </div>
-      </div></section>
-      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">Time zone data powered by the IANA Time Zone Database. South Africa: Africa/Johannesburg (SAST UTC+2, no DST).</footer>
+            <HubPageLayout
+        faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
+        links={[{ label: 'Johannesburg time', href: '/johannesburg/' }, { label: 'Cape Town time', href: '/cape-town/' }, { label: 'Durban time', href: '/durban/' }, { label: 'Johannesburg → London', href: '/time/johannesburg/london/' }, { label: 'Johannesburg → New York', href: '/time/johannesburg/new-york/' }, { label: 'Johannesburg → Dubai', href: '/time/johannesburg/dubai/' }, { label: 'Johannesburg → Mumbai', href: '/time/johannesburg/mumbai/' }, { label: 'Time converter tool', href: '/time-converter/' }]}
+        linksTitle="South Africa City Times & Converters"
+        footerText="Time zone data powered by the IANA Time Zone Database. South Africa: Africa/Johannesburg (SAST UTC+2, no DST)."
+      />
     </ContentPageWrapper>
   )
 }

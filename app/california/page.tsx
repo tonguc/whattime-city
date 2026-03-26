@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
+import HubPageLayout from '@/components/HubPageLayout'
+import HubPageHeader from '@/components/HubPageHeader'
 import CaliClockClient from './CaliClockClient'
 
 export const metadata: Metadata = {
@@ -126,7 +127,6 @@ const breadcrumbSchema = {
   ],
 }
 
-const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function CaliforniaTimePage() {
   return (
@@ -140,158 +140,24 @@ export default function CaliforniaTimePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">
+      <HubPageHeader title="
         Current Time in California
-      </h1>
-      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
+      " subtitle="
         Pacific Time (PT) · PST (UTC−8) in winter · PDT (UTC−7) during Daylight Saving Time
-      </p>
+      " />
 
       <CaliClockClient />
 
       {/* PST/PDT Explained */}
-      <section className="mt-4 mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">California Time Zone — PST & PDT Explained</h2>
-          <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
-            <p>
-              California operates on <strong>Pacific Time (PT)</strong>. The state observes two offsets
-              throughout the year: <strong>PST (Pacific Standard Time, UTC−8)</strong> from the first Sunday
-              in November to the second Sunday in March, and <strong>PDT (Pacific Daylight Time, UTC−7)</strong>{' '}
-              for the remaining seven months.
-            </p>
-            <p>
-              California is the <strong>westernmost major US time zone</strong> — Los Angeles is 3 hours behind
-              New York, 2 hours behind Chicago, and 1 hour behind Denver. This "last zone" position means that
-              business contacts in Asia and Europe must call early in their own morning to reach California
-              during working hours.
-            </p>
-            <p>
-              <strong>California attempted to eliminate the biannual clock change.</strong> Voters passed
-              Proposition 7 in November 2018, authorizing the state legislature to put California on permanent
-              Daylight Saving Time. However, federal law (the Uniform Time Act) requires Congressional approval
-              for states to observe permanent DST — and as of 2026, that approval has not come. California
-              continues to switch clocks twice per year.
-            </p>
-            <div className="overflow-x-auto mt-4">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-slate-200">
-                    <th className="text-left py-2 pr-4 font-medium text-slate-600">Period</th>
-                    <th className="text-left py-2 pr-4 font-medium text-slate-600">Abbreviation</th>
-                    <th className="text-left py-2 pr-4 font-medium text-slate-600">UTC Offset</th>
-                    <th className="text-left py-2 font-medium text-slate-600">Dates (approx.)</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100">
-                  {[
-                    { period: 'Standard Time', abbr: 'PST', utc: 'UTC−8', dates: 'Nov (1st Sun) → Mar (2nd Sun)' },
-                    { period: 'Daylight Saving Time', abbr: 'PDT', utc: 'UTC−7', dates: 'Mar (2nd Sun) → Nov (1st Sun)' },
-                  ].map((row) => (
-                    <tr key={row.abbr}>
-                      <td className="py-2 pr-4 font-medium text-slate-700">{row.period}</td>
-                      <td className="py-2 pr-4 text-slate-500">{row.abbr}</td>
-                      <td className="py-2 pr-4 text-slate-500">{row.utc}</td>
-                      <td className="py-2 text-slate-600">{row.dates}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Quick Reference Table */}
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">PST Quick Reference — When it is noon in Los Angeles</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-slate-200">
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">City / Region</th>
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">Time Zone</th>
-                  <th className="text-left py-2 font-medium text-slate-600">Local Time (when PST = 12:00)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {[
-                  { city: 'New York', tz: 'EST (UTC−5)', local: '3:00 PM', dst: '3:00 PM EDT (gap constant)' },
-                  { city: 'Chicago', tz: 'CST (UTC−6)', local: '2:00 PM', dst: '2:00 PM CDT (gap constant)' },
-                  { city: 'Denver', tz: 'MST (UTC−7)', local: '1:00 PM', dst: '1:00 PM MDT (gap constant)' },
-                  { city: 'London', tz: 'GMT (UTC+0)', local: '8:00 PM', dst: '8:00 PM BST (same gap)' },
-                  { city: 'Berlin / Paris', tz: 'CET (UTC+1)', local: '9:00 PM', dst: '9:00 PM CEST (same gap)' },
-                  { city: 'Dubai', tz: 'GST (UTC+4)', local: 'Midnight', dst: 'No DST' },
-                  { city: 'Mumbai (IST)', tz: 'IST (UTC+5:30)', local: '1:30 AM next day', dst: 'No DST' },
-                  { city: 'Singapore', tz: 'SGT (UTC+8)', local: '4:00 AM next day', dst: 'No DST' },
-                  { city: 'Tokyo', tz: 'JST (UTC+9)', local: '5:00 AM next day', dst: 'No DST' },
-                  { city: 'Sydney', tz: 'AEST (UTC+10)', local: '6:00 AM next day', dst: 'AEDT varies' },
-                ].map((row) => (
-                  <tr key={row.city}>
-                    <td className="py-2 pr-4 font-medium text-slate-700">{row.city}</td>
-                    <td className="py-2 pr-4 text-slate-500">{row.tz}</td>
-                    <td className="py-2 text-slate-700">
-                      {row.local}
-                      {row.dst !== 'No DST' && (
-                        <span className="ml-2 text-xs text-slate-400">({row.dst})</span>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div>
-                <div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Internal links */}
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">California City Times & Converters</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-            {[
-              { label: 'Los Angeles time', href: '/los-angeles/' },
-              { label: 'San Francisco time', href: '/san-francisco/' },
-              { label: 'San Diego time', href: '/san-diego/' },
-              { label: 'San Jose time', href: '/san-jose/' },
-              { label: 'Sacramento time', href: '/sacramento/' },
-              { label: 'LA → New York', href: '/time/los-angeles/new-york/' },
-              { label: 'LA → London', href: '/time/los-angeles/london/' },
-              { label: 'SF → Tokyo', href: '/time/san-francisco/tokyo/' },
-              { label: 'Time converter tool', href: '/time-converter/' },
-            ].map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">
+            <HubPageLayout
+        faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
+        links={[]}
+        linksTitle="Related Time Pages"
+        footerText="
         Time zone data powered by the IANA Time Zone Database.
         California: America/Los_Angeles (PST UTC−8 / PDT UTC−7). DST observed.
-      </footer>
+      "
+      />
     </ContentPageWrapper>
   )
 }

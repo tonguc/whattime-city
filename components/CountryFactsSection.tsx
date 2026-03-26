@@ -1,5 +1,8 @@
+'use client'
+
 import { countries } from '@/data'
 import { COUNTRY_HUB_SLUGS } from '@/data'
+import { useCityContext } from '@/lib/CityContext'
 
 const HUB_TO_COUNTRY: Record<string, string> = Object.fromEntries(
   Object.entries(COUNTRY_HUB_SLUGS).map(([countrySlug, hubSlug]) => [hubSlug, countrySlug])
@@ -55,9 +58,21 @@ interface Props {
 }
 
 export default function CountryFactsSection({ hubSlug }: Props) {
+  const { isLight } = useCityContext()
   const countrySlug = HUB_TO_COUNTRY[hubSlug]
   const country = countries.find(c => c.slug === countrySlug)
   if (!country) return null
+
+  const card = isLight
+    ? 'rounded-2xl border border-slate-200 bg-white p-6 mb-4'
+    : 'rounded-2xl border border-slate-700 bg-slate-800 p-6 mb-4'
+  const innerCard = isLight
+    ? 'rounded-xl bg-slate-50 border border-slate-100 px-4 py-3'
+    : 'rounded-xl bg-slate-700 border border-slate-600 px-4 py-3'
+  const heading = isLight ? 'text-slate-800' : 'text-white'
+  const body = isLight ? 'text-slate-600' : 'text-slate-300'
+  const label = isLight ? 'text-slate-400' : 'text-slate-400'
+  const value = isLight ? 'text-slate-800' : 'text-white'
 
   const facts = [
     { label: 'Capital',    value: country.capital },
@@ -71,34 +86,34 @@ export default function CountryFactsSection({ hubSlug }: Props) {
   return (
     <>
       {/* Key Facts */}
-      <section className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 mb-4">
-        <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">{country.name} — Key Facts</h2>
-        <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">{country.description}</p>
+      <section className={card}>
+        <h2 className={`text-xl font-semibold mb-4 ${heading}`}>{country.name} — Key Facts</h2>
+        <p className={`text-sm leading-relaxed mb-4 ${body}`}>{country.description}</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
           {facts.map(f => (
-            <div key={f.label} className="rounded-xl bg-slate-50 dark:bg-slate-700 border border-slate-100 dark:border-slate-600 px-4 py-3">
-              <div className="text-xs text-slate-400 dark:text-slate-400 font-medium uppercase tracking-wide mb-0.5">{f.label}</div>
-              <div className="text-sm font-semibold text-slate-800 dark:text-white">{f.value}</div>
+            <div key={f.label} className={innerCard}>
+              <div className={`text-xs font-medium uppercase tracking-wide mb-0.5 ${label}`}>{f.label}</div>
+              <div className={`text-sm font-semibold ${value}`}>{f.value}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* Business Hours + Best Time to Call */}
-      <section className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 mb-4">
-        <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Business Hours &amp; Best Time to Call</h2>
+      <section className={card}>
+        <h2 className={`text-xl font-semibold mb-4 ${heading}`}>Business Hours &amp; Best Time to Call</h2>
         <div className="space-y-3">
-          <div className="rounded-xl bg-slate-50 dark:bg-slate-700 border border-slate-100 dark:border-slate-600 p-4">
-            <div className="text-xs font-medium text-slate-400 uppercase tracking-wide mb-1">Business Hours</div>
-            <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{businessHours(country.continent, country.name)}</p>
+          <div className={innerCard + ' p-4'}>
+            <div className={`text-xs font-medium uppercase tracking-wide mb-1 ${label}`}>Business Hours</div>
+            <p className={`text-sm leading-relaxed ${body}`}>{businessHours(country.continent, country.name)}</p>
           </div>
-          <div className="rounded-xl bg-slate-50 dark:bg-slate-700 border border-slate-100 dark:border-slate-600 p-4">
-            <div className="text-xs font-medium text-slate-400 uppercase tracking-wide mb-1">Best Time to Call</div>
-            <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{bestTimeToCall(country.continent, country.name)}</p>
+          <div className={innerCard + ' p-4'}>
+            <div className={`text-xs font-medium uppercase tracking-wide mb-1 ${label}`}>Best Time to Call</div>
+            <p className={`text-sm leading-relaxed ${body}`}>{bestTimeToCall(country.continent, country.name)}</p>
           </div>
-          <div className="rounded-xl bg-slate-50 dark:bg-slate-700 border border-slate-100 dark:border-slate-600 p-4">
-            <div className="text-xs font-medium text-slate-400 uppercase tracking-wide mb-1">Daylight Saving Time</div>
-            <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{dstInfo(country.continent, country.name, country.timezones)}</p>
+          <div className={innerCard + ' p-4'}>
+            <div className={`text-xs font-medium uppercase tracking-wide mb-1 ${label}`}>Daylight Saving Time</div>
+            <p className={`text-sm leading-relaxed ${body}`}>{dstInfo(country.continent, country.name, country.timezones)}</p>
           </div>
         </div>
       </section>

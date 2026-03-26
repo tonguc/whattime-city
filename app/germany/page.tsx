@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
+import HubPageLayout from '@/components/HubPageLayout'
+import HubPageHeader from '@/components/HubPageHeader'
 import GermanyClockClient from './GermanyClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
@@ -126,7 +127,6 @@ const breadcrumbSchema = {
   ],
 }
 
-const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function GermanyTimePage() {
   return (
@@ -134,144 +134,24 @@ export default function GermanyTimePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">
+      <HubPageHeader title="
         Current Time in Germany
-      </h1>
-      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
+      " subtitle="
         Central European Time (CET) · UTC+1 in winter · CEST (UTC+2) during Central European Summer Time
-      </p>
+      " />
 
       <GermanyClockClient />
       <CountryFactsSection hubSlug="germany" />
 
-      <section className="mt-4 mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Germany Time Zone — CET & CEST Explained</h2>
-          <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
-            <p>
-              Germany uses <strong>Central European Time (CET, UTC+1)</strong> from late October to late March,
-              and <strong>Central European Summer Time (CEST, UTC+2)</strong> for the remainder of the year.
-              Germany shares this schedule with most of continental Europe — France, Italy, Spain, the Netherlands,
-              Poland, and Austria all observe the same CET/CEST transition simultaneously.
-            </p>
-            <p>
-              The EU attempted to abolish mandatory clock changes in 2019 following a public consultation in which
-              84% of respondents favoured ending the practice. However, the directive has been stalled in the
-              European Parliament due to disagreements over whether countries should permanently adopt standard
-              time (CET) or summer time (CEST). Germany continues to observe twice-yearly clock changes.
-            </p>
-            <div className="overflow-x-auto mt-4">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-slate-200">
-                    <th className="text-left py-2 pr-4 font-medium text-slate-600">Period</th>
-                    <th className="text-left py-2 pr-4 font-medium text-slate-600">Abbreviation</th>
-                    <th className="text-left py-2 pr-4 font-medium text-slate-600">UTC Offset</th>
-                    <th className="text-left py-2 font-medium text-slate-600">Dates (approx.)</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100">
-                  {[
-                    { period: 'Standard Time', abbr: 'CET', utc: 'UTC+1', dates: 'Last Sun Oct → Last Sun Mar' },
-                    { period: 'Summer Time', abbr: 'CEST', utc: 'UTC+2', dates: 'Last Sun Mar → Last Sun Oct' },
-                  ].map((row) => (
-                    <tr key={row.abbr}>
-                      <td className="py-2 pr-4 font-medium text-slate-700">{row.period}</td>
-                      <td className="py-2 pr-4 text-slate-500">{row.abbr}</td>
-                      <td className="py-2 pr-4 text-slate-500">{row.utc}</td>
-                      <td className="py-2 text-slate-600">{row.dates}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">CET Quick Reference — When it is noon in Berlin</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-slate-200">
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">City / Region</th>
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">Time Zone</th>
-                  <th className="text-left py-2 font-medium text-slate-600">Local Time (when CET = 12:00)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {[
-                  { city: 'London', tz: 'GMT (UTC+0)', local: '11:00 AM', dst: '12:00 PM BST (same as CET)' },
-                  { city: 'New York', tz: 'EST (UTC−5)', local: '6:00 AM', dst: '7:00 AM EDT in summer' },
-                  { city: 'Los Angeles', tz: 'PST (UTC−8)', local: '3:00 AM', dst: '4:00 AM PDT in summer' },
-                  { city: 'Lagos (Nigeria)', tz: 'WAT (UTC+1)', local: '12:00 PM (same)', dst: 'No DST' },
-                  { city: 'Dubai', tz: 'GST (UTC+4)', local: '3:00 PM', dst: 'No DST' },
-                  { city: 'Mumbai (IST)', tz: 'IST (UTC+5:30)', local: '4:30 PM', dst: 'No DST' },
-                  { city: 'Singapore', tz: 'SGT (UTC+8)', local: '7:00 PM', dst: 'No DST' },
-                  { city: 'Tokyo', tz: 'JST (UTC+9)', local: '8:00 PM', dst: 'No DST' },
-                  { city: 'Sydney', tz: 'AEST (UTC+10)', local: '9:00 PM', dst: '10:00 PM AEDT' },
-                ].map((row) => (
-                  <tr key={row.city}>
-                    <td className="py-2 pr-4 font-medium text-slate-700">{row.city}</td>
-                    <td className="py-2 pr-4 text-slate-500">{row.tz}</td>
-                    <td className="py-2 text-slate-700">
-                      {row.local}
-                      {row.dst !== 'No DST' && (
-                        <span className="ml-2 text-xs text-slate-400">({row.dst})</span>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div>
-                <div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Germany City Times & Converters</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-            {[
-              { label: 'Berlin time', href: '/berlin/' },
-              { label: 'Munich time', href: '/munich/' },
-              { label: 'Hamburg time', href: '/hamburg/' },
-              { label: 'Frankfurt time', href: '/frankfurt/' },
-              { label: 'Berlin → New York', href: '/time/berlin/new-york/' },
-              { label: 'Berlin → London', href: '/time/berlin/london/' },
-              { label: 'Berlin → Mumbai', href: '/time/berlin/mumbai/' },
-              { label: 'Germany country info', href: '/country/germany/' },
-              { label: 'Time converter tool', href: '/time-converter/' },
-            ].map((link) => (
-              <Link key={link.href} href={link.href}
-                className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center">
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">
+            <HubPageLayout
+        faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
+        links={[]}
+        linksTitle="Related Time Pages"
+        footerText="
         Time zone data powered by the IANA Time Zone Database.
         Germany: Europe/Berlin (CET UTC+1 / CEST UTC+2). DST observed.
-      </footer>
+      "
+      />
     </ContentPageWrapper>
   )
 }

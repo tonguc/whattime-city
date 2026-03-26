@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
+import HubPageLayout from '@/components/HubPageLayout'
+import HubPageHeader from '@/components/HubPageHeader'
 import DubaiClockClient from './DubaiClockClient'
 
 export const metadata: Metadata = {
@@ -125,7 +126,6 @@ const breadcrumbSchema = {
   ],
 }
 
-const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function DubaiTimePage() {
   return (
@@ -133,130 +133,23 @@ export default function DubaiTimePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">
+      <HubPageHeader title="
         Current Time in Dubai
-      </h1>
-      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
+      " subtitle="
         Gulf Standard Time (GST) · UTC+4 · No Daylight Saving Time
-      </p>
+      " />
 
       <DubaiClockClient />
 
-      <section className="mt-4 mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Dubai Time Zone — GST Explained</h2>
-          <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
-            <p>
-              Dubai and the UAE use <strong>Gulf Standard Time (GST)</strong>, which is UTC+4. The offset
-              is fixed year-round — the UAE has never observed Daylight Saving Time. Dubai shares the GST
-              offset with Oman; neighbouring Qatar and Bahrain use UTC+3, while Saudi Arabia uses UTC+3 as well.
-            </p>
-            <p>
-              Dubai's position at UTC+4 makes it a natural bridge time zone for business between Europe
-              and Asia. European mornings overlap with UAE business hours, and UAE afternoons overlap with
-              South and East Asian mornings. This geographic advantage has contributed to Dubai's role as
-              a global business and logistics hub.
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
-              {[
-                { label: 'Time Zone', value: 'GST' },
-                { label: 'UTC Offset', value: 'UTC+4' },
-                { label: 'Daylight Saving', value: 'No DST' },
-                { label: 'Number of TZs', value: '1 (UAE-wide)' },
-              ].map((item) => (
-                <div key={item.label} className="rounded-xl bg-slate-50 p-3 text-center">
-                  <div className="text-xs text-slate-500 mb-1">{item.label}</div>
-                  <div className="font-bold text-slate-800 text-sm">{item.value}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">GST Quick Reference — When it is noon in Dubai</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-slate-200">
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">City / Region</th>
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">Time Zone</th>
-                  <th className="text-left py-2 font-medium text-slate-600">Local Time (when GST = 12:00)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {[
-                  { city: 'Mumbai / New Delhi', tz: 'IST (UTC+5:30)', local: '1:30 PM', dst: 'No DST' },
-                  { city: 'Riyadh / Doha', tz: 'AST (UTC+3)', local: '11:00 AM', dst: 'No DST' },
-                  { city: 'Nairobi', tz: 'EAT (UTC+3)', local: '11:00 AM', dst: 'No DST' },
-                  { city: 'London', tz: 'GMT (UTC+0)', local: '8:00 AM', dst: '9:00 AM BST in summer' },
-                  { city: 'Berlin / Paris', tz: 'CET (UTC+1)', local: '9:00 AM', dst: '10:00 AM CEST in summer' },
-                  { city: 'New York', tz: 'EST (UTC−5)', local: '3:00 AM', dst: '4:00 AM EDT in summer' },
-                  { city: 'Los Angeles', tz: 'PST (UTC−8)', local: '12:00 AM (midnight)', dst: '1:00 AM PDT' },
-                  { city: 'Singapore', tz: 'SGT (UTC+8)', local: '4:00 PM', dst: 'No DST' },
-                  { city: 'Tokyo', tz: 'JST (UTC+9)', local: '5:00 PM', dst: 'No DST' },
-                ].map((row) => (
-                  <tr key={row.city}>
-                    <td className="py-2 pr-4 font-medium text-slate-700">{row.city}</td>
-                    <td className="py-2 pr-4 text-slate-500">{row.tz}</td>
-                    <td className="py-2 text-slate-700">
-                      {row.local}
-                      {row.dst !== 'No DST' && (
-                        <span className="ml-2 text-xs text-slate-400">({row.dst})</span>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div>
-                <div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Dubai & UAE City Times</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-            {[
-              { label: 'Dubai time', href: '/dubai-city/' },
-              { label: 'Abu Dhabi time', href: '/abu-dhabi/' },
-              { label: 'Sharjah time', href: '/sharjah/' },
-              { label: 'Dubai → London', href: '/time/dubai/london/' },
-              { label: 'Dubai → New York', href: '/time/dubai/new-york/' },
-              { label: 'Dubai → Mumbai', href: '/time/dubai/mumbai/' },
-              { label: 'Dubai → Singapore', href: '/time/dubai/singapore/' },
-              { label: 'UAE country info', href: '/country/united-arab-emirates/' },
-              { label: 'Time converter tool', href: '/time-converter/' },
-            ].map((link) => (
-              <Link key={link.href} href={link.href}
-                className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center">
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">
+            <HubPageLayout
+        faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
+        links={[]}
+        linksTitle="Related Time Pages"
+        footerText="
         Time zone data powered by the IANA Time Zone Database.
         Dubai / UAE: Asia/Dubai (GST, UTC+4). No DST observed.
-      </footer>
+      "
+      />
     </ContentPageWrapper>
   )
 }

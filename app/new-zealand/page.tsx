@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
+import HubPageLayout from '@/components/HubPageLayout'
+import HubPageHeader from '@/components/HubPageHeader'
 import NewZealandClockClient from './NewZealandClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
@@ -74,87 +75,23 @@ const breadcrumbSchema = {
   ],
 }
 
-const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function NewZealandTimePage() {
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in New Zealand</h1>
-      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">NZST (UTC+12) in winter · NZDT (UTC+13) in summer · Chatham Islands +45 min ahead</p>
+      <HubPageHeader title="Current Time in New Zealand" subtitle="NZST (UTC+12) in winter · NZDT (UTC+13) in summer · Chatham Islands +45 min ahead" />
       <NewZealandClockClient />
       <CountryFactsSection hubSlug="new-zealand" />
-      <section className="mt-4 mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">New Zealand Time Zones</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-slate-200">
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">Region</th>
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">NZ Winter (Apr–Sep)</th>
-                  <th className="text-left py-2 pr-4 font-medium text-slate-600">NZ Summer (Sep–Apr)</th>
-                  <th className="text-left py-2 font-medium text-slate-600">Cities / Islands</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {[
-                  { region: 'New Zealand mainland', winter: 'NZST (UTC+12)', summer: 'NZDT (UTC+13)', cities: 'Auckland, Wellington, Christchurch, Dunedin, Hamilton' },
-                  { region: 'Chatham Islands', winter: 'CHAST (UTC+12:45)', summer: 'CHADT (UTC+13:45)', cities: 'Chatham Island, Pitt Island (45 min ahead of mainland)' },
-                ].map(row => (
-                  <tr key={row.region}>
-                    <td className="py-2 pr-4 font-medium text-slate-700">{row.region}</td>
-                    <td className="py-2 pr-4 text-slate-500">{row.winter}</td>
-                    <td className="py-2 pr-4 text-slate-500">{row.summer}</td>
-                    <td className="py-2 text-slate-700">{row.cities}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="text-xs text-slate-400 mt-3">DST in New Zealand runs from the last Sunday in September to the first Sunday in April — opposite to the Northern Hemisphere. During NZ summer, clocks are at UTC+13 (mainland) and UTC+13:45 (Chatham).</p>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div>
-                <div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">New Zealand City Times & Converters</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-            {[
-              { label: 'Auckland time', href: '/auckland/' },
-              { label: 'Wellington time', href: '/wellington/' },
-              { label: 'Christchurch time', href: '/christchurch/' },
-              { label: 'Auckland → Sydney', href: '/time/auckland/sydney/' },
-              { label: 'Auckland → London', href: '/time/auckland/london/' },
-              { label: 'Auckland → New York', href: '/time/auckland/new-york/' },
-              { label: 'Auckland → Singapore', href: '/time/auckland/singapore/' },
-              { label: 'Auckland → Tokyo', href: '/time/auckland/tokyo/' },
-              { label: 'Time converter tool', href: '/time-converter/' },
-            ].map(lnk => (
-              <Link key={lnk.href} href={lnk.href}
-                className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center">
-                {lnk.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">
+            <HubPageLayout
+        faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
+        links={[]}
+        linksTitle="Related Time Pages"
+        footerText="
         Time zone data powered by the IANA Time Zone Database. New Zealand: Pacific/Auckland (NZST UTC+12 / NZDT UTC+13) · Pacific/Chatham (CHAST UTC+12:45 / CHADT UTC+13:45).
-      </footer>
+      "
+      />
     </ContentPageWrapper>
   )
 }

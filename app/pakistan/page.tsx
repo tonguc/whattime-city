@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
+import HubPageLayout from '@/components/HubPageLayout'
+import HubPageHeader from '@/components/HubPageHeader'
 import PakistanClockClient from './PakistanClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
@@ -74,78 +75,23 @@ const breadcrumbSchema = {
   ],
 }
 
-const card = 'rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6'
 
 export default function PakistanTimePage() {
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-1">Current Time in Pakistan</h1>
-      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Pakistan Standard Time (PKT) · UTC+5 · No Daylight Saving Time</p>
+      <HubPageHeader title="Current Time in Pakistan" subtitle="Pakistan Standard Time (PKT) · UTC+5 · No Daylight Saving Time" />
       <PakistanClockClient />
       <CountryFactsSection hubSlug="pakistan" />
-      <section className="mt-4 mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Pakistan Time Zone — PKT Explained</h2>
-          <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
-            <p>Pakistan uses <strong>Pakistan Standard Time (PKT, UTC+5)</strong>, fixed year-round with no Daylight Saving Time. PKT sits between Dubai (UTC+4) and India (UTC+5:30), making Pakistan 1 hour ahead of the UAE and 30 minutes behind India — one of the smallest cross-border time gaps in the world.</p>
-            <p>Pakistan has a large diaspora in the UK, US, and Middle East, making international calling windows a common need. UK callers reaching Pakistan during the day must call early morning GMT; US Eastern callers need to reach out in the late evening to overlap with Pakistan business hours.</p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
-              {[
-                { label: 'Time Zone', value: 'PKT' },
-                { label: 'UTC Offset', value: 'UTC+5' },
-                { label: 'Daylight Saving', value: 'No DST' },
-                { label: 'vs India (IST)', value: '−30 minutes' },
-              ].map(item => (
-                <div key={item.label} className="rounded-xl bg-slate-50 p-3 text-center">
-                  <div className="text-xs text-slate-500 mb-1">{item.label}</div>
-                  <div className="font-bold text-slate-800 text-sm">{item.value}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <div className="font-medium text-slate-800 dark:text-white text-sm mb-1">{item.name}</div>
-                <div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{item.acceptedAnswer.text}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className={card}>
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Pakistan City Times & Converters</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-            {[
-              { label: 'Karachi time', href: '/karachi/' },
-              { label: 'Lahore time', href: '/lahore/' },
-              { label: 'Islamabad time', href: '/islamabad/' },
-              { label: 'Karachi → London', href: '/time/karachi/london/' },
-              { label: 'Karachi → New York', href: '/time/karachi/new-york/' },
-              { label: 'Karachi → Dubai', href: '/time/karachi/dubai/' },
-              { label: 'Karachi → Mumbai', href: '/time/karachi/mumbai/' },
-              { label: 'Pakistan country info', href: '/country/pakistan/' },
-              { label: 'Time converter tool', href: '/time-converter/' },
-            ].map(lnk => (
-              <Link key={lnk.href} href={lnk.href}
-                className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-500 transition-colors text-center">
-                {lnk.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-      <footer className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 mb-4">
+            <HubPageLayout
+        faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
+        links={[]}
+        linksTitle="Related Time Pages"
+        footerText="
         Time zone data powered by the IANA Time Zone Database. Pakistan: Asia/Karachi (PKT, UTC+5). No DST.
-      </footer>
+      "
+      />
     </ContentPageWrapper>
   )
 }
