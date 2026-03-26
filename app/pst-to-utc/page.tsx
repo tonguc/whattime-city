@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import ContentPageWrapper from '@/components/ContentPageWrapper'
-import TZPairClient, { TZPairConfig } from '@/components/TZPairClient'
+import ConverterPageShell from '@/components/ConverterPageShell'
+import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
   title: 'PST to UTC — Pacific Time to UTC Converter',
@@ -72,58 +72,26 @@ const faqSchema = {
 
 export default function PSTtoUTC() {
   return (
-    <ContentPageWrapper>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">
-        PST to UTC Converter
-      </h1>
-      <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-        Pacific Standard Time → Coordinated Universal Time · PST is <strong>8 hours behind</strong> UTC
-      </p>
-
-      <TZPairClient config={config} />
-
-      <section className="mt-4 mb-4">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">PST vs UTC — What You Need to Know</h2>
-          <div className="space-y-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-            <p>
-              <strong className="text-slate-700 dark:text-slate-200">PST (Pacific Standard Time)</strong> is UTC-8, covering California,
+    <ConverterPageShell
+      title="PST to UTC Converter"
+      subtitle={<>Pacific Standard Time → Coordinated Universal Time · PST is <strong>8 hours behind</strong> UTC</>}
+      config={config}
+      infoTitle="PST vs UTC — What You Need to Know"
+      infoBody={<>
+        <p>
+              <strong>PST (Pacific Standard Time)</strong> is UTC-8, covering California,
               Washington, Oregon, and Nevada. From March to November, the West Coast uses <strong>PDT (UTC-7)</strong>.
             </p>
             <p>
-              <strong className="text-slate-700 dark:text-slate-200">UTC (Coordinated Universal Time)</strong> is the global standard,
+              <strong>UTC (Coordinated Universal Time)</strong> is the global standard,
               used in servers, APIs, aviation, and international scheduling. It never observes DST.
             </p>
             <p>
               Silicon Valley and Seattle teams often work in PT while coordinating with global systems in UTC.
               A 9 AM standup in San Francisco is 17:00 UTC in winter — a useful anchor for global teams.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-4">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <h3 className="font-semibold text-slate-800 dark:text-white text-sm mb-1">{item.name}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300">{item.acceptedAnswer.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/50 text-xs text-slate-500 dark:text-slate-400">
-        Timezone data sourced from{' '}
-        <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">
-          IANA Time Zone Database
-        </a>
-        . Last updated March 2026.
-      </footer>
-    </ContentPageWrapper>
+      </>}
+      faqSchema={faqSchema}
+    />
   )
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import ContentPageWrapper from '@/components/ContentPageWrapper'
-import TZPairClient, { TZPairConfig } from '@/components/TZPairClient'
+import ConverterPageShell from '@/components/ConverterPageShell'
+import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
   title: 'JST to EST — Japan to Eastern Time Converter',
@@ -72,18 +72,13 @@ const faqSchema = {
 
 export default function JstToEstPage() {
   return (
-    <ContentPageWrapper>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800">
-        JST to EST Converter
-      </h1>
-      <p className="text-lg text-slate-600 mb-6" dangerouslySetInnerHTML={{ __html: 'Japan Standard Time → Eastern Standard Time · JST is <strong>14 hours ahead</strong> of EST' }} />
-      <TZPairClient config={config} />
-      <section className="mt-4 mb-4">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">JST vs EST — What You Need to Know</h2>
-          <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
-            <p dangerouslySetInnerHTML={{ __html: '<strong>Japan Standard Time (JST)</strong> is UTC+9. Japan does not observe Daylight Saving Time — JST is fixed year-round.' }} />
+    <ConverterPageShell
+      title="JST to EST Converter"
+      subtitle={<>Japan Standard Time → Eastern Standard Time · JST is <strong>14 hours ahead</strong> of EST</>}
+      config={config}
+      infoTitle="JST vs EST — What You Need to Know"
+      infoBody={<>
+        <p dangerouslySetInnerHTML={{ __html: '<strong>Japan Standard Time (JST)</strong> is UTC+9. Japan does not observe Daylight Saving Time — JST is fixed year-round.' }} />
             <p dangerouslySetInnerHTML={{ __html: '<strong>Eastern Standard Time (EST)</strong> is UTC-5 (EDT: UTC-4 from March to November).' }} />
             <p dangerouslySetInnerHTML={{ __html: 'The 14-hour gap makes Japan–US East Coast scheduling challenging. The <strong>best overlap window</strong> is the evening in New York aligning with the Japan morning: <strong>8:00–11:00 PM EST = 10:00 AM–1:00 PM JST next day</strong>. Alternatively, Japan end-of-day (5:00–7:00 PM JST) = 3:00–5:00 AM EST, which rarely works.' }} />
             <p dangerouslySetInnerHTML={{ __html: 'Japanese business with the US East Coast relies heavily on early-morning calls in New York.' }} />
@@ -91,25 +86,8 @@ export default function JstToEstPage() {
               <strong className="text-amber-700">Note on DST shift:</strong>
               <p className="text-amber-700 mt-1">The gap changes when the US observes EDT (March–November): 14h → 13h. Japan stays at UTC+9 year-round with no DST.</p>
             </div>
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <h3 className="font-semibold text-slate-800 text-sm mb-1">{item.name}</h3>
-                <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <footer className="rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500">
-        Timezone data sourced from <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">IANA Time Zone Database</a>. Last updated March 2026.
-      </footer>
-    </ContentPageWrapper>
+      </>}
+      faqSchema={faqSchema}
+    />
   )
 }

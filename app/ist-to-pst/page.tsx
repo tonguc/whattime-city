@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import ContentPageWrapper from '@/components/ContentPageWrapper'
-import TZPairClient, { TZPairConfig } from '@/components/TZPairClient'
+import ConverterPageShell from '@/components/ConverterPageShell'
+import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
   title: 'IST to PST — India to Pacific Time Converter',
@@ -72,18 +72,13 @@ const faqSchema = {
 
 export default function IstToPstPage() {
   return (
-    <ContentPageWrapper>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800">
-        IST to PST Converter
-      </h1>
-      <p className="text-lg text-slate-600 mb-6" dangerouslySetInnerHTML={{ __html: 'India Standard Time → Pacific Standard Time · IST is <strong>13.5 hours ahead</strong> of PST' }} />
-      <TZPairClient config={config} />
-      <section className="mt-4 mb-4">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">IST vs PST — What You Need to Know</h2>
-          <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
-            <p dangerouslySetInnerHTML={{ __html: '<strong>India Standard Time (IST)</strong> is UTC+5:30. India does not observe DST, so IST is fixed year-round.' }} />
+    <ConverterPageShell
+      title="IST to PST Converter"
+      subtitle={<>India Standard Time → Pacific Standard Time · IST is <strong>13.5 hours ahead</strong> of PST</>}
+      config={config}
+      infoTitle="IST vs PST — What You Need to Know"
+      infoBody={<>
+        <p dangerouslySetInnerHTML={{ __html: '<strong>India Standard Time (IST)</strong> is UTC+5:30. India does not observe DST, so IST is fixed year-round.' }} />
             <p dangerouslySetInnerHTML={{ __html: '<strong>Pacific Standard Time (PST)</strong> is UTC-8. California, Oregon, Washington, and Nevada observe PDT (UTC-7) from March to November.' }} />
             <p dangerouslySetInnerHTML={{ __html: 'The 13.5-hour gap makes India–West Coast scheduling especially challenging. The best window is the <strong>end of India day / early West Coast morning</strong>: 8:00–10:30 PM IST = 6:30–9:00 AM PST. During US Daylight Time (PDT), the window shifts: 8 PM IST = 7:30 AM PDT.' }} />
             <p dangerouslySetInnerHTML={{ __html: "India's IT industry (Bangalore, Hyderabad, Pune) commonly serves US West Coast clients, making this time conversion one of the most important for the global tech industry." }} />
@@ -91,25 +86,8 @@ export default function IstToPstPage() {
               <strong className="text-amber-700">Note on DST shift:</strong>
               <p className="text-amber-700 mt-1">The gap changes when the US observes PDT (March–November): 13.5h → 12.5h. India stays at UTC+5:30 year-round.</p>
             </div>
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <h3 className="font-semibold text-slate-800 text-sm mb-1">{item.name}</h3>
-                <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <footer className="rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500">
-        Timezone data sourced from <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">IANA Time Zone Database</a>. Last updated March 2026.
-      </footer>
-    </ContentPageWrapper>
+      </>}
+      faqSchema={faqSchema}
+    />
   )
 }

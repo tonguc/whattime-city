@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import ContentPageWrapper from '@/components/ContentPageWrapper'
-import TZPairClient, { TZPairConfig } from '@/components/TZPairClient'
+import ConverterPageShell from '@/components/ConverterPageShell'
+import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
   title: 'EST to MST — Eastern to Mountain Time Converter',
@@ -64,57 +64,25 @@ const faqSchema = {
 
 export default function ESTtoMST() {
   return (
-    <ContentPageWrapper>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">
-        EST to MST Converter
-      </h1>
-      <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-        Eastern Standard Time → Mountain Standard Time · EST is <strong>2 hours ahead</strong> of MST
-      </p>
-
-      <TZPairClient config={config} />
-
-      <section className="mt-4 mb-4">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">EST vs MST — What You Need to Know</h2>
-          <div className="space-y-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-            <p>
-              <strong className="text-slate-700 dark:text-slate-200">Eastern Standard Time (EST)</strong> is UTC-5, covering the US East Coast.
+    <ConverterPageShell
+      title="EST to MST Converter"
+      subtitle={<>Eastern Standard Time → Mountain Standard Time · EST is <strong>2 hours ahead</strong> of MST</>}
+      config={config}
+      infoTitle="EST vs MST — What You Need to Know"
+      infoBody={<>
+        <p>
+              <strong>Eastern Standard Time (EST)</strong> is UTC-5, covering the US East Coast.
               During summer it shifts to <strong>EDT (UTC-4)</strong>.
             </p>
             <p>
-              <strong className="text-slate-700 dark:text-slate-200">Mountain Standard Time (MST)</strong> is UTC-7, covering Colorado, Utah, Montana, and neighboring states.
+              <strong>Mountain Standard Time (MST)</strong> is UTC-7, covering Colorado, Utah, Montana, and neighboring states.
               During Daylight Saving Time it becomes <strong>MDT (UTC-6)</strong>.
             </p>
             <p>
               The difference is always <strong>2 hours</strong>. A 5 PM ET close of business is 3 PM MT — giving Mountain Time employees a bit more afternoon flexibility.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-4">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <h3 className="font-semibold text-slate-800 dark:text-white text-sm mb-1">{item.name}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300">{item.acceptedAnswer.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/50 text-xs text-slate-500 dark:text-slate-400">
-        Timezone data sourced from{' '}
-        <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">
-          IANA Time Zone Database
-        </a>
-        . Last updated March 2026.
-      </footer>
-    </ContentPageWrapper>
+      </>}
+      faqSchema={faqSchema}
+    />
   )
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import ContentPageWrapper from '@/components/ContentPageWrapper'
-import TZPairClient, { TZPairConfig } from '@/components/TZPairClient'
+import ConverterPageShell from '@/components/ConverterPageShell'
+import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
   title: 'UTC to PST — Universal Time to Pacific Time Converter',
@@ -72,41 +72,28 @@ const faqSchema = {
 
 export default function UTCtoPST() {
   return (
-    <ContentPageWrapper>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">
-        UTC to PST Converter
-      </h1>
-      <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-        Coordinated Universal Time → Pacific Standard Time · UTC is <strong>8 hours ahead</strong> of PST
-      </p>
-
-      <TZPairClient config={config} />
-
-      <section className="mt-4 mb-4">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">UTC vs PST — What You Need to Know</h2>
-          <div className="space-y-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-            <p>
-              <strong className="text-slate-700 dark:text-slate-200">UTC (Coordinated Universal Time)</strong> is the global time standard
+    <ConverterPageShell
+      title="UTC to PST Converter"
+      subtitle={<>Coordinated Universal Time → Pacific Standard Time · UTC is <strong>8 hours ahead</strong> of PST</>}
+      config={config}
+      infoTitle="UTC vs PST — What You Need to Know"
+      infoBody={<>
+        <p>
+              <strong>UTC (Coordinated Universal Time)</strong> is the global time standard
               used in aviation, internet protocols, and international business. It has no Daylight Saving Time.
             </p>
             <p>
-              <strong className="text-slate-700 dark:text-slate-200">Pacific Standard Time (PST)</strong> is UTC-8, covering California,
+              <strong>Pacific Standard Time (PST)</strong> is UTC-8, covering California,
               Washington, Oregon, and Nevada. From March to November, the West Coast uses <strong>PDT (UTC-7)</strong>.
             </p>
             <p>
               Tech companies in Silicon Valley and Seattle often schedule meetings in PT, while global teams work in UTC.
               Knowing this 7–8 hour gap is essential for international scheduling.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-4">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Quick UTC to PST Reference</h2>
-          <div className="overflow-x-auto">
+      </>}
+      extraSections={[{
+        title: "Quick UTC to PST Reference",
+        content: <><div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-slate-200">
@@ -133,31 +120,9 @@ export default function UTCtoPST() {
                 ))}
               </tbody>
             </table>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-4">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <h3 className="font-semibold text-slate-800 dark:text-white text-sm mb-1">{item.name}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300">{item.acceptedAnswer.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/50 text-xs text-slate-500 dark:text-slate-400">
-        Timezone data sourced from{' '}
-        <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">
-          IANA Time Zone Database
-        </a>
-        . Last updated March 2026.
-      </footer>
-    </ContentPageWrapper>
+          </div></>,
+      }]}
+      faqSchema={faqSchema}
+    />
   )
 }

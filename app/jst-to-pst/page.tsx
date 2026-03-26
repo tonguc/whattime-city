@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import ContentPageWrapper from '@/components/ContentPageWrapper'
-import TZPairClient, { TZPairConfig } from '@/components/TZPairClient'
+import ConverterPageShell from '@/components/ConverterPageShell'
+import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
   title: 'JST to PST — Japan Standard Time to Pacific Time Converter',
@@ -35,37 +35,17 @@ const faqSchema = {
 
 export default function JSTtoPST() {
   return (
-    <ContentPageWrapper>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">JST to PST Converter</h1>
-      <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">Japan Standard Time → Pacific Standard Time · JST is <strong>17 hours ahead</strong> of PST</p>
-      <TZPairClient config={config} />
-      <section className="mt-4 mb-4">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">JST vs PST — Tokyo to Los Angeles</h2>
-          <div className="space-y-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-            <p><strong className="text-slate-700 dark:text-slate-200">JST (Japan Standard Time)</strong> is UTC+9. Japan has no Daylight Saving Time — clocks never change, making JST one of the world&apos;s most stable time zones.</p>
-            <p><strong className="text-slate-700 dark:text-slate-200">PST (Pacific Standard Time)</strong> is UTC-8. The US West Coast uses PDT (UTC-7) from March to November. This shift moves the Tokyo–LA gap from 17 hours (winter) to 16 hours (summer).</p>
+    <ConverterPageShell
+      title="JST to PST Converter"
+      subtitle={<>Japan Standard Time → Pacific Standard Time · JST is <strong>17 hours ahead</strong> of PST</>}
+      config={config}
+      infoTitle="JST vs PST — Tokyo to Los Angeles"
+      infoBody={<>
+        <p><strong>JST (Japan Standard Time)</strong> is UTC+9. Japan has no Daylight Saving Time — clocks never change, making JST one of the world&apos;s most stable time zones.</p>
+            <p><strong>PST (Pacific Standard Time)</strong> is UTC-8. The US West Coast uses PDT (UTC-7) from March to November. This shift moves the Tokyo–LA gap from 17 hours (winter) to 16 hours (summer).</p>
             <p>The Japan–West Coast corridor is critical for tech industry (Sony, Toyota, Nintendo coordinate with Silicon Valley), gaming, and automotive supply chains. The 16–17 hour gap means most collaboration happens asynchronously.</p>
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <h3 className="font-semibold text-slate-800 dark:text-white text-sm mb-1">{item.name}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300">{item.acceptedAnswer.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/50 text-xs text-slate-500 dark:text-slate-400">
-        Timezone data sourced from <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">IANA Time Zone Database</a>. Last updated March 2026.
-      </footer>
-    </ContentPageWrapper>
+      </>}
+      faqSchema={faqSchema}
+    />
   )
 }

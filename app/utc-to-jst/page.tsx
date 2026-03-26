@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import ContentPageWrapper from '@/components/ContentPageWrapper'
-import TZPairClient, { TZPairConfig } from '@/components/TZPairClient'
+import ConverterPageShell from '@/components/ConverterPageShell'
+import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
   title: 'UTC to JST — UTC to Japan Standard Time Converter',
@@ -34,37 +34,17 @@ const faqSchema = {
 
 export default function UTCtoJST() {
   return (
-    <ContentPageWrapper>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">UTC to JST Converter</h1>
-      <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">Coordinated Universal Time → Japan Standard Time · UTC is <strong>9 hours behind</strong> JST</p>
-      <TZPairClient config={config} />
-      <section className="mt-4 mb-4">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">UTC vs JST — Converting to Japan Time</h2>
-          <div className="space-y-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-            <p><strong className="text-slate-700 dark:text-slate-200">UTC (UTC+0)</strong> — The world's primary time standard, used in software, aviation, and international communications.</p>
-            <p><strong className="text-slate-700 dark:text-slate-200">JST (UTC+9)</strong> — Japan Standard Time. Fixed offset with no DST — the same year-round. One of the most stable and developer-friendly time zones globally.</p>
+    <ConverterPageShell
+      title="UTC to JST Converter"
+      subtitle={<>Coordinated Universal Time → Japan Standard Time · UTC is <strong>9 hours behind</strong> JST</>}
+      config={config}
+      infoTitle="UTC vs JST — Converting to Japan Time"
+      infoBody={<>
+        <p><strong>UTC (UTC+0)</strong> — The world's primary time standard, used in software, aviation, and international communications.</p>
+            <p><strong>JST (UTC+9)</strong> — Japan Standard Time. Fixed offset with no DST — the same year-round. One of the most stable and developer-friendly time zones globally.</p>
             <p>Quick reference: UTC + 9h = JST. UTC midnight = 9 AM JST. UTC noon = 9 PM JST. Japanese business hours (9 AM–6 PM JST) correspond to UTC 00:00–09:00.</p>
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <h3 className="font-semibold text-slate-800 dark:text-white text-sm mb-1">{item.name}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300">{item.acceptedAnswer.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/50 text-xs text-slate-500 dark:text-slate-400">
-        Timezone data sourced from <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">IANA Time Zone Database</a>. Last updated March 2026.
-      </footer>
-    </ContentPageWrapper>
+      </>}
+      faqSchema={faqSchema}
+    />
   )
 }

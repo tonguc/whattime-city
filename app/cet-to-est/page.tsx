@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import ContentPageWrapper from '@/components/ContentPageWrapper'
-import TZPairClient, { TZPairConfig } from '@/components/TZPairClient'
+import ConverterPageShell from '@/components/ConverterPageShell'
+import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
   title: 'CET to EST — Central European to Eastern Time Converter',
@@ -80,43 +80,21 @@ const faqSchema = {
 
 export default function CetToEstPage() {
   return (
-    <ContentPageWrapper>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800">
-        CET to EST Converter
-      </h1>
-      <p className="text-lg text-slate-600 mb-6" dangerouslySetInnerHTML={{ __html: 'Central European Time → Eastern Standard Time · CET is <strong>6 hours ahead</strong> of EST' }} />
-      <TZPairClient config={config} />
-      <section className="mt-4 mb-4">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">CET vs EST — What You Need to Know</h2>
-          <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
-            <p dangerouslySetInnerHTML={{ __html: '<strong>Central European Time (CET)</strong> is UTC+1. During summer, it becomes <strong>CEST (UTC+2)</strong> when most of Europe observes Daylight Saving Time (last Sunday in March → last Sunday in October).' }} />
+    <ConverterPageShell
+      title="CET to EST Converter"
+      subtitle={<>Central European Time → Eastern Standard Time · CET is <strong>6 hours ahead</strong> of EST</>}
+      config={config}
+      infoTitle="CET vs EST — What You Need to Know"
+      infoBody={<>
+        <p dangerouslySetInnerHTML={{ __html: '<strong>Central European Time (CET)</strong> is UTC+1. During summer, it becomes <strong>CEST (UTC+2)</strong> when most of Europe observes Daylight Saving Time (last Sunday in March → last Sunday in October).' }} />
             <p dangerouslySetInnerHTML={{ __html: '<strong>Eastern Standard Time (EST)</strong> is UTC-5. During summer, it becomes <strong>EDT (UTC-4)</strong> from the second Sunday in March to the first Sunday in November.' }} />
             <p dangerouslySetInnerHTML={{ __html: 'The standard gap is <strong>6 hours</strong>. The best overlap for business calls is <strong>9 AM – 12 PM EST = 3 PM – 6 PM CET</strong> — a practical 3-hour window where both sides are comfortably within working hours.' }} />
             <div className="rounded-lg bg-amber-50 border border-amber-200 p-4 text-sm">
               <strong className="text-amber-700">DST transition gap:</strong>
               <p className="text-amber-700 mt-1">In mid-March, the US switches to EDT about 2 weeks before Europe switches to CEST — briefly creating a 5-hour gap. In late October, Europe switches back to CET 1 week before the US switches back to EST — briefly creating a 7-hour gap.</p>
             </div>
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <h3 className="font-semibold text-slate-800 text-sm mb-1">{item.name}</h3>
-                <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <footer className="rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500">
-        Timezone data sourced from <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">IANA Time Zone Database</a>. Last updated March 2026.
-      </footer>
-    </ContentPageWrapper>
+      </>}
+      faqSchema={faqSchema}
+    />
   )
 }
