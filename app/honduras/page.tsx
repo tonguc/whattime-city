@@ -1,0 +1,44 @@
+import type { Metadata } from 'next'
+import ContentPageWrapper from '@/components/ContentPageWrapper'
+import HubPageLayout from '@/components/HubPageLayout'
+import HubPageHeader from '@/components/HubPageHeader'
+import HondurasClockClient from './HondurasClockClient'
+import CountryFactsSection from '@/components/CountryFactsSection'
+
+export const metadata: Metadata = {
+  title: 'Time in Honduras Now — CST (UTC-6) · Tegucigalpa',
+  description: 'What time is it in Honduras right now? Live Tegucigalpa clock, time zone info (CST (UTC-6)), best time to call, and time difference with major cities.',
+  keywords: ['time in honduras', 'honduras time now', 'what time is it in honduras', 'tegucigalpa time', 'honduras time zone'],
+  alternates: { canonical: 'https://whattime.city/honduras/' },
+  openGraph: { title: 'Current Time in Honduras — CST · Tegucigalpa', description: 'Live Honduras time. Tegucigalpa on CST (UTC-6).', type: 'website', url: 'https://whattime.city/honduras/', siteName: 'whattime.city' },
+}
+
+const faqSchema = {
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What time is it in Honduras right now?', acceptedAnswer: { '@type': 'Answer', text: 'Honduras uses CST (UTC-6). Tegucigalpa is the capital. The live clock above shows the current local time in Honduras.' } },
+    { '@type': 'Question', name: 'What time zone is Tegucigalpa in?', acceptedAnswer: { '@type': 'Answer', text: 'Tegucigalpa uses CST (UTC-6). The IANA time zone identifier is America/Tegucigalpa. ' } },
+    { '@type': 'Question', name: 'Does Honduras observe Daylight Saving Time?', acceptedAnswer: { '@type': 'Answer', text: 'Check the live clock above for current offset. Many countries observe Daylight Saving Time seasonally — verify the current Honduras offset in the time difference table.' } },
+    { '@type': 'Question', name: 'What is the best time to call Honduras?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to call Honduras is during local business hours: Monday–Friday, 9 AM–5 PM CST. Check the Best Time to Call table on this page for your time zone.' } },
+  ],
+}
+
+const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://whattime.city/' }, { '@type': 'ListItem', position: 2, name: 'Time in Honduras', item: 'https://whattime.city/honduras/' }] }
+
+export default function HondurasTimePage() {
+  return (
+    <ContentPageWrapper>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <HubPageHeader title="Current Time in Honduras" subtitle="CST (UTC-6) · Tegucigalpa · UTC-6" />
+      <HondurasClockClient />
+      <CountryFactsSection hubSlug="honduras" />
+      <HubPageLayout
+        faqItems={faqSchema.mainEntity.map(i => ({ name: i.name, text: i.acceptedAnswer.text }))}
+        links={[{"label":"New York time","href":"/new-york/"},{"label":"Miami time","href":"/miami/"},{"label":"Los Angeles time","href":"/los-angeles/"},{"label":"Time in Brazil","href":"/brazil/"},{"label":"Time in Mexico","href":"/mexico/"},{"label":"Time in Argentina","href":"/argentina/"},{"label":"Time converter tool","href":"/time-converter/"}]}
+        linksTitle="Honduras & Related Times"
+        footerText="Time zone data powered by the IANA Time Zone Database. Honduras: America/Tegucigalpa (CST (UTC-6))."
+      />
+    </ContentPageWrapper>
+  )
+}
