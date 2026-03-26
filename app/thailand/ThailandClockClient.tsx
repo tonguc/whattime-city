@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 import { getFlagUrl } from '@/shared/utils'
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
@@ -55,7 +54,6 @@ export default function ThailandClockClient() {
         <div className={`font-mono text-5xl sm:text-6xl font-bold tracking-tight mt-3 ${tp}`}>{mounted ? th.time : '--:--:--'}</div>
         <div className={`text-sm mt-1 ${ts}`}>{mounted ? th.date : ''}</div>
       </div>
-      <ClockComparisonSection primaryTz={TH_TZ} countryName="Thailand" />
     </div>
   )
 }

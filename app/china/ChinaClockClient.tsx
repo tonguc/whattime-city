@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
@@ -100,8 +99,6 @@ export default function ChinaClockClient() {
           Beijing · Shanghai · Shenzhen · 1 nationwide time zone
         </div>
       </div>
-
-            <ClockComparisonSection primaryTz={CST_TZ} countryName="China" />
 
       <div className={`rounded-2xl p-5 ${card}`}>
         <h2 className={`text-lg font-semibold mb-3 ${head}`}>Best Time to Call China</h2>

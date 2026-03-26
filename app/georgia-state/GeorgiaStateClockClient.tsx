@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
@@ -68,8 +67,6 @@ export default function GeorgiaStateClockClient() {
         </div>
         <div className={`text-sm mt-1 ${textSecondary}`}>{mounted ? ga.date : ''}</div>
       </div>
-
-      <ClockComparisonSection primaryTz={GA_TZ} countryName="Georgia" />
     </div>
   )
 }

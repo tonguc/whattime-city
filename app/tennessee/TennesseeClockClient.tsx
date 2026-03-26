@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
 const CT_TZ = 'America/Chicago'   // Nashville, Memphis — Central (most of state)
@@ -65,7 +64,6 @@ export default function TennesseeClockClient() {
           </div>
         )}
       </div>
-      <ClockComparisonSection primaryTz={CT_TZ} countryName="Tennessee" />
     </div>
   )
 }

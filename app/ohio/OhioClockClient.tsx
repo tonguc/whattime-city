@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
@@ -68,8 +67,6 @@ export default function OhioClockClient() {
         </div>
         <div className={`text-sm mt-1 ${textSecondary}`}>{mounted ? oh.date : ''}</div>
       </div>
-
-      <ClockComparisonSection primaryTz={OH_TZ} countryName="Ohio" />
     </div>
   )
 }

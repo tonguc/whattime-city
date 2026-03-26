@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 import { getFlagUrl } from '@/shared/utils'
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
@@ -68,7 +67,6 @@ export default function MoroccoClockClient() {
         <div className={`text-sm mt-1 ${ts}`}>{mounted ? ma.date : ''}</div>
         <p className={`text-xs mt-3 ${ts}`}>⚠️ Morocco suspends DST during Ramadan, reverting to WET (UTC+0) for approximately one month each year regardless of season.</p>
       </div>
-      <ClockComparisonSection primaryTz={MA_TZ} countryName="Morocco" />
     </div>
   )
 }

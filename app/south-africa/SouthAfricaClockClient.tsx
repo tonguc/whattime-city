@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 import { getFlagUrl } from '@/shared/utils'
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
@@ -55,7 +54,6 @@ export default function SouthAfricaClockClient() {
         <div className={`font-mono text-5xl sm:text-6xl font-bold tracking-tight mt-3 ${tp}`}>{mounted ? za.time : '--:--:--'}</div>
         <div className={`text-sm mt-1 ${ts}`}>{mounted ? za.date : ''}</div>
       </div>
-      <ClockComparisonSection primaryTz={ZA_TZ} countryName="South Africa" />
     </div>
   )
 }

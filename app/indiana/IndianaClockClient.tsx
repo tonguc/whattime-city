@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
 const ET_TZ = 'America/Indiana/Indianapolis'  // Most of Indiana — Eastern
@@ -65,7 +64,6 @@ export default function IndianaClockClient() {
           </div>
         )}
       </div>
-      <ClockComparisonSection primaryTz={ET_TZ} countryName="Indiana" />
     </div>
   )
 }

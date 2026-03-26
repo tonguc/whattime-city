@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 import { getFlagUrl } from '@/shared/utils'
 
 import { useState, useEffect } from 'react'
@@ -109,8 +108,6 @@ export default function RussiaClockClient() {
         </div>
         <p className={`text-xs mt-3 ${textSecondary}`}>Russia has 11 time zones spanning UTC+2 (Kaliningrad) to UTC+12 (Kamchatka). Moscow Time (MSK, UTC+3) is used as the official reference nationwide. Russia abolished Daylight Saving Time in 2014.</p>
       </div>
-
-      <ClockComparisonSection primaryTz={MSK_TZ} countryName="Moscow" />
     </div>
   )
 }

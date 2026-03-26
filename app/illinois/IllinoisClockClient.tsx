@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
@@ -99,8 +98,6 @@ export default function IllinoisClockClient() {
           Chicago · Springfield · Rockford · Peoria · Central Time
         </div>
       </div>
-
-            <ClockComparisonSection primaryTz={IL_TZ} countryName="Illinois" />
 
       <div className={`rounded-2xl p-5 ${card}`}>
         <h2 className={`text-lg font-semibold mb-3 ${head}`}>Best Time to Call Illinois / Chicago</h2>

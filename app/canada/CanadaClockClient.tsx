@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
@@ -125,7 +124,7 @@ export default function CanadaClockClient() {
         </div>
       </div>
 
-      <ClockComparisonSection primaryTz="America/Toronto" countryName="Canada" />
+
 
       {/* Canada cities */}
       <div className={`rounded-2xl p-5 ${card}`}>

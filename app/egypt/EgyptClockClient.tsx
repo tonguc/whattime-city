@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
@@ -99,8 +98,6 @@ export default function EgyptClockClient() {
           Cairo · Alexandria · Giza · No DST since 2011
         </div>
       </div>
-
-            <ClockComparisonSection primaryTz={EG_TZ} countryName="Egypt" />
 
       <div className={`rounded-2xl p-5 ${card}`}>
         <h2 className={`text-lg font-semibold mb-3 ${head}`}>Best Time to Call Egypt</h2>

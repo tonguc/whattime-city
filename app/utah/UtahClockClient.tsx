@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
 const UT_TZ = 'America/Denver'
@@ -55,7 +54,6 @@ export default function UtahClockClient() {
         <div className={`font-mono text-5xl sm:text-6xl font-bold tracking-tight mt-3 ${tp}`}>{mounted ? ut.time : '--:--:--'}</div>
         <div className={`text-sm mt-1 ${ts}`}>{mounted ? ut.date : ''}</div>
       </div>
-      <ClockComparisonSection primaryTz={UT_TZ} countryName="Utah" />
     </div>
   )
 }

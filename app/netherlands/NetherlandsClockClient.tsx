@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 import { getFlagUrl } from '@/shared/utils'
 
 import { useState, useEffect } from 'react'
@@ -81,8 +80,6 @@ export default function NetherlandsClockClient() {
         </div>
         <div className={`text-sm mt-1 ${textSecondary}`}>{mounted ? nl.date : ''}</div>
       </div>
-
-      <ClockComparisonSection primaryTz={NL_TZ} countryName="Netherlands" />
     </div>
   )
 }

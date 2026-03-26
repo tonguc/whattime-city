@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
 const OR_TZ = 'America/Los_Angeles'   // Portland, Salem, Eugene — Pacific
@@ -65,7 +64,6 @@ export default function OregonClockClient() {
           </div>
         )}
       </div>
-      <ClockComparisonSection primaryTz={OR_TZ} countryName="Oregon" />
     </div>
   )
 }

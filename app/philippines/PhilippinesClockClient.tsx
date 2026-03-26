@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
@@ -104,7 +103,6 @@ export default function PhilippinesClockClient() {
       </div>
 
       {/* World comparison */}
-            <ClockComparisonSection primaryTz={PH_TZ} countryName="Philippines" />
 
       {/* Best time to call Philippines */}
       <div className={`rounded-2xl p-5 ${card}`}>

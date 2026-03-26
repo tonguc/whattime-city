@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
@@ -78,8 +77,6 @@ export default function MichiganClockClient() {
           </div>
         )}
       </div>
-
-      <ClockComparisonSection primaryTz={MI_TZ} countryName="Michigan" />
     </div>
   )
 }

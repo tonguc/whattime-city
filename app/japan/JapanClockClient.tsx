@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
@@ -101,8 +100,6 @@ export default function JapanClockClient() {
           Tokyo · Osaka · Kyoto · Sapporo · No DST
         </div>
       </div>
-
-            <ClockComparisonSection primaryTz={JP_TZ} countryName="Japan" />
 
       <div className={`rounded-2xl p-5 ${card}`}>
         <h2 className={`text-lg font-semibold mb-3 ${head}`}>Best Time to Call Japan</h2>

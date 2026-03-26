@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 import { getFlagUrl } from '@/shared/utils'
 
 import { useState, useEffect } from 'react'
@@ -67,8 +66,6 @@ export default function VietnamClockClient() {
         </div>
         <div className={`text-sm mt-1 ${textSecondary}`}>{mounted ? vn.date : ''}</div>
       </div>
-
-      <ClockComparisonSection primaryTz={VN_TZ} countryName="Vietnam" />
     </div>
   )
 }

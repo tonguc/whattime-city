@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 import { useState, useEffect } from 'react'
 import { useCityContext } from '@/lib/CityContext'
 const SC_TZ = 'America/New_York'
@@ -55,7 +54,6 @@ export default function SouthCarolinaClockClient() {
         <div className={`font-mono text-5xl sm:text-6xl font-bold tracking-tight mt-3 ${tp}`}>{mounted ? sc.time : '--:--:--'}</div>
         <div className={`text-sm mt-1 ${ts}`}>{mounted ? sc.date : ''}</div>
       </div>
-      <ClockComparisonSection primaryTz={SC_TZ} countryName="South Carolina" />
     </div>
   )
 }

@@ -1,5 +1,4 @@
 'use client'
-import ClockComparisonSection from '@/components/ClockComparisonSection'
 import { getFlagUrl } from '@/shared/utils'
 
 import { useState, useEffect } from 'react'
@@ -80,8 +79,6 @@ export default function NewZealandClockClient() {
           </div>
         )}
       </div>
-
-      <ClockComparisonSection primaryTz={NZ_TZ} countryName="New Zealand" />
     </div>
   )
 }
