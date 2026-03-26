@@ -1,0 +1,93 @@
+{
+  "seo_title": "Current Time in Indianapolis — EST/EDT, Indiana",
+  "seo_description": "What time is it in Indianapolis right now? Indianapolis uses Eastern Time (EST/EDT). Live clock, UTC offset, DST schedule, and time differences with major cities.",
+  "faq": [
+    {
+      "question": "What time zone is Indianapolis in?",
+      "answer": "Indianapolis is in the Eastern Time Zone (ET). The city uses Eastern Standard Time (EST, UTC-5) in winter and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time from March to November. Indiana previously had a complex patchwork of time zone exceptions, but since 2006, the entire state of Indiana (including Indianapolis/Marion County) observes Eastern Time and participates in Daylight Saving Time."
+    },
+    {
+      "question": "Does Indianapolis observe Daylight Saving Time?",
+      "answer": "Yes. Indianapolis has observed Daylight Saving Time since 2006. Before that, Indiana was one of the only US states that did not change its clocks. Now Indianapolis follows the standard US DST schedule: clocks spring forward 1 hour at 2:00 AM on the second Sunday in March (to EDT, UTC-4), and fall back 1 hour at 2:00 AM on the first Sunday in November (back to EST, UTC-5)."
+    },
+    {
+      "question": "What is the time difference between Indianapolis and New York?",
+      "answer": "There is no time difference between Indianapolis and New York. Both cities use Eastern Time (ET) and observe Daylight Saving Time on the same schedule. Indianapolis and New York share EST (UTC-5) in winter and EDT (UTC-4) in summer."
+    },
+    {
+      "question": "What is the time difference between Indianapolis and Chicago?",
+      "answer": "Indianapolis (Eastern Time) is 1 hour ahead of Chicago (Central Time) year-round. When it is 10:00 AM in Chicago (CST/CDT), it is 11:00 AM in Indianapolis (EST/EDT). Both cities observe DST on the same dates, so the 1-hour difference is constant."
+    },
+    {
+      "question": "What is the best time to call Indianapolis?",
+      "answer": "The best time to call Indianapolis is during local business hours: Monday–Friday, 9:00 AM–5:00 PM Eastern Time. From the West Coast (Pacific Time), call between 6:00 AM–2:00 PM PT. From the UK, call before 10:00 PM GMT/BST. Indianapolis, as the home of the Indianapolis 500 and a major logistics hub (FedEx Ground headquarters is nearby), maintains active business hours aligned with East Coast schedules."
+    },
+    {
+      "question": "What is the IANA timezone identifier for Indianapolis?",
+      "answer": "The IANA timezone identifier for Indianapolis is America/Indiana/Indianapolis. This distinguishes it from other Indiana counties that may use different timezone rules. The America/Indiana/Indianapolis timezone is now permanently on Eastern Time with full DST participation since April 2006."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time zone is Indianapolis in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Indianapolis is in the Eastern Time Zone (ET). The city uses Eastern Standard Time (EST, UTC-5) in winter and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time from March to November. Indiana previously had a complex patchwork of time zone exceptions, but since 2006, the entire state of Indiana (including Indianapolis/Marion County) observes Eastern Time and participates in Daylight Saving Time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Indianapolis observe Daylight Saving Time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Indianapolis has observed Daylight Saving Time since 2006. Before that, Indiana was one of the only US states that did not change its clocks. Now Indianapolis follows the standard US DST schedule: clocks spring forward 1 hour at 2:00 AM on the second Sunday in March (to EDT, UTC-4), and fall back 1 hour at 2:00 AM on the first Sunday in November (back to EST, UTC-5)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Indianapolis and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no time difference between Indianapolis and New York. Both cities use Eastern Time (ET) and observe Daylight Saving Time on the same schedule. Indianapolis and New York share EST (UTC-5) in winter and EDT (UTC-4) in summer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Indianapolis and Chicago?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Indianapolis (Eastern Time) is 1 hour ahead of Chicago (Central Time) year-round. When it is 10:00 AM in Chicago (CST/CDT), it is 11:00 AM in Indianapolis (EST/EDT). Both cities observe DST on the same dates, so the 1-hour difference is constant."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best time to call Indianapolis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The best time to call Indianapolis is during local business hours: Monday–Friday, 9:00 AM–5:00 PM Eastern Time. From the West Coast (Pacific Time), call between 6:00 AM–2:00 PM PT. From the UK, call before 10:00 PM GMT/BST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the IANA timezone identifier for Indianapolis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The IANA timezone identifier for Indianapolis is America/Indiana/Indianapolis. This timezone is permanently on Eastern Time with full DST participation since April 2006."
+        }
+      }
+    ]
+  },
+  "timezone_facts": {
+    "full_name": "Eastern Time Zone",
+    "abbreviation": "ET (EST/EDT)",
+    "utc_offset": "UTC-5 (EST) / UTC-4 (EDT)",
+    "iana_id": "America/Indiana/Indianapolis",
+    "dst_observed": true,
+    "dst_start": "Second Sunday in March at 2:00 AM",
+    "dst_end": "First Sunday in November at 2:00 AM"
+  }
+}

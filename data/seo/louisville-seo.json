@@ -1,0 +1,93 @@
+{
+  "seo_title": "Current Time in Louisville — EST/EDT, Kentucky",
+  "seo_description": "What time is it in Louisville right now? Louisville, KY uses Eastern Time (EST/EDT). Live clock, UTC offset, DST schedule, and time differences with major cities.",
+  "faq": [
+    {
+      "question": "What time zone is Louisville in?",
+      "answer": "Louisville, Kentucky is in the Eastern Time Zone (ET). The city uses Eastern Standard Time (EST, UTC-5) from November to March and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time from March to November. The IANA timezone identifier is America/Kentucky/Louisville."
+    },
+    {
+      "question": "Does Louisville observe Daylight Saving Time?",
+      "answer": "Yes. Louisville observes Daylight Saving Time on the standard US schedule. Clocks spring forward 1 hour at 2:00 AM on the second Sunday in March (shifting from EST UTC-5 to EDT UTC-4), and fall back 1 hour at 2:00 AM on the first Sunday in November."
+    },
+    {
+      "question": "What is the time difference between Louisville and New York?",
+      "answer": "There is no time difference between Louisville and New York. Both cities are in the Eastern Time Zone and observe Daylight Saving Time on the same dates. They share EST (UTC-5) in winter and EDT (UTC-4) in summer."
+    },
+    {
+      "question": "What is the time difference between Louisville and Chicago?",
+      "answer": "Louisville (Eastern Time) is 1 hour ahead of Chicago (Central Time) year-round. When it is 9:00 AM in Chicago (CST/CDT), it is 10:00 AM in Louisville (EST/EDT). Both cities observe DST on the same schedule, keeping the 1-hour gap constant."
+    },
+    {
+      "question": "What is Louisville famous for and when is the Kentucky Derby?",
+      "answer": "Louisville is the home of the Kentucky Derby, held annually on the first Saturday of May at Churchill Downs. The Derby is run at approximately 6:57 PM EDT (Eastern Daylight Time). Louisville is also known as the Bourbon capital of the world, home to the Louisville Slugger baseball bat factory, and birthplace of Muhammad Ali. The city sits on the Ohio River at the Kentucky-Indiana border."
+    },
+    {
+      "question": "What is the best time to call Louisville?",
+      "answer": "The best time to call Louisville is during local business hours: Monday–Friday, 9:00 AM–5:00 PM Eastern Time. From Pacific Time (Los Angeles), call between 6:00 AM–2:00 PM PT. From London, the 5-hour difference means calling before 10:00 PM UK time will reach Louisville during business hours."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time zone is Louisville in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Louisville, Kentucky is in the Eastern Time Zone (ET). The city uses Eastern Standard Time (EST, UTC-5) from November to March and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time from March to November. The IANA timezone identifier is America/Kentucky/Louisville."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Louisville observe Daylight Saving Time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Louisville observes Daylight Saving Time on the standard US schedule. Clocks spring forward 1 hour at 2:00 AM on the second Sunday in March (shifting from EST UTC-5 to EDT UTC-4), and fall back 1 hour at 2:00 AM on the first Sunday in November."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Louisville and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no time difference between Louisville and New York. Both cities are in the Eastern Time Zone and observe Daylight Saving Time on the same dates. They share EST (UTC-5) in winter and EDT (UTC-4) in summer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Louisville and Chicago?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Louisville (Eastern Time) is 1 hour ahead of Chicago (Central Time) year-round. When it is 9:00 AM in Chicago (CST/CDT), it is 10:00 AM in Louisville (EST/EDT). Both cities observe DST on the same schedule, keeping the 1-hour gap constant."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Louisville famous for and when is the Kentucky Derby?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Louisville is the home of the Kentucky Derby, held annually on the first Saturday of May at Churchill Downs at approximately 6:57 PM EDT. Louisville is also known as the Bourbon capital of the world, home to the Louisville Slugger factory, and birthplace of Muhammad Ali."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best time to call Louisville?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The best time to call Louisville is during local business hours: Monday–Friday, 9:00 AM–5:00 PM Eastern Time. From Pacific Time, call between 6:00 AM–2:00 PM PT. From London, call before 10:00 PM UK time."
+        }
+      }
+    ]
+  },
+  "timezone_facts": {
+    "full_name": "Eastern Time Zone",
+    "abbreviation": "ET (EST/EDT)",
+    "utc_offset": "UTC-5 (EST) / UTC-4 (EDT)",
+    "iana_id": "America/Kentucky/Louisville",
+    "dst_observed": true,
+    "dst_start": "Second Sunday in March at 2:00 AM",
+    "dst_end": "First Sunday in November at 2:00 AM"
+  }
+}

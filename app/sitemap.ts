@@ -160,6 +160,8 @@ export default async function sitemap() {
     { slug: 'cet-to-est', priority: 0.7 },
     // US Timezone hub
     { slug: 'us-time-zones', priority: 0.9 },
+    // European TZ explainer
+    { slug: 'cest-timezone', priority: 0.8 },
     // US Timezone explainer pages — high search volume
     { slug: 'eastern-time-zone', priority: 0.9 },
     { slug: 'central-time-zone', priority: 0.9 },
