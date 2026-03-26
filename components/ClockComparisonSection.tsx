@@ -100,11 +100,49 @@ export default function ClockComparisonSection({ primaryTz, countryName }: Props
     return true
   })
 
+  const currentTime = now
+    ? now.toLocaleTimeString('en-US', { timeZone: primaryTz, hour: '2-digit', minute: '2-digit', hour12: false })
+    : '--:--'
+  const tzAbbr = now
+    ? (now.toLocaleTimeString('en-US', { timeZone: primaryTz, timeZoneName: 'short' }).split(' ').pop() ?? '')
+    : ''
+
+  const buildAnswerBlock = () => {
+    if (!now) return null
+    const parts: string[] = [`The current time in ${countryName} is ${currentTime}${tzAbbr ? ` (${tzAbbr})` : ''}.`]
+    if (nyDiff !== 0) {
+      const abs = Math.abs(nyDiff)
+      const h = abs === 1 ? 'hour' : 'hours'
+      parts.push(nyDiff < 0
+        ? `${countryName} is ${abs} ${h} ahead of New York.`
+        : `${countryName} is ${abs} ${h} behind New York.`)
+    } else {
+      parts.push(`${countryName} is on the same time as New York.`)
+    }
+    if (lonDiff !== 0) {
+      const abs = Math.abs(lonDiff)
+      const h = abs === 1 ? 'hour' : 'hours'
+      parts.push(lonDiff < 0
+        ? `${countryName} is ${abs} ${h} ahead of London.`
+        : `${countryName} is ${abs} ${h} behind London.`)
+    } else {
+      parts.push(`${countryName} is on the same time as London.`)
+    }
+    return parts.join(' ')
+  }
+
   return (
     <section className={card}>
       <h2 className={`text-lg font-semibold mb-3 ${heading}`}>
         {countryName} Time Difference
       </h2>
+
+      {/* Direct Answer Block — for featured snippets / AI overviews */}
+      {now && (
+        <p className={`text-sm mb-4 leading-relaxed ${muted}`}>
+          {buildAnswerBlock()}
+        </p>
+      )}
 
       {/* Key comparison sentences */}
       <div className="flex flex-wrap gap-2 mb-5">

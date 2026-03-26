@@ -125,21 +125,41 @@ export default function CountryFactsSection({ hubSlug }: Props) {
   // Primary IANA timezone (from first city, or fallback)
   const primaryTz = cities[0]?.timezone ?? 'UTC'
 
-  // Specific call windows: compute "9 AM hub = what time in ref city?"
-  const getCallWindow = (refTz: string, refLabel: string) => {
+  // Specific call windows: compute windows for the table
+  const REF_ZONES = [
+    { tz: 'America/New_York',    from: 'EST / EDT (New York)',    abbr: 'EST' },
+    { tz: 'America/Los_Angeles', from: 'PST / PDT (Los Angeles)', abbr: 'PST' },
+    { tz: 'Europe/London',       from: 'GMT / BST (London)',      abbr: 'GMT' },
+    { tz: 'Europe/Paris',        from: 'CET / CEST (Paris)',      abbr: 'CET' },
+    { tz: 'Asia/Dubai',          from: 'GST (Dubai)',             abbr: 'GST' },
+  ]
+  const getCallRow = (refTz: string) => {
     if (!now) return null
     const hubLocal = new Date(now.toLocaleString('en-US', { timeZone: primaryTz }))
     const refLocal  = new Date(now.toLocaleString('en-US', { timeZone: refTz }))
     const diffH = Math.round((refLocal.getTime() - hubLocal.getTime()) / 3600000)
-    // When hub opens at 9 AM, it's 9+diffH in ref city
-    const startH = Math.max(9 + diffH, 8)
-    const endH   = Math.min(17 + diffH, 20)
-    if (startH >= endH) return `Limited overlap with ${refLabel}`
-    const fmt = (h: number) => {
+    const fmt = (h: number, suffix: string) => {
       const hr = ((h % 24) + 24) % 24
-      return `${hr % 12 === 0 ? 12 : hr % 12}:00 ${hr >= 12 ? 'PM' : 'AM'}`
+      return `${hr % 12 === 0 ? 12 : hr % 12}:00 ${hr >= 12 ? 'PM' : 'AM'} ${suffix}`
     }
-    return `${refLabel}: ${fmt(startH)} – ${fmt(endH)}`
+    // ref city window that corresponds to hub 9 AM – 5 PM
+    const refStart = Math.max(9 + diffH, 7)
+    const refEnd   = Math.min(17 + diffH, 21)
+    if (refStart >= refEnd) return null
+    const refAbbr = now.toLocaleTimeString('en-US', { timeZone: refTz, timeZoneName: 'short' }).split(' ').pop() ?? ''
+    const hubAbbr = now.toLocaleTimeString('en-US', { timeZone: primaryTz, timeZoneName: 'short' }).split(' ').pop() ?? ''
+    const hubStart = Math.max(9, 9 - diffH + refStart - (9 + diffH - refStart))
+    // Simpler: hub window = [9, 17]; ref window = hub ± diff
+    const h9ref  = 9 + diffH
+    const h17ref = 17 + diffH
+    const winRefStart = Math.max(h9ref, 7)
+    const winRefEnd   = Math.min(h17ref, 21)
+    const winHubStart = winRefStart - diffH
+    const winHubEnd   = winRefEnd   - diffH
+    return {
+      refTime: `${fmt(winRefStart, refAbbr)} – ${fmt(winRefEnd, refAbbr)}`,
+      hubTime: `${fmt(winHubStart, hubAbbr)} – ${fmt(winHubEnd, hubAbbr)}`,
+    }
   }
 
   // ── Theme classes ──────────────────────────────────────────────────────
@@ -274,27 +294,35 @@ export default function CountryFactsSection({ hubSlug }: Props) {
         <h2 className={`text-lg font-semibold mb-3 flex items-center gap-2 ${heading}`}>
           <span>📞</span> Best Time to Call {country.name}
         </h2>
-        {/* Specific call windows */}
+          <p className={`text-sm mb-4 ${muted}`}>
+          Target 9 AM – 5 PM {country.name} local time for business calls. {bestTimeToCall}
+        </p>
         {now && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
-            {[
-              { tz: 'America/New_York',    label: 'From USA (EST/EDT)' },
-              { tz: 'America/Los_Angeles', label: 'From USA (PST/PDT)' },
-              { tz: 'Europe/London',       label: 'From UK (GMT/BST)' },
-              { tz: 'Europe/Paris',        label: 'From Europe (CET)' },
-            ].map(ref => {
-              const window = getCallWindow(ref.tz, ref.label)
-              return window ? (
-                <div key={ref.tz} className={innerCard}>
-                  <div className={`text-xs mb-0.5 ${muted}`}>{ref.label}</div>
-                  <div className={`text-sm font-semibold ${heading}`}>{window.split(': ')[1]}</div>
-                </div>
-              ) : null
-            })}
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className={`border-b ${isLight ? 'border-slate-100' : 'border-slate-700'} ${muted}`}>
+                  <th className="text-left py-2 pr-4 font-medium">Calling From</th>
+                  <th className="text-left py-2 pr-4 font-medium">Your Time</th>
+                  <th className="text-left py-2 font-medium">{country.name} Time</th>
+                </tr>
+              </thead>
+              <tbody className={`divide-y ${isLight ? 'divide-slate-50' : 'divide-slate-700/50'}`}>
+                {REF_ZONES.map(ref => {
+                  const row = getCallRow(ref.tz)
+                  if (!row) return null
+                  return (
+                    <tr key={ref.tz}>
+                      <td className={`py-2 pr-4 font-medium ${heading}`}>{ref.from}</td>
+                      <td className={`py-2 pr-4 ${muted}`}>{row.refTime}</td>
+                      <td className={`py-2 ${muted}`}>{row.hubTime}</td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
           </div>
         )}
-        <p className={`text-sm ${muted}`}>{bestTimeToCall}</p>
-        <p className={`text-sm mt-3 ${muted}`}>Standard business hours in {country.name}: Monday–Friday, 9 AM–5 PM local time. {businessHours}</p>
       </section>
 
       {/* ── Travel Tips ─────────────────────────────────────────────── */}
