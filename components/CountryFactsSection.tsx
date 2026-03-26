@@ -64,8 +64,8 @@ export default function CountryFactsSection({ hubSlug }: Props) {
   if (!country) return null
 
   const card = isLight
-    ? 'rounded-2xl border border-slate-200 bg-white p-6 mb-4'
-    : 'rounded-2xl border border-slate-700 bg-slate-800 p-6 mb-4'
+    ? 'rounded-2xl border border-slate-200 bg-white p-6 mt-4 mb-4'
+    : 'rounded-2xl border border-slate-700 bg-slate-800 p-6 mt-4 mb-4'
   const innerCard = isLight
     ? 'rounded-xl bg-slate-50 border border-slate-100 px-4 py-3'
     : 'rounded-xl bg-slate-700 border border-slate-600 px-4 py-3'
