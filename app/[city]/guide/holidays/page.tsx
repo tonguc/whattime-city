@@ -10,6 +10,7 @@ import SingaporeHolidaysContent from './SingaporeHolidaysContent'
 import ParisHolidaysContent from './ParisHolidaysContent'
 import SydneyHolidaysContent from './SydneyHolidaysContent'
 import LosAngelesHolidaysContent from './LosAngelesHolidaysContent'
+import NewYorkHolidaysContent from './NewYorkHolidaysContent'
 import IstanbulHolidaysContent from './IstanbulHolidaysContent'
 
 type Props = { params: Promise<{ city: string }> }
@@ -52,5 +53,7 @@ export default async function HolidaysPage({ params }: Props) {
   if (citySlug === 'paris') return <ParisHolidaysContent city={city} />
   if (citySlug === 'sydney') return <SydneyHolidaysContent city={city} />
   if (citySlug === 'istanbul') return <IstanbulHolidaysContent city={city} />
+  if (citySlug === 'los-angeles') return <LosAngelesHolidaysContent city={city} />
+  if (citySlug === 'new-york') return <NewYorkHolidaysContent city={city} />
   return <HolidaysContent city={city} />
 }
