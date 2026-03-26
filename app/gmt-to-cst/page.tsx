@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import ContentPageWrapper from '@/components/ContentPageWrapper'
-import TZPairClient, { TZPairConfig } from '@/components/TZPairClient'
+import ConverterPageShell from '@/components/ConverterPageShell'
+import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
   title: 'GMT to CST — Greenwich to Central Time Converter',
@@ -34,37 +34,17 @@ const faqSchema = {
 
 export default function GMTtoCST() {
   return (
-    <ContentPageWrapper>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">GMT to CST Converter</h1>
-      <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">Greenwich Mean Time → Central Standard Time · GMT is <strong>6 hours ahead</strong> of CST</p>
-      <TZPairClient config={config} />
-      <section className="mt-4 mb-4">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">GMT vs CST — What You Need to Know</h2>
-          <div className="space-y-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-            <p><strong className="text-slate-700 dark:text-slate-200">GMT (Greenwich Mean Time)</strong> is UTC+0. London uses GMT in winter and BST (UTC+1) in British Summer Time from late March to late October.</p>
-            <p><strong className="text-slate-700 dark:text-slate-200">CST (Central Standard Time)</strong> is UTC-6, covering Illinois, Texas, and Minnesota. From March to November it shifts to <strong>CDT (UTC-5)</strong>.</p>
+    <ConverterPageShell
+      title="GMT to CST Converter"
+      subtitle={<>Greenwich Mean Time → Central Standard Time · GMT is <strong>6 hours ahead</strong> of CST</>}
+      config={config}
+      infoTitle="GMT vs CST — What You Need to Know"
+      infoBody={<>
+        <p><strong>GMT (Greenwich Mean Time)</strong> is UTC+0. London uses GMT in winter and BST (UTC+1) in British Summer Time from late March to late October.</p>
+            <p><strong>CST (Central Standard Time)</strong> is UTC-6, covering Illinois, Texas, and Minnesota. From March to November it shifts to <strong>CDT (UTC-5)</strong>.</p>
             <p>London–Chicago is a key financial corridor. The 6-hour gap in winter means a 2:00 PM GMT call reaches Chicago at 8:00 AM CST — a solid morning start for Central Time.</p>
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <h3 className="font-semibold text-slate-800 dark:text-white text-sm mb-1">{item.name}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300">{item.acceptedAnswer.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/50 text-xs text-slate-500 dark:text-slate-400">
-        Timezone data sourced from <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">IANA Time Zone Database</a>. Last updated March 2026.
-      </footer>
-    </ContentPageWrapper>
+      </>}
+      faqSchema={faqSchema}
+    />
   )
 }

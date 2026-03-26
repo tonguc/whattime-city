@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import ContentPageWrapper from '@/components/ContentPageWrapper'
-import TZPairClient, { TZPairConfig } from '@/components/TZPairClient'
+import ConverterPageShell from '@/components/ConverterPageShell'
+import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
   title: 'GMT to MST — Greenwich Mean Time to Mountain Time Converter',
@@ -34,37 +34,17 @@ const faqSchema = {
 
 export default function GMTtoMST() {
   return (
-    <ContentPageWrapper>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">GMT to MST Converter</h1>
-      <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">Greenwich Mean Time → Mountain Standard Time · GMT is <strong>7 hours ahead</strong> of MST</p>
-      <TZPairClient config={config} />
-      <section className="mt-4 mb-4">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">GMT vs MST — London to Rocky Mountains</h2>
-          <div className="space-y-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-            <p><strong className="text-slate-700 dark:text-slate-200">GMT (UTC+0)</strong> — UK winter time. London uses BST (UTC+1) from late March to late October.</p>
-            <p><strong className="text-slate-700 dark:text-slate-200">MST (UTC-7)</strong> — Mountain Standard Time, covering Colorado, Utah, Montana, and parts of Idaho and Wyoming. Shifts to MDT (UTC-6) in summer. Arizona stays on MST year-round.</p>
+    <ConverterPageShell
+      title="GMT to MST Converter"
+      subtitle={<>Greenwich Mean Time → Mountain Standard Time · GMT is <strong>7 hours ahead</strong> of MST</>}
+      config={config}
+      infoTitle="GMT vs MST — London to Rocky Mountains"
+      infoBody={<>
+        <p><strong>GMT (UTC+0)</strong> — UK winter time. London uses BST (UTC+1) from late March to late October.</p>
+            <p><strong>MST (UTC-7)</strong> — Mountain Standard Time, covering Colorado, Utah, Montana, and parts of Idaho and Wyoming. Shifts to MDT (UTC-6) in summer. Arizona stays on MST year-round.</p>
             <p>Best overlap: <strong>2:00–5:00 PM GMT = 7:00–10:00 AM MST</strong>. London afternoons align well with Denver mornings, making this a workable corridor for UK–US Mountain Zone business.</p>
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <h3 className="font-semibold text-slate-800 dark:text-white text-sm mb-1">{item.name}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300">{item.acceptedAnswer.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/50 text-xs text-slate-500 dark:text-slate-400">
-        Timezone data sourced from <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">IANA Time Zone Database</a>. Last updated March 2026.
-      </footer>
-    </ContentPageWrapper>
+      </>}
+      faqSchema={faqSchema}
+    />
   )
 }

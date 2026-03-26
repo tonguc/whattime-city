@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import ContentPageWrapper from '@/components/ContentPageWrapper'
-import TZPairClient, { TZPairConfig } from '@/components/TZPairClient'
+import ConverterPageShell from '@/components/ConverterPageShell'
+import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
   title: 'CST to EST — Central to Eastern Time Converter',
@@ -82,34 +82,19 @@ const faqSchema = {
 
 export default function CSTtoESTPage() {
   return (
-    <ContentPageWrapper>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-        <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800">
-          CST to EST Converter
-        </h1>
-        <p className="text-lg text-slate-600 mb-6">
-          Central Standard Time → Eastern Standard Time · CST is <strong>1 hour behind</strong> EST
-        </p>
-
-        <TZPairClient config={config} />
-
-        {/* Explainer */}
-        <section className="mt-4 mb-4">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6">
-            <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">
-            CST vs EST — What You Need to Know
-            </h2>
-            <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
-            <p>
-              <strong className="text-slate-700">Central Standard Time (CST)</strong> is UTC-6.
+    <ConverterPageShell
+      title="CST to EST Converter"
+      subtitle={<>Central Standard Time → Eastern Standard Time · CST is <strong>1 hour behind</strong> EST</>}
+      config={config}
+      infoTitle="CST vs EST — What You Need to Know"
+      infoBody={<>
+        <p>
+              <strong>Central Standard Time (CST)</strong> is UTC-6.
               It covers much of the central United States including Illinois, Texas, Minnesota, and Louisiana.
               During Daylight Saving Time (March–November), CST becomes <strong>CDT (UTC-5)</strong>.
             </p>
             <p>
-              <strong className="text-slate-700">Eastern Standard Time (EST)</strong> is UTC-5.
+              <strong>Eastern Standard Time (EST)</strong> is UTC-5.
               It covers the US East Coast: New York, Florida, Georgia, and the Atlantic provinces of Canada.
               During summer it becomes <strong>EDT (UTC-4)</strong>.
             </p>
@@ -117,33 +102,8 @@ export default function CSTtoESTPage() {
               The difference is always <strong>1 hour</strong>. With 9 AM–5 PM business hours, Chicago and New York
               share nearly a full day of overlap — making scheduling between CST and EST straightforward.
             </p>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="mb-4">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6">
-            <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-            <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <h3 className="font-semibold text-slate-800 text-sm mb-1">{item.name}</h3>
-                <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
-              </div>
-            ))}
-            </div>
-          </div>
-        </section>
-
-        {/* E-E-A-T Footer */}
-        <footer className="rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500">
-          Timezone data sourced from{' '}
-          <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">
-            IANA Time Zone Database
-          </a>
-          . Last updated March 2026.
-        </footer>
-    </ContentPageWrapper>
+      </>}
+      faqSchema={faqSchema}
+    />
   )
 }

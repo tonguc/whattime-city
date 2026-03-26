@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import ContentPageWrapper from '@/components/ContentPageWrapper'
-import TZPairClient, { TZPairConfig } from '@/components/TZPairClient'
+import ConverterPageShell from '@/components/ConverterPageShell'
+import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
   title: 'PST to MST — Pacific to Mountain Time Converter',
@@ -64,58 +64,26 @@ const faqSchema = {
 
 export default function PSTtoMST() {
   return (
-    <ContentPageWrapper>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">
-        PST to MST Converter
-      </h1>
-      <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-        Pacific Standard Time → Mountain Standard Time · PST is <strong>1 hour behind</strong> MST
-      </p>
-
-      <TZPairClient config={config} />
-
-      <section className="mt-4 mb-4">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">PST vs MST — What You Need to Know</h2>
-          <div className="space-y-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-            <p>
-              <strong className="text-slate-700 dark:text-slate-200">PST (Pacific Standard Time)</strong> is UTC-8, covering
+    <ConverterPageShell
+      title="PST to MST Converter"
+      subtitle={<>Pacific Standard Time → Mountain Standard Time · PST is <strong>1 hour behind</strong> MST</>}
+      config={config}
+      infoTitle="PST vs MST — What You Need to Know"
+      infoBody={<>
+        <p>
+              <strong>PST (Pacific Standard Time)</strong> is UTC-8, covering
               California, Washington, Oregon, and Nevada. During DST it becomes <strong>PDT (UTC-7)</strong>.
             </p>
             <p>
-              <strong className="text-slate-700 dark:text-slate-200">MST (Mountain Standard Time)</strong> is UTC-7, covering
+              <strong>MST (Mountain Standard Time)</strong> is UTC-7, covering
               Colorado, Utah, Montana, Wyoming, and New Mexico. During DST it becomes <strong>MDT (UTC-6)</strong>.
             </p>
             <p>
               The 1-hour difference is constant. A 10:00 AM MST standup in Denver is 9:00 AM PST in
               San Francisco — one of the easier US cross-timezone gaps to bridge.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-4">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <h3 className="font-semibold text-slate-800 dark:text-white text-sm mb-1">{item.name}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300">{item.acceptedAnswer.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/50 text-xs text-slate-500 dark:text-slate-400">
-        Timezone data sourced from{' '}
-        <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">
-          IANA Time Zone Database
-        </a>
-        . Last updated March 2026.
-      </footer>
-    </ContentPageWrapper>
+      </>}
+      faqSchema={faqSchema}
+    />
   )
 }

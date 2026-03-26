@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import ContentPageWrapper from '@/components/ContentPageWrapper'
-import TZPairClient, { TZPairConfig } from '@/components/TZPairClient'
+import ConverterPageShell from '@/components/ConverterPageShell'
+import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
   title: 'EST to GMT — Eastern to Greenwich Time Converter',
@@ -64,25 +64,18 @@ const faqSchema = {
 
 export default function ESTtoGMTPage() {
   return (
-    <ContentPageWrapper>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-        <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800">
-          EST to GMT Converter
-        </h1>
-        <p className="text-lg text-slate-600 mb-6">
-          Eastern Standard Time → Greenwich Mean Time · EST is <strong>5 hours behind</strong> GMT
-        </p>
-        <TZPairClient config={config} />
-        <section className="mt-4 mb-4">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6">
-            <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">EST vs GMT — What You Need to Know</h2>
-            <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
-            <p>
-              <strong className="text-slate-700">EST (UTC-5)</strong> is the US East Coast in winter.
+    <ConverterPageShell
+      title="EST to GMT Converter"
+      subtitle={<>Eastern Standard Time → Greenwich Mean Time · EST is <strong>5 hours behind</strong> GMT</>}
+      config={config}
+      infoTitle="EST vs GMT — What You Need to Know"
+      infoBody={<>
+        <p>
+              <strong>EST (UTC-5)</strong> is the US East Coast in winter.
               Summer: <strong>EDT (UTC-4)</strong>.
             </p>
             <p>
-              <strong className="text-slate-700">GMT (UTC+0)</strong> is London in winter.
+              <strong>GMT (UTC+0)</strong> is London in winter.
               Summer: <strong>BST (UTC+1)</strong>.
             </p>
             <div className="rounded-lg bg-amber-50 border border-amber-200 p-4 text-sm">
@@ -95,25 +88,8 @@ export default function ESTtoGMTPage() {
                 <li>After Nov 1: EST vs GMT → <strong>5h</strong></li>
               </ul>
             </div>
-            </div>
-          </div>
-        </section>
-        <section className="mb-4">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6">
-            <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-            <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <h3 className="font-semibold text-slate-800 text-sm mb-1">{item.name}</h3>
-                <p className="text-sm text-slate-600">{item.acceptedAnswer.text}</p>
-              </div>
-            ))}
-            </div>
-          </div>
-        </section>
-        <footer className="rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500">
-          Timezone data sourced from <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">IANA Time Zone Database</a>. Last updated March 2026.
-        </footer>
-    </ContentPageWrapper>
+      </>}
+      faqSchema={faqSchema}
+    />
   )
 }

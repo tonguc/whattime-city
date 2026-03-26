@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import ContentPageWrapper from '@/components/ContentPageWrapper'
-import TZPairClient, { TZPairConfig } from '@/components/TZPairClient'
+import ConverterPageShell from '@/components/ConverterPageShell'
+import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
   title: 'AEST to UTC — Australian Eastern Time to UTC Converter',
@@ -34,37 +34,17 @@ const faqSchema = {
 
 export default function AESTtoUTC() {
   return (
-    <ContentPageWrapper>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-slate-800 dark:text-white">AEST to UTC Converter</h1>
-      <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">Australian Eastern Standard Time → Coordinated Universal Time · AEST is <strong>10 hours ahead</strong> of UTC</p>
-      <TZPairClient config={config} />
-      <section className="mt-4 mb-4">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">AEST vs UTC — Sydney to World Standard Time</h2>
-          <div className="space-y-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-            <p><strong className="text-slate-700 dark:text-slate-200">AEST (UTC+10)</strong> — Australian Eastern Standard Time. Used by NSW, VIC, QLD, ACT, and TAS. NSW/VIC/ACT/TAS shift to AEDT (UTC+11) in summer; Queensland stays on AEST year-round.</p>
-            <p><strong className="text-slate-700 dark:text-slate-200">UTC (UTC+0)</strong> — The world's primary time standard. All global time zones are defined relative to UTC.</p>
+    <ConverterPageShell
+      title="AEST to UTC Converter"
+      subtitle={<>Australian Eastern Standard Time → Coordinated Universal Time · AEST is <strong>10 hours ahead</strong> of UTC</>}
+      config={config}
+      infoTitle="AEST vs UTC — Sydney to World Standard Time"
+      infoBody={<>
+        <p><strong>AEST (UTC+10)</strong> — Australian Eastern Standard Time. Used by NSW, VIC, QLD, ACT, and TAS. NSW/VIC/ACT/TAS shift to AEDT (UTC+11) in summer; Queensland stays on AEST year-round.</p>
+            <p><strong>UTC (UTC+0)</strong> — The world's primary time standard. All global time zones are defined relative to UTC.</p>
             <p>AEST = UTC + 10 hours. Sydney 9 AM business start = UTC 11 PM (previous night). Australian systems and APIs often need UTC↔AEST conversion. Use <strong>Australia/Sydney</strong> IANA ID for DST-aware conversions.</p>
-          </div>
-        </div>
-      </section>
-      <section className="mb-4">
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="rounded-xl border border-slate-100 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-4">
-                <h3 className="font-semibold text-slate-800 dark:text-white text-sm mb-1">{item.name}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300">{item.acceptedAnswer.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <footer className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-slate-800/50 text-xs text-slate-500 dark:text-slate-400">
-        Timezone data sourced from <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer" className="underline">IANA Time Zone Database</a>. Last updated March 2026.
-      </footer>
-    </ContentPageWrapper>
+      </>}
+      faqSchema={faqSchema}
+    />
   )
 }
