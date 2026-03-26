@@ -37,20 +37,18 @@ export default function HeroClockDisplay({ tz, countryCode, countryName, tzLabel
   const ts = isLight ? 'text-slate-500' : 'text-slate-400'
 
   return (
-    <div className={card}>
-      <div className="flex items-center gap-3 mb-1">
-        <img src={getFlagUrl(countryCode, 'sm')} alt={`${countryCode} flag`} className="w-7 h-5 object-cover rounded-sm" />
-        <div>
-          <div className={`text-xs font-medium uppercase tracking-wider ${ts}`}>
-            {countryName} · {mounted && abbr ? abbr : tzLabel.split(' ')[0]}
-          </div>
-          <div className={`text-xs ${ts}`}>{tzLabel}</div>
-        </div>
+    <div className={`${card} text-center`}>
+      <div className="flex items-center justify-center gap-2 mb-3">
+        <img src={getFlagUrl(countryCode, 'sm')} alt={`${countryCode} flag`} className="w-6 h-4 object-cover rounded-sm" />
+        <span className={`text-xs font-semibold uppercase tracking-widest ${ts}`}>
+          {countryName} · {mounted && abbr ? abbr : tzLabel.split(' ')[0]}
+        </span>
       </div>
-      <div className={`font-mono text-5xl sm:text-6xl font-bold tracking-tight mt-3 ${tp}`}>
+      <div className={`font-mono text-5xl sm:text-6xl font-bold tracking-tight ${tp}`}>
         {mounted ? time : '--:--:--'}
       </div>
-      <div className={`text-sm mt-1 ${ts}`}>{mounted ? date : ''}</div>
+      <div className={`text-sm mt-2 ${ts}`}>{mounted ? date : ''}</div>
+      <div className={`mt-3 text-xs ${ts}`}>{tzLabel}</div>
     </div>
   )
 }

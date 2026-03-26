@@ -1,6 +1,14 @@
 import type { Metadata, Viewport } from 'next'
+import { Poppins } from 'next/font/google'
 import { CityProvider } from '@/lib/CityContext'
 import './globals.css'
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-poppins',
+})
 
 // ScrollFAB removed from global layout for performance
 // It will be added to specific long pages that need it
@@ -163,7 +171,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="antialiased" suppressHydrationWarning>
+      <body className={`${poppins.variable} font-sans antialiased`} suppressHydrationWarning>
         <CityProvider>
           {children}
         </CityProvider>
