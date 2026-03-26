@@ -1,0 +1,52 @@
+{
+  "seo_title": "Current Time in Bangkok — ICT (UTC+7)",
+  "seo_description": "Current local time in Bangkok, Thailand. ICT (UTC+7) year-round, no daylight saving time. Live clock, business hours, and Bangkok time difference to London, Dubai, Singapore.",
+  "faq": [
+    {
+      "question": "What time is it in Bangkok right now?",
+      "answer": "Bangkok operates on Indochina Time (ICT/UTC+7) year-round. Thailand does not observe daylight saving time, so Bangkok's UTC+7 offset remains constant throughout the year. This makes Bangkok 7 hours ahead of London (GMT), 12 hours ahead of New York (EST), and 1 hour behind Singapore and Hong Kong."
+    },
+    {
+      "question": "What time zone is Bangkok in?",
+      "answer": "Bangkok is in the Indochina Time (ICT) zone, which is UTC+7 year-round. ICT is shared by Thailand, Vietnam, Cambodia, Laos, and parts of Indonesia. It sits between China Standard Time (UTC+8) and India Standard Time (UTC+5:30), making Bangkok a useful mid-point for scheduling between South Asian and East Asian partners."
+    },
+    {
+      "question": "Does Bangkok observe daylight saving time?",
+      "answer": "No. Thailand has never observed daylight saving time. Bangkok maintains Indochina Time (ICT/UTC+7) year-round, providing consistent and predictable scheduling for international business. This stability is a practical advantage for regional companies coordinating across multiple Asian time zones."
+    },
+    {
+      "question": "What is the time difference between Bangkok and London?",
+      "answer": "Bangkok is 7 hours ahead of London during GMT (October–March) and 6 hours ahead during British Summer Time (BST, March–October). When it is 9:00 AM in London (GMT), it is 4:00 PM in Bangkok. The best window for London–Bangkok calls is early London morning: 8:00–10:00 AM GMT (3:00–5:00 PM Bangkok), catching Bangkok before end of business."
+    },
+    {
+      "question": "What is the time difference between Bangkok and Dubai?",
+      "answer": "Bangkok is 3 hours ahead of Dubai (GST/UTC+4) year-round. Both cities do not observe daylight saving time, so this 3-hour difference is constant throughout the year. When it is 9:00 AM in Dubai, it is 12:00 PM noon in Bangkok — making the midday window ideal for Gulf–Thailand business coordination."
+    },
+    {
+      "question": "What is the time difference between Bangkok and Singapore?",
+      "answer": "Bangkok is 1 hour behind Singapore. Singapore operates on SGT (UTC+8) while Bangkok uses ICT (UTC+7). When it is 10:00 AM in Bangkok, it is 11:00 AM in Singapore. Despite being geographically close, the 1-hour gap means Singapore's business day starts and ends an hour earlier relative to Bangkok."
+    },
+    {
+      "question": "What is the best time to call Bangkok from the US?",
+      "answer": "From New York, Bangkok is 12 hours ahead during EST (November–March), making direct business overlap extremely difficult. The closest window is early morning New York (8:00–10:00 AM EST = 8:00–10:00 PM Bangkok). From Los Angeles (PST), Bangkok is 15 hours ahead — making evening PST (6:00–8:00 PM) the most practical for same-day contact."
+    },
+    {
+      "question": "What are typical business hours in Bangkok?",
+      "answer": "Standard business hours in Bangkok are 8:30 AM to 5:30 PM ICT, Monday through Friday. Government offices operate 8:30 AM–4:30 PM. Banks are generally open 10:00 AM–5:00 PM on weekdays. Many international companies in Bangkok adopt flexible hours to accommodate calls with European or American head offices, often starting earlier or finishing later."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What time is it in Bangkok right now?", "acceptedAnswer": { "@type": "Answer", "text": "Bangkok operates on Indochina Time (ICT/UTC+7) year-round. Thailand does not observe daylight saving time, so Bangkok's UTC+7 offset remains constant throughout the year. This makes Bangkok 7 hours ahead of London (GMT), 12 hours ahead of New York (EST), and 1 hour behind Singapore and Hong Kong." } },
+      { "@type": "Question", "name": "What time zone is Bangkok in?", "acceptedAnswer": { "@type": "Answer", "text": "Bangkok is in the Indochina Time (ICT) zone, which is UTC+7 year-round. ICT is shared by Thailand, Vietnam, Cambodia, Laos, and parts of Indonesia. It sits between China Standard Time (UTC+8) and India Standard Time (UTC+5:30), making Bangkok a useful mid-point for scheduling between South Asian and East Asian partners." } },
+      { "@type": "Question", "name": "Does Bangkok observe daylight saving time?", "acceptedAnswer": { "@type": "Answer", "text": "No. Thailand has never observed daylight saving time. Bangkok maintains Indochina Time (ICT/UTC+7) year-round, providing consistent and predictable scheduling for international business. This stability is a practical advantage for regional companies coordinating across multiple Asian time zones." } },
+      { "@type": "Question", "name": "What is the time difference between Bangkok and London?", "acceptedAnswer": { "@type": "Answer", "text": "Bangkok is 7 hours ahead of London during GMT (October–March) and 6 hours ahead during British Summer Time (BST, March–October). When it is 9:00 AM in London (GMT), it is 4:00 PM in Bangkok. The best window for London–Bangkok calls is early London morning: 8:00–10:00 AM GMT (3:00–5:00 PM Bangkok), catching Bangkok before end of business." } },
+      { "@type": "Question", "name": "What is the time difference between Bangkok and Dubai?", "acceptedAnswer": { "@type": "Answer", "text": "Bangkok is 3 hours ahead of Dubai (GST/UTC+4) year-round. Both cities do not observe daylight saving time, so this 3-hour difference is constant throughout the year. When it is 9:00 AM in Dubai, it is 12:00 PM noon in Bangkok — making the midday window ideal for Gulf–Thailand business coordination." } },
+      { "@type": "Question", "name": "What is the time difference between Bangkok and Singapore?", "acceptedAnswer": { "@type": "Answer", "text": "Bangkok is 1 hour behind Singapore. Singapore operates on SGT (UTC+8) while Bangkok uses ICT (UTC+7). When it is 10:00 AM in Bangkok, it is 11:00 AM in Singapore. Despite being geographically close, the 1-hour gap means Singapore's business day starts and ends an hour earlier relative to Bangkok." } },
+      { "@type": "Question", "name": "What is the best time to call Bangkok from the US?", "acceptedAnswer": { "@type": "Answer", "text": "From New York, Bangkok is 12 hours ahead during EST (November–March), making direct business overlap extremely difficult. The closest window is early morning New York (8:00–10:00 AM EST = 8:00–10:00 PM Bangkok). From Los Angeles (PST), Bangkok is 15 hours ahead — making evening PST (6:00–8:00 PM) the most practical for same-day contact." } },
+      { "@type": "Question", "name": "What are typical business hours in Bangkok?", "acceptedAnswer": { "@type": "Answer", "text": "Standard business hours in Bangkok are 8:30 AM to 5:30 PM ICT, Monday through Friday. Government offices operate 8:30 AM–4:30 PM. Banks are generally open 10:00 AM–5:00 PM on weekdays. Many international companies in Bangkok adopt flexible hours to accommodate calls with European or American head offices, often starting earlier or finishing later." } }
+    ]
+  }
+}

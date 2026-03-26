@@ -1,0 +1,52 @@
+{
+  "seo_title": "Current Time in New York — EST/EDT (UTC-5/-4)",
+  "seo_description": "Current local time in New York City. EST (UTC-5) in winter, EDT (UTC-4) in summer. Live clock, NYSE hours, and time difference from NYC to London, LA, Tokyo.",
+  "faq": [
+    {
+      "question": "What time is it in New York right now?",
+      "answer": "New York operates on Eastern Standard Time (EST/UTC-5) from early November to mid-March, and Eastern Daylight Time (EDT/UTC-4) from mid-March to early November. The live clock above shows the current New York time updated in real time. New York City is one of the most-referenced time zones globally for business and finance."
+    },
+    {
+      "question": "What time zone is New York in?",
+      "answer": "New York City is in the Eastern Time Zone, using Eastern Standard Time (EST/UTC-5) in winter and Eastern Daylight Time (EDT/UTC-4) in summer. The Eastern Time Zone covers the US East Coast states including New York, New Jersey, Massachusetts, Florida, Georgia, and others — representing the largest population concentration in any US time zone."
+    },
+    {
+      "question": "Does New York observe daylight saving time?",
+      "answer": "Yes. New York clocks spring forward 1 hour to Eastern Daylight Time (EDT/UTC-4) on the second Sunday of March, and fall back to Eastern Standard Time (EST/UTC-5) on the first Sunday of November. This schedule is observed across the entire US Eastern Time Zone, including cities like Boston, Miami, Philadelphia, and Atlanta."
+    },
+    {
+      "question": "What is the time difference between New York and London?",
+      "answer": "New York is 5 hours behind London during Eastern Standard Time (November–March) and 4 hours behind during Eastern Daylight Time (March–November). When it is 9:00 AM in New York (EST), it is 2:00 PM in London. The optimal window for transatlantic business calls is 9:00 AM–1:00 PM New York time, when both cities are in core business hours."
+    },
+    {
+      "question": "What is the time difference between New York and Los Angeles?",
+      "answer": "New York is consistently 3 hours ahead of Los Angeles, regardless of season — both cities observe daylight saving time on the same schedule. When it is 9:00 AM in New York, it is 6:00 AM in Los Angeles. This 3-hour difference is a constant factor for US coast-to-coast business scheduling."
+    },
+    {
+      "question": "What time does the New York Stock Exchange open?",
+      "answer": "The New York Stock Exchange (NYSE) opens at 9:30 AM EST/EDT and closes at 4:00 PM EST/EDT, Monday through Friday. Pre-market trading runs from 4:00 AM to 9:30 AM, and after-hours trading continues until 8:00 PM. The NYSE is the world's largest stock exchange by market capitalisation, with listings exceeding $25 trillion."
+    },
+    {
+      "question": "What is the best time to call New York from Europe?",
+      "answer": "From London, the best time to call New York is between 2:00 PM and 6:00 PM GMT/BST (9:00 AM–1:00 PM New York EST/EDT). From Paris or Berlin (CET/UTC+1 in winter), call between 3:00 PM and 7:00 PM local time. This window catches New York's morning business hours before the London/European workday ends."
+    },
+    {
+      "question": "What is the time difference between New York and Tokyo?",
+      "answer": "Tokyo is 14 hours ahead of New York during EST (November–March) and 13 hours ahead during EDT (March–November). When it is 9:00 AM Monday in New York (EST), it is 11:00 PM Monday in Tokyo. There is virtually no standard business-hour overlap — international teams typically use early morning New York or late evening Tokyo slots for live meetings."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What time is it in New York right now?", "acceptedAnswer": { "@type": "Answer", "text": "New York operates on Eastern Standard Time (EST/UTC-5) from early November to mid-March, and Eastern Daylight Time (EDT/UTC-4) from mid-March to early November. The live clock above shows the current New York time updated in real time. New York City is one of the most-referenced time zones globally for business and finance." } },
+      { "@type": "Question", "name": "What time zone is New York in?", "acceptedAnswer": { "@type": "Answer", "text": "New York City is in the Eastern Time Zone, using Eastern Standard Time (EST/UTC-5) in winter and Eastern Daylight Time (EDT/UTC-4) in summer. The Eastern Time Zone covers the US East Coast states including New York, New Jersey, Massachusetts, Florida, Georgia, and others — representing the largest population concentration in any US time zone." } },
+      { "@type": "Question", "name": "Does New York observe daylight saving time?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. New York clocks spring forward 1 hour to Eastern Daylight Time (EDT/UTC-4) on the second Sunday of March, and fall back to Eastern Standard Time (EST/UTC-5) on the first Sunday of November. This schedule is observed across the entire US Eastern Time Zone, including cities like Boston, Miami, Philadelphia, and Atlanta." } },
+      { "@type": "Question", "name": "What is the time difference between New York and London?", "acceptedAnswer": { "@type": "Answer", "text": "New York is 5 hours behind London during Eastern Standard Time (November–March) and 4 hours behind during Eastern Daylight Time (March–November). When it is 9:00 AM in New York (EST), it is 2:00 PM in London. The optimal window for transatlantic business calls is 9:00 AM–1:00 PM New York time, when both cities are in core business hours." } },
+      { "@type": "Question", "name": "What is the time difference between New York and Los Angeles?", "acceptedAnswer": { "@type": "Answer", "text": "New York is consistently 3 hours ahead of Los Angeles, regardless of season — both cities observe daylight saving time on the same schedule. When it is 9:00 AM in New York, it is 6:00 AM in Los Angeles. This 3-hour difference is a constant factor for US coast-to-coast business scheduling." } },
+      { "@type": "Question", "name": "What time does the New York Stock Exchange open?", "acceptedAnswer": { "@type": "Answer", "text": "The New York Stock Exchange (NYSE) opens at 9:30 AM EST/EDT and closes at 4:00 PM EST/EDT, Monday through Friday. Pre-market trading runs from 4:00 AM to 9:30 AM, and after-hours trading continues until 8:00 PM. The NYSE is the world's largest stock exchange by market capitalisation, with listings exceeding $25 trillion." } },
+      { "@type": "Question", "name": "What is the best time to call New York from Europe?", "acceptedAnswer": { "@type": "Answer", "text": "From London, the best time to call New York is between 2:00 PM and 6:00 PM GMT/BST (9:00 AM–1:00 PM New York EST/EDT). From Paris or Berlin (CET/UTC+1 in winter), call between 3:00 PM and 7:00 PM local time. This window catches New York's morning business hours before the London/European workday ends." } },
+      { "@type": "Question", "name": "What is the time difference between New York and Tokyo?", "acceptedAnswer": { "@type": "Answer", "text": "Tokyo is 14 hours ahead of New York during EST (November–March) and 13 hours ahead during EDT (March–November). When it is 9:00 AM Monday in New York (EST), it is 11:00 PM Monday in Tokyo. There is virtually no standard business-hour overlap — international teams typically use early morning New York or late evening Tokyo slots for live meetings." } }
+    ]
+  }
+}
