@@ -40,6 +40,20 @@ function countBusinessOverlap(diffHours: number): number {
   return count
 }
 
+function getBestCallWindow(fromOffset: number, toOffset: number, fromCityName: string): string | null {
+  const diff = toOffset - fromOffset
+  const overlaps: number[] = []
+  for (let h = 9; h < 17; h++) {
+    const toH = (h + diff + 48) % 24
+    if (toH >= 9 && toH < 17) overlaps.push(h)
+  }
+  if (overlaps.length === 0) return null
+  const startH = overlaps[0]
+  const endH = overlaps[overlaps.length - 1] + 1
+  const fmt = (h: number) => `${h > 12 ? h - 12 : h === 0 ? 12 : h}${h < 12 ? 'AM' : 'PM'}`
+  return `${fmt(startH)}–${fmt(endH)} ${fromCityName} time`
+}
+
 // Dinamik SEO Metadata
 export async function generateMetadata({ params }: TimeComparePageProps): Promise<Metadata> {
   const { from, to } = await params
@@ -62,13 +76,17 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
   const diffStr = formatDiff(absDiff)
   const overlapHours = countBusinessOverlap(diffHours)
 
+  const callWindow = getBestCallWindow(fromOffset, toOffset, fromCity.city)
+
   const title = diffHours === 0
     ? `${fromCity.city} and ${toCity.city} Time — Same Time Zone`
-    : `${fromCity.city} to ${toCity.city} Time Difference — ${diffStr}`
+    : `${fromCity.city} to ${toCity.city} Time — Current Time Difference`
 
   const description = diffHours === 0
     ? `${fromCity.city} and ${toCity.city} share the same UTC offset. Live clock, conversion table, and meeting planner for both cities.`
-    : `${toCity.city} is currently ${diffStr} ${direction} ${fromCity.city}. ${overlapHours > 0 ? `${overlapHours}-hour business overlap window.` : 'No standard business hour overlap.'} Live clock, conversion table, and meeting planner.`
+    : callWindow
+      ? `${toCity.city} is ${diffStr} ${direction} ${fromCity.city}. Best call window: ${callWindow}. Live clock & overlap calculator.`
+      : `${toCity.city} is ${diffStr} ${direction} ${fromCity.city}. No business-hour overlap — schedule async or use early/late calls. Live clock & meeting planner.`
 
   const faqSchema = {
     '@context': 'https://schema.org',
