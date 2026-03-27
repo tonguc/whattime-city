@@ -121,7 +121,7 @@ export default function UTCtoEST() {
                   ['23:00', '6:00 PM', '7:00 PM'],
                 ].map(([utc, est, edt]) => (
                   <tr key={utc} className="border-b border-slate-100 last:border-b-0">
-                    <td className="py-2 pr-6 font-mono">{utc}</td>
+                    <td className="py-2 pr-6 tabular-nums">{utc}</td>
                     <td className="py-2 pr-6">{est}</td>
                     <td className="py-2">{edt}</td>
                   </tr>

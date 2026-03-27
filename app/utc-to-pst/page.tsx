@@ -113,7 +113,7 @@ export default function UTCtoPST() {
                   ['23:00', '3:00 PM', '4:00 PM'],
                 ].map(([utc, pst, pdt]) => (
                   <tr key={utc} className="border-b border-slate-100 last:border-b-0">
-                    <td className="py-2 pr-6 font-mono">{utc}</td>
+                    <td className="py-2 pr-6 tabular-nums">{utc}</td>
                     <td className="py-2 pr-6">{pst}</td>
                     <td className="py-2">{pdt}</td>
                   </tr>

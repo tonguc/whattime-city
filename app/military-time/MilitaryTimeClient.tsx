@@ -78,13 +78,13 @@ export default function MilitaryTimeClient() {
         </div>
         <div className="grid grid-cols-2 gap-4 text-center">
           <div>
-            <div className={`text-3xl font-mono font-bold tabular-nums ${isLight ? 'text-sky-600' : 'text-sky-400'}`}>
+            <div className={`text-3xl font-bold tabular-nums ${isLight ? 'text-sky-600' : 'text-sky-400'}`}>
               {currentMilitary || '——:——'}
             </div>
             <div className={`text-xs mt-1 ${theme.textMuted}`}>24-hour (military)</div>
           </div>
           <div>
-            <div className={`text-3xl font-mono font-bold tabular-nums ${theme.text}`}>
+            <div className={`text-3xl font-bold tabular-nums ${theme.text}`}>
               {currentStandard || '——:——'}
             </div>
             <div className={`text-xs mt-1 ${theme.textMuted}`}>12-hour (standard)</div>
@@ -104,7 +104,7 @@ export default function MilitaryTimeClient() {
               onChange={e => setMilInput(e.target.value.replace(/\D/g, '').slice(0, 4))}
               placeholder="e.g. 1430"
               maxLength={4}
-              className={`flex-1 px-3 py-2 rounded-lg border font-mono text-sm ${inputClass}`}
+              className={`flex-1 px-3 py-2 rounded-lg border text-sm ${inputClass}`}
               onKeyDown={e => e.key === 'Enter' && handleMilConvert()}
             />
             <button
@@ -116,7 +116,7 @@ export default function MilitaryTimeClient() {
           </div>
           {milResult && (
             <div className={`mt-3 p-3 rounded-lg ${isLight ? 'bg-sky-50 border border-sky-200' : 'bg-sky-900/30 border border-sky-700'}`}>
-              <span className={`font-mono font-bold ${isLight ? 'text-sky-700' : 'text-sky-300'}`}>{milInput} = {milResult}</span>
+              <span className={`font-bold tabular-nums ${isLight ? 'text-sky-700' : 'text-sky-300'}`}>{milInput} = {milResult}</span>
             </div>
           )}
         </div>
@@ -160,7 +160,7 @@ export default function MilitaryTimeClient() {
           </div>
           {stdResult && (
             <div className={`mt-3 p-3 rounded-lg ${isLight ? 'bg-emerald-50 border border-emerald-200' : 'bg-emerald-900/30 border border-emerald-700'}`}>
-              <span className={`font-mono font-bold ${isLight ? 'text-emerald-700' : 'text-emerald-300'}`}>
+              <span className={`font-bold tabular-nums ${isLight ? 'text-emerald-700' : 'text-emerald-300'}`}>
                 {stdHour}:{stdMin.toString().padStart(2, '0')} {stdAmPm} = {stdResult}
               </span>
             </div>

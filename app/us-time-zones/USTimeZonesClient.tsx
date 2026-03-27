@@ -166,7 +166,7 @@ export default function USTimeZonesClient() {
                       <div className={`text-xs ${mutedText}`}>{zone.fullName}</div>
                     </td>
                     <td className={`py-3 pr-4 ${subText}`}>{zone.stdAbbr} / {zone.dstAbbr}</td>
-                    <td className={`py-3 pr-4 font-mono text-xs ${subText}`}>{zone.utcOffset}</td>
+                    <td className={`py-3 pr-4 tabular-nums text-xs ${subText}`}>{zone.utcOffset}</td>
                     <td className={`py-3 ${subText} text-xs`}>{zone.majorCities.slice(0, 3).join(', ')}</td>
                   </tr>
                 ))}
