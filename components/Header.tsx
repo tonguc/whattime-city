@@ -29,6 +29,10 @@ function Header(_props: HeaderProps) {
   // Settings state
   const [showSettings, setShowSettings] = useState(false)
   const settingsRef = useRef<HTMLDivElement>(null)
+
+  // Hamburger menu state
+  const [showHamburger, setShowHamburger] = useState(false)
+  const hamburgerRef = useRef<HTMLDivElement>(null)
   
   // Search effect
   useEffect(() => {
@@ -80,6 +84,9 @@ function Header(_props: HeaderProps) {
       }
       if (settingsRef.current && !settingsRef.current.contains(e.target as Node)) {
         setShowSettings(false)
+      }
+      if (hamburgerRef.current && !hamburgerRef.current.contains(e.target as Node)) {
+        setShowHamburger(false)
       }
     }
     document.addEventListener('mousedown', handleClick)
@@ -157,27 +164,28 @@ function Header(_props: HeaderProps) {
           </div>
         </div>
         
-        {/* Navigation - Order: Cities, Guides, Map, Tools */}
+        {/* Navigation */}
         <nav className="flex items-center gap-0.5 sm:gap-1">
+          {/* Always visible on mobile */}
           <Link href="/cities" className={`px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
             Cities
           </Link>
-          <Link href="/guides" className={`px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
-            Guides
-          </Link>
-          <Link href="/map" className={`px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
-            Map
+          <Link href="/country" className={`px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
+            Countries
           </Link>
           <Link href="/tools" className={`px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
             Tools
           </Link>
-          <Link href="/country" className={`hidden md:block px-2.5 py-2 rounded-lg text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
-            Countries
+          {/* Desktop-only links */}
+          <Link href="/guides" className={`hidden md:block px-2.5 py-2 rounded-lg text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
+            Guides
           </Link>
-          
-          <Link 
-            href="/world-alarm" 
-            className={`hidden sm:flex p-2 rounded-lg transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}
+          <Link href="/map" className={`hidden md:block px-2.5 py-2 rounded-lg text-sm font-medium transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}>
+            Map
+          </Link>
+          <Link
+            href="/world-alarm"
+            className={`hidden md:flex p-2 rounded-lg transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}
             title="Set Alarm"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -185,7 +193,33 @@ function Header(_props: HeaderProps) {
               <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
             </svg>
           </Link>
-          
+
+          {/* Hamburger menu — mobile only, for Guides / Map / Alarm */}
+          <div className="relative md:hidden" ref={hamburgerRef}>
+            <button
+              onClick={() => setShowHamburger(!showHamburger)}
+              aria-label="More navigation"
+              className={`p-2 rounded-lg transition-all ${isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-slate-800 text-slate-300'}`}
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            {showHamburger && (
+              <div className={`absolute right-0 top-full mt-2 w-40 rounded-xl shadow-2xl border ${isLight ? 'bg-white border-slate-200' : 'bg-slate-800 border-slate-700'} py-1`} style={{ zIndex: 999999 }}>
+                <Link href="/guides" onClick={() => setShowHamburger(false)} className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium transition-all ${isLight ? 'text-slate-600 hover:bg-slate-50' : 'text-slate-300 hover:bg-slate-700'}`}>
+                  Guides
+                </Link>
+                <Link href="/map" onClick={() => setShowHamburger(false)} className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium transition-all ${isLight ? 'text-slate-600 hover:bg-slate-50' : 'text-slate-300 hover:bg-slate-700'}`}>
+                  Map
+                </Link>
+                <Link href="/world-alarm" onClick={() => setShowHamburger(false)} className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium transition-all ${isLight ? 'text-slate-600 hover:bg-slate-50' : 'text-slate-300 hover:bg-slate-700'}`}>
+                  Alarm
+                </Link>
+              </div>
+            )}
+          </div>
+
           <div className="relative" ref={settingsRef}>
             <button 
               onClick={() => setShowSettings(!showSettings)}

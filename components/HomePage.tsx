@@ -276,53 +276,53 @@ export default function HomePage() {
         </section>
 
         {/* QUICK TOOLS */}
-        <section className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
-          <Link href="/meeting/" className={`p-5 rounded-2xl backdrop-blur-xl transition-all hover:scale-[1.02] group border ${card}`}>
-            <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-blue-100' : 'bg-blue-900/30'}`}>
+        <section className="space-y-3 mb-4">
+          {/* Meeting Planner — full width, centered on mobile */}
+          <Link href="/meeting/" className={`flex flex-col items-center text-center sm:flex-row sm:items-center sm:text-left p-5 rounded-2xl backdrop-blur-xl transition-all hover:scale-[1.02] group border ${card}`}>
+            <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 flex-shrink-0 ${isLight ? 'bg-blue-100' : 'bg-blue-900/30'}`}>
               <svg className={`w-5 h-5 ${isLight ? 'text-blue-600' : 'text-blue-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
             </div>
-            <h3 className={`font-semibold mb-1 ${text}`}>Meeting Planner</h3>
-            <p className={`text-sm mb-3 ${textMuted}`}>Find overlap hours</p>
-            <span className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-semibold transition-all ${isLight ? 'bg-blue-500 text-white group-hover:bg-blue-600' : 'bg-blue-600 text-white group-hover:bg-blue-500'}`}>
+            <div className="flex-1 sm:mr-4">
+              <h3 className={`font-semibold mb-0.5 ${text}`}>Meeting Planner</h3>
+              <p className={`text-sm ${textMuted}`}>Find the best overlap window across multiple time zones</p>
+            </div>
+            <span className={`mt-3 sm:mt-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-semibold transition-all flex-shrink-0 ${isLight ? 'bg-blue-500 text-white group-hover:bg-blue-600' : 'bg-blue-600 text-white group-hover:bg-blue-500'}`}>
               Find Overlap
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </span>
           </Link>
-          <Link href="/cities/" className={`p-5 rounded-2xl backdrop-blur-xl transition-all hover:scale-[1.02] group border ${card}`}>
-            <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-green-100' : 'bg-green-900/30'}`}>
-              <svg className={`w-5 h-5 ${isLight ? 'text-green-600' : 'text-green-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" strokeWidth={2} />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-              </svg>
-            </div>
-            <h3 className={`font-semibold mb-1 ${text}`}>World Cities</h3>
-            <p className={`text-sm mb-3 ${textMuted}`}>Browse 400+ cities worldwide</p>
-            <span className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-semibold transition-all ${isLight ? 'bg-green-500 text-white group-hover:bg-green-600' : 'bg-green-600 text-white group-hover:bg-green-500'}`}>
-              Explore
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </span>
-          </Link>
-          <Link href="/flight-time/" className={`p-5 rounded-2xl backdrop-blur-xl transition-all hover:scale-[1.02] group border ${card}`}>
-            <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-purple-100' : 'bg-purple-900/30'}`}>
-              <svg className={`w-5 h-5 ${isLight ? 'text-purple-600' : 'text-purple-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-              </svg>
-            </div>
-            <h3 className={`font-semibold mb-1 ${text}`}>Travel Time</h3>
-            <p className={`text-sm mb-3 ${textMuted}`}>Calculate arrival time across zones</p>
-            <span className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-semibold transition-all ${isLight ? 'bg-purple-500 text-white group-hover:bg-purple-600' : 'bg-purple-600 text-white group-hover:bg-purple-500'}`}>
-              Calculate
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </span>
-          </Link>
+          {/* World Cities + Travel Time — 2-column grid */}
+          <div className="grid grid-cols-2 gap-3">
+            <Link href="/cities/" className={`flex flex-col items-center text-center p-5 rounded-2xl backdrop-blur-xl transition-all hover:scale-[1.02] group border ${card}`}>
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-green-100' : 'bg-green-900/30'}`}>
+                <svg className={`w-5 h-5 ${isLight ? 'text-green-600' : 'text-green-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" strokeWidth={2} />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
+              </div>
+              <h3 className={`font-semibold mb-1 ${text}`}>World Cities</h3>
+              <p className={`text-sm mb-3 ${textMuted}`}>Browse 400+ cities</p>
+              <span className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-semibold transition-all ${isLight ? 'bg-green-500 text-white group-hover:bg-green-600' : 'bg-green-600 text-white group-hover:bg-green-500'}`}>
+                Explore →
+              </span>
+            </Link>
+            <Link href="/flight-time/" className={`flex flex-col items-center text-center p-5 rounded-2xl backdrop-blur-xl transition-all hover:scale-[1.02] group border ${card}`}>
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${isLight ? 'bg-purple-100' : 'bg-purple-900/30'}`}>
+                <svg className={`w-5 h-5 ${isLight ? 'text-purple-600' : 'text-purple-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+              </div>
+              <h3 className={`font-semibold mb-1 ${text}`}>Travel Time</h3>
+              <p className={`text-sm mb-3 ${textMuted}`}>Arrival time across zones</p>
+              <span className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-semibold transition-all ${isLight ? 'bg-purple-500 text-white group-hover:bg-purple-600' : 'bg-purple-600 text-white group-hover:bg-purple-500'}`}>
+                Calculate →
+              </span>
+            </Link>
+          </div>
         </section>
 
         {/* YOUR FAVORITES */}
