@@ -106,7 +106,26 @@ export default function SEOContent({ city, seoData }: SEOContentProps) {
 
 
 
-      {(() => {
+      {timeDiffTable.length > 0 ? (
+        <div className={`mt-5 p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+          <h3 className={`text-sm font-semibold mb-3 ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
+            {city.city} Time Difference at a Glance
+          </h3>
+          <div className={`divide-y ${isLight ? 'divide-slate-200' : 'divide-slate-700/60'}`}>
+            {timeDiffTable.map((row: { city: string; slug: string; difference: string; link: string }, i: number) => (
+              <div key={i} className="flex items-center justify-between py-2">
+                <span className={`text-sm ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>{row.city}</span>
+                <Link
+                  href={row.link}
+                  className={`text-sm tabular-nums ${isLight ? 'text-blue-600 hover:underline' : 'text-sky-400 hover:underline'}`}
+                >
+                  {row.difference}
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : (() => {
         const compareTargets = ['new-york', 'london', 'tokyo', 'dubai', 'sydney', 'singapore', 'paris', 'chicago', 'toronto', 'hong-kong', 'berlin', 'madrid', 'amsterdam']
         const compareNames: Record<string, string> = {
           'new-york': 'New York', 'london': 'London', 'tokyo': 'Tokyo', 'dubai': 'Dubai',

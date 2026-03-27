@@ -67,21 +67,21 @@
     "/pacific-time-zone/",
     "/time-converter/",
     "/meeting/",
-    "/los-angeles/",
-    "/time/los-angeles/london/",
-    "/time/los-angeles/new-york/",
-    "/time/los-angeles/tokyo/",
-    "/time/los-angeles/singapore/"
+    "/seattle/",
+    "/time/seattle/london/",
+    "/time/seattle/new-york/",
+    "/time/seattle/tokyo/",
+    "/time/seattle/singapore/"
   ],
   "time_difference_table": [
-    { "city": "New York", "slug": "new-york", "difference": "3 hours ahead", "link": "/time/new-york/los-angeles/" },
-    { "city": "London", "slug": "london", "difference": "8 hours ahead (most of the year)", "link": "/time/los-angeles/london/" },
-    { "city": "Tokyo", "slug": "tokyo", "difference": "17 hours ahead (PST) / 16 hours ahead (PDT)", "link": "/time/los-angeles/tokyo/" },
-    { "city": "Singapore", "slug": "singapore", "difference": "16 hours ahead (PST) / 15 hours ahead (PDT)", "link": "/time/los-angeles/singapore/" },
-    { "city": "Sydney", "slug": "sydney", "difference": "19 hours ahead (PST/AEDT) — varies by DST", "link": "/time/los-angeles/sydney/" },
-    { "city": "Dubai", "slug": "dubai", "difference": "12 hours ahead (PST) / 11 hours ahead (PDT)", "link": "/time/los-angeles/dubai/" },
+    { "city": "New York", "slug": "new-york", "difference": "3 hours ahead", "link": "/time/seattle/new-york/" },
+    { "city": "London", "slug": "london", "difference": "8 hours ahead (most of the year)", "link": "/time/seattle/london/" },
+    { "city": "Tokyo", "slug": "tokyo", "difference": "17 hours ahead (PST) / 16 hours ahead (PDT)", "link": "/time/seattle/tokyo/" },
+    { "city": "Singapore", "slug": "singapore", "difference": "16 hours ahead (PST) / 15 hours ahead (PDT)", "link": "/time/seattle/singapore/" },
+    { "city": "Sydney", "slug": "sydney", "difference": "19 hours ahead (PST/AEDT) — varies by DST", "link": "/time/seattle/sydney/" },
+    { "city": "Dubai", "slug": "dubai", "difference": "12 hours ahead (PST) / 11 hours ahead (PDT)", "link": "/time/seattle/dubai/" },
     { "city": "Los Angeles", "slug": "los-angeles", "difference": "Same timezone (Pacific Time)", "link": "/los-angeles/" },
-    { "city": "Chicago", "slug": "chicago", "difference": "2 hours ahead (CST/CDT)", "link": "/time-converter/" }
+    { "city": "Chicago", "slug": "chicago", "difference": "2 hours ahead (CST/CDT)", "link": "/time/seattle/chicago/" }
   ],
   "eeat_footer": "Last updated: March 2026 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database.",
   "timezone_facts": {
