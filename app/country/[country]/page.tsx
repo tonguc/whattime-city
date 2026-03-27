@@ -55,7 +55,9 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
       type: 'website',
       locale: 'en_US',
       siteName: 'whattime.city',
-      url: `https://whattime.city/country/${slug}`
+      url: COUNTRY_HUB_SLUGS[slug]
+        ? `https://whattime.city/${COUNTRY_HUB_SLUGS[slug]}/`
+        : `https://whattime.city/country/${slug}/`
     },
     twitter: {
       card: 'summary_large_image',
@@ -63,7 +65,9 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
       description: `Current time in ${country.capital} and all ${country.name} cities. ${country.timezones[0]}.`
     },
     alternates: {
-      canonical: `https://whattime.city/country/${slug}`
+      canonical: COUNTRY_HUB_SLUGS[slug]
+        ? `https://whattime.city/${COUNTRY_HUB_SLUGS[slug]}/`
+        : `https://whattime.city/country/${slug}/`
     }
   }
 }
