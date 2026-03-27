@@ -37,19 +37,22 @@ const dstCountries: Record<string, boolean> = {
 }
 
 const compareTargets: Array<{ slug: string; name: string; timezone: string }> = [
-  { slug: 'new-york',  name: 'New York',  timezone: 'America/New_York'    },
-  { slug: 'london',    name: 'London',    timezone: 'Europe/London'        },
-  { slug: 'tokyo',     name: 'Tokyo',     timezone: 'Asia/Tokyo'           },
-  { slug: 'dubai',     name: 'Dubai',     timezone: 'Asia/Dubai'           },
-  { slug: 'sydney',    name: 'Sydney',    timezone: 'Australia/Sydney'     },
-  { slug: 'singapore', name: 'Singapore', timezone: 'Asia/Singapore'       },
-  { slug: 'paris',     name: 'Paris',     timezone: 'Europe/Paris'         },
-  { slug: 'chicago',   name: 'Chicago',   timezone: 'America/Chicago'      },
-  { slug: 'toronto',   name: 'Toronto',   timezone: 'America/Toronto'      },
-  { slug: 'hong-kong', name: 'Hong Kong', timezone: 'Asia/Hong_Kong'       },
-  { slug: 'berlin',    name: 'Berlin',    timezone: 'Europe/Berlin'        },
-  { slug: 'madrid',    name: 'Madrid',    timezone: 'Europe/Madrid'        },
-  { slug: 'amsterdam', name: 'Amsterdam', timezone: 'Europe/Amsterdam'     },
+  { slug: 'new-york',    name: 'New York',    timezone: 'America/New_York'    },
+  { slug: 'london',      name: 'London',      timezone: 'Europe/London'        },
+  { slug: 'tokyo',       name: 'Tokyo',       timezone: 'Asia/Tokyo'           },
+  { slug: 'dubai',       name: 'Dubai',       timezone: 'Asia/Dubai'           },
+  { slug: 'sydney',      name: 'Sydney',      timezone: 'Australia/Sydney'     },
+  { slug: 'singapore',   name: 'Singapore',   timezone: 'Asia/Singapore'       },
+  { slug: 'paris',       name: 'Paris',       timezone: 'Europe/Paris'         },
+  { slug: 'los-angeles', name: 'Los Angeles', timezone: 'America/Los_Angeles'  },
+  { slug: 'chicago',     name: 'Chicago',     timezone: 'America/Chicago'      },
+  { slug: 'toronto',     name: 'Toronto',     timezone: 'America/Toronto'      },
+  { slug: 'hong-kong',   name: 'Hong Kong',   timezone: 'Asia/Hong_Kong'       },
+  { slug: 'berlin',      name: 'Berlin',      timezone: 'Europe/Berlin'        },
+  { slug: 'madrid',      name: 'Madrid',      timezone: 'Europe/Madrid'        },
+  { slug: 'amsterdam',   name: 'Amsterdam',   timezone: 'Europe/Amsterdam'     },
+  { slug: 'mumbai',      name: 'Mumbai',      timezone: 'Asia/Kolkata'         },
+  { slug: 'seoul',       name: 'Seoul',       timezone: 'Asia/Seoul'           },
 ]
 
 export default function SEOContent({ city, seoData }: SEOContentProps) {
@@ -66,9 +69,10 @@ export default function SEOContent({ city, seoData }: SEOContentProps) {
   const contentBlocks: Array<{ title: string; content: string }> = seoData?.content_blocks || []
   const eeatFooter: string = seoData?.eeat_footer || ''
 
-  // Real-time comparison rows for all cities
+  // Real-time comparison rows — always exactly 15 (3×5 grid, no orphan)
   const comparisonRows = compareTargets
     .filter(t => t.slug !== city.slug)
+    .slice(0, 15)
     .map(t => {
       const diff = cityOffset - getNumericOffset(t.timezone)
       const hours = Math.abs(Math.round(diff))
