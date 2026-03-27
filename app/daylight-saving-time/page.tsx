@@ -328,6 +328,36 @@ export default function DaylightSavingTimePage() {
         </div>
       </section>
 
+      {/* When Does the Clock Change — explicit SD:24 keyword target */}
+      <section className="mb-4">
+        <div className={`${card} p-6`}>
+          <h2 className="text-xl font-semibold mb-4 text-slate-800">When Does the Time Change? 2026 Clock Change Dates</h2>
+          <p className="text-sm text-slate-600 mb-4">
+            The exact moment clocks change depends on your region. Here are the 2026 clock change dates — when to spring forward and when to fall back:
+          </p>
+          <div className="space-y-3">
+            {[
+              { region: 'United States & Canada', forward: 'March 8, 2026 at 2:00 AM', back: 'November 1, 2026 at 2:00 AM' },
+              { region: 'United Kingdom', forward: 'March 29, 2026 at 1:00 AM', back: 'October 25, 2026 at 1:00 AM' },
+              { region: 'European Union', forward: 'March 29, 2026 at 1:00 AM UTC', back: 'October 25, 2026 at 1:00 AM UTC' },
+              { region: 'Australia (DST states)', forward: 'October 4, 2026 at 2:00 AM', back: 'April 5, 2026 at 3:00 AM' },
+              { region: 'New Zealand', forward: 'September 27, 2026 at 2:00 AM', back: 'April 5, 2026 at 3:00 AM' },
+            ].map(({ region, forward, back }) => (
+              <div key={region} className="rounded-xl border border-slate-100 bg-slate-50 p-4">
+                <div className="font-semibold text-slate-700 text-sm mb-2">{region}</div>
+                <div className="grid sm:grid-cols-2 gap-2 text-sm">
+                  <div><span className="text-emerald-600 font-medium">Spring forward:</span> <span className="text-slate-600">{forward}</span></div>
+                  <div><span className="text-amber-600 font-medium">Fall back:</span> <span className="text-slate-600">{back}</span></div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-slate-400 mt-3">
+            Tip: US clock changes always happen on Sundays at 2:00 AM local time to minimize disruption. EU changes happen on the last Sunday of March/October.
+          </p>
+        </div>
+      </section>
+
       {/* Countries without DST */}
       <section className="mb-4">
         <div className={`${card} p-6`}>
