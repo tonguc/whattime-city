@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useCityContext } from '@/lib/CityContext'
 import { useThemeClasses } from '@/lib/useThemeClasses'
 import { getFlagUrl } from '@/shared/utils'
+import CountrySearchModal from '@/components/CountrySearchModal'
 
 interface City {
   slug: string
@@ -117,20 +118,7 @@ export default function CountryPageContent({
             : `${country.name} uses ${country.timezones[0]}.`}
         </p>
 
-        {/* Link to country listing/search */}
-        <Link
-          href="/country/"
-          className={`inline-flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-lg transition-colors ${
-            isLight
-              ? 'text-slate-500 hover:text-slate-700 bg-slate-100 hover:bg-slate-200'
-              : 'text-slate-400 hover:text-slate-200 bg-slate-800 hover:bg-slate-700'
-          }`}
-        >
-          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-          Search another country
-        </Link>
+        <CountrySearchModal />
       </header>
       
       {/* Quick Facts */}
