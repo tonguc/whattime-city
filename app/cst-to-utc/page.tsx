@@ -123,8 +123,8 @@ export default function CSTtoUTC() {
                 ].map(([cst, utc, cdt]) => (
                   <tr key={cst} className="border-b border-slate-100 last:border-b-0">
                     <td className="py-2 pr-6">{cst}</td>
-                    <td className="py-2 pr-6 font-mono">{utc}</td>
-                    <td className="py-2 font-mono">{cdt}</td>
+                    <td className="py-2 pr-6 tabular-nums">{utc}</td>
+                    <td className="py-2 tabular-nums">{cdt}</td>
                   </tr>
                 ))}
               </tbody>
