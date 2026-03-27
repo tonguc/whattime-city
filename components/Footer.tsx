@@ -15,19 +15,47 @@ export default function Footer(_props: FooterProps) {
   return (
     <footer className={`py-6 border-t backdrop-blur-xl ${card} shadow-sm`}>
       <div className="max-w-6xl mx-auto px-4">
-        {/* Links Row */}
-        <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4">
-          <Link href="/map" className={`text-sm ${textMuted} hover:underline`}>World Map</Link>
-          <Link href="/country" className={`text-sm ${textMuted} hover:underline`}>Countries</Link>
-          <Link href="/guides" className={`text-sm ${textMuted} hover:underline`}>City Guides</Link>
-          <Link href="/tools" className={`text-sm ${textMuted} hover:underline`}>Tools</Link>
-          <Link href="/widget" className={`text-sm ${textMuted} hover:underline`}>Widget</Link>
-          <span className={textMuted}>|</span>
-          <Link href="/about" className={`text-sm ${textMuted} hover:underline`}>About</Link>
-          <Link href="/privacy" className={`text-sm ${textMuted} hover:underline`}>Privacy</Link>
-          <Link href="/contact" className={`text-sm ${textMuted} hover:underline`}>Contact</Link>
+
+        {/* Two-column link grid */}
+        <nav className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-5 text-sm">
+          <div>
+            <p className={`font-semibold mb-2 ${textMuted}`}>Explore</p>
+            <div className="flex flex-col gap-1.5">
+              <Link href="/cities" className={`${textMuted} hover:underline`}>World Clock</Link>
+              <Link href="/country" className={`${textMuted} hover:underline`}>Countries</Link>
+              <Link href="/map" className={`${textMuted} hover:underline`}>World Map</Link>
+              <Link href="/guides" className={`${textMuted} hover:underline`}>City Guides</Link>
+            </div>
+          </div>
+          <div>
+            <p className={`font-semibold mb-2 ${textMuted}`}>Tools</p>
+            <div className="flex flex-col gap-1.5">
+              <Link href="/time-converter/" className={`${textMuted} hover:underline`}>Time Converter</Link>
+              <Link href="/meeting/" className={`${textMuted} hover:underline`}>Meeting Planner</Link>
+              <Link href="/flight-time/" className={`${textMuted} hover:underline`}>Flight Time</Link>
+              <Link href="/military-time/" className={`${textMuted} hover:underline`}>Military Time</Link>
+            </div>
+          </div>
+          <div>
+            <p className={`font-semibold mb-2 ${textMuted}`}>Reference</p>
+            <div className="flex flex-col gap-1.5">
+              <Link href="/daylight-saving-time" className={`${textMuted} hover:underline`}>Daylight Saving Time</Link>
+              <Link href="/us-time-zones" className={`${textMuted} hover:underline`}>US Time Zones</Link>
+              <Link href="/eastern-time-zone" className={`${textMuted} hover:underline`}>Eastern Time</Link>
+              <Link href="/pacific-time-zone" className={`${textMuted} hover:underline`}>Pacific Time</Link>
+            </div>
+          </div>
+          <div>
+            <p className={`font-semibold mb-2 ${textMuted}`}>About</p>
+            <div className="flex flex-col gap-1.5">
+              <Link href="/widget" className={`${textMuted} hover:underline`}>Embed Widget</Link>
+              <Link href="/about" className={`${textMuted} hover:underline`}>About</Link>
+              <Link href="/privacy" className={`${textMuted} hover:underline`}>Privacy</Link>
+              <Link href="/contact" className={`${textMuted} hover:underline`}>Contact</Link>
+            </div>
+          </div>
         </nav>
-        
+
         {/* Time of day legend */}
         <div className="flex flex-wrap justify-center gap-4 mb-3">
           {(['dawn', 'day', 'dusk', 'night'] as const).map(tod => {
@@ -41,7 +69,7 @@ export default function Footer(_props: FooterProps) {
             )
           })}
         </div>
-        
+
         {/* Copyright Row */}
         <p className={`text-center text-sm ${textMuted}`}>© {new Date().getFullYear()} whattime.city</p>
       </div>
