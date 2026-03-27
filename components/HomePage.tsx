@@ -549,6 +549,24 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* SEO Context Section — text + keyword context for Google */}
+        <section className={`rounded-2xl p-5 mb-4 backdrop-blur-xl border ${card}`}>
+          <h2 className={`text-lg font-semibold mb-3 ${text}`}>World Clock — Check Current Time Anywhere</h2>
+          <div className={`space-y-2 text-sm leading-relaxed ${textMuted}`}>
+            <p>
+              whattime.city is a free world clock for checking the current local time in any city or country.
+              Whether you need to know the <Link href="/india" className={`underline decoration-dotted ${accentText}`}>current time in India</Link>, compare <Link href="/time/new-york/london" className={`underline decoration-dotted ${accentText}`}>New York to London time difference</Link>,
+              or find the best overlap window for an international call, our live clocks and tools update in real time.
+            </p>
+            <p>
+              Use the <Link href="/meeting/" className={`underline decoration-dotted ${accentText}`}>Meeting Planner</Link> to find hours that work across time zones,
+              the <Link href="/pst-to-est" className={`underline decoration-dotted ${accentText}`}>PST to EST converter</Link> for US coast-to-coast scheduling,
+              or explore <Link href="/daylight-saving-time" className={`underline decoration-dotted ${accentText}`}>Daylight Saving Time</Link> dates by country.
+              For US travelers, see <Link href="/eastern-time-zone" className={`underline decoration-dotted ${accentText}`}>Eastern</Link>, <Link href="/central-time-zone" className={`underline decoration-dotted ${accentText}`}>Central</Link>, <Link href="/pacific-time-zone" className={`underline decoration-dotted ${accentText}`}>Pacific</Link>, and all other US time zones.
+            </p>
+          </div>
+        </section>
       </main>
 
       {/* FOOTER */}
