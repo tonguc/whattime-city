@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     default: 'whattime.city - World Clock & Time Zone Converter',
     template: '%s | whattime.city',
   },
-  description: 'Free online world clock showing current local time in any city. Compare time zones, plan meetings, calculate flight times, and get jet lag advice. 400+ cities worldwide.',
+  description: 'Free world clock showing current local time in any city or country. Compare time zones, convert PST to EST or IST to GMT, plan international meetings, and check Daylight Saving Time dates. Covers 1,700+ cities across every time zone.',
   keywords: [
     'world clock',
     'time zone converter',

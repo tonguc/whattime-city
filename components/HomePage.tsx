@@ -552,34 +552,34 @@ export default function HomePage() {
 
         {/* SEO Category Cards — signals breadth to Google */}
         <section className={`rounded-2xl p-5 mb-4 backdrop-blur-xl border ${card}`}>
-          <h2 className={`text-lg font-semibold mb-4 ${text}`}>What You Can Do Here</h2>
+          <h2 className={`text-lg font-semibold mb-4 ${text}`}>Everything About Time Zones — In One Place</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
 
             <Link href="/cities" className={`p-4 rounded-xl transition-all hover:scale-[1.01] ${isLight ? 'bg-slate-50 hover:bg-slate-100' : 'bg-slate-800/50 hover:bg-slate-700/50'}`}>
-              <p className={`font-semibold text-sm mb-1 ${text}`}>🌍 Current Time by Country & City</p>
+              <p className={`font-semibold text-sm mb-2 ${text}`}>🌍 Current Time in Any City or Country</p>
               <p className={`text-xs leading-relaxed ${textMuted}`}>
-                Live local time in 400+ cities and every country — India, Japan, UK, USA, Australia, Brazil and more. Clocks update in real time with UTC offset and DST status.
+                Check the live local time in cities and countries across every time zone — from Tokyo and Singapore to London, New York, Dubai, and São Paulo. Each page shows the current time, UTC offset, Daylight Saving Time status, sunrise and sunset, and local weather. Whether you need the time in India (IST, UTC+5:30), Japan (JST, UTC+9), or Australia (AEST/AEDT), we have a dedicated clock page for it.
               </p>
             </Link>
 
             <Link href="/time-converter/" className={`p-4 rounded-xl transition-all hover:scale-[1.01] ${isLight ? 'bg-slate-50 hover:bg-slate-100' : 'bg-slate-800/50 hover:bg-slate-700/50'}`}>
-              <p className={`font-semibold text-sm mb-1 ${text}`}>🔄 Time Zone Converter</p>
+              <p className={`font-semibold text-sm mb-2 ${text}`}>🔄 Time Zone Converter</p>
               <p className={`text-xs leading-relaxed ${textMuted}`}>
-                Convert time between any two cities or time zones. PST to EST, IST to GMT, AEST to EST and 60+ converter pairs. Find the best overlap hours for international calls.
+                Convert time between any two time zones instantly. Popular converters include PST to EST, IST to EST, IST to GMT, GMT to EST, JST to EST, AEST to EST, and CET to EST. You can also compare any two cities directly — type a city name and see the current local time, the exact offset difference, and the best business-hour overlap window for scheduling calls or meetings.
               </p>
             </Link>
 
             <Link href="/daylight-saving-time" className={`p-4 rounded-xl transition-all hover:scale-[1.01] ${isLight ? 'bg-slate-50 hover:bg-slate-100' : 'bg-slate-800/50 hover:bg-slate-700/50'}`}>
-              <p className={`font-semibold text-sm mb-1 ${text}`}>☀️ Daylight Saving Time</p>
+              <p className={`font-semibold text-sm mb-2 ${text}`}>☀️ Daylight Saving Time Guide</p>
               <p className={`text-xs leading-relaxed ${textMuted}`}>
-                When do clocks change in the USA, UK, Europe, Australia, and Canada? Full DST schedules, dates, and which countries have abolished it permanently.
+                Find out exactly when clocks change in the USA, UK, Europe, Australia, Canada, and New Zealand for 2025 and 2026. The US moves clocks forward in March and back in November; the UK and Europe follow a slightly different schedule. Some countries — including Japan, China, India, and most of Africa — do not observe DST at all. We cover all countries in a single reference table.
               </p>
             </Link>
 
             <Link href="/meeting/" className={`p-4 rounded-xl transition-all hover:scale-[1.01] ${isLight ? 'bg-slate-50 hover:bg-slate-100' : 'bg-slate-800/50 hover:bg-slate-700/50'}`}>
-              <p className={`font-semibold text-sm mb-1 ${text}`}>📅 Meeting Planner & Tools</p>
+              <p className={`font-semibold text-sm mb-2 ${text}`}>📅 Meeting Planner & Time Zone Tools</p>
               <p className={`text-xs leading-relaxed ${textMuted}`}>
-                Schedule meetings across time zones and find hours that work for all participants. Also: Flight Time Calculator, Military Time Converter, World Alarm Clock.
+                Plan international meetings and find time slots that work across multiple time zones simultaneously. Additional tools include a Flight Time Calculator for estimating arrival times after crossing time zones, a Military Time Converter (24-hour format), and a World Alarm Clock you can set for any city. All tools are free and work on desktop and mobile.
               </p>
             </Link>
 
