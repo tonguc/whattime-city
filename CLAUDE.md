@@ -5,27 +5,42 @@ Bu dosya oturumlar arası hafıza kaybını önlemek için tutulur.
 
 ---
 
-## ⚠️ VERİ KURALI — HER ZAMAN UYGULA
+## ⚠️ KRİTİK: İÇERİK YAZMA KURALLARI (ASLA ATLANMAZ)
 
-**SEO kararlarında tahmin veya genel bilgi KULLANMA. Her zaman gerçek veriyi önceliklendir:**
+**SEO kararlarında tahmin veya genel bilgi KULLANMA. Her zaman gerçek veriyi önceliklendir.**
 
-### Öncelik Sırası:
-1. **`/seo-data-upload/` klasörü** — Ubersuggest rakip CSV'leri (EN ÖNEMLİ)
+### Veri Öncelik Sırası — Her Sayfa İçin Zorunlu
+
+Herhangi bir sayfa veya içerik yazmadan önce **bu sırayla** veri toplanır:
+
+1. **Ubersuggest CSV'leri — HER ZAMAN ÖNCE** (`/seo-data-upload/*.csv`)
    - `ubersuggest timeanddate.com.csv` — ana rakip keyword'leri + hacimler
-   - `ubersuggest 24timezones.com.csv`
-   - `ubersuggest thetimenow.com.csv`
-   - `ubersuggest time.is.csv`
-   - `ubersuggest time.now.csv`
+   - `ubersuggest 24timezones.com.csv`, `ubersuggest thetimenow.com.csv`, `ubersuggest time.is.csv`, `ubersuggest time.now.csv`
    - `competitors_data_for_whattime.city.csv`
    - `broken_links.csv`, `duplicate_title_tags.csv`, `duplicate_meta_descriptions.csv`
    - `Sorgular.csv`, `Sayfa sayısı.csv` (GSC export)
+   - Hedef keyword'ün volume'unu doğrula, rakiplerin pozisyonlarını çıkar, ilgili cluster'ları bul
+   - **Bu adım atlanamaz. "Rakip verisi önemliydi" demek kabul edilemez.**
 
-2. **`/data/seo-intel/`** — İşlenmiş GSC + rakip JSON verisi
-   - `gsc_pages.json` — tüm sayfalar, impression/pozisyon/tıklama
-   - `gsc_queries.json` — tüm sorgular
-   - `competitor_timeanddate_com.json` vb.
+2. **SERP Verisi — İKİNCİ** (`/data/seo-intel/serp_results.json`)
+   - Featured snippet / answer box var mı?
+   - PAA soruları neler?
+   - Top 5 organik sonuç hangi siteler? Güçlü mü zayıf mı?
+   - SERP tipi: tool/converter mu, informational mı, widget mı?
 
-3. **`/data/seo/`** — Şehir bazlı SEO JSON dosyaları
+3. **GSC Verisi — ÜÇÜNCÜ** (`/data/seo-intel/gsc_pages.json`, `gsc_queries.json`)
+   - Mevcut sayfamız bu keyword'de görünüyor mu?
+   - Impression var mı, pozisyon kaç?
+   - `competitor_timeanddate_com.json` vb. rakip JSON dosyaları
+
+4. **Sayfa yaz** — Ancak yukarıdaki 3 adım tamamlandıktan sonra.
+
+### SEO Framework (her içerik kararında uygulanır)
+- SERP clustering (%60+ overlap = aynı cluster = tek sayfa)
+- Competitor page analizi (H1/H2, içerik bölümleri, PAA yanıtları)
+- Gap analizi: rakiplerin vermediği değeri ver
+- Featured snippet hedefi: kısa cevap + soru başlıkları + FAQ schema
+- Her karar veri ile desteklenmeli, tahmin yok
 
 **Yeni içerik yazarken:** Önce ilgili CSV'yi oku → hangi keyword'ler yüksek hacimli → o keyword'lere göre yaz.
 **Yeni sayfa eklerken:** GSC'de bu konuda impression var mı → pozisyon nerede → rakipler ne yapıyor.
