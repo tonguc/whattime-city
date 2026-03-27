@@ -550,21 +550,39 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SEO Context Section — text + keyword context for Google */}
+        {/* SEO Category Cards — signals breadth to Google */}
         <section className={`rounded-2xl p-5 mb-4 backdrop-blur-xl border ${card}`}>
-          <h2 className={`text-lg font-semibold mb-3 ${text}`}>World Clock — Check Current Time Anywhere</h2>
-          <div className={`space-y-2 text-sm leading-relaxed ${textMuted}`}>
-            <p>
-              whattime.city is a free world clock for checking the current local time in any city or country.
-              Whether you need to know the <Link href="/india" className={`underline decoration-dotted ${accentText}`}>current time in India</Link>, compare <Link href="/time/new-york/london" className={`underline decoration-dotted ${accentText}`}>New York to London time difference</Link>,
-              or find the best overlap window for an international call, our live clocks and tools update in real time.
-            </p>
-            <p>
-              Use the <Link href="/meeting/" className={`underline decoration-dotted ${accentText}`}>Meeting Planner</Link> to find hours that work across time zones,
-              the <Link href="/pst-to-est" className={`underline decoration-dotted ${accentText}`}>PST to EST converter</Link> for US coast-to-coast scheduling,
-              or explore <Link href="/daylight-saving-time" className={`underline decoration-dotted ${accentText}`}>Daylight Saving Time</Link> dates by country.
-              For US travelers, see <Link href="/eastern-time-zone" className={`underline decoration-dotted ${accentText}`}>Eastern</Link>, <Link href="/central-time-zone" className={`underline decoration-dotted ${accentText}`}>Central</Link>, <Link href="/pacific-time-zone" className={`underline decoration-dotted ${accentText}`}>Pacific</Link>, and all other US time zones.
-            </p>
+          <h2 className={`text-lg font-semibold mb-4 ${text}`}>What You Can Do Here</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+            <Link href="/cities" className={`p-4 rounded-xl transition-all hover:scale-[1.01] ${isLight ? 'bg-slate-50 hover:bg-slate-100' : 'bg-slate-800/50 hover:bg-slate-700/50'}`}>
+              <p className={`font-semibold text-sm mb-1 ${text}`}>🌍 Current Time by Country & City</p>
+              <p className={`text-xs leading-relaxed ${textMuted}`}>
+                Live local time in 400+ cities and every country — India, Japan, UK, USA, Australia, Brazil and more. Clocks update in real time with UTC offset and DST status.
+              </p>
+            </Link>
+
+            <Link href="/time-converter/" className={`p-4 rounded-xl transition-all hover:scale-[1.01] ${isLight ? 'bg-slate-50 hover:bg-slate-100' : 'bg-slate-800/50 hover:bg-slate-700/50'}`}>
+              <p className={`font-semibold text-sm mb-1 ${text}`}>🔄 Time Zone Converter</p>
+              <p className={`text-xs leading-relaxed ${textMuted}`}>
+                Convert time between any two cities or time zones. PST to EST, IST to GMT, AEST to EST and 60+ converter pairs. Find the best overlap hours for international calls.
+              </p>
+            </Link>
+
+            <Link href="/daylight-saving-time" className={`p-4 rounded-xl transition-all hover:scale-[1.01] ${isLight ? 'bg-slate-50 hover:bg-slate-100' : 'bg-slate-800/50 hover:bg-slate-700/50'}`}>
+              <p className={`font-semibold text-sm mb-1 ${text}`}>☀️ Daylight Saving Time</p>
+              <p className={`text-xs leading-relaxed ${textMuted}`}>
+                When do clocks change in the USA, UK, Europe, Australia, and Canada? Full DST schedules, dates, and which countries have abolished it permanently.
+              </p>
+            </Link>
+
+            <Link href="/meeting/" className={`p-4 rounded-xl transition-all hover:scale-[1.01] ${isLight ? 'bg-slate-50 hover:bg-slate-100' : 'bg-slate-800/50 hover:bg-slate-700/50'}`}>
+              <p className={`font-semibold text-sm mb-1 ${text}`}>📅 Meeting Planner & Tools</p>
+              <p className={`text-xs leading-relaxed ${textMuted}`}>
+                Schedule meetings across time zones and find hours that work for all participants. Also: Flight Time Calculator, Military Time Converter, World Alarm Clock.
+              </p>
+            </Link>
+
           </div>
         </section>
       </main>
