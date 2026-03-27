@@ -55,24 +55,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     openGraph: {
-      title: `Current Time in ${location} - What Time Is It Now?`,
-      description: info 
+      title: seoData?.seo_title || `Current Time in ${location}`,
+      description: seoData?.seo_description || (info
         ? `Live local time in ${city.city}. Population: ${info.population}. Currency: ${info.currencySymbol}. Top spots: ${info.attractions.slice(0, 2).join(', ')}.`
-        : `Live local time in ${city.city}, ${city.country}. Check sunrise, sunset and weather.`,
+        : `Live local time in ${city.city}, ${city.country}. Check sunrise, sunset and weather.`),
       type: 'website',
       locale: 'en_US',
       siteName: 'whattime.city',
-      url: `https://whattime.city/${slug}`
+      url: `https://whattime.city/${slug}/`
     },
     twitter: {
       card: 'summary_large_image',
-      title: city.stateCode ? `Time in ${city.city}, ${city.stateCode} Now` : `Time in ${city.city} Now`,
-      description: info
+      title: seoData?.seo_title || (city.stateCode ? `Time in ${city.city}, ${city.stateCode} Now` : `Time in ${city.city} Now`),
+      description: seoData?.seo_description || (info
         ? `Current time in ${city.city}. ${info.population} people. ${info.currency} (${info.currencySymbol}).`
-        : `Current local time in ${city.city}, ${city.country}. Live clock with sunrise & sunset.`
+        : `Current local time in ${city.city}, ${city.country}. Live clock with sunrise & sunset.`)
     },
     alternates: {
-      canonical: `https://whattime.city/${slug}`
+      canonical: `https://whattime.city/${slug}/`
     },
     robots: {
       index: true,
