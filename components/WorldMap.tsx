@@ -113,6 +113,7 @@ export default function WorldMap() {
                 className={`w-full px-3 py-3 bg-transparent outline-none ${
                   isLight ? 'text-slate-800 placeholder-slate-400' : 'text-white placeholder-slate-400'
                 }`}
+                style={{ fontSize: '16px' }}
               />
               {searchQuery && (
                 <button

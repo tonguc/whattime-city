@@ -96,6 +96,7 @@ export default function CountriesContent() {
               onChange={e => setQuery(e.target.value)}
               placeholder={`Search ${totalCountries} countries by name, capital, or timezone…`}
               className={`w-full pl-12 pr-12 py-3.5 rounded-2xl border text-sm font-medium outline-none transition-colors ${inputBg}`}
+              style={{ fontSize: '16px' }}
               autoComplete="off"
               spellCheck={false}
             />
