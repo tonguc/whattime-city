@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   title: 'Daylight Saving Time 2026 — Dates, Countries & Clock Changes',
   description: 'When does daylight saving time start and end in 2026? Get exact DST dates for the US, UK, EU, Australia, and every country. Spring forward, fall back explained.',
   alternates: {
-    canonical: 'https://whattime.city/daylight-saving-time',
+    canonical: 'https://whattime.city/daylight-saving-time/',
   },
   openGraph: {
     title: 'Daylight Saving Time 2026 — Dates & Countries',
     description: 'Exact DST start and end dates for 2026. US, UK, EU, Australia and more. Never be caught off guard by a clock change again.',
     type: 'website',
-    url: 'https://whattime.city/daylight-saving-time',
+    url: 'https://whattime.city/daylight-saving-time/',
     siteName: 'whattime.city',
   },
   twitter: {
@@ -105,6 +105,30 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
+      name: 'Is daylight saving time going to continue in 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, daylight saving time continues in 2026 in the United States, Canada, UK, and the European Union. The Sunshine Protection Act, which would have made DST permanent in the US, was not enacted into law. No country that currently observes DST has announced plans to abolish it in 2026.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What states are considering getting rid of daylight saving time?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'More than 30 US states have introduced legislation to end the twice-yearly clock change. Most of these bills would adopt permanent standard time or permanent daylight saving time. However, under federal law (the Uniform Time Act), states can only permanently exempt themselves from DST by staying on standard time — as Arizona and Hawaii have done. Switching to permanent DST requires an act of Congress.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Will we still be changing clocks in 2027?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Almost certainly yes. The US, EU, and UK all continue DST in 2026 with no confirmed end date. The EU voted in 2019 to let member states choose permanent summer or winter time, but implementation has been indefinitely postponed due to coordination difficulties. The US Sunshine Protection Act failed to pass in 2023–2024. Unless new legislation passes, clock changes will continue in 2027.',
+      },
+    },
+    {
+      '@type': 'Question',
       name: 'Why do we observe daylight saving time?',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -127,7 +151,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Daylight Saving Time 2026 — Dates, Countries & Clock Changes',
   description: 'Complete guide to DST dates in 2026 for every country, including US, UK, EU, Australia, and New Zealand.',
-  url: 'https://whattime.city/daylight-saving-time',
+  url: 'https://whattime.city/daylight-saving-time/',
   datePublished: '2026-01-01',
   dateModified: '2026-03-01',
   author: { '@type': 'Organization', name: 'whattime.city' },
@@ -369,6 +393,18 @@ export default function DaylightSavingTimePage() {
                 q: "What states don't observe daylight saving time?",
                 a: 'Arizona (except the Navajo Nation), Hawaii, and all US territories (Puerto Rico, US Virgin Islands, Guam, American Samoa, Northern Mariana Islands) do not observe DST.',
               },
+              {
+                q: 'Is daylight saving time going to continue in 2026?',
+                a: 'Yes. The US, UK, EU, and most countries that observe DST continue to do so in 2026. The US Sunshine Protection Act (permanent DST) was not enacted. No abolishment legislation is in effect.',
+              },
+              {
+                q: 'What states are considering getting rid of DST?',
+                a: 'Over 30 states have introduced bills to end clock changes. However, under federal law states can only opt out of DST by staying on permanent standard time (as Arizona does). Switching to permanent daylight time requires an act of Congress — which has not passed.',
+              },
+              {
+                q: 'Will clocks still change in 2027?',
+                a: 'Yes, unless new legislation passes. The EU postponed its planned abolishment indefinitely. The US Sunshine Protection Act failed. Clock changes in 2027 are expected in all regions that observe DST in 2026.',
+              },
             ].map((item, i) => (
               <div key={i} className="rounded-xl border border-slate-100 bg-slate-50 p-4">
                 <h3 className="font-semibold text-slate-800 mb-1 text-sm">{item.q}</h3>
@@ -412,11 +448,11 @@ export default function DaylightSavingTimePage() {
         <div className={`${card} p-6`}>
           <h2 className="text-xl font-semibold mb-4 text-slate-800">Related Tools</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <Link href="/time-converter" className="p-4 rounded-xl border border-slate-200 bg-slate-50 hover:border-sky-300 transition-colors">
+            <Link href="/time-converter/" className="p-4 rounded-xl border border-slate-200 bg-slate-50 hover:border-sky-300 transition-colors">
               <div className="font-medium text-slate-800 text-sm">Time Converter</div>
               <div className="text-xs text-slate-500 mt-1">Convert between any two cities</div>
             </Link>
-            <Link href="/meeting" className="p-4 rounded-xl border border-slate-200 bg-slate-50 hover:border-sky-300 transition-colors">
+            <Link href="/meeting/" className="p-4 rounded-xl border border-slate-200 bg-slate-50 hover:border-sky-300 transition-colors">
               <div className="font-medium text-slate-800 text-sm">Meeting Planner</div>
               <div className="text-xs text-slate-500 mt-1">Find overlapping business hours</div>
             </Link>
