@@ -22,7 +22,7 @@ export default function FlightTimePage() {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Flight Time Calculator',
-    url: 'https://whattime.city/flight-time',
+    url: 'https://whattime.city/flight-time/',
     description: 'Calculate your exact arrival time in local time when crossing time zones. Enter departure city, arrival city, and flight duration.',
     applicationCategory: 'TravelApplication',
     operatingSystem: 'Web',
@@ -54,7 +54,7 @@ export default function FlightTimePage() {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://whattime.city/' },
-      { '@type': 'ListItem', position: 2, name: 'Flight Arrival Time Calculator', item: 'https://whattime.city/flight-time/' },
+      { '@type': 'ListItem', position: 2, name: 'Flight Time Calculator', item: 'https://whattime.city/flight-time/' },
     ],
   }
 

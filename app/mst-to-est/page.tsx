@@ -3,20 +3,20 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'MST to EST — Mountain to Eastern Time Converter',
-  description: 'Convert MST to EST instantly. Mountain Standard Time is 2 hours behind Eastern Standard Time. Live clocks, conversion table, and business hours overlap.',
+  title: 'MST to EST Converter — Mountain Time is 2 Hours Behind Eastern',
+  description: 'MST is 2 hours behind EST. Convert Mountain Standard Time to Eastern — live clocks, full table, and answers to "Is Mountain Time 2 hours behind EST?", "What is 10am MST in EST?" and "What is 4pm EST in Mountain Time?"',
   alternates: { canonical: 'https://whattime.city/mst-to-est/' },
   openGraph: {
-    title: 'MST to EST Time Converter — Mountain to Eastern',
-    description: 'MST is 2 hours behind EST. Live clocks and full conversion table.',
+    title: 'MST to EST — Mountain Time is 2 Hours Behind Eastern',
+    description: 'Convert MST to EST. Mountain Time is always 2 hours behind Eastern Time. Live clocks and full conversion table.',
     type: 'website',
     url: 'https://whattime.city/mst-to-est/',
     siteName: 'whattime.city',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MST to EST — Mountain to Eastern Time',
-    description: 'MST is 2 hours behind EST. Live converter and full table.',
+    title: 'MST to EST — Mountain is 2 Hours Behind Eastern',
+    description: 'MST is 2 hours behind EST. Live converter, full table, and common time conversions.',
   },
 }
 

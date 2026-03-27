@@ -1,12 +1,12 @@
 export const flightTimeSEO = {
   metadata: {
-    title: "Flight Arrival Time Calculator — Time Zone & DST Aware",
+    title: "Flight Time Calculator — Calculate Arrival Time Across Time Zones",
     description: "What time will you land? Enter departure city, arrival city, and flight duration to instantly calculate your local arrival time — automatically adjusts for time zones and Daylight Saving Time.",
-    canonical: "https://whattime.city/flight-time",
+    canonical: "https://whattime.city/flight-time/",
     openGraph: {
-      title: "Flight Arrival Time Calculator — What Time Do I Land?",
-      description: "Calculate your local arrival time when crossing time zones. Automatically handles DST for 400+ cities worldwide.",
-      url: "https://whattime.city/flight-time"
+      title: "Flight Time Calculator — What Time Do I Land?",
+      description: "Calculate your local arrival time when crossing time zones. Automatically handles DST for 1,700+ cities worldwide.",
+      url: "https://whattime.city/flight-time/"
     }
   },
   content: {
