@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useMemo, useEffect, useRef } from 'react'
+import { useState, useMemo, useRef, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { countries } from '@/lib/cities'
 import { COUNTRY_HUB_SLUGS } from '@/data'
@@ -37,41 +37,57 @@ const continentInfo: Record<string, { name: string; emoji: string }> = {
   oceania:  { name: 'Oceania',  emoji: '🌏' }
 }
 
+interface DropdownPos { top: number; left: number; width: number }
+
 export default function CountriesContent() {
   const { theme, isLight } = useCityContext()
   const router = useRouter()
   const [query, setQuery] = useState('')
-  const [modalOpen, setModalOpen] = useState(false)
-  const [modalQuery, setModalQuery] = useState('')
-  const modalInputRef = useRef<HTMLInputElement>(null)
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [dropPos, setDropPos] = useState<DropdownPos | null>(null)
+  const searchInputRef = useRef<HTMLInputElement>(null)
+  const searchDropRef = useRef<HTMLDivElement>(null)
 
-  const modalResults = modalQuery.trim().length > 0
+  const searchResults = query.trim().length > 0
     ? countries.filter(c =>
-        c.name.toLowerCase().includes(modalQuery.toLowerCase()) ||
-        c.capital.toLowerCase().includes(modalQuery.toLowerCase())
-      ).slice(0, 15)
-    : countries.slice(0, 15)
+        c.name.toLowerCase().includes(query.toLowerCase()) ||
+        c.capital.toLowerCase().includes(query.toLowerCase()) ||
+        c.timezones.some(tz => tz.toLowerCase().includes(query.toLowerCase()))
+      ).slice(0, 10)
+    : []
 
-  useEffect(() => {
-    if (modalOpen) {
-      setTimeout(() => modalInputRef.current?.focus(), 50)
-      document.body.style.overflow = 'hidden'
-    } else {
-      setModalQuery('')
-      document.body.style.overflow = ''
+  const updateDropPos = useCallback(() => {
+    if (searchInputRef.current) {
+      const r = searchInputRef.current.getBoundingClientRect()
+      setDropPos({ top: r.bottom + 4, left: r.left, width: r.width })
     }
-    return () => { document.body.style.overflow = '' }
-  }, [modalOpen])
+  }, [])
 
   useEffect(() => {
-    if (!modalOpen) return
-    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') setModalOpen(false) }
-    document.addEventListener('keydown', handler)
-    return () => document.removeEventListener('keydown', handler)
-  }, [modalOpen])
+    if (!searchOpen) return
+    window.addEventListener('scroll', updateDropPos, true)
+    window.addEventListener('resize', updateDropPos)
+    return () => {
+      window.removeEventListener('scroll', updateDropPos, true)
+      window.removeEventListener('resize', updateDropPos)
+    }
+  }, [searchOpen, updateDropPos])
 
-  const handleModalSelect = (slug: string) => {
-    setModalOpen(false)
+  useEffect(() => {
+    if (!searchOpen) return
+    const handler = (e: MouseEvent) => {
+      if (
+        searchInputRef.current && !searchInputRef.current.contains(e.target as Node) &&
+        searchDropRef.current && !searchDropRef.current.contains(e.target as Node)
+      ) setSearchOpen(false)
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [searchOpen])
+
+  const handleSearchSelect = (slug: string) => {
+    setSearchOpen(false)
+    setQuery('')
     const hubSlug = COUNTRY_HUB_SLUGS[slug]
     router.push(hubSlug ? `/${hubSlug}/` : `/country/${slug}/`)
   }
@@ -119,62 +135,59 @@ export default function CountriesContent() {
             Time Zones by Country
           </h1>
 
-          {/* Search Bar — opens modal on focus */}
-          <button
-            onClick={() => setModalOpen(true)}
-            className={`w-full max-w-xl mx-auto flex items-center gap-3 px-4 py-3.5 rounded-2xl border text-left transition-colors ${inputBg}`}
-          >
-            <svg className={`w-5 h-5 flex-shrink-0 ${textMuted}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
-            </svg>
-            <span className={`text-sm ${textMuted}`}>Search {totalCountries} countries by name, capital…</span>
-          </button>
-
-          {/* Full-screen search modal */}
-          {modalOpen && (
-            <div className={`fixed inset-0 z-[99999] flex flex-col ${isLight ? 'bg-white' : 'bg-slate-950'}`}>
-              <div className={`flex items-center gap-2 px-4 py-3 border-b flex-shrink-0 ${isLight ? 'border-slate-200' : 'border-slate-800'}`}>
-                <svg className={`w-5 h-5 flex-shrink-0 ${textMuted}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-                <input
-                  ref={modalInputRef}
-                  type="text"
-                  value={modalQuery}
-                  onChange={e => setModalQuery(e.target.value)}
-                  placeholder="Search country or capital…"
-                  className={`flex-1 bg-transparent outline-none ${isLight ? 'text-slate-800 placeholder-slate-400' : 'text-white placeholder-slate-500'}`}
-                  style={{ fontSize: '16px' }}
-                  autoComplete="off"
-                />
-                <button onClick={() => setModalOpen(false)} className={`text-sm font-medium px-2 py-1 transition-colors ${isLight ? 'text-slate-600 hover:text-slate-800' : 'text-slate-400 hover:text-white'}`}>
-                  Cancel
+          {/* Search Bar — inline with fixed dropdown */}
+          <div className="relative max-w-xl mx-auto">
+            <div className={`flex items-center gap-3 px-4 py-3.5 rounded-2xl border transition-colors ${inputBg}`}>
+              <svg className={`w-5 h-5 flex-shrink-0 ${textMuted}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+              </svg>
+              <input
+                ref={searchInputRef}
+                type="text"
+                value={query}
+                onChange={e => { setQuery(e.target.value); setSearchOpen(true); updateDropPos() }}
+                onFocus={() => { setSearchOpen(true); updateDropPos() }}
+                placeholder={`Search ${totalCountries} countries by name, capital, or timezone…`}
+                className={`flex-1 bg-transparent outline-none text-sm ${isLight ? 'text-slate-800 placeholder-slate-400' : 'text-white placeholder-slate-500'}`}
+                style={{ fontSize: '16px' }}
+                autoComplete="off"
+                spellCheck={false}
+              />
+              {query && (
+                <button onClick={() => { setQuery(''); setSearchOpen(false) }} className={`${textMuted} hover:text-current`} aria-label="Clear">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
                 </button>
-              </div>
-              <div className="flex-1 overflow-y-auto">
-                {modalResults.map(c => {
+              )}
+            </div>
+            {/* Fixed dropdown */}
+            {searchOpen && searchResults.length > 0 && dropPos && (
+              <div
+                ref={searchDropRef}
+                className={`fixed z-[99999] rounded-xl border overflow-hidden shadow-xl ${isLight ? 'bg-white border-slate-200' : 'bg-slate-900 border-slate-700'}`}
+                style={{ top: dropPos.top, left: dropPos.left, width: dropPos.width }}
+              >
+                {searchResults.map(c => {
                   const hubSlug = COUNTRY_HUB_SLUGS[c.slug]
                   return (
                     <button
                       key={c.slug}
-                      onClick={() => handleModalSelect(c.slug)}
-                      className={`w-full flex items-center gap-3 px-4 py-3 text-left border-b ${isLight ? 'border-slate-100 hover:bg-slate-50 text-slate-800' : 'border-slate-800 hover:bg-slate-800 text-slate-100'} transition-colors`}
+                      onMouseDown={(e) => { e.preventDefault(); handleSearchSelect(c.slug) }}
+                      className={`w-full flex items-center gap-3 px-4 py-2.5 text-left border-b last:border-0 transition-colors ${isLight ? 'border-slate-100 hover:bg-slate-50 text-slate-800' : 'border-slate-800 hover:bg-slate-800 text-slate-100'}`}
                     >
-                      <img src={getFlagUrl(c.code, 'sm')} alt="" className="w-8 h-5 object-cover rounded-sm flex-shrink-0" />
+                      <img src={getFlagUrl(c.code, 'sm')} alt="" className="w-7 h-[18px] object-cover rounded-sm flex-shrink-0" />
                       <div className="flex-1 min-w-0">
-                        <div className="font-medium">{c.name}</div>
-                        <div className={`text-sm ${textMuted}`}>{c.capital} · {c.timezones[0]}</div>
+                        <div className="font-medium text-sm">{c.name}</div>
+                        <div className={`text-xs ${textMuted}`}>{c.capital} · {c.timezones[0]}</div>
                       </div>
-                      {hubSlug && <span className="text-xs text-cyan-500 font-medium flex-shrink-0">Live clock</span>}
+                      {hubSlug && <span className="text-xs text-cyan-500 font-medium flex-shrink-0">Live</span>}
                     </button>
                   )
                 })}
-                {modalQuery.trim().length > 0 && modalResults.length === 0 && (
-                  <p className={`px-4 py-8 text-center text-sm ${textMuted}`}>No countries found for "{modalQuery}"</p>
-                )}
               </div>
-            </div>
-          )}
+            )}
+          </div>
 
         </div>
 
