@@ -5,6 +5,34 @@ Bu dosya oturumlar arası hafıza kaybını önlemek için tutulur.
 
 ---
 
+## ⚠️ VERİ KURALI — HER ZAMAN UYGULA
+
+**SEO kararlarında tahmin veya genel bilgi KULLANMA. Her zaman gerçek veriyi önceliklendir:**
+
+### Öncelik Sırası:
+1. **`/seo-data-upload/` klasörü** — Ubersuggest rakip CSV'leri (EN ÖNEMLİ)
+   - `ubersuggest timeanddate.com.csv` — ana rakip keyword'leri + hacimler
+   - `ubersuggest 24timezones.com.csv`
+   - `ubersuggest thetimenow.com.csv`
+   - `ubersuggest time.is.csv`
+   - `ubersuggest time.now.csv`
+   - `competitors_data_for_whattime.city.csv`
+   - `broken_links.csv`, `duplicate_title_tags.csv`, `duplicate_meta_descriptions.csv`
+   - `Sorgular.csv`, `Sayfa sayısı.csv` (GSC export)
+
+2. **`/data/seo-intel/`** — İşlenmiş GSC + rakip JSON verisi
+   - `gsc_pages.json` — tüm sayfalar, impression/pozisyon/tıklama
+   - `gsc_queries.json` — tüm sorgular
+   - `competitor_timeanddate_com.json` vb.
+
+3. **`/data/seo/`** — Şehir bazlı SEO JSON dosyaları
+
+**Yeni içerik yazarken:** Önce ilgili CSV'yi oku → hangi keyword'ler yüksek hacimli → o keyword'lere göre yaz.
+**Yeni sayfa eklerken:** GSC'de bu konuda impression var mı → pozisyon nerede → rakipler ne yapıyor.
+**Hiçbir zaman:** Kafadan keyword hacmi tahmin etme, rakiplerin yazdıklarını okumadan içerik üretme.
+
+---
+
 ## Site Mimarisi — Genel Bakış
 
 ### Route Tipleri
