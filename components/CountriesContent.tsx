@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
+import { useRouter } from 'next/navigation'
 import { countries } from '@/lib/cities'
 import { COUNTRY_HUB_SLUGS } from '@/data'
 import Header from '@/components/Header'
@@ -38,7 +39,42 @@ const continentInfo: Record<string, { name: string; emoji: string }> = {
 
 export default function CountriesContent() {
   const { theme, isLight } = useCityContext()
+  const router = useRouter()
   const [query, setQuery] = useState('')
+  const [modalOpen, setModalOpen] = useState(false)
+  const [modalQuery, setModalQuery] = useState('')
+  const modalInputRef = useRef<HTMLInputElement>(null)
+
+  const modalResults = modalQuery.trim().length > 0
+    ? countries.filter(c =>
+        c.name.toLowerCase().includes(modalQuery.toLowerCase()) ||
+        c.capital.toLowerCase().includes(modalQuery.toLowerCase())
+      ).slice(0, 15)
+    : countries.slice(0, 15)
+
+  useEffect(() => {
+    if (modalOpen) {
+      setTimeout(() => modalInputRef.current?.focus(), 50)
+      document.body.style.overflow = 'hidden'
+    } else {
+      setModalQuery('')
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [modalOpen])
+
+  useEffect(() => {
+    if (!modalOpen) return
+    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') setModalOpen(false) }
+    document.addEventListener('keydown', handler)
+    return () => document.removeEventListener('keydown', handler)
+  }, [modalOpen])
+
+  const handleModalSelect = (slug: string) => {
+    setModalOpen(false)
+    const hubSlug = COUNTRY_HUB_SLUGS[slug]
+    router.push(hubSlug ? `/${hubSlug}/` : `/country/${slug}/`)
+  }
 
   const totalCountries = countries.length
 
@@ -83,42 +119,63 @@ export default function CountriesContent() {
             Time Zones by Country
           </h1>
 
-          {/* Search Bar */}
-          <div className="relative max-w-xl mx-auto">
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <svg className={`w-5 h-5 ${textMuted}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
-              </svg>
-            </div>
-            <input
-              type="text"
-              value={query}
-              onChange={e => setQuery(e.target.value)}
-              placeholder={`Search ${totalCountries} countries by name, capital, or timezone…`}
-              className={`w-full pl-12 pr-12 py-3.5 rounded-2xl border text-sm font-medium outline-none transition-colors ${inputBg}`}
-              style={{ fontSize: '16px' }}
-              autoComplete="off"
-              spellCheck={false}
-            />
-            {query && (
-              <button
-                onClick={() => setQuery('')}
-                className={`absolute inset-y-0 right-0 pr-4 flex items-center ${textMuted} hover:text-cyan-500 transition-colors`}
-                aria-label="Clear search"
-              >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-              </button>
-            )}
-          </div>
+          {/* Search Bar — opens modal on focus */}
+          <button
+            onClick={() => setModalOpen(true)}
+            className={`w-full max-w-xl mx-auto flex items-center gap-3 px-4 py-3.5 rounded-2xl border text-left transition-colors ${inputBg}`}
+          >
+            <svg className={`w-5 h-5 flex-shrink-0 ${textMuted}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+            </svg>
+            <span className={`text-sm ${textMuted}`}>Search {totalCountries} countries by name, capital…</span>
+          </button>
 
-          {/* Result count */}
-          {isFiltering && (
-            <p className={`mt-2 text-sm ${textMuted}`}>
-              {hasResults ? `${totalFiltered} ${totalFiltered === 1 ? 'country' : 'countries'} found` : 'No countries found'}
-            </p>
+          {/* Full-screen search modal */}
+          {modalOpen && (
+            <div className={`fixed inset-0 z-[99999] flex flex-col ${isLight ? 'bg-white' : 'bg-slate-950'}`}>
+              <div className={`flex items-center gap-2 px-4 py-3 border-b flex-shrink-0 ${isLight ? 'border-slate-200' : 'border-slate-800'}`}>
+                <svg className={`w-5 h-5 flex-shrink-0 ${textMuted}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input
+                  ref={modalInputRef}
+                  type="text"
+                  value={modalQuery}
+                  onChange={e => setModalQuery(e.target.value)}
+                  placeholder="Search country or capital…"
+                  className={`flex-1 bg-transparent outline-none ${isLight ? 'text-slate-800 placeholder-slate-400' : 'text-white placeholder-slate-500'}`}
+                  style={{ fontSize: '16px' }}
+                  autoComplete="off"
+                />
+                <button onClick={() => setModalOpen(false)} className={`text-sm font-medium px-2 py-1 transition-colors ${isLight ? 'text-slate-600 hover:text-slate-800' : 'text-slate-400 hover:text-white'}`}>
+                  Cancel
+                </button>
+              </div>
+              <div className="flex-1 overflow-y-auto">
+                {modalResults.map(c => {
+                  const hubSlug = COUNTRY_HUB_SLUGS[c.slug]
+                  return (
+                    <button
+                      key={c.slug}
+                      onClick={() => handleModalSelect(c.slug)}
+                      className={`w-full flex items-center gap-3 px-4 py-3 text-left border-b ${isLight ? 'border-slate-100 hover:bg-slate-50 text-slate-800' : 'border-slate-800 hover:bg-slate-800 text-slate-100'} transition-colors`}
+                    >
+                      <img src={getFlagUrl(c.code, 'sm')} alt="" className="w-8 h-5 object-cover rounded-sm flex-shrink-0" />
+                      <div className="flex-1 min-w-0">
+                        <div className="font-medium">{c.name}</div>
+                        <div className={`text-sm ${textMuted}`}>{c.capital} · {c.timezones[0]}</div>
+                      </div>
+                      {hubSlug && <span className="text-xs text-cyan-500 font-medium flex-shrink-0">Live clock</span>}
+                    </button>
+                  )
+                })}
+                {modalQuery.trim().length > 0 && modalResults.length === 0 && (
+                  <p className={`px-4 py-8 text-center text-sm ${textMuted}`}>No countries found for "{modalQuery}"</p>
+                )}
+              </div>
+            </div>
           )}
+
         </div>
 
         {/* SEO Intro (hidden while searching) */}
