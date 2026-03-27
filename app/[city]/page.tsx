@@ -7,11 +7,12 @@ interface PageProps {
   params: Promise<{ city: string }>
 }
 
-// Statik sayfa oluşturma için tüm şehir slug'larını döndür
+// Tier 1+2 şehirleri build'de statik üret (~592 sayfa)
+// Tier 3 şehirler (~1462) ilk request'te render edilip Vercel cache'e alınır
 export async function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({
-    city: slug,
-  }))
+  return cities
+    .filter(c => (c.tier ?? 3) <= 2)
+    .map(c => ({ city: c.slug }))
 }
 
 // Dinamik metadata
