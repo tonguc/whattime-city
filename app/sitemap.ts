@@ -234,8 +234,12 @@ export default async function sitemap() {
     { slug: 'ist', priority: 0.9 },
     { slug: 'utc', priority: 0.9 },
     { slug: 'gmt', priority: 0.9 },
-    // State current-time hub pages
+    // State/city current-time hub pages
     { slug: 'hawaii', priority: 0.9 },
+    { slug: 'seattle', priority: 0.9 },
+    { slug: 'las-vegas', priority: 0.9 },
+    { slug: 'denver', priority: 0.9 },
+    { slug: 'atlanta', priority: 0.9 },
     // DST cluster — new subpages
     { slug: 'daylight-saving-time/canada', priority: 0.8 },
     { slug: 'daylight-saving-time/new-zealand', priority: 0.7 },
