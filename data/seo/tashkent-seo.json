@@ -1,0 +1,189 @@
+{
+  "seo_title": "Current Time in Tashkent — Uzbekistan Time (UZT, UTC+5)",
+  "seo_description": "Current time in Tashkent, Uzbekistan. Live UZT clock — UTC+5 year-round, no Daylight Saving Time. Tashkent time vs Moscow, Dubai, London, Istanbul.",
+  "faq": [
+    {
+      "question": "What time is it in Tashkent right now?",
+      "answer": "Tashkent operates on Uzbekistan Time (UZT), which is UTC+5 year-round. Unlike many European and North American cities, Tashkent does not observe Daylight Saving Time, so the offset never changes. Use the live clock above to see the exact current time in Tashkent with live seconds."
+    },
+    {
+      "question": "What time zone is Tashkent in?",
+      "answer": "Tashkent is in the Uzbekistan Time Zone (UZT), fixed at UTC+5 throughout the entire year. This places Tashkent 5 hours ahead of Greenwich Mean Time (GMT), 2 hours ahead of Moscow (MSK/UTC+3), 1 hour ahead of Dubai (GST/UTC+4), and 2 hours behind Beijing (CST/UTC+8)."
+    },
+    {
+      "question": "Does Tashkent observe Daylight Saving Time?",
+      "answer": "No. Tashkent and all of Uzbekistan do not observe Daylight Saving Time. Clocks remain at UTC+5 permanently. This stability makes scheduling calls and meetings with Tashkent straightforward — the offset from London, New York, or Tokyo never changes with the season."
+    },
+    {
+      "question": "What is the time difference between Tashkent and London?",
+      "answer": "Tashkent is 5 hours ahead of London during winter (when London is on GMT/UTC+0) and 4 hours ahead during summer (when London is on BST/UTC+1). For example, when it is 12:00 PM in London in January, it is 5:00 PM in Tashkent. The difference shifts because London observes DST while Tashkent does not."
+    },
+    {
+      "question": "What is the time difference between Tashkent and Moscow?",
+      "answer": "Tashkent is 2 hours ahead of Moscow year-round. Moscow operates on MSK (UTC+3) with no DST, and Tashkent is on UZT (UTC+5) with no DST, so the 2-hour difference is constant. When it is 9:00 AM in Moscow, it is 11:00 AM in Tashkent."
+    },
+    {
+      "question": "What is the time difference between Tashkent and Dubai?",
+      "answer": "Tashkent is 1 hour ahead of Dubai year-round. Dubai operates on GST (UTC+4) with no DST, and Tashkent is on UZT (UTC+5) with no DST, making this difference constant. When it is 10:00 AM in Dubai, it is 11:00 AM in Tashkent."
+    },
+    {
+      "question": "What is the best time to call Tashkent from the US?",
+      "answer": "Calling Tashkent from the US East Coast (EST/UTC-5) is challenging due to a 10-hour gap in winter. To reach Tashkent during standard business hours (9:00 AM – 6:00 PM UZT), East Coast callers should dial between 11:00 PM – 8:00 AM Eastern the previous evening. From the West Coast (PST/UTC-8), the gap is 13 hours, requiring calls between 8:00 PM – 5:00 AM Pacific."
+    },
+    {
+      "question": "What are business hours in Tashkent?",
+      "answer": "Standard business hours in Tashkent are 9:00 AM – 6:00 PM UZT (UTC+5), Monday through Friday. Government offices and banks typically operate 9:00 AM – 5:00 PM. The weekend in Uzbekistan is Saturday and Sunday. Major shopping centres and restaurants operate from 10:00 AM to 10:00 PM or later. Tashkent's growing tech and manufacturing sector generally follows Western-style 9-to-6 weekday schedules."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Tashkent right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tashkent operates on Uzbekistan Time (UZT), which is UTC+5 year-round. Unlike many European and North American cities, Tashkent does not observe Daylight Saving Time, so the offset never changes. Use the live clock above to see the exact current time in Tashkent with live seconds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Tashkent in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tashkent is in the Uzbekistan Time Zone (UZT), fixed at UTC+5 throughout the entire year. This places Tashkent 5 hours ahead of Greenwich Mean Time (GMT), 2 hours ahead of Moscow (MSK/UTC+3), 1 hour ahead of Dubai (GST/UTC+4), and 2 hours behind Beijing (CST/UTC+8)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Tashkent observe Daylight Saving Time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Tashkent and all of Uzbekistan do not observe Daylight Saving Time. Clocks remain at UTC+5 permanently. This stability makes scheduling calls and meetings with Tashkent straightforward — the offset from London, New York, or Tokyo never changes with the season."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Tashkent and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tashkent is 5 hours ahead of London during winter (when London is on GMT/UTC+0) and 4 hours ahead during summer (when London is on BST/UTC+1). For example, when it is 12:00 PM in London in January, it is 5:00 PM in Tashkent. The difference shifts because London observes DST while Tashkent does not."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Tashkent and Moscow?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tashkent is 2 hours ahead of Moscow year-round. Moscow operates on MSK (UTC+3) with no DST, and Tashkent is on UZT (UTC+5) with no DST, so the 2-hour difference is constant. When it is 9:00 AM in Moscow, it is 11:00 AM in Tashkent."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Tashkent and Dubai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tashkent is 1 hour ahead of Dubai year-round. Dubai operates on GST (UTC+4) with no DST, and Tashkent is on UZT (UTC+5) with no DST, making this difference constant. When it is 10:00 AM in Dubai, it is 11:00 AM in Tashkent."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best time to call Tashkent from the US?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Calling Tashkent from the US East Coast (EST/UTC-5) is challenging due to a 10-hour gap in winter. To reach Tashkent during standard business hours (9:00 AM – 6:00 PM UZT), East Coast callers should dial between 11:00 PM – 8:00 AM Eastern the previous evening. From the West Coast (PST/UTC-8), the gap is 13 hours, requiring calls between 8:00 PM – 5:00 AM Pacific."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are business hours in Tashkent?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Tashkent are 9:00 AM – 6:00 PM UZT (UTC+5), Monday through Friday. Government offices and banks typically operate 9:00 AM – 5:00 PM. The weekend in Uzbekistan is Saturday and Sunday. Major shopping centres and restaurants operate from 10:00 AM to 10:00 PM or later. Tashkent's growing tech and manufacturing sector generally follows Western-style 9-to-6 weekday schedules."
+        }
+      }
+    ]
+  },
+  "content_blocks": [
+    {
+      "title": "Tashkent Time Zone — UZT UTC+5 Year-Round",
+      "content": "Tashkent, the capital of Uzbekistan and the largest city in Central Asia, operates on Uzbekistan Time (UZT), permanently fixed at UTC+5. There is no Daylight Saving Time in Uzbekistan, which means the offset stays constant throughout the year. This makes Tashkent 5 hours ahead of London in winter (4 hours ahead when London switches to BST), 2 hours ahead of Moscow, 1 hour ahead of Dubai, and 10 hours behind New York in winter. Tashkent shares its UTC+5 offset with Islamabad (Pakistan), Male (Maldives), and Yekaterinburg (Russia). For international business, the stable no-DST offset simplifies scheduling: once you know the gap, it never shifts. The city sits at the crossroads of the ancient Silk Road trade routes, and its modern timezone reflects Central Asia's position between the European West and the East Asian business hubs."
+    },
+    {
+      "title": "Business Hours and Working Culture in Tashkent",
+      "content": "Tashkent's business community follows a standard Monday-to-Friday workweek with hours typically running 9:00 AM to 6:00 PM UZT. Government offices, banks, and public institutions usually close at 5:00 PM and are not open on weekends. Islamic holidays and Uzbek national holidays (such as Navruz on March 21 and Independence Day on September 1) affect business operations. Tashkent has emerged as a growing hub for manufacturing, IT outsourcing, and fintech in Central Asia, with an expanding number of international companies establishing offices in the city. The Tashkent City business district hosts modern office towers with coworking spaces that align with global working norms. For callers from Europe, the afternoon hours — 2:00 PM to 5:00 PM CET — align well with Tashkent's morning business window of 6:00 PM to 9:00 PM UZT."
+    },
+    {
+      "title": "Calling and Scheduling Meetings with Tashkent",
+      "content": "Coordinating with Tashkent from major global cities requires accounting for the fixed UTC+5 offset. From London (GMT), the best calling window for Tashkent's 9:00 AM–6:00 PM business day is 4:00 AM–1:00 PM GMT in winter, or 5:00 AM–2:00 PM in summer (when London is on BST). From Dubai (UTC+4), just 1 hour behind, the overlap is near-perfect: standard Dubai business hours of 9:00 AM–6:00 PM GST correspond to 10:00 AM–7:00 PM in Tashkent. From Berlin or Paris (CET/UTC+1), call between 8:00 AM–5:00 PM CET in winter to catch Tashkent's working day. From New York (EST), the 10-hour difference means dialing between 11:00 PM and 8:00 AM Eastern to reach Tashkent during business hours — evening calls from New York are typically required. Tashkent's country code is +998, and the city code is 71."
+    }
+  ],
+  "time_difference_table": [
+    {
+      "city": "London",
+      "slug": "london",
+      "difference": "5 hours ahead (4 hours ahead when London is on BST)",
+      "link": "/time/tashkent/london/"
+    },
+    {
+      "city": "Dubai",
+      "slug": "dubai",
+      "difference": "1 hour ahead of Dubai",
+      "link": "/time/tashkent/dubai/"
+    },
+    {
+      "city": "New York",
+      "slug": "new-york",
+      "difference": "10 hours ahead (9 hours when NY is on EDT)",
+      "link": "/time/tashkent/new-york/"
+    },
+    {
+      "city": "Berlin",
+      "slug": "berlin",
+      "difference": "4 hours ahead (3 hours ahead in summer)",
+      "link": "/time/tashkent/berlin/"
+    },
+    {
+      "city": "Paris",
+      "slug": "paris",
+      "difference": "4 hours ahead (3 hours ahead in summer)",
+      "link": "/time/tashkent/paris/"
+    },
+    {
+      "city": "Tokyo",
+      "slug": "tokyo",
+      "difference": "4 hours behind Tokyo",
+      "link": "/time/tashkent/tokyo/"
+    },
+    {
+      "city": "Istanbul",
+      "slug": "istanbul",
+      "difference": "2 hours ahead of Istanbul",
+      "link": "/time/tashkent/istanbul/"
+    },
+    {
+      "city": "Singapore",
+      "slug": "singapore",
+      "difference": "3 hours behind Singapore",
+      "link": "/time/tashkent/singapore/"
+    }
+  ],
+  "internal_links": [
+    "/time/tashkent/london/",
+    "/time/tashkent/dubai/",
+    "/time/tashkent/new-york/",
+    "/time/tashkent/berlin/",
+    "/time/tashkent/paris/",
+    "/time/tashkent/tokyo/",
+    "/time/tashkent/istanbul/",
+    "/time/tashkent/singapore/"
+  ],
+  "timezone_facts": {
+    "full_name": "Uzbekistan Time",
+    "abbreviation": "UZT",
+    "utc_offset": "UTC+5 (year-round)",
+    "dst_observed": false
+  },
+  "eeat_footer": "Last updated: March 2026 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database."
+}

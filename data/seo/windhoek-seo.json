@@ -1,0 +1,189 @@
+{
+  "seo_title": "Current Time in Windhoek — Central Africa Time (CAT, UTC+2)",
+  "seo_description": "Current time in Windhoek, Namibia. Live CAT clock — UTC+2 year-round, no Daylight Saving Time (abolished 2017). Windhoek time vs London, Johannesburg, Dubai, Lagos.",
+  "faq": [
+    {
+      "question": "What time is it in Windhoek right now?",
+      "answer": "Windhoek operates on Central Africa Time (CAT), which is UTC+2 year-round. Namibia abolished Daylight Saving Time in 2017, so clocks no longer change. Use the live clock above to see the exact current time in Windhoek with live seconds."
+    },
+    {
+      "question": "What time zone is Windhoek in?",
+      "answer": "Windhoek is in the Central Africa Time zone (CAT), fixed at UTC+2 throughout the year. This places Windhoek 2 hours ahead of Greenwich Mean Time (GMT), the same offset as Johannesburg (South Africa), Harare (Zimbabwe), and Lusaka (Zambia). Windhoek is 2 hours behind Dubai and 7 hours ahead of New York (Eastern Standard Time) in winter."
+    },
+    {
+      "question": "Does Windhoek observe Daylight Saving Time?",
+      "answer": "No. Namibia abolished Daylight Saving Time in April 2017. Prior to that, Windhoek observed DST, advancing to UTC+2 in summer and falling back to UTC+1 in winter. Since 2017, Windhoek has been permanently on CAT (UTC+2), aligning year-round with South Africa and other Central African nations."
+    },
+    {
+      "question": "What is the time difference between Windhoek and London?",
+      "answer": "Windhoek is 2 hours ahead of London during winter (when London is on GMT/UTC+0) and 1 hour ahead during summer (when London switches to BST/UTC+1). For example, when it is 12:00 PM in London in December, it is 2:00 PM in Windhoek. The gap shrinks in summer because London observes DST while Namibia does not."
+    },
+    {
+      "question": "What is the time difference between Windhoek and Johannesburg?",
+      "answer": "Windhoek and Johannesburg share the same time zone — Central Africa Time (CAT/UTC+2) — so there is no time difference between the two cities year-round. This makes travel and business coordination between Namibia and South Africa exceptionally straightforward."
+    },
+    {
+      "question": "What is the time difference between Windhoek and New York?",
+      "answer": "Windhoek is 7 hours ahead of New York during Eastern Standard Time (EST/UTC-5) in winter, and 6 hours ahead during Eastern Daylight Time (EDT/UTC-4) in summer. When it is 9:00 AM in New York in January, it is 4:00 PM in Windhoek. The gap fluctuates because New York observes DST and Windhoek does not."
+    },
+    {
+      "question": "What is the best time to call Windhoek from Europe?",
+      "answer": "From London (GMT/BST), the best window to call Windhoek during business hours (8:00 AM – 5:00 PM CAT) is 6:00 AM – 3:00 PM GMT in winter, or 7:00 AM – 4:00 PM BST in summer. From Central Europe (CET/CEST/UTC+1 or +2), morning hours align well: 8:00 AM – 5:00 PM CET in winter corresponds to 9:00 AM – 6:00 PM Windhoek time. Afternoon calling from Europe covers Windhoek's full business day."
+    },
+    {
+      "question": "What are business hours in Windhoek?",
+      "answer": "Standard business hours in Windhoek run 8:00 AM – 5:00 PM CAT (UTC+2), Monday through Friday. Government offices and banks typically close at 3:30 PM or 4:00 PM. Retail shops in Maerua Mall and Gustav Voigts Centre operate approximately 9:00 AM – 6:00 PM on weekdays. Windhoek's economy is anchored in diamond mining, tourism, and financial services, with most major businesses following Western-style weekday schedules."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Windhoek right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Windhoek operates on Central Africa Time (CAT), which is UTC+2 year-round. Namibia abolished Daylight Saving Time in 2017, so clocks no longer change. Use the live clock above to see the exact current time in Windhoek with live seconds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Windhoek in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Windhoek is in the Central Africa Time zone (CAT), fixed at UTC+2 throughout the year. This places Windhoek 2 hours ahead of Greenwich Mean Time (GMT), the same offset as Johannesburg (South Africa), Harare (Zimbabwe), and Lusaka (Zambia). Windhoek is 2 hours behind Dubai and 7 hours ahead of New York (Eastern Standard Time) in winter."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Windhoek observe Daylight Saving Time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Namibia abolished Daylight Saving Time in April 2017. Prior to that, Windhoek observed DST, advancing to UTC+2 in summer and falling back to UTC+1 in winter. Since 2017, Windhoek has been permanently on CAT (UTC+2), aligning year-round with South Africa and other Central African nations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Windhoek and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Windhoek is 2 hours ahead of London during winter (when London is on GMT/UTC+0) and 1 hour ahead during summer (when London switches to BST/UTC+1). For example, when it is 12:00 PM in London in December, it is 2:00 PM in Windhoek. The gap shrinks in summer because London observes DST while Namibia does not."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Windhoek and Johannesburg?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Windhoek and Johannesburg share the same time zone — Central Africa Time (CAT/UTC+2) — so there is no time difference between the two cities year-round. This makes travel and business coordination between Namibia and South Africa exceptionally straightforward."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Windhoek and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Windhoek is 7 hours ahead of New York during Eastern Standard Time (EST/UTC-5) in winter, and 6 hours ahead during Eastern Daylight Time (EDT/UTC-4) in summer. When it is 9:00 AM in New York in January, it is 4:00 PM in Windhoek. The gap fluctuates because New York observes DST and Windhoek does not."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best time to call Windhoek from Europe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From London (GMT/BST), the best window to call Windhoek during business hours (8:00 AM – 5:00 PM CAT) is 6:00 AM – 3:00 PM GMT in winter, or 7:00 AM – 4:00 PM BST in summer. From Central Europe (CET/CEST/UTC+1 or +2), morning hours align well: 8:00 AM – 5:00 PM CET in winter corresponds to 9:00 AM – 6:00 PM Windhoek time. Afternoon calling from Europe covers Windhoek's full business day."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are business hours in Windhoek?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Windhoek run 8:00 AM – 5:00 PM CAT (UTC+2), Monday through Friday. Government offices and banks typically close at 3:30 PM or 4:00 PM. Retail shops in Maerua Mall and Gustav Voigts Centre operate approximately 9:00 AM – 6:00 PM on weekdays. Windhoek's economy is anchored in diamond mining, tourism, and financial services, with most major businesses following Western-style weekday schedules."
+        }
+      }
+    ]
+  },
+  "content_blocks": [
+    {
+      "title": "Windhoek Time Zone — CAT UTC+2, No DST Since 2017",
+      "content": "Windhoek, the capital and largest city of Namibia, operates on Central Africa Time (CAT), permanently fixed at UTC+2 since Namibia abolished Daylight Saving Time in April 2017. Before 2017, Namibia advanced clocks to UTC+2 in summer and fell back to UTC+1 (WAT) in winter — the only country in Africa that observed Southern Hemisphere DST. Today, Windhoek shares its year-round UTC+2 offset with Johannesburg (South Africa), Harare (Zimbabwe), Lusaka (Zambia), and Gaborone (Botswana). This places Windhoek 2 hours ahead of London in winter, 1 hour ahead in summer when the UK is on BST, 4 hours behind Dubai, and 7 hours ahead of New York in winter. For international travellers and businesses, the permanent no-DST UTC+2 offset simplifies scheduling."
+    },
+    {
+      "title": "Business and Travel in Windhoek",
+      "content": "Windhoek's economy is driven by diamond mining, beef exports, financial services, and a growing tourism sector, with the city serving as the gateway to Namibia's famous safari destinations including Etosha National Park and Sossusvlei. Standard business hours run Monday to Friday, 8:00 AM – 5:00 PM CAT. German colonial architecture from the early 20th century — including the Christuskirche and the Old Fortress — reflects Namibia's history as a former German colony, and German remains widely spoken alongside Afrikaans and English. The Namibian dollar (NAD) is pegged to the South African Rand, and financial markets closely track the Johannesburg Stock Exchange. For business travellers from Europe, the 1–2 hour time difference makes coordination easy, with afternoon meetings in Berlin or London aligning well with Windhoek's morning schedule."
+    },
+    {
+      "title": "Calling and Scheduling with Windhoek",
+      "content": "When planning calls to Windhoek, the CAT (UTC+2) offset is key. From London in winter (GMT), call between 6:00 AM – 5:00 PM to reach Windhoek during its 8:00 AM – 5:00 PM business day; in summer (BST), 7:00 AM – 6:00 PM London time covers the full window. From New York (EST, UTC-5), the 7-hour gap means dialling between 1:00 AM – 10:00 AM Eastern to catch Windhoek business hours — early morning East Coast is the practical overlap. From Los Angeles (PST/UTC-8), the gap stretches to 10 hours, requiring calls from 10:00 PM to 7:00 AM Pacific. From Dubai (GST/UTC+4), Windhoek is 2 hours behind, and from Tokyo (JST/UTC+9), Windhoek is 7 hours behind — Tokyo afternoon slots work well. Namibia's country code is +264, and Windhoek's city code is 61."
+    }
+  ],
+  "time_difference_table": [
+    {
+      "city": "London",
+      "slug": "london",
+      "difference": "2 hours ahead (1 hour ahead when London is on BST)",
+      "link": "/time/windhoek/london/"
+    },
+    {
+      "city": "New York",
+      "slug": "new-york",
+      "difference": "7 hours ahead (6 hours when NY is on EDT)",
+      "link": "/time/windhoek/new-york/"
+    },
+    {
+      "city": "Dubai",
+      "slug": "dubai",
+      "difference": "2 hours behind Dubai",
+      "link": "/time/windhoek/dubai/"
+    },
+    {
+      "city": "Paris",
+      "slug": "paris",
+      "difference": "1 hour ahead (same time when Paris is on CEST)",
+      "link": "/time/windhoek/paris/"
+    },
+    {
+      "city": "Berlin",
+      "slug": "berlin",
+      "difference": "1 hour ahead (same time when Berlin is on CEST)",
+      "link": "/time/windhoek/berlin/"
+    },
+    {
+      "city": "Los Angeles",
+      "slug": "los-angeles",
+      "difference": "10 hours ahead (9 hours when LA is on PDT)",
+      "link": "/time/windhoek/los-angeles/"
+    },
+    {
+      "city": "Toronto",
+      "slug": "toronto",
+      "difference": "7 hours ahead (6 hours when Toronto is on EDT)",
+      "link": "/time/windhoek/toronto/"
+    },
+    {
+      "city": "Tokyo",
+      "slug": "tokyo",
+      "difference": "7 hours behind Tokyo",
+      "link": "/time/windhoek/tokyo/"
+    }
+  ],
+  "internal_links": [
+    "/time/windhoek/london/",
+    "/time/windhoek/new-york/",
+    "/time/windhoek/dubai/",
+    "/time/windhoek/paris/",
+    "/time/windhoek/berlin/",
+    "/time/windhoek/los-angeles/",
+    "/time/windhoek/toronto/",
+    "/time/windhoek/tokyo/"
+  ],
+  "timezone_facts": {
+    "full_name": "Central Africa Time",
+    "abbreviation": "CAT",
+    "utc_offset": "UTC+2 (year-round)",
+    "dst_observed": false
+  },
+  "eeat_footer": "Last updated: March 2026 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database."
+}

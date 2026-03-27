@@ -1,0 +1,192 @@
+{
+  "seo_title": "Current Time in Skopje — CET/CEST (UTC+1/+2)",
+  "seo_description": "Current time in Skopje, North Macedonia. Live CET/CEST clock — UTC+1 standard, UTC+2 summer. Skopje time vs London, Belgrade, Athens, New York.",
+  "faq": [
+    {
+      "question": "What time is it in Skopje right now?",
+      "answer": "Skopje operates on Central European Time (CET/UTC+1) during winter and Central European Summer Time (CEST/UTC+2) during summer. North Macedonia's capital follows the EU-aligned DST schedule shared by neighboring Serbia, Kosovo, Albania, and Bosnia and Herzegovina. To see the exact current time in Skopje with live seconds, use our real-time clock above."
+    },
+    {
+      "question": "What time zone is Skopje in?",
+      "answer": "Skopje is in the Central European Time zone (CET/UTC+1 in winter, CEST/UTC+2 in summer). North Macedonia observes Daylight Saving Time following the European standard — clocks advance on the last Sunday in March and fall back on the last Sunday in October. Skopje shares its time zone with Belgrade, Zagreb, Sarajevo, Tirana, Pristina, Budapest, and Warsaw."
+    },
+    {
+      "question": "Does Skopje observe Daylight Saving Time?",
+      "answer": "Yes. Skopje and all of North Macedonia observe Daylight Saving Time on the EU schedule. Clocks spring forward one hour on the last Sunday in March at 2:00 AM CET (becoming 3:00 AM CEST/UTC+2), and fall back one hour on the last Sunday in October at 3:00 AM CEST (becoming 2:00 AM CET/UTC+1). North Macedonia is an EU and NATO candidate country and aligns its DST rules with European Union standards."
+    },
+    {
+      "question": "What is the time difference between Skopje and London?",
+      "answer": "Skopje is 1 hour ahead of London year-round. During UK winter (GMT/UTC+0), Skopje is on CET (UTC+1) — 1 hour ahead. During UK summer (BST/UTC+1), Skopje is on CEST (UTC+2) — still 1 hour ahead, as both countries advance their clocks on the same schedule. When it is 9:00 AM in London, it is 10:00 AM in Skopje."
+    },
+    {
+      "question": "What is the time difference between Skopje and Athens?",
+      "answer": "Athens (EET/EEST, UTC+2 in winter / UTC+3 in summer) is always 1 hour ahead of Skopje (CET/CEST, UTC+1 in winter / UTC+2 in summer). Both countries observe DST on the same schedule, so the 1-hour gap between Skopje and Athens remains constant year-round. When it is 10:00 AM in Skopje, it is 11:00 AM in Athens."
+    },
+    {
+      "question": "What is the time difference between Skopje and New York?",
+      "answer": "Skopje is 6 hours ahead of New York (EST/UTC-5) during winter, and 6 hours ahead during EDT (UTC-4) as well, since both Europe and the US observe DST on roughly the same schedule. When it is 9:00 AM in New York, it is 3:00 PM in Skopje. The morning New York window (9:00 AM–1:00 PM EST) aligns with Skopje's afternoon (3:00 PM–7:00 PM CET)."
+    },
+    {
+      "question": "What is the time difference between Skopje and Belgrade?",
+      "answer": "Skopje and Belgrade are in the same time zone — both on CET (UTC+1) in winter and CEST (UTC+2) in summer. There is no time difference between Skopje and Belgrade, Zagreb, Sarajevo, or any other former Yugoslav capital (except Ljubljana, also CET/CEST). North Macedonia and Serbia have close historical and cultural ties and share the same clocks."
+    },
+    {
+      "question": "What are typical business hours in Skopje?",
+      "answer": "Standard business hours in Skopje run 8:00 AM–4:00 PM or 9:00 AM–5:00 PM CET/CEST Monday through Friday. Government offices typically operate 8:00 AM–4:00 PM. Banks open 8:00 AM–7:00 PM on weekdays in larger branches. Skopje's Old Bazaar (Čaršija) — one of the largest in the Balkans — is most active 9:00 AM–9:00 PM. Restaurants in the city centre typically serve lunch 12:00 PM–3:00 PM and dinner from 6:00 PM–11:00 PM."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Skopje right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skopje operates on Central European Time (CET/UTC+1) during winter and Central European Summer Time (CEST/UTC+2) during summer. North Macedonia's capital follows the EU-aligned DST schedule shared by neighboring Serbia, Kosovo, Albania, and Bosnia and Herzegovina. To see the exact current time in Skopje with live seconds, use our real-time clock above."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Skopje in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skopje is in the Central European Time zone (CET/UTC+1 in winter, CEST/UTC+2 in summer). North Macedonia observes Daylight Saving Time following the European standard — clocks advance on the last Sunday in March and fall back on the last Sunday in October. Skopje shares its time zone with Belgrade, Zagreb, Sarajevo, Tirana, Pristina, Budapest, and Warsaw."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Skopje observe Daylight Saving Time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Skopje and all of North Macedonia observe Daylight Saving Time on the EU schedule. Clocks spring forward one hour on the last Sunday in March at 2:00 AM CET (becoming 3:00 AM CEST/UTC+2), and fall back one hour on the last Sunday in October at 3:00 AM CEST (becoming 2:00 AM CET/UTC+1). North Macedonia is an EU and NATO candidate country and aligns its DST rules with European Union standards."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Skopje and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skopje is 1 hour ahead of London year-round. During UK winter (GMT/UTC+0), Skopje is on CET (UTC+1) — 1 hour ahead. During UK summer (BST/UTC+1), Skopje is on CEST (UTC+2) — still 1 hour ahead, as both countries advance their clocks on the same schedule. When it is 9:00 AM in London, it is 10:00 AM in Skopje."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Skopje and Athens?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Athens (EET/EEST, UTC+2 in winter / UTC+3 in summer) is always 1 hour ahead of Skopje (CET/CEST, UTC+1 in winter / UTC+2 in summer). Both countries observe DST on the same schedule, so the 1-hour gap between Skopje and Athens remains constant year-round. When it is 10:00 AM in Skopje, it is 11:00 AM in Athens."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Skopje and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skopje is 6 hours ahead of New York (EST/UTC-5) during winter, and 6 hours ahead during EDT (UTC-4) as well, since both Europe and the US observe DST on roughly the same schedule. When it is 9:00 AM in New York, it is 3:00 PM in Skopje. The morning New York window (9:00 AM–1:00 PM EST) aligns with Skopje's afternoon (3:00 PM–7:00 PM CET)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Skopje and Belgrade?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skopje and Belgrade are in the same time zone — both on CET (UTC+1) in winter and CEST (UTC+2) in summer. There is no time difference between Skopje and Belgrade, Zagreb, Sarajevo, or any other former Yugoslav capital (except Ljubljana, also CET/CEST). North Macedonia and Serbia have close historical and cultural ties and share the same clocks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Skopje?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Skopje run 8:00 AM–4:00 PM or 9:00 AM–5:00 PM CET/CEST Monday through Friday. Government offices typically operate 8:00 AM–4:00 PM. Banks open 8:00 AM–7:00 PM on weekdays in larger branches. Skopje's Old Bazaar (Čaršija) — one of the largest in the Balkans — is most active 9:00 AM–9:00 PM. Restaurants in the city centre typically serve lunch 12:00 PM–3:00 PM and dinner from 6:00 PM–11:00 PM."
+        }
+      }
+    ]
+  },
+  "content_blocks": [
+    {
+      "title": "Skopje Time Zone — CET/CEST, Balkan Standard",
+      "content": "Skopje, the capital of North Macedonia, follows Central European Time (CET/UTC+1) in winter and Central European Summer Time (CEST/UTC+2) from the last Sunday in March to the last Sunday in October. This places Skopje in the same timezone as Belgrade, Sarajevo, Zagreb, Tirana, and Pristina — the entire western Balkans bloc operates on CET/CEST. Skopje is always 1 hour ahead of London, 6 hours ahead of New York (EST), and 2 hours behind Dubai (GST). Neighboring Greece and Turkey, both on EET/EEST (UTC+2/+3), are 1 hour ahead of Skopje in winter. As a NATO member and EU candidate, North Macedonia fully aligns its DST schedule with European Union rules."
+    },
+    {
+      "title": "Skopje: North Macedonia's Capital and Balkans Cultural Hub",
+      "content": "Skopje is the political, economic, and cultural heart of North Macedonia, a landlocked Balkan country of 2 million people. The city has been dramatically remodelled by the controversial 'Skopje 2014' urban project, which erected neoclassical statues, fountains, and colonnaded buildings throughout the city centre — most notably the colossal 'Warrior on a Horse' statue, widely understood to represent Alexander the Great (though disputed with Greece). Skopje's Old Bazaar (Čaršija) is one of the oldest and largest bazaars in the Balkans, with Ottoman-era hans, mosques, and craft workshops still operating. The city sits on the Vardar River and is surrounded by mountains, including Vodno with its Millennium Cross. North Macedonia joined NATO in 2020 and is progressing through EU accession negotiations. Tourism has grown steadily, with visitors drawn by low costs, rich history, and easy access to Lake Ohrid — a UNESCO World Heritage Site and one of Europe's oldest lakes."
+    },
+    {
+      "title": "Scheduling and Calling Skopje Internationally",
+      "content": "Skopje's CET/CEST alignment makes it simple to coordinate with Western European partners — no offset when calling from Rome, Berlin, Paris, or Vienna. From London (GMT), Skopje is always 1 hour ahead: schedule calls for 9:00 AM London to reach Skopje at 10:00 AM. From New York (EST), Skopje is 6 hours ahead: morning calls from New York (9:00 AM–1:00 PM) reach Skopje in the afternoon (3:00 PM–7:00 PM CET). From Dubai (GST/UTC+4), Skopje is 3 hours behind in winter: a 12:00 PM Dubai call reaches Skopje at 9:00 AM — ideal for morning meetings. From Tokyo (JST/UTC+9), Skopje is 8 hours behind in winter: Tokyo callers must dial early morning to catch Skopje business hours. North Macedonia's country code is +389 and Skopje's area code is 02."
+    }
+  ],
+  "time_difference_table": [
+    {
+      "city": "London",
+      "slug": "london",
+      "difference": "1 hour ahead",
+      "link": "/time/skopje/london/"
+    },
+    {
+      "city": "New York",
+      "slug": "new-york",
+      "difference": "6 hours ahead",
+      "link": "/time/skopje/new-york/"
+    },
+    {
+      "city": "Dubai",
+      "slug": "dubai",
+      "difference": "3 hours behind (winter) / 2 hours behind (summer)",
+      "link": "/time/skopje/dubai/"
+    },
+    {
+      "city": "Paris",
+      "slug": "paris",
+      "difference": "Same time",
+      "link": "/time/skopje/paris/"
+    },
+    {
+      "city": "Berlin",
+      "slug": "berlin",
+      "difference": "Same time",
+      "link": "/time/skopje/berlin/"
+    },
+    {
+      "city": "Los Angeles",
+      "slug": "los-angeles",
+      "difference": "9 hours ahead (PST) / 9 hours ahead (PDT)",
+      "link": "/time/skopje/los-angeles/"
+    },
+    {
+      "city": "Toronto",
+      "slug": "toronto",
+      "difference": "6 hours ahead",
+      "link": "/time/skopje/toronto/"
+    },
+    {
+      "city": "Tokyo",
+      "slug": "tokyo",
+      "difference": "8 hours behind",
+      "link": "/time/skopje/tokyo/"
+    }
+  ],
+  "internal_links": [
+    "/time/skopje/london/",
+    "/time/skopje/new-york/",
+    "/time/skopje/dubai/",
+    "/time/skopje/paris/",
+    "/time/skopje/berlin/",
+    "/time/skopje/los-angeles/",
+    "/time/skopje/toronto/",
+    "/time/skopje/tokyo/"
+  ],
+  "timezone_facts": {
+    "full_name": "Central European Time / Central European Summer Time",
+    "abbreviation": "CET / CEST",
+    "utc_offset": "UTC+1 (winter) / UTC+2 (summer)",
+    "dst_observed": true,
+    "dst_start": "Last Sunday in March at 2:00 AM CET",
+    "dst_end": "Last Sunday in October at 3:00 AM CEST",
+    "dst_offset": "UTC+2"
+  },
+  "eeat_footer": "Last updated: March 2026 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database."
+}

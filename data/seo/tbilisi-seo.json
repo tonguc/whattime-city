@@ -1,0 +1,189 @@
+{
+  "seo_title": "Current Time in Tbilisi — Georgia Time (GET, UTC+4)",
+  "seo_description": "Current time in Tbilisi, Georgia. Live GET clock — UTC+4 year-round, no Daylight Saving Time. Tbilisi time vs London, Moscow, Istanbul, Dubai.",
+  "faq": [
+    {
+      "question": "What time is it in Tbilisi right now?",
+      "answer": "Tbilisi operates on Georgia Standard Time (GET/UTC+4) year-round. Georgia abolished Daylight Saving Time in 2005 and has maintained a permanent UTC+4 offset ever since. Use the live clock above for the exact current time in Tbilisi with real-time seconds. GET places Tbilisi 4 hours ahead of London (GMT), 1 hour ahead of Moscow, and at the same offset as Dubai."
+    },
+    {
+      "question": "What time zone is Tbilisi in?",
+      "answer": "Tbilisi is in the Georgia Time zone (GET), which is UTC+4 year-round. There is no Daylight Saving Time adjustment. GET is shared with Azerbaijan (Baku) and the United Arab Emirates (Dubai). Tbilisi sits at the crossroads of Eastern Europe and Western Asia, making it 4 hours ahead of London (GMT), 3 hours ahead of Paris (CET), 1 hour ahead of Moscow, and 2 hours behind Singapore."
+    },
+    {
+      "question": "Does Tbilisi observe Daylight Saving Time?",
+      "answer": "No. Georgia discontinued Daylight Saving Time in 2005. Before that, Georgia briefly experimented with DST during the post-Soviet period. Since 2005, Tbilisi has maintained a fixed UTC+4 offset throughout the year. This means the time difference between Tbilisi and DST-observing cities like London and Paris changes by one hour between summer and winter seasons."
+    },
+    {
+      "question": "What is the time difference between Tbilisi and London?",
+      "answer": "Tbilisi is 4 hours ahead of London when London is on GMT (UTC+0) in winter, and 3 hours ahead when London switches to BST (UTC+1) in summer. When it is 9:00 AM in London during GMT, it is 1:00 PM in Tbilisi. In summer during BST, when it is 9:00 AM in London, it is 12:00 PM noon in Tbilisi. The gap narrows by one hour during European summer."
+    },
+    {
+      "question": "What is the time difference between Tbilisi and Moscow?",
+      "answer": "Tbilisi is 1 hour ahead of Moscow year-round. Moscow operates on MSK (UTC+3) with no DST since 2014, and Tbilisi is on GET (UTC+4) with no DST since 2005. When it is 12:00 PM noon in Moscow, it is 1:00 PM in Tbilisi. This stable 1-hour gap makes scheduling between Georgia and Russia straightforward."
+    },
+    {
+      "question": "What is the time difference between Tbilisi and Dubai?",
+      "answer": "Tbilisi and Dubai share the same UTC+4 offset, so there is no time difference between the two cities year-round. When it is 10:00 AM in Dubai, it is 10:00 AM in Tbilisi. Both cities also do not observe Daylight Saving Time, ensuring the relationship remains constant. This makes Georgia and the UAE natural partners for business scheduling without any time zone complexity."
+    },
+    {
+      "question": "What are typical business hours in Tbilisi?",
+      "answer": "Standard business hours in Tbilisi run 9:00 AM to 6:00 PM GET Monday through Friday. Government agencies typically operate 9:00 AM to 5:00 PM. Banks are generally open 9:00 AM to 5:30 PM on weekdays, with some branches offering Saturday 10:00 AM to 2:00 PM hours. Tbilisi's growing startup and tech ecosystem often adopts more flexible hours, particularly in the Fabrika and Vera neighborhoods. Retail centers such as Galleria Tbilisi and Tbilisi Mall are open 10:00 AM to 10:00 PM daily."
+    },
+    {
+      "question": "What is the best time to call Tbilisi from Europe?",
+      "answer": "From London (GMT/UTC+0 in winter), the ideal window to reach Tbilisi during business hours (9:00 AM to 6:00 PM GET) is 5:00 AM to 2:00 PM UK time — overlapping with the full UK working day from 9:00 AM to 2:00 PM. From Paris or Berlin (CET/UTC+1), the overlap window is 8:00 AM to 5:00 PM local, almost perfectly aligned. In summer when London is on BST (UTC+1), the overlap improves to 8:00 AM to 3:00 PM — a comfortable 7-hour window for real-time collaboration."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Tbilisi right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tbilisi operates on Georgia Standard Time (GET/UTC+4) year-round. Georgia abolished Daylight Saving Time in 2005 and has maintained a permanent UTC+4 offset ever since. Use the live clock above for the exact current time in Tbilisi with real-time seconds. GET places Tbilisi 4 hours ahead of London (GMT), 1 hour ahead of Moscow, and at the same offset as Dubai."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Tbilisi in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tbilisi is in the Georgia Time zone (GET), which is UTC+4 year-round. There is no Daylight Saving Time adjustment. GET is shared with Azerbaijan (Baku) and the United Arab Emirates (Dubai). Tbilisi sits at the crossroads of Eastern Europe and Western Asia, making it 4 hours ahead of London (GMT), 3 hours ahead of Paris (CET), 1 hour ahead of Moscow, and 2 hours behind Singapore."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Tbilisi observe Daylight Saving Time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Georgia discontinued Daylight Saving Time in 2005. Before that, Georgia briefly experimented with DST during the post-Soviet period. Since 2005, Tbilisi has maintained a fixed UTC+4 offset throughout the year. This means the time difference between Tbilisi and DST-observing cities like London and Paris changes by one hour between summer and winter seasons."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Tbilisi and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tbilisi is 4 hours ahead of London when London is on GMT (UTC+0) in winter, and 3 hours ahead when London switches to BST (UTC+1) in summer. When it is 9:00 AM in London during GMT, it is 1:00 PM in Tbilisi. In summer during BST, when it is 9:00 AM in London, it is 12:00 PM noon in Tbilisi. The gap narrows by one hour during European summer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Tbilisi and Moscow?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tbilisi is 1 hour ahead of Moscow year-round. Moscow operates on MSK (UTC+3) with no DST since 2014, and Tbilisi is on GET (UTC+4) with no DST since 2005. When it is 12:00 PM noon in Moscow, it is 1:00 PM in Tbilisi. This stable 1-hour gap makes scheduling between Georgia and Russia straightforward."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Tbilisi and Dubai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tbilisi and Dubai share the same UTC+4 offset, so there is no time difference between the two cities year-round. When it is 10:00 AM in Dubai, it is 10:00 AM in Tbilisi. Both cities also do not observe Daylight Saving Time, ensuring the relationship remains constant. This makes Georgia and the UAE natural partners for business scheduling without any time zone complexity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Tbilisi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Tbilisi run 9:00 AM to 6:00 PM GET Monday through Friday. Government agencies typically operate 9:00 AM to 5:00 PM. Banks are generally open 9:00 AM to 5:30 PM on weekdays, with some branches offering Saturday 10:00 AM to 2:00 PM hours. Tbilisi's growing startup and tech ecosystem often adopts more flexible hours, particularly in the Fabrika and Vera neighborhoods. Retail centers such as Galleria Tbilisi and Tbilisi Mall are open 10:00 AM to 10:00 PM daily."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best time to call Tbilisi from Europe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From London (GMT/UTC+0 in winter), the ideal window to reach Tbilisi during business hours (9:00 AM to 6:00 PM GET) is 5:00 AM to 2:00 PM UK time — overlapping with the full UK working day from 9:00 AM to 2:00 PM. From Paris or Berlin (CET/UTC+1), the overlap window is 8:00 AM to 5:00 PM local, almost perfectly aligned. In summer when London is on BST (UTC+1), the overlap improves to 8:00 AM to 3:00 PM — a comfortable 7-hour window for real-time collaboration."
+        }
+      }
+    ]
+  },
+  "content_blocks": [
+    {
+      "title": "Tbilisi Time Zone Guide — Georgia Standard Time (GET, UTC+4)",
+      "content": "Tbilisi, the capital of Georgia, operates on Georgia Standard Time (GET), a permanent UTC+4 offset with no Daylight Saving Time adjustments. Located at 41.6938°N, 44.8015°E in the South Caucasus, Tbilisi is geographically positioned between Europe and Asia, and its timezone reflects this bridge-like status. At UTC+4, Tbilisi is 4 hours ahead of London (GMT) in winter, 3 hours ahead in summer (when London adopts BST), 1 hour ahead of Moscow (MSK/UTC+3), and at the exact same offset as Dubai (GST/UTC+4) and Baku (AZT/UTC+4). Georgia dropped DST permanently in 2005, meaning GET is a fixed reference point that simplifies scheduling with other permanent-offset cities. Tbilisi is 8 hours ahead of New York (EST), 11 hours ahead of Los Angeles (PST), and 4 hours behind Singapore (SGT). The IANA timezone identifier is Asia/Tbilisi. The stable offset has contributed to Tbilisi's growing appeal as a tech and startup hub, with an increasing number of European and Middle Eastern companies establishing remote teams in the city."
+    },
+    {
+      "title": "Tbilisi as a Tech and Business Hub — Timezone Advantages",
+      "content": "Tbilisi has emerged as one of the Caucasus region's most dynamic tech and entrepreneurship centers, attracting remote workers, startups, and regional offices of European and Middle Eastern companies. Georgia's business-friendly environment — low flat taxes, easy company formation, and straightforward visa policies — combined with its UTC+4 timezone creates strong overlap with both European and Gulf business hours. During standard European hours (CET/UTC+1), Tbilisi is just 3 hours ahead, providing a 5–6 hour real-time collaboration window with colleagues in Berlin, Paris, or Warsaw. With Dubai and Abu Dhabi (GST/UTC+4), the overlap is total — the same working day, same clock. For companies serving both European and Middle Eastern clients, a Tbilisi-based team can interface effectively with both markets within a single working day. The city's co-working scene, exemplified by spaces in the Fabrika compound and the Vera district, has grown substantially alongside Georgia's digital nomad visa program introduced in 2020."
+    },
+    {
+      "title": "Calling Tbilisi Internationally — Best Windows by Region",
+      "content": "Reaching Tbilisi during business hours (9:00 AM to 6:00 PM GET) from different world regions requires understanding the fixed UTC+4 offset. From London in winter (GMT/UTC+0), Tbilisi is 4 hours ahead — the entire London working day (9:00 AM to 5:00 PM GMT) corresponds to 1:00 PM to 9:00 PM in Tbilisi, covering the second half of Tbilisi's workday. Call before 2:00 PM GMT for the best chance of reaching offices fully staffed. In summer (BST/UTC+1), the gap is 3 hours, improving to 9:00 AM to 5:00 PM BST aligning with 12:00 PM to 8:00 PM GET — a more comfortable window. From Berlin or Paris (CET/UTC+1 or CEST/UTC+2), the overlap is nearly perfect for most of the year. From New York (EST/UTC-5), Tbilisi is 9 hours ahead — calling between 12:00 AM and 9:00 AM Eastern would reach Tbilisi's working hours, making asynchronous tools the practical choice. From Dubai (GST/UTC+4), no offset exists and scheduling is trivial. Georgia's country code is +995, and Tbilisi's area code is 32."
+    }
+  ],
+  "time_difference_table": [
+    {
+      "city": "London",
+      "slug": "london",
+      "difference": "3–4 hours ahead",
+      "link": "/time/tbilisi/london/"
+    },
+    {
+      "city": "New York",
+      "slug": "new-york",
+      "difference": "8–9 hours ahead",
+      "link": "/time/tbilisi/new-york/"
+    },
+    {
+      "city": "Moscow",
+      "slug": "moscow",
+      "difference": "1 hour ahead",
+      "link": "/time/tbilisi/moscow/"
+    },
+    {
+      "city": "Dubai",
+      "slug": "dubai",
+      "difference": "Same time",
+      "link": "/time/tbilisi/dubai/"
+    },
+    {
+      "city": "Istanbul",
+      "slug": "istanbul",
+      "difference": "1 hour ahead",
+      "link": "/time/tbilisi/istanbul/"
+    },
+    {
+      "city": "Paris",
+      "slug": "paris",
+      "difference": "2–3 hours ahead",
+      "link": "/time/tbilisi/paris/"
+    },
+    {
+      "city": "Berlin",
+      "slug": "berlin",
+      "difference": "2–3 hours ahead",
+      "link": "/time/tbilisi/berlin/"
+    },
+    {
+      "city": "Tokyo",
+      "slug": "tokyo",
+      "difference": "5 hours behind",
+      "link": "/time/tbilisi/tokyo/"
+    }
+  ],
+  "internal_links": [
+    "/time/tbilisi/london/",
+    "/time/tbilisi/new-york/",
+    "/time/tbilisi/moscow/",
+    "/time/tbilisi/dubai/",
+    "/time/tbilisi/istanbul/",
+    "/time/tbilisi/paris/",
+    "/time/tbilisi/berlin/",
+    "/time/tbilisi/tokyo/"
+  ],
+  "timezone_facts": {
+    "full_name": "Georgia Standard Time",
+    "abbreviation": "GET",
+    "utc_offset": "UTC+4 (year-round)",
+    "dst_observed": false
+  },
+  "eeat_footer": "Last updated: March 2026 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database."
+}

@@ -1,0 +1,189 @@
+{
+  "seo_title": "Current Time in San José — Costa Rica Standard Time (CST, UTC-6)",
+  "seo_description": "Current time in San José, Costa Rica. Live CST clock — UTC-6 year-round, no Daylight Saving Time. San José time vs New York, London, Los Angeles, Miami.",
+  "faq": [
+    {
+      "question": "What time is it in San José, Costa Rica right now?",
+      "answer": "San José, Costa Rica operates on Costa Rica Standard Time (CST/UTC-6) year-round. Unlike most of the Americas, Costa Rica does not observe Daylight Saving Time, so the UTC-6 offset remains constant in every season. Use the live clock above to see the exact current time in San José with real-time seconds."
+    },
+    {
+      "question": "What time zone is San José, Costa Rica in?",
+      "answer": "San José is in the Costa Rica Standard Time zone (CST), which corresponds to UTC-6 year-round. This is the same offset as US Mountain Standard Time during winter months. Because Costa Rica never adjusts its clocks, CST is a truly fixed offset — making scheduling with San José straightforward compared to cities that shift for DST."
+    },
+    {
+      "question": "Does Costa Rica observe Daylight Saving Time?",
+      "answer": "No. Costa Rica abolished Daylight Saving Time in 1992 and has operated on a permanent UTC-6 offset ever since. This means San José's time relationship with DST-observing cities like New York, Miami, and London changes by one hour depending on whether those cities are on standard or daylight time."
+    },
+    {
+      "question": "What is the time difference between San José and New York?",
+      "answer": "San José is 1 hour behind New York when New York is on Eastern Standard Time (EST/UTC-5), and 2 hours behind when New York switches to Eastern Daylight Time (EDT/UTC-4). When it is 12:00 PM noon in New York during summer, it is 10:00 AM in San José. In winter, when New York returns to EST, the gap narrows to just one hour."
+    },
+    {
+      "question": "What is the time difference between San José and London?",
+      "answer": "San José is 6 hours behind London when London is on GMT (UTC+0) in winter, and 7 hours behind when London switches to BST (UTC+1) in summer. When it is 6:00 PM in London during British Summer Time, it is 11:00 AM in San José. Callers from the UK should plan calls in the morning to reach San José during business hours."
+    },
+    {
+      "question": "What is the time difference between San José and Los Angeles?",
+      "answer": "San José is 2 hours ahead of Los Angeles when Los Angeles is on Pacific Standard Time (PST/UTC-8), and 1 hour ahead when Los Angeles is on Pacific Daylight Time (PDT/UTC-7). Because Costa Rica does not observe DST, the gap between the two cities changes seasonally. In summer, San José is only 1 hour ahead of Los Angeles."
+    },
+    {
+      "question": "What are typical business hours in San José, Costa Rica?",
+      "answer": "Standard business hours in San José run 8:00 AM to 5:00 PM CST on weekdays, with a lunch break typically from 12:00 PM to 1:00 PM. Government offices often close by 4:00 PM. Banks operate 9:00 AM to 3:00 PM Monday through Friday. Retail malls such as Multiplaza and Escazú Village are open 10:00 AM to 9:00 PM daily. Tech companies and outsourcing firms often align partially with US Eastern hours."
+    },
+    {
+      "question": "What is the best time to call San José, Costa Rica from the US?",
+      "answer": "From the US East Coast, the best window to call San José is 10:00 AM to 6:00 PM Eastern Time, which corresponds to 9:00 AM to 5:00 PM or 8:00 AM to 4:00 PM CST depending on DST. From the West Coast, calling between 11:00 AM and 7:00 PM Pacific (PDT in summer) reaches San José during a 10:00 AM to 6:00 PM local window. Costa Rica's growing tech outsourcing sector means many companies also offer extended availability."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in San José, Costa Rica right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "San José, Costa Rica operates on Costa Rica Standard Time (CST/UTC-6) year-round. Unlike most of the Americas, Costa Rica does not observe Daylight Saving Time, so the UTC-6 offset remains constant in every season. Use the live clock above to see the exact current time in San José with real-time seconds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is San José, Costa Rica in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "San José is in the Costa Rica Standard Time zone (CST), which corresponds to UTC-6 year-round. This is the same offset as US Mountain Standard Time during winter months. Because Costa Rica never adjusts its clocks, CST is a truly fixed offset — making scheduling with San José straightforward compared to cities that shift for DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Costa Rica observe Daylight Saving Time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Costa Rica abolished Daylight Saving Time in 1992 and has operated on a permanent UTC-6 offset ever since. This means San José's time relationship with DST-observing cities like New York, Miami, and London changes by one hour depending on whether those cities are on standard or daylight time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between San José and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "San José is 1 hour behind New York when New York is on Eastern Standard Time (EST/UTC-5), and 2 hours behind when New York switches to Eastern Daylight Time (EDT/UTC-4). When it is 12:00 PM noon in New York during summer, it is 10:00 AM in San José. In winter, when New York returns to EST, the gap narrows to just one hour."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between San José and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "San José is 6 hours behind London when London is on GMT (UTC+0) in winter, and 7 hours behind when London switches to BST (UTC+1) in summer. When it is 6:00 PM in London during British Summer Time, it is 11:00 AM in San José. Callers from the UK should plan calls in the morning to reach San José during business hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between San José and Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "San José is 2 hours ahead of Los Angeles when Los Angeles is on Pacific Standard Time (PST/UTC-8), and 1 hour ahead when Los Angeles is on Pacific Daylight Time (PDT/UTC-7). Because Costa Rica does not observe DST, the gap between the two cities changes seasonally. In summer, San José is only 1 hour ahead of Los Angeles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in San José, Costa Rica?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in San José run 8:00 AM to 5:00 PM CST on weekdays, with a lunch break typically from 12:00 PM to 1:00 PM. Government offices often close by 4:00 PM. Banks operate 9:00 AM to 3:00 PM Monday through Friday. Retail malls such as Multiplaza and Escazú Village are open 10:00 AM to 9:00 PM daily. Tech companies and outsourcing firms often align partially with US Eastern hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best time to call San José, Costa Rica from the US?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From the US East Coast, the best window to call San José is 10:00 AM to 6:00 PM Eastern Time, which corresponds to 9:00 AM to 5:00 PM or 8:00 AM to 4:00 PM CST depending on DST. From the West Coast, calling between 11:00 AM and 7:00 PM Pacific (PDT in summer) reaches San José during a 10:00 AM to 6:00 PM local window. Costa Rica's growing tech outsourcing sector means many companies also offer extended availability."
+        }
+      }
+    ]
+  },
+  "content_blocks": [
+    {
+      "title": "San José Time Zone Guide — Costa Rica Standard Time (CST, UTC-6)",
+      "content": "San José, the capital of Costa Rica, operates on Costa Rica Standard Time (CST), fixed permanently at UTC-6. The country discontinued Daylight Saving Time in 1992, making CST one of the most stable and predictable offsets in the Western Hemisphere. Geographically situated at 9.9281°N, 84.0907°W in Central America, San José sits in the same longitude band as the US Central timezone but holds a UTC-6 offset year-round — identical to US Mountain Standard Time in winter. The practical implication is that San José is consistently 1–2 hours behind New York (1 hour during EST, 2 during EDT), 2–3 hours behind Miami, 1–2 hours ahead of Los Angeles depending on season, and 6–7 hours behind London. For international businesses, this fixed offset eliminates ambiguity: no bi-annual clock adjustments, no confusion about which week a transition happens. Costa Rica's proximity to the US and its growing technology and business process outsourcing sector make San José a popular nearshore destination for North American companies, with the stable timezone simplifying meeting schedules across borders."
+    },
+    {
+      "title": "Business Hours and Working Culture in San José",
+      "content": "San José follows a conventional weekday business schedule, with most offices and professional services operating from 8:00 AM to 5:00 PM CST Monday through Friday. A midday lunch break from 12:00 PM to 1:00 PM is common in traditional sectors. Banking hours are typically 9:00 AM to 3:00 PM on weekdays, while government ministries and public institutions often close at 4:00 PM. The city's rapidly expanding technology and outsourcing industry — anchored in zones like La Sabana, Escazú, and Santa Ana — frequently adopts flexible schedules that partially overlap with US Eastern or Central business hours to facilitate real-time collaboration. International call centers and BPO firms often operate extended hours including evenings and weekends. Retail centers such as Multiplaza Escazú, Terramall, and Paseo de las Flores are open daily from 10:00 AM to 9:00 PM. Restaurants in the Barrio Amón and Escazú areas typically serve lunch from 12:00 PM to 3:00 PM and dinner from 6:00 PM to 10:00 PM, making San José's hospitality sector accessible across most US business day windows."
+    },
+    {
+      "title": "Calling San José Internationally — Best Windows by Region",
+      "content": "Coordinating calls with San José is simplified by its permanent UTC-6 offset. From New York or Miami (EST/UTC-5 in winter), call between 9:00 AM and 5:00 PM Eastern to reach San José offices from 8:00 AM to 4:00 PM local time. During summer (EDT/UTC-4), the gap widens to 2 hours, so call 10:00 AM to 6:00 PM Eastern to align with the same San José working window. From Los Angeles (PST/UTC-8 in winter), San José is 2 hours ahead — call 7:00 AM to 3:00 PM Pacific to catch the full San José workday. From London (GMT), call 2:00 PM to 11:00 PM to reach San José during business hours; during BST in summer, the window shifts to 3:00 PM to midnight. From Madrid or Paris (CET/UTC+1), the corridor is 3:00 PM to midnight local. For Dubai callers (GST/UTC+4), San José is 10 hours behind — reaching a San José office during normal hours requires calling from around 6:00 PM to 3:00 AM Gulf time, making asynchronous communication preferable. The international dialing code for Costa Rica is +506, followed by an 8-digit local number."
+    }
+  ],
+  "time_difference_table": [
+    {
+      "city": "New York",
+      "slug": "new-york",
+      "difference": "1–2 hours behind",
+      "link": "/time/san-jose-cr/new-york/"
+    },
+    {
+      "city": "London",
+      "slug": "london",
+      "difference": "6–7 hours behind",
+      "link": "/time/san-jose-cr/london/"
+    },
+    {
+      "city": "Los Angeles",
+      "slug": "los-angeles",
+      "difference": "1–2 hours ahead",
+      "link": "/time/san-jose-cr/los-angeles/"
+    },
+    {
+      "city": "Miami",
+      "slug": "miami",
+      "difference": "1–2 hours behind",
+      "link": "/time/san-jose-cr/miami/"
+    },
+    {
+      "city": "Chicago",
+      "slug": "chicago",
+      "difference": "Same time or 1 hour behind",
+      "link": "/time/san-jose-cr/chicago/"
+    },
+    {
+      "city": "Toronto",
+      "slug": "toronto",
+      "difference": "1–2 hours behind",
+      "link": "/time/san-jose-cr/toronto/"
+    },
+    {
+      "city": "Madrid",
+      "slug": "madrid",
+      "difference": "7–8 hours behind",
+      "link": "/time/san-jose-cr/madrid/"
+    },
+    {
+      "city": "Dubai",
+      "slug": "dubai",
+      "difference": "10 hours behind",
+      "link": "/time/san-jose-cr/dubai/"
+    }
+  ],
+  "internal_links": [
+    "/time/san-jose-cr/new-york/",
+    "/time/san-jose-cr/london/",
+    "/time/san-jose-cr/los-angeles/",
+    "/time/san-jose-cr/miami/",
+    "/time/san-jose-cr/chicago/",
+    "/time/san-jose-cr/toronto/",
+    "/time/san-jose-cr/madrid/",
+    "/time/san-jose-cr/dubai/"
+  ],
+  "timezone_facts": {
+    "full_name": "Costa Rica Standard Time",
+    "abbreviation": "CST",
+    "utc_offset": "UTC-6 (year-round)",
+    "dst_observed": false
+  },
+  "eeat_footer": "Last updated: March 2026 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database."
+}

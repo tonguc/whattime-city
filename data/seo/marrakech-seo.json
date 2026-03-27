@@ -1,0 +1,189 @@
+{
+  "seo_title": "Current Time in Marrakech — Morocco Time (WET/WEST, UTC+1)",
+  "seo_description": "Current time in Marrakech, Morocco. Live clock — UTC+1 year-round (Morocco permanently adopted UTC+1 in 2018). Marrakech time vs London, Paris, Madrid, New York.",
+  "faq": [
+    {
+      "question": "What time is it in Marrakech right now?",
+      "answer": "Marrakech operates on Morocco Standard Time, which has been permanently set at UTC+1 since October 2018. The exception is the holy month of Ramadan, during which clocks revert to UTC+0 for the duration of Ramadan and then return to UTC+1. Outside Ramadan, Marrakech is 1 hour ahead of London (GMT), the same time as Paris and Madrid, and 5 hours ahead of New York (EST)."
+    },
+    {
+      "question": "What time zone is Marrakech in?",
+      "answer": "Marrakech is in the Morocco Standard Time zone. Since 2018, Morocco permanently adopted UTC+1, officially known as Western European Summer Time (WEST). This makes Marrakech the same time as Paris, Madrid, and Rome in winter. During Ramadan, Morocco temporarily reverts to UTC+0 (WET), aligning briefly with London. The IANA timezone identifier for Morocco is Africa/Casablanca."
+    },
+    {
+      "question": "Does Marrakech observe Daylight Saving Time?",
+      "answer": "Not in the traditional sense. Morocco adopted permanent UTC+1 in 2018, effectively making WEST the standard year-round offset. However, during the Islamic holy month of Ramadan, Morocco temporarily reverts clocks to UTC+0. This unique arrangement means Marrakech's UTC offset changes twice a year based on the Islamic lunar calendar, not fixed solar dates. Travelers visiting during Ramadan should verify local times carefully."
+    },
+    {
+      "question": "What is the time difference between Marrakech and London?",
+      "answer": "Marrakech is normally 1 hour ahead of London. When London is on GMT (UTC+0) in winter, Marrakech at UTC+1 is 1 hour ahead. When London shifts to BST (UTC+1) in summer, both cities share the same time. However, during Ramadan, Morocco reverts to UTC+0 — if this coincides with London's BST period, Morocco can briefly be 1 hour behind London. The overlap of Ramadan with British Summer Time varies annually."
+    },
+    {
+      "question": "What is the time difference between Marrakech and Paris?",
+      "answer": "Marrakech and Paris are on the same time from October through March (both UTC+1). When France and other EU countries switch to summer time (CEST/UTC+2) from late March to late October, Paris becomes 1 hour ahead of Marrakech. If Ramadan also falls during this period, Morocco reverts to UTC+0, creating a temporary 2-hour gap between Marrakech and Paris."
+    },
+    {
+      "question": "What is the time difference between Marrakech and New York?",
+      "answer": "Marrakech is 5 hours ahead of New York during Eastern Standard Time (EST/UTC-5), and 6 hours ahead during Eastern Daylight Time (EDT/UTC-4). When it is 9:00 AM in New York (EST), it is 2:00 PM in Marrakech. During Ramadan, when Morocco returns to UTC+0, the gap narrows to 5 hours vs EDT and 5 hours vs EST."
+    },
+    {
+      "question": "What are typical business hours in Marrakech?",
+      "answer": "Standard business hours in Marrakech run 9:00 AM to 5:00 PM or 6:00 PM Monday through Friday. During Ramadan, many offices and businesses operate on reduced hours, typically 9:00 AM to 3:00 PM, with activity resuming in the evening after Iftar. Souks and traditional markets in the Medina are generally open from 9:00 AM to 9:00 PM except Fridays, when they may close for afternoon prayers and reopen by 3:00 PM. The tourism sector, concentrated around Jemaa el-Fna square, operates all day and well into the night."
+    },
+    {
+      "question": "What is the best time to call Marrakech from Europe?",
+      "answer": "From the UK (GMT/UTC+0 in winter), Marrakech is 1 hour ahead — call between 8:00 AM and 4:00 PM UK time to reach offices during the 9:00 AM to 5:00 PM Marrakech window. When UK is on BST (UTC+1) in summer, both cities are at the same time, and any time during the UK working day works equally well for Marrakech. From Paris or Madrid (CET/UTC+1 in winter), call times are identical to Marrakech's office hours — a perfectly aligned business corridor."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Marrakech right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Marrakech operates on Morocco Standard Time, which has been permanently set at UTC+1 since October 2018. The exception is the holy month of Ramadan, during which clocks revert to UTC+0 for the duration of Ramadan and then return to UTC+1. Outside Ramadan, Marrakech is 1 hour ahead of London (GMT), the same time as Paris and Madrid, and 5 hours ahead of New York (EST)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Marrakech in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Marrakech is in the Morocco Standard Time zone. Since 2018, Morocco permanently adopted UTC+1, officially known as Western European Summer Time (WEST). This makes Marrakech the same time as Paris, Madrid, and Rome in winter. During Ramadan, Morocco temporarily reverts to UTC+0 (WET), aligning briefly with London. The IANA timezone identifier for Morocco is Africa/Casablanca."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Marrakech observe Daylight Saving Time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not in the traditional sense. Morocco adopted permanent UTC+1 in 2018, effectively making WEST the standard year-round offset. However, during the Islamic holy month of Ramadan, Morocco temporarily reverts clocks to UTC+0. This unique arrangement means Marrakech's UTC offset changes twice a year based on the Islamic lunar calendar, not fixed solar dates. Travelers visiting during Ramadan should verify local times carefully."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Marrakech and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Marrakech is normally 1 hour ahead of London. When London is on GMT (UTC+0) in winter, Marrakech at UTC+1 is 1 hour ahead. When London shifts to BST (UTC+1) in summer, both cities share the same time. However, during Ramadan, Morocco reverts to UTC+0 — if this coincides with London's BST period, Morocco can briefly be 1 hour behind London. The overlap of Ramadan with British Summer Time varies annually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Marrakech and Paris?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Marrakech and Paris are on the same time from October through March (both UTC+1). When France and other EU countries switch to summer time (CEST/UTC+2) from late March to late October, Paris becomes 1 hour ahead of Marrakech. If Ramadan also falls during this period, Morocco reverts to UTC+0, creating a temporary 2-hour gap between Marrakech and Paris."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Marrakech and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Marrakech is 5 hours ahead of New York during Eastern Standard Time (EST/UTC-5), and 6 hours ahead during Eastern Daylight Time (EDT/UTC-4). When it is 9:00 AM in New York (EST), it is 2:00 PM in Marrakech. During Ramadan, when Morocco returns to UTC+0, the gap narrows to 5 hours vs EDT and 5 hours vs EST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Marrakech?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Marrakech run 9:00 AM to 5:00 PM or 6:00 PM Monday through Friday. During Ramadan, many offices and businesses operate on reduced hours, typically 9:00 AM to 3:00 PM, with activity resuming in the evening after Iftar. Souks and traditional markets in the Medina are generally open from 9:00 AM to 9:00 PM except Fridays, when they may close for afternoon prayers and reopen by 3:00 PM. The tourism sector, concentrated around Jemaa el-Fna square, operates all day and well into the night."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best time to call Marrakech from Europe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From the UK (GMT/UTC+0 in winter), Marrakech is 1 hour ahead — call between 8:00 AM and 4:00 PM UK time to reach offices during the 9:00 AM to 5:00 PM Marrakech window. When UK is on BST (UTC+1) in summer, both cities are at the same time, and any time during the UK working day works equally well for Marrakech. From Paris or Madrid (CET/UTC+1 in winter), call times are identical to Marrakech's office hours — a perfectly aligned business corridor."
+        }
+      }
+    ]
+  },
+  "content_blocks": [
+    {
+      "title": "Marrakech Time Zone Guide — Morocco's Permanent UTC+1 Since 2018",
+      "content": "Marrakech, Morocco's iconic Red City, operates on a unique timezone arrangement. In October 2018, Morocco permanently adopted UTC+1 — effectively keeping Western European Summer Time (WEST) year-round rather than reverting to Western European Time (WET/UTC+0) each autumn. This decision aligned Morocco with its largest trading partners in Western Europe, placing Marrakech on the same clock as Madrid, Paris, and Rome during winter months. The sole exception is Ramadan, the Islamic holy month, when Morocco reverts to UTC+0 for the lunar month's duration before returning to UTC+1. Since the Islamic calendar is lunar, Ramadan advances approximately 11 days earlier each Gregorian year, meaning the Ramadan time adjustment falls in different seasons over time. The IANA timezone identifier is Africa/Casablanca. For travelers and businesses, the practical effect is that Marrakech is permanently 1 hour ahead of London outside both Ramadan and British Summer Time, and shares the same clock as continental Western Europe during winter — a change that simplified commerce and communication across the Mediterranean corridor."
+    },
+    {
+      "title": "Tourism and Hospitality in Marrakech — Time Zone Impacts",
+      "content": "Marrakech is Morocco's premier tourist destination, welcoming millions of visitors annually from Europe, the Gulf, and North America. Its proximity to Europe in both geography and timezone makes it an appealing short-break destination from London, Paris, and Madrid — all within a 3-hour flight and sharing a similar or identical clock during portions of the year. For UK tourists in particular, the fact that Marrakech is often on the same time as Britain (when both are at UTC+1 or when Morocco is at UTC+0 during Ramadan coinciding with BST) means no jet lag and no clock confusion. The Medina's famous Djemaa el-Fna square springs to life in the evening after sunset, with the most vibrant market activity from 7:00 PM to midnight. Riads and hotels cater to guests across all hours. During Ramadan, visitor experience shifts significantly: restaurants may be closed during daylight hours, and the city comes alive post-Iftar in the evening. Tour operators and visitors from the Gulf states (UAE, Saudi Arabia) benefit from a manageable 3–4 hour time difference with Morocco depending on season."
+    },
+    {
+      "title": "Calling Marrakech Internationally — Best Windows by Region",
+      "content": "Standard business hours in Marrakech run 9:00 AM to 5:00 PM Morocco Time (UTC+1 outside Ramadan). From London during winter (GMT/UTC+0), Marrakech is 1 hour ahead — the best calling window is 8:00 AM to 4:00 PM GMT to reach a fully staffed Marrakech office. From May to October when London is on BST (UTC+1), both cities share the same time, making the full UK working day ideal for calls. From Paris or Madrid (CET/UTC+1 in winter), business hours are perfectly synchronized with Marrakech outside EU summer time. When Europe shifts to CEST (UTC+2) from late March, Paris becomes 1 hour ahead of Marrakech; call 9:00 AM to 6:00 PM Paris time to cover Marrakech working hours. From New York (EST/UTC-5), Marrakech is 6 hours ahead — call by 11:00 AM Eastern to reach Marrakech before close of business. From Dubai (GST/UTC+4), Marrakech is 3 hours behind — an 11:00 AM to 8:00 PM Dubai window covers Marrakech's full workday. Morocco's country code is +212."
+    }
+  ],
+  "time_difference_table": [
+    {
+      "city": "London",
+      "slug": "london",
+      "difference": "0–1 hour ahead",
+      "link": "/time/marrakech/london/"
+    },
+    {
+      "city": "New York",
+      "slug": "new-york",
+      "difference": "5–6 hours ahead",
+      "link": "/time/marrakech/new-york/"
+    },
+    {
+      "city": "Paris",
+      "slug": "paris",
+      "difference": "0–1 hour behind",
+      "link": "/time/marrakech/paris/"
+    },
+    {
+      "city": "Madrid",
+      "slug": "madrid",
+      "difference": "0–1 hour behind",
+      "link": "/time/marrakech/madrid/"
+    },
+    {
+      "city": "Dubai",
+      "slug": "dubai",
+      "difference": "3 hours behind",
+      "link": "/time/marrakech/dubai/"
+    },
+    {
+      "city": "Los Angeles",
+      "slug": "los-angeles",
+      "difference": "8–9 hours ahead",
+      "link": "/time/marrakech/los-angeles/"
+    },
+    {
+      "city": "Toronto",
+      "slug": "toronto",
+      "difference": "5–6 hours ahead",
+      "link": "/time/marrakech/toronto/"
+    },
+    {
+      "city": "Berlin",
+      "slug": "berlin",
+      "difference": "0–1 hour behind",
+      "link": "/time/marrakech/berlin/"
+    }
+  ],
+  "internal_links": [
+    "/time/marrakech/london/",
+    "/time/marrakech/new-york/",
+    "/time/marrakech/paris/",
+    "/time/marrakech/madrid/",
+    "/time/marrakech/dubai/",
+    "/time/marrakech/los-angeles/",
+    "/time/marrakech/toronto/",
+    "/time/marrakech/berlin/"
+  ],
+  "timezone_facts": {
+    "full_name": "Western European Time (permanent UTC+1 since 2018)",
+    "abbreviation": "WET/WEST",
+    "utc_offset": "UTC+1 (year-round, except Ramadan UTC+0)",
+    "dst_observed": false
+  },
+  "eeat_footer": "Last updated: March 2026 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database."
+}
