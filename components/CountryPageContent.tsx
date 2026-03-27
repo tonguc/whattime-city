@@ -103,7 +103,7 @@ export default function CountryPageContent({
       />
       
       {/* Page Title */}
-      <header className="mb-6">
+      <header className="mb-2">
         <h1 className={`text-3xl md:text-4xl font-bold ${headingColor} mb-2 flex items-center gap-3`}>
           <img
             src={getFlagUrl(country.code, 'lg')}
