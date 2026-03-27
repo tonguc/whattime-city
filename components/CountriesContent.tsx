@@ -74,7 +74,7 @@ export default function CountriesContent() {
       <main className="max-w-6xl mx-auto px-4 py-8">
         {/* Page Title + Search */}
         <div className="text-center mb-6">
-          <h1 className={`text-3xl sm:text-4xl font-bold ${textMain} mb-5 flex items-center justify-center gap-3`}>
+          <h1 className={`text-2xl sm:text-3xl md:text-4xl font-bold ${textMain} mb-5 flex items-center justify-center gap-3 flex-wrap`}>
             <svg className="w-9 h-9 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10"/>
               <path d="M2 12h20"/>

@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Prevent horizontal overflow/scroll on all pages */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 /* Font loaded via preload in layout.tsx for better CLS */
 
 /* ============================================
