@@ -21,18 +21,18 @@ const AnalogClock = dynamic(() => import('@/components/AnalogClock'), {
 
 // Data
 const popularComparisons = [
-  { from: 'new-york', to: 'london', label: 'NYC ↔ London' },
-  { from: 'tokyo', to: 'los-angeles', label: 'Tokyo ↔ LA' },
-  { from: 'dubai', to: 'singapore', label: 'Dubai ↔ Singapore' },
-  { from: 'paris', to: 'toronto', label: 'Paris ↔ Toronto' },
-  { from: 'istanbul', to: 'berlin', label: 'Istanbul ↔ Berlin' },
-  { from: 'london', to: 'sydney', label: 'London ↔ Sydney' },
-  { from: 'new-york', to: 'tokyo', label: 'NYC ↔ Tokyo' },
-  { from: 'mumbai', to: 'london', label: 'Mumbai ↔ London' },
-  { from: 'hong-kong', to: 'new-york', label: 'Hong Kong ↔ NYC' },
   { from: 'singapore', to: 'london', label: 'Singapore ↔ London' },
+  { from: 'new-york', to: 'london', label: 'NYC ↔ London' },
+  { from: 'london', to: 'sydney', label: 'London ↔ Sydney' },
+  { from: 'sydney', to: 'london', label: 'Sydney ↔ London' },
+  { from: 'los-angeles', to: 'london', label: 'LA ↔ London' },
   { from: 'dubai', to: 'new-york', label: 'Dubai ↔ NYC' },
-  { from: 'tokyo', to: 'paris', label: 'Tokyo ↔ Paris' },
+  { from: 'dublin', to: 'dubai', label: 'Dublin ↔ Dubai' },
+  { from: 'tokyo', to: 'seattle', label: 'Tokyo ↔ Seattle' },
+  { from: 'tokyo', to: 'san-francisco', label: 'Tokyo ↔ SF' },
+  { from: 'sao-paulo', to: 'san-francisco', label: 'São Paulo ↔ SF' },
+  { from: 'los-angeles', to: 'seoul', label: 'LA ↔ Seoul' },
+  { from: 'new-york', to: 'nairobi', label: 'NYC ↔ Nairobi' },
 ]
 
 export default function HomePage() {
@@ -466,27 +466,87 @@ export default function HomePage() {
           </div>
         </section>
         
-        {/* SEO Content Section */}
+        {/* SEO Internal Links Section */}
         <section className={`rounded-2xl p-5 mb-4 backdrop-blur-xl border ${card}`}>
-          <h2 className={`text-lg font-semibold mb-3 ${text}`}>
-            World Clock - Check Current Time Anywhere
-          </h2>
-          <div className={`space-y-3 text-sm ${textMuted}`}>
-            <p>
-              Welcome to whattime.city, your free online world clock for checking the current local time in any 
-              city around the globe. Our real-time clock automatically detects your location and displays your 
-              local time along with sunrise, sunset times, and live weather conditions.
-            </p>
-            <p>
-              Whether you're scheduling international business meetings, planning calls with friends and family 
-              abroad, or coordinating travel across time zones, our tools make it easy to convert time between 
-              cities, find optimal meeting times, and calculate arrival times for flights.
-            </p>
-            <p>
-              Explore our interactive world map to visualize day and night across the globe, browse time zones 
-              by country, or use our specialized tools including the Time Converter, Meeting Planner, Flight Time 
-              Calculator, and Jet Lag Advisor. All features are completely free and work on any device.
-            </p>
+          <h2 className={`text-lg font-semibold mb-4 ${text}`}>Explore Time Zones & Tools</h2>
+
+          <div className="space-y-4">
+            {/* TZ Converters */}
+            <div>
+              <p className={`text-xs font-semibold uppercase tracking-wide mb-2 ${textMuted}`}>Time Zone Converters</p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { href: '/pst-to-est', label: 'PST to EST' },
+                  { href: '/ist-to-est', label: 'IST to EST' },
+                  { href: '/ist-to-pst', label: 'IST to PST' },
+                  { href: '/ist-to-gmt', label: 'IST to GMT' },
+                  { href: '/gmt-to-est', label: 'GMT to EST' },
+                  { href: '/jst-to-est', label: 'JST to EST' },
+                  { href: '/aest-to-est', label: 'AEST to EST' },
+                  { href: '/cet-to-est', label: 'CET to EST' },
+                  { href: '/cst-to-est', label: 'CST to EST' },
+                  { href: '/utc-to-est', label: 'UTC to EST' },
+                ].map(l => (
+                  <Link key={l.href} href={l.href} className={`px-3 py-1.5 rounded-lg text-sm transition-all ${isLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-slate-300'}`}>{l.label}</Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Country & Region Times */}
+            <div>
+              <p className={`text-xs font-semibold uppercase tracking-wide mb-2 ${textMuted}`}>Country & Region Time</p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { href: '/india', label: 'India Time' },
+                  { href: '/japan', label: 'Japan Time' },
+                  { href: '/united-kingdom', label: 'UK Time' },
+                  { href: '/china', label: 'China Time' },
+                  { href: '/australia', label: 'Australia Time' },
+                  { href: '/germany', label: 'Germany Time' },
+                  { href: '/france', label: 'France Time' },
+                  { href: '/brazil', label: 'Brazil Time' },
+                  { href: '/canada', label: 'Canada Time' },
+                  { href: '/pakistan', label: 'Pakistan Time' },
+                ].map(l => (
+                  <Link key={l.href} href={l.href} className={`px-3 py-1.5 rounded-lg text-sm transition-all ${isLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-slate-300'}`}>{l.label}</Link>
+                ))}
+              </div>
+            </div>
+
+            {/* US Time Zones */}
+            <div>
+              <p className={`text-xs font-semibold uppercase tracking-wide mb-2 ${textMuted}`}>US Time Zones</p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { href: '/eastern-time-zone', label: 'Eastern Time' },
+                  { href: '/central-time-zone', label: 'Central Time' },
+                  { href: '/mountain-time-zone', label: 'Mountain Time' },
+                  { href: '/pacific-time-zone', label: 'Pacific Time' },
+                  { href: '/alaska-time-zone', label: 'Alaska Time' },
+                  { href: '/hawaii-time-zone', label: 'Hawaii Time' },
+                  { href: '/us-time-zones', label: 'All US Zones' },
+                ].map(l => (
+                  <Link key={l.href} href={l.href} className={`px-3 py-1.5 rounded-lg text-sm transition-all ${isLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-slate-300'}`}>{l.label}</Link>
+                ))}
+              </div>
+            </div>
+
+            {/* DST */}
+            <div>
+              <p className={`text-xs font-semibold uppercase tracking-wide mb-2 ${textMuted}`}>Daylight Saving Time</p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { href: '/daylight-saving-time', label: 'DST Overview' },
+                  { href: '/daylight-saving-time/usa', label: 'USA DST' },
+                  { href: '/daylight-saving-time/uk', label: 'UK DST' },
+                  { href: '/daylight-saving-time/europe', label: 'Europe DST' },
+                  { href: '/daylight-saving-time/australia', label: 'Australia DST' },
+                  { href: '/daylight-saving-time/countries', label: 'All Countries' },
+                ].map(l => (
+                  <Link key={l.href} href={l.href} className={`px-3 py-1.5 rounded-lg text-sm transition-all ${isLight ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 text-slate-300'}`}>{l.label}</Link>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
       </main>
