@@ -67,6 +67,30 @@ const faqSchema = {
         text: 'CST (UTC-6) is 1 hour behind EST (UTC-5) and 2 hours ahead of PST (UTC-8). When it is 12:00 PM EST in New York, it is 11:00 AM CST in Chicago and 9:00 AM PST in Los Angeles. During Daylight Saving Time, the same relationships hold: CDT is 1 hour behind EDT, and 2 hours ahead of PDT.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'Is Central Time 1 or 2 hours behind Eastern Time?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Central Time is always exactly 1 hour behind Eastern Time. CST (UTC-6) is 1 hour behind EST (UTC-5), and CDT (UTC-5) is 1 hour behind EDT (UTC-4). The gap never changes to 2 hours — both zones observe Daylight Saving Time on the same schedule, so the 1-hour difference is constant year-round.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is California on Central Time?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. California is on Pacific Time (PST/PDT), not Central Time. California observes PST (UTC-8) in winter and PDT (UTC-7) during Daylight Saving Time. Central Time covers states like Illinois, Texas, and Minnesota. California is 2 hours behind Central Time.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is 12 PM Central Time in Eastern Time?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '12:00 PM CST (noon Central Standard Time) is 1:00 PM EST (Eastern Standard Time). Since Central Time is always 1 hour behind Eastern Time, simply add 1 hour to convert CST to EST. For example: 9:00 AM CST = 10:00 AM EST, 3:00 PM CST = 4:00 PM EST, 6:00 PM CST = 7:00 PM EST.',
+      },
+    },
   ],
 }
 

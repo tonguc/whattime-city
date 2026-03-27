@@ -3,22 +3,22 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'PST to EST — Pacific to Eastern Time Converter',
-  description: 'Convert PST to EST instantly. Pacific Standard Time is 3 hours behind Eastern Standard Time. See live clocks, conversion table, and best overlap hours for calls.',
+  title: 'PST to EST Converter — Pacific and Eastern Time Difference',
+  description: 'PST is 3 hours behind EST. Convert Pacific Standard Time to Eastern Standard Time instantly — live clocks, full conversion table, and answers to "Is PST 3 hours behind EST?" and "What is 3pm EST in PST?"',
   alternates: {
-    canonical: 'https://whattime.city/pst-to-est',
+    canonical: 'https://whattime.city/pst-to-est/',
   },
   openGraph: {
-    title: 'PST to EST Time Converter — Pacific to Eastern',
-    description: 'PST is 3 hours behind EST. Live clocks, full conversion table, and business hours overlap.',
+    title: 'PST to EST — Pacific is 3 Hours Behind Eastern Time',
+    description: 'Convert PST to EST. Pacific Time is always 3 hours behind Eastern Time. Live clocks and full conversion table.',
     type: 'website',
-    url: 'https://whattime.city/pst-to-est',
+    url: 'https://whattime.city/pst-to-est/',
     siteName: 'whattime.city',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PST to EST — Pacific to Eastern Time',
-    description: 'PST is 3 hours behind EST. Live converter and full table.',
+    title: 'PST to EST — Pacific is 3 Hours Behind Eastern',
+    description: 'PST is 3 hours behind EST. Live converter, full table, and common time conversions.',
   },
 }
 

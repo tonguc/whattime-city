@@ -67,6 +67,22 @@ const faqSchema = {
         text: 'EST is exactly 5 hours behind UTC (UTC-5). For example, when it is 12:00 PM UTC, it is 7:00 AM EST. During Daylight Saving Time, the East Coast switches to EDT (UTC-4), which is 4 hours behind UTC.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'Is Panama on EST time?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Panama observes Eastern Standard Time (EST, UTC-5) year-round and does not observe Daylight Saving Time. This means Panama stays on UTC-5 permanently — the same as New York in winter, but 1 hour behind New York during summer when the US East Coast switches to EDT (UTC-4).',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What time is EST in the USA now?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Eastern Time is used across the US East Coast, covering states from Maine to Florida. The live clock at the top of this page shows the current EST/EDT time. During winter (November–March), the East Coast observes EST (UTC-5). During summer (March–November), it observes EDT (UTC-4). Major cities: New York, Miami, Atlanta, Boston, Washington D.C.',
+      },
+    },
   ],
 }
 

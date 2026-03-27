@@ -3,21 +3,21 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'CST to EST — Central to Eastern Time Converter',
-  description: 'Convert CST to EST instantly. Central Standard Time is 1 hour behind Eastern Standard Time. Live clocks, conversion table, and business hours overlap.',
+  title: 'CST to EST Converter — Central Time is 1 Hour Behind Eastern',
+  description: 'CST is 1 hour behind EST. Convert Central to Eastern Time — live clocks, full table, and answers to "Is Central time 1 or 2 hours behind Eastern?" and "What is 12 PM CST in EST?"',
   alternates: {
-    canonical: 'https://whattime.city/cst-to-est',
+    canonical: 'https://whattime.city/cst-to-est/',
   },
   openGraph: {
-    title: 'CST to EST Time Converter — Central to Eastern',
-    description: 'CST is 1 hour behind EST. Live clocks and full conversion table.',
+    title: 'CST to EST — Central Time is 1 Hour Behind Eastern',
+    description: 'Convert CST to EST. Central Time is always 1 hour behind Eastern Time. Live clocks and full conversion table.',
     type: 'website',
-    url: 'https://whattime.city/cst-to-est',
+    url: 'https://whattime.city/cst-to-est/',
     siteName: 'whattime.city',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CST to EST — Central to Eastern Time',
+    title: 'CST to EST — Central is 1 Hour Behind Eastern',
     description: 'CST is 1 hour behind EST. Live converter and full table.',
   },
 }

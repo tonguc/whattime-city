@@ -61,10 +61,26 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'How many hours behind EST is PST?',
+      name: 'Is PST 3 hours behind EST?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'PST (UTC-8) is exactly 3 hours behind EST (UTC-5). For example, when it is 12:00 PM EST in New York, it is 9:00 AM PST in Los Angeles. During Daylight Saving Time, PDT (UTC-7) is 3 hours behind EDT (UTC-4) — the gap remains constant throughout the year because both coasts observe DST simultaneously.',
+        text: 'Yes. PST (UTC-8) is exactly 3 hours behind EST (UTC-5). When it is 12:00 PM EST in New York, it is 9:00 AM PST in Los Angeles. During Daylight Saving Time, PDT (UTC-7) is still 3 hours behind EDT (UTC-4) — the gap remains constant all year because both coasts observe DST simultaneously.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is California on PST right now?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'California observes PST (UTC-8) in winter (November–March) and PDT (UTC-7) during Daylight Saving Time (March–November). The live clock above shows the current Pacific Time, including whether it is currently PST or PDT. California is always on Pacific Time — PST in standard time, PDT when DST is active.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Oregon on PST time?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, most of Oregon observes Pacific Time — PST (UTC-8) in winter and PDT (UTC-7) during Daylight Saving Time. Exception: a small portion of eastern Oregon near the Idaho border observes Mountain Time (MST/MDT). Major Oregon cities on Pacific Time include Portland, Salem, Eugene, and Bend.',
       },
     },
   ],
