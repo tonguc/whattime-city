@@ -223,6 +223,24 @@ export default async function sitemap() {
     { slug: 'jet-lag-advisor', priority: 0.7 },
     { slug: 'event-time', priority: 0.7 },
     { slug: 'world-alarm', priority: 0.7 },
+    // TZ abbreviation hub pages — high-volume abbreviation queries
+    { slug: 'est', priority: 0.9 },
+    { slug: 'pst', priority: 0.9 },
+    { slug: 'cst', priority: 0.9 },
+    { slug: 'mst', priority: 0.9 },
+    { slug: 'edt', priority: 0.8 },
+    { slug: 'cdt', priority: 0.8 },
+    { slug: 'pdt', priority: 0.8 },
+    { slug: 'ist', priority: 0.9 },
+    { slug: 'utc', priority: 0.9 },
+    { slug: 'gmt', priority: 0.9 },
+    // State current-time hub pages
+    { slug: 'hawaii', priority: 0.9 },
+    // DST cluster — new subpages
+    { slug: 'daylight-saving-time/canada', priority: 0.8 },
+    { slug: 'daylight-saving-time/new-zealand', priority: 0.7 },
+    { slug: 'daylight-saving-time/mexico', priority: 0.7 },
+    { slug: 'daylight-saving-time/countries', priority: 0.8 },
   ].map((tool) => ({
     url: `${baseUrl}/${tool.slug}/`,
     lastModified: now,
