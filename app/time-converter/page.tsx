@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: 'Time Zone Converter — Convert Any Time Between 400+ Cities',
   description: 'Convert any time between 400+ cities instantly. What time is 3 PM EST in London? Pick two cities, enter a time, get the exact local equivalent — DST-aware, no sign-up needed.',
   alternates: {
-    canonical: 'https://whattime.city/time-converter',
+    canonical: 'https://whattime.city/time-converter/',
   },
   openGraph: {
     title: 'Time Zone Converter — Free, Instant, 400+ Cities',
     description: 'Convert time between any two cities in seconds. Automatically adjusts for Daylight Saving Time.',
     type: 'website',
-    url: 'https://whattime.city/time-converter',
+    url: 'https://whattime.city/time-converter/',
     siteName: 'whattime.city',
   },
   twitter: {
@@ -25,7 +25,7 @@ const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: 'Time Zone Converter',
-  url: 'https://whattime.city/time-converter',
+  url: 'https://whattime.city/time-converter/',
   description: 'Convert time between 400+ cities instantly. Automatically accounts for Daylight Saving Time.',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
@@ -46,6 +46,38 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What time is it in the different time zones right now?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The four main US time zones right now: Eastern Time (ET) is UTC-5 in winter (EST) or UTC-4 in summer (EDT). Central Time (CT) is UTC-6 / UTC-5. Mountain Time (MT) is UTC-7 / UTC-6. Pacific Time (PT) is UTC-8 / UTC-7. Major international zones: GMT/UTC is UTC+0, CET is UTC+1 (CEST UTC+2 in summer), IST is UTC+5:30, JST is UTC+9, AEST is UTC+10. Use the converter above to see exact current times.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do you convert UTC time to EST time?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'To convert UTC to EST (Eastern Standard Time, winter): subtract 5 hours. Example: 20:00 UTC = 3:00 PM EST. To convert UTC to EDT (Eastern Daylight Time, summer): subtract 4 hours. Example: 20:00 UTC = 4:00 PM EDT. The US East Coast observes EDT from the second Sunday in March to the first Sunday in November.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What are the 4 time zones in the US?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The four contiguous US time zones are: Eastern Time (ET, UTC-5 / UTC-4 DST) covering the East Coast; Central Time (CT, UTC-6 / UTC-5 DST) covering the Midwest; Mountain Time (MT, UTC-7 / UTC-6 DST) covering the Rockies; and Pacific Time (PT, UTC-8 / UTC-7 DST) covering the West Coast. Alaska (AKST, UTC-9) and Hawaii (HST, UTC-10, no DST) are additional US time zones.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do you calculate the time difference between two countries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'To calculate the time difference: find each country\'s UTC offset (e.g. New York is UTC-5, London is UTC+0), then subtract one from the other. New York to London: 0 - (-5) = 5 hours ahead. For countries observing DST, the offset changes seasonally — use the converter above for real-time accuracy. The IANA Time Zone Database is the authoritative source for all offsets.',
+      },
+    },
     {
       '@type': 'Question',
       name: 'Does this time zone converter account for Daylight Saving Time?',
