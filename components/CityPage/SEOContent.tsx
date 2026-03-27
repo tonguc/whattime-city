@@ -8,19 +8,25 @@ interface SEOContentProps {
   seoData?: any
 }
 
-function getUTCOffset(timezone: string): string {
+function getNumericOffset(timezone: string): number {
   try {
     const now = new Date()
     const utc = new Date(now.toLocaleString('en-US', { timeZone: 'UTC' }))
     const local = new Date(now.toLocaleString('en-US', { timeZone: timezone }))
-    const diff = (local.getTime() - utc.getTime()) / (1000 * 60 * 60)
+    return (local.getTime() - utc.getTime()) / (1000 * 60 * 60)
+  } catch { return 0 }
+}
+
+function getUTCLabel(timezone: string): string {
+  try {
+    const diff = getNumericOffset(timezone)
     const sign = diff >= 0 ? '+' : ''
     const hours = Math.floor(Math.abs(diff))
     const mins = Math.round((Math.abs(diff) - hours) * 60)
-    return mins > 0 ? `UTC${sign}${diff >= 0 ? hours : -hours}:${mins.toString().padStart(2, '0')}` : `UTC${sign}${diff >= 0 ? hours : -hours}`
-  } catch {
-    return 'UTC'
-  }
+    return mins > 0
+      ? `UTC${sign}${diff >= 0 ? hours : -hours}:${mins.toString().padStart(2, '0')}`
+      : `UTC${sign}${diff >= 0 ? hours : -hours}`
+  } catch { return 'UTC' }
 }
 
 const dstCountries: Record<string, boolean> = {
@@ -30,51 +36,53 @@ const dstCountries: Record<string, boolean> = {
   'KR': false, 'HK': false, 'TH': false, 'VN': false, 'PH': false, 'MY': false
 }
 
-const majorCities: Record<string, { slug: string; offset: number }> = {
-  'New York': { slug: 'new-york', offset: -5 },
-  'London': { slug: 'london', offset: 0 },
-  'Tokyo': { slug: 'tokyo', offset: 9 },
-  'Sydney': { slug: 'sydney', offset: 11 },
-  'Dubai': { slug: 'dubai', offset: 4 },
-  'Singapore': { slug: 'singapore', offset: 8 },
-  'Paris': { slug: 'paris', offset: 1 },
-  'Los Angeles': { slug: 'los-angeles', offset: -8 },
-}
+const compareTargets: Array<{ slug: string; name: string; timezone: string }> = [
+  { slug: 'new-york',  name: 'New York',  timezone: 'America/New_York'    },
+  { slug: 'london',    name: 'London',    timezone: 'Europe/London'        },
+  { slug: 'tokyo',     name: 'Tokyo',     timezone: 'Asia/Tokyo'           },
+  { slug: 'dubai',     name: 'Dubai',     timezone: 'Asia/Dubai'           },
+  { slug: 'sydney',    name: 'Sydney',    timezone: 'Australia/Sydney'     },
+  { slug: 'singapore', name: 'Singapore', timezone: 'Asia/Singapore'       },
+  { slug: 'paris',     name: 'Paris',     timezone: 'Europe/Paris'         },
+  { slug: 'chicago',   name: 'Chicago',   timezone: 'America/Chicago'      },
+  { slug: 'toronto',   name: 'Toronto',   timezone: 'America/Toronto'      },
+  { slug: 'hong-kong', name: 'Hong Kong', timezone: 'Asia/Hong_Kong'       },
+  { slug: 'berlin',    name: 'Berlin',    timezone: 'Europe/Berlin'        },
+  { slug: 'madrid',    name: 'Madrid',    timezone: 'Europe/Madrid'        },
+  { slug: 'amsterdam', name: 'Amsterdam', timezone: 'Europe/Amsterdam'     },
+]
 
 export default function SEOContent({ city, seoData }: SEOContentProps) {
   const { card, textSection, textBody, isLight } = useThemeClasses()
 
-  const offset = getUTCOffset(city.timezone)
+  const offset = getUTCLabel(city.timezone)
   const hasDST = dstCountries[city.countryCode] ?? false
   const linkClass = isLight
     ? 'text-blue-600 hover:text-blue-800 hover:underline'
     : 'text-sky-400 hover:text-sky-300 hover:underline'
 
-  const cityOffset = (() => {
-    try {
-      const now = new Date()
-      const utc = new Date(now.toLocaleString('en-US', { timeZone: 'UTC' }))
-      const local = new Date(now.toLocaleString('en-US', { timeZone: city.timezone }))
-      return (local.getTime() - utc.getTime()) / (1000 * 60 * 60)
-    } catch { return 0 }
-  })()
-
-  const timeDiffs = Object.entries(majorCities)
-    .filter(([_, d]) => d.slug !== city.slug)
-    .slice(0, 4)
-    .map(([name, d]) => ({ cityName: name, slug: d.slug, diff: cityOffset - d.offset }))
-
-  const formatDiff = (diff: number, cityName: string, slug: string) => {
-    const cityLink = <Link href={`/${slug}/`} className={linkClass}>{cityName}</Link>
-    if (diff === 0) return <span>same time as {cityLink}</span>
-    const hours = Math.abs(Math.round(diff))
-    return <span>{hours} hours {diff > 0 ? 'ahead of' : 'behind'} {cityLink}</span>
-  }
+  const cityOffset = getNumericOffset(city.timezone)
 
   const contentBlocks: Array<{ title: string; content: string }> = seoData?.content_blocks || []
-  const internalLinks: Array<string | { url: string; anchor: string }> = seoData?.internal_links || []
-  const timeDiffTable: Array<{ city: string; slug: string; difference: string; link: string }> = seoData?.time_difference_table || []
   const eeatFooter: string = seoData?.eeat_footer || ''
+
+  // Real-time comparison rows for all cities
+  const comparisonRows = compareTargets
+    .filter(t => t.slug !== city.slug)
+    .map(t => {
+      const diff = cityOffset - getNumericOffset(t.timezone)
+      const hours = Math.abs(Math.round(diff))
+      const diffText = diff === 0
+        ? 'Same time'
+        : `${hours} hour${hours !== 1 ? 's' : ''} ${diff > 0 ? 'ahead' : 'behind'}`
+      return { name: t.name, slug: t.slug, diffText, link: `/time/${city.slug}/${t.slug}/` }
+    })
+
+  const cardBase = isLight
+    ? 'bg-white border border-slate-200 hover:border-blue-300 hover:shadow-sm'
+    : 'bg-slate-800/50 border border-slate-700/60 hover:border-sky-600/50'
+  const diffTextClass = isLight ? 'text-slate-500' : 'text-slate-400'
+  const cityNameClass = isLight ? 'text-blue-600' : 'text-sky-400'
 
   return (
     <section className={`rounded-2xl p-5 border ${card} mt-4`}>
@@ -96,64 +104,35 @@ export default function SEOContent({ city, seoData }: SEOContentProps) {
         <div className={`space-y-4 ${textBody} leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
           <p>
             {city.city} is in the {city.timezone.replace(/_/g, ' ')} time zone ({offset}).
-            {timeDiffs[0] && <span> {city.city} time is {formatDiff(timeDiffs[0].diff, timeDiffs[0].cityName, timeDiffs[0].slug)}.</span>}
-          </p>
-          <p>
-            {hasDST ? `${city.city} observes Daylight Saving Time.` : `${city.city} does not observe Daylight Saving Time, maintaining ${offset} year-round.`}
+            {hasDST
+              ? ` ${city.city} observes Daylight Saving Time.`
+              : ` ${city.city} does not observe Daylight Saving Time, maintaining ${offset} year-round.`}
           </p>
         </div>
       )}
 
-
-
-      {timeDiffTable.length > 0 ? (
-        <div className={`mt-5 p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-          <h3 className={`text-sm font-semibold mb-3 ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
-            {city.city} Time Difference at a Glance
-          </h3>
-          <div className={`divide-y ${isLight ? 'divide-slate-200' : 'divide-slate-700/60'}`}>
-            {timeDiffTable.map((row: { city: string; slug: string; difference: string; link: string }, i: number) => (
-              <div key={i} className="flex items-center justify-between py-2">
-                <span className={`text-sm ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>{row.city}</span>
-                <Link
-                  href={row.link}
-                  className={`text-sm tabular-nums ${isLight ? 'text-blue-600 hover:underline' : 'text-sky-400 hover:underline'}`}
-                >
-                  {row.difference}
-                </Link>
+      {/* Time Difference at a Glance — real-time, all cities */}
+      <div className={`mt-5 p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+        <h3 className={`text-sm font-semibold mb-3 ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
+          {city.city} Time Difference at a Glance
+        </h3>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          {comparisonRows.map((row, i) => (
+            <Link
+              key={i}
+              href={row.link}
+              className={`px-3 py-2.5 rounded-lg text-left transition-all hover:scale-[1.01] ${cardBase}`}
+            >
+              <div className={`text-sm font-medium leading-snug ${cityNameClass}`}>
+                {city.city} vs {row.name}
               </div>
-            ))}
-          </div>
+              <div className={`text-xs mt-0.5 tabular-nums ${diffTextClass}`}>
+                {row.diffText}
+              </div>
+            </Link>
+          ))}
         </div>
-      ) : (() => {
-        const compareTargets = ['new-york', 'london', 'tokyo', 'dubai', 'sydney', 'singapore', 'paris', 'chicago', 'toronto', 'hong-kong', 'berlin', 'madrid', 'amsterdam']
-        const compareNames: Record<string, string> = {
-          'new-york': 'New York', 'london': 'London', 'tokyo': 'Tokyo', 'dubai': 'Dubai',
-          'sydney': 'Sydney', 'singapore': 'Singapore', 'paris': 'Paris', 'chicago': 'Chicago',
-          'toronto': 'Toronto', 'hong-kong': 'Hong Kong', 'berlin': 'Berlin', 'madrid': 'Madrid', 'amsterdam': 'Amsterdam'
-        }
-        const links = compareTargets.filter(t => t !== city.slug)
-        return (
-          <div className={`mt-5 p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-            <h3 className={`text-sm font-semibold mb-3 ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
-              Popular Time Comparisons from {city.city}
-            </h3>
-            <div className="grid grid-cols-3 gap-2">
-              {links.map((target, i) => (
-                <Link
-                  key={i}
-                  href={`/time/${city.slug}/${target}/`}
-                  className={`px-3 py-2 rounded-lg text-sm text-left transition-all hover:scale-[1.02] ${
-                    isLight ? 'bg-white border border-slate-200 text-blue-600 hover:border-blue-300' : 'bg-slate-700/50 border border-slate-600 text-sky-400 hover:border-sky-500'
-                  }`}
-                >
-                  {city.city} vs {compareNames[target]} Time Difference
-                </Link>
-              ))}
-            </div>
-          </div>
-        )
-      })()}
+      </div>
 
       <div className={`mt-5 p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
         <h3 className={`text-sm font-semibold mb-2 ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>Quick Facts: {city.city} Time</h3>
