@@ -235,35 +235,51 @@ Tema context'ini sağlar. Server component olabilir.
 
 ---
 
-## Roadmap — Tamamlanan Maddeler (Bu Oturum)
+## Roadmap — Tamamlanan Maddeler
 
-### ✅ Tamamlandı
+### ✅ Önceki Oturumlar
 - [x] Full site teknik SEO audit — tüm `ssr: false` sorunu tespit ve düzeltme
-- [x] `/time/` pair sayfaları title+meta optimize:
-  - "Current Time Difference" → "City N Hours Ahead/Behind"
-  - UTC offset labels description'a eklendi
-  - `other:` alanı temizlendi (redundant schema gürültüsü)
-- [x] Broken guide links fix — Miami, GuidePreview.tsx + CityGuideCard.tsx'e eklendi
-- [x] Top 20 `/time/` sayfasına içerik zenginleştirme:
-  - 26 city pair için PAIR_CONTEXTS lookup eklendi (SSR, Google görür)
-  - singapore/london, london/sydney, new-york/london, sydney/london, la/london vb.
-  - Her pair için: DST davranışı, UTC offset'ler, iş koridoru bilgisi
-- [x] `ist-to-pst`, `ist-to-cst`, `ist-to-gmt`, `aest-to-est`, `jst-to-est`, `cet-to-est` — ZATEN MEVCUTTU
-- [x] BreadcrumbList schema — zaten mevcut (`<script>` tag JSX'te, satır 267-270)
-- [x] DST cluster — ZATEN TAMAMLANMIŞTI (usa/uk/europe/australia/canada/nz/mexico/countries)
-- [x] India time hub — ZATEN MEVCUTTU (/india/page.tsx)
+- [x] `/time/` pair sayfaları title+meta optimize
+- [x] Top 20 `/time/` sayfasına içerik zenginleştirme (26 city pair PAIR_CONTEXTS)
+- [x] DST cluster, India hub, BreadcrumbList schema — zaten mevcuttu
+- [x] SEO data (seo.json) — 95 şehir (Manila, Sydney, Copenhagen + 26 GSC hedef şehir dahil)
+- [x] SEOContent time difference grid — 15 şehir, 3×5, real-time IANA offset
+
+### ✅ Bu Oturum (2026-03-27)
+
+#### Mobile UX
+- [x] **HomePage Quick Tools** — Meeting Planner full-width + ortalanmış; World Cities + Travel Time 2-column grid
+- [x] **Header mobil nav** — Cities / Countries / Guides her zaman görünür; Tools / Map / Alarm desktop-only; hamburger kaldırıldı
+- [x] **iOS overflow fix** — `globals.css`'e `html, body { overflow-x: hidden }` eklendi
+- [x] **CountriesContent H1** — `flex-wrap` + `text-2xl` mobilde taşmayı önler
+- [x] Tüm search input'larına `fontSize: 16px` — iOS Safari zoom sorunu
+
+#### Country Arama UX
+- [x] **CountrySearchModal** — Inline input + `position: fixed` dropdown (getBoundingClientRect)
+  - Sayfayı bozmaz, layout overflow yok
+  - Bayrak + ülke adı + başkent + timezone gösterir
+  - `h-11` explicit height — sayfalar arası tutarlı
+  - `max-w-md` — desktop'ta yeterince geniş
+- [x] **HubPageHeader** — `CountrySearchModal` entegre (Argentina, Brazil, India vb. hub sayfalar)
+- [x] **CountryPageContent** — `CountrySearchModal` entegre (Germany, Belgium vb. non-hub sayfalar)
+- [x] **CountriesContent** — Aynı inline+fixed dropdown pattern, grid filtreleme korundu
+
+#### Build Performansı
+- [x] `[city]/page.tsx` — `generateStaticParams` tier 1+2 ile sınırlandırıldı (~592 sayfa, önceden 2054)
+  - Tier 3 (~1462 şehir) request-time render + Vercel edge cache
+  - Build süresi ~6-7 dk → ~2 dk beklenti
 
 ### ⏳ Sonraki İzleme
 - [ ] 4 hafta sonra GSC'de etki ölçümü: pos 40-60 sayfaları → hedef pos 15-25
 - [ ] singapore/london (137 imp), new-york/london (110 imp) takibi
-- [ ] CTR iyileşmesi: "City N Hours Ahead" title formatı etkisi
+- [ ] Tier 3 şehirler için request-time render'ın gerçek süresi izle (Vercel logs)
 
 ---
 
 ## Git Workflow
-- Feature branch: `claude/review-seo-analysis-sBM2v`
-- Squash merge to main
+- Feature branch: `claude/resume-work-KTIWa`
+- Squash merge to main — her zaman
 - Her squash merge sonrası branch'i senkronize et:
   ```bash
-  git fetch origin main && git reset --hard origin/main && git push --force-with-lease origin claude/review-seo-analysis-sBM2v
+  git fetch origin main && git reset --hard origin/main && git push --force-with-lease origin claude/resume-work-KTIWa
   ```
