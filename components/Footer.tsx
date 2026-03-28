@@ -41,6 +41,7 @@ export default function Footer(_props: FooterProps) {
             <div className="flex flex-col gap-1.5">
               <Link href="/daylight-saving-time" className={`${textMuted} hover:underline`}>Daylight Saving Time</Link>
               <Link href="/us-time-zones" className={`${textMuted} hover:underline`}>US Time Zones</Link>
+              <Link href="/area-code" className={`${textMuted} hover:underline`}>Area Codes</Link>
               <Link href="/eastern-time-zone" className={`${textMuted} hover:underline`}>Eastern Time</Link>
               <Link href="/pacific-time-zone" className={`${textMuted} hover:underline`}>Pacific Time</Link>
             </div>
