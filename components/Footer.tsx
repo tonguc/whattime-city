@@ -42,6 +42,7 @@ export default function Footer(_props: FooterProps) {
               <Link href="/timer/" className={`${textMuted} hover:underline`}>Timer</Link>
               <Link href="/countdown/" className={`${textMuted} hover:underline`}>Countdown</Link>
               <Link href="/todays-date/" className={`${textMuted} hover:underline`}>Today&apos;s Date</Link>
+              <Link href="/calendar/" className={`${textMuted} hover:underline`}>Calendar</Link>
             </div>
           </div>
           <div>
