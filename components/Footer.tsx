@@ -39,6 +39,8 @@ export default function Footer(_props: FooterProps) {
               <Link href="/date-calculator/" className={`${textMuted} hover:underline`}>Date Calculator</Link>
               <Link href="/sunrise-sunset/" className={`${textMuted} hover:underline`}>Sunrise & Sunset</Link>
               <Link href="/prayer-times/" className={`${textMuted} hover:underline`}>Prayer Times</Link>
+              <Link href="/timer/" className={`${textMuted} hover:underline`}>Timer</Link>
+              <Link href="/countdown/" className={`${textMuted} hover:underline`}>Countdown</Link>
             </div>
           </div>
           <div>

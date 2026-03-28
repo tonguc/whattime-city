@@ -227,6 +227,7 @@ export default async function sitemap() {
     { slug: 'days-from-today', priority: 0.8 },
     { slug: 'date-calculator', priority: 0.8 },
     { slug: 'countdown', priority: 0.8 },
+    { slug: 'timer', priority: 0.9 },
     { slug: 'sunrise-sunset', priority: 0.8 },
     { slug: 'prayer-times', priority: 0.8 },
     // TZ abbreviation hub pages — high-volume abbreviation queries
