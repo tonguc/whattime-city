@@ -3,6 +3,15 @@ import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import DSTPageClient from './DSTPageClient'
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://whattime.city/' },
+    { '@type': 'ListItem', position: 2, name: 'Daylight Saving Time', item: 'https://whattime.city/daylight-saving-time/' },
+  ],
+}
+
 export const metadata: Metadata = {
   title: 'Daylight Saving Time 2026 — Dates, Countries & Clock Changes',
   description: 'When does daylight saving time start and end in 2026? Get exact DST dates for the US, UK, EU, Australia, and every country. Spring forward, fall back explained.',
@@ -145,6 +154,15 @@ export default function DaylightSavingTimePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <nav className="text-xs text-slate-400 mb-4" aria-label="Breadcrumb">
+        <Link href="/" className="hover:text-sky-500">Home</Link>
+        {' / '}
+        <span className="text-slate-600">Daylight Saving Time</span>
+      </nav>
       <DSTPageClient />
     </ContentPageWrapper>
   )

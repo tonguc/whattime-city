@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import HubPageHeader from '@/components/HubPageHeader'
 import HubPageLayout from '@/components/HubPageLayout'
@@ -85,6 +86,13 @@ export default function EasternTimeZonePage() {
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <nav className="text-xs text-slate-400 mb-4" aria-label="Breadcrumb">
+        <Link href="/" className="hover:text-sky-500">Home</Link>
+        {' / '}
+        <Link href="/us-time-zones/" className="hover:text-sky-500">US Time Zones</Link>
+        {' / '}
+        <span className="text-slate-600">Eastern Time Zone</span>
+      </nav>
       <HubPageHeader
         title="Eastern Time Zone"
         subtitle="EST (UTC-5) in winter · EDT (UTC-4) during Daylight Saving Time"
