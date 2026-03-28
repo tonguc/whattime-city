@@ -16,7 +16,6 @@ const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 
 export default function CitiesContent() {
   const { time, theme, isLight, getLocalTime, getCityTimeOfDay } = useCityContext()
-  const [searchQuery, setSearchQuery] = useState('')
   const [activeFilter, setActiveFilter] = useState<string | null>(null)
   const [showAll, setShowAll] = useState(false)
 
@@ -25,32 +24,18 @@ export default function CitiesContent() {
     return [...cities].sort((a, b) => a.city.localeCompare(b.city))
   }, [])
 
-  // Filter cities based on search and letter filter
+  // Filter cities based on letter filter
   const filteredCities = useMemo(() => {
-    let result = sortedCities
-
-    if (searchQuery) {
-      const query = searchQuery.toLowerCase()
-      result = result.filter(
-        city =>
-          city.city.toLowerCase().includes(query) ||
-          city.country.toLowerCase().includes(query)
-      )
-    }
-
-    if (activeFilter) {
-      result = result.filter(city =>
-        city.city.toUpperCase().startsWith(activeFilter)
-      )
-    }
-
-    return result
-  }, [sortedCities, searchQuery, activeFilter])
+    if (!activeFilter) return sortedCities
+    return sortedCities.filter(city =>
+      city.city.toUpperCase().startsWith(activeFilter)
+    )
+  }, [sortedCities, activeFilter])
 
   // Limit displayed cities for UX — show first 100, expand with "Show All"
   // When searching or filtering, always show all results
   const INITIAL_LIMIT = 100
-  const isFiltering = !!searchQuery || !!activeFilter
+  const isFiltering = !!activeFilter
   const displayedCities = useMemo(() => {
     if (isFiltering || showAll) return filteredCities
     return filteredCities.slice(0, INITIAL_LIMIT)
@@ -87,7 +72,6 @@ export default function CitiesContent() {
       setActiveFilter(null)
     } else {
       setActiveFilter(letter)
-      setSearchQuery('')
       // Scroll to letter section
       const element = document.getElementById(`letter-${letter}`)
       if (element) {
@@ -98,7 +82,7 @@ export default function CitiesContent() {
 
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg}`}>
-      <Header hideSearch />
+      <Header />
 
       <main className="max-w-6xl mx-auto px-4 py-6">
         {/* Page Header */}
@@ -111,54 +95,12 @@ export default function CitiesContent() {
           </p>
         </div>
 
-        {/* Sticky Search & Filter Bar - positioned below header */}
-        <div className={`sticky top-[56px] md:top-[60px] z-40 -mx-4 px-4 py-3 backdrop-blur-xl border-b ${
-          isLight 
-            ? 'bg-white/98 border-slate-200' 
+        {/* Sticky A-Z Filter Bar - positioned below header */}
+        <div className={`sticky top-[108px] md:top-[60px] z-40 -mx-4 px-4 py-3 backdrop-blur-xl border-b ${
+          isLight
+            ? 'bg-white/98 border-slate-200'
             : 'bg-slate-900/98 border-slate-700'
         }`}>
-          {/* Search Input */}
-          <div className="relative mb-3">
-            <svg
-              className={`absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 ${theme.textMuted}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
-            <input
-              type="text"
-              placeholder="Search cities..."
-              value={searchQuery}
-              onChange={e => {
-                setSearchQuery(e.target.value)
-                setActiveFilter(null)
-              }}
-              className={`w-full pl-10 pr-4 py-3 rounded-xl border transition-all ${
-                isLight
-                  ? 'bg-white border-slate-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100'
-                  : 'bg-slate-800 border-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-900'
-              } ${theme.text} outline-none`}
-              style={{ fontSize: '16px' }}
-            />
-            {searchQuery && (
-              <button
-                onClick={() => setSearchQuery('')}
-                className={`absolute right-3 top-1/2 -translate-y-1/2 ${theme.textMuted} hover:${theme.text}`}
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            )}
-          </div>
-
           {/* A-Z Index - Compact on mobile */}
           <div className="flex flex-wrap gap-0.5 sm:gap-1">
             <button
@@ -201,11 +143,9 @@ export default function CitiesContent() {
 
         {/* Results Count */}
         <div className={`mb-4 text-sm ${theme.textMuted}`}>
-          {searchQuery || activeFilter ? (
+          {activeFilter ? (
             <span>
-              Showing {filteredCities.length} of {cities.length} cities
-              {activeFilter && !searchQuery && ` starting with "${activeFilter}"`}
-              {searchQuery && ` matching "${searchQuery}"`}
+              Showing {filteredCities.length} of {cities.length} cities starting with &ldquo;{activeFilter}&rdquo;
             </span>
           ) : showAll ? (
             <span>{cities.length} cities</span>
@@ -224,7 +164,6 @@ export default function CitiesContent() {
               <p>No cities found matching your search.</p>
               <button
                 onClick={() => {
-                  setSearchQuery('')
                   setActiveFilter(null)
                 }}
                 className="mt-3 text-blue-500 hover:underline"
@@ -321,7 +260,6 @@ export default function CitiesContent() {
                   onClick={() => {
                     if (hasCity) {
                       setActiveFilter(null)
-                      setSearchQuery('')
                       const element = document.getElementById(`letter-${letter}`)
                       if (element) {
                         element.scrollIntoView({ behavior: 'smooth', block: 'start' })
