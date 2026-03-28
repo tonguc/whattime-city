@@ -98,7 +98,7 @@ export default function CitiesContent() {
 
   return (
     <div className={`min-h-screen bg-gradient-to-br ${theme.bg}`}>
-      <Header />
+      <Header hideSearch />
 
       <main className="max-w-6xl mx-auto px-4 py-6">
         {/* Page Header */}
@@ -112,7 +112,7 @@ export default function CitiesContent() {
         </div>
 
         {/* Sticky Search & Filter Bar - positioned below header */}
-        <div className={`sticky top-[108px] md:top-[60px] z-40 -mx-4 px-4 py-3 backdrop-blur-xl border-b ${
+        <div className={`sticky top-[56px] md:top-[60px] z-40 -mx-4 px-4 py-3 backdrop-blur-xl border-b ${
           isLight 
             ? 'bg-white/98 border-slate-200' 
             : 'bg-slate-900/98 border-slate-700'

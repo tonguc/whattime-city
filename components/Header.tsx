@@ -12,9 +12,11 @@ interface HeaderProps {
   // Legacy props - kept for backward compatibility, no longer used
   isLight?: boolean
   theme?: unknown
+  /** Hide mobile search bar (e.g. when page has its own search) */
+  hideSearch?: boolean
 }
 
-function Header(_props: HeaderProps) {
+function Header({ hideSearch }: HeaderProps) {
   const router = useRouter()
   const context = useCityContext()
   const { text, textMuted, accentBg, isLight } = useThemeClasses()
@@ -267,12 +269,14 @@ function Header(_props: HeaderProps) {
         </nav>
       </div>
       
-      <div className="sm:hidden px-4 pb-3">
-        <CitySearch 
-          placeholder="Search city..."
-          className="w-full"
-        />
-      </div>
+      {!hideSearch && (
+        <div className="sm:hidden px-4 pb-3">
+          <CitySearch
+            placeholder="Search city..."
+            className="w-full"
+          />
+        </div>
+      )}
     </header>
   )
 }
