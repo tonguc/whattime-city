@@ -1,4 +1,6 @@
 {
+  "seo_title": "Current Time in Seattle Now — PST/PDT (UTC-8/-7)",
+  "seo_description": "What time is it in Seattle? Pacific Time PST (UTC-8) in winter, PDT (UTC-7) in summer. Live clock, Seattle vs New York & London time difference.",
   "faq": [
     {
       "question": "What time is it in Seattle right now?",
@@ -47,8 +49,6 @@
       { "@type": "Question", "name": "What are typical business hours in Seattle?", "acceptedAnswer": { "@type": "Answer", "text": "Standard Seattle business hours are 9:00 AM – 6:00 PM PST/PDT, Monday–Friday. Amazon and Microsoft teams often work earlier or later for global coordination. Boeing follows stricter 7:00 AM – 4:00 PM manufacturing shifts. Seattle coffee culture means many workers are active from 6:00 AM, but professional availability starts at 9:00 AM." } }
     ]
   },
-  "seo_title": "Current Time in Seattle — Pacific Time (PST/PDT)",
-  "seo_description": "Current time in Seattle, Washington. Live PST/PDT clock, UTC-8/-7 offset, daylight saving dates, and time differences with New York, London, Tokyo. Home of Amazon and Microsoft.",
   "content_blocks": [
     {
       "title": "Seattle Time Zone: Pacific Time in America's Tech Capital",

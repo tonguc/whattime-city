@@ -46,11 +46,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ? `${city.city}, ${city.stateCode}`
     : `${city.city}, ${city.country}`
   const title = seoData?.seo_title || (isCountrySlug
-    ? `Time in ${city.country} Now - ${city.city} Local Time`
-    : `Current Time in ${location}`)
+    ? `Time in ${city.country} Now — ${city.city} Local Time`
+    : `Current Time in ${location} Now`)
   const description = seoData?.seo_description || (info 
     ? `What time is it in ${city.city}? Check current local time, sunrise & sunset. Population: ${info.population}. Currency: ${info.currency} (${info.currencySymbol}). Phone: ${info.phoneCode}. Top attractions: ${info.attractions.slice(0, 3).join(', ')}.`
-    : `What time is it in ${city.city} right now? Check current local time, sunrise at, sunset times, and weather in ${city.city}, ${city.country}. Timezone: ${city.timezone}.`)
+    : `What time is it in ${city.city} right now? Live clock showing current local time in ${city.city}, ${city.country}. Timezone: ${city.timezone}. Sunrise, sunset & time differences.`)
   
   return {
     title,

@@ -1,4 +1,6 @@
 {
+  "seo_title": "Current Time in Berlin Now — CET/CEST (UTC+1/+2)",
+  "seo_description": "What time is it in Berlin? CET (UTC+1) in winter, CEST (UTC+2) in summer. Live clock, Berlin vs London & New York time difference, business hours.",
   "faq": [
     {
       "question": "What time is it in Berlin right now?",
@@ -103,8 +105,6 @@
       }
     ]
   },
-  "seo_description": "Current time in Berlin, Germany. Live CET/CEST clock, UTC+1/+2 offset, daylight saving dates, and time differences with New York, London, Tokyo.",
-  "seo_title": "Current Time in Berlin — CET/CEST",
   "content_blocks": [
     {
       "title": "Berlin Time Zone Explained: Central European Time",

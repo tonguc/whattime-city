@@ -1,4 +1,6 @@
 {
+  "seo_title": "Current Time in Moscow Now — MSK (UTC+3)",
+  "seo_description": "What time is it in Moscow? Moscow Standard Time MSK (UTC+3) year-round — no DST since 2014. Live clock, Moscow vs London & New York time.",
   "faq": [
     {
       "question": "What time is it in Moscow right now?",
@@ -103,8 +105,6 @@
       }
     ]
   },
-  "seo_description": "Current time in Moscow, Russia. Moscow Standard Time (MSK/UTC+3). Live clock, timezone converter, and time differences with major world cities.",
-  "seo_title": "Current Time in Moscow — MSK (UTC+3)",
   "content_blocks": [
     {
       "title": "Moscow Time Zone Guide: Understanding MSK",
