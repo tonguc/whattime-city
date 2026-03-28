@@ -171,13 +171,13 @@ export function useThemeClasses(): ThemeClasses {
     // ═══════════════════════════════════════════════════════════
     
     // Standard time display (tables, small clocks)
-    textTime: `font-mono tabular-nums font-medium ${colorFull}`,
-    
+    textTime: `tabular-nums font-medium ${colorFull}`,
+
     // Large clock display
-    textTimeLarge: `font-mono tabular-nums font-bold ${colorFull} tracking-tight`,
-    
+    textTimeLarge: `tabular-nums font-bold ${colorFull} tracking-tight`,
+
     // Data values in tables
-    textData: `font-mono tabular-nums text-sm ${colorBody}`,
+    textData: `tabular-nums text-sm ${colorBody}`,
     
     // Input styling
     input: isLight 
@@ -255,8 +255,8 @@ export function getStaticThemeClasses(isLight: boolean, timeOfDay?: TimeOfDay) {
     textCardTitle: `text-card-title ${colorFull}`,
     textBody: `text-body ${colorBody}`,
     textMeta: `text-meta ${colorMuted}`,
-    textTime: `font-mono tabular-nums font-medium ${colorFull}`,
-    input: isLight 
+    textTime: `tabular-nums font-medium ${colorFull}`,
+    input: isLight
       ? 'bg-slate-50 border border-slate-300 text-slate-800 placeholder:text-slate-400'
       : 'bg-slate-900 border border-slate-700 text-white placeholder:text-slate-500',
     btnPrimary: isLight

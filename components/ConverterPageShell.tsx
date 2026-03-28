@@ -1,6 +1,7 @@
 'use client'
 
 import { ReactNode } from 'react'
+import Link from 'next/link'
 import { useCityContext } from '@/lib/CityContext'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import TZPairClient, { TZPairConfig } from '@/components/TZPairClient'
@@ -49,9 +50,27 @@ export default function ConverterPageShell({
     ? 'rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500'
     : 'rounded-xl border border-slate-700/50 p-4 bg-slate-800/50 text-xs text-slate-400'
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://whattime.city/' },
+      { '@type': 'ListItem', position: 2, name: 'Time Converter', item: 'https://whattime.city/time-converter/' },
+      { '@type': 'ListItem', position: 3, name: title, item: `https://whattime.city/${title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}/` },
+    ],
+  }
+
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <nav className="text-xs text-slate-400 mb-4" aria-label="Breadcrumb">
+        <Link href="/" className="hover:text-sky-500">Home</Link>
+        {' / '}
+        <Link href="/time-converter/" className="hover:text-sky-500">Time Converter</Link>
+        {' / '}
+        <span className={isLight ? 'text-slate-600' : 'text-slate-300'}>{title}</span>
+      </nav>
       <h1 className={`text-3xl sm:text-4xl font-bold mb-2 ${theme.text}`}>{title}</h1>
       <p className={`text-lg ${theme.textMuted} mb-6`}>{subtitle}</p>
       <TZPairClient config={config} />

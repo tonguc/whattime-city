@@ -108,6 +108,17 @@ export default async function Page({ params }: PageProps) {
   }
   
   return (
-    <CityPage initialCity={city} seoData={seoData} />
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://whattime.city/' },
+          { '@type': 'ListItem', position: 2, name: 'Cities', item: 'https://whattime.city/cities' },
+          { '@type': 'ListItem', position: 3, name: city.stateCode ? `${city.city}, ${city.stateCode}` : `${city.city}, ${city.country}`, item: `https://whattime.city/${slug}/` },
+        ],
+      }) }} />
+      <CityPage initialCity={city} seoData={seoData} />
+    </>
   )
 }

@@ -9,6 +9,7 @@ import { themes, isLightTheme } from '@/lib/themes'
 import { detectLanguage, Language } from '@/lib/translations'
 import { saveCityContext } from '@/lib/city-context'
 import { useCityContext } from '@/lib/CityContext'
+import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import AlarmModal, { ActiveAlarmPopup } from '@/components/AlarmModal'
@@ -180,7 +181,16 @@ export default function CityPage({ initialCity, seoData }: CityPageProps) {
       
       {/* Header */}
       <Header />
-      
+
+      {/* Breadcrumb */}
+      <nav className="max-w-6xl mx-auto px-3 sm:px-4 pt-3 text-xs text-slate-400" aria-label="Breadcrumb">
+        <Link href="/" className="hover:text-sky-500">Home</Link>
+        {' / '}
+        <Link href="/cities" className="hover:text-sky-500">Cities</Link>
+        {' / '}
+        <span className={isLight ? 'text-slate-600' : 'text-slate-300'}>{selectedCity.city}</span>
+      </nav>
+
       {/* Main Content */}
       <main className="relative z-10 max-w-6xl mx-auto px-4 py-4">
         

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import DSTPageClient from './DSTPageClient'
 

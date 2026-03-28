@@ -410,7 +410,7 @@ export default function ${componentName}() {
             <div className={\`text-xs \${ts}\`}>${timezones[0]} · ${utcLabel}</div>
           </div>
         </div>
-        <div className={\`font-mono text-5xl sm:text-6xl font-bold tracking-tight mt-3 \${tp}\`}>{mounted ? local.time : '--:--:--'}</div>
+        <div className={\`tabular-nums text-5xl sm:text-6xl font-bold tracking-tight mt-3 \${tp}\`}>{mounted ? local.time : '--:--:--'}</div>
         <div className={\`text-sm mt-1 \${ts}\`}>{mounted ? local.date : ''}</div>
       </div>
       <ClockComparisonSection primaryTz={${constName}} countryName="${name}" />
