@@ -174,7 +174,7 @@ export default function CountryFactsSection({ hubSlug }: Props) {
     : 'px-3 py-2 rounded-full text-sm flex items-center gap-2 bg-slate-800/50 hover:bg-slate-700/50 text-slate-300 transition-all'
   const tableBorder  = isLight ? 'border-slate-100'  : 'border-slate-700'
   const tableDivide  = isLight ? 'divide-slate-50'   : 'divide-slate-700/50'
-  const timeGreen    = isLight ? 'text-green-700 font-mono font-bold' : 'text-green-400 font-mono font-bold'
+  const timeGreen    = isLight ? 'text-green-700 tabular-nums font-bold' : 'text-green-400 tabular-nums font-bold'
 
   const flagImg = (code: string, cls = 'w-5 h-3.5 object-cover rounded-sm') => (
     <img src={getFlagUrl(code, 'sm')} alt="" className={cls} />

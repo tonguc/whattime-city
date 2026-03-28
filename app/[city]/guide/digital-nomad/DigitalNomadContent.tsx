@@ -109,7 +109,7 @@ export default function DigitalNomadContent({ city }: Props) {
             <div key={space.name} className={`p-4 rounded-xl border ${isLight ? 'border-slate-200 bg-white' : 'border-slate-600 bg-slate-800/50'}`}>
               <div className="flex flex-wrap justify-between items-start gap-2">
                 <h3 className={`font-semibold ${headingColor}`}>{space.name}</h3>
-                <span className="text-sm font-mono">{space.price}</span>
+                <span className="text-sm tabular-nums">{space.price}</span>
               </div>
               <p className={`text-sm mt-1 ${mutedColor}`}>{space.vibe}</p>
               <div className="flex flex-wrap gap-3 mt-2 text-xs">

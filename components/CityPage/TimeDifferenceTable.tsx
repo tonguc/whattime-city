@@ -221,7 +221,7 @@ export default function TimeDifferenceTable({ city }: TimeDifferenceTableProps) 
                   
                   {/* Dial Code */}
                   <td className={`py-3 px-3 text-right hidden sm:table-cell`}>
-                    <span className={`font-mono text-meta tabular-nums ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
+                    <span className={`text-meta tabular-nums ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
                       {phoneCode}
                     </span>
                   </td>

@@ -138,7 +138,7 @@ export default function TwentyFourHoursContent({ city }: Props) {
                 <div className="text-2xl">{period.icon}</div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <span className={`font-mono text-sm ${mutedColor}`}>{period.hour}</span>
+                    <span className={`tabular-nums text-sm ${mutedColor}`}>{period.hour}</span>
                     <h3 className={`font-semibold ${headingColor}`}>{period.title}</h3>
                     {index === currentPeriod && (
                       <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500 text-white">NOW</span>

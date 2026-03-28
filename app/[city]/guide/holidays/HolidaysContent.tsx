@@ -70,7 +70,7 @@ export default function HolidaysContent({ city }: Props) {
           {holidays2025.map(h => (
             <div key={h.date} className={`p-4 rounded-xl border ${isLight ? 'border-slate-200 bg-white' : 'border-slate-600 bg-slate-800/50'}`}>
               <div className="flex flex-wrap items-center gap-3 mb-2">
-                <span className={`font-mono text-sm ${mutedColor}`}>{h.date}</span>
+                <span className={`tabular-nums text-sm ${mutedColor}`}>{h.date}</span>
                 <h3 className={`font-semibold ${headingColor}`}>{h.name}</h3>
               </div>
               <div className="flex flex-wrap gap-3 text-sm mb-2">

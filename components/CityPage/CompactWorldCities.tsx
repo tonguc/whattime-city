@@ -50,7 +50,7 @@ export default function CompactWorldCities({ selectedCity, onCitySelect }: Compa
             <span className={`text-body font-medium truncate ${isLight ? 'text-slate-700' : 'text-slate-200'}`}>
               {city.city}
             </span>
-            <span className={`font-mono tabular-nums text-meta ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+            <span className={`tabular-nums text-meta ml-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
               {getCurrentTime(city)}
             </span>
           </a>

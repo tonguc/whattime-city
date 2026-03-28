@@ -238,7 +238,7 @@ export default function CountriesContent() {
                         className={`group p-3 rounded-xl border transition-all ${cardBg}`}
                       >
                         <div className="flex items-center gap-3">
-                          <span className={`text-xs px-2 py-1 rounded font-mono font-medium flex-shrink-0 ${badgeBg}`}>
+                          <span className={`text-xs px-2 py-1 rounded tabular-nums font-medium flex-shrink-0 ${badgeBg}`}>
                             {country.code.toUpperCase()}
                           </span>
                           <div className="min-w-0 flex-1">

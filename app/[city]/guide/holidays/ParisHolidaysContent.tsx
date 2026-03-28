@@ -20,37 +20,37 @@ export default function ParisHolidaysContent({ city }: Props) {
         <h2 className="text-xl font-bold mb-4">🗓️ 2025 French Public Holidays</h2>
         <div className="space-y-2 text-sm">
           <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
-            <span>New Year's Day (Jour de l'An)</span><span className="font-mono">Wed, Jan 1</span>
+            <span>New Year's Day (Jour de l'An)</span><span className="tabular-nums">Wed, Jan 1</span>
           </div>
           <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
-            <span>Easter Monday (Lundi de Pâques)</span><span className="font-mono">Mon, Apr 21</span>
+            <span>Easter Monday (Lundi de Pâques)</span><span className="tabular-nums">Mon, Apr 21</span>
           </div>
           <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
-            <span>Labour Day (Fête du Travail)</span><span className="font-mono">Thu, May 1</span>
+            <span>Labour Day (Fête du Travail)</span><span className="tabular-nums">Thu, May 1</span>
           </div>
           <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
-            <span>Victory in Europe Day</span><span className="font-mono">Thu, May 8</span>
+            <span>Victory in Europe Day</span><span className="tabular-nums">Thu, May 8</span>
           </div>
           <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
-            <span>Ascension Day</span><span className="font-mono">Thu, May 29</span>
+            <span>Ascension Day</span><span className="tabular-nums">Thu, May 29</span>
           </div>
           <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
-            <span>Whit Monday (Lundi de Pentecôte)</span><span className="font-mono">Mon, Jun 9</span>
+            <span>Whit Monday (Lundi de Pentecôte)</span><span className="tabular-nums">Mon, Jun 9</span>
           </div>
           <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
-            <span>Bastille Day (Fête Nationale)</span><span className="font-mono">Mon, Jul 14</span>
+            <span>Bastille Day (Fête Nationale)</span><span className="tabular-nums">Mon, Jul 14</span>
           </div>
           <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
-            <span>Assumption (Assomption)</span><span className="font-mono">Fri, Aug 15</span>
+            <span>Assumption (Assomption)</span><span className="tabular-nums">Fri, Aug 15</span>
           </div>
           <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
-            <span>All Saints' Day (Toussaint)</span><span className="font-mono">Sat, Nov 1</span>
+            <span>All Saints' Day (Toussaint)</span><span className="tabular-nums">Sat, Nov 1</span>
           </div>
           <div className="flex justify-between py-2 border-b border-slate-200 dark:border-slate-700">
-            <span>Armistice Day</span><span className="font-mono">Tue, Nov 11</span>
+            <span>Armistice Day</span><span className="tabular-nums">Tue, Nov 11</span>
           </div>
           <div className="flex justify-between py-2">
-            <span>Christmas Day (Noël)</span><span className="font-mono">Thu, Dec 25</span>
+            <span>Christmas Day (Noël)</span><span className="tabular-nums">Thu, Dec 25</span>
           </div>
         </div>
       </div>

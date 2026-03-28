@@ -59,11 +59,11 @@ export default function ParisStockMarketContent({ city }: Props) {
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
-            <tr><td className="p-3">Pre-Opening</td><td className="p-3 font-mono">7:15 AM - 9:00 AM</td><td className="p-3 font-mono">6:15 AM - 8:00 AM</td></tr>
-            <tr><td className="p-3">Opening Auction</td><td className="p-3 font-mono">8:30 AM - 9:00 AM</td><td className="p-3 font-mono">7:30 AM - 8:00 AM</td></tr>
-            <tr className="bg-green-50 dark:bg-green-900/20"><td className="p-3 font-bold">Continuous Trading</td><td className="p-3 font-mono font-bold">9:00 AM - 5:30 PM</td><td className="p-3 font-mono font-bold">8:00 AM - 4:30 PM</td></tr>
-            <tr><td className="p-3">Closing Auction</td><td className="p-3 font-mono">5:30 PM - 5:35 PM</td><td className="p-3 font-mono">4:30 PM - 4:35 PM</td></tr>
-            <tr><td className="p-3">Trading at Last</td><td className="p-3 font-mono">5:35 PM - 5:40 PM</td><td className="p-3 font-mono">4:35 PM - 4:40 PM</td></tr>
+            <tr><td className="p-3">Pre-Opening</td><td className="p-3 tabular-nums">7:15 AM - 9:00 AM</td><td className="p-3 tabular-nums">6:15 AM - 8:00 AM</td></tr>
+            <tr><td className="p-3">Opening Auction</td><td className="p-3 tabular-nums">8:30 AM - 9:00 AM</td><td className="p-3 tabular-nums">7:30 AM - 8:00 AM</td></tr>
+            <tr className="bg-green-50 dark:bg-green-900/20"><td className="p-3 font-bold">Continuous Trading</td><td className="p-3 tabular-nums font-bold">9:00 AM - 5:30 PM</td><td className="p-3 tabular-nums font-bold">8:00 AM - 4:30 PM</td></tr>
+            <tr><td className="p-3">Closing Auction</td><td className="p-3 tabular-nums">5:30 PM - 5:35 PM</td><td className="p-3 tabular-nums">4:30 PM - 4:35 PM</td></tr>
+            <tr><td className="p-3">Trading at Last</td><td className="p-3 tabular-nums">5:35 PM - 5:40 PM</td><td className="p-3 tabular-nums">4:35 PM - 4:40 PM</td></tr>
           </tbody>
         </table>
       </div>
@@ -104,22 +104,22 @@ export default function ParisStockMarketContent({ city }: Props) {
       <div className="not-prose my-6">
         <div className="grid gap-2 text-sm">
           <div className="p-3 bg-red-50 dark:bg-red-900/20 rounded-lg flex justify-between">
-            <span>New Year's Day</span><span className="font-mono">Wed, Jan 1</span>
+            <span>New Year's Day</span><span className="tabular-nums">Wed, Jan 1</span>
           </div>
           <div className="p-3 bg-red-50 dark:bg-red-900/20 rounded-lg flex justify-between">
-            <span>Good Friday</span><span className="font-mono">Fri, Apr 18</span>
+            <span>Good Friday</span><span className="tabular-nums">Fri, Apr 18</span>
           </div>
           <div className="p-3 bg-red-50 dark:bg-red-900/20 rounded-lg flex justify-between">
-            <span>Easter Monday</span><span className="font-mono">Mon, Apr 21</span>
+            <span>Easter Monday</span><span className="tabular-nums">Mon, Apr 21</span>
           </div>
           <div className="p-3 bg-red-50 dark:bg-red-900/20 rounded-lg flex justify-between">
-            <span>Labour Day</span><span className="font-mono">Thu, May 1</span>
+            <span>Labour Day</span><span className="tabular-nums">Thu, May 1</span>
           </div>
           <div className="p-3 bg-red-50 dark:bg-red-900/20 rounded-lg flex justify-between">
-            <span>Christmas Day</span><span className="font-mono">Thu, Dec 25</span>
+            <span>Christmas Day</span><span className="tabular-nums">Thu, Dec 25</span>
           </div>
           <div className="p-3 bg-red-50 dark:bg-red-900/20 rounded-lg flex justify-between">
-            <span>Boxing Day</span><span className="font-mono">Fri, Dec 26</span>
+            <span>Boxing Day</span><span className="tabular-nums">Fri, Dec 26</span>
           </div>
         </div>
       </div>
