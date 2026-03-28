@@ -18,6 +18,7 @@ export default function CitiesContent() {
   const { time, theme, isLight, getLocalTime, getCityTimeOfDay } = useCityContext()
   const [searchQuery, setSearchQuery] = useState('')
   const [activeFilter, setActiveFilter] = useState<string | null>(null)
+  const [showAll, setShowAll] = useState(false)
 
   // Sort cities alphabetically
   const sortedCities = useMemo(() => {
@@ -46,11 +47,22 @@ export default function CitiesContent() {
     return result
   }, [sortedCities, searchQuery, activeFilter])
 
+  // Limit displayed cities for UX — show first 100, expand with "Show All"
+  // When searching or filtering, always show all results
+  const INITIAL_LIMIT = 100
+  const isFiltering = !!searchQuery || !!activeFilter
+  const displayedCities = useMemo(() => {
+    if (isFiltering || showAll) return filteredCities
+    return filteredCities.slice(0, INITIAL_LIMIT)
+  }, [filteredCities, showAll, isFiltering])
+
+  const hiddenCount = filteredCities.length - displayedCities.length
+
   // Group cities by first letter
   const groupedCities = useMemo(() => {
     const groups: Record<string, City[]> = {}
-    
-    filteredCities.forEach(city => {
+
+    displayedCities.forEach(city => {
       const letter = city.city[0].toUpperCase()
       if (!groups[letter]) {
         groups[letter] = []
@@ -59,7 +71,7 @@ export default function CitiesContent() {
     })
 
     return groups
-  }, [filteredCities])
+  }, [displayedCities])
 
   // Get available letters (letters that have cities)
   const availableLetters = useMemo(() => {
@@ -195,8 +207,10 @@ export default function CitiesContent() {
               {activeFilter && !searchQuery && ` starting with "${activeFilter}"`}
               {searchQuery && ` matching "${searchQuery}"`}
             </span>
-          ) : (
+          ) : showAll ? (
             <span>{cities.length} cities</span>
+          ) : (
+            <span>Showing {displayedCities.length} of {cities.length} cities</span>
           )}
         </div>
 
@@ -280,6 +294,20 @@ export default function CitiesContent() {
               ))
           )}
         </div>
+
+        {/* Show All button */}
+        {hiddenCount > 0 && (
+          <button
+            onClick={() => setShowAll(true)}
+            className={`w-full mt-4 py-3 rounded-xl font-medium text-sm transition-all ${
+              isLight
+                ? 'bg-blue-50 text-blue-600 hover:bg-blue-100 border border-blue-200'
+                : 'bg-blue-900/30 text-blue-400 hover:bg-blue-900/50 border border-blue-800'
+            }`}
+          >
+            Show all {filteredCities.length} cities ({hiddenCount} more)
+          </button>
+        )}
 
         {/* Quick Jump - Fixed bottom on mobile */}
         <div className={`mt-6 rounded-2xl p-4 backdrop-blur-xl border ${theme.card}`}>
