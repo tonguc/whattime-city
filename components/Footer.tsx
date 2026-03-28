@@ -25,6 +25,7 @@ export default function Footer(_props: FooterProps) {
               <Link href="/country" className={`${textMuted} hover:underline`}>Countries</Link>
               <Link href="/map" className={`${textMuted} hover:underline`}>World Map</Link>
               <Link href="/guides" className={`${textMuted} hover:underline`}>City Guides</Link>
+              <Link href="/articles" className={`${textMuted} hover:underline`}>Articles</Link>
             </div>
           </div>
           <div>
