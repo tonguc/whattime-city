@@ -265,6 +265,25 @@ export default async function sitemap() {
     priority: 0.6,
   }))
 
+  // Articles
+  const articleRoutes = [
+    'how-many-weeks-in-a-year',
+    'how-many-days-in-a-year',
+    'am-pm',
+  ].map(slug => ({
+    url: `${baseUrl}/articles/${slug}/`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
+
+  const articlesHubRoute = [{
+    url: `${baseUrl}/articles/`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }]
+
   // Guide sayfaları - SADECE 8 PREMIUM ŞEHİR (kaliteli içerik var)
   // Her biri pillar + 10 cluster = 11 sayfa
   const premiumGuideCities = [
@@ -364,6 +383,8 @@ export default async function sitemap() {
     ...hubRoutes,
     ...areaCodeHubRoute,
     ...areaCodeRoutes,
+    ...articlesHubRoute,
+    ...articleRoutes,
     ...guideRoutes,
     ...cityRoutes,
     ...countryRoutes,
