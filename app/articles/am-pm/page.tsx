@@ -133,7 +133,7 @@ export default function AmPmPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <article className="mx-auto max-w-3xl">
+      <article>
         {/* Breadcrumb */}
         <nav className="mb-4 text-sm text-slate-500" aria-label="Breadcrumb">
           <ol className="flex flex-wrap items-center gap-1">
