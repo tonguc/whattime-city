@@ -224,6 +224,8 @@ export default async function sitemap() {
     { slug: 'jet-lag-advisor', priority: 0.7 },
     { slug: 'event-time', priority: 0.7 },
     { slug: 'world-alarm', priority: 0.7 },
+    { slug: 'days-from-today', priority: 0.8 },
+    { slug: 'sunrise-sunset', priority: 0.8 },
     // TZ abbreviation hub pages — high-volume abbreviation queries
     { slug: 'est', priority: 0.9 },
     { slug: 'pst', priority: 0.9 },
