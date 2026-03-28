@@ -284,6 +284,22 @@ export default async function sitemap() {
     priority: 0.8,
   }]
 
+  // Sunrise/sunset hub
+  const sunriseRoutes = [{
+    url: `${baseUrl}/sunrise-sunset/`,
+    lastModified: now,
+    changeFrequency: 'daily' as const,
+    priority: 0.9,
+  }]
+
+  // City sun pages (tier 1 cities only for sitemap — others discovered via internal links)
+  const tier1SunRoutes = getTier1Cities().map(c => ({
+    url: `${baseUrl}/${c.slug}/sun/`,
+    lastModified: now,
+    changeFrequency: 'daily' as const,
+    priority: 0.7,
+  }))
+
   // Guide sayfaları - SADECE 8 PREMIUM ŞEHİR (kaliteli içerik var)
   // Her biri pillar + 10 cluster = 11 sayfa
   const premiumGuideCities = [
@@ -385,6 +401,8 @@ export default async function sitemap() {
     ...areaCodeRoutes,
     ...articlesHubRoute,
     ...articleRoutes,
+    ...sunriseRoutes,
+    ...tier1SunRoutes,
     ...guideRoutes,
     ...cityRoutes,
     ...countryRoutes,
