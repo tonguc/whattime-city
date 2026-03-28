@@ -1,5 +1,6 @@
 import { cities, countries, getTier1Cities } from '@/lib/cities'
 import { COUNTRY_HUB_SLUGS } from '@/data/hubPages'
+import { areaCodeList } from '@/data/area-codes'
 
 export default async function sitemap() {
   const baseUrl = 'https://whattime.city'
@@ -248,12 +249,20 @@ export default async function sitemap() {
     priority: tool.priority,
   }))
 
-  // Area code pages
-  const areaCodeRoutes = ['929', '404', '437', '206', '408', '212', '213', '310', '312', '305', '415'].map(code => ({
+  // Area code hub page
+  const areaCodeHubRoute = [{
+    url: `${baseUrl}/area-code/`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }]
+
+  // Area code pages (275 codes)
+  const areaCodeRoutes = areaCodeList.map(code => ({
     url: `${baseUrl}/area-code/${code}/`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
-    priority: 0.7,
+    priority: 0.6,
   }))
 
   // Guide sayfaları - SADECE 8 PREMIUM ŞEHİR (kaliteli içerik var)
@@ -353,6 +362,7 @@ export default async function sitemap() {
     ...staticRoutes,
     ...toolRoutes,
     ...hubRoutes,
+    ...areaCodeHubRoute,
     ...areaCodeRoutes,
     ...guideRoutes,
     ...cityRoutes,
