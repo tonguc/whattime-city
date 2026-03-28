@@ -273,6 +273,7 @@ export default async function sitemap() {
     'how-many-weeks-in-a-year',
     'how-many-days-in-a-year',
     'am-pm',
+    'how-many-minutes-in-a-year',
   ].map(slug => ({
     url: `${baseUrl}/articles/${slug}/`,
     lastModified: now,

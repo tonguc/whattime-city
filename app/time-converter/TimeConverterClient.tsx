@@ -15,9 +15,14 @@ export default function TimeConverterClient() {
   const [toCity, setToCity] = useState(() => cities.find(c => c.city === 'London') || cities[1])
   const [selectedHour, setSelectedHour] = useState(12)
   const [selectedMinute, setSelectedMinute] = useState(0)
+  const [selectedDate, setSelectedDate] = useState(() => {
+    const d = new Date()
+    return `${d.getFullYear()}-${(d.getMonth() + 1).toString().padStart(2, '0')}-${d.getDate().toString().padStart(2, '0')}`
+  })
 
   const getConvertedTime = () => {
-    const now = new Date()
+    const [y, m, d] = selectedDate.split('-').map(Number)
+    const now = new Date(y, m - 1, d)
     now.setHours(selectedHour, selectedMinute, 0, 0)
     
     const fromOffset = new Date(now.toLocaleString('en-US', { timeZone: fromCity.timezone })).getTime()
@@ -26,7 +31,14 @@ export default function TimeConverterClient() {
     const diff = (toOffset - fromOffset)
     const convertedTime = new Date(now.getTime() + diff)
     
-    return convertedTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })
+    const timeStr = convertedTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })
+    // Check if day changed
+    const fromDateStr = now.toLocaleDateString('en-US', { timeZone: fromCity.timezone, month: 'short', day: 'numeric' })
+    const toDateStr = new Date(now.getTime() + diff).toLocaleDateString('en-US', { timeZone: toCity.timezone, month: 'short', day: 'numeric' })
+    if (fromDateStr !== toDateStr) {
+      return `${timeStr} (${toDateStr})`
+    }
+    return timeStr
   }
 
   const swapCities = () => {
@@ -92,6 +104,12 @@ export default function TimeConverterClient() {
                 ))}
               </select>
             </div>
+            <input
+              type="date"
+              value={selectedDate}
+              onChange={(e) => setSelectedDate(e.target.value)}
+              className={`mt-2 w-full px-3 py-2 rounded-lg border text-sm ${inputClass}`}
+            />
           </div>
 
           {/* Swap Button */}

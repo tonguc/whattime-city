@@ -34,6 +34,12 @@ const articles = [
     description: 'AM means Ante Meridiem (before midday), PM means Post Meridiem (after midday). Full 12-hour to 24-hour conversion chart included.',
     tags: ['Clock', '12-Hour', '24-Hour'],
   },
+  {
+    slug: 'how-many-minutes-in-a-year',
+    title: 'How Many Minutes in a Year?',
+    description: 'There are 525,600 minutes in a regular year and 527,040 in a leap year. Monthly breakdown, time unit comparisons, and the story behind the famous number.',
+    tags: ['Calendar', 'Minutes', 'Time'],
+  },
 ]
 
 const breadcrumbSchema = {
