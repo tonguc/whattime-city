@@ -21,7 +21,7 @@ export default function Footer(_props: FooterProps) {
           <div>
             <p className={`font-semibold mb-2 ${textMuted}`}>Explore</p>
             <div className="flex flex-col gap-1.5">
-              <Link href="/cities" className={`${textMuted} hover:underline`}>All Cities</Link>
+              <Link href="/cities" className={`${textMuted} hover:underline`}>World Cities</Link>
               <Link href="/country" className={`${textMuted} hover:underline`}>Countries</Link>
               <Link href="/map" className={`${textMuted} hover:underline`}>World Map</Link>
               <Link href="/guides" className={`${textMuted} hover:underline`}>City Guides</Link>
