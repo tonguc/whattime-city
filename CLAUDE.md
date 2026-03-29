@@ -5,6 +5,17 @@ Bu dosya oturumlar arası hafıza kaybını önlemek için tutulur.
 
 ---
 
+## ⚠️ KRİTİK: HAFIZA KURALI (ASLA ATLANMAZ)
+
+**Her iş tamamlandığında ve main'e merge edildikten sonra bu dosya GÜNCELLENMELİDİR.**
+
+- Yapılan iş "Tamamlanan İşler" bölümüne eklenmeli
+- Yeni bileşen/dosya oluşturulduysa "Bileşen Mimarisi" veya ilgili bölüme eklenmeli
+- Bu adım atlanamaz, ertelenmez. Commit + push ile birlikte yapılır.
+- Amaç: Yeni oturum açıldığında sıfırdan başlamamak, kaldığı yerden devam etmek.
+
+---
+
 ## ⚠️ KRİTİK: İÇERİK YAZMA KURALLARI (ASLA ATLANMAZ)
 
 **SEO kararlarında tahmin veya genel bilgi KULLANMA. Her zaman gerçek veriyi önceliklendir.**
