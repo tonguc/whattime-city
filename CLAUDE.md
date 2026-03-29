@@ -397,6 +397,60 @@ const footer = isLight
 - [ ] Top city pages içerik derinliği: moscow, berlin, paris, shanghai (pos 60+ ama yüksek impression)
 - [ ] CTR iyileşmesi: "City N Hours Ahead" title formatı etkisi
 - [ ] "how many hours/seconds in a year" — indexlenme ve ranking takibi (1M + 301K vol)
+- [ ] Denver şehir sayfası — 110K vol, SD 23-24
+- [ ] Barcelona şehir sayfası — 60K vol, SD 24
+- [ ] `/week-number/` sayfası — ~200K vol
+
+---
+
+## Bug Fix Geçmişi
+
+### Meeting Planner Auto-Add Bug ✅ (Mart 2026)
+**Sorun:** Kullanıcı kendi detected şehrini kaldırdıktan sonra şehir geri geliyordu.
+
+**Root cause:** `detectedCity` CityContext'te 3 kez set ediliyor (mount → activeCityLoaded → geolocation 3sn sonra). `hasAutoAdded` ref, component remount'ta (örn. `/meeting/` → `/meeting/tokyo` farklı route) sıfırlanıyordu. Ayrıca kullanıcı kendi şehrini manuel eklediğinde `hasAutoAdded` hiç set edilmiyordu.
+
+**Çözüm:** `sessionStorage` kullanımı — aynı tab oturumunda auto-add bir kez tetiklenebilir. `removeCity` içinde, kaldırılan şehir detected city ise sessionStorage flag hemen set ediliyor.
+
+```js
+// Başlangıç:
+const hasAutoAdded = useRef(
+  typeof window !== 'undefined' && sessionStorage.getItem('meeting-auto-added') === '1'
+)
+
+// removeCity içinde:
+if (detectedCity?.slug === slug) {
+  hasAutoAdded.current = true
+  try { sessionStorage.setItem('meeting-auto-added', '1') } catch {}
+}
+```
+
+**Kural:** Meeting planner'da auto-add feature'ı değiştirirken bu pattern korunmalı.
+
+---
+
+## Güncellemeler (Mart 2026 — devam)
+
+### 22. Days-From-Today Link Grid Tema Fix ✅
+- `page.tsx`'teki hardcoded `bg-white` link grid → `DaysFromTodayClient.tsx`'e taşındı
+- Dark/light tema uyumlu: `border-slate-600 bg-slate-800` (dark) / `border-slate-200 bg-white` (light)
+
+### 23. Meeting Planner FAQ Genişletme ✅
+- **FAQSchema.tsx** (JSON-LD): 5 → 9 soru
+- **MeetingPageContent.tsx** görsel FAQ: 3 → 8 soru (heatmap, 6 şehir limiti, DST, overlap yok, paylaşım, iş saatleri, tekrar eden toplantılar, ücretsiz mi)
+- **DynamicContent.tsx** görsel FAQ: 3 → 5 soru (şehre özgü "en iyi arama saati" dahil)
+
+### 24. Sitemap Güncellemesi ✅
+Eksik sayfalar eklendi:
+- `/stopwatch/` (0.9 priority)
+- `/days-ago/` hub (0.8)
+- `/days-from-today/[d]/` × 20 sayfa (0.7, daily)
+- `/days-ago/[d]/` × 20 sayfa (0.7, daily)
+- `how-many-hours-in-a-year`, `how-many-seconds-in-a-year`, `how-many-months-in-a-year` articles
+
+### 25. Footer Tools Sütunu ✅
+- Tek kolon → `grid-cols-2` çift sıra
+- `/stopwatch/` linki eklendi (daha önce sitede hiçbir yerden ulaşılamıyordu)
 
 ---
 
