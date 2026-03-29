@@ -6,6 +6,23 @@ Bu dosya oturumlar arası hafıza kaybını önlemek için tutulur.
 
 ---
 
+## Skill Workflow
+
+Two SEO skills are active in this project:
+1. SEO Engine → keyword research, page structure, technical SEO, content
+2. AI SEO Engine → AI visibility, snippet optimization, citation readiness
+
+**Default rule:**
+For every content creation or SEO optimization task,
+apply SEO Engine first, then AI SEO Engine on top.
+Preserve SEO structure. Add AI layer without removing it.
+
+**Exception:**
+For code-only tasks (bug fix, component, deployment),
+skip this workflow entirely.
+
+---
+
 ## ⚠️ KRİTİK: İÇERİK YAZMA KURALLARI (ASLA ATLANMAZ)
 
 **SEO kararlarında tahmin veya genel bilgi KULLANMA. Her zaman gerçek veriyi önceliklendir.**
