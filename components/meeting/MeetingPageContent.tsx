@@ -216,8 +216,12 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
     }
   }
   
-  // Remove city - simple, no auto-add logic needed
+  // Remove city — if user removes their detected city, disable auto-add for this session
   const removeCity = (slug: string) => {
+    if (detectedCity?.slug === slug) {
+      hasAutoAdded.current = true
+      try { sessionStorage.setItem('meeting-auto-added', '1') } catch {}
+    }
     setSelectedCities(prev => prev.filter(c => c.slug !== slug))
   }
   
