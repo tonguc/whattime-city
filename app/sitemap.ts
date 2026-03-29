@@ -225,9 +225,11 @@ export default async function sitemap() {
     { slug: 'event-time', priority: 0.7 },
     { slug: 'world-alarm', priority: 0.7 },
     { slug: 'days-from-today', priority: 0.8 },
+    { slug: 'days-ago', priority: 0.8 },
     { slug: 'date-calculator', priority: 0.8 },
     { slug: 'countdown', priority: 0.8 },
     { slug: 'timer', priority: 0.9 },
+    { slug: 'stopwatch', priority: 0.9 },
     { slug: 'todays-date', priority: 0.9 },
     { slug: 'calendar', priority: 0.9 },
     { slug: 'sunrise-sunset', priority: 0.8 },
@@ -273,10 +275,30 @@ export default async function sitemap() {
     priority: 0.6,
   }))
 
+  // Days From Today — individual pages (pre-generated)
+  const daysFromTodayDays = [7, 8, 10, 14, 15, 17, 20, 22, 25, 29, 30, 42, 45, 60, 90, 100, 120, 150, 180, 365]
+  const daysFromTodayRoutes = daysFromTodayDays.map(d => ({
+    url: `${baseUrl}/days-from-today/${d}/`,
+    lastModified: now,
+    changeFrequency: 'daily' as const,
+    priority: 0.7,
+  }))
+
+  // Days Ago — individual pages (pre-generated)
+  const daysAgoRoutes = daysFromTodayDays.map(d => ({
+    url: `${baseUrl}/days-ago/${d}/`,
+    lastModified: now,
+    changeFrequency: 'daily' as const,
+    priority: 0.7,
+  }))
+
   // Articles
   const articleRoutes = [
     'how-many-weeks-in-a-year',
     'how-many-days-in-a-year',
+    'how-many-hours-in-a-year',
+    'how-many-seconds-in-a-year',
+    'how-many-months-in-a-year',
     'am-pm',
     'how-many-minutes-in-a-year',
   ].map(slug => ({
@@ -410,6 +432,8 @@ export default async function sitemap() {
     ...areaCodeRoutes,
     ...articlesHubRoute,
     ...articleRoutes,
+    ...daysFromTodayRoutes,
+    ...daysAgoRoutes,
     ...sunriseRoutes,
     ...tier1SunRoutes,
     ...guideRoutes,
