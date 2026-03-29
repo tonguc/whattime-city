@@ -41,6 +41,12 @@ const articles = [
     tags: ['Calendar', 'Minutes', 'Time'],
   },
   {
+    slug: 'how-many-months-in-a-year',
+    title: 'How Many Months in a Year?',
+    description: 'There are 12 months in a year. Full breakdown of days per month, quarter structure, month name origins, and a time unit reference table.',
+    tags: ['Calendar', 'Months', 'Time'],
+  },
+  {
     slug: 'how-many-hours-in-a-year',
     title: 'How Many Hours in a Year?',
     description: 'A regular year has 8,760 hours (365 × 24). A leap year has 8,784 hours. Full breakdown with monthly table, working hours, and year-by-year data.',
