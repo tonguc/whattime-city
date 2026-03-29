@@ -1,5 +1,5 @@
 {
-  "seo_title": "Current Time in Seattle Now — PST/PDT (UTC-8/-7)",
+  "seo_title": "Current Time in Seattle — PST/PDT",
   "seo_description": "What time is it in Seattle? Pacific Time PST (UTC-8) in winter, PDT (UTC-7) in summer. Live clock, Seattle vs New York & London time difference.",
   "faq": [
     {
@@ -39,14 +39,70 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What time is it in Seattle right now?", "acceptedAnswer": { "@type": "Answer", "text": "Seattle operates on Pacific Time — Pacific Standard Time (PST/UTC-8) from early November to mid-March, and Pacific Daylight Time (PDT/UTC-7) from mid-March to early November. As home to Amazon and Microsoft (headquartered in nearby Redmond), Seattle's Pacific Time is the scheduling standard for the global tech industry's West Coast operations." } },
-      { "@type": "Question", "name": "What time zone is Seattle in?", "acceptedAnswer": { "@type": "Answer", "text": "Seattle is in the Pacific Time Zone, observing PST (UTC-8) in winter and PDT (UTC-7) in summer. Seattle shares its timezone with Los Angeles, San Francisco, Portland, and Vancouver (Canada). The Pacific Time Zone covers the entire US West Coast, making it the primary timezone for North American tech, entertainment, and aerospace industries." } },
-      { "@type": "Question", "name": "Does Seattle observe daylight saving time?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Seattle follows US daylight saving time rules: clocks spring forward 1 hour at 2:00 AM on the second Sunday in March (to PDT/UTC-7), and fall back at 2:00 AM on the first Sunday in November (to PST/UTC-8). Washington state has passed legislation to observe PDT year-round pending federal approval, but as of 2026 still follows the standard spring/fall transition." } },
-      { "@type": "Question", "name": "What is the time difference between Seattle and New York?", "acceptedAnswer": { "@type": "Answer", "text": "Seattle is 3 hours behind New York year-round. When New York observes EST (UTC-5), Seattle is on PST (UTC-8); when New York uses EDT (UTC-4), Seattle uses PDT (UTC-7). The 3-hour gap is consistent because both cities shift clocks on the same schedule. Seattle's 9:00 AM equals New York's noon." } },
-      { "@type": "Question", "name": "What is the time difference between Seattle and London?", "acceptedAnswer": { "@type": "Answer", "text": "Seattle is 8 hours behind London for most of the year (PST vs GMT, and PDT vs BST). Because the US and UK switch clocks on slightly different weekends in March and October, there are brief 1-2 week periods when the gap is 7 or 9 hours. For scheduling purposes, use 8 hours as the standard difference." } },
-      { "@type": "Question", "name": "What time does the stock market open in Seattle?", "acceptedAnswer": { "@type": "Answer", "text": "NYSE and NASDAQ open at 6:30 AM PST (9:30 AM EST) and close at 1:00 PM PST (4:00 PM EST). Seattle's Amazon (AMZN) and Microsoft (MSFT) both trade on NASDAQ. Pre-market trading begins at 1:00 AM PST; after-hours extends to 5:00 PM PST. Boeing trades on NYSE under the same Pacific Time schedule." } },
-      { "@type": "Question", "name": "What is the best time to call Seattle from London?", "acceptedAnswer": { "@type": "Answer", "text": "Call Seattle from London between 5:00 PM and 9:00 PM GMT, which is 9:00 AM to 1:00 PM PST — Seattle's peak morning business hours. Avoid calling before 5:00 PM GMT as Seattle has not yet opened. From New York, call between noon and 8:00 PM EST to reach Seattle's 9:00 AM–5:00 PM window." } },
-      { "@type": "Question", "name": "What are typical business hours in Seattle?", "acceptedAnswer": { "@type": "Answer", "text": "Standard Seattle business hours are 9:00 AM – 6:00 PM PST/PDT, Monday–Friday. Amazon and Microsoft teams often work earlier or later for global coordination. Boeing follows stricter 7:00 AM – 4:00 PM manufacturing shifts. Seattle coffee culture means many workers are active from 6:00 AM, but professional availability starts at 9:00 AM." } }
+      {
+        "@type": "Question",
+        "name": "What time is it in Seattle right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Seattle operates on Pacific Time — Pacific Standard Time (PST/UTC-8) from early November to mid-March, and Pacific Daylight Time (PDT/UTC-7) from mid-March to early November. As home to Amazon and Microsoft (headquartered in nearby Redmond), Seattle's Pacific Time is the scheduling standard for the global tech industry's West Coast operations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Seattle in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Seattle is in the Pacific Time Zone, observing PST (UTC-8) in winter and PDT (UTC-7) in summer. Seattle shares its timezone with Los Angeles, San Francisco, Portland, and Vancouver (Canada). The Pacific Time Zone covers the entire US West Coast, making it the primary timezone for North American tech, entertainment, and aerospace industries."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Seattle observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Seattle follows US daylight saving time rules: clocks spring forward 1 hour at 2:00 AM on the second Sunday in March (to PDT/UTC-7), and fall back at 2:00 AM on the first Sunday in November (to PST/UTC-8). Washington state has passed legislation to observe PDT year-round pending federal approval, but as of 2026 still follows the standard spring/fall transition."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Seattle and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Seattle is 3 hours behind New York year-round. When New York observes EST (UTC-5), Seattle is on PST (UTC-8); when New York uses EDT (UTC-4), Seattle uses PDT (UTC-7). The 3-hour gap is consistent because both cities shift clocks on the same schedule. Seattle's 9:00 AM equals New York's noon."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Seattle and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Seattle is 8 hours behind London for most of the year (PST vs GMT, and PDT vs BST). Because the US and UK switch clocks on slightly different weekends in March and October, there are brief 1-2 week periods when the gap is 7 or 9 hours. For scheduling purposes, use 8 hours as the standard difference."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time does the stock market open in Seattle?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NYSE and NASDAQ open at 6:30 AM PST (9:30 AM EST) and close at 1:00 PM PST (4:00 PM EST). Seattle's Amazon (AMZN) and Microsoft (MSFT) both trade on NASDAQ. Pre-market trading begins at 1:00 AM PST; after-hours extends to 5:00 PM PST. Boeing trades on NYSE under the same Pacific Time schedule."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best time to call Seattle from London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Call Seattle from London between 5:00 PM and 9:00 PM GMT, which is 9:00 AM to 1:00 PM PST — Seattle's peak morning business hours. Avoid calling before 5:00 PM GMT as Seattle has not yet opened. From New York, call between noon and 8:00 PM EST to reach Seattle's 9:00 AM–5:00 PM window."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Seattle?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard Seattle business hours are 9:00 AM – 6:00 PM PST/PDT, Monday–Friday. Amazon and Microsoft teams often work earlier or later for global coordination. Boeing follows stricter 7:00 AM – 4:00 PM manufacturing shifts. Seattle coffee culture means many workers are active from 6:00 AM, but professional availability starts at 9:00 AM."
+        }
+      }
     ]
   },
   "content_blocks": [
@@ -74,14 +130,54 @@
     "/time/seattle/singapore/"
   ],
   "time_difference_table": [
-    { "city": "New York", "slug": "new-york", "difference": "3 hours ahead", "link": "/time/seattle/new-york/" },
-    { "city": "London", "slug": "london", "difference": "8 hours ahead (most of the year)", "link": "/time/seattle/london/" },
-    { "city": "Tokyo", "slug": "tokyo", "difference": "17 hours ahead (PST) / 16 hours ahead (PDT)", "link": "/time/seattle/tokyo/" },
-    { "city": "Singapore", "slug": "singapore", "difference": "16 hours ahead (PST) / 15 hours ahead (PDT)", "link": "/time/seattle/singapore/" },
-    { "city": "Sydney", "slug": "sydney", "difference": "19 hours ahead (PST/AEDT) — varies by DST", "link": "/time/seattle/sydney/" },
-    { "city": "Dubai", "slug": "dubai", "difference": "12 hours ahead (PST) / 11 hours ahead (PDT)", "link": "/time/seattle/dubai/" },
-    { "city": "Los Angeles", "slug": "los-angeles", "difference": "Same timezone (Pacific Time)", "link": "/los-angeles/" },
-    { "city": "Chicago", "slug": "chicago", "difference": "2 hours ahead (CST/CDT)", "link": "/time/seattle/chicago/" }
+    {
+      "city": "New York",
+      "slug": "new-york",
+      "difference": "3 hours ahead",
+      "link": "/time/seattle/new-york/"
+    },
+    {
+      "city": "London",
+      "slug": "london",
+      "difference": "8 hours ahead (most of the year)",
+      "link": "/time/seattle/london/"
+    },
+    {
+      "city": "Tokyo",
+      "slug": "tokyo",
+      "difference": "17 hours ahead (PST) / 16 hours ahead (PDT)",
+      "link": "/time/seattle/tokyo/"
+    },
+    {
+      "city": "Singapore",
+      "slug": "singapore",
+      "difference": "16 hours ahead (PST) / 15 hours ahead (PDT)",
+      "link": "/time/seattle/singapore/"
+    },
+    {
+      "city": "Sydney",
+      "slug": "sydney",
+      "difference": "19 hours ahead (PST/AEDT) — varies by DST",
+      "link": "/time/seattle/sydney/"
+    },
+    {
+      "city": "Dubai",
+      "slug": "dubai",
+      "difference": "12 hours ahead (PST) / 11 hours ahead (PDT)",
+      "link": "/time/seattle/dubai/"
+    },
+    {
+      "city": "Los Angeles",
+      "slug": "los-angeles",
+      "difference": "Same timezone (Pacific Time)",
+      "link": "/los-angeles/"
+    },
+    {
+      "city": "Chicago",
+      "slug": "chicago",
+      "difference": "2 hours ahead (CST/CDT)",
+      "link": "/time/seattle/chicago/"
+    }
   ],
   "eeat_footer": "Last updated: March 2026 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database.",
   "timezone_facts": {

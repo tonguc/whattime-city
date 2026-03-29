@@ -1,5 +1,5 @@
 {
-  "seo_title": "Current Time in Copenhagen — CET/CEST (UTC+1/+2)",
+  "seo_title": "Current Time in Copenhagen — CET/CEST",
   "seo_description": "Current time in Copenhagen, Denmark. Live CET/CEST clock — UTC+1 standard, UTC+2 summer. Copenhagen time vs New York, London, Tokyo. Nordic design and tech capital.",
   "faq": [
     {
@@ -186,5 +186,5 @@
     "dst_end": "Last Sunday in October at 3:00 AM CEST (clocks back to 2:00 AM CET)",
     "dst_offset": "UTC+2"
   },
-  "eeat_footer": "Last updated: March 2026 | \u2713 Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database."
+  "eeat_footer": "Last updated: March 2026 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database."
 }
