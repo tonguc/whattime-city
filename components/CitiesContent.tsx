@@ -2,15 +2,12 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
 import { cities, City } from '@/lib/cities'
 import { useCityContext } from '@/lib/CityContext'
 import { TimeIcons } from '@/components/TimeIcons'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-// Lazy load ScrollFAB only when needed
-const ScrollFAB = dynamic(() => import('@/components/ScrollFAB'), { ssr: false })
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 
@@ -305,13 +302,6 @@ export default function CitiesContent() {
       </main>
 
       <Footer />
-      
-      {/* ScrollFAB for long city list */}
-      <ScrollFAB 
-        sections={[]} 
-        mode="forced" 
-        isLight={isLight}
-      />
     </div>
   )
 }

@@ -1,9 +1,8 @@
 import type { Metadata, Viewport } from 'next'
-import { CityProvider } from '@/lib/CityContext'
+import GlobalProviders from '@/components/GlobalProviders'
 import './globals.css'
 
-// ScrollFAB removed from global layout for performance
-// It will be added to specific long pages that need it
+// ScrollToTop button is rendered globally via GlobalProviders
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -164,9 +163,9 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased" suppressHydrationWarning>
-        <CityProvider>
+        <GlobalProviders>
           {children}
-        </CityProvider>
+        </GlobalProviders>
       </body>
     </html>
   )
