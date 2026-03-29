@@ -2,16 +2,16 @@ import type { Metadata } from 'next'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 
 export const metadata: Metadata = {
-  title: 'How Many Weeks in a Year? (2026) — 52 or 53 Weeks Explained',
+  title: 'How Many Weeks in a Year? 52 Weeks (2026)',
   description:
-    'There are 52 weeks and 1 day in a regular year (365 days). A leap year has 52 weeks and 2 days. See the full breakdown by year, month, and work weeks.',
+    'A regular year has 52 weeks and 1 day (365 days). A leap year has 52 weeks and 2 days. Full breakdown: weeks per month, work weeks, ISO week 53 years, and a year-by-year table.',
   alternates: {
     canonical: 'https://whattime.city/articles/how-many-weeks-in-a-year/',
   },
   openGraph: {
-    title: 'How Many Weeks in a Year? (2026) — 52 or 53 Weeks Explained',
+    title: 'How Many Weeks in a Year? 52 Weeks (2026)',
     description:
-      'There are 52 weeks and 1 day in a regular year (365 days). A leap year has 52 weeks and 2 days. See the full breakdown by year, month, and work weeks.',
+      'A regular year has 52 weeks and 1 day (365 days). A leap year has 52 weeks and 2 days. Full breakdown: weeks per month, work weeks, ISO week 53 years, and a year-by-year table.',
     type: 'article',
     url: 'https://whattime.city/articles/how-many-weeks-in-a-year/',
     siteName: 'whattime.city',
@@ -71,6 +71,20 @@ const faqSchema = {
   ],
 }
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'How Many Weeks in a Year? 52 Weeks Explained (2026)',
+  description: 'A regular year has 52 weeks and 1 day (365 days). A leap year has 52 weeks and 2 days. Full breakdown with year-by-year table, work weeks, and ISO week 53 explanation.',
+  url: 'https://whattime.city/articles/how-many-weeks-in-a-year/',
+  publisher: {
+    '@type': 'Organization',
+    name: 'whattime.city',
+    url: 'https://whattime.city',
+  },
+  dateModified: '2026-03-29',
+}
+
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -89,6 +103,10 @@ const breadcrumbSchema = {
 export default function HowManyWeeksInAYearPage() {
   return (
     <ContentPageWrapper>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

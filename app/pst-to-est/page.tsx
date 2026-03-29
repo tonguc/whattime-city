@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'PST to EST Converter — Pacific and Eastern Time Difference',
+  title: 'PST to EST — Pacific to Eastern Time (3 Hours)',
   description: 'PST is 3 hours behind EST. Convert Pacific Standard Time to Eastern Standard Time instantly — live clocks, full conversion table, and answers to "Is PST 3 hours behind EST?" and "What is 3pm EST in PST?"',
   alternates: {
     canonical: 'https://whattime.city/pst-to-est/',

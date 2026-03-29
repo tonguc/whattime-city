@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'CST to EST Converter — Central Time is 1 Hour Behind Eastern',
+  title: 'CST to EST — Central to Eastern Time (1 Hour)',
   description: 'CST is 1 hour behind EST. Convert Central to Eastern Time — live clocks, full table, and answers to "Is Central time 1 or 2 hours behind Eastern?" and "What is 12 PM CST in EST?"',
   alternates: {
     canonical: 'https://whattime.city/cst-to-est/',

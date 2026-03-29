@@ -20,12 +20,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const countryLabel = data.country === 'CA' ? 'Canada' : 'USA'
 
   return {
-    title: `(${data.code}) Area Code — ${data.city}, ${data.stateCode} | Time Zone & Location`,
-    description: `Area code ${data.code} serves ${data.city}, ${data.state} (${countryLabel}). Time zone: ${data.tzAbbr} (${data.utcOffset}). Coverage: ${data.coverageArea}. Find current local time, DST status, and calling tips.`,
+    title: `${data.code} Area Code — ${data.city}, ${data.stateCode}`,
+    description: `Area code ${data.code} is in ${data.city}, ${data.state} (${countryLabel}) — ${data.tzAbbr} time zone (${data.utcOffset}). Covers ${data.coverageArea}. See current local time, DST dates, and calling tips.`,
     alternates: { canonical: `https://whattime.city/area-code/${data.code}` },
     openGraph: {
-      title: `(${data.code}) Area Code — ${data.city}, ${data.stateCode} Time Zone`,
-      description: `${data.code} covers ${data.coverageArea}. Time zone: ${data.tzAbbr}.`,
+      title: `${data.code} Area Code — ${data.city}, ${data.stateCode}`,
+      description: `Area code ${data.code} serves ${data.city}, ${data.state}. Time zone: ${data.tzAbbr} (${data.utcOffset}).`,
       type: 'website',
       url: `https://whattime.city/area-code/${data.code}`,
       siteName: 'whattime.city',

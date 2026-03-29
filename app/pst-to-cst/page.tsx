@@ -3,12 +3,12 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'PST to CST — Pacific to Central Time Converter',
-  description: 'Convert PST to CST instantly. Pacific Standard Time is 1 hour behind Central Standard Time. Live clocks, conversion table, and business hours overlap.',
+  title: 'PST to CST — Pacific to Central Time',
+  description: 'PST is 2 hours behind CST (UTC-8 vs UTC-6). Convert Pacific to Central Time instantly — live clocks, full conversion table, and best overlap hours.',
   alternates: { canonical: 'https://whattime.city/pst-to-cst/' },
   openGraph: {
-    title: 'PST to CST Time Converter — Pacific to Central',
-    description: 'PST is 1 hour behind CST. Live clocks and full conversion table.',
+    title: 'PST to CST — Pacific to Central Time',
+    description: 'PST is 2 hours behind CST. Live clocks and full conversion table.',
     type: 'website',
     url: 'https://whattime.city/pst-to-cst/',
     siteName: 'whattime.city',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'PST to CST — Pacific to Central Time',
-    description: 'PST is 1 hour behind CST. Live converter and full table.',
+    description: 'PST is 2 hours behind CST. Live converter and full table.',
   },
 }
 

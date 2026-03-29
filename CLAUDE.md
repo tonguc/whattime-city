@@ -184,7 +184,11 @@ Her araçta: **FAQPage + BreadcrumbList JSON-LD** var (aksi belirtilmedikçe).
 - Dynamic title: "CityA to CityB Time — CityB X Hours Ahead/Behind"
 
 ### 13. Alan Kodları ✅ — `/area-code/`
-US area code sayfaları (theme-aware, search, FAQ, calling tips).
+- `/area-code/` — hub sayfası (search, all codes)
+- `/area-code/[code]/` — 272 individual code pages (US + Canada)
+- Her sayfada: FAQPage + BreadcrumbList schema, live clock, DST info, related codes
+- **Title pattern:** `${code} Area Code — ${city}, ${stateCode}` (≤33 chars, no parentheses)
+- **Rakip fırsatı:** 24timezones.com bu alanda dominant (213: 673K, 929: 246K, 917: 246K, 347/437/202/754: 201K vol). Bizim sayfalar mevcut, indexlenmesi gerekiyor.
 
 ### 14. Blog / Guides ✅
 - `/blog/` — Blog hub sayfası
@@ -196,6 +200,32 @@ US area code sayfaları (theme-aware, search, FAQ, calling tips).
 - `overflow-x: clip` — mobil sticky header düzeltmesi
 - `/country/` sayfalarında breadcrumb navigasyon
 - Arizona time page enriched (246K vol, `/arizona/`)
+
+### 16. SEO Metadata Optimizasyonları ✅ (Mart 2026)
+**Rakip analizinden** (24tz, timenow, timeis, timedotnow CSV'leri) gelen fırsatlar:
+
+**Area code sayfaları:**
+- Title format düzeltildi: `(213) Area Code — ... | Time Zone & Location` → `213 Area Code — Los Angeles, CA`
+- Parentheses kaldırıldı, " | Time Zone & Location" kaldırıldı (title çok uzundu)
+
+**"How many weeks in a year" (1M vol, SD 29):**
+- `/articles/how-many-weeks-in-a-year/` — Article JSON-LD schema eklendi
+- Title: 61 char → 41 char (`How Many Weeks in a Year? 52 Weeks (2026)`)
+- time.now bu cluster'da pos 3-10 kazanıyor, timeanddate yok
+
+**Converter sayfaları:**
+- `pst-to-cst`: Bug fix — description "1 hour" → "2 hours behind" (PST UTC-8 vs CST UTC-6 = 2 saat)
+- Tüm over-long titles düzeltildi (≤44 char kuralına uygun):
+  - `pst-to-cst`: 46 → 36 chars
+  - `pst-to-est`: 58 → 46 chars
+  - `cst-to-est`: 60 → 46 chars
+  - `est-to-cst`: 46 → 46 chars
+  - `mountain-time-zone`: 59 → 48 chars
+
+**Rakip keyword gaps (timenow kazanıyor, biz yok):**
+- PST↔CST, EST↔CST, MST↔EST converters: 110K-135K vol, SD 34-55
+- "mountain time" cluster: 301K vol, SD 22-55 — `/mountain-time-zone/` sayfamız var
+- Bunlar var ama indexlenme ve authority meselesi
 
 ---
 
