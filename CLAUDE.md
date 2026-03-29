@@ -130,7 +130,16 @@ tirana, tokyo, toronto, tunis, vancouver, vienna, washington-dc, windhoek, zuric
 `/eastern-time-zone/`, `/central-time-zone/`, `/mountain-time-zone/`, `/pacific-time-zone/`,
 `/alaska-time-zone/`, `/hawaii-time-zone/`, `/us-time-zones/`, `/bst-timezone/`, `/cest-timezone/`
 
-### 7. Araçlar ✅
+### 7. TZ Kısaltma Hub Sayfaları ✅ — HubPageHeader ile
+`/est/`, `/cst/`, `/pst/`, `/mst/`, `/gmt/`, `/utc/`, `/ist/`, `/cdt/`, `/edt/`, `/pdt/`
+Her biri o TZ hakkında içerik + converter + FAQ içeriyor.
+
+### 8. Ülke Zaman Sayfaları ✅ — `/country/`
+- `/country/` — tüm ülkeler listesi (CountriesContent bileşeni)
+- `/country/[country]/` — her ülke için saat + şehirler listesi
+Ayrı standalone ClockClient'lardan farklı — bu route genel ülke-zaman sayfaları.
+
+### 9. Araçlar ✅
 - `/meeting/` — Meeting Planner
 - `/time-converter/` — DST-aware date picker ile
 - `/flight-time/` — Flight Time Calculator
@@ -141,34 +150,48 @@ tirana, tokyo, toronto, tunis, vancouver, vienna, washington-dc, windhoek, zuric
 - `/date-calculator/` — Date-to-date calculator (calendar/business days)
 - `/prayer-times/` — Islamic prayer times (7 hesap yöntemi, suncalc)
 - `/days-from-today/` — Days from today calculator
-- `/todays-date/` — Today's date
+- `/todays-date/` — Today's date (823K vol)
+- `/calendar/` — Yearly calendar with US holidays (823K vol)
 - `/event-time/` — Event Time
 - `/jet-lag-advisor/` — Jet Lag Advisor
-- `/timer/` — Timer
+- `/timer/` — Online Timer & Stopwatch (2.24M vol)
 - `/map/` — World Time Zone Map
 
-### 8. Makaleler ✅ — `/articles/*`
+**Redirect sayfaları** (gerçek sayfa değil):
+- `/meeting-planner/` → `/meeting/`
+
+**Paylaşım sayfaları:**
+- `/meet/` — SharedMeetingView (meeting link paylaşımı)
+- `/embed/[city]/` — Embeddable clock widget
+
+### 10. Makaleler ✅ — `/articles/*`
 - `/articles/how-many-weeks-in-a-year/`
 - `/articles/how-many-days-in-a-year/`
 - `/articles/how-many-minutes-in-a-year/`
 - `/articles/am-pm/`
 
-### 9. Sunrise/Sunset ✅
+### 11. Sunrise/Sunset ✅
 - `/sunrise-sunset/` — hub sayfası (şehir seçici, suncalc ile hesaplama)
 - `/[city]/sun/` — her şehir için individual sunrise/sunset sayfası
 
-### 10. /time/ Pair Sayfaları ✅ — Tam içerik
+### 12. /time/ Pair Sayfaları ✅ — Tam içerik
 - `app/time/[from]/[to]/page.tsx` — FAQPage + BreadcrumbList JSON-LD
 - 26 city pair için PAIR_CONTEXTS (SSR, Google görür)
 - Dynamic title: "CityA to CityB Time — CityB X Hours Ahead/Behind"
 
-### 11. Alan Kodları ✅ — `/area-code/`
-US area code sayfaları.
+### 13. Alan Kodları ✅ — `/area-code/`
+US area code sayfaları (theme-aware, search, FAQ, calling tips).
 
-### 12. Teknik SEO ✅
+### 14. Blog / Guides ✅
+- `/blog/` — Blog hub sayfası
+- `/guides/` — Guides hub sayfası
+
+### 15. Teknik SEO ✅
 - Scroll-to-top butonu global (tüm sayfalarda)
 - BreadcrumbList schema: /time/, DST, TZ info sayfaları
 - `overflow-x: clip` — mobil sticky header düzeltmesi
+- `/country/` sayfalarında breadcrumb navigasyon
+- Arizona time page enriched (246K vol, `/arizona/`)
 
 ---
 
