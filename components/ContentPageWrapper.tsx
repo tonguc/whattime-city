@@ -4,6 +4,7 @@ import { ReactNode } from 'react'
 import { useCityContext } from '@/lib/CityContext'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import ScrollToTop from '@/components/ScrollToTop'
 
 interface ContentPageWrapperProps {
   children: ReactNode
@@ -19,6 +20,7 @@ export default function ContentPageWrapper({ children }: ContentPageWrapperProps
         {children}
       </div>
       <Footer />
+      <ScrollToTop />
     </div>
   )
 }
