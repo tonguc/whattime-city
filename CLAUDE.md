@@ -245,6 +245,21 @@ Her araçta: **FAQPage + BreadcrumbList JSON-LD** var (aksi belirtilmedikçe).
 - "60 days from now" — 27K vol, SD 22
 - "30 days today" — 301K vol, SD 38
 
+### 18. Tool Page Container + Sunrise-Sunset Dark Mode Fix ✅ (Mart 2026)
+
+**Container genişlik sorunu (6 sayfa):**
+- Sorun: client bileşenler içinde `max-w-3xl/4xl mx-auto px-4 py-8` vardı; `ContentPageWrapper`'ın `max-w-6xl`'i içinde double-daraltıyordu
+- Düzeltme: inner container → `w-full space-y-8` (max-w ve mx-auto kaldırıldı)
+- Etkilenen sayfalar: `PrayerTimesClient`, `TodaysDateClient`, `TimerClient`, `CountdownClient`, `DateCalculatorClient`, `DaysFromTodayClient`
+
+**Sunrise-sunset dark mode:**
+- Sorun: `SunriseSunsetClient` tüm `bg-white`, `border-slate-100`, `text-slate-*` hardcoded light — dark modda beyaz kartlar görünüyordu
+- Düzeltme: `useCityContext()` eklendi, tüm renkler `isLight` conditional'a çevrildi
+- Kartlar, tablolar, input, dropdown, şehir linkleri, SEO section, FAQ — hepsi artık tema duyarlı
+
+**⚠️ Kural: Tool client bileşenlerinde inner max-w kullanma.**
+`ContentPageWrapper` zaten `max-w-6xl` veriyor. Client bileşenler sadece `w-full` veya bare div kullanmalı.
+
 ---
 
 ## Design System — Tema Kuralları
