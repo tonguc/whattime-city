@@ -227,6 +227,24 @@ Her araçta: **FAQPage + BreadcrumbList JSON-LD** var (aksi belirtilmedikçe).
 - "mountain time" cluster: 301K vol, SD 22-55 — `/mountain-time-zone/` sayfamız var
 - Bunlar var ama indexlenme ve authority meselesi
 
+### 17. Days From Today / Days Ago Individual Sayfalar ✅ (Mart 2026)
+**Rakip gap:** time.now bu sorgularda dominant, timeanddate yok. SD 15-22 = çok düşük rekabet.
+
+- `/days-from-today/[days]/page.tsx` — 20 sayfa pre-generate
+- `/days-ago/[days]/page.tsx` — 20 sayfa pre-generate
+- Her sayfa: FAQPage + BreadcrumbList schema, featured snippet answer box
+- `revalidate = 86400` — günlük yenileme (tarihler güncel kalsın)
+- `/days-from-today/` hub'a internal link grid eklendi (crawling için)
+
+**Pre-generated day counts:** 7, 8, 10, 14, 15, 17, 20, 22, 25, 29, 30, 42, 45, 60, 90, 100, 120, 150, 180, 365
+
+**Hedef sorgular:**
+- "180 days from today" — 90K vol, SD 17
+- "15 days from today" — 40K vol, SD 19
+- "90 days ago" — 33K vol, SD 15
+- "60 days from now" — 27K vol, SD 22
+- "30 days today" — 301K vol, SD 38
+
 ---
 
 ## Design System — Tema Kuralları
