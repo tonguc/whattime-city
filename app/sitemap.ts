@@ -154,8 +154,12 @@ export default async function sitemap() {
     { slug: 'cst-to-pst', priority: 0.8 },
     // New TZ pairs — India corridor + Asia/Pacific
     { slug: 'ist-to-pst', priority: 0.8 },
+    { slug: 'pst-to-ist', priority: 0.8 },
     { slug: 'ist-to-cst', priority: 0.8 },
+    { slug: 'cst-to-ist', priority: 0.8 },
     { slug: 'ist-to-gmt', priority: 0.8 },
+    { slug: 'est-to-ist', priority: 0.8 },
+    { slug: 'mst-to-ist', priority: 0.7 },
     { slug: 'jst-to-est', priority: 0.7 },
     { slug: 'aest-to-est', priority: 0.7 },
     { slug: 'cet-to-est', priority: 0.7 },
