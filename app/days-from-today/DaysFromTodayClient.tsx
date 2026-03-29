@@ -484,6 +484,42 @@ export default function DaysFromTodayClient() {
         </div>
       </section>
 
+      {/* ───── Popular Day Counts — Internal Links ───── */}
+      <section className={`${card} p-6 space-y-4`}>
+        <h2 className={`text-lg font-bold ${heading}`}>Popular Day Counts</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          {[15, 30, 45, 60, 90, 120, 150, 180, 365].map(d => (
+            <Link
+              key={d}
+              href={`/days-from-today/${d}/`}
+              className={`rounded-lg border px-3 py-2 text-sm text-center transition-colors ${
+                isLight
+                  ? 'border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:text-blue-700'
+                  : 'border-slate-600 bg-slate-800 text-slate-200 hover:border-blue-500 hover:text-blue-400'
+              }`}
+            >
+              {d} days from today
+            </Link>
+          ))}
+        </div>
+        <h3 className={`text-base font-semibold ${heading}`}>Days Ago</h3>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          {[30, 45, 60, 90, 120, 180].map(d => (
+            <Link
+              key={d}
+              href={`/days-ago/${d}/`}
+              className={`rounded-lg border px-3 py-2 text-sm text-center transition-colors ${
+                isLight
+                  ? 'border-slate-200 bg-white text-slate-700 hover:border-amber-300 hover:text-amber-700'
+                  : 'border-slate-600 bg-slate-800 text-slate-200 hover:border-amber-500 hover:text-amber-400'
+              }`}
+            >
+              {d} days ago
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* ───── Related Tools ───── */}
       <section className="space-y-3">
         <h2 className={`text-lg font-bold ${heading}`}>Related Tools</h2>

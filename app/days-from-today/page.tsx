@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import DaysFromTodayClient from './DaysFromTodayClient'
 
@@ -99,34 +98,6 @@ export default function DaysFromTodayPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <DaysFromTodayClient />
-
-      {/* Internal links to specific day pages — helps crawling + SEO */}
-      <div className="max-w-2xl mx-auto px-4 pb-10">
-        <h2 className="text-lg font-semibold text-slate-700 mb-3">Popular Day Counts</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-4">
-          {[15, 30, 45, 60, 90, 120, 150, 180, 365].map(d => (
-            <Link
-              key={d}
-              href={`/days-from-today/${d}/`}
-              className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 hover:border-blue-300 hover:text-blue-700 text-center"
-            >
-              {d} days from today
-            </Link>
-          ))}
-        </div>
-        <h2 className="text-lg font-semibold text-slate-700 mb-3">Days Ago</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-          {[30, 45, 60, 90, 120, 180].map(d => (
-            <Link
-              key={d}
-              href={`/days-ago/${d}/`}
-              className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 hover:border-amber-300 hover:text-amber-700 text-center"
-            >
-              {d} days ago
-            </Link>
-          ))}
-        </div>
-      </div>
     </ContentPageWrapper>
   )
 }
