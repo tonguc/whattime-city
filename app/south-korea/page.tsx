@@ -6,7 +6,7 @@ import SouthKoreaClockClient from './SouthKoreaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Korea Now — KST (UTC+9) · No DST',
+  title: 'Time in South Korea Now — KST (UTC+9)',
   description:
     'Current time in South Korea (Korea time now). KST (Korea Standard Time, UTC+9) year-round — no Daylight Saving Time since 1988. Same offset as Japan (JST). Live Seoul clock, time difference to US, UK, and Europe.',
   keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/south-korea/' },
   openGraph: {
-    title: 'Korea Time Now — KST (UTC+9) · No DST',
+    title: 'Time in South Korea Now — KST (UTC+9)',
     description: 'Korea time now — KST (UTC+9), same as Japan (JST). No DST since 1988. Live clock, time difference to US, UK, Europe.',
     type: 'website', url: 'https://whattime.city/south-korea/', siteName: 'whattime.city',
   },
