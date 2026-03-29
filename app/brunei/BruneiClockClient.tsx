@@ -1,6 +1,106 @@
 'use client'
-import HeroClockDisplay from '@/components/HeroClockDisplay'
-const BRUNEI_TZ = 'Asia/Brunei'
+
+import { useState, useEffect } from 'react'
+import { useCityContext } from '@/lib/CityContext'
+
 export default function BruneiClockClient() {
-  return <HeroClockDisplay tz={BRUNEI_TZ} countryCode="BN" countryName="Brunei" tzLabel="BNT · UTC+8" />
+  const { isLight } = useCityContext()
+  const [time, setTime] = useState('--:--:--')
+  const [date, setDate] = useState('')
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+    const update = () => {
+      const now = new Date()
+      setTime(now.toLocaleTimeString('en-US', { timeZone: 'Asia/Brunei', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }))
+      setDate(now.toLocaleDateString('en-US', { timeZone: 'Asia/Brunei', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }))
+    }
+    update()
+    const id = setInterval(update, 1000)
+    return () => clearInterval(id)
+  }, [])
+
+  const card = isLight ? 'rounded-2xl border border-slate-200 bg-white p-6' : 'rounded-2xl border border-slate-700/50 bg-slate-800/60 p-6'
+  const innerCard = isLight ? 'rounded-xl border border-slate-100 bg-slate-50 p-4' : 'rounded-xl border border-slate-700/50 bg-slate-800/50 p-4'
+  const heading = isLight ? 'text-slate-800' : 'text-white'
+  const subText = isLight ? 'text-slate-600' : 'text-slate-300'
+  const mutedText = isLight ? 'text-slate-400' : 'text-slate-500'
+
+  return (
+    <div className="space-y-4">
+      {/* Live Clock */}
+      <div className={card}>
+        <div className="mb-1 text-sm font-medium uppercase tracking-wider text-yellow-700">BNT &middot; UTC+8</div>
+        <div className={`text-4xl font-bold ${heading}`} style={{ fontVariantNumeric: 'tabular-nums' }}>
+          {mounted ? time : '--:--:--'}
+        </div>
+        <div className={`mt-1 text-sm ${subText}`}>{mounted ? date : '\u00A0'}</div>
+        <div className={`mt-2 text-xs ${mutedText}`}>Brunei Darussalam Time &middot; No DST observed</div>
+      </div>
+
+      {/* Quick Facts */}
+      <div className={card}>
+        <h3 className={`mb-3 text-lg font-semibold ${heading}`}>Quick Facts</h3>
+        <div className="grid grid-cols-2 gap-3">
+          {[
+            ['Timezone', 'BNT (UTC+8)'],
+            ['Population', '~450,000'],
+            ['Capital', 'Bandar Seri Begawan'],
+            ['DST', 'Not observed'],
+            ['Currency', 'Brunei Dollar (BND)'],
+            ['Dialing Code', '+673'],
+          ].map(([label, value]) => (
+            <div key={label} className={innerCard}>
+              <div className={`text-xs ${mutedText}`}>{label}</div>
+              <div className={`text-sm font-medium ${subText}`}>{value}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Wealth & Heritage */}
+      <div className={card}>
+        <h3 className={`mb-3 text-lg font-semibold ${heading}`}>Wealth &amp; Heritage</h3>
+        <p className={`text-sm leading-relaxed ${subText}`}>
+          Brunei is one of the <strong>wealthiest nations per capita</strong> in the world, fueled by its
+          oil and gas reserves. Citizens pay <strong>no income tax</strong>, and the Sultan of Brunei is
+          among the richest monarchs globally. The iconic <strong>Omar Ali Saifuddien Mosque</strong> is
+          often called the most beautiful mosque in Southeast Asia. <strong>Kampong Ayer</strong>&mdash;
+          a historic water village of 30,000 residents&mdash;sits on stilts above the Brunei River.
+        </p>
+      </div>
+
+      {/* Nature & Culture */}
+      <div className={card}>
+        <h3 className={`mb-3 text-lg font-semibold ${heading}`}>Nature &amp; Culture</h3>
+        <ul className={`list-inside list-disc space-y-1 text-sm ${subText}`}>
+          <li>Temburong District is home to pristine primary rainforest</li>
+          <li>Ulu Temburong National Park features a 60-metre canopy walkway</li>
+          <li>Oil and gas account for over 90% of government revenue</li>
+          <li>Brunei&apos;s rainforest covers roughly 70% of the country&apos;s total land</li>
+        </ul>
+      </div>
+
+      {/* Major Cities */}
+      <div className={card}>
+        <h3 className={`mb-3 text-lg font-semibold ${heading}`}>Major Cities &amp; Towns</h3>
+        <div className="grid grid-cols-2 gap-3">
+          {[
+            ['Bandar Seri Begawan', '100K', 'Capital'],
+            ['Seria', '36K', 'Oil town'],
+            ['Kuala Belait', '31K', 'Western hub'],
+            ['Tutong', '19K', 'District center'],
+            ['Temburong', '10K', 'Rainforest gateway'],
+            ['Jerudong', '7K', 'Leisure district'],
+          ].map(([city, pop, note]) => (
+            <div key={city} className={innerCard}>
+              <div className={`text-sm font-medium ${heading}`}>{city}</div>
+              <div className={`text-xs ${mutedText}`}>{pop} &middot; {note}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
 }
