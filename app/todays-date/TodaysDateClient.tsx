@@ -139,7 +139,7 @@ export default function TodaysDateClient() {
   const progressBg = isLight ? 'bg-slate-100' : 'bg-slate-700'
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8 space-y-8">
+    <div className="w-full space-y-8">
       {/* Breadcrumb */}
       <nav className={`flex items-center gap-1.5 text-sm ${mutedText}`}>
         <Link href="/" className="hover:underline">Home</Link>

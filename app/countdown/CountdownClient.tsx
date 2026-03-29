@@ -117,7 +117,7 @@ export default function CountdownClient() {
     : 'border border-violet-600 bg-violet-900/40 text-violet-300'
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
+    <div className="w-full space-y-8">
       {/* Breadcrumb */}
       <nav className={`flex items-center gap-1.5 text-sm ${mutedText}`}>
         <Link href="/" className="hover:underline">Home</Link>

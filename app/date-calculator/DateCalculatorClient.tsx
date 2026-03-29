@@ -137,7 +137,7 @@ export default function DateCalculatorClient() {
   const toFormatted = parseDate(toDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
+    <div className="w-full space-y-8">
       {/* Breadcrumb */}
       <nav className={`flex items-center gap-1.5 text-sm ${mutedText}`}>
         <Link href="/" className="hover:underline">Home</Link>
