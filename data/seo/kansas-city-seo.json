@@ -1,5 +1,5 @@
 {
-  "seo_title": "Current Time in Kansas City — Central Time (CST/CDT)",
+  "seo_title": "Current Time in Kansas City — CST/CDT",
   "seo_description": "Current time in Kansas City, Missouri. Live CST/CDT clock, UTC-6/-5 offset, daylight saving dates, and time differences with New York, Los Angeles, London. BBQ capital straddling the Missouri-Kansas border.",
   "faq": [
     {
@@ -39,14 +39,70 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What time is it in Kansas City right now?", "acceptedAnswer": { "@type": "Answer", "text": "Kansas City operates on Central Time — Central Standard Time (CST/UTC-6) from early November to mid-March, and Central Daylight Time (CDT/UTC-5) from mid-March to early November. As the largest metro area in Missouri with a population of approximately 2.2 million, Kansas City serves as a major logistics and agricultural hub in America's heartland. The city's central geographic position makes it a natural coordination point between East Coast and West Coast business operations." } },
-      { "@type": "Question", "name": "What time zone is Kansas City in?", "acceptedAnswer": { "@type": "Answer", "text": "Kansas City is in the Central Time Zone, observing CST (UTC-6) in winter and CDT (UTC-5) in summer. Kansas City shares its timezone with Chicago, Dallas, Houston, and Minneapolis. The Central Time Zone is the most populous US timezone, covering the broad midsection of the country from the Great Lakes to the Gulf of Mexico, and it serves as the primary timezone for American agriculture, logistics, and commodity trading." } },
-      { "@type": "Question", "name": "Does Kansas City observe daylight saving time?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Kansas City follows US daylight saving time rules: clocks spring forward 1 hour at 2:00 AM on the second Sunday in March (moving from CST/UTC-6 to CDT/UTC-5), and fall back at 2:00 AM on the first Sunday in November (returning from CDT to CST). Both Missouri and Kansas observe DST on the same federal schedule, so the entire Kansas City metro area — regardless of which side of the state line you are on — shifts clocks simultaneously. This means there is never a time discrepancy between Kansas City, MO and Kansas City, KS." } },
-      { "@type": "Question", "name": "What is the time difference between Kansas City and New York?", "acceptedAnswer": { "@type": "Answer", "text": "Kansas City is 1 hour behind New York year-round. When New York observes EST (UTC-5), Kansas City is on CST (UTC-6); when New York shifts to EDT (UTC-4), Kansas City moves to CDT (UTC-5). The 1-hour gap remains constant because both cities follow the same US daylight saving schedule. For example, when it is 9:00 AM in Kansas City, it is 10:00 AM in New York — making cross-timezone business calls between the two cities very manageable." } },
-      { "@type": "Question", "name": "What is the time difference between Kansas City and Los Angeles?", "acceptedAnswer": { "@type": "Answer", "text": "Kansas City is 2 hours ahead of Los Angeles year-round. When Los Angeles is on PST (UTC-8), Kansas City observes CST (UTC-6); when Los Angeles shifts to PDT (UTC-7), Kansas City uses CDT (UTC-5). The 2-hour difference stays consistent throughout the year since both cities follow US daylight saving rules on the same schedule. When it is noon in Kansas City, it is 10:00 AM in Los Angeles." } },
-      { "@type": "Question", "name": "What is the time difference between Kansas City and London?", "acceptedAnswer": { "@type": "Answer", "text": "Kansas City is 6 hours behind London for most of the year (CST vs GMT, and CDT vs BST). However, because the US and UK switch clocks on slightly different weekends in March and October/November, there are brief 1-2 week transition periods when the gap is 5 or 7 hours instead. For general scheduling purposes, use 6 hours as the standard difference — when it is 9:00 AM in Kansas City, it is typically 3:00 PM in London." } },
-      { "@type": "Question", "name": "What are typical business hours in Kansas City?", "acceptedAnswer": { "@type": "Answer", "text": "Standard Kansas City business hours are 8:00 AM – 5:00 PM CST/CDT, Monday through Friday. Kansas City's economy centers on logistics, agriculture, finance, and healthcare — industries that tend to follow traditional schedules. Major employers include Cerner (now Oracle Health), Sprint/T-Mobile operations, Hallmark Cards, and numerous agribusiness firms. The city's central timezone position allows overlap with both East Coast (opens 1 hour earlier) and West Coast (closes 2 hours later) business hours, making it ideal for nationwide coordination." } },
-      { "@type": "Question", "name": "Are Kansas City, MO and Kansas City, KS in the same time zone?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, both Kansas City, Missouri and Kansas City, Kansas are in the Central Time Zone and observe identical CST (UTC-6) and CDT (UTC-5) schedules. The Kansas City metro area straddles the Missouri-Kansas state line, but both states use Central Time with the same US daylight saving rules. You will never experience a time difference when crossing State Line Road or traveling between the two sides of the metro. This unified timezone makes the greater Kansas City area function seamlessly as a single economic region despite spanning two states." } }
+      {
+        "@type": "Question",
+        "name": "What time is it in Kansas City right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kansas City operates on Central Time — Central Standard Time (CST/UTC-6) from early November to mid-March, and Central Daylight Time (CDT/UTC-5) from mid-March to early November. As the largest metro area in Missouri with a population of approximately 2.2 million, Kansas City serves as a major logistics and agricultural hub in America's heartland. The city's central geographic position makes it a natural coordination point between East Coast and West Coast business operations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Kansas City in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kansas City is in the Central Time Zone, observing CST (UTC-6) in winter and CDT (UTC-5) in summer. Kansas City shares its timezone with Chicago, Dallas, Houston, and Minneapolis. The Central Time Zone is the most populous US timezone, covering the broad midsection of the country from the Great Lakes to the Gulf of Mexico, and it serves as the primary timezone for American agriculture, logistics, and commodity trading."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Kansas City observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Kansas City follows US daylight saving time rules: clocks spring forward 1 hour at 2:00 AM on the second Sunday in March (moving from CST/UTC-6 to CDT/UTC-5), and fall back at 2:00 AM on the first Sunday in November (returning from CDT to CST). Both Missouri and Kansas observe DST on the same federal schedule, so the entire Kansas City metro area — regardless of which side of the state line you are on — shifts clocks simultaneously. This means there is never a time discrepancy between Kansas City, MO and Kansas City, KS."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Kansas City and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kansas City is 1 hour behind New York year-round. When New York observes EST (UTC-5), Kansas City is on CST (UTC-6); when New York shifts to EDT (UTC-4), Kansas City moves to CDT (UTC-5). The 1-hour gap remains constant because both cities follow the same US daylight saving schedule. For example, when it is 9:00 AM in Kansas City, it is 10:00 AM in New York — making cross-timezone business calls between the two cities very manageable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Kansas City and Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kansas City is 2 hours ahead of Los Angeles year-round. When Los Angeles is on PST (UTC-8), Kansas City observes CST (UTC-6); when Los Angeles shifts to PDT (UTC-7), Kansas City uses CDT (UTC-5). The 2-hour difference stays consistent throughout the year since both cities follow US daylight saving rules on the same schedule. When it is noon in Kansas City, it is 10:00 AM in Los Angeles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Kansas City and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kansas City is 6 hours behind London for most of the year (CST vs GMT, and CDT vs BST). However, because the US and UK switch clocks on slightly different weekends in March and October/November, there are brief 1-2 week transition periods when the gap is 5 or 7 hours instead. For general scheduling purposes, use 6 hours as the standard difference — when it is 9:00 AM in Kansas City, it is typically 3:00 PM in London."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Kansas City?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard Kansas City business hours are 8:00 AM – 5:00 PM CST/CDT, Monday through Friday. Kansas City's economy centers on logistics, agriculture, finance, and healthcare — industries that tend to follow traditional schedules. Major employers include Cerner (now Oracle Health), Sprint/T-Mobile operations, Hallmark Cards, and numerous agribusiness firms. The city's central timezone position allows overlap with both East Coast (opens 1 hour earlier) and West Coast (closes 2 hours later) business hours, making it ideal for nationwide coordination."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are Kansas City, MO and Kansas City, KS in the same time zone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, both Kansas City, Missouri and Kansas City, Kansas are in the Central Time Zone and observe identical CST (UTC-6) and CDT (UTC-5) schedules. The Kansas City metro area straddles the Missouri-Kansas state line, but both states use Central Time with the same US daylight saving rules. You will never experience a time difference when crossing State Line Road or traveling between the two sides of the metro. This unified timezone makes the greater Kansas City area function seamlessly as a single economic region despite spanning two states."
+        }
+      }
     ]
   }
 }

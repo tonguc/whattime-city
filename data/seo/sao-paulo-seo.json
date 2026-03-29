@@ -1,5 +1,5 @@
 {
-  "seo_title": "Current Time in São Paulo, Brazil — BRT (UTC-3)",
+  "seo_title": "Current Time in São Paulo — BRT (UTC-3)",
   "seo_description": "What time is it in São Paulo right now? São Paulo uses BRT (Brasília Time, UTC-3). Live clock, sunrise & sunset times, São Paulo vs New York/London/Tokyo time difference.",
   "timezone_facts": {
     "full_name": "Brasília Time (BRT)",
@@ -52,19 +52,64 @@
     }
   ],
   "internal_links": [
-    { "url": "/brazil/", "anchor": "Time in Brazil" },
-    { "url": "/rio-de-janeiro/", "anchor": "Rio de Janeiro time" },
-    { "url": "/time/sao-paulo/new-york/", "anchor": "São Paulo to New York time difference" },
-    { "url": "/time/sao-paulo/london/", "anchor": "São Paulo to London time difference" },
-    { "url": "/time/sao-paulo/miami/", "anchor": "São Paulo to Miami time difference" }
+    {
+      "url": "/brazil/",
+      "anchor": "Time in Brazil"
+    },
+    {
+      "url": "/rio-de-janeiro/",
+      "anchor": "Rio de Janeiro time"
+    },
+    {
+      "url": "/time/sao-paulo/new-york/",
+      "anchor": "São Paulo to New York time difference"
+    },
+    {
+      "url": "/time/sao-paulo/london/",
+      "anchor": "São Paulo to London time difference"
+    },
+    {
+      "url": "/time/sao-paulo/miami/",
+      "anchor": "São Paulo to Miami time difference"
+    }
   ],
   "time_difference_table": [
-    { "city": "New York", "slug": "new-york", "difference": "+2h (EST) / +1h (EDT)", "link": "/time/sao-paulo/new-york/" },
-    { "city": "London", "slug": "london", "difference": "-3h (GMT) / -4h (BST)", "link": "/time/sao-paulo/london/" },
-    { "city": "Paris", "slug": "paris", "difference": "-4h (CET) / -5h (CEST)", "link": "/time/sao-paulo/paris/" },
-    { "city": "Dubai", "slug": "dubai", "difference": "-7h", "link": "/time/sao-paulo/dubai/" },
-    { "city": "Tokyo", "slug": "tokyo", "difference": "-12h", "link": "/time/sao-paulo/tokyo/" },
-    { "city": "Sydney", "slug": "sydney", "difference": "-13h", "link": "/time/sao-paulo/sydney/" }
+    {
+      "city": "New York",
+      "slug": "new-york",
+      "difference": "+2h (EST) / +1h (EDT)",
+      "link": "/time/sao-paulo/new-york/"
+    },
+    {
+      "city": "London",
+      "slug": "london",
+      "difference": "-3h (GMT) / -4h (BST)",
+      "link": "/time/sao-paulo/london/"
+    },
+    {
+      "city": "Paris",
+      "slug": "paris",
+      "difference": "-4h (CET) / -5h (CEST)",
+      "link": "/time/sao-paulo/paris/"
+    },
+    {
+      "city": "Dubai",
+      "slug": "dubai",
+      "difference": "-7h",
+      "link": "/time/sao-paulo/dubai/"
+    },
+    {
+      "city": "Tokyo",
+      "slug": "tokyo",
+      "difference": "-12h",
+      "link": "/time/sao-paulo/tokyo/"
+    },
+    {
+      "city": "Sydney",
+      "slug": "sydney",
+      "difference": "-13h",
+      "link": "/time/sao-paulo/sydney/"
+    }
   ],
   "eeat_footer": "Time zone data for São Paulo is sourced from the IANA Time Zone Database (America/Sao_Paulo). Brazil's abolition of DST was enacted by Decree No. 9,772 of April 25, 2019.",
   "improvement_notes": "Added March 2026. São Paulo is one of the top 5 GSC impression cities but lacked SEO data."
