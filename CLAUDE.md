@@ -200,7 +200,9 @@ Her araçta: **FAQPage + BreadcrumbList JSON-LD** var (aksi belirtilmedikçe).
 ### 12. /time/ Pair Sayfaları ✅ — Tam içerik
 - `app/time/[from]/[to]/page.tsx` — FAQPage + BreadcrumbList JSON-LD
 - 26 city pair için PAIR_CONTEXTS (SSR, Google görür)
-- Dynamic title: "CityA to CityB Time — CityB X Hours Ahead/Behind"
+- Dynamic title: "CityA to CityB Time Difference — CityB X Hours Ahead/Behind"
+  - 60 char guard: uzun çiftlerde (Tokyo+San Francisco) city tekrarı kaldırılır
+  - **Kural:** title'da "Difference" kelimesi OLMALI — GSC sorguları hep "time difference" içeriyor
 
 ### 13. Alan Kodları ✅ — `/area-code/`
 - `/area-code/` — hub sayfası (search, all codes)
@@ -407,17 +409,6 @@ const footer = isLight
 
 ---
 
-## Açık Konular / Sonraki İzleme
-
-- [ ] GSC'de 4 hafta sonra etki ölçümü (baseline: 12,739 imp, 6 click, 0 top-10)
-- [ ] singapore/london (137 imp pos 48), new-york/london (110 imp pos 56) takibi
-- [ ] Top city pages içerik derinliği: moscow, berlin, paris, shanghai (pos 60+ ama yüksek impression)
-- [ ] CTR iyileşmesi: "City N Hours Ahead" title formatı etkisi
-- [ ] "how many hours/seconds in a year" — indexlenme ve ranking takibi (1M + 301K vol)
-- [ ] Denver şehir sayfası — 110K vol, SD 23-24
-- [ ] Barcelona şehir sayfası — 60K vol, SD 24
-- [ ] `/week-number/` sayfası — ~200K vol
-
 ---
 
 ## Bug Fix Geçmişi
@@ -468,6 +459,48 @@ Eksik sayfalar eklendi:
 ### 25. Footer Tools Sütunu ✅
 - Tek kolon → `grid-cols-2` çift sıra
 - `/stopwatch/` linki eklendi (daha önce sitede hiçbir yerden ulaşılamıyordu)
+
+### 26. IST Converter Eksik Reverse Pair'lar ✅ (Mart 2026)
+Rakip analizi: timeanddate bu sorgularda YOK, thetimenow/time.is dominant.
+- `/pst-to-ist/` — ~368K vol, PST 13.5h behind IST (12.5h PDT)
+- `/cst-to-ist/` — ~300K vol, CST 11.5h behind IST (10.5h CDT)
+- `/est-to-ist/` — ~250K vol, EST 10.5h behind IST (9.5h EDT)
+- `/mst-to-ist/` — MST 12.5h behind IST (11.5h MDT), Arizona exception
+- Her biri: ConverterPageShell + 5 FAQ (JSON-LD) + DST notu
+
+### 27. 5 Şehir SEO JSON Güncellemesi ✅ (Mart 2026)
+SEO Engine + AI SEO Engine workflow uygulandı:
+- **Paris**: seo_title 47→32 char (limit aşıyordu!), AI SEO ilk cümle
+- **Moscow**: title "Now" kaldırıldı, AI SEO ilk cümle (MSK, UTC+3, DST yok 2014)
+- **Berlin**: AI SEO ilk cümle (CET UTC+1 / CEST UTC+2), tarih 2026
+- **Shanghai**: AI SEO ilk cümle (CST, UTC+8, DST yok 1991), duplicate schema temizlendi
+- **Sao Paulo**: `faq_schema` EKLENDİ (eksikti → featured snippet çalışmıyordu!),
+  duplicate FAQ silindi, 8 soru + B3 borsası + Faria Lima içeriği eklendi
+
+**AI SEO ilk cümle formatı (zorunlu kural):**
+`"[City], [Country] uses [TZ Full Name] ([abbr], UTC[offset]) year-round/in winter..."`
+
+### 28. /time/ Pair Title Optimizasyonu ✅ (Mart 2026)
+GSC analizi: tüm pair sorguları "time difference" içeriyor ama title sadece "Time" diyordu.
+- Önce: `"Singapore to London Time — London 8 Hours Behind"`
+- Sonra: `"Singapore to London Time Difference — London 8 Hours Behind"`
+- 60 char guard: uzun çiftlerde city tekrarı kaldırılır (Tokyo→SF: "— 17 Hours Behind")
+- Etki: 1100+ /time/[from]/[to]/ sayfası
+
+### 29. Barcelona + Denver SEO JSON ✅ (Mart 2026)
+- `barcelona-seo.json`: CET/CEST, 8 FAQ, NY(6h)/London(1h sabit)/Tokyo(7-8h) diff
+- `denver-seo.json`: MDT UTC offset hatası düzeltildi (UTC-7→UTC-6), duplicate schema temizlendi
+
+---
+
+## Açık Konular / Sonraki Adımlar
+
+- [ ] GSC'de 4 hafta sonra etki ölçümü (/time/ pair title değişikliği + yeni IST converter'lar)
+- [ ] Şehir sayfaları (moscow/berlin/paris/shanghai) pozisyon takibi (pos 60-66 → hedef top 20)
+- [ ] Sao Paulo: pos 51 → top 10 hedefi (en zayıf rekabet, faq_schema eklendi)
+- [ ] /time/ pair sayfaları pos 10-17 → page 1 (tokyo/seattle, dublin/dubai, tokyo/sf)
+- [ ] Denver şehir sayfası render kontrolü — denver-seo.json var, sayfa çalışıyor mu?
+- [ ] Barcelona şehir sayfası indexlenme takibi
 
 ---
 
