@@ -45,39 +45,11 @@ Herhangi bir sayfa veya içerik yazmadan önce **bu sırayla** veri toplanır:
 
 4. **Sayfa yaz** — Ancak yukarıdaki 3 adım tamamlandıktan sonra.
 
-### SEO Engine Kuralları
-- SERP clustering (%60+ overlap = aynı cluster = tek sayfa)
-- `seo_title` ≤44 karakter (template " | whattime.city" = 16 char ekler → toplam ≤60)
-- Featured snippet hedefi: kısa cevap + soru başlıkları + FAQ schema
-- İç link önerileri, rakip pozisyon analizi
-- Her karar veri ile desteklenmeli, tahmin yok
+### ⚠️ Her içerik görevinde bu skill'leri MUTLAKA uygula:
+1. **SEO Engine** → `.claude/commands/seo-engine.md` kurallarını uygula
+2. **AI SEO Engine** → `.claude/commands/ai-seo-engine.md` kurallarını uygula
 
-### AI SEO Engine Kuralları (her FAQ yazımında zorunlu)
-
-**1. İlk cümle formatı — ZORUNLU:**
-```
-"[City], [Country] uses [Full TZ Name] ([abbr], UTC[offset]) year-round/in winter..."
-```
-Örnek: `"Seoul, South Korea uses Korea Standard Time (KST, UTC+9) year-round."`
-
-**2. Lokasyon netliği:**
-- "Barcelona" değil → "Barcelona, Catalonia, Spain"
-- "Denver" değil → "Denver, Colorado, USA"
-
-**3. UTC offset her yanıtta parantez içinde:**
-- `(UTC+8)`, `(UTC-3)` — kısaltmayı her zaman açıkla
-
-**4. DST durumu kesin:**
-- DST YOK: yıl ve yasal dayanak yaz — "Brazil abolished DST by Decree No. 9,772 (April 25, 2019)"
-- DST VAR: "Clocks move forward on the last Sunday in March (2:00 AM → 3:00 AM)"
-
-**5. Saat farkları kesin sayılarla:**
-- "around 6 hours" değil → "exactly 6 hours" veya "5–6 hours depending on DST"
-
-**6. Featured snippet — ilk FAQ cevabı ≤50 kelime, direkt cevap**
-
-**7. IANA identifier her şehir/ülke sayfasında:**
-- `America/Chicago`, `Asia/Seoul`, `Europe/Madrid`
+Sıra: önce SEO Engine, sonra AI SEO Engine. Kullanıcı hatırlatmak zorunda kalmamalı.
 
 **⚠️ CSV'ler stale olabilir.** `duplicate_title_tags.csv`, `broken_links.csv` gibi dosyalar eski crawl'dan gelebilir. Kodu her zaman doğrudan kontrol et, CSV'ye körü körüne güvenme.
 
