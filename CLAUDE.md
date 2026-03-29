@@ -272,6 +272,13 @@ Her araçta: **FAQPage + BreadcrumbList JSON-LD** var (aksi belirtilmedikçe).
 - Her biri: Article + FAQPage + BreadcrumbList JSON-LD schema
 - `/articles/` hub güncellendi
 
+### 20. /stopwatch/ Dedicated Sayfası ✅ (Mart 2026)
+
+- `/stopwatch/` — 1.83M vol, timeanddate wins, biz sadece /timer/ içinde vardık
+- TimerClient'a `defaultTab` prop eklendi → stopwatch tab varsayılan açılıyor
+- FAQPage + BreadcrumbList JSON-LD schema
+- Kod tekrarı yok: mevcut TimerClient yeniden kullanıldı
+
 ---
 
 ## Design System — Tema Kuralları

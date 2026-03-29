@@ -65,9 +65,9 @@ function playAlarm(ctx: AudioContext) {
 }
 
 /* ═══════════════════════════════════════════════════════════ */
-export default function TimerClient() {
+export default function TimerClient({ defaultTab = 'timer' }: { defaultTab?: Tab }) {
   const { isLight } = useCityContext()
-  const [tab, setTab] = useState<Tab>('timer')
+  const [tab, setTab] = useState<Tab>(defaultTab)
 
   /* ───── TIMER STATE ───── */
   const [timerState, setTimerState] = useState<TimerState>('idle')
