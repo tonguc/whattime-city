@@ -15,19 +15,42 @@ export default function ScrollToTop() {
 
   if (!visible) return null
 
+  const prefersReducedMotion =
+    typeof window !== 'undefined' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  const buttonBase = `w-12 h-12 rounded-full flex items-center justify-center shadow-lg ${
+    prefersReducedMotion ? '' : 'transition-all duration-200 ease-out'
+  } active:scale-95 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2`
+
+  const buttonStyle = isLight
+    ? 'bg-slate-800 hover:bg-slate-700 text-white shadow-slate-800/20'
+    : 'bg-white hover:bg-slate-100 text-slate-800 shadow-black/30'
+
   return (
-    <button
-      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      aria-label="Scroll to top"
-      className={`fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full shadow-lg transition-all duration-200 hover:scale-110 ${
-        isLight
-          ? 'bg-slate-800 text-white hover:bg-slate-700'
-          : 'bg-slate-200 text-slate-800 hover:bg-white'
-      }`}
+    <div
+      className="fixed bottom-6 right-4 z-50"
+      style={{ marginBottom: 'env(safe-area-inset-bottom, 0px)' }}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
-        <path fillRule="evenodd" d="M10 17a.75.75 0 01-.75-.75V5.612L5.29 9.77a.75.75 0 01-1.08-1.04l5.25-5.5a.75.75 0 011.08 0l5.25 5.5a.75.75 0 11-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0110 17z" clipRule="evenodd" />
-      </svg>
-    </button>
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        aria-label="Scroll to top"
+        title="Scroll to top"
+        className={`${buttonBase} ${buttonStyle}`}
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <polyline points="18 15 12 9 6 15" />
+        </svg>
+      </button>
+    </div>
   )
 }
