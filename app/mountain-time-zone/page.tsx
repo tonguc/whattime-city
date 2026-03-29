@@ -6,13 +6,13 @@ import HubPageLayout from '@/components/HubPageLayout'
 import TZExplainerClient from '@/components/TZExplainerClient'
 
 export const metadata: Metadata = {
-  title: 'Mountain Time Zone — MST/MDT, UTC-7/UTC-6, States & Cities',
-  description: 'Complete guide to the Mountain Time Zone (MT). Current MST/MDT time, UTC offset, DST dates, all states and major cities in Mountain Time, and time converters.',
+  title: 'Mountain Time Zone — MST/MDT, States & Cities',
+  description: 'What time is it in Mountain Time right now? MST is UTC−7 (winter), MDT is UTC−6 (summer). Full list of states and cities, DST dates, live clock, and converters.',
   keywords: ['mountain time zone', 'mountain time', 'mst time zone', 'mdt time zone', 'mountain standard time', 'what time is it in mountain time', 'mountain time now'],
   alternates: { canonical: 'https://whattime.city/mountain-time-zone/' },
   openGraph: {
-    title: 'Mountain Time Zone — MST/MDT Complete Guide',
-    description: 'Current Mountain Time, UTC offset, DST info, states list, and converters.',
+    title: 'Mountain Time Zone — MST/MDT, States & Cities',
+    description: 'What time is it in Mountain Time right now? MST is UTC−7 (winter), MDT is UTC−6 (summer). States, cities, DST dates, live clock, and converters.',
     type: 'website',
     url: 'https://whattime.city/mountain-time-zone/',
     siteName: 'whattime.city',

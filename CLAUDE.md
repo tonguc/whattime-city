@@ -140,13 +140,108 @@ stockholm, tehran, **tokyo** ✅, vancouver, vienna, washington-dc, zurich
 - `/bst-timezone/` ✅
 - `/cest-timezone/` ✅
 
-### 7. Araçlar (app/tools/ + standalone)
-- `/meeting/` — Meeting Planner ✅
-- `/time-converter/` — Time Converter ✅
-- `/flight-time/` — Flight Time Calculator ✅
-- `/military-time/` — Military Time Converter ✅
-- `/alarm/` — World Alarm ✅
-- `/widget/` — Embed Widget ✅
+**Title uzunluk kuralı:** `seo_title` ≤44 karakter olmalı (template " | whattime.city" = 16 char ekler → toplam ≤60).
+
+### 6. TZ Açıklayıcı Sayfalar ✅
+`/eastern-time-zone/`, `/central-time-zone/`, `/mountain-time-zone/`, `/pacific-time-zone/`,
+`/alaska-time-zone/`, `/hawaii-time-zone/`, `/us-time-zones/`, `/bst-timezone/`, `/cest-timezone/`
+
+### 7. TZ Kısaltma Hub Sayfaları ✅ — HubPageHeader ile
+`/est/`, `/cst/`, `/pst/`, `/mst/`, `/gmt/`, `/utc/`, `/ist/`, `/cdt/`, `/edt/`, `/pdt/`
+Her biri o TZ hakkında içerik + converter + FAQ içeriyor.
+
+### 8. Ülke Zaman Sayfaları ✅ — `/country/`
+- `/country/` — tüm ülkeler listesi (CountriesContent bileşeni)
+- `/country/[country]/` — her ülke için saat + şehirler listesi
+Ayrı standalone ClockClient'lardan farklı — bu route genel ülke-zaman sayfaları.
+
+### 9. Araçlar ✅
+
+Her araçta: **FAQPage + BreadcrumbList JSON-LD** var (aksi belirtilmedikçe).
+
+| Araç | URL | Hedef keyword / hacim | Özellikler |
+|------|-----|----------------------|------------|
+| Meeting Planner | `/meeting/` | "meeting planner time zones" | Çok şehir seçimi, overlap görsel, paylaşılabilir link (/meet/) |
+| Time Converter | `/time-converter/` | "time zone converter" | 400+ şehir, DST-aware date picker, gece yarısı geçiş göstergesi |
+| Flight Time | `/flight-time/` | "flight time calculator" | Kalkış/varış şehri + süre → yerel varış saati, DST otomatik |
+| Military Time | `/military-time/` | "military time" | 24h↔12h çevirici, tam tablo (0000–2359), live clock | FAQ var, breadcrumb yok |
+| Days From Today | `/days-from-today/` | "days from today" | X gün sonrası/öncesi, preset (30/60/90/180), gün adı + hafta no |
+| Date Calculator | `/date-calculator/` | "date calculator" (673K) | İki tarih arası: takvim günü, iş günü, hafta sonu ayrımı, preset'ler |
+| Today's Date | `/todays-date/` | "today's date" (823K) | Tam tarih, haftanın günü, hafta no, yıl ilerlemesi, ISO/US/EU format |
+| Calendar | `/calendar/` | "2026 calendar" (823K) | Yıllık takvim, ABD federal tatilleri, yıl navigasyonu, ay filtresi |
+| Timer | `/timer/` | "online timer" (2.24M) | Countdown + stopwatch, lap times, alarm sesi, preset (1/5/10/25/60 dk) |
+| Countdown | `/countdown/` | "countdown timer" (1.5M+) | 8 preset (NY/Noel/Halloween vb.), custom tarih/başlık, saniye hassasiyeti |
+| Prayer Times | `/prayer-times/` | "prayer times [city]" (33K-60K, SD 15-21) | Fajr/Dhuhr/Asr/Maghrib/Isha, 7 hesap yöntemi, Shafi/Hanafi toggle, 7 günlük tablo, suncalc |
+| Sunrise & Sunset | `/sunrise-sunset/` | "sunrise sunset times" (1M+) | Şehir seçici, dawn/dusk/solar noon, günlük güncelleme, suncalc |
+| Alarm | `/alarm/` | "world alarm" | Dünya saati alarm kurma |
+| Event Time | `/event-time/` | "event time" | Etkinlik zamanı planlama |
+| Jet Lag Advisor | `/jet-lag-advisor/` | "jet lag" | Uçuş sonrası uyum önerileri |
+| World Map | `/map/` | "time zone map" (2.7M) | Canlı dünya saat dilimi haritası |
+| Embed Widget | `/widget/` | — | Site sahipleri için embed clock kodu |
+
+**Paylaşım/özel sayfalar:**
+- `/meet/` — SharedMeetingView (meeting planner paylaşım linki)
+- `/embed/[city]/` — Şehir bazlı embeddable clock
+- `/meeting-planner/` → `/meeting/` (301 redirect)
+
+### 10. Makaleler ✅ — `/articles/*`
+- `/articles/how-many-weeks-in-a-year/`
+- `/articles/how-many-days-in-a-year/`
+- `/articles/how-many-minutes-in-a-year/`
+- `/articles/am-pm/`
+
+### 11. Sunrise/Sunset ✅
+- `/sunrise-sunset/` — hub sayfası (şehir seçici, suncalc ile hesaplama)
+- `/[city]/sun/` — her şehir için individual sunrise/sunset sayfası
+
+### 12. /time/ Pair Sayfaları ✅ — Tam içerik
+- `app/time/[from]/[to]/page.tsx` — FAQPage + BreadcrumbList JSON-LD
+- 26 city pair için PAIR_CONTEXTS (SSR, Google görür)
+- Dynamic title: "CityA to CityB Time — CityB X Hours Ahead/Behind"
+
+### 13. Alan Kodları ✅ — `/area-code/`
+- `/area-code/` — hub sayfası (search, all codes)
+- `/area-code/[code]/` — 272 individual code pages (US + Canada)
+- Her sayfada: FAQPage + BreadcrumbList schema, live clock, DST info, related codes
+- **Title pattern:** `${code} Area Code — ${city}, ${stateCode}` (≤33 chars, no parentheses)
+- **Rakip fırsatı:** 24timezones.com bu alanda dominant (213: 673K, 929: 246K, 917: 246K, 347/437/202/754: 201K vol). Bizim sayfalar mevcut, indexlenmesi gerekiyor.
+
+### 14. Blog / Guides ✅
+- `/blog/` — Blog hub sayfası
+- `/guides/` — Guides hub sayfası
+
+### 15. Teknik SEO ✅
+- Scroll-to-top butonu global (tüm sayfalarda)
+- BreadcrumbList schema: /time/, DST, TZ info sayfaları
+- `overflow-x: clip` — mobil sticky header düzeltmesi
+- `/country/` sayfalarında breadcrumb navigasyon
+- Arizona time page enriched (246K vol, `/arizona/`)
+
+### 16. SEO Metadata Optimizasyonları ✅ (Mart 2026)
+**Rakip analizinden** (24tz, timenow, timeis, timedotnow CSV'leri) gelen fırsatlar:
+
+**Area code sayfaları:**
+- Title format düzeltildi: `(213) Area Code — ... | Time Zone & Location` → `213 Area Code — Los Angeles, CA`
+- Parentheses kaldırıldı, " | Time Zone & Location" kaldırıldı (title çok uzundu)
+
+**"How many weeks in a year" (1M vol, SD 29):**
+- `/articles/how-many-weeks-in-a-year/` — Article JSON-LD schema eklendi
+- Title: 61 char → 41 char (`How Many Weeks in a Year? 52 Weeks (2026)`)
+- time.now bu cluster'da pos 3-10 kazanıyor, timeanddate yok
+
+**Converter sayfaları:**
+- `pst-to-cst`: Bug fix — description "1 hour" → "2 hours behind" (PST UTC-8 vs CST UTC-6 = 2 saat)
+- Tüm over-long titles düzeltildi (≤44 char kuralına uygun):
+  - `pst-to-cst`: 46 → 36 chars
+  - `pst-to-est`: 58 → 46 chars
+  - `cst-to-est`: 60 → 46 chars
+  - `est-to-cst`: 46 → 46 chars
+  - `mountain-time-zone`: 59 → 48 chars
+
+**Rakip keyword gaps (timenow kazanıyor, biz yok):**
+- PST↔CST, EST↔CST, MST↔EST converters: 110K-135K vol, SD 34-55
+- "mountain time" cluster: 301K vol, SD 22-55 — `/mountain-time-zone/` sayfamız var
+- Bunlar var ama indexlenme ve authority meselesi
 
 ---
 
