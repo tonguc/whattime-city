@@ -172,6 +172,8 @@ Her araçta: **FAQPage + BreadcrumbList JSON-LD** var (aksi belirtilmedikçe).
 - `/articles/how-many-weeks-in-a-year/`
 - `/articles/how-many-days-in-a-year/`
 - `/articles/how-many-minutes-in-a-year/`
+- `/articles/how-many-hours-in-a-year/` — 1M vol, SD ~29
+- `/articles/how-many-seconds-in-a-year/` — 301K vol
 - `/articles/am-pm/`
 
 ### 11. Sunrise/Sunset ✅
@@ -260,6 +262,15 @@ Her araçta: **FAQPage + BreadcrumbList JSON-LD** var (aksi belirtilmedikçe).
 **⚠️ Kural: Tool client bileşenlerinde inner max-w kullanma.**
 `ContentPageWrapper` zaten `max-w-6xl` veriyor. Client bileşenler sadece `w-full` veya bare div kullanmalı.
 
+### 19. How Many Hours/Seconds in a Year Makaleleri ✅ (Mart 2026)
+
+- `/articles/how-many-hours-in-a-year/` — 1M vol, SD ~29
+  8,760 (regular) / 8,784 (leap), monthly breakdown, working hours, time unit table, year-by-year 2024–2030
+- `/articles/how-many-seconds-in-a-year/` — 301K vol
+  31,536,000 seconds, step-by-step calculation, monthly/unit tables, fun context (heartbeats, light-year)
+- Her ikisi de: Article + FAQPage + BreadcrumbList JSON-LD schema
+- `/articles/` hub güncellendi
+
 ---
 
 ## Design System — Tema Kuralları
@@ -339,6 +350,8 @@ const footer = isLight
 - [ ] GSC'de 4 hafta sonra etki ölçümü (baseline: 12,739 imp, 6 click, 0 top-10)
 - [ ] singapore/london (137 imp pos 48), new-york/london (110 imp pos 56) takibi
 - [ ] Top city pages içerik derinliği: moscow, berlin, paris, shanghai (pos 60+ ama yüksek impression)
+- [ ] CTR iyileşmesi: "City N Hours Ahead" title formatı etkisi
+- [ ] "how many hours/seconds in a year" — indexlenme ve ranking takibi (1M + 301K vol)
 
 ---
 
