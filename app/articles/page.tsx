@@ -40,6 +40,18 @@ const articles = [
     description: 'There are 525,600 minutes in a regular year and 527,040 in a leap year. Monthly breakdown, time unit comparisons, and the story behind the famous number.',
     tags: ['Calendar', 'Minutes', 'Time'],
   },
+  {
+    slug: 'how-many-hours-in-a-year',
+    title: 'How Many Hours in a Year?',
+    description: 'A regular year has 8,760 hours (365 × 24). A leap year has 8,784 hours. Full breakdown with monthly table, working hours, and year-by-year data.',
+    tags: ['Calendar', 'Hours', 'Time'],
+  },
+  {
+    slug: 'how-many-seconds-in-a-year',
+    title: 'How Many Seconds in a Year?',
+    description: 'A regular year has 31,536,000 seconds (365 × 86,400). A leap year has 31,622,400 seconds. Full breakdown with monthly table and time unit comparisons.',
+    tags: ['Calendar', 'Seconds', 'Time'],
+  },
 ]
 
 const breadcrumbSchema = {
