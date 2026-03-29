@@ -279,6 +279,43 @@ Her araçta: **FAQPage + BreadcrumbList JSON-LD** var (aksi belirtilmedikçe).
 - FAQPage + BreadcrumbList JSON-LD schema
 - Kod tekrarı yok: mevcut TimerClient yeniden kullanıldı
 
+### 21. Articles Tema Fix — `useArticleTheme` Hook ✅ (Mart 2026)
+
+**Sorun:** Articles `page.tsx` dosyaları server component'ti → `useCityContext()` çalışmıyordu → dark modda hardcoded `bg-white` kartlar görünüyordu.
+
+**Çözüm — Pattern:**
+- `page.tsx` (server) = sadece metadata + JSON-LD schema + `<XxxClient />` import
+- `XxxClient.tsx` (client, `'use client'`) = tüm JSX + `useArticleTheme()` hook
+
+**`lib/useArticleTheme.ts`** — yeni hook, tüm article client'larında kullanılır:
+```ts
+import { useCityContext } from '@/lib/CityContext'
+export function useArticleTheme() {
+  const { isLight } = useCityContext()
+  return {
+    heading, body, muted, card, cardAlt, infoBox, highlight,
+    tableWrapper, tableHead, tableHeadCell,
+    tableRowEven, tableRowOdd, tableRowBorder, tableRowCurrent, tableCell,
+    breadcrumb, breadcrumbLink, breadcrumbSep, breadcrumbCurrent,
+    link, footer, divider,
+    subheading  // isLight ? 'text-slate-600' : 'text-slate-300'
+  }
+}
+```
+
+**Tamamlanan Client Dosyaları:**
+- `ArticlesHubClient.tsx` — articles ana hub
+- `AmPmClient.tsx` — /articles/am-pm/
+- `HowManyHoursInAYearClient.tsx` — /articles/how-many-hours-in-a-year/
+- `HowManySecondsInAYearClient.tsx` — /articles/how-many-seconds-in-a-year/
+- `HowManyMonthsInAYearClient.tsx` — /articles/how-many-months-in-a-year/
+- `HowManyWeeksInAYearClient.tsx` — /articles/how-many-weeks-in-a-year/
+- `HowManyDaysInAYearClient.tsx` — /articles/how-many-days-in-a-year/
+- `HowManyMinutesInAYearClient.tsx` — /articles/how-many-minutes-in-a-year/
+
+**⚠️ Kural: Yeni article eklenirken MUTLAKA `*Client.tsx` pattern kullan.**
+`page.tsx`'te asla JSX döndürme — sadece metadata + JSON-LD + Client import.
+
 ---
 
 ## Design System — Tema Kuralları
