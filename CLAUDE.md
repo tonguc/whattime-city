@@ -140,29 +140,33 @@ Her biri o TZ hakkında içerik + converter + FAQ içeriyor.
 Ayrı standalone ClockClient'lardan farklı — bu route genel ülke-zaman sayfaları.
 
 ### 9. Araçlar ✅
-- `/meeting/` — Meeting Planner
-- `/time-converter/` — DST-aware date picker ile
-- `/flight-time/` — Flight Time Calculator
-- `/military-time/` — Military Time Converter
-- `/alarm/` — World Alarm
-- `/widget/` — Embed Widget
-- `/countdown/` — Countdown Timer (New Year, Christmas vb. preset'ler)
-- `/date-calculator/` — Date-to-date calculator (calendar/business days)
-- `/prayer-times/` — Islamic prayer times (7 hesap yöntemi, suncalc)
-- `/days-from-today/` — Days from today calculator
-- `/todays-date/` — Today's date (823K vol)
-- `/calendar/` — Yearly calendar with US holidays (823K vol)
-- `/event-time/` — Event Time
-- `/jet-lag-advisor/` — Jet Lag Advisor
-- `/timer/` — Online Timer & Stopwatch (2.24M vol)
-- `/map/` — World Time Zone Map
 
-**Redirect sayfaları** (gerçek sayfa değil):
-- `/meeting-planner/` → `/meeting/`
+Her araçta: **FAQPage + BreadcrumbList JSON-LD** var (aksi belirtilmedikçe).
 
-**Paylaşım sayfaları:**
-- `/meet/` — SharedMeetingView (meeting link paylaşımı)
-- `/embed/[city]/` — Embeddable clock widget
+| Araç | URL | Hedef keyword / hacim | Özellikler |
+|------|-----|----------------------|------------|
+| Meeting Planner | `/meeting/` | "meeting planner time zones" | Çok şehir seçimi, overlap görsel, paylaşılabilir link (/meet/) |
+| Time Converter | `/time-converter/` | "time zone converter" | 400+ şehir, DST-aware date picker, gece yarısı geçiş göstergesi |
+| Flight Time | `/flight-time/` | "flight time calculator" | Kalkış/varış şehri + süre → yerel varış saati, DST otomatik |
+| Military Time | `/military-time/` | "military time" | 24h↔12h çevirici, tam tablo (0000–2359), live clock | FAQ var, breadcrumb yok |
+| Days From Today | `/days-from-today/` | "days from today" | X gün sonrası/öncesi, preset (30/60/90/180), gün adı + hafta no |
+| Date Calculator | `/date-calculator/` | "date calculator" (673K) | İki tarih arası: takvim günü, iş günü, hafta sonu ayrımı, preset'ler |
+| Today's Date | `/todays-date/` | "today's date" (823K) | Tam tarih, haftanın günü, hafta no, yıl ilerlemesi, ISO/US/EU format |
+| Calendar | `/calendar/` | "2026 calendar" (823K) | Yıllık takvim, ABD federal tatilleri, yıl navigasyonu, ay filtresi |
+| Timer | `/timer/` | "online timer" (2.24M) | Countdown + stopwatch, lap times, alarm sesi, preset (1/5/10/25/60 dk) |
+| Countdown | `/countdown/` | "countdown timer" (1.5M+) | 8 preset (NY/Noel/Halloween vb.), custom tarih/başlık, saniye hassasiyeti |
+| Prayer Times | `/prayer-times/` | "prayer times [city]" (33K-60K, SD 15-21) | Fajr/Dhuhr/Asr/Maghrib/Isha, 7 hesap yöntemi, Shafi/Hanafi toggle, 7 günlük tablo, suncalc |
+| Sunrise & Sunset | `/sunrise-sunset/` | "sunrise sunset times" (1M+) | Şehir seçici, dawn/dusk/solar noon, günlük güncelleme, suncalc |
+| Alarm | `/alarm/` | "world alarm" | Dünya saati alarm kurma |
+| Event Time | `/event-time/` | "event time" | Etkinlik zamanı planlama |
+| Jet Lag Advisor | `/jet-lag-advisor/` | "jet lag" | Uçuş sonrası uyum önerileri |
+| World Map | `/map/` | "time zone map" (2.7M) | Canlı dünya saat dilimi haritası |
+| Embed Widget | `/widget/` | — | Site sahipleri için embed clock kodu |
+
+**Paylaşım/özel sayfalar:**
+- `/meet/` — SharedMeetingView (meeting planner paylaşım linki)
+- `/embed/[city]/` — Şehir bazlı embeddable clock
+- `/meeting-planner/` → `/meeting/` (301 redirect)
 
 ### 10. Makaleler ✅ — `/articles/*`
 - `/articles/how-many-weeks-in-a-year/`
