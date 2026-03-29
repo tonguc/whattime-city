@@ -41,7 +41,7 @@ export default function RussiaClockClient() {
     <div className="space-y-4">
       {/* Live Clock — 4 time zones */}
       <section>
-        <div className="rounded-2xl text-white p-6 text-center bg-blue-800">
+        <div className="rounded-2xl text-white p-6 text-center bg-amber-600">
           <div className="text-sm font-bold uppercase tracking-widest mb-3 opacity-90">
             Current Time in Russia
           </div>

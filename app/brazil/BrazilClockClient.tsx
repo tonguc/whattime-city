@@ -40,7 +40,7 @@ export default function BrazilClockClient() {
     <div className="space-y-4">
       {/* Live Clock — 3 time zones */}
       <section>
-        <div className="rounded-2xl text-white p-6 text-center bg-green-700">
+        <div className="rounded-2xl text-white p-6 text-center bg-cyan-600">
           <div className="text-sm font-bold uppercase tracking-widest mb-3 opacity-90">
             Current Time in Brazil
           </div>

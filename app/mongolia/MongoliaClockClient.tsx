@@ -37,7 +37,7 @@ export default function MongoliaClockClient() {
     <div className="space-y-4">
       {/* Live Clocks */}
       <section>
-        <div className="rounded-2xl text-white p-6 text-center bg-sky-800">
+        <div className="rounded-2xl text-white p-6 text-center bg-red-700">
           <div className="text-sm font-bold uppercase tracking-widest mb-2 opacity-90">
             Current Time in Mongolia
           </div>

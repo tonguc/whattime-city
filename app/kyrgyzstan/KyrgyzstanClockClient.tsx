@@ -30,14 +30,20 @@ export default function KyrgyzstanClockClient() {
   return (
     <div className="space-y-4">
       {/* Live Clock */}
-      <div className={card}>
-        <div className="mb-1 text-sm font-medium uppercase tracking-wider text-red-700">Kyrgyzstan Time &mdash; KGT</div>
-        <div className={`text-4xl font-semibold ${heading}`} style={{ fontVariantNumeric: 'tabular-nums' }}>
-          {mounted ? time : '--:--:--'}
+      <section>
+        <div className="rounded-2xl text-white p-6 text-center bg-red-700">
+          <div className="text-sm font-bold uppercase tracking-widest mb-2 opacity-90">Current Time in Kyrgyzstan</div>
+          <div className="text-6xl font-bold tracking-tight mb-1" style={{ fontVariantNumeric: 'tabular-nums' }}>
+            {mounted ? time : '--:--:--'}
+          </div>
+          <div className="text-sm opacity-80 mb-3">{mounted ? date : ''}</div>
+          <div className="flex justify-center gap-3 text-sm flex-wrap">
+            <span className="px-3 py-1 rounded-full font-medium bg-white/40">KGT &middot; UTC+6</span>
+            <span className="px-3 py-1 rounded-full font-medium bg-white/20">No DST</span>
+            <span className="px-3 py-1 rounded-full font-medium bg-white/20">Pop. ~7M</span>
+          </div>
         </div>
-        <div className={`mt-1 text-sm ${subText}`}>{mounted ? date : '\u00A0'}</div>
-        <div className={`mt-2 text-xs ${mutedText}`}>UTC+6 &middot; No DST observed</div>
-      </div>
+      </section>
 
       {/* Quick Facts */}
       <div className={card}>

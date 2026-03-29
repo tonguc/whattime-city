@@ -40,7 +40,7 @@ export default function CubaClockClient() {
     <div className="space-y-4">
       {/* Live Clock */}
       <section>
-        <div className="rounded-2xl text-white p-6 text-center bg-red-800">
+        <div className="rounded-2xl text-white p-6 text-center bg-blue-700">
           <div className="text-sm font-bold uppercase tracking-widest mb-2 opacity-90">
             Current Time in Cuba
           </div>

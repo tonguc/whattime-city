@@ -32,22 +32,28 @@ export default function DrCongoClockClient() {
 
   return (
     <div className="space-y-4">
-      {/* Dual Live Clocks */}
-      <div className={card}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className={`${innerCard} text-center`}>
-            <p className={`text-xs font-medium uppercase tracking-wider ${mutedText}`}>West &mdash; WAT &middot; UTC+1</p>
-            <p className={`mt-2 text-3xl font-semibold ${heading}`} style={{ fontVariantNumeric: 'tabular-nums' }}>{mounted ? westTime : '--:--:--'}</p>
-            <p className={`text-sm ${subText}`}>Kinshasa</p>
+      {/* Live Clock */}
+      <section>
+        <div className="rounded-2xl text-white p-6 text-center bg-emerald-600">
+          <div className="text-sm font-bold uppercase tracking-widest mb-2 opacity-90">Current Time in DR Congo</div>
+          <div className="flex justify-center gap-8 mb-1">
+            <div>
+              <div className="text-5xl font-bold tracking-tight" style={{ fontVariantNumeric: 'tabular-nums' }}>{mounted ? westTime : '--:--:--'}</div>
+              <div className="text-xs opacity-70 mt-1">West (WAT &middot; UTC+1)</div>
+            </div>
+            <div>
+              <div className="text-5xl font-bold tracking-tight" style={{ fontVariantNumeric: 'tabular-nums' }}>{mounted ? eastTime : '--:--:--'}</div>
+              <div className="text-xs opacity-70 mt-1">East (CAT &middot; UTC+2)</div>
+            </div>
           </div>
-          <div className={`${innerCard} text-center`}>
-            <p className={`text-xs font-medium uppercase tracking-wider ${mutedText}`}>East &mdash; CAT &middot; UTC+2</p>
-            <p className={`mt-2 text-3xl font-semibold ${heading}`} style={{ fontVariantNumeric: 'tabular-nums' }}>{mounted ? eastTime : '--:--:--'}</p>
-            <p className={`text-sm ${subText}`}>Lubumbashi</p>
+          <div className="text-sm opacity-80 mb-3">{mounted ? date : ''}</div>
+          <div className="flex justify-center gap-3 text-sm flex-wrap">
+            <span className="px-3 py-1 rounded-full font-medium bg-white/40">WAT/CAT &middot; UTC+1 / UTC+2</span>
+            <span className="px-3 py-1 rounded-full font-medium bg-white/20">2 Time Zones</span>
+            <span className="px-3 py-1 rounded-full font-medium bg-white/20">Pop. ~102M</span>
           </div>
         </div>
-        <p className={`mt-3 text-center text-sm ${subText}`}>{mounted ? date : '\u00A0'}</p>
-      </div>
+      </section>
 
       {/* Quick Facts */}
       <div className={card}>

@@ -37,7 +37,7 @@ export default function UnitedStatesClockClient() {
   return (
     <div className="space-y-4">
       <section>
-        <div className="rounded-2xl text-white p-6 text-center bg-blue-800">
+        <div className="rounded-2xl text-white p-6 text-center bg-blue-700">
           <div className="text-sm font-bold uppercase tracking-widest mb-3 opacity-90">Current Time in the United States</div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
             {ZONES.map((z, i) => (

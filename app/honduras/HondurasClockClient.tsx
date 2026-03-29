@@ -29,32 +29,21 @@ export default function HondurasClockClient() {
 
   return (
     <div className="space-y-4">
-      <div className={`${card} text-center`}>
-        <div className="inline-block rounded-xl bg-blue-600 px-6 py-4">
-          <p className="text-3xl font-bold text-white" style={{ fontVariantNumeric: 'tabular-nums' }}>{mounted ? time : '--:--:--'}</p>
+      {/* Live Clock */}
+      <section>
+        <div className="rounded-2xl text-white p-6 text-center bg-blue-700">
+          <div className="text-sm font-bold uppercase tracking-widest mb-2 opacity-90">Current Time in Honduras</div>
+          <div className="text-6xl font-bold tracking-tight mb-1" style={{ fontVariantNumeric: 'tabular-nums' }}>
+            {mounted ? time : '--:--:--'}
+          </div>
+          <div className="text-sm opacity-80 mb-3">{mounted ? date : ''}</div>
+          <div className="flex justify-center gap-3 text-sm flex-wrap">
+            <span className="px-3 py-1 rounded-full font-medium bg-white/40">CST &middot; UTC-6</span>
+            <span className="px-3 py-1 rounded-full font-medium bg-white/20">No DST</span>
+            <span className="px-3 py-1 rounded-full font-medium bg-white/20">Pop. ~10.4M</span>
+          </div>
         </div>
-        <p className={`mt-3 text-sm ${subText}`}>{mounted ? date : '\u00A0'}</p>
-        <p className={`mt-1 text-xs ${mutedText}`}>CST UTC&minus;6 &middot; No DST</p>
-      </div>
-
-      <div className={card}>
-        <h3 className={`mb-3 text-lg font-semibold ${heading}`}>Quick Facts</h3>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-          {[
-            ['Population', '~10.4 Million'],
-            ['Timezone', 'CST (Central)'],
-            ['UTC Offset', 'UTC\u22126'],
-            ['Capital', 'Tegucigalpa'],
-            ['Currency', 'Lempira (L)'],
-            ['Language', 'Spanish'],
-          ].map(([label, value]) => (
-            <div key={label} className={innerCard}>
-              <p className={`text-xs ${mutedText}`}>{label}</p>
-              <p className={`text-sm font-medium ${subText}`}>{value}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+      </section>
 
       <div className={card}>
         <h3 className={`mb-2 text-lg font-semibold ${heading}`}>Maya Ruins &amp; Reef Diving</h3>

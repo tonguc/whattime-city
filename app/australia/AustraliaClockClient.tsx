@@ -36,7 +36,7 @@ export default function AustraliaClockClient() {
     <div className="space-y-4">
       {/* Live Clock — 3 time zones */}
       <section>
-        <div className="rounded-2xl text-white p-6 text-center bg-emerald-700">
+        <div className="rounded-2xl text-white p-6 text-center bg-purple-700">
           <div className="text-sm font-bold uppercase tracking-widest mb-3 opacity-90">
             Current Time in Australia
           </div>

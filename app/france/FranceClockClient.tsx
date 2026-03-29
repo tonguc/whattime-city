@@ -40,7 +40,7 @@ export default function FranceClockClient() {
     <div className="space-y-4">
       {/* Live Clock */}
       <section>
-        <div className="rounded-2xl text-white p-6 text-center bg-blue-800">
+        <div className="rounded-2xl text-white p-6 text-center bg-emerald-600">
           <div className="text-sm font-bold uppercase tracking-widest mb-2 opacity-90">
             Current Time in France
           </div>

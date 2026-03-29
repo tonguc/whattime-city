@@ -41,16 +41,20 @@ export default function GabonClockClient() {
   return (
     <div className="space-y-4">
       {/* Live Clock */}
-      <div className={card}>
-        <div className="mb-1 flex items-center gap-2">
-          <span className="inline-block h-3 w-3 rounded-full bg-green-800" />
-          <span className={`text-sm font-medium ${subText}`}>WAT &middot; UTC+1 &middot; No DST</span>
+      <section>
+        <div className="rounded-2xl text-white p-6 text-center bg-emerald-600">
+          <div className="text-sm font-bold uppercase tracking-widest mb-2 opacity-90">Current Time in Gabon</div>
+          <div className="text-6xl font-bold tracking-tight mb-1" style={{ fontVariantNumeric: 'tabular-nums' }}>
+            {mounted ? time : '--:--:--'}
+          </div>
+          <div className="text-sm opacity-80 mb-3">{mounted ? date : ''}</div>
+          <div className="flex justify-center gap-3 text-sm flex-wrap">
+            <span className="px-3 py-1 rounded-full font-medium bg-white/40">WAT &middot; UTC+1</span>
+            <span className="px-3 py-1 rounded-full font-medium bg-white/20">No DST</span>
+            <span className="px-3 py-1 rounded-full font-medium bg-white/20">Pop. ~2.4M</span>
+          </div>
         </div>
-        <div className={`text-4xl font-semibold tracking-tight ${heading}`} style={{ fontVariantNumeric: 'tabular-nums' }}>
-          {mounted ? time : '--:--:--'}
-        </div>
-        <p className={`mt-1 text-sm ${mutedText}`}>{mounted ? date : '\u00A0'}</p>
-      </div>
+      </section>
 
       {/* Quick Facts */}
       <div className={card}>

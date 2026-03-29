@@ -33,14 +33,21 @@ export default function TurkmenistanClockClient() {
 
   return (
     <div className="space-y-4">
-      <div className="rounded-2xl bg-green-800 p-6 text-center text-white">
-        <p className="text-sm font-medium uppercase tracking-wide opacity-80">Current Time in Turkmenistan</p>
-        <p className="mt-2 text-5xl font-bold tracking-tight" style={{ fontVariantNumeric: 'tabular-nums' }}>
-          {mounted ? time : '--:--:--'}
-        </p>
-        <p className="mt-1 text-base opacity-90">{mounted ? date : '\u00A0'}</p>
-        <p className="mt-1 text-xs font-medium opacity-70">TMT &middot; UTC+5 &middot; No DST</p>
-      </div>
+      {/* Live Clock */}
+      <section>
+        <div className="rounded-2xl text-white p-6 text-center bg-amber-600">
+          <div className="text-sm font-bold uppercase tracking-widest mb-2 opacity-90">Current Time in Turkmenistan</div>
+          <div className="text-6xl font-bold tracking-tight mb-1" style={{ fontVariantNumeric: 'tabular-nums' }}>
+            {mounted ? time : '--:--:--'}
+          </div>
+          <div className="text-sm opacity-80 mb-3">{mounted ? date : ''}</div>
+          <div className="flex justify-center gap-3 text-sm flex-wrap">
+            <span className="px-3 py-1 rounded-full font-medium bg-white/40">TMT &middot; UTC+5</span>
+            <span className="px-3 py-1 rounded-full font-medium bg-white/20">No DST</span>
+            <span className="px-3 py-1 rounded-full font-medium bg-white/20">Pop. ~6.5M</span>
+          </div>
+        </div>
+      </section>
 
       <div className={card}>
         <h2 className={`mb-3 text-lg font-semibold ${heading}`}>Quick Facts</h2>

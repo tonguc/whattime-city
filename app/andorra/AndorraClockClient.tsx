@@ -29,32 +29,21 @@ export default function AndorraClockClient() {
 
   return (
     <div className="space-y-4">
-      <div className={`${card} text-center`}>
-        <div className="inline-block rounded-xl bg-blue-700 px-6 py-4">
-          <p className="text-3xl font-bold text-white" style={{ fontVariantNumeric: 'tabular-nums' }}>{mounted ? time : '--:--:--'}</p>
+      {/* Live Clock */}
+      <section>
+        <div className="rounded-2xl text-white p-6 text-center bg-emerald-600">
+          <div className="text-sm font-bold uppercase tracking-widest mb-2 opacity-90">Current Time in Andorra</div>
+          <div className="text-6xl font-bold tracking-tight mb-1" style={{ fontVariantNumeric: 'tabular-nums' }}>
+            {mounted ? time : '--:--:--'}
+          </div>
+          <div className="text-sm opacity-80 mb-3">{mounted ? date : ''}</div>
+          <div className="flex justify-center gap-3 text-sm flex-wrap">
+            <span className="px-3 py-1 rounded-full font-medium bg-white/40">CET &middot; UTC+1 / UTC+2</span>
+            <span className="px-3 py-1 rounded-full font-medium bg-white/20">Observes DST</span>
+            <span className="px-3 py-1 rounded-full font-medium bg-white/20">Pop. ~80K</span>
+          </div>
         </div>
-        <p className={`mt-3 text-sm ${subText}`}>{mounted ? date : '\u00A0'}</p>
-        <p className={`mt-1 text-xs ${mutedText}`}>CET UTC+1 &middot; CEST UTC+2 &middot; Observes DST</p>
-      </div>
-
-      <div className={card}>
-        <h3 className={`mb-3 text-lg font-semibold ${heading}`}>Quick Facts</h3>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-          {[
-            ['Population', '~80,000'],
-            ['Timezone', 'CET / CEST'],
-            ['UTC Offset', '+1 / +2 (DST)'],
-            ['Capital', 'Andorra la Vella'],
-            ['Currency', 'Euro (&euro;)'],
-            ['Language', 'Catalan'],
-          ].map(([label, value]) => (
-            <div key={label} className={innerCard}>
-              <p className={`text-xs ${mutedText}`}>{label}</p>
-              <p className={`text-sm font-medium ${subText}`}>{value}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+      </section>
 
       <div className={card}>
         <h3 className={`mb-2 text-lg font-semibold ${heading}`}>Pyrenees Microstate</h3>

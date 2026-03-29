@@ -32,11 +32,20 @@ export default function PalauClockClient() {
   return (
     <div className="space-y-4">
       {/* Live Clock */}
-      <div className="rounded-2xl bg-cyan-700 p-6 text-center text-white">
-        <p className="text-sm font-medium uppercase tracking-widest opacity-80">Palau &mdash; PWT (UTC+9)</p>
-        <p className="mt-2 text-5xl font-bold" style={{ fontVariantNumeric: 'tabular-nums' }}>{mounted ? time : '--:--:--'}</p>
-        <p className="mt-1 text-sm opacity-70">{mounted ? date : '\u00A0'}</p>
-      </div>
+      <section>
+        <div className="rounded-2xl text-white p-6 text-center bg-red-700">
+          <div className="text-sm font-bold uppercase tracking-widest mb-2 opacity-90">Current Time in Palau</div>
+          <div className="text-6xl font-bold tracking-tight mb-1" style={{ fontVariantNumeric: 'tabular-nums' }}>
+            {mounted ? time : '--:--:--'}
+          </div>
+          <div className="text-sm opacity-80 mb-3">{mounted ? date : ''}</div>
+          <div className="flex justify-center gap-3 text-sm flex-wrap">
+            <span className="px-3 py-1 rounded-full font-medium bg-white/40">PWT &middot; UTC+9</span>
+            <span className="px-3 py-1 rounded-full font-medium bg-white/20">No DST</span>
+            <span className="px-3 py-1 rounded-full font-medium bg-white/20">Pop. ~18K</span>
+          </div>
+        </div>
+      </section>
 
       {/* Quick Facts */}
       <div className={card}>

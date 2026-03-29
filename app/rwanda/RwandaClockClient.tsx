@@ -32,11 +32,20 @@ export default function RwandaClockClient() {
   return (
     <div className="space-y-4">
       {/* Live Clock */}
-      <div className="rounded-2xl bg-blue-700 p-6 text-center text-white">
-        <p className="text-sm font-medium uppercase tracking-widest opacity-80">Rwanda &mdash; CAT (UTC+2)</p>
-        <p className="mt-2 text-5xl font-bold" style={{ fontVariantNumeric: 'tabular-nums' }}>{mounted ? time : '--:--:--'}</p>
-        <p className="mt-1 text-sm opacity-70">{mounted ? date : '\u00A0'}</p>
-      </div>
+      <section>
+        <div className="rounded-2xl text-white p-6 text-center bg-emerald-600">
+          <div className="text-sm font-bold uppercase tracking-widest mb-2 opacity-90">Current Time in Rwanda</div>
+          <div className="text-6xl font-bold tracking-tight mb-1" style={{ fontVariantNumeric: 'tabular-nums' }}>
+            {mounted ? time : '--:--:--'}
+          </div>
+          <div className="text-sm opacity-80 mb-3">{mounted ? date : ''}</div>
+          <div className="flex justify-center gap-3 text-sm flex-wrap">
+            <span className="px-3 py-1 rounded-full font-medium bg-white/40">CAT &middot; UTC+2</span>
+            <span className="px-3 py-1 rounded-full font-medium bg-white/20">No DST</span>
+            <span className="px-3 py-1 rounded-full font-medium bg-white/20">Pop. ~14M</span>
+          </div>
+        </div>
+      </section>
 
       {/* Quick Facts */}
       <div className={card}>

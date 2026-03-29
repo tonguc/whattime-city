@@ -41,7 +41,7 @@ export default function PortugalClockClient() {
     <div className="space-y-4">
       {/* Live Clock — 2 zones */}
       <section>
-        <div className="rounded-2xl text-white p-6 text-center bg-green-800">
+        <div className="rounded-2xl text-white p-6 text-center bg-emerald-600">
           <div className="text-sm font-bold uppercase tracking-widest mb-3 opacity-90">
             Current Time in Portugal
           </div>
