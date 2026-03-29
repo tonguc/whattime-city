@@ -252,6 +252,18 @@ Tema context'ini sağlar. Server component olabilir.
 - [x] BreadcrumbList schema — zaten mevcut (`<script>` tag JSX'te, satır 267-270)
 - [x] DST cluster — ZATEN TAMAMLANMIŞTI (usa/uk/europe/australia/canada/nz/mexico/countries)
 - [x] India time hub — ZATEN MEVCUTTU (/india/page.tsx)
+- [x] Şehir aramasında US eyalet desteği — Florida, Texas vb. yazınca şehirler çıkıyor
+  - `lib/cities.ts`, `components/Search.tsx`, `scripts/generate-search-index.js` güncellendi
+- [x] 236 ClockClient dosyası zenginleştirildi — 6 satır stub'dan 80-150 satır bileşenlere
+  - Live saat, quick facts, unique içerik, major cities
+- [x] Tüm clock banner renkleri timezone offset'e göre standardize edildi (6 renk grubu):
+  - `bg-blue-700` (UTC-12→-5), `bg-cyan-600` (UTC-4→-1), `bg-emerald-600` (UTC 0→+2)
+  - `bg-amber-600` (UTC+3→+5:30), `bg-red-700` (UTC+6→+9), `bg-purple-700` (UTC+10→+14)
+- [x] Countries sayfası SEO intro metni grid altına taşındı (mobil UX iyileştirme)
+- [x] HubPageHeader'a breadcrumb navigasyonu eklendi (Home / Countries / Ülke)
+- [x] Global scroll-to-top butonu — tüm sayfalarda (`GlobalProviders` wrapper ile)
+  - `components/ScrollToTop.tsx` — ScrollFAB ile aynı görünüm (chevron, w-12 h-12)
+  - `components/GlobalProviders.tsx` — CityProvider + ScrollToTop, layout.tsx'te kullanılır
 
 ### ⏳ Sonraki İzleme
 - [ ] 4 hafta sonra GSC'de etki ölçümü: pos 40-60 sayfaları → hedef pos 15-25
@@ -261,9 +273,9 @@ Tema context'ini sağlar. Server component olabilir.
 ---
 
 ## Git Workflow
-- Feature branch: `claude/review-seo-analysis-sBM2v`
+- Feature branch: `claude/add-area-code-content-4BfEf`
 - Squash merge to main
 - Her squash merge sonrası branch'i senkronize et:
   ```bash
-  git fetch origin main && git reset --hard origin/main && git push --force-with-lease origin claude/review-seo-analysis-sBM2v
+  git fetch origin main && git reset --hard origin/main && git push --force-with-lease origin claude/add-area-code-content-4BfEf
   ```
