@@ -30,19 +30,20 @@ export default function Footer(_props: FooterProps) {
           </div>
           <div>
             <p className={`font-semibold mb-2 ${textMuted}`}>Tools</p>
-            <div className="flex flex-col gap-1.5">
+            <div className="grid grid-cols-2 gap-x-3 gap-y-1.5">
               <Link href="/time-converter/" className={`${textMuted} hover:underline`}>Time Converter</Link>
               <Link href="/meeting/" className={`${textMuted} hover:underline`}>Meeting Planner</Link>
-              <Link href="/flight-time/" className={`${textMuted} hover:underline`}>Flight Time</Link>
-              <Link href="/military-time/" className={`${textMuted} hover:underline`}>Military Time</Link>
-              <Link href="/days-from-today/" className={`${textMuted} hover:underline`}>Days Calculator</Link>
-              <Link href="/date-calculator/" className={`${textMuted} hover:underline`}>Date Calculator</Link>
-              <Link href="/sunrise-sunset/" className={`${textMuted} hover:underline`}>Sunrise & Sunset</Link>
-              <Link href="/prayer-times/" className={`${textMuted} hover:underline`}>Prayer Times</Link>
               <Link href="/timer/" className={`${textMuted} hover:underline`}>Timer</Link>
+              <Link href="/stopwatch/" className={`${textMuted} hover:underline`}>Stopwatch</Link>
               <Link href="/countdown/" className={`${textMuted} hover:underline`}>Countdown</Link>
               <Link href="/todays-date/" className={`${textMuted} hover:underline`}>Today&apos;s Date</Link>
               <Link href="/calendar/" className={`${textMuted} hover:underline`}>Calendar</Link>
+              <Link href="/days-from-today/" className={`${textMuted} hover:underline`}>Days Calculator</Link>
+              <Link href="/date-calculator/" className={`${textMuted} hover:underline`}>Date Calculator</Link>
+              <Link href="/flight-time/" className={`${textMuted} hover:underline`}>Flight Time</Link>
+              <Link href="/sunrise-sunset/" className={`${textMuted} hover:underline`}>Sunrise & Sunset</Link>
+              <Link href="/prayer-times/" className={`${textMuted} hover:underline`}>Prayer Times</Link>
+              <Link href="/military-time/" className={`${textMuted} hover:underline`}>Military Time</Link>
             </div>
           </div>
           <div>
