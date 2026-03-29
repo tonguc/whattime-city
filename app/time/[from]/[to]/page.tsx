@@ -78,9 +78,13 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
 
   const callWindow = getBestCallWindow(fromOffset, toOffset, fromCity.city)
 
-  const title = diffHours === 0
-    ? `${fromCity.city} to ${toCity.city} Time — Same Time Zone`
-    : `${fromCity.city} to ${toCity.city} Time — ${toCity.city} ${diffStr} ${diffHours > 0 ? 'Ahead' : 'Behind'}`
+  const titleFull = diffHours === 0
+    ? `${fromCity.city} to ${toCity.city} Time Difference — Same Zone`
+    : `${fromCity.city} to ${toCity.city} Time Difference — ${toCity.city} ${diffStr} ${diffHours > 0 ? 'Ahead' : 'Behind'}`
+  const titleShort = diffHours === 0
+    ? `${fromCity.city} to ${toCity.city} Time Difference`
+    : `${fromCity.city} to ${toCity.city} Time Difference — ${diffStr} ${diffHours > 0 ? 'Ahead' : 'Behind'}`
+  const title = titleFull.length <= 60 ? titleFull : titleShort
 
   const fromUtcLabel = `UTC${fromOffset >= 0 ? '+' : ''}${fromOffset % 1 === 0 ? fromOffset : fromOffset.toFixed(1)}`
   const toUtcLabel = `UTC${toOffset >= 0 ? '+' : ''}${toOffset % 1 === 0 ? toOffset : toOffset.toFixed(1)}`
@@ -165,7 +169,7 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
       `${fromCity.city} ${toCity.city} time converter`,
     ],
     openGraph: {
-      title: `${fromCity.city} ↔ ${toCity.city} — ${diffHours === 0 ? 'Same Time Zone' : `${toCity.city} ${diffStr} ${diffHours > 0 ? 'Ahead' : 'Behind'}`}`,
+      title: `${fromCity.city} to ${toCity.city} Time Difference — ${diffHours === 0 ? 'Same Zone' : `${toCity.city} ${diffStr} ${diffHours > 0 ? 'Ahead' : 'Behind'}`}`,
       description,
       type: 'website',
       siteName: 'whattime.city',
