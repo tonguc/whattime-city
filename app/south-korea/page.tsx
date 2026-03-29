@@ -6,9 +6,9 @@ import SouthKoreaClockClient from './SouthKoreaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in South Korea Now — KST (UTC+9) · Seoul, Busan · No DST',
+  title: 'Time in Korea Now — KST (UTC+9) · No DST',
   description:
-    'What time is it in South Korea right now? Korea uses KST (Korea Standard Time, UTC+9) year-round — no Daylight Saving Time. Same offset as Japan (JST). Live Seoul clock and best time to call.',
+    'Current time in South Korea (Korea time now). KST (Korea Standard Time, UTC+9) year-round — no Daylight Saving Time since 1988. Same offset as Japan (JST). Live Seoul clock, time difference to US, UK, and Europe.',
   keywords: [
     'time in south korea', 'korea time now', 'south korea time',
     'what time is it in south korea', 'KST time zone', 'korea standard time',
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/south-korea/' },
   openGraph: {
-    title: 'Current Time in South Korea — KST (UTC+9)',
-    description: 'Live South Korea / Seoul time. KST is UTC+9, same as Japan (JST). No DST. Check Korea vs US, UK, Europe, and Asia.',
+    title: 'Korea Time Now — KST (UTC+9) · No DST',
+    description: 'Korea time now — KST (UTC+9), same as Japan (JST). No DST since 1988. Live clock, time difference to US, UK, Europe.',
     type: 'website', url: 'https://whattime.city/south-korea/', siteName: 'whattime.city',
   },
 }
@@ -31,7 +31,7 @@ const faqSchema = {
     {
       '@type': 'Question',
       name: 'What time is it in South Korea right now?',
-      acceptedAnswer: { '@type': 'Answer', text: 'South Korea uses Korea Standard Time (KST), which is UTC+9. There is no Daylight Saving Time. All cities — Seoul, Busan, Incheon, Daegu — are on the same time zone. The live clock at the top shows the current time in South Korea.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'South Korea uses Korea Standard Time (KST, UTC+9) year-round. South Korea abolished Daylight Saving Time in 1988 and KST (UTC+9) has been fixed ever since. All cities — Seoul, Busan, Incheon, Daegu — share the same time zone. The IANA identifier is Asia/Seoul.' },
     },
     {
       '@type': 'Question',
