@@ -226,6 +226,7 @@ export default async function sitemap() {
     { slug: 'world-alarm', priority: 0.7 },
     { slug: 'days-from-today', priority: 0.8 },
     { slug: 'days-ago', priority: 0.8 },
+    { slug: 'week-number', priority: 0.9 },
     { slug: 'date-calculator', priority: 0.8 },
     { slug: 'countdown', priority: 0.8 },
     { slug: 'timer', priority: 0.9 },
