@@ -188,6 +188,8 @@ Her araçta: **FAQPage + BreadcrumbList JSON-LD** var (aksi belirtilmedikçe).
 - `/articles/how-many-weeks-in-a-year/`
 - `/articles/how-many-days-in-a-year/`
 - `/articles/how-many-minutes-in-a-year/`
+- `/articles/how-many-hours-in-a-year/` — 1M vol, SD ~29
+- `/articles/how-many-seconds-in-a-year/` — 301K vol
 - `/articles/am-pm/`
 
 ### 11. Sunrise/Sunset ✅
@@ -352,6 +354,7 @@ Tema context'ini sağlar. Server component olabilir.
 - [ ] 4 hafta sonra GSC'de etki ölçümü: pos 40-60 sayfaları → hedef pos 15-25
 - [ ] singapore/london (137 imp), new-york/london (110 imp) takibi
 - [ ] CTR iyileşmesi: "City N Hours Ahead" title formatı etkisi
+- [ ] "how many hours/seconds in a year" — indexlenme ve ranking takibi (1M + 301K vol)
 
 ---
 
