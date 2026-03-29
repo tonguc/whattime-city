@@ -65,9 +65,9 @@ function playAlarm(ctx: AudioContext) {
 }
 
 /* ═══════════════════════════════════════════════════════════ */
-export default function TimerClient() {
+export default function TimerClient({ defaultTab = 'timer' }: { defaultTab?: Tab }) {
   const { isLight } = useCityContext()
-  const [tab, setTab] = useState<Tab>('timer')
+  const [tab, setTab] = useState<Tab>(defaultTab)
 
   /* ───── TIMER STATE ───── */
   const [timerState, setTimerState] = useState<TimerState>('idle')
@@ -217,7 +217,7 @@ export default function TimerClient() {
   const progress = initialMs > 0 ? ((initialMs - remainingMs) / initialMs) * 100 : 0
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8 space-y-8">
+    <div className="w-full space-y-8">
       {/* Breadcrumb */}
       <nav className={`flex items-center gap-1.5 text-sm ${mutedText}`}>
         <Link href="/" className="hover:underline">Home</Link>
