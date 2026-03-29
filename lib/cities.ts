@@ -134,9 +134,10 @@ export function getCitiesByCountry(countryCode: string): import('@/core/types').
  */
 export function searchCities(query: string): import('@/core/types').City[] {
   const q = query.toLowerCase()
-  return cities.filter(c => 
-    c.city.toLowerCase().includes(q) || 
+  return cities.filter(c =>
+    c.city.toLowerCase().includes(q) ||
     c.country.toLowerCase().includes(q) ||
-    c.slug.includes(q)
+    c.slug.includes(q) ||
+    (c.state && c.state.toLowerCase().includes(q))
   )
 }
