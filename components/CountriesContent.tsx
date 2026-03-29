@@ -191,18 +191,7 @@ export default function CountriesContent() {
 
         </div>
 
-        {/* SEO Intro (hidden while searching) */}
-        {!isFiltering && (
-          <div className={`rounded-2xl p-6 mb-4 ${isLight ? 'bg-white/60' : 'bg-slate-800/40'}`}>
-            <p className={`${theme.textMuted} leading-relaxed`}>
-              Explore current local time, time zones, and detailed information for countries around the world.
-              Our comprehensive directory covers {totalCountries} countries across five continents, providing
-              accurate time zone data, capital cities, currencies, and phone codes. Whether you&apos;re planning
-              international business calls, scheduling meetings across borders, or simply curious about the
-              time in another part of the world, select any country below to view detailed time zone information.
-            </p>
-          </div>
-        )}
+        {/* SEO Intro moved below country grid for better mobile UX */}
 
         {/* No results */}
         {isFiltering && !hasResults && (
@@ -268,9 +257,22 @@ export default function CountriesContent() {
           })}
         </div>
 
+        {/* SEO Intro (moved below grid for mobile UX) */}
+        {!isFiltering && (
+          <div className={`mt-10 rounded-2xl p-6 ${isLight ? 'bg-white/60' : 'bg-slate-800/40'}`}>
+            <p className={`${theme.textMuted} leading-relaxed text-sm`}>
+              Explore current local time, time zones, and detailed information for countries around the world.
+              Our comprehensive directory covers {totalCountries} countries across five continents, providing
+              accurate time zone data, capital cities, currencies, and phone codes. Whether you&apos;re planning
+              international business calls, scheduling meetings across borders, or simply curious about the
+              time in another part of the world, select any country above to view detailed time zone information.
+            </p>
+          </div>
+        )}
+
         {/* Bottom CTA */}
         {!isFiltering && (
-          <div className="mt-12 text-center">
+          <div className="mt-8 text-center">
             <p className={`${textMuted} mb-4`}>
               Looking for a US state or specific city?
             </p>

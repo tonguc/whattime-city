@@ -30,14 +30,20 @@ export default function BahamasClockClient() {
   return (
     <div className="space-y-4">
       {/* Live Clock */}
-      <div className={card}>
-        <div className="mb-1 text-sm font-medium uppercase tracking-wider text-cyan-600">EST / EDT &middot; UTC&minus;5 / UTC&minus;4</div>
-        <div className={`text-4xl font-bold ${heading}`} style={{ fontVariantNumeric: 'tabular-nums' }}>
-          {mounted ? time : '--:--:--'}
+      <section>
+        <div className="rounded-2xl text-white p-6 text-center bg-cyan-600">
+          <div className="text-sm font-bold uppercase tracking-widest mb-2 opacity-90">Current Time in The Bahamas</div>
+          <div className="text-6xl font-bold tracking-tight mb-1" style={{ fontVariantNumeric: 'tabular-nums' }}>
+            {mounted ? time : '--:--:--'}
+          </div>
+          <div className="text-sm opacity-80 mb-3">{mounted ? date : ''}</div>
+          <div className="flex justify-center gap-3 text-sm flex-wrap">
+            <span className="px-3 py-1 rounded-full font-medium bg-white/40">EST/EDT &middot; UTC-5 / UTC-4</span>
+            <span className="px-3 py-1 rounded-full font-medium bg-white/20">Observes DST</span>
+            <span className="px-3 py-1 rounded-full font-medium bg-white/20">Pop. ~400K</span>
+          </div>
         </div>
-        <div className={`mt-1 text-sm ${subText}`}>{mounted ? date : '\u00A0'}</div>
-        <div className={`mt-2 text-xs ${mutedText}`}>Eastern Time &middot; DST observed (Mar&ndash;Nov)</div>
-      </div>
+      </section>
 
       {/* Quick Facts */}
       <div className={card}>
