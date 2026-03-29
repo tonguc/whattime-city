@@ -4,7 +4,7 @@
   "faq": [
     {
       "question": "What time is it in Seoul right now?",
-      "answer": "Seoul operates on Korea Standard Time (KST/UTC+9) year-round. South Korea does not observe daylight saving time, so Seoul's UTC+9 offset is constant throughout the year. Seoul shares the same time as Tokyo, making both cities key reference points for East Asian business scheduling."
+      "answer": "Seoul, South Korea uses Korea Standard Time (KST, UTC+9) year-round. South Korea abolished daylight saving time in 1988 and has maintained KST (UTC+9) as a fixed offset ever since — no seasonal clock changes. Seoul shares the same time as Tokyo (JST, UTC+9), making both cities key reference points for East Asian business scheduling. The IANA identifier is Asia/Seoul."
     },
     {
       "question": "What time zone is Seoul in?",
@@ -39,7 +39,7 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What time is it in Seoul right now?", "acceptedAnswer": { "@type": "Answer", "text": "Seoul operates on Korea Standard Time (KST/UTC+9) year-round. South Korea does not observe daylight saving time, so Seoul's UTC+9 offset is constant throughout the year. Seoul shares the same time as Tokyo, making both cities key reference points for East Asian business scheduling." } },
+      { "@type": "Question", "name": "What time is it in Seoul right now?", "acceptedAnswer": { "@type": "Answer", "text": "Seoul, South Korea uses Korea Standard Time (KST, UTC+9) year-round. South Korea abolished daylight saving time in 1988 and has maintained KST (UTC+9) as a fixed offset ever since — no seasonal clock changes. Seoul shares the same time as Tokyo (JST, UTC+9), making both cities key reference points for East Asian business scheduling. The IANA identifier is Asia/Seoul." } },
       { "@type": "Question", "name": "What time zone is Seoul in?", "acceptedAnswer": { "@type": "Answer", "text": "Seoul is in the Korea Standard Time (KST) zone, which is UTC+9 year-round. KST is identical to Japan Standard Time (JST), meaning Seoul and Tokyo are always at the same time. KST is 1 hour ahead of China Standard Time (CST/UTC+8), 2 hours ahead of Indochina Time (UTC+7), and 9 hours ahead of Greenwich Mean Time (GMT/UTC+0)." } },
       { "@type": "Question", "name": "Does Seoul observe daylight saving time?", "acceptedAnswer": { "@type": "Answer", "text": "No. South Korea abolished daylight saving time in 1988, just before hosting the Seoul Olympic Games, and has maintained KST (UTC+9) year-round ever since. The permanent UTC+9 offset makes Seoul's time difference from international cities constant throughout the year, simplifying global business scheduling with Korean partners." } },
       { "@type": "Question", "name": "What is the time difference between Seoul and New York?", "acceptedAnswer": { "@type": "Answer", "text": "Seoul is 14 hours ahead of New York during Eastern Standard Time (November–March) and 13 hours ahead during Eastern Daylight Time (March–November). When it is 9:00 AM Monday in New York (EST), it is 11:00 PM Monday in Seoul. For real-time coordination, New York's early morning (6:00–9:00 AM EST) aligns with Seoul's early evening (8:00–11:00 PM KST)." } },

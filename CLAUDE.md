@@ -26,6 +26,7 @@ skip this workflow entirely.
 ## ⚠️ KRİTİK: İÇERİK YAZMA KURALLARI (ASLA ATLANMAZ)
 
 **SEO kararlarında tahmin veya genel bilgi KULLANMA. Her zaman gerçek veriyi önceliklendir.**
+**Bu kurallar her oturumda, her içerik görevinde geçerlidir. Kullanıcı hatırlatmak zorunda kalmamalı.**
 
 ### Veri Öncelik Sırası — Her Sayfa İçin Zorunlu
 
@@ -35,20 +36,20 @@ Herhangi bir sayfa veya içerik yazmadan önce **bu sırayla** veri toplanır:
    - `ubersuggest timeanddate.com.csv` — ana rakip keyword'leri + hacimler
    - `ubersuggest 24timezones.com.csv`, `ubersuggest thetimenow.com.csv`, `ubersuggest time.is.csv`, `ubersuggest time.now.csv`
    - `competitors_data_for_whattime.city.csv`
-   - `broken_links.csv`, `duplicate_title_tags.csv`, `duplicate_meta_descriptions.csv`
-   - `Sorgular.csv`, `Sayfa sayısı.csv` (GSC export)
-   - **Bu adım atlanamaz.**
+   - **Bu adım atlanamaz. GSC verisi çok az — Ubersuggest gerçek pazar hacmini gösteriyor.**
 
 2. **SERP Verisi — İKİNCİ** (`/data/seo-intel/serp_results.json`)
 
 3. **GSC Verisi — ÜÇÜNCÜ** (`/data/seo-intel/gsc_pages.json`, `gsc_queries.json`)
+   - GSC verisi destekleyici — Ubersuggest'in yerini tutmaz.
 
 4. **Sayfa yaz** — Ancak yukarıdaki 3 adım tamamlandıktan sonra.
 
-### SEO Framework
-- SERP clustering (%60+ overlap = aynı cluster = tek sayfa)
-- Featured snippet hedefi: kısa cevap + soru başlıkları + FAQ schema
-- Her karar veri ile desteklenmeli, tahmin yok
+### ⚠️ Her içerik görevinde bu skill'leri MUTLAKA uygula:
+1. **SEO Engine** → `.claude/commands/seo-engine.md` kurallarını uygula
+2. **AI SEO Engine** → `.claude/commands/ai-seo-engine.md` kurallarını uygula
+
+Sıra: önce SEO Engine, sonra AI SEO Engine. Kullanıcı hatırlatmak zorunda kalmamalı.
 
 **⚠️ CSV'ler stale olabilir.** `duplicate_title_tags.csv`, `broken_links.csv` gibi dosyalar eski crawl'dan gelebilir. Kodu her zaman doğrudan kontrol et, CSV'ye körü körüne güvenme.
 
@@ -491,20 +492,35 @@ GSC analizi: tüm pair sorguları "time difference" içeriyor ama title sadece "
 - `barcelona-seo.json`: CET/CEST, 8 FAQ, NY(6h)/London(1h sabit)/Tokyo(7-8h) diff
 - `denver-seo.json`: MDT UTC offset hatası düzeltildi (UTC-7→UTC-6), duplicate schema temizlendi
 
+### 30. South Korea Cluster ✅ (Mart 2026)
+Ubersuggest: `time in south korea` 246K vol, SD 26 — timeanddate pos 1 ama beatable.
+- `data/seo/seoul-seo.json`: AI SEO first sentence format — "Seoul, South Korea uses KST (UTC+9) year-round", DST 1988, IANA Asia/Seoul
+- `app/south-korea/page.tsx`: Title "Time in South Korea Now — KST (UTC+9)" (38 char, SD 26 keyword exact match), first FAQ AI SEO format
+
+### 31. PAIR_CONTEXTS Genişletme ✅ (Mart 2026)
+26 → 56 PAIR_CONTEXTS (GSC pos 10-30 ve yüksek Ubersuggest vol'a göre önceliklendirildi):
+- **Tier 1 (page 1'e yakın):** sf/paris (pos 14.9), sydney/sf (pos 15.0), sf/mexico-city (pos 15.9)
+- **Tier 2:** london/vancouver (31 imp), dubai/singapore (29 imp), new-york/tokyo (25 imp)
+- **Tier 3 + reverses:** tokyo/paris, hong-kong/new-york, sydney/auckland, los-angeles/toronto, london/seattle, bangkok/london, delhi/boston, amsterdam-lagos — hepsi + tersleri
+
+### 32. Chicago + Las Vegas SEO JSON ✅ (Mart 2026)
+Ubersuggest verisi: Chicago 165K vol SD 23, Las Vegas 135K vol SD 27.
+- `chicago-seo.json`: AI SEO first sentence "Chicago, Illinois, USA uses CST (UTC-6) / CDT (UTC-5)", IANA America/Chicago, date 2026
+- `las-vegas-seo.json`: AI SEO first sentence "Las Vegas, Nevada, USA uses PST (UTC-8) / PDT (UTC-7)", duplicate root-level @context/@type/mainEntity temizlendi, Arizona vs Nevada DST farkı eklendi, IANA America/Los_Angeles, date 2026
+
 ---
 
 ## Açık Konular / Sonraki Adımlar
 
-- [ ] GSC'de 4 hafta sonra etki ölçümü (/time/ pair title değişikliği + yeni IST converter'lar)
-- [ ] Şehir sayfaları (moscow/berlin/paris/shanghai) pozisyon takibi (pos 60-66 → hedef top 20)
-- [ ] Sao Paulo: pos 51 → top 10 hedefi (en zayıf rekabet, faq_schema eklendi)
-- [ ] /time/ pair sayfaları pos 10-17 → page 1 (tokyo/seattle, dublin/dubai, tokyo/sf)
-- [ ] Denver şehir sayfası render kontrolü — denver-seo.json var, sayfa çalışıyor mu?
-- [ ] Barcelona şehir sayfası indexlenme takibi
+- [ ] GSC'de 4 hafta sonra etki ölçümü (/time/ pair title + IST converters + South Korea + Chicago/Vegas)
+- [ ] Şehir sayfaları pozisyon takibi: moscow/berlin/paris/shanghai (pos 60-66 → hedef top 20)
+- [ ] Sao Paulo pos 51 → top 10 hedefi
+- [ ] Denver render kontrolü — denver-seo.json var, şehir sayfası çalışıyor mu?
+- [ ] Rakip zafiyet taraması devam: hangi yüksek-vol / düşük-SD cluster'lar kaldı?
 
 ---
 
 ## Git Workflow
-- Feature branch: `claude/plan-next-actions-ONJ8y` (bu oturum bitti, merge edildi)
+- Feature branch: `claude/korea-cluster-seo` (aktif bu oturumda)
 - Squash merge to main
 - Yeni oturumda yeni branch aç: `claude/[konu]-[id]`
