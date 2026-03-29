@@ -104,14 +104,18 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
   // Prevent URL sync on initial mount
   const isInitialMount = useRef(true)
 
-  // Auto-add detectedCity when only one city from URL — fires at most ONCE per mount
-  const hasAutoAdded = useRef(false)
+  // Auto-add detectedCity when only one city from URL — fires at most ONCE per SESSION
+  // Uses sessionStorage so remounts within same tab don't re-add after user removal
+  const hasAutoAdded = useRef(
+    typeof window !== 'undefined' && sessionStorage.getItem('meeting-auto-added') === '1'
+  )
   useEffect(() => {
     if (hasAutoAdded.current) return
     if (initialCities.length === 1 && detectedCity && detectedCity.slug !== initialCities[0].slug) {
       setSelectedCities(prev => {
         if (prev.length === 1 && !prev.find(c => c.slug === detectedCity.slug)) {
           hasAutoAdded.current = true
+          try { sessionStorage.setItem('meeting-auto-added', '1') } catch {}
           return [...prev, detectedCity]
         }
         return prev
@@ -690,32 +694,46 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
           <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>
             Frequently Asked Questions
           </h2>
-          <div className="space-y-4">
-            <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-              <h3 className={`font-medium mb-2 ${theme.text}`}>
-                How does the heatmap work?
-              </h3>
-              <p className={`text-sm ${theme.textMuted}`}>
-                The heatmap shows overlap quality across 24 hours. Darker blue means more participants 
-                are awake (7 AM - 11 PM local time). The "Best Time" marker shows the optimal meeting slot.
-              </p>
-            </div>
-            <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-              <h3 className={`font-medium mb-2 ${theme.text}`}>
-                Can I add more than 3 participants?
-              </h3>
-              <p className={`text-sm ${theme.textMuted}`}>
-                Yes! You can add up to 6 cities. Simply use the "Add city" button to add more participants.
-              </p>
-            </div>
-            <div className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
-              <h3 className={`font-medium mb-2 ${theme.text}`}>
-                Does it account for Daylight Saving Time?
-              </h3>
-              <p className={`text-sm ${theme.textMuted}`}>
-                Yes, DST is automatically applied based on each city's current time zone rules.
-              </p>
-            </div>
+          <div className="space-y-3">
+            {[
+              {
+                q: 'How does the overlap heatmap work?',
+                a: 'The heatmap shows 24 hours across all selected cities. Dark blue cells indicate business hours (9 AM–5 PM) for that city. The more cities that overlap in the same column, the better the meeting slot. The "Best Time" marker highlights the hour with maximum overlap.',
+              },
+              {
+                q: 'How many cities can I compare at once?',
+                a: 'You can add up to 6 cities simultaneously. Use the search bar to find any city — results include all major cities and time zones worldwide.',
+              },
+              {
+                q: 'Does it account for Daylight Saving Time?',
+                a: 'Yes. DST is applied automatically based on each city\'s current time zone rules and today\'s date. Cities that observe DST will reflect their correct offset — no manual adjustment needed.',
+              },
+              {
+                q: 'What if there is no business hours overlap?',
+                a: 'For teams more than 9 hours apart (e.g. New York and Tokyo), there is often no 9–5 overlap at all. In that case, aim for early morning in one location paired with late afternoon in the other. Rotating the "bad" slot between team members is a common practice.',
+              },
+              {
+                q: 'How do I share a meeting plan with my team?',
+                a: 'Copy the URL from your browser — it encodes all selected cities. Anyone you share it with sees the same time comparison instantly. No account or login required.',
+              },
+              {
+                q: 'What are standard international business hours?',
+                a: 'Most offices operate 9 AM to 5 PM or 9 AM to 6 PM local time, Monday through Friday. For global teams, early morning (8–9 AM) and late afternoon (4–6 PM) slots are the most common compromise for overlapping windows.',
+              },
+              {
+                q: 'Can I use the meeting planner for recurring meetings?',
+                a: 'Yes. Bookmark or save the URL with your cities pre-selected. Each visit re-calculates live times and DST-aware offsets, so it stays accurate across seasons.',
+              },
+              {
+                q: 'Is the meeting planner free?',
+                a: 'Yes — completely free, no signup, no ads to dismiss. Add as many cities as you need and share links without any limitations.',
+              },
+            ].map((item, i) => (
+              <div key={i} className={`p-4 rounded-xl ${isLight ? 'bg-slate-50' : 'bg-slate-800/50'}`}>
+                <h3 className={`font-medium mb-1.5 ${theme.text}`}>{item.q}</h3>
+                <p className={`text-sm ${theme.textMuted}`}>{item.a}</p>
+              </div>
+            ))}
           </div>
         </section>
         

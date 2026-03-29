@@ -256,25 +256,33 @@ export default function DynamicContent({ cities, overlapCount }: Props) {
       <section>
         <h3 className={`text-xl font-semibold mb-3 ${headingColor}`}>Frequently Asked Questions</h3>
         <div className="space-y-4">
-          <div>
-            <h4 className={`font-medium ${headingColor}`}>Does the time difference account for Daylight Saving Time?</h4>
-            <p className={`text-sm ${textMuted}`}>
-              Yes, the calculations automatically account for DST based on current dates. The time difference 
-              between cities may vary by 1 hour when DST starts or ends in different regions.
-            </p>
-          </div>
-          <div>
-            <h4 className={`font-medium ${headingColor}`}>What if I need to add more participants?</h4>
-            <p className={`text-sm ${textMuted}`}>
-              Use the "+ Add City" button in the time slider above to compare up to 6 cities simultaneously.
-            </p>
-          </div>
-          <div>
-            <h4 className={`font-medium ${headingColor}`}>Can I share this meeting plan with my team?</h4>
-            <p className={`text-sm ${textMuted}`}>
-              Yes! The URL preserves your city selections so everyone sees the same time comparison when you share the link.
-            </p>
-          </div>
+          {[
+            {
+              q: `What is the best time to call between ${firstCity.city} and ${secondCity.city}?`,
+              a: `Schedule calls during the overlap of both cities' business hours (9 AM–5 PM local time). Use the heatmap above to see which hours work simultaneously for ${firstCity.city} and ${secondCity.city}.`,
+            },
+            {
+              q: 'Does the time difference account for Daylight Saving Time?',
+              a: `Yes. DST is applied automatically based on today's date and each city's rules. The gap between ${firstCity.city} and ${secondCity.city} may shift by ±1 hour when either location observes a DST change.`,
+            },
+            {
+              q: 'What if there is no business hours overlap?',
+              a: `If ${firstCity.city} and ${secondCity.city} are far apart time-zone wise, there may be no 9–5 overlap. Try early morning for one side paired with late afternoon for the other, and rotate who takes the inconvenient slot for recurring meetings.`,
+            },
+            {
+              q: 'How do I add more participants?',
+              a: 'Use the search bar at the top to add more cities — up to 6 total. The heatmap updates instantly to show overlap across all selected locations.',
+            },
+            {
+              q: 'Can I share this meeting plan with my team?',
+              a: 'Yes. Just copy the URL — it encodes all selected cities. Anyone you share it with sees the same configuration immediately, no login required.',
+            },
+          ].map((item, i) => (
+            <div key={i}>
+              <h4 className={`font-medium mb-1 ${headingColor}`}>{item.q}</h4>
+              <p className={`text-sm ${textMuted}`}>{item.a}</p>
+            </div>
+          ))}
         </div>
       </section>
     </div>
