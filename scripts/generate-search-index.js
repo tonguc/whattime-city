@@ -17,22 +17,24 @@ const citiesFilePath = path.join(__dirname, '../data/cities.ts')
 const citiesContent = fs.readFileSync(citiesFilePath, 'utf-8')
 
 // Regex ile şehir verilerini çıkar
-const cityRegex = /slug:\s*['"]([^'"]+)['"]\s*,\s*city:\s*['"]([^'"]+)['"]\s*,\s*timezone:\s*['"]([^'"]+)['"]\s*,\s*country:\s*['"]([^'"]+)['"]\s*,\s*countryCode:\s*['"]([^'"]+)['"]\s*,\s*lat:\s*([\d.-]+)\s*,\s*lng:\s*([\d.-]+)\s*,\s*tier:\s*(\d)/g
+const cityRegex = /slug:\s*['"]([^'"]+)['"]\s*,\s*city:\s*['"]([^'"]+)['"]\s*,\s*timezone:\s*['"]([^'"]+)['"]\s*,\s*country:\s*['"]([^'"]+)['"]\s*,\s*countryCode:\s*['"]([^'"]+)['"]\s*,(?:\s*state:\s*['"]([^'"]+)['"]\s*,\s*stateCode:\s*['"][^'"]+['"]\s*,)?\s*lat:\s*([\d.-]+)\s*,\s*lng:\s*([\d.-]+)\s*,\s*tier:\s*(\d)/g
 
 const searchIndex = []
 let match
 
 while ((match = cityRegex.exec(citiesContent)) !== null) {
-  searchIndex.push({
+  const entry = {
     s: match[1],     // slug (kısa key)
     c: match[2],     // city
     z: match[3],     // timezone
     n: match[4],     // country (nation)
     cc: match[5],    // countryCode
-    lt: parseFloat(match[6]),  // lat
-    ln: parseFloat(match[7]),  // lng
-    t: parseInt(match[8])      // tier
-  })
+    lt: parseFloat(match[7]),  // lat
+    ln: parseFloat(match[8]),  // lng
+    t: parseInt(match[9])      // tier
+  }
+  if (match[6]) entry.st = match[6]  // state (varsa)
+  searchIndex.push(entry)
 }
 
 console.log(`✅ ${searchIndex.length} şehir bulundu`)

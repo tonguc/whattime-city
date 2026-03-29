@@ -23,6 +23,7 @@ interface SearchCity {
   lt: number  // lat
   ln: number  // lng
   t: number   // tier
+  st?: string // state
 }
 
 // Component içinde kullanılacak tip
@@ -35,6 +36,7 @@ interface City {
   lat: number
   lng: number
   tier: number
+  state?: string
 }
 
 interface SearchProps {
@@ -51,7 +53,8 @@ function mapToCity(sc: SearchCity): City {
     countryCode: sc.cc,
     lat: sc.lt,
     lng: sc.ln,
-    tier: sc.t
+    tier: sc.t,
+    state: sc.st
   }
 }
 
@@ -109,10 +112,11 @@ export default function Search() {
     if (query.length >= 1 && searchIndex.length > 0) {
       const q = query.toLowerCase()
       const found = searchIndex
-        .filter(c => 
-          c.city.toLowerCase().includes(q) || 
+        .filter(c =>
+          c.city.toLowerCase().includes(q) ||
           c.country.toLowerCase().includes(q) ||
-          c.slug.includes(q)
+          c.slug.includes(q) ||
+          (c.state && c.state.toLowerCase().includes(q))
         )
         .slice(0, 8)
       

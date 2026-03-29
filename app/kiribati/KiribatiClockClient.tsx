@@ -1,6 +1,93 @@
 'use client'
-import HeroClockDisplay from '@/components/HeroClockDisplay'
-const KIRIBATI_TZ = 'Pacific/Tarawa'
+
+import { useState, useEffect } from 'react'
+import { useCityContext } from '@/lib/CityContext'
+
 export default function KiribatiClockClient() {
-  return <HeroClockDisplay tz={KIRIBATI_TZ} countryCode="KI" countryName="Kiribati" tzLabel="GILT · UTC+12" />
+  const { isLight } = useCityContext()
+  const [time, setTime] = useState('--:--:--')
+  const [date, setDate] = useState('')
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+    const update = () => {
+      const now = new Date()
+      setTime(now.toLocaleTimeString('en-US', { timeZone: 'Pacific/Tarawa', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }))
+      setDate(now.toLocaleDateString('en-US', { timeZone: 'Pacific/Tarawa', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }))
+    }
+    update()
+    const id = setInterval(update, 1000)
+    return () => clearInterval(id)
+  }, [])
+
+  const card = isLight ? 'rounded-2xl border border-slate-200 bg-white p-6' : 'rounded-2xl border border-slate-700/50 bg-slate-800/60 p-6'
+  const innerCard = isLight ? 'rounded-xl border border-slate-100 bg-slate-50 p-4' : 'rounded-xl border border-slate-700/50 bg-slate-800/50 p-4'
+  const heading = isLight ? 'text-slate-800' : 'text-white'
+  const subText = isLight ? 'text-slate-600' : 'text-slate-300'
+  const mutedText = isLight ? 'text-slate-400' : 'text-slate-500'
+
+  return (
+    <div className="space-y-4">
+      {/* Live Clock */}
+      <div className={card}>
+        <div className="mb-1 text-sm font-medium uppercase tracking-wider text-blue-500">Kiribati Time &mdash; GILT</div>
+        <div className={`text-4xl font-semibold ${heading}`} style={{ fontVariantNumeric: 'tabular-nums' }}>
+          {mounted ? time : '--:--:--'}
+        </div>
+        <div className={`mt-1 text-sm ${subText}`}>{mounted ? date : '\u00A0'}</div>
+        <div className={`mt-2 text-xs ${mutedText}`}>UTC+12 (Tarawa) &middot; Line Islands UTC+14 &middot; No DST</div>
+      </div>
+
+      {/* Quick Facts */}
+      <div className={card}>
+        <h3 className={`mb-3 text-lg font-semibold ${heading}`}>Quick Facts</h3>
+        <div className="grid grid-cols-2 gap-3">
+          {[
+            ['Timezone', 'GILT (UTC+12)'],
+            ['DST', 'Not observed'],
+            ['Population', '~120,000'],
+            ['Dial Code', '+686'],
+          ].map(([label, value]) => (
+            <div key={label} className={innerCard}>
+              <div className={`text-xs ${mutedText}`}>{label}</div>
+              <div className={`text-sm font-medium ${subText}`}>{value}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Did You Know */}
+      <div className={card}>
+        <h3 className={`mb-3 text-lg font-semibold ${heading}`}>Did You Know?</h3>
+        <ul className={`list-disc space-y-2 pl-5 text-sm ${subText}`}>
+          <li>Kiribati is the only country that spans all four hemispheres &mdash; north, south, east, and west.</li>
+          <li>The Line Islands (UTC+14) are the first place on Earth to welcome each new day and every New Year.</li>
+          <li>Tarawa was the site of one of the bloodiest WWII battles in the Pacific Theater (November 1943).</li>
+          <li>Kiribati is on the frontline of climate change; many atolls sit less than 2 meters above sea level.</li>
+          <li>It holds one of the largest exclusive economic zones relative to land area of any nation.</li>
+        </ul>
+      </div>
+
+      {/* Major Atolls & Cities */}
+      <div className={card}>
+        <h3 className={`mb-3 text-lg font-semibold ${heading}`}>Major Atolls &amp; Cities</h3>
+        <div className="grid grid-cols-2 gap-3">
+          {[
+            ['South Tarawa', '63K', 'Capital'],
+            ['Betio', '17K', ''],
+            ['Kiritimati', '7K', 'Christmas Island'],
+            ['Abaiang', '6K', ''],
+            ['Tabiteuea', '5K', ''],
+            ['Butaritari', '4K', ''],
+          ].map(([place, pop, note]) => (
+            <div key={place} className={innerCard}>
+              <div className={`text-sm font-medium ${heading}`}>{place}</div>
+              <div className={`text-xs ${mutedText}`}>{pop}{note ? ` \u00B7 ${note}` : ''}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
 }

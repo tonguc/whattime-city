@@ -1,6 +1,93 @@
 'use client'
-import HeroClockDisplay from '@/components/HeroClockDisplay'
-const ANDORRA_TZ = 'Europe/Andorra'
+
+import { useState, useEffect } from 'react'
+import { useCityContext } from '@/lib/CityContext'
+
 export default function AndorraClockClient() {
-  return <HeroClockDisplay tz={ANDORRA_TZ} countryCode="AD" countryName="Andorra" tzLabel="CET · UTC+1" />
+  const { isLight } = useCityContext()
+  const [time, setTime] = useState('--:--:--')
+  const [date, setDate] = useState('')
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+    const update = () => {
+      const now = new Date()
+      setTime(now.toLocaleTimeString('en-US', { timeZone: 'Europe/Andorra', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }))
+      setDate(now.toLocaleDateString('en-US', { timeZone: 'Europe/Andorra', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }))
+    }
+    update()
+    const id = setInterval(update, 1000)
+    return () => clearInterval(id)
+  }, [])
+
+  const card = isLight ? 'rounded-2xl border border-slate-200 bg-white p-6' : 'rounded-2xl border border-slate-700/50 bg-slate-800/60 p-6'
+  const innerCard = isLight ? 'rounded-xl border border-slate-100 bg-slate-50 p-4' : 'rounded-xl border border-slate-700/50 bg-slate-800/50 p-4'
+  const heading = isLight ? 'text-slate-800' : 'text-white'
+  const subText = isLight ? 'text-slate-600' : 'text-slate-300'
+  const mutedText = isLight ? 'text-slate-400' : 'text-slate-500'
+
+  return (
+    <div className="space-y-4">
+      <div className={`${card} text-center`}>
+        <div className="inline-block rounded-xl bg-blue-700 px-6 py-4">
+          <p className="text-3xl font-bold text-white" style={{ fontVariantNumeric: 'tabular-nums' }}>{mounted ? time : '--:--:--'}</p>
+        </div>
+        <p className={`mt-3 text-sm ${subText}`}>{mounted ? date : '\u00A0'}</p>
+        <p className={`mt-1 text-xs ${mutedText}`}>CET UTC+1 &middot; CEST UTC+2 &middot; Observes DST</p>
+      </div>
+
+      <div className={card}>
+        <h3 className={`mb-3 text-lg font-semibold ${heading}`}>Quick Facts</h3>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {[
+            ['Population', '~80,000'],
+            ['Timezone', 'CET / CEST'],
+            ['UTC Offset', '+1 / +2 (DST)'],
+            ['Capital', 'Andorra la Vella'],
+            ['Currency', 'Euro (&euro;)'],
+            ['Language', 'Catalan'],
+          ].map(([label, value]) => (
+            <div key={label} className={innerCard}>
+              <p className={`text-xs ${mutedText}`}>{label}</p>
+              <p className={`text-sm font-medium ${subText}`}>{value}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className={card}>
+        <h3 className={`mb-2 text-lg font-semibold ${heading}`}>Pyrenees Microstate</h3>
+        <p className={`text-sm leading-relaxed ${subText}`}>
+          Andorra is a tiny co-principality nestled in the eastern Pyrenees between France and Spain. Governed by two co-princes&mdash;the French President and the Bishop of Urgell&mdash;it has no airport or railway, making it one of Europe&apos;s most unique destinations. The country is renowned for duty-free shopping, world-class ski resorts, and centuries-old Romanesque churches scattered across its mountain valleys.
+        </p>
+      </div>
+
+      <div className={card}>
+        <h3 className={`mb-2 text-lg font-semibold ${heading}`}>Highest Capital in Europe</h3>
+        <p className={`text-sm leading-relaxed ${subText}`}>
+          Andorra la Vella sits at 1,023 metres above sea level, making it the highest capital city in Europe. Winter ski tourism and summer hiking drive the economy, welcoming over 8 million visitors annually&mdash;more than 100 times its own population.
+        </p>
+      </div>
+
+      <div className={card}>
+        <h3 className={`mb-3 text-lg font-semibold ${heading}`}>Major Parishes</h3>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {[
+            ['Andorra la Vella', '23K &middot; Capital'],
+            ['Escaldes-Engordany', '15K'],
+            ['Encamp', '12K'],
+            ['Sant Juli\u00e0 de L\u00f2ria', '10K'],
+            ['La Massana', '10K'],
+            ['Canillo', '5K'],
+          ].map(([city, info]) => (
+            <div key={city} className={innerCard}>
+              <p className={`text-sm font-medium ${heading}`}>{city}</p>
+              <p className={`text-xs ${mutedText}`} dangerouslySetInnerHTML={{ __html: info }} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
 }
