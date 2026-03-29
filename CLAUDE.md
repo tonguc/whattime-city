@@ -228,7 +228,6 @@ Her araçta: **FAQPage + BreadcrumbList JSON-LD** var (aksi belirtilmedikçe).
 - PST↔CST, EST↔CST, MST↔EST converters: 110K-135K vol, SD 34-55
 - "mountain time" cluster: 301K vol, SD 22-55 — `/mountain-time-zone/` sayfamız var
 - Bunlar var ama indexlenme ve authority meselesi
-
 ### 17. Days From Today / Days Ago Individual Sayfalar ✅ (Mart 2026)
 **Rakip gap:** time.now bu sorgularda dominant, timeanddate yok. SD 15-22 = çok düşük rekabet.
 
@@ -262,13 +261,15 @@ Her araçta: **FAQPage + BreadcrumbList JSON-LD** var (aksi belirtilmedikçe).
 **⚠️ Kural: Tool client bileşenlerinde inner max-w kullanma.**
 `ContentPageWrapper` zaten `max-w-6xl` veriyor. Client bileşenler sadece `w-full` veya bare div kullanmalı.
 
-### 19. How Many Hours/Seconds in a Year Makaleleri ✅ (Mart 2026)
+### 19. How Many Hours/Seconds/Months in a Year Makaleleri ✅ (Mart 2026)
 
 - `/articles/how-many-hours-in-a-year/` — 1M vol, SD ~29
   8,760 (regular) / 8,784 (leap), monthly breakdown, working hours, time unit table, year-by-year 2024–2030
 - `/articles/how-many-seconds-in-a-year/` — 301K vol
   31,536,000 seconds, step-by-step calculation, monthly/unit tables, fun context (heartbeats, light-year)
-- Her ikisi de: Article + FAQPage + BreadcrumbList JSON-LD schema
+- `/articles/how-many-months-in-a-year/` — 33K vol, SD 22
+  12 months, days per month table, quarter grid, month name origins, memory tricks
+- Her biri: Article + FAQPage + BreadcrumbList JSON-LD schema
 - `/articles/` hub güncellendi
 
 ---
