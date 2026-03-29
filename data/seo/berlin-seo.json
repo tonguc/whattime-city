@@ -4,7 +4,7 @@
   "faq": [
     {
       "question": "What time is it in Berlin right now?",
-      "answer": "Berlin currently operates on Central European Time (CET/UTC+1) during winter months and Central European Summer Time (CEST/UTC+2) during daylight saving time. As Germany's capital and largest city, Berlin serves as a primary timezone reference for Central European business operations, with the current time synchronized across all German states and most continental European nations."
+      "answer": "Berlin, Germany uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) in summer. Clocks move forward on the last Sunday in March and back on the last Sunday in October. Berlin is always 1 hour ahead of London and 6 hours ahead of New York (EST) during standard periods. The current local time is shown live at the top of this page."
     },
     {
       "question": "What time zone is Berlin in?",
@@ -44,7 +44,7 @@
         "name": "What time is it in Berlin right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Berlin currently operates on Central European Time (CET/UTC+1) during winter months and Central European Summer Time (CEST/UTC+2) during daylight saving time. As Germany's capital and largest city, Berlin serves as a primary timezone reference for Central European business operations, with the current time synchronized across all German states and most continental European nations."
+          "text": "Berlin, Germany uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) in summer. Clocks move forward on the last Sunday in March and back on the last Sunday in October. Berlin is always 1 hour ahead of London and 6 hours ahead of New York (EST) during standard periods. The current local time is shown live at the top of this page."
         }
       },
       {
@@ -181,7 +181,7 @@
       "link": "/time/berlin/los-angeles/"
     }
   ],
-  "eeat_footer": "Last updated: January 2025 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database.",
+  "eeat_footer": "Last updated: March 2026 | Verified by whattime.city Editorial Team | Timezone data sourced from IANA Time Zone Database.",
   "timezone_facts": {
     "full_name": "Central European Time / Central European Summer Time",
     "abbreviation": "CET / CEST",

@@ -2,7 +2,7 @@
   "faq": [
     {
       "question": "What time is it in Shanghai right now?",
-      "answer": "Shanghai operates on China Standard Time (CST/UTC+8) year-round. China uses a single timezone across the entire country, meaning Shanghai is always 8 hours ahead of Coordinated Universal Time (UTC), regardless of the season. This unified timezone system was established in 1949 to strengthen national unity across China's vast territory."
+      "answer": "Shanghai, China uses China Standard Time (CST, UTC+8) year-round. China does not observe daylight saving time — the UTC+8 offset is fixed. The current local time is shown live at the top of this page. Shanghai shares this timezone with Beijing, Hong Kong, and Singapore (all UTC+8), despite China spanning five geographical time zones."
     },
     {
       "question": "What time zone is Shanghai in?",
@@ -42,7 +42,7 @@
         "name": "What time is it in Shanghai right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Shanghai operates on China Standard Time (CST/UTC+8) year-round. China uses a single timezone across the entire country, meaning Shanghai is always 8 hours ahead of Coordinated Universal Time (UTC), regardless of the season. This unified timezone system was established in 1949 to strengthen national unity across China's vast territory."
+          "text": "Shanghai, China uses China Standard Time (CST, UTC+8) year-round. China does not observe daylight saving time — the UTC+8 offset is fixed. The current local time is shown live at the top of this page. Shanghai shares this timezone with Beijing, Hong Kong, and Singapore (all UTC+8), despite China spanning five geographical time zones."
         }
       },
       {
@@ -179,7 +179,7 @@
       "link": "/time/shanghai/los-angeles/"
     }
   ],
-  "eeat_footer": "Last updated: December 2024 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database.",
+  "eeat_footer": "Last updated: March 2026 | Verified by whattime.city Editorial Team | Timezone data sourced from IANA Time Zone Database.",
   "timezone_facts": {
     "full_name": "China Standard Time",
     "abbreviation": "CST",
