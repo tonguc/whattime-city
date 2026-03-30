@@ -613,6 +613,35 @@ North Africa:
   → long-tail: "new york to london what time do I land"
   → her satır potansiyel featured snippet
 
+### 44. Teknik SEO Bug Fixes — Bot Traffic + 404 Cleanup ✅ (Mart 2026)
+
+**Sorun:** 3 aylık sitede günlük 3-5 tıklama → kök neden analizi yapıldı.
+
+**GSC honeymoon period sona erdi:**
+- Google yeni siteleri geçici yüksek pozisyona alır, CTR ölçer
+- "time in [city]" queryleri → Google kendi live clock widget'ını gösteriyor → 0 tıklama
+- Strateji: tool sayfaları (flight-time, time-converter) + pair sayfalarına odaklan
+
+**`force-dynamic` kritik bug fix:**
+- `/time/[from]/[to]/page.tsx`: `force-dynamic` → `revalidate = 3600` (ISR)
+- `force-dynamic`, middleware'in set ettiği `Cache-Control: s-maxage=86400` header'ını `no-store` ile override ediyordu
+- Her bot isteği ayrı serverless function çalıştırıyordu → Vercel invocation limit riski
+
+**Middleware bot blocking:**
+- `middleware.ts` — `/time/` ve `/meeting/` rotalarında User-Agent tabanlı bot engelleme
+- `BAD_BOT_UA` listesi: python-requests, scrapy, wget, curl, ahrefsbot, semrushbot vb.
+- Kısa UA (< 20 char) + browser token yok → otomatik block
+- 429 + `Retry-After: 3600` response
+
+**`app/manifest.ts` eklendi:**
+- `/manifest.json` 404'lerini çözüyor
+- Web app metadata: name, short_name, theme_color (#0f172a), icon.svg
+
+**404 cleanup:**
+- `og-image.png` → `og-image.svg` fix (`/time/[from]/[to]/page.tsx` line 177)
+- `public/robots.txt`: `Disallow: /api/` eklendi — bot'ların API route'larına erişimi engellendi
+- `/api/weather/` 404'leri: `TimeComparisonContent.tsx` doğru çağırıyor (trailing slash yok), 404'ler harici bot'lardan geliyor — robots.txt fix yeterli
+
 ---
 
 ## Açık Konular / Sonraki Adımlar
