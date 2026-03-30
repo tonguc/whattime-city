@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
   const cityNames = cities.slice(0, 5).map(c => c.city).join(', ')
   
   const title = `Time in ${country.name} — Time Zones & Current Time`
-  const description = `What time is it in ${country.name} right now? Check current local time in ${country.capital}${cityNames ? `, ${cityNames}` : ''} and all ${country.name} time zones. ${country.timezones[0]}. Population: ${country.population}. Currency: ${country.currency} (${country.currencySymbol}). Phone code: ${country.phoneCode}.`
+  const description = `What time is it in ${country.name} right now? Current local time in ${country.capital}${cityNames ? ` and ${cities.slice(0,2).map(c=>c.city).join(', ')}` : ''}. Live clock, time zones, and DST info.`
   
   return {
     title,

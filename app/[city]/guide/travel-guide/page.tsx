@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!city) return { title: 'Not Found' }
   
   return {
-    title: `${city.city} Travel Guide: Best Time to Visit, Holidays & Planning Tips`,
+    title: `${city.city} Travel Guide — When to Visit`,
     description: `Plan your trip to ${city.city}: best seasons to visit, public holidays, travel tips, and essential timing information for ${city.country}.`,
     keywords: [
       `best time to visit ${city.city}`,

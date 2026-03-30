@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!city) return { title: 'Not Found' }
   
   return {
-    title: `${city.city} Business Hours, Call Times & Market Hours | Complete Guide`,
-    description: `Everything about doing business with ${city.city}: office hours, best times to call, stock market trading hours, bank schedules, and timezone tips for ${city.timezone}.`,
+    title: `${city.city} Business Hours & Call Times`,
+    description: `Business hours, best times to call, and market hours for ${city.city}. Office schedules, bank hours, and timezone tips for international coordination.`,
     keywords: [
       `${city.city} business hours`,
       `${city.city} office hours`,

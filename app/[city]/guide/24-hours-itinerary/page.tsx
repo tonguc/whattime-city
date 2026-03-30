@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!city) return { title: 'Not Found' }
   
   return {
-    title: `24 Hours in ${city.city}: Perfect Day Itinerary & Hour-by-Hour Guide`,
+    title: `24 Hours in ${city.city}: Itinerary`,
     description: `Make the most of one day in ${city.city}! Hour-by-hour itinerary covering breakfast spots, must-see attractions, lunch, activities, dinner, and nightlife.`,
     keywords: [
       `24 hours in ${city.city}`,

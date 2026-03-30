@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!city) return { title: 'Not Found' }
   
   return {
-    title: `${city.city} Time Zone: Current Time, UTC Offset & DST Info`,
+    title: `${city.city} Time Zone — UTC Offset & DST`,
     description: `${city.city} timezone explained: current local time, UTC offset, daylight saving time changes, and time difference from major world cities.`,
     keywords: [
       `${city.city} time zone`,

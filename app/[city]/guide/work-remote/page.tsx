@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!city) return { title: 'Not Found' }
   
   return {
-    title: `Work From ${city.city}: Remote Work & Digital Nomad Guide`,
+    title: `Work From ${city.city}: Remote Work Guide`,
     description: `Complete guide to working remotely from ${city.city}: coworking spaces, internet quality, cost of living, visa info, and timezone tips for digital nomads.`,
     keywords: [
       `remote work ${city.city}`,
