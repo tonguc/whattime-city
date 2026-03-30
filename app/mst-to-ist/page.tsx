@@ -3,11 +3,11 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'MST to IST — Mountain to India Time Converter',
+  title: 'MST to IST Converter — Mountain to India',
   description: 'Convert MST to IST instantly. Mountain Time is 12.5 hours behind IST (11.5 during MDT). Live clocks, full conversion table, best call times for US Mountain to India.',
   alternates: { canonical: 'https://whattime.city/mst-to-ist/' },
   openGraph: {
-    title: 'MST to IST — Mountain to India Time Converter',
+    title: 'MST to IST Converter — Mountain to India',
     description: 'Convert MST to IST instantly. Mountain Time is 12.5 hours behind IST (11.5 during MDT). Live clocks, full conversion table, best call times for US Mountain to India.',
     type: 'website',
     url: 'https://whattime.city/mst-to-ist/',

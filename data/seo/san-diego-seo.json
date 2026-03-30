@@ -1,0 +1,108 @@
+{
+  "seo_title": "Current Time in San Diego — PST/PDT",
+  "seo_description": "Current time in San Diego, CA — live Pacific Time Zone clock, UTC offset, DST schedule, and time differences with major US and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in San Diego right now?",
+      "answer": "San Diego, California, USA uses Pacific Standard Time (PST, UTC-8) in winter and Pacific Daylight Time (PDT, UTC-7) during Daylight Saving Time. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. San Diego shares its time zone with Los Angeles, San Francisco, Seattle, and Las Vegas. The IANA identifier is America/Los_Angeles."
+    },
+    {
+      "question": "What time zone is San Diego in?",
+      "answer": "San Diego is in the Pacific Time Zone (PT), observing PST (UTC-8) from November to March and PDT (UTC-7) from March to November. As California's second-largest city and a major US Navy and Marine Corps hub, San Diego aligns with Los Angeles, San Francisco, and Seattle. The IANA timezone identifier is America/Los_Angeles."
+    },
+    {
+      "question": "Does San Diego observe daylight saving time?",
+      "answer": "Yes. San Diego observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (becoming 3:00 AM PDT, UTC-7) and fall back on the first Sunday in November at 2:00 AM (becoming 1:00 AM PST, UTC-8). California has periodically considered eliminating DST, but as of 2026 continues to observe it."
+    },
+    {
+      "question": "What is the time difference between San Diego and New York?",
+      "answer": "San Diego (PST, UTC-8) is 3 hours behind New York (EST, UTC-5) in winter. During Daylight Saving Time, San Diego moves to PDT (UTC-7) and New York to EDT (UTC-4), maintaining a 3-hour gap year-round. When it is 9:00 AM in New York, it is 6:00 AM in San Diego."
+    },
+    {
+      "question": "What is the time difference between San Diego and Chicago?",
+      "answer": "San Diego (PST, UTC-8) is 2 hours behind Chicago (CST, UTC-6) in winter. During Daylight Saving Time, San Diego is PDT (UTC-7) and Chicago is CDT (UTC-5), maintaining a 2-hour gap. When it is 9:00 AM in Chicago, it is 7:00 AM in San Diego."
+    },
+    {
+      "question": "What is the time difference between San Diego and London?",
+      "answer": "San Diego (PST, UTC-8) is 8 hours behind London (GMT, UTC+0) in winter. During US and UK Daylight Saving Time, San Diego moves to PDT (UTC-7) and London to BST (UTC+1), maintaining an 8-hour gap for most of the year. Brief transition windows may cause the gap to be 7 or 9 hours."
+    },
+    {
+      "question": "What are typical business hours in San Diego?",
+      "answer": "Standard business hours in San Diego are 9:00 AM to 5:00 PM PST/PDT, Monday through Friday. San Diego's economy is driven by the US Navy and Marine Corps, biotechnology (San Diego Biotech Cluster), telecommunications (Qualcomm), and tourism. The NYSE and NASDAQ open at 6:30 AM PST — early for West Coast traders. Many defense contractors maintain flexible hours to overlap with East Coast clients."
+    },
+    {
+      "question": "What is the time difference between San Diego and Tokyo?",
+      "answer": "San Diego (PST, UTC-8) is 17 hours behind Tokyo (JST, UTC+9) in winter. During US Daylight Saving Time, San Diego moves to PDT (UTC-7), narrowing the gap to 16 hours. Japan does not observe DST. When it is 9:00 AM Monday in Tokyo, it is 4:00 PM Sunday (PST) or 5:00 PM Sunday (PDT) in San Diego."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in San Diego right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "San Diego, California, USA uses Pacific Standard Time (PST, UTC-8) in winter and Pacific Daylight Time (PDT, UTC-7) during Daylight Saving Time. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. San Diego shares its time zone with Los Angeles, San Francisco, Seattle, and Las Vegas. The IANA identifier is America/Los_Angeles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is San Diego in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "San Diego is in the Pacific Time Zone (PT), observing PST (UTC-8) from November to March and PDT (UTC-7) from March to November. As California's second-largest city and a major US Navy and Marine Corps hub, San Diego aligns with Los Angeles, San Francisco, and Seattle. The IANA timezone identifier is America/Los_Angeles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does San Diego observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. San Diego observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (becoming 3:00 AM PDT, UTC-7) and fall back on the first Sunday in November at 2:00 AM (becoming 1:00 AM PST, UTC-8). California has periodically considered eliminating DST, but as of 2026 continues to observe it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between San Diego and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "San Diego (PST, UTC-8) is 3 hours behind New York (EST, UTC-5) in winter. During Daylight Saving Time, San Diego moves to PDT (UTC-7) and New York to EDT (UTC-4), maintaining a 3-hour gap year-round. When it is 9:00 AM in New York, it is 6:00 AM in San Diego."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between San Diego and Chicago?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "San Diego (PST, UTC-8) is 2 hours behind Chicago (CST, UTC-6) in winter. During Daylight Saving Time, San Diego is PDT (UTC-7) and Chicago is CDT (UTC-5), maintaining a 2-hour gap. When it is 9:00 AM in Chicago, it is 7:00 AM in San Diego."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between San Diego and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "San Diego (PST, UTC-8) is 8 hours behind London (GMT, UTC+0) in winter. During US and UK Daylight Saving Time, San Diego moves to PDT (UTC-7) and London to BST (UTC+1), maintaining an 8-hour gap for most of the year. Brief transition windows may cause the gap to be 7 or 9 hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in San Diego?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in San Diego are 9:00 AM to 5:00 PM PST/PDT, Monday through Friday. San Diego's economy is driven by the US Navy and Marine Corps, biotechnology (San Diego Biotech Cluster), telecommunications (Qualcomm), and tourism. The NYSE and NASDAQ open at 6:30 AM PST — early for West Coast traders. Many defense contractors maintain flexible hours to overlap with East Coast clients."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between San Diego and Tokyo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "San Diego (PST, UTC-8) is 17 hours behind Tokyo (JST, UTC+9) in winter. During US Daylight Saving Time, San Diego moves to PDT (UTC-7), narrowing the gap to 16 hours. Japan does not observe DST. When it is 9:00 AM Monday in Tokyo, it is 4:00 PM Sunday (PST) or 5:00 PM Sunday (PDT) in San Diego."
+        }
+      }
+    ]
+  }
+}

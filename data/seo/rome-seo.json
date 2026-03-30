@@ -2,7 +2,7 @@
   "faq": [
     {
       "question": "What time is it in Rome right now?",
-      "answer": "Rome currently observes Central European Time (CET/UTC+1) during winter months and Central European Summer Time (CEST/UTC+2) during daylight saving time. The city follows the same timezone as most of continental Europe, making it one hour ahead of London and six hours ahead of New York during standard time."
+      "answer": "Rome, Italy uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) during Daylight Saving Time (last Sunday of March to last Sunday of October). The IANA timezone identifier is Europe/Rome. Rome is 1 hour ahead of London and 6 hours ahead of New York during standard time."
     },
     {
       "question": "What time zone is Rome in?",
@@ -42,7 +42,7 @@
         "name": "What time is it in Rome right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Rome currently observes Central European Time (CET/UTC+1) during winter months and Central European Summer Time (CEST/UTC+2) during daylight saving time. The city follows the same timezone as most of continental Europe, making it one hour ahead of London and six hours ahead of New York during standard time."
+          "text": "Rome, Italy uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) during Daylight Saving Time (last Sunday of March to last Sunday of October). The IANA timezone identifier is Europe/Rome. Rome is 1 hour ahead of London and 6 hours ahead of New York during standard time."
         }
       },
       {

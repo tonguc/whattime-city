@@ -2,7 +2,7 @@
   "faq": [
     {
       "question": "What time is it in Madrid right now?",
-      "answer": "Madrid operates on Central European Time (CET/UTC+1) during winter months and Central European Summer Time (CEST/UTC+2) during summer months. The current time in Madrid depends on whether daylight saving time is active, with clocks moving one hour ahead from late March to late October annually."
+      "answer": "Madrid, Spain uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) during Daylight Saving Time (last Sunday of March to last Sunday of October). The IANA timezone identifier is Europe/Madrid. Geographically, Madrid is on the same longitude as the UK, but politically uses CET/CEST like the rest of continental Europe."
     },
     {
       "question": "What time zone is Madrid in?",
@@ -42,7 +42,7 @@
         "name": "What time is it in Madrid right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Madrid operates on Central European Time (CET/UTC+1) during winter months and Central European Summer Time (CEST/UTC+2) during summer months. The current time in Madrid depends on whether daylight saving time is active, with clocks moving one hour ahead from late March to late October annually."
+          "text": "Madrid, Spain uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) during Daylight Saving Time (last Sunday of March to last Sunday of October). The IANA timezone identifier is Europe/Madrid. Geographically, Madrid is on the same longitude as the UK, but politically uses CET/CEST like the rest of continental Europe."
         }
       },
       {
