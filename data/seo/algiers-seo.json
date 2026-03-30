@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Algiers — CET (UTC+1)",
+  "seo_description": "Current time in Algiers, Algeria — live Central European Time (CET, UTC+1) clock, no DST, and time differences with Paris, London, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Algiers right now?",
+      "answer": "Algiers, Algeria uses Central European Time (CET, UTC+1) year-round. Algeria does not observe Daylight Saving Time. Despite its geographic position in North Africa, Algeria uses CET (the same standard time as Paris and Berlin) rather than West Africa Time (UTC+0). The IANA timezone identifier is Africa/Algiers."
+    },
+    {
+      "question": "What time zone is Algiers in?",
+      "answer": "Algiers is in the CET timezone (UTC+1) year-round with no DST. This makes Algiers unusual — geographically it is close to the prime meridian (UTC+0), but politically uses UTC+1. Algeria was a French territory, which explains its adoption of Central European Time. The IANA identifier is Africa/Algiers."
+    },
+    {
+      "question": "Does Algiers observe daylight saving time?",
+      "answer": "No. Algeria does not observe Daylight Saving Time. Algiers remains on CET (UTC+1) year-round. Algeria last observed DST in 1981. While France (Paris) observes DST in summer, Algiers does not, meaning Algiers and Paris are on the same UTC+1 in winter but differ by 1 hour in summer (when France moves to CEST UTC+2)."
+    },
+    {
+      "question": "What is the time difference between Algiers and Paris?",
+      "answer": "Algiers (CET, UTC+1) and Paris (CET, UTC+1) are on the same time in winter — no difference. In summer, Paris moves to CEST (UTC+2) while Algiers stays on CET (UTC+1). So Algiers is 1 hour behind Paris from late March to late October, and on the same time in winter."
+    },
+    {
+      "question": "What is the time difference between Algiers and London?",
+      "answer": "Algiers (CET, UTC+1) is 1 hour ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Algiers and London are on the same time. Since Algeria has no DST, the gap changes only when London transitions its clocks."
+    },
+    {
+      "question": "What is the time difference between Algiers and New York?",
+      "answer": "Algiers (CET, UTC+1) is 6 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Algiers is 5 hours ahead. Since Algeria has no DST, the gap changes only when the US transitions."
+    },
+    {
+      "question": "What are typical business hours in Algiers?",
+      "answer": "Standard business hours in Algiers are 8:00 AM to 5:00 PM CET, Sunday through Thursday. Algeria uses a Sunday–Thursday work week, with Friday and Saturday as the weekend (following Islamic convention). Algiers is the capital and largest city of Algeria. Major industries include hydrocarbons (Sonatrach is Africa's largest oil and gas company), banking, and public administration. Algeria has the 10th-largest natural gas reserves in the world."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Algiers right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Algiers, Algeria uses Central European Time (CET, UTC+1) year-round. Algeria does not observe Daylight Saving Time. Despite its geographic position in North Africa, Algeria uses CET (the same standard time as Paris and Berlin) rather than West Africa Time (UTC+0). The IANA timezone identifier is Africa/Algiers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Algiers in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Algiers is in the CET timezone (UTC+1) year-round with no DST. This makes Algiers unusual — geographically it is close to the prime meridian (UTC+0), but politically uses UTC+1. Algeria was a French territory, which explains its adoption of Central European Time. The IANA identifier is Africa/Algiers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Algiers observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Algeria does not observe Daylight Saving Time. Algiers remains on CET (UTC+1) year-round. Algeria last observed DST in 1981. While France (Paris) observes DST in summer, Algiers does not, meaning Algiers and Paris are on the same UTC+1 in winter but differ by 1 hour in summer (when France moves to CEST UTC+2)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Algiers and Paris?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Algiers (CET, UTC+1) and Paris (CET, UTC+1) are on the same time in winter — no difference. In summer, Paris moves to CEST (UTC+2) while Algiers stays on CET (UTC+1). So Algiers is 1 hour behind Paris from late March to late October, and on the same time in winter."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Algiers and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Algiers (CET, UTC+1) is 1 hour ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Algiers and London are on the same time. Since Algeria has no DST, the gap changes only when London transitions its clocks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Algiers and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Algiers (CET, UTC+1) is 6 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Algiers is 5 hours ahead. Since Algeria has no DST, the gap changes only when the US transitions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Algiers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Algiers are 8:00 AM to 5:00 PM CET, Sunday through Thursday. Algeria uses a Sunday–Thursday work week, with Friday and Saturday as the weekend (following Islamic convention). Algiers is the capital and largest city of Algeria. Major industries include hydrocarbons (Sonatrach is Africa's largest oil and gas company), banking, and public administration. Algeria has the 10th-largest natural gas reserves in the world."
+        }
+      }
+    ]
+  }
+}
