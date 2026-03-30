@@ -1,6 +1,6 @@
 /**
  * Weather API Route (Server-side)
- * 
+ *
  * API key güvenli şekilde server'da kalır.
  * Client /api/weather?city=Istanbul şeklinde çağırır.
  */
@@ -14,7 +14,40 @@ const BASE_URL = 'https://api.weatherapi.com/v1'
 const cache = new Map<string, { data: any; timestamp: number }>()
 const CACHE_DURATION = 10 * 60 * 1000 // 10 minutes
 
+// IP-based rate limiter: max 10 requests per minute per IP
+const ipRequestLog = new Map<string, number[]>()
+const RATE_LIMIT_WINDOW = 60 * 1000 // 1 minute
+const RATE_LIMIT_MAX = 10
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now()
+  const timestamps = ipRequestLog.get(ip) ?? []
+  const recent = timestamps.filter(t => now - t < RATE_LIMIT_WINDOW)
+  if (recent.length >= RATE_LIMIT_MAX) return true
+  recent.push(now)
+  ipRequestLog.set(ip, recent)
+  // Cleanup old IPs occasionally to prevent memory leak
+  if (ipRequestLog.size > 5000) {
+    for (const [key, ts] of ipRequestLog) {
+      if (ts.every(t => now - t >= RATE_LIMIT_WINDOW)) ipRequestLog.delete(key)
+    }
+  }
+  return false
+}
+
 export async function GET(request: NextRequest) {
+  const ip =
+    request.headers.get('x-forwarded-for')?.split(',')[0].trim() ||
+    request.headers.get('x-real-ip') ||
+    'unknown'
+
+  if (isRateLimited(ip)) {
+    return NextResponse.json({ error: 'Too many requests' }, {
+      status: 429,
+      headers: { 'Retry-After': '60' },
+    })
+  }
+
   const { searchParams } = new URL(request.url)
   const city = searchParams.get('city')
 

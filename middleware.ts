@@ -89,12 +89,18 @@ export function middleware(request: NextRequest) {
   }
 
   // =============================================
-  // 1. /meeting URL Normalization
+  // 1. /meeting URL Normalization + Limit
   // =============================================
   if (pathname.startsWith('/meeting/') && pathname !== '/meeting/') {
     const citiesPath = pathname.replace('/meeting/', '').replace(/\/$/, '')
     if (citiesPath && citiesPath.includes('-vs-')) {
       const cityParts = citiesPath.split('-vs-')
+
+      // Parametrik explosion koruması: max 5 şehir
+      if (cityParts.length > 5) {
+        return new NextResponse(null, { status: 400 })
+      }
+
       const sorted = [...cityParts].sort()
       const normalized = sorted.join('-vs-')
       if (citiesPath !== normalized) {
