@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Baltimore — EST/EDT",
+  "seo_description": "Current time in Baltimore, Maryland. Eastern Time Zone — EST (UTC-5) in winter, EDT (UTC-4) during DST. Live clock and time differences for Baltimore, MD.",
+  "faq": [
+    {
+      "question": "What time is it in Baltimore right now?",
+      "answer": "Baltimore, Maryland, USA uses Eastern Standard Time (EST, UTC-5) in winter and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time. The IANA identifier is America/New_York. Baltimore is on the same time as Washington D.C. (just 40 miles away), New York, and Philadelphia. The live clock above shows the current Baltimore time."
+    },
+    {
+      "question": "What time zone is Baltimore in?",
+      "answer": "Baltimore, Maryland is in the Eastern Time Zone (ET). It uses Eastern Standard Time (EST, UTC-5) from the first Sunday in November to the second Sunday in March, and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time. The IANA identifier is America/New_York. Baltimore shares its time zone with Washington D.C., Philadelphia, New York, and the entire East Coast."
+    },
+    {
+      "question": "Does Baltimore observe daylight saving time?",
+      "answer": "Yes. Baltimore, Maryland observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (EST → EDT) and fall back on the first Sunday in November. Maryland follows the standard US DST schedule."
+    },
+    {
+      "question": "What is the time difference between Baltimore and Chicago?",
+      "answer": "Baltimore (EST/EDT, Eastern Time) is always 1 hour ahead of Chicago (CST/CDT, Central Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in Chicago, it is 10:00 AM in Baltimore."
+    },
+    {
+      "question": "What is the time difference between Baltimore and Los Angeles?",
+      "answer": "Baltimore (EST/EDT, Eastern Time) is always 3 hours ahead of Los Angeles (PST/PDT, Pacific Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in Los Angeles, it is 12:00 PM in Baltimore."
+    },
+    {
+      "question": "Is Baltimore in the same time zone as Washington DC?",
+      "answer": "Yes. Baltimore, Maryland and Washington D.C. are both in the Eastern Time Zone (IANA: America/New_York). They are approximately 40 miles apart and always share the exact same time — EST (UTC-5) in winter and EDT (UTC-4) during Daylight Saving Time."
+    },
+    {
+      "question": "What are typical business hours in Baltimore?",
+      "answer": "Standard business hours in Baltimore are 9:00 AM to 5:00 PM ET, Monday through Friday. Baltimore is a major seaport city — the Port of Baltimore is one of the busiest on the US East Coast. Major employers include Johns Hopkins University and Hospital, Leidos, T. Rowe Price, and Under Armour (headquartered in Baltimore). The Inner Harbor and Fells Point areas have dining and entertainment from 11:00 AM into the evening."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Baltimore right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Baltimore, Maryland, USA uses Eastern Standard Time (EST, UTC-5) in winter and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time. The IANA identifier is America/New_York. Baltimore is on the same time as Washington D.C. (just 40 miles away), New York, and Philadelphia. The live clock above shows the current Baltimore time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Baltimore in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Baltimore, Maryland is in the Eastern Time Zone (ET). It uses Eastern Standard Time (EST, UTC-5) from the first Sunday in November to the second Sunday in March, and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time. The IANA identifier is America/New_York. Baltimore shares its time zone with Washington D.C., Philadelphia, New York, and the entire East Coast."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Baltimore observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Baltimore, Maryland observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (EST → EDT) and fall back on the first Sunday in November. Maryland follows the standard US DST schedule."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Baltimore and Chicago?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Baltimore (EST/EDT, Eastern Time) is always 1 hour ahead of Chicago (CST/CDT, Central Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in Chicago, it is 10:00 AM in Baltimore."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Baltimore and Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Baltimore (EST/EDT, Eastern Time) is always 3 hours ahead of Los Angeles (PST/PDT, Pacific Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in Los Angeles, it is 12:00 PM in Baltimore."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Baltimore in the same time zone as Washington DC?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Baltimore, Maryland and Washington D.C. are both in the Eastern Time Zone (IANA: America/New_York). They are approximately 40 miles apart and always share the exact same time — EST (UTC-5) in winter and EDT (UTC-4) during Daylight Saving Time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Baltimore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Baltimore are 9:00 AM to 5:00 PM ET, Monday through Friday. Baltimore is a major seaport city — the Port of Baltimore is one of the busiest on the US East Coast. Major employers include Johns Hopkins University and Hospital, Leidos, T. Rowe Price, and Under Armour (headquartered in Baltimore). The Inner Harbor and Fells Point areas have dining and entertainment from 11:00 AM into the evening."
+        }
+      }
+    ]
+  }
+}

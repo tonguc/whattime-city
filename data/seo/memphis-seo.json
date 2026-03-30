@@ -1,0 +1,84 @@
+{
+  "seo_title": "Current Time in Memphis — CST/CDT",
+  "seo_description": "Current time in Memphis, Tennessee. Central Time Zone — CST (UTC-6) in winter, CDT (UTC-5) during DST. Live clock and time differences for Memphis, TN.",
+  "faq": [
+    {
+      "question": "What time is it in Memphis right now?",
+      "answer": "Memphis, Tennessee, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. The IANA identifier is America/Chicago. Memphis is on the same time as Chicago, Dallas, and New Orleans — 1 hour behind New York and 1 hour ahead of Denver. The live clock above shows the current Memphis time."
+    },
+    {
+      "question": "What time zone is Memphis in?",
+      "answer": "Memphis, Tennessee is in the Central Time Zone (CT). It uses Central Standard Time (CST, UTC-6) from the first Sunday in November to the second Sunday in March, and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. The IANA identifier is America/Chicago. Note: while Memphis is on Central Time, eastern Tennessee cities like Knoxville and Chattanooga use Eastern Time."
+    },
+    {
+      "question": "Does Memphis observe daylight saving time?",
+      "answer": "Yes. Memphis, Tennessee observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (CST → CDT) and fall back on the first Sunday in November. Tennessee follows the standard US DST schedule."
+    },
+    {
+      "question": "What is the time difference between Memphis and New York?",
+      "answer": "Memphis (CST/CDT, Central Time) is always 1 hour behind New York (EST/EDT, Eastern Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in New York, it is 8:00 AM in Memphis."
+    },
+    {
+      "question": "Is Memphis in the same time zone as Nashville?",
+      "answer": "No. Memphis uses Central Time (CST/CDT, IANA: America/Chicago), while Nashville uses Central Time as well — so they are on the same time. However, eastern Tennessee cities like Knoxville, Chattanooga, and Johnson City use Eastern Time (EST/EDT), which is 1 hour ahead of Memphis."
+    },
+    {
+      "question": "What are typical business hours in Memphis?",
+      "answer": "Standard business hours in Memphis are 9:00 AM to 5:00 PM CT, Monday through Friday. Memphis is a major logistics hub — FedEx is headquartered here, making it one of the world's busiest air cargo centers. The Port of Memphis on the Mississippi River is one of the largest inland ports in the US. Beale Street, famous for blues music, operates evenings from 6:00 PM until late. Major employers include FedEx, AutoZone, International Paper, and St. Jude Children's Research Hospital."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Memphis right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Memphis, Tennessee, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. The IANA identifier is America/Chicago. Memphis is on the same time as Chicago, Dallas, and New Orleans — 1 hour behind New York and 1 hour ahead of Denver. The live clock above shows the current Memphis time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Memphis in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Memphis, Tennessee is in the Central Time Zone (CT). It uses Central Standard Time (CST, UTC-6) from the first Sunday in November to the second Sunday in March, and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. The IANA identifier is America/Chicago. Note: while Memphis is on Central Time, eastern Tennessee cities like Knoxville and Chattanooga use Eastern Time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Memphis observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Memphis, Tennessee observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (CST → CDT) and fall back on the first Sunday in November. Tennessee follows the standard US DST schedule."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Memphis and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Memphis (CST/CDT, Central Time) is always 1 hour behind New York (EST/EDT, Eastern Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in New York, it is 8:00 AM in Memphis."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Memphis in the same time zone as Nashville?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Memphis uses Central Time (CST/CDT, IANA: America/Chicago), while Nashville uses Central Time as well — so they are on the same time. However, eastern Tennessee cities like Knoxville, Chattanooga, and Johnson City use Eastern Time (EST/EDT), which is 1 hour ahead of Memphis."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Memphis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Memphis are 9:00 AM to 5:00 PM CT, Monday through Friday. Memphis is a major logistics hub — FedEx is headquartered here, making it one of the world's busiest air cargo centers. The Port of Memphis on the Mississippi River is one of the largest inland ports in the US. Beale Street, famous for blues music, operates evenings from 6:00 PM until late. Major employers include FedEx, AutoZone, International Paper, and St. Jude Children's Research Hospital."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Adelaide — ACST/ACDT",
+  "seo_description": "Current time in Adelaide, Australia — live ACST/ACDT clock, DST schedule, and time differences with Sydney, Perth, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Adelaide right now?",
+      "answer": "Adelaide, South Australia, Australia uses Australian Central Standard Time (ACST, UTC+9:30) in winter and Australian Central Daylight Time (ACDT, UTC+10:30) during Daylight Saving Time in summer. DST in South Australia begins on the first Sunday in October and ends on the first Sunday in April (southern hemisphere schedule). The IANA timezone identifier is Australia/Adelaide."
+    },
+    {
+      "question": "What time zone is Adelaide in?",
+      "answer": "Adelaide is in the Australian Central Time zone, observing ACST (UTC+9:30) in winter and ACDT (UTC+10:30) in summer. Adelaide's UTC+9:30 offset makes it unique — it is a 30-minute offset timezone, unlike most world timezones which use whole-hour offsets. The IANA identifier is Australia/Adelaide."
+    },
+    {
+      "question": "Does Adelaide observe daylight saving time?",
+      "answer": "Yes. South Australia observes Daylight Saving Time. Clocks spring forward 1 hour to ACDT (UTC+10:30) on the first Sunday in October and fall back to ACST (UTC+9:30) on the first Sunday in April. Note: Western Australia (Perth) and Queensland (Brisbane) do NOT observe DST, so the time gap between Adelaide and those cities changes seasonally."
+    },
+    {
+      "question": "What is the time difference between Adelaide and Sydney?",
+      "answer": "Adelaide (ACST, UTC+9:30) is 1.5 hours behind Sydney (AEST, UTC+10) in winter. During DST, when both observe summer time, Adelaide (ACDT, UTC+10:30) is 0.5 hours behind Sydney (AEDT, UTC+11). The gap is 1.5 hours in winter and 0.5 hours in summer."
+    },
+    {
+      "question": "What is the time difference between Adelaide and Perth?",
+      "answer": "Adelaide (ACST, UTC+9:30) is 1.5 hours ahead of Perth (AWST, UTC+8) in winter. During Adelaide's DST (ACDT, UTC+10:30), Adelaide is 2.5 hours ahead of Perth (which has no DST). The gap is 1.5 hours in winter and 2.5 hours in Adelaide's summer."
+    },
+    {
+      "question": "What is the time difference between Adelaide and London?",
+      "answer": "Adelaide (ACST, UTC+9:30) is 9.5 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Adelaide on ACST is 8.5 hours ahead. During Adelaide's summer (ACDT, UTC+10:30), Adelaide is 10.5 hours ahead of GMT or 9.5 hours ahead of BST."
+    },
+    {
+      "question": "What are typical business hours in Adelaide?",
+      "answer": "Standard business hours in Adelaide are 9:00 AM to 5:30 PM ACST/ACDT, Monday through Friday. Adelaide is the capital of South Australia and the fifth-largest city in Australia. Key industries include defence, mining, wine (Barossa Valley, McLaren Vale), health and medical research, and manufacturing. The Adelaide Stock Exchange (ASX) operates in Adelaide time. Adelaide is known as the 'Festival City' for its international arts festivals."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Adelaide right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Adelaide, South Australia, Australia uses Australian Central Standard Time (ACST, UTC+9:30) in winter and Australian Central Daylight Time (ACDT, UTC+10:30) during Daylight Saving Time in summer. DST in South Australia begins on the first Sunday in October and ends on the first Sunday in April (southern hemisphere schedule). The IANA timezone identifier is Australia/Adelaide."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Adelaide in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Adelaide is in the Australian Central Time zone, observing ACST (UTC+9:30) in winter and ACDT (UTC+10:30) in summer. Adelaide's UTC+9:30 offset makes it unique — it is a 30-minute offset timezone, unlike most world timezones which use whole-hour offsets. The IANA identifier is Australia/Adelaide."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Adelaide observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. South Australia observes Daylight Saving Time. Clocks spring forward 1 hour to ACDT (UTC+10:30) on the first Sunday in October and fall back to ACST (UTC+9:30) on the first Sunday in April. Note: Western Australia (Perth) and Queensland (Brisbane) do NOT observe DST, so the time gap between Adelaide and those cities changes seasonally."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Adelaide and Sydney?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Adelaide (ACST, UTC+9:30) is 1.5 hours behind Sydney (AEST, UTC+10) in winter. During DST, when both observe summer time, Adelaide (ACDT, UTC+10:30) is 0.5 hours behind Sydney (AEDT, UTC+11). The gap is 1.5 hours in winter and 0.5 hours in summer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Adelaide and Perth?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Adelaide (ACST, UTC+9:30) is 1.5 hours ahead of Perth (AWST, UTC+8) in winter. During Adelaide's DST (ACDT, UTC+10:30), Adelaide is 2.5 hours ahead of Perth (which has no DST). The gap is 1.5 hours in winter and 2.5 hours in Adelaide's summer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Adelaide and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Adelaide (ACST, UTC+9:30) is 9.5 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Adelaide on ACST is 8.5 hours ahead. During Adelaide's summer (ACDT, UTC+10:30), Adelaide is 10.5 hours ahead of GMT or 9.5 hours ahead of BST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Adelaide?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Adelaide are 9:00 AM to 5:30 PM ACST/ACDT, Monday through Friday. Adelaide is the capital of South Australia and the fifth-largest city in Australia. Key industries include defence, mining, wine (Barossa Valley, McLaren Vale), health and medical research, and manufacturing. The Adelaide Stock Exchange (ASX) operates in Adelaide time. Adelaide is known as the 'Festival City' for its international arts festivals."
+        }
+      }
+    ]
+  }
+}

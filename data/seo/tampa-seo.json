@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Tampa — EST/EDT",
+  "seo_description": "Current time in Tampa, Florida. Eastern Time Zone — EST (UTC-5) in winter, EDT (UTC-4) during DST. Live clock and time differences for Tampa, FL.",
+  "faq": [
+    {
+      "question": "What time is it in Tampa right now?",
+      "answer": "Tampa, Florida, USA uses Eastern Standard Time (EST, UTC-5) in winter and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time. The IANA identifier is America/New_York. Tampa is on the same time as Miami, Orlando, New York, and Washington D.C. The live clock above shows the current Tampa time."
+    },
+    {
+      "question": "What time zone is Tampa in?",
+      "answer": "Tampa, Florida is in the Eastern Time Zone (ET). It uses Eastern Standard Time (EST, UTC-5) from the first Sunday in November to the second Sunday in March, and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time. The IANA identifier is America/New_York. Tampa shares its time zone with Miami, Orlando, Jacksonville, and all of Florida's east coast."
+    },
+    {
+      "question": "Does Tampa observe daylight saving time?",
+      "answer": "Yes. Tampa, Florida observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (EST → EDT) and fall back on the first Sunday in November. Florida (including Tampa) follows the standard US DST schedule. Note: Florida passed the Sunshine Protection Act in 2018 to observe permanent DST, but it requires federal approval — Tampa still changes clocks as of 2026."
+    },
+    {
+      "question": "What is the time difference between Tampa and Chicago?",
+      "answer": "Tampa (EST/EDT, Eastern Time) is always 1 hour ahead of Chicago (CST/CDT, Central Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in Chicago, it is 10:00 AM in Tampa."
+    },
+    {
+      "question": "What is the time difference between Tampa and Los Angeles?",
+      "answer": "Tampa (EST/EDT, Eastern Time) is always 3 hours ahead of Los Angeles (PST/PDT, Pacific Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in Los Angeles, it is 12:00 PM in Tampa."
+    },
+    {
+      "question": "What is the time difference between Tampa and London?",
+      "answer": "Tampa (EST, UTC-5) is 5 hours behind London (GMT, UTC+0) in winter. During US DST (EDT, UTC-4) and UK BST (UTC+1), the gap remains 5 hours. During transition periods in spring and fall when only one country has changed, the gap may briefly be 4 or 6 hours."
+    },
+    {
+      "question": "What are typical business hours in Tampa?",
+      "answer": "Standard business hours in Tampa are 9:00 AM to 5:00 PM ET, Monday through Friday. Tampa Bay is a major financial and healthcare hub — home to Raymond James Financial, TECO Energy, and BayCare Health System. The port of Tampa Bay is one of Florida's busiest cargo ports. Ybor City and downtown Tampa entertainment districts operate evenings until 10:00 PM or later."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Tampa right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tampa, Florida, USA uses Eastern Standard Time (EST, UTC-5) in winter and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time. The IANA identifier is America/New_York. Tampa is on the same time as Miami, Orlando, New York, and Washington D.C. The live clock above shows the current Tampa time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Tampa in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tampa, Florida is in the Eastern Time Zone (ET). It uses Eastern Standard Time (EST, UTC-5) from the first Sunday in November to the second Sunday in March, and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time. The IANA identifier is America/New_York. Tampa shares its time zone with Miami, Orlando, Jacksonville, and all of Florida's east coast."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Tampa observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Tampa, Florida observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (EST → EDT) and fall back on the first Sunday in November. Florida (including Tampa) follows the standard US DST schedule. Note: Florida passed the Sunshine Protection Act in 2018 to observe permanent DST, but it requires federal approval — Tampa still changes clocks as of 2026."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Tampa and Chicago?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tampa (EST/EDT, Eastern Time) is always 1 hour ahead of Chicago (CST/CDT, Central Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in Chicago, it is 10:00 AM in Tampa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Tampa and Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tampa (EST/EDT, Eastern Time) is always 3 hours ahead of Los Angeles (PST/PDT, Pacific Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in Los Angeles, it is 12:00 PM in Tampa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Tampa and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tampa (EST, UTC-5) is 5 hours behind London (GMT, UTC+0) in winter. During US DST (EDT, UTC-4) and UK BST (UTC+1), the gap remains 5 hours. During transition periods in spring and fall when only one country has changed, the gap may briefly be 4 or 6 hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Tampa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Tampa are 9:00 AM to 5:00 PM ET, Monday through Friday. Tampa Bay is a major financial and healthcare hub — home to Raymond James Financial, TECO Energy, and BayCare Health System. The port of Tampa Bay is one of Florida's busiest cargo ports. Ybor City and downtown Tampa entertainment districts operate evenings until 10:00 PM or later."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Albuquerque — MST/MDT",
+  "seo_description": "Current time in Albuquerque, New Mexico. Mountain Time Zone — MST (UTC-7) in winter, MDT (UTC-6) during DST. Live clock and time differences for Albuquerque, NM.",
+  "faq": [
+    {
+      "question": "What time is it in Albuquerque right now?",
+      "answer": "Albuquerque, New Mexico, USA uses Mountain Standard Time (MST, UTC-7) in winter and Mountain Daylight Time (MDT, UTC-6) during Daylight Saving Time. The IANA identifier is America/Denver. Albuquerque is on the same time as Denver, Salt Lake City, and El Paso — 2 hours behind New York and 1 hour ahead of Los Angeles. The live clock above shows the current Albuquerque time."
+    },
+    {
+      "question": "What time zone is Albuquerque in?",
+      "answer": "Albuquerque, New Mexico is in the Mountain Time Zone (MT). It uses Mountain Standard Time (MST, UTC-7) from the first Sunday in November to the second Sunday in March, and Mountain Daylight Time (MDT, UTC-6) during Daylight Saving Time. The IANA identifier is America/Denver. Albuquerque shares its time zone with Denver, Salt Lake City, El Paso, and Santa Fe."
+    },
+    {
+      "question": "Does Albuquerque observe daylight saving time?",
+      "answer": "Yes. Albuquerque, New Mexico observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (MST → MDT) and fall back on the first Sunday in November. New Mexico follows the standard US DST schedule, unlike neighboring Arizona (which does not observe DST — except for the Navajo Nation)."
+    },
+    {
+      "question": "What is the time difference between Albuquerque and New York?",
+      "answer": "Albuquerque (MST/MDT, Mountain Time) is always 2 hours behind New York (EST/EDT, Eastern Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in New York, it is 7:00 AM in Albuquerque."
+    },
+    {
+      "question": "What is the time difference between Albuquerque and Phoenix?",
+      "answer": "Albuquerque (MST/MDT, Mountain Time with DST) and Phoenix (MST, no DST) share the same time during US standard time: both are UTC-7 in winter. During summer DST, Albuquerque moves to MDT (UTC-6) while Phoenix stays at MST (UTC-7), making Phoenix 1 hour behind Albuquerque from March through November."
+    },
+    {
+      "question": "What is the time difference between Albuquerque and Denver?",
+      "answer": "Albuquerque (MST/MDT) and Denver (MST/MDT) are in the same Mountain Time Zone. There is no time difference between them — both use America/Denver as their IANA identifier and always share the exact same time."
+    },
+    {
+      "question": "What are typical business hours in Albuquerque?",
+      "answer": "Standard business hours in Albuquerque are 9:00 AM to 5:00 PM MT, Monday through Friday. Albuquerque is New Mexico's largest city and an economic hub for the state. Major employers include Kirtland Air Force Base, Sandia National Laboratories, Presbyterian Healthcare Services, and the University of New Mexico. The Old Town historic district and Central Avenue (Route 66) operate with tourism-oriented hours from 10:00 AM to 6:00 PM."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Albuquerque right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Albuquerque, New Mexico, USA uses Mountain Standard Time (MST, UTC-7) in winter and Mountain Daylight Time (MDT, UTC-6) during Daylight Saving Time. The IANA identifier is America/Denver. Albuquerque is on the same time as Denver, Salt Lake City, and El Paso — 2 hours behind New York and 1 hour ahead of Los Angeles. The live clock above shows the current Albuquerque time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Albuquerque in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Albuquerque, New Mexico is in the Mountain Time Zone (MT). It uses Mountain Standard Time (MST, UTC-7) from the first Sunday in November to the second Sunday in March, and Mountain Daylight Time (MDT, UTC-6) during Daylight Saving Time. The IANA identifier is America/Denver. Albuquerque shares its time zone with Denver, Salt Lake City, El Paso, and Santa Fe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Albuquerque observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Albuquerque, New Mexico observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (MST → MDT) and fall back on the first Sunday in November. New Mexico follows the standard US DST schedule, unlike neighboring Arizona (which does not observe DST — except for the Navajo Nation)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Albuquerque and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Albuquerque (MST/MDT, Mountain Time) is always 2 hours behind New York (EST/EDT, Eastern Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in New York, it is 7:00 AM in Albuquerque."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Albuquerque and Phoenix?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Albuquerque (MST/MDT, Mountain Time with DST) and Phoenix (MST, no DST) share the same time during US standard time: both are UTC-7 in winter. During summer DST, Albuquerque moves to MDT (UTC-6) while Phoenix stays at MST (UTC-7), making Phoenix 1 hour behind Albuquerque from March through November."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Albuquerque and Denver?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Albuquerque (MST/MDT) and Denver (MST/MDT) are in the same Mountain Time Zone. There is no time difference between them — both use America/Denver as their IANA identifier and always share the exact same time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Albuquerque?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Albuquerque are 9:00 AM to 5:00 PM MT, Monday through Friday. Albuquerque is New Mexico's largest city and an economic hub for the state. Major employers include Kirtland Air Force Base, Sandia National Laboratories, Presbyterian Healthcare Services, and the University of New Mexico. The Old Town historic district and Central Avenue (Route 66) operate with tourism-oriented hours from 10:00 AM to 6:00 PM."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Baku — AZT (UTC+4)",
+  "seo_description": "Current time in Baku, Azerbaijan — live Azerbaijan Time (AZT, UTC+4) clock, no DST, and time differences with Dubai, Moscow, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Baku right now?",
+      "answer": "Baku, Azerbaijan uses Azerbaijan Time (AZT, UTC+4) year-round. Azerbaijan abolished Daylight Saving Time in 2016 and now stays on UTC+4 permanently. Baku shares its timezone with Dubai (UAE) and Tbilisi (Georgia). The IANA timezone identifier is Asia/Baku."
+    },
+    {
+      "question": "What time zone is Baku in?",
+      "answer": "Baku is in the Azerbaijan Time zone (AZT, UTC+4). Azerbaijan stopped observing DST in 2016, so UTC+4 is used year-round. Baku is geographically at the crossroads of Eastern Europe and Western Asia. The IANA identifier is Asia/Baku."
+    },
+    {
+      "question": "Does Baku observe daylight saving time?",
+      "answer": "No. Azerbaijan abolished Daylight Saving Time in 2016. Baku remains on AZT (UTC+4) year-round. Previously, Azerbaijan used UTC+4 in winter and UTC+5 in summer. Since 2016, the clocks no longer change."
+    },
+    {
+      "question": "What is the time difference between Baku and Dubai?",
+      "answer": "Baku (AZT, UTC+4) and Dubai (GST, UTC+4) are on the same UTC offset. There is no time difference between Baku and Dubai year-round, as neither city observes DST."
+    },
+    {
+      "question": "What is the time difference between Baku and Moscow?",
+      "answer": "Baku (AZT, UTC+4) is 1 hour ahead of Moscow (MSK, UTC+3). Russia does not observe DST (since 2014), and neither does Azerbaijan, so this 1-hour gap is constant year-round."
+    },
+    {
+      "question": "What is the time difference between Baku and London?",
+      "answer": "Baku (AZT, UTC+4) is 4 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Baku is 3 hours ahead. Since Baku has no DST, the gap changes only when London transitions its clocks."
+    },
+    {
+      "question": "What are typical business hours in Baku?",
+      "answer": "Standard business hours in Baku are 9:00 AM to 6:00 PM AZT, Monday through Friday. Baku is the capital and largest city of Azerbaijan and the largest city on the Caspian Sea. The economy is dominated by the oil and gas industry (BP, SOCAR). The Baku Stock Exchange (BSE) operates Monday–Friday. Baku hosted the 2015 European Games and Formula 1 Azerbaijan Grand Prix. The city is also a hub for the Trans-Caspian trade corridor."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Baku right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Baku, Azerbaijan uses Azerbaijan Time (AZT, UTC+4) year-round. Azerbaijan abolished Daylight Saving Time in 2016 and now stays on UTC+4 permanently. Baku shares its timezone with Dubai (UAE) and Tbilisi (Georgia). The IANA timezone identifier is Asia/Baku."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Baku in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Baku is in the Azerbaijan Time zone (AZT, UTC+4). Azerbaijan stopped observing DST in 2016, so UTC+4 is used year-round. Baku is geographically at the crossroads of Eastern Europe and Western Asia. The IANA identifier is Asia/Baku."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Baku observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Azerbaijan abolished Daylight Saving Time in 2016. Baku remains on AZT (UTC+4) year-round. Previously, Azerbaijan used UTC+4 in winter and UTC+5 in summer. Since 2016, the clocks no longer change."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Baku and Dubai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Baku (AZT, UTC+4) and Dubai (GST, UTC+4) are on the same UTC offset. There is no time difference between Baku and Dubai year-round, as neither city observes DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Baku and Moscow?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Baku (AZT, UTC+4) is 1 hour ahead of Moscow (MSK, UTC+3). Russia does not observe DST (since 2014), and neither does Azerbaijan, so this 1-hour gap is constant year-round."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Baku and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Baku (AZT, UTC+4) is 4 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Baku is 3 hours ahead. Since Baku has no DST, the gap changes only when London transitions its clocks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Baku?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Baku are 9:00 AM to 6:00 PM AZT, Monday through Friday. Baku is the capital and largest city of Azerbaijan and the largest city on the Caspian Sea. The economy is dominated by the oil and gas industry (BP, SOCAR). The Baku Stock Exchange (BSE) operates Monday–Friday. Baku hosted the 2015 European Games and Formula 1 Azerbaijan Grand Prix. The city is also a hub for the Trans-Caspian trade corridor."
+        }
+      }
+    ]
+  }
+}

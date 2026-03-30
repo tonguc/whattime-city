@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Abuja — WAT (UTC+1)",
+  "seo_description": "Current time in Abuja, Nigeria — live West Africa Time (WAT, UTC+1) clock, no DST, and time differences with Lagos, London, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Abuja right now?",
+      "answer": "Abuja, Nigeria uses West Africa Time (WAT, UTC+1) year-round. Nigeria does not observe Daylight Saving Time. Abuja is the capital of Nigeria and shares its timezone with Lagos, Kano, Port Harcourt, and other Nigerian cities. The IANA timezone identifier is Africa/Lagos."
+    },
+    {
+      "question": "What time zone is Abuja in?",
+      "answer": "Abuja is in the West Africa Time zone (WAT, UTC+1). Nigeria uses UTC+1 year-round with no DST. WAT is shared by Nigeria, Niger, Chad, Cameroon, Benin, Gabon, and Angola. The IANA identifier is Africa/Lagos (used for all of Nigeria)."
+    },
+    {
+      "question": "Does Abuja observe daylight saving time?",
+      "answer": "No. Nigeria does not observe Daylight Saving Time. Abuja remains on WAT (UTC+1) year-round. Nigeria has never observed DST."
+    },
+    {
+      "question": "What is the time difference between Abuja and Lagos?",
+      "answer": "Abuja and Lagos are in the same timezone (WAT, UTC+1, Africa/Lagos). There is no time difference between Abuja and Lagos at any time of year."
+    },
+    {
+      "question": "What is the time difference between Abuja and London?",
+      "answer": "Abuja (WAT, UTC+1) is 1 hour ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Abuja and London are on the same time. Since Nigeria has no DST, the gap changes only when London transitions its clocks."
+    },
+    {
+      "question": "What is the time difference between Abuja and New York?",
+      "answer": "Abuja (WAT, UTC+1) is 6 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Abuja is 5 hours ahead. Since Nigeria has no DST, the gap changes only when the US transitions."
+    },
+    {
+      "question": "What are typical business hours in Abuja?",
+      "answer": "Standard business hours in Abuja are 8:00 AM to 5:00 PM WAT, Monday through Friday. Abuja became Nigeria's capital in 1991, replacing Lagos. It is Nigeria's political and administrative capital. Key sectors include government, finance, real estate, and services. The Nigerian Stock Exchange (NGX) is located in Lagos, but major government ministries and federal agencies are in Abuja. Nigeria is Africa's largest economy and most populous nation."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Abuja right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Abuja, Nigeria uses West Africa Time (WAT, UTC+1) year-round. Nigeria does not observe Daylight Saving Time. Abuja is the capital of Nigeria and shares its timezone with Lagos, Kano, Port Harcourt, and other Nigerian cities. The IANA timezone identifier is Africa/Lagos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Abuja in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Abuja is in the West Africa Time zone (WAT, UTC+1). Nigeria uses UTC+1 year-round with no DST. WAT is shared by Nigeria, Niger, Chad, Cameroon, Benin, Gabon, and Angola. The IANA identifier is Africa/Lagos (used for all of Nigeria)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Abuja observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Nigeria does not observe Daylight Saving Time. Abuja remains on WAT (UTC+1) year-round. Nigeria has never observed DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Abuja and Lagos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Abuja and Lagos are in the same timezone (WAT, UTC+1, Africa/Lagos). There is no time difference between Abuja and Lagos at any time of year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Abuja and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Abuja (WAT, UTC+1) is 1 hour ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Abuja and London are on the same time. Since Nigeria has no DST, the gap changes only when London transitions its clocks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Abuja and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Abuja (WAT, UTC+1) is 6 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Abuja is 5 hours ahead. Since Nigeria has no DST, the gap changes only when the US transitions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Abuja?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Abuja are 8:00 AM to 5:00 PM WAT, Monday through Friday. Abuja became Nigeria's capital in 1991, replacing Lagos. It is Nigeria's political and administrative capital. Key sectors include government, finance, real estate, and services. The Nigerian Stock Exchange (NGX) is located in Lagos, but major government ministries and federal agencies are in Abuja. Nigeria is Africa's largest economy and most populous nation."
+        }
+      }
+    ]
+  }
+}

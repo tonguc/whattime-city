@@ -142,6 +142,9 @@ export default async function sitemap() {
     { slug: 'washington-dc', priority: 0.8 },
     { slug: 'hawaii', priority: 0.8 },
     { slug: 'montana', priority: 0.8 },
+    { slug: 'idaho', priority: 0.8 },
+    { slug: 'wyoming', priority: 0.8 },
+    { slug: 'south-dakota', priority: 0.8 },
     { slug: 'daylight-saving-time', priority: 0.8 },
     // DST cluster subpages
     { slug: 'daylight-saving-time/usa', priority: 0.8 },

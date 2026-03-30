@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Wellington — NZST/NZDT",
+  "seo_description": "Current time in Wellington, New Zealand — live NZST/NZDT clock, DST schedule, and time differences with Sydney, London, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Wellington right now?",
+      "answer": "Wellington, New Zealand uses New Zealand Standard Time (NZST, UTC+12) in winter and New Zealand Daylight Time (NZDT, UTC+13) during Daylight Saving Time in summer. Because New Zealand is in the southern hemisphere, DST begins in September and ends in April — the opposite of the northern hemisphere. The IANA timezone identifier is Pacific/Auckland."
+    },
+    {
+      "question": "What time zone is Wellington in?",
+      "answer": "Wellington is in the New Zealand Time zone (NZST, UTC+12 in winter; NZDT, UTC+13 in summer). Wellington uses the same timezone as Auckland — Pacific/Auckland. Wellington is the southernmost national capital in the world. The IANA identifier is Pacific/Auckland."
+    },
+    {
+      "question": "Does Wellington observe daylight saving time?",
+      "answer": "Yes. New Zealand observes Daylight Saving Time. Clocks spring forward 1 hour to NZDT (UTC+13) on the last Sunday in September at 2:00 AM and fall back to NZST (UTC+12) on the first Sunday in April at 3:00 AM. As a southern hemisphere country, Wellington's 'summer time' is during September–April, which is the northern hemisphere's winter."
+    },
+    {
+      "question": "What is the time difference between Wellington and Sydney?",
+      "answer": "Wellington (NZST, UTC+12) is 2 hours ahead of Sydney (AEST, UTC+10) in the southern hemisphere winter. During DST, when Wellington is NZDT (UTC+13) and Sydney is AEDT (UTC+11), Wellington is still 2 hours ahead. However, the transitions don't perfectly align — there are brief periods when the gap is 3 hours."
+    },
+    {
+      "question": "What is the time difference between Wellington and London?",
+      "answer": "Wellington (NZST, UTC+12) is 12 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1) and Wellington's summer (NZDT, UTC+13), Wellington is 12 hours ahead. The gap stays near 12 hours but can be 11 or 13 depending on the seasonal transitions."
+    },
+    {
+      "question": "What is the time difference between Wellington and New York?",
+      "answer": "Wellington (NZST, UTC+12) is 17 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4) and Wellington's summer (NZDT, UTC+13), Wellington is 17 hours ahead. The gap can vary between 16–18 hours depending on which city is observing DST."
+    },
+    {
+      "question": "What are typical business hours in Wellington?",
+      "answer": "Standard business hours in Wellington are 9:00 AM to 5:00 PM NZST/NZDT, Monday through Friday. Wellington is New Zealand's capital and the seat of government. It is home to government ministries, Parliament, and many public sector employers. Key industries include government, financial services, tech (Xero, Weta Digital), and creative industries. Wellington has one of the highest concentrations of cafes and restaurants per capita in the world."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Wellington right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wellington, New Zealand uses New Zealand Standard Time (NZST, UTC+12) in winter and New Zealand Daylight Time (NZDT, UTC+13) during Daylight Saving Time in summer. Because New Zealand is in the southern hemisphere, DST begins in September and ends in April — the opposite of the northern hemisphere. The IANA timezone identifier is Pacific/Auckland."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Wellington in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wellington is in the New Zealand Time zone (NZST, UTC+12 in winter; NZDT, UTC+13 in summer). Wellington uses the same timezone as Auckland — Pacific/Auckland. Wellington is the southernmost national capital in the world. The IANA identifier is Pacific/Auckland."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Wellington observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. New Zealand observes Daylight Saving Time. Clocks spring forward 1 hour to NZDT (UTC+13) on the last Sunday in September at 2:00 AM and fall back to NZST (UTC+12) on the first Sunday in April at 3:00 AM. As a southern hemisphere country, Wellington's 'summer time' is during September–April, which is the northern hemisphere's winter."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Wellington and Sydney?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wellington (NZST, UTC+12) is 2 hours ahead of Sydney (AEST, UTC+10) in the southern hemisphere winter. During DST, when Wellington is NZDT (UTC+13) and Sydney is AEDT (UTC+11), Wellington is still 2 hours ahead. However, the transitions don't perfectly align — there are brief periods when the gap is 3 hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Wellington and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wellington (NZST, UTC+12) is 12 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1) and Wellington's summer (NZDT, UTC+13), Wellington is 12 hours ahead. The gap stays near 12 hours but can be 11 or 13 depending on the seasonal transitions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Wellington and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wellington (NZST, UTC+12) is 17 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4) and Wellington's summer (NZDT, UTC+13), Wellington is 17 hours ahead. The gap can vary between 16–18 hours depending on which city is observing DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Wellington?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Wellington are 9:00 AM to 5:00 PM NZST/NZDT, Monday through Friday. Wellington is New Zealand's capital and the seat of government. It is home to government ministries, Parliament, and many public sector employers. Key industries include government, financial services, tech (Xero, Weta Digital), and creative industries. Wellington has one of the highest concentrations of cafes and restaurants per capita in the world."
+        }
+      }
+    ]
+  }
+}

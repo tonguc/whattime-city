@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Belfast — GMT/BST",
+  "seo_description": "Current time in Belfast, Northern Ireland — live GMT/BST clock, DST schedule, and time differences with Dublin, London, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Belfast right now?",
+      "answer": "Belfast, Northern Ireland, UK uses Greenwich Mean Time (GMT, UTC+0) in winter and British Summer Time (BST, UTC+1) during Daylight Saving Time in summer. Clocks spring forward on the last Sunday in March and fall back on the last Sunday in October. Belfast is on the same timezone as London. The IANA timezone identifier is Europe/London."
+    },
+    {
+      "question": "What time zone is Belfast in?",
+      "answer": "Belfast is in the GMT/BST timezone (UTC+0 in winter, UTC+1 in summer). Northern Ireland is part of the United Kingdom and uses the Europe/London IANA timezone. Belfast shares its timezone with London, Manchester, Edinburgh, and Cardiff. The IANA identifier is Europe/London."
+    },
+    {
+      "question": "Does Belfast observe daylight saving time?",
+      "answer": "Yes. Northern Ireland and the rest of the UK observe British Summer Time (BST). Clocks spring forward 1 hour to BST (UTC+1) on the last Sunday in March at 1:00 AM and fall back to GMT (UTC+0) on the last Sunday in October at 2:00 AM. Belfast follows UK DST rules."
+    },
+    {
+      "question": "What is the time difference between Belfast and Dublin?",
+      "answer": "Belfast (GMT/BST) and Dublin (GMT/IST, Europe/Dublin) use the same offsets year-round — both are UTC+0 in winter and UTC+1 in summer. Ireland calls its summer time Irish Standard Time (IST) rather than BST, but the clocks change on the same dates. There is no time difference between Belfast and Dublin."
+    },
+    {
+      "question": "What is the time difference between Belfast and London?",
+      "answer": "Belfast and London are on the same timezone year-round (Europe/London, GMT/BST). There is no time difference between Belfast and London at any time of year."
+    },
+    {
+      "question": "What is the time difference between Belfast and New York?",
+      "answer": "Belfast (GMT, UTC+0) is 5 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Belfast is 4 hours ahead. During UK summer (BST, UTC+1), Belfast is 5 hours ahead of EDT. The gap varies from 4–5 hours."
+    },
+    {
+      "question": "What are typical business hours in Belfast?",
+      "answer": "Standard business hours in Belfast are 9:00 AM to 5:30 PM GMT/BST, Monday through Friday. Belfast is the capital of Northern Ireland and its largest city. Key industries include financial services, advanced manufacturing, cyber security, and tourism. Belfast is home to Titanic Belfast museum, one of the UK's most visited attractions. Major employers include Concentrix, Citi, and Allen & Overy. Belfast City Airport (George Best) is close to the city centre."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Belfast right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Belfast, Northern Ireland, UK uses Greenwich Mean Time (GMT, UTC+0) in winter and British Summer Time (BST, UTC+1) during Daylight Saving Time in summer. Clocks spring forward on the last Sunday in March and fall back on the last Sunday in October. Belfast is on the same timezone as London. The IANA timezone identifier is Europe/London."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Belfast in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Belfast is in the GMT/BST timezone (UTC+0 in winter, UTC+1 in summer). Northern Ireland is part of the United Kingdom and uses the Europe/London IANA timezone. Belfast shares its timezone with London, Manchester, Edinburgh, and Cardiff. The IANA identifier is Europe/London."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Belfast observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Northern Ireland and the rest of the UK observe British Summer Time (BST). Clocks spring forward 1 hour to BST (UTC+1) on the last Sunday in March at 1:00 AM and fall back to GMT (UTC+0) on the last Sunday in October at 2:00 AM. Belfast follows UK DST rules."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Belfast and Dublin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Belfast (GMT/BST) and Dublin (GMT/IST, Europe/Dublin) use the same offsets year-round — both are UTC+0 in winter and UTC+1 in summer. Ireland calls its summer time Irish Standard Time (IST) rather than BST, but the clocks change on the same dates. There is no time difference between Belfast and Dublin."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Belfast and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Belfast and London are on the same timezone year-round (Europe/London, GMT/BST). There is no time difference between Belfast and London at any time of year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Belfast and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Belfast (GMT, UTC+0) is 5 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Belfast is 4 hours ahead. During UK summer (BST, UTC+1), Belfast is 5 hours ahead of EDT. The gap varies from 4–5 hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Belfast?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Belfast are 9:00 AM to 5:30 PM GMT/BST, Monday through Friday. Belfast is the capital of Northern Ireland and its largest city. Key industries include financial services, advanced manufacturing, cyber security, and tourism. Belfast is home to Titanic Belfast museum, one of the UK's most visited attractions. Major employers include Concentrix, Citi, and Allen & Overy. Belfast City Airport (George Best) is close to the city centre."
+        }
+      }
+    ]
+  }
+}

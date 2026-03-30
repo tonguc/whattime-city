@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Raleigh — EST/EDT",
+  "seo_description": "Current time in Raleigh, North Carolina. Eastern Time Zone — EST (UTC-5) in winter, EDT (UTC-4) during DST. Live clock and time differences for Raleigh, NC.",
+  "faq": [
+    {
+      "question": "What time is it in Raleigh right now?",
+      "answer": "Raleigh, North Carolina, USA uses Eastern Standard Time (EST, UTC-5) in winter and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time. The IANA identifier is America/New_York. Raleigh is on the same time as New York, Washington D.C., Miami, and Charlotte. The live clock above shows the current Raleigh time."
+    },
+    {
+      "question": "What time zone is Raleigh, NC in?",
+      "answer": "Raleigh, North Carolina is in the Eastern Time Zone (ET). It uses Eastern Standard Time (EST, UTC-5) from the first Sunday in November to the second Sunday in March, and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time. The IANA identifier is America/New_York. Raleigh shares its time zone with Charlotte, Durham, Chapel Hill, and the entire state of North Carolina."
+    },
+    {
+      "question": "Does Raleigh observe daylight saving time?",
+      "answer": "Yes. Raleigh, North Carolina observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (EST → EDT) and fall back on the first Sunday in November. North Carolina follows the standard US DST schedule."
+    },
+    {
+      "question": "What is the time difference between Raleigh and New York?",
+      "answer": "Raleigh (EST/EDT) and New York (EST/EDT) are in the same Eastern Time Zone. There is no time difference between them — both use the same UTC offset year-round. When it is noon in New York, it is noon in Raleigh."
+    },
+    {
+      "question": "What is the time difference between Raleigh and Chicago?",
+      "answer": "Raleigh (EST/EDT, Eastern Time) is always 1 hour ahead of Chicago (CST/CDT, Central Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in Chicago, it is 10:00 AM in Raleigh."
+    },
+    {
+      "question": "What is the time difference between Raleigh and Los Angeles?",
+      "answer": "Raleigh (EST/EDT, Eastern Time) is always 3 hours ahead of Los Angeles (PST/PDT, Pacific Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in Los Angeles, it is 12:00 PM in Raleigh."
+    },
+    {
+      "question": "What are typical business hours in Raleigh, NC?",
+      "answer": "Standard business hours in Raleigh are 9:00 AM to 5:00 PM ET, Monday through Friday. Raleigh is part of the Research Triangle — a tech and biotech hub anchored by NC State, Duke University, and UNC Chapel Hill. Major employers include IBM, Cisco, SAS Institute (headquartered in Cary, NC), Red Hat, and Lenovo's North American headquarters. The Research Triangle Park (RTP) hosts hundreds of tech and pharma companies."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Raleigh right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Raleigh, North Carolina, USA uses Eastern Standard Time (EST, UTC-5) in winter and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time. The IANA identifier is America/New_York. Raleigh is on the same time as New York, Washington D.C., Miami, and Charlotte. The live clock above shows the current Raleigh time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Raleigh, NC in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Raleigh, North Carolina is in the Eastern Time Zone (ET). It uses Eastern Standard Time (EST, UTC-5) from the first Sunday in November to the second Sunday in March, and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time. The IANA identifier is America/New_York. Raleigh shares its time zone with Charlotte, Durham, Chapel Hill, and the entire state of North Carolina."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Raleigh observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Raleigh, North Carolina observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (EST → EDT) and fall back on the first Sunday in November. North Carolina follows the standard US DST schedule."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Raleigh and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Raleigh (EST/EDT) and New York (EST/EDT) are in the same Eastern Time Zone. There is no time difference between them — both use the same UTC offset year-round. When it is noon in New York, it is noon in Raleigh."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Raleigh and Chicago?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Raleigh (EST/EDT, Eastern Time) is always 1 hour ahead of Chicago (CST/CDT, Central Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in Chicago, it is 10:00 AM in Raleigh."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Raleigh and Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Raleigh (EST/EDT, Eastern Time) is always 3 hours ahead of Los Angeles (PST/PDT, Pacific Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in Los Angeles, it is 12:00 PM in Raleigh."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Raleigh, NC?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Raleigh are 9:00 AM to 5:00 PM ET, Monday through Friday. Raleigh is part of the Research Triangle — a tech and biotech hub anchored by NC State, Duke University, and UNC Chapel Hill. Major employers include IBM, Cisco, SAS Institute (headquartered in Cary, NC), Red Hat, and Lenovo's North American headquarters. The Research Triangle Park (RTP) hosts hundreds of tech and pharma companies."
+        }
+      }
+    ]
+  }
+}
