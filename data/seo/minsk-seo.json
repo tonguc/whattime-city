@@ -1,0 +1,84 @@
+{
+  "seo_title": "Current Time in Minsk — FET (UTC+3)",
+  "seo_description": "Current time in Minsk, Belarus. Further-eastern European Time (FET, UTC+3) year-round — no DST. Live clock and time differences for Minsk.",
+  "faq": [
+    {
+      "question": "What time is it in Minsk right now?",
+      "answer": "Minsk, Belarus uses Further-eastern European Time (FET, UTC+3) year-round. Belarus does not observe Daylight Saving Time since 2011. The IANA identifier is Europe/Minsk. Minsk is 1 hour ahead of Moscow (despite their geographic proximity) and 3 hours ahead of London. The live clock above shows the current Minsk time."
+    },
+    {
+      "question": "What time zone is Minsk in?",
+      "answer": "Minsk, Belarus uses Further-eastern European Time (FET, UTC+3) year-round. The IANA identifier is Europe/Minsk. Belarus abolished Daylight Saving Time in 2011 — the country was supposed to join Russia (also UTC+3) permanently, and did so that year. Minsk shares UTC+3 with Moscow, Riyadh, Istanbul, and Nairobi."
+    },
+    {
+      "question": "Does Minsk observe daylight saving time?",
+      "answer": "No. Minsk, Belarus abolished Daylight Saving Time in 2011 and now uses UTC+3 (FET) permanently year-round. This means that in summer, Moscow and Minsk are on the same time, but in winter, Moscow (MSK, UTC+3) also stays at UTC+3 — keeping the two capitals at the same offset permanently."
+    },
+    {
+      "question": "What is the time difference between Minsk and London?",
+      "answer": "Minsk (FET, UTC+3) is 3 hours ahead of London (GMT, UTC+0) in winter. During UK summer time (BST, UTC+1), Minsk is 2 hours ahead. Belarus does not observe DST."
+    },
+    {
+      "question": "What is the time difference between Minsk and New York?",
+      "answer": "Minsk (FET, UTC+3) is 8 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Minsk is 7 hours ahead. Belarus does not observe DST."
+    },
+    {
+      "question": "Is Minsk in the same time zone as Moscow?",
+      "answer": "Yes. Minsk (FET, UTC+3) and Moscow (MSK, UTC+3) are in the same UTC offset. Both countries abolished DST — Russia in 2014, Belarus in 2011 — and both settled on UTC+3 year-round. When it is noon in Moscow, it is noon in Minsk."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Minsk right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Minsk, Belarus uses Further-eastern European Time (FET, UTC+3) year-round. Belarus does not observe Daylight Saving Time since 2011. The IANA identifier is Europe/Minsk. Minsk is 1 hour ahead of Moscow (despite their geographic proximity) and 3 hours ahead of London. The live clock above shows the current Minsk time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Minsk in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Minsk, Belarus uses Further-eastern European Time (FET, UTC+3) year-round. The IANA identifier is Europe/Minsk. Belarus abolished Daylight Saving Time in 2011 — the country was supposed to join Russia (also UTC+3) permanently, and did so that year. Minsk shares UTC+3 with Moscow, Riyadh, Istanbul, and Nairobi."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Minsk observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Minsk, Belarus abolished Daylight Saving Time in 2011 and now uses UTC+3 (FET) permanently year-round. This means that in summer, Moscow and Minsk are on the same time, but in winter, Moscow (MSK, UTC+3) also stays at UTC+3 — keeping the two capitals at the same offset permanently."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Minsk and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Minsk (FET, UTC+3) is 3 hours ahead of London (GMT, UTC+0) in winter. During UK summer time (BST, UTC+1), Minsk is 2 hours ahead. Belarus does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Minsk and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Minsk (FET, UTC+3) is 8 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Minsk is 7 hours ahead. Belarus does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Minsk in the same time zone as Moscow?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Minsk (FET, UTC+3) and Moscow (MSK, UTC+3) are in the same UTC offset. Both countries abolished DST — Russia in 2014, Belarus in 2011 — and both settled on UTC+3 year-round. When it is noon in Moscow, it is noon in Minsk."
+        }
+      }
+    ]
+  }
+}

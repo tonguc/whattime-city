@@ -1,0 +1,84 @@
+{
+  "seo_title": "Current Time in Astana — AQTT (UTC+5)",
+  "seo_description": "Current time in Astana (Nur-Sultan), Kazakhstan. Aqtau Time (AQTT, UTC+5) year-round — no DST. Live clock and time differences for Astana.",
+  "faq": [
+    {
+      "question": "What time is it in Astana right now?",
+      "answer": "Astana (also known as Nur-Sultan), Kazakhstan uses Aqtau Time (AQTT, UTC+5) year-round. Kazakhstan does not observe Daylight Saving Time. The IANA identifier is Asia/Almaty (Astana uses the same offset as Almaty — UTC+5 for western Kazakhstan). Note: the city was officially renamed from Nur-Sultan back to Astana in 2022. The live clock above shows the current Astana time."
+    },
+    {
+      "question": "What time zone is Astana in?",
+      "answer": "Astana, Kazakhstan's capital, uses UTC+5 year-round. The IANA identifier varies by source — western Kazakhstan (where Astana is located) is sometimes assigned Asia/Aqtau (UTC+5) or Asia/Oral. Kazakhstan abolished Daylight Saving Time in 2005. Note: Almaty and eastern Kazakhstan use UTC+6, making Astana 1 hour behind Almaty."
+    },
+    {
+      "question": "Does Astana observe daylight saving time?",
+      "answer": "No. Astana, Kazakhstan does not observe Daylight Saving Time. Kazakhstan abolished DST in 2005. Astana uses UTC+5 year-round permanently."
+    },
+    {
+      "question": "What is the time difference between Astana and London?",
+      "answer": "Astana (UTC+5) is 5 hours ahead of London (GMT, UTC+0) in winter. During UK summer time (BST, UTC+1), Astana is 4 hours ahead. Kazakhstan does not observe DST."
+    },
+    {
+      "question": "What is the time difference between Astana and New York?",
+      "answer": "Astana (UTC+5) is 10 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Astana is 9 hours ahead. Kazakhstan does not observe DST."
+    },
+    {
+      "question": "What are typical business hours in Astana?",
+      "answer": "Standard business hours in Astana are 9:00 AM to 6:00 PM (UTC+5), Monday through Friday. Astana is Kazakhstan's capital city and a major financial and governmental hub. The Astana International Financial Centre (AIFC) operates under English common law and targets Central Asian and Eurasian investment. Major sectors include government, energy (oil and gas), finance, and construction. The AIFC Astana exchange provides capital market services for the region."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Astana right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Astana (also known as Nur-Sultan), Kazakhstan uses Aqtau Time (AQTT, UTC+5) year-round. Kazakhstan does not observe Daylight Saving Time. The IANA identifier is Asia/Almaty (Astana uses the same offset as Almaty — UTC+5 for western Kazakhstan). Note: the city was officially renamed from Nur-Sultan back to Astana in 2022. The live clock above shows the current Astana time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Astana in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Astana, Kazakhstan's capital, uses UTC+5 year-round. The IANA identifier varies by source — western Kazakhstan (where Astana is located) is sometimes assigned Asia/Aqtau (UTC+5) or Asia/Oral. Kazakhstan abolished Daylight Saving Time in 2005. Note: Almaty and eastern Kazakhstan use UTC+6, making Astana 1 hour behind Almaty."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Astana observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Astana, Kazakhstan does not observe Daylight Saving Time. Kazakhstan abolished DST in 2005. Astana uses UTC+5 year-round permanently."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Astana and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Astana (UTC+5) is 5 hours ahead of London (GMT, UTC+0) in winter. During UK summer time (BST, UTC+1), Astana is 4 hours ahead. Kazakhstan does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Astana and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Astana (UTC+5) is 10 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Astana is 9 hours ahead. Kazakhstan does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Astana?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Astana are 9:00 AM to 6:00 PM (UTC+5), Monday through Friday. Astana is Kazakhstan's capital city and a major financial and governmental hub. The Astana International Financial Centre (AIFC) operates under English common law and targets Central Asian and Eurasian investment. Major sectors include government, energy (oil and gas), finance, and construction. The AIFC Astana exchange provides capital market services for the region."
+        }
+      }
+    ]
+  }
+}

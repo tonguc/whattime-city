@@ -1,0 +1,84 @@
+{
+  "seo_title": "Current Time in Riga — EET/EEST (UTC+2/+3)",
+  "seo_description": "Current time in Riga, Latvia. Eastern European Time — EET (UTC+2) in winter, EEST (UTC+3) during DST. Live clock and time differences for Riga.",
+  "faq": [
+    {
+      "question": "What time is it in Riga right now?",
+      "answer": "Riga, Latvia uses Eastern European Time (EET, UTC+2) in winter and Eastern European Summer Time (EEST, UTC+3) during Daylight Saving Time. The IANA identifier is Europe/Riga. Latvia follows the EU DST schedule, with clocks springing forward on the last Sunday in March and falling back on the last Sunday in October. The live clock above shows the current Riga time."
+    },
+    {
+      "question": "What time zone is Riga in?",
+      "answer": "Riga, Latvia is in the Eastern European Time Zone. It uses Eastern European Time (EET, UTC+2) in winter and Eastern European Summer Time (EEST, UTC+3) during Daylight Saving Time. The IANA identifier is Europe/Riga. Latvia is an EU member state and follows EU DST rules. Riga shares its time zone with Tallinn (Estonia), Vilnius (Lithuania), Helsinki (Finland), and Kyiv (Ukraine)."
+    },
+    {
+      "question": "Does Riga observe daylight saving time?",
+      "answer": "Yes. Riga, Latvia observes Daylight Saving Time following the EU schedule. Clocks spring forward 1 hour on the last Sunday in March at 3:00 AM (EET → EEST, UTC+2 → UTC+3) and fall back on the last Sunday in October. Latvia voted to end seasonal clock changes, but implementation requires EU-wide coordination that has been postponed."
+    },
+    {
+      "question": "What is the time difference between Riga and London?",
+      "answer": "Riga (EET, UTC+2) is 2 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1) and Latvian summer (EEST, UTC+3), Riga is still 2 hours ahead. Both countries change clocks on the same schedule, keeping the 2-hour gap consistent."
+    },
+    {
+      "question": "What is the time difference between Riga and New York?",
+      "answer": "Riga (EET, UTC+2) is 7 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4) and Latvian DST (EEST, UTC+3), Riga is still 7 hours ahead. The gap is constant year-round because both sides change clocks at similar times."
+    },
+    {
+      "question": "What are typical business hours in Riga?",
+      "answer": "Standard business hours in Riga are 9:00 AM to 6:00 PM EET/EEST, Monday through Friday. Riga is Latvia's capital, largest city, and the largest city in the Baltic states. It is a major financial and logistics hub in Northern Europe. Riga Stock Exchange (Nasdaq Riga) is part of the Nasdaq Baltic market. Major sectors include transit and logistics (Port of Riga), financial services, IT, and tourism. Riga's Old Town is a UNESCO World Heritage Site."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Riga right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Riga, Latvia uses Eastern European Time (EET, UTC+2) in winter and Eastern European Summer Time (EEST, UTC+3) during Daylight Saving Time. The IANA identifier is Europe/Riga. Latvia follows the EU DST schedule, with clocks springing forward on the last Sunday in March and falling back on the last Sunday in October. The live clock above shows the current Riga time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Riga in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Riga, Latvia is in the Eastern European Time Zone. It uses Eastern European Time (EET, UTC+2) in winter and Eastern European Summer Time (EEST, UTC+3) during Daylight Saving Time. The IANA identifier is Europe/Riga. Latvia is an EU member state and follows EU DST rules. Riga shares its time zone with Tallinn (Estonia), Vilnius (Lithuania), Helsinki (Finland), and Kyiv (Ukraine)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Riga observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Riga, Latvia observes Daylight Saving Time following the EU schedule. Clocks spring forward 1 hour on the last Sunday in March at 3:00 AM (EET → EEST, UTC+2 → UTC+3) and fall back on the last Sunday in October. Latvia voted to end seasonal clock changes, but implementation requires EU-wide coordination that has been postponed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Riga and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Riga (EET, UTC+2) is 2 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1) and Latvian summer (EEST, UTC+3), Riga is still 2 hours ahead. Both countries change clocks on the same schedule, keeping the 2-hour gap consistent."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Riga and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Riga (EET, UTC+2) is 7 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4) and Latvian DST (EEST, UTC+3), Riga is still 7 hours ahead. The gap is constant year-round because both sides change clocks at similar times."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Riga?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Riga are 9:00 AM to 6:00 PM EET/EEST, Monday through Friday. Riga is Latvia's capital, largest city, and the largest city in the Baltic states. It is a major financial and logistics hub in Northern Europe. Riga Stock Exchange (Nasdaq Riga) is part of the Nasdaq Baltic market. Major sectors include transit and logistics (Port of Riga), financial services, IT, and tourism. Riga's Old Town is a UNESCO World Heritage Site."
+        }
+      }
+    ]
+  }
+}
