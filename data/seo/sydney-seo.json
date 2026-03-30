@@ -1,5 +1,5 @@
 {
-  "seo_title": "Current Time in Sydney — AEST/AEDT (UTC+10/+11)",
+  "seo_title": "Current Time in Sydney — AEST/AEDT",
   "seo_description": "Current time in Sydney, Australia. Live AEST/AEDT clock, UTC+10 standard / UTC+11 daylight saving. Sydney time vs New York, London, Tokyo, Singapore. Australia's financial capital.",
   "faq": [
     {
@@ -181,11 +181,11 @@
   "timezone_facts": {
     "full_name": "Australian Eastern Standard Time / Australian Eastern Daylight Time",
     "abbreviation": "AEST / AEDT",
-    "utc_offset": "UTC+10 (Apr\u2013Oct) / UTC+11 (Oct\u2013Apr)",
+    "utc_offset": "UTC+10 (Apr–Oct) / UTC+11 (Oct–Apr)",
     "dst_observed": true,
     "dst_start": "First Sunday in October at 2:00 AM AEST (clocks forward to 3:00 AM AEDT)",
     "dst_end": "First Sunday in April at 3:00 AM AEDT (clocks back to 2:00 AM AEST)",
     "dst_offset": "UTC+11"
   },
-  "eeat_footer": "Last updated: March 2026 | \u2713 Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database."
+  "eeat_footer": "Last updated: March 2026 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database."
 }
