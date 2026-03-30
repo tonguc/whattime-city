@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Hanoi — ICT (UTC+7)",
+  "seo_description": "Current time in Hanoi, Vietnam — live Indochina Time (ICT, UTC+7) clock, no DST, and time differences with Ho Chi Minh City, Bangkok, Singapore, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Hanoi right now?",
+      "answer": "Hanoi, Vietnam uses Indochina Time (ICT, UTC+7) year-round. Vietnam does not observe Daylight Saving Time. Hanoi is the capital of Vietnam and shares its timezone with Ho Chi Minh City (Saigon), Bangkok (Thailand), and Jakarta (Indonesia). The IANA timezone identifier is Asia/Ho_Chi_Minh."
+    },
+    {
+      "question": "What time zone is Hanoi in?",
+      "answer": "Hanoi is in the Indochina Time zone (ICT, UTC+7). Vietnam uses UTC+7 year-round with no DST. The entire country of Vietnam is in one timezone, despite its north-south length of over 1,600 km. The IANA identifier is Asia/Ho_Chi_Minh (used for all of Vietnam)."
+    },
+    {
+      "question": "Does Hanoi observe daylight saving time?",
+      "answer": "No. Vietnam does not observe Daylight Saving Time. Hanoi remains on ICT (UTC+7) year-round. Vietnam abandoned DST in 1975. This fixed offset makes scheduling straightforward — Hanoi and Ho Chi Minh City are always 7 hours ahead of UTC."
+    },
+    {
+      "question": "What is the time difference between Hanoi and Singapore?",
+      "answer": "Hanoi (ICT, UTC+7) is 1 hour behind Singapore (SGT, UTC+8). Neither observes DST, so this 1-hour gap is constant year-round. When it is 9:00 AM in Hanoi, it is 10:00 AM in Singapore."
+    },
+    {
+      "question": "What is the time difference between Hanoi and London?",
+      "answer": "Hanoi (ICT, UTC+7) is 7 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Hanoi is 6 hours ahead. Since Vietnam has no DST, the gap changes only when London transitions its clocks."
+    },
+    {
+      "question": "What is the time difference between Hanoi and New York?",
+      "answer": "Hanoi (ICT, UTC+7) is 12 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Hanoi is 11 hours ahead. Since Vietnam has no DST, the gap changes only when the US transitions."
+    },
+    {
+      "question": "What are typical business hours in Hanoi?",
+      "answer": "Standard business hours in Hanoi are 8:00 AM to 5:00 PM ICT, Monday through Friday, with a 1–2 hour lunch break (12:00–1:00 or 2:00 PM). Some businesses also operate Saturday mornings. Hanoi is Vietnam's capital and political center. The Ho Chi Minh City Stock Exchange (HOSE) and Hanoi Stock Exchange (HNX) operate 9:00 AM–3:00 PM ICT. Hanoi is a growing technology hub, with many IT services and software companies."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Hanoi right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hanoi, Vietnam uses Indochina Time (ICT, UTC+7) year-round. Vietnam does not observe Daylight Saving Time. Hanoi is the capital of Vietnam and shares its timezone with Ho Chi Minh City (Saigon), Bangkok (Thailand), and Jakarta (Indonesia). The IANA timezone identifier is Asia/Ho_Chi_Minh."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Hanoi in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hanoi is in the Indochina Time zone (ICT, UTC+7). Vietnam uses UTC+7 year-round with no DST. The entire country of Vietnam is in one timezone, despite its north-south length of over 1,600 km. The IANA identifier is Asia/Ho_Chi_Minh (used for all of Vietnam)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Hanoi observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Vietnam does not observe Daylight Saving Time. Hanoi remains on ICT (UTC+7) year-round. Vietnam abandoned DST in 1975. This fixed offset makes scheduling straightforward — Hanoi and Ho Chi Minh City are always 7 hours ahead of UTC."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Hanoi and Singapore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hanoi (ICT, UTC+7) is 1 hour behind Singapore (SGT, UTC+8). Neither observes DST, so this 1-hour gap is constant year-round. When it is 9:00 AM in Hanoi, it is 10:00 AM in Singapore."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Hanoi and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hanoi (ICT, UTC+7) is 7 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Hanoi is 6 hours ahead. Since Vietnam has no DST, the gap changes only when London transitions its clocks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Hanoi and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hanoi (ICT, UTC+7) is 12 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Hanoi is 11 hours ahead. Since Vietnam has no DST, the gap changes only when the US transitions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Hanoi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Hanoi are 8:00 AM to 5:00 PM ICT, Monday through Friday, with a 1–2 hour lunch break (12:00–1:00 or 2:00 PM). Some businesses also operate Saturday mornings. Hanoi is Vietnam's capital and political center. The Ho Chi Minh City Stock Exchange (HOSE) and Hanoi Stock Exchange (HNX) operate 9:00 AM–3:00 PM ICT. Hanoi is a growing technology hub, with many IT services and software companies."
+        }
+      }
+    ]
+  }
+}

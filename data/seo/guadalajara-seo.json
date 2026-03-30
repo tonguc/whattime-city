@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Guadalajara — CST/CDT",
+  "seo_description": "Current time in Guadalajara, Mexico — live Central Time (CST/CDT) clock, DST schedule, and time differences with Mexico City, Los Angeles, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Guadalajara right now?",
+      "answer": "Guadalajara, Jalisco, Mexico uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time in summer. Mexico observes DST from the first Sunday in April to the last Sunday in October. Guadalajara shares its timezone with Mexico City. The IANA timezone identifier is America/Mexico_City."
+    },
+    {
+      "question": "What time zone is Guadalajara in?",
+      "answer": "Guadalajara is in the Central Time Zone (CT), observing CST (UTC-6) from October to April and CDT (UTC-5) from April to October. Jalisco is in the Central Time Zone, same as Mexico City. The IANA identifier is America/Mexico_City."
+    },
+    {
+      "question": "Does Guadalajara observe daylight saving time?",
+      "answer": "Yes. Guadalajara and the state of Jalisco observe Daylight Saving Time. Clocks spring forward on the first Sunday in April and fall back on the last Sunday in October. Mexico's DST schedule differs slightly from the US — US DST starts in March, but Mexico DST starts in April. This creates brief periods where Guadalajara is 1 extra hour different from US Central Time."
+    },
+    {
+      "question": "What is the time difference between Guadalajara and Mexico City?",
+      "answer": "Guadalajara and Mexico City are on the same timezone year-round (both America/Mexico_City, CST/CDT). There is no time difference between Guadalajara and Mexico City at any time of year."
+    },
+    {
+      "question": "What is the time difference between Guadalajara and Los Angeles?",
+      "answer": "Guadalajara (CST, UTC-6) is 2 hours ahead of Los Angeles (PST, UTC-8) in winter. During US DST (PDT, UTC-7) and Mexico DST (CDT, UTC-5), Guadalajara is 2 hours ahead of Los Angeles. Brief periods in March and early April when the US has started DST but Mexico has not may create a 1-hour gap."
+    },
+    {
+      "question": "What is the time difference between Guadalajara and New York?",
+      "answer": "Guadalajara (CST, UTC-6) is 1 hour behind New York (EST, UTC-5) in winter. During US/Mexico DST, the 1-hour gap is maintained. Brief transition periods in March (US DST starts, Mexico DST hasn't yet) create a 0-hour gap where both are momentarily on the same time."
+    },
+    {
+      "question": "What are typical business hours in Guadalajara?",
+      "answer": "Standard business hours in Guadalajara are 9:00 AM to 6:00 PM CST/CDT, Monday through Friday, with a 1–2 hour lunch break. Guadalajara is Mexico's second-largest city and its technology hub, often called the 'Silicon Valley of Mexico.' Major tech companies (Intel, IBM, Hewlett-Packard, Oracle) have significant operations there. Guadalajara is the capital of Jalisco and a center for the tequila, electronics, and software industries."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Guadalajara right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Guadalajara, Jalisco, Mexico uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time in summer. Mexico observes DST from the first Sunday in April to the last Sunday in October. Guadalajara shares its timezone with Mexico City. The IANA timezone identifier is America/Mexico_City."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Guadalajara in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Guadalajara is in the Central Time Zone (CT), observing CST (UTC-6) from October to April and CDT (UTC-5) from April to October. Jalisco is in the Central Time Zone, same as Mexico City. The IANA identifier is America/Mexico_City."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Guadalajara observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Guadalajara and the state of Jalisco observe Daylight Saving Time. Clocks spring forward on the first Sunday in April and fall back on the last Sunday in October. Mexico's DST schedule differs slightly from the US — US DST starts in March, but Mexico DST starts in April. This creates brief periods where Guadalajara is 1 extra hour different from US Central Time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Guadalajara and Mexico City?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Guadalajara and Mexico City are on the same timezone year-round (both America/Mexico_City, CST/CDT). There is no time difference between Guadalajara and Mexico City at any time of year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Guadalajara and Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Guadalajara (CST, UTC-6) is 2 hours ahead of Los Angeles (PST, UTC-8) in winter. During US DST (PDT, UTC-7) and Mexico DST (CDT, UTC-5), Guadalajara is 2 hours ahead of Los Angeles. Brief periods in March and early April when the US has started DST but Mexico has not may create a 1-hour gap."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Guadalajara and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Guadalajara (CST, UTC-6) is 1 hour behind New York (EST, UTC-5) in winter. During US/Mexico DST, the 1-hour gap is maintained. Brief transition periods in March (US DST starts, Mexico DST hasn't yet) create a 0-hour gap where both are momentarily on the same time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Guadalajara?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Guadalajara are 9:00 AM to 6:00 PM CST/CDT, Monday through Friday, with a 1–2 hour lunch break. Guadalajara is Mexico's second-largest city and its technology hub, often called the 'Silicon Valley of Mexico.' Major tech companies (Intel, IBM, Hewlett-Packard, Oracle) have significant operations there. Guadalajara is the capital of Jalisco and a center for the tequila, electronics, and software industries."
+        }
+      }
+    ]
+  }
+}

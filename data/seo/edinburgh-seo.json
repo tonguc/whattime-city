@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Edinburgh — GMT/BST",
+  "seo_description": "Current time in Edinburgh, Scotland — live GMT/BST clock, DST schedule, and time differences with London, New York, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Edinburgh right now?",
+      "answer": "Edinburgh, Scotland, UK uses Greenwich Mean Time (GMT, UTC+0) in winter and British Summer Time (BST, UTC+1) during Daylight Saving Time in summer. Clocks spring forward on the last Sunday in March and fall back on the last Sunday in October. Edinburgh is on the same timezone as London. The IANA timezone identifier is Europe/London."
+    },
+    {
+      "question": "What time zone is Edinburgh in?",
+      "answer": "Edinburgh is in the GMT/BST timezone zone (UTC+0 in winter, UTC+1 in summer). Scotland uses the same timezone as the rest of the UK — Europe/London. Edinburgh, Glasgow, Aberdeen, and London all share this timezone. There is no separate Scottish time zone."
+    },
+    {
+      "question": "Does Edinburgh observe daylight saving time?",
+      "answer": "Yes. Scotland and the rest of the UK observe British Summer Time (BST). Clocks spring forward 1 hour to BST (UTC+1) on the last Sunday in March at 1:00 AM and fall back to GMT (UTC+0) on the last Sunday in October at 2:00 AM. Scotland follows UK DST rules."
+    },
+    {
+      "question": "What is the time difference between Edinburgh and London?",
+      "answer": "Edinburgh and London are on the same timezone year-round (Europe/London, GMT/BST). There is no time difference between Edinburgh and London at any time of year."
+    },
+    {
+      "question": "What is the time difference between Edinburgh and New York?",
+      "answer": "Edinburgh (GMT, UTC+0) is 5 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Edinburgh is 4 hours ahead. During UK summer (BST, UTC+1), Edinburgh is 5 hours ahead of EDT. The gap varies from 4–5 hours."
+    },
+    {
+      "question": "What is the time difference between Edinburgh and Sydney?",
+      "answer": "Edinburgh (GMT, UTC+0) is 10–11 hours behind Sydney depending on DST seasons. In UK winter (GMT) and Sydney summer (AEDT, UTC+11), Edinburgh is 11 hours behind. In UK summer (BST, UTC+1) and Sydney winter (AEST, UTC+10), Edinburgh is 9 hours behind."
+    },
+    {
+      "question": "What are typical business hours in Edinburgh?",
+      "answer": "Standard business hours in Edinburgh are 9:00 AM to 5:30 PM GMT/BST, Monday through Friday. Edinburgh is Scotland's capital city and a major global financial center (second only to London in the UK). It is home to major banks and financial institutions. The Edinburgh Fringe Festival (August) and other events bring significant international visitors. The financial district (Exchange District) houses many asset management firms."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Edinburgh right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Edinburgh, Scotland, UK uses Greenwich Mean Time (GMT, UTC+0) in winter and British Summer Time (BST, UTC+1) during Daylight Saving Time in summer. Clocks spring forward on the last Sunday in March and fall back on the last Sunday in October. Edinburgh is on the same timezone as London. The IANA timezone identifier is Europe/London."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Edinburgh in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Edinburgh is in the GMT/BST timezone zone (UTC+0 in winter, UTC+1 in summer). Scotland uses the same timezone as the rest of the UK — Europe/London. Edinburgh, Glasgow, Aberdeen, and London all share this timezone. There is no separate Scottish time zone."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Edinburgh observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Scotland and the rest of the UK observe British Summer Time (BST). Clocks spring forward 1 hour to BST (UTC+1) on the last Sunday in March at 1:00 AM and fall back to GMT (UTC+0) on the last Sunday in October at 2:00 AM. Scotland follows UK DST rules."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Edinburgh and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Edinburgh and London are on the same timezone year-round (Europe/London, GMT/BST). There is no time difference between Edinburgh and London at any time of year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Edinburgh and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Edinburgh (GMT, UTC+0) is 5 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Edinburgh is 4 hours ahead. During UK summer (BST, UTC+1), Edinburgh is 5 hours ahead of EDT. The gap varies from 4–5 hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Edinburgh and Sydney?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Edinburgh (GMT, UTC+0) is 10–11 hours behind Sydney depending on DST seasons. In UK winter (GMT) and Sydney summer (AEDT, UTC+11), Edinburgh is 11 hours behind. In UK summer (BST, UTC+1) and Sydney winter (AEST, UTC+10), Edinburgh is 9 hours behind."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Edinburgh?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Edinburgh are 9:00 AM to 5:30 PM GMT/BST, Monday through Friday. Edinburgh is Scotland's capital city and a major global financial center (second only to London in the UK). It is home to major banks and financial institutions. The Edinburgh Fringe Festival (August) and other events bring significant international visitors. The financial district (Exchange District) houses many asset management firms."
+        }
+      }
+    ]
+  }
+}
