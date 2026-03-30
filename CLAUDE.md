@@ -556,6 +556,43 @@ North Africa:
 
 **Total SEO JSON files: 242**
 
+### 42. CTR Optimizasyonu — Bu Oturum ✅ (Mart 2026)
+
+**Flight-time + time-converter description fix:**
+- `data/seo/flight-time-seo.ts`: title "What Time Do I Land" (60 total ✅), desc 192→154 chars
+- `app/time-converter/page.tsx`: desc 174→155 chars
+
+**6 city description differentiation:**
+- berlin: 145 chars, differentiated from paris (tech capital angle)
+- paris: 147 chars, differentiated from berlin (cultural capital angle)
+- tokyo: 141 chars — "no DST since 1951" hook
+- istanbul: 170→142 chars — "Turkey abolished DST in 2016" hook (Python3 edit, unicode-safe)
+- sao-paulo: 170→133 chars (Python3 edit, unicode-safe)
+- hong-kong: 162→143 chars — HKEX trading hours angle
+
+**Guide pages title fix (was 80-84 total, 0 clicks despite pos 5-7):**
+- `app/[city]/guide/time-business/page.tsx`: 81-84→max 58 total; removed `${city.timezone}` IANA leak in desc
+- `app/[city]/guide/24-hours-itinerary/page.tsx`: 74-84→max 53 total
+- `app/[city]/guide/time-zones/page.tsx`: 66-76→max 59 total
+- `app/[city]/guide/work-remote/page.tsx`: 62-72→max 59 total
+- `app/[city]/guide/travel-guide/page.tsx`: 77-87→max 59 total
+
+**Country description trim:** `app/country/[country]/page.tsx` — removed population/currency/phone from desc template (was 196+ chars), now 117-147 chars
+
+**All 242 city SEO JSONs description bulk fix:**
+- All trimmed to ≤160 chars with sentence-boundary algorithm
+- 8 over-trimmed files manually fixed to 145-156 chars
+- copenhagen: 164→146 chars
+
+**PAIR_CONTEXTS 68→92:** 24 new pairs from GSC impressions data (tokyo-auckland, barcelona-zurich, doha-bangkok, la-hong-kong, rome-seattle, etc.)
+
+**days-from-today + days-ago descriptions:** 169-175 chars → ~103-108 chars ✅
+
+**Area code description template fix:**
+- `app/area-code/[code]/page.tsx`: template was generating 172-229 chars (over limit)
+- New template uses `majorCities.slice(0,3)` instead of full `coverageArea`
+- All codes now 128-150 chars ✅ (929, 437, 904, 760, 213 verified)
+
 ---
 
 ## Açık Konular / Sonraki Adımlar
@@ -565,8 +602,9 @@ North Africa:
 - [ ] Hours-ago/hours-from-now pages — need 4 weeks to index and appear in GSC
 - [ ] Idaho/Wyoming/South Dakota state pages — monitor for "time in idaho" (33K), "time in wyoming" (18K) queries
 - [ ] New city pages (tucson, cleveland, pittsburgh, st-louis, etc.) — monitor GSC indexing
-- [ ] PAIR_CONTEXTS 64→72 — monitor /time/ pair pages for new impressions
+- [ ] PAIR_CONTEXTS 72→92 — monitor /time/ pair pages for new impressions
 - [ ] New 14 city pages (abu-dhabi, kathmandu, colombo, etc.) — monitor GSC indexing
+- [ ] Area code pages (929 246K, 213 673K, 917 246K) — description fixed; monitor GSC indexing + authority
 
 ---
 

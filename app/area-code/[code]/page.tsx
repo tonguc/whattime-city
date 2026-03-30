@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${data.code} Area Code — ${data.city}, ${data.stateCode}`,
-    description: `Area code ${data.code} is in ${data.city}, ${data.state} (${countryLabel}) — ${data.tzAbbr} time zone (${data.utcOffset}). Covers ${data.coverageArea}. See current local time, DST dates, and calling tips.`,
+    description: `Area code ${data.code} is ${data.city}, ${data.state} (${countryLabel}) — ${data.tzAbbr} (${data.utcOffset}). Covers: ${data.majorCities.slice(0, 3).join(', ')}. Current time & who's calling.`,
     alternates: { canonical: `https://whattime.city/area-code/${data.code}` },
     openGraph: {
       title: `${data.code} Area Code — ${data.city}, ${data.stateCode}`,
