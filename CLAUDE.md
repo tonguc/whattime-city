@@ -514,6 +514,48 @@ Committed in sequence, completing all key tier 2 cities:
 
 **Total SEO JSON files: ~230+**
 
+### 41. 14 New City SEO JSONs + Title Fixes + Costa Rica FAQ Enrichment ✅ (Mart 2026)
+
+**Title fixes (1 char over 44):**
+- `vilnius-seo.json`: removed "(UTC+2/+3)" from title → 38 chars
+- `tallinn-seo.json`: removed "(UTC+2/+3)" from title → 38 chars
+- `el-paso-seo.json`: "MST (UTC-7, No DST)" → "MST (No DST)" → 42 chars
+
+**Costa Rica page.tsx FAQ enrichment:**
+- Expanded faqSchema from 4 thin answers to 7 rich answers
+- Added: NY time diff (1h winter, 2h summer), London (6-7h), LA (1-2h)
+- AI SEO first sentence format applied to first FAQ
+- No-DST since 1980, equatorial latitude context, nearshore outsourcing angle
+
+**New city SEO JSON files (all: AI SEO format, faq_schema, title ≤44 chars):**
+Middle East:
+- `abu-dhabi-seo.json`: GST UTC+4, Asia/Dubai, ADIA & Mubadala sovereign wealth
+- `kuwait-city-seo.json`: AST UTC+3, Asia/Kuwait, Boursa Kuwait, KPC
+- `muscat-seo.json`: GST UTC+4, Asia/Muscat, Port of Salalah
+- `manama-seo.json`: AST UTC+3, Asia/Bahrain, Bahrain Bourse, financial hub
+
+South Asia:
+- `kathmandu-seo.json`: NPT UTC+5:45, Asia/Kathmandu, 45-min offset unique, 15min ahead of India
+- `colombo-seo.json`: SLST UTC+5:30, Asia/Colombo, reverted from UTC+6 in 2006, CSE exchange
+
+Southeast Asia:
+- `phnom-penh-seo.json`: ICT UTC+7, Asia/Phnom_Penh, same TZ as Bangkok/HCMC
+- `vientiane-seo.json`: ICT UTC+7, Asia/Vientiane, same TZ as Bangkok
+
+Central Asia / East Asia:
+- `ulaanbaatar-seo.json`: ULAT UTC+8, Asia/Ulaanbaatar, DST abolished 2017, coldest capital city
+- `yerevan-seo.json`: AMT UTC+4, Asia/Yerevan, DST abolished 2012, Silicon Mountain tech hub
+
+Latin America:
+- `asuncion-seo.json`: PYT/PYST UTC-4/-3, America/Asuncion, Southern Hemisphere DST, Itaipú dam
+- `la-paz-seo.json`: BOT UTC-4, America/La_Paz, world's highest admin capital
+- `monterrey-seo.json`: CST/CDT, America/Monterrey, border state retained DST post-2022, CEMEX/FEMSA
+
+North Africa:
+- `tripoli-seo.json`: EET UTC+2, Africa/Tripoli, DST abolished 2013, largest African oil reserves
+
+**Total SEO JSON files: 242**
+
 ---
 
 ## Açık Konular / Sonraki Adımlar
@@ -524,7 +566,7 @@ Committed in sequence, completing all key tier 2 cities:
 - [ ] Idaho/Wyoming/South Dakota state pages — monitor for "time in idaho" (33K), "time in wyoming" (18K) queries
 - [ ] New city pages (tucson, cleveland, pittsburgh, st-louis, etc.) — monitor GSC indexing
 - [ ] PAIR_CONTEXTS 64→72 — monitor /time/ pair pages for new impressions
-- [ ] Remaining tier 2 cities without SEO JSON: dhaka, asuncion, la-paz, phnom-penh, vientiane, astana, riga, tallinn, vilnius, minsk
+- [ ] New 14 city pages (abu-dhabi, kathmandu, colombo, etc.) — monitor GSC indexing
 
 ---
 
