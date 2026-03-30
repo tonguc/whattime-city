@@ -2,7 +2,7 @@
   "faq": [
     {
       "question": "What time is it in Tehran right now?",
-      "answer": "Tehran operates on Iran Standard Time (IRST/UTC+3:30). Iran uses a unique half-hour offset timezone, making Tehran 3 hours and 30 minutes ahead of Coordinated Universal Time. This distinctive offset is shared by only a handful of locations worldwide and reflects Iran's geographic position."
+      "answer": "Tehran operates on Iran Standard Time (IRST/UTC+3:30). The IANA identifier is Asia/Tehran. Iran uses a unique half-hour offset timezone, making Tehran 3 hours and 30 minutes ahead of Coordinated Universal Time. This distinctive offset is shared by only a handful of locations worldwide and reflects Iran's geographic position."
     },
     {
       "question": "What time zone is Tehran in?",
@@ -42,7 +42,7 @@
         "name": "What time is it in Tehran right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tehran operates on Iran Standard Time (IRST/UTC+3:30). Iran uses a unique half-hour offset timezone, making Tehran 3 hours and 30 minutes ahead of Coordinated Universal Time. This distinctive offset is shared by only a handful of locations worldwide and reflects Iran's geographic position."
+          "text": "Tehran operates on Iran Standard Time (IRST/UTC+3:30). The IANA identifier is Asia/Tehran. Iran uses a unique half-hour offset timezone, making Tehran 3 hours and 30 minutes ahead of Coordinated Universal Time. This distinctive offset is shared by only a handful of locations worldwide and reflects Iran's geographic position."
         }
       },
       {

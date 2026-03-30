@@ -4,7 +4,7 @@
   "faq": [
     {
       "question": "What time is it in Paris right now?",
-      "answer": "Paris, France uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) in summer. Clocks move forward on the last Sunday in March and back on the last Sunday in October. Paris is 1 hour ahead of London and 6 hours ahead of New York (EST) year-round during standard periods. The current local time is shown live at the top of this page."
+      "answer": "Paris, France uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) in summer. The IANA identifier is Europe/Paris. Clocks move forward on the last Sunday in March and back on the last Sunday in October. Paris is 1 hour ahead of London and 6 hours ahead of New York (EST) year-round during standard periods. The current local time is shown live at the top of this page."
     },
     {
       "question": "What time zone is Paris in?",
@@ -44,7 +44,7 @@
         "name": "What time is it in Paris right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Paris, France uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) in summer. Clocks move forward on the last Sunday in March and back on the last Sunday in October. Paris is 1 hour ahead of London and 6 hours ahead of New York (EST) year-round during standard periods. The current local time is shown live at the top of this page."
+          "text": "Paris, France uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) in summer. The IANA identifier is Europe/Paris. Clocks move forward on the last Sunday in March and back on the last Sunday in October. Paris is 1 hour ahead of London and 6 hours ahead of New York (EST) year-round during standard periods. The current local time is shown live at the top of this page."
         }
       },
       {

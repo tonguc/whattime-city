@@ -2,7 +2,7 @@
   "faq": [
     {
       "question": "What time is it in Shanghai right now?",
-      "answer": "Shanghai, China uses China Standard Time (CST, UTC+8) year-round. China does not observe daylight saving time — the UTC+8 offset is fixed. The current local time is shown live at the top of this page. Shanghai shares this timezone with Beijing, Hong Kong, and Singapore (all UTC+8), despite China spanning five geographical time zones."
+      "answer": "Shanghai, China uses China Standard Time (CST, UTC+8) year-round. The IANA identifier is Asia/Shanghai. China does not observe daylight saving time — the UTC+8 offset is fixed. The current local time is shown live at the top of this page. Shanghai shares this timezone with Beijing, Hong Kong, and Singapore (all UTC+8), despite China spanning five geographical time zones."
     },
     {
       "question": "What time zone is Shanghai in?",
@@ -42,7 +42,7 @@
         "name": "What time is it in Shanghai right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Shanghai, China uses China Standard Time (CST, UTC+8) year-round. China does not observe daylight saving time — the UTC+8 offset is fixed. The current local time is shown live at the top of this page. Shanghai shares this timezone with Beijing, Hong Kong, and Singapore (all UTC+8), despite China spanning five geographical time zones."
+          "text": "Shanghai, China uses China Standard Time (CST, UTC+8) year-round. The IANA identifier is Asia/Shanghai. China does not observe daylight saving time — the UTC+8 offset is fixed. The current local time is shown live at the top of this page. Shanghai shares this timezone with Beijing, Hong Kong, and Singapore (all UTC+8), despite China spanning five geographical time zones."
         }
       },
       {

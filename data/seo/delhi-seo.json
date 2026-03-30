@@ -2,7 +2,7 @@
   "faq": [
     {
       "question": "What time is it in Delhi right now?",
-      "answer": "Delhi operates on Indian Standard Time (IST/UTC+5:30) year-round. India uses a unique half-hour offset, placing Delhi 5 hours and 30 minutes ahead of Coordinated Universal Time. This consistent timezone applies across all of India, from Mumbai to Kolkata, making Delhi's time easy to calculate without seasonal adjustments."
+      "answer": "Delhi operates on Indian Standard Time (IST/UTC+5:30) year-round. The IANA identifier is Asia/Kolkata. India uses a unique half-hour offset, placing Delhi 5 hours and 30 minutes ahead of Coordinated Universal Time. This consistent timezone applies across all of India, from Mumbai to Kolkata, making Delhi's time easy to calculate without seasonal adjustments."
     },
     {
       "question": "What time zone is Delhi in?",
@@ -42,7 +42,7 @@
         "name": "What time is it in Delhi right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Delhi operates on Indian Standard Time (IST/UTC+5:30) year-round. India uses a unique half-hour offset, placing Delhi 5 hours and 30 minutes ahead of Coordinated Universal Time. This consistent timezone applies across all of India, from Mumbai to Kolkata, making Delhi's time easy to calculate without seasonal adjustments."
+          "text": "Delhi operates on Indian Standard Time (IST/UTC+5:30) year-round. The IANA identifier is Asia/Kolkata. India uses a unique half-hour offset, placing Delhi 5 hours and 30 minutes ahead of Coordinated Universal Time. This consistent timezone applies across all of India, from Mumbai to Kolkata, making Delhi's time easy to calculate without seasonal adjustments."
         }
       },
       {

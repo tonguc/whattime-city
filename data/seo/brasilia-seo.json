@@ -4,7 +4,7 @@
   "faq": [
     {
       "question": "What time is it in Brasilia right now?",
-      "answer": "Brasília, Brazil uses Brasilia Time (BRT, UTC-3) as its standard time. Brazil observes Daylight Saving Time in the southern hemisphere summer (typically October to February), when clocks move to BRST (UTC-2). Not all of Brazil observes DST — the northeast and north regions stay on fixed offsets. The IANA identifier for Brasília is America/Sao_Paulo."
+      "answer": "Brasília, Brazil uses Brasilia Time (BRT, UTC-3) as its standard time. The IANA identifier is America/Sao_Paulo. Brazil observes Daylight Saving Time in the southern hemisphere summer (typically October to February), when clocks move to BRST (UTC-2). Not all of Brazil observes DST — the northeast and north regions stay on fixed offsets. The IANA identifier for Brasília is America/Sao_Paulo."
     },
     {
       "question": "What time zone is Brasilia in?",
@@ -40,7 +40,7 @@
         "name": "What time is it in Brasilia right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Brasília, Brazil uses Brasilia Time (BRT, UTC-3) as its standard time. Brazil observes Daylight Saving Time in the southern hemisphere summer (typically October to February), when clocks move to BRST (UTC-2). Not all of Brazil observes DST — the northeast and north regions stay on fixed offsets. The IANA identifier for Brasília is America/Sao_Paulo."
+          "text": "Brasília, Brazil uses Brasilia Time (BRT, UTC-3) as its standard time. The IANA identifier is America/Sao_Paulo. Brazil observes Daylight Saving Time in the southern hemisphere summer (typically October to February), when clocks move to BRST (UTC-2). Not all of Brazil observes DST — the northeast and north regions stay on fixed offsets. The IANA identifier for Brasília is America/Sao_Paulo."
         }
       },
       {

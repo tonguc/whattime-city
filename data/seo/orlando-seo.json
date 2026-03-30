@@ -4,7 +4,7 @@
   "faq": [
     {
       "question": "What time is it in Orlando right now?",
-      "answer": "Orlando, Florida, USA uses Eastern Standard Time (EST, UTC-5) in winter and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time in summer. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. Orlando shares its time zone with New York, Miami, and Atlanta. The IANA timezone identifier is America/New_York."
+      "answer": "Orlando, Florida, USA uses Eastern Standard Time (EST, UTC-5) in winter and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time in summer. The IANA identifier is America/New_York. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. Orlando shares its time zone with New York, Miami, and Atlanta. The IANA timezone identifier is America/New_York."
     },
     {
       "question": "What time zone is Orlando in?",
@@ -40,7 +40,7 @@
         "name": "What time is it in Orlando right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Orlando, Florida, USA uses Eastern Standard Time (EST, UTC-5) in winter and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time in summer. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. Orlando shares its time zone with New York, Miami, and Atlanta. The IANA timezone identifier is America/New_York."
+          "text": "Orlando, Florida, USA uses Eastern Standard Time (EST, UTC-5) in winter and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time in summer. The IANA identifier is America/New_York. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. Orlando shares its time zone with New York, Miami, and Atlanta. The IANA timezone identifier is America/New_York."
         }
       },
       {

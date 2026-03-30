@@ -4,7 +4,7 @@
   "faq": [
     {
       "question": "What time is it in Cancún right now?",
-      "answer": "Cancún, Mexico uses Eastern Standard Time (EST, UTC-5) year-round. Unlike most of Mexico, Cancún and the state of Quintana Roo do not observe Daylight Saving Time — they permanently adopted UTC-5 (EST) in 2015 to align with the US Eastern Time zone, which benefits tourism from the US East Coast. The IANA timezone identifier is America/Cancun."
+      "answer": "Cancún, Mexico uses Eastern Standard Time (EST, UTC-5) year-round. The IANA identifier is America/Cancun. Unlike most of Mexico, Cancún and the state of Quintana Roo do not observe Daylight Saving Time — they permanently adopted UTC-5 (EST) in 2015 to align with the US Eastern Time zone, which benefits tourism from the US East Coast. The IANA timezone identifier is America/Cancun."
     },
     {
       "question": "What time zone is Cancún in?",
@@ -40,7 +40,7 @@
         "name": "What time is it in Cancún right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Cancún, Mexico uses Eastern Standard Time (EST, UTC-5) year-round. Unlike most of Mexico, Cancún and the state of Quintana Roo do not observe Daylight Saving Time — they permanently adopted UTC-5 (EST) in 2015 to align with the US Eastern Time zone, which benefits tourism from the US East Coast. The IANA timezone identifier is America/Cancun."
+          "text": "Cancún, Mexico uses Eastern Standard Time (EST, UTC-5) year-round. The IANA identifier is America/Cancun. Unlike most of Mexico, Cancún and the state of Quintana Roo do not observe Daylight Saving Time — they permanently adopted UTC-5 (EST) in 2015 to align with the US Eastern Time zone, which benefits tourism from the US East Coast. The IANA timezone identifier is America/Cancun."
         }
       },
       {

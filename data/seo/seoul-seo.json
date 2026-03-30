@@ -4,7 +4,7 @@
   "faq": [
     {
       "question": "What time is it in Seoul right now?",
-      "answer": "Seoul, South Korea uses Korea Standard Time (KST, UTC+9) year-round. South Korea abolished daylight saving time in 1988 and has maintained KST (UTC+9) as a fixed offset ever since — no seasonal clock changes. Seoul shares the same time as Tokyo (JST, UTC+9), making both cities key reference points for East Asian business scheduling. The IANA identifier is Asia/Seoul."
+      "answer": "Seoul, South Korea uses Korea Standard Time (KST, UTC+9) year-round. The IANA identifier is Asia/Seoul. South Korea abolished daylight saving time in 1988 and has maintained KST (UTC+9) as a fixed offset ever since — no seasonal clock changes. Seoul shares the same time as Tokyo (JST, UTC+9), making both cities key reference points for East Asian business scheduling. The IANA identifier is Asia/Seoul."
     },
     {
       "question": "What time zone is Seoul in?",
@@ -39,14 +39,70 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What time is it in Seoul right now?", "acceptedAnswer": { "@type": "Answer", "text": "Seoul, South Korea uses Korea Standard Time (KST, UTC+9) year-round. South Korea abolished daylight saving time in 1988 and has maintained KST (UTC+9) as a fixed offset ever since — no seasonal clock changes. Seoul shares the same time as Tokyo (JST, UTC+9), making both cities key reference points for East Asian business scheduling. The IANA identifier is Asia/Seoul." } },
-      { "@type": "Question", "name": "What time zone is Seoul in?", "acceptedAnswer": { "@type": "Answer", "text": "Seoul is in the Korea Standard Time (KST) zone, which is UTC+9 year-round. KST is identical to Japan Standard Time (JST), meaning Seoul and Tokyo are always at the same time. KST is 1 hour ahead of China Standard Time (CST/UTC+8), 2 hours ahead of Indochina Time (UTC+7), and 9 hours ahead of Greenwich Mean Time (GMT/UTC+0)." } },
-      { "@type": "Question", "name": "Does Seoul observe daylight saving time?", "acceptedAnswer": { "@type": "Answer", "text": "No. South Korea abolished daylight saving time in 1988, just before hosting the Seoul Olympic Games, and has maintained KST (UTC+9) year-round ever since. The permanent UTC+9 offset makes Seoul's time difference from international cities constant throughout the year, simplifying global business scheduling with Korean partners." } },
-      { "@type": "Question", "name": "What is the time difference between Seoul and New York?", "acceptedAnswer": { "@type": "Answer", "text": "Seoul is 14 hours ahead of New York during Eastern Standard Time (November–March) and 13 hours ahead during Eastern Daylight Time (March–November). When it is 9:00 AM Monday in New York (EST), it is 11:00 PM Monday in Seoul. For real-time coordination, New York's early morning (6:00–9:00 AM EST) aligns with Seoul's early evening (8:00–11:00 PM KST)." } },
-      { "@type": "Question", "name": "What is the time difference between Seoul and London?", "acceptedAnswer": { "@type": "Answer", "text": "Seoul is 9 hours ahead of London during GMT (October–March) and 8 hours ahead during British Summer Time (BST, March–October). When London opens at 9:00 AM GMT, it is 6:00 PM in Seoul — just at the edge of Seoul's business hours. Early London mornings (8:00–9:00 AM GMT) are the most practical window for catching Seoul colleagues before their workday ends." } },
-      { "@type": "Question", "name": "Is Seoul time the same as Tokyo time?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Seoul (KST/UTC+9) and Tokyo (JST/UTC+9) are in the same time zone and always show the same time. Despite the geographical and political differences between South Korea and Japan, both countries independently settled on UTC+9 as their standard time. This alignment simplifies Korea–Japan business coordination significantly." } },
-      { "@type": "Question", "name": "What time does the Seoul stock exchange open?", "acceptedAnswer": { "@type": "Answer", "text": "The Korea Exchange (KRX) in Seoul opens at 9:00 AM KST and closes at 3:30 PM KST, Monday through Friday. This translates to midnight–6:30 AM EST for New York traders and 1:00–9:30 AM GMT for London. KRX is one of the world's top 15 stock exchanges by market capitalisation, with major Korean conglomerates (Samsung, Hyundai, LG) among its most traded listings." } },
-      { "@type": "Question", "name": "What is the best time to call Seoul from Europe?", "acceptedAnswer": { "@type": "Answer", "text": "From London (GMT), call Seoul between 8:00 AM and 10:00 AM GMT — this corresponds to 5:00–7:00 PM KST, catching Seoul at the end of its business day. From Paris or Berlin (CET/UTC+1 in winter), call between 9:00 AM and 11:00 AM local time. Scheduling morning European calls before 10:00 AM is key to reaching Seoul within business hours." } }
+      {
+        "@type": "Question",
+        "name": "What time is it in Seoul right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Seoul, South Korea uses Korea Standard Time (KST, UTC+9) year-round. The IANA identifier is Asia/Seoul. South Korea abolished daylight saving time in 1988 and has maintained KST (UTC+9) as a fixed offset ever since — no seasonal clock changes. Seoul shares the same time as Tokyo (JST, UTC+9), making both cities key reference points for East Asian business scheduling. The IANA identifier is Asia/Seoul."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Seoul in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Seoul is in the Korea Standard Time (KST) zone, which is UTC+9 year-round. KST is identical to Japan Standard Time (JST), meaning Seoul and Tokyo are always at the same time. KST is 1 hour ahead of China Standard Time (CST/UTC+8), 2 hours ahead of Indochina Time (UTC+7), and 9 hours ahead of Greenwich Mean Time (GMT/UTC+0)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Seoul observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. South Korea abolished daylight saving time in 1988, just before hosting the Seoul Olympic Games, and has maintained KST (UTC+9) year-round ever since. The permanent UTC+9 offset makes Seoul's time difference from international cities constant throughout the year, simplifying global business scheduling with Korean partners."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Seoul and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Seoul is 14 hours ahead of New York during Eastern Standard Time (November–March) and 13 hours ahead during Eastern Daylight Time (March–November). When it is 9:00 AM Monday in New York (EST), it is 11:00 PM Monday in Seoul. For real-time coordination, New York's early morning (6:00–9:00 AM EST) aligns with Seoul's early evening (8:00–11:00 PM KST)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Seoul and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Seoul is 9 hours ahead of London during GMT (October–March) and 8 hours ahead during British Summer Time (BST, March–October). When London opens at 9:00 AM GMT, it is 6:00 PM in Seoul — just at the edge of Seoul's business hours. Early London mornings (8:00–9:00 AM GMT) are the most practical window for catching Seoul colleagues before their workday ends."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Seoul time the same as Tokyo time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Seoul (KST/UTC+9) and Tokyo (JST/UTC+9) are in the same time zone and always show the same time. Despite the geographical and political differences between South Korea and Japan, both countries independently settled on UTC+9 as their standard time. This alignment simplifies Korea–Japan business coordination significantly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time does the Seoul stock exchange open?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Korea Exchange (KRX) in Seoul opens at 9:00 AM KST and closes at 3:30 PM KST, Monday through Friday. This translates to midnight–6:30 AM EST for New York traders and 1:00–9:30 AM GMT for London. KRX is one of the world's top 15 stock exchanges by market capitalisation, with major Korean conglomerates (Samsung, Hyundai, LG) among its most traded listings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best time to call Seoul from Europe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From London (GMT), call Seoul between 8:00 AM and 10:00 AM GMT — this corresponds to 5:00–7:00 PM KST, catching Seoul at the end of its business day. From Paris or Berlin (CET/UTC+1 in winter), call between 9:00 AM and 11:00 AM local time. Scheduling morning European calls before 10:00 AM is key to reaching Seoul within business hours."
+        }
+      }
     ]
   }
 }

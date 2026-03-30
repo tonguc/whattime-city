@@ -4,7 +4,7 @@
   "faq": [
     {
       "question": "What time is it in Moscow right now?",
-      "answer": "Moscow, Russia uses Moscow Standard Time (MSK, UTC+3) year-round. Russia permanently abolished daylight saving time in 2014, so Moscow's UTC+3 offset never changes. The current local time is shown live at the top of this page. Moscow is 3 hours ahead of London (GMT) in winter and 2 hours ahead in summer, and 8 hours ahead of New York (EST) in winter."
+      "answer": "Moscow, Russia uses Moscow Standard Time (MSK, UTC+3) year-round. The IANA identifier is Europe/Moscow. Russia permanently abolished daylight saving time in 2014, so Moscow's UTC+3 offset never changes. The current local time is shown live at the top of this page. Moscow is 3 hours ahead of London (GMT) in winter and 2 hours ahead in summer, and 8 hours ahead of New York (EST) in winter."
     },
     {
       "question": "What time zone is Moscow in?",
@@ -44,7 +44,7 @@
         "name": "What time is it in Moscow right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Moscow, Russia uses Moscow Standard Time (MSK, UTC+3) year-round. Russia permanently abolished daylight saving time in 2014, so Moscow's UTC+3 offset never changes. The current local time is shown live at the top of this page. Moscow is 3 hours ahead of London (GMT) in winter and 2 hours ahead in summer, and 8 hours ahead of New York (EST) in winter."
+          "text": "Moscow, Russia uses Moscow Standard Time (MSK, UTC+3) year-round. The IANA identifier is Europe/Moscow. Russia permanently abolished daylight saving time in 2014, so Moscow's UTC+3 offset never changes. The current local time is shown live at the top of this page. Moscow is 3 hours ahead of London (GMT) in winter and 2 hours ahead in summer, and 8 hours ahead of New York (EST) in winter."
         }
       },
       {

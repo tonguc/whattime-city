@@ -4,7 +4,7 @@
   "faq": [
     {
       "question": "What time is it in Minneapolis right now?",
-      "answer": "Minneapolis, Minnesota, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time in summer. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. Minneapolis shares its time zone with Chicago, Dallas, Houston, and Kansas City. The IANA timezone identifier is America/Chicago."
+      "answer": "Minneapolis, Minnesota, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time in summer. The IANA identifier is America/Chicago. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. Minneapolis shares its time zone with Chicago, Dallas, Houston, and Kansas City. The IANA timezone identifier is America/Chicago."
     },
     {
       "question": "What time zone is Minneapolis in?",
@@ -40,7 +40,7 @@
         "name": "What time is it in Minneapolis right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Minneapolis, Minnesota, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time in summer. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. Minneapolis shares its time zone with Chicago, Dallas, Houston, and Kansas City. The IANA timezone identifier is America/Chicago."
+          "text": "Minneapolis, Minnesota, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time in summer. The IANA identifier is America/Chicago. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. Minneapolis shares its time zone with Chicago, Dallas, Houston, and Kansas City. The IANA timezone identifier is America/Chicago."
         }
       },
       {

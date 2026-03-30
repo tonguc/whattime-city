@@ -4,7 +4,7 @@
   "faq": [
     {
       "question": "What time is it in Barcelona right now?",
-      "answer": "Barcelona, Catalonia, Spain uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) in summer. The current local time is displayed live at the top of this page and updates in real time. Barcelona follows the same time zone as Paris, Rome, Madrid, and Berlin."
+      "answer": "Barcelona, Catalonia, Spain uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) in summer. The IANA identifier is Europe/Madrid. The current local time is displayed live at the top of this page and updates in real time. Barcelona follows the same time zone as Paris, Rome, Madrid, and Berlin."
     },
     {
       "question": "What time zone is Barcelona in?",
@@ -39,14 +39,70 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What time is it in Barcelona right now?", "acceptedAnswer": { "@type": "Answer", "text": "Barcelona, Catalonia, Spain uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) in summer. The current local time is displayed live at the top of this page and updates in real time. Barcelona follows the same time zone as Paris, Rome, Madrid, and Berlin." } },
-      { "@type": "Question", "name": "What time zone is Barcelona in?", "acceptedAnswer": { "@type": "Answer", "text": "Barcelona is in the Central European Time (CET) zone, which is UTC+1 during winter months. In summer, Spain observes daylight saving time and switches to Central European Summer Time (CEST), which is UTC+2. This means Barcelona is always 1 hour ahead of London and 6 hours ahead of New York (Eastern Time) during standard time periods." } },
-      { "@type": "Question", "name": "Does Barcelona observe daylight saving time?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Spain moves clocks forward by 1 hour to CEST (UTC+2) on the last Sunday of March, and back to CET (UTC+1) on the last Sunday of October. This is the same DST schedule as the rest of continental Europe. The EU has discussed abolishing the clock change, but as of 2026 Spain continues to observe DST." } },
-      { "@type": "Question", "name": "What is the time difference between Barcelona and New York?", "acceptedAnswer": { "@type": "Answer", "text": "Barcelona is 6 hours ahead of New York year-round during their respective standard time periods. When both cities are on standard time (November–March), the difference is 6 hours. During summer when both observe DST simultaneously, the difference remains 6 hours. The best overlap for business calls is 9:00 AM–1:00 PM New York time (3:00–7:00 PM Barcelona time)." } },
-      { "@type": "Question", "name": "What is the time difference between Barcelona and London?", "acceptedAnswer": { "@type": "Answer", "text": "Barcelona is always 1 hour ahead of London. London observes GMT (UTC+0) in winter and BST (UTC+1) in summer, while Barcelona is on CET (UTC+1) and CEST (UTC+2) respectively. Since both cities switch clocks on the same day (last Sunday of March/October), the 1-hour gap is constant year-round." } },
-      { "@type": "Question", "name": "What is the time difference between Barcelona and Tokyo?", "acceptedAnswer": { "@type": "Answer", "text": "Tokyo is 8 hours ahead of Barcelona during Central European Time (CET, UTC+1) — Japan Standard Time is UTC+9. When Barcelona switches to CEST (UTC+2) in summer, Tokyo is 7 hours ahead. Japan does not observe daylight saving time. When it is 9:00 AM in Barcelona (CET), it is 5:00 PM in Tokyo." } },
-      { "@type": "Question", "name": "What is the best time to call Barcelona from the US?", "acceptedAnswer": { "@type": "Answer", "text": "From New York, the best time to call Barcelona is 9:00 AM–12:00 PM EST (3:00–6:00 PM Barcelona time), catching the end of the Barcelona business day. From Los Angeles (PST), call between 6:00 AM and 9:00 AM PST to reach Barcelona in the afternoon. Avoid calling after 12:00 PM EST as Barcelona will be past 6:00 PM." } },
-      { "@type": "Question", "name": "What are typical business hours in Barcelona?", "acceptedAnswer": { "@type": "Answer", "text": "Standard business hours in Barcelona are 9:00 AM to 6:00 PM CET/CEST, Monday through Friday. Many Spanish businesses observe a midday break (lunch) from 2:00–4:00 PM and work later into the evening. Banks typically operate 8:30 AM–2:00 PM. Retail stores often stay open until 8:00–9:00 PM. Barcelona's business culture leans toward late lunches and extended evenings." } }
+      {
+        "@type": "Question",
+        "name": "What time is it in Barcelona right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Barcelona, Catalonia, Spain uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) in summer. The IANA identifier is Europe/Madrid. The current local time is displayed live at the top of this page and updates in real time. Barcelona follows the same time zone as Paris, Rome, Madrid, and Berlin."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Barcelona in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Barcelona is in the Central European Time (CET) zone, which is UTC+1 during winter months. In summer, Spain observes daylight saving time and switches to Central European Summer Time (CEST), which is UTC+2. This means Barcelona is always 1 hour ahead of London and 6 hours ahead of New York (Eastern Time) during standard time periods."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Barcelona observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Spain moves clocks forward by 1 hour to CEST (UTC+2) on the last Sunday of March, and back to CET (UTC+1) on the last Sunday of October. This is the same DST schedule as the rest of continental Europe. The EU has discussed abolishing the clock change, but as of 2026 Spain continues to observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Barcelona and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Barcelona is 6 hours ahead of New York year-round during their respective standard time periods. When both cities are on standard time (November–March), the difference is 6 hours. During summer when both observe DST simultaneously, the difference remains 6 hours. The best overlap for business calls is 9:00 AM–1:00 PM New York time (3:00–7:00 PM Barcelona time)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Barcelona and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Barcelona is always 1 hour ahead of London. London observes GMT (UTC+0) in winter and BST (UTC+1) in summer, while Barcelona is on CET (UTC+1) and CEST (UTC+2) respectively. Since both cities switch clocks on the same day (last Sunday of March/October), the 1-hour gap is constant year-round."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Barcelona and Tokyo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tokyo is 8 hours ahead of Barcelona during Central European Time (CET, UTC+1) — Japan Standard Time is UTC+9. When Barcelona switches to CEST (UTC+2) in summer, Tokyo is 7 hours ahead. Japan does not observe daylight saving time. When it is 9:00 AM in Barcelona (CET), it is 5:00 PM in Tokyo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best time to call Barcelona from the US?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From New York, the best time to call Barcelona is 9:00 AM–12:00 PM EST (3:00–6:00 PM Barcelona time), catching the end of the Barcelona business day. From Los Angeles (PST), call between 6:00 AM and 9:00 AM PST to reach Barcelona in the afternoon. Avoid calling after 12:00 PM EST as Barcelona will be past 6:00 PM."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Barcelona?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Barcelona are 9:00 AM to 6:00 PM CET/CEST, Monday through Friday. Many Spanish businesses observe a midday break (lunch) from 2:00–4:00 PM and work later into the evening. Banks typically operate 8:30 AM–2:00 PM. Retail stores often stay open until 8:00–9:00 PM. Barcelona's business culture leans toward late lunches and extended evenings."
+        }
+      }
     ]
   }
 }

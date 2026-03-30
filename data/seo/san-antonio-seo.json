@@ -4,7 +4,7 @@
   "faq": [
     {
       "question": "What time is it in San Antonio right now?",
-      "answer": "San Antonio, Texas, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time in summer. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. San Antonio shares its time zone with Dallas, Houston, Chicago, and New Orleans. The IANA timezone identifier is America/Chicago."
+      "answer": "San Antonio, Texas, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time in summer. The IANA identifier is America/Chicago. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. San Antonio shares its time zone with Dallas, Houston, Chicago, and New Orleans. The IANA timezone identifier is America/Chicago."
     },
     {
       "question": "What time zone is San Antonio in?",
@@ -40,7 +40,7 @@
         "name": "What time is it in San Antonio right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "San Antonio, Texas, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time in summer. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. San Antonio shares its time zone with Dallas, Houston, Chicago, and New Orleans. The IANA timezone identifier is America/Chicago."
+          "text": "San Antonio, Texas, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time in summer. The IANA identifier is America/Chicago. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. San Antonio shares its time zone with Dallas, Houston, Chicago, and New Orleans. The IANA timezone identifier is America/Chicago."
         }
       },
       {
