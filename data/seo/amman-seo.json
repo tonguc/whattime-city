@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Amman — EET/EEST (UTC+2/+3)",
+  "seo_description": "Current time in Amman, Jordan — live Eastern European Time (EET, UTC+2) clock, DST schedule, and time differences with Dubai, London, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Amman right now?",
+      "answer": "Amman, Jordan uses Eastern European Time (EET, UTC+2) in winter and Eastern European Summer Time (EEST, UTC+3) during Daylight Saving Time in summer. Jordan's DST begins on the last Friday of March and ends on the last Friday of October. The IANA timezone identifier is Asia/Amman."
+    },
+    {
+      "question": "What time zone is Amman in?",
+      "answer": "Amman is in the Eastern European Time zone (EET, UTC+2 in winter; EEST, UTC+3 in summer). Jordan observes DST, unlike some of its neighbors (Saudi Arabia and UAE do not observe DST). Amman shares its standard timezone with Athens, Cairo (no DST), Helsinki, and Kyiv. The IANA identifier is Asia/Amman."
+    },
+    {
+      "question": "Does Amman observe daylight saving time?",
+      "answer": "Yes. Jordan observes Daylight Saving Time. Clocks spring forward 1 hour to EEST (UTC+3) on the last Friday of March at midnight and fall back to EET (UTC+2) on the last Friday of October at midnight. Jordan uses Friday (the Islamic day of rest) for transitions rather than Sunday."
+    },
+    {
+      "question": "What is the time difference between Amman and Dubai?",
+      "answer": "Amman (EET, UTC+2) is 2 hours behind Dubai (GST, UTC+4) in winter. During Amman's DST (EEST, UTC+3), Amman is 1 hour behind Dubai. Since Dubai has no DST, the gap is 2 hours in winter and 1 hour in Amman's summer (approximately late March to late October)."
+    },
+    {
+      "question": "What is the time difference between Amman and London?",
+      "answer": "Amman (EET, UTC+2) is 2 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Amman on EET is 1 hour ahead. When Amman moves to EEST (UTC+3), it is 2 hours ahead of BST. The gap varies from 1–2 hours throughout the year."
+    },
+    {
+      "question": "What is the time difference between Amman and New York?",
+      "answer": "Amman (EET, UTC+2) is 7 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Amman is 6 hours ahead. When Amman is on EEST (UTC+3), it is 8 hours ahead of EST or 7 hours ahead of EDT."
+    },
+    {
+      "question": "What are typical business hours in Amman?",
+      "answer": "Standard business hours in Amman are Sunday through Thursday, 8:00 AM to 5:00 PM EET/EEST. Jordan's work week runs Sunday to Thursday, with Friday and Saturday as the weekend. Amman is Jordan's capital and its economic hub. The Amman Stock Exchange (ASE) operates Sunday–Thursday 10:00 AM–12:30 PM EET. Major industries include phosphate mining, tourism (Petra, Wadi Rum), IT services, and financial services."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Amman right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Amman, Jordan uses Eastern European Time (EET, UTC+2) in winter and Eastern European Summer Time (EEST, UTC+3) during Daylight Saving Time in summer. Jordan's DST begins on the last Friday of March and ends on the last Friday of October. The IANA timezone identifier is Asia/Amman."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Amman in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Amman is in the Eastern European Time zone (EET, UTC+2 in winter; EEST, UTC+3 in summer). Jordan observes DST, unlike some of its neighbors (Saudi Arabia and UAE do not observe DST). Amman shares its standard timezone with Athens, Cairo (no DST), Helsinki, and Kyiv. The IANA identifier is Asia/Amman."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Amman observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Jordan observes Daylight Saving Time. Clocks spring forward 1 hour to EEST (UTC+3) on the last Friday of March at midnight and fall back to EET (UTC+2) on the last Friday of October at midnight. Jordan uses Friday (the Islamic day of rest) for transitions rather than Sunday."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Amman and Dubai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Amman (EET, UTC+2) is 2 hours behind Dubai (GST, UTC+4) in winter. During Amman's DST (EEST, UTC+3), Amman is 1 hour behind Dubai. Since Dubai has no DST, the gap is 2 hours in winter and 1 hour in Amman's summer (approximately late March to late October)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Amman and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Amman (EET, UTC+2) is 2 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Amman on EET is 1 hour ahead. When Amman moves to EEST (UTC+3), it is 2 hours ahead of BST. The gap varies from 1–2 hours throughout the year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Amman and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Amman (EET, UTC+2) is 7 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Amman is 6 hours ahead. When Amman is on EEST (UTC+3), it is 8 hours ahead of EST or 7 hours ahead of EDT."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Amman?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Amman are Sunday through Thursday, 8:00 AM to 5:00 PM EET/EEST. Jordan's work week runs Sunday to Thursday, with Friday and Saturday as the weekend. Amman is Jordan's capital and its economic hub. The Amman Stock Exchange (ASE) operates Sunday–Thursday 10:00 AM–12:30 PM EET. Major industries include phosphate mining, tourism (Petra, Wadi Rum), IT services, and financial services."
+        }
+      }
+    ]
+  }
+}

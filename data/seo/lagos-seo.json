@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Lagos — WAT (UTC+1)",
+  "seo_description": "Current time in Lagos, Nigeria — live West Africa Time (WAT, UTC+1) clock, no DST, and time differences with London, New York, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Lagos right now?",
+      "answer": "Lagos, Nigeria uses West Africa Time (WAT, UTC+1) year-round. Nigeria does not observe Daylight Saving Time. Lagos is Africa's largest city by population and the economic capital of Nigeria. The IANA timezone identifier is Africa/Lagos."
+    },
+    {
+      "question": "What time zone is Lagos in?",
+      "answer": "Lagos is in the West Africa Time zone (WAT, UTC+1). Nigeria uses UTC+1 year-round with no DST. Lagos shares its timezone with many West and Central African cities including Kinshasa, Luanda, Libreville, and Bangui. The IANA identifier is Africa/Lagos."
+    },
+    {
+      "question": "Does Lagos observe daylight saving time?",
+      "answer": "No. Nigeria does not observe Daylight Saving Time. Lagos remains on WAT (UTC+1) year-round. This is the same offset as Central European Time (CET) in winter, making Lagos well-positioned for business with European firms — the clocks are identical to Frankfurt and Paris during November–March."
+    },
+    {
+      "question": "What is the time difference between Lagos and London?",
+      "answer": "Lagos (WAT, UTC+1) is 1 hour ahead of London (GMT, UTC+0) in UK winter. During UK summer (BST, UTC+1), Lagos and London are on the same time. Since Lagos has no DST, the gap changes only when London transitions: 1 hour in UK winter, 0 hours in UK summer."
+    },
+    {
+      "question": "What is the time difference between Lagos and New York?",
+      "answer": "Lagos (WAT, UTC+1) is 6 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Lagos is 5 hours ahead. Since Nigeria has no DST, the gap changes only when the US transitions clocks."
+    },
+    {
+      "question": "What is the time difference between Lagos and Johannesburg?",
+      "answer": "Lagos (WAT, UTC+1) is 1 hour behind Johannesburg (SAST, UTC+2). Neither Nigeria nor South Africa observes DST, so this 1-hour gap is constant year-round. When it is 9:00 AM in Lagos, it is 10:00 AM in Johannesburg."
+    },
+    {
+      "question": "What are typical business hours in Lagos?",
+      "answer": "Standard business hours in Lagos are 8:00 AM to 5:00 PM WAT, Monday through Friday. Lagos is Nigeria's commercial capital and Africa's largest city by population (~20 million people). The Nigerian Stock Exchange (NGX) operates 10:00 AM–2:30 PM WAT. Lagos is a major hub for banking, tech (Silicon Lagoon), oil/gas (with proximity to Niger Delta), and media."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Lagos right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lagos, Nigeria uses West Africa Time (WAT, UTC+1) year-round. Nigeria does not observe Daylight Saving Time. Lagos is Africa's largest city by population and the economic capital of Nigeria. The IANA timezone identifier is Africa/Lagos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Lagos in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lagos is in the West Africa Time zone (WAT, UTC+1). Nigeria uses UTC+1 year-round with no DST. Lagos shares its timezone with many West and Central African cities including Kinshasa, Luanda, Libreville, and Bangui. The IANA identifier is Africa/Lagos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Lagos observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Nigeria does not observe Daylight Saving Time. Lagos remains on WAT (UTC+1) year-round. This is the same offset as Central European Time (CET) in winter, making Lagos well-positioned for business with European firms — the clocks are identical to Frankfurt and Paris during November–March."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Lagos and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lagos (WAT, UTC+1) is 1 hour ahead of London (GMT, UTC+0) in UK winter. During UK summer (BST, UTC+1), Lagos and London are on the same time. Since Lagos has no DST, the gap changes only when London transitions: 1 hour in UK winter, 0 hours in UK summer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Lagos and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lagos (WAT, UTC+1) is 6 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Lagos is 5 hours ahead. Since Nigeria has no DST, the gap changes only when the US transitions clocks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Lagos and Johannesburg?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lagos (WAT, UTC+1) is 1 hour behind Johannesburg (SAST, UTC+2). Neither Nigeria nor South Africa observes DST, so this 1-hour gap is constant year-round. When it is 9:00 AM in Lagos, it is 10:00 AM in Johannesburg."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Lagos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Lagos are 8:00 AM to 5:00 PM WAT, Monday through Friday. Lagos is Nigeria's commercial capital and Africa's largest city by population (~20 million people). The Nigerian Stock Exchange (NGX) operates 10:00 AM–2:30 PM WAT. Lagos is a major hub for banking, tech (Silicon Lagoon), oil/gas (with proximity to Niger Delta), and media."
+        }
+      }
+    ]
+  }
+}
