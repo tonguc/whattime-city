@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Tel Aviv — IST (UTC+2/+3)",
+  "seo_description": "Current time in Tel Aviv, Israel — live Israel Standard Time (IST, UTC+2) clock, DST schedule, and time differences with major world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Tel Aviv right now?",
+      "answer": "Tel Aviv, Israel uses Israel Standard Time (IST, UTC+2) in winter and Israel Daylight Time (IDT, UTC+3) during Daylight Saving Time in summer. DST in Israel begins on the Friday before the last Sunday in March and ends on the last Sunday in October. The IANA timezone identifier is Asia/Jerusalem."
+    },
+    {
+      "question": "What time zone is Tel Aviv in?",
+      "answer": "Tel Aviv is in the Israel Time zone (Israel Standard Time, IST, UTC+2). During summer, Israel observes Israel Daylight Time (IDT, UTC+3). Tel Aviv and Jerusalem share the same timezone (IANA: Asia/Jerusalem). This is the same standard offset as Athens, Cairo, and Kyiv (in winter)."
+    },
+    {
+      "question": "Does Tel Aviv observe daylight saving time?",
+      "answer": "Yes. Israel observes Daylight Saving Time. Clocks spring forward 1 hour to IDT (UTC+3) on the Friday before the last Sunday in March, and fall back to IST (UTC+2) on the last Sunday in October. Israel's DST dates differ slightly from European DST dates and have changed multiple times due to religious calendar considerations."
+    },
+    {
+      "question": "What is the time difference between Tel Aviv and New York?",
+      "answer": "Tel Aviv (IST, UTC+2) is 7 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Tel Aviv is 6 hours ahead. When Israel is on IDT (UTC+3), it is 8 hours ahead of New York (EST) or 7 hours ahead of EDT. The gap varies during transition periods."
+    },
+    {
+      "question": "What is the time difference between Tel Aviv and London?",
+      "answer": "Tel Aviv (IST, UTC+2) is 2 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Tel Aviv on IST is 1 hour ahead. When Tel Aviv moves to IDT (UTC+3), it is 2 hours ahead of BST. The exact gap varies depending on when each country transitions."
+    },
+    {
+      "question": "What are typical business hours in Tel Aviv?",
+      "answer": "Standard business hours in Tel Aviv are Sunday through Thursday, 9:00 AM to 6:00 PM IST/IDT. The Israeli work week runs Sunday to Thursday, with Friday being a half-day and Saturday (Shabbat) being the day of rest. The Tel Aviv Stock Exchange (TASE) operates Sunday–Thursday 9:00 AM–5:25 PM IST. Many high-tech offices follow flexible Western-style hours."
+    },
+    {
+      "question": "What is the best time to call Tel Aviv from the US?",
+      "answer": "From Eastern Time (New York), Tel Aviv is 7–8 hours ahead. Call 7:00 AM–10:00 AM EST to reach Tel Aviv business hours (2:00 PM–5:00 PM IST). Note the Israeli work week is Sunday–Thursday, so calls on Friday afternoon and Saturday will not reach offices. Best overlap: Monday–Thursday mornings in New York."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Tel Aviv right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tel Aviv, Israel uses Israel Standard Time (IST, UTC+2) in winter and Israel Daylight Time (IDT, UTC+3) during Daylight Saving Time in summer. DST in Israel begins on the Friday before the last Sunday in March and ends on the last Sunday in October. The IANA timezone identifier is Asia/Jerusalem."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Tel Aviv in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tel Aviv is in the Israel Time zone (Israel Standard Time, IST, UTC+2). During summer, Israel observes Israel Daylight Time (IDT, UTC+3). Tel Aviv and Jerusalem share the same timezone (IANA: Asia/Jerusalem). This is the same standard offset as Athens, Cairo, and Kyiv (in winter)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Tel Aviv observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Israel observes Daylight Saving Time. Clocks spring forward 1 hour to IDT (UTC+3) on the Friday before the last Sunday in March, and fall back to IST (UTC+2) on the last Sunday in October. Israel's DST dates differ slightly from European DST dates and have changed multiple times due to religious calendar considerations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Tel Aviv and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tel Aviv (IST, UTC+2) is 7 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Tel Aviv is 6 hours ahead. When Israel is on IDT (UTC+3), it is 8 hours ahead of New York (EST) or 7 hours ahead of EDT. The gap varies during transition periods."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Tel Aviv and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tel Aviv (IST, UTC+2) is 2 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Tel Aviv on IST is 1 hour ahead. When Tel Aviv moves to IDT (UTC+3), it is 2 hours ahead of BST. The exact gap varies depending on when each country transitions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Tel Aviv?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Tel Aviv are Sunday through Thursday, 9:00 AM to 6:00 PM IST/IDT. The Israeli work week runs Sunday to Thursday, with Friday being a half-day and Saturday (Shabbat) being the day of rest. The Tel Aviv Stock Exchange (TASE) operates Sunday–Thursday 9:00 AM–5:25 PM IST. Many high-tech offices follow flexible Western-style hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best time to call Tel Aviv from the US?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From Eastern Time (New York), Tel Aviv is 7–8 hours ahead. Call 7:00 AM–10:00 AM EST to reach Tel Aviv business hours (2:00 PM–5:00 PM IST). Note the Israeli work week is Sunday–Thursday, so calls on Friday afternoon and Saturday will not reach offices. Best overlap: Monday–Thursday mornings in New York."
+        }
+      }
+    ]
+  }
+}

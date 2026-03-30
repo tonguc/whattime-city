@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Cancún — EST (UTC-5)",
+  "seo_description": "Current time in Cancún, Mexico — live Eastern Standard Time (EST, UTC-5) clock, no DST since 2015, and time differences with Mexico City, New York, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Cancún right now?",
+      "answer": "Cancún, Mexico uses Eastern Standard Time (EST, UTC-5) year-round. Unlike most of Mexico, Cancún and the state of Quintana Roo do not observe Daylight Saving Time — they permanently adopted UTC-5 (EST) in 2015 to align with the US Eastern Time zone, which benefits tourism from the US East Coast. The IANA timezone identifier is America/Cancun."
+    },
+    {
+      "question": "What time zone is Cancún in?",
+      "answer": "Cancún is in the UTC-5 time zone (Eastern Standard Time, year-round), officially classified as Central Standard Time (CST) by Mexico but without DST. In 2015, Quintana Roo permanently moved to UTC-5 to match US East Coast time, making scheduling easier for American tourists. The IANA identifier is America/Cancun."
+    },
+    {
+      "question": "Does Cancún observe daylight saving time?",
+      "answer": "No. Cancún and the state of Quintana Roo do not observe Daylight Saving Time. Since February 2015, Quintana Roo permanently adopted UTC-5. This means during US Daylight Saving Time (March–November), Cancún is on the same clock as New York (EDT, UTC-4 in the US — but Cancún stays at UTC-5). Cancún stays at UTC-5 all year."
+    },
+    {
+      "question": "What is the time difference between Cancún and New York?",
+      "answer": "Cancún (UTC-5, year-round) is in the same time zone as New York during US Eastern Standard Time (November–March), with zero time difference. During US Daylight Saving Time (March–November), New York moves to EDT (UTC-4), making New York 1 hour ahead of Cancún. This is often surprising to US East Coast visitors."
+    },
+    {
+      "question": "What is the time difference between Cancún and Mexico City?",
+      "answer": "Cancún (UTC-5, no DST) and Mexico City (CST, UTC-6 in winter) differ by 1 hour: Cancún is 1 hour ahead of Mexico City in winter. During Mexican DST (summer), Mexico City moves to CDT (UTC-5), matching Cancún. So the gap is 0–1 hours depending on the season."
+    },
+    {
+      "question": "What is the time difference between Cancún and London?",
+      "answer": "Cancún (UTC-5) is 5 hours behind London (GMT, UTC+0) in UK winter. During UK summer (BST, UTC+1), London is 6 hours ahead of Cancún. Since Cancún has no DST, the gap varies only based on UK clock changes."
+    },
+    {
+      "question": "What are typical business hours in Cancún?",
+      "answer": "Business hours in Cancún are typically 9:00 AM to 6:00 PM EST, Monday through Friday. Cancún is Mexico's leading tourist destination and a major Caribbean resort city. Hotels, restaurants, and tourist attractions operate extended hours — many venues in the Hotel Zone (Zona Hotelera) run 24/7 during peak season. Tour operators often start at 7:00–8:00 AM for excursions."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Cancún right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cancún, Mexico uses Eastern Standard Time (EST, UTC-5) year-round. Unlike most of Mexico, Cancún and the state of Quintana Roo do not observe Daylight Saving Time — they permanently adopted UTC-5 (EST) in 2015 to align with the US Eastern Time zone, which benefits tourism from the US East Coast. The IANA timezone identifier is America/Cancun."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Cancún in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cancún is in the UTC-5 time zone (Eastern Standard Time, year-round), officially classified as Central Standard Time (CST) by Mexico but without DST. In 2015, Quintana Roo permanently moved to UTC-5 to match US East Coast time, making scheduling easier for American tourists. The IANA identifier is America/Cancun."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Cancún observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Cancún and the state of Quintana Roo do not observe Daylight Saving Time. Since February 2015, Quintana Roo permanently adopted UTC-5. This means during US Daylight Saving Time (March–November), Cancún is on the same clock as New York (EDT, UTC-4 in the US — but Cancún stays at UTC-5). Cancún stays at UTC-5 all year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Cancún and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cancún (UTC-5, year-round) is in the same time zone as New York during US Eastern Standard Time (November–March), with zero time difference. During US Daylight Saving Time (March–November), New York moves to EDT (UTC-4), making New York 1 hour ahead of Cancún. This is often surprising to US East Coast visitors."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Cancún and Mexico City?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cancún (UTC-5, no DST) and Mexico City (CST, UTC-6 in winter) differ by 1 hour: Cancún is 1 hour ahead of Mexico City in winter. During Mexican DST (summer), Mexico City moves to CDT (UTC-5), matching Cancún. So the gap is 0–1 hours depending on the season."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Cancún and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cancún (UTC-5) is 5 hours behind London (GMT, UTC+0) in UK winter. During UK summer (BST, UTC+1), London is 6 hours ahead of Cancún. Since Cancún has no DST, the gap varies only based on UK clock changes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Cancún?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Business hours in Cancún are typically 9:00 AM to 6:00 PM EST, Monday through Friday. Cancún is Mexico's leading tourist destination and a major Caribbean resort city. Hotels, restaurants, and tourist attractions operate extended hours — many venues in the Hotel Zone (Zona Hotelera) run 24/7 during peak season. Tour operators often start at 7:00–8:00 AM for excursions."
+        }
+      }
+    ]
+  }
+}

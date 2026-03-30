@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Lisbon — WET/WEST (UTC+0/+1)",
+  "seo_description": "Current time in Lisbon, Portugal — live WET/WEST clock, DST schedule, and time differences with London, New York, Madrid, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Lisbon right now?",
+      "answer": "Lisbon, Portugal uses Western European Time (WET, UTC+0) in winter and Western European Summer Time (WEST, UTC+1) during Daylight Saving Time in summer. Clocks spring forward on the last Sunday in March and fall back on the last Sunday in October, following EU DST rules. The IANA timezone identifier is Europe/Lisbon."
+    },
+    {
+      "question": "What time zone is Lisbon in?",
+      "answer": "Lisbon is in the Western European Time zone (WET, UTC+0 in winter; WEST, UTC+1 in summer). Despite being on the Iberian Peninsula alongside Spain (which uses CET, UTC+1), Portugal uses a different timezone — UTC+0 in winter, making Lisbon aligned with London (GMT) rather than Madrid. The IANA identifier is Europe/Lisbon."
+    },
+    {
+      "question": "Does Lisbon observe daylight saving time?",
+      "answer": "Yes. Lisbon and Portugal observe EU Daylight Saving Time. Clocks spring forward 1 hour to WEST (UTC+1) on the last Sunday in March at 1:00 AM, and fall back to WET (UTC+0) on the last Sunday in October at 2:00 AM. This puts Lisbon on the same time as London (BST, UTC+1) during summer."
+    },
+    {
+      "question": "What is the time difference between Lisbon and London?",
+      "answer": "Lisbon (WET/WEST) and London (GMT/BST) are on the same time zone year-round. Both move to UTC+1 on the same date in March and return to UTC+0 in October. There is typically no time difference between Lisbon and London."
+    },
+    {
+      "question": "What is the time difference between Lisbon and Madrid?",
+      "answer": "Lisbon (WET, UTC+0 in winter) is 1 hour behind Madrid (CET, UTC+1 in winter). During summer, Lisbon (WEST, UTC+1) aligns with Madrid (CEST, UTC+2) — Lisbon remains 1 hour behind Madrid. Despite being geographically close, the two capitals differ by 1 hour year-round due to different timezone choices."
+    },
+    {
+      "question": "What is the time difference between Lisbon and New York?",
+      "answer": "Lisbon (WET, UTC+0) is 5 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Lisbon is 4 hours ahead. When both are on DST, Lisbon (WEST, UTC+1) is 5 hours ahead of New York (EDT, UTC-4). The gap varies slightly during March and November transition windows."
+    },
+    {
+      "question": "What are typical business hours in Lisbon?",
+      "answer": "Standard business hours in Lisbon are 9:00 AM to 6:00 PM WET/WEST, Monday through Friday, with a 1-hour lunch break. Lisbon is Portugal's capital and its largest financial and tech hub. Euronext Lisbon (PSI 20) operates 8:00 AM–4:30 PM WET/WEST. Lisbon has grown as a major European tech startup hub, with Web Summit held there annually."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Lisbon right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lisbon, Portugal uses Western European Time (WET, UTC+0) in winter and Western European Summer Time (WEST, UTC+1) during Daylight Saving Time in summer. Clocks spring forward on the last Sunday in March and fall back on the last Sunday in October, following EU DST rules. The IANA timezone identifier is Europe/Lisbon."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Lisbon in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lisbon is in the Western European Time zone (WET, UTC+0 in winter; WEST, UTC+1 in summer). Despite being on the Iberian Peninsula alongside Spain (which uses CET, UTC+1), Portugal uses a different timezone — UTC+0 in winter, making Lisbon aligned with London (GMT) rather than Madrid. The IANA identifier is Europe/Lisbon."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Lisbon observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Lisbon and Portugal observe EU Daylight Saving Time. Clocks spring forward 1 hour to WEST (UTC+1) on the last Sunday in March at 1:00 AM, and fall back to WET (UTC+0) on the last Sunday in October at 2:00 AM. This puts Lisbon on the same time as London (BST, UTC+1) during summer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Lisbon and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lisbon (WET/WEST) and London (GMT/BST) are on the same time zone year-round. Both move to UTC+1 on the same date in March and return to UTC+0 in October. There is typically no time difference between Lisbon and London."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Lisbon and Madrid?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lisbon (WET, UTC+0 in winter) is 1 hour behind Madrid (CET, UTC+1 in winter). During summer, Lisbon (WEST, UTC+1) aligns with Madrid (CEST, UTC+2) — Lisbon remains 1 hour behind Madrid. Despite being geographically close, the two capitals differ by 1 hour year-round due to different timezone choices."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Lisbon and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lisbon (WET, UTC+0) is 5 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Lisbon is 4 hours ahead. When both are on DST, Lisbon (WEST, UTC+1) is 5 hours ahead of New York (EDT, UTC-4). The gap varies slightly during March and November transition windows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Lisbon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Lisbon are 9:00 AM to 6:00 PM WET/WEST, Monday through Friday, with a 1-hour lunch break. Lisbon is Portugal's capital and its largest financial and tech hub. Euronext Lisbon (PSI 20) operates 8:00 AM–4:30 PM WET/WEST. Lisbon has grown as a major European tech startup hub, with Web Summit held there annually."
+        }
+      }
+    ]
+  }
+}

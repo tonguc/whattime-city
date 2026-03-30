@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Dublin — IST (UTC+1)",
+  "seo_description": "Current time in Dublin, Ireland — live Irish Standard Time (IST, UTC+1) clock, DST schedule, and time differences with London, New York, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Dublin right now?",
+      "answer": "Dublin, Ireland uses Greenwich Mean Time (GMT, UTC+0) in winter and Irish Standard Time (IST, UTC+1) during Daylight Saving Time in summer. Ireland observes DST from the last Sunday in March to the last Sunday in October. Dublin is the capital of the Republic of Ireland. The IANA timezone identifier is Europe/Dublin."
+    },
+    {
+      "question": "What time zone is Dublin in?",
+      "answer": "Dublin is in the Western European Time zone. In winter (October–March), Dublin uses GMT (UTC+0), the same as London and Reykjavik. In summer (March–October), Dublin observes IST (Irish Standard Time, UTC+1), aligning with BST (British Summer Time) in the UK. The IANA identifier is Europe/Dublin."
+    },
+    {
+      "question": "Does Dublin observe daylight saving time?",
+      "answer": "Yes. Dublin and all of Ireland observe Daylight Saving Time. Clocks spring forward 1 hour to UTC+1 (IST) on the last Sunday in March at 1:00 AM GMT and fall back to UTC+0 (GMT) on the last Sunday in October at 2:00 AM IST. Ireland follows EU DST rules."
+    },
+    {
+      "question": "What is the time difference between Dublin and London?",
+      "answer": "Dublin (GMT/IST) and London (GMT/BST) are on the same time zone year-round. Both switch to summer time (UTC+1) on the same date. There is no time difference between Dublin and London at any time of year."
+    },
+    {
+      "question": "What is the time difference between Dublin and New York?",
+      "answer": "Dublin (GMT, UTC+0) is 5 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Dublin is 4 hours ahead. When both are on DST, Dublin (IST, UTC+1) is 5 hours ahead of New York (EDT, UTC-4). The gap varies slightly during transition periods in March and November."
+    },
+    {
+      "question": "What is the time difference between Dublin and Sydney?",
+      "answer": "Dublin (GMT, UTC+0) is 10 hours behind Sydney (AEDT, UTC+11) during Sydney's Daylight Saving Time (October–April). When Sydney is on AEST (UTC+10) and Dublin is on IST (UTC+1), Dublin is 9 hours behind. The gap varies due to opposing DST seasons in northern and southern hemispheres."
+    },
+    {
+      "question": "What are typical business hours in Dublin?",
+      "answer": "Standard business hours in Dublin are 9:00 AM to 5:30 PM IST/GMT, Monday through Friday. Dublin is a major European tech and financial hub, home to European headquarters of Google, Meta, LinkedIn, and many US multinationals (due to Ireland's corporate tax structure). The Irish Stock Exchange (Euronext Dublin) opens at 8:00 AM GMT/IST."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Dublin right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dublin, Ireland uses Greenwich Mean Time (GMT, UTC+0) in winter and Irish Standard Time (IST, UTC+1) during Daylight Saving Time in summer. Ireland observes DST from the last Sunday in March to the last Sunday in October. Dublin is the capital of the Republic of Ireland. The IANA timezone identifier is Europe/Dublin."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Dublin in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dublin is in the Western European Time zone. In winter (October–March), Dublin uses GMT (UTC+0), the same as London and Reykjavik. In summer (March–October), Dublin observes IST (Irish Standard Time, UTC+1), aligning with BST (British Summer Time) in the UK. The IANA identifier is Europe/Dublin."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Dublin observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Dublin and all of Ireland observe Daylight Saving Time. Clocks spring forward 1 hour to UTC+1 (IST) on the last Sunday in March at 1:00 AM GMT and fall back to UTC+0 (GMT) on the last Sunday in October at 2:00 AM IST. Ireland follows EU DST rules."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Dublin and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dublin (GMT/IST) and London (GMT/BST) are on the same time zone year-round. Both switch to summer time (UTC+1) on the same date. There is no time difference between Dublin and London at any time of year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Dublin and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dublin (GMT, UTC+0) is 5 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Dublin is 4 hours ahead. When both are on DST, Dublin (IST, UTC+1) is 5 hours ahead of New York (EDT, UTC-4). The gap varies slightly during transition periods in March and November."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Dublin and Sydney?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dublin (GMT, UTC+0) is 10 hours behind Sydney (AEDT, UTC+11) during Sydney's Daylight Saving Time (October–April). When Sydney is on AEST (UTC+10) and Dublin is on IST (UTC+1), Dublin is 9 hours behind. The gap varies due to opposing DST seasons in northern and southern hemispheres."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Dublin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Dublin are 9:00 AM to 5:30 PM IST/GMT, Monday through Friday. Dublin is a major European tech and financial hub, home to European headquarters of Google, Meta, LinkedIn, and many US multinationals (due to Ireland's corporate tax structure). The Irish Stock Exchange (Euronext Dublin) opens at 8:00 AM GMT/IST."
+        }
+      }
+    ]
+  }
+}
