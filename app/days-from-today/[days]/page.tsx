@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const dayName = targetDate.toLocaleDateString('en-US', { weekday: 'long' })
 
   const title = `${n} Days From Today — ${dateStr}`
-  const description = `What date is ${n} days from today? ${n} days from today is ${dateStr} (${dayName}). That's ${getWeeksAndDays(n)} from now. Calculate the exact date with day name and week number.`
+  const description = `What date is ${n} days from today? ${n} days from today is ${dateStr} (${dayName}), ${getWeeksAndDays(n)} from now.`
 
   return {
     title,

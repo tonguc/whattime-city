@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const dayName = targetDate.toLocaleDateString('en-US', { weekday: 'long' })
 
   const title = `${n} Days Ago — ${dateStr}`
-  const description = `What date was ${n} days ago? ${n} days ago was ${dateStr} (${dayName}). That is ${getWeeksAndDays(n)} in the past. See the exact date with day name and week number.`
+  const description = `What date was ${n} days ago? ${n} days ago was ${dateStr} (${dayName}), ${getWeeksAndDays(n)} in the past.`
 
   return {
     title,
