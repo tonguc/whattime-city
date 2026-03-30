@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in New Orleans — CST/CDT",
+  "seo_description": "Current time in New Orleans, LA — live Central Time Zone clock, UTC offset, DST schedule, and time differences with major US and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in New Orleans right now?",
+      "answer": "New Orleans, Louisiana, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. New Orleans shares its time zone with Chicago, Dallas, Houston, and Nashville. The IANA identifier is America/Chicago."
+    },
+    {
+      "question": "What time zone is New Orleans in?",
+      "answer": "New Orleans is in the Central Time Zone (CT), observing CST (UTC-6) from November to March and CDT (UTC-5) from March to November. Louisiana is entirely on Central Time. The IANA timezone identifier is America/Chicago."
+    },
+    {
+      "question": "Does New Orleans observe daylight saving time?",
+      "answer": "Yes. New Orleans observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (becoming 3:00 AM CDT, UTC-5) and fall back on the first Sunday in November at 2:00 AM (becoming 1:00 AM CST, UTC-6). Louisiana follows federal DST rules under the Uniform Time Act of 1966."
+    },
+    {
+      "question": "What is the time difference between New Orleans and New York?",
+      "answer": "New Orleans (CST, UTC-6) is 1 hour behind New York (EST, UTC-5) year-round. Both cities observe Daylight Saving Time on the same schedule (CST/CDT vs EST/EDT), so the 1-hour gap is constant. When it is 9:00 AM in New Orleans, it is 10:00 AM in New York."
+    },
+    {
+      "question": "What is the time difference between New Orleans and London?",
+      "answer": "New Orleans (CST, UTC-6) is 6 hours behind London (GMT, UTC+0) in winter. During US and UK Daylight Saving Time, New Orleans moves to CDT (UTC-5) and London to BST (UTC+1), maintaining a 6-hour gap for most of the year. Brief windows in spring and autumn may shift the gap to 5 or 7 hours."
+    },
+    {
+      "question": "What are typical business hours in New Orleans?",
+      "answer": "Standard business hours in New Orleans are 9:00 AM to 5:00 PM CST/CDT, Monday through Friday. New Orleans is a major tourism and hospitality city, so many businesses — including restaurants, entertainment venues, and hotels — operate extended hours, often late into the night. The French Quarter runs 24/7 during Mardi Gras and major events. Port of New Orleans (one of the busiest in the US) operates around the clock."
+    },
+    {
+      "question": "What is the best time to call New Orleans from the US?",
+      "answer": "From Eastern Time (New York), New Orleans is 1 hour behind — call 9:00 AM–5:00 PM EST to reach New Orleans 8:00 AM–4:00 PM. From Pacific Time (Los Angeles), New Orleans is 2 hours ahead — call 7:00 AM–3:00 PM PST to reach New Orleans 9:00 AM–5:00 PM CST."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in New Orleans right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "New Orleans, Louisiana, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. New Orleans shares its time zone with Chicago, Dallas, Houston, and Nashville. The IANA identifier is America/Chicago."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is New Orleans in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "New Orleans is in the Central Time Zone (CT), observing CST (UTC-6) from November to March and CDT (UTC-5) from March to November. Louisiana is entirely on Central Time. The IANA timezone identifier is America/Chicago."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does New Orleans observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. New Orleans observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (becoming 3:00 AM CDT, UTC-5) and fall back on the first Sunday in November at 2:00 AM (becoming 1:00 AM CST, UTC-6). Louisiana follows federal DST rules under the Uniform Time Act of 1966."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between New Orleans and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "New Orleans (CST, UTC-6) is 1 hour behind New York (EST, UTC-5) year-round. Both cities observe Daylight Saving Time on the same schedule (CST/CDT vs EST/EDT), so the 1-hour gap is constant. When it is 9:00 AM in New Orleans, it is 10:00 AM in New York."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between New Orleans and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "New Orleans (CST, UTC-6) is 6 hours behind London (GMT, UTC+0) in winter. During US and UK Daylight Saving Time, New Orleans moves to CDT (UTC-5) and London to BST (UTC+1), maintaining a 6-hour gap for most of the year. Brief windows in spring and autumn may shift the gap to 5 or 7 hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in New Orleans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in New Orleans are 9:00 AM to 5:00 PM CST/CDT, Monday through Friday. New Orleans is a major tourism and hospitality city, so many businesses — including restaurants, entertainment venues, and hotels — operate extended hours, often late into the night. The French Quarter runs 24/7 during Mardi Gras and major events. Port of New Orleans (one of the busiest in the US) operates around the clock."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best time to call New Orleans from the US?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From Eastern Time (New York), New Orleans is 1 hour behind — call 9:00 AM–5:00 PM EST to reach New Orleans 8:00 AM–4:00 PM. From Pacific Time (Los Angeles), New Orleans is 2 hours ahead — call 7:00 AM–3:00 PM PST to reach New Orleans 9:00 AM–5:00 PM CST."
+        }
+      }
+    ]
+  }
+}

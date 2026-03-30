@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Brasilia — BRT (UTC-3)",
+  "seo_description": "Current time in Brasília, Brazil — live Brasilia Time (BRT, UTC-3) clock, DST schedule, and time differences with major world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Brasilia right now?",
+      "answer": "Brasília, Brazil uses Brasilia Time (BRT, UTC-3) as its standard time. Brazil observes Daylight Saving Time in the southern hemisphere summer (typically October to February), when clocks move to BRST (UTC-2). Not all of Brazil observes DST — the northeast and north regions stay on fixed offsets. The IANA identifier for Brasília is America/Sao_Paulo."
+    },
+    {
+      "question": "What time zone is Brasilia in?",
+      "answer": "Brasília is in the Brasilia Time zone (BRT, UTC-3). As Brazil's capital, it shares this timezone with São Paulo, Rio de Janeiro, and most of southeastern Brazil. The IANA identifier is America/Sao_Paulo. During summer (October–February), Brasília observes BRST (UTC-2) when Daylight Saving Time is active."
+    },
+    {
+      "question": "Does Brasilia observe daylight saving time?",
+      "answer": "Brasília observes Daylight Saving Time during the southern hemisphere summer. Clocks spring forward 1 hour (to UTC-2, BRST) typically in October or November and fall back (to UTC-3, BRT) in February or March. The exact dates vary by year. Note: As of recent years, Brazil has considered abolishing DST — verify current year status."
+    },
+    {
+      "question": "What is the time difference between Brasilia and New York?",
+      "answer": "Brasilia (BRT, UTC-3) is 2 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (March–November), New York moves to EDT (UTC-4), so the gap narrows to 1 hour. When Brasília is also on BRST (UTC-2), the gap can change again. Always verify the current offset during DST transition periods."
+    },
+    {
+      "question": "What is the time difference between Brasilia and London?",
+      "answer": "Brasilia (BRT, UTC-3) is 3 hours behind London (GMT, UTC+0) in UK winter. During UK summer (BST, UTC+1), London is 4 hours ahead of Brasília on BRT. If both are on DST (BRST and BST simultaneously), the gap becomes 3 hours. The varying DST schedules in the southern and northern hemispheres make this offset variable."
+    },
+    {
+      "question": "What are typical business hours in Brasilia?",
+      "answer": "Business hours in Brasília are 9:00 AM to 6:00 PM BRT, Monday through Friday, with a 1-hour lunch break typically from 12:00–1:00 PM. As the seat of the Brazilian federal government, Brasília has a strong public sector presence. The Bolsa de Valores (B3 stock exchange) is in São Paulo but trades on the same timezone. Government offices: 9:00 AM–5:00 PM. Most private companies follow similar hours."
+    },
+    {
+      "question": "What is Brasilia time in EST?",
+      "answer": "Brasilia Time (BRT, UTC-3) is 2 hours ahead of Eastern Standard Time (EST, UTC-5). When it is 9:00 AM EST in New York, it is 11:00 AM BRT in Brasília. During US Eastern Daylight Time (EDT, UTC-4), the gap narrows to 1 hour — noon EDT is 1:00 PM BRT."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Brasilia right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Brasília, Brazil uses Brasilia Time (BRT, UTC-3) as its standard time. Brazil observes Daylight Saving Time in the southern hemisphere summer (typically October to February), when clocks move to BRST (UTC-2). Not all of Brazil observes DST — the northeast and north regions stay on fixed offsets. The IANA identifier for Brasília is America/Sao_Paulo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Brasilia in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Brasília is in the Brasilia Time zone (BRT, UTC-3). As Brazil's capital, it shares this timezone with São Paulo, Rio de Janeiro, and most of southeastern Brazil. The IANA identifier is America/Sao_Paulo. During summer (October–February), Brasília observes BRST (UTC-2) when Daylight Saving Time is active."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Brasilia observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Brasília observes Daylight Saving Time during the southern hemisphere summer. Clocks spring forward 1 hour (to UTC-2, BRST) typically in October or November and fall back (to UTC-3, BRT) in February or March. The exact dates vary by year. Note: As of recent years, Brazil has considered abolishing DST — verify current year status."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Brasilia and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Brasilia (BRT, UTC-3) is 2 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (March–November), New York moves to EDT (UTC-4), so the gap narrows to 1 hour. When Brasília is also on BRST (UTC-2), the gap can change again. Always verify the current offset during DST transition periods."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Brasilia and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Brasilia (BRT, UTC-3) is 3 hours behind London (GMT, UTC+0) in UK winter. During UK summer (BST, UTC+1), London is 4 hours ahead of Brasília on BRT. If both are on DST (BRST and BST simultaneously), the gap becomes 3 hours. The varying DST schedules in the southern and northern hemispheres make this offset variable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Brasilia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Business hours in Brasília are 9:00 AM to 6:00 PM BRT, Monday through Friday, with a 1-hour lunch break typically from 12:00–1:00 PM. As the seat of the Brazilian federal government, Brasília has a strong public sector presence. The Bolsa de Valores (B3 stock exchange) is in São Paulo but trades on the same timezone. Government offices: 9:00 AM–5:00 PM. Most private companies follow similar hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Brasilia time in EST?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Brasilia Time (BRT, UTC-3) is 2 hours ahead of Eastern Standard Time (EST, UTC-5). When it is 9:00 AM EST in New York, it is 11:00 AM BRT in Brasília. During US Eastern Daylight Time (EDT, UTC-4), the gap narrows to 1 hour — noon EDT is 1:00 PM BRT."
+        }
+      }
+    ]
+  }
+}
