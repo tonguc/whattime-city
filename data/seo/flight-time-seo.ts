@@ -89,6 +89,22 @@ export const flightTimeSEO = {
         answer: "You can enter any hour from 0 to 23 in the departure time selector, which covers the full 24-hour day. Results are displayed in 12-hour AM/PM format. If you need a 24-hour result, simply convert: any time showing PM just add 12 hours (e.g., 3:00 PM = 15:00)."
       }
     ],
-    eeatFooter: "Last updated: March 2026 | Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database (tzdata)."
+    eeatFooter: "Last updated: March 2026 | Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database (tzdata).",
+    popularRoutes: [
+      { route: "New York (JFK) → London (LHR)", duration: "~7h", depart: "8:00 PM EST", arrive: "9:00 AM GMT (+1 day)", note: "EST UTC-5 → GMT UTC+0 = +5h" },
+      { route: "New York (JFK) → Paris (CDG)", duration: "~7h 30m", depart: "8:00 PM EST", arrive: "10:30 AM CET (+1 day)", note: "EST UTC-5 → CET UTC+1 = +6h" },
+      { route: "Los Angeles (LAX) → Tokyo (NRT)", duration: "~12h", depart: "11:00 PM PST", arrive: "6:00 AM JST (+2 days)", note: "PST UTC-8 → JST UTC+9 = +17h" },
+      { route: "Los Angeles (LAX) → London (LHR)", duration: "~10h 30m", depart: "6:00 PM PST", arrive: "12:30 PM GMT (+1 day)", note: "PST UTC-8 → GMT UTC+0 = +8h" },
+      { route: "London (LHR) → Dubai (DXB)", duration: "~7h", depart: "8:00 AM GMT", arrive: "7:00 PM GST", note: "GMT UTC+0 → GST UTC+4 = +4h" },
+      { route: "London (LHR) → New York (JFK)", duration: "~8h", depart: "10:00 AM GMT", arrive: "1:00 PM EST", note: "GMT UTC+0 → EST UTC-5 = -5h" },
+      { route: "London (LHR) → Singapore (SIN)", duration: "~13h", depart: "9:00 PM GMT", arrive: "4:00 PM SGT (+1 day)", note: "GMT UTC+0 → SGT UTC+8 = +8h" },
+      { route: "Dubai (DXB) → London (LHR)", duration: "~7h", depart: "2:00 AM GST", arrive: "5:00 AM GMT", note: "GST UTC+4 → GMT UTC+0 = -4h" },
+      { route: "Sydney (SYD) → London (LHR)", duration: "~23h (via hub)", depart: "11:00 PM AEST", arrive: "7:00 AM GMT (+1 day)", note: "AEST UTC+10 → GMT UTC+0 = -10h" },
+      { route: "Singapore (SIN) → London (LHR)", duration: "~13h", depart: "11:00 PM SGT", arrive: "5:00 AM GMT (+1 day)", note: "SGT UTC+8 → GMT UTC+0 = -8h" },
+      { route: "New York (JFK) → Los Angeles (LAX)", duration: "~6h", depart: "9:00 AM EST", arrive: "12:00 PM PST", note: "EST UTC-5 → PST UTC-8 = -3h" },
+      { route: "Mumbai (BOM) → London (LHR)", duration: "~9h", depart: "2:00 AM IST", arrive: "6:30 AM GMT", note: "IST UTC+5:30 → GMT UTC+0 = -5.5h" },
+      { route: "Tokyo (NRT) → Los Angeles (LAX)", duration: "~10h", depart: "5:00 PM JST", arrive: "10:00 AM PST (same day)", note: "JST UTC+9 → PST UTC-8 = -17h" },
+      { route: "Chicago (ORD) → London (LHR)", duration: "~9h", depart: "9:00 PM CST", arrive: "11:00 AM GMT (+1 day)", note: "CST UTC-6 → GMT UTC+0 = +6h" },
+    ]
   }
 } as const;

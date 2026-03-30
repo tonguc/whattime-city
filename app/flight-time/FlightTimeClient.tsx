@@ -177,6 +177,36 @@ export default function FlightTimeClient() {
         </section>
       ))}
 
+      {/* Popular Routes Reference Table */}
+      <section className={`${cardClass} mb-4`}>
+        <h2 className={`text-xl font-semibold mb-2 ${theme.text}`}>Popular Flight Routes — Arrival Time Examples</h2>
+        <p className={`text-sm mb-4 ${theme.textMuted}`}>Sample calculations for common international routes. Actual times vary by date and DST status.</p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className={`border-b ${isLight ? 'border-slate-200' : 'border-slate-700'}`}>
+                <th className={`text-left py-2 pr-3 font-semibold ${theme.text}`}>Route</th>
+                <th className={`text-left py-2 pr-3 font-semibold ${theme.text}`}>Duration</th>
+                <th className={`text-left py-2 pr-3 font-semibold ${theme.text}`}>Depart</th>
+                <th className={`text-left py-2 pr-3 font-semibold ${theme.text}`}>Arrive (local)</th>
+                <th className={`text-left py-2 font-semibold ${theme.text} hidden sm:table-cell`}>TZ Shift</th>
+              </tr>
+            </thead>
+            <tbody className={`${theme.textMuted} divide-y ${isLight ? 'divide-slate-100' : 'divide-slate-700/50'}`}>
+              {content.popularRoutes.map((r) => (
+                <tr key={r.route}>
+                  <td className={`py-2 pr-3 font-medium ${theme.text}`}>{r.route}</td>
+                  <td className="py-2 pr-3 tabular-nums">{r.duration}</td>
+                  <td className="py-2 pr-3 tabular-nums">{r.depart}</td>
+                  <td className={`py-2 pr-3 tabular-nums font-medium ${theme.accentText}`}>{r.arrive}</td>
+                  <td className="py-2 hidden sm:table-cell">{r.note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       {/* Related Tools */}
       <section className={`${cardClass} mb-4`}>
         <h2 className={`text-xl font-semibold mb-4 ${theme.text}`}>Related Tools</h2>
