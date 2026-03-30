@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import VirginiaClockClient from './VirginiaClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Virginia Now — EST/EDT (UTC−5/−4) · Richmond, Virginia Beach · DC Area',
+  title: 'Time in Virginia Now — EST/EDT · Richmond',
   description: 'What time is it in Virginia right now? Virginia uses Eastern Standard Time (EST, UTC−5) in winter and Eastern Daylight Time (EDT, UTC−4) during DST. Northern Virginia is part of the Washington DC metro area. Live Richmond clock.',
   keywords: ['time in virginia', 'virginia time now', 'what time is it in virginia', 'richmond time', 'virginia beach time', 'virginia time zone', 'EST virginia', 'eastern time virginia', 'northern virginia time', 'nova time zone', 'virginia time vs california', 'virginia time vs london'],
   alternates: { canonical: 'https://whattime.city/virginia/' },

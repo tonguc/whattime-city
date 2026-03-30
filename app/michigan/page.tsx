@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import MichiganClockClient from './MichiganClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Michigan Now — EST/EDT (UTC−5/−4) · Detroit, Grand Rapids · Upper Peninsula CST',
+  title: 'Time in Michigan Now — EST/EDT · Detroit',
   description:
     'What time is it in Michigan right now? Most of Michigan uses Eastern Time (EST/EDT). Four western Upper Peninsula counties use Central Time (CST/CDT). Live Detroit clock, Michigan vs world cities, and best time to call.',
   keywords: [
