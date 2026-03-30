@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Cape Town — SAST (UTC+2)",
+  "seo_description": "Current time in Cape Town, South Africa — live South Africa Standard Time (SAST, UTC+2) clock, no DST, and time differences with Johannesburg, London, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Cape Town right now?",
+      "answer": "Cape Town, South Africa uses South Africa Standard Time (SAST, UTC+2) year-round. South Africa does not observe Daylight Saving Time. Cape Town is on the same timezone as Johannesburg, Durban, and Pretoria. The IANA timezone identifier is Africa/Johannesburg."
+    },
+    {
+      "question": "What time zone is Cape Town in?",
+      "answer": "Cape Town is in the South Africa Standard Time zone (SAST, UTC+2). South Africa uses UTC+2 year-round with no DST adjustments. Cape Town shares its timezone with Johannesburg (the country's largest city) and all other South African cities. The IANA identifier is Africa/Johannesburg."
+    },
+    {
+      "question": "Does Cape Town observe daylight saving time?",
+      "answer": "No. Cape Town and all of South Africa do not observe Daylight Saving Time. South Africa remains on SAST (UTC+2) year-round. This makes scheduling straightforward — Cape Town's clock never changes. While some neighboring countries like Namibia observe DST, South Africa opted for a permanent UTC+2 offset."
+    },
+    {
+      "question": "What is the time difference between Cape Town and London?",
+      "answer": "Cape Town (SAST, UTC+2) is 2 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Cape Town is only 1 hour ahead of London. Since Cape Town has no DST, the gap varies based on UK clock changes: 2 hours in winter, 1 hour in UK summer."
+    },
+    {
+      "question": "What is the time difference between Cape Town and New York?",
+      "answer": "Cape Town (SAST, UTC+2) is 7 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Cape Town is 6 hours ahead. Cape Town's lack of DST means the gap changes only when the US transitions clocks in March and November."
+    },
+    {
+      "question": "What is the time difference between Cape Town and Johannesburg?",
+      "answer": "Cape Town and Johannesburg are on the same timezone — both use SAST (UTC+2) year-round. There is no time difference between Cape Town and Johannesburg. Both cities and all South African cities share Africa/Johannesburg (UTC+2)."
+    },
+    {
+      "question": "What are typical business hours in Cape Town?",
+      "answer": "Standard business hours in Cape Town are 8:30 AM to 5:00 PM SAST, Monday through Friday. Cape Town is South Africa's legislative capital and a major financial, tourism, and technology hub. The Johannesburg Stock Exchange (JSE), the largest exchange in Africa, operates 9:00 AM–5:00 PM SAST and is relevant for Cape Town-based investors. Cape Town hosts major conferences (including Africa Tech Week) and has a growing startup ecosystem."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Cape Town right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cape Town, South Africa uses South Africa Standard Time (SAST, UTC+2) year-round. South Africa does not observe Daylight Saving Time. Cape Town is on the same timezone as Johannesburg, Durban, and Pretoria. The IANA timezone identifier is Africa/Johannesburg."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Cape Town in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cape Town is in the South Africa Standard Time zone (SAST, UTC+2). South Africa uses UTC+2 year-round with no DST adjustments. Cape Town shares its timezone with Johannesburg (the country's largest city) and all other South African cities. The IANA identifier is Africa/Johannesburg."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Cape Town observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Cape Town and all of South Africa do not observe Daylight Saving Time. South Africa remains on SAST (UTC+2) year-round. This makes scheduling straightforward — Cape Town's clock never changes. While some neighboring countries like Namibia observe DST, South Africa opted for a permanent UTC+2 offset."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Cape Town and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cape Town (SAST, UTC+2) is 2 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Cape Town is only 1 hour ahead of London. Since Cape Town has no DST, the gap varies based on UK clock changes: 2 hours in winter, 1 hour in UK summer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Cape Town and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cape Town (SAST, UTC+2) is 7 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Cape Town is 6 hours ahead. Cape Town's lack of DST means the gap changes only when the US transitions clocks in March and November."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Cape Town and Johannesburg?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cape Town and Johannesburg are on the same timezone — both use SAST (UTC+2) year-round. There is no time difference between Cape Town and Johannesburg. Both cities and all South African cities share Africa/Johannesburg (UTC+2)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Cape Town?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Cape Town are 8:30 AM to 5:00 PM SAST, Monday through Friday. Cape Town is South Africa's legislative capital and a major financial, tourism, and technology hub. The Johannesburg Stock Exchange (JSE), the largest exchange in Africa, operates 9:00 AM–5:00 PM SAST and is relevant for Cape Town-based investors. Cape Town hosts major conferences (including Africa Tech Week) and has a growing startup ecosystem."
+        }
+      }
+    ]
+  }
+}

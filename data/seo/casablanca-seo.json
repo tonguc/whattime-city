@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Casablanca — WET/WEST (UTC+0/+1)",
+  "seo_description": "Current time in Casablanca, Morocco — live WET/WEST clock, unique DST schedule, and time differences with London, Paris, and major world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Casablanca right now?",
+      "answer": "Casablanca, Morocco uses Western European Time (WET, UTC+0) as its standard time and Western European Summer Time (WEST, UTC+1) during Daylight Saving Time. Morocco observes DST from the last Sunday in March to the last Sunday in October. However, Morocco suspends DST during Ramadan, reverting to UTC+0, making Casablanca's offset variable during that period. The IANA timezone identifier is Africa/Casablanca."
+    },
+    {
+      "question": "What time zone is Casablanca in?",
+      "answer": "Casablanca is in the UTC+0 standard time zone (Western European Time, WET). During summer (outside Ramadan), Morocco observes WEST (UTC+1). Morocco's timezone behavior is unique: DST is suspended during Ramadan each year, which means the offset can change multiple times during that month. The IANA identifier is Africa/Casablanca."
+    },
+    {
+      "question": "Does Casablanca observe daylight saving time?",
+      "answer": "Yes, but with a unique exception. Morocco observes DST from the last Sunday in March to the last Sunday in October (WEST, UTC+1). However, during Ramadan (a lunar month that shifts each year), Morocco reverts to standard time (WET, UTC+0). This means Casablanca has two DST transitions in a typical year, plus two Ramadan transitions, creating an unusual pattern for scheduling."
+    },
+    {
+      "question": "What is the time difference between Casablanca and London?",
+      "answer": "Casablanca (WET, UTC+0) and London (GMT, UTC+0) are on the same time in winter. During UK summer (BST, UTC+1), London moves 1 hour ahead of Casablanca (if Casablanca is not on WEST). When both are on summer time, they are equal again. The gap varies depending on Morocco's DST status (including Ramadan exceptions) and UK DST."
+    },
+    {
+      "question": "What is the time difference between Casablanca and Paris?",
+      "answer": "Casablanca (WET, UTC+0) is 1 hour behind Paris (CET, UTC+1) in winter. During European summer (CEST, UTC+2), Paris is 2 hours ahead of Casablanca (if Casablanca is on WET). When Morocco is on WEST (UTC+1) and Paris is on CEST (UTC+2), the gap is 1 hour. The Ramadan exception creates additional variability."
+    },
+    {
+      "question": "What is the time difference between Casablanca and New York?",
+      "answer": "Casablanca (WET, UTC+0) is 5 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Casablanca is 4 hours ahead. When Casablanca is on WEST (UTC+1), it is 6 hours ahead of EST or 5 hours ahead of EDT."
+    },
+    {
+      "question": "What are typical business hours in Casablanca?",
+      "answer": "Standard business hours in Casablanca are 8:30 AM to 6:30 PM WET/WEST, Monday through Friday. During Ramadan, working hours are typically reduced. Casablanca is Morocco's largest city and financial capital, home to the Casablanca Stock Exchange (Bourse de Casablanca) and the financial district (Casablanca Finance City). Banks generally operate 8:30 AM to 5:30 PM."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Casablanca right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Casablanca, Morocco uses Western European Time (WET, UTC+0) as its standard time and Western European Summer Time (WEST, UTC+1) during Daylight Saving Time. Morocco observes DST from the last Sunday in March to the last Sunday in October. However, Morocco suspends DST during Ramadan, reverting to UTC+0, making Casablanca's offset variable during that period. The IANA timezone identifier is Africa/Casablanca."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Casablanca in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Casablanca is in the UTC+0 standard time zone (Western European Time, WET). During summer (outside Ramadan), Morocco observes WEST (UTC+1). Morocco's timezone behavior is unique: DST is suspended during Ramadan each year, which means the offset can change multiple times during that month. The IANA identifier is Africa/Casablanca."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Casablanca observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, but with a unique exception. Morocco observes DST from the last Sunday in March to the last Sunday in October (WEST, UTC+1). However, during Ramadan (a lunar month that shifts each year), Morocco reverts to standard time (WET, UTC+0). This means Casablanca has two DST transitions in a typical year, plus two Ramadan transitions, creating an unusual pattern for scheduling."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Casablanca and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Casablanca (WET, UTC+0) and London (GMT, UTC+0) are on the same time in winter. During UK summer (BST, UTC+1), London moves 1 hour ahead of Casablanca (if Casablanca is not on WEST). When both are on summer time, they are equal again. The gap varies depending on Morocco's DST status (including Ramadan exceptions) and UK DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Casablanca and Paris?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Casablanca (WET, UTC+0) is 1 hour behind Paris (CET, UTC+1) in winter. During European summer (CEST, UTC+2), Paris is 2 hours ahead of Casablanca (if Casablanca is on WET). When Morocco is on WEST (UTC+1) and Paris is on CEST (UTC+2), the gap is 1 hour. The Ramadan exception creates additional variability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Casablanca and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Casablanca (WET, UTC+0) is 5 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Casablanca is 4 hours ahead. When Casablanca is on WEST (UTC+1), it is 6 hours ahead of EST or 5 hours ahead of EDT."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Casablanca?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Casablanca are 8:30 AM to 6:30 PM WET/WEST, Monday through Friday. During Ramadan, working hours are typically reduced. Casablanca is Morocco's largest city and financial capital, home to the Casablanca Stock Exchange (Bourse de Casablanca) and the financial district (Casablanca Finance City). Banks generally operate 8:30 AM to 5:30 PM."
+        }
+      }
+    ]
+  }
+}

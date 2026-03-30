@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Riyadh — AST (UTC+3)",
+  "seo_description": "Current time in Riyadh, Saudi Arabia — live Arabia Standard Time (AST, UTC+3) clock, no DST, and time differences with Dubai, London, New York, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Riyadh right now?",
+      "answer": "Riyadh, Saudi Arabia uses Arabia Standard Time (AST, UTC+3) year-round. Saudi Arabia does not observe Daylight Saving Time. Riyadh is the capital of Saudi Arabia and the largest city in the Arabian Peninsula. The IANA timezone identifier is Asia/Riyadh."
+    },
+    {
+      "question": "What time zone is Riyadh in?",
+      "answer": "Riyadh is in the Arabia Standard Time zone (AST, UTC+3). Saudi Arabia uses UTC+3 year-round with no DST. Riyadh shares its timezone with other Saudi cities (Jeddah, Mecca, Medina, Dhahran) and Kuwait (AST, UTC+3). The IANA identifier is Asia/Riyadh."
+    },
+    {
+      "question": "Does Riyadh observe daylight saving time?",
+      "answer": "No. Saudi Arabia does not observe Daylight Saving Time. Riyadh remains on AST (UTC+3) year-round. This makes Riyadh's time constant relative to UTC — it is always 3 hours ahead of London (GMT) in winter, and the offset never changes regardless of season."
+    },
+    {
+      "question": "What is the time difference between Riyadh and Dubai?",
+      "answer": "Riyadh (AST, UTC+3) is 1 hour behind Dubai (GST, UTC+4). Neither city observes DST, so this 1-hour gap is constant year-round. When it is 9:00 AM in Riyadh, it is 10:00 AM in Dubai."
+    },
+    {
+      "question": "What is the time difference between Riyadh and London?",
+      "answer": "Riyadh (AST, UTC+3) is 3 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Riyadh is 2 hours ahead of London. Since Riyadh has no DST, the gap changes only when London transitions: 3 hours in UK winter, 2 hours in UK summer."
+    },
+    {
+      "question": "What is the time difference between Riyadh and New York?",
+      "answer": "Riyadh (AST, UTC+3) is 8 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Riyadh is 7 hours ahead. Since Saudi Arabia has no DST, the gap is 8 hours in winter and 7 hours during US DST."
+    },
+    {
+      "question": "What are typical business hours in Riyadh?",
+      "answer": "Standard business hours in Riyadh are Sunday through Thursday, 8:00 AM to 4:00 PM AST. The Saudi work week runs Sunday to Thursday, with Friday and Saturday as the weekend. Many private sector companies follow 9:00 AM–6:00 PM schedules. The Saudi Exchange (Tadawul), the largest stock exchange in the Middle East, trades Sunday–Thursday 10:00 AM–3:00 PM AST. During Ramadan, government office hours are typically reduced."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Riyadh right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Riyadh, Saudi Arabia uses Arabia Standard Time (AST, UTC+3) year-round. Saudi Arabia does not observe Daylight Saving Time. Riyadh is the capital of Saudi Arabia and the largest city in the Arabian Peninsula. The IANA timezone identifier is Asia/Riyadh."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Riyadh in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Riyadh is in the Arabia Standard Time zone (AST, UTC+3). Saudi Arabia uses UTC+3 year-round with no DST. Riyadh shares its timezone with other Saudi cities (Jeddah, Mecca, Medina, Dhahran) and Kuwait (AST, UTC+3). The IANA identifier is Asia/Riyadh."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Riyadh observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Saudi Arabia does not observe Daylight Saving Time. Riyadh remains on AST (UTC+3) year-round. This makes Riyadh's time constant relative to UTC — it is always 3 hours ahead of London (GMT) in winter, and the offset never changes regardless of season."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Riyadh and Dubai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Riyadh (AST, UTC+3) is 1 hour behind Dubai (GST, UTC+4). Neither city observes DST, so this 1-hour gap is constant year-round. When it is 9:00 AM in Riyadh, it is 10:00 AM in Dubai."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Riyadh and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Riyadh (AST, UTC+3) is 3 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Riyadh is 2 hours ahead of London. Since Riyadh has no DST, the gap changes only when London transitions: 3 hours in UK winter, 2 hours in UK summer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Riyadh and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Riyadh (AST, UTC+3) is 8 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Riyadh is 7 hours ahead. Since Saudi Arabia has no DST, the gap is 8 hours in winter and 7 hours during US DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Riyadh?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Riyadh are Sunday through Thursday, 8:00 AM to 4:00 PM AST. The Saudi work week runs Sunday to Thursday, with Friday and Saturday as the weekend. Many private sector companies follow 9:00 AM–6:00 PM schedules. The Saudi Exchange (Tadawul), the largest stock exchange in the Middle East, trades Sunday–Thursday 10:00 AM–3:00 PM AST. During Ramadan, government office hours are typically reduced."
+        }
+      }
+    ]
+  }
+}

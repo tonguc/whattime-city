@@ -3,36 +3,39 @@ import ContentPageWrapper from '@/components/ContentPageWrapper'
 import SunriseSunsetClient from './SunriseSunsetClient'
 
 export const metadata: Metadata = {
-  title: 'Sunrise & Sunset Times — Sun Calculator',
+  title: 'Sunrise & Sunset Today — Sun Calculator',
   description:
-    'Check today\'s sunrise and sunset times for any city. Live sun calculator with dawn, dusk, solar noon, and daylight hours. Updated every minute.',
+    'What time does the sun set today? Find today\'s exact sunrise and sunset times for any city. Live sun calculator with dawn, dusk, solar noon, and daylight hours for 400+ cities worldwide.',
   keywords: [
-    'sunrise sunset',
-    'what time is sunset',
+    'what time does the sun set today',
+    'what time sunsets today',
+    'sunrise sunset times today',
+    'what time is sunset today',
+    'what time does sunrise happen',
     'sunset today',
     'sunrise today',
     'sunrise time',
     'sunset time',
     'sun calculator',
-    'daylight hours',
+    'daylight hours today',
     'solar noon',
     'civil twilight',
     'dawn dusk times',
   ],
   alternates: { canonical: 'https://whattime.city/sunrise-sunset/' },
   openGraph: {
-    title: 'Sunrise & Sunset Times — Sun Calculator',
+    title: 'Sunrise & Sunset Today — Sun Calculator',
     description:
-      'Check today\'s sunrise and sunset times for any city worldwide. Live sun calculator with dawn, dusk, solar noon, and daylight hours.',
+      'What time does the sun set today? Live sunrise and sunset calculator for any city worldwide. Includes dawn, dusk, solar noon, and daylight hours.',
     type: 'website',
     url: 'https://whattime.city/sunrise-sunset/',
     siteName: 'whattime.city',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sunrise & Sunset Times — Sun Calculator',
+    title: 'Sunrise & Sunset Today — Sun Calculator',
     description:
-      'Live sunrise and sunset calculator for any city. Dawn, dusk, solar noon, and daylight duration.',
+      'What time does the sun set today? Live sunrise and sunset calculator for 400+ cities. Dawn, dusk, solar noon, and daylight duration.',
   },
 }
 

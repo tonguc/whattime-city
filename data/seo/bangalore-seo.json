@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Bangalore — IST (UTC+5:30)",
+  "seo_description": "Current time in Bangalore, India — live India Standard Time (IST, UTC+5:30) clock, no DST, and time differences with Mumbai, London, New York, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Bangalore right now?",
+      "answer": "Bangalore (officially Bengaluru), India uses India Standard Time (IST, UTC+5:30) year-round. India does not observe Daylight Saving Time. IST is unique with its 30-minute offset from UTC. Bangalore is India's technology hub (often called the 'Silicon Valley of India') and shares IST with all of India — New Delhi, Mumbai, Chennai, Kolkata. The IANA timezone identifier is Asia/Kolkata."
+    },
+    {
+      "question": "What time zone is Bangalore in?",
+      "answer": "Bangalore is in the India Standard Time zone (IST, UTC+5:30). India has a single timezone used by all states and territories — UTC+5:30 year-round with no DST. The IANA identifier is Asia/Kolkata (used for all of India). IST's half-hour offset means Bangalore is 5 hours and 30 minutes ahead of UTC."
+    },
+    {
+      "question": "Does Bangalore observe daylight saving time?",
+      "answer": "No. Bangalore and all of India do not observe Daylight Saving Time. India has used IST (UTC+5:30) continuously since 1947. The entire country uses one timezone year-round, making time zone coordination within India simple. Bangalore stays at UTC+5:30 at all times."
+    },
+    {
+      "question": "What is the time difference between Bangalore and London?",
+      "answer": "Bangalore (IST, UTC+5:30) is 5 hours and 30 minutes ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Bangalore is 4 hours and 30 minutes ahead of London. Since Bangalore has no DST, the gap changes only when London transitions: 5h 30m in UK winter, 4h 30m in UK summer."
+    },
+    {
+      "question": "What is the time difference between Bangalore and New York?",
+      "answer": "Bangalore (IST, UTC+5:30) is 10 hours and 30 minutes ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Bangalore is 9 hours and 30 minutes ahead. Since India has no DST, the gap changes only when the US transitions clocks."
+    },
+    {
+      "question": "What is the time difference between Bangalore and Singapore?",
+      "answer": "Bangalore (IST, UTC+5:30) is 2 hours and 30 minutes behind Singapore (SGT, UTC+8). Neither observes DST, so this 2h 30m gap is constant year-round. When it is 9:00 AM in Bangalore, it is 11:30 AM in Singapore."
+    },
+    {
+      "question": "What are typical business hours in Bangalore?",
+      "answer": "Standard business hours in Bangalore are 9:00 AM to 6:00 PM IST, Monday through Friday. Bangalore's IT/tech sector (Infosys, Wipro, TCS, Cognizant campuses) often works 9:00 AM–7:00 PM. Many companies run US-facing shifts from 6:00 PM–3:00 AM IST to overlap with American working hours. The Bombay Stock Exchange (BSE) and National Stock Exchange (NSE) trade 9:15 AM–3:30 PM IST."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Bangalore right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bangalore (officially Bengaluru), India uses India Standard Time (IST, UTC+5:30) year-round. India does not observe Daylight Saving Time. IST is unique with its 30-minute offset from UTC. Bangalore is India's technology hub (often called the 'Silicon Valley of India') and shares IST with all of India — New Delhi, Mumbai, Chennai, Kolkata. The IANA timezone identifier is Asia/Kolkata."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Bangalore in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bangalore is in the India Standard Time zone (IST, UTC+5:30). India has a single timezone used by all states and territories — UTC+5:30 year-round with no DST. The IANA identifier is Asia/Kolkata (used for all of India). IST's half-hour offset means Bangalore is 5 hours and 30 minutes ahead of UTC."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Bangalore observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Bangalore and all of India do not observe Daylight Saving Time. India has used IST (UTC+5:30) continuously since 1947. The entire country uses one timezone year-round, making time zone coordination within India simple. Bangalore stays at UTC+5:30 at all times."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Bangalore and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bangalore (IST, UTC+5:30) is 5 hours and 30 minutes ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Bangalore is 4 hours and 30 minutes ahead of London. Since Bangalore has no DST, the gap changes only when London transitions: 5h 30m in UK winter, 4h 30m in UK summer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Bangalore and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bangalore (IST, UTC+5:30) is 10 hours and 30 minutes ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Bangalore is 9 hours and 30 minutes ahead. Since India has no DST, the gap changes only when the US transitions clocks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Bangalore and Singapore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bangalore (IST, UTC+5:30) is 2 hours and 30 minutes behind Singapore (SGT, UTC+8). Neither observes DST, so this 2h 30m gap is constant year-round. When it is 9:00 AM in Bangalore, it is 11:30 AM in Singapore."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Bangalore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Bangalore are 9:00 AM to 6:00 PM IST, Monday through Friday. Bangalore's IT/tech sector (Infosys, Wipro, TCS, Cognizant campuses) often works 9:00 AM–7:00 PM. Many companies run US-facing shifts from 6:00 PM–3:00 AM IST to overlap with American working hours. The Bombay Stock Exchange (BSE) and National Stock Exchange (NSE) trade 9:15 AM–3:30 PM IST."
+        }
+      }
+    ]
+  }
+}
