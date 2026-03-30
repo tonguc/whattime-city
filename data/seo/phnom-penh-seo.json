@@ -1,0 +1,84 @@
+{
+  "seo_title": "Current Time in Phnom Penh — ICT (UTC+7)",
+  "seo_description": "Current time in Phnom Penh, Cambodia. Indochina Time (ICT, UTC+7) year-round — no DST. Same time as Bangkok & Ho Chi Minh City. Live clock.",
+  "faq": [
+    {
+      "question": "What time is it in Phnom Penh right now?",
+      "answer": "Phnom Penh, Cambodia uses Indochina Time (ICT, UTC+7) year-round. Cambodia does not observe Daylight Saving Time. The IANA identifier is Asia/Phnom_Penh. Phnom Penh shares the same time zone as Bangkok (Thailand) and Ho Chi Minh City (Vietnam) — all at UTC+7. The live clock above shows the current Phnom Penh time."
+    },
+    {
+      "question": "What time zone is Phnom Penh in?",
+      "answer": "Phnom Penh, Cambodia is in the Indochina Time zone (ICT, UTC+7) year-round. The IANA identifier is Asia/Phnom_Penh. Cambodia does not observe Daylight Saving Time, so UTC+7 is constant year-round. Phnom Penh shares this time zone with Bangkok, Ho Chi Minh City, Hanoi, Vientiane (Laos), and Jakarta (Indonesia)."
+    },
+    {
+      "question": "Does Phnom Penh observe daylight saving time?",
+      "answer": "No. Phnom Penh and Cambodia do not observe Daylight Saving Time. Cambodia uses ICT (UTC+7) permanently year-round. Most of Southeast Asia — Thailand, Vietnam, Laos, and Cambodia — does not observe DST."
+    },
+    {
+      "question": "What is the time difference between Phnom Penh and London?",
+      "answer": "Phnom Penh (ICT, UTC+7) is 7 hours ahead of London (GMT, UTC+0) in winter. During British Summer Time (BST, UTC+1), Phnom Penh is 6 hours ahead. Cambodia does not observe DST."
+    },
+    {
+      "question": "What is the time difference between Phnom Penh and New York?",
+      "answer": "Phnom Penh (ICT, UTC+7) is 12 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Phnom Penh is 11 hours ahead. Cambodia does not observe DST."
+    },
+    {
+      "question": "What are typical business hours in Phnom Penh?",
+      "answer": "Standard business hours in Phnom Penh are 8:00 AM to 5:00 PM ICT, Monday through Friday. Phnom Penh is Cambodia's capital and largest city, located at the confluence of the Mekong, Tonlé Sap, and Bassac rivers. Cambodia's economy has seen rapid growth driven by garment manufacturing, tourism, and construction. The Cambodia Securities Exchange (CSX) is the national stock exchange."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Phnom Penh right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Phnom Penh, Cambodia uses Indochina Time (ICT, UTC+7) year-round. Cambodia does not observe Daylight Saving Time. The IANA identifier is Asia/Phnom_Penh. Phnom Penh shares the same time zone as Bangkok (Thailand) and Ho Chi Minh City (Vietnam) — all at UTC+7. The live clock above shows the current Phnom Penh time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Phnom Penh in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Phnom Penh, Cambodia is in the Indochina Time zone (ICT, UTC+7) year-round. The IANA identifier is Asia/Phnom_Penh. Cambodia does not observe Daylight Saving Time, so UTC+7 is constant year-round. Phnom Penh shares this time zone with Bangkok, Ho Chi Minh City, Hanoi, Vientiane (Laos), and Jakarta (Indonesia)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Phnom Penh observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Phnom Penh and Cambodia do not observe Daylight Saving Time. Cambodia uses ICT (UTC+7) permanently year-round. Most of Southeast Asia — Thailand, Vietnam, Laos, and Cambodia — does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Phnom Penh and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Phnom Penh (ICT, UTC+7) is 7 hours ahead of London (GMT, UTC+0) in winter. During British Summer Time (BST, UTC+1), Phnom Penh is 6 hours ahead. Cambodia does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Phnom Penh and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Phnom Penh (ICT, UTC+7) is 12 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Phnom Penh is 11 hours ahead. Cambodia does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Phnom Penh?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Phnom Penh are 8:00 AM to 5:00 PM ICT, Monday through Friday. Phnom Penh is Cambodia's capital and largest city. Cambodia's economy has seen rapid growth driven by garment manufacturing, tourism, and construction. The Cambodia Securities Exchange (CSX) is the national stock exchange."
+        }
+      }
+    ]
+  }
+}

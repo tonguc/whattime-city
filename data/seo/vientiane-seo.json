@@ -1,0 +1,84 @@
+{
+  "seo_title": "Current Time in Vientiane — ICT (UTC+7)",
+  "seo_description": "Current time in Vientiane, Laos. Indochina Time (ICT, UTC+7) year-round — no DST. Same time as Bangkok & Phnom Penh. Live clock.",
+  "faq": [
+    {
+      "question": "What time is it in Vientiane right now?",
+      "answer": "Vientiane, Laos uses Indochina Time (ICT, UTC+7) year-round. Laos does not observe Daylight Saving Time. The IANA identifier is Asia/Vientiane. Vientiane shares the same time zone as Bangkok (Thailand), Phnom Penh (Cambodia), and Ho Chi Minh City (Vietnam) — all at UTC+7. The live clock above shows the current Vientiane time."
+    },
+    {
+      "question": "What time zone is Vientiane in?",
+      "answer": "Vientiane, Laos is in the Indochina Time zone (ICT, UTC+7) year-round. The IANA identifier is Asia/Vientiane. Laos does not observe Daylight Saving Time. Vientiane shares this time zone with Bangkok, Ho Chi Minh City, Hanoi, and Phnom Penh."
+    },
+    {
+      "question": "Does Vientiane observe daylight saving time?",
+      "answer": "No. Vientiane and Laos do not observe Daylight Saving Time. Laos uses ICT (UTC+7) permanently year-round. All of mainland Southeast Asia — Thailand, Vietnam, Laos, and Cambodia — does not observe DST."
+    },
+    {
+      "question": "What is the time difference between Vientiane and London?",
+      "answer": "Vientiane (ICT, UTC+7) is 7 hours ahead of London (GMT, UTC+0) in winter. During British Summer Time (BST, UTC+1), Vientiane is 6 hours ahead. Laos does not observe DST."
+    },
+    {
+      "question": "What is the time difference between Vientiane and New York?",
+      "answer": "Vientiane (ICT, UTC+7) is 12 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Vientiane is 11 hours ahead. Laos does not observe DST."
+    },
+    {
+      "question": "What are typical business hours in Vientiane?",
+      "answer": "Standard business hours in Vientiane are 8:00 AM to 5:00 PM ICT, Monday through Friday. Vientiane is Laos's capital and largest city, located on the Mekong River bordering Thailand. Laos has one of Southeast Asia's fastest-growing economies, driven by hydropower exports to Thailand and China, mining, and tourism. The Lao Securities Exchange (LSX) is the national stock exchange."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Vientiane right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vientiane, Laos uses Indochina Time (ICT, UTC+7) year-round. Laos does not observe Daylight Saving Time. The IANA identifier is Asia/Vientiane. Vientiane shares the same time zone as Bangkok (Thailand), Phnom Penh (Cambodia), and Ho Chi Minh City (Vietnam) — all at UTC+7. The live clock above shows the current Vientiane time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Vientiane in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vientiane, Laos is in the Indochina Time zone (ICT, UTC+7) year-round. The IANA identifier is Asia/Vientiane. Laos does not observe Daylight Saving Time. Vientiane shares this time zone with Bangkok, Ho Chi Minh City, Hanoi, and Phnom Penh."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Vientiane observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Vientiane and Laos do not observe Daylight Saving Time. Laos uses ICT (UTC+7) permanently year-round. All of mainland Southeast Asia — Thailand, Vietnam, Laos, and Cambodia — does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Vientiane and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vientiane (ICT, UTC+7) is 7 hours ahead of London (GMT, UTC+0) in winter. During British Summer Time (BST, UTC+1), Vientiane is 6 hours ahead. Laos does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Vientiane and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vientiane (ICT, UTC+7) is 12 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Vientiane is 11 hours ahead. Laos does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Vientiane?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Vientiane are 8:00 AM to 5:00 PM ICT, Monday through Friday. Vientiane is Laos's capital and largest city, located on the Mekong River bordering Thailand. Laos has one of Southeast Asia's fastest-growing economies, driven by hydropower exports to Thailand and China, mining, and tourism."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "seo_title": "Current Time in Colombo — SLST (UTC+5:30)",
+  "seo_description": "Current time in Colombo, Sri Lanka. Sri Lanka Standard Time (SLST, UTC+5:30) year-round — no DST. Same offset as India. Live clock.",
+  "faq": [
+    {
+      "question": "What time is it in Colombo right now?",
+      "answer": "Colombo, Sri Lanka uses Sri Lanka Standard Time (SLST, UTC+5:30) year-round. Sri Lanka does not observe Daylight Saving Time. The IANA identifier is Asia/Colombo. Sri Lanka shares the UTC+5:30 offset with India (IST), though the two countries use different time zone names. The live clock above shows the current Colombo time."
+    },
+    {
+      "question": "What time zone is Colombo in?",
+      "answer": "Colombo, Sri Lanka is in Sri Lanka Standard Time (SLST, UTC+5:30) year-round. The IANA identifier is Asia/Colombo. Sri Lanka has used UTC+5:30 since 2006, reverting from UTC+6 (which was adopted briefly in 1996). The +5:30 offset matches India (IST) numerically, though Sri Lanka maintains its own IANA zone separate from Asia/Kolkata."
+    },
+    {
+      "question": "Does Colombo observe daylight saving time?",
+      "answer": "No. Colombo and Sri Lanka do not observe Daylight Saving Time. Sri Lanka uses SLST (UTC+5:30) permanently year-round. Sri Lanka's proximity to the equator (6–9 degrees North) means daylight hours are relatively consistent throughout the year, making DST unnecessary."
+    },
+    {
+      "question": "What is the time difference between Colombo and London?",
+      "answer": "Colombo (SLST, UTC+5:30) is 5 hours and 30 minutes ahead of London (GMT, UTC+0) in winter. During British Summer Time (BST, UTC+1), Colombo is 4 hours and 30 minutes ahead. Sri Lanka does not observe DST."
+    },
+    {
+      "question": "What is the time difference between Colombo and New York?",
+      "answer": "Colombo (SLST, UTC+5:30) is 10 hours and 30 minutes ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Colombo is 9 hours and 30 minutes ahead. Sri Lanka does not observe DST."
+    },
+    {
+      "question": "What are typical business hours in Colombo?",
+      "answer": "Standard business hours in Colombo are 9:00 AM to 5:00 PM SLST, Monday through Friday. Colombo is Sri Lanka's commercial capital and largest city (the legislative capital is Sri Jayawardenepura Kotte). The city is a major port hub and IT/BPO destination. Colombo Stock Exchange (CSE) trades from 9:30 AM to 2:30 PM on weekdays."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Colombo right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Colombo, Sri Lanka uses Sri Lanka Standard Time (SLST, UTC+5:30) year-round. Sri Lanka does not observe Daylight Saving Time. The IANA identifier is Asia/Colombo. Sri Lanka shares the UTC+5:30 offset with India (IST), though the two countries use different time zone names. The live clock above shows the current Colombo time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Colombo in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Colombo, Sri Lanka is in Sri Lanka Standard Time (SLST, UTC+5:30) year-round. The IANA identifier is Asia/Colombo. Sri Lanka has used UTC+5:30 since 2006, reverting from UTC+6 (which was adopted briefly in 1996). The +5:30 offset matches India (IST) numerically, though Sri Lanka maintains its own IANA zone separate from Asia/Kolkata."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Colombo observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Colombo and Sri Lanka do not observe Daylight Saving Time. Sri Lanka uses SLST (UTC+5:30) permanently year-round. Sri Lanka's proximity to the equator (6–9 degrees North) means daylight hours are relatively consistent throughout the year, making DST unnecessary."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Colombo and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Colombo (SLST, UTC+5:30) is 5 hours and 30 minutes ahead of London (GMT, UTC+0) in winter. During British Summer Time (BST, UTC+1), Colombo is 4 hours and 30 minutes ahead. Sri Lanka does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Colombo and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Colombo (SLST, UTC+5:30) is 10 hours and 30 minutes ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Colombo is 9 hours and 30 minutes ahead. Sri Lanka does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Colombo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Colombo are 9:00 AM to 5:00 PM SLST, Monday through Friday. Colombo is Sri Lanka's commercial capital and largest city (the legislative capital is Sri Jayawardenepura Kotte). The city is a major port hub and IT/BPO destination. Colombo Stock Exchange (CSE) trades from 9:30 AM to 2:30 PM on weekdays."
+        }
+      }
+    ]
+  }
+}

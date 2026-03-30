@@ -1,0 +1,84 @@
+{
+  "seo_title": "Current Time in Muscat — GST (UTC+4)",
+  "seo_description": "Current time in Muscat, Oman. Gulf Standard Time (GST, UTC+4) year-round — no DST. Same time as Dubai & Abu Dhabi. Live clock.",
+  "faq": [
+    {
+      "question": "What time is it in Muscat right now?",
+      "answer": "Muscat, Oman uses Gulf Standard Time (GST, UTC+4) year-round. Oman does not observe Daylight Saving Time. The IANA identifier is Asia/Muscat. Muscat shares the same time zone as Dubai and Abu Dhabi (UAE) — both use UTC+4 year-round. The live clock above shows the current Muscat time."
+    },
+    {
+      "question": "What time zone is Muscat in?",
+      "answer": "Muscat, Oman is in the Gulf Standard Time zone (GST, UTC+4) year-round. The IANA identifier is Asia/Muscat. Oman does not observe Daylight Saving Time, so the UTC+4 offset is constant throughout the year. Muscat shares this time zone with Dubai, Abu Dhabi, and the rest of the UAE."
+    },
+    {
+      "question": "Does Muscat observe daylight saving time?",
+      "answer": "No. Muscat and Oman do not observe Daylight Saving Time. Oman uses GST (UTC+4) permanently year-round. The Gulf region, including UAE, Saudi Arabia, Qatar, Bahrain, and Kuwait, does not observe DST."
+    },
+    {
+      "question": "What is the time difference between Muscat and London?",
+      "answer": "Muscat (GST, UTC+4) is 4 hours ahead of London (GMT, UTC+0) in winter. During British Summer Time (BST, UTC+1), Muscat is 3 hours ahead of London. Oman does not observe DST."
+    },
+    {
+      "question": "What is the time difference between Muscat and New York?",
+      "answer": "Muscat (GST, UTC+4) is 9 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Muscat is 8 hours ahead. Oman does not observe DST."
+    },
+    {
+      "question": "What are typical business hours in Muscat?",
+      "answer": "Standard business hours in Muscat are 8:00 AM to 5:00 PM GST, Sunday through Thursday (Friday and Saturday are the weekend). Muscat is the capital and largest city of Oman. Oman's economy is driven by oil and gas, tourism, and logistics — the Port of Salalah is one of the world's busiest container ports. Muscat Securities Market (MSM) trades Sunday through Thursday."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Muscat right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Muscat, Oman uses Gulf Standard Time (GST, UTC+4) year-round. Oman does not observe Daylight Saving Time. The IANA identifier is Asia/Muscat. Muscat shares the same time zone as Dubai and Abu Dhabi (UAE) — both use UTC+4 year-round. The live clock above shows the current Muscat time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Muscat in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Muscat, Oman is in the Gulf Standard Time zone (GST, UTC+4) year-round. The IANA identifier is Asia/Muscat. Oman does not observe Daylight Saving Time, so the UTC+4 offset is constant throughout the year. Muscat shares this time zone with Dubai, Abu Dhabi, and the rest of the UAE."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Muscat observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Muscat and Oman do not observe Daylight Saving Time. Oman uses GST (UTC+4) permanently year-round. The Gulf region, including UAE, Saudi Arabia, Qatar, Bahrain, and Kuwait, does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Muscat and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Muscat (GST, UTC+4) is 4 hours ahead of London (GMT, UTC+0) in winter. During British Summer Time (BST, UTC+1), Muscat is 3 hours ahead of London. Oman does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Muscat and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Muscat (GST, UTC+4) is 9 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Muscat is 8 hours ahead. Oman does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Muscat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Muscat are 8:00 AM to 5:00 PM GST, Sunday through Thursday (Friday and Saturday are the weekend). Muscat is the capital and largest city of Oman. Oman's economy is driven by oil and gas, tourism, and logistics — the Port of Salalah is one of the world's busiest container ports. Muscat Securities Market (MSM) trades Sunday through Thursday."
+        }
+      }
+    ]
+  }
+}

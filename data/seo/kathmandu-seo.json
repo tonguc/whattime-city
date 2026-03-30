@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Kathmandu — NPT (UTC+5:45)",
+  "seo_description": "Current time in Kathmandu, Nepal. Nepal Time (NPT, UTC+5:45) year-round — no DST. One of the world's few 45-minute offset time zones. Live clock.",
+  "faq": [
+    {
+      "question": "What time is it in Kathmandu right now?",
+      "answer": "Kathmandu, Nepal uses Nepal Time (NPT, UTC+5:45) year-round. Nepal does not observe Daylight Saving Time. The IANA identifier is Asia/Kathmandu. Nepal Time is one of the world's few time zones with a 45-minute offset — it is 15 minutes ahead of India (IST, UTC+5:30) and 15 minutes behind Bangladesh (BST, UTC+6). The live clock above shows the current Kathmandu time."
+    },
+    {
+      "question": "What time zone is Kathmandu in?",
+      "answer": "Kathmandu, Nepal is in the Nepal Time zone (NPT, UTC+5:45) year-round. The IANA identifier is Asia/Kathmandu. Nepal adopted the +5:45 offset to distinguish itself from its large neighbors — India at UTC+5:30 and China at UTC+8. The 45-minute offset is shared by only a handful of territories globally and makes Nepal unique among South Asian nations."
+    },
+    {
+      "question": "Does Kathmandu observe daylight saving time?",
+      "answer": "No. Kathmandu and Nepal do not observe Daylight Saving Time. Nepal uses NPT (UTC+5:45) permanently year-round. Nepal's location in South Asia, near the equator, provides relatively consistent daylight hours throughout the year, making DST unnecessary."
+    },
+    {
+      "question": "What is the time difference between Kathmandu and Delhi?",
+      "answer": "Kathmandu (NPT, UTC+5:45) is 15 minutes ahead of Delhi (IST, UTC+5:30). This unusual 15-minute gap is consistent year-round as neither Nepal nor India observes Daylight Saving Time."
+    },
+    {
+      "question": "What is the time difference between Kathmandu and London?",
+      "answer": "Kathmandu (NPT, UTC+5:45) is 5 hours and 45 minutes ahead of London (GMT, UTC+0) in winter. During British Summer Time (BST, UTC+1), Kathmandu is 4 hours and 45 minutes ahead of London. Nepal does not observe DST."
+    },
+    {
+      "question": "What is the time difference between Kathmandu and New York?",
+      "answer": "Kathmandu (NPT, UTC+5:45) is 10 hours and 45 minutes ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Kathmandu is 9 hours and 45 minutes ahead of New York. Nepal does not observe DST."
+    },
+    {
+      "question": "What are typical business hours in Kathmandu?",
+      "answer": "Standard business hours in Kathmandu are 10:00 AM to 5:00 PM NPT, Sunday through Friday (Friday is the weekend start and Saturday is the official day off). Government offices open at 10:00 AM. Kathmandu is Nepal's capital and largest city, the gateway for Himalayan trekking and Mount Everest expeditions. The city is a major tourism hub and home to Tribhuvan International Airport, Nepal's only international airport."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Kathmandu right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kathmandu, Nepal uses Nepal Time (NPT, UTC+5:45) year-round. Nepal does not observe Daylight Saving Time. The IANA identifier is Asia/Kathmandu. Nepal Time is one of the world's few time zones with a 45-minute offset — it is 15 minutes ahead of India (IST, UTC+5:30) and 15 minutes behind Bangladesh (BST, UTC+6). The live clock above shows the current Kathmandu time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Kathmandu in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kathmandu, Nepal is in the Nepal Time zone (NPT, UTC+5:45) year-round. The IANA identifier is Asia/Kathmandu. Nepal adopted the +5:45 offset to distinguish itself from its large neighbors — India at UTC+5:30 and China at UTC+8. The 45-minute offset is shared by only a handful of territories globally and makes Nepal unique among South Asian nations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Kathmandu observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Kathmandu and Nepal do not observe Daylight Saving Time. Nepal uses NPT (UTC+5:45) permanently year-round. Nepal's location in South Asia, near the equator, provides relatively consistent daylight hours throughout the year, making DST unnecessary."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Kathmandu and Delhi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kathmandu (NPT, UTC+5:45) is 15 minutes ahead of Delhi (IST, UTC+5:30). This unusual 15-minute gap is consistent year-round as neither Nepal nor India observes Daylight Saving Time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Kathmandu and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kathmandu (NPT, UTC+5:45) is 5 hours and 45 minutes ahead of London (GMT, UTC+0) in winter. During British Summer Time (BST, UTC+1), Kathmandu is 4 hours and 45 minutes ahead of London. Nepal does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Kathmandu and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kathmandu (NPT, UTC+5:45) is 10 hours and 45 minutes ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Kathmandu is 9 hours and 45 minutes ahead of New York. Nepal does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Kathmandu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Kathmandu are 10:00 AM to 5:00 PM NPT, Sunday through Friday (Saturday is the official day off). Government offices open at 10:00 AM. Kathmandu is Nepal's capital and largest city, the gateway for Himalayan trekking and Mount Everest expeditions. The city is a major tourism hub and home to Tribhuvan International Airport, Nepal's only international airport."
+        }
+      }
+    ]
+  }
+}

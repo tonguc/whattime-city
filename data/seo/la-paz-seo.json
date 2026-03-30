@@ -1,0 +1,84 @@
+{
+  "seo_title": "Current Time in La Paz — BOT (UTC-4)",
+  "seo_description": "Current time in La Paz, Bolivia. Bolivia Time (BOT, UTC-4) year-round — no DST. Live clock and time differences for La Paz.",
+  "faq": [
+    {
+      "question": "What time is it in La Paz right now?",
+      "answer": "La Paz, Bolivia uses Bolivia Time (BOT, UTC-4) year-round. Bolivia does not observe Daylight Saving Time. The IANA identifier is America/La_Paz. At 3,640 meters (11,942 ft) above sea level, La Paz is the world's highest administrative capital. Bolivia shares the UTC-4 offset with countries like Paraguay (in winter) and Venezuela. The live clock above shows the current La Paz time."
+    },
+    {
+      "question": "What time zone is La Paz in?",
+      "answer": "La Paz, Bolivia is in the Bolivia Time zone (BOT, UTC-4) year-round. The IANA identifier is America/La_Paz. Bolivia does not observe Daylight Saving Time, so the UTC-4 offset is constant throughout the year. Bolivia shares this time zone with Venezuela (VET, UTC-4) but differs from neighboring Brazil (which spans multiple zones) and Argentina (UTC-3)."
+    },
+    {
+      "question": "Does La Paz observe daylight saving time?",
+      "answer": "No. La Paz and Bolivia do not observe Daylight Saving Time. Bolivia uses BOT (UTC-4) permanently year-round. Bolivia is one of several South American countries — along with Venezuela, Ecuador, and Peru — that do not observe DST."
+    },
+    {
+      "question": "What is the time difference between La Paz and New York?",
+      "answer": "La Paz (BOT, UTC-4) is 1 hour ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), La Paz and New York are on the same time. Bolivia does not observe DST."
+    },
+    {
+      "question": "What is the time difference between La Paz and London?",
+      "answer": "La Paz (BOT, UTC-4) is 4 hours behind London (GMT, UTC+0) in winter. During British Summer Time (BST, UTC+1), La Paz is 5 hours behind London. Bolivia does not observe DST."
+    },
+    {
+      "question": "What are typical business hours in La Paz?",
+      "answer": "Standard business hours in La Paz are 9:00 AM to 6:00 PM BOT, Monday through Friday. La Paz is Bolivia's seat of government and economic hub (Sucre is the constitutional capital). At over 3,600 meters altitude, La Paz is the highest administrative capital in the world. Bolivia's economy is based on natural gas exports, mining (lithium, zinc, silver), and agriculture. The Bolsa Boliviana de Valores (BBV) is the national stock exchange."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in La Paz right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Paz, Bolivia uses Bolivia Time (BOT, UTC-4) year-round. Bolivia does not observe Daylight Saving Time. The IANA identifier is America/La_Paz. At 3,640 meters (11,942 ft) above sea level, La Paz is the world's highest administrative capital. The live clock above shows the current La Paz time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is La Paz in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Paz, Bolivia is in the Bolivia Time zone (BOT, UTC-4) year-round. The IANA identifier is America/La_Paz. Bolivia does not observe Daylight Saving Time, so the UTC-4 offset is constant throughout the year. Bolivia shares this time zone with Venezuela (VET, UTC-4) but differs from neighboring Brazil (which spans multiple zones) and Argentina (UTC-3)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does La Paz observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. La Paz and Bolivia do not observe Daylight Saving Time. Bolivia uses BOT (UTC-4) permanently year-round. Bolivia is one of several South American countries — along with Venezuela, Ecuador, and Peru — that do not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between La Paz and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Paz (BOT, UTC-4) is 1 hour ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), La Paz and New York are on the same time. Bolivia does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between La Paz and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Paz (BOT, UTC-4) is 4 hours behind London (GMT, UTC+0) in winter. During British Summer Time (BST, UTC+1), La Paz is 5 hours behind London. Bolivia does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in La Paz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in La Paz are 9:00 AM to 6:00 PM BOT, Monday through Friday. La Paz is Bolivia's seat of government and economic hub (Sucre is the constitutional capital). At over 3,600 meters altitude, La Paz is the highest administrative capital in the world. Bolivia's economy is based on natural gas exports, mining (lithium, zinc, silver), and agriculture."
+        }
+      }
+    ]
+  }
+}

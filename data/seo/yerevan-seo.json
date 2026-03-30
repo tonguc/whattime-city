@@ -1,0 +1,84 @@
+{
+  "seo_title": "Current Time in Yerevan — AMT (UTC+4)",
+  "seo_description": "Current time in Yerevan, Armenia. Armenia Time (AMT, UTC+4) year-round — no DST since 2012. Live clock and time differences for Yerevan.",
+  "faq": [
+    {
+      "question": "What time is it in Yerevan right now?",
+      "answer": "Yerevan, Armenia uses Armenia Time (AMT, UTC+4) year-round. Armenia does not observe Daylight Saving Time since 2012. The IANA identifier is Asia/Yerevan. Yerevan shares the UTC+4 offset with Dubai (UAE), Baku (Azerbaijan), and Tbilisi (Georgia). The live clock above shows the current Yerevan time."
+    },
+    {
+      "question": "What time zone is Yerevan in?",
+      "answer": "Yerevan, Armenia is in the Armenia Time zone (AMT, UTC+4) year-round. The IANA identifier is Asia/Yerevan. Armenia abolished Daylight Saving Time in 2012. Yerevan shares the UTC+4 offset with Dubai, Abu Dhabi, Baku, and Tbilisi."
+    },
+    {
+      "question": "Does Yerevan observe daylight saving time?",
+      "answer": "No. Yerevan and Armenia do not observe Daylight Saving Time since 2012. Armenia uses AMT (UTC+4) permanently year-round. Armenia stopped observing DST to simplify business scheduling with the Gulf region (UAE, Qatar) which also uses UTC+4 year-round."
+    },
+    {
+      "question": "What is the time difference between Yerevan and London?",
+      "answer": "Yerevan (AMT, UTC+4) is 4 hours ahead of London (GMT, UTC+0) in winter. During British Summer Time (BST, UTC+1), Yerevan is 3 hours ahead. Armenia does not observe DST."
+    },
+    {
+      "question": "What is the time difference between Yerevan and New York?",
+      "answer": "Yerevan (AMT, UTC+4) is 9 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Yerevan is 8 hours ahead. Armenia does not observe DST."
+    },
+    {
+      "question": "What are typical business hours in Yerevan?",
+      "answer": "Standard business hours in Yerevan are 9:00 AM to 6:00 PM AMT, Monday through Friday. Yerevan is Armenia's capital and largest city, home to over one-third of Armenia's population. Armenia has a growing IT sector — the country is known as the 'Silicon Mountain' of the South Caucasus. Major companies include FAST (Foundation for Armenian Science and Technology), Synopsys Armenia, and VMware Armenia. The NASDAQ OMX Armenia stock exchange operates in Yerevan."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Yerevan right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yerevan, Armenia uses Armenia Time (AMT, UTC+4) year-round. Armenia does not observe Daylight Saving Time since 2012. The IANA identifier is Asia/Yerevan. Yerevan shares the UTC+4 offset with Dubai (UAE), Baku (Azerbaijan), and Tbilisi (Georgia). The live clock above shows the current Yerevan time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Yerevan in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yerevan, Armenia is in the Armenia Time zone (AMT, UTC+4) year-round. The IANA identifier is Asia/Yerevan. Armenia abolished Daylight Saving Time in 2012. Yerevan shares the UTC+4 offset with Dubai, Abu Dhabi, Baku, and Tbilisi."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Yerevan observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Yerevan and Armenia do not observe Daylight Saving Time since 2012. Armenia uses AMT (UTC+4) permanently year-round. Armenia stopped observing DST to simplify business scheduling with the Gulf region (UAE, Qatar) which also uses UTC+4 year-round."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Yerevan and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yerevan (AMT, UTC+4) is 4 hours ahead of London (GMT, UTC+0) in winter. During British Summer Time (BST, UTC+1), Yerevan is 3 hours ahead. Armenia does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Yerevan and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yerevan (AMT, UTC+4) is 9 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Yerevan is 8 hours ahead. Armenia does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Yerevan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Yerevan are 9:00 AM to 6:00 PM AMT, Monday through Friday. Yerevan is Armenia's capital and largest city. Armenia has a growing IT sector known as the 'Silicon Mountain' of the South Caucasus, with companies like Synopsys Armenia and VMware Armenia. The NASDAQ OMX Armenia stock exchange operates in Yerevan."
+        }
+      }
+    ]
+  }
+}
