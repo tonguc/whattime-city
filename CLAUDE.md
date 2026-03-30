@@ -642,6 +642,32 @@ North Africa:
 - `public/robots.txt`: `Disallow: /api/` eklendi — bot'ların API route'larına erişimi engellendi
 - `/api/weather/` 404'leri: `TimeComparisonContent.tsx` doğru çağırıyor (trailing slash yok), 404'ler harici bot'lardan geliyor — robots.txt fix yeterli
 
+### 45. Mimari Quick Wins — Faz 1 ✅ (Mart 2026)
+
+**Teknik mimari analizi sonucu uygulanan düzeltmeler:**
+
+**Cache ve rendering:**
+- `/meeting/[cities]/page.tsx`: `force-dynamic` → `revalidate = 3600` (Googlebot NOINDEX sayfalar için invocation yakıyordu)
+- `stale-while-revalidate`: 604800 (7 gün) → 86400 (1 gün) — DST geçişlerinde stale içerik riskini azaltır
+- `middleware.ts`: duplicate cache header kaldırıldı — `next.config.js` tek kaynak
+
+**Guide sayfaları (15 dosya):**
+- Hardcoded 8-9 şehir listesi → `getSupportedGuideCities()` — şehir eklenince tek yer güncellenir
+
+**`lib/constants.ts` — SITE_URL sabiti:**
+- `export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://whattime.city'`
+- `layout.tsx`, `sitemap.ts`, `[city]/page.tsx`, `time/[from]/[to]/page.tsx`, `area-code/[code]/page.tsx` güncellendi
+
+**`scripts/validate-seo-titles.js` — prebuild validator:**
+- `data/seo/*.json` dosyalarında `seo_title ≤44 char` kuralını enforce eder
+- Build başında fail eder, CI güvenliği sağlar
+- Prebuild: `generate-search-index.js && validate-seo-titles.js`
+
+**Sonraki faz (Faz 2 — Tip Güvenliği):**
+- `weather: any` → `WeatherData | null`
+- `CitySEOData` interface + `seoData: any` pipeline fix
+- `generate-search-index.js` regex → gerçek TS import
+
 ---
 
 ## Açık Konular / Sonraki Adımlar
