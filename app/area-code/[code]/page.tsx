@@ -1,3 +1,4 @@
+import { SITE_URL } from '@/lib/constants'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
@@ -22,12 +23,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${data.code} Area Code — ${data.city}, ${data.stateCode}`,
     description: `Area code ${data.code} is ${data.city}, ${data.state} (${countryLabel}) — ${data.tzAbbr} (${data.utcOffset}). Covers: ${data.majorCities.slice(0, 3).join(', ')}. Current time & who's calling.`,
-    alternates: { canonical: `https://whattime.city/area-code/${data.code}` },
+    alternates: { canonical: `${SITE_URL}/area-code/${data.code}` },
     openGraph: {
       title: `${data.code} Area Code — ${data.city}, ${data.stateCode}`,
       description: `Area code ${data.code} serves ${data.city}, ${data.state}. Time zone: ${data.tzAbbr} (${data.utcOffset}).`,
       type: 'website',
-      url: `https://whattime.city/area-code/${data.code}`,
+      url: `${SITE_URL}/area-code/${data.code}`,
       siteName: 'whattime.city',
     },
   }
@@ -101,9 +102,9 @@ export default async function AreaCodePage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://whattime.city/' },
-      { '@type': 'ListItem', position: 2, name: 'Area Codes', item: 'https://whattime.city/area-code/' },
-      { '@type': 'ListItem', position: 3, name: `(${data.code}) ${data.city}`, item: `https://whattime.city/area-code/${data.code}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Area Codes', item: `${SITE_URL}/area-code/` },
+      { '@type': 'ListItem', position: 3, name: `(${data.code}) ${data.city}`, item: `${SITE_URL}/area-code/${data.code}` },
     ],
   }
 

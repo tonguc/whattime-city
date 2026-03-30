@@ -1,3 +1,4 @@
+import { SITE_URL } from '@/lib/constants'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cities, City } from '@/lib/cities'
@@ -152,9 +153,9 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://whattime.city/' },
-      { '@type': 'ListItem', position: 2, name: 'Time Difference', item: 'https://whattime.city/time/' },
-      { '@type': 'ListItem', position: 3, name: `${fromCity.city} to ${toCity.city}`, item: `https://whattime.city/time/${from}/${to}/` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Time Difference', item: `${SITE_URL}/time/` },
+      { '@type': 'ListItem', position: 3, name: `${fromCity.city} to ${toCity.city}`, item: `${SITE_URL}/time/${from}/${to}/` },
     ],
   }
 
@@ -173,10 +174,10 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
       description,
       type: 'website',
       siteName: 'whattime.city',
-      url: `https://whattime.city/time/${from}/${to}/`,
-      images: [{ url: 'https://whattime.city/og-image.svg', width: 1200, height: 630, alt: `${fromCity.city} to ${toCity.city} Time` }],
+      url: `${SITE_URL}/time/${from}/${to}/`,
+      images: [{ url: `${SITE_URL}/og-image.svg`, width: 1200, height: 630, alt: `${fromCity.city} to ${toCity.city} Time` }],
     },
-    alternates: { canonical: `https://whattime.city/time/${from}/${to}/` },
+    alternates: { canonical: `${SITE_URL}/time/${from}/${to}/` },
     robots: { index: true, follow: true },
   }
 }
@@ -352,9 +353,9 @@ export default async function TimeComparePage({ params }: TimeComparePageProps) 
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://whattime.city/' },
-      { '@type': 'ListItem', position: 2, name: 'Time Difference', item: 'https://whattime.city/time/' },
-      { '@type': 'ListItem', position: 3, name: `${fromCity.city} to ${toCity.city}`, item: `https://whattime.city/time/${from}/${to}/` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Time Difference', item: `${SITE_URL}/time/` },
+      { '@type': 'ListItem', position: 3, name: `${fromCity.city} to ${toCity.city}`, item: `${SITE_URL}/time/${from}/${to}/` },
     ],
   }
 

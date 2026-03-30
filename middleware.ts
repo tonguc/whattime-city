@@ -101,26 +101,9 @@ export function middleware(request: NextRequest) {
         return NextResponse.redirect(new URL(`/meeting/${normalized}/`, request.url), 301)
       }
     }
-    return addCacheHeaders(NextResponse.next(), pathname)
-  }
-
-  // =============================================
-  // 2. /time routes - Add Cache Headers
-  // =============================================
-  if (pathname.startsWith('/time/') && pathname !== '/time/') {
-    return addCacheHeaders(NextResponse.next(), pathname)
   }
 
   return NextResponse.next()
-}
-
-function addCacheHeaders(response: NextResponse, pathname: string): NextResponse {
-  if (pathname.startsWith('/time/') || pathname.startsWith('/meeting/')) {
-    response.headers.set('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=604800')
-    response.headers.set('CDN-Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=604800')
-    response.headers.set('Vercel-CDN-Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=604800')
-  }
-  return response
 }
 
 export const config = {

@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { cities } from '@/lib/cities'
+import { getSupportedGuideCities } from '@/lib/guide-content'
 import { notFound } from 'next/navigation'
 import TwentyFourHoursContent from './TwentyFourHoursContent'
 
@@ -8,9 +9,7 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return cities.map((city) => ({
-    city: city.slug,
-  }))
+  return getSupportedGuideCities().map(city => ({ city }))
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

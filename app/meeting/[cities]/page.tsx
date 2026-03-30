@@ -9,10 +9,9 @@ interface Props {
   params: { cities: string }
 }
 
-// ✅ FORCE DYNAMIC - Bu sayfa asla pre-render edilmez
-// Build süresi: ~25 dakika → ~2 dakika
-// SEO: Tool output - değer hub sayfalarda (/istanbul/, /london/)
-export const dynamic = 'force-dynamic'
+// ISR: metadata server'da üretilir, 1 saat CDN cache
+// force-dynamic kaldırıldı — her Googlebot crawl'ı invocation yakıyordu (NOINDEX sayfa için gereksiz)
+export const revalidate = 3600
 
 // Generate metadata
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

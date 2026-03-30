@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { cities } from '@/lib/cities'
 import { notFound } from 'next/navigation'
-import { getGuideConfig } from '@/lib/guide-content'
+import { getGuideConfig, getSupportedGuideCities } from '@/lib/guide-content'
 import HolidaysContent from './HolidaysContent'
 import LondonHolidaysContent from './LondonHolidaysContent'
 import TokyoHolidaysContent from './TokyoHolidaysContent'
@@ -16,18 +16,10 @@ import IstanbulHolidaysContent from './IstanbulHolidaysContent'
 type Props = { params: Promise<{ city: string }> }
 
 export async function generateStaticParams() {
-  return [
-    { city: 'new-york' },
-    { city: 'london' },
-    { city: 'tokyo' },
-    { city: 'dubai' },
-    { city: 'singapore' },
-    { city: 'paris' },
-    { city: 'sydney' },
-    { city: 'los-angeles' },
-    { city: 'istanbul' },
-  ]
+  return getSupportedGuideCities().map(city => ({ city }))
 }
+
+
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: citySlug } = await params

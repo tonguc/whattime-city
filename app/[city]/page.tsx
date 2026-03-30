@@ -1,3 +1,4 @@
+import { SITE_URL } from '@/lib/constants'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cities, getCityBySlug, getAllSlugs } from '@/lib/cities'
@@ -63,7 +64,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: 'website',
       locale: 'en_US',
       siteName: 'whattime.city',
-      url: `https://whattime.city/${slug}/`
+      url: `${SITE_URL}/${slug}/`
     },
     twitter: {
       card: 'summary_large_image',
@@ -73,7 +74,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         : `Current local time in ${city.city}, ${city.country}. Live clock with sunrise & sunset.`)
     },
     alternates: {
-      canonical: `https://whattime.city/${slug}/`
+      canonical: `${SITE_URL}/${slug}/`
     },
     robots: {
       index: true,
@@ -113,9 +114,9 @@ export default async function Page({ params }: PageProps) {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://whattime.city/' },
-          { '@type': 'ListItem', position: 2, name: 'Cities', item: 'https://whattime.city/cities' },
-          { '@type': 'ListItem', position: 3, name: city.stateCode ? `${city.city}, ${city.stateCode}` : `${city.city}, ${city.country}`, item: `https://whattime.city/${slug}/` },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+          { '@type': 'ListItem', position: 2, name: 'Cities', item: `${SITE_URL}/cities` },
+          { '@type': 'ListItem', position: 3, name: city.stateCode ? `${city.city}, ${city.stateCode}` : `${city.city}, ${city.country}`, item: `${SITE_URL}/${slug}/` },
         ],
       }) }} />
       <CityPage initialCity={city} seoData={seoData} />

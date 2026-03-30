@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import GlobalProviders from '@/components/GlobalProviders'
+import { SITE_URL } from '@/lib/constants'
 import './globals.css'
 
 // ScrollToTop button is rendered globally via GlobalProviders
@@ -15,7 +16,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://whattime.city'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'whattime.city - World Clock & Time Zone Converter',
     template: '%s | whattime.city',
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://whattime.city',
+    url: SITE_URL,
     siteName: 'whattime.city',
     title: 'whattime.city - World Clock & Time Zone Converter',
     description: 'Check current local time anywhere in the world. Compare time zones, plan international meetings, and calculate jet lag recovery.',
@@ -75,7 +76,7 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.json',
   alternates: {
-    canonical: 'https://whattime.city',
+    canonical: SITE_URL,
   },
   verification: {
     google: 'your-google-verification-code',

@@ -1,9 +1,10 @@
 import { cities, countries, getTier1Cities } from '@/lib/cities'
 import { COUNTRY_HUB_SLUGS } from '@/data/hubPages'
 import { areaCodeList } from '@/data/area-codes'
+import { SITE_URL } from '@/lib/constants'
 
 export default async function sitemap() {
-  const baseUrl = 'https://whattime.city'
+  const baseUrl = SITE_URL
   const now = new Date()
 
   // Ana sayfalar (trailing slash ile)
