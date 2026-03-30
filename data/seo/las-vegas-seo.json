@@ -1,6 +1,6 @@
 {
   "seo_title": "Current Time in Las Vegas — PST/PDT",
-  "seo_description": "Current local time in Las Vegas, Nevada. Pacific Time (PST UTC-8 / PDT UTC-7). No Arizona exception — Nevada observes DST. Time differences to New York, London, Tokyo. 24-hour casino city.",
+  "seo_description": "Current local time in Las Vegas, Nevada. Pacific Time (PST UTC-8 / PDT UTC-7). No Arizona exception — Nevada observes DST.",
   "faq": [
     {
       "question": "What time is it in Las Vegas right now?",
@@ -39,14 +39,70 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What time is it in Las Vegas right now?", "acceptedAnswer": { "@type": "Answer", "text": "Las Vegas, Nevada, USA uses Pacific Standard Time (PST, UTC-8) in winter and Pacific Daylight Time (PDT, UTC-7) in summer. Clocks spring forward on the second Sunday of March and fall back on the first Sunday of November — the same schedule as California and the entire US West Coast. The IANA identifier is America/Los_Angeles." } },
-      { "@type": "Question", "name": "What time zone is Las Vegas in?", "acceptedAnswer": { "@type": "Answer", "text": "Las Vegas is in the Pacific Time Zone, sharing PST/PDT with Los Angeles, San Francisco, and Seattle. During standard time (November–March), Las Vegas uses PST (UTC-8). During daylight saving time (March–November), it uses PDT (UTC-7) — 3 hours behind New York and 8 hours behind London. The IANA identifier is America/Los_Angeles." } },
-      { "@type": "Question", "name": "Does Las Vegas observe daylight saving time?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Las Vegas (Nevada) observes daylight saving time. Clocks spring forward 1 hour to PDT (UTC-7) on the second Sunday of March at 2:00 AM, and fall back to PST (UTC-8) on the first Sunday of November at 2:00 AM. Nevada is unlike neighboring Arizona, which does not observe DST — Las Vegas and Phoenix share the same time in summer but differ by 1 hour in winter." } },
-      { "@type": "Question", "name": "What is the time difference between Las Vegas and New York?", "acceptedAnswer": { "@type": "Answer", "text": "Las Vegas (PST/PDT) is exactly 3 hours behind New York (EST/EDT) year-round. Both cities observe daylight saving time on the same schedule, so the 3-hour gap never changes. When it is 12:00 PM in New York, it is 9:00 AM in Las Vegas." } },
-      { "@type": "Question", "name": "What is the time difference between Las Vegas and London?", "acceptedAnswer": { "@type": "Answer", "text": "Las Vegas is 8 hours behind London for most of the year — PST (UTC-8) vs GMT (UTC+0) = 8 hours, and PDT (UTC-7) vs BST (UTC+1) = 8 hours. Brief 7-hour windows occur around DST transition dates. When it is 6:00 PM in London (GMT), it is 10:00 AM in Las Vegas." } },
-      { "@type": "Question", "name": "What is the time difference between Las Vegas and Los Angeles?", "acceptedAnswer": { "@type": "Answer", "text": "There is zero time difference between Las Vegas and Los Angeles — both are on Pacific Time (PST/PDT) and change clocks on identical schedules. Las Vegas and Los Angeles always show exactly the same time." } },
-      { "@type": "Question", "name": "What is the best time to call Las Vegas from the US?", "acceptedAnswer": { "@type": "Answer", "text": "From New York (EST), call Las Vegas between 12:00 PM and 6:00 PM Eastern (9:00 AM–3:00 PM Pacific). From Chicago (CST), call between 11:00 AM and 5:00 PM. Casino lines operate 24/7; for hotel reservations and show bookings, aim for 9:00 AM–5:00 PM Pacific." } },
-      { "@type": "Question", "name": "What are typical business hours in Las Vegas?", "acceptedAnswer": { "@type": "Answer", "text": "Standard Las Vegas office hours are 9:00 AM–5:00 PM PST/PDT. Banks operate 9:00 AM–5:00 PM weekdays. Major casino resorts (Bellagio, MGM Grand, Caesars Palace) operate 24 hours. Strip retail runs 10:00 AM–11:00 PM; entertainment shows 7:00 PM–11:00 PM; nightclubs 10:00 PM–4:00 AM." } }
+      {
+        "@type": "Question",
+        "name": "What time is it in Las Vegas right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las Vegas, Nevada, USA uses Pacific Standard Time (PST, UTC-8) in winter and Pacific Daylight Time (PDT, UTC-7) in summer. Clocks spring forward on the second Sunday of March and fall back on the first Sunday of November — the same schedule as California and the entire US West Coast. The IANA identifier is America/Los_Angeles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Las Vegas in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las Vegas is in the Pacific Time Zone, sharing PST/PDT with Los Angeles, San Francisco, and Seattle. During standard time (November–March), Las Vegas uses PST (UTC-8). During daylight saving time (March–November), it uses PDT (UTC-7) — 3 hours behind New York and 8 hours behind London. The IANA identifier is America/Los_Angeles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Las Vegas observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Las Vegas (Nevada) observes daylight saving time. Clocks spring forward 1 hour to PDT (UTC-7) on the second Sunday of March at 2:00 AM, and fall back to PST (UTC-8) on the first Sunday of November at 2:00 AM. Nevada is unlike neighboring Arizona, which does not observe DST — Las Vegas and Phoenix share the same time in summer but differ by 1 hour in winter."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Las Vegas and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las Vegas (PST/PDT) is exactly 3 hours behind New York (EST/EDT) year-round. Both cities observe daylight saving time on the same schedule, so the 3-hour gap never changes. When it is 12:00 PM in New York, it is 9:00 AM in Las Vegas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Las Vegas and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las Vegas is 8 hours behind London for most of the year — PST (UTC-8) vs GMT (UTC+0) = 8 hours, and PDT (UTC-7) vs BST (UTC+1) = 8 hours. Brief 7-hour windows occur around DST transition dates. When it is 6:00 PM in London (GMT), it is 10:00 AM in Las Vegas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Las Vegas and Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is zero time difference between Las Vegas and Los Angeles — both are on Pacific Time (PST/PDT) and change clocks on identical schedules. Las Vegas and Los Angeles always show exactly the same time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best time to call Las Vegas from the US?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From New York (EST), call Las Vegas between 12:00 PM and 6:00 PM Eastern (9:00 AM–3:00 PM Pacific). From Chicago (CST), call between 11:00 AM and 5:00 PM. Casino lines operate 24/7; for hotel reservations and show bookings, aim for 9:00 AM–5:00 PM Pacific."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Las Vegas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard Las Vegas office hours are 9:00 AM–5:00 PM PST/PDT. Banks operate 9:00 AM–5:00 PM weekdays. Major casino resorts (Bellagio, MGM Grand, Caesars Palace) operate 24 hours. Strip retail runs 10:00 AM–11:00 PM; entertainment shows 7:00 PM–11:00 PM; nightclubs 10:00 PM–4:00 AM."
+        }
+      }
     ]
   },
   "internal_links": [
@@ -60,14 +116,54 @@
     "/time/las-vegas/singapore/"
   ],
   "time_difference_table": [
-    { "city": "New York", "slug": "new-york", "difference": "3 hours behind", "link": "/time/las-vegas/new-york/" },
-    { "city": "London", "slug": "london", "difference": "8 hours behind (7h briefly)", "link": "/time/las-vegas/london/" },
-    { "city": "Tokyo", "slug": "tokyo", "difference": "16–17 hours behind", "link": "/time/las-vegas/tokyo/" },
-    { "city": "Dubai", "slug": "dubai", "difference": "11–12 hours behind", "link": "/time/las-vegas/dubai/" },
-    { "city": "Sydney", "slug": "sydney", "difference": "17–19 hours behind", "link": "/time/las-vegas/sydney/" },
-    { "city": "Singapore", "slug": "singapore", "difference": "15–16 hours behind", "link": "/time/las-vegas/singapore/" },
-    { "city": "Paris", "slug": "paris", "difference": "8–9 hours behind", "link": "/time/las-vegas/paris/" },
-    { "city": "Los Angeles", "slug": "los-angeles", "difference": "Same time", "link": "/time/las-vegas/los-angeles/" }
+    {
+      "city": "New York",
+      "slug": "new-york",
+      "difference": "3 hours behind",
+      "link": "/time/las-vegas/new-york/"
+    },
+    {
+      "city": "London",
+      "slug": "london",
+      "difference": "8 hours behind (7h briefly)",
+      "link": "/time/las-vegas/london/"
+    },
+    {
+      "city": "Tokyo",
+      "slug": "tokyo",
+      "difference": "16–17 hours behind",
+      "link": "/time/las-vegas/tokyo/"
+    },
+    {
+      "city": "Dubai",
+      "slug": "dubai",
+      "difference": "11–12 hours behind",
+      "link": "/time/las-vegas/dubai/"
+    },
+    {
+      "city": "Sydney",
+      "slug": "sydney",
+      "difference": "17–19 hours behind",
+      "link": "/time/las-vegas/sydney/"
+    },
+    {
+      "city": "Singapore",
+      "slug": "singapore",
+      "difference": "15–16 hours behind",
+      "link": "/time/las-vegas/singapore/"
+    },
+    {
+      "city": "Paris",
+      "slug": "paris",
+      "difference": "8–9 hours behind",
+      "link": "/time/las-vegas/paris/"
+    },
+    {
+      "city": "Los Angeles",
+      "slug": "los-angeles",
+      "difference": "Same time",
+      "link": "/time/las-vegas/los-angeles/"
+    }
   ],
   "timezone_facts": {
     "full_name": "Pacific Time Zone",

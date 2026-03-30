@@ -1,6 +1,6 @@
 {
   "seo_title": "Current Time in San Francisco — PST/PDT",
-  "seo_description": "Current time in San Francisco, California. Pacific Time Zone — PST (UTC-8) in winter, PDT (UTC-7) during DST. Time differences with New York, London, Tokyo. Business hours and calling guide.",
+  "seo_description": "Current time in San Francisco, California. Pacific Time Zone — PST (UTC-8) in winter, PDT (UTC-7) during DST. Time differences with New York, London, Tokyo.",
   "faq": [
     {
       "question": "What time is it in San Francisco right now?",
@@ -39,14 +39,70 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What time is it in San Francisco right now?", "acceptedAnswer": { "@type": "Answer", "text": "San Francisco, California, USA uses Pacific Standard Time (PST, UTC-8) in winter and Pacific Daylight Time (PDT, UTC-7) during Daylight Saving Time. The IANA identifier is America/Los_Angeles. San Francisco shares Pacific Time with Los Angeles, Seattle, Portland, and San Diego. The city is 3 hours behind New York and 8 hours behind London during standard time. The live clock above shows the current San Francisco time." } },
-      { "@type": "Question", "name": "What time zone is San Francisco in?", "acceptedAnswer": { "@type": "Answer", "text": "San Francisco is in the Pacific Time Zone (PT). It observes Pacific Standard Time (PST, UTC-8) from the first Sunday in November to the second Sunday in March, and Pacific Daylight Time (PDT, UTC-7) for the rest of the year. The IANA identifier is America/Los_Angeles. San Francisco shares its time zone with the entire US West Coast." } },
-      { "@type": "Question", "name": "Does San Francisco observe daylight saving time?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. San Francisco observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (PST → PDT, UTC-8 → UTC-7) and fall back on the first Sunday in November. San Francisco follows California state law on DST, which mirrors the federal schedule." } },
-      { "@type": "Question", "name": "What is the time difference between San Francisco and New York?", "acceptedAnswer": { "@type": "Answer", "text": "San Francisco is always 3 hours behind New York. Both cities observe DST on the same schedule, so the 3-hour gap is constant year-round. When it is noon in New York (Eastern Time), it is 9:00 AM in San Francisco (Pacific Time). The best time for cross-coast business calls is 12:00 PM–5:00 PM Eastern (9:00 AM–2:00 PM Pacific)." } },
-      { "@type": "Question", "name": "What is the time difference between San Francisco and London?", "acceptedAnswer": { "@type": "Answer", "text": "San Francisco (PST, UTC-8) is 8 hours behind London (GMT, UTC+0) in winter. During summer when both observe daylight saving time, San Francisco (PDT, UTC-7) is 8 hours behind London (BST, UTC+1). There are brief transition windows in March and October when the gap shifts to 7 or 9 hours because the US and UK change clocks on slightly different dates." } },
-      { "@type": "Question", "name": "What is the time difference between San Francisco and Tokyo?", "acceptedAnswer": { "@type": "Answer", "text": "San Francisco (PST, UTC-8) is 17 hours behind Tokyo (JST, UTC+9) in winter. During Pacific Daylight Time (PDT, UTC-7), San Francisco is 16 hours behind Tokyo. Japan does not observe DST. For example, when it is 9:00 AM Monday in San Francisco (PST), it is 2:00 AM Tuesday in Tokyo." } },
-      { "@type": "Question", "name": "What are typical business hours in San Francisco?", "acceptedAnswer": { "@type": "Answer", "text": "Standard business hours in San Francisco are 9:00 AM to 5:00 PM PT, Monday through Friday. The city's large tech sector (Silicon Valley proximity) often adopts flexible hours, with many startups operating 10:00 AM–7:00 PM PT. Financial District firms align with East Coast market hours, starting as early as 6:30 AM PT for the NYSE open. Restaurants serve lunch 11:30 AM–2:30 PM and dinner 5:30–10:00 PM." } },
-      { "@type": "Question", "name": "What time does the stock market open in San Francisco?", "acceptedAnswer": { "@type": "Answer", "text": "The New York Stock Exchange (NYSE) opens at 6:30 AM Pacific Time in San Francisco (9:30 AM ET) and closes at 1:00 PM PT (4:00 PM ET). Pre-market trading begins at 4:00 AM PT (7:00 AM ET). San Francisco's financial and tech industries pay close attention to the market open even at the early Pacific Time hour." } }
+      {
+        "@type": "Question",
+        "name": "What time is it in San Francisco right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "San Francisco, California, USA uses Pacific Standard Time (PST, UTC-8) in winter and Pacific Daylight Time (PDT, UTC-7) during Daylight Saving Time. The IANA identifier is America/Los_Angeles. San Francisco shares Pacific Time with Los Angeles, Seattle, Portland, and San Diego. The city is 3 hours behind New York and 8 hours behind London during standard time. The live clock above shows the current San Francisco time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is San Francisco in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "San Francisco is in the Pacific Time Zone (PT). It observes Pacific Standard Time (PST, UTC-8) from the first Sunday in November to the second Sunday in March, and Pacific Daylight Time (PDT, UTC-7) for the rest of the year. The IANA identifier is America/Los_Angeles. San Francisco shares its time zone with the entire US West Coast."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does San Francisco observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. San Francisco observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (PST → PDT, UTC-8 → UTC-7) and fall back on the first Sunday in November. San Francisco follows California state law on DST, which mirrors the federal schedule."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between San Francisco and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "San Francisco is always 3 hours behind New York. Both cities observe DST on the same schedule, so the 3-hour gap is constant year-round. When it is noon in New York (Eastern Time), it is 9:00 AM in San Francisco (Pacific Time). The best time for cross-coast business calls is 12:00 PM–5:00 PM Eastern (9:00 AM–2:00 PM Pacific)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between San Francisco and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "San Francisco (PST, UTC-8) is 8 hours behind London (GMT, UTC+0) in winter. During summer when both observe daylight saving time, San Francisco (PDT, UTC-7) is 8 hours behind London (BST, UTC+1). There are brief transition windows in March and October when the gap shifts to 7 or 9 hours because the US and UK change clocks on slightly different dates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between San Francisco and Tokyo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "San Francisco (PST, UTC-8) is 17 hours behind Tokyo (JST, UTC+9) in winter. During Pacific Daylight Time (PDT, UTC-7), San Francisco is 16 hours behind Tokyo. Japan does not observe DST. For example, when it is 9:00 AM Monday in San Francisco (PST), it is 2:00 AM Tuesday in Tokyo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in San Francisco?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in San Francisco are 9:00 AM to 5:00 PM PT, Monday through Friday. The city's large tech sector (Silicon Valley proximity) often adopts flexible hours, with many startups operating 10:00 AM–7:00 PM PT. Financial District firms align with East Coast market hours, starting as early as 6:30 AM PT for the NYSE open. Restaurants serve lunch 11:30 AM–2:30 PM and dinner 5:30–10:00 PM."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time does the stock market open in San Francisco?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The New York Stock Exchange (NYSE) opens at 6:30 AM Pacific Time in San Francisco (9:30 AM ET) and closes at 1:00 PM PT (4:00 PM ET). Pre-market trading begins at 4:00 AM PT (7:00 AM ET). San Francisco's financial and tech industries pay close attention to the market open even at the early Pacific Time hour."
+        }
+      }
     ]
   }
 }

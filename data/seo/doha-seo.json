@@ -1,6 +1,6 @@
 {
-  "seo_title": "Current Time in Doha \u2014 AST (UTC+3)",
-  "seo_description": "Current time in Doha, Qatar. Live AST clock \u2014 UTC+3 year-round, no Daylight Saving Time. Doha time vs London, Dubai, New York, Mumbai. Qatar 2022 World Cup host city.",
+  "seo_title": "Current Time in Doha — AST (UTC+3)",
+  "seo_description": "Current time in Doha, Qatar. Live AST clock — UTC+3 year-round, no Daylight Saving Time. Doha time vs London, Dubai, New York, Mumbai.",
   "faq": [
     {
       "question": "What time is it in Doha right now?",
@@ -12,19 +12,19 @@
     },
     {
       "question": "Does Doha observe Daylight Saving Time?",
-      "answer": "No. Doha and all of Qatar do not observe Daylight Saving Time. Clocks remain at UTC+3 (AST) year-round, never changing. Qatar abolished any DST practice decades ago. The stable offset simplifies scheduling for Qatar Airways operations, Al Jazeera Media Network broadcasts, and international business meetings coordinated through Doha \u2014 particularly as the gap with European cities narrows from 3 hours in winter to 2 hours in summer when Europe advances its clocks."
+      "answer": "No. Doha and all of Qatar do not observe Daylight Saving Time. Clocks remain at UTC+3 (AST) year-round, never changing. Qatar abolished any DST practice decades ago. The stable offset simplifies scheduling for Qatar Airways operations, Al Jazeera Media Network broadcasts, and international business meetings coordinated through Doha — particularly as the gap with European cities narrows from 3 hours in winter to 2 hours in summer when Europe advances its clocks."
     },
     {
       "question": "What is the time difference between Doha and London?",
-      "answer": "Doha is 3 hours ahead of London during UK winter (GMT/UTC+0), and 2 hours ahead during British Summer Time (BST/UTC+1). When it is 9:00 AM in London (GMT), it is 12:00 PM in Doha. In summer, when London moves to BST, a 9:00 AM London call reaches Doha at 11:00 AM \u2014 giving a longer overlap window for business communication between the UK and Qatar."
+      "answer": "Doha is 3 hours ahead of London during UK winter (GMT/UTC+0), and 2 hours ahead during British Summer Time (BST/UTC+1). When it is 9:00 AM in London (GMT), it is 12:00 PM in Doha. In summer, when London moves to BST, a 9:00 AM London call reaches Doha at 11:00 AM — giving a longer overlap window for business communication between the UK and Qatar."
     },
     {
       "question": "What is the time difference between Doha and Dubai?",
-      "answer": "Doha and Dubai are in the same time zone \u2014 both at UTC+3 \u2014 and share the same offset year-round with no DST. There is no time difference between Doha and Dubai at any time of year. This makes Gulf Cooperation Council (GCC) coordination between Qatar and the UAE seamless from a scheduling perspective."
+      "answer": "Doha and Dubai are in the same time zone — both at UTC+3 — and share the same offset year-round with no DST. There is no time difference between Doha and Dubai at any time of year. This makes Gulf Cooperation Council (GCC) coordination between Qatar and the UAE seamless from a scheduling perspective."
     },
     {
       "question": "What is the time difference between Doha and New York?",
-      "answer": "Doha is 8 hours ahead of New York during Eastern Standard Time (EST/UTC-5), and 7 hours ahead during Eastern Daylight Time (EDT/UTC-4). When it is 9:00 AM in New York (EST), it is 5:00 PM in Doha. The most practical calling window between New York and Doha is 9:00 AM\u20131:00 PM New York time (5:00 PM\u20139:00 PM Doha time), catching Doha in late afternoon and early evening."
+      "answer": "Doha is 8 hours ahead of New York during Eastern Standard Time (EST/UTC-5), and 7 hours ahead during Eastern Daylight Time (EDT/UTC-4). When it is 9:00 AM in New York (EST), it is 5:00 PM in Doha. The most practical calling window between New York and Doha is 9:00 AM–1:00 PM New York time (5:00 PM–9:00 PM Doha time), catching Doha in late afternoon and early evening."
     },
     {
       "question": "What is the time difference between Doha and Singapore?",
@@ -32,7 +32,7 @@
     },
     {
       "question": "What are typical business hours in Doha?",
-      "answer": "Qatar's standard work week runs Sunday through Thursday, with Friday and Saturday as the weekend. Government offices typically operate 7:00 AM\u20132:00 PM AST. Private sector businesses generally run 8:00 AM\u20135:00 PM or 9:00 AM\u20136:00 PM Sunday\u2013Thursday. Banks open 7:30 AM\u20131:00 PM. During Ramadan, working hours are reduced, typically 9:00 AM\u20132:00 PM. Major malls and retail centres such as Villaggio, The Pearl, and Mall of Qatar operate 10:00 AM\u201310:00 PM Saturday\u2013Thursday and 2:00 PM\u201310:00 PM Friday."
+      "answer": "Qatar's standard work week runs Sunday through Thursday, with Friday and Saturday as the weekend. Government offices typically operate 7:00 AM–2:00 PM AST. Private sector businesses generally run 8:00 AM–5:00 PM or 9:00 AM–6:00 PM Sunday–Thursday. Banks open 7:30 AM–1:00 PM. During Ramadan, working hours are reduced, typically 9:00 AM–2:00 PM. Major malls and retail centres such as Villaggio, The Pearl, and Mall of Qatar operate 10:00 AM–10:00 PM Saturday–Thursday and 2:00 PM–10:00 PM Friday."
     }
   ],
   "faq_schema": {
@@ -60,7 +60,7 @@
         "name": "Does Doha observe Daylight Saving Time?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Doha and all of Qatar do not observe Daylight Saving Time. Clocks remain at UTC+3 (AST) year-round, never changing. Qatar abolished any DST practice decades ago. The stable offset simplifies scheduling for Qatar Airways operations, Al Jazeera Media Network broadcasts, and international business meetings coordinated through Doha \u2014 particularly as the gap with European cities narrows from 3 hours in winter to 2 hours in summer when Europe advances its clocks."
+          "text": "No. Doha and all of Qatar do not observe Daylight Saving Time. Clocks remain at UTC+3 (AST) year-round, never changing. Qatar abolished any DST practice decades ago. The stable offset simplifies scheduling for Qatar Airways operations, Al Jazeera Media Network broadcasts, and international business meetings coordinated through Doha — particularly as the gap with European cities narrows from 3 hours in winter to 2 hours in summer when Europe advances its clocks."
         }
       },
       {
@@ -68,7 +68,7 @@
         "name": "What is the time difference between Doha and London?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Doha is 3 hours ahead of London during UK winter (GMT/UTC+0), and 2 hours ahead during British Summer Time (BST/UTC+1). When it is 9:00 AM in London (GMT), it is 12:00 PM in Doha. In summer, when London moves to BST, a 9:00 AM London call reaches Doha at 11:00 AM \u2014 giving a longer overlap window for business communication between the UK and Qatar."
+          "text": "Doha is 3 hours ahead of London during UK winter (GMT/UTC+0), and 2 hours ahead during British Summer Time (BST/UTC+1). When it is 9:00 AM in London (GMT), it is 12:00 PM in Doha. In summer, when London moves to BST, a 9:00 AM London call reaches Doha at 11:00 AM — giving a longer overlap window for business communication between the UK and Qatar."
         }
       },
       {
@@ -76,7 +76,7 @@
         "name": "What is the time difference between Doha and Dubai?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Doha and Dubai are in the same time zone \u2014 both at UTC+3 \u2014 and share the same offset year-round with no DST. There is no time difference between Doha and Dubai at any time of year. This makes Gulf Cooperation Council (GCC) coordination between Qatar and the UAE seamless from a scheduling perspective."
+          "text": "Doha and Dubai are in the same time zone — both at UTC+3 — and share the same offset year-round with no DST. There is no time difference between Doha and Dubai at any time of year. This makes Gulf Cooperation Council (GCC) coordination between Qatar and the UAE seamless from a scheduling perspective."
         }
       },
       {
@@ -84,7 +84,7 @@
         "name": "What is the time difference between Doha and New York?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Doha is 8 hours ahead of New York during Eastern Standard Time (EST/UTC-5), and 7 hours ahead during Eastern Daylight Time (EDT/UTC-4). When it is 9:00 AM in New York (EST), it is 5:00 PM in Doha. The most practical calling window between New York and Doha is 9:00 AM\u20131:00 PM New York time (5:00 PM\u20139:00 PM Doha time), catching Doha in late afternoon and early evening."
+          "text": "Doha is 8 hours ahead of New York during Eastern Standard Time (EST/UTC-5), and 7 hours ahead during Eastern Daylight Time (EDT/UTC-4). When it is 9:00 AM in New York (EST), it is 5:00 PM in Doha. The most practical calling window between New York and Doha is 9:00 AM–1:00 PM New York time (5:00 PM–9:00 PM Doha time), catching Doha in late afternoon and early evening."
         }
       },
       {
@@ -100,23 +100,23 @@
         "name": "What are typical business hours in Doha?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Qatar's standard work week runs Sunday through Thursday, with Friday and Saturday as the weekend. Government offices typically operate 7:00 AM\u20132:00 PM AST. Private sector businesses generally run 8:00 AM\u20135:00 PM or 9:00 AM\u20136:00 PM Sunday\u2013Thursday. Banks open 7:30 AM\u20131:00 PM. During Ramadan, working hours are reduced, typically 9:00 AM\u20132:00 PM. Major malls and retail centres such as Villaggio, The Pearl, and Mall of Qatar operate 10:00 AM\u201310:00 PM Saturday\u2013Thursday and 2:00 PM\u201310:00 PM Friday."
+          "text": "Qatar's standard work week runs Sunday through Thursday, with Friday and Saturday as the weekend. Government offices typically operate 7:00 AM–2:00 PM AST. Private sector businesses generally run 8:00 AM–5:00 PM or 9:00 AM–6:00 PM Sunday–Thursday. Banks open 7:30 AM–1:00 PM. During Ramadan, working hours are reduced, typically 9:00 AM–2:00 PM. Major malls and retail centres such as Villaggio, The Pearl, and Mall of Qatar operate 10:00 AM–10:00 PM Saturday–Thursday and 2:00 PM–10:00 PM Friday."
         }
       }
     ]
   },
   "content_blocks": [
     {
-      "title": "Doha Time Zone \u2014 Arabia Standard Time UTC+3, No DST",
-      "content": "Doha, the capital and largest city of Qatar, operates on Arabia Standard Time (AST/UTC+3) year-round without any Daylight Saving Time adjustment. Qatar's UTC+3 offset places Doha 3 hours ahead of London in winter (2 hours in summer BST), 8 hours ahead of New York (EST), and at the same time as Moscow, Riyadh, and Kuwait City. Doha is also aligned with Nairobi (EAT/UTC+3) and Addis Ababa. Notably, Qatar and the UAE (Dubai/Abu Dhabi) share the UTC+3 offset, simplifying GCC regional scheduling. The fixed, DST-free offset is particularly convenient for Qatar Airways \u2014 the world's fifth-largest airline by fleet size \u2014 which coordinates flight schedules without seasonal adjustments."
+      "title": "Doha Time Zone — Arabia Standard Time UTC+3, No DST",
+      "content": "Doha, the capital and largest city of Qatar, operates on Arabia Standard Time (AST/UTC+3) year-round without any Daylight Saving Time adjustment. Qatar's UTC+3 offset places Doha 3 hours ahead of London in winter (2 hours in summer BST), 8 hours ahead of New York (EST), and at the same time as Moscow, Riyadh, and Kuwait City. Doha is also aligned with Nairobi (EAT/UTC+3) and Addis Ababa. Notably, Qatar and the UAE (Dubai/Abu Dhabi) share the UTC+3 offset, simplifying GCC regional scheduling. The fixed, DST-free offset is particularly convenient for Qatar Airways — the world's fifth-largest airline by fleet size — which coordinates flight schedules without seasonal adjustments."
     },
     {
       "title": "Doha: Qatar's Global City and FIFA World Cup 2022 Legacy",
-      "content": "Doha is one of the fastest-growing cities in the Middle East, transformed by petroleum and natural gas revenues into a gleaming skyline on the Arabian Gulf. Qatar is the world's largest exporter of liquefied natural gas (LNG) and has one of the highest per-capita incomes globally. Doha hosted the 2022 FIFA World Cup \u2014 the first in the Middle East \u2014 with iconic venues including Lusail Stadium (80,000 capacity), Al Bayt Stadium, and the repurposed Education City Stadium. Al Jazeera Media Network, headquartered in Doha, is one of the world's most-watched international news channels. The Qatar Investment Authority (QIA) sovereign wealth fund manages over $450 billion in global assets. Doha's Hamad International Airport is consistently ranked among the world's best and serves as the hub for Qatar Airways routes spanning 160+ destinations."
+      "content": "Doha is one of the fastest-growing cities in the Middle East, transformed by petroleum and natural gas revenues into a gleaming skyline on the Arabian Gulf. Qatar is the world's largest exporter of liquefied natural gas (LNG) and has one of the highest per-capita incomes globally. Doha hosted the 2022 FIFA World Cup — the first in the Middle East — with iconic venues including Lusail Stadium (80,000 capacity), Al Bayt Stadium, and the repurposed Education City Stadium. Al Jazeera Media Network, headquartered in Doha, is one of the world's most-watched international news channels. The Qatar Investment Authority (QIA) sovereign wealth fund manages over $450 billion in global assets. Doha's Hamad International Airport is consistently ranked among the world's best and serves as the hub for Qatar Airways routes spanning 160+ destinations."
     },
     {
       "title": "Scheduling and Calling Doha Internationally",
-      "content": "Doha's Sunday\u2013Thursday work week is an important consideration for international partners. European and US firms used to Monday\u2013Friday schedules must plan Doha calls for what their calendar shows as Sunday through Thursday. From London (GMT), Doha is 3 hours ahead in winter and 2 hours ahead in summer \u2014 a morning London call at 8:00 AM reaches Doha at 11:00 AM AST, well into the working day. From New York (EST), the best window is 7:00 AM\u20131:00 PM Eastern (3:00 PM\u20139:00 PM Doha), catching Doha in the late working day and early evening. From Paris or Berlin (CET), Doha is 2 hours ahead: a 9:00 AM European call reaches Doha at 11:00 AM. From Singapore (SGT/UTC+8), Doha is 5 hours behind: a 2:00 PM Singapore call reaches Doha at 9:00 AM. Qatar's country code is +974 and Doha has no area code \u2014 all Qatari numbers are 8 digits."
+      "content": "Doha's Sunday–Thursday work week is an important consideration for international partners. European and US firms used to Monday–Friday schedules must plan Doha calls for what their calendar shows as Sunday through Thursday. From London (GMT), Doha is 3 hours ahead in winter and 2 hours ahead in summer — a morning London call at 8:00 AM reaches Doha at 11:00 AM AST, well into the working day. From New York (EST), the best window is 7:00 AM–1:00 PM Eastern (3:00 PM–9:00 PM Doha), catching Doha in the late working day and early evening. From Paris or Berlin (CET), Doha is 2 hours ahead: a 9:00 AM European call reaches Doha at 11:00 AM. From Singapore (SGT/UTC+8), Doha is 5 hours behind: a 2:00 PM Singapore call reaches Doha at 9:00 AM. Qatar's country code is +974 and Doha has no area code — all Qatari numbers are 8 digits."
     }
   ],
   "time_difference_table": [
@@ -185,5 +185,5 @@
     "utc_offset": "UTC+3 (year-round)",
     "dst_observed": false
   },
-  "eeat_footer": "Last updated: March 2026 | \u2713 Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database."
+  "eeat_footer": "Last updated: March 2026 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database."
 }
