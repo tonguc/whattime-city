@@ -386,9 +386,77 @@ Tema context'ini sağlar. Server component olabilir.
 - `/days-ago/[d]/` × 20 sayfa eklendi (0.7, daily)
 - `how-many-hours-in-a-year`, `how-many-seconds-in-a-year`, `how-many-months-in-a-year` articles eklendi
 
+### 35. Hours-Ago / Hours-From-Now Cluster ✅ (Mart 2026)
+- `/hours-ago/` hub page + `/hours-ago/[hours]/` — 19 pre-generated (1-72h)
+  Target: "what time was it 9 hours ago" (27K vol, SD 15-16)
+- `/hours-from-now/` hub page + `/hours-from-now/[hours]/` — 19 pre-generated
+  Target: "what time will it be in X hours" cluster
+- `revalidate = 3600` — hourly revalidation (times must be current)
+- Orange color scheme for ago, green for from-now
+- Sitemap updated with hub pages + all 38 individual pages (hourly changeFreq)
+
+### 36. 20+ Yeni SEO JSON Dosyaları ✅ (Mart 2026)
+Ubersuggest CSV analizi sonucu (SD<35, vol>10K):
+
+**Yeni şehirler:**
+- `brasilia-seo.json` (60K vol, SD 27): BRT UTC-3, America/Sao_Paulo
+- `perth-seo.json` (33K vol, SD 24): AWST UTC+8, no DST, 2009 referendum
+- `new-orleans-seo.json` (40K vol, SD 25-29): CST/CDT, America/Chicago
+- `dublin-seo.json` (74K vol, SD 33): GMT/IST, Europe/Dublin, tech hub
+- `tel-aviv-seo.json` (74K vol, SD 33): IST UTC+2/IDT UTC+3, Sun-Thu work week
+- `cancun-seo.json` (49.5K vol, SD 28): UTC-5 year-round (no DST since 2015!)
+- `lisbon-seo.json`: WET UTC+0/WEST UTC+1, 1h behind Madrid, Web Summit
+- `beirut-seo.json`: EET UTC+2/EEST UTC+3, Asia/Beirut
+- `salt-lake-city-seo.json` (49.5K vol, SD 30): MST/MDT, America/Denver
+- `orlando-seo.json` (40.5K vol, SD 33): EST/EDT, Disney context
+- `minneapolis-seo.json` (49.5K vol, SD 34): CST/CDT, Fortune 500 context
+- `san-antonio-seo.json` (49.5K vol, SD 34): CST/CDT, military/tourism context
+- `taipei-seo.json` (49.5K vol, SD 28): CST UTC+8, no DST since 1979, TSMC
+- `casablanca-seo.json`: WET/WEST, unique Ramadan DST suspension
+- `cape-town-seo.json` (22K vol, SD 22): SAST UTC+2, no DST, Africa/Johannesburg
+- `auckland-seo.json`: NZST UTC+12/NZDT UTC+13, southern hemisphere DST
+- `riyadh-seo.json` (49.5K vol, SD 28): AST UTC+3, no DST, Sun-Thu work week
+- `bangalore-seo.json`: IST UTC+5:30, Silicon Valley of India, TSMC/Infosys
+- `san-francisco-seo.json` (49.5K vol, SD 24)
+- `portland-seo.json`, `austin-seo.json`, `detroit-seo.json`
+- `bogota-seo.json`: COT UTC-5, no DST, aligns with NYC EST in winter
+- `warsaw-seo.json`: CET/CEST, GPW stock exchange
+- `lima-seo.json`: PET UTC-5, no DST, America/Lima
+- `budapest-seo.json`: CET/CEST, automotive industry
+- `santiago-seo.json`: CLT UTC-4/CLST UTC-3, southern hemisphere DST
+- `lagos-seo.json`: WAT UTC+1, no DST, Africa's largest city, NGX
+- `amman-seo.json`: EET UTC+2/EEST UTC+3, Friday DST transitions
+
+**Title uzunluk fix (bu oturumda):**
+- auckland, austin, budapest, cairo, casablanca, costa-rica, detroit, fiji, portland
+- "Now" removed from: cairo, costa-rica, fiji
+
+### 37. AI SEO First Sentence Format Fixes ✅ (Mart 2026)
+- beijing: "Beijing, China uses China Standard Time (CST, UTC+8)..."
+- delhi: "New Delhi, India uses India Standard Time (IST, UTC+5:30)..."
+- hong-kong: "Hong Kong uses Hong Kong Time (HKT, UTC+8)..."
+- singapore: "Singapore uses Singapore Standard Time (SGT, UTC+8)..."
+- indianapolis, louisville: "City, IN/KY, USA uses EST (UTC-5)..."
+- tehran: "Tehran, Iran uses Iran Standard Time (IRST, UTC+3:30)..."
+
+### 38. PAIR_CONTEXTS 56→64 ✅ (Mart 2026)
+New pairs: los-angeles↔new-york, san-francisco↔berlin, sydney↔zurich, miami↔chicago
+
+---
+
+## Açık Konular / Sonraki Adımlar
+
+- [ ] DST clock change (673K vol, SD 24) — `/daylight-saving-time/` meta already good, monitor GSC
+- [ ] Sunrise/sunset "what time does sun set today" (201K vol, SD 19) — meta updated, monitor
+- [ ] Hours-ago/hours-from-now pages — need 4 weeks to index and appear in GSC
+- [ ] Santiago, Lagos, Amman, Budapest, Warsaw, Lima, Bogota SEO JSONs need indexing
+- [ ] Cape Town, Auckland, Riyadh, Bangalore, Taipei SEO JSONs — monitor rankings
+- [ ] Remaining tier 2 cities without SEO JSON: abuja, accra, addis-ababa, algiers, baku,
+  baltimore, dhaka, edinburgh, guadalajara, hanoi, islamabad, khartoum, kinshasa,
+  lahore, lusaka
+
 ---
 
 ## Git Workflow
-- Feature branch: `claude/plan-next-actions-ONJ8y`
-- Squash merge to main
+- Feature branch: `main` (working directly)
 - Yeni oturumda yeni branch aç: `claude/[konu]-[id]`
