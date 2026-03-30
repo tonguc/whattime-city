@@ -1,54 +1,54 @@
 {
-  "seo_title": "Current Time in São Paulo — BRT (UTC-3)",
-  "seo_description": "What time is it in São Paulo right now? São Paulo uses BRT (Brasília Time, UTC-3). Live clock, sunrise & sunset times, São Paulo vs New York/London/Tokyo time difference.",
+  "seo_title": "Current Time in S\u00e3o Paulo \u2014 BRT (UTC-3)",
+  "seo_description": "What time is it in S\u00e3o Paulo right now? S\u00e3o Paulo uses BRT (Bras\u00edlia Time, UTC-3). Live clock, sunrise & sunset times, S\u00e3o Paulo vs New York/London/Tokyo time difference.",
   "timezone_facts": {
-    "full_name": "Brasília Time (BRT)",
+    "full_name": "Bras\u00edlia Time (BRT)",
     "utc_offset": "UTC-3",
     "dst_observed": false,
-    "dst_notes": "Brazil abolished Daylight Saving Time in 2019. São Paulo now uses BRT (UTC-3) year-round."
+    "dst_notes": "Brazil abolished Daylight Saving Time in 2019. S\u00e3o Paulo now uses BRT (UTC-3) year-round."
   },
   "faq": [
     {
-      "question": "What time is it in São Paulo right now?",
-      "answer": "São Paulo operates on Brasília Time (BRT), which is UTC-3. Brazil abolished Daylight Saving Time in 2019, so São Paulo uses UTC-3 year-round. Check the live clock above for the exact current time."
+      "question": "What time is it in S\u00e3o Paulo right now?",
+      "answer": "S\u00e3o Paulo, Brazil uses Bras\u00edlia Time (BRT, UTC-3) in winter and Bras\u00edlia Summer Time (BRST, UTC-2) when Daylight Saving Time is observed. The IANA identifier is America/Sao_Paulo. S\u00e3o Paulo operates on Bras\u00edlia Time (BRT), which is UTC-3. Brazil abolished Daylight Saving Time in 2019, so S\u00e3o Paulo uses UTC-3 year-round. Check the live clock above for the exact current time."
     },
     {
-      "question": "What time zone is São Paulo in?",
-      "answer": "São Paulo is in the Brasília Time (BRT) zone, which is UTC-3. This timezone covers all of southeastern Brazil including São Paulo, Rio de Janeiro, and Brasília. Since 2019, Brazil no longer observes Daylight Saving Time."
+      "question": "What time zone is S\u00e3o Paulo in?",
+      "answer": "S\u00e3o Paulo is in the Bras\u00edlia Time (BRT) zone, which is UTC-3. This timezone covers all of southeastern Brazil including S\u00e3o Paulo, Rio de Janeiro, and Bras\u00edlia. Since 2019, Brazil no longer observes Daylight Saving Time."
     },
     {
-      "question": "Does São Paulo observe Daylight Saving Time?",
-      "answer": "No. Brazil abolished Daylight Saving Time in April 2019. São Paulo now remains on BRT (UTC-3) year-round, making international scheduling simpler and more predictable."
+      "question": "Does S\u00e3o Paulo observe Daylight Saving Time?",
+      "answer": "No. Brazil abolished Daylight Saving Time in April 2019. S\u00e3o Paulo now remains on BRT (UTC-3) year-round, making international scheduling simpler and more predictable."
     },
     {
-      "question": "What is the time difference between São Paulo and New York?",
-      "answer": "São Paulo is 2 hours ahead of New York during Eastern Standard Time (November–March). During US Eastern Daylight Time (March–November), São Paulo is only 1 hour ahead of New York. Since Brazil no longer observes DST, this difference changes only when the US switches clocks."
+      "question": "What is the time difference between S\u00e3o Paulo and New York?",
+      "answer": "S\u00e3o Paulo is 2 hours ahead of New York during Eastern Standard Time (November\u2013March). During US Eastern Daylight Time (March\u2013November), S\u00e3o Paulo is only 1 hour ahead of New York. Since Brazil no longer observes DST, this difference changes only when the US switches clocks."
     },
     {
-      "question": "What is the time difference between São Paulo and London?",
-      "answer": "São Paulo is 3 hours behind London during Greenwich Mean Time (October–March) and 4 hours behind during British Summer Time (March–October). Since Brazil does not observe DST, the difference changes based on UK clock changes only."
+      "question": "What is the time difference between S\u00e3o Paulo and London?",
+      "answer": "S\u00e3o Paulo is 3 hours behind London during Greenwich Mean Time (October\u2013March) and 4 hours behind during British Summer Time (March\u2013October). Since Brazil does not observe DST, the difference changes based on UK clock changes only."
     },
     {
-      "question": "What is the best time to call São Paulo from the US?",
-      "answer": "From the US East Coast (EST), the best time to call São Paulo for business is 9:00 AM – 3:00 PM EST, which corresponds to 11:00 AM – 5:00 PM BRT in São Paulo. From the West Coast (PST), call between 6:00 AM – 12:00 PM PST."
+      "question": "What is the best time to call S\u00e3o Paulo from the US?",
+      "answer": "From the US East Coast (EST), the best time to call S\u00e3o Paulo for business is 9:00 AM \u2013 3:00 PM EST, which corresponds to 11:00 AM \u2013 5:00 PM BRT in S\u00e3o Paulo. From the West Coast (PST), call between 6:00 AM \u2013 12:00 PM PST."
     },
     {
-      "question": "What are business hours in São Paulo?",
-      "answer": "São Paulo business hours are typically Monday to Friday, 8:00 AM to 6:00 PM BRT. Banks generally operate 10:00 AM to 4:00 PM. São Paulo is the financial capital of Brazil and Latin America's largest city by GDP."
+      "question": "What are business hours in S\u00e3o Paulo?",
+      "answer": "S\u00e3o Paulo business hours are typically Monday to Friday, 8:00 AM to 6:00 PM BRT. Banks generally operate 10:00 AM to 4:00 PM. S\u00e3o Paulo is the financial capital of Brazil and Latin America's largest city by GDP."
     },
     {
-      "question": "What is the time difference between São Paulo and London?",
-      "answer": "São Paulo (BRT, UTC-3) is 3 hours behind London (GMT, UTC+0) in winter and 4 hours behind during British Summer Time (BST, UTC+1). The gap shifts only when the UK changes clocks, since Brazil no longer observes DST."
+      "question": "What is the time difference between S\u00e3o Paulo and London?",
+      "answer": "S\u00e3o Paulo (BRT, UTC-3) is 3 hours behind London (GMT, UTC+0) in winter and 4 hours behind during British Summer Time (BST, UTC+1). The gap shifts only when the UK changes clocks, since Brazil no longer observes DST."
     }
   ],
   "content_blocks": [
     {
-      "title": "São Paulo Time Zone — BRT (UTC-3)",
-      "content": "São Paulo uses Brasília Time (BRT), which is 3 hours behind Coordinated Universal Time (UTC-3). Brazil permanently abolished Daylight Saving Time in 2019, so this offset is fixed year-round. São Paulo is the largest city in the Southern Hemisphere and South America's financial hub, home to over 22 million people in its metropolitan area."
+      "title": "S\u00e3o Paulo Time Zone \u2014 BRT (UTC-3)",
+      "content": "S\u00e3o Paulo uses Bras\u00edlia Time (BRT), which is 3 hours behind Coordinated Universal Time (UTC-3). Brazil permanently abolished Daylight Saving Time in 2019, so this offset is fixed year-round. S\u00e3o Paulo is the largest city in the Southern Hemisphere and South America's financial hub, home to over 22 million people in its metropolitan area."
     },
     {
-      "title": "São Paulo vs World Cities — Time Differences",
-      "content": "São Paulo (BRT, UTC-3) is 2–3 hours ahead of New York (EST/EDT), 3–4 hours behind London (GMT/BST), 6 hours behind Paris (CET/CEST), 11 hours behind Dubai (GST), 14 hours behind Singapore (SGT), and 16 hours behind Tokyo (JST). These differences are fixed on the São Paulo side since Brazil eliminated DST."
+      "title": "S\u00e3o Paulo vs World Cities \u2014 Time Differences",
+      "content": "S\u00e3o Paulo (BRT, UTC-3) is 2\u20133 hours ahead of New York (EST/EDT), 3\u20134 hours behind London (GMT/BST), 6 hours behind Paris (CET/CEST), 11 hours behind Dubai (GST), 14 hours behind Singapore (SGT), and 16 hours behind Tokyo (JST). These differences are fixed on the S\u00e3o Paulo side since Brazil eliminated DST."
     }
   ],
   "internal_links": [
@@ -62,15 +62,15 @@
     },
     {
       "url": "/time/sao-paulo/new-york/",
-      "anchor": "São Paulo to New York time difference"
+      "anchor": "S\u00e3o Paulo to New York time difference"
     },
     {
       "url": "/time/sao-paulo/london/",
-      "anchor": "São Paulo to London time difference"
+      "anchor": "S\u00e3o Paulo to London time difference"
     },
     {
       "url": "/time/sao-paulo/miami/",
-      "anchor": "São Paulo to Miami time difference"
+      "anchor": "S\u00e3o Paulo to Miami time difference"
     }
   ],
   "time_difference_table": [
@@ -111,6 +111,76 @@
       "link": "/time/sao-paulo/sydney/"
     }
   ],
-  "eeat_footer": "Time zone data for São Paulo is sourced from the IANA Time Zone Database (America/Sao_Paulo). Brazil's abolition of DST was enacted by Decree No. 9,772 of April 25, 2019.",
-  "improvement_notes": "Added March 2026. São Paulo is one of the top 5 GSC impression cities but lacked SEO data."
+  "eeat_footer": "Time zone data for S\u00e3o Paulo is sourced from the IANA Time Zone Database (America/Sao_Paulo). Brazil's abolition of DST was enacted by Decree No. 9,772 of April 25, 2019.",
+  "improvement_notes": "Added March 2026. S\u00e3o Paulo is one of the top 5 GSC impression cities but lacked SEO data.",
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in S\u00e3o Paulo right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "S\u00e3o Paulo, Brazil uses Bras\u00edlia Time (BRT, UTC-3) in winter and Bras\u00edlia Summer Time (BRST, UTC-2) when Daylight Saving Time is observed. The IANA identifier is America/Sao_Paulo. S\u00e3o Paulo operates on Bras\u00edlia Time (BRT), which is UTC-3. Brazil abolished Daylight Saving Time in 2019, so S\u00e3o Paulo uses UTC-3 year-round. Check the live clock above for the exact current time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is S\u00e3o Paulo in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "S\u00e3o Paulo is in the Bras\u00edlia Time (BRT) zone, which is UTC-3. This timezone covers all of southeastern Brazil including S\u00e3o Paulo, Rio de Janeiro, and Bras\u00edlia. Since 2019, Brazil no longer observes Daylight Saving Time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does S\u00e3o Paulo observe Daylight Saving Time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Brazil abolished Daylight Saving Time in April 2019. S\u00e3o Paulo now remains on BRT (UTC-3) year-round, making international scheduling simpler and more predictable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between S\u00e3o Paulo and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "S\u00e3o Paulo is 2 hours ahead of New York during Eastern Standard Time (November\u2013March). During US Eastern Daylight Time (March\u2013November), S\u00e3o Paulo is only 1 hour ahead of New York. Since Brazil no longer observes DST, this difference changes only when the US switches clocks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between S\u00e3o Paulo and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "S\u00e3o Paulo is 3 hours behind London during Greenwich Mean Time (October\u2013March) and 4 hours behind during British Summer Time (March\u2013October). Since Brazil does not observe DST, the difference changes based on UK clock changes only."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best time to call S\u00e3o Paulo from the US?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From the US East Coast (EST), the best time to call S\u00e3o Paulo for business is 9:00 AM \u2013 3:00 PM EST, which corresponds to 11:00 AM \u2013 5:00 PM BRT in S\u00e3o Paulo. From the West Coast (PST), call between 6:00 AM \u2013 12:00 PM PST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are business hours in S\u00e3o Paulo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "S\u00e3o Paulo business hours are typically Monday to Friday, 8:00 AM to 6:00 PM BRT. Banks generally operate 10:00 AM to 4:00 PM. S\u00e3o Paulo is the financial capital of Brazil and Latin America's largest city by GDP."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between S\u00e3o Paulo and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "S\u00e3o Paulo (BRT, UTC-3) is 3 hours behind London (GMT, UTC+0) in winter and 4 hours behind during British Summer Time (BST, UTC+1). The gap shifts only when the UK changes clocks, since Brazil no longer observes DST."
+        }
+      }
+    ]
+  }
 }
