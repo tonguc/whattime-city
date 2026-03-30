@@ -593,6 +593,26 @@ North Africa:
 - New template uses `majorCities.slice(0,3)` instead of full `coverageArea`
 - All codes now 128-150 chars ✅ (929, 437, 904, 760, 213 verified)
 
+### 43. Time-Converter + Flight-Time İçerik Zenginleştirme ✅ (Mart 2026)
+
+**SEO Engine analizi sonucu (3 kalan madde):**
+- Area code içerik → zaten iyi, authority/yaş sorunu (yapacak şey yok)
+- DST USA page → zaten iyi, 2026 tarihleri title/H1/FAQ'ta belirgin
+- Time-converter (pos 11.36) + Flight-time (pos 10.85) → içerik eklendi
+
+**`app/time-converter/TimeConverterClient.tsx`:**
+- "Popular Time Zone Conversions" tablosu (18 pair: EST→GMT, PST→IST, JST→EST vb.)
+  → long-tail: "9am est to gmt", "pst to ist conversion table"
+- "Time Zone Quick Reference" tablosu (22 TZ kısaltması, UTC offset, bölge)
+  → long-tail: "what is EST in UTC", "CET full name"
+- Görünen FAQ 3 → 8 soruya çıkarıldı (JSON-LD'deki 14 ile tutarlı)
+
+**`data/seo/flight-time-seo.ts` + `app/flight-time/FlightTimeClient.tsx`:**
+- "Popular Flight Routes — Arrival Time Examples" tablosu (14 rota)
+  → NYC→London, LAX→Tokyo, London→Dubai vb.
+  → long-tail: "new york to london what time do I land"
+  → her satır potansiyel featured snippet
+
 ---
 
 ## Açık Konular / Sonraki Adımlar
