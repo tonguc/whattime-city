@@ -6,7 +6,7 @@ import UzbekistanClockClient from './UzbekistanClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Uzbekistan Now — UZT · Tashkent · UTC+5',
+  title: 'Time in Uzbekistan Now — UZT (UTC+5)',
   description: 'What time is it in Uzbekistan right now? Uzbekistan uses Uzbekistan Time (UZT, UTC+5) year-round with no Daylight Saving Time. Tashkent live clock and time zone info.',
   keywords: ['time in uzbekistan', 'uzbekistan time now', 'what time is it in uzbekistan', 'tashkent time', 'uzbekistan time zone', 'UZT uzbekistan', 'uzbekistan utc+5', 'tashkent current time', 'uzbekistan no dst', 'samarkand time'],
   alternates: { canonical: 'https://whattime.city/uzbekistan/' },

@@ -6,7 +6,7 @@ import GuyanaClockClient from './GuyanaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Guyana Now — GYT (UTC-4) · Georgetown',
+  title: 'Time in Guyana Now — GYT (UTC−4)',
   description: 'What time is it in Guyana right now? Live Georgetown clock, time zone info (GYT (UTC-4)), best time to call, and time difference with major cities.',
   keywords: ['time in guyana', 'guyana time now', 'what time is it in guyana', 'georgetown time', 'guyana time zone'],
   alternates: { canonical: 'https://whattime.city/guyana/' },

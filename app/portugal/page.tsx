@@ -6,7 +6,7 @@ import PortugalClockClient from './PortugalClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Portugal Now — WET/WEST (UTC+0/+1) · Lisbon · Azores 1h Behind',
+  title: 'Time in Portugal Now — WET/WEST (UTC+0/+1)',
   description: 'What time is it in Portugal right now? Portugal uses WET (UTC+0) in winter and WEST (UTC+1) in summer. The Azores are 1 hour behind Lisbon. Live clock and best time to call.',
   keywords: ['time in portugal', 'portugal time now', 'what time is it in portugal', 'lisbon time', 'portugal time zone', 'WET WEST portugal', 'portugal utc+0', 'porto time', 'azores time', 'portugal time vs uk', 'portugal time vs usa', 'portugal dst'],
   alternates: { canonical: 'https://whattime.city/portugal/' },

@@ -6,7 +6,7 @@ import SpainClockClient from './SpainClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Spain Now — CET/CEST (UTC+1/+2) · Madrid, Barcelona · Canary Islands',
+  title: 'Time in Spain Now — CET/CEST (UTC+1/+2)',
   description:
     'What time is it in Spain right now? Spain uses Central European Time (CET, UTC+1) in winter and CEST (UTC+2) in summer. The Canary Islands are 1 hour behind the mainland. Live Madrid clock, Spain vs world cities, and best time to call.',
   keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/spain/' },
   openGraph: {
-    title: 'Current Time in Spain — CET/CEST (UTC+1/+2) · Canary Islands 1h behind',
+    title: 'Current Time in Spain — CET/CEST (UTC+1/+2)',
     description: 'Live Spain time. CET (UTC+1) in winter, CEST (UTC+2) during Daylight Saving Time. Canary Islands are 1h behind the Spanish mainland. Madrid, Barcelona on Central European Time.',
     type: 'website', url: 'https://whattime.city/spain/', siteName: 'whattime.city',
   },

@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'MST to GMT — Mountain Time to Greenwich Mean Time Converter',
+  title: 'MST to GMT Converter — Mountain to Greenwich',
   description: 'Convert MST to GMT instantly. Mountain Standard Time (UTC-7) is 7 hours behind GMT (UTC+0). Live clocks, Denver–London scheduling guide and conversion table.',
   alternates: { canonical: 'https://whattime.city/mst-to-gmt/' },
   openGraph: { title: 'MST to GMT Converter — Mountain Time to London', description: 'MST is 7 hours behind GMT. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/mst-to-gmt/', siteName: 'whattime.city' },

@@ -6,7 +6,7 @@ import TurkeyClockClient from './TurkeyClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Turkey Now — TRT (UTC+3) · Istanbul, Ankara · No DST since 2016',
+  title: 'Time in Turkey Now — TRT (UTC+3) · No DST',
   description:
     'What time is it in Turkey right now? Turkey uses TRT (Turkey Time, UTC+3) year-round — no Daylight Saving Time since 2016. Live Istanbul clock, Turkey vs world cities, and best time to call.',
   keywords: [

@@ -6,7 +6,7 @@ import UKClockClient from './UKClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in the UK Now — GMT/BST (UTC+0/+1) · London, Manchester, Edinburgh',
+  title: 'Time in the UK Now — GMT/BST (UTC+0/+1)',
   description:
     'What time is it in the UK right now? The UK uses GMT (UTC+0) in winter and BST (UTC+1) during British Summer Time. Live London clock, UK vs US/Europe/Asia, and best time to call.',
   keywords: [

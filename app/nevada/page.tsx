@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import NevadaClockClient from './NevadaClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Nevada Now — PST/PDT · Las Vegas · Pacific Time Zone',
+  title: 'Time in Nevada Now — PST/PDT (UTC−8/−7)',
   description: 'What time is it in Nevada right now? Nevada uses Pacific Time (PST/PDT). Las Vegas is on PST (UTC−8) in winter and PDT (UTC−7) in summer. Live clock, Nevada vs world cities, and best time to call.',
   keywords: ['time in nevada', 'nevada time now', 'what time is it in nevada', 'las vegas time', 'nevada time zone', 'PST PDT nevada', 'nevada utc-8', 'reno time', 'henderson time', 'nevada time vs eastern', 'nevada time vs uk', 'nevada pacific time'],
   alternates: { canonical: 'https://whattime.city/nevada/' },

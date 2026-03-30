@@ -6,7 +6,7 @@ import CambodiaClockClient from './CambodiaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Cambodia Now — ICT (UTC+7) · Phnom Penh',
+  title: 'Time in Cambodia Now — ICT (UTC+7)',
   description: 'What time is it in Cambodia right now? Live Phnom Penh clock, time zone info (ICT (UTC+7)), best time to call, and time difference with major cities.',
   keywords: ['time in cambodia', 'cambodia time now', 'what time is it in cambodia', 'phnom penh time', 'cambodia time zone'],
   alternates: { canonical: 'https://whattime.city/cambodia/' },

@@ -6,7 +6,7 @@ import AfghanistanClockClient from './AfghanistanClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Afghanistan Now — AFT (UTC+4:30) · Kabul',
+  title: 'Time in Afghanistan Now — AFT (UTC+4:30)',
   description: 'What time is it in Afghanistan right now? Live Kabul clock, time zone info (AFT (UTC+4:30)), best time to call, and time difference with major cities.',
   keywords: ['time in afghanistan', 'afghanistan time now', 'what time is it in afghanistan', 'kabul time', 'afghanistan time zone'],
   alternates: { canonical: 'https://whattime.city/afghanistan/' },

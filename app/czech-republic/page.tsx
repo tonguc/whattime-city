@@ -6,7 +6,7 @@ import CzechRepublicClockClient from './CzechRepublicClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Czech Republic Now — CET (UTC+1) · Prague',
+  title: 'Time in Czech Republic Now — CET (UTC+1)',
   description: 'What time is it in Czech Republic right now? Live Prague clock, time zone info (CET (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in czech republic', 'czech republic time now', 'what time is it in czech republic', 'prague time', 'czech republic time zone'],
   alternates: { canonical: 'https://whattime.city/czech-republic/' },

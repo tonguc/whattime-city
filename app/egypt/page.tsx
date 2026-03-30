@@ -6,7 +6,7 @@ import EgyptClockClient from './EgyptClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Egypt Now — EET (UTC+2) · Cairo, Alexandria · No DST',
+  title: 'Time in Egypt Now — EET (UTC+2) · No DST',
   description:
     'What time is it in Egypt right now? Egypt uses Eastern European Time (EET, UTC+2) year-round with no Daylight Saving Time since 2011. Live Cairo clock, Egypt vs world cities, and best time to call.',
   keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/egypt/' },
   openGraph: {
-    title: 'Current Time in Egypt — EET (UTC+2) · No Daylight Saving Time',
+    title: 'Current Time in Egypt — EET (UTC+2) · No DST',
     description: 'Live Egypt time. Eastern European Time (EET, UTC+2) used year-round. No DST since 2011. Cairo, Alexandria, Giza all on the same time.',
     type: 'website', url: 'https://whattime.city/egypt/', siteName: 'whattime.city',
   },

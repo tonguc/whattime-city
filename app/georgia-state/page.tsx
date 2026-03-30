@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import GeorgiaStateClockClient from './GeorgiaStateClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Georgia (US State) Now — EST/EDT (UTC−5/−4) · Atlanta, Savannah',
+  title: 'Time in Georgia (US) Now — EST/EDT',
   description:
     'What time is it in Georgia right now? Georgia uses Eastern Standard Time (EST, UTC−5) in winter and Eastern Daylight Time (EDT, UTC−4) during Daylight Saving Time. Live Atlanta clock, Georgia vs world cities, and best time to call.',
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/georgia-state/' },
   openGraph: {
-    title: 'Current Time in Georgia (US State) — EST/EDT (UTC−5/−4)',
+    title: 'Current Time in Georgia (US State) — EST/EDT',
     description: 'Live Georgia time. EST (UTC−5) in winter, EDT (UTC−4) during Daylight Saving Time. Atlanta, Savannah, Augusta, Columbus all on Eastern Time.',
     type: 'website', url: 'https://whattime.city/georgia-state/', siteName: 'whattime.city',
   },

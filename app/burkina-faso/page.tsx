@@ -6,7 +6,7 @@ import BurkinaFasoClockClient from './BurkinaFasoClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Burkina Faso Now — GMT (UTC+0) · Ouagadougou',
+  title: 'Time in Burkina Faso Now — GMT (UTC+0)',
   description: 'What time is it in Burkina Faso right now? Live Ouagadougou clock, time zone info (GMT (UTC+0)), best time to call, and time difference with major cities.',
   keywords: ['time in burkina faso', 'burkina faso time now', 'what time is it in burkina faso', 'ouagadougou time', 'burkina faso time zone'],
   alternates: { canonical: 'https://whattime.city/burkina-faso/' },

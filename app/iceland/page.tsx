@@ -6,7 +6,7 @@ import IcelandClockClient from './IcelandClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Iceland Now — GMT (UTC+0) · Reykjavik',
+  title: 'Time in Iceland Now — GMT (UTC+0)',
   description: 'What time is it in Iceland right now? Live Reykjavik clock, time zone info (GMT (UTC+0)), best time to call, and time difference with major cities.',
   keywords: ['time in iceland', 'iceland time now', 'what time is it in iceland', 'reykjavik time', 'iceland time zone'],
   alternates: { canonical: 'https://whattime.city/iceland/' },

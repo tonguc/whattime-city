@@ -6,7 +6,7 @@ import UkraineClockClient from './UkraineClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Ukraine Now — EET/EEST (UTC+2/+3) · Kyiv · Eastern European Time',
+  title: 'Time in Ukraine Now — EET/EEST (UTC+2/+3)',
   description: 'What time is it in Ukraine right now? Ukraine uses Eastern European Time (EET, UTC+2) in winter and EEST (UTC+3) in summer. Live Kyiv clock, Ukraine vs world cities, and best time to call.',
   keywords: ['time in ukraine', 'ukraine time now', 'what time is it in ukraine', 'kyiv time', 'ukraine time zone', 'EET EEST ukraine', 'ukraine utc+2', 'kharkiv time', 'odessa time', 'lviv time', 'ukraine time vs uk', 'ukraine time vs usa'],
   alternates: { canonical: 'https://whattime.city/ukraine/' },

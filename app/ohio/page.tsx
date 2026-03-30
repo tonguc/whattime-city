@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import OhioClockClient from './OhioClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Ohio Now — EST/EDT (UTC−5/−4) · Columbus, Cleveland, Cincinnati',
+  title: 'Time in Ohio Now — EST/EDT · Columbus',
   description:
     'What time is it in Ohio right now? Ohio uses Eastern Standard Time (EST, UTC−5) in winter and Eastern Daylight Time (EDT, UTC−4) during Daylight Saving Time. Live Columbus clock, Ohio vs world cities, and best time to call.',
   keywords: [

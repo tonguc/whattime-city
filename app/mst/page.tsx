@@ -5,7 +5,7 @@ import HubPageLayout from '@/components/HubPageLayout'
 import TZExplainerClient from '@/components/TZExplainerClient'
 
 export const metadata: Metadata = {
-  title: 'MST — Current Mountain Standard Time Now | UTC-7',
+  title: 'MST — Mountain Standard Time | UTC−7',
   description: 'What time is it in MST right now? Mountain Standard Time (MST) is UTC-7, used by the US Mountain region. Includes live clock, MST vs MDT difference, Arizona note, and major cities.',
   keywords: ['MST', 'mountain standard time', 'MST time now', 'MST now', 'what time is it in MST', 'UTC-7', 'mountain time now'],
   alternates: { canonical: 'https://whattime.city/mst/' },

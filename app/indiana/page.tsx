@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import IndianaClockClient from './IndianaClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Indiana Now — EST/EDT · Indianapolis · Two Time Zones',
+  title: 'Time in Indiana Now — EST/EDT (UTC−5/−4)',
   description: 'What time is it in Indiana right now? Most of Indiana uses Eastern Time (EST/EDT). Northwest Indiana (Gary, Hammond) uses Central Time (CST/CDT). Live Indianapolis clock and best time to call.',
   keywords: ['time in indiana', 'indiana time now', 'what time is it in indiana', 'indianapolis time', 'indiana time zone', 'EST EDT indiana', 'indiana utc-5', 'gary indiana time', 'indiana two time zones', 'fort wayne time', 'indiana time vs uk', 'indiana central time'],
   alternates: { canonical: 'https://whattime.city/indiana/' },

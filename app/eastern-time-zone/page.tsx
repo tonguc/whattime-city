@@ -6,7 +6,7 @@ import HubPageLayout from '@/components/HubPageLayout'
 import TZExplainerClient from '@/components/TZExplainerClient'
 
 export const metadata: Metadata = {
-  title: 'Eastern Time Zone — EST/EDT, UTC-5/UTC-4, States & Cities',
+  title: 'Eastern Time Zone — EST/EDT (UTC−5/−4)',
   description: 'Complete guide to the Eastern Time Zone (ET). Current EST/EDT time, UTC offset, DST dates, all states and major cities in Eastern Time, and time converters.',
   keywords: ['eastern time zone', 'eastern time', 'est time zone', 'edt time zone', 'eastern standard time', 'what time is it in eastern time', 'eastern time now'],
   alternates: { canonical: 'https://whattime.city/eastern-time-zone/' },

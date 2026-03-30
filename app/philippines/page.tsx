@@ -6,7 +6,7 @@ import PhilippinesClockClient from './PhilippinesClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in the Philippines Now — PHT (UTC+8) · Manila, Cebu, Davao',
+  title: 'Time in the Philippines Now — PHT (UTC+8)',
   description:
     'What time is it in the Philippines right now? The Philippines uses PHT (Philippine Time, UTC+8) year-round — no Daylight Saving Time. Live Manila clock, Philippines vs US/UK/Europe, and best time to call.',
   keywords: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     canonical: 'https://whattime.city/philippines/',
   },
   openGraph: {
-    title: 'Current Time in the Philippines — PHT (UTC+8)',
+    title: 'Current Time in the Philippines — PHT',
     description:
       'Live Philippines / Manila time clock. PHT is UTC+8 — the Philippines has no Daylight Saving Time. Check Philippines time vs US, UK, Europe, and Asia.',
     type: 'website',

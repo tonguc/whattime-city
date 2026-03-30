@@ -6,7 +6,7 @@ import PeruClockClient from './PeruClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Peru Now — PET (UTC−5) · Lima · No DST',
+  title: 'Time in Peru Now — PET (UTC−5) · No DST',
   description: 'What time is it in Peru right now? Peru uses Peru Time (PET, UTC−5) year-round with no Daylight Saving Time. Live Lima clock, Peru vs world cities, and best time to call.',
   keywords: ['time in peru', 'peru time now', 'what time is it in peru', 'lima time', 'peru time zone', 'PET peru', 'peru utc-5', 'cusco time', 'arequipa time', 'peru time vs usa', 'peru time vs uk', 'peru time vs colombia'],
   alternates: { canonical: 'https://whattime.city/peru/' },

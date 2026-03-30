@@ -3,11 +3,11 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'EST to PST — Eastern to Pacific Time Converter',
+  title: 'EST to PST — Eastern to Pacific Time',
   description: 'Convert EST to PST instantly. Eastern Standard Time is 3 hours ahead of Pacific Standard Time. Live clocks, conversion table, and business hours overlap.',
   alternates: { canonical: 'https://whattime.city/est-to-pst' },
   openGraph: {
-    title: 'EST to PST Time Converter — Eastern to Pacific',
+    title: 'EST to PST — Eastern to Pacific Time',
     description: 'EST is 3 hours ahead of PST. Live clocks and full conversion table.',
     type: 'website',
     url: 'https://whattime.city/est-to-pst',

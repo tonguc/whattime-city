@@ -5,7 +5,7 @@ import HubPageLayout from '@/components/HubPageLayout'
 import ISTClockClient from './ISTClockClient'
 
 export const metadata: Metadata = {
-  title: 'IST Time Zone — India Standard Time Now | UTC+5:30',
+  title: 'IST — India Standard Time | UTC+5:30',
   description: 'Current IST time. India Standard Time is UTC+5:30 — no Daylight Saving Time. What is IST in the USA? IST is 10.5 hours ahead of EST in winter, 9.5 hours ahead in summer.',
   keywords: ['IST time zone', 'IST time now', 'India Standard Time', 'IST UTC+5:30', 'ist time zones', 'india time zone ist', 'IST to EST', 'what is IST time in USA'],
   alternates: { canonical: 'https://whattime.city/ist/' },

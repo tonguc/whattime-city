@@ -6,7 +6,7 @@ import SierraLeoneClockClient from './SierraLeoneClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Sierra Leone Now — GMT (UTC+0) · Freetown',
+  title: 'Time in Sierra Leone Now — GMT (UTC+0)',
   description: 'What time is it in Sierra Leone right now? Live Freetown clock, time zone info (GMT (UTC+0)), best time to call, and time difference with major cities.',
   keywords: ['time in sierra leone', 'sierra leone time now', 'what time is it in sierra leone', 'freetown time', 'sierra leone time zone'],
   alternates: { canonical: 'https://whattime.city/sierra-leone/' },

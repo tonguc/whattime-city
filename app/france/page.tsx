@@ -6,7 +6,7 @@ import FranceClockClient from './FranceClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in France Now — CET/CEST (UTC+1/+2) · Paris, Lyon, Marseille',
+  title: 'Time in France Now — CET/CEST (UTC+1/+2)',
   description:
     'What time is it in France right now? France uses CET (UTC+1) in winter and CEST (UTC+2) during Central European Summer Time. Live Paris clock, France vs US/UK/Asia, and best time to call.',
   keywords: [

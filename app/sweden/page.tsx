@@ -6,7 +6,7 @@ import SwedenClockClient from './SwedenClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Sweden Now — CET/CEST (UTC+1/+2) · Stockholm, Gothenburg',
+  title: 'Time in Sweden Now — CET/CEST (UTC+1/+2)',
   description: 'What time is it in Sweden right now? Sweden uses CET (UTC+1) in winter and CEST (UTC+2) during Daylight Saving Time. Live Stockholm clock, Sweden vs world cities, and best time to call.',
   keywords: ['time in sweden', 'sweden time now', 'what time is it in sweden', 'stockholm time', 'sweden time zone', 'CET sweden', 'CEST sweden', 'sweden utc+1', 'stockholm time zone', 'sweden time vs usa', 'sweden time vs uk'],
   alternates: { canonical: 'https://whattime.city/sweden/' },

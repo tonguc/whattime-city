@@ -6,7 +6,7 @@ import CubaClockClient from './CubaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Cuba Now — CST/CDT (UTC−5/−4) · Havana · Caribbean DST',
+  title: 'Time in Cuba Now — CST/CDT (UTC−5/−4)',
   description: 'What time is it in Cuba right now? Cuba uses Cuba Standard Time (CST, UTC−5) in winter and Cuba Daylight Time (CDT, UTC−4) in summer. Live Havana clock and best time to call.',
   keywords: ['time in cuba', 'cuba time now', 'what time is it in cuba', 'havana time', 'cuba time zone', 'CST CDT cuba', 'cuba utc-5', 'santiago de cuba time', 'cuba dst', 'cuba time vs usa', 'cuba time vs uk', 'cuba time vs miami'],
   alternates: { canonical: 'https://whattime.city/cuba/' },

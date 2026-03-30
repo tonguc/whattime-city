@@ -6,7 +6,7 @@ import RussiaClockClient from './RussiaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Russia Now — MSK (UTC+3) · Moscow · 11 Time Zones · No DST',
+  title: 'Time in Russia Now — MSK (UTC+3) · No DST',
   description:
     'What time is it in Russia right now? Russia spans 11 time zones from UTC+2 (Kaliningrad) to UTC+12 (Kamchatka). Moscow Time (MSK, UTC+3) is the national reference. Live clocks for all Russian time zones, and best time to call Moscow.',
   keywords: [
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/russia/' },
   openGraph: {
-    title: 'Current Time in Russia — MSK (UTC+3) · 11 Time Zones · No DST since 2014',
+    title: 'Current Time in Russia — MSK (UTC+3)',
     description: 'Live Russia time. Moscow Time (MSK, UTC+3) is the national reference. Russia spans 11 time zones. No Daylight Saving Time since 2014.',
     type: 'website', url: 'https://whattime.city/russia/', siteName: 'whattime.city',
   },

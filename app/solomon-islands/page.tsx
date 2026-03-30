@@ -6,7 +6,7 @@ import SolomonIslandsClockClient from './SolomonIslandsClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Solomon Islands Now — SBT (UTC+11) · Honiara',
+  title: 'Time in Solomon Islands Now — SBT (UTC+11)',
   description: 'What time is it in Solomon Islands right now? Live Honiara clock, time zone info (SBT (UTC+11)), best time to call, and time difference with major cities.',
   keywords: ['time in solomon islands', 'solomon islands time now', 'what time is it in solomon islands', 'honiara time', 'solomon islands time zone'],
   alternates: { canonical: 'https://whattime.city/solomon-islands/' },

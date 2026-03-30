@@ -6,7 +6,7 @@ import HubPageLayout from '@/components/HubPageLayout'
 import TZExplainerClient from '@/components/TZExplainerClient'
 
 export const metadata: Metadata = {
-  title: 'Central Time Zone — CST/CDT, UTC-6/UTC-5, States & Cities',
+  title: 'Central Time Zone — CST/CDT (UTC−6/−5)',
   description: 'Complete guide to the Central Time Zone (CT). Current CST/CDT time, UTC offset, DST dates, all states and major cities in Central Time, and time converters.',
   keywords: ['central time zone', 'central time', 'cst time zone', 'cdt time zone', 'central standard time', 'what time is it in central time', 'central time now'],
   alternates: { canonical: 'https://whattime.city/central-time-zone/' },

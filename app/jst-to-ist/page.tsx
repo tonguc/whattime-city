@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'JST to IST — Japan Standard Time to India Standard Time Converter',
+  title: 'JST to IST Converter — Japan to India Time',
   description: 'Convert JST to IST instantly. Japan Standard Time (UTC+9) is 3 hours 30 minutes ahead of India Standard Time (UTC+5:30). Live clocks and conversion table.',
   alternates: { canonical: 'https://whattime.city/jst-to-ist/' },
   openGraph: { title: 'JST to IST Converter — Japan to India', description: 'JST is 3:30 ahead of IST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/jst-to-ist/', siteName: 'whattime.city' },

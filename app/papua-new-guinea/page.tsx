@@ -6,7 +6,7 @@ import PapuaNewGuineaClockClient from './PapuaNewGuineaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Papua New Guinea Now — PGT (UTC+10) · Port Moresby',
+  title: 'Time in Papua New Guinea — PGT (UTC+10)',
   description: 'What time is it in Papua New Guinea right now? Live Port Moresby clock, time zone info (PGT (UTC+10)), best time to call, and time difference with major cities.',
   keywords: ['time in papua new guinea', 'papua new guinea time now', 'what time is it in papua new guinea', 'port moresby time', 'papua new guinea time zone'],
   alternates: { canonical: 'https://whattime.city/papua-new-guinea/' },

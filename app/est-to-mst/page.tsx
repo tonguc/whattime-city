@@ -3,11 +3,11 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'EST to MST — Eastern to Mountain Time Converter',
+  title: 'EST to MST Converter — Eastern to Mountain',
   description: 'Convert EST to MST instantly. Eastern Standard Time is 2 hours ahead of Mountain Standard Time. Live clocks, conversion table, and business hours overlap.',
   alternates: { canonical: 'https://whattime.city/est-to-mst/' },
   openGraph: {
-    title: 'EST to MST Time Converter — Eastern to Mountain',
+    title: 'EST to MST — Eastern to Mountain Time',
     description: 'EST is 2 hours ahead of MST. Live clocks and full conversion table.',
     type: 'website',
     url: 'https://whattime.city/est-to-mst/',

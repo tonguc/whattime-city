@@ -6,7 +6,7 @@ import CongoClockClient from './CongoClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Congo Now — WAT (UTC+1) · Brazzaville',
+  title: 'Time in Congo Now — WAT (UTC+1)',
   description: 'What time is it in Congo right now? Live Brazzaville clock, time zone info (WAT (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in congo', 'congo time now', 'what time is it in congo', 'brazzaville time', 'congo time zone'],
   alternates: { canonical: 'https://whattime.city/congo/' },

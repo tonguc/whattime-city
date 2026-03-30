@@ -6,7 +6,7 @@ import BrazilClockClient from './BrazilClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Brazil Now — BRT (UTC−3) · São Paulo, Rio, Brasília',
+  title: 'Time in Brazil Now — BRT (UTC−3)',
   description:
     'What time is it in Brazil right now? Brazil uses BRT (UTC−3) — Daylight Saving Time was abolished in 2019. Live São Paulo clock, Brazil time zones, and time vs US, UK, Europe.',
   keywords: [

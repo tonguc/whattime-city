@@ -6,7 +6,7 @@ import EswatiniClockClient from './EswatiniClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Eswatini Now — SAST (UTC+2) · Mbabane',
+  title: 'Time in Eswatini Now — SAST (UTC+2)',
   description: 'What time is it in Eswatini right now? Live Mbabane clock, time zone info (SAST (UTC+2)), best time to call, and time difference with major cities.',
   keywords: ['time in eswatini', 'eswatini time now', 'what time is it in eswatini', 'mbabane time', 'eswatini time zone'],
   alternates: { canonical: 'https://whattime.city/eswatini/' },

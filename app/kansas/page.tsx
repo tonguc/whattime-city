@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import KansasClockClient from './KansasClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Kansas Now — CST/CDT · Wichita · Central Time Zone',
+  title: 'Time in Kansas Now — CST/CDT (UTC−6/−5)',
   description: 'What time is it in Kansas right now? Kansas uses Central Time (CST/CDT). Wichita is on CST (UTC−6) in winter and CDT (UTC−5) in summer. Live clock and best time to call.',
   keywords: ['time in kansas', 'kansas time now', 'what time is it in kansas', 'wichita time', 'kansas time zone', 'CST CDT kansas', 'kansas utc-6', 'overland park time', 'kansas city kansas time', 'kansas central time', 'kansas time vs eastern', 'kansas time vs uk'],
   alternates: { canonical: 'https://whattime.city/kansas/' },

@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import FloridaClockClient from './FloridaClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Florida Now — EST/EDT (UTC−5/−4) · Miami, Orlando, Tampa',
+  title: 'Time in Florida Now — EST/EDT (UTC−5/−4)',
   description:
     'What time is it in Florida right now? Most of Florida uses EST (UTC−5) in winter and EDT (UTC−4) during Daylight Saving Time. Pensacola uses Central Time. Live Miami clock and best time to call.',
   keywords: [

@@ -6,7 +6,7 @@ import KyrgyzstanClockClient from './KyrgyzstanClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Kyrgyzstan Now — KGT (UTC+6) · Bishkek',
+  title: 'Time in Kyrgyzstan Now — KGT (UTC+6)',
   description: 'What time is it in Kyrgyzstan right now? Live Bishkek clock, time zone info (KGT (UTC+6)), best time to call, and time difference with major cities.',
   keywords: ['time in kyrgyzstan', 'kyrgyzstan time now', 'what time is it in kyrgyzstan', 'bishkek time', 'kyrgyzstan time zone'],
   alternates: { canonical: 'https://whattime.city/kyrgyzstan/' },

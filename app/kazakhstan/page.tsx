@@ -6,7 +6,7 @@ import KazakhstanClockClient from './KazakhstanClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Kazakhstan Now — AQTT (UTC+5) · Astana',
+  title: 'Time in Kazakhstan Now — AQTT (UTC+5)',
   description: 'What time is it in Kazakhstan right now? Live Astana clock, time zone info (AQTT (UTC+5)), best time to call, and time difference with major cities.',
   keywords: ['time in kazakhstan', 'kazakhstan time now', 'what time is it in kazakhstan', 'astana time', 'kazakhstan time zone'],
   alternates: { canonical: 'https://whattime.city/kazakhstan/' },

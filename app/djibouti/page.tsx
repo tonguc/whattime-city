@@ -6,7 +6,7 @@ import DjiboutiClockClient from './DjiboutiClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Djibouti Now — EAT (UTC+3) · Djibouti City',
+  title: 'Time in Djibouti Now — EAT (UTC+3)',
   description: 'What time is it in Djibouti right now? Live Djibouti City clock, time zone info (EAT (UTC+3)), best time to call, and time difference with major cities.',
   keywords: ['time in djibouti', 'djibouti time now', 'what time is it in djibouti', 'djibouti city time', 'djibouti time zone'],
   alternates: { canonical: 'https://whattime.city/djibouti/' },

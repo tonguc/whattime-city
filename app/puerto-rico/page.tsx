@@ -6,7 +6,7 @@ import PuertoRicoClockClient from './PuertoRicoClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Puerto Rico Now — AST (UTC-4) · San Juan',
+  title: 'Time in Puerto Rico Now — AST (UTC−4)',
   description: 'What time is it in Puerto Rico right now? Live San Juan clock, time zone info (AST (UTC-4)), best time to call, and time difference with major cities.',
   keywords: ['time in puerto rico', 'puerto rico time now', 'what time is it in puerto rico', 'san juan time', 'puerto rico time zone'],
   alternates: { canonical: 'https://whattime.city/puerto-rico/' },

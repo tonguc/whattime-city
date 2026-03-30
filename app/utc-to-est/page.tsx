@@ -3,11 +3,11 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'UTC to EST — Universal Time to Eastern Time Converter',
+  title: 'UTC to EST Converter — Universal to Eastern',
   description: 'Convert UTC to EST instantly. UTC is 5 hours ahead of Eastern Standard Time (EST, UTC-5). Live clocks, full conversion table, and hourly reference.',
   alternates: { canonical: 'https://whattime.city/utc-to-est/' },
   openGraph: {
-    title: 'UTC to EST Converter — Universal to Eastern Time',
+    title: 'UTC to EST Converter — UTC to Eastern',
     description: 'UTC is 5 hours ahead of EST. Live clocks and full conversion table.',
     type: 'website',
     url: 'https://whattime.city/utc-to-est/',

@@ -3,7 +3,7 @@ import ContentPageWrapper from '@/components/ContentPageWrapper'
 import SunriseSunsetClient from './SunriseSunsetClient'
 
 export const metadata: Metadata = {
-  title: 'Sunrise & Sunset Times Today — Sun Calculator | whattime.city',
+  title: 'Sunrise & Sunset Times — Sun Calculator',
   description:
     'Check today\'s sunrise and sunset times for any city. Live sun calculator with dawn, dusk, solar noon, and daylight hours. Updated every minute.',
   keywords: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/sunrise-sunset/' },
   openGraph: {
-    title: 'Sunrise & Sunset Times Today — Sun Calculator',
+    title: 'Sunrise & Sunset Times — Sun Calculator',
     description:
       'Check today\'s sunrise and sunset times for any city worldwide. Live sun calculator with dawn, dusk, solar noon, and daylight hours.',
     type: 'website',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sunrise & Sunset Times Today — Sun Calculator',
+    title: 'Sunrise & Sunset Times — Sun Calculator',
     description:
       'Live sunrise and sunset calculator for any city. Dawn, dusk, solar noon, and daylight duration.',
   },

@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import ColoradoClockClient from './ColoradoClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Colorado Now — MST/MDT (UTC−7/−6) · Denver, Colorado Springs',
+  title: 'Time in Colorado Now — MST/MDT · Denver',
   description: 'What time is it in Colorado right now? Colorado uses Mountain Standard Time (MST, UTC−7) in winter and Mountain Daylight Time (MDT, UTC−6) during Daylight Saving Time. Live Denver clock and world comparison.',
   keywords: ['time in colorado', 'colorado time now', 'what time is it in colorado', 'denver time', 'colorado time zone', 'MST colorado', 'MDT colorado', 'mountain time colorado', 'colorado utc-7', 'denver time zone', 'colorado time vs california', 'colorado time vs new york'],
   alternates: { canonical: 'https://whattime.city/colorado/' },

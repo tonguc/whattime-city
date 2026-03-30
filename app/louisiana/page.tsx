@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import LouisianaClockClient from './LouisianaClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Louisiana Now — CST/CDT · New Orleans · Central Time Zone',
+  title: 'Time in Louisiana Now — CST/CDT (UTC−6/−5)',
   description: 'What time is it in Louisiana right now? Louisiana uses Central Time (CST/CDT). New Orleans is on CST (UTC−6) in winter and CDT (UTC−5) in summer. Live clock and best time to call.',
   keywords: ['time in louisiana', 'louisiana time now', 'what time is it in louisiana', 'new orleans time', 'louisiana time zone', 'CST CDT louisiana', 'louisiana utc-6', 'baton rouge time', 'shreveport time', 'louisiana central time', 'louisiana time vs eastern', 'louisiana time vs uk'],
   alternates: { canonical: 'https://whattime.city/louisiana/' },

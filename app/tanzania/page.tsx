@@ -6,7 +6,7 @@ import TanzaniaClockClient from './TanzaniaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Tanzania Now — EAT (UTC+3) · Dar es Salaam · No DST',
+  title: 'Time in Tanzania Now — EAT (UTC+3) · No DST',
   description: 'What time is it in Tanzania right now? Tanzania uses East Africa Time (EAT, UTC+3) year-round with no Daylight Saving Time. Live Dar es Salaam clock, Tanzania vs world cities.',
   keywords: ['time in tanzania', 'tanzania time now', 'what time is it in tanzania', 'dar es salaam time', 'tanzania time zone', 'EAT tanzania', 'tanzania utc+3', 'dodoma time', 'zanzibar time', 'tanzania time vs uk', 'tanzania time vs usa', 'east africa time'],
   alternates: { canonical: 'https://whattime.city/tanzania/' },

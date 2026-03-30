@@ -6,7 +6,7 @@ import PalestineClockClient from './PalestineClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Palestine Now — EET (UTC+2) · Ramallah',
+  title: 'Time in Palestine Now — EET (UTC+2)',
   description: 'What time is it in Palestine right now? Live Ramallah clock, time zone info (EET (UTC+2)), best time to call, and time difference with major cities.',
   keywords: ['time in palestine', 'palestine time now', 'what time is it in palestine', 'ramallah time', 'palestine time zone'],
   alternates: { canonical: 'https://whattime.city/palestine/' },

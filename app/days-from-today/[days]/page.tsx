@@ -1,92 +1,105 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
-import Link from 'next/link'
+import DaysFromTodayIndividualClient from './DaysFromTodayIndividualClient'
 
-// Pre-generate pages for top-searched day counts
-const PREGENERATED_DAYS = [
-  7, 8, 10, 14, 15, 17, 20, 22, 25, 29, 30, 42,
-  45, 60, 90, 100, 120, 150, 180, 365,
-]
+// Pre-generate the highest-traffic day counts
+const PRE_GENERATED = [7, 10, 14, 15, 20, 21, 25, 30, 45, 60, 90, 100, 120, 150, 180, 200, 270, 365]
 
 export async function generateStaticParams() {
-  return PREGENERATED_DAYS.map(d => ({ days: String(d) }))
+  return PRE_GENERATED.map(d => ({ days: String(d) }))
 }
 
-export const revalidate = 86400 // revalidate daily so dates stay current
-
-function addDays(date: Date, n: number): Date {
-  const d = new Date(date)
-  d.setDate(d.getDate() + n)
-  return d
-}
-
-function fmt(date: Date): string {
-  return date.toLocaleDateString('en-US', {
-    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-  })
-}
-
-function fmtShort(date: Date): string {
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric', month: 'long', day: 'numeric',
-  })
-}
-
-function isoDate(date: Date): string {
-  return date.toISOString().split('T')[0]
-}
-
-function weekNumber(date: Date): number {
-  const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()))
-  d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7))
-  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1))
-  return Math.ceil((((d.getTime() - yearStart.getTime()) / 86400000) + 1) / 7)
-}
+// Revalidate daily — the actual date changes every day
+export const revalidate = 86400
 
 interface Props {
   params: Promise<{ days: string }>
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { days } = await params
-  const n = parseInt(days)
-  if (isNaN(n) || n < 1 || n > 365) return { title: 'Not Found' }
+function getDateFromToday(n: number): Date {
+  const d = new Date()
+  d.setDate(d.getDate() + n)
+  return d
+}
 
-  const today = new Date()
-  const future = addDays(today, n)
-  const futureFmt = fmtShort(future)
-  const weekday = future.toLocaleDateString('en-US', { weekday: 'long' })
+function formatDateLong(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+  })
+}
+
+function formatDateShort(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    month: 'short', day: 'numeric', year: 'numeric',
+  })
+}
+
+function getWeeksAndDays(n: number): string {
+  const weeks = Math.floor(n / 7)
+  const days = n % 7
+  if (weeks === 0) return `${days} day${days !== 1 ? 's' : ''}`
+  if (days === 0) return `${weeks} week${weeks !== 1 ? 's' : ''}`
+  return `${weeks} week${weeks !== 1 ? 's' : ''} and ${days} day${days !== 1 ? 's' : ''}`
+}
+
+function getApproxMonths(n: number): string {
+  const months = n / 30.44
+  if (months < 1) return ''
+  return `approximately ${months.toFixed(1).replace('.0', '')} month${Math.round(months) !== 1 ? 's' : ''}`
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { days: daysStr } = await params
+  const n = parseInt(daysStr, 10)
+  if (isNaN(n) || n < 1 || n > 3650) return { title: 'Days From Today' }
+
+  const targetDate = getDateFromToday(n)
+  const dateStr = formatDateShort(targetDate)
+  const dayName = targetDate.toLocaleDateString('en-US', { weekday: 'long' })
+
+  const title = `${n} Days From Today — ${dateStr}`
+  const description = `What date is ${n} days from today? ${n} days from today is ${dateStr} (${dayName}). That's ${getWeeksAndDays(n)} from now. Calculate the exact date with day name and week number.`
 
   return {
-    title: `${n} Days From Today — ${weekday}, ${futureFmt}`,
-    description: `${n} days from today is ${fmt(future)}. See the exact date, day of week, week number, and how many months away.`,
+    title,
+    description,
     alternates: { canonical: `https://whattime.city/days-from-today/${n}/` },
     openGraph: {
-      title: `${n} Days From Today — ${futureFmt}`,
-      description: `${n} days from today is ${fmt(future)}.`,
+      title,
+      description,
       type: 'website',
       url: `https://whattime.city/days-from-today/${n}/`,
       siteName: 'whattime.city',
     },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
   }
 }
 
-export default async function DaysFromTodayDetailPage({ params }: Props) {
-  const { days } = await params
-  const n = parseInt(days)
-  if (isNaN(n) || n < 1 || n > 365) notFound()
+export default async function DaysFromTodayPage({ params }: Props) {
+  const { days: daysStr } = await params
+  const n = parseInt(daysStr, 10)
+  if (isNaN(n) || n < 1 || n > 3650) notFound()
 
-  const today = new Date()
-  const future = addDays(today, n)
-  const past = addDays(today, -n)
+  const targetDate = getDateFromToday(n)
+  const dateStr = formatDateLong(targetDate)
+  const shortDate = formatDateShort(targetDate)
+  const dayName = targetDate.toLocaleDateString('en-US', { weekday: 'long' })
+  const monthName = targetDate.toLocaleDateString('en-US', { month: 'long' })
+  const weekNum = (() => {
+    const d = new Date(Date.UTC(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate()))
+    d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7))
+    const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1))
+    return Math.ceil(((d.getTime() - yearStart.getTime()) / 86400000 + 1) / 7)
+  })()
+  const weeksAndDays = getWeeksAndDays(n)
+  const approxMonths = getApproxMonths(n)
 
-  const futureWeek = weekNumber(future)
-  const futureYear = future.getFullYear()
-  const weeks = Math.floor(n / 7)
-  const remainDays = n % 7
-  const months = parseFloat((n / 30.44).toFixed(1))
-
+  // JSON-LD schemas
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -96,7 +109,7 @@ export default async function DaysFromTodayDetailPage({ params }: Props) {
         name: `What date is ${n} days from today?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `${n} days from today is ${fmt(future)} (${isoDate(future)}).`,
+          text: `${n} days from today is ${dateStr}. That is ${weeksAndDays}${approxMonths ? ` (${approxMonths})` : ''} from today.`,
         },
       },
       {
@@ -104,15 +117,7 @@ export default async function DaysFromTodayDetailPage({ params }: Props) {
         name: `What day of the week is ${n} days from today?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `${n} days from today falls on a ${future.toLocaleDateString('en-US', { weekday: 'long' })}.`,
-        },
-      },
-      {
-        '@type': 'Question',
-        name: `What date was ${n} days ago?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `${n} days ago was ${fmt(past)} (${isoDate(past)}).`,
+          text: `${n} days from today falls on a ${dayName}, ${shortDate}.`,
         },
       },
       {
@@ -120,7 +125,7 @@ export default async function DaysFromTodayDetailPage({ params }: Props) {
         name: `How many weeks is ${n} days?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `${n} days equals ${weeks} week${weeks !== 1 ? 's' : ''}${remainDays > 0 ? ` and ${remainDays} day${remainDays !== 1 ? 's' : ''}` : ''} (approximately ${months} months).`,
+          text: `${n} days is ${weeksAndDays}. In decimal weeks, that is ${(n / 7).toFixed(2)} weeks.`,
         },
       },
       {
@@ -128,7 +133,7 @@ export default async function DaysFromTodayDetailPage({ params }: Props) {
         name: `What week number is ${n} days from today?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `${n} days from today falls in ISO week ${futureWeek} of ${futureYear}.`,
+          text: `${n} days from today falls in ISO Week ${weekNum} of ${targetDate.getFullYear()}.`,
         },
       },
     ],
@@ -144,117 +149,20 @@ export default async function DaysFromTodayDetailPage({ params }: Props) {
     ],
   }
 
-  const relatedDays = PREGENERATED_DAYS.filter(d => d !== n).slice(0, 10)
-
   return (
     <ContentPageWrapper>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-
-      <article className="max-w-2xl mx-auto px-4 py-8">
-        {/* Breadcrumb */}
-        <nav className="mb-4 text-sm text-slate-500" aria-label="Breadcrumb">
-          <ol className="flex flex-wrap items-center gap-1">
-            <li><Link href="/" className="hover:text-slate-700 underline">Home</Link></li>
-            <li className="text-slate-400">/</li>
-            <li><Link href="/days-from-today/" className="hover:text-slate-700 underline">Days From Today</Link></li>
-            <li className="text-slate-400">/</li>
-            <li className="text-slate-700">{n} Days</li>
-          </ol>
-        </nav>
-
-        <h1 className="text-3xl font-bold text-slate-800 mb-2 sm:text-4xl">
-          {n} Days From Today
-        </h1>
-
-        {/* Primary Answer — featured snippet target */}
-        <div className="rounded-xl border-2 border-blue-200 bg-blue-50 p-6 mb-8">
-          <p className="text-sm font-semibold uppercase tracking-wide text-blue-500 mb-1">
-            {n} days from today is:
-          </p>
-          <p className="text-3xl font-bold text-blue-800 tabular-nums mb-1">
-            {fmt(future)}
-          </p>
-          <p className="text-sm text-blue-600">
-            ISO date: <span className="font-mono">{isoDate(future)}</span>
-            {' · '}Week {futureWeek} of {futureYear}
-          </p>
-        </div>
-
-        {/* Quick stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-          <div className="rounded-xl border border-slate-200 bg-white p-4 text-center">
-            <p className="text-xs text-slate-500 mb-1">Day of Week</p>
-            <p className="font-bold text-slate-800">{future.toLocaleDateString('en-US', { weekday: 'long' })}</p>
-          </div>
-          <div className="rounded-xl border border-slate-200 bg-white p-4 text-center">
-            <p className="text-xs text-slate-500 mb-1">In Weeks</p>
-            <p className="font-bold text-slate-800">{weeks}w {remainDays}d</p>
-          </div>
-          <div className="rounded-xl border border-slate-200 bg-white p-4 text-center">
-            <p className="text-xs text-slate-500 mb-1">In Months</p>
-            <p className="font-bold text-slate-800">~{months} months</p>
-          </div>
-          <div className="rounded-xl border border-slate-200 bg-white p-4 text-center">
-            <p className="text-xs text-slate-500 mb-1">ISO Week</p>
-            <p className="font-bold text-slate-800">W{futureWeek} / {futureYear}</p>
-          </div>
-        </div>
-
-        {/* Also: X days AGO */}
-        <div className="rounded-xl border border-slate-200 bg-slate-50 p-5 mb-8">
-          <p className="text-sm font-semibold text-slate-600 mb-1">{n} days ago was:</p>
-          <p className="text-xl font-bold text-slate-800">{fmt(past)}</p>
-          <p className="text-sm text-slate-500 mt-1">ISO: <span className="font-mono">{isoDate(past)}</span></p>
-        </div>
-
-        {/* FAQ */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold text-slate-800 mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            <div className="rounded-xl border border-slate-200 bg-white p-5">
-              <h3 className="font-semibold text-slate-800 mb-1">What date is {n} days from today?</h3>
-              <p className="text-slate-600">{fmt(future)} ({isoDate(future)}).</p>
-            </div>
-            <div className="rounded-xl border border-slate-200 bg-white p-5">
-              <h3 className="font-semibold text-slate-800 mb-1">What day of the week is it?</h3>
-              <p className="text-slate-600">{n} days from today falls on a <strong>{future.toLocaleDateString('en-US', { weekday: 'long' })}</strong>.</p>
-            </div>
-            <div className="rounded-xl border border-slate-200 bg-white p-5">
-              <h3 className="font-semibold text-slate-800 mb-1">What date was {n} days ago?</h3>
-              <p className="text-slate-600">{fmt(past)} ({isoDate(past)}).</p>
-            </div>
-            <div className="rounded-xl border border-slate-200 bg-white p-5">
-              <h3 className="font-semibold text-slate-800 mb-1">How many weeks is {n} days?</h3>
-              <p className="text-slate-600">
-                {n} days = <strong>{weeks} week{weeks !== 1 ? 's' : ''}{remainDays > 0 ? ` and ${remainDays} day${remainDays !== 1 ? 's' : ''}` : ''}</strong> (≈ {months} months).
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Related pages */}
-        <section>
-          <h2 className="text-xl font-bold text-slate-800 mb-3">Other Day Counts</h2>
-          <div className="flex flex-wrap gap-2">
-            {relatedDays.map(d => (
-              <Link
-                key={d}
-                href={`/days-from-today/${d}/`}
-                className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700 hover:border-blue-300 hover:text-blue-700"
-              >
-                {d} days
-              </Link>
-            ))}
-            <Link
-              href="/days-from-today/"
-              className="rounded-lg border border-blue-200 bg-blue-50 px-3 py-1.5 text-sm text-blue-700 hover:bg-blue-100"
-            >
-              Custom calculator →
-            </Link>
-          </div>
-        </section>
-      </article>
+      <DaysFromTodayIndividualClient
+        days={n}
+        targetDateStr={dateStr}
+        shortDate={shortDate}
+        dayName={dayName}
+        monthName={monthName}
+        weekNum={weekNum}
+        weeksAndDays={weeksAndDays}
+        approxMonths={approxMonths}
+      />
     </ContentPageWrapper>
   )
 }

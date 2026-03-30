@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'GMT to IST — Greenwich Mean Time to India Standard Time Converter',
+  title: 'GMT to IST Converter — GMT to India',
   description: 'Convert GMT to IST instantly. GMT (UTC+0) is 5 hours 30 minutes behind India Standard Time (UTC+5:30). Live clocks, London–India scheduling guide.',
   alternates: { canonical: 'https://whattime.city/gmt-to-ist/' },
   openGraph: { title: 'GMT to IST Converter — London to India', description: 'GMT is 5:30 behind IST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/gmt-to-ist/', siteName: 'whattime.city' },

@@ -5,9 +5,9 @@ import HubPageHeader from '@/components/HubPageHeader'
 import CaliClockClient from './CaliClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in California Now — PST/PDT',
+  title: 'Time in California Now — PST/PDT (UTC−8/−7)',
   description:
-    'What time is it in California right now? California uses PST (UTC−8) in winter and PDT (UTC−7) in summer. All cities — Los Angeles, San Francisco, San Diego, Sacramento — share Pacific Time. Live clock, time differences, and DST dates.',
+    'What time is it in California right now? California uses PST (UTC−8) in winter and PDT (UTC−7) during Daylight Saving Time. Live Los Angeles clock, California vs world cities, and best time to call.',
   keywords: [
     'time in california',
     'california time now',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     canonical: 'https://whattime.city/california/',
   },
   openGraph: {
-    title: 'Current Time in California — PST/PDT (UTC−8/−7)',
+    title: 'Current Time in California — PST/PDT',
     description:
       'Live California time clock. PST is UTC−8 in winter; PDT is UTC−7 during Daylight Saving Time. Check California time vs New York, London, Europe, and Asia.',
     type: 'website',
@@ -56,7 +56,7 @@ const faqSchema = {
       name: 'What time is it in California right now?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'California, USA uses Pacific Standard Time (PST, UTC−8) in winter and Pacific Daylight Time (PDT, UTC−7) in summer. Clocks spring forward on the second Sunday of March and fall back on the first Sunday of November. All cities — Los Angeles, San Francisco, San Diego, San Jose, Sacramento — share the same time zone (IANA: America/Los_Angeles).',
+        text: 'California uses Pacific Time — PST (UTC−8) in winter and PDT (UTC−7) during Daylight Saving Time. The live clock at the top of this page shows the exact current time in California. All major California cities — Los Angeles, San Francisco, San Diego, San Jose, and Sacramento — are on the same time zone.',
       },
     },
     {

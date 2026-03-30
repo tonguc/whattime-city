@@ -6,7 +6,7 @@ import KuwaitClockClient from './KuwaitClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Kuwait Now — AST (UTC+3) · Kuwait City',
+  title: 'Time in Kuwait Now — AST (UTC+3)',
   description: 'What time is it in Kuwait right now? Live Kuwait City clock, time zone info (AST (UTC+3)), best time to call, and time difference with major cities.',
   keywords: ['time in kuwait', 'kuwait time now', 'what time is it in kuwait', 'kuwait city time', 'kuwait time zone'],
   alternates: { canonical: 'https://whattime.city/kuwait/' },

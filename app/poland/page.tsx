@@ -6,7 +6,7 @@ import PolandClockClient from './PolandClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Poland Now — CET/CEST (UTC+1/+2) · Warsaw · Central European Time',
+  title: 'Time in Poland Now — CET/CEST (UTC+1/+2)',
   description: 'What time is it in Poland right now? Poland uses Central European Time (CET, UTC+1) in winter and CEST (UTC+2) in summer. Live Warsaw clock, Poland vs world cities, and best time to call.',
   keywords: ['time in poland', 'poland time now', 'what time is it in poland', 'warsaw time', 'poland time zone', 'CET CEST poland', 'poland utc+1', 'krakow time', 'gdansk time', 'wroclaw time', 'poland time vs uk', 'poland time vs usa'],
   alternates: { canonical: 'https://whattime.city/poland/' },

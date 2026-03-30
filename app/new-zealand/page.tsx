@@ -6,7 +6,7 @@ import NewZealandClockClient from './NewZealandClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in New Zealand Now — NZST/NZDT (UTC+12/+13) · Auckland, Wellington · Chatham Islands',
+  title: 'Time in New Zealand Now — NZST/NZDT (UTC+12)',
   description:
     'What time is it in New Zealand right now? New Zealand uses NZST (UTC+12) in winter and NZDT (UTC+13) during Daylight Saving Time — opposite to the Northern Hemisphere. Chatham Islands are 45 minutes ahead. Live Auckland clock and world comparison.',
   keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/new-zealand/' },
   openGraph: {
-    title: 'Current Time in New Zealand — NZST (UTC+12) / NZDT (UTC+13) · Chatham +45min',
+    title: 'Current Time in New Zealand — NZST/NZDT',
     description: 'Live New Zealand time. NZST (UTC+12) in winter, NZDT (UTC+13) in summer (Southern Hemisphere DST). Chatham Islands are 45 minutes ahead of the NZ mainland.',
     type: 'website', url: 'https://whattime.city/new-zealand/', siteName: 'whattime.city',
   },

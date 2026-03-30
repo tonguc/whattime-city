@@ -6,7 +6,7 @@ import TajikistanClockClient from './TajikistanClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Tajikistan Now — TJT (UTC+5) · Dushanbe',
+  title: 'Time in Tajikistan Now — TJT (UTC+5)',
   description: 'What time is it in Tajikistan right now? Live Dushanbe clock, time zone info (TJT (UTC+5)), best time to call, and time difference with major cities.',
   keywords: ['time in tajikistan', 'tajikistan time now', 'what time is it in tajikistan', 'dushanbe time', 'tajikistan time zone'],
   alternates: { canonical: 'https://whattime.city/tajikistan/' },

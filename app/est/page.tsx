@@ -5,7 +5,7 @@ import HubPageLayout from '@/components/HubPageLayout'
 import TZExplainerClient from '@/components/TZExplainerClient'
 
 export const metadata: Metadata = {
-  title: 'EST — Current Eastern Standard Time Now | UTC-5',
+  title: 'EST — Eastern Standard Time | UTC−5',
   description: 'What time is it in EST right now? Eastern Standard Time (EST) is UTC-5, used by the US East Coast in winter. Includes live clock, EST vs EDT difference, and major cities.',
   keywords: ['EST', 'eastern standard time', 'EST time now', 'EST now', 'what time is it in EST', 'UTC-5', 'eastern time now'],
   alternates: { canonical: 'https://whattime.city/est/' },

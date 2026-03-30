@@ -2,10 +2,10 @@ import { Metadata } from 'next'
 import WorldMap from '@/components/WorldMap'
 
 export const metadata: Metadata = {
-  title: 'Time Zone Map — World Time Zones With Live Clocks',
+  title: 'World Time Zone Map — Live Clocks',
   description: 'Interactive time zone map showing all world time zones with live clocks. See current time in every country, UTC offsets, day/night overlay, and time differences at a glance.',
   openGraph: {
-    title: 'Time Zone Map — World Time Zones With Live Clocks',
+    title: 'World Time Zone Map — Live Clocks',
     description: 'Interactive time zone map with live clocks for every major city. See day and night zones, UTC offsets, and compare time zones worldwide.',
     type: 'website',
     siteName: 'whattime.city',

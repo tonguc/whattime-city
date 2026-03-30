@@ -3,11 +3,11 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'EST to CST — Eastern to Central Time (1 Hour)',
+  title: 'EST to CST — Eastern 1 Hour Ahead of Central',
   description: 'Convert EST to CST instantly. Eastern Standard Time is 1 hour ahead of Central Standard Time. Live clocks, conversion table, and business hours overlap.',
   alternates: { canonical: 'https://whattime.city/est-to-cst/' },
   openGraph: {
-    title: 'EST to CST Time Converter — Eastern to Central',
+    title: 'EST to CST — Eastern to Central Time',
     description: 'EST is 1 hour ahead of CST. Live clocks and full conversion table.',
     type: 'website',
     url: 'https://whattime.city/est-to-cst/',

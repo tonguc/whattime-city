@@ -6,7 +6,7 @@ import MozambiqueClockClient from './MozambiqueClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Mozambique Now — CAT (UTC+2) · Maputo',
+  title: 'Time in Mozambique Now — CAT (UTC+2)',
   description: 'What time is it in Mozambique right now? Live Maputo clock, time zone info (CAT (UTC+2)), best time to call, and time difference with major cities.',
   keywords: ['time in mozambique', 'mozambique time now', 'what time is it in mozambique', 'maputo time', 'mozambique time zone'],
   alternates: { canonical: 'https://whattime.city/mozambique/' },

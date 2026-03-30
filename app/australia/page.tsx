@@ -6,7 +6,7 @@ import AustraliaClockClient from './AustraliaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Australia Now — AEST/AEDT · Sydney, Melbourne, Brisbane, Perth',
+  title: 'Time in Australia Now — AEST/AEDT',
   description:
     'What time is it in Australia right now? Australia has 5 time zones — AEST (UTC+10), ACST (UTC+9:30), AWST (UTC+8), and more. Live Sydney clock, all Australian time zones, and best time to call.',
   keywords: [
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     canonical: 'https://whattime.city/australia/',
   },
   openGraph: {
-    title: 'Current Time in Australia — AEST/AEDT & All Time Zones',
+    title: 'Current Time in Australia — AEST/AEDT',
     description:
       'Live Australia time. Sydney uses AEST (UTC+10) or AEDT (UTC+11). Australia spans 5 time zones from Perth (UTC+8) to Sydney (UTC+10/+11). Check all Australian city times.',
     type: 'website',

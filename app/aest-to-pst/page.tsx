@@ -3,11 +3,11 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'AEST to PST — Australian Eastern to Pacific Time Converter',
+  title: 'AEST to PST Converter — Australia to Pacific',
   description: 'Convert AEST to PST instantly. Australian Eastern Standard Time (UTC+10) is 18 hours ahead of Pacific Standard Time (UTC-8). Live clocks, conversion table, and overlap window.',
   alternates: { canonical: 'https://whattime.city/aest-to-pst/' },
   openGraph: {
-    title: 'AEST to PST Converter — Australian Eastern to Pacific Time',
+    title: 'AEST to PST Converter — Australia to Pacific',
     description: 'AEST is 18 hours ahead of PST. Live clocks and full conversion table.',
     type: 'website',
     url: 'https://whattime.city/aest-to-pst/',

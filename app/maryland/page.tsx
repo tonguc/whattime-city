@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import MarylandClockClient from './MarylandClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Maryland Now — EST/EDT · Baltimore · Eastern Time Zone',
+  title: 'Time in Maryland Now — EST/EDT (UTC−5/−4)',
   description: 'What time is it in Maryland right now? Maryland uses Eastern Time (EST/EDT). Baltimore is on EST (UTC−5) in winter and EDT (UTC−4) in summer. Live clock and best time to call.',
   keywords: ['time in maryland', 'maryland time now', 'what time is it in maryland', 'baltimore time', 'maryland time zone', 'EST EDT maryland', 'maryland utc-5', 'annapolis time', 'silver spring time', 'maryland time vs uk', 'maryland time vs california', 'maryland eastern time'],
   alternates: { canonical: 'https://whattime.city/maryland/' },

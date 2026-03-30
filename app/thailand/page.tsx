@@ -6,7 +6,7 @@ import ThailandClockClient from './ThailandClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Thailand Now — ICT (UTC+7) · Bangkok, Phuket · No DST',
+  title: 'Time in Thailand Now — ICT (UTC+7) · No DST',
   description: 'What time is it in Thailand right now? Thailand uses Indochina Time (ICT, UTC+7) year-round with no Daylight Saving Time. Live Bangkok clock, Thailand vs world cities, and best time to call.',
   keywords: ['time in thailand', 'thailand time now', 'what time is it in thailand', 'bangkok time', 'thailand time zone', 'ICT thailand', 'thailand utc+7', 'phuket time', 'chiang mai time', 'thailand time vs usa', 'thailand time vs uk', 'thailand time vs singapore'],
   alternates: { canonical: 'https://whattime.city/thailand/' },

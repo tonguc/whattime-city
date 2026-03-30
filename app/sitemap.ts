@@ -231,10 +231,10 @@ export default async function sitemap() {
     { slug: 'days-from-today', priority: 0.8 },
     { slug: 'days-ago', priority: 0.8 },
     { slug: 'week-number', priority: 0.9 },
+    { slug: 'stopwatch', priority: 0.9 },
     { slug: 'date-calculator', priority: 0.8 },
     { slug: 'countdown', priority: 0.8 },
     { slug: 'timer', priority: 0.9 },
-    { slug: 'stopwatch', priority: 0.9 },
     { slug: 'todays-date', priority: 0.9 },
     { slug: 'calendar', priority: 0.9 },
     { slug: 'sunrise-sunset', priority: 0.8 },
@@ -327,6 +327,21 @@ export default async function sitemap() {
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }]
+
+  // Days-from-today and days-ago individual pages (pre-generated)
+  const daysPregenerated = [7, 8, 10, 14, 15, 17, 20, 22, 25, 29, 30, 42, 45, 60, 90, 100, 120, 150, 180, 365]
+  const daysFromTodayRoutes = daysPregenerated.map(d => ({
+    url: `${baseUrl}/days-from-today/${d}/`,
+    lastModified: now,
+    changeFrequency: 'daily' as const,
+    priority: 0.7,
+  }))
+  const daysAgoRoutes = daysPregenerated.map(d => ({
+    url: `${baseUrl}/days-ago/${d}/`,
+    lastModified: now,
+    changeFrequency: 'daily' as const,
+    priority: 0.7,
+  }))
 
   // Sunrise/sunset hub
   const sunriseRoutes = [{

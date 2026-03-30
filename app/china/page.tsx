@@ -6,7 +6,7 @@ import ChinaClockClient from './ChinaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in China Now — CST (UTC+8) · Beijing, Shanghai · 1 Time Zone',
+  title: 'Time in China Now — CST (UTC+8) · Beijing',
   description:
     'What time is it in China right now? China uses CST (China Standard Time, UTC+8) nationwide — a single time zone for the entire country. Live Beijing clock, China vs world cities, and best time to call.',
   keywords: [

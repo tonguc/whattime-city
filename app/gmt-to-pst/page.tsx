@@ -3,11 +3,11 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'GMT to PST — Greenwich to Pacific Time Converter',
+  title: 'GMT to PST Converter — Greenwich to Pacific',
   description: 'Convert GMT to PST instantly. GMT is 8 hours ahead of Pacific Standard Time (PST, UTC-8). Live clocks, full conversion table, and hourly reference.',
   alternates: { canonical: 'https://whattime.city/gmt-to-pst/' },
   openGraph: {
-    title: 'GMT to PST Converter — Greenwich to Pacific Time',
+    title: 'GMT to PST — Greenwich to Pacific Time',
     description: 'GMT is 8 hours ahead of PST. Live clocks and full conversion table.',
     type: 'website',
     url: 'https://whattime.city/gmt-to-pst/',

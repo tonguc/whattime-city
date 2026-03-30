@@ -6,7 +6,7 @@ import GuineaBissauClockClient from './GuineaBissauClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Guinea-Bissau Now — GMT (UTC+0) · Bissau',
+  title: 'Time in Guinea-Bissau Now — GMT (UTC+0)',
   description: 'What time is it in Guinea-Bissau right now? Live Bissau clock, time zone info (GMT (UTC+0)), best time to call, and time difference with major cities.',
   keywords: ['time in guinea-bissau', 'guinea-bissau time now', 'what time is it in guinea-bissau', 'bissau time', 'guinea-bissau time zone'],
   alternates: { canonical: 'https://whattime.city/guinea-bissau/' },

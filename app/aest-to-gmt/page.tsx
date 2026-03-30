@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'AEST to GMT — Australian Eastern to Greenwich Mean Time Converter',
+  title: 'AEST to GMT Converter — Australia to GMT',
   description: 'Convert AEST to GMT instantly. Australian Eastern Standard Time (UTC+10) is 10 hours ahead of GMT (UTC+0). Live clocks, Sydney–London scheduling guide.',
   alternates: { canonical: 'https://whattime.city/aest-to-gmt/' },
   openGraph: { title: 'AEST to GMT Converter — Australia to London', description: 'AEST is 10 hours ahead of GMT. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/aest-to-gmt/', siteName: 'whattime.city' },

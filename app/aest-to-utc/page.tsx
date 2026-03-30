@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'AEST to UTC — Australian Eastern Time to UTC Converter',
+  title: 'AEST to UTC Converter — Australia to UTC',
   description: 'Convert AEST to UTC instantly. Australian Eastern Standard Time (UTC+10) is 10 hours ahead of UTC. Live clocks, full conversion table, and AEST offset reference.',
   alternates: { canonical: 'https://whattime.city/aest-to-utc/' },
   openGraph: { title: 'AEST to UTC Converter — Australian Eastern Time to UTC', description: 'AEST is 10 hours ahead of UTC. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/aest-to-utc/', siteName: 'whattime.city' },

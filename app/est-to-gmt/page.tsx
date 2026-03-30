@@ -3,11 +3,11 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'EST to GMT — Eastern to Greenwich Time Converter',
+  title: 'EST to GMT Converter — Eastern to Greenwich',
   description: 'Convert EST to GMT instantly. Eastern Standard Time is 5 hours behind GMT. Live clocks, full conversion table, and US–UK business hours overlap guide.',
   alternates: { canonical: 'https://whattime.city/est-to-gmt' },
   openGraph: {
-    title: 'EST to GMT Time Converter — Eastern to Greenwich',
+    title: 'EST to GMT — Eastern to Greenwich Time',
     description: 'EST is 5 hours behind GMT. Live clocks and full conversion table.',
     type: 'website',
     url: 'https://whattime.city/est-to-gmt',

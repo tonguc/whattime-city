@@ -6,7 +6,7 @@ import HondurasClockClient from './HondurasClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Honduras Now — CST (UTC-6) · Tegucigalpa',
+  title: 'Time in Honduras Now — CST (UTC−6)',
   description: 'What time is it in Honduras right now? Live Tegucigalpa clock, time zone info (CST (UTC-6)), best time to call, and time difference with major cities.',
   keywords: ['time in honduras', 'honduras time now', 'what time is it in honduras', 'tegucigalpa time', 'honduras time zone'],
   alternates: { canonical: 'https://whattime.city/honduras/' },

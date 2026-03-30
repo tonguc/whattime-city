@@ -6,7 +6,7 @@ import SaudiArabiaClockClient from './SaudiArabiaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Saudi Arabia Now — AST (UTC+3) · Riyadh, Jeddah · No DST',
+  title: 'Time in Saudi Arabia Now — AST (UTC+3)',
   description: 'What time is it in Saudi Arabia right now? Saudi Arabia uses Arabia Standard Time (AST, UTC+3) year-round with no Daylight Saving Time. Live Riyadh clock, Saudi Arabia vs world cities, and best time to call.',
   keywords: ['time in saudi arabia', 'saudi arabia time now', 'what time is it in saudi arabia', 'riyadh time', 'jeddah time', 'saudi arabia time zone', 'AST time zone', 'saudi arabia utc+3', 'saudi time vs usa', 'saudi time vs uk', 'saudi time vs india', 'mecca time'],
   alternates: { canonical: 'https://whattime.city/saudi-arabia/' },

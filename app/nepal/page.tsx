@@ -6,7 +6,7 @@ import NepalClockClient from './NepalClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Nepal Now — NPT (UTC+5:45) · Kathmandu · 45-Minute Offset',
+  title: 'Time in Nepal Now — NPT (UTC+5:45)',
   description: 'What time is it in Nepal right now? Nepal uses Nepal Time (NPT, UTC+5:45) — a rare 45-minute offset. No Daylight Saving Time. Live Kathmandu clock and best time to call.',
   keywords: ['time in nepal', 'nepal time now', 'what time is it in nepal', 'kathmandu time', 'nepal time zone', 'NPT nepal', 'nepal utc+5:45', 'nepal 45 minute offset', 'nepal time vs india', 'nepal time vs uk', 'nepal time vs usa'],
   alternates: { canonical: 'https://whattime.city/nepal/' },

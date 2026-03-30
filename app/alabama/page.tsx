@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import AlabamaClockClient from './AlabamaClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Alabama Now — CST/CDT · Birmingham · Central Time Zone',
+  title: 'Time in Alabama Now — CST/CDT (UTC−6/−5)',
   description: 'What time is it in Alabama right now? Alabama uses Central Time (CST/CDT). Birmingham is on CST (UTC−6) in winter and CDT (UTC−5) in summer. Live clock and best time to call.',
   keywords: ['time in alabama', 'alabama time now', 'what time is it in alabama', 'birmingham alabama time', 'alabama time zone', 'CST CDT alabama', 'alabama utc-6', 'montgomery time', 'huntsville time', 'mobile time', 'alabama central time', 'alabama time vs eastern'],
   alternates: { canonical: 'https://whattime.city/alabama/' },

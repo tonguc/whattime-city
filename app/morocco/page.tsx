@@ -6,7 +6,7 @@ import MoroccoClockClient from './MoroccoClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Morocco Now — WET/WEST (UTC+0/+1) · Casablanca · Ramadan DST',
+  title: 'Time in Morocco Now — WET/WEST (UTC+0/+1)',
   description: 'What time is it in Morocco right now? Morocco uses WET (UTC+0) in winter and WEST (UTC+1) in summer, but suspends DST during Ramadan. Live Casablanca clock and best time to call.',
   keywords: ['time in morocco', 'morocco time now', 'what time is it in morocco', 'casablanca time', 'morocco time zone', 'WET WEST morocco', 'morocco utc+1', 'rabat time', 'marrakech time', 'morocco ramadan time', 'morocco dst', 'morocco time vs uk', 'morocco time vs usa'],
   alternates: { canonical: 'https://whattime.city/morocco/' },

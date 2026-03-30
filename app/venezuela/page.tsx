@@ -6,7 +6,7 @@ import VenezuelaClockClient from './VenezuelaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Venezuela Now — VET (UTC−4) · Caracas · No DST',
+  title: 'Time in Venezuela Now — VET (UTC−4) · No DST',
   description: 'What time is it in Venezuela right now? Venezuela uses Venezuela Time (VET, UTC−4) year-round with no Daylight Saving Time. Live Caracas clock, Venezuela vs world cities.',
   keywords: ['time in venezuela', 'venezuela time now', 'what time is it in venezuela', 'caracas time', 'venezuela time zone', 'VET venezuela', 'venezuela utc-4', 'maracaibo time', 'venezuela time vs usa', 'venezuela time vs uk', 'venezuela time vs colombia'],
   alternates: { canonical: 'https://whattime.city/venezuela/' },

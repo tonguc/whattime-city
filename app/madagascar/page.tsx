@@ -6,7 +6,7 @@ import MadagascarClockClient from './MadagascarClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Madagascar Now — EAT (UTC+3) · Antananarivo',
+  title: 'Time in Madagascar Now — EAT (UTC+3)',
   description: 'What time is it in Madagascar right now? Live Antananarivo clock, time zone info (EAT (UTC+3)), best time to call, and time difference with major cities.',
   keywords: ['time in madagascar', 'madagascar time now', 'what time is it in madagascar', 'antananarivo time', 'madagascar time zone'],
   alternates: { canonical: 'https://whattime.city/madagascar/' },

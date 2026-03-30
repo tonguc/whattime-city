@@ -6,7 +6,7 @@ import SloveniaClockClient from './SloveniaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Slovenia Now — CET (UTC+1) · Ljubljana',
+  title: 'Time in Slovenia Now — CET (UTC+1)',
   description: 'What time is it in Slovenia right now? Live Ljubljana clock, time zone info (CET (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in slovenia', 'slovenia time now', 'what time is it in slovenia', 'ljubljana time', 'slovenia time zone'],
   alternates: { canonical: 'https://whattime.city/slovenia/' },

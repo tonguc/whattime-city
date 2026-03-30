@@ -6,7 +6,7 @@ import UnitedStatesClockClient from './UnitedStatesClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in United States Now — EST (UTC-5) · Washington D.C.',
+  title: 'Time in United States Now — EST (UTC−5)',
   description: 'What time is it in United States right now? Live Washington D.C. clock, time zone info (EST (UTC-5)), best time to call, and time difference with major cities.',
   keywords: ['time in united states', 'united states time now', 'what time is it in united states', 'washington d.c. time', 'united states time zone'],
   alternates: { canonical: 'https://whattime.city/united-states/' },

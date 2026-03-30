@@ -5,7 +5,7 @@ import HubPageLayout from '@/components/HubPageLayout'
 import UTCClockClient from './UTCClockClient'
 
 export const metadata: Metadata = {
-  title: 'UTC Time Now — Coordinated Universal Time | UTC+0',
+  title: 'UTC Time Now — Coordinated Universal Time',
   description: 'Current UTC time. UTC is 5 hours ahead of EST (4 hours ahead of EDT during Daylight Saving Time). Live clock, UTC vs EST/PST/CST explained, and time zone converter.',
   keywords: ['UTC time now', 'UTC time', 'current UTC time', 'UTC+0', 'coordinated universal time', 'UTC to EST', 'is UTC 4 or 5 hours ahead of EST'],
   alternates: { canonical: 'https://whattime.city/utc/' },

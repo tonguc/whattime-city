@@ -6,7 +6,7 @@ import GreeceClockClient from './GreeceClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Greece Now — EET/EEST (UTC+2/+3) · Athens · Eastern European Time',
+  title: 'Time in Greece Now — EET/EEST (UTC+2/+3)',
   description: 'What time is it in Greece right now? Greece uses Eastern European Time (EET, UTC+2) in winter and EEST (UTC+3) in summer. Live Athens clock, Greece vs world cities, and best time to call.',
   keywords: ['time in greece', 'greece time now', 'what time is it in greece', 'athens time', 'greece time zone', 'EET EEST greece', 'greece utc+2', 'thessaloniki time', 'greece time vs uk', 'greece time vs usa', 'greece dst'],
   alternates: { canonical: 'https://whattime.city/greece/' },

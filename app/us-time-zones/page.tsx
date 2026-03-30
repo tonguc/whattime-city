@@ -5,12 +5,12 @@ import HubPageLayout from '@/components/HubPageLayout'
 import USTimeZonesClient from './USTimeZonesClient'
 
 export const metadata: Metadata = {
-  title: 'US Time Zone Map — All 6 Time Zones with Live Clocks',
+  title: 'US Time Zone Map — All 6 Time Zones',
   description: 'Complete US time zone map with live clocks. Eastern, Central, Mountain, Pacific, Alaska, and Hawaii time zones — current times, UTC offsets, states list, and converters.',
   keywords: ['us time zone map', 'usa time zones', 'time zones in the us', 'united states time zones', 'us time zones map', 'what time zone am i in', 'eastern time zone', 'central time zone', 'pacific time zone', 'mountain time zone'],
   alternates: { canonical: 'https://whattime.city/us-time-zones/' },
   openGraph: {
-    title: 'US Time Zone Map — All 6 Time Zones with Live Clocks',
+    title: 'US Time Zone Map — All 6 Time Zones',
     description: 'Live clocks for all 6 US time zones. Eastern, Central, Mountain, Pacific, Alaska, and Hawaii time with UTC offsets and state lists.',
     type: 'website',
     url: 'https://whattime.city/us-time-zones/',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'US Time Zone Map — Live Clocks for All 6 Zones',
+    title: 'US Time Zone Map — All 6 Zones',
     description: 'Current time in every US time zone. EST, CST, MST, PST, AKST, HST with states and converters.',
   },
 }

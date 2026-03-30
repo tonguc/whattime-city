@@ -6,7 +6,7 @@ import GhanaClockClient from './GhanaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Ghana Now — GMT (UTC+0) · Accra · No DST',
+  title: 'Time in Ghana Now — GMT (UTC+0) · No DST',
   description: 'What time is it in Ghana right now? Ghana uses Greenwich Mean Time (GMT, UTC+0) year-round with no Daylight Saving Time. Live Accra clock, Ghana vs world cities, and best time to call.',
   keywords: ['time in ghana', 'ghana time now', 'what time is it in ghana', 'accra time', 'ghana time zone', 'GMT ghana', 'ghana utc+0', 'kumasi time', 'ghana time vs uk', 'ghana time vs usa', 'ghana time vs nigeria', 'west africa time'],
   alternates: { canonical: 'https://whattime.city/ghana/' },

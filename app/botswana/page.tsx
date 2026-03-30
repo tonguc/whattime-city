@@ -6,7 +6,7 @@ import BotswanaClockClient from './BotswanaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Botswana Now — CAT (UTC+2) · Gaborone',
+  title: 'Time in Botswana Now — CAT (UTC+2)',
   description: 'What time is it in Botswana right now? Live Gaborone clock, time zone info (CAT (UTC+2)), best time to call, and time difference with major cities.',
   keywords: ['time in botswana', 'botswana time now', 'what time is it in botswana', 'gaborone time', 'botswana time zone'],
   alternates: { canonical: 'https://whattime.city/botswana/' },

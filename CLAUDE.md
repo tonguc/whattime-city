@@ -2,31 +2,12 @@
 
 Bu dosya oturumlar arası hafıza kaybını önlemek için tutulur.
 **Her yeni oturumda önce bu dosyayı oku. Bir şey "eksik" gibi görünüyorsa önce kodu kontrol et.**
-**CLAUDE.md'yi her oturum sonunda güncelle. Yapılan her şeyi buraya ekle.**
-
----
-
-## Skill Workflow
-
-Two SEO skills are active in this project:
-1. SEO Engine → keyword research, page structure, technical SEO, content
-2. AI SEO Engine → AI visibility, snippet optimization, citation readiness
-
-**Default rule:**
-For every content creation or SEO optimization task,
-apply SEO Engine first, then AI SEO Engine on top.
-Preserve SEO structure. Add AI layer without removing it.
-
-**Exception:**
-For code-only tasks (bug fix, component, deployment),
-skip this workflow entirely.
 
 ---
 
 ## ⚠️ KRİTİK: İÇERİK YAZMA KURALLARI (ASLA ATLANMAZ)
 
 **SEO kararlarında tahmin veya genel bilgi KULLANMA. Her zaman gerçek veriyi önceliklendir.**
-**Bu kurallar her oturumda, her içerik görevinde geçerlidir. Kullanıcı hatırlatmak zorunda kalmamalı.**
 
 ### Veri Öncelik Sırası — Her Sayfa İçin Zorunlu
 
@@ -36,22 +17,34 @@ Herhangi bir sayfa veya içerik yazmadan önce **bu sırayla** veri toplanır:
    - `ubersuggest timeanddate.com.csv` — ana rakip keyword'leri + hacimler
    - `ubersuggest 24timezones.com.csv`, `ubersuggest thetimenow.com.csv`, `ubersuggest time.is.csv`, `ubersuggest time.now.csv`
    - `competitors_data_for_whattime.city.csv`
-   - **Bu adım atlanamaz. GSC verisi çok az — Ubersuggest gerçek pazar hacmini gösteriyor.**
+   - `broken_links.csv`, `duplicate_title_tags.csv`, `duplicate_meta_descriptions.csv`
+   - `Sorgular.csv`, `Sayfa sayısı.csv` (GSC export)
+   - Hedef keyword'ün volume'unu doğrula, rakiplerin pozisyonlarını çıkar, ilgili cluster'ları bul
+   - **Bu adım atlanamaz. "Rakip verisi önemliydi" demek kabul edilemez.**
 
 2. **SERP Verisi — İKİNCİ** (`/data/seo-intel/serp_results.json`)
+   - Featured snippet / answer box var mı?
+   - PAA soruları neler?
+   - Top 5 organik sonuç hangi siteler? Güçlü mü zayıf mı?
+   - SERP tipi: tool/converter mu, informational mı, widget mı?
 
 3. **GSC Verisi — ÜÇÜNCÜ** (`/data/seo-intel/gsc_pages.json`, `gsc_queries.json`)
-   - GSC verisi destekleyici — Ubersuggest'in yerini tutmaz.
+   - Mevcut sayfamız bu keyword'de görünüyor mu?
+   - Impression var mı, pozisyon kaç?
+   - `competitor_timeanddate_com.json` vb. rakip JSON dosyaları
 
 4. **Sayfa yaz** — Ancak yukarıdaki 3 adım tamamlandıktan sonra.
 
-### ⚠️ Her içerik görevinde bu skill'leri MUTLAKA uygula:
-1. **SEO Engine** → `.claude/commands/seo-engine.md` kurallarını uygula
-2. **AI SEO Engine** → `.claude/commands/ai-seo-engine.md` kurallarını uygula
+### SEO Framework (her içerik kararında uygulanır)
+- SERP clustering (%60+ overlap = aynı cluster = tek sayfa)
+- Competitor page analizi (H1/H2, içerik bölümleri, PAA yanıtları)
+- Gap analizi: rakiplerin vermediği değeri ver
+- Featured snippet hedefi: kısa cevap + soru başlıkları + FAQ schema
+- Her karar veri ile desteklenmeli, tahmin yok
 
-Sıra: önce SEO Engine, sonra AI SEO Engine. Kullanıcı hatırlatmak zorunda kalmamalı.
-
-**⚠️ CSV'ler stale olabilir.** `duplicate_title_tags.csv`, `broken_links.csv` gibi dosyalar eski crawl'dan gelebilir. Kodu her zaman doğrudan kontrol et, CSV'ye körü körüne güvenme.
+**Yeni içerik yazarken:** Önce ilgili CSV'yi oku → hangi keyword'ler yüksek hacimli → o keyword'lere göre yaz.
+**Yeni sayfa eklerken:** GSC'de bu konuda impression var mı → pozisyon nerede → rakipler ne yapıyor.
+**Hiçbir zaman:** Kafadan keyword hacmi tahmin etme, rakiplerin yazdıklarını okumadan içerik üretme.
 
 ---
 
@@ -60,40 +53,31 @@ Sıra: önce SEO Engine, sonra AI SEO Engine. Kullanıcı hatırlatmak zorunda k
 ### Route Tipleri
 | Tip | Pattern | Açıklama |
 |-----|---------|----------|
-| **Şehir sayfası** | `/[city]/` | 2000+ şehir, dinamik route |
+| **Şehir sayfası** | `/[city]/` | 400+ şehir, dinamik route, SEO data ile zenginleştirilmiş |
 | **Şehir guide'ları** | `/[city]/guide/*` | Her şehir için rehber alt sayfaları |
-| **Şehir güneş** | `/[city]/sun/` | Sunrise/sunset sayfaları |
-| **Ülke/eyalet saatı** | `/india/`, `/japan/`, `/california/` vb. | Standalone ClockClient sayfaları |
-| **TZ converter** | `/pst-to-est/` vb. | 62+ converter sayfası, ConverterPageShell kullanır |
-| **DST cluster** | `/daylight-saving-time/*` | Ana hub + 8 bölge + countries tablosu |
-| **Araçlar** | `/meeting/`, `/time-converter/` vb. | Interaktif araçlar |
-| **Bilgi sayfaları** | `/eastern-time-zone/` vb. | TZ açıklayıcı sayfalar |
-| **Makaleler** | `/articles/*` | Uzun form SEO içerikleri |
+| **Ülke/eyalet saatı** | `/india/`, `/japan/`, `/california/` vb. | Özel ClockClient + HubPageLayout ile standalone sayfalar |
+| **TZ converter** | `/pst-to-est/` vb. | 62 converter sayfası, ConverterPageShell kullanır |
+| **DST cluster** | `/daylight-saving-time/*` | Ana hub + 7 bölge + countries tablosu |
+| **Araçlar** | `/meeting/`, `/time-converter/`, `/flight-time/` vb. | Interaktif araçlar |
+| **Bilgi sayfaları** | `/eastern-time-zone/`, `/military-time/` vb. | TZ açıklayıcı sayfalar |
 
 ---
 
 ## Tamamlanan İşler
 
-### 1. Ülke/Eyalet Standalone Sayfaları ✅
-**236 ClockClient** — Afghanistan → Zimbabwe arası tüm ülkeler + tüm ABD eyaletleri.
-Her biri renkli banner (UTC offset'e göre renk kodu), live saat, quick facts, önemli şehirler grid'i içeriyor.
+### 1. Ülke/Eyalet Standalone Sayfaları
+Her ülke ve ABD eyaleti kendi `ClockClient.tsx` + `page.tsx` dosyasına sahip.
+**180+ sayfa** — Afghanistan'dan Zimbabwe'ye kadar her ülke, Alabama'dan Wisconsin'e kadar her eyalet.
+Tüm bu sayfalar `HeroClockDisplay` bileşeniyle live saat gösterir.
 
-**Banner renk kodu (UTC offset'e göre):**
-- `bg-blue-700` — Amerika (UTC-12 → UTC-5)
-- `bg-cyan-600` — Karayipler/Atlantik (UTC-4 → UTC-1)
-- `bg-emerald-600` — Avrupa/Afrika (UTC 0 → UTC+2)
-- `bg-amber-600` — Orta Doğu/Güney Asya (UTC+3 → UTC+5:30)
-- `bg-red-700` — Doğu/GD Asya (UTC+6 → UTC+9)
-- `bg-purple-700` — Okyanusya/Pasifik (UTC+10 → UTC+14)
-
-**Özel hub sayfaları (CountryFactsSection + HubPageLayout):**
-- `/india/` ✅ — IST UTC+5:30, 11 FAQ
+**Özel içerikli hub sayfaları (CountryFactsSection + HubPageLayout):**
+- `/india/` ✅ — IST UTC+5:30, 11 FAQ, no DST vurgusu
 - `/pakistan/` ✅ — PKT UTC+5
 - `/bangladesh/` ✅ — BST UTC+6
 - `/sri-lanka/` ✅
 - `/nepal/` ✅ — NPT UTC+5:45
 
-### 2. TZ Converter Sayfaları (62 sayfa) ✅ — ConverterPageShell kullanır
+### 2. TZ Converter Sayfaları (62 sayfa) — ConverterPageShell kullanır
 ```
 aest↔{cst,est,gmt,mst,pst,utc}     bst↔{cst,est,pst}
 cet↔{cst,est,gmt,ist,pst}          cst↔{est,gmt,mst,pst,utc}
@@ -102,45 +86,59 @@ ist↔{cet,cst,est,gmt,jst,mst,pst,utc}   jst↔{cst,est,gmt,ist,mst,pst,utc}
 mst↔{cst,est,gmt,pst,utc}          pst↔{cst,est,gmt,mst,utc}
 utc↔{cst,est,ist,jst,mst,pst}
 ```
-**Yeni converter eklenecekse yeni pair olmalı — bunlar zaten yapılmış.**
+**ÖNEMLİ:** Bunlar zaten yapılmış. Yeni converter eklenecekse yeni pair olmalı.
 
-### 3. DST Sayfaları ✅ — Tümü tamamlandı
-- `/daylight-saving-time/` — ana hub
-- `/daylight-saving-time/[region]/` — usa, uk, europe, australia, canada, new-zealand, mexico
-- `/daylight-saving-time/countries/` — tüm ülkeler tablosu
+### 3. DST Sayfaları — Tümü tamamlandı
+- `/daylight-saving-time/` — ana hub ✅
+- `/daylight-saving-time/usa/` ✅
+- `/daylight-saving-time/uk/` ✅
+- `/daylight-saving-time/europe/` ✅
+- `/daylight-saving-time/australia/` ✅
+- `/daylight-saving-time/canada/` ✅
+- `/daylight-saving-time/new-zealand/` ✅
+- `/daylight-saving-time/mexico/` ✅ (2022'de kaldırıldı — SEO açısı)
+- `/daylight-saving-time/countries/` ✅ (tüm ülkeler tablosu)
 
-### 4. City Guide Sistemi ✅ — `/[city]/guide/*`
-**Ortak fallback bileşenlerle:** `holidays/`, `call-times/`, `business-hours/`, `best-time-to-visit/`, `digital-nomad/`, `remote-work/`, `travel-guide/`, vb.
+### 4. City Guide Sistemi — `/[city]/guide/*`
+**Her şehir için ortak guide sayfaları** (generic fallback bileşenlerle):
+- `holidays/` — tatil takvimi
+- `call-times/` — en iyi arama saatleri
+- `business-hours/` — iş saatleri
+- `best-time-to-visit/`, `digital-nomad/`, `remote-work/`, `travel-guide/`, vb.
 
-**Özel city-specific bileşenler:**
+**Özel city-specific bileşenler olan şehirler:**
+
 | Şehir | holidays | call-times | business-hours |
 |-------|----------|------------|----------------|
-| London | ✅ | ✅ | ✅ |
-| Tokyo | ✅ | ✅ | — |
-| Dubai | ✅ | ✅ | ✅ |
-| Singapore | ✅ | ✅ | ✅ |
-| Paris | ✅ | ✅ | ✅ |
-| Sydney | ✅ | ✅ | ✅ |
-| Istanbul | ✅ | ✅ | — |
-| Los Angeles | ✅ | ✅ | ✅ |
-| New York | ✅ | ✅ | — |
+| London | ✅ LondonHolidaysContent | ✅ LondonCallTimesContent | ✅ LondonBusinessHoursContent |
+| Tokyo | ✅ TokyoHolidaysContent | ✅ TokyoCallTimesContent | — |
+| Dubai | ✅ DubaiHolidaysContent | ✅ DubaiCallTimesContent | ✅ DubaiBusinessHoursContent |
+| Singapore | ✅ SingaporeHolidaysContent | ✅ SingaporeCallTimesContent | ✅ SingaporeBusinessHoursContent |
+| Paris | ✅ ParisHolidaysContent | ✅ ParisCallTimesContent | ✅ ParisBusinessHoursContent |
+| Sydney | ✅ SydneyHolidaysContent | ✅ SydneyCallTimesContent | ✅ SydneyBusinessHoursContent |
+| Istanbul | ✅ IstanbulHolidaysContent | ✅ IstanbulCallTimesContent | — |
+| Los Angeles | ✅ LosAngelesHolidaysContent | ✅ LosAngelesCallTimesContent | ✅ LosAngelesBusinessHoursContent |
+| New York | ✅ NewYorkHolidaysContent | ✅ NewYorkCallTimesContent | — |
 
-**Guide URL 301 redirectler next.config.js'te var:**
-- `best-time-to-call/` → `call-times/`
-- `public-holidays/` → `holidays/`
+### 5. SEO Data Dosyaları (data/seo/*.json)
+Şu an JSON SEO data'sı olan şehirler:
+amsterdam, ankara, atlanta, baghdad, beijing, berlin, boston, brussels, buenos-aires,
+cairo, calgary, dallas, delhi, denver, dubai, frankfurt, geneva, havana, houston,
+jakarta, johannesburg, kuala-lumpur, las-vegas, los-angeles, madrid, melbourne,
+mexico-city, miami, milan, montreal, moscow, munich, oslo, paris, phoenix, prague,
+rio-de-janeiro, rome, sao-paulo, **seattle** ✅, **singapore** ✅, shanghai,
+stockholm, tehran, **tokyo** ✅, vancouver, vienna, washington-dc, zurich
 
-### 5. SEO Data Dosyaları ✅ — `data/seo/*.json` (101 dosya)
-abidjan, amsterdam, ankara, athens, atlanta, baghdad, bali, bangkok, beijing, berlin,
-boston, bratislava, bridgetown, brussels, buenos-aires, cairo, calgary, charlotte,
-chennai, chicago, chisinau, copenhagen, cornwall, costa-rica, cotswolds, dakar, dallas,
-delhi, denizli, denver, doha, dubai, fiji, frankfurt, geneva, havana, hong-kong,
-houston, indianapolis, istanbul, izmir, jakarta, johannesburg, kansas-city, karachi,
-kuala-lumpur, las-vegas, london, los-angeles, louisville, madrid, male, manila, maputo,
-marrakech, melbourne, mexico-city, miami, milan, monrovia, montreal, moscow, mumbai,
-munich, nairobi, new-york, nozawa-onsen, oslo, otaru, paris, phoenix, prague, quito,
-reykjavik, rio-de-janeiro, rome, san-jose-cr, san-salvador, sao-paulo, seattle, seoul,
-shanghai, singapore, skopje, sofia, stockholm, sydney, tashkent, tbilisi, tehran,
-tirana, tokyo, toronto, tunis, vancouver, vienna, washington-dc, windhoek, zurich
+### 6. TZ Açıklayıcı Sayfalar
+- `/eastern-time-zone/` ✅
+- `/central-time-zone/` ✅
+- `/mountain-time-zone/` ✅
+- `/pacific-time-zone/` ✅
+- `/alaska-time-zone/` ✅
+- `/hawaii-time-zone/` ✅
+- `/us-time-zones/` ✅
+- `/bst-timezone/` ✅
+- `/cest-timezone/` ✅
 
 **Title uzunluk kuralı:** `seo_title` ≤44 karakter olmalı (template " | whattime.city" = 16 char ekler → toplam ≤60).
 
@@ -201,9 +199,7 @@ Her araçta: **FAQPage + BreadcrumbList JSON-LD** var (aksi belirtilmedikçe).
 ### 12. /time/ Pair Sayfaları ✅ — Tam içerik
 - `app/time/[from]/[to]/page.tsx` — FAQPage + BreadcrumbList JSON-LD
 - 26 city pair için PAIR_CONTEXTS (SSR, Google görür)
-- Dynamic title: "CityA to CityB Time Difference — CityB X Hours Ahead/Behind"
-  - 60 char guard: uzun çiftlerde (Tokyo+San Francisco) city tekrarı kaldırılır
-  - **Kural:** title'da "Difference" kelimesi OLMALI — GSC sorguları hep "time difference" içeriyor
+- Dynamic title: "CityA to CityB Time — CityB X Hours Ahead/Behind"
 
 ### 13. Alan Kodları ✅ — `/area-code/`
 - `/area-code/` — hub sayfası (search, all codes)
@@ -248,279 +244,151 @@ Her araçta: **FAQPage + BreadcrumbList JSON-LD** var (aksi belirtilmedikçe).
 - PST↔CST, EST↔CST, MST↔EST converters: 110K-135K vol, SD 34-55
 - "mountain time" cluster: 301K vol, SD 22-55 — `/mountain-time-zone/` sayfamız var
 - Bunlar var ama indexlenme ve authority meselesi
-### 17. Days From Today / Days Ago Individual Sayfalar ✅ (Mart 2026)
-**Rakip gap:** time.now bu sorgularda dominant, timeanddate yok. SD 15-22 = çok düşük rekabet.
-
-- `/days-from-today/[days]/page.tsx` — 20 sayfa pre-generate
-- `/days-ago/[days]/page.tsx` — 20 sayfa pre-generate
-- Her sayfa: FAQPage + BreadcrumbList schema, featured snippet answer box
-- `revalidate = 86400` — günlük yenileme (tarihler güncel kalsın)
-- `/days-from-today/` hub'a internal link grid eklendi (crawling için)
-
-**Pre-generated day counts:** 7, 8, 10, 14, 15, 17, 20, 22, 25, 29, 30, 42, 45, 60, 90, 100, 120, 150, 180, 365
-
-**Hedef sorgular:**
-- "180 days from today" — 90K vol, SD 17
-- "15 days from today" — 40K vol, SD 19
-- "90 days ago" — 33K vol, SD 15
-- "60 days from now" — 27K vol, SD 22
-- "30 days today" — 301K vol, SD 38
-
-### 18. Tool Page Container + Sunrise-Sunset Dark Mode Fix ✅ (Mart 2026)
-
-**Container genişlik sorunu (6 sayfa):**
-- Sorun: client bileşenler içinde `max-w-3xl/4xl mx-auto px-4 py-8` vardı; `ContentPageWrapper`'ın `max-w-6xl`'i içinde double-daraltıyordu
-- Düzeltme: inner container → `w-full space-y-8` (max-w ve mx-auto kaldırıldı)
-- Etkilenen sayfalar: `PrayerTimesClient`, `TodaysDateClient`, `TimerClient`, `CountdownClient`, `DateCalculatorClient`, `DaysFromTodayClient`
-
-**Sunrise-sunset dark mode:**
-- Sorun: `SunriseSunsetClient` tüm `bg-white`, `border-slate-100`, `text-slate-*` hardcoded light — dark modda beyaz kartlar görünüyordu
-- Düzeltme: `useCityContext()` eklendi, tüm renkler `isLight` conditional'a çevrildi
-- Kartlar, tablolar, input, dropdown, şehir linkleri, SEO section, FAQ — hepsi artık tema duyarlı
-
-**⚠️ Kural: Tool client bileşenlerinde inner max-w kullanma.**
-`ContentPageWrapper` zaten `max-w-6xl` veriyor. Client bileşenler sadece `w-full` veya bare div kullanmalı.
-
-### 19. How Many Hours/Seconds/Months in a Year Makaleleri ✅ (Mart 2026)
-
-- `/articles/how-many-hours-in-a-year/` — 1M vol, SD ~29
-  8,760 (regular) / 8,784 (leap), monthly breakdown, working hours, time unit table, year-by-year 2024–2030
-- `/articles/how-many-seconds-in-a-year/` — 301K vol
-  31,536,000 seconds, step-by-step calculation, monthly/unit tables, fun context (heartbeats, light-year)
-- `/articles/how-many-months-in-a-year/` — 33K vol, SD 22
-  12 months, days per month table, quarter grid, month name origins, memory tricks
-- Her biri: Article + FAQPage + BreadcrumbList JSON-LD schema
-- `/articles/` hub güncellendi
-
-### 20. /stopwatch/ Dedicated Sayfası ✅ (Mart 2026)
-
-- `/stopwatch/` — 1.83M vol, timeanddate wins, biz sadece /timer/ içinde vardık
-- TimerClient'a `defaultTab` prop eklendi → stopwatch tab varsayılan açılıyor
-- FAQPage + BreadcrumbList JSON-LD schema
-- Kod tekrarı yok: mevcut TimerClient yeniden kullanıldı
-
-### 21. Articles Tema Fix — `useArticleTheme` Hook ✅ (Mart 2026)
-
-**Sorun:** Articles `page.tsx` dosyaları server component'ti → `useCityContext()` çalışmıyordu → dark modda hardcoded `bg-white` kartlar görünüyordu.
-
-**Çözüm — Pattern:**
-- `page.tsx` (server) = sadece metadata + JSON-LD schema + `<XxxClient />` import
-- `XxxClient.tsx` (client, `'use client'`) = tüm JSX + `useArticleTheme()` hook
-
-**`lib/useArticleTheme.ts`** — yeni hook, tüm article client'larında kullanılır:
-```ts
-import { useCityContext } from '@/lib/CityContext'
-export function useArticleTheme() {
-  const { isLight } = useCityContext()
-  return {
-    heading, body, muted, card, cardAlt, infoBox, highlight,
-    tableWrapper, tableHead, tableHeadCell,
-    tableRowEven, tableRowOdd, tableRowBorder, tableRowCurrent, tableCell,
-    breadcrumb, breadcrumbLink, breadcrumbSep, breadcrumbCurrent,
-    link, footer, divider,
-    subheading  // isLight ? 'text-slate-600' : 'text-slate-300'
-  }
-}
-```
-
-**Tamamlanan Client Dosyaları:**
-- `ArticlesHubClient.tsx` — articles ana hub
-- `AmPmClient.tsx` — /articles/am-pm/
-- `HowManyHoursInAYearClient.tsx` — /articles/how-many-hours-in-a-year/
-- `HowManySecondsInAYearClient.tsx` — /articles/how-many-seconds-in-a-year/
-- `HowManyMonthsInAYearClient.tsx` — /articles/how-many-months-in-a-year/
-- `HowManyWeeksInAYearClient.tsx` — /articles/how-many-weeks-in-a-year/
-- `HowManyDaysInAYearClient.tsx` — /articles/how-many-days-in-a-year/
-- `HowManyMinutesInAYearClient.tsx` — /articles/how-many-minutes-in-a-year/
-
-**⚠️ Kural: Yeni article eklenirken MUTLAKA `*Client.tsx` pattern kullan.**
-`page.tsx`'te asla JSX döndürme — sadece metadata + JSON-LD + Client import.
 
 ---
 
 ## Design System — Tema Kuralları
 
 ### ❌ ASLA `dark:` Tailwind Variant Kullanma
-`dark:bg-slate-800` vb. çalışmaz. **`useCityContext()` kullan.**
+`dark:bg-slate-800`, `dark:text-white` vb. class'lar ÇALIŞMAZ.
+Neden: `ContentPageWrapper` iç div'e `dark` class ekliyor ama Tailwind JIT bu class'ları üretmiyor.
+**Bunun yerine `useCityContext()` kullan.**
 
 ### ✅ Doğru Kullanım
 ```tsx
 'use client'
 import { useCityContext } from '@/lib/CityContext'
+
 const { theme, isLight } = useCityContext()
+// theme.card, theme.text, theme.textMuted kullan
 ```
 
-### Tema Modları
-| Mod | isLight | theme.card | theme.text |
-|-----|---------|------------|------------|
-| `day`, `light` | **true** | `border border-slate-100 bg-white` | `text-slate-800` |
-| `night`, `dark`, `dawn`, `dusk` | false | `border border-slate-700/50 bg-slate-800/60` | `text-slate-100` |
+### 6 Tema Modu
+| Mod | isLight | theme.card | theme.text | theme.textMuted |
+|-----|---------|------------|------------|-----------------|
+| `day` | **true** | `border border-slate-100 bg-white` | `text-slate-800` | `text-slate-500` |
+| `light` | **true** | `border border-slate-100 bg-white` | `text-slate-800` | `text-slate-500` |
+| `night` | false | `border border-slate-700/50 bg-slate-900/60` | `text-slate-100` | `text-slate-400` |
+| `dark` | false | `border border-slate-700/50 bg-slate-800/60` | `text-slate-100` | `text-slate-400` |
+| `dawn` | false | `border border-slate-700/50 bg-slate-800/60` | `text-slate-100` | `text-slate-400` |
+| `dusk` | false | `border border-slate-700/50 bg-slate-800/60` | `text-slate-100` | `text-slate-400` |
 
-### Sık Kullanılan Pattern'lar
+**isLight = true SADECE `day` ve `light` modlarında.**
+
+### Nested Kart (kart içinde kart)
 ```tsx
-// Nested kart
-const nestedCard = isLight
+const nestedCardClass = isLight
   ? 'rounded-xl border border-slate-100 bg-slate-50 p-4'
   : 'rounded-xl border border-slate-700/50 bg-slate-800/50 p-4'
+```
 
-// Footer/bilgi kutusu
-const footer = isLight
+### Footer / Bilgi Kutusu
+```tsx
+const footerClass = isLight
   ? 'rounded-xl border border-slate-200 p-4 bg-slate-50 text-xs text-slate-500'
   : 'rounded-xl border border-slate-700/50 p-4 bg-slate-800/50 text-xs text-slate-400'
 ```
 
 ### Font Kuralı
-- Saat/rakam: `tabular-nums` — `font-mono` KULLANMA
+- Saat/rakam: `tabular-nums` kullan — `font-mono` KULLANMA
 
 ---
 
 ## Bileşen Mimarisi
 
 ### ConverterPageShell — TZ converter sayfaları için
+`'use client'` bileşeni, `useCityContext()` içeride kullanır.
 ```tsx
+import ConverterPageShell from '@/components/ConverterPageShell'
+import type { TZPairConfig } from '@/components/TZPairClient'
+
 <ConverterPageShell
   title="PST to EST Converter"
   subtitle={<>Pacific → Eastern · PST is <strong>3 hours behind</strong> EST</>}
   config={config}
-  infoTitle="PST vs EST"
+  infoTitle="PST vs EST — West Coast to East Coast"
   infoBody={<>...</>}
+  extraSections={[{ title: "Reference Table", content: <table>...</table> }]}
   faqSchema={faqSchema}
 />
 ```
 
-### HubPageLayout + CountryFactsSection — Ülke hub sayfaları için
+### ContentPageWrapper — İçerik sayfaları için wrapper
+Tema context'ini sağlar. Server component olabilir.
+
+### HubPageLayout + HubPageHeader + CountryFactsSection
+Ülke hub sayfaları için (india, pakistan vb.):
 ```tsx
 <HubPageHeader title="Current Time in India" subtitle="IST · UTC+5:30 · No DST" />
 <IndiaClockClient />
 <CountryFactsSection hubSlug="india" />
-<HubPageLayout faqItems={...} links={...} />
+<HubPageLayout faqItems={...} links={...} linksTitle="..." footerText="..." />
 ```
 
-### HeroClockDisplay — Live saat
+### HeroClockDisplay — Live saat bileşeni
 ```tsx
 <HeroClockDisplay tz="Asia/Kolkata" countryCode="IN" countryName="India" tzLabel="IST · UTC+5:30" />
 ```
 
 ---
 
-## Bilinen Veri Sorunları (düzeltildi)
+## Roadmap — Tamamlanan Maddeler (Bu Oturum)
 
-- `santarem-pa` data: Marabá'nın info'su kopyalanmıştı → düzeltildi (phone +55 93, doğru attractions)
-- 29 seo_title çok uzundu (55-68 char) → hepsi ≤42 char'a kısaltıldı
+### ✅ Tamamlandı
+- [x] Full site teknik SEO audit — tüm `ssr: false` sorunu tespit ve düzeltme
+- [x] `/time/` pair sayfaları title+meta optimize:
+  - "Current Time Difference" → "City N Hours Ahead/Behind"
+  - UTC offset labels description'a eklendi
+  - `other:` alanı temizlendi (redundant schema gürültüsü)
+- [x] Broken guide links fix — Miami, GuidePreview.tsx + CityGuideCard.tsx'e eklendi
+- [x] Top 20 `/time/` sayfasına içerik zenginleştirme:
+  - 26 city pair için PAIR_CONTEXTS lookup eklendi (SSR, Google görür)
+  - singapore/london, london/sydney, new-york/london, sydney/london, la/london vb.
+  - Her pair için: DST davranışı, UTC offset'ler, iş koridoru bilgisi
+- [x] `ist-to-pst`, `ist-to-cst`, `ist-to-gmt`, `aest-to-est`, `jst-to-est`, `cet-to-est` — ZATEN MEVCUTTU
+- [x] BreadcrumbList schema — zaten mevcut (`<script>` tag JSX'te, satır 267-270)
+- [x] DST cluster — ZATEN TAMAMLANMIŞTI (usa/uk/europe/australia/canada/nz/mexico/countries)
+- [x] India time hub — ZATEN MEVCUTTU (/india/page.tsx)
 
----
-
----
-
-## Bug Fix Geçmişi
-
-### Meeting Planner Auto-Add Bug ✅ (Mart 2026)
-**Sorun:** Kullanıcı kendi detected şehrini kaldırdıktan sonra şehir geri geliyordu.
-
-**Root cause:** `detectedCity` CityContext'te 3 kez set ediliyor (mount → activeCityLoaded → geolocation 3sn sonra). `hasAutoAdded` ref, component remount'ta (örn. `/meeting/` → `/meeting/tokyo` farklı route) sıfırlanıyordu. Ayrıca kullanıcı kendi şehrini manuel eklediğinde `hasAutoAdded` hiç set edilmiyordu.
-
-**Çözüm:** `sessionStorage` kullanımı — aynı tab oturumunda auto-add bir kez tetiklenebilir. `removeCity` içinde, kaldırılan şehir detected city ise sessionStorage flag hemen set ediliyor.
-
-```js
-// Başlangıç:
-const hasAutoAdded = useRef(
-  typeof window !== 'undefined' && sessionStorage.getItem('meeting-auto-added') === '1'
-)
-
-// removeCity içinde:
-if (detectedCity?.slug === slug) {
-  hasAutoAdded.current = true
-  try { sessionStorage.setItem('meeting-auto-added', '1') } catch {}
-}
-```
-
-**Kural:** Meeting planner'da auto-add feature'ı değiştirirken bu pattern korunmalı.
+### ⏳ Sonraki İzleme
+- [ ] 4 hafta sonra GSC'de etki ölçümü: pos 40-60 sayfaları → hedef pos 15-25
+- [ ] singapore/london (137 imp), new-york/london (110 imp) takibi
+- [ ] CTR iyileşmesi: "City N Hours Ahead" title formatı etkisi
+- [ ] "how many hours/seconds in a year" — indexlenme ve ranking takibi (1M + 301K vol)
 
 ---
 
-## Güncellemeler (Mart 2026 — devam)
+### 33. Title Length Mass Fix + Atlanta/Nairobi AI SEO ✅ (Mart 2026)
 
-### 22. Days-From-Today Link Grid Tema Fix ✅
-- `page.tsx`'teki hardcoded `bg-white` link grid → `DaysFromTodayClient.tsx`'e taşındı
-- Dark/light tema uyumlu: `border-slate-600 bg-slate-800` (dark) / `border-slate-200 bg-white` (light)
+**Sorun:** 100+ static page.tsx dosyasında `metadata.title` > 60 char toplam (template +16 dahil).
+**Fix:** Tüm >70 total char olan sayfalar düzeltildi. 0 sayfa >70 total kaldı.
+- New Zealand: 89→44 chars, Michigan: 87→40, Arizona: 80→52, Virginia: 78→41
+- Florida: 64→40 chars (AI SEO first sentence da eklendi)
+- Converter pages: BST→, JST→, AEST→, CET→ series — hepsi kısaltıldı
+- Country pages: Spain, Chile, Canada, South Africa, Poland, Iran, Greece, Netherlands, Ukraine, Pennsylvania, Russia, UK, Turkey, Ohio, Georgia State, Portugal, Australia, Argentina
 
-### 23. Meeting Planner FAQ Genişletme ✅
-- **FAQSchema.tsx** (JSON-LD): 5 → 9 soru
-- **MeetingPageContent.tsx** görsel FAQ: 3 → 8 soru (heatmap, 6 şehir limiti, DST, overlap yok, paylaşım, iş saatleri, tekrar eden toplantılar, ücretsiz mi)
-- **DynamicContent.tsx** görsel FAQ: 3 → 5 soru (şehre özgü "en iyi arama saati" dahil)
+**Atlanta SEO JSON (`data/seo/atlanta-seo.json`):**
+- AI SEO first sentence eklendi: "Atlanta, Georgia, USA uses Eastern Standard Time (EST, UTC-5)..."
+- Duplicate root-level @context/mainEntity temizlendi
+- IANA identifier eklendi: America/New_York
 
-### 24. Sitemap Güncellemesi ✅
-Eksik sayfalar eklendi:
-- `/stopwatch/` (0.9 priority)
-- `/days-ago/` hub (0.8)
-- `/days-from-today/[d]/` × 20 sayfa (0.7, daily)
-- `/days-ago/[d]/` × 20 sayfa (0.7, daily)
-- `how-many-hours-in-a-year`, `how-many-seconds-in-a-year`, `how-many-months-in-a-year` articles
+**Nairobi SEO JSON (`data/seo/nairobi-seo.json`):**
+- AI SEO first sentence eklendi: "Nairobi, Kenya uses East Africa Time (EAT, UTC+3) year-round..."
+- IANA identifier eklendi: Africa/Nairobi
 
-### 25. Footer Tools Sütunu ✅
-- Tek kolon → `grid-cols-2` çift sıra
-- `/stopwatch/` linki eklendi (daha önce sitede hiçbir yerden ulaşılamıyordu)
+**8 SEO JSON seo_title >44 char fix:**
+- sydney, paris, karachi, indianapolis, louisville, bali, new-york, cornwall
 
-### 26. IST Converter Eksik Reverse Pair'lar ✅ (Mart 2026)
-Rakip analizi: timeanddate bu sorgularda YOK, thetimenow/time.is dominant.
-- `/pst-to-ist/` — ~368K vol, PST 13.5h behind IST (12.5h PDT)
-- `/cst-to-ist/` — ~300K vol, CST 11.5h behind IST (10.5h CDT)
-- `/est-to-ist/` — ~250K vol, EST 10.5h behind IST (9.5h EDT)
-- `/mst-to-ist/` — MST 12.5h behind IST (11.5h MDT), Arizona exception
-- Her biri: ConverterPageShell + 5 FAQ (JSON-LD) + DST notu
-
-### 27. 5 Şehir SEO JSON Güncellemesi ✅ (Mart 2026)
-SEO Engine + AI SEO Engine workflow uygulandı:
-- **Paris**: seo_title 47→32 char (limit aşıyordu!), AI SEO ilk cümle
-- **Moscow**: title "Now" kaldırıldı, AI SEO ilk cümle (MSK, UTC+3, DST yok 2014)
-- **Berlin**: AI SEO ilk cümle (CET UTC+1 / CEST UTC+2), tarih 2026
-- **Shanghai**: AI SEO ilk cümle (CST, UTC+8, DST yok 1991), duplicate schema temizlendi
-- **Sao Paulo**: `faq_schema` EKLENDİ (eksikti → featured snippet çalışmıyordu!),
-  duplicate FAQ silindi, 8 soru + B3 borsası + Faria Lima içeriği eklendi
-
-**AI SEO ilk cümle formatı (zorunlu kural):**
-`"[City], [Country] uses [TZ Full Name] ([abbr], UTC[offset]) year-round/in winter..."`
-
-### 28. /time/ Pair Title Optimizasyonu ✅ (Mart 2026)
-GSC analizi: tüm pair sorguları "time difference" içeriyor ama title sadece "Time" diyordu.
-- Önce: `"Singapore to London Time — London 8 Hours Behind"`
-- Sonra: `"Singapore to London Time Difference — London 8 Hours Behind"`
-- 60 char guard: uzun çiftlerde city tekrarı kaldırılır (Tokyo→SF: "— 17 Hours Behind")
-- Etki: 1100+ /time/[from]/[to]/ sayfası
-
-### 29. Barcelona + Denver SEO JSON ✅ (Mart 2026)
-- `barcelona-seo.json`: CET/CEST, 8 FAQ, NY(6h)/London(1h sabit)/Tokyo(7-8h) diff
-- `denver-seo.json`: MDT UTC offset hatası düzeltildi (UTC-7→UTC-6), duplicate schema temizlendi
-
-### 30. South Korea Cluster ✅ (Mart 2026)
-Ubersuggest: `time in south korea` 246K vol, SD 26 — timeanddate pos 1 ama beatable.
-- `data/seo/seoul-seo.json`: AI SEO first sentence format — "Seoul, South Korea uses KST (UTC+9) year-round", DST 1988, IANA Asia/Seoul
-- `app/south-korea/page.tsx`: Title "Time in South Korea Now — KST (UTC+9)" (38 char, SD 26 keyword exact match), first FAQ AI SEO format
-
-### 31. PAIR_CONTEXTS Genişletme ✅ (Mart 2026)
-26 → 56 PAIR_CONTEXTS (GSC pos 10-30 ve yüksek Ubersuggest vol'a göre önceliklendirildi):
-- **Tier 1 (page 1'e yakın):** sf/paris (pos 14.9), sydney/sf (pos 15.0), sf/mexico-city (pos 15.9)
-- **Tier 2:** london/vancouver (31 imp), dubai/singapore (29 imp), new-york/tokyo (25 imp)
-- **Tier 3 + reverses:** tokyo/paris, hong-kong/new-york, sydney/auckland, los-angeles/toronto, london/seattle, bangkok/london, delhi/boston, amsterdam-lagos — hepsi + tersleri
-
-### 32. Chicago + Las Vegas SEO JSON ✅ (Mart 2026)
-Ubersuggest verisi: Chicago 165K vol SD 23, Las Vegas 135K vol SD 27.
-- `chicago-seo.json`: AI SEO first sentence "Chicago, Illinois, USA uses CST (UTC-6) / CDT (UTC-5)", IANA America/Chicago, date 2026
-- `las-vegas-seo.json`: AI SEO first sentence "Las Vegas, Nevada, USA uses PST (UTC-8) / PDT (UTC-7)", duplicate root-level @context/@type/mainEntity temizlendi, Arizona vs Nevada DST farkı eklendi, IANA America/Los_Angeles, date 2026
-
----
-
-## Açık Konular / Sonraki Adımlar
-
-- [ ] GSC'de 4 hafta sonra etki ölçümü (/time/ pair title + IST converters + South Korea + Chicago/Vegas)
-- [ ] Şehir sayfaları pozisyon takibi: moscow/berlin/paris/shanghai (pos 60-66 → hedef top 20)
-- [ ] Sao Paulo pos 51 → top 10 hedefi
-- [ ] Denver render kontrolü — denver-seo.json var, şehir sayfası çalışıyor mu?
-- [ ] Rakip zafiyet taraması devam: hangi yüksek-vol / düşük-SD cluster'lar kaldı?
+### 34. Sitemap Güncellemesi ✅ (Mart 2026)
+- `/stopwatch/` eklendi (0.9 priority)
+- `/days-ago/` eklendi (0.8)
+- `/days-from-today/[d]/` × 20 sayfa eklendi (0.7, daily)
+- `/days-ago/[d]/` × 20 sayfa eklendi (0.7, daily)
+- `how-many-hours-in-a-year`, `how-many-seconds-in-a-year`, `how-many-months-in-a-year` articles eklendi
 
 ---
 
 ## Git Workflow
-- Feature branch: `claude/korea-cluster-seo` (aktif bu oturumda)
+- Feature branch: `claude/plan-next-actions-ONJ8y`
 - Squash merge to main
 - Yeni oturumda yeni branch aç: `claude/[konu]-[id]`

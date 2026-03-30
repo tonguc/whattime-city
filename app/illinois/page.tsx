@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import IllinoisClockClient from './IllinoisClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Illinois Now — CST/CDT (UTC−6/−5) · Chicago, Springfield',
+  title: 'Time in Illinois Now — CST/CDT (UTC−6/−5)',
   description:
     'What time is it in Illinois right now? Illinois uses Central Standard Time (CST, UTC−6) in winter and Central Daylight Time (CDT, UTC−5) during Daylight Saving Time. Live Chicago clock, Illinois vs world cities, and best time to call.',
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/illinois/' },
   openGraph: {
-    title: 'Current Time in Illinois — CST/CDT (UTC−6/−5)',
+    title: 'Current Time in Illinois — CST/CDT',
     description: 'Live Illinois time. CST (UTC−6) in winter, CDT (UTC−5) during Daylight Saving Time. Chicago, Springfield, Rockford all on Central Time.',
     type: 'website', url: 'https://whattime.city/illinois/', siteName: 'whattime.city',
   },

@@ -6,7 +6,7 @@ import IndonesiaClockClient from './IndonesiaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Indonesia Now — WIB/WITA/WIT · Jakarta, Bali, Papua',
+  title: 'Time in Indonesia Now — WIB/WITA/WIT',
   description:
     'What time is it in Indonesia right now? Indonesia has three time zones: WIB (UTC+7) in Java and Sumatra, WITA (UTC+8) in Bali and Sulawesi, and WIT (UTC+9) in Papua. Live clocks, world comparison, and best time to call Jakarta.',
   keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/indonesia/' },
   openGraph: {
-    title: 'Current Time in Indonesia — WIB (UTC+7) · WITA (UTC+8) · WIT (UTC+9)',
+    title: 'Current Time in Indonesia — WIB/WITA/WIT',
     description: 'Live Indonesia time across all three time zones. WIB (UTC+7) for Jakarta, WITA (UTC+8) for Bali, WIT (UTC+9) for Papua. No Daylight Saving Time.',
     type: 'website', url: 'https://whattime.city/indonesia/', siteName: 'whattime.city',
   },

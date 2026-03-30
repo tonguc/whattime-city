@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'CST to GMT — Central Time to Greenwich Time Converter',
+  title: 'CST to GMT Converter — Central to Greenwich',
   description: 'Convert CST to GMT instantly. Central Standard Time (UTC-6) is 6 hours behind GMT. Live clocks, full conversion table, and hourly reference.',
   alternates: { canonical: 'https://whattime.city/cst-to-gmt/' },
   openGraph: { title: 'CST to GMT Converter — Central to Greenwich Time', description: 'CST is 6 hours behind GMT. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/cst-to-gmt/', siteName: 'whattime.city' },

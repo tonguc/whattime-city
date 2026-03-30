@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import NorthCarolinaClockClient from './NorthCarolinaClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in North Carolina Now — EST/EDT (UTC−5/−4) · Charlotte, Raleigh',
+  title: 'Time in North Carolina Now — EST/EDT',
   description: 'What time is it in North Carolina right now? NC uses Eastern Standard Time (EST, UTC−5) in winter and Eastern Daylight Time (EDT, UTC−4) during DST. Live Charlotte clock, NC vs world cities.',
   keywords: ['time in north carolina', 'north carolina time now', 'what time is it in north carolina', 'charlotte time', 'raleigh time', 'north carolina time zone', 'EST north carolina', 'eastern time nc', 'nc time vs california', 'nc time vs chicago'],
   alternates: { canonical: 'https://whattime.city/north-carolina/' },

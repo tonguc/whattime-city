@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import MississippiClockClient from './MississippiClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Mississippi Now — CST/CDT · Jackson · Central Time Zone',
+  title: 'Time in Mississippi Now — CST/CDT (UTC−6/−5)',
   description: 'What time is it in Mississippi right now? Mississippi uses Central Time (CST/CDT). Jackson is on CST (UTC−6) in winter and CDT (UTC−5) in summer. Live clock and best time to call.',
   keywords: ['time in mississippi', 'mississippi time now', 'what time is it in mississippi', 'jackson mississippi time', 'mississippi time zone', 'CST CDT mississippi', 'mississippi utc-6', 'biloxi time', 'hattiesburg time', 'mississippi central time', 'mississippi time vs eastern'],
   alternates: { canonical: 'https://whattime.city/mississippi/' },

@@ -6,7 +6,7 @@ import DenmarkClockClient from './DenmarkClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Denmark Now — CET (UTC+1) · Copenhagen',
+  title: 'Time in Denmark Now — CET (UTC+1)',
   description: 'What time is it in Denmark right now? Live Copenhagen clock, time zone info (CET (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in denmark', 'denmark time now', 'what time is it in denmark', 'copenhagen time', 'denmark time zone'],
   alternates: { canonical: 'https://whattime.city/denmark/' },

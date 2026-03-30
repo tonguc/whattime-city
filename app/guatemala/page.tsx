@@ -6,7 +6,7 @@ import GuatemalaClockClient from './GuatemalaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Guatemala Now — CST (UTC-6) · Guatemala City',
+  title: 'Time in Guatemala Now — CST (UTC−6)',
   description: 'What time is it in Guatemala right now? Live Guatemala City clock, time zone info (CST (UTC-6)), best time to call, and time difference with major cities.',
   keywords: ['time in guatemala', 'guatemala time now', 'what time is it in guatemala', 'guatemala city time', 'guatemala time zone'],
   alternates: { canonical: 'https://whattime.city/guatemala/' },

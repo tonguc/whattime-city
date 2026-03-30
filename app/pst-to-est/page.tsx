@@ -3,13 +3,13 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'PST to EST — Pacific to Eastern Time (3 Hours)',
+  title: 'PST to EST — Pacific 3 Hours Behind Eastern',
   description: 'PST is 3 hours behind EST. Convert Pacific Standard Time to Eastern Standard Time instantly — live clocks, full conversion table, and answers to "Is PST 3 hours behind EST?" and "What is 3pm EST in PST?"',
   alternates: {
     canonical: 'https://whattime.city/pst-to-est/',
   },
   openGraph: {
-    title: 'PST to EST — Pacific is 3 Hours Behind Eastern Time',
+    title: 'PST to EST — Pacific 3 Hours Behind Eastern',
     description: 'Convert PST to EST. Pacific Time is always 3 hours behind Eastern Time. Live clocks and full conversion table.',
     type: 'website',
     url: 'https://whattime.city/pst-to-est/',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PST to EST — Pacific is 3 Hours Behind Eastern',
+    title: 'PST to EST — Pacific 3 Hours Behind Eastern',
     description: 'PST is 3 hours behind EST. Live converter, full table, and common time conversions.',
   },
 }

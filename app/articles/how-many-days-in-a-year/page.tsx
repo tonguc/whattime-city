@@ -3,7 +3,7 @@ import ContentPageWrapper from '@/components/ContentPageWrapper'
 import HowManyDaysInAYearClient from './HowManyDaysInAYearClient'
 
 export const metadata: Metadata = {
-  title: 'How Many Days in a Year? (2026) — 365 or 366 Days Explained',
+  title: 'How Many Days in a Year? 365 or 366 (2026)',
   description:
     'A regular year has 365 days. A leap year has 366 days. See the breakdown by month, working days, and a year-by-year calendar through 2030.',
   alternates: {

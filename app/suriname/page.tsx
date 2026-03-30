@@ -6,7 +6,7 @@ import SurinameClockClient from './SurinameClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Suriname Now — SRT (UTC-3) · Paramaribo',
+  title: 'Time in Suriname Now — SRT (UTC−3)',
   description: 'What time is it in Suriname right now? Live Paramaribo clock, time zone info (SRT (UTC-3)), best time to call, and time difference with major cities.',
   keywords: ['time in suriname', 'suriname time now', 'what time is it in suriname', 'paramaribo time', 'suriname time zone'],
   alternates: { canonical: 'https://whattime.city/suriname/' },

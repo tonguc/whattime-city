@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import IowaClockClient from './IowaClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Iowa Now — CST/CDT · Des Moines · Central Time Zone',
+  title: 'Time in Iowa Now — CST/CDT (UTC−6/−5)',
   description: 'What time is it in Iowa right now? Iowa uses Central Time (CST/CDT). Des Moines is on CST (UTC−6) in winter and CDT (UTC−5) in summer. Live clock and best time to call.',
   keywords: ['time in iowa', 'iowa time now', 'what time is it in iowa', 'des moines time', 'iowa time zone', 'CST CDT iowa', 'iowa utc-6', 'cedar rapids time', 'iowa city time', 'iowa central time', 'iowa time vs eastern', 'iowa time vs uk'],
   alternates: { canonical: 'https://whattime.city/iowa/' },

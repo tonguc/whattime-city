@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'JST to UTC — Japan Standard Time to UTC Converter',
+  title: 'JST to UTC Converter — Japan to UTC',
   description: 'Convert JST to UTC instantly. Japan Standard Time (UTC+9) is 9 hours ahead of UTC. Live clocks, full conversion table, and JST offset reference.',
   alternates: { canonical: 'https://whattime.city/jst-to-utc/' },
   openGraph: { title: 'JST to UTC Converter — Japan Standard Time to UTC', description: 'JST is 9 hours ahead of UTC. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/jst-to-utc/', siteName: 'whattime.city' },

@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'JST to GMT — Japan Standard Time to Greenwich Mean Time Converter',
+  title: 'JST to GMT Converter — Japan to GMT',
   description: 'Convert JST to GMT instantly. Japan Standard Time (UTC+9) is 9 hours ahead of GMT (UTC+0). Live clocks, conversion table, and overlap window.',
   alternates: { canonical: 'https://whattime.city/jst-to-gmt/' },
   openGraph: { title: 'JST to GMT Converter — Japan to Greenwich Mean Time', description: 'JST is 9 hours ahead of GMT. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/jst-to-gmt/', siteName: 'whattime.city' },

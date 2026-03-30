@@ -3,7 +3,7 @@ import ContentPageWrapper from '@/components/ContentPageWrapper'
 import MinutesInAYearClient from './MinutesInAYearClient'
 
 export const metadata: Metadata = {
-  title: 'How Many Minutes in a Year? — 525,600 Minutes Explained',
+  title: 'How Many Minutes in a Year? 525,600 (2026)',
   description: 'There are 525,600 minutes in a regular year and 527,040 in a leap year. Full breakdown by month, hours, seconds, and how the famous "Seasons of Love" number works.',
   alternates: {
     canonical: 'https://whattime.city/articles/how-many-minutes-in-a-year/',

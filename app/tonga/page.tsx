@@ -6,7 +6,7 @@ import TongaClockClient from './TongaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Tonga Now — TOT (UTC+13) · Nukuʻalofa',
+  title: 'Time in Tonga Now — TOT (UTC+13)',
   description: 'What time is it in Tonga right now? Live Nukuʻalofa clock, time zone info (TOT (UTC+13)), best time to call, and time difference with major cities.',
   keywords: ['time in tonga', 'tonga time now', 'what time is it in tonga', 'nukuʻalofa time', 'tonga time zone'],
   alternates: { canonical: 'https://whattime.city/tonga/' },

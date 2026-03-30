@@ -6,7 +6,7 @@ import TrinidadAndTobagoClockClient from './TrinidadAndTobagoClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Trinidad and Tobago Now — AST (UTC-4) · Port of Spain',
+  title: 'Time in Trinidad & Tobago Now — AST (UTC−4)',
   description: 'What time is it in Trinidad and Tobago right now? Live Port of Spain clock, time zone info (AST (UTC-4)), best time to call, and time difference with major cities.',
   keywords: ['time in trinidad and tobago', 'trinidad and tobago time now', 'what time is it in trinidad and tobago', 'port of spain time', 'trinidad and tobago time zone'],
   alternates: { canonical: 'https://whattime.city/trinidad-and-tobago/' },

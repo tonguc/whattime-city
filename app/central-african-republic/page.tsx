@@ -6,7 +6,7 @@ import CentralAfricanRepublicClockClient from './CentralAfricanRepublicClockClie
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Central African Republic Now — WAT (UTC+1) · Bangui',
+  title: 'Time in Central African Republic — WAT',
   description: 'What time is it in Central African Republic right now? Live Bangui clock, time zone info (WAT (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in central african republic', 'central african republic time now', 'what time is it in central african republic', 'bangui time', 'central african republic time zone'],
   alternates: { canonical: 'https://whattime.city/central-african-republic/' },

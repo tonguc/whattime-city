@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'MST to CST — Mountain to Central Time Converter',
+  title: 'MST to CST Converter — Mountain to Central',
   description: 'Convert MST to CST instantly. Mountain Standard Time is 1 hour behind Central Standard Time. Live clocks, conversion table, and business hours overlap.',
   alternates: { canonical: 'https://whattime.city/mst-to-cst/' },
   openGraph: { title: 'MST to CST Time Converter — Mountain to Central', description: 'MST is 1 hour behind CST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/mst-to-cst/', siteName: 'whattime.city' },

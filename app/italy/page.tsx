@@ -6,7 +6,7 @@ import ItalyClockClient from './ItalyClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Italy Now — CET/CEST (UTC+1/+2) · Rome, Milan, Venice',
+  title: 'Time in Italy Now — CET/CEST (UTC+1/+2)',
   description: 'What time is it in Italy right now? Italy uses CET (UTC+1) in winter and CEST (UTC+2) during Daylight Saving Time. Live Rome clock, Italy vs world cities, and best time to call.',
   keywords: ['time in italy', 'italy time now', 'what time is it in italy', 'rome time', 'milan time', 'italy time zone', 'CET italy', 'CEST italy', 'italy utc+1', 'italy time vs usa', 'italy time vs uk', 'venice time', 'florence time'],
   alternates: { canonical: 'https://whattime.city/italy/' },

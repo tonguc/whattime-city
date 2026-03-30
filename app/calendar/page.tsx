@@ -5,7 +5,7 @@ import CalendarClient from './CalendarClient'
 const year = new Date().getFullYear()
 
 export const metadata: Metadata = {
-  title: `${year} Calendar — Yearly Calendar With US Holidays`,
+  title: `${year} Calendar — With US Holidays`,
   description: `Free printable ${year} calendar with all 12 months and US federal holidays marked. Navigate between years, filter by month, and see what day each holiday falls on.`,
   alternates: { canonical: 'https://whattime.city/calendar/' },
   openGraph: {

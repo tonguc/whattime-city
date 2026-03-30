@@ -6,7 +6,7 @@ import NetherlandsClockClient from './NetherlandsClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in the Netherlands Now — CET/CEST (UTC+1/+2) · Amsterdam, Rotterdam',
+  title: 'Time in Netherlands Now — CET/CEST',
   description:
     'What time is it in the Netherlands right now? The Netherlands uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) during Daylight Saving Time. Live Amsterdam clock, Netherlands vs world cities.',
   keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/netherlands/' },
   openGraph: {
-    title: 'Current Time in the Netherlands — CET/CEST (UTC+1/+2)',
+    title: 'Current Time in the Netherlands — CET/CEST',
     description: 'Live Netherlands time. CET (UTC+1) in winter, CEST (UTC+2) during Daylight Saving Time. Amsterdam, Rotterdam, The Hague all on Central European Time.',
     type: 'website', url: 'https://whattime.city/netherlands/', siteName: 'whattime.city',
   },

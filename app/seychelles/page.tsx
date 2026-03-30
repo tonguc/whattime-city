@@ -6,7 +6,7 @@ import SeychellesClockClient from './SeychellesClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Seychelles Now — SCT (UTC+4) · Victoria',
+  title: 'Time in Seychelles Now — SCT (UTC+4)',
   description: 'What time is it in Seychelles right now? Live Victoria clock, time zone info (SCT (UTC+4)), best time to call, and time difference with major cities.',
   keywords: ['time in seychelles', 'seychelles time now', 'what time is it in seychelles', 'victoria time', 'seychelles time zone'],
   alternates: { canonical: 'https://whattime.city/seychelles/' },

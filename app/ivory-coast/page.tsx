@@ -6,7 +6,7 @@ import IvoryCoastClockClient from './IvoryCoastClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Ivory Coast Now — GMT · Abidjan · UTC+0',
+  title: 'Time in Ivory Coast Now — GMT (UTC+0)',
   description: 'What time is it in Ivory Coast (Côte d\'Ivoire) right now? Ivory Coast uses GMT (UTC+0) year-round with no Daylight Saving Time. Abidjan live clock and time zone info.',
   keywords: ['time in ivory coast', 'ivory coast time now', 'what time is it in ivory coast', 'abidjan time', 'cote divoire time', 'ivory coast time zone', 'GMT ivory coast', 'abidjan current time', 'ivory coast no dst', 'time difference ivory coast'],
   alternates: { canonical: 'https://whattime.city/ivory-coast/' },
