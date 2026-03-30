@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import WashingtonStateClockClient from './WashingtonStateClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Washington State Now — PST/PDT (UTC−8/−7) · Seattle, Spokane',
+  title: 'Time in Washington State Now — PST/PDT',
   description:
     'What time is it in Washington State right now? Washington uses Pacific Standard Time (PST, UTC−8) in winter and Pacific Daylight Time (PDT, UTC−7) during Daylight Saving Time. Live Seattle clock, WA vs world cities, and best time to call.',
   keywords: [

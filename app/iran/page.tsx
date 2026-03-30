@@ -6,7 +6,7 @@ import IranClockClient from './IranClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Iran Now — IRST/IRDT (UTC+3:30/+4:30) · Tehran · Half-Hour Offset',
+  title: 'Time in Iran Now — IRST (UTC+3:30) / IRDT',
   description: 'What time is it in Iran right now? Iran uses IRST (UTC+3:30) in winter and IRDT (UTC+4:30) in summer. A rare half-hour offset with DST. Live Tehran clock and best time to call.',
   keywords: ['time in iran', 'iran time now', 'what time is it in iran', 'tehran time', 'iran time zone', 'IRST IRDT iran', 'iran utc+3:30', 'iran half hour offset', 'iran dst', 'iran time vs uk', 'iran time vs usa', 'iran time vs dubai'],
   alternates: { canonical: 'https://whattime.city/iran/' },

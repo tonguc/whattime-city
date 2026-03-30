@@ -6,7 +6,7 @@ import GermanyClockClient from './GermanyClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Germany Now — CET/CEST (UTC+1/+2) · Berlin, Munich, Hamburg',
+  title: 'Time in Germany Now — CET/CEST (UTC+1/+2)',
   description:
     'What time is it in Germany right now? Germany uses CET (UTC+1) in winter and CEST (UTC+2) during Central European Summer Time. Live Berlin clock, Germany vs US/UK/Asia, and best time to call.',
   keywords: [

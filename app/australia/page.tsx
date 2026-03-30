@@ -6,7 +6,7 @@ import AustraliaClockClient from './AustraliaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Australia Now — AEST/AEDT · Sydney, Melbourne, Brisbane, Perth',
+  title: 'Time in Australia Now — AEST/AEDT · All States',
   description:
     'What time is it in Australia right now? Australia has 5 time zones — AEST (UTC+10), ACST (UTC+9:30), AWST (UTC+8), and more. Live Sydney clock, all Australian time zones, and best time to call.',
   keywords: [

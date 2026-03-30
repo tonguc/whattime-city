@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import WestVirginiaClockClient from './WestVirginiaClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in West Virginia Now — EST/EDT · Charleston · Eastern Time Zone',
+  title: 'Time in West Virginia Now — EST/EDT',
   description: 'What time is it in West Virginia right now? West Virginia uses Eastern Time (EST/EDT). Charleston is on EST (UTC−5) in winter and EDT (UTC−4) in summer. Live clock and time info.',
   keywords: ['time in west virginia', 'west virginia time now', 'what time is it in west virginia', 'charleston west virginia time', 'west virginia time zone', 'EST EDT west virginia', 'west virginia utc-5', 'huntington time', 'morgantown time', 'west virginia eastern time'],
   alternates: { canonical: 'https://whattime.city/west-virginia/' },

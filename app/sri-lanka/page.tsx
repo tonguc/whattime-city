@@ -6,7 +6,7 @@ import SriLankaClockClient from './SriLankaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Sri Lanka Now — IST (UTC+5:30) · Sri Jayawardenepura Kotte',
+  title: 'Time in Sri Lanka Now — IST (UTC+5:30)',
   description: 'What time is it in Sri Lanka right now? Live Sri Jayawardenepura Kotte clock, time zone info (IST (UTC+5:30)), best time to call, and time difference with major cities.',
   keywords: ['time in sri lanka', 'sri lanka time now', 'what time is it in sri lanka', 'sri jayawardenepura kotte time', 'sri lanka time zone'],
   alternates: { canonical: 'https://whattime.city/sri-lanka/' },

@@ -6,7 +6,7 @@ import VietnamClockClient from './VietnamClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Vietnam Now — ICT (UTC+7) · Ho Chi Minh City, Hanoi · No DST',
+  title: 'Time in Vietnam Now — ICT (UTC+7) · No DST',
   description:
     'What time is it in Vietnam right now? Vietnam uses Indochina Time (ICT, UTC+7) year-round with no Daylight Saving Time. Live Ho Chi Minh City clock, Vietnam vs world cities, and best time to call.',
   keywords: [

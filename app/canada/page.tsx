@@ -6,7 +6,7 @@ import CanadaClockClient from './CanadaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Canada Now — All Time Zones · Toronto, Vancouver, Montreal, Calgary',
+  title: 'Time in Canada Now — All 6 Time Zones',
   description:
     'What time is it in Canada right now? Canada spans 6 time zones from Newfoundland (NST, UTC−3:30) to Pacific (PST, UTC−8). Live Toronto clock, all Canadian time zones, and best time to call.',
   keywords: [

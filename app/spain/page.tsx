@@ -6,7 +6,7 @@ import SpainClockClient from './SpainClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Spain Now — CET/CEST (UTC+1/+2) · Madrid, Barcelona · Canary Islands',
+  title: 'Time in Spain Now — CET/CEST (UTC+1/+2)',
   description:
     'What time is it in Spain right now? Spain uses Central European Time (CET, UTC+1) in winter and CEST (UTC+2) in summer. The Canary Islands are 1 hour behind the mainland. Live Madrid clock, Spain vs world cities, and best time to call.',
   keywords: [

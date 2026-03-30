@@ -6,7 +6,7 @@ import RussiaClockClient from './RussiaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Russia Now — MSK (UTC+3) · Moscow · 11 Time Zones · No DST',
+  title: 'Time in Russia Now — MSK (UTC+3) · No DST',
   description:
     'What time is it in Russia right now? Russia spans 11 time zones from UTC+2 (Kaliningrad) to UTC+12 (Kamchatka). Moscow Time (MSK, UTC+3) is the national reference. Live clocks for all Russian time zones, and best time to call Moscow.',
   keywords: [

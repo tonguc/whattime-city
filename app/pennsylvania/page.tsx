@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import PennsylvaniaClockClient from './PennsylvaniaClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Pennsylvania Now — EST/EDT (UTC−5/−4) · Philadelphia, Pittsburgh',
+  title: 'Time in Pennsylvania Now — EST/EDT · Philadelphia',
   description: 'What time is it in Pennsylvania right now? Pennsylvania uses Eastern Standard Time (EST, UTC−5) in winter and Eastern Daylight Time (EDT, UTC−4) during DST. Live Philadelphia clock, PA vs world cities.',
   keywords: ['time in pennsylvania', 'pennsylvania time now', 'what time is it in pennsylvania', 'philadelphia time', 'pittsburgh time', 'pennsylvania time zone', 'EST pennsylvania', 'eastern time pa', 'pa time vs california', 'pa time vs london'],
   alternates: { canonical: 'https://whattime.city/pennsylvania/' },
