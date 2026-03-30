@@ -1,7 +1,7 @@
 export const flightTimeSEO = {
   metadata: {
-    title: "Flight Time Calculator — Arrival Time",
-    description: "What time will you land? Enter departure city, arrival city, and flight duration to instantly calculate your local arrival time — automatically adjusts for time zones and Daylight Saving Time.",
+    title: "Flight Time Calculator — What Time Do I Land",
+    description: "Enter departure city, arrival city, and flight duration — get your exact local arrival time with automatic DST adjustment. Supports 400+ cities worldwide.",
     canonical: "https://whattime.city/flight-time/",
     openGraph: {
       title: "Flight Time Calculator — What Time Do I Land?",
