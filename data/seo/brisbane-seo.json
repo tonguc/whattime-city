@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Brisbane — AEST (UTC+10)",
+  "seo_description": "Current time in Brisbane, Australia — live AEST clock, no DST, and time differences with Sydney, Melbourne, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Brisbane right now?",
+      "answer": "Brisbane, Queensland, Australia uses Australian Eastern Standard Time (AEST, UTC+10) year-round. Queensland does not observe Daylight Saving Time. Unlike Sydney and Melbourne (which move to AEDT UTC+11 in summer), Brisbane stays on UTC+10 all year. The IANA timezone identifier is Australia/Brisbane."
+    },
+    {
+      "question": "What time zone is Brisbane in?",
+      "answer": "Brisbane is in the Australian Eastern Standard Time zone (AEST, UTC+10) year-round. Queensland is the only major eastern Australian state that does not observe DST — voters rejected it in a 1992 referendum. The IANA identifier is Australia/Brisbane."
+    },
+    {
+      "question": "Does Brisbane observe daylight saving time?",
+      "answer": "No. Queensland does not observe Daylight Saving Time. Brisbane remains on AEST (UTC+10) year-round. Queensland has held multiple referendums on DST and consistently voted against it. Critics argue DST disadvantages Queensland's farming community and causes confusion along the border with New South Wales."
+    },
+    {
+      "question": "What is the time difference between Brisbane and Sydney?",
+      "answer": "Brisbane (AEST, UTC+10) and Sydney (AEST, UTC+10) are on the same time in winter. During summer DST, Sydney moves to AEDT (UTC+11) while Brisbane stays at UTC+10 — making Brisbane 1 hour behind Sydney. The gap is 0 hours in winter and 1 hour in summer (approximately October to April)."
+    },
+    {
+      "question": "What is the time difference between Brisbane and Melbourne?",
+      "answer": "Brisbane (AEST, UTC+10) and Melbourne (AEST, UTC+10) are on the same time in winter. In summer, Melbourne moves to AEDT (UTC+11) while Brisbane stays at UTC+10 — making Brisbane 1 hour behind Melbourne. The gap is 0 hours in winter and 1 hour in summer."
+    },
+    {
+      "question": "What is the time difference between Brisbane and London?",
+      "answer": "Brisbane (AEST, UTC+10) is 10 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Brisbane is 9 hours ahead. Since Brisbane has no DST, the gap changes only when London transitions its clocks."
+    },
+    {
+      "question": "What are typical business hours in Brisbane?",
+      "answer": "Standard business hours in Brisbane are 9:00 AM to 5:00 PM AEST, Monday through Friday. Brisbane is the capital of Queensland and Australia's third-largest city. Key industries include mining services, tourism (Great Barrier Reef gateway), construction, technology, and education. Brisbane hosted the 2032 Summer Olympics. The ASX (Australian Securities Exchange) in Sydney effectively covers Brisbane businesses, with trading in AEST."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Brisbane right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Brisbane, Queensland, Australia uses Australian Eastern Standard Time (AEST, UTC+10) year-round. Queensland does not observe Daylight Saving Time. Unlike Sydney and Melbourne (which move to AEDT UTC+11 in summer), Brisbane stays on UTC+10 all year. The IANA timezone identifier is Australia/Brisbane."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Brisbane in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Brisbane is in the Australian Eastern Standard Time zone (AEST, UTC+10) year-round. Queensland is the only major eastern Australian state that does not observe DST — voters rejected it in a 1992 referendum. The IANA identifier is Australia/Brisbane."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Brisbane observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Queensland does not observe Daylight Saving Time. Brisbane remains on AEST (UTC+10) year-round. Queensland has held multiple referendums on DST and consistently voted against it. Critics argue DST disadvantages Queensland's farming community and causes confusion along the border with New South Wales."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Brisbane and Sydney?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Brisbane (AEST, UTC+10) and Sydney (AEST, UTC+10) are on the same time in winter. During summer DST, Sydney moves to AEDT (UTC+11) while Brisbane stays at UTC+10 — making Brisbane 1 hour behind Sydney. The gap is 0 hours in winter and 1 hour in summer (approximately October to April)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Brisbane and Melbourne?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Brisbane (AEST, UTC+10) and Melbourne (AEST, UTC+10) are on the same time in winter. In summer, Melbourne moves to AEDT (UTC+11) while Brisbane stays at UTC+10 — making Brisbane 1 hour behind Melbourne. The gap is 0 hours in winter and 1 hour in summer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Brisbane and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Brisbane (AEST, UTC+10) is 10 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Brisbane is 9 hours ahead. Since Brisbane has no DST, the gap changes only when London transitions its clocks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Brisbane?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Brisbane are 9:00 AM to 5:00 PM AEST, Monday through Friday. Brisbane is the capital of Queensland and Australia's third-largest city. Key industries include mining services, tourism (Great Barrier Reef gateway), construction, technology, and education. Brisbane hosted the 2032 Summer Olympics. The ASX (Australian Securities Exchange) in Sydney effectively covers Brisbane businesses, with trading in AEST."
+        }
+      }
+    ]
+  }
+}

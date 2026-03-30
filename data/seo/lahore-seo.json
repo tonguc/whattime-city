@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Lahore — PKT (UTC+5)",
+  "seo_description": "Current time in Lahore, Pakistan — live Pakistan Standard Time (PKT, UTC+5) clock, no DST, and time differences with Karachi, Delhi, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Lahore right now?",
+      "answer": "Lahore, Pakistan uses Pakistan Standard Time (PKT, UTC+5) year-round. Pakistan does not observe Daylight Saving Time. Lahore is Pakistan's second-largest city and shares its timezone with Karachi, Islamabad, and all other Pakistani cities. The IANA timezone identifier is Asia/Karachi."
+    },
+    {
+      "question": "What time zone is Lahore in?",
+      "answer": "Lahore is in the Pakistan Standard Time zone (PKT, UTC+5). All of Pakistan uses UTC+5 year-round with no DST. The IANA identifier is Asia/Karachi (used for all of Pakistan). Lahore shares its timezone with Islamabad, Karachi, Peshawar, and Faisalabad."
+    },
+    {
+      "question": "Does Lahore observe daylight saving time?",
+      "answer": "No. Pakistan does not observe Daylight Saving Time. Lahore remains on PKT (UTC+5) year-round. Pakistan briefly experimented with DST in 2008–2009 but discontinued it."
+    },
+    {
+      "question": "What is the time difference between Lahore and Delhi?",
+      "answer": "Lahore (PKT, UTC+5) and Delhi (IST, UTC+5:30) differ by 30 minutes — Delhi is 30 minutes ahead. This is because India uses UTC+5:30, a 30-minute offset from Pakistan's UTC+5. Neither country observes DST, so this gap is constant year-round."
+    },
+    {
+      "question": "What is the time difference between Lahore and Karachi?",
+      "answer": "Lahore and Karachi are on the same timezone (PKT, UTC+5, Asia/Karachi). There is no time difference between Lahore and Karachi at any time of year."
+    },
+    {
+      "question": "What is the time difference between Lahore and London?",
+      "answer": "Lahore (PKT, UTC+5) is 5 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Lahore is 4 hours ahead. Since Pakistan has no DST, the gap changes only when London transitions its clocks."
+    },
+    {
+      "question": "What are typical business hours in Lahore?",
+      "answer": "Standard business hours in Lahore are 9:00 AM to 5:00 PM PKT, Monday through Friday. Lahore is Pakistan's cultural capital and its second-largest city. Major industries include textiles and apparel (Pakistan is among the world's top textile exporters), IT and software services, manufacturing, and education. Lahore is home to the Lahore Stock Exchange (now merged into the Pakistan Stock Exchange). Major employers include IT firms, garment manufacturers, and the University of Engineering and Technology."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Lahore right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lahore, Pakistan uses Pakistan Standard Time (PKT, UTC+5) year-round. Pakistan does not observe Daylight Saving Time. Lahore is Pakistan's second-largest city and shares its timezone with Karachi, Islamabad, and all other Pakistani cities. The IANA timezone identifier is Asia/Karachi."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Lahore in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lahore is in the Pakistan Standard Time zone (PKT, UTC+5). All of Pakistan uses UTC+5 year-round with no DST. The IANA identifier is Asia/Karachi (used for all of Pakistan). Lahore shares its timezone with Islamabad, Karachi, Peshawar, and Faisalabad."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Lahore observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Pakistan does not observe Daylight Saving Time. Lahore remains on PKT (UTC+5) year-round. Pakistan briefly experimented with DST in 2008–2009 but discontinued it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Lahore and Delhi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lahore (PKT, UTC+5) and Delhi (IST, UTC+5:30) differ by 30 minutes — Delhi is 30 minutes ahead. This is because India uses UTC+5:30, a 30-minute offset from Pakistan's UTC+5. Neither country observes DST, so this gap is constant year-round."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Lahore and Karachi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lahore and Karachi are on the same timezone (PKT, UTC+5, Asia/Karachi). There is no time difference between Lahore and Karachi at any time of year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Lahore and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lahore (PKT, UTC+5) is 5 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Lahore is 4 hours ahead. Since Pakistan has no DST, the gap changes only when London transitions its clocks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Lahore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Lahore are 9:00 AM to 5:00 PM PKT, Monday through Friday. Lahore is Pakistan's cultural capital and its second-largest city. Major industries include textiles and apparel (Pakistan is among the world's top textile exporters), IT and software services, manufacturing, and education. Lahore is home to the Lahore Stock Exchange (now merged into the Pakistan Stock Exchange). Major employers include IT firms, garment manufacturers, and the University of Engineering and Technology."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Addis Ababa — EAT (UTC+3)",
+  "seo_description": "Current time in Addis Ababa, Ethiopia — live East Africa Time (EAT, UTC+3) clock, no DST, and time differences with Nairobi, Dubai, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Addis Ababa right now?",
+      "answer": "Addis Ababa, Ethiopia uses East Africa Time (EAT, UTC+3) year-round. Ethiopia does not observe Daylight Saving Time. Addis Ababa shares its timezone with Nairobi (Kenya), Dar es Salaam (Tanzania), Kampala (Uganda), and Mogadishu (Somalia). The IANA timezone identifier is Africa/Addis_Ababa."
+    },
+    {
+      "question": "What time zone is Addis Ababa in?",
+      "answer": "Addis Ababa is in the East Africa Time zone (EAT, UTC+3) year-round. Ethiopia uses UTC+3 with no DST. Note: Ethiopia also uses its own traditional Ethiopian clock system where the day starts at 6:00 AM (Ethiopian time = international time minus 6 hours for daytime). The IANA identifier is Africa/Addis_Ababa."
+    },
+    {
+      "question": "Does Addis Ababa observe daylight saving time?",
+      "answer": "No. Ethiopia does not observe Daylight Saving Time. Addis Ababa remains on EAT (UTC+3) year-round. Ethiopia also has a unique traditional calendar (Ethiopian calendar) that differs from the Gregorian calendar — it has 13 months and is approximately 7 years behind the Gregorian calendar."
+    },
+    {
+      "question": "What is the time difference between Addis Ababa and Nairobi?",
+      "answer": "Addis Ababa (EAT, UTC+3) and Nairobi (EAT, UTC+3) are on the same timezone. There is no time difference between Addis Ababa and Nairobi year-round, as both use East Africa Time with no DST."
+    },
+    {
+      "question": "What is the time difference between Addis Ababa and Dubai?",
+      "answer": "Addis Ababa (EAT, UTC+3) and Dubai (GST, UTC+4) differ by 1 hour — Dubai is 1 hour ahead. Neither Ethiopia nor UAE observes DST, so this 1-hour gap is constant year-round."
+    },
+    {
+      "question": "What is the time difference between Addis Ababa and London?",
+      "answer": "Addis Ababa (EAT, UTC+3) is 3 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Addis Ababa is 2 hours ahead. Since Ethiopia has no DST, the gap changes only when London transitions its clocks."
+    },
+    {
+      "question": "What are typical business hours in Addis Ababa?",
+      "answer": "Standard business hours in Addis Ababa are 8:00 AM to 5:00 PM EAT (or 2:00 AM to 11:00 AM in the Ethiopian traditional clock), Monday through Friday. Addis Ababa is Ethiopia's capital and Africa's fourth-largest city. It is the diplomatic capital of Africa and home to the African Union (AU) headquarters. Major industries include coffee (Ethiopia is the birthplace of coffee), flowers, textiles, and a growing tech sector. Ethiopian Airlines, one of Africa's largest airlines, is headquartered in Addis Ababa."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Addis Ababa right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Addis Ababa, Ethiopia uses East Africa Time (EAT, UTC+3) year-round. Ethiopia does not observe Daylight Saving Time. Addis Ababa shares its timezone with Nairobi (Kenya), Dar es Salaam (Tanzania), Kampala (Uganda), and Mogadishu (Somalia). The IANA timezone identifier is Africa/Addis_Ababa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Addis Ababa in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Addis Ababa is in the East Africa Time zone (EAT, UTC+3) year-round. Ethiopia uses UTC+3 with no DST. Note: Ethiopia also uses its own traditional Ethiopian clock system where the day starts at 6:00 AM (Ethiopian time = international time minus 6 hours for daytime). The IANA identifier is Africa/Addis_Ababa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Addis Ababa observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Ethiopia does not observe Daylight Saving Time. Addis Ababa remains on EAT (UTC+3) year-round. Ethiopia also has a unique traditional calendar (Ethiopian calendar) that differs from the Gregorian calendar — it has 13 months and is approximately 7 years behind the Gregorian calendar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Addis Ababa and Nairobi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Addis Ababa (EAT, UTC+3) and Nairobi (EAT, UTC+3) are on the same timezone. There is no time difference between Addis Ababa and Nairobi year-round, as both use East Africa Time with no DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Addis Ababa and Dubai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Addis Ababa (EAT, UTC+3) and Dubai (GST, UTC+4) differ by 1 hour — Dubai is 1 hour ahead. Neither Ethiopia nor UAE observes DST, so this 1-hour gap is constant year-round."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Addis Ababa and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Addis Ababa (EAT, UTC+3) is 3 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Addis Ababa is 2 hours ahead. Since Ethiopia has no DST, the gap changes only when London transitions its clocks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Addis Ababa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Addis Ababa are 8:00 AM to 5:00 PM EAT, Monday through Friday. Addis Ababa is Ethiopia's capital and Africa's fourth-largest city. It is the diplomatic capital of Africa and home to the African Union (AU) headquarters. Major industries include coffee (Ethiopia is the birthplace of coffee), flowers, textiles, and a growing tech sector. Ethiopian Airlines, one of Africa's largest airlines, is headquartered in Addis Ababa."
+        }
+      }
+    ]
+  }
+}

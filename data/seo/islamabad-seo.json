@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Islamabad — PKT (UTC+5)",
+  "seo_description": "Current time in Islamabad, Pakistan — live Pakistan Standard Time (PKT, UTC+5) clock, no DST, and time differences with Karachi, Delhi, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Islamabad right now?",
+      "answer": "Islamabad, Pakistan uses Pakistan Standard Time (PKT, UTC+5) year-round. Pakistan does not currently observe Daylight Saving Time. Islamabad shares its timezone with Karachi, Lahore, Rawalpindi, and all other Pakistani cities. The IANA timezone identifier is Asia/Karachi."
+    },
+    {
+      "question": "What time zone is Islamabad in?",
+      "answer": "Islamabad is in the Pakistan Standard Time zone (PKT, UTC+5). All of Pakistan uses a single timezone UTC+5 with no DST. The IANA identifier is Asia/Karachi (used for all of Pakistan). Islamabad shares its UTC+5 offset with Karachi, Lahore, Peshawar, and Quetta."
+    },
+    {
+      "question": "Does Islamabad observe daylight saving time?",
+      "answer": "No. Pakistan does not currently observe Daylight Saving Time. Islamabad remains on PKT (UTC+5) year-round. Pakistan experimented with DST in 2008 and 2009 (moving to UTC+6 in summer) but discontinued it due to public opposition and logistical difficulties."
+    },
+    {
+      "question": "What is the time difference between Islamabad and Delhi?",
+      "answer": "Islamabad (PKT, UTC+5) and Delhi (IST, UTC+5:30) differ by 30 minutes — Delhi is 30 minutes ahead of Islamabad. Neither Pakistan nor India observes DST, so this 30-minute gap is constant year-round."
+    },
+    {
+      "question": "What is the time difference between Islamabad and Dubai?",
+      "answer": "Islamabad (PKT, UTC+5) is 1 hour ahead of Dubai (GST, UTC+4). Neither country observes DST, so this 1-hour gap is constant year-round."
+    },
+    {
+      "question": "What is the time difference between Islamabad and London?",
+      "answer": "Islamabad (PKT, UTC+5) is 5 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Islamabad is 4 hours ahead. Since Pakistan has no DST, the gap changes only when London transitions its clocks."
+    },
+    {
+      "question": "What are typical business hours in Islamabad?",
+      "answer": "Standard business hours in Islamabad are 9:00 AM to 5:00 PM PKT, Monday through Friday (and sometimes Saturday). Islamabad is Pakistan's capital city, built in the 1960s to replace Karachi as the capital. It is home to federal government ministries, the Parliament, and diplomatic missions. Major institutions include the Islamabad Stock Exchange (merged into Pakistan Stock Exchange), the State Bank of Pakistan, and numerous universities. The twin city of Rawalpindi hosts the headquarters of the Pakistan Army."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Islamabad right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Islamabad, Pakistan uses Pakistan Standard Time (PKT, UTC+5) year-round. Pakistan does not currently observe Daylight Saving Time. Islamabad shares its timezone with Karachi, Lahore, Rawalpindi, and all other Pakistani cities. The IANA timezone identifier is Asia/Karachi."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Islamabad in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Islamabad is in the Pakistan Standard Time zone (PKT, UTC+5). All of Pakistan uses a single timezone UTC+5 with no DST. The IANA identifier is Asia/Karachi (used for all of Pakistan). Islamabad shares its UTC+5 offset with Karachi, Lahore, Peshawar, and Quetta."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Islamabad observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Pakistan does not currently observe Daylight Saving Time. Islamabad remains on PKT (UTC+5) year-round. Pakistan experimented with DST in 2008 and 2009 (moving to UTC+6 in summer) but discontinued it due to public opposition and logistical difficulties."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Islamabad and Delhi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Islamabad (PKT, UTC+5) and Delhi (IST, UTC+5:30) differ by 30 minutes — Delhi is 30 minutes ahead of Islamabad. Neither Pakistan nor India observes DST, so this 30-minute gap is constant year-round."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Islamabad and Dubai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Islamabad (PKT, UTC+5) is 1 hour ahead of Dubai (GST, UTC+4). Neither country observes DST, so this 1-hour gap is constant year-round."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Islamabad and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Islamabad (PKT, UTC+5) is 5 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Islamabad is 4 hours ahead. Since Pakistan has no DST, the gap changes only when London transitions its clocks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Islamabad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Islamabad are 9:00 AM to 5:00 PM PKT, Monday through Friday (and sometimes Saturday). Islamabad is Pakistan's capital city, built in the 1960s to replace Karachi as the capital. It is home to federal government ministries, the Parliament, and diplomatic missions. Major institutions include the Pakistan Stock Exchange, the State Bank of Pakistan, and numerous universities. The twin city of Rawalpindi hosts the headquarters of the Pakistan Army."
+        }
+      }
+    ]
+  }
+}
