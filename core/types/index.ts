@@ -38,8 +38,17 @@ export type {
 } from './alarm'
 
 // Theme types
-export type { 
-  Theme, 
-  ThemeMode, 
-  ThemeKey 
+export type {
+  Theme,
+  ThemeMode,
+  ThemeKey
 } from './theme'
+
+// SEO data types
+export type {
+  CitySEOData,
+  FAQItem,
+  FAQSchema,
+  ContentBlock,
+  TimezoneFacts,
+} from './seo'

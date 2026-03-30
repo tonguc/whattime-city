@@ -2,10 +2,11 @@
 import Link from 'next/link'
 import { City } from '@/lib/cities'
 import { useThemeClasses } from '@/lib/useThemeClasses'
+import type { CitySEOData } from '@/core/types'
 
 interface SEOContentProps {
   city: City
-  seoData?: any
+  seoData?: CitySEOData | null
 }
 
 function getNumericOffset(timezone: string): number {

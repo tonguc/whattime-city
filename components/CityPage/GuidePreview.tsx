@@ -3,10 +3,11 @@
 import { useState } from 'react'
 import { City } from '@/lib/cities'
 import { useThemeClasses } from '@/lib/useThemeClasses'
+import type { WeatherData } from '@/core/types/weather'
 
 interface GuidePreviewProps {
   city: City
-  weather?: any
+  weather?: WeatherData | null
 }
 
 type PreviewTab = 'overview' | 'attractions' | 'transport' | 'tips' | 'emergency' | 'holidays'

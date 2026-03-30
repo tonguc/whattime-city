@@ -4,10 +4,11 @@ import { City } from '@/lib/cities'
 import { useThemeClasses } from '@/lib/useThemeClasses'
 import { getSunTimes } from '@/lib/sun-calculator'
 import WeatherBadge from '@/components/WeatherBadge'
+import type { WeatherData } from '@/core/types/weather'
 
 interface InfoRowProps {
   city: City
-  weather: any
+  weather: WeatherData | null
   detectedCity: City | null
   autoTheme: string
 }

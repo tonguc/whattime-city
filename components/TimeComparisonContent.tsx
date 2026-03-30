@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import { City } from '@/lib/cities'
+import type { WeatherResponse } from '@/core/types/weather'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes } from '@/lib/themes'
 import { useCityContext } from '@/lib/CityContext'
@@ -190,8 +191,8 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
   const sliderRef = useRef<HTMLDivElement>(null)
   
   // Weather state
-  const [fromWeather, setFromWeather] = useState<any>(null)
-  const [toWeather, setToWeather] = useState<any>(null)
+  const [fromWeather, setFromWeather] = useState<WeatherResponse | null>(null)
+  const [toWeather, setToWeather] = useState<WeatherResponse | null>(null)
   
   // Copy feedback
   const [copyFeedback, setCopyFeedback] = useState(false)
@@ -222,7 +223,7 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
   
   // Fetch weather for both cities
   useEffect(() => {
-    const fetchWeather = async (city: City, setWeather: (w: any) => void) => {
+    const fetchWeather = async (city: City, setWeather: (w: WeatherResponse | null) => void) => {
       try {
         const res = await fetch(`/api/weather?city=${encodeURIComponent(city.city)}`)
         if (res.ok) {

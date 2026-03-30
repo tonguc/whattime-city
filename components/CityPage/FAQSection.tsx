@@ -4,10 +4,11 @@ import { useState } from 'react'
 import { City, cities } from '@/lib/cities'
 import { useThemeClasses } from '@/lib/useThemeClasses'
 import Link from 'next/link'
+import type { CitySEOData } from '@/core/types'
 
 interface FAQSectionProps {
   city: City
-  seoData?: any
+  seoData?: CitySEOData | null
 }
 
 // DST info by country code
@@ -258,18 +259,22 @@ export default function FAQSection({ city, seoData }: FAQSectionProps) {
   const faqs = (seoData?.faq && seoData.faq.length > 0) ? seoData.faq : generateFAQs(city)
   
   // Generate JSON-LD Schema
-  const faqSchema = seoData?.faq_schema || {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    'mainEntity': faqs.map((faq: { question: string; answer: string }) => ({
-      '@type': 'Question',
-      'name': faq.question,
-      'acceptedAnswer': {
-        '@type': 'Answer',
-        'text': faq.answer
+  // seoData.faq_schema kullan — yoksa faqs listesinden üret
+  // faq_schema artık FAQSchema | undefined (typed), JSON.stringify güvenli
+  const faqSchema = (seoData?.faq_schema && seoData.faq_schema['@type'] === 'FAQPage')
+    ? seoData.faq_schema
+    : {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': faqs.map((faq: { question: string; answer: string }) => ({
+          '@type': 'Question',
+          'name': faq.question,
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': faq.answer
+          }
+        }))
       }
-    }))
-  }
   
   // Link styling
   const linkClass = isLight 

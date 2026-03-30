@@ -15,6 +15,7 @@ import Footer from '@/components/Footer'
 import AlarmModal, { ActiveAlarmPopup } from '@/components/AlarmModal'
 import { useAlarm, useWeather } from '@/shared/hooks'
 import DigitalClock from '@/components/DigitalClock'
+import type { CitySEOData } from '@/core/types'
 
 // Dynamic imports - reduces initial bundle size
 const WeatherBackground = dynamic(() => import('@/components/WeatherBackground'), { ssr: false })
@@ -44,7 +45,7 @@ const FAQSection = dynamic(() => import('./FAQSection'))
 
 interface CityPageProps {
   initialCity?: City
-  seoData?: any
+  seoData?: CitySEOData | null
 }
 
 function findNearestCity(lat: number, lng: number): City {

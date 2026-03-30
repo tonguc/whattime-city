@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cities, getCityBySlug, getAllSlugs } from '@/lib/cities'
 import CityPage from '@/components/CityPage'
+import type { CitySEOData } from '@/core/types'
 
 interface PageProps {
   params: Promise<{ city: string }>
@@ -27,13 +28,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
   }
 
-  let seoData: any = null
+  let seoData: CitySEOData | null = null
   try {
     const fs = require('fs')
     const path = require('path')
     const jsonPath = path.join(process.cwd(), 'data', 'seo', `${slug}-seo.json`)
     if (fs.existsSync(jsonPath)) {
-      seoData = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'))
+      seoData = JSON.parse(fs.readFileSync(jsonPath, 'utf-8')) as CitySEOData
     }
   } catch { seoData = null }
 
@@ -91,18 +92,18 @@ export default async function Page({ params }: PageProps) {
     notFound()
   }
 
-  let seoData = null
+  let seoData: CitySEOData | null = null
   try {
     const fs = require('fs')
     const path = require('path')
     const jsonPath = path.join(process.cwd(), 'data', 'seo', `${slug}-seo.json`)
     const tsPath = path.join(process.cwd(), 'data', 'seo', `${slug}-seo.ts`)
     if (fs.existsSync(jsonPath)) {
-      seoData = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'))
+      seoData = JSON.parse(fs.readFileSync(jsonPath, 'utf-8')) as CitySEOData
     } else if (fs.existsSync(tsPath)) {
       const fileContent = fs.readFileSync(tsPath, 'utf-8')
       const match = fileContent.match(/export const \w+ = ([\s\S]*?) as const;/)
-      if (match) seoData = JSON.parse(match[1])
+      if (match) seoData = JSON.parse(match[1]) as CitySEOData
     }
   } catch {
     seoData = null
