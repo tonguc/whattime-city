@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Bogotá — COT (UTC-5)",
+  "seo_description": "Current time in Bogotá, Colombia — live Colombia Time (COT, UTC-5) clock, no DST, and time differences with New York, London, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Bogotá right now?",
+      "answer": "Bogotá, Colombia uses Colombia Time (COT, UTC-5) year-round. Colombia does not observe Daylight Saving Time. Bogotá is in the same timezone as New York during US Eastern Standard Time (November–March), but 1 hour behind New York during US DST (EDT, UTC-4). The IANA timezone identifier is America/Bogota."
+    },
+    {
+      "question": "What time zone is Bogotá in?",
+      "answer": "Bogotá is in the Colombia Time zone (COT, UTC-5). Colombia uses UTC-5 year-round with no DST. Unlike its neighbors Venezuela (UTC-4) and Peru (UTC-5, no DST), Colombia has a simple fixed offset. The IANA identifier is America/Bogota."
+    },
+    {
+      "question": "Does Bogotá observe daylight saving time?",
+      "answer": "No. Colombia does not observe Daylight Saving Time. Bogotá remains on COT (UTC-5) year-round. This means Bogotá aligns exactly with New York's Eastern Standard Time (EST, UTC-5) from November to March, but falls 1 hour behind New York when the US switches to EDT (UTC-4) in summer."
+    },
+    {
+      "question": "What is the time difference between Bogotá and New York?",
+      "answer": "Bogotá (COT, UTC-5) and New York are on the same time from November to March (both UTC-5). During US Daylight Saving Time (EDT, UTC-4, March–November), New York is 1 hour ahead of Bogotá. This shifting gap is important for US–Colombia business coordination."
+    },
+    {
+      "question": "What is the time difference between Bogotá and London?",
+      "answer": "Bogotá (COT, UTC-5) is 5 hours behind London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), London is 6 hours ahead of Bogotá. Bogotá's lack of DST means the gap changes only when London transitions its clocks."
+    },
+    {
+      "question": "What is the time difference between Bogotá and Lima?",
+      "answer": "Bogotá (COT, UTC-5) and Lima (PET, UTC-5) are on the same time zone year-round. Neither Colombia nor Peru observes DST. There is no time difference between Bogotá and Lima at any time of year."
+    },
+    {
+      "question": "What are typical business hours in Bogotá?",
+      "answer": "Standard business hours in Bogotá are 8:00 AM to 5:00 PM or 9:00 AM to 6:00 PM COT, Monday through Friday. Bogotá is Colombia's capital and the largest city in South America's fourth-largest economy. The Bogotá Stock Exchange (BVC) operates 9:30 AM–4:00 PM COT. Major industries include oil/gas (Ecopetrol), financial services, mining, and technology."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Bogotá right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bogotá, Colombia uses Colombia Time (COT, UTC-5) year-round. Colombia does not observe Daylight Saving Time. Bogotá is in the same timezone as New York during US Eastern Standard Time (November–March), but 1 hour behind New York during US DST (EDT, UTC-4). The IANA timezone identifier is America/Bogota."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Bogotá in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bogotá is in the Colombia Time zone (COT, UTC-5). Colombia uses UTC-5 year-round with no DST. Unlike its neighbors Venezuela (UTC-4) and Peru (UTC-5, no DST), Colombia has a simple fixed offset. The IANA identifier is America/Bogota."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Bogotá observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Colombia does not observe Daylight Saving Time. Bogotá remains on COT (UTC-5) year-round. This means Bogotá aligns exactly with New York's Eastern Standard Time (EST, UTC-5) from November to March, but falls 1 hour behind New York when the US switches to EDT (UTC-4) in summer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Bogotá and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bogotá (COT, UTC-5) and New York are on the same time from November to March (both UTC-5). During US Daylight Saving Time (EDT, UTC-4, March–November), New York is 1 hour ahead of Bogotá. This shifting gap is important for US–Colombia business coordination."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Bogotá and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bogotá (COT, UTC-5) is 5 hours behind London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), London is 6 hours ahead of Bogotá. Bogotá's lack of DST means the gap changes only when London transitions its clocks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Bogotá and Lima?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bogotá (COT, UTC-5) and Lima (PET, UTC-5) are on the same time zone year-round. Neither Colombia nor Peru observes DST. There is no time difference between Bogotá and Lima at any time of year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Bogotá?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Bogotá are 8:00 AM to 5:00 PM or 9:00 AM to 6:00 PM COT, Monday through Friday. Bogotá is Colombia's capital and the largest city in South America's fourth-largest economy. The Bogotá Stock Exchange (BVC) operates 9:30 AM–4:00 PM COT. Major industries include oil/gas (Ecopetrol), financial services, mining, and technology."
+        }
+      }
+    ]
+  }
+}

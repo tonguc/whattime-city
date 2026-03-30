@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Lima — PET (UTC-5)",
+  "seo_description": "Current time in Lima, Peru — live Peru Time (PET, UTC-5) clock, no DST, and time differences with Bogotá, New York, London, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Lima right now?",
+      "answer": "Lima, Peru uses Peru Time (PET, UTC-5) year-round. Peru does not observe Daylight Saving Time. Lima is on the same UTC offset as US Eastern Standard Time (EST, UTC-5) in winter, which means Lima aligns with New York from November to March. The IANA timezone identifier is America/Lima."
+    },
+    {
+      "question": "What time zone is Lima in?",
+      "answer": "Lima is in the Peru Time zone (PET, UTC-5). Peru uses UTC-5 year-round with no DST. Lima shares this offset with Bogotá (Colombia), Guayaquil (Ecuador), and New York during US winter. The IANA identifier is America/Lima."
+    },
+    {
+      "question": "Does Lima observe daylight saving time?",
+      "answer": "No. Peru does not observe Daylight Saving Time. Lima remains on PET (UTC-5) year-round. During US Eastern Daylight Time (EDT, UTC-4), New York is 1 hour ahead of Lima. Peru's choice not to observe DST simplifies scheduling for this major South American business hub."
+    },
+    {
+      "question": "What is the time difference between Lima and New York?",
+      "answer": "Lima (PET, UTC-5) and New York are on the same time from November to March (both UTC-5). During US Daylight Saving Time (EDT, UTC-4, March–November), New York is 1 hour ahead of Lima. The gap oscillates between 0 and 1 hour depending on the US DST period."
+    },
+    {
+      "question": "What is the time difference between Lima and London?",
+      "answer": "Lima (PET, UTC-5) is 5 hours behind London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), London is 6 hours ahead of Lima. Since Peru has no DST, the gap changes only when London transitions its clocks."
+    },
+    {
+      "question": "What is the time difference between Lima and Santiago?",
+      "answer": "Lima (PET, UTC-5) and Santiago (CLT, UTC-3 in winter; CLST, UTC-3 in summer — Chile recently eliminated DST) differ by 2–3 hours. Chile is ahead of Lima. The exact gap depends on Chile's current clock schedule."
+    },
+    {
+      "question": "What are typical business hours in Lima?",
+      "answer": "Standard business hours in Lima are 9:00 AM to 6:00 PM PET, Monday through Friday. Lima is Peru's capital and the 5th largest city in South America, home to the Lima Stock Exchange (BVL) which operates 9:00 AM–4:00 PM PET. Major industries include mining, finance, textiles, and fishing. Peru is a leading exporter of copper, gold, and silver."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Lima right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lima, Peru uses Peru Time (PET, UTC-5) year-round. Peru does not observe Daylight Saving Time. Lima is on the same UTC offset as US Eastern Standard Time (EST, UTC-5) in winter, which means Lima aligns with New York from November to March. The IANA timezone identifier is America/Lima."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Lima in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lima is in the Peru Time zone (PET, UTC-5). Peru uses UTC-5 year-round with no DST. Lima shares this offset with Bogotá (Colombia), Guayaquil (Ecuador), and New York during US winter. The IANA identifier is America/Lima."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Lima observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Peru does not observe Daylight Saving Time. Lima remains on PET (UTC-5) year-round. During US Eastern Daylight Time (EDT, UTC-4), New York is 1 hour ahead of Lima. Peru's choice not to observe DST simplifies scheduling for this major South American business hub."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Lima and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lima (PET, UTC-5) and New York are on the same time from November to March (both UTC-5). During US Daylight Saving Time (EDT, UTC-4, March–November), New York is 1 hour ahead of Lima. The gap oscillates between 0 and 1 hour depending on the US DST period."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Lima and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lima (PET, UTC-5) is 5 hours behind London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), London is 6 hours ahead of Lima. Since Peru has no DST, the gap changes only when London transitions its clocks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Lima and Santiago?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lima (PET, UTC-5) and Santiago (CLT, UTC-3 in winter; CLST, UTC-3 in summer — Chile recently eliminated DST) differ by 2–3 hours. Chile is ahead of Lima. The exact gap depends on Chile's current clock schedule."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Lima?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Lima are 9:00 AM to 6:00 PM PET, Monday through Friday. Lima is Peru's capital and the 5th largest city in South America, home to the Lima Stock Exchange (BVL) which operates 9:00 AM–4:00 PM PET. Major industries include mining, finance, textiles, and fishing. Peru is a leading exporter of copper, gold, and silver."
+        }
+      }
+    ]
+  }
+}

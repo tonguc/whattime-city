@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Budapest — CET/CEST (UTC+1/+2)",
+  "seo_description": "Current time in Budapest, Hungary — live Central European Time (CET/CEST) clock, DST schedule, and time differences with London, New York, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Budapest right now?",
+      "answer": "Budapest, Hungary uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) during Daylight Saving Time in summer. Clocks spring forward on the last Sunday in March and fall back on the last Sunday in October, following EU DST rules. The IANA timezone identifier is Europe/Budapest."
+    },
+    {
+      "question": "What time zone is Budapest in?",
+      "answer": "Budapest is in the Central European Time zone (CET, UTC+1 in winter; CEST, UTC+2 in summer). Hungary follows EU DST rules, switching clocks on the same dates as Germany, France, and most of Europe. Budapest shares its timezone with Vienna, Prague, Warsaw, and Belgrade. The IANA identifier is Europe/Budapest."
+    },
+    {
+      "question": "Does Budapest observe daylight saving time?",
+      "answer": "Yes. Hungary observes EU Daylight Saving Time. Clocks spring forward 1 hour to CEST (UTC+2) on the last Sunday in March at 2:00 AM and fall back to CET (UTC+1) on the last Sunday in October at 3:00 AM. Hungary follows the standard EU DST schedule."
+    },
+    {
+      "question": "What is the time difference between Budapest and London?",
+      "answer": "Budapest (CET, UTC+1) is 1 hour ahead of London (GMT, UTC+0) in winter. During European and UK summer, Budapest (CEST, UTC+2) is still 1 hour ahead of London (BST, UTC+1). The 1-hour gap is consistent year-round because both switch to summer time on the same date."
+    },
+    {
+      "question": "What is the time difference between Budapest and New York?",
+      "answer": "Budapest (CET, UTC+1) is 6 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Budapest is 5 hours ahead. When Budapest moves to CEST (UTC+2) and New York is on EDT (UTC-4), Budapest is 6 hours ahead. The gap varies briefly during spring and autumn transitions."
+    },
+    {
+      "question": "What is the time difference between Budapest and Vienna?",
+      "answer": "Budapest (Europe/Budapest, CET/CEST) and Vienna (Europe/Vienna, CET/CEST) are on the same timezone year-round. Both switch to summer time on the same date. There is no time difference between Budapest and Vienna."
+    },
+    {
+      "question": "What are typical business hours in Budapest?",
+      "answer": "Standard business hours in Budapest are 8:00 AM to 5:00 PM CET/CEST, Monday through Friday. Budapest is Hungary's capital and one of Central Europe's most important financial centers. The Budapest Stock Exchange (BSE) is the main exchange for Hungarian securities. Hungary has attracted significant foreign investment from German and Austrian automakers (Audi, BMW, Mercedes-Benz), and Budapest is a growing hub for financial services and technology."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Budapest right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Budapest, Hungary uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) during Daylight Saving Time in summer. Clocks spring forward on the last Sunday in March and fall back on the last Sunday in October, following EU DST rules. The IANA timezone identifier is Europe/Budapest."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Budapest in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Budapest is in the Central European Time zone (CET, UTC+1 in winter; CEST, UTC+2 in summer). Hungary follows EU DST rules, switching clocks on the same dates as Germany, France, and most of Europe. Budapest shares its timezone with Vienna, Prague, Warsaw, and Belgrade. The IANA identifier is Europe/Budapest."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Budapest observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Hungary observes EU Daylight Saving Time. Clocks spring forward 1 hour to CEST (UTC+2) on the last Sunday in March at 2:00 AM and fall back to CET (UTC+1) on the last Sunday in October at 3:00 AM. Hungary follows the standard EU DST schedule."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Budapest and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Budapest (CET, UTC+1) is 1 hour ahead of London (GMT, UTC+0) in winter. During European and UK summer, Budapest (CEST, UTC+2) is still 1 hour ahead of London (BST, UTC+1). The 1-hour gap is consistent year-round because both switch to summer time on the same date."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Budapest and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Budapest (CET, UTC+1) is 6 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Budapest is 5 hours ahead. When Budapest moves to CEST (UTC+2) and New York is on EDT (UTC-4), Budapest is 6 hours ahead. The gap varies briefly during spring and autumn transitions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Budapest and Vienna?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Budapest (Europe/Budapest, CET/CEST) and Vienna (Europe/Vienna, CET/CEST) are on the same timezone year-round. Both switch to summer time on the same date. There is no time difference between Budapest and Vienna."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Budapest?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Budapest are 8:00 AM to 5:00 PM CET/CEST, Monday through Friday. Budapest is Hungary's capital and one of Central Europe's most important financial centers. The Budapest Stock Exchange (BSE) is the main exchange for Hungarian securities. Hungary has attracted significant foreign investment from German and Austrian automakers (Audi, BMW, Mercedes-Benz), and Budapest is a growing hub for financial services and technology."
+        }
+      }
+    ]
+  }
+}
