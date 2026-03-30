@@ -7,9 +7,9 @@ interface TimeComparePageProps {
   params: Promise<{ from: string; to: string }>
 }
 
-// ✅ FORCE DYNAMIC - Bu sayfa asla pre-render edilmez
-// Build süresi: ~25 dakika → ~2 dakika
-export const dynamic = 'force-dynamic'
+// ISR: ilk istekte render, sonra 1 saat CDN cache
+// force-dynamic Cache-Control:no-store override ediyordu → her bot isteği function çalıştırıyordu
+export const revalidate = 3600
 
 // Helper: Slug'dan şehir bulma
 function getCityBySlug(slug: string): City | undefined {
