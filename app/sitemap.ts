@@ -3,6 +3,9 @@ import { COUNTRY_HUB_SLUGS } from '@/data/hubPages'
 import { areaCodeList } from '@/data/area-codes'
 import { SITE_URL } from '@/lib/constants'
 
+// Cache sitemap for 24h — prevents O(N²) tier1×tier1 pair computation on every request
+export const revalidate = 86400
+
 export default async function sitemap() {
   const baseUrl = SITE_URL
   const now = new Date()

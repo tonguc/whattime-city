@@ -693,6 +693,55 @@ North Africa:
 
 ---
 
+### 45. Teknik Mimari Refactor — Phase 1+2+3 ✅ (Mart 2026)
+
+**14 boyutlu derin analiz:** Architecture, server/client separation, rendering strategy, performance,
+data flow, component architecture, SEO, bot resilience, TypeScript quality, error handling,
+scalability, tech debt, build/deploy efficiency, content growth.
+
+**Phase 1 — Quick Wins:**
+- `lib/constants.ts` oluşturuldu: `SITE_URL` sabit → 5 dosyada hardcoded URL'ler değiştirildi
+  (`layout.tsx`, `sitemap.ts`, `[city]/page.tsx`, `time/[from]/[to]/page.tsx`, `area-code/[code]/page.tsx`)
+- `core/types/seo.ts` oluşturuldu: `CitySEOData`, `FAQItem`, `FAQSchema`, `ContentBlock`, `TimezoneFacts`
+  → `seoData: any` pipeline 5 dosyada temizlendi
+- `core/types/index.ts` güncellendi: yeni tipler re-export edildi
+- `scripts/validate-seo-titles.js` oluşturuldu: prebuild kontrolü, `seo_title > 44 char` → exit 1
+- `scripts/generate-search-index.js` güncellendi: `< 1800 city` → exit 1 sanity check
+- `package.json`: `prebuild` hook → her ikisi de çalışır
+
+**Phase 2 — Type Safety:**
+- `InfoRow.tsx`: `weather: any` → `WeatherData | null`
+- `GuidePreview.tsx`: `weather?: any` → `WeatherData | null`
+- `TimeComparisonContent.tsx`: `useState<any>` → `useState<WeatherResponse | null>` (2 state)
+- `FAQSection.tsx`: `@type` guard eklendi (faq_schema corrupted data koruması)
+- `[city]/guide/*/page.tsx` (15 dosya): hardcoded 8-9 city array → `getSupportedGuideCities()`
+- Guide pages ayrıca: `cities.map(...)` (ALL cities) → `getSupportedGuideCities().map(...)` fix
+- `next.config.js`: `stale-while-revalidate: 604800` → `86400` (7 gün DST accuracy riski)
+- `app/meeting/[cities]/page.tsx`: `force-dynamic` → `revalidate = 3600` (bot invocation fix)
+- `middleware.ts`: duplicate `addCacheHeaders` kaldırıldı (next.config.js tek kaynak)
+
+**Phase 3 — Parametric Explosion + ISR:**
+- `app/time/[from]/[to]/page.tsx`: `generateStaticParams` eklendi → 92 PAIR_CONTEXTS pair build-time pre-built
+  (PAIR_CONTEXTS key split: iterative hyphen check, `Set<slug>` lookup ile doğru parse)
+- `middleware.ts`: `/meeting/` URL'lerinde max 5 city limit — `cityParts.length > 5` → 400 response
+- `app/api/weather/route.ts`: IP-based rate limiter eklendi (10 req/dakika/IP, in-memory Map)
+  - `x-forwarded-for` / `x-real-ip` header'dan IP çıkarımı
+  - Sliding window: son 60 sn içindeki timestamp'ler tutulur
+  - Otomatik cleanup: Map > 5000 entry olunca expired IP'ler temizlenir
+  - 429 + `Retry-After: 60` response
+- `app/sitemap.ts`: `export const revalidate = 86400` eklendi (O(N²) tier1×tier1 pair computation cache)
+
+**Phase 4 (sonraki sprint — büyük refactor, Opus önerilir):**
+- Redirect konsolidasyonu → yalnızca `next.config.js`
+- Orphan page audit
+- 242 ClockClient → tek `CountryClockClient` bileşeni
+- 62 converter sayfası → `[from]-to-[to]` dynamic route
+- `data/cities.ts` tier-based split (şu an tek dosya, yavaş import)
+- `app/[city]/error.tsx` nested error boundary
+- `translations.ts` (46k satır) bundle analyzer ile client bundle kontrolü
+
+---
+
 ## Açık Konular / Sonraki Adımlar
 
 - [ ] DST clock change (673K vol, SD 24) — `/daylight-saving-time/` meta already good, monitor GSC
@@ -700,9 +749,10 @@ North Africa:
 - [ ] Hours-ago/hours-from-now pages — need 4 weeks to index and appear in GSC
 - [ ] Idaho/Wyoming/South Dakota state pages — monitor for "time in idaho" (33K), "time in wyoming" (18K) queries
 - [ ] New city pages (tucson, cleveland, pittsburgh, st-louis, etc.) — monitor GSC indexing
-- [ ] PAIR_CONTEXTS 72→92 — monitor /time/ pair pages for new impressions
+- [ ] PAIR_CONTEXTS 92 pairs — monitor /time/ pair pages for new impressions (pre-built now)
 - [ ] New 14 city pages (abu-dhabi, kathmandu, colombo, etc.) — monitor GSC indexing
 - [ ] Area code pages (929 246K, 213 673K, 917 246K) — description fixed; monitor GSC indexing + authority
+- [ ] Phase 4 big refactors (Opus session önerilir): ClockClient consolidation, dynamic converter route, cities.ts split
 
 ---
 
