@@ -468,6 +468,52 @@ Committed in sequence, completing all key tier 2 cities:
 
 **Total SEO JSON files: 201+**
 
+### 40. New State Hub Pages + 34 City SEO JSONs + PAIR_CONTEXTS 64→72 ✅ (Mart 2026)
+
+**Yeni State Hub Sayfaları:**
+- `/idaho/` — split MT (America/Boise) + PT panhandle (America/Los_Angeles). Coeur d'Alene quirk explained.
+- `/wyoming/` — entire state Mountain Time (America/Denver). Yellowstone, energy, least populous state.
+- `/south-dakota/` — split CT (Sioux Falls) + MT (Rapid City/Black Hills). Mount Rushmore context.
+- Sitemap güncellemesi: idaho, wyoming, south-dakota eklendi (0.8 priority).
+
+**Yeni ABD Şehir SEO JSON Dosyaları:**
+- `sacramento-seo.json`: PST/PDT, America/Los_Angeles, state capital context
+- `oklahoma-city-seo.json`: CST/CDT, America/Chicago, Devon Energy, Bricktown
+- `tampa-seo.json`: EST/EDT, America/New_York, Florida DST controversy note
+- `raleigh-seo.json`: EST/EDT, America/New_York, Research Triangle, Red Hat
+- `baltimore-seo.json`: EST/EDT, America/New_York, Johns Hopkins, Under Armour
+- `albuquerque-seo.json`: MST/MDT, America/Denver, Arizona DST comparison, Sandia Labs
+- `milwaukee-seo.json`: CST/CDT, America/Chicago, same time as Chicago, Harley-Davidson
+- `memphis-seo.json`: CST/CDT, America/Chicago, FedEx HQ, Beale Street
+- `tucson-seo.json`: MST no DST, America/Phoenix, Arizona exception, Raytheon
+- `cleveland-seo.json`: EST/EDT, America/New_York, Cleveland Clinic, Progressive
+- `pittsburgh-seo.json`: EST/EDT, America/New_York, UPMC, Carnegie Mellon, robotics
+- `st-louis-seo.json`: CST/CDT, America/Chicago, Gateway Arch, Enterprise Holdings
+- `cincinnati-seo.json`: EST/EDT, America/New_York, P&G HQ, Kroger
+
+**Yeni Uluslararası Şehir SEO JSON Dosyaları:**
+- `kiev-seo.json` (Kyiv): EET/EEST UTC+2/+3, Europe/Kyiv, Ukraine IT sector
+- `yangon-seo.json`: MMT UTC+6:30, Asia/Yangon, half-hour offset unique
+- `almaty-seo.json`: ALMT UTC+6, Asia/Almaty, DST abolished 2005, KASE exchange
+- `dar-es-salaam-seo.json`: EAT UTC+3, Africa/Dar_es_Salaam, DSE stock exchange
+- `kampala-seo.json`: EAT UTC+3, Africa/Kampala, equator location, USE exchange
+- `kinshasa-seo.json`: WAT UTC+1, Africa/Kinshasa, cobalt/coltan, eastern DRC is UTC+2
+- `lusaka-seo.json`: CAT UTC+2, Africa/Lusaka, Copperbelt, LuSE exchange
+- `khartoum-seo.json`: UTC+3, Africa/Khartoum, Islamic work week Sun-Thu, UTC change 2021
+- `montevideo-seo.json`: UYT UTC-3, America/Montevideo, DST abolished 2015
+
+**Pre-existing files committed by background agent (also in this session):**
+- `abuja`, `adelaide`, `baku`, `belfast`, `caracas`, `helsinki`, `manchester`, `wellington`
+- `brisbane`, `islamabad`, `lahore`, `addis-ababa`
+
+**PAIR_CONTEXTS 64 → 72:**
+- `mumbai↔cairo`: IST vs EET, 3.5h gap, India–Egypt MENA corridor
+- `lagos↔amsterdam`: WAT vs CET/CEST, same in winter / +1 in summer (Dutch DST)
+- `sao-paulo↔san-francisco`: BRT no DST vs PST/PDT, 4-5h gap, Brazil tech corridor
+- `frankfurt↔tehran`: CET vs IRST/IRDT, 2.5h constant (both observe DST)
+
+**Total SEO JSON files: ~230+**
+
 ---
 
 ## Açık Konular / Sonraki Adımlar
@@ -475,9 +521,10 @@ Committed in sequence, completing all key tier 2 cities:
 - [ ] DST clock change (673K vol, SD 24) — `/daylight-saving-time/` meta already good, monitor GSC
 - [ ] Sunrise/sunset "what time does sun set today" (201K vol, SD 19) — meta updated, monitor
 - [ ] Hours-ago/hours-from-now pages — need 4 weeks to index and appear in GSC
-- [ ] Santiago, Lagos, Amman, Budapest, Warsaw, Lima, Bogota, Edinburgh, Guadalajara, Hanoi, Honolulu SEO JSONs need indexing
-- [ ] Adelaide (18K SD 29), Manchester (8K SD 25), Baku (8K SD 30) — monitor rankings
-- [ ] Remaining tier 2 cities without SEO JSON: baltimore, dhaka, khartoum, kinshasa, lusaka, kampala, dar-es-salaam
+- [ ] Idaho/Wyoming/South Dakota state pages — monitor for "time in idaho" (33K), "time in wyoming" (18K) queries
+- [ ] New city pages (tucson, cleveland, pittsburgh, st-louis, etc.) — monitor GSC indexing
+- [ ] PAIR_CONTEXTS 64→72 — monitor /time/ pair pages for new impressions
+- [ ] Remaining tier 2 cities without SEO JSON: dhaka, asuncion, la-paz, phnom-penh, vientiane, astana, riga, tallinn, vilnius, minsk
 
 ---
 
