@@ -1,0 +1,84 @@
+{
+  "seo_title": "Current Time in Alexandria — EET (UTC+2)",
+  "seo_description": "Current time in Alexandria, Egypt. Eastern European Time (EET, UTC+2) year-round — Egypt does not observe DST. Live clock and time differences for Alexandria.",
+  "faq": [
+    {
+      "question": "What time is it in Alexandria right now?",
+      "answer": "Alexandria, Egypt uses Eastern European Time (EET, UTC+2) year-round. Egypt abolished Daylight Saving Time in 2011. The IANA identifier is Africa/Cairo (same as Cairo, as all of Egypt uses the same time zone). Alexandria is Egypt's second-largest city and main port on the Mediterranean. The live clock above shows the current Alexandria time."
+    },
+    {
+      "question": "What time zone is Alexandria, Egypt in?",
+      "answer": "Alexandria, Egypt uses Eastern European Time (EET, UTC+2) year-round. The IANA identifier is Africa/Cairo. All of Egypt — including Cairo, Alexandria, Luxor, and Aswan — uses the same UTC+2 offset permanently. Egypt abolished Daylight Saving Time in 2011."
+    },
+    {
+      "question": "Does Alexandria observe daylight saving time?",
+      "answer": "No. Alexandria, Egypt does not observe Daylight Saving Time. Egypt permanently abolished DST in 2011 and uses EET (UTC+2) year-round. Previously, Egypt observed DST (EEST, UTC+3) in summer, but this practice ended in 2011."
+    },
+    {
+      "question": "What is the time difference between Alexandria and London?",
+      "answer": "Alexandria (EET, UTC+2) is 2 hours ahead of London (GMT, UTC+0) in winter. During UK summer time (BST, UTC+1), Alexandria is 1 hour ahead. Egypt does not observe DST."
+    },
+    {
+      "question": "What is the time difference between Alexandria and New York?",
+      "answer": "Alexandria (EET, UTC+2) is 7 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Alexandria is 6 hours ahead. Egypt does not observe DST."
+    },
+    {
+      "question": "Is Alexandria in the same time zone as Cairo?",
+      "answer": "Yes. Alexandria and Cairo are in the same time zone — both use Africa/Cairo (EET, UTC+2) year-round. They always share the same time. Alexandria is approximately 225 km (140 miles) northwest of Cairo along the Mediterranean coast."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Alexandria right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Alexandria, Egypt uses Eastern European Time (EET, UTC+2) year-round. Egypt abolished Daylight Saving Time in 2011. The IANA identifier is Africa/Cairo (same as Cairo, as all of Egypt uses the same time zone). Alexandria is Egypt's second-largest city and main port on the Mediterranean. The live clock above shows the current Alexandria time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Alexandria, Egypt in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Alexandria, Egypt uses Eastern European Time (EET, UTC+2) year-round. The IANA identifier is Africa/Cairo. All of Egypt — including Cairo, Alexandria, Luxor, and Aswan — uses the same UTC+2 offset permanently. Egypt abolished Daylight Saving Time in 2011."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Alexandria observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Alexandria, Egypt does not observe Daylight Saving Time. Egypt permanently abolished DST in 2011 and uses EET (UTC+2) year-round. Previously, Egypt observed DST (EEST, UTC+3) in summer, but this practice ended in 2011."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Alexandria and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Alexandria (EET, UTC+2) is 2 hours ahead of London (GMT, UTC+0) in winter. During UK summer time (BST, UTC+1), Alexandria is 1 hour ahead. Egypt does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Alexandria and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Alexandria (EET, UTC+2) is 7 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Alexandria is 6 hours ahead. Egypt does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Alexandria in the same time zone as Cairo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Alexandria and Cairo are in the same time zone — both use Africa/Cairo (EET, UTC+2) year-round. They always share the same time. Alexandria is approximately 225 km (140 miles) northwest of Cairo along the Mediterranean coast."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "seo_title": "Current Time in Richmond — EST/EDT",
+  "seo_description": "Current time in Richmond, Virginia. Eastern Time Zone — EST (UTC-5) in winter, EDT (UTC-4) during DST. Live clock and time differences for Richmond, VA.",
+  "faq": [
+    {
+      "question": "What time is it in Richmond right now?",
+      "answer": "Richmond, Virginia, USA uses Eastern Standard Time (EST, UTC-5) in winter and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time. The IANA identifier is America/New_York. Richmond is on the same time as Washington D.C. (just 100 miles north), New York, and Charlotte. The live clock above shows the current Richmond time."
+    },
+    {
+      "question": "What time zone is Richmond, VA in?",
+      "answer": "Richmond, Virginia is in the Eastern Time Zone (ET). It uses Eastern Standard Time (EST, UTC-5) from the first Sunday in November to the second Sunday in March, and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time. The IANA identifier is America/New_York. Richmond shares its time zone with Washington D.C., Norfolk, and all of Virginia."
+    },
+    {
+      "question": "Does Richmond observe daylight saving time?",
+      "answer": "Yes. Richmond, Virginia observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (EST → EDT) and fall back on the first Sunday in November. Virginia follows the standard US DST schedule."
+    },
+    {
+      "question": "What is the time difference between Richmond and Chicago?",
+      "answer": "Richmond (EST/EDT, Eastern Time) is always 1 hour ahead of Chicago (CST/CDT, Central Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in Chicago, it is 10:00 AM in Richmond."
+    },
+    {
+      "question": "Is Richmond in the same time zone as Washington DC?",
+      "answer": "Yes. Richmond, Virginia and Washington D.C. are both in the Eastern Time Zone (IANA: America/New_York). They are approximately 100 miles apart on I-95 and always share the same time — EST (UTC-5) in winter and EDT (UTC-4) during Daylight Saving Time."
+    },
+    {
+      "question": "What are typical business hours in Richmond?",
+      "answer": "Standard business hours in Richmond are 9:00 AM to 5:00 PM ET, Monday through Friday. Richmond is Virginia's state capital and a growing financial and tech hub. Major employers include Capital One Financial (headquartered in nearby McLean but major Richmond operations), CarMax (HQ in Richmond), Dominion Energy, and MeadWestvaco. The Greater Richmond region has one of the East Coast's strongest job markets in finance and logistics."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Richmond right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Richmond, Virginia, USA uses Eastern Standard Time (EST, UTC-5) in winter and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time. The IANA identifier is America/New_York. Richmond is on the same time as Washington D.C. (just 100 miles north), New York, and Charlotte. The live clock above shows the current Richmond time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Richmond, VA in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Richmond, Virginia is in the Eastern Time Zone (ET). It uses Eastern Standard Time (EST, UTC-5) from the first Sunday in November to the second Sunday in March, and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time. The IANA identifier is America/New_York. Richmond shares its time zone with Washington D.C., Norfolk, and all of Virginia."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Richmond observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Richmond, Virginia observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (EST → EDT) and fall back on the first Sunday in November. Virginia follows the standard US DST schedule."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Richmond and Chicago?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Richmond (EST/EDT, Eastern Time) is always 1 hour ahead of Chicago (CST/CDT, Central Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in Chicago, it is 10:00 AM in Richmond."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Richmond in the same time zone as Washington DC?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Richmond, Virginia and Washington D.C. are both in the Eastern Time Zone (IANA: America/New_York). They are approximately 100 miles apart on I-95 and always share the same time — EST (UTC-5) in winter and EDT (UTC-4) during Daylight Saving Time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Richmond?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Richmond are 9:00 AM to 5:00 PM ET, Monday through Friday. Richmond is Virginia's state capital and a growing financial and tech hub. Major employers include Capital One Financial (headquartered in nearby McLean but major Richmond operations), CarMax (HQ in Richmond), Dominion Energy, and MeadWestvaco. The Greater Richmond region has one of the East Coast's strongest job markets in finance and logistics."
+        }
+      }
+    ]
+  }
+}

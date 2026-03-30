@@ -1,0 +1,84 @@
+{
+  "seo_title": "Current Time in Dhaka — BST (UTC+6)",
+  "seo_description": "Current time in Dhaka, Bangladesh. Bangladesh Standard Time (BST, UTC+6) year-round — no DST. Live clock and time differences for Dhaka.",
+  "faq": [
+    {
+      "question": "What time is it in Dhaka right now?",
+      "answer": "Dhaka, Bangladesh uses Bangladesh Standard Time (BST, UTC+6) year-round. Bangladesh does not observe Daylight Saving Time. The IANA identifier is Asia/Dhaka. Dhaka is 30 minutes ahead of Kolkata/India (IST, UTC+5:30) and 1 hour behind Yangon/Myanmar (MMT, UTC+6:30). Dhaka is one of Asia's most populous cities. The live clock above shows the current Dhaka time."
+    },
+    {
+      "question": "What time zone is Dhaka in?",
+      "answer": "Dhaka, Bangladesh uses Bangladesh Standard Time (BST, UTC+6) year-round. The IANA identifier is Asia/Dhaka. Bangladesh does not observe Daylight Saving Time. UTC+6 is shared with Almaty (Kazakhstan) and Bishkek (Kyrgyzstan). Note: Bangladesh's BST (UTC+6) should not be confused with British Summer Time (BST, UTC+1)."
+    },
+    {
+      "question": "Does Dhaka observe daylight saving time?",
+      "answer": "No. Dhaka, Bangladesh does not observe Daylight Saving Time. Bangladesh uses Bangladesh Standard Time (BST, UTC+6) permanently year-round. Bangladesh briefly experimented with DST in 2009 (moving to UTC+7) but reverted to UTC+6 in 2010 due to public opposition."
+    },
+    {
+      "question": "What is the time difference between Dhaka and London?",
+      "answer": "Dhaka (BST, UTC+6) is 6 hours ahead of London (GMT, UTC+0) in winter. During UK summer time (BST, UTC+1), Dhaka is 5 hours ahead. Bangladesh does not observe DST."
+    },
+    {
+      "question": "What is the time difference between Dhaka and New York?",
+      "answer": "Dhaka (BST, UTC+6) is 11 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Dhaka is 10 hours ahead. Bangladesh does not observe DST."
+    },
+    {
+      "question": "What is the time difference between Dhaka and Delhi?",
+      "answer": "Dhaka (BST, UTC+6) is 30 minutes ahead of Delhi (IST, UTC+5:30). India uses a unique UTC+5:30 offset. Neither country observes DST, so this 30-minute difference is constant year-round. When it is 12:00 PM in Delhi, it is 12:30 PM in Dhaka."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Dhaka right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dhaka, Bangladesh uses Bangladesh Standard Time (BST, UTC+6) year-round. Bangladesh does not observe Daylight Saving Time. The IANA identifier is Asia/Dhaka. Dhaka is 30 minutes ahead of Kolkata/India (IST, UTC+5:30) and 1 hour behind Yangon/Myanmar (MMT, UTC+6:30). Dhaka is one of Asia's most populous cities. The live clock above shows the current Dhaka time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Dhaka in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dhaka, Bangladesh uses Bangladesh Standard Time (BST, UTC+6) year-round. The IANA identifier is Asia/Dhaka. Bangladesh does not observe Daylight Saving Time. UTC+6 is shared with Almaty (Kazakhstan) and Bishkek (Kyrgyzstan). Note: Bangladesh's BST (UTC+6) should not be confused with British Summer Time (BST, UTC+1)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Dhaka observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Dhaka, Bangladesh does not observe Daylight Saving Time. Bangladesh uses Bangladesh Standard Time (BST, UTC+6) permanently year-round. Bangladesh briefly experimented with DST in 2009 (moving to UTC+7) but reverted to UTC+6 in 2010 due to public opposition."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Dhaka and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dhaka (BST, UTC+6) is 6 hours ahead of London (GMT, UTC+0) in winter. During UK summer time (BST, UTC+1), Dhaka is 5 hours ahead. Bangladesh does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Dhaka and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dhaka (BST, UTC+6) is 11 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Dhaka is 10 hours ahead. Bangladesh does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Dhaka and Delhi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dhaka (BST, UTC+6) is 30 minutes ahead of Delhi (IST, UTC+5:30). India uses a unique UTC+5:30 offset. Neither country observes DST, so this 30-minute difference is constant year-round. When it is 12:00 PM in Delhi, it is 12:30 PM in Dhaka."
+        }
+      }
+    ]
+  }
+}
