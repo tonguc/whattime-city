@@ -2,7 +2,7 @@
   "faq": [
     {
       "question": "What time is it in Mexico City right now?",
-      "answer": "Mexico City currently observes Central Standard Time (CST/UTC-6). The city is located in the America/Mexico_City timezone and does not observe daylight saving time as of 2022, maintaining UTC-6 year-round. This makes Mexico City one hour behind Eastern Time and two hours ahead of Pacific Time during standard time periods."
+      "answer": "Mexico City, Mexico uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. The IANA identifier is America/Mexico_City. Mexico City currently observes Central Standard Time (CST/UTC-6). The city is located in the America/Mexico_City timezone and does not observe daylight saving time as of 2022, maintaining UTC-6 year-round. This makes Mexico City one hour behind Eastern Time and two hours ahead of Pacific Time during standard time periods."
     },
     {
       "question": "What time zone is Mexico City in?",
@@ -22,7 +22,7 @@
     },
     {
       "question": "What time does the stock exchange open in Mexico City?",
-      "answer": "The Bolsa Mexicana de Valores (Mexican Stock Exchange) opens at 8:30 AM CST and closes at 3:00 PM CST, Monday through Friday. Pre-market sessions begin at 8:00 AM, and post-market trading extends until 3:30 PM. The exchange is closed on Mexican national holidays including Constitution Day, Benito Juárez's Birthday, and Revolution Day. Trading hours align strategically to overlap with major U.S. market sessions."
+      "answer": "The Bolsa Mexicana de Valores (Mexican Stock Exchange) opens at 8:30 AM CST and closes at 3:00 PM CST, Monday through Friday. Pre-market sessions begin at 8:00 AM, and post-market trading extends until 3:30 PM. The exchange is closed on Mexican national holidays including Constitution Day, Benito Ju\u00e1rez's Birthday, and Revolution Day. Trading hours align strategically to overlap with major U.S. market sessions."
     },
     {
       "question": "What is the best time to call Mexico City from the US?",
@@ -42,7 +42,7 @@
         "name": "What time is it in Mexico City right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Mexico City currently observes Central Standard Time (CST/UTC-6). The city is located in the America/Mexico_City timezone and does not observe daylight saving time as of 2022, maintaining UTC-6 year-round. This makes Mexico City one hour behind Eastern Time and two hours ahead of Pacific Time during standard time periods."
+          "text": "Mexico City, Mexico uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. The IANA identifier is America/Mexico_City. Mexico City currently observes Central Standard Time (CST/UTC-6). The city is located in the America/Mexico_City timezone and does not observe daylight saving time as of 2022, maintaining UTC-6 year-round. This makes Mexico City one hour behind Eastern Time and two hours ahead of Pacific Time during standard time periods."
         }
       },
       {
@@ -82,7 +82,7 @@
         "name": "What time does the stock exchange open in Mexico City?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The Bolsa Mexicana de Valores (Mexican Stock Exchange) opens at 8:30 AM CST and closes at 3:00 PM CST, Monday through Friday. Pre-market sessions begin at 8:00 AM, and post-market trading extends until 3:30 PM. The exchange is closed on Mexican national holidays including Constitution Day, Benito Juárez's Birthday, and Revolution Day. Trading hours align strategically to overlap with major U.S. market sessions."
+          "text": "The Bolsa Mexicana de Valores (Mexican Stock Exchange) opens at 8:30 AM CST and closes at 3:00 PM CST, Monday through Friday. Pre-market sessions begin at 8:00 AM, and post-market trading extends until 3:30 PM. The exchange is closed on Mexican national holidays including Constitution Day, Benito Ju\u00e1rez's Birthday, and Revolution Day. Trading hours align strategically to overlap with major U.S. market sessions."
         }
       },
       {
@@ -104,7 +104,7 @@
     ]
   },
   "seo_description": "Current time in Mexico City (CST/UTC-6). Check timezone, UTC offset, business hours & time differences with NYC, London, Tokyo. No daylight saving since 2022.",
-  "seo_title": "Current Time in Mexico City — CST/CDT",
+  "seo_title": "Current Time in Mexico City \u2014 CST/CDT",
   "content_blocks": [
     {
       "title": "Mexico City Time Zone Guide",
@@ -179,7 +179,7 @@
       "link": "/time/mexico-city/los-angeles/"
     }
   ],
-  "eeat_footer": "Last updated: March 2025 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database.",
+  "eeat_footer": "Last updated: March 2025 | \u2713 Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database.",
   "timezone_facts": {
     "full_name": "Central Standard Time",
     "abbreviation": "CST",
@@ -238,7 +238,7 @@
       "name": "What time does the stock exchange open in Mexico City?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Bolsa Mexicana de Valores (Mexican Stock Exchange) opens at 8:30 AM CST and closes at 3:00 PM CST, Monday through Friday. Pre-market sessions begin at 8:00 AM, and post-market trading extends until 3:30 PM. The exchange is closed on Mexican national holidays including Constitution Day, Benito Juárez's Birthday, and Revolution Day. Trading hours align strategically to overlap with major U.S. market sessions."
+        "text": "The Bolsa Mexicana de Valores (Mexican Stock Exchange) opens at 8:30 AM CST and closes at 3:00 PM CST, Monday through Friday. Pre-market sessions begin at 8:00 AM, and post-market trading extends until 3:30 PM. The exchange is closed on Mexican national holidays including Constitution Day, Benito Ju\u00e1rez's Birthday, and Revolution Day. Trading hours align strategically to overlap with major U.S. market sessions."
       }
     },
     {

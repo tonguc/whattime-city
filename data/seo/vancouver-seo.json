@@ -2,7 +2,7 @@
   "faq": [
     {
       "question": "What time is it in Vancouver right now?",
-      "answer": "Vancouver currently observes Pacific Standard Time (PST/UTC-8) during winter months and Pacific Daylight Time (PDT/UTC-7) during summer months. The city follows the same timezone as the entire British Columbia coast, making it 3 hours behind New York and 8 hours behind London during standard time. Vancouver's time aligns with major West Coast tech hubs including Seattle and San Francisco, facilitating seamless business coordination across the Pacific corridor."
+      "answer": "Vancouver, British Columbia, Canada uses Pacific Standard Time (PST, UTC-8) in winter and Pacific Daylight Time (PDT, UTC-7) during Daylight Saving Time. The IANA identifier is America/Vancouver. Vancouver currently observes Pacific Standard Time (PST/UTC-8) during winter months and Pacific Daylight Time (PDT/UTC-7) during summer months. The city follows the same timezone as the entire British Columbia coast, making it 3 hours behind New York and 8 hours behind London during standard time. Vancouver's time aligns with major West Coast tech hubs including Seattle and San Francisco, facilitating seamless business coordination across the Pacific corridor."
     },
     {
       "question": "What time zone is Vancouver in?",
@@ -42,7 +42,7 @@
         "name": "What time is it in Vancouver right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Vancouver currently observes Pacific Standard Time (PST/UTC-8) during winter months and Pacific Daylight Time (PDT/UTC-7) during summer months. The city follows the same timezone as the entire British Columbia coast, making it 3 hours behind New York and 8 hours behind London during standard time. Vancouver's time aligns with major West Coast tech hubs including Seattle and San Francisco, facilitating seamless business coordination across the Pacific corridor."
+          "text": "Vancouver, British Columbia, Canada uses Pacific Standard Time (PST, UTC-8) in winter and Pacific Daylight Time (PDT, UTC-7) during Daylight Saving Time. The IANA identifier is America/Vancouver. Vancouver currently observes Pacific Standard Time (PST/UTC-8) during winter months and Pacific Daylight Time (PDT/UTC-7) during summer months. The city follows the same timezone as the entire British Columbia coast, making it 3 hours behind New York and 8 hours behind London during standard time. Vancouver's time aligns with major West Coast tech hubs including Seattle and San Francisco, facilitating seamless business coordination across the Pacific corridor."
         }
       },
       {
@@ -103,8 +103,8 @@
       }
     ]
   },
-  "seo_description": "Current time in Vancouver, BC — Pacific Time Zone (PST/UTC-8, PDT/UTC-7). Live world clock, timezone converter, DST dates & business hours guide.",
-  "seo_title": "Current Time in Vancouver — PST/PDT",
+  "seo_description": "Current time in Vancouver, BC \u2014 Pacific Time Zone (PST/UTC-8, PDT/UTC-7). Live world clock, timezone converter, DST dates & business hours guide.",
+  "seo_title": "Current Time in Vancouver \u2014 PST/PDT",
   "content_blocks": [
     {
       "title": "Vancouver Time Zone Guide",
@@ -179,7 +179,7 @@
       "link": "/time/vancouver/los-angeles/"
     }
   ],
-  "eeat_footer": "Last updated: March 2025 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database.",
+  "eeat_footer": "Last updated: March 2025 | \u2713 Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database.",
   "timezone_facts": {
     "full_name": "Pacific Standard Time / Pacific Daylight Time",
     "abbreviation": "PST/PDT",

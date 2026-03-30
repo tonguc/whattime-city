@@ -1,14 +1,14 @@
 {
-  "seo_title": "Current Time in Cornwall — GMT/BST",
-  "seo_description": "Current time in Cornwall, UK. Live GMT/BST clock — UTC+0 standard, UTC+1 British Summer Time. Cornwall time vs New York, London, Paris, Dublin.",
+  "seo_title": "Current Time in Cornwall \u2014 GMT/BST",
+  "seo_description": "Current time in Cornwall, UK. Live GMT/BST clock \u2014 UTC+0 standard, UTC+1 British Summer Time. Cornwall time vs New York, London, Paris, Dublin.",
   "faq": [
     {
       "question": "What time is it in Cornwall right now?",
-      "answer": "Cornwall operates on Greenwich Mean Time (GMT/UTC+0) during winter and British Summer Time (BST/UTC+1) from late March to late October. Cornwall is part of the United Kingdom and follows the same time zone as London, Edinburgh, Cardiff, and Dublin. To see the exact current time in Cornwall with live seconds, use our real-time clock above."
+      "answer": "Cornwall, UK uses Greenwich Mean Time (GMT, UTC+0) in winter and British Summer Time (BST, UTC+1) during Daylight Saving Time. The IANA identifier is Europe/London. Cornwall operates on Greenwich Mean Time (GMT/UTC+0) during winter and British Summer Time (BST/UTC+1) from late March to late October. Cornwall is part of the United Kingdom and follows the same time zone as London, Edinburgh, Cardiff, and Dublin. To see the exact current time in Cornwall with live seconds, use our real-time clock above."
     },
     {
       "question": "What time zone is Cornwall in?",
-      "answer": "Cornwall is in the Greenwich Mean Time zone (GMT/UTC+0 in winter, BST/UTC+1 in summer), identical to the rest of England, Wales, and Scotland. Despite being the UK's most south-westerly peninsula, Cornwall does not have its own time zone — it follows UK national time. Some locals have historically campaigned for a 'Cornish Time' zone aligned with Central European Time, but no official change has been made."
+      "answer": "Cornwall is in the Greenwich Mean Time zone (GMT/UTC+0 in winter, BST/UTC+1 in summer), identical to the rest of England, Wales, and Scotland. Despite being the UK's most south-westerly peninsula, Cornwall does not have its own time zone \u2014 it follows UK national time. Some locals have historically campaigned for a 'Cornish Time' zone aligned with Central European Time, but no official change has been made."
     },
     {
       "question": "Does Cornwall observe Daylight Saving Time?",
@@ -16,7 +16,7 @@
     },
     {
       "question": "Is Cornwall in the same time zone as London?",
-      "answer": "Yes. Cornwall is in exactly the same time zone as London — GMT in winter and BST in summer. There is no time difference between Penzance, Newquay, Falmouth, Truro, or any other Cornish town and London. The UK uses a single time zone across the entire mainland, so Cornwall's westernmost location (Land's End) does not affect its clock."
+      "answer": "Yes. Cornwall is in exactly the same time zone as London \u2014 GMT in winter and BST in summer. There is no time difference between Penzance, Newquay, Falmouth, Truro, or any other Cornish town and London. The UK uses a single time zone across the entire mainland, so Cornwall's westernmost location (Land's End) does not affect its clock."
     },
     {
       "question": "What is the time difference between Cornwall and New York?",
@@ -28,11 +28,11 @@
     },
     {
       "question": "What is the best time to visit Cornwall?",
-      "answer": "The best time to visit Cornwall is from May to September, during British Summer Time (BST/UTC+1). July and August are the peak tourist months, with average temperatures of 18–20°C and long evenings — sunset in Newquay can be as late as 9:30 PM BST in June. The spring shoulder season (May–June) and autumn (September–October) offer fewer crowds and mild weather ideal for coastal walking, surfing, and cycling. Winter brings dramatic Atlantic storms popular with storm-chasers but fewer amenities."
+      "answer": "The best time to visit Cornwall is from May to September, during British Summer Time (BST/UTC+1). July and August are the peak tourist months, with average temperatures of 18\u201320\u00b0C and long evenings \u2014 sunset in Newquay can be as late as 9:30 PM BST in June. The spring shoulder season (May\u2013June) and autumn (September\u2013October) offer fewer crowds and mild weather ideal for coastal walking, surfing, and cycling. Winter brings dramatic Atlantic storms popular with storm-chasers but fewer amenities."
     },
     {
       "question": "What are typical business hours in Cornwall?",
-      "answer": "Standard business hours in Cornwall run 9:00 AM–5:00 PM GMT/BST Monday to Friday, matching the rest of England. Retail shops in towns like Truro, Falmouth, and St Ives typically open 9:00 AM–5:30 PM. Tourist season (June–August) sees many attractions, restaurants, and shops extending hours to 8:00 PM or later. Surf schools and outdoor activity providers in Newquay often begin sessions from 7:00 AM during summer. Out of season (November–March), many seasonal businesses close entirely or reduce to weekends only."
+      "answer": "Standard business hours in Cornwall run 9:00 AM\u20135:00 PM GMT/BST Monday to Friday, matching the rest of England. Retail shops in towns like Truro, Falmouth, and St Ives typically open 9:00 AM\u20135:30 PM. Tourist season (June\u2013August) sees many attractions, restaurants, and shops extending hours to 8:00 PM or later. Surf schools and outdoor activity providers in Newquay often begin sessions from 7:00 AM during summer. Out of season (November\u2013March), many seasonal businesses close entirely or reduce to weekends only."
     }
   ],
   "faq_schema": {
@@ -44,7 +44,7 @@
         "name": "What time is it in Cornwall right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Cornwall operates on Greenwich Mean Time (GMT/UTC+0) during winter and British Summer Time (BST/UTC+1) from late March to late October. Cornwall is part of the United Kingdom and follows the same time zone as London, Edinburgh, Cardiff, and Dublin. To see the exact current time in Cornwall with live seconds, use our real-time clock above."
+          "text": "Cornwall, UK uses Greenwich Mean Time (GMT, UTC+0) in winter and British Summer Time (BST, UTC+1) during Daylight Saving Time. The IANA identifier is Europe/London. Cornwall operates on Greenwich Mean Time (GMT/UTC+0) during winter and British Summer Time (BST/UTC+1) from late March to late October. Cornwall is part of the United Kingdom and follows the same time zone as London, Edinburgh, Cardiff, and Dublin. To see the exact current time in Cornwall with live seconds, use our real-time clock above."
         }
       },
       {
@@ -52,7 +52,7 @@
         "name": "What time zone is Cornwall in?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Cornwall is in the Greenwich Mean Time zone (GMT/UTC+0 in winter, BST/UTC+1 in summer), identical to the rest of England, Wales, and Scotland. Despite being the UK's most south-westerly peninsula, Cornwall does not have its own time zone — it follows UK national time. Some locals have historically campaigned for a 'Cornish Time' zone aligned with Central European Time, but no official change has been made."
+          "text": "Cornwall is in the Greenwich Mean Time zone (GMT/UTC+0 in winter, BST/UTC+1 in summer), identical to the rest of England, Wales, and Scotland. Despite being the UK's most south-westerly peninsula, Cornwall does not have its own time zone \u2014 it follows UK national time. Some locals have historically campaigned for a 'Cornish Time' zone aligned with Central European Time, but no official change has been made."
         }
       },
       {
@@ -68,7 +68,7 @@
         "name": "Is Cornwall in the same time zone as London?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Cornwall is in exactly the same time zone as London — GMT in winter and BST in summer. There is no time difference between Penzance, Newquay, Falmouth, Truro, or any other Cornish town and London. The UK uses a single time zone across the entire mainland, so Cornwall's westernmost location (Land's End) does not affect its clock."
+          "text": "Yes. Cornwall is in exactly the same time zone as London \u2014 GMT in winter and BST in summer. There is no time difference between Penzance, Newquay, Falmouth, Truro, or any other Cornish town and London. The UK uses a single time zone across the entire mainland, so Cornwall's westernmost location (Land's End) does not affect its clock."
         }
       },
       {
@@ -92,7 +92,7 @@
         "name": "What is the best time to visit Cornwall?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The best time to visit Cornwall is from May to September, during British Summer Time (BST/UTC+1). July and August are the peak tourist months, with average temperatures of 18–20°C and long evenings — sunset in Newquay can be as late as 9:30 PM BST in June. The spring shoulder season (May–June) and autumn (September–October) offer fewer crowds and mild weather ideal for coastal walking, surfing, and cycling. Winter brings dramatic Atlantic storms popular with storm-chasers but fewer amenities."
+          "text": "The best time to visit Cornwall is from May to September, during British Summer Time (BST/UTC+1). July and August are the peak tourist months, with average temperatures of 18\u201320\u00b0C and long evenings \u2014 sunset in Newquay can be as late as 9:30 PM BST in June. The spring shoulder season (May\u2013June) and autumn (September\u2013October) offer fewer crowds and mild weather ideal for coastal walking, surfing, and cycling. Winter brings dramatic Atlantic storms popular with storm-chasers but fewer amenities."
         }
       },
       {
@@ -100,23 +100,23 @@
         "name": "What are typical business hours in Cornwall?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Standard business hours in Cornwall run 9:00 AM–5:00 PM GMT/BST Monday to Friday, matching the rest of England. Retail shops in towns like Truro, Falmouth, and St Ives typically open 9:00 AM–5:30 PM. Tourist season (June–August) sees many attractions, restaurants, and shops extending hours to 8:00 PM or later. Surf schools and outdoor activity providers in Newquay often begin sessions from 7:00 AM during summer. Out of season (November–March), many seasonal businesses close entirely or reduce to weekends only."
+          "text": "Standard business hours in Cornwall run 9:00 AM\u20135:00 PM GMT/BST Monday to Friday, matching the rest of England. Retail shops in towns like Truro, Falmouth, and St Ives typically open 9:00 AM\u20135:30 PM. Tourist season (June\u2013August) sees many attractions, restaurants, and shops extending hours to 8:00 PM or later. Surf schools and outdoor activity providers in Newquay often begin sessions from 7:00 AM during summer. Out of season (November\u2013March), many seasonal businesses close entirely or reduce to weekends only."
         }
       }
     ]
   },
   "content_blocks": [
     {
-      "title": "Cornwall Time Zone — Same as London, GMT/BST",
+      "title": "Cornwall Time Zone \u2014 Same as London, GMT/BST",
       "content": "Cornwall, England's most south-westerly county, operates on the same time zone as the rest of the United Kingdom: Greenwich Mean Time (GMT/UTC+0) in winter and British Summer Time (BST/UTC+1) from the last Sunday in March to the last Sunday in October. Despite sitting at nearly the same longitude as Dublin and closer to the Atlantic than any other English county, Cornwall has no separate time designation. Land's End, the UK's most westerly mainland point, technically experiences sunrise and sunset slightly later than London, but the clock matches London exactly. Cornwall is 5 hours ahead of New York (EST), 1 hour behind Paris (CET), and shares its time with Dublin and Lisbon during winter months."
     },
     {
       "title": "Cornwall: Celtic Peninsula and Britain's Tourism Jewel",
-      "content": "Cornwall is one of the UK's most distinctive regions — a Celtic peninsula with its own language (Cornish), distinct culture, and a stunning 422-mile coastline. The county draws over 4 million visitors annually, making tourism its dominant industry. Newquay is the UK's surf capital, hosting the Boardmasters Festival each August. The Eden Project near St Austell — a global landmark of sustainable architecture — attracts 700,000 visitors a year. The Cornish Riviera, centred on towns like St Ives, Mousehole, and Padstow (home of Rick Stein's restaurants), is famous for seafood, art galleries, and cream teas. Cornwall was a key filming location for the BBC's Poldark series, drawing international TV tourists. The county also has a deep mining heritage recognised by its UNESCO World Heritage Status (Cornish Mining Landscape)."
+      "content": "Cornwall is one of the UK's most distinctive regions \u2014 a Celtic peninsula with its own language (Cornish), distinct culture, and a stunning 422-mile coastline. The county draws over 4 million visitors annually, making tourism its dominant industry. Newquay is the UK's surf capital, hosting the Boardmasters Festival each August. The Eden Project near St Austell \u2014 a global landmark of sustainable architecture \u2014 attracts 700,000 visitors a year. The Cornish Riviera, centred on towns like St Ives, Mousehole, and Padstow (home of Rick Stein's restaurants), is famous for seafood, art galleries, and cream teas. Cornwall was a key filming location for the BBC's Poldark series, drawing international TV tourists. The county also has a deep mining heritage recognised by its UNESCO World Heritage Status (Cornish Mining Landscape)."
     },
     {
       "title": "Visiting and Contacting Cornwall from Overseas",
-      "content": "For overseas visitors planning a trip to Cornwall, the county lies in the GMT/BST zone, identical to London. From the US East Coast (EST/UTC-5), Cornwall is 5 hours ahead year-round — a 9:00 AM New York morning reaches Cornwall at 2:00 PM, well within business hours. From Australia's east coast (AEST/UTC+10), Cornwall is 10 hours behind in winter, meaning a 7:00 PM Sydney call reaches Cornwall at 9:00 AM GMT. Travel to Cornwall typically involves flying into London Heathrow or Gatwick, then taking the GWR train (approximately 4.5–5 hours to Truro or Penzance) or driving via the M5/A30. Alternatively, Newquay Cornwall Airport offers direct flights from London Gatwick, Manchester, and Dublin. Cornwall's country code is +44 (UK) and Truro (the county town) uses the 01872 area code."
+      "content": "For overseas visitors planning a trip to Cornwall, the county lies in the GMT/BST zone, identical to London. From the US East Coast (EST/UTC-5), Cornwall is 5 hours ahead year-round \u2014 a 9:00 AM New York morning reaches Cornwall at 2:00 PM, well within business hours. From Australia's east coast (AEST/UTC+10), Cornwall is 10 hours behind in winter, meaning a 7:00 PM Sydney call reaches Cornwall at 9:00 AM GMT. Travel to Cornwall typically involves flying into London Heathrow or Gatwick, then taking the GWR train (approximately 4.5\u20135 hours to Truro or Penzance) or driving via the M5/A30. Alternatively, Newquay Cornwall Airport offers direct flights from London Gatwick, Manchester, and Dublin. Cornwall's country code is +44 (UK) and Truro (the county town) uses the 01872 area code."
     }
   ],
   "time_difference_table": [
@@ -188,5 +188,5 @@
     "dst_end": "Last Sunday in October at 2:00 AM BST",
     "dst_offset": "UTC+1"
   },
-  "eeat_footer": "Last updated: March 2026 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database."
+  "eeat_footer": "Last updated: March 2026 | \u2713 Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database."
 }

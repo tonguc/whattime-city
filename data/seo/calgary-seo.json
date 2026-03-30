@@ -2,7 +2,7 @@
   "faq": [
     {
       "question": "What time is it in Calgary right now?",
-      "answer": "Calgary currently operates on Mountain Standard Time (MST, UTC-7) from early November to mid-March, and Mountain Daylight Time (MDT, UTC-6) from mid-March to early November. During MST, Calgary is 2 hours behind New York and 7 hours behind London. During MDT, Calgary is 2 hours behind New York and 6 hours behind London."
+      "answer": "Calgary, Alberta, Canada uses Mountain Standard Time (MST, UTC-7) in winter and Mountain Daylight Time (MDT, UTC-6) during Daylight Saving Time. The IANA identifier is America/Edmonton. Calgary currently operates on Mountain Standard Time (MST, UTC-7) from early November to mid-March, and Mountain Daylight Time (MDT, UTC-6) from mid-March to early November. During MST, Calgary is 2 hours behind New York and 7 hours behind London. During MDT, Calgary is 2 hours behind New York and 6 hours behind London."
     },
     {
       "question": "What time zone is Calgary in?",
@@ -42,7 +42,7 @@
         "name": "What time is it in Calgary right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Calgary currently operates on Mountain Standard Time (MST, UTC-7) from early November to mid-March, and Mountain Daylight Time (MDT, UTC-6) from mid-March to early November. During MST, Calgary is 2 hours behind New York and 7 hours behind London. During MDT, Calgary is 2 hours behind New York and 6 hours behind London."
+          "text": "Calgary, Alberta, Canada uses Mountain Standard Time (MST, UTC-7) in winter and Mountain Daylight Time (MDT, UTC-6) during Daylight Saving Time. The IANA identifier is America/Edmonton. Calgary currently operates on Mountain Standard Time (MST, UTC-7) from early November to mid-March, and Mountain Daylight Time (MDT, UTC-6) from mid-March to early November. During MST, Calgary is 2 hours behind New York and 7 hours behind London. During MDT, Calgary is 2 hours behind New York and 6 hours behind London."
         }
       },
       {
@@ -104,7 +104,7 @@
     ]
   },
   "seo_description": "Current time in Calgary, Alberta. Mountain Time Zone (MST/MDT, UTC-7/-6). Real-time clock, DST schedule, and time differences with major world cities.",
-  "seo_title": "Current Time in Calgary — MST/MDT",
+  "seo_title": "Current Time in Calgary \u2014 MST/MDT",
   "content_blocks": [
     {
       "title": "Calgary Time Zone: Mountain Standard Time Explained",
@@ -177,7 +177,7 @@
       "link": "/time/calgary/los-angeles/"
     }
   ],
-  "eeat_footer": "Last updated: January 2025 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database.",
+  "eeat_footer": "Last updated: January 2025 | \u2713 Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database.",
   "timezone_facts": {
     "full_name": "Mountain Time Zone",
     "abbreviation": "MST/MDT",

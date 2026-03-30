@@ -2,7 +2,7 @@
   "faq": [
     {
       "question": "What time is it in Los Angeles right now?",
-      "answer": "Los Angeles operates on Pacific Time (PT), which is UTC-8 during Pacific Standard Time (PST) and UTC-7 during Pacific Daylight Time (PDT). The city follows the same clock as all of California and the West Coast, making it three hours behind New York and eight hours behind London during standard time."
+      "answer": "Los Angeles, California, USA uses Pacific Standard Time (PST, UTC-8) in winter and Pacific Daylight Time (PDT, UTC-7) during Daylight Saving Time. The IANA identifier is America/Los_Angeles. Los Angeles operates on Pacific Time (PT), which is UTC-8 during Pacific Standard Time (PST) and UTC-7 during Pacific Daylight Time (PDT). The city follows the same clock as all of California and the West Coast, making it three hours behind New York and eight hours behind London during standard time."
     },
     {
       "question": "What time zone is Los Angeles in?",
@@ -42,7 +42,7 @@
         "name": "What time is it in Los Angeles right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Los Angeles operates on Pacific Time (PT), which is UTC-8 during Pacific Standard Time (PST) and UTC-7 during Pacific Daylight Time (PDT). The city follows the same clock as all of California and the West Coast, making it three hours behind New York and eight hours behind London during standard time."
+          "text": "Los Angeles, California, USA uses Pacific Standard Time (PST, UTC-8) in winter and Pacific Daylight Time (PDT, UTC-7) during Daylight Saving Time. The IANA identifier is America/Los_Angeles. Los Angeles operates on Pacific Time (PT), which is UTC-8 during Pacific Standard Time (PST) and UTC-7 during Pacific Daylight Time (PDT). The city follows the same clock as all of California and the West Coast, making it three hours behind New York and eight hours behind London during standard time."
         }
       },
       {
@@ -104,7 +104,7 @@
     ]
   },
   "seo_description": "Current time in Los Angeles, California. Pacific Time Zone (PST/PDT, UTC-7/8). Real-time world clock, business hours, and time zone converter.",
-  "seo_title": "Current Time in Los Angeles — PST/PDT",
+  "seo_title": "Current Time in Los Angeles \u2014 PST/PDT",
   "content_blocks": [
     {
       "title": "Los Angeles Time Zone Guide",
@@ -179,14 +179,14 @@
       "link": "/time/los-angeles/chicago/"
     }
   ],
-  "eeat_footer": "Last updated: December 2024 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database.",
+  "eeat_footer": "Last updated: December 2024 | \u2713 Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database.",
   "timezone_facts": {
     "full_name": "Pacific Time Zone",
     "abbreviation": "PST/PDT",
     "utc_offset": "UTC-8 (PST) / UTC-7 (PDT)",
     "dst_observed": true,
-    "dst_start": "Second Sunday in March, 2:00 AM → 3:00 AM",
-    "dst_end": "First Sunday in November, 2:00 AM → 1:00 AM",
+    "dst_start": "Second Sunday in March, 2:00 AM \u2192 3:00 AM",
+    "dst_end": "First Sunday in November, 2:00 AM \u2192 1:00 AM",
     "dst_offset": "UTC-7"
   },
   "improvement_notes": "Created comprehensive Los Angeles timezone content targeting GSC query 'business hours closing time' with detailed closing time patterns across industries (entertainment 6:30 PM, finance 2:00 PM, retail 9:00 PM, restaurants 10:00 PM weekday/11:00 PM weekend). Added industry-specific business hour variations (studios 9:30-6:30, tech 10-4 core, government 8-5 strict) to capture long-tail commercial intent. Strengthened E-E-A-T with Pacific Time Zone authority positioning, accurate UTC offsets (PST UTC-8, PDT UTC-7), and precise DST transitions. Included quotable facts: 'NYSE opens 6:30 AM PT', '3 hours behind New York constant', '8 hours behind London winter'. Strategic internal linking to 8 major city comparisons in time_difference_table. All FAQ answers follow direct-answer-first format with city-specific details (not generic). Content blocks exceed 150 words each with entity-rich timezone terminology and real business patterns.",
@@ -262,7 +262,7 @@
   "abbreviation": "PST/PDT",
   "utc_offset": "UTC-8 (PST) / UTC-7 (PDT)",
   "dst_observed": true,
-  "dst_start": "Second Sunday in March, 2:00 AM → 3:00 AM",
-  "dst_end": "First Sunday in November, 2:00 AM → 1:00 AM",
+  "dst_start": "Second Sunday in March, 2:00 AM \u2192 3:00 AM",
+  "dst_end": "First Sunday in November, 2:00 AM \u2192 1:00 AM",
   "dst_offset": "UTC-7"
 }

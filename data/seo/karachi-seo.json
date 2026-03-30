@@ -1,10 +1,10 @@
 {
-  "seo_title": "Current Time in Karachi — PKT (UTC+5)",
+  "seo_title": "Current Time in Karachi \u2014 PKT (UTC+5)",
   "seo_description": "Find the current local time in Karachi, Pakistan. Karachi uses Pakistan Standard Time (PKT), UTC+5 year-round with no daylight saving time. Live clock, time zone details, and FAQ.",
   "faq": [
     {
       "question": "What time is it in Karachi right now?",
-      "answer": "Karachi follows Pakistan Standard Time (PKT), which is UTC+5 year-round. For example, when it is 12:00 noon UTC, it is 5:00 PM in Karachi. Since Pakistan does not observe daylight saving time, the offset remains constant throughout the year, making it easy to calculate the current time in Karachi from any other time zone."
+      "answer": "Karachi, Pakistan uses Pakistan Standard Time (PKT, UTC+5) year-round. Pakistan does not observe Daylight Saving Time. The IANA identifier is Asia/Karachi. Karachi follows Pakistan Standard Time (PKT), which is UTC+5 year-round. For example, when it is 12:00 noon UTC, it is 5:00 PM in Karachi. Since Pakistan does not observe daylight saving time, the offset remains constant throughout the year, making it easy to calculate the current time in Karachi from any other time zone."
     },
     {
       "question": "What time zone is Karachi in?",
@@ -44,7 +44,7 @@
         "name": "What time is it in Karachi right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Karachi follows Pakistan Standard Time (PKT), which is UTC+5 year-round. For example, when it is 12:00 noon UTC, it is 5:00 PM in Karachi. Since Pakistan does not observe daylight saving time, the offset remains constant throughout the year, making it easy to calculate the current time in Karachi from any other time zone."
+          "text": "Karachi, Pakistan uses Pakistan Standard Time (PKT, UTC+5) year-round. Pakistan does not observe Daylight Saving Time. The IANA identifier is Asia/Karachi. Karachi follows Pakistan Standard Time (PKT), which is UTC+5 year-round. For example, when it is 12:00 noon UTC, it is 5:00 PM in Karachi. Since Pakistan does not observe daylight saving time, the offset remains constant throughout the year, making it easy to calculate the current time in Karachi from any other time zone."
         }
       },
       {

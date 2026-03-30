@@ -1,18 +1,18 @@
 {
-  "seo_title": "Current Time in Tunis — CET (UTC+1)",
-  "seo_description": "Current time in Tunis, Tunisia. Live CET clock — UTC+1 year-round, no Daylight Saving Time. Tunis time vs London, Paris, Cairo, Rome.",
+  "seo_title": "Current Time in Tunis \u2014 CET (UTC+1)",
+  "seo_description": "Current time in Tunis, Tunisia. Live CET clock \u2014 UTC+1 year-round, no Daylight Saving Time. Tunis time vs London, Paris, Cairo, Rome.",
   "faq": [
     {
       "question": "What time is it in Tunis right now?",
-      "answer": "Tunis, the capital of Tunisia, operates on Central European Time (CET/UTC+1) year-round. Tunisia has not observed Daylight Saving Time since 2008, maintaining a fixed UTC+1 offset in all seasons. This places Tunis at the same time as Paris, Rome, and Madrid in winter, and 1 hour behind them in summer when those cities advance to CEST (UTC+2). Use the live clock above for the current time in Tunis."
+      "answer": "Tunis, Tunisia uses Central European Time (CET, UTC+1) year-round. Tunisia does not observe Daylight Saving Time. The IANA identifier is Africa/Tunis. Tunis, the capital of Tunisia, operates on Central European Time (CET/UTC+1) year-round. Tunisia has not observed Daylight Saving Time since 2008, maintaining a fixed UTC+1 offset in all seasons. This places Tunis at the same time as Paris, Rome, and Madrid in winter, and 1 hour behind them in summer when those cities advance to CEST (UTC+2). Use the live clock above for the current time in Tunis."
     },
     {
       "question": "What time zone is Tunis in?",
-      "answer": "Tunis uses Central European Time (CET/UTC+1) as a permanent, year-round offset — it does not switch to summer time. CET is shared with much of continental Europe in winter, but while European cities shift to CEST (UTC+2) from late March to late October, Tunisia stays at UTC+1. The IANA timezone identifier is Africa/Tunis. This means Tunis is synchronized with European winter hours but falls 1 hour behind in summer."
+      "answer": "Tunis uses Central European Time (CET/UTC+1) as a permanent, year-round offset \u2014 it does not switch to summer time. CET is shared with much of continental Europe in winter, but while European cities shift to CEST (UTC+2) from late March to late October, Tunisia stays at UTC+1. The IANA timezone identifier is Africa/Tunis. This means Tunis is synchronized with European winter hours but falls 1 hour behind in summer."
     },
     {
       "question": "Does Tunis observe Daylight Saving Time?",
-      "answer": "No. Tunisia discontinued Daylight Saving Time in 2008. Prior to that, Tunisia had intermittently observed DST. Since 2008, Tunis has operated on a fixed UTC+1 offset throughout the year. The practical effect is that in summer — when Paris, Rome, Berlin, and Madrid are on CEST (UTC+2) — Tunis is 1 hour behind those European capitals despite being geographically close across the Mediterranean."
+      "answer": "No. Tunisia discontinued Daylight Saving Time in 2008. Prior to that, Tunisia had intermittently observed DST. Since 2008, Tunis has operated on a fixed UTC+1 offset throughout the year. The practical effect is that in summer \u2014 when Paris, Rome, Berlin, and Madrid are on CEST (UTC+2) \u2014 Tunis is 1 hour behind those European capitals despite being geographically close across the Mediterranean."
     },
     {
       "question": "What is the time difference between Tunis and Paris?",
@@ -28,11 +28,11 @@
     },
     {
       "question": "What are typical business hours in Tunis?",
-      "answer": "Standard business hours in Tunis run 8:00 AM to 5:00 PM CET Monday through Friday, with a lunch break typically from 12:00 PM to 1:30 PM. Government offices observe 8:00 AM to 4:00 PM during summer and 8:30 AM to 5:30 PM in winter. Banks typically operate 8:00 AM to 3:00 PM. During Ramadan, reduced working hours often apply — typically 9:00 AM to 2:00 PM. The tourism sector, concentrated around the Medina, Sidi Bou Said, and the coastal resort town of Hammamet, operates across extended hours throughout the day."
+      "answer": "Standard business hours in Tunis run 8:00 AM to 5:00 PM CET Monday through Friday, with a lunch break typically from 12:00 PM to 1:30 PM. Government offices observe 8:00 AM to 4:00 PM during summer and 8:30 AM to 5:30 PM in winter. Banks typically operate 8:00 AM to 3:00 PM. During Ramadan, reduced working hours often apply \u2014 typically 9:00 AM to 2:00 PM. The tourism sector, concentrated around the Medina, Sidi Bou Said, and the coastal resort town of Hammamet, operates across extended hours throughout the day."
     },
     {
       "question": "What is the best time to call Tunis from Europe?",
-      "answer": "From London in winter (GMT/UTC+0), Tunis is 1 hour ahead — call 8:00 AM to 4:00 PM GMT to reach Tunis offices from 9:00 AM to 5:00 PM CET. In summer (BST/UTC+1), both cities are on the same time, making any UK working hour ideal. From Paris (CET in winter), Tunis and Paris are synchronized — call any working hour. In summer (CEST/UTC+2), Paris is 1 hour ahead — call 9:00 AM to 6:00 PM Paris time to reach Tunis from 8:00 AM to 5:00 PM."
+      "answer": "From London in winter (GMT/UTC+0), Tunis is 1 hour ahead \u2014 call 8:00 AM to 4:00 PM GMT to reach Tunis offices from 9:00 AM to 5:00 PM CET. In summer (BST/UTC+1), both cities are on the same time, making any UK working hour ideal. From Paris (CET in winter), Tunis and Paris are synchronized \u2014 call any working hour. In summer (CEST/UTC+2), Paris is 1 hour ahead \u2014 call 9:00 AM to 6:00 PM Paris time to reach Tunis from 8:00 AM to 5:00 PM."
     }
   ],
   "faq_schema": {
@@ -44,7 +44,7 @@
         "name": "What time is it in Tunis right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tunis, the capital of Tunisia, operates on Central European Time (CET/UTC+1) year-round. Tunisia has not observed Daylight Saving Time since 2008, maintaining a fixed UTC+1 offset in all seasons. This places Tunis at the same time as Paris, Rome, and Madrid in winter, and 1 hour behind them in summer when those cities advance to CEST (UTC+2). Use the live clock above for the current time in Tunis."
+          "text": "Tunis, Tunisia uses Central European Time (CET, UTC+1) year-round. Tunisia does not observe Daylight Saving Time. The IANA identifier is Africa/Tunis. Tunis, the capital of Tunisia, operates on Central European Time (CET/UTC+1) year-round. Tunisia has not observed Daylight Saving Time since 2008, maintaining a fixed UTC+1 offset in all seasons. This places Tunis at the same time as Paris, Rome, and Madrid in winter, and 1 hour behind them in summer when those cities advance to CEST (UTC+2). Use the live clock above for the current time in Tunis."
         }
       },
       {
@@ -52,7 +52,7 @@
         "name": "What time zone is Tunis in?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tunis uses Central European Time (CET/UTC+1) as a permanent, year-round offset — it does not switch to summer time. CET is shared with much of continental Europe in winter, but while European cities shift to CEST (UTC+2) from late March to late October, Tunisia stays at UTC+1. The IANA timezone identifier is Africa/Tunis. This means Tunis is synchronized with European winter hours but falls 1 hour behind in summer."
+          "text": "Tunis uses Central European Time (CET/UTC+1) as a permanent, year-round offset \u2014 it does not switch to summer time. CET is shared with much of continental Europe in winter, but while European cities shift to CEST (UTC+2) from late March to late October, Tunisia stays at UTC+1. The IANA timezone identifier is Africa/Tunis. This means Tunis is synchronized with European winter hours but falls 1 hour behind in summer."
         }
       },
       {
@@ -60,7 +60,7 @@
         "name": "Does Tunis observe Daylight Saving Time?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Tunisia discontinued Daylight Saving Time in 2008. Prior to that, Tunisia had intermittently observed DST. Since 2008, Tunis has operated on a fixed UTC+1 offset throughout the year. The practical effect is that in summer — when Paris, Rome, Berlin, and Madrid are on CEST (UTC+2) — Tunis is 1 hour behind those European capitals despite being geographically close across the Mediterranean."
+          "text": "No. Tunisia discontinued Daylight Saving Time in 2008. Prior to that, Tunisia had intermittently observed DST. Since 2008, Tunis has operated on a fixed UTC+1 offset throughout the year. The practical effect is that in summer \u2014 when Paris, Rome, Berlin, and Madrid are on CEST (UTC+2) \u2014 Tunis is 1 hour behind those European capitals despite being geographically close across the Mediterranean."
         }
       },
       {
@@ -92,7 +92,7 @@
         "name": "What are typical business hours in Tunis?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Standard business hours in Tunis run 8:00 AM to 5:00 PM CET Monday through Friday, with a lunch break typically from 12:00 PM to 1:30 PM. Government offices observe 8:00 AM to 4:00 PM during summer and 8:30 AM to 5:30 PM in winter. Banks typically operate 8:00 AM to 3:00 PM. During Ramadan, reduced working hours often apply — typically 9:00 AM to 2:00 PM. The tourism sector, concentrated around the Medina, Sidi Bou Said, and the coastal resort town of Hammamet, operates across extended hours throughout the day."
+          "text": "Standard business hours in Tunis run 8:00 AM to 5:00 PM CET Monday through Friday, with a lunch break typically from 12:00 PM to 1:30 PM. Government offices observe 8:00 AM to 4:00 PM during summer and 8:30 AM to 5:30 PM in winter. Banks typically operate 8:00 AM to 3:00 PM. During Ramadan, reduced working hours often apply \u2014 typically 9:00 AM to 2:00 PM. The tourism sector, concentrated around the Medina, Sidi Bou Said, and the coastal resort town of Hammamet, operates across extended hours throughout the day."
         }
       },
       {
@@ -100,42 +100,42 @@
         "name": "What is the best time to call Tunis from Europe?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "From London in winter (GMT/UTC+0), Tunis is 1 hour ahead — call 8:00 AM to 4:00 PM GMT to reach Tunis offices from 9:00 AM to 5:00 PM CET. In summer (BST/UTC+1), both cities are on the same time, making any UK working hour ideal. From Paris (CET in winter), Tunis and Paris are synchronized — call any working hour. In summer (CEST/UTC+2), Paris is 1 hour ahead — call 9:00 AM to 6:00 PM Paris time to reach Tunis from 8:00 AM to 5:00 PM."
+          "text": "From London in winter (GMT/UTC+0), Tunis is 1 hour ahead \u2014 call 8:00 AM to 4:00 PM GMT to reach Tunis offices from 9:00 AM to 5:00 PM CET. In summer (BST/UTC+1), both cities are on the same time, making any UK working hour ideal. From Paris (CET in winter), Tunis and Paris are synchronized \u2014 call any working hour. In summer (CEST/UTC+2), Paris is 1 hour ahead \u2014 call 9:00 AM to 6:00 PM Paris time to reach Tunis from 8:00 AM to 5:00 PM."
         }
       }
     ]
   },
   "content_blocks": [
     {
-      "title": "Tunis Time Zone Guide — Permanent CET (UTC+1, No DST)",
-      "content": "Tunis, the capital of Tunisia, operates on Central European Time (CET/UTC+1) as a fixed, year-round offset. Tunisia discontinued Daylight Saving Time in 2008 and has maintained UTC+1 permanently since. This creates an interesting seasonal dynamic: during European winter (late October to late March), Tunis shares the same clock as Paris, Rome, Madrid, and Berlin — all on CET (UTC+1). But from late March to late October, when European capitals advance to Central European Summer Time (CEST/UTC+2), Tunis remains at UTC+1, falling 1 hour behind its northern Mediterranean neighbors. Conversely, during British Summer Time, Tunis and London share the same UTC+1 offset. The IANA timezone identifier is Africa/Tunis. Located at 36.8°N, 10.2°E on Tunisia's northeastern coast facing the Mediterranean, Tunis is geographically closer to Rome (about 400 km) and Sicily (about 150 km) than to any Sub-Saharan African city. Tunisia is 6 hours ahead of New York (EST), 5 hours in summer, and 4 hours behind Dubai (GST). The country's CET alignment reflects its deep economic and cultural ties with France and Italy."
+      "title": "Tunis Time Zone Guide \u2014 Permanent CET (UTC+1, No DST)",
+      "content": "Tunis, the capital of Tunisia, operates on Central European Time (CET/UTC+1) as a fixed, year-round offset. Tunisia discontinued Daylight Saving Time in 2008 and has maintained UTC+1 permanently since. This creates an interesting seasonal dynamic: during European winter (late October to late March), Tunis shares the same clock as Paris, Rome, Madrid, and Berlin \u2014 all on CET (UTC+1). But from late March to late October, when European capitals advance to Central European Summer Time (CEST/UTC+2), Tunis remains at UTC+1, falling 1 hour behind its northern Mediterranean neighbors. Conversely, during British Summer Time, Tunis and London share the same UTC+1 offset. The IANA timezone identifier is Africa/Tunis. Located at 36.8\u00b0N, 10.2\u00b0E on Tunisia's northeastern coast facing the Mediterranean, Tunis is geographically closer to Rome (about 400 km) and Sicily (about 150 km) than to any Sub-Saharan African city. Tunisia is 6 hours ahead of New York (EST), 5 hours in summer, and 4 hours behind Dubai (GST). The country's CET alignment reflects its deep economic and cultural ties with France and Italy."
     },
     {
       "title": "Tunisia's Mediterranean Economy and European Ties",
-      "content": "Tunis is one of North Africa's most cosmopolitan capitals, with deep historical connections to France (a former French protectorate until 1956) and Italy via the Sicilian Channel. The EU-Tunisia economic relationship is extensive: France, Italy, and Germany are among Tunisia's top trading partners, and the CET timezone alignment during winter months facilitates business coordination across the Mediterranean. Tunisia's key exports include petroleum products, olive oil (one of the world's largest producers), phosphates, textiles, and machinery. The offshore services sector is growing, with Tunis hosting call centers and IT outsourcing operations that serve primarily French and European clients — a natural fit given the shared winter timezone. Tunisia's tourism industry, anchored by ancient sites including Carthage ruins, the Medina of Tunis (a UNESCO World Heritage site), the Bardo National Museum, and resort strips around Hammamet and Djerba Island, draws primarily European visitors from France, Italy, Germany, and the UK. The country's Jasmine Revolution (2010–2011) and subsequent democratic transition — the only successful outcome of the Arab Spring — drew significant international attention, with diplomatic and NGO activity creating a cosmopolitan business environment in Tunis."
+      "content": "Tunis is one of North Africa's most cosmopolitan capitals, with deep historical connections to France (a former French protectorate until 1956) and Italy via the Sicilian Channel. The EU-Tunisia economic relationship is extensive: France, Italy, and Germany are among Tunisia's top trading partners, and the CET timezone alignment during winter months facilitates business coordination across the Mediterranean. Tunisia's key exports include petroleum products, olive oil (one of the world's largest producers), phosphates, textiles, and machinery. The offshore services sector is growing, with Tunis hosting call centers and IT outsourcing operations that serve primarily French and European clients \u2014 a natural fit given the shared winter timezone. Tunisia's tourism industry, anchored by ancient sites including Carthage ruins, the Medina of Tunis (a UNESCO World Heritage site), the Bardo National Museum, and resort strips around Hammamet and Djerba Island, draws primarily European visitors from France, Italy, Germany, and the UK. The country's Jasmine Revolution (2010\u20132011) and subsequent democratic transition \u2014 the only successful outcome of the Arab Spring \u2014 drew significant international attention, with diplomatic and NGO activity creating a cosmopolitan business environment in Tunis."
     },
     {
-      "title": "Calling Tunis Internationally — Best Windows by Region",
-      "content": "Tunis operates on CET (UTC+1) year-round, with business hours running 8:00 AM to 5:00 PM. From London in winter (GMT/UTC+0), Tunis is 1 hour ahead — call 7:00 AM to 4:00 PM GMT to cover the full Tunis workday. In summer (BST/UTC+1), both are on the same clock and any London business hour works for Tunis. From Paris (CET/UTC+1 in winter), Tunis and Paris run simultaneously — an entirely aligned business corridor. In summer (CEST/UTC+2), Paris is ahead by 1 hour; call 9:00 AM to 6:00 PM Paris time to reach Tunis 8:00 AM to 5:00 PM. From Berlin and Madrid, the same windows as Paris apply. From New York (EST/UTC-5 in winter), Tunis is 6 hours ahead — call between 3:00 AM and 11:00 AM Eastern to reach Tunis's full working day, making early morning New York calls the practical solution. From Dubai (GST/UTC+4), Tunis is 3 hours behind — call 11:00 AM to 8:00 PM Gulf time to reach Tunis from 8:00 AM to 5:00 PM. From Los Angeles (PST/UTC-8), Tunis is 9 hours ahead — real-time calls require very early Pacific morning hours, making asynchronous tools essential. Tunisia's country code is +216."
+      "title": "Calling Tunis Internationally \u2014 Best Windows by Region",
+      "content": "Tunis operates on CET (UTC+1) year-round, with business hours running 8:00 AM to 5:00 PM. From London in winter (GMT/UTC+0), Tunis is 1 hour ahead \u2014 call 7:00 AM to 4:00 PM GMT to cover the full Tunis workday. In summer (BST/UTC+1), both are on the same clock and any London business hour works for Tunis. From Paris (CET/UTC+1 in winter), Tunis and Paris run simultaneously \u2014 an entirely aligned business corridor. In summer (CEST/UTC+2), Paris is ahead by 1 hour; call 9:00 AM to 6:00 PM Paris time to reach Tunis 8:00 AM to 5:00 PM. From Berlin and Madrid, the same windows as Paris apply. From New York (EST/UTC-5 in winter), Tunis is 6 hours ahead \u2014 call between 3:00 AM and 11:00 AM Eastern to reach Tunis's full working day, making early morning New York calls the practical solution. From Dubai (GST/UTC+4), Tunis is 3 hours behind \u2014 call 11:00 AM to 8:00 PM Gulf time to reach Tunis from 8:00 AM to 5:00 PM. From Los Angeles (PST/UTC-8), Tunis is 9 hours ahead \u2014 real-time calls require very early Pacific morning hours, making asynchronous tools essential. Tunisia's country code is +216."
     }
   ],
   "time_difference_table": [
     {
       "city": "London",
       "slug": "london",
-      "difference": "0–1 hour ahead",
+      "difference": "0\u20131 hour ahead",
       "link": "/time/tunis/london/"
     },
     {
       "city": "Paris",
       "slug": "paris",
-      "difference": "0–1 hour behind",
+      "difference": "0\u20131 hour behind",
       "link": "/time/tunis/paris/"
     },
     {
       "city": "New York",
       "slug": "new-york",
-      "difference": "5–6 hours ahead",
+      "difference": "5\u20136 hours ahead",
       "link": "/time/tunis/new-york/"
     },
     {
@@ -147,25 +147,25 @@
     {
       "city": "Berlin",
       "slug": "berlin",
-      "difference": "0–1 hour behind",
+      "difference": "0\u20131 hour behind",
       "link": "/time/tunis/berlin/"
     },
     {
       "city": "Madrid",
       "slug": "madrid",
-      "difference": "0–1 hour behind",
+      "difference": "0\u20131 hour behind",
       "link": "/time/tunis/madrid/"
     },
     {
       "city": "Los Angeles",
       "slug": "los-angeles",
-      "difference": "8–9 hours ahead",
+      "difference": "8\u20139 hours ahead",
       "link": "/time/tunis/los-angeles/"
     },
     {
       "city": "Toronto",
       "slug": "toronto",
-      "difference": "5–6 hours ahead",
+      "difference": "5\u20136 hours ahead",
       "link": "/time/tunis/toronto/"
     }
   ],
@@ -185,5 +185,5 @@
     "utc_offset": "UTC+1 (year-round)",
     "dst_observed": false
   },
-  "eeat_footer": "Last updated: March 2026 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database."
+  "eeat_footer": "Last updated: March 2026 | \u2713 Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database."
 }

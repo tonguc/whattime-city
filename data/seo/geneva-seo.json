@@ -2,7 +2,7 @@
   "faq": [
     {
       "question": "What time is it in Geneva right now?",
-      "answer": "Geneva currently observes Central European Time (CET/UTC+1) during winter months and Central European Summer Time (CEST/UTC+2) during summer months. The city switches between these zones based on European daylight saving time rules, typically advancing clocks in late March and reverting in late October."
+      "answer": "Geneva, Switzerland uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) during Daylight Saving Time. The IANA identifier is Europe/Zurich. Geneva currently observes Central European Time (CET/UTC+1) during winter months and Central European Summer Time (CEST/UTC+2) during summer months. The city switches between these zones based on European daylight saving time rules, typically advancing clocks in late March and reverting in late October."
     },
     {
       "question": "What time zone is Geneva in?",
@@ -42,7 +42,7 @@
         "name": "What time is it in Geneva right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Geneva currently observes Central European Time (CET/UTC+1) during winter months and Central European Summer Time (CEST/UTC+2) during summer months. The city switches between these zones based on European daylight saving time rules, typically advancing clocks in late March and reverting in late October."
+          "text": "Geneva, Switzerland uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) during Daylight Saving Time. The IANA identifier is Europe/Zurich. Geneva currently observes Central European Time (CET/UTC+1) during winter months and Central European Summer Time (CEST/UTC+2) during summer months. The city switches between these zones based on European daylight saving time rules, typically advancing clocks in late March and reverting in late October."
         }
       },
       {
@@ -104,7 +104,7 @@
     ]
   },
   "seo_description": "Current time in Geneva, Switzerland. Central European Time (CET/UTC+1). Compare Geneva time with New York, London, Tokyo. Business hours & timezone guide.",
-  "seo_title": "Current Time in Geneva — CET/CEST",
+  "seo_title": "Current Time in Geneva \u2014 CET/CEST",
   "content_blocks": [
     {
       "title": "Geneva Time Zone Guide",
@@ -112,7 +112,7 @@
     },
     {
       "title": "Business Hours in Geneva",
-      "content": "Geneva's business culture reflects its unique position as Switzerland's most international city. Traditional Swiss businesses operate 8:00 AM to 12:00 PM and 2:00 PM to 6:00 PM Monday through Friday, maintaining the customary two-hour lunch break that remains prevalent in Geneva's banking and legal sectors. International organizations including the United Nations Office at Geneva (UNOG), World Health Organization, and International Labour Organization typically follow continuous schedules from 9:00 AM to 6:00 PM without extended lunch closures. Geneva's private banking sector, managing an estimated CHF 2 trillion in assets, opens at 8:30 AM and closes at 4:30 PM on weekdays, with wealth management advisors often available by appointment until 6:00 PM. The city's famous Rue du Rhône luxury shopping district operates 10:00 AM to 7:00 PM Monday through Saturday, while international commodity trading firms maintain 24-hour operations due to global market exposure. Geneva's startup ecosystem, centered around Campus Biotech and the Innovation Park, tends toward flexible 9:00 AM to 6:00 PM hours. Swiss banking regulations require most financial institutions to close by 5:00 PM, though currency trading desks operate extended hours. Restaurants typically serve lunch 12:00 PM to 2:00 PM and dinner 7:00 PM to 10:00 PM, with many closing Sunday and Monday. Government offices maintain strict 8:00 AM to 12:00 PM and 1:30 PM to 5:00 PM schedules, closing Wednesday afternoons in some cantons."
+      "content": "Geneva's business culture reflects its unique position as Switzerland's most international city. Traditional Swiss businesses operate 8:00 AM to 12:00 PM and 2:00 PM to 6:00 PM Monday through Friday, maintaining the customary two-hour lunch break that remains prevalent in Geneva's banking and legal sectors. International organizations including the United Nations Office at Geneva (UNOG), World Health Organization, and International Labour Organization typically follow continuous schedules from 9:00 AM to 6:00 PM without extended lunch closures. Geneva's private banking sector, managing an estimated CHF 2 trillion in assets, opens at 8:30 AM and closes at 4:30 PM on weekdays, with wealth management advisors often available by appointment until 6:00 PM. The city's famous Rue du Rh\u00f4ne luxury shopping district operates 10:00 AM to 7:00 PM Monday through Saturday, while international commodity trading firms maintain 24-hour operations due to global market exposure. Geneva's startup ecosystem, centered around Campus Biotech and the Innovation Park, tends toward flexible 9:00 AM to 6:00 PM hours. Swiss banking regulations require most financial institutions to close by 5:00 PM, though currency trading desks operate extended hours. Restaurants typically serve lunch 12:00 PM to 2:00 PM and dinner 7:00 PM to 10:00 PM, with many closing Sunday and Monday. Government offices maintain strict 8:00 AM to 12:00 PM and 1:30 PM to 5:00 PM schedules, closing Wednesday afternoons in some cantons."
     },
     {
       "title": "Calling Geneva Internationally",
@@ -179,7 +179,7 @@
       "link": "/time/geneva/los-angeles/"
     }
   ],
-  "eeat_footer": "Last updated: March 2025 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database.",
+  "eeat_footer": "Last updated: March 2025 | \u2713 Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database.",
   "timezone_facts": {
     "full_name": "Central European Time / Central European Summer Time",
     "abbreviation": "CET / CEST",

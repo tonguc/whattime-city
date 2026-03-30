@@ -1,38 +1,38 @@
 {
-  "seo_title": "Current Time in Reykjavík — GMT (UTC+0)",
-  "seo_description": "Current time in Reykjavík, Iceland. Live GMT clock — UTC+0 year-round, no Daylight Saving Time. Iceland uses GMT permanently. Reykjavík time vs London, New York, Copenhagen.",
+  "seo_title": "Current Time in Reykjav\u00edk \u2014 GMT (UTC+0)",
+  "seo_description": "Current time in Reykjav\u00edk, Iceland. Live GMT clock \u2014 UTC+0 year-round, no Daylight Saving Time. Iceland uses GMT permanently. Reykjav\u00edk time vs London, New York, Copenhagen.",
   "faq": [
     {
-      "question": "What time is it in Reykjavík right now?",
-      "answer": "Reykjavík operates on Greenwich Mean Time (GMT), which is UTC+0 year-round. Iceland is one of the few countries in the world that does not observe Daylight Saving Time, keeping clocks fixed at GMT permanently. Use the live clock above to see the exact current time in Reykjavík with live seconds."
+      "question": "What time is it in Reykjav\u00edk right now?",
+      "answer": "Reykjav\u00edk, Iceland uses Greenwich Mean Time (GMT, UTC+0) year-round. Iceland does not observe Daylight Saving Time. The IANA identifier is Atlantic/Reykjavik. Reykjav\u00edk operates on Greenwich Mean Time (GMT), which is UTC+0 year-round. Iceland is one of the few countries in the world that does not observe Daylight Saving Time, keeping clocks fixed at GMT permanently. Use the live clock above to see the exact current time in Reykjav\u00edk with live seconds."
     },
     {
-      "question": "What time zone is Reykjavík in?",
-      "answer": "Reykjavík is in the GMT (Greenwich Mean Time) zone, fixed at UTC+0 throughout the entire year. Iceland is unique in Europe in that it never advances its clocks for summer time. This means Reykjavík shares the same time as London, Lisbon, and Dublin during winter, but falls 1 hour behind when those cities switch to summer time (BST/WEST/IST)."
+      "question": "What time zone is Reykjav\u00edk in?",
+      "answer": "Reykjav\u00edk is in the GMT (Greenwich Mean Time) zone, fixed at UTC+0 throughout the entire year. Iceland is unique in Europe in that it never advances its clocks for summer time. This means Reykjav\u00edk shares the same time as London, Lisbon, and Dublin during winter, but falls 1 hour behind when those cities switch to summer time (BST/WEST/IST)."
     },
     {
-      "question": "Does Reykjavík observe Daylight Saving Time?",
-      "answer": "No. Iceland does not observe Daylight Saving Time and has never done so in the modern era. The country uses GMT (UTC+0) permanently. The rationale is partly cultural and partly practical: Iceland's extreme latitude means summer daylight lasts almost 24 hours, making clock adjustments unnecessary — and its long, dark winters mean the country effectively benefits from 'natural' DST all year."
+      "question": "Does Reykjav\u00edk observe Daylight Saving Time?",
+      "answer": "No. Iceland does not observe Daylight Saving Time and has never done so in the modern era. The country uses GMT (UTC+0) permanently. The rationale is partly cultural and partly practical: Iceland's extreme latitude means summer daylight lasts almost 24 hours, making clock adjustments unnecessary \u2014 and its long, dark winters mean the country effectively benefits from 'natural' DST all year."
     },
     {
-      "question": "Is Reykjavík on the same time as London?",
-      "answer": "Only during winter. From late October to late March, Reykjavík and London are both on UTC+0 (GMT), so they share the same time. From late March to late October, London switches to British Summer Time (BST/UTC+1), putting London 1 hour ahead of Reykjavík. During summer, if it is 3:00 PM in London, it is 2:00 PM in Reykjavík."
+      "question": "Is Reykjav\u00edk on the same time as London?",
+      "answer": "Only during winter. From late October to late March, Reykjav\u00edk and London are both on UTC+0 (GMT), so they share the same time. From late March to late October, London switches to British Summer Time (BST/UTC+1), putting London 1 hour ahead of Reykjav\u00edk. During summer, if it is 3:00 PM in London, it is 2:00 PM in Reykjav\u00edk."
     },
     {
-      "question": "What is the time difference between Reykjavík and New York?",
-      "answer": "Reykjavík is 5 hours ahead of New York during Eastern Standard Time (EST/UTC-5) in winter, and 4 hours ahead during Eastern Daylight Time (EDT/UTC-4) in summer. Since Reykjavík stays on UTC+0 and New York observes DST, the gap changes. When it is 12:00 PM in New York in January, it is 5:00 PM in Reykjavík."
+      "question": "What is the time difference between Reykjav\u00edk and New York?",
+      "answer": "Reykjav\u00edk is 5 hours ahead of New York during Eastern Standard Time (EST/UTC-5) in winter, and 4 hours ahead during Eastern Daylight Time (EDT/UTC-4) in summer. Since Reykjav\u00edk stays on UTC+0 and New York observes DST, the gap changes. When it is 12:00 PM in New York in January, it is 5:00 PM in Reykjav\u00edk."
     },
     {
-      "question": "What is the time difference between Reykjavík and Copenhagen?",
-      "answer": "Reykjavík is 1 hour behind Copenhagen during winter (CET/UTC+1) and 2 hours behind during summer (CEST/UTC+2). Despite Iceland's Scandinavian cultural ties, its geographic position on the mid-Atlantic means it keeps GMT rather than the Central European Time used by Denmark, Norway, and Sweden."
+      "question": "What is the time difference between Reykjav\u00edk and Copenhagen?",
+      "answer": "Reykjav\u00edk is 1 hour behind Copenhagen during winter (CET/UTC+1) and 2 hours behind during summer (CEST/UTC+2). Despite Iceland's Scandinavian cultural ties, its geographic position on the mid-Atlantic means it keeps GMT rather than the Central European Time used by Denmark, Norway, and Sweden."
     },
     {
       "question": "Why doesn't Iceland use Daylight Saving Time?",
-      "answer": "Iceland abolished Daylight Saving Time in 1968 and has not observed it since. The main reason is Iceland's extreme latitude — in June, Reykjavík experiences nearly 24 hours of daylight (the midnight sun), and in December, only about 4–5 hours. Clock changes were deemed unnecessary and disruptive. GMT was chosen as the permanent timezone due to Iceland's geographic position straddling the 0° meridian and its close ties to the UK and international maritime standards."
+      "answer": "Iceland abolished Daylight Saving Time in 1968 and has not observed it since. The main reason is Iceland's extreme latitude \u2014 in June, Reykjav\u00edk experiences nearly 24 hours of daylight (the midnight sun), and in December, only about 4\u20135 hours. Clock changes were deemed unnecessary and disruptive. GMT was chosen as the permanent timezone due to Iceland's geographic position straddling the 0\u00b0 meridian and its close ties to the UK and international maritime standards."
     },
     {
-      "question": "What are business hours in Reykjavík?",
-      "answer": "Standard business hours in Reykjavík are 9:00 AM – 5:00 PM GMT, Monday through Friday. Retail and tourism businesses typically extend hours in summer to match the long daylight — many shops stay open until 8:00 PM or 10:00 PM. Banks operate 9:15 AM – 4:00 PM on weekdays. Reykjavík's growing tourism, geothermal energy, and creative industries sectors generally follow flexible office hours, with many international companies maintaining GMT-aligned schedules."
+      "question": "What are business hours in Reykjav\u00edk?",
+      "answer": "Standard business hours in Reykjav\u00edk are 9:00 AM \u2013 5:00 PM GMT, Monday through Friday. Retail and tourism businesses typically extend hours in summer to match the long daylight \u2014 many shops stay open until 8:00 PM or 10:00 PM. Banks operate 9:15 AM \u2013 4:00 PM on weekdays. Reykjav\u00edk's growing tourism, geothermal energy, and creative industries sectors generally follow flexible office hours, with many international companies maintaining GMT-aligned schedules."
     }
   ],
   "faq_schema": {
@@ -41,50 +41,50 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What time is it in Reykjavík right now?",
+        "name": "What time is it in Reykjav\u00edk right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Reykjavík operates on Greenwich Mean Time (GMT), which is UTC+0 year-round. Iceland is one of the few countries in the world that does not observe Daylight Saving Time, keeping clocks fixed at GMT permanently. Use the live clock above to see the exact current time in Reykjavík with live seconds."
+          "text": "Reykjav\u00edk, Iceland uses Greenwich Mean Time (GMT, UTC+0) year-round. Iceland does not observe Daylight Saving Time. The IANA identifier is Atlantic/Reykjavik. Reykjav\u00edk operates on Greenwich Mean Time (GMT), which is UTC+0 year-round. Iceland is one of the few countries in the world that does not observe Daylight Saving Time, keeping clocks fixed at GMT permanently. Use the live clock above to see the exact current time in Reykjav\u00edk with live seconds."
         }
       },
       {
         "@type": "Question",
-        "name": "What time zone is Reykjavík in?",
+        "name": "What time zone is Reykjav\u00edk in?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Reykjavík is in the GMT (Greenwich Mean Time) zone, fixed at UTC+0 throughout the entire year. Iceland is unique in Europe in that it never advances its clocks for summer time. This means Reykjavík shares the same time as London, Lisbon, and Dublin during winter, but falls 1 hour behind when those cities switch to summer time (BST/WEST/IST)."
+          "text": "Reykjav\u00edk is in the GMT (Greenwich Mean Time) zone, fixed at UTC+0 throughout the entire year. Iceland is unique in Europe in that it never advances its clocks for summer time. This means Reykjav\u00edk shares the same time as London, Lisbon, and Dublin during winter, but falls 1 hour behind when those cities switch to summer time (BST/WEST/IST)."
         }
       },
       {
         "@type": "Question",
-        "name": "Does Reykjavík observe Daylight Saving Time?",
+        "name": "Does Reykjav\u00edk observe Daylight Saving Time?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Iceland does not observe Daylight Saving Time and has never done so in the modern era. The country uses GMT (UTC+0) permanently. The rationale is partly cultural and partly practical: Iceland's extreme latitude means summer daylight lasts almost 24 hours, making clock adjustments unnecessary — and its long, dark winters mean the country effectively benefits from 'natural' DST all year."
+          "text": "No. Iceland does not observe Daylight Saving Time and has never done so in the modern era. The country uses GMT (UTC+0) permanently. The rationale is partly cultural and partly practical: Iceland's extreme latitude means summer daylight lasts almost 24 hours, making clock adjustments unnecessary \u2014 and its long, dark winters mean the country effectively benefits from 'natural' DST all year."
         }
       },
       {
         "@type": "Question",
-        "name": "Is Reykjavík on the same time as London?",
+        "name": "Is Reykjav\u00edk on the same time as London?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Only during winter. From late October to late March, Reykjavík and London are both on UTC+0 (GMT), so they share the same time. From late March to late October, London switches to British Summer Time (BST/UTC+1), putting London 1 hour ahead of Reykjavík. During summer, if it is 3:00 PM in London, it is 2:00 PM in Reykjavík."
+          "text": "Only during winter. From late October to late March, Reykjav\u00edk and London are both on UTC+0 (GMT), so they share the same time. From late March to late October, London switches to British Summer Time (BST/UTC+1), putting London 1 hour ahead of Reykjav\u00edk. During summer, if it is 3:00 PM in London, it is 2:00 PM in Reykjav\u00edk."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the time difference between Reykjavík and New York?",
+        "name": "What is the time difference between Reykjav\u00edk and New York?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Reykjavík is 5 hours ahead of New York during Eastern Standard Time (EST/UTC-5) in winter, and 4 hours ahead during Eastern Daylight Time (EDT/UTC-4) in summer. Since Reykjavík stays on UTC+0 and New York observes DST, the gap changes. When it is 12:00 PM in New York in January, it is 5:00 PM in Reykjavík."
+          "text": "Reykjav\u00edk is 5 hours ahead of New York during Eastern Standard Time (EST/UTC-5) in winter, and 4 hours ahead during Eastern Daylight Time (EDT/UTC-4) in summer. Since Reykjav\u00edk stays on UTC+0 and New York observes DST, the gap changes. When it is 12:00 PM in New York in January, it is 5:00 PM in Reykjav\u00edk."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the time difference between Reykjavík and Copenhagen?",
+        "name": "What is the time difference between Reykjav\u00edk and Copenhagen?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Reykjavík is 1 hour behind Copenhagen during winter (CET/UTC+1) and 2 hours behind during summer (CEST/UTC+2). Despite Iceland's Scandinavian cultural ties, its geographic position on the mid-Atlantic means it keeps GMT rather than the Central European Time used by Denmark, Norway, and Sweden."
+          "text": "Reykjav\u00edk is 1 hour behind Copenhagen during winter (CET/UTC+1) and 2 hours behind during summer (CEST/UTC+2). Despite Iceland's Scandinavian cultural ties, its geographic position on the mid-Atlantic means it keeps GMT rather than the Central European Time used by Denmark, Norway, and Sweden."
         }
       },
       {
@@ -92,31 +92,31 @@
         "name": "Why doesn't Iceland use Daylight Saving Time?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Iceland abolished Daylight Saving Time in 1968 and has not observed it since. The main reason is Iceland's extreme latitude — in June, Reykjavík experiences nearly 24 hours of daylight (the midnight sun), and in December, only about 4–5 hours. Clock changes were deemed unnecessary and disruptive. GMT was chosen as the permanent timezone due to Iceland's geographic position straddling the 0° meridian and its close ties to the UK and international maritime standards."
+          "text": "Iceland abolished Daylight Saving Time in 1968 and has not observed it since. The main reason is Iceland's extreme latitude \u2014 in June, Reykjav\u00edk experiences nearly 24 hours of daylight (the midnight sun), and in December, only about 4\u20135 hours. Clock changes were deemed unnecessary and disruptive. GMT was chosen as the permanent timezone due to Iceland's geographic position straddling the 0\u00b0 meridian and its close ties to the UK and international maritime standards."
         }
       },
       {
         "@type": "Question",
-        "name": "What are business hours in Reykjavík?",
+        "name": "What are business hours in Reykjav\u00edk?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Standard business hours in Reykjavík are 9:00 AM – 5:00 PM GMT, Monday through Friday. Retail and tourism businesses typically extend hours in summer to match the long daylight — many shops stay open until 8:00 PM or 10:00 PM. Banks operate 9:15 AM – 4:00 PM on weekdays. Reykjavík's growing tourism, geothermal energy, and creative industries sectors generally follow flexible office hours, with many international companies maintaining GMT-aligned schedules."
+          "text": "Standard business hours in Reykjav\u00edk are 9:00 AM \u2013 5:00 PM GMT, Monday through Friday. Retail and tourism businesses typically extend hours in summer to match the long daylight \u2014 many shops stay open until 8:00 PM or 10:00 PM. Banks operate 9:15 AM \u2013 4:00 PM on weekdays. Reykjav\u00edk's growing tourism, geothermal energy, and creative industries sectors generally follow flexible office hours, with many international companies maintaining GMT-aligned schedules."
         }
       }
     ]
   },
   "content_blocks": [
     {
-      "title": "Reykjavík Time Zone — Permanent GMT, No DST",
-      "content": "Reykjavík, the capital and largest city of Iceland, is one of the world's most distinctive timezone cases: it permanently observes Greenwich Mean Time (GMT/UTC+0) without ever adjusting for Daylight Saving Time. Iceland abolished DST in 1968, and no adjustment has been made since. This means Reykjavík is at UTC+0 in January and UTC+0 in July — unlike London (which moves to BST/UTC+1 in summer) or Lisbon and Dublin (also UTC+0 in winter, UTC+1 in summer). Reykjavík's extreme northerly latitude — at 64°N, it is one of the world's northernmost capital cities — makes DST irrelevant: the midnight sun provides nearly 24 hours of light in June, and deep winter brings fewer than 5 hours of daylight regardless of what the clock says. The city's UTC+0 position makes it naturally aligned with global business hubs on Greenwich Mean Time."
+      "title": "Reykjav\u00edk Time Zone \u2014 Permanent GMT, No DST",
+      "content": "Reykjav\u00edk, the capital and largest city of Iceland, is one of the world's most distinctive timezone cases: it permanently observes Greenwich Mean Time (GMT/UTC+0) without ever adjusting for Daylight Saving Time. Iceland abolished DST in 1968, and no adjustment has been made since. This means Reykjav\u00edk is at UTC+0 in January and UTC+0 in July \u2014 unlike London (which moves to BST/UTC+1 in summer) or Lisbon and Dublin (also UTC+0 in winter, UTC+1 in summer). Reykjav\u00edk's extreme northerly latitude \u2014 at 64\u00b0N, it is one of the world's northernmost capital cities \u2014 makes DST irrelevant: the midnight sun provides nearly 24 hours of light in June, and deep winter brings fewer than 5 hours of daylight regardless of what the clock says. The city's UTC+0 position makes it naturally aligned with global business hubs on Greenwich Mean Time."
     },
     {
       "title": "The Midnight Sun, Northern Lights, and Time in Iceland",
-      "content": "Iceland's dramatic seasons make the concept of 'clock time' feel different from most places. In summer, the sun barely sets — Reykjavík's midnight sun means outdoor activities, dining, and tourism continue well past midnight, with restaurants busy at 11:00 PM and tours departing at 1:00 AM. In winter, the Northern Lights (Aurora Borealis) draw visitors to stay up through dark nights that begin before 4:00 PM. Iceland's geothermal energy and tourism industries operate 24/7 to accommodate both seasonal extremes. Reykjavík hosts the annual Airwaves music festival in November and attracts whale-watching tours in summer — all while keeping a stable GMT clock that never shifts. For travellers, this means your smartphone always shows the correct local time in Iceland: no DST transitions, no surprises."
+      "content": "Iceland's dramatic seasons make the concept of 'clock time' feel different from most places. In summer, the sun barely sets \u2014 Reykjav\u00edk's midnight sun means outdoor activities, dining, and tourism continue well past midnight, with restaurants busy at 11:00 PM and tours departing at 1:00 AM. In winter, the Northern Lights (Aurora Borealis) draw visitors to stay up through dark nights that begin before 4:00 PM. Iceland's geothermal energy and tourism industries operate 24/7 to accommodate both seasonal extremes. Reykjav\u00edk hosts the annual Airwaves music festival in November and attracts whale-watching tours in summer \u2014 all while keeping a stable GMT clock that never shifts. For travellers, this means your smartphone always shows the correct local time in Iceland: no DST transitions, no surprises."
     },
     {
-      "title": "Scheduling and Calling Reykjavík from Abroad",
-      "content": "Coordinating with Reykjavík is straightforward once you know that it is always GMT (UTC+0). From London in winter (also GMT), there is zero time difference — call anytime during UK business hours for Iceland. In summer, London is 1 hour ahead of Reykjavík (BST vs GMT), so a 5:00 PM London meeting is 4:00 PM in Reykjavík. From New York (EST/UTC-5), Reykjavík is 5 hours ahead in winter: call between 4:00 AM – 12:00 PM Eastern to catch Reykjavík's 9:00 AM – 5:00 PM business day. From Copenhagen or Berlin (CET/UTC+1), Reykjavík is 1 hour behind in winter, 2 hours behind in summer — mornings from Scandinavia work well. From Dubai (UTC+4), Reykjavík is 4 hours behind, and from Tokyo (UTC+9), it is 9 hours behind. Iceland's country code is +354; Reykjavík uses no specific city code as Iceland's numbering plan is flat."
+      "title": "Scheduling and Calling Reykjav\u00edk from Abroad",
+      "content": "Coordinating with Reykjav\u00edk is straightforward once you know that it is always GMT (UTC+0). From London in winter (also GMT), there is zero time difference \u2014 call anytime during UK business hours for Iceland. In summer, London is 1 hour ahead of Reykjav\u00edk (BST vs GMT), so a 5:00 PM London meeting is 4:00 PM in Reykjav\u00edk. From New York (EST/UTC-5), Reykjav\u00edk is 5 hours ahead in winter: call between 4:00 AM \u2013 12:00 PM Eastern to catch Reykjav\u00edk's 9:00 AM \u2013 5:00 PM business day. From Copenhagen or Berlin (CET/UTC+1), Reykjav\u00edk is 1 hour behind in winter, 2 hours behind in summer \u2014 mornings from Scandinavia work well. From Dubai (UTC+4), Reykjav\u00edk is 4 hours behind, and from Tokyo (UTC+9), it is 9 hours behind. Iceland's country code is +354; Reykjav\u00edk uses no specific city code as Iceland's numbering plan is flat."
     }
   ],
   "time_difference_table": [
@@ -185,5 +185,5 @@
     "utc_offset": "UTC+0 (year-round, no DST)",
     "dst_observed": false
   },
-  "eeat_footer": "Last updated: March 2026 | ✓ Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database."
+  "eeat_footer": "Last updated: March 2026 | \u2713 Verified by WhatTime.city Editorial Team | Timezone data sourced from IANA Time Zone Database."
 }
