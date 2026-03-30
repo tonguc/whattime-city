@@ -1,0 +1,47 @@
+{
+  "seo_title": "Current Time in Detroit, MI — EST/EDT (UTC−5/−4)",
+  "seo_description": "Current time in Detroit, Michigan. Eastern Time Zone — EST (UTC-5) in winter, EDT (UTC-4) during DST. Time differences and business hours for Detroit, MI.",
+  "faq": [
+    {
+      "question": "What time is it in Detroit right now?",
+      "answer": "Detroit, Michigan, USA uses Eastern Standard Time (EST, UTC-5) in winter and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time. The IANA identifier is America/Detroit. Detroit observes DST and is on the same time as New York, Washington D.C., Miami, and Atlanta. The live clock above shows the current Detroit time."
+    },
+    {
+      "question": "What time zone is Detroit in?",
+      "answer": "Detroit, Michigan is in the Eastern Time Zone (ET). It uses Eastern Standard Time (EST, UTC-5) from the first Sunday in November to the second Sunday in March, and Eastern Daylight Time (EDT, UTC-4) for the rest of the year. The IANA identifier is America/Detroit. Detroit is directly across from Windsor, Ontario, Canada, which is in the same Eastern Time Zone."
+    },
+    {
+      "question": "Is Detroit in the same time zone as Toronto?",
+      "answer": "Yes. Detroit, Michigan (USA) and Toronto, Ontario (Canada) are in the same Eastern Time Zone, both using EST (UTC-5) in winter and EDT (UTC-4) during Daylight Saving Time. They observe DST on slightly different schedules (US and Canadian DST align closely but Canada follows its own rules), though in practice Detroit and Toronto are almost always on the same time. Windsor, Ontario — directly across the border from Detroit — is also on Eastern Time."
+    },
+    {
+      "question": "Does Detroit observe daylight saving time?",
+      "answer": "Yes. Detroit observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (EST → EDT, UTC-5 → UTC-4) and fall back on the first Sunday in November. Michigan follows the standard US DST schedule. (Note: in 1975 Michigan briefly stopped observing DST but resumed it the same year.)"
+    },
+    {
+      "question": "What is the time difference between Detroit and Chicago?",
+      "answer": "Detroit (EST/EDT, Eastern Time) is 1 hour ahead of Chicago (CST/CDT, Central Time). Both cities observe DST on the same schedule, keeping the 1-hour gap constant year-round. When it is 9:00 AM in Chicago, it is 10:00 AM in Detroit. The Detroit–Chicago corridor is a major business route with constant time-zone awareness needed."
+    },
+    {
+      "question": "What are typical business hours in Detroit?",
+      "answer": "Standard business hours in Detroit are 9:00 AM to 5:00 PM ET, Monday through Friday. The automotive industry (home to Ford, GM, and Stellantis) typically runs 7:00 AM–5:00 PM shifts at manufacturing facilities. Corporate offices in the Renaissance Center and downtown Detroit operate standard 9:00 AM–5:00 PM ET hours. The Detroit-Windsor Tunnel and Ambassador Bridge operate 24 hours, connecting US and Canadian business operations."
+    },
+    {
+      "question": "What time is it across the border in Windsor, Ontario from Detroit?",
+      "answer": "Detroit, Michigan and Windsor, Ontario are in the same Eastern Time Zone (EST/EDT). They have the same time year-round — though US DST and Canadian DST start and end on slightly different dates, making the gap briefly 0 or 1 hour for a few days in spring and fall. For most of the year Detroit and Windsor share the exact same clock time."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What time is it in Detroit right now?", "acceptedAnswer": { "@type": "Answer", "text": "Detroit, Michigan, USA uses Eastern Standard Time (EST, UTC-5) in winter and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time. The IANA identifier is America/Detroit. Detroit observes DST and is on the same time as New York, Washington D.C., Miami, and Atlanta. The live clock above shows the current Detroit time." } },
+      { "@type": "Question", "name": "What time zone is Detroit in?", "acceptedAnswer": { "@type": "Answer", "text": "Detroit, Michigan is in the Eastern Time Zone (ET). It uses Eastern Standard Time (EST, UTC-5) from the first Sunday in November to the second Sunday in March, and Eastern Daylight Time (EDT, UTC-4) for the rest of the year. The IANA identifier is America/Detroit. Detroit is directly across from Windsor, Ontario, Canada, which is in the same Eastern Time Zone." } },
+      { "@type": "Question", "name": "Is Detroit in the same time zone as Toronto?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Detroit, Michigan (USA) and Toronto, Ontario (Canada) are in the same Eastern Time Zone, both using EST (UTC-5) in winter and EDT (UTC-4) during Daylight Saving Time. They observe DST on slightly different schedules (US and Canadian DST align closely but Canada follows its own rules), though in practice Detroit and Toronto are almost always on the same time. Windsor, Ontario — directly across the border from Detroit — is also on Eastern Time." } },
+      { "@type": "Question", "name": "Does Detroit observe daylight saving time?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Detroit observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (EST → EDT, UTC-5 → UTC-4) and fall back on the first Sunday in November. Michigan follows the standard US DST schedule. (Note: in 1975 Michigan briefly stopped observing DST but resumed it the same year.)" } },
+      { "@type": "Question", "name": "What is the time difference between Detroit and Chicago?", "acceptedAnswer": { "@type": "Answer", "text": "Detroit (EST/EDT, Eastern Time) is 1 hour ahead of Chicago (CST/CDT, Central Time). Both cities observe DST on the same schedule, keeping the 1-hour gap constant year-round. When it is 9:00 AM in Chicago, it is 10:00 AM in Detroit. The Detroit–Chicago corridor is a major business route with constant time-zone awareness needed." } },
+      { "@type": "Question", "name": "What are typical business hours in Detroit?", "acceptedAnswer": { "@type": "Answer", "text": "Standard business hours in Detroit are 9:00 AM to 5:00 PM ET, Monday through Friday. The automotive industry (home to Ford, GM, and Stellantis) typically runs 7:00 AM–5:00 PM shifts at manufacturing facilities. Corporate offices in the Renaissance Center and downtown Detroit operate standard 9:00 AM–5:00 PM ET hours. The Detroit-Windsor Tunnel and Ambassador Bridge operate 24 hours, connecting US and Canadian business operations." } },
+      { "@type": "Question", "name": "What time is it across the border in Windsor, Ontario from Detroit?", "acceptedAnswer": { "@type": "Answer", "text": "Detroit, Michigan and Windsor, Ontario are in the same Eastern Time Zone (EST/EDT). They have the same time year-round — though US DST and Canadian DST start and end on slightly different dates, making the gap briefly 0 or 1 hour for a few days in spring and fall. For most of the year Detroit and Windsor share the exact same clock time." } }
+    ]
+  }
+}

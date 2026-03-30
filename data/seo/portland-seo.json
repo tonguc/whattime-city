@@ -1,0 +1,47 @@
+{
+  "seo_title": "Current Time in Portland — PST/PDT (UTC−8/−7)",
+  "seo_description": "Current time in Portland, Oregon. Pacific Time Zone — PST (UTC-8) in winter, PDT (UTC-7) during DST. Time differences and calling guide for Portland, OR.",
+  "faq": [
+    {
+      "question": "What time is it in Portland, Oregon right now?",
+      "answer": "Portland, Oregon, USA uses Pacific Standard Time (PST, UTC-8) in winter and Pacific Daylight Time (PDT, UTC-7) during Daylight Saving Time. The IANA identifier is America/Los_Angeles. Portland is on the same time as Seattle, San Francisco, and Los Angeles — 3 hours behind New York and 8 hours behind London during standard time. The live clock above shows the current Portland, OR time."
+    },
+    {
+      "question": "What time zone is Portland, Oregon in?",
+      "answer": "Portland, Oregon is in the Pacific Time Zone (PT). It uses Pacific Standard Time (PST, UTC-8) from November to March and Pacific Daylight Time (PDT, UTC-7) from March to November. The IANA identifier is America/Los_Angeles. Portland shares its time zone with Seattle, Vancouver BC, San Francisco, and Los Angeles."
+    },
+    {
+      "question": "Does Portland, Oregon observe daylight saving time?",
+      "answer": "Yes. Portland, Oregon observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (PST → PDT) and fall back on the first Sunday in November. Oregon has debated ending DST but continues to observe it under the current federal schedule."
+    },
+    {
+      "question": "What is the time difference between Portland and New York?",
+      "answer": "Portland (PST/PDT) is always 3 hours behind New York (EST/EDT). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in New York, it is 6:00 AM in Portland. The best overlap window for calls is 12:00 PM–5:00 PM Eastern (9:00 AM–2:00 PM Pacific)."
+    },
+    {
+      "question": "What is the time difference between Portland, Oregon and Portland, Maine?",
+      "answer": "Portland, Oregon (PST/PDT) is 3 hours behind Portland, Maine (EST/EDT). Both observe Daylight Saving Time on the same schedule, so the 3-hour gap is constant year-round. Oregon is on Pacific Time; Maine is on Eastern Time."
+    },
+    {
+      "question": "What is the time zone of Portland, Oregon vs Portland, Maine?",
+      "answer": "Portland, Oregon uses Pacific Time (PST, UTC-8 / PDT, UTC-7), with IANA identifier America/Los_Angeles. Portland, Maine uses Eastern Time (EST, UTC-5 / EDT, UTC-4), with IANA identifier America/New_York. Oregon's Portland is 3 hours behind Maine's Portland year-round."
+    },
+    {
+      "question": "What are typical business hours in Portland, Oregon?",
+      "answer": "Standard business hours in Portland, Oregon are 9:00 AM to 5:00 PM PT, Monday through Friday. Portland's tech and creative industries often run flexible schedules from 8:00 AM to 6:00 PM PT. Retail in the Pearl District and downtown typically opens 10:00 AM to 8:00 PM. The Portland Saturday Market and food cart scene operates weekends 10:00 AM–5:00 PM."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What time is it in Portland, Oregon right now?", "acceptedAnswer": { "@type": "Answer", "text": "Portland, Oregon, USA uses Pacific Standard Time (PST, UTC-8) in winter and Pacific Daylight Time (PDT, UTC-7) during Daylight Saving Time. The IANA identifier is America/Los_Angeles. Portland is on the same time as Seattle, San Francisco, and Los Angeles — 3 hours behind New York and 8 hours behind London during standard time. The live clock above shows the current Portland, OR time." } },
+      { "@type": "Question", "name": "What time zone is Portland, Oregon in?", "acceptedAnswer": { "@type": "Answer", "text": "Portland, Oregon is in the Pacific Time Zone (PT). It uses Pacific Standard Time (PST, UTC-8) from November to March and Pacific Daylight Time (PDT, UTC-7) from March to November. The IANA identifier is America/Los_Angeles. Portland shares its time zone with Seattle, Vancouver BC, San Francisco, and Los Angeles." } },
+      { "@type": "Question", "name": "Does Portland, Oregon observe daylight saving time?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Portland, Oregon observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (PST → PDT) and fall back on the first Sunday in November. Oregon has debated ending DST but continues to observe it under the current federal schedule." } },
+      { "@type": "Question", "name": "What is the time difference between Portland and New York?", "acceptedAnswer": { "@type": "Answer", "text": "Portland (PST/PDT) is always 3 hours behind New York (EST/EDT). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in New York, it is 6:00 AM in Portland. The best overlap window for calls is 12:00 PM–5:00 PM Eastern (9:00 AM–2:00 PM Pacific)." } },
+      { "@type": "Question", "name": "What is the time difference between Portland, Oregon and Portland, Maine?", "acceptedAnswer": { "@type": "Answer", "text": "Portland, Oregon (PST/PDT) is 3 hours behind Portland, Maine (EST/EDT). Both observe Daylight Saving Time on the same schedule, so the 3-hour gap is constant year-round. Oregon is on Pacific Time; Maine is on Eastern Time." } },
+      { "@type": "Question", "name": "What is the time zone of Portland, Oregon vs Portland, Maine?", "acceptedAnswer": { "@type": "Answer", "text": "Portland, Oregon uses Pacific Time (PST, UTC-8 / PDT, UTC-7), with IANA identifier America/Los_Angeles. Portland, Maine uses Eastern Time (EST, UTC-5 / EDT, UTC-4), with IANA identifier America/New_York. Oregon's Portland is 3 hours behind Maine's Portland year-round." } },
+      { "@type": "Question", "name": "What are typical business hours in Portland, Oregon?", "acceptedAnswer": { "@type": "Answer", "text": "Standard business hours in Portland, Oregon are 9:00 AM to 5:00 PM PT, Monday through Friday. Portland's tech and creative industries often run flexible schedules from 8:00 AM to 6:00 PM PT. Retail in the Pearl District and downtown typically opens 10:00 AM to 8:00 PM. The Portland Saturday Market and food cart scene operates weekends 10:00 AM–5:00 PM." } }
+    ]
+  }
+}
