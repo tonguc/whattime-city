@@ -2,7 +2,7 @@
   "faq": [
     {
       "question": "What time is it in Beijing right now?",
-      "answer": "Beijing operates on China Standard Time (CST/UTC+8) year-round. China uses a single timezone across the entire country, making Beijing 8 hours ahead of Coordinated Universal Time. The IANA identifier is Asia/Shanghai. This means when it's noon UTC, it's 8:00 PM in Beijing."
+      "answer": "Beijing, China uses China Standard Time (CST, UTC+8) year-round. China uses a single timezone across the entire country, making Beijing 8 hours ahead of Coordinated Universal Time. The IANA identifier is Asia/Shanghai. This means when it's noon UTC, it's 8:00 PM in Beijing."
     },
     {
       "question": "What time zone is Beijing in?",
@@ -42,7 +42,7 @@
         "name": "What time is it in Beijing right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Beijing operates on China Standard Time (CST/UTC+8) year-round. China uses a single timezone across the entire country, making Beijing 8 hours ahead of Coordinated Universal Time. The IANA identifier is Asia/Shanghai. This means when it's noon UTC, it's 8:00 PM in Beijing."
+          "text": "Beijing, China uses China Standard Time (CST, UTC+8) year-round. China uses a single timezone across the entire country, making Beijing 8 hours ahead of Coordinated Universal Time. The IANA identifier is Asia/Shanghai. This means when it's noon UTC, it's 8:00 PM in Beijing."
         }
       },
       {
@@ -198,7 +198,7 @@
       "name": "What time is it in Beijing right now?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Beijing operates on China Standard Time (CST/UTC+8) year-round. China uses a single timezone across the entire country, making Beijing 8 hours ahead of Coordinated Universal Time. This means when it's noon UTC, it's 8:00 PM in Beijing."
+        "text": "Beijing, China uses China Standard Time (CST, UTC+8) year-round. China uses a single timezone across the entire country, making Beijing 8 hours ahead of Coordinated Universal Time. This means when it's noon UTC, it's 8:00 PM in Beijing."
       }
     },
     {

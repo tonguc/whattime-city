@@ -4,7 +4,7 @@
   "faq": [
     {
       "question": "What time is it in Hong Kong right now?",
-      "answer": "Hong Kong uses Hong Kong Time (HKT, UTC+8) year-round. Hong Kong does not observe Daylight Saving Time. The IANA identifier is Asia/Hong_Kong. Hong Kong operates on Hong Kong Time (HKT/UTC+8) year-round. Hong Kong does not observe daylight saving time, so its UTC+8 offset is constant throughout the year. This makes Hong Kong 8 hours ahead of London (GMT), 13 hours ahead of New York (EST), and in the same time zone as Beijing, Singapore, and Perth."
+      "answer": "Hong Kong uses Hong Kong Time (HKT, UTC+8) year-round. The IANA timezone identifier is Asia/Hong_Kong. Hong Kong does not observe Daylight Saving Time. The IANA identifier is Asia/Hong_Kong. Hong Kong operates on Hong Kong Time (HKT/UTC+8) year-round. Hong Kong does not observe daylight saving time, so its UTC+8 offset is constant throughout the year. This makes Hong Kong 8 hours ahead of London (GMT), 13 hours ahead of New York (EST), and in the same time zone as Beijing, Singapore, and Perth."
     },
     {
       "question": "What time zone is Hong Kong in?",
@@ -44,7 +44,7 @@
         "name": "What time is it in Hong Kong right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Hong Kong uses Hong Kong Time (HKT, UTC+8) year-round. Hong Kong does not observe Daylight Saving Time. The IANA identifier is Asia/Hong_Kong. Hong Kong operates on Hong Kong Time (HKT/UTC+8) year-round. Hong Kong does not observe daylight saving time, so its UTC+8 offset is constant throughout the year. This makes Hong Kong 8 hours ahead of London (GMT), 13 hours ahead of New York (EST), and in the same time zone as Beijing, Singapore, and Perth."
+          "text": "Hong Kong uses Hong Kong Time (HKT, UTC+8) year-round. The IANA timezone identifier is Asia/Hong_Kong. Hong Kong does not observe Daylight Saving Time. The IANA identifier is Asia/Hong_Kong. Hong Kong operates on Hong Kong Time (HKT/UTC+8) year-round. Hong Kong does not observe daylight saving time, so its UTC+8 offset is constant throughout the year. This makes Hong Kong 8 hours ahead of London (GMT), 13 hours ahead of New York (EST), and in the same time zone as Beijing, Singapore, and Perth."
         }
       },
       {

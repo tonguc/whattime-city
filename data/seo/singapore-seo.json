@@ -2,7 +2,7 @@
   "faq": [
     {
       "question": "What time is it in Singapore right now?",
-      "answer": "Singapore uses Singapore Standard Time (SST, UTC+8) year-round. Singapore does not observe Daylight Saving Time. The IANA identifier is Asia/Singapore. Singapore operates on Singapore Standard Time (SST), which is UTC+8 year-round. Unlike most major financial centers, Singapore never observes daylight saving time, meaning the clock never changes\u20149:00 AM SGT in January is exactly 9:00 AM SGT in July. As Southeast Asia's premier financial hub, Singapore's stable and predictable timezone makes it an ideal coordination anchor for ASEAN business operations spanning 11 nations and 670 million people."
+      "answer": "Singapore uses Singapore Standard Time (SGT, UTC+8) year-round. The IANA timezone identifier is Asia/Singapore. Singapore does not observe Daylight Saving Time. The IANA identifier is Asia/Singapore. Singapore operates on Singapore Standard Time (SST), which is UTC+8 year-round. Unlike most major financial centers, Singapore never observes daylight saving time, meaning the clock never changes\u20149:00 AM SGT in January is exactly 9:00 AM SGT in July. As Southeast Asia's premier financial hub, Singapore's stable and predictable timezone makes it an ideal coordination anchor for ASEAN business operations spanning 11 nations and 670 million people."
     },
     {
       "question": "What time zone is Singapore in?",
@@ -42,7 +42,7 @@
         "name": "What time is it in Singapore right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Singapore uses Singapore Standard Time (SST, UTC+8) year-round. Singapore does not observe Daylight Saving Time. The IANA identifier is Asia/Singapore. Singapore operates on Singapore Standard Time (SST), which is UTC+8 year-round. Unlike most major financial centers, Singapore never observes daylight saving time, meaning the clock never changes\u20149:00 AM SGT in January is exactly 9:00 AM SGT in July. As Southeast Asia's premier financial hub, Singapore's stable and predictable timezone makes it an ideal coordination anchor for ASEAN business operations spanning 11 nations and 670 million people."
+          "text": "Singapore uses Singapore Standard Time (SGT, UTC+8) year-round. The IANA timezone identifier is Asia/Singapore. Singapore does not observe Daylight Saving Time. The IANA identifier is Asia/Singapore. Singapore operates on Singapore Standard Time (SST), which is UTC+8 year-round. Unlike most major financial centers, Singapore never observes daylight saving time, meaning the clock never changes\u20149:00 AM SGT in January is exactly 9:00 AM SGT in July. As Southeast Asia's premier financial hub, Singapore's stable and predictable timezone makes it an ideal coordination anchor for ASEAN business operations spanning 11 nations and 670 million people."
         }
       },
       {

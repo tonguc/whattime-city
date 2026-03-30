@@ -4,7 +4,7 @@
   "faq": [
     {
       "question": "What time zone is Louisville in?",
-      "answer": "Louisville, Kentucky is in the Eastern Time Zone (ET). The city uses Eastern Standard Time (EST, UTC-5) from November to March and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time from March to November. The IANA timezone identifier is America/Kentucky/Louisville."
+      "answer": "Louisville, Kentucky, USA uses Eastern Standard Time (EST, UTC-5) in winter and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time. The city uses Eastern Standard Time (EST, UTC-5) from November to March and Eastern Daylight Time (EDT, UTC-4) during Daylight Saving Time from March to November. The IANA timezone identifier is America/Kentucky/Louisville."
     },
     {
       "question": "Does Louisville observe Daylight Saving Time?",
