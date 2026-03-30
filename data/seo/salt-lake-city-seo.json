@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Salt Lake City — MST/MDT",
+  "seo_description": "Current time in Salt Lake City, Utah — live Mountain Time (MST/MDT) clock, DST schedule, and time differences with major US and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Salt Lake City right now?",
+      "answer": "Salt Lake City, Utah, USA uses Mountain Standard Time (MST, UTC-7) in winter and Mountain Daylight Time (MDT, UTC-6) during Daylight Saving Time in summer. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. The IANA timezone identifier is America/Denver."
+    },
+    {
+      "question": "What time zone is Salt Lake City in?",
+      "answer": "Salt Lake City is in the Mountain Time Zone (MT), observing MST (UTC-7) from November to March and MDT (UTC-6) from March to November. Utah is entirely on Mountain Time. Salt Lake City shares its time zone with Denver, Phoenix (which observes no DST), Albuquerque, and Boise. The IANA identifier is America/Denver."
+    },
+    {
+      "question": "Does Salt Lake City observe daylight saving time?",
+      "answer": "Yes. Salt Lake City observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (becoming 3:00 AM MDT, UTC-6) and fall back on the first Sunday in November at 2:00 AM (becoming 1:00 AM MST, UTC-7). Utah follows federal DST rules under the Uniform Time Act of 1966."
+    },
+    {
+      "question": "What is the time difference between Salt Lake City and New York?",
+      "answer": "Salt Lake City (MST, UTC-7) is 2 hours behind New York (EST, UTC-5) in winter. Both observe Daylight Saving Time on the same schedule, so the 2-hour gap is constant year-round. When it is 9:00 AM in Salt Lake City, it is 11:00 AM in New York."
+    },
+    {
+      "question": "What is the time difference between Salt Lake City and Los Angeles?",
+      "answer": "Salt Lake City (MST/MDT) is 1 hour ahead of Los Angeles (PST/PDT) year-round. Both observe Daylight Saving Time on the same schedule, so the 1-hour gap is constant. When it is 9:00 AM in Los Angeles, it is 10:00 AM in Salt Lake City."
+    },
+    {
+      "question": "What is the time difference between Salt Lake City and London?",
+      "answer": "Salt Lake City (MST, UTC-7) is 7 hours behind London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), and when SLC is on MDT (UTC-6), the gap is 7 hours as well when both are on DST. Brief windows during transitions may shift this to 6 or 8 hours."
+    },
+    {
+      "question": "What are typical business hours in Salt Lake City?",
+      "answer": "Standard business hours in Salt Lake City are 8:00 AM to 5:00 PM MST/MDT, Monday through Friday. Salt Lake City is Utah's capital and the largest city in the Intermountain West. Major industries include technology, healthcare, outdoor recreation, finance, and government. The New York Stock Exchange opens at 9:30 AM EST, which is 7:30 AM MST in Salt Lake City."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Salt Lake City right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Salt Lake City, Utah, USA uses Mountain Standard Time (MST, UTC-7) in winter and Mountain Daylight Time (MDT, UTC-6) during Daylight Saving Time in summer. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. The IANA timezone identifier is America/Denver."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Salt Lake City in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Salt Lake City is in the Mountain Time Zone (MT), observing MST (UTC-7) from November to March and MDT (UTC-6) from March to November. Utah is entirely on Mountain Time. Salt Lake City shares its time zone with Denver, Phoenix (which observes no DST), Albuquerque, and Boise. The IANA identifier is America/Denver."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Salt Lake City observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Salt Lake City observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (becoming 3:00 AM MDT, UTC-6) and fall back on the first Sunday in November at 2:00 AM (becoming 1:00 AM MST, UTC-7). Utah follows federal DST rules under the Uniform Time Act of 1966."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Salt Lake City and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Salt Lake City (MST, UTC-7) is 2 hours behind New York (EST, UTC-5) in winter. Both observe Daylight Saving Time on the same schedule, so the 2-hour gap is constant year-round. When it is 9:00 AM in Salt Lake City, it is 11:00 AM in New York."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Salt Lake City and Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Salt Lake City (MST/MDT) is 1 hour ahead of Los Angeles (PST/PDT) year-round. Both observe Daylight Saving Time on the same schedule, so the 1-hour gap is constant. When it is 9:00 AM in Los Angeles, it is 10:00 AM in Salt Lake City."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Salt Lake City and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Salt Lake City (MST, UTC-7) is 7 hours behind London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), and when SLC is on MDT (UTC-6), the gap is 7 hours as well when both are on DST. Brief windows during transitions may shift this to 6 or 8 hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Salt Lake City?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Salt Lake City are 8:00 AM to 5:00 PM MST/MDT, Monday through Friday. Salt Lake City is Utah's capital and the largest city in the Intermountain West. Major industries include technology, healthcare, outdoor recreation, finance, and government. The New York Stock Exchange opens at 9:30 AM EST, which is 7:30 AM MST in Salt Lake City."
+        }
+      }
+    ]
+  }
+}

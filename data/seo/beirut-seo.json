@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Beirut — EET/EEST (UTC+2/+3)",
+  "seo_description": "Current time in Beirut, Lebanon — live Eastern European Time (EET, UTC+2) clock, DST schedule, and time differences with major world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Beirut right now?",
+      "answer": "Beirut, Lebanon uses Eastern European Time (EET, UTC+2) in winter and Eastern European Summer Time (EEST, UTC+3) during Daylight Saving Time in summer. Clocks spring forward on the last Sunday in March and fall back on the last Sunday in October, following EU DST rules. The IANA timezone identifier is Asia/Beirut."
+    },
+    {
+      "question": "What time zone is Beirut in?",
+      "answer": "Beirut is in the Eastern European Time zone (EET, UTC+2 in winter; EEST, UTC+3 in summer). Beirut shares its timezone with Athens, Cairo (which observes no DST), and Bucharest. The IANA timezone identifier is Asia/Beirut."
+    },
+    {
+      "question": "Does Beirut observe daylight saving time?",
+      "answer": "Yes. Lebanon observes Daylight Saving Time. Clocks spring forward 1 hour to EEST (UTC+3) on the last Sunday in March at 12:00 AM midnight and fall back to EET (UTC+2) on the last Sunday in October at 12:00 AM midnight. Lebanon follows EU DST transition dates."
+    },
+    {
+      "question": "What is the time difference between Beirut and London?",
+      "answer": "Beirut (EET, UTC+2) is 2 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Beirut on EET is 1 hour ahead. When Beirut moves to EEST (UTC+3) and London is on BST (UTC+1), Beirut is 2 hours ahead. The gap varies slightly during DST transition periods."
+    },
+    {
+      "question": "What is the time difference between Beirut and New York?",
+      "answer": "Beirut (EET, UTC+2) is 7 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Beirut is 6 hours ahead. When Beirut is on EEST (UTC+3), it is 8 hours ahead of EST or 7 hours ahead of EDT."
+    },
+    {
+      "question": "What is the time difference between Beirut and Dubai?",
+      "answer": "Beirut (EEST, UTC+3 in summer) is on the same clock as Dubai (GST, UTC+4) minus 1 hour — Beirut is 1 hour behind Dubai year-round when on EEST. In winter, Beirut (EET, UTC+2) is 2 hours behind Dubai (GST, UTC+4)."
+    },
+    {
+      "question": "What are typical business hours in Beirut?",
+      "answer": "Standard business hours in Beirut are 8:00 AM to 5:00 PM EET/EEST, Monday through Friday. Some businesses also operate Saturday mornings. Beirut is Lebanon's capital and its financial and cultural center, historically known as the 'Paris of the Middle East.' The Beirut Stock Exchange (BSE) operates Monday–Friday from 9:00 AM to 12:30 PM EET."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Beirut right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beirut, Lebanon uses Eastern European Time (EET, UTC+2) in winter and Eastern European Summer Time (EEST, UTC+3) during Daylight Saving Time in summer. Clocks spring forward on the last Sunday in March and fall back on the last Sunday in October, following EU DST rules. The IANA timezone identifier is Asia/Beirut."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Beirut in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beirut is in the Eastern European Time zone (EET, UTC+2 in winter; EEST, UTC+3 in summer). Beirut shares its timezone with Athens, Cairo (which observes no DST), and Bucharest. The IANA timezone identifier is Asia/Beirut."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Beirut observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Lebanon observes Daylight Saving Time. Clocks spring forward 1 hour to EEST (UTC+3) on the last Sunday in March at 12:00 AM midnight and fall back to EET (UTC+2) on the last Sunday in October at 12:00 AM midnight. Lebanon follows EU DST transition dates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Beirut and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beirut (EET, UTC+2) is 2 hours ahead of London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Beirut on EET is 1 hour ahead. When Beirut moves to EEST (UTC+3) and London is on BST (UTC+1), Beirut is 2 hours ahead. The gap varies slightly during DST transition periods."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Beirut and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beirut (EET, UTC+2) is 7 hours ahead of New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Beirut is 6 hours ahead. When Beirut is on EEST (UTC+3), it is 8 hours ahead of EST or 7 hours ahead of EDT."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Beirut and Dubai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beirut (EEST, UTC+3 in summer) is on the same clock as Dubai (GST, UTC+4) minus 1 hour — Beirut is 1 hour behind Dubai year-round when on EEST. In winter, Beirut (EET, UTC+2) is 2 hours behind Dubai (GST, UTC+4)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Beirut?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Beirut are 8:00 AM to 5:00 PM EET/EEST, Monday through Friday. Some businesses also operate Saturday mornings. Beirut is Lebanon's capital and its financial and cultural center, historically known as the 'Paris of the Middle East.' The Beirut Stock Exchange (BSE) operates Monday–Friday from 9:00 AM to 12:30 PM EET."
+        }
+      }
+    ]
+  }
+}
