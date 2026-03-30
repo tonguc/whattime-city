@@ -14,7 +14,8 @@ const breadcrumbSchema = {
 
 export const metadata: Metadata = {
   title: 'Daylight Saving Time 2026 — Dates',
-  description: 'When does daylight saving time start and end in 2026? Get exact DST dates for the US, UK, EU, Australia, and every country. Spring forward, fall back explained.',
+  description: 'Daylight saving time 2026 clock change dates for every country. US clocks spring forward March 8, fall back November 1. UK, EU, Australia DST dates included.',
+  keywords: ['daylight saving time 2026', 'daylight savings time clock change', 'when do clocks change 2026', 'spring forward fall back 2026', 'DST dates 2026', 'clock change 2026', 'when does daylight saving time start 2026'],
   alternates: {
     canonical: 'https://whattime.city/daylight-saving-time/',
   },
