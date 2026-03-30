@@ -138,6 +138,10 @@ export default async function sitemap() {
     { slug: 'west-virginia', priority: 0.9 },
     { slug: 'nebraska', priority: 0.9 },
     { slug: 'new-mexico', priority: 0.9 },
+    { slug: 'alaska', priority: 0.8 },
+    { slug: 'washington-dc', priority: 0.8 },
+    { slug: 'hawaii', priority: 0.8 },
+    { slug: 'montana', priority: 0.8 },
     { slug: 'daylight-saving-time', priority: 0.8 },
     // DST cluster subpages
     { slug: 'daylight-saving-time/usa', priority: 0.8 },
@@ -230,6 +234,8 @@ export default async function sitemap() {
     { slug: 'world-alarm', priority: 0.7 },
     { slug: 'days-from-today', priority: 0.8 },
     { slug: 'days-ago', priority: 0.8 },
+    { slug: 'hours-ago', priority: 0.8 },
+    { slug: 'hours-from-now', priority: 0.8 },
     { slug: 'week-number', priority: 0.9 },
     { slug: 'stopwatch', priority: 0.9 },
     { slug: 'date-calculator', priority: 0.8 },
@@ -328,18 +334,18 @@ export default async function sitemap() {
     priority: 0.8,
   }]
 
-  // Days-from-today and days-ago individual pages (pre-generated)
-  const daysPregenerated = [7, 8, 10, 14, 15, 17, 20, 22, 25, 29, 30, 42, 45, 60, 90, 100, 120, 150, 180, 365]
-  const daysFromTodayRoutes = daysPregenerated.map(d => ({
-    url: `${baseUrl}/days-from-today/${d}/`,
+  // Hours-ago and hours-from-now individual pages (pre-generated)
+  const hoursPregenerated = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15, 18, 20, 24, 36, 48, 72]
+  const hoursAgoRoutes = hoursPregenerated.map(h => ({
+    url: `${baseUrl}/hours-ago/${h}/`,
     lastModified: now,
-    changeFrequency: 'daily' as const,
+    changeFrequency: 'hourly' as const,
     priority: 0.7,
   }))
-  const daysAgoRoutes = daysPregenerated.map(d => ({
-    url: `${baseUrl}/days-ago/${d}/`,
+  const hoursFromNowRoutes = hoursPregenerated.map(h => ({
+    url: `${baseUrl}/hours-from-now/${h}/`,
     lastModified: now,
-    changeFrequency: 'daily' as const,
+    changeFrequency: 'hourly' as const,
     priority: 0.7,
   }))
 
@@ -462,6 +468,8 @@ export default async function sitemap() {
     ...articleRoutes,
     ...daysFromTodayRoutes,
     ...daysAgoRoutes,
+    ...hoursAgoRoutes,
+    ...hoursFromNowRoutes,
     ...sunriseRoutes,
     ...tier1SunRoutes,
     ...guideRoutes,
