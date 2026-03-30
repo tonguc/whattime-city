@@ -1,0 +1,84 @@
+{
+  "seo_title": "Current Time in Yangon — MMT (UTC+6:30)",
+  "seo_description": "Current time in Yangon (Rangoon), Myanmar. Myanmar Time (MMT, UTC+6:30) year-round — no DST. Live clock and time differences for Yangon.",
+  "faq": [
+    {
+      "question": "What time is it in Yangon right now?",
+      "answer": "Yangon (also known as Rangoon), Myanmar uses Myanmar Time (MMT, UTC+6:30) year-round. Myanmar does not observe Daylight Saving Time, so clocks never change. The IANA identifier is Asia/Yangon. Myanmar's UTC+6:30 offset is one of only a few half-hour offset time zones in the world, making it distinct from neighboring India (UTC+5:30), Bangladesh (UTC+6), and Thailand (UTC+7). The live clock above shows the current Yangon time."
+    },
+    {
+      "question": "What time zone is Yangon in?",
+      "answer": "Yangon, Myanmar uses Myanmar Time (MMT, UTC+6:30) year-round. The IANA identifier is Asia/Yangon (formerly Asia/Rangoon). Myanmar does not observe Daylight Saving Time. The UTC+6:30 offset is unique to Myanmar — it differs by 30 minutes from both Bangladesh (UTC+6) to the west and Thailand and Vietnam (UTC+7) to the east."
+    },
+    {
+      "question": "Does Yangon observe daylight saving time?",
+      "answer": "No. Yangon, Myanmar does not observe Daylight Saving Time. Myanmar (Burma) uses Myanmar Time (MMT, UTC+6:30) permanently year-round. The country last observed DST during World War II and has not done so since."
+    },
+    {
+      "question": "What is the time difference between Yangon and Bangkok?",
+      "answer": "Yangon (MMT, UTC+6:30) is 30 minutes behind Bangkok (ICT, UTC+7). Both cities observe no DST, so the 30-minute gap is constant year-round. When it is 12:00 PM in Bangkok, it is 11:30 AM in Yangon."
+    },
+    {
+      "question": "What is the time difference between Yangon and London?",
+      "answer": "Yangon (MMT, UTC+6:30) is 6 hours and 30 minutes ahead of London (GMT, UTC+0) in winter. During UK summer time (BST, UTC+1), Yangon is 5 hours and 30 minutes ahead of London. Myanmar does not observe DST."
+    },
+    {
+      "question": "What is the time difference between Yangon and New York?",
+      "answer": "Yangon (MMT, UTC+6:30) is 11 hours and 30 minutes ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Yangon is 10 hours and 30 minutes ahead of New York. Myanmar does not observe DST."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Yangon right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yangon (also known as Rangoon), Myanmar uses Myanmar Time (MMT, UTC+6:30) year-round. Myanmar does not observe Daylight Saving Time, so clocks never change. The IANA identifier is Asia/Yangon. Myanmar's UTC+6:30 offset is one of only a few half-hour offset time zones in the world, making it distinct from neighboring India (UTC+5:30), Bangladesh (UTC+6), and Thailand (UTC+7). The live clock above shows the current Yangon time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Yangon in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yangon, Myanmar uses Myanmar Time (MMT, UTC+6:30) year-round. The IANA identifier is Asia/Yangon (formerly Asia/Rangoon). Myanmar does not observe Daylight Saving Time. The UTC+6:30 offset is unique to Myanmar — it differs by 30 minutes from both Bangladesh (UTC+6) to the west and Thailand and Vietnam (UTC+7) to the east."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Yangon observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Yangon, Myanmar does not observe Daylight Saving Time. Myanmar (Burma) uses Myanmar Time (MMT, UTC+6:30) permanently year-round. The country last observed DST during World War II and has not done so since."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Yangon and Bangkok?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yangon (MMT, UTC+6:30) is 30 minutes behind Bangkok (ICT, UTC+7). Both cities observe no DST, so the 30-minute gap is constant year-round. When it is 12:00 PM in Bangkok, it is 11:30 AM in Yangon."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Yangon and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yangon (MMT, UTC+6:30) is 6 hours and 30 minutes ahead of London (GMT, UTC+0) in winter. During UK summer time (BST, UTC+1), Yangon is 5 hours and 30 minutes ahead of London. Myanmar does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Yangon and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yangon (MMT, UTC+6:30) is 11 hours and 30 minutes ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Yangon is 10 hours and 30 minutes ahead of New York. Myanmar does not observe DST."
+        }
+      }
+    ]
+  }
+}

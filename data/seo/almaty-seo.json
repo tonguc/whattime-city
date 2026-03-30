@@ -1,0 +1,84 @@
+{
+  "seo_title": "Current Time in Almaty — ALMT (UTC+6)",
+  "seo_description": "Current time in Almaty, Kazakhstan. Alma-Ata Time (ALMT, UTC+6) year-round — no DST. Live clock and time differences for Almaty.",
+  "faq": [
+    {
+      "question": "What time is it in Almaty right now?",
+      "answer": "Almaty, Kazakhstan uses Alma-Ata Time (ALMT, UTC+6) year-round. Kazakhstan does not observe Daylight Saving Time. The IANA identifier is Asia/Almaty. Almaty was the former capital of Kazakhstan and remains its largest city and main financial center. UTC+6 is shared with cities like Dhaka (Bangladesh) and Bishkek (Kyrgyzstan). The live clock above shows the current Almaty time."
+    },
+    {
+      "question": "What time zone is Almaty in?",
+      "answer": "Almaty, Kazakhstan uses Alma-Ata Time (ALMT, UTC+6) year-round. The IANA identifier is Asia/Almaty. Kazakhstan does not observe Daylight Saving Time — it abolished DST in 2005. Note: western Kazakhstan (including Nur-Sultan/Astana and Aktau) uses UTC+5, while Almaty and eastern Kazakhstan use UTC+6."
+    },
+    {
+      "question": "Does Almaty observe daylight saving time?",
+      "answer": "No. Almaty, Kazakhstan does not observe Daylight Saving Time. Kazakhstan abolished DST in 2005. Almaty uses ALMT (UTC+6) permanently year-round."
+    },
+    {
+      "question": "What is the time difference between Almaty and London?",
+      "answer": "Almaty (ALMT, UTC+6) is 6 hours ahead of London (GMT, UTC+0) in winter. During UK summer time (BST, UTC+1), Almaty is 5 hours ahead of London. Kazakhstan does not observe DST, so the gap changes by 1 hour when the UK switches."
+    },
+    {
+      "question": "What is the time difference between Almaty and New York?",
+      "answer": "Almaty (ALMT, UTC+6) is 11 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Almaty is 10 hours ahead of New York. Kazakhstan does not observe DST, so the gap changes when the US switches."
+    },
+    {
+      "question": "What are typical business hours in Almaty?",
+      "answer": "Standard business hours in Almaty are 9:00 AM to 6:00 PM ALMT, Monday through Friday. Almaty is Kazakhstan's financial capital and largest city, despite Nur-Sultan (Astana) being the political capital. Major industries include banking, retail, energy, and technology. The Almaty Stock Exchange (KASE) is the largest stock exchange in Central Asia. International companies use Almaty as their Central Asian regional hub."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Almaty right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Almaty, Kazakhstan uses Alma-Ata Time (ALMT, UTC+6) year-round. Kazakhstan does not observe Daylight Saving Time. The IANA identifier is Asia/Almaty. Almaty was the former capital of Kazakhstan and remains its largest city and main financial center. UTC+6 is shared with cities like Dhaka (Bangladesh) and Bishkek (Kyrgyzstan). The live clock above shows the current Almaty time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Almaty in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Almaty, Kazakhstan uses Alma-Ata Time (ALMT, UTC+6) year-round. The IANA identifier is Asia/Almaty. Kazakhstan does not observe Daylight Saving Time — it abolished DST in 2005. Note: western Kazakhstan (including Nur-Sultan/Astana and Aktau) uses UTC+5, while Almaty and eastern Kazakhstan use UTC+6."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Almaty observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Almaty, Kazakhstan does not observe Daylight Saving Time. Kazakhstan abolished DST in 2005. Almaty uses ALMT (UTC+6) permanently year-round."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Almaty and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Almaty (ALMT, UTC+6) is 6 hours ahead of London (GMT, UTC+0) in winter. During UK summer time (BST, UTC+1), Almaty is 5 hours ahead of London. Kazakhstan does not observe DST, so the gap changes by 1 hour when the UK switches."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Almaty and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Almaty (ALMT, UTC+6) is 11 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Almaty is 10 hours ahead of New York. Kazakhstan does not observe DST, so the gap changes when the US switches."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Almaty?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Almaty are 9:00 AM to 6:00 PM ALMT, Monday through Friday. Almaty is Kazakhstan's financial capital and largest city, despite Nur-Sultan (Astana) being the political capital. Major industries include banking, retail, energy, and technology. The Almaty Stock Exchange (KASE) is the largest stock exchange in Central Asia. International companies use Almaty as their Central Asian regional hub."
+        }
+      }
+    ]
+  }
+}

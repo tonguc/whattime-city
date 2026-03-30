@@ -1,0 +1,84 @@
+{
+  "seo_title": "Current Time in St. Louis — CST/CDT",
+  "seo_description": "Current time in St. Louis, Missouri. Central Time Zone — CST (UTC-6) in winter, CDT (UTC-5) during DST. Live clock and time differences for St. Louis, MO.",
+  "faq": [
+    {
+      "question": "What time is it in St. Louis right now?",
+      "answer": "St. Louis, Missouri, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. The IANA identifier is America/Chicago. St. Louis is on the same time as Chicago, Dallas, Houston, and Kansas City — 1 hour behind New York and 1 hour ahead of Denver. The live clock above shows the current St. Louis time."
+    },
+    {
+      "question": "What time zone is St. Louis in?",
+      "answer": "St. Louis, Missouri is in the Central Time Zone (CT). It uses Central Standard Time (CST, UTC-6) from the first Sunday in November to the second Sunday in March, and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. The IANA identifier is America/Chicago. St. Louis shares its time zone with Chicago, Kansas City, Nashville, and New Orleans."
+    },
+    {
+      "question": "Does St. Louis observe daylight saving time?",
+      "answer": "Yes. St. Louis, Missouri observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (CST → CDT) and fall back on the first Sunday in November. Missouri follows the standard US DST schedule."
+    },
+    {
+      "question": "What is the time difference between St. Louis and New York?",
+      "answer": "St. Louis (CST/CDT, Central Time) is always 1 hour behind New York (EST/EDT, Eastern Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in New York, it is 8:00 AM in St. Louis."
+    },
+    {
+      "question": "Is St. Louis in the same time zone as Chicago?",
+      "answer": "Yes. St. Louis, Missouri and Chicago, Illinois are both in the Central Time Zone (IANA: America/Chicago). They always share the same time — CST (UTC-6) in winter and CDT (UTC-5) during Daylight Saving Time."
+    },
+    {
+      "question": "What are typical business hours in St. Louis?",
+      "answer": "Standard business hours in St. Louis are 9:00 AM to 5:00 PM CT, Monday through Friday. St. Louis is a major Midwestern city with strengths in healthcare, aerospace, and financial services. Major employers include Boeing's defense unit, Edward Jones, Emerson Electric, Enterprise Holdings, and Washington University. The Gateway Arch and Soulard entertainment district draw significant tourism. Busch Stadium (Cardinals) and Enterprise Center (Blues) are anchor sports venues."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in St. Louis right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "St. Louis, Missouri, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. The IANA identifier is America/Chicago. St. Louis is on the same time as Chicago, Dallas, Houston, and Kansas City — 1 hour behind New York and 1 hour ahead of Denver. The live clock above shows the current St. Louis time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is St. Louis in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "St. Louis, Missouri is in the Central Time Zone (CT). It uses Central Standard Time (CST, UTC-6) from the first Sunday in November to the second Sunday in March, and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. The IANA identifier is America/Chicago. St. Louis shares its time zone with Chicago, Kansas City, Nashville, and New Orleans."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does St. Louis observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. St. Louis, Missouri observes Daylight Saving Time. Clocks spring forward 1 hour on the second Sunday in March at 2:00 AM (CST → CDT) and fall back on the first Sunday in November. Missouri follows the standard US DST schedule."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between St. Louis and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "St. Louis (CST/CDT, Central Time) is always 1 hour behind New York (EST/EDT, Eastern Time). Both cities observe DST on the same schedule, keeping the gap constant year-round. When it is 9:00 AM in New York, it is 8:00 AM in St. Louis."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is St. Louis in the same time zone as Chicago?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. St. Louis, Missouri and Chicago, Illinois are both in the Central Time Zone (IANA: America/Chicago). They always share the same time — CST (UTC-6) in winter and CDT (UTC-5) during Daylight Saving Time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in St. Louis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in St. Louis are 9:00 AM to 5:00 PM CT, Monday through Friday. St. Louis is a major Midwestern city with strengths in healthcare, aerospace, and financial services. Major employers include Boeing's defense unit, Edward Jones, Emerson Electric, Enterprise Holdings, and Washington University. The Gateway Arch and Soulard entertainment district draw significant tourism. Busch Stadium (Cardinals) and Enterprise Center (Blues) are anchor sports venues."
+        }
+      }
+    ]
+  }
+}
