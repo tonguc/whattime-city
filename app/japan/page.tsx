@@ -6,7 +6,7 @@ import JapanClockClient from './JapanClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Japan Now — JST (UTC+9) · Tokyo, Osaka, Kyoto',
+  title: 'Time in Japan Now — JST (UTC+9)',
   description:
     'What time is it in Japan right now? Japan uses JST (Japan Standard Time, UTC+9) year-round — no Daylight Saving Time. Live Tokyo clock, Japan vs US/UK/Europe, and best time to call.',
   keywords: [
@@ -56,7 +56,7 @@ const faqSchema = {
       name: 'What time is it in Japan right now?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Japan uses Japan Standard Time (JST), which is UTC+9. The live clock at the top of this page shows the exact current time in Japan. All cities — Tokyo, Osaka, Kyoto, Sapporo, Hiroshima, and Fukuoka — are on the same time zone.',
+        text: 'Japan uses Japan Standard Time (JST, UTC+9) year-round. Japan abolished Daylight Saving Time in 1952, following brief occupation-era usage — clocks have been fixed at UTC+9 ever since. All cities — Tokyo, Osaka, Kyoto, Sapporo, Hiroshima, and Fukuoka — share the same time zone. The IANA identifier is Asia/Tokyo.',
       },
     },
     {
