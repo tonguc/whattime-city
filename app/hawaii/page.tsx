@@ -5,7 +5,7 @@ import HubPageLayout from '@/components/HubPageLayout'
 import HawaiiClockClient from './HawaiiClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Hawaii Now — HST (UTC−10) · No DST',
+  title: 'Time in Hawaii Now — HST (UTC−10)',
   description: 'What time is it in Hawaii right now? Hawaii uses HST (Hawaii Standard Time, UTC-10) year-round — no Daylight Saving Time. Live Honolulu clock, Hawaii vs mainland time differences.',
   keywords: [
     'time in hawaii', 'hawaii time now', 'what time is it in hawaii',
@@ -37,7 +37,7 @@ const faqSchema = {
       name: 'What time is it in Hawaii right now?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Hawaii uses Hawaii Standard Time (HST, UTC-10) year-round. Hawaii does not observe Daylight Saving Time, so the clock never changes. The live clock above shows the exact current time in Honolulu and all of Hawaii.',
+        text: 'Hawaii, USA uses Hawaii Standard Time (HST, UTC−10) year-round. Hawaii does not observe Daylight Saving Time — clocks never change. Hawaii and Arizona are the only two US states exempt from DST under the Uniform Time Act. The IANA identifier is Pacific/Honolulu. Honolulu, Hilo, Kailua-Kona, and all Hawaiian islands share the same UTC−10 offset.',
       },
     },
     {
