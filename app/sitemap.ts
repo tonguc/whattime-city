@@ -272,12 +272,20 @@ export default async function sitemap() {
     priority: 0.8,
   }]
 
-  // Area code pages (275 codes)
+  // Area code pages — tiered priority based on Ubersuggest search volume
+  const highValueCodes = new Set([
+    // 200K+ vol (SD 14-29)
+    '929','917','437','754','646',
+    // 110K vol (SD 14-23) — timeanddate absent, ultra-low SD
+    '914','647','513','661','732','708','678','727','757','903','908',
+    // 135K vol (SD 21-28)
+    '727','678','760','773','516','615','480','303','602','919','817',
+  ])
   const areaCodeRoutes = areaCodeList.map(code => ({
     url: `${baseUrl}/area-code/${code}/`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
-    priority: 0.6,
+    priority: highValueCodes.has(code) ? 0.8 : 0.6,
   }))
 
   // Days From Today — individual pages (pre-generated)
