@@ -1,0 +1,84 @@
+{
+  "seo_title": "Current Time in Dar es Salaam — EAT (UTC+3)",
+  "seo_description": "Current time in Dar es Salaam, Tanzania. East Africa Time (EAT, UTC+3) year-round — no DST. Live clock and time differences for Dar es Salaam.",
+  "faq": [
+    {
+      "question": "What time is it in Dar es Salaam right now?",
+      "answer": "Dar es Salaam, Tanzania uses East Africa Time (EAT, UTC+3) year-round. Tanzania does not observe Daylight Saving Time, so clocks never change. The IANA identifier is Africa/Dar_es_Salaam. Dar es Salaam is Tanzania's largest city and main commercial port, and shares its UTC+3 offset with Nairobi (Kenya), Kampala (Uganda), Addis Ababa (Ethiopia), and Mogadishu (Somalia). The live clock above shows the current Dar es Salaam time."
+    },
+    {
+      "question": "What time zone is Dar es Salaam in?",
+      "answer": "Dar es Salaam, Tanzania uses East Africa Time (EAT, UTC+3) year-round. The IANA identifier is Africa/Dar_es_Salaam. Tanzania does not observe Daylight Saving Time. EAT (UTC+3) is shared across East Africa including Kenya, Uganda, Ethiopia, Somalia, and Tanzania."
+    },
+    {
+      "question": "Does Dar es Salaam observe daylight saving time?",
+      "answer": "No. Dar es Salaam, Tanzania does not observe Daylight Saving Time. Tanzania uses East Africa Time (EAT, UTC+3) permanently year-round. No East African country currently observes DST."
+    },
+    {
+      "question": "What is the time difference between Dar es Salaam and London?",
+      "answer": "Dar es Salaam (EAT, UTC+3) is 3 hours ahead of London (GMT, UTC+0) in winter. During UK summer time (BST, UTC+1), Dar es Salaam is 2 hours ahead. Tanzania does not observe DST, so the gap changes by 1 hour when the UK switches."
+    },
+    {
+      "question": "What is the time difference between Dar es Salaam and New York?",
+      "answer": "Dar es Salaam (EAT, UTC+3) is 8 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Dar es Salaam is 7 hours ahead. Tanzania does not observe DST."
+    },
+    {
+      "question": "What are typical business hours in Dar es Salaam?",
+      "answer": "Standard business hours in Dar es Salaam are 8:00 AM to 5:00 PM EAT, Monday through Friday. Dar es Salaam is Tanzania's commercial capital and largest port city, handling the majority of Tanzania's import and export trade. The Dar es Salaam Stock Exchange (DSE) trades from 10:00 AM to 1:00 PM EAT. Major industries include port logistics, finance, manufacturing, and tourism services for Serengeti and Zanzibar visitors."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Dar es Salaam right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dar es Salaam, Tanzania uses East Africa Time (EAT, UTC+3) year-round. Tanzania does not observe Daylight Saving Time, so clocks never change. The IANA identifier is Africa/Dar_es_Salaam. Dar es Salaam is Tanzania's largest city and main commercial port, and shares its UTC+3 offset with Nairobi (Kenya), Kampala (Uganda), Addis Ababa (Ethiopia), and Mogadishu (Somalia). The live clock above shows the current Dar es Salaam time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Dar es Salaam in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dar es Salaam, Tanzania uses East Africa Time (EAT, UTC+3) year-round. The IANA identifier is Africa/Dar_es_Salaam. Tanzania does not observe Daylight Saving Time. EAT (UTC+3) is shared across East Africa including Kenya, Uganda, Ethiopia, Somalia, and Tanzania."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Dar es Salaam observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Dar es Salaam, Tanzania does not observe Daylight Saving Time. Tanzania uses East Africa Time (EAT, UTC+3) permanently year-round. No East African country currently observes DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Dar es Salaam and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dar es Salaam (EAT, UTC+3) is 3 hours ahead of London (GMT, UTC+0) in winter. During UK summer time (BST, UTC+1), Dar es Salaam is 2 hours ahead. Tanzania does not observe DST, so the gap changes by 1 hour when the UK switches."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Dar es Salaam and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dar es Salaam (EAT, UTC+3) is 8 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Dar es Salaam is 7 hours ahead. Tanzania does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Dar es Salaam?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Dar es Salaam are 8:00 AM to 5:00 PM EAT, Monday through Friday. Dar es Salaam is Tanzania's commercial capital and largest port city, handling the majority of Tanzania's import and export trade. The Dar es Salaam Stock Exchange (DSE) trades from 10:00 AM to 1:00 PM EAT. Major industries include port logistics, finance, manufacturing, and tourism services for Serengeti and Zanzibar visitors."
+        }
+      }
+    ]
+  }
+}

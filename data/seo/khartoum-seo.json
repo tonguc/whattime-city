@@ -1,0 +1,84 @@
+{
+  "seo_title": "Current Time in Khartoum — CAT (UTC+3)",
+  "seo_description": "Current time in Khartoum, Sudan. Central Africa Time (CAT, UTC+3) year-round — no DST. Live clock and time differences for Khartoum.",
+  "faq": [
+    {
+      "question": "What time is it in Khartoum right now?",
+      "answer": "Khartoum, Sudan uses Central Africa Time (CAT, UTC+3) year-round. Sudan does not observe Daylight Saving Time, so clocks never change. The IANA identifier is Africa/Khartoum. Note: Sudan uses UTC+3, which is sometimes labeled East Africa Time (EAT) — the same offset as Nairobi, Addis Ababa, and Kampala. The live clock above shows the current Khartoum time."
+    },
+    {
+      "question": "What time zone is Khartoum in?",
+      "answer": "Khartoum, Sudan uses UTC+3 year-round. The IANA identifier is Africa/Khartoum. Sudan moved from UTC+3 to UTC+2 in 2017 (when South Sudan gained independence) and then back to UTC+3 in 2021. Sudan does not observe Daylight Saving Time. Khartoum shares the UTC+3 offset with Nairobi (Kenya), Addis Ababa (Ethiopia), and Kampala (Uganda)."
+    },
+    {
+      "question": "Does Khartoum observe daylight saving time?",
+      "answer": "No. Khartoum, Sudan does not observe Daylight Saving Time. Sudan uses UTC+3 permanently year-round."
+    },
+    {
+      "question": "What is the time difference between Khartoum and London?",
+      "answer": "Khartoum (UTC+3) is 3 hours ahead of London (GMT, UTC+0) in winter. During UK summer time (BST, UTC+1), Khartoum is 2 hours ahead. Sudan does not observe DST."
+    },
+    {
+      "question": "What is the time difference between Khartoum and New York?",
+      "answer": "Khartoum (UTC+3) is 8 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Khartoum is 7 hours ahead. Sudan does not observe DST."
+    },
+    {
+      "question": "What are typical business hours in Khartoum?",
+      "answer": "Standard business hours in Khartoum are 8:00 AM to 3:00 PM CAT (UTC+3), Sunday through Thursday. Sudan follows an Islamic work week (Sunday–Thursday), with Friday and Saturday as the weekend. Khartoum is Sudan's capital and largest city, located at the confluence of the Blue Nile and White Nile rivers. Major industries include oil, agriculture, and trade."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Khartoum right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Khartoum, Sudan uses Central Africa Time (CAT, UTC+3) year-round. Sudan does not observe Daylight Saving Time, so clocks never change. The IANA identifier is Africa/Khartoum. Note: Sudan uses UTC+3, which is sometimes labeled East Africa Time (EAT) — the same offset as Nairobi, Addis Ababa, and Kampala. The live clock above shows the current Khartoum time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Khartoum in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Khartoum, Sudan uses UTC+3 year-round. The IANA identifier is Africa/Khartoum. Sudan moved from UTC+3 to UTC+2 in 2017 (when South Sudan gained independence) and then back to UTC+3 in 2021. Sudan does not observe Daylight Saving Time. Khartoum shares the UTC+3 offset with Nairobi (Kenya), Addis Ababa (Ethiopia), and Kampala (Uganda)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Khartoum observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Khartoum, Sudan does not observe Daylight Saving Time. Sudan uses UTC+3 permanently year-round."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Khartoum and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Khartoum (UTC+3) is 3 hours ahead of London (GMT, UTC+0) in winter. During UK summer time (BST, UTC+1), Khartoum is 2 hours ahead. Sudan does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Khartoum and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Khartoum (UTC+3) is 8 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Khartoum is 7 hours ahead. Sudan does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Khartoum?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Khartoum are 8:00 AM to 3:00 PM CAT (UTC+3), Sunday through Thursday. Sudan follows an Islamic work week (Sunday–Thursday), with Friday and Saturday as the weekend. Khartoum is Sudan's capital and largest city, located at the confluence of the Blue Nile and White Nile rivers. Major industries include oil, agriculture, and trade."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "seo_title": "Current Time in Lusaka — CAT (UTC+2)",
+  "seo_description": "Current time in Lusaka, Zambia. Central Africa Time (CAT, UTC+2) year-round — no DST. Live clock and time differences for Lusaka.",
+  "faq": [
+    {
+      "question": "What time is it in Lusaka right now?",
+      "answer": "Lusaka, Zambia uses Central Africa Time (CAT, UTC+2) year-round. Zambia does not observe Daylight Saving Time, so clocks never change. The IANA identifier is Africa/Lusaka. Lusaka shares the UTC+2 offset with Harare (Zimbabwe), Johannesburg (South Africa), Gaborone (Botswana), and Maputo (Mozambique). The live clock above shows the current Lusaka time."
+    },
+    {
+      "question": "What time zone is Lusaka in?",
+      "answer": "Lusaka, Zambia uses Central Africa Time (CAT, UTC+2) year-round. The IANA identifier is Africa/Lusaka. Zambia does not observe Daylight Saving Time. CAT (UTC+2) is the standard time zone across southern and central Africa, shared with South Africa, Zimbabwe, Botswana, Namibia, Malawi, and DR Congo (eastern)."
+    },
+    {
+      "question": "Does Lusaka observe daylight saving time?",
+      "answer": "No. Lusaka, Zambia does not observe Daylight Saving Time. Zambia uses Central Africa Time (CAT, UTC+2) permanently year-round. No southern or central African country currently observes DST."
+    },
+    {
+      "question": "What is the time difference between Lusaka and London?",
+      "answer": "Lusaka (CAT, UTC+2) is 2 hours ahead of London (GMT, UTC+0) in winter. During UK summer time (BST, UTC+1), Lusaka is 1 hour ahead. Zambia does not observe DST."
+    },
+    {
+      "question": "What is the time difference between Lusaka and New York?",
+      "answer": "Lusaka (CAT, UTC+2) is 7 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Lusaka is 6 hours ahead. Zambia does not observe DST."
+    },
+    {
+      "question": "What are typical business hours in Lusaka?",
+      "answer": "Standard business hours in Lusaka are 8:00 AM to 5:00 PM CAT, Monday through Friday. Lusaka is Zambia's capital and economic center. Zambia is one of the world's largest copper producers — the Copperbelt region supplies a significant share of global copper. Major sectors include mining, agriculture, construction, and financial services. The Lusaka Securities Exchange (LuSE) trades from 9:00 AM to 1:00 PM CAT."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Lusaka right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lusaka, Zambia uses Central Africa Time (CAT, UTC+2) year-round. Zambia does not observe Daylight Saving Time, so clocks never change. The IANA identifier is Africa/Lusaka. Lusaka shares the UTC+2 offset with Harare (Zimbabwe), Johannesburg (South Africa), Gaborone (Botswana), and Maputo (Mozambique). The live clock above shows the current Lusaka time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Lusaka in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lusaka, Zambia uses Central Africa Time (CAT, UTC+2) year-round. The IANA identifier is Africa/Lusaka. Zambia does not observe Daylight Saving Time. CAT (UTC+2) is the standard time zone across southern and central Africa, shared with South Africa, Zimbabwe, Botswana, Namibia, Malawi, and DR Congo (eastern)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Lusaka observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Lusaka, Zambia does not observe Daylight Saving Time. Zambia uses Central Africa Time (CAT, UTC+2) permanently year-round. No southern or central African country currently observes DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Lusaka and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lusaka (CAT, UTC+2) is 2 hours ahead of London (GMT, UTC+0) in winter. During UK summer time (BST, UTC+1), Lusaka is 1 hour ahead. Zambia does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Lusaka and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lusaka (CAT, UTC+2) is 7 hours ahead of New York (EST, UTC-5) in winter. During US DST (EDT, UTC-4), Lusaka is 6 hours ahead. Zambia does not observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Lusaka?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Lusaka are 8:00 AM to 5:00 PM CAT, Monday through Friday. Lusaka is Zambia's capital and economic center. Zambia is one of the world's largest copper producers — the Copperbelt region supplies a significant share of global copper. Major sectors include mining, agriculture, construction, and financial services. The Lusaka Securities Exchange (LuSE) trades from 9:00 AM to 1:00 PM CAT."
+        }
+      }
+    ]
+  }
+}
