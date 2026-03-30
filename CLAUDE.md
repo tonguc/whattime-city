@@ -442,6 +442,32 @@ Ubersuggest CSV analizi sonucu (SD<35, vol>10K):
 ### 38. PAIR_CONTEXTS 56→64 ✅ (Mart 2026)
 New pairs: los-angeles↔new-york, san-francisco↔berlin, sydney↔zurich, miami↔chicago
 
+### 39. Honolulu + 14 Tier 2 City SEO JSONs ✅ (Mart 2026)
+Committed in sequence, completing all key tier 2 cities:
+
+**Batch 1 (Honolulu):**
+- `honolulu-seo.json`: HST UTC-10, no DST (Hawaii exempt from Uniform Time Act 1966), Pacific/Honolulu, 33K vol SD 22
+
+**Batch 2 (10 cities):**
+- `adelaide-seo.json`: ACST UTC+9:30/ACDT UTC+10:30, DST, unique 30-min offset, 18K vol SD 29
+- `manchester-seo.json`: GMT/BST, same as London, Europe/London, 8K vol SD 25
+- `baku-seo.json`: AZT UTC+4, no DST (abolished 2016), Asia/Baku, 8K vol SD 30
+- `helsinki-seo.json`: EET UTC+2/EEST UTC+3, EU DST, easternmost EU capital, Europe/Helsinki
+- `wellington-seo.json`: NZST UTC+12/NZDT UTC+13, southern hemisphere DST, Pacific/Auckland
+- `belfast-seo.json`: GMT/BST, Europe/London, same offset as Dublin (IST) year-round
+- `caracas-seo.json`: VET UTC-4, no DST, briefly UTC-4:30 2007-2016, America/Caracas
+- `abuja-seo.json`: WAT UTC+1, no DST, Africa/Lagos (same as Lagos)
+- `algiers-seo.json`: CET UTC+1, no DST (since 1981), UTC+1 despite prime meridian proximity
+- `accra-seo.json`: GMT UTC+0, no DST, prime meridian passes through eastern Ghana
+
+**Batch 3 (4 cities):**
+- `brisbane-seo.json`: AEST UTC+10, no DST (Queensland referendum 1992), 27K vol SD 47
+- `islamabad-seo.json`: PKT UTC+5, no DST, Asia/Karachi, 30 min behind Delhi
+- `lahore-seo.json`: PKT UTC+5, no DST, Asia/Karachi, cultural capital of Pakistan
+- `addis-ababa-seo.json`: EAT UTC+3, no DST, African Union HQ, Ethiopian calendar note
+
+**Total SEO JSON files: 201+**
+
 ---
 
 ## Açık Konular / Sonraki Adımlar
@@ -449,11 +475,9 @@ New pairs: los-angeles↔new-york, san-francisco↔berlin, sydney↔zurich, miam
 - [ ] DST clock change (673K vol, SD 24) — `/daylight-saving-time/` meta already good, monitor GSC
 - [ ] Sunrise/sunset "what time does sun set today" (201K vol, SD 19) — meta updated, monitor
 - [ ] Hours-ago/hours-from-now pages — need 4 weeks to index and appear in GSC
-- [ ] Santiago, Lagos, Amman, Budapest, Warsaw, Lima, Bogota SEO JSONs need indexing
-- [ ] Cape Town, Auckland, Riyadh, Bangalore, Taipei SEO JSONs — monitor rankings
-- [ ] Remaining tier 2 cities without SEO JSON: abuja, accra, addis-ababa, algiers, baku,
-  baltimore, dhaka, edinburgh, guadalajara, hanoi, islamabad, khartoum, kinshasa,
-  lahore, lusaka
+- [ ] Santiago, Lagos, Amman, Budapest, Warsaw, Lima, Bogota, Edinburgh, Guadalajara, Hanoi, Honolulu SEO JSONs need indexing
+- [ ] Adelaide (18K SD 29), Manchester (8K SD 25), Baku (8K SD 30) — monitor rankings
+- [ ] Remaining tier 2 cities without SEO JSON: baltimore, dhaka, khartoum, kinshasa, lusaka, kampala, dar-es-salaam
 
 ---
 
