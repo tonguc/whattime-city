@@ -174,7 +174,7 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
       type: 'website',
       siteName: 'whattime.city',
       url: `https://whattime.city/time/${from}/${to}/`,
-      images: [{ url: 'https://whattime.city/og-image.png', width: 1200, height: 630, alt: `${fromCity.city} to ${toCity.city} Time` }],
+      images: [{ url: 'https://whattime.city/og-image.svg', width: 1200, height: 630, alt: `${fromCity.city} to ${toCity.city} Time` }],
     },
     alternates: { canonical: `https://whattime.city/time/${from}/${to}/` },
     robots: { index: true, follow: true },
