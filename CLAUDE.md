@@ -668,6 +668,29 @@ North Africa:
 - `CitySEOData` interface + `seoData: any` pipeline fix
 - `generate-search-index.js` regex → gerçek TS import
 
+### 46. Mimari Faz 2 — Tip Güvenliği ✅ (Mart 2026)
+
+**Weather any → typed:**
+- `InfoRow.tsx`, `GuidePreview.tsx`: `weather: any` → `WeatherData | null` (from `@/core/types/weather`)
+- `TimeComparisonContent.tsx`: `useState<any>` → `useState<WeatherResponse | null>`, `setWeather: (w: any)` → typed
+
+**CitySEOData pipeline:**
+- `core/types/seo.ts`: `CitySEOData`, `FAQItem`, `FAQSchema`, `ContentBlock`, `TimezoneFacts` interface'leri eklendi
+- `core/types/index.ts`: re-export eklendi
+- `app/[city]/page.tsx`: `seoData: any` → `CitySEOData | null` (iki yerde — generateMetadata + Page)
+- `components/CityPage/index.tsx`, `SEOContent.tsx`, `FAQSection.tsx`: `seoData?: any` → `seoData?: CitySEOData | null`
+
+**JSON-LD guard:**
+- `FAQSection.tsx`: `faq_schema` kullanmadan önce `@type === 'FAQPage'` kontrolü eklendi
+
+**generate-search-index.js:**
+- Sanity check eklendi: `searchIndex.length < 1800` ise build fail — regex kırılırsa sessiz hata olmaz
+
+**Faz 3 (sonraki):**
+- `/time/` tier1×tier1 generateStaticParams
+- Meeting URL max şehir limiti
+- Weather API rate limiting
+
 ---
 
 ## Açık Konular / Sonraki Adımlar
