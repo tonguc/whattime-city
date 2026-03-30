@@ -4,7 +4,7 @@
   "faq": [
     {
       "question": "What time is it in San Diego right now?",
-      "answer": "San Diego, California, USA uses Pacific Standard Time (PST, UTC-8) in winter and Pacific Daylight Time (PDT, UTC-7) during Daylight Saving Time. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. San Diego shares its time zone with Los Angeles, San Francisco, Seattle, and Las Vegas. The IANA identifier is America/Los_Angeles."
+      "answer": "San Diego, California, USA uses Pacific Standard Time (PST, UTC-8) in winter and Pacific Daylight Time (PDT, UTC-7) during Daylight Saving Time. The IANA identifier is America/Los_Angeles. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. San Diego shares its time zone with Los Angeles, San Francisco, Seattle, and Las Vegas. The IANA identifier is America/Los_Angeles."
     },
     {
       "question": "What time zone is San Diego in?",
@@ -44,7 +44,7 @@
         "name": "What time is it in San Diego right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "San Diego, California, USA uses Pacific Standard Time (PST, UTC-8) in winter and Pacific Daylight Time (PDT, UTC-7) during Daylight Saving Time. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. San Diego shares its time zone with Los Angeles, San Francisco, Seattle, and Las Vegas. The IANA identifier is America/Los_Angeles."
+          "text": "San Diego, California, USA uses Pacific Standard Time (PST, UTC-8) in winter and Pacific Daylight Time (PDT, UTC-7) during Daylight Saving Time. The IANA identifier is America/Los_Angeles. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. San Diego shares its time zone with Los Angeles, San Francisco, Seattle, and Las Vegas. The IANA identifier is America/Los_Angeles."
         }
       },
       {

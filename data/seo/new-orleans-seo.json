@@ -4,7 +4,7 @@
   "faq": [
     {
       "question": "What time is it in New Orleans right now?",
-      "answer": "New Orleans, Louisiana, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. New Orleans shares its time zone with Chicago, Dallas, Houston, and Nashville. The IANA identifier is America/Chicago."
+      "answer": "New Orleans, Louisiana, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. The IANA identifier is America/Chicago. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. New Orleans shares its time zone with Chicago, Dallas, Houston, and Nashville. The IANA identifier is America/Chicago."
     },
     {
       "question": "What time zone is New Orleans in?",
@@ -40,7 +40,7 @@
         "name": "What time is it in New Orleans right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "New Orleans, Louisiana, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. New Orleans shares its time zone with Chicago, Dallas, Houston, and Nashville. The IANA identifier is America/Chicago."
+          "text": "New Orleans, Louisiana, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. The IANA identifier is America/Chicago. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. New Orleans shares its time zone with Chicago, Dallas, Houston, and Nashville. The IANA identifier is America/Chicago."
         }
       },
       {

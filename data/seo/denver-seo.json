@@ -4,7 +4,7 @@
   "faq": [
     {
       "question": "What time is it in Denver right now?",
-      "answer": "Denver, Colorado uses Mountain Standard Time (MST, UTC-7) from November to March and Mountain Daylight Time (MDT, UTC-6) from March to November. The current local time is shown live at the top of this page. Denver is in the Mountain Time Zone (IANA: America/Denver), sharing this timezone with Salt Lake City, Albuquerque, and Boise."
+      "answer": "Denver, Colorado, USA uses Mountain Standard Time (MST, UTC-7) in winter and Mountain Daylight Time (MDT, UTC-6) during Daylight Saving Time. The IANA identifier is America/Denver. The current local time is shown live at the top of this page. Denver is in the Mountain Time Zone (IANA: America/Denver), sharing this timezone with Salt Lake City, Albuquerque, and Boise."
     },
     {
       "question": "What time zone is Denver in?",
@@ -39,14 +39,70 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What time is it in Denver right now?", "acceptedAnswer": { "@type": "Answer", "text": "Denver, Colorado uses Mountain Standard Time (MST, UTC-7) from November to March and Mountain Daylight Time (MDT, UTC-6) from March to November. The current local time is shown live at the top of this page. Denver is in the Mountain Time Zone (IANA: America/Denver), sharing this timezone with Salt Lake City, Albuquerque, and Boise." } },
-      { "@type": "Question", "name": "What time zone is Denver in?", "acceptedAnswer": { "@type": "Answer", "text": "Denver is in the Mountain Time Zone (MT). During standard time (November–March), Denver observes Mountain Standard Time (MST, UTC-7). During daylight saving time (March–November), Denver observes Mountain Daylight Time (MDT, UTC-6). Denver is 2 hours behind New York and 1 hour ahead of Los Angeles year-round." } },
-      { "@type": "Question", "name": "Does Denver observe daylight saving time?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Denver switches clocks forward by 1 hour on the second Sunday in March (2:00 AM → 3:00 AM, MST to MDT) and back on the first Sunday in November (2:00 AM → 1:00 AM, MDT to MST). Both transitions are shared with the rest of the contiguous US, keeping Denver's 2-hour gap behind New York constant throughout the year." } },
-      { "@type": "Question", "name": "What is the time difference between Denver and New York?", "acceptedAnswer": { "@type": "Answer", "text": "Denver is 2 hours behind New York year-round. When it is noon in New York (Eastern Time), it is 10:00 AM in Denver (Mountain Time). Both cities switch to daylight saving time on the same schedule, so the 2-hour gap never changes. The best overlap for business calls is 11:00 AM–5:00 PM Eastern Time (9:00 AM–3:00 PM Mountain Time)." } },
-      { "@type": "Question", "name": "What is the time difference between Denver and London?", "acceptedAnswer": { "@type": "Answer", "text": "Denver is 7 hours behind London during most of the year. In winter, Denver is on MST (UTC-7) and London is on GMT (UTC+0) — 7 hours apart. In summer, Denver is on MDT (UTC-6) and London is on BST (UTC+1) — still 7 hours apart. The gap briefly shifts to 6 or 8 hours during the short transition windows in March and October when the two countries change clocks on different dates." } },
-      { "@type": "Question", "name": "What time does the stock exchange open in Denver?", "acceptedAnswer": { "@type": "Answer", "text": "The New York Stock Exchange (NYSE) and Nasdaq open at 7:30 AM Mountain Time (9:30 AM ET) and close at 2:00 PM MT (4:00 PM ET). Pre-market trading begins at 5:00 AM MT (7:00 AM ET), and after-hours trading runs until 6:00 PM MT (8:00 PM ET). Denver's tech and finance sector is well-positioned for both East Coast market opens and West Coast extended sessions." } },
-      { "@type": "Question", "name": "What is the best time to call Denver from the US?", "acceptedAnswer": { "@type": "Answer", "text": "From New York (ET), the best window is 11:00 AM–5:00 PM ET (9:00 AM–3:00 PM MT). From Los Angeles (PT), call between 9:00 AM–5:00 PM PT (10:00 AM–6:00 PM MT) — a full business day overlap. For personal calls, 6:00–8:00 PM MT works well from all US time zones. Avoid calling Denver before 9:00 AM MT or after 9:00 PM MT for business." } },
-      { "@type": "Question", "name": "What are typical business hours in Denver?", "acceptedAnswer": { "@type": "Answer", "text": "Standard business hours in Denver are 9:00 AM to 5:00 PM MT, Monday through Friday. Denver's growing tech sector often uses flexible schedules (7:00–10:00 AM start). Retail stores typically open 10:00 AM–8:00 PM, with major malls open until 9:00 PM. Restaurants serve lunch 11:00 AM–2:00 PM and dinner 5:00–10:00 PM. Denver's craft brewery taprooms generally open 3:00 PM weekdays, noon on weekends." } }
+      {
+        "@type": "Question",
+        "name": "What time is it in Denver right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Denver, Colorado, USA uses Mountain Standard Time (MST, UTC-7) in winter and Mountain Daylight Time (MDT, UTC-6) during Daylight Saving Time. The IANA identifier is America/Denver. The current local time is shown live at the top of this page. Denver is in the Mountain Time Zone (IANA: America/Denver), sharing this timezone with Salt Lake City, Albuquerque, and Boise."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Denver in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Denver is in the Mountain Time Zone (MT). During standard time (November–March), Denver observes Mountain Standard Time (MST, UTC-7). During daylight saving time (March–November), Denver observes Mountain Daylight Time (MDT, UTC-6). Denver is 2 hours behind New York and 1 hour ahead of Los Angeles year-round."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Denver observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Denver switches clocks forward by 1 hour on the second Sunday in March (2:00 AM → 3:00 AM, MST to MDT) and back on the first Sunday in November (2:00 AM → 1:00 AM, MDT to MST). Both transitions are shared with the rest of the contiguous US, keeping Denver's 2-hour gap behind New York constant throughout the year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Denver and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Denver is 2 hours behind New York year-round. When it is noon in New York (Eastern Time), it is 10:00 AM in Denver (Mountain Time). Both cities switch to daylight saving time on the same schedule, so the 2-hour gap never changes. The best overlap for business calls is 11:00 AM–5:00 PM Eastern Time (9:00 AM–3:00 PM Mountain Time)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Denver and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Denver is 7 hours behind London during most of the year. In winter, Denver is on MST (UTC-7) and London is on GMT (UTC+0) — 7 hours apart. In summer, Denver is on MDT (UTC-6) and London is on BST (UTC+1) — still 7 hours apart. The gap briefly shifts to 6 or 8 hours during the short transition windows in March and October when the two countries change clocks on different dates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time does the stock exchange open in Denver?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The New York Stock Exchange (NYSE) and Nasdaq open at 7:30 AM Mountain Time (9:30 AM ET) and close at 2:00 PM MT (4:00 PM ET). Pre-market trading begins at 5:00 AM MT (7:00 AM ET), and after-hours trading runs until 6:00 PM MT (8:00 PM ET). Denver's tech and finance sector is well-positioned for both East Coast market opens and West Coast extended sessions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best time to call Denver from the US?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From New York (ET), the best window is 11:00 AM–5:00 PM ET (9:00 AM–3:00 PM MT). From Los Angeles (PT), call between 9:00 AM–5:00 PM PT (10:00 AM–6:00 PM MT) — a full business day overlap. For personal calls, 6:00–8:00 PM MT works well from all US time zones. Avoid calling Denver before 9:00 AM MT or after 9:00 PM MT for business."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Denver?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Denver are 9:00 AM to 5:00 PM MT, Monday through Friday. Denver's growing tech sector often uses flexible schedules (7:00–10:00 AM start). Retail stores typically open 10:00 AM–8:00 PM, with major malls open until 9:00 PM. Restaurants serve lunch 11:00 AM–2:00 PM and dinner 5:00–10:00 PM. Denver's craft brewery taprooms generally open 3:00 PM weekdays, noon on weekends."
+        }
+      }
     ]
   },
   "content_blocks": [
@@ -74,14 +130,54 @@
     "/time/denver/singapore/"
   ],
   "time_difference_table": [
-    { "city": "New York", "slug": "new-york", "difference": "2 hours behind", "link": "/time/denver/new-york/" },
-    { "city": "London", "slug": "london", "difference": "7 hours behind", "link": "/time/denver/london/" },
-    { "city": "Tokyo", "slug": "tokyo", "difference": "16 hours behind", "link": "/time/denver/tokyo/" },
-    { "city": "Dubai", "slug": "dubai", "difference": "11 hours behind", "link": "/time/denver/dubai/" },
-    { "city": "Sydney", "slug": "sydney", "difference": "17–18 hours behind", "link": "/time/denver/sydney/" },
-    { "city": "Singapore", "slug": "singapore", "difference": "15 hours behind", "link": "/time/denver/singapore/" },
-    { "city": "Paris", "slug": "paris", "difference": "8 hours behind", "link": "/time/denver/paris/" },
-    { "city": "Los Angeles", "slug": "los-angeles", "difference": "1 hour ahead", "link": "/time/denver/los-angeles/" }
+    {
+      "city": "New York",
+      "slug": "new-york",
+      "difference": "2 hours behind",
+      "link": "/time/denver/new-york/"
+    },
+    {
+      "city": "London",
+      "slug": "london",
+      "difference": "7 hours behind",
+      "link": "/time/denver/london/"
+    },
+    {
+      "city": "Tokyo",
+      "slug": "tokyo",
+      "difference": "16 hours behind",
+      "link": "/time/denver/tokyo/"
+    },
+    {
+      "city": "Dubai",
+      "slug": "dubai",
+      "difference": "11 hours behind",
+      "link": "/time/denver/dubai/"
+    },
+    {
+      "city": "Sydney",
+      "slug": "sydney",
+      "difference": "17–18 hours behind",
+      "link": "/time/denver/sydney/"
+    },
+    {
+      "city": "Singapore",
+      "slug": "singapore",
+      "difference": "15 hours behind",
+      "link": "/time/denver/singapore/"
+    },
+    {
+      "city": "Paris",
+      "slug": "paris",
+      "difference": "8 hours behind",
+      "link": "/time/denver/paris/"
+    },
+    {
+      "city": "Los Angeles",
+      "slug": "los-angeles",
+      "difference": "1 hour ahead",
+      "link": "/time/denver/los-angeles/"
+    }
   ],
   "timezone_facts": {
     "full_name": "Mountain Time",

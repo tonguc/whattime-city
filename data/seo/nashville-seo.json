@@ -4,7 +4,7 @@
   "faq": [
     {
       "question": "What time is it in Nashville right now?",
-      "answer": "Nashville, Tennessee, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. Nashville shares its time zone with Chicago, Dallas, Houston, and Kansas City. The IANA identifier is America/Chicago."
+      "answer": "Nashville, Tennessee, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. The IANA identifier is America/Chicago. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. Nashville shares its time zone with Chicago, Dallas, Houston, and Kansas City. The IANA identifier is America/Chicago."
     },
     {
       "question": "What time zone is Nashville in?",
@@ -44,7 +44,7 @@
         "name": "What time is it in Nashville right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Nashville, Tennessee, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. Nashville shares its time zone with Chicago, Dallas, Houston, and Kansas City. The IANA identifier is America/Chicago."
+          "text": "Nashville, Tennessee, USA uses Central Standard Time (CST, UTC-6) in winter and Central Daylight Time (CDT, UTC-5) during Daylight Saving Time. The IANA identifier is America/Chicago. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. Nashville shares its time zone with Chicago, Dallas, Houston, and Kansas City. The IANA identifier is America/Chicago."
         }
       },
       {

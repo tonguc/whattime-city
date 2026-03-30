@@ -4,7 +4,7 @@
   "faq": [
     {
       "question": "What time is it in Salt Lake City right now?",
-      "answer": "Salt Lake City, Utah, USA uses Mountain Standard Time (MST, UTC-7) in winter and Mountain Daylight Time (MDT, UTC-6) during Daylight Saving Time in summer. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. The IANA timezone identifier is America/Denver."
+      "answer": "Salt Lake City, Utah, USA uses Mountain Standard Time (MST, UTC-7) in winter and Mountain Daylight Time (MDT, UTC-6) during Daylight Saving Time. The IANA identifier is America/Denver. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. The IANA timezone identifier is America/Denver."
     },
     {
       "question": "What time zone is Salt Lake City in?",
@@ -40,7 +40,7 @@
         "name": "What time is it in Salt Lake City right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Salt Lake City, Utah, USA uses Mountain Standard Time (MST, UTC-7) in winter and Mountain Daylight Time (MDT, UTC-6) during Daylight Saving Time in summer. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. The IANA timezone identifier is America/Denver."
+          "text": "Salt Lake City, Utah, USA uses Mountain Standard Time (MST, UTC-7) in winter and Mountain Daylight Time (MDT, UTC-6) during Daylight Saving Time. The IANA identifier is America/Denver. Clocks spring forward on the second Sunday in March and fall back on the first Sunday in November. The IANA timezone identifier is America/Denver."
         }
       },
       {
