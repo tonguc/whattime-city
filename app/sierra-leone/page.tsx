@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Sierra Leone right now? Live Freetown clock, time zone info (GMT (UTC+0)), best time to call, and time difference with major cities.',
   keywords: ['time in sierra leone', 'sierra leone time now', 'what time is it in sierra leone', 'freetown time', 'sierra leone time zone'],
   alternates: { canonical: 'https://whattime.city/sierra-leone/' },
-  openGraph: { title: 'Current Time in Sierra Leone — GMT · Freetown', description: 'Live Sierra Leone time. Freetown on GMT (UTC+0).', type: 'website', url: 'https://whattime.city/sierra-leone/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Sierra Leone Now — GMT (UTC+0)', description: 'Live Sierra Leone time. Freetown on GMT (UTC+0).', type: 'website', url: 'https://whattime.city/sierra-leone/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

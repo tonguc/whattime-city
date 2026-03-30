@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Maryland right now? Maryland uses Eastern Time (EST/EDT). Baltimore is on EST (UTC−5) in winter and EDT (UTC−4) in summer. Live clock and best time to call.',
   keywords: ['time in maryland', 'maryland time now', 'what time is it in maryland', 'baltimore time', 'maryland time zone', 'EST EDT maryland', 'maryland utc-5', 'annapolis time', 'silver spring time', 'maryland time vs uk', 'maryland time vs california', 'maryland eastern time'],
   alternates: { canonical: 'https://whattime.city/maryland/' },
-  openGraph: { title: 'Current Time in Maryland — EST/EDT · Baltimore', description: 'Live Maryland time. Baltimore and Annapolis on Eastern Time — EST (UTC−5) in winter, EDT (UTC−4) in summer.', type: 'website', url: 'https://whattime.city/maryland/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Maryland Now — EST/EDT', description: 'Live Maryland time. Baltimore and Annapolis on Eastern Time — EST (UTC−5) in winter, EDT (UTC−4) in summer.', type: 'website', url: 'https://whattime.city/maryland/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

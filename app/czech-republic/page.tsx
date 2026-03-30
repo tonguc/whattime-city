@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Czech Republic right now? Live Prague clock, time zone info (CET (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in czech republic', 'czech republic time now', 'what time is it in czech republic', 'prague time', 'czech republic time zone'],
   alternates: { canonical: 'https://whattime.city/czech-republic/' },
-  openGraph: { title: 'Current Time in Czech Republic — CET · Prague', description: 'Live Czech Republic time. Prague on CET (UTC+1).', type: 'website', url: 'https://whattime.city/czech-republic/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Czech Republic Now — CET (UTC+1)', description: 'Live Czech Republic time. Prague on CET (UTC+1).', type: 'website', url: 'https://whattime.city/czech-republic/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

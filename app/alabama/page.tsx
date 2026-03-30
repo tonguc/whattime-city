@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Alabama right now? Alabama uses Central Time (CST/CDT). Birmingham is on CST (UTC−6) in winter and CDT (UTC−5) in summer. Live clock and best time to call.',
   keywords: ['time in alabama', 'alabama time now', 'what time is it in alabama', 'birmingham alabama time', 'alabama time zone', 'CST CDT alabama', 'alabama utc-6', 'montgomery time', 'huntsville time', 'mobile time', 'alabama central time', 'alabama time vs eastern'],
   alternates: { canonical: 'https://whattime.city/alabama/' },
-  openGraph: { title: 'Current Time in Alabama — CST/CDT · Birmingham', description: 'Live Alabama time. Birmingham and all of Alabama on Central Time — CST (UTC−6) in winter, CDT (UTC−5) in summer.', type: 'website', url: 'https://whattime.city/alabama/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Alabama Now — CST/CDT (UTC−6/−5)', description: 'Live Alabama time. Birmingham and all of Alabama on Central Time — CST (UTC−6) in winter, CDT (UTC−5) in summer.', type: 'website', url: 'https://whattime.city/alabama/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

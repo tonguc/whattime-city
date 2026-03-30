@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Vatican City right now? Live Vatican City clock, time zone info (CET (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in vatican city', 'vatican city time now', 'what time is it in vatican city', 'vatican city time', 'vatican city time zone'],
   alternates: { canonical: 'https://whattime.city/vatican-city/' },
-  openGraph: { title: 'Current Time in Vatican City — CET · Vatican City', description: 'Live Vatican City time. Vatican City on CET (UTC+1).', type: 'website', url: 'https://whattime.city/vatican-city/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Vatican City Now — CET (UTC+1)', description: 'Live Vatican City time. Vatican City on CET (UTC+1).', type: 'website', url: 'https://whattime.city/vatican-city/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

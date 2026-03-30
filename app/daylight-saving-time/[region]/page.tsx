@@ -9,7 +9,7 @@ interface Props {
 
 const REGIONS = {
   usa: {
-    title: 'Daylight Saving Time 2026 USA — Start & End Dates',
+    title: 'DST 2026 USA — Spring & Fall Dates',
     description:
       'When do clocks change in the US in 2026? DST starts March 8 and ends November 1. Exceptions: Arizona, Hawaii. Full state-by-state guide.',
     h1: 'Daylight Saving Time 2026 — United States',
@@ -63,7 +63,7 @@ const REGIONS = {
     relatedRegions: ['uk', 'europe', 'australia'],
   },
   uk: {
-    title: 'Daylight Saving Time 2026 UK — BST Dates',
+    title: 'DST 2026 UK — BST Spring & Fall Dates',
     description:
       'When do clocks change in the UK in 2026? BST starts March 29 and ends October 25. Full guide to British Summer Time including history and impact.',
     h1: 'Daylight Saving Time 2026 — United Kingdom',
@@ -117,7 +117,7 @@ const REGIONS = {
     relatedRegions: ['usa', 'europe', 'australia'],
   },
   europe: {
-    title: 'Daylight Saving Time 2026 Europe — CEST Dates',
+    title: 'DST 2026 Europe — CEST Spring & Fall',
     description:
       'When do clocks change in Europe in 2026? EU clocks spring forward March 29 and fall back October 25. Full guide covering CET, EET, WET zones.',
     h1: 'Daylight Saving Time 2026 — Europe',
@@ -171,7 +171,7 @@ const REGIONS = {
     relatedRegions: ['usa', 'uk', 'australia'],
   },
   australia: {
-    title: 'Daylight Saving Time 2026 Australia — AEDT Dates',
+    title: 'DST 2026 Australia — AEDT Spring & Fall',
     description:
       'When do clocks change in Australia in 2026? DST starts October 4 and ends April 5 (Southern Hemisphere). NSW, VIC, SA, ACT, TAS observe DST. QLD, WA do not.',
     h1: 'Daylight Saving Time 2026 — Australia',
@@ -225,7 +225,7 @@ const REGIONS = {
     relatedRegions: ['usa', 'uk', 'europe', 'canada', 'new-zealand'],
   },
   canada: {
-    title: 'Daylight Saving Time 2026 Canada — Start & End Dates',
+    title: 'DST 2026 Canada — Spring & Fall Dates',
     description:
       'When do clocks change in Canada in 2026? DST starts March 8 and ends November 1. Exception: Saskatchewan does not observe DST. Full province-by-province guide.',
     h1: 'Daylight Saving Time 2026 — Canada',
@@ -279,7 +279,7 @@ const REGIONS = {
     relatedRegions: ['usa', 'uk', 'europe', 'australia'],
   },
   'new-zealand': {
-    title: 'Daylight Saving Time 2026 New Zealand — NZDT Dates',
+    title: 'DST 2026 New Zealand — NZDT Dates',
     description:
       'When do clocks change in New Zealand in 2026? NZ DST starts September 27 and ends April 5. Full guide to New Zealand Daylight Time (NZDT) and time zone.',
     h1: 'Daylight Saving Time 2026 — New Zealand',
@@ -333,7 +333,7 @@ const REGIONS = {
     relatedRegions: ['australia', 'usa', 'uk', 'europe'],
   },
   mexico: {
-    title: 'Daylight Saving Time Mexico 2026 — Does Mexico Observe DST?',
+    title: 'DST 2026 Mexico — Does Mexico Observe DST?',
     description:
       'Does Mexico observe daylight saving time in 2026? Most of Mexico abolished DST in 2022. Only Baja California (border zone) still changes clocks. Full guide.',
     h1: 'Daylight Saving Time in Mexico — 2026 Update',

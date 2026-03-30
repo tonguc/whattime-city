@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Minnesota right now? Minnesota uses Central Standard Time (CST, UTC−6) in winter and Central Daylight Time (CDT, UTC−5) during Daylight Saving Time. Live Minneapolis clock and world comparison.',
   keywords: ['time in minnesota', 'minnesota time now', 'what time is it in minnesota', 'minneapolis time', 'saint paul time', 'minnesota time zone', 'CST minnesota', 'CDT minnesota', 'central time minnesota', 'minnesota utc-6', 'minnesota time vs new york', 'minnesota time vs california'],
   alternates: { canonical: 'https://whattime.city/minnesota/' },
-  openGraph: { title: 'Current Time in Minnesota — CST/CDT (UTC−6/−5)', description: 'Live Minnesota time. CST (UTC−6) in winter, CDT (UTC−5) during Daylight Saving Time. Minneapolis, Saint Paul, Rochester on Central Time.', type: 'website', url: 'https://whattime.city/minnesota/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Minnesota Now — CST/CDT', description: 'Live Minnesota time. CST (UTC−6) in winter, CDT (UTC−5) during Daylight Saving Time. Minneapolis, Saint Paul, Rochester on Central Time.', type: 'website', url: 'https://whattime.city/minnesota/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   title: 'IST to MST Converter — India to MST',
   description: 'Convert IST to MST instantly. India Standard Time (UTC+5:30) is 12 hours 30 minutes ahead of Mountain Standard Time (UTC-7). Live clocks and conversion table.',
   alternates: { canonical: 'https://whattime.city/ist-to-mst/' },
-  openGraph: { title: 'IST to MST Converter — India to Mountain Time', description: 'IST is 12.5 hours ahead of MST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/ist-to-mst/', siteName: 'whattime.city' },
-  twitter: { card: 'summary_large_image', title: 'IST to MST — India Standard Time to Mountain Time', description: 'IST is 12.5 hours ahead of MST. Live converter.' },
+  openGraph: { title: 'IST to MST — India Standard to Mountain', description: 'IST is 12.5 hours ahead of MST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/ist-to-mst/', siteName: 'whattime.city' },
+  twitter: { card: 'summary_large_image', title: 'IST to MST — India Standard to Mountain', description: 'IST is 12.5 hours ahead of MST. Live converter.' },
 }
 
 const config: TZPairConfig = {

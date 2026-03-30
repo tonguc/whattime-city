@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Nepal right now? Nepal uses Nepal Time (NPT, UTC+5:45) — a rare 45-minute offset. No Daylight Saving Time. Live Kathmandu clock and best time to call.',
   keywords: ['time in nepal', 'nepal time now', 'what time is it in nepal', 'kathmandu time', 'nepal time zone', 'NPT nepal', 'nepal utc+5:45', 'nepal 45 minute offset', 'nepal time vs india', 'nepal time vs uk', 'nepal time vs usa'],
   alternates: { canonical: 'https://whattime.city/nepal/' },
-  openGraph: { title: 'Current Time in Nepal — NPT (UTC+5:45) · 45-Minute Offset', description: 'Live Nepal time. Kathmandu on NPT (UTC+5:45) — a unique 45-minute offset, 15 minutes ahead of India. No DST.', type: 'website', url: 'https://whattime.city/nepal/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Nepal Now — NPT (UTC+5:45)', description: 'Live Nepal time. Kathmandu on NPT (UTC+5:45) — a unique 45-minute offset, 15 minutes ahead of India. No DST.', type: 'website', url: 'https://whattime.city/nepal/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

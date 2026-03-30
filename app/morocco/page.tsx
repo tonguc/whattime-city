@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Morocco right now? Morocco uses WET (UTC+0) in winter and WEST (UTC+1) in summer, but suspends DST during Ramadan. Live Casablanca clock and best time to call.',
   keywords: ['time in morocco', 'morocco time now', 'what time is it in morocco', 'casablanca time', 'morocco time zone', 'WET WEST morocco', 'morocco utc+1', 'rabat time', 'marrakech time', 'morocco ramadan time', 'morocco dst', 'morocco time vs uk', 'morocco time vs usa'],
   alternates: { canonical: 'https://whattime.city/morocco/' },
-  openGraph: { title: 'Current Time in Morocco — WET/WEST · Ramadan DST Suspension', description: 'Live Morocco time. WET (UTC+0) winter, WEST (UTC+1) summer — but clocks revert to UTC+0 during Ramadan each year.', type: 'website', url: 'https://whattime.city/morocco/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Morocco Now — WET/WEST (UTC+0/+1)', description: 'Live Morocco time. WET (UTC+0) winter, WEST (UTC+1) summer — but clocks revert to UTC+0 during Ramadan each year.', type: 'website', url: 'https://whattime.city/morocco/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

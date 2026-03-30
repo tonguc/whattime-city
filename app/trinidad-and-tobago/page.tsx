@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Trinidad and Tobago right now? Live Port of Spain clock, time zone info (AST (UTC-4)), best time to call, and time difference with major cities.',
   keywords: ['time in trinidad and tobago', 'trinidad and tobago time now', 'what time is it in trinidad and tobago', 'port of spain time', 'trinidad and tobago time zone'],
   alternates: { canonical: 'https://whattime.city/trinidad-and-tobago/' },
-  openGraph: { title: 'Current Time in Trinidad and Tobago — AST · Port of Spain', description: 'Live Trinidad and Tobago time. Port of Spain on AST (UTC-4).', type: 'website', url: 'https://whattime.city/trinidad-and-tobago/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Trinidad and Tobago — AST (UTC−4)', description: 'Live Trinidad and Tobago time. Port of Spain on AST (UTC-4).', type: 'website', url: 'https://whattime.city/trinidad-and-tobago/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

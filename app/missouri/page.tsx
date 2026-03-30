@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Missouri right now? Missouri uses Central Time (CST/CDT). Kansas City and St. Louis are on CST (UTC−6) in winter and CDT (UTC−5) in summer. Live clock and best time to call.',
   keywords: ['time in missouri', 'missouri time now', 'what time is it in missouri', 'kansas city time', 'missouri time zone', 'CST CDT missouri', 'missouri utc-6', 'st louis time', 'springfield time', 'missouri central time', 'missouri time vs eastern', 'missouri time vs uk'],
   alternates: { canonical: 'https://whattime.city/missouri/' },
-  openGraph: { title: 'Current Time in Missouri — CST/CDT · Kansas City', description: 'Live Missouri time. Kansas City and St. Louis on Central Time — CST (UTC−6) in winter, CDT (UTC−5) in summer.', type: 'website', url: 'https://whattime.city/missouri/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Missouri Now — CST/CDT (UTC−6/−5)', description: 'Live Missouri time. Kansas City and St. Louis on Central Time — CST (UTC−6) in winter, CDT (UTC−5) in summer.', type: 'website', url: 'https://whattime.city/missouri/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

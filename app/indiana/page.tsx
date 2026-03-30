@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Indiana right now? Most of Indiana uses Eastern Time (EST/EDT). Northwest Indiana (Gary, Hammond) uses Central Time (CST/CDT). Live Indianapolis clock and best time to call.',
   keywords: ['time in indiana', 'indiana time now', 'what time is it in indiana', 'indianapolis time', 'indiana time zone', 'EST EDT indiana', 'indiana utc-5', 'gary indiana time', 'indiana two time zones', 'fort wayne time', 'indiana time vs uk', 'indiana central time'],
   alternates: { canonical: 'https://whattime.city/indiana/' },
-  openGraph: { title: 'Current Time in Indiana — EST/EDT (Indianapolis) · NW Indiana on CST', description: 'Live Indiana time. Indianapolis on Eastern Time. Gary and Hammond (northwest corner) on Central Time — 1 hour behind.', type: 'website', url: 'https://whattime.city/indiana/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Indiana Now — EST/EDT (UTC−5/−4)', description: 'Live Indiana time. Indianapolis on Eastern Time. Gary and Hammond (northwest corner) on Central Time — 1 hour behind.', type: 'website', url: 'https://whattime.city/indiana/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

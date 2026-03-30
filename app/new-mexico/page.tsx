@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in New Mexico right now? New Mexico uses Mountain Time (MST/MDT). Albuquerque and Santa Fe are on MST (UTC−7) in winter and MDT (UTC−6) in summer. Live clock.',
   keywords: ['time in new mexico', 'new mexico time now', 'what time is it in new mexico', 'albuquerque time', 'santa fe time', 'new mexico time zone', 'MST MDT new mexico', 'new mexico utc-7', 'new mexico mountain time', 'las cruces time'],
   alternates: { canonical: 'https://whattime.city/new-mexico/' },
-  openGraph: { title: 'Current Time in New Mexico — MST/MDT · Albuquerque', description: 'Live New Mexico time. Albuquerque and all of New Mexico use Mountain Time — MST (UTC−7) in winter, MDT (UTC−6) in summer.', type: 'website', url: 'https://whattime.city/new-mexico/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in New Mexico Now — MST/MDT', description: 'Live New Mexico time. Albuquerque and all of New Mexico use Mountain Time — MST (UTC−7) in winter, MDT (UTC−6) in summer.', type: 'website', url: 'https://whattime.city/new-mexico/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

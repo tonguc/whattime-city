@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Bosnia and Herzegovina right now? Live Sarajevo clock, time zone info (CET (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in bosnia and herzegovina', 'bosnia and herzegovina time now', 'what time is it in bosnia and herzegovina', 'sarajevo time', 'bosnia and herzegovina time zone'],
   alternates: { canonical: 'https://whattime.city/bosnia-and-herzegovina/' },
-  openGraph: { title: 'Current Time in Bosnia and Herzegovina — CET · Sarajevo', description: 'Live Bosnia and Herzegovina time. Sarajevo on CET (UTC+1).', type: 'website', url: 'https://whattime.city/bosnia-and-herzegovina/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Bosnia and Herzegovina — CET', description: 'Live Bosnia and Herzegovina time. Sarajevo on CET (UTC+1).', type: 'website', url: 'https://whattime.city/bosnia-and-herzegovina/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

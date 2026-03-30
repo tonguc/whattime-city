@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Luxembourg right now? Live Luxembourg City clock, time zone info (CET (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in luxembourg', 'luxembourg time now', 'what time is it in luxembourg', 'luxembourg city time', 'luxembourg time zone'],
   alternates: { canonical: 'https://whattime.city/luxembourg/' },
-  openGraph: { title: 'Current Time in Luxembourg — CET · Luxembourg City', description: 'Live Luxembourg time. Luxembourg City on CET (UTC+1).', type: 'website', url: 'https://whattime.city/luxembourg/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Luxembourg Now — CET (UTC+1)', description: 'Live Luxembourg time. Luxembourg City on CET (UTC+1).', type: 'website', url: 'https://whattime.city/luxembourg/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

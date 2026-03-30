@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Bangladesh right now? Bangladesh uses Bangladesh Standard Time (BST, UTC+6) year-round with no Daylight Saving Time. Live Dhaka clock, Bangladesh vs world cities.',
   keywords: ['time in bangladesh', 'bangladesh time now', 'what time is it in bangladesh', 'dhaka time', 'bangladesh time zone', 'BST bangladesh', 'bangladesh utc+6', 'chittagong time', 'bangladesh time vs uk', 'bangladesh time vs usa', 'bangladesh time vs india'],
   alternates: { canonical: 'https://whattime.city/bangladesh/' },
-  openGraph: { title: 'Current Time in Bangladesh — BST (UTC+6) · No DST', description: 'Live Bangladesh time. Dhaka on BST (UTC+6) year-round — no Daylight Saving Time.', type: 'website', url: 'https://whattime.city/bangladesh/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Bangladesh Now — BST (UTC+6)', description: 'Live Bangladesh time. Dhaka on BST (UTC+6) year-round — no Daylight Saving Time.', type: 'website', url: 'https://whattime.city/bangladesh/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

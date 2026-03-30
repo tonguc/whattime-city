@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Ethiopia right now? Ethiopia uses East Africa Time (EAT, UTC+3) year-round with no Daylight Saving Time. Live Addis Ababa clock, Ethiopia vs world cities.',
   keywords: ['time in ethiopia', 'ethiopia time now', 'what time is it in ethiopia', 'addis ababa time', 'ethiopia time zone', 'EAT ethiopia', 'ethiopia utc+3', 'ethiopia time vs uk', 'ethiopia time vs usa', 'ethiopia time vs kenya', 'east africa time'],
   alternates: { canonical: 'https://whattime.city/ethiopia/' },
-  openGraph: { title: 'Current Time in Ethiopia — EAT (UTC+3) · No DST', description: 'Live Ethiopia time. Addis Ababa on EAT (UTC+3) year-round — no Daylight Saving Time.', type: 'website', url: 'https://whattime.city/ethiopia/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Ethiopia Now — EAT (UTC+3)', description: 'Live Ethiopia time. Addis Ababa on EAT (UTC+3) year-round — no Daylight Saving Time.', type: 'website', url: 'https://whattime.city/ethiopia/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

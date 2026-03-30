@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Venezuela right now? Venezuela uses Venezuela Time (VET, UTC−4) year-round with no Daylight Saving Time. Live Caracas clock, Venezuela vs world cities.',
   keywords: ['time in venezuela', 'venezuela time now', 'what time is it in venezuela', 'caracas time', 'venezuela time zone', 'VET venezuela', 'venezuela utc-4', 'maracaibo time', 'venezuela time vs usa', 'venezuela time vs uk', 'venezuela time vs colombia'],
   alternates: { canonical: 'https://whattime.city/venezuela/' },
-  openGraph: { title: 'Current Time in Venezuela — VET (UTC−4) · No DST', description: 'Live Venezuela time. Caracas on VET (UTC−4) year-round — no Daylight Saving Time.', type: 'website', url: 'https://whattime.city/venezuela/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Venezuela Now — VET (UTC−4)', description: 'Live Venezuela time. Caracas on VET (UTC−4) year-round — no Daylight Saving Time.', type: 'website', url: 'https://whattime.city/venezuela/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Dominican Republic right now? Live Santo Domingo clock, time zone info (AST (UTC-4)), best time to call, and time difference with major cities.',
   keywords: ['time in dominican republic', 'dominican republic time now', 'what time is it in dominican republic', 'santo domingo time', 'dominican republic time zone'],
   alternates: { canonical: 'https://whattime.city/dominican-republic/' },
-  openGraph: { title: 'Current Time in Dominican Republic — AST · Santo Domingo', description: 'Live Dominican Republic time. Santo Domingo on AST (UTC-4).', type: 'website', url: 'https://whattime.city/dominican-republic/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Dominican Republic — AST (UTC−4)', description: 'Live Dominican Republic time. Santo Domingo on AST (UTC-4).', type: 'website', url: 'https://whattime.city/dominican-republic/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

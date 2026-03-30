@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     canonical: 'https://whattime.city/articles/how-many-minutes-in-a-year/',
   },
   openGraph: {
-    title: 'How Many Minutes in a Year? — 525,600 Minutes',
+    title: 'How Many Minutes in a Year? 525,600',
     description: '525,600 minutes in a year (527,040 in a leap year). Full breakdown with monthly tables, hours, and seconds.',
     type: 'article',
     url: 'https://whattime.city/articles/how-many-minutes-in-a-year/',

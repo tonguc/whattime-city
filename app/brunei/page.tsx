@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Brunei right now? Live Bandar Seri Begawan clock, time zone info (BNT (UTC+8)), best time to call, and time difference with major cities.',
   keywords: ['time in brunei', 'brunei time now', 'what time is it in brunei', 'bandar seri begawan time', 'brunei time zone'],
   alternates: { canonical: 'https://whattime.city/brunei/' },
-  openGraph: { title: 'Current Time in Brunei — BNT · Bandar Seri Begawan', description: 'Live Brunei time. Bandar Seri Begawan on BNT (UTC+8).', type: 'website', url: 'https://whattime.city/brunei/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Brunei Now — BNT (UTC+8)', description: 'Live Brunei time. Bandar Seri Begawan on BNT (UTC+8).', type: 'website', url: 'https://whattime.city/brunei/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

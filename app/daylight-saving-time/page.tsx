@@ -13,7 +13,7 @@ const breadcrumbSchema = {
 }
 
 export const metadata: Metadata = {
-  title: 'Daylight Saving Time 2026 — Dates & Countries',
+  title: 'Daylight Saving Time 2026 — Dates',
   description: 'When does daylight saving time start and end in 2026? Get exact DST dates for the US, UK, EU, Australia, and every country. Spring forward, fall back explained.',
   alternates: {
     canonical: 'https://whattime.city/daylight-saving-time/',

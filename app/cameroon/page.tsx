@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Cameroon right now? Cameroon uses West Africa Time (WAT, UTC+1) year-round with no Daylight Saving Time. Live Yaoundé clock, Cameroon vs world cities.',
   keywords: ['time in cameroon', 'cameroon time now', 'what time is it in cameroon', 'yaounde time', 'cameroon time zone', 'WAT cameroon', 'cameroon utc+1', 'douala time', 'cameroon time vs uk', 'cameroon time vs usa', 'cameroon time vs nigeria', 'west africa time'],
   alternates: { canonical: 'https://whattime.city/cameroon/' },
-  openGraph: { title: 'Current Time in Cameroon — WAT (UTC+1) · No DST', description: 'Live Cameroon time. Yaoundé and Douala on WAT (UTC+1) year-round — no Daylight Saving Time.', type: 'website', url: 'https://whattime.city/cameroon/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Cameroon Now — WAT (UTC+1)', description: 'Live Cameroon time. Yaoundé and Douala on WAT (UTC+1) year-round — no Daylight Saving Time.', type: 'website', url: 'https://whattime.city/cameroon/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

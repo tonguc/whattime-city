@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'AEST to UTC Converter — Australia to UTC',
   description: 'Convert AEST to UTC instantly. Australian Eastern Standard Time (UTC+10) is 10 hours ahead of UTC. Live clocks, full conversion table, and AEST offset reference.',
   alternates: { canonical: 'https://whattime.city/aest-to-utc/' },
-  openGraph: { title: 'AEST to UTC Converter — Australian Eastern Time to UTC', description: 'AEST is 10 hours ahead of UTC. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/aest-to-utc/', siteName: 'whattime.city' },
+  openGraph: { title: 'AEST to UTC — Australian Eastern to UTC', description: 'AEST is 10 hours ahead of UTC. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/aest-to-utc/', siteName: 'whattime.city' },
   twitter: { card: 'summary_large_image', title: 'AEST to UTC — Australian Eastern Time to UTC', description: 'AEST is 10 hours ahead of UTC. Live converter.' },
 }
 

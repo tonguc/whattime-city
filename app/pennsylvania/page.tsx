@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Pennsylvania right now? Pennsylvania uses Eastern Standard Time (EST, UTC−5) in winter and Eastern Daylight Time (EDT, UTC−4) during DST. Live Philadelphia clock, PA vs world cities.',
   keywords: ['time in pennsylvania', 'pennsylvania time now', 'what time is it in pennsylvania', 'philadelphia time', 'pittsburgh time', 'pennsylvania time zone', 'EST pennsylvania', 'eastern time pa', 'pa time vs california', 'pa time vs london'],
   alternates: { canonical: 'https://whattime.city/pennsylvania/' },
-  openGraph: { title: 'Current Time in Pennsylvania — EST/EDT (UTC−5/−4)', description: 'Live Pennsylvania time. EST (UTC−5) in winter, EDT (UTC−4) during DST. Philadelphia, Pittsburgh, Allentown, Erie on Eastern Time.', type: 'website', url: 'https://whattime.city/pennsylvania/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Pennsylvania Now — EST/EDT', description: 'Live Pennsylvania time. EST (UTC−5) in winter, EDT (UTC−4) during DST. Philadelphia, Pittsburgh, Allentown, Erie on Eastern Time.', type: 'website', url: 'https://whattime.city/pennsylvania/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     url: 'https://whattime.city/cet-to-pst/',
     siteName: 'whattime.city',
   },
-  twitter: { card: 'summary_large_image', title: 'CET to PST — Central European to Pacific Time', description: 'CET is 9 hours ahead of PST. Live converter and overlap guide.' },
+  twitter: { card: 'summary_large_image', title: 'CET to PST — Central European to Pacific', description: 'CET is 9 hours ahead of PST. Live converter and overlap guide.' },
 }
 
 const config: TZPairConfig = {

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Malaysia right now? Malaysia uses Malaysia Time (MYT, UTC+8) year-round with no Daylight Saving Time. Live Kuala Lumpur clock, Malaysia vs world cities, and best time to call.',
   keywords: ['time in malaysia', 'malaysia time now', 'what time is it in malaysia', 'kuala lumpur time', 'malaysia time zone', 'MYT malaysia', 'malaysia utc+8', 'penang time', 'kota kinabalu time', 'malaysia time vs uk', 'malaysia time vs usa', 'malaysia time vs australia'],
   alternates: { canonical: 'https://whattime.city/malaysia/' },
-  openGraph: { title: 'Current Time in Malaysia — MYT (UTC+8) · No DST', description: 'Live Malaysia time. MYT (UTC+8) year-round. Kuala Lumpur, Penang, Johor Bahru, Kota Kinabalu all on the same time.', type: 'website', url: 'https://whattime.city/malaysia/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Malaysia Now — MYT (UTC+8)', description: 'Live Malaysia time. MYT (UTC+8) year-round. Kuala Lumpur, Penang, Johor Bahru, Kota Kinabalu all on the same time.', type: 'website', url: 'https://whattime.city/malaysia/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

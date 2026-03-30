@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Central African Republic right now? Live Bangui clock, time zone info (WAT (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in central african republic', 'central african republic time now', 'what time is it in central african republic', 'bangui time', 'central african republic time zone'],
   alternates: { canonical: 'https://whattime.city/central-african-republic/' },
-  openGraph: { title: 'Current Time in Central African Republic — WAT · Bangui', description: 'Live Central African Republic time. Bangui on WAT (UTC+1).', type: 'website', url: 'https://whattime.city/central-african-republic/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Central African Republic — WAT', description: 'Live Central African Republic time. Bangui on WAT (UTC+1).', type: 'website', url: 'https://whattime.city/central-african-republic/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

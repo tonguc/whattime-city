@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Portugal right now? Portugal uses WET (UTC+0) in winter and WEST (UTC+1) in summer. The Azores are 1 hour behind Lisbon. Live clock and best time to call.',
   keywords: ['time in portugal', 'portugal time now', 'what time is it in portugal', 'lisbon time', 'portugal time zone', 'WET WEST portugal', 'portugal utc+0', 'porto time', 'azores time', 'portugal time vs uk', 'portugal time vs usa', 'portugal dst'],
   alternates: { canonical: 'https://whattime.city/portugal/' },
-  openGraph: { title: 'Current Time in Portugal — WET/WEST · Lisbon · Azores', description: 'Live Portugal time. Lisbon on WET (UTC+0) in winter, WEST (UTC+1) in summer. Azores Islands 1 hour behind.', type: 'website', url: 'https://whattime.city/portugal/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Portugal Now — WET/WEST (UTC+0/+1)', description: 'Live Portugal time. Lisbon on WET (UTC+0) in winter, WEST (UTC+1) in summer. Azores Islands 1 hour behind.', type: 'website', url: 'https://whattime.city/portugal/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

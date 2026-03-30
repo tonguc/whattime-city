@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   title: 'GMT to MST Converter — Greenwich to Mountain',
   description: 'Convert GMT to MST instantly. GMT (UTC+0) is 7 hours ahead of Mountain Standard Time (UTC-7). Live clocks, London–Denver scheduling guide and conversion table.',
   alternates: { canonical: 'https://whattime.city/gmt-to-mst/' },
-  openGraph: { title: 'GMT to MST Converter — London to Mountain Time', description: 'GMT is 7 hours ahead of MST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/gmt-to-mst/', siteName: 'whattime.city' },
-  twitter: { card: 'summary_large_image', title: 'GMT to MST — Greenwich Mean Time to Mountain Time', description: 'GMT is 7 hours ahead of MST. Live converter.' },
+  openGraph: { title: 'GMT to MST — Greenwich to Mountain Time', description: 'GMT is 7 hours ahead of MST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/gmt-to-mst/', siteName: 'whattime.city' },
+  twitter: { card: 'summary_large_image', title: 'GMT to MST — Greenwich to Mountain Time', description: 'GMT is 7 hours ahead of MST. Live converter.' },
 }
 
 const config: TZPairConfig = {

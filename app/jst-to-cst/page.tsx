@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Convert JST to CST instantly. Japan Standard Time (UTC+9) is 15 hours ahead of Central Standard Time (UTC-6). Live clocks, conversion table, and overlap window.',
   alternates: { canonical: 'https://whattime.city/jst-to-cst/' },
   openGraph: { title: 'JST to CST Converter — Japan to Central Time', description: 'JST is 15 hours ahead of CST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/jst-to-cst/', siteName: 'whattime.city' },
-  twitter: { card: 'summary_large_image', title: 'JST to CST — Japan Standard Time to Central Time', description: 'JST is 15 hours ahead of CST. Live converter.' },
+  twitter: { card: 'summary_large_image', title: 'JST to CST — Japan Standard to Central', description: 'JST is 15 hours ahead of CST. Live converter.' },
 }
 
 const config: TZPairConfig = {

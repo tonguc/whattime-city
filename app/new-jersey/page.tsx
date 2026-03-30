@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in New Jersey right now? New Jersey uses Eastern Time (EST/EDT). Newark is on EST (UTC−5) in winter and EDT (UTC−4) in summer. Live clock and best time to call.',
   keywords: ['time in new jersey', 'new jersey time now', 'what time is it in new jersey', 'newark time', 'new jersey time zone', 'EST EDT new jersey', 'NJ time', 'jersey city time', 'trenton time', 'new jersey time vs uk', 'new jersey time vs california', 'new jersey eastern time'],
   alternates: { canonical: 'https://whattime.city/new-jersey/' },
-  openGraph: { title: 'Current Time in New Jersey — EST/EDT · Newark', description: 'Live New Jersey time. Newark, Jersey City, and Trenton on Eastern Time — EST (UTC−5) in winter, EDT (UTC−4) in summer.', type: 'website', url: 'https://whattime.city/new-jersey/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in New Jersey Now — EST/EDT', description: 'Live New Jersey time. Newark, Jersey City, and Trenton on Eastern Time — EST (UTC−5) in winter, EDT (UTC−4) in summer.', type: 'website', url: 'https://whattime.city/new-jersey/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

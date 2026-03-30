@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Colombia right now? Colombia uses Colombia Time (COT, UTC−5) year-round with no Daylight Saving Time. Live Bogotá clock, Colombia vs world cities, and best time to call.',
   keywords: ['time in colombia', 'colombia time now', 'what time is it in colombia', 'bogota time', 'colombia time zone', 'COT colombia', 'colombia utc-5', 'medellin time', 'cali time', 'colombia time vs usa', 'colombia time vs uk', 'colombia time vs spain'],
   alternates: { canonical: 'https://whattime.city/colombia/' },
-  openGraph: { title: 'Current Time in Colombia — COT (UTC−5) · No DST', description: 'Live Colombia time. COT (UTC−5) year-round. Bogotá, Medellín, Cali, Cartagena all on the same time.', type: 'website', url: 'https://whattime.city/colombia/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Colombia Now — COT (UTC−5)', description: 'Live Colombia time. COT (UTC−5) year-round. Bogotá, Medellín, Cali, Cartagena all on the same time.', type: 'website', url: 'https://whattime.city/colombia/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

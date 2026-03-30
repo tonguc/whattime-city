@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Utah right now? Utah uses Mountain Time (MST/MDT). Salt Lake City is on MST (UTC−7) in winter and MDT (UTC−6) in summer. Live clock and best time to call.',
   keywords: ['time in utah', 'utah time now', 'what time is it in utah', 'salt lake city time', 'utah time zone', 'MST MDT utah', 'utah utc-7', 'provo time', 'st george time', 'utah mountain time', 'utah time vs eastern', 'utah time vs uk'],
   alternates: { canonical: 'https://whattime.city/utah/' },
-  openGraph: { title: 'Current Time in Utah — MST/MDT · Salt Lake City', description: 'Live Utah time. Salt Lake City and Provo on Mountain Time — MST (UTC−7) in winter, MDT (UTC−6) in summer.', type: 'website', url: 'https://whattime.city/utah/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Utah Now — MST/MDT (UTC−7/−6)', description: 'Live Utah time. Salt Lake City and Provo on Mountain Time — MST (UTC−7) in winter, MDT (UTC−6) in summer.', type: 'website', url: 'https://whattime.city/utah/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

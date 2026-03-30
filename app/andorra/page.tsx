@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Andorra right now? Live Andorra la Vella clock, time zone info (CET (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in andorra', 'andorra time now', 'what time is it in andorra', 'andorra la vella time', 'andorra time zone'],
   alternates: { canonical: 'https://whattime.city/andorra/' },
-  openGraph: { title: 'Current Time in Andorra — CET · Andorra la Vella', description: 'Live Andorra time. Andorra la Vella on CET (UTC+1).', type: 'website', url: 'https://whattime.city/andorra/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Andorra Now — CET (UTC+1)', description: 'Live Andorra time. Andorra la Vella on CET (UTC+1).', type: 'website', url: 'https://whattime.city/andorra/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

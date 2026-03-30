@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Virginia right now? Virginia uses Eastern Standard Time (EST, UTC−5) in winter and Eastern Daylight Time (EDT, UTC−4) during DST. Northern Virginia is part of the Washington DC metro area. Live Richmond clock.',
   keywords: ['time in virginia', 'virginia time now', 'what time is it in virginia', 'richmond time', 'virginia beach time', 'virginia time zone', 'EST virginia', 'eastern time virginia', 'northern virginia time', 'nova time zone', 'virginia time vs california', 'virginia time vs london'],
   alternates: { canonical: 'https://whattime.city/virginia/' },
-  openGraph: { title: 'Current Time in Virginia — EST/EDT (UTC−5/−4)', description: 'Live Virginia time. EST (UTC−5) in winter, EDT (UTC−4) during DST. Richmond, Virginia Beach, Norfolk, Arlington on Eastern Time.', type: 'website', url: 'https://whattime.city/virginia/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Virginia Now — EST/EDT', description: 'Live Virginia time. EST (UTC−5) in winter, EDT (UTC−4) during DST. Richmond, Virginia Beach, Norfolk, Arlington on Eastern Time.', type: 'website', url: 'https://whattime.city/virginia/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

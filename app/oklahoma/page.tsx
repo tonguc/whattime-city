@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Oklahoma right now? Oklahoma uses Central Time (CST/CDT). Oklahoma City is on CST (UTC−6) in winter and CDT (UTC−5) in summer. Live clock and best time to call.',
   keywords: ['time in oklahoma', 'oklahoma time now', 'what time is it in oklahoma', 'oklahoma city time', 'oklahoma time zone', 'CST CDT oklahoma', 'oklahoma utc-6', 'tulsa time', 'oklahoma central time', 'oklahoma time vs eastern', 'oklahoma time vs uk'],
   alternates: { canonical: 'https://whattime.city/oklahoma/' },
-  openGraph: { title: 'Current Time in Oklahoma — CST/CDT · Oklahoma City', description: 'Live Oklahoma time. Oklahoma City and Tulsa on Central Time — CST (UTC−6) in winter, CDT (UTC−5) in summer.', type: 'website', url: 'https://whattime.city/oklahoma/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Oklahoma Now — CST/CDT (UTC−6/−5)', description: 'Live Oklahoma time. Oklahoma City and Tulsa on Central Time — CST (UTC−6) in winter, CDT (UTC−5) in summer.', type: 'website', url: 'https://whattime.city/oklahoma/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

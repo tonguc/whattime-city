@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in North Dakota right now? Most of North Dakota uses Central Time (CST/CDT). Fargo and Bismarck are on CST (UTC−6) in winter and CDT (UTC−5) in summer.',
   keywords: ['time in north dakota', 'north dakota time now', 'what time is it in north dakota', 'fargo time', 'bismarck north dakota time', 'north dakota time zone', 'CST CDT north dakota', 'north dakota central time', 'north dakota mountain time'],
   alternates: { canonical: 'https://whattime.city/north-dakota/' },
-  openGraph: { title: 'Current Time in North Dakota — CST/CDT · Fargo · Bismarck', description: 'Live North Dakota time. Most of ND uses Central Time (CST/CDT). Small southwest corner uses Mountain Time.', type: 'website', url: 'https://whattime.city/north-dakota/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in North Dakota Now — CST/CDT', description: 'Live North Dakota time. Most of ND uses Central Time (CST/CDT). Small southwest corner uses Mountain Time.', type: 'website', url: 'https://whattime.city/north-dakota/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

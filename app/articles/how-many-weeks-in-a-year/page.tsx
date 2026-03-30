@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'How Many Weeks in a Year? 52 or 53 — Full Breakdown',
+    title: 'How Many Weeks in a Year? 52 Weeks (2026)',
     description:
       'Regular year = 52 weeks + 1 day. Leap year = 52 weeks + 2 days. Year-by-year table, work weeks, and ISO week explained.',
   },

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'JST to GMT Converter — Japan to GMT',
   description: 'Convert JST to GMT instantly. Japan Standard Time (UTC+9) is 9 hours ahead of GMT (UTC+0). Live clocks, conversion table, and overlap window.',
   alternates: { canonical: 'https://whattime.city/jst-to-gmt/' },
-  openGraph: { title: 'JST to GMT Converter — Japan to Greenwich Mean Time', description: 'JST is 9 hours ahead of GMT. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/jst-to-gmt/', siteName: 'whattime.city' },
+  openGraph: { title: 'JST to GMT — Japan Standard to Greenwich', description: 'JST is 9 hours ahead of GMT. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/jst-to-gmt/', siteName: 'whattime.city' },
   twitter: { card: 'summary_large_image', title: 'JST to GMT — Japan Standard Time to GMT', description: 'JST is 9 hours ahead of GMT. Live converter.' },
 }
 

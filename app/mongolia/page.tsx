@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Mongolia right now? Live Ulaanbaatar clock, time zone info (ULAT (UTC+8)), best time to call, and time difference with major cities.',
   keywords: ['time in mongolia', 'mongolia time now', 'what time is it in mongolia', 'ulaanbaatar time', 'mongolia time zone'],
   alternates: { canonical: 'https://whattime.city/mongolia/' },
-  openGraph: { title: 'Current Time in Mongolia — ULAT · Ulaanbaatar', description: 'Live Mongolia time. Ulaanbaatar on ULAT (UTC+8).', type: 'website', url: 'https://whattime.city/mongolia/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Mongolia Now — ULAT (UTC+8)', description: 'Live Mongolia time. Ulaanbaatar on ULAT (UTC+8).', type: 'website', url: 'https://whattime.city/mongolia/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

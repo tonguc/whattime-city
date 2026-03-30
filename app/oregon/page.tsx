@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Oregon right now? Most of Oregon uses Pacific Time (PST/PDT). Malheur County uses Mountain Time (MST/MDT). Live Portland clock and best time to call.',
   keywords: ['time in oregon', 'oregon time now', 'what time is it in oregon', 'portland time', 'oregon time zone', 'PST PDT oregon', 'oregon utc-8', 'salem time', 'eugene time', 'malheur county time zone', 'ontario oregon time', 'oregon pacific time'],
   alternates: { canonical: 'https://whattime.city/oregon/' },
-  openGraph: { title: 'Current Time in Oregon — PST/PDT (Portland) · Malheur County on MT', description: 'Live Oregon time. Portland, Salem, Eugene on Pacific Time. Malheur County (Ontario) on Mountain Time — 1 hour ahead.', type: 'website', url: 'https://whattime.city/oregon/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Oregon Now — PST/PDT (UTC−8/−7)', description: 'Live Oregon time. Portland, Salem, Eugene on Pacific Time. Malheur County (Ontario) on Mountain Time — 1 hour ahead.', type: 'website', url: 'https://whattime.city/oregon/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

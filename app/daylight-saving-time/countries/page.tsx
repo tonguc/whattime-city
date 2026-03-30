@@ -3,14 +3,14 @@ import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 
 export const metadata: Metadata = {
-  title: 'Daylight Saving Time by Country 2026 — Complete List',
+  title: 'DST by Country 2026 — Full List',
   description:
     'Does your country observe daylight saving time? Complete country-by-country DST list for 2026 — which countries change clocks, which abolished DST, and which never observed it.',
   alternates: {
     canonical: 'https://whattime.city/daylight-saving-time/countries/',
   },
   openGraph: {
-    title: 'Daylight Saving Time by Country 2026 — Complete List',
+    title: 'DST by Country 2026 — Full List',
     description:
       'Full list of countries that observe, abolished, or never had daylight saving time in 2026.',
     type: 'website',

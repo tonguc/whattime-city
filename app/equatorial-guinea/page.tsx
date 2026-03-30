@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Equatorial Guinea right now? Live Malabo clock, time zone info (WAT (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in equatorial guinea', 'equatorial guinea time now', 'what time is it in equatorial guinea', 'malabo time', 'equatorial guinea time zone'],
   alternates: { canonical: 'https://whattime.city/equatorial-guinea/' },
-  openGraph: { title: 'Current Time in Equatorial Guinea — WAT · Malabo', description: 'Live Equatorial Guinea time. Malabo on WAT (UTC+1).', type: 'website', url: 'https://whattime.city/equatorial-guinea/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Equatorial Guinea — WAT (UTC+1)', description: 'Live Equatorial Guinea time. Malabo on WAT (UTC+1).', type: 'website', url: 'https://whattime.city/equatorial-guinea/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

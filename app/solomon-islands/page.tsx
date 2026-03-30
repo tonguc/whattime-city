@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Solomon Islands right now? Live Honiara clock, time zone info (SBT (UTC+11)), best time to call, and time difference with major cities.',
   keywords: ['time in solomon islands', 'solomon islands time now', 'what time is it in solomon islands', 'honiara time', 'solomon islands time zone'],
   alternates: { canonical: 'https://whattime.city/solomon-islands/' },
-  openGraph: { title: 'Current Time in Solomon Islands — SBT · Honiara', description: 'Live Solomon Islands time. Honiara on SBT (UTC+11).', type: 'website', url: 'https://whattime.city/solomon-islands/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Solomon Islands — SBT (UTC+11)', description: 'Live Solomon Islands time. Honiara on SBT (UTC+11).', type: 'website', url: 'https://whattime.city/solomon-islands/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

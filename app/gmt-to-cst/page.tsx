@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'GMT to CST Converter — Greenwich to Central',
   description: 'Convert GMT to CST instantly. GMT is 6 hours ahead of Central Standard Time (CST, UTC-6). Live clocks, full conversion table, and hourly reference.',
   alternates: { canonical: 'https://whattime.city/gmt-to-cst/' },
-  openGraph: { title: 'GMT to CST Converter — Greenwich to Central Time', description: 'GMT is 6 hours ahead of CST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/gmt-to-cst/', siteName: 'whattime.city' },
+  openGraph: { title: 'GMT to CST — Greenwich to Central Time', description: 'GMT is 6 hours ahead of CST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/gmt-to-cst/', siteName: 'whattime.city' },
   twitter: { card: 'summary_large_image', title: 'GMT to CST — Greenwich to Central Time', description: 'GMT is 6 hours ahead of CST. Live converter and full table.' },
 }
 

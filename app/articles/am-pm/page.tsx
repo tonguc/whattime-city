@@ -3,12 +3,12 @@ import ContentPageWrapper from '@/components/ContentPageWrapper'
 import AmPmClient from './AmPmClient'
 
 export const metadata: Metadata = {
-  title: 'AM and PM — What Do They Mean? 12-Hour Clock Explained',
+  title: 'AM and PM Explained — 12-Hour Clock Guide',
   description:
     'AM (Ante Meridiem) means before midday. PM (Post Meridiem) means after midday. Learn how the 12-hour clock works, when to use AM vs PM, and common mistakes like 12 AM vs 12 PM.',
   alternates: { canonical: 'https://whattime.city/articles/am-pm/' },
   openGraph: {
-    title: 'AM and PM — What Do They Mean? 12-Hour Clock Explained',
+    title: 'AM and PM Explained — 12-Hour Clock Guide',
     description: 'AM (Ante Meridiem) means before midday. PM (Post Meridiem) means after midday. Full 12-hour to 24-hour conversion chart included.',
     type: 'article',
     url: 'https://whattime.city/articles/am-pm/',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AM and PM — What Do They Mean? 12-Hour Clock Explained',
+    title: 'AM and PM Explained — 12-Hour Clock Guide',
     description: 'AM = Ante Meridiem (before midday). PM = Post Meridiem (after midday). Full conversion chart, 12 AM vs 12 PM explained.',
   },
 }

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Wisconsin right now? Wisconsin uses Central Time (CST/CDT). Milwaukee is on CST (UTC−6) in winter and CDT (UTC−5) in summer. Live clock and best time to call.',
   keywords: ['time in wisconsin', 'wisconsin time now', 'what time is it in wisconsin', 'milwaukee time', 'wisconsin time zone', 'CST CDT wisconsin', 'wisconsin utc-6', 'madison time', 'green bay time', 'wisconsin central time', 'wisconsin time vs eastern', 'wisconsin time vs uk'],
   alternates: { canonical: 'https://whattime.city/wisconsin/' },
-  openGraph: { title: 'Current Time in Wisconsin — CST/CDT · Milwaukee', description: 'Live Wisconsin time. Milwaukee and Madison on Central Time — CST (UTC−6) in winter, CDT (UTC−5) in summer.', type: 'website', url: 'https://whattime.city/wisconsin/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Wisconsin Now — CST/CDT', description: 'Live Wisconsin time. Milwaukee and Madison on Central Time — CST (UTC−6) in winter, CDT (UTC−5) in summer.', type: 'website', url: 'https://whattime.city/wisconsin/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

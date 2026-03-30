@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   title: 'CET to CST Converter — Europe to CST',
   description: 'Convert CET to CST instantly. Central European Time (UTC+1) is 7 hours ahead of Central Standard Time (UTC-6). Live clocks, Europe–US Central scheduling guide.',
   alternates: { canonical: 'https://whattime.city/cet-to-cst/' },
-  openGraph: { title: 'CET to CST Converter — Central Europe to Central US', description: 'CET is 7 hours ahead of CST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/cet-to-cst/', siteName: 'whattime.city' },
-  twitter: { card: 'summary_large_image', title: 'CET to CST — Central European to Central Time', description: 'CET is 7 hours ahead of CST. Live converter.' },
+  openGraph: { title: 'CET to CST — Central European to Central US', description: 'CET is 7 hours ahead of CST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/cet-to-cst/', siteName: 'whattime.city' },
+  twitter: { card: 'summary_large_image', title: 'CET to CST — Central EU to Central US', description: 'CET is 7 hours ahead of CST. Live converter.' },
 }
 
 const config: TZPairConfig = {

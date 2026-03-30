@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Mississippi right now? Mississippi uses Central Time (CST/CDT). Jackson is on CST (UTC−6) in winter and CDT (UTC−5) in summer. Live clock and best time to call.',
   keywords: ['time in mississippi', 'mississippi time now', 'what time is it in mississippi', 'jackson mississippi time', 'mississippi time zone', 'CST CDT mississippi', 'mississippi utc-6', 'biloxi time', 'hattiesburg time', 'mississippi central time', 'mississippi time vs eastern'],
   alternates: { canonical: 'https://whattime.city/mississippi/' },
-  openGraph: { title: 'Current Time in Mississippi — CST/CDT · Jackson', description: 'Live Mississippi time. Jackson and all of Mississippi on Central Time — CST (UTC−6) in winter, CDT (UTC−5) in summer.', type: 'website', url: 'https://whattime.city/mississippi/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Mississippi Now — CST/CDT', description: 'Live Mississippi time. Jackson and all of Mississippi on Central Time — CST (UTC−6) in winter, CDT (UTC−5) in summer.', type: 'website', url: 'https://whattime.city/mississippi/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

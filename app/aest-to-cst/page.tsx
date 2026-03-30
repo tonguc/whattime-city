@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   title: 'AEST to CST Converter — Australia to Central',
   description: 'Convert AEST to CST instantly. Australian Eastern Standard Time (UTC+10) is 16 hours ahead of Central Standard Time (UTC-6). Live clocks, Sydney–Chicago scheduling guide.',
   alternates: { canonical: 'https://whattime.city/aest-to-cst/' },
-  openGraph: { title: 'AEST to CST Converter — Australia to Central Time', description: 'AEST is 16 hours ahead of CST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/aest-to-cst/', siteName: 'whattime.city' },
-  twitter: { card: 'summary_large_image', title: 'AEST to CST — Australian Eastern to Central Time', description: 'AEST is 16 hours ahead of CST. Live converter.' },
+  openGraph: { title: 'AEST to CST — Australian Eastern to Central', description: 'AEST is 16 hours ahead of CST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/aest-to-cst/', siteName: 'whattime.city' },
+  twitter: { card: 'summary_large_image', title: 'AEST to CST — Australian Eastern to Central', description: 'AEST is 16 hours ahead of CST. Live converter.' },
 }
 
 const config: TZPairConfig = {

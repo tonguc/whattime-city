@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: 'https://whattime.city/hawaii-time-zone/',
     siteName: 'whattime.city',
   },
-  twitter: { card: 'summary_large_image', title: 'Hawaii Time Zone — HST UTC-10, No Daylight Saving', description: 'Current Hawaii Time. No DST — HST is always UTC-10.' },
+  twitter: { card: 'summary_large_image', title: 'Hawaii Time Zone — HST (UTC−10) · No DST', description: 'Current Hawaii Time. No DST — HST is always UTC-10.' },
 }
 
 const faqSchema = {

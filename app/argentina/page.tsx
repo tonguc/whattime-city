@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Argentina right now? Argentina uses Argentina Time (ART, UTC−3) year-round with no Daylight Saving Time since 2008. Live Buenos Aires clock, Argentina vs world cities, and best time to call.',
   keywords: ['time in argentina', 'argentina time now', 'what time is it in argentina', 'buenos aires time', 'argentina time zone', 'ART time zone', 'argentina utc-3', 'argentina no daylight saving', 'argentina time vs usa', 'argentina time vs spain', 'argentina time vs uk'],
   alternates: { canonical: 'https://whattime.city/argentina/' },
-  openGraph: { title: 'Current Time in Argentina — ART (UTC−3) · No DST since 2008', description: 'Live Argentina time. ART (UTC−3) used year-round. No Daylight Saving Time since 2008. Buenos Aires, Córdoba, Rosario all on the same time.', type: 'website', url: 'https://whattime.city/argentina/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Argentina Now — ART (UTC−3)', description: 'Live Argentina time. ART (UTC−3) used year-round. No Daylight Saving Time since 2008. Buenos Aires, Córdoba, Rosario all on the same time.', type: 'website', url: 'https://whattime.city/argentina/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

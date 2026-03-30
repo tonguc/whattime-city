@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in São Tomé and Príncipe right now? Live São Tomé clock, time zone info (GMT (UTC+0)), best time to call, and time difference with major cities.',
   keywords: ['time in são tomé and príncipe', 'são tomé and príncipe time now', 'what time is it in são tomé and príncipe', 'são tomé time', 'são tomé and príncipe time zone'],
   alternates: { canonical: 'https://whattime.city/sao-tome-and-principe/' },
-  openGraph: { title: 'Current Time in São Tomé and Príncipe — GMT · São Tomé', description: 'Live São Tomé and Príncipe time. São Tomé on GMT (UTC+0).', type: 'website', url: 'https://whattime.city/sao-tome-and-principe/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in São Tomé and Príncipe — GMT', description: 'Live São Tomé and Príncipe time. São Tomé on GMT (UTC+0).', type: 'website', url: 'https://whattime.city/sao-tome-and-principe/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

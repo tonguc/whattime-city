@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Arkansas right now? Arkansas uses Central Time (CST/CDT). Little Rock is on CST (UTC−6) in winter and CDT (UTC−5) in summer. Live clock and best time to call.',
   keywords: ['time in arkansas', 'arkansas time now', 'what time is it in arkansas', 'little rock time', 'arkansas time zone', 'CST CDT arkansas', 'arkansas utc-6', 'fayetteville arkansas time', 'arkansas central time', 'arkansas time vs eastern', 'arkansas time vs uk'],
   alternates: { canonical: 'https://whattime.city/arkansas/' },
-  openGraph: { title: 'Current Time in Arkansas — CST/CDT · Little Rock', description: 'Live Arkansas time. Little Rock and all of Arkansas on Central Time — CST (UTC−6) in winter, CDT (UTC−5) in summer.', type: 'website', url: 'https://whattime.city/arkansas/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Arkansas Now — CST/CDT (UTC−6/−5)', description: 'Live Arkansas time. Little Rock and all of Arkansas on Central Time — CST (UTC−6) in winter, CDT (UTC−5) in summer.', type: 'website', url: 'https://whattime.city/arkansas/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

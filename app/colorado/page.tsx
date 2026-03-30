@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Colorado right now? Colorado uses Mountain Standard Time (MST, UTC−7) in winter and Mountain Daylight Time (MDT, UTC−6) during Daylight Saving Time. Live Denver clock and world comparison.',
   keywords: ['time in colorado', 'colorado time now', 'what time is it in colorado', 'denver time', 'colorado time zone', 'MST colorado', 'MDT colorado', 'mountain time colorado', 'colorado utc-7', 'denver time zone', 'colorado time vs california', 'colorado time vs new york'],
   alternates: { canonical: 'https://whattime.city/colorado/' },
-  openGraph: { title: 'Current Time in Colorado — MST/MDT (UTC−7/−6)', description: 'Live Colorado time. MST (UTC−7) in winter, MDT (UTC−6) during Daylight Saving Time. Denver, Colorado Springs, Aurora, Boulder on Mountain Time.', type: 'website', url: 'https://whattime.city/colorado/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Colorado Now — MST/MDT', description: 'Live Colorado time. MST (UTC−7) in winter, MDT (UTC−6) during Daylight Saving Time. Denver, Colorado Springs, Aurora, Boulder on Mountain Time.', type: 'website', url: 'https://whattime.city/colorado/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

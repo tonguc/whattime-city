@@ -1,10 +1,10 @@
 {
-  "seo_title": "Current Time in Costa Rica Now \u2014 CST (UTC-6)",
-  "seo_description": "What time is it in Costa Rica? Central Standard Time CST (UTC-6) year-round \u2014 no DST. Live clock, Costa Rica vs New York & London time.",
+  "seo_title": "Current Time in Costa Rica — CST (UTC-6)",
+  "seo_description": "What time is it in Costa Rica? Central Standard Time CST (UTC-6) year-round — no DST. Live clock, Costa Rica vs New York & London time.",
   "faq": [
     {
       "question": "What time is it in Costa Rica right now?",
-      "answer": "San Jos\u00e9, Costa Rica uses Central Standard Time (CST, UTC-6) year-round. Costa Rica does not observe Daylight Saving Time. The IANA identifier is America/Costa_Rica. Costa Rica observes Central Standard Time (CST, UTC-6) year-round. Unlike many countries in the Americas, Costa Rica does not observe daylight saving time, so the offset from UTC never changes. The country follows the America/Costa_Rica timezone identifier in the IANA Time Zone Database. Costa Rica's consistent UTC-6 offset means it aligns with US Central Time during winter months and US Mountain Time during US summer months."
+      "answer": "San José, Costa Rica uses Central Standard Time (CST, UTC-6) year-round. Costa Rica does not observe Daylight Saving Time. The IANA identifier is America/Costa_Rica. Costa Rica observes Central Standard Time (CST, UTC-6) year-round. Unlike many countries in the Americas, Costa Rica does not observe daylight saving time, so the offset from UTC never changes. The country follows the America/Costa_Rica timezone identifier in the IANA Time Zone Database. Costa Rica's consistent UTC-6 offset means it aligns with US Central Time during winter months and US Mountain Time during US summer months."
     },
     {
       "question": "What time zone is Costa Rica in?",
@@ -40,7 +40,7 @@
         "name": "What time is it in Costa Rica right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "San Jos\u00e9, Costa Rica uses Central Standard Time (CST, UTC-6) year-round. Costa Rica does not observe Daylight Saving Time. The IANA identifier is America/Costa_Rica. Costa Rica observes Central Standard Time (CST, UTC-6) year-round. Unlike many countries in the Americas, Costa Rica does not observe daylight saving time, so the offset from UTC never changes. The country follows the America/Costa_Rica timezone identifier in the IANA Time Zone Database. Costa Rica's consistent UTC-6 offset means it aligns with US Central Time during winter months and US Mountain Time during US summer months."
+          "text": "San José, Costa Rica uses Central Standard Time (CST, UTC-6) year-round. Costa Rica does not observe Daylight Saving Time. The IANA identifier is America/Costa_Rica. Costa Rica observes Central Standard Time (CST, UTC-6) year-round. Unlike many countries in the Americas, Costa Rica does not observe daylight saving time, so the offset from UTC never changes. The country follows the America/Costa_Rica timezone identifier in the IANA Time Zone Database. Costa Rica's consistent UTC-6 offset means it aligns with US Central Time during winter months and US Mountain Time during US summer months."
         }
       },
       {

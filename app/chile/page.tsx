@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Chile right now? Chile uses CLT (UTC−4) in winter and CLST (UTC−3) in summer. DST runs Oct–Apr (Southern Hemisphere). Easter Island is 2 hours behind. Live Santiago clock.',
   keywords: ['time in chile', 'chile time now', 'what time is it in chile', 'santiago time', 'chile time zone', 'CLT CLST chile', 'chile dst', 'chile southern hemisphere dst', 'easter island time', 'valparaiso time', 'chile time vs uk', 'chile time vs usa'],
   alternates: { canonical: 'https://whattime.city/chile/' },
-  openGraph: { title: 'Current Time in Chile — CLT/CLST · Santiago · Easter Island', description: 'Live Chile time. Santiago on CLT (UTC−4) in winter, CLST (UTC−3) in summer. Easter Island shown separately.', type: 'website', url: 'https://whattime.city/chile/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Chile Now — CLT/CLST (UTC−4/−3)', description: 'Live Chile time. Santiago on CLT (UTC−4) in winter, CLST (UTC−3) in summer. Easter Island shown separately.', type: 'website', url: 'https://whattime.city/chile/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

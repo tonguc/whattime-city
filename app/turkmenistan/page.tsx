@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Turkmenistan right now? Live Ashgabat clock, time zone info (TMT (UTC+5)), best time to call, and time difference with major cities.',
   keywords: ['time in turkmenistan', 'turkmenistan time now', 'what time is it in turkmenistan', 'ashgabat time', 'turkmenistan time zone'],
   alternates: { canonical: 'https://whattime.city/turkmenistan/' },
-  openGraph: { title: 'Current Time in Turkmenistan — TMT · Ashgabat', description: 'Live Turkmenistan time. Ashgabat on TMT (UTC+5).', type: 'website', url: 'https://whattime.city/turkmenistan/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Turkmenistan Now — TMT (UTC+5)', description: 'Live Turkmenistan time. Ashgabat on TMT (UTC+5).', type: 'website', url: 'https://whattime.city/turkmenistan/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

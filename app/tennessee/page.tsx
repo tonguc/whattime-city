@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Tennessee right now? Most of Tennessee uses Central Time (CST/CDT). East Tennessee (Knoxville, Johnson City) uses Eastern Time (EST/EDT). Live Nashville clock and best time to call.',
   keywords: ['time in tennessee', 'tennessee time now', 'what time is it in tennessee', 'nashville time', 'tennessee time zone', 'CST CDT tennessee', 'knoxville time', 'memphis time', 'chattanooga time', 'east tennessee time zone', 'tennessee two time zones', 'tennessee time vs uk'],
   alternates: { canonical: 'https://whattime.city/tennessee/' },
-  openGraph: { title: 'Current Time in Tennessee — CST/CDT (Nashville) & EST/EDT (Knoxville)', description: 'Live Tennessee time. Nashville and Memphis on Central Time; Knoxville and Johnson City on Eastern Time. Both zones shown.', type: 'website', url: 'https://whattime.city/tennessee/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Tennessee Now — CST/CDT (UTC−6/−5)', description: 'Live Tennessee time. Nashville and Memphis on Central Time; Knoxville and Johnson City on Eastern Time. Both zones shown.', type: 'website', url: 'https://whattime.city/tennessee/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

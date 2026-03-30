@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Louisiana right now? Louisiana uses Central Time (CST/CDT). New Orleans is on CST (UTC−6) in winter and CDT (UTC−5) in summer. Live clock and best time to call.',
   keywords: ['time in louisiana', 'louisiana time now', 'what time is it in louisiana', 'new orleans time', 'louisiana time zone', 'CST CDT louisiana', 'louisiana utc-6', 'baton rouge time', 'shreveport time', 'louisiana central time', 'louisiana time vs eastern', 'louisiana time vs uk'],
   alternates: { canonical: 'https://whattime.city/louisiana/' },
-  openGraph: { title: 'Current Time in Louisiana — CST/CDT · New Orleans', description: 'Live Louisiana time. New Orleans and Baton Rouge on Central Time — CST (UTC−6) in winter, CDT (UTC−5) in summer.', type: 'website', url: 'https://whattime.city/louisiana/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Louisiana Now — CST/CDT', description: 'Live Louisiana time. New Orleans and Baton Rouge on Central Time — CST (UTC−6) in winter, CDT (UTC−5) in summer.', type: 'website', url: 'https://whattime.city/louisiana/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in San Marino right now? Live San Marino clock, time zone info (CET (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in san marino', 'san marino time now', 'what time is it in san marino', 'san marino time', 'san marino time zone'],
   alternates: { canonical: 'https://whattime.city/san-marino/' },
-  openGraph: { title: 'Current Time in San Marino — CET · San Marino', description: 'Live San Marino time. San Marino on CET (UTC+1).', type: 'website', url: 'https://whattime.city/san-marino/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in San Marino Now — CET (UTC+1)', description: 'Live San Marino time. San Marino on CET (UTC+1).', type: 'website', url: 'https://whattime.city/san-marino/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

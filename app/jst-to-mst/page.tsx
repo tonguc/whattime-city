@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   title: 'JST to MST Converter — Japan to MST',
   description: 'Convert JST to MST instantly. Japan Standard Time (UTC+9) is 16 hours ahead of Mountain Standard Time (UTC-7). Live clocks, Tokyo–Denver scheduling guide.',
   alternates: { canonical: 'https://whattime.city/jst-to-mst/' },
-  openGraph: { title: 'JST to MST Converter — Japan to Mountain Time', description: 'JST is 16 hours ahead of MST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/jst-to-mst/', siteName: 'whattime.city' },
-  twitter: { card: 'summary_large_image', title: 'JST to MST — Japan Standard Time to Mountain Time', description: 'JST is 16 hours ahead of MST. Live converter.' },
+  openGraph: { title: 'JST to MST — Japan Standard to Mountain', description: 'JST is 16 hours ahead of MST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/jst-to-mst/', siteName: 'whattime.city' },
+  twitter: { card: 'summary_large_image', title: 'JST to MST — Japan Standard to Mountain', description: 'JST is 16 hours ahead of MST. Live converter.' },
 }
 
 const config: TZPairConfig = {

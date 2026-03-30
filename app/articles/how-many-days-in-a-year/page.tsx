@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     canonical: 'https://whattime.city/articles/how-many-days-in-a-year/',
   },
   openGraph: {
-    title: 'How Many Days in a Year? (2026) — 365 or 366 Days Explained',
+    title: 'How Many Days in a Year? 365 or 366',
     description:
       'A regular year has 365 days. A leap year has 366 days. See the breakdown by month, working days, and a year-by-year calendar through 2030.',
     type: 'article',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'How Many Days in a Year? 365 or 366 — Full Breakdown',
+    title: 'How Many Days in a Year? 365 or 366',
     description:
       'Regular year = 365 days. Leap year = 366 days. Month-by-month table, working days, and leap year rules explained.',
   },

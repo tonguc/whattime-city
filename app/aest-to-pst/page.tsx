@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     url: 'https://whattime.city/aest-to-pst/',
     siteName: 'whattime.city',
   },
-  twitter: { card: 'summary_large_image', title: 'AEST to PST — Australian Eastern to Pacific Time', description: 'AEST is 18 hours ahead of PST. Live converter and overlap guide.' },
+  twitter: { card: 'summary_large_image', title: 'AEST to PST — Australian Eastern to Pacific', description: 'AEST is 18 hours ahead of PST. Live converter and overlap guide.' },
 }
 
 const config: TZPairConfig = {

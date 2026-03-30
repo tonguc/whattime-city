@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in South Africa right now? South Africa uses South Africa Standard Time (SAST, UTC+2) year-round with no Daylight Saving Time. Live Johannesburg clock, South Africa vs world cities.',
   keywords: ['time in south africa', 'south africa time now', 'what time is it in south africa', 'johannesburg time', 'cape town time', 'south africa time zone', 'SAST time zone', 'south africa utc+2', 'south africa no daylight saving', 'south africa time vs usa', 'south africa time vs uk', 'durban time'],
   alternates: { canonical: 'https://whattime.city/south-africa/' },
-  openGraph: { title: 'Current Time in South Africa — SAST (UTC+2) · No Daylight Saving Time', description: 'Live South Africa time. SAST (UTC+2) used year-round. No DST. Johannesburg, Cape Town, Durban, Pretoria all on the same time.', type: 'website', url: 'https://whattime.city/south-africa/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in South Africa Now — SAST (UTC+2)', description: 'Live South Africa time. SAST (UTC+2) used year-round. No DST. Johannesburg, Cape Town, Durban, Pretoria all on the same time.', type: 'website', url: 'https://whattime.city/south-africa/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

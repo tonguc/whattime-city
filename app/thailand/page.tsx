@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Thailand right now? Thailand uses Indochina Time (ICT, UTC+7) year-round with no Daylight Saving Time. Live Bangkok clock, Thailand vs world cities, and best time to call.',
   keywords: ['time in thailand', 'thailand time now', 'what time is it in thailand', 'bangkok time', 'thailand time zone', 'ICT thailand', 'thailand utc+7', 'phuket time', 'chiang mai time', 'thailand time vs usa', 'thailand time vs uk', 'thailand time vs singapore'],
   alternates: { canonical: 'https://whattime.city/thailand/' },
-  openGraph: { title: 'Current Time in Thailand — ICT (UTC+7) · No DST', description: 'Live Thailand time. ICT (UTC+7) year-round. Bangkok, Phuket, Chiang Mai, Pattaya all on the same time.', type: 'website', url: 'https://whattime.city/thailand/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Thailand Now — ICT (UTC+7)', description: 'Live Thailand time. ICT (UTC+7) year-round. Bangkok, Phuket, Chiang Mai, Pattaya all on the same time.', type: 'website', url: 'https://whattime.city/thailand/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

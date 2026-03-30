@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Marshall Islands right now? Live Majuro clock, time zone info (MHT (UTC+12)), best time to call, and time difference with major cities.',
   keywords: ['time in marshall islands', 'marshall islands time now', 'what time is it in marshall islands', 'majuro time', 'marshall islands time zone'],
   alternates: { canonical: 'https://whattime.city/marshall-islands/' },
-  openGraph: { title: 'Current Time in Marshall Islands — MHT · Majuro', description: 'Live Marshall Islands time. Majuro on MHT (UTC+12).', type: 'website', url: 'https://whattime.city/marshall-islands/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Marshall Islands — MHT (UTC+12)', description: 'Live Marshall Islands time. Majuro on MHT (UTC+12).', type: 'website', url: 'https://whattime.city/marshall-islands/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

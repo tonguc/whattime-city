@@ -3,13 +3,13 @@ import ContentPageWrapper from '@/components/ContentPageWrapper'
 import HoursAgoClient from './HoursAgoClient'
 
 export const metadata: Metadata = {
-  title: 'Hours Ago Calculator — What Time Was It X Hours Ago?',
+  title: 'Hours Ago Calculator — Time X Hours Ago',
   description: 'Find what time it was 6, 9, 12, or any number of hours ago. Instant calculator with exact time and date. Also see hours from now.',
   alternates: {
     canonical: 'https://whattime.city/hours-ago/',
   },
   openGraph: {
-    title: 'Hours Ago Calculator — What Time Was It X Hours Ago?',
+    title: 'Hours Ago Calculator — Time X Hours Ago',
     description: 'Calculate what time it was any number of hours ago. Shows exact time, AM/PM, and date if the time crossed midnight.',
     type: 'website',
     url: 'https://whattime.city/hours-ago/',

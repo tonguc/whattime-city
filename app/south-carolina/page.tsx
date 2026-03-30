@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in South Carolina right now? South Carolina uses Eastern Time (EST/EDT). Columbia is on EST (UTC−5) in winter and EDT (UTC−4) in summer. Live clock and best time to call.',
   keywords: ['time in south carolina', 'south carolina time now', 'what time is it in south carolina', 'columbia sc time', 'south carolina time zone', 'EST EDT south carolina', 'south carolina utc-5', 'charleston time', 'myrtle beach time', 'greenville sc time', 'south carolina eastern time'],
   alternates: { canonical: 'https://whattime.city/south-carolina/' },
-  openGraph: { title: 'Current Time in South Carolina — EST/EDT · Columbia', description: 'Live South Carolina time. Columbia, Charleston, and Myrtle Beach on Eastern Time — EST (UTC−5) in winter, EDT (UTC−4) in summer.', type: 'website', url: 'https://whattime.city/south-carolina/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in South Carolina Now — EST/EDT', description: 'Live South Carolina time. Columbia, Charleston, and Myrtle Beach on Eastern Time — EST (UTC−5) in winter, EDT (UTC−4) in summer.', type: 'website', url: 'https://whattime.city/south-carolina/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

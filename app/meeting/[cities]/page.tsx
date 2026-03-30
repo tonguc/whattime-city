@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cityList = parseCities(params.cities)
   if (!cityList) {
     return {
-      title: 'Meeting Planner — Find Best Time to Call Across Time Zones',
+      title: 'Meeting Planner — Schedule Across Time Zones',
       description: 'Schedule meetings across time zones. Find business hours overlap and best time to call with our time zone converter.',
       robots: {
         index: false,

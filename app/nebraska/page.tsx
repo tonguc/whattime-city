@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Nebraska right now? Most of Nebraska uses Central Time (CST/CDT). Omaha and Lincoln are on CST (UTC−6) in winter, CDT (UTC−5) in summer. The panhandle uses Mountain Time.',
   keywords: ['time in nebraska', 'nebraska time now', 'what time is it in nebraska', 'omaha time', 'lincoln nebraska time', 'nebraska time zone', 'CST CDT nebraska', 'nebraska central time', 'nebraska mountain time', 'scottsbluff time'],
   alternates: { canonical: 'https://whattime.city/nebraska/' },
-  openGraph: { title: 'Current Time in Nebraska — CST/CDT · Omaha · Lincoln', description: 'Live Nebraska time. Omaha and Lincoln use Central Time (CST/CDT). The western panhandle uses Mountain Time (MST/MDT).', type: 'website', url: 'https://whattime.city/nebraska/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Nebraska Now — CST/CDT (UTC−6/−5)', description: 'Live Nebraska time. Omaha and Lincoln use Central Time (CST/CDT). The western panhandle uses Mountain Time (MST/MDT).', type: 'website', url: 'https://whattime.city/nebraska/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

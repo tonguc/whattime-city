@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in North Carolina right now? NC uses Eastern Standard Time (EST, UTC−5) in winter and Eastern Daylight Time (EDT, UTC−4) during DST. Live Charlotte clock, NC vs world cities.',
   keywords: ['time in north carolina', 'north carolina time now', 'what time is it in north carolina', 'charlotte time', 'raleigh time', 'north carolina time zone', 'EST north carolina', 'eastern time nc', 'nc time vs california', 'nc time vs chicago'],
   alternates: { canonical: 'https://whattime.city/north-carolina/' },
-  openGraph: { title: 'Current Time in North Carolina — EST/EDT (UTC−5/−4)', description: 'Live North Carolina time. EST (UTC−5) in winter, EDT (UTC−4) during DST. Charlotte, Raleigh, Durham, Greensboro on Eastern Time.', type: 'website', url: 'https://whattime.city/north-carolina/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in North Carolina Now — EST/EDT', description: 'Live North Carolina time. EST (UTC−5) in winter, EDT (UTC−4) during DST. Charlotte, Raleigh, Durham, Greensboro on Eastern Time.', type: 'website', url: 'https://whattime.city/north-carolina/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

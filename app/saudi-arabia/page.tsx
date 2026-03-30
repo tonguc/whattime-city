@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Saudi Arabia right now? Saudi Arabia uses Arabia Standard Time (AST, UTC+3) year-round with no Daylight Saving Time. Live Riyadh clock, Saudi Arabia vs world cities, and best time to call.',
   keywords: ['time in saudi arabia', 'saudi arabia time now', 'what time is it in saudi arabia', 'riyadh time', 'jeddah time', 'saudi arabia time zone', 'AST time zone', 'saudi arabia utc+3', 'saudi time vs usa', 'saudi time vs uk', 'saudi time vs india', 'mecca time'],
   alternates: { canonical: 'https://whattime.city/saudi-arabia/' },
-  openGraph: { title: 'Current Time in Saudi Arabia — AST (UTC+3) · No Daylight Saving Time', description: 'Live Saudi Arabia time. AST (UTC+3) used year-round. No DST. Riyadh, Jeddah, Mecca, Medina, Dammam all on the same time.', type: 'website', url: 'https://whattime.city/saudi-arabia/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Saudi Arabia Now — AST (UTC+3)', description: 'Live Saudi Arabia time. AST (UTC+3) used year-round. No DST. Riyadh, Jeddah, Mecca, Medina, Dammam all on the same time.', type: 'website', url: 'https://whattime.city/saudi-arabia/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

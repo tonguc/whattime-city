@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in United States right now? Live Washington D.C. clock, time zone info (EST (UTC-5)), best time to call, and time difference with major cities.',
   keywords: ['time in united states', 'united states time now', 'what time is it in united states', 'washington d.c. time', 'united states time zone'],
   alternates: { canonical: 'https://whattime.city/united-states/' },
-  openGraph: { title: 'Current Time in United States — EST · Washington D.C.', description: 'Live United States time. Washington D.C. on EST (UTC-5).', type: 'website', url: 'https://whattime.city/united-states/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in United States Now — EST (UTC−5)', description: 'Live United States time. Washington D.C. on EST (UTC-5).', type: 'website', url: 'https://whattime.city/united-states/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

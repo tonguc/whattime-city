@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'CST to MST Converter — Central to Mountain',
   description: 'Convert CST to MST instantly. Central Standard Time is 1 hour ahead of Mountain Standard Time. Live clocks, conversion table, and business hours overlap.',
   alternates: { canonical: 'https://whattime.city/cst-to-mst/' },
-  openGraph: { title: 'CST to MST Time Converter — Central to Mountain', description: 'CST is 1 hour ahead of MST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/cst-to-mst/', siteName: 'whattime.city' },
+  openGraph: { title: 'CST to MST — Central to Mountain Time', description: 'CST is 1 hour ahead of MST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/cst-to-mst/', siteName: 'whattime.city' },
   twitter: { card: 'summary_large_image', title: 'CST to MST — Central to Mountain Time', description: 'CST is 1 hour ahead of MST. Live converter and full table.' },
 }
 

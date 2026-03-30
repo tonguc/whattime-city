@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'IST to UTC Converter — India to UTC',
   description: 'Convert IST to UTC instantly. India Standard Time (UTC+5:30) is 5 hours 30 minutes ahead of UTC. Live clocks, full conversion table, and IST offset reference.',
   alternates: { canonical: 'https://whattime.city/ist-to-utc/' },
-  openGraph: { title: 'IST to UTC Converter — India Standard Time to UTC', description: 'IST is 5 hours 30 minutes ahead of UTC. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/ist-to-utc/', siteName: 'whattime.city' },
+  openGraph: { title: 'IST to UTC — India Standard to Universal', description: 'IST is 5 hours 30 minutes ahead of UTC. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/ist-to-utc/', siteName: 'whattime.city' },
   twitter: { card: 'summary_large_image', title: 'IST to UTC — India Standard Time to UTC', description: 'IST is 5:30 ahead of UTC. Live converter.' },
 }
 

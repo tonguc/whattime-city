@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in United Arab Emirates right now? Live Abu Dhabi clock, time zone info (GST (UTC+4)), best time to call, and time difference with major cities.',
   keywords: ['time in united arab emirates', 'united arab emirates time now', 'what time is it in united arab emirates', 'abu dhabi time', 'united arab emirates time zone'],
   alternates: { canonical: 'https://whattime.city/united-arab-emirates/' },
-  openGraph: { title: 'Current Time in United Arab Emirates — GST · Abu Dhabi', description: 'Live United Arab Emirates time. Abu Dhabi on GST (UTC+4).', type: 'website', url: 'https://whattime.city/united-arab-emirates/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in United Arab Emirates — GST (UTC+4)', description: 'Live United Arab Emirates time. Abu Dhabi on GST (UTC+4).', type: 'website', url: 'https://whattime.city/united-arab-emirates/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

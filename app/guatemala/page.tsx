@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Guatemala right now? Live Guatemala City clock, time zone info (CST (UTC-6)), best time to call, and time difference with major cities.',
   keywords: ['time in guatemala', 'guatemala time now', 'what time is it in guatemala', 'guatemala city time', 'guatemala time zone'],
   alternates: { canonical: 'https://whattime.city/guatemala/' },
-  openGraph: { title: 'Current Time in Guatemala — CST · Guatemala City', description: 'Live Guatemala time. Guatemala City on CST (UTC-6).', type: 'website', url: 'https://whattime.city/guatemala/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Guatemala Now — CST (UTC−6)', description: 'Live Guatemala time. Guatemala City on CST (UTC-6).', type: 'website', url: 'https://whattime.city/guatemala/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Arizona right now? Arizona uses Mountain Standard Time (MST, UTC−7) year-round and does NOT observe Daylight Saving Time — except the Navajo Nation. Live Phoenix clock and world comparison.',
   keywords: ['time in arizona', 'arizona time now', 'what time is it in arizona', 'phoenix time', 'arizona time zone', 'MST arizona', 'arizona no daylight saving', 'arizona utc-7', 'arizona time vs california', 'arizona time vs new york', 'navajo nation time zone', 'arizona dst exception'],
   alternates: { canonical: 'https://whattime.city/arizona/' },
-  openGraph: { title: 'Current Time in Arizona — MST (UTC−7) Year-Round · No DST', description: 'Live Arizona time. MST (UTC−7) used all year — Arizona does not observe Daylight Saving Time. Navajo Nation is the exception. Phoenix, Tucson, Scottsdale on permanent MST.', type: 'website', url: 'https://whattime.city/arizona/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Arizona Now — MST (UTC−7) · No DST', description: 'Live Arizona time. MST (UTC−7) used all year — Arizona does not observe Daylight Saving Time. Navajo Nation is the exception. Phoenix, Tucson, Scottsdale on permanent MST.', type: 'website', url: 'https://whattime.city/arizona/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

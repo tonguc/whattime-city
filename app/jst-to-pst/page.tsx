@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Convert JST to PST instantly. Japan Standard Time (UTC+9) is 17 hours ahead of Pacific Standard Time (UTC-8). Live clocks, conversion table, and overlap window.',
   alternates: { canonical: 'https://whattime.city/jst-to-pst/' },
   openGraph: { title: 'JST to PST Converter — Japan to Pacific Time', description: 'JST is 17 hours ahead of PST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/jst-to-pst/', siteName: 'whattime.city' },
-  twitter: { card: 'summary_large_image', title: 'JST to PST — Japan Standard Time to Pacific Time', description: 'JST is 17 hours ahead of PST. Live converter and overlap guide.' },
+  twitter: { card: 'summary_large_image', title: 'JST to PST — Japan Standard to Pacific', description: 'JST is 17 hours ahead of PST. Live converter and overlap guide.' },
 }
 
 const config: TZPairConfig = {

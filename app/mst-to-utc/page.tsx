@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'MST to UTC — Mountain Time to UTC Converter',
   description: 'Convert MST to UTC instantly. Mountain Standard Time (UTC-7) is 7 hours behind UTC. Live clocks, full conversion table, and hourly reference.',
   alternates: { canonical: 'https://whattime.city/mst-to-utc/' },
-  openGraph: { title: 'MST to UTC Converter — Mountain Time to Universal Time', description: 'MST is 7 hours behind UTC. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/mst-to-utc/', siteName: 'whattime.city' },
+  openGraph: { title: 'MST to UTC — Mountain to Universal Time', description: 'MST is 7 hours behind UTC. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/mst-to-utc/', siteName: 'whattime.city' },
   twitter: { card: 'summary_large_image', title: 'MST to UTC — Mountain Time to Universal Time', description: 'MST is 7 hours behind UTC. Live converter and full table.' },
 }
 

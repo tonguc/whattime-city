@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Mauritania right now? Live Nouakchott clock, time zone info (GMT (UTC+0)), best time to call, and time difference with major cities.',
   keywords: ['time in mauritania', 'mauritania time now', 'what time is it in mauritania', 'nouakchott time', 'mauritania time zone'],
   alternates: { canonical: 'https://whattime.city/mauritania/' },
-  openGraph: { title: 'Current Time in Mauritania — GMT · Nouakchott', description: 'Live Mauritania time. Nouakchott on GMT (UTC+0).', type: 'website', url: 'https://whattime.city/mauritania/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Mauritania Now — GMT (UTC+0)', description: 'Live Mauritania time. Nouakchott on GMT (UTC+0).', type: 'website', url: 'https://whattime.city/mauritania/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

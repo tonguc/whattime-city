@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Iran right now? Iran uses IRST (UTC+3:30) in winter and IRDT (UTC+4:30) in summer. A rare half-hour offset with DST. Live Tehran clock and best time to call.',
   keywords: ['time in iran', 'iran time now', 'what time is it in iran', 'tehran time', 'iran time zone', 'IRST IRDT iran', 'iran utc+3:30', 'iran half hour offset', 'iran dst', 'iran time vs uk', 'iran time vs usa', 'iran time vs dubai'],
   alternates: { canonical: 'https://whattime.city/iran/' },
-  openGraph: { title: 'Current Time in Iran — IRST/IRDT · Tehran · UTC+3:30', description: 'Live Iran time. Tehran on IRST (UTC+3:30) in winter, IRDT (UTC+4:30) in summer. One of few countries with a half-hour DST offset.', type: 'website', url: 'https://whattime.city/iran/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Iran Now — IRST (UTC+3:30)', description: 'Live Iran time. Tehran on IRST (UTC+3:30) in winter, IRDT (UTC+4:30) in summer. One of few countries with a half-hour DST offset.', type: 'website', url: 'https://whattime.city/iran/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {

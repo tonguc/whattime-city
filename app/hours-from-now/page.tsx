@@ -3,13 +3,13 @@ import ContentPageWrapper from '@/components/ContentPageWrapper'
 import HoursFromNowClient from './HoursFromNowClient'
 
 export const metadata: Metadata = {
-  title: 'Hours From Now Calculator — What Time Will It Be?',
+  title: 'Hours From Now Calculator — Future Time',
   description: 'Find what time it will be 6, 12, 24, or any number of hours from now. Instant calculator with exact time and date.',
   alternates: {
     canonical: 'https://whattime.city/hours-from-now/',
   },
   openGraph: {
-    title: 'Hours From Now Calculator — What Time Will It Be?',
+    title: 'Hours From Now Calculator — Future Time',
     description: 'Calculate what time it will be any number of hours from now. Shows exact time, AM/PM, and date if the time crosses midnight.',
     type: 'website',
     url: 'https://whattime.city/hours-from-now/',

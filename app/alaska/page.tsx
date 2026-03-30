@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   keywords: ['time in alaska', 'alaska time now', 'what time is it in alaska', 'anchorage time', 'juneau time', 'alaska time zone', 'AKST', 'AKDT', 'alaska utc-9', 'alaska time vs california', 'alaska time vs new york', 'alaska time vs hawaii'],
   alternates: { canonical: 'https://whattime.city/alaska/' },
   openGraph: {
-    title: 'Current Time in Alaska — AKST/AKDT (UTC−9/−8)',
+    title: 'Time in Alaska Now — AKST/AKDT (UTC−9/−8)',
     description: 'Live Alaska time. AKST (UTC−9) in winter, AKDT (UTC−8) during Daylight Saving Time. Anchorage, Juneau, Fairbanks all on Alaska Standard Time.',
     type: 'website', url: 'https://whattime.city/alaska/', siteName: 'whattime.city',
   },

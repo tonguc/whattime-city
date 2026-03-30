@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'What time is it in Burkina Faso right now? Live Ouagadougou clock, time zone info (GMT (UTC+0)), best time to call, and time difference with major cities.',
   keywords: ['time in burkina faso', 'burkina faso time now', 'what time is it in burkina faso', 'ouagadougou time', 'burkina faso time zone'],
   alternates: { canonical: 'https://whattime.city/burkina-faso/' },
-  openGraph: { title: 'Current Time in Burkina Faso — GMT · Ouagadougou', description: 'Live Burkina Faso time. Ouagadougou on GMT (UTC+0).', type: 'website', url: 'https://whattime.city/burkina-faso/', siteName: 'whattime.city' },
+  openGraph: { title: 'Time in Burkina Faso Now — GMT (UTC+0)', description: 'Live Burkina Faso time. Ouagadougou on GMT (UTC+0).', type: 'website', url: 'https://whattime.city/burkina-faso/', siteName: 'whattime.city' },
 }
 
 const faqSchema = {
