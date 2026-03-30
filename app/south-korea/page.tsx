@@ -6,7 +6,7 @@ import SouthKoreaClockClient from './SouthKoreaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in South Korea Now — KST (UTC+9) · No DST',
+  title: 'Time in South Korea Now — KST (UTC+9)',
   description:
     'What time is it in South Korea right now? Korea uses KST (Korea Standard Time, UTC+9) year-round — no Daylight Saving Time. Same offset as Japan (JST). Live Seoul clock and best time to call.',
   keywords: [

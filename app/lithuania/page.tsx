@@ -6,7 +6,7 @@ import LithuaniaClockClient from './LithuaniaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Lithuania Now — EET (UTC+2) · Vilnius',
+  title: 'Time in Lithuania Now — EET (UTC+2)',
   description: 'What time is it in Lithuania right now? Live Vilnius clock, time zone info (EET (UTC+2)), best time to call, and time difference with major cities.',
   keywords: ['time in lithuania', 'lithuania time now', 'what time is it in lithuania', 'vilnius time', 'lithuania time zone'],
   alternates: { canonical: 'https://whattime.city/lithuania/' },

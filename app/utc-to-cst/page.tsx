@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Convert UTC to CST instantly. UTC is 6 hours ahead of Central Standard Time (CST, UTC-6). Live clocks, full conversion table, and hourly reference.',
   alternates: { canonical: 'https://whattime.city/utc-to-cst/' },
   openGraph: {
-    title: 'UTC to CST Converter — Universal to Central Time',
+    title: 'UTC to CST Converter — UTC to Central',
     description: 'UTC is 6 hours ahead of CST. Live clocks and full conversion table.',
     type: 'website',
     url: 'https://whattime.city/utc-to-cst/',

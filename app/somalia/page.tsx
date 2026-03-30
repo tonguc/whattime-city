@@ -6,7 +6,7 @@ import SomaliaClockClient from './SomaliaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Somalia Now — EAT (UTC+3) · Mogadishu',
+  title: 'Time in Somalia Now — EAT (UTC+3)',
   description: 'What time is it in Somalia right now? Live Mogadishu clock, time zone info (EAT (UTC+3)), best time to call, and time difference with major cities.',
   keywords: ['time in somalia', 'somalia time now', 'what time is it in somalia', 'mogadishu time', 'somalia time zone'],
   alternates: { canonical: 'https://whattime.city/somalia/' },

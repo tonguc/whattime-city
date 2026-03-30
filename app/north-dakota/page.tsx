@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import NorthDakotaClockClient from './NorthDakotaClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in North Dakota Now — CST/CDT (UTC−6/−5)',
+  title: 'Time in North Dakota Now — CST/CDT',
   description: 'What time is it in North Dakota right now? Most of North Dakota uses Central Time (CST/CDT). Fargo and Bismarck are on CST (UTC−6) in winter and CDT (UTC−5) in summer.',
   keywords: ['time in north dakota', 'north dakota time now', 'what time is it in north dakota', 'fargo time', 'bismarck north dakota time', 'north dakota time zone', 'CST CDT north dakota', 'north dakota central time', 'north dakota mountain time'],
   alternates: { canonical: 'https://whattime.city/north-dakota/' },

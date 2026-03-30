@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'IST to UTC — India Standard Time to UTC Converter',
+  title: 'IST to UTC Converter — India to UTC',
   description: 'Convert IST to UTC instantly. India Standard Time (UTC+5:30) is 5 hours 30 minutes ahead of UTC. Live clocks, full conversion table, and IST offset reference.',
   alternates: { canonical: 'https://whattime.city/ist-to-utc/' },
   openGraph: { title: 'IST to UTC Converter — India Standard Time to UTC', description: 'IST is 5 hours 30 minutes ahead of UTC. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/ist-to-utc/', siteName: 'whattime.city' },

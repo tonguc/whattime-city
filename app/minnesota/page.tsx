@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import MinnesotaClockClient from './MinnesotaClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Minnesota Now — CST/CDT · Minneapolis',
+  title: 'Time in Minnesota Now — CST/CDT',
   description: 'What time is it in Minnesota right now? Minnesota uses Central Standard Time (CST, UTC−6) in winter and Central Daylight Time (CDT, UTC−5) during Daylight Saving Time. Live Minneapolis clock and world comparison.',
   keywords: ['time in minnesota', 'minnesota time now', 'what time is it in minnesota', 'minneapolis time', 'saint paul time', 'minnesota time zone', 'CST minnesota', 'CDT minnesota', 'central time minnesota', 'minnesota utc-6', 'minnesota time vs new york', 'minnesota time vs california'],
   alternates: { canonical: 'https://whattime.city/minnesota/' },

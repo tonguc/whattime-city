@@ -6,7 +6,7 @@ import MontenegroClockClient from './MontenegroClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Montenegro Now — CET (UTC+1) · Podgorica',
+  title: 'Time in Montenegro Now — CET (UTC+1)',
   description: 'What time is it in Montenegro right now? Live Podgorica clock, time zone info (CET (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in montenegro', 'montenegro time now', 'what time is it in montenegro', 'podgorica time', 'montenegro time zone'],
   alternates: { canonical: 'https://whattime.city/montenegro/' },

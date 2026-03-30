@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'BST to EST Converter — British to Eastern Time',
+  title: 'BST to EST — British to Eastern Time',
   description: 'Convert BST to EST instantly. British Summer Time (UTC+1) is 5 hours ahead of Eastern Standard Time (UTC-5). Live clocks, conversion table, and overlap window.',
   alternates: { canonical: 'https://whattime.city/bst-to-est/' },
   openGraph: { title: 'BST to EST Converter — British Summer Time to Eastern', description: 'BST is 5 hours ahead of EST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/bst-to-est/', siteName: 'whattime.city' },

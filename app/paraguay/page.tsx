@@ -6,7 +6,7 @@ import ParaguayClockClient from './ParaguayClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Paraguay Now — PYT (UTC-4) · Asunción',
+  title: 'Time in Paraguay Now — PYT (UTC−4)',
   description: 'What time is it in Paraguay right now? Live Asunción clock, time zone info (PYT (UTC-4)), best time to call, and time difference with major cities.',
   keywords: ['time in paraguay', 'paraguay time now', 'what time is it in paraguay', 'asunción time', 'paraguay time zone'],
   alternates: { canonical: 'https://whattime.city/paraguay/' },

@@ -6,7 +6,7 @@ import DrCongoClockClient from './DrCongoClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in DR Congo Now — WAT (UTC+1) · Kinshasa',
+  title: 'Time in DR Congo Now — WAT (UTC+1)',
   description: 'What time is it in DR Congo right now? Live Kinshasa clock, time zone info (WAT (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in dr congo', 'dr congo time now', 'what time is it in dr congo', 'kinshasa time', 'dr congo time zone'],
   alternates: { canonical: 'https://whattime.city/dr-congo/' },

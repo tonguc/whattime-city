@@ -225,6 +225,8 @@ export default async function sitemap() {
     { slug: 'event-time', priority: 0.7 },
     { slug: 'world-alarm', priority: 0.7 },
     { slug: 'days-from-today', priority: 0.8 },
+    { slug: 'days-ago', priority: 0.8 },
+    { slug: 'stopwatch', priority: 0.9 },
     { slug: 'date-calculator', priority: 0.8 },
     { slug: 'countdown', priority: 0.8 },
     { slug: 'timer', priority: 0.9 },
@@ -279,6 +281,9 @@ export default async function sitemap() {
     'how-many-days-in-a-year',
     'am-pm',
     'how-many-minutes-in-a-year',
+    'how-many-hours-in-a-year',
+    'how-many-seconds-in-a-year',
+    'how-many-months-in-a-year',
   ].map(slug => ({
     url: `${baseUrl}/articles/${slug}/`,
     lastModified: now,
@@ -292,6 +297,21 @@ export default async function sitemap() {
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }]
+
+  // Days-from-today and days-ago individual pages (pre-generated)
+  const daysPregenerated = [7, 8, 10, 14, 15, 17, 20, 22, 25, 29, 30, 42, 45, 60, 90, 100, 120, 150, 180, 365]
+  const daysFromTodayRoutes = daysPregenerated.map(d => ({
+    url: `${baseUrl}/days-from-today/${d}/`,
+    lastModified: now,
+    changeFrequency: 'daily' as const,
+    priority: 0.7,
+  }))
+  const daysAgoRoutes = daysPregenerated.map(d => ({
+    url: `${baseUrl}/days-ago/${d}/`,
+    lastModified: now,
+    changeFrequency: 'daily' as const,
+    priority: 0.7,
+  }))
 
   // Sunrise/sunset hub
   const sunriseRoutes = [{
@@ -410,6 +430,8 @@ export default async function sitemap() {
     ...areaCodeRoutes,
     ...articlesHubRoute,
     ...articleRoutes,
+    ...daysFromTodayRoutes,
+    ...daysAgoRoutes,
     ...sunriseRoutes,
     ...tier1SunRoutes,
     ...guideRoutes,

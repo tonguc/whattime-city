@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'BST to PST Converter — British to Pacific Time',
+  title: 'BST to PST — British to Pacific Time',
   description: 'Convert BST to PST instantly. British Summer Time (UTC+1) is 8 hours ahead of Pacific Standard Time (UTC-8). Live clocks, conversion table, and overlap window.',
   alternates: { canonical: 'https://whattime.city/bst-to-pst/' },
   openGraph: { title: 'BST to PST Converter — British Summer Time to Pacific', description: 'BST is 8 hours ahead of PST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/bst-to-pst/', siteName: 'whattime.city' },

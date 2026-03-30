@@ -5,7 +5,7 @@ import HubPageLayout from '@/components/HubPageLayout'
 import TZExplainerClient from '@/components/TZExplainerClient'
 
 export const metadata: Metadata = {
-  title: 'PST — Current Pacific Standard Time Now | UTC-8',
+  title: 'PST — Pacific Standard Time | UTC−8',
   description: 'What time is it in PST right now? Pacific Standard Time (PST) is UTC-8, used by the US West Coast in winter. Includes live clock, PST vs PDT difference, and major cities.',
   keywords: ['PST', 'pacific standard time', 'PST time now', 'PST now', 'what time is it in PST', 'UTC-8', 'pacific time now'],
   alternates: { canonical: 'https://whattime.city/pst/' },

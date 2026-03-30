@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Convert UTC to EST instantly. UTC is 5 hours ahead of Eastern Standard Time (EST, UTC-5). Live clocks, full conversion table, and hourly reference.',
   alternates: { canonical: 'https://whattime.city/utc-to-est/' },
   openGraph: {
-    title: 'UTC to EST Converter — Universal to Eastern Time',
+    title: 'UTC to EST Converter — UTC to Eastern',
     description: 'UTC is 5 hours ahead of EST. Live clocks and full conversion table.',
     type: 'website',
     url: 'https://whattime.city/utc-to-est/',

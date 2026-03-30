@@ -6,7 +6,7 @@ import RomaniaClockClient from './RomaniaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Romania Now — EET (UTC+2) · Bucharest',
+  title: 'Time in Romania Now — EET (UTC+2)',
   description: 'What time is it in Romania right now? Live Bucharest clock, time zone info (EET (UTC+2)), best time to call, and time difference with major cities.',
   keywords: ['time in romania', 'romania time now', 'what time is it in romania', 'bucharest time', 'romania time zone'],
   alternates: { canonical: 'https://whattime.city/romania/' },

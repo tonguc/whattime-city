@@ -6,7 +6,7 @@ import ChileClockClient from './ChileClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Chile Now — CLT (UTC−4) / CLST (UTC−3)',
+  title: 'Time in Chile Now — CLT/CLST (UTC−4/−3)',
   description: 'What time is it in Chile right now? Chile uses CLT (UTC−4) in winter and CLST (UTC−3) in summer. DST runs Oct–Apr (Southern Hemisphere). Easter Island is 2 hours behind. Live Santiago clock.',
   keywords: ['time in chile', 'chile time now', 'what time is it in chile', 'santiago time', 'chile time zone', 'CLT CLST chile', 'chile dst', 'chile southern hemisphere dst', 'easter island time', 'valparaiso time', 'chile time vs uk', 'chile time vs usa'],
   alternates: { canonical: 'https://whattime.city/chile/' },

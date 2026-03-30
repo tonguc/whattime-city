@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/vietnam/' },
   openGraph: {
-    title: 'Current Time in Vietnam — ICT (UTC+7) · No DST',
+    title: 'Current Time in Vietnam — ICT (UTC+7)',
     description: 'Live Vietnam time. Indochina Time (ICT, UTC+7) used year-round. No DST. Ho Chi Minh City, Hanoi, Da Nang all on the same time.',
     type: 'website', url: 'https://whattime.city/vietnam/', siteName: 'whattime.city',
   },

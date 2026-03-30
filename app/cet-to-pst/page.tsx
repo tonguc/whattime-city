@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Convert CET to PST instantly. Central European Time (UTC+1) is 9 hours ahead of Pacific Standard Time (UTC-8). Live clocks, conversion table, and overlap window.',
   alternates: { canonical: 'https://whattime.city/cet-to-pst/' },
   openGraph: {
-    title: 'CET to PST Converter — Central European to Pacific Time',
+    title: 'CET to PST Converter — Europe to Pacific',
     description: 'CET is 9 hours ahead of PST. Live clocks and full conversion table.',
     type: 'website',
     url: 'https://whattime.city/cet-to-pst/',

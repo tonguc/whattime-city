@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/illinois/' },
   openGraph: {
-    title: 'Current Time in Illinois — CST/CDT (UTC−6/−5)',
+    title: 'Current Time in Illinois — CST/CDT',
     description: 'Live Illinois time. CST (UTC−6) in winter, CDT (UTC−5) during Daylight Saving Time. Chicago, Springfield, Rockford all on Central Time.',
     type: 'website', url: 'https://whattime.city/illinois/', siteName: 'whattime.city',
   },

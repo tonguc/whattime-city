@@ -3,13 +3,13 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'GMT to EST — Greenwich to Eastern Time Converter',
+  title: 'GMT to EST Converter — Greenwich to Eastern',
   description: 'Convert GMT to EST instantly. GMT is 5 hours ahead of EST (4 hours during EDT). Live clocks, conversion table, and best times to schedule US–UK calls.',
   alternates: {
     canonical: 'https://whattime.city/gmt-to-est',
   },
   openGraph: {
-    title: 'GMT to EST Time Converter — Greenwich to Eastern',
+    title: 'GMT to EST — Greenwich to Eastern Time',
     description: 'GMT is 5 hours ahead of EST (4 hours during BST/EDT). Live clocks and full conversion table.',
     type: 'website',
     url: 'https://whattime.city/gmt-to-est',

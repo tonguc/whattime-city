@@ -5,7 +5,7 @@ import HubPageLayout from '@/components/HubPageLayout'
 import TZExplainerClient from '@/components/TZExplainerClient'
 
 export const metadata: Metadata = {
-  title: 'CST — Current Central Standard Time Now | UTC-6',
+  title: 'CST — Central Standard Time | UTC−6',
   description: 'What time is it in CST right now? Central Standard Time (CST) is UTC-6, used by the US Midwest and South in winter. Includes live clock, CST vs CDT difference, and major cities.',
   keywords: ['CST', 'central standard time', 'CST time now', 'CST now', 'what time is it in CST', 'UTC-6', 'central time now'],
   alternates: { canonical: 'https://whattime.city/cst/' },

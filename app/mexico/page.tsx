@@ -6,7 +6,7 @@ import MexicoClockClient from './MexicoClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Mexico Now — CST (UTC−6) · Mexico City',
+  title: 'Time in Mexico Now — CST (UTC−6)',
   description:
     'What time is it in Mexico right now? Mexico City uses CST (UTC−6) with no DST since 2023. Mexico has 4 time zones. Live CDMX clock, all Mexican zones, and best time to call.',
   keywords: [

@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import NewYorkStateClockClient from './NewYorkStateClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in New York State Now — EST/EDT (UTC−5/−4)',
+  title: 'Time in New York State Now — EST/EDT',
   description:
     'What time is it in New York right now? New York uses EST (UTC−5) in winter and EDT (UTC−4) during Daylight Saving Time. Live New York clock, NY vs world cities, and best time to call.',
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/new-york-state/' },
   openGraph: {
-    title: 'Current Time in New York — EST/EDT (UTC−5/−4)',
+    title: 'Current Time in New York — EST/EDT',
     description: 'Live New York time. EST (UTC−5) in winter, EDT (UTC−4) during DST. NYC, Buffalo, Albany, Rochester all on Eastern Time.',
     type: 'website', url: 'https://whattime.city/new-york-state/', siteName: 'whattime.city',
   },

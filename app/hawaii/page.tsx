@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/hawaii/' },
   openGraph: {
-    title: 'Current Time in Hawaii — HST (UTC-10) · No DST',
+    title: 'Current Time in Hawaii — HST (UTC−10)',
     description: 'Live Hawaii time. HST (UTC-10) used all year — Hawaii does not observe Daylight Saving Time. Honolulu, Hilo, and all of Hawaii on permanent UTC-10.',
     type: 'website',
     url: 'https://whattime.city/hawaii/',

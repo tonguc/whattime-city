@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     canonical: 'https://whattime.city/philippines/',
   },
   openGraph: {
-    title: 'Current Time in the Philippines — PHT (UTC+8)',
+    title: 'Current Time in the Philippines — PHT',
     description:
       'Live Philippines / Manila time clock. PHT is UTC+8 — the Philippines has no Daylight Saving Time. Check Philippines time vs US, UK, Europe, and Asia.',
     type: 'website',

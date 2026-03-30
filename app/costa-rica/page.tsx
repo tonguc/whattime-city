@@ -6,7 +6,7 @@ import CostaRicaClockClient from './CostaRicaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Costa Rica Now — CST (UTC-6) · San José',
+  title: 'Time in Costa Rica Now — CST (UTC−6)',
   description: 'What time is it in Costa Rica right now? Live San José clock, time zone info (CST (UTC-6)), best time to call, and time difference with major cities.',
   keywords: ['time in costa rica', 'costa rica time now', 'what time is it in costa rica', 'san josé time', 'costa rica time zone'],
   alternates: { canonical: 'https://whattime.city/costa-rica/' },

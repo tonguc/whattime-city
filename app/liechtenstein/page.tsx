@@ -6,7 +6,7 @@ import LiechtensteinClockClient from './LiechtensteinClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Liechtenstein Now — CET (UTC+1) · Vaduz',
+  title: 'Time in Liechtenstein Now — CET (UTC+1)',
   description: 'What time is it in Liechtenstein right now? Live Vaduz clock, time zone info (CET (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in liechtenstein', 'liechtenstein time now', 'what time is it in liechtenstein', 'vaduz time', 'liechtenstein time zone'],
   alternates: { canonical: 'https://whattime.city/liechtenstein/' },

@@ -358,10 +358,37 @@ Tema context'ini sağlar. Server component olabilir.
 
 ---
 
+### 33. Title Length Mass Fix + Atlanta/Nairobi AI SEO ✅ (Mart 2026)
+
+**Sorun:** 100+ static page.tsx dosyasında `metadata.title` > 60 char toplam (template +16 dahil).
+**Fix:** Tüm >70 total char olan sayfalar düzeltildi. 0 sayfa >70 total kaldı.
+- New Zealand: 89→44 chars, Michigan: 87→40, Arizona: 80→52, Virginia: 78→41
+- Florida: 64→40 chars (AI SEO first sentence da eklendi)
+- Converter pages: BST→, JST→, AEST→, CET→ series — hepsi kısaltıldı
+- Country pages: Spain, Chile, Canada, South Africa, Poland, Iran, Greece, Netherlands, Ukraine, Pennsylvania, Russia, UK, Turkey, Ohio, Georgia State, Portugal, Australia, Argentina
+
+**Atlanta SEO JSON (`data/seo/atlanta-seo.json`):**
+- AI SEO first sentence eklendi: "Atlanta, Georgia, USA uses Eastern Standard Time (EST, UTC-5)..."
+- Duplicate root-level @context/mainEntity temizlendi
+- IANA identifier eklendi: America/New_York
+
+**Nairobi SEO JSON (`data/seo/nairobi-seo.json`):**
+- AI SEO first sentence eklendi: "Nairobi, Kenya uses East Africa Time (EAT, UTC+3) year-round..."
+- IANA identifier eklendi: Africa/Nairobi
+
+**8 SEO JSON seo_title >44 char fix:**
+- sydney, paris, karachi, indianapolis, louisville, bali, new-york, cornwall
+
+### 34. Sitemap Güncellemesi ✅ (Mart 2026)
+- `/stopwatch/` eklendi (0.9 priority)
+- `/days-ago/` eklendi (0.8)
+- `/days-from-today/[d]/` × 20 sayfa eklendi (0.7, daily)
+- `/days-ago/[d]/` × 20 sayfa eklendi (0.7, daily)
+- `how-many-hours-in-a-year`, `how-many-seconds-in-a-year`, `how-many-months-in-a-year` articles eklendi
+
+---
+
 ## Git Workflow
-- Feature branch: `claude/review-seo-analysis-sBM2v`
+- Feature branch: `claude/plan-next-actions-ONJ8y`
 - Squash merge to main
-- Her squash merge sonrası branch'i senkronize et:
-  ```bash
-  git fetch origin main && git reset --hard origin/main && git push --force-with-lease origin claude/review-seo-analysis-sBM2v
-  ```
+- Yeni oturumda yeni branch aç: `claude/[konu]-[id]`

@@ -6,7 +6,7 @@ import KiribatiClockClient from './KiribatiClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Kiribati Now — GILT (UTC+12) · Tarawa',
+  title: 'Time in Kiribati Now — GILT (UTC+12)',
   description: 'What time is it in Kiribati right now? Live Tarawa clock, time zone info (GILT (UTC+12)), best time to call, and time difference with major cities.',
   keywords: ['time in kiribati', 'kiribati time now', 'what time is it in kiribati', 'tarawa time', 'kiribati time zone'],
   alternates: { canonical: 'https://whattime.city/kiribati/' },

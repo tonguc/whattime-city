@@ -6,7 +6,7 @@ import SlovakiaClockClient from './SlovakiaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Slovakia Now — CET (UTC+1) · Bratislava',
+  title: 'Time in Slovakia Now — CET (UTC+1)',
   description: 'What time is it in Slovakia right now? Live Bratislava clock, time zone info (CET (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in slovakia', 'slovakia time now', 'what time is it in slovakia', 'bratislava time', 'slovakia time zone'],
   alternates: { canonical: 'https://whattime.city/slovakia/' },

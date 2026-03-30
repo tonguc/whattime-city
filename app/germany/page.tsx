@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     canonical: 'https://whattime.city/germany/',
   },
   openGraph: {
-    title: 'Current Time in Germany — CET/CEST (UTC+1/+2)',
+    title: 'Current Time in Germany — CET/CEST',
     description:
       'Live Germany / Berlin time clock. CET is UTC+1 in winter; CEST is UTC+2 during Central European Summer Time. Check Germany time vs US, UK, and Asia.',
     type: 'website',

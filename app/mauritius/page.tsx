@@ -6,7 +6,7 @@ import MauritiusClockClient from './MauritiusClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Mauritius Now — MUT (UTC+4) · Port Louis',
+  title: 'Time in Mauritius Now — MUT (UTC+4)',
   description: 'What time is it in Mauritius right now? Live Port Louis clock, time zone info (MUT (UTC+4)), best time to call, and time difference with major cities.',
   keywords: ['time in mauritius', 'mauritius time now', 'what time is it in mauritius', 'port louis time', 'mauritius time zone'],
   alternates: { canonical: 'https://whattime.city/mauritius/' },

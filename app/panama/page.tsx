@@ -6,7 +6,7 @@ import PanamaClockClient from './PanamaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Panama Now — EST (UTC-5) · Panama City',
+  title: 'Time in Panama Now — EST (UTC−5)',
   description: 'What time is it in Panama right now? Live Panama City clock, time zone info (EST (UTC-5)), best time to call, and time difference with major cities.',
   keywords: ['time in panama', 'panama time now', 'what time is it in panama', 'panama city time', 'panama time zone'],
   alternates: { canonical: 'https://whattime.city/panama/' },

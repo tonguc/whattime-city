@@ -6,7 +6,7 @@ import NetherlandsClockClient from './NetherlandsClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Netherlands Now — CET/CEST (UTC+1/+2)',
+  title: 'Time in Netherlands Now — CET/CEST',
   description:
     'What time is it in the Netherlands right now? The Netherlands uses Central European Time (CET, UTC+1) in winter and Central European Summer Time (CEST, UTC+2) during Daylight Saving Time. Live Amsterdam clock, Netherlands vs world cities.',
   keywords: [

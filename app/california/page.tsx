@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     canonical: 'https://whattime.city/california/',
   },
   openGraph: {
-    title: 'Current Time in California — PST/PDT (UTC−8/−7)',
+    title: 'Current Time in California — PST/PDT',
     description:
       'Live California time clock. PST is UTC−8 in winter; PDT is UTC−7 during Daylight Saving Time. Check California time vs New York, London, Europe, and Asia.',
     type: 'website',

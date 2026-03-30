@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     canonical: 'https://whattime.city/prayer-times/',
   },
   openGraph: {
-    title: 'Prayer Times Today — Salah Times for Any City',
+    title: 'Prayer Times — Salah Times for Any City',
     description: 'Accurate Islamic prayer times for any city. Fajr, Dhuhr, Asr, Maghrib, Isha with multiple calculation methods.',
     type: 'website',
     url: 'https://whattime.city/prayer-times/',

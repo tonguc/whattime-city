@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     canonical: 'https://whattime.city/days-from-today/',
   },
   openGraph: {
-    title: 'Days From Today Calculator — Find Any Date X Days Away',
+    title: 'Days From Today Calculator — Any Future Date',
     description: 'Instantly calculate what date is X days from today or X days ago. Includes day name, week number, and how many weeks and months away.',
     type: 'website',
     url: 'https://whattime.city/days-from-today/',

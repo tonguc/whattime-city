@@ -3,7 +3,7 @@ import ContentPageWrapper from '@/components/ContentPageWrapper'
 import MilitaryTimePageClient from './MilitaryTimePageClient'
 
 export const metadata: Metadata = {
-  title: 'Military Time — Convert 24-Hour to 12-Hour Clock',
+  title: 'Military Time — 24-Hour to 12-Hour Clock',
   description: 'Convert military time to standard time instantly. Full military time chart (0000–2359), how to read military time, and a live clock showing both formats.',
   alternates: {
     canonical: 'https://whattime.city/military-time/',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Military Time — 24-Hour Clock Converter & Chart',
+    title: 'Military Time — 24-Hour Clock Converter',
     description: 'Convert military time to standard time. Full 0000–2359 chart.',
   },
 }

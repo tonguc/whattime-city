@@ -6,7 +6,7 @@ import HongKongClockClient from './HongKongClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Hong Kong Now — HKT (UTC+8) · Hong Kong',
+  title: 'Time in Hong Kong Now — HKT (UTC+8)',
   description: 'What time is it in Hong Kong right now? Live Hong Kong clock, time zone info (HKT (UTC+8)), best time to call, and time difference with major cities.',
   keywords: ['time in hong kong', 'hong kong time now', 'what time is it in hong kong', 'hong kong time', 'hong kong time zone'],
   alternates: { canonical: 'https://whattime.city/hong-kong/' },

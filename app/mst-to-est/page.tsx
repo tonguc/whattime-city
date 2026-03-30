@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'MST is 2 hours behind EST. Convert Mountain Standard Time to Eastern — live clocks, full table, and answers to "Is Mountain Time 2 hours behind EST?", "What is 10am MST in EST?" and "What is 4pm EST in Mountain Time?"',
   alternates: { canonical: 'https://whattime.city/mst-to-est/' },
   openGraph: {
-    title: 'MST to EST Converter — 2 Hours Behind Eastern',
+    title: 'MST to EST — 2 Hours Behind Eastern',
     description: 'Convert MST to EST. Mountain Time is always 2 hours behind Eastern Time. Live clocks and full conversion table.',
     type: 'website',
     url: 'https://whattime.city/mst-to-est/',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MST to EST — Mountain is 2 Hours Behind Eastern',
+    title: 'MST to EST — 2 Hours Behind Eastern',
     description: 'MST is 2 hours behind EST. Live converter, full table, and common time conversions.',
   },
 }

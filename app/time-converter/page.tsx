@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     canonical: 'https://whattime.city/time-converter/',
   },
   openGraph: {
-    title: 'Time Zone Converter — Free, Instant, 400+ Cities',
+    title: 'Time Zone Converter — 400+ Cities',
     description: 'Convert time between any two cities in seconds. Automatically adjusts for Daylight Saving Time.',
     type: 'website',
     url: 'https://whattime.city/time-converter/',

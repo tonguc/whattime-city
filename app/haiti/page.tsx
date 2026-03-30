@@ -6,7 +6,7 @@ import HaitiClockClient from './HaitiClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Haiti Now — EST (UTC-5) · Port-au-Prince',
+  title: 'Time in Haiti Now — EST (UTC−5)',
   description: 'What time is it in Haiti right now? Live Port-au-Prince clock, time zone info (EST (UTC-5)), best time to call, and time difference with major cities.',
   keywords: ['time in haiti', 'haiti time now', 'what time is it in haiti', 'port-au-prince time', 'haiti time zone'],
   alternates: { canonical: 'https://whattime.city/haiti/' },

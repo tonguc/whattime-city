@@ -6,7 +6,7 @@ import VanuatuClockClient from './VanuatuClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Vanuatu Now — VUT (UTC+11) · Port Vila',
+  title: 'Time in Vanuatu Now — VUT (UTC+11)',
   description: 'What time is it in Vanuatu right now? Live Port Vila clock, time zone info (VUT (UTC+11)), best time to call, and time difference with major cities.',
   keywords: ['time in vanuatu', 'vanuatu time now', 'what time is it in vanuatu', 'port vila time', 'vanuatu time zone'],
   alternates: { canonical: 'https://whattime.city/vanuatu/' },

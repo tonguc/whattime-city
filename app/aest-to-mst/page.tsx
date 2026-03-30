@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'AEST to MST Converter — Australia to Mountain',
+  title: 'AEST to MST Converter — Australia to MST',
   description: 'Convert AEST to MST instantly. Australian Eastern Standard Time (UTC+10) is 17 hours ahead of Mountain Standard Time (UTC-7). Live clocks, Sydney–Denver scheduling guide.',
   alternates: { canonical: 'https://whattime.city/aest-to-mst/' },
   openGraph: { title: 'AEST to MST Converter — Australia to Mountain Time', description: 'AEST is 17 hours ahead of MST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/aest-to-mst/', siteName: 'whattime.city' },

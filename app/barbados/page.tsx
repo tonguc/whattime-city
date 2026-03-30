@@ -6,7 +6,7 @@ import BarbadosClockClient from './BarbadosClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Barbados Now — AST (UTC-4) · Bridgetown',
+  title: 'Time in Barbados Now — AST (UTC−4)',
   description: 'What time is it in Barbados right now? Live Bridgetown clock, time zone info (AST (UTC-4)), best time to call, and time difference with major cities.',
   keywords: ['time in barbados', 'barbados time now', 'what time is it in barbados', 'bridgetown time', 'barbados time zone'],
   alternates: { canonical: 'https://whattime.city/barbados/' },

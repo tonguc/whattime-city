@@ -6,7 +6,7 @@ import MauritaniaClockClient from './MauritaniaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Mauritania Now — GMT (UTC+0) · Nouakchott',
+  title: 'Time in Mauritania Now — GMT (UTC+0)',
   description: 'What time is it in Mauritania right now? Live Nouakchott clock, time zone info (GMT (UTC+0)), best time to call, and time difference with major cities.',
   keywords: ['time in mauritania', 'mauritania time now', 'what time is it in mauritania', 'nouakchott time', 'mauritania time zone'],
   alternates: { canonical: 'https://whattime.city/mauritania/' },

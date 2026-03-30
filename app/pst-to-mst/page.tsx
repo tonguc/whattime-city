@@ -3,11 +3,11 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'PST to MST — Pacific to Mountain Time Converter',
+  title: 'PST to MST Converter — Pacific to Mountain',
   description: 'Convert PST to MST instantly. Pacific Standard Time is 1 hour behind Mountain Standard Time. Live clocks, conversion table, and business hours overlap.',
   alternates: { canonical: 'https://whattime.city/pst-to-mst/' },
   openGraph: {
-    title: 'PST to MST Time Converter — Pacific to Mountain',
+    title: 'PST to MST — Pacific to Mountain Time',
     description: 'PST is 1 hour behind MST. Live clocks and full conversion table.',
     type: 'website',
     url: 'https://whattime.city/pst-to-mst/',

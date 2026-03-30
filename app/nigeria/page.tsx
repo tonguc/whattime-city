@@ -6,7 +6,7 @@ import NigeriaClockClient from './NigeriaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Nigeria Now — WAT (UTC+1) · Lagos, Abuja',
+  title: 'Time in Nigeria Now — WAT (UTC+1)',
   description:
     'What time is it in Nigeria right now? Nigeria uses WAT (West Africa Time, UTC+1) year-round — no Daylight Saving Time. Live Lagos clock, Nigeria vs US/UK/Europe, and best time to call.',
   keywords: [

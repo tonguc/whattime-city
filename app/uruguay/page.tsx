@@ -6,7 +6,7 @@ import UruguayClockClient from './UruguayClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Uruguay Now — UYT (UTC-3) · Montevideo',
+  title: 'Time in Uruguay Now — UYT (UTC−3)',
   description: 'What time is it in Uruguay right now? Live Montevideo clock, time zone info (UYT (UTC-3)), best time to call, and time difference with major cities.',
   keywords: ['time in uruguay', 'uruguay time now', 'what time is it in uruguay', 'montevideo time', 'uruguay time zone'],
   alternates: { canonical: 'https://whattime.city/uruguay/' },

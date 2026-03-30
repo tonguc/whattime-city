@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Free online timer and stopwatch. Set a countdown for 1, 5, 10, 25, or 60 minutes — or any custom time. Alarm sounds when done. Stopwatch with lap times. No download needed.',
   alternates: { canonical: 'https://whattime.city/timer/' },
   openGraph: {
-    title: 'Online Timer & Stopwatch — Free Countdown Timer',
+    title: 'Online Timer & Stopwatch — Free',
     description: 'Countdown timer with alarm + stopwatch with laps. Preset durations for Pomodoro, cooking, exercise. Works in your browser.',
     type: 'website',
     url: 'https://whattime.city/timer/',

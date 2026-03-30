@@ -3,7 +3,7 @@ import ContentPageWrapper from '@/components/ContentPageWrapper'
 import CountdownClient from './CountdownClient'
 
 export const metadata: Metadata = {
-  title: 'Countdown Timer — Count Down to Any Date or Event',
+  title: 'Countdown Timer — Count Down to Any Event',
   description: 'Free online countdown timer to any date. Count down to New Year, holidays, birthdays, deadlines, or any custom event. See days, hours, minutes, and seconds remaining.',
   alternates: {
     canonical: 'https://whattime.city/countdown/',

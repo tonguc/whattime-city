@@ -6,7 +6,7 @@ import MicronesiaClockClient from './MicronesiaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Micronesia Now — CHUT (UTC+10) · Palikir',
+  title: 'Time in Micronesia Now — CHUT (UTC+10)',
   description: 'What time is it in Micronesia right now? Live Palikir clock, time zone info (CHUT (UTC+10)), best time to call, and time difference with major cities.',
   keywords: ['time in micronesia', 'micronesia time now', 'what time is it in micronesia', 'palikir time', 'micronesia time zone'],
   alternates: { canonical: 'https://whattime.city/micronesia/' },

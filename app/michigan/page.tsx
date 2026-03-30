@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/michigan/' },
   openGraph: {
-    title: 'Current Time in Michigan — EST/EDT (UTC−5/−4)',
+    title: 'Current Time in Michigan — EST/EDT',
     description: 'Live Michigan time. Most of Michigan uses EST/EDT (Eastern Time). Four western Upper Peninsula counties use CST/CDT (Central Time). Detroit, Grand Rapids, Lansing on Eastern Time.',
     type: 'website', url: 'https://whattime.city/michigan/', siteName: 'whattime.city',
   },

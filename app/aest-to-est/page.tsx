@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Convert AEST to EST instantly. Australian Eastern Standard Time is 15 hours ahead of US EST (16h during AEDT). Live clocks, Sydney–New York call scheduling.',
   alternates: { canonical: 'https://whattime.city/aest-to-est' },
   openGraph: {
-    title: 'AEST to EST — Australia Eastern to US Eastern Time',
+    title: 'AEST to EST Converter — Australia to Eastern',
     description: 'Convert AEST to EST instantly. Australian Eastern Standard Time is 15 hours ahead of US EST (16h during AEDT). Live clocks, Sydney–New York call scheduling.',
     type: 'website',
     url: 'https://whattime.city/aest-to-est',
