@@ -1,0 +1,96 @@
+{
+  "seo_title": "Current Time in Honolulu — HST (UTC-10)",
+  "seo_description": "Current time in Honolulu, Hawaii — live Hawaii Standard Time (HST, UTC-10) clock, no DST, and time differences with Los Angeles, New York, and world cities.",
+  "faq": [
+    {
+      "question": "What time is it in Honolulu right now?",
+      "answer": "Honolulu, Hawaii, USA uses Hawaii Standard Time (HST, UTC-10) year-round. Hawaii does not observe Daylight Saving Time. Honolulu is the most time-isolated of all US state capitals — it is the only US state that never changes its clocks. The IANA timezone identifier is Pacific/Honolulu."
+    },
+    {
+      "question": "What time zone is Honolulu in?",
+      "answer": "Honolulu is in the Hawaii Standard Time zone (HST, UTC-10). Hawaii is exempt from the Uniform Time Act, allowing it to opt out of DST permanently. The IANA identifier is Pacific/Honolulu. Note: the neighboring Aleutian Islands of Alaska use a different timezone (America/Adak, UTC-10/-9 with DST), but Honolulu stays fixed at UTC-10."
+    },
+    {
+      "question": "Does Honolulu observe daylight saving time?",
+      "answer": "No. Hawaii does not observe Daylight Saving Time. Honolulu remains on HST (UTC-10) year-round. Hawaii was exempted from the federal DST requirement in the Uniform Time Act of 1966. This means when mainland US states change clocks in March and November, Honolulu's relative offset shifts — it is farther behind the mainland in summer than in winter."
+    },
+    {
+      "question": "What is the time difference between Honolulu and Los Angeles?",
+      "answer": "Honolulu (HST, UTC-10) is 2 hours behind Los Angeles (PST, UTC-8) in winter. During US Daylight Saving Time (PDT, UTC-7), Honolulu is 3 hours behind Los Angeles. The gap is 2 hours in winter and 3 hours in summer (when LA observes PDT)."
+    },
+    {
+      "question": "What is the time difference between Honolulu and New York?",
+      "answer": "Honolulu (HST, UTC-10) is 5 hours behind New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Honolulu is 6 hours behind New York. The gap widens in summer because Hawaii doesn't observe DST."
+    },
+    {
+      "question": "What is the time difference between Honolulu and London?",
+      "answer": "Honolulu (HST, UTC-10) is 10 hours behind London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Honolulu is 11 hours behind London. Since Honolulu has no DST, the gap changes only when London transitions its clocks."
+    },
+    {
+      "question": "What are typical business hours in Honolulu?",
+      "answer": "Standard business hours in Honolulu are 8:00 AM to 5:00 PM HST, Monday through Friday. Honolulu is Hawaii's capital and the state's economic and population center. Major industries include tourism (Waikiki Beach, Pearl Harbor), military (Joint Base Pearl Harbor-Hickam), and the University of Hawaii. The Pacific Stock Exchange (merged with NYSE Arca) used to operate in the Pacific time zone. Many mainland US firms with Hawaii operations start early to overlap with East Coast hours."
+    }
+  ],
+  "faq_schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What time is it in Honolulu right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Honolulu, Hawaii, USA uses Hawaii Standard Time (HST, UTC-10) year-round. Hawaii does not observe Daylight Saving Time. Honolulu is the most time-isolated of all US state capitals — it is the only US state that never changes its clocks. The IANA timezone identifier is Pacific/Honolulu."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time zone is Honolulu in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Honolulu is in the Hawaii Standard Time zone (HST, UTC-10). Hawaii is exempt from the Uniform Time Act, allowing it to opt out of DST permanently. The IANA identifier is Pacific/Honolulu. Note: the neighboring Aleutian Islands of Alaska use a different timezone (America/Adak, UTC-10/-9 with DST), but Honolulu stays fixed at UTC-10."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Honolulu observe daylight saving time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Hawaii does not observe Daylight Saving Time. Honolulu remains on HST (UTC-10) year-round. Hawaii was exempted from the federal DST requirement in the Uniform Time Act of 1966. This means when mainland US states change clocks in March and November, Honolulu's relative offset shifts — it is farther behind the mainland in summer than in winter."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Honolulu and Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Honolulu (HST, UTC-10) is 2 hours behind Los Angeles (PST, UTC-8) in winter. During US Daylight Saving Time (PDT, UTC-7), Honolulu is 3 hours behind Los Angeles. The gap is 2 hours in winter and 3 hours in summer (when LA observes PDT)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Honolulu and New York?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Honolulu (HST, UTC-10) is 5 hours behind New York (EST, UTC-5) in winter. During US Daylight Saving Time (EDT, UTC-4), Honolulu is 6 hours behind New York. The gap widens in summer because Hawaii doesn't observe DST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between Honolulu and London?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Honolulu (HST, UTC-10) is 10 hours behind London (GMT, UTC+0) in winter. During UK summer (BST, UTC+1), Honolulu is 11 hours behind London. Since Honolulu has no DST, the gap changes only when London transitions its clocks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical business hours in Honolulu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard business hours in Honolulu are 8:00 AM to 5:00 PM HST, Monday through Friday. Honolulu is Hawaii's capital and the state's economic and population center. Major industries include tourism (Waikiki Beach, Pearl Harbor), military (Joint Base Pearl Harbor-Hickam), and the University of Hawaii. Many mainland US firms with Hawaii operations start early to overlap with East Coast hours."
+        }
+      }
+    ]
+  }
+}
