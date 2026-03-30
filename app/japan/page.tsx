@@ -6,7 +6,7 @@ import JapanClockClient from './JapanClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Japan Now — JST (UTC+9) · Tokyo, Osaka, Kyoto',
+  title: 'Time in Japan Now — JST (UTC+9) · Tokyo',
   description:
     'What time is it in Japan right now? Japan uses JST (Japan Standard Time, UTC+9) year-round — no Daylight Saving Time. Live Tokyo clock, Japan vs US/UK/Europe, and best time to call.',
   keywords: [

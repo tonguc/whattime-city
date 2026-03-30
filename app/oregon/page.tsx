@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import OregonClockClient from './OregonClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Oregon Now — PST/PDT · Portland · Malheur County MT',
+  title: 'Time in Oregon Now — PST/PDT (UTC−8/−7)',
   description: 'What time is it in Oregon right now? Most of Oregon uses Pacific Time (PST/PDT). Malheur County uses Mountain Time (MST/MDT). Live Portland clock and best time to call.',
   keywords: ['time in oregon', 'oregon time now', 'what time is it in oregon', 'portland time', 'oregon time zone', 'PST PDT oregon', 'oregon utc-8', 'salem time', 'eugene time', 'malheur county time zone', 'ontario oregon time', 'oregon pacific time'],
   alternates: { canonical: 'https://whattime.city/oregon/' },

@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import KentuckyClockClient from './KentuckyClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Kentucky Now — EST/EDT · Louisville · Two Time Zones',
+  title: 'Time in Kentucky Now — EST/EDT (UTC−5/−4)',
   description: 'What time is it in Kentucky right now? Most of Kentucky uses Eastern Time (EST/EDT). Some western counties use Central Time (CST/CDT). Live Louisville clock and best time to call.',
   keywords: ['time in kentucky', 'kentucky time now', 'what time is it in kentucky', 'louisville time', 'kentucky time zone', 'EST EDT kentucky', 'lexington kentucky time', 'kentucky two time zones', 'bowling green time', 'kentucky eastern time', 'kentucky central time', 'kentucky time vs uk'],
   alternates: { canonical: 'https://whattime.city/kentucky/' },

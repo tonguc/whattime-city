@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import CaliClockClient from './CaliClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in California Now — PST/PDT (UTC−8/−7) · LA, SF, San Diego',
+  title: 'Time in California Now — PST/PDT (UTC−8/−7)',
   description:
     'What time is it in California right now? California uses PST (UTC−8) in winter and PDT (UTC−7) during Daylight Saving Time. Live Los Angeles clock, California vs world cities, and best time to call.',
   keywords: [

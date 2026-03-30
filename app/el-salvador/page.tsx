@@ -6,7 +6,7 @@ import ElSalvadorClockClient from './ElSalvadorClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in El Salvador Now — CST (UTC-6) · San Salvador',
+  title: 'Time in El Salvador Now — CST (UTC−6)',
   description: 'What time is it in El Salvador right now? Live San Salvador clock, time zone info (CST (UTC-6)), best time to call, and time difference with major cities.',
   keywords: ['time in el salvador', 'el salvador time now', 'what time is it in el salvador', 'san salvador time', 'el salvador time zone'],
   alternates: { canonical: 'https://whattime.city/el-salvador/' },

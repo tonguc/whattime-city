@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'CET to GMT — Central European Time to GMT Converter',
+  title: 'CET to GMT Converter — Europe to Greenwich',
   description: 'Convert CET to GMT instantly. Central European Time (UTC+1) is 1 hour ahead of GMT (UTC+0). Live clocks, Europe–UK scheduling guide and conversion table.',
   alternates: { canonical: 'https://whattime.city/cet-to-gmt/' },
   openGraph: { title: 'CET to GMT Converter — Central Europe to UK', description: 'CET is 1 hour ahead of GMT. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/cet-to-gmt/', siteName: 'whattime.city' },

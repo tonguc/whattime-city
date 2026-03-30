@@ -6,7 +6,7 @@ import AndorraClockClient from './AndorraClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Andorra Now — CET (UTC+1) · Andorra la Vella',
+  title: 'Time in Andorra Now — CET (UTC+1)',
   description: 'What time is it in Andorra right now? Live Andorra la Vella clock, time zone info (CET (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in andorra', 'andorra time now', 'what time is it in andorra', 'andorra la vella time', 'andorra time zone'],
   alternates: { canonical: 'https://whattime.city/andorra/' },

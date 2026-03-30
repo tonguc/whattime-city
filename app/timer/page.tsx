@@ -3,7 +3,7 @@ import ContentPageWrapper from '@/components/ContentPageWrapper'
 import TimerClient from './TimerClient'
 
 export const metadata: Metadata = {
-  title: 'Online Timer & Stopwatch — Free Countdown Timer With Alarm',
+  title: 'Online Timer & Stopwatch — Free, With Alarm',
   description: 'Free online timer and stopwatch. Set a countdown for 1, 5, 10, 25, or 60 minutes — or any custom time. Alarm sounds when done. Stopwatch with lap times. No download needed.',
   alternates: { canonical: 'https://whattime.city/timer/' },
   openGraph: {

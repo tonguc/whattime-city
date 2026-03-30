@@ -6,7 +6,7 @@ import MyanmarClockClient from './MyanmarClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Myanmar Now — MMT (UTC+6:30) · Yangon · Half-Hour Offset',
+  title: 'Time in Myanmar Now — MMT (UTC+6:30)',
   description: 'What time is it in Myanmar right now? Myanmar uses Myanmar Time (MMT, UTC+6:30) year-round — a rare half-hour offset. No Daylight Saving Time. Live Yangon clock and best time to call.',
   keywords: ['time in myanmar', 'myanmar time now', 'what time is it in myanmar', 'yangon time', 'myanmar time zone', 'MMT myanmar', 'myanmar utc+6:30', 'naypyidaw time', 'mandalay time', 'myanmar half hour offset', 'myanmar time vs india', 'myanmar time vs thailand'],
   alternates: { canonical: 'https://whattime.city/myanmar/' },

@@ -3,7 +3,7 @@ import ContentPageWrapper from '@/components/ContentPageWrapper'
 import DaysFromTodayClient from './DaysFromTodayClient'
 
 export const metadata: Metadata = {
-  title: 'Days From Today Calculator — Find Any Date X Days Away',
+  title: 'Days From Today Calculator — Any Future Date',
   description: 'Calculate what date is 30, 45, 60, 90, 120, or 180 days from today. Find any date in the future or past. Quick results with day name, week number, and calendar context.',
   alternates: {
     canonical: 'https://whattime.city/days-from-today/',

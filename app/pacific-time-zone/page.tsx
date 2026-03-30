@@ -6,7 +6,7 @@ import HubPageLayout from '@/components/HubPageLayout'
 import TZExplainerClient from '@/components/TZExplainerClient'
 
 export const metadata: Metadata = {
-  title: 'Pacific Time Zone — PST/PDT, UTC-8/UTC-7, States & Cities',
+  title: 'Pacific Time Zone — PST/PDT (UTC−8/−7)',
   description: 'Complete guide to the Pacific Time Zone (PT). Current PST/PDT time, UTC offset, DST dates, all states and major cities in Pacific Time, and time converters.',
   keywords: ['pacific time zone', 'pacific time', 'pst time zone', 'pdt time zone', 'pacific standard time', 'what time is it in pacific time', 'pacific time now'],
   alternates: { canonical: 'https://whattime.city/pacific-time-zone/' },

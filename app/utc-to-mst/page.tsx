@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'UTC to MST — Universal Time to Mountain Time Converter',
+  title: 'UTC to MST Converter — Universal to Mountain',
   description: 'Convert UTC to MST instantly. UTC is 7 hours ahead of Mountain Standard Time (MST, UTC-7). Live clocks, full conversion table, and hourly reference.',
   alternates: { canonical: 'https://whattime.city/utc-to-mst/' },
   openGraph: { title: 'UTC to MST Converter — Universal to Mountain Time', description: 'UTC is 7 hours ahead of MST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/utc-to-mst/', siteName: 'whattime.city' },

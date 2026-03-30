@@ -6,7 +6,7 @@ import UnitedArabEmiratesClockClient from './UnitedArabEmiratesClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in United Arab Emirates Now — GST (UTC+4) · Abu Dhabi',
+  title: 'Time in UAE Now — GST (UTC+4) · Abu Dhabi',
   description: 'What time is it in United Arab Emirates right now? Live Abu Dhabi clock, time zone info (GST (UTC+4)), best time to call, and time difference with major cities.',
   keywords: ['time in united arab emirates', 'united arab emirates time now', 'what time is it in united arab emirates', 'abu dhabi time', 'united arab emirates time zone'],
   alternates: { canonical: 'https://whattime.city/united-arab-emirates/' },

@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import OklahomaClockClient from './OklahomaClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Oklahoma Now — CST/CDT · Oklahoma City · Central Time Zone',
+  title: 'Time in Oklahoma Now — CST/CDT (UTC−6/−5)',
   description: 'What time is it in Oklahoma right now? Oklahoma uses Central Time (CST/CDT). Oklahoma City is on CST (UTC−6) in winter and CDT (UTC−5) in summer. Live clock and best time to call.',
   keywords: ['time in oklahoma', 'oklahoma time now', 'what time is it in oklahoma', 'oklahoma city time', 'oklahoma time zone', 'CST CDT oklahoma', 'oklahoma utc-6', 'tulsa time', 'oklahoma central time', 'oklahoma time vs eastern', 'oklahoma time vs uk'],
   alternates: { canonical: 'https://whattime.city/oklahoma/' },

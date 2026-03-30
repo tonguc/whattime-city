@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import DubaiClockClient from './DubaiClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Dubai Now — GST (UTC+4) · UAE · Abu Dhabi, Sharjah',
+  title: 'Time in Dubai Now — GST (UTC+4) · UAE',
   description:
     'What time is it in Dubai right now? Dubai uses GST (Gulf Standard Time, UTC+4) year-round — no Daylight Saving Time. Live Dubai clock, UAE vs US/UK/Europe, and best time to call.',
   keywords: [

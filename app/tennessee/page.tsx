@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import TennesseeClockClient from './TennesseeClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Tennessee Now — CST/CDT · Nashville · Two Time Zones',
+  title: 'Time in Tennessee Now — CST/CDT (UTC−6/−5)',
   description: 'What time is it in Tennessee right now? Most of Tennessee uses Central Time (CST/CDT). East Tennessee (Knoxville, Johnson City) uses Eastern Time (EST/EDT). Live Nashville clock and best time to call.',
   keywords: ['time in tennessee', 'tennessee time now', 'what time is it in tennessee', 'nashville time', 'tennessee time zone', 'CST CDT tennessee', 'knoxville time', 'memphis time', 'chattanooga time', 'east tennessee time zone', 'tennessee two time zones', 'tennessee time vs uk'],
   alternates: { canonical: 'https://whattime.city/tennessee/' },

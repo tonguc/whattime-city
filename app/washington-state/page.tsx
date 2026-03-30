@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/washington-state/' },
   openGraph: {
-    title: 'Current Time in Washington State — PST/PDT (UTC−8/−7)',
+    title: 'Current Time in Washington State — PST/PDT',
     description: 'Live Washington State time. PST (UTC−8) in winter, PDT (UTC−7) during Daylight Saving Time. Seattle, Spokane, Tacoma, Bellevue all on Pacific Time.',
     type: 'website', url: 'https://whattime.city/washington-state/', siteName: 'whattime.city',
   },

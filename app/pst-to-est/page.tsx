@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     canonical: 'https://whattime.city/pst-to-est/',
   },
   openGraph: {
-    title: 'PST to EST — Pacific is 3 Hours Behind Eastern Time',
+    title: 'PST to EST — Pacific 3 Hours Behind Eastern',
     description: 'Convert PST to EST. Pacific Time is always 3 hours behind Eastern Time. Live clocks and full conversion table.',
     type: 'website',
     url: 'https://whattime.city/pst-to-est/',

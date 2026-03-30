@@ -6,7 +6,7 @@ import BosniaAndHerzegovinaClockClient from './BosniaAndHerzegovinaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Bosnia and Herzegovina Now — CET (UTC+1) · Sarajevo',
+  title: 'Time in Bosnia and Herzegovina — CET (UTC+1)',
   description: 'What time is it in Bosnia and Herzegovina right now? Live Sarajevo clock, time zone info (CET (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in bosnia and herzegovina', 'bosnia and herzegovina time now', 'what time is it in bosnia and herzegovina', 'sarajevo time', 'bosnia and herzegovina time zone'],
   alternates: { canonical: 'https://whattime.city/bosnia-and-herzegovina/' },

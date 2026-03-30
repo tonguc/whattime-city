@@ -5,7 +5,7 @@ import HubPageLayout from '@/components/HubPageLayout'
 import USTimeZonesClient from './USTimeZonesClient'
 
 export const metadata: Metadata = {
-  title: 'US Time Zone Map — All 6 Time Zones with Live Clocks',
+  title: 'US Time Zone Map — All 6 Time Zones',
   description: 'Complete US time zone map with live clocks. Eastern, Central, Mountain, Pacific, Alaska, and Hawaii time zones — current times, UTC offsets, states list, and converters.',
   keywords: ['us time zone map', 'usa time zones', 'time zones in the us', 'united states time zones', 'us time zones map', 'what time zone am i in', 'eastern time zone', 'central time zone', 'pacific time zone', 'mountain time zone'],
   alternates: { canonical: 'https://whattime.city/us-time-zones/' },

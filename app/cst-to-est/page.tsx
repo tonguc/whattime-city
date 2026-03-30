@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     canonical: 'https://whattime.city/cst-to-est/',
   },
   openGraph: {
-    title: 'CST to EST — Central Time is 1 Hour Behind Eastern',
+    title: 'CST to EST — Central 1 Hour Behind Eastern',
     description: 'Convert CST to EST. Central Time is always 1 hour behind Eastern Time. Live clocks and full conversion table.',
     type: 'website',
     url: 'https://whattime.city/cst-to-est/',

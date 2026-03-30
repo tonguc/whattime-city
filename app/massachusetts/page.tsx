@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import MassachusettsClockClient from './MassachusettsClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Massachusetts Now — EST/EDT · Boston · Eastern Time Zone',
+  title: 'Time in Massachusetts Now — EST/EDT',
   description: 'What time is it in Massachusetts right now? Massachusetts uses Eastern Time (EST/EDT). Boston is on EST (UTC−5) in winter and EDT (UTC−4) in summer. Live clock, MA vs world cities, and best time to call.',
   keywords: ['time in massachusetts', 'massachusetts time now', 'what time is it in massachusetts', 'boston time', 'massachusetts time zone', 'EST EDT massachusetts', 'massachusetts utc-5', 'cambridge time', 'worcester time', 'springfield time', 'massachusetts time vs uk', 'massachusetts time vs california'],
   alternates: { canonical: 'https://whattime.city/massachusetts/' },

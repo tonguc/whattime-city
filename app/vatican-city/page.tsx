@@ -6,7 +6,7 @@ import VaticanCityClockClient from './VaticanCityClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Vatican City Now — CET (UTC+1) · Vatican City',
+  title: 'Time in Vatican City Now — CET (UTC+1)',
   description: 'What time is it in Vatican City right now? Live Vatican City clock, time zone info (CET (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in vatican city', 'vatican city time now', 'what time is it in vatican city', 'vatican city time', 'vatican city time zone'],
   alternates: { canonical: 'https://whattime.city/vatican-city/' },

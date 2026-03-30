@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import TexasClockClient from './TexasClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Texas Now — CST/CDT (UTC−6/−5) · Houston, Dallas, Austin',
+  title: 'Time in Texas Now — CST/CDT (UTC−6/−5)',
   description:
     'What time is it in Texas right now? Most of Texas uses CST (UTC−6) in winter and CDT (UTC−5) during Daylight Saving Time. El Paso uses Mountain Time. Live Texas clock and best time to call.',
   keywords: [

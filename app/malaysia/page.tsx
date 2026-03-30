@@ -6,7 +6,7 @@ import MalaysiaClockClient from './MalaysiaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Malaysia Now — MYT (UTC+8) · Kuala Lumpur · No DST',
+  title: 'Time in Malaysia Now — MYT (UTC+8) · No DST',
   description: 'What time is it in Malaysia right now? Malaysia uses Malaysia Time (MYT, UTC+8) year-round with no Daylight Saving Time. Live Kuala Lumpur clock, Malaysia vs world cities, and best time to call.',
   keywords: ['time in malaysia', 'malaysia time now', 'what time is it in malaysia', 'kuala lumpur time', 'malaysia time zone', 'MYT malaysia', 'malaysia utc+8', 'penang time', 'kota kinabalu time', 'malaysia time vs uk', 'malaysia time vs usa', 'malaysia time vs australia'],
   alternates: { canonical: 'https://whattime.city/malaysia/' },

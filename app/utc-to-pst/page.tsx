@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'UTC to PST — Universal Time to Pacific Time Converter',
+  title: 'UTC to PST Converter — Universal to Pacific',
   description: 'Convert UTC to PST instantly. UTC is 8 hours ahead of Pacific Standard Time (PST, UTC-8). Live clocks, full conversion table, and hourly reference.',
   alternates: { canonical: 'https://whattime.city/utc-to-pst/' },
   openGraph: {

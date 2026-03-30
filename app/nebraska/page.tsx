@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import NebraskaClockClient from './NebraskaClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Nebraska Now — CST/CDT · Omaha · Central Time Zone',
+  title: 'Time in Nebraska Now — CST/CDT (UTC−6/−5)',
   description: 'What time is it in Nebraska right now? Most of Nebraska uses Central Time (CST/CDT). Omaha and Lincoln are on CST (UTC−6) in winter, CDT (UTC−5) in summer. The panhandle uses Mountain Time.',
   keywords: ['time in nebraska', 'nebraska time now', 'what time is it in nebraska', 'omaha time', 'lincoln nebraska time', 'nebraska time zone', 'CST CDT nebraska', 'nebraska central time', 'nebraska mountain time', 'scottsbluff time'],
   alternates: { canonical: 'https://whattime.city/nebraska/' },

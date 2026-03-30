@@ -6,7 +6,7 @@ import SanMarinoClockClient from './SanMarinoClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in San Marino Now — CET (UTC+1) · San Marino',
+  title: 'Time in San Marino Now — CET (UTC+1)',
   description: 'What time is it in San Marino right now? Live San Marino clock, time zone info (CET (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in san marino', 'san marino time now', 'what time is it in san marino', 'san marino time', 'san marino time zone'],
   alternates: { canonical: 'https://whattime.city/san-marino/' },

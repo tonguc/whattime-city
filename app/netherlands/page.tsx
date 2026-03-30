@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/netherlands/' },
   openGraph: {
-    title: 'Current Time in the Netherlands — CET/CEST (UTC+1/+2)',
+    title: 'Current Time in the Netherlands — CET/CEST',
     description: 'Live Netherlands time. CET (UTC+1) in winter, CEST (UTC+2) during Daylight Saving Time. Amsterdam, Rotterdam, The Hague all on Central European Time.',
     type: 'website', url: 'https://whattime.city/netherlands/', siteName: 'whattime.city',
   },

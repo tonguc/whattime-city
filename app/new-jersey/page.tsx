@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import NewJerseyClockClient from './NewJerseyClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in New Jersey Now — EST/EDT · Newark · Eastern Time Zone',
+  title: 'Time in New Jersey Now — EST/EDT (UTC−5/−4)',
   description: 'What time is it in New Jersey right now? New Jersey uses Eastern Time (EST/EDT). Newark is on EST (UTC−5) in winter and EDT (UTC−4) in summer. Live clock and best time to call.',
   keywords: ['time in new jersey', 'new jersey time now', 'what time is it in new jersey', 'newark time', 'new jersey time zone', 'EST EDT new jersey', 'NJ time', 'jersey city time', 'trenton time', 'new jersey time vs uk', 'new jersey time vs california', 'new jersey eastern time'],
   alternates: { canonical: 'https://whattime.city/new-jersey/' },

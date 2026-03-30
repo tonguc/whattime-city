@@ -6,7 +6,7 @@ import SaoTomeAndPrincipeClockClient from './SaoTomeAndPrincipeClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in São Tomé and Príncipe Now — GMT (UTC+0) · São Tomé',
+  title: 'Time in São Tomé & Príncipe — GMT (UTC+0)',
   description: 'What time is it in São Tomé and Príncipe right now? Live São Tomé clock, time zone info (GMT (UTC+0)), best time to call, and time difference with major cities.',
   keywords: ['time in são tomé and príncipe', 'são tomé and príncipe time now', 'what time is it in são tomé and príncipe', 'são tomé time', 'são tomé and príncipe time zone'],
   alternates: { canonical: 'https://whattime.city/sao-tome-and-principe/' },

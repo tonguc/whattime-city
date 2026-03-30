@@ -3,11 +3,11 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'CET to EST — Central European to Eastern Time Converter',
+  title: 'CET to EST — Central European to Eastern',
   description: 'Convert CET to EST instantly. Central European Time is 6 hours ahead of Eastern Standard Time. Live clocks, full conversion table, and Europe–US East Coast scheduling guide.',
   alternates: { canonical: 'https://whattime.city/cet-to-est' },
   openGraph: {
-    title: 'CET to EST — Central European to Eastern Time Converter',
+    title: 'CET to EST Converter — Europe to Eastern',
     description: 'CET is 6 hours ahead of EST. Live clocks, conversion table, and best overlap hours for Europe–US East Coast calls.',
     type: 'website',
     url: 'https://whattime.city/cet-to-est',

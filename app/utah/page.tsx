@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import UtahClockClient from './UtahClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Utah Now — MST/MDT · Salt Lake City · Mountain Time Zone',
+  title: 'Time in Utah Now — MST/MDT (UTC−7/−6)',
   description: 'What time is it in Utah right now? Utah uses Mountain Time (MST/MDT). Salt Lake City is on MST (UTC−7) in winter and MDT (UTC−6) in summer. Live clock and best time to call.',
   keywords: ['time in utah', 'utah time now', 'what time is it in utah', 'salt lake city time', 'utah time zone', 'MST MDT utah', 'utah utc-7', 'provo time', 'st george time', 'utah mountain time', 'utah time vs eastern', 'utah time vs uk'],
   alternates: { canonical: 'https://whattime.city/utah/' },

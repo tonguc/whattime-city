@@ -6,7 +6,7 @@ import LuxembourgClockClient from './LuxembourgClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Luxembourg Now — CET (UTC+1) · Luxembourg City',
+  title: 'Time in Luxembourg Now — CET (UTC+1)',
   description: 'What time is it in Luxembourg right now? Live Luxembourg City clock, time zone info (CET (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in luxembourg', 'luxembourg time now', 'what time is it in luxembourg', 'luxembourg city time', 'luxembourg time zone'],
   alternates: { canonical: 'https://whattime.city/luxembourg/' },

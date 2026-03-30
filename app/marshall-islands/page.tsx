@@ -6,7 +6,7 @@ import MarshallIslandsClockClient from './MarshallIslandsClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Marshall Islands Now — MHT (UTC+12) · Majuro',
+  title: 'Time in Marshall Islands Now — MHT (UTC+12)',
   description: 'What time is it in Marshall Islands right now? Live Majuro clock, time zone info (MHT (UTC+12)), best time to call, and time difference with major cities.',
   keywords: ['time in marshall islands', 'marshall islands time now', 'what time is it in marshall islands', 'majuro time', 'marshall islands time zone'],
   alternates: { canonical: 'https://whattime.city/marshall-islands/' },

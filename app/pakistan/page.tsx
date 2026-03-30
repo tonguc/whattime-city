@@ -6,7 +6,7 @@ import PakistanClockClient from './PakistanClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Pakistan Now — PKT (UTC+5) · Karachi, Lahore, Islamabad',
+  title: 'Time in Pakistan Now — PKT (UTC+5)',
   description:
     'What time is it in Pakistan right now? Pakistan uses PKT (Pakistan Standard Time, UTC+5) year-round — no Daylight Saving Time. Live Karachi clock, Pakistan vs world cities, and best time to call.',
   keywords: [

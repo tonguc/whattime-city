@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'IST to CET — India Standard Time to Central European Time Converter',
+  title: 'IST to CET Converter — India to Central Europe',
   description: 'Convert IST to CET instantly. India Standard Time (UTC+5:30) is 4 hours 30 minutes ahead of Central European Time (UTC+1). Live clocks and conversion table.',
   alternates: { canonical: 'https://whattime.city/ist-to-cet/' },
   openGraph: { title: 'IST to CET Converter — India to Central Europe', description: 'IST is 4:30 ahead of CET. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/ist-to-cet/', siteName: 'whattime.city' },

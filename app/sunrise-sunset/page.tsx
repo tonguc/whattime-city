@@ -3,7 +3,7 @@ import ContentPageWrapper from '@/components/ContentPageWrapper'
 import SunriseSunsetClient from './SunriseSunsetClient'
 
 export const metadata: Metadata = {
-  title: 'Sunrise & Sunset Times Today — Sun Calculator | whattime.city',
+  title: 'Sunrise & Sunset Times Today — Sun Calculator',
   description:
     'Check today\'s sunrise and sunset times for any city. Live sun calculator with dawn, dusk, solar noon, and daylight hours. Updated every minute.',
   keywords: [

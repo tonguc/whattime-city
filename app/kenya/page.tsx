@@ -6,7 +6,7 @@ import KenyaClockClient from './KenyaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Kenya Now — EAT (UTC+3) · Nairobi, Mombasa · No DST',
+  title: 'Time in Kenya Now — EAT (UTC+3) · No DST',
   description: 'What time is it in Kenya right now? Kenya uses East Africa Time (EAT, UTC+3) year-round with no Daylight Saving Time. Live Nairobi clock, Kenya vs world cities, and best time to call.',
   keywords: ['time in kenya', 'kenya time now', 'what time is it in kenya', 'nairobi time', 'kenya time zone', 'EAT time zone', 'east africa time', 'kenya utc+3', 'kenya no daylight saving', 'nairobi time now', 'kenya time vs usa', 'kenya time vs uk', 'kenya time vs india', 'mombasa time'],
   alternates: { canonical: 'https://whattime.city/kenya/' },

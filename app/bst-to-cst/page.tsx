@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'BST to CST — British Summer Time to Central Time Converter',
+  title: 'BST to CST Converter — British to Central Time',
   description: 'Convert BST to CST instantly. British Summer Time (UTC+1) is 6 hours ahead of Central Standard Time (UTC-6). Live clocks, conversion table, and overlap window.',
   alternates: { canonical: 'https://whattime.city/bst-to-cst/' },
   openGraph: { title: 'BST to CST Converter — British Summer Time to Central', description: 'BST is 6 hours ahead of CST. Live clocks and full conversion table.', type: 'website', url: 'https://whattime.city/bst-to-cst/', siteName: 'whattime.city' },

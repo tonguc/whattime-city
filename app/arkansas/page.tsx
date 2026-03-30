@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import ArkansasClockClient from './ArkansasClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Arkansas Now — CST/CDT · Little Rock · Central Time Zone',
+  title: 'Time in Arkansas Now — CST/CDT (UTC−6/−5)',
   description: 'What time is it in Arkansas right now? Arkansas uses Central Time (CST/CDT). Little Rock is on CST (UTC−6) in winter and CDT (UTC−5) in summer. Live clock and best time to call.',
   keywords: ['time in arkansas', 'arkansas time now', 'what time is it in arkansas', 'little rock time', 'arkansas time zone', 'CST CDT arkansas', 'arkansas utc-6', 'fayetteville arkansas time', 'arkansas central time', 'arkansas time vs eastern', 'arkansas time vs uk'],
   alternates: { canonical: 'https://whattime.city/arkansas/' },

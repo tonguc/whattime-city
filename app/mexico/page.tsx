@@ -6,7 +6,7 @@ import MexicoClockClient from './MexicoClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Mexico Now — CST (UTC−6) · Mexico City, Cancún, Tijuana',
+  title: 'Time in Mexico Now — CST (UTC−6) · Mexico City',
   description:
     'What time is it in Mexico right now? Mexico City uses CST (UTC−6) with no DST since 2023. Mexico has 4 time zones. Live CDMX clock, all Mexican zones, and best time to call.',
   keywords: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     canonical: 'https://whattime.city/mexico/',
   },
   openGraph: {
-    title: 'Current Time in Mexico — CST (UTC−6) · No DST since 2023',
+    title: 'Current Time in Mexico — CST (UTC−6)',
     description:
       'Live Mexico City time. Most of Mexico abolished DST in 2023 — CDMX is now fixed at CST (UTC−6). Cancún uses EST (UTC−5). Check all Mexican time zones.',
     type: 'website',

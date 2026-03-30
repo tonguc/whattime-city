@@ -6,7 +6,7 @@ import BangladeshClockClient from './BangladeshClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Bangladesh Now — BST (UTC+6) · Dhaka · No DST',
+  title: 'Time in Bangladesh Now — BST (UTC+6)',
   description: 'What time is it in Bangladesh right now? Bangladesh uses Bangladesh Standard Time (BST, UTC+6) year-round with no Daylight Saving Time. Live Dhaka clock, Bangladesh vs world cities.',
   keywords: ['time in bangladesh', 'bangladesh time now', 'what time is it in bangladesh', 'dhaka time', 'bangladesh time zone', 'BST bangladesh', 'bangladesh utc+6', 'chittagong time', 'bangladesh time vs uk', 'bangladesh time vs usa', 'bangladesh time vs india'],
   alternates: { canonical: 'https://whattime.city/bangladesh/' },

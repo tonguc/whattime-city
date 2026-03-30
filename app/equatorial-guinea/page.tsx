@@ -6,7 +6,7 @@ import EquatorialGuineaClockClient from './EquatorialGuineaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Equatorial Guinea Now — WAT (UTC+1) · Malabo',
+  title: 'Time in Equatorial Guinea Now — WAT (UTC+1)',
   description: 'What time is it in Equatorial Guinea right now? Live Malabo clock, time zone info (WAT (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in equatorial guinea', 'equatorial guinea time now', 'what time is it in equatorial guinea', 'malabo time', 'equatorial guinea time zone'],
   alternates: { canonical: 'https://whattime.city/equatorial-guinea/' },

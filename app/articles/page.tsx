@@ -3,7 +3,7 @@ import ContentPageWrapper from '@/components/ContentPageWrapper'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Articles — Time, Calendars & Clocks Explained | whattime.city',
+  title: 'Articles — Time, Calendars & Clocks Explained',
   description: 'Explore our articles about time: how many weeks in a year, AM vs PM explained, days in a year, and more. Clear answers backed by data.',
   alternates: { canonical: 'https://whattime.city/articles/' },
   openGraph: {

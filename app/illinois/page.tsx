@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import IllinoisClockClient from './IllinoisClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Illinois Now — CST/CDT (UTC−6/−5) · Chicago, Springfield',
+  title: 'Time in Illinois Now — CST/CDT (UTC−6/−5)',
   description:
     'What time is it in Illinois right now? Illinois uses Central Standard Time (CST, UTC−6) in winter and Central Daylight Time (CDT, UTC−5) during Daylight Saving Time. Live Chicago clock, Illinois vs world cities, and best time to call.',
   keywords: [

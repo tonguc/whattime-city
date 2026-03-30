@@ -6,7 +6,7 @@ import TurkmenistanClockClient from './TurkmenistanClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Turkmenistan Now — TMT (UTC+5) · Ashgabat',
+  title: 'Time in Turkmenistan Now — TMT (UTC+5)',
   description: 'What time is it in Turkmenistan right now? Live Ashgabat clock, time zone info (TMT (UTC+5)), best time to call, and time difference with major cities.',
   keywords: ['time in turkmenistan', 'turkmenistan time now', 'what time is it in turkmenistan', 'ashgabat time', 'turkmenistan time zone'],
   alternates: { canonical: 'https://whattime.city/turkmenistan/' },

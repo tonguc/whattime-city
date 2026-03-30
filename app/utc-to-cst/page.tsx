@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'UTC to CST — Universal Time to Central Time Converter',
+  title: 'UTC to CST Converter — Universal to Central',
   description: 'Convert UTC to CST instantly. UTC is 6 hours ahead of Central Standard Time (CST, UTC-6). Live clocks, full conversion table, and hourly reference.',
   alternates: { canonical: 'https://whattime.city/utc-to-cst/' },
   openGraph: {

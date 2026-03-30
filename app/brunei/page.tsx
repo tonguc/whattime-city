@@ -6,7 +6,7 @@ import BruneiClockClient from './BruneiClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Brunei Now — BNT (UTC+8) · Bandar Seri Begawan',
+  title: 'Time in Brunei Now — BNT (UTC+8)',
   description: 'What time is it in Brunei right now? Live Bandar Seri Begawan clock, time zone info (BNT (UTC+8)), best time to call, and time difference with major cities.',
   keywords: ['time in brunei', 'brunei time now', 'what time is it in brunei', 'bandar seri begawan time', 'brunei time zone'],
   alternates: { canonical: 'https://whattime.city/brunei/' },

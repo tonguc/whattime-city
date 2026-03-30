@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Convert PST to UTC instantly. Pacific Standard Time (UTC-8) is 8 hours behind UTC. Live clocks, full conversion table, and hourly reference.',
   alternates: { canonical: 'https://whattime.city/pst-to-utc/' },
   openGraph: {
-    title: 'PST to UTC Converter — Pacific Time to Universal Time',
+    title: 'PST to UTC Converter — Pacific to Universal',
     description: 'PST is 8 hours behind UTC. Live clocks and full conversion table.',
     type: 'website',
     url: 'https://whattime.city/pst-to-utc/',

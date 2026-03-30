@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import TimeConverterClient from './TimeConverterClient'
 
 export const metadata: Metadata = {
-  title: 'Time Zone Converter — Convert Any Time Between 400+ Cities',
+  title: 'Time Zone Converter — 400+ Cities',
   description: 'Convert any time between 400+ cities instantly. What time is 3 PM EST in London? Pick two cities, enter a time, get the exact local equivalent — DST-aware, no sign-up needed.',
   alternates: {
     canonical: 'https://whattime.city/time-converter/',

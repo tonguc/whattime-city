@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CEST Timezone — Central European Summer Time UTC+2',
+    title: 'CEST Timezone — Central European Summer Time',
     description: 'Current CEST time with country list and converters.',
   },
 }

@@ -6,7 +6,7 @@ import NorthMacedoniaClockClient from './NorthMacedoniaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in North Macedonia Now — CET (UTC+1) · Skopje',
+  title: 'Time in North Macedonia Now — CET (UTC+1)',
   description: 'What time is it in North Macedonia right now? Live Skopje clock, time zone info (CET (UTC+1)), best time to call, and time difference with major cities.',
   keywords: ['time in north macedonia', 'north macedonia time now', 'what time is it in north macedonia', 'skopje time', 'north macedonia time zone'],
   alternates: { canonical: 'https://whattime.city/north-macedonia/' },

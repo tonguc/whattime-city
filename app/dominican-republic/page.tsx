@@ -6,7 +6,7 @@ import DominicanRepublicClockClient from './DominicanRepublicClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Dominican Republic Now — AST (UTC-4) · Santo Domingo',
+  title: 'Time in Dominican Republic Now — AST (UTC−4)',
   description: 'What time is it in Dominican Republic right now? Live Santo Domingo clock, time zone info (AST (UTC-4)), best time to call, and time difference with major cities.',
   keywords: ['time in dominican republic', 'dominican republic time now', 'what time is it in dominican republic', 'santo domingo time', 'dominican republic time zone'],
   alternates: { canonical: 'https://whattime.city/dominican-republic/' },

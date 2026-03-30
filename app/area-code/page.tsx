@@ -4,7 +4,7 @@ import AreaCodeHubClient from './AreaCodeHubClient'
 import { areaCodeList } from '@/data/area-codes'
 
 export const metadata: Metadata = {
-  title: 'US & Canada Area Codes — Time Zone Lookup by Area Code',
+  title: 'US & Canada Area Codes — Time Zone Lookup',
   description: `Find time zones for ${areaCodeList.length}+ North American area codes. Look up any US or Canadian area code to see its city, state, time zone, UTC offset, and DST status.`,
   alternates: { canonical: 'https://whattime.city/area-code/' },
   openGraph: {

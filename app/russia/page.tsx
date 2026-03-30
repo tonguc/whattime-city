@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/russia/' },
   openGraph: {
-    title: 'Current Time in Russia — MSK (UTC+3) · 11 Time Zones · No DST since 2014',
+    title: 'Current Time in Russia — MSK (UTC+3) · No DST',
     description: 'Live Russia time. Moscow Time (MSK, UTC+3) is the national reference. Russia spans 11 time zones. No Daylight Saving Time since 2014.',
     type: 'website', url: 'https://whattime.city/russia/', siteName: 'whattime.city',
   },

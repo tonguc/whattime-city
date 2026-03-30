@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import WisconsinClockClient from './WisconsinClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Wisconsin Now — CST/CDT · Milwaukee · Central Time Zone',
+  title: 'Time in Wisconsin Now — CST/CDT (UTC−6/−5)',
   description: 'What time is it in Wisconsin right now? Wisconsin uses Central Time (CST/CDT). Milwaukee is on CST (UTC−6) in winter and CDT (UTC−5) in summer. Live clock and best time to call.',
   keywords: ['time in wisconsin', 'wisconsin time now', 'what time is it in wisconsin', 'milwaukee time', 'wisconsin time zone', 'CST CDT wisconsin', 'wisconsin utc-6', 'madison time', 'green bay time', 'wisconsin central time', 'wisconsin time vs eastern', 'wisconsin time vs uk'],
   alternates: { canonical: 'https://whattime.city/wisconsin/' },

@@ -6,7 +6,7 @@ import ColombiaClockClient from './ColombiaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Colombia Now — COT (UTC−5) · Bogotá · No DST',
+  title: 'Time in Colombia Now — COT (UTC−5) · No DST',
   description: 'What time is it in Colombia right now? Colombia uses Colombia Time (COT, UTC−5) year-round with no Daylight Saving Time. Live Bogotá clock, Colombia vs world cities, and best time to call.',
   keywords: ['time in colombia', 'colombia time now', 'what time is it in colombia', 'bogota time', 'colombia time zone', 'COT colombia', 'colombia utc-5', 'medellin time', 'cali time', 'colombia time vs usa', 'colombia time vs uk', 'colombia time vs spain'],
   alternates: { canonical: 'https://whattime.city/colombia/' },

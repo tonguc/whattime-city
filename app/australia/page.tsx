@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     canonical: 'https://whattime.city/australia/',
   },
   openGraph: {
-    title: 'Current Time in Australia — AEST/AEDT & All Time Zones',
+    title: 'Current Time in Australia — AEST/AEDT',
     description:
       'Live Australia time. Sydney uses AEST (UTC+10) or AEDT (UTC+11). Australia spans 5 time zones from Perth (UTC+8) to Sydney (UTC+10/+11). Check all Australian city times.',
     type: 'website',

@@ -6,7 +6,7 @@ import IndiaClockClient from './IndiaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in India Now — India Standard Time (IST, UTC+5:30)',
+  title: 'Time in India Now — IST (UTC+5:30)',
   description:
     'What is the current time in India? India uses IST (UTC+5:30) year-round — no Daylight Saving Time. Live clock, India time vs US/UK/Dubai/Singapore, and best time to call India.',
   keywords: [

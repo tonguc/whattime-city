@@ -6,7 +6,7 @@ import SingaporeClockClient from './SingaporeClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Singapore Now — SGT (UTC+8) · No Daylight Saving Time',
+  title: 'Time in Singapore Now — SGT (UTC+8) · No DST',
   description:
     'What time is it in Singapore right now? Singapore uses SGT (Singapore Standard Time, UTC+8) year-round with no Daylight Saving Time. Live clock, Singapore vs world cities, and best time to call.',
   keywords: [

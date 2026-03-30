@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import ConnecticutClockClient from './ConnecticutClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in Connecticut Now — EST/EDT · Hartford · Eastern Time Zone',
+  title: 'Time in Connecticut Now — EST/EDT (UTC−5/−4)',
   description: 'What time is it in Connecticut right now? Connecticut uses Eastern Time (EST/EDT). Hartford is on EST (UTC−5) in winter and EDT (UTC−4) in summer. Live clock and best time to call.',
   keywords: ['time in connecticut', 'connecticut time now', 'what time is it in connecticut', 'hartford time', 'connecticut time zone', 'EST EDT connecticut', 'connecticut utc-5', 'bridgeport time', 'new haven time', 'stamford time', 'connecticut time vs uk', 'connecticut time vs california'],
   alternates: { canonical: 'https://whattime.city/connecticut/' },

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://whattime.city/georgia-state/' },
   openGraph: {
-    title: 'Current Time in Georgia (US State) — EST/EDT (UTC−5/−4)',
+    title: 'Current Time in Georgia (US State) — EST/EDT',
     description: 'Live Georgia time. EST (UTC−5) in winter, EDT (UTC−4) during Daylight Saving Time. Atlanta, Savannah, Augusta, Columbus all on Eastern Time.',
     type: 'website', url: 'https://whattime.city/georgia-state/', siteName: 'whattime.city',
   },

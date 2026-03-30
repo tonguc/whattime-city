@@ -5,7 +5,7 @@ import HubPageLayout from '@/components/HubPageLayout'
 import TZExplainerClient from '@/components/TZExplainerClient'
 
 export const metadata: Metadata = {
-  title: 'Hawaii Time Zone — HST, UTC-10, No Daylight Saving Time',
+  title: 'Hawaii Time Zone — HST (UTC−10) · No DST',
   description: 'Complete guide to Hawaii Time Zone (HST). Current Hawaii time, UTC-10 offset, no DST, time differences with US mainland zones, and converters.',
   keywords: ['hawaii time zone', 'hawaii time', 'hst', 'hawaii standard time', 'what time is it in hawaii', 'hawaii time now', 'hst time zone'],
   alternates: { canonical: 'https://whattime.city/hawaii-time-zone/' },

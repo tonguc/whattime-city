@@ -5,7 +5,7 @@ import HubPageHeader from '@/components/HubPageHeader'
 import NewYorkStateClockClient from './NewYorkStateClockClient'
 
 export const metadata: Metadata = {
-  title: 'Time in New York Now — EST/EDT (UTC−5/−4) · NYC, Buffalo, Albany',
+  title: 'Time in New York State Now — EST/EDT (UTC−5/−4)',
   description:
     'What time is it in New York right now? New York uses EST (UTC−5) in winter and EDT (UTC−4) during Daylight Saving Time. Live New York clock, NY vs world cities, and best time to call.',
   keywords: [

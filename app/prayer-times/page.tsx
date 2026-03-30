@@ -3,7 +3,7 @@ import ContentPageWrapper from '@/components/ContentPageWrapper'
 import PrayerTimesClient from './PrayerTimesClient'
 
 export const metadata: Metadata = {
-  title: 'Prayer Times Today — Accurate Salah Times for Any City',
+  title: 'Prayer Times — Salah Times for Any City',
   description: 'Find accurate Islamic prayer times (Fajr, Sunrise, Dhuhr, Asr, Maghrib, Isha) for any city worldwide. Multiple calculation methods including ISNA, MWL, and Umm Al-Qura.',
   alternates: {
     canonical: 'https://whattime.city/prayer-times/',

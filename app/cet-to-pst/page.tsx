@@ -3,7 +3,7 @@ import ConverterPageShell from '@/components/ConverterPageShell'
 import type { TZPairConfig } from '@/components/TZPairClient'
 
 export const metadata: Metadata = {
-  title: 'CET to PST — Central European to Pacific Time Converter',
+  title: 'CET to PST — Central European to Pacific',
   description: 'Convert CET to PST instantly. Central European Time (UTC+1) is 9 hours ahead of Pacific Standard Time (UTC-8). Live clocks, conversion table, and overlap window.',
   alternates: { canonical: 'https://whattime.city/cet-to-pst/' },
   openGraph: {

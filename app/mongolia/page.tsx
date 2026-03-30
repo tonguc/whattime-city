@@ -6,7 +6,7 @@ import MongoliaClockClient from './MongoliaClockClient'
 import CountryFactsSection from '@/components/CountryFactsSection'
 
 export const metadata: Metadata = {
-  title: 'Time in Mongolia Now — ULAT (UTC+8) · Ulaanbaatar',
+  title: 'Time in Mongolia Now — ULAT (UTC+8)',
   description: 'What time is it in Mongolia right now? Live Ulaanbaatar clock, time zone info (ULAT (UTC+8)), best time to call, and time difference with major cities.',
   keywords: ['time in mongolia', 'mongolia time now', 'what time is it in mongolia', 'ulaanbaatar time', 'mongolia time zone'],
   alternates: { canonical: 'https://whattime.city/mongolia/' },
