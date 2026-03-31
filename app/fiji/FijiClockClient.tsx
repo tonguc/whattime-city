@@ -1,62 +1,25 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { useCityContext } from '@/lib/CityContext'
+import { useClockState, useClockTheme, ClockHero } from '@/components/ClockPage'
 
 export default function FijiClockClient() {
-  const { isLight } = useCityContext()
-  const [time, setTime] = useState('--:--:--')
-  const [date, setDate] = useState('')
-  const [isDST, setIsDST] = useState(false)
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-    const update = () => {
-      const now = new Date()
-      setTime(now.toLocaleTimeString('en-US', { timeZone: 'Pacific/Fiji', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }))
-      setDate(now.toLocaleDateString('en-US', { timeZone: 'Pacific/Fiji', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }))
-      const jan = new Date(now.getFullYear(), 0, 1)
-      const janStr = jan.toLocaleString('en-US', { timeZone: 'Pacific/Fiji' })
-      const nowStr = now.toLocaleString('en-US', { timeZone: 'Pacific/Fiji' })
-      setIsDST(new Date(nowStr).getTimezoneOffset() !== new Date(janStr).getTimezoneOffset())
-    }
-    update()
-    const id = setInterval(update, 1000)
-    return () => clearInterval(id)
-  }, [])
-
-  const card = isLight
-    ? 'rounded-2xl border border-slate-200 bg-white p-6'
-    : 'rounded-2xl border border-slate-700/50 bg-slate-800/60 p-6'
-  const innerCard = isLight
-    ? 'rounded-xl border border-slate-100 bg-slate-50 p-4'
-    : 'rounded-xl border border-slate-700/50 bg-slate-800/50 p-4'
-  const heading = isLight ? 'text-slate-800' : 'text-white'
-  const subText = isLight ? 'text-slate-600' : 'text-slate-300'
-  const mutedText = isLight ? 'text-slate-400' : 'text-slate-500'
+  const { time, date, mounted, isDST } = useClockState('Pacific/Fiji')
+  const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()
 
   return (
     <div className="space-y-4">
-      {/* Live Clock */}
-      <section>
-        <div className="rounded-2xl text-white p-6 text-center bg-purple-700">
-          <div className="text-sm font-bold uppercase tracking-widest mb-2 opacity-90">
-            Current Time in Fiji
-          </div>
-          <div className="text-6xl font-bold tracking-tight mb-1" style={{ fontVariantNumeric: 'tabular-nums' }}>
-            {mounted ? time : '--:--:--'}
-          </div>
-          <div className="text-sm opacity-80 mb-3">{mounted ? date : ''}</div>
-          <div className="flex justify-center gap-3 text-sm flex-wrap">
-            <span className="px-3 py-1 rounded-full font-medium bg-red-400/40">
-              {isDST ? 'FJDT · UTC+13' : 'FJT · UTC+12'}
-            </span>
-            <span className="px-3 py-1 rounded-full font-medium bg-white/20">Southern Hemisphere DST</span>
-            <span className="px-3 py-1 rounded-full font-medium bg-white/20">Suva</span>
-          </div>
-        </div>
-      </section>
+      <ClockHero
+        bgColor="bg-purple-700"
+        clocks={[{ label: 'Current Time in Fiji', time }]}
+        date={date}
+        mounted={mounted}
+        badges={[
+          { label: isDST ? 'FJDT · UTC+13' : 'FJT · UTC+12', highlight: true },
+          { label: 'Southern Hemisphere DST' },
+          { label: 'Suva' },
+        ]}
+      />
+
 
       {/* Quick Facts */}
       <section>

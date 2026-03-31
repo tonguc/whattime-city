@@ -28,7 +28,7 @@ function isRateLimited(ip: string): boolean {
   ipRequestLog.set(ip, recent)
   // Cleanup old IPs occasionally to prevent memory leak
   if (ipRequestLog.size > 5000) {
-    for (const [key, ts] of ipRequestLog) {
+    for (const [key, ts] of Array.from(ipRequestLog.entries())) {
       if (ts.every(t => now - t >= RATE_LIMIT_WINDOW)) ipRequestLog.delete(key)
     }
   }

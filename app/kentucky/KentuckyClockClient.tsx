@@ -1,67 +1,25 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { useCityContext } from '@/lib/CityContext'
+import { useClockState, useClockTheme, ClockHero } from '@/components/ClockPage'
 
 export default function KentuckyClockClient() {
-  const { isLight } = useCityContext()
-  const [timeET, setTimeET] = useState('--:--:--')
-  const [timeCT, setTimeCT] = useState('--:--:--')
-  const [date, setDate] = useState('')
-  const [isDST, setIsDST] = useState(false)
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-    const update = () => {
-      const now = new Date()
-      setTimeET(now.toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }))
-      setTimeCT(now.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }))
-      setDate(now.toLocaleDateString('en-US', { timeZone: 'America/New_York', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }))
-      const jan = new Date(now.getFullYear(), 0, 1)
-      const janStr = jan.toLocaleString('en-US', { timeZone: 'America/New_York' })
-      const nowStr = now.toLocaleString('en-US', { timeZone: 'America/New_York' })
-      setIsDST(new Date(nowStr).getTimezoneOffset() !== new Date(janStr).getTimezoneOffset())
-    }
-    update()
-    const id = setInterval(update, 1000)
-    return () => clearInterval(id)
-  }, [])
-
-  const card = isLight
-    ? 'rounded-2xl border border-slate-200 bg-white p-6'
-    : 'rounded-2xl border border-slate-700/50 bg-slate-800/60 p-6'
-  const innerCard = isLight
-    ? 'rounded-xl border border-slate-100 bg-slate-50 p-4'
-    : 'rounded-xl border border-slate-700/50 bg-slate-800/50 p-4'
-  const heading = isLight ? 'text-slate-800' : 'text-white'
-  const subText = isLight ? 'text-slate-600' : 'text-slate-300'
-  const mutedText = isLight ? 'text-slate-400' : 'text-slate-500'
+  const { time, date, mounted, isDST } = useClockState('America/New_York')
+  const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()
 
   return (
     <div className="space-y-4">
-      <section>
-        <div className="rounded-2xl text-white p-6 text-center bg-blue-700">
-          <div className="text-sm font-bold uppercase tracking-widest mb-2 opacity-90">Current Time in Kentucky</div>
-          <div className="flex justify-center gap-6 mb-1">
-            <div>
-              <div className="text-5xl font-bold tracking-tight" style={{ fontVariantNumeric: 'tabular-nums' }}>{mounted ? timeET : '--:--:--'}</div>
-              <div className="text-xs opacity-70 mt-1">{isDST ? 'EDT · UTC-4' : 'EST · UTC-5'} — Eastern</div>
-            </div>
-            <div className="border-l border-white/30" />
-            <div>
-              <div className="text-5xl font-bold tracking-tight" style={{ fontVariantNumeric: 'tabular-nums' }}>{mounted ? timeCT : '--:--:--'}</div>
-              <div className="text-xs opacity-70 mt-1">{isDST ? 'CDT · UTC-5' : 'CST · UTC-6'} — Central</div>
-            </div>
-          </div>
-          <div className="text-sm opacity-80 mb-3">{mounted ? date : ''}</div>
-          <div className="flex justify-center gap-3 text-sm flex-wrap">
-            <span className="px-3 py-1 rounded-full font-medium bg-blue-400/40">2 Time Zones</span>
-            <span className="px-3 py-1 rounded-full font-medium bg-white/20">ET + CT Split</span>
-            <span className="px-3 py-1 rounded-full font-medium bg-white/20">The Bluegrass State</span>
-          </div>
-        </div>
-      </section>
+      <ClockHero
+        bgColor="bg-blue-700"
+        clocks={[{ label: 'Current Time in Kentucky', time }]}
+        date={date}
+        mounted={mounted}
+        badges={[
+          { label: '2 Time Zones', highlight: true },
+          { label: 'ET + CT Split' },
+          { label: 'The Bluegrass State' },
+        ]}
+      />
+
 
       <section>
         <div className={card}>

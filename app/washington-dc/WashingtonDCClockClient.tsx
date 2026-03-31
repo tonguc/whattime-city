@@ -1,59 +1,25 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { useCityContext } from '@/lib/CityContext'
+import { useClockState, useClockTheme, ClockHero } from '@/components/ClockPage'
 
 export default function WashingtonDCClockClient() {
-  const { isLight } = useCityContext()
-  const [time, setTime] = useState('--:--:--')
-  const [date, setDate] = useState('')
-  const [isDST, setIsDST] = useState(false)
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-    const update = () => {
-      const now = new Date()
-      setTime(now.toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }))
-      setDate(now.toLocaleDateString('en-US', { timeZone: 'America/New_York', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }))
-      const jan = new Date(now.getFullYear(), 0, 1)
-      const janOffset = -new Date(jan.toLocaleString('en-US', { timeZone: 'America/New_York' })).getTimezoneOffset()
-      const nowOffset = -new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' })).getTimezoneOffset()
-      setIsDST(nowOffset !== janOffset)
-    }
-    update()
-    const id = setInterval(update, 1000)
-    return () => clearInterval(id)
-  }, [])
-
-  const card = isLight
-    ? 'rounded-2xl border border-slate-200 bg-white p-6'
-    : 'rounded-2xl border border-slate-700/50 bg-slate-800/60 p-6'
-  const innerCard = isLight
-    ? 'rounded-xl border border-slate-100 bg-slate-50 p-4'
-    : 'rounded-xl border border-slate-700/50 bg-slate-800/50 p-4'
-  const heading = isLight ? 'text-slate-800' : 'text-white'
-  const subText = isLight ? 'text-slate-600' : 'text-slate-300'
-  const mutedText = isLight ? 'text-slate-400' : 'text-slate-500'
+  const { time, date, mounted, isDST } = useClockState('America/New_York')
+  const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()
 
   return (
     <div className="space-y-4">
-      <section>
-        <div className="rounded-2xl text-white p-6 text-center bg-blue-700">
-          <div className="text-sm font-bold uppercase tracking-widest mb-2 opacity-90">Current Time in Washington, D.C.</div>
-          <div className="text-6xl font-bold tracking-tight mb-1" style={{ fontVariantNumeric: 'tabular-nums' }}>
-            {mounted ? time : '--:--:--'}
-          </div>
-          <div className="text-sm opacity-80 mb-3">{mounted ? date : ''}</div>
-          <div className="flex justify-center gap-3 text-sm flex-wrap">
-            <span className="px-3 py-1 rounded-full font-medium bg-white/40">
-              {isDST ? 'EDT UTC−4' : 'EST UTC−5'}
-            </span>
-            <span className="px-3 py-1 rounded-full font-medium bg-white/20">Eastern Time</span>
-            <span className="px-3 py-1 rounded-full font-medium bg-white/20">US Capital</span>
-          </div>
-        </div>
-      </section>
+      <ClockHero
+        bgColor="bg-blue-700"
+        clocks={[{ label: 'Current Time in Washington, D.C.', time }]}
+        date={date}
+        mounted={mounted}
+        badges={[
+          { label: isDST ? 'EDT UTC−4' : 'EST UTC−5' },
+          { label: 'Eastern Time' },
+          { label: 'US Capital' },
+        ]}
+      />
+
 
       <section>
         <div className={card}>

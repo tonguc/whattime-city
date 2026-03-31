@@ -1,61 +1,25 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { useCityContext } from '@/lib/CityContext'
+import { useClockState, useClockTheme, ClockHero } from '@/components/ClockPage'
 
 export default function AlaskaClockClient() {
-  const { isLight } = useCityContext()
-  const [timeAKST, setTimeAKST] = useState('--:--:--')
-  const [timeHST, setTimeHST] = useState('--:--:--')
-  const [date, setDate] = useState('')
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-    const update = () => {
-      const now = new Date()
-      setTimeAKST(now.toLocaleTimeString('en-US', { timeZone: 'America/Anchorage', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }))
-      setTimeHST(now.toLocaleTimeString('en-US', { timeZone: 'America/Adak', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }))
-      setDate(now.toLocaleDateString('en-US', { timeZone: 'America/Anchorage', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }))
-    }
-    update()
-    const id = setInterval(update, 1000)
-    return () => clearInterval(id)
-  }, [])
-
-  const card = isLight
-    ? 'rounded-2xl border border-slate-200 bg-white p-6'
-    : 'rounded-2xl border border-slate-700/50 bg-slate-800/60 p-6'
-  const innerCard = isLight
-    ? 'rounded-xl border border-slate-100 bg-slate-50 p-4'
-    : 'rounded-xl border border-slate-700/50 bg-slate-800/50 p-4'
-  const heading = isLight ? 'text-slate-800' : 'text-white'
-  const subText = isLight ? 'text-slate-600' : 'text-slate-300'
-  const mutedText = isLight ? 'text-slate-400' : 'text-slate/500'
+  const { time, date, mounted } = useClockState('America/Anchorage')
+  const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()
 
   return (
     <div className="space-y-4">
-      <section>
-        <div className="rounded-2xl text-white p-6 text-center bg-blue-700">
-          <div className="text-sm font-bold uppercase tracking-widest mb-2 opacity-90">Current Time in Alaska</div>
-          <div className="flex justify-center gap-8 mb-1">
-            <div>
-              <div className="text-5xl font-bold tracking-tight" style={{ fontVariantNumeric: 'tabular-nums' }}>{mounted ? timeAKST : '--:--:--'}</div>
-              <div className="text-xs opacity-70 mt-1">Most of Alaska (AKT)</div>
-            </div>
-            <div>
-              <div className="text-5xl font-bold tracking-tight" style={{ fontVariantNumeric: 'tabular-nums' }}>{mounted ? timeHST : '--:--:--'}</div>
-              <div className="text-xs opacity-70 mt-1">Aleutian Islands (HT)</div>
-            </div>
-          </div>
-          <div className="text-sm opacity-80 mb-3">{mounted ? date : ''}</div>
-          <div className="flex justify-center gap-3 text-sm flex-wrap">
-            <span className="px-3 py-1 rounded-full font-medium bg-white/40">AKST UTC−9 / AKDT UTC−8</span>
-            <span className="px-3 py-1 rounded-full font-medium bg-white/20">2 Time Zones</span>
-            <span className="px-3 py-1 rounded-full font-medium bg-white/20">Pop. ~740K</span>
-          </div>
-        </div>
-      </section>
+      <ClockHero
+        bgColor="bg-blue-700"
+        clocks={[{ label: 'Current Time in Alaska', time }]}
+        date={date}
+        mounted={mounted}
+        badges={[
+          { label: 'AKST UTC−9 / AKDT UTC−8' },
+          { label: '2 Time Zones' },
+          { label: 'Pop. ~740K' },
+        ]}
+      />
+
 
       <section>
         <div className={card}>

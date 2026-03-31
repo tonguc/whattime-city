@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useCityContext } from '@/lib/CityContext'
+import { useClockTheme } from '@/components/ClockPage'
 
 const ZONES = [
   { label: 'Eastern', short: 'ET', tz: 'America/New_York' },
@@ -11,10 +11,10 @@ const ZONES = [
 ] as const
 
 export default function UnitedStatesClockClient() {
-  const { isLight } = useCityContext()
   const [times, setTimes] = useState<string[]>(['--:--', '--:--', '--:--', '--:--'])
   const [date, setDate] = useState('')
   const [mounted, setMounted] = useState(false)
+  const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()
 
   useEffect(() => {
     setMounted(true)
@@ -28,12 +28,6 @@ export default function UnitedStatesClockClient() {
     return () => clearInterval(id)
   }, [])
 
-  const card = isLight ? 'rounded-2xl border border-slate-200 bg-white p-6' : 'rounded-2xl border border-slate-700/50 bg-slate-800/60 p-6'
-  const innerCard = isLight ? 'rounded-xl border border-slate-100 bg-slate-50 p-4' : 'rounded-xl border border-slate-700/50 bg-slate-800/50 p-4'
-  const heading = isLight ? 'text-slate-800' : 'text-white'
-  const subText = isLight ? 'text-slate-600' : 'text-slate-300'
-  const mutedText = isLight ? 'text-slate-400' : 'text-slate-500'
-
   return (
     <div className="space-y-4">
       <section>
@@ -43,7 +37,7 @@ export default function UnitedStatesClockClient() {
             {ZONES.map((z, i) => (
               <div key={z.short} className="rounded-xl bg-white/15 p-3">
                 <div className="text-xs font-semibold uppercase tracking-wide opacity-80 mb-1">{z.label}</div>
-                <div className="text-2xl sm:text-3xl font-bold" style={{ fontVariantNumeric: 'tabular-nums' }}>
+                <div className="text-2xl sm:text-3xl font-bold tabular-nums">
                   {mounted ? times[i] : '--:--'}
                 </div>
                 <div className="text-xs opacity-70 mt-0.5">{z.short}</div>
@@ -61,12 +55,12 @@ export default function UnitedStatesClockClient() {
 
       <section>
         <div className={card}>
-          <h2 className={`text-xl font-semibold mb-4 ${heading}`}>US Time Zone Facts</h2>
+          <h2 className={`text-lg font-semibold mb-4 ${heading}`}>US Time Zone Facts</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {[
               { label: 'Total Zones', value: '6 (ET, CT, MT, PT, AKT, HST)' },
               { label: 'Span', value: '6 hours from East to Hawaii' },
-              { label: 'Daylight Saving', value: 'Mar&ndash;Nov (most states)' },
+              { label: 'Daylight Saving', value: 'Mar\u2013Nov (most states)' },
               { label: 'No DST States', value: 'Arizona &amp; Hawaii' },
               { label: 'Most Populated TZ', value: 'Eastern Time (~50% of US)' },
               { label: 'Population', value: '~335 million (2024 est.)' },
@@ -82,7 +76,7 @@ export default function UnitedStatesClockClient() {
 
       <section>
         <div className={card}>
-          <h2 className={`text-xl font-semibold mb-3 ${heading}`}>50 States Spanning 6 Hours</h2>
+          <h2 className={`text-lg font-semibold mb-3 ${heading}`}>50 States Spanning 6 Hours</h2>
           <div className={`text-sm leading-relaxed space-y-3 ${subText}`}>
             <p>
               The contiguous United States covers <strong className={heading}>four main time zones</strong> &mdash; Eastern, Central, Mountain, and Pacific &mdash; while Alaska and Hawaii add two more. This <strong className={heading}>6-hour span</strong> means when New Yorkers sit down for dinner at 6 PM, it&apos;s only noon in Honolulu.
@@ -99,7 +93,7 @@ export default function UnitedStatesClockClient() {
 
       <section>
         <div className={card}>
-          <h2 className={`text-xl font-semibold mb-3 ${heading}`}>Major Cities by Time Zone</h2>
+          <h2 className={`text-lg font-semibold mb-3 ${heading}`}>Major Cities by Time Zone</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {[
               { city: 'New York', pop: '8.3M', note: 'Eastern Time (UTC-5/-4)' },
