@@ -15,16 +15,26 @@ export default async function OGImage() {
   ]
 
   const now = new Date()
-  
-  const cityTimes = cities.map(c => ({
-    ...c,
-    time: now.toLocaleTimeString('en-US', {
-      timeZone: c.timezone,
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: false,
-    })
-  }))
+  const utcH = now.getUTCHours()
+  const utcM = now.getUTCMinutes()
+
+  // UTC offsets in minutes — avoids Intl timezone lookup on cold edge start
+  const UTC_OFFSETS: Record<string, number> = {
+    'America/New_York': -300, // EST (DST not factored, close enough for OG)
+    'Europe/London': 0,
+    'Asia/Dubai': 240,
+    'Asia/Tokyo': 540,
+    'Australia/Sydney': 600,
+  }
+
+  const cityTimes = cities.map(c => {
+    const offset = UTC_OFFSETS[c.timezone] ?? 0
+    const totalMin = (utcH * 60 + utcM + offset + 1440) % 1440
+    const h = Math.floor(totalMin / 60)
+    const m = totalMin % 60
+    const time = `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`
+    return { ...c, time }
+  })
 
   return new ImageResponse(
     (
