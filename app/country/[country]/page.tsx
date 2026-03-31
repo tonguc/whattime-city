@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { notFound, redirect } from 'next/navigation'
 import { getCountryBySlug, getAllCountrySlugs, getCitiesByCountryCode } from '@/lib/cities'
-import { COUNTRY_HUB_SLUGS } from '@/data'
+import { COUNTRY_HUB_SLUGS } from '@/data/hubPages'
 import CountryPageWrapper from '@/components/CountryPageWrapper'
 import CountryPageContent from '@/components/CountryPageContent'
 
@@ -9,11 +9,20 @@ interface CountryPageProps {
   params: Promise<{ country: string }>
 }
 
-// Generate static pages for all countries
+// ISR: remaining countries generated on first request, cached 24h
+export const revalidate = 86400
+export const dynamicParams = true
+
+// Only pre-render top 20 countries at build time
+// Remaining 172 countries are ISR
+const TOP_COUNTRIES = [
+  'united-states', 'united-kingdom', 'india', 'australia', 'canada',
+  'germany', 'france', 'japan', 'china', 'brazil',
+  'singapore', 'uae', 'south-africa', 'mexico', 'indonesia',
+  'russia', 'pakistan', 'nigeria', 'turkey', 'argentina'
+]
 export async function generateStaticParams() {
-  return getAllCountrySlugs().map((slug) => ({
-    country: slug,
-  }))
+  return TOP_COUNTRIES.map(slug => ({ country: slug }))
 }
 
 // Dynamic metadata for SEO

@@ -9,8 +9,18 @@ interface Props {
   params: Promise<{ code: string }>
 }
 
+// ISR: unvisited codes generated on first request, cached 24h
+export const revalidate = 86400
+export const dynamicParams = true
+
+// Only pre-render top 20 highest-volume area codes at build time
+// Remaining 252 codes are ISR
+const TOP_AREA_CODES = [
+  '213', '929', '917', '347', '437', '202', '754', '305', '786',
+  '312', '404', '415', '424', '646', '647', '718', '800', '888', '212'
+]
 export async function generateStaticParams() {
-  return areaCodeList.map(code => ({ code }))
+  return TOP_AREA_CODES.map(code => ({ code }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

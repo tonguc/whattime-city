@@ -9,11 +9,15 @@ interface PageProps {
   params: Promise<{ city: string }>
 }
 
-// Tier 1+2 şehirleri build'de statik üret (~592 sayfa)
-// Tier 3 şehirler (~1462) ilk request'te render edilip Vercel cache'e alınır
+// ISR: non-pre-rendered pages generated on first request, cached 24h
+export const revalidate = 86400
+export const dynamicParams = true
+
+// Only pre-render Tier 1 cities at build time (~41 pages)
+// Tier 2+ (~551 pages) are ISR: generated on first request, then cached
 export async function generateStaticParams() {
   return cities
-    .filter(c => (c.tier ?? 3) <= 2)
+    .filter(c => c.tier === 1)
     .map(c => ({ city: c.slug }))
 }
 

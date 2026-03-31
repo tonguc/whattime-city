@@ -13,8 +13,18 @@ import LosAngelesDigitalNomadContent from './LosAngelesDigitalNomadContent'
 
 type Props = { params: Promise<{ city: string }> }
 
+// ISR: other cities generated on first request, cached 24h
+export const revalidate = 86400
+export const dynamicParams = true
+
+// Only pre-render top 8 cities with custom guide content at build time
+// Remaining 13 cities are ISR
+const TOP_GUIDE_CITIES = [
+  'london', 'new-york', 'tokyo', 'dubai',
+  'singapore', 'paris', 'sydney', 'istanbul'
+]
 export async function generateStaticParams() {
-  return getSupportedGuideCities().map(city => ({ city }))
+  return TOP_GUIDE_CITIES.map(city => ({ city }))
 }
 
 

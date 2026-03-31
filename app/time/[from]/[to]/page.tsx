@@ -278,26 +278,27 @@ const PAIR_CONTEXTS: Record<string, string> = {
   'san-francisco-barcelona': 'San Francisco (PST/PDT, UTC−8/−7) is 9 hours behind Barcelona (CET/CEST, UTC+1/+2). The 9-hour gap is consistent most of the year; brief 8-hour windows appear when DST transitions occur on different dates. Many Silicon Valley companies use Barcelona as a European hub due to its talent pool, infrastructure, and quality of life.',
 }
 
-// Pre-build: PAIR_CONTEXTS'teki tüm pair'ler statik olarak üretilir.
-// Bu pair'ler en yüksek trafikli kombinasyonlar — ilk Googlebot crawl'ında cold start olmaz.
-// Diğer tüm kombinasyonlar revalidate=3600 ile ISR olarak çalışmaya devam eder.
+// Only pre-render top 15 highest-traffic pairs at build time.
+// All other pairs are ISR (revalidate=3600): generated on first request, then cached.
+const TOP_PAIRS = [
+  { from: 'new-york', to: 'london' },
+  { from: 'london', to: 'new-york' },
+  { from: 'london', to: 'sydney' },
+  { from: 'new-york', to: 'los-angeles' },
+  { from: 'london', to: 'dubai' },
+  { from: 'new-york', to: 'tokyo' },
+  { from: 'singapore', to: 'london' },
+  { from: 'london', to: 'singapore' },
+  { from: 'new-york', to: 'paris' },
+  { from: 'dubai', to: 'london' },
+  { from: 'los-angeles', to: 'london' },
+  { from: 'new-york', to: 'berlin' },
+  { from: 'sydney', to: 'london' },
+  { from: 'tokyo', to: 'new-york' },
+  { from: 'new-york', to: 'dubai' },
+]
 export async function generateStaticParams() {
-  // PAIR_CONTEXTS key'leri "slug1-slug2" formatında.
-  // Slug'lar tire içerebilir (new-york, los-angeles).
-  // Her split noktasını dene; her iki parça da geçerli city slug ise bul.
-  const citySlugSet = new Set(cities.map(c => c.slug))
-
-  return Object.keys(PAIR_CONTEXTS).flatMap(pair => {
-    const parts = pair.split('-')
-    for (let i = 1; i < parts.length; i++) {
-      const from = parts.slice(0, i).join('-')
-      const to = parts.slice(i).join('-')
-      if (citySlugSet.has(from) && citySlugSet.has(to)) {
-        return [{ from, to }]
-      }
-    }
-    return []
-  })
+  return TOP_PAIRS
 }
 
 // Ana Sayfa Bileşeni
