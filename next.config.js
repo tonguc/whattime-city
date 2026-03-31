@@ -55,6 +55,10 @@ const nextConfig = {
       { source: '/tools/meeting-planner/',  destination: '/meeting/',          permanent: true },
       { source: '/tools/meeting-planner',   destination: '/meeting/',          permanent: true },
 
+      // ── Turkish contact page → canonical /contact ──────────────────
+      { source: '/iletisim/',   destination: '/contact/', permanent: true },
+      { source: '/iletisim',    destination: '/contact/', permanent: true },
+
       // ── Orphan tool duplicates → canonical URLs ─────────────────────
       { source: '/converter/',     destination: '/time-converter/',  permanent: true },
       { source: '/converter',      destination: '/time-converter/',  permanent: true },
