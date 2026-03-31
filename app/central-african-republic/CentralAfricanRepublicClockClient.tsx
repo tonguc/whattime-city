@@ -2,6 +2,15 @@
 
 import { useClockState, useClockTheme, ClockHero } from '@/components/ClockPage'
 
+const CITIES = [
+  { name: 'Bangui', pop: '900K', note: 'Capital on the Ubangi River' },
+  { name: 'Bimbo', pop: '267K', note: 'Bangui suburb' },
+  { name: 'Berb\u00e9rati', pop: '108K', note: 'Western diamond hub' },
+  { name: 'Carnot', pop: '63K', note: 'Diamond mining center' },
+  { name: 'Bambari', pop: '55K', note: 'Central crossroads' },
+  { name: 'Kaga-Bandoro', pop: '48K', note: 'Northern trade town' },
+]
+
 export default function CentralAfricanRepublicClockClient() {
   const { time, date, mounted } = useClockState('Africa/Bangui')
   const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()

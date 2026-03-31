@@ -2,6 +2,15 @@
 
 import { useClockState, useClockTheme, ClockHero } from '@/components/ClockPage'
 
+const CITIES = [
+  { name: 'N\u2019Djamena', pop: '1.6M', note: 'Capital on Chari River' },
+  { name: 'Moundou', pop: '155K', note: 'Southern industrial city' },
+  { name: 'Ab\u00e9ch\u00e9', pop: '119K', note: 'Eastern trade center' },
+  { name: 'Sarh', pop: '103K', note: 'Former Fort-Archambault' },
+  { name: 'K\u00e9lo', pop: '50K', note: 'Mayo-Kebbi agricultural hub' },
+  { name: 'Am Timan', pop: '45K', note: 'Salamat region capital' },
+]
+
 export default function ChadClockClient() {
   const { time, date, mounted } = useClockState('Africa/Ndjamena')
   const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()

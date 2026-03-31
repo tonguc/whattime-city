@@ -2,6 +2,15 @@
 
 import { useClockState, useClockTheme, ClockHero } from '@/components/ClockPage'
 
+const CITIES = [
+  { name: 'Praia', pop: '159K', note: 'Capital, Santiago island' },
+  { name: 'Mindelo', pop: '70K', note: 'Cultural capital, S\u00e3o Vicente' },
+  { name: 'Espargos', pop: '17K', note: 'Sal island hub' },
+  { name: 'Assomada', pop: '12K', note: 'Interior Santiago' },
+  { name: 'Santa Maria', pop: '8K', note: 'Beach resort town' },
+  { name: 'S\u00e3o Filipe', pop: '8K', note: 'Fogo volcano base' },
+]
+
 export default function CapeVerdeClockClient() {
   const { time, date, mounted } = useClockState('Atlantic/Cape_Verde')
   const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()

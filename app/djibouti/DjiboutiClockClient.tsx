@@ -2,6 +2,15 @@
 
 import { useClockState, useClockTheme, ClockHero } from '@/components/ClockPage'
 
+const CITIES = [
+  { name: 'Djibouti City', pop: '600K', note: 'Capital &amp; port hub' },
+  { name: 'Ali Sabieh', pop: '40K', note: 'Southern gateway' },
+  { name: 'Dikhil', pop: '30K', note: 'Interior crossroads' },
+  { name: 'Tadjoura', pop: '22K', note: 'Gulf of Tadjoura coast' },
+  { name: 'Obock', pop: '18K', note: 'Northern port town' },
+  { name: 'Arta', pop: '16K', note: 'Highland retreat' },
+]
+
 export default function DjiboutiClockClient() {
   const { time, date, mounted } = useClockState('Africa/Djibouti')
   const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()

@@ -2,6 +2,15 @@
 
 import { useClockState, useClockTheme, ClockHero } from '@/components/ClockPage'
 
+const CITIES = [
+  { name: 'Brazzaville', pop: '2.4M', note: 'Capital, Congo River bank' },
+  { name: 'Pointe-Noire', pop: '1.2M', note: 'Economic capital &amp; port' },
+  { name: 'Dolisie', pop: '84K', note: 'Niari valley hub' },
+  { name: 'Nkayi', pop: '71K', note: 'Sugar industry center' },
+  { name: 'Ou\u00e9sso', pop: '28K', note: 'Northern forest gateway' },
+  { name: 'Owando', pop: '25K', note: 'Cuvette region capital' },
+]
+
 export default function CongoClockClient() {
   const { time, date, mounted } = useClockState('Africa/Brazzaville')
   const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()

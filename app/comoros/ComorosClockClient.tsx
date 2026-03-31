@@ -2,6 +2,15 @@
 
 import { useClockState, useClockTheme, ClockHero } from '@/components/ClockPage'
 
+const CITIES = [
+  { name: 'Moroni', pop: '54K', note: 'Capital, Grande Comore' },
+  { name: 'Mutsamudu', pop: '30K', note: 'Anjouan island capital' },
+  { name: 'Fomboni', pop: '20K', note: 'Moh\u00e9li island capital' },
+  { name: 'Domoni', pop: '15K', note: 'Historic Anjouan port' },
+  { name: 'Mitsamiouli', pop: '10K', note: 'Northern beach town' },
+  { name: 'Ouani', pop: '8K', note: 'Anjouan airport town' },
+]
+
 export default function ComorosClockClient() {
   const { time, date, mounted } = useClockState('Indian/Comoro')
   const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()
