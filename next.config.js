@@ -55,6 +55,16 @@ const nextConfig = {
       { source: '/tools/meeting-planner/',  destination: '/meeting/',          permanent: true },
       { source: '/tools/meeting-planner',   destination: '/meeting/',          permanent: true },
 
+      // ── Orphan tool duplicates → canonical URLs ─────────────────────
+      { source: '/converter/',     destination: '/time-converter/',  permanent: true },
+      { source: '/converter',      destination: '/time-converter/',  permanent: true },
+      { source: '/flight-times/',  destination: '/flight-time/',     permanent: true },
+      { source: '/flight-times',   destination: '/flight-time/',     permanent: true },
+      { source: '/jet-lag/',       destination: '/jet-lag-advisor/', permanent: true },
+      { source: '/jet-lag',        destination: '/jet-lag-advisor/', permanent: true },
+      { source: '/alarm/',         destination: '/world-alarm/',     permanent: true },
+      { source: '/alarm',          destination: '/world-alarm/',     permanent: true },
+
       // ── Duplicate slug temizliği ────────────────────────────────────
       { source: '/kochi/',   destination: '/kochi-india/',  permanent: true },
       { source: '/kochi',    destination: '/kochi-india/',  permanent: true },
