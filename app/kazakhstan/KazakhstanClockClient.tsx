@@ -1,95 +1,51 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { useCityContext } from '@/lib/CityContext'
+import {
+  useMultiClockState, useClockTheme, ClockHero, FactsGrid,
+  NarrativeSection, CitiesGrid,
+} from '@/components/ClockPage'
+
+const TZ = {
+  'Almaty / Astana \u00B7 UTC+6': 'Asia/Almaty',
+  'Aqtobe / Atyrau \u00B7 UTC+5': 'Asia/Aqtobe',
+}
 
 export default function KazakhstanClockClient() {
-  const { isLight } = useCityContext()
-  const [timeAlmaty, setTimeAlmaty] = useState('--:--:--')
-  const [timeAqtobe, setTimeAqtobe] = useState('--:--:--')
-  const [date, setDate] = useState('')
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-    const update = () => {
-      const now = new Date()
-      setTimeAlmaty(now.toLocaleTimeString('en-US', { timeZone: 'Asia/Almaty', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }))
-      setTimeAqtobe(now.toLocaleTimeString('en-US', { timeZone: 'Asia/Aqtobe', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }))
-      setDate(now.toLocaleDateString('en-US', { timeZone: 'Asia/Almaty', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }))
-    }
-    update()
-    const id = setInterval(update, 1000)
-    return () => clearInterval(id)
-  }, [])
-
-  const card = isLight
-    ? 'rounded-2xl border border-slate-200 bg-white p-6'
-    : 'rounded-2xl border border-slate-700/50 bg-slate-800/60 p-6'
-  const innerCard = isLight
-    ? 'rounded-xl border border-slate-100 bg-slate-50 p-4'
-    : 'rounded-xl border border-slate-700/50 bg-slate-800/50 p-4'
-  const heading = isLight ? 'text-slate-800' : 'text-white'
-  const subText = isLight ? 'text-slate-600' : 'text-slate-300'
-  const mutedText = isLight ? 'text-slate-400' : 'text-slate-500'
+  const { times, date, mounted } = useMultiClockState(TZ, 'Asia/Almaty')
+  const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()
 
   return (
     <div className="space-y-4">
-      {/* Live Clocks */}
-      <section>
-        <div className="rounded-2xl text-white p-6 text-center bg-red-700">
-          <div className="text-sm font-bold uppercase tracking-widest mb-2 opacity-90">
-            Current Time in Kazakhstan
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <div className="text-3xl sm:text-4xl font-bold tracking-tight" style={{ fontVariantNumeric: 'tabular-nums' }}>
-                {mounted ? timeAlmaty : '--:--:--'}
-              </div>
-              <div className="text-xs opacity-70 mt-1">Almaty / Astana · UTC+6</div>
-            </div>
-            <div>
-              <div className="text-3xl sm:text-4xl font-bold tracking-tight" style={{ fontVariantNumeric: 'tabular-nums' }}>
-                {mounted ? timeAqtobe : '--:--:--'}
-              </div>
-              <div className="text-xs opacity-70 mt-1">Aqtobe / Atyrau · UTC+5</div>
-            </div>
-          </div>
-          <div className="text-sm opacity-80 mt-3">{mounted ? date : ''}</div>
-          <div className="flex justify-center gap-3 text-sm flex-wrap mt-3">
-            <span className="px-3 py-1 rounded-full font-medium bg-white/40">2 Time Zones</span>
-            <span className="px-3 py-1 rounded-full font-medium bg-white/20">No DST</span>
-            <span className="px-3 py-1 rounded-full font-medium bg-white/20">World&apos;s 9th Largest Country</span>
-          </div>
-        </div>
-      </section>
+      <ClockHero
+        bgColor="bg-red-700"
+        clocks={[
+          { label: 'Almaty / Astana \u00B7 UTC+6', time: times['Almaty / Astana \u00B7 UTC+6'] ?? '' },
+          { label: 'Aqtobe / Atyrau \u00B7 UTC+5', time: times['Aqtobe / Atyrau \u00B7 UTC+5'] ?? '' },
+        ]}
+        date={date}
+        mounted={mounted}
+        badges={[
+          { label: '2 Time Zones' },
+          { label: 'No DST' },
+          { label: "World\u2019s 9th Largest Country" },
+        ]}
+      />
 
-      {/* Quick Facts */}
+      <FactsGrid
+        card={card} heading={heading} subText={subText} mutedText={mutedText}
+        facts={[
+          { label: 'Time Zones', value: 'UTC+5 (west) & UTC+6 (east)' },
+          { label: 'DST Status', value: 'Abolished in 2005' },
+          { label: 'IANA Identifiers', value: 'Asia/Almaty, Asia/Aqtobe, +3 more' },
+          { label: 'Population', value: '~20 million' },
+          { label: 'Area', value: '2.72M km\u00b2 \u2014 largest landlocked country' },
+          { label: 'East-West Span', value: '~3,000 km (1 hr time difference)' },
+        ]}
+      />
+
       <section>
         <div className={card}>
-          <h2 className={`text-xl font-semibold mb-4 ${heading}`}>Kazakhstan Time Facts</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            {[
-              { label: 'Time Zones', value: 'UTC+5 (west) & UTC+6 (east)' },
-              { label: 'DST Status', value: 'Abolished in 2005' },
-              { label: 'IANA Identifiers', value: 'Asia/Almaty, Asia/Aqtobe, +3 more' },
-              { label: 'Population', value: '~20 million' },
-              { label: 'Area', value: '2.72M km² — largest landlocked country' },
-              { label: 'East-West Span', value: '~3,000 km (1 hr time difference)' },
-            ].map(({ label, value }) => (
-              <div key={label} className={innerCard}>
-                <div className={`text-xs ${mutedText} mb-1`}>{label}</div>
-                <div className={`text-sm font-semibold ${heading}`}>{value}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Kazakhstan vs World */}
-      <section>
-        <div className={card}>
-          <h2 className={`text-xl font-semibold mb-3 ${heading}`}>Kazakhstan Time vs World</h2>
+          <h2 className={`text-lg font-semibold mb-3 ${heading}`}>Kazakhstan Time vs World</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -104,14 +60,14 @@ export default function KazakhstanClockClient() {
                   { zone: 'New York (ET winter)', almaty: 'KZ +11 hrs', aqtobe: 'KZ +10 hrs' },
                   { zone: 'London (GMT winter)', almaty: 'KZ +6 hrs', aqtobe: 'KZ +5 hrs' },
                   { zone: 'Moscow (MSK)', almaty: 'KZ +3 hrs', aqtobe: 'KZ +2 hrs' },
-                  { zone: 'India (IST)', almaty: 'KZ +0:30', aqtobe: 'KZ −0:30' },
-                  { zone: 'China (CST)', almaty: 'KZ −2 hrs', aqtobe: 'KZ −3 hrs' },
+                  { zone: 'India (IST)', almaty: 'KZ +0:30', aqtobe: 'KZ \u22120:30' },
+                  { zone: 'China (CST)', almaty: 'KZ \u22122 hrs', aqtobe: 'KZ \u22123 hrs' },
                   { zone: 'Uzbekistan (UZT)', almaty: 'KZ +1 hr', aqtobe: 'Same time!' },
                 ].map(({ zone, almaty, aqtobe }) => (
                   <tr key={zone}>
                     <td className={`py-2 pr-4 font-medium ${heading}`}>{zone}</td>
-                    <td className={`py-2 pr-4 ${subText}`} style={{ fontVariantNumeric: 'tabular-nums' }}>{almaty}</td>
-                    <td className={`py-2 ${subText}`} style={{ fontVariantNumeric: 'tabular-nums' }}>{aqtobe}</td>
+                    <td className={`py-2 pr-4 tabular-nums ${subText}`}>{almaty}</td>
+                    <td className={`py-2 tabular-nums ${subText}`}>{aqtobe}</td>
                   </tr>
                 ))}
               </tbody>
@@ -120,16 +76,13 @@ export default function KazakhstanClockClient() {
         </div>
       </section>
 
-      {/* Timezone Zones */}
       <section>
         <div className={card}>
-          <h2 className={`text-xl font-semibold mb-3 ${heading}`}>Two Zones Across 3,000 Kilometers of Steppe</h2>
-          <div className={`text-sm leading-relaxed space-y-3 ${subText}`}>
-            <p>
-              Kazakhstan is the <strong className={heading}>world&apos;s largest landlocked country</strong> and <strong className={heading}>9th largest overall</strong> — stretching 3,000 km from the Caspian Sea to China. It spans two time zones:
-            </p>
+          <h2 className={`text-lg font-semibold mb-3 ${heading}`}>Two Zones Across 3,000 Kilometers of Steppe</h2>
+          <div className={`text-sm leading-relaxed mb-3 ${subText}`}>
+            Kazakhstan is the <strong className={heading}>world&apos;s largest landlocked country</strong> and <strong className={heading}>9th largest overall</strong> \u2014 stretching 3,000 km from the Caspian Sea to China.
           </div>
-          <div className="overflow-x-auto mt-3">
+          <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className={`text-left ${mutedText}`}>
@@ -152,66 +105,42 @@ export default function KazakhstanClockClient() {
               </tbody>
             </table>
           </div>
-          <div className={`text-sm mt-3 ${subText}`}>
-            <p>
-              In <strong className={heading}>2005</strong>, Kazakhstan abolished DST, citing economic disruption and health concerns. Unlike Russia (which went through multiple DST reforms), Kazakhstan&apos;s decision was swift and permanent — the clocks haven&apos;t changed since.
-            </p>
-          </div>
+          <p className={`text-sm mt-3 ${subText}`}>
+            In <strong className={heading}>2005</strong>, Kazakhstan abolished DST, citing economic disruption and health concerns. Unlike Russia, Kazakhstan&apos;s decision was swift and permanent \u2014 the clocks haven&apos;t changed since.
+          </p>
         </div>
       </section>
 
-      {/* Baikonur */}
-      <section>
-        <div className={card}>
-          <h2 className={`text-xl font-semibold mb-3 ${heading}`}>Baikonur Cosmodrome — Where Space Launches Use Moscow Time</h2>
-          <div className={`text-sm leading-relaxed space-y-3 ${subText}`}>
-            <p>
-              The <strong className={heading}>Baikonur Cosmodrome</strong> in southern Kazakhstan is the world&apos;s first and largest space launch facility. <strong className={heading}>Yuri Gagarin</strong> launched from here in 1961. All crewed Soyuz missions to the ISS still launch from Baikonur.
-            </p>
-            <p>
-              Here&apos;s the bizarre timezone twist: Baikonur is geographically in Kazakhstan&apos;s <strong className={heading}>UTC+6 zone</strong>, but the city is <strong className={heading}>leased to Russia until 2050</strong> and officially runs on <strong className={heading}>Moscow Time (UTC+3)</strong>. So the cosmodrome is <strong className={heading}>3 hours behind the surrounding Kazakh territory</strong> — creating a timezone island in the middle of the steppe.
-            </p>
-          </div>
-        </div>
-      </section>
+      <NarrativeSection title="Baikonur Cosmodrome \u2014 Where Space Launches Use Moscow Time" card={card} heading={heading} subText={subText}>
+        <p>
+          The <strong className={heading}>Baikonur Cosmodrome</strong> in southern Kazakhstan is the world&apos;s first and largest space launch facility. <strong className={heading}>Yuri Gagarin</strong> launched from here in 1961. All crewed Soyuz missions to the ISS still launch from Baikonur.
+        </p>
+        <p>
+          Here&apos;s the bizarre timezone twist: Baikonur is geographically in Kazakhstan&apos;s <strong className={heading}>UTC+6 zone</strong>, but the city is <strong className={heading}>leased to Russia until 2050</strong> and officially runs on <strong className={heading}>Moscow Time (UTC+3)</strong> \u2014 creating a timezone island 3 hours behind the surrounding Kazakh territory.
+        </p>
+      </NarrativeSection>
 
-      {/* Oil & Astana */}
-      <section>
-        <div className={card}>
-          <h2 className={`text-xl font-semibold mb-3 ${heading}`}>Oil Giant & Astana&apos;s Futuristic Capital</h2>
-          <div className={`text-sm leading-relaxed space-y-3 ${subText}`}>
-            <p>
-              Kazakhstan has the <strong className={heading}>12th largest oil reserves in the world</strong> (Kashagan and Tengiz fields in the Caspian). Oil revenue funded the construction of <strong className={heading}>Astana</strong> — one of the world&apos;s most ambitious planned capitals, transferred from Almaty in <strong className={heading}>1997</strong>.
-            </p>
-            <p>
-              Astana (briefly renamed Nur-Sultan 2019-2022) has a <strong className={heading}>temperature range of -40°C to +40°C</strong> — making it the <strong className={heading}>second-coldest capital in the world</strong> (after Ulaanbaatar). The city is a surreal mix of futuristic architecture: the <strong className={heading}>Bayterek Tower, Khan Shatyr tent, and Expo 2017 sphere</strong> rise from the frozen steppe.
-            </p>
-          </div>
-        </div>
-      </section>
+      <NarrativeSection title="Oil Giant &amp; Astana\u2019s Futuristic Capital" card={card} heading={heading} subText={subText}>
+        <p>
+          Kazakhstan has the <strong className={heading}>12th largest oil reserves in the world</strong> (Kashagan and Tengiz fields in the Caspian). Oil revenue funded the construction of <strong className={heading}>Astana</strong> \u2014 one of the world&apos;s most ambitious planned capitals, transferred from Almaty in <strong className={heading}>1997</strong>.
+        </p>
+        <p>
+          Astana has a <strong className={heading}>temperature range of -40\u00b0C to +40\u00b0C</strong> \u2014 making it the <strong className={heading}>second-coldest capital in the world</strong> (after Ulaanbaatar). Its skyline features the <strong className={heading}>Bayterek Tower, Khan Shatyr tent, and Expo 2017 sphere</strong>.
+        </p>
+      </NarrativeSection>
 
-      {/* Major Cities */}
-      <section>
-        <div className={card}>
-          <h2 className={`text-xl font-semibold mb-3 ${heading}`}>Major Kazakh Cities</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            {[
-              { city: 'Astana', pop: '1.4M', note: 'Capital (UTC+6), futuristic planned city' },
-              { city: 'Almaty', pop: '2.1M', note: 'Former capital (UTC+6), cultural hub' },
-              { city: 'Shymkent', pop: '1.2M', note: '3rd city (UTC+6), southern gateway' },
-              { city: 'Aqtobe', pop: '520K', note: 'Western hub (UTC+5), chromium mining' },
-              { city: 'Atyrau', pop: '400K', note: 'Oil capital (UTC+5), Caspian coast' },
-              { city: 'Karaganda', pop: '500K', note: 'Central (UTC+6), mining, Soviet-era' },
-            ].map(c => (
-              <div key={c.city} className={innerCard}>
-                <div className={`font-semibold text-sm ${heading}`}>{c.city}</div>
-                <div className={`text-xs ${mutedText}`}>Pop. {c.pop}</div>
-                <div className={`text-xs ${subText} mt-0.5`}>{c.note}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CitiesGrid
+        title="Major Kazakh Cities"
+        card={card} innerCard={innerCard} heading={heading} subText={subText} mutedText={mutedText}
+        cities={[
+          { name: 'Astana', detail: 'Pop. 1.4M \u00B7 Capital (UTC+6), futuristic planned city' },
+          { name: 'Almaty', detail: 'Pop. 2.1M \u00B7 Former capital (UTC+6), cultural hub' },
+          { name: 'Shymkent', detail: 'Pop. 1.2M \u00B7 3rd city (UTC+6), southern gateway' },
+          { name: 'Aqtobe', detail: 'Pop. 520K \u00B7 Western hub (UTC+5), chromium mining' },
+          { name: 'Atyrau', detail: 'Pop. 400K \u00B7 Oil capital (UTC+5), Caspian coast' },
+          { name: 'Karaganda', detail: 'Pop. 500K \u00B7 Central (UTC+6), mining, Soviet-era' },
+        ]}
+      />
     </div>
   )
 }
