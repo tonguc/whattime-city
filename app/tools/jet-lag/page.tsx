@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { cities } from '@/lib/cities'
+import { citiesCore as cities } from '@/lib/cities-client'
 import { useThemeClasses } from '@/lib/useThemeClasses'
 import { useCityContext } from '@/lib/CityContext'
 import ToolsMiniNav from '@/components/ToolsMiniNav'

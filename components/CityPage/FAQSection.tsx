@@ -1,7 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { City, cities } from '@/lib/cities'
+import type { City } from '@/lib/cities'
+import { citiesCore } from '@/lib/cities-client'
+const cities = citiesCore as unknown as City[]
 import { useThemeClasses } from '@/lib/useThemeClasses'
 import Link from 'next/link'
 import type { CitySEOData } from '@/core/types'

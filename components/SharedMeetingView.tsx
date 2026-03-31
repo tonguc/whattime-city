@@ -3,7 +3,9 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import { City, cities } from '@/lib/cities'
+import type { City } from '@/lib/cities'
+import { citiesCore } from '@/lib/cities-client'
+const cities = citiesCore as unknown as City[]
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import TimeIcons from './TimeIcons'

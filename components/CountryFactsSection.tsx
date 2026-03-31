@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { countries } from '@/data'
-import { COUNTRY_HUB_SLUGS } from '@/data'
-import { getCitiesByCountryCode } from '@/lib/cities'
+import { countries } from '@/data/countries'
+import { COUNTRY_HUB_SLUGS } from '@/data/hubPages'
+import { getCitesCoreByCountryCode as getCitiesByCountryCode } from '@/lib/cities-client'
 import { useCityContext } from '@/lib/CityContext'
 import { getFlagUrl } from '@/shared/utils'
 import ClockComparisonSection from '@/components/ClockComparisonSection'

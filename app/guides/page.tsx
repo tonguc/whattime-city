@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { getCityBySlug } from '@/lib/cities'
+import { getCityCoreBySlug as getCityBySlug } from '@/lib/cities-client'
 import { getCityDisplayConfig, getGuideCities } from '@/lib/cityDisplayConfig'
 import { useCityContext } from '@/lib/CityContext'
 import Header from '@/components/Header'
