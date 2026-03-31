@@ -731,14 +731,29 @@ scalability, tech debt, build/deploy efficiency, content growth.
   - 429 + `Retry-After: 60` response
 - `app/sitemap.ts`: `export const revalidate = 86400` eklendi (O(N²) tier1×tier1 pair computation cache)
 
-**Phase 4 (sonraki sprint — büyük refactor, Opus önerilir):**
-- Redirect konsolidasyonu → yalnızca `next.config.js`
-- Orphan page audit
-- 242 ClockClient → tek `CountryClockClient` bileşeni
-- 62 converter sayfası → `[from]-to-[to]` dynamic route
-- `data/cities.ts` tier-based split (şu an tek dosya, yavaş import)
-- `app/[city]/error.tsx` nested error boundary
-- `translations.ts` (46k satır) bundle analyzer ile client bundle kontrolü
+**Phase 4 — Redirect Fix + Error Boundary ✅ (Mart 2026):**
+
+**Redirect loop + chain fix (`next.config.js`):**
+- **BUG FIX (loop):** `24-hours-itinerary → 24-hours` redirect removed — conflicted with middleware
+  `24-hours → 24-hours-itinerary`, creating infinite redirect loop for 8 premium cities
+- **Chain elimination:** `best-time-to-call` now redirects directly to `time-business` (was `call-times`,
+  which middleware then redirected to `time-business` — 2 hops instead of 1)
+- **Chain elimination:** `public-holidays` now redirects directly to `travel-guide` (was `holidays`,
+  which middleware then redirected to `travel-guide` — 2 hops instead of 1)
+
+**Error boundary:** `app/[city]/error.tsx` eklendi — city sayfalarında hata olursa contextual UI
+(Try again + Browse all cities) gösterir. Root `app/error.tsx` zaten mevcut ama generic 500 gösteriyor.
+
+**Değerlendirilip ertelenen maddeler:**
+- 64 converter sayfası → dynamic route: **ertelendi** — `app/[pair]/page.tsx`, `app/[city]/page.tsx`
+  ile routing conflict yaratıyor. Middleware rewrite eklemek karmaşıklık/risk artırır. Mevcut yapı
+  ConverterPageShell ile zaten merkezi. Yeni pair eklemek kolay (copy-paste + config değiştir).
+- 242 ClockClient → tek bileşen: **ertelendi** — her dosyada unique nesir içeriği var (DST tarihi,
+  kültürel bağlam, ekonomik veriler). Data-driven approach nesir kalitesini düşürür.
+- `data/cities.ts` tier split: **ertelendi** — 24K satır, ama Next.js server component'larında
+  tree-shaking sorun değil, client'a gitmez. Import hızı build-time'da marginal etki.
+- `translations.ts` bundle riski: **sorun yok** — CLAUDE.md'de 46K satır yazıyordu, gerçekte
+  sadece 892 satır (13 dil × ~60 key). Client bundle etkisi ihmal edilebilir düzeyde.
 
 ---
 
@@ -752,7 +767,7 @@ scalability, tech debt, build/deploy efficiency, content growth.
 - [ ] PAIR_CONTEXTS 92 pairs — monitor /time/ pair pages for new impressions (pre-built now)
 - [ ] New 14 city pages (abu-dhabi, kathmandu, colombo, etc.) — monitor GSC indexing
 - [ ] Area code pages (929 246K, 213 673K, 917 246K) — description fixed; monitor GSC indexing + authority
-- [ ] Phase 4 big refactors (Opus session önerilir): ClockClient consolidation, dynamic converter route, cities.ts split
+- [ ] Orphan page audit — check for pages not linked from any navigation/sitemap
 
 ---
 
