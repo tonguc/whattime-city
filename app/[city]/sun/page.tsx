@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cities } from '@/lib/cities'
 import SunPageClient from './SunPageClient'
+import { SITE_URL } from '@/lib/constants'
 
 interface PageProps {
   params: Promise<{ city: string }>
@@ -73,7 +74,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: 'website',
       locale: 'en_US',
       siteName: 'whattime.city',
-      url: `https://whattime.city/${slug}/sun/`,
+      url: `${SITE_URL}/${slug}/sun/`,
     },
     twitter: {
       card: 'summary_large_image',
@@ -81,7 +82,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: `Today's sun times for ${city.city}. Dawn, sunrise, solar noon, sunset, dusk.`,
     },
     alternates: {
-      canonical: `https://whattime.city/${slug}/sun/`,
+      canonical: `${SITE_URL}/${slug}/sun/`,
     },
     robots: {
       index: true,
@@ -160,18 +161,18 @@ export default async function SunPage({ params }: PageProps) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://whattime.city/' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
       {
         '@type': 'ListItem',
         position: 2,
         name: cityLabel,
-        item: `https://whattime.city/${slug}/`,
+        item: `${SITE_URL}/${slug}/`,
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Sunrise & Sunset',
-        item: `https://whattime.city/${slug}/sun/`,
+        item: `${SITE_URL}/${slug}/sun/`,
       },
     ],
   }

@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { City } from '@/lib/cities'
 import { useThemeClasses } from '@/lib/useThemeClasses'
 import { getSunTimes } from '@/lib/sun-calculator'
@@ -70,17 +71,17 @@ export default function InfoRow({ city, weather, detectedCity, autoTheme }: Info
           <WeatherBadge weather={weather} />
         )}
         
-        {/* Sunrise */}
-        <div className={`flex items-center gap-1.5 ${textMuted}`}>
+        {/* Sunrise — links to city sun page for crawl discovery */}
+        <Link href={`/${city.slug}/sun/`} className={`flex items-center gap-1.5 ${textMuted} hover:underline`}>
           <span>🌅</span>
           <span>{formatDecimalHours(sunTimes.sunrise)}</span>
-        </div>
+        </Link>
         
         {/* Sunset */}
-        <div className={`flex items-center gap-1.5 ${textMuted}`}>
+        <Link href={`/${city.slug}/sun/`} className={`flex items-center gap-1.5 ${textMuted} hover:underline`}>
           <span>🌇</span>
           <span>{formatDecimalHours(sunTimes.sunset)}</span>
-        </div>
+        </Link>
         
         {/* User Location & Time Diff */}
         {detectedCity && (
