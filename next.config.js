@@ -81,17 +81,13 @@ const nextConfig = {
       { source: '/nigeria-vs-brazil/',                 destination: '/time/lagos/sao-paulo/',       permanent: true },
       { source: '/nigeria-vs-brazil',                  destination: '/time/lagos/sao-paulo/',       permanent: true },
 
-      // ── Guide URL 301s (old slug → canonical slug) ─────────────────
-      // best-time-to-call → call-times  (8 premium cities)
+      // ── Guide URL 301s (old slug → final canonical slug) ───────────
+      // Redirect directly to final canonical to avoid chains with middleware
       ...['new-york', 'london', 'tokyo', 'dubai', 'singapore', 'paris', 'sydney', 'istanbul'].flatMap(city => [
-        { source: `/${city}/guide/best-time-to-call/`, destination: `/${city}/guide/call-times/`, permanent: true },
-        { source: `/${city}/guide/best-time-to-call`,  destination: `/${city}/guide/call-times/`, permanent: true },
-        // public-holidays → holidays
-        { source: `/${city}/guide/public-holidays/`,   destination: `/${city}/guide/holidays/`,   permanent: true },
-        { source: `/${city}/guide/public-holidays`,    destination: `/${city}/guide/holidays/`,   permanent: true },
-        // 24-hours-itinerary → 24-hours
-        { source: `/${city}/guide/24-hours-itinerary/`, destination: `/${city}/guide/24-hours/`,  permanent: true },
-        { source: `/${city}/guide/24-hours-itinerary`,  destination: `/${city}/guide/24-hours/`,  permanent: true },
+        { source: `/${city}/guide/best-time-to-call/`, destination: `/${city}/guide/time-business/`, permanent: true },
+        { source: `/${city}/guide/best-time-to-call`,  destination: `/${city}/guide/time-business/`, permanent: true },
+        { source: `/${city}/guide/public-holidays/`,   destination: `/${city}/guide/travel-guide/`,  permanent: true },
+        { source: `/${city}/guide/public-holidays`,    destination: `/${city}/guide/travel-guide/`,  permanent: true },
       ]),
     ]
   },
