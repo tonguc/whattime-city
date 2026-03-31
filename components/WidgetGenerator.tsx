@@ -2,7 +2,10 @@
 
 import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
-import { cities, City, getTier1Cities } from '@/lib/cities'
+import type { City } from '@/lib/cities'
+import { citiesCore, getTier1CitiesCore } from '@/lib/cities-client'
+const cities = citiesCore as unknown as City[]
+function getTier1Cities() { return getTier1CitiesCore() as unknown as City[] }
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes } from '@/lib/themes'
 import { useCityContext } from '@/lib/CityContext'

@@ -3,20 +3,20 @@
 import { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { useRouter } from 'next/navigation'
-import { City, searchCities } from '@/lib/cities'
+import { useCitySearch, CitySearchResult } from '@/lib/useCitySearch'
 import { useThemeClasses } from '@/lib/useThemeClasses'
 
 interface CompareWidgetProps {
-  initialFromCity?: City | null
-  initialToCity?: City | null
+  initialFromCity?: CitySearchResult | null
+  initialToCity?: CitySearchResult | null
   className?: string
-  onCitiesChange?: (fromCity: City | null, toCity: City | null) => void
+  onCitiesChange?: (fromCity: CitySearchResult | null, toCity: CitySearchResult | null) => void
 }
 
 interface DropdownPortalProps {
   isOpen: boolean
-  results: City[]
-  onSelect: (city: City) => void
+  results: CitySearchResult[]
+  onSelect: (city: CitySearchResult) => void
   inputRef: React.RefObject<HTMLInputElement>
   highlightIndex?: number
 }
@@ -96,21 +96,19 @@ function DropdownPortal({ isOpen, results, onSelect, inputRef, highlightIndex = 
   )
 }
 
-export default function CompareWidget({ 
-  initialFromCity = null, 
+export default function CompareWidget({
+  initialFromCity = null,
   initialToCity = null,
   className = "",
   onCitiesChange
 }: CompareWidgetProps) {
   const router = useRouter()
   const { isLight } = useThemeClasses()
-  
-  const [fromCity, setFromCity] = useState<City | null>(initialFromCity)
-  const [toCity, setToCity] = useState<City | null>(initialToCity)
+
+  const [fromCity, setFromCity] = useState<CitySearchResult | null>(initialFromCity)
+  const [toCity, setToCity] = useState<CitySearchResult | null>(initialToCity)
   const [fromQuery, setFromQuery] = useState(initialFromCity?.city || '')
   const [toQuery, setToQuery] = useState(initialToCity?.city || '')
-  const [fromResults, setFromResults] = useState<City[]>([])
-  const [toResults, setToResults] = useState<City[]>([])
   const [showFromDropdown, setShowFromDropdown] = useState(false)
   const [showToDropdown, setShowToDropdown] = useState(false)
   const [fromHighlightIndex, setFromHighlightIndex] = useState(-1)
@@ -141,60 +139,39 @@ export default function CompareWidget({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // Detect user's location
+  // Detect user's location via API
   const detectUserLocation = async () => {
     try {
-      // Try to get timezone-based location first (most reliable)
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
-      
-      // Map common timezones to cities
-      const timezoneToCity: { [key: string]: string } = {
-        'America/New_York': 'New York',
-        'America/Los_Angeles': 'Los Angeles',
-        'America/Chicago': 'Chicago',
-        'Europe/London': 'London',
-        'Europe/Paris': 'Paris',
-        'Europe/Berlin': 'Berlin',
-        'Europe/Istanbul': 'Istanbul',
-        'Asia/Tokyo': 'Tokyo',
-        'Asia/Shanghai': 'Shanghai',
-        'Asia/Dubai': 'Dubai',
-        'Australia/Sydney': 'Sydney',
-      }
-      
-      const cityName = timezoneToCity[timezone]
-      if (cityName) {
-        const results = searchCities(cityName)
-        if (results.length > 0) {
-          setFromCity(results[0])
-          setFromQuery(results[0].city)
-          onCitiesChange?.(results[0], toCity)
+      const tzCity = timezone.split('/').pop()?.replace(/_/g, ' ') || ''
+      if (!tzCity) return
+      const res = await fetch(`/api/cities/search?q=${encodeURIComponent(tzCity)}&limit=1`)
+      if (res.ok) {
+        const data: CitySearchResult[] = await res.json()
+        if (data.length > 0) {
+          setFromCity(data[0])
+          setFromQuery(data[0].city)
+          onCitiesChange?.(data[0], toCity)
         }
       }
-    } catch (error) {
-      console.log('Could not detect location:', error)
+    } catch {
+      // silently ignore
     }
   }
 
-  useEffect(() => {
-    if (fromQuery.length >= 1 && !fromCity) {
-      setFromResults(searchCities(fromQuery).slice(0, 6))
-      setShowFromDropdown(true)
-    } else {
-      setFromResults([])
-      setShowFromDropdown(false)
-    }
-  }, [fromQuery, fromCity])
+  // Use search hook for from/to queries (only when city not already selected)
+  const fromSearchQuery = fromCity ? '' : fromQuery
+  const toSearchQuery = toCity ? '' : toQuery
+  const { results: fromResults } = useCitySearch(fromSearchQuery, 6)
+  const { results: toResults } = useCitySearch(toSearchQuery, 6)
 
   useEffect(() => {
-    if (toQuery.length >= 1 && !toCity) {
-      setToResults(searchCities(toQuery).slice(0, 6))
-      setShowToDropdown(true)
-    } else {
-      setToResults([])
-      setShowToDropdown(false)
-    }
-  }, [toQuery, toCity])
+    setShowFromDropdown(fromQuery.length >= 1 && !fromCity && fromResults.length > 0)
+  }, [fromQuery, fromCity, fromResults])
+
+  useEffect(() => {
+    setShowToDropdown(toQuery.length >= 1 && !toCity && toResults.length > 0)
+  }, [toQuery, toCity, toResults])
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -289,14 +266,14 @@ export default function CompareWidget({
     onCitiesChange?.(toCity, tempCity)
   }
 
-  const handleFromCitySelect = (city: City) => {
+  const handleFromCitySelect = (city: CitySearchResult) => {
     setFromCity(city)
     setFromQuery(city.city)
     setShowFromDropdown(false)
     onCitiesChange?.(city, toCity)
   }
 
-  const handleToCitySelect = (city: City) => {
+  const handleToCitySelect = (city: CitySearchResult) => {
     setToCity(city)
     setToQuery(city.city)
     setShowToDropdown(false)

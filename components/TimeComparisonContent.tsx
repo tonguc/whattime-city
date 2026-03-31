@@ -510,9 +510,9 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
   const callTimeStatus = getCallTimeStatus()
   
   // Swap handler
-  const handleCitiesChange = (newFromCity: City | null, newToCity: City | null) => {
-    if (newFromCity) setCurrentFromCity(newFromCity)
-    if (newToCity) setCurrentToCity(newToCity)
+  const handleCitiesChange = (newFromCity: { slug: string; city: string; timezone: string; lat: number; lng: number; country: string; countryCode?: string } | null, newToCity: { slug: string; city: string; timezone: string; lat: number; lng: number; country: string; countryCode?: string } | null) => {
+    if (newFromCity) setCurrentFromCity(newFromCity as unknown as City)
+    if (newToCity) setCurrentToCity(newToCity as unknown as City)
   }
   
   // Estimated flight time (rough calculation based on distance)
@@ -592,9 +592,9 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
 
         {/* Compare Widget */}
         <div className="mb-8" style={{ position: 'relative', zIndex: 50, overflow: 'visible' }}>
-          <CompareWidget 
-            initialFromCity={fromCity}
-            initialToCity={toCity}
+          <CompareWidget
+            initialFromCity={fromCity as unknown as import('@/lib/useCitySearch').CitySearchResult}
+            initialToCity={toCity as unknown as import('@/lib/useCitySearch').CitySearchResult}
             onCitiesChange={handleCitiesChange}
           />
         </div>

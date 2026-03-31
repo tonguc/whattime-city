@@ -5,7 +5,8 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useCityContext } from '@/lib/CityContext'
 import { useThemeClasses } from '@/lib/useThemeClasses'
-import { City, searchCities } from '@/lib/cities'
+import { useCitySearch, CitySearchResult } from '@/lib/useCitySearch'
+import type { City } from '@/lib/cities'
 import CitySearch from '@/components/CitySearch'
 
 interface HeaderProps {
@@ -23,23 +24,22 @@ function Header({ hideSearch }: HeaderProps) {
   
   // Search state
   const [searchQuery, setSearchQuery] = useState('')
-  const [searchResults, setSearchResults] = useState<City[]>([])
   const [showSearchDropdown, setShowSearchDropdown] = useState(false)
   const [searchHighlightIndex, setSearchHighlightIndex] = useState(-1)
   const searchRef = useRef<HTMLDivElement>(null)
-  
+
+  const { results: searchResults } = useCitySearch(searchQuery, 6)
+
   // Settings state
   const [showSettings, setShowSettings] = useState(false)
   const settingsRef = useRef<HTMLDivElement>(null)
-  
+
   // Search effect
   useEffect(() => {
     if (searchQuery.length >= 1) {
-      setSearchResults(searchCities(searchQuery).slice(0, 6))
       setShowSearchDropdown(true)
       setSearchHighlightIndex(-1)
     } else {
-      setSearchResults([])
       setShowSearchDropdown(false)
       setSearchHighlightIndex(-1)
     }
@@ -88,7 +88,7 @@ function Header({ hideSearch }: HeaderProps) {
     return () => document.removeEventListener('mousedown', handleClick)
   }, [])
   
-  const handleSearchSelect = (city: City) => {
+  const handleSearchSelect = (city: CitySearchResult) => {
     router.push(`/${city.slug}`)
     setSearchQuery('')
     setShowSearchDropdown(false)
@@ -151,7 +151,7 @@ function Header({ hideSearch }: HeaderProps) {
                       <span className={text}>{city.city}</span>
                       <span className={`text-sm ml-2 ${textMuted}`}>{city.country}</span>
                     </div>
-                    <span className={`text-sm ${textMuted}`}>{context.getLocalTime(city)}</span>
+                    <span className={`text-sm ${textMuted}`}>{context.getLocalTime(city as unknown as City)}</span>
                   </button>
                 ))}
               </div>

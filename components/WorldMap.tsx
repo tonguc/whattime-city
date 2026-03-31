@@ -2,7 +2,9 @@
 
 import { useState, useMemo, useRef, useEffect } from 'react'
 import Link from 'next/link'
-import { cities, City } from '@/lib/cities'
+import type { City } from '@/lib/cities'
+import { citiesCore } from '@/lib/cities-client'
+const cities = citiesCore as unknown as City[]
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes } from '@/lib/themes'
 import { useCityContext } from '@/lib/CityContext'

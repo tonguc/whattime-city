@@ -3,7 +3,13 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import dynamic from 'next/dynamic'
-import { City, getTier1Cities, uses12HourFormat, cities } from '@/lib/cities'
+import type { City } from '@/lib/cities'
+import { citiesCore, getTier1CitiesCore, uses12HourFormatCore } from '@/lib/cities-client'
+
+// Cast citiesCore to City[] — only slug/timezone/lat/lng/city/country used at runtime
+const cities = citiesCore as unknown as City[]
+function getTier1Cities() { return getTier1CitiesCore() as unknown as City[] }
+function uses12HourFormat(cc: string) { return uses12HourFormatCore(cc) }
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import { detectLanguage, Language } from '@/lib/translations'

@@ -3,12 +3,12 @@
 import { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { useRouter } from 'next/navigation'
-import { City, searchCities } from '@/lib/cities'
+import { useCitySearch, CitySearchResult } from '@/lib/useCitySearch'
 import { useThemeClasses } from '@/lib/useThemeClasses'
 
 interface CitySearchProps {
   placeholder?: string
-  onSelect?: (city: City) => void
+  onSelect?: (city: CitySearchResult) => void
   className?: string
 }
 
@@ -20,20 +20,19 @@ export default function CitySearch({
   const { text, textMuted, isLight } = useThemeClasses()
   const router = useRouter()
   const [query, setQuery] = useState('')
-  const [results, setResults] = useState<City[]>([])
   const [showDropdown, setShowDropdown] = useState(false)
   const [highlightIndex, setHighlightIndex] = useState(-1)
   const [position, setPosition] = useState({ top: 0, left: 0, width: 0 })
   const searchRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
+  const { results } = useCitySearch(query, 6)
+
   useEffect(() => {
     if (query.length >= 1) {
-      setResults(searchCities(query).slice(0, 6))
       setShowDropdown(true)
       setHighlightIndex(-1)
     } else {
-      setResults([])
       setShowDropdown(false)
       setHighlightIndex(-1)
     }
@@ -76,7 +75,7 @@ export default function CitySearch({
     return () => document.removeEventListener('mousedown', handleClick)
   }, [])
 
-  const handleSelect = (city: City) => {
+  const handleSelect = (city: CitySearchResult) => {
     if (onSelect) {
       onSelect(city)
     } else {

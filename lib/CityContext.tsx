@@ -1,9 +1,13 @@
 'use client'
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
-import { City, cities } from '@/lib/cities'
+import type { City } from '@/core/types'
+import { citiesCore } from '@/data/cities-core'
 import { getTimeOfDay, TimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme, Theme } from '@/lib/themes'
+
+// cities-core cast as City[] — only slug/timezone/lat/lng/country/countryCode used at runtime
+const cities = citiesCore as unknown as City[]
 
 // Find nearest city to coordinates
 function findNearestCity(lat: number, lng: number): City {

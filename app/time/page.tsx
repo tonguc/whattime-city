@@ -4,7 +4,10 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useCityContext } from '@/lib/CityContext'
 import { useThemeClasses } from '@/lib/useThemeClasses'
-import { City, searchCities, cities } from '@/lib/cities'
+import type { City } from '@/lib/cities'
+import { citiesCore } from '@/lib/cities-client'
+import { useCitySearch, CitySearchResult } from '@/lib/useCitySearch'
+const cities = citiesCore as unknown as City[]
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
@@ -12,14 +15,14 @@ import ToolsMiniNav from '@/components/ToolsMiniNav'
 // Note: Metadata is in layout.tsx since this is a client component
 
 // Dropdown Portal Component
-function CityDropdown({ 
-  results, 
-  onSelect, 
+function CityDropdown({
+  results,
+  onSelect,
   highlightIndex,
-  isLight 
-}: { 
-  results: City[]
-  onSelect: (city: City) => void
+  isLight
+}: {
+  results: CitySearchResult[]
+  onSelect: (city: CitySearchResult) => void
   highlightIndex: number
   isLight: boolean
 }) {
@@ -65,16 +68,20 @@ export default function CompareTimePage() {
   // From city - auto-detected
   const [fromCity, setFromCity] = useState<City | null>(null)
   const [fromQuery, setFromQuery] = useState('')
-  const [fromResults, setFromResults] = useState<City[]>([])
   const [showFromDropdown, setShowFromDropdown] = useState(false)
   const [fromHighlightIndex, setFromHighlightIndex] = useState(-1)
-  
+
   // To city - empty by default
   const [toCity, setToCity] = useState<City | null>(null)
   const [toQuery, setToQuery] = useState('')
-  const [toResults, setToResults] = useState<City[]>([])
   const [showToDropdown, setShowToDropdown] = useState(false)
   const [toHighlightIndex, setToHighlightIndex] = useState(-1)
+
+  // Search via API hook
+  const fromSearchQ = fromCity ? '' : fromQuery
+  const toSearchQ = toCity ? '' : toQuery
+  const { results: fromResults } = useCitySearch(fromSearchQ, 6)
+  const { results: toResults } = useCitySearch(toSearchQ, 6)
   
   // Initialize fromCity from localStorage (cross-tool persistence) or user's detected location
   useEffect(() => {
@@ -116,26 +123,14 @@ export default function CompareTimePage() {
     }
   }, [context.detectedCity, context.activeCity])
   
-  // Search effects
+  // Show/hide dropdowns based on query + results
   useEffect(() => {
-    if (fromQuery.length >= 1 && !fromCity) {
-      setFromResults(searchCities(fromQuery).slice(0, 6))
-      setShowFromDropdown(true)
-    } else {
-      setFromResults([])
-      setShowFromDropdown(false)
-    }
-  }, [fromQuery, fromCity])
-  
+    setShowFromDropdown(fromQuery.length >= 1 && !fromCity && fromResults.length > 0)
+  }, [fromQuery, fromCity, fromResults])
+
   useEffect(() => {
-    if (toQuery.length >= 1 && !toCity) {
-      setToResults(searchCities(toQuery).slice(0, 6))
-      setShowToDropdown(true)
-    } else {
-      setToResults([])
-      setShowToDropdown(false)
-    }
-  }, [toQuery, toCity])
+    setShowToDropdown(toQuery.length >= 1 && !toCity && toResults.length > 0)
+  }, [toQuery, toCity, toResults])
   
   // Navigate when both cities are selected
   useEffect(() => {
@@ -182,15 +177,15 @@ export default function CompareTimePage() {
     }
   }
   
-  const handleFromSelect = (city: City) => {
-    setFromCity(city)
+  const handleFromSelect = (city: City | CitySearchResult) => {
+    setFromCity(city as City)
     setFromQuery(city.city)
     setShowFromDropdown(false)
     setFromHighlightIndex(-1)
   }
-  
-  const handleToSelect = (city: City) => {
-    setToCity(city)
+
+  const handleToSelect = (city: City | CitySearchResult) => {
+    setToCity(city as City)
     setToQuery(city.city)
     setShowToDropdown(false)
     setToHighlightIndex(-1)

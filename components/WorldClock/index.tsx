@@ -2,8 +2,16 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { City, getTier1Cities, uses12HourFormat, cities, getCitiesByContinent, continentLabels, getCitiesByCountryCode, getCountryBySlug } from '@/lib/cities'
+import type { City } from '@/lib/cities'
 import type { ContinentFilter } from '@/lib/cities'
+import { citiesCore, getTier1CitiesCore, uses12HourFormatCore, getCitesCoreByContinent, getCitesCoreByCountryCode, continentLabels } from '@/lib/cities-client'
+
+const cities = citiesCore as unknown as City[]
+function getTier1Cities() { return getTier1CitiesCore() as unknown as City[] }
+function uses12HourFormat(cc: string) { return uses12HourFormatCore(cc) }
+function getCitiesByContinent(continent: string) { return getCitesCoreByContinent(continent) as unknown as City[] }
+function getCitiesByCountryCode(cc: string) { return getCitesCoreByCountryCode(cc) as unknown as City[] }
+function getCountryBySlug(_slug: string) { return null } // not used in client context
 import { getTimeOfDay, getSunTimes } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'
 import { translations, detectLanguage, Language } from '@/lib/translations'

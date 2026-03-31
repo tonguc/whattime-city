@@ -1,7 +1,9 @@
 'use client'
 
-import { City, getCitiesByContinent } from '@/lib/cities'
+import type { City } from '@/lib/cities'
 import type { ContinentFilter } from '@/lib/cities'
+import { getCitesCoreByContinent } from '@/lib/cities-client'
+function getCitiesByContinent(c: string) { return getCitesCoreByContinent(c) as unknown as City[] }
 import { Translations } from '@/lib/translations'
 import { useThemeClasses } from '@/lib/useThemeClasses'
 import CityCard from '@/components/CityCard'
