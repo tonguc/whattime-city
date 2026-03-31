@@ -5,6 +5,94 @@ Bu dosya oturumlar arası hafıza kaybını önlemek için tutulur.
 
 ---
 
+## 🚀 KRİTİK: PERFORMANS KRİTERLERİ (HER DEĞİŞİKLİKTE KORU)
+
+**Mevcut durum (31 Mart 2026, desktop):**
+- Performance: **99** | LCP: **0.7s** | FCP: **0.2s** | TBT: **40ms** | CLS: **0** | SEO: **100**
+
+**Bu skorları DÜŞÜRECEK her şeyden kaçın. Yeni bileşen yazarken şu kurallara uy:**
+
+### ❌ ASLA YAPMA
+
+1. **`mounted` pattern kullanma** — LCP'yi öldürür
+   ```tsx
+   // ❌ YANLIŞ — saat useEffect'e kadar boş görünür
+   const [mounted, setMounted] = useState(false)
+   {mounted ? time : '--:--:--'}
+   
+   // ✅ DOĞRU — SSR'dan itibaren gerçek değer
+   const [time, setTime] = useState(() => getTimeInTZ(tz))
+   <div suppressHydrationWarning>{time}</div>
+   ```
+
+2. **`ssr: false` dynamic import kullanma** — above-the-fold bileşenler için yasak
+   ```tsx
+   // ❌ YANLIŞ — LCP elementi lazy yükleniyor
+   const Clock = dynamic(() => import('./Clock'), { ssr: false })
+   
+   // ✅ DOĞRU — ya ssr:true ya da static import
+   import Clock from './Clock'
+   ```
+
+3. **`@/lib/cities` veya `@/data` barrel'ından client component'e import etme** — 2.4MB bundle
+   ```tsx
+   // ❌ YANLIŞ — data/cities.ts (2.6MB) client bundle'a girer
+   import { cities } from '@/lib/cities'
+   import { countries } from '@/data'
+   
+   // ✅ DOĞRU — sadece client-safe modüller
+   import { citiesCore } from '@/lib/cities-client'        // 272KB
+   import { countries } from '@/data/countries'            // 80KB
+   import { COUNTRY_HUB_SLUGS } from '@/data/hubPages'     // 8KB
+   ```
+
+4. **`detectedCity ? (big element) : (skeleton)` pattern kullanma**
+   ```tsx
+   // ❌ YANLIŞ — detectedCity null'dan başlar, LCP elementi yok
+   {detectedCity ? <BigClock /> : <Skeleton />}
+   
+   // ✅ DOĞRU — activeCity fallback ile SSR'da gerçek içerik
+   const displayCity = detectedCity ?? activeCity
+   <BigClock city={displayCity} suppressHydrationWarning />
+   ```
+
+### ✅ DOĞRU PATTERN — Yeni Saat Bileşeni
+
+```tsx
+'use client'
+import { useState, useEffect } from 'react'
+
+function getTimeInTZ(tz: string) {
+  const now = new Date()
+  return now.toLocaleTimeString('en-US', { timeZone: tz, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false })
+}
+
+export default function Clock({ tz }: { tz: string }) {
+  const [time, setTime] = useState(() => getTimeInTZ(tz))  // SSR-safe
+
+  useEffect(() => {
+    const id = setInterval(() => setTime(getTimeInTZ(tz)), 1000)
+    return () => clearInterval(id)
+  }, [tz])
+
+  return <div suppressHydrationWarning>{time}</div>  // hydration mismatch OK
+}
+```
+
+### Bundle Boyut Limitleri
+
+| Modül | Max boyut | Notlar |
+|-------|-----------|--------|
+| En büyük client chunk | **300KB** | Şu an 245KB |
+| `data/cities.ts` | server-only | Client'a GİRMEZ |
+| `lib/cities-client.ts` | 272KB | Client için bu kullanılır |
+| `data/countries.ts` | 80KB | Direct import OK |
+
+**Build sonrası kontrol:** `ls -la .next/static/chunks/*.js | sort -k5 -rn | head -5`
+→ En büyük chunk 300KB'ı geçiyorsa dur ve incele.
+
+---
+
 ## ⚠️ KRİTİK: İÇERİK YAZMA KURALLARI (ASLA ATLANMAZ)
 
 **SEO kararlarında tahmin veya genel bilgi KULLANMA. Her zaman gerçek veriyi önceliklendir.**
