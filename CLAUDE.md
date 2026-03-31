@@ -744,16 +744,39 @@ scalability, tech debt, build/deploy efficiency, content growth.
 **Error boundary:** `app/[city]/error.tsx` eklendi — city sayfalarında hata olursa contextual UI
 (Try again + Browse all cities) gösterir. Root `app/error.tsx` zaten mevcut ama generic 500 gösteriyor.
 
+**Phase 4b — ClockPage Shared Components + Converter Generator ✅ (Mart 2026):**
+
+**`components/ClockPage/` — Yeniden kullanılabilir bileşen kütüphanesi:**
+- `useClockState.ts`: Single-zone + multi-zone clock hooks (useState, useEffect, setInterval, DST detection)
+- `useClockTheme.ts`: Standart tema class'ları (card, innerCard, heading, subText, mutedText) — 242 dosyada
+  tekrarlanan isLight ternary pattern'i tek hook'a çekildi
+- `ClockHero.tsx`: Hero section (single/multi-zone, DST badges, configurable bg color)
+- `FactsGrid.tsx`: 6-item facts grid
+- `ComparisonTable.tsx`: Location vs winter/summer comparison table
+- `NarrativeSection.tsx`: Themed card with title + children (prose content)
+- `CitiesGrid.tsx`: Major cities grid with name + detail
+- `index.ts`: Barrel export
+
+**5 representative ClockClient converted:**
+- `JapanClockClient.tsx`: 181 → 96 lines (no DST, comparison table, business hours)
+- `WyomingClockClient.tsx`: 120 → 68 lines (DST, simple single zone US state)
+- `TexasClockClient.tsx`: 128 → 76 lines (multi-zone, useMultiClockState)
+- `IcelandClockClient.tsx`: 200 → 135 lines (no DST, embedded grids, multiple narratives)
+- `NepalClockClient.tsx`: 189 → 120 lines (unusual offset, multiple narratives)
+
+Kalan 237 dosya aynı pattern ile dönüştürülebilir. Her dosya ~40-50% küçülür.
+
+**`scripts/generate-converter.js` — Converter page generator:**
+- `node scripts/generate-converter.js PST IST` → `app/pst-to-ist/page.tsx` oluşturur
+- 20 timezone abbreviation desteği (EST, CST, MST, PST, GMT, BST, CET, IST, JST, AEST, UTC, SGT, KST, HKT, GST, EET, WAT, EAT, CST8, NZST)
+- Metadata, TZPairConfig, FAQ schema, ConverterPageShell boilerplate otomatik
+- TODO placeholder'lar ile üretir — FAQ cevapları ve DST detayları manual dolduruluyor
+
 **Değerlendirilip ertelenen maddeler:**
-- 64 converter sayfası → dynamic route: **ertelendi** — `app/[pair]/page.tsx`, `app/[city]/page.tsx`
-  ile routing conflict yaratıyor. Middleware rewrite eklemek karmaşıklık/risk artırır. Mevcut yapı
-  ConverterPageShell ile zaten merkezi. Yeni pair eklemek kolay (copy-paste + config değiştir).
-- 242 ClockClient → tek bileşen: **ertelendi** — her dosyada unique nesir içeriği var (DST tarihi,
-  kültürel bağlam, ekonomik veriler). Data-driven approach nesir kalitesini düşürür.
-- `data/cities.ts` tier split: **ertelendi** — 24K satır, ama Next.js server component'larında
-  tree-shaking sorun değil, client'a gitmez. Import hızı build-time'da marginal etki.
-- `translations.ts` bundle riski: **sorun yok** — CLAUDE.md'de 46K satır yazıyordu, gerçekte
-  sadece 892 satır (13 dil × ~60 key). Client bundle etkisi ihmal edilebilir düzeyde.
+- 64 converter sayfası → dynamic route: **ertelendi** — routing conflict. Generator script alternatif olarak eklendi.
+- 237 kalan ClockClient: **progressive migration** — shared bileşenler hazır, her yeni oturumda 10-20 dosya dönüştürülebilir.
+- `data/cities.ts` tier split: **ertelendi** — 24K satır, ama server-only, client bundle'a gitmiyor.
+- `translations.ts` bundle riski: **sorun yok** — gerçekte sadece 892 satır (13 dil × ~60 key).
 
 ---
 
