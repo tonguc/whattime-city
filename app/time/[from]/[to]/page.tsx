@@ -11,6 +11,7 @@ interface TimeComparePageProps {
 // ISR: ilk istekte render, sonra 1 saat CDN cache
 // force-dynamic Cache-Control:no-store override ediyordu → her bot isteği function çalıştırıyordu
 export const revalidate = 3600
+export const dynamicParams = true  // explicit: non-pre-rendered pairs generated on first request
 
 // Helper: Slug'dan şehir bulma
 function getCityBySlug(slug: string): City | undefined {

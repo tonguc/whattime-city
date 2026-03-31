@@ -497,6 +497,30 @@ export default function SunPageClient({ city }: Props) {
                 </div>
               </div>
             )}
+
+            {/* Time comparison deep links — boosts /time/ ISR page discovery */}
+            <div>
+              <h3 className={`text-sm font-semibold uppercase tracking-wide ${muted} mb-2`}>
+                Compare time with {city.cityLabel}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {['london', 'new-york', 'dubai', 'singapore', 'tokyo', 'sydney']
+                  .filter(s => s !== city.slug)
+                  .slice(0, 5)
+                  .map(targetSlug => {
+                    const label = { london: 'London', 'new-york': 'New York', dubai: 'Dubai', singapore: 'Singapore', tokyo: 'Tokyo', sydney: 'Sydney' }[targetSlug] ?? targetSlug
+                    return (
+                      <Link
+                        key={targetSlug}
+                        href={`/time/${city.slug}/${targetSlug}/`}
+                        className="inline-flex items-center gap-1 rounded-lg border border-blue-100 bg-blue-50 px-3 py-1.5 text-sm text-blue-700 hover:bg-blue-100 transition-colors"
+                      >
+                        🕐 {city.cityLabel} vs {label}
+                      </Link>
+                    )
+                  })}
+              </div>
+            </div>
           </div>
         </section>
 
