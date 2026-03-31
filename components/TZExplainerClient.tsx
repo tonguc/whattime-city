@@ -27,25 +27,35 @@ export default function TZExplainerClient({
   tz, abbr, stdName, stdAbbr, dstAbbr, utcStd, utcDst, color, states, majorCities, dstNote
 }: Props) {
   const { isLight } = useCityContext()
-  const [time, setTime] = useState('--:--:--')
-  const [date, setDate] = useState('')
-  const [currentAbbr, setCurrentAbbr] = useState('')
-  const [mounted, setMounted] = useState(false)
+
+  function getInitial() {
+    const now = new Date()
+    const ca = now.toLocaleTimeString('en-US', { timeZone: tz, timeZoneName: 'short' }).split(' ').pop() ?? ''
+    return {
+      time: now.toLocaleTimeString('en-US', { timeZone: tz, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }),
+      date: now.toLocaleDateString('en-US', { timeZone: tz, weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
+      currentAbbr: ca,
+    }
+  }
+  const init = getInitial()
+  const [time, setTime] = useState(init.time)
+  const [date, setDate] = useState(init.date)
+  const [currentAbbr, setCurrentAbbr] = useState(init.currentAbbr)
 
   useEffect(() => {
-    setMounted(true)
     const update = () => {
       const now = new Date()
+      const ca = now.toLocaleTimeString('en-US', { timeZone: tz, timeZoneName: 'short' }).split(' ').pop() ?? ''
       setTime(now.toLocaleTimeString('en-US', { timeZone: tz, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }))
       setDate(now.toLocaleDateString('en-US', { timeZone: tz, weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }))
-      setCurrentAbbr(now.toLocaleTimeString('en-US', { timeZone: tz, timeZoneName: 'short' }).split(' ').pop() ?? '')
+      setCurrentAbbr(ca)
     }
     update()
     const id = setInterval(update, 1000)
     return () => clearInterval(id)
   }, [tz])
 
-  const isDST = mounted && currentAbbr === dstAbbr
+  const isDST = currentAbbr === dstAbbr
   const currentOffset = isDST ? utcDst : utcStd
 
   const card = isLight
@@ -66,11 +76,11 @@ export default function TZExplainerClient({
           <div className="text-sm font-bold uppercase tracking-widest mb-2 opacity-90">
             {abbr} — {stdName}
           </div>
-          <div className="text-6xl font-bold tabular-nums tracking-tight mb-1">
-            {mounted ? time : '--:--:--'}
+          <div suppressHydrationWarning className="text-6xl font-bold tabular-nums tracking-tight mb-1">
+            {time}
           </div>
-          <div className="text-sm opacity-80 mb-3">
-            {mounted ? date : ''}
+          <div suppressHydrationWarning className="text-sm opacity-80 mb-3">
+            {date}
           </div>
           <div className="flex justify-center gap-4 text-sm">
             <span className={`px-3 py-1 rounded-full font-medium ${isDST ? 'bg-white/20' : 'bg-white/40'}`}>
@@ -80,12 +90,10 @@ export default function TZExplainerClient({
               {dstAbbr} {utcDst} (DST)
             </span>
           </div>
-          {mounted && (
-            <div className="mt-2 text-xs opacity-75">
-              Currently: {currentAbbr} ({currentOffset})
-              {isDST ? ' · Daylight Saving Time active' : ' · Standard Time active'}
-            </div>
-          )}
+          <div suppressHydrationWarning className="mt-2 text-xs opacity-75">
+            Currently: {currentAbbr} ({currentOffset})
+            {isDST ? ' · Daylight Saving Time active' : ' · Standard Time active'}
+          </div>
         </div>
       </section>
 
