@@ -7,10 +7,15 @@ interface PageProps {
   params: Promise<{ city: string }>
 }
 
-// Build-time static params for tier 1+2 cities
+// ISR: remaining cities generated on first request, cached 24h
+export const revalidate = 86400
+export const dynamicParams = true
+
+// Only pre-render tier 1 cities at build time (~41 pages)
+// Tier 2+ generated on first request via ISR
 export async function generateStaticParams() {
   return cities
-    .filter(c => (c.tier ?? 3) <= 2)
+    .filter(c => c.tier === 1)
     .map(c => ({ city: c.slug }))
 }
 

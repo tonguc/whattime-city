@@ -3,18 +3,21 @@ import { notFound } from 'next/navigation'
 import { cities, getAllSlugs } from '@/lib/cities'
 import EmbedClockWidget from '@/components/EmbedClockWidget'
 
-// ✅ Sayfanın tamamen statik olmasını zorunlu kılıyoruz
-export const dynamic = 'force-static'
+// ISR: embed pages generated on first request, cached 30 days
+// Embed pages are evergreen — no time-sensitive data in HTML
+export const revalidate = 2592000 // 30 days
+export const dynamicParams = true
 
 interface EmbedPageProps {
   params: { city: string }
 }
 
-// ✅ Build sırasında tüm şehir sayfalarını (HTML) önceden üretir
+// Only pre-render top tier1 cities at build time (~41 pages)
+// All other embed pages generated on first request via ISR
 export async function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({
-    city: slug,
-  }))
+  return cities
+    .filter(c => c.tier === 1)
+    .map(c => ({ city: c.slug }))
 }
 
 // ✅ SEO ve Meta etiketleri
