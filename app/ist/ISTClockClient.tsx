@@ -6,6 +6,14 @@ export default function ISTClockClient() {
   const { time, date, mounted } = useClockState('Asia/Kolkata')
   const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()
 
+  const usZones = [
+    { label: 'EST / EDT (New York)', tz: 'America/New_York', std: -5, dst: -4 },
+    { label: 'CST / CDT (Chicago)', tz: 'America/Chicago', std: -6, dst: -5 },
+    { label: 'MST / MDT (Denver)', tz: 'America/Denver', std: -7, dst: -6 },
+    { label: 'PST / PDT (Los Angeles)', tz: 'America/Los_Angeles', std: -8, dst: -7 },
+  ]
+
+
   return (
     <div className="space-y-4">
       <ClockHero
