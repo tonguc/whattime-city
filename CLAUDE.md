@@ -774,9 +774,35 @@ Kalan 237 dosya aynı pattern ile dönüştürülebilir. Her dosya ~40-50% küç
 
 **Değerlendirilip ertelenen maddeler:**
 - 64 converter sayfası → dynamic route: **ertelendi** — routing conflict. Generator script alternatif olarak eklendi.
-- 237 kalan ClockClient: **progressive migration** — shared bileşenler hazır, her yeni oturumda 10-20 dosya dönüştürülebilir.
 - `data/cities.ts` tier split: **ertelendi** — 24K satır, ama server-only, client bundle'a gitmiyor.
 - `translations.ts` bundle riski: **sorun yok** — gerçekte sadece 892 satır (13 dil × ~60 key).
+
+---
+
+### 47. Phase 5 — ClockPage Migration Tamamlandı ✅ (Mart 2026)
+
+**20 ülke/eyalet ClockClient dosyası** `@/components/ClockPage` shared kütüphanesine dönüştürüldü.
+Net azalma: ~3,200+ satır (%45–50 per file).
+
+**Dönüştürülen dosyalar (branch: `claude/phase5-clockclient-migration-oPHt6`, main'e merge edildi):**
+- Batch 1 (Phase 4b): Japan, Wyoming, Texas, Iceland, Nepal
+- Batch 2: France, Germany, UK, Spain
+- Batch 3a: Italy, China, Thailand, Norway, Israel
+- Batch 3b: SouthAfrica, Philippines, Iran, Denmark, Finland
+- Batch 3c: Mongolia, Ecuador, Turkey, Indonesia, Russia, Kazakhstan, Mexico, Australia, NewZealand, Canada
+
+**Orphan page audit fixes (aynı branch):**
+- `app/sitemap.ts`: `/about/`, `/blog/`, `/contact/`, `/privacy/` eklendi
+- `next.config.js`: 8 redirect eklendi — converter→time-converter, flight-times→flight-time, jet-lag→jet-lag-advisor, alarm→world-alarm
+
+**Pattern — tüm dönüştürülen dosyalar:**
+```tsx
+import { useClockState, useClockTheme, ClockHero, FactsGrid, NarrativeSection, CitiesGrid } from '@/components/ClockPage'
+// Multi-zone: useMultiClockState({ 'Label · UTC+X': 'IANA/TZ' }, 'primary/tz')
+// ClockHero timeSize="text-2xl sm:text-3xl" for 3+ zones
+```
+
+**Kalan ~217 dosya** aynı pattern ile dönüştürülebilir. Her yeni oturumda batch yapılabilir.
 
 ---
 
@@ -790,7 +816,7 @@ Kalan 237 dosya aynı pattern ile dönüştürülebilir. Her dosya ~40-50% küç
 - [ ] PAIR_CONTEXTS 92 pairs — monitor /time/ pair pages for new impressions (pre-built now)
 - [ ] New 14 city pages (abu-dhabi, kathmandu, colombo, etc.) — monitor GSC indexing
 - [ ] Area code pages (929 246K, 213 673K, 917 246K) — description fixed; monitor GSC indexing + authority
-- [ ] Orphan page audit — check for pages not linked from any navigation/sitemap
+- [ ] Phase 5 devamı: Kalan ~217 ClockClient dosyasını shared library'ye migrate et (batch başına 15-20)
 
 ---
 
