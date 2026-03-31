@@ -9,7 +9,8 @@
     "postbuild": "echo '✅ Statik site oluşturuldu: out/ klasörü'",
     "start": "next start",
     "preview": "npx serve out",
-    "export": "npm run build"
+    "export": "npm run build",
+    "warm": "node scripts/warm-isr.js"
   },
   "browserslist": [
     "last 2 Chrome versions",
