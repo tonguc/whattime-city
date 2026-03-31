@@ -9,7 +9,10 @@
 import { useState, useEffect, useRef, useMemo } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { City, cities, searchCities } from '@/lib/cities'
+import type { City } from '@/lib/cities'
+import { citiesCore } from '@/lib/cities-client'
+import { useCitySearch, CitySearchResult } from '@/lib/useCitySearch'
+const cities = citiesCore as unknown as City[]
 import { useCityContext } from '@/lib/CityContext'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -88,7 +91,6 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
   
   // Search state
   const [searchQuery, setSearchQuery] = useState('')
-  const [searchResults, setSearchResults] = useState<City[]>([])
   const [showSearch, setShowSearch] = useState(false)
   const [highlightedIndex, setHighlightedIndex] = useState(0) // For keyboard navigation
   const searchRef = useRef<HTMLDivElement>(null)
@@ -123,19 +125,9 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
     }
   }, [detectedCity])
   
-  // Search effect
-  useEffect(() => {
-    if (searchQuery.length >= 1) {
-      const results = searchCities(searchQuery)
-        .filter(c => !selectedCities.find(sc => sc.slug === c.slug))
-        .slice(0, 6)
-      setSearchResults(results)
-      setHighlightedIndex(0) // Reset highlight on new search
-    } else {
-      setSearchResults([])
-      setHighlightedIndex(0)
-    }
-  }, [searchQuery, selectedCities])
+  // Search via API hook
+  const { results: rawSearchResults } = useCitySearch(searchQuery, 8)
+  const searchResults = rawSearchResults.filter(c => !selectedCities.find(sc => sc.slug === c.slug)).slice(0, 6)
   
   // Close search on outside click
   useEffect(() => {
@@ -179,9 +171,9 @@ export default function MeetingPageContent({ initialCities = [] }: MeetingPageCo
   }, [selectedCities, router, pathname])
   
   // Add city
-  const addCity = (city: City) => {
+  const addCity = (city: City | CitySearchResult) => {
     if (selectedCities.length < 6) {
-      setSelectedCities([...selectedCities, city])
+      setSelectedCities([...selectedCities, city as City])
       setSearchQuery('')
       setShowSearch(false)
       setHighlightedIndex(0)

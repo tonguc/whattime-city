@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { City, searchCities } from '@/lib/cities'
+import { useCitySearch, CitySearchResult } from '@/lib/useCitySearch'
 import { useThemeClasses } from '@/lib/useThemeClasses'
 
 interface SimpleHeaderProps {
@@ -18,21 +18,16 @@ export default function SimpleHeader(_props: SimpleHeaderProps) {
   
   // Search state
   const [searchQuery, setSearchQuery] = useState('')
-  const [searchResults, setSearchResults] = useState<City[]>([])
   const [showSearchDropdown, setShowSearchDropdown] = useState(false)
   const searchRef = useRef<HTMLDivElement>(null)
-  
-  // Search effect
+
+  const { results: searchResults } = useCitySearch(searchQuery, 6)
+
+  // Show/hide dropdown based on query
   useEffect(() => {
-    if (searchQuery.length >= 1) {
-      setSearchResults(searchCities(searchQuery).slice(0, 6))
-      setShowSearchDropdown(true)
-    } else {
-      setSearchResults([])
-      setShowSearchDropdown(false)
-    }
-  }, [searchQuery])
-  
+    setShowSearchDropdown(searchQuery.length >= 1 && searchResults.length > 0)
+  }, [searchQuery, searchResults])
+
   // Close dropdown on outside click
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
@@ -43,8 +38,8 @@ export default function SimpleHeader(_props: SimpleHeaderProps) {
     document.addEventListener('mousedown', handleClick)
     return () => document.removeEventListener('mousedown', handleClick)
   }, [])
-  
-  const handleSearchSelect = (city: City) => {
+
+  const handleSearchSelect = (city: CitySearchResult) => {
     router.push(`/${city.slug}`)
     setSearchQuery('')
     setShowSearchDropdown(false)

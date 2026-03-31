@@ -2,7 +2,10 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
-import { cities, City, searchCities } from '@/lib/cities'
+import type { City } from '@/lib/cities'
+import { citiesCore } from '@/lib/cities-client'
+import { useCitySearch } from '@/lib/useCitySearch'
+const cities = citiesCore as unknown as City[]
 import { getSunTimes } from '@/lib/sun-calculator'
 import { useCityContext } from '@/lib/CityContext'
 
@@ -49,9 +52,10 @@ export default function SunriseSunsetClient() {
   const { isLight } = useCityContext()
   const [selectedCity, setSelectedCity] = useState<City>(DEFAULT_CITY)
   const [searchQuery, setSearchQuery] = useState('')
-  const [searchResults, setSearchResults] = useState<City[]>([])
   const [showDropdown, setShowDropdown] = useState(false)
   const [now, setNow] = useState<Date | null>(null)
+
+  const { results: searchResults } = useCitySearch(searchQuery, 8)
 
   useEffect(() => {
     setNow(new Date())
@@ -61,20 +65,19 @@ export default function SunriseSunsetClient() {
 
   const handleSearch = useCallback((query: string) => {
     setSearchQuery(query)
-    if (query.trim().length < 1) {
-      setSearchResults([])
-      setShowDropdown(false)
-      return
-    }
-    const results = searchCities(query).slice(0, 8)
-    setSearchResults(results)
-    setShowDropdown(results.length > 0)
+    setShowDropdown(query.trim().length >= 1)
   }, [])
 
-  const selectCity = (city: City) => {
-    setSelectedCity(city)
+  // Keep dropdown in sync with results
+  useEffect(() => {
+    if (searchQuery.trim().length >= 1) {
+      setShowDropdown(searchResults.length > 0)
+    }
+  }, [searchResults, searchQuery])
+
+  const selectCity = (city: City | { slug: string; city: string; timezone: string; lat: number; lng: number; country: string; countryCode: string }) => {
+    setSelectedCity(city as City)
     setSearchQuery('')
-    setSearchResults([])
     setShowDropdown(false)
   }
 

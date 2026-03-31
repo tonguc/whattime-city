@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { useCityContext } from '@/lib/CityContext'
-import { countries } from '@/lib/cities'
+import { countries } from '@/data/countries'
 import { getFlagUrl } from '@/shared/utils'
 
 interface DropdownPos { top: number; left: number; width: number }

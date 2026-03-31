@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import ContentPageWrapper from '@/components/ContentPageWrapper'
 import { getSunTimes, formatSunTime } from '@/lib/sun-calculator'
-import { cities } from '@/lib/cities'
+import { citiesCore as cities } from '@/lib/cities-client'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 

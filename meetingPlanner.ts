@@ -3,7 +3,9 @@
  * City pair karşılaştırmaları ve time difference hesaplamaları
  */
 
-import { City, cities } from '@/lib/cities'
+import type { City } from '@/lib/cities'
+import { citiesCore } from '@/lib/cities-client'
+const cities = citiesCore as unknown as City[]
 
 export interface CityPair {
   city1: City

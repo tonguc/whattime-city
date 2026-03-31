@@ -1,12 +1,13 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
-import { useRouter } from 'next/navigation'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { useCityContext } from '@/lib/CityContext'
 import { useThemeClasses } from '@/lib/useThemeClasses'
-import { City, cities, searchCities } from '@/lib/cities'
+import { citiesCore, CityCore } from '@/lib/cities-client'
+import type { City } from '@/lib/cities'
+import { CitySearchResult } from '@/lib/useCitySearch'
 import { TimeIcons } from '@/components/TimeIcons'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -36,43 +37,32 @@ const popularComparisons = [
 ]
 
 export default function HomePage() {
-  const router = useRouter()
   const {
     time,
-    activeCity,
     setActiveCity,
     detectedCity,
     favorites,
     getLocalTime,
     getLocalDate,
     getCityTimeOfDay,
-    themeMode,
     clockMode,
   } = useCityContext()
   
-  const { theme, text, textMuted, card, isLight, accentBg, accentText, bgGradient } = useThemeClasses()
+  const { theme, text, textMuted, card, isLight, accentText } = useThemeClasses()
   
   // Weather state for display
   const [weather, setWeather] = useState<any>(null)
   
-  // Compare tool state
-  const [fromCity, setFromCity] = useState<City | null>(null)
-  const [toCity, setToCity] = useState<City | null>(null)
-  const [fromQuery, setFromQuery] = useState('')
-  const [toQuery, setToQuery] = useState('')
-  const [fromResults, setFromResults] = useState<City[]>([])
-  const [toResults, setToResults] = useState<City[]>([])
-  const [showFromDropdown, setShowFromDropdown] = useState(false)
-  const [showToDropdown, setShowToDropdown] = useState(false)
-  
+  // Compare tool state (CitySearchResult = CityCore at runtime, compatible with City)
+  const [fromCity, setFromCity] = useState<CitySearchResult | null>(null)
+
   // World Cities tab state
   const [worldCitiesTab, setWorldCitiesTab] = useState<'top' | 'americas' | 'europe' | 'asia' | 'africa' | 'oceania'>('top')
 
   // Set fromCity when detectedCity becomes available (for comparison feature)
   useEffect(() => {
     if (detectedCity && !fromCity) {
-      setFromCity(detectedCity)
-      setFromQuery(detectedCity.city)
+      setFromCity(detectedCity as unknown as CitySearchResult)
     }
   }, [detectedCity, fromCity])
 
@@ -95,34 +85,9 @@ export default function HomePage() {
     }
   }, [detectedCity])
 
-  // Compare tool search handlers
-  useEffect(() => {
-    if (fromQuery.length >= 1 && !fromCity) {
-      setFromResults(searchCities(fromQuery).slice(0, 6))
-      setShowFromDropdown(true)
-    } else {
-      setFromResults([])
-      setShowFromDropdown(false)
-    }
-  }, [fromQuery, fromCity])
+  // Derived data — use citiesCore (272KB) instead of cities (2.4MB)
+  const favoriteCities = favorites.map(slug => citiesCore.find(c => c.slug === slug)).filter((c): c is CityCore => c !== undefined)
 
-  useEffect(() => {
-    if (toQuery.length >= 1 && !toCity) {
-      setToResults(searchCities(toQuery).slice(0, 6))
-      setShowToDropdown(true)
-    } else {
-      setToResults([])
-      setShowToDropdown(false)
-    }
-  }, [toQuery, toCity])
-
-  const handleCompare = () => {
-    if (fromCity && toCity) router.push(`/time/${fromCity.slug}/${toCity.slug}`)
-  }
-
-  // Derived data
-  const favoriteCities = favorites.map(slug => cities.find(c => c.slug === slug)).filter((c): c is City => c !== undefined)
-  
   // Top cities list
   const topCitySlugs = [
     'london', 'new-york', 'tokyo', 'paris', 'dubai', 'sydney',
@@ -130,38 +95,33 @@ export default function HomePage() {
     'toronto', 'moscow', 'shanghai', 'seoul', 'bangkok', 'istanbul',
     'cairo', 'amsterdam'
   ]
-  
+
   // Get cities by continent
   const getCitiesByContinent = (continent: string) => {
-    return cities
+    return citiesCore
       .filter(c => c.continent === continent && c.slug !== detectedCity?.slug)
       .sort((a, b) => (a.tier || 3) - (b.tier || 3))
       .slice(0, 18)
   }
-  
+
   // Get world cities based on tab
   const worldCities = (() => {
     switch (worldCitiesTab) {
-      case 'americas':
-        return getCitiesByContinent('americas')
-      case 'europe':
-        return getCitiesByContinent('europe')
-      case 'asia':
-        return getCitiesByContinent('asia')
-      case 'africa':
-        return getCitiesByContinent('africa')
-      case 'oceania':
-        return getCitiesByContinent('oceania')
+      case 'americas': return getCitiesByContinent('americas')
+      case 'europe':   return getCitiesByContinent('europe')
+      case 'asia':     return getCitiesByContinent('asia')
+      case 'africa':   return getCitiesByContinent('africa')
+      case 'oceania':  return getCitiesByContinent('oceania')
       default:
         return topCitySlugs
-          .map(slug => cities.find(c => c.slug === slug))
-          .filter((c): c is City => c !== undefined && c.slug !== detectedCity?.slug)
+          .map(slug => citiesCore.find(c => c.slug === slug))
+          .filter((c): c is CityCore => c !== undefined && c.slug !== detectedCity?.slug)
           .slice(0, 18)
     }
   })()
-  
+
   // Get relative offset in hours
-  const getRelativeOffset = (targetCity: City): number => {
+  const getRelativeOffset = (targetCity: { timezone: string }): number => {
     if (!detectedCity) return 0
     const now = new Date()
     const userTime = new Date(now.toLocaleString('en-US', { timeZone: detectedCity.timezone }))
@@ -268,9 +228,8 @@ export default function HomePage() {
           </h2>
           
           <div className={`max-w-2xl mx-auto mt-6 p-4 rounded-2xl ${isLight ? 'bg-slate-100' : 'bg-slate-800/50'}`} style={{ overflow: 'visible' }}>
-            <CompareWidget 
+            <CompareWidget
               initialFromCity={fromCity}
-              initialToCity={toCity}
             />
           </div>
         </section>
@@ -342,7 +301,7 @@ export default function HomePage() {
                 <Link key={city.slug} href={`/${city.slug}`}
                   className={`px-4 py-2 rounded-xl text-sm transition-all ${isLight ? 'bg-slate-100 hover:bg-slate-200' : 'bg-slate-800 hover:bg-slate-700'}`}>
                   <span className={text}>{city.city}</span>
-                  <span className={`ml-2 ${textMuted}`}>{getLocalTime(city)}</span>
+                  <span className={`ml-2 ${textMuted}`}>{getLocalTime(city as unknown as City)}</span>
                 </Link>
               ))}
             </div>
@@ -417,10 +376,11 @@ export default function HomePage() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             {worldCities.map(city => {
-              const cityTime = getLocalTime(city)
+              const cityAsCity = city as unknown as City
+              const cityTime = getLocalTime(cityAsCity)
               const offset = getRelativeOffset(city)
               const offsetStr = offset === 0 ? 'Same time' : `${offset > 0 ? '+' : ''}${offset}h`
-              const tod = getCityTimeOfDay(city)
+              const tod = getCityTimeOfDay(cityAsCity)
               const Icon = TimeIcons[tod]
               
               return (

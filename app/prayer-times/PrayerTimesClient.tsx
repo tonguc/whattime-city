@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useCityContext } from '@/lib/CityContext'
 import { calculatePrayerTimes, CALCULATION_METHODS } from '@/lib/prayer-times'
 import type { CalculationMethod } from '@/lib/prayer-times'
-import { searchCities } from '@/lib/cities'
+import { useCitySearch } from '@/lib/useCitySearch'
 
 /* ───── popular cities for quick access ───── */
 
@@ -74,7 +74,6 @@ export default function PrayerTimesClient() {
   const [method, setMethod] = useState<CalculationMethod>(CALCULATION_METHODS[0])
   const [madhab, setMadhab] = useState<'shafi' | 'hanafi'>('shafi')
   const [searchQuery, setSearchQuery] = useState('')
-  const [searchResults, setSearchResults] = useState<typeof POPULAR_CITIES>([])
   const [showSearch, setShowSearch] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
@@ -100,28 +99,24 @@ export default function PrayerTimesClient() {
     return days
   }, [today, city, method, madhab])
 
+  const { results: rawSearchResults } = useCitySearch(searchQuery, 8)
+  const searchResults = rawSearchResults.map(c => ({
+    name: c.city,
+    slug: c.slug,
+    lat: c.lat,
+    lng: c.lng,
+    tz: c.timezone,
+    country: c.countryCode,
+  }))
+
   const handleSearch = useCallback((q: string) => {
     setSearchQuery(q)
-    if (q.length < 2) {
-      setSearchResults([])
-      return
-    }
-    const results = searchCities(q).slice(0, 8).map(c => ({
-      name: c.city,
-      slug: c.slug,
-      lat: c.lat,
-      lng: c.lng,
-      tz: c.timezone,
-      country: c.countryCode,
-    }))
-    setSearchResults(results)
   }, [])
 
   const selectCity = useCallback((c: { name: string; lat: number; lng: number; tz: string }) => {
     setCity({ name: c.name, lat: c.lat, lng: c.lng, timezone: c.tz })
     setShowSearch(false)
     setSearchQuery('')
-    setSearchResults([])
   }, [])
 
   /* ───── styles ───── */

@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
-import { City, cities, searchCities } from '@/lib/cities'
+import type { City } from '@/lib/cities'
+import { useCitySearch, CitySearchResult } from '@/lib/useCitySearch'
 import { useCityContext } from '@/lib/CityContext'
 
 interface TimeSliderProps {
@@ -63,7 +64,6 @@ export default function TimeSlider({ initialCities = [], onCitiesChange, hideCon
   const [offsetHours, setOffsetHours] = useState(0)
   const [isDragging, setIsDragging] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
-  const [searchResults, setSearchResults] = useState<City[]>([])
   const [showSearch, setShowSearch] = useState(false)
   const sliderRef = useRef<HTMLDivElement>(null)
   const dragStartX = useRef(0)
@@ -87,17 +87,9 @@ export default function TimeSlider({ initialCities = [], onCitiesChange, hideCon
     return () => clearInterval(timer)
   }, [isDragging])
 
-  // Search cities
-  useEffect(() => {
-    if (searchQuery.length >= 1) {
-      const results = searchCities(searchQuery)
-        .filter(c => !selectedCities.find(sc => sc.slug === c.slug))
-        .slice(0, 6)
-      setSearchResults(results)
-    } else {
-      setSearchResults([])
-    }
-  }, [searchQuery, selectedCities])
+  // Search cities via API hook
+  const { results: rawSearchResults } = useCitySearch(searchQuery, 10)
+  const searchResults = rawSearchResults.filter(c => !selectedCities.find(sc => sc.slug === c.slug)).slice(0, 6)
 
   // Close search on outside click
   useEffect(() => {
@@ -110,10 +102,10 @@ export default function TimeSlider({ initialCities = [], onCitiesChange, hideCon
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  // Add city
-  const addCity = (city: City) => {
+  // Add city (CitySearchResult is compatible with City at runtime)
+  const addCity = (city: CitySearchResult) => {
     if (selectedCities.length < 6) {
-      const newCities = [...selectedCities, city]
+      const newCities = [...selectedCities, city as unknown as City]
       updateCities(newCities)
       setSearchQuery('')
       setShowSearch(false)

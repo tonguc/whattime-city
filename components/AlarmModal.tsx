@@ -2,7 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import { useThemeClasses } from '@/lib/useThemeClasses'
-import { City, cities, uses12HourFormat } from '@/lib/cities'
+import type { City } from '@/lib/cities'
+import { citiesCore, uses12HourFormatCore } from '@/lib/cities-client'
+const cities = citiesCore as unknown as City[]
+function uses12HourFormat(cc: string) { return uses12HourFormatCore(cc) }
 
 interface Alarm {
   id: number

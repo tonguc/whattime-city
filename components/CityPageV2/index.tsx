@@ -2,7 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { City, getTier1Cities, uses12HourFormat } from '@/lib/cities'
+import type { City } from '@/lib/cities'
+import { getTier1CitiesCore, uses12HourFormatCore } from '@/lib/cities-client'
+function getTier1Cities() { return getTier1CitiesCore() as unknown as City[] }
+function uses12HourFormat(cc: string) { return uses12HourFormatCore(cc) }
 import { citiesCore } from '@/data/cities-core'
 import { getTimeOfDay } from '@/lib/sun-calculator'
 import { themes, isLightTheme } from '@/lib/themes'

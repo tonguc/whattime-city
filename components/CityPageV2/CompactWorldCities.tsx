@@ -1,8 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { City, getTier1Cities } from '@/lib/cities'
+import type { City } from '@/lib/cities'
+import { getTier1CitiesCore } from '@/lib/cities-client'
 import { useThemeClasses } from '@/lib/useThemeClasses'
+
+function getTier1Cities() { return getTier1CitiesCore() as unknown as City[] }
 
 interface CompactWorldCitiesProps {
   selectedCity: City

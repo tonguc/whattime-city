@@ -1,7 +1,11 @@
 'use client'
 
-import { City, getTier1Cities, cities } from '@/lib/cities'
+import type { City } from '@/lib/cities'
+import { getTier1CitiesCore, citiesCore } from '@/lib/cities-client'
 import { useThemeClasses } from '@/lib/useThemeClasses'
+
+function getTier1Cities() { return getTier1CitiesCore() as unknown as City[] }
+const cities = citiesCore
 
 interface CompactWorldCitiesProps {
   selectedCity: City

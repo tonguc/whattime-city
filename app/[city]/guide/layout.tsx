@@ -3,7 +3,9 @@
 import { useParams, usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { cities } from '@/lib/cities'
+import type { City } from '@/lib/cities'
+import { citiesCore } from '@/lib/cities-client'
+const cities = citiesCore as unknown as City[]
 import { useCityContext } from '@/lib/CityContext'
 import { getCityDisplayConfig } from '@/lib/cityDisplayConfig'
 import Header from '@/components/Header'

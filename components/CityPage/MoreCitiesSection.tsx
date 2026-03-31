@@ -1,7 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { City, getCitiesByCountryCode, getCountryBySlug } from '@/lib/cities'
+import type { City } from '@/lib/cities'
+import { getCitesCoreByCountryCode } from '@/lib/cities-client'
+function getCitiesByCountryCode(cc: string) { return getCitesCoreByCountryCode(cc) as unknown as City[] }
+function getCountryBySlug(_slug: string): { slug: string } | null { return null }
 import { useThemeClasses } from '@/lib/useThemeClasses'
 import { useCityContext } from '@/lib/CityContext'
 

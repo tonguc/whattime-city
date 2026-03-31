@@ -1,7 +1,11 @@
 'use client'
 
-import { City, cities, getTier1Cities } from '@/lib/cities'
+import type { City } from '@/lib/cities'
+import { citiesCore, getTier1CitiesCore } from '@/lib/cities-client'
 import { useThemeClasses } from '@/lib/useThemeClasses'
+
+const cities = citiesCore as unknown as City[]
+function getTier1Cities() { return getTier1CitiesCore() as unknown as City[] }
 
 interface TimeDifferenceTableProps {
   city: City
