@@ -6,6 +6,15 @@ export default function EswatiniClockClient() {
   const { time, date, mounted } = useClockState('Africa/Mbabane')
   const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()
 
+  const cities = [
+    { name: 'Manzini', pop: '110K', note: 'Largest city' },
+    { name: 'Mbabane', pop: '95K', note: 'Admin capital' },
+    { name: 'Lobamba', pop: '—', note: 'Ceremonial capital' },
+    { name: 'Siteki', pop: '25K', note: 'Eastern region' },
+    { name: 'Nhlangano', pop: '10K', note: 'Southern hub' },
+    { name: 'Big Bend', pop: '10K', note: 'Sugar industry' },
+  ]
+
   return (
     <div className="space-y-4">
       <ClockHero

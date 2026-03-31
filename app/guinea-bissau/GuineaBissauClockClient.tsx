@@ -6,6 +6,15 @@ export default function GuineaBissauClockClient() {
   const { time, date, mounted } = useClockState('Africa/Bissau')
   const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()
 
+  const cities = [
+    { name: 'Bissau', pop: '492K', note: 'Capital' },
+    { name: 'Bafatá', pop: '28K', note: 'Interior hub' },
+    { name: 'Gabú', pop: '25K', note: 'Eastern region' },
+    { name: 'Bissorã', pop: '18K', note: 'Oio region' },
+    { name: 'Bolama', pop: '12K', note: 'Former capital' },
+    { name: 'Cacheu', pop: '11K', note: 'Historic port' },
+  ]
+
   return (
     <div className="space-y-4">
       <ClockHero

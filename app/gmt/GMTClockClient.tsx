@@ -6,6 +6,17 @@ export default function GMTClockClient() {
   const { time, date, mounted } = useClockState('Etc/GMT')
   const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()
 
+  const offsets = [
+    { label: 'EST (New York, winter)', offset: -5 },
+    { label: 'EDT (New York, summer)', offset: -4 },
+    { label: 'CST (Chicago, winter)', offset: -6 },
+    { label: 'PST (Los Angeles, winter)', offset: -8 },
+    { label: 'BST (UK, summer)', offset: 1 },
+    { label: 'CET (Paris, winter)', offset: 1 },
+    { label: 'IST (India)', offset: 5.5 },
+    { label: 'JST (Tokyo)', offset: 9 },
+  ]
+
   return (
     <div className="space-y-4">
       <ClockHero

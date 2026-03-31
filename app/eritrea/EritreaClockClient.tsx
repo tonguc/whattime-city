@@ -6,6 +6,15 @@ export default function EritreaClockClient() {
   const { time, date, mounted } = useClockState('Africa/Asmara')
   const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()
 
+  const cities = [
+    { name: 'Asmara', pop: '963K', note: 'Capital' },
+    { name: 'Keren', pop: '146K', note: 'Second city' },
+    { name: 'Massawa', pop: '52K', note: 'Red Sea port' },
+    { name: 'Assab', pop: '28K', note: 'Southern port' },
+    { name: 'Mendefera', pop: '25K', note: 'Southern region' },
+    { name: 'Adi Quala', pop: '14K', note: 'Border town' },
+  ]
+
   return (
     <div className="space-y-4">
       <ClockHero

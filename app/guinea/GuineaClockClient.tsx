@@ -6,6 +6,15 @@ export default function GuineaClockClient() {
   const { time, date, mounted } = useClockState('Africa/Conakry')
   const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()
 
+  const cities = [
+    { name: 'Conakry', pop: '1.9M', note: 'Capital' },
+    { name: 'Nzérékoré', pop: '250K', note: 'Forest region' },
+    { name: 'Kankan', pop: '195K', note: 'Upper Guinea' },
+    { name: 'Kindia', pop: '180K', note: 'Fouta gateway' },
+    { name: 'Labé', pop: '90K', note: 'Fouta Djallon' },
+    { name: 'Kissidougou', pop: '90K', note: 'Southern hub' },
+  ]
+
   return (
     <div className="space-y-4">
       <ClockHero

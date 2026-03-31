@@ -6,6 +6,17 @@ export default function UTCClockClient() {
   const { time, date, mounted } = useClockState('UTC')
   const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()
 
+  const offsets = [
+    { label: 'EST (New York)', offset: -5, dst: false },
+    { label: 'EDT (New York, DST)', offset: -4, dst: true },
+    { label: 'CST (Chicago)', offset: -6, dst: false },
+    { label: 'PST (Los Angeles)', offset: -8, dst: false },
+    { label: 'IST (India)', offset: 5.5, dst: false },
+    { label: 'JST (Tokyo)', offset: 9, dst: false },
+    { label: 'CET (Paris)', offset: 1, dst: false },
+    { label: 'AEST (Sydney)', offset: 10, dst: false },
+  ]
+
   return (
     <div className="space-y-4">
       <ClockHero

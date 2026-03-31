@@ -6,6 +6,15 @@ export default function GabonClockClient() {
   const { time, date, mounted } = useClockState('Africa/Libreville')
   const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()
 
+  const cities = [
+    { name: 'Libreville', pop: '703K', note: 'Capital' },
+    { name: 'Port-Gentil', pop: '136K', note: 'Oil hub' },
+    { name: 'Franceville', pop: '110K', note: 'Southeast' },
+    { name: 'Oyem', pop: '60K', note: 'Northern capital' },
+    { name: 'Moanda', pop: '47K', note: 'Manganese mining' },
+    { name: 'Lambaréné', pop: '26K', note: 'Schweitzer hospital' },
+  ]
+
   return (
     <div className="space-y-4">
       <ClockHero

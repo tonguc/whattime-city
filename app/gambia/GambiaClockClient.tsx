@@ -6,6 +6,15 @@ export default function GambiaClockClient() {
   const { time, date, mounted } = useClockState('Africa/Banjul')
   const { isLight, card, innerCard, heading, subText, mutedText } = useClockTheme()
 
+  const cities = [
+    { name: 'Serekunda', pop: '340K', note: 'Largest city' },
+    { name: 'Brikama', pop: '77K', note: 'Western division' },
+    { name: 'Bakau', pop: '47K', note: 'Coastal resort' },
+    { name: 'Banjul', pop: '31K', note: 'Capital' },
+    { name: 'Farafenni', pop: '30K', note: 'North bank' },
+    { name: 'Lamin', pop: '25K', note: 'Suburban hub' },
+  ]
+
   return (
     <div className="space-y-4">
       <ClockHero
