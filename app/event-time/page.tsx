@@ -10,6 +10,7 @@ import { useCityContext } from '@/lib/CityContext'
 import ToolPageWrapper from '@/components/ToolPageWrapper'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
+import CitySelectSearch from '@/components/CitySelectSearch'
 
 // 16 Major World Cities for Event Time Display
 const FEATURED_CITIES = [
@@ -165,15 +166,13 @@ function EventTimeContent() {
           </div>
           <div>
             <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>Event Location</label>
-            <select
-              value={eventCity.slug}
-              onChange={(e) => setEventCity(cities.find(c => c.slug === e.target.value) || cities[0])}
-              className={`w-full px-4 py-3 rounded-xl border ${inputClass}`}
-            >
-              {cities.map(city => (
-                <option key={city.slug} value={city.slug}>{city.city}, {city.country}</option>
-              ))}
-            </select>
+            <CitySelectSearch
+              value={eventCity}
+              onChange={setEventCity}
+              isLight={isLight}
+              inputClass={inputClass}
+              placeholder="Search event city…"
+            />
           </div>
         </div>
 

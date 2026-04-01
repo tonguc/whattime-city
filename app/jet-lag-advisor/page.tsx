@@ -9,6 +9,7 @@ import { useCityContext } from '@/lib/CityContext'
 import ToolPageWrapper from '@/components/ToolPageWrapper'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
+import CitySelectSearch from '@/components/CitySelectSearch'
 
 export default function JetLagPage() {
   const { theme, isLight } = useCityContext()
@@ -107,27 +108,23 @@ export default function JetLagPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div>
             <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>Traveling From</label>
-            <select
-              value={fromCity.slug}
-              onChange={(e) => setFromCity(cities.find(c => c.slug === e.target.value) || cities[0])}
-              className={`w-full px-4 py-3 rounded-xl border ${inputClass}`}
-            >
-              {cities.map(city => (
-                <option key={city.slug} value={city.slug}>{city.city}, {city.country}</option>
-              ))}
-            </select>
+            <CitySelectSearch
+              value={fromCity}
+              onChange={setFromCity}
+              isLight={isLight}
+              inputClass={inputClass}
+              placeholder="Search departure city…"
+            />
           </div>
           <div>
             <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>Traveling To</label>
-            <select
-              value={toCity.slug}
-              onChange={(e) => setToCity(cities.find(c => c.slug === e.target.value) || cities[1])}
-              className={`w-full px-4 py-3 rounded-xl border ${inputClass}`}
-            >
-              {cities.map(city => (
-                <option key={city.slug} value={city.slug}>{city.city}, {city.country}</option>
-              ))}
-            </select>
+            <CitySelectSearch
+              value={toCity}
+              onChange={setToCity}
+              isLight={isLight}
+              inputClass={inputClass}
+              placeholder="Search arrival city…"
+            />
           </div>
         </div>
 

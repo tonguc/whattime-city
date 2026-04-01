@@ -7,6 +7,7 @@ import { useCityContext } from '@/lib/CityContext'
 import ToolPageWrapper from '@/components/ToolPageWrapper'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
+import CitySelectSearch from '@/components/CitySelectSearch'
 
 export default function TimeConverterClient() {
   const { theme, isLight } = useCityContext()
@@ -74,15 +75,13 @@ export default function TimeConverterClient() {
           {/* From City */}
           <div>
             <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>From</label>
-            <select
-              value={fromCity.city}
-              onChange={(e) => setFromCity(cities.find(c => c.city === e.target.value) || cities[0])}
-              className={`w-full px-4 py-3 rounded-xl border ${inputClass}`}
-            >
-              {cities.map(city => (
-                <option key={city.slug} value={city.city}>{city.city}, {city.country}</option>
-              ))}
-            </select>
+            <CitySelectSearch
+              value={fromCity as import('@/lib/cities').City}
+              onChange={(city) => setFromCity(city)}
+              isLight={isLight}
+              inputClass={inputClass}
+              placeholder="Search from city…"
+            />
             <div className="mt-2 flex gap-2">
               <select
                 value={selectedHour}
@@ -127,15 +126,13 @@ export default function TimeConverterClient() {
           {/* To City */}
           <div>
             <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>To</label>
-            <select
-              value={toCity.city}
-              onChange={(e) => setToCity(cities.find(c => c.city === e.target.value) || cities[1])}
-              className={`w-full px-4 py-3 rounded-xl border ${inputClass}`}
-            >
-              {cities.map(city => (
-                <option key={city.slug} value={city.city}>{city.city}, {city.country}</option>
-              ))}
-            </select>
+            <CitySelectSearch
+              value={toCity as import('@/lib/cities').City}
+              onChange={(city) => setToCity(city)}
+              isLight={isLight}
+              inputClass={inputClass}
+              placeholder="Search to city…"
+            />
             <div className={`mt-2 text-center text-2xl font-bold ${theme.accentText}`}>
               {getConvertedTime()}
             </div>
