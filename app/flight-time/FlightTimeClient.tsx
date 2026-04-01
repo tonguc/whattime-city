@@ -9,7 +9,6 @@ import { useCityContext } from '@/lib/CityContext'
 import ToolPageWrapper from '@/components/ToolPageWrapper'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
-import CitySelectSearch from '@/components/CitySelectSearch'
 import { flightTimeSEO } from '@/data/seo/flight-time-seo'
 
 export default function FlightTimeClient() {
@@ -100,15 +99,15 @@ export default function FlightTimeClient() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <h3 className={`font-medium mb-3 ${theme.text}`}>Departure</h3>
-            <div className="mb-3">
-              <CitySelectSearch
-                value={departureCity}
-                onChange={setDepartureCity}
-                isLight={isLight}
-                inputClass={inputClass}
-                placeholder="Search departure city…"
-              />
-            </div>
+            <select
+              value={departureCity.slug}
+              onChange={(e) => setDepartureCity(cities.find(c => c.slug === e.target.value) || cities[0])}
+              className={`w-full px-4 py-3 rounded-xl border mb-3 ${inputClass}`}
+            >
+              {cities.map(city => (
+                <option key={city.slug} value={city.slug}>{city.city}, {city.country}</option>
+              ))}
+            </select>
             <div className="flex gap-2">
               <select value={departureHour} onChange={(e) => setDepartureHour(parseInt(e.target.value))} className={`flex-1 px-3 py-2 rounded-lg border ${inputClass}`}>
                 {Array.from({ length: 24 }, (_, i) => (<option key={i} value={i}>{i.toString().padStart(2, '0')}:00</option>))}
@@ -120,15 +119,15 @@ export default function FlightTimeClient() {
           </div>
           <div>
             <h3 className={`font-medium mb-3 ${theme.text}`}>Arrival</h3>
-            <div className="mb-3">
-              <CitySelectSearch
-                value={arrivalCity}
-                onChange={setArrivalCity}
-                isLight={isLight}
-                inputClass={inputClass}
-                placeholder="Search arrival city…"
-              />
-            </div>
+            <select
+              value={arrivalCity.slug}
+              onChange={(e) => setArrivalCity(cities.find(c => c.slug === e.target.value) || cities[1])}
+              className={`w-full px-4 py-3 rounded-xl border mb-3 ${inputClass}`}
+            >
+              {cities.map(city => (
+                <option key={city.slug} value={city.slug}>{city.city}, {city.country}</option>
+              ))}
+            </select>
             <div className={`text-center py-2 text-2xl font-bold ${theme.accentText}`}>
               {arrival.time} {arrival.nextDay && <span className="text-sm">(+1 day)</span>}
             </div>
