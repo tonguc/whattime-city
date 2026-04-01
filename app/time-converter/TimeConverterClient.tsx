@@ -1,62 +1,19 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
-import { citiesCore as cities } from '@/lib/cities-client'
 import { useCityContext } from '@/lib/CityContext'
 import ToolPageWrapper from '@/components/ToolPageWrapper'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
-import CitySelectSearch from '@/components/CitySelectSearch'
-import type { City } from '@/lib/cities'
+import CompareWidget from '@/components/CompareWidget'
 
 export default function TimeConverterClient() {
   const { theme, isLight } = useCityContext()
-  
-  const [fromCity, setFromCity] = useState(() => cities.find(c => c.city === 'New York') || cities[0])
-  const [toCity, setToCity] = useState(() => cities.find(c => c.city === 'London') || cities[1])
-  const [selectedHour, setSelectedHour] = useState(12)
-  const [selectedMinute, setSelectedMinute] = useState(0)
-  const [selectedDate, setSelectedDate] = useState(() => {
-    const d = new Date()
-    return `${d.getFullYear()}-${(d.getMonth() + 1).toString().padStart(2, '0')}-${d.getDate().toString().padStart(2, '0')}`
-  })
 
-  const getConvertedTime = () => {
-    const [y, m, d] = selectedDate.split('-').map(Number)
-    const now = new Date(y, m - 1, d)
-    now.setHours(selectedHour, selectedMinute, 0, 0)
-    
-    const fromOffset = new Date(now.toLocaleString('en-US', { timeZone: fromCity.timezone })).getTime()
-    const toOffset = new Date(now.toLocaleString('en-US', { timeZone: toCity.timezone })).getTime()
-    
-    const diff = (toOffset - fromOffset)
-    const convertedTime = new Date(now.getTime() + diff)
-    
-    const timeStr = convertedTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })
-    // Check if day changed
-    const fromDateStr = now.toLocaleDateString('en-US', { timeZone: fromCity.timezone, month: 'short', day: 'numeric' })
-    const toDateStr = new Date(now.getTime() + diff).toLocaleDateString('en-US', { timeZone: toCity.timezone, month: 'short', day: 'numeric' })
-    if (fromDateStr !== toDateStr) {
-      return `${timeStr} (${toDateStr})`
-    }
-    return timeStr
-  }
-
-  const swapCities = () => {
-    const temp = fromCity
-    setFromCity(toCity)
-    setToCity(temp)
-  }
-
-  // Dynamic styles based on theme (like HomePage)
   const cardClass = `rounded-2xl p-6 backdrop-blur-xl border ${theme.card}`
-  const boxClass = isLight 
-    ? 'bg-white/60 border border-white/70 rounded-xl' 
+  const boxClass = isLight
+    ? 'bg-white/60 border border-white/70 rounded-xl'
     : 'bg-slate-800/60 border border-slate-600/60 rounded-xl'
-  const inputClass = isLight 
-    ? 'bg-white border-slate-200 text-slate-800' 
-    : 'bg-slate-700 border-slate-600 text-white'
 
   return (
     <ToolPageWrapper footer={<Footer />}>
@@ -71,74 +28,8 @@ export default function TimeConverterClient() {
         </p>
       </div>
 
-      <div className={`${cardClass} mb-4`}>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-          {/* From City */}
-          <div>
-            <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>From</label>
-            <CitySelectSearch
-              value={fromCity as City}
-              onChange={setFromCity}
-              isLight={isLight}
-              inputClass={inputClass}
-              placeholder="Search from city…"
-            />
-            <div className="mt-2 flex gap-2">
-              <select
-                value={selectedHour}
-                onChange={(e) => setSelectedHour(parseInt(e.target.value))}
-                className={`flex-1 px-3 py-2 rounded-lg border text-center ${inputClass}`}
-              >
-                {Array.from({ length: 24 }, (_, i) => (
-                  <option key={i} value={i}>{i.toString().padStart(2, '0')}</option>
-                ))}
-              </select>
-              <span className={`flex items-center ${theme.textMuted}`}>:</span>
-              <select
-                value={selectedMinute}
-                onChange={(e) => setSelectedMinute(parseInt(e.target.value))}
-                className={`flex-1 px-3 py-2 rounded-lg border text-center ${inputClass}`}
-              >
-                {Array.from({ length: 60 }, (_, i) => (
-                  <option key={i} value={i}>{i.toString().padStart(2, '0')}</option>
-                ))}
-              </select>
-            </div>
-            <input
-              type="date"
-              value={selectedDate}
-              onChange={(e) => setSelectedDate(e.target.value)}
-              className={`mt-2 w-full px-3 py-2 rounded-lg border text-sm ${inputClass}`}
-            />
-          </div>
-
-          {/* Swap Button */}
-          <div className="flex justify-center">
-            <button
-              onClick={swapCities}
-              className={`p-3 rounded-full transition-all ${isLight ? 'bg-white hover:bg-slate-100 text-slate-600' : 'bg-slate-700 hover:bg-slate-600 text-slate-300'}`}
-            >
-              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M7 16l-4-4 4-4"/><path d="M17 8l4 4-4 4"/><path d="M3 12h18"/>
-              </svg>
-            </button>
-          </div>
-
-          {/* To City */}
-          <div>
-            <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>To</label>
-            <CitySelectSearch
-              value={toCity as City}
-              onChange={setToCity}
-              isLight={isLight}
-              inputClass={inputClass}
-              placeholder="Search to city…"
-            />
-            <div className={`mt-2 text-center text-2xl font-bold ${theme.accentText}`}>
-              {getConvertedTime()}
-            </div>
-          </div>
-        </div>
+      <div className="mb-4">
+        <CompareWidget />
       </div>
 
       <section className={`${cardClass} mb-4`}>
