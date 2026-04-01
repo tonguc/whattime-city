@@ -22,7 +22,7 @@ export default function ToolsMiniNav() {
         {toolNavItems.map((tool) => {
           const isActive = pathname === tool.url || pathname === `${tool.url}/` ||
             (tool.id === 'meeting-planner' && pathname?.startsWith('/meeting')) ||
-            (tool.id === 'time-converter' && pathname?.startsWith('/time-converter'))
+            (tool.id === 'time-converter' && (pathname?.startsWith('/time-converter') || pathname?.startsWith('/time/')))
 
           const className = `inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 border whitespace-nowrap flex-shrink-0 ${
             isActive ? 'bg-blue-600 text-white border-blue-600 shadow-md'
