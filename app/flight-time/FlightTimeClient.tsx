@@ -11,6 +11,7 @@ import ToolsMiniNav from '@/components/ToolsMiniNav'
 import Footer from '@/components/Footer'
 import CitySelectSearch from '@/components/CitySelectSearch'
 import { flightTimeSEO } from '@/data/seo/flight-time-seo'
+import { estimateFlightDuration, formatDuration } from '@/lib/flightDuration'
 
 export default function FlightTimeClient() {
   const { theme, isLight } = useCityContext()
@@ -50,6 +51,8 @@ export default function FlightTimeClient() {
   const [departureHour, setDepartureHour] = useState(10)
   const [departureMinute, setDepartureMinute] = useState(0)
   const [flightDuration, setFlightDuration] = useState({ hours: 7, minutes: 0 })
+  const [isEstimated, setIsEstimated] = useState(true)
+  const [estimatedRange, setEstimatedRange] = useState<{ min: number; max: number } | null>(null)
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -58,6 +61,16 @@ export default function FlightTimeClient() {
         localStorage.setItem('whattime-meeting-cities', JSON.stringify(slugs))
       } catch {}
     }
+  }, [departureCity.slug, arrivalCity.slug])
+
+  useEffect(() => {
+    const range = estimateFlightDuration(
+      departureCity.slug, departureCity.lat, departureCity.lng,
+      arrivalCity.slug, arrivalCity.lat, arrivalCity.lng,
+    )
+    setEstimatedRange({ min: range.min, max: range.max })
+    setFlightDuration({ hours: Math.floor(range.mid / 60), minutes: range.mid % 60 })
+    setIsEstimated(true)
   }, [departureCity.slug, arrivalCity.slug])
 
   const getArrivalTime = () => {
@@ -135,18 +148,29 @@ export default function FlightTimeClient() {
           </div>
         </div>
         <div className={`mt-6 pt-6 border-t ${isLight ? 'border-slate-200/50' : 'border-slate-600/50'}`}>
-          <label className={`block text-sm font-medium mb-2 ${theme.textMuted}`}>Flight Duration</label>
+          <div className="flex items-center justify-between mb-2">
+            <label className={`text-sm font-medium ${theme.textMuted}`}>Flight Duration</label>
+            {isEstimated && estimatedRange && (
+              <span className={`text-xs px-2 py-0.5 rounded-full ${isLight ? 'bg-amber-50 text-amber-700 border border-amber-200' : 'bg-amber-900/30 text-amber-400 border border-amber-700/40'}`}>
+                est. {formatDuration(estimatedRange.min)} – {formatDuration(estimatedRange.max)}
+              </span>
+            )}
+          </div>
           <div className="flex gap-4 items-center">
             <div className="flex items-center gap-2">
               <input type="number" min="0" max="24" value={flightDuration.hours}
-                onChange={(e) => setFlightDuration({ ...flightDuration, hours: parseInt(e.target.value) || 0 })}
+                onChange={(e) => { setFlightDuration({ ...flightDuration, hours: parseInt(e.target.value) || 0 }); setIsEstimated(false) }}
                 className={`w-20 px-3 py-2 rounded-lg border text-center ${inputClass}`} />
               <span className={theme.textMuted}>hours</span>
             </div>
             <div className="flex items-center gap-2">
-              <input type="number" min="0" max="59" value={flightDuration.minutes}
-                onChange={(e) => setFlightDuration({ ...flightDuration, minutes: parseInt(e.target.value) || 0 })}
-                className={`w-20 px-3 py-2 rounded-lg border text-center ${inputClass}`} />
+              <select value={flightDuration.minutes}
+                onChange={(e) => { setFlightDuration({ ...flightDuration, minutes: parseInt(e.target.value) }); setIsEstimated(false) }}
+                className={`w-20 px-3 py-2 rounded-lg border ${inputClass}`}>
+                {Array.from({ length: 60 }, (_, i) => (
+                  <option key={i} value={i}>{i.toString().padStart(2, '0')}</option>
+                ))}
+              </select>
               <span className={theme.textMuted}>minutes</span>
             </div>
           </div>
