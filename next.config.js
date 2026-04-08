@@ -30,6 +30,12 @@ const nextConfig = {
         ],
       },
       {
+        source: '/_next/:path*',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+        ],
+      },
+      {
         source: '/time/:from/:to/',
         headers: [
           { key: 'Cache-Control', value: 'public, s-maxage=86400, stale-while-revalidate=86400' },
