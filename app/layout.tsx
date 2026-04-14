@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import GlobalProviders from '@/components/GlobalProviders'
 import { SITE_URL } from '@/lib/constants'
 import './globals.css'
@@ -167,6 +168,12 @@ export default function RootLayout({
         <GlobalProviders>
           {children}
         </GlobalProviders>
+        {/* Google AdSense — lazyOnload: LCP/FCP etkilenmez */}
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9352058741490976"
+          strategy="lazyOnload"
+          crossOrigin="anonymous"
+        />
       </body>
     </html>
   )
