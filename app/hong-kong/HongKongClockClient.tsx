@@ -9,14 +9,14 @@ export default function HongKongClockClient() {
   return (
     <div className="space-y-4">
       <ClockHero
-        bgColor="bg-red-700"
+        bgColor="bg-slate-800"
         clocks={[{ label: 'Current Time in Hong Kong', time }]}
         date={date}
         mounted={mounted}
         badges={[
-          { label: 'HKT &middot; UTC+8 (always)', highlight: true },
+          { label: 'HKT · UTC+8 (always)', highlight: true },
           { label: 'No DST' },
-          { label: 'Asia&apos;s World City' },
+          { label: "Asia's World City" },
         ]}
       />
 
