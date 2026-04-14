@@ -12,6 +12,7 @@ import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import CompareWidget from '@/components/CompareWidget'
 import ToolsMiniNav from '@/components/ToolsMiniNav'
+import AdUnit from '@/components/AdUnit'
 
 interface TimeComparisonContentProps {
   fromCity: City
@@ -1266,7 +1267,10 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
             ))}
           </div>
         </section>
-        
+
+        {/* AD: Display — between FAQ and long SEO content */}
+        <AdUnit variant="display" />
+
         {/* SEO Content Section */}
         <section className={`rounded-2xl p-6 border ${mainTheme.card}`}>
           <div className={`space-y-4 text-sm ${mainTheme.textMuted}`}>
@@ -1311,6 +1315,9 @@ export default function TimeComparisonContent({ fromCity: initialFromCity, toCit
             </p>
           </div>
         </section>
+
+        {/* AD: Multiplex — end of page, explore more cities/tools */}
+        <AdUnit variant="multiplex" />
       </main>
 
       <Footer />

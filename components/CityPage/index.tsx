@@ -21,6 +21,7 @@ import Footer from '@/components/Footer'
 import AlarmModal, { ActiveAlarmPopup } from '@/components/AlarmModal'
 import { useAlarm, useWeather } from '@/shared/hooks'
 import DigitalClock from '@/components/DigitalClock'
+import AdUnit from '@/components/AdUnit'
 import type { CitySEOData } from '@/core/types'
 
 // Dynamic imports - reduces initial bundle size
@@ -346,6 +347,9 @@ export default function CityPage({ initialCity, seoData }: CityPageProps) {
         {/* 9. FAQ */}
         <FAQSection city={selectedCity} seoData={seoData} />
 
+        {/* AD: Display — well below fold, after FAQ */}
+        <AdUnit variant="display" />
+
         {/* 10. TRAVEL TOOLS */}
         <div className={`rounded-2xl p-5 backdrop-blur-xl border ${theme.card} mt-4`}>
           <h3 className={`text-section flex items-center gap-2 mb-4 ${isLight ? 'text-slate-900' : 'text-white'}`}>
@@ -417,6 +421,9 @@ export default function CityPage({ initialCity, seoData }: CityPageProps) {
             router.push(`/${city.slug}`, { scroll: false })
           }}
         />
+
+        {/* AD: Multiplex — end of page, "related content" context */}
+        <AdUnit variant="multiplex" />
       </main>
       
       {/* Footer */}
