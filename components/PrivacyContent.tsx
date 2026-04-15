@@ -18,7 +18,7 @@ export default function PrivacyContent() {
       
       <main className="max-w-3xl mx-auto px-4 py-12">
         <h1 className={`text-4xl font-bold ${textMain} mb-4`}>Privacy Policy</h1>
-        <p className={`${textSubtle} mb-8`}>Last updated: December 2024</p>
+        <p className={`${textSubtle} mb-8`}>Last updated: April 2026</p>
         
         <div className="space-y-8">
           <p className={textMuted}>
