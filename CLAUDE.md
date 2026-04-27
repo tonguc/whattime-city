@@ -894,6 +894,57 @@ import { useClockState, useClockTheme, ClockHero, FactsGrid, NarrativeSection, C
 
 ---
 
+## 🔴 AdSense Reddi — Strateji Notu (27 Nisan 2026)
+
+**Durum:** AdSense başvurusu **"Düşük değere sahip içerik / Müdahale edilmesi gerekiyor"** ile reddedildi (25 Nisan 2026). Ads.txt yetkisi verildi, içerik onayı bekliyor.
+
+### Kök neden analizi
+1. **Site yaşı 3 ay** — domain authority düşük
+2. **Programmatic SEO baskın** — 400+ şehir + 62 converter + 242 SEO JSON; reviewer "auto-generated/thin" görür
+3. **Tool-ağırlıklı site** — saat/converter/timer widget sayfaları düşük editorial değer
+4. **E-E-A-T zayıf** — About/Privacy/Contact var ama her biri ~120 satır boilerplate. **Eksik:** Terms of Service, Cookie Policy, Editorial Standards, Methodology, Author/Team bio
+5. **Editorial içerik az** — `/articles/` altında sadece 6 makale (weeks/days/minutes/hours/seconds in a year + am-pm)
+
+### Mevcut durum (ne var, ne yok)
+- ✅ `/about/` (124 satır) — basit, geliştirilebilir
+- ✅ `/privacy/` (122 satır) — basit
+- ✅ `/contact/` (139 satır) — basit
+- ❌ `/terms/` — **YOK**
+- ❌ `/cookie-policy/` — **YOK**
+- ❌ `/methodology/` veya `/data-sources/` — **YOK**
+- ❌ `/editorial-standards/` — **YOK**
+- ❌ Author/team page — **YOK**
+- 🟡 `/articles/` — sadece 6 makale, hepsi "how many X in a year" cluster
+
+### 3 Fazlı Eylem Planı
+
+**Faz 1 — Pre-resubmit (2-3 hafta, kritik):**
+- E-E-A-T pillar pages oluştur: **Terms of Service, Cookie Policy, Editorial Standards, Methodology** (IANA tzdata, suncalc, NOAA verisi nereden), **Author/Team page**
+- About'u 4-5 katına çıkar: misyon, veri kaynakları, güncellenme sıklığı, doğruluk taahhüdü
+- **15-20 yeni long-form makale** (1500+ kelime özgün editorial): "Why Different Countries Have Different DST Rules", "History of Time Zones", "How Pilots Calculate Flight Times Across Time Zones", "The Science of Jet Lag" vb.
+- Top 10 tool sayfasına (flight-time, time-converter, military-time, prayer-times, sunrise-sunset) altına 800-1200 kelime özgün editorial ekle
+
+**Faz 2 — Alternatif monetizasyon (paralel):**
+- **Ezoic'e başvur** — AdSense'ten daha düşük eşik, onaylanırsa AdSense'i de yönetir
+- Mediavine 50K oturum/ay ister, henüz erken
+
+**Faz 3 — AdSense reapply (Faz 1'den 4-6 hafta sonra):**
+- AdSense en az 30 gün cooldown önerir
+- Bu sırada GSC organic 3-5 tıklama/gün → 50-100/gün eşiğine ulaşmalı
+
+### Kritik içgörü
+AdSense reviewer 3-5 sayfa rastgele bakar. O sayfalardan 2'si şablon programmatic ise reddedilir. **Önce editorial pages (articles, about, methodology) kuvvetlendir, sonra reapply.**
+
+### Sonraki oturum başlangıç sorusu
+Kullanıcı "AdSense'e devam edelim" dediğinde sor: hangisinden başlayacağız?
+- (a) Eksik legal/E-E-A-T pages (Terms, Cookie, Methodology, Editorial Standards) oluştur
+- (b) About sayfasını zenginleştir
+- (c) İlk 5 long-form editorial makalesi yaz
+
+**Branch:** `claude/adsense-rejection-strategy-0WAUD`
+
+---
+
 ## Açık Konular / Sonraki Adımlar
 
 - [ ] DST clock change (673K vol, SD 24) — `/daylight-saving-time/` meta already good, monitor GSC
