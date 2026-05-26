@@ -56,6 +56,29 @@ function getBestCallWindow(fromOffset: number, toOffset: number, fromCityName: s
   return `${fmt(startH)}–${fmt(endH)} ${fromCityName} time`
 }
 
+// 12-hour AM/PM formatter, supports half-hour offsets (IST UTC+5:30)
+function fmt12(hour: number, minute: number = 0): string {
+  const h = ((hour % 24) + 24) % 24
+  const period = h < 12 ? 'AM' : 'PM'
+  const hh = h === 0 ? 12 : h > 12 ? h - 12 : h
+  return minute === 0
+    ? `${hh}:00 ${period}`
+    : `${hh}:${String(minute).padStart(2, '0')} ${period}`
+}
+
+// Convert a wall-clock hour in fromCity to the corresponding wall-clock time in toCity,
+// returning a formatted string with optional day delta ("(+1 day)" / "(-1 day)").
+function convertHour(fromHour: number, diffHours: number): { time: string; dayDelta: string } {
+  const intDiff = Math.trunc(diffHours)
+  const fracMinutes = Math.round((diffHours - intDiff) * 60)
+  const total = fromHour * 60 + intDiff * 60 + fracMinutes
+  const dayDelta = total >= 24 * 60 ? '(+1 day)' : total < 0 ? '(−1 day)' : ''
+  const normalized = ((total % (24 * 60)) + 24 * 60) % (24 * 60)
+  const h = Math.floor(normalized / 60)
+  const m = normalized % 60
+  return { time: fmt12(h, m), dayDelta }
+}
+
 // Dinamik SEO Metadata
 export async function generateMetadata({ params }: TimeComparePageProps): Promise<Metadata> {
   const { from, to } = await params
@@ -91,11 +114,16 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
   const fromUtcLabel = `UTC${fromOffset >= 0 ? '+' : ''}${fromOffset % 1 === 0 ? fromOffset : fromOffset.toFixed(1)}`
   const toUtcLabel = `UTC${toOffset >= 0 ? '+' : ''}${toOffset % 1 === 0 ? toOffset : toOffset.toFixed(1)}`
 
+  // Include country names when from and to are in different countries —
+  // catches queries like "lagos netherlands time difference".
+  const countryHint = fromCity.country !== toCity.country
+    ? ` ${fromCity.country}→${toCity.country}.`
+    : ''
   const description = diffHours === 0
-    ? `${fromCity.city} and ${toCity.city} share the same time zone (${fromUtcLabel}). Live clocks, overlap calendar, and conversion table.`
+    ? `${fromCity.city} and ${toCity.city} share the same time zone (${fromUtcLabel}).${countryHint} Live clocks, conversion table, AM/PM examples.`
     : callWindow
-      ? `${toCity.city} is ${diffStr} ${direction} ${fromCity.city} (${fromUtcLabel} vs ${toUtcLabel}). Best call window: ${callWindow}. Live clock & meeting planner.`
-      : `${toCity.city} is ${diffStr} ${direction} ${fromCity.city} (${fromUtcLabel} vs ${toUtcLabel}). No business-hour overlap. Live clocks & async scheduling guide.`
+      ? `${toCity.city} is ${diffStr} ${direction} ${fromCity.city} (${fromUtcLabel} vs ${toUtcLabel}).${countryHint} 8 AM, 9 AM, noon conversion shown. Best call window: ${callWindow}.`
+      : `${toCity.city} is ${diffStr} ${direction} ${fromCity.city} (${fromUtcLabel} vs ${toUtcLabel}).${countryHint} 8 AM & noon conversion table. No business-hour overlap.`
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -320,6 +348,27 @@ export default async function TimeComparePage({ params }: TimeComparePageProps) 
   const diffStr = formatDiff(absDiff)
   const overlapHours = countBusinessOverlap(diffHours)
 
+  // Server-rendered conversion examples — explicit AM/PM text targeting
+  // long-tail queries like "8am delhi to boston conversion".
+  const conversionRows = [8, 9, 10, 12, 14, 17, 20, 23].map(h => {
+    const to = convertHour(h, diffHours)
+    return { fromTime: fmt12(h), toTime: to.time, dayDelta: to.dayDelta }
+  })
+
+  const conversionParagraph = diffHours === 0
+    ? `${fromCity.city} and ${toCity.city} share the same UTC offset, so every hour matches one-to-one. 8:00 AM in ${fromCity.city} is 8:00 AM in ${toCity.city}; noon in ${fromCity.city} is noon in ${toCity.city}.`
+    : [
+        `8:00 AM in ${fromCity.city} = ${convertHour(8, diffHours).time} in ${toCity.city} ${convertHour(8, diffHours).dayDelta}.`,
+        `9:00 AM in ${fromCity.city} = ${convertHour(9, diffHours).time} in ${toCity.city} ${convertHour(9, diffHours).dayDelta}.`,
+        `12:00 PM (noon) in ${fromCity.city} = ${convertHour(12, diffHours).time} in ${toCity.city} ${convertHour(12, diffHours).dayDelta}.`,
+        `5:00 PM in ${fromCity.city} = ${convertHour(17, diffHours).time} in ${toCity.city} ${convertHour(17, diffHours).dayDelta}.`,
+        `9:00 PM in ${fromCity.city} = ${convertHour(21, diffHours).time} in ${toCity.city} ${convertHour(21, diffHours).dayDelta}.`,
+      ].map(s => s.replace(/\s+\./g, '.').replace(/\s+/g, ' ').trim()).join(' ')
+
+  const countryLine = fromCity.country === toCity.country
+    ? `Both ${fromCity.city} and ${toCity.city} are located in ${fromCity.country}.`
+    : `${fromCity.city} is in ${fromCity.country}; ${toCity.city} is in ${toCity.country}.`
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -330,8 +379,24 @@ export default async function TimeComparePage({ params }: TimeComparePageProps) 
         acceptedAnswer: {
           '@type': 'Answer',
           text: diffHours === 0
-            ? `${fromCity.city} and ${toCity.city} are in the same time zone — no difference.`
-            : `${toCity.city} is ${diffStr} ${direction} ${fromCity.city}. When it is noon in ${fromCity.city}, it is ${String((12 + diffHours + 24) % 24).padStart(2, '0')}:00 in ${toCity.city}.`,
+            ? `${fromCity.city} (${fromCity.country}) and ${toCity.city} (${toCity.country}) are in the same time zone — no difference. ${countryLine}`
+            : `${toCity.city} is ${diffStr} ${direction} ${fromCity.city}. When it is noon (12:00 PM) in ${fromCity.city}, it is ${convertHour(12, diffHours).time} in ${toCity.city} ${convertHour(12, diffHours).dayDelta}. ${countryLine}`.replace(/\s+/g, ' ').trim(),
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `What time is 8 AM in ${fromCity.city} when in ${toCity.city}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `8:00 AM in ${fromCity.city} is ${convertHour(8, diffHours).time} in ${toCity.city} ${convertHour(8, diffHours).dayDelta}. 9:00 AM in ${fromCity.city} is ${convertHour(9, diffHours).time} in ${toCity.city}.`.replace(/\s+/g, ' ').trim(),
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `What time is 9 AM in ${fromCity.city} when in ${toCity.city}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `9:00 AM in ${fromCity.city} converts to ${convertHour(9, diffHours).time} in ${toCity.city} ${convertHour(9, diffHours).dayDelta}. 12:00 PM in ${fromCity.city} is ${convertHour(12, diffHours).time} in ${toCity.city}.`.replace(/\s+/g, ' ').trim(),
         },
       },
       {
@@ -352,6 +417,16 @@ export default async function TimeComparePage({ params }: TimeComparePageProps) 
           text: diffHours === 0
             ? `${fromCity.city} and ${toCity.city} are at the same UTC offset.`
             : `${toCity.city} is ${diffStr} ${direction} ${fromCity.city} (UTC${toOffset >= 0 ? '+' : ''}${toOffset} vs UTC${fromOffset >= 0 ? '+' : ''}${fromOffset}).`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `What is the time difference between ${fromCity.country} and ${toCity.country}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: fromCity.country === toCity.country
+            ? `${fromCity.city} and ${toCity.city} are both in ${fromCity.country}, with ${diffHours === 0 ? 'no time difference' : `a ${diffStr} difference between regions`}.`
+            : `Using ${fromCity.city} (${fromCity.country}) and ${toCity.city} (${toCity.country}) as reference points: ${toCity.city} is ${diffStr} ${direction} ${fromCity.city}. Note that ${fromCity.country} or ${toCity.country} may span multiple time zones — this comparison uses these specific cities.`,
         },
       },
       {
@@ -398,6 +473,45 @@ export default async function TimeComparePage({ params }: TimeComparePageProps) 
         toCity={toCity}
         pairContext={PAIR_CONTEXTS[`${from}-${to}`]}
       />
+      {/*
+        Server-rendered conversion block — pure SSR content.
+        Targets long-tail queries: "8am X to Y conversion", "X to Y time difference",
+        "Country1 to Country2 time difference". Lives below the interactive widget
+        so Google sees explicit AM/PM text and country mentions in the HTML source.
+      */}
+      <section
+        aria-label="Conversion examples and country reference"
+        className="max-w-6xl mx-auto px-4 pb-12 -mt-4 text-sm leading-relaxed"
+      >
+        <div className="rounded-2xl border border-slate-200/30 bg-white/5 backdrop-blur p-6 space-y-4">
+          <h2 className="text-base font-semibold text-slate-200">
+            {fromCity.city} to {toCity.city} — Hour-by-Hour Conversion
+          </h2>
+          <p className="text-slate-300/90">{countryLine}</p>
+          <p className="text-slate-300/90">{conversionParagraph}</p>
+          <table className="w-full text-left text-xs sm:text-sm border-collapse">
+            <thead>
+              <tr className="border-b border-slate-300/20">
+                <th className="py-2 pr-4 font-medium text-slate-400">{fromCity.city} ({fromCity.country})</th>
+                <th className="py-2 font-medium text-slate-400">{toCity.city} ({toCity.country})</th>
+              </tr>
+            </thead>
+            <tbody>
+              {conversionRows.map((r, i) => (
+                <tr key={i} className="border-b border-slate-300/10">
+                  <td className="py-1.5 pr-4 text-slate-200">{r.fromTime}</td>
+                  <td className="py-1.5 text-slate-200">{r.toTime} {r.dayDelta}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="text-xs text-slate-400 pt-2">
+            Time difference between {fromCity.country} ({fromCity.city}) and {toCity.country} ({toCity.city}):
+            {' '}{diffHours === 0 ? 'none — same UTC offset.' : `${toCity.city} is ${diffStr} ${direction} ${fromCity.city}.`}
+            {' '}DST observance and exact offsets are computed live from the IANA tz database.
+          </p>
+        </div>
+      </section>
     </>
   )
 }
