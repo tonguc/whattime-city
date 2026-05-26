@@ -307,27 +307,34 @@ const PAIR_CONTEXTS: Record<string, string> = {
   'san-francisco-barcelona': 'San Francisco (PST/PDT, UTC−8/−7) is 9 hours behind Barcelona (CET/CEST, UTC+1/+2). The 9-hour gap is consistent most of the year; brief 8-hour windows appear when DST transitions occur on different dates. Many Silicon Valley companies use Barcelona as a European hub due to its talent pool, infrastructure, and quality of life.',
 }
 
-// Only pre-render top 15 highest-traffic pairs at build time.
-// All other pairs are ISR (revalidate=3600): generated on first request, then cached.
-const TOP_PAIRS = [
-  { from: 'new-york', to: 'london' },
-  { from: 'london', to: 'new-york' },
-  { from: 'london', to: 'sydney' },
-  { from: 'new-york', to: 'los-angeles' },
-  { from: 'london', to: 'dubai' },
-  { from: 'new-york', to: 'tokyo' },
-  { from: 'singapore', to: 'london' },
-  { from: 'london', to: 'singapore' },
-  { from: 'new-york', to: 'paris' },
-  { from: 'dubai', to: 'london' },
-  { from: 'los-angeles', to: 'london' },
-  { from: 'new-york', to: 'berlin' },
-  { from: 'sydney', to: 'london' },
-  { from: 'tokyo', to: 'new-york' },
-  { from: 'new-york', to: 'dubai' },
-]
+// Pre-render every pair that has a PAIR_CONTEXTS entry — these are the
+// pairs we've intentionally written narrative content for, and the ones
+// most likely to receive organic impressions. Other pairs fall back to
+// ISR (revalidate=3600) on first request.
+//
+// Slug splitting: city slugs may themselves contain hyphens
+// (new-york, san-francisco, mexico-city, tel-aviv, hong-kong, rio-de-janeiro,
+// sao-paulo, st-louis, ...). We iterate hyphen positions and accept the
+// first split where both halves are known city slugs.
+const KNOWN_SLUGS: Set<string> = new Set(cities.map(c => c.slug))
+
+function splitPairKey(key: string): { from: string; to: string } | null {
+  const parts = key.split('-')
+  for (let i = 1; i < parts.length; i++) {
+    const from = parts.slice(0, i).join('-')
+    const to = parts.slice(i).join('-')
+    if (KNOWN_SLUGS.has(from) && KNOWN_SLUGS.has(to)) return { from, to }
+  }
+  return null
+}
+
 export async function generateStaticParams() {
-  return TOP_PAIRS
+  const pairs: { from: string; to: string }[] = []
+  for (const key of Object.keys(PAIR_CONTEXTS)) {
+    const p = splitPairKey(key)
+    if (p) pairs.push(p)
+  }
+  return pairs
 }
 
 // Ana Sayfa Bileşeni

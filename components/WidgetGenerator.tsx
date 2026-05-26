@@ -337,6 +337,35 @@ export default function WidgetGenerator() {
             </div>
           ))}
         </div>
+
+        {/* Visible content matching HowTo + FAQ schema (Google requires visible match) */}
+        <section className="mt-12 max-w-3xl mx-auto">
+          <h2 className={`text-2xl font-semibold mb-4 ${text}`}>How to Embed the Clock Widget</h2>
+          <ol className={`list-decimal pl-5 space-y-2 ${textMuted}`}>
+            <li><strong className={text}>Pick a city</strong> — search and select any of 1,700+ supported cities above.</li>
+            <li><strong className={text}>Customize appearance</strong> — auto/light/dark theme, three sizes, optional transparent background, toggle date and timezone label.</li>
+            <li><strong className={text}>Copy the iframe code</strong> — the generator produces a single iframe pointing to whattime.city/embed/{`{city}`}.</li>
+            <li><strong className={text}>Paste into your site</strong> — WordPress (Custom HTML block), Notion (/embed and paste the iframe URL), Squarespace and Wix (Embed Block), Ghost, Webflow, Framer, plain HTML. Works on any platform that accepts iframes.</li>
+            <li><strong className={text}>Verify it loads</strong> — save and view your page. The widget auto-updates every second; theme follows visitor day/night unless you set a fixed theme.</li>
+          </ol>
+
+          <h2 className={`text-2xl font-semibold mt-10 mb-4 ${text}`}>Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {[
+              { q: 'Is the whattime.city clock widget free?', a: 'Yes — completely free, no signup. No ads inside the widget, no tracking beyond standard server logs.' },
+              { q: 'Does it work on WordPress, Wix, Squarespace, Notion?', a: 'Yes. It is a standard iframe embed and works on any platform that allows custom HTML or iframe blocks: WordPress (Custom HTML), Wix and Squarespace (Embed Block), Notion (/embed), Ghost, Webflow, Framer, plain HTML.' },
+              { q: 'Does the widget handle Daylight Saving Time automatically?', a: 'Yes. It uses the IANA Time Zone Database, so DST transitions, half-hour offsets (India UTC+5:30), and quarter-hour offsets (Nepal UTC+5:45) are handled automatically. No manual updates at clock-change dates.' },
+              { q: 'How many cities can I embed?', a: 'Any of 1,700+ cities. No limit on widgets per page — each iframe runs independently.' },
+              { q: 'Can I customize colors or remove the attribution link?', a: 'Choose between auto, light, dark themes; three sizes; toggle date and timezone label. A small "whattime.city" attribution link is part of the free widget — for white-label, contact us.' },
+              { q: 'Does the widget slow down my page?', a: 'Around 25 KB total. Loads lazily inside an iframe, does not block your page render. No external script dependencies.' },
+            ].map((item, i) => (
+              <details key={i} className={`p-4 rounded-xl ${isLight ? 'bg-white/60 border border-slate-200' : 'bg-slate-800/40 border border-slate-700/60'}`}>
+                <summary className={`font-medium cursor-pointer ${text}`}>{item.q}</summary>
+                <p className={`mt-2 text-sm ${textMuted}`}>{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
       </main>
 
       <Footer />

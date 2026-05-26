@@ -49,6 +49,7 @@ const TravelBridge = dynamic(() => import('./TravelBridge'))
 const MoreCitiesSection = dynamic(() => import('./MoreCitiesSection'))
 const FavoriteCard = dynamic(() => import('./FavoriteCard'), { ssr: false })
 const FAQSection = dynamic(() => import('./FAQSection'))
+const EmbedCTA = dynamic(() => import('./EmbedCTA'))
 
 interface CityPageProps {
   initialCity?: City
@@ -410,6 +411,9 @@ export default function CityPage({ initialCity, seoData }: CityPageProps) {
           </div>
         )}
         
+        {/* Embed CTA — drives /widget/ traffic and backlinks */}
+        <EmbedCTA city={selectedCity} />
+
         {/* More Cities (Same Country/Region) */}
         <MoreCitiesSection selectedCity={selectedCity} />
         
