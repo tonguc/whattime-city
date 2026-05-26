@@ -10,6 +10,13 @@ import { themes, isLightTheme } from '@/lib/themes'
 import { saveCityContext } from '@/lib/city-context'
 import { useCityContext } from '@/lib/CityContext'
 import Footer from '@/components/Footer'
+import { COUNTRY_HUB_SLUGS } from '@/data/hubPages'
+
+function countryHref(countryName: string): string {
+  const slug = countryName.toLowerCase().replace(/\s+/g, '-')
+  const hub = COUNTRY_HUB_SLUGS[slug]
+  return hub ? `/${hub}/` : `/country/${slug}/`
+}
 
 interface CityPageContentProps {
   city: City
@@ -259,8 +266,8 @@ export default function CityPageContent({ city }: CityPageContentProps) {
                   <div className={`text-xs uppercase tracking-wide mb-1 ${theme.textMuted}`}>
                     🌍 Country
                   </div>
-                  <Link 
-                    href={`/country/${city.country.toLowerCase().replace(/\s+/g, '-')}`}
+                  <Link
+                    href={countryHref(city.country)}
                     className={`font-semibold hover:underline ${theme.text}`}
                   >
                     {city.country}

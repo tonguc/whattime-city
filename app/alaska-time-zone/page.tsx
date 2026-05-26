@@ -97,11 +97,7 @@ export default function AlaskaTimeZonePage() {
         states={['Alaska (most)', 'Aleutian Islands east of 169°30′W']}
         majorCities={[
           { name: 'Anchorage', href: '/anchorage/' },
-          { name: 'Fairbanks', href: '/fairbanks/' },
           { name: 'Juneau', href: '/juneau/' },
-          { name: 'Sitka', href: '/sitka/' },
-          { name: 'Kenai', href: '/kenai/' },
-          { name: 'Kodiak', href: '/kodiak/' },
         ]}
         dstNote="Observes DST: 2nd Sunday in March → 1st Sunday in November"
       />

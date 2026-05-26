@@ -97,11 +97,6 @@ export default function HawaiiTimeZonePage() {
         states={['Hawaii', 'Aleutian Islands west of 169°30′W (HAST)']}
         majorCities={[
           { name: 'Honolulu', href: '/honolulu/' },
-          { name: 'Hilo', href: '/hilo/' },
-          { name: 'Kailua', href: '/kailua/' },
-          { name: 'Pearl City', href: '/pearl-city/' },
-          { name: 'Maui', href: '/maui/' },
-          { name: 'Kauai', href: '/kauai/' },
         ]}
         dstNote="No DST — Hawaii uses HST (UTC-10) year-round"
       />

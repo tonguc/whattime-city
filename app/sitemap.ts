@@ -154,16 +154,10 @@ export default async function sitemap({ id }: { id: number }): Promise<MetadataR
       priority: 0.8,
     }))
 
-    // Days from today / days ago / hours ago / hours from now
-    const numericDays = [7, 8, 10, 14, 15, 17, 20, 22, 25, 29, 30, 42, 45, 60, 90, 100, 120, 150, 180, 365]
-    const numericHours = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15, 18, 20, 24, 36, 48, 72]
-
-    const numericsRoutes: MetadataRoute.Sitemap = [
-      ...numericDays.map(d => ({ url: `${baseUrl}/days-from-today/${d}/`, lastModified: now, changeFrequency: 'daily' as const, priority: 0.7 })),
-      ...numericDays.map(d => ({ url: `${baseUrl}/days-ago/${d}/`, lastModified: now, changeFrequency: 'daily' as const, priority: 0.7 })),
-      ...numericHours.map(h => ({ url: `${baseUrl}/hours-ago/${h}/`, lastModified: now, changeFrequency: 'hourly' as const, priority: 0.7 })),
-      ...numericHours.map(h => ({ url: `${baseUrl}/hours-from-now/${h}/`, lastModified: now, changeFrequency: 'hourly' as const, priority: 0.7 })),
-    ]
+    // Numeric per-value pages (days-ago/[n], hours-from-now/[n], etc.) are noindex'd
+    // as low-value calculator outputs. The hub pages (/days-ago/, /hours-ago/, ...)
+    // remain in staticRoutes above and are the only entry points we surface to search.
+    const numericsRoutes: MetadataRoute.Sitemap = []
 
     return [
       ...staticRoutes,

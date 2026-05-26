@@ -2,7 +2,14 @@
 import Link from 'next/link'
 import { City } from '@/lib/cities'
 import { useThemeClasses } from '@/lib/useThemeClasses'
+import { COUNTRY_HUB_SLUGS } from '@/data/hubPages'
 import type { CitySEOData } from '@/core/types'
+
+function countryHref(countryName: string): string {
+  const slug = countryName.toLowerCase().replace(/\s+/g, '-')
+  const hub = COUNTRY_HUB_SLUGS[slug]
+  return hub ? `/${hub}/` : `/country/${slug}/`
+}
 
 interface SEOContentProps {
   city: City
@@ -144,7 +151,7 @@ export default function SEOContent({ city, seoData }: SEOContentProps) {
         <ul className={`text-sm space-y-1.5 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
           <li><strong>Time Zone:</strong> {seoData?.timezone_facts?.full_name || city.timezone} ({seoData?.timezone_facts?.utc_offset || offset})</li>
           <li><strong>Daylight Saving:</strong> {seoData?.timezone_facts?.dst_observed === false ? 'Not observed' : hasDST ? 'Observed' : 'Not observed'}</li>
-          <li><strong>Country:</strong> <Link href={`/country/${city.country.toLowerCase().replace(/\s+/g, '-')}/`} className={linkClass}>{city.country}</Link></li>
+          <li><strong>Country:</strong> <Link href={countryHref(city.country)} className={linkClass}>{city.country}</Link></li>
           <li><strong>Coordinates:</strong> {city.lat.toFixed(2)}, {city.lng.toFixed(2)}</li>
           {city.info?.phoneCode && <li><strong>Calling Code:</strong> {city.info.phoneCode}</li>}
         </ul>

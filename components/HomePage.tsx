@@ -444,7 +444,7 @@ export default function HomePage() {
                 {[
                   { href: '/india', label: 'India Time' },
                   { href: '/japan', label: 'Japan Time' },
-                  { href: '/united-kingdom', label: 'UK Time' },
+                  { href: '/uk', label: 'UK Time' },
                   { href: '/china', label: 'China Time' },
                   { href: '/australia', label: 'Australia Time' },
                   { href: '/germany', label: 'Germany Time' },

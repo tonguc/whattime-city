@@ -118,7 +118,7 @@ export default function CentralTimeZonePage() {
           { name: 'Kansas City', href: '/kansas-city/' },
           { name: 'Nashville', href: '/nashville/' },
           { name: 'Memphis', href: '/memphis/' },
-          { name: 'St. Louis', href: '/saint-louis/' },
+          { name: 'St. Louis', href: '/st-louis/' },
           { name: 'Milwaukee', href: '/milwaukee/' },
         ]}
         dstNote="Observes DST: 2nd Sunday in March → 1st Sunday in November"

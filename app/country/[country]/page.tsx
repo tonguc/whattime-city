@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { notFound, redirect } from 'next/navigation'
+import { notFound, permanentRedirect } from 'next/navigation'
 import { getCountryBySlug, getAllCountrySlugs, getCitiesByCountryCode } from '@/lib/cities'
 import { COUNTRY_HUB_SLUGS } from '@/data/hubPages'
 import CountryPageWrapper from '@/components/CountryPageWrapper'
@@ -84,10 +84,10 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
 export default async function CountryPage({ params }: CountryPageProps) {
   const { country: slug } = await params
 
-  // Hub page varsa 301 redirect
+  // Hub page varsa 308 permanent redirect (Google canonical signal)
   const hubSlug = COUNTRY_HUB_SLUGS[slug]
   if (hubSlug) {
-    redirect(`/${hubSlug}/`)
+    permanentRedirect(`/${hubSlug}/`)
   }
 
   const country = getCountryBySlug(slug)
