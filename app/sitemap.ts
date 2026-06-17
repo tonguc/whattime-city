@@ -1,11 +1,35 @@
 import { MetadataRoute } from 'next'
+import fs from 'fs'
+import path from 'path'
 import { cities, countries, getTier1Cities } from '@/lib/cities'
 import { COUNTRY_HUB_SLUGS } from '@/data/hubPages'
 import { areaCodeList } from '@/data/area-codes'
+import { PAIR_CONTEXTS } from '@/data/pairContexts'
 import { SITE_URL } from '@/lib/constants'
 
 // Cache sitemap segments for 24h
 export const revalidate = 86400
+
+// Stable lastmod for pages that haven't materially changed.
+// Bump this only when a real content/template update lands across the site.
+// Frequently-changing lastmod (e.g. new Date()) is treated by Google as a fake signal.
+const SITE_LAST_UPDATE = new Date('2026-06-17T00:00:00Z')
+
+// Cities with hand-authored SEO data — the only Tier2+ cities we surface in sitemap.
+// Tier3 + Tier2-without-SEO pages remain crawlable (internal links) but aren't pushed.
+function loadSeoSlugSet(): Set<string> {
+  try {
+    const dir = path.join(process.cwd(), 'data', 'seo')
+    return new Set(
+      fs.readdirSync(dir)
+        .filter(f => f.endsWith('-seo.json'))
+        .map(f => f.replace('-seo.json', ''))
+    )
+  } catch {
+    return new Set()
+  }
+}
+const SEO_SLUG_SET = loadSeoSlugSet()
 
 /**
  * Sitemap segmentation for better crawl budget allocation:
@@ -23,7 +47,7 @@ export async function generateSitemaps() {
 
 export default async function sitemap({ id }: { id: number }): Promise<MetadataRoute.Sitemap> {
   const baseUrl = SITE_URL
-  const now = new Date()
+  const now = SITE_LAST_UPDATE
 
   // ── Segment 0: Core (tools, converters, articles, hub standalone pages) ──────
   if (id === 0) {
@@ -169,33 +193,51 @@ export default async function sitemap({ id }: { id: number }): Promise<MetadataR
     ]
   }
 
-  // ── Segment 1: Cities (all 2046 city pages) ───────────────────────────────────
+  // ── Segment 1: Cities — quality-gated subset only ─────────────────────────────
+  // After May 2026 crawl-demand collapse, we no longer push 2,054 URLs at Google.
+  // We surface only Tier1 (45) + cities with hand-authored SEO data (~200).
+  // Tier3 and SEO-less Tier2 stay crawlable via internal links; they're not
+  // noindex'd, just not advertised. Goal: tighter, higher-trust inventory.
   if (id === 1) {
-    return cities.map(city => ({
-      url: `${baseUrl}/${city.slug}/`,
-      lastModified: now,
-      changeFrequency: 'daily',
-      priority: city.tier === 1 ? 0.9 : city.tier === 2 ? 0.8 : 0.7,
-    }))
+    return cities
+      .filter(city => city.tier === 1 || SEO_SLUG_SET.has(city.slug))
+      .map(city => ({
+        url: `${baseUrl}/${city.slug}/`,
+        lastModified: now,
+        changeFrequency: city.tier === 1 ? 'daily' : 'weekly',
+        priority: city.tier === 1 ? 0.9 : 0.8,
+      }))
   }
 
-  // ── Segment 2: Time comparison pairs (tier1 × tier1) ─────────────────────────
+  // ── Segment 2: Time comparison pairs — enriched pairs only ───────────────────
+  // Was: tier1 × tier1 = ~1,980 generic pair URLs.
+  // Now: only the 92 pairs that have hand-authored PAIR_CONTEXTS narrative.
+  // Generic pairs remain accessible (generateStaticParams also pre-renders only
+  // PAIR_CONTEXTS keys), they're just not pushed to Google.
   if (id === 2) {
-    const tier1Slugs = getTier1Cities().map(c => c.slug)
-    const routes: MetadataRoute.Sitemap = []
-    for (const from of tier1Slugs) {
-      for (const to of tier1Slugs) {
-        if (from !== to) {
-          routes.push({
-            url: `${baseUrl}/time/${from}/${to}/`,
-            lastModified: now,
-            changeFrequency: 'daily',
-            priority: 0.6,
-          })
+    // PAIR_CONTEXTS keys are "<from-slug>-<to-slug>" but slugs themselves
+    // contain hyphens (e.g. "new-york-san-francisco"). Resolve via city slug set.
+    const slugSet = new Set(cities.map(c => c.slug))
+    return Object.keys(PAIR_CONTEXTS).map(key => {
+      const parts = key.split('-')
+      let from = parts[0]
+      let to = parts.slice(1).join('-')
+      for (let i = 1; i < parts.length; i++) {
+        const candidate = parts.slice(0, i).join('-')
+        const rest = parts.slice(i).join('-')
+        if (slugSet.has(candidate) && slugSet.has(rest)) {
+          from = candidate
+          to = rest
+          break
         }
       }
-    }
-    return routes
+      return {
+        url: `${baseUrl}/time/${from}/${to}/`,
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority: 0.7,
+      }
+    })
   }
 
   // ── Segment 3: Extended (sun pages, guides, country/[slug], area codes) ───────
@@ -211,9 +253,12 @@ export default async function sitemap({ id }: { id: number }): Promise<MetadataR
       })),
     ]
 
-    // Guide pages — 9 premium cities × 11 cluster pages
+    // Guide pages — 9 premium cities × canonical (post-redirect) cluster slugs only.
+    // Old slugs (business-hours, call-times, holidays, best-time-to-visit, remote-work,
+    // digital-nomad, time-difference, 24-hours, travel-planning, stock-market) are 301'd
+    // by middleware/next.config — listing them in sitemap creates redirect URLs.
     const premiumGuideCities = ['new-york', 'london', 'tokyo', 'dubai', 'singapore', 'paris', 'sydney', 'istanbul', 'los-angeles']
-    const premiumClusterSlugs = ['', 'business-hours', 'best-time-to-visit', 'remote-work', '24-hours', 'call-times', 'stock-market', 'holidays', 'digital-nomad', 'time-difference', 'travel-planning']
+    const premiumClusterSlugs = ['', 'time-business', 'travel-guide', 'work-remote', '24-hours-itinerary', 'time-zones']
     const guideRoutes: MetadataRoute.Sitemap = premiumGuideCities.flatMap(citySlug =>
       premiumClusterSlugs.map(slug => ({
         url: slug ? `${baseUrl}/${citySlug}/guide/${slug}/` : `${baseUrl}/${citySlug}/guide/`,
@@ -223,13 +268,17 @@ export default async function sitemap({ id }: { id: number }): Promise<MetadataR
       }))
     )
 
-    // /country/[country]/ pages
-    const countryRoutes: MetadataRoute.Sitemap = countries.map(country => ({
-      url: `${baseUrl}/country/${country.slug}/`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    }))
+    // /country/[country]/ pages — ONLY countries without a hub page mapping.
+    // Countries in COUNTRY_HUB_SLUGS 308-redirect to /<hub>/ (see app/country/[country]/page.tsx),
+    // so listing them here generates ~190 redirect URLs in sitemap.
+    const countryRoutes: MetadataRoute.Sitemap = countries
+      .filter(country => !COUNTRY_HUB_SLUGS[country.slug])
+      .map(country => ({
+        url: `${baseUrl}/country/${country.slug}/`,
+        lastModified: now,
+        changeFrequency: 'weekly',
+        priority: 0.8,
+      }))
 
     // Area code pages
     const highValueCodes = new Set([
