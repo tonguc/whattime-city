@@ -211,9 +211,12 @@ export default async function sitemap({ id }: { id: number }): Promise<MetadataR
       })),
     ]
 
-    // Guide pages — 9 premium cities × 11 cluster pages
+    // Guide pages — 9 premium cities × canonical (post-redirect) cluster slugs only.
+    // Old slugs (business-hours, call-times, holidays, best-time-to-visit, remote-work,
+    // digital-nomad, time-difference, 24-hours, travel-planning, stock-market) are 301'd
+    // by middleware/next.config — listing them in sitemap creates redirect URLs.
     const premiumGuideCities = ['new-york', 'london', 'tokyo', 'dubai', 'singapore', 'paris', 'sydney', 'istanbul', 'los-angeles']
-    const premiumClusterSlugs = ['', 'business-hours', 'best-time-to-visit', 'remote-work', '24-hours', 'call-times', 'stock-market', 'holidays', 'digital-nomad', 'time-difference', 'travel-planning']
+    const premiumClusterSlugs = ['', 'time-business', 'travel-guide', 'work-remote', '24-hours-itinerary', 'time-zones']
     const guideRoutes: MetadataRoute.Sitemap = premiumGuideCities.flatMap(citySlug =>
       premiumClusterSlugs.map(slug => ({
         url: slug ? `${baseUrl}/${citySlug}/guide/${slug}/` : `${baseUrl}/${citySlug}/guide/`,
@@ -223,13 +226,17 @@ export default async function sitemap({ id }: { id: number }): Promise<MetadataR
       }))
     )
 
-    // /country/[country]/ pages
-    const countryRoutes: MetadataRoute.Sitemap = countries.map(country => ({
-      url: `${baseUrl}/country/${country.slug}/`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    }))
+    // /country/[country]/ pages — ONLY countries without a hub page mapping.
+    // Countries in COUNTRY_HUB_SLUGS 308-redirect to /<hub>/ (see app/country/[country]/page.tsx),
+    // so listing them here generates ~190 redirect URLs in sitemap.
+    const countryRoutes: MetadataRoute.Sitemap = countries
+      .filter(country => !COUNTRY_HUB_SLUGS[country.slug])
+      .map(country => ({
+        url: `${baseUrl}/country/${country.slug}/`,
+        lastModified: now,
+        changeFrequency: 'weekly',
+        priority: 0.8,
+      }))
 
     // Area code pages
     const highValueCodes = new Set([
