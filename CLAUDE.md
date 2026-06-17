@@ -894,6 +894,65 @@ import { useClockState, useClockTheme, ClockHero, FactsGrid, NarrativeSection, C
 
 ---
 
+### 48. SEO Kriz Müdahalesi — Crawl Demand Collapse Recovery ✅ (17 Haziran 2026)
+
+**Durum tespiti:**
+GSC Coverage raporu: **5,500+ indeksli sayfa → 13'e düştü** (2-5 Mayıs 2026 arası tek-haftalık çöküş).
+Crawl Stats raporu: **7 Mayıs'tan itibaren Googlebot crawl'ı bıraktı** — günlük 150+ req → 4-30 req.
+
+**Yanlış teşhisler (geri çekildi):**
+- ❌ Thin content tezi — rakipler (timeanddate, time.is, 24timezones) aynı modelle indeksli
+- ❌ Render/ISR çöküşü tezi — Response codes %89 200 OK, %0.08 5xx, Host status temiz
+- ❌ Tier3 noindex önerisi — geri dönülmesi zor, gerekli değil
+
+**Doğru teşhis:**
+Server sağlam. **Google crawl etmeyi BIRAKTI**, indeks kaybı sonuç.
+Tetikleyici: 31 Mart sitemap segmentasyonu — 6 aylık siteden birden 13K URL Google'a verildi.
+Otorite/backlink olmadan büyük URL envanteri = Google quality model'i "değmiyor" sinyali verdi.
+
+**Müdahale (3 commit, main'e merge edildi — merge `90c8182`):**
+
+**Commit `57da8d0` — Sitemap redirect temizliği:**
+- `app/sitemap.ts` segment 3'te /country/[country]/ → COUNTRY_HUB_SLUGS'ı olan ~190 ülke filtrelendi (308 redirect'i bitti)
+- Guide cluster slugs: pre-redirect slug'lar (`business-hours`, `call-times`, `holidays`, `best-time-to-visit`, `remote-work`, `digital-nomad`, `time-difference`, `24-hours`, `travel-planning`, `stock-market`) → 5 final canonical slug'a düşürüldü (`time-business`, `travel-guide`, `work-remote`, `24-hours-itinerary`, `time-zones`)
+- Net: ~270 redirect URL sitemap'ten çıktı
+
+**Commit `436837b` — Sitemap envanteri ~4,500 → ~750:**
+- Segment 1: 2,054 → ~245 (sadece Tier1 + SEO JSON'u olan ~200 şehir)
+- Segment 2: 1,980 → 92 (sadece PAIR_CONTEXTS yazılı pair'ler)
+- `PAIR_CONTEXTS` → `data/pairContexts.ts`'e çıkarıldı (sitemap import edebilsin diye)
+- Lastmod: `new Date()` → `SITE_LAST_UPDATE = 2026-06-17` sabiti (fake sinyal verme)
+- **ÖNEMLİ:** Tier3 ve SEO-less Tier2 sayfaları **silinmedi, noindex YAPILMADI**. Sadece sitemap'ten çıktı. Internal link ile crawlable.
+
+**Commit `a6a2464` — AdSense geçici kaldırıldı:**
+- `app/layout.tsx`'ten `adsbygoogle.js` loader script'i kaldırıldı
+- `components/CityPage/index.tsx` — 2 AdUnit slot (display + multiplex) silindi
+- `components/TimeComparisonContent.tsx` — 2 AdUnit slot silindi
+- `components/AdUnit.tsx` dosyası KORUNDU (geri açmak için)
+- `components/PrivacyContent.tsx` AdSense metinleri kalsın (zararsız)
+
+**Re-enable kuralı:**
+> Crawl Stats > 100 req/gün sürdürülebilir ve indeksli sayfa sayısı > 500 olduğunda AdSense geri açılabilir.
+> Geri açmak için sadece `import AdUnit` + `<AdUnit variant="...">` JSX'ini koymak yeter.
+
+### KRİTİK: Bu kriz sonrası SEO kuralları
+
+1. **Sitemap'e URL eklerken otoriteye dikkat.** Yeni site büyük envanter göndermez. URL eklemeden önce sor: "Bu sayfaya gerçek değer katacak içerik var mı?"
+2. **`lastModified` için `new Date()` KULLANMA.** Google fake sinyal okur. `SITE_LAST_UPDATE` sabitini güncelle veya `fs.statSync(file).mtime` kullan.
+3. **Sitemap'e koymadan önce redirect kontrolü.** Bir URL middleware veya next.config'de redirect ediyorsa **asla** sitemap'te listelenmez.
+4. **AdSense'i thin/yeni sayfalarda açma.** Sadece kalite + trafik kanıtlanmış sayfalarda.
+5. **Crawl Stats'i haftalık izle.** Günlük req sayısı sürekli düşüyorsa hemen geri al — büyük URL ekleme operasyonu yapma.
+
+### Önümüzdeki 4 hafta — KPI takibi
+
+- [ ] GSC Crawl Stats → günlük request: 4-30 → hedef 50-100+
+- [ ] GSC Page Indexing "Redirected page": 534 → hedef <100
+- [ ] GSC Page Indexing "Crawled - not indexed": 11,790 → hedef <3,000
+- [ ] GSC Page Indexing "Indexed": 13 → hedef 300+
+- [ ] Sitemap'i GSC'de Submit + "Validate Fix" her hata kategorisi için
+
+---
+
 ## Açık Konular / Sonraki Adımlar
 
 - [ ] DST clock change (673K vol, SD 24) — `/daylight-saving-time/` meta already good, monitor GSC
