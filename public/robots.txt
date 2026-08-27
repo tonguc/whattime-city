@@ -1,8 +1,88 @@
+# whattime.city — robots.txt
+#
+# Goal: keep real search engines fully welcome (still recovering crawl
+# demand — see CLAUDE.md §48), but keep low-value, high-volume crawlers
+# out of the combinatorial /time/<a>/<b>/ and /meeting/ URL space. That
+# space is hundreds of thousands of ISR-generated pages: expensive to
+# serve, little marginal indexing value.
+
+# ── Search engines we want full crawl from ───────────────────────────
+User-agent: Googlebot
+User-agent: Googlebot-Image
+User-agent: Bingbot
+User-agent: DuckDuckBot
+User-agent: Applebot
+User-agent: YandexBot
+Allow: /
+Disallow: /api/
+Disallow: /_next/static/
+Disallow: /_next/image/
+Disallow: /_next/data/
+Disallow: /*?
+
+# ── Link-preview / social bots (need page access for share cards) ─────
+User-agent: Twitterbot
+User-agent: facebookexternalhit
+User-agent: LinkedInBot
+User-agent: Slackbot-LinkExpanding
+User-agent: WhatsApp
+User-agent: TelegramBot
+Allow: /
+Disallow: /api/
+
+# ── AI / LLM crawlers ────────────────────────────────────────────────
+# Allowed on core content, but NOT on the combinatorial spaces.
+# Delete a name below if that crawler's citations become worth the cost.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: anthropic-ai
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: meta-externalagent
+User-agent: Amazonbot
+User-agent: Bytespider
+User-agent: CCBot
+User-agent: cohere-ai
+User-agent: Diffbot
+User-agent: Omgilibot
+Disallow: /time/
+Disallow: /meeting/
+Disallow: /api/
+Disallow: /*?
+Crawl-delay: 30
+
+# ── SEO / backlink / marketing crawlers: no search value, block fully ─
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: DataForSeoBot
+User-agent: MJ12bot
+User-agent: DotBot
+User-agent: BLEXBot
+User-agent: rogerbot
+User-agent: PetalBot
+User-agent: Barkrowler
+User-agent: ZoominfoBot
+User-agent: ImagesiftBot
+User-agent: SiteAuditBot
+User-agent: MojeekBot
+Disallow: /
+
+# ── Everyone else ────────────────────────────────────────────────────
+# Core content crawlable; kept out of the expensive spaces and slowed.
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/static/
 Disallow: /_next/image/
 Disallow: /_next/data/
+Disallow: /meeting/
+Disallow: /time/*/*/
+Disallow: /*?
+Crawl-delay: 20
 
 Sitemap: https://whattime.city/sitemap.xml

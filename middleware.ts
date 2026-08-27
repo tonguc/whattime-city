@@ -10,27 +10,72 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-// Known scraper / bad bot UA fragments (lowercase match)
+// Known scraper / bad bot UA fragments (lowercase match).
+// These are blocked (429) on the expensive combinatorial routes only
+// (/time/<a>/<b>/, /meeting/, /<city>/guide/). robots.txt asks nicely;
+// this enforces it for crawlers that ignore robots.txt.
 const BAD_BOT_UA = [
+  // generic HTTP clients / scraping frameworks
   'python-requests',
+  'python-httpx',
+  'aiohttp',
   'go-http-client',
+  'node-fetch',
+  'okhttp',
   'scrapy',
   'java/',
+  'jakarta',
   'wget/',
   'curl/',
+  'libwww-perl',
   'axios/',
+  'got (',
+  // AI / LLM crawlers
+  'gptbot',
+  'oai-searchbot',
+  'chatgpt-user',
+  'claudebot',
+  'claude-web',
+  'anthropic-ai',
+  'perplexitybot',
+  'perplexity-user',
+  'google-extended',
+  'applebot-extended',
+  'meta-externalagent',
+  'amazonbot',
   'bytespider',
+  'ccbot',
+  'cohere-ai',
+  'diffbot',
+  'omgilibot',
+  'timpibot',
+  'youbot',
+  // SEO / backlink / marketing crawlers
   'petalbot',
   'ahrefsbot',
   'semrushbot',
+  'dataforseobot',
   'dotbot',
   'mj12bot',
   'blexbot',
+  'rogerbot',
+  'barkrowler',
+  'zoominfobot',
+  'imagesiftbot',
+  'serpstatbot',
+  'seokicks',
+  'sistrix',
+  'megaindex',
+  'linkdexbot',
+  // misc low-value regional / spam crawlers
   'baiduspider',
   'yandexbot',
   'seznambot',
   'sogou',
   'exabot',
+  'mauibot',
+  'gigabot',
+  'dnyzbot',
 ]
 
 function isBadBot(ua: string): boolean {
@@ -49,15 +94,21 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   // =============================================
-  // BOT BLOCKING — /time/ ve /meeting/ rotaları
+  // BOT BLOCKING — pahalı kombinatoryal rotalar
+  // /time/<a>/<b>/, /meeting/<cities>/, /<city>/guide/<slug>
+  // Bu rotalar ISR ile üretiliyor: her yeni bot isteği function
+  // invocation + ISR write yakıyor. robots.txt'yi umursamayan
+  // crawler'ları burada 429 ile kesiyoruz.
   // =============================================
-  if (
+  const isExpensiveRoute =
     (pathname.startsWith('/time/') && pathname !== '/time/') ||
-    (pathname.startsWith('/meeting/') && pathname !== '/meeting/')
-  ) {
+    (pathname.startsWith('/meeting/') && pathname !== '/meeting/') ||
+    /^\/[^/]+\/guide\/[^/]+/.test(pathname)
+
+  if (isExpensiveRoute) {
     const ua = request.headers.get('user-agent') || ''
     if (isBadBot(ua)) {
-      return new NextResponse(null, { status: 429, headers: { 'Retry-After': '3600' } })
+      return new NextResponse(null, { status: 429, headers: { 'Retry-After': '86400' } })
     }
   }
 

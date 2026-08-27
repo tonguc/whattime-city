@@ -9,9 +9,11 @@ interface TimeComparePageProps {
   params: Promise<{ from: string; to: string }>
 }
 
-// ISR: ilk istekte render, sonra 1 saat CDN cache
-// force-dynamic Cache-Control:no-store override ediyordu → her bot isteği function çalıştırıyordu
-export const revalidate = 3600
+// ISR: ilk istekte render, sonra 24 saat cache.
+// force-dynamic Cache-Control:no-store override ediyordu → her bot isteği function çalıştırıyordu.
+// revalidate 3600→86400: içerik deterministik zaman matematiği, sadece DST sınırında
+// değişir. 24 saat, ISR write sayısını ~24× düşürür (Vercel maliyet kalemi).
+export const revalidate = 86400
 export const dynamicParams = true  // explicit: non-pre-rendered pairs generated on first request
 
 // Helper: Slug'dan şehir bulma

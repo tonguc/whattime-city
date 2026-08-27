@@ -10,9 +10,18 @@ import { NextRequest, NextResponse } from 'next/server'
 const API_KEY = process.env.WEATHER_API_KEY || ''
 const BASE_URL = 'https://api.weatherapi.com/v1'
 
-// Simple in-memory cache (server-side)
+// Simple in-memory cache (server-side, per warm instance only)
 const cache = new Map<string, { data: any; timestamp: number }>()
 const CACHE_DURATION = 10 * 60 * 1000 // 10 minutes
+
+// CDN cache: let Vercel's edge serve repeat requests for the same city
+// straight from cache, without invoking this function. Weather changes
+// slowly; 30 min fresh + 24h stale-while-revalidate collapses tens of
+// thousands of invocations/day down to a few hundred.
+const CDN_CACHE = 'public, s-maxage=1800, stale-while-revalidate=86400'
+// "City not found" is stable — cache it hard so junk slugs from crawlers
+// stop hitting the function and the upstream API.
+const CDN_CACHE_NEGATIVE = 'public, s-maxage=86400, stale-while-revalidate=604800'
 
 // IP-based rate limiter: max 10 requests per minute per IP
 const ipRequestLog = new Map<string, number[]>()
@@ -69,7 +78,7 @@ export async function GET(request: NextRequest) {
   
   if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
     return NextResponse.json(cached.data, {
-      headers: { 'X-Cache': 'HIT' }
+      headers: { 'X-Cache': 'HIT', 'Cache-Control': CDN_CACHE }
     })
   }
 
@@ -87,7 +96,10 @@ export async function GET(request: NextRequest) {
 
     if (!response.ok) {
       if (response.status === 400) {
-        return NextResponse.json({ error: 'City not found' }, { status: 404 })
+        return NextResponse.json({ error: 'City not found' }, {
+          status: 404,
+          headers: { 'Cache-Control': CDN_CACHE_NEGATIVE },
+        })
       }
       throw new Error(`Weather API error: ${response.status}`)
     }
@@ -98,7 +110,7 @@ export async function GET(request: NextRequest) {
     cache.set(cacheKey, { data, timestamp: Date.now() })
 
     return NextResponse.json(data, {
-      headers: { 'X-Cache': 'MISS' }
+      headers: { 'X-Cache': 'MISS', 'Cache-Control': CDN_CACHE }
     })
   } catch (error) {
     console.error('Weather API error:', error)
