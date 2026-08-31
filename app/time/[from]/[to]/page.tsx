@@ -11,9 +11,10 @@ interface TimeComparePageProps {
 
 // ISR: ilk istekte render, sonra 24 saat cache.
 // force-dynamic Cache-Control:no-store override ediyordu → her bot isteği function çalıştırıyordu.
-// revalidate 3600→86400: içerik deterministik zaman matematiği, sadece DST sınırında
-// değişir. 24 saat, ISR write sayısını ~24× düşürür (Vercel maliyet kalemi).
-export const revalidate = 86400
+// revalidate 3600→86400→604800: içerik deterministik zaman matematiği, sadece DST
+// sınırında değişir. 7 gün, ISR write sayısını ~7× daha düşürür (Vercel Observability
+// Events + ISR Writes maliyet kalemleri). DST geçişleri yılda 2 kez, stale pencere kabul edilebilir.
+export const revalidate = 604800
 export const dynamicParams = true  // explicit: non-pre-rendered pairs generated on first request
 
 // Helper: Slug'dan şehir bulma
@@ -220,7 +221,7 @@ export async function generateMetadata({ params }: TimeComparePageProps): Promis
 // Pre-render every pair that has a PAIR_CONTEXTS entry — these are the
 // pairs we've intentionally written narrative content for, and the ones
 // most likely to receive organic impressions. Other pairs fall back to
-// ISR (revalidate=3600) on first request.
+// ISR (revalidate=604800) on first request.
 //
 // Slug splitting: city slugs may themselves contain hyphens
 // (new-york, san-francisco, mexico-city, tel-aviv, hong-kong, rio-de-janeiro,
