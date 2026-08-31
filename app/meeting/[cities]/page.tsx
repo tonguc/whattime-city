@@ -11,8 +11,8 @@ interface Props {
 
 // ISR: metadata server'da üretilir, 24 saat cache.
 // force-dynamic kaldırıldı — her Googlebot crawl'ı invocation yakıyordu (NOINDEX sayfa için gereksiz).
-// revalidate 3600→86400: NOINDEX kombinatoryal sayfa, sık yeniden üretmenin faydası yok; ISR write kısıntısı.
-export const revalidate = 86400
+// revalidate 3600→86400→604800: NOINDEX kombinatoryal sayfa, sık yeniden üretmenin faydası yok; ISR write kısıntısı.
+export const revalidate = 604800
 
 // Generate metadata
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
